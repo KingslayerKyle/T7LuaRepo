@@ -1,9 +1,14 @@
--- 6efdf696374e630ad3062beaa21d78ce
--- This hash is used for caching, delete to decompile the file again
+-- Decompiled using CoDLuaDecompiler by JariKCoding
+-- https://github.com/JariKCoding/CoDLuaDecompiler
+
+-- Author: Kingslayer Kyle
+-- DD MM YY: 31/08/2022
+-- Edits: Added comments, named functions & variables, fixed some bugs with the conditions in the HandlePerksList function
 
 require( "ui.uieditor.widgets.HUD.ZM_Perks.PerkListItemFactory" )
 
-local f0_local0 = {
+-- A table that contains the clientfield names and images of the perks
+local perksTable = {
 	additional_primary_weapon = "specialty_giant_three_guns_zombies",
 	dead_shot = "specialty_giant_ads_zombies",
 	dive_to_nuke = "specialty_divetonuke_zombies",
@@ -16,85 +21,134 @@ local f0_local0 = {
 	widows_wine = "specialty_giant_widows_wine_zombies",
 	electric_cherry = "specialty_blue_electric_cherry_zombies"
 }
-local f0_local1 = function ( f1_arg0, f1_arg1 )
-	if f1_arg0 ~= nil then
-		for f1_local0 = 1, #f1_arg0, 1 do
-			if f1_arg0[f1_local0].properties.key == f1_arg1 then
-				return f1_local0
+
+-- Summary: Used in the HandlePerksList function to get the perk index on the current iteration from element.perksList
+-- Arg 1: A table that contains the player's current perks
+-- Arg 2: The perk's clientfield name
+local GetPerkIndex = function ( perksList, perkCF )
+	if perksList ~= nil then
+		for index = 1, #perksList do
+			if perksList[index].properties.key == perkCF then
+				return index
 			end
 		end
 	end
+
 	return nil
 end
 
-local f0_local2 = function ( f2_arg0, f2_arg1, f2_arg2 )
-	if f2_arg0 ~= nil then
-		for f2_local0 = 1, #f2_arg0, 1 do
-			if f2_arg0[f2_local0].properties.key == f2_arg1 and f2_arg0[f2_local0].models.status ~= f2_arg2 then
-				return f2_local0
+-- Summary: Used in the HandlePerksList function to check if the status stored on the table needs to be updated with the current model value
+-- Arg 1: A table that contains the player's current perks
+-- Arg 2: The perk's clientfield name
+-- Arg 3: The model value of the current perk which indicates it's status, 0 == off, 1 == on, 2 == paused
+local CheckPerkIndexForUpdate = function ( perksList, perkCF, perkStatus )
+	if perksList ~= nil then
+		for index = 1, #perksList do
+			if perksList[index].properties.key == perkCF and perksList[index].models.status ~= perkStatus then
+				return index
 			end
 		end
 	end
+
 	return -1
 end
 
-local f0_local3 = function ( f3_arg0, f3_arg1 )
-	if not f3_arg0.perksList then
-		f3_arg0.perksList = {}
+local HandlePerksList = function ( element, controller )
+	-- Create element.perksList if it doesn't already exist, this will be used to store the player's current perks
+	if not element.perksList then
+		element.perksList = {}
 	end
-	local f3_local0 = false
-	local f3_local1 = Engine.GetModel( Engine.GetModelForController( f3_arg1 ), "hudItems.perks" )
-	for f3_local6, f3_local7 in pairs( f0_local0 ) do
-		local f3_local8 = Engine.GetModelValue( Engine.GetModel( f3_local1, f3_local6 ) )
-		if f3_local8 ~= nil and f3_local8 > 0 then
-			if not f0_local1( f3_arg0.perksList, f3_local6 ) then
-				table.insert( f3_arg0.perksList, {
+
+	-- bool, whether or not something was added to the table or removed from the table
+	local tableUpdated = false
+
+	-- Parent model, that each of the perks' sub-models will be stored on
+	local perksParentModel = Engine.GetModel( Engine.GetModelForController( controller ), "hudItems.perks" )
+
+	-- Loop through each of the perks in perksTable
+	for key, value in pairs( perksTable ) do
+		-- The model value for the individual perk, which indicates it's status, 0 == off, 1 == on, 2 == paused
+		local perkStatus = Engine.GetModelValue( Engine.GetModel( perksParentModel, key ) )
+
+		-- Let's check the model value is not nil, and then check if it's an active perk (value is more than 1)
+		if perkStatus ~= nil and perkStatus > 0 then
+			-- If it's not in element.perksList, let's add it
+			if not GetPerkIndex( element.perksList, key ) then
+				table.insert( element.perksList, {
 					models = {
-						image = f3_local7,
-						status = f3_local8,
+						image = value,
+						status = perkStatus,
 						newPerk = false
 					},
 					properties = {
-						key = f3_local6
+						key = key
 					}
 				} )
-				f3_local0 = true
+
+				-- Perk has been added to the table
+				tableUpdated = true
 			end
-			local f3_local5 = f0_local2( f3_arg0.perksList, f3_local6, f3_local8 )
-			if f3_local5 > 0 then
-				f3_arg0.perksList[f3_local5].models.status = f3_local8
-				Engine.SetModelValue( Engine.GetModel( Engine.GetModel( Engine.GetModelForController( f3_arg1 ), "ZMPerksFactory" ), tostring( f3_local5 ) .. ".status" ), f3_local8 )
+
+			-- Let's make sure the status that's stored on the table is equal to the current model value
+			local perkIndexToCheck = CheckPerkIndexForUpdate( element.perksList, key, perkStatus )
+
+			-- If it isn't, let's update it
+			if perkIndexToCheck > 0 then
+				element.perksList[perkIndexToCheck].models.status = perkStatus
+				
+				Engine.SetModelValue( Engine.GetModel( Engine.GetModel( Engine.GetModelForController( controller ), "ZMPerksFactory" ), tostring( perkIndexToCheck ) .. ".status" ), perkStatus )
 			end
-		end
-		local f3_local5 = f0_local1( f3_arg0.perksList, f3_local6 )
-		if f3_local5 then
-			table.remove( f3_arg0.perksList, f3_local5 )
-			f3_local0 = true
+
+		-- Otherwise, let's remove it if it's in element.perksList
+		else
+			-- Get the perk index to remove
+			local perkIndexToCheck = GetPerkIndex( element.perksList, key )
+
+			-- If we get a hit, remove it
+			if perkIndexToCheck then
+				table.remove( element.perksList, perkIndexToCheck )
+				
+				-- Perk has been removed from the table
+				tableUpdated = true
+			end
 		end
 	end
-	if f3_local0 then
-		for f3_local2 = 1, #f3_arg0.perksList, 1 do
-			f3_arg0.perksList[f3_local2].models.newPerk = f3_local2 == #f3_arg0.perksList
+
+	if tableUpdated then
+		-- Set newPerk if applicable, this is an animation that plays when the player receives a new perk
+		for index = 1, #element.perksList do
+			element.perksList[index].models.newPerk = index == #element.perksList
 		end
-	end
-	if f3_local0 then
+
+		-- This is used on each perk model subscription in PreLoadFunc to know whether or not the datasource needs to be updated
 		return true
+	else
+		-- Set the perks' model value to the status stored on element.perksList
+		for index = 1, #element.perksList do
+			Engine.SetModelValue( Engine.GetModel( perksParentModel, element.perksList[index].properties.key ), element.perksList[index].models.status )
+		end
+
+		-- This is used on each perk model subscription in PreLoadFunc to know whether or not the datasource needs to be updated
+		return false
 	end
-	for f3_local2 = 1, #f3_arg0.perksList, 1 do
-		Engine.SetModelValue( Engine.GetModel( f3_local1, f3_arg0.perksList[f3_local2].properties.key ), f3_arg0.perksList[f3_local2].models.status )
-	end
-	return false
 end
 
-DataSources.ZMPerksFactory = DataSourceHelpers.ListSetup( "ZMPerksFactory", function ( f4_arg0, f4_arg1 )
-	f0_local3( f4_arg1, f4_arg0 )
-	return f4_arg1.perksList
+DataSources.ZMPerksFactory = DataSourceHelpers.ListSetup( "ZMPerksFactory", function ( controller, element )
+	-- This function handles element.perksList
+	HandlePerksList( element, controller )
+	-- After it's been handled, let's pass it to the datasource so that it updates the UIList
+	return element.perksList
 end, true )
+
 local PreLoadFunc = function ( self, controller )
-	local f5_local0 = Engine.CreateModel( Engine.GetModelForController( controller ), "hudItems.perks" )
-	for f5_local4, f5_local5 in pairs( f0_local0 ) do
-		self:subscribeToModel( Engine.CreateModel( f5_local0, f5_local4 ), function ( model )
-			if f0_local3( self.PerkList, controller ) then
+	-- Create the parent model, that each of the perks' sub-models will be stored on
+	local perksParentModel = Engine.CreateModel( Engine.GetModelForController( controller ), "hudItems.perks" )
+
+	-- Creates and subscribes to each of the sub-models of the perks
+	for key, value in pairs( perksTable ) do
+		self:subscribeToModel( Engine.CreateModel( perksParentModel, key ), function ( model )
+			-- If HandlePerksList returns true, let's update the datasource
+			if HandlePerksList( self.PerkList, controller ) then
 				self.PerkList:updateDataSource()
 			end
 		end, false )
@@ -104,9 +158,11 @@ end
 CoD.ZMPerksContainerFactory = InheritFrom( LUI.UIElement )
 CoD.ZMPerksContainerFactory.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZMPerksContainerFactory )
 	self.id = "ZMPerksContainerFactory"
@@ -115,80 +171,58 @@ CoD.ZMPerksContainerFactory.new = function ( menu, controller )
 	self:setTopBottom( true, false, 0, 36 )
 	self.anyChildUsesUpdateState = true
 	
-	local PerkList = LUI.UIList.new( menu, controller, 2, 0, nil, false, false, 0, 0, false, false )
-	PerkList:makeFocusable()
-	PerkList:setLeftRight( true, false, 0, 378 )
-	PerkList:setTopBottom( false, true, -36, 0 )
-	PerkList:setWidgetType( CoD.PerkListItemFactory )
-	PerkList:setHorizontalCount( 10 )
-	PerkList:setDataSource( "ZMPerksFactory" )
-	self:addElement( PerkList )
-	self.PerkList = PerkList
+	self.PerkList = LUI.UIList.new( menu, controller, 2, 0, nil, false, false, 0, 0, false, false )
+	self.PerkList:makeFocusable()
+	self.PerkList:setLeftRight( true, false, 0, 378 )
+	self.PerkList:setTopBottom( false, true, -36, 0 )
+	self.PerkList:setWidgetType( CoD.PerkListItemFactory )
+	self.PerkList:setHorizontalCount( 10 )
+	self.PerkList:setDataSource( "ZMPerksFactory" )
+	self:addElement( self.PerkList )
 	
 	self.clipsPerState = {
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
-				PerkList:completeAnimation()
+
+				self.PerkList:completeAnimation()
 				self.PerkList:setAlpha( 1 )
-				self.clipFinished( PerkList, {} )
+				self.clipFinished( self.PerkList, {} )
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
-				PerkList:completeAnimation()
+
+				self.PerkList:completeAnimation()
 				self.PerkList:setAlpha( 0 )
-				self.clipFinished( PerkList, {} )
+				self.clipFinished( self.PerkList, {} )
 			end
 		}
 	}
+	
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
 			condition = function ( menu, element, event )
-				local f10_local0 = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_AMMO_COUNTER_HIDE )
-				if not f10_local0 then
-					f10_local0 = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_DEMO_ALL_GAME_HUD_HIDDEN )
-					if not f10_local0 then
-						f10_local0 = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_DEMO_CAMERA_MODE_MOVIECAM )
-						if not f10_local0 then
-							f10_local0 = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_EMP_ACTIVE )
-							if not f10_local0 then
-								f10_local0 = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_GAME_ENDED )
-								if not f10_local0 then
-									if Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_HUD_VISIBLE ) then
-										f10_local0 = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_IN_GUIDED_MISSILE )
-										if not f10_local0 then
-											f10_local0 = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_IN_REMOTE_KILLSTREAK_STATIC )
-											if not f10_local0 then
-												f10_local0 = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_IN_VEHICLE )
-												if not f10_local0 then
-													f10_local0 = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_IS_FLASH_BANGED )
-													if not f10_local0 then
-														f10_local0 = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_IS_PLAYER_IN_AFTERLIFE )
-														if not f10_local0 then
-															f10_local0 = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_IS_SCOPED )
-															if not f10_local0 then
-																f10_local0 = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN )
-																if not f10_local0 then
-																	f10_local0 = Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_UI_ACTIVE )
-																end
-															end
-														end
-													end
-												end
-											end
-										end
-									else
-										f10_local0 = true
-									end
-								end
-							end
-						end
-					end
+				if not Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_AMMO_COUNTER_HIDE )
+				and not Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_DEMO_ALL_GAME_HUD_HIDDEN )
+				and not Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_DEMO_CAMERA_MODE_MOVIECAM )
+				and not Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_EMP_ACTIVE )
+				and not Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_GAME_ENDED )
+				and Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_HUD_VISIBLE )
+				and not Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_IN_GUIDED_MISSILE )
+				and not Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_IN_REMOTE_KILLSTREAK_STATIC )
+				and not Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_IN_VEHICLE )
+				and not Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_IS_FLASH_BANGED )
+				and not Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_IS_PLAYER_IN_AFTERLIFE )
+				and not Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_IS_SCOPED )
+				and not Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN )
+				and not Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_UI_ACTIVE ) then
+					return false
+				else
+					return true
 				end
-				return f10_local0
 			end
 		}
 	} )
@@ -304,7 +338,9 @@ CoD.ZMPerksContainerFactory.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_UI_ACTIVE
 		} )
 	end )
-	PerkList.id = "PerkList"
+
+	self.PerkList.id = "PerkList"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PerkList:close()
 	end )
@@ -315,4 +351,3 @@ CoD.ZMPerksContainerFactory.new = function ( menu, controller )
 	
 	return self
 end
-
