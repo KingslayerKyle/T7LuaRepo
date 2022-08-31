@@ -53,6 +53,9 @@ local CheckPerkIndexForUpdate = function ( perksList, perkCF, perkStatus )
 	return -1
 end
 
+-- Summary: Handles the element.perksList table, which is used to store the player's current perks
+-- Arg 1: The UIList
+-- Arg 2: The instance
 local HandlePerksList = function ( element, controller )
 	-- Create element.perksList if it doesn't already exist, this will be used to store the player's current perks
 	if not element.perksList then
