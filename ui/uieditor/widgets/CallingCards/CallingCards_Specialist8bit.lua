@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_Specialist8bit_Reaper" )
 CoD.CallingCards_Specialist8bit = InheritFrom( LUI.UIElement )
 CoD.CallingCards_Specialist8bit.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_Specialist8bit )
 	self.id = "CallingCards_Specialist8bit"
@@ -63,6 +65,7 @@ CoD.CallingCards_Specialist8bit.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local bg2Frame2 = function ( bg2, event )
 					local bg2Frame3 = function ( bg2, event )
 						if not event.interrupted then
@@ -89,6 +92,7 @@ CoD.CallingCards_Specialist8bit.new = function ( menu, controller )
 				bg2:completeAnimation()
 				self.bg2:setAlpha( 0 )
 				bg2Frame2( bg2, {} )
+
 				mask:completeAnimation()
 				self.mask:setRGB( 0.24, 0.24, 0.24 )
 				self.clipFinished( mask, {} )
@@ -348,10 +352,12 @@ CoD.CallingCards_Specialist8bit.new = function ( menu, controller )
 				self.CallingCardsSpecialist8bitReaper:setTopBottom( true, false, 0, 120 )
 				self.CallingCardsSpecialist8bitReaper:setAlpha( 1 )
 				CallingCardsSpecialist8bitReaperFrame2( CallingCardsSpecialist8bitReaper, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardsSpecialist8bitReaper:close()
 	end )

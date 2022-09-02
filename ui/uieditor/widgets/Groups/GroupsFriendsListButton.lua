@@ -16,9 +16,11 @@ require( "ui.uieditor.widgets.Groups.GroupsCheckbox" )
 CoD.GroupsFriendsListButton = InheritFrom( LUI.UIElement )
 CoD.GroupsFriendsListButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsFriendsListButton )
 	self.id = "GroupsFriendsListButton"
@@ -312,30 +314,38 @@ CoD.GroupsFriendsListButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 90, false, false, CoD.TweenType.Linear )
@@ -524,18 +534,22 @@ CoD.GroupsFriendsListButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 29, false, false, CoD.TweenType.Linear )
@@ -732,6 +746,7 @@ CoD.GroupsFriendsListButton.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveDiag:close()
 		element.BoxButtonLrgInactive:close()

@@ -112,6 +112,7 @@ local PostLoadFunc = function ( self, controller, menu )
 	end, function ( f19_arg0, f19_arg1, f19_arg2 )
 		return false
 	end, false )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "close", function ()
 		self.ClockTimer:close()
 	end )
@@ -123,9 +124,11 @@ end
 CoD.TerminalLauncher = InheritFrom( LUI.UIElement )
 CoD.TerminalLauncher.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TerminalLauncher )
 	self.id = "TerminalLauncher"
@@ -647,12 +650,14 @@ CoD.TerminalLauncher.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				mouseCursor:completeAnimation()
 				self.mouseCursor:setAlpha( 0 )
 				self.clipFinished( mouseCursor, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 1 )
+
 				mouseCursor:completeAnimation()
 				self.mouseCursor:setAlpha( 1 )
 				self.clipFinished( mouseCursor, {} )
@@ -676,6 +681,7 @@ CoD.TerminalLauncher.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.HealthApplet:close()
 		element.MusicPlayer:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.nameLabel = InheritFrom( LUI.UIElement )
 CoD.nameLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.nameLabel )
 	self.id = "nameLabel"
@@ -40,6 +42,7 @@ CoD.nameLabel.new = function ( menu, controller )
 	label:setAlpha( 0.92 )
 	label:setText( Engine.Localize( "Bio-Cache" ) )
 	label:setTTF( "fonts/default.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( label, "setText", function ( element, controller )
 		ScaleWidgetToLabelLeftJustify( self, element, -14 )
 	end )
@@ -50,14 +53,17 @@ CoD.nameLabel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Small = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TitleGlow1:close()
 	end )

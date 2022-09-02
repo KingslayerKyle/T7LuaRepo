@@ -4,9 +4,11 @@
 CoD.GridItemConsumableLabel = InheritFrom( LUI.UIElement )
 CoD.GridItemConsumableLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GridItemConsumableLabel )
 	self.id = "GridItemConsumableLabel"
@@ -50,12 +52,15 @@ CoD.GridItemConsumableLabel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ComsumableBacking:completeAnimation()
 				self.ComsumableBacking:setAlpha( 1 )
 				self.clipFinished( ComsumableBacking, {} )
+
 				NoComsumable:completeAnimation()
 				self.NoComsumable:setAlpha( 0 )
 				self.clipFinished( NoComsumable, {} )
+
 				ComsumableCountLabel:completeAnimation()
 				self.ComsumableCountLabel:setAlpha( 1 )
 				self.clipFinished( ComsumableCountLabel, {} )
@@ -64,12 +69,15 @@ CoD.GridItemConsumableLabel.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ComsumableBacking:completeAnimation()
 				self.ComsumableBacking:setAlpha( 0 )
 				self.clipFinished( ComsumableBacking, {} )
+
 				NoComsumable:completeAnimation()
 				self.NoComsumable:setAlpha( 0 )
 				self.clipFinished( NoComsumable, {} )
+
 				ComsumableCountLabel:completeAnimation()
 				self.ComsumableCountLabel:setAlpha( 0 )
 				self.clipFinished( ComsumableCountLabel, {} )
@@ -78,18 +86,22 @@ CoD.GridItemConsumableLabel.new = function ( menu, controller )
 		Nocomsumable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ComsumableBacking:completeAnimation()
 				self.ComsumableBacking:setAlpha( 0 )
 				self.clipFinished( ComsumableBacking, {} )
+
 				NoComsumable:completeAnimation()
 				self.NoComsumable:setAlpha( 1 )
 				self.clipFinished( NoComsumable, {} )
+
 				ComsumableCountLabel:completeAnimation()
 				self.ComsumableCountLabel:setAlpha( 1 )
 				self.clipFinished( ComsumableCountLabel, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",
@@ -112,6 +124,7 @@ CoD.GridItemConsumableLabel.new = function ( menu, controller )
 			modelName = "itemIndex"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ComsumableCountLabel:close()
 	end )

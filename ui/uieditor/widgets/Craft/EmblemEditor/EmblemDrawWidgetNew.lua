@@ -17,9 +17,11 @@ end
 CoD.EmblemDrawWidgetNew = InheritFrom( LUI.UIElement )
 CoD.EmblemDrawWidgetNew.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemDrawWidgetNew )
 	self.id = "EmblemDrawWidgetNew"
@@ -149,65 +151,81 @@ CoD.EmblemDrawWidgetNew.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				BorderBakedBlur0:completeAnimation()
 				self.BorderBakedBlur0:setAlpha( 0.4 )
 				self.clipFinished( BorderBakedBlur0, {} )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0 )
 				self.BorderBakedMask0:setZoom( 0 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 0.5 )
 				self.BorderBakedSolid0:setZoom( 0 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				BorderBaked0:completeAnimation()
 				self.BorderBaked0:setRGB( 1, 1, 1 )
 				self.BorderBaked0:setAlpha( 0 )
 				self.BorderBaked0:setZoom( 0 )
 				self.clipFinished( BorderBaked0, {} )
+
 				backgroundMask:completeAnimation()
 				self.backgroundMask:setLeftRight( true, true, 2.5, -1.5 )
 				self.backgroundMask:setTopBottom( true, true, 2, -2 )
 				self.backgroundMask:setRGB( 0, 0, 0 )
 				self.backgroundMask:setAlpha( 0 )
 				self.clipFinished( backgroundMask, {} )
+
 				emblemDrawingArea:completeAnimation()
 				self.emblemDrawingArea:setLeftRight( true, true, 10, -10 )
 				self.emblemDrawingArea:setTopBottom( true, true, 10, -10 )
 				self.emblemDrawingArea:setAlpha( 1 )
 				self.clipFinished( emblemDrawingArea, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarT0:completeAnimation()
 				self.FocusBarT0:setAlpha( 0 )
 				self.clipFinished( FocusBarT0, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setAlpha( 0 )
 				self.clipFinished( emptyLayerIcon, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 0 )
 				self.clipFinished( bgImage, {} )
+
 				BMGoldBar:completeAnimation()
 				self.BMGoldBar:setLeftRight( true, true, 2.5, 0 )
 				self.BMGoldBar:setTopBottom( false, false, -10, 10 )
 				self.BMGoldBar:setAlpha( 0 )
 				self.clipFinished( BMGoldBar, {} )
+
 				blackMarketBrandIcon0:completeAnimation()
 				self.blackMarketBrandIcon0:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 2 )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setAlpha( 0 )
 				self.clipFinished( emptyLayerIcon, {} )
+
 				BMGoldBar:completeAnimation()
 				self.BMGoldBar:setLeftRight( true, true, 0, 1.38 )
 				self.BMGoldBar:setTopBottom( false, false, -13.5, 6.5 )
@@ -217,56 +235,70 @@ CoD.EmblemDrawWidgetNew.new = function ( menu, controller )
 		BMClassified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				BorderBakedBlur0:completeAnimation()
 				self.BorderBakedBlur0:setAlpha( 0.4 )
 				self.clipFinished( BorderBakedBlur0, {} )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0 )
 				self.BorderBakedMask0:setZoom( 0 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 0.5 )
 				self.BorderBakedSolid0:setZoom( 0 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				BorderBaked0:completeAnimation()
 				self.BorderBaked0:setRGB( 1, 1, 1 )
 				self.BorderBaked0:setAlpha( 0 )
 				self.BorderBaked0:setZoom( 0 )
 				self.clipFinished( BorderBaked0, {} )
+
 				backgroundMask:completeAnimation()
 				self.backgroundMask:setLeftRight( true, true, 2.5, -1.5 )
 				self.backgroundMask:setTopBottom( true, true, 2, -2 )
 				self.backgroundMask:setRGB( 0, 0, 0 )
 				self.backgroundMask:setAlpha( 0 )
 				self.clipFinished( backgroundMask, {} )
+
 				emblemDrawingArea:completeAnimation()
 				self.emblemDrawingArea:setLeftRight( true, true, 10, -10 )
 				self.emblemDrawingArea:setTopBottom( true, true, 10, -10 )
 				self.emblemDrawingArea:setAlpha( 1 )
 				self.clipFinished( emblemDrawingArea, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarT0:completeAnimation()
 				self.FocusBarT0:setAlpha( 0 )
 				self.clipFinished( FocusBarT0, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setAlpha( 0 )
 				self.clipFinished( emptyLayerIcon, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 1 )
 				self.clipFinished( bgImage, {} )
+
 				BMGoldBar:completeAnimation()
 				self.BMGoldBar:setLeftRight( true, true, 15.5, -6.5 )
 				self.BMGoldBar:setTopBottom( false, false, -10, 10 )
 				self.BMGoldBar:setAlpha( 1 )
 				self.clipFinished( BMGoldBar, {} )
+
 				blackMarketBrandIcon0:completeAnimation()
 				self.blackMarketBrandIcon0:setLeftRight( true, true, 143.5, -142.5 )
 				self.blackMarketBrandIcon0:setTopBottom( true, true, 48, -52 )
@@ -277,54 +309,68 @@ CoD.EmblemDrawWidgetNew.new = function ( menu, controller )
 		Unfocusable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				BorderBakedBlur0:completeAnimation()
 				self.BorderBakedBlur0:setAlpha( 0.4 )
 				self.clipFinished( BorderBakedBlur0, {} )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0 )
 				self.BorderBakedMask0:setZoom( 0 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 0.5 )
 				self.BorderBakedSolid0:setZoom( 0 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				BorderBaked0:completeAnimation()
 				self.BorderBaked0:setRGB( 1, 1, 1 )
 				self.BorderBaked0:setAlpha( 0 )
 				self.BorderBaked0:setZoom( 0 )
 				self.clipFinished( BorderBaked0, {} )
+
 				backgroundMask:completeAnimation()
 				self.backgroundMask:setLeftRight( true, true, 2.5, -1.5 )
 				self.backgroundMask:setTopBottom( true, true, 2, -2 )
 				self.backgroundMask:setRGB( 0, 0, 0 )
 				self.backgroundMask:setAlpha( 0 )
 				self.clipFinished( backgroundMask, {} )
+
 				emblemDrawingArea:completeAnimation()
 				self.emblemDrawingArea:setLeftRight( true, true, 10, -10 )
 				self.emblemDrawingArea:setTopBottom( true, true, 10, -10 )
 				self.emblemDrawingArea:setAlpha( 1 )
 				self.clipFinished( emblemDrawingArea, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarT0:completeAnimation()
 				self.FocusBarT0:setAlpha( 0 )
 				self.clipFinished( FocusBarT0, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setAlpha( 0 )
 				self.clipFinished( emptyLayerIcon, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 0 )
 				self.clipFinished( bgImage, {} )
+
 				BMGoldBar:completeAnimation()
 				self.BMGoldBar:setAlpha( 0 )
 				self.clipFinished( BMGoldBar, {} )
+
 				blackMarketBrandIcon0:completeAnimation()
 				self.blackMarketBrandIcon0:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon0, {} )
@@ -333,66 +379,82 @@ CoD.EmblemDrawWidgetNew.new = function ( menu, controller )
 		EmptySlot = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				BorderBakedBlur0:completeAnimation()
 				self.BorderBakedBlur0:setAlpha( 0.4 )
 				self.clipFinished( BorderBakedBlur0, {} )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0 )
 				self.BorderBakedMask0:setZoom( 0 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 0.5 )
 				self.BorderBakedSolid0:setZoom( 0 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				BorderBaked0:completeAnimation()
 				self.BorderBaked0:setRGB( 1, 1, 1 )
 				self.BorderBaked0:setAlpha( 0 )
 				self.BorderBaked0:setZoom( 0 )
 				self.clipFinished( BorderBaked0, {} )
+
 				backgroundMask:completeAnimation()
 				self.backgroundMask:setLeftRight( true, true, 2.5, -1.5 )
 				self.backgroundMask:setTopBottom( true, true, 2, -2 )
 				self.backgroundMask:setRGB( 0, 0, 0 )
 				self.backgroundMask:setAlpha( 0 )
 				self.clipFinished( backgroundMask, {} )
+
 				emblemDrawingArea:completeAnimation()
 				self.emblemDrawingArea:setLeftRight( true, true, 10, -10 )
 				self.emblemDrawingArea:setTopBottom( true, true, 10, -10 )
 				self.emblemDrawingArea:setAlpha( 1 )
 				self.clipFinished( emblemDrawingArea, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarT0:completeAnimation()
 				self.FocusBarT0:setAlpha( 0 )
 				self.clipFinished( FocusBarT0, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setAlpha( 1 )
 				self.clipFinished( emptyLayerIcon, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 0 )
 				self.clipFinished( bgImage, {} )
+
 				BMGoldBar:completeAnimation()
 				self.BMGoldBar:setAlpha( 0 )
 				self.clipFinished( BMGoldBar, {} )
+
 				blackMarketBrandIcon0:completeAnimation()
 				self.blackMarketBrandIcon0:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setAlpha( 1 )
 				self.clipFinished( emptyLayerIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BMClassified",
@@ -429,6 +491,7 @@ CoD.EmblemDrawWidgetNew.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BorderBakedBlur0:close()
 		element.BorderBakedMask0:close()

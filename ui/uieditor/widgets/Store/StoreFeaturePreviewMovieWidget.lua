@@ -13,9 +13,11 @@ end
 CoD.StoreFeaturePreviewMovieWidget = InheritFrom( LUI.UIElement )
 CoD.StoreFeaturePreviewMovieWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StoreFeaturePreviewMovieWidget )
 	self.id = "StoreFeaturePreviewMovieWidget"
@@ -62,6 +64,7 @@ CoD.StoreFeaturePreviewMovieWidget.new = function ( menu, controller )
 	LUI.OverrideFunction_CallOriginalFirst( self, "close", function ( element )
 		CallCustomElementFunction_Self( self, "StopStoreMoviePreviewPlayback", "" )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.buttonPrompt:close()
 	end )

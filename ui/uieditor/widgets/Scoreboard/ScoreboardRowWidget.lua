@@ -19,9 +19,11 @@ end
 CoD.ScoreboardRowWidget = InheritFrom( LUI.UIElement )
 CoD.ScoreboardRowWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreboardRowWidget )
 	self.id = "ScoreboardRowWidget"
@@ -283,110 +285,142 @@ CoD.ScoreboardRowWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				Top3PlayerScoreBlurBox0:completeAnimation()
 				self.Top3PlayerScoreBlurBox0:setRGB( 1, 1, 1 )
 				self.Top3PlayerScoreBlurBox0:setAlpha( 1 )
 				self.clipFinished( Top3PlayerScoreBlurBox0, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setLeftRight( true, false, 23, 52 )
 				self.Rank:setTopBottom( false, false, -11, 10 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setRGB( 1, 1, 1 )
 				self.clipFinished( RankIcon, {} )
+
 				Gamertag:completeAnimation()
 				self.Gamertag:setLeftRight( true, false, 82, 335 )
 				self.Gamertag:setTopBottom( false, false, -12, 10 )
 				self.Gamertag:setRGB( 1, 1, 1 )
 				self.clipFinished( Gamertag, {} )
+
 				ScoreColumn1:completeAnimation()
+
 				ScoreColumn1.Text:completeAnimation()
 				self.ScoreColumn1:setRGB( 1, 1, 1 )
 				self.ScoreColumn1:setAlpha( 1 )
 				self.ScoreColumn1.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn1.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn1, {} )
+
 				ScoreColumn2:completeAnimation()
+
 				ScoreColumn2.Text:completeAnimation()
 				self.ScoreColumn2:setRGB( 1, 1, 1 )
 				self.ScoreColumn2:setAlpha( 1 )
 				self.ScoreColumn2.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn2.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn2, {} )
+
 				ScoreColumn3:completeAnimation()
+
 				ScoreColumn3.Text:completeAnimation()
 				self.ScoreColumn3:setRGB( 1, 1, 1 )
 				self.ScoreColumn3:setAlpha( 1 )
 				self.ScoreColumn3.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn3.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn3, {} )
+
 				ScoreColumn4:completeAnimation()
+
 				ScoreColumn4.Text:completeAnimation()
 				self.ScoreColumn4:setRGB( 1, 1, 1 )
 				self.ScoreColumn4:setAlpha( 1 )
 				self.ScoreColumn4.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn4.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn4, {} )
+
 				ScoreColumn5:completeAnimation()
+
 				ScoreColumn5.Text:completeAnimation()
 				self.ScoreColumn5:setRGB( 1, 1, 1 )
 				self.ScoreColumn5:setAlpha( 1 )
 				self.ScoreColumn5.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn5.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn5, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 11 )
+
 				Top3PlayerScoreBlurBox0:completeAnimation()
 				self.Top3PlayerScoreBlurBox0:setRGB( 1, 1, 1 )
 				self.clipFinished( Top3PlayerScoreBlurBox0, {} )
+
 				Rank:completeAnimation()
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setRGB( 1, 1, 1 )
 				self.clipFinished( RankIcon, {} )
+
 				Gamertag:completeAnimation()
 				self.Gamertag:setRGB( 1, 1, 1 )
 				self.clipFinished( Gamertag, {} )
+
 				ScoreColumn1:completeAnimation()
+
 				ScoreColumn1.Text:completeAnimation()
 				self.ScoreColumn1:setRGB( 1, 1, 1 )
 				self.ScoreColumn1.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn1.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn1, {} )
+
 				ScoreColumn2:completeAnimation()
+
 				ScoreColumn2.Text:completeAnimation()
 				self.ScoreColumn2:setRGB( 1, 1, 1 )
 				self.ScoreColumn2.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn2.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn2, {} )
+
 				ScoreColumn3:completeAnimation()
+
 				ScoreColumn3.Text:completeAnimation()
 				self.ScoreColumn3:setRGB( 1, 1, 1 )
 				self.ScoreColumn3.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn3.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn3, {} )
+
 				ScoreColumn4:completeAnimation()
+
 				ScoreColumn4.Text:completeAnimation()
 				self.ScoreColumn4:setRGB( 1, 1, 1 )
 				self.ScoreColumn4.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn4.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn4, {} )
+
 				ScoreColumn5:completeAnimation()
+
 				ScoreColumn5.Text:completeAnimation()
 				self.ScoreColumn5:setRGB( 1, 1, 1 )
 				self.ScoreColumn5.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn5.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn5, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
@@ -395,111 +429,143 @@ CoD.ScoreboardRowWidget.new = function ( menu, controller )
 		GenesisEndGame = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				Top3PlayerScoreBlurBox0:completeAnimation()
 				self.Top3PlayerScoreBlurBox0:setRGB( 1, 1, 1 )
 				self.Top3PlayerScoreBlurBox0:setAlpha( 0 )
 				self.clipFinished( Top3PlayerScoreBlurBox0, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setLeftRight( true, false, 23, 52 )
 				self.Rank:setTopBottom( false, false, -11, 10 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setRGB( 1, 1, 1 )
 				self.clipFinished( RankIcon, {} )
+
 				Gamertag:completeAnimation()
 				self.Gamertag:setLeftRight( true, false, 82, 335 )
 				self.Gamertag:setTopBottom( false, false, -12, 10 )
 				self.Gamertag:setRGB( 1, 1, 1 )
 				self.clipFinished( Gamertag, {} )
+
 				ScoreColumn1:completeAnimation()
+
 				ScoreColumn1.Text:completeAnimation()
 				self.ScoreColumn1:setRGB( 1, 1, 1 )
 				self.ScoreColumn1:setAlpha( 1 )
 				self.ScoreColumn1.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn1.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn1, {} )
+
 				ScoreColumn2:completeAnimation()
+
 				ScoreColumn2.Text:completeAnimation()
 				self.ScoreColumn2:setRGB( 1, 1, 1 )
 				self.ScoreColumn2:setAlpha( 1 )
 				self.ScoreColumn2.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn2.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn2, {} )
+
 				ScoreColumn3:completeAnimation()
+
 				ScoreColumn3.Text:completeAnimation()
 				self.ScoreColumn3:setRGB( 1, 1, 1 )
 				self.ScoreColumn3:setAlpha( 1 )
 				self.ScoreColumn3.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn3.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn3, {} )
+
 				ScoreColumn4:completeAnimation()
+
 				ScoreColumn4.Text:completeAnimation()
 				self.ScoreColumn4:setRGB( 1, 1, 1 )
 				self.ScoreColumn4:setAlpha( 1 )
 				self.ScoreColumn4.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn4.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn4, {} )
+
 				ScoreColumn5:completeAnimation()
+
 				ScoreColumn5.Text:completeAnimation()
 				self.ScoreColumn5:setRGB( 1, 1, 1 )
 				self.ScoreColumn5:setAlpha( 1 )
 				self.ScoreColumn5.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn5.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn5, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 11 )
+
 				Top3PlayerScoreBlurBox0:completeAnimation()
 				self.Top3PlayerScoreBlurBox0:setRGB( 1, 1, 1 )
 				self.Top3PlayerScoreBlurBox0:setAlpha( 0 )
 				self.clipFinished( Top3PlayerScoreBlurBox0, {} )
+
 				Rank:completeAnimation()
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setRGB( 1, 1, 1 )
 				self.clipFinished( RankIcon, {} )
+
 				Gamertag:completeAnimation()
 				self.Gamertag:setRGB( 1, 1, 1 )
 				self.clipFinished( Gamertag, {} )
+
 				ScoreColumn1:completeAnimation()
+
 				ScoreColumn1.Text:completeAnimation()
 				self.ScoreColumn1:setRGB( 1, 1, 1 )
 				self.ScoreColumn1.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn1.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn1, {} )
+
 				ScoreColumn2:completeAnimation()
+
 				ScoreColumn2.Text:completeAnimation()
 				self.ScoreColumn2:setRGB( 1, 1, 1 )
 				self.ScoreColumn2.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn2.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn2, {} )
+
 				ScoreColumn3:completeAnimation()
+
 				ScoreColumn3.Text:completeAnimation()
 				self.ScoreColumn3:setRGB( 1, 1, 1 )
 				self.ScoreColumn3.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn3.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn3, {} )
+
 				ScoreColumn4:completeAnimation()
+
 				ScoreColumn4.Text:completeAnimation()
 				self.ScoreColumn4:setRGB( 1, 1, 1 )
 				self.ScoreColumn4.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn4.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn4, {} )
+
 				ScoreColumn5:completeAnimation()
+
 				ScoreColumn5.Text:completeAnimation()
 				self.ScoreColumn5:setRGB( 1, 1, 1 )
 				self.ScoreColumn5.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn5.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn5, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
@@ -508,60 +574,76 @@ CoD.ScoreboardRowWidget.new = function ( menu, controller )
 		IsCoDCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				Top3PlayerScoreBlurBox0:completeAnimation()
 				self.Top3PlayerScoreBlurBox0:setRGB( 1, 1, 1 )
 				self.Top3PlayerScoreBlurBox0:setAlpha( 1 )
 				self.clipFinished( Top3PlayerScoreBlurBox0, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setLeftRight( true, false, 23, 52 )
 				self.Rank:setTopBottom( false, false, -11, 10 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setRGB( 1, 1, 1 )
 				self.clipFinished( RankIcon, {} )
+
 				Gamertag:completeAnimation()
 				self.Gamertag:setLeftRight( true, false, 82, 335 )
 				self.Gamertag:setTopBottom( false, false, -12, 10 )
 				self.Gamertag:setRGB( 1, 1, 1 )
 				self.clipFinished( Gamertag, {} )
+
 				ScoreColumn1:completeAnimation()
+
 				ScoreColumn1.Text:completeAnimation()
 				self.ScoreColumn1:setRGB( 1, 1, 1 )
 				self.ScoreColumn1:setAlpha( 1 )
 				self.ScoreColumn1.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn1.Text:setAlpha( 0 )
 				self.clipFinished( ScoreColumn1, {} )
+
 				ScoreColumn2:completeAnimation()
+
 				ScoreColumn2.Text:completeAnimation()
 				self.ScoreColumn2:setRGB( 1, 1, 1 )
 				self.ScoreColumn2:setAlpha( 1 )
 				self.ScoreColumn2.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn2.Text:setAlpha( 0 )
 				self.clipFinished( ScoreColumn2, {} )
+
 				ScoreColumn3:completeAnimation()
+
 				ScoreColumn3.Text:completeAnimation()
 				self.ScoreColumn3:setRGB( 1, 1, 1 )
 				self.ScoreColumn3:setAlpha( 1 )
 				self.ScoreColumn3.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn3.Text:setAlpha( 0 )
 				self.clipFinished( ScoreColumn3, {} )
+
 				ScoreColumn4:completeAnimation()
+
 				ScoreColumn4.Text:completeAnimation()
 				self.ScoreColumn4:setRGB( 1, 1, 1 )
 				self.ScoreColumn4:setAlpha( 1 )
 				self.ScoreColumn4.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn4.Text:setAlpha( 0 )
 				self.clipFinished( ScoreColumn4, {} )
+
 				ScoreColumn5:completeAnimation()
+
 				ScoreColumn5.Text:completeAnimation()
 				self.ScoreColumn5:setRGB( 1, 1, 1 )
 				self.ScoreColumn5:setAlpha( 1 )
 				self.ScoreColumn5.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn5.Text:setAlpha( 0 )
 				self.clipFinished( ScoreColumn5, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
@@ -570,55 +652,70 @@ CoD.ScoreboardRowWidget.new = function ( menu, controller )
 		FrontendArabic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Top3PlayerScoreBlurBox0:completeAnimation()
 				self.Top3PlayerScoreBlurBox0:setRGB( 1, 1, 1 )
 				self.Top3PlayerScoreBlurBox0:setAlpha( 1 )
 				self.clipFinished( Top3PlayerScoreBlurBox0, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setRGB( 1, 1, 1 )
 				self.clipFinished( RankIcon, {} )
+
 				Gamertag:completeAnimation()
 				self.Gamertag:setRGB( 1, 1, 1 )
 				self.Gamertag:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 				self.clipFinished( Gamertag, {} )
+
 				ScoreColumn1:completeAnimation()
+
 				ScoreColumn1.Text:completeAnimation()
 				self.ScoreColumn1:setRGB( 1, 1, 1 )
 				self.ScoreColumn1:setAlpha( 1 )
 				self.ScoreColumn1.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn1.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn1, {} )
+
 				ScoreColumn2:completeAnimation()
+
 				ScoreColumn2.Text:completeAnimation()
 				self.ScoreColumn2:setRGB( 1, 1, 1 )
 				self.ScoreColumn2:setAlpha( 1 )
 				self.ScoreColumn2.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn2.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn2, {} )
+
 				ScoreColumn3:completeAnimation()
+
 				ScoreColumn3.Text:completeAnimation()
 				self.ScoreColumn3:setRGB( 1, 1, 1 )
 				self.ScoreColumn3:setAlpha( 1 )
 				self.ScoreColumn3.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn3.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn3, {} )
+
 				ScoreColumn4:completeAnimation()
+
 				ScoreColumn4.Text:completeAnimation()
 				self.ScoreColumn4:setRGB( 1, 1, 1 )
 				self.ScoreColumn4:setAlpha( 1 )
 				self.ScoreColumn4.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn4.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn4, {} )
+
 				ScoreColumn5:completeAnimation()
+
 				ScoreColumn5.Text:completeAnimation()
 				self.ScoreColumn5:setRGB( 1, 1, 1 )
 				self.ScoreColumn5:setAlpha( 1 )
 				self.ScoreColumn5.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn5.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn5, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
@@ -627,54 +724,69 @@ CoD.ScoreboardRowWidget.new = function ( menu, controller )
 		Frontend = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Top3PlayerScoreBlurBox0:completeAnimation()
 				self.Top3PlayerScoreBlurBox0:setRGB( 1, 1, 1 )
 				self.Top3PlayerScoreBlurBox0:setAlpha( 1 )
 				self.clipFinished( Top3PlayerScoreBlurBox0, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setRGB( 1, 1, 1 )
 				self.clipFinished( RankIcon, {} )
+
 				Gamertag:completeAnimation()
 				self.Gamertag:setRGB( 1, 1, 1 )
 				self.clipFinished( Gamertag, {} )
+
 				ScoreColumn1:completeAnimation()
+
 				ScoreColumn1.Text:completeAnimation()
 				self.ScoreColumn1:setRGB( 1, 1, 1 )
 				self.ScoreColumn1:setAlpha( 1 )
 				self.ScoreColumn1.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn1.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn1, {} )
+
 				ScoreColumn2:completeAnimation()
+
 				ScoreColumn2.Text:completeAnimation()
 				self.ScoreColumn2:setRGB( 1, 1, 1 )
 				self.ScoreColumn2:setAlpha( 1 )
 				self.ScoreColumn2.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn2.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn2, {} )
+
 				ScoreColumn3:completeAnimation()
+
 				ScoreColumn3.Text:completeAnimation()
 				self.ScoreColumn3:setRGB( 1, 1, 1 )
 				self.ScoreColumn3:setAlpha( 1 )
 				self.ScoreColumn3.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn3.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn3, {} )
+
 				ScoreColumn4:completeAnimation()
+
 				ScoreColumn4.Text:completeAnimation()
 				self.ScoreColumn4:setRGB( 1, 1, 1 )
 				self.ScoreColumn4:setAlpha( 1 )
 				self.ScoreColumn4.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn4.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn4, {} )
+
 				ScoreColumn5:completeAnimation()
+
 				ScoreColumn5.Text:completeAnimation()
 				self.ScoreColumn5:setRGB( 1, 1, 1 )
 				self.ScoreColumn5:setAlpha( 1 )
 				self.ScoreColumn5.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn5.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn5, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
@@ -683,105 +795,136 @@ CoD.ScoreboardRowWidget.new = function ( menu, controller )
 		IsSelfArabic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Top3PlayerScoreBlurBox0:completeAnimation()
 				self.Top3PlayerScoreBlurBox0:setRGB( 1, 1, 1 )
 				self.Top3PlayerScoreBlurBox0:setAlpha( 1 )
 				self.clipFinished( Top3PlayerScoreBlurBox0, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setRGB( 1, 1, 1 )
 				self.clipFinished( RankIcon, {} )
+
 				Gamertag:completeAnimation()
 				self.Gamertag:setRGB( 1, 0.84, 0.04 )
 				self.Gamertag:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 				self.clipFinished( Gamertag, {} )
+
 				ScoreColumn1:completeAnimation()
+
 				ScoreColumn1.Text:completeAnimation()
 				self.ScoreColumn1:setRGB( 1, 1, 1 )
 				self.ScoreColumn1:setAlpha( 1 )
 				self.ScoreColumn1.Text:setRGB( 1, 0.84, 0.04 )
 				self.ScoreColumn1.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn1, {} )
+
 				ScoreColumn2:completeAnimation()
+
 				ScoreColumn2.Text:completeAnimation()
 				self.ScoreColumn2:setRGB( 1, 1, 1 )
 				self.ScoreColumn2:setAlpha( 1 )
 				self.ScoreColumn2.Text:setRGB( 1, 0.84, 0.04 )
 				self.ScoreColumn2.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn2, {} )
+
 				ScoreColumn3:completeAnimation()
+
 				ScoreColumn3.Text:completeAnimation()
 				self.ScoreColumn3:setRGB( 1, 1, 1 )
 				self.ScoreColumn3:setAlpha( 1 )
 				self.ScoreColumn3.Text:setRGB( 1, 0.84, 0.04 )
 				self.ScoreColumn3.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn3, {} )
+
 				ScoreColumn4:completeAnimation()
+
 				ScoreColumn4.Text:completeAnimation()
 				self.ScoreColumn4:setRGB( 1, 1, 1 )
 				self.ScoreColumn4:setAlpha( 1 )
 				self.ScoreColumn4.Text:setRGB( 1, 0.84, 0.04 )
 				self.ScoreColumn4.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn4, {} )
+
 				ScoreColumn5:completeAnimation()
+
 				ScoreColumn5.Text:completeAnimation()
 				self.ScoreColumn5:setRGB( 1, 1, 1 )
 				self.ScoreColumn5:setAlpha( 1 )
 				self.ScoreColumn5.Text:setRGB( 1, 0.84, 0.04 )
 				self.ScoreColumn5.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn5, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 11 )
+
 				Top3PlayerScoreBlurBox0:completeAnimation()
 				self.Top3PlayerScoreBlurBox0:setRGB( 1, 1, 1 )
 				self.clipFinished( Top3PlayerScoreBlurBox0, {} )
+
 				Rank:completeAnimation()
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setRGB( 1, 1, 1 )
 				self.clipFinished( RankIcon, {} )
+
 				Gamertag:completeAnimation()
 				self.Gamertag:setRGB( 1, 0.84, 0.04 )
 				self.clipFinished( Gamertag, {} )
+
 				ScoreColumn1:completeAnimation()
+
 				ScoreColumn1.Text:completeAnimation()
 				self.ScoreColumn1:setRGB( 1, 1, 1 )
 				self.ScoreColumn1.Text:setRGB( 1, 0.84, 0.04 )
 				self.ScoreColumn1.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn1, {} )
+
 				ScoreColumn2:completeAnimation()
+
 				ScoreColumn2.Text:completeAnimation()
 				self.ScoreColumn2:setRGB( 1, 1, 1 )
 				self.ScoreColumn2.Text:setRGB( 1, 0.84, 0.04 )
 				self.ScoreColumn2.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn2, {} )
+
 				ScoreColumn3:completeAnimation()
+
 				ScoreColumn3.Text:completeAnimation()
 				self.ScoreColumn3:setRGB( 1, 1, 1 )
 				self.ScoreColumn3.Text:setRGB( 1, 0.84, 0.04 )
 				self.ScoreColumn3.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn3, {} )
+
 				ScoreColumn4:completeAnimation()
+
 				ScoreColumn4.Text:completeAnimation()
 				self.ScoreColumn4:setRGB( 1, 1, 1 )
 				self.ScoreColumn4.Text:setRGB( 1, 0.84, 0.04 )
 				self.ScoreColumn4.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn4, {} )
+
 				ScoreColumn5:completeAnimation()
+
 				ScoreColumn5.Text:completeAnimation()
 				self.ScoreColumn5:setRGB( 1, 1, 1 )
 				self.ScoreColumn5.Text:setRGB( 1, 0.84, 0.04 )
 				self.ScoreColumn5.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn5, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
@@ -790,104 +933,135 @@ CoD.ScoreboardRowWidget.new = function ( menu, controller )
 		IsSelf = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Top3PlayerScoreBlurBox0:completeAnimation()
 				self.Top3PlayerScoreBlurBox0:setRGB( 1, 1, 1 )
 				self.Top3PlayerScoreBlurBox0:setAlpha( 1 )
 				self.clipFinished( Top3PlayerScoreBlurBox0, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setRGB( 1, 1, 1 )
 				self.clipFinished( RankIcon, {} )
+
 				Gamertag:completeAnimation()
 				self.Gamertag:setRGB( 1, 0.84, 0.04 )
 				self.clipFinished( Gamertag, {} )
+
 				ScoreColumn1:completeAnimation()
+
 				ScoreColumn1.Text:completeAnimation()
 				self.ScoreColumn1:setRGB( 1, 1, 1 )
 				self.ScoreColumn1:setAlpha( 1 )
 				self.ScoreColumn1.Text:setRGB( 1, 0.84, 0.04 )
 				self.ScoreColumn1.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn1, {} )
+
 				ScoreColumn2:completeAnimation()
+
 				ScoreColumn2.Text:completeAnimation()
 				self.ScoreColumn2:setRGB( 1, 1, 1 )
 				self.ScoreColumn2:setAlpha( 1 )
 				self.ScoreColumn2.Text:setRGB( 1, 0.84, 0.04 )
 				self.ScoreColumn2.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn2, {} )
+
 				ScoreColumn3:completeAnimation()
+
 				ScoreColumn3.Text:completeAnimation()
 				self.ScoreColumn3:setRGB( 1, 1, 1 )
 				self.ScoreColumn3:setAlpha( 1 )
 				self.ScoreColumn3.Text:setRGB( 1, 0.84, 0.04 )
 				self.ScoreColumn3.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn3, {} )
+
 				ScoreColumn4:completeAnimation()
+
 				ScoreColumn4.Text:completeAnimation()
 				self.ScoreColumn4:setRGB( 1, 1, 1 )
 				self.ScoreColumn4:setAlpha( 1 )
 				self.ScoreColumn4.Text:setRGB( 1, 0.84, 0.04 )
 				self.ScoreColumn4.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn4, {} )
+
 				ScoreColumn5:completeAnimation()
+
 				ScoreColumn5.Text:completeAnimation()
 				self.ScoreColumn5:setRGB( 1, 1, 1 )
 				self.ScoreColumn5:setAlpha( 1 )
 				self.ScoreColumn5.Text:setRGB( 1, 0.84, 0.04 )
 				self.ScoreColumn5.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn5, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 11 )
+
 				Top3PlayerScoreBlurBox0:completeAnimation()
 				self.Top3PlayerScoreBlurBox0:setRGB( 1, 1, 1 )
 				self.clipFinished( Top3PlayerScoreBlurBox0, {} )
+
 				Rank:completeAnimation()
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setRGB( 1, 1, 1 )
 				self.clipFinished( RankIcon, {} )
+
 				Gamertag:completeAnimation()
 				self.Gamertag:setRGB( 1, 0.84, 0.04 )
 				self.clipFinished( Gamertag, {} )
+
 				ScoreColumn1:completeAnimation()
+
 				ScoreColumn1.Text:completeAnimation()
 				self.ScoreColumn1:setRGB( 1, 1, 1 )
 				self.ScoreColumn1.Text:setRGB( 1, 0.84, 0.04 )
 				self.ScoreColumn1.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn1, {} )
+
 				ScoreColumn2:completeAnimation()
+
 				ScoreColumn2.Text:completeAnimation()
 				self.ScoreColumn2:setRGB( 1, 1, 1 )
 				self.ScoreColumn2.Text:setRGB( 1, 0.84, 0.04 )
 				self.ScoreColumn2.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn2, {} )
+
 				ScoreColumn3:completeAnimation()
+
 				ScoreColumn3.Text:completeAnimation()
 				self.ScoreColumn3:setRGB( 1, 1, 1 )
 				self.ScoreColumn3.Text:setRGB( 1, 0.84, 0.04 )
 				self.ScoreColumn3.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn3, {} )
+
 				ScoreColumn4:completeAnimation()
+
 				ScoreColumn4.Text:completeAnimation()
 				self.ScoreColumn4:setRGB( 1, 1, 1 )
 				self.ScoreColumn4.Text:setRGB( 1, 0.84, 0.04 )
 				self.ScoreColumn4.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn4, {} )
+
 				ScoreColumn5:completeAnimation()
+
 				ScoreColumn5.Text:completeAnimation()
 				self.ScoreColumn5:setRGB( 1, 1, 1 )
 				self.ScoreColumn5.Text:setRGB( 1, 0.84, 0.04 )
 				self.ScoreColumn5.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn5, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
@@ -896,116 +1070,149 @@ CoD.ScoreboardRowWidget.new = function ( menu, controller )
 		DefaultStateArabic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				Top3PlayerScoreBlurBox0:completeAnimation()
 				self.Top3PlayerScoreBlurBox0:setRGB( 1, 1, 1 )
 				self.clipFinished( Top3PlayerScoreBlurBox0, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setLeftRight( true, false, 23, 52 )
 				self.Rank:setTopBottom( false, false, -11, 10 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setRGB( 1, 1, 1 )
 				self.clipFinished( RankIcon, {} )
+
 				Gamertag:completeAnimation()
 				self.Gamertag:setLeftRight( true, false, 82, 335 )
 				self.Gamertag:setTopBottom( false, false, -12, 10 )
 				self.Gamertag:setRGB( 1, 1, 1 )
 				self.Gamertag:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 				self.clipFinished( Gamertag, {} )
+
 				ScoreColumn1:completeAnimation()
+
 				ScoreColumn1.Text:completeAnimation()
 				self.ScoreColumn1:setRGB( 1, 1, 1 )
 				self.ScoreColumn1:setAlpha( 1 )
 				self.ScoreColumn1.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn1.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn1, {} )
+
 				ScoreColumn2:completeAnimation()
+
 				ScoreColumn2.Text:completeAnimation()
 				self.ScoreColumn2:setRGB( 1, 1, 1 )
 				self.ScoreColumn2:setAlpha( 1 )
 				self.ScoreColumn2.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn2.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn2, {} )
+
 				ScoreColumn3:completeAnimation()
+
 				ScoreColumn3.Text:completeAnimation()
 				self.ScoreColumn3:setRGB( 1, 1, 1 )
 				self.ScoreColumn3:setAlpha( 1 )
 				self.ScoreColumn3.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn3.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn3, {} )
+
 				ScoreColumn4:completeAnimation()
+
 				ScoreColumn4.Text:completeAnimation()
 				self.ScoreColumn4:setRGB( 1, 1, 1 )
 				self.ScoreColumn4:setAlpha( 1 )
 				self.ScoreColumn4.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn4.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn4, {} )
+
 				ScoreColumn5:completeAnimation()
+
 				ScoreColumn5.Text:completeAnimation()
 				self.ScoreColumn5:setRGB( 1, 1, 1 )
 				self.ScoreColumn5:setAlpha( 1 )
 				self.ScoreColumn5.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn5.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn5, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 11 )
+
 				Top3PlayerScoreBlurBox0:completeAnimation()
 				self.Top3PlayerScoreBlurBox0:setRGB( 1, 1, 1 )
 				self.clipFinished( Top3PlayerScoreBlurBox0, {} )
+
 				Rank:completeAnimation()
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setRGB( 1, 1, 1 )
 				self.clipFinished( RankIcon, {} )
+
 				Gamertag:completeAnimation()
 				self.Gamertag:setRGB( 1, 1, 1 )
 				self.clipFinished( Gamertag, {} )
+
 				ScoreColumn1:completeAnimation()
+
 				ScoreColumn1.Text:completeAnimation()
 				self.ScoreColumn1:setRGB( 1, 1, 1 )
 				self.ScoreColumn1.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn1.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn1, {} )
+
 				ScoreColumn2:completeAnimation()
+
 				ScoreColumn2.Text:completeAnimation()
 				self.ScoreColumn2:setRGB( 1, 1, 1 )
 				self.ScoreColumn2.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn2.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn2, {} )
+
 				ScoreColumn3:completeAnimation()
+
 				ScoreColumn3.Text:completeAnimation()
 				self.ScoreColumn3:setRGB( 1, 1, 1 )
 				self.ScoreColumn3.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn3.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn3, {} )
+
 				ScoreColumn4:completeAnimation()
+
 				ScoreColumn4.Text:completeAnimation()
 				self.ScoreColumn4:setRGB( 1, 1, 1 )
 				self.ScoreColumn4.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn4.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn4, {} )
+
 				ScoreColumn5:completeAnimation()
+
 				ScoreColumn5.Text:completeAnimation()
 				self.ScoreColumn5:setRGB( 1, 1, 1 )
 				self.ScoreColumn5.Text:setRGB( 1, 1, 1 )
 				self.ScoreColumn5.Text:setAlpha( 1 )
 				self.clipFinished( ScoreColumn5, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "GenesisEndGame",
@@ -1101,6 +1308,7 @@ CoD.ScoreboardRowWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Top3PlayerScoreBlurBox0:close()
 		element.VSpanel:close()

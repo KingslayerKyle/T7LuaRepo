@@ -4,9 +4,11 @@
 CoD.Outcome_title_PnlLineInt = InheritFrom( LUI.UIElement )
 CoD.Outcome_title_PnlLineInt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Outcome_title_PnlLineInt )
 	self.id = "Outcome_title_PnlLineInt"
@@ -26,11 +28,13 @@ CoD.Outcome_title_PnlLineInt.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		VictoryGreen = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				LineBlur:completeAnimation()
 				self.LineBlur:setRGB( 0.05, 1, 0 )
 				self.LineBlur:setAlpha( 0.3 )
@@ -40,6 +44,7 @@ CoD.Outcome_title_PnlLineInt.new = function ( menu, controller )
 		DefeatRed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				LineBlur:completeAnimation()
 				self.LineBlur:setRGB( 1, 0.01, 0 )
 				self.LineBlur:setAlpha( 0.3 )
@@ -49,6 +54,7 @@ CoD.Outcome_title_PnlLineInt.new = function ( menu, controller )
 		OvertimeOrange = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				LineBlur:completeAnimation()
 				self.LineBlur:setRGB( 0, 0, 0 )
 				self.LineBlur:setAlpha( 0.3 )

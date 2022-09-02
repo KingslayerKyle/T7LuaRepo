@@ -4,9 +4,11 @@
 CoD.YouAndKiller_Widget = InheritFrom( LUI.UIElement )
 CoD.YouAndKiller_Widget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.YouAndKiller_Widget )
 	self.id = "YouAndKiller_Widget"
@@ -36,19 +38,23 @@ CoD.YouAndKiller_Widget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Killcam = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		NemesisKillcam = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Killcam",

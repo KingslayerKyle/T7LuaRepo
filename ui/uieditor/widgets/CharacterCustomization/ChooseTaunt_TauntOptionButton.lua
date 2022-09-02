@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FocusBarContainer" )
 CoD.ChooseTaunt_TauntOptionButton = InheritFrom( LUI.UIElement )
 CoD.ChooseTaunt_TauntOptionButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseTaunt_TauntOptionButton )
 	self.id = "ChooseTaunt_TauntOptionButton"
@@ -101,36 +103,46 @@ CoD.ChooseTaunt_TauntOptionButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 0 )
 				self.clipFinished( bgImage, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 1 )
 				self.clipFinished( itemName, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FocusBarT0:completeAnimation()
 				self.FocusBarT0:setAlpha( 0 )
 				self.clipFinished( FocusBarT0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 1 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FocusBarT0:completeAnimation()
 				self.FocusBarT0:setAlpha( 1 )
 				self.clipFinished( FocusBarT0, {} )
@@ -139,50 +151,64 @@ CoD.ChooseTaunt_TauntOptionButton.new = function ( menu, controller )
 		BMClassified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 1 )
 				self.clipFinished( bgImage, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0.65 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				black:completeAnimation()
 				self.black:setLeftRight( true, false, 86, 118 )
 				self.black:setTopBottom( true, false, 24, 32 )
 				self.black:setAlpha( 1 )
 				self.clipFinished( black, {} )
+
 				blackMarketBrandIcon0:completeAnimation()
 				self.blackMarketBrandIcon0:setAlpha( 0.65 )
 				self.clipFinished( blackMarketBrandIcon0, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 0 )
 				self.clipFinished( itemName, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FocusBarT0:completeAnimation()
 				self.FocusBarT0:setAlpha( 0 )
 				self.clipFinished( FocusBarT0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 1 )
 				self.clipFinished( bgImage, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 1 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				blackMarketBrandIcon0:completeAnimation()
 				self.blackMarketBrandIcon0:setAlpha( 1 )
 				self.clipFinished( blackMarketBrandIcon0, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 0 )
 				self.clipFinished( itemName, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 1 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FocusBarT0:completeAnimation()
 				self.FocusBarT0:setAlpha( 1 )
 				self.clipFinished( FocusBarT0, {} )
@@ -191,42 +217,53 @@ CoD.ChooseTaunt_TauntOptionButton.new = function ( menu, controller )
 		New = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 0 )
 				self.clipFinished( bgImage, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 1 )
 				self.clipFinished( itemName, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 1 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FocusBarT0:completeAnimation()
 				self.FocusBarT0:setAlpha( 0 )
 				self.clipFinished( FocusBarT0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 1 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FocusBarT0:completeAnimation()
 				self.FocusBarT0:setAlpha( 1 )
 				self.clipFinished( FocusBarT0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BMClassified",
@@ -249,6 +286,7 @@ CoD.ChooseTaunt_TauntOptionButton.new = function ( menu, controller )
 			modelName = "isBMClassified"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BMGoldBarMed:close()
 		element.StartMenuframenoBG1:close()

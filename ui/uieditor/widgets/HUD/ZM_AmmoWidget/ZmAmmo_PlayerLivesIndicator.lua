@@ -11,9 +11,11 @@ end
 CoD.ZmAmmo_PlayerLivesIndicator = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_PlayerLivesIndicator.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_PlayerLivesIndicator )
 	self.id = "ZmAmmo_PlayerLivesIndicator"
@@ -122,41 +124,53 @@ CoD.ZmAmmo_PlayerLivesIndicator.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				BeastInactive:completeAnimation()
 				self.BeastInactive:setAlpha( 0 )
 				self.clipFinished( BeastInactive, {} )
+
 				BeastBlue:completeAnimation()
 				self.BeastBlue:setAlpha( 0 )
 				self.clipFinished( BeastBlue, {} )
+
 				BeastLight:completeAnimation()
 				self.BeastLight:setAlpha( 0 )
 				self.clipFinished( BeastLight, {} )
+
 				BeastGlow:completeAnimation()
 				self.BeastGlow:setAlpha( 0 )
 				self.clipFinished( BeastGlow, {} )
+
 				ZmFxSpark2Ext0:completeAnimation()
 				self.ZmFxSpark2Ext0:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext0, {} )
+
 				ZmFxSpark2Ext00:completeAnimation()
 				self.ZmFxSpark2Ext00:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext00, {} )
+
 				ZmFxSpark2Ext000:completeAnimation()
 				self.ZmFxSpark2Ext000:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext000, {} )
+
 				ZmFxSpark2Ext0000:completeAnimation()
 				self.ZmFxSpark2Ext0000:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext0000, {} )
+
 				ZmFxFlsh10:completeAnimation()
 				self.ZmFxFlsh10:setAlpha( 0 )
 				self.clipFinished( ZmFxFlsh10, {} )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver, {} )
+
 				ZmFxSpark2Ext00000:completeAnimation()
 				self.ZmFxSpark2Ext00000:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext00000, {} )
@@ -165,33 +179,43 @@ CoD.ZmAmmo_PlayerLivesIndicator.new = function ( menu, controller )
 		Unavailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BeastInactive:completeAnimation()
 				self.BeastInactive:setAlpha( 0.8 )
 				self.clipFinished( BeastInactive, {} )
+
 				BeastBlue:completeAnimation()
 				self.BeastBlue:setAlpha( 0 )
 				self.clipFinished( BeastBlue, {} )
+
 				BeastLight:completeAnimation()
 				self.BeastLight:setAlpha( 0 )
 				self.clipFinished( BeastLight, {} )
+
 				BeastGlow:completeAnimation()
 				self.BeastGlow:setAlpha( 0 )
 				self.clipFinished( BeastGlow, {} )
+
 				ZmFxSpark2Ext0:completeAnimation()
 				self.ZmFxSpark2Ext0:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext0, {} )
+
 				ZmFxSpark2Ext00:completeAnimation()
 				self.ZmFxSpark2Ext00:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext00, {} )
+
 				ZmFxSpark2Ext0000:completeAnimation()
 				self.ZmFxSpark2Ext0000:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext0000, {} )
+
 				ZmFxFlsh10:completeAnimation()
 				self.ZmFxFlsh10:setAlpha( 0 )
 				self.clipFinished( ZmFxFlsh10, {} )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver, {} )
+
 				ZmFxSpark2Ext00000:completeAnimation()
 				self.ZmFxSpark2Ext00000:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext00000, {} )
@@ -200,6 +224,7 @@ CoD.ZmAmmo_PlayerLivesIndicator.new = function ( menu, controller )
 		Available = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				local BeastInactiveFrame2 = function ( BeastInactive, event )
 					if not event.interrupted then
 						BeastInactive:beginAnimation( "keyframe", 529, false, false, CoD.TweenType.Linear )
@@ -1005,6 +1030,7 @@ CoD.ZmAmmo_PlayerLivesIndicator.new = function ( menu, controller )
 				ZmFxSpark2Ext0000:setTopBottom( true, false, -16.89, 47.11 )
 				ZmFxSpark2Ext0000:setAlpha( 0 )
 				ZmFxSpark2Ext0000:registerEventHandler( "transition_complete_keyframe", f6_local7 )
+
 				ZmFxFlsh10:completeAnimation()
 				self.ZmFxFlsh10:setAlpha( 0 )
 				self.clipFinished( ZmFxFlsh10, {} )
@@ -1107,42 +1133,54 @@ CoD.ZmAmmo_PlayerLivesIndicator.new = function ( menu, controller )
 		HiddenNotZod = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				BeastInactive:completeAnimation()
 				self.BeastInactive:setAlpha( 0 )
 				self.clipFinished( BeastInactive, {} )
+
 				BeastBlue:completeAnimation()
 				self.BeastBlue:setAlpha( 0 )
 				self.clipFinished( BeastBlue, {} )
+
 				BeastLight:completeAnimation()
 				self.BeastLight:setAlpha( 0 )
 				self.clipFinished( BeastLight, {} )
+
 				BeastGlow:completeAnimation()
 				self.BeastGlow:setAlpha( 0 )
 				self.clipFinished( BeastGlow, {} )
+
 				ZmFxSpark2Ext0:completeAnimation()
 				self.ZmFxSpark2Ext0:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext0, {} )
+
 				ZmFxSpark2Ext00:completeAnimation()
 				self.ZmFxSpark2Ext00:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext00, {} )
+
 				ZmFxSpark2Ext000:completeAnimation()
 				self.ZmFxSpark2Ext000:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext000, {} )
+
 				ZmFxSpark2Ext0000:completeAnimation()
 				self.ZmFxSpark2Ext0000:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext0000, {} )
+
 				ZmFxFlsh10:completeAnimation()
 				self.ZmFxFlsh10:setAlpha( 0 )
 				self.clipFinished( ZmFxFlsh10, {} )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver, {} )
+
 				ZmFxSpark2Ext00000:completeAnimation()
 				self.ZmFxSpark2Ext00000:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext00000, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HiddenNotZod",
@@ -1339,6 +1377,7 @@ CoD.ZmAmmo_PlayerLivesIndicator.new = function ( menu, controller )
 			modelName = "player_lives"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmFxSpark2Ext0:close()
 		element.ZmFxSpark2Ext00:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_MemberBlurPanelContainer" )
 CoD.LobbyStateString = InheritFrom( LUI.UIElement )
 CoD.LobbyStateString.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyStateString )
 	self.id = "LobbyStateString"
@@ -34,6 +36,7 @@ CoD.LobbyStateString.new = function ( menu, controller )
 	TextState:setTTF( "fonts/RefrigeratorDeluxe-Regular.ttf" )
 	TextState:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	TextState:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( TextState, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrapped( self, element, 2, 0 )
 	end )
@@ -44,9 +47,11 @@ CoD.LobbyStateString.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setAlpha( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				TextState:completeAnimation()
 				self.TextState:setAlpha( 0 )
 				self.clipFinished( TextState, {} )
@@ -55,9 +60,11 @@ CoD.LobbyStateString.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setAlpha( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				TextState:completeAnimation()
 				self.TextState:setAlpha( 1 )
 				self.clipFinished( TextState, {} )
@@ -66,15 +73,18 @@ CoD.LobbyStateString.new = function ( menu, controller )
 		VisibleWithBackground = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				TextState:completeAnimation()
 				self.TextState:setAlpha( 1 )
 				self.clipFinished( TextState, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEMemberBlurPanelContainer0:close()
 	end )

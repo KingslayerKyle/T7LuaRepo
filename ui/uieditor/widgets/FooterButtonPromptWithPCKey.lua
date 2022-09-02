@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.KeyPrompt" )
 CoD.FooterButtonPromptWithPCKey = InheritFrom( LUI.UIElement )
 CoD.FooterButtonPromptWithPCKey.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FooterButtonPromptWithPCKey )
 	self.id = "FooterButtonPromptWithPCKey"
@@ -29,6 +31,7 @@ CoD.FooterButtonPromptWithPCKey.new = function ( menu, controller )
 	label:setTopBottom( true, false, 7, 25 )
 	label:setText( Engine.Localize( "Select" ) )
 	label:setTTF( "fonts/default.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( label, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, -40 )
 	end )
@@ -47,16 +50,19 @@ CoD.FooterButtonPromptWithPCKey.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setRGB( 1, 1, 1 )
 				self.buttonPromptImage:setAlpha( 0 )
 				self.buttonPromptImage:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_saturation_normal" ) )
 				self.buttonPromptImage:setShaderVector( 0, 1, 0, 0, 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setRGB( 1, 1, 1 )
 				self.label:setAlpha( 0 )
 				self.clipFinished( label, {} )
+
 				keyPrompt:completeAnimation()
 				self.keyPrompt:setAlpha( 0 )
 				self.clipFinished( keyPrompt, {} )
@@ -65,16 +71,19 @@ CoD.FooterButtonPromptWithPCKey.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setRGB( 0.5, 0.5, 0.5 )
 				self.buttonPromptImage:setAlpha( 0.5 )
 				self.buttonPromptImage:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_saturation_normal" ) )
 				self.buttonPromptImage:setShaderVector( 0, 0, 0, 0, 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setRGB( 0.5, 0.5, 0.5 )
 				self.label:setAlpha( 0.5 )
 				self.clipFinished( label, {} )
+
 				keyPrompt:completeAnimation()
 				self.keyPrompt:setAlpha( 0 )
 				self.clipFinished( keyPrompt, {} )
@@ -83,27 +92,32 @@ CoD.FooterButtonPromptWithPCKey.new = function ( menu, controller )
 		Enabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setRGB( 1, 1, 1 )
 				self.buttonPromptImage:setAlpha( 1 )
 				self.buttonPromptImage:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_saturation_normal" ) )
 				self.buttonPromptImage:setShaderVector( 0, 1, 0, 0, 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setRGB( 1, 1, 1 )
 				self.label:setAlpha( 1 )
 				self.clipFinished( label, {} )
+
 				keyPrompt:completeAnimation()
 				self.keyPrompt:setAlpha( 0 )
 				self.clipFinished( keyPrompt, {} )
 			end,
 			Hide = function ()
 				self:setupElementClipCounter( 2 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setLeftRight( true, false, 0, 32 )
 				self.buttonPromptImage:setTopBottom( true, false, 0, 31 )
 				self.buttonPromptImage:setAlpha( 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setRGB( 1, 1, 1 )
 				self.label:setAlpha( 0 )
@@ -111,12 +125,14 @@ CoD.FooterButtonPromptWithPCKey.new = function ( menu, controller )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 2 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setRGB( 1, 1, 1 )
 				self.buttonPromptImage:setAlpha( 1 )
 				self.buttonPromptImage:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_saturation_normal" ) )
 				self.buttonPromptImage:setShaderVector( 0, 1, 0, 0, 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setRGB( 0.87, 0.37, 0 )
 				self.label:setAlpha( 1 )
@@ -126,16 +142,19 @@ CoD.FooterButtonPromptWithPCKey.new = function ( menu, controller )
 		DisabledPC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setRGB( 0.5, 0.5, 0.5 )
 				self.buttonPromptImage:setAlpha( 0 )
 				self.buttonPromptImage:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_saturation_normal" ) )
 				self.buttonPromptImage:setShaderVector( 0, 0, 0, 0, 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setRGB( 0.5, 0.5, 0.5 )
 				self.label:setAlpha( 0.5 )
 				self.clipFinished( label, {} )
+
 				keyPrompt:completeAnimation()
 				self.keyPrompt:setAlpha( 0.5 )
 				self.clipFinished( keyPrompt, {} )
@@ -144,27 +163,32 @@ CoD.FooterButtonPromptWithPCKey.new = function ( menu, controller )
 		EnabledPC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setRGB( 1, 1, 1 )
 				self.buttonPromptImage:setAlpha( 0 )
 				self.buttonPromptImage:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_saturation_normal" ) )
 				self.buttonPromptImage:setShaderVector( 0, 1, 0, 0, 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setRGB( 1, 1, 1 )
 				self.label:setAlpha( 1 )
 				self.clipFinished( label, {} )
+
 				keyPrompt:completeAnimation()
 				self.keyPrompt:setAlpha( 1 )
 				self.clipFinished( keyPrompt, {} )
 			end,
 			Hide = function ()
 				self:setupElementClipCounter( 2 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setLeftRight( true, false, 0, 32 )
 				self.buttonPromptImage:setTopBottom( true, false, 0, 31 )
 				self.buttonPromptImage:setAlpha( 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setRGB( 1, 1, 1 )
 				self.label:setAlpha( 0 )
@@ -172,12 +196,14 @@ CoD.FooterButtonPromptWithPCKey.new = function ( menu, controller )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 2 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setRGB( 1, 1, 1 )
 				self.buttonPromptImage:setAlpha( 0 )
 				self.buttonPromptImage:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_saturation_normal" ) )
 				self.buttonPromptImage:setShaderVector( 0, 1, 0, 0, 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setRGB( 0.87, 0.37, 0 )
 				self.label:setAlpha( 1 )
@@ -187,9 +213,11 @@ CoD.FooterButtonPromptWithPCKey.new = function ( menu, controller )
 		InitialState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -264,6 +292,7 @@ CoD.FooterButtonPromptWithPCKey.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsElementInState( element, "DefaultState" ) then
 			OverrideWidgetWidth( self, "0" )
@@ -273,6 +302,7 @@ CoD.FooterButtonPromptWithPCKey.new = function ( menu, controller )
 			EnableMouseButton( self, controller )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.keyPrompt:close()
 	end )

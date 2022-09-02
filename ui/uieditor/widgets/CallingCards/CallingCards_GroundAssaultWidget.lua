@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_GroundAssault_Eyes" )
 CoD.CallingCards_GroundAssaultWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_GroundAssaultWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_GroundAssaultWidget )
 	self.id = "CallingCards_GroundAssaultWidget"
@@ -72,6 +74,7 @@ CoD.CallingCards_GroundAssaultWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local BackLightsFrame2 = function ( BackLights, event )
 					local BackLightsFrame3 = function ( BackLights, event )
 						local BackLightsFrame4 = function ( BackLights, event )
@@ -312,10 +315,12 @@ CoD.CallingCards_GroundAssaultWidget.new = function ( menu, controller )
 				GlowOrange:completeAnimation()
 				self.GlowOrange:setAlpha( 0 )
 				GlowOrangeFrame2( GlowOrange, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardsGroundAssaultEyes:close()
 	end )

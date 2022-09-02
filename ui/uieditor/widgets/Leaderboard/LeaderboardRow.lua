@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Lobby.Lists.Members.LobbyMemberBackingFooter" )
 CoD.LeaderboardRow = InheritFrom( LUI.UIElement )
 CoD.LeaderboardRow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LeaderboardRow )
 	self.id = "LeaderboardRow"
@@ -266,96 +268,122 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				LobbyMemberBackingMask0:completeAnimation()
 				self.LobbyMemberBackingMask0:setAlpha( 0 )
 				self.LobbyMemberBackingMask0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBackingMask0, {} )
+
 				LobbyMemberBacking0:completeAnimation()
 				self.LobbyMemberBacking0:setAlpha( 0 )
 				self.LobbyMemberBacking0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking0, {} )
+
 				Position:completeAnimation()
 				self.Position:setAlpha( 1 )
 				self.Position:setZoom( 0 )
 				self.clipFinished( Position, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setZoom( 0 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setZoom( 0 )
 				self.clipFinished( RankIcon, {} )
+
 				Name:completeAnimation()
 				self.Name:setAlpha( 1 )
 				self.Name:setZoom( 0 )
 				self.clipFinished( Name, {} )
+
 				Column0:completeAnimation()
 				self.Column0:setAlpha( 1 )
 				self.Column0:setZoom( 0 )
 				self.clipFinished( Column0, {} )
+
 				Column1:completeAnimation()
 				self.Column1:setAlpha( 1 )
 				self.Column1:setZoom( 0 )
 				self.clipFinished( Column1, {} )
+
 				Column2:completeAnimation()
 				self.Column2:setAlpha( 1 )
 				self.Column2:setZoom( 0 )
 				self.clipFinished( Column2, {} )
+
 				Column3:completeAnimation()
 				self.Column3:setAlpha( 1 )
 				self.Column3:setZoom( 0 )
 				self.clipFinished( Column3, {} )
+
 				Column4:completeAnimation()
 				self.Column4:setAlpha( 1 )
 				self.Column4:setZoom( 0 )
 				self.clipFinished( Column4, {} )
+
 				LobbyMemberBackingFooter0:completeAnimation()
 				self.LobbyMemberBackingFooter0:setAlpha( 0 )
 				self.LobbyMemberBackingFooter0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBackingFooter0, {} )
+
 				LobbyMemberBackingFooter00:completeAnimation()
 				self.LobbyMemberBackingFooter00:setAlpha( 0 )
 				self.clipFinished( LobbyMemberBackingFooter00, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 13 )
+
 				LobbyMemberBackingMask0:completeAnimation()
 				self.LobbyMemberBackingMask0:setAlpha( 1 )
 				self.clipFinished( LobbyMemberBackingMask0, {} )
+
 				LobbyMemberBacking0:completeAnimation()
 				self.LobbyMemberBacking0:setAlpha( 1 )
 				self.clipFinished( LobbyMemberBacking0, {} )
+
 				Position:completeAnimation()
 				self.Position:setZoom( 0 )
 				self.clipFinished( Position, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setZoom( 0 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setZoom( 0 )
 				self.clipFinished( RankIcon, {} )
+
 				Name:completeAnimation()
 				self.Name:setZoom( 0 )
 				self.clipFinished( Name, {} )
+
 				Column0:completeAnimation()
 				self.Column0:setZoom( 0 )
 				self.clipFinished( Column0, {} )
+
 				Column1:completeAnimation()
 				self.Column1:setZoom( 0 )
 				self.clipFinished( Column1, {} )
+
 				Column2:completeAnimation()
 				self.Column2:setZoom( 0 )
 				self.clipFinished( Column2, {} )
+
 				Column3:completeAnimation()
 				self.Column3:setZoom( 0 )
 				self.clipFinished( Column3, {} )
+
 				Column4:completeAnimation()
 				self.Column4:setZoom( 0 )
 				self.clipFinished( Column4, {} )
+
 				LobbyMemberBackingFooter0:completeAnimation()
 				self.LobbyMemberBackingFooter0:setLeftRight( true, true, 1, 1 )
 				self.LobbyMemberBackingFooter0:setTopBottom( false, false, 11, 14 )
 				self.LobbyMemberBackingFooter0:setAlpha( 1 )
 				self.clipFinished( LobbyMemberBackingFooter0, {} )
+
 				LobbyMemberBackingFooter00:completeAnimation()
 				self.LobbyMemberBackingFooter00:setLeftRight( true, true, 1, 1 )
 				self.LobbyMemberBackingFooter00:setTopBottom( false, false, -14, -11 )
@@ -364,6 +392,7 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 13 )
+
 				local LobbyMemberBackingMask0Frame2 = function ( LobbyMemberBackingMask0, event )
 					if not event.interrupted then
 						LobbyMemberBackingMask0:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -394,30 +423,39 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 				LobbyMemberBacking0:completeAnimation()
 				self.LobbyMemberBacking0:setAlpha( 0 )
 				LobbyMemberBacking0Frame2( LobbyMemberBacking0, {} )
+
 				Position:completeAnimation()
 				self.Position:setZoom( 0 )
 				self.clipFinished( Position, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setZoom( 0 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setZoom( 0 )
 				self.clipFinished( RankIcon, {} )
+
 				Name:completeAnimation()
 				self.Name:setZoom( 0 )
 				self.clipFinished( Name, {} )
+
 				Column0:completeAnimation()
 				self.Column0:setZoom( 0 )
 				self.clipFinished( Column0, {} )
+
 				Column1:completeAnimation()
 				self.Column1:setZoom( 0 )
 				self.clipFinished( Column1, {} )
+
 				Column2:completeAnimation()
 				self.Column2:setZoom( 0 )
 				self.clipFinished( Column2, {} )
+
 				Column3:completeAnimation()
 				self.Column3:setZoom( 0 )
 				self.clipFinished( Column3, {} )
+
 				Column4:completeAnimation()
 				self.Column4:setZoom( 0 )
 				self.clipFinished( Column4, {} )
@@ -458,6 +496,7 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 13 )
+
 				local LobbyMemberBackingMask0Frame2 = function ( LobbyMemberBackingMask0, event )
 					if not event.interrupted then
 						LobbyMemberBackingMask0:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -488,30 +527,39 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 				LobbyMemberBacking0:completeAnimation()
 				self.LobbyMemberBacking0:setAlpha( 1 )
 				LobbyMemberBacking0Frame2( LobbyMemberBacking0, {} )
+
 				Position:completeAnimation()
 				self.Position:setZoom( 0 )
 				self.clipFinished( Position, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setZoom( 0 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setZoom( 0 )
 				self.clipFinished( RankIcon, {} )
+
 				Name:completeAnimation()
 				self.Name:setZoom( 0 )
 				self.clipFinished( Name, {} )
+
 				Column0:completeAnimation()
 				self.Column0:setZoom( 0 )
 				self.clipFinished( Column0, {} )
+
 				Column1:completeAnimation()
 				self.Column1:setZoom( 0 )
 				self.clipFinished( Column1, {} )
+
 				Column2:completeAnimation()
 				self.Column2:setZoom( 0 )
 				self.clipFinished( Column2, {} )
+
 				Column3:completeAnimation()
 				self.Column3:setZoom( 0 )
 				self.clipFinished( Column3, {} )
+
 				Column4:completeAnimation()
 				self.Column4:setZoom( 0 )
 				self.clipFinished( Column4, {} )
@@ -554,52 +602,64 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 		Freerun = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				LobbyMemberBackingMask0:completeAnimation()
 				self.LobbyMemberBackingMask0:setAlpha( 0 )
 				self.LobbyMemberBackingMask0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBackingMask0, {} )
+
 				LobbyMemberBacking0:completeAnimation()
 				self.LobbyMemberBacking0:setAlpha( 0 )
 				self.LobbyMemberBacking0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking0, {} )
+
 				Position:completeAnimation()
 				self.Position:setAlpha( 1 )
 				self.Position:setZoom( 0 )
 				self.clipFinished( Position, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setAlpha( 0 )
 				self.Rank:setZoom( 0 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setAlpha( 0 )
 				self.RankIcon:setZoom( 0 )
 				self.clipFinished( RankIcon, {} )
+
 				Name:completeAnimation()
 				self.Name:setLeftRight( true, false, 99, 308 )
 				self.Name:setTopBottom( true, false, 4.5, 20.5 )
 				self.Name:setAlpha( 1 )
 				self.Name:setZoom( 0 )
 				self.clipFinished( Name, {} )
+
 				Column0:completeAnimation()
 				self.Column0:setAlpha( 1 )
 				self.Column0:setZoom( 0 )
 				self.clipFinished( Column0, {} )
+
 				Column1:completeAnimation()
 				self.Column1:setAlpha( 1 )
 				self.Column1:setZoom( 0 )
 				self.clipFinished( Column1, {} )
+
 				Column2:completeAnimation()
 				self.Column2:setAlpha( 1 )
 				self.Column2:setZoom( 0 )
 				self.clipFinished( Column2, {} )
+
 				Column3:completeAnimation()
 				self.Column3:setAlpha( 1 )
 				self.Column3:setZoom( 0 )
 				self.clipFinished( Column3, {} )
+
 				Column4:completeAnimation()
 				self.Column4:setAlpha( 1 )
 				self.Column4:setZoom( 0 )
 				self.clipFinished( Column4, {} )
+
 				LobbyMemberBackingFooter0:completeAnimation()
 				self.LobbyMemberBackingFooter0:setAlpha( 0 )
 				self.LobbyMemberBackingFooter0:setZoom( 0 )
@@ -607,51 +667,64 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 13 )
+
 				LobbyMemberBackingMask0:completeAnimation()
 				self.LobbyMemberBackingMask0:setAlpha( 1 )
 				self.LobbyMemberBackingMask0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBackingMask0, {} )
+
 				LobbyMemberBacking0:completeAnimation()
 				self.LobbyMemberBacking0:setAlpha( 1 )
 				self.LobbyMemberBacking0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking0, {} )
+
 				Position:completeAnimation()
 				self.Position:setZoom( 0 )
 				self.clipFinished( Position, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setAlpha( 0 )
 				self.Rank:setZoom( 0 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setAlpha( 0 )
 				self.RankIcon:setZoom( 0 )
 				self.clipFinished( RankIcon, {} )
+
 				Name:completeAnimation()
 				self.Name:setLeftRight( true, false, 99, 308 )
 				self.Name:setTopBottom( true, false, 4.5, 20.5 )
 				self.Name:setZoom( 0 )
 				self.clipFinished( Name, {} )
+
 				Column0:completeAnimation()
 				self.Column0:setZoom( 0 )
 				self.clipFinished( Column0, {} )
+
 				Column1:completeAnimation()
 				self.Column1:setZoom( 0 )
 				self.clipFinished( Column1, {} )
+
 				Column2:completeAnimation()
 				self.Column2:setZoom( 0 )
 				self.clipFinished( Column2, {} )
+
 				Column3:completeAnimation()
 				self.Column3:setZoom( 0 )
 				self.clipFinished( Column3, {} )
+
 				Column4:completeAnimation()
 				self.Column4:setZoom( 0 )
 				self.clipFinished( Column4, {} )
+
 				LobbyMemberBackingFooter0:completeAnimation()
 				self.LobbyMemberBackingFooter0:setLeftRight( true, true, 1, 1 )
 				self.LobbyMemberBackingFooter0:setTopBottom( false, false, 11, 14 )
 				self.LobbyMemberBackingFooter0:setAlpha( 1 )
 				self.LobbyMemberBackingFooter0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBackingFooter0, {} )
+
 				LobbyMemberBackingFooter00:completeAnimation()
 				self.LobbyMemberBackingFooter00:setLeftRight( true, true, 1, 1 )
 				self.LobbyMemberBackingFooter00:setTopBottom( false, false, -14, -11 )
@@ -660,6 +733,7 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 13 )
+
 				local LobbyMemberBackingMask0Frame2 = function ( LobbyMemberBackingMask0, event )
 					if not event.interrupted then
 						LobbyMemberBackingMask0:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -690,30 +764,39 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 				LobbyMemberBacking0:completeAnimation()
 				self.LobbyMemberBacking0:setAlpha( 0 )
 				LobbyMemberBacking0Frame2( LobbyMemberBacking0, {} )
+
 				Position:completeAnimation()
 				self.Position:setZoom( 0 )
 				self.clipFinished( Position, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setZoom( 0 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setZoom( 0 )
 				self.clipFinished( RankIcon, {} )
+
 				Name:completeAnimation()
 				self.Name:setZoom( 0 )
 				self.clipFinished( Name, {} )
+
 				Column0:completeAnimation()
 				self.Column0:setZoom( 0 )
 				self.clipFinished( Column0, {} )
+
 				Column1:completeAnimation()
 				self.Column1:setZoom( 0 )
 				self.clipFinished( Column1, {} )
+
 				Column2:completeAnimation()
 				self.Column2:setZoom( 0 )
 				self.clipFinished( Column2, {} )
+
 				Column3:completeAnimation()
 				self.Column3:setZoom( 0 )
 				self.clipFinished( Column3, {} )
+
 				Column4:completeAnimation()
 				self.Column4:setZoom( 0 )
 				self.clipFinished( Column4, {} )
@@ -754,6 +837,7 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 13 )
+
 				local LobbyMemberBackingMask0Frame2 = function ( LobbyMemberBackingMask0, event )
 					if not event.interrupted then
 						LobbyMemberBackingMask0:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -784,30 +868,39 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 				LobbyMemberBacking0:completeAnimation()
 				self.LobbyMemberBacking0:setAlpha( 1 )
 				LobbyMemberBacking0Frame2( LobbyMemberBacking0, {} )
+
 				Position:completeAnimation()
 				self.Position:setZoom( 0 )
 				self.clipFinished( Position, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setZoom( 0 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setZoom( 0 )
 				self.clipFinished( RankIcon, {} )
+
 				Name:completeAnimation()
 				self.Name:setZoom( 0 )
 				self.clipFinished( Name, {} )
+
 				Column0:completeAnimation()
 				self.Column0:setZoom( 0 )
 				self.clipFinished( Column0, {} )
+
 				Column1:completeAnimation()
 				self.Column1:setZoom( 0 )
 				self.clipFinished( Column1, {} )
+
 				Column2:completeAnimation()
 				self.Column2:setZoom( 0 )
 				self.clipFinished( Column2, {} )
+
 				Column3:completeAnimation()
 				self.Column3:setZoom( 0 )
 				self.clipFinished( Column3, {} )
+
 				Column4:completeAnimation()
 				self.Column4:setZoom( 0 )
 				self.clipFinished( Column4, {} )
@@ -850,52 +943,64 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 		DOA = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				LobbyMemberBackingMask0:completeAnimation()
 				self.LobbyMemberBackingMask0:setAlpha( 0 )
 				self.LobbyMemberBackingMask0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBackingMask0, {} )
+
 				LobbyMemberBacking0:completeAnimation()
 				self.LobbyMemberBacking0:setAlpha( 0 )
 				self.LobbyMemberBacking0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking0, {} )
+
 				Position:completeAnimation()
 				self.Position:setAlpha( 1 )
 				self.Position:setZoom( 0 )
 				self.clipFinished( Position, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setAlpha( 0 )
 				self.Rank:setZoom( 0 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setAlpha( 0 )
 				self.RankIcon:setZoom( 0 )
 				self.clipFinished( RankIcon, {} )
+
 				Name:completeAnimation()
 				self.Name:setLeftRight( true, false, 99, 308 )
 				self.Name:setTopBottom( true, false, 4.5, 20.5 )
 				self.Name:setAlpha( 1 )
 				self.Name:setZoom( 0 )
 				self.clipFinished( Name, {} )
+
 				Column0:completeAnimation()
 				self.Column0:setAlpha( 1 )
 				self.Column0:setZoom( 0 )
 				self.clipFinished( Column0, {} )
+
 				Column1:completeAnimation()
 				self.Column1:setAlpha( 1 )
 				self.Column1:setZoom( 0 )
 				self.clipFinished( Column1, {} )
+
 				Column2:completeAnimation()
 				self.Column2:setAlpha( 1 )
 				self.Column2:setZoom( 0 )
 				self.clipFinished( Column2, {} )
+
 				Column3:completeAnimation()
 				self.Column3:setAlpha( 1 )
 				self.Column3:setZoom( 0 )
 				self.clipFinished( Column3, {} )
+
 				Column4:completeAnimation()
 				self.Column4:setAlpha( 1 )
 				self.Column4:setZoom( 0 )
 				self.clipFinished( Column4, {} )
+
 				LobbyMemberBackingFooter0:completeAnimation()
 				self.LobbyMemberBackingFooter0:setAlpha( 0 )
 				self.LobbyMemberBackingFooter0:setZoom( 0 )
@@ -903,51 +1008,64 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 13 )
+
 				LobbyMemberBackingMask0:completeAnimation()
 				self.LobbyMemberBackingMask0:setAlpha( 1 )
 				self.LobbyMemberBackingMask0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBackingMask0, {} )
+
 				LobbyMemberBacking0:completeAnimation()
 				self.LobbyMemberBacking0:setAlpha( 1 )
 				self.LobbyMemberBacking0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking0, {} )
+
 				Position:completeAnimation()
 				self.Position:setZoom( 0 )
 				self.clipFinished( Position, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setAlpha( 0 )
 				self.Rank:setZoom( 0 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setAlpha( 0 )
 				self.RankIcon:setZoom( 0 )
 				self.clipFinished( RankIcon, {} )
+
 				Name:completeAnimation()
 				self.Name:setLeftRight( true, false, 99, 308 )
 				self.Name:setTopBottom( true, false, 4.5, 20.5 )
 				self.Name:setZoom( 0 )
 				self.clipFinished( Name, {} )
+
 				Column0:completeAnimation()
 				self.Column0:setZoom( 0 )
 				self.clipFinished( Column0, {} )
+
 				Column1:completeAnimation()
 				self.Column1:setZoom( 0 )
 				self.clipFinished( Column1, {} )
+
 				Column2:completeAnimation()
 				self.Column2:setZoom( 0 )
 				self.clipFinished( Column2, {} )
+
 				Column3:completeAnimation()
 				self.Column3:setZoom( 0 )
 				self.clipFinished( Column3, {} )
+
 				Column4:completeAnimation()
 				self.Column4:setZoom( 0 )
 				self.clipFinished( Column4, {} )
+
 				LobbyMemberBackingFooter0:completeAnimation()
 				self.LobbyMemberBackingFooter0:setLeftRight( true, true, 1, 1 )
 				self.LobbyMemberBackingFooter0:setTopBottom( false, false, 11, 14 )
 				self.LobbyMemberBackingFooter0:setAlpha( 1 )
 				self.LobbyMemberBackingFooter0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBackingFooter0, {} )
+
 				LobbyMemberBackingFooter00:completeAnimation()
 				self.LobbyMemberBackingFooter00:setLeftRight( true, true, 1, 1 )
 				self.LobbyMemberBackingFooter00:setTopBottom( false, false, -14, -11 )
@@ -956,6 +1074,7 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 13 )
+
 				local LobbyMemberBackingMask0Frame2 = function ( LobbyMemberBackingMask0, event )
 					if not event.interrupted then
 						LobbyMemberBackingMask0:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -986,30 +1105,39 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 				LobbyMemberBacking0:completeAnimation()
 				self.LobbyMemberBacking0:setAlpha( 0 )
 				LobbyMemberBacking0Frame2( LobbyMemberBacking0, {} )
+
 				Position:completeAnimation()
 				self.Position:setZoom( 0 )
 				self.clipFinished( Position, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setZoom( 0 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setZoom( 0 )
 				self.clipFinished( RankIcon, {} )
+
 				Name:completeAnimation()
 				self.Name:setZoom( 0 )
 				self.clipFinished( Name, {} )
+
 				Column0:completeAnimation()
 				self.Column0:setZoom( 0 )
 				self.clipFinished( Column0, {} )
+
 				Column1:completeAnimation()
 				self.Column1:setZoom( 0 )
 				self.clipFinished( Column1, {} )
+
 				Column2:completeAnimation()
 				self.Column2:setZoom( 0 )
 				self.clipFinished( Column2, {} )
+
 				Column3:completeAnimation()
 				self.Column3:setZoom( 0 )
 				self.clipFinished( Column3, {} )
+
 				Column4:completeAnimation()
 				self.Column4:setZoom( 0 )
 				self.clipFinished( Column4, {} )
@@ -1050,6 +1178,7 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 13 )
+
 				local LobbyMemberBackingMask0Frame2 = function ( LobbyMemberBackingMask0, event )
 					if not event.interrupted then
 						LobbyMemberBackingMask0:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -1080,30 +1209,39 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 				LobbyMemberBacking0:completeAnimation()
 				self.LobbyMemberBacking0:setAlpha( 1 )
 				LobbyMemberBacking0Frame2( LobbyMemberBacking0, {} )
+
 				Position:completeAnimation()
 				self.Position:setZoom( 0 )
 				self.clipFinished( Position, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setZoom( 0 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setZoom( 0 )
 				self.clipFinished( RankIcon, {} )
+
 				Name:completeAnimation()
 				self.Name:setZoom( 0 )
 				self.clipFinished( Name, {} )
+
 				Column0:completeAnimation()
 				self.Column0:setZoom( 0 )
 				self.clipFinished( Column0, {} )
+
 				Column1:completeAnimation()
 				self.Column1:setZoom( 0 )
 				self.clipFinished( Column1, {} )
+
 				Column2:completeAnimation()
 				self.Column2:setZoom( 0 )
 				self.clipFinished( Column2, {} )
+
 				Column3:completeAnimation()
 				self.Column3:setZoom( 0 )
 				self.clipFinished( Column3, {} )
+
 				Column4:completeAnimation()
 				self.Column4:setZoom( 0 )
 				self.clipFinished( Column4, {} )
@@ -1146,52 +1284,64 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 		Rankless = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				LobbyMemberBackingMask0:completeAnimation()
 				self.LobbyMemberBackingMask0:setAlpha( 0 )
 				self.LobbyMemberBackingMask0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBackingMask0, {} )
+
 				LobbyMemberBacking0:completeAnimation()
 				self.LobbyMemberBacking0:setAlpha( 0 )
 				self.LobbyMemberBacking0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking0, {} )
+
 				Position:completeAnimation()
 				self.Position:setAlpha( 1 )
 				self.Position:setZoom( 0 )
 				self.clipFinished( Position, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setAlpha( 0 )
 				self.Rank:setZoom( 0 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setAlpha( 0 )
 				self.RankIcon:setZoom( 0 )
 				self.clipFinished( RankIcon, {} )
+
 				Name:completeAnimation()
 				self.Name:setLeftRight( true, false, 99, 308 )
 				self.Name:setTopBottom( true, false, 4.5, 20.5 )
 				self.Name:setAlpha( 1 )
 				self.Name:setZoom( 0 )
 				self.clipFinished( Name, {} )
+
 				Column0:completeAnimation()
 				self.Column0:setAlpha( 1 )
 				self.Column0:setZoom( 0 )
 				self.clipFinished( Column0, {} )
+
 				Column1:completeAnimation()
 				self.Column1:setAlpha( 1 )
 				self.Column1:setZoom( 0 )
 				self.clipFinished( Column1, {} )
+
 				Column2:completeAnimation()
 				self.Column2:setAlpha( 1 )
 				self.Column2:setZoom( 0 )
 				self.clipFinished( Column2, {} )
+
 				Column3:completeAnimation()
 				self.Column3:setAlpha( 1 )
 				self.Column3:setZoom( 0 )
 				self.clipFinished( Column3, {} )
+
 				Column4:completeAnimation()
 				self.Column4:setAlpha( 1 )
 				self.Column4:setZoom( 0 )
 				self.clipFinished( Column4, {} )
+
 				LobbyMemberBackingFooter0:completeAnimation()
 				self.LobbyMemberBackingFooter0:setAlpha( 0 )
 				self.LobbyMemberBackingFooter0:setZoom( 0 )
@@ -1199,51 +1349,64 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 13 )
+
 				LobbyMemberBackingMask0:completeAnimation()
 				self.LobbyMemberBackingMask0:setAlpha( 1 )
 				self.LobbyMemberBackingMask0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBackingMask0, {} )
+
 				LobbyMemberBacking0:completeAnimation()
 				self.LobbyMemberBacking0:setAlpha( 1 )
 				self.LobbyMemberBacking0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking0, {} )
+
 				Position:completeAnimation()
 				self.Position:setZoom( 0 )
 				self.clipFinished( Position, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setAlpha( 0 )
 				self.Rank:setZoom( 0 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setAlpha( 0 )
 				self.RankIcon:setZoom( 0 )
 				self.clipFinished( RankIcon, {} )
+
 				Name:completeAnimation()
 				self.Name:setLeftRight( true, false, 99, 308 )
 				self.Name:setTopBottom( true, false, 4.5, 20.5 )
 				self.Name:setZoom( 0 )
 				self.clipFinished( Name, {} )
+
 				Column0:completeAnimation()
 				self.Column0:setZoom( 0 )
 				self.clipFinished( Column0, {} )
+
 				Column1:completeAnimation()
 				self.Column1:setZoom( 0 )
 				self.clipFinished( Column1, {} )
+
 				Column2:completeAnimation()
 				self.Column2:setZoom( 0 )
 				self.clipFinished( Column2, {} )
+
 				Column3:completeAnimation()
 				self.Column3:setZoom( 0 )
 				self.clipFinished( Column3, {} )
+
 				Column4:completeAnimation()
 				self.Column4:setZoom( 0 )
 				self.clipFinished( Column4, {} )
+
 				LobbyMemberBackingFooter0:completeAnimation()
 				self.LobbyMemberBackingFooter0:setLeftRight( true, true, 1, 1 )
 				self.LobbyMemberBackingFooter0:setTopBottom( false, false, 11, 14 )
 				self.LobbyMemberBackingFooter0:setAlpha( 1 )
 				self.LobbyMemberBackingFooter0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBackingFooter0, {} )
+
 				LobbyMemberBackingFooter00:completeAnimation()
 				self.LobbyMemberBackingFooter00:setLeftRight( true, true, 1, 1 )
 				self.LobbyMemberBackingFooter00:setTopBottom( false, false, -14, -11 )
@@ -1252,6 +1415,7 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 13 )
+
 				local LobbyMemberBackingMask0Frame2 = function ( LobbyMemberBackingMask0, event )
 					if not event.interrupted then
 						LobbyMemberBackingMask0:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -1282,30 +1446,39 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 				LobbyMemberBacking0:completeAnimation()
 				self.LobbyMemberBacking0:setAlpha( 0 )
 				LobbyMemberBacking0Frame2( LobbyMemberBacking0, {} )
+
 				Position:completeAnimation()
 				self.Position:setZoom( 0 )
 				self.clipFinished( Position, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setZoom( 0 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setZoom( 0 )
 				self.clipFinished( RankIcon, {} )
+
 				Name:completeAnimation()
 				self.Name:setZoom( 0 )
 				self.clipFinished( Name, {} )
+
 				Column0:completeAnimation()
 				self.Column0:setZoom( 0 )
 				self.clipFinished( Column0, {} )
+
 				Column1:completeAnimation()
 				self.Column1:setZoom( 0 )
 				self.clipFinished( Column1, {} )
+
 				Column2:completeAnimation()
 				self.Column2:setZoom( 0 )
 				self.clipFinished( Column2, {} )
+
 				Column3:completeAnimation()
 				self.Column3:setZoom( 0 )
 				self.clipFinished( Column3, {} )
+
 				Column4:completeAnimation()
 				self.Column4:setZoom( 0 )
 				self.clipFinished( Column4, {} )
@@ -1346,6 +1519,7 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 13 )
+
 				local LobbyMemberBackingMask0Frame2 = function ( LobbyMemberBackingMask0, event )
 					if not event.interrupted then
 						LobbyMemberBackingMask0:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -1376,30 +1550,39 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 				LobbyMemberBacking0:completeAnimation()
 				self.LobbyMemberBacking0:setAlpha( 1 )
 				LobbyMemberBacking0Frame2( LobbyMemberBacking0, {} )
+
 				Position:completeAnimation()
 				self.Position:setZoom( 0 )
 				self.clipFinished( Position, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setZoom( 0 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setZoom( 0 )
 				self.clipFinished( RankIcon, {} )
+
 				Name:completeAnimation()
 				self.Name:setZoom( 0 )
 				self.clipFinished( Name, {} )
+
 				Column0:completeAnimation()
 				self.Column0:setZoom( 0 )
 				self.clipFinished( Column0, {} )
+
 				Column1:completeAnimation()
 				self.Column1:setZoom( 0 )
 				self.clipFinished( Column1, {} )
+
 				Column2:completeAnimation()
 				self.Column2:setZoom( 0 )
 				self.clipFinished( Column2, {} )
+
 				Column3:completeAnimation()
 				self.Column3:setZoom( 0 )
 				self.clipFinished( Column3, {} )
+
 				Column4:completeAnimation()
 				self.Column4:setZoom( 0 )
 				self.clipFinished( Column4, {} )
@@ -1440,6 +1623,7 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Freerun",
@@ -1460,6 +1644,7 @@ CoD.LeaderboardRow.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LobbyMemberBackingMask0:close()
 		element.LobbyMemberBacking0:close()

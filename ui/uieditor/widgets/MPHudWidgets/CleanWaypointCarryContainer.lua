@@ -85,9 +85,11 @@ end
 CoD.CleanWaypointCarryContainer = InheritFrom( LUI.UIElement )
 CoD.CleanWaypointCarryContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CleanWaypointCarryContainer )
 	self.id = "CleanWaypointCarryContainer"

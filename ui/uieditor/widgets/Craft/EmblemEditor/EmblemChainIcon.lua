@@ -4,9 +4,11 @@
 CoD.EmblemChainIcon = InheritFrom( LUI.UIElement )
 CoD.EmblemChainIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemChainIcon )
 	self.id = "EmblemChainIcon"
@@ -34,9 +36,11 @@ CoD.EmblemChainIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				topbar:completeAnimation()
 				self.topbar:setAlpha( 0 )
 				self.clipFinished( topbar, {} )
+
 				linkIcon:completeAnimation()
 				self.linkIcon:setAlpha( 0 )
 				self.clipFinished( linkIcon, {} )
@@ -45,9 +49,11 @@ CoD.EmblemChainIcon.new = function ( menu, controller )
 		Show = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				topbar:completeAnimation()
 				self.topbar:setAlpha( 0 )
 				self.clipFinished( topbar, {} )
+
 				linkIcon:completeAnimation()
 				self.linkIcon:setAlpha( 1 )
 				self.clipFinished( linkIcon, {} )

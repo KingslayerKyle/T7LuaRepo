@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.BlackMarket.fx_Ember" )
 CoD.BlackmarketRewardsCarouselFX = InheritFrom( LUI.UIElement )
 CoD.BlackmarketRewardsCarouselFX.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.BlackmarketRewardsCarouselFX )
 	self.id = "BlackmarketRewardsCarouselFX"

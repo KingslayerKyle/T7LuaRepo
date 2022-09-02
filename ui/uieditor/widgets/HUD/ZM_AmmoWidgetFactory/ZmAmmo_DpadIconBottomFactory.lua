@@ -4,9 +4,11 @@
 CoD.ZmAmmo_DpadIconBottomFactory = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_DpadIconBottomFactory.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_DpadIconBottomFactory )
 	self.id = "ZmAmmo_DpadIconBottomFactory"
@@ -50,15 +52,18 @@ CoD.ZmAmmo_DpadIconBottomFactory.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				IconImgShieldDisabled:completeAnimation()
 				self.IconImgShieldDisabled:setAlpha( 0 )
 				self.clipFinished( IconImgShieldDisabled, {} )
+
 				IconImgShieldActive:completeAnimation()
 				self.IconImgShieldActive:setAlpha( 0 )
 				self.clipFinished( IconImgShieldActive, {} )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 2 )
+
 				local IconImgShieldBaseNewFrame2 = function ( IconImgShieldBaseNew, event )
 					local IconImgShieldBaseNewFrame3 = function ( IconImgShieldBaseNew, event )
 						local IconImgShieldBaseNewFrame4 = function ( IconImgShieldBaseNew, event )
@@ -173,6 +178,7 @@ CoD.ZmAmmo_DpadIconBottomFactory.new = function ( menu, controller )
 				IconImgShieldBaseNew:completeAnimation()
 				self.IconImgShieldBaseNew:setAlpha( 0 )
 				IconImgShieldBaseNewFrame2( IconImgShieldBaseNew, {} )
+
 				IconImgShieldActive:completeAnimation()
 				self.IconImgShieldActive:setAlpha( 1 )
 				self.clipFinished( IconImgShieldActive, {} )
@@ -181,6 +187,7 @@ CoD.ZmAmmo_DpadIconBottomFactory.new = function ( menu, controller )
 		InvalidUse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local IconImgShieldBaseInvalidFrame2 = function ( IconImgShieldBaseInvalid, event )
 					local IconImgShieldBaseInvalidFrame3 = function ( IconImgShieldBaseInvalid, event )
 						local IconImgShieldBaseInvalidFrame4 = function ( IconImgShieldBaseInvalid, event )
@@ -254,22 +261,26 @@ CoD.ZmAmmo_DpadIconBottomFactory.new = function ( menu, controller )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				IconImgShieldActive:completeAnimation()
 				self.IconImgShieldActive:setAlpha( 1 )
 				self.clipFinished( IconImgShieldActive, {} )
 			end,
 			Activate = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		New = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local IconImgShieldBaseNewFrame2 = function ( IconImgShieldBaseNew, event )
 					local IconImgShieldBaseNewFrame3 = function ( IconImgShieldBaseNew, event )
 						local IconImgShieldBaseNewFrame4 = function ( IconImgShieldBaseNew, event )
@@ -384,6 +395,7 @@ CoD.ZmAmmo_DpadIconBottomFactory.new = function ( menu, controller )
 				IconImgShieldBaseNew:completeAnimation()
 				self.IconImgShieldBaseNew:setAlpha( 0 )
 				IconImgShieldBaseNewFrame2( IconImgShieldBaseNew, {} )
+
 				IconImgShieldActive:completeAnimation()
 				self.IconImgShieldActive:setAlpha( 1 )
 				self.clipFinished( IconImgShieldActive, {} )
@@ -392,19 +404,23 @@ CoD.ZmAmmo_DpadIconBottomFactory.new = function ( menu, controller )
 		Unavailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				IconImgShieldBaseNew:completeAnimation()
 				self.IconImgShieldBaseNew:setAlpha( 0 )
 				self.clipFinished( IconImgShieldBaseNew, {} )
+
 				IconImgShieldDisabled:completeAnimation()
 				self.IconImgShieldDisabled:setRGB( 0.35, 0.35, 0.35 )
 				self.IconImgShieldDisabled:setAlpha( 1 )
 				self.clipFinished( IconImgShieldDisabled, {} )
+
 				IconImgShieldActive:completeAnimation()
 				self.IconImgShieldActive:setAlpha( 0 )
 				self.clipFinished( IconImgShieldActive, {} )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 2 )
+
 				local IconImgShieldBaseNewFrame2 = function ( IconImgShieldBaseNew, event )
 					local IconImgShieldBaseNewFrame3 = function ( IconImgShieldBaseNew, event )
 						local IconImgShieldBaseNewFrame4 = function ( IconImgShieldBaseNew, event )
@@ -519,12 +535,14 @@ CoD.ZmAmmo_DpadIconBottomFactory.new = function ( menu, controller )
 				IconImgShieldBaseNew:completeAnimation()
 				self.IconImgShieldBaseNew:setAlpha( 0 )
 				IconImgShieldBaseNewFrame2( IconImgShieldBaseNew, {} )
+
 				IconImgShieldActive:completeAnimation()
 				self.IconImgShieldActive:setAlpha( 1 )
 				self.clipFinished( IconImgShieldActive, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "InvalidUse",

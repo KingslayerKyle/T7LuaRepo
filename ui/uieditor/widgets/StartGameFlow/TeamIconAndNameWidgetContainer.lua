@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.StartGameFlow.TeamIconAndNameWidgetForCodCaster" )
 CoD.TeamIconAndNameWidgetContainer = InheritFrom( LUI.UIElement )
 CoD.TeamIconAndNameWidgetContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TeamIconAndNameWidgetContainer )
 	self.id = "TeamIconAndNameWidgetContainer"
@@ -36,29 +38,35 @@ CoD.TeamIconAndNameWidgetContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TeamIconAndNameWidget:completeAnimation()
 				self.TeamIconAndNameWidget:setAlpha( 1 )
 				self.clipFinished( TeamIconAndNameWidget, {} )
+
 				TeamIconAndNameWidgetForCodCaster:completeAnimation()
 				self.TeamIconAndNameWidgetForCodCaster:setAlpha( 0 )
 				self.clipFinished( TeamIconAndNameWidgetForCodCaster, {} )
 			end,
 			StreakEdit = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		CodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TeamIconAndNameWidget:completeAnimation()
 				self.TeamIconAndNameWidget:setAlpha( 0 )
 				self.clipFinished( TeamIconAndNameWidget, {} )
+
 				TeamIconAndNameWidgetForCodCaster:completeAnimation()
 				self.TeamIconAndNameWidgetForCodCaster:setAlpha( 1 )
 				self.clipFinished( TeamIconAndNameWidgetForCodCaster, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CodCaster",
@@ -75,6 +83,7 @@ CoD.TeamIconAndNameWidgetContainer.new = function ( menu, controller )
 			modelName = "factions.isCoDCaster"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TeamIconAndNameWidget:close()
 		element.TeamIconAndNameWidgetForCodCaster:close()

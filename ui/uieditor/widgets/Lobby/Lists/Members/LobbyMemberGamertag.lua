@@ -4,9 +4,11 @@
 CoD.LobbyMemberGamertag = InheritFrom( LUI.UIElement )
 CoD.LobbyMemberGamertag.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyMemberGamertag )
 	self.id = "LobbyMemberGamertag"
@@ -33,6 +35,7 @@ CoD.LobbyMemberGamertag.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				gamertag:completeAnimation()
 				self.gamertag:setRGB( 0.87, 0.9, 0.9 )
 				self.gamertag:setAlpha( 1 )
@@ -43,6 +46,7 @@ CoD.LobbyMemberGamertag.new = function ( menu, controller )
 		IsSelf = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				gamertag:completeAnimation()
 				self.gamertag:setRGB( 0.96, 1, 0.33 )
 				self.gamertag:setAlpha( 1 )
@@ -51,17 +55,21 @@ CoD.LobbyMemberGamertag.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		IsLackingDLC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				gamertag:completeAnimation()
 				self.gamertag:setRGB( 1, 0.36, 0.36 )
 				self.gamertag:setAlpha( 1 )
@@ -70,17 +78,21 @@ CoD.LobbyMemberGamertag.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		IsPartyMember = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				gamertag:completeAnimation()
 				self.gamertag:setRGB( 0.87, 0.9, 0.9 )
 				self.gamertag:setAlpha( 1 )
@@ -89,15 +101,19 @@ CoD.LobbyMemberGamertag.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "IsSelf",
@@ -134,6 +150,7 @@ CoD.LobbyMemberGamertag.new = function ( menu, controller )
 			modelName = "MapVote.mapVoteMapNext"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.gamertag:close()
 	end )

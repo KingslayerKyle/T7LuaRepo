@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ButtonPanel" )
 CoD.Prestige_Button_Title = InheritFrom( LUI.UIElement )
 CoD.Prestige_Button_Title.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Prestige_Button_Title )
 	self.id = "Prestige_Button_Title"
@@ -34,6 +36,7 @@ CoD.Prestige_Button_Title.new = function ( menu, controller )
 	ButtonTitle:setLetterSpacing( 0.5 )
 	ButtonTitle:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	ButtonTitle:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( ButtonTitle, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 2 )
 	end )
@@ -44,20 +47,25 @@ CoD.Prestige_Button_Title.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel0:close()
 	end )

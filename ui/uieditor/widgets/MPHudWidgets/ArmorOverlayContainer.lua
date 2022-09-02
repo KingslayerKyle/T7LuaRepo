@@ -4,9 +4,11 @@
 CoD.ArmorOverlayContainer = InheritFrom( LUI.UIElement )
 CoD.ArmorOverlayContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ArmorOverlayContainer )
 	self.id = "ArmorOverlayContainer"
@@ -30,6 +32,7 @@ CoD.ArmorOverlayContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ArmorOverlayImage:completeAnimation()
 				self.ArmorOverlayImage:setAlpha( 0 )
 				self.clipFinished( ArmorOverlayImage, {} )
@@ -38,12 +41,14 @@ CoD.ArmorOverlayContainer.new = function ( menu, controller )
 		ArmorActive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ArmorOverlayImage:completeAnimation()
 				self.ArmorOverlayImage:setAlpha( 1 )
 				self.clipFinished( ArmorOverlayImage, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ArmorActive",
@@ -60,6 +65,7 @@ CoD.ArmorOverlayContainer.new = function ( menu, controller )
 			modelName = "hudItems.armorOverlay"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ArmorOverlayImage:close()
 	end )

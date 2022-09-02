@@ -4,9 +4,11 @@
 CoD.GunsmithSnapshotControlButton = InheritFrom( LUI.UIElement )
 CoD.GunsmithSnapshotControlButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunsmithSnapshotControlButton )
 	self.id = "GunsmithSnapshotControlButton"
@@ -46,9 +48,11 @@ CoD.GunsmithSnapshotControlButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				border:completeAnimation()
 				self.border:setRGB( ColorSet.BadgeText.r, ColorSet.BadgeText.g, ColorSet.BadgeText.b )
 				self.clipFinished( border, {} )
+
 				icon:completeAnimation()
 				self.icon:setRGB( 1, 1, 1 )
 				self.icon:setYRot( 0 )
@@ -56,9 +60,11 @@ CoD.GunsmithSnapshotControlButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 2 )
+
 				border:completeAnimation()
 				self.border:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.clipFinished( border, {} )
+
 				icon:completeAnimation()
 				self.icon:setRGB( 1, 1, 1 )
 				self.clipFinished( icon, {} )
@@ -67,9 +73,11 @@ CoD.GunsmithSnapshotControlButton.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				border:completeAnimation()
 				self.border:setAlpha( 0 )
 				self.clipFinished( border, {} )
+
 				icon:completeAnimation()
 				self.icon:setRGB( 0.59, 0.59, 0.59 )
 				self.clipFinished( icon, {} )
@@ -78,9 +86,11 @@ CoD.GunsmithSnapshotControlButton.new = function ( menu, controller )
 		OnState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				border:completeAnimation()
 				self.border:setRGB( ColorSet.BadgeText.r, ColorSet.BadgeText.g, ColorSet.BadgeText.b )
 				self.clipFinished( border, {} )
+
 				icon:completeAnimation()
 				self.icon:setRGB( 0, 1, 0 )
 				self.icon:setYRot( 0 )
@@ -88,15 +98,18 @@ CoD.GunsmithSnapshotControlButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 2 )
+
 				border:completeAnimation()
 				self.border:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.clipFinished( border, {} )
+
 				icon:completeAnimation()
 				self.icon:setRGB( 0, 1, 0 )
 				self.clipFinished( icon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -167,6 +180,7 @@ CoD.GunsmithSnapshotControlButton.new = function ( menu, controller )
 			modelName = "GunsmithSnapshot.BO3Logo"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.icon:close()
 	end )

@@ -12,9 +12,11 @@ require( "ui.uieditor.widgets.ZMInventoryStalingrad.ChallengesCompletedWidgetSta
 CoD.InventoryWidgetStalingrad = InheritFrom( LUI.UIElement )
 CoD.InventoryWidgetStalingrad.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.InventoryWidgetStalingrad )
 	self.id = "InventoryWidgetStalingrad"
@@ -232,39 +234,51 @@ CoD.InventoryWidgetStalingrad.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				TextBucket:completeAnimation()
 				self.TextBucket:setAlpha( 0 )
 				self.clipFinished( TextBucket, {} )
+
 				TextShield:completeAnimation()
 				self.TextShield:setAlpha( 0 )
 				self.clipFinished( TextShield, {} )
+
 				TextMachineTools:completeAnimation()
 				self.TextMachineTools:setAlpha( 0 )
 				self.clipFinished( TextMachineTools, {} )
+
 				TextSkull:completeAnimation()
 				self.TextSkull:setAlpha( 0 )
 				self.clipFinished( TextSkull, {} )
+
 				BubbleGumPackInGame:completeAnimation()
 				self.BubbleGumPackInGame:setAlpha( 1 )
 				self.clipFinished( BubbleGumPackInGame, {} )
+
 				PodControlWidget:completeAnimation()
 				self.PodControlWidget:setAlpha( 0 )
 				self.clipFinished( PodControlWidget, {} )
+
 				DragonCollarControllerWidgets:completeAnimation()
 				self.DragonCollarControllerWidgets:setAlpha( 0 )
 				self.clipFinished( DragonCollarControllerWidgets, {} )
+
 				DragonShieldWidgets:completeAnimation()
 				self.DragonShieldWidgets:setAlpha( 0 )
 				self.clipFinished( DragonShieldWidgets, {} )
+
 				DragonEggWidget:completeAnimation()
 				self.DragonEggWidget:setAlpha( 0 )
 				self.clipFinished( DragonEggWidget, {} )
+
 				GameTimeGroup:completeAnimation()
 				self.GameTimeGroup:setAlpha( 0 )
 				self.clipFinished( GameTimeGroup, {} )
+
 				ChallengesCompletedWidgetStalingrad:completeAnimation()
 				self.ChallengesCompletedWidgetStalingrad:setAlpha( 0 )
 				self.clipFinished( ChallengesCompletedWidgetStalingrad, {} )
@@ -273,45 +287,58 @@ CoD.InventoryWidgetStalingrad.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 1 )
 				self.clipFinished( Image0, {} )
+
 				TextBucket:completeAnimation()
 				self.TextBucket:setAlpha( 1 )
 				self.clipFinished( TextBucket, {} )
+
 				TextShield:completeAnimation()
 				self.TextShield:setAlpha( 1 )
 				self.clipFinished( TextShield, {} )
+
 				TextMachineTools:completeAnimation()
 				self.TextMachineTools:setAlpha( 1 )
 				self.clipFinished( TextMachineTools, {} )
+
 				TextSkull:completeAnimation()
 				self.TextSkull:setAlpha( 1 )
 				self.clipFinished( TextSkull, {} )
+
 				BubbleGumPackInGame:completeAnimation()
 				self.BubbleGumPackInGame:setAlpha( 1 )
 				self.clipFinished( BubbleGumPackInGame, {} )
+
 				PodControlWidget:completeAnimation()
 				self.PodControlWidget:setAlpha( 1 )
 				self.clipFinished( PodControlWidget, {} )
+
 				DragonCollarControllerWidgets:completeAnimation()
 				self.DragonCollarControllerWidgets:setAlpha( 1 )
 				self.clipFinished( DragonCollarControllerWidgets, {} )
+
 				DragonShieldWidgets:completeAnimation()
 				self.DragonShieldWidgets:setAlpha( 1 )
 				self.clipFinished( DragonShieldWidgets, {} )
+
 				DragonEggWidget:completeAnimation()
 				self.DragonEggWidget:setAlpha( 1 )
 				self.clipFinished( DragonEggWidget, {} )
+
 				GameTimeGroup:completeAnimation()
 				self.GameTimeGroup:setAlpha( 1 )
 				self.clipFinished( GameTimeGroup, {} )
+
 				ChallengesCompletedWidgetStalingrad:completeAnimation()
 				self.ChallengesCompletedWidgetStalingrad:setAlpha( 1 )
 				self.clipFinished( ChallengesCompletedWidgetStalingrad, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -328,6 +355,7 @@ CoD.InventoryWidgetStalingrad.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BubbleGumPackInGame:close()
 		element.PodControlWidget:close()

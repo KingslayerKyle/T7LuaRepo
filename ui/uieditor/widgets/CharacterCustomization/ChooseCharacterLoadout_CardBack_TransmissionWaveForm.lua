@@ -4,9 +4,11 @@
 CoD.ChooseCharacterLoadout_CardBack_TransmissionWaveForm = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacterLoadout_CardBack_TransmissionWaveForm.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacterLoadout_CardBack_TransmissionWaveForm )
 	self.id = "ChooseCharacterLoadout_CardBack_TransmissionWaveForm"
@@ -28,6 +30,7 @@ CoD.ChooseCharacterLoadout_CardBack_TransmissionWaveForm.new = function ( menu, 
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				waveForm:completeAnimation()
 				self.waveForm:setAlpha( 0 )
 				self.waveForm:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_blackhat_waveform" ) )
@@ -36,6 +39,7 @@ CoD.ChooseCharacterLoadout_CardBack_TransmissionWaveForm.new = function ( menu, 
 			end,
 			Visible = function ()
 				self:setupElementClipCounter( 1 )
+
 				local waveFormFrame2 = function ( waveForm, event )
 					if not event.interrupted then
 						waveForm:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -56,6 +60,7 @@ CoD.ChooseCharacterLoadout_CardBack_TransmissionWaveForm.new = function ( menu, 
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local waveFormFrame2 = function ( waveForm, event )
 					local waveFormFrame3 = function ( waveForm, event )
 						local waveFormFrame4 = function ( waveForm, event )
@@ -194,10 +199,12 @@ CoD.ChooseCharacterLoadout_CardBack_TransmissionWaveForm.new = function ( menu, 
 				self.waveForm:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_blackhat_waveform" ) )
 				self.waveForm:setShaderVector( 0, 0.5, 0.74, 0, 0 )
 				waveFormFrame2( waveForm, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local waveFormFrame2 = function ( waveForm, event )
 					if not event.interrupted then
 						waveForm:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )

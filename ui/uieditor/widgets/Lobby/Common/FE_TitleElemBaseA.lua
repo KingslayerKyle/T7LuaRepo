@@ -4,9 +4,11 @@
 CoD.FE_TitleElemBaseA = InheritFrom( LUI.UIElement )
 CoD.FE_TitleElemBaseA.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_TitleElemBaseA )
 	self.id = "FE_TitleElemBaseA"
@@ -26,6 +28,7 @@ CoD.FE_TitleElemBaseA.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local baseaFrame2 = function ( basea, event )
 					local baseaFrame3 = function ( basea, event )
 						local baseaFrame4 = function ( basea, event )
@@ -85,6 +88,7 @@ CoD.FE_TitleElemBaseA.new = function ( menu, controller )
 				self.basea:setLeftRight( true, false, 0, 56 )
 				self.basea:setTopBottom( true, false, 0, 16 )
 				baseaFrame2( basea, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

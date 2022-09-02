@@ -4,9 +4,11 @@
 CoD.BubbleGumBuffGumShadow = InheritFrom( LUI.UIElement )
 CoD.BubbleGumBuffGumShadow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BubbleGumBuffGumShadow )
 	self.id = "BubbleGumBuffGumShadow"
@@ -27,6 +29,7 @@ CoD.BubbleGumBuffGumShadow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Shadow:completeAnimation()
 				self.Shadow:setAlpha( 0 )
 				self.clipFinished( Shadow, {} )
@@ -35,6 +38,7 @@ CoD.BubbleGumBuffGumShadow.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Shadow:completeAnimation()
 				self.Shadow:setAlpha( 0.5 )
 				self.clipFinished( Shadow, {} )
@@ -43,12 +47,14 @@ CoD.BubbleGumBuffGumShadow.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Shadow:completeAnimation()
 				self.Shadow:setAlpha( 0.5 )
 				self.clipFinished( Shadow, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

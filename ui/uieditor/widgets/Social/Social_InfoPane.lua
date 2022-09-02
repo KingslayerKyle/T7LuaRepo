@@ -21,9 +21,11 @@ end
 CoD.Social_InfoPane = InheritFrom( LUI.UIElement )
 CoD.Social_InfoPane.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_InfoPane )
 	self.id = "Social_InfoPane"
@@ -292,22 +294,28 @@ CoD.Social_InfoPane.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				StartMenuframenoBG00:completeAnimation()
 				self.StartMenuframenoBG00:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG00, {} )
+
 				notInTitle:completeAnimation()
 				self.notInTitle:setAlpha( 0 )
 				self.clipFinished( notInTitle, {} )
+
 				presence:completeAnimation()
 				self.presence:setAlpha( 1 )
 				self.clipFinished( presence, {} )
+
 				primaryGroup:completeAnimation()
 				self.primaryGroup:setLeftRight( true, false, 12.56, 332.91 )
 				self.primaryGroup:setTopBottom( true, false, 278.33, 300.33 )
 				self.clipFinished( primaryGroup, {} )
+
 				rankCP:completeAnimation()
 				self.rankCP:setYRot( 0 )
 				self.clipFinished( rankCP, {} )
+
 				rankMP:completeAnimation()
 				self.rankMP:setYRot( 0 )
 				self.clipFinished( rankMP, {} )
@@ -316,70 +324,86 @@ CoD.Social_InfoPane.new = function ( menu, controller )
 		PlayerDetails = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setLeftRight( true, false, -20.91, 472 )
 				self.StartMenuframenoBG0:setTopBottom( true, false, 143, 355 )
 				self.StartMenuframenoBG0:setAlpha( 0.8 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				StartMenuframenoBG00:completeAnimation()
 				self.StartMenuframenoBG00:setLeftRight( true, false, 484.9, 786.9 )
 				self.StartMenuframenoBG00:setTopBottom( true, false, 143, 355 )
 				self.StartMenuframenoBG00:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG00, {} )
+
 				Socialbackground0:completeAnimation()
 				self.Socialbackground0:setLeftRight( true, false, -30.91, 164.75 )
 				self.Socialbackground0:setTopBottom( true, false, -5, 111.05 )
 				self.Socialbackground0:setScale( 0.9 )
 				self.clipFinished( Socialbackground0, {} )
+
 				notInTitle:completeAnimation()
 				self.notInTitle:setLeftRight( true, false, 117.09, 606 )
 				self.notInTitle:setTopBottom( true, false, -51.98, 158.02 )
 				self.notInTitle:setAlpha( 0 )
 				self.clipFinished( notInTitle, {} )
+
 				presence:completeAnimation()
 				self.presence:setLeftRight( true, false, -20.91, 470 )
 				self.presence:setTopBottom( true, false, 143, 290 )
 				self.presence:setAlpha( 1 )
 				self.clipFinished( presence, {} )
+
 				friendship:completeAnimation()
 				self.friendship:setLeftRight( true, false, 163.15, 316.15 )
 				self.friendship:setTopBottom( true, false, 76.61, 98.61 )
 				self.clipFinished( friendship, {} )
+
 				primaryGroup:completeAnimation()
 				self.primaryGroup:setLeftRight( true, false, 164.75, 468 )
 				self.primaryGroup:setTopBottom( true, false, 74.61, 96.61 )
 				self.clipFinished( primaryGroup, {} )
+
 				callingCard:completeAnimation()
 				self.callingCard:setLeftRight( true, false, 166.33, 471.18 )
 				self.callingCard:setTopBottom( true, false, 0, 74.12 )
 				self.callingCard:setScale( 1 )
 				self.clipFinished( callingCard, {} )
+
 				rankCP:completeAnimation()
 				self.rankCP:setLeftRight( true, false, 491.9, 565.9 )
 				self.rankCP:setTopBottom( true, false, -0.45, 114 )
 				self.clipFinished( rankCP, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setLeftRight( true, false, -29.91, 165.75 )
 				self.emblem:setTopBottom( true, false, -6, 110.8 )
 				self.emblem:setScale( 0.9 )
 				self.clipFinished( emblem, {} )
+
 				rankMP:completeAnimation()
+
 				rankMP.prestige.prestige:completeAnimation()
 				self.rankMP:setLeftRight( true, false, 595.4, 675.4 )
 				self.rankMP:setTopBottom( true, false, -0.45, 114 )
 				self.clipFinished( rankMP, {} )
+
 				rankZM:completeAnimation()
 				self.rankZM:setLeftRight( true, false, 704.9, 784.5 )
 				self.rankZM:setTopBottom( true, false, -0.45, 114 )
 				self.clipFinished( rankZM, {} )
+
 				party:completeAnimation()
 				self.party:setLeftRight( true, false, 486.9, 786.9 )
 				self.party:setTopBottom( true, false, 143, 431 )
 				self.clipFinished( party, {} )
+
 				StartMenuframenoBG000:completeAnimation()
 				self.StartMenuframenoBG000:setLeftRight( true, false, -23.91, 156.58 )
 				self.StartMenuframenoBG000:setTopBottom( true, false, -2, 106.67 )
 				self.clipFinished( StartMenuframenoBG000, {} )
+
 				StartMenuframenoBG0000:completeAnimation()
 				self.StartMenuframenoBG0000:setLeftRight( true, false, 163.15, 470 )
 				self.StartMenuframenoBG0000:setTopBottom( true, false, -2, 76.61 )
@@ -389,68 +413,83 @@ CoD.Social_InfoPane.new = function ( menu, controller )
 		PlayerDetails_NotInTitle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setLeftRight( true, false, -20.91, 472 )
 				self.StartMenuframenoBG0:setTopBottom( true, false, 143, 355 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				StartMenuframenoBG00:completeAnimation()
 				self.StartMenuframenoBG00:setLeftRight( true, false, 484, 786 )
 				self.StartMenuframenoBG00:setTopBottom( true, false, 143, 355 )
 				self.StartMenuframenoBG00:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG00, {} )
+
 				Socialbackground0:completeAnimation()
 				self.Socialbackground0:setLeftRight( true, false, -20.91, 156.58 )
 				self.Socialbackground0:setTopBottom( true, false, 0, 106.67 )
 				self.clipFinished( Socialbackground0, {} )
+
 				notInTitle:completeAnimation()
 				self.notInTitle:setLeftRight( true, false, -20.91, 470 )
 				self.notInTitle:setTopBottom( true, false, 142, 354 )
 				self.notInTitle:setAlpha( 1 )
 				self.clipFinished( notInTitle, {} )
+
 				presence:completeAnimation()
 				self.presence:setLeftRight( true, false, -18.91, 472 )
 				self.presence:setTopBottom( true, false, 143, 290 )
 				self.presence:setAlpha( 0 )
 				self.clipFinished( presence, {} )
+
 				friendship:completeAnimation()
 				self.friendship:setLeftRight( true, false, 163.15, 316.15 )
 				self.friendship:setTopBottom( true, false, 76.61, 98.61 )
 				self.clipFinished( friendship, {} )
+
 				primaryGroup:completeAnimation()
 				self.primaryGroup:setLeftRight( true, false, 164.75, 468 )
 				self.primaryGroup:setTopBottom( true, false, 74.61, 96.61 )
 				self.clipFinished( primaryGroup, {} )
+
 				callingCard:completeAnimation()
 				self.callingCard:setLeftRight( true, false, 166.32, 471.17 )
 				self.callingCard:setTopBottom( true, false, 0.55, 74.12 )
 				self.callingCard:setScale( 1 )
 				self.clipFinished( callingCard, {} )
+
 				rankCP:completeAnimation()
 				self.rankCP:setLeftRight( true, false, 485.9, 565.9 )
 				self.rankCP:setTopBottom( true, false, 1.55, 116 )
 				self.clipFinished( rankCP, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setLeftRight( true, false, -29.91, 165.75 )
 				self.emblem:setTopBottom( true, false, -5, 111.8 )
 				self.emblem:setScale( 0.9 )
 				self.clipFinished( emblem, {} )
+
 				rankMP:completeAnimation()
 				self.rankMP:setLeftRight( true, false, 595.4, 675.4 )
 				self.rankMP:setTopBottom( true, false, 1.55, 116 )
 				self.clipFinished( rankMP, {} )
+
 				rankZM:completeAnimation()
 				self.rankZM:setLeftRight( true, false, 704.9, 784.5 )
 				self.rankZM:setTopBottom( true, false, 1.55, 116 )
 				self.clipFinished( rankZM, {} )
+
 				party:completeAnimation()
 				self.party:setLeftRight( true, false, 485.9, 784.5 )
 				self.party:setTopBottom( true, false, 143, 431 )
 				self.clipFinished( party, {} )
+
 				StartMenuframenoBG000:completeAnimation()
 				self.StartMenuframenoBG000:setLeftRight( true, false, -20.91, 156.58 )
 				self.StartMenuframenoBG000:setTopBottom( true, false, 0, 106.67 )
 				self.StartMenuframenoBG000:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG000, {} )
+
 				StartMenuframenoBG0000:completeAnimation()
 				self.StartMenuframenoBG0000:setLeftRight( true, false, 163.15, 470 )
 				self.StartMenuframenoBG0000:setTopBottom( true, false, 0, 76.61 )
@@ -460,41 +499,51 @@ CoD.Social_InfoPane.new = function ( menu, controller )
 		NotInTitle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setLeftRight( true, false, 363, 664 )
 				self.StartMenuframenoBG0:setTopBottom( true, false, 37, 450 )
 				self.StartMenuframenoBG0:setAlpha( 0.65 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				StartMenuframenoBG00:completeAnimation()
 				self.StartMenuframenoBG00:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG00, {} )
+
 				notInTitle:completeAnimation()
 				self.notInTitle:setLeftRight( true, false, 354, 656 )
 				self.notInTitle:setTopBottom( true, false, 200.73, 71 )
 				self.notInTitle:setAlpha( 0 )
 				self.clipFinished( notInTitle, {} )
+
 				presence:completeAnimation()
 				self.presence:setAlpha( 1 )
 				self.clipFinished( presence, {} )
+
 				primaryGroup:completeAnimation()
 				self.primaryGroup:setLeftRight( true, false, 12.56, 332.91 )
 				self.primaryGroup:setTopBottom( true, false, 278.33, 300.33 )
 				self.clipFinished( primaryGroup, {} )
+
 				rankCP:completeAnimation()
 				self.rankCP:setYRot( 0 )
 				self.clipFinished( rankCP, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setAlpha( 1 )
 				self.clipFinished( emblem, {} )
+
 				rankMP:completeAnimation()
 				self.rankMP:setYRot( 0 )
 				self.clipFinished( rankMP, {} )
+
 				StartMenuframenoBG000:completeAnimation()
 				self.StartMenuframenoBG000:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG000, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "PlayerDetails",
@@ -523,6 +572,7 @@ CoD.Social_InfoPane.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG0:close()
 		element.StartMenuframenoBG00:close()

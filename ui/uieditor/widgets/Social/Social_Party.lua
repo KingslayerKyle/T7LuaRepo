@@ -163,6 +163,7 @@ local PostLoadFunc = function ( self, controller, menu )
 	self.ButtonList:subscribeToModel( Engine.GetModel( Engine.GetGlobalModel(), "lobbyRoot.lobbyLockedIn" ), function ( model )
 		self.ButtonList:updateDataSource()
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		Engine.SetModelValue( Engine.CreateModel( Engine.GetGlobalModel(), "SocialMainMenu.managePartySubListSelected" ), false )
 	end )
@@ -171,9 +172,11 @@ end
 CoD.Social_Party = InheritFrom( LUI.UIElement )
 CoD.Social_Party.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_Party )
 	self.id = "Social_Party"
@@ -358,9 +361,11 @@ CoD.Social_Party.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ButtonList:completeAnimation()
 				self.ButtonList:setAlpha( 1 )
 				self.clipFinished( ButtonList, {} )
+
 				players:completeAnimation()
 				self.players:setAlpha( 1 )
 				self.clipFinished( players, {} )
@@ -369,9 +374,11 @@ CoD.Social_Party.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ButtonList:completeAnimation()
 				self.ButtonList:setAlpha( 0 )
 				self.clipFinished( ButtonList, {} )
+
 				players:completeAnimation()
 				self.players:setAlpha( 0 )
 				self.clipFinished( players, {} )
@@ -388,6 +395,7 @@ CoD.Social_Party.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ButtonList:close()
 		element.players:close()

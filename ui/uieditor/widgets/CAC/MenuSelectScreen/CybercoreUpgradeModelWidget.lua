@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.AbilityWheel.AbilityWheel_ColorPanel" )
 CoD.CybercoreUpgradeModelWidget = InheritFrom( LUI.UIElement )
 CoD.CybercoreUpgradeModelWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CybercoreUpgradeModelWidget )
 	self.id = "CybercoreUpgradeModelWidget"
@@ -256,55 +258,72 @@ CoD.CybercoreUpgradeModelWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				Outline:completeAnimation()
 				self.Outline:setAlpha( 0 )
 				self.clipFinished( Outline, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				abilityImage:completeAnimation()
 				self.abilityImage:setAlpha( 0.85 )
 				self.clipFinished( abilityImage, {} )
+
 				debugImage:completeAnimation()
 				self.debugImage:setRGB( 1, 1, 1 )
 				self.clipFinished( debugImage, {} )
+
 				Selected:completeAnimation()
 				self.Selected:setAlpha( 0 )
 				self.clipFinished( Selected, {} )
+
 				TokenImage0:completeAnimation()
 				self.TokenImage0:setAlpha( 0 )
 				self.clipFinished( TokenImage0, {} )
+
 				SystemOverloardHeader:completeAnimation()
 				self.SystemOverloardHeader:setRGB( 1, 1, 1 )
 				self.SystemOverloardHeader:setAlpha( 0 )
 				self.clipFinished( SystemOverloardHeader, {} )
+
 				TitleImagebacking:completeAnimation()
 				self.TitleImagebacking:setAlpha( 0 )
 				self.clipFinished( TitleImagebacking, {} )
+
 				TokenImage:completeAnimation()
 				self.TokenImage:setAlpha( 0 )
 				self.clipFinished( TokenImage, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				EquippedIcon:completeAnimation()
 				self.EquippedIcon:setAlpha( 0 )
 				self.clipFinished( EquippedIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setAlpha( 0 )
 				self.clipFinished( PanelGlow, {} )
+
 				AbilityWheelColorPanel0:completeAnimation()
 				self.AbilityWheelColorPanel0:setAlpha( 0 )
 				self.clipFinished( AbilityWheelColorPanel0, {} )
+
 				UpgradedIndicator:completeAnimation()
 				self.UpgradedIndicator:setAlpha( 0 )
 				self.clipFinished( UpgradedIndicator, {} )
+
 				UpgradableIcon:completeAnimation()
 				self.UpgradableIcon:setLeftRight( true, false, -169.23, -41.23 )
 				self.UpgradableIcon:setTopBottom( true, false, -76, 52 )
@@ -312,30 +331,39 @@ CoD.CybercoreUpgradeModelWidget.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 13 )
+
 				Outline:completeAnimation()
 				self.Outline:setAlpha( 0 )
 				self.clipFinished( Outline, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				abilityImage:completeAnimation()
 				self.abilityImage:setAlpha( 0.82 )
 				self.clipFinished( abilityImage, {} )
+
 				Selected:completeAnimation()
 				self.Selected:setAlpha( 0 )
 				self.clipFinished( Selected, {} )
+
 				TokenImage0:completeAnimation()
 				self.TokenImage0:setAlpha( 0 )
 				self.clipFinished( TokenImage0, {} )
+
 				SystemOverloardHeader:completeAnimation()
 				self.SystemOverloardHeader:setAlpha( 0 )
 				self.clipFinished( SystemOverloardHeader, {} )
+
 				TitleImagebacking:completeAnimation()
 				self.TitleImagebacking:setAlpha( 0 )
 				self.clipFinished( TitleImagebacking, {} )
+
 				TokenImage:completeAnimation()
 				self.TokenImage:setAlpha( 0 )
 				self.clipFinished( TokenImage, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, -3.12, 2 )
 				self.FocusBarB:setTopBottom( true, false, 119.31, 124 )
@@ -360,9 +388,11 @@ CoD.CybercoreUpgradeModelWidget.new = function ( menu, controller )
 				self.FocusBarT:setTopBottom( true, false, -2.19, 0 )
 				self.FocusBarT:setAlpha( 1 )
 				FocusBarTFrame2( FocusBarT, {} )
+
 				EquippedIcon:completeAnimation()
 				self.EquippedIcon:setAlpha( 0 )
 				self.clipFinished( EquippedIcon, {} )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setLeftRight( true, false, 3.13, 121.59 )
 				self.PanelGlow:setTopBottom( true, false, 0, 120 )
@@ -399,114 +429,148 @@ CoD.CybercoreUpgradeModelWidget.new = function ( menu, controller )
 		Unavailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				Outline:completeAnimation()
 				self.Outline:setLeftRight( true, false, 2.38, 118.46 )
 				self.Outline:setTopBottom( true, false, 3.96, 130.04 )
 				self.Outline:setAlpha( 0 )
 				self.clipFinished( Outline, {} )
+
 				abilityImage:completeAnimation()
 				self.abilityImage:setAlpha( 0 )
 				self.clipFinished( abilityImage, {} )
+
 				debugImage:completeAnimation()
 				self.debugImage:setRGB( 0, 0, 0 )
 				self.clipFinished( debugImage, {} )
+
 				LineLeft0:completeAnimation()
 				self.LineLeft0:setAlpha( 0 )
 				self.clipFinished( LineLeft0, {} )
+
 				AbilityName:completeAnimation()
 				self.AbilityName:setAlpha( 0.5 )
 				self.clipFinished( AbilityName, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				Selected:completeAnimation()
 				self.Selected:setLeftRight( true, false, -25.19, 141 )
 				self.Selected:setTopBottom( true, false, -21.19, 145 )
 				self.Selected:setAlpha( 0 )
 				self.clipFinished( Selected, {} )
+
 				TokenImage0:completeAnimation()
 				self.TokenImage0:setAlpha( 0 )
 				self.clipFinished( TokenImage0, {} )
+
 				SystemOverloardHeader:completeAnimation()
 				self.SystemOverloardHeader:setAlpha( 0 )
 				self.clipFinished( SystemOverloardHeader, {} )
+
 				TitleImagebacking:completeAnimation()
 				self.TitleImagebacking:setAlpha( 0 )
 				self.clipFinished( TitleImagebacking, {} )
+
 				TokenImage:completeAnimation()
 				self.TokenImage:setAlpha( 0 )
 				self.clipFinished( TokenImage, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				EquippedIcon:completeAnimation()
 				self.EquippedIcon:setAlpha( 0 )
 				self.clipFinished( EquippedIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0.82 )
 				self.clipFinished( lockedIcon, {} )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setAlpha( 0 )
 				self.clipFinished( PanelGlow, {} )
+
 				AbilityWheelColorPanel0:completeAnimation()
 				self.AbilityWheelColorPanel0:setAlpha( 0 )
 				self.clipFinished( AbilityWheelColorPanel0, {} )
+
 				UpgradedIndicator:completeAnimation()
 				self.UpgradedIndicator:setAlpha( 0 )
 				self.clipFinished( UpgradedIndicator, {} )
+
 				UpgradableIcon:completeAnimation()
 				self.UpgradableIcon:setAlpha( 0 )
 				self.clipFinished( UpgradableIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 15 )
+
 				abilityImage:completeAnimation()
 				self.abilityImage:setAlpha( 0 )
 				self.clipFinished( abilityImage, {} )
+
 				debugImage:completeAnimation()
 				self.debugImage:setRGB( 0, 0, 0 )
 				self.clipFinished( debugImage, {} )
+
 				AbilityName:completeAnimation()
 				self.AbilityName:setAlpha( 0.5 )
 				self.clipFinished( AbilityName, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				Selected:completeAnimation()
 				self.Selected:setAlpha( 0 )
 				self.clipFinished( Selected, {} )
+
 				TokenImage0:completeAnimation()
 				self.TokenImage0:setAlpha( 0 )
 				self.clipFinished( TokenImage0, {} )
+
 				SystemOverloardHeader:completeAnimation()
 				self.SystemOverloardHeader:setAlpha( 0 )
 				self.clipFinished( SystemOverloardHeader, {} )
+
 				TitleImagebacking:completeAnimation()
 				self.TitleImagebacking:setAlpha( 0 )
 				self.clipFinished( TitleImagebacking, {} )
+
 				TokenImage:completeAnimation()
 				self.TokenImage:setAlpha( 0 )
 				self.clipFinished( TokenImage, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, -2.12, 3 )
 				self.FocusBarB:setTopBottom( true, false, 120.31, 125 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				EquippedIcon:completeAnimation()
 				self.EquippedIcon:setAlpha( 0 )
 				self.clipFinished( EquippedIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
+
 				AbilityWheelColorPanel0:completeAnimation()
 				self.AbilityWheelColorPanel0:setAlpha( 0 )
 				self.clipFinished( AbilityWheelColorPanel0, {} )
+
 				UpgradableIcon:completeAnimation()
 				self.UpgradableIcon:setAlpha( 0 )
 				self.clipFinished( UpgradableIcon, {} )
@@ -515,114 +579,149 @@ CoD.CybercoreUpgradeModelWidget.new = function ( menu, controller )
 		Purchasable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 20 )
+
 				Outline:completeAnimation()
 				self.Outline:setAlpha( 0 )
 				self.clipFinished( Outline, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				abilityImage:completeAnimation()
 				self.abilityImage:setAlpha( 0.85 )
 				self.clipFinished( abilityImage, {} )
+
 				debugImage:completeAnimation()
 				self.debugImage:setRGB( 0, 1, 0 )
 				self.debugImage:setAlpha( 0 )
 				self.clipFinished( debugImage, {} )
+
 				LineLeft0:completeAnimation()
 				self.LineLeft0:setAlpha( 0.55 )
 				self.clipFinished( LineLeft0, {} )
+
 				AbilityName:completeAnimation()
 				self.AbilityName:setAlpha( 1 )
 				self.clipFinished( AbilityName, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				Selected:completeAnimation()
 				self.Selected:setAlpha( 0 )
 				self.clipFinished( Selected, {} )
+
 				TokenImage0:completeAnimation()
 				self.TokenImage0:setAlpha( 1 )
 				self.clipFinished( TokenImage0, {} )
+
 				SystemOverloardHeader:completeAnimation()
 				self.SystemOverloardHeader:setAlpha( 0 )
 				self.clipFinished( SystemOverloardHeader, {} )
+
 				TitleImagebacking:completeAnimation()
 				self.TitleImagebacking:setAlpha( 0 )
 				self.clipFinished( TitleImagebacking, {} )
+
 				TokenImage:completeAnimation()
 				self.TokenImage:setAlpha( 0 )
 				self.clipFinished( TokenImage, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				EquippedIcon:completeAnimation()
 				self.EquippedIcon:setRGB( 0.5, 0.5, 0.5 )
 				self.EquippedIcon:setAlpha( 0 )
 				self.clipFinished( EquippedIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setAlpha( 0 )
 				self.clipFinished( PanelGlow, {} )
+
 				AbilityWheelColorPanel0:completeAnimation()
 				self.AbilityWheelColorPanel0:setAlpha( 0 )
 				self.clipFinished( AbilityWheelColorPanel0, {} )
+
 				UpgradedIndicator:completeAnimation()
 				self.UpgradedIndicator:setAlpha( 0 )
 				self.clipFinished( UpgradedIndicator, {} )
+
 				UpgradableIcon:completeAnimation()
 				self.UpgradableIcon:setAlpha( 0 )
 				self.clipFinished( UpgradableIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 15 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				abilityImage:completeAnimation()
 				self.abilityImage:setAlpha( 0.82 )
 				self.clipFinished( abilityImage, {} )
+
 				debugImage:completeAnimation()
 				self.debugImage:setRGB( 0, 1, 0 )
 				self.clipFinished( debugImage, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				Selected:completeAnimation()
 				self.Selected:setAlpha( 0 )
 				self.clipFinished( Selected, {} )
+
 				TokenImage0:completeAnimation()
 				self.TokenImage0:setAlpha( 1 )
 				self.clipFinished( TokenImage0, {} )
+
 				SystemOverloardHeader:completeAnimation()
 				self.SystemOverloardHeader:setAlpha( 0 )
 				self.clipFinished( SystemOverloardHeader, {} )
+
 				TitleImagebacking:completeAnimation()
 				self.TitleImagebacking:setAlpha( 0 )
 				self.clipFinished( TitleImagebacking, {} )
+
 				TokenImage:completeAnimation()
 				self.TokenImage:setAlpha( 0 )
 				self.clipFinished( TokenImage, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				EquippedIcon:completeAnimation()
 				self.EquippedIcon:setRGB( 0.5, 0.5, 0.5 )
 				self.EquippedIcon:setAlpha( 0 )
 				self.clipFinished( EquippedIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				AbilityWheelColorPanel0:completeAnimation()
 				self.AbilityWheelColorPanel0:setAlpha( 0 )
 				self.clipFinished( AbilityWheelColorPanel0, {} )
+
 				UpgradableIcon:completeAnimation()
 				self.UpgradableIcon:setAlpha( 0 )
 				self.clipFinished( UpgradableIcon, {} )
@@ -631,29 +730,37 @@ CoD.CybercoreUpgradeModelWidget.new = function ( menu, controller )
 		Upgradable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				Outline:completeAnimation()
 				self.Outline:setLeftRight( true, false, 2.38, 118.46 )
 				self.Outline:setTopBottom( true, false, 3.96, 117.04 )
 				self.clipFinished( Outline, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				abilityImage:completeAnimation()
 				self.abilityImage:setAlpha( 0.85 )
 				self.clipFinished( abilityImage, {} )
+
 				debugImage:completeAnimation()
 				self.debugImage:setRGB( 0, 0, 1 )
 				self.debugImage:setAlpha( 0 )
 				self.clipFinished( debugImage, {} )
+
 				LineLeft0:completeAnimation()
 				self.LineLeft0:setAlpha( 0.55 )
 				self.clipFinished( LineLeft0, {} )
+
 				AbilityName:completeAnimation()
 				self.AbilityName:setAlpha( 1 )
 				self.clipFinished( AbilityName, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				Selected:completeAnimation()
 				self.Selected:setLeftRight( true, false, -24.19, 140.92 )
 				self.Selected:setTopBottom( true, false, -21.11, 144 )
@@ -661,91 +768,118 @@ CoD.CybercoreUpgradeModelWidget.new = function ( menu, controller )
 				self.Selected:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_fractal" ) )
 				self.Selected:setShaderVector( 0, 1.51, 0, 0, 0 )
 				self.clipFinished( Selected, {} )
+
 				TokenImage0:completeAnimation()
 				self.TokenImage0:setAlpha( 0 )
 				self.clipFinished( TokenImage0, {} )
+
 				SystemOverloardHeader:completeAnimation()
 				self.SystemOverloardHeader:setAlpha( 0 )
 				self.clipFinished( SystemOverloardHeader, {} )
+
 				TitleImagebacking:completeAnimation()
 				self.TitleImagebacking:setRGB( 0.03, 0.02, 0.02 )
 				self.TitleImagebacking:setAlpha( 0 )
 				self.clipFinished( TitleImagebacking, {} )
+
 				TokenImage:completeAnimation()
 				self.TokenImage:setAlpha( 1 )
 				self.clipFinished( TokenImage, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				EquippedIcon:completeAnimation()
 				self.EquippedIcon:setRGB( 0.5, 0.5, 0.5 )
 				self.EquippedIcon:setAlpha( 0 )
 				self.clipFinished( EquippedIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				AbilityWheelColorPanel0:completeAnimation()
 				self.AbilityWheelColorPanel0:setAlpha( 0.7 )
 				self.clipFinished( AbilityWheelColorPanel0, {} )
+
 				UpgradedIndicator:completeAnimation()
 				self.UpgradedIndicator:setAlpha( 1 )
 				self.clipFinished( UpgradedIndicator, {} )
+
 				UpgradableIcon:completeAnimation()
 				self.UpgradableIcon:setAlpha( 0 )
 				self.clipFinished( UpgradableIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 16 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				abilityImage:completeAnimation()
 				self.abilityImage:setAlpha( 0.8 )
 				self.clipFinished( abilityImage, {} )
+
 				debugImage:completeAnimation()
 				self.debugImage:setRGB( 0, 0, 1 )
 				self.debugImage:setAlpha( 0 )
 				self.clipFinished( debugImage, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				Selected:completeAnimation()
 				self.Selected:setAlpha( 0 )
 				self.clipFinished( Selected, {} )
+
 				TokenImage0:completeAnimation()
 				self.TokenImage0:setAlpha( 0 )
 				self.clipFinished( TokenImage0, {} )
+
 				SystemOverloardHeader:completeAnimation()
 				self.SystemOverloardHeader:setAlpha( 0 )
 				self.clipFinished( SystemOverloardHeader, {} )
+
 				TitleImagebacking:completeAnimation()
 				self.TitleImagebacking:setAlpha( 0 )
 				self.clipFinished( TitleImagebacking, {} )
+
 				TokenImage:completeAnimation()
 				self.TokenImage:setAlpha( 1 )
 				self.clipFinished( TokenImage, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				EquippedIcon:completeAnimation()
 				self.EquippedIcon:setRGB( 0.5, 0.5, 0.5 )
 				self.EquippedIcon:setAlpha( 0 )
 				self.clipFinished( EquippedIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				AbilityWheelColorPanel0:completeAnimation()
 				self.AbilityWheelColorPanel0:setAlpha( 0.5 )
 				self.clipFinished( AbilityWheelColorPanel0, {} )
+
 				UpgradedIndicator:completeAnimation()
 				self.UpgradedIndicator:setAlpha( 1 )
 				self.clipFinished( UpgradedIndicator, {} )
+
 				UpgradableIcon:completeAnimation()
 				self.UpgradableIcon:setAlpha( 0 )
 				self.clipFinished( UpgradableIcon, {} )
@@ -754,85 +888,109 @@ CoD.CybercoreUpgradeModelWidget.new = function ( menu, controller )
 		Upgraded = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 18 )
+
 				Outline:completeAnimation()
 				self.Outline:setLeftRight( true, false, 2.34, 118.42 )
 				self.Outline:setTopBottom( true, false, 3.96, 118 )
 				self.Outline:setAlpha( 0 )
 				self.clipFinished( Outline, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				abilityImage:completeAnimation()
 				self.abilityImage:setAlpha( 0.85 )
 				self.clipFinished( abilityImage, {} )
+
 				debugImage:completeAnimation()
 				self.debugImage:setRGB( 1, 0, 0 )
 				self.clipFinished( debugImage, {} )
+
 				LineLeft0:completeAnimation()
 				self.LineLeft0:setAlpha( 0.55 )
 				self.clipFinished( LineLeft0, {} )
+
 				AbilityName:completeAnimation()
 				self.AbilityName:setAlpha( 1 )
 				self.clipFinished( AbilityName, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				Selected:completeAnimation()
 				self.Selected:setAlpha( 0 )
 				self.Selected:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_fractal" ) )
 				self.Selected:setShaderVector( 0, 1.51, 0, 0, 0 )
 				self.clipFinished( Selected, {} )
+
 				TokenImage0:completeAnimation()
 				self.TokenImage0:setAlpha( 0 )
 				self.clipFinished( TokenImage0, {} )
+
 				TitleImagebacking:completeAnimation()
 				self.TitleImagebacking:setAlpha( 0 )
 				self.clipFinished( TitleImagebacking, {} )
+
 				TokenImage:completeAnimation()
 				self.TokenImage:setAlpha( 0 )
 				self.clipFinished( TokenImage, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				EquippedIcon:completeAnimation()
 				self.EquippedIcon:setRGB( 0.55, 0.77, 0.25 )
 				self.EquippedIcon:setAlpha( 0 )
 				self.clipFinished( EquippedIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				AbilityWheelColorPanel0:completeAnimation()
 				self.AbilityWheelColorPanel0:setAlpha( 0.7 )
 				self.clipFinished( AbilityWheelColorPanel0, {} )
+
 				UpgradedIndicator:completeAnimation()
 				self.UpgradedIndicator:setAlpha( 0 )
 				self.clipFinished( UpgradedIndicator, {} )
+
 				UpgradableIcon:completeAnimation()
 				self.UpgradableIcon:setAlpha( 1 )
 				self.clipFinished( UpgradableIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 17 )
+
 				Outline:completeAnimation()
 				self.Outline:setLeftRight( true, false, 2.38, 118.46 )
 				self.Outline:setTopBottom( true, false, 3.96, 118 )
 				self.Outline:setAlpha( 0 )
 				self.clipFinished( Outline, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				abilityImage:completeAnimation()
 				self.abilityImage:setAlpha( 0.8 )
 				self.clipFinished( abilityImage, {} )
+
 				debugImage:completeAnimation()
 				self.debugImage:setRGB( 1, 0, 0 )
 				self.clipFinished( debugImage, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				Selected:completeAnimation()
 				self.Selected:setLeftRight( true, false, -26.72, 141.47 )
 				self.Selected:setTopBottom( true, false, -22.19, 144 )
@@ -840,86 +998,110 @@ CoD.CybercoreUpgradeModelWidget.new = function ( menu, controller )
 				self.Selected:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_fractal" ) )
 				self.Selected:setShaderVector( 0, 1.51, 0, 0, 0 )
 				self.clipFinished( Selected, {} )
+
 				TokenImage0:completeAnimation()
 				self.TokenImage0:setAlpha( 0 )
 				self.clipFinished( TokenImage0, {} )
+
 				SystemOverloardHeader:completeAnimation()
 				self.SystemOverloardHeader:setAlpha( 0 )
 				self.clipFinished( SystemOverloardHeader, {} )
+
 				TitleImagebacking:completeAnimation()
 				self.TitleImagebacking:setAlpha( 0 )
 				self.clipFinished( TitleImagebacking, {} )
+
 				TokenImage:completeAnimation()
 				self.TokenImage:setAlpha( 0 )
 				self.clipFinished( TokenImage, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.FocusBarB:setZoom( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				EquippedIcon:completeAnimation()
 				self.EquippedIcon:setRGB( 0.55, 0.77, 0.25 )
 				self.EquippedIcon:setAlpha( 0 )
 				self.clipFinished( EquippedIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				AbilityWheelColorPanel0:completeAnimation()
 				self.AbilityWheelColorPanel0:setAlpha( 0.5 )
 				self.clipFinished( AbilityWheelColorPanel0, {} )
+
 				UpgradedIndicator:completeAnimation()
 				self.UpgradedIndicator:setAlpha( 0 )
 				self.clipFinished( UpgradedIndicator, {} )
+
 				UpgradableIcon:completeAnimation()
 				self.UpgradableIcon:setAlpha( 1 )
 				self.clipFinished( UpgradableIcon, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				Selected:completeAnimation()
 				self.Selected:setLeftRight( true, false, -25.19, 141 )
 				self.Selected:setTopBottom( true, false, -22.19, 144 )
 				self.Selected:setAlpha( 0 )
 				self.clipFinished( Selected, {} )
+
 				TokenImage0:completeAnimation()
 				self.TokenImage0:setAlpha( 0 )
 				self.clipFinished( TokenImage0, {} )
+
 				SystemOverloardHeader:completeAnimation()
 				self.SystemOverloardHeader:setAlpha( 0 )
 				self.clipFinished( SystemOverloardHeader, {} )
+
 				TitleImagebacking:completeAnimation()
 				self.TitleImagebacking:setAlpha( 0 )
 				self.clipFinished( TitleImagebacking, {} )
+
 				TokenImage:completeAnimation()
 				self.TokenImage:setAlpha( 0 )
 				self.clipFinished( TokenImage, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				EquippedIcon:completeAnimation()
 				self.EquippedIcon:setRGB( 0.55, 0.77, 0.25 )
 				self.EquippedIcon:setAlpha( 0 )
 				self.clipFinished( EquippedIcon, {} )
+
 				AbilityWheelColorPanel0:completeAnimation()
 				self.AbilityWheelColorPanel0:setAlpha( 0.7 )
 				self.clipFinished( AbilityWheelColorPanel0, {} )
+
 				UpgradedIndicator:completeAnimation()
 				self.UpgradedIndicator:setAlpha( 0 )
 				self.clipFinished( UpgradedIndicator, {} )
+
 				UpgradableIcon:completeAnimation()
 				self.UpgradableIcon:setAlpha( 1 )
 				self.clipFinished( UpgradableIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Unavailable",
@@ -954,6 +1136,7 @@ CoD.CybercoreUpgradeModelWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveDiag:close()
 		element.SystemOverloardHeader:close()

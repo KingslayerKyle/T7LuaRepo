@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartGameFlow.LoadingScreenTalkerWidgetCPZM" )
 CoD.InGameTalkersWidget = InheritFrom( LUI.UIElement )
 CoD.InGameTalkersWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.InGameTalkersWidget )
 	self.id = "InGameTalkersWidget"
@@ -32,6 +34,7 @@ CoD.InGameTalkersWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Talkers:completeAnimation()
 				self.Talkers:setAlpha( 0 )
 				self.clipFinished( Talkers, {} )
@@ -40,6 +43,7 @@ CoD.InGameTalkersWidget.new = function ( menu, controller )
 		Safehouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Talkers:completeAnimation()
 				self.Talkers:setLeftRight( false, true, -190, 0 )
 				self.Talkers:setTopBottom( false, true, -87, 0 )
@@ -50,12 +54,14 @@ CoD.InGameTalkersWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Talkers:completeAnimation()
 				self.Talkers:setAlpha( 1 )
 				self.clipFinished( Talkers, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Safehouse",
@@ -85,6 +91,7 @@ CoD.InGameTalkersWidget.new = function ( menu, controller )
 		} )
 	end )
 	Talkers.id = "Talkers"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Talkers:close()
 	end )

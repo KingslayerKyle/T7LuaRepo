@@ -21,6 +21,7 @@ CoD.FE_3dTitleNumber.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_3dTitleNumber )
 	self.id = "FE_3dTitleNumber"
@@ -55,9 +56,11 @@ CoD.FE_3dTitleNumber.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FELabelSubHeadingA0:completeAnimation()
 				self.FELabelSubHeadingA0:setAlpha( 1 )
 				self.clipFinished( FELabelSubHeadingA0, {} )
+
 				FE3dTitleNumberGames0:completeAnimation()
 				self.FE3dTitleNumberGames0:setAlpha( 1 )
 				self.clipFinished( FE3dTitleNumberGames0, {} )
@@ -66,9 +69,11 @@ CoD.FE_3dTitleNumber.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FELabelSubHeadingA0:completeAnimation()
 				self.FELabelSubHeadingA0:setAlpha( 0 )
 				self.clipFinished( FELabelSubHeadingA0, {} )
+
 				FE3dTitleNumberGames0:completeAnimation()
 				self.FE3dTitleNumberGames0:setAlpha( 0 )
 				self.clipFinished( FE3dTitleNumberGames0, {} )
@@ -77,9 +82,11 @@ CoD.FE_3dTitleNumber.new = function ( menu, controller )
 		Hidden2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FELabelSubHeadingA0:completeAnimation()
 				self.FELabelSubHeadingA0:setAlpha( 0 )
 				self.clipFinished( FELabelSubHeadingA0, {} )
+
 				FE3dTitleNumberGames0:completeAnimation()
 				self.FE3dTitleNumberGames0:setAlpha( 0 )
 				self.clipFinished( FE3dTitleNumberGames0, {} )
@@ -88,15 +95,18 @@ CoD.FE_3dTitleNumber.new = function ( menu, controller )
 		Hidden3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FELabelSubHeadingA0:completeAnimation()
 				self.FELabelSubHeadingA0:setAlpha( 0 )
 				self.clipFinished( FELabelSubHeadingA0, {} )
+
 				FE3dTitleNumberGames0:completeAnimation()
 				self.FE3dTitleNumberGames0:setAlpha( 0 )
 				self.clipFinished( FE3dTitleNumberGames0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -133,6 +143,7 @@ CoD.FE_3dTitleNumber.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNetworkMode"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FELabelSubHeadingA0:close()
 		element.FE3dTitleNumberGames0:close()

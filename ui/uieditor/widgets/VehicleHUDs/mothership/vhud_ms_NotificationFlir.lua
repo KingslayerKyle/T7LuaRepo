@@ -4,9 +4,11 @@
 CoD.vhud_ms_NotificationFlir = InheritFrom( LUI.UIElement )
 CoD.vhud_ms_NotificationFlir.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ms_NotificationFlir )
 	self.id = "vhud_ms_NotificationFlir"
@@ -55,6 +57,7 @@ CoD.vhud_ms_NotificationFlir.new = function ( menu, controller )
 	FLIR:setShaderVector( 4, 0, 0, 0, 0 )
 	FLIR:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	FLIR:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( FLIR, "setText", function ( element, controller )
 		ScaleWidgetToLabelCenteredWithMinimum( self, element, 25, 81 )
 	end )
@@ -74,27 +77,33 @@ CoD.vhud_ms_NotificationFlir.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver, {} )
+
 				arrowUp:completeAnimation()
 				self.arrowUp:setAlpha( 0 )
 				self.clipFinished( arrowUp, {} )
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0.25 )
 				self.GlowOrangeOver:setScale( 1.2 )
 				self.clipFinished( GlowOrangeOver, {} )
+
 				FLIR:completeAnimation()
 				self.FLIR:setAlpha( 1 )
 				self.clipFinished( FLIR, {} )
+
 				arrowUp:completeAnimation()
 				self.arrowUp:setAlpha( 0.6 )
 				self.clipFinished( arrowUp, {} )

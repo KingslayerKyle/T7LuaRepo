@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CPSystems.Rigs.RigInfo" )
 CoD.Notification_Rigs = InheritFrom( LUI.UIElement )
 CoD.Notification_Rigs.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Notification_Rigs )
 	self.id = "Notification_Rigs"
@@ -48,14 +50,17 @@ CoD.Notification_Rigs.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				RigInfo2:completeAnimation()
 				self.RigInfo2:setLeftRight( false, true, 25, 275 )
 				self.RigInfo2:setTopBottom( true, false, 25, 75 )
 				self.clipFinished( RigInfo2, {} )
+
 				RigInfo1:completeAnimation()
 				self.RigInfo1:setLeftRight( false, true, 15, 275 )
 				self.RigInfo1:setTopBottom( true, false, 25, 75 )
 				self.clipFinished( RigInfo1, {} )
+
 				RigInfo0:completeAnimation()
 				self.RigInfo0:setLeftRight( false, true, 15, 275 )
 				self.RigInfo0:setTopBottom( true, false, 0, 50 )
@@ -65,14 +70,17 @@ CoD.Notification_Rigs.new = function ( menu, controller )
 		RigCount_3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				RigInfo2:completeAnimation()
 				self.RigInfo2:setLeftRight( false, true, -500, 0 )
 				self.RigInfo2:setTopBottom( true, false, 58, 90 )
 				self.clipFinished( RigInfo2, {} )
+
 				RigInfo1:completeAnimation()
 				self.RigInfo1:setLeftRight( false, true, -500, 0 )
 				self.RigInfo1:setTopBottom( true, false, 0, 32 )
 				self.clipFinished( RigInfo1, {} )
+
 				RigInfo0:completeAnimation()
 				self.RigInfo0:setLeftRight( false, true, -500, 0 )
 				self.RigInfo0:setTopBottom( true, false, 29, 61 )
@@ -82,14 +90,17 @@ CoD.Notification_Rigs.new = function ( menu, controller )
 		RigCount_2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				RigInfo2:completeAnimation()
 				self.RigInfo2:setLeftRight( false, true, 90, 276 )
 				self.RigInfo2:setTopBottom( true, false, 30, 62 )
 				self.clipFinished( RigInfo2, {} )
+
 				RigInfo1:completeAnimation()
 				self.RigInfo1:setLeftRight( false, true, -500, 0 )
 				self.RigInfo1:setTopBottom( true, false, 14, 46 )
 				self.clipFinished( RigInfo1, {} )
+
 				RigInfo0:completeAnimation()
 				self.RigInfo0:setLeftRight( false, true, -500, 0 )
 				self.RigInfo0:setTopBottom( true, false, 43, 75 )
@@ -99,14 +110,17 @@ CoD.Notification_Rigs.new = function ( menu, controller )
 		RigCount_1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				RigInfo2:completeAnimation()
 				self.RigInfo2:setLeftRight( false, true, 63, 276 )
 				self.RigInfo2:setTopBottom( true, false, 20, 70 )
 				self.clipFinished( RigInfo2, {} )
+
 				RigInfo1:completeAnimation()
 				self.RigInfo1:setLeftRight( false, true, 46, 276 )
 				self.RigInfo1:setTopBottom( true, false, 11, 60 )
 				self.clipFinished( RigInfo1, {} )
+
 				RigInfo0:completeAnimation()
 				self.RigInfo0:setLeftRight( false, true, -500, 0 )
 				self.RigInfo0:setTopBottom( true, false, 30, 80 )
@@ -114,6 +128,7 @@ CoD.Notification_Rigs.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RigInfo2:close()
 		element.RigInfo1:close()

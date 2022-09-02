@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ListHeaderGlow" )
 CoD.FE_ListHeader = InheritFrom( LUI.UIElement )
 CoD.FE_ListHeader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_ListHeader )
 	self.id = "FE_ListHeader"
@@ -35,6 +37,7 @@ CoD.FE_ListHeader.new = function ( menu, controller )
 	btnDisplayTextStroke:setLetterSpacing( 1 )
 	btnDisplayTextStroke:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	btnDisplayTextStroke:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( btnDisplayTextStroke, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )

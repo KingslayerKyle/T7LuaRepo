@@ -4,9 +4,11 @@
 CoD.outofbounds_timerwidget = InheritFrom( LUI.UIElement )
 CoD.outofbounds_timerwidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.outofbounds_timerwidget )
 	self.id = "outofbounds_timerwidget"
@@ -59,6 +61,7 @@ CoD.outofbounds_timerwidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Timer0:completeAnimation()
 				self.Timer0:setLeftRight( false, false, -53.5, 53.5 )
 				self.Timer0:setTopBottom( false, false, -24, 24 )
@@ -106,15 +109,18 @@ CoD.outofbounds_timerwidget.new = function ( menu, controller )
 				self.Timer00:setAlpha( 1 )
 				self.Timer00:setScale( 1 )
 				Timer00Frame2( Timer00, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		IsOutOfBounds = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Timer0:close()
 		element.Timer00:close()

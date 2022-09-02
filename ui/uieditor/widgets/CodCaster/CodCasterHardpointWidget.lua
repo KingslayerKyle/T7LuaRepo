@@ -33,9 +33,11 @@ end
 CoD.CodCasterHardpointWidget = InheritFrom( LUI.UIElement )
 CoD.CodCasterHardpointWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterHardpointWidget )
 	self.id = "CodCasterHardpointWidget"
@@ -62,9 +64,11 @@ CoD.CodCasterHardpointWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 0 )
 				self.clipFinished( Icon, {} )
+
 				Timer:completeAnimation()
 				self.Timer:setAlpha( 0 )
 				self.clipFinished( Timer, {} )
@@ -73,15 +77,18 @@ CoD.CodCasterHardpointWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 1 )
 				self.clipFinished( Icon, {} )
+
 				Timer:completeAnimation()
 				self.Timer:setAlpha( 1 )
 				self.clipFinished( Timer, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -226,6 +233,7 @@ CoD.CodCasterHardpointWidget.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_EMP_ACTIVE
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Icon:close()
 	end )

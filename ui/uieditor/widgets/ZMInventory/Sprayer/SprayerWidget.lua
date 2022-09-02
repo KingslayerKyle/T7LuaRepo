@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_FX.ZmFx_Spark2" )
 CoD.SprayerWidget = InheritFrom( LUI.UIElement )
 CoD.SprayerWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SprayerWidget )
 	self.id = "SprayerWidget"
@@ -71,27 +73,34 @@ CoD.SprayerWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				Aquired:completeAnimation()
 				self.Aquired:setAlpha( 0 )
 				self.clipFinished( Aquired, {} )
+
 				Missing:completeAnimation()
 				self.Missing:setAlpha( 0 )
 				self.clipFinished( Missing, {} )
+
 				InUse:completeAnimation()
 				self.InUse:setAlpha( 0 )
 				self.clipFinished( InUse, {} )
+
 				Base:completeAnimation()
 				self.Base:setAlpha( 0 )
 				self.clipFinished( Base, {} )
+
 				HintText:completeAnimation()
 				self.HintText:setAlpha( 0 )
 				self.clipFinished( HintText, {} )
 			end,
 			Aquired = function ()
 				self:setupElementClipCounter( 6 )
+
 				local ZmFxSpark20Frame2 = function ( ZmFxSpark20, event )
 					local ZmFxSpark20Frame3 = function ( ZmFxSpark20, event )
 						local ZmFxSpark20Frame4 = function ( ZmFxSpark20, event )
@@ -198,9 +207,11 @@ CoD.SprayerWidget.new = function ( menu, controller )
 				Aquired:beginAnimation( "keyframe", 360, false, false, CoD.TweenType.Linear )
 				Aquired:setAlpha( 0 )
 				Aquired:registerEventHandler( "transition_complete_keyframe", f3_local1 )
+
 				Missing:completeAnimation()
 				self.Missing:setAlpha( 0 )
 				self.clipFinished( Missing, {} )
+
 				InUse:completeAnimation()
 				self.InUse:setAlpha( 0 )
 				self.clipFinished( InUse, {} )
@@ -349,6 +360,7 @@ CoD.SprayerWidget.new = function ( menu, controller )
 				Base:completeAnimation()
 				self.Base:setAlpha( 0 )
 				BaseFrame2( Base, {} )
+
 				HintText:completeAnimation()
 				self.HintText:setAlpha( 0 )
 				self.HintText:setText( Engine.Localize( "ZMUI_PICKED_UP_SPRAYER" ) )
@@ -358,21 +370,27 @@ CoD.SprayerWidget.new = function ( menu, controller )
 		ScoreboardVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				Aquired:completeAnimation()
 				self.Aquired:setAlpha( 0 )
 				self.clipFinished( Aquired, {} )
+
 				Missing:completeAnimation()
 				self.Missing:setAlpha( 0 )
 				self.clipFinished( Missing, {} )
+
 				InUse:completeAnimation()
 				self.InUse:setAlpha( 0 )
 				self.clipFinished( InUse, {} )
+
 				Base:completeAnimation()
 				self.Base:setAlpha( 1 )
 				self.clipFinished( Base, {} )
+
 				HintText:completeAnimation()
 				self.HintText:setAlpha( 1 )
 				self.clipFinished( HintText, {} )
@@ -381,12 +399,15 @@ CoD.SprayerWidget.new = function ( menu, controller )
 		InUse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				Aquired:completeAnimation()
 				self.Aquired:setAlpha( 0 )
 				self.clipFinished( Aquired, {} )
+
 				Missing:completeAnimation()
 				self.Missing:setAlpha( 0 )
 				self.clipFinished( Missing, {} )
@@ -482,9 +503,11 @@ CoD.SprayerWidget.new = function ( menu, controller )
 				InUse:completeAnimation()
 				self.InUse:setAlpha( 0 )
 				InUseFrame2( InUse, {} )
+
 				Base:completeAnimation()
 				self.Base:setAlpha( 0 )
 				self.clipFinished( Base, {} )
+
 				HintText:completeAnimation()
 				self.HintText:setAlpha( 1 )
 				self.HintText:setText( Engine.Localize( "" ) )
@@ -494,9 +517,11 @@ CoD.SprayerWidget.new = function ( menu, controller )
 		Missing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				Aquired:completeAnimation()
 				self.Aquired:setAlpha( 0 )
 				self.clipFinished( Aquired, {} )
@@ -570,12 +595,15 @@ CoD.SprayerWidget.new = function ( menu, controller )
 				Missing:completeAnimation()
 				self.Missing:setAlpha( 0 )
 				MissingFrame2( Missing, {} )
+
 				InUse:completeAnimation()
 				self.InUse:setAlpha( 0 )
 				self.clipFinished( InUse, {} )
+
 				Base:completeAnimation()
 				self.Base:setAlpha( 0 )
 				self.clipFinished( Base, {} )
+
 				HintText:completeAnimation()
 				self.HintText:setAlpha( 1 )
 				self.HintText:setText( Engine.Localize( "ZMUI_MISSING_ITEM" ) )
@@ -585,27 +613,34 @@ CoD.SprayerWidget.new = function ( menu, controller )
 		Aquired = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				Aquired:completeAnimation()
 				self.Aquired:setAlpha( 0 )
 				self.clipFinished( Aquired, {} )
+
 				Missing:completeAnimation()
 				self.Missing:setAlpha( 0 )
 				self.clipFinished( Missing, {} )
+
 				InUse:completeAnimation()
 				self.InUse:setAlpha( 0 )
 				self.clipFinished( InUse, {} )
+
 				Base:completeAnimation()
 				self.Base:setAlpha( 1 )
 				self.clipFinished( Base, {} )
+
 				HintText:completeAnimation()
 				self.HintText:setAlpha( 1 )
 				self.clipFinished( HintText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ScoreboardVisible",
@@ -672,6 +707,7 @@ CoD.SprayerWidget.new = function ( menu, controller )
 			modelName = "zmInventory.pod_sprayer_hint_range"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmFxSpark20:close()
 	end )

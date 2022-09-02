@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.PC.Utility.TitleTextWidget" )
 CoD.OptionInfoWidget = InheritFrom( LUI.UIElement )
 CoD.OptionInfoWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.OptionInfoWidget )
 	self.id = "OptionInfoWidget"
@@ -25,6 +27,7 @@ CoD.OptionInfoWidget.new = function ( menu, controller )
 	description:setTTF( "fonts/default.ttf" )
 	description:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	description:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( description, "setText", function ( element, controller )
 		SetStateFromText( self, element, "DefaultState", "Hidden" )
 	end )
@@ -42,9 +45,11 @@ CoD.OptionInfoWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				description:completeAnimation()
 				self.description:setAlpha( 1 )
 				self.clipFinished( description, {} )
+
 				title:completeAnimation()
 				self.title:setAlpha( 1 )
 				self.clipFinished( title, {} )
@@ -53,15 +58,18 @@ CoD.OptionInfoWidget.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				description:completeAnimation()
 				self.description:setAlpha( 0 )
 				self.clipFinished( description, {} )
+
 				title:completeAnimation()
 				self.title:setAlpha( 0 )
 				self.clipFinished( title, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.title:close()
 	end )

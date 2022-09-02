@@ -4,9 +4,11 @@
 CoD.VehicleGround_ModT5 = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_ModT5.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.VehicleGround_ModT5 )
 	self.id = "VehicleGround_ModT5"
@@ -35,6 +37,7 @@ CoD.VehicleGround_ModT5.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local Image0Frame2 = function ( Image0, event )
 					local Image0Frame3 = function ( Image0, event )
 						local Image0Frame4 = function ( Image0, event )
@@ -71,15 +74,18 @@ CoD.VehicleGround_ModT5.new = function ( menu, controller )
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 1 )
 				Image0Frame2( Image0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",

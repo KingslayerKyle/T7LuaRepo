@@ -20,9 +20,11 @@ end
 CoD.FR_NewBestTime = InheritFrom( LUI.UIElement )
 CoD.FR_NewBestTime.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FR_NewBestTime )
 	self.id = "FR_NewBestTime"
@@ -55,6 +57,7 @@ CoD.FR_NewBestTime.new = function ( menu, controller )
 	NewBestTimeText:setTTF( "fonts/escom.ttf" )
 	NewBestTimeText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	NewBestTimeText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( NewBestTimeText, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 5 )
 	end )
@@ -99,24 +102,31 @@ CoD.FR_NewBestTime.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0 )
 				self.clipFinished( BlackBox, {} )
+
 				NewBestTime:completeAnimation()
 				self.NewBestTime:setAlpha( 0 )
 				self.clipFinished( NewBestTime, {} )
+
 				NewBestTimeText:completeAnimation()
 				self.NewBestTimeText:setAlpha( 0 )
 				self.clipFinished( NewBestTimeText, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 0 )
 				self.clipFinished( Image1, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setAlpha( 0 )
 				self.clipFinished( Image2, {} )
+
 				Image3:completeAnimation()
 				self.Image3:setAlpha( 0 )
 				self.clipFinished( Image3, {} )
@@ -125,6 +135,7 @@ CoD.FR_NewBestTime.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				local BlackBoxFrame2 = function ( BlackBox, event )
 					local BlackBoxFrame3 = function ( BlackBox, event )
 						if not event.interrupted then
@@ -303,6 +314,7 @@ CoD.FR_NewBestTime.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 7 )
+
 				local BlackBoxFrame2 = function ( BlackBox, event )
 					local BlackBoxFrame3 = function ( BlackBox, event )
 						if not event.interrupted then

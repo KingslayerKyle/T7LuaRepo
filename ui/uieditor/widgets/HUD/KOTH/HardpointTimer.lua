@@ -37,9 +37,11 @@ end
 CoD.HardpointTimer = InheritFrom( LUI.UIElement )
 CoD.HardpointTimer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.HardpointTimer )
 	self.id = "HardpointTimer"
@@ -82,73 +84,92 @@ CoD.HardpointTimer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
+
 				ShadowGlow:completeAnimation()
 				self.ShadowGlow:setAlpha( 0 )
 				self.clipFinished( ShadowGlow, {} )
+
 				HardpointTimer:completeAnimation()
 				self.HardpointTimer:setAlpha( 0 )
 				self.clipFinished( HardpointTimer, {} )
+
 				HardpointIcon:completeAnimation()
 				self.HardpointIcon:setAlpha( 0 )
 				self.clipFinished( HardpointIcon, {} )
 			end,
 			hud_start = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			hud_stop = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Hardpoint = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 1 )
 				self.clipFinished( Panel, {} )
+
 				ShadowGlow:completeAnimation()
 				self.ShadowGlow:setAlpha( 0.2 )
 				self.clipFinished( ShadowGlow, {} )
+
 				HardpointTimer:completeAnimation()
 				self.HardpointTimer:setAlpha( 1 )
 				self.clipFinished( HardpointTimer, {} )
+
 				HardpointIcon:completeAnimation()
 				self.HardpointIcon:setAlpha( 1 )
 				self.clipFinished( HardpointIcon, {} )
 			end,
 			hud_start = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			hud_stop = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		HardpointForCodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 1 )
 				self.clipFinished( Panel, {} )
+
 				ShadowGlow:completeAnimation()
 				self.ShadowGlow:setAlpha( 0.2 )
 				self.clipFinished( ShadowGlow, {} )
+
 				HardpointTimer:completeAnimation()
 				self.HardpointTimer:setAlpha( 1 )
 				self.clipFinished( HardpointTimer, {} )
+
 				HardpointIcon:completeAnimation()
 				self.HardpointIcon:setAlpha( 1 )
 				self.clipFinished( HardpointIcon, {} )
 			end,
 			hud_start = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			hud_stop = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hardpoint",
@@ -339,6 +360,7 @@ CoD.HardpointTimer.new = function ( menu, controller )
 			modelName = "CodCaster.profileSettingsUpdated"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 		element.HardpointIcon:close()

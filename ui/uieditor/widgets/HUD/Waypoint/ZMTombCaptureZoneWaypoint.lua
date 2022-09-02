@@ -268,9 +268,11 @@ end
 CoD.ZMTombCaptureZoneWaypoint = InheritFrom( LUI.UIElement )
 CoD.ZMTombCaptureZoneWaypoint.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZMTombCaptureZoneWaypoint )
 	self.id = "ZMTombCaptureZoneWaypoint"
@@ -345,6 +347,7 @@ CoD.ZMTombCaptureZoneWaypoint.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local bgGlowFrame2 = function ( bgGlow, event )
 					local bgGlowFrame3 = function ( bgGlow, event )
 						if not event.interrupted then
@@ -373,15 +376,18 @@ CoD.ZMTombCaptureZoneWaypoint.new = function ( menu, controller )
 				self.bgGlow:setRGB( 0.68, 0.86, 1 )
 				self.bgGlow:setAlpha( 1 )
 				bgGlowFrame2( bgGlow, {} )
+
 				progressMeter:completeAnimation()
 				self.progressMeter:setRGB( 0.68, 0.86, 1 )
 				self.clipFinished( progressMeter, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		NotCapturing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local bgGlowFrame2 = function ( bgGlow, event )
 					local bgGlowFrame3 = function ( bgGlow, event )
 						if not event.interrupted then
@@ -410,13 +416,16 @@ CoD.ZMTombCaptureZoneWaypoint.new = function ( menu, controller )
 				self.bgGlow:setRGB( 1, 0.19, 0.19 )
 				self.bgGlow:setAlpha( 1 )
 				bgGlowFrame2( bgGlow, {} )
+
 				progressMeter:completeAnimation()
 				self.progressMeter:setRGB( 1, 0.19, 0.19 )
 				self.clipFinished( progressMeter, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.WaypointArrowContainer:close()
 		element.WaypointDistanceIndicatorContainer:close()

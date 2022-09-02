@@ -54,9 +54,11 @@ end
 CoD.ChooseCharacterLoadoutCarouselItem_InfoArea = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacterLoadoutCarouselItem_InfoArea.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacterLoadoutCarouselItem_InfoArea )
 	self.id = "ChooseCharacterLoadoutCarouselItem_InfoArea"
@@ -355,18 +357,23 @@ CoD.ChooseCharacterLoadoutCarouselItem_InfoArea.new = function ( menu, controlle
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				loadoutItemDescription:completeAnimation()
 				self.loadoutItemDescription:setAlpha( 1 )
 				self.clipFinished( loadoutItemDescription, {} )
+
 				unlockDescription:completeAnimation()
 				self.unlockDescription:setAlpha( ShowIfInPermanentUnlockMenu( 0 ) )
 				self.clipFinished( unlockDescription, {} )
+
 				f6_local5:completeAnimation()
 				self.SelectText:setAlpha( 0 )
 				self.clipFinished( f6_local5, {} )
+
 				ChooseCharacterLoadoutCarouselItemInfoAreaWeapon:completeAnimation()
 				self.ChooseCharacterLoadoutCarouselItemInfoAreaWeapon:setAlpha( 1 )
 				self.clipFinished( ChooseCharacterLoadoutCarouselItemInfoAreaWeapon, {} )
+
 				loadoutOptions:completeAnimation()
 				self.loadoutOptions:setAlpha( 1 )
 				self.clipFinished( loadoutOptions, {} )
@@ -375,15 +382,19 @@ CoD.ChooseCharacterLoadoutCarouselItem_InfoArea.new = function ( menu, controlle
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				loadoutItemDescription:completeAnimation()
 				self.loadoutItemDescription:setAlpha( 0 )
 				self.clipFinished( loadoutItemDescription, {} )
+
 				unlockDescription:completeAnimation()
 				self.unlockDescription:setAlpha( ShowIfInPermanentUnlockMenu( 1 ) )
 				self.clipFinished( unlockDescription, {} )
+
 				ChooseCharacterLoadoutCarouselItemInfoAreaWeapon:completeAnimation()
 				self.ChooseCharacterLoadoutCarouselItemInfoAreaWeapon:setAlpha( 0 )
 				self.clipFinished( ChooseCharacterLoadoutCarouselItemInfoAreaWeapon, {} )
+
 				loadoutOptions:completeAnimation()
 				self.loadoutOptions:setAlpha( 0 )
 				self.clipFinished( loadoutOptions, {} )
@@ -392,9 +403,11 @@ CoD.ChooseCharacterLoadoutCarouselItem_InfoArea.new = function ( menu, controlle
 		KeyboardAndMouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				unlockDescription:completeAnimation()
 				self.unlockDescription:setAlpha( ShowIfInPermanentUnlockMenu( 0 ) )
 				self.clipFinished( unlockDescription, {} )
+
 				f6_local5:completeAnimation()
 				self.SelectText:setLeftRight( true, false, 34, 234 )
 				self.SelectText:setTopBottom( true, false, 149, 168 )
@@ -403,6 +416,7 @@ CoD.ChooseCharacterLoadoutCarouselItem_InfoArea.new = function ( menu, controlle
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -467,6 +481,7 @@ CoD.ChooseCharacterLoadoutCarouselItem_InfoArea.new = function ( menu, controlle
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.WeaponNameWidget0:close()
 		element.FETitleNumBrdr1:close()

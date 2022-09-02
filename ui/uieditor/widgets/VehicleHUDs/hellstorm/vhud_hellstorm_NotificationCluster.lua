@@ -4,9 +4,11 @@
 CoD.vhud_hellstorm_NotificationCluster = InheritFrom( LUI.UIElement )
 CoD.vhud_hellstorm_NotificationCluster.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_hellstorm_NotificationCluster )
 	self.id = "vhud_hellstorm_NotificationCluster"

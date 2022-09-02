@@ -4,9 +4,11 @@
 CoD.BackgroundPattern01 = InheritFrom( LUI.UIElement )
 CoD.BackgroundPattern01.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.BackgroundPattern01 )
 	self.id = "BackgroundPattern01"
@@ -28,11 +30,13 @@ CoD.BackgroundPattern01.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		SlotsFull = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

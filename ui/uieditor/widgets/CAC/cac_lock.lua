@@ -4,9 +4,11 @@
 CoD.cac_lock = InheritFrom( LUI.UIElement )
 CoD.cac_lock.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_lock )
 	self.id = "cac_lock"
@@ -34,6 +36,7 @@ CoD.cac_lock.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )

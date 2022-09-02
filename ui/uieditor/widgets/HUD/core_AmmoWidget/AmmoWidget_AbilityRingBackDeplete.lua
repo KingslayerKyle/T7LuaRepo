@@ -4,9 +4,11 @@
 CoD.AmmoWidget_AbilityRingBackDeplete = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_AbilityRingBackDeplete.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_AbilityRingBackDeplete )
 	self.id = "AmmoWidget_AbilityRingBackDeplete"
@@ -27,6 +29,7 @@ CoD.AmmoWidget_AbilityRingBackDeplete.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ImgRingDepleteOutterFrame2 = function ( ImgRingDepleteOutter, event )
 					if not event.interrupted then
 						ImgRingDepleteOutter:beginAnimation( "keyframe", 5000, false, false, CoD.TweenType.Linear )
@@ -42,6 +45,7 @@ CoD.AmmoWidget_AbilityRingBackDeplete.new = function ( menu, controller )
 				ImgRingDepleteOutter:completeAnimation()
 				self.ImgRingDepleteOutter:setZRot( 0 )
 				ImgRingDepleteOutterFrame2( ImgRingDepleteOutter, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

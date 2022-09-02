@@ -4,9 +4,11 @@
 CoD.AmmoWidget_AbilityRingBack = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_AbilityRingBack.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_AbilityRingBack )
 	self.id = "AmmoWidget_AbilityRingBack"
@@ -55,6 +57,7 @@ CoD.AmmoWidget_AbilityRingBack.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ImgRingDeplete0:completeAnimation()
 				self.ImgRingDeplete0:setAlpha( 0.27 )
 				self.ImgRingDeplete0:setZRot( -32 )
@@ -67,6 +70,7 @@ CoD.AmmoWidget_AbilityRingBack.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ImgRingDeplete:close()
 		element.ImgRingDeplete0:close()

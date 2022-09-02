@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.CharacterCustomization.PersonalizeCharacterCarouse
 CoD.PersonalizeCharacterCarouselItem_Internal = InheritFrom( LUI.UIElement )
 CoD.PersonalizeCharacterCarouselItem_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.PersonalizeCharacterCarouselItem_Internal )
 	self.id = "PersonalizeCharacterCarouselItem_Internal"

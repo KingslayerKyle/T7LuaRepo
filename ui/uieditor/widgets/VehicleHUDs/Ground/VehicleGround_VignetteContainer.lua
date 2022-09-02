@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Ground.VehicleGround_VignetteFore" )
 CoD.VehicleGround_VignetteContainer = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_VignetteContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.VehicleGround_VignetteContainer )
 	self.id = "VehicleGround_VignetteContainer"
@@ -36,6 +38,7 @@ CoD.VehicleGround_VignetteContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local VignetteBackFrame2 = function ( VignetteBack, event )
 					if not event.interrupted then
 						VignetteBack:beginAnimation( "keyframe", 3930, false, false, CoD.TweenType.Linear )
@@ -69,6 +72,7 @@ CoD.VehicleGround_VignetteContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.VignetteBack:close()
 		element.VignetteFore:close()

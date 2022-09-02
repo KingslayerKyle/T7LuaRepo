@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.Prestige.Prestige_MasterTierWidget" )
 CoD.LobbySlideInfoWidget = InheritFrom( LUI.UIElement )
 CoD.LobbySlideInfoWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbySlideInfoWidget )
 	self.id = "LobbySlideInfoWidget"
@@ -215,6 +217,7 @@ CoD.LobbySlideInfoWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				rankText:completeAnimation()
 				self.rankText:setLeftRight( true, false, 99.9, 229.9 )
 				self.rankText:setTopBottom( true, false, 34, 70 )
@@ -225,6 +228,7 @@ CoD.LobbySlideInfoWidget.new = function ( menu, controller )
 		OverLevel55 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				rankText:completeAnimation()
 				self.rankText:setLeftRight( true, false, 99.9, 305 )
 				self.rankText:setTopBottom( true, false, 39, 75 )
@@ -233,6 +237,7 @@ CoD.LobbySlideInfoWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "OverLevel55",
@@ -249,6 +254,7 @@ CoD.LobbySlideInfoWidget.new = function ( menu, controller )
 			modelName = "rank"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ImageBorder:close()
 		element.rankIcon:close()

@@ -14,9 +14,11 @@ require( "ui.uieditor.widgets.ZMInventoryStalingrad.ChallengesCompletedWidgetSta
 CoD.InventoryWidgetGenesis = InheritFrom( LUI.UIElement )
 CoD.InventoryWidgetGenesis.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.InventoryWidgetGenesis )
 	self.id = "InventoryWidgetGenesis"
@@ -282,24 +284,31 @@ CoD.InventoryWidgetGenesis.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				Base:completeAnimation()
 				self.Base:setAlpha( 0 )
 				self.clipFinished( Base, {} )
+
 				ApothiconEggOrGatewormTextAndImage:completeAnimation()
 				self.ApothiconEggOrGatewormTextAndImage:setAlpha( 0 )
 				self.clipFinished( ApothiconEggOrGatewormTextAndImage, {} )
+
 				ApothiconGatewormWidget:completeAnimation()
 				self.ApothiconGatewormWidget:setAlpha( 0 )
 				self.clipFinished( ApothiconGatewormWidget, {} )
+
 				KeeperProtectorWidgetsGenesis:completeAnimation()
 				self.KeeperProtectorWidgetsGenesis:setAlpha( 0 )
 				self.clipFinished( KeeperProtectorWidgetsGenesis, {} )
+
 				RocketShieldWidgetGenesis:completeAnimation()
 				self.RocketShieldWidgetGenesis:setAlpha( 0 )
 				self.clipFinished( RocketShieldWidgetGenesis, {} )
+
 				RunesOfCreationWidgetGenesis:completeAnimation()
 				self.RunesOfCreationWidgetGenesis:setAlpha( 0 )
 				self.clipFinished( RunesOfCreationWidgetGenesis, {} )
+
 				GameTimeGroup:completeAnimation()
 				self.GameTimeGroup:setAlpha( 0 )
 				self.clipFinished( GameTimeGroup, {} )
@@ -308,30 +317,38 @@ CoD.InventoryWidgetGenesis.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				Base:completeAnimation()
 				self.Base:setAlpha( 1 )
 				self.clipFinished( Base, {} )
+
 				ApothiconEggOrGatewormTextAndImage:completeAnimation()
 				self.ApothiconEggOrGatewormTextAndImage:setAlpha( 1 )
 				self.clipFinished( ApothiconEggOrGatewormTextAndImage, {} )
+
 				ApothiconGatewormWidget:completeAnimation()
 				self.ApothiconGatewormWidget:setAlpha( 1 )
 				self.clipFinished( ApothiconGatewormWidget, {} )
+
 				KeeperProtectorWidgetsGenesis:completeAnimation()
 				self.KeeperProtectorWidgetsGenesis:setAlpha( 1 )
 				self.clipFinished( KeeperProtectorWidgetsGenesis, {} )
+
 				RocketShieldWidgetGenesis:completeAnimation()
 				self.RocketShieldWidgetGenesis:setAlpha( 1 )
 				self.clipFinished( RocketShieldWidgetGenesis, {} )
+
 				RunesOfCreationWidgetGenesis:completeAnimation()
 				self.RunesOfCreationWidgetGenesis:setAlpha( 1 )
 				self.clipFinished( RunesOfCreationWidgetGenesis, {} )
+
 				GameTimeGroup:completeAnimation()
 				self.GameTimeGroup:setAlpha( 1 )
 				self.clipFinished( GameTimeGroup, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -348,6 +365,7 @@ CoD.InventoryWidgetGenesis.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RunesTitle:close()
 		element.ShieldTitle:close()

@@ -18,6 +18,7 @@ CoD.buttonprompt_small.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.buttonprompt_small )
 	self.id = "buttonprompt_small"
@@ -43,9 +44,11 @@ CoD.buttonprompt_small.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setAlpha( 1 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setLeftRight( true, false, 32, 136 )
 				self.label:setTopBottom( false, false, -8, 8 )
@@ -54,11 +57,13 @@ CoD.buttonprompt_small.new = function ( menu, controller )
 			end,
 			Hide = function ()
 				self:setupElementClipCounter( 2 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setLeftRight( true, false, 0, 32 )
 				self.buttonPromptImage:setTopBottom( true, false, 0, 31 )
 				self.buttonPromptImage:setAlpha( 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setAlpha( 0 )
 				self.clipFinished( label, {} )
@@ -67,9 +72,11 @@ CoD.buttonprompt_small.new = function ( menu, controller )
 		Dim = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setAlpha( 0.3 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setAlpha( 0.3 )
 				self.clipFinished( label, {} )

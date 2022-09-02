@@ -4,9 +4,11 @@
 CoD.fx_glow = InheritFrom( LUI.UIElement )
 CoD.fx_glow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.fx_glow )
 	self.id = "fx_glow"
@@ -26,6 +28,7 @@ CoD.fx_glow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local glow0Frame2 = function ( glow0, event )
 					local glow0Frame3 = function ( glow0, event )
 						if not event.interrupted then
@@ -52,6 +55,7 @@ CoD.fx_glow.new = function ( menu, controller )
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0.1 )
 				glow0Frame2( glow0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

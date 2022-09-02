@@ -24,9 +24,11 @@ end
 CoD.CraftSideSelectorButton = InheritFrom( LUI.UIElement )
 CoD.CraftSideSelectorButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CraftSideSelectorButton )
 	self.id = "CraftSideSelectorButton"
@@ -46,6 +48,7 @@ CoD.CraftSideSelectorButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				arrow:completeAnimation()
 				self.arrow:setLeftRight( true, true, 3, -3 )
 				self.arrow:setTopBottom( true, true, 3.24, -3.24 )
@@ -55,6 +58,7 @@ CoD.CraftSideSelectorButton.new = function ( menu, controller )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 1 )
+
 				arrow:completeAnimation()
 				self.arrow:setLeftRight( true, true, 3, -3 )
 				self.arrow:setTopBottom( true, true, 3.24, -3.24 )

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.Lists.Members.LobbyMemberBacking" )
 CoD.DialogBackground = InheritFrom( LUI.UIElement )
 CoD.DialogBackground.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.DialogBackground )
 	self.id = "DialogBackground"

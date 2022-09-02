@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_FX.ZmFx_Spark2" )
 CoD.FuseWidget = InheritFrom( LUI.UIElement )
 CoD.FuseWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FuseWidget )
 	self.id = "FuseWidget"
@@ -58,15 +60,19 @@ CoD.FuseWidget.new = function ( menu, controller )
 		ScoreboardFound = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				FuseImage:completeAnimation()
 				self.FuseImage:setAlpha( 1 )
 				self.clipFinished( FuseImage, {} )
+
 				FuseImageMissing:completeAnimation()
 				self.FuseImageMissing:setAlpha( 0 )
 				self.clipFinished( FuseImageMissing, {} )
+
 				FuseImageNew:completeAnimation()
 				self.FuseImageNew:setAlpha( 0 )
 				self.clipFinished( FuseImageNew, {} )
@@ -75,21 +81,26 @@ CoD.FuseWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ZmFxSpark20:beginAnimation( "keyframe", 2400, false, false, CoD.TweenType.Linear )
 				ZmFxSpark20:setAlpha( 0 )
 				ZmFxSpark20:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				FuseImage:completeAnimation()
 				self.FuseImage:setAlpha( 0 )
 				self.clipFinished( FuseImage, {} )
+
 				FuseImageMissing:completeAnimation()
 				self.FuseImageMissing:setAlpha( 0 )
 				self.clipFinished( FuseImageMissing, {} )
+
 				FuseImageNew:completeAnimation()
 				self.FuseImageNew:setAlpha( 0 )
 				self.clipFinished( FuseImageNew, {} )
 			end,
 			Found = function ()
 				self:setupElementClipCounter( 4 )
+
 				local ZmFxSpark20Frame2 = function ( ZmFxSpark20, event )
 					local ZmFxSpark20Frame3 = function ( ZmFxSpark20, event )
 						local ZmFxSpark20Frame4 = function ( ZmFxSpark20, event )
@@ -250,6 +261,7 @@ CoD.FuseWidget.new = function ( menu, controller )
 				FuseImage:completeAnimation()
 				self.FuseImage:setAlpha( 0 )
 				FuseImageFrame2( FuseImage, {} )
+
 				FuseImageMissing:completeAnimation()
 				self.FuseImageMissing:setAlpha( 0 )
 				self.clipFinished( FuseImageMissing, {} )
@@ -360,15 +372,19 @@ CoD.FuseWidget.new = function ( menu, controller )
 		Found = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				FuseImage:completeAnimation()
 				self.FuseImage:setAlpha( 1 )
 				self.clipFinished( FuseImage, {} )
+
 				FuseImageMissing:completeAnimation()
 				self.FuseImageMissing:setAlpha( 0 )
 				self.clipFinished( FuseImageMissing, {} )
+
 				FuseImageNew:completeAnimation()
 				self.FuseImageNew:setAlpha( 0 )
 				self.clipFinished( FuseImageNew, {} )
@@ -377,9 +393,11 @@ CoD.FuseWidget.new = function ( menu, controller )
 		Missing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				FuseImage:completeAnimation()
 				self.FuseImage:setAlpha( 0 )
 				self.clipFinished( FuseImage, {} )
@@ -433,6 +451,7 @@ CoD.FuseWidget.new = function ( menu, controller )
 				self.FuseImageMissing:setRGB( 1, 1, 1 )
 				self.FuseImageMissing:setAlpha( 1 )
 				FuseImageMissingFrame2( FuseImageMissing, {} )
+
 				FuseImageNew:completeAnimation()
 				self.FuseImageNew:setRGB( 1, 1, 1 )
 				self.FuseImageNew:setAlpha( 0 )
@@ -440,6 +459,7 @@ CoD.FuseWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ScoreboardFound",
@@ -468,6 +488,7 @@ CoD.FuseWidget.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmFxSpark20:close()
 	end )

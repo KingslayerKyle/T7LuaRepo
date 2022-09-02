@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.ZMInventoryStalingrad.DragonEggPieceWidget" )
 CoD.ApothiconGatewormWidget_Genesis = InheritFrom( LUI.UIElement )
 CoD.ApothiconGatewormWidget_Genesis.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ApothiconGatewormWidget_Genesis )
 	self.id = "ApothiconGatewormWidget_Genesis"
@@ -179,15 +181,19 @@ CoD.ApothiconGatewormWidget_Genesis.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				GatewormBG:completeAnimation()
 				self.GatewormBG:setAlpha( 0 )
 				self.clipFinished( GatewormBG, {} )
+
 				ApothiconBG:completeAnimation()
 				self.ApothiconBG:setAlpha( 0 )
 				self.clipFinished( ApothiconBG, {} )
+
 				GatewormPieceWidget:completeAnimation()
 				self.GatewormPieceWidget:setAlpha( 0 )
 				self.clipFinished( GatewormPieceWidget, {} )
+
 				ApothiconEggPieceWidget:completeAnimation()
 				self.ApothiconEggPieceWidget:setAlpha( 0 )
 				self.clipFinished( ApothiconEggPieceWidget, {} )
@@ -196,15 +202,19 @@ CoD.ApothiconGatewormWidget_Genesis.new = function ( menu, controller )
 		ScoreboardHidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				GatewormBG:completeAnimation()
 				self.GatewormBG:setAlpha( 0 )
 				self.clipFinished( GatewormBG, {} )
+
 				ApothiconBG:completeAnimation()
 				self.ApothiconBG:setAlpha( 0 )
 				self.clipFinished( ApothiconBG, {} )
+
 				GatewormPieceWidget:completeAnimation()
 				self.GatewormPieceWidget:setAlpha( 0 )
 				self.clipFinished( GatewormPieceWidget, {} )
+
 				ApothiconEggPieceWidget:completeAnimation()
 				self.ApothiconEggPieceWidget:setAlpha( 0 )
 				self.clipFinished( ApothiconEggPieceWidget, {} )
@@ -213,15 +223,19 @@ CoD.ApothiconGatewormWidget_Genesis.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				GatewormBG:completeAnimation()
 				self.GatewormBG:setAlpha( 0 )
 				self.clipFinished( GatewormBG, {} )
+
 				ApothiconBG:completeAnimation()
 				self.ApothiconBG:setAlpha( 0 )
 				self.clipFinished( ApothiconBG, {} )
+
 				GatewormPieceWidget:completeAnimation()
 				self.GatewormPieceWidget:setAlpha( 1 )
 				self.clipFinished( GatewormPieceWidget, {} )
+
 				ApothiconEggPieceWidget:completeAnimation()
 				self.ApothiconEggPieceWidget:setAlpha( 1 )
 				self.ApothiconEggPieceWidget:setScale( 1.2 )
@@ -231,6 +245,7 @@ CoD.ApothiconGatewormWidget_Genesis.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local GatewormBGFrame2 = function ( GatewormBG, event )
 					local GatewormBGFrame3 = function ( GatewormBG, event )
 						local GatewormBGFrame4 = function ( GatewormBG, event )
@@ -303,9 +318,11 @@ CoD.ApothiconGatewormWidget_Genesis.new = function ( menu, controller )
 				ApothiconBG:completeAnimation()
 				self.ApothiconBG:setAlpha( 0 )
 				ApothiconBGFrame2( ApothiconBG, {} )
+
 				GatewormPieceWidget:completeAnimation()
 				self.GatewormPieceWidget:setAlpha( 1 )
 				self.clipFinished( GatewormPieceWidget, {} )
+
 				ApothiconEggPieceWidget:completeAnimation()
 				self.ApothiconEggPieceWidget:setLeftRight( true, false, 45.04, 134.04 )
 				self.ApothiconEggPieceWidget:setTopBottom( true, false, 41, 130 )
@@ -315,6 +332,7 @@ CoD.ApothiconGatewormWidget_Genesis.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ScoreboardHidden",
@@ -359,6 +377,7 @@ CoD.ApothiconGatewormWidget_Genesis.new = function ( menu, controller )
 			modelName = "zmInventory.player_gate_worm_bg"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GatewormBG:close()
 		element.ApothiconBG:close()

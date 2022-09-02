@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.Lobby.Lists.Members.IconControllerContainer" )
 CoD.Pregame_Client_Small = InheritFrom( LUI.UIElement )
 CoD.Pregame_Client_Small.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_Client_Small )
 	self.id = "Pregame_Client_Small"

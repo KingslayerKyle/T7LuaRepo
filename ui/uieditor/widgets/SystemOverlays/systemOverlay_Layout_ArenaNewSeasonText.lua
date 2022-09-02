@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.SystemOverlays.systemOverlay_Layout_ForegroundMult
 CoD.systemOverlay_Layout_ArenaNewSeasonText = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_Layout_ArenaNewSeasonText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_Layout_ArenaNewSeasonText )
 	self.id = "systemOverlay_Layout_ArenaNewSeasonText"
@@ -85,18 +87,22 @@ CoD.systemOverlay_Layout_ArenaNewSeasonText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				SeasonStartDesc:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
 				SeasonStartDesc:setAlpha( 0 )
 				SeasonStartDesc:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
 				BonusStarsDesc:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
 				BonusStarsDesc:setAlpha( 0 )
 				BonusStarsDesc:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				SeasonFinaleDesc:completeAnimation()
 				self.SeasonFinaleDesc:setAlpha( 0 )
 				self.clipFinished( SeasonFinaleDesc, {} )
+
 				CurrentSeasonTitle:completeAnimation()
 				self.CurrentSeasonTitle:setAlpha( 0 )
 				self.clipFinished( CurrentSeasonTitle, {} )
+
 				PreviousSeasonTitle:completeAnimation()
 				self.PreviousSeasonTitle:setAlpha( 0 )
 				self.clipFinished( PreviousSeasonTitle, {} )
@@ -105,9 +111,11 @@ CoD.systemOverlay_Layout_ArenaNewSeasonText.new = function ( menu, controller )
 		SeasonFinale = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				SeasonStartDesc:completeAnimation()
 				self.SeasonStartDesc:setAlpha( 0 )
 				self.clipFinished( SeasonStartDesc, {} )
+
 				BonusStarsDesc:completeAnimation()
 				self.BonusStarsDesc:setAlpha( 0 )
 				self.clipFinished( BonusStarsDesc, {} )
@@ -126,6 +134,7 @@ CoD.systemOverlay_Layout_ArenaNewSeasonText.new = function ( menu, controller )
 				SeasonFinaleDesc:completeAnimation()
 				self.SeasonFinaleDesc:setAlpha( 0 )
 				SeasonFinaleDescFrame2( SeasonFinaleDesc, {} )
+
 				CurrentSeasonTitle:completeAnimation()
 				self.CurrentSeasonTitle:setAlpha( 0 )
 				self.clipFinished( CurrentSeasonTitle, {} )
@@ -147,9 +156,11 @@ CoD.systemOverlay_Layout_ArenaNewSeasonText.new = function ( menu, controller )
 			end,
 			BonusStars = function ()
 				self:setupElementClipCounter( 5 )
+
 				SeasonStartDesc:completeAnimation()
 				self.SeasonStartDesc:setAlpha( 0 )
 				self.clipFinished( SeasonStartDesc, {} )
+
 				BonusStarsDesc:completeAnimation()
 				self.BonusStarsDesc:setAlpha( 0 )
 				self.clipFinished( BonusStarsDesc, {} )
@@ -168,6 +179,7 @@ CoD.systemOverlay_Layout_ArenaNewSeasonText.new = function ( menu, controller )
 				SeasonFinaleDesc:completeAnimation()
 				self.SeasonFinaleDesc:setAlpha( 1 )
 				SeasonFinaleDescFrame2( SeasonFinaleDesc, {} )
+
 				CurrentSeasonTitle:completeAnimation()
 				self.CurrentSeasonTitle:setAlpha( 0 )
 				self.clipFinished( CurrentSeasonTitle, {} )
@@ -191,6 +203,7 @@ CoD.systemOverlay_Layout_ArenaNewSeasonText.new = function ( menu, controller )
 		BonusStars = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				SeasonStartDesc:completeAnimation()
 				self.SeasonStartDesc:setAlpha( 0 )
 				self.clipFinished( SeasonStartDesc, {} )
@@ -209,6 +222,7 @@ CoD.systemOverlay_Layout_ArenaNewSeasonText.new = function ( menu, controller )
 				BonusStarsDesc:completeAnimation()
 				self.BonusStarsDesc:setAlpha( 0 )
 				BonusStarsDescFrame2( BonusStarsDesc, {} )
+
 				SeasonFinaleDesc:completeAnimation()
 				self.SeasonFinaleDesc:setAlpha( 0 )
 				self.clipFinished( SeasonFinaleDesc, {} )
@@ -227,12 +241,14 @@ CoD.systemOverlay_Layout_ArenaNewSeasonText.new = function ( menu, controller )
 				CurrentSeasonTitle:completeAnimation()
 				self.CurrentSeasonTitle:setAlpha( 0 )
 				CurrentSeasonTitleFrame2( CurrentSeasonTitle, {} )
+
 				PreviousSeasonTitle:completeAnimation()
 				self.PreviousSeasonTitle:setAlpha( 0 )
 				self.clipFinished( PreviousSeasonTitle, {} )
 			end,
 			SeasonStart = function ()
 				self:setupElementClipCounter( 5 )
+
 				SeasonStartDesc:completeAnimation()
 				self.SeasonStartDesc:setAlpha( 0 )
 				self.clipFinished( SeasonStartDesc, {} )
@@ -251,6 +267,7 @@ CoD.systemOverlay_Layout_ArenaNewSeasonText.new = function ( menu, controller )
 				BonusStarsDesc:completeAnimation()
 				self.BonusStarsDesc:setAlpha( 1 )
 				BonusStarsDescFrame2( BonusStarsDesc, {} )
+
 				SeasonFinaleDesc:completeAnimation()
 				self.SeasonFinaleDesc:setAlpha( 0 )
 				self.clipFinished( SeasonFinaleDesc, {} )
@@ -269,6 +286,7 @@ CoD.systemOverlay_Layout_ArenaNewSeasonText.new = function ( menu, controller )
 				CurrentSeasonTitle:completeAnimation()
 				self.CurrentSeasonTitle:setAlpha( 1 )
 				CurrentSeasonTitleFrame2( CurrentSeasonTitle, {} )
+
 				PreviousSeasonTitle:completeAnimation()
 				self.PreviousSeasonTitle:setAlpha( 0 )
 				self.clipFinished( PreviousSeasonTitle, {} )
@@ -277,6 +295,7 @@ CoD.systemOverlay_Layout_ArenaNewSeasonText.new = function ( menu, controller )
 		SeasonStart = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local SeasonStartDescFrame2 = function ( SeasonStartDesc, event )
 					if not event.interrupted then
 						SeasonStartDesc:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -292,9 +311,11 @@ CoD.systemOverlay_Layout_ArenaNewSeasonText.new = function ( menu, controller )
 				SeasonStartDesc:completeAnimation()
 				self.SeasonStartDesc:setAlpha( 0 )
 				SeasonStartDescFrame2( SeasonStartDesc, {} )
+
 				BonusStarsDesc:completeAnimation()
 				self.BonusStarsDesc:setAlpha( 0 )
 				self.clipFinished( BonusStarsDesc, {} )
+
 				SeasonFinaleDesc:completeAnimation()
 				self.SeasonFinaleDesc:setAlpha( 0 )
 				self.clipFinished( SeasonFinaleDesc, {} )
@@ -313,12 +334,14 @@ CoD.systemOverlay_Layout_ArenaNewSeasonText.new = function ( menu, controller )
 				CurrentSeasonTitle:completeAnimation()
 				self.CurrentSeasonTitle:setAlpha( 0 )
 				CurrentSeasonTitleFrame2( CurrentSeasonTitle, {} )
+
 				PreviousSeasonTitle:completeAnimation()
 				self.PreviousSeasonTitle:setAlpha( 0 )
 				self.clipFinished( PreviousSeasonTitle, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SeasonStartDesc:close()
 		element.BonusStarsDesc:close()

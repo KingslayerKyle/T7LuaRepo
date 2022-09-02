@@ -57,9 +57,11 @@ end
 CoD.Social_Groups = InheritFrom( LUI.UIElement )
 CoD.Social_Groups.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_Groups )
 	self.id = "Social_Groups"
@@ -90,6 +92,7 @@ CoD.Social_Groups.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Frame:close()
 	end )

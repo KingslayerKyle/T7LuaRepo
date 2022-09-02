@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.CP_PartyList.PartyListContainer" )
 CoD.PartyListContainerParent = InheritFrom( LUI.UIElement )
 CoD.PartyListContainerParent.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PartyListContainerParent )
 	self.id = "PartyListContainerParent"
@@ -190,12 +192,14 @@ CoD.PartyListContainerParent.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PartyListContainer:completeAnimation()
 				self.PartyListContainer:setAlpha( 1 )
 				self.clipFinished( PartyListContainer, {} )
 			end,
 			WheelHide = function ()
 				self:setupElementClipCounter( 1 )
+
 				local PartyListContainerFrame2 = function ( PartyListContainer, event )
 					if not event.interrupted then
 						PartyListContainer:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -216,12 +220,14 @@ CoD.PartyListContainerParent.new = function ( menu, controller )
 		WheelHide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PartyListContainer:completeAnimation()
 				self.PartyListContainer:setAlpha( 0.2 )
 				self.clipFinished( PartyListContainer, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local PartyListContainerFrame2 = function ( PartyListContainer, event )
 					if not event.interrupted then
 						PartyListContainer:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -242,12 +248,14 @@ CoD.PartyListContainerParent.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PartyListContainer:completeAnimation()
 				self.PartyListContainer:setAlpha( 0 )
 				self.clipFinished( PartyListContainer, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "WheelHide",
@@ -270,6 +278,7 @@ CoD.PartyListContainerParent.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_HUD_VISIBLE
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PartyListContainer:close()
 	end )

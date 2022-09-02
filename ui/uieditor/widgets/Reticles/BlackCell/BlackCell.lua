@@ -10,9 +10,11 @@ end
 CoD.BlackCell = InheritFrom( LUI.UIElement )
 CoD.BlackCell.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BlackCell )
 	self.id = "BlackCell"
@@ -35,6 +37,7 @@ CoD.BlackCell.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				internal:completeAnimation()
 				self.internal:setAlpha( 0 )
 				self.clipFinished( internal, {} )
@@ -43,12 +46,14 @@ CoD.BlackCell.new = function ( menu, controller )
 		ADS = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				internal:completeAnimation()
 				self.internal:setAlpha( 1 )
 				self.clipFinished( internal, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ADS",
@@ -113,6 +118,7 @@ CoD.BlackCell.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_DEMO_CAMERA_MODE_MOVIECAM
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.internal:close()
 	end )

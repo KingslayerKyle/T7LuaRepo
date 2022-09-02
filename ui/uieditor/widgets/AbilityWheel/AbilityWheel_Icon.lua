@@ -4,9 +4,11 @@
 CoD.AbilityWheel_Icon = InheritFrom( LUI.UIElement )
 CoD.AbilityWheel_Icon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AbilityWheel_Icon )
 	self.id = "AbilityWheel_Icon"
@@ -32,6 +34,7 @@ CoD.AbilityWheel_Icon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local IconImageFrame2 = function ( IconImage, event )
 					if not event.interrupted then
 						IconImage:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -47,10 +50,12 @@ CoD.AbilityWheel_Icon.new = function ( menu, controller )
 				IconImage:completeAnimation()
 				self.IconImage:setAlpha( RandomAddPercent( -10, 1 ) )
 				IconImageFrame2( IconImage, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.IconImage:close()
 	end )

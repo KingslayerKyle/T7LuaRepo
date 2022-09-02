@@ -11,9 +11,11 @@ end
 CoD.FileshareItemLarge = InheritFrom( LUI.UIElement )
 CoD.FileshareItemLarge.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FileshareItemLarge )
 	self.id = "FileshareItemLarge"
@@ -133,43 +135,53 @@ CoD.FileshareItemLarge.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BG:completeAnimation()
 				self.BG:setLeftRight( true, false, 0, 350 )
 				self.BG:setTopBottom( true, false, 0, 290 )
 				self.clipFinished( BG, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setLeftRight( true, false, -2, 352 )
 				self.BoxButtonLrgIdle:setTopBottom( true, false, -2, 324.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				WCFileshareIconExtraCamRender:completeAnimation()
 				self.WCFileshareIconExtraCamRender:setLeftRight( true, false, 0, 350 )
 				self.WCFileshareIconExtraCamRender:setTopBottom( false, true, -350, -60 )
 				self.WCFileshareIconExtraCamRender:setAlpha( 1 )
 				self.clipFinished( WCFileshareIconExtraCamRender, {} )
+
 				ImageViewer:completeAnimation()
 				self.ImageViewer:setAlpha( 0 )
 				self.clipFinished( ImageViewer, {} )
+
 				WeaponName:completeAnimation()
 				self.WeaponName:setLeftRight( true, false, 2.5, 350 )
 				self.WeaponName:setTopBottom( true, false, 325, 350 )
 				self.WeaponName:setAlpha( 1 )
 				self.clipFinished( WeaponName, {} )
+
 				FileCreateTime:completeAnimation()
 				self.FileCreateTime:setLeftRight( true, false, 2.5, 350 )
 				self.FileCreateTime:setTopBottom( true, false, 325, 350 )
 				self.FileCreateTime:setAlpha( 0 )
 				self.clipFinished( FileCreateTime, {} )
+
 				ItemNameBg:completeAnimation()
 				self.ItemNameBg:setLeftRight( true, false, 0, 350 )
 				self.ItemNameBg:setTopBottom( true, false, 290, 322 )
 				self.clipFinished( ItemNameBg, {} )
+
 				ItemName:completeAnimation()
 				self.ItemName:setLeftRight( true, false, 2.5, 350 )
 				self.ItemName:setTopBottom( true, false, 292, 322 )
 				self.clipFinished( ItemName, {} )
+
 				GameTypeImage:completeAnimation()
 				self.GameTypeImage:setAlpha( 0 )
 				self.clipFinished( GameTypeImage, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setLeftRight( true, false, -2.5, 352 )
 				self.StartMenuframenoBG0:setTopBottom( true, false, -1, 352 )
@@ -179,43 +191,53 @@ CoD.FileshareItemLarge.new = function ( menu, controller )
 		ScreenShot = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BG:completeAnimation()
 				self.BG:setLeftRight( true, false, 0, 350 )
 				self.BG:setTopBottom( true, false, 0, 290 )
 				self.clipFinished( BG, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setLeftRight( true, false, -2, 352 )
 				self.BoxButtonLrgIdle:setTopBottom( true, false, -2, 228.88 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				WCFileshareIconExtraCamRender:completeAnimation()
 				self.WCFileshareIconExtraCamRender:setLeftRight( true, false, 0, 350 )
 				self.WCFileshareIconExtraCamRender:setTopBottom( false, true, -350, -60 )
 				self.WCFileshareIconExtraCamRender:setAlpha( 0 )
 				self.clipFinished( WCFileshareIconExtraCamRender, {} )
+
 				ImageViewer:completeAnimation()
 				self.ImageViewer:setAlpha( 1 )
 				self.clipFinished( ImageViewer, {} )
+
 				WeaponName:completeAnimation()
 				self.WeaponName:setLeftRight( true, false, 2.5, 350 )
 				self.WeaponName:setTopBottom( true, false, 325, 350 )
 				self.WeaponName:setAlpha( 0 )
 				self.clipFinished( WeaponName, {} )
+
 				FileCreateTime:completeAnimation()
 				self.FileCreateTime:setLeftRight( true, false, 2.5, 350 )
 				self.FileCreateTime:setTopBottom( true, false, 231.88, 256.88 )
 				self.FileCreateTime:setAlpha( 1 )
 				self.clipFinished( FileCreateTime, {} )
+
 				ItemNameBg:completeAnimation()
 				self.ItemNameBg:setLeftRight( true, false, 0, 350 )
 				self.ItemNameBg:setTopBottom( true, false, 196.88, 228.88 )
 				self.clipFinished( ItemNameBg, {} )
+
 				ItemName:completeAnimation()
 				self.ItemName:setLeftRight( true, false, 2.5, 350 )
 				self.ItemName:setTopBottom( true, false, 198.88, 228.88 )
 				self.clipFinished( ItemName, {} )
+
 				GameTypeImage:completeAnimation()
 				self.GameTypeImage:setAlpha( 0 )
 				self.clipFinished( GameTypeImage, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setLeftRight( true, true, -2.5, 2 )
 				self.StartMenuframenoBG0:setTopBottom( true, true, -1, -88 )
@@ -225,43 +247,53 @@ CoD.FileshareItemLarge.new = function ( menu, controller )
 		GameType = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BG:completeAnimation()
 				self.BG:setLeftRight( true, false, 0, 350 )
 				self.BG:setTopBottom( true, false, 0, 290 )
 				self.clipFinished( BG, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setLeftRight( true, false, -2, 352 )
 				self.BoxButtonLrgIdle:setTopBottom( true, false, -2, 324.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				WCFileshareIconExtraCamRender:completeAnimation()
 				self.WCFileshareIconExtraCamRender:setLeftRight( true, false, 0, 350 )
 				self.WCFileshareIconExtraCamRender:setTopBottom( false, true, -350, -60 )
 				self.WCFileshareIconExtraCamRender:setAlpha( 0 )
 				self.clipFinished( WCFileshareIconExtraCamRender, {} )
+
 				ImageViewer:completeAnimation()
 				self.ImageViewer:setAlpha( 0 )
 				self.clipFinished( ImageViewer, {} )
+
 				WeaponName:completeAnimation()
 				self.WeaponName:setLeftRight( true, false, 2.5, 350 )
 				self.WeaponName:setTopBottom( true, false, 325, 350 )
 				self.WeaponName:setAlpha( 0 )
 				self.clipFinished( WeaponName, {} )
+
 				FileCreateTime:completeAnimation()
 				self.FileCreateTime:setLeftRight( true, false, 2.5, 350 )
 				self.FileCreateTime:setTopBottom( true, false, 325, 350 )
 				self.FileCreateTime:setAlpha( 1 )
 				self.clipFinished( FileCreateTime, {} )
+
 				ItemNameBg:completeAnimation()
 				self.ItemNameBg:setLeftRight( true, false, 0, 350 )
 				self.ItemNameBg:setTopBottom( true, false, 290, 322 )
 				self.clipFinished( ItemNameBg, {} )
+
 				ItemName:completeAnimation()
 				self.ItemName:setLeftRight( true, false, 2.5, 350 )
 				self.ItemName:setTopBottom( true, false, 292, 322 )
 				self.clipFinished( ItemName, {} )
+
 				GameTypeImage:completeAnimation()
 				self.GameTypeImage:setAlpha( 1 )
 				self.clipFinished( GameTypeImage, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setLeftRight( true, false, -2.5, 352 )
 				self.StartMenuframenoBG0:setTopBottom( true, false, -1, 352 )
@@ -271,41 +303,51 @@ CoD.FileshareItemLarge.new = function ( menu, controller )
 		Short = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BG:completeAnimation()
 				self.BG:setLeftRight( true, false, 0, 350 )
 				self.BG:setTopBottom( true, false, 0, 215 )
 				self.clipFinished( BG, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setLeftRight( true, false, -2, 352 )
 				self.BoxButtonLrgIdle:setTopBottom( true, false, -2, 247 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				WCFileshareIconExtraCamRender:completeAnimation()
 				self.WCFileshareIconExtraCamRender:setLeftRight( true, false, 0, 350 )
 				self.WCFileshareIconExtraCamRender:setTopBottom( false, true, -350, -135 )
 				self.WCFileshareIconExtraCamRender:setAlpha( 1 )
 				self.clipFinished( WCFileshareIconExtraCamRender, {} )
+
 				ImageViewer:completeAnimation()
 				self.ImageViewer:setAlpha( 0 )
 				self.clipFinished( ImageViewer, {} )
+
 				WeaponName:completeAnimation()
 				self.WeaponName:setAlpha( 0 )
 				self.clipFinished( WeaponName, {} )
+
 				FileCreateTime:completeAnimation()
 				self.FileCreateTime:setLeftRight( true, false, 2.5, 350 )
 				self.FileCreateTime:setTopBottom( true, false, 325, 350 )
 				self.FileCreateTime:setAlpha( 0 )
 				self.clipFinished( FileCreateTime, {} )
+
 				ItemNameBg:completeAnimation()
 				self.ItemNameBg:setLeftRight( true, false, 0, 350 )
 				self.ItemNameBg:setTopBottom( true, false, 215, 247 )
 				self.clipFinished( ItemNameBg, {} )
+
 				ItemName:completeAnimation()
 				self.ItemName:setLeftRight( true, false, 2.5, 350 )
 				self.ItemName:setTopBottom( true, false, 217, 247 )
 				self.clipFinished( ItemName, {} )
+
 				GameTypeImage:completeAnimation()
 				self.GameTypeImage:setAlpha( 0 )
 				self.clipFinished( GameTypeImage, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setLeftRight( true, true, -2.5, 2 )
 				self.StartMenuframenoBG0:setTopBottom( true, true, -1, -101 )
@@ -315,43 +357,53 @@ CoD.FileshareItemLarge.new = function ( menu, controller )
 		Clip = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BG:completeAnimation()
 				self.BG:setLeftRight( true, false, 0, 350 )
 				self.BG:setTopBottom( true, false, 0, 290 )
 				self.clipFinished( BG, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setLeftRight( true, false, -2, 352 )
 				self.BoxButtonLrgIdle:setTopBottom( true, false, -2, 228.88 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				WCFileshareIconExtraCamRender:completeAnimation()
 				self.WCFileshareIconExtraCamRender:setLeftRight( true, false, 0, 350 )
 				self.WCFileshareIconExtraCamRender:setTopBottom( false, true, -350, -60 )
 				self.WCFileshareIconExtraCamRender:setAlpha( 0 )
 				self.clipFinished( WCFileshareIconExtraCamRender, {} )
+
 				ImageViewer:completeAnimation()
 				self.ImageViewer:setAlpha( 1 )
 				self.clipFinished( ImageViewer, {} )
+
 				WeaponName:completeAnimation()
 				self.WeaponName:setLeftRight( true, false, 2.5, 350 )
 				self.WeaponName:setTopBottom( true, false, 325, 350 )
 				self.WeaponName:setAlpha( 0 )
 				self.clipFinished( WeaponName, {} )
+
 				FileCreateTime:completeAnimation()
 				self.FileCreateTime:setLeftRight( true, false, 2.5, 350 )
 				self.FileCreateTime:setTopBottom( true, false, 231.88, 256.88 )
 				self.FileCreateTime:setAlpha( 1 )
 				self.clipFinished( FileCreateTime, {} )
+
 				ItemNameBg:completeAnimation()
 				self.ItemNameBg:setLeftRight( true, false, 0, 350 )
 				self.ItemNameBg:setTopBottom( true, false, 196.88, 228.88 )
 				self.clipFinished( ItemNameBg, {} )
+
 				ItemName:completeAnimation()
 				self.ItemName:setLeftRight( true, false, 2.5, 350 )
 				self.ItemName:setTopBottom( true, false, 198.88, 228.88 )
 				self.clipFinished( ItemName, {} )
+
 				GameTypeImage:completeAnimation()
 				self.GameTypeImage:setAlpha( 0 )
 				self.clipFinished( GameTypeImage, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setLeftRight( true, true, -2.5, 2 )
 				self.StartMenuframenoBG0:setTopBottom( true, true, -1, -88 )
@@ -359,6 +411,7 @@ CoD.FileshareItemLarge.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ScreenShot",
@@ -401,6 +454,7 @@ CoD.FileshareItemLarge.new = function ( menu, controller )
 			modelName = "fileshareRoot.isNormalSize"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgIdle:close()
 		element.StartMenuframenoBG0:close()

@@ -4,9 +4,11 @@
 CoD.vuhd_siegebot_lockedWidget = InheritFrom( LUI.UIElement )
 CoD.vuhd_siegebot_lockedWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vuhd_siegebot_lockedWidget )
 	self.id = "vuhd_siegebot_lockedWidget"
@@ -37,9 +39,11 @@ CoD.vuhd_siegebot_lockedWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				LockedIcon0:completeAnimation()
 				self.LockedIcon0:setAlpha( 0 )
 				self.clipFinished( LockedIcon0, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
@@ -48,6 +52,7 @@ CoD.vuhd_siegebot_lockedWidget.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local LockedIcon0Frame2 = function ( LockedIcon0, event )
 					local LockedIcon0Frame3 = function ( LockedIcon0, event )
 						if not event.interrupted then
@@ -100,6 +105,7 @@ CoD.vuhd_siegebot_lockedWidget.new = function ( menu, controller )
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				LockedIconFrame2( LockedIcon, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

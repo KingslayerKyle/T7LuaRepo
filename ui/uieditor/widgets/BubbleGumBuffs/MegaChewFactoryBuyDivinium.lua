@@ -19,9 +19,11 @@ end
 CoD.MegaChewFactoryBuyDivinium = InheritFrom( LUI.UIElement )
 CoD.MegaChewFactoryBuyDivinium.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MegaChewFactoryBuyDivinium )
 	self.id = "MegaChewFactoryBuyDivinium"
@@ -45,6 +47,7 @@ CoD.MegaChewFactoryBuyDivinium.new = function ( menu, controller )
 	Label0:setTTF( "fonts/default.ttf" )
 	Label0:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	Label0:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( Label0, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 5 )
 	end )
@@ -107,21 +110,27 @@ CoD.MegaChewFactoryBuyDivinium.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0 )
 				self.clipFinished( Background, {} )
+
 				Label0:completeAnimation()
 				self.Label0:setAlpha( 0 )
 				self.clipFinished( Label0, {} )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 0 )
 				self.clipFinished( Image, {} )
+
 				Button1:completeAnimation()
 				self.Button1:setAlpha( 0 )
 				self.clipFinished( Button1, {} )
+
 				clickButton:completeAnimation()
 				self.clickButton:setAlpha( 0 )
 				self.clipFinished( clickButton, {} )
+
 				Breadcrumb:completeAnimation()
 				self.Breadcrumb:setAlpha( 0 )
 				self.clipFinished( Breadcrumb, {} )
@@ -130,18 +139,23 @@ CoD.MegaChewFactoryBuyDivinium.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0 )
 				self.clipFinished( Background, {} )
+
 				Label0:completeAnimation()
 				self.Label0:setAlpha( 0 )
 				self.clipFinished( Label0, {} )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 0 )
 				self.clipFinished( Image, {} )
+
 				Button1:completeAnimation()
 				self.Button1:setAlpha( 0 )
 				self.clipFinished( Button1, {} )
+
 				Breadcrumb:completeAnimation()
 				self.Breadcrumb:setAlpha( 0 )
 				self.clipFinished( Breadcrumb, {} )
@@ -150,18 +164,23 @@ CoD.MegaChewFactoryBuyDivinium.new = function ( menu, controller )
 		VisiblePC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0.6 )
 				self.clipFinished( Background, {} )
+
 				Label0:completeAnimation()
 				self.Label0:setAlpha( 0 )
 				self.clipFinished( Label0, {} )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 1 )
 				self.clipFinished( Image, {} )
+
 				Button1:completeAnimation()
 				self.Button1:setAlpha( 0 )
 				self.clipFinished( Button1, {} )
+
 				clickButton:completeAnimation()
 				self.clickButton:setLeftRight( true, false, -21, 337 )
 				self.clickButton:setTopBottom( true, false, 1, 26 )
@@ -172,27 +191,34 @@ CoD.MegaChewFactoryBuyDivinium.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0.6 )
 				self.clipFinished( Background, {} )
+
 				Label0:completeAnimation()
 				self.Label0:setAlpha( 1 )
 				self.clipFinished( Label0, {} )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 1 )
 				self.clipFinished( Image, {} )
+
 				Button1:completeAnimation()
 				self.Button1:setAlpha( 1 )
 				self.clipFinished( Button1, {} )
+
 				clickButton:completeAnimation()
 				self.clickButton:setAlpha( 0 )
 				self.clipFinished( clickButton, {} )
+
 				Breadcrumb:completeAnimation()
 				self.Breadcrumb:setAlpha( 1 )
 				self.clipFinished( Breadcrumb, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MegaChewVialPercentOff0:close()
 		element.clickButton:close()

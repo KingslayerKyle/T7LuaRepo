@@ -4,9 +4,11 @@
 CoD.CallingCards_SupportWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_SupportWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_SupportWidget )
 	self.id = "CallingCards_SupportWidget"
@@ -78,6 +80,7 @@ CoD.CallingCards_SupportWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				local bgWithReflectFrame2 = function ( bgWithReflect, event )
 					local bgWithReflectFrame3 = function ( bgWithReflect, event )
 						local bgWithReflectFrame4 = function ( bgWithReflect, event )
@@ -659,6 +662,7 @@ CoD.CallingCards_SupportWidget.new = function ( menu, controller )
 				self.fly:setLeftRight( true, false, 12, 76 )
 				self.fly:setTopBottom( true, false, -46, 18 )
 				flyFrame2( fly, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

@@ -12,9 +12,11 @@ require( "ui.uieditor.widgets.verticalScrollingTextBox18" )
 CoD.CamoRewardsCarouselItemInternal = InheritFrom( LUI.UIElement )
 CoD.CamoRewardsCarouselItemInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CamoRewardsCarouselItemInternal )
 	self.id = "CamoRewardsCarouselItemInternal"

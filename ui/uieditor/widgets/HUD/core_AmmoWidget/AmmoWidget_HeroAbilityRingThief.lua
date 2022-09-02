@@ -18,9 +18,11 @@ end
 CoD.AmmoWidget_HeroAbilityRingThief = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_HeroAbilityRingThief.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_HeroAbilityRingThief )
 	self.id = "AmmoWidget_HeroAbilityRingThief"
@@ -83,6 +85,7 @@ CoD.AmmoWidget_HeroAbilityRingThief.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				HeroRingImageThief:completeAnimation()
 				self.HeroRingImageThief:setAlpha( 0 )
 				self.clipFinished( HeroRingImageThief, {} )
@@ -91,12 +94,14 @@ CoD.AmmoWidget_HeroAbilityRingThief.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				HeroRingImageThief:completeAnimation()
 				self.HeroRingImageThief:setAlpha( 0 )
 				self.clipFinished( HeroRingImageThief, {} )
 			end,
 			FlashOn = function ()
 				self:setupElementClipCounter( 3 )
+
 				local f10_local0 = function ( f11_arg0, f11_arg1 )
 					local f11_local0 = function ( f12_arg0, f12_arg1 )
 						local f12_local0 = function ( f13_arg0, f13_arg1 )
@@ -351,12 +356,14 @@ CoD.AmmoWidget_HeroAbilityRingThief.new = function ( menu, controller )
 		VisibleCopy = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				HeroRingImageThief:completeAnimation()
 				self.HeroRingImageThief:setAlpha( 0 )
 				self.clipFinished( HeroRingImageThief, {} )
 			end,
 			FlashOn = function ()
 				self:setupElementClipCounter( 3 )
+
 				local f33_local0 = function ( f34_arg0, f34_arg1 )
 					local f34_local0 = function ( f35_arg0, f35_arg1 )
 						local f35_local0 = function ( f36_arg0, f36_arg1 )
@@ -543,6 +550,7 @@ CoD.AmmoWidget_HeroAbilityRingThief.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -579,6 +587,7 @@ CoD.AmmoWidget_HeroAbilityRingThief.new = function ( menu, controller )
 			PlayClip( self, "FlashOn", controller )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.HeroRingImageThief:close()
 		element.HeroRingImageThiefBlurinner:close()

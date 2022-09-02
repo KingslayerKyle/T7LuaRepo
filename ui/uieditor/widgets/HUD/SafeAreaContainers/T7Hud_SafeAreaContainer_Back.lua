@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Notifications.Notification" )
 CoD.T7Hud_SafeAreaContainer_Back = InheritFrom( LUI.UIElement )
 CoD.T7Hud_SafeAreaContainer_Back.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.T7Hud_SafeAreaContainer_Back )
 	self.id = "T7Hud_SafeAreaContainer_Back"
@@ -27,6 +29,7 @@ CoD.T7Hud_SafeAreaContainer_Back.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Notifications:completeAnimation()
 				self.Notifications:setAlpha( 1 )
 				self.clipFinished( Notifications, {} )
@@ -35,12 +38,14 @@ CoD.T7Hud_SafeAreaContainer_Back.new = function ( menu, controller )
 		HideNotifications = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Notifications:completeAnimation()
 				self.Notifications:setAlpha( 0 )
 				self.clipFinished( Notifications, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HideNotifications",
@@ -91,6 +96,7 @@ CoD.T7Hud_SafeAreaContainer_Back.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_IN_KILLCAM
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Notifications:close()
 	end )

@@ -4,9 +4,11 @@
 CoD.FirstTimeLanguageSelectLanguageWidget = InheritFrom( LUI.UIElement )
 CoD.FirstTimeLanguageSelectLanguageWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FirstTimeLanguageSelectLanguageWidget )
 	self.id = "FirstTimeLanguageSelectLanguageWidget"
@@ -42,12 +44,15 @@ CoD.FirstTimeLanguageSelectLanguageWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				EnglishLanguageImage:completeAnimation()
 				self.EnglishLanguageImage:setAlpha( 0 )
 				self.clipFinished( EnglishLanguageImage, {} )
+
 				ArabicLanguageImage:completeAnimation()
 				self.ArabicLanguageImage:setAlpha( 0 )
 				self.clipFinished( ArabicLanguageImage, {} )
+
 				ChineseLanguageImage:completeAnimation()
 				self.ChineseLanguageImage:setAlpha( 0 )
 				self.clipFinished( ChineseLanguageImage, {} )
@@ -56,12 +61,15 @@ CoD.FirstTimeLanguageSelectLanguageWidget.new = function ( menu, controller )
 		Chinese = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				EnglishLanguageImage:completeAnimation()
 				self.EnglishLanguageImage:setAlpha( 0 )
 				self.clipFinished( EnglishLanguageImage, {} )
+
 				ArabicLanguageImage:completeAnimation()
 				self.ArabicLanguageImage:setAlpha( 0 )
 				self.clipFinished( ArabicLanguageImage, {} )
+
 				ChineseLanguageImage:completeAnimation()
 				self.ChineseLanguageImage:setAlpha( 1 )
 				self.clipFinished( ChineseLanguageImage, {} )
@@ -70,12 +78,15 @@ CoD.FirstTimeLanguageSelectLanguageWidget.new = function ( menu, controller )
 		Arabic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				EnglishLanguageImage:completeAnimation()
 				self.EnglishLanguageImage:setAlpha( 0 )
 				self.clipFinished( EnglishLanguageImage, {} )
+
 				ArabicLanguageImage:completeAnimation()
 				self.ArabicLanguageImage:setAlpha( 1 )
 				self.clipFinished( ArabicLanguageImage, {} )
+
 				ChineseLanguageImage:completeAnimation()
 				self.ChineseLanguageImage:setAlpha( 0 )
 				self.clipFinished( ChineseLanguageImage, {} )
@@ -84,18 +95,22 @@ CoD.FirstTimeLanguageSelectLanguageWidget.new = function ( menu, controller )
 		English = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				EnglishLanguageImage:completeAnimation()
 				self.EnglishLanguageImage:setAlpha( 1 )
 				self.clipFinished( EnglishLanguageImage, {} )
+
 				ArabicLanguageImage:completeAnimation()
 				self.ArabicLanguageImage:setAlpha( 0 )
 				self.clipFinished( ArabicLanguageImage, {} )
+
 				ChineseLanguageImage:completeAnimation()
 				self.ChineseLanguageImage:setAlpha( 0 )
 				self.clipFinished( ChineseLanguageImage, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Chinese",

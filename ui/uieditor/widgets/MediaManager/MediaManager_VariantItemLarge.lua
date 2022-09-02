@@ -14,9 +14,11 @@ end
 CoD.MediaManager_VariantItemLarge = InheritFrom( LUI.UIElement )
 CoD.MediaManager_VariantItemLarge.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MediaManager_VariantItemLarge )
 	self.id = "MediaManager_VariantItemLarge"
@@ -97,24 +99,31 @@ CoD.MediaManager_VariantItemLarge.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				WCVariantIconExtraCamRender0:completeAnimation()
 				self.WCVariantIconExtraCamRender0:setAlpha( 1 )
 				self.clipFinished( WCVariantIconExtraCamRender0, {} )
+
 				WeaponNameBg:completeAnimation()
 				self.WeaponNameBg:setAlpha( 0.8 )
 				self.clipFinished( WeaponNameBg, {} )
+
 				VariantName:completeAnimation()
 				self.VariantName:setAlpha( 1 )
 				self.clipFinished( VariantName, {} )
+
 				WeaponNameLabel:completeAnimation()
 				self.WeaponNameLabel:setAlpha( 1 )
 				self.clipFinished( WeaponNameLabel, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 0.85 )
 				self.clipFinished( StartMenuframenoBG0, {} )
@@ -123,30 +132,38 @@ CoD.MediaManager_VariantItemLarge.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				WCVariantIconExtraCamRender0:completeAnimation()
 				self.WCVariantIconExtraCamRender0:setAlpha( 0 )
 				self.clipFinished( WCVariantIconExtraCamRender0, {} )
+
 				WeaponNameBg:completeAnimation()
 				self.WeaponNameBg:setAlpha( 0 )
 				self.clipFinished( WeaponNameBg, {} )
+
 				VariantName:completeAnimation()
 				self.VariantName:setAlpha( 0 )
 				self.clipFinished( VariantName, {} )
+
 				WeaponNameLabel:completeAnimation()
 				self.WeaponNameLabel:setAlpha( 0 )
 				self.clipFinished( WeaponNameLabel, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -163,6 +180,7 @@ CoD.MediaManager_VariantItemLarge.new = function ( menu, controller )
 			modelName = "MediaManager.slotsUsed"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgIdle:close()
 		element.StartMenuframenoBG0:close()

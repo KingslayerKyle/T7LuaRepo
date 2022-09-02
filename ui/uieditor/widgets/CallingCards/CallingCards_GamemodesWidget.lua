@@ -4,9 +4,11 @@
 CoD.CallingCards_GamemodesWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_GamemodesWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_GamemodesWidget )
 	self.id = "CallingCards_GamemodesWidget"
@@ -115,6 +117,7 @@ CoD.CallingCards_GamemodesWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local GlowOrangeOver0Frame2 = function ( GlowOrangeOver0, event )
 					local GlowOrangeOver0Frame3 = function ( GlowOrangeOver0, event )
 						if not event.interrupted then
@@ -195,6 +198,7 @@ CoD.CallingCards_GamemodesWidget.new = function ( menu, controller )
 				self.swordglow:setAlpha( 0.29 )
 				self.swordglow:setZRot( 83 )
 				swordglowFrame2( swordglow, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

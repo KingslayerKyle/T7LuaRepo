@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_Panels.ZmPanel_RndInt" )
 CoD.ZmPanel_RndExt = InheritFrom( LUI.UIElement )
 CoD.ZmPanel_RndExt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmPanel_RndExt )
 	self.id = "ZmPanel_RndExt"

@@ -59,9 +59,11 @@ end
 CoD.CtfWaypointBaseContainer = InheritFrom( LUI.UIElement )
 CoD.CtfWaypointBaseContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CtfWaypointBaseContainer )
 	self.id = "CtfWaypointBaseContainer"

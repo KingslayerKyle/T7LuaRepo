@@ -23,9 +23,11 @@ end
 CoD.EmblemEditorColorMixer = InheritFrom( LUI.UIElement )
 CoD.EmblemEditorColorMixer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemEditorColorMixer )
 	self.id = "EmblemEditorColorMixer"
@@ -311,6 +313,7 @@ CoD.EmblemEditorColorMixer.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.redBar:close()
 		element.greenBar:close()

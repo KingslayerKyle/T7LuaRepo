@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.SystemOverlays.systemOverlay_DailyChallengeWarning
 CoD.systemOverlay_DailyChallengeWarningFrame = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_DailyChallengeWarningFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_DailyChallengeWarningFrame )
 	self.id = "systemOverlay_DailyChallengeWarningFrame"
@@ -36,6 +38,7 @@ CoD.systemOverlay_DailyChallengeWarningFrame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.systemOverlayDailyChallengeWarning:close()
 	end )

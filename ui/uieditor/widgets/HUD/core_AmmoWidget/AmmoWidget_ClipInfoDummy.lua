@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_TotalAmmo" )
 CoD.AmmoWidget_ClipInfoDummy = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_ClipInfoDummy.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_ClipInfoDummy )
 	self.id = "AmmoWidget_ClipInfoDummy"
@@ -103,14 +105,17 @@ CoD.AmmoWidget_ClipInfoDummy.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Knife:completeAnimation()
 				self.Knife:setLeftRight( false, true, 256, 341 )
 				self.Knife:setTopBottom( false, true, -38, -12 )
 				self.clipFinished( Knife, {} )
+
 				Fist:completeAnimation()
 				self.Fist:setLeftRight( false, true, 282.76, 318.24 )
 				self.Fist:setTopBottom( false, true, -60.75, 13.75 )
 				self.clipFinished( Fist, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, -60, -2 )
 				self.TotalAmmo:setTopBottom( false, true, -37.5, -7.5 )
@@ -120,14 +125,17 @@ CoD.AmmoWidget_ClipInfoDummy.new = function ( menu, controller )
 		Weapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Knife:completeAnimation()
 				self.Knife:setLeftRight( false, true, 256, 341 )
 				self.Knife:setTopBottom( false, true, -38, -12 )
 				self.clipFinished( Knife, {} )
+
 				Fist:completeAnimation()
 				self.Fist:setLeftRight( false, true, 282.76, 318.24 )
 				self.Fist:setTopBottom( false, true, -60.75, 13.75 )
 				self.clipFinished( Fist, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, -60, -2 )
 				self.TotalAmmo:setTopBottom( false, true, -37.5, -7.5 )
@@ -137,10 +145,12 @@ CoD.AmmoWidget_ClipInfoDummy.new = function ( menu, controller )
 		Fist = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Fist:completeAnimation()
 				self.Fist:setLeftRight( false, true, -57.24, -21.76 )
 				self.Fist:setTopBottom( false, true, -62.25, 12.25 )
 				self.clipFinished( Fist, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, 292, 350 )
 				self.TotalAmmo:setTopBottom( false, true, -37, -7 )
@@ -150,14 +160,17 @@ CoD.AmmoWidget_ClipInfoDummy.new = function ( menu, controller )
 		KnifeGunGame = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Knife:completeAnimation()
 				self.Knife:setLeftRight( false, true, -135, -50 )
 				self.Knife:setTopBottom( false, true, -39, -13 )
 				self.clipFinished( Knife, {} )
+
 				Fist:completeAnimation()
 				self.Fist:setLeftRight( false, true, 282.76, 318.24 )
 				self.Fist:setTopBottom( false, true, -60.75, 13.75 )
 				self.clipFinished( Fist, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, 292, 350 )
 				self.TotalAmmo:setTopBottom( false, true, -37, -7 )
@@ -167,14 +180,17 @@ CoD.AmmoWidget_ClipInfoDummy.new = function ( menu, controller )
 		Knife = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Knife:completeAnimation()
 				self.Knife:setLeftRight( false, true, -89, -4 )
 				self.Knife:setTopBottom( false, true, -39, -13 )
 				self.clipFinished( Knife, {} )
+
 				Fist:completeAnimation()
 				self.Fist:setLeftRight( false, true, 282.76, 318.24 )
 				self.Fist:setTopBottom( false, true, -60.75, 13.75 )
 				self.clipFinished( Fist, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, 292, 350 )
 				self.TotalAmmo:setTopBottom( false, true, -37, -7 )
@@ -184,14 +200,17 @@ CoD.AmmoWidget_ClipInfoDummy.new = function ( menu, controller )
 		Weapon3Digits = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Knife:completeAnimation()
 				self.Knife:setLeftRight( false, true, 256, 341 )
 				self.Knife:setTopBottom( false, true, -38, -12 )
 				self.clipFinished( Knife, {} )
+
 				Fist:completeAnimation()
 				self.Fist:setLeftRight( false, true, 282.76, 318.24 )
 				self.Fist:setTopBottom( false, true, -60.75, 13.75 )
 				self.clipFinished( Fist, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, -60, -2 )
 				self.TotalAmmo:setTopBottom( false, true, -37.5, -7.5 )
@@ -199,6 +218,7 @@ CoD.AmmoWidget_ClipInfoDummy.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Weapon",
@@ -284,6 +304,7 @@ CoD.AmmoWidget_ClipInfoDummy.new = function ( menu, controller )
 			modelName = "currentWeapon.equippedWeaponReference"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Knife:close()
 		element.Fist:close()

@@ -4,9 +4,11 @@
 CoD.FE_Menu_LeftGraphics = InheritFrom( LUI.UIElement )
 CoD.FE_Menu_LeftGraphics.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_Menu_LeftGraphics )
 	self.id = "FE_Menu_LeftGraphics"
@@ -45,6 +47,7 @@ CoD.FE_Menu_LeftGraphics.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local f2_local0 = function ( f3_arg0, f3_arg1 )
 					if not f3_arg1.interrupted then
 						f3_arg0:beginAnimation( "keyframe", 449, false, false, CoD.TweenType.Linear )
@@ -105,6 +108,7 @@ CoD.FE_Menu_LeftGraphics.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 3 )
+
 				local f6_local0 = function ( f7_arg0, f7_arg1 )
 					if not f7_arg1.interrupted then
 						f7_arg0:beginAnimation( "keyframe", 449, false, false, CoD.TweenType.Linear )

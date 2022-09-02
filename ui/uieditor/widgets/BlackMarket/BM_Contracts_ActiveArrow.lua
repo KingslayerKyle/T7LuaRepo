@@ -4,9 +4,11 @@
 CoD.BM_Contracts_ActiveArrow = InheritFrom( LUI.UIElement )
 CoD.BM_Contracts_ActiveArrow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Contracts_ActiveArrow )
 	self.id = "BM_Contracts_ActiveArrow"
@@ -42,6 +44,7 @@ CoD.BM_Contracts_ActiveArrow.new = function ( menu, controller )
 	Text:setText( Engine.Localize( "MPUI_ACTIVE_CAPS" ) )
 	Text:setTTF( "fonts/escom.ttf" )
 	Text:setLetterSpacing( 1 )
+
 	LUI.OverrideFunction_CallOriginalFirst( Text, "setText", function ( element, controller )
 		ScaleWidgetToLabelLeftJustify( self, element, 10 )
 	end )
@@ -52,24 +55,29 @@ CoD.BM_Contracts_ActiveArrow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Complete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Cost = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Complete",

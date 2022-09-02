@@ -4,9 +4,11 @@
 CoD.ZmAmmo_ClipPress = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_ClipPress.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_ClipPress )
 	self.id = "ZmAmmo_ClipPress"
@@ -46,6 +48,7 @@ CoD.ZmAmmo_ClipPress.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ClipGlowTop:completeAnimation()
 				self.ClipGlowTop:setAlpha( 0 )
 				self.clipFinished( ClipGlowTop, {} )
@@ -54,6 +57,7 @@ CoD.ZmAmmo_ClipPress.new = function ( menu, controller )
 		NoAmmoPress = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local Clip0Frame2 = function ( Clip0, event )
 					local Clip0Frame3 = function ( Clip0, event )
 						local Clip0Frame4 = function ( Clip0, event )
@@ -248,6 +252,7 @@ CoD.ZmAmmo_ClipPress.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Clip0:close()
 	end )

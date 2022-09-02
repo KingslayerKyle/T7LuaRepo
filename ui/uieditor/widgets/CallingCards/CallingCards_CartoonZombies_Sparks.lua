@@ -4,9 +4,11 @@
 CoD.CallingCards_CartoonZombies_Sparks = InheritFrom( LUI.UIElement )
 CoD.CallingCards_CartoonZombies_Sparks.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_CartoonZombies_Sparks )
 	self.id = "CallingCards_CartoonZombies_Sparks"
@@ -25,6 +27,7 @@ CoD.CallingCards_CartoonZombies_Sparks.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local sparksFrame2 = function ( sparks, event )
 					local sparksFrame3 = function ( sparks, event )
 						local sparksFrame4 = function ( sparks, event )
@@ -369,6 +372,7 @@ CoD.CallingCards_CartoonZombies_Sparks.new = function ( menu, controller )
 				sparks:completeAnimation()
 				self.sparks:setAlpha( 1 )
 				sparksFrame2( sparks, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

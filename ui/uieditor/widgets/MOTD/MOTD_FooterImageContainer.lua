@@ -4,9 +4,11 @@
 CoD.MOTD_FooterImageContainer = InheritFrom( LUI.UIElement )
 CoD.MOTD_FooterImageContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.MOTD_FooterImageContainer )
 	self.id = "MOTD_FooterImageContainer"

@@ -11,9 +11,11 @@ end
 CoD.ChannelSelectorButton = InheritFrom( LUI.UIElement )
 CoD.ChannelSelectorButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChannelSelectorButton )
 	self.id = "ChannelSelectorButton"
@@ -67,36 +69,45 @@ CoD.ChannelSelectorButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BackGroundImage:completeAnimation()
 				self.BackGroundImage:setAlpha( 1 )
 				self.clipFinished( BackGroundImage, {} )
+
 				focusBorder:completeAnimation()
 				self.focusBorder:setAlpha( 0 )
 				self.clipFinished( focusBorder, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FEFocusBarTOP:completeAnimation()
 				self.FEFocusBarTOP:setAlpha( 0 )
 				self.clipFinished( FEFocusBarTOP, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 4 )
+
 				BackGroundImage:completeAnimation()
 				self.BackGroundImage:setAlpha( 1 )
 				self.clipFinished( BackGroundImage, {} )
+
 				focusBorder:completeAnimation()
 				self.focusBorder:setAlpha( 0 )
 				self.clipFinished( focusBorder, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 1 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FEFocusBarTOP:completeAnimation()
 				self.FEFocusBarTOP:setAlpha( 1 )
 				self.clipFinished( FEFocusBarTOP, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.focusBorder:close()
 		element.FocusBarB0:close()

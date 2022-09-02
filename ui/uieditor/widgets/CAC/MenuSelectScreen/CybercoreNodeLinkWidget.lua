@@ -4,9 +4,11 @@
 CoD.CybercoreNodeLinkWidget = InheritFrom( LUI.UIElement )
 CoD.CybercoreNodeLinkWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CybercoreNodeLinkWidget )
 	self.id = "CybercoreNodeLinkWidget"
@@ -34,9 +36,11 @@ CoD.CybercoreNodeLinkWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ActiveImage:completeAnimation()
 				self.ActiveImage:setAlpha( 0 )
 				self.clipFinished( ActiveImage, {} )
+
 				InactiveImage:completeAnimation()
 				self.InactiveImage:setAlpha( 0 )
 				self.InactiveImage:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
@@ -44,9 +48,11 @@ CoD.CybercoreNodeLinkWidget.new = function ( menu, controller )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 2 )
+
 				ActiveImage:completeAnimation()
 				self.ActiveImage:setAlpha( 1 )
 				self.clipFinished( ActiveImage, {} )
+
 				InactiveImage:completeAnimation()
 				self.InactiveImage:setAlpha( 0 )
 				self.clipFinished( InactiveImage, {} )
@@ -55,10 +61,12 @@ CoD.CybercoreNodeLinkWidget.new = function ( menu, controller )
 		Inactive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ActiveImage:completeAnimation()
 				self.ActiveImage:setAlpha( 0 )
 				self.ActiveImage:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( ActiveImage, {} )
+
 				InactiveImage:completeAnimation()
 				self.InactiveImage:setAlpha( 0.25 )
 				self.InactiveImage:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
@@ -66,6 +74,7 @@ CoD.CybercoreNodeLinkWidget.new = function ( menu, controller )
 			end,
 			Inactive = function ()
 				self:setupElementClipCounter( 2 )
+
 				ActiveImage:completeAnimation()
 				self.ActiveImage:setAlpha( 0 )
 				self.clipFinished( ActiveImage, {} )
@@ -155,6 +164,7 @@ CoD.CybercoreNodeLinkWidget.new = function ( menu, controller )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 1 )
+
 				ActiveImage:completeAnimation()
 				self.ActiveImage:setAlpha( 0 )
 				self.ActiveImage:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
@@ -164,10 +174,12 @@ CoD.CybercoreNodeLinkWidget.new = function ( menu, controller )
 		ActiveMartial = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ActiveImage:completeAnimation()
 				self.ActiveImage:setRGB( 0.33, 0.76, 0.1 )
 				self.ActiveImage:setAlpha( 1 )
 				self.clipFinished( ActiveImage, {} )
+
 				InactiveImage:completeAnimation()
 				self.InactiveImage:setAlpha( 0 )
 				self.clipFinished( InactiveImage, {} )
@@ -176,10 +188,12 @@ CoD.CybercoreNodeLinkWidget.new = function ( menu, controller )
 		ActiveChaos = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ActiveImage:completeAnimation()
 				self.ActiveImage:setRGB( 0.96, 0.36, 0.07 )
 				self.ActiveImage:setAlpha( 1 )
 				self.clipFinished( ActiveImage, {} )
+
 				InactiveImage:completeAnimation()
 				self.InactiveImage:setAlpha( 0 )
 				self.clipFinished( InactiveImage, {} )
@@ -188,16 +202,19 @@ CoD.CybercoreNodeLinkWidget.new = function ( menu, controller )
 		ActiveControl = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ActiveImage:completeAnimation()
 				self.ActiveImage:setRGB( 0.07, 0.78, 0.96 )
 				self.ActiveImage:setAlpha( 1 )
 				self.clipFinished( ActiveImage, {} )
+
 				InactiveImage:completeAnimation()
 				self.InactiveImage:setAlpha( 0 )
 				self.clipFinished( InactiveImage, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Inactive",

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.cac_IconTokenStatic" )
 CoD.UnlockTokensWidget = InheritFrom( LUI.UIElement )
 CoD.UnlockTokensWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.UnlockTokensWidget )
 	self.id = "UnlockTokensWidget"
@@ -50,12 +52,15 @@ CoD.UnlockTokensWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setAlpha( 0 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				cacIconTokenStatic0:completeAnimation()
 				self.cacIconTokenStatic0:setAlpha( 0 )
 				self.clipFinished( cacIconTokenStatic0, {} )
+
 				tokenLabel:completeAnimation()
 				self.tokenLabel:setAlpha( 0 )
 				self.clipFinished( tokenLabel, {} )
@@ -64,18 +69,22 @@ CoD.UnlockTokensWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setAlpha( 0.2 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				cacIconTokenStatic0:completeAnimation()
 				self.cacIconTokenStatic0:setAlpha( 1 )
 				self.clipFinished( cacIconTokenStatic0, {} )
+
 				tokenLabel:completeAnimation()
 				self.tokenLabel:setAlpha( 1 )
 				self.clipFinished( tokenLabel, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -84,6 +93,7 @@ CoD.UnlockTokensWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FETitleNumBrdr0:close()
 		element.cacIconTokenStatic0:close()

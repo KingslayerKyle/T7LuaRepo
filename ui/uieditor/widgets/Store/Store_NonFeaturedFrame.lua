@@ -61,9 +61,11 @@ end
 CoD.Store_NonFeaturedFrame = InheritFrom( LUI.UIElement )
 CoD.Store_NonFeaturedFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Store_NonFeaturedFrame )
 	self.id = "Store_NonFeaturedFrame"
@@ -253,16 +255,20 @@ CoD.Store_NonFeaturedFrame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				productList:completeAnimation()
 				self.productList:setAlpha( 1 )
 				self.clipFinished( productList, {} )
+
 				rightPane:completeAnimation()
 				self.rightPane:setAlpha( 0 )
 				self.clipFinished( rightPane, {} )
+
 				itemStatus:completeAnimation()
 				self.itemStatus:setAlpha( 0 )
 				self.itemStatus:setText( Engine.Localize( "MENU_FILESHARE_LOADING" ) )
 				self.clipFinished( itemStatus, {} )
+
 				storeSpinner:completeAnimation()
 				self.storeSpinner:setAlpha( 0 )
 				self.clipFinished( storeSpinner, {} )
@@ -271,16 +277,20 @@ CoD.Store_NonFeaturedFrame.new = function ( menu, controller )
 		Loading = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				productList:completeAnimation()
 				self.productList:setAlpha( 0 )
 				self.clipFinished( productList, {} )
+
 				rightPane:completeAnimation()
 				self.rightPane:setAlpha( 0 )
 				self.clipFinished( rightPane, {} )
+
 				itemStatus:completeAnimation()
 				self.itemStatus:setAlpha( 1 )
 				self.itemStatus:setText( Engine.Localize( "MENU_FILESHARE_LOADING" ) )
 				self.clipFinished( itemStatus, {} )
+
 				storeSpinner:completeAnimation()
 				self.storeSpinner:setAlpha( 1 )
 				self.clipFinished( storeSpinner, {} )
@@ -289,16 +299,20 @@ CoD.Store_NonFeaturedFrame.new = function ( menu, controller )
 		NoItems = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				productList:completeAnimation()
 				self.productList:setAlpha( 0 )
 				self.clipFinished( productList, {} )
+
 				rightPane:completeAnimation()
 				self.rightPane:setAlpha( 0 )
 				self.clipFinished( rightPane, {} )
+
 				itemStatus:completeAnimation()
 				self.itemStatus:setAlpha( 1 )
 				self.itemStatus:setText( Engine.Localize( "MENU_STORE_NO_ITEMS" ) )
 				self.clipFinished( itemStatus, {} )
+
 				storeSpinner:completeAnimation()
 				self.storeSpinner:setAlpha( 0 )
 				self.clipFinished( storeSpinner, {} )
@@ -307,16 +321,20 @@ CoD.Store_NonFeaturedFrame.new = function ( menu, controller )
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				productList:completeAnimation()
 				self.productList:setAlpha( 1 )
 				self.clipFinished( productList, {} )
+
 				rightPane:completeAnimation()
 				self.rightPane:setAlpha( 0 )
 				self.clipFinished( rightPane, {} )
+
 				itemStatus:completeAnimation()
 				self.itemStatus:setAlpha( 0 )
 				self.itemStatus:setText( Engine.Localize( "MENU_FILESHARE_LOADING" ) )
 				self.clipFinished( itemStatus, {} )
+
 				storeSpinner:completeAnimation()
 				self.storeSpinner:setAlpha( 0 )
 				self.clipFinished( storeSpinner, {} )
@@ -325,22 +343,27 @@ CoD.Store_NonFeaturedFrame.new = function ( menu, controller )
 		ShowDetails = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				productList:completeAnimation()
 				self.productList:setAlpha( 1 )
 				self.clipFinished( productList, {} )
+
 				rightPane:completeAnimation()
 				self.rightPane:setAlpha( 1 )
 				self.clipFinished( rightPane, {} )
+
 				itemStatus:completeAnimation()
 				self.itemStatus:setAlpha( 0 )
 				self.itemStatus:setText( Engine.Localize( "MENU_FILESHARE_LOADING" ) )
 				self.clipFinished( itemStatus, {} )
+
 				storeSpinner:completeAnimation()
 				self.storeSpinner:setAlpha( 0 )
 				self.clipFinished( storeSpinner, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Loading",
@@ -401,6 +424,7 @@ CoD.Store_NonFeaturedFrame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.productList:close()
 		element.rightPane:close()

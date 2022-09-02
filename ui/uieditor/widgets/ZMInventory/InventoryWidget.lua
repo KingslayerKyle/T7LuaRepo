@@ -19,9 +19,11 @@ require( "ui.uieditor.widgets.BubbleGumBuffs.BubbleGumPackInGame" )
 CoD.InventoryWidget = InheritFrom( LUI.UIElement )
 CoD.InventoryWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.InventoryWidget )
 	self.id = "InventoryWidget"
@@ -305,45 +307,59 @@ CoD.InventoryWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				ShadowBox:completeAnimation()
 				self.ShadowBox:setAlpha( 0 )
 				self.clipFinished( ShadowBox, {} )
+
 				IDGunBlueprintWidget:completeAnimation()
 				self.IDGunBlueprintWidget:setAlpha( 0 )
 				self.clipFinished( IDGunBlueprintWidget, {} )
+
 				FuseBoxWidget:completeAnimation()
 				self.FuseBoxWidget:setAlpha( 0 )
 				self.clipFinished( FuseBoxWidget, {} )
+
 				RocketShieldBlueprintWidget:completeAnimation()
 				self.RocketShieldBlueprintWidget:setAlpha( 0 )
 				self.clipFinished( RocketShieldBlueprintWidget, {} )
+
 				SummoningKeyWidget:completeAnimation()
 				self.SummoningKeyWidget:setAlpha( 0 )
 				self.clipFinished( SummoningKeyWidget, {} )
+
 				RitualWidget:completeAnimation()
 				self.RitualWidget:setAlpha( 0 )
 				self.clipFinished( RitualWidget, {} )
+
 				BeastControls:completeAnimation()
 				self.BeastControls:setAlpha( 0 )
 				self.clipFinished( BeastControls, {} )
+
 				SprayerWidget:completeAnimation()
 				self.SprayerWidget:setAlpha( 0 )
 				self.clipFinished( SprayerWidget, {} )
+
 				QuestEggWidget:completeAnimation()
 				self.QuestEggWidget:setAlpha( 0 )
 				self.clipFinished( QuestEggWidget, {} )
+
 				FuseTitle:completeAnimation()
 				self.FuseTitle:setAlpha( 0 )
 				self.clipFinished( FuseTitle, {} )
+
 				RocketShieldTitle:completeAnimation()
 				self.RocketShieldTitle:setAlpha( 0 )
 				self.clipFinished( RocketShieldTitle, {} )
+
 				IDGunBlueprintTitle:completeAnimation()
 				self.IDGunBlueprintTitle:setAlpha( 0 )
 				self.clipFinished( IDGunBlueprintTitle, {} )
+
 				RitualItemTitle:completeAnimation()
 				self.RitualItemTitle:setAlpha( 0 )
 				self.clipFinished( RitualItemTitle, {} )
+
 				SprayerWidgetTitle:completeAnimation()
 				self.SprayerWidgetTitle:setAlpha( 0 )
 				self.clipFinished( SprayerWidgetTitle, {} )
@@ -352,51 +368,66 @@ CoD.InventoryWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				ShadowBox:completeAnimation()
 				self.ShadowBox:setAlpha( 1 )
 				self.clipFinished( ShadowBox, {} )
+
 				IDGunBlueprintWidget:completeAnimation()
 				self.IDGunBlueprintWidget:setAlpha( 1 )
 				self.clipFinished( IDGunBlueprintWidget, {} )
+
 				FuseBoxWidget:completeAnimation()
 				self.FuseBoxWidget:setAlpha( 1 )
 				self.clipFinished( FuseBoxWidget, {} )
+
 				RocketShieldBlueprintWidget:completeAnimation()
 				self.RocketShieldBlueprintWidget:setAlpha( 1 )
 				self.clipFinished( RocketShieldBlueprintWidget, {} )
+
 				SummoningKeyWidget:completeAnimation()
 				self.SummoningKeyWidget:setAlpha( 1 )
 				self.clipFinished( SummoningKeyWidget, {} )
+
 				RitualWidget:completeAnimation()
 				self.RitualWidget:setAlpha( 1 )
 				self.clipFinished( RitualWidget, {} )
+
 				BeastControls:completeAnimation()
 				self.BeastControls:setAlpha( 1 )
 				self.clipFinished( BeastControls, {} )
+
 				SprayerWidget:completeAnimation()
 				self.SprayerWidget:setAlpha( 1 )
 				self.clipFinished( SprayerWidget, {} )
+
 				QuestEggWidget:completeAnimation()
 				self.QuestEggWidget:setAlpha( 1 )
 				self.clipFinished( QuestEggWidget, {} )
+
 				FuseTitle:completeAnimation()
 				self.FuseTitle:setAlpha( 1 )
 				self.clipFinished( FuseTitle, {} )
+
 				RocketShieldTitle:completeAnimation()
 				self.RocketShieldTitle:setAlpha( 1 )
 				self.clipFinished( RocketShieldTitle, {} )
+
 				IDGunBlueprintTitle:completeAnimation()
 				self.IDGunBlueprintTitle:setAlpha( 1 )
 				self.clipFinished( IDGunBlueprintTitle, {} )
+
 				RitualItemTitle:completeAnimation()
 				self.RitualItemTitle:setAlpha( 1 )
 				self.clipFinished( RitualItemTitle, {} )
+
 				SprayerWidgetTitle:completeAnimation()
 				self.SprayerWidgetTitle:setAlpha( 1 )
 				self.clipFinished( SprayerWidgetTitle, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -413,6 +444,7 @@ CoD.InventoryWidget.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.IDGunBlueprintWidget:close()
 		element.FuseBoxWidget:close()

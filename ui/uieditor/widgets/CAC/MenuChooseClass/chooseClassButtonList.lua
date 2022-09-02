@@ -17,9 +17,11 @@ end
 CoD.chooseClassButtonList = InheritFrom( LUI.UIElement )
 CoD.chooseClassButtonList.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.chooseClassButtonList )
 	self.id = "chooseClassButtonList"
@@ -85,6 +87,7 @@ CoD.chooseClassButtonList.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
@@ -96,6 +99,7 @@ CoD.chooseClassButtonList.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.buttonList:close()
 	end )

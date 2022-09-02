@@ -4,9 +4,11 @@
 CoD.BucketWidgetWaterLevelWidget = InheritFrom( LUI.UIElement )
 CoD.BucketWidgetWaterLevelWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BucketWidgetWaterLevelWidget )
 	self.id = "BucketWidgetWaterLevelWidget"
@@ -34,9 +36,11 @@ CoD.BucketWidgetWaterLevelWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				WaterImage:completeAnimation()
 				self.WaterImage:setAlpha( 0 )
 				self.clipFinished( WaterImage, {} )
+
 				WaterFlipbook:completeAnimation()
 				self.WaterFlipbook:setAlpha( 0 )
 				self.clipFinished( WaterFlipbook, {} )
@@ -45,9 +49,11 @@ CoD.BucketWidgetWaterLevelWidget.new = function ( menu, controller )
 		HidingBucket = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				WaterImage:completeAnimation()
 				self.WaterImage:setAlpha( 0 )
 				self.clipFinished( WaterImage, {} )
+
 				WaterFlipbook:completeAnimation()
 				self.WaterFlipbook:setAlpha( 0 )
 				self.clipFinished( WaterFlipbook, {} )
@@ -56,10 +62,12 @@ CoD.BucketWidgetWaterLevelWidget.new = function ( menu, controller )
 		WaterType0 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				WaterImage:completeAnimation()
 				self.WaterImage:setRGB( 0, 0.51, 1 )
 				self.WaterImage:setAlpha( 1 )
 				self.clipFinished( WaterImage, {} )
+
 				WaterFlipbook:completeAnimation()
 				self.WaterFlipbook:setAlpha( 0 )
 				self.clipFinished( WaterFlipbook, {} )
@@ -68,10 +76,12 @@ CoD.BucketWidgetWaterLevelWidget.new = function ( menu, controller )
 		WaterType1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				WaterImage:completeAnimation()
 				self.WaterImage:setRGB( 0.02, 0.87, 0 )
 				self.WaterImage:setAlpha( 1 )
 				self.clipFinished( WaterImage, {} )
+
 				WaterFlipbook:completeAnimation()
 				self.WaterFlipbook:setAlpha( 0 )
 				self.clipFinished( WaterFlipbook, {} )
@@ -80,10 +90,12 @@ CoD.BucketWidgetWaterLevelWidget.new = function ( menu, controller )
 		WaterType2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				WaterImage:completeAnimation()
 				self.WaterImage:setRGB( 0.67, 0.11, 1 )
 				self.WaterImage:setAlpha( 1 )
 				self.clipFinished( WaterImage, {} )
+
 				WaterFlipbook:completeAnimation()
 				self.WaterFlipbook:setAlpha( 0 )
 				self.clipFinished( WaterFlipbook, {} )
@@ -92,16 +104,19 @@ CoD.BucketWidgetWaterLevelWidget.new = function ( menu, controller )
 		WaterType3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				WaterImage:completeAnimation()
 				self.WaterImage:setRGB( 1, 1, 1 )
 				self.WaterImage:setAlpha( 1 )
 				self.clipFinished( WaterImage, {} )
+
 				WaterFlipbook:completeAnimation()
 				self.WaterFlipbook:setAlpha( 1 )
 				self.clipFinished( WaterFlipbook, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HidingBucket",

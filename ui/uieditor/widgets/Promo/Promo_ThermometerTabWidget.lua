@@ -10,9 +10,11 @@ end
 CoD.Promo_ThermometerTabWidget = InheritFrom( LUI.UIElement )
 CoD.Promo_ThermometerTabWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Promo_ThermometerTabWidget )
 	self.id = "Promo_ThermometerTabWidget"
@@ -66,6 +68,7 @@ CoD.Promo_ThermometerTabWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local txtDescriptionFrame2 = function ( txtDescription, event )
 					if not event.interrupted then
 						txtDescription:beginAnimation( "keyframe", 3000, false, false, CoD.TweenType.Linear )
@@ -84,6 +87,7 @@ CoD.Promo_ThermometerTabWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ThermometerProgressWidget:close()
 	end )

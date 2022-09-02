@@ -23,9 +23,11 @@ end
 CoD.ChooseCharacterLoadout_CardBack_Transmission = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacterLoadout_CardBack_Transmission.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacterLoadout_CardBack_Transmission )
 	self.id = "ChooseCharacterLoadout_CardBack_Transmission"
@@ -635,6 +637,7 @@ CoD.ChooseCharacterLoadout_CardBack_Transmission.new = function ( menu, controll
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local faceFrame2 = function ( face, event )
 					if not event.interrupted then
 						face:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Bounce )
@@ -715,15 +718,18 @@ CoD.ChooseCharacterLoadout_CardBack_Transmission.new = function ( menu, controll
 		PC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				buttonprompt0:completeAnimation()
 				self.buttonprompt0:setAlpha( 0 )
 				self.clipFinished( buttonprompt0, {} )
+
 				audioPromptPC:completeAnimation()
 				self.audioPromptPC:setAlpha( 1 )
 				self.clipFinished( audioPromptPC, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "PC",
@@ -732,6 +738,7 @@ CoD.ChooseCharacterLoadout_CardBack_Transmission.new = function ( menu, controll
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Border10:close()
 		element.completeAssignmentText:close()

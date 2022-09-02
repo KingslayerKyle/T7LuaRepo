@@ -4,9 +4,11 @@
 CoD.StartMenu_frame_noBG = InheritFrom( LUI.UIElement )
 CoD.StartMenu_frame_noBG.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_frame_noBG )
 	self.id = "StartMenu_frame_noBG"
@@ -28,11 +30,13 @@ CoD.StartMenu_frame_noBG.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

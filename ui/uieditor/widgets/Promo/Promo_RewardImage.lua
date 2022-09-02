@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_FrameWidget" )
 CoD.Promo_RewardImage = InheritFrom( LUI.UIElement )
 CoD.Promo_RewardImage.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Promo_RewardImage )
 	self.id = "Promo_RewardImage"
@@ -35,9 +37,11 @@ CoD.Promo_RewardImage.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 1 )
 				self.clipFinished( Image, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
@@ -46,15 +50,18 @@ CoD.Promo_RewardImage.new = function ( menu, controller )
 		CallingCard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 0 )
 				self.clipFinished( Image, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 1 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardsFrameWidget:close()
 	end )

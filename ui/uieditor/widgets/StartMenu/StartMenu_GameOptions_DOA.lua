@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.StartMenu.DOA.DOA_ControlHelp" )
 CoD.StartMenu_GameOptions_DOA = InheritFrom( LUI.UIElement )
 CoD.StartMenu_GameOptions_DOA.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_GameOptions_DOA )
 	self.id = "StartMenu_GameOptions_DOA"
@@ -268,9 +270,11 @@ CoD.StartMenu_GameOptions_DOA.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				DOAControlHelp0:completeAnimation()
 				self.DOAControlHelp0:setAlpha( 1 )
 				self.clipFinished( DOAControlHelp0, {} )
+
 				DOAControlKBMouse:completeAnimation()
 				self.DOAControlKBMouse:setAlpha( 0 )
 				self.clipFinished( DOAControlKBMouse, {} )
@@ -279,15 +283,18 @@ CoD.StartMenu_GameOptions_DOA.new = function ( menu, controller )
 		KBMouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				DOAControlHelp0:completeAnimation()
 				self.DOAControlHelp0:setAlpha( 0 )
 				self.clipFinished( DOAControlHelp0, {} )
+
 				DOAControlKBMouse:completeAnimation()
 				self.DOAControlKBMouse:setAlpha( 1 )
 				self.clipFinished( DOAControlKBMouse, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "KBMouse",
@@ -327,6 +334,7 @@ CoD.StartMenu_GameOptions_DOA.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.buttonQuit:close()
 		element.buttonRestart:close()

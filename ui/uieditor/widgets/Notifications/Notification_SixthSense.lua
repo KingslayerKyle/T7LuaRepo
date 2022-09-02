@@ -13,9 +13,11 @@ require( "ui.uieditor.widgets.MPHudWidgets.DetectNearbyEnemies_FarRight" )
 CoD.Notification_SixthSense = InheritFrom( LUI.UIElement )
 CoD.Notification_SixthSense.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Notification_SixthSense )
 	self.id = "Notification_SixthSense"

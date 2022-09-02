@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.buttonprompt" )
 CoD.ChooseTaunts_GestureOptionInfo = InheritFrom( LUI.UIElement )
 CoD.ChooseTaunts_GestureOptionInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseTaunts_GestureOptionInfo )
 	self.id = "ChooseTaunts_GestureOptionInfo"
@@ -103,9 +105,11 @@ CoD.ChooseTaunts_GestureOptionInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				itemDescription:completeAnimation()
 				self.itemDescription:setAlpha( 0 )
 				self.clipFinished( itemDescription, {} )
+
 				buttonprompt0:completeAnimation()
 				self.buttonprompt0:setRGB( 1, 1, 1 )
 				self.buttonprompt0:setAlpha( NotPCShowAlpha( controller, 1 ) )
@@ -115,9 +119,11 @@ CoD.ChooseTaunts_GestureOptionInfo.new = function ( menu, controller )
 		BMClassified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				itemDescription:completeAnimation()
 				self.itemDescription:setAlpha( 1 )
 				self.clipFinished( itemDescription, {} )
+
 				buttonprompt0:completeAnimation()
 				self.buttonprompt0:setRGB( ColorSet.Disabled.r, ColorSet.Disabled.g, ColorSet.Disabled.b )
 				self.buttonprompt0:setAlpha( NotPCShowAlpha( controller, 0 ) )
@@ -127,9 +133,11 @@ CoD.ChooseTaunts_GestureOptionInfo.new = function ( menu, controller )
 		NoPreview = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				itemDescription:completeAnimation()
 				self.itemDescription:setAlpha( 0 )
 				self.clipFinished( itemDescription, {} )
+
 				buttonprompt0:completeAnimation()
 				self.buttonprompt0:setRGB( 0.59, 0.59, 0.59 )
 				self.buttonprompt0:setAlpha( NotPCShowAlpha( controller, 1 ) )
@@ -137,6 +145,7 @@ CoD.ChooseTaunts_GestureOptionInfo.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BMClassified",
@@ -167,6 +176,7 @@ CoD.ChooseTaunts_GestureOptionInfo.new = function ( menu, controller )
 			modelName = "canPreview"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.itemName:close()
 		element.itemDescription:close()

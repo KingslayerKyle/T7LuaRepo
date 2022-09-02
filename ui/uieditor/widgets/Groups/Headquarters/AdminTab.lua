@@ -22,9 +22,11 @@ end
 CoD.AdminTab = InheritFrom( LUI.UIElement )
 CoD.AdminTab.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AdminTab )
 	self.id = "AdminTab"
@@ -62,6 +64,7 @@ CoD.AdminTab.new = function ( menu, controller )
 	local Frame = LUI.UIFrame.new( menu, controller, 0, 0, false )
 	Frame:setLeftRight( true, false, 333, 1116 )
 	Frame:setTopBottom( true, false, 0, 417 )
+
 	LUI.OverrideFunction_CallOriginalFirst( Frame, "close", function ( element )
 		ClearSavedState( self, controller )
 	end )
@@ -93,6 +96,7 @@ CoD.AdminTab.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AdminOptions:close()
 		element.Frame:close()

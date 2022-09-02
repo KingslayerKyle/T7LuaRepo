@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.CAC_varientTitlePanel" )
 CoD.LoadoutCoreTiles = InheritFrom( LUI.UIElement )
 CoD.LoadoutCoreTiles.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LoadoutCoreTiles )
 	self.id = "LoadoutCoreTiles"
@@ -29,6 +31,7 @@ CoD.LoadoutCoreTiles.new = function ( menu, controller )
 	itemName:setLeftRight( true, false, 4, 208 )
 	itemName:setTopBottom( false, true, -22, 0 )
 	itemName:setTTF( "fonts/default.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( itemName, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )
@@ -45,20 +48,25 @@ CoD.LoadoutCoreTiles.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Equipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Equipped",
@@ -67,6 +75,7 @@ CoD.LoadoutCoreTiles.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CACvarientTitlePanel0:close()
 		element.itemName:close()

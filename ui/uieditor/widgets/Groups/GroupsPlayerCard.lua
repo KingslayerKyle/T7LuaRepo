@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Social.Social_Rank" )
 CoD.GroupsPlayerCard = InheritFrom( LUI.UIElement )
 CoD.GroupsPlayerCard.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsPlayerCard )
 	self.id = "GroupsPlayerCard"
@@ -175,13 +177,16 @@ CoD.GroupsPlayerCard.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				emblem:completeAnimation()
 				self.emblem:setLeftRight( true, false, 0, 324 )
 				self.emblem:setTopBottom( true, false, 0, 191.01 )
 				self.clipFinished( emblem, {} )
+
 				rankCP:completeAnimation()
 				self.rankCP:setYRot( 0 )
 				self.clipFinished( rankCP, {} )
+
 				rankMP:completeAnimation()
 				self.rankMP:setYRot( 0 )
 				self.clipFinished( rankMP, {} )
@@ -190,35 +195,43 @@ CoD.GroupsPlayerCard.new = function ( menu, controller )
 		PlayerDetails = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Socialbackground0:completeAnimation()
 				self.Socialbackground0:setLeftRight( true, false, 0, 195.66 )
 				self.Socialbackground0:setTopBottom( true, false, 0, 116.05 )
 				self.clipFinished( Socialbackground0, {} )
+
 				friendship:completeAnimation()
 				self.friendship:setLeftRight( true, false, 203.66, 356.66 )
 				self.friendship:setTopBottom( true, false, 90.61, 112.61 )
 				self.clipFinished( friendship, {} )
+
 				primaryGroup:completeAnimation()
 				self.primaryGroup:setLeftRight( true, false, 205.37, 451.37 )
 				self.primaryGroup:setTopBottom( true, false, 68.61, 90.61 )
 				self.clipFinished( primaryGroup, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setLeftRight( true, false, 0, 195.66 )
 				self.emblem:setTopBottom( true, false, 0, 116.05 )
 				self.clipFinished( emblem, {} )
+
 				callingCard:completeAnimation()
 				self.callingCard:setLeftRight( true, false, 189.75, 449.36 )
 				self.callingCard:setTopBottom( true, false, -2.51, 60.61 )
 				self.callingCard:setScale( 0.87 )
 				self.clipFinished( callingCard, {} )
+
 				rankCP:completeAnimation()
 				self.rankCP:setLeftRight( true, false, 485.9, 565.9 )
 				self.rankCP:setTopBottom( true, false, 1.55, 116 )
 				self.clipFinished( rankCP, {} )
+
 				rankMP:completeAnimation()
 				self.rankMP:setLeftRight( true, false, 595.4, 675.4 )
 				self.rankMP:setTopBottom( true, false, 1.55, 116 )
 				self.clipFinished( rankMP, {} )
+
 				rankZM:completeAnimation()
 				self.rankZM:setLeftRight( true, false, 704.9, 784.5 )
 				self.rankZM:setTopBottom( true, false, 1.55, 116 )
@@ -228,35 +241,43 @@ CoD.GroupsPlayerCard.new = function ( menu, controller )
 		PlayerDetails_NotInTitle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Socialbackground0:completeAnimation()
 				self.Socialbackground0:setLeftRight( true, false, 0, 195.66 )
 				self.Socialbackground0:setTopBottom( true, false, 0, 116.05 )
 				self.clipFinished( Socialbackground0, {} )
+
 				friendship:completeAnimation()
 				self.friendship:setLeftRight( true, false, 203.66, 356.66 )
 				self.friendship:setTopBottom( true, false, 90.61, 112.61 )
 				self.clipFinished( friendship, {} )
+
 				primaryGroup:completeAnimation()
 				self.primaryGroup:setLeftRight( true, false, 205.37, 451.37 )
 				self.primaryGroup:setTopBottom( true, false, 68.61, 90.61 )
 				self.clipFinished( primaryGroup, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setLeftRight( true, false, 0, 195.66 )
 				self.emblem:setTopBottom( true, false, 0, 116.05 )
 				self.clipFinished( emblem, {} )
+
 				callingCard:completeAnimation()
 				self.callingCard:setLeftRight( true, false, 189.75, 449.36 )
 				self.callingCard:setTopBottom( true, false, -2.51, 60.61 )
 				self.callingCard:setScale( 0.87 )
 				self.clipFinished( callingCard, {} )
+
 				rankCP:completeAnimation()
 				self.rankCP:setLeftRight( true, false, 485.9, 565.9 )
 				self.rankCP:setTopBottom( true, false, 1.55, 116 )
 				self.clipFinished( rankCP, {} )
+
 				rankMP:completeAnimation()
 				self.rankMP:setLeftRight( true, false, 595.4, 675.4 )
 				self.rankMP:setTopBottom( true, false, 1.55, 116 )
 				self.clipFinished( rankMP, {} )
+
 				rankZM:completeAnimation()
 				self.rankZM:setLeftRight( true, false, 704.9, 784.5 )
 				self.rankZM:setTopBottom( true, false, 1.55, 116 )
@@ -266,32 +287,39 @@ CoD.GroupsPlayerCard.new = function ( menu, controller )
 		NotInTitle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				Socialbackground0:completeAnimation()
 				self.Socialbackground0:setLeftRight( true, false, 0, 324 )
 				self.Socialbackground0:setTopBottom( true, false, 0, 190.83 )
 				self.clipFinished( Socialbackground0, {} )
+
 				primaryGroup:completeAnimation()
 				self.primaryGroup:setLeftRight( true, false, 4, 250 )
 				self.primaryGroup:setTopBottom( true, false, 277.33, 299.33 )
 				self.clipFinished( primaryGroup, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setLeftRight( true, false, 0, 324 )
 				self.emblem:setTopBottom( true, false, 0, 191.01 )
 				self.clipFinished( emblem, {} )
+
 				callingCard:completeAnimation()
 				self.callingCard:setLeftRight( true, false, 13, 341.01 )
 				self.callingCard:setTopBottom( true, false, 197.73, 277.33 )
 				self.clipFinished( callingCard, {} )
+
 				rankCP:completeAnimation()
 				self.rankCP:setLeftRight( true, false, -0.44, 79.56 )
 				self.rankCP:setTopBottom( true, false, 313, 428 )
 				self.rankCP:setYRot( 0 )
 				self.clipFinished( rankCP, {} )
+
 				rankMP:completeAnimation()
 				self.rankMP:setLeftRight( true, false, 121.4, 201.4 )
 				self.rankMP:setTopBottom( true, false, 313, 428 )
 				self.rankMP:setYRot( 0 )
 				self.clipFinished( rankMP, {} )
+
 				rankZM:completeAnimation()
 				self.rankZM:setLeftRight( true, false, 242.91, 322.91 )
 				self.rankZM:setTopBottom( true, false, 313, 428 )
@@ -299,6 +327,7 @@ CoD.GroupsPlayerCard.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "PlayerDetails",
@@ -319,6 +348,7 @@ CoD.GroupsPlayerCard.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Socialbackground0:close()
 		element.friendship:close()

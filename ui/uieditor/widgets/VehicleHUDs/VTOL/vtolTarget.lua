@@ -4,9 +4,11 @@
 CoD.vtolTarget = InheritFrom( LUI.UIElement )
 CoD.vtolTarget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vtolTarget )
 	self.id = "vtolTarget"
@@ -44,18 +46,22 @@ CoD.vtolTarget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				UpperTriangle:completeAnimation()
 				self.UpperTriangle:setAlpha( 0 )
 				self.clipFinished( UpperTriangle, {} )
+
 				LeftTriangle:completeAnimation()
 				self.LeftTriangle:setAlpha( 0 )
 				self.clipFinished( LeftTriangle, {} )
+
 				RightTriangle:completeAnimation()
 				self.RightTriangle:setAlpha( 0 )
 				self.clipFinished( RightTriangle, {} )
 			end,
 			NewTarget = function ()
 				self:setupElementClipCounter( 3 )
+
 				local UpperTriangleFrame2 = function ( UpperTriangle, event )
 					if not event.interrupted then
 						UpperTriangle:beginAnimation( "keyframe", 250, true, false, CoD.TweenType.Linear )
@@ -122,6 +128,7 @@ CoD.vtolTarget.new = function ( menu, controller )
 			end,
 			LostTarget = function ()
 				self:setupElementClipCounter( 3 )
+
 				local UpperTriangleFrame2 = function ( UpperTriangle, event )
 					if not event.interrupted then
 						UpperTriangle:beginAnimation( "keyframe", 250, true, false, CoD.TweenType.Linear )

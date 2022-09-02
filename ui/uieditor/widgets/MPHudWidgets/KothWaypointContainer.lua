@@ -119,9 +119,11 @@ end
 CoD.KothWaypointContainer = InheritFrom( LUI.UIElement )
 CoD.KothWaypointContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.KothWaypointContainer )
 	self.id = "KothWaypointContainer"

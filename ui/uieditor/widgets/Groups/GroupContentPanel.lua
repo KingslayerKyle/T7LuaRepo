@@ -12,9 +12,11 @@ end
 CoD.GroupContentPanel = InheritFrom( LUI.UIElement )
 CoD.GroupContentPanel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupContentPanel )
 	self.id = "GroupContentPanel"
@@ -100,29 +102,37 @@ CoD.GroupContentPanel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 0 )
 				self.clipFinished( Image, {} )
+
 				Banner:completeAnimation()
 				self.Banner:setAlpha( 0 )
 				self.clipFinished( Banner, {} )
+
 				Banner0:completeAnimation()
 				self.Banner0:setLeftRight( true, false, 1, 322 )
 				self.Banner0:setTopBottom( true, false, 27, 53.25 )
 				self.Banner0:setAlpha( 0 )
 				self.clipFinished( Banner0, {} )
+
 				Message:completeAnimation()
 				self.Message:setAlpha( 0 )
 				self.clipFinished( Message, {} )
+
 				Featured:completeAnimation()
 				self.Featured:setAlpha( 0 )
 				self.clipFinished( Featured, {} )
+
 				StartMenuframenoBG000:completeAnimation()
 				self.StartMenuframenoBG000:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG000, {} )
+
 				verticalScrollingTextBox:completeAnimation()
 				self.verticalScrollingTextBox:setAlpha( 0 )
 				self.clipFinished( verticalScrollingTextBox, {} )
+
 				GroupsFeaturedListSmall:completeAnimation()
 				self.GroupsFeaturedListSmall:setAlpha( 0 )
 				self.clipFinished( GroupsFeaturedListSmall, {} )
@@ -131,27 +141,35 @@ CoD.GroupContentPanel.new = function ( menu, controller )
 		NonMemberView = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 0 )
 				self.clipFinished( Image, {} )
+
 				Banner:completeAnimation()
 				self.Banner:setAlpha( 0 )
 				self.clipFinished( Banner, {} )
+
 				Banner0:completeAnimation()
 				self.Banner0:setAlpha( 0 )
 				self.clipFinished( Banner0, {} )
+
 				Message:completeAnimation()
 				self.Message:setAlpha( 0 )
 				self.clipFinished( Message, {} )
+
 				Featured:completeAnimation()
 				self.Featured:setAlpha( 0 )
 				self.clipFinished( Featured, {} )
+
 				StartMenuframenoBG000:completeAnimation()
 				self.StartMenuframenoBG000:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG000, {} )
+
 				verticalScrollingTextBox:completeAnimation()
 				self.verticalScrollingTextBox:setAlpha( 0 )
 				self.clipFinished( verticalScrollingTextBox, {} )
+
 				GroupsFeaturedListSmall:completeAnimation()
 				self.GroupsFeaturedListSmall:setAlpha( 0 )
 				self.clipFinished( GroupsFeaturedListSmall, {} )
@@ -160,27 +178,35 @@ CoD.GroupContentPanel.new = function ( menu, controller )
 		MemberView = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 1 )
 				self.clipFinished( Image, {} )
+
 				Banner:completeAnimation()
 				self.Banner:setAlpha( 0.45 )
 				self.clipFinished( Banner, {} )
+
 				Banner0:completeAnimation()
 				self.Banner0:setAlpha( 0.45 )
 				self.clipFinished( Banner0, {} )
+
 				Message:completeAnimation()
 				self.Message:setAlpha( 1 )
 				self.clipFinished( Message, {} )
+
 				Featured:completeAnimation()
 				self.Featured:setAlpha( 1 )
 				self.clipFinished( Featured, {} )
+
 				StartMenuframenoBG000:completeAnimation()
 				self.StartMenuframenoBG000:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG000, {} )
+
 				verticalScrollingTextBox:completeAnimation()
 				self.verticalScrollingTextBox:setAlpha( 1 )
 				self.clipFinished( verticalScrollingTextBox, {} )
+
 				GroupsFeaturedListSmall:completeAnimation()
 				self.GroupsFeaturedListSmall:setAlpha( 1 )
 				self.clipFinished( GroupsFeaturedListSmall, {} )
@@ -188,6 +214,7 @@ CoD.GroupContentPanel.new = function ( menu, controller )
 		}
 	}
 	GroupsFeaturedListSmall.id = "GroupsFeaturedListSmall"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG000:close()
 		element.verticalScrollingTextBox:close()

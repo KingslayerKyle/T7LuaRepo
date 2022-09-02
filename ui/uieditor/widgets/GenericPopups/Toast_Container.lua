@@ -12,9 +12,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleNumBrdr" )
 CoD.Toast_Container = InheritFrom( LUI.UIElement )
 CoD.Toast_Container.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Toast_Container )
 	self.id = "Toast_Container"
@@ -125,28 +127,35 @@ CoD.Toast_Container.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				LOOTToastFrameBackground:completeAnimation()
 				self.LOOTToastFrameBackground:setLeftRight( true, false, -20.5, 326.5 )
 				self.LOOTToastFrameBackground:setTopBottom( true, false, -20, 92.5 )
 				self.LOOTToastFrameBackground:setAlpha( 0 )
 				self.clipFinished( LOOTToastFrameBackground, {} )
+
 				ToastBonusOutline:completeAnimation()
 				self.ToastBonusOutline:setAlpha( 0 )
 				self.clipFinished( ToastBonusOutline, {} )
+
 				EmblemDecal:completeAnimation()
 				self.EmblemDecal:setAlpha( 0 )
 				self.clipFinished( EmblemDecal, {} )
+
 				FrameBackground:completeAnimation()
 				self.FrameBackground:setAlpha( 1 )
 				self.clipFinished( FrameBackground, {} )
+
 				ContentIcon:completeAnimation()
 				self.ContentIcon:setAlpha( 1 )
 				self.clipFinished( ContentIcon, {} )
+
 				FunctionIcon:completeAnimation()
 				self.FunctionIcon:setLeftRight( false, true, -23, -1 )
 				self.FunctionIcon:setTopBottom( true, false, 1, 23 )
 				self.FunctionIcon:setAlpha( 1 )
 				self.clipFinished( FunctionIcon, {} )
+
 				Kicker:completeAnimation()
 				self.Kicker:setLeftRight( true, false, 74, 276 )
 				self.Kicker:setTopBottom( true, false, 9, 29 )
@@ -154,16 +163,19 @@ CoD.Toast_Container.new = function ( menu, controller )
 				self.Kicker:setAlpha( 1 )
 				self.Kicker:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 				self.clipFinished( Kicker, {} )
+
 				ToastHeaderWidget:completeAnimation()
 				self.ToastHeaderWidget:setLeftRight( true, false, 74, 291 )
 				self.ToastHeaderWidget:setTopBottom( true, false, 22, 56 )
 				self.ToastHeaderWidget:setAlpha( 1 )
 				self.clipFinished( ToastHeaderWidget, {} )
+
 				Description:completeAnimation()
 				self.Description:setLeftRight( true, false, 0, 300 )
 				self.Description:setTopBottom( true, false, 33, 56 )
 				self.Description:setAlpha( 0 )
 				self.clipFinished( Description, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
@@ -172,28 +184,35 @@ CoD.Toast_Container.new = function ( menu, controller )
 		Content = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				LOOTToastFrameBackground:completeAnimation()
 				self.LOOTToastFrameBackground:setLeftRight( true, false, -20.5, 326.5 )
 				self.LOOTToastFrameBackground:setTopBottom( true, false, -20, 92.5 )
 				self.LOOTToastFrameBackground:setAlpha( 0 )
 				self.clipFinished( LOOTToastFrameBackground, {} )
+
 				ToastBonusOutline:completeAnimation()
 				self.ToastBonusOutline:setAlpha( 0 )
 				self.clipFinished( ToastBonusOutline, {} )
+
 				EmblemDecal:completeAnimation()
 				self.EmblemDecal:setAlpha( 0 )
 				self.clipFinished( EmblemDecal, {} )
+
 				FrameBackground:completeAnimation()
 				self.FrameBackground:setAlpha( 1 )
 				self.clipFinished( FrameBackground, {} )
+
 				ContentIcon:completeAnimation()
 				self.ContentIcon:setAlpha( 1 )
 				self.clipFinished( ContentIcon, {} )
+
 				FunctionIcon:completeAnimation()
 				self.FunctionIcon:setLeftRight( false, true, -24, -2 )
 				self.FunctionIcon:setTopBottom( true, false, 0, 22 )
 				self.FunctionIcon:setAlpha( 1 )
 				self.clipFinished( FunctionIcon, {} )
+
 				Kicker:completeAnimation()
 				self.Kicker:setLeftRight( true, false, 74, 276 )
 				self.Kicker:setTopBottom( true, false, 9, 29 )
@@ -202,11 +221,13 @@ CoD.Toast_Container.new = function ( menu, controller )
 				self.Kicker:setScale( 1 )
 				self.Kicker:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 				self.clipFinished( Kicker, {} )
+
 				ToastHeaderWidget:completeAnimation()
 				self.ToastHeaderWidget:setLeftRight( true, false, 74, 290 )
 				self.ToastHeaderWidget:setTopBottom( true, false, 22, 56 )
 				self.ToastHeaderWidget:setAlpha( 1 )
 				self.clipFinished( ToastHeaderWidget, {} )
+
 				Description:completeAnimation()
 				self.Description:setLeftRight( true, false, 0, 300 )
 				self.Description:setTopBottom( true, false, 33, 56 )
@@ -214,6 +235,7 @@ CoD.Toast_Container.new = function ( menu, controller )
 				self.Description:setAlpha( 0 )
 				self.Description:setScale( 1 )
 				self.clipFinished( Description, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
@@ -222,30 +244,37 @@ CoD.Toast_Container.new = function ( menu, controller )
 		LootBonusDecal = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				LOOTToastFrameBackground:completeAnimation()
 				self.LOOTToastFrameBackground:setLeftRight( true, false, -20.5, 326.5 )
 				self.LOOTToastFrameBackground:setTopBottom( true, false, -77, 92.5 )
 				self.LOOTToastFrameBackground:setAlpha( 1 )
 				self.clipFinished( LOOTToastFrameBackground, {} )
+
 				ToastBonusOutline:completeAnimation()
 				self.ToastBonusOutline:setLeftRight( true, false, 0, 300 )
 				self.ToastBonusOutline:setTopBottom( true, false, -77, 73 )
 				self.ToastBonusOutline:setAlpha( 0 )
 				self.clipFinished( ToastBonusOutline, {} )
+
 				EmblemDecal:completeAnimation()
 				self.EmblemDecal:setLeftRight( true, false, 118, 191 )
 				self.EmblemDecal:setTopBottom( true, false, -56.5, 16.5 )
 				self.EmblemDecal:setAlpha( 1 )
 				self.clipFinished( EmblemDecal, {} )
+
 				FrameBackground:completeAnimation()
 				self.FrameBackground:setAlpha( 0 )
 				self.clipFinished( FrameBackground, {} )
+
 				ContentIcon:completeAnimation()
 				self.ContentIcon:setAlpha( 0 )
 				self.clipFinished( ContentIcon, {} )
+
 				FunctionIcon:completeAnimation()
 				self.FunctionIcon:setAlpha( 0 )
 				self.clipFinished( FunctionIcon, {} )
+
 				Kicker:completeAnimation()
 				self.Kicker:setLeftRight( true, false, 3, 303.5 )
 				self.Kicker:setTopBottom( true, false, 17.5, 43.5 )
@@ -254,12 +283,14 @@ CoD.Toast_Container.new = function ( menu, controller )
 				self.Kicker:setScale( 1.1 )
 				self.Kicker:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 				self.clipFinished( Kicker, {} )
+
 				ToastHeaderWidget:completeAnimation()
 				self.ToastHeaderWidget:setLeftRight( true, false, 3, 302 )
 				self.ToastHeaderWidget:setTopBottom( true, false, 19, 53 )
 				self.ToastHeaderWidget:setRGB( 1, 1, 1 )
 				self.ToastHeaderWidget:setAlpha( 0 )
 				self.clipFinished( ToastHeaderWidget, {} )
+
 				Description:completeAnimation()
 				self.Description:setLeftRight( true, false, 3, 303 )
 				self.Description:setTopBottom( true, false, 39, 62 )
@@ -267,6 +298,7 @@ CoD.Toast_Container.new = function ( menu, controller )
 				self.Description:setAlpha( 1 )
 				self.Description:setScale( 0.9 )
 				self.clipFinished( Description, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
@@ -275,28 +307,35 @@ CoD.Toast_Container.new = function ( menu, controller )
 		LootBonusCallingCard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				LOOTToastFrameBackground:completeAnimation()
 				self.LOOTToastFrameBackground:setLeftRight( true, false, -18, 324.5 )
 				self.LOOTToastFrameBackground:setTopBottom( true, false, -77.5, 92 )
 				self.LOOTToastFrameBackground:setAlpha( 1 )
 				self.clipFinished( LOOTToastFrameBackground, {} )
+
 				ToastBonusOutline:completeAnimation()
 				self.ToastBonusOutline:setLeftRight( true, false, 1, 299 )
 				self.ToastBonusOutline:setTopBottom( true, false, -77, 73 )
 				self.ToastBonusOutline:setAlpha( 0 )
 				self.clipFinished( ToastBonusOutline, {} )
+
 				EmblemDecal:completeAnimation()
 				self.EmblemDecal:setAlpha( 0 )
 				self.clipFinished( EmblemDecal, {} )
+
 				FrameBackground:completeAnimation()
 				self.FrameBackground:setAlpha( 0 )
 				self.clipFinished( FrameBackground, {} )
+
 				ContentIcon:completeAnimation()
 				self.ContentIcon:setAlpha( 0 )
 				self.clipFinished( ContentIcon, {} )
+
 				FunctionIcon:completeAnimation()
 				self.FunctionIcon:setAlpha( 0 )
 				self.clipFinished( FunctionIcon, {} )
+
 				Kicker:completeAnimation()
 				self.Kicker:setLeftRight( true, false, 3, 303 )
 				self.Kicker:setTopBottom( true, false, 17, 43 )
@@ -305,11 +344,13 @@ CoD.Toast_Container.new = function ( menu, controller )
 				self.Kicker:setScale( 1.1 )
 				self.Kicker:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 				self.clipFinished( Kicker, {} )
+
 				ToastHeaderWidget:completeAnimation()
 				self.ToastHeaderWidget:setLeftRight( true, false, 7, 302 )
 				self.ToastHeaderWidget:setTopBottom( true, false, 19, 53 )
 				self.ToastHeaderWidget:setAlpha( 0 )
 				self.clipFinished( ToastHeaderWidget, {} )
+
 				Description:completeAnimation()
 				self.Description:setLeftRight( true, false, 3, 303 )
 				self.Description:setTopBottom( true, false, 40, 63 )
@@ -317,6 +358,7 @@ CoD.Toast_Container.new = function ( menu, controller )
 				self.Description:setAlpha( 1 )
 				self.Description:setScale( 0.9 )
 				self.clipFinished( Description, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setLeftRight( false, false, 3, 3 )
 				self.CallingCardsFrameWidget:setTopBottom( false, false, -49.5, -49.5 )
@@ -328,24 +370,31 @@ CoD.Toast_Container.new = function ( menu, controller )
 		RecentGameBookmarked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				LOOTToastFrameBackground:completeAnimation()
 				self.LOOTToastFrameBackground:setAlpha( 0 )
 				self.clipFinished( LOOTToastFrameBackground, {} )
+
 				ToastBonusOutline:completeAnimation()
 				self.ToastBonusOutline:setAlpha( 0 )
 				self.clipFinished( ToastBonusOutline, {} )
+
 				EmblemDecal:completeAnimation()
 				self.EmblemDecal:setAlpha( 0 )
 				self.clipFinished( EmblemDecal, {} )
+
 				FrameBackground:completeAnimation()
 				self.FrameBackground:setAlpha( 1 )
 				self.clipFinished( FrameBackground, {} )
+
 				ContentIcon:completeAnimation()
 				self.ContentIcon:setAlpha( 1 )
 				self.clipFinished( ContentIcon, {} )
+
 				FunctionIcon:completeAnimation()
 				self.FunctionIcon:setAlpha( 1 )
 				self.clipFinished( FunctionIcon, {} )
+
 				Kicker:completeAnimation()
 				self.Kicker:setLeftRight( true, false, 74, 276 )
 				self.Kicker:setTopBottom( true, false, 9, 29 )
@@ -354,16 +403,19 @@ CoD.Toast_Container.new = function ( menu, controller )
 				self.Kicker:setScale( 1 )
 				self.Kicker:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 				self.clipFinished( Kicker, {} )
+
 				ToastHeaderWidget:completeAnimation()
 				self.ToastHeaderWidget:setLeftRight( true, false, 74, 295 )
 				self.ToastHeaderWidget:setTopBottom( true, false, 22, 56 )
 				self.ToastHeaderWidget:setAlpha( 1 )
 				self.clipFinished( ToastHeaderWidget, {} )
+
 				Description:completeAnimation()
 				self.Description:setLeftRight( true, false, 0, 300 )
 				self.Description:setTopBottom( true, false, 33, 56 )
 				self.Description:setAlpha( 0 )
 				self.clipFinished( Description, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
@@ -372,24 +424,31 @@ CoD.Toast_Container.new = function ( menu, controller )
 		Fileshare = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				LOOTToastFrameBackground:completeAnimation()
 				self.LOOTToastFrameBackground:setAlpha( 0 )
 				self.clipFinished( LOOTToastFrameBackground, {} )
+
 				ToastBonusOutline:completeAnimation()
 				self.ToastBonusOutline:setAlpha( 0 )
 				self.clipFinished( ToastBonusOutline, {} )
+
 				EmblemDecal:completeAnimation()
 				self.EmblemDecal:setAlpha( 0 )
 				self.clipFinished( EmblemDecal, {} )
+
 				FrameBackground:completeAnimation()
 				self.FrameBackground:setAlpha( 1 )
 				self.clipFinished( FrameBackground, {} )
+
 				ContentIcon:completeAnimation()
 				self.ContentIcon:setAlpha( 1 )
 				self.clipFinished( ContentIcon, {} )
+
 				FunctionIcon:completeAnimation()
 				self.FunctionIcon:setAlpha( 1 )
 				self.clipFinished( FunctionIcon, {} )
+
 				Kicker:completeAnimation()
 				self.Kicker:setLeftRight( true, false, 74, 276 )
 				self.Kicker:setTopBottom( true, false, 9, 29 )
@@ -398,16 +457,19 @@ CoD.Toast_Container.new = function ( menu, controller )
 				self.Kicker:setScale( 1 )
 				self.Kicker:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 				self.clipFinished( Kicker, {} )
+
 				ToastHeaderWidget:completeAnimation()
 				self.ToastHeaderWidget:setLeftRight( true, false, 74, 295 )
 				self.ToastHeaderWidget:setTopBottom( true, false, 22, 56 )
 				self.ToastHeaderWidget:setAlpha( 1 )
 				self.clipFinished( ToastHeaderWidget, {} )
+
 				Description:completeAnimation()
 				self.Description:setLeftRight( true, false, 7, 300 )
 				self.Description:setTopBottom( true, false, 33, 56 )
 				self.Description:setAlpha( 0 )
 				self.clipFinished( Description, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
@@ -416,24 +478,31 @@ CoD.Toast_Container.new = function ( menu, controller )
 		Invite = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				LOOTToastFrameBackground:completeAnimation()
 				self.LOOTToastFrameBackground:setAlpha( 0 )
 				self.clipFinished( LOOTToastFrameBackground, {} )
+
 				ToastBonusOutline:completeAnimation()
 				self.ToastBonusOutline:setAlpha( 0 )
 				self.clipFinished( ToastBonusOutline, {} )
+
 				EmblemDecal:completeAnimation()
 				self.EmblemDecal:setAlpha( 0 )
 				self.clipFinished( EmblemDecal, {} )
+
 				FrameBackground:completeAnimation()
 				self.FrameBackground:setAlpha( 1 )
 				self.clipFinished( FrameBackground, {} )
+
 				ContentIcon:completeAnimation()
 				self.ContentIcon:setAlpha( 1 )
 				self.clipFinished( ContentIcon, {} )
+
 				FunctionIcon:completeAnimation()
 				self.FunctionIcon:setAlpha( 1 )
 				self.clipFinished( FunctionIcon, {} )
+
 				Kicker:completeAnimation()
 				self.Kicker:setLeftRight( true, false, 74, 276 )
 				self.Kicker:setTopBottom( true, false, 9, 29 )
@@ -441,16 +510,19 @@ CoD.Toast_Container.new = function ( menu, controller )
 				self.Kicker:setScale( 1 )
 				self.Kicker:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 				self.clipFinished( Kicker, {} )
+
 				ToastHeaderWidget:completeAnimation()
 				self.ToastHeaderWidget:setLeftRight( true, false, 74, 292 )
 				self.ToastHeaderWidget:setTopBottom( true, false, 22, 56 )
 				self.ToastHeaderWidget:setAlpha( 1 )
 				self.clipFinished( ToastHeaderWidget, {} )
+
 				Description:completeAnimation()
 				self.Description:setLeftRight( true, false, 0, 300 )
 				self.Description:setTopBottom( true, false, 33, 56 )
 				self.Description:setAlpha( 0 )
 				self.clipFinished( Description, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
@@ -459,24 +531,31 @@ CoD.Toast_Container.new = function ( menu, controller )
 		BreakVariantLink = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				LOOTToastFrameBackground:completeAnimation()
 				self.LOOTToastFrameBackground:setAlpha( 0 )
 				self.clipFinished( LOOTToastFrameBackground, {} )
+
 				ToastBonusOutline:completeAnimation()
 				self.ToastBonusOutline:setAlpha( 0 )
 				self.clipFinished( ToastBonusOutline, {} )
+
 				EmblemDecal:completeAnimation()
 				self.EmblemDecal:setAlpha( 0 )
 				self.clipFinished( EmblemDecal, {} )
+
 				FrameBackground:completeAnimation()
 				self.FrameBackground:setAlpha( 1 )
 				self.clipFinished( FrameBackground, {} )
+
 				ContentIcon:completeAnimation()
 				self.ContentIcon:setAlpha( 1 )
 				self.clipFinished( ContentIcon, {} )
+
 				FunctionIcon:completeAnimation()
 				self.FunctionIcon:setAlpha( 1 )
 				self.clipFinished( FunctionIcon, {} )
+
 				Kicker:completeAnimation()
 				self.Kicker:setLeftRight( true, false, 74, 276 )
 				self.Kicker:setTopBottom( true, false, 9, 29 )
@@ -484,16 +563,19 @@ CoD.Toast_Container.new = function ( menu, controller )
 				self.Kicker:setScale( 1 )
 				self.Kicker:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 				self.clipFinished( Kicker, {} )
+
 				ToastHeaderWidget:completeAnimation()
 				self.ToastHeaderWidget:setLeftRight( true, false, 74, 295 )
 				self.ToastHeaderWidget:setTopBottom( true, false, 22, 56 )
 				self.ToastHeaderWidget:setAlpha( 1 )
 				self.clipFinished( ToastHeaderWidget, {} )
+
 				Description:completeAnimation()
 				self.Description:setLeftRight( true, false, 0, 300 )
 				self.Description:setTopBottom( true, false, 33, 56 )
 				self.Description:setAlpha( 0 )
 				self.clipFinished( Description, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
@@ -502,28 +584,35 @@ CoD.Toast_Container.new = function ( menu, controller )
 		BlackMarketEquipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				LOOTToastFrameBackground:completeAnimation()
 				self.LOOTToastFrameBackground:setLeftRight( true, false, -20.5, 326.5 )
 				self.LOOTToastFrameBackground:setTopBottom( true, false, -20, 92.5 )
 				self.LOOTToastFrameBackground:setAlpha( 1 )
 				self.clipFinished( LOOTToastFrameBackground, {} )
+
 				ToastBonusOutline:completeAnimation()
 				self.ToastBonusOutline:setAlpha( 0 )
 				self.clipFinished( ToastBonusOutline, {} )
+
 				EmblemDecal:completeAnimation()
 				self.EmblemDecal:setAlpha( 0 )
 				self.clipFinished( EmblemDecal, {} )
+
 				FrameBackground:completeAnimation()
 				self.FrameBackground:setAlpha( 0 )
 				self.clipFinished( FrameBackground, {} )
+
 				ContentIcon:completeAnimation()
 				self.ContentIcon:setAlpha( 1 )
 				self.clipFinished( ContentIcon, {} )
+
 				FunctionIcon:completeAnimation()
 				self.FunctionIcon:setLeftRight( false, true, -24, -2 )
 				self.FunctionIcon:setTopBottom( true, false, 0, 22 )
 				self.FunctionIcon:setAlpha( 1 )
 				self.clipFinished( FunctionIcon, {} )
+
 				Kicker:completeAnimation()
 				self.Kicker:setLeftRight( true, false, 74, 276 )
 				self.Kicker:setTopBottom( true, false, 9, 29 )
@@ -532,6 +621,7 @@ CoD.Toast_Container.new = function ( menu, controller )
 				self.Kicker:setScale( 1 )
 				self.Kicker:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 				self.clipFinished( Kicker, {} )
+
 				ToastHeaderWidget:completeAnimation()
 				self.ToastHeaderWidget:setLeftRight( true, false, 74, 297 )
 				self.ToastHeaderWidget:setTopBottom( true, false, 22, 56 )
@@ -542,12 +632,14 @@ CoD.Toast_Container.new = function ( menu, controller )
 				self.ToastHeaderWidget:setZRot( 0 )
 				self.ToastHeaderWidget:setScale( 1 )
 				self.clipFinished( ToastHeaderWidget, {} )
+
 				Description:completeAnimation()
 				self.Description:setLeftRight( true, false, 0, 300 )
 				self.Description:setTopBottom( true, false, 33, 56 )
 				self.Description:setAlpha( 0 )
 				self.Description:setScale( 1 )
 				self.clipFinished( Description, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
@@ -556,33 +648,41 @@ CoD.Toast_Container.new = function ( menu, controller )
 		ArenaChallengeCallingCard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BlackFrame:completeAnimation()
 				self.BlackFrame:setLeftRight( false, false, -152.5, 159.5 )
 				self.BlackFrame:setTopBottom( false, false, -92.5, 35.5 )
 				self.BlackFrame:setAlpha( 0.6 )
 				self.clipFinished( BlackFrame, {} )
+
 				LOOTToastFrameBackground:completeAnimation()
 				self.LOOTToastFrameBackground:setLeftRight( true, false, -18, 324.5 )
 				self.LOOTToastFrameBackground:setTopBottom( true, false, -77.5, 92 )
 				self.LOOTToastFrameBackground:setAlpha( 0 )
 				self.clipFinished( LOOTToastFrameBackground, {} )
+
 				ToastBonusOutline:completeAnimation()
 				self.ToastBonusOutline:setLeftRight( true, false, 1, 299 )
 				self.ToastBonusOutline:setTopBottom( true, false, -77, 73 )
 				self.ToastBonusOutline:setAlpha( 0 )
 				self.clipFinished( ToastBonusOutline, {} )
+
 				EmblemDecal:completeAnimation()
 				self.EmblemDecal:setAlpha( 0 )
 				self.clipFinished( EmblemDecal, {} )
+
 				FrameBackground:completeAnimation()
 				self.FrameBackground:setAlpha( 0 )
 				self.clipFinished( FrameBackground, {} )
+
 				ContentIcon:completeAnimation()
 				self.ContentIcon:setAlpha( 0 )
 				self.clipFinished( ContentIcon, {} )
+
 				FunctionIcon:completeAnimation()
 				self.FunctionIcon:setAlpha( 0 )
 				self.clipFinished( FunctionIcon, {} )
+
 				Kicker:completeAnimation()
 				self.Kicker:setLeftRight( true, false, 3, 303 )
 				self.Kicker:setTopBottom( true, false, 17, 43 )
@@ -591,11 +691,13 @@ CoD.Toast_Container.new = function ( menu, controller )
 				self.Kicker:setScale( 1.1 )
 				self.Kicker:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 				self.clipFinished( Kicker, {} )
+
 				ToastHeaderWidget:completeAnimation()
 				self.ToastHeaderWidget:setLeftRight( true, false, 7, 306 )
 				self.ToastHeaderWidget:setTopBottom( true, false, 19, 53 )
 				self.ToastHeaderWidget:setAlpha( 0 )
 				self.clipFinished( ToastHeaderWidget, {} )
+
 				Description:completeAnimation()
 				self.Description:setLeftRight( true, false, 3, 303 )
 				self.Description:setTopBottom( true, false, 40, 63 )
@@ -603,12 +705,14 @@ CoD.Toast_Container.new = function ( menu, controller )
 				self.Description:setAlpha( 1 )
 				self.Description:setScale( 0.9 )
 				self.clipFinished( Description, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setLeftRight( false, false, 3, 3 )
 				self.CallingCardsFrameWidget:setTopBottom( false, false, -49.5, -49.5 )
 				self.CallingCardsFrameWidget:setAlpha( 1 )
 				self.CallingCardsFrameWidget:setScale( 1 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setLeftRight( false, false, -146.5, 153.5 )
 				self.FETitleNumBrdr0:setTopBottom( false, false, -86.5, -11.5 )
@@ -619,24 +723,31 @@ CoD.Toast_Container.new = function ( menu, controller )
 		NewMusicTrack = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				LOOTToastFrameBackground:completeAnimation()
 				self.LOOTToastFrameBackground:setAlpha( 0 )
 				self.clipFinished( LOOTToastFrameBackground, {} )
+
 				ToastBonusOutline:completeAnimation()
 				self.ToastBonusOutline:setAlpha( 0 )
 				self.clipFinished( ToastBonusOutline, {} )
+
 				EmblemDecal:completeAnimation()
 				self.EmblemDecal:setAlpha( 0 )
 				self.clipFinished( EmblemDecal, {} )
+
 				FrameBackground:completeAnimation()
 				self.FrameBackground:setAlpha( 1 )
 				self.clipFinished( FrameBackground, {} )
+
 				ContentIcon:completeAnimation()
 				self.ContentIcon:setAlpha( 1 )
 				self.clipFinished( ContentIcon, {} )
+
 				FunctionIcon:completeAnimation()
 				self.FunctionIcon:setAlpha( 0 )
 				self.clipFinished( FunctionIcon, {} )
+
 				Kicker:completeAnimation()
 				self.Kicker:setLeftRight( true, false, 74, 276 )
 				self.Kicker:setTopBottom( true, false, 9, 29 )
@@ -645,16 +756,19 @@ CoD.Toast_Container.new = function ( menu, controller )
 				self.Kicker:setScale( 1 )
 				self.Kicker:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 				self.clipFinished( Kicker, {} )
+
 				ToastHeaderWidget:completeAnimation()
 				self.ToastHeaderWidget:setLeftRight( true, false, 74, 291 )
 				self.ToastHeaderWidget:setTopBottom( true, false, 22, 56 )
 				self.ToastHeaderWidget:setAlpha( 1 )
 				self.clipFinished( ToastHeaderWidget, {} )
+
 				Description:completeAnimation()
 				self.Description:setLeftRight( true, false, 0, 300 )
 				self.Description:setTopBottom( true, false, 33, 56 )
 				self.Description:setAlpha( 0 )
 				self.clipFinished( Description, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
@@ -663,32 +777,39 @@ CoD.Toast_Container.new = function ( menu, controller )
 		LootBonusCamo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				LOOTToastFrameBackground:completeAnimation()
 				self.LOOTToastFrameBackground:setLeftRight( true, false, -20.5, 326.5 )
 				self.LOOTToastFrameBackground:setTopBottom( true, false, -77, 92.5 )
 				self.LOOTToastFrameBackground:setAlpha( 1 )
 				self.clipFinished( LOOTToastFrameBackground, {} )
+
 				ToastBonusOutline:completeAnimation()
 				self.ToastBonusOutline:setLeftRight( true, false, 0, 300 )
 				self.ToastBonusOutline:setTopBottom( true, false, -77, 73 )
 				self.ToastBonusOutline:setAlpha( 0 )
 				self.clipFinished( ToastBonusOutline, {} )
+
 				EmblemDecal:completeAnimation()
 				self.EmblemDecal:setLeftRight( true, false, 118, 191 )
 				self.EmblemDecal:setTopBottom( true, false, -56.5, 16.5 )
 				self.EmblemDecal:setAlpha( 0 )
 				self.clipFinished( EmblemDecal, {} )
+
 				FrameBackground:completeAnimation()
 				self.FrameBackground:setAlpha( 0 )
 				self.clipFinished( FrameBackground, {} )
+
 				ContentIcon:completeAnimation()
 				self.ContentIcon:setLeftRight( true, false, 118, 191 )
 				self.ContentIcon:setTopBottom( true, false, -56.25, 16.5 )
 				self.ContentIcon:setAlpha( 1 )
 				self.clipFinished( ContentIcon, {} )
+
 				FunctionIcon:completeAnimation()
 				self.FunctionIcon:setAlpha( 0 )
 				self.clipFinished( FunctionIcon, {} )
+
 				Kicker:completeAnimation()
 				self.Kicker:setLeftRight( true, false, 3, 303.5 )
 				self.Kicker:setTopBottom( true, false, 16.5, 43.5 )
@@ -697,12 +818,14 @@ CoD.Toast_Container.new = function ( menu, controller )
 				self.Kicker:setScale( 1.1 )
 				self.Kicker:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 				self.clipFinished( Kicker, {} )
+
 				ToastHeaderWidget:completeAnimation()
 				self.ToastHeaderWidget:setLeftRight( true, false, 3, 302 )
 				self.ToastHeaderWidget:setTopBottom( true, false, 19, 53 )
 				self.ToastHeaderWidget:setRGB( 1, 1, 1 )
 				self.ToastHeaderWidget:setAlpha( 0 )
 				self.clipFinished( ToastHeaderWidget, {} )
+
 				Description:completeAnimation()
 				self.Description:setLeftRight( true, false, 3, 303 )
 				self.Description:setTopBottom( true, false, 39, 62 )
@@ -710,12 +833,14 @@ CoD.Toast_Container.new = function ( menu, controller )
 				self.Description:setAlpha( 1 )
 				self.Description:setScale( 0.9 )
 				self.clipFinished( Description, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BlackFrame:close()
 		element.LOOTToastFrameBackground:close()

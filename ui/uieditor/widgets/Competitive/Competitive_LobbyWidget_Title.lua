@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.Competitive_LobbyWidget_Title = InheritFrom( LUI.UIElement )
 CoD.Competitive_LobbyWidget_Title.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Competitive_LobbyWidget_Title )
 	self.id = "Competitive_LobbyWidget_Title"
@@ -54,6 +56,7 @@ CoD.Competitive_LobbyWidget_Title.new = function ( menu, controller )
 	Title:setLetterSpacing( 0.6 )
 	Title:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	Title:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( Title, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 2 )
 	end )
@@ -64,9 +67,11 @@ CoD.Competitive_LobbyWidget_Title.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEMemberBlurPanelContainer0:close()
 		element.TitleGlow1:close()

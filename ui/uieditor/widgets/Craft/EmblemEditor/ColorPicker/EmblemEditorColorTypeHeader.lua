@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Craft.Paintshop.PaintshopChooseSide" )
 CoD.EmblemEditorColorTypeHeader = InheritFrom( LUI.UIElement )
 CoD.EmblemEditorColorTypeHeader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemEditorColorTypeHeader )
 	self.id = "EmblemEditorColorTypeHeader"
@@ -28,7 +30,9 @@ CoD.EmblemEditorColorTypeHeader.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				colorTypeHeader:completeAnimation()
+
 				colorTypeHeader.text:completeAnimation()
 				self.colorTypeHeader.text:setText( Engine.Localize( "MENU_EMBLEM_GRADIENT" ) )
 				self.clipFinished( colorTypeHeader, {} )
@@ -37,7 +41,9 @@ CoD.EmblemEditorColorTypeHeader.new = function ( menu, controller )
 		Gradient = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				colorTypeHeader:completeAnimation()
+
 				colorTypeHeader.text:completeAnimation()
 				self.colorTypeHeader.text:setText( Engine.Localize( "MENU_EMBLEM_GRADIENT" ) )
 				self.clipFinished( colorTypeHeader, {} )
@@ -46,7 +52,9 @@ CoD.EmblemEditorColorTypeHeader.new = function ( menu, controller )
 		Solid = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				colorTypeHeader:completeAnimation()
+
 				colorTypeHeader.text:completeAnimation()
 				self.colorTypeHeader.text:setText( Engine.Localize( "MENU_EMBLEM_SOLID_COLOR" ) )
 				self.clipFinished( colorTypeHeader, {} )
@@ -55,13 +63,16 @@ CoD.EmblemEditorColorTypeHeader.new = function ( menu, controller )
 		Mixer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				colorTypeHeader:completeAnimation()
+
 				colorTypeHeader.text:completeAnimation()
 				self.colorTypeHeader.text:setText( Engine.Localize( "MENU_EMBLEM_COLOR_MIXER" ) )
 				self.clipFinished( colorTypeHeader, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.colorTypeHeader:close()
 	end )

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CallingCards.Loot3.CallingCards_loot_BO2_light" )
 CoD.CallingCards_loot_BO2retro = InheritFrom( LUI.UIElement )
 CoD.CallingCards_loot_BO2retro.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_loot_BO2retro )
 	self.id = "CallingCards_loot_BO2retro"
@@ -125,6 +127,7 @@ CoD.CallingCards_loot_BO2retro.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				local bulletsFrame2 = function ( bullets, event )
 					if not event.interrupted then
 						bullets:beginAnimation( "keyframe", 680, false, false, CoD.TweenType.Linear )
@@ -769,10 +772,12 @@ CoD.CallingCards_loot_BO2retro.new = function ( menu, controller )
 				self.Glow00:setTopBottom( true, false, 61.76, 225.48 )
 				self.Glow00:setAlpha( 0.5 )
 				Glow00Frame2( Glow00, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardslootBO2flash:close()
 		element.CallingCardslootBO2light:close()

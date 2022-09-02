@@ -4,9 +4,11 @@
 CoD.AmmoWidget_BackLine = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_BackLine.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_BackLine )
 	self.id = "AmmoWidget_BackLine"

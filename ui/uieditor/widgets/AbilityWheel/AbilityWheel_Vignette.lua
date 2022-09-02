@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.AbilityWheel.AbilityWheel_VignetteInternal" )
 CoD.AbilityWheel_Vignette = InheritFrom( LUI.UIElement )
 CoD.AbilityWheel_Vignette.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AbilityWheel_Vignette )
 	self.id = "AbilityWheel_Vignette"

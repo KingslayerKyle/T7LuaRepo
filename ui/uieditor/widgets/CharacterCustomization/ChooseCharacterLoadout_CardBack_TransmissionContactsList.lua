@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CharacterCustomization.ChooseCharacterLoadout_Card
 CoD.ChooseCharacterLoadout_CardBack_TransmissionContactsList = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacterLoadout_CardBack_TransmissionContactsList.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacterLoadout_CardBack_TransmissionContactsList )
 	self.id = "ChooseCharacterLoadout_CardBack_TransmissionContactsList"
@@ -36,12 +38,14 @@ CoD.ChooseCharacterLoadout_CardBack_TransmissionContactsList.new = function ( me
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				contactsList:completeAnimation()
 				self.contactsList:setAlpha( 0 )
 				self.clipFinished( contactsList, {} )
 			end,
 			Visible = function ()
 				self:setupElementClipCounter( 1 )
+
 				local contactsListFrame2 = function ( contactsList, event )
 					if not event.interrupted then
 						contactsList:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -62,12 +66,14 @@ CoD.ChooseCharacterLoadout_CardBack_TransmissionContactsList.new = function ( me
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				contactsList:completeAnimation()
 				self.contactsList:setAlpha( 1 )
 				self.clipFinished( contactsList, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local contactsListFrame2 = function ( contactsList, event )
 					if not event.interrupted then
 						contactsList:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -86,6 +92,7 @@ CoD.ChooseCharacterLoadout_CardBack_TransmissionContactsList.new = function ( me
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.contactsList:close()
 	end )

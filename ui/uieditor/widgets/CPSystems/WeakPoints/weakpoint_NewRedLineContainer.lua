@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CPSystems.WeakPoints.weakpoint_NewRedLine" )
 CoD.weakpoint_NewRedLineContainer = InheritFrom( LUI.UIElement )
 CoD.weakpoint_NewRedLineContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.weakpoint_NewRedLineContainer )
 	self.id = "weakpoint_NewRedLineContainer"

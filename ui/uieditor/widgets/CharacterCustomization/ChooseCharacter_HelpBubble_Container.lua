@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CharacterCustomization.ChooseCharacter_HelpBubble_
 CoD.ChooseCharacter_HelpBubble_Container = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacter_HelpBubble_Container.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacter_HelpBubble_Container )
 	self.id = "ChooseCharacter_HelpBubble_Container"
@@ -70,6 +72,7 @@ CoD.ChooseCharacter_HelpBubble_Container.new = function ( menu, controller )
 	Description:setLetterSpacing( 0.7 )
 	Description:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	Description:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( Description, "setText", function ( element, controller )
 		UpdateWidgetHeightToMultilineText( self, element, 24 )
 	end )
@@ -100,9 +103,11 @@ CoD.ChooseCharacter_HelpBubble_Container.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Border:close()
 		element.ChooseCharacterHelpBubbleArrow:close()

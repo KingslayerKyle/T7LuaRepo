@@ -36,9 +36,11 @@ end
 CoD.RejackInternal = InheritFrom( LUI.UIElement )
 CoD.RejackInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RejackInternal )
 	self.id = "RejackInternal"
@@ -252,74 +254,96 @@ CoD.RejackInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				BlackFrame2:completeAnimation()
 				self.BlackFrame2:setAlpha( 0 )
 				self.clipFinished( BlackFrame2, {} )
+
 				BlackFrame:completeAnimation()
 				self.BlackFrame:setAlpha( 0 )
 				self.clipFinished( BlackFrame, {} )
+
 				RejackTitle:completeAnimation()
 				self.RejackTitle:setAlpha( 0 )
 				self.clipFinished( RejackTitle, {} )
+
 				RejackingTitle2:completeAnimation()
 				self.RejackingTitle2:setAlpha( 0 )
 				self.clipFinished( RejackingTitle2, {} )
+
 				TimeRemaining:completeAnimation()
 				self.TimeRemaining:setAlpha( 0 )
 				self.clipFinished( TimeRemaining, {} )
+
 				Prompt:completeAnimation()
 				self.Prompt:setAlpha( 0 )
 				self.clipFinished( Prompt, {} )
+
 				barHR:completeAnimation()
 				self.barHR:setAlpha( 0 )
 				self.clipFinished( barHR, {} )
+
 				Grid:completeAnimation()
 				self.Grid:setAlpha( 0 )
 				self.clipFinished( Grid, {} )
+
 				Grid0:completeAnimation()
 				self.Grid0:setAlpha( 0 )
 				self.clipFinished( Grid0, {} )
+
 				HeartBeatLine:completeAnimation()
 				self.HeartBeatLine:setLeftRight( true, false, 62.81, 458.44 )
 				self.HeartBeatLine:setTopBottom( true, false, 125.45, 198.55 )
 				self.HeartBeatLine:setAlpha( 0 )
 				self.clipFinished( HeartBeatLine, {} )
+
 				dot0:completeAnimation()
 				self.dot0:setAlpha( 0 )
 				self.clipFinished( dot0, {} )
+
 				dot1:completeAnimation()
 				self.dot1:setAlpha( 0 )
 				self.clipFinished( dot1, {} )
+
 				dot2:completeAnimation()
 				self.dot2:setAlpha( 0 )
 				self.clipFinished( dot2, {} )
+
 				dot3:completeAnimation()
 				self.dot3:setAlpha( 0 )
 				self.clipFinished( dot3, {} )
+
 				dot4:completeAnimation()
 				self.dot4:setAlpha( 0 )
 				self.clipFinished( dot4, {} )
+
 				dot5:completeAnimation()
 				self.dot5:setAlpha( 0 )
 				self.clipFinished( dot5, {} )
+
 				HeartBeatLineAlive:completeAnimation()
 				self.HeartBeatLineAlive:setAlpha( 0 )
 				self.clipFinished( HeartBeatLineAlive, {} )
+
 				WhiteLine:completeAnimation()
 				self.WhiteLine:setAlpha( 0 )
 				self.clipFinished( WhiteLine, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 0 )
 				self.clipFinished( Image1, {} )
 			end,
 			HeartBeat = function ()
 				self:setupElementClipCounter( 10 )
+
 				BlackFrame2:completeAnimation()
 				self.BlackFrame2:setAlpha( 0.5 )
 				self.clipFinished( BlackFrame2, {} )
+
 				RejackTitle:completeAnimation()
 				self.RejackTitle:setAlpha( 1 )
 				self.clipFinished( RejackTitle, {} )
+
 				RejackingTitle2:completeAnimation()
 				self.RejackingTitle2:setAlpha( 0 )
 				self.clipFinished( RejackingTitle2, {} )
@@ -351,14 +375,17 @@ CoD.RejackInternal.new = function ( menu, controller )
 				self.TimeRemaining:setRGB( 0, 0.78, 0 )
 				self.TimeRemaining:setAlpha( 1 )
 				TimeRemainingFrame2( TimeRemaining, {} )
+
 				Prompt:completeAnimation()
 				self.Prompt:setLeftRight( true, false, 208, 408 )
 				self.Prompt:setTopBottom( true, false, 234.09, 259.09 )
 				self.Prompt:setAlpha( 1 )
 				self.clipFinished( Prompt, {} )
+
 				Grid:completeAnimation()
 				self.Grid:setAlpha( 0.5 )
 				self.clipFinished( Grid, {} )
+
 				Grid0:completeAnimation()
 				self.Grid0:setAlpha( 1 )
 				self.clipFinished( Grid0, {} )
@@ -449,6 +476,7 @@ CoD.RejackInternal.new = function ( menu, controller )
 				self.HeartBeatLine:setShaderVector( 2, 1, 0, 0, 0 )
 				self.HeartBeatLine:setShaderVector( 3, 0, 0, 0, 0 )
 				HeartBeatLineFrame2( HeartBeatLine, {} )
+
 				HeartBeatLineAlive:completeAnimation()
 				self.HeartBeatLineAlive:setAlpha( 0 )
 				self.clipFinished( HeartBeatLineAlive, {} )
@@ -547,42 +575,53 @@ CoD.RejackInternal.new = function ( menu, controller )
 			end,
 			RejackActivated = function ()
 				self:setupElementClipCounter( 11 )
+
 				BlackFrame0:completeAnimation()
 				self.BlackFrame0:setAlpha( 0.2 )
 				self.clipFinished( BlackFrame0, {} )
+
 				BlackFrame:completeAnimation()
 				self.BlackFrame:setLeftRight( true, false, 67.81, 530.16 )
 				self.BlackFrame:setTopBottom( true, false, 127.45, 196.71 )
 				self.BlackFrame:setAlpha( 0.25 )
 				self.clipFinished( BlackFrame, {} )
+
 				RejackTitle:completeAnimation()
 				self.RejackTitle:setAlpha( 0 )
 				self.clipFinished( RejackTitle, {} )
+
 				RejackingTitle2:completeAnimation()
 				self.RejackingTitle2:setAlpha( 1 )
 				self.clipFinished( RejackingTitle2, {} )
+
 				TimeRemaining:completeAnimation()
 				self.TimeRemaining:setRGB( 0.02, 0.75, 0 )
 				self.TimeRemaining:setAlpha( 1 )
 				self.clipFinished( TimeRemaining, {} )
+
 				Prompt:completeAnimation()
 				self.Prompt:setAlpha( 1 )
 				self.clipFinished( Prompt, {} )
+
 				Grid0:completeAnimation()
 				self.Grid0:setAlpha( 1 )
 				self.clipFinished( Grid0, {} )
+
 				HeartBeatLine:completeAnimation()
 				self.HeartBeatLine:setAlpha( 0 )
 				self.clipFinished( HeartBeatLine, {} )
+
 				HeartBeatLineAlive:completeAnimation()
 				self.HeartBeatLineAlive:setLeftRight( true, false, 62.81, 450.16 )
 				self.HeartBeatLineAlive:setTopBottom( true, false, 125.45, 197.45 )
 				self.HeartBeatLineAlive:setRGB( 0.02, 0.75, 0 )
 				self.HeartBeatLineAlive:setAlpha( 1 )
 				self.clipFinished( HeartBeatLineAlive, {} )
+
 				WhiteLine:completeAnimation()
 				self.WhiteLine:setAlpha( 0.8 )
 				self.clipFinished( WhiteLine, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 0.8 )
 				self.clipFinished( Image1, {} )

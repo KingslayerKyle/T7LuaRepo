@@ -4,9 +4,11 @@
 CoD.BubbleGumBuffDescription = InheritFrom( LUI.UIElement )
 CoD.BubbleGumBuffDescription.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BubbleGumBuffDescription )
 	self.id = "BubbleGumBuffDescription"
@@ -42,6 +44,7 @@ CoD.BubbleGumBuffDescription.new = function ( menu, controller )
 			TextBox0:setText( Engine.Localize( GetBGBDescription( controller, itemIndex ) ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( TextBox0, "setText", function ( element, controller )
 		UpdateWidgetHeightToMultilineText( self, element, 0 )
 	end )
@@ -52,6 +55,7 @@ CoD.BubbleGumBuffDescription.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				SplitscreenDLCWarning:completeAnimation()
 				self.SplitscreenDLCWarning:setAlpha( 0 )
 				self.clipFinished( SplitscreenDLCWarning, {} )
@@ -60,12 +64,14 @@ CoD.BubbleGumBuffDescription.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				SplitscreenDLCWarning:completeAnimation()
 				self.SplitscreenDLCWarning:setAlpha( 1 )
 				self.clipFinished( SplitscreenDLCWarning, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -89,6 +95,7 @@ CoD.BubbleGumBuffDescription.new = function ( menu, controller )
 			modelName = "itemIndex"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SplitscreenDLCWarning:close()
 		element.TextBox0:close()

@@ -4,9 +4,11 @@
 CoD.AmmoWidget_AbilityGlow = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_AbilityGlow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_AbilityGlow )
 	self.id = "AmmoWidget_AbilityGlow"

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Ground.VehicleGround_IrisInner" )
 CoD.DniWipe_OuterIrisBlink = InheritFrom( LUI.UIElement )
 CoD.DniWipe_OuterIrisBlink.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.DniWipe_OuterIrisBlink )
 	self.id = "DniWipe_OuterIrisBlink"
@@ -31,6 +33,7 @@ CoD.DniWipe_OuterIrisBlink.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local VehicleGroundIrisInner0Frame2 = function ( VehicleGroundIrisInner0, event )
 					local VehicleGroundIrisInner0Frame3 = function ( VehicleGroundIrisInner0, event )
 						local VehicleGroundIrisInner0Frame4 = function ( VehicleGroundIrisInner0, event )
@@ -302,10 +305,12 @@ CoD.DniWipe_OuterIrisBlink.new = function ( menu, controller )
 				self.VehicleGroundIrisInner0:setAlpha( 0.6 )
 				self.VehicleGroundIrisInner0:setScale( 1 )
 				VehicleGroundIrisInner0Frame2( VehicleGroundIrisInner0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.VehicleGroundIrisInner0:close()
 	end )

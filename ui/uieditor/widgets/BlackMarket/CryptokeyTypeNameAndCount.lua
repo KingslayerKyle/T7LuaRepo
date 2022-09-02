@@ -4,9 +4,11 @@
 CoD.CryptokeyTypeNameAndCount = InheritFrom( LUI.UIElement )
 CoD.CryptokeyTypeNameAndCount.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CryptokeyTypeNameAndCount )
 	self.id = "CryptokeyTypeNameAndCount"
@@ -62,6 +64,7 @@ CoD.CryptokeyTypeNameAndCount.new = function ( menu, controller )
 	nameText:setTTF( "fonts/escom.ttf" )
 	nameText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	nameText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( nameText, "setText", function ( element, controller )
 		ScaleWidgetToLabelLeftJustify( self, element, 0 )
 	end )
@@ -82,26 +85,33 @@ CoD.CryptokeyTypeNameAndCount.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Common = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( ColorSet.BlackMarketCommon.r, ColorSet.BlackMarketCommon.g, ColorSet.BlackMarketCommon.b )
 				self.clipFinished( bg, {} )
+
 				Labelcommon:completeAnimation()
 				self.Labelcommon:setAlpha( 1 )
 				self.clipFinished( Labelcommon, {} )
+
 				Labelrare:completeAnimation()
 				self.Labelrare:setAlpha( 0 )
 				self.clipFinished( Labelrare, {} )
+
 				Labellegendary:completeAnimation()
 				self.Labellegendary:setAlpha( 0 )
 				self.clipFinished( Labellegendary, {} )
+
 				Labelepic:completeAnimation()
 				self.Labelepic:setAlpha( 0 )
 				self.clipFinished( Labelepic, {} )
+
 				nameText:completeAnimation()
 				self.nameText:setRGB( 0.79, 0.79, 0.79 )
 				self.clipFinished( nameText, {} )
@@ -110,21 +120,27 @@ CoD.CryptokeyTypeNameAndCount.new = function ( menu, controller )
 		Rare = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( ColorSet.BlackMarketRare.r, ColorSet.BlackMarketRare.g, ColorSet.BlackMarketRare.b )
 				self.clipFinished( bg, {} )
+
 				Labelcommon:completeAnimation()
 				self.Labelcommon:setAlpha( 0 )
 				self.clipFinished( Labelcommon, {} )
+
 				Labelrare:completeAnimation()
 				self.Labelrare:setAlpha( 1 )
 				self.clipFinished( Labelrare, {} )
+
 				Labellegendary:completeAnimation()
 				self.Labellegendary:setAlpha( 0 )
 				self.clipFinished( Labellegendary, {} )
+
 				Labelepic:completeAnimation()
 				self.Labelepic:setAlpha( 0 )
 				self.clipFinished( Labelepic, {} )
+
 				nameText:completeAnimation()
 				self.nameText:setRGB( 0.7, 0.85, 1 )
 				self.clipFinished( nameText, {} )
@@ -133,21 +149,27 @@ CoD.CryptokeyTypeNameAndCount.new = function ( menu, controller )
 		Legendary = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( ColorSet.BlackMarketLegendary.r, ColorSet.BlackMarketLegendary.g, ColorSet.BlackMarketLegendary.b )
 				self.clipFinished( bg, {} )
+
 				Labelcommon:completeAnimation()
 				self.Labelcommon:setAlpha( 0 )
 				self.clipFinished( Labelcommon, {} )
+
 				Labelrare:completeAnimation()
 				self.Labelrare:setAlpha( 0 )
 				self.clipFinished( Labelrare, {} )
+
 				Labellegendary:completeAnimation()
 				self.Labellegendary:setAlpha( 1 )
 				self.clipFinished( Labellegendary, {} )
+
 				Labelepic:completeAnimation()
 				self.Labelepic:setAlpha( 0 )
 				self.clipFinished( Labelepic, {} )
+
 				nameText:completeAnimation()
 				self.nameText:setRGB( 0.8, 0.7, 1 )
 				self.nameText:setAlpha( 1 )
@@ -157,27 +179,34 @@ CoD.CryptokeyTypeNameAndCount.new = function ( menu, controller )
 		Epic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( ColorSet.BlackMarketEpic.r, ColorSet.BlackMarketEpic.g, ColorSet.BlackMarketEpic.b )
 				self.clipFinished( bg, {} )
+
 				Labelcommon:completeAnimation()
 				self.Labelcommon:setAlpha( 0 )
 				self.clipFinished( Labelcommon, {} )
+
 				Labelrare:completeAnimation()
 				self.Labelrare:setAlpha( 0 )
 				self.clipFinished( Labelrare, {} )
+
 				Labellegendary:completeAnimation()
 				self.Labellegendary:setAlpha( 0 )
 				self.clipFinished( Labellegendary, {} )
+
 				Labelepic:completeAnimation()
 				self.Labelepic:setAlpha( 1 )
 				self.clipFinished( Labelepic, {} )
+
 				nameText:completeAnimation()
 				self.nameText:setRGB( 1, 0.91, 0.7 )
 				self.clipFinished( nameText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Common",

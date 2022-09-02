@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.StartMenu.DOA.DOA_ControlHelp_Text" )
 CoD.DOA_ControlHelp = InheritFrom( LUI.UIElement )
 CoD.DOA_ControlHelp.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DOA_ControlHelp )
 	self.id = "DOA_ControlHelp"
@@ -193,23 +195,29 @@ CoD.DOA_ControlHelp.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Vita = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				vitaControllerImage:completeAnimation()
 				self.vitaControllerImage:setAlpha( 1 )
 				self.clipFinished( vitaControllerImage, {} )
+
 				durangoControllerImage:completeAnimation()
 				self.durangoControllerImage:setAlpha( 0 )
 				self.clipFinished( durangoControllerImage, {} )
+
 				durangoLines:completeAnimation()
 				self.durangoLines:setAlpha( 0 )
 				self.clipFinished( durangoLines, {} )
+
 				orbisControllerImage:completeAnimation()
 				self.orbisControllerImage:setAlpha( 0 )
 				self.clipFinished( orbisControllerImage, {} )
+
 				orbisLines:completeAnimation()
 				self.orbisLines:setAlpha( 0 )
 				self.clipFinished( orbisLines, {} )
@@ -218,49 +226,62 @@ CoD.DOA_ControlHelp.new = function ( menu, controller )
 		Orbis = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				vitaControllerImage:completeAnimation()
 				self.vitaControllerImage:setAlpha( 0 )
 				self.clipFinished( vitaControllerImage, {} )
+
 				durangoControllerImage:completeAnimation()
 				self.durangoControllerImage:setAlpha( 0 )
 				self.clipFinished( durangoControllerImage, {} )
+
 				durangoLines:completeAnimation()
 				self.durangoLines:setAlpha( 0 )
 				self.clipFinished( durangoLines, {} )
+
 				orbisControllerImage:completeAnimation()
 				self.orbisControllerImage:setAlpha( 1 )
 				self.clipFinished( orbisControllerImage, {} )
+
 				orbisLines:completeAnimation()
 				self.orbisLines:setAlpha( 1 )
 				self.clipFinished( orbisLines, {} )
+
 				l2Text:completeAnimation()
 				self.l2Text:setLeftRight( false, false, -376.5, -176.5 )
 				self.l2Text:setTopBottom( false, false, -177.5, -152.5 )
 				self.clipFinished( l2Text, {} )
+
 				lstickText:completeAnimation()
 				self.lstickText:setLeftRight( false, false, -164.75, 35.25 )
 				self.lstickText:setTopBottom( false, false, 128.79, 153.79 )
 				self.clipFinished( lstickText, {} )
+
 				r2Text:completeAnimation()
 				self.r2Text:setLeftRight( false, false, 175.5, 375.5 )
 				self.r2Text:setTopBottom( false, false, -177.5, -152.5 )
 				self.clipFinished( r2Text, {} )
+
 				rstickText:completeAnimation()
 				self.rstickText:setLeftRight( false, false, -34.75, 165.25 )
 				self.rstickText:setTopBottom( false, false, 130.79, 155.79 )
 				self.clipFinished( rstickText, {} )
+
 				triangleText:completeAnimation()
 				self.triangleText:setLeftRight( false, false, 213.5, 413.5 )
 				self.triangleText:setTopBottom( false, false, -84.21, -59.21 )
 				self.clipFinished( triangleText, {} )
+
 				boxText2:completeAnimation()
 				self.boxText2:setLeftRight( false, false, 213.5, 413.5 )
 				self.boxText2:setTopBottom( false, false, -28.21, -3.21 )
 				self.clipFinished( boxText2, {} )
+
 				boxText1:completeAnimation()
 				self.boxText1:setLeftRight( false, false, 213.5, 413.5 )
 				self.boxText1:setTopBottom( false, false, -53.21, -28.21 )
 				self.clipFinished( boxText1, {} )
+
 				xText:completeAnimation()
 				self.xText:setLeftRight( false, false, 212.5, 412.5 )
 				self.xText:setTopBottom( false, false, -2.5, 22.5 )
@@ -270,28 +291,38 @@ CoD.DOA_ControlHelp.new = function ( menu, controller )
 		Durango = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				vitaControllerImage:completeAnimation()
 				self.vitaControllerImage:setAlpha( 0 )
 				self.clipFinished( vitaControllerImage, {} )
+
 				durangoControllerImage:completeAnimation()
 				self.durangoControllerImage:setAlpha( 1 )
 				self.clipFinished( durangoControllerImage, {} )
+
 				durangoLines:completeAnimation()
 				self.durangoLines:setAlpha( 1 )
 				self.clipFinished( durangoLines, {} )
+
 				orbisControllerImage:completeAnimation()
 				self.orbisControllerImage:setAlpha( 0 )
 				self.clipFinished( orbisControllerImage, {} )
+
 				orbisLines:completeAnimation()
 				self.orbisLines:setAlpha( 0 )
 				self.clipFinished( orbisLines, {} )
+
 				l2Text:completeAnimation()
 				self.l2Text:setLeftRight( false, false, -395.5, -195.5 )
 				self.l2Text:setTopBottom( false, false, -178.5, -153.5 )
 				self.clipFinished( l2Text, {} )
+
 				lstickText:completeAnimation()
+
 				lstickText.defaultText:completeAnimation()
+
 				lstickText.drivingText:completeAnimation()
+
 				lstickText.doaFPSText:completeAnimation()
 				self.lstickText:setLeftRight( false, false, -426.75, -226.75 )
 				self.lstickText:setTopBottom( false, false, -51.21, -26.21 )
@@ -299,22 +330,27 @@ CoD.DOA_ControlHelp.new = function ( menu, controller )
 				self.lstickText.drivingText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 				self.lstickText.doaFPSText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 				self.clipFinished( lstickText, {} )
+
 				r2Text:completeAnimation()
 				self.r2Text:setLeftRight( false, false, 194.5, 394.5 )
 				self.r2Text:setTopBottom( false, false, -178.5, -153.5 )
 				self.clipFinished( r2Text, {} )
+
 				rstickText:completeAnimation()
 				self.rstickText:setLeftRight( false, false, -41.75, 158.25 )
 				self.rstickText:setTopBottom( false, false, 127.79, 152.79 )
 				self.clipFinished( rstickText, {} )
+
 				triangleText:completeAnimation()
 				self.triangleText:setLeftRight( false, false, 225, 425 )
 				self.triangleText:setTopBottom( false, false, -78.21, -53.21 )
 				self.clipFinished( triangleText, {} )
+
 				boxText2:completeAnimation()
 				self.boxText2:setLeftRight( false, false, 225, 425 )
 				self.boxText2:setTopBottom( false, false, -28.21, -3.21 )
 				self.clipFinished( boxText2, {} )
+
 				boxText1:completeAnimation()
 				self.boxText1:setLeftRight( false, false, 225, 425 )
 				self.boxText1:setTopBottom( false, false, -53.21, -28.21 )
@@ -322,6 +358,7 @@ CoD.DOA_ControlHelp.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Vita",
@@ -360,6 +397,7 @@ CoD.DOA_ControlHelp.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.durangoLines:close()
 		element.orbisLines:close()

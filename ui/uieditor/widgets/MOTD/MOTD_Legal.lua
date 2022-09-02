@@ -4,9 +4,11 @@
 CoD.MOTD_Legal = InheritFrom( LUI.UIElement )
 CoD.MOTD_Legal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.MOTD_Legal )
 	self.id = "MOTD_Legal"
@@ -28,6 +30,7 @@ CoD.MOTD_Legal.new = function ( menu, controller )
 	TxtLegal:setTTF( "fonts/RefrigeratorDeluxe-Regular.ttf" )
 	TxtLegal:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	TxtLegal:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( TxtLegal, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrapped( self, element, 0, 0 )
 	end )

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_CurrencyCounts" )
 CoD.BlackMarketSafeAreaContainer = InheritFrom( LUI.UIElement )
 CoD.BlackMarketSafeAreaContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BlackMarketSafeAreaContainer )
 	self.id = "BlackMarketSafeAreaContainer"

@@ -4,9 +4,11 @@
 CoD.AnimationLoading2 = InheritFrom( LUI.UIElement )
 CoD.AnimationLoading2.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AnimationLoading2 )
 	self.id = "AnimationLoading2"
@@ -28,16 +30,19 @@ CoD.AnimationLoading2.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 				self.nextClip = "DefaultClip"
 			end,
 			Logo = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 1 )
 				self.clipFinished( Image0, {} )
 			end,
 			Reverse = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

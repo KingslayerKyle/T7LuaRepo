@@ -4,9 +4,11 @@
 CoD.ElementalArrowItem = InheritFrom( LUI.UIElement )
 CoD.ElementalArrowItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ElementalArrowItem )
 	self.id = "ElementalArrowItem"
@@ -72,24 +74,31 @@ CoD.ElementalArrowItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BackgroundCircle:completeAnimation()
 				self.BackgroundCircle:setAlpha( 0 )
 				self.clipFinished( BackgroundCircle, {} )
+
 				BackgroundComplete:completeAnimation()
 				self.BackgroundComplete:setAlpha( 0 )
 				self.clipFinished( BackgroundComplete, {} )
+
 				CircleFill:completeAnimation()
 				self.CircleFill:setAlpha( 0 )
 				self.clipFinished( CircleFill, {} )
+
 				CircleComplete:completeAnimation()
 				self.CircleComplete:setAlpha( 0 )
 				self.clipFinished( CircleComplete, {} )
+
 				ArrowComplete:completeAnimation()
 				self.ArrowComplete:setAlpha( 0 )
 				self.clipFinished( ArrowComplete, {} )
+
 				ArrowBroken:completeAnimation()
 				self.ArrowBroken:setAlpha( 0 )
 				self.clipFinished( ArrowBroken, {} )
+
 				PlayerImage:completeAnimation()
 				self.PlayerImage:setAlpha( 0 )
 				self.clipFinished( PlayerImage, {} )
@@ -98,24 +107,31 @@ CoD.ElementalArrowItem.new = function ( menu, controller )
 		Finished = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BackgroundCircle:completeAnimation()
 				self.BackgroundCircle:setAlpha( 1 )
 				self.clipFinished( BackgroundCircle, {} )
+
 				BackgroundComplete:completeAnimation()
 				self.BackgroundComplete:setAlpha( 1 )
 				self.clipFinished( BackgroundComplete, {} )
+
 				CircleFill:completeAnimation()
 				self.CircleFill:setAlpha( 1 )
 				self.clipFinished( CircleFill, {} )
+
 				CircleComplete:completeAnimation()
 				self.CircleComplete:setAlpha( 1 )
 				self.clipFinished( CircleComplete, {} )
+
 				ArrowComplete:completeAnimation()
 				self.ArrowComplete:setAlpha( 1 )
 				self.clipFinished( ArrowComplete, {} )
+
 				ArrowBroken:completeAnimation()
 				self.ArrowBroken:setAlpha( 0 )
 				self.clipFinished( ArrowBroken, {} )
+
 				PlayerImage:completeAnimation()
 				self.PlayerImage:setAlpha( 1 )
 				self.clipFinished( PlayerImage, {} )
@@ -124,24 +140,31 @@ CoD.ElementalArrowItem.new = function ( menu, controller )
 		MostlyFinished = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BackgroundCircle:completeAnimation()
 				self.BackgroundCircle:setAlpha( 1 )
 				self.clipFinished( BackgroundCircle, {} )
+
 				BackgroundComplete:completeAnimation()
 				self.BackgroundComplete:setAlpha( 0 )
 				self.clipFinished( BackgroundComplete, {} )
+
 				CircleFill:completeAnimation()
 				self.CircleFill:setAlpha( 1 )
 				self.clipFinished( CircleFill, {} )
+
 				CircleComplete:completeAnimation()
 				self.CircleComplete:setAlpha( 0 )
 				self.clipFinished( CircleComplete, {} )
+
 				ArrowComplete:completeAnimation()
 				self.ArrowComplete:setAlpha( 1 )
 				self.clipFinished( ArrowComplete, {} )
+
 				ArrowBroken:completeAnimation()
 				self.ArrowBroken:setAlpha( 0 )
 				self.clipFinished( ArrowBroken, {} )
+
 				PlayerImage:completeAnimation()
 				self.PlayerImage:setAlpha( 1 )
 				self.clipFinished( PlayerImage, {} )
@@ -150,24 +173,31 @@ CoD.ElementalArrowItem.new = function ( menu, controller )
 		InProgress = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BackgroundCircle:completeAnimation()
 				self.BackgroundCircle:setAlpha( 1 )
 				self.clipFinished( BackgroundCircle, {} )
+
 				BackgroundComplete:completeAnimation()
 				self.BackgroundComplete:setAlpha( 0 )
 				self.clipFinished( BackgroundComplete, {} )
+
 				CircleFill:completeAnimation()
 				self.CircleFill:setAlpha( 1 )
 				self.clipFinished( CircleFill, {} )
+
 				CircleComplete:completeAnimation()
 				self.CircleComplete:setAlpha( 0.02 )
 				self.clipFinished( CircleComplete, {} )
+
 				ArrowComplete:completeAnimation()
 				self.ArrowComplete:setAlpha( 0 )
 				self.clipFinished( ArrowComplete, {} )
+
 				ArrowBroken:completeAnimation()
 				self.ArrowBroken:setAlpha( 1 )
 				self.clipFinished( ArrowBroken, {} )
+
 				PlayerImage:completeAnimation()
 				self.PlayerImage:setAlpha( 1 )
 				self.clipFinished( PlayerImage, {} )

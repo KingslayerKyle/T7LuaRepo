@@ -4,9 +4,11 @@
 CoD.vtolCenterMissilesLocked = InheritFrom( LUI.UIElement )
 CoD.vtolCenterMissilesLocked.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vtolCenterMissilesLocked )
 	self.id = "vtolCenterMissilesLocked"
@@ -36,6 +38,7 @@ CoD.vtolCenterMissilesLocked.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

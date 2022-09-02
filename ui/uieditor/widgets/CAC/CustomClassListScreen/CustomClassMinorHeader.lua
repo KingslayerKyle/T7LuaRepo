@@ -4,9 +4,11 @@
 CoD.CustomClassMinorHeader = InheritFrom( LUI.UIElement )
 CoD.CustomClassMinorHeader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CustomClassMinorHeader )
 	self.id = "CustomClassMinorHeader"
@@ -29,6 +31,7 @@ CoD.CustomClassMinorHeader.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				text:completeAnimation()
 				self.text:setAlpha( 1 )
 				self.clipFinished( text, {} )
@@ -37,6 +40,7 @@ CoD.CustomClassMinorHeader.new = function ( menu, controller )
 		NotVisibleOffline = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0 )
 				self.clipFinished( text, {} )

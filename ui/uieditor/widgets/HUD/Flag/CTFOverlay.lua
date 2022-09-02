@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.Flag.FlagStatusMP" )
 CoD.CTFOverlay = InheritFrom( LUI.UIElement )
 CoD.CTFOverlay.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CTFOverlay )
 	self.id = "CTFOverlay"
@@ -42,6 +44,7 @@ CoD.CTFOverlay.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FlagStatus:completeAnimation()
 				self.FlagStatus:setLeftRight( true, false, 24, 331 )
 				self.FlagStatus:setTopBottom( true, false, 191, 260 )
@@ -52,6 +55,7 @@ CoD.CTFOverlay.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FlagStatus:completeAnimation()
 				self.FlagStatus:setLeftRight( true, false, 24, 331 )
 				self.FlagStatus:setTopBottom( true, false, 191, 260 )
@@ -62,6 +66,7 @@ CoD.CTFOverlay.new = function ( menu, controller )
 		VisibleForCodCasterLargeMinimap = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FlagStatus:completeAnimation()
 				self.FlagStatus:setLeftRight( true, false, 24, 331 )
 				self.FlagStatus:setTopBottom( true, false, 245, 314 )
@@ -72,6 +77,7 @@ CoD.CTFOverlay.new = function ( menu, controller )
 		VisibleForCodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FlagStatus:completeAnimation()
 				self.FlagStatus:setLeftRight( true, false, 24, 331 )
 				self.FlagStatus:setTopBottom( true, false, 191, 260 )
@@ -80,6 +86,7 @@ CoD.CTFOverlay.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -237,6 +244,7 @@ CoD.CTFOverlay.new = function ( menu, controller )
 			modelName = "CodCaster.profileSettingsUpdated"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FlagStatus:close()
 	end )

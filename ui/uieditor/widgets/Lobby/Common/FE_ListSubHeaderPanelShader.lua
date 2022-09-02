@@ -4,9 +4,11 @@
 CoD.FE_ListSubHeaderPanelShader = InheritFrom( LUI.UIElement )
 CoD.FE_ListSubHeaderPanelShader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_ListSubHeaderPanelShader )
 	self.id = "FE_ListSubHeaderPanelShader"

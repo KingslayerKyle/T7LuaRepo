@@ -370,6 +370,7 @@ CoD.CodCasterLoadoutListContainer.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CodCasterLoadoutListContainer )
 	self.id = "CodCasterLoadoutListContainer"
@@ -590,9 +591,11 @@ CoD.CodCasterLoadoutListContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SpecialistWeaponOrAbility:close()
 		element.PrimaryWeapon:close()

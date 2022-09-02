@@ -4,9 +4,11 @@
 CoD.ScoreInfo_RdTri = InheritFrom( LUI.UIElement )
 CoD.ScoreInfo_RdTri.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreInfo_RdTri )
 	self.id = "ScoreInfo_RdTri"
@@ -33,6 +35,7 @@ CoD.ScoreInfo_RdTri.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				TriFill:completeAnimation()
 				self.TriFill:setAlpha( 0 )
 				self.clipFinished( TriFill, {} )
@@ -41,6 +44,7 @@ CoD.ScoreInfo_RdTri.new = function ( menu, controller )
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				TriFill:completeAnimation()
 				self.TriFill:setAlpha( 1 )
 				self.clipFinished( TriFill, {} )

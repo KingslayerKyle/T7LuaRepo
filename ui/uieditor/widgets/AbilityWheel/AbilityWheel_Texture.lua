@@ -4,9 +4,11 @@
 CoD.AbilityWheel_Texture = InheritFrom( LUI.UIElement )
 CoD.AbilityWheel_Texture.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AbilityWheel_Texture )
 	self.id = "AbilityWheel_Texture"
@@ -37,6 +39,7 @@ CoD.AbilityWheel_Texture.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local TextureLFrame2 = function ( TextureL, event )
 					local TextureLFrame3 = function ( TextureL, event )
 						if not event.interrupted then
@@ -100,6 +103,7 @@ CoD.AbilityWheel_Texture.new = function ( menu, controller )
 				TextureR:completeAnimation()
 				self.TextureR:setAlpha( RandomAddPercent( 40, 0.41 ) )
 				TextureRFrame2( TextureR, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

@@ -4,9 +4,11 @@
 CoD.GobbleGumCookbook_VialSaleActive = InheritFrom( LUI.UIElement )
 CoD.GobbleGumCookbook_VialSaleActive.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GobbleGumCookbook_VialSaleActive )
 	self.id = "GobbleGumCookbook_VialSaleActive"
@@ -59,15 +61,19 @@ CoD.GobbleGumCookbook_VialSaleActive.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				cost:completeAnimation()
 				self.cost:setAlpha( 0 )
 				self.clipFinished( cost, {} )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				vialText:completeAnimation()
 				self.vialText:setAlpha( 0 )
 				self.clipFinished( vialText, {} )
+
 				vialIcon:completeAnimation()
 				self.vialIcon:setAlpha( 0 )
 				self.clipFinished( vialIcon, {} )
@@ -76,16 +82,20 @@ CoD.GobbleGumCookbook_VialSaleActive.new = function ( menu, controller )
 		SaleOnInsufficientFunds = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				cost:completeAnimation()
 				self.cost:setAlpha( 1 )
 				self.clipFinished( cost, {} )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
+
 				vialText:completeAnimation()
 				self.vialText:setRGB( 0.93, 0.17, 0.17 )
 				self.vialText:setAlpha( 1 )
 				self.clipFinished( vialText, {} )
+
 				vialIcon:completeAnimation()
 				self.vialIcon:setAlpha( 1 )
 				self.clipFinished( vialIcon, {} )
@@ -94,22 +104,27 @@ CoD.GobbleGumCookbook_VialSaleActive.new = function ( menu, controller )
 		SaleOn = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				cost:completeAnimation()
 				self.cost:setAlpha( 1 )
 				self.clipFinished( cost, {} )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
+
 				vialText:completeAnimation()
 				self.vialText:setRGB( 1, 1, 1 )
 				self.vialText:setAlpha( 1 )
 				self.clipFinished( vialText, {} )
+
 				vialIcon:completeAnimation()
 				self.vialIcon:setAlpha( 1 )
 				self.clipFinished( vialIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "SaleOnInsufficientFunds",
@@ -156,6 +171,7 @@ CoD.GobbleGumCookbook_VialSaleActive.new = function ( menu, controller )
 			modelName = "itemVialCost"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.cost:close()
 		element.vialText:close()

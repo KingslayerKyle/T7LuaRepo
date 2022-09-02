@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FocusBarContainer" )
 CoD.CombatRecordMedalButton = InheritFrom( LUI.UIElement )
 CoD.CombatRecordMedalButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CombatRecordMedalButton )
 	self.id = "CombatRecordMedalButton"
@@ -168,53 +170,69 @@ CoD.CombatRecordMedalButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgInactiveStroke:completeAnimation()
 				self.BoxButtonLrgInactiveStroke:setAlpha( 0.8 )
 				self.clipFinished( BoxButtonLrgInactiveStroke, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				image:completeAnimation()
 				self.image:setAlpha( 0.75 )
 				self.clipFinished( image, {} )
+
 				name:completeAnimation()
 				self.name:setAlpha( 1 )
 				self.clipFinished( name, {} )
+
 				TimesEarned:completeAnimation()
 				self.clipFinished( TimesEarned, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 13 )
+
 				BoxButtonLrgInactiveStroke:completeAnimation()
 				self.BoxButtonLrgInactiveStroke:setAlpha( 0.8 )
 				self.clipFinished( BoxButtonLrgInactiveStroke, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
@@ -248,9 +266,11 @@ CoD.CombatRecordMedalButton.new = function ( menu, controller )
 				image:completeAnimation()
 				self.image:setAlpha( 0.75 )
 				imageFrame2( image, {} )
+
 				name:completeAnimation()
 				self.name:setAlpha( 1 )
 				self.clipFinished( name, {} )
+
 				TimesEarned:completeAnimation()
 				self.clipFinished( TimesEarned, {} )
 				local FocusBorderFrame2 = function ( FocusBorder, event )
@@ -603,47 +623,61 @@ CoD.CombatRecordMedalButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 13 )
+
 				BoxButtonLrgInactiveStroke:completeAnimation()
 				self.BoxButtonLrgInactiveStroke:setAlpha( 0.8 )
 				self.clipFinished( BoxButtonLrgInactiveStroke, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				backing:completeAnimation()
 				self.backing:setAlpha( 1 )
 				self.clipFinished( backing, {} )
+
 				image:completeAnimation()
 				self.image:setAlpha( 1 )
 				self.clipFinished( image, {} )
+
 				name:completeAnimation()
 				self.name:setAlpha( 1 )
 				self.clipFinished( name, {} )
+
 				TimesEarned:completeAnimation()
 				self.clipFinished( TimesEarned, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgInactiveStroke:completeAnimation()
 				self.BoxButtonLrgInactiveStroke:setAlpha( 0.8 )
 				self.clipFinished( BoxButtonLrgInactiveStroke, {} )
@@ -662,6 +696,7 @@ CoD.CombatRecordMedalButton.new = function ( menu, controller )
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				BoxButtonLrgInactiveFrame2( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
@@ -695,9 +730,11 @@ CoD.CombatRecordMedalButton.new = function ( menu, controller )
 				image:completeAnimation()
 				self.image:setAlpha( 1 )
 				imageFrame2( image, {} )
+
 				name:completeAnimation()
 				self.name:setAlpha( 1 )
 				self.clipFinished( name, {} )
+
 				TimesEarned:completeAnimation()
 				self.clipFinished( TimesEarned, {} )
 				local FocusBorderFrame2 = function ( FocusBorder, event )
@@ -1078,57 +1115,73 @@ CoD.CombatRecordMedalButton.new = function ( menu, controller )
 		Arabic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgInactiveStroke:completeAnimation()
 				self.BoxButtonLrgInactiveStroke:setAlpha( 0.8 )
 				self.clipFinished( BoxButtonLrgInactiveStroke, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				image:completeAnimation()
 				self.image:setAlpha( 0.75 )
 				self.clipFinished( image, {} )
+
 				name:completeAnimation()
 				self.name:setLeftRight( true, false, 5.5, 181.5 )
 				self.name:setTopBottom( false, true, -22, -3 )
 				self.name:setAlpha( 1 )
 				self.clipFinished( name, {} )
+
 				TimesEarned:completeAnimation()
 				self.TimesEarned:setLeftRight( true, false, 149, 181.5 )
 				self.TimesEarned:setTopBottom( false, true, -41, -22 )
 				self.clipFinished( TimesEarned, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 13 )
+
 				BoxButtonLrgInactiveStroke:completeAnimation()
 				self.BoxButtonLrgInactiveStroke:setAlpha( 0.8 )
 				self.clipFinished( BoxButtonLrgInactiveStroke, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
@@ -1162,11 +1215,13 @@ CoD.CombatRecordMedalButton.new = function ( menu, controller )
 				image:completeAnimation()
 				self.image:setAlpha( 0.75 )
 				imageFrame2( image, {} )
+
 				name:completeAnimation()
 				self.name:setLeftRight( true, false, 5.5, 181.5 )
 				self.name:setTopBottom( false, true, -22, -3 )
 				self.name:setAlpha( 1 )
 				self.clipFinished( name, {} )
+
 				TimesEarned:completeAnimation()
 				self.TimesEarned:setLeftRight( true, false, 149, 181.5 )
 				self.TimesEarned:setTopBottom( false, true, -41, -22 )
@@ -1521,51 +1576,65 @@ CoD.CombatRecordMedalButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 13 )
+
 				BoxButtonLrgInactiveStroke:completeAnimation()
 				self.BoxButtonLrgInactiveStroke:setAlpha( 0.8 )
 				self.clipFinished( BoxButtonLrgInactiveStroke, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				backing:completeAnimation()
 				self.backing:setAlpha( 1 )
 				self.clipFinished( backing, {} )
+
 				image:completeAnimation()
 				self.image:setAlpha( 1 )
 				self.clipFinished( image, {} )
+
 				name:completeAnimation()
 				self.name:setLeftRight( true, false, 5.5, 181.5 )
 				self.name:setTopBottom( false, true, -22, -3 )
 				self.name:setAlpha( 1 )
 				self.clipFinished( name, {} )
+
 				TimesEarned:completeAnimation()
 				self.TimesEarned:setLeftRight( true, false, 149, 181.5 )
 				self.TimesEarned:setTopBottom( false, true, -41, -22 )
 				self.clipFinished( TimesEarned, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgInactiveStroke:completeAnimation()
 				self.BoxButtonLrgInactiveStroke:setAlpha( 0.8 )
 				self.clipFinished( BoxButtonLrgInactiveStroke, {} )
@@ -1584,6 +1653,7 @@ CoD.CombatRecordMedalButton.new = function ( menu, controller )
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				BoxButtonLrgInactiveFrame2( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
@@ -1617,11 +1687,13 @@ CoD.CombatRecordMedalButton.new = function ( menu, controller )
 				image:completeAnimation()
 				self.image:setAlpha( 1 )
 				imageFrame2( image, {} )
+
 				name:completeAnimation()
 				self.name:setLeftRight( true, false, 5.5, 181.5 )
 				self.name:setTopBottom( false, true, -22, -3 )
 				self.name:setAlpha( 1 )
 				self.clipFinished( name, {} )
+
 				TimesEarned:completeAnimation()
 				self.TimesEarned:setLeftRight( true, false, 149, 181.5 )
 				self.TimesEarned:setTopBottom( false, true, -41, -22 )
@@ -2002,6 +2074,7 @@ CoD.CombatRecordMedalButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Arabic",
@@ -2010,6 +2083,7 @@ CoD.CombatRecordMedalButton.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.name:close()
 		element.TimesEarned:close()

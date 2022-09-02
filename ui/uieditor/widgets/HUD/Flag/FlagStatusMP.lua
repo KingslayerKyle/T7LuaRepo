@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.Flag.PlayerFlagStatusMP" )
 CoD.FlagStatusMP = InheritFrom( LUI.UIElement )
 CoD.FlagStatusMP.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FlagStatusMP )
 	self.id = "FlagStatusMP"
@@ -129,15 +131,18 @@ CoD.FlagStatusMP.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PlayerFlagStatus:completeAnimation()
 				self.PlayerFlagStatus:setAlpha( 0 )
 				self.clipFinished( PlayerFlagStatus, {} )
+
 				EnemyFlagStatus:completeAnimation()
 				self.EnemyFlagStatus:setAlpha( 0 )
 				self.clipFinished( EnemyFlagStatus, {} )
 			end,
 			hud_start = function ()
 				self:setupElementClipCounter( 2 )
+
 				local PlayerFlagStatusFrame2 = function ( PlayerFlagStatus, event )
 					local PlayerFlagStatusFrame3 = function ( PlayerFlagStatus, event )
 						local PlayerFlagStatusFrame4 = function ( PlayerFlagStatus, event )
@@ -353,6 +358,7 @@ CoD.FlagStatusMP.new = function ( menu, controller )
 			end,
 			hud_stop = function ()
 				self:setupElementClipCounter( 2 )
+
 				local PlayerFlagStatusFrame2 = function ( PlayerFlagStatus, event )
 					local PlayerFlagStatusFrame3 = function ( PlayerFlagStatus, event )
 						local PlayerFlagStatusFrame4 = function ( PlayerFlagStatus, event )
@@ -592,15 +598,18 @@ CoD.FlagStatusMP.new = function ( menu, controller )
 		Hardpoint = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PlayerFlagStatus:completeAnimation()
 				self.PlayerFlagStatus:setAlpha( 0 )
 				self.clipFinished( PlayerFlagStatus, {} )
+
 				EnemyFlagStatus:completeAnimation()
 				self.EnemyFlagStatus:setAlpha( 0 )
 				self.clipFinished( EnemyFlagStatus, {} )
 			end,
 			hud_start = function ()
 				self:setupElementClipCounter( 2 )
+
 				local PlayerFlagStatusFrame2 = function ( PlayerFlagStatus, event )
 					local PlayerFlagStatusFrame3 = function ( PlayerFlagStatus, event )
 						local PlayerFlagStatusFrame4 = function ( PlayerFlagStatus, event )
@@ -702,12 +711,14 @@ CoD.FlagStatusMP.new = function ( menu, controller )
 				PlayerFlagStatus:completeAnimation()
 				self.PlayerFlagStatus:setAlpha( 0 )
 				PlayerFlagStatusFrame2( PlayerFlagStatus, {} )
+
 				EnemyFlagStatus:completeAnimation()
 				self.EnemyFlagStatus:setAlpha( 0 )
 				self.clipFinished( EnemyFlagStatus, {} )
 			end,
 			hud_stop = function ()
 				self:setupElementClipCounter( 2 )
+
 				local PlayerFlagStatusFrame2 = function ( PlayerFlagStatus, event )
 					local PlayerFlagStatusFrame3 = function ( PlayerFlagStatus, event )
 						local PlayerFlagStatusFrame4 = function ( PlayerFlagStatus, event )
@@ -809,12 +820,14 @@ CoD.FlagStatusMP.new = function ( menu, controller )
 				PlayerFlagStatus:completeAnimation()
 				self.PlayerFlagStatus:setAlpha( 1 )
 				PlayerFlagStatusFrame2( PlayerFlagStatus, {} )
+
 				EnemyFlagStatus:completeAnimation()
 				self.EnemyFlagStatus:setAlpha( 0 )
 				self.clipFinished( EnemyFlagStatus, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PlayerFlagStatus:close()
 		element.EnemyFlagStatus:close()

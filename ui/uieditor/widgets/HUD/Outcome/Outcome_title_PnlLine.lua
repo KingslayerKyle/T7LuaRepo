@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.Outcome.Outcome_title_PnlLineInt" )
 CoD.Outcome_title_PnlLine = InheritFrom( LUI.UIElement )
 CoD.Outcome_title_PnlLine.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Outcome_title_PnlLine )
 	self.id = "Outcome_title_PnlLine"
@@ -29,24 +31,29 @@ CoD.Outcome_title_PnlLine.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		VictoryGreen = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		DefeatRed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		OvertimeOrange = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.OutcometitlePnlLineInt:close()
 	end )

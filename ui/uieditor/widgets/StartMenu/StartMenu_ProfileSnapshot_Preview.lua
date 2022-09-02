@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_ImageContainer" )
 CoD.StartMenu_ProfileSnapshot_Preview = InheritFrom( LUI.UIElement )
 CoD.StartMenu_ProfileSnapshot_Preview.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_ProfileSnapshot_Preview )
 	self.id = "StartMenu_ProfileSnapshot_Preview"
@@ -40,9 +42,11 @@ CoD.StartMenu_ProfileSnapshot_Preview.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				screenshotImage:completeAnimation()
 				self.screenshotImage:setAlpha( 0 )
 				self.clipFinished( screenshotImage, {} )
+
 				ImageContainer:completeAnimation()
 				self.ImageContainer:setAlpha( 1 )
 				self.clipFinished( ImageContainer, {} )
@@ -51,15 +55,18 @@ CoD.StartMenu_ProfileSnapshot_Preview.new = function ( menu, controller )
 		Snapshot = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				screenshotImage:completeAnimation()
 				self.screenshotImage:setAlpha( 1 )
 				self.clipFinished( screenshotImage, {} )
+
 				ImageContainer:completeAnimation()
 				self.ImageContainer:setAlpha( 0 )
 				self.clipFinished( ImageContainer, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Snapshot",
@@ -76,6 +83,7 @@ CoD.StartMenu_ProfileSnapshot_Preview.new = function ( menu, controller )
 			modelName = "CombatRecordProfileSnapshot.fileId"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ImageContainer:close()
 		element.screenshotImage:close()

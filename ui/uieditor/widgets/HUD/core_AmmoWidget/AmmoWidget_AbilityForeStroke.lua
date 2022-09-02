@@ -4,9 +4,11 @@
 CoD.AmmoWidget_AbilityForeStroke = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_AbilityForeStroke.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_AbilityForeStroke )
 	self.id = "AmmoWidget_AbilityForeStroke"
@@ -26,6 +28,7 @@ CoD.AmmoWidget_AbilityForeStroke.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BlackCircle:completeAnimation()
 				self.BlackCircle:setAlpha( 0.3 )
 				self.clipFinished( BlackCircle, {} )
@@ -34,24 +37,29 @@ CoD.AmmoWidget_AbilityForeStroke.new = function ( menu, controller )
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Charge = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		InUse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Stowed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Ready",

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_Bribe_Expires" )
 CoD.BM_GenericFrame = InheritFrom( LUI.UIElement )
 CoD.BM_GenericFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_GenericFrame )
 	self.id = "BM_GenericFrame"
@@ -75,9 +77,11 @@ CoD.BM_GenericFrame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BMBribetitle:close()
 		element.ExpiresWidget:close()

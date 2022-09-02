@@ -4,9 +4,11 @@
 CoD.BM_CompleteRibbon = InheritFrom( LUI.UIElement )
 CoD.BM_CompleteRibbon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_CompleteRibbon )
 	self.id = "BM_CompleteRibbon"
@@ -48,6 +50,7 @@ CoD.BM_CompleteRibbon.new = function ( menu, controller )
 	Text:setLetterSpacing( 0.8 )
 	Text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	Text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( Text, "setText", function ( element, controller )
 		ScaleWidgetToLabelRightAlignedNoReverse( self, element, 0 )
 	end )
@@ -58,15 +61,19 @@ CoD.BM_CompleteRibbon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				CompletedIcon0:completeAnimation()
 				self.CompletedIcon0:setAlpha( 1 )
 				self.clipFinished( CompletedIcon0, {} )
+
 				CompletedIcon00:completeAnimation()
 				self.CompletedIcon00:setAlpha( 1 )
 				self.clipFinished( CompletedIcon00, {} )
+
 				CompletedIcon000:completeAnimation()
 				self.CompletedIcon000:setAlpha( 1 )
 				self.clipFinished( CompletedIcon000, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 1 )
 				self.clipFinished( Text, {} )
@@ -75,15 +82,19 @@ CoD.BM_CompleteRibbon.new = function ( menu, controller )
 		Completed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				CompletedIcon0:completeAnimation()
 				self.CompletedIcon0:setAlpha( 0 )
 				self.clipFinished( CompletedIcon0, {} )
+
 				CompletedIcon00:completeAnimation()
 				self.CompletedIcon00:setAlpha( 0 )
 				self.clipFinished( CompletedIcon00, {} )
+
 				CompletedIcon000:completeAnimation()
 				self.CompletedIcon000:setAlpha( 0 )
 				self.clipFinished( CompletedIcon000, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 0 )
 				self.clipFinished( Text, {} )

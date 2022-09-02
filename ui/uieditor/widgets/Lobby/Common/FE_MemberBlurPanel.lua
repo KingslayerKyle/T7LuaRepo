@@ -4,9 +4,11 @@
 CoD.FE_MemberBlurPanel = InheritFrom( LUI.UIElement )
 CoD.FE_MemberBlurPanel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_MemberBlurPanel )
 	self.id = "FE_MemberBlurPanel"

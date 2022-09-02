@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BorderBakedSolid" )
 CoD.CodCasterFakeMap = InheritFrom( LUI.UIElement )
 CoD.CodCasterFakeMap.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterFakeMap )
 	self.id = "CodCasterFakeMap"

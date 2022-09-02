@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.SystemOverlays.systemOverlay_Layout_GenericForegro
 CoD.SystemOverlay_GroupsNotification = InheritFrom( LUI.UIElement )
 CoD.SystemOverlay_GroupsNotification.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SystemOverlay_GroupsNotification )
 	self.id = "SystemOverlay_GroupsNotification"
@@ -79,15 +81,18 @@ CoD.SystemOverlay_GroupsNotification.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 0 )
 				self.clipFinished( Spinner, {} )
 			end,
 			LoadingLoop = function ()
 				self:setupElementClipCounter( 2 )
+
 				systemOverlayConnectLooping:completeAnimation()
 				self.systemOverlayConnectLooping:setAlpha( 1 )
 				self.clipFinished( systemOverlayConnectLooping, {} )
+
 				systemOverlayFadeMask:completeAnimation()
 				self.systemOverlayFadeMask:setAlpha( 0 )
 				self.clipFinished( systemOverlayFadeMask, {} )
@@ -96,12 +101,14 @@ CoD.SystemOverlay_GroupsNotification.new = function ( menu, controller )
 		Processing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 1 )
 				self.clipFinished( Spinner, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Processing",
@@ -126,6 +133,7 @@ CoD.SystemOverlay_GroupsNotification.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.supportInfo:close()
 		element.systemOverlayConnectLooping:close()

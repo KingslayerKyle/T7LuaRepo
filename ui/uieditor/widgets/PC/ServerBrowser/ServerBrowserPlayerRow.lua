@@ -4,9 +4,11 @@
 CoD.ServerBrowserPlayerRow = InheritFrom( LUI.UIElement )
 CoD.ServerBrowserPlayerRow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ServerBrowserPlayerRow )
 	self.id = "ServerBrowserPlayerRow"
@@ -55,12 +57,14 @@ CoD.ServerBrowserPlayerRow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				background:completeAnimation()
 				self.background:setRGB( 0.2, 0.2, 0.2 )
 				self.clipFinished( background, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.name:close()
 		element.timePlayed:close()

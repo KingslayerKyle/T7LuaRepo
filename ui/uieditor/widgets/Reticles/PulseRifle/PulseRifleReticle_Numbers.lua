@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Reticles.PulseRifle.PulseRifleReticle_NumbersInt" 
 CoD.PulseRifleReticle_Numbers = InheritFrom( LUI.UIElement )
 CoD.PulseRifleReticle_Numbers.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PulseRifleReticle_Numbers )
 	self.id = "PulseRifleReticle_Numbers"

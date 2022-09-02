@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.CAC.cac_ButtonBoxLrgInactiveStroke" )
 CoD.SPMGraphWidget = InheritFrom( LUI.UIElement )
 CoD.SPMGraphWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SPMGraphWidget )
 	self.id = "SPMGraphWidget"
@@ -336,6 +338,7 @@ CoD.SPMGraphWidget.new = function ( menu, controller )
 			Segment1:setShaderVector( 1, CoD.GetVectorComponentFromString( graphValue1, 1 ), CoD.GetVectorComponentFromString( graphValue1, 2 ), CoD.GetVectorComponentFromString( graphValue1, 3 ), CoD.GetVectorComponentFromString( graphValue1, 4 ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( Segment1, "setState", function ( element, controller )
 		
 	end )

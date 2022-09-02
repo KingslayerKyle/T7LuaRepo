@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FocusBarContainer" )
 CoD.CodCasterQuickSettingsListButton = InheritFrom( LUI.UIElement )
 CoD.CodCasterQuickSettingsListButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterQuickSettingsListButton )
 	self.id = "CodCasterQuickSettingsListButton"
@@ -99,21 +101,26 @@ CoD.CodCasterQuickSettingsListButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				checkedbox:completeAnimation()
 				self.checkedbox:setAlpha( 0 )
 				self.clipFinished( checkedbox, {} )
+
 				Options:completeAnimation()
 				self.Options:setAlpha( 0.75 )
 				self.clipFinished( Options, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				checkedbox:completeAnimation()
 				self.checkedbox:setAlpha( 0 )
 				self.clipFinished( checkedbox, {} )
@@ -269,21 +276,26 @@ CoD.CodCasterQuickSettingsListButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				checkedbox:completeAnimation()
 				self.checkedbox:setAlpha( 0 )
 				self.clipFinished( checkedbox, {} )
+
 				Options:completeAnimation()
 				self.Options:setAlpha( 1 )
 				self.clipFinished( Options, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				checkedbox:completeAnimation()
 				self.checkedbox:setAlpha( 0 )
 				self.clipFinished( checkedbox, {} )
@@ -445,21 +457,26 @@ CoD.CodCasterQuickSettingsListButton.new = function ( menu, controller )
 		WithSelectedIcon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				checkedbox:completeAnimation()
 				self.checkedbox:setAlpha( 1 )
 				self.clipFinished( checkedbox, {} )
+
 				Options:completeAnimation()
 				self.Options:setAlpha( 0.75 )
 				self.clipFinished( Options, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				checkedbox:completeAnimation()
 				self.checkedbox:setAlpha( 1 )
 				self.clipFinished( checkedbox, {} )
@@ -615,18 +632,22 @@ CoD.CodCasterQuickSettingsListButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				checkedbox:completeAnimation()
 				self.checkedbox:setAlpha( 1 )
 				self.clipFinished( checkedbox, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				checkedbox:completeAnimation()
 				self.checkedbox:setAlpha( 1 )
 				self.clipFinished( checkedbox, {} )
@@ -786,6 +807,7 @@ CoD.CodCasterQuickSettingsListButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "WithSelectedIcon",
@@ -802,6 +824,7 @@ CoD.CodCasterQuickSettingsListButton.new = function ( menu, controller )
 			modelName = "profileVarValue"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG0:close()
 		element.FocusBarT:close()

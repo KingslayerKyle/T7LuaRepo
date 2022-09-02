@@ -4,9 +4,11 @@
 CoD.Orangeborder = InheritFrom( LUI.UIElement )
 CoD.Orangeborder.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Orangeborder )
 	self.id = "Orangeborder"
@@ -42,6 +44,7 @@ CoD.Orangeborder.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

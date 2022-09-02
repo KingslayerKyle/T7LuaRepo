@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.playercard.CallingCard" )
 CoD.IdentityBadge = InheritFrom( LUI.UIElement )
 CoD.IdentityBadge.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.IdentityBadge )
 	self.id = "IdentityBadge"

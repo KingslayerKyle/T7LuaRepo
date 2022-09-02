@@ -4,9 +4,11 @@
 CoD.CampaignMissionButton = InheritFrom( LUI.UIElement )
 CoD.CampaignMissionButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CampaignMissionButton )
 	self.id = "CampaignMissionButton"
@@ -33,6 +35,7 @@ CoD.CampaignMissionButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				levelName:completeAnimation()
 				self.levelName:setLeftRight( true, false, 0, 99 )
 				self.levelName:setTopBottom( false, false, -12.5, 12.5 )
@@ -42,6 +45,7 @@ CoD.CampaignMissionButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
+
 				local levelNameFrame2 = function ( levelName, event )
 					local levelNameFrame3 = function ( levelName, event )
 						local levelNameFrame4 = function ( levelName, event )
@@ -85,10 +89,12 @@ CoD.CampaignMissionButton.new = function ( menu, controller )
 				self.levelName:setRGB( 1, 0.64, 0 )
 				self.levelName:setZoom( 0 )
 				levelNameFrame2( levelName, {} )
+
 				self.nextClip = "Focus"
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 1 )
+
 				local levelNameFrame2 = function ( levelName, event )
 					if not event.interrupted then
 						levelName:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -111,6 +117,7 @@ CoD.CampaignMissionButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.levelName:close()
 	end )

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ButtonPanel" )
 CoD.XpBarTitleRight = InheritFrom( LUI.UIElement )
 CoD.XpBarTitleRight.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.XpBarTitleRight )
 	self.id = "XpBarTitleRight"
@@ -31,6 +33,7 @@ CoD.XpBarTitleRight.new = function ( menu, controller )
 	SubTitle:setTTF( "fonts/RefrigeratorDeluxe-Regular.ttf" )
 	SubTitle:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 	SubTitle:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( SubTitle, "setText", function ( element, controller )
 		ScaleWidgetToLabelRightAligned( self, element, 2 )
 	end )
@@ -41,20 +44,24 @@ CoD.XpBarTitleRight.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				SubTitle:completeAnimation()
 				self.SubTitle:setAlpha( 0 )
 				self.clipFinished( SubTitle, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel0:close()
 	end )

@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Freerun.FR_Difficulty" )
 CoD.matchSettingsInfo = InheritFrom( LUI.UIElement )
 CoD.matchSettingsInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.matchSettingsInfo )
 	self.id = "matchSettingsInfo"
@@ -102,22 +104,27 @@ CoD.matchSettingsInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				image:completeAnimation()
 				self.image:setLeftRight( true, true, 0, -11 )
 				self.image:setTopBottom( true, true, 0, -299.75 )
 				self.image:setAlpha( 1 )
 				self.clipFinished( image, {} )
+
 				TitleBox:completeAnimation()
 				self.TitleBox:setLeftRight( true, false, 0, 251 )
 				self.TitleBox:setTopBottom( false, true, -285, -250 )
 				self.clipFinished( TitleBox, {} )
+
 				Border:completeAnimation()
 				self.Border:setLeftRight( true, true, -2, -9 )
 				self.Border:setTopBottom( true, true, -1, -298.04 )
 				self.clipFinished( Border, {} )
+
 				FRBestTime:completeAnimation()
 				self.FRBestTime:setLeftRight( false, true, -145, -8 )
 				self.FRBestTime:setTopBottom( false, true, -358.04, -296.04 )
@@ -127,27 +134,33 @@ CoD.matchSettingsInfo.new = function ( menu, controller )
 		AspectRatio_1x1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				image:completeAnimation()
 				self.image:setLeftRight( true, false, 75.5, 374.5 )
 				self.image:setTopBottom( true, false, 7.97, 306.97 )
 				self.clipFinished( image, {} )
+
 				TitleBox:completeAnimation()
 				self.TitleBox:setLeftRight( true, false, 1, 450 )
 				self.TitleBox:setTopBottom( false, true, -222, -187 )
 				self.clipFinished( TitleBox, {} )
+
 				Border:completeAnimation()
 				self.Border:setLeftRight( true, false, 0, 450 )
 				self.Border:setTopBottom( true, false, 0, 315.95 )
 				self.clipFinished( Border, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 0 )
 				self.clipFinished( FRDifficulty, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TitleBox:close()
 		element.Description:close()

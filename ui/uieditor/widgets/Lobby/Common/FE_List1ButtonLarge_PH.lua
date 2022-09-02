@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.BubbleGumBuffs.FE_VialBreadcrumb" )
 CoD.FE_List1ButtonLarge_PH = InheritFrom( LUI.UIElement )
 CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_List1ButtonLarge_PH )
 	self.id = "FE_List1ButtonLarge_PH"
@@ -90,6 +92,7 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 	btnDisplayText:setLetterSpacing( 1 )
 	btnDisplayText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	btnDisplayText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( btnDisplayText, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )
@@ -110,6 +113,7 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 	btnDisplayTextStroke:setLetterSpacing( 1 )
 	btnDisplayTextStroke:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	btnDisplayTextStroke:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( btnDisplayTextStroke, "setText", function ( element, controller )
 		TrimLabelIfLanguageReversed( self, element )
 	end )
@@ -205,113 +209,141 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				FEBlackMarketSpecialBreadcrumb:completeAnimation()
 				self.FEBlackMarketSpecialBreadcrumb:setAlpha( 0 )
 				self.clipFinished( FEBlackMarketSpecialBreadcrumb, {} )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 1 )
 				self.FEButtonPanelShaderContainer:setZoom( -10 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0.4 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 1 )
 				self.FEButtonIdle:setZoom( 0 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 1 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				FEHelpItemsLabel0:completeAnimation()
 				self.FEHelpItemsLabel0:setAlpha( 0 )
 				self.clipFinished( FEHelpItemsLabel0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
+
 				FEVialBreadcrumb:completeAnimation()
 				self.FEVialBreadcrumb:setAlpha( 0 )
 				self.clipFinished( FEVialBreadcrumb, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 12 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 0 )
 				self.FEButtonPanelShaderContainer:setZoom( 0 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0.4 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 10 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -20, 20 )
 				self.FEButtonFocus:setAlpha( 1 )
 				self.FEButtonFocus:setZoom( 10 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.45 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( -305 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 1 )
 				self.btnDisplayTextStroke:setZoom( 10 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, -20, -12 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 1 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 1 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 12 )
+
 				local FEButtonPanelShaderContainerFrame2 = function ( FEButtonPanelShaderContainer, event )
 					if not event.interrupted then
 						FEButtonPanelShaderContainer:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -470,15 +502,18 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				UpgradeImage:beginAnimation( "keyframe", 129, false, false, CoD.TweenType.Linear )
 				UpgradeImage:setAlpha( 0 )
 				UpgradeImage:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 12 )
+
 				local FEButtonPanelShaderContainerFrame2 = function ( FEButtonPanelShaderContainer, event )
 					if not event.interrupted then
 						FEButtonPanelShaderContainer:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -637,15 +672,18 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				UpgradeImage:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
 				UpgradeImage:setAlpha( 0 )
 				UpgradeImage:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 13 )
+
 				local FEButtonPanelShaderContainerFrame2 = function ( FEButtonPanelShaderContainer, event )
 					local FEButtonPanelShaderContainerFrame3 = function ( FEButtonPanelShaderContainer, event )
 						if not event.interrupted then
@@ -727,12 +765,14 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 0 )
 				FEButtonIdleFrame2( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
@@ -763,6 +803,7 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( 0 )
 				btnDisplayTextFrame2( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
@@ -782,20 +823,24 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				FEHelpItemsLabel0:completeAnimation()
 				self.FEHelpItemsLabel0:setAlpha( 0 )
 				FEHelpItemsLabel0Frame2( FEHelpItemsLabel0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
 				UpgradeImage:beginAnimation( "keyframe", 600, false, false, CoD.TweenType.Linear )
 				UpgradeImage:setAlpha( 0 )
 				UpgradeImage:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
@@ -804,55 +849,68 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 		NotAvailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 0.5 )
 				self.FEButtonPanelShaderContainer:setZoom( -10 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0.25 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0.3 )
 				self.FEButtonIdle:setZoom( 0 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0.1 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 12 )
+
 				local FEButtonPanelShaderContainerFrame2 = function ( FEButtonPanelShaderContainer, event )
 					local FEButtonPanelShaderContainerFrame3 = function ( FEButtonPanelShaderContainer, event )
 						if not event.interrupted then
@@ -934,12 +992,14 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 0 )
 				FEButtonIdleFrame2( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
@@ -970,73 +1030,91 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( 0 )
 				btnDisplayTextFrame2( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 12 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 0.25 )
 				self.FEButtonPanelShaderContainer:setZoom( 0 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0.15 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 10 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -20, 20 )
 				self.FEButtonFocus:setAlpha( 0.25 )
 				self.FEButtonFocus:setZoom( 10 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.1 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( -305 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 1 )
 				self.btnDisplayTextStroke:setZoom( 10 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, -20, -12 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 1 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0.25 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
@@ -1045,58 +1123,72 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 		Purchase = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 0.5 )
 				self.FEButtonPanelShaderContainer:setZoom( -10 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0.25 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0.3 )
 				self.FEButtonIdle:setZoom( 0 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0.1 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 1 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
+
 				FEVialBreadcrumb:completeAnimation()
 				self.FEVialBreadcrumb:setAlpha( 0 )
 				self.clipFinished( FEVialBreadcrumb, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 12 )
+
 				local FEButtonPanelShaderContainerFrame2 = function ( FEButtonPanelShaderContainer, event )
 					local FEButtonPanelShaderContainerFrame3 = function ( FEButtonPanelShaderContainer, event )
 						if not event.interrupted then
@@ -1178,12 +1270,14 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 0 )
 				FEButtonIdleFrame2( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
@@ -1214,15 +1308,18 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( 0 )
 				btnDisplayTextFrame2( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
@@ -1241,58 +1338,72 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				UpgradeImageFrame2( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 12 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 0.25 )
 				self.FEButtonPanelShaderContainer:setZoom( 0 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0.15 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 10 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -20, 20 )
 				self.FEButtonFocus:setAlpha( 0.25 )
 				self.FEButtonFocus:setZoom( 10 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.1 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( -305 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 1 )
 				self.btnDisplayTextStroke:setZoom( 10 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, -20, -12 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 1 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0.25 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 1 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
@@ -1301,58 +1412,72 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 		Downloading = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 0.5 )
 				self.FEButtonPanelShaderContainer:setZoom( -10 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0.25 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0.3 )
 				self.FEButtonIdle:setZoom( 0 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0.1 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 1 )
 				self.clipFinished( DownloadingImage, {} )
+
 				FEVialBreadcrumb:completeAnimation()
 				self.FEVialBreadcrumb:setAlpha( 0 )
 				self.clipFinished( FEVialBreadcrumb, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 12 )
+
 				local FEButtonPanelShaderContainerFrame2 = function ( FEButtonPanelShaderContainer, event )
 					local FEButtonPanelShaderContainerFrame3 = function ( FEButtonPanelShaderContainer, event )
 						if not event.interrupted then
@@ -1434,12 +1559,14 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 0 )
 				FEButtonIdleFrame2( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
@@ -1470,21 +1597,26 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( 0 )
 				btnDisplayTextFrame2( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
@@ -1506,46 +1638,57 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 12 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 0.25 )
 				self.FEButtonPanelShaderContainer:setZoom( 0 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0.15 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 10 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -20, 20 )
 				self.FEButtonFocus:setAlpha( 0.25 )
 				self.FEButtonFocus:setZoom( 10 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.1 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( -305 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 1 )
 				self.btnDisplayTextStroke:setZoom( 10 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, -20, -12 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 1 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0.25 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
@@ -1557,64 +1700,80 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				FEBlackMarketSpecialBreadcrumb:completeAnimation()
 				self.FEBlackMarketSpecialBreadcrumb:setAlpha( 0 )
 				self.clipFinished( FEBlackMarketSpecialBreadcrumb, {} )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 0.5 )
 				self.FEButtonPanelShaderContainer:setZoom( -10 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0.25 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0.3 )
 				self.FEButtonIdle:setZoom( 0 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0.1 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				FEHelpItemsLabel0:completeAnimation()
 				self.FEHelpItemsLabel0:setAlpha( 0 )
 				self.clipFinished( FEHelpItemsLabel0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
+
 				FEVialBreadcrumb:completeAnimation()
 				self.FEVialBreadcrumb:setAlpha( 0 )
 				self.clipFinished( FEVialBreadcrumb, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 13 )
+
 				local FEButtonPanelShaderContainerFrame2 = function ( FEButtonPanelShaderContainer, event )
 					local FEButtonPanelShaderContainerFrame3 = function ( FEButtonPanelShaderContainer, event )
 						if not event.interrupted then
@@ -1696,12 +1855,14 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 0 )
 				FEButtonIdleFrame2( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
@@ -1732,6 +1893,7 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( 0 )
 				btnDisplayTextFrame2( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
@@ -1751,69 +1913,86 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				FEHelpItemsLabel0:completeAnimation()
 				self.FEHelpItemsLabel0:setAlpha( 0 )
 				FEHelpItemsLabel0Frame2( FEHelpItemsLabel0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 12 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 0.25 )
 				self.FEButtonPanelShaderContainer:setZoom( 0 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0.15 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 10 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -20, 20 )
 				self.FEButtonFocus:setAlpha( 0.25 )
 				self.FEButtonFocus:setZoom( 10 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.1 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( -305 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 1 )
 				self.btnDisplayTextStroke:setZoom( 10 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, -20, -12 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 1 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0.25 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
@@ -1822,58 +2001,72 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 		Restricted = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 0.5 )
 				self.FEButtonPanelShaderContainer:setZoom( -10 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0.25 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0.3 )
 				self.FEButtonIdle:setZoom( 0 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0.1 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 1 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
+
 				FEVialBreadcrumb:completeAnimation()
 				self.FEVialBreadcrumb:setAlpha( 0 )
 				self.clipFinished( FEVialBreadcrumb, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 12 )
+
 				local FEButtonPanelShaderContainerFrame2 = function ( FEButtonPanelShaderContainer, event )
 					local FEButtonPanelShaderContainerFrame3 = function ( FEButtonPanelShaderContainer, event )
 						if not event.interrupted then
@@ -1955,12 +2148,14 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 0 )
 				FEButtonIdleFrame2( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
@@ -1991,18 +2186,22 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( 0 )
 				btnDisplayTextFrame2( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
@@ -2042,52 +2241,63 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				RestrictedImageFrame2( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 11 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 0.25 )
 				self.FEButtonPanelShaderContainer:setZoom( 0 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0.15 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 10 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -20, 20 )
 				self.FEButtonFocus:setAlpha( 0.25 )
 				self.FEButtonFocus:setZoom( 10 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.1 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( -305 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 1 )
 				self.btnDisplayTextStroke:setZoom( 10 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, -20, -12 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 1 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0.25 )
 				self.clipFinished( Glow2, {} )
 				RestrictedImage:beginAnimation( "keyframe", 589, false, false, CoD.TweenType.Linear )
 				RestrictedImage:setAlpha( 1 )
 				RestrictedImage:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
@@ -2096,90 +2306,116 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 		Fake = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				FEBlackMarketSpecialBreadcrumb:completeAnimation()
 				self.FEBlackMarketSpecialBreadcrumb:setAlpha( 0 )
 				self.clipFinished( FEBlackMarketSpecialBreadcrumb, {} )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setAlpha( 0 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setAlpha( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				FEHelpItemsLabel0:completeAnimation()
 				self.FEHelpItemsLabel0:setAlpha( 0 )
 				self.clipFinished( FEHelpItemsLabel0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
 				UpgradeImage:beginAnimation( "keyframe", 589, false, false, CoD.TweenType.Linear )
 				UpgradeImage:setAlpha( 0 )
 				UpgradeImage:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
+
 				FEVialBreadcrumb:completeAnimation()
 				self.FEVialBreadcrumb:setAlpha( 0 )
 				self.clipFinished( FEVialBreadcrumb, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 13 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setAlpha( 0 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setAlpha( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				FEHelpItemsLabel0:completeAnimation()
 				self.FEHelpItemsLabel0:setAlpha( 0 )
 				self.clipFinished( FEHelpItemsLabel0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
 				UpgradeImage:beginAnimation( "keyframe", 589, false, false, CoD.TweenType.Linear )
 				UpgradeImage:setAlpha( 0 )
 				UpgradeImage:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
@@ -2188,89 +2424,110 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 		NoListFocus = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				FEBlackMarketSpecialBreadcrumb:completeAnimation()
 				self.FEBlackMarketSpecialBreadcrumb:setAlpha( 0 )
 				self.clipFinished( FEBlackMarketSpecialBreadcrumb, {} )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 0.1 )
 				self.FEButtonPanelShaderContainer:setZoom( -10 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0.1 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0.3 )
 				self.FEButtonIdle:setZoom( 0 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0.71 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				FEHelpItemsLabel0:completeAnimation()
 				self.FEHelpItemsLabel0:setAlpha( 0 )
 				self.clipFinished( FEHelpItemsLabel0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				FEVialBreadcrumb:completeAnimation()
 				self.FEVialBreadcrumb:setAlpha( 0 )
 				self.clipFinished( FEVialBreadcrumb, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 9 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 0.25 )
 				self.FEButtonPanelShaderContainer:setZoom( 0 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0.15 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 10 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -20, 20 )
 				self.FEButtonFocus:setAlpha( 0.25 )
 				self.FEButtonFocus:setZoom( 10 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.1 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( -305 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 1 )
 				self.btnDisplayTextStroke:setZoom( 10 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, -20, -12 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 1 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0.25 )
 				self.clipFinished( Glow2, {} )
@@ -2279,119 +2536,149 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 		HaveNewBlackMarketPromo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				FEBlackMarketSpecialBreadcrumb:completeAnimation()
 				self.FEBlackMarketSpecialBreadcrumb:setAlpha( 1 )
 				self.clipFinished( FEBlackMarketSpecialBreadcrumb, {} )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 1 )
 				self.FEButtonPanelShaderContainer:setZoom( -10 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0.4 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 1 )
 				self.FEButtonIdle:setZoom( 0 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 1 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				FEHelpItemsLabel0:completeAnimation()
 				self.FEHelpItemsLabel0:setAlpha( 0 )
 				self.clipFinished( FEHelpItemsLabel0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
+
 				FEVialBreadcrumb:completeAnimation()
 				self.FEVialBreadcrumb:setAlpha( 0 )
 				self.clipFinished( FEVialBreadcrumb, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 14 )
+
 				FEBlackMarketSpecialBreadcrumb:completeAnimation()
 				self.FEBlackMarketSpecialBreadcrumb:setAlpha( 1 )
 				self.clipFinished( FEBlackMarketSpecialBreadcrumb, {} )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 1 )
 				self.FEButtonPanelShaderContainer:setZoom( 0 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0.4 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 10 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -20, 20 )
 				self.FEButtonFocus:setAlpha( 1 )
 				self.FEButtonFocus:setZoom( 10 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.45 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( -305 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 1 )
 				self.btnDisplayTextStroke:setZoom( 10 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				FEHelpItemsLabel0:completeAnimation()
 				self.FEHelpItemsLabel0:setAlpha( 0 )
 				self.clipFinished( FEHelpItemsLabel0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, -20, -12 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 1 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 1 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 12 )
+
 				local FEButtonPanelShaderContainerFrame2 = function ( FEButtonPanelShaderContainer, event )
 					if not event.interrupted then
 						FEButtonPanelShaderContainer:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -2550,15 +2837,18 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				UpgradeImage:beginAnimation( "keyframe", 589, false, false, CoD.TweenType.Linear )
 				UpgradeImage:setAlpha( 0 )
 				UpgradeImage:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 12 )
+
 				local FEButtonPanelShaderContainerFrame2 = function ( FEButtonPanelShaderContainer, event )
 					if not event.interrupted then
 						FEButtonPanelShaderContainer:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -2717,15 +3007,18 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				UpgradeImage:beginAnimation( "keyframe", 589, false, false, CoD.TweenType.Linear )
 				UpgradeImage:setAlpha( 0 )
 				UpgradeImage:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 14 )
+
 				local FEBlackMarketSpecialBreadcrumbFrame2 = function ( FEBlackMarketSpecialBreadcrumb, event )
 					if not event.interrupted then
 						FEBlackMarketSpecialBreadcrumb:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -2822,12 +3115,14 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 0 )
 				FEButtonIdleFrame2( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
@@ -2858,27 +3153,34 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( 0 )
 				btnDisplayTextFrame2( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				FEHelpItemsLabel0:completeAnimation()
 				self.FEHelpItemsLabel0:setAlpha( 0 )
 				self.clipFinished( FEHelpItemsLabel0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
@@ -2887,113 +3189,141 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 		New = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 1 )
 				self.FEButtonPanelShaderContainer:setZoom( -10 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0.4 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 1 )
 				self.FEButtonIdle:setZoom( 0 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 1 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				FEHelpItemsLabel0:completeAnimation()
 				self.FEHelpItemsLabel0:setAlpha( 1 )
 				self.clipFinished( FEHelpItemsLabel0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
+
 				FEVialBreadcrumb:completeAnimation()
 				self.FEVialBreadcrumb:setAlpha( 0 )
 				self.clipFinished( FEVialBreadcrumb, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 13 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 1 )
 				self.FEButtonPanelShaderContainer:setZoom( 0 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0.4 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 10 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -20, 20 )
 				self.FEButtonFocus:setAlpha( 1 )
 				self.FEButtonFocus:setZoom( 10 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.45 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( -305 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 1 )
 				self.btnDisplayTextStroke:setZoom( 10 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				FEHelpItemsLabel0:completeAnimation()
 				self.FEHelpItemsLabel0:setAlpha( 1 )
 				self.clipFinished( FEHelpItemsLabel0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, -20, -12 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 1 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 1 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 12 )
+
 				local FEButtonPanelShaderContainerFrame2 = function ( FEButtonPanelShaderContainer, event )
 					if not event.interrupted then
 						FEButtonPanelShaderContainer:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -3152,15 +3482,18 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				UpgradeImage:beginAnimation( "keyframe", 589, false, false, CoD.TweenType.Linear )
 				UpgradeImage:setAlpha( 0 )
 				UpgradeImage:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 12 )
+
 				local FEButtonPanelShaderContainerFrame2 = function ( FEButtonPanelShaderContainer, event )
 					if not event.interrupted then
 						FEButtonPanelShaderContainer:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -3319,15 +3652,18 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				UpgradeImage:beginAnimation( "keyframe", 589, false, false, CoD.TweenType.Linear )
 				UpgradeImage:setAlpha( 0 )
 				UpgradeImage:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 13 )
+
 				local FEButtonPanelShaderContainerFrame2 = function ( FEButtonPanelShaderContainer, event )
 					local FEButtonPanelShaderContainerFrame3 = function ( FEButtonPanelShaderContainer, event )
 						if not event.interrupted then
@@ -3409,12 +3745,14 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 0 )
 				FEButtonIdleFrame2( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
@@ -3445,6 +3783,7 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( 0 )
 				btnDisplayTextFrame2( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
@@ -3464,20 +3803,25 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				FEHelpItemsLabel0:completeAnimation()
 				self.FEHelpItemsLabel0:setAlpha( 0 )
 				FEHelpItemsLabel0Frame2( FEHelpItemsLabel0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
@@ -3486,116 +3830,145 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 		HaveVials = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				FEBlackMarketSpecialBreadcrumb:completeAnimation()
 				self.FEBlackMarketSpecialBreadcrumb:setAlpha( 0 )
 				self.clipFinished( FEBlackMarketSpecialBreadcrumb, {} )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 1 )
 				self.FEButtonPanelShaderContainer:setZoom( -10 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0.4 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 1 )
 				self.FEButtonIdle:setZoom( 0 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 1 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				FEHelpItemsLabel0:completeAnimation()
 				self.FEHelpItemsLabel0:setAlpha( 0 )
 				self.clipFinished( FEHelpItemsLabel0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
+
 				FEVialBreadcrumb:completeAnimation()
 				self.FEVialBreadcrumb:setAlpha( 1 )
 				self.clipFinished( FEVialBreadcrumb, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 13 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 1 )
 				self.FEButtonPanelShaderContainer:setZoom( 0 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BlackOverlay:completeAnimation()
 				self.BlackOverlay:setAlpha( 0.4 )
 				self.clipFinished( BlackOverlay, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 10 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -20, 20 )
 				self.FEButtonFocus:setAlpha( 1 )
 				self.FEButtonFocus:setZoom( 10 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.45 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( -305 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 1 )
 				self.btnDisplayTextStroke:setZoom( 10 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				FEHelpItemsLabel0:completeAnimation()
 				self.FEHelpItemsLabel0:setAlpha( 1 )
 				self.clipFinished( FEHelpItemsLabel0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, -20, -12 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 1 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 1 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 12 )
+
 				local FEButtonPanelShaderContainerFrame2 = function ( FEButtonPanelShaderContainer, event )
 					if not event.interrupted then
 						FEButtonPanelShaderContainer:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -3754,15 +4127,18 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				UpgradeImage:beginAnimation( "keyframe", 589, false, false, CoD.TweenType.Linear )
 				UpgradeImage:setAlpha( 0 )
 				UpgradeImage:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 12 )
+
 				local FEButtonPanelShaderContainerFrame2 = function ( FEButtonPanelShaderContainer, event )
 					if not event.interrupted then
 						FEButtonPanelShaderContainer:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -3921,15 +4297,18 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				UpgradeImage:beginAnimation( "keyframe", 589, false, false, CoD.TweenType.Linear )
 				UpgradeImage:setAlpha( 0 )
 				UpgradeImage:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 13 )
+
 				local FEButtonPanelShaderContainerFrame2 = function ( FEButtonPanelShaderContainer, event )
 					local FEButtonPanelShaderContainerFrame3 = function ( FEButtonPanelShaderContainer, event )
 						if not event.interrupted then
@@ -4011,12 +4390,14 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 0 )
 				FEButtonIdleFrame2( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
@@ -4047,6 +4428,7 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( 0 )
 				btnDisplayTextFrame2( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
@@ -4066,26 +4448,32 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 				FEHelpItemsLabel0:completeAnimation()
 				self.FEHelpItemsLabel0:setAlpha( 0 )
 				FEHelpItemsLabel0Frame2( FEHelpItemsLabel0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				RestrictedImage:completeAnimation()
 				self.RestrictedImage:setAlpha( 0 )
 				self.clipFinished( RestrictedImage, {} )
+
 				DownloadingImage:completeAnimation()
 				self.DownloadingImage:setAlpha( 0 )
 				self.clipFinished( DownloadingImage, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NotAvailable",
@@ -4203,6 +4591,7 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 			modelName = "MegaChewTokens.remainingTokens"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEBlackMarketSpecialBreadcrumb:close()
 		element.FEButtonPanelShaderContainer:close()

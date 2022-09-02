@@ -4,9 +4,11 @@
 CoD.CallingCards_CareerCPWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_CareerCPWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_CareerCPWidget )
 	self.id = "CallingCards_CareerCPWidget"
@@ -93,6 +95,7 @@ CoD.CallingCards_CareerCPWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local GlowOrangeOverFrame2 = function ( GlowOrangeOver, event )
 					local GlowOrangeOverFrame3 = function ( GlowOrangeOver, event )
 						if not event.interrupted then
@@ -119,6 +122,7 @@ CoD.CallingCards_CareerCPWidget.new = function ( menu, controller )
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				GlowOrangeOverFrame2( GlowOrangeOver, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

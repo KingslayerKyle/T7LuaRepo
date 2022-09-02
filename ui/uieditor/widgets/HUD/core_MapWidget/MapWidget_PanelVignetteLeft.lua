@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.core_MapWidget.MapWidget_PanelVignetteGlow" )
 CoD.MapWidget_PanelVignetteLeft = InheritFrom( LUI.UIElement )
 CoD.MapWidget_PanelVignetteLeft.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MapWidget_PanelVignetteLeft )
 	self.id = "MapWidget_PanelVignetteLeft"
@@ -40,12 +42,14 @@ CoD.MapWidget_PanelVignetteLeft.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				MapWidgetPanelVignetteGlow0:completeAnimation()
 				self.MapWidgetPanelVignetteGlow0:setLeftRight( true, false, 195.46, 672.46 )
 				self.MapWidgetPanelVignetteGlow0:setTopBottom( true, false, 58.5, 399.5 )
 				self.MapWidgetPanelVignetteGlow0:setAlpha( 0 )
 				self.MapWidgetPanelVignetteGlow0:setZoom( 1000 )
 				self.clipFinished( MapWidgetPanelVignetteGlow0, {} )
+
 				ImgPanelCPMap:completeAnimation()
 				self.ImgPanelCPMap:setRGB( 0, 0, 0 )
 				self.ImgPanelCPMap:setAlpha( 1 )
@@ -53,6 +57,7 @@ CoD.MapWidget_PanelVignetteLeft.new = function ( menu, controller )
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 2 )
+
 				local MapWidgetPanelVignetteGlow0Frame2 = function ( MapWidgetPanelVignetteGlow0, event )
 					local MapWidgetPanelVignetteGlow0Frame3 = function ( MapWidgetPanelVignetteGlow0, event )
 						if not event.interrupted then
@@ -96,6 +101,7 @@ CoD.MapWidget_PanelVignetteLeft.new = function ( menu, controller )
 			end,
 			HudStop = function ()
 				self:setupElementClipCounter( 2 )
+
 				local MapWidgetPanelVignetteGlow0Frame2 = function ( MapWidgetPanelVignetteGlow0, event )
 					if not event.interrupted then
 						MapWidgetPanelVignetteGlow0:beginAnimation( "keyframe", 2400, false, false, CoD.TweenType.Linear )
@@ -129,6 +135,7 @@ CoD.MapWidget_PanelVignetteLeft.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MapWidgetPanelVignetteGlow0:close()
 	end )

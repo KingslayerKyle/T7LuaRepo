@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_frame_noBG" )
 CoD.Challenges_Summary_NearCompletion_SM = InheritFrom( LUI.UIElement )
 CoD.Challenges_Summary_NearCompletion_SM.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_Summary_NearCompletion_SM )
 	self.id = "Challenges_Summary_NearCompletion_SM"
@@ -71,21 +73,26 @@ CoD.Challenges_Summary_NearCompletion_SM.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 2 )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
@@ -94,22 +101,28 @@ CoD.Challenges_Summary_NearCompletion_SM.new = function ( menu, controller )
 		AllChallengesComplete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				NearCompletionWidget:completeAnimation()
 				self.NearCompletionWidget:setAlpha( 0 )
 				self.clipFinished( NearCompletionWidget, {} )
+
 				ChallengesTitle:completeAnimation()
+
 				ChallengesTitle.weaponNameLabel:completeAnimation()
 				self.ChallengesTitle.weaponNameLabel:setText( Engine.Localize( "100% Complete" ) )
 				self.clipFinished( ChallengesTitle, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.NearCompletionWidget:close()
 		element.ChallengesTitle:close()

@@ -12,9 +12,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_frame_noBG" )
 CoD.PlayerCard = InheritFrom( LUI.UIElement )
 CoD.PlayerCard.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PlayerCard )
 	self.id = "PlayerCard"
@@ -83,6 +85,7 @@ CoD.PlayerCard.new = function ( menu, controller )
 			GamerTag.itemName:setText( playerName )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( GamerTag, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 1 )
 	end )
@@ -129,6 +132,7 @@ CoD.PlayerCard.new = function ( menu, controller )
 			ClanTag.itemName:setText( StringAsClanTag( clanTag ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( ClanTag, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 1 )
 	end )
@@ -277,31 +281,39 @@ CoD.PlayerCard.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setLeftRight( true, false, 92, 304 )
 				self.CallingCardsFrameWidget:setTopBottom( true, false, 2, 57 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
+
 				HeroBacking:completeAnimation()
 				self.HeroBacking:setAlpha( 0 )
 				self.clipFinished( HeroBacking, {} )
+
 				HeroLobbyClientExtraCamRender:completeAnimation()
 				self.HeroLobbyClientExtraCamRender:setAlpha( 0 )
 				self.clipFinished( HeroLobbyClientExtraCamRender, {} )
+
 				CalloutHeading:completeAnimation()
 				self.CalloutHeading:setLeftRight( true, false, 93.41, 365 )
 				self.CalloutHeading:setTopBottom( true, false, -16, 2 )
 				self.clipFinished( CalloutHeading, {} )
+
 				PlayerEmblem:completeAnimation()
 				self.PlayerEmblem:setAlpha( 1 )
 				self.clipFinished( PlayerEmblem, {} )
+
 				StartMenuframenoBG1:completeAnimation()
 				self.StartMenuframenoBG1:setLeftRight( true, false, 89.41, 305.41 )
 				self.StartMenuframenoBG1:setTopBottom( true, false, 0, 59 )
 				self.clipFinished( StartMenuframenoBG1, {} )
+
 				Image000010:completeAnimation()
 				self.Image000010:setLeftRight( true, false, 306, 322 )
 				self.Image000010:setTopBottom( true, false, -2, 6 )
 				self.clipFinished( Image000010, {} )
+
 				Image20:completeAnimation()
 				self.Image20:setLeftRight( true, false, 306, 322 )
 				self.Image20:setTopBottom( true, false, 53, 61 )
@@ -309,54 +321,68 @@ CoD.PlayerCard.new = function ( menu, controller )
 			end,
 			Side = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Emblem = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setLeftRight( true, false, 92, 304 )
 				self.CallingCardsFrameWidget:setTopBottom( true, false, 2, 57 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
+
 				LeftPanel:completeAnimation()
 				self.LeftPanel:setLeftRight( true, false, 0, 91 )
 				self.LeftPanel:setTopBottom( true, false, 2.5, 56.5 )
 				self.LeftPanel:setAlpha( 1 )
 				self.clipFinished( LeftPanel, {} )
+
 				Top3PlayerScoreBlurBox0:completeAnimation()
 				self.Top3PlayerScoreBlurBox0:setAlpha( 1 )
 				self.clipFinished( Top3PlayerScoreBlurBox0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setAlpha( 0.5 )
 				self.clipFinished( VSpanel, {} )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
+
 				HeroBacking:completeAnimation()
 				self.HeroBacking:setAlpha( 0 )
 				self.clipFinished( HeroBacking, {} )
+
 				TeamColor:completeAnimation()
 				self.TeamColor:setAlpha( 0 )
 				self.clipFinished( TeamColor, {} )
+
 				HeroLobbyClientExtraCamRender:completeAnimation()
 				self.HeroLobbyClientExtraCamRender:setLeftRight( true, false, 8, 66 )
 				self.HeroLobbyClientExtraCamRender:setTopBottom( true, false, -9, 49 )
 				self.HeroLobbyClientExtraCamRender:setAlpha( 0 )
 				self.clipFinished( HeroLobbyClientExtraCamRender, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setAlpha( 0 )
 				self.clipFinished( RankIcon, {} )
+
 				PlayerEmblem:completeAnimation()
 				self.PlayerEmblem:setAlpha( 1 )
 				self.clipFinished( PlayerEmblem, {} )
+
 				StartMenuframenoBG1:completeAnimation()
 				self.StartMenuframenoBG1:setLeftRight( true, false, 89.41, 306 )
 				self.StartMenuframenoBG1:setTopBottom( true, false, 0, 59 )
 				self.clipFinished( StartMenuframenoBG1, {} )
+
 				Image000010:completeAnimation()
 				self.Image000010:setLeftRight( true, false, 306, 322 )
 				self.Image000010:setTopBottom( true, false, -2, 6 )
 				self.clipFinished( Image000010, {} )
+
 				Image20:completeAnimation()
 				self.Image20:setLeftRight( true, false, 306, 322 )
 				self.Image20:setTopBottom( true, false, 53, 61 )
@@ -366,85 +392,105 @@ CoD.PlayerCard.new = function ( menu, controller )
 		Calingcard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 20 )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setLeftRight( true, false, 1.59, 213.59 )
 				self.CallingCardsFrameWidget:setTopBottom( true, false, 2, 57 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
+
 				LeftPanel:completeAnimation()
 				self.LeftPanel:setAlpha( 0 )
 				self.clipFinished( LeftPanel, {} )
+
 				Top3PlayerScoreBlurBox0:completeAnimation()
 				self.Top3PlayerScoreBlurBox0:setAlpha( 0 )
 				self.clipFinished( Top3PlayerScoreBlurBox0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setAlpha( 0 )
 				self.clipFinished( VSpanel, {} )
+
 				Panel:completeAnimation()
 				self.Panel:setLeftRight( true, false, 91, 135 )
 				self.Panel:setTopBottom( true, false, 27, 47 )
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
+
 				GamerTag:completeAnimation()
 				self.GamerTag:setLeftRight( true, false, 2, 205 )
 				self.GamerTag:setTopBottom( true, false, 5, 25 )
 				self.clipFinished( GamerTag, {} )
+
 				ClanTag:completeAnimation()
 				self.ClanTag:setLeftRight( true, false, 2, 49 )
 				self.ClanTag:setTopBottom( true, false, 26, 46 )
 				self.clipFinished( ClanTag, {} )
+
 				HeroBacking:completeAnimation()
 				self.HeroBacking:setLeftRight( true, false, -3.41, 60.59 )
 				self.HeroBacking:setTopBottom( true, false, -8, 64 )
 				self.HeroBacking:setAlpha( 0 )
 				self.clipFinished( HeroBacking, {} )
+
 				TeamColor:completeAnimation()
 				self.TeamColor:setLeftRight( true, false, 29.59, 93.59 )
 				self.TeamColor:setTopBottom( true, false, 2, 49 )
 				self.TeamColor:setAlpha( 0 )
 				self.clipFinished( TeamColor, {} )
+
 				HeroLobbyClientExtraCamRender:completeAnimation()
 				self.HeroLobbyClientExtraCamRender:setLeftRight( true, false, -0.41, 57.59 )
 				self.HeroLobbyClientExtraCamRender:setTopBottom( true, false, -9, 49 )
 				self.HeroLobbyClientExtraCamRender:setAlpha( 0 )
 				self.clipFinished( HeroLobbyClientExtraCamRender, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setLeftRight( true, false, 114.25, 130.25 )
 				self.RankIcon:setTopBottom( true, false, 29, 45 )
 				self.RankIcon:setAlpha( 0 )
 				self.clipFinished( RankIcon, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setLeftRight( true, false, 5, 25 )
 				self.Rank:setTopBottom( true, false, 26, 46 )
 				self.Rank:setAlpha( 0 )
 				self.clipFinished( Rank, {} )
+
 				CalloutHeading:completeAnimation()
 				self.CalloutHeading:setLeftRight( true, false, 2, 213.59 )
 				self.CalloutHeading:setTopBottom( true, false, -17, 1 )
 				self.clipFinished( CalloutHeading, {} )
+
 				PlayerEmblem:completeAnimation()
 				self.PlayerEmblem:setAlpha( 0 )
 				self.clipFinished( PlayerEmblem, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setLeftRight( true, false, -4, 92 )
 				self.StartMenuframenoBG0:setTopBottom( true, false, 0, 59 )
 				self.StartMenuframenoBG0:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				StartMenuframenoBG1:completeAnimation()
 				self.StartMenuframenoBG1:setLeftRight( true, false, -1, 215.59 )
 				self.StartMenuframenoBG1:setTopBottom( true, false, 0, 59 )
 				self.clipFinished( StartMenuframenoBG1, {} )
+
 				Image00001:completeAnimation()
 				self.Image00001:setLeftRight( true, false, -15.41, 0.59 )
 				self.Image00001:setTopBottom( true, false, -3, 5 )
 				self.clipFinished( Image00001, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setLeftRight( true, false, -15.41, 0.59 )
 				self.Image2:setTopBottom( true, false, 53, 61 )
 				self.clipFinished( Image2, {} )
+
 				Image000010:completeAnimation()
 				self.Image000010:setLeftRight( true, false, 215.59, 231.59 )
 				self.Image000010:setTopBottom( true, false, -2, 6 )
 				self.clipFinished( Image000010, {} )
+
 				Image20:completeAnimation()
 				self.Image20:setLeftRight( true, false, 215.59, 231.59 )
 				self.Image20:setTopBottom( true, false, 53, 61 )
@@ -452,6 +498,7 @@ CoD.PlayerCard.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Emblem",
@@ -466,6 +513,7 @@ CoD.PlayerCard.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardsFrameWidget:close()
 		element.LeftPanel:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.ChooseCharacterLoadout_CardBack_LockedTransmission_Progress = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacterLoadout_CardBack_LockedTransmission_Progress.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacterLoadout_CardBack_LockedTransmission_Progress )
 	self.id = "ChooseCharacterLoadout_CardBack_LockedTransmission_Progress"
@@ -69,15 +71,19 @@ CoD.ChooseCharacterLoadout_CardBack_LockedTransmission_Progress.new = function (
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				progressFill:completeAnimation()
 				self.progressFill:setAlpha( 1 )
 				self.clipFinished( progressFill, {} )
+
 				progressBorder:completeAnimation()
 				self.progressBorder:setAlpha( 1 )
 				self.clipFinished( progressBorder, {} )
+
 				progressLabel:completeAnimation()
 				self.progressLabel:setAlpha( 0.8 )
 				self.clipFinished( progressLabel, {} )
+
 				progressDisplayString:completeAnimation()
 				self.progressDisplayString:setAlpha( 0.8 )
 				self.clipFinished( progressDisplayString, {} )
@@ -86,21 +92,26 @@ CoD.ChooseCharacterLoadout_CardBack_LockedTransmission_Progress.new = function (
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				progressFill:completeAnimation()
 				self.progressFill:setAlpha( 0 )
 				self.clipFinished( progressFill, {} )
+
 				progressBorder:completeAnimation()
 				self.progressBorder:setAlpha( 0 )
 				self.clipFinished( progressBorder, {} )
+
 				progressLabel:completeAnimation()
 				self.progressLabel:setAlpha( 0 )
 				self.clipFinished( progressLabel, {} )
+
 				progressDisplayString:completeAnimation()
 				self.progressDisplayString:setAlpha( 0 )
 				self.clipFinished( progressDisplayString, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -117,6 +128,7 @@ CoD.ChooseCharacterLoadout_CardBack_LockedTransmission_Progress.new = function (
 			modelName = "assignmentProgressString"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.progressBorder:close()
 		element.progressFill:close()

@@ -4,9 +4,11 @@
 CoD.vhud_sentinel_CenterReticle = InheritFrom( LUI.UIElement )
 CoD.vhud_sentinel_CenterReticle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_sentinel_CenterReticle )
 	self.id = "vhud_sentinel_CenterReticle"
@@ -34,9 +36,11 @@ CoD.vhud_sentinel_CenterReticle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 2 )
+
 				local f3_local0 = function ( f4_arg0, f4_arg1 )
 					if not f4_arg1.interrupted then
 						f4_arg0:beginAnimation( "keyframe", 99, false, false, CoD.TweenType.Linear )
@@ -70,6 +74,7 @@ CoD.vhud_sentinel_CenterReticle.new = function ( menu, controller )
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 2 )
+
 				local CenterReticleFrame2 = function ( CenterReticle, event )
 					if not event.interrupted then
 						CenterReticle:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -105,9 +110,11 @@ CoD.vhud_sentinel_CenterReticle.new = function ( menu, controller )
 		RAPS = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				CenterReticle:completeAnimation()
 				self.CenterReticle:setAlpha( 0 )
 				self.clipFinished( CenterReticle, {} )
+
 				CenterReticle0:completeAnimation()
 				self.CenterReticle0:setAlpha( 0 )
 				self.clipFinished( CenterReticle0, {} )
@@ -116,11 +123,13 @@ CoD.vhud_sentinel_CenterReticle.new = function ( menu, controller )
 		Zoom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				CenterReticle:completeAnimation()
 				self.CenterReticle:setLeftRight( false, false, -19.5, 20.5 )
 				self.CenterReticle:setTopBottom( false, false, -12, 12 )
 				self.CenterReticle:setZoom( -400 )
 				self.clipFinished( CenterReticle, {} )
+
 				CenterReticle0:completeAnimation()
 				self.CenterReticle0:setLeftRight( false, false, -19.5, 20.5 )
 				self.CenterReticle0:setTopBottom( false, false, -12, 12 )
@@ -130,6 +139,7 @@ CoD.vhud_sentinel_CenterReticle.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				local CenterReticleFrame2 = function ( CenterReticle, event )
 					if not event.interrupted then
 						CenterReticle:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -173,6 +183,7 @@ CoD.vhud_sentinel_CenterReticle.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "RAPS",

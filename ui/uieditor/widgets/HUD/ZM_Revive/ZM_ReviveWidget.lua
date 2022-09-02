@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_AbilityGlow" )
 CoD.ZM_ReviveWidget = InheritFrom( LUI.UIElement )
 CoD.ZM_ReviveWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZM_ReviveWidget )
 	self.id = "ZM_ReviveWidget"
@@ -137,36 +139,46 @@ CoD.ZM_ReviveWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver, {} )
+
 				glow:completeAnimation()
 				self.glow:setAlpha( 0 )
 				self.clipFinished( glow, {} )
+
 				RingGlow:completeAnimation()
 				self.RingGlow:setAlpha( 0 )
 				self.clipFinished( RingGlow, {} )
+
 				RingMiddle:completeAnimation()
 				self.RingMiddle:setAlpha( 0 )
 				self.clipFinished( RingMiddle, {} )
+
 				RingTopBleedOut:completeAnimation()
 				self.RingTopBleedOut:setAlpha( 0 )
 				self.clipFinished( RingTopBleedOut, {} )
+
 				skull:completeAnimation()
 				self.skull:setAlpha( 0 )
 				self.clipFinished( skull, {} )
+
 				ZMReviveBleedoutRedEyeGlow:completeAnimation()
 				self.ZMReviveBleedoutRedEyeGlow:setAlpha( 0 )
 				self.clipFinished( ZMReviveBleedoutRedEyeGlow, {} )
+
 				ZMReviveBleedoutRedEyeGlow0:completeAnimation()
 				self.ZMReviveBleedoutRedEyeGlow0:setAlpha( 0 )
 				self.clipFinished( ZMReviveBleedoutRedEyeGlow0, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setAlpha( 0 )
 				self.clipFinished( Glow0, {} )
 			end,
 			BleedingOut = function ()
 				self:setupElementClipCounter( 10 )
+
 				local GlowOrangeOverFrame2 = function ( GlowOrangeOver, event )
 					local GlowOrangeOverFrame3 = function ( GlowOrangeOver, event )
 						local GlowOrangeOverFrame4 = function ( GlowOrangeOver, event )
@@ -388,9 +400,11 @@ CoD.ZM_ReviveWidget.new = function ( menu, controller )
 				self.AbilitySwirl:setZRot( 0 )
 				self.AbilitySwirl:setScale( 1 )
 				AbilitySwirlFrame2( AbilitySwirl, {} )
+
 				ZMReviveBleedoutRedEyeGlow:completeAnimation()
 				self.ZMReviveBleedoutRedEyeGlow:setAlpha( 0 )
 				self.clipFinished( ZMReviveBleedoutRedEyeGlow, {} )
+
 				ZMReviveBleedoutRedEyeGlow0:completeAnimation()
 				self.ZMReviveBleedoutRedEyeGlow0:setAlpha( 0 )
 				self.clipFinished( ZMReviveBleedoutRedEyeGlow0, {} )
@@ -435,6 +449,7 @@ CoD.ZM_ReviveWidget.new = function ( menu, controller )
 		Reviving = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				local GlowOrangeOverFrame2 = function ( GlowOrangeOver, event )
 					local GlowOrangeOverFrame3 = function ( GlowOrangeOver, event )
 						local GlowOrangeOverFrame4 = function ( GlowOrangeOver, event )
@@ -495,21 +510,26 @@ CoD.ZM_ReviveWidget.new = function ( menu, controller )
 				self.GlowOrangeOver:setRGB( 0, 1, 0.01 )
 				self.GlowOrangeOver:setAlpha( 0.4 )
 				GlowOrangeOverFrame2( GlowOrangeOver, {} )
+
 				glow:completeAnimation()
 				self.glow:setAlpha( 1 )
 				self.clipFinished( glow, {} )
+
 				RingGlow:completeAnimation()
 				self.RingGlow:setRGB( 0, 1, 0.01 )
 				self.RingGlow:setAlpha( 0 )
 				self.clipFinished( RingGlow, {} )
+
 				RingMiddle:completeAnimation()
 				self.RingMiddle:setRGB( 0, 1, 0.01 )
 				self.RingMiddle:setAlpha( 0.06 )
 				self.clipFinished( RingMiddle, {} )
+
 				RingTopBleedOut:completeAnimation()
 				self.RingTopBleedOut:setRGB( 0, 1, 0.01 )
 				self.RingTopBleedOut:setAlpha( 0 )
 				self.clipFinished( RingTopBleedOut, {} )
+
 				RingTopRevive:completeAnimation()
 				self.RingTopRevive:setAlpha( 1 )
 				self.RingTopRevive:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_clock_add" ) )
@@ -545,13 +565,16 @@ CoD.ZM_ReviveWidget.new = function ( menu, controller )
 				self.skull:setAlpha( 1 )
 				self.skull:setScale( 1 )
 				skullFrame2( skull, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
+
 				ZMReviveBleedoutRedEyeGlow:completeAnimation()
 				self.ZMReviveBleedoutRedEyeGlow:setRGB( 1, 1, 1 )
 				self.ZMReviveBleedoutRedEyeGlow:setAlpha( 0 )
 				self.clipFinished( ZMReviveBleedoutRedEyeGlow, {} )
+
 				ZMReviveBleedoutRedEyeGlow0:completeAnimation()
 				self.ZMReviveBleedoutRedEyeGlow0:setRGB( 1, 1, 1 )
 				self.ZMReviveBleedoutRedEyeGlow0:setAlpha( 0 )
@@ -584,12 +607,14 @@ CoD.ZM_ReviveWidget.new = function ( menu, controller )
 				self.Glow0:setRGB( 0, 1, 0.01 )
 				self.Glow0:setAlpha( 0 )
 				Glow0Frame2( Glow0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		BleedingOut_Low = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				local GlowOrangeOverFrame2 = function ( GlowOrangeOver, event )
 					local GlowOrangeOverFrame3 = function ( GlowOrangeOver, event )
 						local GlowOrangeOverFrame4 = function ( GlowOrangeOver, event )
@@ -640,22 +665,27 @@ CoD.ZM_ReviveWidget.new = function ( menu, controller )
 				self.GlowOrangeOver:setRGB( 0.61, 0.01, 0 )
 				self.GlowOrangeOver:setAlpha( 0.4 )
 				GlowOrangeOverFrame2( GlowOrangeOver, {} )
+
 				glow:completeAnimation()
 				self.glow:setRGB( 1, 0.38, 0.38 )
 				self.glow:setAlpha( 1 )
 				self.clipFinished( glow, {} )
+
 				RingGlow:completeAnimation()
 				self.RingGlow:setRGB( 1, 0, 0.12 )
 				self.RingGlow:setAlpha( 0 )
 				self.clipFinished( RingGlow, {} )
+
 				RingMiddle:completeAnimation()
 				self.RingMiddle:setRGB( 1, 0, 0 )
 				self.RingMiddle:setAlpha( 0.06 )
 				self.clipFinished( RingMiddle, {} )
+
 				RingTopBleedOut:completeAnimation()
 				self.RingTopBleedOut:setRGB( 1, 0, 0.06 )
 				self.RingTopBleedOut:setAlpha( 1 )
 				self.clipFinished( RingTopBleedOut, {} )
+
 				RingTopRevive:completeAnimation()
 				self.RingTopRevive:setAlpha( 0 )
 				self.clipFinished( RingTopRevive, {} )
@@ -687,6 +717,7 @@ CoD.ZM_ReviveWidget.new = function ( menu, controller )
 				self.skull:setAlpha( 1 )
 				self.skull:setScale( 1 )
 				skullFrame2( skull, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
@@ -780,10 +811,12 @@ CoD.ZM_ReviveWidget.new = function ( menu, controller )
 				self.Glow0:setRGB( 1, 0, 0 )
 				self.Glow0:setAlpha( 0.1 )
 				Glow0Frame2( Glow0, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			Reviving = function ()
 				self:setupElementClipCounter( 11 )
+
 				local GlowOrangeOverFrame2 = function ( GlowOrangeOver, event )
 					if not event.interrupted then
 						GlowOrangeOver:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -920,6 +953,7 @@ CoD.ZM_ReviveWidget.new = function ( menu, controller )
 				self.skull:setAlpha( 1 )
 				self.skull:setScale( 1 )
 				skullFrame2( skull, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
@@ -987,6 +1021,7 @@ CoD.ZM_ReviveWidget.new = function ( menu, controller )
 		BleedingOut = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				local GlowOrangeOverFrame2 = function ( GlowOrangeOver, event )
 					local GlowOrangeOverFrame3 = function ( GlowOrangeOver, event )
 						if not event.interrupted then
@@ -1013,18 +1048,23 @@ CoD.ZM_ReviveWidget.new = function ( menu, controller )
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0.4 )
 				GlowOrangeOverFrame2( GlowOrangeOver, {} )
+
 				glow:completeAnimation()
 				self.glow:setAlpha( 1 )
 				self.clipFinished( glow, {} )
+
 				RingGlow:completeAnimation()
 				self.RingGlow:setAlpha( 0 )
 				self.clipFinished( RingGlow, {} )
+
 				RingMiddle:completeAnimation()
 				self.RingMiddle:setAlpha( 0.1 )
 				self.clipFinished( RingMiddle, {} )
+
 				RingTopBleedOut:completeAnimation()
 				self.RingTopBleedOut:setAlpha( 1 )
 				self.clipFinished( RingTopBleedOut, {} )
+
 				RingTopRevive:completeAnimation()
 				self.RingTopRevive:setAlpha( 0 )
 				self.clipFinished( RingTopRevive, {} )
@@ -1060,16 +1100,19 @@ CoD.ZM_ReviveWidget.new = function ( menu, controller )
 				self.skull:setAlpha( 1 )
 				self.skull:setScale( 1 )
 				skullFrame2( skull, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setLeftRight( false, false, -67.86, 69 )
 				self.AbilitySwirl:setTopBottom( false, false, -69, 67.86 )
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
+
 				ZMReviveBleedoutRedEyeGlow:completeAnimation()
 				self.ZMReviveBleedoutRedEyeGlow:setLeftRight( false, false, -23.91, -6.75 )
 				self.ZMReviveBleedoutRedEyeGlow:setTopBottom( false, false, 3.48, 21.64 )
 				self.ZMReviveBleedoutRedEyeGlow:setAlpha( 0 )
 				self.clipFinished( ZMReviveBleedoutRedEyeGlow, {} )
+
 				ZMReviveBleedoutRedEyeGlow0:completeAnimation()
 				self.ZMReviveBleedoutRedEyeGlow0:setLeftRight( false, false, 6.09, 23.25 )
 				self.ZMReviveBleedoutRedEyeGlow0:setTopBottom( false, false, 3.48, 21.64 )
@@ -1101,10 +1144,12 @@ CoD.ZM_ReviveWidget.new = function ( menu, controller )
 				Glow0:completeAnimation()
 				self.Glow0:setAlpha( 0 )
 				Glow0Frame2( Glow0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Reviving",
@@ -1141,6 +1186,7 @@ CoD.ZM_ReviveWidget.new = function ( menu, controller )
 			modelName = "bleedOutPercent"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZMReviveBleedoutRedEyeGlow:close()
 		element.ZMReviveBleedoutRedEyeGlow0:close()

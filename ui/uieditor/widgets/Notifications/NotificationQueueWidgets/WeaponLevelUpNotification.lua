@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.Notifications.WeaponLevelUp.WeaponLevelUpNotificat
 CoD.WeaponLevelUpNotification = InheritFrom( LUI.UIElement )
 CoD.WeaponLevelUpNotification.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponLevelUpNotification )
 	self.id = "WeaponLevelUpNotification"
@@ -146,6 +148,7 @@ CoD.WeaponLevelUpNotification.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				levelUpSound:completeAnimation()
 				self.levelUpSound:playSound( "weapon_level_up", controller )
 				self.clipFinished( levelUpSound, {} )
@@ -636,6 +639,7 @@ CoD.WeaponLevelUpNotification.new = function ( menu, controller )
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 9 )
+
 				local WeaponLevelUpNotificationFooterLabel02Frame2 = function ( WeaponLevelUpNotificationFooterLabel02, event )
 					local WeaponLevelUpNotificationFooterLabel02Frame3 = function ( WeaponLevelUpNotificationFooterLabel02, event )
 						local WeaponLevelUpNotificationFooterLabel02Frame4 = function ( WeaponLevelUpNotificationFooterLabel02, event )
@@ -871,9 +875,11 @@ CoD.WeaponLevelUpNotification.new = function ( menu, controller )
 				WeaponLevelUpNotificationLineFade:completeAnimation()
 				self.WeaponLevelUpNotificationLineFade:setAlpha( 1 )
 				WeaponLevelUpNotificationLineFadeFrame2( WeaponLevelUpNotificationLineFade, {} )
+
 				WeaponG:completeAnimation()
 				self.WeaponG:setAlpha( 0 )
 				self.clipFinished( WeaponG, {} )
+
 				WeaponR:completeAnimation()
 				self.WeaponR:setAlpha( 0 )
 				self.clipFinished( WeaponR, {} )
@@ -960,6 +966,7 @@ CoD.WeaponLevelUpNotification.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.WeaponLevelUpNotificationFooterLabel02:close()
 		element.WeaponLevelUpNotificationFooterLabel01:close()

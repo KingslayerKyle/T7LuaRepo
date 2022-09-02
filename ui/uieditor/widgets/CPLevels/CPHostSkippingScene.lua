@@ -4,9 +4,11 @@
 CoD.CPHostSkippingScene = InheritFrom( LUI.UIElement )
 CoD.CPHostSkippingScene.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CPHostSkippingScene )
 	self.id = "CPHostSkippingScene"

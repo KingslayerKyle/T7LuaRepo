@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Notifications.Medals.Notification_Medals_Backing_9
 CoD.Notification_Medals_Label = InheritFrom( LUI.UIElement )
 CoD.Notification_Medals_Label.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Notification_Medals_Label )
 	self.id = "Notification_Medals_Label"
@@ -31,6 +33,7 @@ CoD.Notification_Medals_Label.new = function ( menu, controller )
 	TextBox0:setTTF( "fonts/FoundryGridnik-Bold.ttf" )
 	TextBox0:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	TextBox0:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( TextBox0, "setText", function ( element, controller )
 		ScaleWidgetToLabelCenteredWrapped( self, element, 40, 40 )
 	end )
@@ -47,20 +50,25 @@ CoD.Notification_Medals_Label.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Combined = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -69,6 +77,7 @@ CoD.Notification_Medals_Label.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.NotificationMedalsBacking9Slice:close()
 		element.TextBox0:close()

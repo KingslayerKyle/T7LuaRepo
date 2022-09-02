@@ -4,9 +4,11 @@
 CoD.AmmoWidget_ClipMeterColor = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_ClipMeterColor.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_ClipMeterColor )
 	self.id = "AmmoWidget_ClipMeterColor"
@@ -27,6 +29,7 @@ CoD.AmmoWidget_ClipMeterColor.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ImgMeter:completeAnimation()
 				self.ImgMeter:setAlpha( 0 )
 				self.clipFinished( ImgMeter, {} )
@@ -35,6 +38,7 @@ CoD.AmmoWidget_ClipMeterColor.new = function ( menu, controller )
 		LowAmmo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ImgMeterFrame2 = function ( ImgMeter, event )
 					local ImgMeterFrame3 = function ( ImgMeter, event )
 						local ImgMeterFrame4 = function ( ImgMeter, event )
@@ -73,12 +77,14 @@ CoD.AmmoWidget_ClipMeterColor.new = function ( menu, controller )
 				self.ImgMeter:setRGB( 1, 0, 0.17 )
 				self.ImgMeter:setAlpha( 1 )
 				ImgMeterFrame2( ImgMeter, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		NoAmmo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ImgMeterFrame2 = function ( ImgMeter, event )
 					local ImgMeterFrame3 = function ( ImgMeter, event )
 						if not event.interrupted then
@@ -107,6 +113,7 @@ CoD.AmmoWidget_ClipMeterColor.new = function ( menu, controller )
 				self.ImgMeter:setRGB( 1, 0, 0 )
 				self.ImgMeter:setAlpha( 0.5 )
 				ImgMeterFrame2( ImgMeter, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

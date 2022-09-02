@@ -18,9 +18,11 @@ end
 CoD.MapVoteOfficial = InheritFrom( LUI.UIElement )
 CoD.MapVoteOfficial.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MapVoteOfficial )
 	self.id = "MapVoteOfficial"
@@ -74,12 +76,15 @@ CoD.MapVoteOfficial.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				StartMenuIdentitySubtitleBG00:completeAnimation()
 				self.StartMenuIdentitySubtitleBG00:setAlpha( 0 )
 				self.clipFinished( StartMenuIdentitySubtitleBG00, {} )
+
 				officialIcon:completeAnimation()
 				self.officialIcon:setAlpha( 0 )
 				self.clipFinished( officialIcon, {} )
+
 				Official:completeAnimation()
 				self.Official:setAlpha( 0 )
 				self.clipFinished( Official, {} )
@@ -88,18 +93,22 @@ CoD.MapVoteOfficial.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				StartMenuIdentitySubtitleBG00:completeAnimation()
 				self.StartMenuIdentitySubtitleBG00:setAlpha( 0.55 )
 				self.clipFinished( StartMenuIdentitySubtitleBG00, {} )
+
 				officialIcon:completeAnimation()
 				self.officialIcon:setAlpha( 1 )
 				self.clipFinished( officialIcon, {} )
+
 				Official:completeAnimation()
 				self.Official:setAlpha( 1 )
 				self.clipFinished( Official, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -124,6 +133,7 @@ CoD.MapVoteOfficial.new = function ( menu, controller )
 			modelName = "MapVote.isOfficialVariant"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuIdentitySubtitleBG00:close()
 	end )

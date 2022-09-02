@@ -4,9 +4,11 @@
 CoD.DniWipe_LinesSide = InheritFrom( LUI.UIElement )
 CoD.DniWipe_LinesSide.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.DniWipe_LinesSide )
 	self.id = "DniWipe_LinesSide"
@@ -42,6 +44,7 @@ CoD.DniWipe_LinesSide.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local Image34Frame2 = function ( Image34, event )
 					if not event.interrupted then
 						Image34:beginAnimation( "keyframe", 800, false, false, CoD.TweenType.Linear )
@@ -155,6 +158,7 @@ CoD.DniWipe_LinesSide.new = function ( menu, controller )
 				self.Image340:setTopBottom( false, false, -4, 0 )
 				self.Image340:setAlpha( 0 )
 				Image340Frame2( Image340, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

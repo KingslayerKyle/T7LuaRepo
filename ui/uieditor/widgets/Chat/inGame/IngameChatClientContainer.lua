@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Chat.inGame.IngameChatClient" )
 CoD.IngameChatClientContainer = InheritFrom( LUI.UIElement )
 CoD.IngameChatClientContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.IngameChatClientContainer )
 	self.id = "IngameChatClientContainer"
@@ -27,6 +29,7 @@ CoD.IngameChatClientContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ChatClient:completeAnimation()
 				self.ChatClient:setLeftRight( true, false, 0, 360 )
 				self.ChatClient:setTopBottom( true, false, 182.5, 432.5 )
@@ -37,6 +40,7 @@ CoD.IngameChatClientContainer.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ChatClient:completeAnimation()
 				self.ChatClient:setLeftRight( true, false, 0, 360 )
 				self.ChatClient:setTopBottom( true, false, 182.5, 432.5 )
@@ -47,6 +51,7 @@ CoD.IngameChatClientContainer.new = function ( menu, controller )
 		ScoresUp = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ChatClient:completeAnimation()
 				self.ChatClient:setLeftRight( true, false, 0, 360 )
 				self.ChatClient:setTopBottom( true, false, 470, 720 )
@@ -56,6 +61,7 @@ CoD.IngameChatClientContainer.new = function ( menu, controller )
 		ScoresForceUp = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ChatClient:completeAnimation()
 				self.ChatClient:setLeftRight( true, false, 0, 360 )
 				self.ChatClient:setTopBottom( true, false, 470, 720 )
@@ -63,6 +69,7 @@ CoD.IngameChatClientContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -99,6 +106,7 @@ CoD.IngameChatClientContainer.new = function ( menu, controller )
 			modelName = "forceScoreboard"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ChatClient:close()
 	end )

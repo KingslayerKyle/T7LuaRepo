@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.CAC_varientTitlePanel" )
 CoD.RankUpNotificationTile = InheritFrom( LUI.UIElement )
 CoD.RankUpNotificationTile.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RankUpNotificationTile )
 	self.id = "RankUpNotificationTile"
@@ -20,6 +22,7 @@ CoD.RankUpNotificationTile.new = function ( menu, controller )
 	CACvarientTitlePanel0:setLeftRight( true, true, 0, 0 )
 	CACvarientTitlePanel0:setTopBottom( true, false, 0, 30 )
 	CACvarientTitlePanel0:setAlpha( 0.5 )
+
 	LUI.OverrideFunction_CallOriginalFirst( CACvarientTitlePanel0, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrapped( self, element, 0, 0 )
 	end )
@@ -45,15 +48,18 @@ CoD.RankUpNotificationTile.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				CACvarientTitlePanel0:completeAnimation()
 				self.CACvarientTitlePanel0:setAlpha( 0.25 )
 				self.clipFinished( CACvarientTitlePanel0, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 1 )
 				self.clipFinished( Text, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CACvarientTitlePanel0:close()
 		element.Text:close()

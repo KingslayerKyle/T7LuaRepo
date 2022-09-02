@@ -4,9 +4,11 @@
 CoD.CustomGameOfficial = InheritFrom( LUI.UIElement )
 CoD.CustomGameOfficial.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CustomGameOfficial )
 	self.id = "CustomGameOfficial"
@@ -35,9 +37,11 @@ CoD.CustomGameOfficial.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				officialIcon:completeAnimation()
 				self.officialIcon:setAlpha( 0 )
 				self.clipFinished( officialIcon, {} )
+
 				Official:completeAnimation()
 				self.Official:setAlpha( 0 )
 				self.clipFinished( Official, {} )
@@ -46,15 +50,18 @@ CoD.CustomGameOfficial.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				officialIcon:completeAnimation()
 				self.officialIcon:setAlpha( 1 )
 				self.clipFinished( officialIcon, {} )
+
 				Official:completeAnimation()
 				self.Official:setAlpha( 1 )
 				self.clipFinished( Official, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

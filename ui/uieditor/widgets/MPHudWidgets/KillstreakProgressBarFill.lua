@@ -4,9 +4,11 @@
 CoD.KillstreakProgressBarFill = InheritFrom( LUI.UIElement )
 CoD.KillstreakProgressBarFill.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.KillstreakProgressBarFill )
 	self.id = "KillstreakProgressBarFill"

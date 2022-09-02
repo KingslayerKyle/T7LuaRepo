@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.Pregame_ItemVote_PlayerIndicator = InheritFrom( LUI.UIElement )
 CoD.Pregame_ItemVote_PlayerIndicator.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_ItemVote_PlayerIndicator )
 	self.id = "Pregame_ItemVote_PlayerIndicator"
@@ -56,6 +58,7 @@ CoD.Pregame_ItemVote_PlayerIndicator.new = function ( menu, controller )
 			itemName:setText( Engine.Localize( hintText ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( itemName, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 10 )
 	end )
@@ -96,48 +99,62 @@ CoD.Pregame_ItemVote_PlayerIndicator.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				LineTop0:completeAnimation()
 				self.LineTop0:setAlpha( 0 )
 				self.clipFinished( LineTop0, {} )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 0 )
 				self.clipFinished( Image, {} )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 0 )
 				self.clipFinished( itemName, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 0 )
 				self.clipFinished( Border, {} )
+
 				AlliesColor:completeAnimation()
 				self.AlliesColor:setAlpha( 0 )
 				self.clipFinished( AlliesColor, {} )
+
 				AxisColor:completeAnimation()
 				self.AxisColor:setAlpha( 0 )
 				self.clipFinished( AxisColor, {} )
 			end,
 			ShowTooltip = function ()
 				self:setupElementClipCounter( 7 )
+
 				LineTop0:completeAnimation()
 				self.LineTop0:setAlpha( 0 )
 				self.clipFinished( LineTop0, {} )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 0.5 )
 				self.clipFinished( Image, {} )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0.4 )
 				self.clipFinished( Panel, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 1 )
 				self.clipFinished( itemName, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 1 )
 				self.clipFinished( Border, {} )
+
 				AlliesColor:completeAnimation()
 				self.AlliesColor:setAlpha( 1 )
 				self.clipFinished( AlliesColor, {} )
+
 				AxisColor:completeAnimation()
 				self.AxisColor:setAlpha( 0 )
 				self.clipFinished( AxisColor, {} )
@@ -146,54 +163,69 @@ CoD.Pregame_ItemVote_PlayerIndicator.new = function ( menu, controller )
 		IfisAxis = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				LineTop0:completeAnimation()
 				self.LineTop0:setAlpha( 0 )
 				self.clipFinished( LineTop0, {} )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 0 )
 				self.clipFinished( Image, {} )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 0 )
 				self.clipFinished( itemName, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 0 )
 				self.clipFinished( Border, {} )
+
 				AlliesColor:completeAnimation()
 				self.AlliesColor:setAlpha( 0 )
 				self.clipFinished( AlliesColor, {} )
+
 				AxisColor:completeAnimation()
 				self.AxisColor:setAlpha( 0 )
 				self.clipFinished( AxisColor, {} )
 			end,
 			ShowTooltip = function ()
 				self:setupElementClipCounter( 7 )
+
 				LineTop0:completeAnimation()
 				self.LineTop0:setAlpha( 0 )
 				self.clipFinished( LineTop0, {} )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 0.5 )
 				self.clipFinished( Image, {} )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0.4 )
 				self.clipFinished( Panel, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 1 )
 				self.clipFinished( itemName, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 1 )
 				self.clipFinished( Border, {} )
+
 				AlliesColor:completeAnimation()
 				self.AlliesColor:setAlpha( 0 )
 				self.clipFinished( AlliesColor, {} )
+
 				AxisColor:completeAnimation()
 				self.AxisColor:setAlpha( 1 )
 				self.clipFinished( AxisColor, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "IfisAxis",
@@ -210,6 +242,7 @@ CoD.Pregame_ItemVote_PlayerIndicator.new = function ( menu, controller )
 			modelName = "intData"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LineTop0:close()
 		element.Panel:close()

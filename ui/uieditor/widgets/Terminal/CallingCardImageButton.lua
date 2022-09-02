@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Terminal.FocusWidget" )
 CoD.CallingCardImageButton = InheritFrom( LUI.UIElement )
 CoD.CallingCardImageButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCardImageButton )
 	self.id = "CallingCardImageButton"
@@ -49,16 +51,19 @@ CoD.CallingCardImageButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				CallingCard:completeAnimation()
 				self.CallingCard:setLeftRight( true, true, 0, 0 )
 				self.CallingCard:setTopBottom( true, true, 0, 0 )
 				self.clipFinished( CallingCard, {} )
+
 				FocusWidget:completeAnimation()
 				self.FocusWidget:setAlpha( 0 )
 				self.clipFinished( FocusWidget, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local GeneralframeFrame2 = function ( Generalframe, event )
 					if not event.interrupted then
 						Generalframe:beginAnimation( "keyframe", 180, false, false, CoD.TweenType.Linear )
@@ -115,14 +120,17 @@ CoD.CallingCardImageButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				Generalframe:completeAnimation()
 				self.Generalframe:setLeftRight( true, true, 0, 0 )
 				self.Generalframe:setTopBottom( true, true, 15, 15 )
 				self.clipFinished( Generalframe, {} )
+
 				CallingCard:completeAnimation()
 				self.CallingCard:setLeftRight( false, false, -240, 240 )
 				self.CallingCard:setTopBottom( true, false, -14, 106 )
 				self.clipFinished( CallingCard, {} )
+
 				FocusWidget:completeAnimation()
 				self.FocusWidget:setLeftRight( true, true, -8, 8 )
 				self.FocusWidget:setTopBottom( true, false, -10, 10 )
@@ -131,6 +139,7 @@ CoD.CallingCardImageButton.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local GeneralframeFrame2 = function ( Generalframe, event )
 					if not event.interrupted then
 						Generalframe:beginAnimation( "keyframe", 180, false, false, CoD.TweenType.Linear )
@@ -189,12 +198,15 @@ CoD.CallingCardImageButton.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Generalframe:close()
 		element.CallingCard:close()

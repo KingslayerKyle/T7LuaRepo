@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FocusBarContainer" )
 CoD.GameSettings_OptionsButton = InheritFrom( LUI.UIElement )
 CoD.GameSettings_OptionsButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GameSettings_OptionsButton )
 	self.id = "GameSettings_OptionsButton"
@@ -83,21 +85,26 @@ CoD.GameSettings_OptionsButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 0.5 )
 				self.clipFinished( icon, {} )
+
 				optionText:completeAnimation()
 				self.optionText:setAlpha( 0.8 )
 				self.clipFinished( optionText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
@@ -228,24 +235,30 @@ CoD.GameSettings_OptionsButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 1 )
 				self.clipFinished( icon, {} )
+
 				optionText:completeAnimation()
 				self.optionText:setAlpha( 1 )
 				self.clipFinished( optionText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
@@ -380,36 +393,45 @@ CoD.GameSettings_OptionsButton.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 0.4 )
 				self.clipFinished( icon, {} )
+
 				optionText:completeAnimation()
 				self.optionText:setAlpha( 0.4 )
 				self.clipFinished( optionText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 0.4 )
 				self.clipFinished( icon, {} )
+
 				optionText:completeAnimation()
 				self.optionText:setAlpha( 0.4 )
 				self.clipFinished( optionText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -426,6 +448,7 @@ CoD.GameSettings_OptionsButton.new = function ( menu, controller )
 			modelName = "disabled"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgIdle:close()
 		element.FocusBarB:close()

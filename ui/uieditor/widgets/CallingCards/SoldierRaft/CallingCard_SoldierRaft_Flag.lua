@@ -4,9 +4,11 @@
 CoD.CallingCard_SoldierRaft_Flag = InheritFrom( LUI.UIElement )
 CoD.CallingCard_SoldierRaft_Flag.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCard_SoldierRaft_Flag )
 	self.id = "CallingCard_SoldierRaft_Flag"
@@ -33,6 +35,7 @@ CoD.CallingCard_SoldierRaft_Flag.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local Flag2Frame2 = function ( Flag2, event )
 					local Flag2Frame3 = function ( Flag2, event )
 						local Flag2Frame4 = function ( Flag2, event )
@@ -173,6 +176,7 @@ CoD.CallingCard_SoldierRaft_Flag.new = function ( menu, controller )
 				Flag1:completeAnimation()
 				self.Flag1:setAlpha( 1 )
 				Flag1Frame2( Flag1, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

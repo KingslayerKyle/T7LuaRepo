@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Mods.EntryModsLoad" )
 CoD.WidgetModsLoad = InheritFrom( LUI.UIElement )
 CoD.WidgetModsLoad.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WidgetModsLoad )
 	self.id = "WidgetModsLoad"
@@ -74,6 +76,7 @@ CoD.WidgetModsLoad.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ListMods:close()
 	end )

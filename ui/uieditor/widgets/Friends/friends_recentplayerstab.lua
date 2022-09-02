@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Scrollbars.verticalScrollbar" )
 CoD.Friends_RecentPlayersTab = InheritFrom( LUI.UIElement )
 CoD.Friends_RecentPlayersTab.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Friends_RecentPlayersTab )
 	self.id = "Friends_RecentPlayersTab"
@@ -73,6 +75,7 @@ CoD.Friends_RecentPlayersTab.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.listRecent:close()
 	end )

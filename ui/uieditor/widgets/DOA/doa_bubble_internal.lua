@@ -4,9 +4,11 @@
 CoD.doa_bubble_internal = InheritFrom( LUI.UIElement )
 CoD.doa_bubble_internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.doa_bubble_internal )
 	self.id = "doa_bubble_internal"
@@ -97,6 +99,7 @@ CoD.doa_bubble_internal.new = function ( menu, controller )
 			text:setText( Engine.Localize( _text ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( text, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrapped( self, element, 0, 0 )
 	end )

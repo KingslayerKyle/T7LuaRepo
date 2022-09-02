@@ -4,9 +4,11 @@
 CoD.CallingCards_loot_BO2_flash = InheritFrom( LUI.UIElement )
 CoD.CallingCards_loot_BO2_flash.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_loot_BO2_flash )
 	self.id = "CallingCards_loot_BO2_flash"
@@ -25,6 +27,7 @@ CoD.CallingCards_loot_BO2_flash.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local flashFrame2 = function ( flash, event )
 					local flashFrame3 = function ( flash, event )
 						local flashFrame4 = function ( flash, event )
@@ -359,6 +362,7 @@ CoD.CallingCards_loot_BO2_flash.new = function ( menu, controller )
 				flash:completeAnimation()
 				self.flash:setAlpha( 1 )
 				flashFrame2( flash, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

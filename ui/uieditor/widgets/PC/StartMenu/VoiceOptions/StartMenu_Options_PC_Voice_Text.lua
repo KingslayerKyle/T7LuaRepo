@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.PC.StartMenu.Dropdown.OptionDropdown" )
 CoD.StartMenu_Options_PC_Voice_Text = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_PC_Voice_Text.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_PC_Voice_Text )
 	self.id = "StartMenu_Options_PC_Voice_Text"
@@ -77,6 +79,7 @@ CoD.StartMenu_Options_PC_Voice_Text.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.optionInfo:close()
 		element.textOptionsList:close()

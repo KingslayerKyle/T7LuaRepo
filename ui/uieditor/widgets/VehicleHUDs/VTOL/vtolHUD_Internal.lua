@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.VTOL.vtolAimHint" )
 CoD.vtolHUD_Internal = InheritFrom( LUI.UIElement )
 CoD.vtolHUD_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vtolHUD_Internal )
 	self.id = "vtolHUD_Internal"
@@ -98,19 +100,24 @@ CoD.vtolHUD_Internal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				centerFrame:completeAnimation()
 				self.centerFrame:setAlpha( 1 )
 				self.clipFinished( centerFrame, {} )
+
 				vtolLandHint:completeAnimation()
 				self.vtolLandHint:setAlpha( 1 )
 				self.clipFinished( vtolLandHint, {} )
+
 				vtolMode:completeAnimation()
 				self.vtolMode:setAlpha( 0.1 )
 				self.vtolMode:setScale( 0.75 )
 				self.clipFinished( vtolMode, {} )
+
 				vtolModeText:completeAnimation()
 				self.vtolModeText:setAlpha( 0 )
 				self.clipFinished( vtolModeText, {} )
+
 				engagedText:completeAnimation()
 				self.engagedText:setAlpha( 0 )
 				self.clipFinished( engagedText, {} )
@@ -119,6 +126,7 @@ CoD.vtolHUD_Internal.new = function ( menu, controller )
 		Dogfight = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				local centerFrameFrame2 = function ( centerFrame, event )
 					if not event.interrupted then
 						centerFrame:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -164,16 +172,20 @@ CoD.vtolHUD_Internal.new = function ( menu, controller )
 				altimeterLeft:completeAnimation()
 				self.altimeterLeft:setAlpha( 0 )
 				altimeterLeftFrame2( altimeterLeft, {} )
+
 				vtolLandHint:completeAnimation()
 				self.vtolLandHint:setAlpha( 0 )
 				self.clipFinished( vtolLandHint, {} )
+
 				vtolMode:completeAnimation()
 				self.vtolMode:setAlpha( 0.1 )
 				self.vtolMode:setScale( 0.75 )
 				self.clipFinished( vtolMode, {} )
+
 				vtolModeText:completeAnimation()
 				self.vtolModeText:setAlpha( 0 )
 				self.clipFinished( vtolModeText, {} )
+
 				engagedText:completeAnimation()
 				self.engagedText:setAlpha( 0 )
 				self.clipFinished( engagedText, {} )
@@ -182,6 +194,7 @@ CoD.vtolHUD_Internal.new = function ( menu, controller )
 		VTOL = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				local centerFrameFrame2 = function ( centerFrame, event )
 					if not event.interrupted then
 						centerFrame:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -227,6 +240,7 @@ CoD.vtolHUD_Internal.new = function ( menu, controller )
 				altimeterLeft:completeAnimation()
 				self.altimeterLeft:setAlpha( 0 )
 				altimeterLeftFrame2( altimeterLeft, {} )
+
 				vtolLandHint:completeAnimation()
 				self.vtolLandHint:setAlpha( 1 )
 				self.clipFinished( vtolLandHint, {} )
@@ -346,31 +360,39 @@ CoD.vtolHUD_Internal.new = function ( menu, controller )
 		AutoPilot = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				centerFrame:completeAnimation()
 				self.centerFrame:setAlpha( 0 )
 				self.clipFinished( centerFrame, {} )
+
 				altimeterRight:completeAnimation()
 				self.altimeterRight:setAlpha( 0 )
 				self.clipFinished( altimeterRight, {} )
+
 				altimeterLeft:completeAnimation()
 				self.altimeterLeft:setAlpha( 0 )
 				self.clipFinished( altimeterLeft, {} )
+
 				vtolLandHint:completeAnimation()
 				self.vtolLandHint:setAlpha( 0 )
 				self.clipFinished( vtolLandHint, {} )
+
 				vtolMode:completeAnimation()
 				self.vtolMode:setAlpha( 0.1 )
 				self.vtolMode:setScale( 0.75 )
 				self.clipFinished( vtolMode, {} )
+
 				vtolModeText:completeAnimation()
 				self.vtolModeText:setAlpha( 0 )
 				self.clipFinished( vtolModeText, {} )
+
 				engagedText:completeAnimation()
 				self.engagedText:setAlpha( 0 )
 				self.clipFinished( engagedText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Dogfight",
@@ -399,6 +421,7 @@ CoD.vtolHUD_Internal.new = function ( menu, controller )
 			modelName = "weaponIndex"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.centerFrame:close()
 		element.vhudgenericbuttonlayout0:close()

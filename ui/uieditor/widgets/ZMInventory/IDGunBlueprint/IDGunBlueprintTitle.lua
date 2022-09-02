@@ -4,9 +4,11 @@
 CoD.IDGunBlueprintTitle = InheritFrom( LUI.UIElement )
 CoD.IDGunBlueprintTitle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.IDGunBlueprintTitle )
 	self.id = "IDGunBlueprintTitle"
@@ -36,9 +38,11 @@ CoD.IDGunBlueprintTitle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				LabelBaseLargeIDGun:completeAnimation()
 				self.LabelBaseLargeIDGun:setAlpha( 0 )
 				self.clipFinished( LabelBaseLargeIDGun, {} )
+
 				ApothiconServant:completeAnimation()
 				self.ApothiconServant:setAlpha( 0 )
 				self.clipFinished( ApothiconServant, {} )
@@ -47,15 +51,18 @@ CoD.IDGunBlueprintTitle.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				LabelBaseLargeIDGun:completeAnimation()
 				self.LabelBaseLargeIDGun:setAlpha( 1 )
 				self.clipFinished( LabelBaseLargeIDGun, {} )
+
 				ApothiconServant:completeAnimation()
 				self.ApothiconServant:setAlpha( 1 )
 				self.clipFinished( ApothiconServant, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

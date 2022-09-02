@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_GoldFrame" )
 CoD.CallingCards_Loot_Haunted = InheritFrom( LUI.UIElement )
 CoD.CallingCards_Loot_Haunted.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_Loot_Haunted )
 	self.id = "CallingCards_Loot_Haunted"
@@ -92,6 +94,7 @@ CoD.CallingCards_Loot_Haunted.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				local Image0Frame2 = function ( Image0, event )
 					local Image0Frame3 = function ( Image0, event )
 						local Image0Frame4 = function ( Image0, event )
@@ -416,10 +419,12 @@ CoD.CallingCards_Loot_Haunted.new = function ( menu, controller )
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				GlowFrame2( Glow, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardsGoldFrame:close()
 	end )

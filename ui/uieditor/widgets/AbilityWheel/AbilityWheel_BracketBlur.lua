@@ -4,9 +4,11 @@
 CoD.AbilityWheel_BracketBlur = InheritFrom( LUI.UIElement )
 CoD.AbilityWheel_BracketBlur.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AbilityWheel_BracketBlur )
 	self.id = "AbilityWheel_BracketBlur"
@@ -85,6 +87,7 @@ CoD.AbilityWheel_BracketBlur.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				local B1Frame2 = function ( B1, event )
 					if not event.interrupted then
 						B1:beginAnimation( "keyframe", 39, false, false, CoD.TweenType.Linear )
@@ -175,6 +178,7 @@ CoD.AbilityWheel_BracketBlur.new = function ( menu, controller )
 				B5:completeAnimation()
 				self.B5:setAlpha( RandomAddPercent( -10, 1 ) )
 				B5Frame2( B5, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

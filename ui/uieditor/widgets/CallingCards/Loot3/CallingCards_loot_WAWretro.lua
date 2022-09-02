@@ -4,9 +4,11 @@
 CoD.CallingCards_loot_WAWretro = InheritFrom( LUI.UIElement )
 CoD.CallingCards_loot_WAWretro.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_loot_WAWretro )
 	self.id = "CallingCards_loot_WAWretro"
@@ -126,6 +128,7 @@ CoD.CallingCards_loot_WAWretro.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				local smokeFrame2 = function ( smoke, event )
 					if not event.interrupted then
 						smoke:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )
@@ -629,6 +632,7 @@ CoD.CallingCards_loot_WAWretro.new = function ( menu, controller )
 				eyesGlow:beginAnimation( "keyframe", 1019, false, false, CoD.TweenType.Linear )
 				eyesGlow:setAlpha( 0.2 )
 				eyesGlow:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.HUD.CP_DamageWidget.DamageWidget_Arrow" )
 CoD.DamageWidget_EnviroHazardBottom = InheritFrom( LUI.UIElement )
 CoD.DamageWidget_EnviroHazardBottom.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DamageWidget_EnviroHazardBottom )
 	self.id = "DamageWidget_EnviroHazardBottom"

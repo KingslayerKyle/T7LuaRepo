@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.MenuChooseClass.CategoryHeader" )
 CoD.SecondaryWeaponAttachmentsWidget = InheritFrom( LUI.UIElement )
 CoD.SecondaryWeaponAttachmentsWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SecondaryWeaponAttachmentsWidget )
 	self.id = "SecondaryWeaponAttachmentsWidget"
@@ -222,6 +224,7 @@ CoD.SecondaryWeaponAttachmentsWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.attachment2:close()
 		element.attachment1:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CharacterCustomization.chooseCharacterLoadoutBumpe
 CoD.chooseCharacterLoadoutBumper = InheritFrom( LUI.UIElement )
 CoD.chooseCharacterLoadoutBumper.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.chooseCharacterLoadoutBumper )
 	self.id = "chooseCharacterLoadoutBumper"
@@ -27,26 +29,31 @@ CoD.chooseCharacterLoadoutBumper.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				chooseCharacterLoadoutBumperInternal0:completeAnimation()
 				self.chooseCharacterLoadoutBumperInternal0:setAlpha( 1 )
 				self.clipFinished( chooseCharacterLoadoutBumperInternal0, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				chooseCharacterLoadoutBumperInternal0:completeAnimation()
 				self.chooseCharacterLoadoutBumperInternal0:setAlpha( 0 )
 				self.clipFinished( chooseCharacterLoadoutBumperInternal0, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.chooseCharacterLoadoutBumperInternal0:close()
 	end )

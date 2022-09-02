@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Tablet.TabletLocationSelector_InternalItems" )
 CoD.MinimapHelper = InheritFrom( LUI.UIElement )
 CoD.MinimapHelper.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MinimapHelper )
 	self.id = "MinimapHelper"
@@ -102,6 +104,7 @@ CoD.MinimapHelper.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				local MapGlitchFrame2 = function ( MapGlitch, event )
 					local MapGlitchFrame3 = function ( MapGlitch, event )
 						local MapGlitchFrame4 = function ( MapGlitch, event )
@@ -409,6 +412,7 @@ CoD.MinimapHelper.new = function ( menu, controller )
 				self.underlayMap0:setTopBottom( true, true, 0, 0 )
 				self.underlayMap0:setAlpha( 1 )
 				underlayMap0Frame2( underlayMap0, {} )
+
 				Mosiac:completeAnimation()
 				self.Mosiac:setAlpha( 0 )
 				self.clipFinished( Mosiac, {} )
@@ -494,6 +498,7 @@ CoD.MinimapHelper.new = function ( menu, controller )
 				self.Scanlines:setShaderVector( 1, 0.75, 0, 0, 0 )
 				self.Scanlines:setShaderVector( 2, 0.01, 0, 0, 0 )
 				ScanlinesFrame2( Scanlines, {} )
+
 				Scroll:completeAnimation()
 				self.Scroll:setLeftRight( true, true, 0, 1 )
 				self.Scroll:setTopBottom( true, true, 0, 0 )
@@ -502,6 +507,7 @@ CoD.MinimapHelper.new = function ( menu, controller )
 				self.Scroll:setShaderVector( 0, 0, 0.36, 0, 0 )
 				self.Scroll:setShaderVector( 1, 25.84, 0, 0, 0 )
 				self.clipFinished( Scroll, {} )
+
 				internalItems:completeAnimation()
 				self.internalItems:setAlpha( 1 )
 				self.clipFinished( internalItems, {} )
@@ -673,18 +679,22 @@ CoD.MinimapHelper.new = function ( menu, controller )
 				self.Add0:setTopBottom( true, true, 0, 0 )
 				self.Add0:setAlpha( 0.07 )
 				Add0Frame2( Add0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		CounterUAV = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				underlayMap0:completeAnimation()
 				self.underlayMap0:setAlpha( 0 )
 				self.clipFinished( underlayMap0, {} )
+
 				overlay:completeAnimation()
 				self.overlay:setAlpha( 0 )
 				self.clipFinished( overlay, {} )
+
 				Mosiac:completeAnimation()
 				self.Mosiac:setAlpha( 0.5 )
 				self.Mosiac:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_emp" ) )
@@ -692,21 +702,26 @@ CoD.MinimapHelper.new = function ( menu, controller )
 				self.Mosiac:setShaderVector( 1, 1, 0, 0, 0 )
 				self.Mosiac:setShaderVector( 2, 2.19, 0, 0, 0 )
 				self.clipFinished( Mosiac, {} )
+
 				Scanlines:completeAnimation()
 				self.Scanlines:setAlpha( 0 )
 				self.clipFinished( Scanlines, {} )
+
 				Scroll:completeAnimation()
 				self.Scroll:setAlpha( 0 )
 				self.clipFinished( Scroll, {} )
+
 				internalItems:completeAnimation()
 				self.internalItems:setAlpha( 0 )
 				self.clipFinished( internalItems, {} )
+
 				Add0:completeAnimation()
 				self.Add0:setAlpha( 0 )
 				self.clipFinished( Add0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CounterUAV",
@@ -723,6 +738,7 @@ CoD.MinimapHelper.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_COUNTER_UAV_ACTIVE
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.internalItems:close()
 	end )

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ScoreInfo.ScoreInfo_PanelScale" )
 CoD.ScoreInfo_UserScorePanel = InheritFrom( LUI.UIElement )
 CoD.ScoreInfo_UserScorePanel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreInfo_UserScorePanel )
 	self.id = "ScoreInfo_UserScorePanel"
@@ -43,10 +45,12 @@ CoD.ScoreInfo_UserScorePanel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelScale2:completeAnimation()
 				self.PanelScale2:setLeftRight( false, false, -44.5, 15.5 )
 				self.PanelScale2:setTopBottom( false, false, 391, 422 )
 				self.clipFinished( PanelScale2, {} )
+
 				PanelScale1:completeAnimation()
 				self.PanelScale1:setLeftRight( false, false, -124, -42.5 )
 				self.PanelScale1:setTopBottom( false, false, 386, 422 )
@@ -56,9 +60,11 @@ CoD.ScoreInfo_UserScorePanel.new = function ( menu, controller )
 		Infected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelScale2:completeAnimation()
 				self.PanelScale2:setAlpha( 0 )
 				self.clipFinished( PanelScale2, {} )
+
 				PanelScale1:completeAnimation()
 				self.PanelScale1:setAlpha( 0 )
 				self.clipFinished( PanelScale1, {} )
@@ -67,10 +73,12 @@ CoD.ScoreInfo_UserScorePanel.new = function ( menu, controller )
 		Count3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelScale2:completeAnimation()
 				self.PanelScale2:setLeftRight( false, false, -34, 62 )
 				self.PanelScale2:setTopBottom( false, false, -4, 14 )
 				self.clipFinished( PanelScale2, {} )
+
 				PanelScale1:completeAnimation()
 				self.PanelScale1:setLeftRight( false, false, -124, -34 )
 				self.PanelScale1:setTopBottom( false, false, -22, 14 )
@@ -80,10 +88,12 @@ CoD.ScoreInfo_UserScorePanel.new = function ( menu, controller )
 		Count4 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelScale2:completeAnimation()
 				self.PanelScale2:setLeftRight( false, false, -14, 82 )
 				self.PanelScale2:setTopBottom( false, false, -4, 14 )
 				self.clipFinished( PanelScale2, {} )
+
 				PanelScale1:completeAnimation()
 				self.PanelScale1:setLeftRight( false, false, -124, -14 )
 				self.PanelScale1:setTopBottom( false, false, -22, 14 )
@@ -93,10 +103,12 @@ CoD.ScoreInfo_UserScorePanel.new = function ( menu, controller )
 		Count5 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelScale2:completeAnimation()
 				self.PanelScale2:setLeftRight( false, false, 6, 103 )
 				self.PanelScale2:setTopBottom( false, false, -4, 14 )
 				self.clipFinished( PanelScale2, {} )
+
 				PanelScale1:completeAnimation()
 				self.PanelScale1:setLeftRight( false, false, -124, 6 )
 				self.PanelScale1:setTopBottom( false, false, -22, 14 )
@@ -106,10 +118,12 @@ CoD.ScoreInfo_UserScorePanel.new = function ( menu, controller )
 		Count6 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelScale2:completeAnimation()
 				self.PanelScale2:setLeftRight( false, false, 26, 122 )
 				self.PanelScale2:setTopBottom( false, false, -4, 14 )
 				self.clipFinished( PanelScale2, {} )
+
 				PanelScale1:completeAnimation()
 				self.PanelScale1:setLeftRight( false, false, -124, 26 )
 				self.PanelScale1:setTopBottom( false, false, -22, 14 )
@@ -119,10 +133,12 @@ CoD.ScoreInfo_UserScorePanel.new = function ( menu, controller )
 		Count7 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelScale2:completeAnimation()
 				self.PanelScale2:setLeftRight( false, false, 46, 142 )
 				self.PanelScale2:setTopBottom( false, false, -4, 14 )
 				self.clipFinished( PanelScale2, {} )
+
 				PanelScale1:completeAnimation()
 				self.PanelScale1:setLeftRight( false, false, -124, 46 )
 				self.PanelScale1:setTopBottom( false, false, -22, 14 )
@@ -130,6 +146,7 @@ CoD.ScoreInfo_UserScorePanel.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Infected",
@@ -176,6 +193,7 @@ CoD.ScoreInfo_UserScorePanel.new = function ( menu, controller )
 			modelName = "gameScore.playerScore"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PanelScale2:close()
 		element.PanelScale1:close()

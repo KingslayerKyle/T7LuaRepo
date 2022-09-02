@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.FlyingBee.CallingCard_FlyingBee_Wing_
 CoD.CallingCard_FlyingBee_Wing_Front_Anim = InheritFrom( LUI.UIElement )
 CoD.CallingCard_FlyingBee_Wing_Front_Anim.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCard_FlyingBee_Wing_Front_Anim )
 	self.id = "CallingCard_FlyingBee_Wing_Front_Anim"
@@ -28,6 +30,7 @@ CoD.CallingCard_FlyingBee_Wing_Front_Anim.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local WingFrame2 = function ( Wing, event )
 					local WingFrame3 = function ( Wing, event )
 						if not event.interrupted then
@@ -54,10 +57,12 @@ CoD.CallingCard_FlyingBee_Wing_Front_Anim.new = function ( menu, controller )
 				Wing:completeAnimation()
 				self.Wing:setZRot( 7 )
 				WingFrame2( Wing, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Wing:close()
 	end )

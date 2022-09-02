@@ -4,9 +4,11 @@
 CoD.ZmNotif1_BckScl = InheritFrom( LUI.UIElement )
 CoD.ZmNotif1_BckScl.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.ZmNotif1_BckScl )
 	self.id = "ZmNotif1_BckScl"

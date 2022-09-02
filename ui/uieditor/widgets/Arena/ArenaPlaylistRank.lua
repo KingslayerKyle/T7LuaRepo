@@ -11,9 +11,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_SlideSubHeader" )
 CoD.ArenaPlaylistRank = InheritFrom( LUI.UIElement )
 CoD.ArenaPlaylistRank.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ArenaPlaylistRank )
 	self.id = "ArenaPlaylistRank"
@@ -171,18 +173,23 @@ CoD.ArenaPlaylistRank.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				ImageX:completeAnimation()
 				self.ImageX:setAlpha( 0 )
 				self.clipFinished( ImageX, {} )
+
 				ListHeader:completeAnimation()
 				self.ListHeader:setAlpha( 1 )
 				self.clipFinished( ListHeader, {} )
+
 				ArenaRankSolid:completeAnimation()
 				self.ArenaRankSolid:setAlpha( 0.3 )
 				self.clipFinished( ArenaRankSolid, {} )
+
 				ArenaRankAdd:completeAnimation()
 				self.ArenaRankAdd:setAlpha( 1 )
 				self.clipFinished( ArenaRankAdd, {} )
+
 				Stars:completeAnimation()
 				self.Stars:setAlpha( 1 )
 				self.clipFinished( Stars, {} )
@@ -197,6 +204,7 @@ CoD.ArenaPlaylistRank.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ImagePanel:close()
 		element.ImageBorder:close()

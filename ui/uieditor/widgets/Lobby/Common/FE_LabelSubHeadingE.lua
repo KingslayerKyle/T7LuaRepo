@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ListSubHeaderPanel" )
 CoD.FE_LabelSubHeadingE = InheritFrom( LUI.UIElement )
 CoD.FE_LabelSubHeadingE.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_LabelSubHeadingE )
 	self.id = "FE_LabelSubHeadingE"
@@ -38,6 +40,7 @@ CoD.FE_LabelSubHeadingE.new = function ( menu, controller )
 		end
 		return f2_local0
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( Label0, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )

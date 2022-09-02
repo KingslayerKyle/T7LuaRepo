@@ -4,9 +4,11 @@
 CoD.Social_PartyMemberIconLarge = InheritFrom( LUI.UIElement )
 CoD.Social_PartyMemberIconLarge.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_PartyMemberIconLarge )
 	self.id = "Social_PartyMemberIconLarge"
@@ -27,6 +29,7 @@ CoD.Social_PartyMemberIconLarge.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 0 )
 				self.clipFinished( Icon, {} )
@@ -35,6 +38,7 @@ CoD.Social_PartyMemberIconLarge.new = function ( menu, controller )
 		PartyMemberTopOrMiddle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Icon:completeAnimation()
 				self.Icon:setLeftRight( true, true, -2, 2 )
 				self.Icon:setTopBottom( true, true, -3, 7 )
@@ -46,6 +50,7 @@ CoD.Social_PartyMemberIconLarge.new = function ( menu, controller )
 		PartyMember = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Icon:completeAnimation()
 				self.Icon:setRGB( 0.29, 0.38, 0.68 )
 				self.Icon:setAlpha( 1 )
@@ -55,6 +60,7 @@ CoD.Social_PartyMemberIconLarge.new = function ( menu, controller )
 		OtherPartyMemberTopOrMiddle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Icon:completeAnimation()
 				self.Icon:setLeftRight( true, true, -2, 2 )
 				self.Icon:setTopBottom( true, true, -3, 8 )
@@ -66,6 +72,7 @@ CoD.Social_PartyMemberIconLarge.new = function ( menu, controller )
 		OtherPartyMember = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Icon:completeAnimation()
 				self.Icon:setRGB( 0.65, 0.65, 0.65 )
 				self.Icon:setAlpha( 1 )

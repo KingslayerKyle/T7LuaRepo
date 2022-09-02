@@ -4,9 +4,11 @@
 CoD.BowLauncherReticle_L2 = InheritFrom( LUI.UIElement )
 CoD.BowLauncherReticle_L2.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BowLauncherReticle_L2 )
 	self.id = "BowLauncherReticle_L2"
@@ -26,6 +28,7 @@ CoD.BowLauncherReticle_L2.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Line2:completeAnimation()
 				self.Line2:setAlpha( 1 )
 				self.clipFinished( Line2, {} )
@@ -34,6 +37,7 @@ CoD.BowLauncherReticle_L2.new = function ( menu, controller )
 		Drawn = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Line2:completeAnimation()
 				self.Line2:setAlpha( 0 )
 				self.clipFinished( Line2, {} )

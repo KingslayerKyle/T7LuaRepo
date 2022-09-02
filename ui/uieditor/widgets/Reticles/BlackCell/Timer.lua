@@ -4,9 +4,11 @@
 CoD.Timer = InheritFrom( LUI.UIElement )
 CoD.Timer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Timer )
 	self.id = "Timer"
@@ -64,15 +66,19 @@ CoD.Timer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				timerbgshadow:completeAnimation()
 				self.timerbgshadow:setAlpha( 0 )
 				self.clipFinished( timerbgshadow, {} )
+
 				timerbg:completeAnimation()
 				self.timerbg:setAlpha( 0 )
 				self.clipFinished( timerbg, {} )
+
 				TimerShadow:completeAnimation()
 				self.TimerShadow:setAlpha( 0 )
 				self.clipFinished( TimerShadow, {} )
+
 				Timer:completeAnimation()
 				self.Timer:setAlpha( 0 )
 				self.clipFinished( Timer, {} )
@@ -81,21 +87,26 @@ CoD.Timer.new = function ( menu, controller )
 		Targetting = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				timerbgshadow:completeAnimation()
 				self.timerbgshadow:setAlpha( 0.8 )
 				self.clipFinished( timerbgshadow, {} )
+
 				timerbg:completeAnimation()
 				self.timerbg:setAlpha( 1 )
 				self.clipFinished( timerbg, {} )
+
 				TimerShadow:completeAnimation()
 				self.TimerShadow:setAlpha( 0.8 )
 				self.clipFinished( TimerShadow, {} )
+
 				Timer:completeAnimation()
 				self.Timer:setAlpha( 1 )
 				self.clipFinished( Timer, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Targetting",
@@ -120,6 +131,7 @@ CoD.Timer.new = function ( menu, controller )
 			modelName = "currentWeapon.lockedOnEnemyTimeRemaining"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TimerShadow:close()
 		element.Timer:close()

@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Store.StoreFeaturedCenterButton" )
 CoD.Store_FeaturedFrame = InheritFrom( LUI.UIElement )
 CoD.Store_FeaturedFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Store_FeaturedFrame )
 	self.id = "Store_FeaturedFrame"
@@ -615,28 +617,36 @@ CoD.Store_FeaturedFrame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				itemStatus:completeAnimation()
 				self.itemStatus:setAlpha( 0 )
 				self.itemStatus:setText( Engine.Localize( "MENU_FILESHARE_LOADING" ) )
 				self.clipFinished( itemStatus, {} )
+
 				storeSpinner:completeAnimation()
 				self.storeSpinner:setAlpha( 0 )
 				self.clipFinished( storeSpinner, {} )
+
 				button2:completeAnimation()
 				self.button2:setAlpha( 1 )
 				self.clipFinished( button2, {} )
+
 				button6:completeAnimation()
 				self.button6:setAlpha( 1 )
 				self.clipFinished( button6, {} )
+
 				button3:completeAnimation()
 				self.button3:setAlpha( 1 )
 				self.clipFinished( button3, {} )
+
 				button1:completeAnimation()
 				self.button1:setAlpha( 1 )
 				self.clipFinished( button1, {} )
+
 				button5:completeAnimation()
 				self.button5:setAlpha( 1 )
 				self.clipFinished( button5, {} )
+
 				button4:completeAnimation()
 				self.button4:setAlpha( 1 )
 				self.clipFinished( button4, {} )
@@ -645,28 +655,36 @@ CoD.Store_FeaturedFrame.new = function ( menu, controller )
 		Loading = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				itemStatus:completeAnimation()
 				self.itemStatus:setAlpha( 1 )
 				self.itemStatus:setText( Engine.Localize( "MENU_FILESHARE_LOADING" ) )
 				self.clipFinished( itemStatus, {} )
+
 				storeSpinner:completeAnimation()
 				self.storeSpinner:setAlpha( 1 )
 				self.clipFinished( storeSpinner, {} )
+
 				button2:completeAnimation()
 				self.button2:setAlpha( 0 )
 				self.clipFinished( button2, {} )
+
 				button6:completeAnimation()
 				self.button6:setAlpha( 0 )
 				self.clipFinished( button6, {} )
+
 				button3:completeAnimation()
 				self.button3:setAlpha( 0 )
 				self.clipFinished( button3, {} )
+
 				button1:completeAnimation()
 				self.button1:setAlpha( 0 )
 				self.clipFinished( button1, {} )
+
 				button5:completeAnimation()
 				self.button5:setAlpha( 0 )
 				self.clipFinished( button5, {} )
+
 				button4:completeAnimation()
 				self.button4:setAlpha( 0 )
 				self.clipFinished( button4, {} )
@@ -675,28 +693,36 @@ CoD.Store_FeaturedFrame.new = function ( menu, controller )
 		NoItems = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				itemStatus:completeAnimation()
 				self.itemStatus:setAlpha( 1 )
 				self.itemStatus:setText( Engine.Localize( "MENU_STORE_NO_ITEMS" ) )
 				self.clipFinished( itemStatus, {} )
+
 				storeSpinner:completeAnimation()
 				self.storeSpinner:setAlpha( 0 )
 				self.clipFinished( storeSpinner, {} )
+
 				button2:completeAnimation()
 				self.button2:setAlpha( 0 )
 				self.clipFinished( button2, {} )
+
 				button6:completeAnimation()
 				self.button6:setAlpha( 0 )
 				self.clipFinished( button6, {} )
+
 				button3:completeAnimation()
 				self.button3:setAlpha( 0 )
 				self.clipFinished( button3, {} )
+
 				button1:completeAnimation()
 				self.button1:setAlpha( 0 )
 				self.clipFinished( button1, {} )
+
 				button5:completeAnimation()
 				self.button5:setAlpha( 0 )
 				self.clipFinished( button5, {} )
+
 				button4:completeAnimation()
 				self.button4:setAlpha( 0 )
 				self.clipFinished( button4, {} )
@@ -705,34 +731,43 @@ CoD.Store_FeaturedFrame.new = function ( menu, controller )
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				itemStatus:completeAnimation()
 				self.itemStatus:setAlpha( 0 )
 				self.itemStatus:setText( Engine.Localize( "MENU_FILESHARE_LOADING" ) )
 				self.clipFinished( itemStatus, {} )
+
 				storeSpinner:completeAnimation()
 				self.storeSpinner:setAlpha( 0 )
 				self.clipFinished( storeSpinner, {} )
+
 				button2:completeAnimation()
 				self.button2:setAlpha( 1 )
 				self.clipFinished( button2, {} )
+
 				button6:completeAnimation()
 				self.button6:setAlpha( 1 )
 				self.clipFinished( button6, {} )
+
 				button3:completeAnimation()
 				self.button3:setAlpha( 1 )
 				self.clipFinished( button3, {} )
+
 				button1:completeAnimation()
 				self.button1:setAlpha( 1 )
 				self.clipFinished( button1, {} )
+
 				button5:completeAnimation()
 				self.button5:setAlpha( 1 )
 				self.clipFinished( button5, {} )
+
 				button4:completeAnimation()
 				self.button4:setAlpha( 1 )
 				self.clipFinished( button4, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Loading",
@@ -784,6 +819,7 @@ CoD.Store_FeaturedFrame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.storeSpinner:close()
 		element.button2:close()

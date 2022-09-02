@@ -4,9 +4,11 @@
 CoD.vhud_ms_LockArrow = InheritFrom( LUI.UIElement )
 CoD.vhud_ms_LockArrow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ms_LockArrow )
 	self.id = "vhud_ms_LockArrow"
@@ -29,20 +31,24 @@ CoD.vhud_ms_LockArrow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		On = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image0:completeAnimation()
 				self.Image0:setRGB( 1, 0, 0.06 )
 				self.Image0:setAlpha( 1 )

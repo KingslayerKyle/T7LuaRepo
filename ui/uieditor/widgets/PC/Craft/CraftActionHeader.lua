@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ListSubHeaderGlow" )
 CoD.CraftActionHeader = InheritFrom( LUI.UIElement )
 CoD.CraftActionHeader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CraftActionHeader )
 	self.id = "CraftActionHeader"
@@ -38,6 +40,7 @@ CoD.CraftActionHeader.new = function ( menu, controller )
 			text:setText( Engine.Localize( actionName ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEListSubHeaderGlow0:close()
 		element.text:close()

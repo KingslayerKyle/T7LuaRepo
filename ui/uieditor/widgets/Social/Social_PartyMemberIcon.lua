@@ -4,9 +4,11 @@
 CoD.Social_PartyMemberIcon = InheritFrom( LUI.UIElement )
 CoD.Social_PartyMemberIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_PartyMemberIcon )
 	self.id = "Social_PartyMemberIcon"
@@ -26,6 +28,7 @@ CoD.Social_PartyMemberIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 1 )
 				self.clipFinished( Icon, {} )

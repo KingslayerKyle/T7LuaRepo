@@ -21,6 +21,7 @@ CoD.GunsmithStatsBranding.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunsmithStatsBranding )
 	self.id = "GunsmithStatsBranding"
@@ -47,12 +48,17 @@ CoD.GunsmithStatsBranding.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				sessionMode:completeAnimation()
+
 				sessionMode.modeText:completeAnimation()
 				self.sessionMode.modeText:setText( Engine.Localize( "MENU_MULTIPLAYER_CAPS" ) )
 				self.clipFinished( sessionMode, {} )
+
 				bo3BrandingLogo:completeAnimation()
+
 				bo3BrandingLogo.mpLogo:completeAnimation()
+
 				bo3BrandingLogo.cpLogo:completeAnimation()
 				self.bo3BrandingLogo.mpLogo:setAlpha( 1 )
 				self.bo3BrandingLogo.cpLogo:setAlpha( 0 )
@@ -62,12 +68,17 @@ CoD.GunsmithStatsBranding.new = function ( menu, controller )
 		Campaign = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				sessionMode:completeAnimation()
+
 				sessionMode.modeText:completeAnimation()
 				self.sessionMode.modeText:setText( Engine.Localize( "MENU_CAMPAIGN_CAPS" ) )
 				self.clipFinished( sessionMode, {} )
+
 				bo3BrandingLogo:completeAnimation()
+
 				bo3BrandingLogo.mpLogo:completeAnimation()
+
 				bo3BrandingLogo.cpLogo:completeAnimation()
 				self.bo3BrandingLogo.mpLogo:setAlpha( 0 )
 				self.bo3BrandingLogo.cpLogo:setAlpha( 1 )
@@ -75,6 +86,7 @@ CoD.GunsmithStatsBranding.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.sessionMode:close()
 		element.bo3BrandingLogo:close()

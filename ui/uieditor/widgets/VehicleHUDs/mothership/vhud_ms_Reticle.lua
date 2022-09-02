@@ -28,9 +28,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.mothership.vhud_ms_StatusWidgetBottom"
 CoD.vhud_ms_Reticle = InheritFrom( LUI.UIElement )
 CoD.vhud_ms_Reticle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ms_Reticle )
 	self.id = "vhud_ms_Reticle"
@@ -409,9 +411,11 @@ CoD.vhud_ms_Reticle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 42 )
+
 				local RingElement0Frame2 = function ( RingElement0, event )
 					local RingElement0Frame3 = function ( RingElement0, event )
 						local RingElement0Frame4 = function ( RingElement0, event )
@@ -2784,6 +2788,7 @@ CoD.vhud_ms_Reticle.new = function ( menu, controller )
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 42 )
+
 				local RingElement0Frame2 = function ( RingElement0, event )
 					if not event.interrupted then
 						RingElement0:beginAnimation( "keyframe", 400, false, false, CoD.TweenType.Linear )
@@ -2929,16 +2934,19 @@ CoD.vhud_ms_Reticle.new = function ( menu, controller )
 				self.msCenterInnerRing:setZRot( 0 )
 				self.msCenterInnerRing:setZoom( 0 )
 				msCenterInnerRingFrame2( msCenterInnerRing, {} )
+
 				msCenterPoint:completeAnimation()
 				self.msCenterPoint:setLeftRight( false, false, -5, 8 )
 				self.msCenterPoint:setTopBottom( false, false, -7, 6 )
 				self.msCenterPoint:setAlpha( 1 )
 				self.clipFinished( msCenterPoint, {} )
+
 				msMidDotsR:completeAnimation()
 				self.msMidDotsR:setLeftRight( false, false, -640, -640 )
 				self.msMidDotsR:setTopBottom( false, false, -360, -360 )
 				self.msMidDotsR:setAlpha( 0 )
 				self.clipFinished( msMidDotsR, {} )
+
 				msMidDotsL:completeAnimation()
 				self.msMidDotsL:setLeftRight( false, false, -640, -640 )
 				self.msMidDotsL:setTopBottom( false, false, -360, -360 )
@@ -3450,22 +3458,27 @@ CoD.vhud_ms_Reticle.new = function ( menu, controller )
 				self.vhudmsModLeft:setTopBottom( true, false, 30.32, 106.32 )
 				self.vhudmsModLeft:setAlpha( 1 )
 				vhudmsModLeftFrame2( vhudmsModLeft, {} )
+
 				vhudmsModRight:completeAnimation()
 				self.vhudmsModRight:setLeftRight( false, true, -744, -100 )
 				self.vhudmsModRight:setTopBottom( true, false, 41, 117 )
 				self.vhudmsModRight:setAlpha( 0 )
 				self.clipFinished( vhudmsModRight, {} )
+
 				vhudmsTimebar:completeAnimation()
 				self.vhudmsTimebar:setAlpha( 0.7 )
 				self.clipFinished( vhudmsTimebar, {} )
+
 				vhudmsSeating:completeAnimation()
 				self.vhudmsSeating:setAlpha( 0.9 )
 				self.clipFinished( vhudmsSeating, {} )
+
 				vhudmsStatusWidgetRight:completeAnimation()
 				self.vhudmsStatusWidgetRight:setLeftRight( false, true, -234.75, -152 )
 				self.vhudmsStatusWidgetRight:setTopBottom( false, false, -16.75, 145.18 )
 				self.vhudmsStatusWidgetRight:setAlpha( 0.7 )
 				self.clipFinished( vhudmsStatusWidgetRight, {} )
+
 				vhudmsStatusWidgetLeft:completeAnimation()
 				self.vhudmsStatusWidgetLeft:setLeftRight( true, false, 153.21, 240.21 )
 				self.vhudmsStatusWidgetLeft:setTopBottom( false, false, -20.2, 21.45 )
@@ -3495,40 +3508,47 @@ CoD.vhud_ms_Reticle.new = function ( menu, controller )
 		Zoom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 41 )
+
 				RingElement0:completeAnimation()
 				self.RingElement0:setLeftRight( false, false, -287.55, -230.55 )
 				self.RingElement0:setTopBottom( false, false, -201.44, -132.44 )
 				self.RingElement0:setAlpha( 0.7 )
 				self.RingElement0:setZoom( 0 )
 				self.clipFinished( RingElement0, {} )
+
 				RingElement1:completeAnimation()
 				self.RingElement1:setLeftRight( false, false, 231.71, 288.71 )
 				self.RingElement1:setTopBottom( false, false, -201.44, -132.44 )
 				self.RingElement1:setAlpha( 0.7 )
 				self.RingElement1:setZoom( 0 )
 				self.clipFinished( RingElement1, {} )
+
 				msBoldLightRight:completeAnimation()
 				self.msBoldLightRight:setLeftRight( false, false, 105, 342.38 )
 				self.msBoldLightRight:setTopBottom( false, false, -257.12, 265.12 )
 				self.msBoldLightRight:setAlpha( 0.3 )
 				self.msBoldLightRight:setZoom( -190 )
 				self.clipFinished( msBoldLightRight, {} )
+
 				msBoldLightLeft:completeAnimation()
 				self.msBoldLightLeft:setLeftRight( false, false, -341, -103.62 )
 				self.msBoldLightLeft:setTopBottom( false, false, -257.12, 265.12 )
 				self.msBoldLightLeft:setAlpha( 0.3 )
 				self.msBoldLightLeft:setZoom( -190 )
 				self.clipFinished( msBoldLightLeft, {} )
+
 				msDoubleArrowsLower:completeAnimation()
 				self.msDoubleArrowsLower:setLeftRight( false, false, -8, 14 )
 				self.msDoubleArrowsLower:setTopBottom( false, false, 226.01, 265.12 )
 				self.msDoubleArrowsLower:setAlpha( 0.3 )
 				self.clipFinished( msDoubleArrowsLower, {} )
+
 				msDoubleArrowsUpper:completeAnimation()
 				self.msDoubleArrowsUpper:setLeftRight( false, false, -8, 14 )
 				self.msDoubleArrowsUpper:setTopBottom( false, false, -260.12, -238 )
 				self.msDoubleArrowsUpper:setAlpha( 0.3 )
 				self.clipFinished( msDoubleArrowsUpper, {} )
+
 				msCenterInnerRing:completeAnimation()
 				self.msCenterInnerRing:setLeftRight( false, false, -211.25, 217.25 )
 				self.msCenterInnerRing:setTopBottom( false, false, -217, 211.5 )
@@ -3536,166 +3556,200 @@ CoD.vhud_ms_Reticle.new = function ( menu, controller )
 				self.msCenterInnerRing:setZRot( -45 )
 				self.msCenterInnerRing:setZoom( -300 )
 				self.clipFinished( msCenterInnerRing, {} )
+
 				msCenterPoint:completeAnimation()
 				self.msCenterPoint:setLeftRight( false, false, -5, 8 )
 				self.msCenterPoint:setTopBottom( false, false, -7, 6 )
 				self.msCenterPoint:setAlpha( 1 )
 				self.clipFinished( msCenterPoint, {} )
+
 				msMidDotsR:completeAnimation()
 				self.msMidDotsR:setLeftRight( false, false, -640, -640 )
 				self.msMidDotsR:setTopBottom( false, false, -360, -360 )
 				self.msMidDotsR:setAlpha( 0 )
 				self.clipFinished( msMidDotsR, {} )
+
 				msMidDotsL:completeAnimation()
 				self.msMidDotsL:setLeftRight( false, false, -640, -640 )
 				self.msMidDotsL:setTopBottom( false, false, -360, -360 )
 				self.msMidDotsL:setAlpha( 0 )
 				self.clipFinished( msMidDotsL, {} )
+
 				msOutsideArrowBlurR:completeAnimation()
 				self.msOutsideArrowBlurR:setLeftRight( false, false, 431.88, 509 )
 				self.msOutsideArrowBlurR:setTopBottom( false, false, -39.06, 38.06 )
 				self.msOutsideArrowBlurR:setAlpha( 0.2 )
 				self.clipFinished( msOutsideArrowBlurR, {} )
+
 				msOutsideArrowBlurL:completeAnimation()
 				self.msOutsideArrowBlurL:setLeftRight( false, false, -518.41, -441.29 )
 				self.msOutsideArrowBlurL:setTopBottom( false, false, -39.06, 38.06 )
 				self.msOutsideArrowBlurL:setAlpha( 0.2 )
 				self.clipFinished( msOutsideArrowBlurL, {} )
+
 				msOutsideArrowR:completeAnimation()
 				self.msOutsideArrowR:setLeftRight( false, false, 295.89, 329.23 )
 				self.msOutsideArrowR:setTopBottom( false, false, -26.37, 23.63 )
 				self.msOutsideArrowR:setAlpha( 0.2 )
 				self.clipFinished( msOutsideArrowR, {} )
+
 				msOutsideArrowL:completeAnimation()
 				self.msOutsideArrowL:setLeftRight( false, false, -334.75, -301.42 )
 				self.msOutsideArrowL:setTopBottom( false, false, -29, 21 )
 				self.msOutsideArrowL:setAlpha( 0.2 )
 				self.clipFinished( msOutsideArrowL, {} )
+
 				vhudmsFrameBottomRight:completeAnimation()
 				self.vhudmsFrameBottomRight:setLeftRight( false, true, -364.96, 116.04 )
 				self.vhudmsFrameBottomRight:setTopBottom( false, true, -124.5, 20.5 )
 				self.vhudmsFrameBottomRight:setAlpha( 1 )
 				self.clipFinished( vhudmsFrameBottomRight, {} )
+
 				vhudmsFrameBottomLeft0:completeAnimation()
 				self.vhudmsFrameBottomLeft0:setLeftRight( true, false, -143.66, 337.34 )
 				self.vhudmsFrameBottomLeft0:setTopBottom( false, true, -124.5, 20.5 )
 				self.vhudmsFrameBottomLeft0:setAlpha( 1 )
 				self.clipFinished( vhudmsFrameBottomLeft0, {} )
+
 				vhudmsFrameTopCenter:completeAnimation()
 				self.vhudmsFrameTopCenter:setLeftRight( false, false, -250.03, 269.03 )
 				self.vhudmsFrameTopCenter:setTopBottom( true, false, 36, 99.88 )
 				self.vhudmsFrameTopCenter:setAlpha( 1 )
 				self.clipFinished( vhudmsFrameTopCenter, {} )
+
 				vhudmsFrameBottomCenter:completeAnimation()
 				self.vhudmsFrameBottomCenter:setLeftRight( false, false, -245.5, 273.5 )
 				self.vhudmsFrameBottomCenter:setTopBottom( false, true, -100, -36 )
 				self.vhudmsFrameBottomCenter:setAlpha( 0.6 )
 				self.clipFinished( vhudmsFrameBottomCenter, {} )
+
 				vhudmsFrameTopLeft0:completeAnimation()
 				self.vhudmsFrameTopLeft0:setLeftRight( true, false, -131.36, 349.43 )
 				self.vhudmsFrameTopLeft0:setTopBottom( true, false, -16, 129 )
 				self.vhudmsFrameTopLeft0:setAlpha( 1 )
 				self.clipFinished( vhudmsFrameTopLeft0, {} )
+
 				vhudmsFrameTopRight:completeAnimation()
 				self.vhudmsFrameTopRight:setLeftRight( false, true, -350.97, 129.82 )
 				self.vhudmsFrameTopRight:setTopBottom( true, false, -16, 129 )
 				self.vhudmsFrameTopRight:setAlpha( 1 )
 				self.clipFinished( vhudmsFrameTopRight, {} )
+
 				vhudmsOutsideHashRing0:completeAnimation()
 				self.vhudmsOutsideHashRing0:setLeftRight( false, false, -441.29, -289.96 )
 				self.vhudmsOutsideHashRing0:setTopBottom( false, false, -209.31, 220.78 )
 				self.vhudmsOutsideHashRing0:setAlpha( 1 )
 				self.clipFinished( vhudmsOutsideHashRing0, {} )
+
 				vhudmsHashRotateRight:completeAnimation()
 				self.vhudmsHashRotateRight:setLeftRight( false, false, 283.54, 509 )
 				self.vhudmsHashRotateRight:setTopBottom( false, false, -241.28, 249.28 )
 				self.clipFinished( vhudmsHashRotateRight, {} )
+
 				vhudmsGridDotsHostR:completeAnimation()
 				self.vhudmsGridDotsHostR:setLeftRight( false, false, 141.74, 261 )
 				self.vhudmsGridDotsHostR:setTopBottom( false, false, -61.13, 58.13 )
 				self.vhudmsGridDotsHostR:setAlpha( 1 )
 				self.clipFinished( vhudmsGridDotsHostR, {} )
+
 				vhudmsGridDotsHostR0:completeAnimation()
 				self.vhudmsGridDotsHostR0:setLeftRight( false, false, -259.05, -139.78 )
 				self.vhudmsGridDotsHostR0:setTopBottom( false, false, -61.13, 58.13 )
 				self.vhudmsGridDotsHostR0:setAlpha( 1 )
 				self.clipFinished( vhudmsGridDotsHostR0, {} )
+
 				vhudmsOutsideLine:completeAnimation()
 				self.vhudmsOutsideLine:setLeftRight( false, true, 0, 44.21 )
 				self.vhudmsOutsideLine:setTopBottom( false, false, -9, 5.74 )
 				self.vhudmsOutsideLine:setAlpha( 1 )
 				self.clipFinished( vhudmsOutsideLine, {} )
+
 				vhudmsOutsideLine0:completeAnimation()
 				self.vhudmsOutsideLine0:setLeftRight( true, false, -44.21, 0 )
 				self.vhudmsOutsideLine0:setTopBottom( false, false, -9, 5.74 )
 				self.vhudmsOutsideLine0:setAlpha( 1 )
 				self.clipFinished( vhudmsOutsideLine0, {} )
+
 				vhudmsLockOnNotification:completeAnimation()
 				self.vhudmsLockOnNotification:setLeftRight( false, false, -17, 23.18 )
 				self.vhudmsLockOnNotification:setTopBottom( true, false, 144.28, 184.46 )
 				self.vhudmsLockOnNotification:setAlpha( 1 )
 				self.clipFinished( vhudmsLockOnNotification, {} )
+
 				msCenterDiamondT:completeAnimation()
 				self.msCenterDiamondT:setLeftRight( false, false, -14.75, 17.75 )
 				self.msCenterDiamondT:setTopBottom( false, false, -100.38, -11 )
 				self.msCenterDiamondT:setAlpha( 1 )
 				self.clipFinished( msCenterDiamondT, {} )
+
 				msCenterDiamondB:completeAnimation()
 				self.msCenterDiamondB:setLeftRight( false, false, -14.75, 17.75 )
 				self.msCenterDiamondB:setTopBottom( false, false, 8, 97.38 )
 				self.msCenterDiamondB:setAlpha( 1 )
 				self.clipFinished( msCenterDiamondB, {} )
+
 				msCenterDiamondSideL:completeAnimation()
 				self.msCenterDiamondSideL:setLeftRight( false, false, -57.75, -8.75 )
 				self.msCenterDiamondSideL:setTopBottom( false, false, -17.83, 14.83 )
 				self.msCenterDiamondSideL:setAlpha( 1 )
 				self.clipFinished( msCenterDiamondSideL, {} )
+
 				msCenterDiamondSideR:completeAnimation()
 				self.msCenterDiamondSideR:setLeftRight( false, false, 11, 60 )
 				self.msCenterDiamondSideR:setTopBottom( false, false, -16.83, 15.83 )
 				self.msCenterDiamondSideR:setAlpha( 1 )
 				self.clipFinished( msCenterDiamondSideR, {} )
+
 				vhudmsReticleLineHostLL:completeAnimation()
 				self.vhudmsReticleLineHostLL:setLeftRight( false, false, -270.57, -115.14 )
 				self.vhudmsReticleLineHostLL:setTopBottom( false, false, 97.38, 154.64 )
 				self.clipFinished( vhudmsReticleLineHostLL, {} )
+
 				vhudmsReticleLineHostLR:completeAnimation()
 				self.vhudmsReticleLineHostLR:setLeftRight( false, false, 119.61, 275.04 )
 				self.vhudmsReticleLineHostLR:setTopBottom( false, false, 97.38, 154.64 )
 				self.clipFinished( vhudmsReticleLineHostLR, {} )
+
 				vhudmsReticleLineHostUL:completeAnimation()
 				self.vhudmsReticleLineHostUL:setLeftRight( false, false, -270.57, -115.14 )
 				self.vhudmsReticleLineHostUL:setTopBottom( false, false, -153.54, -96.28 )
 				self.clipFinished( vhudmsReticleLineHostUL, {} )
+
 				vhudmsReticleLineHostUR:completeAnimation()
 				self.vhudmsReticleLineHostUR:setLeftRight( false, false, 119.61, 275.04 )
 				self.vhudmsReticleLineHostUR:setTopBottom( false, false, -153.54, -96.28 )
 				self.clipFinished( vhudmsReticleLineHostUR, {} )
+
 				vhudmsModLeft:completeAnimation()
 				self.vhudmsModLeft:setLeftRight( true, false, 0, 644 )
 				self.vhudmsModLeft:setTopBottom( true, false, 29.94, 105.94 )
 				self.vhudmsModLeft:setAlpha( 1 )
 				self.clipFinished( vhudmsModLeft, {} )
+
 				vhudmsTimebar:completeAnimation()
 				self.vhudmsTimebar:setLeftRight( false, true, -297.62, -64 )
 				self.vhudmsTimebar:setTopBottom( true, false, 81, 89.63 )
 				self.vhudmsTimebar:setAlpha( 0.7 )
 				self.clipFinished( vhudmsTimebar, {} )
+
 				vhudmsSeating:completeAnimation()
 				self.vhudmsSeating:setLeftRight( false, true, -238.75, -137.75 )
 				self.vhudmsSeating:setTopBottom( true, false, 92.32, 198.32 )
 				self.vhudmsSeating:setAlpha( 0.9 )
 				self.clipFinished( vhudmsSeating, {} )
+
 				vhudmsStatusWidgetRight:completeAnimation()
 				self.vhudmsStatusWidgetRight:setLeftRight( false, true, -234.75, -152 )
 				self.vhudmsStatusWidgetRight:setTopBottom( false, false, -16.75, 145.18 )
 				self.vhudmsStatusWidgetRight:setAlpha( 0.7 )
 				self.clipFinished( vhudmsStatusWidgetRight, {} )
+
 				vhudmsStatusWidgetLeft:completeAnimation()
 				self.vhudmsStatusWidgetLeft:setLeftRight( true, false, 153.21, 240.21 )
 				self.vhudmsStatusWidgetLeft:setTopBottom( false, false, -20.2, 21.45 )
 				self.vhudmsStatusWidgetLeft:setAlpha( 0.7 )
 				self.clipFinished( vhudmsStatusWidgetLeft, {} )
+
 				vhudmsStatusWidgetBottom:completeAnimation()
 				self.vhudmsStatusWidgetBottom:setLeftRight( false, false, -66.63, 72.63 )
 				self.vhudmsStatusWidgetBottom:setTopBottom( false, false, 181.5, 211.5 )
@@ -3704,6 +3758,7 @@ CoD.vhud_ms_Reticle.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 42 )
+
 				local RingElement0Frame2 = function ( RingElement0, event )
 					if not event.interrupted then
 						RingElement0:beginAnimation( "keyframe", 400, false, false, CoD.TweenType.Linear )
@@ -3849,16 +3904,19 @@ CoD.vhud_ms_Reticle.new = function ( menu, controller )
 				self.msCenterInnerRing:setZRot( -45 )
 				self.msCenterInnerRing:setZoom( -300 )
 				msCenterInnerRingFrame2( msCenterInnerRing, {} )
+
 				msCenterPoint:completeAnimation()
 				self.msCenterPoint:setLeftRight( false, false, -5, 8 )
 				self.msCenterPoint:setTopBottom( false, false, -7, 6 )
 				self.msCenterPoint:setAlpha( 1 )
 				self.clipFinished( msCenterPoint, {} )
+
 				msMidDotsR:completeAnimation()
 				self.msMidDotsR:setLeftRight( false, false, -640, -640 )
 				self.msMidDotsR:setTopBottom( false, false, -360, -360 )
 				self.msMidDotsR:setAlpha( 0 )
 				self.clipFinished( msMidDotsR, {} )
+
 				msMidDotsL:completeAnimation()
 				self.msMidDotsL:setLeftRight( false, false, -640, -640 )
 				self.msMidDotsL:setTopBottom( false, false, -360, -360 )
@@ -4389,16 +4447,20 @@ CoD.vhud_ms_Reticle.new = function ( menu, controller )
 				self.vhudmsModRight:setTopBottom( true, false, 36, 112 )
 				self.vhudmsModRight:setAlpha( 0 )
 				vhudmsModRightFrame2( vhudmsModRight, {} )
+
 				vhudmsTimebar:completeAnimation()
 				self.vhudmsTimebar:setAlpha( 0.7 )
 				self.clipFinished( vhudmsTimebar, {} )
+
 				vhudmsSeating:completeAnimation()
 				self.vhudmsSeating:setAlpha( 0.9 )
 				self.clipFinished( vhudmsSeating, {} )
+
 				vhudmsStatusWidgetRight:completeAnimation()
 				self.vhudmsStatusWidgetRight:setLeftRight( false, true, -234.75, -152 )
 				self.vhudmsStatusWidgetRight:setTopBottom( false, false, -16.75, 145.18 )
 				self.clipFinished( vhudmsStatusWidgetRight, {} )
+
 				vhudmsStatusWidgetLeft:completeAnimation()
 				self.vhudmsStatusWidgetLeft:setLeftRight( true, false, 153.21, 240.21 )
 				self.vhudmsStatusWidgetLeft:setTopBottom( false, false, -20.2, 21.45 )
@@ -4424,6 +4486,7 @@ CoD.vhud_ms_Reticle.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RingElement0:close()
 		element.RingElement1:close()

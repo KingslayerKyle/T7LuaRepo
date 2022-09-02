@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Common.common_PanelBox01" )
 CoD.BM_Contracts_ContractAmount_ARR_Widget = InheritFrom( LUI.UIElement )
 CoD.BM_Contracts_ContractAmount_ARR_Widget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Contracts_ContractAmount_ARR_Widget )
 	self.id = "BM_Contracts_ContractAmount_ARR_Widget"
@@ -87,15 +89,18 @@ CoD.BM_Contracts_ContractAmount_ARR_Widget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Max = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ContractCounter0:completeAnimation()
 				self.ContractCounter0:setLeftRight( false, true, -100.25, -34.25 )
 				self.ContractCounter0:setTopBottom( true, false, 14, 59 )
 				self.clipFinished( ContractCounter0, {} )
+
 				TextBoxMax:completeAnimation()
 				self.TextBoxMax:setLeftRight( false, true, -103.75, -30.75 )
 				self.TextBoxMax:setTopBottom( true, false, 46.5, 65.5 )
@@ -106,18 +111,22 @@ CoD.BM_Contracts_ContractAmount_ARR_Widget.new = function ( menu, controller )
 		None = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				GoldContracts:completeAnimation()
 				self.GoldContracts:setAlpha( 0 )
 				self.clipFinished( GoldContracts, {} )
+
 				SilverContracts:completeAnimation()
 				self.SilverContracts:setAlpha( 1 )
 				self.clipFinished( SilverContracts, {} )
+
 				ContractCounter0:completeAnimation()
 				self.ContractCounter0:setRGB( 0.4, 0.4, 0.4 )
 				self.clipFinished( ContractCounter0, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactive:close()
 		element.commonPanelBox02:close()

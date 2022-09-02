@@ -12,9 +12,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.BlackmarketRewardsCarouselItemInternal = InheritFrom( LUI.UIElement )
 CoD.BlackmarketRewardsCarouselItemInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BlackmarketRewardsCarouselItemInternal )
 	self.id = "BlackmarketRewardsCarouselItemInternal"
@@ -183,31 +185,40 @@ CoD.BlackmarketRewardsCarouselItemInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				CardTitle:completeAnimation()
 				self.CardTitle:setText( Engine.Localize( "MENU_PURCHASE_AVAILABLE" ) )
 				self.clipFinished( CardTitle, {} )
+
 				verticalScrollingTextBox18:completeAnimation()
 				self.verticalScrollingTextBox18:setAlpha( 1 )
 				self.clipFinished( verticalScrollingTextBox18, {} )
+
 				BlackmarketIndividualRewardItem:completeAnimation()
 				self.BlackmarketIndividualRewardItem:setLeftRight( false, false, -120, 120 )
 				self.BlackmarketIndividualRewardItem:setTopBottom( true, false, 173, 233 )
 				self.clipFinished( BlackmarketIndividualRewardItem, {} )
+
 				CryptokeyBalanceBacking:completeAnimation()
 				self.CryptokeyBalanceBacking:setAlpha( 0.2 )
 				self.clipFinished( CryptokeyBalanceBacking, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 0.25 )
 				self.clipFinished( Border, {} )
+
 				CryptokeyBalanceTitle:completeAnimation()
 				self.CryptokeyBalanceTitle:setAlpha( 1 )
 				self.clipFinished( CryptokeyBalanceTitle, {} )
+
 				CryptoIcon:completeAnimation()
 				self.CryptoIcon:setAlpha( 1 )
 				self.clipFinished( CryptoIcon, {} )
+
 				CryptokeyBalanceNum:completeAnimation()
 				self.CryptokeyBalanceNum:setAlpha( 1 )
 				self.clipFinished( CryptokeyBalanceNum, {} )
+
 				BonusCryptokeyBlackmarketIndividualRewardItem:completeAnimation()
 				self.BonusCryptokeyBlackmarketIndividualRewardItem:setAlpha( 0 )
 				self.clipFinished( BonusCryptokeyBlackmarketIndividualRewardItem, {} )
@@ -216,37 +227,47 @@ CoD.BlackmarketRewardsCarouselItemInternal.new = function ( menu, controller )
 		ShowBonusCryptokeys = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				CardTitle:completeAnimation()
 				self.CardTitle:setText( Engine.Localize( "MENU_PURCHASE_AVAILABLE" ) )
 				self.clipFinished( CardTitle, {} )
+
 				verticalScrollingTextBox18:completeAnimation()
 				self.verticalScrollingTextBox18:setAlpha( 1 )
 				self.clipFinished( verticalScrollingTextBox18, {} )
+
 				BlackmarketIndividualRewardItem:completeAnimation()
 				self.BlackmarketIndividualRewardItem:setLeftRight( false, false, -110, 110 )
 				self.BlackmarketIndividualRewardItem:setTopBottom( true, false, 173, 233 )
 				self.clipFinished( BlackmarketIndividualRewardItem, {} )
+
 				CryptokeyBalanceBacking:completeAnimation()
 				self.CryptokeyBalanceBacking:setAlpha( 0.2 )
 				self.clipFinished( CryptokeyBalanceBacking, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 0.25 )
 				self.clipFinished( Border, {} )
+
 				CryptokeyBalanceTitle:completeAnimation()
 				self.CryptokeyBalanceTitle:setAlpha( 1 )
 				self.clipFinished( CryptokeyBalanceTitle, {} )
+
 				CryptoIcon:completeAnimation()
 				self.CryptoIcon:setAlpha( 1 )
 				self.clipFinished( CryptoIcon, {} )
+
 				CryptokeyBalanceNum:completeAnimation()
 				self.CryptokeyBalanceNum:setAlpha( 1 )
 				self.clipFinished( CryptokeyBalanceNum, {} )
+
 				BonusCryptokeyBlackmarketIndividualRewardItem:completeAnimation()
 				self.BonusCryptokeyBlackmarketIndividualRewardItem:setAlpha( 1 )
 				self.clipFinished( BonusCryptokeyBlackmarketIndividualRewardItem, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ShowBonusCryptokeys",
@@ -263,6 +284,7 @@ CoD.BlackmarketRewardsCarouselItemInternal.new = function ( menu, controller )
 			modelName = "showBonusCryptokeys"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.cacButtonBoxLrgInactiveStroke0:close()
 		element.FEButtonPanel0:close()

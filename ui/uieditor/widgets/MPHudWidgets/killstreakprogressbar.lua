@@ -42,9 +42,11 @@ end
 CoD.KillstreakProgressBar = InheritFrom( LUI.UIElement )
 CoD.KillstreakProgressBar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.KillstreakProgressBar )
 	self.id = "KillstreakProgressBar"
@@ -76,21 +78,25 @@ CoD.KillstreakProgressBar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				progressBarBackground:completeAnimation()
 				self.progressBarBackground:setRGB( 1, 1, 1 )
 				self.progressBarBackground:setAlpha( 1 )
 				self.clipFinished( progressBarBackground, {} )
+
 				progressArrowBar:completeAnimation()
 				self.progressArrowBar:setLeftRight( false, false, 0, 32 )
 				self.progressArrowBar:setTopBottom( false, false, 18, 50 )
 				self.progressArrowBar:setAlpha( 1 )
 				self.clipFinished( progressArrowBar, {} )
+
 				killstreakProgressBarFill:completeAnimation()
 				self.killstreakProgressBarFill:setAlpha( 1 )
 				self.clipFinished( killstreakProgressBarFill, {} )
 			end,
 			Reward2 = function ()
 				self:setupElementClipCounter( 1 )
+
 				progressArrowBar:completeAnimation()
 				self.progressArrowBar:setLeftRight( false, false, 6, 38 )
 				self.progressArrowBar:setTopBottom( false, false, -13, 19 )
@@ -98,6 +104,7 @@ CoD.KillstreakProgressBar.new = function ( menu, controller )
 			end,
 			Reward1 = function ()
 				self:setupElementClipCounter( 1 )
+
 				progressArrowBar:completeAnimation()
 				self.progressArrowBar:setLeftRight( false, false, 12, 44 )
 				self.progressArrowBar:setTopBottom( false, false, -54, -22 )
@@ -105,6 +112,7 @@ CoD.KillstreakProgressBar.new = function ( menu, controller )
 			end,
 			Reward3 = function ()
 				self:setupElementClipCounter( 1 )
+
 				progressArrowBar:completeAnimation()
 				self.progressArrowBar:setLeftRight( false, false, 1, 33 )
 				self.progressArrowBar:setTopBottom( false, false, 18, 50 )
@@ -114,13 +122,16 @@ CoD.KillstreakProgressBar.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				progressBarBackground:completeAnimation()
 				self.progressBarBackground:setRGB( 1, 1, 1 )
 				self.progressBarBackground:setAlpha( 0 )
 				self.clipFinished( progressBarBackground, {} )
+
 				progressArrowBar:completeAnimation()
 				self.progressArrowBar:setAlpha( 0 )
 				self.clipFinished( progressArrowBar, {} )
+
 				killstreakProgressBarFill:completeAnimation()
 				self.killstreakProgressBarFill:setAlpha( 0 )
 				self.clipFinished( killstreakProgressBarFill, {} )
@@ -129,18 +140,22 @@ CoD.KillstreakProgressBar.new = function ( menu, controller )
 		Show = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				progressBarBackground:completeAnimation()
 				self.progressBarBackground:setAlpha( 1 )
 				self.clipFinished( progressBarBackground, {} )
+
 				progressArrowBar:completeAnimation()
 				self.progressArrowBar:setAlpha( 1 )
 				self.clipFinished( progressArrowBar, {} )
+
 				killstreakProgressBarFill:completeAnimation()
 				self.killstreakProgressBarFill:setAlpha( 1 )
 				self.clipFinished( killstreakProgressBarFill, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.killstreakProgressBarFill:close()
 	end )

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.RejackWidget.RejackInternal" )
 CoD.Rejack = InheritFrom( LUI.UIElement )
 CoD.Rejack.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Rejack )
 	self.id = "Rejack"

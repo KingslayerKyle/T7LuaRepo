@@ -16,9 +16,11 @@ end
 CoD.ScoreboardTabWidgetZM = InheritFrom( LUI.UIElement )
 CoD.ScoreboardTabWidgetZM.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreboardTabWidgetZM )
 	self.id = "ScoreboardTabWidgetZM"
@@ -103,6 +105,7 @@ CoD.ScoreboardTabWidgetZM.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local VignetteBackFrame2 = function ( VignetteBack, event )
 					if not event.interrupted then
 						VignetteBack:beginAnimation( "keyframe", 519, false, false, CoD.TweenType.Linear )
@@ -131,6 +134,7 @@ CoD.ScoreboardTabWidgetZM.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.VignetteBack:close()
 		element.AARScoreboardHeaderWidget:close()

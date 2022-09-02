@@ -4,9 +4,11 @@
 CoD.Waypoint_TextBG = InheritFrom( LUI.UIElement )
 CoD.Waypoint_TextBG.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Waypoint_TextBG )
 	self.id = "Waypoint_TextBG"
@@ -40,6 +42,7 @@ CoD.Waypoint_TextBG.new = function ( menu, controller )
 	text:setLetterSpacing( 1 )
 	text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( text, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 4 )
 	end )
@@ -58,12 +61,15 @@ CoD.Waypoint_TextBG.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				left:completeAnimation()
 				self.left:setAlpha( 1 )
 				self.clipFinished( left, {} )
+
 				arrowTExt:completeAnimation()
 				self.arrowTExt:setAlpha( 1 )
 				self.clipFinished( arrowTExt, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 1 )
 				self.clipFinished( text, {} )
@@ -72,18 +78,22 @@ CoD.Waypoint_TextBG.new = function ( menu, controller )
 		NoText = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				left:completeAnimation()
 				self.left:setAlpha( 0 )
 				self.clipFinished( left, {} )
+
 				arrowTExt:completeAnimation()
 				self.arrowTExt:setAlpha( 0 )
 				self.clipFinished( arrowTExt, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0 )
 				self.clipFinished( text, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.text:close()
 	end )

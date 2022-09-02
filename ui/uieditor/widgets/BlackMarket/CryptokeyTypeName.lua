@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BlackMarket.CryptokeyTypeNameInternal" )
 CoD.CryptokeyTypeName = InheritFrom( LUI.UIElement )
 CoD.CryptokeyTypeName.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CryptokeyTypeName )
 	self.id = "CryptokeyTypeName"
@@ -36,6 +38,7 @@ CoD.CryptokeyTypeName.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CryptokeyTypeNameInternal:completeAnimation()
 				self.CryptokeyTypeNameInternal:setAlpha( 0 )
 				self.clipFinished( CryptokeyTypeNameInternal, {} )
@@ -44,12 +47,14 @@ CoD.CryptokeyTypeName.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CryptokeyTypeNameInternal:completeAnimation()
 				self.CryptokeyTypeNameInternal:setAlpha( 1 )
 				self.clipFinished( CryptokeyTypeNameInternal, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -66,6 +71,7 @@ CoD.CryptokeyTypeName.new = function ( menu, controller )
 			modelName = "rarity"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CryptokeyTypeNameInternal:close()
 	end )

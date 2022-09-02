@@ -4,9 +4,11 @@
 CoD.RankUpNotification_WingContainer = InheritFrom( LUI.UIElement )
 CoD.RankUpNotification_WingContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RankUpNotification_WingContainer )
 	self.id = "RankUpNotification_WingContainer"
@@ -34,9 +36,11 @@ CoD.RankUpNotification_WingContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

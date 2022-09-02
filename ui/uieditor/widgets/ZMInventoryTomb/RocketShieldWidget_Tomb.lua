@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventory.RocketShieldBluePrint.RocketShieldPiec
 CoD.RocketShieldWidget_Tomb = InheritFrom( LUI.UIElement )
 CoD.RocketShieldWidget_Tomb.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RocketShieldWidget_Tomb )
 	self.id = "RocketShieldWidget_Tomb"
@@ -214,15 +216,19 @@ CoD.RocketShieldWidget_Tomb.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				RocketShieldPieceWidget1:completeAnimation()
 				self.RocketShieldPieceWidget1:setAlpha( 0 )
 				self.clipFinished( RocketShieldPieceWidget1, {} )
+
 				RocketShieldPieceWidget2:completeAnimation()
 				self.RocketShieldPieceWidget2:setAlpha( 0 )
 				self.clipFinished( RocketShieldPieceWidget2, {} )
+
 				RocketShieldPieceWidget3:completeAnimation()
 				self.RocketShieldPieceWidget3:setAlpha( 0 )
 				self.clipFinished( RocketShieldPieceWidget3, {} )
@@ -231,21 +237,25 @@ CoD.RocketShieldWidget_Tomb.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				RocketShieldPieceWidget1:completeAnimation()
 				self.RocketShieldPieceWidget1:setLeftRight( true, false, 19, 108 )
 				self.RocketShieldPieceWidget1:setTopBottom( true, false, 22, 111 )
 				self.RocketShieldPieceWidget1:setAlpha( 1 )
 				self.RocketShieldPieceWidget1:setScale( 1 )
 				self.clipFinished( RocketShieldPieceWidget1, {} )
+
 				RocketShieldPieceWidget2:completeAnimation()
 				self.RocketShieldPieceWidget2:setLeftRight( true, false, 119.5, 208.5 )
 				self.RocketShieldPieceWidget2:setTopBottom( true, false, 20, 109 )
 				self.RocketShieldPieceWidget2:setAlpha( 1 )
 				self.RocketShieldPieceWidget2:setScale( 1 )
 				self.clipFinished( RocketShieldPieceWidget2, {} )
+
 				RocketShieldPieceWidget3:completeAnimation()
 				self.RocketShieldPieceWidget3:setLeftRight( true, false, 216, 305 )
 				self.RocketShieldPieceWidget3:setTopBottom( true, false, 20, 109 )
@@ -257,6 +267,7 @@ CoD.RocketShieldWidget_Tomb.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local bgFrame2 = function ( bg, event )
 					local bgFrame3 = function ( bg, event )
 						local bgFrame4 = function ( bg, event )
@@ -293,18 +304,21 @@ CoD.RocketShieldWidget_Tomb.new = function ( menu, controller )
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				bgFrame2( bg, {} )
+
 				RocketShieldPieceWidget1:completeAnimation()
 				self.RocketShieldPieceWidget1:setLeftRight( true, false, 36.5, 125.5 )
 				self.RocketShieldPieceWidget1:setTopBottom( true, false, 17.5, 106.5 )
 				self.RocketShieldPieceWidget1:setAlpha( 1 )
 				self.RocketShieldPieceWidget1:setScale( 0.81 )
 				self.clipFinished( RocketShieldPieceWidget1, {} )
+
 				RocketShieldPieceWidget2:completeAnimation()
 				self.RocketShieldPieceWidget2:setLeftRight( true, false, 120, 209 )
 				self.RocketShieldPieceWidget2:setTopBottom( true, false, 17, 106 )
 				self.RocketShieldPieceWidget2:setAlpha( 1 )
 				self.RocketShieldPieceWidget2:setScale( 0.81 )
 				self.clipFinished( RocketShieldPieceWidget2, {} )
+
 				RocketShieldPieceWidget3:completeAnimation()
 				self.RocketShieldPieceWidget3:setLeftRight( true, false, 200.5, 289.5 )
 				self.RocketShieldPieceWidget3:setTopBottom( true, false, 17, 106 )
@@ -314,6 +328,7 @@ CoD.RocketShieldWidget_Tomb.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Scoreboard",
@@ -344,6 +359,7 @@ CoD.RocketShieldWidget_Tomb.new = function ( menu, controller )
 			modelName = "zmInventory.widget_shield_parts"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RocketShieldPieceWidget1:close()
 		element.RocketShieldPieceWidget2:close()

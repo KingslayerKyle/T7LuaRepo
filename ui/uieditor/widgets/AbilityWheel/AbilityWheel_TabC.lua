@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.AbilityWheel.AbilityWheel_TopHeader" )
 CoD.AbilityWheel_TabC = InheritFrom( LUI.UIElement )
 CoD.AbilityWheel_TabC.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AbilityWheel_TabC )
 	self.id = "AbilityWheel_TabC"
@@ -62,6 +64,7 @@ CoD.AbilityWheel_TabC.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local TabImgFrame2 = function ( TabImg, event )
 					if not event.interrupted then
 						TabImg:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -95,6 +98,7 @@ CoD.AbilityWheel_TabC.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AbilityWheelTopHeader:close()
 		element.TextTab:close()

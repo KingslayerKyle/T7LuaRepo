@@ -4,9 +4,11 @@
 CoD.BM_Bribe_Selected_Hover = InheritFrom( LUI.UIElement )
 CoD.BM_Bribe_Selected_Hover.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Bribe_Selected_Hover )
 	self.id = "BM_Bribe_Selected_Hover"
@@ -32,6 +34,7 @@ CoD.BM_Bribe_Selected_Hover.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local BribeSelectionFrame2 = function ( BribeSelection, event )
 					local BribeSelectionFrame3 = function ( BribeSelection, event )
 						if not event.interrupted then
@@ -58,9 +61,11 @@ CoD.BM_Bribe_Selected_Hover.new = function ( menu, controller )
 				BribeSelection:completeAnimation()
 				self.BribeSelection:setAlpha( 0 )
 				BribeSelectionFrame2( BribeSelection, {} )
+
 				BribeSelection0:completeAnimation()
 				self.BribeSelection0:setAlpha( 1 )
 				self.clipFinished( BribeSelection0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

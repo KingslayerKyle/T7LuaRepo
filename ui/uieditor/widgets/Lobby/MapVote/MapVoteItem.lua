@@ -11,9 +11,11 @@ require( "ui.uieditor.widgets.Lobby.Lists.Members.LobbyMemberBackingFooter" )
 CoD.MapVoteItem = InheritFrom( LUI.UIElement )
 CoD.MapVoteItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.MapVoteItem )
 	self.id = "MapVoteItem"
@@ -145,35 +147,43 @@ CoD.MapVoteItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				LobbyMemberBackingMask0:completeAnimation()
 				self.LobbyMemberBackingMask0:setRGB( 0, 0, 0 )
 				self.clipFinished( LobbyMemberBackingMask0, {} )
+
 				voteCount:completeAnimation()
 				self.voteCount:setRGB( 1, 1, 1 )
 				self.clipFinished( voteCount, {} )
+
 				LobbyMemberBackingFooter00:completeAnimation()
 				self.LobbyMemberBackingFooter00:setAlpha( 0 )
 				self.clipFinished( LobbyMemberBackingFooter00, {} )
+
 				LobbyMemberBackingFooter0:completeAnimation()
 				self.LobbyMemberBackingFooter0:setAlpha( 0 )
 				self.clipFinished( LobbyMemberBackingFooter0, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 2 )
+
 				LobbyMemberBackingFooter00:completeAnimation()
 				self.LobbyMemberBackingFooter00:setLeftRight( true, true, -2, 2 )
 				self.LobbyMemberBackingFooter00:setTopBottom( true, false, 0, 5 )
 				self.LobbyMemberBackingFooter00:setAlpha( 1 )
 				self.clipFinished( LobbyMemberBackingFooter00, {} )
+
 				LobbyMemberBackingFooter0:completeAnimation()
 				self.LobbyMemberBackingFooter0:setAlpha( 1 )
 				self.clipFinished( LobbyMemberBackingFooter0, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 2 )
+
 				local LobbyMemberBackingFooter00Frame2 = function ( LobbyMemberBackingFooter00, event )
 					if not event.interrupted then
 						LobbyMemberBackingFooter00:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Bounce )
@@ -211,6 +221,7 @@ CoD.MapVoteItem.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 2 )
+
 				local LobbyMemberBackingFooter00Frame2 = function ( LobbyMemberBackingFooter00, event )
 					if not event.interrupted then
 						LobbyMemberBackingFooter00:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Bounce )
@@ -246,38 +257,47 @@ CoD.MapVoteItem.new = function ( menu, controller )
 		Selected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				LobbyMemberBackingMask0:completeAnimation()
 				self.LobbyMemberBackingMask0:setRGB( 0.52, 0.84, 0.15 )
 				self.LobbyMemberBackingMask0:setAlpha( 1 )
 				self.clipFinished( LobbyMemberBackingMask0, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				voteCount:completeAnimation()
 				self.voteCount:setRGB( 0, 0, 0 )
 				self.voteCount:setZoom( 0 )
 				self.clipFinished( voteCount, {} )
+
 				LobbyMemberBackingFooter00:completeAnimation()
 				self.LobbyMemberBackingFooter00:setAlpha( 0 )
 				self.clipFinished( LobbyMemberBackingFooter00, {} )
+
 				LobbyMemberBackingFooter0:completeAnimation()
 				self.LobbyMemberBackingFooter0:setAlpha( 0 )
 				self.clipFinished( LobbyMemberBackingFooter0, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 2 )
+
 				LobbyMemberBackingFooter00:completeAnimation()
 				self.LobbyMemberBackingFooter00:setAlpha( 1 )
 				self.clipFinished( LobbyMemberBackingFooter00, {} )
+
 				LobbyMemberBackingFooter0:completeAnimation()
 				self.LobbyMemberBackingFooter0:setAlpha( 1 )
 				self.clipFinished( LobbyMemberBackingFooter0, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 2 )
+
 				local LobbyMemberBackingFooter00Frame2 = function ( LobbyMemberBackingFooter00, event )
 					if not event.interrupted then
 						LobbyMemberBackingFooter00:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Bounce )
@@ -311,6 +331,7 @@ CoD.MapVoteItem.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 2 )
+
 				local LobbyMemberBackingFooter00Frame2 = function ( LobbyMemberBackingFooter00, event )
 					if not event.interrupted then
 						LobbyMemberBackingFooter00:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Bounce )
@@ -346,18 +367,22 @@ CoD.MapVoteItem.new = function ( menu, controller )
 		Unselectable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				LobbyMemberBackingFooter00:completeAnimation()
 				self.LobbyMemberBackingFooter00:setAlpha( 0 )
 				self.clipFinished( LobbyMemberBackingFooter00, {} )
+
 				LobbyMemberBackingFooter0:completeAnimation()
 				self.LobbyMemberBackingFooter0:setAlpha( 0 )
 				self.clipFinished( LobbyMemberBackingFooter0, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0.65 )
 				self.clipFinished( black, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Selected",
@@ -372,6 +397,7 @@ CoD.MapVoteItem.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LobbyMemberBackingMask0:close()
 		element.FocusBorder:close()

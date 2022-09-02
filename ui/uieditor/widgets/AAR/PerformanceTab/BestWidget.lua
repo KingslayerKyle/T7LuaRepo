@@ -4,9 +4,11 @@
 CoD.BestWidget = InheritFrom( LUI.UIElement )
 CoD.BestWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BestWidget )
 	self.id = "BestWidget"

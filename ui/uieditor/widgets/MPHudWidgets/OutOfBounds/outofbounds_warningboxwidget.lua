@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.MPHudWidgets.OutOfBounds.outofbounds_returnbox" )
 CoD.outofbounds_warningboxwidget = InheritFrom( LUI.UIElement )
 CoD.outofbounds_warningboxwidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.outofbounds_warningboxwidget )
 	self.id = "outofbounds_warningboxwidget"
@@ -82,6 +84,7 @@ CoD.outofbounds_warningboxwidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local CenterBox0Frame2 = function ( CenterBox0, event )
 					local CenterBox0Frame3 = function ( CenterBox0, event )
 						if not event.interrupted then
@@ -110,6 +113,7 @@ CoD.outofbounds_warningboxwidget.new = function ( menu, controller )
 				self.CenterBox0:setAlpha( 0.5 )
 				self.CenterBox0:setZoom( -50 )
 				CenterBox0Frame2( CenterBox0, {} )
+
 				CenterBox:completeAnimation()
 				self.CenterBox:setAlpha( 1 )
 				self.clipFinished( CenterBox, {} )
@@ -167,31 +171,37 @@ CoD.outofbounds_warningboxwidget.new = function ( menu, controller )
 				TextBoxWarningText2:completeAnimation()
 				self.TextBoxWarningText2:setAlpha( 0.9 )
 				TextBoxWarningText2Frame2( TextBoxWarningText2, {} )
+
 				outofboundsreturnbox:completeAnimation()
 				self.outofboundsreturnbox:setAlpha( 1 )
 				self.clipFinished( outofboundsreturnbox, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		IsOutOfBounds = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				CenterBox0:completeAnimation()
 				self.CenterBox0:setLeftRight( false, false, -331.38, 333.38 )
 				self.CenterBox0:setTopBottom( false, false, -97.23, 92.23 )
 				self.CenterBox0:setAlpha( 0.5 )
 				self.clipFinished( CenterBox0, {} )
+
 				CenterBox:completeAnimation()
 				self.CenterBox:setLeftRight( false, false, -331.38, 333.38 )
 				self.CenterBox:setTopBottom( false, false, -97.23, 92.23 )
 				self.CenterBox:setAlpha( 1 )
 				self.clipFinished( CenterBox, {} )
+
 				TextBoxWarningText20:completeAnimation()
 				self.TextBoxWarningText20:setLeftRight( false, false, -331.38, 332.5 )
 				self.TextBoxWarningText20:setTopBottom( false, false, -61, 25 )
 				self.TextBoxWarningText20:setAlpha( 0.5 )
 				self.TextBoxWarningText20:setZoom( -30 )
 				self.clipFinished( TextBoxWarningText20, {} )
+
 				TextBoxWarningText2:completeAnimation()
 				self.TextBoxWarningText2:setLeftRight( false, false, -331.38, 333.38 )
 				self.TextBoxWarningText2:setTopBottom( false, false, -61, 25 )
@@ -205,6 +215,7 @@ CoD.outofbounds_warningboxwidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.outofboundsreturnbox:close()
 	end )

@@ -4,9 +4,11 @@
 CoD.cac_LabelNew = InheritFrom( LUI.UIElement )
 CoD.cac_LabelNew.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.cac_LabelNew )
 	self.id = "cac_LabelNew"
@@ -37,6 +39,7 @@ CoD.cac_LabelNew.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

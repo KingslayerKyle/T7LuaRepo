@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Notifications.RankUp.RankUpNotification_TitleBacki
 CoD.RankUpNotification_Title = InheritFrom( LUI.UIElement )
 CoD.RankUpNotification_Title.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RankUpNotification_Title )
 	self.id = "RankUpNotification_Title"
@@ -30,6 +32,7 @@ CoD.RankUpNotification_Title.new = function ( menu, controller )
 	Text:setTTF( "fonts/FoundryGridnik-Bold.ttf" )
 	Text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	Text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( Text, "setText", function ( element, controller )
 		ScaleWidgetToLabelCenteredWrapped( self, element, 40, 40 )
 	end )
@@ -46,12 +49,15 @@ CoD.RankUpNotification_Title.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RankUpNotificationTitleBacking9Slice0:close()
 		element.Text:close()

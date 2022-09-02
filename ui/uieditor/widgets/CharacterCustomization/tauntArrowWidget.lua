@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.onOffArabicAlignTextBox" )
 CoD.tauntArrowWidget = InheritFrom( LUI.UIElement )
 CoD.tauntArrowWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.tauntArrowWidget )
 	self.id = "tauntArrowWidget"
@@ -84,21 +86,26 @@ CoD.tauntArrowWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				dpad:completeAnimation()
 				self.dpad:setAlpha( 0 )
 				self.clipFinished( dpad, {} )
+
 				left:completeAnimation()
 				self.left:setAlpha( 0 )
 				self.clipFinished( left, {} )
+
 				up:completeAnimation()
 				self.up:setAlpha( 0 )
 				self.clipFinished( up, {} )
+
 				right:completeAnimation()
 				self.right:setAlpha( 0 )
 				self.clipFinished( right, {} )
 			end,
 			GesturesOn = function ()
 				self:setupElementClipCounter( 4 )
+
 				local dpadFrame2 = function ( dpad, event )
 					if not event.interrupted then
 						dpad:beginAnimation( "keyframe", 600, false, false, CoD.TweenType.Linear )
@@ -164,21 +171,26 @@ CoD.tauntArrowWidget.new = function ( menu, controller )
 		NoGestures = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				dpad:completeAnimation()
 				self.dpad:setAlpha( 0 )
 				self.clipFinished( dpad, {} )
+
 				left:completeAnimation()
 				self.left:setAlpha( 0 )
 				self.clipFinished( left, {} )
+
 				up:completeAnimation()
 				self.up:setAlpha( 0 )
 				self.clipFinished( up, {} )
+
 				right:completeAnimation()
 				self.right:setAlpha( 0 )
 				self.clipFinished( right, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoGestures",
@@ -193,6 +205,7 @@ CoD.tauntArrowWidget.new = function ( menu, controller )
 			PlayClip( self, "GesturesOn", controller )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.left:close()
 		element.up:close()

@@ -4,9 +4,11 @@
 CoD.LobbyMemberScore = InheritFrom( LUI.UIElement )
 CoD.LobbyMemberScore.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyMemberScore )
 	self.id = "LobbyMemberScore"
@@ -28,6 +30,7 @@ CoD.LobbyMemberScore.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				score:completeAnimation()
 				self.score:setAlpha( 1 )
 				self.clipFinished( score, {} )
@@ -36,6 +39,7 @@ CoD.LobbyMemberScore.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				score:completeAnimation()
 				self.score:setAlpha( 0 )
 				self.clipFinished( score, {} )
@@ -44,12 +48,14 @@ CoD.LobbyMemberScore.new = function ( menu, controller )
 		Hidden2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				score:completeAnimation()
 				self.score:setAlpha( 0 )
 				self.clipFinished( score, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",

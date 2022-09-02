@@ -17,9 +17,11 @@ end
 CoD.FaceButtonThatHidesWithLabel = InheritFrom( LUI.UIElement )
 CoD.FaceButtonThatHidesWithLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FaceButtonThatHidesWithLabel )
 	self.id = "FaceButtonThatHidesWithLabel"
@@ -34,6 +36,7 @@ CoD.FaceButtonThatHidesWithLabel.new = function ( menu, controller )
 	ButtonLabel:setText( Engine.Localize( "MENU_NEW" ) )
 	ButtonLabel:setTTF( "fonts/RefrigeratorDeluxe-Regular.ttf" )
 	ButtonLabel:setLetterSpacing( 0.5 )
+
 	LUI.OverrideFunction_CallOriginalFirst( ButtonLabel, "setText", function ( element, controller )
 		UpdateSelfState( self, controller )
 	end )
@@ -71,14 +74,17 @@ CoD.FaceButtonThatHidesWithLabel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ButtonLabel:completeAnimation()
 				self.ButtonLabel:setLeftRight( true, false, 23.76, 200 )
 				self.ButtonLabel:setTopBottom( true, false, 0, 20 )
 				self.ButtonLabel:setAlpha( 1 )
 				self.clipFinished( ButtonLabel, {} )
+
 				ButtonImage:completeAnimation()
 				self.ButtonImage:setAlpha( 1 )
 				self.clipFinished( ButtonImage, {} )
+
 				f3_local3:completeAnimation()
 				self.clickButton:setAlpha( 0 )
 				self.clipFinished( f3_local3, {} )
@@ -87,12 +93,15 @@ CoD.FaceButtonThatHidesWithLabel.new = function ( menu, controller )
 		HideButtonAndText = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ButtonLabel:completeAnimation()
 				self.ButtonLabel:setAlpha( 0 )
 				self.clipFinished( ButtonLabel, {} )
+
 				ButtonImage:completeAnimation()
 				self.ButtonImage:setAlpha( 0 )
 				self.clipFinished( ButtonImage, {} )
+
 				f3_local3:completeAnimation()
 				self.clickButton:setAlpha( 0 )
 				self.clipFinished( f3_local3, {} )
@@ -101,18 +110,22 @@ CoD.FaceButtonThatHidesWithLabel.new = function ( menu, controller )
 		HideButton = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ButtonLabel:completeAnimation()
 				self.ButtonLabel:setAlpha( 0 )
 				self.clipFinished( ButtonLabel, {} )
+
 				ButtonImage:completeAnimation()
 				self.ButtonImage:setAlpha( 0 )
 				self.clipFinished( ButtonImage, {} )
+
 				f3_local3:completeAnimation()
 				self.clickButton:setAlpha( 1 )
 				self.clipFinished( f3_local3, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HideButtonAndText",
@@ -145,6 +158,7 @@ CoD.FaceButtonThatHidesWithLabel.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ButtonImage:close()
 		element.clickButton:close()

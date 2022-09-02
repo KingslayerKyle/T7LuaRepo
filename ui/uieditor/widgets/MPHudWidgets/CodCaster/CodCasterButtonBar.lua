@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.MPHudWidgets.CodCaster.CodCasterButtons" )
 CoD.CodCasterButtonBar = InheritFrom( LUI.UIElement )
 CoD.CodCasterButtonBar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterButtonBar )
 	self.id = "CodCasterButtonBar"
@@ -38,9 +40,11 @@ CoD.CodCasterButtonBar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				CodCasterButtons:completeAnimation()
 				self.CodCasterButtons:setAlpha( 0 )
 				self.clipFinished( CodCasterButtons, {} )
@@ -49,15 +53,18 @@ CoD.CodCasterButtonBar.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0.7 )
 				self.clipFinished( black, {} )
+
 				CodCasterButtons:completeAnimation()
 				self.CodCasterButtons:setAlpha( 1 )
 				self.clipFinished( CodCasterButtons, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -74,6 +81,7 @@ CoD.CodCasterButtonBar.new = function ( menu, controller )
 			modelName = "CodCaster.profileSettingsUpdated"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CodCasterButtons:close()
 	end )

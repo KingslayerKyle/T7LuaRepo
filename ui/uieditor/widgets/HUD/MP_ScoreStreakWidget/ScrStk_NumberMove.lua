@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.CP_DamageWidget.DamageWidgetMP_PanelContainer"
 CoD.ScrStk_NumberMove = InheritFrom( LUI.UIElement )
 CoD.ScrStk_NumberMove.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScrStk_NumberMove )
 	self.id = "ScrStk_NumberMove"
@@ -65,14 +67,17 @@ CoD.ScrStk_NumberMove.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				PanelAmmo:completeAnimation()
 				self.PanelAmmo:setLeftRight( false, false, -24.5, 10.5 )
 				self.PanelAmmo:setTopBottom( false, false, -10.75, 10.75 )
 				self.clipFinished( PanelAmmo, {} )
+
 				NumberFrame:completeAnimation()
 				self.NumberFrame:setLeftRight( true, false, 7, 55 )
 				self.NumberFrame:setTopBottom( true, false, 2.5, 18.5 )
 				self.clipFinished( NumberFrame, {} )
+
 				TextBox:completeAnimation()
 				self.TextBox:setLeftRight( true, false, 0, 40 )
 				self.TextBox:setTopBottom( true, false, 2.75, 18.75 )
@@ -80,6 +85,7 @@ CoD.ScrStk_NumberMove.new = function ( menu, controller )
 			end,
 			Combat = function ()
 				self:setupElementClipCounter( 3 )
+
 				local PanelAmmoFrame2 = function ( PanelAmmo, event )
 					if not event.interrupted then
 						PanelAmmo:beginAnimation( "keyframe", 200, true, true, CoD.TweenType.Linear )
@@ -136,14 +142,17 @@ CoD.ScrStk_NumberMove.new = function ( menu, controller )
 		Combat = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				PanelAmmo:completeAnimation()
 				self.PanelAmmo:setLeftRight( false, false, -29.5, 5.5 )
 				self.PanelAmmo:setTopBottom( false, false, -10.75, 10.75 )
 				self.clipFinished( PanelAmmo, {} )
+
 				NumberFrame:completeAnimation()
 				self.NumberFrame:setLeftRight( true, false, 2, 50 )
 				self.NumberFrame:setTopBottom( true, false, 2.5, 18.5 )
 				self.clipFinished( NumberFrame, {} )
+
 				TextBox:completeAnimation()
 				self.TextBox:setLeftRight( true, false, -5, 35 )
 				self.TextBox:setTopBottom( true, false, 2.75, 18.75 )
@@ -151,6 +160,7 @@ CoD.ScrStk_NumberMove.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 3 )
+
 				local PanelAmmoFrame2 = function ( PanelAmmo, event )
 					if not event.interrupted then
 						PanelAmmo:beginAnimation( "keyframe", 349, true, true, CoD.TweenType.Linear )
@@ -205,6 +215,7 @@ CoD.ScrStk_NumberMove.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Combat",
@@ -221,6 +232,7 @@ CoD.ScrStk_NumberMove.new = function ( menu, controller )
 			modelName = "playerAbilities.playerGadget3.isInUse"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PanelAmmo:close()
 		element.TextBox:close()

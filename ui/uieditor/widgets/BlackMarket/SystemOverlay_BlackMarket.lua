@@ -18,9 +18,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_BurnProgressIndicator" )
 CoD.SystemOverlay_BlackMarket = InheritFrom( LUI.UIElement )
 CoD.SystemOverlay_BlackMarket.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SystemOverlay_BlackMarket )
 	self.id = "SystemOverlay_BlackMarket"
@@ -459,24 +461,31 @@ CoD.SystemOverlay_BlackMarket.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				titleForBurning:completeAnimation()
 				self.titleForBurning:setAlpha( 0 )
 				self.clipFinished( titleForBurning, {} )
+
 				textForBurning:completeAnimation()
 				self.textForBurning:setAlpha( 0 )
 				self.clipFinished( textForBurning, {} )
+
 				ComfirmationCryptokeyLarge:completeAnimation()
 				self.ComfirmationCryptokeyLarge:setAlpha( 0 )
 				self.clipFinished( ComfirmationCryptokeyLarge, {} )
+
 				PurchasingBundle:completeAnimation()
 				self.PurchasingBundle:setAlpha( 0 )
 				self.clipFinished( PurchasingBundle, {} )
+
 				PurchasedBundleText:completeAnimation()
 				self.PurchasedBundleText:setAlpha( 0 )
 				self.clipFinished( PurchasedBundleText, {} )
+
 				PurchasedSixPackText:completeAnimation()
 				self.PurchasedSixPackText:setAlpha( 0 )
 				self.clipFinished( PurchasedSixPackText, {} )
+
 				SixPackBundleOpen:completeAnimation()
 				self.SixPackBundleOpen:setAlpha( 0 )
 				self.clipFinished( SixPackBundleOpen, {} )
@@ -485,57 +494,74 @@ CoD.SystemOverlay_BlackMarket.new = function ( menu, controller )
 		BurnDuplicates = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				largeImage:completeAnimation()
 				self.largeImage:setAlpha( 0 )
 				self.clipFinished( largeImage, {} )
+
 				titleForBurning:completeAnimation()
 				self.titleForBurning:setAlpha( 0 )
 				self.clipFinished( titleForBurning, {} )
+
 				textForBurning:completeAnimation()
 				self.textForBurning:setAlpha( 0 )
 				self.clipFinished( textForBurning, {} )
+
 				options:completeAnimation()
 				self.options:setLeftRight( true, false, 422, 753 )
 				self.options:setTopBottom( true, false, 204.5, 296 )
 				self.clipFinished( options, {} )
+
 				CryptokeyTypeName:completeAnimation()
 				self.CryptokeyTypeName:setAlpha( 0 )
 				self.clipFinished( CryptokeyTypeName, {} )
+
 				NextKeyProgress:completeAnimation()
 				self.NextKeyProgress:setLeftRight( true, false, 421, 821 )
 				self.NextKeyProgress:setTopBottom( true, false, 120.5, 170.5 )
 				self.NextKeyProgress:setAlpha( 1 )
 				self.clipFinished( NextKeyProgress, {} )
+
 				BribeDuplicatesPopupInfo:completeAnimation()
 				self.BribeDuplicatesPopupInfo:setAlpha( 1 )
 				self.clipFinished( BribeDuplicatesPopupInfo, {} )
+
 				BlackMarketCODPointContainerSmall:completeAnimation()
 				self.BlackMarketCODPointContainerSmall:setAlpha( 1 )
 				self.clipFinished( BlackMarketCODPointContainerSmall, {} )
+
 				BlackMarketCryptokeyContainerSmall:completeAnimation()
 				self.BlackMarketCryptokeyContainerSmall:setAlpha( 1 )
 				self.clipFinished( BlackMarketCryptokeyContainerSmall, {} )
+
 				BurningDuplicatesAnimation:completeAnimation()
 				self.BurningDuplicatesAnimation:setAlpha( 0 )
 				self.clipFinished( BurningDuplicatesAnimation, {} )
+
 				ComfirmationCryptokeyLarge:completeAnimation()
 				self.ComfirmationCryptokeyLarge:setAlpha( 0 )
 				self.clipFinished( ComfirmationCryptokeyLarge, {} )
+
 				PurchasingBundle:completeAnimation()
 				self.PurchasingBundle:setAlpha( 0 )
 				self.clipFinished( PurchasingBundle, {} )
+
 				PurchasedBundleText:completeAnimation()
 				self.PurchasedBundleText:setAlpha( 0 )
 				self.clipFinished( PurchasedBundleText, {} )
+
 				PurchasedSixPackText:completeAnimation()
 				self.PurchasedSixPackText:setAlpha( 0 )
 				self.clipFinished( PurchasedSixPackText, {} )
+
 				SixPackBundleOpen:completeAnimation()
 				self.SixPackBundleOpen:setAlpha( 0 )
 				self.clipFinished( SixPackBundleOpen, {} )
+
 				BMBundleOffertime:completeAnimation()
 				self.BMBundleOffertime:setAlpha( 0 )
 				self.clipFinished( BMBundleOffertime, {} )
+
 				BMBurnProgressIndicator0:completeAnimation()
 				self.BMBurnProgressIndicator0:setAlpha( 0 )
 				self.clipFinished( BMBurnProgressIndicator0, {} )
@@ -544,61 +570,79 @@ CoD.SystemOverlay_BlackMarket.new = function ( menu, controller )
 		PurchaseSupplyDrop = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 18 )
+
 				largeImage:completeAnimation()
 				self.largeImage:setLeftRight( true, false, 53.5, 301.5 )
 				self.largeImage:setTopBottom( true, false, 10, 258 )
 				self.clipFinished( largeImage, {} )
+
 				titleForBurning:completeAnimation()
 				self.titleForBurning:setAlpha( 0 )
 				self.clipFinished( titleForBurning, {} )
+
 				textForBurning:completeAnimation()
 				self.textForBurning:setAlpha( 0 )
 				self.clipFinished( textForBurning, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0.85 )
 				self.clipFinished( text, {} )
+
 				options:completeAnimation()
 				self.options:setLeftRight( true, false, 422, 690.5 )
 				self.options:setTopBottom( true, false, 140, 207 )
 				self.clipFinished( options, {} )
+
 				supportInfo:completeAnimation()
 				self.supportInfo:setAlpha( 0 )
 				self.clipFinished( supportInfo, {} )
+
 				SupplyDropText:completeAnimation()
 				self.SupplyDropText:setAlpha( 1 )
 				self.clipFinished( SupplyDropText, {} )
+
 				BribeDuplicatesPopupInfo:completeAnimation()
 				self.BribeDuplicatesPopupInfo:setLeftRight( true, false, 68, 289 )
 				self.BribeDuplicatesPopupInfo:setTopBottom( true, false, 31, 280 )
 				self.BribeDuplicatesPopupInfo:setAlpha( 0 )
 				self.clipFinished( BribeDuplicatesPopupInfo, {} )
+
 				BlackMarketCODPointContainerSmall:completeAnimation()
 				self.BlackMarketCODPointContainerSmall:setAlpha( 1 )
 				self.clipFinished( BlackMarketCODPointContainerSmall, {} )
+
 				BlackMarketCryptokeyContainerSmall:completeAnimation()
 				self.BlackMarketCryptokeyContainerSmall:setAlpha( 1 )
 				self.clipFinished( BlackMarketCryptokeyContainerSmall, {} )
+
 				BurningDuplicatesAnimation:completeAnimation()
 				self.BurningDuplicatesAnimation:setAlpha( 0 )
 				self.clipFinished( BurningDuplicatesAnimation, {} )
+
 				ComfirmationCryptokeyLarge:completeAnimation()
 				self.ComfirmationCryptokeyLarge:setAlpha( 0 )
 				self.clipFinished( ComfirmationCryptokeyLarge, {} )
+
 				PurchasingBundle:completeAnimation()
 				self.PurchasingBundle:setAlpha( 0 )
 				self.clipFinished( PurchasingBundle, {} )
+
 				PurchasedBundleText:completeAnimation()
 				self.PurchasedBundleText:setAlpha( 0 )
 				self.clipFinished( PurchasedBundleText, {} )
+
 				PurchasedSixPackText:completeAnimation()
 				self.PurchasedSixPackText:setAlpha( 0 )
 				self.clipFinished( PurchasedSixPackText, {} )
+
 				SixPackBundleOpen:completeAnimation()
 				self.SixPackBundleOpen:setAlpha( 0 )
 				self.clipFinished( SixPackBundleOpen, {} )
+
 				BMBundleOffertime:completeAnimation()
 				self.BMBundleOffertime:setAlpha( 1 )
 				self.clipFinished( BMBundleOffertime, {} )
+
 				BMBurnProgressIndicator0:completeAnimation()
 				self.BMBurnProgressIndicator0:setAlpha( 0 )
 				self.clipFinished( BMBurnProgressIndicator0, {} )
@@ -607,33 +651,43 @@ CoD.SystemOverlay_BlackMarket.new = function ( menu, controller )
 		BurningDuplicates = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				titleForBurning:completeAnimation()
 				self.titleForBurning:setAlpha( 1 )
 				self.titleForBurning:setText( Engine.Localize( "MPUI_BM_BURNING_TITLE" ) )
 				self.clipFinished( titleForBurning, {} )
+
 				title:completeAnimation()
 				self.title:setAlpha( 0 )
 				self.clipFinished( title, {} )
+
 				textForBurning:completeAnimation()
+
 				textForBurning.text:completeAnimation()
 				self.textForBurning:setAlpha( 1 )
 				self.textForBurning.text:setText( Engine.Localize( "MPUI_BM_BURNING_DESCRIPTION" ) )
 				self.clipFinished( textForBurning, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0 )
 				self.clipFinished( text, {} )
+
 				NextKeyProgress:completeAnimation()
 				self.NextKeyProgress:setAlpha( 0 )
 				self.clipFinished( NextKeyProgress, {} )
+
 				BribeDuplicatesPopupInfo:completeAnimation()
 				self.BribeDuplicatesPopupInfo:setAlpha( 0 )
 				self.clipFinished( BribeDuplicatesPopupInfo, {} )
+
 				BlackMarketCODPointContainerSmall:completeAnimation()
 				self.BlackMarketCODPointContainerSmall:setAlpha( 0 )
 				self.clipFinished( BlackMarketCODPointContainerSmall, {} )
+
 				BlackMarketCryptokeyContainerSmall:completeAnimation()
 				self.BlackMarketCryptokeyContainerSmall:setAlpha( 0 )
 				self.clipFinished( BlackMarketCryptokeyContainerSmall, {} )
+
 				BurningDuplicatesAnimation:completeAnimation()
 				self.BurningDuplicatesAnimation:setAlpha( 1 )
 				self.clipFinished( BurningDuplicatesAnimation, {} )
@@ -652,21 +706,27 @@ CoD.SystemOverlay_BlackMarket.new = function ( menu, controller )
 				ComfirmationCryptokeyLarge:completeAnimation()
 				self.ComfirmationCryptokeyLarge:setAlpha( 0 )
 				ComfirmationCryptokeyLargeFrame2( ComfirmationCryptokeyLarge, {} )
+
 				PurchasingBundle:completeAnimation()
 				self.PurchasingBundle:setAlpha( 0 )
 				self.clipFinished( PurchasingBundle, {} )
+
 				PurchasedBundleText:completeAnimation()
 				self.PurchasedBundleText:setAlpha( 0 )
 				self.clipFinished( PurchasedBundleText, {} )
+
 				PurchasedSixPackText:completeAnimation()
 				self.PurchasedSixPackText:setAlpha( 0 )
 				self.clipFinished( PurchasedSixPackText, {} )
+
 				SixPackBundleOpen:completeAnimation()
 				self.SixPackBundleOpen:setAlpha( 0 )
 				self.clipFinished( SixPackBundleOpen, {} )
+
 				BMBundleOffertime:completeAnimation()
 				self.BMBundleOffertime:setAlpha( 0 )
 				self.clipFinished( BMBundleOffertime, {} )
+
 				BMBurnProgressIndicator0:completeAnimation()
 				self.BMBurnProgressIndicator0:setAlpha( 1 )
 				self.clipFinished( BMBurnProgressIndicator0, {} )
@@ -675,50 +735,65 @@ CoD.SystemOverlay_BlackMarket.new = function ( menu, controller )
 		BurnedDuplicates = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				titleForBurning:completeAnimation()
 				self.titleForBurning:setAlpha( 1 )
 				self.titleForBurning:setText( Engine.Localize( "MPUI_BM_BURNED_TITLE" ) )
 				self.clipFinished( titleForBurning, {} )
+
 				title:completeAnimation()
 				self.title:setAlpha( 0 )
 				self.clipFinished( title, {} )
+
 				textForBurning:completeAnimation()
 				self.textForBurning:setAlpha( 1 )
 				self.clipFinished( textForBurning, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0 )
 				self.clipFinished( text, {} )
+
 				options:completeAnimation()
 				self.options:setLeftRight( true, false, 422, 752 )
 				self.options:setTopBottom( true, false, 253, 355 )
 				self.clipFinished( options, {} )
+
 				BlackMarketCODPointContainerSmall:completeAnimation()
 				self.BlackMarketCODPointContainerSmall:setAlpha( 1 )
 				self.clipFinished( BlackMarketCODPointContainerSmall, {} )
+
 				BlackMarketCryptokeyContainerSmall:completeAnimation()
 				self.BlackMarketCryptokeyContainerSmall:setAlpha( 1 )
 				self.clipFinished( BlackMarketCryptokeyContainerSmall, {} )
+
 				BurningDuplicatesAnimation:completeAnimation()
 				self.BurningDuplicatesAnimation:setAlpha( 1 )
 				self.clipFinished( BurningDuplicatesAnimation, {} )
+
 				ComfirmationCryptokeyLarge:completeAnimation()
 				self.ComfirmationCryptokeyLarge:setAlpha( 1 )
 				self.clipFinished( ComfirmationCryptokeyLarge, {} )
+
 				PurchasingBundle:completeAnimation()
 				self.PurchasingBundle:setAlpha( 0 )
 				self.clipFinished( PurchasingBundle, {} )
+
 				PurchasedBundleText:completeAnimation()
 				self.PurchasedBundleText:setAlpha( 0 )
 				self.clipFinished( PurchasedBundleText, {} )
+
 				PurchasedSixPackText:completeAnimation()
 				self.PurchasedSixPackText:setAlpha( 0 )
 				self.clipFinished( PurchasedSixPackText, {} )
+
 				SixPackBundleOpen:completeAnimation()
 				self.SixPackBundleOpen:setAlpha( 0 )
 				self.clipFinished( SixPackBundleOpen, {} )
+
 				BMBundleOffertime:completeAnimation()
 				self.BMBundleOffertime:setAlpha( 0 )
 				self.clipFinished( BMBundleOffertime, {} )
+
 				BMBurnProgressIndicator0:completeAnimation()
 				self.BMBurnProgressIndicator0:setAlpha( 1 )
 				self.clipFinished( BMBurnProgressIndicator0, {} )
@@ -727,60 +802,77 @@ CoD.SystemOverlay_BlackMarket.new = function ( menu, controller )
 		PurchasingBundle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				largeImage:completeAnimation()
 				self.largeImage:setLeftRight( true, false, 53.5, 301.5 )
 				self.largeImage:setTopBottom( true, false, 10, 258 )
 				self.clipFinished( largeImage, {} )
+
 				titleForBurning:completeAnimation()
 				self.titleForBurning:setAlpha( 0 )
 				self.clipFinished( titleForBurning, {} )
+
 				textForBurning:completeAnimation()
 				self.textForBurning:setAlpha( 0 )
 				self.clipFinished( textForBurning, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0.85 )
 				self.clipFinished( text, {} )
+
 				options:completeAnimation()
 				self.options:setLeftRight( true, false, 422, 690.5 )
 				self.options:setTopBottom( true, false, 140, 207 )
 				self.clipFinished( options, {} )
+
 				supportInfo:completeAnimation()
 				self.supportInfo:setAlpha( 0 )
 				self.clipFinished( supportInfo, {} )
+
 				SupplyDropText:completeAnimation()
 				self.SupplyDropText:setAlpha( 1 )
 				self.clipFinished( SupplyDropText, {} )
+
 				BribeDuplicatesPopupInfo:completeAnimation()
 				self.BribeDuplicatesPopupInfo:setLeftRight( true, false, 68, 289 )
 				self.BribeDuplicatesPopupInfo:setTopBottom( true, false, 31, 280 )
 				self.BribeDuplicatesPopupInfo:setAlpha( 0 )
 				self.clipFinished( BribeDuplicatesPopupInfo, {} )
+
 				BlackMarketCODPointContainerSmall:completeAnimation()
 				self.BlackMarketCODPointContainerSmall:setAlpha( 1 )
 				self.clipFinished( BlackMarketCODPointContainerSmall, {} )
+
 				BlackMarketCryptokeyContainerSmall:completeAnimation()
 				self.BlackMarketCryptokeyContainerSmall:setAlpha( 1 )
 				self.clipFinished( BlackMarketCryptokeyContainerSmall, {} )
+
 				BurningDuplicatesAnimation:completeAnimation()
 				self.BurningDuplicatesAnimation:setAlpha( 0 )
 				self.clipFinished( BurningDuplicatesAnimation, {} )
+
 				ComfirmationCryptokeyLarge:completeAnimation()
 				self.ComfirmationCryptokeyLarge:setAlpha( 0 )
 				self.clipFinished( ComfirmationCryptokeyLarge, {} )
+
 				PurchasingBundle:completeAnimation()
 				self.PurchasingBundle:setLeftRight( true, false, 466.5, 966.5 )
 				self.PurchasingBundle:setTopBottom( true, false, 112, 212 )
 				self.PurchasingBundle:setAlpha( 1 )
 				self.clipFinished( PurchasingBundle, {} )
+
 				PurchasedBundleText:completeAnimation()
 				self.PurchasedBundleText:setAlpha( 0 )
 				self.clipFinished( PurchasedBundleText, {} )
+
 				PurchasedSixPackText:completeAnimation()
 				self.PurchasedSixPackText:setAlpha( 0 )
 				self.clipFinished( PurchasedSixPackText, {} )
+
 				SixPackBundleOpen:completeAnimation()
 				self.SixPackBundleOpen:setAlpha( 0 )
 				self.clipFinished( SixPackBundleOpen, {} )
+
 				BMBurnProgressIndicator0:completeAnimation()
 				self.BMBurnProgressIndicator0:setAlpha( 0 )
 				self.clipFinished( BMBurnProgressIndicator0, {} )
@@ -789,71 +881,91 @@ CoD.SystemOverlay_BlackMarket.new = function ( menu, controller )
 		PurchasedBundle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 20 )
+
 				largeImage:completeAnimation()
 				self.largeImage:setLeftRight( true, false, 74.5, 282.5 )
 				self.largeImage:setTopBottom( true, false, 236.25, 258 )
 				self.largeImage:setAlpha( 0 )
 				self.clipFinished( largeImage, {} )
+
 				titleForBurning:completeAnimation()
 				self.titleForBurning:setAlpha( 0 )
 				self.clipFinished( titleForBurning, {} )
+
 				textForBurning:completeAnimation()
 				self.textForBurning:setAlpha( 0 )
 				self.clipFinished( textForBurning, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0 )
 				self.clipFinished( text, {} )
+
 				options:completeAnimation()
 				self.options:setLeftRight( true, false, 422, 690.5 )
 				self.options:setTopBottom( true, false, 140, 207 )
 				self.clipFinished( options, {} )
+
 				supportInfo:completeAnimation()
 				self.supportInfo:setAlpha( 0 )
 				self.clipFinished( supportInfo, {} )
+
 				SupplyDropText:completeAnimation()
 				self.SupplyDropText:setAlpha( 1 )
 				self.clipFinished( SupplyDropText, {} )
+
 				BribeDuplicatesPopupInfo:completeAnimation()
 				self.BribeDuplicatesPopupInfo:setAlpha( 0 )
 				self.clipFinished( BribeDuplicatesPopupInfo, {} )
+
 				BlackMarketCODPointContainerSmall:completeAnimation()
 				self.BlackMarketCODPointContainerSmall:setAlpha( 0 )
 				self.clipFinished( BlackMarketCODPointContainerSmall, {} )
+
 				BlackMarketCryptokeyContainerSmall:completeAnimation()
 				self.BlackMarketCryptokeyContainerSmall:setAlpha( 0 )
 				self.clipFinished( BlackMarketCryptokeyContainerSmall, {} )
+
 				BurningDuplicatesAnimation:completeAnimation()
 				self.BurningDuplicatesAnimation:setAlpha( 0 )
 				self.clipFinished( BurningDuplicatesAnimation, {} )
+
 				ComfirmationCryptokeyLarge:completeAnimation()
 				self.ComfirmationCryptokeyLarge:setAlpha( 0 )
 				self.clipFinished( ComfirmationCryptokeyLarge, {} )
+
 				PurchasingBundle:completeAnimation()
 				self.PurchasingBundle:setAlpha( 0 )
 				self.clipFinished( PurchasingBundle, {} )
+
 				PurchasedBundleText:completeAnimation()
 				self.PurchasedBundleText:setLeftRight( true, false, 422, 869 )
 				self.PurchasedBundleText:setTopBottom( true, false, 45, 65 )
 				self.PurchasedBundleText:setAlpha( 1 )
 				self.clipFinished( PurchasedBundleText, {} )
+
 				PurchasedSixPackText:completeAnimation()
 				self.PurchasedSixPackText:setAlpha( 0 )
 				self.clipFinished( PurchasedSixPackText, {} )
+
 				BundleOpen:completeAnimation()
 				self.BundleOpen:setLeftRight( true, false, 38.34, 313.66 )
 				self.BundleOpen:setTopBottom( true, false, -5, 274 )
 				self.BundleOpen:setAlpha( 1 )
 				self.clipFinished( BundleOpen, {} )
+
 				SixPackBundleOpen:completeAnimation()
 				self.SixPackBundleOpen:setAlpha( 0 )
 				self.clipFinished( SixPackBundleOpen, {} )
+
 				BMBundleOffertime:completeAnimation()
 				self.BMBundleOffertime:setAlpha( 1 )
 				self.clipFinished( BMBundleOffertime, {} )
+
 				BMBundleCount:completeAnimation()
 				self.BMBundleCount:setLeftRight( true, false, 74, 274 )
 				self.BMBundleCount:setTopBottom( true, false, 87.5, 137.5 )
 				self.clipFinished( BMBundleCount, {} )
+
 				BMBurnProgressIndicator0:completeAnimation()
 				self.BMBurnProgressIndicator0:setAlpha( 0 )
 				self.clipFinished( BMBurnProgressIndicator0, {} )
@@ -862,63 +974,81 @@ CoD.SystemOverlay_BlackMarket.new = function ( menu, controller )
 		PurchaseComplete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 18 )
+
 				largeImage:completeAnimation()
 				self.largeImage:setLeftRight( true, false, 53.5, 301.5 )
 				self.largeImage:setTopBottom( true, false, 10, 258 )
 				self.clipFinished( largeImage, {} )
+
 				titleForBurning:completeAnimation()
 				self.titleForBurning:setAlpha( 0 )
 				self.clipFinished( titleForBurning, {} )
+
 				textForBurning:completeAnimation()
 				self.textForBurning:setAlpha( 0 )
 				self.clipFinished( textForBurning, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0 )
 				self.clipFinished( text, {} )
+
 				options:completeAnimation()
 				self.options:setLeftRight( true, false, 422, 690.5 )
 				self.options:setTopBottom( true, false, 140, 207 )
 				self.clipFinished( options, {} )
+
 				supportInfo:completeAnimation()
 				self.supportInfo:setAlpha( 0 )
 				self.clipFinished( supportInfo, {} )
+
 				SupplyDropText:completeAnimation()
 				self.SupplyDropText:setAlpha( 1 )
 				self.clipFinished( SupplyDropText, {} )
+
 				BribeDuplicatesPopupInfo:completeAnimation()
 				self.BribeDuplicatesPopupInfo:setLeftRight( true, false, 68, 289 )
 				self.BribeDuplicatesPopupInfo:setTopBottom( true, false, 31, 280 )
 				self.BribeDuplicatesPopupInfo:setAlpha( 0 )
 				self.clipFinished( BribeDuplicatesPopupInfo, {} )
+
 				BlackMarketCODPointContainerSmall:completeAnimation()
 				self.BlackMarketCODPointContainerSmall:setAlpha( 0 )
 				self.clipFinished( BlackMarketCODPointContainerSmall, {} )
+
 				BlackMarketCryptokeyContainerSmall:completeAnimation()
 				self.BlackMarketCryptokeyContainerSmall:setAlpha( 0 )
 				self.clipFinished( BlackMarketCryptokeyContainerSmall, {} )
+
 				BurningDuplicatesAnimation:completeAnimation()
 				self.BurningDuplicatesAnimation:setAlpha( 0 )
 				self.clipFinished( BurningDuplicatesAnimation, {} )
+
 				ComfirmationCryptokeyLarge:completeAnimation()
 				self.ComfirmationCryptokeyLarge:setAlpha( 0 )
 				self.clipFinished( ComfirmationCryptokeyLarge, {} )
+
 				PurchasingBundle:completeAnimation()
 				self.PurchasingBundle:setAlpha( 0 )
 				self.clipFinished( PurchasingBundle, {} )
+
 				PurchasedBundleText:completeAnimation()
 				self.PurchasedBundleText:setLeftRight( true, false, 422, 869 )
 				self.PurchasedBundleText:setTopBottom( true, false, 45, 65 )
 				self.PurchasedBundleText:setAlpha( 1 )
 				self.clipFinished( PurchasedBundleText, {} )
+
 				PurchasedSixPackText:completeAnimation()
 				self.PurchasedSixPackText:setAlpha( 0 )
 				self.clipFinished( PurchasedSixPackText, {} )
+
 				SixPackBundleOpen:completeAnimation()
 				self.SixPackBundleOpen:setAlpha( 0 )
 				self.clipFinished( SixPackBundleOpen, {} )
+
 				BMBundleOffertime:completeAnimation()
 				self.BMBundleOffertime:setAlpha( 0 )
 				self.clipFinished( BMBundleOffertime, {} )
+
 				BMBurnProgressIndicator0:completeAnimation()
 				self.BMBurnProgressIndicator0:setAlpha( 0 )
 				self.clipFinished( BMBurnProgressIndicator0, {} )
@@ -927,81 +1057,102 @@ CoD.SystemOverlay_BlackMarket.new = function ( menu, controller )
 		PurchasedSixPack = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 20 )
+
 				largeImage:completeAnimation()
 				self.largeImage:setLeftRight( true, false, 74.5, 282.5 )
 				self.largeImage:setTopBottom( true, false, 236.25, 258 )
 				self.largeImage:setAlpha( 0 )
 				self.clipFinished( largeImage, {} )
+
 				titleForBurning:completeAnimation()
 				self.titleForBurning:setAlpha( 0 )
 				self.clipFinished( titleForBurning, {} )
+
 				textForBurning:completeAnimation()
 				self.textForBurning:setAlpha( 0 )
 				self.clipFinished( textForBurning, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0 )
 				self.clipFinished( text, {} )
+
 				options:completeAnimation()
 				self.options:setLeftRight( true, false, 422, 690.5 )
 				self.options:setTopBottom( true, false, 140, 207 )
 				self.clipFinished( options, {} )
+
 				supportInfo:completeAnimation()
 				self.supportInfo:setAlpha( 0 )
 				self.clipFinished( supportInfo, {} )
+
 				SupplyDropText:completeAnimation()
 				self.SupplyDropText:setAlpha( 1 )
 				self.clipFinished( SupplyDropText, {} )
+
 				BribeDuplicatesPopupInfo:completeAnimation()
 				self.BribeDuplicatesPopupInfo:setAlpha( 0 )
 				self.clipFinished( BribeDuplicatesPopupInfo, {} )
+
 				BlackMarketCODPointContainerSmall:completeAnimation()
 				self.BlackMarketCODPointContainerSmall:setAlpha( 0 )
 				self.clipFinished( BlackMarketCODPointContainerSmall, {} )
+
 				BlackMarketCryptokeyContainerSmall:completeAnimation()
 				self.BlackMarketCryptokeyContainerSmall:setAlpha( 0 )
 				self.clipFinished( BlackMarketCryptokeyContainerSmall, {} )
+
 				BurningDuplicatesAnimation:completeAnimation()
 				self.BurningDuplicatesAnimation:setAlpha( 0 )
 				self.clipFinished( BurningDuplicatesAnimation, {} )
+
 				ComfirmationCryptokeyLarge:completeAnimation()
 				self.ComfirmationCryptokeyLarge:setAlpha( 0 )
 				self.clipFinished( ComfirmationCryptokeyLarge, {} )
+
 				PurchasingBundle:completeAnimation()
 				self.PurchasingBundle:setAlpha( 0 )
 				self.clipFinished( PurchasingBundle, {} )
+
 				PurchasedBundleText:completeAnimation()
 				self.PurchasedBundleText:setLeftRight( true, false, 421, 868 )
 				self.PurchasedBundleText:setTopBottom( true, false, 89.5, 111.5 )
 				self.PurchasedBundleText:setAlpha( 0 )
 				self.clipFinished( PurchasedBundleText, {} )
+
 				PurchasedSixPackText:completeAnimation()
 				self.PurchasedSixPackText:setLeftRight( true, false, 422, 869 )
 				self.PurchasedSixPackText:setTopBottom( true, false, 45, 65 )
 				self.PurchasedSixPackText:setAlpha( 1 )
 				self.clipFinished( PurchasedSixPackText, {} )
+
 				BundleOpen:completeAnimation()
 				self.BundleOpen:setLeftRight( true, false, 38.34, 313.66 )
 				self.BundleOpen:setTopBottom( true, false, -5, 274 )
 				self.BundleOpen:setAlpha( 0 )
 				self.clipFinished( BundleOpen, {} )
+
 				SixPackBundleOpen:completeAnimation()
 				self.SixPackBundleOpen:setLeftRight( true, false, 38.34, 313.66 )
 				self.SixPackBundleOpen:setTopBottom( true, false, -5, 274 )
 				self.SixPackBundleOpen:setAlpha( 1 )
 				self.clipFinished( SixPackBundleOpen, {} )
+
 				BMBundleOffertime:completeAnimation()
 				self.BMBundleOffertime:setAlpha( 1 )
 				self.clipFinished( BMBundleOffertime, {} )
+
 				BMBundleCount:completeAnimation()
 				self.BMBundleCount:setLeftRight( true, false, 74, 274 )
 				self.BMBundleCount:setTopBottom( true, false, 87.5, 137.5 )
 				self.clipFinished( BMBundleCount, {} )
+
 				BMBurnProgressIndicator0:completeAnimation()
 				self.BMBurnProgressIndicator0:setAlpha( 0 )
 				self.clipFinished( BMBurnProgressIndicator0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BurnDuplicates",
@@ -1085,6 +1236,7 @@ CoD.SystemOverlay_BlackMarket.new = function ( menu, controller )
 			return false
 		end
 	end, false )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsSelfInState( self, "BurnedDuplicates" ) then
 			PlayClipOnElement( self, {
@@ -1101,6 +1253,7 @@ CoD.SystemOverlay_BlackMarket.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.textForBurning:close()
 		element.text:close()

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.FooterButtonPrompt" )
 CoD.cac_LargePrestigeStars = InheritFrom( LUI.UIElement )
 CoD.cac_LargePrestigeStars.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_LargePrestigeStars )
 	self.id = "cac_LargePrestigeStars"
@@ -161,9 +163,11 @@ CoD.cac_LargePrestigeStars.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				prestigeStar1:completeAnimation()
 				self.prestigeStar1:setRGB( 0.97, 0.93, 0.07 )
 				self.clipFinished( prestigeStar1, {} )
+
 				prestigeStar2:completeAnimation()
 				self.prestigeStar2:setRGB( 0.97, 0.93, 0.07 )
 				self.clipFinished( prestigeStar2, {} )
@@ -172,15 +176,18 @@ CoD.cac_LargePrestigeStars.new = function ( menu, controller )
 		DoubleWeaponXP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				prestigeStar1:completeAnimation()
 				self.prestigeStar1:setRGB( 0.59, 0.36, 0.89 )
 				self.clipFinished( prestigeStar1, {} )
+
 				prestigeStar2:completeAnimation()
 				self.prestigeStar2:setRGB( 0.59, 0.36, 0.89 )
 				self.clipFinished( prestigeStar2, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DoubleWeaponXP",
@@ -189,6 +196,7 @@ CoD.cac_LargePrestigeStars.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.prestigeStar1:close()
 		element.prestigeStar2:close()

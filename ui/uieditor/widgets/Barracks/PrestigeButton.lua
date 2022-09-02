@@ -14,9 +14,11 @@ end
 CoD.PrestigeButton = InheritFrom( LUI.UIElement )
 CoD.PrestigeButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PrestigeButton )
 	self.id = "PrestigeButton"
@@ -175,82 +177,106 @@ CoD.PrestigeButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0.05 )
 				self.clipFinished( BlackTint, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 0 )
 				self.clipFinished( LockIcon, {} )
+
 				LockedHint:completeAnimation()
 				self.LockedHint:setAlpha( 0 )
 				self.clipFinished( LockedHint, {} )
+
 				PrestigeMasterCard:completeAnimation()
 				self.PrestigeMasterCard:setAlpha( 0 )
 				self.clipFinished( PrestigeMasterCard, {} )
+
 				PrestigeIcon:completeAnimation()
 				self.PrestigeIcon:setLeftRight( false, false, 17, 145 )
 				self.PrestigeIcon:setTopBottom( false, false, -78, 50 )
 				self.PrestigeIcon:setAlpha( 1 )
 				self.clipFinished( PrestigeIcon, {} )
+
 				AwardsAvailable:completeAnimation()
 				self.AwardsAvailable:setAlpha( 1 )
 				self.clipFinished( AwardsAvailable, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				BlackLine:completeAnimation()
 				self.BlackLine:setAlpha( 0 )
 				self.clipFinished( BlackLine, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0 )
 				self.clipFinished( BlackTint, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0.05 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 0 )
 				self.clipFinished( LockIcon, {} )
+
 				LockedHint:completeAnimation()
 				self.LockedHint:setAlpha( 0 )
 				self.clipFinished( LockedHint, {} )
+
 				PrestigeMasterCard:completeAnimation()
 				self.PrestigeMasterCard:setAlpha( 0 )
 				self.clipFinished( PrestigeMasterCard, {} )
+
 				PrestigeIcon:completeAnimation()
 				self.PrestigeIcon:setLeftRight( false, false, 17, 145 )
 				self.PrestigeIcon:setTopBottom( false, false, -78, 50 )
 				self.PrestigeIcon:setAlpha( 1 )
 				self.clipFinished( PrestigeIcon, {} )
+
 				AwardsAvailable:completeAnimation()
 				self.AwardsAvailable:setAlpha( 1 )
 				self.clipFinished( AwardsAvailable, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				BlackLine:completeAnimation()
 				self.BlackLine:setAlpha( 0 )
 				self.clipFinished( BlackLine, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
@@ -259,86 +285,110 @@ CoD.PrestigeButton.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0.05 )
 				self.clipFinished( BlackTint, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0.3 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setLeftRight( false, false, -64, 64 )
 				self.LockIcon:setTopBottom( false, false, -82, 46 )
 				self.LockIcon:setAlpha( 0 )
 				self.clipFinished( LockIcon, {} )
+
 				LockedHint:completeAnimation()
 				self.LockedHint:setLeftRight( false, false, -175, 175 )
 				self.LockedHint:setTopBottom( false, false, 31, 48 )
 				self.LockedHint:setAlpha( 1 )
 				self.clipFinished( LockedHint, {} )
+
 				PrestigeMasterCard:completeAnimation()
 				self.PrestigeMasterCard:setAlpha( 0 )
 				self.clipFinished( PrestigeMasterCard, {} )
+
 				PrestigeIcon:completeAnimation()
 				self.PrestigeIcon:setAlpha( 0 )
 				self.clipFinished( PrestigeIcon, {} )
+
 				AwardsAvailable:completeAnimation()
 				self.AwardsAvailable:setAlpha( 0 )
 				self.clipFinished( AwardsAvailable, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				BlackLine:completeAnimation()
 				self.BlackLine:setAlpha( 0.5 )
 				self.clipFinished( BlackLine, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0 )
 				self.clipFinished( BlackTint, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0.3 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setLeftRight( false, false, -64, 64 )
 				self.LockIcon:setTopBottom( false, false, -82, 46 )
 				self.LockIcon:setAlpha( 0 )
 				self.clipFinished( LockIcon, {} )
+
 				LockedHint:completeAnimation()
 				self.LockedHint:setLeftRight( false, false, -175, 175 )
 				self.LockedHint:setTopBottom( false, false, 31, 48 )
 				self.LockedHint:setAlpha( 1 )
 				self.clipFinished( LockedHint, {} )
+
 				PrestigeMasterCard:completeAnimation()
 				self.PrestigeMasterCard:setAlpha( 0 )
 				self.clipFinished( PrestigeMasterCard, {} )
+
 				PrestigeIcon:completeAnimation()
 				self.PrestigeIcon:setAlpha( 0 )
 				self.clipFinished( PrestigeIcon, {} )
+
 				AwardsAvailable:completeAnimation()
 				self.AwardsAvailable:setAlpha( 0 )
 				self.clipFinished( AwardsAvailable, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				BlackLine:completeAnimation()
 				self.BlackLine:setAlpha( 0.5 )
 				self.clipFinished( BlackLine, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
@@ -347,81 +397,105 @@ CoD.PrestigeButton.new = function ( menu, controller )
 		FirstAvailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0.05 )
 				self.clipFinished( BlackTint, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 0 )
 				self.clipFinished( LockIcon, {} )
+
 				LockedHint:completeAnimation()
 				self.LockedHint:setAlpha( 0 )
 				self.clipFinished( LockedHint, {} )
+
 				PrestigeMasterCard:completeAnimation()
 				self.PrestigeMasterCard:setAlpha( 0 )
 				self.clipFinished( PrestigeMasterCard, {} )
+
 				PrestigeIcon:completeAnimation()
 				self.PrestigeIcon:setLeftRight( false, false, -64, 64 )
 				self.PrestigeIcon:setTopBottom( false, false, -78, 50 )
 				self.clipFinished( PrestigeIcon, {} )
+
 				AwardsAvailable:completeAnimation()
 				self.AwardsAvailable:setAlpha( 0 )
 				self.clipFinished( AwardsAvailable, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				BlackLine:completeAnimation()
 				self.BlackLine:setAlpha( 0 )
 				self.clipFinished( BlackLine, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0 )
 				self.clipFinished( BlackTint, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 0 )
 				self.clipFinished( LockIcon, {} )
+
 				LockedHint:completeAnimation()
 				self.LockedHint:setAlpha( 0 )
 				self.clipFinished( LockedHint, {} )
+
 				PrestigeMasterCard:completeAnimation()
 				self.PrestigeMasterCard:setAlpha( 0 )
 				self.clipFinished( PrestigeMasterCard, {} )
+
 				PrestigeIcon:completeAnimation()
 				self.PrestigeIcon:setLeftRight( false, false, -64, 64 )
 				self.PrestigeIcon:setTopBottom( false, false, -78, 50 )
 				self.PrestigeIcon:setAlpha( 1 )
 				self.clipFinished( PrestigeIcon, {} )
+
 				AwardsAvailable:completeAnimation()
 				self.AwardsAvailable:setAlpha( 0 )
 				self.clipFinished( AwardsAvailable, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				BlackLine:completeAnimation()
 				self.BlackLine:setAlpha( 0 )
 				self.clipFinished( BlackLine, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
@@ -430,81 +504,104 @@ CoD.PrestigeButton.new = function ( menu, controller )
 		PrestigeMasterZM = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0.05 )
 				self.clipFinished( BlackTint, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 0 )
 				self.clipFinished( LockIcon, {} )
+
 				LockedHint:completeAnimation()
 				self.LockedHint:setAlpha( 0 )
 				self.clipFinished( LockedHint, {} )
+
 				PrestigeMasterCard:completeAnimation()
 				self.PrestigeMasterCard:setAlpha( 0 )
 				self.clipFinished( PrestigeMasterCard, {} )
+
 				PrestigeIcon:completeAnimation()
 				self.PrestigeIcon:setLeftRight( false, false, 17, 145 )
 				self.PrestigeIcon:setTopBottom( false, false, -78, 50 )
 				self.PrestigeIcon:setAlpha( 1 )
 				self.clipFinished( PrestigeIcon, {} )
+
 				AwardsAvailable:completeAnimation()
 				self.AwardsAvailable:setAlpha( 1 )
 				self.AwardsAvailable:setText( Engine.Localize( "MENU_FRESH_START_AVAILABLE" ) )
 				self.clipFinished( AwardsAvailable, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				BlackLine:completeAnimation()
 				self.BlackLine:setAlpha( 0 )
 				self.clipFinished( BlackLine, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 11 )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0 )
 				self.clipFinished( BlackTint, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 0 )
 				self.clipFinished( LockIcon, {} )
+
 				LockedHint:completeAnimation()
 				self.LockedHint:setAlpha( 0 )
 				self.clipFinished( LockedHint, {} )
+
 				PrestigeMasterCard:completeAnimation()
 				self.PrestigeMasterCard:setAlpha( 0 )
 				self.clipFinished( PrestigeMasterCard, {} )
+
 				PrestigeIcon:completeAnimation()
 				self.PrestigeIcon:setLeftRight( false, false, 17, 145 )
 				self.PrestigeIcon:setTopBottom( false, false, -78, 50 )
 				self.PrestigeIcon:setAlpha( 1 )
 				self.clipFinished( PrestigeIcon, {} )
+
 				AwardsAvailable:completeAnimation()
 				self.AwardsAvailable:setAlpha( 1 )
 				self.AwardsAvailable:setText( Engine.Localize( "MENU_FRESH_START_AVAILABLE" ) )
 				self.clipFinished( AwardsAvailable, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				BlackLine:completeAnimation()
 				self.BlackLine:setAlpha( 0 )
 				self.clipFinished( BlackLine, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
@@ -513,89 +610,113 @@ CoD.PrestigeButton.new = function ( menu, controller )
 		PrestigeMaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0.05 )
 				self.clipFinished( BlackTint, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 0 )
 				self.clipFinished( LockIcon, {} )
+
 				LockedHint:completeAnimation()
 				self.LockedHint:setAlpha( 0 )
 				self.clipFinished( LockedHint, {} )
+
 				PrestigeMasterCard:completeAnimation()
 				self.PrestigeMasterCard:setLeftRight( false, false, -160, 160 )
 				self.PrestigeMasterCard:setTopBottom( false, false, -54, 26 )
 				self.PrestigeMasterCard:setAlpha( 1 )
 				self.clipFinished( PrestigeMasterCard, {} )
+
 				PrestigeIcon:completeAnimation()
 				self.PrestigeIcon:setLeftRight( false, false, 17, 145 )
 				self.PrestigeIcon:setTopBottom( false, false, -78, 50 )
 				self.PrestigeIcon:setAlpha( 0 )
 				self.clipFinished( PrestigeIcon, {} )
+
 				AwardsAvailable:completeAnimation()
 				self.AwardsAvailable:setAlpha( 1 )
 				self.AwardsAvailable:setText( Engine.Localize( "MENU_FRESH_START_AVAILABLE" ) )
 				self.clipFinished( AwardsAvailable, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				BlackLine:completeAnimation()
 				self.BlackLine:setAlpha( 0 )
 				self.clipFinished( BlackLine, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 11 )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0 )
 				self.clipFinished( BlackTint, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 0 )
 				self.clipFinished( LockIcon, {} )
+
 				LockedHint:completeAnimation()
 				self.LockedHint:setAlpha( 0 )
 				self.clipFinished( LockedHint, {} )
+
 				PrestigeMasterCard:completeAnimation()
 				self.PrestigeMasterCard:setAlpha( 1 )
 				self.clipFinished( PrestigeMasterCard, {} )
+
 				PrestigeIcon:completeAnimation()
 				self.PrestigeIcon:setLeftRight( false, false, 17, 145 )
 				self.PrestigeIcon:setTopBottom( false, false, -78, 50 )
 				self.PrestigeIcon:setAlpha( 0 )
 				self.clipFinished( PrestigeIcon, {} )
+
 				AwardsAvailable:completeAnimation()
 				self.AwardsAvailable:setAlpha( 1 )
 				self.AwardsAvailable:setText( Engine.Localize( "MENU_FRESH_START_AVAILABLE" ) )
 				self.clipFinished( AwardsAvailable, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				BlackLine:completeAnimation()
 				self.BlackLine:setAlpha( 0 )
 				self.clipFinished( BlackLine, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -630,6 +751,7 @@ CoD.PrestigeButton.new = function ( menu, controller )
 			modelName = "prestigeGameMode"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactive0:close()
 		element.BoxButtonLrgInactiveDiag:close()

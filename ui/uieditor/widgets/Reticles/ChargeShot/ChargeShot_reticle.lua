@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Reticles.ChargeShot.ChargeShot_reticle_ui3d" )
 CoD.ChargeShot_reticle = InheritFrom( LUI.UIElement )
 CoD.ChargeShot_reticle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChargeShot_reticle )
 	self.id = "ChargeShot_reticle"

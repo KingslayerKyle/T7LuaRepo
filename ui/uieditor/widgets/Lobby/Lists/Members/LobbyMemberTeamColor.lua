@@ -26,9 +26,11 @@ end
 CoD.LobbyMemberTeamColor = InheritFrom( LUI.UIElement )
 CoD.LobbyMemberTeamColor.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyMemberTeamColor )
 	self.id = "LobbyMemberTeamColor"
@@ -101,9 +103,11 @@ CoD.LobbyMemberTeamColor.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			TeamSwitch = function ()
 				self:setupElementClipCounter( 2 )
+
 				local DimmerFrame2 = function ( Dimmer, event )
 					local DimmerFrame3 = function ( Dimmer, event )
 						if not event.interrupted then
@@ -159,18 +163,22 @@ CoD.LobbyMemberTeamColor.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Dimmer:completeAnimation()
 				self.Dimmer:setAlpha( 0 )
 				self.clipFinished( Dimmer, {} )
+
 				LobbyMemberTeamColorBackgroundOnChange:completeAnimation()
 				self.LobbyMemberTeamColorBackgroundOnChange:setAlpha( 0 )
 				self.clipFinished( LobbyMemberTeamColorBackgroundOnChange, {} )
+
 				TeamColorBackground:completeAnimation()
 				self.TeamColorBackground:setAlpha( 0 )
 				self.clipFinished( TeamColorBackground, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",
@@ -187,6 +195,7 @@ CoD.LobbyMemberTeamColor.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LobbyMemberTeamColorBackgroundOnChange:close()
 		element.FEButtonPanelShaderContainer0:close()

@@ -29,9 +29,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_TimeAndLootBanner" )
 CoD.LootDecryptionWidget = InheritFrom( LUI.UIElement )
 CoD.LootDecryptionWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LootDecryptionWidget )
 	self.id = "LootDecryptionWidget"
@@ -773,84 +775,110 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 25 )
+
 				LimitedBacking:completeAnimation()
 				self.LimitedBacking:setAlpha( 0 )
 				self.clipFinished( LimitedBacking, {} )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 0 )
 				self.clipFinished( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 0 )
 				self.clipFinished( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.clipFinished( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.clipFinished( CommonBacking, {} )
+
 				BMLineLightFX:completeAnimation()
 				self.BMLineLightFX:setAlpha( 0 )
 				self.clipFinished( BMLineLightFX, {} )
+
 				BMTriangleLightFX:completeAnimation()
 				self.BMTriangleLightFX:setAlpha( 0 )
 				self.clipFinished( BMTriangleLightFX, {} )
+
 				lootRarityTextWhite:completeAnimation()
 				self.lootRarityTextWhite:setAlpha( 0 )
 				self.clipFinished( lootRarityTextWhite, {} )
+
 				LootDecryptionImage:completeAnimation()
 				self.LootDecryptionImage:setAlpha( 0 )
 				self.clipFinished( LootDecryptionImage, {} )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
+
 				BMLockItem:completeAnimation()
 				self.BMLockItem:setAlpha( 0 )
 				self.clipFinished( BMLockItem, {} )
+
 				GLOWcommon:completeAnimation()
 				self.GLOWcommon:setAlpha( 0 )
 				self.clipFinished( GLOWcommon, {} )
+
 				blurbox:completeAnimation()
 				self.blurbox:setAlpha( 0 )
 				self.clipFinished( blurbox, {} )
+
 				BMPixelFX:completeAnimation()
 				self.BMPixelFX:setAlpha( 0 )
 				self.clipFinished( BMPixelFX, {} )
+
 				BMPixel02FX:completeAnimation()
 				self.BMPixel02FX:setAlpha( 0 )
 				self.clipFinished( BMPixel02FX, {} )
+
 				BMPixel03FX:completeAnimation()
 				self.BMPixel03FX:setAlpha( 0 )
 				self.clipFinished( BMPixel03FX, {} )
+
 				BMPixel04FX:completeAnimation()
 				self.BMPixel04FX:setAlpha( 0 )
 				self.clipFinished( BMPixel04FX, {} )
+
 				BMPixel05FX:completeAnimation()
 				self.BMPixel05FX:setAlpha( 0 )
 				self.clipFinished( BMPixel05FX, {} )
+
 				BMPixel06FX:completeAnimation()
 				self.BMPixel06FX:setAlpha( 0 )
 				self.clipFinished( BMPixel06FX, {} )
+
 				LightCommon:completeAnimation()
 				self.LightCommon:setAlpha( 0 )
 				self.clipFinished( LightCommon, {} )
+
 				LightRare:completeAnimation()
 				self.LightRare:setAlpha( 0 )
 				self.clipFinished( LightRare, {} )
+
 				LightLegendary:completeAnimation()
 				self.LightLegendary:setAlpha( 0 )
 				self.clipFinished( LightLegendary, {} )
+
 				LightEpic:completeAnimation()
 				self.LightEpic:setAlpha( 0 )
 				self.clipFinished( LightEpic, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				BMTimeAndLootBanner:completeAnimation()
 				self.BMTimeAndLootBanner:setAlpha( 0 )
 				self.clipFinished( BMTimeAndLootBanner, {} )
 			end,
 			StartFuzz = function ()
 				self:setupElementClipCounter( 21 )
+
 				local fxGlitch1800Frame2 = function ( fxGlitch1800, event )
 					local fxGlitch1800Frame3 = function ( fxGlitch1800, event )
 						local fxGlitch1800Frame4 = function ( fxGlitch1800, event )
@@ -1639,33 +1667,43 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				fxGlitch1100:beginAnimation( "keyframe", 189, false, false, CoD.TweenType.Linear )
 				fxGlitch1100:setAlpha( 0 )
 				fxGlitch1100:registerEventHandler( "transition_complete_keyframe", f28_local6 )
+
 				LimitedBacking:completeAnimation()
 				self.LimitedBacking:setAlpha( 0 )
 				self.clipFinished( LimitedBacking, {} )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 0 )
 				self.clipFinished( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 0 )
 				self.clipFinished( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.clipFinished( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.clipFinished( CommonBacking, {} )
+
 				lootRarityText:completeAnimation()
 				self.lootRarityText:setAlpha( 0 )
 				self.clipFinished( lootRarityText, {} )
+
 				lootRaritySet:completeAnimation()
 				self.lootRaritySet:setAlpha( 0 )
 				self.clipFinished( lootRaritySet, {} )
+
 				lootCategory:completeAnimation()
 				self.lootCategory:setAlpha( 0 )
 				self.clipFinished( lootCategory, {} )
+
 				lootName:completeAnimation()
 				self.lootName:setAlpha( 0 )
 				self.clipFinished( lootName, {} )
+
 				LootDecryptionImage:completeAnimation()
 				self.LootDecryptionImage:setAlpha( 0 )
 				self.clipFinished( LootDecryptionImage, {} )
@@ -1728,22 +1766,28 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				LootDecryptionFakeImageCycleFrame2( LootDecryptionFakeImageCycle, {} )
+
 				BMPixel06FX:completeAnimation()
 				self.BMPixel06FX:setAlpha( 0 )
 				self.clipFinished( BMPixel06FX, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				BMTimeAndLootBanner:completeAnimation()
 				self.BMTimeAndLootBanner:setAlpha( 0 )
 				self.clipFinished( BMTimeAndLootBanner, {} )
+
 				self.nextClip = "StartFuzz"
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			RevealedCommon = function ()
 				self:setupElementClipCounter( 15 )
+
 				local f106_local0 = function ( f107_arg0, f107_arg1 )
 					local f107_local0 = function ( f108_arg0, f108_arg1 )
 						if not f108_arg1.interrupted then
@@ -1770,9 +1814,11 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				Glow:beginAnimation( "keyframe", 79, false, false, CoD.TweenType.Linear )
 				Glow:setAlpha( 0 )
 				Glow:registerEventHandler( "transition_complete_keyframe", f106_local0 )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 0 )
 				self.clipFinished( EpicBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.clipFinished( RareBacking, {} )
@@ -1884,6 +1930,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LootDecryptionImage:setTopBottom( true, false, -57, 292 )
 				LootDecryptionImage:setAlpha( 0 )
 				LootDecryptionImage:registerEventHandler( "transition_complete_keyframe", f106_local6 )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setLeftRight( true, true, -30, 29 )
 				self.LootDecryptionFakeImageCycle:setTopBottom( true, true, -22, 27 )
@@ -1968,9 +2015,11 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.blurbox:setAlpha( 0 )
 				self.blurbox:setScale( 1 )
 				blurboxFrame2( blurbox, {} )
+
 				BMPixel06FX:completeAnimation()
 				self.BMPixel06FX:setAlpha( 0 )
 				self.clipFinished( BMPixel06FX, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
@@ -1992,6 +2041,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 			end,
 			RevealedRare = function ()
 				self:setupElementClipCounter( 17 )
+
 				local RareBackingFrame2 = function ( RareBacking, event )
 					local RareBackingFrame3 = function ( RareBacking, event )
 						if not event.interrupted then
@@ -2021,6 +2071,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.RareBacking:setAlpha( 0 )
 				self.RareBacking:setScale( 3.5 )
 				RareBackingFrame2( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.clipFinished( CommonBacking, {} )
@@ -2103,6 +2154,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LootDecryptionImage:setTopBottom( true, false, -57, 292 )
 				LootDecryptionImage:setAlpha( 0 )
 				LootDecryptionImage:registerEventHandler( "transition_complete_keyframe", f123_local5 )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
@@ -2231,9 +2283,11 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.BMPixel04FX:setRGB( 0, 0.6, 0.9 )
 				self.BMPixel04FX:setAlpha( 0 )
 				BMPixel04FXFrame2( BMPixel04FX, {} )
+
 				BMPixel06FX:completeAnimation()
 				self.BMPixel06FX:setAlpha( 0 )
 				self.clipFinished( BMPixel06FX, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
@@ -2255,6 +2309,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 			end,
 			RevealedLegendary = function ()
 				self:setupElementClipCounter( 24 )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 0 )
 				self.clipFinished( EpicBacking, {} )
@@ -2287,9 +2342,11 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LegendaryBacking:setAlpha( 0 )
 				self.LegendaryBacking:setScale( 3.5 )
 				LegendaryBackingFrame2( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.clipFinished( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.clipFinished( CommonBacking, {} )
@@ -2372,9 +2429,11 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LootDecryptionImage:setTopBottom( true, false, -57, 292 )
 				LootDecryptionImage:setAlpha( 0 )
 				LootDecryptionImage:registerEventHandler( "transition_complete_keyframe", f140_local5 )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
+
 				GLOWrare:completeAnimation()
 				self.GLOWrare:setAlpha( 0 )
 				self.clipFinished( GLOWrare, {} )
@@ -2557,6 +2616,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.BMPixel04FX:setRGB( 0.67, 0.2, 1 )
 				self.BMPixel04FX:setAlpha( 0 )
 				BMPixel04FXFrame2( BMPixel04FX, {} )
+
 				BMPixel06FX:completeAnimation()
 				self.BMPixel06FX:setAlpha( 0 )
 				self.clipFinished( BMPixel06FX, {} )
@@ -2760,6 +2820,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LegendaryEmber5:setAlpha( 0 )
 				LegendaryEmber5:setScale( 0.8 )
 				LegendaryEmber5:registerEventHandler( "transition_complete_keyframe", f140_local15 )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
@@ -2781,6 +2842,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 			end,
 			RevealedEpic = function ()
 				self:setupElementClipCounter( 28 )
+
 				local EpicBackingFrame2 = function ( EpicBacking, event )
 					local EpicBackingFrame3 = function ( EpicBacking, event )
 						if not event.interrupted then
@@ -2810,13 +2872,16 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.EpicBacking:setAlpha( 0 )
 				self.EpicBacking:setScale( 3.5 )
 				EpicBackingFrame2( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 0 )
 				self.LegendaryBacking:setScale( 3.5 )
 				self.clipFinished( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.clipFinished( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.clipFinished( CommonBacking, {} )
@@ -2914,9 +2979,11 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				LootDecryptionFakeImageCycleFrame2( LootDecryptionFakeImageCycle, {} )
+
 				GLOWrare:completeAnimation()
 				self.GLOWrare:setAlpha( 0 )
 				self.clipFinished( GLOWrare, {} )
+
 				GLOWLengendary:completeAnimation()
 				self.GLOWLengendary:setAlpha( 0 )
 				self.clipFinished( GLOWLengendary, {} )
@@ -3045,6 +3112,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.BMPixel04FX:setRGB( 1, 0.67, 0 )
 				self.BMPixel04FX:setAlpha( 0 )
 				BMPixel04FXFrame2( BMPixel04FX, {} )
+
 				BMPixel06FX:completeAnimation()
 				self.BMPixel06FX:setAlpha( 0 )
 				self.clipFinished( BMPixel06FX, {} )
@@ -3404,6 +3472,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				BMFlyEmberFX0:beginAnimation( "keyframe", 319, false, false, CoD.TweenType.Linear )
 				BMFlyEmberFX0:setAlpha( 0 )
 				BMFlyEmberFX0:registerEventHandler( "transition_complete_keyframe", f177_local19 )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
@@ -3425,6 +3494,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 			end,
 			RevealedLimited = function ()
 				self:setupElementClipCounter( 45 )
+
 				local LimitedBackglowFrame2 = function ( LimitedBackglow, event )
 					local LimitedBackglowFrame3 = function ( LimitedBackglow, event )
 						local LimitedBackglowFrame4 = function ( LimitedBackglow, event )
@@ -3543,16 +3613,20 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LimitedBackingGlint:setMaterial( LUI.UIImage.GetCachedMaterial( "sw4_2d_bitchin_glint" ) )
 				LimitedBackingGlint:setShaderVector( 0, 0, 0, 0, 0 )
 				LimitedBackingGlint:registerEventHandler( "transition_complete_keyframe", f222_local2 )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 0 )
 				self.clipFinished( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 0 )
 				self.LegendaryBacking:setScale( 3.5 )
 				self.clipFinished( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.clipFinished( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.clipFinished( CommonBacking, {} )
@@ -3662,9 +3736,11 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				LootDecryptionFakeImageCycleFrame2( LootDecryptionFakeImageCycle, {} )
+
 				GLOWrare:completeAnimation()
 				self.GLOWrare:setAlpha( 0 )
 				self.clipFinished( GLOWrare, {} )
+
 				GLOWLengendary:completeAnimation()
 				self.GLOWLengendary:setAlpha( 0 )
 				self.clipFinished( GLOWLengendary, {} )
@@ -3694,23 +3770,28 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				GLOWEpic:beginAnimation( "keyframe", 109, false, false, CoD.TweenType.Linear )
 				GLOWEpic:setAlpha( 0 )
 				GLOWEpic:registerEventHandler( "transition_complete_keyframe", f222_local9 )
+
 				blurbox:completeAnimation()
 				self.blurbox:setRGB( 1, 0.67, 0 )
 				self.blurbox:setAlpha( 0 )
 				self.blurbox:setScale( 1 )
 				self.clipFinished( blurbox, {} )
+
 				BMPixelFX:completeAnimation()
 				self.BMPixelFX:setRGB( 1, 0.67, 0 )
 				self.BMPixelFX:setAlpha( 0 )
 				self.clipFinished( BMPixelFX, {} )
+
 				BMPixel02FX:completeAnimation()
 				self.BMPixel02FX:setRGB( 1, 0.67, 0 )
 				self.BMPixel02FX:setAlpha( 0 )
 				self.clipFinished( BMPixel02FX, {} )
+
 				BMPixel03FX:completeAnimation()
 				self.BMPixel03FX:setRGB( 1, 0.67, 0 )
 				self.BMPixel03FX:setAlpha( 0 )
 				self.clipFinished( BMPixel03FX, {} )
+
 				BMPixel04FX:completeAnimation()
 				self.BMPixel04FX:setRGB( 1, 0.67, 0 )
 				self.BMPixel04FX:setAlpha( 0 )
@@ -3781,18 +3862,23 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LightLimited:completeAnimation()
 				self.LightLimited:setAlpha( 0 )
 				LightLimitedFrame2( LightLimited, {} )
+
 				EpicEmber5:completeAnimation()
 				self.EpicEmber5:setAlpha( 0 )
 				self.clipFinished( EpicEmber5, {} )
+
 				EpicEmber4:completeAnimation()
 				self.EpicEmber4:setAlpha( 0 )
 				self.clipFinished( EpicEmber4, {} )
+
 				EpicEmber3:completeAnimation()
 				self.EpicEmber3:setAlpha( 0 )
 				self.clipFinished( EpicEmber3, {} )
+
 				EpicEmber2:completeAnimation()
 				self.EpicEmber2:setAlpha( 0 )
 				self.clipFinished( EpicEmber2, {} )
+
 				EpicEmber1:completeAnimation()
 				self.EpicEmber1:setAlpha( 0 )
 				self.clipFinished( EpicEmber1, {} )
@@ -4000,20 +4086,25 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				BMCircuits02FX:completeAnimation()
 				self.BMCircuits02FX:setAlpha( 1 )
 				BMCircuits02FXFrame2( BMCircuits02FX, {} )
+
 				BMCircuits01FX:completeAnimation()
 				self.BMCircuits01FX:setAlpha( 1 )
 				self.clipFinished( BMCircuits01FX, {} )
+
 				epicSkull:completeAnimation()
 				self.epicSkull:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_flipbook_animated" ) )
 				self.epicSkull:setShaderVector( 0, 27, 0, 0, 0 )
 				self.epicSkull:setShaderVector( 1, 0, 0, 0, 0 )
 				self.clipFinished( epicSkull, {} )
+
 				BMFlyEmberFX:completeAnimation()
 				self.BMFlyEmberFX:setAlpha( 0 )
 				self.clipFinished( BMFlyEmberFX, {} )
+
 				BMFlyEmberFX0:completeAnimation()
 				self.BMFlyEmberFX0:setAlpha( 0 )
 				self.clipFinished( BMFlyEmberFX0, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
@@ -4257,6 +4348,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 		RevealedCommon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 20 )
+
 				FocusBar3:completeAnimation()
 				self.FocusBar3:setLeftRight( false, false, -83.43, 72.57 )
 				self.FocusBar3:setTopBottom( true, false, 380.92, 406.92 )
@@ -4266,74 +4358,94 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LimitedBacking:beginAnimation( "keyframe", 1279, false, false, CoD.TweenType.Linear )
 				LimitedBacking:setAlpha( 0 )
 				LimitedBacking:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 0 )
 				self.clipFinished( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 0 )
 				self.clipFinished( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.RareBacking:setScale( 1 )
 				self.clipFinished( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 1 )
 				self.CommonBacking:setScale( 1 )
 				self.clipFinished( CommonBacking, {} )
+
 				lootRarityTextWhite:completeAnimation()
 				self.lootRarityTextWhite:setAlpha( 0 )
 				self.clipFinished( lootRarityTextWhite, {} )
+
 				lootRarityText:completeAnimation()
 				self.lootRarityText:setAlpha( 1 )
 				self.lootRarityText:setScale( 1 )
 				self.clipFinished( lootRarityText, {} )
+
 				lootRaritySet:completeAnimation()
 				self.lootRaritySet:setAlpha( 1 )
 				self.lootRaritySet:setScale( 1 )
 				self.clipFinished( lootRaritySet, {} )
+
 				lootCategory:completeAnimation()
 				self.lootCategory:setAlpha( 1 )
 				self.lootCategory:setScale( 1 )
 				self.clipFinished( lootCategory, {} )
+
 				lootName:completeAnimation()
 				self.lootName:setAlpha( 1 )
 				self.lootName:setScale( 1 )
 				self.clipFinished( lootName, {} )
+
 				LootDecryptionImage:completeAnimation()
 				self.LootDecryptionImage:setLeftRight( true, false, -5, 249 )
 				self.LootDecryptionImage:setTopBottom( true, false, -57, 292 )
 				self.LootDecryptionImage:setAlpha( 1 )
 				self.LootDecryptionImage:setScale( 1 )
 				self.clipFinished( LootDecryptionImage, {} )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
+
 				BMLockItem:completeAnimation()
 				self.BMLockItem:setAlpha( 1 )
 				self.BMLockItem:setScale( 1 )
 				self.clipFinished( BMLockItem, {} )
+
 				GLOWcommon:completeAnimation()
 				self.GLOWcommon:setAlpha( 0 )
 				self.clipFinished( GLOWcommon, {} )
+
 				BMPixelFX:completeAnimation()
 				self.BMPixelFX:setAlpha( 0 )
 				self.clipFinished( BMPixelFX, {} )
+
 				BMPixel02FX:completeAnimation()
 				self.BMPixel02FX:setAlpha( 0 )
 				self.clipFinished( BMPixel02FX, {} )
+
 				BMPixel03FX:completeAnimation()
 				self.BMPixel03FX:setAlpha( 0 )
 				self.clipFinished( BMPixel03FX, {} )
+
 				BMPixel04FX:completeAnimation()
 				self.BMPixel04FX:setAlpha( 0 )
 				self.clipFinished( BMPixel04FX, {} )
+
 				BMTimeAndLootBanner:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount:completeAnimation()
 				self.BMTimeAndLootBanner.BMDateTimeAndTotalCount:setAlpha( 0 )
 				self.clipFinished( BMTimeAndLootBanner, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 17 )
+
 				FocusBar3:completeAnimation()
 				self.FocusBar3:setLeftRight( false, false, -110, 110 )
 				self.FocusBar3:setTopBottom( true, false, 350, 409 )
@@ -4342,59 +4454,71 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LimitedBacking:beginAnimation( "keyframe", 1279, false, false, CoD.TweenType.Linear )
 				LimitedBacking:setAlpha( 0 )
 				LimitedBacking:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 0 )
 				self.clipFinished( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 0 )
 				self.clipFinished( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.RareBacking:setScale( 1 )
 				self.clipFinished( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 1 )
 				self.CommonBacking:setScale( 1.08 )
 				self.clipFinished( CommonBacking, {} )
+
 				lootRarityText:completeAnimation()
 				self.lootRarityText:setLeftRight( true, true, 0, -1 )
 				self.lootRarityText:setTopBottom( false, false, 146, 172 )
 				self.lootRarityText:setAlpha( 1 )
 				self.lootRarityText:setScale( 1.08 )
 				self.clipFinished( lootRarityText, {} )
+
 				lootRaritySet:completeAnimation()
 				self.lootRaritySet:setLeftRight( true, true, 0, 0 )
 				self.lootRaritySet:setTopBottom( false, false, 98, 118 )
 				self.lootRaritySet:setAlpha( 1 )
 				self.lootRaritySet:setScale( 1.08 )
 				self.clipFinished( lootRaritySet, {} )
+
 				lootCategory:completeAnimation()
 				self.lootCategory:setLeftRight( true, true, -1, 0 )
 				self.lootCategory:setTopBottom( false, false, 55, 75 )
 				self.lootCategory:setAlpha( 1 )
 				self.lootCategory:setScale( 1.08 )
 				self.clipFinished( lootCategory, {} )
+
 				lootName:completeAnimation()
 				self.lootName:setLeftRight( true, true, -1, 0 )
 				self.lootName:setTopBottom( false, false, 35, 55 )
 				self.lootName:setAlpha( 1 )
 				self.lootName:setScale( 1.08 )
 				self.clipFinished( lootName, {} )
+
 				LootDecryptionImage:completeAnimation()
 				self.LootDecryptionImage:setLeftRight( true, false, -5, 249 )
 				self.LootDecryptionImage:setTopBottom( true, false, -57, 292 )
 				self.LootDecryptionImage:setAlpha( 1 )
 				self.LootDecryptionImage:setScale( 1.08 )
 				self.clipFinished( LootDecryptionImage, {} )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
+
 				BMLockItem:completeAnimation()
 				self.BMLockItem:setLeftRight( true, true, 0, -0.94 )
 				self.BMLockItem:setTopBottom( true, true, 253.56, -39.44 )
 				self.BMLockItem:setAlpha( 1 )
 				self.BMLockItem:setScale( 1.08 )
 				self.clipFinished( BMLockItem, {} )
+
 				GLOWcommon:completeAnimation()
 				self.GLOWcommon:setAlpha( 0 )
 				self.clipFinished( GLOWcommon, {} )
@@ -4426,20 +4550,25 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LightCommon:setAlpha( 1 )
 				self.LightCommon:setScale( 1.08 )
 				LightCommonFrame2( LightCommon, {} )
+
 				LightRare:completeAnimation()
 				self.LightRare:setAlpha( 0 )
 				self.clipFinished( LightRare, {} )
+
 				BMTimeAndLootBanner:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount:completeAnimation()
 				self.BMTimeAndLootBanner:setLeftRight( true, false, -2, 245 )
 				self.BMTimeAndLootBanner:setTopBottom( true, false, -10, 33 )
 				self.BMTimeAndLootBanner:setScale( 1.08 )
 				self.BMTimeAndLootBanner.BMDateTimeAndTotalCount:setAlpha( 1 )
 				self.clipFinished( BMTimeAndLootBanner, {} )
+
 				self.nextClip = "Focus"
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 17 )
+
 				local FocusBar3Frame2 = function ( FocusBar3, event )
 					if not event.interrupted then
 						FocusBar3:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -4464,12 +4593,15 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LimitedBacking:beginAnimation( "keyframe", 1279, false, false, CoD.TweenType.Linear )
 				LimitedBacking:setAlpha( 0 )
 				LimitedBacking:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 0 )
 				self.clipFinished( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 0 )
 				self.clipFinished( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.RareBacking:setScale( 1 )
@@ -4596,6 +4728,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LootDecryptionImage:setAlpha( 1 )
 				self.LootDecryptionImage:setScale( 1 )
 				LootDecryptionImageFrame2( LootDecryptionImage, {} )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
@@ -4690,6 +4823,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				end
 				
 				BMTimeAndLootBanner:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount:completeAnimation()
 				self.BMTimeAndLootBanner:setLeftRight( true, false, -2, 245 )
 				self.BMTimeAndLootBanner:setTopBottom( true, false, 3, 41 )
@@ -4699,6 +4833,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 17 )
+
 				local FocusBar3Frame2 = function ( FocusBar3, event )
 					if not event.interrupted then
 						FocusBar3:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -4723,12 +4858,15 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LimitedBacking:beginAnimation( "keyframe", 1279, false, false, CoD.TweenType.Linear )
 				LimitedBacking:setAlpha( 0 )
 				LimitedBacking:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 0 )
 				self.clipFinished( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 0 )
 				self.clipFinished( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.RareBacking:setScale( 1 )
@@ -4855,6 +4993,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LootDecryptionImage:setAlpha( 1 )
 				self.LootDecryptionImage:setScale( 1.08 )
 				LootDecryptionImageFrame2( LootDecryptionImage, {} )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
@@ -4949,6 +5088,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				end
 				
 				BMTimeAndLootBanner:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount:completeAnimation()
 				self.BMTimeAndLootBanner:setLeftRight( true, false, -2, 245 )
 				self.BMTimeAndLootBanner:setTopBottom( true, false, -10, 33 )
@@ -4960,6 +5100,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 		RevealedRare = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 21 )
+
 				FocusBar3:completeAnimation()
 				self.FocusBar3:setLeftRight( false, false, -79, 77 )
 				self.FocusBar3:setTopBottom( true, false, 380, 406 )
@@ -4969,79 +5110,99 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LimitedBacking:beginAnimation( "keyframe", 1279, false, false, CoD.TweenType.Linear )
 				LimitedBacking:setAlpha( 0 )
 				LimitedBacking:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setLeftRight( true, true, -30, 29 )
 				self.EpicBacking:setTopBottom( true, true, -22, 27 )
 				self.EpicBacking:setAlpha( 0 )
 				self.clipFinished( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 0 )
 				self.clipFinished( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 1 )
 				self.RareBacking:setScale( 1 )
 				self.clipFinished( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.CommonBacking:setScale( 1 )
 				self.clipFinished( CommonBacking, {} )
+
 				BMLineLightFX:completeAnimation()
 				self.BMLineLightFX:setRGB( 0.65, 0.88, 1 )
 				self.BMLineLightFX:setAlpha( 1 )
 				self.clipFinished( BMLineLightFX, {} )
+
 				BMTriangleLightFX:completeAnimation()
 				self.BMTriangleLightFX:setAlpha( 0 )
 				self.clipFinished( BMTriangleLightFX, {} )
+
 				lootRarityTextWhite:completeAnimation()
 				self.lootRarityTextWhite:setAlpha( 0 )
 				self.clipFinished( lootRarityTextWhite, {} )
+
 				lootRarityText:completeAnimation()
 				self.lootRarityText:setAlpha( 1 )
 				self.lootRarityText:setScale( 1 )
 				self.clipFinished( lootRarityText, {} )
+
 				lootRaritySet:completeAnimation()
 				self.lootRaritySet:setAlpha( 1 )
 				self.lootRaritySet:setScale( 1 )
 				self.clipFinished( lootRaritySet, {} )
+
 				lootCategory:completeAnimation()
 				self.lootCategory:setAlpha( 1 )
 				self.lootCategory:setScale( 1 )
 				self.clipFinished( lootCategory, {} )
+
 				lootName:completeAnimation()
 				self.lootName:setAlpha( 1 )
 				self.lootName:setScale( 1 )
 				self.clipFinished( lootName, {} )
+
 				LootDecryptionImage:completeAnimation()
 				self.LootDecryptionImage:setLeftRight( false, false, -127.5, 126.5 )
 				self.LootDecryptionImage:setTopBottom( true, false, -57, 292 )
 				self.LootDecryptionImage:setAlpha( 1 )
 				self.LootDecryptionImage:setScale( 1 )
 				self.clipFinished( LootDecryptionImage, {} )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
+
 				BMLockItem:completeAnimation()
 				self.BMLockItem:setAlpha( 1 )
 				self.BMLockItem:setScale( 1 )
 				self.clipFinished( BMLockItem, {} )
+
 				GLOWcommon:completeAnimation()
 				self.GLOWcommon:setAlpha( 0 )
 				self.clipFinished( GLOWcommon, {} )
+
 				BMPixelFX:completeAnimation()
 				self.BMPixelFX:setAlpha( 0 )
 				self.clipFinished( BMPixelFX, {} )
+
 				BMPixel02FX:completeAnimation()
 				self.BMPixel02FX:setAlpha( 0 )
 				self.clipFinished( BMPixel02FX, {} )
+
 				BMPixel03FX:completeAnimation()
 				self.BMPixel03FX:setAlpha( 0 )
 				self.clipFinished( BMPixel03FX, {} )
+
 				BMPixel04FX:completeAnimation()
 				self.BMPixel04FX:setAlpha( 0 )
 				self.clipFinished( BMPixel04FX, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 17 )
+
 				FocusBar3:completeAnimation()
 				self.FocusBar3:setLeftRight( false, false, -110, 110 )
 				self.FocusBar3:setTopBottom( true, false, 350, 409 )
@@ -5050,62 +5211,75 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LimitedBacking:beginAnimation( "keyframe", 1279, false, false, CoD.TweenType.Linear )
 				LimitedBacking:setAlpha( 0 )
 				LimitedBacking:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 0 )
 				self.clipFinished( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 0 )
 				self.clipFinished( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 1 )
 				self.RareBacking:setScale( 1.08 )
 				self.clipFinished( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.CommonBacking:setScale( 1 )
 				self.clipFinished( CommonBacking, {} )
+
 				BMLineLightFX:completeAnimation()
 				self.BMLineLightFX:setRGB( 0.65, 0.88, 1 )
 				self.BMLineLightFX:setAlpha( 1 )
 				self.BMLineLightFX:setScale( 1.08 )
 				self.clipFinished( BMLineLightFX, {} )
+
 				lootRarityText:completeAnimation()
 				self.lootRarityText:setLeftRight( true, true, 0, -1 )
 				self.lootRarityText:setTopBottom( false, false, 146, 172 )
 				self.lootRarityText:setAlpha( 1 )
 				self.lootRarityText:setScale( 1.08 )
 				self.clipFinished( lootRarityText, {} )
+
 				lootRaritySet:completeAnimation()
 				self.lootRaritySet:setLeftRight( true, true, 0, 0 )
 				self.lootRaritySet:setTopBottom( false, false, 98, 118 )
 				self.lootRaritySet:setAlpha( 1 )
 				self.lootRaritySet:setScale( 1.08 )
 				self.clipFinished( lootRaritySet, {} )
+
 				lootCategory:completeAnimation()
 				self.lootCategory:setLeftRight( true, true, -1, 0 )
 				self.lootCategory:setTopBottom( false, false, 55, 75 )
 				self.lootCategory:setAlpha( 1 )
 				self.lootCategory:setScale( 1.08 )
 				self.clipFinished( lootCategory, {} )
+
 				lootName:completeAnimation()
 				self.lootName:setLeftRight( true, true, -1, 0 )
 				self.lootName:setTopBottom( false, false, 35, 55 )
 				self.lootName:setAlpha( 1 )
 				self.lootName:setScale( 1.08 )
 				self.clipFinished( lootName, {} )
+
 				LootDecryptionImage:completeAnimation()
 				self.LootDecryptionImage:setAlpha( 1 )
 				self.LootDecryptionImage:setScale( 1.08 )
 				self.clipFinished( LootDecryptionImage, {} )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
+
 				BMLockItem:completeAnimation()
 				self.BMLockItem:setLeftRight( true, true, 0, -0.94 )
 				self.BMLockItem:setTopBottom( true, true, 253.56, -39.44 )
 				self.BMLockItem:setAlpha( 1 )
 				self.BMLockItem:setScale( 1.08 )
 				self.clipFinished( BMLockItem, {} )
+
 				GLOWcommon:completeAnimation()
 				self.GLOWcommon:setAlpha( 0 )
 				self.clipFinished( GLOWcommon, {} )
@@ -5137,8 +5311,11 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LightRare:setAlpha( 1 )
 				self.LightRare:setScale( 1.08 )
 				LightRareFrame2( LightRare, {} )
+
 				BMTimeAndLootBanner:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount.dateTimeReceived:completeAnimation()
 				self.BMTimeAndLootBanner:setLeftRight( true, false, -2, 245 )
 				self.BMTimeAndLootBanner:setTopBottom( true, false, -10, 33 )
@@ -5146,10 +5323,12 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.BMTimeAndLootBanner.BMDateTimeAndTotalCount:setAlpha( 1 )
 				self.BMTimeAndLootBanner.BMDateTimeAndTotalCount.dateTimeReceived:setRGB( 0, 0.57, 0.82 )
 				self.clipFinished( BMTimeAndLootBanner, {} )
+
 				self.nextClip = "Focus"
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 19 )
+
 				local FocusBar3Frame2 = function ( FocusBar3, event )
 					if not event.interrupted then
 						FocusBar3:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -5174,9 +5353,11 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LimitedBacking:beginAnimation( "keyframe", 1279, false, false, CoD.TweenType.Linear )
 				LimitedBacking:setAlpha( 0 )
 				LimitedBacking:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 0 )
 				self.clipFinished( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 0 )
 				self.clipFinished( LegendaryBacking, {} )
@@ -5197,6 +5378,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.RareBacking:setAlpha( 1 )
 				self.RareBacking:setScale( 1 )
 				RareBackingFrame2( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.CommonBacking:setScale( 1 )
@@ -5327,6 +5509,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LootDecryptionImage:setAlpha( 1 )
 				self.LootDecryptionImage:setScale( 1 )
 				LootDecryptionImageFrame2( LootDecryptionImage, {} )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
@@ -5366,6 +5549,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				GLOWcommon:completeAnimation()
 				self.GLOWcommon:setAlpha( 0 )
 				GLOWcommonFrame2( GLOWcommon, {} )
+
 				LightCommon:completeAnimation()
 				self.LightCommon:setAlpha( 0 )
 				self.clipFinished( LightCommon, {} )
@@ -5426,7 +5610,9 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				end
 				
 				BMTimeAndLootBanner:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount.dateTimeReceived:completeAnimation()
 				self.BMTimeAndLootBanner:setLeftRight( true, false, -2, 245 )
 				self.BMTimeAndLootBanner:setTopBottom( true, false, 3, 41 )
@@ -5437,6 +5623,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 18 )
+
 				local FocusBar3Frame2 = function ( FocusBar3, event )
 					if not event.interrupted then
 						FocusBar3:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -5461,9 +5648,11 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LimitedBacking:beginAnimation( "keyframe", 1279, false, false, CoD.TweenType.Linear )
 				LimitedBacking:setAlpha( 0 )
 				LimitedBacking:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 0 )
 				self.clipFinished( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 0 )
 				self.clipFinished( LegendaryBacking, {} )
@@ -5484,6 +5673,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.RareBacking:setAlpha( 1 )
 				self.RareBacking:setScale( 1.08 )
 				RareBackingFrame2( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.CommonBacking:setScale( 1 )
@@ -5612,6 +5802,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LootDecryptionImage:setAlpha( 1 )
 				self.LootDecryptionImage:setScale( 1.08 )
 				LootDecryptionImageFrame2( LootDecryptionImage, {} )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
@@ -5708,7 +5899,9 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				end
 				
 				BMTimeAndLootBanner:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount.dateTimeReceived:completeAnimation()
 				self.BMTimeAndLootBanner:setLeftRight( true, false, -2, 245 )
 				self.BMTimeAndLootBanner:setTopBottom( true, false, -10, 33 )
@@ -5721,6 +5914,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 		RevealedLegendary = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 22 )
+
 				FocusBar3:completeAnimation()
 				self.FocusBar3:setLeftRight( true, false, 39.07, 195.07 )
 				self.FocusBar3:setTopBottom( true, false, 380.92, 406.92 )
@@ -5730,24 +5924,30 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LimitedBacking:beginAnimation( "keyframe", 1279, false, false, CoD.TweenType.Linear )
 				LimitedBacking:setAlpha( 0 )
 				LimitedBacking:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 0 )
 				self.clipFinished( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 1 )
 				self.clipFinished( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.RareBacking:setScale( 1 )
 				self.clipFinished( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.CommonBacking:setScale( 1 )
 				self.clipFinished( CommonBacking, {} )
+
 				BMLineLightFX:completeAnimation()
 				self.BMLineLightFX:setRGB( 0.86, 0.74, 1 )
 				self.BMLineLightFX:setAlpha( 1 )
 				self.clipFinished( BMLineLightFX, {} )
+
 				BMTriangleLightFX:completeAnimation()
 				self.BMTriangleLightFX:setLeftRight( false, false, -149.5, 150.5 )
 				self.BMTriangleLightFX:setTopBottom( true, false, -22, 368 )
@@ -5755,59 +5955,74 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.BMTriangleLightFX:setAlpha( 1 )
 				self.BMTriangleLightFX:setScale( 1 )
 				self.clipFinished( BMTriangleLightFX, {} )
+
 				lootRarityTextWhite:completeAnimation()
 				self.lootRarityTextWhite:setAlpha( 0 )
 				self.clipFinished( lootRarityTextWhite, {} )
+
 				lootRarityText:completeAnimation()
 				self.lootRarityText:setAlpha( 1 )
 				self.lootRarityText:setScale( 1 )
 				self.clipFinished( lootRarityText, {} )
+
 				lootRaritySet:completeAnimation()
 				self.lootRaritySet:setAlpha( 1 )
 				self.lootRaritySet:setScale( 1 )
 				self.clipFinished( lootRaritySet, {} )
+
 				lootCategory:completeAnimation()
 				self.lootCategory:setAlpha( 1 )
 				self.lootCategory:setScale( 1 )
 				self.clipFinished( lootCategory, {} )
+
 				lootName:completeAnimation()
 				self.lootName:setAlpha( 1 )
 				self.lootName:setScale( 1 )
 				self.clipFinished( lootName, {} )
+
 				LootDecryptionImage:completeAnimation()
 				self.LootDecryptionImage:setLeftRight( false, false, -127.5, 126.5 )
 				self.LootDecryptionImage:setTopBottom( true, false, -57, 292 )
 				self.LootDecryptionImage:setAlpha( 1 )
 				self.LootDecryptionImage:setScale( 1 )
 				self.clipFinished( LootDecryptionImage, {} )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
+
 				BMLockItem:completeAnimation()
 				self.BMLockItem:setAlpha( 1 )
 				self.BMLockItem:setScale( 1 )
 				self.clipFinished( BMLockItem, {} )
+
 				GLOWcommon:completeAnimation()
 				self.GLOWcommon:setAlpha( 0 )
 				self.clipFinished( GLOWcommon, {} )
+
 				BMPixelFX:completeAnimation()
 				self.BMPixelFX:setAlpha( 0 )
 				self.clipFinished( BMPixelFX, {} )
+
 				BMPixel02FX:completeAnimation()
 				self.BMPixel02FX:setAlpha( 0 )
 				self.clipFinished( BMPixel02FX, {} )
+
 				BMPixel03FX:completeAnimation()
 				self.BMPixel03FX:setAlpha( 0 )
 				self.clipFinished( BMPixel03FX, {} )
+
 				BMPixel04FX:completeAnimation()
 				self.BMPixel04FX:setAlpha( 0 )
 				self.clipFinished( BMPixel04FX, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 18 )
+
 				FocusBar3:completeAnimation()
 				self.FocusBar3:setLeftRight( false, false, -110, 110 )
 				self.FocusBar3:setTopBottom( true, false, 350, 409 )
@@ -5816,68 +6031,82 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LimitedBacking:beginAnimation( "keyframe", 1279, false, false, CoD.TweenType.Linear )
 				LimitedBacking:setAlpha( 0 )
 				LimitedBacking:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 0 )
 				self.clipFinished( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 1 )
 				self.LegendaryBacking:setScale( 1.08 )
 				self.clipFinished( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.RareBacking:setScale( 1 )
 				self.clipFinished( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.CommonBacking:setScale( 1 )
 				self.clipFinished( CommonBacking, {} )
+
 				BMLineLightFX:completeAnimation()
 				self.BMLineLightFX:setRGB( 0.86, 0.74, 1 )
 				self.BMLineLightFX:setAlpha( 1 )
 				self.BMLineLightFX:setScale( 1.08 )
 				self.clipFinished( BMLineLightFX, {} )
+
 				BMTriangleLightFX:completeAnimation()
 				self.BMTriangleLightFX:setRGB( 0.67, 0.2, 1 )
 				self.BMTriangleLightFX:setAlpha( 1 )
 				self.BMTriangleLightFX:setScale( 1.08 )
 				self.clipFinished( BMTriangleLightFX, {} )
+
 				lootRarityText:completeAnimation()
 				self.lootRarityText:setLeftRight( true, true, 0, -1 )
 				self.lootRarityText:setTopBottom( false, false, 146, 172 )
 				self.lootRarityText:setAlpha( 1 )
 				self.lootRarityText:setScale( 1.08 )
 				self.clipFinished( lootRarityText, {} )
+
 				lootRaritySet:completeAnimation()
 				self.lootRaritySet:setLeftRight( true, true, 0, 0 )
 				self.lootRaritySet:setTopBottom( false, false, 98, 118 )
 				self.lootRaritySet:setAlpha( 1 )
 				self.lootRaritySet:setScale( 1.08 )
 				self.clipFinished( lootRaritySet, {} )
+
 				lootCategory:completeAnimation()
 				self.lootCategory:setLeftRight( true, true, -1, 0 )
 				self.lootCategory:setTopBottom( false, false, 55, 75 )
 				self.lootCategory:setAlpha( 1 )
 				self.lootCategory:setScale( 1.08 )
 				self.clipFinished( lootCategory, {} )
+
 				lootName:completeAnimation()
 				self.lootName:setLeftRight( true, true, -1, 0 )
 				self.lootName:setTopBottom( false, false, 35, 55 )
 				self.lootName:setAlpha( 1 )
 				self.lootName:setScale( 1.08 )
 				self.clipFinished( lootName, {} )
+
 				LootDecryptionImage:completeAnimation()
 				self.LootDecryptionImage:setAlpha( 1 )
 				self.LootDecryptionImage:setScale( 1.08 )
 				self.clipFinished( LootDecryptionImage, {} )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
+
 				BMLockItem:completeAnimation()
 				self.BMLockItem:setLeftRight( true, true, 0, -0.94 )
 				self.BMLockItem:setTopBottom( true, true, 253.56, -39.44 )
 				self.BMLockItem:setAlpha( 1 )
 				self.BMLockItem:setScale( 1.08 )
 				self.clipFinished( BMLockItem, {} )
+
 				GLOWcommon:completeAnimation()
 				self.GLOWcommon:setAlpha( 0 )
 				self.clipFinished( GLOWcommon, {} )
@@ -5909,8 +6138,11 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LightLegendary:setAlpha( 1 )
 				self.LightLegendary:setScale( 1.08 )
 				LightLegendaryFrame2( LightLegendary, {} )
+
 				BMTimeAndLootBanner:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount.dateTimeReceived:completeAnimation()
 				self.BMTimeAndLootBanner:setLeftRight( true, false, -2, 245 )
 				self.BMTimeAndLootBanner:setTopBottom( true, false, -10, 33 )
@@ -5918,10 +6150,12 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.BMTimeAndLootBanner.BMDateTimeAndTotalCount:setAlpha( 1 )
 				self.BMTimeAndLootBanner.BMDateTimeAndTotalCount.dateTimeReceived:setRGB( 0.67, 0.2, 1 )
 				self.clipFinished( BMTimeAndLootBanner, {} )
+
 				self.nextClip = "Focus"
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 21 )
+
 				local FocusBar3Frame2 = function ( FocusBar3, event )
 					if not event.interrupted then
 						FocusBar3:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -5946,6 +6180,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LimitedBacking:beginAnimation( "keyframe", 1279, false, false, CoD.TweenType.Linear )
 				LimitedBacking:setAlpha( 0 )
 				LimitedBacking:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 0 )
 				self.clipFinished( EpicBacking, {} )
@@ -5966,10 +6201,12 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LegendaryBacking:setAlpha( 1 )
 				self.LegendaryBacking:setScale( 1 )
 				LegendaryBackingFrame2( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.RareBacking:setScale( 1 )
 				self.clipFinished( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.CommonBacking:setScale( 1 )
@@ -6117,6 +6354,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LootDecryptionImage:setAlpha( 1 )
 				self.LootDecryptionImage:setScale( 1 )
 				LootDecryptionImageFrame2( LootDecryptionImage, {} )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
@@ -6156,9 +6394,11 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				GLOWcommon:completeAnimation()
 				self.GLOWcommon:setAlpha( 0 )
 				GLOWcommonFrame2( GLOWcommon, {} )
+
 				LightCommon:completeAnimation()
 				self.LightCommon:setAlpha( 0 )
 				self.clipFinished( LightCommon, {} )
+
 				LightRare:completeAnimation()
 				self.LightRare:setAlpha( 0 )
 				self.clipFinished( LightRare, {} )
@@ -6219,7 +6459,9 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				end
 				
 				BMTimeAndLootBanner:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount.dateTimeReceived:completeAnimation()
 				self.BMTimeAndLootBanner:setLeftRight( true, false, -2, 245 )
 				self.BMTimeAndLootBanner:setTopBottom( true, false, 3, 41 )
@@ -6230,6 +6472,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 19 )
+
 				local FocusBar3Frame2 = function ( FocusBar3, event )
 					if not event.interrupted then
 						FocusBar3:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -6254,6 +6497,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LimitedBacking:beginAnimation( "keyframe", 1279, false, false, CoD.TweenType.Linear )
 				LimitedBacking:setAlpha( 0 )
 				LimitedBacking:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 0 )
 				self.clipFinished( EpicBacking, {} )
@@ -6274,10 +6518,12 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LegendaryBacking:setAlpha( 1 )
 				self.LegendaryBacking:setScale( 1.08 )
 				LegendaryBackingFrame2( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.RareBacking:setScale( 1 )
 				self.clipFinished( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.CommonBacking:setScale( 1 )
@@ -6425,6 +6671,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LootDecryptionImage:setAlpha( 1 )
 				self.LootDecryptionImage:setScale( 1.08 )
 				LootDecryptionImageFrame2( LootDecryptionImage, {} )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
@@ -6521,7 +6768,9 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				end
 				
 				BMTimeAndLootBanner:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount.dateTimeReceived:completeAnimation()
 				self.BMTimeAndLootBanner:setLeftRight( true, false, -2, 245 )
 				self.BMTimeAndLootBanner:setTopBottom( true, false, -10, 33 )
@@ -6534,6 +6783,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 		RevealedEpic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 25 )
+
 				FocusBar3:completeAnimation()
 				self.FocusBar3:setLeftRight( true, false, 39.07, 195.07 )
 				self.FocusBar3:setTopBottom( true, false, 380.92, 406.92 )
@@ -6543,91 +6793,115 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LimitedBacking:beginAnimation( "keyframe", 1279, false, false, CoD.TweenType.Linear )
 				LimitedBacking:setAlpha( 0 )
 				LimitedBacking:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 1 )
 				self.clipFinished( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 0 )
 				self.LegendaryBacking:setScale( 1 )
 				self.clipFinished( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.RareBacking:setScale( 1 )
 				self.clipFinished( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.CommonBacking:setScale( 1 )
 				self.clipFinished( CommonBacking, {} )
+
 				BMLineLightFX:completeAnimation()
 				self.BMLineLightFX:setRGB( 1, 0.87, 0.61 )
 				self.BMLineLightFX:setAlpha( 1 )
 				self.clipFinished( BMLineLightFX, {} )
+
 				BMTriangleLightFX:completeAnimation()
 				self.BMTriangleLightFX:setRGB( 1, 0.67, 0 )
 				self.BMTriangleLightFX:setAlpha( 1 )
 				self.clipFinished( BMTriangleLightFX, {} )
+
 				lootRarityTextWhite:completeAnimation()
 				self.lootRarityTextWhite:setAlpha( 0 )
 				self.clipFinished( lootRarityTextWhite, {} )
+
 				lootRarityText:completeAnimation()
 				self.lootRarityText:setAlpha( 1 )
 				self.lootRarityText:setScale( 1 )
 				self.clipFinished( lootRarityText, {} )
+
 				lootRaritySet:completeAnimation()
 				self.lootRaritySet:setAlpha( 1 )
 				self.lootRaritySet:setScale( 1 )
 				self.clipFinished( lootRaritySet, {} )
+
 				lootCategory:completeAnimation()
 				self.lootCategory:setAlpha( 1 )
 				self.lootCategory:setScale( 1 )
 				self.clipFinished( lootCategory, {} )
+
 				lootName:completeAnimation()
 				self.lootName:setAlpha( 1 )
 				self.lootName:setScale( 1 )
 				self.clipFinished( lootName, {} )
+
 				LootDecryptionImage:completeAnimation()
 				self.LootDecryptionImage:setLeftRight( false, false, -127.5, 126.5 )
 				self.LootDecryptionImage:setTopBottom( true, false, -57, 292 )
 				self.LootDecryptionImage:setAlpha( 1 )
 				self.LootDecryptionImage:setScale( 1 )
 				self.clipFinished( LootDecryptionImage, {} )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
+
 				BMLockItem:completeAnimation()
 				self.BMLockItem:setAlpha( 1 )
 				self.BMLockItem:setScale( 1 )
 				self.clipFinished( BMLockItem, {} )
+
 				GLOWcommon:completeAnimation()
 				self.GLOWcommon:setAlpha( 0 )
 				self.clipFinished( GLOWcommon, {} )
+
 				BMPixelFX:completeAnimation()
 				self.BMPixelFX:setAlpha( 0 )
 				self.clipFinished( BMPixelFX, {} )
+
 				BMPixel02FX:completeAnimation()
 				self.BMPixel02FX:setAlpha( 0 )
 				self.clipFinished( BMPixel02FX, {} )
+
 				BMPixel03FX:completeAnimation()
 				self.BMPixel03FX:setAlpha( 0 )
 				self.clipFinished( BMPixel03FX, {} )
+
 				BMPixel04FX:completeAnimation()
 				self.BMPixel04FX:setAlpha( 0 )
 				self.clipFinished( BMPixel04FX, {} )
+
 				LightEpic:completeAnimation()
 				self.LightEpic:setAlpha( 0 )
 				self.clipFinished( LightEpic, {} )
+
 				BMFlyEmberFX:completeAnimation()
 				self.BMFlyEmberFX:setAlpha( 0 )
 				self.clipFinished( BMFlyEmberFX, {} )
+
 				BMFlyEmberFX0:completeAnimation()
 				self.BMFlyEmberFX0:setAlpha( 0 )
 				self.clipFinished( BMFlyEmberFX0, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 21 )
+
 				FocusBar3:completeAnimation()
 				self.FocusBar3:setLeftRight( false, false, -110, 110 )
 				self.FocusBar3:setTopBottom( true, false, 350, 409 )
@@ -6636,27 +6910,33 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LimitedBacking:beginAnimation( "keyframe", 1279, false, false, CoD.TweenType.Linear )
 				LimitedBacking:setAlpha( 0 )
 				LimitedBacking:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 1 )
 				self.EpicBacking:setScale( 1.08 )
 				self.clipFinished( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 0 )
 				self.LegendaryBacking:setScale( 1 )
 				self.clipFinished( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.RareBacking:setScale( 1 )
 				self.clipFinished( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.CommonBacking:setScale( 1 )
 				self.clipFinished( CommonBacking, {} )
+
 				BMLineLightFX:completeAnimation()
 				self.BMLineLightFX:setRGB( 1, 0.67, 0 )
 				self.BMLineLightFX:setAlpha( 1 )
 				self.BMLineLightFX:setScale( 1.08 )
 				self.clipFinished( BMLineLightFX, {} )
+
 				BMTriangleLightFX:completeAnimation()
 				self.BMTriangleLightFX:setLeftRight( false, false, -150.5, 150.5 )
 				self.BMTriangleLightFX:setTopBottom( true, false, -22, 369 )
@@ -6664,48 +6944,57 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.BMTriangleLightFX:setAlpha( 1 )
 				self.BMTriangleLightFX:setScale( 1.08 )
 				self.clipFinished( BMTriangleLightFX, {} )
+
 				lootRarityText:completeAnimation()
 				self.lootRarityText:setLeftRight( true, true, 0, -1 )
 				self.lootRarityText:setTopBottom( false, false, 146, 172 )
 				self.lootRarityText:setAlpha( 1 )
 				self.lootRarityText:setScale( 1.08 )
 				self.clipFinished( lootRarityText, {} )
+
 				lootRaritySet:completeAnimation()
 				self.lootRaritySet:setLeftRight( true, true, 0, 0 )
 				self.lootRaritySet:setTopBottom( false, false, 98, 118 )
 				self.lootRaritySet:setAlpha( 1 )
 				self.lootRaritySet:setScale( 1.08 )
 				self.clipFinished( lootRaritySet, {} )
+
 				lootCategory:completeAnimation()
 				self.lootCategory:setLeftRight( true, true, -1, 0 )
 				self.lootCategory:setTopBottom( false, false, 55, 75 )
 				self.lootCategory:setAlpha( 1 )
 				self.lootCategory:setScale( 1.08 )
 				self.clipFinished( lootCategory, {} )
+
 				lootName:completeAnimation()
 				self.lootName:setLeftRight( true, true, -1, 0 )
 				self.lootName:setTopBottom( false, false, 35, 55 )
 				self.lootName:setAlpha( 1 )
 				self.lootName:setScale( 1.08 )
 				self.clipFinished( lootName, {} )
+
 				LootDecryptionImage:completeAnimation()
 				self.LootDecryptionImage:setLeftRight( false, false, -127.5, 126.5 )
 				self.LootDecryptionImage:setTopBottom( true, false, -57, 292 )
 				self.LootDecryptionImage:setAlpha( 1 )
 				self.LootDecryptionImage:setScale( 1.08 )
 				self.clipFinished( LootDecryptionImage, {} )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
+
 				BMLockItem:completeAnimation()
 				self.BMLockItem:setLeftRight( true, true, 0, -0.94 )
 				self.BMLockItem:setTopBottom( true, true, 253.56, -39.44 )
 				self.BMLockItem:setAlpha( 1 )
 				self.BMLockItem:setScale( 1.08 )
 				self.clipFinished( BMLockItem, {} )
+
 				GLOWcommon:completeAnimation()
 				self.GLOWcommon:setAlpha( 0 )
 				self.clipFinished( GLOWcommon, {} )
+
 				LightLegendary:completeAnimation()
 				self.LightLegendary:setAlpha( 0 )
 				self.LightLegendary:setScale( 1.08 )
@@ -6738,14 +7027,19 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LightEpic:setAlpha( 1 )
 				self.LightEpic:setScale( 1.08 )
 				LightEpicFrame2( LightEpic, {} )
+
 				BMFlyEmberFX:completeAnimation()
 				self.BMFlyEmberFX:setAlpha( 0 )
 				self.clipFinished( BMFlyEmberFX, {} )
+
 				BMFlyEmberFX0:completeAnimation()
 				self.BMFlyEmberFX0:setAlpha( 0 )
 				self.clipFinished( BMFlyEmberFX0, {} )
+
 				BMTimeAndLootBanner:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount.dateTimeReceived:completeAnimation()
 				self.BMTimeAndLootBanner:setLeftRight( true, false, -2, 245 )
 				self.BMTimeAndLootBanner:setTopBottom( true, false, -10, 33 )
@@ -6753,10 +7047,12 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.BMTimeAndLootBanner.BMDateTimeAndTotalCount:setAlpha( 1 )
 				self.BMTimeAndLootBanner.BMDateTimeAndTotalCount.dateTimeReceived:setRGB( 1, 0.67, 0 )
 				self.clipFinished( BMTimeAndLootBanner, {} )
+
 				self.nextClip = "Focus"
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 20 )
+
 				local FocusBar3Frame2 = function ( FocusBar3, event )
 					if not event.interrupted then
 						FocusBar3:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -6798,14 +7094,17 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.EpicBacking:setAlpha( 1 )
 				self.EpicBacking:setScale( 1 )
 				EpicBackingFrame2( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 0 )
 				self.LegendaryBacking:setScale( 1 )
 				self.clipFinished( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.RareBacking:setScale( 1 )
 				self.clipFinished( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.CommonBacking:setScale( 1 )
@@ -6953,6 +7252,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LootDecryptionImage:setAlpha( 1 )
 				self.LootDecryptionImage:setScale( 1 )
 				LootDecryptionImageFrame2( LootDecryptionImage, {} )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
@@ -6992,6 +7292,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				GLOWcommon:completeAnimation()
 				self.GLOWcommon:setAlpha( 0 )
 				GLOWcommonFrame2( GLOWcommon, {} )
+
 				LightLegendary:completeAnimation()
 				self.LightLegendary:setAlpha( 0 )
 				self.LightLegendary:setScale( 1 )
@@ -7053,7 +7354,9 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				end
 				
 				BMTimeAndLootBanner:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount.dateTimeReceived:completeAnimation()
 				self.BMTimeAndLootBanner:setLeftRight( true, false, -2, 245 )
 				self.BMTimeAndLootBanner:setTopBottom( true, false, 3, 41 )
@@ -7064,6 +7367,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 22 )
+
 				local FocusBar3Frame2 = function ( FocusBar3, event )
 					if not event.interrupted then
 						FocusBar3:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -7105,14 +7409,17 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.EpicBacking:setAlpha( 1 )
 				self.EpicBacking:setScale( 1.08 )
 				EpicBackingFrame2( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 0 )
 				self.LegendaryBacking:setScale( 1 )
 				self.clipFinished( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.RareBacking:setScale( 1 )
 				self.clipFinished( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.CommonBacking:setScale( 1 )
@@ -7260,6 +7567,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LootDecryptionImage:setAlpha( 1 )
 				self.LootDecryptionImage:setScale( 1.08 )
 				LootDecryptionImageFrame2( LootDecryptionImage, {} )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
@@ -7333,9 +7641,11 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LightEpic:setAlpha( 1 )
 				self.LightEpic:setScale( 1.08 )
 				LightEpicFrame2( LightEpic, {} )
+
 				BMFlyEmberFX:completeAnimation()
 				self.BMFlyEmberFX:setAlpha( 0 )
 				self.clipFinished( BMFlyEmberFX, {} )
+
 				BMFlyEmberFX0:completeAnimation()
 				self.BMFlyEmberFX0:setAlpha( 0 )
 				self.clipFinished( BMFlyEmberFX0, {} )
@@ -7379,7 +7689,9 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				end
 				
 				BMTimeAndLootBanner:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount.dateTimeReceived:completeAnimation()
 				self.BMTimeAndLootBanner:setLeftRight( true, false, -2, 245 )
 				self.BMTimeAndLootBanner:setTopBottom( true, false, -10, 33 )
@@ -7392,6 +7704,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 		RevealedLimited = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 34 )
+
 				FocusBar3:completeAnimation()
 				self.FocusBar3:setLeftRight( true, false, 39.07, 195.07 )
 				self.FocusBar3:setTopBottom( true, false, 380.92, 406.92 )
@@ -7424,35 +7737,44 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				LimitedBackglow:completeAnimation()
 				self.LimitedBackglow:setAlpha( 0.5 )
 				LimitedBackglowFrame2( LimitedBackglow, {} )
+
 				LimitedBacking:completeAnimation()
 				self.LimitedBacking:setAlpha( 1 )
 				self.clipFinished( LimitedBacking, {} )
+
 				LimitedBackingGlint:completeAnimation()
 				self.LimitedBackingGlint:setAlpha( 1 )
 				self.clipFinished( LimitedBackingGlint, {} )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 0 )
 				self.clipFinished( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 0 )
 				self.LegendaryBacking:setScale( 1 )
 				self.clipFinished( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.RareBacking:setScale( 1 )
 				self.clipFinished( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.CommonBacking:setScale( 1 )
 				self.clipFinished( CommonBacking, {} )
+
 				BMLineLightFX:completeAnimation()
 				self.BMLineLightFX:setRGB( 1, 0.87, 0.61 )
 				self.BMLineLightFX:setAlpha( 1 )
 				self.clipFinished( BMLineLightFX, {} )
+
 				BMTriangleLightFX:completeAnimation()
 				self.BMTriangleLightFX:setRGB( 1, 0.67, 0 )
 				self.BMTriangleLightFX:setAlpha( 1 )
 				self.clipFinished( BMTriangleLightFX, {} )
+
 				lootRarityTextWhite:completeAnimation()
 				self.lootRarityTextWhite:setLeftRight( true, true, 0, -1 )
 				self.lootRarityTextWhite:setTopBottom( false, false, 134, 160 )
@@ -7460,78 +7782,100 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.lootRarityTextWhite:setAlpha( 1 )
 				self.lootRarityTextWhite:setScale( 1 )
 				self.clipFinished( lootRarityTextWhite, {} )
+
 				lootRarityText:completeAnimation()
 				self.lootRarityText:setRGB( 0, 0, 0 )
 				self.lootRarityText:setAlpha( 1 )
 				self.lootRarityText:setScale( 1 )
 				self.clipFinished( lootRarityText, {} )
+
 				lootRaritySet:completeAnimation()
 				self.lootRaritySet:setAlpha( 1 )
 				self.lootRaritySet:setScale( 1 )
 				self.clipFinished( lootRaritySet, {} )
+
 				lootCategory:completeAnimation()
 				self.lootCategory:setAlpha( 1 )
 				self.lootCategory:setScale( 1 )
 				self.clipFinished( lootCategory, {} )
+
 				lootName:completeAnimation()
 				self.lootName:setAlpha( 1 )
 				self.lootName:setScale( 1 )
 				self.clipFinished( lootName, {} )
+
 				LootDecryptionImage:completeAnimation()
 				self.LootDecryptionImage:setLeftRight( false, false, -127.5, 126.5 )
 				self.LootDecryptionImage:setTopBottom( true, false, -57, 292 )
 				self.LootDecryptionImage:setAlpha( 1 )
 				self.LootDecryptionImage:setScale( 1 )
 				self.clipFinished( LootDecryptionImage, {} )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
+
 				BMLockItem:completeAnimation()
 				self.BMLockItem:setAlpha( 1 )
 				self.BMLockItem:setScale( 1 )
 				self.clipFinished( BMLockItem, {} )
+
 				GLOWcommon:completeAnimation()
 				self.GLOWcommon:setAlpha( 0 )
 				self.clipFinished( GLOWcommon, {} )
+
 				BMPixelFX:completeAnimation()
 				self.BMPixelFX:setAlpha( 0 )
 				self.clipFinished( BMPixelFX, {} )
+
 				BMPixel02FX:completeAnimation()
 				self.BMPixel02FX:setAlpha( 0 )
 				self.clipFinished( BMPixel02FX, {} )
+
 				BMPixel03FX:completeAnimation()
 				self.BMPixel03FX:setAlpha( 0 )
 				self.clipFinished( BMPixel03FX, {} )
+
 				BMPixel04FX:completeAnimation()
 				self.BMPixel04FX:setAlpha( 0 )
 				self.clipFinished( BMPixel04FX, {} )
+
 				BMPixel05FX:completeAnimation()
 				self.BMPixel05FX:setAlpha( 1 )
 				self.clipFinished( BMPixel05FX, {} )
+
 				BMPixel06FX:completeAnimation()
 				self.BMPixel06FX:setAlpha( 1 )
 				self.clipFinished( BMPixel06FX, {} )
+
 				LightEpic:completeAnimation()
 				self.LightEpic:setAlpha( 0 )
 				self.clipFinished( LightEpic, {} )
+
 				LightLimited:completeAnimation()
 				self.LightLimited:setAlpha( 0 )
 				self.clipFinished( LightLimited, {} )
+
 				LimitedBackingFocus:completeAnimation()
 				self.LimitedBackingFocus:setAlpha( 0 )
 				self.clipFinished( LimitedBackingFocus, {} )
+
 				BMCircuits02FX:completeAnimation()
 				self.BMCircuits02FX:setAlpha( 1 )
 				self.clipFinished( BMCircuits02FX, {} )
+
 				BMCircuits01FX:completeAnimation()
 				self.BMCircuits01FX:setAlpha( 0 )
 				self.clipFinished( BMCircuits01FX, {} )
+
 				BMFlyEmberFX:completeAnimation()
 				self.BMFlyEmberFX:setAlpha( 0 )
 				self.clipFinished( BMFlyEmberFX, {} )
+
 				BMFlyEmberFX0:completeAnimation()
 				self.BMFlyEmberFX0:setAlpha( 0 )
 				self.clipFinished( BMFlyEmberFX0, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
@@ -7561,10 +7905,12 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				Circuits:completeAnimation()
 				self.Circuits:setAlpha( 0.25 )
 				CircuitsFrame2( Circuits, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 32 )
+
 				FocusBar3:completeAnimation()
 				self.FocusBar3:setLeftRight( false, false, -110, 110 )
 				self.FocusBar3:setTopBottom( true, false, 350, 409 )
@@ -7598,34 +7944,42 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LimitedBackglow:setAlpha( 1 )
 				self.LimitedBackglow:setScale( 1.6 )
 				LimitedBackglowFrame2( LimitedBackglow, {} )
+
 				LimitedBacking:completeAnimation()
 				self.LimitedBacking:setAlpha( 1 )
 				self.LimitedBacking:setScale( 1.08 )
 				self.clipFinished( LimitedBacking, {} )
+
 				LimitedBackingGlint:completeAnimation()
 				self.LimitedBackingGlint:setAlpha( 1 )
 				self.LimitedBackingGlint:setScale( 1.08 )
 				self.clipFinished( LimitedBackingGlint, {} )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 0 )
 				self.clipFinished( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 0 )
 				self.LegendaryBacking:setScale( 1 )
 				self.clipFinished( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.RareBacking:setScale( 1 )
 				self.clipFinished( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.CommonBacking:setScale( 1 )
 				self.clipFinished( CommonBacking, {} )
+
 				BMLineLightFX:completeAnimation()
 				self.BMLineLightFX:setRGB( 1, 0.67, 0 )
 				self.BMLineLightFX:setAlpha( 1 )
 				self.BMLineLightFX:setScale( 1.08 )
 				self.clipFinished( BMLineLightFX, {} )
+
 				BMTriangleLightFX:completeAnimation()
 				self.BMTriangleLightFX:setLeftRight( false, false, -150.5, 150.5 )
 				self.BMTriangleLightFX:setTopBottom( true, false, -22, 369 )
@@ -7633,12 +7987,14 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.BMTriangleLightFX:setAlpha( 1 )
 				self.BMTriangleLightFX:setScale( 1.08 )
 				self.clipFinished( BMTriangleLightFX, {} )
+
 				lootRarityTextWhite:completeAnimation()
 				self.lootRarityTextWhite:setLeftRight( true, true, 0, -1 )
 				self.lootRarityTextWhite:setTopBottom( false, false, 147, 173 )
 				self.lootRarityTextWhite:setAlpha( 1 )
 				self.lootRarityTextWhite:setScale( 1.08 )
 				self.clipFinished( lootRarityTextWhite, {} )
+
 				lootRarityText:completeAnimation()
 				self.lootRarityText:setLeftRight( true, true, 0, -1 )
 				self.lootRarityText:setTopBottom( false, false, 146, 172 )
@@ -7646,46 +8002,55 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.lootRarityText:setAlpha( 1 )
 				self.lootRarityText:setScale( 1.08 )
 				self.clipFinished( lootRarityText, {} )
+
 				lootRaritySet:completeAnimation()
 				self.lootRaritySet:setLeftRight( true, true, 0, 0 )
 				self.lootRaritySet:setTopBottom( false, false, 98, 118 )
 				self.lootRaritySet:setAlpha( 1 )
 				self.lootRaritySet:setScale( 1.08 )
 				self.clipFinished( lootRaritySet, {} )
+
 				lootCategory:completeAnimation()
 				self.lootCategory:setLeftRight( true, true, -1, 0 )
 				self.lootCategory:setTopBottom( false, false, 55, 75 )
 				self.lootCategory:setAlpha( 1 )
 				self.lootCategory:setScale( 1.08 )
 				self.clipFinished( lootCategory, {} )
+
 				lootName:completeAnimation()
 				self.lootName:setLeftRight( true, true, -1, 0 )
 				self.lootName:setTopBottom( false, false, 35, 55 )
 				self.lootName:setAlpha( 1 )
 				self.lootName:setScale( 1.08 )
 				self.clipFinished( lootName, {} )
+
 				LootDecryptionImage:completeAnimation()
 				self.LootDecryptionImage:setLeftRight( true, false, -5, 249 )
 				self.LootDecryptionImage:setTopBottom( true, false, -57, 292 )
 				self.LootDecryptionImage:setAlpha( 1 )
 				self.LootDecryptionImage:setScale( 1.08 )
 				self.clipFinished( LootDecryptionImage, {} )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
+
 				BMLockItem:completeAnimation()
 				self.BMLockItem:setLeftRight( true, true, 0, -0.94 )
 				self.BMLockItem:setTopBottom( true, true, 253.56, -39.44 )
 				self.BMLockItem:setAlpha( 1 )
 				self.BMLockItem:setScale( 1.08 )
 				self.clipFinished( BMLockItem, {} )
+
 				GLOWcommon:completeAnimation()
 				self.GLOWcommon:setAlpha( 0 )
 				self.clipFinished( GLOWcommon, {} )
+
 				LightLegendary:completeAnimation()
 				self.LightLegendary:setAlpha( 0 )
 				self.LightLegendary:setScale( 1.08 )
 				self.clipFinished( LightLegendary, {} )
+
 				LightEpic:completeAnimation()
 				self.LightEpic:setAlpha( 0 )
 				self.LightEpic:setScale( 1.08 )
@@ -7746,29 +8111,39 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LimitedBackingFocus:setAlpha( 1 )
 				self.LimitedBackingFocus:setScale( 1.08 )
 				LimitedBackingFocusFrame2( LimitedBackingFocus, {} )
+
 				LimitedWave1:completeAnimation()
 				self.LimitedWave1:setAlpha( 0 )
 				self.clipFinished( LimitedWave1, {} )
+
 				LimitedWave2:completeAnimation()
 				self.LimitedWave2:setAlpha( 0 )
 				self.clipFinished( LimitedWave2, {} )
+
 				LimitedWave3:completeAnimation()
 				self.LimitedWave3:setAlpha( 0 )
 				self.clipFinished( LimitedWave3, {} )
+
 				BMCircuits02FX:completeAnimation()
 				self.BMCircuits02FX:setAlpha( 0 )
 				self.clipFinished( BMCircuits02FX, {} )
+
 				BMCircuits01FX:completeAnimation()
 				self.BMCircuits01FX:setAlpha( 0 )
 				self.clipFinished( BMCircuits01FX, {} )
+
 				BMFlyEmberFX:completeAnimation()
 				self.BMFlyEmberFX:setAlpha( 0 )
 				self.clipFinished( BMFlyEmberFX, {} )
+
 				BMFlyEmberFX0:completeAnimation()
 				self.BMFlyEmberFX0:setAlpha( 0 )
 				self.clipFinished( BMFlyEmberFX0, {} )
+
 				BMTimeAndLootBanner:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount.dateTimeReceived:completeAnimation()
 				self.BMTimeAndLootBanner:setLeftRight( true, false, -2, 245 )
 				self.BMTimeAndLootBanner:setTopBottom( true, false, -10, 33 )
@@ -7776,13 +8151,16 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.BMTimeAndLootBanner.BMDateTimeAndTotalCount:setAlpha( 1 )
 				self.BMTimeAndLootBanner.BMDateTimeAndTotalCount.dateTimeReceived:setRGB( 1, 0.67, 0 )
 				self.clipFinished( BMTimeAndLootBanner, {} )
+
 				Circuits:completeAnimation()
 				self.Circuits:setAlpha( 0.25 )
 				self.clipFinished( Circuits, {} )
+
 				self.nextClip = "Focus"
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 28 )
+
 				local FocusBar3Frame2 = function ( FocusBar3, event )
 					if not event.interrupted then
 						FocusBar3:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -7855,17 +8233,21 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LimitedBackingGlint:setAlpha( 1 )
 				self.LimitedBackingGlint:setScale( 1 )
 				LimitedBackingGlintFrame2( LimitedBackingGlint, {} )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 0 )
 				self.clipFinished( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 0 )
 				self.LegendaryBacking:setScale( 1 )
 				self.clipFinished( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.RareBacking:setScale( 1 )
 				self.clipFinished( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.CommonBacking:setScale( 1 )
@@ -8036,6 +8418,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LootDecryptionImage:setAlpha( 1 )
 				self.LootDecryptionImage:setScale( 1 )
 				LootDecryptionImageFrame2( LootDecryptionImage, {} )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
@@ -8075,10 +8458,12 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				GLOWcommon:completeAnimation()
 				self.GLOWcommon:setAlpha( 0 )
 				GLOWcommonFrame2( GLOWcommon, {} )
+
 				LightLegendary:completeAnimation()
 				self.LightLegendary:setAlpha( 0 )
 				self.LightLegendary:setScale( 1 )
 				self.clipFinished( LightLegendary, {} )
+
 				LightEpic:completeAnimation()
 				self.LightEpic:setAlpha( 0 )
 				self.LightEpic:setScale( 1 )
@@ -8117,9 +8502,11 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LimitedBackingFocus:setAlpha( 0 )
 				self.LimitedBackingFocus:setScale( 1 )
 				LimitedBackingFocusFrame2( LimitedBackingFocus, {} )
+
 				BMCircuits02FX:completeAnimation()
 				self.BMCircuits02FX:setAlpha( 0 )
 				self.clipFinished( BMCircuits02FX, {} )
+
 				BMCircuits01FX:completeAnimation()
 				self.BMCircuits01FX:setAlpha( 0 )
 				self.clipFinished( BMCircuits01FX, {} )
@@ -8163,7 +8550,9 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				end
 				
 				BMTimeAndLootBanner:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount.dateTimeReceived:completeAnimation()
 				self.BMTimeAndLootBanner:setLeftRight( true, false, -2, 245 )
 				self.BMTimeAndLootBanner:setTopBottom( true, false, 3, 41 )
@@ -8171,12 +8560,14 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.BMTimeAndLootBanner.BMDateTimeAndTotalCount:setAlpha( 0 )
 				self.BMTimeAndLootBanner.BMDateTimeAndTotalCount.dateTimeReceived:setRGB( 1, 0.67, 0 )
 				BMTimeAndLootBannerFrame2( BMTimeAndLootBanner, {} )
+
 				Circuits:completeAnimation()
 				self.Circuits:setAlpha( 0.25 )
 				self.clipFinished( Circuits, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 30 )
+
 				local FocusBar3Frame2 = function ( FocusBar3, event )
 					if not event.interrupted then
 						FocusBar3:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -8249,17 +8640,21 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LimitedBackingGlint:setAlpha( 1 )
 				self.LimitedBackingGlint:setScale( 1.08 )
 				LimitedBackingGlintFrame2( LimitedBackingGlint, {} )
+
 				EpicBacking:completeAnimation()
 				self.EpicBacking:setAlpha( 0 )
 				self.clipFinished( EpicBacking, {} )
+
 				LegendaryBacking:completeAnimation()
 				self.LegendaryBacking:setAlpha( 0 )
 				self.LegendaryBacking:setScale( 1 )
 				self.clipFinished( LegendaryBacking, {} )
+
 				RareBacking:completeAnimation()
 				self.RareBacking:setAlpha( 0 )
 				self.RareBacking:setScale( 1 )
 				self.clipFinished( RareBacking, {} )
+
 				CommonBacking:completeAnimation()
 				self.CommonBacking:setAlpha( 0 )
 				self.CommonBacking:setScale( 1 )
@@ -8430,6 +8825,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LootDecryptionImage:setAlpha( 1 )
 				self.LootDecryptionImage:setScale( 1.08 )
 				LootDecryptionImageFrame2( LootDecryptionImage, {} )
+
 				LootDecryptionFakeImageCycle:completeAnimation()
 				self.LootDecryptionFakeImageCycle:setAlpha( 0 )
 				self.clipFinished( LootDecryptionFakeImageCycle, {} )
@@ -8486,6 +8882,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LightLegendary:setAlpha( 0 )
 				self.LightLegendary:setScale( 1.08 )
 				LightLegendaryFrame2( LightLegendary, {} )
+
 				LightEpic:completeAnimation()
 				self.LightEpic:setAlpha( 0 )
 				self.LightEpic:setScale( 1.08 )
@@ -8524,15 +8921,19 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.LimitedBackingFocus:setAlpha( 1 )
 				self.LimitedBackingFocus:setScale( 1.08 )
 				LimitedBackingFocusFrame2( LimitedBackingFocus, {} )
+
 				BMCircuits02FX:completeAnimation()
 				self.BMCircuits02FX:setAlpha( 0 )
 				self.clipFinished( BMCircuits02FX, {} )
+
 				BMCircuits01FX:completeAnimation()
 				self.BMCircuits01FX:setAlpha( 0 )
 				self.clipFinished( BMCircuits01FX, {} )
+
 				BMFlyEmberFX:completeAnimation()
 				self.BMFlyEmberFX:setAlpha( 0 )
 				self.clipFinished( BMFlyEmberFX, {} )
+
 				BMFlyEmberFX0:completeAnimation()
 				self.BMFlyEmberFX0:setAlpha( 0 )
 				self.clipFinished( BMFlyEmberFX0, {} )
@@ -8576,7 +8977,9 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				end
 				
 				BMTimeAndLootBanner:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount:completeAnimation()
+
 				BMTimeAndLootBanner.BMDateTimeAndTotalCount.dateTimeReceived:completeAnimation()
 				self.BMTimeAndLootBanner:setLeftRight( true, false, -2, 245 )
 				self.BMTimeAndLootBanner:setTopBottom( true, false, -10, 33 )
@@ -8584,12 +8987,14 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 				self.BMTimeAndLootBanner.BMDateTimeAndTotalCount:setAlpha( 1 )
 				self.BMTimeAndLootBanner.BMDateTimeAndTotalCount.dateTimeReceived:setRGB( 1, 0.67, 0 )
 				BMTimeAndLootBannerFrame2( BMTimeAndLootBanner, {} )
+
 				Circuits:completeAnimation()
 				self.Circuits:setAlpha( 0.25 )
 				self.clipFinished( Circuits, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "RevealedCommon",
@@ -8638,6 +9043,7 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 			modelName = "reveal"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.fxGlitch1800:close()
 		element.fxGlitch1700:close()

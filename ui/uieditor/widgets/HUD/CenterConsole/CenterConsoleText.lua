@@ -4,9 +4,11 @@
 CoD.CenterConsoleText = InheritFrom( LUI.UIElement )
 CoD.CenterConsoleText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CenterConsoleText )
 	self.id = "CenterConsoleText"
@@ -33,9 +35,11 @@ CoD.CenterConsoleText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			FadeOut = function ()
 				self:setupElementClipCounter( 1 )
+
 				local TextFrame2 = function ( Text, event )
 					if not event.interrupted then
 						Text:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -54,6 +58,7 @@ CoD.CenterConsoleText.new = function ( menu, controller )
 			end,
 			FadeIn = function ()
 				self:setupElementClipCounter( 1 )
+
 				local TextFrame2 = function ( Text, event )
 					if not event.interrupted then
 						Text:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )

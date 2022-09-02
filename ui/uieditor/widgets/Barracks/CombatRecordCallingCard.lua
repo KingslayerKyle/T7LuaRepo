@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FocusBarContainer" )
 CoD.CombatRecordCallingCard = InheritFrom( LUI.UIElement )
 CoD.CombatRecordCallingCard.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CombatRecordCallingCard )
 	self.id = "CombatRecordCallingCard"
@@ -130,36 +132,46 @@ CoD.CombatRecordCallingCard.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				CardIcon:completeAnimation()
 				self.CardIcon:setAlpha( 1 )
 				self.clipFinished( CardIcon, {} )
+
 				CallingCardName:completeAnimation()
 				self.CallingCardName:setAlpha( 1 )
 				self.clipFinished( CallingCardName, {} )
+
 				CombatRecordCallingCardDescription:completeAnimation()
 				self.CombatRecordCallingCardDescription:setAlpha( 0 )
 				self.clipFinished( CombatRecordCallingCardDescription, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				TopFocusBar:completeAnimation()
 				self.TopFocusBar:setAlpha( 0 )
 				self.clipFinished( TopFocusBar, {} )
+
 				BottomFocusBar:completeAnimation()
 				self.BottomFocusBar:setAlpha( 0 )
 				self.clipFinished( BottomFocusBar, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				CombatRecordCallingCardDescription:completeAnimation()
 				self.CombatRecordCallingCardDescription:setAlpha( 1 )
 				self.clipFinished( CombatRecordCallingCardDescription, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 1 )
 				self.clipFinished( hintArrow, {} )
+
 				TopFocusBar:completeAnimation()
 				self.TopFocusBar:setAlpha( 1 )
 				self.clipFinished( TopFocusBar, {} )
+
 				BottomFocusBar:completeAnimation()
 				self.BottomFocusBar:setAlpha( 1 )
 				self.clipFinished( BottomFocusBar, {} )
@@ -168,45 +180,57 @@ CoD.CombatRecordCallingCard.new = function ( menu, controller )
 		EmptyCallingCard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 1 )
 				self.clipFinished( Border, {} )
+
 				CardIcon:completeAnimation()
 				self.CardIcon:setAlpha( 0 )
 				self.clipFinished( CardIcon, {} )
+
 				CallingCardName:completeAnimation()
 				self.CallingCardName:setAlpha( 0 )
 				self.clipFinished( CallingCardName, {} )
+
 				CombatRecordCallingCardDescription:completeAnimation()
 				self.CombatRecordCallingCardDescription:setAlpha( 0 )
 				self.clipFinished( CombatRecordCallingCardDescription, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				TopFocusBar:completeAnimation()
 				self.TopFocusBar:setAlpha( 0 )
 				self.clipFinished( TopFocusBar, {} )
+
 				BottomFocusBar:completeAnimation()
 				self.BottomFocusBar:setAlpha( 0 )
 				self.clipFinished( BottomFocusBar, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				CombatRecordCallingCardDescription:completeAnimation()
 				self.CombatRecordCallingCardDescription:setAlpha( 0 )
 				self.clipFinished( CombatRecordCallingCardDescription, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				TopFocusBar:completeAnimation()
 				self.TopFocusBar:setAlpha( 1 )
 				self.clipFinished( TopFocusBar, {} )
+
 				BottomFocusBar:completeAnimation()
 				self.BottomFocusBar:setAlpha( 1 )
 				self.clipFinished( BottomFocusBar, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "EmptyCallingCard",
@@ -223,6 +247,7 @@ CoD.CombatRecordCallingCard.new = function ( menu, controller )
 			modelName = "backgroundId"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CardIcon:close()
 		element.CallingCardName:close()

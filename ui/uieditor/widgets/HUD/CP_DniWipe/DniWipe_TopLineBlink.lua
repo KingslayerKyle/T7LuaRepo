@@ -4,9 +4,11 @@
 CoD.DniWipe_TopLineBlink = InheritFrom( LUI.UIElement )
 CoD.DniWipe_TopLineBlink.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.DniWipe_TopLineBlink )
 	self.id = "DniWipe_TopLineBlink"
@@ -27,6 +29,7 @@ CoD.DniWipe_TopLineBlink.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local CenterlineTopFrame2 = function ( CenterlineTop, event )
 					local CenterlineTopFrame3 = function ( CenterlineTop, event )
 						local CenterlineTopFrame4 = function ( CenterlineTop, event )
@@ -118,6 +121,7 @@ CoD.DniWipe_TopLineBlink.new = function ( menu, controller )
 				CenterlineTop:completeAnimation()
 				self.CenterlineTop:setAlpha( 0 )
 				CenterlineTopFrame2( CenterlineTop, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

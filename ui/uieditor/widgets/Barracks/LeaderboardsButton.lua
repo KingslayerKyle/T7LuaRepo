@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.CAC.cac_lock" )
 CoD.LeaderboardsButton = InheritFrom( LUI.UIElement )
 CoD.LeaderboardsButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.LeaderboardsButton )
 	self.id = "LeaderboardsButton"
@@ -115,48 +117,62 @@ CoD.LeaderboardsButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0.05 )
 				self.clipFinished( BlackTint, {} )
+
 				ButtonTitleBG:completeAnimation()
 				self.ButtonTitleBG:setAlpha( 0 )
 				self.clipFinished( ButtonTitleBG, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				LeaderboardLockCover:completeAnimation()
 				self.LeaderboardLockCover:setAlpha( 0 )
 				self.clipFinished( LeaderboardLockCover, {} )
+
 				caclock0:completeAnimation()
 				self.caclock0:setAlpha( 0 )
 				self.clipFinished( caclock0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0 )
 				self.clipFinished( BlackTint, {} )
+
 				ButtonTitleBG:completeAnimation()
 				self.ButtonTitleBG:setAlpha( 0 )
 				self.clipFinished( ButtonTitleBG, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				LeaderboardLockCover:completeAnimation()
 				self.LeaderboardLockCover:setAlpha( 0 )
 				self.clipFinished( LeaderboardLockCover, {} )
+
 				caclock0:completeAnimation()
 				self.caclock0:setAlpha( 0 )
 				self.clipFinished( caclock0, {} )
@@ -165,48 +181,61 @@ CoD.LeaderboardsButton.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				ButtonTitleBG:completeAnimation()
 				self.ButtonTitleBG:setAlpha( 0.05 )
 				self.clipFinished( ButtonTitleBG, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				LeaderboardLockCover:completeAnimation()
 				self.LeaderboardLockCover:setAlpha( 0.05 )
 				self.clipFinished( LeaderboardLockCover, {} )
+
 				caclock0:completeAnimation()
 				self.caclock0:setAlpha( 1 )
 				self.clipFinished( caclock0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				ButtonTitleBG:completeAnimation()
 				self.ButtonTitleBG:setAlpha( 0 )
 				self.clipFinished( ButtonTitleBG, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				LeaderboardLockCover:completeAnimation()
 				self.LeaderboardLockCover:setAlpha( 0 )
 				self.clipFinished( LeaderboardLockCover, {} )
+
 				caclock0:completeAnimation()
 				self.caclock0:setAlpha( 1 )
 				self.clipFinished( caclock0, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactive:close()
 		element.BoxButtonLrgInactiveDiag:close()

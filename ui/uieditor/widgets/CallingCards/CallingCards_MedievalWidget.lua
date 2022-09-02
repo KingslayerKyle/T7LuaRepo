@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_MedievalCapeWidget" )
 CoD.CallingCards_MedievalWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_MedievalWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_MedievalWidget )
 	self.id = "CallingCards_MedievalWidget"
@@ -112,6 +114,7 @@ CoD.CallingCards_MedievalWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				local FlagFrame2 = function ( Flag, event )
 					local FlagFrame3 = function ( Flag, event )
 						local FlagFrame4 = function ( Flag, event )
@@ -511,6 +514,7 @@ CoD.CallingCards_MedievalWidget.new = function ( menu, controller )
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				GlowFrame2( Glow, {} )
+
 				Cape2:completeAnimation()
 				self.Cape2:setAlpha( 1 )
 				self.clipFinished( Cape2, {} )
@@ -1137,10 +1141,12 @@ CoD.CallingCards_MedievalWidget.new = function ( menu, controller )
 				Glow0:completeAnimation()
 				self.Glow0:setAlpha( 0 )
 				Glow0Frame2( Glow0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Cape2:close()
 	end )

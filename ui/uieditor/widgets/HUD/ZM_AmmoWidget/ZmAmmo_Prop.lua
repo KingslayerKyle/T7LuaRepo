@@ -20,9 +20,11 @@ end
 CoD.ZmAmmo_Prop = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_Prop.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_Prop )
 	self.id = "ZmAmmo_Prop"
@@ -431,15 +433,19 @@ CoD.ZmAmmo_Prop.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BulbSmFill:completeAnimation()
 				self.BulbSmFill:setAlpha( 1 )
 				self.clipFinished( BulbSmFill, {} )
+
 				BulbSmEdge:completeAnimation()
 				self.BulbSmEdge:setAlpha( 1 )
 				self.clipFinished( BulbSmEdge, {} )
+
 				BulbLgFill:completeAnimation()
 				self.BulbLgFill:setAlpha( 0 )
 				self.clipFinished( BulbLgFill, {} )
+
 				BulbLgEdge:completeAnimation()
 				self.BulbLgEdge:setAlpha( 0 )
 				self.clipFinished( BulbLgEdge, {} )
@@ -448,21 +454,26 @@ CoD.ZmAmmo_Prop.new = function ( menu, controller )
 		WeaponDual = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BulbSmFill:completeAnimation()
 				self.BulbSmFill:setAlpha( 0 )
 				self.clipFinished( BulbSmFill, {} )
+
 				BulbSmEdge:completeAnimation()
 				self.BulbSmEdge:setAlpha( 0 )
 				self.clipFinished( BulbSmEdge, {} )
+
 				BulbLgFill:completeAnimation()
 				self.BulbLgFill:setAlpha( 0.93 )
 				self.clipFinished( BulbLgFill, {} )
+
 				BulbLgEdge:completeAnimation()
 				self.BulbLgEdge:setAlpha( 1 )
 				self.clipFinished( BulbLgEdge, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "WeaponDual",
@@ -479,6 +490,7 @@ CoD.ZmAmmo_Prop.new = function ( menu, controller )
 			modelName = "currentWeapon.ammoInDWClip"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.DpadIconWpn:close()
 		element.DpadIconBgm:close()

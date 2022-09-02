@@ -4,9 +4,11 @@
 CoD.StartMenu_Options_Network_PingListItem = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_Network_PingListItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_Network_PingListItem )
 	self.id = "StartMenu_Options_Network_PingListItem"
@@ -39,6 +41,7 @@ CoD.StartMenu_Options_Network_PingListItem.new = function ( menu, controller )
 			pingText:setText( Engine.Localize( GetScoreboardPlayerPingRange( pingIndex ) ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.pingImage:close()
 		element.pingText:close()

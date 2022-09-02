@@ -4,9 +4,11 @@
 CoD.buttonprompt = InheritFrom( LUI.UIElement )
 CoD.buttonprompt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.buttonprompt )
 	self.id = "buttonprompt"
@@ -43,26 +45,32 @@ CoD.buttonprompt.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setAlpha( 1 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setAlpha( 1 )
 				self.clipFinished( label, {} )
+
 				keyshortcut:completeAnimation()
 				self.keyshortcut:setAlpha( 0 )
 				self.clipFinished( keyshortcut, {} )
 			end,
 			Hide = function ()
 				self:setupElementClipCounter( 3 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setLeftRight( true, false, 0, 32 )
 				self.buttonPromptImage:setTopBottom( true, false, 0, 31 )
 				self.buttonPromptImage:setAlpha( 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setAlpha( 0 )
 				self.clipFinished( label, {} )
+
 				keyshortcut:completeAnimation()
 				self.keyshortcut:setAlpha( 0 )
 				self.clipFinished( keyshortcut, {} )
@@ -71,12 +79,15 @@ CoD.buttonprompt.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setAlpha( 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setAlpha( 0 )
 				self.clipFinished( label, {} )
+
 				keyshortcut:completeAnimation()
 				self.keyshortcut:setAlpha( 0 )
 				self.clipFinished( keyshortcut, {} )
@@ -85,12 +96,15 @@ CoD.buttonprompt.new = function ( menu, controller )
 		DefaultStatePC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setAlpha( 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setAlpha( 1 )
 				self.clipFinished( label, {} )
+
 				keyshortcut:completeAnimation()
 				self.keyshortcut:setAlpha( 1 )
 				self.clipFinished( keyshortcut, {} )
@@ -99,15 +113,18 @@ CoD.buttonprompt.new = function ( menu, controller )
 		CodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setAlpha( 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setAlpha( 0 )
 				self.clipFinished( label, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",

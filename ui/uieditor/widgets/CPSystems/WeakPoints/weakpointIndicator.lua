@@ -17,9 +17,11 @@ require( "ui.uieditor.widgets.CPSystems.WeakPoints.weakpoint_NewRedArrowPoint" )
 CoD.weakpointIndicator = InheritFrom( LUI.UIElement )
 CoD.weakpointIndicator.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.weakpointIndicator )
 	self.id = "weakpointIndicator"
@@ -177,66 +179,86 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 20 )
+
 				Diagonals:completeAnimation()
 				self.Diagonals:setAlpha( 0 )
 				self.Diagonals:setZoom( -50 )
 				self.clipFinished( Diagonals, {} )
+
 				weakpointNewArrowSmallContainer0:completeAnimation()
 				self.weakpointNewArrowSmallContainer0:setAlpha( 0 )
 				self.clipFinished( weakpointNewArrowSmallContainer0, {} )
+
 				weakpointNewCornerContainer0:completeAnimation()
 				self.weakpointNewCornerContainer0:setAlpha( 0 )
 				self.clipFinished( weakpointNewCornerContainer0, {} )
+
 				weakpointNewDashContainer0:completeAnimation()
 				self.weakpointNewDashContainer0:setAlpha( 0 )
 				self.clipFinished( weakpointNewDashContainer0, {} )
+
 				weakpointNewHex0:completeAnimation()
 				self.weakpointNewHex0:setAlpha( 0 )
 				self.clipFinished( weakpointNewHex0, {} )
+
 				weakpointNewRedLineH0:completeAnimation()
 				self.weakpointNewRedLineH0:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineH0, {} )
+
 				weakpointNewRedLineV0:completeAnimation()
 				self.weakpointNewRedLineV0:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineV0, {} )
+
 				weakpointNewRedLineV1:completeAnimation()
 				self.weakpointNewRedLineV1:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineV1, {} )
+
 				weakpointNewRedLineH1:completeAnimation()
 				self.weakpointNewRedLineH1:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineH1, {} )
+
 				weakpointNewRedLineContainer0:completeAnimation()
 				self.weakpointNewRedLineContainer0:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineContainer0, {} )
+
 				weakpointNewRedLineContainer1:completeAnimation()
 				self.weakpointNewRedLineContainer1:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineContainer1, {} )
+
 				weakpointNewDashEl0:completeAnimation()
 				self.weakpointNewDashEl0:setAlpha( 0 )
 				self.clipFinished( weakpointNewDashEl0, {} )
+
 				weakpointNewDashEl1:completeAnimation()
 				self.weakpointNewDashEl1:setAlpha( 0 )
 				self.clipFinished( weakpointNewDashEl1, {} )
+
 				weakpointNewThickPlus0:completeAnimation()
 				self.weakpointNewThickPlus0:setAlpha( 0 )
 				self.clipFinished( weakpointNewThickPlus0, {} )
+
 				weakpointNewRedArrow0:completeAnimation()
 				self.weakpointNewRedArrow0:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedArrow0, {} )
+
 				weakpointNewRedArrow5:completeAnimation()
 				self.weakpointNewRedArrow5:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedArrow5, {} )
+
 				weakpointNewRedArrowPoint0:completeAnimation()
 				self.weakpointNewRedArrowPoint0:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedArrowPoint0, {} )
+
 				weakpointNewRedArrowPoint1:completeAnimation()
 				self.weakpointNewRedArrowPoint1:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedArrowPoint1, {} )
+
 				weakpointNewDashEl00:completeAnimation()
 				self.weakpointNewDashEl00:setLeftRight( false, false, -8, 28.01 )
 				self.weakpointNewDashEl00:setTopBottom( false, false, -7, 9 )
 				self.weakpointNewDashEl00:setAlpha( 0 )
 				self.clipFinished( weakpointNewDashEl00, {} )
+
 				weakpointNewDashEl10:completeAnimation()
 				self.weakpointNewDashEl10:setLeftRight( false, false, -29.5, 6.5 )
 				self.weakpointNewDashEl10:setTopBottom( false, false, -7, 9 )
@@ -245,6 +267,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 20 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					if not event.interrupted then
 						Diagonals:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Bounce )
@@ -638,6 +661,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			Medium = function ()
 				self:setupElementClipCounter( 20 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					if not event.interrupted then
 						Diagonals:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Bounce )
@@ -700,6 +724,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 				weakpointNewDashContainer0:completeAnimation()
 				self.weakpointNewDashContainer0:setAlpha( 0 )
 				weakpointNewDashContainer0Frame2( weakpointNewDashContainer0, {} )
+
 				weakpointNewHex0:completeAnimation()
 				self.weakpointNewHex0:setAlpha( 0 )
 				self.clipFinished( weakpointNewHex0, {} )
@@ -1039,6 +1064,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			Far = function ()
 				self:setupElementClipCounter( 20 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					if not event.interrupted then
 						Diagonals:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Bounce )
@@ -1101,6 +1127,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 				weakpointNewDashContainer0:completeAnimation()
 				self.weakpointNewDashContainer0:setAlpha( 0 )
 				weakpointNewDashContainer0Frame2( weakpointNewDashContainer0, {} )
+
 				weakpointNewHex0:completeAnimation()
 				self.weakpointNewHex0:setAlpha( 0 )
 				self.clipFinished( weakpointNewHex0, {} )
@@ -1440,6 +1467,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			Obscured = function ()
 				self:setupElementClipCounter( 20 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					if not event.interrupted then
 						Diagonals:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )
@@ -1775,65 +1803,85 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 		Close = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 20 )
+
 				Diagonals:completeAnimation()
 				self.Diagonals:setAlpha( 0 )
 				self.clipFinished( Diagonals, {} )
+
 				weakpointNewArrowSmallContainer0:completeAnimation()
 				self.weakpointNewArrowSmallContainer0:setAlpha( 1 )
 				self.clipFinished( weakpointNewArrowSmallContainer0, {} )
+
 				weakpointNewCornerContainer0:completeAnimation()
 				self.weakpointNewCornerContainer0:setAlpha( 1 )
 				self.clipFinished( weakpointNewCornerContainer0, {} )
+
 				weakpointNewDashContainer0:completeAnimation()
 				self.weakpointNewDashContainer0:setAlpha( 1 )
 				self.clipFinished( weakpointNewDashContainer0, {} )
+
 				weakpointNewHex0:completeAnimation()
 				self.weakpointNewHex0:setAlpha( 0 )
 				self.clipFinished( weakpointNewHex0, {} )
+
 				weakpointNewRedLineH0:completeAnimation()
 				self.weakpointNewRedLineH0:setAlpha( 1 )
 				self.clipFinished( weakpointNewRedLineH0, {} )
+
 				weakpointNewRedLineV0:completeAnimation()
 				self.weakpointNewRedLineV0:setAlpha( 1 )
 				self.clipFinished( weakpointNewRedLineV0, {} )
+
 				weakpointNewRedLineV1:completeAnimation()
 				self.weakpointNewRedLineV1:setAlpha( 1 )
 				self.clipFinished( weakpointNewRedLineV1, {} )
+
 				weakpointNewRedLineH1:completeAnimation()
 				self.weakpointNewRedLineH1:setAlpha( 1 )
 				self.clipFinished( weakpointNewRedLineH1, {} )
+
 				weakpointNewRedLineContainer0:completeAnimation()
 				self.weakpointNewRedLineContainer0:setAlpha( 1 )
 				self.clipFinished( weakpointNewRedLineContainer0, {} )
+
 				weakpointNewRedLineContainer1:completeAnimation()
 				self.weakpointNewRedLineContainer1:setAlpha( 1 )
 				self.clipFinished( weakpointNewRedLineContainer1, {} )
+
 				weakpointNewDashEl0:completeAnimation()
 				self.weakpointNewDashEl0:setAlpha( 1 )
 				self.clipFinished( weakpointNewDashEl0, {} )
+
 				weakpointNewDashEl1:completeAnimation()
 				self.weakpointNewDashEl1:setAlpha( 1 )
 				self.clipFinished( weakpointNewDashEl1, {} )
+
 				weakpointNewThickPlus0:completeAnimation()
 				self.weakpointNewThickPlus0:setAlpha( 1 )
 				self.clipFinished( weakpointNewThickPlus0, {} )
+
 				weakpointNewRedArrow0:completeAnimation()
 				self.weakpointNewRedArrow0:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedArrow0, {} )
+
 				weakpointNewRedArrow5:completeAnimation()
 				self.weakpointNewRedArrow5:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedArrow5, {} )
+
 				weakpointNewRedArrowPoint0:completeAnimation()
 				self.weakpointNewRedArrowPoint0:setAlpha( 1 )
 				self.clipFinished( weakpointNewRedArrowPoint0, {} )
+
 				weakpointNewRedArrowPoint1:completeAnimation()
 				self.weakpointNewRedArrowPoint1:setAlpha( 1 )
 				self.clipFinished( weakpointNewRedArrowPoint1, {} )
+
 				weakpointNewDashEl00:completeAnimation()
 				self.weakpointNewDashEl00:setLeftRight( false, false, 81, 117 )
 				self.weakpointNewDashEl00:setTopBottom( false, false, -7, 9 )
 				self.weakpointNewDashEl00:setAlpha( 0 )
 				self.clipFinished( weakpointNewDashEl00, {} )
+
 				weakpointNewDashEl10:completeAnimation()
 				self.weakpointNewDashEl10:setLeftRight( false, false, -117, -81 )
 				self.weakpointNewDashEl10:setTopBottom( false, false, -7, 9 )
@@ -1842,6 +1890,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 20 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					if not event.interrupted then
 						Diagonals:beginAnimation( "keyframe", 899, false, false, CoD.TweenType.Bounce )
@@ -2225,6 +2274,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			Far = function ()
 				self:setupElementClipCounter( 20 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					if not event.interrupted then
 						Diagonals:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Bounce )
@@ -2307,6 +2357,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 				weakpointNewDashContainer0:completeAnimation()
 				self.weakpointNewDashContainer0:setAlpha( 1 )
 				weakpointNewDashContainer0Frame2( weakpointNewDashContainer0, {} )
+
 				weakpointNewHex0:completeAnimation()
 				self.weakpointNewHex0:setAlpha( 0 )
 				self.clipFinished( weakpointNewHex0, {} )
@@ -2606,6 +2657,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			Medium = function ()
 				self:setupElementClipCounter( 20 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					if not event.interrupted then
 						Diagonals:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Bounce )
@@ -2678,6 +2730,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 				weakpointNewDashContainer0:completeAnimation()
 				self.weakpointNewDashContainer0:setAlpha( 1 )
 				weakpointNewDashContainer0Frame2( weakpointNewDashContainer0, {} )
+
 				weakpointNewHex0:completeAnimation()
 				self.weakpointNewHex0:setAlpha( 0 )
 				self.clipFinished( weakpointNewHex0, {} )
@@ -2977,6 +3030,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			Obscured = function ()
 				self:setupElementClipCounter( 20 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					if not event.interrupted then
 						Diagonals:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Bounce )
@@ -3338,6 +3392,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			Damaged = function ()
 				self:setupElementClipCounter( 10 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					local DiagonalsFrame3 = function ( Diagonals, event )
 						local DiagonalsFrame4 = function ( Diagonals, event )
@@ -3701,6 +3756,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			Repulsed = function ()
 				self:setupElementClipCounter( 1 )
+
 				local weakpointNewHex0Frame2 = function ( weakpointNewHex0, event )
 					local weakpointNewHex0Frame3 = function ( weakpointNewHex0, event )
 						local weakpointNewHex0Frame4 = function ( weakpointNewHex0, event )
@@ -4114,63 +4170,82 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 		Medium = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				Diagonals:completeAnimation()
 				self.Diagonals:setAlpha( 0 )
 				self.Diagonals:setZoom( -50 )
 				self.clipFinished( Diagonals, {} )
+
 				weakpointNewArrowSmallContainer0:completeAnimation()
 				self.weakpointNewArrowSmallContainer0:setAlpha( 0 )
 				self.clipFinished( weakpointNewArrowSmallContainer0, {} )
+
 				weakpointNewCornerContainer0:completeAnimation()
 				self.weakpointNewCornerContainer0:setAlpha( 1 )
 				self.clipFinished( weakpointNewCornerContainer0, {} )
+
 				weakpointNewDashContainer0:completeAnimation()
 				self.weakpointNewDashContainer0:setAlpha( 0 )
 				self.clipFinished( weakpointNewDashContainer0, {} )
+
 				weakpointNewRedLineH0:completeAnimation()
 				self.weakpointNewRedLineH0:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineH0, {} )
+
 				weakpointNewRedLineV0:completeAnimation()
 				self.weakpointNewRedLineV0:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineV0, {} )
+
 				weakpointNewRedLineV1:completeAnimation()
 				self.weakpointNewRedLineV1:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineV1, {} )
+
 				weakpointNewRedLineH1:completeAnimation()
 				self.weakpointNewRedLineH1:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineH1, {} )
+
 				weakpointNewRedLineContainer0:completeAnimation()
 				self.weakpointNewRedLineContainer0:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineContainer0, {} )
+
 				weakpointNewRedLineContainer1:completeAnimation()
 				self.weakpointNewRedLineContainer1:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineContainer1, {} )
+
 				weakpointNewDashEl0:completeAnimation()
 				self.weakpointNewDashEl0:setAlpha( 0 )
 				self.clipFinished( weakpointNewDashEl0, {} )
+
 				weakpointNewDashEl1:completeAnimation()
 				self.weakpointNewDashEl1:setAlpha( 0 )
 				self.clipFinished( weakpointNewDashEl1, {} )
+
 				weakpointNewThickPlus0:completeAnimation()
 				self.weakpointNewThickPlus0:setAlpha( 1 )
 				self.clipFinished( weakpointNewThickPlus0, {} )
+
 				weakpointNewRedArrow0:completeAnimation()
 				self.weakpointNewRedArrow0:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedArrow0, {} )
+
 				weakpointNewRedArrow5:completeAnimation()
 				self.weakpointNewRedArrow5:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedArrow5, {} )
+
 				weakpointNewRedArrowPoint0:completeAnimation()
 				self.weakpointNewRedArrowPoint0:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedArrowPoint0, {} )
+
 				weakpointNewRedArrowPoint1:completeAnimation()
 				self.weakpointNewRedArrowPoint1:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedArrowPoint1, {} )
+
 				weakpointNewDashEl00:completeAnimation()
 				self.weakpointNewDashEl00:setLeftRight( false, false, 14, 50 )
 				self.weakpointNewDashEl00:setTopBottom( false, false, -7, 9 )
 				self.weakpointNewDashEl00:setAlpha( 1 )
 				self.clipFinished( weakpointNewDashEl00, {} )
+
 				weakpointNewDashEl10:completeAnimation()
 				self.weakpointNewDashEl10:setLeftRight( false, false, -47.5, -11.5 )
 				self.weakpointNewDashEl10:setTopBottom( false, false, -7, 9 )
@@ -4179,6 +4254,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 20 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					if not event.interrupted then
 						Diagonals:beginAnimation( "keyframe", 2000, false, false, CoD.TweenType.Bounce )
@@ -4251,6 +4327,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 				weakpointNewDashContainer0:completeAnimation()
 				self.weakpointNewDashContainer0:setAlpha( 0 )
 				weakpointNewDashContainer0Frame2( weakpointNewDashContainer0, {} )
+
 				weakpointNewHex0:completeAnimation()
 				self.weakpointNewHex0:setAlpha( 0 )
 				self.clipFinished( weakpointNewHex0, {} )
@@ -4540,6 +4617,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 20 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					if not event.interrupted then
 						Diagonals:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )
@@ -4612,6 +4690,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 				weakpointNewDashContainer0:completeAnimation()
 				self.weakpointNewDashContainer0:setAlpha( 0 )
 				weakpointNewDashContainer0Frame2( weakpointNewDashContainer0, {} )
+
 				weakpointNewHex0:completeAnimation()
 				self.weakpointNewHex0:setAlpha( 0 )
 				self.clipFinished( weakpointNewHex0, {} )
@@ -4901,6 +4980,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			Obscured = function ()
 				self:setupElementClipCounter( 20 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					if not event.interrupted then
 						Diagonals:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )
@@ -4963,6 +5043,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 				weakpointNewDashContainer0:completeAnimation()
 				self.weakpointNewDashContainer0:setAlpha( 0 )
 				weakpointNewDashContainer0Frame2( weakpointNewDashContainer0, {} )
+
 				weakpointNewHex0:completeAnimation()
 				self.weakpointNewHex0:setAlpha( 0 )
 				self.clipFinished( weakpointNewHex0, {} )
@@ -5242,6 +5323,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			Damaged = function ()
 				self:setupElementClipCounter( 10 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					local DiagonalsFrame3 = function ( Diagonals, event )
 						local DiagonalsFrame4 = function ( Diagonals, event )
@@ -5605,6 +5687,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			Repulsed = function ()
 				self:setupElementClipCounter( 1 )
+
 				local weakpointNewHex0Frame2 = function ( weakpointNewHex0, event )
 					local weakpointNewHex0Frame3 = function ( weakpointNewHex0, event )
 						local weakpointNewHex0Frame4 = function ( weakpointNewHex0, event )
@@ -6016,6 +6099,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			Far = function ()
 				self:setupElementClipCounter( 19 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					if not event.interrupted then
 						Diagonals:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )
@@ -6316,63 +6400,82 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 		Far = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				Diagonals:completeAnimation()
 				self.Diagonals:setAlpha( 0 )
 				self.Diagonals:setZoom( -50 )
 				self.clipFinished( Diagonals, {} )
+
 				weakpointNewArrowSmallContainer0:completeAnimation()
 				self.weakpointNewArrowSmallContainer0:setAlpha( 0 )
 				self.clipFinished( weakpointNewArrowSmallContainer0, {} )
+
 				weakpointNewCornerContainer0:completeAnimation()
 				self.weakpointNewCornerContainer0:setAlpha( 0 )
 				self.clipFinished( weakpointNewCornerContainer0, {} )
+
 				weakpointNewDashContainer0:completeAnimation()
 				self.weakpointNewDashContainer0:setAlpha( 0 )
 				self.clipFinished( weakpointNewDashContainer0, {} )
+
 				weakpointNewRedLineH0:completeAnimation()
 				self.weakpointNewRedLineH0:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineH0, {} )
+
 				weakpointNewRedLineV0:completeAnimation()
 				self.weakpointNewRedLineV0:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineV0, {} )
+
 				weakpointNewRedLineV1:completeAnimation()
 				self.weakpointNewRedLineV1:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineV1, {} )
+
 				weakpointNewRedLineH1:completeAnimation()
 				self.weakpointNewRedLineH1:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineH1, {} )
+
 				weakpointNewRedLineContainer0:completeAnimation()
 				self.weakpointNewRedLineContainer0:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineContainer0, {} )
+
 				weakpointNewRedLineContainer1:completeAnimation()
 				self.weakpointNewRedLineContainer1:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineContainer1, {} )
+
 				weakpointNewDashEl0:completeAnimation()
 				self.weakpointNewDashEl0:setAlpha( 0 )
 				self.clipFinished( weakpointNewDashEl0, {} )
+
 				weakpointNewDashEl1:completeAnimation()
 				self.weakpointNewDashEl1:setAlpha( 0 )
 				self.clipFinished( weakpointNewDashEl1, {} )
+
 				weakpointNewThickPlus0:completeAnimation()
 				self.weakpointNewThickPlus0:setAlpha( 1 )
 				self.clipFinished( weakpointNewThickPlus0, {} )
+
 				weakpointNewRedArrow0:completeAnimation()
 				self.weakpointNewRedArrow0:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedArrow0, {} )
+
 				weakpointNewRedArrow5:completeAnimation()
 				self.weakpointNewRedArrow5:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedArrow5, {} )
+
 				weakpointNewRedArrowPoint0:completeAnimation()
 				self.weakpointNewRedArrowPoint0:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedArrowPoint0, {} )
+
 				weakpointNewRedArrowPoint1:completeAnimation()
 				self.weakpointNewRedArrowPoint1:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedArrowPoint1, {} )
+
 				weakpointNewDashEl00:completeAnimation()
 				self.weakpointNewDashEl00:setLeftRight( false, false, 14, 50 )
 				self.weakpointNewDashEl00:setTopBottom( false, false, -7, 9 )
 				self.weakpointNewDashEl00:setAlpha( 1 )
 				self.clipFinished( weakpointNewDashEl00, {} )
+
 				weakpointNewDashEl10:completeAnimation()
 				self.weakpointNewDashEl10:setLeftRight( false, false, -47.5, -11.5 )
 				self.weakpointNewDashEl10:setTopBottom( false, false, -7, 9 )
@@ -6381,6 +6484,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 20 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					if not event.interrupted then
 						Diagonals:beginAnimation( "keyframe", 2000, false, false, CoD.TweenType.Bounce )
@@ -6453,6 +6557,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 				weakpointNewDashContainer0:completeAnimation()
 				self.weakpointNewDashContainer0:setAlpha( 0 )
 				weakpointNewDashContainer0Frame2( weakpointNewDashContainer0, {} )
+
 				weakpointNewHex0:completeAnimation()
 				self.weakpointNewHex0:setAlpha( 0 )
 				self.clipFinished( weakpointNewHex0, {} )
@@ -6742,6 +6847,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 20 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					if not event.interrupted then
 						Diagonals:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )
@@ -6814,6 +6920,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 				weakpointNewDashContainer0:completeAnimation()
 				self.weakpointNewDashContainer0:setAlpha( 0 )
 				weakpointNewDashContainer0Frame2( weakpointNewDashContainer0, {} )
+
 				weakpointNewHex0:completeAnimation()
 				self.weakpointNewHex0:setAlpha( 0 )
 				self.clipFinished( weakpointNewHex0, {} )
@@ -7103,6 +7210,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			Obscured = function ()
 				self:setupElementClipCounter( 20 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					if not event.interrupted then
 						Diagonals:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )
@@ -7165,6 +7273,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 				weakpointNewDashContainer0:completeAnimation()
 				self.weakpointNewDashContainer0:setAlpha( 0 )
 				weakpointNewDashContainer0Frame2( weakpointNewDashContainer0, {} )
+
 				weakpointNewHex0:completeAnimation()
 				self.weakpointNewHex0:setAlpha( 0 )
 				self.clipFinished( weakpointNewHex0, {} )
@@ -7444,6 +7553,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			Damaged = function ()
 				self:setupElementClipCounter( 10 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					local DiagonalsFrame3 = function ( Diagonals, event )
 						local DiagonalsFrame4 = function ( Diagonals, event )
@@ -7807,6 +7917,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			Repulsed = function ()
 				self:setupElementClipCounter( 1 )
+
 				local weakpointNewHex0Frame2 = function ( weakpointNewHex0, event )
 					local weakpointNewHex0Frame3 = function ( weakpointNewHex0, event )
 						local weakpointNewHex0Frame4 = function ( weakpointNewHex0, event )
@@ -8220,65 +8331,85 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 		Obscured = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 20 )
+
 				Diagonals:completeAnimation()
 				self.Diagonals:setAlpha( 0 )
 				self.clipFinished( Diagonals, {} )
+
 				weakpointNewArrowSmallContainer0:completeAnimation()
 				self.weakpointNewArrowSmallContainer0:setAlpha( 0 )
 				self.clipFinished( weakpointNewArrowSmallContainer0, {} )
+
 				weakpointNewCornerContainer0:completeAnimation()
 				self.weakpointNewCornerContainer0:setAlpha( 0 )
 				self.clipFinished( weakpointNewCornerContainer0, {} )
+
 				weakpointNewDashContainer0:completeAnimation()
 				self.weakpointNewDashContainer0:setAlpha( 0 )
 				self.clipFinished( weakpointNewDashContainer0, {} )
+
 				weakpointNewHex0:completeAnimation()
 				self.weakpointNewHex0:setAlpha( 0 )
 				self.clipFinished( weakpointNewHex0, {} )
+
 				weakpointNewRedLineH0:completeAnimation()
 				self.weakpointNewRedLineH0:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineH0, {} )
+
 				weakpointNewRedLineV0:completeAnimation()
 				self.weakpointNewRedLineV0:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineV0, {} )
+
 				weakpointNewRedLineV1:completeAnimation()
 				self.weakpointNewRedLineV1:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineV1, {} )
+
 				weakpointNewRedLineH1:completeAnimation()
 				self.weakpointNewRedLineH1:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineH1, {} )
+
 				weakpointNewRedLineContainer0:completeAnimation()
 				self.weakpointNewRedLineContainer0:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineContainer0, {} )
+
 				weakpointNewRedLineContainer1:completeAnimation()
 				self.weakpointNewRedLineContainer1:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedLineContainer1, {} )
+
 				weakpointNewDashEl0:completeAnimation()
 				self.weakpointNewDashEl0:setAlpha( 0 )
 				self.clipFinished( weakpointNewDashEl0, {} )
+
 				weakpointNewDashEl1:completeAnimation()
 				self.weakpointNewDashEl1:setAlpha( 0 )
 				self.clipFinished( weakpointNewDashEl1, {} )
+
 				weakpointNewThickPlus0:completeAnimation()
 				self.weakpointNewThickPlus0:setAlpha( 1 )
 				self.clipFinished( weakpointNewThickPlus0, {} )
+
 				weakpointNewRedArrow0:completeAnimation()
 				self.weakpointNewRedArrow0:setAlpha( 1 )
 				self.clipFinished( weakpointNewRedArrow0, {} )
+
 				weakpointNewRedArrow5:completeAnimation()
 				self.weakpointNewRedArrow5:setAlpha( 1 )
 				self.clipFinished( weakpointNewRedArrow5, {} )
+
 				weakpointNewRedArrowPoint0:completeAnimation()
 				self.weakpointNewRedArrowPoint0:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedArrowPoint0, {} )
+
 				weakpointNewRedArrowPoint1:completeAnimation()
 				self.weakpointNewRedArrowPoint1:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedArrowPoint1, {} )
+
 				weakpointNewDashEl00:completeAnimation()
 				self.weakpointNewDashEl00:setLeftRight( false, false, 11.01, 47.01 )
 				self.weakpointNewDashEl00:setTopBottom( false, false, -7, 9 )
 				self.weakpointNewDashEl00:setAlpha( 0.52 )
 				self.clipFinished( weakpointNewDashEl00, {} )
+
 				weakpointNewDashEl10:completeAnimation()
 				self.weakpointNewDashEl10:setLeftRight( false, false, -46.5, -10.5 )
 				self.weakpointNewDashEl10:setTopBottom( false, false, -7, 9 )
@@ -8287,6 +8418,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 20 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					if not event.interrupted then
 						Diagonals:beginAnimation( "keyframe", 589, false, false, CoD.TweenType.Bounce )
@@ -8569,6 +8701,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 				weakpointNewRedArrow5:completeAnimation()
 				self.weakpointNewRedArrow5:setAlpha( 1 )
 				weakpointNewRedArrow5Frame2( weakpointNewRedArrow5, {} )
+
 				weakpointNewRedArrowPoint0:completeAnimation()
 				self.weakpointNewRedArrowPoint0:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedArrowPoint0, {} )
@@ -8628,6 +8761,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 20 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					if not event.interrupted then
 						Diagonals:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Bounce )
@@ -8994,6 +9128,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			Medium = function ()
 				self:setupElementClipCounter( 20 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					if not event.interrupted then
 						Diagonals:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Bounce )
@@ -9066,6 +9201,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 				weakpointNewDashContainer0:completeAnimation()
 				self.weakpointNewDashContainer0:setAlpha( 0 )
 				weakpointNewDashContainer0Frame2( weakpointNewDashContainer0, {} )
+
 				weakpointNewHex0:completeAnimation()
 				self.weakpointNewHex0:setAlpha( 0 )
 				self.clipFinished( weakpointNewHex0, {} )
@@ -9289,6 +9425,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 				weakpointNewRedArrowPoint0:completeAnimation()
 				self.weakpointNewRedArrowPoint0:setAlpha( 0 )
 				weakpointNewRedArrowPoint0Frame2( weakpointNewRedArrowPoint0, {} )
+
 				weakpointNewRedArrowPoint1:completeAnimation()
 				self.weakpointNewRedArrowPoint1:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedArrowPoint1, {} )
@@ -9333,6 +9470,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end,
 			Far = function ()
 				self:setupElementClipCounter( 20 )
+
 				local DiagonalsFrame2 = function ( Diagonals, event )
 					if not event.interrupted then
 						Diagonals:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Bounce )
@@ -9405,6 +9543,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 				weakpointNewDashContainer0:completeAnimation()
 				self.weakpointNewDashContainer0:setAlpha( 0 )
 				weakpointNewDashContainer0Frame2( weakpointNewDashContainer0, {} )
+
 				weakpointNewHex0:completeAnimation()
 				self.weakpointNewHex0:setAlpha( 0 )
 				self.clipFinished( weakpointNewHex0, {} )
@@ -9628,6 +9767,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 				weakpointNewRedArrowPoint0:completeAnimation()
 				self.weakpointNewRedArrowPoint0:setAlpha( 0 )
 				weakpointNewRedArrowPoint0Frame2( weakpointNewRedArrowPoint0, {} )
+
 				weakpointNewRedArrowPoint1:completeAnimation()
 				self.weakpointNewRedArrowPoint1:setAlpha( 0 )
 				self.clipFinished( weakpointNewRedArrowPoint1, {} )
@@ -9672,6 +9812,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Close",
@@ -9706,6 +9847,7 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 			modelName = "status"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Diagonals:close()
 		element.weakpointNewArrowSmallContainer0:close()

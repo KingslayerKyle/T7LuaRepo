@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.onOffImage" )
 CoD.ChallengesCompletedWidgetTomb = InheritFrom( LUI.UIElement )
 CoD.ChallengesCompletedWidgetTomb.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChallengesCompletedWidgetTomb )
 	self.id = "ChallengesCompletedWidgetTomb"
@@ -252,36 +254,47 @@ CoD.ChallengesCompletedWidgetTomb.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0 )
 				self.clipFinished( Backing, {} )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setAlpha( 0 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BackPanel:completeAnimation()
 				self.BackPanel:setAlpha( 0 )
 				self.clipFinished( BackPanel, {} )
+
 				HighlightFrame:completeAnimation()
 				self.HighlightFrame:setAlpha( 0 )
 				self.clipFinished( HighlightFrame, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 0 )
 				self.clipFinished( Title, {} )
+
 				challenge1glow:completeAnimation()
 				self.challenge1glow:setAlpha( 0 )
 				self.clipFinished( challenge1glow, {} )
+
 				challenge1icon:completeAnimation()
 				self.challenge1icon:setAlpha( 0 )
 				self.clipFinished( challenge1icon, {} )
+
 				challenge2glow:completeAnimation()
 				self.challenge2glow:setAlpha( 0 )
 				self.clipFinished( challenge2glow, {} )
+
 				challenge2icon:completeAnimation()
 				self.challenge2icon:setAlpha( 0 )
 				self.clipFinished( challenge2icon, {} )
+
 				challenge3glow:completeAnimation()
 				self.challenge3glow:setAlpha( 0 )
 				self.clipFinished( challenge3glow, {} )
+
 				challenge3icon:completeAnimation()
 				self.challenge3icon:setAlpha( 0 )
 				self.clipFinished( challenge3icon, {} )
@@ -290,42 +303,54 @@ CoD.ChallengesCompletedWidgetTomb.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0.64 )
 				self.clipFinished( Backing, {} )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setAlpha( 0.8 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BackPanel:completeAnimation()
 				self.BackPanel:setAlpha( 0.4 )
 				self.clipFinished( BackPanel, {} )
+
 				HighlightFrame:completeAnimation()
 				self.HighlightFrame:setAlpha( 1 )
 				self.clipFinished( HighlightFrame, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				challenge1glow:completeAnimation()
 				self.challenge1glow:setAlpha( 1 )
 				self.clipFinished( challenge1glow, {} )
+
 				challenge1icon:completeAnimation()
 				self.challenge1icon:setAlpha( 1 )
 				self.clipFinished( challenge1icon, {} )
+
 				challenge2glow:completeAnimation()
 				self.challenge2glow:setAlpha( 1 )
 				self.clipFinished( challenge2glow, {} )
+
 				challenge2icon:completeAnimation()
 				self.challenge2icon:setAlpha( 1 )
 				self.clipFinished( challenge2icon, {} )
+
 				challenge3glow:completeAnimation()
 				self.challenge3glow:setAlpha( 1 )
 				self.clipFinished( challenge3glow, {} )
+
 				challenge3icon:completeAnimation()
 				self.challenge3icon:setAlpha( 1 )
 				self.clipFinished( challenge3icon, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanelShaderContainer:close()
 		element.BackPanel:close()

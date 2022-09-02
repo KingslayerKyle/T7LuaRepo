@@ -4,9 +4,11 @@
 CoD.CallingCards_Loot_TwistedCircus = InheritFrom( LUI.UIElement )
 CoD.CallingCards_Loot_TwistedCircus.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_Loot_TwistedCircus )
 	self.id = "CallingCards_Loot_TwistedCircus"
@@ -71,6 +73,7 @@ CoD.CallingCards_Loot_TwistedCircus.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local f2_local0 = function ( f3_arg0, f3_arg1 )
 					local f3_local0 = function ( f4_arg0, f4_arg1 )
 						local f4_local0 = function ( f5_arg0, f5_arg1 )
@@ -366,6 +369,7 @@ CoD.CallingCards_Loot_TwistedCircus.new = function ( menu, controller )
 				self.Glow0:setTopBottom( true, false, -243.82, 475.82 )
 				self.Glow0:setAlpha( 0 )
 				Glow0Frame2( Glow0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

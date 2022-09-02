@@ -4,9 +4,11 @@
 CoD.lmgInfiniteReticle_light = InheritFrom( LUI.UIElement )
 CoD.lmgInfiniteReticle_light.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.lmgInfiniteReticle_light )
 	self.id = "lmgInfiniteReticle_light"
@@ -30,6 +32,7 @@ CoD.lmgInfiniteReticle_light.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local lights100Frame2 = function ( lights100, event )
 					local lights100Frame3 = function ( lights100, event )
 						local lights100Frame4 = function ( lights100, event )
@@ -157,6 +160,7 @@ CoD.lmgInfiniteReticle_light.new = function ( menu, controller )
 				self.lights100:setShaderVector( 2, 0.14, 0.86, 0, 0 )
 				self.lights100:setShaderVector( 3, 0.2, 0.37, 0, 0 )
 				lights100Frame2( lights100, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

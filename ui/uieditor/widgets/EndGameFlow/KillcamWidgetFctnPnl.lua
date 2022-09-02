@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.EndGameFlow.KillcamWidgetFctnPnlInternal" )
 CoD.KillcamWidgetFctnPnl = InheritFrom( LUI.UIElement )
 CoD.KillcamWidgetFctnPnl.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.KillcamWidgetFctnPnl )
 	self.id = "KillcamWidgetFctnPnl"
@@ -29,9 +31,11 @@ CoD.KillcamWidgetFctnPnl.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.KillcamWidgetFctnPnlInternal0:close()
 	end )

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_EquipmentEmpty" )
 CoD.AmmoWidgetMP_EquipmentTacticalItem = InheritFrom( LUI.UIElement )
 CoD.AmmoWidgetMP_EquipmentTacticalItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidgetMP_EquipmentTacticalItem )
 	self.id = "AmmoWidgetMP_EquipmentTacticalItem"
@@ -105,32 +107,39 @@ CoD.AmmoWidgetMP_EquipmentTacticalItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Tactical1:completeAnimation()
 				self.Tactical1:setLeftRight( true, false, 5.75, 31.25 )
 				self.Tactical1:setTopBottom( true, false, 3.25, 28.75 )
 				self.Tactical1:setRGB( 1, 1, 1 )
 				self.Tactical1:setAlpha( 0 )
 				self.clipFinished( Tactical1, {} )
+
 				Tactical2b:completeAnimation()
 				self.Tactical2b:setAlpha( 0 )
 				self.clipFinished( Tactical2b, {} )
+
 				Tactical2:completeAnimation()
 				self.Tactical2:setRGB( 0.75, 0.75, 0.75 )
 				self.Tactical2:setAlpha( 0 )
 				self.clipFinished( Tactical2, {} )
+
 				Tactical3b:completeAnimation()
 				self.Tactical3b:setAlpha( 0 )
 				self.clipFinished( Tactical3b, {} )
+
 				Tactical3:completeAnimation()
 				self.Tactical3:setRGB( 0.6, 0.6, 0.6 )
 				self.Tactical3:setAlpha( 0 )
 				self.clipFinished( Tactical3, {} )
+
 				TacticalEmpty:completeAnimation()
 				self.TacticalEmpty:setAlpha( 1 )
 				self.clipFinished( TacticalEmpty, {} )
 			end,
 			Single = function ()
 				self:setupElementClipCounter( 5 )
+
 				local Tactical1Frame2 = function ( Tactical1, event )
 					if not event.interrupted then
 						Tactical1:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -152,12 +161,15 @@ CoD.AmmoWidgetMP_EquipmentTacticalItem.new = function ( menu, controller )
 				self.Tactical1:setRGB( 1, 1, 1 )
 				self.Tactical1:setAlpha( 0 )
 				Tactical1Frame2( Tactical1, {} )
+
 				Tactical2b:completeAnimation()
 				self.Tactical2b:setAlpha( 0 )
 				self.clipFinished( Tactical2b, {} )
+
 				Tactical3b:completeAnimation()
 				self.Tactical3b:setAlpha( 0 )
 				self.clipFinished( Tactical3b, {} )
+
 				Tactical3:completeAnimation()
 				self.Tactical3:setAlpha( 0 )
 				self.clipFinished( Tactical3, {} )
@@ -181,29 +193,35 @@ CoD.AmmoWidgetMP_EquipmentTacticalItem.new = function ( menu, controller )
 		Single = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Tactical1:completeAnimation()
 				self.Tactical1:setLeftRight( true, false, 5.75, 31.25 )
 				self.Tactical1:setTopBottom( true, false, 3.25, 28.75 )
 				self.Tactical1:setRGB( 1, 1, 1 )
 				self.Tactical1:setAlpha( 1 )
 				self.clipFinished( Tactical1, {} )
+
 				Tactical2b:completeAnimation()
 				self.Tactical2b:setAlpha( 0 )
 				self.clipFinished( Tactical2b, {} )
+
 				Tactical2:completeAnimation()
 				self.Tactical2:setLeftRight( true, false, 2.75, 28.25 )
 				self.Tactical2:setTopBottom( true, false, 0.25, 25.75 )
 				self.Tactical2:setAlpha( 0 )
 				self.clipFinished( Tactical2, {} )
+
 				Tactical3b:completeAnimation()
 				self.Tactical3b:setAlpha( 0 )
 				self.clipFinished( Tactical3b, {} )
+
 				Tactical3:completeAnimation()
 				self.Tactical3:setAlpha( 0 )
 				self.clipFinished( Tactical3, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 3 )
+
 				local Tactical1Frame2 = function ( Tactical1, event )
 					if not event.interrupted then
 						Tactical1:beginAnimation( "keyframe", 300, true, false, CoD.TweenType.Bounce )
@@ -225,15 +243,18 @@ CoD.AmmoWidgetMP_EquipmentTacticalItem.new = function ( menu, controller )
 				self.Tactical1:setRGB( 1, 1, 1 )
 				self.Tactical1:setAlpha( 1 )
 				Tactical1Frame2( Tactical1, {} )
+
 				Tactical2b:completeAnimation()
 				self.Tactical2b:setAlpha( 0 )
 				self.clipFinished( Tactical2b, {} )
+
 				Tactical3b:completeAnimation()
 				self.Tactical3b:setAlpha( 0 )
 				self.clipFinished( Tactical3b, {} )
 			end,
 			Double = function ()
 				self:setupElementClipCounter( 4 )
+
 				local Tactical1Frame2 = function ( Tactical1, event )
 					if not event.interrupted then
 						Tactical1:beginAnimation( "keyframe", 400, false, true, CoD.TweenType.Back )
@@ -295,6 +316,7 @@ CoD.AmmoWidgetMP_EquipmentTacticalItem.new = function ( menu, controller )
 				self.Tactical2:setRGB( 1, 0, 0 )
 				self.Tactical2:setAlpha( 0 )
 				Tactical2Frame2( Tactical2, {} )
+
 				Tactical3b:completeAnimation()
 				self.Tactical3b:setLeftRight( true, false, 1.75, 27.25 )
 				self.Tactical3b:setTopBottom( true, false, -0.75, 24.75 )
@@ -305,26 +327,31 @@ CoD.AmmoWidgetMP_EquipmentTacticalItem.new = function ( menu, controller )
 		Double = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Tactical1:completeAnimation()
 				self.Tactical1:setLeftRight( true, false, 10.75, 36.25 )
 				self.Tactical1:setTopBottom( true, false, 4.25, 29.75 )
 				self.Tactical1:setRGB( 0.52, 0.52, 0.52 )
 				self.Tactical1:setAlpha( 1 )
 				self.clipFinished( Tactical1, {} )
+
 				Tactical2b:completeAnimation()
 				self.Tactical2b:setLeftRight( true, false, 4.75, 30.25 )
 				self.Tactical2b:setTopBottom( true, false, 3.25, 28.75 )
 				self.Tactical2b:setAlpha( 1 )
 				self.clipFinished( Tactical2b, {} )
+
 				Tactical2:completeAnimation()
 				self.Tactical2:setLeftRight( true, false, 0.75, 26.25 )
 				self.Tactical2:setTopBottom( true, false, 1.25, 26.75 )
 				self.Tactical2:setRGB( 1, 1, 1 )
 				self.Tactical2:setAlpha( 1 )
 				self.clipFinished( Tactical2, {} )
+
 				Tactical3b:completeAnimation()
 				self.Tactical3b:setAlpha( 0 )
 				self.clipFinished( Tactical3b, {} )
+
 				Tactical3:completeAnimation()
 				self.Tactical3:setLeftRight( true, false, -0.25, 25.25 )
 				self.Tactical3:setTopBottom( true, false, -2.75, 22.75 )
@@ -334,6 +361,7 @@ CoD.AmmoWidgetMP_EquipmentTacticalItem.new = function ( menu, controller )
 			end,
 			Single = function ()
 				self:setupElementClipCounter( 4 )
+
 				local Tactical1Frame2 = function ( Tactical1, event )
 					if not event.interrupted then
 						Tactical1:beginAnimation( "keyframe", 400, false, true, CoD.TweenType.Back )
@@ -395,6 +423,7 @@ CoD.AmmoWidgetMP_EquipmentTacticalItem.new = function ( menu, controller )
 				self.Tactical2:setRGB( 1, 1, 1 )
 				self.Tactical2:setAlpha( 1 )
 				Tactical2Frame2( Tactical2, {} )
+
 				Tactical3:completeAnimation()
 				self.Tactical3:setLeftRight( true, false, -0.25, 25.25 )
 				self.Tactical3:setTopBottom( true, false, -2.75, 22.75 )
@@ -404,6 +433,7 @@ CoD.AmmoWidgetMP_EquipmentTacticalItem.new = function ( menu, controller )
 			end,
 			Triple = function ()
 				self:setupElementClipCounter( 5 )
+
 				local Tactical1Frame2 = function ( Tactical1, event )
 					if not event.interrupted then
 						Tactical1:beginAnimation( "keyframe", 400, false, true, CoD.TweenType.Back )
@@ -510,28 +540,33 @@ CoD.AmmoWidgetMP_EquipmentTacticalItem.new = function ( menu, controller )
 		Triple = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Tactical1:completeAnimation()
 				self.Tactical1:setLeftRight( true, false, 12.75, 38.25 )
 				self.Tactical1:setTopBottom( true, false, 5.25, 30.75 )
 				self.Tactical1:setRGB( 0.52, 0.52, 0.52 )
 				self.Tactical1:setAlpha( 1 )
 				self.clipFinished( Tactical1, {} )
+
 				Tactical2b:completeAnimation()
 				self.Tactical2b:setLeftRight( true, false, 8.75, 34.25 )
 				self.Tactical2b:setTopBottom( true, false, 5.25, 30.75 )
 				self.Tactical2b:setAlpha( 1 )
 				self.clipFinished( Tactical2b, {} )
+
 				Tactical2:completeAnimation()
 				self.Tactical2:setLeftRight( true, false, 5.75, 31.25 )
 				self.Tactical2:setTopBottom( true, false, 3.25, 28.75 )
 				self.Tactical2:setRGB( 0.52, 0.52, 0.52 )
 				self.Tactical2:setAlpha( 1 )
 				self.clipFinished( Tactical2, {} )
+
 				Tactical3b:completeAnimation()
 				self.Tactical3b:setLeftRight( true, false, 1.75, 27.25 )
 				self.Tactical3b:setTopBottom( true, false, 3.25, 28.75 )
 				self.Tactical3b:setAlpha( 1 )
 				self.clipFinished( Tactical3b, {} )
+
 				Tactical3:completeAnimation()
 				self.Tactical3:setLeftRight( true, false, -1.25, 24.25 )
 				self.Tactical3:setTopBottom( true, false, 1.25, 26.75 )
@@ -541,6 +576,7 @@ CoD.AmmoWidgetMP_EquipmentTacticalItem.new = function ( menu, controller )
 			end,
 			Double = function ()
 				self:setupElementClipCounter( 5 )
+
 				local Tactical1Frame2 = function ( Tactical1, event )
 					if not event.interrupted then
 						Tactical1:beginAnimation( "keyframe", 400, true, false, CoD.TweenType.Back )
@@ -645,6 +681,7 @@ CoD.AmmoWidgetMP_EquipmentTacticalItem.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TacticalEmpty:close()
 		element.Tactical1:close()

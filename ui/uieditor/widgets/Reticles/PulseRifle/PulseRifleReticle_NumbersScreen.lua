@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Reticles.PulseRifle.PulseRifleReticle_Numbers" )
 CoD.PulseRifleReticle_NumbersScreen = InheritFrom( LUI.UIElement )
 CoD.PulseRifleReticle_NumbersScreen.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PulseRifleReticle_NumbersScreen )
 	self.id = "PulseRifleReticle_NumbersScreen"
@@ -45,9 +47,11 @@ CoD.PulseRifleReticle_NumbersScreen.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PulseRifleReticleNumbers:completeAnimation()
 				self.PulseRifleReticleNumbers:setAlpha( 1 )
 				self.clipFinished( PulseRifleReticleNumbers, {} )
+
 				PulseRifleReticleNumbers0:completeAnimation()
 				self.PulseRifleReticleNumbers0:setAlpha( 0.15 )
 				self.clipFinished( PulseRifleReticleNumbers0, {} )
@@ -56,15 +60,18 @@ CoD.PulseRifleReticle_NumbersScreen.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PulseRifleReticleNumbers:completeAnimation()
 				self.PulseRifleReticleNumbers:setAlpha( 0 )
 				self.clipFinished( PulseRifleReticleNumbers, {} )
+
 				PulseRifleReticleNumbers0:completeAnimation()
 				self.PulseRifleReticleNumbers0:setAlpha( 0 )
 				self.clipFinished( PulseRifleReticleNumbers0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -81,6 +88,7 @@ CoD.PulseRifleReticle_NumbersScreen.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_EMP_ACTIVE
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PulseRifleReticleNumbers:close()
 		element.PulseRifleReticleNumbers0:close()

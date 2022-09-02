@@ -23,9 +23,11 @@ end
 CoD.PersonalizeCharacter_ColorOption = InheritFrom( LUI.UIElement )
 CoD.PersonalizeCharacter_ColorOption.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PersonalizeCharacter_ColorOption )
 	self.id = "PersonalizeCharacter_ColorOption"
@@ -96,52 +98,64 @@ CoD.PersonalizeCharacter_ColorOption.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				colorSwatch:completeAnimation()
+
 				colorSwatch.border:completeAnimation()
 				self.colorSwatch:setLeftRight( true, true, 0, 0 )
 				self.colorSwatch:setTopBottom( true, true, 12.5, -12.5 )
 				self.colorSwatch.border:setRGB( 1, 1, 1 )
 				self.colorSwatch.border:setAlpha( 1 )
 				self.clipFinished( colorSwatch, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setAlpha( 0 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				leftArrow:completeAnimation()
 				self.leftArrow:setAlpha( 0 )
 				self.clipFinished( leftArrow, {} )
+
 				rightArrow:completeAnimation()
 				self.rightArrow:setAlpha( 0 )
 				self.clipFinished( rightArrow, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 0 )
 				self.clipFinished( count, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				colorSwatch:completeAnimation()
+
 				colorSwatch.border:completeAnimation()
 				self.colorSwatch:setLeftRight( true, true, 0, 0 )
 				self.colorSwatch:setTopBottom( true, true, 0, 0 )
 				self.colorSwatch.border:setRGB( 1, 1, 1 )
 				self.colorSwatch.border:setAlpha( 1 )
 				self.clipFinished( colorSwatch, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setLeftRight( true, true, 0, 0 )
 				self.FETitleNumBrdr0:setTopBottom( false, false, 25, 42 )
 				self.FETitleNumBrdr0:setAlpha( 1 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				leftArrow:completeAnimation()
 				self.leftArrow:setLeftRight( true, false, -6, 1 )
 				self.leftArrow:setTopBottom( false, false, -3, 4 )
 				self.leftArrow:setRGB( 1, 1, 1 )
 				self.leftArrow:setAlpha( 0.8 )
 				self.clipFinished( leftArrow, {} )
+
 				rightArrow:completeAnimation()
 				self.rightArrow:setLeftRight( false, true, -1, 6 )
 				self.rightArrow:setTopBottom( false, false, -3, 4 )
 				self.rightArrow:setRGB( 1, 1, 1 )
 				self.rightArrow:setAlpha( 0.8 )
 				self.clipFinished( rightArrow, {} )
+
 				count:completeAnimation()
 				self.count:setLeftRight( false, false, -25, 25 )
 				self.count:setTopBottom( false, true, 1, 17 )
@@ -152,45 +166,57 @@ CoD.PersonalizeCharacter_ColorOption.new = function ( menu, controller )
 		ListNotInFocus = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				colorSwatch:completeAnimation()
+
 				colorSwatch.border:completeAnimation()
 				self.colorSwatch.border:setRGB( 1, 1, 1 )
 				self.colorSwatch.border:setAlpha( 1 )
 				self.clipFinished( colorSwatch, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setAlpha( 0 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				leftArrow:completeAnimation()
 				self.leftArrow:setAlpha( 0 )
 				self.clipFinished( leftArrow, {} )
+
 				rightArrow:completeAnimation()
 				self.rightArrow:setAlpha( 0 )
 				self.clipFinished( rightArrow, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 0 )
 				self.clipFinished( count, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 4 )
+
 				colorSwatch:completeAnimation()
+
 				colorSwatch.border:completeAnimation()
 				self.colorSwatch:setLeftRight( true, true, 0, 0 )
 				self.colorSwatch:setTopBottom( true, true, 0, 0 )
 				self.colorSwatch.border:setRGB( 1, 1, 1 )
 				self.colorSwatch.border:setAlpha( 1 )
 				self.clipFinished( colorSwatch, {} )
+
 				leftArrow:completeAnimation()
 				self.leftArrow:setAlpha( 0 )
 				self.clipFinished( leftArrow, {} )
+
 				rightArrow:completeAnimation()
 				self.rightArrow:setAlpha( 0 )
 				self.clipFinished( rightArrow, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 0 )
 				self.clipFinished( count, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ListNotInFocus",
@@ -199,6 +225,7 @@ CoD.PersonalizeCharacter_ColorOption.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.colorSwatch:close()
 		element.FETitleNumBrdr0:close()

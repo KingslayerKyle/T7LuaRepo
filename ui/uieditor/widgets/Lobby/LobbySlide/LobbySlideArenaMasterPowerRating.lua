@@ -4,9 +4,11 @@
 CoD.LobbySlideArenaMasterPowerRating = InheritFrom( LUI.UIElement )
 CoD.LobbySlideArenaMasterPowerRating.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbySlideArenaMasterPowerRating )
 	self.id = "LobbySlideArenaMasterPowerRating"
@@ -40,9 +42,11 @@ CoD.LobbySlideArenaMasterPowerRating.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				MasterShieldIcon:completeAnimation()
 				self.MasterShieldIcon:setAlpha( 0 )
 				self.clipFinished( MasterShieldIcon, {} )
+
 				MasterPowerRating:completeAnimation()
 				self.MasterPowerRating:setAlpha( 0 )
 				self.clipFinished( MasterPowerRating, {} )
@@ -51,15 +55,18 @@ CoD.LobbySlideArenaMasterPowerRating.new = function ( menu, controller )
 		IsMaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				MasterShieldIcon:completeAnimation()
 				self.MasterShieldIcon:setAlpha( 1 )
 				self.clipFinished( MasterShieldIcon, {} )
+
 				MasterPowerRating:completeAnimation()
 				self.MasterPowerRating:setAlpha( 1 )
 				self.clipFinished( MasterPowerRating, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "IsMaster",
@@ -84,6 +91,7 @@ CoD.LobbySlideArenaMasterPowerRating.new = function ( menu, controller )
 			modelName = "Arena.selectedPlayerSkill"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MasterPowerRating:close()
 	end )

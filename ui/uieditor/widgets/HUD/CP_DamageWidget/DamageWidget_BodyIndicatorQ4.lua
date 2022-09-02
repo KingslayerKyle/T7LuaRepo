@@ -4,9 +4,11 @@
 CoD.DamageWidget_BodyIndicatorQ4 = InheritFrom( LUI.UIElement )
 CoD.DamageWidget_BodyIndicatorQ4.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DamageWidget_BodyIndicatorQ4 )
 	self.id = "DamageWidget_BodyIndicatorQ4"
@@ -34,10 +36,12 @@ CoD.DamageWidget_BodyIndicatorQ4.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ImgBodySmall:completeAnimation()
 				self.ImgBodySmall:setRGB( 1, 0.2, 0.2 )
 				self.ImgBodySmall:setAlpha( 0 )
 				self.clipFinished( ImgBodySmall, {} )
+
 				ImgBodyLarge:completeAnimation()
 				self.ImgBodyLarge:setRGB( 1, 1, 1 )
 				self.ImgBodyLarge:setAlpha( 1 )
@@ -47,6 +51,7 @@ CoD.DamageWidget_BodyIndicatorQ4.new = function ( menu, controller )
 		DamageLarge = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ImgBodySmall:completeAnimation()
 				self.ImgBodySmall:setRGB( 1, 0.2, 0.2 )
 				self.ImgBodySmall:setAlpha( 0 )
@@ -111,10 +116,12 @@ CoD.DamageWidget_BodyIndicatorQ4.new = function ( menu, controller )
 				self.ImgBodyLarge:setRGB( 1, 0.2, 0.2 )
 				self.ImgBodyLarge:setAlpha( 1 )
 				ImgBodyLargeFrame2( ImgBodyLarge, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				ImgBodySmall:completeAnimation()
 				self.ImgBodySmall:setRGB( 1, 0.2, 0.2 )
 				self.clipFinished( ImgBodySmall, {} )
@@ -224,10 +231,12 @@ CoD.DamageWidget_BodyIndicatorQ4.new = function ( menu, controller )
 		DamageSmall = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ImgBodySmall:completeAnimation()
 				self.ImgBodySmall:setRGB( 1, 0.2, 0.2 )
 				self.ImgBodySmall:setAlpha( 1 )
 				self.clipFinished( ImgBodySmall, {} )
+
 				ImgBodyLarge:completeAnimation()
 				self.ImgBodyLarge:setRGB( 1, 0.2, 0.2 )
 				self.ImgBodyLarge:setAlpha( 0 )
@@ -235,6 +244,7 @@ CoD.DamageWidget_BodyIndicatorQ4.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				local ImgBodySmallFrame2 = function ( ImgBodySmall, event )
 					local ImgBodySmallFrame3 = function ( ImgBodySmall, event )
 						local ImgBodySmallFrame4 = function ( ImgBodySmall, event )
@@ -295,6 +305,7 @@ CoD.DamageWidget_BodyIndicatorQ4.new = function ( menu, controller )
 				self.ImgBodySmall:setRGB( 1, 0.2, 0.2 )
 				self.ImgBodySmall:setAlpha( 1 )
 				ImgBodySmallFrame2( ImgBodySmall, {} )
+
 				ImgBodyLarge:completeAnimation()
 				self.ImgBodyLarge:setRGB( 1, 0.2, 0.2 )
 				self.clipFinished( ImgBodyLarge, {} )

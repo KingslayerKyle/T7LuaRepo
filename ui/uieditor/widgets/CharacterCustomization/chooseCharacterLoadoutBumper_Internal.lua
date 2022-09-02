@@ -4,9 +4,11 @@
 CoD.chooseCharacterLoadoutBumper_Internal = InheritFrom( LUI.UIElement )
 CoD.chooseCharacterLoadoutBumper_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.chooseCharacterLoadoutBumper_Internal )
 	self.id = "chooseCharacterLoadoutBumper_Internal"
@@ -24,23 +26,27 @@ CoD.chooseCharacterLoadoutBumper_Internal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				button:completeAnimation()
 				self.button:setAlpha( 1 )
 				self.clipFinished( button, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		HiddenPC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				button:completeAnimation()
 				self.button:setAlpha( 0 )
 				self.clipFinished( button, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HiddenPC",

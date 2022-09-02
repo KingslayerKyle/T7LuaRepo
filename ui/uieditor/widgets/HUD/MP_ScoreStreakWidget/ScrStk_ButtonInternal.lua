@@ -4,9 +4,11 @@
 CoD.ScrStk_ButtonInternal = InheritFrom( LUI.UIElement )
 CoD.ScrStk_ButtonInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScrStk_ButtonInternal )
 	self.id = "ScrStk_ButtonInternal"

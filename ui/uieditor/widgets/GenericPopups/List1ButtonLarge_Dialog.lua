@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Lobby.Lists.Members.LobbyMemberBackingFooter" )
 CoD.List1ButtonLarge_Dialog = InheritFrom( LUI.UIElement )
 CoD.List1ButtonLarge_Dialog.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.List1ButtonLarge_Dialog )
 	self.id = "List1ButtonLarge_Dialog"
@@ -64,6 +66,7 @@ CoD.List1ButtonLarge_Dialog.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				LobbyMemberBackingMask0:completeAnimation()
 				self.LobbyMemberBackingMask0:setLeftRight( true, true, -0.33, -0.33 )
 				self.LobbyMemberBackingMask0:setTopBottom( false, false, -14.17, 14 )
@@ -71,12 +74,14 @@ CoD.List1ButtonLarge_Dialog.new = function ( menu, controller )
 				self.LobbyMemberBackingMask0:setAlpha( 0.4 )
 				self.LobbyMemberBackingMask0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBackingMask0, {} )
+
 				LobbyMemberBacking0:completeAnimation()
 				self.LobbyMemberBacking0:setLeftRight( true, true, -0.33, -0.33 )
 				self.LobbyMemberBacking0:setTopBottom( false, false, -14.17, 14 )
 				self.LobbyMemberBacking0:setAlpha( 1 )
 				self.LobbyMemberBacking0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking0, {} )
+
 				LfocusLINE:completeAnimation()
 				self.LfocusLINE:setLeftRight( false, true, -3, 2.34 )
 				self.LfocusLINE:setTopBottom( false, false, -11.67, 12.33 )
@@ -84,6 +89,7 @@ CoD.List1ButtonLarge_Dialog.new = function ( menu, controller )
 				self.LfocusLINE:setAlpha( 1 )
 				self.LfocusLINE:setZoom( 0 )
 				self.clipFinished( LfocusLINE, {} )
+
 				buttoninternal0:completeAnimation()
 				self.buttoninternal0:setLeftRight( true, false, 8.82, 201.82 )
 				self.buttoninternal0:setTopBottom( false, false, -7.77, 11.23 )
@@ -91,6 +97,7 @@ CoD.List1ButtonLarge_Dialog.new = function ( menu, controller )
 				self.buttoninternal0:setAlpha( 1 )
 				self.buttoninternal0:setZoom( 0 )
 				self.clipFinished( buttoninternal0, {} )
+
 				LobbyMemberBackingFooter0:completeAnimation()
 				self.LobbyMemberBackingFooter0:setLeftRight( true, true, -2.5, 2 )
 				self.LobbyMemberBackingFooter0:setTopBottom( false, false, 11, 14 )
@@ -100,6 +107,7 @@ CoD.List1ButtonLarge_Dialog.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local LobbyMemberBackingMask0Frame2 = function ( LobbyMemberBackingMask0, event )
 					if not event.interrupted then
 						LobbyMemberBackingMask0:beginAnimation( "keyframe", 150, true, false, CoD.TweenType.Back )
@@ -210,6 +218,7 @@ CoD.List1ButtonLarge_Dialog.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				LobbyMemberBackingMask0:completeAnimation()
 				self.LobbyMemberBackingMask0:setLeftRight( true, true, -2.33, 0.67 )
 				self.LobbyMemberBackingMask0:setTopBottom( false, false, -16.17, 16 )
@@ -217,11 +226,13 @@ CoD.List1ButtonLarge_Dialog.new = function ( menu, controller )
 				self.LobbyMemberBackingMask0:setAlpha( 1 )
 				self.LobbyMemberBackingMask0:setZoom( 60 )
 				self.clipFinished( LobbyMemberBackingMask0, {} )
+
 				LobbyMemberBacking0:completeAnimation()
 				self.LobbyMemberBacking0:setLeftRight( true, true, -2.33, 1.67 )
 				self.LobbyMemberBacking0:setTopBottom( false, false, -16.17, 16 )
 				self.LobbyMemberBacking0:setZoom( 60 )
 				self.clipFinished( LobbyMemberBacking0, {} )
+
 				LfocusLINE:completeAnimation()
 				self.LfocusLINE:setLeftRight( false, true, 8.01, 13.35 )
 				self.LfocusLINE:setTopBottom( false, false, -11.67, 12.33 )
@@ -229,11 +240,13 @@ CoD.List1ButtonLarge_Dialog.new = function ( menu, controller )
 				self.LfocusLINE:setAlpha( 1 )
 				self.LfocusLINE:setZoom( 60 )
 				self.clipFinished( LfocusLINE, {} )
+
 				buttoninternal0:completeAnimation()
 				self.buttoninternal0:setRGB( 1, 1, 1 )
 				self.buttoninternal0:setAlpha( 1 )
 				self.buttoninternal0:setZoom( 60 )
 				self.clipFinished( buttoninternal0, {} )
+
 				LobbyMemberBackingFooter0:completeAnimation()
 				self.LobbyMemberBackingFooter0:setLeftRight( true, true, -4.5, 4 )
 				self.LobbyMemberBackingFooter0:setTopBottom( false, false, 14, 17 )
@@ -243,6 +256,7 @@ CoD.List1ButtonLarge_Dialog.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local LobbyMemberBackingMask0Frame2 = function ( LobbyMemberBackingMask0, event )
 					if not event.interrupted then
 						LobbyMemberBackingMask0:beginAnimation( "keyframe", 200, false, true, CoD.TweenType.Back )
@@ -355,6 +369,7 @@ CoD.List1ButtonLarge_Dialog.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				LobbyMemberBackingMask0:completeAnimation()
 				self.LobbyMemberBackingMask0:setLeftRight( true, true, -0.33, -0.33 )
 				self.LobbyMemberBackingMask0:setTopBottom( false, false, -14.17, 14 )
@@ -362,12 +377,14 @@ CoD.List1ButtonLarge_Dialog.new = function ( menu, controller )
 				self.LobbyMemberBackingMask0:setAlpha( 0.1 )
 				self.LobbyMemberBackingMask0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBackingMask0, {} )
+
 				LobbyMemberBacking0:completeAnimation()
 				self.LobbyMemberBacking0:setLeftRight( true, true, -0.33, -0.33 )
 				self.LobbyMemberBacking0:setTopBottom( false, false, -14.17, 14 )
 				self.LobbyMemberBacking0:setAlpha( 0.25 )
 				self.LobbyMemberBacking0:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking0, {} )
+
 				LfocusLINE:completeAnimation()
 				self.LfocusLINE:setLeftRight( false, true, -3, 2.34 )
 				self.LfocusLINE:setTopBottom( false, false, -11.67, 12.33 )
@@ -375,6 +392,7 @@ CoD.List1ButtonLarge_Dialog.new = function ( menu, controller )
 				self.LfocusLINE:setAlpha( 0.25 )
 				self.LfocusLINE:setZoom( 0 )
 				self.clipFinished( LfocusLINE, {} )
+
 				buttoninternal0:completeAnimation()
 				self.buttoninternal0:setLeftRight( true, false, 8.82, 201.82 )
 				self.buttoninternal0:setTopBottom( false, false, -7.77, 11.23 )
@@ -382,6 +400,7 @@ CoD.List1ButtonLarge_Dialog.new = function ( menu, controller )
 				self.buttoninternal0:setAlpha( 0.25 )
 				self.buttoninternal0:setZoom( 0 )
 				self.clipFinished( buttoninternal0, {} )
+
 				LobbyMemberBackingFooter0:completeAnimation()
 				self.LobbyMemberBackingFooter0:setLeftRight( true, true, -2.5, 2 )
 				self.LobbyMemberBackingFooter0:setTopBottom( false, false, 11, 14 )
@@ -391,6 +410,7 @@ CoD.List1ButtonLarge_Dialog.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local LobbyMemberBackingMask0Frame2 = function ( LobbyMemberBackingMask0, event )
 					if not event.interrupted then
 						LobbyMemberBackingMask0:beginAnimation( "keyframe", 150, true, false, CoD.TweenType.Back )
@@ -499,6 +519,7 @@ CoD.List1ButtonLarge_Dialog.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				LobbyMemberBackingMask0:completeAnimation()
 				self.LobbyMemberBackingMask0:setLeftRight( true, true, -2.33, 0.67 )
 				self.LobbyMemberBackingMask0:setTopBottom( false, false, -16.17, 16 )
@@ -506,21 +527,25 @@ CoD.List1ButtonLarge_Dialog.new = function ( menu, controller )
 				self.LobbyMemberBackingMask0:setAlpha( 0.25 )
 				self.LobbyMemberBackingMask0:setZoom( 60 )
 				self.clipFinished( LobbyMemberBackingMask0, {} )
+
 				LobbyMemberBacking0:completeAnimation()
 				self.LobbyMemberBacking0:setLeftRight( true, true, -2.33, 1.67 )
 				self.LobbyMemberBacking0:setTopBottom( false, false, -16.17, 16 )
 				self.LobbyMemberBacking0:setZoom( 60 )
 				self.clipFinished( LobbyMemberBacking0, {} )
+
 				LfocusLINE:completeAnimation()
 				self.LfocusLINE:setLeftRight( false, true, -1, 4.34 )
 				self.LfocusLINE:setTopBottom( false, false, -11.67, 12.33 )
 				self.LfocusLINE:setAlpha( 0.25 )
 				self.LfocusLINE:setZoom( 60 )
 				self.clipFinished( LfocusLINE, {} )
+
 				buttoninternal0:completeAnimation()
 				self.buttoninternal0:setRGB( 1, 1, 1 )
 				self.buttoninternal0:setZoom( 60 )
 				self.clipFinished( buttoninternal0, {} )
+
 				LobbyMemberBackingFooter0:completeAnimation()
 				self.LobbyMemberBackingFooter0:setLeftRight( true, true, -4.5, 4 )
 				self.LobbyMemberBackingFooter0:setTopBottom( false, false, 14, 17 )
@@ -530,6 +555,7 @@ CoD.List1ButtonLarge_Dialog.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local LobbyMemberBackingMask0Frame2 = function ( LobbyMemberBackingMask0, event )
 					if not event.interrupted then
 						LobbyMemberBackingMask0:beginAnimation( "keyframe", 200, false, true, CoD.TweenType.Back )
@@ -638,6 +664,7 @@ CoD.List1ButtonLarge_Dialog.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -662,6 +689,7 @@ CoD.List1ButtonLarge_Dialog.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LobbyMemberBackingMask0:close()
 		element.LobbyMemberBacking0:close()

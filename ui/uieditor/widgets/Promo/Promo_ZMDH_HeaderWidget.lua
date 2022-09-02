@@ -4,9 +4,11 @@
 CoD.Promo_ZMDH_HeaderWidget = InheritFrom( LUI.UIElement )
 CoD.Promo_ZMDH_HeaderWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Promo_ZMDH_HeaderWidget )
 	self.id = "Promo_ZMDH_HeaderWidget"
@@ -47,6 +49,7 @@ CoD.Promo_ZMDH_HeaderWidget.new = function ( menu, controller )
 	RecentItems:setShaderVector( 1, 0.03, 0, 0, 0 )
 	RecentItems:setShaderVector( 2, 1, 0, 0, 0 )
 	RecentItems:setLetterSpacing( 6.9 )
+
 	LUI.OverrideFunction_CallOriginalFirst( RecentItems, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, -159 )
 	end )
@@ -57,6 +60,7 @@ CoD.Promo_ZMDH_HeaderWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

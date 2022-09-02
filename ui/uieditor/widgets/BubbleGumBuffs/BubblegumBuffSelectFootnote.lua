@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BubbleGumBuffs.BubbleGumFootnote" )
 CoD.BubblegumBuffSelectFootnote = InheritFrom( LUI.UIElement )
 CoD.BubblegumBuffSelectFootnote.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BubblegumBuffSelectFootnote )
 	self.id = "BubblegumBuffSelectFootnote"
@@ -42,9 +44,11 @@ CoD.BubblegumBuffSelectFootnote.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BubbleGumFootnote:completeAnimation()
 				self.BubbleGumFootnote:setAlpha( 0 )
 				self.clipFinished( BubbleGumFootnote, {} )
+
 				RequiresDLCFootnote:completeAnimation()
 				self.RequiresDLCFootnote:setAlpha( 0 )
 				self.clipFinished( RequiresDLCFootnote, {} )
@@ -53,9 +57,11 @@ CoD.BubblegumBuffSelectFootnote.new = function ( menu, controller )
 		RequiresDLC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BubbleGumFootnote:completeAnimation()
 				self.BubbleGumFootnote:setAlpha( 0 )
 				self.clipFinished( BubbleGumFootnote, {} )
+
 				RequiresDLCFootnote:completeAnimation()
 				self.RequiresDLCFootnote:setAlpha( 1 )
 				self.clipFinished( RequiresDLCFootnote, {} )
@@ -64,11 +70,14 @@ CoD.BubblegumBuffSelectFootnote.new = function ( menu, controller )
 		ConsumableAvailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BubbleGumFootnote:completeAnimation()
+
 				BubbleGumFootnote.FootnoteTextBox:completeAnimation()
 				self.BubbleGumFootnote:setAlpha( 1 )
 				self.BubbleGumFootnote.FootnoteTextBox:setText( Engine.Localize( "MENU_BGB_CONSUMABLE_FOOTNOTE" ) )
 				self.clipFinished( BubbleGumFootnote, {} )
+
 				RequiresDLCFootnote:completeAnimation()
 				self.RequiresDLCFootnote:setAlpha( 0 )
 				self.clipFinished( RequiresDLCFootnote, {} )
@@ -77,17 +86,21 @@ CoD.BubblegumBuffSelectFootnote.new = function ( menu, controller )
 		ConsumableNotAvailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BubbleGumFootnote:completeAnimation()
+
 				BubbleGumFootnote.FootnoteTextBox:completeAnimation()
 				self.BubbleGumFootnote:setAlpha( 1 )
 				self.BubbleGumFootnote.FootnoteTextBox:setText( Engine.Localize( "MENU_BGB_EMPTY_CONSUMABLE_FOOTNOTE" ) )
 				self.clipFinished( BubbleGumFootnote, {} )
+
 				RequiresDLCFootnote:completeAnimation()
 				self.RequiresDLCFootnote:setAlpha( 0 )
 				self.clipFinished( RequiresDLCFootnote, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "RequiresDLC",
@@ -116,6 +129,7 @@ CoD.BubblegumBuffSelectFootnote.new = function ( menu, controller )
 			modelName = "itemIndex"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BubbleGumFootnote:close()
 		element.RequiresDLCFootnote:close()

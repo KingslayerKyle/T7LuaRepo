@@ -11,9 +11,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleNumBrdr" )
 CoD.FindGroupsCategoryButton = InheritFrom( LUI.UIElement )
 CoD.FindGroupsCategoryButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FindGroupsCategoryButton )
 	self.id = "FindGroupsCategoryButton"
@@ -151,39 +153,50 @@ CoD.FindGroupsCategoryButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImageLine:completeAnimation()
 				self.itemImageLine:setAlpha( 0.3 )
 				self.clipFinished( itemImageLine, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				DimCoverImage:completeAnimation()
 				self.DimCoverImage:setAlpha( 0 )
 				self.clipFinished( DimCoverImage, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 90, false, false, CoD.TweenType.Linear )
@@ -372,18 +385,22 @@ CoD.FindGroupsCategoryButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 29, false, false, CoD.TweenType.Linear )
@@ -574,72 +591,93 @@ CoD.FindGroupsCategoryButton.new = function ( menu, controller )
 		NoListFocus = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImageLine:completeAnimation()
 				self.itemImageLine:setAlpha( 0.3 )
 				self.clipFinished( itemImageLine, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				DimCoverImage:completeAnimation()
 				self.DimCoverImage:setAlpha( 0.4 )
 				self.clipFinished( DimCoverImage, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImageLine:completeAnimation()
 				self.itemImageLine:setAlpha( 0.3 )
 				self.clipFinished( itemImageLine, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				DimCoverImage:completeAnimation()
 				self.DimCoverImage:setAlpha( 0 )
 				self.clipFinished( DimCoverImage, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveDiag:close()
 		element.BoxButtonLrgInactive:close()

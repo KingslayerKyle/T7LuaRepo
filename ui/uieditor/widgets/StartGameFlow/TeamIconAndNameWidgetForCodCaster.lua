@@ -4,9 +4,11 @@
 CoD.TeamIconAndNameWidgetForCodCaster = InheritFrom( LUI.UIElement )
 CoD.TeamIconAndNameWidgetForCodCaster.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TeamIconAndNameWidgetForCodCaster )
 	self.id = "TeamIconAndNameWidgetForCodCaster"

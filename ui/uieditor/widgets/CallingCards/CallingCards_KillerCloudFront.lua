@@ -4,9 +4,11 @@
 CoD.CallingCards_KillerCloudFront = InheritFrom( LUI.UIElement )
 CoD.CallingCards_KillerCloudFront.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_KillerCloudFront )
 	self.id = "CallingCards_KillerCloudFront"
@@ -32,6 +34,7 @@ CoD.CallingCards_KillerCloudFront.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local cloud1Frame2 = function ( cloud1, event )
 					local cloud1Frame3 = function ( cloud1, event )
 						local cloud1Frame4 = function ( cloud1, event )
@@ -120,6 +123,7 @@ CoD.CallingCards_KillerCloudFront.new = function ( menu, controller )
 				self.Image0:setTopBottom( true, false, 124, 292.5 )
 				self.Image0:setAlpha( 1 )
 				Image0Frame2( Image0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

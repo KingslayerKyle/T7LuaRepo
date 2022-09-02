@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.mothership.vhud_ms_NotificationBox" )
 CoD.vhud_ms_StatusWidgetGunnerRight = InheritFrom( LUI.UIElement )
 CoD.vhud_ms_StatusWidgetGunnerRight.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ms_StatusWidgetGunnerRight )
 	self.id = "vhud_ms_StatusWidgetGunnerRight"
@@ -123,6 +125,7 @@ CoD.vhud_ms_StatusWidgetGunnerRight.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				solidbar:completeAnimation()
 				self.solidbar:setRGB( 0.74, 0.94, 0.99 )
 				self.clipFinished( solidbar, {} )
@@ -131,12 +134,14 @@ CoD.vhud_ms_StatusWidgetGunnerRight.new = function ( menu, controller )
 		Overheating = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				solidbar:completeAnimation()
 				self.solidbar:setRGB( 0.99, 0.2, 0.27 )
 				self.clipFinished( solidbar, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Overheating",
@@ -153,6 +158,7 @@ CoD.vhud_ms_StatusWidgetGunnerRight.new = function ( menu, controller )
 			modelName = "weaponOverheating"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vhudsentinelNotificationLine:close()
 		element.vhudmsNotificationBox:close()

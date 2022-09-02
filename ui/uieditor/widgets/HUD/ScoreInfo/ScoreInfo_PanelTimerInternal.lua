@@ -4,9 +4,11 @@
 CoD.ScoreInfo_PanelTimerInternal = InheritFrom( LUI.UIElement )
 CoD.ScoreInfo_PanelTimerInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreInfo_PanelTimerInternal )
 	self.id = "ScoreInfo_PanelTimerInternal"

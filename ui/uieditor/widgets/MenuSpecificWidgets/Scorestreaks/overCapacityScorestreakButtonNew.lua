@@ -13,9 +13,11 @@ require( "ui.uieditor.widgets.CAC.RestrictedItemWarning" )
 CoD.overCapacityScorestreakButtonNew = InheritFrom( LUI.UIElement )
 CoD.overCapacityScorestreakButtonNew.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.overCapacityScorestreakButtonNew )
 	self.id = "overCapacityScorestreakButtonNew"
@@ -187,48 +189,61 @@ CoD.overCapacityScorestreakButtonNew.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setRGB( 0.48, 0.48, 0.48 )
 				self.itemImage:setAlpha( 0.15 )
 				self.clipFinished( itemImage, {} )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 0 )
 				self.clipFinished( alertIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				info:completeAnimation()
 				self.info:setLeftRight( false, false, -96, 236 )
 				self.info:setTopBottom( false, true, 20, 109 )
 				self.info:setAlpha( 0 )
 				self.clipFinished( info, {} )
+
 				scorestreaksArrow:completeAnimation()
 				self.scorestreaksArrow:setAlpha( 0 )
 				self.clipFinished( scorestreaksArrow, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 9 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 90, false, false, CoD.TweenType.Linear )
@@ -244,6 +259,7 @@ CoD.overCapacityScorestreakButtonNew.new = function ( menu, controller )
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				BoxButtonLrgInactiveFrame2( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
@@ -644,28 +660,35 @@ CoD.overCapacityScorestreakButtonNew.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				info:completeAnimation()
 				self.info:setAlpha( 1 )
 				self.info:setZoom( 0 )
 				self.clipFinished( info, {} )
+
 				scorestreaksArrow:completeAnimation()
 				self.scorestreaksArrow:setAlpha( 0.8 )
 				self.clipFinished( scorestreaksArrow, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 9 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
@@ -681,6 +704,7 @@ CoD.overCapacityScorestreakButtonNew.new = function ( menu, controller )
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				BoxButtonLrgInactiveFrame2( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
@@ -1113,39 +1137,50 @@ CoD.overCapacityScorestreakButtonNew.new = function ( menu, controller )
 		New = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.3 )
 				self.clipFinished( itemImage, {} )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 0 )
 				self.clipFinished( alertIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FocusBarTFrame2 = function ( FocusBarT, event )
 					local FocusBarTFrame3 = function ( FocusBarT, event )
 						local FocusBarTFrame4 = function ( FocusBarT, event )
@@ -1496,15 +1531,18 @@ CoD.overCapacityScorestreakButtonNew.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 2 )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FocusBarTFrame2 = function ( FocusBarT, event )
 					local FocusBarTFrame3 = function ( FocusBarT, event )
 						local FocusBarTFrame4 = function ( FocusBarT, event )
@@ -1881,6 +1919,7 @@ CoD.overCapacityScorestreakButtonNew.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "New",
@@ -1889,6 +1928,7 @@ CoD.overCapacityScorestreakButtonNew.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveDiag:close()
 		element.BoxButtonLrgInactive:close()

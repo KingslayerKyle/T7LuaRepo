@@ -4,9 +4,11 @@
 CoD.PaintshopButtonPrompt = InheritFrom( LUI.UIElement )
 CoD.PaintshopButtonPrompt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.PaintshopButtonPrompt )
 	self.id = "PaintshopButtonPrompt"
@@ -34,20 +36,24 @@ CoD.PaintshopButtonPrompt.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setAlpha( 1 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setAlpha( 1 )
 				self.clipFinished( label, {} )
 			end,
 			Hide = function ()
 				self:setupElementClipCounter( 2 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setLeftRight( true, false, 0, 32 )
 				self.buttonPromptImage:setTopBottom( true, false, 0, 31 )
 				self.buttonPromptImage:setAlpha( 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setAlpha( 0 )
 				self.clipFinished( label, {} )
@@ -56,15 +62,18 @@ CoD.PaintshopButtonPrompt.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setAlpha( 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setAlpha( 0 )
 				self.clipFinished( label, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",

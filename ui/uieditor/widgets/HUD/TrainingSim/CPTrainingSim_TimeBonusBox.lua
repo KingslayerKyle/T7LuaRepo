@@ -4,9 +4,11 @@
 CoD.CPTrainingSim_TimeBonusBox = InheritFrom( LUI.UIElement )
 CoD.CPTrainingSim_TimeBonusBox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CPTrainingSim_TimeBonusBox )
 	self.id = "CPTrainingSim_TimeBonusBox"
@@ -37,9 +39,11 @@ CoD.CPTrainingSim_TimeBonusBox.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			round_complete = function ()
 				self:setupElementClipCounter( 1 )
+
 				local f3_local0 = function ( f4_arg0, f4_arg1 )
 					local f4_local0 = function ( f5_arg0, f5_arg1 )
 						local f5_local0 = function ( f6_arg0, f6_arg1 )
@@ -79,6 +83,7 @@ CoD.CPTrainingSim_TimeBonusBox.new = function ( menu, controller )
 			end,
 			immersion_complete = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

@@ -19,9 +19,11 @@ end
 CoD.codcaster_options_slider = InheritFrom( LUI.UIElement )
 CoD.codcaster_options_slider.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.codcaster_options_slider )
 	self.id = "codcaster_options_slider"
@@ -173,27 +175,34 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 0.75 )
 				self.clipFinished( Title, {} )
+
 				Slider:completeAnimation()
 				self.Slider:setAlpha( 0.75 )
 				self.clipFinished( Slider, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local TitleFrame2 = function ( Title, event )
 					if not event.interrupted then
 						Title:beginAnimation( "keyframe", 109, false, false, CoD.TweenType.Linear )
@@ -513,26 +522,32 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				Slider:completeAnimation()
 				self.Slider:setAlpha( 1 )
 				self.clipFinished( Slider, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, 336.53, -126 )
 				self.FocusBarT:setTopBottom( true, false, 1, 5 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, 336.53, -126 )
 				self.FocusBarB:setTopBottom( false, true, -4, 0 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setLeftRight( true, true, 338.03, -126 )
 				self.glitch:setTopBottom( true, false, -3.75, 9.75 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setLeftRight( true, true, 338.03, -126 )
 				self.glitch2:setTopBottom( false, true, -10, 5 )
@@ -540,6 +555,7 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local TitleFrame2 = function ( Title, event )
 					if not event.interrupted then
 						Title:beginAnimation( "keyframe", 159, false, false, CoD.TweenType.Linear )
@@ -885,18 +901,23 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 		ButtonOnlyDisabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BoxButtonLrgIdle0:completeAnimation()
 				self.BoxButtonLrgIdle0:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle0, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				StartMenuframenoBG1:completeAnimation()
 				self.StartMenuframenoBG1:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG1, {} )
+
 				Title:completeAnimation()
 				self.Title:setRGB( 0.42, 0.42, 0.42 )
 				self.clipFinished( Title, {} )
+
 				Slider:completeAnimation()
 				self.Slider:setLeftRight( true, true, 356.27, -53.73 )
 				self.Slider:setTopBottom( false, false, -15.25, 14.75 )
@@ -905,6 +926,7 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local TitleFrame2 = function ( Title, event )
 					if not event.interrupted then
 						Title:beginAnimation( "keyframe", 109, false, false, CoD.TweenType.Linear )
@@ -1208,21 +1230,26 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				Slider:completeAnimation()
 				self.Slider:setAlpha( 1 )
 				self.clipFinished( Slider, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local TitleFrame2 = function ( Title, event )
 					if not event.interrupted then
 						Title:beginAnimation( "keyframe", 159, false, false, CoD.TweenType.Linear )
@@ -1552,36 +1579,45 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 		ButtonOnly = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgIdle0:completeAnimation()
 				self.BoxButtonLrgIdle0:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle0, {} )
+
 				StartMenuframenoBG1:completeAnimation()
 				self.StartMenuframenoBG1:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG1, {} )
+
 				Title:completeAnimation()
 				self.Title:setRGB( 1, 1, 1 )
 				self.Title:setAlpha( 0.75 )
 				self.clipFinished( Title, {} )
+
 				Slider:completeAnimation()
 				self.Slider:setLeftRight( true, true, 356.27, -53.73 )
 				self.Slider:setTopBottom( false, false, -15.25, 14.75 )
 				self.Slider:setAlpha( 0 )
 				self.clipFinished( Slider, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local TitleFrame2 = function ( Title, event )
 					if not event.interrupted then
 						Title:beginAnimation( "keyframe", 109, false, false, CoD.TweenType.Linear )
@@ -1885,17 +1921,21 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				Slider:completeAnimation()
 				self.Slider:setAlpha( 1 )
 				self.clipFinished( Slider, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, 38, -339.47 )
 				self.FocusBarT:setTopBottom( true, false, 1, 5 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, 38, -339.47 )
 				self.FocusBarB:setTopBottom( false, true, -4, 0 )
@@ -1904,6 +1944,7 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local TitleFrame2 = function ( Title, event )
 					if not event.interrupted then
 						Title:beginAnimation( "keyframe", 159, false, false, CoD.TweenType.Linear )
@@ -2233,16 +2274,20 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 		SliderOnlyDisabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BoxButtonLrgIdle0:completeAnimation()
 				self.BoxButtonLrgIdle0:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle0, {} )
+
 				StartMenuframenoBG1:completeAnimation()
 				self.StartMenuframenoBG1:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG1, {} )
+
 				Title:completeAnimation()
 				self.Title:setRGB( 0.42, 0.42, 0.42 )
 				self.Title:setAlpha( 0 )
 				self.clipFinished( Title, {} )
+
 				Slider:completeAnimation()
 				self.Slider:setLeftRight( true, true, 95, -315 )
 				self.Slider:setTopBottom( false, false, -15, 15 )
@@ -2251,6 +2296,7 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local TitleFrame2 = function ( Title, event )
 					if not event.interrupted then
 						Title:beginAnimation( "keyframe", 109, false, false, CoD.TweenType.Linear )
@@ -2554,17 +2600,21 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				Slider:completeAnimation()
 				self.Slider:setAlpha( 1 )
 				self.clipFinished( Slider, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, 38, -339.47 )
 				self.FocusBarT:setTopBottom( true, false, 1, 5 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, 38, -339.47 )
 				self.FocusBarB:setTopBottom( false, true, -4, 0 )
@@ -2573,6 +2623,7 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local TitleFrame2 = function ( Title, event )
 					if not event.interrupted then
 						Title:beginAnimation( "keyframe", 159, false, false, CoD.TweenType.Linear )
@@ -2902,36 +2953,45 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 		SliderOnly = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgIdle0:completeAnimation()
 				self.BoxButtonLrgIdle0:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle0, {} )
+
 				StartMenuframenoBG1:completeAnimation()
 				self.StartMenuframenoBG1:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG1, {} )
+
 				Title:completeAnimation()
 				self.Title:setRGB( 1, 1, 1 )
 				self.Title:setAlpha( 0 )
 				self.clipFinished( Title, {} )
+
 				Slider:completeAnimation()
 				self.Slider:setLeftRight( true, true, 72, -338 )
 				self.Slider:setTopBottom( false, false, -15.25, 14.75 )
 				self.Slider:setAlpha( 0.75 )
 				self.clipFinished( Slider, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local SliderFrame2 = function ( Slider, event )
 					if not event.interrupted then
 						Slider:beginAnimation( "keyframe", 109, false, false, CoD.TweenType.Linear )
@@ -3220,14 +3280,17 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				Slider:completeAnimation()
 				self.Slider:setAlpha( 1 )
 				self.clipFinished( Slider, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, 38.5, -340.47 )
 				self.FocusBarT:setTopBottom( true, false, 1, 5 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, 38.5, -340.47 )
 				self.FocusBarB:setTopBottom( false, true, -4, 0 )
@@ -3236,6 +3299,7 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local SliderFrame2 = function ( Slider, event )
 					if not event.interrupted then
 						Slider:beginAnimation( "keyframe", 159, false, false, CoD.TweenType.Linear )
@@ -3550,18 +3614,23 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BoxButtonLrgIdle0:completeAnimation()
 				self.BoxButtonLrgIdle0:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle0, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				StartMenuframenoBG1:completeAnimation()
 				self.StartMenuframenoBG1:setAlpha( 0.6 )
 				self.clipFinished( StartMenuframenoBG1, {} )
+
 				Title:completeAnimation()
 				self.Title:setRGB( 0.42, 0.42, 0.42 )
 				self.clipFinished( Title, {} )
+
 				Slider:completeAnimation()
 				self.Slider:setLeftRight( true, true, 356.27, -53.73 )
 				self.Slider:setTopBottom( false, false, -15.25, 14.75 )
@@ -3572,9 +3641,11 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 		Selected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ButtonOnlyDisabled",
@@ -3645,6 +3716,7 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 			modelName = "selected"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsSelfInState( self, "ButtonOnly" ) then
 			EnableMouseButton( self, controller )
@@ -3664,6 +3736,7 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG0:close()
 		element.StartMenuframenoBG1:close()

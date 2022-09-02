@@ -129,9 +129,11 @@ end
 CoD.GameSettings_GameModeRules = InheritFrom( LUI.UIElement )
 CoD.GameSettings_GameModeRules.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GameSettings_GameModeRules )
 	self.id = "GameSettings_GameModeRules"
@@ -162,7 +164,9 @@ CoD.GameSettings_GameModeRules.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Options:completeAnimation()
+
 				Options.Title.DescTitle:completeAnimation()
 				self.Options.Title.DescTitle:setText( Engine.Localize( "MENU_WIN_CONDITIONS_CAPS" ) )
 				self.clipFinished( Options, {} )
@@ -180,6 +184,7 @@ CoD.GameSettings_GameModeRules.new = function ( menu, controller )
 				end
 				
 				GameSettingsSelectedItemInfo:completeAnimation()
+
 				GameSettingsSelectedItemInfo.GameModeInfo:completeAnimation()
 				self.GameSettingsSelectedItemInfo.GameModeInfo:setAlpha( 0 )
 				GameSettingsSelectedItemInfoFrame2( GameSettingsSelectedItemInfo, {} )
@@ -194,6 +199,7 @@ CoD.GameSettings_GameModeRules.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Options:close()
 		element.GameSettingsSelectedItemInfo:close()

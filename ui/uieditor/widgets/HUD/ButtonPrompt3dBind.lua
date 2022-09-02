@@ -8,9 +8,11 @@ end
 CoD.ButtonPrompt3dBind = InheritFrom( LUI.UIElement )
 CoD.ButtonPrompt3dBind.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ButtonPrompt3dBind )
 	self.id = "ButtonPrompt3dBind"
@@ -71,6 +73,7 @@ CoD.ButtonPrompt3dBind.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				progressMeter:completeAnimation()
 				self.progressMeter:setLeftRight( true, false, 2.5, 45.5 )
 				self.progressMeter:setTopBottom( true, false, 10.5, 53.5 )
@@ -79,6 +82,7 @@ CoD.ButtonPrompt3dBind.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.progressMeter:close()
 	end )

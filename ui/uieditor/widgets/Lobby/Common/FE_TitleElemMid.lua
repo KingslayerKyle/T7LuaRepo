@@ -4,9 +4,11 @@
 CoD.FE_TitleElemMid = InheritFrom( LUI.UIElement )
 CoD.FE_TitleElemMid.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_TitleElemMid )
 	self.id = "FE_TitleElemMid"
@@ -27,6 +29,7 @@ CoD.FE_TitleElemMid.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local midFrame2 = function ( mid, event )
 					local midFrame3 = function ( mid, event )
 						local midFrame4 = function ( mid, event )
@@ -75,6 +78,7 @@ CoD.FE_TitleElemMid.new = function ( menu, controller )
 				self.mid:setLeftRight( true, false, 0, 120 )
 				self.mid:setTopBottom( true, false, 0, 64 )
 				midFrame2( mid, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

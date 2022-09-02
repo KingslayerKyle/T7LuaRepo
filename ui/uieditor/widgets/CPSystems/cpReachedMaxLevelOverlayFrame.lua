@@ -13,9 +13,11 @@ end
 CoD.cpReachedMaxLevelOverlayFrame = InheritFrom( LUI.UIElement )
 CoD.cpReachedMaxLevelOverlayFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cpReachedMaxLevelOverlayFrame )
 	self.id = "cpReachedMaxLevelOverlayFrame"
@@ -137,6 +139,7 @@ CoD.cpReachedMaxLevelOverlayFrame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.secretHiddenButton:close()
 		element.foreground:close()

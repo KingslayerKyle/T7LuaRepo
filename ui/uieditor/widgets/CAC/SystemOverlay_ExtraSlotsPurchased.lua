@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.BlackMarket.BlackMarketCODPointContainerSmall" )
 CoD.SystemOverlay_ExtraSlotsPurchased = InheritFrom( LUI.UIElement )
 CoD.SystemOverlay_ExtraSlotsPurchased.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SystemOverlay_ExtraSlotsPurchased )
 	self.id = "SystemOverlay_ExtraSlotsPurchased"
@@ -236,10 +238,12 @@ CoD.SystemOverlay_ExtraSlotsPurchased.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				largeImage:completeAnimation()
 				self.largeImage:setLeftRight( true, false, 75, 291 )
 				self.largeImage:setTopBottom( true, false, -14, 202 )
 				self.clipFinished( largeImage, {} )
+
 				purchaseCompleteDesc:completeAnimation()
 				self.purchaseCompleteDesc:setAlpha( 1 )
 				self.clipFinished( purchaseCompleteDesc, {} )
@@ -248,16 +252,19 @@ CoD.SystemOverlay_ExtraSlotsPurchased.new = function ( menu, controller )
 		InventoryItem = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				largeImage:completeAnimation()
 				self.largeImage:setLeftRight( true, false, 57, 321 )
 				self.largeImage:setTopBottom( true, false, 8, 184 )
 				self.clipFinished( largeImage, {} )
+
 				purchaseCompleteDesc:completeAnimation()
 				self.purchaseCompleteDesc:setAlpha( 0 )
 				self.clipFinished( purchaseCompleteDesc, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "InventoryItem",
@@ -307,6 +314,7 @@ CoD.SystemOverlay_ExtraSlotsPurchased.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.text:close()
 		element.options:close()

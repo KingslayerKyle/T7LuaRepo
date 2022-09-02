@@ -4,9 +4,11 @@
 CoD.AmmoWidget_HeroAbilityIcon = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_HeroAbilityIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_HeroAbilityIcon )
 	self.id = "AmmoWidget_HeroAbilityIcon"
@@ -30,12 +32,14 @@ CoD.AmmoWidget_HeroAbilityIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ImgIcon:completeAnimation()
 				self.ImgIcon:setAlpha( 1 )
 				self.clipFinished( ImgIcon, {} )
 			end,
 			Update = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ImgIconFrame2 = function ( ImgIcon, event )
 					local ImgIconFrame3 = function ( ImgIcon, event )
 						local ImgIconFrame4 = function ( ImgIcon, event )
@@ -140,12 +144,14 @@ CoD.AmmoWidget_HeroAbilityIcon.new = function ( menu, controller )
 		NotVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ImgIcon:completeAnimation()
 				self.ImgIcon:setAlpha( 0 )
 				self.clipFinished( ImgIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NotVisible",
@@ -170,6 +176,7 @@ CoD.AmmoWidget_HeroAbilityIcon.new = function ( menu, controller )
 			modelName = "playerAbilities.playerGadget3.thiefStatus"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ImgIcon:close()
 	end )

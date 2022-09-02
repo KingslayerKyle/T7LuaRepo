@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Social.Social_MemberGamerTag" )
 CoD.Social_PartyList = InheritFrom( LUI.UIElement )
 CoD.Social_PartyList.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_PartyList )
 	self.id = "Social_PartyList"
@@ -56,10 +58,13 @@ CoD.Social_PartyList.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				SocialPartyMemberIcon0:completeAnimation()
 				self.SocialPartyMemberIcon0:setAlpha( 1 )
 				self.clipFinished( SocialPartyMemberIcon0, {} )
+
 				SocialLeaderIcon0:completeAnimation()
+
 				SocialLeaderIcon0.Leader:completeAnimation()
 				self.SocialLeaderIcon0.Leader:setAlpha( 0 )
 				self.clipFinished( SocialLeaderIcon0, {} )
@@ -68,16 +73,20 @@ CoD.Social_PartyList.new = function ( menu, controller )
 		IsLeader = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				SocialPartyMemberIcon0:completeAnimation()
 				self.SocialPartyMemberIcon0:setAlpha( 0 )
 				self.clipFinished( SocialPartyMemberIcon0, {} )
+
 				SocialLeaderIcon0:completeAnimation()
+
 				SocialLeaderIcon0.Leader:completeAnimation()
 				self.SocialLeaderIcon0.Leader:setAlpha( 1 )
 				self.clipFinished( SocialLeaderIcon0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "IsLeader",
@@ -86,6 +95,7 @@ CoD.Social_PartyList.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SocialShaderContainer:close()
 		element.SocialPartyMemberIcon0:close()

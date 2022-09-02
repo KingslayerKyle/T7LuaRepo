@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_Contracts_ActiveArrow" )
 CoD.SpecialContracts_CallingCardContracts_CardWidget = InheritFrom( LUI.UIElement )
 CoD.SpecialContracts_CallingCardContracts_CardWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpecialContracts_CallingCardContracts_CardWidget )
 	self.id = "SpecialContracts_CallingCardContracts_CardWidget"
@@ -127,30 +129,38 @@ CoD.SpecialContracts_CallingCardContracts_CardWidget.new = function ( menu, cont
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				CardIcon:completeAnimation()
 				self.CardIcon:setAlpha( 1 )
 				self.clipFinished( CardIcon, {} )
+
 				NineSliceShaderHover:completeAnimation()
 				self.NineSliceShaderHover:setAlpha( 0 )
 				self.clipFinished( NineSliceShaderHover, {} )
+
 				upperglow:completeAnimation()
 				self.upperglow:setAlpha( 0 )
 				self.clipFinished( upperglow, {} )
+
 				lowerglow:completeAnimation()
 				self.lowerglow:setAlpha( 0 )
 				self.clipFinished( lowerglow, {} )
+
 				ActiveArrow:completeAnimation()
 				self.ActiveArrow:setAlpha( 0 )
 				self.clipFinished( ActiveArrow, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				CardIcon:completeAnimation()
 				self.CardIcon:setAlpha( 1 )
 				self.clipFinished( CardIcon, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 0 )
 				self.clipFinished( Lock, {} )
@@ -237,38 +247,48 @@ CoD.SpecialContracts_CallingCardContracts_CardWidget.new = function ( menu, cont
 		Complete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				CardIcon:completeAnimation()
 				self.CardIcon:setAlpha( 1 )
 				self.clipFinished( CardIcon, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 0 )
 				self.clipFinished( Lock, {} )
+
 				NineSliceShaderHover:completeAnimation()
 				self.NineSliceShaderHover:setAlpha( 1 )
 				self.clipFinished( NineSliceShaderHover, {} )
+
 				upperglow:completeAnimation()
 				self.upperglow:setAlpha( 0 )
 				self.clipFinished( upperglow, {} )
+
 				lowerglow:completeAnimation()
 				self.lowerglow:setAlpha( 0 )
 				self.clipFinished( lowerglow, {} )
+
 				ActiveArrow:completeAnimation()
 				self.ActiveArrow:setLeftRight( true, false, -6.13, 68.5 )
 				self.ActiveArrow:setTopBottom( true, false, -5, 23 )
 				self.ActiveArrow:setAlpha( 0 )
 				self.clipFinished( ActiveArrow, {} )
+
 				black0:completeAnimation()
 				self.black0:setAlpha( 0 )
 				self.clipFinished( black0, {} )
+
 				Lock0:completeAnimation()
 				self.Lock0:setAlpha( 0 )
 				self.clipFinished( Lock0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				CardIcon:completeAnimation()
 				self.CardIcon:setAlpha( 1 )
 				self.clipFinished( CardIcon, {} )
@@ -350,6 +370,7 @@ CoD.SpecialContracts_CallingCardContracts_CardWidget.new = function ( menu, cont
 				lowerglow:completeAnimation()
 				self.lowerglow:setAlpha( 1 )
 				lowerglowFrame2( lowerglow, {} )
+
 				ActiveArrow:completeAnimation()
 				self.ActiveArrow:setAlpha( 0 )
 				self.clipFinished( ActiveArrow, {} )
@@ -358,36 +379,46 @@ CoD.SpecialContracts_CallingCardContracts_CardWidget.new = function ( menu, cont
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				CardIcon:completeAnimation()
 				self.CardIcon:setAlpha( 0.2 )
 				self.clipFinished( CardIcon, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 0 )
 				self.clipFinished( Lock, {} )
+
 				NineSliceShaderHover:completeAnimation()
 				self.NineSliceShaderHover:setAlpha( 0 )
 				self.clipFinished( NineSliceShaderHover, {} )
+
 				upperglow:completeAnimation()
 				self.upperglow:setAlpha( 0 )
 				self.clipFinished( upperglow, {} )
+
 				lowerglow:completeAnimation()
 				self.lowerglow:setAlpha( 0 )
 				self.clipFinished( lowerglow, {} )
+
 				ActiveArrow:completeAnimation()
 				self.ActiveArrow:setAlpha( 1 )
 				self.clipFinished( ActiveArrow, {} )
+
 				black0:completeAnimation()
 				self.black0:setAlpha( 1 )
 				self.clipFinished( black0, {} )
+
 				Lock0:completeAnimation()
 				self.Lock0:setAlpha( 1 )
 				self.clipFinished( Lock0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				CardIcon:completeAnimation()
 				self.CardIcon:setAlpha( 0.2 )
 				self.clipFinished( CardIcon, {} )
@@ -469,9 +500,11 @@ CoD.SpecialContracts_CallingCardContracts_CardWidget.new = function ( menu, cont
 				lowerglow:completeAnimation()
 				self.lowerglow:setAlpha( 1 )
 				lowerglowFrame2( lowerglow, {} )
+
 				black0:completeAnimation()
 				self.black0:setAlpha( 1 )
 				self.clipFinished( black0, {} )
+
 				Lock0:completeAnimation()
 				self.Lock0:setAlpha( 1 )
 				self.clipFinished( Lock0, {} )
@@ -480,36 +513,46 @@ CoD.SpecialContracts_CallingCardContracts_CardWidget.new = function ( menu, cont
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				CardIcon:completeAnimation()
 				self.CardIcon:setAlpha( 0.2 )
 				self.clipFinished( CardIcon, {} )
+
 				NineSliceShaderHover:completeAnimation()
 				self.NineSliceShaderHover:setAlpha( 0 )
 				self.clipFinished( NineSliceShaderHover, {} )
+
 				upperglow:completeAnimation()
 				self.upperglow:setAlpha( 0 )
 				self.clipFinished( upperglow, {} )
+
 				lowerglow:completeAnimation()
 				self.lowerglow:setAlpha( 0 )
 				self.clipFinished( lowerglow, {} )
+
 				ActiveArrow:completeAnimation()
 				self.ActiveArrow:setAlpha( 0 )
 				self.clipFinished( ActiveArrow, {} )
+
 				black0:completeAnimation()
 				self.black0:setAlpha( 1 )
 				self.clipFinished( black0, {} )
+
 				Lock0:completeAnimation()
 				self.Lock0:setAlpha( 1 )
 				self.clipFinished( Lock0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 9 )
+
 				CardIcon:completeAnimation()
 				self.CardIcon:setAlpha( 0.2 )
 				self.clipFinished( CardIcon, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 0 )
 				self.clipFinished( Lock, {} )
@@ -591,18 +634,22 @@ CoD.SpecialContracts_CallingCardContracts_CardWidget.new = function ( menu, cont
 				lowerglow:completeAnimation()
 				self.lowerglow:setAlpha( 1 )
 				lowerglowFrame2( lowerglow, {} )
+
 				ActiveArrow:completeAnimation()
 				self.ActiveArrow:setAlpha( 0 )
 				self.clipFinished( ActiveArrow, {} )
+
 				black0:completeAnimation()
 				self.black0:setAlpha( 1 )
 				self.clipFinished( black0, {} )
+
 				Lock0:completeAnimation()
 				self.Lock0:setAlpha( 1 )
 				self.clipFinished( Lock0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Complete",
@@ -631,6 +678,7 @@ CoD.SpecialContracts_CallingCardContracts_CardWidget.new = function ( menu, cont
 			modelName = "isComplete"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CardIcon:close()
 		element.ActiveArrow:close()

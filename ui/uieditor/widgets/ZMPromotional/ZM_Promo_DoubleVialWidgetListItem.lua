@@ -4,9 +4,11 @@
 CoD.ZM_Promo_DoubleVialWidgetListItem = InheritFrom( LUI.UIElement )
 CoD.ZM_Promo_DoubleVialWidgetListItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZM_Promo_DoubleVialWidgetListItem )
 	self.id = "ZM_Promo_DoubleVialWidgetListItem"

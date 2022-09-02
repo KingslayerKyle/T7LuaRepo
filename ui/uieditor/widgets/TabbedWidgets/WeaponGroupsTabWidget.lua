@@ -21,9 +21,11 @@ end
 CoD.WeaponGroupsTabWidget = InheritFrom( LUI.UIElement )
 CoD.WeaponGroupsTabWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponGroupsTabWidget )
 	self.id = "WeaponGroupsTabWidget"
@@ -173,57 +175,73 @@ CoD.WeaponGroupsTabWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				FETabFocus:completeAnimation()
 				self.FETabFocus:setAlpha( 0 )
 				self.clipFinished( FETabFocus, {} )
+
 				FETabIdle:completeAnimation()
 				self.FETabIdle:setAlpha( 1 )
 				self.clipFinished( FETabIdle, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0.7 )
 				self.clipFinished( text, {} )
+
 				textDark:completeAnimation()
 				self.textDark:setAlpha( 0 )
 				self.clipFinished( textDark, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				buttonText:completeAnimation()
 				self.buttonText:setAlpha( 0 )
 				self.clipFinished( buttonText, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 7 )
+
 				FETabFocus:completeAnimation()
 				self.FETabFocus:setAlpha( 1 )
 				self.clipFinished( FETabFocus, {} )
+
 				FETabIdle:completeAnimation()
 				self.FETabIdle:setAlpha( 0 )
 				self.clipFinished( FETabIdle, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 1 )
 				self.clipFinished( Glow2, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0 )
 				self.clipFinished( text, {} )
+
 				textDark:completeAnimation()
 				self.textDark:setAlpha( 1 )
 				self.clipFinished( textDark, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
 			end,
 			GainActive = function ()
 				self:setupElementClipCounter( 7 )
+
 				local FETabFocusFrame2 = function ( FETabFocus, event )
 					local FETabFocusFrame3 = function ( FETabFocus, event )
 						local FETabFocusFrame4 = function ( FETabFocus, event )
@@ -283,6 +301,7 @@ CoD.WeaponGroupsTabWidget.new = function ( menu, controller )
 				FETabFocus:completeAnimation()
 				self.FETabFocus:setAlpha( 0.37 )
 				FETabFocusFrame2( FETabFocus, {} )
+
 				FETabIdle:completeAnimation()
 				self.FETabIdle:setAlpha( 0 )
 				self.clipFinished( FETabIdle, {} )
@@ -301,6 +320,7 @@ CoD.WeaponGroupsTabWidget.new = function ( menu, controller )
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 1 )
 				Glow2Frame2( Glow2, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0 )
 				self.clipFinished( text, {} )
@@ -489,6 +509,7 @@ CoD.WeaponGroupsTabWidget.new = function ( menu, controller )
 			end,
 			LoseActive = function ()
 				self:setupElementClipCounter( 7 )
+
 				local FETabFocusFrame2 = function ( FETabFocus, event )
 					local FETabFocusFrame3 = function ( FETabFocus, event )
 						local FETabFocusFrame4 = function ( FETabFocus, event )
@@ -865,36 +886,46 @@ CoD.WeaponGroupsTabWidget.new = function ( menu, controller )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 8 )
+
 				FETabFocus:completeAnimation()
 				self.FETabFocus:setAlpha( 0 )
 				self.clipFinished( FETabFocus, {} )
+
 				FETabIdle:completeAnimation()
 				self.FETabIdle:setAlpha( 1 )
 				self.clipFinished( FETabIdle, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0.8 )
 				self.clipFinished( Glow2, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0.7 )
 				self.clipFinished( text, {} )
+
 				textDark:completeAnimation()
 				self.textDark:setAlpha( 0 )
 				self.clipFinished( textDark, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				buttonText:completeAnimation()
 				self.buttonText:setAlpha( 0 )
 				self.clipFinished( buttonText, {} )
 			end,
 			GainOver = function ()
 				self:setupElementClipCounter( 8 )
+
 				FETabFocus:completeAnimation()
 				self.FETabFocus:setAlpha( 0 )
 				self.clipFinished( FETabFocus, {} )
+
 				FETabIdle:completeAnimation()
 				self.FETabIdle:setAlpha( 1 )
 				self.clipFinished( FETabIdle, {} )
@@ -913,27 +944,34 @@ CoD.WeaponGroupsTabWidget.new = function ( menu, controller )
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				Glow2Frame2( Glow2, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0.7 )
 				self.clipFinished( text, {} )
+
 				textDark:completeAnimation()
 				self.textDark:setAlpha( 0 )
 				self.clipFinished( textDark, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				buttonText:completeAnimation()
 				self.buttonText:setAlpha( 0 )
 				self.clipFinished( buttonText, {} )
 			end,
 			LoseOver = function ()
 				self:setupElementClipCounter( 8 )
+
 				FETabFocus:completeAnimation()
 				self.FETabFocus:setAlpha( 0 )
 				self.clipFinished( FETabFocus, {} )
+
 				FETabIdle:completeAnimation()
 				self.FETabIdle:setAlpha( 1 )
 				self.clipFinished( FETabIdle, {} )
@@ -952,18 +990,23 @@ CoD.WeaponGroupsTabWidget.new = function ( menu, controller )
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0.8 )
 				Glow2Frame2( Glow2, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0.7 )
 				self.clipFinished( text, {} )
+
 				textDark:completeAnimation()
 				self.textDark:setAlpha( 0 )
 				self.clipFinished( textDark, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				buttonText:completeAnimation()
 				self.buttonText:setAlpha( 0 )
 				self.clipFinished( buttonText, {} )
@@ -972,27 +1015,35 @@ CoD.WeaponGroupsTabWidget.new = function ( menu, controller )
 		NavButton = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				FETabFocus:completeAnimation()
 				self.FETabFocus:setAlpha( 0 )
 				self.clipFinished( FETabFocus, {} )
+
 				FETabIdle:completeAnimation()
 				self.FETabIdle:setAlpha( 1 )
 				self.clipFinished( FETabIdle, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0 )
 				self.clipFinished( text, {} )
+
 				textDark:completeAnimation()
 				self.textDark:setAlpha( 0 )
 				self.clipFinished( textDark, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				buttonText:completeAnimation()
 				self.buttonText:setAlpha( 1 )
 				self.clipFinished( buttonText, {} )
@@ -1001,27 +1052,35 @@ CoD.WeaponGroupsTabWidget.new = function ( menu, controller )
 		NavButtonHiddenPrompt = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				FETabFocus:completeAnimation()
 				self.FETabFocus:setAlpha( 0 )
 				self.clipFinished( FETabFocus, {} )
+
 				FETabIdle:completeAnimation()
 				self.FETabIdle:setAlpha( 1 )
 				self.clipFinished( FETabIdle, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0 )
 				self.clipFinished( text, {} )
+
 				textDark:completeAnimation()
 				self.textDark:setAlpha( 0 )
 				self.clipFinished( textDark, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				buttonText:completeAnimation()
 				self.buttonText:setAlpha( 0 )
 				self.clipFinished( buttonText, {} )
@@ -1030,33 +1089,42 @@ CoD.WeaponGroupsTabWidget.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				FETabFocus:completeAnimation()
 				self.FETabFocus:setAlpha( 0 )
 				self.clipFinished( FETabFocus, {} )
+
 				FETabIdle:completeAnimation()
 				self.FETabIdle:setAlpha( 0.5 )
 				self.clipFinished( FETabIdle, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0.4 )
 				self.clipFinished( text, {} )
+
 				textDark:completeAnimation()
 				self.textDark:setAlpha( 0 )
 				self.clipFinished( textDark, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				buttonText:completeAnimation()
 				self.buttonText:setAlpha( 0 )
 				self.clipFinished( buttonText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NavButton",
@@ -1111,6 +1179,7 @@ CoD.WeaponGroupsTabWidget.new = function ( menu, controller )
 			modelName = "disabled"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.breadcrumbCount:close()
 		element.text:close()

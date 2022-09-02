@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Notifications.Global.Notif_Global_Title" )
 CoD.SpecialistEpicChallengeNotification = InheritFrom( LUI.UIElement )
 CoD.SpecialistEpicChallengeNotification.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpecialistEpicChallengeNotification )
 	self.id = "SpecialistEpicChallengeNotification"
@@ -223,6 +225,7 @@ CoD.SpecialistEpicChallengeNotification.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				local CenterShadowFrame2 = function ( CenterShadow, event )
 					local CenterShadowFrame3 = function ( CenterShadow, event )
 						if not event.interrupted then
@@ -714,6 +717,7 @@ CoD.SpecialistEpicChallengeNotification.new = function ( menu, controller )
 				self.image:setAlpha( 0 )
 				self.image:setScale( 1 )
 				imageFrame2( image, {} )
+
 				levelUpSound:completeAnimation()
 				self.levelUpSound:setPlaySoundDirect( true )
 				self.levelUpSound:playSound( "mpl_notification_tier_up", controller )
@@ -749,6 +753,7 @@ CoD.SpecialistEpicChallengeNotification.new = function ( menu, controller )
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 13 )
+
 				local f56_local0 = function ( f57_arg0, f57_arg1 )
 					if not f57_arg1.interrupted then
 						f57_arg0:beginAnimation( "keyframe", 119, false, false, CoD.TweenType.Linear )
@@ -1058,9 +1063,11 @@ CoD.SpecialistEpicChallengeNotification.new = function ( menu, controller )
 				highlight:beginAnimation( "keyframe", 79, false, false, CoD.TweenType.Linear )
 				highlight:setAlpha( 1 )
 				highlight:registerEventHandler( "transition_complete_keyframe", f56_local8 )
+
 				imageG:completeAnimation()
 				self.imageG:setAlpha( 0 )
 				self.clipFinished( imageG, {} )
+
 				imageR:completeAnimation()
 				self.imageR:setAlpha( 0 )
 				self.clipFinished( imageR, {} )
@@ -1151,6 +1158,7 @@ CoD.SpecialistEpicChallengeNotification.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.NotifGlobalTitleLine:close()
 		element.NotifGlobalTitle:close()

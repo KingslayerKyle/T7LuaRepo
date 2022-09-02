@@ -84,9 +84,11 @@ end
 CoD.CleanWaypointDepositContainer = InheritFrom( LUI.UIElement )
 CoD.CleanWaypointDepositContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CleanWaypointDepositContainer )
 	self.id = "CleanWaypointDepositContainer"

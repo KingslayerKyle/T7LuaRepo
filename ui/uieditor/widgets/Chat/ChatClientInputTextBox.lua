@@ -25,9 +25,11 @@ end
 CoD.ChatClientInputTextBox = InheritFrom( LUI.UIElement )
 CoD.ChatClientInputTextBox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.ChatClientInputTextBox )
 	self.id = "ChatClientInputTextBox"
@@ -55,6 +57,7 @@ CoD.ChatClientInputTextBox.new = function ( menu, controller )
 			InputText:setText( inputText )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( InputText, "setText", function ( element, controller )
 		ChatClientInputArrangeText( self, element, controller )
 	end )
@@ -79,6 +82,7 @@ CoD.ChatClientInputTextBox.new = function ( menu, controller )
 			channelText:setText( inputChannelText )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( channelText, "setText", function ( element, controller )
 		ChatClientInputArrangeText( self, element, controller )
 	end )
@@ -106,26 +110,32 @@ CoD.ChatClientInputTextBox.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0.75 )
 				self.clipFinished( Background, {} )
+
 				InputText:completeAnimation()
 				self.InputText:setRGB( 1, 1, 1 )
 				self.InputText:setAlpha( 0.75 )
 				self.clipFinished( InputText, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 0 )
 				self.clipFinished( Border, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 3 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0.75 )
 				self.clipFinished( Background, {} )
+
 				InputText:completeAnimation()
 				self.InputText:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.InputText:setAlpha( 1 )
 				self.clipFinished( InputText, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 0 )
 				self.clipFinished( Border, {} )
@@ -134,9 +144,11 @@ CoD.ChatClientInputTextBox.new = function ( menu, controller )
 		Chatting = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0.75 )
 				self.clipFinished( Background, {} )
+
 				InputText:completeAnimation()
 				self.InputText:setRGB( 1, 1, 1 )
 				self.InputText:setAlpha( 1 )
@@ -146,9 +158,11 @@ CoD.ChatClientInputTextBox.new = function ( menu, controller )
 		ChattingIngame = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0.4 )
 				self.clipFinished( Background, {} )
+
 				InputText:completeAnimation()
 				self.InputText:setRGB( 1, 1, 1 )
 				self.InputText:setAlpha( 1 )
@@ -158,15 +172,18 @@ CoD.ChatClientInputTextBox.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0.75 )
 				self.clipFinished( Background, {} )
+
 				InputText:completeAnimation()
 				self.InputText:setAlpha( 0.75 )
 				self.clipFinished( InputText, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Border:close()
 		element.InputText:close()

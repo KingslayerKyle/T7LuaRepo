@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_CharBox" )
 CoD.cac_CharElements = InheritFrom( LUI.UIElement )
 CoD.cac_CharElements.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_CharElements )
 	self.id = "cac_CharElements"

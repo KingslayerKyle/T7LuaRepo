@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMPromotional.ZM_Promo_50percentInternal" )
 CoD.ZM_Promo_50percentoff = InheritFrom( LUI.UIElement )
 CoD.ZM_Promo_50percentoff.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZM_Promo_50percentoff )
 	self.id = "ZM_Promo_50percentoff"
@@ -29,6 +31,7 @@ CoD.ZM_Promo_50percentoff.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ZMPromo50percentInternal:completeAnimation()
 				self.ZMPromo50percentInternal:setAlpha( 0 )
 				self.clipFinished( ZMPromo50percentInternal, {} )
@@ -37,12 +40,14 @@ CoD.ZM_Promo_50percentoff.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ZMPromo50percentInternal:completeAnimation()
 				self.ZMPromo50percentInternal:setAlpha( 1 )
 				self.clipFinished( ZMPromo50percentInternal, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -51,6 +56,7 @@ CoD.ZM_Promo_50percentoff.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZMPromo50percentInternal:close()
 	end )

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleLineSingle" )
 CoD.LobbySlideMissingMapsWidget = InheritFrom( LUI.UIElement )
 CoD.LobbySlideMissingMapsWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbySlideMissingMapsWidget )
 	self.id = "LobbySlideMissingMapsWidget"
@@ -90,27 +92,35 @@ CoD.LobbySlideMissingMapsWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				pixelU:completeAnimation()
 				self.pixelU:setAlpha( 0 )
 				self.clipFinished( pixelU, {} )
+
 				pixelB:completeAnimation()
 				self.pixelB:setAlpha( 0 )
 				self.clipFinished( pixelB, {} )
+
 				pixelU0:completeAnimation()
 				self.pixelU0:setAlpha( 0 )
 				self.clipFinished( pixelU0, {} )
+
 				pixelB0:completeAnimation()
 				self.pixelB0:setAlpha( 0 )
 				self.clipFinished( pixelB0, {} )
+
 				FETitleLineSingle:completeAnimation()
 				self.FETitleLineSingle:setAlpha( 0 )
 				self.clipFinished( FETitleLineSingle, {} )
+
 				FETitleLineSingle0:completeAnimation()
 				self.FETitleLineSingle0:setAlpha( 0 )
 				self.clipFinished( FETitleLineSingle0, {} )
+
 				TextState:completeAnimation()
 				self.TextState:setAlpha( 0 )
 				self.clipFinished( TextState, {} )
@@ -119,33 +129,42 @@ CoD.LobbySlideMissingMapsWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0.8 )
 				self.clipFinished( bg, {} )
+
 				pixelU:completeAnimation()
 				self.pixelU:setAlpha( 1 )
 				self.clipFinished( pixelU, {} )
+
 				pixelB:completeAnimation()
 				self.pixelB:setAlpha( 1 )
 				self.clipFinished( pixelB, {} )
+
 				pixelU0:completeAnimation()
 				self.pixelU0:setAlpha( 1 )
 				self.clipFinished( pixelU0, {} )
+
 				pixelB0:completeAnimation()
 				self.pixelB0:setAlpha( 1 )
 				self.clipFinished( pixelB0, {} )
+
 				FETitleLineSingle:completeAnimation()
 				self.FETitleLineSingle:setAlpha( 1 )
 				self.clipFinished( FETitleLineSingle, {} )
+
 				FETitleLineSingle0:completeAnimation()
 				self.FETitleLineSingle0:setAlpha( 1 )
 				self.clipFinished( FETitleLineSingle0, {} )
+
 				TextState:completeAnimation()
 				self.TextState:setAlpha( 1 )
 				self.clipFinished( TextState, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -178,6 +197,7 @@ CoD.LobbySlideMissingMapsWidget.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FETitleLineSingle:close()
 		element.FETitleLineSingle0:close()

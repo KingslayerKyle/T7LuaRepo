@@ -121,9 +121,11 @@ end
 CoD.MPScr = InheritFrom( LUI.UIElement )
 CoD.MPScr.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MPScr )
 	self.id = "MPScr"
@@ -148,6 +150,7 @@ CoD.MPScr.new = function ( menu, controller )
 	Score:setTTF( "fonts/UnitedSansSmCdBd_0.ttf" )
 	Score:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	Score:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( Score, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 0 )
 	end )
@@ -172,18 +175,22 @@ CoD.MPScr.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ScoreFeedGlow:completeAnimation()
 				self.ScoreFeedGlow:setAlpha( 0 )
 				self.clipFinished( ScoreFeedGlow, {} )
+
 				Score:completeAnimation()
 				self.Score:setAlpha( 0 )
 				self.clipFinished( Score, {} )
+
 				MPScrPlusPointsContainer:completeAnimation()
 				self.MPScrPlusPointsContainer:setAlpha( 0 )
 				self.clipFinished( MPScrPlusPointsContainer, {} )
 			end,
 			CombatEfficiencyScore = function ()
 				self:setupElementClipCounter( 3 )
+
 				local ScoreFeedGlowFrame2 = function ( ScoreFeedGlow, event )
 					local ScoreFeedGlowFrame3 = function ( ScoreFeedGlow, event )
 						local ScoreFeedGlowFrame4 = function ( ScoreFeedGlow, event )
@@ -318,6 +325,7 @@ CoD.MPScr.new = function ( menu, controller )
 			end,
 			NormalScore = function ()
 				self:setupElementClipCounter( 3 )
+
 				local ScoreFeedGlowFrame2 = function ( ScoreFeedGlow, event )
 					local ScoreFeedGlowFrame3 = function ( ScoreFeedGlow, event )
 						local ScoreFeedGlowFrame4 = function ( ScoreFeedGlow, event )
@@ -423,6 +431,7 @@ CoD.MPScr.new = function ( menu, controller )
 				self.Score:setAlpha( 1 )
 				self.Score:setScale( 0 )
 				ScoreFrame2( Score, {} )
+
 				MPScrPlusPointsContainer:completeAnimation()
 				self.MPScrPlusPointsContainer:setAlpha( 0 )
 				self.clipFinished( MPScrPlusPointsContainer, {} )
@@ -431,15 +440,18 @@ CoD.MPScr.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ScoreFeedGlow:completeAnimation()
 				self.ScoreFeedGlow:setAlpha( 0 )
 				self.clipFinished( ScoreFeedGlow, {} )
+
 				Score:completeAnimation()
 				self.Score:setAlpha( 0 )
 				self.clipFinished( Score, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -501,6 +513,7 @@ CoD.MPScr.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_UI_ACTIVE
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ScoreFeedItem0:close()
 		element.MPScrPlusPointsContainer:close()

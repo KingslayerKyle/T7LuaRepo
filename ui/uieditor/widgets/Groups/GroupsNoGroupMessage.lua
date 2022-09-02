@@ -4,9 +4,11 @@
 CoD.GroupsNoGroupMessage = InheritFrom( LUI.UIElement )
 CoD.GroupsNoGroupMessage.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.GroupsNoGroupMessage )
 	self.id = "GroupsNoGroupMessage"
@@ -28,6 +30,7 @@ CoD.GroupsNoGroupMessage.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ListLabel:completeAnimation()
 				self.ListLabel:setText( Engine.Localize( "GROUPS_MY_GROUPS" ) )
 				self.clipFinished( ListLabel, {} )
@@ -36,6 +39,7 @@ CoD.GroupsNoGroupMessage.new = function ( menu, controller )
 		NoGroups = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ListLabel:completeAnimation()
 				self.ListLabel:setText( Engine.Localize( "GROUPS_NOT_IN_GROUPS" ) )
 				self.clipFinished( ListLabel, {} )

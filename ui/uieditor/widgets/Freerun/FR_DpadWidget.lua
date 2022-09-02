@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.buttonprompt_small" )
 CoD.FR_DpadWidget = InheritFrom( LUI.UIElement )
 CoD.FR_DpadWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.FR_DpadWidget )
 	self.id = "FR_DpadWidget"
@@ -172,21 +174,26 @@ CoD.FR_DpadWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				RestartTrackButtonPrompt:completeAnimation()
 				self.RestartTrackButtonPrompt:setAlpha( 1 )
 				self.clipFinished( RestartTrackButtonPrompt, {} )
+
 				RespawnButtonPrompt:completeAnimation()
 				self.RespawnButtonPrompt:setAlpha( 1 )
 				self.clipFinished( RespawnButtonPrompt, {} )
+
 				RestartTrackButtonPromptPC:completeAnimation()
 				self.RestartTrackButtonPromptPC:setAlpha( 0 )
 				self.clipFinished( RestartTrackButtonPromptPC, {} )
+
 				RespawnButtonPromptPC:completeAnimation()
 				self.RespawnButtonPromptPC:setAlpha( 0 )
 				self.clipFinished( RespawnButtonPromptPC, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 9 )
+
 				local f6_local0 = function ( f7_arg0, f7_arg1 )
 					if not f7_arg1.interrupted then
 						f7_arg0:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -421,42 +428,54 @@ CoD.FR_DpadWidget.new = function ( menu, controller )
 		Intro = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				freerunDpadBoxBlur:completeAnimation()
 				self.freerunDpadBoxBlur:setAlpha( 1 )
 				self.clipFinished( freerunDpadBoxBlur, {} )
+
 				ChangeCourseBox:completeAnimation()
 				self.ChangeCourseBox:setAlpha( 0.3 )
 				self.clipFinished( ChangeCourseBox, {} )
+
 				ChangeTrackButtonPrompt:completeAnimation()
 				self.ChangeTrackButtonPrompt:setAlpha( 1 )
 				self.clipFinished( ChangeTrackButtonPrompt, {} )
+
 				DpadBoxLineBottom:completeAnimation()
 				self.DpadBoxLineBottom:setAlpha( 0.3 )
 				self.clipFinished( DpadBoxLineBottom, {} )
+
 				DpadBoxLineTop:completeAnimation()
 				self.DpadBoxLineTop:setAlpha( 0.3 )
 				self.clipFinished( DpadBoxLineTop, {} )
+
 				SideElement2:completeAnimation()
 				self.SideElement2:setAlpha( 1 )
 				self.clipFinished( SideElement2, {} )
+
 				SideElement1:completeAnimation()
 				self.SideElement1:setAlpha( 1 )
 				self.clipFinished( SideElement1, {} )
+
 				RestartTrackButtonPrompt:completeAnimation()
 				self.RestartTrackButtonPrompt:setAlpha( 1 )
 				self.clipFinished( RestartTrackButtonPrompt, {} )
+
 				RespawnButtonPrompt:completeAnimation()
 				self.RespawnButtonPrompt:setAlpha( 1 )
 				self.clipFinished( RespawnButtonPrompt, {} )
+
 				RestartTrackButtonPromptPC:completeAnimation()
 				self.RestartTrackButtonPromptPC:setAlpha( 0 )
 				self.clipFinished( RestartTrackButtonPromptPC, {} )
+
 				RespawnButtonPromptPC:completeAnimation()
 				self.RespawnButtonPromptPC:setAlpha( 0 )
 				self.clipFinished( RespawnButtonPromptPC, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 9 )
+
 				local f24_local0 = function ( f25_arg0, f25_arg1 )
 					if not f25_arg1.interrupted then
 						f25_arg0:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -691,21 +710,26 @@ CoD.FR_DpadWidget.new = function ( menu, controller )
 		DefaultState_PC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				RestartTrackButtonPrompt:completeAnimation()
 				self.RestartTrackButtonPrompt:setAlpha( 0 )
 				self.clipFinished( RestartTrackButtonPrompt, {} )
+
 				RespawnButtonPrompt:completeAnimation()
 				self.RespawnButtonPrompt:setAlpha( 0 )
 				self.clipFinished( RespawnButtonPrompt, {} )
+
 				RestartTrackButtonPromptPC:completeAnimation()
 				self.RestartTrackButtonPromptPC:setAlpha( 1 )
 				self.clipFinished( RestartTrackButtonPromptPC, {} )
+
 				RespawnButtonPromptPC:completeAnimation()
 				self.RespawnButtonPromptPC:setAlpha( 1 )
 				self.clipFinished( RespawnButtonPromptPC, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 9 )
+
 				local f42_local0 = function ( f43_arg0, f43_arg1 )
 					if not f43_arg1.interrupted then
 						f43_arg0:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -938,6 +962,7 @@ CoD.FR_DpadWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Intro",
@@ -970,6 +995,7 @@ CoD.FR_DpadWidget.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.freerunDpadBoxBlur:close()
 		element.ChangeTrackButtonPrompt:close()

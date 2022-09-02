@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventory.QuestEgg.QuestEggInternal" )
 CoD.QuestEggWidget = InheritFrom( LUI.UIElement )
 CoD.QuestEggWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.QuestEggWidget )
 	self.id = "QuestEggWidget"
@@ -146,9 +148,11 @@ CoD.QuestEggWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Quest1Egg:completeAnimation()
 				self.Quest1Egg:setAlpha( 0 )
 				self.clipFinished( Quest1Egg, {} )
+
 				Quest2Egg:completeAnimation()
 				self.Quest2Egg:setAlpha( 0 )
 				self.clipFinished( Quest2Egg, {} )
@@ -157,9 +161,11 @@ CoD.QuestEggWidget.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Quest1Egg:completeAnimation()
 				self.Quest1Egg:setAlpha( 1 )
 				self.clipFinished( Quest1Egg, {} )
+
 				Quest2Egg:completeAnimation()
 				self.Quest2Egg:setAlpha( 1 )
 				self.clipFinished( Quest2Egg, {} )
@@ -168,6 +174,7 @@ CoD.QuestEggWidget.new = function ( menu, controller )
 		Flashing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local Quest1EggFrame2 = function ( Quest1Egg, event )
 					local Quest1EggFrame3 = function ( Quest1Egg, event )
 						local Quest1EggFrame4 = function ( Quest1Egg, event )
@@ -267,6 +274,7 @@ CoD.QuestEggWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Scoreboard",
@@ -297,6 +305,7 @@ CoD.QuestEggWidget.new = function ( menu, controller )
 			modelName = "zmInventory.widget_egg"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Quest1Egg:close()
 		element.Quest2Egg:close()

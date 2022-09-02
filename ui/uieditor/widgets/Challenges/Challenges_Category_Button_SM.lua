@@ -26,9 +26,11 @@ end
 CoD.Challenges_Category_Button_SM = InheritFrom( LUI.UIElement )
 CoD.Challenges_Category_Button_SM.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_Category_Button_SM )
 	self.id = "Challenges_Category_Button_SM"
@@ -137,63 +139,82 @@ CoD.Challenges_Category_Button_SM.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				CategoryIcon:completeAnimation()
 				self.CategoryIcon:setAlpha( 1 )
 				self.clipFinished( CategoryIcon, {} )
+
 				PercentCompleteWidget:completeAnimation()
 				self.PercentCompleteWidget:setAlpha( 1 )
 				self.clipFinished( PercentCompleteWidget, {} )
+
 				UnlockInstructions:completeAnimation()
 				self.UnlockInstructions:setAlpha( 0 )
 				self.clipFinished( UnlockInstructions, {} )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0.05 )
 				self.clipFinished( BlackTint, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				BlackLine:completeAnimation()
 				self.BlackLine:setAlpha( 0 )
 				self.clipFinished( BlackLine, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				PercentCompleteWidget:completeAnimation()
 				self.PercentCompleteWidget:setAlpha( 1 )
 				self.clipFinished( PercentCompleteWidget, {} )
+
 				UnlockInstructions:completeAnimation()
 				self.UnlockInstructions:setAlpha( 0 )
 				self.clipFinished( UnlockInstructions, {} )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0 )
 				self.clipFinished( BlackTint, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				BlackLine:completeAnimation()
 				self.BlackLine:setAlpha( 0 )
 				self.clipFinished( BlackLine, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
@@ -202,78 +223,101 @@ CoD.Challenges_Category_Button_SM.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				CategoryIcon:completeAnimation()
 				self.CategoryIcon:setAlpha( 0 )
 				self.clipFinished( CategoryIcon, {} )
+
 				PercentCompleteWidget:completeAnimation()
 				self.PercentCompleteWidget:setAlpha( 0 )
 				self.clipFinished( PercentCompleteWidget, {} )
+
 				UnlockInstructions:completeAnimation()
 				self.UnlockInstructions:setAlpha( 0 )
 				self.clipFinished( UnlockInstructions, {} )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0.05 )
 				self.clipFinished( BlackTint, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				StartMenuIdentitySubTitle0:completeAnimation()
 				self.StartMenuIdentitySubTitle0:setAlpha( 1 )
 				self.clipFinished( StartMenuIdentitySubTitle0, {} )
+
 				BlackLine:completeAnimation()
 				self.BlackLine:setAlpha( 0.5 )
 				self.clipFinished( BlackLine, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				CategoryIcon:completeAnimation()
 				self.CategoryIcon:setAlpha( 0 )
 				self.clipFinished( CategoryIcon, {} )
+
 				PercentCompleteWidget:completeAnimation()
 				self.PercentCompleteWidget:setAlpha( 0 )
 				self.clipFinished( PercentCompleteWidget, {} )
+
 				UnlockInstructions:completeAnimation()
 				self.UnlockInstructions:setAlpha( 1 )
 				self.clipFinished( UnlockInstructions, {} )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0 )
 				self.clipFinished( BlackTint, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				BlackLine:completeAnimation()
 				self.BlackLine:setAlpha( 0.5 )
 				self.clipFinished( BlackLine, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactive:close()
 		element.BoxButtonLrgIdle:close()

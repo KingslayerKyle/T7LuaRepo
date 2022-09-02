@@ -18,9 +18,11 @@ end
 CoD.woundedSoldierWidget = InheritFrom( LUI.UIElement )
 CoD.woundedSoldierWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.woundedSoldierWidget )
 	self.id = "woundedSoldierWidget"
@@ -202,72 +204,89 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
+
 				LineR:completeAnimation()
 				self.LineR:setRGB( 1, 1, 1 )
 				self.LineR:setAlpha( 0 )
 				self.clipFinished( LineR, {} )
+
 				LineL:completeAnimation()
 				self.LineL:setRGB( 1, 1, 1 )
 				self.LineL:setAlpha( 0 )
 				self.clipFinished( LineL, {} )
+
 				Pixel1:completeAnimation()
 				self.Pixel1:setLeftRight( true, false, 69.67, 80.34 )
 				self.Pixel1:setTopBottom( true, false, 137.34, 148.01 )
 				self.Pixel1:setAlpha( 0 )
 				self.clipFinished( Pixel1, {} )
+
 				Pixel2:completeAnimation()
 				self.Pixel2:setLeftRight( true, false, 71, 81.67 )
 				self.Pixel2:setTopBottom( true, false, 137.34, 148.01 )
 				self.Pixel2:setAlpha( 0 )
 				self.clipFinished( Pixel2, {} )
+
 				Pixel3:completeAnimation()
 				self.Pixel3:setLeftRight( true, false, 69.67, 80.34 )
 				self.Pixel3:setTopBottom( true, false, 137.34, 148.01 )
 				self.Pixel3:setAlpha( 0 )
 				self.clipFinished( Pixel3, {} )
+
 				Pixel4:completeAnimation()
 				self.Pixel4:setLeftRight( true, false, 71, 81.67 )
 				self.Pixel4:setTopBottom( true, false, 137.34, 148.01 )
 				self.Pixel4:setAlpha( 0 )
 				self.clipFinished( Pixel4, {} )
+
 				Pixel5:completeAnimation()
 				self.Pixel5:setLeftRight( true, false, 71, 81.67 )
 				self.Pixel5:setTopBottom( true, false, 137.34, 148.01 )
 				self.Pixel5:setAlpha( 0 )
 				self.clipFinished( Pixel5, {} )
+
 				ArrowD:completeAnimation()
 				self.ArrowD:setRGB( 1, 1, 1 )
 				self.ArrowD:setAlpha( 0 )
 				self.clipFinished( ArrowD, {} )
+
 				ArrowT:completeAnimation()
 				self.ArrowT:setAlpha( 0 )
 				self.clipFinished( ArrowT, {} )
+
 				EKG:completeAnimation()
 				self.EKG:setAlpha( 0 )
 				self.EKG:setZoom( -12 )
 				self.clipFinished( EKG, {} )
+
 				TextTitle:completeAnimation()
 				self.TextTitle:setAlpha( 0 )
 				self.TextTitle:setZoom( -20 )
 				self.clipFinished( TextTitle, {} )
+
 				BPM:completeAnimation()
 				self.BPM:setAlpha( 0 )
 				self.clipFinished( BPM, {} )
+
 				BP:completeAnimation()
 				self.BP:setAlpha( 0 )
 				self.clipFinished( BP, {} )
+
 				Critical:completeAnimation()
 				self.Critical:setAlpha( 0 )
 				self.clipFinished( Critical, {} )
+
 				DangerMessage:completeAnimation()
 				self.DangerMessage:setAlpha( 0 )
 				self.clipFinished( DangerMessage, {} )
 			end,
 			Stable = function ()
 				self:setupElementClipCounter( 17 )
+
 				local PanelFrame2 = function ( Panel, event )
 					if not event.interrupted then
 						Panel:beginAnimation( "keyframe", 980, false, false, CoD.TweenType.Linear )
@@ -971,6 +990,7 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				end
 				
 				TextTitle:completeAnimation()
+
 				TextTitle.TextLabel:completeAnimation()
 				self.TextTitle:setRGB( 1, 1, 1 )
 				self.TextTitle:setAlpha( 0 )
@@ -1144,9 +1164,11 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				BP.BP1text:setText( Engine.Localize( "115" ) )
 				BP.BP2text:setText( Engine.Localize( "82" ) )
 				BP:registerEventHandler( "transition_complete_keyframe", f6_local13 )
+
 				Critical2:completeAnimation()
 				self.Critical2:setAlpha( 0 )
 				self.clipFinished( Critical2, {} )
+
 				Critical:completeAnimation()
 				self.Critical:setAlpha( 0 )
 				self.clipFinished( Critical, {} )
@@ -1168,6 +1190,7 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 			end,
 			Critical = function ()
 				self:setupElementClipCounter( 17 )
+
 				local PanelFrame2 = function ( Panel, event )
 					if not event.interrupted then
 						Panel:beginAnimation( "keyframe", 860, false, false, CoD.TweenType.Linear )
@@ -1917,6 +1940,7 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 			end,
 			Serious = function ()
 				self:setupElementClipCounter( 17 )
+
 				local PanelFrame2 = function ( Panel, event )
 					if not event.interrupted then
 						Panel:beginAnimation( "keyframe", 939, false, false, CoD.TweenType.Linear )
@@ -2724,9 +2748,11 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 		Stable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 1 )
 				self.clipFinished( Panel, {} )
+
 				LineR:completeAnimation()
 				self.LineR:setLeftRight( true, false, 57, 126.33 )
 				self.LineR:setTopBottom( true, false, 37, 127.67 )
@@ -2735,6 +2761,7 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				self.LineR:setZRot( 0 )
 				self.LineR:setZoom( -4 )
 				self.clipFinished( LineR, {} )
+
 				LineL:completeAnimation()
 				self.LineL:setLeftRight( true, false, 24, 93.33 )
 				self.LineL:setTopBottom( true, false, 37, 127.67 )
@@ -2743,36 +2770,42 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				self.LineL:setZRot( 0 )
 				self.LineL:setZoom( -4 )
 				self.clipFinished( LineL, {} )
+
 				Pixel1:completeAnimation()
 				self.Pixel1:setLeftRight( true, false, 14.67, 25.34 )
 				self.Pixel1:setTopBottom( true, false, 18, 28.67 )
 				self.Pixel1:setAlpha( 1 )
 				self.Pixel1:setZoom( -2 )
 				self.clipFinished( Pixel1, {} )
+
 				Pixel2:completeAnimation()
 				self.Pixel2:setLeftRight( true, false, 126.67, 137.34 )
 				self.Pixel2:setTopBottom( true, false, 18, 28.67 )
 				self.Pixel2:setAlpha( 1 )
 				self.Pixel2:setZoom( -2 )
 				self.clipFinished( Pixel2, {} )
+
 				Pixel3:completeAnimation()
 				self.Pixel3:setLeftRight( true, false, 6.67, 17.34 )
 				self.Pixel3:setTopBottom( true, false, 106, 116.67 )
 				self.Pixel3:setAlpha( 1 )
 				self.Pixel3:setZoom( -2 )
 				self.clipFinished( Pixel3, {} )
+
 				Pixel4:completeAnimation()
 				self.Pixel4:setLeftRight( true, false, 135.67, 146.34 )
 				self.Pixel4:setTopBottom( true, false, 106, 116.67 )
 				self.Pixel4:setAlpha( 1 )
 				self.Pixel4:setZoom( -2 )
 				self.clipFinished( Pixel4, {} )
+
 				Pixel5:completeAnimation()
 				self.Pixel5:setLeftRight( true, false, 70.67, 81.34 )
 				self.Pixel5:setTopBottom( true, false, 148, 158.67 )
 				self.Pixel5:setAlpha( 1 )
 				self.Pixel5:setZoom( -2 )
 				self.clipFinished( Pixel5, {} )
+
 				ArrowD:completeAnimation()
 				self.ArrowD:setLeftRight( true, false, 65, 86.33 )
 				self.ArrowD:setTopBottom( true, false, 128, 146.67 )
@@ -2781,6 +2814,7 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				self.ArrowD:setXRot( 0 )
 				self.ArrowD:setZoom( 0 )
 				self.clipFinished( ArrowD, {} )
+
 				ArrowT:completeAnimation()
 				self.ArrowT:setLeftRight( true, false, 67.67, 83.67 )
 				self.ArrowT:setTopBottom( true, false, 1, 11.67 )
@@ -2790,12 +2824,19 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				self.ArrowT:setYRot( 0 )
 				self.ArrowT:setZoom( 0 )
 				self.clipFinished( ArrowT, {} )
+
 				EKG:completeAnimation()
+
 				EKG.EKGCritical:completeAnimation()
+
 				EKG.EKGStable:completeAnimation()
+
 				EKG.EKG2:completeAnimation()
+
 				EKG.EKG3:completeAnimation()
+
 				EKG.EKGBlur:completeAnimation()
+
 				EKG.EKG4:completeAnimation()
 				self.EKG:setAlpha( 1 )
 				self.EKG:setZoom( 0 )
@@ -2813,7 +2854,9 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				self.EKG.EKG4:setRGB( 0.11, 0.15, 0.26 )
 				self.EKG.EKG4:setShaderVector( 1, 0.05, 0, 0, 0 )
 				self.clipFinished( EKG, {} )
+
 				TextTitle:completeAnimation()
+
 				TextTitle.TextLabel:completeAnimation()
 				self.TextTitle:setRGB( 1, 1, 1 )
 				self.TextTitle:setAlpha( 1 )
@@ -2907,7 +2950,9 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				end
 				
 				BPM:completeAnimation()
+
 				BPM.HeartContainer:completeAnimation()
+
 				BPM.TextLabel:completeAnimation()
 				self.BPM:setLeftRight( false, false, -47.67, -13 )
 				self.BPM:setTopBottom( false, true, -75, -40.33 )
@@ -3063,7 +3108,9 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				end
 				
 				BP:completeAnimation()
+
 				BP.BP1text:completeAnimation()
+
 				BP.BP2text:completeAnimation()
 				self.BP:setLeftRight( false, false, -8.33, 50 )
 				self.BP:setTopBottom( false, true, -65.67, -49.67 )
@@ -3072,19 +3119,24 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				self.BP.BP1text:setText( Engine.Localize( "115" ) )
 				self.BP.BP2text:setText( Engine.Localize( "82" ) )
 				BPFrame2( BP, {} )
+
 				Critical2:completeAnimation()
 				self.Critical2:setAlpha( 0 )
 				self.clipFinished( Critical2, {} )
+
 				Critical:completeAnimation()
 				self.Critical:setAlpha( 0 )
 				self.clipFinished( Critical, {} )
+
 				DangerMessage:completeAnimation()
 				self.DangerMessage:setAlpha( 0 )
 				self.clipFinished( DangerMessage, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 17 )
+
 				local PanelFrame2 = function ( Panel, event )
 					if not event.interrupted then
 						Panel:beginAnimation( "keyframe", 730, false, false, CoD.TweenType.Linear )
@@ -3789,6 +3841,7 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				BP.BP1text:setText( Engine.Localize( "115" ) )
 				BP.BP2text:setText( Engine.Localize( "82" ) )
 				BP:registerEventHandler( "transition_complete_keyframe", f192_local13 )
+
 				Critical2:completeAnimation()
 				self.Critical2:setAlpha( 0 )
 				self.clipFinished( Critical2, {} )
@@ -3827,9 +3880,11 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 		Serious = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 1 )
 				self.clipFinished( Panel, {} )
+
 				LineR:completeAnimation()
 				self.LineR:setLeftRight( true, false, 57, 126.33 )
 				self.LineR:setTopBottom( true, false, 37, 127.67 )
@@ -3838,6 +3893,7 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				self.LineR:setZRot( 0 )
 				self.LineR:setZoom( -4 )
 				self.clipFinished( LineR, {} )
+
 				LineL:completeAnimation()
 				self.LineL:setLeftRight( true, false, 24, 93.33 )
 				self.LineL:setTopBottom( true, false, 37, 127.67 )
@@ -3846,36 +3902,42 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				self.LineL:setZRot( 0 )
 				self.LineL:setZoom( -4 )
 				self.clipFinished( LineL, {} )
+
 				Pixel1:completeAnimation()
 				self.Pixel1:setLeftRight( true, false, 14.67, 25.34 )
 				self.Pixel1:setTopBottom( true, false, 18, 28.67 )
 				self.Pixel1:setAlpha( 1 )
 				self.Pixel1:setZoom( -2 )
 				self.clipFinished( Pixel1, {} )
+
 				Pixel2:completeAnimation()
 				self.Pixel2:setLeftRight( true, false, 126.67, 137.34 )
 				self.Pixel2:setTopBottom( true, false, 18, 28.67 )
 				self.Pixel2:setAlpha( 1 )
 				self.Pixel2:setZoom( -2 )
 				self.clipFinished( Pixel2, {} )
+
 				Pixel3:completeAnimation()
 				self.Pixel3:setLeftRight( true, false, 6.67, 17.34 )
 				self.Pixel3:setTopBottom( true, false, 106, 116.67 )
 				self.Pixel3:setAlpha( 1 )
 				self.Pixel3:setZoom( -2 )
 				self.clipFinished( Pixel3, {} )
+
 				Pixel4:completeAnimation()
 				self.Pixel4:setLeftRight( true, false, 135.67, 146.34 )
 				self.Pixel4:setTopBottom( true, false, 106, 116.67 )
 				self.Pixel4:setAlpha( 1 )
 				self.Pixel4:setZoom( -2 )
 				self.clipFinished( Pixel4, {} )
+
 				Pixel5:completeAnimation()
 				self.Pixel5:setLeftRight( true, false, 70.67, 81.34 )
 				self.Pixel5:setTopBottom( true, false, 148, 158.67 )
 				self.Pixel5:setAlpha( 1 )
 				self.Pixel5:setZoom( -2 )
 				self.clipFinished( Pixel5, {} )
+
 				ArrowD:completeAnimation()
 				self.ArrowD:setLeftRight( true, false, 65, 86.33 )
 				self.ArrowD:setTopBottom( true, false, 128, 146.67 )
@@ -3884,6 +3946,7 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				self.ArrowD:setXRot( 0 )
 				self.ArrowD:setZoom( 0 )
 				self.clipFinished( ArrowD, {} )
+
 				ArrowT:completeAnimation()
 				self.ArrowT:setLeftRight( true, false, 67.67, 83.67 )
 				self.ArrowT:setTopBottom( true, false, 1, 11.67 )
@@ -3893,12 +3956,19 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				self.ArrowT:setYRot( 0 )
 				self.ArrowT:setZoom( 0 )
 				self.clipFinished( ArrowT, {} )
+
 				EKG:completeAnimation()
+
 				EKG.EKGCritical:completeAnimation()
+
 				EKG.EKGStable:completeAnimation()
+
 				EKG.EKG2:completeAnimation()
+
 				EKG.EKG3:completeAnimation()
+
 				EKG.EKGBlur:completeAnimation()
+
 				EKG.EKG4:completeAnimation()
 				self.EKG:setAlpha( 1 )
 				self.EKG:setZoom( 0 )
@@ -3916,7 +3986,9 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				self.EKG.EKG4:setRGB( 0.11, 0.15, 0.26 )
 				self.EKG.EKG4:setShaderVector( 1, 0.05, 0, 0, 0 )
 				self.clipFinished( EKG, {} )
+
 				TextTitle:completeAnimation()
+
 				TextTitle.TextLabel:completeAnimation()
 				self.TextTitle:setRGB( 1, 1, 1 )
 				self.TextTitle:setAlpha( 1 )
@@ -4244,7 +4316,9 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				end
 				
 				BPM:completeAnimation()
+
 				BPM.HeartContainer:completeAnimation()
+
 				BPM.TextLabel:completeAnimation()
 				self.BPM:setLeftRight( false, false, -47.67, -13 )
 				self.BPM:setTopBottom( false, true, -75, -40.33 )
@@ -4404,7 +4478,9 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				end
 				
 				BP:completeAnimation()
+
 				BP.BP1text:completeAnimation()
+
 				BP.BP2text:completeAnimation()
 				self.BP:setLeftRight( false, false, -8.33, 50 )
 				self.BP:setTopBottom( false, true, -65.67, -49.67 )
@@ -4413,19 +4489,24 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				self.BP.BP1text:setText( Engine.Localize( "80" ) )
 				self.BP.BP2text:setText( Engine.Localize( "59" ) )
 				BPFrame2( BP, {} )
+
 				Critical2:completeAnimation()
 				self.Critical2:setAlpha( 0 )
 				self.clipFinished( Critical2, {} )
+
 				Critical:completeAnimation()
 				self.Critical:setAlpha( 0 )
 				self.clipFinished( Critical, {} )
+
 				DangerMessage:completeAnimation()
 				self.DangerMessage:setAlpha( 0 )
 				self.clipFinished( DangerMessage, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 17 )
+
 				local PanelFrame2 = function ( Panel, event )
 					if not event.interrupted then
 						Panel:beginAnimation( "keyframe", 800, false, false, CoD.TweenType.Linear )
@@ -5130,6 +5211,7 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				BP.BP1text:setText( Engine.Localize( "80" ) )
 				BP.BP2text:setText( Engine.Localize( "59" ) )
 				BP:registerEventHandler( "transition_complete_keyframe", f280_local13 )
+
 				Critical2:completeAnimation()
 				self.Critical2:setAlpha( 0 )
 				self.clipFinished( Critical2, {} )
@@ -5168,9 +5250,11 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 		Critical = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 1 )
 				self.clipFinished( Panel, {} )
+
 				LineR:completeAnimation()
 				self.LineR:setLeftRight( true, false, 47, 116.33 )
 				self.LineR:setTopBottom( true, false, 32, 122.67 )
@@ -5179,6 +5263,7 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				self.LineR:setZRot( -10 )
 				self.LineR:setZoom( -4 )
 				self.clipFinished( LineR, {} )
+
 				LineL:completeAnimation()
 				self.LineL:setLeftRight( true, false, 34, 103.33 )
 				self.LineL:setTopBottom( true, false, 32, 122.67 )
@@ -5187,6 +5272,7 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				self.LineL:setZRot( -10 )
 				self.LineL:setZoom( -4 )
 				self.clipFinished( LineL, {} )
+
 				Pixel1:completeAnimation()
 				self.Pixel1:setLeftRight( true, false, 14.67, 25.34 )
 				self.Pixel1:setTopBottom( true, false, 18, 28.67 )
@@ -5194,30 +5280,35 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				self.Pixel1:setZRot( 0 )
 				self.Pixel1:setZoom( -2 )
 				self.clipFinished( Pixel1, {} )
+
 				Pixel2:completeAnimation()
 				self.Pixel2:setLeftRight( true, false, 126.67, 137.34 )
 				self.Pixel2:setTopBottom( true, false, 18, 28.67 )
 				self.Pixel2:setAlpha( 1 )
 				self.Pixel2:setZoom( -2 )
 				self.clipFinished( Pixel2, {} )
+
 				Pixel3:completeAnimation()
 				self.Pixel3:setLeftRight( true, false, 6.67, 17.34 )
 				self.Pixel3:setTopBottom( true, false, 106, 116.67 )
 				self.Pixel3:setAlpha( 1 )
 				self.Pixel3:setZoom( -2 )
 				self.clipFinished( Pixel3, {} )
+
 				Pixel4:completeAnimation()
 				self.Pixel4:setLeftRight( true, false, 135.67, 146.34 )
 				self.Pixel4:setTopBottom( true, false, 106, 116.67 )
 				self.Pixel4:setAlpha( 1 )
 				self.Pixel4:setZoom( -2 )
 				self.clipFinished( Pixel4, {} )
+
 				Pixel5:completeAnimation()
 				self.Pixel5:setLeftRight( true, false, 70.67, 81.34 )
 				self.Pixel5:setTopBottom( true, false, 148, 158.67 )
 				self.Pixel5:setAlpha( 1 )
 				self.Pixel5:setZoom( -2 )
 				self.clipFinished( Pixel5, {} )
+
 				ArrowD:completeAnimation()
 				self.ArrowD:setLeftRight( true, false, 65, 86.33 )
 				self.ArrowD:setTopBottom( true, false, 128, 146.67 )
@@ -5225,6 +5316,7 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				self.ArrowD:setAlpha( 1 )
 				self.ArrowD:setZoom( 0 )
 				self.clipFinished( ArrowD, {} )
+
 				ArrowT:completeAnimation()
 				self.ArrowT:setLeftRight( true, false, 67.67, 83.67 )
 				self.ArrowT:setTopBottom( true, false, 26.67, 37.34 )
@@ -5349,11 +5441,17 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				end
 				
 				EKG:completeAnimation()
+
 				EKG.EKGCritical:completeAnimation()
+
 				EKG.EKGStable:completeAnimation()
+
 				EKG.EKG2:completeAnimation()
+
 				EKG.EKG3:completeAnimation()
+
 				EKG.EKGBlur:completeAnimation()
+
 				EKG.EKG4:completeAnimation()
 				self.EKG:setAlpha( 1 )
 				self.EKG:setZoom( 0 )
@@ -5371,6 +5469,7 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				self.EKG.EKG4:setRGB( 0.54, 0, 0 )
 				self.EKG.EKG4:setShaderVector( 1, 0.05, 0, 0, 0 )
 				EKGFrame2( EKG, {} )
+
 				TextTitle:completeAnimation()
 				self.TextTitle:setAlpha( 0 )
 				self.TextTitle:setZoom( 3 )
@@ -5607,7 +5706,9 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				end
 				
 				BPM:completeAnimation()
+
 				BPM.HeartContainer:completeAnimation()
+
 				BPM.TextLabel:completeAnimation()
 				self.BPM:setLeftRight( false, false, 18.33, 53 )
 				self.BPM:setTopBottom( false, true, -75, -40.33 )
@@ -5616,6 +5717,7 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				self.BPM.TextLabel:setRGB( 1, 1, 1 )
 				self.BPM.TextLabel:setText( Engine.Localize( "176" ) )
 				BPMFrame2( BPM, {} )
+
 				BP:completeAnimation()
 				self.BP:setAlpha( 0 )
 				self.clipFinished( BP, {} )
@@ -5807,16 +5909,19 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				self.Critical:setAlpha( 0 )
 				self.Critical:setZoom( 4 )
 				CriticalFrame2( Critical, {} )
+
 				DangerMessage:completeAnimation()
 				self.DangerMessage:setLeftRight( true, false, 21.33, 96 )
 				self.DangerMessage:setTopBottom( true, false, 90, 116.67 )
 				self.DangerMessage:setAlpha( 1 )
 				self.DangerMessage:setZoom( 2 )
 				self.clipFinished( DangerMessage, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 17 )
+
 				local PanelFrame2 = function ( Panel, event )
 					if not event.interrupted then
 						Panel:beginAnimation( "keyframe", 860, false, false, CoD.TweenType.Linear )
@@ -6419,6 +6524,7 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 				BP:completeAnimation()
 				self.BP:setAlpha( 0 )
 				BPFrame2( BP, {} )
+
 				Critical2:completeAnimation()
 				self.Critical2:setLeftRight( true, false, 18, 135.33 )
 				self.Critical2:setTopBottom( true, false, 52, 80 )
@@ -6512,6 +6618,7 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Stable",
@@ -6548,6 +6655,7 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 			modelName = "view_state"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 		element.EKG:close()

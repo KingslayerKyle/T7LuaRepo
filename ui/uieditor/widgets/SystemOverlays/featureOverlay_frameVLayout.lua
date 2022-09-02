@@ -20,6 +20,7 @@ CoD.featureOverlay_frameVLayout.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.featureOverlay_frameVLayout )
 	self.id = "featureOverlay_frameVLayout"
@@ -59,6 +60,7 @@ CoD.featureOverlay_frameVLayout.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.buttons:close()
 		element.frame:close()

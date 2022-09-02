@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CODE.CallingCards_code_ground_sun" )
 CoD.CallingCards_code_ground = InheritFrom( LUI.UIElement )
 CoD.CallingCards_code_ground.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_code_ground )
 	self.id = "CallingCards_code_ground"
@@ -94,6 +96,7 @@ CoD.CallingCards_code_ground.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				CallingCardscodegroundsun:completeAnimation()
 				self.CallingCardscodegroundsun:setAlpha( 1 )
 				self.clipFinished( CallingCardscodegroundsun, {} )
@@ -342,10 +345,12 @@ CoD.CallingCards_code_ground.new = function ( menu, controller )
 				self.heliright0:setTopBottom( true, false, 5.2, 20.3 )
 				self.heliright0:setAlpha( 0.7 )
 				heliright0Frame2( heliright0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardscodegroundsun:close()
 	end )

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_RoundWidget.ZmRndDigitWidget" )
 CoD.ZmRndDigitsInt = InheritFrom( LUI.UIElement )
 CoD.ZmRndDigitsInt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmRndDigitsInt )
 	self.id = "ZmRndDigitsInt"
@@ -272,16 +274,19 @@ CoD.ZmRndDigitsInt.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ZmRndDigitWidget:completeAnimation()
 				self.ZmRndDigitWidget:setLeftRight( true, false, 3, 59 )
 				self.ZmRndDigitWidget:setTopBottom( true, false, 0, 80 )
 				self.ZmRndDigitWidget:setAlpha( 0 )
 				self.clipFinished( ZmRndDigitWidget, {} )
+
 				ZmRndDigitWidget0:completeAnimation()
 				self.ZmRndDigitWidget0:setLeftRight( true, false, 46, 102 )
 				self.ZmRndDigitWidget0:setTopBottom( true, false, 0, 80 )
 				self.ZmRndDigitWidget0:setAlpha( 1 )
 				self.clipFinished( ZmRndDigitWidget0, {} )
+
 				ZmRndDigitWidget1:completeAnimation()
 				self.ZmRndDigitWidget1:setLeftRight( true, false, -40, 16 )
 				self.ZmRndDigitWidget1:setTopBottom( true, false, 0, 80 )
@@ -292,16 +297,19 @@ CoD.ZmRndDigitsInt.new = function ( menu, controller )
 		Triple = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ZmRndDigitWidget:completeAnimation()
 				self.ZmRndDigitWidget:setLeftRight( true, false, 43, 99 )
 				self.ZmRndDigitWidget:setTopBottom( true, false, 0, 80 )
 				self.ZmRndDigitWidget:setAlpha( 1 )
 				self.clipFinished( ZmRndDigitWidget, {} )
+
 				ZmRndDigitWidget0:completeAnimation()
 				self.ZmRndDigitWidget0:setLeftRight( true, false, 86, 142 )
 				self.ZmRndDigitWidget0:setTopBottom( true, false, 0, 80 )
 				self.ZmRndDigitWidget0:setAlpha( 1 )
 				self.clipFinished( ZmRndDigitWidget0, {} )
+
 				ZmRndDigitWidget1:completeAnimation()
 				self.ZmRndDigitWidget1:setLeftRight( true, false, 0, 56 )
 				self.ZmRndDigitWidget1:setTopBottom( true, false, 0, 80 )
@@ -312,16 +320,19 @@ CoD.ZmRndDigitsInt.new = function ( menu, controller )
 		Double = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ZmRndDigitWidget:completeAnimation()
 				self.ZmRndDigitWidget:setLeftRight( true, false, 3, 59 )
 				self.ZmRndDigitWidget:setTopBottom( true, false, 0, 80 )
 				self.ZmRndDigitWidget:setAlpha( 1 )
 				self.clipFinished( ZmRndDigitWidget, {} )
+
 				ZmRndDigitWidget0:completeAnimation()
 				self.ZmRndDigitWidget0:setLeftRight( true, false, 46, 102 )
 				self.ZmRndDigitWidget0:setTopBottom( true, false, 0, 80 )
 				self.ZmRndDigitWidget0:setAlpha( 1 )
 				self.clipFinished( ZmRndDigitWidget0, {} )
+
 				ZmRndDigitWidget1:completeAnimation()
 				self.ZmRndDigitWidget1:setLeftRight( true, false, -40, 16 )
 				self.ZmRndDigitWidget1:setTopBottom( true, false, 0, 80 )
@@ -330,6 +341,7 @@ CoD.ZmRndDigitsInt.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmRndDigitWidget:close()
 		element.ZmRndDigitWidget0:close()

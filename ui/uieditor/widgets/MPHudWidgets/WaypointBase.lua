@@ -209,9 +209,11 @@ end
 CoD.WaypointBase = InheritFrom( LUI.UIElement )
 CoD.WaypointBase.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WaypointBase )
 	self.id = "WaypointBase"

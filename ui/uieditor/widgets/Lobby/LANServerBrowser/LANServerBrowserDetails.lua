@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.LocalServerPlayerListRow" )
 CoD.LANServerBrowserDetails = InheritFrom( LUI.UIElement )
 CoD.LANServerBrowserDetails.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.LANServerBrowserDetails )
 	self.id = "LANServerBrowserDetails"
@@ -90,21 +92,27 @@ CoD.LANServerBrowserDetails.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				PlayerList:completeAnimation()
 				self.PlayerList:setAlpha( 1 )
 				self.clipFinished( PlayerList, {} )
+
 				PlayerListTitle:completeAnimation()
 				self.PlayerListTitle:setAlpha( 1 )
 				self.clipFinished( PlayerListTitle, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 1 )
 				self.clipFinished( MapImage, {} )
+
 				MapBackImage:completeAnimation()
 				self.MapBackImage:setAlpha( 0.5 )
 				self.clipFinished( MapBackImage, {} )
+
 				GameType:completeAnimation()
 				self.GameType:setAlpha( 1 )
 				self.clipFinished( GameType, {} )
+
 				MapName:completeAnimation()
 				self.MapName:setAlpha( 1 )
 				self.clipFinished( MapName, {} )
@@ -113,21 +121,27 @@ CoD.LANServerBrowserDetails.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				PlayerList:completeAnimation()
 				self.PlayerList:setAlpha( 0 )
 				self.clipFinished( PlayerList, {} )
+
 				PlayerListTitle:completeAnimation()
 				self.PlayerListTitle:setAlpha( 0 )
 				self.clipFinished( PlayerListTitle, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 0 )
 				self.clipFinished( MapImage, {} )
+
 				MapBackImage:completeAnimation()
 				self.MapBackImage:setAlpha( 0 )
 				self.clipFinished( MapBackImage, {} )
+
 				GameType:completeAnimation()
 				self.GameType:setAlpha( 0 )
 				self.clipFinished( GameType, {} )
+
 				MapName:completeAnimation()
 				self.MapName:setAlpha( 0 )
 				self.clipFinished( MapName, {} )
@@ -136,6 +150,7 @@ CoD.LANServerBrowserDetails.new = function ( menu, controller )
 		SixAndUp = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				MapBackImage:completeAnimation()
 				self.MapBackImage:setAlpha( 0.5 )
 				self.clipFinished( MapBackImage, {} )
@@ -150,6 +165,7 @@ CoD.LANServerBrowserDetails.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PlayerList:close()
 		element.MapImage:close()

@@ -18,6 +18,7 @@ CoD.GroupsSummaryStatus.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsSummaryStatus )
 	self.id = "GroupsSummaryStatus"
@@ -58,9 +59,11 @@ CoD.GroupsSummaryStatus.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				GroupPrivacy:completeAnimation()
 				self.GroupPrivacy:setAlpha( 1 )
 				self.clipFinished( GroupPrivacy, {} )
+
 				GroupCreateInfo:completeAnimation()
 				self.GroupCreateInfo:setAlpha( 1 )
 				self.clipFinished( GroupCreateInfo, {} )
@@ -69,12 +72,14 @@ CoD.GroupsSummaryStatus.new = function ( menu, controller )
 		NoGroupSelected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				GroupCreateInfo:completeAnimation()
 				self.GroupCreateInfo:setAlpha( 0 )
 				self.clipFinished( GroupCreateInfo, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoGroupSelected",
@@ -91,6 +96,7 @@ CoD.GroupsSummaryStatus.new = function ( menu, controller )
 			modelName = "groupId"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GroupPrivacy:close()
 		element.GroupCreateInfo:close()

@@ -20,9 +20,11 @@ end
 CoD.MOTD_Footer = InheritFrom( LUI.UIElement )
 CoD.MOTD_Footer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MOTD_Footer )
 	self.id = "MOTD_Footer"
@@ -140,12 +142,15 @@ CoD.MOTD_Footer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				label:completeAnimation()
 				self.label:setAlpha( 1 )
 				self.clipFinished( label, {} )
+
 				ActionImage:completeAnimation()
 				self.ActionImage:setAlpha( 1 )
 				self.clipFinished( ActionImage, {} )
+
 				actionButton:completeAnimation()
 				self.actionButton:setAlpha( 0 )
 				self.clipFinished( actionButton, {} )
@@ -154,18 +159,22 @@ CoD.MOTD_Footer.new = function ( menu, controller )
 		KBMouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				label:completeAnimation()
 				self.label:setAlpha( 0 )
 				self.clipFinished( label, {} )
+
 				ActionImage:completeAnimation()
 				self.ActionImage:setAlpha( 0 )
 				self.clipFinished( ActionImage, {} )
+
 				actionButton:completeAnimation()
 				self.actionButton:setAlpha( 1 )
 				self.clipFinished( actionButton, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "KBMouse",
@@ -192,6 +201,7 @@ CoD.MOTD_Footer.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LobbyMemberBackingMask1:close()
 		element.MOTDFooterImageContainer:close()

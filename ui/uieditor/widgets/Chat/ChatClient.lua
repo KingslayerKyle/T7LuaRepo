@@ -11,9 +11,11 @@ end
 CoD.ChatClient = InheritFrom( LUI.UIElement )
 CoD.ChatClient.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChatClient )
 	self.id = "ChatClient"
@@ -70,6 +72,7 @@ CoD.ChatClient.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ChatEntriesList:close()
 		element.ChatClientInput:close()

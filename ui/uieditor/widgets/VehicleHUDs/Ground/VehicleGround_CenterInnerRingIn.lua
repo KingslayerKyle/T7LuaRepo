@@ -4,9 +4,11 @@
 CoD.VehicleGround_CenterInnerRingIn = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_CenterInnerRingIn.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VehicleGround_CenterInnerRingIn )
 	self.id = "VehicleGround_CenterInnerRingIn"

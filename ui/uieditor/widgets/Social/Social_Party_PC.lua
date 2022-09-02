@@ -195,9 +195,11 @@ end
 CoD.Social_Party_PC = InheritFrom( LUI.UIElement )
 CoD.Social_Party_PC.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_Party_PC )
 	self.id = "Social_Party_PC"
@@ -284,9 +286,11 @@ CoD.Social_Party_PC.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				DropdownList:completeAnimation()
 				self.DropdownList:setAlpha( 1 )
 				self.clipFinished( DropdownList, {} )
+
 				players:completeAnimation()
 				self.players:setAlpha( 1 )
 				self.clipFinished( players, {} )
@@ -295,9 +299,11 @@ CoD.Social_Party_PC.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				DropdownList:completeAnimation()
 				self.DropdownList:setAlpha( 0 )
 				self.clipFinished( DropdownList, {} )
+
 				players:completeAnimation()
 				self.players:setAlpha( 0 )
 				self.clipFinished( players, {} )
@@ -305,6 +311,7 @@ CoD.Social_Party_PC.new = function ( menu, controller )
 		}
 	}
 	CoD.Menu.AddNavigationHandler( menu, self, controller )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "close", function ( element )
 		UpdateGamerprofile( self, element, controller )
 	end )
@@ -317,6 +324,7 @@ CoD.Social_Party_PC.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.DropdownList:close()
 		element.players:close()

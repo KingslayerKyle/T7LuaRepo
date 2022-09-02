@@ -4,9 +4,11 @@
 CoD.CommsWidget_CharacterImages = InheritFrom( LUI.UIElement )
 CoD.CommsWidget_CharacterImages.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CommsWidget_CharacterImages )
 	self.id = "CommsWidget_CharacterImages"
@@ -51,6 +53,7 @@ CoD.CommsWidget_CharacterImages.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local ImgCharRachelFrame2 = function ( ImgCharRachel, event )
 					local ImgCharRachelFrame3 = function ( ImgCharRachel, event )
 						if not event.interrupted then
@@ -79,16 +82,19 @@ CoD.CommsWidget_CharacterImages.new = function ( menu, controller )
 				self.ImgCharRachel:setAlpha( 0.7 )
 				self.ImgCharRachel:setYRot( -15.2 )
 				ImgCharRachelFrame2( ImgCharRachel, {} )
+
 				ImgCharRachel0:completeAnimation()
 				self.ImgCharRachel0:setRGB( 0.51, 0.75, 1 )
 				self.ImgCharRachel0:setAlpha( 0.2 )
 				self.clipFinished( ImgCharRachel0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		CharRachel = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local ImgCharRachelFrame2 = function ( ImgCharRachel, event )
 					if not event.interrupted then
 						ImgCharRachel:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )
@@ -106,6 +112,7 @@ CoD.CommsWidget_CharacterImages.new = function ( menu, controller )
 				self.ImgCharRachel:setAlpha( 0.7 )
 				self.ImgCharRachel:setYRot( -20 )
 				ImgCharRachelFrame2( ImgCharRachel, {} )
+
 				ImgCharRachel0:completeAnimation()
 				self.ImgCharRachel0:setAlpha( 0.2 )
 				self.clipFinished( ImgCharRachel0, {} )
@@ -114,15 +121,18 @@ CoD.CommsWidget_CharacterImages.new = function ( menu, controller )
 		CharEgypt = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ImgCharRachel:completeAnimation()
 				self.ImgCharRachel:setAlpha( 0 )
 				self.clipFinished( ImgCharRachel, {} )
+
 				ImgCharRachel0:completeAnimation()
 				self.ImgCharRachel0:setAlpha( 0 )
 				self.clipFinished( ImgCharRachel0, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ImgCharRachel:close()
 		element.ImgCharRachel0:close()

@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.dart.vhud_dart_IrisOuterThinInternal" 
 CoD.vhud_dart_Iris = InheritFrom( LUI.UIElement )
 CoD.vhud_dart_Iris.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_dart_Iris )
 	self.id = "vhud_dart_Iris"

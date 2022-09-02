@@ -4,9 +4,11 @@
 CoD.BM_SaleActive = InheritFrom( LUI.UIElement )
 CoD.BM_SaleActive.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_SaleActive )
 	self.id = "BM_SaleActive"
@@ -59,15 +61,19 @@ CoD.BM_SaleActive.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Label0:completeAnimation()
 				self.Label0:setAlpha( 0 )
 				self.clipFinished( Label0, {} )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				codpointText:completeAnimation()
 				self.codpointText:setAlpha( 0 )
 				self.clipFinished( codpointText, {} )
+
 				codpointIcon:completeAnimation()
 				self.codpointIcon:setAlpha( 0 )
 				self.clipFinished( codpointIcon, {} )
@@ -76,21 +82,26 @@ CoD.BM_SaleActive.new = function ( menu, controller )
 		SaleOn = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Label0:completeAnimation()
 				self.Label0:setAlpha( 1 )
 				self.clipFinished( Label0, {} )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
+
 				codpointText:completeAnimation()
 				self.codpointText:setAlpha( 1 )
 				self.clipFinished( codpointText, {} )
+
 				codpointIcon:completeAnimation()
 				self.codpointIcon:setAlpha( 1 )
 				self.clipFinished( codpointIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "SaleOn",
@@ -99,6 +110,7 @@ CoD.BM_SaleActive.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Label0:close()
 		element.codpointText:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_FX.ZmFx_Spark1Img" )
 CoD.ZmAmmo_DpadIconPistolFactory = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_DpadIconPistolFactory.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_DpadIconPistolFactory )
 	self.id = "ZmAmmo_DpadIconPistolFactory"
@@ -67,18 +69,23 @@ CoD.ZmAmmo_DpadIconPistolFactory.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				DpadIconSword:completeAnimation()
 				self.DpadIconSword:setAlpha( 0 )
 				self.clipFinished( DpadIconSword, {} )
+
 				ZmFxSpark1Img0:completeAnimation()
 				self.ZmFxSpark1Img0:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark1Img0, {} )
+
 				DpadIconSwordReady:completeAnimation()
 				self.DpadIconSwordReady:setAlpha( 0 )
 				self.clipFinished( DpadIconSwordReady, {} )
+
 				DpadIconSwordReady0:completeAnimation()
 				self.DpadIconSwordReady0:setAlpha( 0 )
 				self.clipFinished( DpadIconSwordReady0, {} )
+
 				Lightning:completeAnimation()
 				self.Lightning:setAlpha( 0 )
 				self.clipFinished( Lightning, {} )
@@ -87,6 +94,7 @@ CoD.ZmAmmo_DpadIconPistolFactory.new = function ( menu, controller )
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local ZmFxSpark1Img0Frame2 = function ( ZmFxSpark1Img0, event )
 					local ZmFxSpark1Img0Frame3 = function ( ZmFxSpark1Img0, event )
 						local ZmFxSpark1Img0Frame4 = function ( ZmFxSpark1Img0, event )
@@ -239,9 +247,11 @@ CoD.ZmAmmo_DpadIconPistolFactory.new = function ( menu, controller )
 			end,
 			InUse = function ()
 				self:setupElementClipCounter( 2 )
+
 				ZmFxSpark1Img0:completeAnimation()
 				self.ZmFxSpark1Img0:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark1Img0, {} )
+
 				DpadIconSwordReady:completeAnimation()
 				self.DpadIconSwordReady:setAlpha( 1 )
 				self.clipFinished( DpadIconSwordReady, {} )
@@ -250,16 +260,20 @@ CoD.ZmAmmo_DpadIconPistolFactory.new = function ( menu, controller )
 		Charge = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ZmFxSpark1Img0:completeAnimation()
 				self.ZmFxSpark1Img0:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark1Img0, {} )
+
 				DpadIconSwordReady:completeAnimation()
 				self.DpadIconSwordReady:setRGB( 1, 1, 1 )
 				self.DpadIconSwordReady:setAlpha( 0.3 )
 				self.clipFinished( DpadIconSwordReady, {} )
+
 				DpadIconSwordReady0:completeAnimation()
 				self.DpadIconSwordReady0:setAlpha( 0 )
 				self.clipFinished( DpadIconSwordReady0, {} )
+
 				Lightning:completeAnimation()
 				self.Lightning:setAlpha( 0 )
 				self.clipFinished( Lightning, {} )
@@ -268,16 +282,20 @@ CoD.ZmAmmo_DpadIconPistolFactory.new = function ( menu, controller )
 		InUse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ZmFxSpark1Img0:completeAnimation()
 				self.ZmFxSpark1Img0:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark1Img0, {} )
+
 				DpadIconSwordReady:completeAnimation()
 				self.DpadIconSwordReady:setRGB( 1, 1, 1 )
 				self.DpadIconSwordReady:setAlpha( 1 )
 				self.clipFinished( DpadIconSwordReady, {} )
+
 				DpadIconSwordReady0:completeAnimation()
 				self.DpadIconSwordReady0:setAlpha( 0 )
 				self.clipFinished( DpadIconSwordReady0, {} )
+
 				Lightning:completeAnimation()
 				self.Lightning:setAlpha( 0 )
 				self.clipFinished( Lightning, {} )
@@ -286,15 +304,19 @@ CoD.ZmAmmo_DpadIconPistolFactory.new = function ( menu, controller )
 		Unavailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				DpadIconSword:completeAnimation()
 				self.DpadIconSword:setAlpha( 1 )
 				self.clipFinished( DpadIconSword, {} )
+
 				DpadIconSwordReady:completeAnimation()
 				self.DpadIconSwordReady:setAlpha( 0 )
 				self.clipFinished( DpadIconSwordReady, {} )
+
 				DpadIconSwordReady0:completeAnimation()
 				self.DpadIconSwordReady0:setAlpha( 0 )
 				self.clipFinished( DpadIconSwordReady0, {} )
+
 				Lightning:completeAnimation()
 				self.Lightning:setAlpha( 0 )
 				self.clipFinished( Lightning, {} )
@@ -303,6 +325,7 @@ CoD.ZmAmmo_DpadIconPistolFactory.new = function ( menu, controller )
 		ElectricReady = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local ZmFxSpark1Img0Frame2 = function ( ZmFxSpark1Img0, event )
 					local ZmFxSpark1Img0Frame3 = function ( ZmFxSpark1Img0, event )
 						local ZmFxSpark1Img0Frame4 = function ( ZmFxSpark1Img0, event )
@@ -342,6 +365,7 @@ CoD.ZmAmmo_DpadIconPistolFactory.new = function ( menu, controller )
 				self.ZmFxSpark1Img0:setRGB( 0, 0.8, 1 )
 				self.ZmFxSpark1Img0:setAlpha( 0.82 )
 				ZmFxSpark1Img0Frame2( ZmFxSpark1Img0, {} )
+
 				DpadIconSwordReady:completeAnimation()
 				self.DpadIconSwordReady:setRGB( 1, 1, 1 )
 				self.DpadIconSwordReady:setAlpha( 0 )
@@ -422,12 +446,15 @@ CoD.ZmAmmo_DpadIconPistolFactory.new = function ( menu, controller )
 			end,
 			InUse = function ()
 				self:setupElementClipCounter( 3 )
+
 				ZmFxSpark1Img0:completeAnimation()
 				self.ZmFxSpark1Img0:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark1Img0, {} )
+
 				DpadIconSwordReady:completeAnimation()
 				self.DpadIconSwordReady:setAlpha( 0 )
 				self.clipFinished( DpadIconSwordReady, {} )
+
 				DpadIconSwordReady0:completeAnimation()
 				self.DpadIconSwordReady0:setAlpha( 1 )
 				self.clipFinished( DpadIconSwordReady0, {} )
@@ -436,17 +463,21 @@ CoD.ZmAmmo_DpadIconPistolFactory.new = function ( menu, controller )
 		ElectricCharge = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ZmFxSpark1Img0:completeAnimation()
 				self.ZmFxSpark1Img0:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark1Img0, {} )
+
 				DpadIconSwordReady:completeAnimation()
 				self.DpadIconSwordReady:setRGB( 1, 0.46, 0 )
 				self.DpadIconSwordReady:setAlpha( 1 )
 				self.clipFinished( DpadIconSwordReady, {} )
+
 				DpadIconSwordReady0:completeAnimation()
 				self.DpadIconSwordReady0:setRGB( 0, 0.97, 1 )
 				self.DpadIconSwordReady0:setAlpha( 1 )
 				self.clipFinished( DpadIconSwordReady0, {} )
+
 				Lightning:completeAnimation()
 				self.Lightning:setAlpha( 0 )
 				self.clipFinished( Lightning, {} )
@@ -455,23 +486,28 @@ CoD.ZmAmmo_DpadIconPistolFactory.new = function ( menu, controller )
 		ElectricInUse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ZmFxSpark1Img0:completeAnimation()
 				self.ZmFxSpark1Img0:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark1Img0, {} )
+
 				DpadIconSwordReady:completeAnimation()
 				self.DpadIconSwordReady:setRGB( 1, 1, 1 )
 				self.DpadIconSwordReady:setAlpha( 0 )
 				self.clipFinished( DpadIconSwordReady, {} )
+
 				DpadIconSwordReady0:completeAnimation()
 				self.DpadIconSwordReady0:setRGB( 1, 1, 1 )
 				self.DpadIconSwordReady0:setAlpha( 1 )
 				self.clipFinished( DpadIconSwordReady0, {} )
+
 				Lightning:completeAnimation()
 				self.Lightning:setAlpha( 0 )
 				self.clipFinished( Lightning, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Ready",
@@ -524,6 +560,7 @@ CoD.ZmAmmo_DpadIconPistolFactory.new = function ( menu, controller )
 			modelName = "zmhud.swordState"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmFxSpark1Img0:close()
 	end )

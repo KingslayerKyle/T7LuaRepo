@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FocusBarContainer" )
 CoD.DemoSideBarButton = InheritFrom( LUI.UIElement )
 CoD.DemoSideBarButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DemoSideBarButton )
 	self.id = "DemoSideBarButton"
@@ -72,15 +74,18 @@ CoD.DemoSideBarButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local BorderFrame2 = function ( Border, event )
 					if not event.interrupted then
 						Border:beginAnimation( "keyframe", 29, false, false, CoD.TweenType.Linear )
@@ -233,18 +238,22 @@ CoD.DemoSideBarButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 1 )
 				self.clipFinished( Border, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local BorderFrame2 = function ( Border, event )
 					if not event.interrupted then
 						Border:beginAnimation( "keyframe", 29, false, false, CoD.TweenType.Linear )
@@ -401,6 +410,7 @@ CoD.DemoSideBarButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Border:close()
 		element.FocusBarT:close()

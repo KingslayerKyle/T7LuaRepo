@@ -32,9 +32,11 @@ end
 CoD.CodCasterPlayerListRowWidget = InheritFrom( LUI.UIElement )
 CoD.CodCasterPlayerListRowWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CodCasterPlayerListRowWidget )
 	self.id = "CodCasterPlayerListRowWidget"
@@ -265,105 +267,138 @@ CoD.CodCasterPlayerListRowWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				BlackBar:completeAnimation()
 				self.BlackBar:setAlpha( 0.7 )
 				self.clipFinished( BlackBar, {} )
+
 				highlight:completeAnimation()
 				self.highlight:setAlpha( 0 )
 				self.clipFinished( highlight, {} )
+
 				focus:completeAnimation()
 				self.focus:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.focus:setAlpha( 0 )
 				self.clipFinished( focus, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setAlpha( 0 )
 				self.clipFinished( arrow, {} )
+
 				WhiteFlashBar:completeAnimation()
 				self.WhiteFlashBar:setAlpha( 0 )
 				self.clipFinished( WhiteFlashBar, {} )
+
 				Gamertag:completeAnimation()
 				self.Gamertag:setRGB( 1, 1, 1 )
 				self.Gamertag:setAlpha( 0.6 )
 				self.clipFinished( Gamertag, {} )
+
 				ScoreColumn1:completeAnimation()
+
 				ScoreColumn1.Text:completeAnimation()
 				self.ScoreColumn1:setRGB( 1, 1, 1 )
 				self.ScoreColumn1.Text:setRGB( 1, 1, 1 )
 				self.clipFinished( ScoreColumn1, {} )
+
 				ScoreColumn2:completeAnimation()
+
 				ScoreColumn2.Text:completeAnimation()
 				self.ScoreColumn2:setRGB( 1, 1, 1 )
 				self.ScoreColumn2.Text:setRGB( 1, 1, 1 )
 				self.clipFinished( ScoreColumn2, {} )
+
 				ScoreColumn3:completeAnimation()
+
 				ScoreColumn3.Text:completeAnimation()
 				self.ScoreColumn3:setRGB( 1, 1, 1 )
 				self.ScoreColumn3.Text:setRGB( 1, 1, 1 )
 				self.clipFinished( ScoreColumn3, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				Score01:completeAnimation()
 				self.Score01:setAlpha( 0.6 )
 				self.clipFinished( Score01, {} )
+
 				Score010:completeAnimation()
 				self.Score010:setAlpha( 0.6 )
 				self.clipFinished( Score010, {} )
+
 				Score0100:completeAnimation()
 				self.Score0100:setAlpha( 0.6 )
 				self.clipFinished( Score0100, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 13 )
+
 				highlight:completeAnimation()
 				self.highlight:setAlpha( 0 )
 				self.clipFinished( highlight, {} )
+
 				focus:completeAnimation()
 				self.focus:setRGB( 1, 1, 1 )
 				self.focus:setAlpha( 0.7 )
 				self.clipFinished( focus, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setLeftRight( true, false, -1, 8 )
 				self.arrow:setTopBottom( true, false, -4, 23 )
 				self.arrow:setAlpha( 1 )
 				self.clipFinished( arrow, {} )
+
 				WhiteFlashBar:completeAnimation()
 				self.WhiteFlashBar:setAlpha( 0.05 )
 				self.clipFinished( WhiteFlashBar, {} )
+
 				Gamertag:completeAnimation()
 				self.Gamertag:setRGB( 1, 1, 1 )
 				self.Gamertag:setAlpha( 1 )
 				self.clipFinished( Gamertag, {} )
+
 				ScoreColumn1:completeAnimation()
+
 				ScoreColumn1.Text:completeAnimation()
 				self.ScoreColumn1:setRGB( 1, 1, 1 )
 				self.ScoreColumn1.Text:setRGB( 1, 1, 1 )
 				self.clipFinished( ScoreColumn1, {} )
+
 				ScoreColumn2:completeAnimation()
+
 				ScoreColumn2.Text:completeAnimation()
 				self.ScoreColumn2:setRGB( 1, 1, 1 )
 				self.ScoreColumn2.Text:setRGB( 1, 1, 1 )
 				self.clipFinished( ScoreColumn2, {} )
+
 				ScoreColumn3:completeAnimation()
+
 				ScoreColumn3.Text:completeAnimation()
 				self.ScoreColumn3:setRGB( 1, 1, 1 )
 				self.ScoreColumn3.Text:setRGB( 1, 1, 1 )
 				self.clipFinished( ScoreColumn3, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				Score01:completeAnimation()
 				self.Score01:setAlpha( 1 )
 				self.clipFinished( Score01, {} )
+
 				Score010:completeAnimation()
 				self.Score010:setAlpha( 1 )
 				self.clipFinished( Score010, {} )
+
 				Score0100:completeAnimation()
 				self.Score0100:setAlpha( 1 )
 				self.clipFinished( Score0100, {} )
@@ -372,53 +407,68 @@ CoD.CodCasterPlayerListRowWidget.new = function ( menu, controller )
 		IsSelf = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				BlackBar:completeAnimation()
 				self.BlackBar:setAlpha( 0.7 )
 				self.clipFinished( BlackBar, {} )
+
 				highlight:completeAnimation()
 				self.highlight:setAlpha( 1 )
 				self.clipFinished( highlight, {} )
+
 				focus:completeAnimation()
 				self.focus:setAlpha( 0 )
 				self.clipFinished( focus, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setAlpha( 1 )
 				self.clipFinished( arrow, {} )
+
 				WhiteFlashBar:completeAnimation()
 				self.WhiteFlashBar:setAlpha( 0.05 )
 				self.clipFinished( WhiteFlashBar, {} )
+
 				Gamertag:completeAnimation()
 				self.Gamertag:setRGB( 1, 0.84, 0 )
 				self.Gamertag:setAlpha( 1 )
 				self.clipFinished( Gamertag, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				Score01:completeAnimation()
 				self.Score01:setAlpha( 0.6 )
 				self.clipFinished( Score01, {} )
+
 				Score010:completeAnimation()
 				self.Score010:setAlpha( 0.6 )
 				self.clipFinished( Score010, {} )
+
 				Score0100:completeAnimation()
 				self.Score0100:setAlpha( 0.6 )
 				self.clipFinished( Score0100, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 12 )
+
 				BlackBar:completeAnimation()
 				self.BlackBar:setAlpha( 0.8 )
 				self.clipFinished( BlackBar, {} )
+
 				highlight:completeAnimation()
 				self.highlight:setAlpha( 1 )
 				self.clipFinished( highlight, {} )
+
 				focus:completeAnimation()
 				self.focus:setRGB( 1, 1, 1 )
 				self.focus:setAlpha( 0.7 )
 				self.clipFinished( focus, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setLeftRight( true, false, -1, 8 )
 				self.arrow:setTopBottom( true, false, -4, 23 )
@@ -450,22 +500,28 @@ CoD.CodCasterPlayerListRowWidget.new = function ( menu, controller )
 				WhiteFlashBar:completeAnimation()
 				self.WhiteFlashBar:setAlpha( 0.05 )
 				WhiteFlashBarFrame2( WhiteFlashBar, {} )
+
 				Gamertag:completeAnimation()
 				self.Gamertag:setRGB( 1, 1, 1 )
 				self.Gamertag:setAlpha( 1 )
 				self.clipFinished( Gamertag, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				Score01:completeAnimation()
 				self.Score01:setAlpha( 1 )
 				self.clipFinished( Score01, {} )
+
 				Score010:completeAnimation()
 				self.Score010:setAlpha( 1 )
 				self.clipFinished( Score010, {} )
+
 				Score0100:completeAnimation()
 				self.Score0100:setAlpha( 1 )
 				self.clipFinished( Score0100, {} )
@@ -498,6 +554,7 @@ CoD.CodCasterPlayerListRowWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "IsSelf",
@@ -538,6 +595,7 @@ CoD.CodCasterPlayerListRowWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.highlight:close()
 		element.ScoreColumn1:close()

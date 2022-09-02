@@ -4,9 +4,11 @@
 CoD.NewBreadcrumb = InheritFrom( LUI.UIElement )
 CoD.NewBreadcrumb.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.NewBreadcrumb )
 	self.id = "NewBreadcrumb"
@@ -25,6 +27,7 @@ CoD.NewBreadcrumb.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				newBreadcrumb:completeAnimation()
 				self.newBreadcrumb:setAlpha( 0 )
 				self.clipFinished( newBreadcrumb, {} )
@@ -33,12 +36,14 @@ CoD.NewBreadcrumb.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				newBreadcrumb:completeAnimation()
 				self.newBreadcrumb:setAlpha( 1 )
 				self.clipFinished( newBreadcrumb, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

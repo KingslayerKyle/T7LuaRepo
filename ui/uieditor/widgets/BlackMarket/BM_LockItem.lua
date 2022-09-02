@@ -4,9 +4,11 @@
 CoD.BM_LockItem = InheritFrom( LUI.UIElement )
 CoD.BM_LockItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_LockItem )
 	self.id = "BM_LockItem"
@@ -62,18 +64,23 @@ CoD.BM_LockItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				desc:completeAnimation()
 				self.desc:setAlpha( 0 )
 				self.clipFinished( desc, {} )
+
 				title:completeAnimation()
 				self.title:setAlpha( 0 )
 				self.clipFinished( title, {} )
+
 				lockedIcon0:completeAnimation()
 				self.lockedIcon0:setAlpha( 0 )
 				self.clipFinished( lockedIcon0, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
@@ -82,18 +89,23 @@ CoD.BM_LockItem.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0.55 )
 				self.clipFinished( black, {} )
+
 				desc:completeAnimation()
 				self.desc:setAlpha( 1 )
 				self.clipFinished( desc, {} )
+
 				title:completeAnimation()
 				self.title:setAlpha( 1 )
 				self.clipFinished( title, {} )
+
 				lockedIcon0:completeAnimation()
 				self.lockedIcon0:setAlpha( 1 )
 				self.clipFinished( lockedIcon0, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0.47 )
 				self.clipFinished( lockedIcon, {} )

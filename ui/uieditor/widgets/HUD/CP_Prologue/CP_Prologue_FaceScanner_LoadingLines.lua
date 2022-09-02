@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.CP_DniWipe.DniWipe_TopLineBlink" )
 CoD.CP_Prologue_FaceScanner_LoadingLines = InheritFrom( LUI.UIElement )
 CoD.CP_Prologue_FaceScanner_LoadingLines.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CP_Prologue_FaceScanner_LoadingLines )
 	self.id = "CP_Prologue_FaceScanner_LoadingLines"
@@ -37,6 +39,7 @@ CoD.CP_Prologue_FaceScanner_LoadingLines.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local DniWipeTopLineBlinkFrame2 = function ( DniWipeTopLineBlink, event )
 					local DniWipeTopLineBlinkFrame3 = function ( DniWipeTopLineBlink, event )
 						local DniWipeTopLineBlinkFrame4 = function ( DniWipeTopLineBlink, event )
@@ -200,30 +203,36 @@ CoD.CP_Prologue_FaceScanner_LoadingLines.new = function ( menu, controller )
 				self.DniWipeTopLineBlink0:setTopBottom( false, false, -7.5, 7.5 )
 				self.DniWipeTopLineBlink0:setAlpha( 1 )
 				DniWipeTopLineBlink0Frame2( DniWipeTopLineBlink0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Scanning = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		PossibleMatch = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Found = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Failed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.DniWipeTopLineBlink:close()
 		element.DniWipeTopLineBlink0:close()

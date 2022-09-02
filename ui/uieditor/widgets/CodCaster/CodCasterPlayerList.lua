@@ -30,6 +30,7 @@ CoD.CodCasterPlayerList.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterPlayerList )
 	self.id = "CodCasterPlayerList"
@@ -349,15 +350,19 @@ CoD.CodCasterPlayerList.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Team1Header:completeAnimation()
 				self.Team1Header:setAlpha( 0 )
 				self.clipFinished( Team1Header, {} )
+
 				Team1:completeAnimation()
 				self.Team1:setAlpha( 0 )
 				self.clipFinished( Team1, {} )
+
 				Team2Header:completeAnimation()
 				self.Team2Header:setAlpha( 0 )
 				self.clipFinished( Team2Header, {} )
+
 				Team2:completeAnimation()
 				self.Team2:setAlpha( 0 )
 				self.clipFinished( Team2, {} )
@@ -366,18 +371,23 @@ CoD.CodCasterPlayerList.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Team1Header:completeAnimation()
 				self.Team1Header:setAlpha( 1 )
 				self.clipFinished( Team1Header, {} )
+
 				Team1:completeAnimation()
 				self.Team1:setAlpha( 1 )
 				self.clipFinished( Team1, {} )
+
 				spacer:completeAnimation()
 				self.spacer:setAlpha( 0 )
 				self.clipFinished( spacer, {} )
+
 				Team2Header:completeAnimation()
 				self.Team2Header:setAlpha( 1 )
 				self.clipFinished( Team2Header, {} )
+
 				Team2:completeAnimation()
 				self.Team2:setAlpha( 1 )
 				self.clipFinished( Team2, {} )
@@ -385,6 +395,7 @@ CoD.CodCasterPlayerList.new = function ( menu, controller )
 		}
 	}
 	CoD.Menu.AddNavigationHandler( menu, self, controller )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsElementInState( element, "DefaultState" ) then
 			DisableNavigation( self, "Team1" )
@@ -403,6 +414,7 @@ CoD.CodCasterPlayerList.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Team1Header:close()
 		element.Team1:close()

@@ -14,9 +14,11 @@ require( "ui.uieditor.widgets.Common.common_ButtonLabel_01" )
 CoD.Social_PlayersListButton = InheritFrom( LUI.UIElement )
 CoD.Social_PlayersListButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_PlayersListButton )
 	self.id = "Social_PlayersListButton"
@@ -253,9 +255,11 @@ CoD.Social_PlayersListButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local BoxButtonLrgIdleFrame2 = function ( BoxButtonLrgIdle, event )
 					if not event.interrupted then
 						BoxButtonLrgIdle:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -559,21 +563,26 @@ CoD.Social_PlayersListButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0 )
 				self.clipFinished( BlackTint, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local BoxButtonLrgIdleFrame2 = function ( BoxButtonLrgIdle, event )
 					if not event.interrupted then
 						BoxButtonLrgIdle:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -901,6 +910,7 @@ CoD.Social_PlayersListButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgIdle:close()
 		element.Socialbackground00:close()

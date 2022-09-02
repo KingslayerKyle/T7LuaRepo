@@ -12,9 +12,11 @@ require( "ui.uieditor.widgets.BubbleGumBuffs.GobbleGumCookbook_VialSaleActive" )
 CoD.GobbleGumCookbook_BuyDistillsListItem = InheritFrom( LUI.UIElement )
 CoD.GobbleGumCookbook_BuyDistillsListItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GobbleGumCookbook_BuyDistillsListItem )
 	self.id = "GobbleGumCookbook_BuyDistillsListItem"
@@ -250,42 +252,54 @@ CoD.GobbleGumCookbook_BuyDistillsListItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 1 )
 				self.clipFinished( Icon, {} )
+
 				FEFocusBarContainerTop:completeAnimation()
 				self.FEFocusBarContainerTop:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerTop, {} )
+
 				FEFocusBarContainerBottom:completeAnimation()
 				self.FEFocusBarContainerBottom:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerBottom, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 0.85 )
 				self.clipFinished( Text, {} )
+
 				MegaChewFactoryCODPointContainerSmall0:completeAnimation()
 				self.MegaChewFactoryCODPointContainerSmall0:setAlpha( 1 )
 				self.clipFinished( MegaChewFactoryCODPointContainerSmall0, {} )
+
 				codPointsSaleActive:completeAnimation()
 				self.codPointsSaleActive:setAlpha( 1 )
 				self.clipFinished( codPointsSaleActive, {} )
+
 				GobbleGumCookbookVialContainerSmall:completeAnimation()
 				self.GobbleGumCookbookVialContainerSmall:setAlpha( 1 )
 				self.clipFinished( GobbleGumCookbookVialContainerSmall, {} )
+
 				GobbleGumCookbookVialSaleActive:completeAnimation()
 				self.GobbleGumCookbookVialSaleActive:setAlpha( 1 )
 				self.clipFinished( GobbleGumCookbookVialSaleActive, {} )
+
 				FreeTextBox:completeAnimation()
 				self.FreeTextBox:setAlpha( 0 )
 				self.clipFinished( FreeTextBox, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 1 )
 				self.clipFinished( Icon, {} )
+
 				FEFocusBarContainerTop:completeAnimation()
 				self.FEFocusBarContainerTop:setAlpha( 1 )
 				self.clipFinished( FEFocusBarContainerTop, {} )
+
 				FEFocusBarContainerBottom:completeAnimation()
 				self.FEFocusBarContainerBottom:setAlpha( 1 )
 				self.clipFinished( FEFocusBarContainerBottom, {} )
@@ -300,6 +314,7 @@ CoD.GobbleGumCookbook_BuyDistillsListItem.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.cacButtonBoxLrgInactiveStroke0:close()
 		element.FEFocusBarContainerTop:close()

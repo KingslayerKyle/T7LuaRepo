@@ -4,9 +4,11 @@
 CoD.CP_Prologue_FaceScannerBlurLines = InheritFrom( LUI.UIElement )
 CoD.CP_Prologue_FaceScannerBlurLines.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CP_Prologue_FaceScannerBlurLines )
 	self.id = "CP_Prologue_FaceScannerBlurLines"
@@ -29,6 +31,7 @@ CoD.CP_Prologue_FaceScannerBlurLines.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local CenterReticleQuadLinesBlurFrame2 = function ( CenterReticleQuadLinesBlur, event )
 					local CenterReticleQuadLinesBlurFrame3 = function ( CenterReticleQuadLinesBlur, event )
 						local CenterReticleQuadLinesBlurFrame4 = function ( CenterReticleQuadLinesBlur, event )
@@ -90,22 +93,26 @@ CoD.CP_Prologue_FaceScannerBlurLines.new = function ( menu, controller )
 				self.CenterReticleQuadLinesBlur:setAlpha( 0.8 )
 				self.CenterReticleQuadLinesBlur:setZRot( 0 )
 				CenterReticleQuadLinesBlurFrame2( CenterReticleQuadLinesBlur, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Scanning = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Found = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Failed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

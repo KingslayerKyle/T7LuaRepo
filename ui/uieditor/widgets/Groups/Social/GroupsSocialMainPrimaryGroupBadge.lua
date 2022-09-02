@@ -4,9 +4,11 @@
 CoD.GroupsSocialMainPrimaryGroupBadge = InheritFrom( LUI.UIElement )
 CoD.GroupsSocialMainPrimaryGroupBadge.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsSocialMainPrimaryGroupBadge )
 	self.id = "GroupsSocialMainPrimaryGroupBadge"
@@ -26,6 +28,7 @@ CoD.GroupsSocialMainPrimaryGroupBadge.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PrimaryIcon:completeAnimation()
 				self.PrimaryIcon:setAlpha( 0 )
 				self.clipFinished( PrimaryIcon, {} )
@@ -34,18 +37,22 @@ CoD.GroupsSocialMainPrimaryGroupBadge.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PrimaryIcon:completeAnimation()
 				self.PrimaryIcon:setAlpha( 1 )
 				self.clipFinished( PrimaryIcon, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

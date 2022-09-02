@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_Identity_SubTitle" )
 CoD.MyShowcase_CustomGameListInfo = InheritFrom( LUI.UIElement )
 CoD.MyShowcase_CustomGameListInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MyShowcase_CustomGameListInfo )
 	self.id = "MyShowcase_CustomGameListInfo"
@@ -87,15 +89,19 @@ CoD.MyShowcase_CustomGameListInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				FileshareGameTypeImage:completeAnimation()
 				self.FileshareGameTypeImage:setAlpha( 0 )
 				self.clipFinished( FileshareGameTypeImage, {} )
+
 				FileName:completeAnimation()
 				self.FileName:setAlpha( 0 )
 				self.clipFinished( FileName, {} )
+
 				GameTypeName:completeAnimation()
 				self.GameTypeName:setAlpha( 0 )
 				self.clipFinished( GameTypeName, {} )
+
 				CustomGameDesc:completeAnimation()
 				self.CustomGameDesc:setAlpha( 0 )
 				self.clipFinished( CustomGameDesc, {} )
@@ -104,21 +110,26 @@ CoD.MyShowcase_CustomGameListInfo.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				FileshareGameTypeImage:completeAnimation()
 				self.FileshareGameTypeImage:setAlpha( 1 )
 				self.clipFinished( FileshareGameTypeImage, {} )
+
 				FileName:completeAnimation()
 				self.FileName:setAlpha( 1 )
 				self.clipFinished( FileName, {} )
+
 				GameTypeName:completeAnimation()
 				self.GameTypeName:setAlpha( 1 )
 				self.clipFinished( GameTypeName, {} )
+
 				CustomGameDesc:completeAnimation()
 				self.CustomGameDesc:setAlpha( 1 )
 				self.clipFinished( CustomGameDesc, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FileshareGameTypeImage:close()
 		element.FileName:close()

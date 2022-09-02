@@ -12,9 +12,11 @@ require( "ui.uieditor.widgets.HUD.DeadSpectate.DeadSpectate_SpectatingBarPC" )
 CoD.DeadSpectate_Internal = InheritFrom( LUI.UIElement )
 CoD.DeadSpectate_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DeadSpectate_Internal )
 	self.id = "DeadSpectate_Internal"
@@ -142,15 +144,19 @@ CoD.DeadSpectate_Internal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				spectatingBar:completeAnimation()
 				self.spectatingBar:setAlpha( 1 )
 				self.clipFinished( spectatingBar, {} )
+
 				spectatingMode:completeAnimation()
 				self.spectatingMode:setAlpha( 1 )
 				self.clipFinished( spectatingMode, {} )
+
 				codcastTeamText:completeAnimation()
 				self.codcastTeamText:setAlpha( 0 )
 				self.clipFinished( codcastTeamText, {} )
+
 				codcastTeamText0:completeAnimation()
 				self.codcastTeamText0:setAlpha( 0 )
 				self.clipFinished( codcastTeamText0, {} )
@@ -159,19 +165,24 @@ CoD.DeadSpectate_Internal.new = function ( menu, controller )
 		ShowOnlySpectatingPrompt = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				playerName:completeAnimation()
 				self.playerName:setLeftRight( false, false, -100, 100 )
 				self.playerName:setTopBottom( true, false, 9.75, 34.75 )
 				self.clipFinished( playerName, {} )
+
 				spectatingBar:completeAnimation()
 				self.spectatingBar:setAlpha( 1 )
 				self.clipFinished( spectatingBar, {} )
+
 				spectatingMode:completeAnimation()
 				self.spectatingMode:setAlpha( 0 )
 				self.clipFinished( spectatingMode, {} )
+
 				codcastTeamText:completeAnimation()
 				self.codcastTeamText:setAlpha( 0 )
 				self.clipFinished( codcastTeamText, {} )
+
 				codcastTeamText0:completeAnimation()
 				self.codcastTeamText0:setLeftRight( false, false, -150, 150 )
 				self.codcastTeamText0:setTopBottom( true, false, 35, 51 )
@@ -182,19 +193,24 @@ CoD.DeadSpectate_Internal.new = function ( menu, controller )
 		HideAllPrompts = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				playerName:completeAnimation()
 				self.playerName:setLeftRight( false, false, -100, 100 )
 				self.playerName:setTopBottom( true, false, 9.75, 34.75 )
 				self.clipFinished( playerName, {} )
+
 				spectatingBar:completeAnimation()
 				self.spectatingBar:setAlpha( 0 )
 				self.clipFinished( spectatingBar, {} )
+
 				spectatingMode:completeAnimation()
 				self.spectatingMode:setAlpha( 0 )
 				self.clipFinished( spectatingMode, {} )
+
 				codcastTeamText:completeAnimation()
 				self.codcastTeamText:setAlpha( 0 )
 				self.clipFinished( codcastTeamText, {} )
+
 				codcastTeamText0:completeAnimation()
 				self.codcastTeamText0:setLeftRight( false, false, -150, 150 )
 				self.codcastTeamText0:setTopBottom( true, false, 35, 51 )
@@ -203,6 +219,7 @@ CoD.DeadSpectate_Internal.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LeftPanel:close()
 		element.Top3PlayerScoreBlurBox0:close()

@@ -4,9 +4,11 @@
 CoD.FocusWidget_BG = InheritFrom( LUI.UIElement )
 CoD.FocusWidget_BG.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FocusWidget_BG )
 	self.id = "FocusWidget_BG"
@@ -40,6 +42,7 @@ CoD.FocusWidget_BG.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

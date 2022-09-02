@@ -37,9 +37,11 @@ end
 CoD.ButtonPrompt3dcpzm_UseButtonIcon = InheritFrom( LUI.UIElement )
 CoD.ButtonPrompt3dcpzm_UseButtonIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ButtonPrompt3dcpzm_UseButtonIcon )
 	self.id = "ButtonPrompt3dcpzm_UseButtonIcon"
@@ -98,15 +100,19 @@ CoD.ButtonPrompt3dcpzm_UseButtonIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				black:completeAnimation()
 				self.black:setAlpha( 1 )
 				self.clipFinished( black, {} )
+
 				ButtonPrompt3dBindUse:completeAnimation()
 				self.ButtonPrompt3dBindUse:setAlpha( 0 )
 				self.clipFinished( ButtonPrompt3dBindUse, {} )
+
 				UseButtonIcon:completeAnimation()
 				self.UseButtonIcon:setAlpha( 1 )
 				self.clipFinished( UseButtonIcon, {} )
+
 				progressMeter:completeAnimation()
 				self.progressMeter:setAlpha( 1 )
 				self.clipFinished( progressMeter, {} )
@@ -115,21 +121,26 @@ CoD.ButtonPrompt3dcpzm_UseButtonIcon.new = function ( menu, controller )
 		KBMouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				ButtonPrompt3dBindUse:completeAnimation()
 				self.ButtonPrompt3dBindUse:setAlpha( 1 )
 				self.clipFinished( ButtonPrompt3dBindUse, {} )
+
 				UseButtonIcon:completeAnimation()
 				self.UseButtonIcon:setAlpha( 0 )
 				self.clipFinished( UseButtonIcon, {} )
+
 				progressMeter:completeAnimation()
 				self.progressMeter:setAlpha( 0 )
 				self.clipFinished( progressMeter, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "KBMouse",
@@ -156,6 +167,7 @@ CoD.ButtonPrompt3dcpzm_UseButtonIcon.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ButtonPrompt3dBindUse:close()
 		element.UseButtonIcon:close()

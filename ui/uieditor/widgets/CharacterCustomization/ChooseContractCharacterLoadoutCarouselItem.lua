@@ -34,9 +34,11 @@ end
 CoD.ChooseContractCharacterLoadoutCarouselItem = InheritFrom( LUI.UIElement )
 CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseContractCharacterLoadoutCarouselItem )
 	self.id = "ChooseContractCharacterLoadoutCarouselItem"
@@ -188,16 +190,27 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				item:completeAnimation()
+
 				item.lockedCharacterWithBackground:completeAnimation()
+
 				item.lockedSliverRender:completeAnimation()
+
 				item.characterWithBackground:completeAnimation()
+
 				item.unlockSliverRender:completeAnimation()
+
 				item.border:completeAnimation()
+
 				item.infoArea:completeAnimation()
+
 				item.FETitleNumBrdr0:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.newIcon:completeAnimation()
+
 				item.ChooseCharacterLoadoutButtonFooter:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 30, -30 )
@@ -214,40 +227,58 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 				self.item.newIcon:setAlpha( 1 )
 				self.item.ChooseCharacterLoadoutButtonFooter:setAlpha( HideIfInPermanentUnlockMenu( 0 ) )
 				self.clipFinished( item, {} )
+
 				contractChallenges:completeAnimation()
 				self.contractChallenges:setAlpha( 0 )
 				self.clipFinished( contractChallenges, {} )
+
 				back:completeAnimation()
 				self.back:setAlpha( 0 )
 				self.clipFinished( back, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FocusBarB00:completeAnimation()
 				self.FocusBarB00:setAlpha( 0 )
 				self.clipFinished( FocusBarB00, {} )
+
 				BackTopAndBottom0:completeAnimation()
 				self.BackTopAndBottom0:setAlpha( 0 )
 				self.clipFinished( BackTopAndBottom0, {} )
+
 				FrontTopAndBottom:completeAnimation()
 				self.FrontTopAndBottom:setAlpha( 0 )
 				self.clipFinished( FrontTopAndBottom, {} )
+
 				Frame:completeAnimation()
 				self.Frame:setAlpha( 0 )
 				self.clipFinished( Frame, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				item:completeAnimation()
+
 				item.lockedCharacterWithBackground:completeAnimation()
+
 				item.lockedSliverRender:completeAnimation()
+
 				item.characterWithBackground:completeAnimation()
+
 				item.unlockSliverRender:completeAnimation()
+
 				item.border:completeAnimation()
+
 				item.infoArea:completeAnimation()
+
 				item.FETitleNumBrdr0:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.newIcon:completeAnimation()
+
 				item.ChooseCharacterLoadoutButtonFooter:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 0, 0 )
@@ -263,30 +294,44 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 				self.item.newIcon:setAlpha( 0 )
 				self.item.ChooseCharacterLoadoutButtonFooter:setAlpha( HideIfInPermanentUnlockMenu( 1 ) )
 				self.clipFinished( item, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FocusBarB00:completeAnimation()
 				self.FocusBarB00:setAlpha( 0 )
 				self.clipFinished( FocusBarB00, {} )
+
 				FrontTopAndBottom:completeAnimation()
 				self.FrontTopAndBottom:setAlpha( 1 )
 				self.clipFinished( FrontTopAndBottom, {} )
+
 				Frame:completeAnimation()
 				self.Frame:setAlpha( 1 )
 				self.clipFinished( Frame, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 5 )
+
 				item:completeAnimation()
+
 				item.lockedCharacterWithBackground:completeAnimation()
+
 				item.lockedSliverRender:completeAnimation()
+
 				item.characterWithBackground:completeAnimation()
+
 				item.unlockSliverRender:completeAnimation()
+
 				item.border:completeAnimation()
+
 				item.infoArea:completeAnimation()
+
 				item.FETitleNumBrdr0:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.newIcon:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 30, -30 )
@@ -300,12 +345,14 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 				self.item.lockImage:setAlpha( 0 )
 				self.item.newIcon:setAlpha( 0.9 )
 				self.clipFinished( item, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setLeftRight( false, false, -45.5, 45.5 )
 				self.FocusBarB0:setTopBottom( false, false, 221, 217 )
 				self.FocusBarB0:setAlpha( 1 )
 				self.FocusBarB0:setScale( 1 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FocusBarB00:completeAnimation()
 				self.FocusBarB00:setLeftRight( false, false, -45.5, 45.5 )
 				self.FocusBarB00:setTopBottom( false, false, -217, -221 )
@@ -313,15 +360,18 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 				self.FocusBarB00:setZRot( -180 )
 				self.FocusBarB00:setScale( 1 )
 				self.clipFinished( FocusBarB00, {} )
+
 				FrontTopAndBottom:completeAnimation()
 				self.FrontTopAndBottom:setAlpha( 0 )
 				self.clipFinished( FrontTopAndBottom, {} )
+
 				Frame:completeAnimation()
 				self.Frame:setAlpha( 0 )
 				self.clipFinished( Frame, {} )
 			end,
 			Flipped = function ()
 				self:setupElementClipCounter( 4 )
+
 				local itemFrame2 = function ( item, event )
 					local itemFrame3 = function ( item, event )
 						local itemFrame4 = function ( item, event )
@@ -560,9 +610,13 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 				end
 				
 				Frame:completeAnimation()
+
 				Frame.text:completeAnimation()
+
 				Frame.Flippedtext:completeAnimation()
+
 				Frame.rightBumper:completeAnimation()
+
 				Frame.FlippedrightBumper:completeAnimation()
 				self.Frame:setYRot( 0 )
 				self.Frame:setZoom( 0 )
@@ -574,6 +628,7 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 			end,
 			Challenges = function ()
 				self:setupElementClipCounter( 5 )
+
 				local itemFrame2 = function ( item, event )
 					local itemFrame3 = function ( item, event )
 						local itemFrame4 = function ( item, event )
@@ -834,9 +889,13 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 				end
 				
 				Frame:completeAnimation()
+
 				Frame.text:completeAnimation()
+
 				Frame.Flippedtext:completeAnimation()
+
 				Frame.rightBumper:completeAnimation()
+
 				Frame.FlippedrightBumper:completeAnimation()
 				self.Frame:setYRot( 0 )
 				self.Frame:setZoom( 0 )
@@ -850,15 +909,25 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				item:completeAnimation()
+
 				item.lockedCharacterWithBackground:completeAnimation()
+
 				item.lockedSliverRender:completeAnimation()
+
 				item.characterWithBackground:completeAnimation()
+
 				item.unlockSliverRender:completeAnimation()
+
 				item.border:completeAnimation()
+
 				item.infoArea:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.newIcon:completeAnimation()
+
 				item.ChooseCharacterLoadoutButtonFooter:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 30, -30 )
@@ -873,23 +942,34 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 				self.item.newIcon:setAlpha( 0 )
 				self.item.ChooseCharacterLoadoutButtonFooter:setAlpha( HideIfInPermanentUnlockMenu( 0 ) )
 				self.clipFinished( item, {} )
+
 				FrontTopAndBottom:completeAnimation()
 				self.FrontTopAndBottom:setAlpha( 0 )
 				self.clipFinished( FrontTopAndBottom, {} )
+
 				Frame:completeAnimation()
 				self.Frame:setAlpha( 0 )
 				self.clipFinished( Frame, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
+
 				item:completeAnimation()
+
 				item.lockedCharacterWithBackground:completeAnimation()
+
 				item.lockedSliverRender:completeAnimation()
+
 				item.characterWithBackground:completeAnimation()
+
 				item.unlockSliverRender:completeAnimation()
+
 				item.border:completeAnimation()
+
 				item.infoArea:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.newIcon:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 0, 0 )
@@ -905,14 +985,23 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 1 )
+
 				item:completeAnimation()
+
 				item.lockedCharacterWithBackground:completeAnimation()
+
 				item.lockedSliverRender:completeAnimation()
+
 				item.characterWithBackground:completeAnimation()
+
 				item.unlockSliverRender:completeAnimation()
+
 				item.border:completeAnimation()
+
 				item.infoArea:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.newIcon:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 30, -30 )
@@ -930,12 +1019,19 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 		Flipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				item:completeAnimation()
+
 				item.border:completeAnimation()
+
 				item.infoArea:completeAnimation()
+
 				item.FETitleNumBrdr0:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.newIcon:completeAnimation()
+
 				item.ChooseCharacterLoadoutButtonFooter:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 30, -30 )
@@ -949,10 +1045,12 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 				self.item.newIcon:setAlpha( 1 )
 				self.item.ChooseCharacterLoadoutButtonFooter:setAlpha( HideIfInPermanentUnlockMenu( 0 ) )
 				self.clipFinished( item, {} )
+
 				back:completeAnimation()
 				self.back:setAlpha( 1 )
 				self.back:setZoom( 0 )
 				self.clipFinished( back, {} )
+
 				FrontTopAndBottom:completeAnimation()
 				self.FrontTopAndBottom:setLeftRight( true, false, -3, 822 )
 				self.FrontTopAndBottom:setTopBottom( true, false, -54, 505 )
@@ -961,6 +1059,7 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 4 )
+
 				local f61_local0 = function ( f62_arg0, f62_arg1 )
 					local f62_local0 = function ( f63_arg0, f63_arg1 )
 						local f63_local0 = function ( f64_arg0, f64_arg1 )
@@ -1188,9 +1287,13 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 				end
 				
 				Frame:completeAnimation()
+
 				Frame.text:completeAnimation()
+
 				Frame.Flippedtext:completeAnimation()
+
 				Frame.rightBumper:completeAnimation()
+
 				Frame.FlippedrightBumper:completeAnimation()
 				self.Frame:setYRot( 180 )
 				self.Frame:setZoom( 0 )
@@ -1202,11 +1305,17 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				item:completeAnimation()
+
 				item.border:completeAnimation()
+
 				item.infoArea:completeAnimation()
+
 				item.FETitleNumBrdr0:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.newIcon:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 0, 0 )
@@ -1218,11 +1327,13 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 				self.item.lockImage:setAlpha( 0 )
 				self.item.newIcon:setAlpha( 0 )
 				self.clipFinished( item, {} )
+
 				back:completeAnimation()
 				self.back:setAlpha( 1 )
 				self.back:setYRot( 0 )
 				self.back:setZoom( 0 )
 				self.clipFinished( back, {} )
+
 				FrontTopAndBottom:completeAnimation()
 				self.FrontTopAndBottom:setRGB( 0, 0, 0 )
 				self.clipFinished( FrontTopAndBottom, {} )
@@ -1231,12 +1342,19 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 		Challenges = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				item:completeAnimation()
+
 				item.border:completeAnimation()
+
 				item.infoArea:completeAnimation()
+
 				item.FETitleNumBrdr0:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.newIcon:completeAnimation()
+
 				item.ChooseCharacterLoadoutButtonFooter:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 30, -30 )
@@ -1250,13 +1368,16 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 				self.item.newIcon:setAlpha( 1 )
 				self.item.ChooseCharacterLoadoutButtonFooter:setAlpha( HideIfInPermanentUnlockMenu( 0 ) )
 				self.clipFinished( item, {} )
+
 				contractChallenges:completeAnimation()
 				self.contractChallenges:setAlpha( 1 )
 				self.contractChallenges:setZoom( 0 )
 				self.clipFinished( contractChallenges, {} )
+
 				BackTopAndBottom0:completeAnimation()
 				self.BackTopAndBottom0:setAlpha( 1 )
 				self.clipFinished( BackTopAndBottom0, {} )
+
 				FrontTopAndBottom:completeAnimation()
 				self.FrontTopAndBottom:setRGB( 0, 0, 0 )
 				self.FrontTopAndBottom:setAlpha( 0 )
@@ -1264,6 +1385,7 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 5 )
+
 				local f80_local0 = function ( f81_arg0, f81_arg1 )
 					local f81_local0 = function ( f82_arg0, f82_arg1 )
 						local f82_local0 = function ( f83_arg0, f83_arg1 )
@@ -1528,9 +1650,13 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 				end
 				
 				Frame:completeAnimation()
+
 				Frame.text:completeAnimation()
+
 				Frame.Flippedtext:completeAnimation()
+
 				Frame.rightBumper:completeAnimation()
+
 				Frame.FlippedrightBumper:completeAnimation()
 				self.Frame:setYRot( 180 )
 				self.Frame:setZoom( 0 )
@@ -1542,11 +1668,17 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				item:completeAnimation()
+
 				item.border:completeAnimation()
+
 				item.infoArea:completeAnimation()
+
 				item.FETitleNumBrdr0:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.newIcon:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 0, 0 )
@@ -1558,11 +1690,13 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 				self.item.lockImage:setAlpha( 0 )
 				self.item.newIcon:setAlpha( 0 )
 				self.clipFinished( item, {} )
+
 				contractChallenges:completeAnimation()
 				self.contractChallenges:setAlpha( 1 )
 				self.contractChallenges:setYRot( 0 )
 				self.contractChallenges:setZoom( 0 )
 				self.clipFinished( contractChallenges, {} )
+
 				FrontTopAndBottom:completeAnimation()
 				self.FrontTopAndBottom:setRGB( 0, 0, 0 )
 				self.FrontTopAndBottom:setAlpha( 0 )
@@ -1570,6 +1704,7 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -1591,6 +1726,7 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 		}
 	} )
 	CoD.Menu.AddNavigationHandler( menu, self, controller )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsSelfInState( self, "Flipped" ) then
 			SetLoseFocusToElement( self, "item", controller )
@@ -1624,6 +1760,7 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.item:close()
 		element.contractChallenges:close()

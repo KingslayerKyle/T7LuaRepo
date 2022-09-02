@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.onOffImage" )
 CoD.ZMScr_ListingLg = InheritFrom( LUI.UIElement )
 CoD.ZMScr_ListingLg.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZMScr_ListingLg )
 	self.id = "ZMScr_ListingLg"
@@ -42,6 +44,7 @@ CoD.ZMScr_ListingLg.new = function ( menu, controller )
 			Score:setText( Engine.Localize( playerScore ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( Score, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )
@@ -141,21 +144,26 @@ CoD.ZMScr_ListingLg.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
+
 				Score:completeAnimation()
 				self.Score:setAlpha( 0 )
 				self.clipFinished( Score, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
 			end,
 			Visible = function ()
 				self:setupElementClipCounter( 4 )
+
 				local PanelFrame2 = function ( Panel, event )
 					if not event.interrupted then
 						Panel:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -219,6 +227,7 @@ CoD.ZMScr_ListingLg.new = function ( menu, controller )
 			end,
 			VisibleTomb = function ()
 				self:setupElementClipCounter( 4 )
+
 				local PanelFrame2 = function ( Panel, event )
 					if not event.interrupted then
 						Panel:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -288,23 +297,28 @@ CoD.ZMScr_ListingLg.new = function ( menu, controller )
 		VisibleTomb = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 1 )
 				self.clipFinished( Panel, {} )
+
 				Score:completeAnimation()
 				self.Score:setAlpha( 1 )
 				self.clipFinished( Score, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, false, -21, 7 )
 				self.Image0:setTopBottom( false, true, -31.78, -3.78 )
 				self.Image0:setAlpha( 1 )
 				self.clipFinished( Image0, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.42 )
 				self.clipFinished( Glow, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 4 )
+
 				local PanelFrame2 = function ( Panel, event )
 					if not event.interrupted then
 						Panel:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -370,21 +384,26 @@ CoD.ZMScr_ListingLg.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 1 )
 				self.clipFinished( Panel, {} )
+
 				Score:completeAnimation()
 				self.Score:setAlpha( 1 )
 				self.clipFinished( Score, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 1 )
 				self.clipFinished( Image0, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.42 )
 				self.clipFinished( Glow, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 4 )
+
 				local PanelFrame2 = function ( Panel, event )
 					if not event.interrupted then
 						Panel:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -448,6 +467,7 @@ CoD.ZMScr_ListingLg.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "VisibleTomb",
@@ -476,6 +496,7 @@ CoD.ZMScr_ListingLg.new = function ( menu, controller )
 			modelName = "playerScoreShown"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 		element.portraitIcon:close()

@@ -4,9 +4,11 @@
 CoD.MinimapHelperItems = InheritFrom( LUI.UIElement )
 CoD.MinimapHelperItems.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MinimapHelperItems )
 	self.id = "MinimapHelperItems"
@@ -25,21 +27,25 @@ CoD.MinimapHelperItems.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				items:completeAnimation()
 				self.items:setAlpha( 0.95 )
 				self.clipFinished( items, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		CounterUAV = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				items:completeAnimation()
 				self.items:setAlpha( 0 )
 				self.clipFinished( items, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CounterUAV",

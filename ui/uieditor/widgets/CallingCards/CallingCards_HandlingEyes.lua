@@ -4,9 +4,11 @@
 CoD.CallingCards_HandlingEyes = InheritFrom( LUI.UIElement )
 CoD.CallingCards_HandlingEyes.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_HandlingEyes )
 	self.id = "CallingCards_HandlingEyes"
@@ -39,6 +41,7 @@ CoD.CallingCards_HandlingEyes.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local RedGlow2Frame2 = function ( RedGlow2, event )
 					local RedGlow2Frame3 = function ( RedGlow2, event )
 						local RedGlow2Frame4 = function ( RedGlow2, event )
@@ -267,6 +270,7 @@ CoD.CallingCards_HandlingEyes.new = function ( menu, controller )
 				outerGlow:completeAnimation()
 				self.outerGlow:setAlpha( 0.25 )
 				outerGlowFrame2( outerGlow, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

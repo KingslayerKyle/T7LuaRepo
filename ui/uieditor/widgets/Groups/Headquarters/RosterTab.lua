@@ -11,9 +11,11 @@ end
 CoD.RosterTab = InheritFrom( LUI.UIElement )
 CoD.RosterTab.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RosterTab )
 	self.id = "RosterTab"
@@ -129,6 +131,7 @@ CoD.RosterTab.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GroupsRosterList:close()
 		element.GroupMemberInfoPane:close()

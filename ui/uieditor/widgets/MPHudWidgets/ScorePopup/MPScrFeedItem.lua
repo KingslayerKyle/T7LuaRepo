@@ -4,9 +4,11 @@
 CoD.MPScrFeedItem = InheritFrom( LUI.UIElement )
 CoD.MPScrFeedItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MPScrFeedItem )
 	self.id = "MPScrFeedItem"
@@ -28,12 +30,14 @@ CoD.MPScrFeedItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				TextBox:completeAnimation()
 				self.TextBox:setAlpha( 1 )
 				self.clipFinished( TextBox, {} )
 			end,
 			NewLine = function ()
 				self:setupElementClipCounter( 1 )
+
 				local TextBoxFrame2 = function ( TextBox, event )
 					if not event.interrupted then
 						TextBox:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -56,12 +60,14 @@ CoD.MPScrFeedItem.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				TextBox:completeAnimation()
 				self.TextBox:setAlpha( 0 )
 				self.clipFinished( TextBox, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",

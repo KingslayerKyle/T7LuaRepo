@@ -13,9 +13,11 @@ require( "ui.uieditor.widgets.Prestige.Prestige_MasterTierWidget" )
 CoD.StartMenu_Barracks_Button_ZM = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Barracks_Button_ZM.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Barracks_Button_ZM )
 	self.id = "StartMenu_Barracks_Button_ZM"
@@ -262,87 +264,114 @@ CoD.StartMenu_Barracks_Button_ZM.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				ButtonTitleBG:completeAnimation()
 				self.ButtonTitleBG:setAlpha( 0.05 )
 				self.clipFinished( ButtonTitleBG, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				TotalKills:completeAnimation()
 				self.TotalKills:setAlpha( 0 )
 				self.clipFinished( TotalKills, {} )
+
 				RoundsSurvived:completeAnimation()
 				self.RoundsSurvived:setAlpha( 0 )
 				self.clipFinished( RoundsSurvived, {} )
+
 				SPM:completeAnimation()
 				self.SPM:setAlpha( 0 )
 				self.clipFinished( SPM, {} )
+
 				Pixel200:completeAnimation()
 				self.Pixel200:setAlpha( 0 )
 				self.clipFinished( Pixel200, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 0 )
 				self.clipFinished( Image1, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setAlpha( 0 )
 				self.clipFinished( Image2, {} )
+
 				unlockRequirements:completeAnimation()
 				self.unlockRequirements:setAlpha( 0 )
 				self.clipFinished( unlockRequirements, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 13 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				ButtonTitleBG:completeAnimation()
 				self.ButtonTitleBG:setAlpha( 0 )
 				self.clipFinished( ButtonTitleBG, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				TotalKills:completeAnimation()
 				self.TotalKills:setAlpha( 1 )
 				self.clipFinished( TotalKills, {} )
+
 				RoundsSurvived:completeAnimation()
 				self.RoundsSurvived:setAlpha( 1 )
 				self.clipFinished( RoundsSurvived, {} )
+
 				SPM:completeAnimation()
 				self.SPM:setAlpha( 1 )
 				self.clipFinished( SPM, {} )
+
 				Pixel200:completeAnimation()
 				self.Pixel200:setAlpha( 1 )
 				self.clipFinished( Pixel200, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 1 )
 				self.clipFinished( Image0, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 1 )
 				self.clipFinished( Image1, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setAlpha( 1 )
 				self.clipFinished( Image2, {} )
@@ -351,93 +380,122 @@ CoD.StartMenu_Barracks_Button_ZM.new = function ( menu, controller )
 		Disable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 18 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				ButtonTitleBG:completeAnimation()
 				self.ButtonTitleBG:setAlpha( 0.05 )
 				self.clipFinished( ButtonTitleBG, {} )
+
 				SessionName:completeAnimation()
 				self.SessionName:setAlpha( 1 )
 				self.clipFinished( SessionName, {} )
+
 				StartMenuIdentitySubTitle0:completeAnimation()
 				self.StartMenuIdentitySubTitle0:setAlpha( 1 )
 				self.clipFinished( StartMenuIdentitySubTitle0, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0.3 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				TotalKills:completeAnimation()
 				self.TotalKills:setAlpha( 0 )
 				self.clipFinished( TotalKills, {} )
+
 				RoundsSurvived:completeAnimation()
 				self.RoundsSurvived:setAlpha( 0 )
 				self.clipFinished( RoundsSurvived, {} )
+
 				SPM:completeAnimation()
 				self.SPM:setAlpha( 0 )
 				self.clipFinished( SPM, {} )
+
 				Pixel200:completeAnimation()
 				self.Pixel200:setAlpha( 0 )
 				self.clipFinished( Pixel200, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 0 )
 				self.clipFinished( Image1, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setAlpha( 0 )
 				self.clipFinished( Image2, {} )
+
 				unlockRequirements:completeAnimation()
 				self.unlockRequirements:setAlpha( 1 )
 				self.clipFinished( unlockRequirements, {} )
+
 				BlackLine:completeAnimation()
 				self.BlackLine:setAlpha( 0.5 )
 				self.clipFinished( BlackLine, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 11 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				ButtonTitleBG:completeAnimation()
 				self.ButtonTitleBG:setAlpha( 0 )
 				self.clipFinished( ButtonTitleBG, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0.3 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				TotalKills:completeAnimation()
 				self.TotalKills:setAlpha( 0 )
 				self.clipFinished( TotalKills, {} )
+
 				RoundsSurvived:completeAnimation()
 				self.RoundsSurvived:setAlpha( 0 )
 				self.clipFinished( RoundsSurvived, {} )
+
 				SPM:completeAnimation()
 				self.SPM:setAlpha( 0 )
 				self.clipFinished( SPM, {} )
+
 				BlackLine:completeAnimation()
 				self.BlackLine:setAlpha( 0.5 )
 				self.clipFinished( BlackLine, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
@@ -446,93 +504,121 @@ CoD.StartMenu_Barracks_Button_ZM.new = function ( menu, controller )
 		NoStats = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				ButtonTitleBG:completeAnimation()
 				self.ButtonTitleBG:setAlpha( 0.05 )
 				self.clipFinished( ButtonTitleBG, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				TotalKills:completeAnimation()
 				self.TotalKills:setAlpha( 0 )
 				self.clipFinished( TotalKills, {} )
+
 				RoundsSurvived:completeAnimation()
 				self.RoundsSurvived:setAlpha( 0 )
 				self.clipFinished( RoundsSurvived, {} )
+
 				SPM:completeAnimation()
 				self.SPM:setAlpha( 0 )
 				self.clipFinished( SPM, {} )
+
 				Pixel200:completeAnimation()
 				self.Pixel200:setAlpha( 0 )
 				self.clipFinished( Pixel200, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 0 )
 				self.clipFinished( Image1, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setAlpha( 0 )
 				self.clipFinished( Image2, {} )
+
 				unlockRequirements:completeAnimation()
 				self.unlockRequirements:setAlpha( 0 )
 				self.clipFinished( unlockRequirements, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 13 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				ButtonTitleBG:completeAnimation()
 				self.ButtonTitleBG:setAlpha( 0 )
 				self.clipFinished( ButtonTitleBG, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				TotalKills:completeAnimation()
 				self.TotalKills:setAlpha( 0 )
 				self.clipFinished( TotalKills, {} )
+
 				RoundsSurvived:completeAnimation()
 				self.RoundsSurvived:setAlpha( 0 )
 				self.clipFinished( RoundsSurvived, {} )
+
 				SPM:completeAnimation()
 				self.SPM:setAlpha( 0 )
 				self.clipFinished( SPM, {} )
+
 				Pixel200:completeAnimation()
 				self.Pixel200:setAlpha( 0 )
 				self.clipFinished( Pixel200, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 0 )
 				self.clipFinished( Image1, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setAlpha( 0 )
 				self.clipFinished( Image2, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactive:close()
 		element.StartMenuIdentitySubTitle0:close()

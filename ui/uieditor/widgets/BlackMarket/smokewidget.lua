@@ -4,9 +4,11 @@
 CoD.smokewidget = InheritFrom( LUI.UIElement )
 CoD.smokewidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.smokewidget )
 	self.id = "smokewidget"
@@ -35,6 +37,7 @@ CoD.smokewidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_WeapStatsBarEmpty" )
 CoD.WeaponAttributesBar = InheritFrom( LUI.UIElement )
 CoD.WeaponAttributesBar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponAttributesBar )
 	self.id = "WeaponAttributesBar"
@@ -106,6 +108,7 @@ CoD.WeaponAttributesBar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				weaponAttribute:completeAnimation()
 				self.weaponAttribute:setAlpha( 1 )
 				self.weaponAttribute:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_wipe" ) )
@@ -114,6 +117,7 @@ CoD.WeaponAttributesBar.new = function ( menu, controller )
 				self.weaponAttribute:setShaderVector( 2, 1, 0, 0, 0 )
 				self.weaponAttribute:setShaderVector( 3, 0, 0, 0, 0 )
 				self.clipFinished( weaponAttribute, {} )
+
 				attachmentAttribute:completeAnimation()
 				self.attachmentAttribute:setRGB( 1, 1, 1 )
 				self.attachmentAttribute:setAlpha( 1 )
@@ -128,6 +132,7 @@ CoD.WeaponAttributesBar.new = function ( menu, controller )
 		Increase = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				attachmentAttribute:completeAnimation()
 				self.attachmentAttribute:setRGB( 0, 1, 0 )
 				self.attachmentAttribute:setAlpha( 1 )
@@ -142,6 +147,7 @@ CoD.WeaponAttributesBar.new = function ( menu, controller )
 		Decrease = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				attachmentAttribute:completeAnimation()
 				self.attachmentAttribute:setRGB( 1, 0, 0 )
 				self.attachmentAttribute:setAlpha( 1 )
@@ -154,6 +160,7 @@ CoD.WeaponAttributesBar.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Dash10Empty:close()
 		element.Dash9Empty:close()

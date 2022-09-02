@@ -4,9 +4,11 @@
 CoD.Challenges_PercentCompleteWidget_LG = InheritFrom( LUI.UIElement )
 CoD.Challenges_PercentCompleteWidget_LG.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_PercentCompleteWidget_LG )
 	self.id = "Challenges_PercentCompleteWidget_LG"
@@ -61,6 +63,7 @@ CoD.Challenges_PercentCompleteWidget_LG.new = function ( menu, controller )
 	percentText:setTTF( "fonts/FoundryGridnik-Medium.ttf" )
 	percentText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	percentText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( percentText, "setText", function ( element, controller )
 		if IsPercentTextAt100Percent( controller ) then
 			SetState( self, "Complete" )
@@ -75,16 +78,20 @@ CoD.Challenges_PercentCompleteWidget_LG.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				AllCompleteIcon:completeAnimation()
 				self.AllCompleteIcon:setAlpha( 0 )
 				self.clipFinished( AllCompleteIcon, {} )
+
 				CrossLines:completeAnimation()
 				self.CrossLines:setRGB( 0.36, 0.36, 0.36 )
 				self.CrossLines:setAlpha( 0.35 )
 				self.clipFinished( CrossLines, {} )
+
 				percentCompleteCircle:completeAnimation()
 				self.percentCompleteCircle:setAlpha( 1 )
 				self.clipFinished( percentCompleteCircle, {} )
+
 				percentText:completeAnimation()
 				self.percentText:setAlpha( 0.8 )
 				self.clipFinished( percentText, {} )
@@ -93,24 +100,30 @@ CoD.Challenges_PercentCompleteWidget_LG.new = function ( menu, controller )
 		Complete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				AllCompleteIcon:completeAnimation()
 				self.AllCompleteIcon:setAlpha( 1 )
 				self.clipFinished( AllCompleteIcon, {} )
+
 				BackgroundRing:completeAnimation()
 				self.BackgroundRing:setAlpha( 0 )
 				self.clipFinished( BackgroundRing, {} )
+
 				CrossLines:completeAnimation()
 				self.CrossLines:setAlpha( 0 )
 				self.clipFinished( CrossLines, {} )
+
 				percentCompleteCircle:completeAnimation()
 				self.percentCompleteCircle:setAlpha( 0 )
 				self.clipFinished( percentCompleteCircle, {} )
+
 				percentText:completeAnimation()
 				self.percentText:setAlpha( 0 )
 				self.clipFinished( percentText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Complete",

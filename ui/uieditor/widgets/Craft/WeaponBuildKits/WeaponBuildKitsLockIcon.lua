@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_LockBig" )
 CoD.WeaponBuildKitsLockIcon = InheritFrom( LUI.UIElement )
 CoD.WeaponBuildKitsLockIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponBuildKitsLockIcon )
 	self.id = "WeaponBuildKitsLockIcon"
@@ -42,23 +44,27 @@ CoD.WeaponBuildKitsLockIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 0 )
 				self.clipFinished( LockIcon, {} )
 			end,
 			ShowVariants = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 1 )
 				self.clipFinished( LockIcon, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LockIcon:close()
 	end )

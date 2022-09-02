@@ -41,9 +41,11 @@ end
 CoD.WearablePerksContainer_Genesis = InheritFrom( LUI.UIElement )
 CoD.WearablePerksContainer_Genesis.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WearablePerksContainer_Genesis )
 	self.id = "WearablePerksContainer_Genesis"
@@ -65,6 +67,7 @@ CoD.WearablePerksContainer_Genesis.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				GridLayout0:completeAnimation()
 				self.GridLayout0:setAlpha( 1 )
 				self.clipFinished( GridLayout0, {} )
@@ -73,12 +76,14 @@ CoD.WearablePerksContainer_Genesis.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				GridLayout0:completeAnimation()
 				self.GridLayout0:setAlpha( 0 )
 				self.clipFinished( GridLayout0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",
@@ -130,6 +135,7 @@ CoD.WearablePerksContainer_Genesis.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GridLayout0:close()
 	end )

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventory.RocketShieldBluePrint.RocketShieldPiec
 CoD.DragonCollarControllerWidgets_stalingrad = InheritFrom( LUI.UIElement )
 CoD.DragonCollarControllerWidgets_stalingrad.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DragonCollarControllerWidgets_stalingrad )
 	self.id = "DragonCollarControllerWidgets_stalingrad"
@@ -169,17 +171,21 @@ CoD.DragonCollarControllerWidgets_stalingrad.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				RocketShieldPieceWidget1:completeAnimation()
 				self.RocketShieldPieceWidget1:setAlpha( 0 )
 				self.RocketShieldPieceWidget1:setScale( 0.9 )
 				self.clipFinished( RocketShieldPieceWidget1, {} )
+
 				RocketShieldPieceWidget2:completeAnimation()
 				self.RocketShieldPieceWidget2:setAlpha( 0 )
 				self.RocketShieldPieceWidget2:setScale( 1 )
 				self.clipFinished( RocketShieldPieceWidget2, {} )
+
 				RocketShieldPieceWidget3:completeAnimation()
 				self.RocketShieldPieceWidget3:setAlpha( 0 )
 				self.RocketShieldPieceWidget3:setScale( 1 )
@@ -189,21 +195,25 @@ CoD.DragonCollarControllerWidgets_stalingrad.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				RocketShieldPieceWidget1:completeAnimation()
 				self.RocketShieldPieceWidget1:setLeftRight( true, false, 174.74, 263.26 )
 				self.RocketShieldPieceWidget1:setTopBottom( true, false, 22.24, 110.76 )
 				self.RocketShieldPieceWidget1:setAlpha( 1 )
 				self.RocketShieldPieceWidget1:setScale( 1.35 )
 				self.clipFinished( RocketShieldPieceWidget1, {} )
+
 				RocketShieldPieceWidget2:completeAnimation()
 				self.RocketShieldPieceWidget2:setLeftRight( true, false, 329.74, 418.26 )
 				self.RocketShieldPieceWidget2:setTopBottom( true, false, 20.74, 109.26 )
 				self.RocketShieldPieceWidget2:setAlpha( 1 )
 				self.RocketShieldPieceWidget2:setScale( 1.4 )
 				self.clipFinished( RocketShieldPieceWidget2, {} )
+
 				RocketShieldPieceWidget3:completeAnimation()
 				self.RocketShieldPieceWidget3:setLeftRight( true, false, 27.44, 115.96 )
 				self.RocketShieldPieceWidget3:setTopBottom( true, false, 22.24, 110.76 )
@@ -215,6 +225,7 @@ CoD.DragonCollarControllerWidgets_stalingrad.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local BGFrame2 = function ( BG, event )
 					local BGFrame3 = function ( BG, event )
 						local BGFrame4 = function ( BG, event )
@@ -251,18 +262,21 @@ CoD.DragonCollarControllerWidgets_stalingrad.new = function ( menu, controller )
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				BGFrame2( BG, {} )
+
 				RocketShieldPieceWidget1:completeAnimation()
 				self.RocketShieldPieceWidget1:setLeftRight( true, false, 89.79, 178.31 )
 				self.RocketShieldPieceWidget1:setTopBottom( true, false, 22.24, 110.76 )
 				self.RocketShieldPieceWidget1:setAlpha( 1 )
 				self.RocketShieldPieceWidget1:setScale( 1.1 )
 				self.clipFinished( RocketShieldPieceWidget1, {} )
+
 				RocketShieldPieceWidget2:completeAnimation()
 				self.RocketShieldPieceWidget2:setLeftRight( true, false, 159.52, 248.04 )
 				self.RocketShieldPieceWidget2:setTopBottom( true, false, 20.24, 108.76 )
 				self.RocketShieldPieceWidget2:setAlpha( 1 )
 				self.RocketShieldPieceWidget2:setScale( 1.1 )
 				self.clipFinished( RocketShieldPieceWidget2, {} )
+
 				RocketShieldPieceWidget3:completeAnimation()
 				self.RocketShieldPieceWidget3:setLeftRight( true, false, 14.27, 102.79 )
 				self.RocketShieldPieceWidget3:setTopBottom( true, false, 23.24, 111.76 )
@@ -272,6 +286,7 @@ CoD.DragonCollarControllerWidgets_stalingrad.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Scoreboard",
@@ -302,6 +317,7 @@ CoD.DragonCollarControllerWidgets_stalingrad.new = function ( menu, controller )
 			modelName = "zmInventory.widget_dragonride_parts"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RocketShieldPieceWidget1:close()
 		element.RocketShieldPieceWidget2:close()

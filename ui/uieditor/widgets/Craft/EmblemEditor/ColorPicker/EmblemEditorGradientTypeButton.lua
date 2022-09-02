@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Craft.Paintshop.PaintshopButtonPrompt" )
 CoD.EmblemEditorGradientTypeButton = InheritFrom( LUI.UIElement )
 CoD.EmblemEditorGradientTypeButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemEditorGradientTypeButton )
 	self.id = "EmblemEditorGradientTypeButton"
@@ -48,14 +50,17 @@ CoD.EmblemEditorGradientTypeButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		RadialState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				toggleRadial:completeAnimation()
 				self.toggleRadial:setAlpha( 1 )
 				self.clipFinished( toggleRadial, {} )
+
 				toggleLinear:completeAnimation()
 				self.toggleLinear:setAlpha( 0 )
 				self.clipFinished( toggleLinear, {} )
@@ -64,15 +69,18 @@ CoD.EmblemEditorGradientTypeButton.new = function ( menu, controller )
 		LinearState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				toggleRadial:completeAnimation()
 				self.toggleRadial:setAlpha( 0 )
 				self.clipFinished( toggleRadial, {} )
+
 				toggleLinear:completeAnimation()
 				self.toggleLinear:setAlpha( 1 )
 				self.clipFinished( toggleLinear, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.toggleRadial:close()
 		element.toggleLinear:close()

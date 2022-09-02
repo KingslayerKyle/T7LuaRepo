@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.CP_DamageWidget.DamageWidget_HealthStateRegen"
 CoD.DamageWidget_HealthState = InheritFrom( LUI.UIElement )
 CoD.DamageWidget_HealthState.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DamageWidget_HealthState )
 	self.id = "DamageWidget_HealthState"
@@ -51,6 +53,7 @@ CoD.DamageWidget_HealthState.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ImgStateShape:completeAnimation()
 				self.ImgStateShape:setRGB( 1, 1, 1 )
 				self.ImgStateShape:setAlpha( 0 )
@@ -60,6 +63,7 @@ CoD.DamageWidget_HealthState.new = function ( menu, controller )
 		Normal = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ImgStateShapeFrame2 = function ( ImgStateShape, event )
 					local ImgStateShapeFrame3 = function ( ImgStateShape, event )
 						local ImgStateShapeFrame4 = function ( ImgStateShape, event )
@@ -175,6 +179,7 @@ CoD.DamageWidget_HealthState.new = function ( menu, controller )
 			end,
 			Medium = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ImgStateShapeFrame2 = function ( ImgStateShape, event )
 					local ImgStateShapeFrame3 = function ( ImgStateShape, event )
 						local ImgStateShapeFrame4 = function ( ImgStateShape, event )
@@ -291,6 +296,7 @@ CoD.DamageWidget_HealthState.new = function ( menu, controller )
 		Medium = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ImgStateShape:completeAnimation()
 				self.ImgStateShape:setRGB( 1, 0.83, 0 )
 				self.ImgStateShape:setAlpha( 0.4 )
@@ -298,6 +304,7 @@ CoD.DamageWidget_HealthState.new = function ( menu, controller )
 			end,
 			Normal = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ImgStateShapeFrame2 = function ( ImgStateShape, event )
 					if not event.interrupted then
 						ImgStateShape:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -318,6 +325,7 @@ CoD.DamageWidget_HealthState.new = function ( menu, controller )
 			end,
 			Severe = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ImgStateShapeFrame2 = function ( ImgStateShape, event )
 					local ImgStateShapeFrame3 = function ( ImgStateShape, event )
 						local ImgStateShapeFrame4 = function ( ImgStateShape, event )
@@ -376,6 +384,7 @@ CoD.DamageWidget_HealthState.new = function ( menu, controller )
 		Severe = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ImgStateShape:completeAnimation()
 				self.ImgStateShape:setRGB( 1, 0.3, 0 )
 				self.ImgStateShape:setAlpha( 0.4 )
@@ -383,6 +392,7 @@ CoD.DamageWidget_HealthState.new = function ( menu, controller )
 			end,
 			Medium = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ImgStateShapeFrame2 = function ( ImgStateShape, event )
 					if not event.interrupted then
 						ImgStateShape:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -403,6 +413,7 @@ CoD.DamageWidget_HealthState.new = function ( menu, controller )
 			end,
 			Normal = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ImgStateShapeFrame2 = function ( ImgStateShape, event )
 					if not event.interrupted then
 						ImgStateShape:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -423,6 +434,7 @@ CoD.DamageWidget_HealthState.new = function ( menu, controller )
 			end,
 			Critical = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ImgStateShapeFrame2 = function ( ImgStateShape, event )
 					local ImgStateShapeFrame3 = function ( ImgStateShape, event )
 						local ImgStateShapeFrame4 = function ( ImgStateShape, event )
@@ -539,6 +551,7 @@ CoD.DamageWidget_HealthState.new = function ( menu, controller )
 		Critical = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ImgStateShapeFrame2 = function ( ImgStateShape, event )
 					local ImgStateShapeFrame3 = function ( ImgStateShape, event )
 						local ImgStateShapeFrame4 = function ( ImgStateShape, event )
@@ -633,10 +646,12 @@ CoD.DamageWidget_HealthState.new = function ( menu, controller )
 				self.ImgStateShape:setRGB( 0.67, 0, 0.09 )
 				self.ImgStateShape:setAlpha( 0.6 )
 				ImgStateShapeFrame2( ImgStateShape, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			Severe = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ImgStateShapeFrame2 = function ( ImgStateShape, event )
 					if not event.interrupted then
 						ImgStateShape:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -657,6 +672,7 @@ CoD.DamageWidget_HealthState.new = function ( menu, controller )
 			end,
 			Normal = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ImgStateShapeFrame2 = function ( ImgStateShape, event )
 					if not event.interrupted then
 						ImgStateShape:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -677,6 +693,7 @@ CoD.DamageWidget_HealthState.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.HealthStateRegen:close()
 	end )

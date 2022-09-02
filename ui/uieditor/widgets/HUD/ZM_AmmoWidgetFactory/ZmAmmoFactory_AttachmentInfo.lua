@@ -32,9 +32,11 @@ end
 CoD.ZmAmmoFactory_AttachmentInfo = InheritFrom( LUI.UIElement )
 CoD.ZmAmmoFactory_AttachmentInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmoFactory_AttachmentInfo )
 	self.id = "ZmAmmoFactory_AttachmentInfo"
@@ -96,6 +98,7 @@ CoD.ZmAmmoFactory_AttachmentInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local AttachmentInfoFrame2 = function ( AttachmentInfo, event )
 					local AttachmentInfoFrame3 = function ( AttachmentInfo, event )
 						local AttachmentInfoFrame4 = function ( AttachmentInfo, event )
@@ -317,6 +320,7 @@ CoD.ZmAmmoFactory_AttachmentInfo.new = function ( menu, controller )
 			end,
 			NoAttachments = function ()
 				self:setupElementClipCounter( 4 )
+
 				local AttachmentInfoFrame2 = function ( AttachmentInfo, event )
 					local AttachmentInfoFrame3 = function ( AttachmentInfo, event )
 						local AttachmentInfoFrame4 = function ( AttachmentInfo, event )
@@ -628,21 +632,26 @@ CoD.ZmAmmoFactory_AttachmentInfo.new = function ( menu, controller )
 		NoAttachments = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				AttachmentInfo:completeAnimation()
 				self.AttachmentInfo:setAlpha( 0 )
 				self.clipFinished( AttachmentInfo, {} )
+
 				AttachmentInfoFireRate:completeAnimation()
 				self.AttachmentInfoFireRate:setAlpha( 1 )
 				self.clipFinished( AttachmentInfoFireRate, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				Flsh:completeAnimation()
 				self.Flsh:setAlpha( 0 )
 				self.clipFinished( Flsh, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 4 )
+
 				local f54_local0 = function ( f55_arg0, f55_arg1 )
 					local f55_local0 = function ( f56_arg0, f56_arg1 )
 						local f56_local0 = function ( f57_arg0, f57_arg1 )
@@ -967,21 +976,26 @@ CoD.ZmAmmoFactory_AttachmentInfo.new = function ( menu, controller )
 		HeroWeapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				AttachmentInfo:completeAnimation()
 				self.AttachmentInfo:setAlpha( 0 )
 				self.clipFinished( AttachmentInfo, {} )
+
 				AttachmentInfoFireRate:completeAnimation()
 				self.AttachmentInfoFireRate:setAlpha( 0.5 )
 				self.clipFinished( AttachmentInfoFireRate, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				Flsh:completeAnimation()
 				self.Flsh:setAlpha( 0 )
 				self.clipFinished( Flsh, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AttachmentInfo:close()
 		element.AttachmentInfoFireRate:close()

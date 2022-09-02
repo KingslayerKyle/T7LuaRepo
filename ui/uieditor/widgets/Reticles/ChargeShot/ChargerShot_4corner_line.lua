@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Reticles.ChargeShot.ChargeShot_ActiveLine" )
 CoD.ChargerShot_4corner_line = InheritFrom( LUI.UIElement )
 CoD.ChargerShot_4corner_line.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChargerShot_4corner_line )
 	self.id = "ChargerShot_4corner_line"
@@ -53,12 +55,14 @@ CoD.ChargerShot_4corner_line.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ChargeShotActiveLine11:completeAnimation()
 				self.ChargeShotActiveLine11:setAlpha( 1 )
 				self.clipFinished( ChargeShotActiveLine11, {} )
 			end,
 			Fire = function ()
 				self:setupElementClipCounter( 4 )
+
 				local ChargeShotActiveLine3Frame2 = function ( ChargeShotActiveLine3, event )
 					if not event.interrupted then
 						ChargeShotActiveLine3:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -95,9 +99,11 @@ CoD.ChargerShot_4corner_line.new = function ( menu, controller )
 			end,
 			Cancel = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ChargeShotActiveLine3:close()
 		element.ChargeShotActiveLine1:close()

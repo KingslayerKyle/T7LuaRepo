@@ -4,9 +4,11 @@
 CoD.BM_BribeOffertime = InheritFrom( LUI.UIElement )
 CoD.BM_BribeOffertime.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_BribeOffertime )
 	self.id = "BM_BribeOffertime"
@@ -41,9 +43,11 @@ CoD.BM_BribeOffertime.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BribeOfferTime:completeAnimation()
 				self.BribeOfferTime:setAlpha( 1 )
 				self.clipFinished( BribeOfferTime, {} )
+
 				BribeBuyFast:completeAnimation()
 				self.BribeBuyFast:setAlpha( 0 )
 				self.clipFinished( BribeBuyFast, {} )
@@ -52,15 +56,18 @@ CoD.BM_BribeOffertime.new = function ( menu, controller )
 		Expired = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BribeOfferTime:completeAnimation()
 				self.BribeOfferTime:setAlpha( 0 )
 				self.clipFinished( BribeOfferTime, {} )
+
 				BribeBuyFast:completeAnimation()
 				self.BribeBuyFast:setAlpha( 1 )
 				self.clipFinished( BribeBuyFast, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Expired",

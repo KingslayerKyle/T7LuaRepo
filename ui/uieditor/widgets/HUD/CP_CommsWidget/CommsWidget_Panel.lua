@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_PanelOct" )
 CoD.CommsWidget_Panel = InheritFrom( LUI.UIElement )
 CoD.CommsWidget_Panel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CommsWidget_Panel )
 	self.id = "CommsWidget_Panel"
@@ -27,20 +29,25 @@ CoD.CommsWidget_Panel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			OffsiteCommsActive = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		OffsiteCommsActive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PanelOctagon:close()
 	end )

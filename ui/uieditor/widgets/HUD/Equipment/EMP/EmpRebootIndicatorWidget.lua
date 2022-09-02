@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.EmpRebootIndicatorWidget = InheritFrom( LUI.UIElement )
 CoD.EmpRebootIndicatorWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmpRebootIndicatorWidget )
 	self.id = "EmpRebootIndicatorWidget"
@@ -64,12 +66,14 @@ CoD.EmpRebootIndicatorWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				RebootText:completeAnimation()
 				self.RebootText:setAlpha( 1 )
 				self.clipFinished( RebootText, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.armorBorder:close()
 	end )

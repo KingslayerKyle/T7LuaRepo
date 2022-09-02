@@ -19,9 +19,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Ground.VehicleGround_CenterInnerRingEl
 CoD.vhud_dart_reticle = InheritFrom( LUI.UIElement )
 CoD.vhud_dart_reticle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_dart_reticle )
 	self.id = "vhud_dart_reticle"
@@ -418,6 +420,7 @@ CoD.vhud_dart_reticle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 34 )
+
 				local IrisLeftFrame2 = function ( IrisLeft, event )
 					if not event.interrupted then
 						IrisLeft:beginAnimation( "keyframe", 300, true, false, CoD.TweenType.Back )
@@ -1151,6 +1154,7 @@ CoD.vhud_dart_reticle.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vhudmsHashRotateRight:close()
 		element.vhudmsHashRotateLeft:close()

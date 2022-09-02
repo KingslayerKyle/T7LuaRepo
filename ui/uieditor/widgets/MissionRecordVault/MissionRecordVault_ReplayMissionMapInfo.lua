@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ButtonBoxLrgInactiveStroke" )
 CoD.MissionRecordVault_ReplayMissionMapInfo = InheritFrom( LUI.UIElement )
 CoD.MissionRecordVault_ReplayMissionMapInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MissionRecordVault_ReplayMissionMapInfo )
 	self.id = "MissionRecordVault_ReplayMissionMapInfo"
@@ -325,43 +327,56 @@ CoD.MissionRecordVault_ReplayMissionMapInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				Description:completeAnimation()
 				self.Description:setAlpha( 0.55 )
 				self.clipFinished( Description, {} )
+
 				MapPreviewImage:completeAnimation()
 				self.MapPreviewImage:setLeftRight( true, false, 1, 588 )
 				self.MapPreviewImage:setTopBottom( true, false, -1, 281 )
 				self.MapPreviewImage:setAlpha( 1 )
 				self.clipFinished( MapPreviewImage, {} )
+
 				NonDestructiveMessage:completeAnimation()
 				self.NonDestructiveMessage:setAlpha( 0.55 )
 				self.clipFinished( NonDestructiveMessage, {} )
+
 				Score:completeAnimation()
 				self.Score:setAlpha( 1 )
 				self.clipFinished( Score, {} )
+
 				TextBox5:completeAnimation()
 				self.TextBox5:setAlpha( 1 )
 				self.clipFinished( TextBox5, {} )
+
 				TextBox7:completeAnimation()
 				self.TextBox7:setAlpha( 1 )
 				self.clipFinished( TextBox7, {} )
+
 				WarningTriangle:completeAnimation()
 				self.WarningTriangle:setAlpha( 1 )
 				self.clipFinished( WarningTriangle, {} )
+
 				DifficultyImage:completeAnimation()
 				self.clipFinished( DifficultyImage, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				Description0:completeAnimation()
 				self.Description0:setAlpha( 0 )
 				self.clipFinished( Description0, {} )
+
 				ClassifiedText:completeAnimation()
 				self.ClassifiedText:setAlpha( 0 )
 				self.clipFinished( ClassifiedText, {} )
+
 				TextBox70:completeAnimation()
 				self.TextBox70:setAlpha( 0 )
 				self.clipFinished( TextBox70, {} )
+
 				Score0:completeAnimation()
 				self.Score0:setAlpha( 0 )
 				self.clipFinished( Score0, {} )
@@ -370,44 +385,57 @@ CoD.MissionRecordVault_ReplayMissionMapInfo.new = function ( menu, controller )
 		Classified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				Description:completeAnimation()
 				self.Description:setAlpha( 0 )
 				self.clipFinished( Description, {} )
+
 				MapPreviewImage:completeAnimation()
 				self.MapPreviewImage:setAlpha( 0 )
 				self.clipFinished( MapPreviewImage, {} )
+
 				NonDestructiveMessage:completeAnimation()
 				self.NonDestructiveMessage:setAlpha( 0 )
 				self.clipFinished( NonDestructiveMessage, {} )
+
 				Score:completeAnimation()
 				self.Score:setAlpha( 0 )
 				self.clipFinished( Score, {} )
+
 				TextBox5:completeAnimation()
 				self.TextBox5:setAlpha( 1 )
 				self.clipFinished( TextBox5, {} )
+
 				TextBox7:completeAnimation()
 				self.TextBox7:setAlpha( 0 )
 				self.clipFinished( TextBox7, {} )
+
 				TextBox9:completeAnimation()
 				self.TextBox9:setAlpha( 1 )
 				self.clipFinished( TextBox9, {} )
+
 				WarningTriangle:completeAnimation()
 				self.WarningTriangle:setAlpha( 0 )
 				self.clipFinished( WarningTriangle, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0.9 )
 				self.clipFinished( Image0, {} )
+
 				Description0:completeAnimation()
 				self.Description0:setLeftRight( true, false, 35, 587 )
 				self.Description0:setTopBottom( true, false, 340.78, 362.78 )
 				self.Description0:setAlpha( 0.55 )
 				self.clipFinished( Description0, {} )
+
 				ClassifiedText:completeAnimation()
 				self.ClassifiedText:setAlpha( 1 )
 				self.clipFinished( ClassifiedText, {} )
+
 				TextBox70:completeAnimation()
 				self.TextBox70:setText( Engine.Localize( "-" ) )
 				self.clipFinished( TextBox70, {} )
+
 				Score0:completeAnimation()
 				self.Score0:setAlpha( 1 )
 				self.Score0:setText( Engine.Localize( "-" ) )
@@ -415,6 +443,7 @@ CoD.MissionRecordVault_ReplayMissionMapInfo.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Classified",
@@ -431,6 +460,7 @@ CoD.MissionRecordVault_ReplayMissionMapInfo.new = function ( menu, controller )
 			modelName = "classified"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveStroke:close()
 		element.Description:close()

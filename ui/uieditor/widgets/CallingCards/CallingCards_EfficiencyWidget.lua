@@ -4,9 +4,11 @@
 CoD.CallingCards_EfficiencyWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_EfficiencyWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_EfficiencyWidget )
 	self.id = "CallingCards_EfficiencyWidget"
@@ -67,6 +69,7 @@ CoD.CallingCards_EfficiencyWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BGLightFrame2 = function ( BGLight, event )
 					local BGLightFrame3 = function ( BGLight, event )
 						local BGLightFrame4 = function ( BGLight, event )
@@ -354,6 +357,7 @@ CoD.CallingCards_EfficiencyWidget.new = function ( menu, controller )
 				GlowOrangeOver0:completeAnimation()
 				self.GlowOrangeOver0:setAlpha( 0 )
 				GlowOrangeOver0Frame2( GlowOrangeOver0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

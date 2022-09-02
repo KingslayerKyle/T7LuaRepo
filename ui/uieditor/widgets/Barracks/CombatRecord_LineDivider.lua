@@ -4,9 +4,11 @@
 CoD.CombatRecord_LineDivider = InheritFrom( LUI.UIElement )
 CoD.CombatRecord_LineDivider.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CombatRecord_LineDivider )
 	self.id = "CombatRecord_LineDivider"

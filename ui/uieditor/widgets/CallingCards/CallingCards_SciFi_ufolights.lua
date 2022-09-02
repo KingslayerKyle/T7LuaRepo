@@ -4,9 +4,11 @@
 CoD.CallingCards_SciFi_ufolights = InheritFrom( LUI.UIElement )
 CoD.CallingCards_SciFi_ufolights.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_SciFi_ufolights )
 	self.id = "CallingCards_SciFi_ufolights"
@@ -50,6 +52,7 @@ CoD.CallingCards_SciFi_ufolights.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local lights2Frame2 = function ( lights2, event )
 					local lights2Frame3 = function ( lights2, event )
 						local lights2Frame4 = function ( lights2, event )
@@ -242,6 +245,7 @@ CoD.CallingCards_SciFi_ufolights.new = function ( menu, controller )
 				self.lights30:setRGB( 1, 0.55, 0 )
 				self.lights30:setAlpha( 0.36 )
 				lights30Frame2( lights30, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

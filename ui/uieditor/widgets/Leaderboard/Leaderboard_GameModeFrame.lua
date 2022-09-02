@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_frame_noBG" )
 CoD.Leaderboard_GameModeFrame = InheritFrom( LUI.UIElement )
 CoD.Leaderboard_GameModeFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Leaderboard_GameModeFrame )
 	self.id = "Leaderboard_GameModeFrame"
@@ -280,9 +282,11 @@ CoD.Leaderboard_GameModeFrame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PlayerProfileInfoWidget:completeAnimation()
 				self.PlayerProfileInfoWidget:setAlpha( 0 )
 				self.clipFinished( PlayerProfileInfoWidget, {} )
+
 				RankAndStatsWidget:completeAnimation()
 				self.RankAndStatsWidget:setAlpha( 0 )
 				self.clipFinished( RankAndStatsWidget, {} )
@@ -291,15 +295,18 @@ CoD.Leaderboard_GameModeFrame.new = function ( menu, controller )
 		ShowInfo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PlayerProfileInfoWidget:completeAnimation()
 				self.PlayerProfileInfoWidget:setAlpha( 1 )
 				self.clipFinished( PlayerProfileInfoWidget, {} )
+
 				RankAndStatsWidget:completeAnimation()
 				self.RankAndStatsWidget:setAlpha( 1 )
 				self.clipFinished( RankAndStatsWidget, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ShowInfo",
@@ -338,6 +345,7 @@ CoD.Leaderboard_GameModeFrame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Leaderboard:close()
 		element.PlayerProfileInfoWidget:close()

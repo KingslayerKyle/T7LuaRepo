@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.CP_TrainingSim.TrainingSim_CombatImmersionBox"
 CoD.TrainingSim_CombatImmersionCompleted = InheritFrom( LUI.UIElement )
 CoD.TrainingSim_CombatImmersionCompleted.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TrainingSim_CombatImmersionCompleted )
 	self.id = "TrainingSim_CombatImmersionCompleted"
@@ -106,6 +108,7 @@ CoD.TrainingSim_CombatImmersionCompleted.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				local f2_local0 = function ( f3_arg0, f3_arg1 )
 					local f3_local0 = function ( f4_arg0, f4_arg1 )
 						local f4_local0 = function ( f5_arg0, f5_arg1 )
@@ -481,6 +484,7 @@ CoD.TrainingSim_CombatImmersionCompleted.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TrainingSimCombatImmersionBox:close()
 	end )

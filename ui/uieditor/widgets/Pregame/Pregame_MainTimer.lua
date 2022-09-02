@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_BackLine" )
 CoD.Pregame_MainTimer = InheritFrom( LUI.UIElement )
 CoD.Pregame_MainTimer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_MainTimer )
 	self.id = "Pregame_MainTimer"
@@ -140,16 +142,20 @@ CoD.Pregame_MainTimer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Numbers:completeAnimation()
 				self.Numbers:setAlpha( 1 )
 				self.clipFinished( Numbers, {} )
+
 				Check:completeAnimation()
 				self.Check:setAlpha( 0 )
 				self.clipFinished( Check, {} )
+
 				LineTop0:completeAnimation()
 				self.LineTop0:setLeftRight( false, false, -16, 16 )
 				self.LineTop0:setTopBottom( false, false, 125.14, 128.14 )
 				self.clipFinished( LineTop0, {} )
+
 				ready:completeAnimation()
 				self.ready:setAlpha( 0 )
 				self.clipFinished( ready, {} )
@@ -158,21 +164,25 @@ CoD.Pregame_MainTimer.new = function ( menu, controller )
 		PostStage = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Numbers:completeAnimation()
 				self.Numbers:setAlpha( 0 )
 				self.clipFinished( Numbers, {} )
+
 				Check:completeAnimation()
 				self.Check:setLeftRight( true, false, 164.5, 218.5 )
 				self.Check:setTopBottom( true, false, 42, 96 )
 				self.Check:setRGB( 1, 1, 1 )
 				self.Check:setAlpha( 0 )
 				self.clipFinished( Check, {} )
+
 				ready:completeAnimation()
 				self.ready:setAlpha( 0 )
 				self.clipFinished( ready, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "PostStage",
@@ -189,6 +199,7 @@ CoD.Pregame_MainTimer.new = function ( menu, controller )
 			modelName = "lobbyRoot.Pregame.stage"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GlowPanel:close()
 		element.PanelAmmo:close()

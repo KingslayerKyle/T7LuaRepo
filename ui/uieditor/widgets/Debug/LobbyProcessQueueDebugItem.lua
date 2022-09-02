@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Debug.LobbyProcessQueueDebugItemText" )
 CoD.LobbyProcessQueueDebugItem = InheritFrom( LUI.UIElement )
 CoD.LobbyProcessQueueDebugItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyProcessQueueDebugItem )
 	self.id = "LobbyProcessQueueDebugItem"
@@ -45,16 +47,20 @@ CoD.LobbyProcessQueueDebugItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Process = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Background:completeAnimation()
 				self.Background:setRGB( 0, 0.04, 0.43 )
 				self.Background:setAlpha( 0.7 )
 				self.clipFinished( Background, {} )
+
 				LobbyProcessQueueDebugItemText:completeAnimation()
+
 				LobbyProcessQueueDebugItemText.Name:completeAnimation()
 				self.LobbyProcessQueueDebugItemText.Name:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 				self.clipFinished( LobbyProcessQueueDebugItemText, {} )
@@ -63,17 +69,21 @@ CoD.LobbyProcessQueueDebugItem.new = function ( menu, controller )
 		Action = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Background:completeAnimation()
 				self.Background:setRGB( 0, 0, 0 )
 				self.Background:setAlpha( 0.7 )
 				self.clipFinished( Background, {} )
+
 				LobbyProcessQueueDebugItemText:completeAnimation()
+
 				LobbyProcessQueueDebugItemText.Name:completeAnimation()
 				self.LobbyProcessQueueDebugItemText.Name:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 				self.clipFinished( LobbyProcessQueueDebugItemText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Process",
@@ -96,6 +106,7 @@ CoD.LobbyProcessQueueDebugItem.new = function ( menu, controller )
 			modelName = "type"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LobbyProcessQueueDebugItemText:close()
 	end )

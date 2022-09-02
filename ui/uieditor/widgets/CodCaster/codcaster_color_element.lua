@@ -4,9 +4,11 @@
 CoD.codcaster_color_element = InheritFrom( LUI.UIElement )
 CoD.codcaster_color_element.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.codcaster_color_element )
 	self.id = "codcaster_color_element"
@@ -56,23 +58,28 @@ CoD.codcaster_color_element.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 0 )
 				self.clipFinished( background, {} )
+
 				colorElement:completeAnimation()
 				self.colorElement:setLeftRight( true, true, 8, -8 )
 				self.colorElement:setTopBottom( true, true, 8, -8 )
 				self.colorElement:setAlpha( 1 )
 				self.clipFinished( colorElement, {} )
+
 				Selected:completeAnimation()
 				self.Selected:setAlpha( 0 )
 				self.clipFinished( Selected, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 0 )
 				self.clipFinished( Lock, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local backgroundFrame2 = function ( background, event )
 					local backgroundFrame3 = function ( background, event )
 						local backgroundFrame4 = function ( background, event )
@@ -135,11 +142,13 @@ CoD.codcaster_color_element.new = function ( menu, controller )
 				self.background:setRGB( 1, 0.41, 0 )
 				self.background:setAlpha( 0.65 )
 				backgroundFrame2( background, {} )
+
 				colorElement:completeAnimation()
 				self.colorElement:setLeftRight( true, true, 5, -5 )
 				self.colorElement:setTopBottom( true, true, 5, -5 )
 				self.colorElement:setAlpha( 1 )
 				self.clipFinished( colorElement, {} )
+
 				Selected:completeAnimation()
 				self.Selected:setAlpha( 0 )
 				self.clipFinished( Selected, {} )
@@ -148,23 +157,28 @@ CoD.codcaster_color_element.new = function ( menu, controller )
 		Selected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 0 )
 				self.clipFinished( background, {} )
+
 				colorElement:completeAnimation()
 				self.colorElement:setLeftRight( true, true, 8, -8 )
 				self.colorElement:setTopBottom( true, true, 8, -8 )
 				self.colorElement:setAlpha( 1 )
 				self.clipFinished( colorElement, {} )
+
 				Selected:completeAnimation()
 				self.Selected:setAlpha( 1 )
 				self.clipFinished( Selected, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 0 )
 				self.clipFinished( Lock, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local backgroundFrame2 = function ( background, event )
 					local backgroundFrame3 = function ( background, event )
 						local backgroundFrame4 = function ( background, event )
@@ -228,11 +242,13 @@ CoD.codcaster_color_element.new = function ( menu, controller )
 				self.background:setRGB( 1, 0.41, 0 )
 				self.background:setAlpha( 0.35 )
 				backgroundFrame2( background, {} )
+
 				colorElement:completeAnimation()
 				self.colorElement:setLeftRight( true, true, 5, -5 )
 				self.colorElement:setTopBottom( true, true, 5, -5 )
 				self.colorElement:setAlpha( 1 )
 				self.clipFinished( colorElement, {} )
+
 				Selected:completeAnimation()
 				self.Selected:setAlpha( 1 )
 				self.clipFinished( Selected, {} )
@@ -241,23 +257,28 @@ CoD.codcaster_color_element.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 0 )
 				self.clipFinished( background, {} )
+
 				colorElement:completeAnimation()
 				self.colorElement:setLeftRight( true, true, 8, -8 )
 				self.colorElement:setTopBottom( true, true, 8, -8 )
 				self.colorElement:setAlpha( 0.5 )
 				self.clipFinished( colorElement, {} )
+
 				Selected:completeAnimation()
 				self.Selected:setAlpha( 0 )
 				self.clipFinished( Selected, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 1 )
 				self.clipFinished( Lock, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Selected",
@@ -288,6 +309,7 @@ CoD.codcaster_color_element.new = function ( menu, controller )
 			modelName = "disabled"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.colorElement:close()
 	end )

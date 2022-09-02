@@ -21,6 +21,7 @@ CoD.ChooseCharacterLoadout_ButtonFooter.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacterLoadout_ButtonFooter )
 	self.id = "ChooseCharacterLoadout_ButtonFooter"
@@ -54,11 +55,14 @@ CoD.ChooseCharacterLoadout_ButtonFooter.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ChooseCharacterLoadoutButtonFooterBackOfCard0:completeAnimation()
+
 				ChooseCharacterLoadoutButtonFooterBackOfCard0.backOfCardLabel:completeAnimation()
 				self.ChooseCharacterLoadoutButtonFooterBackOfCard0:setAlpha( 1 )
 				self.ChooseCharacterLoadoutButtonFooterBackOfCard0.backOfCardLabel:setText( Engine.Localize( "MENU_BACK_OF_CARD" ) )
 				self.clipFinished( ChooseCharacterLoadoutButtonFooterBackOfCard0, {} )
+
 				ChooseCharacterLoadoutButtonFooterPersonalize0:completeAnimation()
 				self.ChooseCharacterLoadoutButtonFooterPersonalize0:setAlpha( 1 )
 				self.clipFinished( ChooseCharacterLoadoutButtonFooterPersonalize0, {} )
@@ -67,9 +71,11 @@ CoD.ChooseCharacterLoadout_ButtonFooter.new = function ( menu, controller )
 		FirstTimeFlow = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ChooseCharacterLoadoutButtonFooterBackOfCard0:completeAnimation()
 				self.ChooseCharacterLoadoutButtonFooterBackOfCard0:setAlpha( 0 )
 				self.clipFinished( ChooseCharacterLoadoutButtonFooterBackOfCard0, {} )
+
 				ChooseCharacterLoadoutButtonFooterPersonalize0:completeAnimation()
 				self.ChooseCharacterLoadoutButtonFooterPersonalize0:setAlpha( 0 )
 				self.clipFinished( ChooseCharacterLoadoutButtonFooterPersonalize0, {} )
@@ -78,15 +84,18 @@ CoD.ChooseCharacterLoadout_ButtonFooter.new = function ( menu, controller )
 		Arena = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ChooseCharacterLoadoutButtonFooterBackOfCard0:completeAnimation()
 				self.ChooseCharacterLoadoutButtonFooterBackOfCard0:setAlpha( 0 )
 				self.clipFinished( ChooseCharacterLoadoutButtonFooterBackOfCard0, {} )
+
 				ChooseCharacterLoadoutButtonFooterPersonalize0:completeAnimation()
 				self.ChooseCharacterLoadoutButtonFooterPersonalize0:setAlpha( 0 )
 				self.clipFinished( ChooseCharacterLoadoutButtonFooterPersonalize0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "FirstTimeFlow",
@@ -117,6 +126,7 @@ CoD.ChooseCharacterLoadout_ButtonFooter.new = function ( menu, controller )
 			modelName = "lobbyRoot.Pregame.state"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ChooseCharacterLoadoutButtonFooterBackOfCard0:close()
 		element.ChooseCharacterLoadoutButtonFooterPersonalize0:close()

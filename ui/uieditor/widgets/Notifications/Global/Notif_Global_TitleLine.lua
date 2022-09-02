@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Notifications.Global.Notif_Global_TitleBackingLine
 CoD.Notif_Global_TitleLine = InheritFrom( LUI.UIElement )
 CoD.Notif_Global_TitleLine.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Notif_Global_TitleLine )
 	self.id = "Notif_Global_TitleLine"
@@ -30,6 +32,7 @@ CoD.Notif_Global_TitleLine.new = function ( menu, controller )
 	SubText:setTTF( "fonts/FoundryGridnik-Bold.ttf" )
 	SubText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	SubText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( SubText, "setText", function ( element, controller )
 		ScaleWidgetToLabelCenteredWrapped( self, element, 158, 0 )
 	end )
@@ -42,6 +45,7 @@ CoD.Notif_Global_TitleLine.new = function ( menu, controller )
 			SubText:setText( title )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.NotifGlobalTitleBackingLine:close()
 		element.SubText:close()

@@ -13,9 +13,11 @@ require( "ui.uieditor.widgets.HUD.MPGametypes.MP_HardcoreInventoryWidget" )
 CoD.T7Hud_MP_SafeAreaContainer = InheritFrom( LUI.UIElement )
 CoD.T7Hud_MP_SafeAreaContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.T7Hud_MP_SafeAreaContainer )
 	self.id = "T7Hud_MP_SafeAreaContainer"
@@ -486,36 +488,44 @@ CoD.T7Hud_MP_SafeAreaContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				ScoreInfo:completeAnimation()
 				self.ScoreInfo:setLeftRight( true, false, -177, 437 )
 				self.ScoreInfo:setTopBottom( false, true, -242, 8 )
 				self.ScoreInfo:setRGB( 1, 1, 1 )
 				self.ScoreInfo:setAlpha( 1 )
 				self.clipFinished( ScoreInfo, {} )
+
 				AmmoWidgetContainer:completeAnimation()
 				self.AmmoWidgetContainer:setLeftRight( false, true, -425, -27 )
 				self.AmmoWidgetContainer:setTopBottom( false, true, -156, -32 )
 				self.AmmoWidgetContainer:setRGB( 1, 1, 1 )
 				self.AmmoWidgetContainer:setAlpha( 1 )
 				self.clipFinished( AmmoWidgetContainer, {} )
+
 				CompassGroupContainer:completeAnimation()
 				self.CompassGroupContainer:setAlpha( 1 )
 				self.clipFinished( CompassGroupContainer, {} )
+
 				VoipContainer0:completeAnimation()
 				self.VoipContainer0:setAlpha( 1 )
 				self.clipFinished( VoipContainer0, {} )
+
 				ScrStkContainer:completeAnimation()
 				self.ScrStkContainer:setAlpha( 1 )
 				self.clipFinished( ScrStkContainer, {} )
+
 				ScoreInfoFlash:completeAnimation()
 				self.ScoreInfoFlash:setAlpha( 0 )
 				self.clipFinished( ScoreInfoFlash, {} )
+
 				AmmoWidgetFlash:completeAnimation()
 				self.AmmoWidgetFlash:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetFlash, {} )
 			end,
 			SpeedBoost = function ()
 				self:setupElementClipCounter( 4 )
+
 				local ScoreInfoFrame2 = function ( ScoreInfo, event )
 					local ScoreInfoFrame3 = function ( ScoreInfo, event )
 						if not event.interrupted then
@@ -657,30 +667,39 @@ CoD.T7Hud_MP_SafeAreaContainer.new = function ( menu, controller )
 		HideAllButScoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ScoreInfo:completeAnimation()
 				self.ScoreInfo:setAlpha( 0 )
 				self.clipFinished( ScoreInfo, {} )
+
 				AmmoWidgetContainer:completeAnimation()
 				self.AmmoWidgetContainer:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetContainer, {} )
+
 				EMPScoreInfo:completeAnimation()
 				self.EMPScoreInfo:setAlpha( 0 )
 				self.clipFinished( EMPScoreInfo, {} )
+
 				EMPWeaponInfo:completeAnimation()
 				self.EMPWeaponInfo:setAlpha( 0 )
 				self.clipFinished( EMPWeaponInfo, {} )
+
 				CompassGroupContainer:completeAnimation()
 				self.CompassGroupContainer:setAlpha( 0 )
 				self.clipFinished( CompassGroupContainer, {} )
+
 				VoipContainer0:completeAnimation()
 				self.VoipContainer0:setAlpha( 0 )
 				self.clipFinished( VoipContainer0, {} )
+
 				ScrStkContainer:completeAnimation()
 				self.ScrStkContainer:setAlpha( 0 )
 				self.clipFinished( ScrStkContainer, {} )
+
 				ScoreInfoFlash:completeAnimation()
 				self.ScoreInfoFlash:setAlpha( 0 )
 				self.clipFinished( ScoreInfoFlash, {} )
+
 				AmmoWidgetFlash:completeAnimation()
 				self.AmmoWidgetFlash:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetFlash, {} )
@@ -689,9 +708,11 @@ CoD.T7Hud_MP_SafeAreaContainer.new = function ( menu, controller )
 		SpeedBoost = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 4 )
+
 				local ScoreInfoFrame2 = function ( ScoreInfo, event )
 					local ScoreInfoFrame3 = function ( ScoreInfo, event )
 						if not event.interrupted then
@@ -833,36 +854,46 @@ CoD.T7Hud_MP_SafeAreaContainer.new = function ( menu, controller )
 		HideForCodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ScoreInfo:completeAnimation()
 				self.ScoreInfo:setAlpha( 0 )
 				self.clipFinished( ScoreInfo, {} )
+
 				AmmoWidgetContainer:completeAnimation()
 				self.AmmoWidgetContainer:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetContainer, {} )
+
 				EMPScoreInfo:completeAnimation()
 				self.EMPScoreInfo:setAlpha( 0 )
 				self.clipFinished( EMPScoreInfo, {} )
+
 				EMPWeaponInfo:completeAnimation()
 				self.EMPWeaponInfo:setAlpha( 0 )
 				self.clipFinished( EMPWeaponInfo, {} )
+
 				CompassGroupContainer:completeAnimation()
 				self.CompassGroupContainer:setAlpha( 0 )
 				self.clipFinished( CompassGroupContainer, {} )
+
 				VoipContainer0:completeAnimation()
 				self.VoipContainer0:setAlpha( 0 )
 				self.clipFinished( VoipContainer0, {} )
+
 				ScrStkContainer:completeAnimation()
 				self.ScrStkContainer:setAlpha( 0 )
 				self.clipFinished( ScrStkContainer, {} )
+
 				ScoreInfoFlash:completeAnimation()
 				self.ScoreInfoFlash:setAlpha( 0 )
 				self.clipFinished( ScoreInfoFlash, {} )
+
 				AmmoWidgetFlash:completeAnimation()
 				self.AmmoWidgetFlash:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetFlash, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HideAllButScoreboard",
@@ -973,6 +1004,7 @@ CoD.T7Hud_MP_SafeAreaContainer.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ScoreInfo:close()
 		element.AmmoWidgetContainer:close()

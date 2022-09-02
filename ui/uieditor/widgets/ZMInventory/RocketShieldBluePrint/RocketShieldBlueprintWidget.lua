@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventory.RocketShieldBluePrint.RocketShieldPiec
 CoD.RocketShieldBlueprintWidget = InheritFrom( LUI.UIElement )
 CoD.RocketShieldBlueprintWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RocketShieldBlueprintWidget )
 	self.id = "RocketShieldBlueprintWidget"
@@ -194,15 +196,19 @@ CoD.RocketShieldBlueprintWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				RocketShieldPieceWidget1:completeAnimation()
 				self.RocketShieldPieceWidget1:setAlpha( 0 )
 				self.clipFinished( RocketShieldPieceWidget1, {} )
+
 				RocketShieldPieceWidget2:completeAnimation()
 				self.RocketShieldPieceWidget2:setAlpha( 0 )
 				self.clipFinished( RocketShieldPieceWidget2, {} )
+
 				RocketShieldPieceWidget3:completeAnimation()
 				self.RocketShieldPieceWidget3:setAlpha( 0 )
 				self.clipFinished( RocketShieldPieceWidget3, {} )
@@ -211,6 +217,7 @@ CoD.RocketShieldBlueprintWidget.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local BGFrame2 = function ( BG, event )
 					local BGFrame3 = function ( BG, event )
 						local BGFrame4 = function ( BG, event )
@@ -247,12 +254,15 @@ CoD.RocketShieldBlueprintWidget.new = function ( menu, controller )
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				BGFrame2( BG, {} )
+
 				RocketShieldPieceWidget1:completeAnimation()
 				self.RocketShieldPieceWidget1:setAlpha( 1 )
 				self.clipFinished( RocketShieldPieceWidget1, {} )
+
 				RocketShieldPieceWidget2:completeAnimation()
 				self.RocketShieldPieceWidget2:setAlpha( 1 )
 				self.clipFinished( RocketShieldPieceWidget2, {} )
+
 				RocketShieldPieceWidget3:completeAnimation()
 				self.RocketShieldPieceWidget3:setAlpha( 1 )
 				self.clipFinished( RocketShieldPieceWidget3, {} )
@@ -261,21 +271,26 @@ CoD.RocketShieldBlueprintWidget.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				RocketShieldPieceWidget1:completeAnimation()
 				self.RocketShieldPieceWidget1:setAlpha( 1 )
 				self.clipFinished( RocketShieldPieceWidget1, {} )
+
 				RocketShieldPieceWidget2:completeAnimation()
 				self.RocketShieldPieceWidget2:setAlpha( 1 )
 				self.clipFinished( RocketShieldPieceWidget2, {} )
+
 				RocketShieldPieceWidget3:completeAnimation()
 				self.RocketShieldPieceWidget3:setAlpha( 1 )
 				self.clipFinished( RocketShieldPieceWidget3, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BgVisible",
@@ -306,6 +321,7 @@ CoD.RocketShieldBlueprintWidget.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RocketShieldPieceWidget1:close()
 		element.RocketShieldPieceWidget2:close()

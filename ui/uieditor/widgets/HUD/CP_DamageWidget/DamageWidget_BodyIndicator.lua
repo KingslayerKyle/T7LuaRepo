@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.CP_DamageWidget.DamageWidget_BodyIndicatorQ4" 
 CoD.DamageWidget_BodyIndicator = InheritFrom( LUI.UIElement )
 CoD.DamageWidget_BodyIndicator.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DamageWidget_BodyIndicator )
 	self.id = "DamageWidget_BodyIndicator"

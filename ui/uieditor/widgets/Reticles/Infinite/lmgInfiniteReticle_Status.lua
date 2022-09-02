@@ -4,9 +4,11 @@
 CoD.lmgInfiniteReticle_Status = InheritFrom( LUI.UIElement )
 CoD.lmgInfiniteReticle_Status.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.lmgInfiniteReticle_Status )
 	self.id = "lmgInfiniteReticle_Status"
@@ -45,6 +47,7 @@ CoD.lmgInfiniteReticle_Status.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

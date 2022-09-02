@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.VTOL.vtolCenterMissiles" )
 CoD.vtolCenterFrame = InheritFrom( LUI.UIElement )
 CoD.vtolCenterFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vtolCenterFrame )
 	self.id = "vtolCenterFrame"
@@ -34,9 +36,11 @@ CoD.vtolCenterFrame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.missiles:close()
 	end )

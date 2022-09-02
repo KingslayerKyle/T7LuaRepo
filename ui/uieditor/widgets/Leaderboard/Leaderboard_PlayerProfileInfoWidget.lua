@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_LabelSubHeadingE" )
 CoD.Leaderboard_PlayerProfileInfoWidget = InheritFrom( LUI.UIElement )
 CoD.Leaderboard_PlayerProfileInfoWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Leaderboard_PlayerProfileInfoWidget )
 	self.id = "Leaderboard_PlayerProfileInfoWidget"
@@ -57,18 +59,23 @@ CoD.Leaderboard_PlayerProfileInfoWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				EmblemSpinner:completeAnimation()
 				self.EmblemSpinner:setAlpha( 0 )
 				self.clipFinished( EmblemSpinner, {} )
+
 				GamerCardSpinner:completeAnimation()
 				self.GamerCardSpinner:setAlpha( 0 )
 				self.clipFinished( GamerCardSpinner, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setAlpha( 0 )
 				self.clipFinished( emblem, {} )
+
 				GamerCard:completeAnimation()
 				self.GamerCard:setAlpha( 0 )
 				self.clipFinished( GamerCard, {} )
+
 				GamerTag:completeAnimation()
 				self.GamerTag:setAlpha( 0 )
 				self.clipFinished( GamerTag, {} )
@@ -77,18 +84,23 @@ CoD.Leaderboard_PlayerProfileInfoWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				EmblemSpinner:completeAnimation()
 				self.EmblemSpinner:setAlpha( 0 )
 				self.clipFinished( EmblemSpinner, {} )
+
 				GamerCardSpinner:completeAnimation()
 				self.GamerCardSpinner:setAlpha( 0 )
 				self.clipFinished( GamerCardSpinner, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setAlpha( 1 )
 				self.clipFinished( emblem, {} )
+
 				GamerCard:completeAnimation()
 				self.GamerCard:setAlpha( 1 )
 				self.clipFinished( GamerCard, {} )
+
 				GamerTag:completeAnimation()
 				self.GamerTag:setAlpha( 1 )
 				self.clipFinished( GamerTag, {} )
@@ -97,24 +109,30 @@ CoD.Leaderboard_PlayerProfileInfoWidget.new = function ( menu, controller )
 		PCacheBuffer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				EmblemSpinner:completeAnimation()
 				self.EmblemSpinner:setAlpha( 1 )
 				self.clipFinished( EmblemSpinner, {} )
+
 				GamerCardSpinner:completeAnimation()
 				self.GamerCardSpinner:setAlpha( 1 )
 				self.clipFinished( GamerCardSpinner, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setAlpha( 0 )
 				self.clipFinished( emblem, {} )
+
 				GamerCard:completeAnimation()
 				self.GamerCard:setAlpha( 0 )
 				self.clipFinished( GamerCard, {} )
+
 				GamerTag:completeAnimation()
 				self.GamerTag:setAlpha( 1 )
 				self.clipFinished( GamerTag, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GamerCard:close()
 		element.GamerTag:close()

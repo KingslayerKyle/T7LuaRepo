@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Lobby.Lists.Members.LobbyRank" )
 CoD.FriendsListRow_Internal = InheritFrom( LUI.UIElement )
 CoD.FriendsListRow_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FriendsListRow_Internal )
 	self.id = "FriendsListRow_Internal"
@@ -101,9 +103,11 @@ CoD.FriendsListRow_Internal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
+
 				local highlightFrame2 = function ( highlight, event )
 					local highlightFrame3 = function ( highlight, event )
 						if not event.interrupted then
@@ -130,19 +134,23 @@ CoD.FriendsListRow_Internal.new = function ( menu, controller )
 				highlight:completeAnimation()
 				self.highlight:setAlpha( 0 )
 				highlightFrame2( highlight, {} )
+
 				self.nextClip = "Focus"
 			end,
 			hideJoinableIcon = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 1 )
+
 				highlight:completeAnimation()
 				self.highlight:setAlpha( 0 )
 				self.clipFinished( highlight, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 1 )
+
 				local highlightFrame2 = function ( highlight, event )
 					if not event.interrupted then
 						highlight:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -163,12 +171,15 @@ CoD.FriendsListRow_Internal.new = function ( menu, controller )
 		hideJoinableIcon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			hide = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.highlight:close()
 		element.IconJoinable:close()

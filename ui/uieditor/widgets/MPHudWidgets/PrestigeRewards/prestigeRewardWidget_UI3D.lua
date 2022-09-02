@@ -4,9 +4,11 @@
 CoD.prestigeRewardWidget_UI3D = InheritFrom( LUI.UIElement )
 CoD.prestigeRewardWidget_UI3D.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.prestigeRewardWidget_UI3D )
 	self.id = "prestigeRewardWidget_UI3D"

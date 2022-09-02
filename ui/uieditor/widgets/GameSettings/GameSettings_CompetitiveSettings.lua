@@ -11,6 +11,7 @@ local f0_local0 = function ( f1_arg0, f1_arg1 )
 		return 
 	else
 		f1_arg0:setForceMouseEventDispatch( true )
+
 		LUI.OverrideFunction_CallOriginalFirst( f1_arg0.CompetitiveSettingsButtonsFlyout, "setState", function ( element, controller )
 			if not IsInDefaultState( element ) then
 				f1_arg0.BanProtectSettings.m_mouseDisabled = true
@@ -265,9 +266,11 @@ DataSources.CompetitiveBanProtectSettings = DataSourceHelpers.ListSetup( "Compet
 CoD.GameSettings_CompetitiveSettings = InheritFrom( LUI.UIElement )
 CoD.GameSettings_CompetitiveSettings.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GameSettings_CompetitiveSettings )
 	self.id = "GameSettings_CompetitiveSettings"
@@ -319,6 +322,7 @@ CoD.GameSettings_CompetitiveSettings.new = function ( menu, controller )
 		GameSettingsButtonGainFocus( self, element, controller )
 		return f18_local0
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( CompetitiveSettingsButtonsFlyout, "setState", function ( element, controller )
 		if not IsInDefaultState( element ) then
 			MakeElementNotFocusable( self, "BanProtectSettings", controller )
@@ -355,6 +359,7 @@ CoD.GameSettings_CompetitiveSettings.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GameSettingsSelectedItemInfo:close()
 		element.DraftSettings:close()

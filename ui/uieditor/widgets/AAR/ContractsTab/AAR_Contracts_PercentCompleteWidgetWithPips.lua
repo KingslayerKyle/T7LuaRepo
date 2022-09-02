@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.AAR.ContractsTab.AAR_Contracts_Pip" )
 CoD.AAR_Contracts_PercentCompleteWidgetWithPips = InheritFrom( LUI.UIElement )
 CoD.AAR_Contracts_PercentCompleteWidgetWithPips.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AAR_Contracts_PercentCompleteWidgetWithPips )
 	self.id = "AAR_Contracts_PercentCompleteWidgetWithPips"
@@ -161,33 +163,43 @@ CoD.AAR_Contracts_PercentCompleteWidgetWithPips.new = function ( menu, controlle
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BackgroundRing:completeAnimation()
 				self.BackgroundRing:setAlpha( 0.35 )
 				self.clipFinished( BackgroundRing, {} )
+
 				percentCompleteCircle:completeAnimation()
 				self.percentCompleteCircle:setAlpha( 1 )
 				self.clipFinished( percentCompleteCircle, {} )
+
 				percentText:completeAnimation()
 				self.percentText:setAlpha( 1 )
 				self.clipFinished( percentText, {} )
+
 				CrossLines:completeAnimation()
 				self.CrossLines:setAlpha( 0.35 )
 				self.clipFinished( CrossLines, {} )
+
 				AllCompleteRing:completeAnimation()
 				self.AllCompleteRing:setAlpha( 0 )
 				self.clipFinished( AllCompleteRing, {} )
+
 				AllCompleteIcon:completeAnimation()
 				self.AllCompleteIcon:setAlpha( 0 )
 				self.clipFinished( AllCompleteIcon, {} )
+
 				RewardPip1:completeAnimation()
 				self.RewardPip1:setAlpha( 0 )
 				self.clipFinished( RewardPip1, {} )
+
 				RewardPip2:completeAnimation()
 				self.RewardPip2:setAlpha( 0 )
 				self.clipFinished( RewardPip2, {} )
+
 				RewardPip3:completeAnimation()
 				self.RewardPip3:setAlpha( 0 )
 				self.clipFinished( RewardPip3, {} )
+
 				RewardPip4:completeAnimation()
 				self.RewardPip4:setAlpha( 0 )
 				self.clipFinished( RewardPip4, {} )
@@ -196,37 +208,47 @@ CoD.AAR_Contracts_PercentCompleteWidgetWithPips.new = function ( menu, controlle
 		TwoPips = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BackgroundRing:completeAnimation()
 				self.BackgroundRing:setAlpha( 0.35 )
 				self.clipFinished( BackgroundRing, {} )
+
 				percentCompleteCircle:completeAnimation()
 				self.percentCompleteCircle:setAlpha( 1 )
 				self.clipFinished( percentCompleteCircle, {} )
+
 				percentText:completeAnimation()
 				self.percentText:setAlpha( 1 )
 				self.clipFinished( percentText, {} )
+
 				CrossLines:completeAnimation()
 				self.CrossLines:setAlpha( 0.35 )
 				self.clipFinished( CrossLines, {} )
+
 				AllCompleteRing:completeAnimation()
 				self.AllCompleteRing:setAlpha( 0 )
 				self.clipFinished( AllCompleteRing, {} )
+
 				AllCompleteIcon:completeAnimation()
 				self.AllCompleteIcon:setAlpha( 0 )
 				self.clipFinished( AllCompleteIcon, {} )
+
 				RewardPip1:completeAnimation()
 				self.RewardPip1:setLeftRight( false, false, -8, 8 )
 				self.RewardPip1:setTopBottom( false, true, -12, 4 )
 				self.RewardPip1:setAlpha( 1 )
 				self.clipFinished( RewardPip1, {} )
+
 				RewardPip2:completeAnimation()
 				self.RewardPip2:setLeftRight( false, false, -8, 8 )
 				self.RewardPip2:setTopBottom( true, false, -4, 12 )
 				self.RewardPip2:setAlpha( 1 )
 				self.clipFinished( RewardPip2, {} )
+
 				RewardPip3:completeAnimation()
 				self.RewardPip3:setAlpha( 0 )
 				self.clipFinished( RewardPip3, {} )
+
 				RewardPip4:completeAnimation()
 				self.RewardPip4:setAlpha( 0 )
 				self.clipFinished( RewardPip4, {} )
@@ -235,39 +257,49 @@ CoD.AAR_Contracts_PercentCompleteWidgetWithPips.new = function ( menu, controlle
 		ThreePips = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BackgroundRing:completeAnimation()
 				self.BackgroundRing:setAlpha( 0.35 )
 				self.clipFinished( BackgroundRing, {} )
+
 				percentCompleteCircle:completeAnimation()
 				self.percentCompleteCircle:setAlpha( 1 )
 				self.clipFinished( percentCompleteCircle, {} )
+
 				percentText:completeAnimation()
 				self.percentText:setAlpha( 1 )
 				self.clipFinished( percentText, {} )
+
 				CrossLines:completeAnimation()
 				self.CrossLines:setAlpha( 0.35 )
 				self.clipFinished( CrossLines, {} )
+
 				AllCompleteRing:completeAnimation()
 				self.AllCompleteRing:setAlpha( 0 )
 				self.clipFinished( AllCompleteRing, {} )
+
 				AllCompleteIcon:completeAnimation()
 				self.AllCompleteIcon:setAlpha( 0 )
 				self.clipFinished( AllCompleteIcon, {} )
+
 				RewardPip1:completeAnimation()
 				self.RewardPip1:setLeftRight( false, true, -18, -2 )
 				self.RewardPip1:setTopBottom( false, true, -33, -17 )
 				self.RewardPip1:setAlpha( 1 )
 				self.clipFinished( RewardPip1, {} )
+
 				RewardPip2:completeAnimation()
 				self.RewardPip2:setLeftRight( true, false, 2, 18 )
 				self.RewardPip2:setTopBottom( false, true, -33, -17 )
 				self.RewardPip2:setAlpha( 1 )
 				self.clipFinished( RewardPip2, {} )
+
 				RewardPip3:completeAnimation()
 				self.RewardPip3:setLeftRight( false, false, -8, 8 )
 				self.RewardPip3:setTopBottom( true, false, -4, 12 )
 				self.RewardPip3:setAlpha( 1 )
 				self.clipFinished( RewardPip3, {} )
+
 				RewardPip4:completeAnimation()
 				self.RewardPip4:setAlpha( 0 )
 				self.clipFinished( RewardPip4, {} )
@@ -276,39 +308,49 @@ CoD.AAR_Contracts_PercentCompleteWidgetWithPips.new = function ( menu, controlle
 		FourPips = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BackgroundRing:completeAnimation()
 				self.BackgroundRing:setAlpha( 0.35 )
 				self.clipFinished( BackgroundRing, {} )
+
 				percentCompleteCircle:completeAnimation()
 				self.percentCompleteCircle:setAlpha( 1 )
 				self.clipFinished( percentCompleteCircle, {} )
+
 				percentText:completeAnimation()
 				self.percentText:setAlpha( 1 )
 				self.clipFinished( percentText, {} )
+
 				CrossLines:completeAnimation()
 				self.CrossLines:setAlpha( 0.35 )
 				self.clipFinished( CrossLines, {} )
+
 				AllCompleteRing:completeAnimation()
 				self.AllCompleteRing:setAlpha( 0 )
 				self.clipFinished( AllCompleteRing, {} )
+
 				AllCompleteIcon:completeAnimation()
 				self.AllCompleteIcon:setAlpha( 0 )
 				self.clipFinished( AllCompleteIcon, {} )
+
 				RewardPip1:completeAnimation()
 				self.RewardPip1:setLeftRight( false, true, -12, 4 )
 				self.RewardPip1:setTopBottom( false, false, -8, 8 )
 				self.RewardPip1:setAlpha( 1 )
 				self.clipFinished( RewardPip1, {} )
+
 				RewardPip2:completeAnimation()
 				self.RewardPip2:setLeftRight( false, false, -8, 8 )
 				self.RewardPip2:setTopBottom( false, true, -12, 4 )
 				self.RewardPip2:setAlpha( 1 )
 				self.clipFinished( RewardPip2, {} )
+
 				RewardPip3:completeAnimation()
 				self.RewardPip3:setLeftRight( true, false, -4, 12 )
 				self.RewardPip3:setTopBottom( false, false, -8, 8 )
 				self.RewardPip3:setAlpha( 1 )
 				self.clipFinished( RewardPip3, {} )
+
 				RewardPip4:completeAnimation()
 				self.RewardPip4:setLeftRight( false, false, -8, 8 )
 				self.RewardPip4:setTopBottom( true, false, -4, 12 )
@@ -319,33 +361,43 @@ CoD.AAR_Contracts_PercentCompleteWidgetWithPips.new = function ( menu, controlle
 		CompleteZeroPips = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BackgroundRing:completeAnimation()
 				self.BackgroundRing:setAlpha( 0.35 )
 				self.clipFinished( BackgroundRing, {} )
+
 				percentCompleteCircle:completeAnimation()
 				self.percentCompleteCircle:setAlpha( 0 )
 				self.clipFinished( percentCompleteCircle, {} )
+
 				percentText:completeAnimation()
 				self.percentText:setAlpha( 0 )
 				self.clipFinished( percentText, {} )
+
 				CrossLines:completeAnimation()
 				self.CrossLines:setAlpha( 0.35 )
 				self.clipFinished( CrossLines, {} )
+
 				AllCompleteRing:completeAnimation()
 				self.AllCompleteRing:setAlpha( 1 )
 				self.clipFinished( AllCompleteRing, {} )
+
 				AllCompleteIcon:completeAnimation()
 				self.AllCompleteIcon:setAlpha( 1 )
 				self.clipFinished( AllCompleteIcon, {} )
+
 				RewardPip1:completeAnimation()
 				self.RewardPip1:setAlpha( 0 )
 				self.clipFinished( RewardPip1, {} )
+
 				RewardPip2:completeAnimation()
 				self.RewardPip2:setAlpha( 0 )
 				self.clipFinished( RewardPip2, {} )
+
 				RewardPip3:completeAnimation()
 				self.RewardPip3:setAlpha( 0 )
 				self.clipFinished( RewardPip3, {} )
+
 				RewardPip4:completeAnimation()
 				self.RewardPip4:setAlpha( 0 )
 				self.clipFinished( RewardPip4, {} )
@@ -354,37 +406,47 @@ CoD.AAR_Contracts_PercentCompleteWidgetWithPips.new = function ( menu, controlle
 		CompleteTwoPips = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BackgroundRing:completeAnimation()
 				self.BackgroundRing:setAlpha( 0.35 )
 				self.clipFinished( BackgroundRing, {} )
+
 				percentCompleteCircle:completeAnimation()
 				self.percentCompleteCircle:setAlpha( 0 )
 				self.clipFinished( percentCompleteCircle, {} )
+
 				percentText:completeAnimation()
 				self.percentText:setAlpha( 0 )
 				self.clipFinished( percentText, {} )
+
 				CrossLines:completeAnimation()
 				self.CrossLines:setAlpha( 0.35 )
 				self.clipFinished( CrossLines, {} )
+
 				AllCompleteRing:completeAnimation()
 				self.AllCompleteRing:setAlpha( 1 )
 				self.clipFinished( AllCompleteRing, {} )
+
 				AllCompleteIcon:completeAnimation()
 				self.AllCompleteIcon:setAlpha( 1 )
 				self.clipFinished( AllCompleteIcon, {} )
+
 				RewardPip1:completeAnimation()
 				self.RewardPip1:setLeftRight( false, false, -8, 8 )
 				self.RewardPip1:setTopBottom( false, true, -12, 4 )
 				self.RewardPip1:setAlpha( 1 )
 				self.clipFinished( RewardPip1, {} )
+
 				RewardPip2:completeAnimation()
 				self.RewardPip2:setLeftRight( false, false, -8, 8 )
 				self.RewardPip2:setTopBottom( true, false, -4, 12 )
 				self.RewardPip2:setAlpha( 1 )
 				self.clipFinished( RewardPip2, {} )
+
 				RewardPip3:completeAnimation()
 				self.RewardPip3:setAlpha( 0 )
 				self.clipFinished( RewardPip3, {} )
+
 				RewardPip4:completeAnimation()
 				self.RewardPip4:setLeftRight( false, false, -8, 8 )
 				self.RewardPip4:setTopBottom( true, false, 3, 19 )
@@ -395,39 +457,49 @@ CoD.AAR_Contracts_PercentCompleteWidgetWithPips.new = function ( menu, controlle
 		CompleteThreePips = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BackgroundRing:completeAnimation()
 				self.BackgroundRing:setAlpha( 0.35 )
 				self.clipFinished( BackgroundRing, {} )
+
 				percentCompleteCircle:completeAnimation()
 				self.percentCompleteCircle:setAlpha( 0 )
 				self.clipFinished( percentCompleteCircle, {} )
+
 				percentText:completeAnimation()
 				self.percentText:setAlpha( 0 )
 				self.clipFinished( percentText, {} )
+
 				CrossLines:completeAnimation()
 				self.CrossLines:setAlpha( 0.35 )
 				self.clipFinished( CrossLines, {} )
+
 				AllCompleteRing:completeAnimation()
 				self.AllCompleteRing:setAlpha( 1 )
 				self.clipFinished( AllCompleteRing, {} )
+
 				AllCompleteIcon:completeAnimation()
 				self.AllCompleteIcon:setAlpha( 1 )
 				self.clipFinished( AllCompleteIcon, {} )
+
 				RewardPip1:completeAnimation()
 				self.RewardPip1:setLeftRight( false, true, -17, -1 )
 				self.RewardPip1:setTopBottom( false, true, -32, -16 )
 				self.RewardPip1:setAlpha( 1 )
 				self.clipFinished( RewardPip1, {} )
+
 				RewardPip2:completeAnimation()
 				self.RewardPip2:setLeftRight( true, false, 1, 17 )
 				self.RewardPip2:setTopBottom( false, true, -32, -16 )
 				self.RewardPip2:setAlpha( 1 )
 				self.clipFinished( RewardPip2, {} )
+
 				RewardPip3:completeAnimation()
 				self.RewardPip3:setLeftRight( false, false, -8, 8 )
 				self.RewardPip3:setTopBottom( true, false, -4, 12 )
 				self.RewardPip3:setAlpha( 1 )
 				self.clipFinished( RewardPip3, {} )
+
 				RewardPip4:completeAnimation()
 				self.RewardPip4:setAlpha( 0 )
 				self.clipFinished( RewardPip4, {} )
@@ -436,39 +508,49 @@ CoD.AAR_Contracts_PercentCompleteWidgetWithPips.new = function ( menu, controlle
 		CompleteFourPips = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BackgroundRing:completeAnimation()
 				self.BackgroundRing:setAlpha( 0.35 )
 				self.clipFinished( BackgroundRing, {} )
+
 				percentCompleteCircle:completeAnimation()
 				self.percentCompleteCircle:setAlpha( 0 )
 				self.clipFinished( percentCompleteCircle, {} )
+
 				percentText:completeAnimation()
 				self.percentText:setAlpha( 0 )
 				self.clipFinished( percentText, {} )
+
 				CrossLines:completeAnimation()
 				self.CrossLines:setAlpha( 0.35 )
 				self.clipFinished( CrossLines, {} )
+
 				AllCompleteRing:completeAnimation()
 				self.AllCompleteRing:setAlpha( 1 )
 				self.clipFinished( AllCompleteRing, {} )
+
 				AllCompleteIcon:completeAnimation()
 				self.AllCompleteIcon:setAlpha( 1 )
 				self.clipFinished( AllCompleteIcon, {} )
+
 				RewardPip1:completeAnimation()
 				self.RewardPip1:setLeftRight( false, true, -12, 4 )
 				self.RewardPip1:setTopBottom( false, false, -8, 8 )
 				self.RewardPip1:setAlpha( 1 )
 				self.clipFinished( RewardPip1, {} )
+
 				RewardPip2:completeAnimation()
 				self.RewardPip2:setLeftRight( false, false, -8, 8 )
 				self.RewardPip2:setTopBottom( false, true, -12, 4 )
 				self.RewardPip2:setAlpha( 1 )
 				self.clipFinished( RewardPip2, {} )
+
 				RewardPip3:completeAnimation()
 				self.RewardPip3:setLeftRight( true, false, -4, 12 )
 				self.RewardPip3:setTopBottom( false, false, -8, 8 )
 				self.RewardPip3:setAlpha( 1 )
 				self.clipFinished( RewardPip3, {} )
+
 				RewardPip4:completeAnimation()
 				self.RewardPip4:setLeftRight( false, false, -8, 8 )
 				self.RewardPip4:setTopBottom( true, false, -4, 12 )
@@ -477,6 +559,7 @@ CoD.AAR_Contracts_PercentCompleteWidgetWithPips.new = function ( menu, controlle
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "TwoPips",
@@ -521,6 +604,7 @@ CoD.AAR_Contracts_PercentCompleteWidgetWithPips.new = function ( menu, controlle
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RewardPip1:close()
 		element.RewardPip2:close()

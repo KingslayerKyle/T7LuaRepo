@@ -18,9 +18,11 @@ end
 CoD.Cookboook_ResultListItem = InheritFrom( LUI.UIElement )
 CoD.Cookboook_ResultListItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Cookboook_ResultListItem )
 	self.id = "Cookboook_ResultListItem"
@@ -84,6 +86,7 @@ CoD.Cookboook_ResultListItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ZMCookbookRingWidget:completeAnimation()
 				self.ZMCookbookRingWidget:setAlpha( 0.7 )
 				self.clipFinished( ZMCookbookRingWidget, {} )
@@ -92,16 +95,19 @@ CoD.Cookboook_ResultListItem.new = function ( menu, controller )
 		RecipeResult = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				GobbleGumCookBookIcon:completeAnimation()
 				self.GobbleGumCookBookIcon:setAlpha( 1 )
 				self.GobbleGumCookBookIcon:setScale( 1 )
 				self.clipFinished( GobbleGumCookBookIcon, {} )
+
 				ZMCookbookRingWidget:completeAnimation()
 				self.ZMCookbookRingWidget:setAlpha( 0 )
 				self.clipFinished( ZMCookbookRingWidget, {} )
 			end,
 			Animate = function ()
 				self:setupElementClipCounter( 2 )
+
 				local f8_local0 = function ( f9_arg0, f9_arg1 )
 					local f9_local0 = function ( f10_arg0, f10_arg1 )
 						if not f10_arg1.interrupted then
@@ -175,6 +181,7 @@ CoD.Cookboook_ResultListItem.new = function ( menu, controller )
 				end
 				
 				ZMCookbookRingWidget:completeAnimation()
+
 				ZMCookbookRingWidget.ring:completeAnimation()
 				self.ZMCookbookRingWidget:setAlpha( 1 )
 				self.ZMCookbookRingWidget.ring:setShaderVector( 0, 0, 0, 0, 0 )
@@ -182,6 +189,7 @@ CoD.Cookboook_ResultListItem.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "RecipeResult",
@@ -198,6 +206,7 @@ CoD.Cookboook_ResultListItem.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GobbleGumCookBookIcon:close()
 		element.cacButtonBoxLrgInactiveStroke0:close()

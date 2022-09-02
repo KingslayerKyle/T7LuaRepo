@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventory.ElementalArrows.ElementalArrowItem" )
 CoD.ElementalArrowsWidget = InheritFrom( LUI.UIElement )
 CoD.ElementalArrowsWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ElementalArrowsWidget )
 	self.id = "ElementalArrowsWidget"
@@ -290,18 +292,23 @@ CoD.ElementalArrowsWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				RitualBg:completeAnimation()
 				self.RitualBg:setAlpha( 0 )
 				self.clipFinished( RitualBg, {} )
+
 				RitualItem1:completeAnimation()
 				self.RitualItem1:setAlpha( 0 )
 				self.clipFinished( RitualItem1, {} )
+
 				RitualItem2:completeAnimation()
 				self.RitualItem2:setAlpha( 0 )
 				self.clipFinished( RitualItem2, {} )
+
 				RitualItem3:completeAnimation()
 				self.RitualItem3:setAlpha( 0 )
 				self.clipFinished( RitualItem3, {} )
+
 				RitualItem4:completeAnimation()
 				self.RitualItem4:setAlpha( 0 )
 				self.clipFinished( RitualItem4, {} )
@@ -310,6 +317,7 @@ CoD.ElementalArrowsWidget.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local RitualBgFrame2 = function ( RitualBg, event )
 					local RitualBgFrame3 = function ( RitualBg, event )
 						local RitualBgFrame4 = function ( RitualBg, event )
@@ -380,15 +388,19 @@ CoD.ElementalArrowsWidget.new = function ( menu, controller )
 				RitualBg:completeAnimation()
 				self.RitualBg:setAlpha( 0 )
 				RitualBgFrame2( RitualBg, {} )
+
 				RitualItem1:completeAnimation()
 				self.RitualItem1:setAlpha( 1 )
 				self.clipFinished( RitualItem1, {} )
+
 				RitualItem2:completeAnimation()
 				self.RitualItem2:setAlpha( 1 )
 				self.clipFinished( RitualItem2, {} )
+
 				RitualItem3:completeAnimation()
 				self.RitualItem3:setAlpha( 1 )
 				self.clipFinished( RitualItem3, {} )
+
 				RitualItem4:completeAnimation()
 				self.RitualItem4:setAlpha( 1 )
 				self.clipFinished( RitualItem4, {} )
@@ -397,24 +409,29 @@ CoD.ElementalArrowsWidget.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				RitualBg:completeAnimation()
 				self.RitualBg:setAlpha( 0 )
 				self.clipFinished( RitualBg, {} )
+
 				RitualItem1:completeAnimation()
 				self.RitualItem1:setLeftRight( false, false, -140.5, -77.5 )
 				self.RitualItem1:setTopBottom( false, false, -30.32, 30.68 )
 				self.RitualItem1:setAlpha( 1 )
 				self.clipFinished( RitualItem1, {} )
+
 				RitualItem2:completeAnimation()
 				self.RitualItem2:setLeftRight( false, false, -33.5, 29.5 )
 				self.RitualItem2:setTopBottom( false, false, -27.47, 33.53 )
 				self.RitualItem2:setAlpha( 1 )
 				self.clipFinished( RitualItem2, {} )
+
 				RitualItem3:completeAnimation()
 				self.RitualItem3:setLeftRight( false, false, 70.01, 133.01 )
 				self.RitualItem3:setTopBottom( false, false, -24.47, 36.53 )
 				self.RitualItem3:setAlpha( 1 )
 				self.clipFinished( RitualItem3, {} )
+
 				RitualItem4:completeAnimation()
 				self.RitualItem4:setLeftRight( false, false, 177.5, 240.5 )
 				self.RitualItem4:setTopBottom( false, false, -27.47, 33.53 )
@@ -423,6 +440,7 @@ CoD.ElementalArrowsWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BgVisible",
@@ -453,6 +471,7 @@ CoD.ElementalArrowsWidget.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RitualItem1:close()
 		element.RitualItem2:close()

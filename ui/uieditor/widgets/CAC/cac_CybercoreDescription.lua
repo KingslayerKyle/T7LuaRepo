@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.CAC_varientTitlePanel" )
 CoD.cac_CybercoreDescription = InheritFrom( LUI.UIElement )
 CoD.cac_CybercoreDescription.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_CybercoreDescription )
 	self.id = "cac_CybercoreDescription"
@@ -20,6 +22,7 @@ CoD.cac_CybercoreDescription.new = function ( menu, controller )
 	CACvarientTitlePanel0:setLeftRight( true, true, 0, 0 )
 	CACvarientTitlePanel0:setTopBottom( true, true, 0, 0 )
 	CACvarientTitlePanel0:setAlpha( 0.4 )
+
 	LUI.OverrideFunction_CallOriginalFirst( CACvarientTitlePanel0, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrappedLeftAlign( self, element, 0, 0 )
 	end )
@@ -33,6 +36,7 @@ CoD.cac_CybercoreDescription.new = function ( menu, controller )
 	description:setTTF( "fonts/RefrigeratorDeluxe-Regular.ttf" )
 	description:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	description:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( description, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrappedLeftAlign( self, element, 10, 5 )
 	end )
@@ -43,9 +47,11 @@ CoD.cac_CybercoreDescription.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CACvarientTitlePanel0:close()
 	end )

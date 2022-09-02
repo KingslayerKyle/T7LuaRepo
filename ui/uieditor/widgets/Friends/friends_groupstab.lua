@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Scrollbars.verticalScrollbarNew" )
 CoD.Friends_GroupsTab = InheritFrom( LUI.UIElement )
 CoD.Friends_GroupsTab.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Friends_GroupsTab )
 	self.id = "Friends_GroupsTab"
@@ -39,6 +41,7 @@ CoD.Friends_GroupsTab.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.listGroups:close()
 	end )

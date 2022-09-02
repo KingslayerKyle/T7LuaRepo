@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.HUD.CP_DamageWidget.DamageWidget_Dot" )
 CoD.Pregame_Timer = InheritFrom( LUI.UIElement )
 CoD.Pregame_Timer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_Timer )
 	self.id = "Pregame_Timer"
@@ -94,6 +96,7 @@ CoD.Pregame_Timer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				local GlowPanelFrame2 = function ( GlowPanel, event )
 					if not event.interrupted then
 						GlowPanel:beginAnimation( "keyframe", 460, false, false, CoD.TweenType.Linear )
@@ -128,6 +131,7 @@ CoD.Pregame_Timer.new = function ( menu, controller )
 				end
 				
 				Numbers:completeAnimation()
+
 				Numbers.Numbers:completeAnimation()
 				self.Numbers:setAlpha( 0 )
 				self.Numbers.Numbers:setRGB( 0.59, 0.64, 0.74 )
@@ -231,27 +235,35 @@ CoD.Pregame_Timer.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				GlowPanel:completeAnimation()
 				self.GlowPanel:setAlpha( 0 )
 				self.clipFinished( GlowPanel, {} )
+
 				Numbers:completeAnimation()
 				self.Numbers:setAlpha( 0 )
 				self.clipFinished( Numbers, {} )
+
 				Dot61:completeAnimation()
 				self.Dot61:setAlpha( 0 )
 				self.clipFinished( Dot61, {} )
+
 				Dot600:completeAnimation()
 				self.Dot600:setAlpha( 0 )
 				self.clipFinished( Dot600, {} )
+
 				Dot62:completeAnimation()
 				self.Dot62:setAlpha( 0 )
 				self.clipFinished( Dot62, {} )
+
 				Dot601:completeAnimation()
 				self.Dot601:setAlpha( 0 )
 				self.clipFinished( Dot601, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				Image00:completeAnimation()
 				self.Image00:setAlpha( 0 )
 				self.clipFinished( Image00, {} )
@@ -260,6 +272,7 @@ CoD.Pregame_Timer.new = function ( menu, controller )
 		red = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local GlowPanelFrame2 = function ( GlowPanel, event )
 					local GlowPanelFrame3 = function ( GlowPanel, event )
 						if not event.interrupted then
@@ -338,10 +351,12 @@ CoD.Pregame_Timer.new = function ( menu, controller )
 				Image00:completeAnimation()
 				self.Image00:setRGB( 0.2, 0.23, 0.29 )
 				Image00Frame2( Image00, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -364,6 +379,7 @@ CoD.Pregame_Timer.new = function ( menu, controller )
 			modelName = "lobbyRoot.Pregame.timeleft"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GlowPanel:close()
 		element.Numbers:close()

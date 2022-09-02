@@ -4,9 +4,11 @@
 CoD.StartMenu_lineGraphics = InheritFrom( LUI.UIElement )
 CoD.StartMenu_lineGraphics.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_lineGraphics )
 	self.id = "StartMenu_lineGraphics"

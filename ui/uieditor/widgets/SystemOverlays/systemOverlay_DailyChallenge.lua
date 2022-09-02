@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.systemOverlay_DailyChallenge = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_DailyChallenge.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_DailyChallenge )
 	self.id = "systemOverlay_DailyChallenge"
@@ -162,32 +164,41 @@ CoD.systemOverlay_DailyChallenge.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				DailyChallenge:completeAnimation()
 				self.DailyChallenge:setAlpha( 1 )
 				self.clipFinished( DailyChallenge, {} )
+
 				ChallengeName:completeAnimation()
 				self.ChallengeName:setAlpha( 1 )
 				self.clipFinished( ChallengeName, {} )
+
 				ProgressBarBorder:completeAnimation()
 				self.ProgressBarBorder:setAlpha( 1 )
 				self.clipFinished( ProgressBarBorder, {} )
+
 				ProgressBar:completeAnimation()
 				self.ProgressBar:setAlpha( 1 )
 				self.clipFinished( ProgressBar, {} )
+
 				ProgressFraction:completeAnimation()
 				self.ProgressFraction:setLeftRight( false, false, -198, 495.37 )
 				self.ProgressFraction:setTopBottom( true, false, 196.5, 221.5 )
 				self.ProgressFraction:setAlpha( 1 )
 				self.clipFinished( ProgressFraction, {} )
+
 				ChallengeDescription:completeAnimation()
 				self.ChallengeDescription:setAlpha( 1 )
 				self.clipFinished( ChallengeDescription, {} )
+
 				RewardDescription:completeAnimation()
 				self.RewardDescription:setRGB( 1, 1, 1 )
 				self.clipFinished( RewardDescription, {} )
+
 				RewardTitle:completeAnimation()
 				self.RewardTitle:setRGB( 1, 1, 1 )
 				self.clipFinished( RewardTitle, {} )
+
 				CompleteText:completeAnimation()
 				self.CompleteText:setRGB( ColorSet.GroupName.r, ColorSet.GroupName.g, ColorSet.GroupName.b )
 				self.CompleteText:setAlpha( 0 )
@@ -198,30 +209,39 @@ CoD.systemOverlay_DailyChallenge.new = function ( menu, controller )
 		Complete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				DailyChallenge:completeAnimation()
 				self.DailyChallenge:setAlpha( 1 )
 				self.clipFinished( DailyChallenge, {} )
+
 				ChallengeName:completeAnimation()
 				self.ChallengeName:setAlpha( 1 )
 				self.clipFinished( ChallengeName, {} )
+
 				ProgressBarBorder:completeAnimation()
 				self.ProgressBarBorder:setAlpha( 1 )
 				self.clipFinished( ProgressBarBorder, {} )
+
 				ProgressBar:completeAnimation()
 				self.ProgressBar:setAlpha( 1 )
 				self.clipFinished( ProgressBar, {} )
+
 				ProgressFraction:completeAnimation()
 				self.ProgressFraction:setAlpha( 0 )
 				self.clipFinished( ProgressFraction, {} )
+
 				ChallengeDescription:completeAnimation()
 				self.ChallengeDescription:setAlpha( 1 )
 				self.clipFinished( ChallengeDescription, {} )
+
 				RewardDescription:completeAnimation()
 				self.RewardDescription:setRGB( ColorSet.RewardChallenge.r, ColorSet.RewardChallenge.g, ColorSet.RewardChallenge.b )
 				self.clipFinished( RewardDescription, {} )
+
 				RewardTitle:completeAnimation()
 				self.RewardTitle:setRGB( ColorSet.RewardChallenge.r, ColorSet.RewardChallenge.g, ColorSet.RewardChallenge.b )
 				self.clipFinished( RewardTitle, {} )
+
 				CompleteText:completeAnimation()
 				self.CompleteText:setRGB( ColorSet.RewardChallenge.r, ColorSet.RewardChallenge.g, ColorSet.RewardChallenge.b )
 				self.CompleteText:setAlpha( 1 )
@@ -230,6 +250,7 @@ CoD.systemOverlay_DailyChallenge.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Complete",
@@ -246,6 +267,7 @@ CoD.systemOverlay_DailyChallenge.new = function ( menu, controller )
 			modelName = "progressPercentage"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ChallengeName:close()
 		element.ProgressBarBorder:close()

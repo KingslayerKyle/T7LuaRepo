@@ -8,9 +8,11 @@ end
 CoD.basicTabWidget = InheritFrom( LUI.UIElement )
 CoD.basicTabWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.basicTabWidget )
 	self.id = "basicTabWidget"
@@ -53,16 +55,19 @@ CoD.basicTabWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				text:completeAnimation()
 				self.text:setRGB( 1, 1, 1 )
 				self.text:setAlpha( 1 )
 				self.clipFinished( text, {} )
+
 				buttonText:completeAnimation()
 				self.buttonText:setAlpha( 0 )
 				self.clipFinished( buttonText, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 1 )
+
 				text:completeAnimation()
 				self.text:setRGB( 1, 0.41, 0 )
 				self.text:setAlpha( 1 )
@@ -72,15 +77,18 @@ CoD.basicTabWidget.new = function ( menu, controller )
 		NavButton = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0 )
 				self.clipFinished( text, {} )
+
 				buttonText:completeAnimation()
 				self.buttonText:setAlpha( 1 )
 				self.clipFinished( buttonText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NavButton",
@@ -97,6 +105,7 @@ CoD.basicTabWidget.new = function ( menu, controller )
 			modelName = "tabIcon"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.text:close()
 		element.buttonText:close()

@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.mothership.vhud_ms_missilesWidget" )
 CoD.vhud_ms_StatusWidgetRight = InheritFrom( LUI.UIElement )
 CoD.vhud_ms_StatusWidgetRight.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ms_StatusWidgetRight )
 	self.id = "vhud_ms_StatusWidgetRight"
@@ -104,9 +106,11 @@ CoD.vhud_ms_StatusWidgetRight.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vhudsentinelNotificationLine:close()
 		element.vhudmsNotificationBox:close()

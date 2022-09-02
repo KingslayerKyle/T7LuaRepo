@@ -4,9 +4,11 @@
 CoD.vhud_agr_ReticleCenterHairline = InheritFrom( LUI.UIElement )
 CoD.vhud_agr_ReticleCenterHairline.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.vhud_agr_ReticleCenterHairline )
 	self.id = "vhud_agr_ReticleCenterHairline"

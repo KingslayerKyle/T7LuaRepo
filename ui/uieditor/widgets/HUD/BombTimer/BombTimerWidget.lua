@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.BombTimer.BombTimerWidgetInternal" )
 CoD.BombTimerWidget = InheritFrom( LUI.UIElement )
 CoD.BombTimerWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BombTimerWidget )
 	self.id = "BombTimerWidget"
@@ -51,6 +53,7 @@ CoD.BombTimerWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BombTimerWidgetInternal:completeAnimation()
 				self.BombTimerWidgetInternal:setAlpha( 0 )
 				self.clipFinished( BombTimerWidgetInternal, {} )
@@ -59,6 +62,7 @@ CoD.BombTimerWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BombTimerWidgetInternal:completeAnimation()
 				self.BombTimerWidgetInternal:setAlpha( 1 )
 				self.clipFinished( BombTimerWidgetInternal, {} )
@@ -67,12 +71,14 @@ CoD.BombTimerWidget.new = function ( menu, controller )
 		VisibleForCodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BombTimerWidgetInternal:completeAnimation()
 				self.BombTimerWidgetInternal:setAlpha( 1 )
 				self.clipFinished( BombTimerWidgetInternal, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -111,6 +117,7 @@ CoD.BombTimerWidget.new = function ( menu, controller )
 			modelName = "CodCaster.profileSettingsUpdated"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BombTimerWidgetInternal:close()
 	end )

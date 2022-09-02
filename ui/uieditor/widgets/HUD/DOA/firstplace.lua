@@ -4,9 +4,11 @@
 CoD.firstplace = InheritFrom( LUI.UIElement )
 CoD.firstplace.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.firstplace )
 	self.id = "firstplace"
@@ -26,6 +28,7 @@ CoD.firstplace.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				firstplace:completeAnimation()
 				self.firstplace:setAlpha( 0 )
 				self.clipFinished( firstplace, {} )
@@ -34,12 +37,14 @@ CoD.firstplace.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				firstplace:completeAnimation()
 				self.firstplace:setAlpha( 1 )
 				self.clipFinished( firstplace, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_Inventory.SidequestIconContainer" )
 CoD.SidequestIconInventoryWidget = InheritFrom( LUI.UIElement )
 CoD.SidequestIconInventoryWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SidequestIconInventoryWidget )
 	self.id = "SidequestIconInventoryWidget"
@@ -49,15 +51,19 @@ CoD.SidequestIconInventoryWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BackgroundPannelMid:completeAnimation()
 				self.BackgroundPannelMid:setAlpha( 0 )
 				self.clipFinished( BackgroundPannelMid, {} )
+
 				BackgroundPannelLarge:completeAnimation()
 				self.BackgroundPannelLarge:setAlpha( 0 )
 				self.clipFinished( BackgroundPannelLarge, {} )
+
 				BackgroundPannelSmall:completeAnimation()
 				self.BackgroundPannelSmall:setAlpha( 0 )
 				self.clipFinished( BackgroundPannelSmall, {} )
+
 				SidequestIconContainer:completeAnimation()
 				self.SidequestIconContainer:setAlpha( 0 )
 				self.clipFinished( SidequestIconContainer, {} )
@@ -66,15 +72,19 @@ CoD.SidequestIconInventoryWidget.new = function ( menu, controller )
 		Show4 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BackgroundPannelMid:completeAnimation()
 				self.BackgroundPannelMid:setAlpha( 0 )
 				self.clipFinished( BackgroundPannelMid, {} )
+
 				BackgroundPannelLarge:completeAnimation()
 				self.BackgroundPannelLarge:setAlpha( 1 )
 				self.clipFinished( BackgroundPannelLarge, {} )
+
 				BackgroundPannelSmall:completeAnimation()
 				self.BackgroundPannelSmall:setAlpha( 0 )
 				self.clipFinished( BackgroundPannelSmall, {} )
+
 				SidequestIconContainer:completeAnimation()
 				self.SidequestIconContainer:setAlpha( 1 )
 				self.clipFinished( SidequestIconContainer, {} )
@@ -83,15 +93,19 @@ CoD.SidequestIconInventoryWidget.new = function ( menu, controller )
 		Show3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BackgroundPannelMid:completeAnimation()
 				self.BackgroundPannelMid:setAlpha( 1 )
 				self.clipFinished( BackgroundPannelMid, {} )
+
 				BackgroundPannelLarge:completeAnimation()
 				self.BackgroundPannelLarge:setAlpha( 0 )
 				self.clipFinished( BackgroundPannelLarge, {} )
+
 				BackgroundPannelSmall:completeAnimation()
 				self.BackgroundPannelSmall:setAlpha( 0 )
 				self.clipFinished( BackgroundPannelSmall, {} )
+
 				SidequestIconContainer:completeAnimation()
 				self.SidequestIconContainer:setAlpha( 1 )
 				self.clipFinished( SidequestIconContainer, {} )
@@ -100,21 +114,26 @@ CoD.SidequestIconInventoryWidget.new = function ( menu, controller )
 		Show1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BackgroundPannelMid:completeAnimation()
 				self.BackgroundPannelMid:setAlpha( 0 )
 				self.clipFinished( BackgroundPannelMid, {} )
+
 				BackgroundPannelLarge:completeAnimation()
 				self.BackgroundPannelLarge:setAlpha( 0 )
 				self.clipFinished( BackgroundPannelLarge, {} )
+
 				BackgroundPannelSmall:completeAnimation()
 				self.BackgroundPannelSmall:setAlpha( 1 )
 				self.clipFinished( BackgroundPannelSmall, {} )
+
 				SidequestIconContainer:completeAnimation()
 				self.SidequestIconContainer:setAlpha( 1 )
 				self.clipFinished( SidequestIconContainer, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Show4",
@@ -143,6 +162,7 @@ CoD.SidequestIconInventoryWidget.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SidequestIconContainer:close()
 	end )

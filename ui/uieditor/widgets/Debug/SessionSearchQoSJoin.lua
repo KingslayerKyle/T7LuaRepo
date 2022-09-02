@@ -4,9 +4,11 @@
 CoD.SessionSearchQoSJoin = InheritFrom( LUI.UIElement )
 CoD.SessionSearchQoSJoin.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SessionSearchQoSJoin )
 	self.id = "SessionSearchQoSJoin"
@@ -151,34 +153,43 @@ CoD.SessionSearchQoSJoin.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			FadeIn = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Left = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			FadeIn = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Right = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Right = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			FadeIn = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Left = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Left",
@@ -193,6 +204,7 @@ CoD.SessionSearchQoSJoin.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Background:close()
 		element.Status:close()

@@ -4,9 +4,11 @@
 CoD.AbilityWheel_DescriptionText = InheritFrom( LUI.UIElement )
 CoD.AbilityWheel_DescriptionText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AbilityWheel_DescriptionText )
 	self.id = "AbilityWheel_DescriptionText"
@@ -31,9 +33,11 @@ CoD.AbilityWheel_DescriptionText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Inactive = function ()
 				self:setupElementClipCounter( 1 )
+
 				local TextNameFrame2 = function ( TextName, event )
 					local TextNameFrame3 = function ( TextName, event )
 						local TextNameFrame4 = function ( TextName, event )
@@ -106,12 +110,14 @@ CoD.AbilityWheel_DescriptionText.new = function ( menu, controller )
 		Inactive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				TextName:completeAnimation()
 				self.TextName:setAlpha( 0 )
 				self.clipFinished( TextName, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local TextNameFrame2 = function ( TextName, event )
 					local TextNameFrame3 = function ( TextName, event )
 						local TextNameFrame4 = function ( TextName, event )

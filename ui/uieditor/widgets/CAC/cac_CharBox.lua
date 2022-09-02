@@ -4,9 +4,11 @@
 CoD.cac_CharBox = InheritFrom( LUI.UIElement )
 CoD.cac_CharBox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_CharBox )
 	self.id = "cac_CharBox"

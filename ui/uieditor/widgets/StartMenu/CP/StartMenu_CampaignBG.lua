@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartMenu.CP.StartMenu_CampaignBGTextures" )
 CoD.StartMenu_CampaignBG = InheritFrom( LUI.UIElement )
 CoD.StartMenu_CampaignBG.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_CampaignBG )
 	self.id = "StartMenu_CampaignBG"
@@ -52,21 +54,27 @@ CoD.StartMenu_CampaignBG.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Back = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 3 )
+
 				blackimage:completeAnimation()
 				self.blackimage:setAlpha( 0 )
 				self.clipFinished( blackimage, {} )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0 )
 				self.clipFinished( Background, {} )
+
 				blackImage:completeAnimation()
 				self.blackImage:setAlpha( 0 )
 				self.clipFinished( blackImage, {} )
@@ -75,9 +83,11 @@ CoD.StartMenu_CampaignBG.new = function ( menu, controller )
 		Campaign = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuCampaignBGTextures:close()
 	end )

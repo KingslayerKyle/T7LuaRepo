@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventoryIsland.WonderWeaponPieceWidget" )
 CoD.WonderWeaponBlueprintWidget_Island = InheritFrom( LUI.UIElement )
 CoD.WonderWeaponBlueprintWidget_Island.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WonderWeaponBlueprintWidget_Island )
 	self.id = "WonderWeaponBlueprintWidget_Island"
@@ -243,15 +245,19 @@ CoD.WonderWeaponBlueprintWidget_Island.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				WonderWeaponPieceWidget1:completeAnimation()
 				self.WonderWeaponPieceWidget1:setAlpha( 0 )
 				self.clipFinished( WonderWeaponPieceWidget1, {} )
+
 				WonderWeaponPieceWidget0:completeAnimation()
 				self.WonderWeaponPieceWidget0:setAlpha( 0 )
 				self.clipFinished( WonderWeaponPieceWidget0, {} )
+
 				WonderWeaponPieceWidget2:completeAnimation()
 				self.WonderWeaponPieceWidget2:setAlpha( 0 )
 				self.clipFinished( WonderWeaponPieceWidget2, {} )
@@ -260,6 +266,7 @@ CoD.WonderWeaponBlueprintWidget_Island.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local bgFrame2 = function ( bg, event )
 					local bgFrame3 = function ( bg, event )
 						local bgFrame4 = function ( bg, event )
@@ -296,12 +303,15 @@ CoD.WonderWeaponBlueprintWidget_Island.new = function ( menu, controller )
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				bgFrame2( bg, {} )
+
 				WonderWeaponPieceWidget1:completeAnimation()
 				self.WonderWeaponPieceWidget1:setAlpha( 1 )
 				self.clipFinished( WonderWeaponPieceWidget1, {} )
+
 				WonderWeaponPieceWidget0:completeAnimation()
 				self.WonderWeaponPieceWidget0:setAlpha( 1 )
 				self.clipFinished( WonderWeaponPieceWidget0, {} )
+
 				WonderWeaponPieceWidget2:completeAnimation()
 				self.WonderWeaponPieceWidget2:setAlpha( 1 )
 				self.clipFinished( WonderWeaponPieceWidget2, {} )
@@ -310,21 +320,26 @@ CoD.WonderWeaponBlueprintWidget_Island.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				WonderWeaponPieceWidget1:completeAnimation()
 				self.WonderWeaponPieceWidget1:setAlpha( 1 )
 				self.clipFinished( WonderWeaponPieceWidget1, {} )
+
 				WonderWeaponPieceWidget0:completeAnimation()
 				self.WonderWeaponPieceWidget0:setAlpha( 1 )
 				self.clipFinished( WonderWeaponPieceWidget0, {} )
+
 				WonderWeaponPieceWidget2:completeAnimation()
 				self.WonderWeaponPieceWidget2:setAlpha( 1 )
 				self.clipFinished( WonderWeaponPieceWidget2, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BgVisible",
@@ -355,6 +370,7 @@ CoD.WonderWeaponBlueprintWidget_Island.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.WonderWeaponPieceWidget1:close()
 		element.WonderWeaponPieceWidget0:close()

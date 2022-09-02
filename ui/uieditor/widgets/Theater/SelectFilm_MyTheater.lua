@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.FileShare.MyShowcase_CategorySelector" )
 CoD.SelectFilm_MyTheater = InheritFrom( LUI.UIElement )
 CoD.SelectFilm_MyTheater.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SelectFilm_MyTheater )
 	self.id = "SelectFilm_MyTheater"
@@ -40,6 +42,7 @@ CoD.SelectFilm_MyTheater.new = function ( menu, controller )
 			return false
 		end
 	end, false )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "close", function ( element )
 		ClearSavedState( self, controller )
 	end )
@@ -51,6 +54,7 @@ CoD.SelectFilm_MyTheater.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MyShowcaseCategorySelector0:close()
 	end )

@@ -4,9 +4,11 @@
 CoD.BM_PromoFrame = InheritFrom( LUI.UIElement )
 CoD.BM_PromoFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_PromoFrame )
 	self.id = "BM_PromoFrame"
@@ -104,46 +106,56 @@ CoD.BM_PromoFrame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Arabic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Image00:completeAnimation()
 				self.Image00:setLeftRight( true, true, 174, -36 )
 				self.Image00:setTopBottom( true, false, 0, 204 )
 				self.Image00:setAlpha( 0 )
 				self.clipFinished( Image00, {} )
+
 				Image000:completeAnimation()
 				self.Image000:setLeftRight( false, true, -36, 0 )
 				self.Image000:setTopBottom( true, false, 0, 204 )
 				self.Image000:setAlpha( 0 )
 				self.clipFinished( Image000, {} )
+
 				Image001:completeAnimation()
 				self.Image001:setLeftRight( true, false, 174, 0 )
 				self.Image001:setTopBottom( true, false, 0, 204 )
 				self.Image001:setAlpha( 0 )
 				self.clipFinished( Image001, {} )
+
 				Desc:completeAnimation()
 				self.Desc:setLeftRight( true, false, 51.55, 884 )
 				self.Desc:setTopBottom( true, false, 98, 124 )
 				self.Desc:setAlpha( 0 )
 				self.clipFinished( Desc, {} )
+
 				Image00Arabic:completeAnimation()
 				self.Image00Arabic:setAlpha( 1 )
 				self.clipFinished( Image00Arabic, {} )
+
 				Image000Arabic:completeAnimation()
 				self.Image000Arabic:setAlpha( 1 )
 				self.clipFinished( Image000Arabic, {} )
+
 				Image001Arabic:completeAnimation()
 				self.Image001Arabic:setAlpha( 1 )
 				self.clipFinished( Image001Arabic, {} )
+
 				DescArabic:completeAnimation()
 				self.DescArabic:setAlpha( 1 )
 				self.clipFinished( DescArabic, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Arabic",

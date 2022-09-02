@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.CPSystems.IncomingExplosive.IncomingExplosive_Dist
 CoD.IncomingExplosive_Distance = InheritFrom( LUI.UIElement )
 CoD.IncomingExplosive_Distance.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.IncomingExplosive_Distance )
 	self.id = "IncomingExplosive_Distance"
@@ -91,21 +93,27 @@ CoD.IncomingExplosive_Distance.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( RandomAddPercent( -30, 0 ) )
 				self.clipFinished( icon, {} )
+
 				weakpointNewPlus0:completeAnimation()
 				self.weakpointNewPlus0:setAlpha( 0 )
 				self.clipFinished( weakpointNewPlus0, {} )
+
 				weakpointNewPlus1:completeAnimation()
 				self.weakpointNewPlus1:setAlpha( 0 )
 				self.clipFinished( weakpointNewPlus1, {} )
+
 				weakpointNewPlus00:completeAnimation()
 				self.weakpointNewPlus00:setAlpha( 0 )
 				self.clipFinished( weakpointNewPlus00, {} )
+
 				weakpointNewPlus10:completeAnimation()
 				self.weakpointNewPlus10:setAlpha( 0 )
 				self.clipFinished( weakpointNewPlus10, {} )
+
 				IncomingExplosiveDistanceText0:completeAnimation()
 				self.IncomingExplosiveDistanceText0:setAlpha( RandomAddPercent( -30, 0 ) )
 				self.clipFinished( IncomingExplosiveDistanceText0, {} )
@@ -114,6 +122,7 @@ CoD.IncomingExplosive_Distance.new = function ( menu, controller )
 		Grenade = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				local iconFrame2 = function ( icon, event )
 					if not event.interrupted then
 						icon:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -129,15 +138,19 @@ CoD.IncomingExplosive_Distance.new = function ( menu, controller )
 				icon:completeAnimation()
 				self.icon:setAlpha( RandomAddPercent( -30, 1 ) )
 				iconFrame2( icon, {} )
+
 				weakpointNewPlus0:completeAnimation()
 				self.weakpointNewPlus0:setAlpha( 1 )
 				self.clipFinished( weakpointNewPlus0, {} )
+
 				weakpointNewPlus1:completeAnimation()
 				self.weakpointNewPlus1:setAlpha( 1 )
 				self.clipFinished( weakpointNewPlus1, {} )
+
 				weakpointNewPlus00:completeAnimation()
 				self.weakpointNewPlus00:setAlpha( 1 )
 				self.clipFinished( weakpointNewPlus00, {} )
+
 				weakpointNewPlus10:completeAnimation()
 				self.weakpointNewPlus10:setAlpha( 1 )
 				self.clipFinished( weakpointNewPlus10, {} )
@@ -156,10 +169,12 @@ CoD.IncomingExplosive_Distance.new = function ( menu, controller )
 				IncomingExplosiveDistanceText0:completeAnimation()
 				self.IncomingExplosiveDistanceText0:setAlpha( RandomAddPercent( -30, 1 ) )
 				IncomingExplosiveDistanceText0Frame2( IncomingExplosiveDistanceText0, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 6 )
+
 				local f9_local0 = function ( f10_arg0, f10_arg1 )
 					local f10_local0 = function ( f11_arg0, f11_arg1 )
 						local f11_local0 = function ( f12_arg0, f12_arg1 )
@@ -649,6 +664,7 @@ CoD.IncomingExplosive_Distance.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Grenade",
@@ -665,6 +681,7 @@ CoD.IncomingExplosive_Distance.new = function ( menu, controller )
 			modelName = "timeLeftPerc"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.icon:close()
 		element.weakpointNewPlus0:close()

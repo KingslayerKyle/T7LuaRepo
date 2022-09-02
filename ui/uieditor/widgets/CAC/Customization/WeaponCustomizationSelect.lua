@@ -15,9 +15,11 @@ require( "ui.uieditor.widgets.PC.Utility.XCamMouseControl" )
 CoD.WeaponCustomizationSelect = InheritFrom( LUI.UIElement )
 CoD.WeaponCustomizationSelect.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponCustomizationSelect )
 	self.id = "WeaponCustomizationSelect"
@@ -464,6 +466,7 @@ CoD.WeaponCustomizationSelect.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.selectionList:close()
 		element.categoryName:close()

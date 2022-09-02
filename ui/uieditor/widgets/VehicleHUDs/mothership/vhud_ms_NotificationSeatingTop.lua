@@ -4,9 +4,11 @@
 CoD.vhud_ms_NotificationSeatingTop = InheritFrom( LUI.UIElement )
 CoD.vhud_ms_NotificationSeatingTop.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ms_NotificationSeatingTop )
 	self.id = "vhud_ms_NotificationSeatingTop"
@@ -35,14 +37,17 @@ CoD.vhud_ms_NotificationSeatingTop.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 0 )
 				self.clipFinished( Image1, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setAlpha( 0 )
 				self.clipFinished( Image2, {} )

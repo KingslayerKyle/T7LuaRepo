@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.HUD.CP_DamageWidget.DamageWidget_Panel" )
 CoD.CP_Prologue_AmmoWidget_PanelContainer = InheritFrom( LUI.UIElement )
 CoD.CP_Prologue_AmmoWidget_PanelContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CP_Prologue_AmmoWidget_PanelContainer )
 	self.id = "CP_Prologue_AmmoWidget_PanelContainer"
@@ -50,11 +52,13 @@ CoD.CP_Prologue_AmmoWidget_PanelContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				CPPrologueAmmoWidgetPanelClip:completeAnimation()
 				self.CPPrologueAmmoWidgetPanelClip:setLeftRight( false, true, -234.53, -156.01 )
 				self.CPPrologueAmmoWidgetPanelClip:setTopBottom( true, false, 34.34, 79.34 )
 				self.CPPrologueAmmoWidgetPanelClip:setAlpha( 1 )
 				self.clipFinished( CPPrologueAmmoWidgetPanelClip, {} )
+
 				PanelAmmo:completeAnimation()
 				self.PanelAmmo:setLeftRight( false, true, -158.34, -87.01 )
 				self.PanelAmmo:setTopBottom( true, false, 38.66, 80 )
@@ -65,6 +69,7 @@ CoD.CP_Prologue_AmmoWidget_PanelContainer.new = function ( menu, controller )
 		Knife = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PanelAmmo:completeAnimation()
 				self.PanelAmmo:setLeftRight( false, true, -195.34, -87.01 )
 				self.PanelAmmo:setTopBottom( true, false, 38.66, 80 )
@@ -74,6 +79,7 @@ CoD.CP_Prologue_AmmoWidget_PanelContainer.new = function ( menu, controller )
 		Weapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PanelAmmo:completeAnimation()
 				self.PanelAmmo:setLeftRight( false, true, -158.34, -87.01 )
 				self.PanelAmmo:setTopBottom( true, false, 38.66, 80 )
@@ -81,14 +87,17 @@ CoD.CP_Prologue_AmmoWidget_PanelContainer.new = function ( menu, controller )
 			end,
 			Knife = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Weapon3Digits = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PanelLethal:close()
 		element.PanelTactical:close()

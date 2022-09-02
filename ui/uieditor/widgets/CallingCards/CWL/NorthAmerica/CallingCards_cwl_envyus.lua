@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CWL.CallingCards_cwl_worldmap_widget"
 CoD.CallingCards_cwl_envyus = InheritFrom( LUI.UIElement )
 CoD.CallingCards_cwl_envyus.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_cwl_envyus )
 	self.id = "CallingCards_cwl_envyus"
@@ -115,6 +117,7 @@ CoD.CallingCards_cwl_envyus.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BG5Empty:completeAnimation()
 				self.BG5Empty:setAlpha( 1 )
 				self.clipFinished( BG5Empty, {} )
@@ -317,10 +320,12 @@ CoD.CallingCards_cwl_envyus.new = function ( menu, controller )
 				self.GLOWBALL:setZRot( -63 )
 				self.GLOWBALL:setScale( 0.8 )
 				GLOWBALLFrame2( GLOWBALL, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardscwlworldmapwidget0:close()
 	end )

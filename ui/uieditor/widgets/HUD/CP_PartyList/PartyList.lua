@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.CP_PartyList.PartyList_PlayerScore" )
 CoD.PartyList = InheritFrom( LUI.UIElement )
 CoD.PartyList.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PartyList )
 	self.id = "PartyList"
@@ -31,11 +33,13 @@ CoD.PartyList.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		PlayerCount_4 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				playerScores:completeAnimation()
 				self.playerScores:setLeftRight( true, false, 4, 261 )
 				self.playerScores:setTopBottom( true, false, 8, 90 )
@@ -45,6 +49,7 @@ CoD.PartyList.new = function ( menu, controller )
 		PlayerCount_3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				playerScores:completeAnimation()
 				self.playerScores:setLeftRight( true, false, 4, 261 )
 				self.playerScores:setTopBottom( true, false, 29, 111 )
@@ -54,6 +59,7 @@ CoD.PartyList.new = function ( menu, controller )
 		PlayerCount_2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				playerScores:completeAnimation()
 				self.playerScores:setLeftRight( true, false, 4, 261 )
 				self.playerScores:setTopBottom( true, false, 50, 132 )
@@ -63,6 +69,7 @@ CoD.PartyList.new = function ( menu, controller )
 		PlayerCount_1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				playerScores:completeAnimation()
 				self.playerScores:setLeftRight( true, false, 4, 261 )
 				self.playerScores:setTopBottom( true, false, 71, 153 )
@@ -71,6 +78,7 @@ CoD.PartyList.new = function ( menu, controller )
 		}
 	}
 	playerScores.id = "playerScores"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.playerScores:close()
 	end )

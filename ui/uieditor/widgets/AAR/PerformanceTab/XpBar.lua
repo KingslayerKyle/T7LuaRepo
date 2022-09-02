@@ -4,9 +4,11 @@
 CoD.XpBar = InheritFrom( LUI.UIElement )
 CoD.XpBar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.XpBar )
 	self.id = "XpBar"

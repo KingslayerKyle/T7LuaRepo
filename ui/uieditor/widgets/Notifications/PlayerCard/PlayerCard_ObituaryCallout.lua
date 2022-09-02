@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Notifications.PlayerCard.PlayerCard" )
 CoD.PlayerCard_ObituaryCallout = InheritFrom( LUI.UIElement )
 CoD.PlayerCard_ObituaryCallout.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PlayerCard_ObituaryCallout )
 	self.id = "PlayerCard_ObituaryCallout"
@@ -36,12 +38,14 @@ CoD.PlayerCard_ObituaryCallout.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PlayerCard0:completeAnimation()
 				self.PlayerCard0:setAlpha( 0 )
 				self.clipFinished( PlayerCard0, {} )
 			end,
 			Bottom = function ()
 				self:setupElementClipCounter( 1 )
+
 				local PlayerCard0Frame2 = function ( PlayerCard0, event )
 					local PlayerCard0Frame3 = function ( PlayerCard0, event )
 						local PlayerCard0Frame4 = function ( PlayerCard0, event )
@@ -110,6 +114,7 @@ CoD.PlayerCard_ObituaryCallout.new = function ( menu, controller )
 		HideForCodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PlayerCard0:completeAnimation()
 				self.PlayerCard0:setAlpha( 0 )
 				self.clipFinished( PlayerCard0, {} )
@@ -118,12 +123,14 @@ CoD.PlayerCard_ObituaryCallout.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PlayerCard0:completeAnimation()
 				self.PlayerCard0:setAlpha( 0 )
 				self.clipFinished( PlayerCard0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HideForCodCaster",
@@ -218,6 +225,7 @@ CoD.PlayerCard_ObituaryCallout.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_ROUND_END_KILLCAM
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PlayerCard0:close()
 	end )

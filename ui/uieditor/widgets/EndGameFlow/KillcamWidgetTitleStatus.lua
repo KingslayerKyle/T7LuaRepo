@@ -16,9 +16,11 @@ end
 CoD.KillcamWidgetTitleStatus = InheritFrom( LUI.UIElement )
 CoD.KillcamWidgetTitleStatus.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.KillcamWidgetTitleStatus )
 	self.id = "KillcamWidgetTitleStatus"
@@ -40,6 +42,7 @@ CoD.KillcamWidgetTitleStatus.new = function ( menu, controller )
 	SubTitle:setTopBottom( true, false, 2, 23 )
 	SubTitle:setText( Engine.Localize( "SOMETHING" ) )
 	SubTitle:setTTF( "fonts/escom.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( SubTitle, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 2 )
 	end )
@@ -50,9 +53,11 @@ CoD.KillcamWidgetTitleStatus.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				StartMenuIdentitySubtitleBG0:completeAnimation()
 				self.StartMenuIdentitySubtitleBG0:setAlpha( 0.55 )
 				self.clipFinished( StartMenuIdentitySubtitleBG0, {} )
+
 				SubTitle:completeAnimation()
 				self.SubTitle:setAlpha( 1 )
 				self.clipFinished( SubTitle, {} )
@@ -61,15 +66,18 @@ CoD.KillcamWidgetTitleStatus.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				StartMenuIdentitySubtitleBG0:completeAnimation()
 				self.StartMenuIdentitySubtitleBG0:setAlpha( 0 )
 				self.clipFinished( StartMenuIdentitySubtitleBG0, {} )
+
 				SubTitle:completeAnimation()
 				self.SubTitle:setAlpha( 0 )
 				self.clipFinished( SubTitle, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",
@@ -86,6 +94,7 @@ CoD.KillcamWidgetTitleStatus.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_FINAL_KILLCAM
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuIdentitySubtitleBG0:close()
 	end )

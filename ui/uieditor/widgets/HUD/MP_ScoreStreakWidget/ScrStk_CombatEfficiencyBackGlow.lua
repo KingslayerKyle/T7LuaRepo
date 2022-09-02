@@ -4,9 +4,11 @@
 CoD.ScrStk_CombatEfficiencyBackGlow = InheritFrom( LUI.UIElement )
 CoD.ScrStk_CombatEfficiencyBackGlow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScrStk_CombatEfficiencyBackGlow )
 	self.id = "ScrStk_CombatEfficiencyBackGlow"
@@ -26,6 +28,7 @@ CoD.ScrStk_CombatEfficiencyBackGlow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
@@ -34,6 +37,7 @@ CoD.ScrStk_CombatEfficiencyBackGlow.new = function ( menu, controller )
 		CombatReady = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local Image0Frame2 = function ( Image0, event )
 					local Image0Frame3 = function ( Image0, event )
 						if not event.interrupted then
@@ -63,6 +67,7 @@ CoD.ScrStk_CombatEfficiencyBackGlow.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CombatReady",

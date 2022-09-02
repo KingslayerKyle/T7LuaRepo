@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_FrameWidget" )
 CoD.SpecialContracts_RewardImage = InheritFrom( LUI.UIElement )
 CoD.SpecialContracts_RewardImage.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpecialContracts_RewardImage )
 	self.id = "SpecialContracts_RewardImage"
@@ -37,11 +39,13 @@ CoD.SpecialContracts_RewardImage.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ItemImage:completeAnimation()
 				self.ItemImage:setLeftRight( false, false, -94, 94 )
 				self.ItemImage:setTopBottom( false, false, -40.75, 40.75 )
 				self.ItemImage:setAlpha( 1 )
 				self.clipFinished( ItemImage, {} )
+
 				CallingCard:completeAnimation()
 				self.CallingCard:setAlpha( 0 )
 				self.clipFinished( CallingCard, {} )
@@ -50,9 +54,11 @@ CoD.SpecialContracts_RewardImage.new = function ( menu, controller )
 		Dimensions4by1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ItemImage:completeAnimation()
 				self.ItemImage:setAlpha( 0 )
 				self.clipFinished( ItemImage, {} )
+
 				CallingCard:completeAnimation()
 				self.CallingCard:setAlpha( 1 )
 				self.clipFinished( CallingCard, {} )
@@ -61,11 +67,13 @@ CoD.SpecialContracts_RewardImage.new = function ( menu, controller )
 		Dimensions2by1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ItemImage:completeAnimation()
 				self.ItemImage:setLeftRight( false, false, -84, 84 )
 				self.ItemImage:setTopBottom( false, false, -42, 42 )
 				self.ItemImage:setAlpha( 1 )
 				self.clipFinished( ItemImage, {} )
+
 				CallingCard:completeAnimation()
 				self.CallingCard:setAlpha( 0 )
 				self.clipFinished( CallingCard, {} )
@@ -74,11 +82,13 @@ CoD.SpecialContracts_RewardImage.new = function ( menu, controller )
 		Dimensions1by1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ItemImage:completeAnimation()
 				self.ItemImage:setLeftRight( false, false, -48, 48 )
 				self.ItemImage:setTopBottom( false, false, -48, 48 )
 				self.ItemImage:setAlpha( 1 )
 				self.clipFinished( ItemImage, {} )
+
 				CallingCard:completeAnimation()
 				self.CallingCard:setAlpha( 0 )
 				self.clipFinished( CallingCard, {} )
@@ -87,11 +97,13 @@ CoD.SpecialContracts_RewardImage.new = function ( menu, controller )
 		DropBundle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ItemImage:completeAnimation()
 				self.ItemImage:setLeftRight( false, false, -94, 94 )
 				self.ItemImage:setTopBottom( false, false, -39.56, 37.56 )
 				self.ItemImage:setAlpha( 1 )
 				self.clipFinished( ItemImage, {} )
+
 				CallingCard:completeAnimation()
 				self.CallingCard:setAlpha( 0 )
 				self.clipFinished( CallingCard, {} )
@@ -100,11 +112,13 @@ CoD.SpecialContracts_RewardImage.new = function ( menu, controller )
 		BlackjackContract = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ItemImage:completeAnimation()
 				self.ItemImage:setLeftRight( false, false, -76.5, 76.5 )
 				self.ItemImage:setTopBottom( false, false, -52, 52 )
 				self.ItemImage:setAlpha( 1 )
 				self.clipFinished( ItemImage, {} )
+
 				CallingCard:completeAnimation()
 				self.CallingCard:setAlpha( 0 )
 				self.clipFinished( CallingCard, {} )
@@ -113,17 +127,20 @@ CoD.SpecialContracts_RewardImage.new = function ( menu, controller )
 		Camo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ItemImage:completeAnimation()
 				self.ItemImage:setLeftRight( false, false, -76.5, 76.5 )
 				self.ItemImage:setTopBottom( false, false, -52, 52 )
 				self.ItemImage:setAlpha( 1 )
 				self.clipFinished( ItemImage, {} )
+
 				CallingCard:completeAnimation()
 				self.CallingCard:setAlpha( 0 )
 				self.clipFinished( CallingCard, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Dimensions4by1",
@@ -170,6 +187,7 @@ CoD.SpecialContracts_RewardImage.new = function ( menu, controller )
 			modelName = "category"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCard:close()
 	end )

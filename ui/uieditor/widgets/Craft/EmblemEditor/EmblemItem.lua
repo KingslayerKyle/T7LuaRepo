@@ -16,9 +16,11 @@ require( "ui.uieditor.widgets.BlackMarket.DuplicateCounter" )
 CoD.EmblemItem = InheritFrom( LUI.UIElement )
 CoD.EmblemItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemItem )
 	self.id = "EmblemItem"
@@ -233,66 +235,86 @@ CoD.EmblemItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 0 )
 				self.clipFinished( bgImage, {} )
+
 				blackMarketBrandIcon0:completeAnimation()
 				self.blackMarketBrandIcon0:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon0, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				BoxButtonLrgInactiveDiag0:completeAnimation()
 				self.BoxButtonLrgInactiveDiag0:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag0, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setAlpha( 0 )
 				self.clipFinished( emptyLayerIcon, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				IconNew0:completeAnimation()
 				self.IconNew0:setAlpha( 0 )
 				self.clipFinished( IconNew0, {} )
+
 				DuplicateCounter:completeAnimation()
 				self.DuplicateCounter:setAlpha( 1 )
 				self.clipFinished( DuplicateCounter, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgIdle:beginAnimation( "keyframe", 90, false, false, CoD.TweenType.Linear )
 				BoxButtonLrgIdle:setAlpha( 0.5 )
 				BoxButtonLrgIdle:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
@@ -311,6 +333,7 @@ CoD.EmblemItem.new = function ( menu, controller )
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				BoxButtonLrgInactiveFrame2( BoxButtonLrgInactive, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
@@ -694,18 +717,23 @@ CoD.EmblemItem.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
@@ -762,6 +790,7 @@ CoD.EmblemItem.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
@@ -780,6 +809,7 @@ CoD.EmblemItem.new = function ( menu, controller )
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				BoxButtonLrgInactiveFrame2( BoxButtonLrgInactive, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
@@ -1156,9 +1186,11 @@ CoD.EmblemItem.new = function ( menu, controller )
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				glitch2Frame2( glitch2, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
@@ -1167,67 +1199,86 @@ CoD.EmblemItem.new = function ( menu, controller )
 		EmptySlot = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 18 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 0 )
 				self.clipFinished( bgImage, {} )
+
 				black:completeAnimation()
 				self.black:setLeftRight( true, false, 49.5, 127.5 )
 				self.black:setTopBottom( true, false, 48.41, 52 )
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.8 )
 				self.clipFinished( itemImage, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				BoxButtonLrgInactiveDiag0:completeAnimation()
 				self.BoxButtonLrgInactiveDiag0:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag0, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setLeftRight( false, false, -12, 12 )
 				self.emptyLayerIcon:setTopBottom( false, false, -12, 12 )
 				self.emptyLayerIcon:setRGB( 1, 1, 1 )
 				self.clipFinished( emptyLayerIcon, {} )
+
 				IconNew0:completeAnimation()
 				self.IconNew0:setAlpha( 0 )
 				self.clipFinished( IconNew0, {} )
+
 				DuplicateCounter:completeAnimation()
 				self.DuplicateCounter:setAlpha( 0 )
 				self.clipFinished( DuplicateCounter, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 9 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 90, false, false, CoD.TweenType.Linear )
@@ -1258,6 +1309,7 @@ CoD.EmblemItem.new = function ( menu, controller )
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.8 )
 				itemImageFrame2( itemImage, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
@@ -1608,33 +1660,41 @@ CoD.EmblemItem.new = function ( menu, controller )
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 1 )
 				glitch2Frame2( glitch2, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setRGB( 1, 0.41, 0 )
 				self.clipFinished( emptyLayerIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setRGB( 1, 0.41, 0 )
 				self.clipFinished( emptyLayerIcon, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 8 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
@@ -1665,6 +1725,7 @@ CoD.EmblemItem.new = function ( menu, controller )
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				itemImageFrame2( itemImage, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
@@ -2046,79 +2107,102 @@ CoD.EmblemItem.new = function ( menu, controller )
 		BMClassified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 22 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setLeftRight( true, true, 1, -1 )
 				self.bgImage:setTopBottom( true, true, 1, -1 )
 				self.bgImage:setAlpha( 1 )
 				self.clipFinished( bgImage, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0.65 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				black:completeAnimation()
 				self.black:setLeftRight( true, false, 60.5, 116.5 )
 				self.black:setTopBottom( true, false, 47.41, 56.59 )
 				self.black:setAlpha( 1 )
 				self.clipFinished( black, {} )
+
 				blackMarketBrandIcon0:completeAnimation()
 				self.blackMarketBrandIcon0:setAlpha( 0.65 )
 				self.clipFinished( blackMarketBrandIcon0, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				BoxButtonLrgInactiveDiag0:completeAnimation()
 				self.BoxButtonLrgInactiveDiag0:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag0, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setAlpha( 0 )
 				self.clipFinished( emptyLayerIcon, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				IconNew0:completeAnimation()
 				self.IconNew0:setAlpha( 0 )
 				self.clipFinished( IconNew0, {} )
+
 				DuplicateCounter:completeAnimation()
 				self.DuplicateCounter:setAlpha( 0 )
 				self.clipFinished( DuplicateCounter, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 16 )
+
 				BoxButtonLrgIdle:beginAnimation( "keyframe", 90, false, false, CoD.TweenType.Linear )
 				BoxButtonLrgIdle:setAlpha( 0.5 )
 				BoxButtonLrgIdle:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
@@ -2167,6 +2251,7 @@ CoD.EmblemItem.new = function ( menu, controller )
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0.65 )
 				BMGoldBarMedFrame2( BMGoldBarMed, {} )
+
 				black:completeAnimation()
 				self.black:setLeftRight( true, false, 60.5, 116.5 )
 				self.black:setTopBottom( true, false, 47.41, 56.59 )
@@ -2198,15 +2283,19 @@ CoD.EmblemItem.new = function ( menu, controller )
 				blackMarketBrandIcon0:completeAnimation()
 				self.blackMarketBrandIcon0:setAlpha( 0.65 )
 				blackMarketBrandIcon0Frame2( blackMarketBrandIcon0, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				BoxButtonLrgInactiveDiag0:completeAnimation()
 				self.BoxButtonLrgInactiveDiag0:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag0, {} )
@@ -2557,51 +2646,65 @@ CoD.EmblemItem.new = function ( menu, controller )
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 1 )
 				glitch2Frame2( glitch2, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setAlpha( 0 )
 				self.clipFinished( emptyLayerIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 1 )
 				self.clipFinished( bgImage, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 1 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon0:completeAnimation()
 				self.blackMarketBrandIcon0:setAlpha( 1 )
 				self.clipFinished( blackMarketBrandIcon0, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				BoxButtonLrgInactiveDiag0:completeAnimation()
 				self.BoxButtonLrgInactiveDiag0:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag0, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setAlpha( 0 )
 				self.clipFinished( emptyLayerIcon, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 16 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
@@ -2620,6 +2723,7 @@ CoD.EmblemItem.new = function ( menu, controller )
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				BoxButtonLrgInactiveFrame2( BoxButtonLrgInactive, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setRGB( 0.11, 0.11, 0.11 )
 				self.bgImage:setAlpha( 1 )
@@ -2673,15 +2777,19 @@ CoD.EmblemItem.new = function ( menu, controller )
 				blackMarketBrandIcon0:completeAnimation()
 				self.blackMarketBrandIcon0:setAlpha( 1 )
 				blackMarketBrandIcon0Frame2( blackMarketBrandIcon0, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				BoxButtonLrgInactiveDiag0:completeAnimation()
 				self.BoxButtonLrgInactiveDiag0:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag0, {} )
@@ -3058,6 +3166,7 @@ CoD.EmblemItem.new = function ( menu, controller )
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				glitch2Frame2( glitch2, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setAlpha( 0 )
 				self.clipFinished( emptyLayerIcon, {} )
@@ -3066,66 +3175,86 @@ CoD.EmblemItem.new = function ( menu, controller )
 		New = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 0 )
 				self.clipFinished( bgImage, {} )
+
 				blackMarketBrandIcon0:completeAnimation()
 				self.blackMarketBrandIcon0:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon0, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				BoxButtonLrgInactiveDiag0:completeAnimation()
 				self.BoxButtonLrgInactiveDiag0:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag0, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setAlpha( 0 )
 				self.clipFinished( emptyLayerIcon, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				IconNew0:completeAnimation()
 				self.IconNew0:setAlpha( 1 )
 				self.clipFinished( IconNew0, {} )
+
 				DuplicateCounter:completeAnimation()
 				self.DuplicateCounter:setAlpha( 1 )
 				self.clipFinished( DuplicateCounter, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgIdle:beginAnimation( "keyframe", 90, false, false, CoD.TweenType.Linear )
 				BoxButtonLrgIdle:setAlpha( 0.5 )
 				BoxButtonLrgIdle:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
@@ -3144,6 +3273,7 @@ CoD.EmblemItem.new = function ( menu, controller )
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				BoxButtonLrgInactiveFrame2( BoxButtonLrgInactive, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
@@ -3527,18 +3657,23 @@ CoD.EmblemItem.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
@@ -3592,12 +3727,14 @@ CoD.EmblemItem.new = function ( menu, controller )
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0.9 )
 				hintArrowFrame2( hintArrow, {} )
+
 				IconNew0:completeAnimation()
 				self.IconNew0:setAlpha( 1 )
 				self.clipFinished( IconNew0, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
@@ -3616,6 +3753,7 @@ CoD.EmblemItem.new = function ( menu, controller )
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				BoxButtonLrgInactiveFrame2( BoxButtonLrgInactive, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
@@ -3992,9 +4130,11 @@ CoD.EmblemItem.new = function ( menu, controller )
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				glitch2Frame2( glitch2, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
@@ -4003,63 +4143,82 @@ CoD.EmblemItem.new = function ( menu, controller )
 		Equipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 18 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 0 )
 				self.clipFinished( bgImage, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 1 )
 				self.clipFinished( equippedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				BoxButtonLrgInactiveDiag0:completeAnimation()
 				self.BoxButtonLrgInactiveDiag0:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag0, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setAlpha( 0 )
 				self.clipFinished( emptyLayerIcon, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				IconNew0:completeAnimation()
 				self.IconNew0:setAlpha( 0 )
 				self.clipFinished( IconNew0, {} )
+
 				DuplicateCounter:completeAnimation()
 				self.DuplicateCounter:setAlpha( 1 )
 				self.clipFinished( DuplicateCounter, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 9 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 90, false, false, CoD.TweenType.Linear )
@@ -4075,6 +4234,7 @@ CoD.EmblemItem.new = function ( menu, controller )
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				BoxButtonLrgInactiveFrame2( BoxButtonLrgInactive, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 1 )
 				self.clipFinished( equippedIcon, {} )
@@ -4458,15 +4618,19 @@ CoD.EmblemItem.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 1 )
 				self.clipFinished( equippedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
@@ -4523,6 +4687,7 @@ CoD.EmblemItem.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 9 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 90, false, false, CoD.TweenType.Linear )
@@ -4538,6 +4703,7 @@ CoD.EmblemItem.new = function ( menu, controller )
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				BoxButtonLrgInactiveFrame2( BoxButtonLrgInactive, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 1 )
 				self.clipFinished( equippedIcon, {} )
@@ -4914,9 +5080,11 @@ CoD.EmblemItem.new = function ( menu, controller )
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				glitch2Frame2( glitch2, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
@@ -4925,62 +5093,80 @@ CoD.EmblemItem.new = function ( menu, controller )
 		NonClickableEmptySlot = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 0 )
 				self.clipFinished( bgImage, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.8 )
 				self.clipFinished( itemImage, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				BoxButtonLrgInactiveDiag0:completeAnimation()
 				self.BoxButtonLrgInactiveDiag0:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactiveDiag0, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setLeftRight( false, false, -12, 12 )
 				self.emptyLayerIcon:setTopBottom( false, false, -12, 12 )
 				self.emptyLayerIcon:setRGB( 1, 1, 1 )
 				self.clipFinished( emptyLayerIcon, {} )
+
 				IconNew0:completeAnimation()
 				self.IconNew0:setAlpha( 0 )
 				self.clipFinished( IconNew0, {} )
+
 				DuplicateCounter:completeAnimation()
 				self.DuplicateCounter:setAlpha( 0 )
 				self.clipFinished( DuplicateCounter, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
@@ -5025,6 +5211,7 @@ CoD.EmblemItem.new = function ( menu, controller )
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.8 )
 				itemImageFrame2( itemImage, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
@@ -5375,36 +5562,45 @@ CoD.EmblemItem.new = function ( menu, controller )
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 1 )
 				glitch2Frame2( glitch2, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setRGB( 1, 0.41, 0 )
 				self.clipFinished( emptyLayerIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setRGB( 1, 0.41, 0 )
 				self.clipFinished( emptyLayerIcon, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 9 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
@@ -5438,6 +5634,7 @@ CoD.EmblemItem.new = function ( menu, controller )
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				itemImageFrame2( itemImage, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
@@ -5817,6 +6014,7 @@ CoD.EmblemItem.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "EmptySlot",
@@ -5865,6 +6063,7 @@ CoD.EmblemItem.new = function ( menu, controller )
 			modelName = "emblemIndex"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveDiag:close()
 		element.BoxButtonLrgIdle:close()

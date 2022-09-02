@@ -11,9 +11,11 @@ require( "ui.uieditor.widgets.CAC.MenuSelectScreen.CybercoreUpgradeInfoWidget" )
 CoD.CybercoreInfoModelWidget = InheritFrom( LUI.UIElement )
 CoD.CybercoreInfoModelWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CybercoreInfoModelWidget )
 	self.id = "CybercoreInfoModelWidget"
@@ -134,16 +136,20 @@ CoD.CybercoreInfoModelWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				DescriptionBackingCAC0:completeAnimation()
 				self.DescriptionBackingCAC0:setAlpha( 0 )
 				self.clipFinished( DescriptionBackingCAC0, {} )
+
 				nameBacking:completeAnimation()
 				self.nameBacking:setAlpha( 0 )
 				self.clipFinished( nameBacking, {} )
+
 				Outline:completeAnimation()
 				self.Outline:setLeftRight( false, false, -141.52, 129.52 )
 				self.Outline:setTopBottom( true, false, 136.48, 406.33 )
 				self.clipFinished( Outline, {} )
+
 				categoryName:completeAnimation()
 				self.categoryName:setLeftRight( true, false, 6, 262 )
 				self.categoryName:setTopBottom( true, false, 14, 33 )
@@ -156,6 +162,7 @@ CoD.CybercoreInfoModelWidget.new = function ( menu, controller )
 		Unavailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
@@ -164,6 +171,7 @@ CoD.CybercoreInfoModelWidget.new = function ( menu, controller )
 		Purchasable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
@@ -172,6 +180,7 @@ CoD.CybercoreInfoModelWidget.new = function ( menu, controller )
 		Upgradable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
@@ -180,12 +189,14 @@ CoD.CybercoreInfoModelWidget.new = function ( menu, controller )
 		Upgraded = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Unavailable",
@@ -224,6 +235,7 @@ CoD.CybercoreInfoModelWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.DescriptionBackingCAC0:close()
 		element.purchaseInstruction:close()

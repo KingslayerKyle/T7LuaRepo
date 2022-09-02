@@ -4,9 +4,11 @@
 CoD.AmmoWidget_Ball = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_Ball.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_Ball )
 	self.id = "AmmoWidget_Ball"
@@ -36,9 +38,11 @@ CoD.AmmoWidget_Ball.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setAlpha( 0 )
 				self.clipFinished( PanelGlow, {} )
+
 				Ball:completeAnimation()
 				self.Ball:setAlpha( 0 )
 				self.clipFinished( Ball, {} )
@@ -47,9 +51,11 @@ CoD.AmmoWidget_Ball.new = function ( menu, controller )
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setAlpha( 0 )
 				self.clipFinished( PanelGlow, {} )
+
 				Ball:completeAnimation()
 				self.Ball:setAlpha( 0 )
 				self.clipFinished( Ball, {} )
@@ -58,6 +64,7 @@ CoD.AmmoWidget_Ball.new = function ( menu, controller )
 		Show = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local PanelGlowFrame2 = function ( PanelGlow, event )
 					local PanelGlowFrame3 = function ( PanelGlow, event )
 						local PanelGlowFrame4 = function ( PanelGlow, event )
@@ -208,10 +215,12 @@ CoD.AmmoWidget_Ball.new = function ( menu, controller )
 				self.Ball:setAlpha( 1 )
 				self.Ball:setScale( 0.9 )
 				BallFrame2( Ball, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hide",

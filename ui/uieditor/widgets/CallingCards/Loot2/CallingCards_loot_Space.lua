@@ -4,9 +4,11 @@
 CoD.CallingCards_loot_Space = InheritFrom( LUI.UIElement )
 CoD.CallingCards_loot_Space.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_loot_Space )
 	self.id = "CallingCards_loot_Space"
@@ -85,6 +87,7 @@ CoD.CallingCards_loot_Space.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				BG2:completeAnimation()
 				self.BG2:setAlpha( 1 )
 				self.clipFinished( BG2, {} )
@@ -506,6 +509,7 @@ CoD.CallingCards_loot_Space.new = function ( menu, controller )
 				self.Image2:setLeftRight( true, false, 207, 236 )
 				self.Image2:setTopBottom( true, false, 77.12, 106.12 )
 				Image2Frame2( Image2, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

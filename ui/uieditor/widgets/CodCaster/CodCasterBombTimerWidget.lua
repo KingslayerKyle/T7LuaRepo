@@ -8,9 +8,11 @@ end
 CoD.CodCasterBombTimerWidget = InheritFrom( LUI.UIElement )
 CoD.CodCasterBombTimerWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterBombTimerWidget )
 	self.id = "CodCasterBombTimerWidget"
@@ -85,18 +87,23 @@ CoD.CodCasterBombTimerWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BombTimerBackground:completeAnimation()
 				self.BombTimerBackground:setAlpha( 0 )
 				self.clipFinished( BombTimerBackground, {} )
+
 				backgroundEnemy:completeAnimation()
 				self.backgroundEnemy:setAlpha( 0 )
 				self.clipFinished( backgroundEnemy, {} )
+
 				backgroundFriendly:completeAnimation()
 				self.backgroundFriendly:setAlpha( 0 )
 				self.clipFinished( backgroundFriendly, {} )
+
 				BombTimer:completeAnimation()
 				self.BombTimer:setAlpha( 0 )
 				self.clipFinished( BombTimer, {} )
+
 				AOrBText:completeAnimation()
 				self.AOrBText:setAlpha( 0 )
 				self.clipFinished( AOrBText, {} )
@@ -105,18 +112,23 @@ CoD.CodCasterBombTimerWidget.new = function ( menu, controller )
 		VisibleFriendly = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BombTimerBackground:completeAnimation()
 				self.BombTimerBackground:setAlpha( 0 )
 				self.clipFinished( BombTimerBackground, {} )
+
 				backgroundEnemy:completeAnimation()
 				self.backgroundEnemy:setAlpha( 0 )
 				self.clipFinished( backgroundEnemy, {} )
+
 				backgroundFriendly:completeAnimation()
 				self.backgroundFriendly:setAlpha( 1 )
 				self.clipFinished( backgroundFriendly, {} )
+
 				BombTimer:completeAnimation()
 				self.BombTimer:setAlpha( 1 )
 				self.clipFinished( BombTimer, {} )
+
 				AOrBText:completeAnimation()
 				self.AOrBText:setAlpha( 1 )
 				self.clipFinished( AOrBText, {} )
@@ -125,24 +137,30 @@ CoD.CodCasterBombTimerWidget.new = function ( menu, controller )
 		VisibleEnemy = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BombTimerBackground:completeAnimation()
 				self.BombTimerBackground:setAlpha( 0 )
 				self.clipFinished( BombTimerBackground, {} )
+
 				backgroundEnemy:completeAnimation()
 				self.backgroundEnemy:setAlpha( 1 )
 				self.clipFinished( backgroundEnemy, {} )
+
 				backgroundFriendly:completeAnimation()
 				self.backgroundFriendly:setAlpha( 0 )
 				self.clipFinished( backgroundFriendly, {} )
+
 				BombTimer:completeAnimation()
 				self.BombTimer:setAlpha( 1 )
 				self.clipFinished( BombTimer, {} )
+
 				AOrBText:completeAnimation()
 				self.AOrBText:setAlpha( 1 )
 				self.clipFinished( AOrBText, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.backgroundEnemy:close()
 		element.backgroundFriendly:close()

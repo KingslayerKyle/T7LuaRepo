@@ -4,9 +4,11 @@
 CoD.vhud_ms_ReticleLineHostLR = InheritFrom( LUI.UIElement )
 CoD.vhud_ms_ReticleLineHostLR.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ms_ReticleLineHostLR )
 	self.id = "vhud_ms_ReticleLineHostLR"
@@ -41,9 +43,11 @@ CoD.vhud_ms_ReticleLineHostLR.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Host:completeAnimation()
 				self.Host:setAlpha( 0.07 )
 				self.clipFinished( Host, {} )
+
 				msReticleHostLowerR:completeAnimation()
 				self.msReticleHostLowerR:setAlpha( 0.4 )
 				self.clipFinished( msReticleHostLowerR, {} )

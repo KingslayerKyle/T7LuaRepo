@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.GenericPopups.DialogSpinner" )
 CoD.StartMenu_Options_PrivacySettings_UpdatePopupInternal = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_PrivacySettings_UpdatePopupInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_PrivacySettings_UpdatePopupInternal )
 	self.id = "StartMenu_Options_PrivacySettings_UpdatePopupInternal"
@@ -151,24 +153,31 @@ CoD.StartMenu_Options_PrivacySettings_UpdatePopupInternal.new = function ( menu,
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				DialogSpinner0:completeAnimation()
 				self.DialogSpinner0:setAlpha( 0 )
 				self.clipFinished( DialogSpinner0, {} )
+
 				WorkingTitle:completeAnimation()
 				self.WorkingTitle:setAlpha( 0 )
 				self.clipFinished( WorkingTitle, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				Subtitle:completeAnimation()
 				self.Subtitle:setAlpha( 1 )
 				self.clipFinished( Subtitle, {} )
+
 				DoneTitle:completeAnimation()
 				self.DoneTitle:setAlpha( 0 )
 				self.clipFinished( DoneTitle, {} )
+
 				ErrorTitle:completeAnimation()
 				self.ErrorTitle:setAlpha( 0 )
 				self.clipFinished( ErrorTitle, {} )
+
 				ErrorSubtitle:completeAnimation()
 				self.ErrorSubtitle:setAlpha( 0 )
 				self.clipFinished( ErrorSubtitle, {} )
@@ -177,25 +186,32 @@ CoD.StartMenu_Options_PrivacySettings_UpdatePopupInternal.new = function ( menu,
 		WorkingState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				DialogSpinner0:completeAnimation()
 				self.DialogSpinner0:setAlpha( 1 )
 				self.clipFinished( DialogSpinner0, {} )
+
 				WorkingTitle:completeAnimation()
 				self.WorkingTitle:setAlpha( 1 )
 				self.clipFinished( WorkingTitle, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 0 )
 				self.clipFinished( Title, {} )
+
 				Subtitle:completeAnimation()
 				self.Subtitle:setAlpha( 1 )
 				self.Subtitle:setText( Engine.Localize( "PLATFORM_PLEASEWAIT" ) )
 				self.clipFinished( Subtitle, {} )
+
 				DoneTitle:completeAnimation()
 				self.DoneTitle:setAlpha( 0 )
 				self.clipFinished( DoneTitle, {} )
+
 				ErrorTitle:completeAnimation()
 				self.ErrorTitle:setAlpha( 0 )
 				self.clipFinished( ErrorTitle, {} )
+
 				ErrorSubtitle:completeAnimation()
 				self.ErrorSubtitle:setAlpha( 0 )
 				self.clipFinished( ErrorSubtitle, {} )
@@ -204,25 +220,32 @@ CoD.StartMenu_Options_PrivacySettings_UpdatePopupInternal.new = function ( menu,
 		ErrorState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				DialogSpinner0:completeAnimation()
 				self.DialogSpinner0:setAlpha( 0 )
 				self.clipFinished( DialogSpinner0, {} )
+
 				WorkingTitle:completeAnimation()
 				self.WorkingTitle:setAlpha( 0 )
 				self.clipFinished( WorkingTitle, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 0 )
 				self.clipFinished( Title, {} )
+
 				Subtitle:completeAnimation()
 				self.Subtitle:setAlpha( 0 )
 				self.Subtitle:setText( Engine.Localize( "" ) )
 				self.clipFinished( Subtitle, {} )
+
 				DoneTitle:completeAnimation()
 				self.DoneTitle:setAlpha( 0 )
 				self.clipFinished( DoneTitle, {} )
+
 				ErrorTitle:completeAnimation()
 				self.ErrorTitle:setAlpha( 1 )
 				self.clipFinished( ErrorTitle, {} )
+
 				ErrorSubtitle:completeAnimation()
 				self.ErrorSubtitle:setAlpha( 1 )
 				self.clipFinished( ErrorSubtitle, {} )
@@ -231,24 +254,31 @@ CoD.StartMenu_Options_PrivacySettings_UpdatePopupInternal.new = function ( menu,
 		DoneState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				DialogSpinner0:completeAnimation()
 				self.DialogSpinner0:setAlpha( 0 )
 				self.clipFinished( DialogSpinner0, {} )
+
 				WorkingTitle:completeAnimation()
 				self.WorkingTitle:setAlpha( 0 )
 				self.clipFinished( WorkingTitle, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 0 )
 				self.clipFinished( Title, {} )
+
 				Subtitle:completeAnimation()
 				self.Subtitle:setAlpha( 0 )
 				self.clipFinished( Subtitle, {} )
+
 				DoneTitle:completeAnimation()
 				self.DoneTitle:setAlpha( 1 )
 				self.clipFinished( DoneTitle, {} )
+
 				ErrorTitle:completeAnimation()
 				self.ErrorTitle:setAlpha( 0 )
 				self.clipFinished( ErrorTitle, {} )
+
 				ErrorSubtitle:completeAnimation()
 				self.ErrorSubtitle:setAlpha( 0 )
 				self.clipFinished( ErrorSubtitle, {} )
@@ -257,30 +287,38 @@ CoD.StartMenu_Options_PrivacySettings_UpdatePopupInternal.new = function ( menu,
 		CustomState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				DialogSpinner0:completeAnimation()
 				self.DialogSpinner0:setAlpha( 0 )
 				self.clipFinished( DialogSpinner0, {} )
+
 				WorkingTitle:completeAnimation()
 				self.WorkingTitle:setAlpha( 0 )
 				self.clipFinished( WorkingTitle, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				Subtitle:completeAnimation()
 				self.Subtitle:setAlpha( 1 )
 				self.clipFinished( Subtitle, {} )
+
 				DoneTitle:completeAnimation()
 				self.DoneTitle:setAlpha( 0 )
 				self.clipFinished( DoneTitle, {} )
+
 				ErrorTitle:completeAnimation()
 				self.ErrorTitle:setAlpha( 0 )
 				self.clipFinished( ErrorTitle, {} )
+
 				ErrorSubtitle:completeAnimation()
 				self.ErrorSubtitle:setAlpha( 0 )
 				self.clipFinished( ErrorSubtitle, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "WorkingState",
@@ -315,6 +353,7 @@ CoD.StartMenu_Options_PrivacySettings_UpdatePopupInternal.new = function ( menu,
 			modelName = "PrivacySettingManagementForm.updateProgressState"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.scorestreakVignetteContainer:close()
 		element.DialogSpinner0:close()

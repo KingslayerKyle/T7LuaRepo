@@ -31,6 +31,7 @@ CoD.AmmoWidget_TextAttachmentInfo.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_TextAttachmentInfo )
 	self.id = "AmmoWidget_TextAttachmentInfo"
@@ -69,9 +70,11 @@ CoD.AmmoWidget_TextAttachmentInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Attachments:completeAnimation()
 				self.Attachments:setAlpha( 1 )
 				self.clipFinished( Attachments, {} )
+
 				WeaponNameStrokeLbl:completeAnimation()
 				self.WeaponNameStrokeLbl:setAlpha( 1 )
 				self.clipFinished( WeaponNameStrokeLbl, {} )
@@ -80,15 +83,18 @@ CoD.AmmoWidget_TextAttachmentInfo.new = function ( menu, controller )
 		Collapsed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Attachments:completeAnimation()
 				self.Attachments:setAlpha( 0 )
 				self.clipFinished( Attachments, {} )
+
 				WeaponNameStrokeLbl:completeAnimation()
 				self.WeaponNameStrokeLbl:setAlpha( 1 )
 				self.clipFinished( WeaponNameStrokeLbl, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.WeaponNameStrokeLbl:close()
 	end )

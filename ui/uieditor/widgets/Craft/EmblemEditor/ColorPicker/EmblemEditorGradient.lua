@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Craft.EmblemEditor.ColorPicker.EmblemEditorGradien
 CoD.EmblemEditorGradient = InheritFrom( LUI.UIElement )
 CoD.EmblemEditorGradient.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemEditorGradient )
 	self.id = "EmblemEditorGradient"
@@ -230,21 +232,27 @@ CoD.EmblemEditorGradient.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				gradientColor0:completeAnimation()
 				self.gradientColor0:setAlpha( 1 )
 				self.clipFinished( gradientColor0, {} )
+
 				gradientColor1:completeAnimation()
 				self.gradientColor1:setAlpha( 1 )
 				self.clipFinished( gradientColor1, {} )
+
 				gradientSlider:completeAnimation()
 				self.gradientSlider:setAlpha( 1 )
 				self.clipFinished( gradientSlider, {} )
+
 				gradientSliderHeader:completeAnimation()
 				self.gradientSliderHeader:setAlpha( 1 )
 				self.clipFinished( gradientSliderHeader, {} )
+
 				gradientType:completeAnimation()
 				self.gradientType:setAlpha( 1 )
 				self.clipFinished( gradientType, {} )
+
 				gradientFillValue:completeAnimation()
 				self.gradientFillValue:setAlpha( 1 )
 				self.clipFinished( gradientFillValue, {} )
@@ -253,23 +261,30 @@ CoD.EmblemEditorGradient.new = function ( menu, controller )
 		Color0State = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				gradientColor0:completeAnimation()
+
 				gradientColor0.buttonBorder:completeAnimation()
 				self.gradientColor0:setAlpha( 1 )
 				self.gradientColor0.buttonBorder:setAlpha( 1 )
 				self.clipFinished( gradientColor0, {} )
+
 				gradientColor1:completeAnimation()
 				self.gradientColor1:setAlpha( 0.1 )
 				self.clipFinished( gradientColor1, {} )
+
 				gradientSlider:completeAnimation()
 				self.gradientSlider:setAlpha( 0 )
 				self.clipFinished( gradientSlider, {} )
+
 				gradientSliderHeader:completeAnimation()
 				self.gradientSliderHeader:setAlpha( 0 )
 				self.clipFinished( gradientSliderHeader, {} )
+
 				gradientType:completeAnimation()
 				self.gradientType:setAlpha( 0 )
 				self.clipFinished( gradientType, {} )
+
 				gradientFillValue:completeAnimation()
 				self.gradientFillValue:setAlpha( 0 )
 				self.clipFinished( gradientFillValue, {} )
@@ -278,23 +293,30 @@ CoD.EmblemEditorGradient.new = function ( menu, controller )
 		Color1State = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				gradientColor0:completeAnimation()
 				self.gradientColor0:setAlpha( 0.1 )
 				self.clipFinished( gradientColor0, {} )
+
 				gradientColor1:completeAnimation()
+
 				gradientColor1.buttonBorder:completeAnimation()
 				self.gradientColor1:setAlpha( 1 )
 				self.gradientColor1.buttonBorder:setAlpha( 1 )
 				self.clipFinished( gradientColor1, {} )
+
 				gradientSlider:completeAnimation()
 				self.gradientSlider:setAlpha( 0 )
 				self.clipFinished( gradientSlider, {} )
+
 				gradientSliderHeader:completeAnimation()
 				self.gradientSliderHeader:setAlpha( 0 )
 				self.clipFinished( gradientSliderHeader, {} )
+
 				gradientType:completeAnimation()
 				self.gradientType:setAlpha( 0 )
 				self.clipFinished( gradientType, {} )
+
 				gradientFillValue:completeAnimation()
 				self.gradientFillValue:setAlpha( 0 )
 				self.clipFinished( gradientFillValue, {} )
@@ -312,6 +334,7 @@ CoD.EmblemEditorGradient.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.EmblemEditorFrame0:close()
 		element.gradientColor0:close()

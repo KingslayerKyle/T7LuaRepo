@@ -4,9 +4,11 @@
 CoD.CodCasterMap = InheritFrom( LUI.UIElement )
 CoD.CodCasterMap.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CodCasterMap )
 	self.id = "CodCasterMap"
@@ -42,12 +44,15 @@ CoD.CodCasterMap.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				minimapMap:completeAnimation()
 				self.minimapMap:setAlpha( 0 )
 				self.clipFinished( minimapMap, {} )
+
 				minimapItems:completeAnimation()
 				self.minimapItems:setAlpha( 0 )
 				self.clipFinished( minimapItems, {} )
+
 				minimapOverlay:completeAnimation()
 				self.minimapOverlay:setAlpha( 0 )
 				self.clipFinished( minimapOverlay, {} )
@@ -56,18 +61,22 @@ CoD.CodCasterMap.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				minimapMap:completeAnimation()
 				self.minimapMap:setAlpha( 1 )
 				self.clipFinished( minimapMap, {} )
+
 				minimapItems:completeAnimation()
 				self.minimapItems:setAlpha( 1 )
 				self.clipFinished( minimapItems, {} )
+
 				minimapOverlay:completeAnimation()
 				self.minimapOverlay:setAlpha( 1 )
 				self.clipFinished( minimapOverlay, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

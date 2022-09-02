@@ -4,9 +4,11 @@
 CoD.FR_BestTime = InheritFrom( LUI.UIElement )
 CoD.FR_BestTime.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.FR_BestTime )
 	self.id = "FR_BestTime"
@@ -64,48 +66,60 @@ CoD.FR_BestTime.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BestTimeBoxOrange:completeAnimation()
 				self.BestTimeBoxOrange:setAlpha( 0 )
 				self.clipFinished( BestTimeBoxOrange, {} )
+
 				BestTimeBoxOrange0:completeAnimation()
 				self.BestTimeBoxOrange0:setAlpha( 0 )
 				self.clipFinished( BestTimeBoxOrange0, {} )
+
 				BestTimeBox:completeAnimation()
 				self.BestTimeBox:setAlpha( 0 )
 				self.clipFinished( BestTimeBox, {} )
+
 				BestTimeText:completeAnimation()
 				self.BestTimeText:setAlpha( 0 )
 				self.BestTimeText:setText( Engine.Localize( "MENU_BEST_TIME" ) )
 				self.clipFinished( BestTimeText, {} )
+
 				BestTimeValueText:completeAnimation()
 				self.BestTimeValueText:setAlpha( 0 )
 				self.clipFinished( BestTimeValueText, {} )
 			end,
 			FaultAnim = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BestTimeBoxOrange:completeAnimation()
 				self.BestTimeBoxOrange:setAlpha( 1 )
 				self.clipFinished( BestTimeBoxOrange, {} )
+
 				BestTimeBoxOrange0:completeAnimation()
 				self.BestTimeBoxOrange0:setAlpha( 0.3 )
 				self.clipFinished( BestTimeBoxOrange0, {} )
+
 				BestTimeBox:completeAnimation()
 				self.BestTimeBox:setAlpha( 0.5 )
 				self.clipFinished( BestTimeBox, {} )
+
 				BestTimeText:completeAnimation()
 				self.BestTimeText:setAlpha( 1 )
 				self.clipFinished( BestTimeText, {} )
+
 				BestTimeValueText:completeAnimation()
 				self.BestTimeValueText:setAlpha( 1 )
 				self.clipFinished( BestTimeValueText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

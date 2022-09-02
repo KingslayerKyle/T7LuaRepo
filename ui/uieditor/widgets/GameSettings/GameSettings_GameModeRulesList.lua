@@ -23,6 +23,7 @@ CoD.GameSettings_GameModeRulesList.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GameSettings_GameModeRulesList )
 	self.id = "GameSettings_GameModeRulesList"
@@ -151,6 +152,7 @@ CoD.GameSettings_GameModeRulesList.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Title:completeAnimation()
 				self.Title:setLeftRight( true, false, 40, 382 )
 				self.Title:setTopBottom( true, false, 0, 40 )
@@ -160,6 +162,7 @@ CoD.GameSettings_GameModeRulesList.new = function ( menu, controller )
 		NoHeader = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Title:completeAnimation()
 				self.Title:setLeftRight( true, false, 40, 382 )
 				self.Title:setTopBottom( true, false, 0, 10 )
@@ -177,6 +180,7 @@ CoD.GameSettings_GameModeRulesList.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Title:close()
 		element.Sliders:close()

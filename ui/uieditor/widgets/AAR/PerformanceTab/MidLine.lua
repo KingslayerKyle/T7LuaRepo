@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleLine" )
 CoD.MidLine = InheritFrom( LUI.UIElement )
 CoD.MidLine.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MidLine )
 	self.id = "MidLine"

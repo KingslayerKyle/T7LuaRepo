@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleNumBrdr" )
 CoD.Pregame_Title = InheritFrom( LUI.UIElement )
 CoD.Pregame_Title.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_Title )
 	self.id = "Pregame_Title"
@@ -77,6 +79,7 @@ CoD.Pregame_Title.new = function ( menu, controller )
 	KillcamText0:setText( Engine.Localize( "MP_KILLCAM_CAPS" ) )
 	KillcamText0:setTTF( "fonts/FoundryGridnik-Bold.ttf" )
 	KillcamText0:setLetterSpacing( 0.5 )
+
 	LUI.OverrideFunction_CallOriginalFirst( KillcamText0, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 30 )
 	end )
@@ -99,6 +102,7 @@ CoD.Pregame_Title.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				KillcamText0:completeAnimation()
 				self.KillcamText0:setLeftRight( false, false, -344, 344 )
 				self.KillcamText0:setTopBottom( true, false, 6, 30 )
@@ -108,6 +112,7 @@ CoD.Pregame_Title.new = function ( menu, controller )
 		VictoryGreen = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				KillcamText0:completeAnimation()
 				self.KillcamText0:setRGB( 0, 1, 0 )
 				self.clipFinished( KillcamText0, {} )
@@ -116,12 +121,14 @@ CoD.Pregame_Title.new = function ( menu, controller )
 		DefeatRed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				KillcamText0:completeAnimation()
 				self.KillcamText0:setRGB( 1, 0.03, 0 )
 				self.clipFinished( KillcamText0, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel0:close()
 		element.FETitleNumBrdr0:close()

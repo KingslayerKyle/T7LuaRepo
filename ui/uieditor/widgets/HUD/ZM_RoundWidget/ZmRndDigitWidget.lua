@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_FX.ZmFx_Spark2Ext" )
 CoD.ZmRndDigitWidget = InheritFrom( LUI.UIElement )
 CoD.ZmRndDigitWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmRndDigitWidget )
 	self.id = "ZmRndDigitWidget"
@@ -356,80 +358,105 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		One = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 31 )
+
 				Nine:completeAnimation()
 				self.Nine:setAlpha( 0 )
 				self.clipFinished( Nine, {} )
+
 				NineLight:completeAnimation()
 				self.NineLight:setAlpha( 0 )
 				self.clipFinished( NineLight, {} )
+
 				NineGlow:completeAnimation()
 				self.NineGlow:setAlpha( 0 )
 				self.clipFinished( NineGlow, {} )
+
 				Eight:completeAnimation()
 				self.Eight:setAlpha( 0 )
 				self.clipFinished( Eight, {} )
+
 				EightLight:completeAnimation()
 				self.EightLight:setAlpha( 0 )
 				self.clipFinished( EightLight, {} )
+
 				EightGlow:completeAnimation()
 				self.EightGlow:setAlpha( 0 )
 				self.clipFinished( EightGlow, {} )
+
 				Seven:completeAnimation()
 				self.Seven:setAlpha( 0 )
 				self.clipFinished( Seven, {} )
+
 				SevenLight:completeAnimation()
 				self.SevenLight:setAlpha( 0 )
 				self.clipFinished( SevenLight, {} )
+
 				SevenGlow:completeAnimation()
 				self.SevenGlow:setAlpha( 0 )
 				self.clipFinished( SevenGlow, {} )
+
 				Six:completeAnimation()
 				self.Six:setAlpha( 0 )
 				self.clipFinished( Six, {} )
+
 				SixLight:completeAnimation()
 				self.SixLight:setAlpha( 0 )
 				self.clipFinished( SixLight, {} )
+
 				SixGlow:completeAnimation()
 				self.SixGlow:setAlpha( 0 )
 				self.clipFinished( SixGlow, {} )
+
 				Five:completeAnimation()
 				self.Five:setAlpha( 0 )
 				self.clipFinished( Five, {} )
+
 				FiveLight:completeAnimation()
 				self.FiveLight:setAlpha( 0 )
 				self.clipFinished( FiveLight, {} )
+
 				FiveGlow:completeAnimation()
 				self.FiveGlow:setAlpha( 0 )
 				self.clipFinished( FiveGlow, {} )
+
 				Four:completeAnimation()
 				self.Four:setAlpha( 0 )
 				self.clipFinished( Four, {} )
+
 				FourLight:completeAnimation()
 				self.FourLight:setAlpha( 0 )
 				self.clipFinished( FourLight, {} )
+
 				FourGlow:completeAnimation()
 				self.FourGlow:setAlpha( 0 )
 				self.clipFinished( FourGlow, {} )
+
 				Three:completeAnimation()
 				self.Three:setAlpha( 0 )
 				self.clipFinished( Three, {} )
+
 				ThreeLight:completeAnimation()
 				self.ThreeLight:setAlpha( 0 )
 				self.clipFinished( ThreeLight, {} )
+
 				ThreeGlow:completeAnimation()
 				self.ThreeGlow:setAlpha( 0 )
 				self.clipFinished( ThreeGlow, {} )
+
 				Two:completeAnimation()
 				self.Two:setAlpha( 0 )
 				self.clipFinished( Two, {} )
+
 				TwoLight:completeAnimation()
 				self.TwoLight:setAlpha( 0 )
 				self.clipFinished( TwoLight, {} )
+
 				TwoGlow:completeAnimation()
 				self.TwoGlow:setAlpha( 0 )
 				self.clipFinished( TwoGlow, {} )
@@ -540,12 +567,15 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 				OneGlow:completeAnimation()
 				self.OneGlow:setAlpha( 0 )
 				OneGlowFrame2( OneGlow, {} )
+
 				Zero:completeAnimation()
 				self.Zero:setAlpha( 0 )
 				self.clipFinished( Zero, {} )
+
 				ZeroLight:completeAnimation()
 				self.ZeroLight:setAlpha( 0 )
 				self.clipFinished( ZeroLight, {} )
+
 				ZeroGlow:completeAnimation()
 				self.ZeroGlow:setAlpha( 0 )
 				self.clipFinished( ZeroGlow, {} )
@@ -606,66 +636,87 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 		Two = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 29 )
+
 				Nine:completeAnimation()
 				self.Nine:setAlpha( 0 )
 				self.clipFinished( Nine, {} )
+
 				NineLight:completeAnimation()
 				self.NineLight:setAlpha( 0 )
 				self.clipFinished( NineLight, {} )
+
 				NineGlow:completeAnimation()
 				self.NineGlow:setAlpha( 0 )
 				self.clipFinished( NineGlow, {} )
+
 				Eight:completeAnimation()
 				self.Eight:setAlpha( 0 )
 				self.clipFinished( Eight, {} )
+
 				EightLight:completeAnimation()
 				self.EightLight:setAlpha( 0 )
 				self.clipFinished( EightLight, {} )
+
 				EightGlow:completeAnimation()
 				self.EightGlow:setAlpha( 0 )
 				self.clipFinished( EightGlow, {} )
+
 				Seven:completeAnimation()
 				self.Seven:setAlpha( 0 )
 				self.clipFinished( Seven, {} )
+
 				SevenLight:completeAnimation()
 				self.SevenLight:setAlpha( 0 )
 				self.clipFinished( SevenLight, {} )
+
 				SevenGlow:completeAnimation()
 				self.SevenGlow:setAlpha( 0 )
 				self.clipFinished( SevenGlow, {} )
+
 				Six:completeAnimation()
 				self.Six:setAlpha( 0 )
 				self.clipFinished( Six, {} )
+
 				SixLight:completeAnimation()
 				self.SixLight:setAlpha( 0 )
 				self.clipFinished( SixLight, {} )
+
 				SixGlow:completeAnimation()
 				self.SixGlow:setAlpha( 0 )
 				self.clipFinished( SixGlow, {} )
+
 				Five:completeAnimation()
 				self.Five:setAlpha( 0 )
 				self.clipFinished( Five, {} )
+
 				FiveLight:completeAnimation()
 				self.FiveLight:setAlpha( 0 )
 				self.clipFinished( FiveLight, {} )
+
 				FiveGlow:completeAnimation()
 				self.FiveGlow:setAlpha( 0 )
 				self.clipFinished( FiveGlow, {} )
+
 				Four:completeAnimation()
 				self.Four:setAlpha( 0 )
 				self.clipFinished( Four, {} )
+
 				FourLight:completeAnimation()
 				self.FourLight:setAlpha( 0 )
 				self.clipFinished( FourLight, {} )
+
 				FourGlow:completeAnimation()
 				self.FourGlow:setAlpha( 0 )
 				self.clipFinished( FourGlow, {} )
+
 				Three:completeAnimation()
 				self.Three:setAlpha( 0 )
 				self.clipFinished( Three, {} )
+
 				ThreeLight:completeAnimation()
 				self.ThreeLight:setAlpha( 0 )
 				self.clipFinished( ThreeLight, {} )
+
 				ThreeGlow:completeAnimation()
 				self.ThreeGlow:setAlpha( 0 )
 				self.clipFinished( ThreeGlow, {} )
@@ -788,12 +839,15 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 				TwoGlow:completeAnimation()
 				self.TwoGlow:setAlpha( 0 )
 				TwoGlowFrame2( TwoGlow, {} )
+
 				One:completeAnimation()
 				self.One:setAlpha( 0 )
 				self.clipFinished( One, {} )
+
 				OneLight:completeAnimation()
 				self.OneLight:setAlpha( 0 )
 				self.clipFinished( OneLight, {} )
+
 				OneGlow:completeAnimation()
 				self.OneGlow:setAlpha( 0 )
 				self.clipFinished( OneGlow, {} )
@@ -912,6 +966,7 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 				self.ZmFxSpark2Ext0:setTopBottom( true, false, -121.29, 46.71 )
 				self.ZmFxSpark2Ext0:setAlpha( 0 )
 				ZmFxSpark2Ext0Frame2( ZmFxSpark2Ext0, {} )
+
 				ZmFxSpark2Ext00:completeAnimation()
 				self.ZmFxSpark2Ext00:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext00, {} )
@@ -920,57 +975,75 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 		Three = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 32 )
+
 				Nine:completeAnimation()
 				self.Nine:setAlpha( 0 )
 				self.clipFinished( Nine, {} )
+
 				NineLight:completeAnimation()
 				self.NineLight:setAlpha( 0 )
 				self.clipFinished( NineLight, {} )
+
 				NineGlow:completeAnimation()
 				self.NineGlow:setAlpha( 0 )
 				self.clipFinished( NineGlow, {} )
+
 				Eight:completeAnimation()
 				self.Eight:setAlpha( 0 )
 				self.clipFinished( Eight, {} )
+
 				EightLight:completeAnimation()
 				self.EightLight:setAlpha( 0 )
 				self.clipFinished( EightLight, {} )
+
 				EightGlow:completeAnimation()
 				self.EightGlow:setAlpha( 0 )
 				self.clipFinished( EightGlow, {} )
+
 				Seven:completeAnimation()
 				self.Seven:setAlpha( 0 )
 				self.clipFinished( Seven, {} )
+
 				SevenLight:completeAnimation()
 				self.SevenLight:setAlpha( 0 )
 				self.clipFinished( SevenLight, {} )
+
 				SevenGlow:completeAnimation()
 				self.SevenGlow:setAlpha( 0 )
 				self.clipFinished( SevenGlow, {} )
+
 				Six:completeAnimation()
 				self.Six:setAlpha( 0 )
 				self.clipFinished( Six, {} )
+
 				SixLight:completeAnimation()
 				self.SixLight:setAlpha( 0 )
 				self.clipFinished( SixLight, {} )
+
 				SixGlow:completeAnimation()
 				self.SixGlow:setAlpha( 0 )
 				self.clipFinished( SixGlow, {} )
+
 				Five:completeAnimation()
 				self.Five:setAlpha( 0 )
 				self.clipFinished( Five, {} )
+
 				FiveLight:completeAnimation()
 				self.FiveLight:setAlpha( 0 )
 				self.clipFinished( FiveLight, {} )
+
 				FiveGlow:completeAnimation()
 				self.FiveGlow:setAlpha( 0 )
 				self.clipFinished( FiveGlow, {} )
+
 				Four:completeAnimation()
 				self.Four:setAlpha( 0 )
 				self.clipFinished( Four, {} )
+
 				FourLight:completeAnimation()
 				self.FourLight:setAlpha( 0 )
 				self.clipFinished( FourLight, {} )
+
 				FourGlow:completeAnimation()
 				self.FourGlow:setAlpha( 0 )
 				self.clipFinished( FourGlow, {} )
@@ -1091,30 +1164,39 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 				ThreeGlow:completeAnimation()
 				self.ThreeGlow:setAlpha( 0 )
 				ThreeGlowFrame2( ThreeGlow, {} )
+
 				Two:completeAnimation()
 				self.Two:setAlpha( 0 )
 				self.clipFinished( Two, {} )
+
 				TwoLight:completeAnimation()
 				self.TwoLight:setAlpha( 0 )
 				self.clipFinished( TwoLight, {} )
+
 				TwoGlow:completeAnimation()
 				self.TwoGlow:setAlpha( 0 )
 				self.clipFinished( TwoGlow, {} )
+
 				One:completeAnimation()
 				self.One:setAlpha( 0 )
 				self.clipFinished( One, {} )
+
 				OneLight:completeAnimation()
 				self.OneLight:setAlpha( 0 )
 				self.clipFinished( OneLight, {} )
+
 				OneGlow:completeAnimation()
 				self.OneGlow:setAlpha( 0 )
 				self.clipFinished( OneGlow, {} )
+
 				Zero:completeAnimation()
 				self.Zero:setAlpha( 0 )
 				self.clipFinished( Zero, {} )
+
 				ZeroLight:completeAnimation()
 				self.ZeroLight:setAlpha( 0 )
 				self.clipFinished( ZeroLight, {} )
+
 				ZeroGlow:completeAnimation()
 				self.ZeroGlow:setAlpha( 0 )
 				self.clipFinished( ZeroGlow, {} )
@@ -1279,6 +1361,7 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 				self.ZmFxSpark2Ext0:setTopBottom( true, false, -120, 48 )
 				self.ZmFxSpark2Ext0:setAlpha( 0 )
 				ZmFxSpark2Ext0Frame2( ZmFxSpark2Ext0, {} )
+
 				ZmFxSpark2Ext00:completeAnimation()
 				self.ZmFxSpark2Ext00:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext00, {} )
@@ -1287,48 +1370,63 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 		Four = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 32 )
+
 				Nine:completeAnimation()
 				self.Nine:setAlpha( 0 )
 				self.clipFinished( Nine, {} )
+
 				NineLight:completeAnimation()
 				self.NineLight:setAlpha( 0 )
 				self.clipFinished( NineLight, {} )
+
 				NineGlow:completeAnimation()
 				self.NineGlow:setAlpha( 0 )
 				self.clipFinished( NineGlow, {} )
+
 				Eight:completeAnimation()
 				self.Eight:setAlpha( 0 )
 				self.clipFinished( Eight, {} )
+
 				EightLight:completeAnimation()
 				self.EightLight:setAlpha( 0 )
 				self.clipFinished( EightLight, {} )
+
 				EightGlow:completeAnimation()
 				self.EightGlow:setAlpha( 0 )
 				self.clipFinished( EightGlow, {} )
+
 				Seven:completeAnimation()
 				self.Seven:setAlpha( 0 )
 				self.clipFinished( Seven, {} )
+
 				SevenLight:completeAnimation()
 				self.SevenLight:setAlpha( 0 )
 				self.clipFinished( SevenLight, {} )
+
 				SevenGlow:completeAnimation()
 				self.SevenGlow:setAlpha( 0 )
 				self.clipFinished( SevenGlow, {} )
+
 				Six:completeAnimation()
 				self.Six:setAlpha( 0 )
 				self.clipFinished( Six, {} )
+
 				SixLight:completeAnimation()
 				self.SixLight:setAlpha( 0 )
 				self.clipFinished( SixLight, {} )
+
 				SixGlow:completeAnimation()
 				self.SixGlow:setAlpha( 0 )
 				self.clipFinished( SixGlow, {} )
+
 				Five:completeAnimation()
 				self.Five:setAlpha( 0 )
 				self.clipFinished( Five, {} )
+
 				FiveLight:completeAnimation()
 				self.FiveLight:setAlpha( 0 )
 				self.clipFinished( FiveLight, {} )
+
 				FiveGlow:completeAnimation()
 				self.FiveGlow:setAlpha( 0 )
 				self.clipFinished( FiveGlow, {} )
@@ -1449,39 +1547,51 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 				FourGlow:completeAnimation()
 				self.FourGlow:setAlpha( 0 )
 				FourGlowFrame2( FourGlow, {} )
+
 				Three:completeAnimation()
 				self.Three:setAlpha( 0 )
 				self.clipFinished( Three, {} )
+
 				ThreeLight:completeAnimation()
 				self.ThreeLight:setAlpha( 0 )
 				self.clipFinished( ThreeLight, {} )
+
 				ThreeGlow:completeAnimation()
 				self.ThreeGlow:setAlpha( 0 )
 				self.clipFinished( ThreeGlow, {} )
+
 				Two:completeAnimation()
 				self.Two:setAlpha( 0 )
 				self.clipFinished( Two, {} )
+
 				TwoLight:completeAnimation()
 				self.TwoLight:setAlpha( 0 )
 				self.clipFinished( TwoLight, {} )
+
 				TwoGlow:completeAnimation()
 				self.TwoGlow:setAlpha( 0 )
 				self.clipFinished( TwoGlow, {} )
+
 				One:completeAnimation()
 				self.One:setAlpha( 0 )
 				self.clipFinished( One, {} )
+
 				OneLight:completeAnimation()
 				self.OneLight:setAlpha( 0 )
 				self.clipFinished( OneLight, {} )
+
 				OneGlow:completeAnimation()
 				self.OneGlow:setAlpha( 0 )
 				self.clipFinished( OneGlow, {} )
+
 				Zero:completeAnimation()
 				self.Zero:setAlpha( 0 )
 				self.clipFinished( Zero, {} )
+
 				ZeroLight:completeAnimation()
 				self.ZeroLight:setAlpha( 0 )
 				self.clipFinished( ZeroLight, {} )
+
 				ZeroGlow:completeAnimation()
 				self.ZeroGlow:setAlpha( 0 )
 				self.clipFinished( ZeroGlow, {} )
@@ -1613,39 +1723,51 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 		Five = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 32 )
+
 				Nine:completeAnimation()
 				self.Nine:setAlpha( 0 )
 				self.clipFinished( Nine, {} )
+
 				NineLight:completeAnimation()
 				self.NineLight:setAlpha( 0 )
 				self.clipFinished( NineLight, {} )
+
 				NineGlow:completeAnimation()
 				self.NineGlow:setAlpha( 0 )
 				self.clipFinished( NineGlow, {} )
+
 				Eight:completeAnimation()
 				self.Eight:setAlpha( 0 )
 				self.clipFinished( Eight, {} )
+
 				EightLight:completeAnimation()
 				self.EightLight:setAlpha( 0 )
 				self.clipFinished( EightLight, {} )
+
 				EightGlow:completeAnimation()
 				self.EightGlow:setAlpha( 0 )
 				self.clipFinished( EightGlow, {} )
+
 				Seven:completeAnimation()
 				self.Seven:setAlpha( 0 )
 				self.clipFinished( Seven, {} )
+
 				SevenLight:completeAnimation()
 				self.SevenLight:setAlpha( 0 )
 				self.clipFinished( SevenLight, {} )
+
 				SevenGlow:completeAnimation()
 				self.SevenGlow:setAlpha( 0 )
 				self.clipFinished( SevenGlow, {} )
+
 				Six:completeAnimation()
 				self.Six:setAlpha( 0 )
 				self.clipFinished( Six, {} )
+
 				SixLight:completeAnimation()
 				self.SixLight:setAlpha( 0 )
 				self.clipFinished( SixLight, {} )
+
 				SixGlow:completeAnimation()
 				self.SixGlow:setAlpha( 0 )
 				self.clipFinished( SixGlow, {} )
@@ -1756,48 +1878,63 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 				FiveGlow:completeAnimation()
 				self.FiveGlow:setAlpha( 0 )
 				FiveGlowFrame2( FiveGlow, {} )
+
 				Four:completeAnimation()
 				self.Four:setAlpha( 0 )
 				self.clipFinished( Four, {} )
+
 				FourLight:completeAnimation()
 				self.FourLight:setAlpha( 0 )
 				self.clipFinished( FourLight, {} )
+
 				FourGlow:completeAnimation()
 				self.FourGlow:setAlpha( 0 )
 				self.clipFinished( FourGlow, {} )
+
 				Three:completeAnimation()
 				self.Three:setAlpha( 0 )
 				self.clipFinished( Three, {} )
+
 				ThreeLight:completeAnimation()
 				self.ThreeLight:setAlpha( 0 )
 				self.clipFinished( ThreeLight, {} )
+
 				ThreeGlow:completeAnimation()
 				self.ThreeGlow:setAlpha( 0 )
 				self.clipFinished( ThreeGlow, {} )
+
 				Two:completeAnimation()
 				self.Two:setAlpha( 0 )
 				self.clipFinished( Two, {} )
+
 				TwoLight:completeAnimation()
 				self.TwoLight:setAlpha( 0 )
 				self.clipFinished( TwoLight, {} )
+
 				TwoGlow:completeAnimation()
 				self.TwoGlow:setAlpha( 0 )
 				self.clipFinished( TwoGlow, {} )
+
 				One:completeAnimation()
 				self.One:setAlpha( 0 )
 				self.clipFinished( One, {} )
+
 				OneLight:completeAnimation()
 				self.OneLight:setAlpha( 0 )
 				self.clipFinished( OneLight, {} )
+
 				OneGlow:completeAnimation()
 				self.OneGlow:setAlpha( 0 )
 				self.clipFinished( OneGlow, {} )
+
 				Zero:completeAnimation()
 				self.Zero:setAlpha( 0 )
 				self.clipFinished( Zero, {} )
+
 				ZeroLight:completeAnimation()
 				self.ZeroLight:setAlpha( 0 )
 				self.clipFinished( ZeroLight, {} )
+
 				ZeroGlow:completeAnimation()
 				self.ZeroGlow:setAlpha( 0 )
 				self.clipFinished( ZeroGlow, {} )
@@ -1930,6 +2067,7 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 				self.ZmFxSpark2Ext0:setTopBottom( true, false, -140.29, 27.71 )
 				self.ZmFxSpark2Ext0:setAlpha( 0 )
 				ZmFxSpark2Ext0Frame2( ZmFxSpark2Ext0, {} )
+
 				ZmFxSpark2Ext00:completeAnimation()
 				self.ZmFxSpark2Ext00:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext00, {} )
@@ -1938,30 +2076,39 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 		Six = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 32 )
+
 				Nine:completeAnimation()
 				self.Nine:setAlpha( 0 )
 				self.clipFinished( Nine, {} )
+
 				NineLight:completeAnimation()
 				self.NineLight:setAlpha( 0 )
 				self.clipFinished( NineLight, {} )
+
 				NineGlow:completeAnimation()
 				self.NineGlow:setAlpha( 0 )
 				self.clipFinished( NineGlow, {} )
+
 				Eight:completeAnimation()
 				self.Eight:setAlpha( 0 )
 				self.clipFinished( Eight, {} )
+
 				EightLight:completeAnimation()
 				self.EightLight:setAlpha( 0 )
 				self.clipFinished( EightLight, {} )
+
 				EightGlow:completeAnimation()
 				self.EightGlow:setAlpha( 0 )
 				self.clipFinished( EightGlow, {} )
+
 				Seven:completeAnimation()
 				self.Seven:setAlpha( 0 )
 				self.clipFinished( Seven, {} )
+
 				SevenLight:completeAnimation()
 				self.SevenLight:setAlpha( 0 )
 				self.clipFinished( SevenLight, {} )
+
 				SevenGlow:completeAnimation()
 				self.SevenGlow:setAlpha( 0 )
 				self.clipFinished( SevenGlow, {} )
@@ -2082,57 +2229,75 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 				SixGlow:completeAnimation()
 				self.SixGlow:setAlpha( 0 )
 				SixGlowFrame2( SixGlow, {} )
+
 				Five:completeAnimation()
 				self.Five:setAlpha( 0 )
 				self.clipFinished( Five, {} )
+
 				FiveLight:completeAnimation()
 				self.FiveLight:setAlpha( 0 )
 				self.clipFinished( FiveLight, {} )
+
 				FiveGlow:completeAnimation()
 				self.FiveGlow:setAlpha( 0 )
 				self.clipFinished( FiveGlow, {} )
+
 				Four:completeAnimation()
 				self.Four:setAlpha( 0 )
 				self.clipFinished( Four, {} )
+
 				FourLight:completeAnimation()
 				self.FourLight:setAlpha( 0 )
 				self.clipFinished( FourLight, {} )
+
 				FourGlow:completeAnimation()
 				self.FourGlow:setAlpha( 0 )
 				self.clipFinished( FourGlow, {} )
+
 				Three:completeAnimation()
 				self.Three:setAlpha( 0 )
 				self.clipFinished( Three, {} )
+
 				ThreeLight:completeAnimation()
 				self.ThreeLight:setAlpha( 0 )
 				self.clipFinished( ThreeLight, {} )
+
 				ThreeGlow:completeAnimation()
 				self.ThreeGlow:setAlpha( 0 )
 				self.clipFinished( ThreeGlow, {} )
+
 				Two:completeAnimation()
 				self.Two:setAlpha( 0 )
 				self.clipFinished( Two, {} )
+
 				TwoLight:completeAnimation()
 				self.TwoLight:setAlpha( 0 )
 				self.clipFinished( TwoLight, {} )
+
 				TwoGlow:completeAnimation()
 				self.TwoGlow:setAlpha( 0 )
 				self.clipFinished( TwoGlow, {} )
+
 				One:completeAnimation()
 				self.One:setAlpha( 0 )
 				self.clipFinished( One, {} )
+
 				OneLight:completeAnimation()
 				self.OneLight:setAlpha( 0 )
 				self.clipFinished( OneLight, {} )
+
 				OneGlow:completeAnimation()
 				self.OneGlow:setAlpha( 0 )
 				self.clipFinished( OneGlow, {} )
+
 				Zero:completeAnimation()
 				self.Zero:setAlpha( 0 )
 				self.clipFinished( Zero, {} )
+
 				ZeroLight:completeAnimation()
 				self.ZeroLight:setAlpha( 0 )
 				self.clipFinished( ZeroLight, {} )
+
 				ZeroGlow:completeAnimation()
 				self.ZeroGlow:setAlpha( 0 )
 				self.clipFinished( ZeroGlow, {} )
@@ -2264,6 +2429,7 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 				self.ZmFxSpark2Ext0:setTopBottom( true, false, -137.29, 30.71 )
 				self.ZmFxSpark2Ext0:setAlpha( 0 )
 				ZmFxSpark2Ext0Frame2( ZmFxSpark2Ext0, {} )
+
 				ZmFxSpark2Ext00:completeAnimation()
 				self.ZmFxSpark2Ext00:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext00, {} )
@@ -2272,21 +2438,27 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 		Seven = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 32 )
+
 				Nine:completeAnimation()
 				self.Nine:setAlpha( 0 )
 				self.clipFinished( Nine, {} )
+
 				NineLight:completeAnimation()
 				self.NineLight:setAlpha( 0 )
 				self.clipFinished( NineLight, {} )
+
 				NineGlow:completeAnimation()
 				self.NineGlow:setAlpha( 0 )
 				self.clipFinished( NineGlow, {} )
+
 				Eight:completeAnimation()
 				self.Eight:setAlpha( 0 )
 				self.clipFinished( Eight, {} )
+
 				EightLight:completeAnimation()
 				self.EightLight:setAlpha( 0 )
 				self.clipFinished( EightLight, {} )
+
 				EightGlow:completeAnimation()
 				self.EightGlow:setAlpha( 0 )
 				self.clipFinished( EightGlow, {} )
@@ -2387,66 +2559,87 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 				SevenGlow:completeAnimation()
 				self.SevenGlow:setAlpha( 0 )
 				SevenGlowFrame2( SevenGlow, {} )
+
 				Six:completeAnimation()
 				self.Six:setAlpha( 0 )
 				self.clipFinished( Six, {} )
+
 				SixLight:completeAnimation()
 				self.SixLight:setAlpha( 0 )
 				self.clipFinished( SixLight, {} )
+
 				SixGlow:completeAnimation()
 				self.SixGlow:setAlpha( 0 )
 				self.clipFinished( SixGlow, {} )
+
 				Five:completeAnimation()
 				self.Five:setAlpha( 0 )
 				self.clipFinished( Five, {} )
+
 				FiveLight:completeAnimation()
 				self.FiveLight:setAlpha( 0 )
 				self.clipFinished( FiveLight, {} )
+
 				FiveGlow:completeAnimation()
 				self.FiveGlow:setAlpha( 0 )
 				self.clipFinished( FiveGlow, {} )
+
 				Four:completeAnimation()
 				self.Four:setAlpha( 0 )
 				self.clipFinished( Four, {} )
+
 				FourLight:completeAnimation()
 				self.FourLight:setAlpha( 0 )
 				self.clipFinished( FourLight, {} )
+
 				FourGlow:completeAnimation()
 				self.FourGlow:setAlpha( 0 )
 				self.clipFinished( FourGlow, {} )
+
 				Three:completeAnimation()
 				self.Three:setAlpha( 0 )
 				self.clipFinished( Three, {} )
+
 				ThreeLight:completeAnimation()
 				self.ThreeLight:setAlpha( 0 )
 				self.clipFinished( ThreeLight, {} )
+
 				ThreeGlow:completeAnimation()
 				self.ThreeGlow:setAlpha( 0 )
 				self.clipFinished( ThreeGlow, {} )
+
 				Two:completeAnimation()
 				self.Two:setAlpha( 0 )
 				self.clipFinished( Two, {} )
+
 				TwoLight:completeAnimation()
 				self.TwoLight:setAlpha( 0 )
 				self.clipFinished( TwoLight, {} )
+
 				TwoGlow:completeAnimation()
 				self.TwoGlow:setAlpha( 0 )
 				self.clipFinished( TwoGlow, {} )
+
 				One:completeAnimation()
 				self.One:setAlpha( 0 )
 				self.clipFinished( One, {} )
+
 				OneLight:completeAnimation()
 				self.OneLight:setAlpha( 0 )
 				self.clipFinished( OneLight, {} )
+
 				OneGlow:completeAnimation()
 				self.OneGlow:setAlpha( 0 )
 				self.clipFinished( OneGlow, {} )
+
 				Zero:completeAnimation()
 				self.Zero:setAlpha( 0 )
 				self.clipFinished( Zero, {} )
+
 				ZeroLight:completeAnimation()
 				self.ZeroLight:setAlpha( 0 )
 				self.clipFinished( ZeroLight, {} )
+
 				ZeroGlow:completeAnimation()
 				self.ZeroGlow:setAlpha( 0 )
 				self.clipFinished( ZeroGlow, {} )
@@ -2524,6 +2717,7 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 				self.ZmFxSpark2Ext0:setTopBottom( true, false, -121.29, 46.71 )
 				self.ZmFxSpark2Ext0:setAlpha( 0 )
 				ZmFxSpark2Ext0Frame2( ZmFxSpark2Ext0, {} )
+
 				ZmFxSpark2Ext00:completeAnimation()
 				self.ZmFxSpark2Ext00:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext00, {} )
@@ -2532,12 +2726,15 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 		Eight = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 32 )
+
 				Nine:completeAnimation()
 				self.Nine:setAlpha( 0 )
 				self.clipFinished( Nine, {} )
+
 				NineLight:completeAnimation()
 				self.NineLight:setAlpha( 0 )
 				self.clipFinished( NineLight, {} )
+
 				NineGlow:completeAnimation()
 				self.NineGlow:setAlpha( 0 )
 				self.clipFinished( NineGlow, {} )
@@ -2658,75 +2855,99 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 				EightGlow:completeAnimation()
 				self.EightGlow:setAlpha( 0 )
 				EightGlowFrame2( EightGlow, {} )
+
 				Seven:completeAnimation()
 				self.Seven:setAlpha( 0 )
 				self.clipFinished( Seven, {} )
+
 				SevenLight:completeAnimation()
 				self.SevenLight:setAlpha( 0 )
 				self.clipFinished( SevenLight, {} )
+
 				SevenGlow:completeAnimation()
 				self.SevenGlow:setAlpha( 0 )
 				self.clipFinished( SevenGlow, {} )
+
 				Six:completeAnimation()
 				self.Six:setAlpha( 0 )
 				self.clipFinished( Six, {} )
+
 				SixLight:completeAnimation()
 				self.SixLight:setAlpha( 0 )
 				self.clipFinished( SixLight, {} )
+
 				SixGlow:completeAnimation()
 				self.SixGlow:setAlpha( 0 )
 				self.clipFinished( SixGlow, {} )
+
 				Five:completeAnimation()
 				self.Five:setAlpha( 0 )
 				self.clipFinished( Five, {} )
+
 				FiveLight:completeAnimation()
 				self.FiveLight:setAlpha( 0 )
 				self.clipFinished( FiveLight, {} )
+
 				FiveGlow:completeAnimation()
 				self.FiveGlow:setAlpha( 0 )
 				self.clipFinished( FiveGlow, {} )
+
 				Four:completeAnimation()
 				self.Four:setAlpha( 0 )
 				self.clipFinished( Four, {} )
+
 				FourLight:completeAnimation()
 				self.FourLight:setAlpha( 0 )
 				self.clipFinished( FourLight, {} )
+
 				FourGlow:completeAnimation()
 				self.FourGlow:setAlpha( 0 )
 				self.clipFinished( FourGlow, {} )
+
 				Three:completeAnimation()
 				self.Three:setAlpha( 0 )
 				self.clipFinished( Three, {} )
+
 				ThreeLight:completeAnimation()
 				self.ThreeLight:setAlpha( 0 )
 				self.clipFinished( ThreeLight, {} )
+
 				ThreeGlow:completeAnimation()
 				self.ThreeGlow:setAlpha( 0 )
 				self.clipFinished( ThreeGlow, {} )
+
 				Two:completeAnimation()
 				self.Two:setAlpha( 0 )
 				self.clipFinished( Two, {} )
+
 				TwoLight:completeAnimation()
 				self.TwoLight:setAlpha( 0 )
 				self.clipFinished( TwoLight, {} )
+
 				TwoGlow:completeAnimation()
 				self.TwoGlow:setAlpha( 0 )
 				self.clipFinished( TwoGlow, {} )
+
 				One:completeAnimation()
 				self.One:setAlpha( 0 )
 				self.clipFinished( One, {} )
+
 				OneLight:completeAnimation()
 				self.OneLight:setAlpha( 0 )
 				self.clipFinished( OneLight, {} )
+
 				OneGlow:completeAnimation()
 				self.OneGlow:setAlpha( 0 )
 				self.clipFinished( OneGlow, {} )
+
 				Zero:completeAnimation()
 				self.Zero:setAlpha( 0 )
 				self.clipFinished( Zero, {} )
+
 				ZeroLight:completeAnimation()
 				self.ZeroLight:setAlpha( 0 )
 				self.clipFinished( ZeroLight, {} )
+
 				ZeroGlow:completeAnimation()
 				self.ZeroGlow:setAlpha( 0 )
 				self.clipFinished( ZeroGlow, {} )
@@ -2958,6 +3179,7 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 		Nine = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 32 )
+
 				local NineFrame2 = function ( Nine, event )
 					local NineFrame3 = function ( Nine, event )
 						if not event.interrupted then
@@ -3065,84 +3287,111 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 				NineGlow:completeAnimation()
 				self.NineGlow:setAlpha( 0 )
 				NineGlowFrame2( NineGlow, {} )
+
 				Eight:completeAnimation()
 				self.Eight:setAlpha( 0 )
 				self.clipFinished( Eight, {} )
+
 				EightLight:completeAnimation()
 				self.EightLight:setAlpha( 0 )
 				self.clipFinished( EightLight, {} )
+
 				EightGlow:completeAnimation()
 				self.EightGlow:setAlpha( 0 )
 				self.clipFinished( EightGlow, {} )
+
 				Seven:completeAnimation()
 				self.Seven:setAlpha( 0 )
 				self.clipFinished( Seven, {} )
+
 				SevenLight:completeAnimation()
 				self.SevenLight:setAlpha( 0 )
 				self.clipFinished( SevenLight, {} )
+
 				SevenGlow:completeAnimation()
 				self.SevenGlow:setAlpha( 0 )
 				self.clipFinished( SevenGlow, {} )
+
 				Six:completeAnimation()
 				self.Six:setAlpha( 0 )
 				self.clipFinished( Six, {} )
+
 				SixLight:completeAnimation()
 				self.SixLight:setAlpha( 0 )
 				self.clipFinished( SixLight, {} )
+
 				SixGlow:completeAnimation()
 				self.SixGlow:setAlpha( 0 )
 				self.clipFinished( SixGlow, {} )
+
 				Five:completeAnimation()
 				self.Five:setAlpha( 0 )
 				self.clipFinished( Five, {} )
+
 				FiveLight:completeAnimation()
 				self.FiveLight:setAlpha( 0 )
 				self.clipFinished( FiveLight, {} )
+
 				FiveGlow:completeAnimation()
 				self.FiveGlow:setAlpha( 0 )
 				self.clipFinished( FiveGlow, {} )
+
 				Four:completeAnimation()
 				self.Four:setAlpha( 0 )
 				self.clipFinished( Four, {} )
+
 				FourLight:completeAnimation()
 				self.FourLight:setAlpha( 0 )
 				self.clipFinished( FourLight, {} )
+
 				FourGlow:completeAnimation()
 				self.FourGlow:setAlpha( 0 )
 				self.clipFinished( FourGlow, {} )
+
 				Three:completeAnimation()
 				self.Three:setAlpha( 0 )
 				self.clipFinished( Three, {} )
+
 				ThreeLight:completeAnimation()
 				self.ThreeLight:setAlpha( 0 )
 				self.clipFinished( ThreeLight, {} )
+
 				ThreeGlow:completeAnimation()
 				self.ThreeGlow:setAlpha( 0 )
 				self.clipFinished( ThreeGlow, {} )
+
 				Two:completeAnimation()
 				self.Two:setAlpha( 0 )
 				self.clipFinished( Two, {} )
+
 				TwoLight:completeAnimation()
 				self.TwoLight:setAlpha( 0 )
 				self.clipFinished( TwoLight, {} )
+
 				TwoGlow:completeAnimation()
 				self.TwoGlow:setAlpha( 0 )
 				self.clipFinished( TwoGlow, {} )
+
 				One:completeAnimation()
 				self.One:setAlpha( 0 )
 				self.clipFinished( One, {} )
+
 				OneLight:completeAnimation()
 				self.OneLight:setAlpha( 0 )
 				self.clipFinished( OneLight, {} )
+
 				OneGlow:completeAnimation()
 				self.OneGlow:setAlpha( 0 )
 				self.clipFinished( OneGlow, {} )
+
 				Zero:completeAnimation()
 				self.Zero:setAlpha( 0 )
 				self.clipFinished( Zero, {} )
+
 				ZeroLight:completeAnimation()
 				self.ZeroLight:setAlpha( 0 )
 				self.clipFinished( ZeroLight, {} )
+
 				ZeroGlow:completeAnimation()
 				self.ZeroGlow:setAlpha( 0 )
 				self.clipFinished( ZeroGlow, {} )
@@ -3271,84 +3520,111 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 		Zero = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 32 )
+
 				Nine:completeAnimation()
 				self.Nine:setAlpha( 0 )
 				self.clipFinished( Nine, {} )
+
 				NineLight:completeAnimation()
 				self.NineLight:setAlpha( 0 )
 				self.clipFinished( NineLight, {} )
+
 				NineGlow:completeAnimation()
 				self.NineGlow:setAlpha( 0 )
 				self.clipFinished( NineGlow, {} )
+
 				Eight:completeAnimation()
 				self.Eight:setAlpha( 0 )
 				self.clipFinished( Eight, {} )
+
 				EightLight:completeAnimation()
 				self.EightLight:setAlpha( 0 )
 				self.clipFinished( EightLight, {} )
+
 				EightGlow:completeAnimation()
 				self.EightGlow:setAlpha( 0 )
 				self.clipFinished( EightGlow, {} )
+
 				Seven:completeAnimation()
 				self.Seven:setAlpha( 0 )
 				self.clipFinished( Seven, {} )
+
 				SevenLight:completeAnimation()
 				self.SevenLight:setAlpha( 0 )
 				self.clipFinished( SevenLight, {} )
+
 				SevenGlow:completeAnimation()
 				self.SevenGlow:setAlpha( 0 )
 				self.clipFinished( SevenGlow, {} )
+
 				Six:completeAnimation()
 				self.Six:setAlpha( 0 )
 				self.clipFinished( Six, {} )
+
 				SixLight:completeAnimation()
 				self.SixLight:setAlpha( 0 )
 				self.clipFinished( SixLight, {} )
+
 				SixGlow:completeAnimation()
 				self.SixGlow:setAlpha( 0 )
 				self.clipFinished( SixGlow, {} )
+
 				Five:completeAnimation()
 				self.Five:setAlpha( 0 )
 				self.clipFinished( Five, {} )
+
 				FiveLight:completeAnimation()
 				self.FiveLight:setAlpha( 0 )
 				self.clipFinished( FiveLight, {} )
+
 				FiveGlow:completeAnimation()
 				self.FiveGlow:setAlpha( 0 )
 				self.clipFinished( FiveGlow, {} )
+
 				Four:completeAnimation()
 				self.Four:setAlpha( 0 )
 				self.clipFinished( Four, {} )
+
 				FourLight:completeAnimation()
 				self.FourLight:setAlpha( 0 )
 				self.clipFinished( FourLight, {} )
+
 				FourGlow:completeAnimation()
 				self.FourGlow:setAlpha( 0 )
 				self.clipFinished( FourGlow, {} )
+
 				Three:completeAnimation()
 				self.Three:setAlpha( 0 )
 				self.clipFinished( Three, {} )
+
 				ThreeLight:completeAnimation()
 				self.ThreeLight:setAlpha( 0 )
 				self.clipFinished( ThreeLight, {} )
+
 				ThreeGlow:completeAnimation()
 				self.ThreeGlow:setAlpha( 0 )
 				self.clipFinished( ThreeGlow, {} )
+
 				Two:completeAnimation()
 				self.Two:setAlpha( 0 )
 				self.clipFinished( Two, {} )
+
 				TwoLight:completeAnimation()
 				self.TwoLight:setAlpha( 0 )
 				self.clipFinished( TwoLight, {} )
+
 				TwoGlow:completeAnimation()
 				self.TwoGlow:setAlpha( 0 )
 				self.clipFinished( TwoGlow, {} )
+
 				One:completeAnimation()
 				self.One:setAlpha( 0 )
 				self.clipFinished( One, {} )
+
 				OneLight:completeAnimation()
 				self.OneLight:setAlpha( 0 )
 				self.clipFinished( OneLight, {} )
+
 				OneGlow:completeAnimation()
 				self.OneGlow:setAlpha( 0 )
 				self.clipFinished( OneGlow, {} )
@@ -3631,6 +3907,7 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmFxSpark2Ext0:close()
 		element.ZmFxSpark2Ext00:close()

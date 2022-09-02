@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ListSubHeaderGlow" )
 CoD.EmblemEditorHeaderRight = InheritFrom( LUI.UIElement )
 CoD.EmblemEditorHeaderRight.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemEditorHeaderRight )
 	self.id = "EmblemEditorHeaderRight"
@@ -45,17 +47,20 @@ CoD.EmblemEditorHeaderRight.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Image3:completeAnimation()
 				self.Image3:setLeftRight( true, true, 0, 0 )
 				self.Image3:setTopBottom( true, true, 0, 5.5 )
 				self.Image3:setAlpha( 0 )
 				self.clipFinished( Image3, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 1 )
 				self.clipFinished( text, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEListSubHeaderGlow0:close()
 	end )

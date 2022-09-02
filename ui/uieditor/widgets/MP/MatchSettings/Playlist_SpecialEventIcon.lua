@@ -4,9 +4,11 @@
 CoD.Playlist_SpecialEventIcon = InheritFrom( LUI.UIElement )
 CoD.Playlist_SpecialEventIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Playlist_SpecialEventIcon )
 	self.id = "Playlist_SpecialEventIcon"
@@ -35,6 +37,7 @@ CoD.Playlist_SpecialEventIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				XPLabel:completeAnimation()
 				self.XPLabel:setLeftRight( true, false, -76, 124 )
 				self.XPLabel:setTopBottom( true, false, 15, 33 )
@@ -42,9 +45,11 @@ CoD.Playlist_SpecialEventIcon.new = function ( menu, controller )
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Combined = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

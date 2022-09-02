@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_Identity_SubTitle" )
 CoD.FE_VialBreadcrumb = InheritFrom( LUI.UIElement )
 CoD.FE_VialBreadcrumb.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_VialBreadcrumb )
 	self.id = "FE_VialBreadcrumb"
@@ -41,6 +43,7 @@ CoD.FE_VialBreadcrumb.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local Image0Frame2 = function ( Image0, event )
 					local Image0Frame3 = function ( Image0, event )
 						if not event.interrupted then
@@ -69,10 +72,12 @@ CoD.FE_VialBreadcrumb.new = function ( menu, controller )
 				self.Image0:setMaterial( LUI.UIImage.GetCachedMaterial( "sw4_2d_bitchin_glint" ) )
 				self.Image0:setShaderVector( 0, 0, 0, 0, 0 )
 				Image0Frame2( Image0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuIdentitySubTitle:close()
 	end )

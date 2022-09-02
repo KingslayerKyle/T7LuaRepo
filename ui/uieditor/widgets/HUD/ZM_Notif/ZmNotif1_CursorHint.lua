@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ButtonPanel" )
 CoD.ZmNotif1_CursorHint = InheritFrom( LUI.UIElement )
 CoD.ZmNotif1_CursorHint.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmNotif1_CursorHint )
 	self.id = "ZmNotif1_CursorHint"
@@ -32,6 +34,7 @@ CoD.ZmNotif1_CursorHint.new = function ( menu, controller )
 	CursorHintText:setLetterSpacing( 0.5 )
 	CursorHintText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	CursorHintText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( CursorHintText, "setText", function ( element, controller )
 		ScaleWidgetToLabelCenteredWrapped( self, element, 5, 0 )
 	end )

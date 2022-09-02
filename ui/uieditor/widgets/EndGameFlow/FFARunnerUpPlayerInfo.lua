@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.HUD.Outcome.FFA_TextLabels" )
 CoD.FFARunnerUpPlayerInfo = InheritFrom( LUI.UIElement )
 CoD.FFARunnerUpPlayerInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FFARunnerUpPlayerInfo )
 	self.id = "FFARunnerUpPlayerInfo"

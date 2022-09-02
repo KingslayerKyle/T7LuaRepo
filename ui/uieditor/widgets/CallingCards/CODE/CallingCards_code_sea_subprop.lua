@@ -4,9 +4,11 @@
 CoD.CallingCards_code_sea_subprop = InheritFrom( LUI.UIElement )
 CoD.CallingCards_code_sea_subprop.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_code_sea_subprop )
 	self.id = "CallingCards_code_sea_subprop"
@@ -25,6 +27,7 @@ CoD.CallingCards_code_sea_subprop.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local subpropFrame2 = function ( subprop, event )
 					if not event.interrupted then
 						subprop:beginAnimation( "keyframe", 5050, false, false, CoD.TweenType.Linear )
@@ -40,6 +43,7 @@ CoD.CallingCards_code_sea_subprop.new = function ( menu, controller )
 				subprop:completeAnimation()
 				self.subprop:setZRot( 0 )
 				subpropFrame2( subprop, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

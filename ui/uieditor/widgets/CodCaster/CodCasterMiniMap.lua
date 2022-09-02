@@ -4,9 +4,11 @@
 CoD.CodCasterMiniMap = InheritFrom( LUI.UIElement )
 CoD.CodCasterMiniMap.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterMiniMap )
 	self.id = "CodCasterMiniMap"
@@ -62,18 +64,23 @@ CoD.CodCasterMiniMap.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				minimapMap:completeAnimation()
 				self.minimapMap:setAlpha( 0 )
 				self.clipFinished( minimapMap, {} )
+
 				minimapItems:completeAnimation()
 				self.minimapItems:setAlpha( 0 )
 				self.clipFinished( minimapItems, {} )
+
 				minimapOverlay:completeAnimation()
 				self.minimapOverlay:setAlpha( 0 )
 				self.clipFinished( minimapOverlay, {} )
+
 				namebacking:completeAnimation()
 				self.namebacking:setAlpha( 0 )
 				self.clipFinished( namebacking, {} )
+
 				mapTitle:completeAnimation()
 				self.mapTitle:setAlpha( 0 )
 				self.clipFinished( mapTitle, {} )
@@ -82,24 +89,30 @@ CoD.CodCasterMiniMap.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				minimapMap:completeAnimation()
 				self.minimapMap:setAlpha( 1 )
 				self.clipFinished( minimapMap, {} )
+
 				minimapItems:completeAnimation()
 				self.minimapItems:setAlpha( 1 )
 				self.clipFinished( minimapItems, {} )
+
 				minimapOverlay:completeAnimation()
 				self.minimapOverlay:setAlpha( 1 )
 				self.clipFinished( minimapOverlay, {} )
+
 				namebacking:completeAnimation()
 				self.namebacking:setAlpha( 1 )
 				self.clipFinished( namebacking, {} )
+
 				mapTitle:completeAnimation()
 				self.mapTitle:setAlpha( 1 )
 				self.clipFinished( mapTitle, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.mapTitle:close()
 	end )

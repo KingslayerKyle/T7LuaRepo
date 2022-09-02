@@ -4,9 +4,11 @@
 CoD.Cookbook_Flipbook = InheritFrom( LUI.UIElement )
 CoD.Cookbook_Flipbook.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Cookbook_Flipbook )
 	self.id = "Cookbook_Flipbook"
@@ -28,6 +30,7 @@ CoD.Cookbook_Flipbook.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				flipbook:completeAnimation()
 				self.flipbook:setAlpha( 1 )
 				self.clipFinished( flipbook, {} )

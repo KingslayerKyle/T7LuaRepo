@@ -11,9 +11,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_frame_noBG" )
 CoD.FileshareSelectorItemWide = InheritFrom( LUI.UIElement )
 CoD.FileshareSelectorItemWide.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FileshareSelectorItemWide )
 	self.id = "FileshareSelectorItemWide"
@@ -214,57 +216,72 @@ CoD.FileshareSelectorItemWide.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.15 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 0 )
 				self.clipFinished( MapImage, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 0 )
 				self.clipFinished( Thumbnail, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				GameTypeImage:completeAnimation()
 				self.GameTypeImage:setAlpha( 0 )
 				self.clipFinished( GameTypeImage, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 0 )
 				self.clipFinished( BookmarkedItem, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.15 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.15 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.15 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
@@ -273,75 +290,96 @@ CoD.FileshareSelectorItemWide.new = function ( menu, controller )
 		Film = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.15 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 1 )
 				self.clipFinished( MapImage, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 0 )
 				self.clipFinished( Thumbnail, {} )
+
 				tint:completeAnimation()
 				self.tint:setAlpha( 0.15 )
 				self.clipFinished( tint, {} )
+
 				GameTypeImage:completeAnimation()
 				self.GameTypeImage:setAlpha( 1 )
 				self.clipFinished( GameTypeImage, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 1 )
 				self.clipFinished( BookmarkedItem, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.15 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 1 )
 				self.clipFinished( MapImage, {} )
+
 				tint:completeAnimation()
 				self.tint:setAlpha( 0.15 )
 				self.clipFinished( tint, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.15 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 1 )
 				self.clipFinished( MapImage, {} )
+
 				tint:completeAnimation()
 				self.tint:setAlpha( 0.15 )
 				self.clipFinished( tint, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.15 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 1 )
 				self.clipFinished( MapImage, {} )
+
 				tint:completeAnimation()
 				self.tint:setAlpha( 0.15 )
 				self.clipFinished( tint, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
@@ -350,72 +388,91 @@ CoD.FileshareSelectorItemWide.new = function ( menu, controller )
 		Clip = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.15 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 0 )
 				self.clipFinished( MapImage, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 1 )
 				self.clipFinished( Thumbnail, {} )
+
 				tint:completeAnimation()
 				self.tint:setAlpha( 0.15 )
 				self.clipFinished( tint, {} )
+
 				GameTypeImage:completeAnimation()
 				self.GameTypeImage:setAlpha( 0 )
 				self.clipFinished( GameTypeImage, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 0 )
 				self.clipFinished( BookmarkedItem, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.15 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				tint:completeAnimation()
 				self.tint:setAlpha( 0.15 )
 				self.clipFinished( tint, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.15 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				tint:completeAnimation()
 				self.tint:setAlpha( 0.15 )
 				self.clipFinished( tint, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.15 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				tint:completeAnimation()
 				self.tint:setAlpha( 0.15 )
 				self.clipFinished( tint, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Film",
@@ -438,6 +495,7 @@ CoD.FileshareSelectorItemWide.new = function ( menu, controller )
 			modelName = "isPublishNew"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgIdle:close()
 		element.Duration:close()

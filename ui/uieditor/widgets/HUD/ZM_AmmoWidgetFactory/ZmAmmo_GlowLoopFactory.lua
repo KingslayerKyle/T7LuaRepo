@@ -4,9 +4,11 @@
 CoD.ZmAmmo_GlowLoopFactory = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_GlowLoopFactory.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_GlowLoopFactory )
 	self.id = "ZmAmmo_GlowLoopFactory"
@@ -25,6 +27,7 @@ CoD.ZmAmmo_GlowLoopFactory.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local GlowAnimFrame2 = function ( GlowAnim, event )
 					local GlowAnimFrame3 = function ( GlowAnim, event )
 						local GlowAnimFrame4 = function ( GlowAnim, event )
@@ -607,12 +610,14 @@ CoD.ZmAmmo_GlowLoopFactory.new = function ( menu, controller )
 				self.GlowAnim:setTopBottom( true, false, 0, 60 )
 				self.GlowAnim:setAlpha( 0 )
 				GlowAnimFrame2( GlowAnim, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		WeaponDual = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local GlowAnimFrame2 = function ( GlowAnim, event )
 					local GlowAnimFrame3 = function ( GlowAnim, event )
 						local GlowAnimFrame4 = function ( GlowAnim, event )
@@ -1195,10 +1200,12 @@ CoD.ZmAmmo_GlowLoopFactory.new = function ( menu, controller )
 				self.GlowAnim:setTopBottom( true, false, 0, 60 )
 				self.GlowAnim:setAlpha( 0 )
 				GlowAnimFrame2( GlowAnim, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "WeaponDual",

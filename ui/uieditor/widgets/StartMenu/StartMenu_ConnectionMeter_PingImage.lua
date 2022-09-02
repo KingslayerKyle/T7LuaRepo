@@ -4,9 +4,11 @@
 CoD.StartMenu_ConnectionMeter_PingImage = InheritFrom( LUI.UIElement )
 CoD.StartMenu_ConnectionMeter_PingImage.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.StartMenu_ConnectionMeter_PingImage )
 	self.id = "StartMenu_ConnectionMeter_PingImage"
@@ -82,27 +84,35 @@ CoD.StartMenu_ConnectionMeter_PingImage.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Level1Image:completeAnimation()
 				self.Level1Image:setAlpha( 0 )
 				self.clipFinished( Level1Image, {} )
+
 				Level2Image:completeAnimation()
 				self.Level2Image:setAlpha( 0 )
 				self.clipFinished( Level2Image, {} )
+
 				Level3Image:completeAnimation()
 				self.Level3Image:setAlpha( 0 )
 				self.clipFinished( Level3Image, {} )
+
 				Level4Image:completeAnimation()
 				self.Level4Image:setAlpha( 0 )
 				self.clipFinished( Level4Image, {} )
+
 				WirelessLevel4Image:completeAnimation()
 				self.WirelessLevel4Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel4Image, {} )
+
 				WirelessLevel3Image:completeAnimation()
 				self.WirelessLevel3Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel3Image, {} )
+
 				WirelessLevel2Image:completeAnimation()
 				self.WirelessLevel2Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel2Image, {} )
+
 				WirelessLevel1Image:completeAnimation()
 				self.WirelessLevel1Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel1Image, {} )
@@ -111,27 +121,35 @@ CoD.StartMenu_ConnectionMeter_PingImage.new = function ( menu, controller )
 		Level1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Level1Image:completeAnimation()
 				self.Level1Image:setAlpha( 1 )
 				self.clipFinished( Level1Image, {} )
+
 				Level2Image:completeAnimation()
 				self.Level2Image:setAlpha( 0 )
 				self.clipFinished( Level2Image, {} )
+
 				Level3Image:completeAnimation()
 				self.Level3Image:setAlpha( 0 )
 				self.clipFinished( Level3Image, {} )
+
 				Level4Image:completeAnimation()
 				self.Level4Image:setAlpha( 0 )
 				self.clipFinished( Level4Image, {} )
+
 				WirelessLevel4Image:completeAnimation()
 				self.WirelessLevel4Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel4Image, {} )
+
 				WirelessLevel3Image:completeAnimation()
 				self.WirelessLevel3Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel3Image, {} )
+
 				WirelessLevel2Image:completeAnimation()
 				self.WirelessLevel2Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel2Image, {} )
+
 				WirelessLevel1Image:completeAnimation()
 				self.WirelessLevel1Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel1Image, {} )
@@ -140,27 +158,35 @@ CoD.StartMenu_ConnectionMeter_PingImage.new = function ( menu, controller )
 		Level2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Level1Image:completeAnimation()
 				self.Level1Image:setAlpha( 0 )
 				self.clipFinished( Level1Image, {} )
+
 				Level2Image:completeAnimation()
 				self.Level2Image:setAlpha( 1 )
 				self.clipFinished( Level2Image, {} )
+
 				Level3Image:completeAnimation()
 				self.Level3Image:setAlpha( 0 )
 				self.clipFinished( Level3Image, {} )
+
 				Level4Image:completeAnimation()
 				self.Level4Image:setAlpha( 0 )
 				self.clipFinished( Level4Image, {} )
+
 				WirelessLevel4Image:completeAnimation()
 				self.WirelessLevel4Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel4Image, {} )
+
 				WirelessLevel3Image:completeAnimation()
 				self.WirelessLevel3Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel3Image, {} )
+
 				WirelessLevel2Image:completeAnimation()
 				self.WirelessLevel2Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel2Image, {} )
+
 				WirelessLevel1Image:completeAnimation()
 				self.WirelessLevel1Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel1Image, {} )
@@ -169,27 +195,35 @@ CoD.StartMenu_ConnectionMeter_PingImage.new = function ( menu, controller )
 		Level3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Level1Image:completeAnimation()
 				self.Level1Image:setAlpha( 0 )
 				self.clipFinished( Level1Image, {} )
+
 				Level2Image:completeAnimation()
 				self.Level2Image:setAlpha( 0 )
 				self.clipFinished( Level2Image, {} )
+
 				Level3Image:completeAnimation()
 				self.Level3Image:setAlpha( 1 )
 				self.clipFinished( Level3Image, {} )
+
 				Level4Image:completeAnimation()
 				self.Level4Image:setAlpha( 0 )
 				self.clipFinished( Level4Image, {} )
+
 				WirelessLevel4Image:completeAnimation()
 				self.WirelessLevel4Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel4Image, {} )
+
 				WirelessLevel3Image:completeAnimation()
 				self.WirelessLevel3Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel3Image, {} )
+
 				WirelessLevel2Image:completeAnimation()
 				self.WirelessLevel2Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel2Image, {} )
+
 				WirelessLevel1Image:completeAnimation()
 				self.WirelessLevel1Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel1Image, {} )
@@ -198,27 +232,35 @@ CoD.StartMenu_ConnectionMeter_PingImage.new = function ( menu, controller )
 		Level4 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Level1Image:completeAnimation()
 				self.Level1Image:setAlpha( 0 )
 				self.clipFinished( Level1Image, {} )
+
 				Level2Image:completeAnimation()
 				self.Level2Image:setAlpha( 0 )
 				self.clipFinished( Level2Image, {} )
+
 				Level3Image:completeAnimation()
 				self.Level3Image:setAlpha( 0 )
 				self.clipFinished( Level3Image, {} )
+
 				Level4Image:completeAnimation()
 				self.Level4Image:setAlpha( 1 )
 				self.clipFinished( Level4Image, {} )
+
 				WirelessLevel4Image:completeAnimation()
 				self.WirelessLevel4Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel4Image, {} )
+
 				WirelessLevel3Image:completeAnimation()
 				self.WirelessLevel3Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel3Image, {} )
+
 				WirelessLevel2Image:completeAnimation()
 				self.WirelessLevel2Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel2Image, {} )
+
 				WirelessLevel1Image:completeAnimation()
 				self.WirelessLevel1Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel1Image, {} )
@@ -227,27 +269,35 @@ CoD.StartMenu_ConnectionMeter_PingImage.new = function ( menu, controller )
 		WirelessLevel1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Level1Image:completeAnimation()
 				self.Level1Image:setAlpha( 0 )
 				self.clipFinished( Level1Image, {} )
+
 				Level2Image:completeAnimation()
 				self.Level2Image:setAlpha( 0 )
 				self.clipFinished( Level2Image, {} )
+
 				Level3Image:completeAnimation()
 				self.Level3Image:setAlpha( 0 )
 				self.clipFinished( Level3Image, {} )
+
 				Level4Image:completeAnimation()
 				self.Level4Image:setAlpha( 0 )
 				self.clipFinished( Level4Image, {} )
+
 				WirelessLevel4Image:completeAnimation()
 				self.WirelessLevel4Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel4Image, {} )
+
 				WirelessLevel3Image:completeAnimation()
 				self.WirelessLevel3Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel3Image, {} )
+
 				WirelessLevel2Image:completeAnimation()
 				self.WirelessLevel2Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel2Image, {} )
+
 				WirelessLevel1Image:completeAnimation()
 				self.WirelessLevel1Image:setAlpha( 1 )
 				self.clipFinished( WirelessLevel1Image, {} )
@@ -256,27 +306,35 @@ CoD.StartMenu_ConnectionMeter_PingImage.new = function ( menu, controller )
 		WirelessLevel2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Level1Image:completeAnimation()
 				self.Level1Image:setAlpha( 0 )
 				self.clipFinished( Level1Image, {} )
+
 				Level2Image:completeAnimation()
 				self.Level2Image:setAlpha( 0 )
 				self.clipFinished( Level2Image, {} )
+
 				Level3Image:completeAnimation()
 				self.Level3Image:setAlpha( 0 )
 				self.clipFinished( Level3Image, {} )
+
 				Level4Image:completeAnimation()
 				self.Level4Image:setAlpha( 0 )
 				self.clipFinished( Level4Image, {} )
+
 				WirelessLevel4Image:completeAnimation()
 				self.WirelessLevel4Image:setRGB( 1, 1, 1 )
 				self.clipFinished( WirelessLevel4Image, {} )
+
 				WirelessLevel3Image:completeAnimation()
 				self.WirelessLevel3Image:setRGB( 1, 1, 1 )
 				self.clipFinished( WirelessLevel3Image, {} )
+
 				WirelessLevel2Image:completeAnimation()
 				self.WirelessLevel2Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel2Image, {} )
+
 				WirelessLevel1Image:completeAnimation()
 				self.WirelessLevel1Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel1Image, {} )
@@ -285,27 +343,35 @@ CoD.StartMenu_ConnectionMeter_PingImage.new = function ( menu, controller )
 		WirelessLevel3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Level1Image:completeAnimation()
 				self.Level1Image:setAlpha( 0 )
 				self.clipFinished( Level1Image, {} )
+
 				Level2Image:completeAnimation()
 				self.Level2Image:setAlpha( 0 )
 				self.clipFinished( Level2Image, {} )
+
 				Level3Image:completeAnimation()
 				self.Level3Image:setAlpha( 0 )
 				self.clipFinished( Level3Image, {} )
+
 				Level4Image:completeAnimation()
 				self.Level4Image:setAlpha( 0 )
 				self.clipFinished( Level4Image, {} )
+
 				WirelessLevel4Image:completeAnimation()
 				self.WirelessLevel4Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel4Image, {} )
+
 				WirelessLevel3Image:completeAnimation()
 				self.WirelessLevel3Image:setAlpha( 1 )
 				self.clipFinished( WirelessLevel3Image, {} )
+
 				WirelessLevel2Image:completeAnimation()
 				self.WirelessLevel2Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel2Image, {} )
+
 				WirelessLevel1Image:completeAnimation()
 				self.WirelessLevel1Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel1Image, {} )
@@ -314,33 +380,42 @@ CoD.StartMenu_ConnectionMeter_PingImage.new = function ( menu, controller )
 		WirelessLevel4 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Level1Image:completeAnimation()
 				self.Level1Image:setAlpha( 0 )
 				self.clipFinished( Level1Image, {} )
+
 				Level2Image:completeAnimation()
 				self.Level2Image:setAlpha( 0 )
 				self.clipFinished( Level2Image, {} )
+
 				Level3Image:completeAnimation()
 				self.Level3Image:setAlpha( 0 )
 				self.clipFinished( Level3Image, {} )
+
 				Level4Image:completeAnimation()
 				self.Level4Image:setAlpha( 0 )
 				self.clipFinished( Level4Image, {} )
+
 				WirelessLevel4Image:completeAnimation()
 				self.WirelessLevel4Image:setAlpha( 1 )
 				self.clipFinished( WirelessLevel4Image, {} )
+
 				WirelessLevel3Image:completeAnimation()
 				self.WirelessLevel3Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel3Image, {} )
+
 				WirelessLevel2Image:completeAnimation()
 				self.WirelessLevel2Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel2Image, {} )
+
 				WirelessLevel1Image:completeAnimation()
 				self.WirelessLevel1Image:setAlpha( 0 )
 				self.clipFinished( WirelessLevel1Image, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Level1",

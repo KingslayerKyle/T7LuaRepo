@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.MenuChooseClass.ItemWidgets.WeaponItemModelWid
 CoD.WildcardWidgetNew = InheritFrom( LUI.UIElement )
 CoD.WildcardWidgetNew.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WildcardWidgetNew )
 	self.id = "WildcardWidgetNew"
@@ -74,16 +76,19 @@ CoD.WildcardWidgetNew.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				wildcard2:completeAnimation()
 				self.wildcard2:setLeftRight( false, false, 37.16, 111.5 )
 				self.wildcard2:setTopBottom( false, true, -140, -28 )
 				self.wildcard2:setZRot( -15 )
 				self.clipFinished( wildcard2, {} )
+
 				wildcard3:completeAnimation()
 				self.wildcard3:setLeftRight( false, false, -112, -37.68 )
 				self.wildcard3:setTopBottom( false, true, -140, -28 )
 				self.wildcard3:setZRot( 15 )
 				self.clipFinished( wildcard3, {} )
+
 				wildcard1:completeAnimation()
 				self.wildcard1:setLeftRight( false, false, -37.16, 37.16 )
 				self.wildcard1:setTopBottom( false, true, -150, -38 )
@@ -92,6 +97,7 @@ CoD.WildcardWidgetNew.new = function ( menu, controller )
 			end,
 			ToCard1 = function ()
 				self:setupElementClipCounter( 3 )
+
 				local wildcard2Frame2 = function ( wildcard2, event )
 					if not event.interrupted then
 						wildcard2:beginAnimation( "keyframe", 409, true, true, CoD.TweenType.Linear )
@@ -154,16 +160,19 @@ CoD.WildcardWidgetNew.new = function ( menu, controller )
 		Card1to2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				wildcard2:completeAnimation()
 				self.wildcard2:setLeftRight( false, false, -37.16, 37.16 )
 				self.wildcard2:setTopBottom( false, true, -155, -43 )
 				self.wildcard2:setZRot( 0 )
 				self.clipFinished( wildcard2, {} )
+
 				wildcard3:completeAnimation()
 				self.wildcard3:setLeftRight( false, false, -200, -125.68 )
 				self.wildcard3:setTopBottom( false, true, -104, 8 )
 				self.wildcard3:setZRot( 30 )
 				self.clipFinished( wildcard3, {} )
+
 				wildcard1:completeAnimation()
 				self.wildcard1:setLeftRight( false, false, -122, -47.68 )
 				self.wildcard1:setTopBottom( false, true, -140, -28 )
@@ -172,6 +181,7 @@ CoD.WildcardWidgetNew.new = function ( menu, controller )
 			end,
 			ToCard1 = function ()
 				self:setupElementClipCounter( 3 )
+
 				local wildcard2Frame2 = function ( wildcard2, event )
 					if not event.interrupted then
 						wildcard2:beginAnimation( "keyframe", 150, true, true, CoD.TweenType.Linear )
@@ -234,16 +244,19 @@ CoD.WildcardWidgetNew.new = function ( menu, controller )
 		Card1to3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				wildcard2:completeAnimation()
 				self.wildcard2:setLeftRight( false, false, 122.68, 197 )
 				self.wildcard2:setTopBottom( false, true, -104, 8 )
 				self.wildcard2:setZRot( -30 )
 				self.clipFinished( wildcard2, {} )
+
 				wildcard3:completeAnimation()
 				self.wildcard3:setLeftRight( false, false, -37.16, 37.16 )
 				self.wildcard3:setTopBottom( false, true, -155, -43 )
 				self.wildcard3:setZRot( 0 )
 				self.clipFinished( wildcard3, {} )
+
 				wildcard1:completeAnimation()
 				self.wildcard1:setLeftRight( false, false, 47.16, 121.5 )
 				self.wildcard1:setTopBottom( false, true, -140, -28 )
@@ -252,6 +265,7 @@ CoD.WildcardWidgetNew.new = function ( menu, controller )
 			end,
 			ToCard1 = function ()
 				self:setupElementClipCounter( 3 )
+
 				local wildcard2Frame2 = function ( wildcard2, event )
 					if not event.interrupted then
 						wildcard2:beginAnimation( "keyframe", 500, true, true, CoD.TweenType.Linear )
@@ -314,16 +328,19 @@ CoD.WildcardWidgetNew.new = function ( menu, controller )
 		ToCard1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				wildcard2:completeAnimation()
 				self.wildcard2:setLeftRight( false, false, 47.16, 121.5 )
 				self.wildcard2:setTopBottom( false, true, -140, -28 )
 				self.wildcard2:setZRot( -15 )
 				self.clipFinished( wildcard2, {} )
+
 				wildcard3:completeAnimation()
 				self.wildcard3:setLeftRight( false, false, -122, -47.68 )
 				self.wildcard3:setTopBottom( false, true, -140, -28 )
 				self.wildcard3:setZRot( 15 )
 				self.clipFinished( wildcard3, {} )
+
 				wildcard1:completeAnimation()
 				self.wildcard1:setLeftRight( false, false, -37.16, 37.16 )
 				self.wildcard1:setTopBottom( false, true, -155, -43 )
@@ -332,6 +349,7 @@ CoD.WildcardWidgetNew.new = function ( menu, controller )
 			end,
 			Card1to2 = function ()
 				self:setupElementClipCounter( 3 )
+
 				local wildcard2Frame2 = function ( wildcard2, event )
 					if not event.interrupted then
 						wildcard2:beginAnimation( "keyframe", 319, true, true, CoD.TweenType.Linear )
@@ -392,6 +410,7 @@ CoD.WildcardWidgetNew.new = function ( menu, controller )
 			end,
 			Card1to3 = function ()
 				self:setupElementClipCounter( 3 )
+
 				local wildcard2Frame2 = function ( wildcard2, event )
 					if not event.interrupted then
 						wildcard2:beginAnimation( "keyframe", 189, true, true, CoD.TweenType.Linear )
@@ -452,6 +471,7 @@ CoD.WildcardWidgetNew.new = function ( menu, controller )
 			end,
 			Card1Selected = function ()
 				self:setupElementClipCounter( 1 )
+
 				local wildcard1Frame2 = function ( wildcard1, event )
 					if not event.interrupted then
 						wildcard1:beginAnimation( "keyframe", 600, true, true, CoD.TweenType.Back )
@@ -474,16 +494,19 @@ CoD.WildcardWidgetNew.new = function ( menu, controller )
 		Card1Selected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				wildcard2:completeAnimation()
 				self.wildcard2:setLeftRight( false, false, 52.5, 137.5 )
 				self.wildcard2:setTopBottom( false, true, -136, -8 )
 				self.wildcard2:setZRot( -5 )
 				self.clipFinished( wildcard2, {} )
+
 				wildcard3:completeAnimation()
 				self.wildcard3:setLeftRight( false, false, -137.5, -52.5 )
 				self.wildcard3:setTopBottom( false, true, -136, -8 )
 				self.wildcard3:setZRot( 5 )
 				self.clipFinished( wildcard3, {} )
+
 				wildcard1:completeAnimation()
 				self.wildcard1:setLeftRight( false, false, -37.16, 37.16 )
 				self.wildcard1:setTopBottom( false, true, -333, -221 )
@@ -492,6 +515,7 @@ CoD.WildcardWidgetNew.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Card1to2",
@@ -529,6 +553,7 @@ CoD.WildcardWidgetNew.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.wildcard2:close()
 		element.wildcard3:close()

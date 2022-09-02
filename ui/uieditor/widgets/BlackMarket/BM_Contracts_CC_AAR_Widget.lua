@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.CAC.cac_lock" )
 CoD.BM_Contracts_CC_AAR_Widget = InheritFrom( LUI.UIElement )
 CoD.BM_Contracts_CC_AAR_Widget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Contracts_CC_AAR_Widget )
 	self.id = "BM_Contracts_CC_AAR_Widget"
@@ -97,33 +99,41 @@ CoD.BM_Contracts_CC_AAR_Widget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				CardcompletedDescription:completeAnimation()
 				self.CardcompletedDescription:setText( Engine.Localize( "BLACKJACK_CHALLENGE_SIDE_BET_DESC" ) )
 				self.clipFinished( CardcompletedDescription, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 1 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setLeftRight( false, true, -315, -36.75 )
 				self.BoxButtonLrgInactiveDiag:setTopBottom( true, false, 14.48, 87.98 )
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setLeftRight( false, true, -319, -31.75 )
 				self.TitleBg:setTopBottom( true, false, 35.55, 65.45 )
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				featlineleft000:completeAnimation()
 				self.featlineleft000:setLeftRight( false, true, -175.1, -171.1 )
 				self.featlineleft000:setTopBottom( true, false, -142, 212 )
 				self.featlineleft000:setAlpha( 0 )
 				self.clipFinished( featlineleft000, {} )
+
 				featlineleft0000:completeAnimation()
 				self.featlineleft0000:setLeftRight( false, true, -174, -171 )
 				self.featlineleft0000:setTopBottom( true, false, -110.95, 242.05 )
@@ -134,31 +144,39 @@ CoD.BM_Contracts_CC_AAR_Widget.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				CardcompletedDescription:completeAnimation()
 				self.CardcompletedDescription:setText( Engine.Localize( "BLACKJACK_CHALLENGE_SIDE_BET_DESC" ) )
 				self.clipFinished( CardcompletedDescription, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 0.4 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setLeftRight( false, true, -319, -31.75 )
 				self.TitleBg:setTopBottom( true, false, 35.55, 65.45 )
 				self.TitleBg:setAlpha( 0.4 )
 				self.clipFinished( TitleBg, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 1 )
 				self.clipFinished( LockedIcon, {} )
+
 				featlineleft000:completeAnimation()
 				self.featlineleft000:setLeftRight( false, true, -175.1, -171.1 )
 				self.featlineleft000:setTopBottom( true, false, -142, 212 )
 				self.featlineleft000:setAlpha( 0.5 )
 				self.clipFinished( featlineleft000, {} )
+
 				featlineleft0000:completeAnimation()
 				self.featlineleft0000:setLeftRight( false, true, -174, -171 )
 				self.featlineleft0000:setTopBottom( true, false, -110.95, 242.05 )
@@ -169,33 +187,41 @@ CoD.BM_Contracts_CC_AAR_Widget.new = function ( menu, controller )
 		CompletedCard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				CardcompletedDescription:completeAnimation()
 				self.CardcompletedDescription:setText( Engine.Localize( "BLACKJACK_CARD_COMPLETED" ) )
 				self.clipFinished( CardcompletedDescription, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 1 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setLeftRight( false, true, -315, -36.75 )
 				self.BoxButtonLrgInactiveDiag:setTopBottom( true, false, 14.48, 87.98 )
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setLeftRight( false, true, -319, -31.75 )
 				self.TitleBg:setTopBottom( true, false, 35.55, 65.45 )
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				featlineleft000:completeAnimation()
 				self.featlineleft000:setLeftRight( false, true, -175.1, -171.1 )
 				self.featlineleft000:setTopBottom( true, false, -142, 212 )
 				self.featlineleft000:setAlpha( 0 )
 				self.clipFinished( featlineleft000, {} )
+
 				featlineleft0000:completeAnimation()
 				self.featlineleft0000:setLeftRight( false, true, -174, -171 )
 				self.featlineleft0000:setTopBottom( true, false, -110.95, 242.05 )
@@ -206,33 +232,41 @@ CoD.BM_Contracts_CC_AAR_Widget.new = function ( menu, controller )
 		CompletedCardSet = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				CardcompletedDescription:completeAnimation()
 				self.CardcompletedDescription:setText( Engine.Localize( "BLACKJACK_CARD_SET_COMPLETED" ) )
 				self.clipFinished( CardcompletedDescription, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 1 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setLeftRight( false, true, -315, -36.75 )
 				self.BoxButtonLrgInactiveDiag:setTopBottom( true, false, 14.48, 87.98 )
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setLeftRight( false, true, -319, -31.75 )
 				self.TitleBg:setTopBottom( true, false, 35.55, 65.45 )
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				featlineleft000:completeAnimation()
 				self.featlineleft000:setLeftRight( false, true, -175.1, -171.1 )
 				self.featlineleft000:setTopBottom( true, false, -142, 212 )
 				self.featlineleft000:setAlpha( 0 )
 				self.clipFinished( featlineleft000, {} )
+
 				featlineleft0000:completeAnimation()
 				self.featlineleft0000:setLeftRight( false, true, -174, -171 )
 				self.featlineleft0000:setTopBottom( true, false, -110.95, 242.05 )
@@ -241,6 +275,7 @@ CoD.BM_Contracts_CC_AAR_Widget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -277,6 +312,7 @@ CoD.BM_Contracts_CC_AAR_Widget.new = function ( menu, controller )
 			modelName = "isMastery"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactive:close()
 		element.CallingCardsFrameWidget:close()

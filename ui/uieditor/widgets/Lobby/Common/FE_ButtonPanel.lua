@@ -4,9 +4,11 @@
 CoD.FE_ButtonPanel = InheritFrom( LUI.UIElement )
 CoD.FE_ButtonPanel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_ButtonPanel )
 	self.id = "FE_ButtonPanel"

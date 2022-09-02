@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.CAC.MenuSelectScreen.WeaponNameWidget" )
 CoD.MedalPreviewWidget = InheritFrom( LUI.UIElement )
 CoD.MedalPreviewWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MedalPreviewWidget )
 	self.id = "MedalPreviewWidget"
@@ -116,6 +118,7 @@ CoD.MedalPreviewWidget.new = function ( menu, controller )
 			EmblemSubtitle:setText( Engine.Localize( GetAARMedalDesc( medalIndex ) ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG0:close()
 		element.MedalXpWidget0:close()

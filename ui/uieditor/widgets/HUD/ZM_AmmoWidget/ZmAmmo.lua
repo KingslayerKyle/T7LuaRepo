@@ -21,9 +21,11 @@ end
 CoD.ZmAmmo = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo )
 	self.id = "ZmAmmo"
@@ -150,60 +152,78 @@ CoD.ZmAmmo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				ZmPanelAmmoInt0:completeAnimation()
 				self.ZmPanelAmmoInt0:setAlpha( 0 )
 				self.clipFinished( ZmPanelAmmoInt0, {} )
+
 				GlowOrange:completeAnimation()
 				self.GlowOrange:setAlpha( 0 )
 				self.clipFinished( GlowOrange, {} )
+
 				GlowMultiply:completeAnimation()
 				self.GlowMultiply:setAlpha( 0 )
 				self.clipFinished( GlowMultiply, {} )
+
 				ZmAmmoProp0:completeAnimation()
 				self.ZmAmmoProp0:setLeftRight( true, false, 164.69, 398 )
 				self.ZmAmmoProp0:setTopBottom( true, false, 62, 206 )
 				self.ZmAmmoProp0:setRGB( 0.65, 0.53, 0.43 )
 				self.ZmAmmoProp0:setAlpha( 0 )
 				self.clipFinished( ZmAmmoProp0, {} )
+
 				ZmAmmoClipInfo0:completeAnimation()
+
 				ZmAmmoClipInfo0.Clip:completeAnimation()
+
 				ZmAmmoClipInfo0.TotalAmmo:completeAnimation()
+
 				ZmAmmoClipInfo0.Sword:completeAnimation()
+
 				ZmAmmoClipInfo0.ClipDual:completeAnimation()
 				self.ZmAmmoClipInfo0.Clip:setAlpha( 0 )
 				self.ZmAmmoClipInfo0.TotalAmmo:setAlpha( 0 )
 				self.ZmAmmoClipInfo0.Sword:setAlpha( 0 )
 				self.ZmAmmoClipInfo0.ClipDual:setAlpha( 0 )
 				self.clipFinished( ZmAmmoClipInfo0, {} )
+
 				ZmAmmoEquipContainer0:completeAnimation()
 				self.ZmAmmoEquipContainer0:setAlpha( 0 )
 				self.clipFinished( ZmAmmoEquipContainer0, {} )
+
 				Grid:completeAnimation()
 				self.Grid:setAlpha( 0 )
 				self.clipFinished( Grid, {} )
+
 				ZmAmmoAttachmentInfo0:completeAnimation()
 				self.ZmAmmoAttachmentInfo0:setLeftRight( true, false, 0, 316 )
 				self.ZmAmmoAttachmentInfo0:setTopBottom( true, false, 163, 201 )
 				self.ZmAmmoAttachmentInfo0:setAlpha( 0 )
 				self.clipFinished( ZmAmmoAttachmentInfo0, {} )
+
 				AmmoGlow:completeAnimation()
 				self.AmmoGlow:setAlpha( 0 )
 				self.clipFinished( AmmoGlow, {} )
+
 				GlowNotif:completeAnimation()
 				self.GlowNotif:setAlpha( 0 )
 				self.clipFinished( GlowNotif, {} )
+
 				Flsh:completeAnimation()
 				self.Flsh:setAlpha( 0 )
 				self.clipFinished( Flsh, {} )
+
 				ZmAmmoBBGumMeterWidget:completeAnimation()
 				self.ZmAmmoBBGumMeterWidget:setAlpha( 0 )
 				self.clipFinished( ZmAmmoBBGumMeterWidget, {} )
+
 				AATIcon:completeAnimation()
 				self.AATIcon:setAlpha( 0 )
 				self.clipFinished( AATIcon, {} )
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 13 )
+
 				local ZmPanelAmmoInt0Frame2 = function ( ZmPanelAmmoInt0, event )
 					if not event.interrupted then
 						ZmPanelAmmoInt0:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )
@@ -358,9 +378,13 @@ CoD.ZmAmmo.new = function ( menu, controller )
 				end
 				
 				ZmAmmoClipInfo0:completeAnimation()
+
 				ZmAmmoClipInfo0.Clip:completeAnimation()
+
 				ZmAmmoClipInfo0.TotalAmmo:completeAnimation()
+
 				ZmAmmoClipInfo0.Sword:completeAnimation()
+
 				ZmAmmoClipInfo0.ClipDual:completeAnimation()
 				self.ZmAmmoClipInfo0.Clip:setAlpha( 0 )
 				self.ZmAmmoClipInfo0.TotalAmmo:setAlpha( 0 )
@@ -606,6 +630,7 @@ CoD.ZmAmmo.new = function ( menu, controller )
 			end,
 			HudStart_NoAmmo = function ()
 				self:setupElementClipCounter( 12 )
+
 				local ZmPanelAmmoInt0Frame2 = function ( ZmPanelAmmoInt0, event )
 					if not event.interrupted then
 						ZmPanelAmmoInt0:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )
@@ -945,15 +970,19 @@ CoD.ZmAmmo.new = function ( menu, controller )
 		HudStart = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				ZmPanelAmmoInt0:completeAnimation()
 				self.ZmPanelAmmoInt0:setAlpha( 1 )
 				self.clipFinished( ZmPanelAmmoInt0, {} )
+
 				GlowOrange:completeAnimation()
 				self.GlowOrange:setAlpha( 0.23 )
 				self.clipFinished( GlowOrange, {} )
+
 				GlowMultiply:completeAnimation()
 				self.GlowMultiply:setAlpha( 0.4 )
 				self.clipFinished( GlowMultiply, {} )
+
 				ZmAmmoProp0:completeAnimation()
 				self.ZmAmmoProp0:setLeftRight( true, false, 164.69, 398 )
 				self.ZmAmmoProp0:setTopBottom( true, false, 62, 206 )
@@ -961,48 +990,62 @@ CoD.ZmAmmo.new = function ( menu, controller )
 				self.ZmAmmoProp0:setAlpha( 1 )
 				self.ZmAmmoProp0:setZoom( 0 )
 				self.clipFinished( ZmAmmoProp0, {} )
+
 				ZmAmmoClipInfo0:completeAnimation()
+
 				ZmAmmoClipInfo0.Clip:completeAnimation()
+
 				ZmAmmoClipInfo0.TotalAmmo:completeAnimation()
+
 				ZmAmmoClipInfo0.Sword:completeAnimation()
+
 				ZmAmmoClipInfo0.ClipDual:completeAnimation()
 				self.ZmAmmoClipInfo0.Clip:setAlpha( 1 )
 				self.ZmAmmoClipInfo0.TotalAmmo:setAlpha( 1 )
 				self.ZmAmmoClipInfo0.Sword:setAlpha( 1 )
 				self.ZmAmmoClipInfo0.ClipDual:setAlpha( 1 )
 				self.clipFinished( ZmAmmoClipInfo0, {} )
+
 				ZmAmmoEquipContainer0:completeAnimation()
 				self.ZmAmmoEquipContainer0:setAlpha( 1 )
 				self.clipFinished( ZmAmmoEquipContainer0, {} )
+
 				Grid:completeAnimation()
 				self.Grid:setAlpha( 0.72 )
 				self.clipFinished( Grid, {} )
+
 				ZmAmmoAttachmentInfo0:completeAnimation()
 				self.ZmAmmoAttachmentInfo0:setLeftRight( true, false, -40, 276 )
 				self.ZmAmmoAttachmentInfo0:setTopBottom( true, false, 148, 186 )
 				self.ZmAmmoAttachmentInfo0:setAlpha( 1 )
 				self.ZmAmmoAttachmentInfo0:setZoom( 0 )
 				self.clipFinished( ZmAmmoAttachmentInfo0, {} )
+
 				AmmoGlow:completeAnimation()
 				self.AmmoGlow:setLeftRight( true, false, 72.5, 430 )
 				self.AmmoGlow:setTopBottom( true, false, -8.96, 266.04 )
 				self.AmmoGlow:setAlpha( 1 )
 				self.clipFinished( AmmoGlow, {} )
+
 				GlowNotif:completeAnimation()
 				self.GlowNotif:setAlpha( 0 )
 				self.clipFinished( GlowNotif, {} )
+
 				Flsh:completeAnimation()
 				self.Flsh:setAlpha( 0 )
 				self.clipFinished( Flsh, {} )
+
 				ZmAmmoBBGumMeterWidget:completeAnimation()
 				self.ZmAmmoBBGumMeterWidget:setAlpha( 1 )
 				self.clipFinished( ZmAmmoBBGumMeterWidget, {} )
+
 				AATIcon:completeAnimation()
 				self.AATIcon:setAlpha( 1 )
 				self.clipFinished( AATIcon, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 11 )
+
 				local ZmPanelAmmoInt0Frame2 = function ( ZmPanelAmmoInt0, event )
 					if not event.interrupted then
 						ZmPanelAmmoInt0:beginAnimation( "keyframe", 889, false, false, CoD.TweenType.Linear )
@@ -1123,9 +1166,13 @@ CoD.ZmAmmo.new = function ( menu, controller )
 				end
 				
 				ZmAmmoClipInfo0:completeAnimation()
+
 				ZmAmmoClipInfo0.Clip:completeAnimation()
+
 				ZmAmmoClipInfo0.TotalAmmo:completeAnimation()
+
 				ZmAmmoClipInfo0.Sword:completeAnimation()
+
 				ZmAmmoClipInfo0.ClipDual:completeAnimation()
 				self.ZmAmmoClipInfo0.Clip:setAlpha( 1 )
 				self.ZmAmmoClipInfo0.TotalAmmo:setAlpha( 1 )
@@ -1233,15 +1280,19 @@ CoD.ZmAmmo.new = function ( menu, controller )
 		HudStart_NoAmmo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				ZmPanelAmmoInt0:completeAnimation()
 				self.ZmPanelAmmoInt0:setAlpha( 1 )
 				self.clipFinished( ZmPanelAmmoInt0, {} )
+
 				GlowOrange:completeAnimation()
 				self.GlowOrange:setAlpha( 0.23 )
 				self.clipFinished( GlowOrange, {} )
+
 				GlowMultiply:completeAnimation()
 				self.GlowMultiply:setAlpha( 0.4 )
 				self.clipFinished( GlowMultiply, {} )
+
 				ZmAmmoProp0:completeAnimation()
 				self.ZmAmmoProp0:setLeftRight( true, false, 164.69, 398 )
 				self.ZmAmmoProp0:setTopBottom( true, false, 62, 206 )
@@ -1249,38 +1300,47 @@ CoD.ZmAmmo.new = function ( menu, controller )
 				self.ZmAmmoProp0:setAlpha( 1 )
 				self.ZmAmmoProp0:setZoom( 0 )
 				self.clipFinished( ZmAmmoProp0, {} )
+
 				ZmAmmoEquipContainer0:completeAnimation()
 				self.ZmAmmoEquipContainer0:setAlpha( 1 )
 				self.clipFinished( ZmAmmoEquipContainer0, {} )
+
 				Grid:completeAnimation()
 				self.Grid:setAlpha( 0.72 )
 				self.clipFinished( Grid, {} )
+
 				ZmAmmoAttachmentInfo0:completeAnimation()
 				self.ZmAmmoAttachmentInfo0:setLeftRight( true, false, -40, 276 )
 				self.ZmAmmoAttachmentInfo0:setTopBottom( true, false, 148, 186 )
 				self.ZmAmmoAttachmentInfo0:setAlpha( 1 )
 				self.ZmAmmoAttachmentInfo0:setZoom( 0 )
 				self.clipFinished( ZmAmmoAttachmentInfo0, {} )
+
 				AmmoGlow:completeAnimation()
 				self.AmmoGlow:setLeftRight( true, false, 72.5, 430 )
 				self.AmmoGlow:setTopBottom( true, false, -8.96, 266.04 )
 				self.AmmoGlow:setAlpha( 1 )
 				self.clipFinished( AmmoGlow, {} )
+
 				GlowNotif:completeAnimation()
 				self.GlowNotif:setAlpha( 0 )
 				self.clipFinished( GlowNotif, {} )
+
 				Flsh:completeAnimation()
 				self.Flsh:setAlpha( 0 )
 				self.clipFinished( Flsh, {} )
+
 				ZmAmmoBBGumMeterWidget:completeAnimation()
 				self.ZmAmmoBBGumMeterWidget:setAlpha( 1 )
 				self.clipFinished( ZmAmmoBBGumMeterWidget, {} )
+
 				AATIcon:completeAnimation()
 				self.AATIcon:setAlpha( 1 )
 				self.clipFinished( AATIcon, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 10 )
+
 				local ZmPanelAmmoInt0Frame2 = function ( ZmPanelAmmoInt0, event )
 					if not event.interrupted then
 						ZmPanelAmmoInt0:beginAnimation( "keyframe", 889, false, false, CoD.TweenType.Linear )
@@ -1448,6 +1508,7 @@ CoD.ZmAmmo.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HudStart_NoAmmo",
@@ -1478,6 +1539,7 @@ CoD.ZmAmmo.new = function ( menu, controller )
 			modelName = "currentWeapon.equippedWeaponReference"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmPanelAmmoInt0:close()
 		element.ZmAmmoProp0:close()

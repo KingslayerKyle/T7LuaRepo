@@ -147,6 +147,7 @@ local PostLoadFunc = function ( self, controller, menu )
 		end
 	end )
 	self:addElement( self.thermometerAnimTimer )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "close", function ( element )
 		if element.thermometerAnimTimer then
 			element.thermometerAnimTimer:close()
@@ -158,9 +159,11 @@ end
 CoD.Winter_Community_Thermometer = InheritFrom( LUI.UIElement )
 CoD.Winter_Community_Thermometer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Winter_Community_Thermometer )
 	self.id = "Winter_Community_Thermometer"
@@ -519,9 +522,11 @@ CoD.Winter_Community_Thermometer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PromoThermometerAndRewardsIdol:completeAnimation()
 				self.PromoThermometerAndRewardsIdol:setAlpha( 1 )
 				self.clipFinished( PromoThermometerAndRewardsIdol, {} )
+
 				ProcessingWidget:completeAnimation()
 				self.ProcessingWidget:setAlpha( 0 )
 				self.clipFinished( ProcessingWidget, {} )
@@ -530,6 +535,7 @@ CoD.Winter_Community_Thermometer.new = function ( menu, controller )
 		Purchasing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ProcessingWidget:completeAnimation()
 				self.ProcessingWidget:setAlpha( 1 )
 				self.clipFinished( ProcessingWidget, {} )
@@ -538,6 +544,7 @@ CoD.Winter_Community_Thermometer.new = function ( menu, controller )
 		Animating = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ProcessingWidget:completeAnimation()
 				self.ProcessingWidget:setAlpha( 0 )
 				self.clipFinished( ProcessingWidget, {} )
@@ -556,6 +563,7 @@ CoD.Winter_Community_Thermometer.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PromoThermometerAndRewardsIdol:close()
 		element.RewardWidget0:close()

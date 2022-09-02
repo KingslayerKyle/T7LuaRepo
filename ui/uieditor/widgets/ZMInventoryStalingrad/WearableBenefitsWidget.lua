@@ -4,9 +4,11 @@
 CoD.WearableBenefitsWidget = InheritFrom( LUI.UIElement )
 CoD.WearableBenefitsWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WearableBenefitsWidget )
 	self.id = "WearableBenefitsWidget"
@@ -28,12 +30,14 @@ CoD.WearableBenefitsWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				wearableBenefits:completeAnimation()
 				self.wearableBenefits:setAlpha( 0 )
 				self.clipFinished( wearableBenefits, {} )
 			end,
 			ShowEffects = function ()
 				self:setupElementClipCounter( 1 )
+
 				local wearableBenefitsFrame2 = function ( wearableBenefits, event )
 					local wearableBenefitsFrame3 = function ( wearableBenefits, event )
 						local wearableBenefitsFrame4 = function ( wearableBenefits, event )
@@ -75,12 +79,14 @@ CoD.WearableBenefitsWidget.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				wearableBenefits:completeAnimation()
 				self.wearableBenefits:setAlpha( 0 )
 				self.clipFinished( wearableBenefits, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",

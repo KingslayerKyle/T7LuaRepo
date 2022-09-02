@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.EndGameFlow.OutcomeFactionIconItemForCodCaster" )
 CoD.OutcomeFactionIcon = InheritFrom( LUI.UIElement )
 CoD.OutcomeFactionIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.OutcomeFactionIcon )
 	self.id = "OutcomeFactionIcon"
@@ -35,9 +37,11 @@ CoD.OutcomeFactionIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				OutcomeFactionIconItem:completeAnimation()
 				self.OutcomeFactionIconItem:setAlpha( 1 )
 				self.clipFinished( OutcomeFactionIconItem, {} )
+
 				OutcomeFactionIconItemForCodCaster:completeAnimation()
 				self.OutcomeFactionIconItemForCodCaster:setAlpha( 0 )
 				self.clipFinished( OutcomeFactionIconItemForCodCaster, {} )
@@ -46,15 +50,18 @@ CoD.OutcomeFactionIcon.new = function ( menu, controller )
 		CodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				OutcomeFactionIconItem:completeAnimation()
 				self.OutcomeFactionIconItem:setAlpha( 0 )
 				self.clipFinished( OutcomeFactionIconItem, {} )
+
 				OutcomeFactionIconItemForCodCaster:completeAnimation()
 				self.OutcomeFactionIconItemForCodCaster:setAlpha( 1 )
 				self.clipFinished( OutcomeFactionIconItemForCodCaster, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CodCaster",
@@ -71,6 +78,7 @@ CoD.OutcomeFactionIcon.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_TEAM_SPECTATOR
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.OutcomeFactionIconItem:close()
 		element.OutcomeFactionIconItemForCodCaster:close()

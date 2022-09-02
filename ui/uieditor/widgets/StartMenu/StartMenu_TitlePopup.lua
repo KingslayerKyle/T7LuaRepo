@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_TitleContainerLOC" )
 CoD.StartMenu_TitlePopup = InheritFrom( LUI.UIElement )
 CoD.StartMenu_TitlePopup.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_TitlePopup )
 	self.id = "StartMenu_TitlePopup"
@@ -63,6 +65,7 @@ CoD.StartMenu_TitlePopup.new = function ( menu, controller )
 			}, controller )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuTitleContainerLOC:close()
 	end )

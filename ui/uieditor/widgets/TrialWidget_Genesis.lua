@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.HUD.ZM_Notif.ZmNotif1_CursorHint" )
 CoD.TrialWidget_Genesis = InheritFrom( LUI.UIElement )
 CoD.TrialWidget_Genesis.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TrialWidget_Genesis )
 	self.id = "TrialWidget_Genesis"
@@ -69,21 +71,27 @@ CoD.TrialWidget_Genesis.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ScoreInfoPanelCircleInternal:completeAnimation()
 				self.ScoreInfoPanelCircleInternal:setAlpha( 0 )
 				self.clipFinished( ScoreInfoPanelCircleInternal, {} )
+
 				whiteCircle:completeAnimation()
 				self.whiteCircle:setAlpha( 0 )
 				self.clipFinished( whiteCircle, {} )
+
 				CompleteImage:completeAnimation()
 				self.CompleteImage:setAlpha( 0 )
 				self.clipFinished( CompleteImage, {} )
+
 				InProgressImage:completeAnimation()
 				self.InProgressImage:setAlpha( 0 )
 				self.clipFinished( InProgressImage, {} )
+
 				ProgressWidget:completeAnimation()
 				self.ProgressWidget:setAlpha( 0 )
 				self.clipFinished( ProgressWidget, {} )
+
 				ZmNotif1CursorHint:completeAnimation()
 				self.ZmNotif1CursorHint:setAlpha( 0 )
 				self.clipFinished( ZmNotif1CursorHint, {} )
@@ -92,21 +100,27 @@ CoD.TrialWidget_Genesis.new = function ( menu, controller )
 		InProgress = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ScoreInfoPanelCircleInternal:completeAnimation()
 				self.ScoreInfoPanelCircleInternal:setAlpha( 1 )
 				self.clipFinished( ScoreInfoPanelCircleInternal, {} )
+
 				whiteCircle:completeAnimation()
 				self.whiteCircle:setAlpha( 0.25 )
 				self.clipFinished( whiteCircle, {} )
+
 				CompleteImage:completeAnimation()
 				self.CompleteImage:setAlpha( 0 )
 				self.clipFinished( CompleteImage, {} )
+
 				InProgressImage:completeAnimation()
 				self.InProgressImage:setAlpha( 1 )
 				self.clipFinished( InProgressImage, {} )
+
 				ProgressWidget:completeAnimation()
 				self.ProgressWidget:setAlpha( 1 )
 				self.clipFinished( ProgressWidget, {} )
+
 				ZmNotif1CursorHint:completeAnimation()
 				self.ZmNotif1CursorHint:setAlpha( 1 )
 				self.clipFinished( ZmNotif1CursorHint, {} )
@@ -115,27 +129,34 @@ CoD.TrialWidget_Genesis.new = function ( menu, controller )
 		Complete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ScoreInfoPanelCircleInternal:completeAnimation()
 				self.ScoreInfoPanelCircleInternal:setAlpha( 1 )
 				self.clipFinished( ScoreInfoPanelCircleInternal, {} )
+
 				whiteCircle:completeAnimation()
 				self.whiteCircle:setAlpha( 0.25 )
 				self.clipFinished( whiteCircle, {} )
+
 				CompleteImage:completeAnimation()
 				self.CompleteImage:setAlpha( 1 )
 				self.clipFinished( CompleteImage, {} )
+
 				InProgressImage:completeAnimation()
 				self.InProgressImage:setAlpha( 0 )
 				self.clipFinished( InProgressImage, {} )
+
 				ProgressWidget:completeAnimation()
 				self.ProgressWidget:setAlpha( 1 )
 				self.clipFinished( ProgressWidget, {} )
+
 				ZmNotif1CursorHint:completeAnimation()
 				self.ZmNotif1CursorHint:setAlpha( 1 )
 				self.clipFinished( ZmNotif1CursorHint, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ScoreInfoPanelCircleInternal:close()
 		element.ProgressWidget:close()

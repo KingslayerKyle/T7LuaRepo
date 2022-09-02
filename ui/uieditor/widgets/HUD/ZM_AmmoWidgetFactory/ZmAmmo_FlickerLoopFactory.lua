@@ -4,9 +4,11 @@
 CoD.ZmAmmo_FlickerLoopFactory = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_FlickerLoopFactory.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_FlickerLoopFactory )
 	self.id = "ZmAmmo_FlickerLoopFactory"
@@ -25,6 +27,7 @@ CoD.ZmAmmo_FlickerLoopFactory.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ReflectAnimFrame2 = function ( ReflectAnim, event )
 					if not event.interrupted then
 						ReflectAnim:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -40,12 +43,14 @@ CoD.ZmAmmo_FlickerLoopFactory.new = function ( menu, controller )
 				ReflectAnim:completeAnimation()
 				self.ReflectAnim:setAlpha( 0.6 )
 				ReflectAnimFrame2( ReflectAnim, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		WeaponDual = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ReflectAnimFrame2 = function ( ReflectAnim, event )
 					if not event.interrupted then
 						ReflectAnim:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -61,10 +66,12 @@ CoD.ZmAmmo_FlickerLoopFactory.new = function ( menu, controller )
 				ReflectAnim:completeAnimation()
 				self.ReflectAnim:setAlpha( 1 )
 				ReflectAnimFrame2( ReflectAnim, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "WeaponDual",

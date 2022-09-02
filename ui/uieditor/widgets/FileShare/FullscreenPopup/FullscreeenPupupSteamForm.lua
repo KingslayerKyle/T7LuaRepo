@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.GenericPopups.DialogSpinner" )
 CoD.FullscreeenPupupSteamForm = InheritFrom( LUI.UIElement )
 CoD.FullscreeenPupupSteamForm.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FullscreeenPupupSteamForm )
 	self.id = "FullscreeenPupupSteamForm"
@@ -110,24 +112,31 @@ CoD.FullscreeenPupupSteamForm.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				DialogSpinner0:completeAnimation()
 				self.DialogSpinner0:setAlpha( 0 )
 				self.clipFinished( DialogSpinner0, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				Subtitle:completeAnimation()
 				self.Subtitle:setAlpha( 1 )
 				self.clipFinished( Subtitle, {} )
+
 				WorkingTitle:completeAnimation()
 				self.WorkingTitle:setAlpha( 0 )
 				self.clipFinished( WorkingTitle, {} )
+
 				DoneTitle:completeAnimation()
 				self.DoneTitle:setAlpha( 0 )
 				self.clipFinished( DoneTitle, {} )
+
 				ErrorTitle:completeAnimation()
 				self.ErrorTitle:setAlpha( 0 )
 				self.clipFinished( ErrorTitle, {} )
+
 				ErrorSubtitle:completeAnimation()
 				self.ErrorSubtitle:setAlpha( 0 )
 				self.clipFinished( ErrorSubtitle, {} )
@@ -136,25 +145,32 @@ CoD.FullscreeenPupupSteamForm.new = function ( menu, controller )
 		WorkingState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				DialogSpinner0:completeAnimation()
 				self.DialogSpinner0:setAlpha( 1 )
 				self.clipFinished( DialogSpinner0, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 0 )
 				self.clipFinished( Title, {} )
+
 				Subtitle:completeAnimation()
 				self.Subtitle:setAlpha( 1 )
 				self.Subtitle:setText( Engine.Localize( "PLATFORM_PLEASEWAIT" ) )
 				self.clipFinished( Subtitle, {} )
+
 				WorkingTitle:completeAnimation()
 				self.WorkingTitle:setAlpha( 1 )
 				self.clipFinished( WorkingTitle, {} )
+
 				DoneTitle:completeAnimation()
 				self.DoneTitle:setAlpha( 0 )
 				self.clipFinished( DoneTitle, {} )
+
 				ErrorTitle:completeAnimation()
 				self.ErrorTitle:setAlpha( 0 )
 				self.clipFinished( ErrorTitle, {} )
+
 				ErrorSubtitle:completeAnimation()
 				self.ErrorSubtitle:setAlpha( 0 )
 				self.clipFinished( ErrorSubtitle, {} )
@@ -163,25 +179,32 @@ CoD.FullscreeenPupupSteamForm.new = function ( menu, controller )
 		ErrorState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				DialogSpinner0:completeAnimation()
 				self.DialogSpinner0:setAlpha( 0 )
 				self.clipFinished( DialogSpinner0, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 0 )
 				self.clipFinished( Title, {} )
+
 				Subtitle:completeAnimation()
 				self.Subtitle:setAlpha( 0 )
 				self.Subtitle:setText( Engine.Localize( "" ) )
 				self.clipFinished( Subtitle, {} )
+
 				WorkingTitle:completeAnimation()
 				self.WorkingTitle:setAlpha( 0 )
 				self.clipFinished( WorkingTitle, {} )
+
 				DoneTitle:completeAnimation()
 				self.DoneTitle:setAlpha( 0 )
 				self.clipFinished( DoneTitle, {} )
+
 				ErrorTitle:completeAnimation()
 				self.ErrorTitle:setAlpha( 1 )
 				self.clipFinished( ErrorTitle, {} )
+
 				ErrorSubtitle:completeAnimation()
 				self.ErrorSubtitle:setAlpha( 1 )
 				self.clipFinished( ErrorSubtitle, {} )
@@ -190,24 +213,31 @@ CoD.FullscreeenPupupSteamForm.new = function ( menu, controller )
 		CustomState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				DialogSpinner0:completeAnimation()
 				self.DialogSpinner0:setAlpha( 0 )
 				self.clipFinished( DialogSpinner0, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				Subtitle:completeAnimation()
 				self.Subtitle:setAlpha( 1 )
 				self.clipFinished( Subtitle, {} )
+
 				WorkingTitle:completeAnimation()
 				self.WorkingTitle:setAlpha( 0 )
 				self.clipFinished( WorkingTitle, {} )
+
 				DoneTitle:completeAnimation()
 				self.DoneTitle:setAlpha( 0 )
 				self.clipFinished( DoneTitle, {} )
+
 				ErrorTitle:completeAnimation()
 				self.ErrorTitle:setAlpha( 0 )
 				self.clipFinished( ErrorTitle, {} )
+
 				ErrorSubtitle:completeAnimation()
 				self.ErrorSubtitle:setAlpha( 0 )
 				self.clipFinished( ErrorSubtitle, {} )
@@ -216,27 +246,34 @@ CoD.FullscreeenPupupSteamForm.new = function ( menu, controller )
 		DoneState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				DialogSpinner0:completeAnimation()
 				self.DialogSpinner0:setAlpha( 0 )
 				self.clipFinished( DialogSpinner0, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 0 )
 				self.clipFinished( Title, {} )
+
 				Subtitle:completeAnimation()
 				self.Subtitle:setAlpha( 0 )
 				self.clipFinished( Subtitle, {} )
+
 				WorkingTitle:completeAnimation()
 				self.WorkingTitle:setAlpha( 0 )
 				self.clipFinished( WorkingTitle, {} )
+
 				DoneTitle:completeAnimation()
 				self.DoneTitle:setAlpha( 1 )
 				self.clipFinished( DoneTitle, {} )
+
 				ErrorSubtitle:completeAnimation()
 				self.ErrorSubtitle:setAlpha( 0 )
 				self.clipFinished( ErrorSubtitle, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.DialogSpinner0:close()
 	end )

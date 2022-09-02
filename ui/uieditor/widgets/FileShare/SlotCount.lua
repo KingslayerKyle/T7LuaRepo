@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Fileshare.SlotCountText" )
 CoD.SlotCount = InheritFrom( LUI.UIElement )
 CoD.SlotCount.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.SlotCount )
 	self.id = "SlotCount"

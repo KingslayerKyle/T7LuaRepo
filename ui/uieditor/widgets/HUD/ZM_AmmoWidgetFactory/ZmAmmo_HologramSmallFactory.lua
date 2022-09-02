@@ -4,9 +4,11 @@
 CoD.ZmAmmo_HologramSmallFactory = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_HologramSmallFactory.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_HologramSmallFactory )
 	self.id = "ZmAmmo_HologramSmallFactory"
@@ -25,6 +27,7 @@ CoD.ZmAmmo_HologramSmallFactory.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local BulbSmFillFrame2 = function ( BulbSmFill, event )
 					if not event.interrupted then
 						BulbSmFill:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -40,18 +43,21 @@ CoD.ZmAmmo_HologramSmallFactory.new = function ( menu, controller )
 				BulbSmFill:completeAnimation()
 				self.BulbSmFill:setAlpha( 0.8 )
 				BulbSmFillFrame2( BulbSmFill, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		WeaponDual = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BulbSmFill:completeAnimation()
 				self.BulbSmFill:setAlpha( 0 )
 				self.clipFinished( BulbSmFill, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "WeaponDual",

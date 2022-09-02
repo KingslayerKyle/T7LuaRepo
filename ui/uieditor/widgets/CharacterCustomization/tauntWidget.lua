@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CharacterCustomization.tauntBindsWidget" )
 CoD.tauntWidget = InheritFrom( LUI.UIElement )
 CoD.tauntWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.tauntWidget )
 	self.id = "tauntWidget"
@@ -37,9 +39,11 @@ CoD.tauntWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				tauntArrowWidget:completeAnimation()
 				self.tauntArrowWidget:setAlpha( 1 )
 				self.clipFinished( tauntArrowWidget, {} )
+
 				tauntBindsWidget:completeAnimation()
 				self.tauntBindsWidget:setAlpha( 0 )
 				self.clipFinished( tauntBindsWidget, {} )
@@ -48,15 +52,18 @@ CoD.tauntWidget.new = function ( menu, controller )
 		KBMouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				tauntArrowWidget:completeAnimation()
 				self.tauntArrowWidget:setAlpha( 0 )
 				self.clipFinished( tauntArrowWidget, {} )
+
 				tauntBindsWidget:completeAnimation()
 				self.tauntBindsWidget:setAlpha( 1 )
 				self.clipFinished( tauntBindsWidget, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "KBMouse",
@@ -83,6 +90,7 @@ CoD.tauntWidget.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.tauntArrowWidget:close()
 		element.tauntBindsWidget:close()

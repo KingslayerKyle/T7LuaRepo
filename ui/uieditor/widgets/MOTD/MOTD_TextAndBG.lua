@@ -4,9 +4,11 @@
 CoD.MOTD_TextAndBG = InheritFrom( LUI.UIElement )
 CoD.MOTD_TextAndBG.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MOTD_TextAndBG )
 	self.id = "MOTD_TextAndBG"
@@ -29,6 +31,7 @@ CoD.MOTD_TextAndBG.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

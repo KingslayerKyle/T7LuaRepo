@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Competitive.Competitive_SettingsList" )
 CoD.GameSettings_CompetitiveAdvancedSettings = InheritFrom( LUI.UIElement )
 CoD.GameSettings_CompetitiveAdvancedSettings.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GameSettings_CompetitiveAdvancedSettings )
 	self.id = "GameSettings_CompetitiveAdvancedSettings"
@@ -74,6 +76,7 @@ CoD.GameSettings_CompetitiveAdvancedSettings.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GameSettingsSelectedItemInfo:close()
 		element.StageTimers:close()

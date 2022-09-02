@@ -4,9 +4,11 @@
 CoD.RepulsorIndicator = InheritFrom( LUI.UIElement )
 CoD.RepulsorIndicator.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RepulsorIndicator )
 	self.id = "RepulsorIndicator"
@@ -34,9 +36,11 @@ CoD.RepulsorIndicator.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				IndicatorOn:completeAnimation()
 				self.IndicatorOn:setAlpha( 0 )
 				self.clipFinished( IndicatorOn, {} )
+
 				IndicatorGlow:completeAnimation()
 				self.IndicatorGlow:setAlpha( 0 )
 				self.clipFinished( IndicatorGlow, {} )
@@ -45,9 +49,11 @@ CoD.RepulsorIndicator.new = function ( menu, controller )
 		Glow = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				IndicatorOn:completeAnimation()
 				self.IndicatorOn:setAlpha( 0 )
 				self.clipFinished( IndicatorOn, {} )
+
 				IndicatorGlow:completeAnimation()
 				self.IndicatorGlow:setAlpha( 1 )
 				self.clipFinished( IndicatorGlow, {} )
@@ -56,9 +62,11 @@ CoD.RepulsorIndicator.new = function ( menu, controller )
 		On = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				IndicatorOn:completeAnimation()
 				self.IndicatorOn:setAlpha( 1 )
 				self.clipFinished( IndicatorOn, {} )
+
 				IndicatorGlow:completeAnimation()
 				self.IndicatorGlow:setAlpha( 0 )
 				self.clipFinished( IndicatorGlow, {} )

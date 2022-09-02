@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_Identity_Subtitle_BG" )
 CoD.TitleWidgetSmall = InheritFrom( LUI.UIElement )
 CoD.TitleWidgetSmall.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TitleWidgetSmall )
 	self.id = "TitleWidgetSmall"
@@ -30,6 +32,7 @@ CoD.TitleWidgetSmall.new = function ( menu, controller )
 	SubTitle:setTopBottom( true, false, 0.5, 21.5 )
 	SubTitle:setText( Engine.Localize( "SOMETHING" ) )
 	SubTitle:setTTF( "fonts/escom.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( SubTitle, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 5 )
 	end )
@@ -40,20 +43,24 @@ CoD.TitleWidgetSmall.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				SubTitle:completeAnimation()
 				self.SubTitle:setAlpha( 0 )
 				self.clipFinished( SubTitle, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuIdentitySubtitleBG0:close()
 	end )

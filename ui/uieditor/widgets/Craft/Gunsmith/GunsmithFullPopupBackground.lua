@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.buttonprompt" )
 CoD.GunsmithFullPopupBackground = InheritFrom( LUI.UIElement )
 CoD.GunsmithFullPopupBackground.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunsmithFullPopupBackground )
 	self.id = "GunsmithFullPopupBackground"

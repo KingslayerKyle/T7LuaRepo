@@ -20,6 +20,7 @@ CoD.GunsmithWarningWidget.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunsmithWarningWidget )
 	self.id = "GunsmithWarningWidget"
@@ -47,9 +48,11 @@ CoD.GunsmithWarningWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				warningImage:completeAnimation()
 				self.warningImage:setAlpha( 1 )
 				self.clipFinished( warningImage, {} )
+
 				warningMsg:completeAnimation()
 				self.warningMsg:setAlpha( 1 )
 				self.clipFinished( warningMsg, {} )
@@ -58,15 +61,18 @@ CoD.GunsmithWarningWidget.new = function ( menu, controller )
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				warningImage:completeAnimation()
 				self.warningImage:setAlpha( 0 )
 				self.clipFinished( warningImage, {} )
+
 				warningMsg:completeAnimation()
 				self.warningMsg:setAlpha( 0 )
 				self.clipFinished( warningMsg, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.warningMsg:close()
 	end )

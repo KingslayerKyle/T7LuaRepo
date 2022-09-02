@@ -4,9 +4,11 @@
 CoD.StartMenu_Party_LeaderNotification = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Party_LeaderNotification.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Party_LeaderNotification )
 	self.id = "StartMenu_Party_LeaderNotification"

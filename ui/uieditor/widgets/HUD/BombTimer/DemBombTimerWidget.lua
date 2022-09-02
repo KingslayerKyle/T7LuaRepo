@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ScoreInfo.ScoreInfo_PanelScale" )
 CoD.DemBombTimerWidget = InheritFrom( LUI.UIElement )
 CoD.DemBombTimerWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DemBombTimerWidget )
 	self.id = "DemBombTimerWidget"
@@ -112,32 +114,41 @@ CoD.DemBombTimerWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
+
 				backgroundDisabled:completeAnimation()
 				self.backgroundDisabled:setAlpha( 0 )
 				self.clipFinished( backgroundDisabled, {} )
+
 				backgroundFriendly:completeAnimation()
 				self.backgroundFriendly:setAlpha( 0 )
 				self.clipFinished( backgroundFriendly, {} )
+
 				backgroundEnemy:completeAnimation()
 				self.backgroundEnemy:setAlpha( 0 )
 				self.clipFinished( backgroundEnemy, {} )
+
 				BombTimerBackground:completeAnimation()
 				self.BombTimerBackground:setAlpha( 0 )
 				self.clipFinished( BombTimerBackground, {} )
+
 				BombTimer:completeAnimation()
 				self.BombTimer:setAlpha( 0 )
 				self.clipFinished( BombTimer, {} )
+
 				AOrBText:completeAnimation()
 				self.AOrBText:setAlpha( 0 )
 				self.clipFinished( AOrBText, {} )
+
 				InactiveText:completeAnimation()
 				self.InactiveText:setAlpha( 0 )
 				self.clipFinished( InactiveText, {} )
@@ -146,27 +157,35 @@ CoD.DemBombTimerWidget.new = function ( menu, controller )
 		HiddenSpectator = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
+
 				backgroundDisabled:completeAnimation()
 				self.backgroundDisabled:setAlpha( 0 )
 				self.clipFinished( backgroundDisabled, {} )
+
 				backgroundFriendly:completeAnimation()
 				self.backgroundFriendly:setAlpha( 0 )
 				self.clipFinished( backgroundFriendly, {} )
+
 				backgroundEnemy:completeAnimation()
 				self.backgroundEnemy:setAlpha( 0 )
 				self.clipFinished( backgroundEnemy, {} )
+
 				BombTimerBackground:completeAnimation()
 				self.BombTimerBackground:setAlpha( 0 )
 				self.clipFinished( BombTimerBackground, {} )
+
 				BombTimer:completeAnimation()
 				self.BombTimer:setAlpha( 0 )
 				self.clipFinished( BombTimer, {} )
+
 				AOrBText:completeAnimation()
 				self.AOrBText:setAlpha( 0 )
 				self.clipFinished( AOrBText, {} )
+
 				InactiveText:completeAnimation()
 				self.InactiveText:setAlpha( 0 )
 				self.clipFinished( InactiveText, {} )
@@ -175,27 +194,35 @@ CoD.DemBombTimerWidget.new = function ( menu, controller )
 		HiddenNoBombSite = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
+
 				backgroundDisabled:completeAnimation()
 				self.backgroundDisabled:setAlpha( 0 )
 				self.clipFinished( backgroundDisabled, {} )
+
 				backgroundFriendly:completeAnimation()
 				self.backgroundFriendly:setAlpha( 0 )
 				self.clipFinished( backgroundFriendly, {} )
+
 				backgroundEnemy:completeAnimation()
 				self.backgroundEnemy:setAlpha( 0 )
 				self.clipFinished( backgroundEnemy, {} )
+
 				BombTimerBackground:completeAnimation()
 				self.BombTimerBackground:setAlpha( 0 )
 				self.clipFinished( BombTimerBackground, {} )
+
 				BombTimer:completeAnimation()
 				self.BombTimer:setAlpha( 0 )
 				self.clipFinished( BombTimer, {} )
+
 				AOrBText:completeAnimation()
 				self.AOrBText:setAlpha( 0 )
 				self.clipFinished( AOrBText, {} )
+
 				InactiveText:completeAnimation()
 				self.InactiveText:setAlpha( 0 )
 				self.clipFinished( InactiveText, {} )
@@ -204,27 +231,35 @@ CoD.DemBombTimerWidget.new = function ( menu, controller )
 		Inactive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 1 )
 				self.clipFinished( Panel, {} )
+
 				backgroundDisabled:completeAnimation()
 				self.backgroundDisabled:setAlpha( 1 )
 				self.clipFinished( backgroundDisabled, {} )
+
 				backgroundFriendly:completeAnimation()
 				self.backgroundFriendly:setAlpha( 0 )
 				self.clipFinished( backgroundFriendly, {} )
+
 				backgroundEnemy:completeAnimation()
 				self.backgroundEnemy:setAlpha( 0 )
 				self.clipFinished( backgroundEnemy, {} )
+
 				BombTimerBackground:completeAnimation()
 				self.BombTimerBackground:setAlpha( 0 )
 				self.clipFinished( BombTimerBackground, {} )
+
 				BombTimer:completeAnimation()
 				self.BombTimer:setAlpha( 0 )
 				self.clipFinished( BombTimer, {} )
+
 				AOrBText:completeAnimation()
 				self.AOrBText:setAlpha( 1 )
 				self.clipFinished( AOrBText, {} )
+
 				InactiveText:completeAnimation()
 				self.InactiveText:setAlpha( 1 )
 				self.InactiveText:setRFTMaterial( LUI.UIImage.GetCachedMaterial( "uie_aberration_no_blur" ) )
@@ -239,27 +274,35 @@ CoD.DemBombTimerWidget.new = function ( menu, controller )
 		Attacking = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 1 )
 				self.clipFinished( Panel, {} )
+
 				backgroundDisabled:completeAnimation()
 				self.backgroundDisabled:setAlpha( 0 )
 				self.clipFinished( backgroundDisabled, {} )
+
 				backgroundFriendly:completeAnimation()
 				self.backgroundFriendly:setAlpha( 1 )
 				self.clipFinished( backgroundFriendly, {} )
+
 				backgroundEnemy:completeAnimation()
 				self.backgroundEnemy:setAlpha( 0 )
 				self.clipFinished( backgroundEnemy, {} )
+
 				BombTimerBackground:completeAnimation()
 				self.BombTimerBackground:setAlpha( 0 )
 				self.clipFinished( BombTimerBackground, {} )
+
 				BombTimer:completeAnimation()
 				self.BombTimer:setAlpha( 1 )
 				self.clipFinished( BombTimer, {} )
+
 				AOrBText:completeAnimation()
 				self.AOrBText:setAlpha( 1 )
 				self.clipFinished( AOrBText, {} )
+
 				InactiveText:completeAnimation()
 				self.InactiveText:setAlpha( 0 )
 				self.clipFinished( InactiveText, {} )
@@ -268,30 +311,38 @@ CoD.DemBombTimerWidget.new = function ( menu, controller )
 		Defending = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				backgroundDisabled:completeAnimation()
 				self.backgroundDisabled:setAlpha( 0 )
 				self.clipFinished( backgroundDisabled, {} )
+
 				backgroundFriendly:completeAnimation()
 				self.backgroundFriendly:setAlpha( 0 )
 				self.clipFinished( backgroundFriendly, {} )
+
 				backgroundEnemy:completeAnimation()
 				self.backgroundEnemy:setAlpha( 1 )
 				self.clipFinished( backgroundEnemy, {} )
+
 				BombTimerBackground:completeAnimation()
 				self.BombTimerBackground:setAlpha( 0 )
 				self.clipFinished( BombTimerBackground, {} )
+
 				BombTimer:completeAnimation()
 				self.BombTimer:setAlpha( 1 )
 				self.clipFinished( BombTimer, {} )
+
 				AOrBText:completeAnimation()
 				self.AOrBText:setAlpha( 1 )
 				self.clipFinished( AOrBText, {} )
+
 				InactiveText:completeAnimation()
 				self.InactiveText:setAlpha( 0 )
 				self.clipFinished( InactiveText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -508,6 +559,7 @@ CoD.DemBombTimerWidget.new = function ( menu, controller )
 			modelName = "Demolition.defending"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 		element.backgroundFriendly:close()

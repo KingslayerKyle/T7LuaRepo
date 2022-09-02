@@ -4,9 +4,11 @@
 CoD.AmmoWidget_Knife = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_Knife.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_Knife )
 	self.id = "AmmoWidget_Knife"
@@ -43,6 +45,7 @@ CoD.AmmoWidget_Knife.new = function ( menu, controller )
 			modelName = "currentWeapon.equippedWeaponReference"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Knife:close()
 	end )

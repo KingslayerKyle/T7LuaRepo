@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Social.Social_Rank_PrestigeText" )
 CoD.Social_Rank = InheritFrom( LUI.UIElement )
 CoD.Social_Rank.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_Rank )
 	self.id = "Social_Rank"

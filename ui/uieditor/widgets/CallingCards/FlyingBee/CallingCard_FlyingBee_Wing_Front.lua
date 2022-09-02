@@ -4,9 +4,11 @@
 CoD.CallingCard_FlyingBee_Wing_Front = InheritFrom( LUI.UIElement )
 CoD.CallingCard_FlyingBee_Wing_Front.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCard_FlyingBee_Wing_Front )
 	self.id = "CallingCard_FlyingBee_Wing_Front"
@@ -25,6 +27,7 @@ CoD.CallingCard_FlyingBee_Wing_Front.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

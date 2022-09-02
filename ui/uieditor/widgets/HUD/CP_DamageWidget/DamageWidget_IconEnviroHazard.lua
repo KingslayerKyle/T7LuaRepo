@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.CP_DamageWidget.DamageWidget_IconEnviroHazardT
 CoD.DamageWidget_IconEnviroHazard = InheritFrom( LUI.UIElement )
 CoD.DamageWidget_IconEnviroHazard.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DamageWidget_IconEnviroHazard )
 	self.id = "DamageWidget_IconEnviroHazard"
@@ -70,6 +72,7 @@ CoD.DamageWidget_IconEnviroHazard.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DamageWidgetIconEnviroHazardType0:completeAnimation()
 				self.DamageWidgetIconEnviroHazardType0:setRGB( 1, 1, 1 )
 				self.DamageWidgetIconEnviroHazardType0:setAlpha( 1 )
@@ -79,12 +82,14 @@ CoD.DamageWidget_IconEnviroHazard.new = function ( menu, controller )
 		Normal = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DamageWidgetIconEnviroHazardType0:completeAnimation()
 				self.DamageWidgetIconEnviroHazardType0:setRGB( 1, 1, 1 )
 				self.clipFinished( DamageWidgetIconEnviroHazardType0, {} )
 			end,
 			Critical = function ()
 				self:setupElementClipCounter( 1 )
+
 				local DamageWidgetIconEnviroHazardType0Frame2 = function ( DamageWidgetIconEnviroHazardType0, event )
 					local DamageWidgetIconEnviroHazardType0Frame3 = function ( DamageWidgetIconEnviroHazardType0, event )
 						local DamageWidgetIconEnviroHazardType0Frame4 = function ( DamageWidgetIconEnviroHazardType0, event )
@@ -147,6 +152,7 @@ CoD.DamageWidget_IconEnviroHazard.new = function ( menu, controller )
 		Critical = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local f17_local0 = function ( f18_arg0, f18_arg1 )
 					local f18_local0 = function ( f19_arg0, f19_arg1 )
 						local f19_local0 = function ( f20_arg0, f20_arg1 )
@@ -195,10 +201,12 @@ CoD.DamageWidget_IconEnviroHazard.new = function ( menu, controller )
 				DamageWidgetIconEnviroHazardType0:beginAnimation( "keyframe", 79, false, false, CoD.TweenType.Linear )
 				self.DamageWidgetIconEnviroHazardType0:setRGB( 1, 0, 0 )
 				DamageWidgetIconEnviroHazardType0:registerEventHandler( "transition_complete_keyframe", f17_local0 )
+
 				self.nextClip = "DefaultClip"
 			end,
 			Normal = function ()
 				self:setupElementClipCounter( 1 )
+
 				local DamageWidgetIconEnviroHazardType0Frame2 = function ( DamageWidgetIconEnviroHazardType0, event )
 					local DamageWidgetIconEnviroHazardType0Frame3 = function ( DamageWidgetIconEnviroHazardType0, event )
 						local DamageWidgetIconEnviroHazardType0Frame4 = function ( DamageWidgetIconEnviroHazardType0, event )
@@ -295,6 +303,7 @@ CoD.DamageWidget_IconEnviroHazard.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.DamageWidgetIconEnviroHazardType0:close()
 	end )

@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.CodCaster.CodCasterLoadoutItemHintText" )
 CoD.CodCasterLoadoutItem = InheritFrom( LUI.UIElement )
 CoD.CodCasterLoadoutItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterLoadoutItem )
 	self.id = "CodCasterLoadoutItem"
@@ -25,6 +27,7 @@ CoD.CodCasterLoadoutItem.new = function ( menu, controller )
 	CodCasterLoadoutSubGrid:setWidgetType( CoD.CodCasterLoadoutListItem )
 	CodCasterLoadoutSubGrid:setHorizontalCount( 6 )
 	CodCasterLoadoutSubGrid:setSpacing( 0 )
+
 	LUI.OverrideFunction_CallOriginalFirst( CodCasterLoadoutSubGrid, "setWidth", function ( element, controller )
 		if IsWidthZero( controller ) and IsElementInState( element, "Shown" ) then
 			SetState( self, "DefaultState" )
@@ -63,18 +66,23 @@ CoD.CodCasterLoadoutItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				CodCasterLoadoutSubGrid:completeAnimation()
 				self.CodCasterLoadoutSubGrid:setAlpha( 0 )
 				self.clipFinished( CodCasterLoadoutSubGrid, {} )
+
 				FocusTop:completeAnimation()
 				self.FocusTop:setAlpha( 0 )
 				self.clipFinished( FocusTop, {} )
+
 				FocusBottom:completeAnimation()
 				self.FocusBottom:setAlpha( 0 )
 				self.clipFinished( FocusBottom, {} )
+
 				spacer:completeAnimation()
 				self.spacer:setAlpha( 0 )
 				self.clipFinished( spacer, {} )
+
 				CodCasterLoadoutItemHintText:completeAnimation()
 				self.CodCasterLoadoutItemHintText:setAlpha( 0 )
 				self.clipFinished( CodCasterLoadoutItemHintText, {} )
@@ -83,36 +91,45 @@ CoD.CodCasterLoadoutItem.new = function ( menu, controller )
 		Shown = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				CodCasterLoadoutSubGrid:completeAnimation()
 				self.CodCasterLoadoutSubGrid:setAlpha( 1 )
 				self.clipFinished( CodCasterLoadoutSubGrid, {} )
+
 				FocusTop:completeAnimation()
 				self.FocusTop:setAlpha( 0 )
 				self.clipFinished( FocusTop, {} )
+
 				FocusBottom:completeAnimation()
 				self.FocusBottom:setAlpha( 0 )
 				self.clipFinished( FocusBottom, {} )
+
 				spacer:completeAnimation()
 				self.spacer:setAlpha( 1 )
 				self.clipFinished( spacer, {} )
+
 				CodCasterLoadoutItemHintText:completeAnimation()
 				self.CodCasterLoadoutItemHintText:setAlpha( 0 )
 				self.clipFinished( CodCasterLoadoutItemHintText, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 3 )
+
 				FocusTop:completeAnimation()
 				self.FocusTop:setAlpha( 1 )
 				self.clipFinished( FocusTop, {} )
+
 				FocusBottom:completeAnimation()
 				self.FocusBottom:setAlpha( 1 )
 				self.clipFinished( FocusBottom, {} )
+
 				CodCasterLoadoutItemHintText:completeAnimation()
 				self.CodCasterLoadoutItemHintText:setAlpha( 1 )
 				self.clipFinished( CodCasterLoadoutItemHintText, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if PropertyIsTrue( self, "m_active" ) and IsElementInState( element, "Shown" ) then
 			PlayClip( self, "Active", controller )
@@ -123,6 +140,7 @@ CoD.CodCasterLoadoutItem.new = function ( menu, controller )
 			SetWidth( self, "0" )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CodCasterLoadoutSubGrid:close()
 		element.FocusTop:close()

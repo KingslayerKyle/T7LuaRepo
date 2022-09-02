@@ -4,9 +4,11 @@
 CoD.weakpoint_NewDashEl = InheritFrom( LUI.UIElement )
 CoD.weakpoint_NewDashEl.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.weakpoint_NewDashEl )
 	self.id = "weakpoint_NewDashEl"
@@ -36,6 +38,7 @@ CoD.weakpoint_NewDashEl.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local Image0Frame2 = function ( Image0, event )
 					if not event.interrupted then
 						Image0:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -51,6 +54,7 @@ CoD.weakpoint_NewDashEl.new = function ( menu, controller )
 				Image0:completeAnimation()
 				self.Image0:setAlpha( RandomAddPercent( -40, 1 ) )
 				Image0Frame2( Image0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

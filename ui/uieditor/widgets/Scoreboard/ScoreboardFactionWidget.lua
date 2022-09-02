@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Scoreboard.ScoreboardFFANameWidget" )
 CoD.ScoreboardFactionWidget = InheritFrom( LUI.UIElement )
 CoD.ScoreboardFactionWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.ScoreboardFactionWidget )
 	self.id = "ScoreboardFactionWidget"
@@ -122,27 +124,34 @@ CoD.ScoreboardFactionWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				FactionIcon:completeAnimation()
 				self.FactionIcon:setLeftRight( false, false, -63.97, 66.87 )
 				self.FactionIcon:setTopBottom( false, false, -54.84, 73.89 )
 				self.clipFinished( FactionIcon, {} )
+
 				Score0:completeAnimation()
 				self.Score0:setAlpha( 1 )
 				self.clipFinished( Score0, {} )
+
 				ScoreboardFactionNameWidget:completeAnimation()
 				self.ScoreboardFactionNameWidget:setLeftRight( true, false, 2.02, 139.04 )
 				self.ScoreboardFactionNameWidget:setTopBottom( true, false, 0, 26 )
 				self.ScoreboardFactionNameWidget:setAlpha( 1 )
 				self.clipFinished( ScoreboardFactionNameWidget, {} )
+
 				ffaScore:completeAnimation()
 				self.ffaScore:setAlpha( 0 )
 				self.clipFinished( ffaScore, {} )
+
 				ffaName:completeAnimation()
 				self.ffaName:setAlpha( 0 )
 				self.clipFinished( ffaName, {} )
+
 				FactionColor:completeAnimation()
 				self.FactionColor:setAlpha( 0 )
 				self.clipFinished( FactionColor, {} )
+
 				ScoreboardFFANameWidget:completeAnimation()
 				self.ScoreboardFFANameWidget:setAlpha( 0 )
 				self.clipFinished( ScoreboardFFANameWidget, {} )
@@ -151,34 +160,43 @@ CoD.ScoreboardFactionWidget.new = function ( menu, controller )
 		FFA = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				IconGlowPanel:completeAnimation()
 				self.IconGlowPanel:setAlpha( 0 )
 				self.clipFinished( IconGlowPanel, {} )
+
 				FactionIcon:completeAnimation()
 				self.FactionIcon:setAlpha( 0 )
 				self.clipFinished( FactionIcon, {} )
+
 				Score0:completeAnimation()
 				self.Score0:setAlpha( 0 )
 				self.clipFinished( Score0, {} )
+
 				ScoreboardFactionNameWidget:completeAnimation()
 				self.ScoreboardFactionNameWidget:setAlpha( 0 )
 				self.clipFinished( ScoreboardFactionNameWidget, {} )
+
 				ffaEmblem:completeAnimation()
 				self.ffaEmblem:setLeftRight( true, false, 1, 201.61 )
 				self.ffaEmblem:setTopBottom( true, false, 85, 208 )
 				self.ffaEmblem:setAlpha( 1 )
 				self.clipFinished( ffaEmblem, {} )
+
 				ffaScore:completeAnimation()
 				self.ffaScore:setLeftRight( true, false, -13.5, 211.5 )
 				self.ffaScore:setTopBottom( true, false, 1, 56.05 )
 				self.ffaScore:setAlpha( 1 )
 				self.clipFinished( ffaScore, {} )
+
 				ffaName:completeAnimation()
 				self.ffaName:setLeftRight( true, false, 2.02, 139.04 )
 				self.ffaName:setTopBottom( true, false, 58, 84 )
 				self.ffaName:setAlpha( 0 )
 				self.clipFinished( ffaName, {} )
+
 				ScoreboardFFANameWidget:completeAnimation()
+
 				ScoreboardFFANameWidget.FactionName:completeAnimation()
 				self.ScoreboardFFANameWidget:setLeftRight( true, false, 1.5, 200 )
 				self.ScoreboardFFANameWidget:setTopBottom( true, false, 58, 84 )
@@ -190,27 +208,34 @@ CoD.ScoreboardFactionWidget.new = function ( menu, controller )
 		CodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				FactionIcon:completeAnimation()
 				self.FactionIcon:setLeftRight( false, false, -90.5, 90.5 )
 				self.FactionIcon:setTopBottom( false, false, -57.24, 57.24 )
 				self.clipFinished( FactionIcon, {} )
+
 				Score0:completeAnimation()
 				self.Score0:setAlpha( 1 )
 				self.clipFinished( Score0, {} )
+
 				ScoreboardFactionNameWidget:completeAnimation()
 				self.ScoreboardFactionNameWidget:setAlpha( 1 )
 				self.clipFinished( ScoreboardFactionNameWidget, {} )
+
 				ffaScore:completeAnimation()
 				self.ffaScore:setAlpha( 0 )
 				self.clipFinished( ffaScore, {} )
+
 				ffaName:completeAnimation()
 				self.ffaName:setAlpha( 0 )
 				self.clipFinished( ffaName, {} )
+
 				FactionColor:completeAnimation()
 				self.FactionColor:setLeftRight( true, false, 0, 200 )
 				self.FactionColor:setTopBottom( true, false, 0, 4 )
 				self.FactionColor:setAlpha( 1 )
 				self.clipFinished( FactionColor, {} )
+
 				ScoreboardFFANameWidget:completeAnimation()
 				self.ScoreboardFFANameWidget:setAlpha( 0 )
 				self.clipFinished( ScoreboardFFANameWidget, {} )
@@ -219,27 +244,34 @@ CoD.ScoreboardFactionWidget.new = function ( menu, controller )
 		CodCasterAAR = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				FactionIcon:completeAnimation()
 				self.FactionIcon:setLeftRight( false, false, -90.5, 90.5 )
 				self.FactionIcon:setTopBottom( false, false, -57.24, 57.24 )
 				self.clipFinished( FactionIcon, {} )
+
 				Score0:completeAnimation()
 				self.Score0:setAlpha( 1 )
 				self.clipFinished( Score0, {} )
+
 				ScoreboardFactionNameWidget:completeAnimation()
 				self.ScoreboardFactionNameWidget:setAlpha( 1 )
 				self.clipFinished( ScoreboardFactionNameWidget, {} )
+
 				ffaScore:completeAnimation()
 				self.ffaScore:setAlpha( 0 )
 				self.clipFinished( ffaScore, {} )
+
 				ffaName:completeAnimation()
 				self.ffaName:setAlpha( 0 )
 				self.clipFinished( ffaName, {} )
+
 				FactionColor:completeAnimation()
 				self.FactionColor:setLeftRight( true, false, 0, 200 )
 				self.FactionColor:setTopBottom( true, false, 0, 4 )
 				self.FactionColor:setAlpha( 0 )
 				self.clipFinished( FactionColor, {} )
+
 				ScoreboardFFANameWidget:completeAnimation()
 				self.ScoreboardFFANameWidget:setAlpha( 0 )
 				self.clipFinished( ScoreboardFFANameWidget, {} )
@@ -248,36 +280,44 @@ CoD.ScoreboardFactionWidget.new = function ( menu, controller )
 		TeamCoDCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				FactionIcon:completeAnimation()
 				self.FactionIcon:setLeftRight( false, false, -63.97, 66.87 )
 				self.FactionIcon:setTopBottom( false, false, -54.84, 73.89 )
 				self.FactionIcon:setAlpha( 0 )
 				self.clipFinished( FactionIcon, {} )
+
 				Score0:completeAnimation()
 				self.Score0:setAlpha( 1 )
 				self.clipFinished( Score0, {} )
+
 				ScoreboardFactionNameWidget:completeAnimation()
 				self.ScoreboardFactionNameWidget:setLeftRight( true, false, 2.02, 139.04 )
 				self.ScoreboardFactionNameWidget:setTopBottom( true, false, 0, 26 )
 				self.ScoreboardFactionNameWidget:setAlpha( 1 )
 				self.clipFinished( ScoreboardFactionNameWidget, {} )
+
 				ffaScore:completeAnimation()
 				self.ffaScore:setAlpha( 0 )
 				self.clipFinished( ffaScore, {} )
+
 				ffaName:completeAnimation()
 				self.ffaName:setAlpha( 0 )
 				self.clipFinished( ffaName, {} )
+
 				FactionColor:completeAnimation()
 				self.FactionColor:setLeftRight( true, false, 0, 200 )
 				self.FactionColor:setTopBottom( true, false, 0, 4 )
 				self.FactionColor:setAlpha( 0 )
 				self.clipFinished( FactionColor, {} )
+
 				ScoreboardFFANameWidget:completeAnimation()
 				self.ScoreboardFFANameWidget:setAlpha( 0 )
 				self.clipFinished( ScoreboardFFANameWidget, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "FFA",
@@ -320,6 +360,7 @@ CoD.ScoreboardFactionWidget.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_TEAM_SPECTATOR
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ScoreboardFactionWidgetBlur:close()
 		element.Score0:close()

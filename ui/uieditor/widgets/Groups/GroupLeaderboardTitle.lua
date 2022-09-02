@@ -4,9 +4,11 @@
 CoD.GroupLeaderboardTitle = InheritFrom( LUI.UIElement )
 CoD.GroupLeaderboardTitle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupLeaderboardTitle )
 	self.id = "GroupLeaderboardTitle"
@@ -39,19 +41,23 @@ CoD.GroupLeaderboardTitle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		LeaderboardOptions = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		NoLeaderboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "LeaderboardOptions",

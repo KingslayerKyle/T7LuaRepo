@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.MenuChooseClass.ItemWidgets.WeaponItemModelWid
 CoD.PerksWidget_InGame = InheritFrom( LUI.UIElement )
 CoD.PerksWidget_InGame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PerksWidget_InGame )
 	self.id = "PerksWidget_InGame"

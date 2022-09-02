@@ -12,6 +12,7 @@ local f0_local0 = function ()
 end
 
 local f0_local1 = function ( f2_arg0 )
+
 	f2_arg0:completeAnimation()
 	f2_arg0:playClip( "FadeOut" )
 end
@@ -41,9 +42,11 @@ end
 CoD.ChatClientChatEntryContainerNew = InheritFrom( LUI.UIElement )
 CoD.ChatClientChatEntryContainerNew.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChatClientChatEntryContainerNew )
 	self.id = "ChatClientChatEntryContainerNew"
@@ -65,9 +68,11 @@ CoD.ChatClientChatEntryContainerNew.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			FadeOut = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ChatClientChatEntryFrame2 = function ( ChatClientChatEntry, event )
 					if not event.interrupted then
 						ChatClientChatEntry:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -86,6 +91,7 @@ CoD.ChatClientChatEntryContainerNew.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ChatClientChatEntry:close()
 	end )

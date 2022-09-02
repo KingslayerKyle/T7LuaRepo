@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Challenges.Challenges_Title" )
 CoD.AdminTabGroupInfoFrame = InheritFrom( LUI.UIElement )
 CoD.AdminTabGroupInfoFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AdminTabGroupInfoFrame )
 	self.id = "AdminTabGroupInfoFrame"
@@ -78,6 +80,7 @@ CoD.AdminTabGroupInfoFrame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GroupsInputButton:close()
 		element.ChallengesTitle0:close()

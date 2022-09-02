@@ -4,9 +4,11 @@
 CoD.vhud_ms_DamageIconSide = InheritFrom( LUI.UIElement )
 CoD.vhud_ms_DamageIconSide.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ms_DamageIconSide )
 	self.id = "vhud_ms_DamageIconSide"
@@ -25,6 +27,7 @@ CoD.vhud_ms_DamageIconSide.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				msDamageRight:completeAnimation()
 				self.msDamageRight:setAlpha( 1 )
 				self.clipFinished( msDamageRight, {} )
@@ -33,6 +36,7 @@ CoD.vhud_ms_DamageIconSide.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				msDamageRight:completeAnimation()
 				self.msDamageRight:setAlpha( 0 )
 				self.clipFinished( msDamageRight, {} )

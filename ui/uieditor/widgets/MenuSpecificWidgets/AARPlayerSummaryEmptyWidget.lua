@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.AARPlayerSummaryEmptyWidget = InheritFrom( LUI.UIElement )
 CoD.AARPlayerSummaryEmptyWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AARPlayerSummaryEmptyWidget )
 	self.id = "AARPlayerSummaryEmptyWidget"
@@ -50,15 +52,19 @@ CoD.AARPlayerSummaryEmptyWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 0 )
 				self.clipFinished( background, {} )
+
 				border:completeAnimation()
 				self.border:setAlpha( 0 )
 				self.clipFinished( border, {} )
+
 				emptyPlayerBg:completeAnimation()
 				self.emptyPlayerBg:setAlpha( 0 )
 				self.clipFinished( emptyPlayerBg, {} )
+
 				emptyPlayerLabel:completeAnimation()
 				self.emptyPlayerLabel:setAlpha( 0 )
 				self.clipFinished( emptyPlayerLabel, {} )
@@ -67,21 +73,26 @@ CoD.AARPlayerSummaryEmptyWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 1 )
 				self.clipFinished( background, {} )
+
 				border:completeAnimation()
 				self.border:setRGB( 0, 0, 0 )
 				self.clipFinished( border, {} )
+
 				emptyPlayerBg:completeAnimation()
 				self.emptyPlayerBg:setAlpha( 1 )
 				self.clipFinished( emptyPlayerBg, {} )
+
 				emptyPlayerLabel:completeAnimation()
 				self.emptyPlayerLabel:setAlpha( 1 )
 				self.clipFinished( emptyPlayerLabel, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.border:close()
 	end )

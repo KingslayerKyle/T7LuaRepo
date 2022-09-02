@@ -21,6 +21,7 @@ CoD.FileshareSidePopupLayout.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FileshareSidePopupLayout )
 	self.id = "FileshareSidePopupLayout"
@@ -82,6 +83,7 @@ CoD.FileshareSidePopupLayout.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.List0:close()
 		element.hintText:close()

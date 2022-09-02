@@ -4,9 +4,11 @@
 CoD.scorestreaksArrow = InheritFrom( LUI.UIElement )
 CoD.scorestreaksArrow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.scorestreaksArrow )
 	self.id = "scorestreaksArrow"
@@ -27,6 +29,7 @@ CoD.scorestreaksArrow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				arrowUp:completeAnimation()
 				self.arrowUp:setAlpha( 1 )
 				self.clipFinished( arrowUp, {} )
@@ -35,12 +38,14 @@ CoD.scorestreaksArrow.new = function ( menu, controller )
 		NoHintText = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				arrowUp:completeAnimation()
 				self.arrowUp:setAlpha( 0 )
 				self.clipFinished( arrowUp, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoHintText",

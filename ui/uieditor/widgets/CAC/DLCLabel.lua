@@ -4,9 +4,11 @@
 CoD.DLCLabel = InheritFrom( LUI.UIElement )
 CoD.DLCLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DLCLabel )
 	self.id = "DLCLabel"
@@ -64,6 +66,7 @@ CoD.DLCLabel.new = function ( menu, controller )
 	Text:setTopBottom( false, false, -11.18, 13.82 )
 	Text:setRGB( 0, 0, 0 )
 	Text:setTTF( "fonts/escom.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( Text, "setText", function ( element, controller )
 		ScaleWidgetToLabelRightAligned( self, element, 0 )
 	end )
@@ -80,24 +83,31 @@ CoD.DLCLabel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				DLCLabelYellowRight:completeAnimation()
 				self.DLCLabelYellowRight:setAlpha( 1 )
 				self.clipFinished( DLCLabelYellowRight, {} )
+
 				DLCLabelYellowCenter:completeAnimation()
 				self.DLCLabelYellowCenter:setAlpha( 1 )
 				self.clipFinished( DLCLabelYellowCenter, {} )
+
 				DLCLabelYellowLeft:completeAnimation()
 				self.DLCLabelYellowLeft:setAlpha( 1 )
 				self.clipFinished( DLCLabelYellowLeft, {} )
+
 				DLCLabelGreyRight:completeAnimation()
 				self.DLCLabelGreyRight:setAlpha( 0 )
 				self.clipFinished( DLCLabelGreyRight, {} )
+
 				DLCLabelGreyCenter:completeAnimation()
 				self.DLCLabelGreyCenter:setAlpha( 0 )
 				self.clipFinished( DLCLabelGreyCenter, {} )
+
 				DLCLabelGreyLeft:completeAnimation()
 				self.DLCLabelGreyLeft:setAlpha( 0 )
 				self.clipFinished( DLCLabelGreyLeft, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 1 )
 				self.clipFinished( Text, {} )
@@ -106,29 +116,37 @@ CoD.DLCLabel.new = function ( menu, controller )
 		HasDLC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				DLCLabelYellowRight:completeAnimation()
 				self.DLCLabelYellowRight:setAlpha( 0 )
 				self.clipFinished( DLCLabelYellowRight, {} )
+
 				DLCLabelYellowCenter:completeAnimation()
 				self.DLCLabelYellowCenter:setAlpha( 0 )
 				self.clipFinished( DLCLabelYellowCenter, {} )
+
 				DLCLabelYellowLeft:completeAnimation()
 				self.DLCLabelYellowLeft:setAlpha( 0 )
 				self.clipFinished( DLCLabelYellowLeft, {} )
+
 				DLCLabelGreyRight:completeAnimation()
 				self.DLCLabelGreyRight:setAlpha( 0 )
 				self.clipFinished( DLCLabelGreyRight, {} )
+
 				DLCLabelGreyCenter:completeAnimation()
 				self.DLCLabelGreyCenter:setAlpha( 0 )
 				self.clipFinished( DLCLabelGreyCenter, {} )
+
 				DLCLabelGreyLeft:completeAnimation()
 				self.DLCLabelGreyLeft:setAlpha( 0 )
 				self.clipFinished( DLCLabelGreyLeft, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 0 )
 				self.clipFinished( Text, {} )
@@ -137,21 +155,27 @@ CoD.DLCLabel.new = function ( menu, controller )
 		Greyscale = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				DLCLabelYellowRight:completeAnimation()
 				self.DLCLabelYellowRight:setAlpha( 0 )
 				self.clipFinished( DLCLabelYellowRight, {} )
+
 				DLCLabelYellowCenter:completeAnimation()
 				self.DLCLabelYellowCenter:setAlpha( 0 )
 				self.clipFinished( DLCLabelYellowCenter, {} )
+
 				DLCLabelYellowLeft:completeAnimation()
 				self.DLCLabelYellowLeft:setAlpha( 0 )
 				self.clipFinished( DLCLabelYellowLeft, {} )
+
 				DLCLabelGreyRight:completeAnimation()
 				self.DLCLabelGreyRight:setAlpha( 1 )
 				self.clipFinished( DLCLabelGreyRight, {} )
+
 				DLCLabelGreyCenter:completeAnimation()
 				self.DLCLabelGreyCenter:setAlpha( 1 )
 				self.clipFinished( DLCLabelGreyCenter, {} )
+
 				DLCLabelGreyLeft:completeAnimation()
 				self.DLCLabelGreyLeft:setAlpha( 1 )
 				self.DLCLabelGreyLeft:setImage( RegisterImage( "uie_t7_zombie_dlclabel_left_greyscale" ) )
@@ -159,6 +183,7 @@ CoD.DLCLabel.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HasDLC",
@@ -195,6 +220,7 @@ CoD.DLCLabel.new = function ( menu, controller )
 			modelName = "itemIndex"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Text:close()
 	end )

@@ -4,9 +4,11 @@
 CoD.BM_Debug_LootItemStats = InheritFrom( LUI.UIElement )
 CoD.BM_Debug_LootItemStats.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Debug_LootItemStats )
 	self.id = "BM_Debug_LootItemStats"
@@ -29,6 +31,7 @@ CoD.BM_Debug_LootItemStats.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DebugLootItemStats:completeAnimation()
 				self.DebugLootItemStats:setAlpha( 0 )
 				self.clipFinished( DebugLootItemStats, {} )
@@ -37,12 +40,14 @@ CoD.BM_Debug_LootItemStats.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DebugLootItemStats:completeAnimation()
 				self.DebugLootItemStats:setAlpha( 1 )
 				self.clipFinished( DebugLootItemStats, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

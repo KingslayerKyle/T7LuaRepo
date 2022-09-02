@@ -4,9 +4,11 @@
 CoD.FE_TitleElemForeC = InheritFrom( LUI.UIElement )
 CoD.FE_TitleElemForeC.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_TitleElemForeC )
 	self.id = "FE_TitleElemForeC"
@@ -27,6 +29,7 @@ CoD.FE_TitleElemForeC.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local forecFrame2 = function ( forec, event )
 					local forecFrame3 = function ( forec, event )
 						local forecFrame4 = function ( forec, event )
@@ -75,6 +78,7 @@ CoD.FE_TitleElemForeC.new = function ( menu, controller )
 				self.forec:setLeftRight( true, false, 0, 16 )
 				self.forec:setTopBottom( true, false, 0, 65.33 )
 				forecFrame2( forec, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

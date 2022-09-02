@@ -4,9 +4,11 @@
 CoD.EmblemLayerArrows = InheritFrom( LUI.UIElement )
 CoD.EmblemLayerArrows.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemLayerArrows )
 	self.id = "EmblemLayerArrows"
@@ -38,9 +40,11 @@ CoD.EmblemLayerArrows.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				leftArrow:completeAnimation()
 				self.leftArrow:setAlpha( 0 )
 				self.clipFinished( leftArrow, {} )
+
 				rightArrow:completeAnimation()
 				self.rightArrow:setAlpha( 0 )
 				self.clipFinished( rightArrow, {} )
@@ -49,6 +53,7 @@ CoD.EmblemLayerArrows.new = function ( menu, controller )
 		RightButtonPressed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local leftArrowFrame2 = function ( leftArrow, event )
 					if not event.interrupted then
 						leftArrow:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )
@@ -84,6 +89,7 @@ CoD.EmblemLayerArrows.new = function ( menu, controller )
 		LeftButtonPressed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local leftArrowFrame2 = function ( leftArrow, event )
 					if not event.interrupted then
 						leftArrow:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )

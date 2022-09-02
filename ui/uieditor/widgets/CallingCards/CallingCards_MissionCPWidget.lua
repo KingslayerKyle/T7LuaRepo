@@ -4,9 +4,11 @@
 CoD.CallingCards_MissionCPWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_MissionCPWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_MissionCPWidget )
 	self.id = "CallingCards_MissionCPWidget"

@@ -4,9 +4,11 @@
 CoD.horizontalCounter = InheritFrom( LUI.UIElement )
 CoD.horizontalCounter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.horizontalCounter )
 	self.id = "horizontalCounter"
@@ -67,19 +69,24 @@ CoD.horizontalCounter.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				upArrow:completeAnimation()
 				self.upArrow:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.upArrow:setAlpha( 1 )
 				self.clipFinished( upArrow, {} )
+
 				currentItem:completeAnimation()
 				self.currentItem:setAlpha( 1 )
 				self.clipFinished( currentItem, {} )
+
 				dividor:completeAnimation()
 				self.dividor:setAlpha( 1 )
 				self.clipFinished( dividor, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 1 )
 				self.clipFinished( count, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.downArrow:setAlpha( 1 )
@@ -89,19 +96,24 @@ CoD.horizontalCounter.new = function ( menu, controller )
 		AtLeftAndRight = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				upArrow:completeAnimation()
 				self.upArrow:setRGB( 0.2, 0.29, 0.33 )
 				self.upArrow:setAlpha( 1 )
 				self.clipFinished( upArrow, {} )
+
 				currentItem:completeAnimation()
 				self.currentItem:setAlpha( 1 )
 				self.clipFinished( currentItem, {} )
+
 				dividor:completeAnimation()
 				self.dividor:setAlpha( 1 )
 				self.clipFinished( dividor, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 1 )
 				self.clipFinished( count, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setRGB( 0.2, 0.29, 0.33 )
 				self.downArrow:setAlpha( 1 )
@@ -111,19 +123,24 @@ CoD.horizontalCounter.new = function ( menu, controller )
 		AtLeft = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				upArrow:completeAnimation()
 				self.upArrow:setRGB( 0.2, 0.29, 0.33 )
 				self.upArrow:setAlpha( 1 )
 				self.clipFinished( upArrow, {} )
+
 				currentItem:completeAnimation()
 				self.currentItem:setAlpha( 1 )
 				self.clipFinished( currentItem, {} )
+
 				dividor:completeAnimation()
 				self.dividor:setAlpha( 1 )
 				self.clipFinished( dividor, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 1 )
 				self.clipFinished( count, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.downArrow:setAlpha( 1 )
@@ -133,19 +150,24 @@ CoD.horizontalCounter.new = function ( menu, controller )
 		AtRight = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				upArrow:completeAnimation()
 				self.upArrow:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.upArrow:setAlpha( 1 )
 				self.clipFinished( upArrow, {} )
+
 				currentItem:completeAnimation()
 				self.currentItem:setAlpha( 1 )
 				self.clipFinished( currentItem, {} )
+
 				dividor:completeAnimation()
 				self.dividor:setAlpha( 1 )
 				self.clipFinished( dividor, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 1 )
 				self.clipFinished( count, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setRGB( 0.2, 0.29, 0.33 )
 				self.downArrow:setAlpha( 1 )
@@ -155,24 +177,30 @@ CoD.horizontalCounter.new = function ( menu, controller )
 		NoItems = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				upArrow:completeAnimation()
 				self.upArrow:setAlpha( 0 )
 				self.clipFinished( upArrow, {} )
+
 				currentItem:completeAnimation()
 				self.currentItem:setAlpha( 0 )
 				self.clipFinished( currentItem, {} )
+
 				dividor:completeAnimation()
 				self.dividor:setAlpha( 0 )
 				self.clipFinished( dividor, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 0 )
 				self.clipFinished( count, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setAlpha( 0 )
 				self.clipFinished( downArrow, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "AtLeftAndRight",

@@ -4,9 +4,11 @@
 CoD.FileshareBookmarkedItem = InheritFrom( LUI.UIElement )
 CoD.FileshareBookmarkedItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FileshareBookmarkedItem )
 	self.id = "FileshareBookmarkedItem"
@@ -39,6 +41,7 @@ CoD.FileshareBookmarkedItem.new = function ( menu, controller )
 	Text:setTTF( "fonts/escom.ttf" )
 	Text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	Text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( Text, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 5 )
 	end )
@@ -49,12 +52,15 @@ CoD.FileshareBookmarkedItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				BestTimeBox:completeAnimation()
 				self.BestTimeBox:setAlpha( 0 )
 				self.clipFinished( BestTimeBox, {} )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 0 )
 				self.clipFinished( Image, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 0 )
 				self.clipFinished( Text, {} )
@@ -63,12 +69,15 @@ CoD.FileshareBookmarkedItem.new = function ( menu, controller )
 		IconOnly = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				BestTimeBox:completeAnimation()
 				self.BestTimeBox:setAlpha( 0 )
 				self.clipFinished( BestTimeBox, {} )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 1 )
 				self.clipFinished( Image, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 0 )
 				self.clipFinished( Text, {} )
@@ -77,12 +86,15 @@ CoD.FileshareBookmarkedItem.new = function ( menu, controller )
 		IconWithText = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				BestTimeBox:completeAnimation()
 				self.BestTimeBox:setAlpha( 0.5 )
 				self.clipFinished( BestTimeBox, {} )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 1 )
 				self.clipFinished( Image, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 1 )
 				self.clipFinished( Text, {} )

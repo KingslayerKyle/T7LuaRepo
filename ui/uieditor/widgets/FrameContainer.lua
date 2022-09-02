@@ -4,9 +4,11 @@
 CoD.FrameContainer = InheritFrom( LUI.UIElement )
 CoD.FrameContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FrameContainer )
 	self.id = "FrameContainer"
@@ -27,6 +29,7 @@ CoD.FrameContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				frame:completeAnimation()
 				self.frame:setAlpha( 1 )
 				self.clipFinished( frame, {} )
@@ -35,6 +38,7 @@ CoD.FrameContainer.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				frame:completeAnimation()
 				self.frame:setAlpha( 0 )
 				self.clipFinished( frame, {} )

@@ -49,6 +49,7 @@ local PostLoadFunc = function ( f2_arg0, f2_arg1 )
 	
 	f2_arg0.notificationInProgress = false
 	f2_arg0.nextNotification = nil
+
 	LUI.OverrideFunction_CallOriginalSecond( f2_arg0, "playClip", function ( element )
 		element.notificationInProgress = true
 	end )
@@ -77,9 +78,11 @@ end
 CoD.ZmNotifBGB_ContainerFactory = InheritFrom( LUI.UIElement )
 CoD.ZmNotifBGB_ContainerFactory.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmNotifBGB_ContainerFactory )
 	self.id = "ZmNotifBGB_ContainerFactory"
@@ -414,6 +417,7 @@ CoD.ZmNotifBGB_ContainerFactory.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
@@ -423,28 +427,36 @@ CoD.ZmNotifBGB_ContainerFactory.new = function ( menu, controller )
 				basicImage:beginAnimation( "keyframe", 4369, false, false, CoD.TweenType.Linear )
 				basicImage:setAlpha( 0 )
 				basicImage:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				bgbGlowOrangeOver:completeAnimation()
 				self.bgbGlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( bgbGlowOrangeOver, {} )
+
 				bgbTexture:completeAnimation()
 				self.bgbTexture:setAlpha( 0 )
 				self.clipFinished( bgbTexture, {} )
+
 				bgbAbilitySwirl:completeAnimation()
 				self.bgbAbilitySwirl:setAlpha( 0 )
 				self.clipFinished( bgbAbilitySwirl, {} )
+
 				ZmNotif1CursorHint0:completeAnimation()
 				self.ZmNotif1CursorHint0:setAlpha( 0 )
 				self.clipFinished( ZmNotif1CursorHint0, {} )
+
 				ZmNotifFactory:completeAnimation()
 				self.ZmNotifFactory:setAlpha( 0 )
 				self.clipFinished( ZmNotifFactory, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setRGB( 0, 0, 0 )
 				self.ZmFxSpark20:setAlpha( 1 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				Flsh:completeAnimation()
 				self.Flsh:setRGB( 0.62, 0.22, 0 )
 				self.Flsh:setAlpha( 0 )
@@ -458,6 +470,7 @@ CoD.ZmNotifBGB_ContainerFactory.new = function ( menu, controller )
 			end,
 			TextandImageBGB = function ()
 				self:setupElementClipCounter( 22 )
+
 				local PanelFrame2 = function ( Panel, event )
 					local PanelFrame3 = function ( Panel, event )
 						local PanelFrame4 = function ( Panel, event )
@@ -494,9 +507,11 @@ CoD.ZmNotifBGB_ContainerFactory.new = function ( menu, controller )
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				PanelFrame2( Panel, {} )
+
 				basicImageBacking:completeAnimation()
 				self.basicImageBacking:setAlpha( 0 )
 				self.clipFinished( basicImageBacking, {} )
+
 				basicImage:completeAnimation()
 				self.basicImage:setAlpha( 0 )
 				self.clipFinished( basicImage, {} )
@@ -893,6 +908,7 @@ CoD.ZmNotifBGB_ContainerFactory.new = function ( menu, controller )
 				self.Glow:setRGB( 0, 0.04, 1 )
 				self.Glow:setAlpha( 0 )
 				GlowFrame2( Glow, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
@@ -1213,21 +1229,25 @@ CoD.ZmNotifBGB_ContainerFactory.new = function ( menu, controller )
 				self.Lightning:setTopBottom( true, false, -22.5, 193.5 )
 				self.Lightning:setAlpha( 0 )
 				LightningFrame2( Lightning, {} )
+
 				Lightning2:completeAnimation()
 				self.Lightning2:setAlpha( 0 )
 				self.clipFinished( Lightning2, {} )
+
 				Lightning3:completeAnimation()
 				self.Lightning3:setAlpha( 0 )
 				self.clipFinished( Lightning3, {} )
 				CursorHint:beginAnimation( "keyframe", 3769, false, false, CoD.TweenType.Linear )
 				CursorHint:setAlpha( 0 )
 				CursorHint:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				Last5RoundTime:completeAnimation()
 				self.Last5RoundTime:setAlpha( 0 )
 				self.clipFinished( Last5RoundTime, {} )
 			end,
 			TextandImageBGBToken = function ()
 				self:setupElementClipCounter( 24 )
+
 				local PanelFrame2 = function ( Panel, event )
 					local PanelFrame3 = function ( Panel, event )
 						local PanelFrame4 = function ( Panel, event )
@@ -1264,9 +1284,11 @@ CoD.ZmNotifBGB_ContainerFactory.new = function ( menu, controller )
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				PanelFrame2( Panel, {} )
+
 				basicImageBacking:completeAnimation()
 				self.basicImageBacking:setAlpha( 0 )
 				self.clipFinished( basicImageBacking, {} )
+
 				basicImage:completeAnimation()
 				self.basicImage:setAlpha( 0 )
 				self.clipFinished( basicImage, {} )
@@ -1853,6 +1875,7 @@ CoD.ZmNotifBGB_ContainerFactory.new = function ( menu, controller )
 				self.Glow:setRGB( 0, 0.04, 1 )
 				self.Glow:setAlpha( 0 )
 				GlowFrame2( Glow, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
@@ -2164,21 +2187,25 @@ CoD.ZmNotifBGB_ContainerFactory.new = function ( menu, controller )
 				self.Lightning:setTopBottom( true, false, -22.5, 193.5 )
 				self.Lightning:setAlpha( 0 )
 				LightningFrame2( Lightning, {} )
+
 				Lightning2:completeAnimation()
 				self.Lightning2:setAlpha( 0 )
 				self.clipFinished( Lightning2, {} )
+
 				Lightning3:completeAnimation()
 				self.Lightning3:setAlpha( 0 )
 				self.clipFinished( Lightning3, {} )
 				CursorHint:beginAnimation( "keyframe", 3769, false, false, CoD.TweenType.Linear )
 				CursorHint:setAlpha( 0 )
 				CursorHint:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				Last5RoundTime:completeAnimation()
 				self.Last5RoundTime:setAlpha( 0 )
 				self.clipFinished( Last5RoundTime, {} )
 			end,
 			TextandImageBasic = function ()
 				self:setupElementClipCounter( 23 )
+
 				local PanelFrame2 = function ( Panel, event )
 					local PanelFrame3 = function ( Panel, event )
 						local PanelFrame4 = function ( Panel, event )
@@ -2327,12 +2354,15 @@ CoD.ZmNotifBGB_ContainerFactory.new = function ( menu, controller )
 				basicImage:completeAnimation()
 				self.basicImage:setAlpha( 0 )
 				basicImageFrame2( basicImage, {} )
+
 				bgbGlowOrangeOver:completeAnimation()
 				self.bgbGlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( bgbGlowOrangeOver, {} )
+
 				bgbTexture:completeAnimation()
 				self.bgbTexture:setAlpha( 0 )
 				self.clipFinished( bgbTexture, {} )
+
 				bgbAbilitySwirl:completeAnimation()
 				self.bgbAbilitySwirl:setAlpha( 0 )
 				self.bgbAbilitySwirl:setZRot( 0 )
@@ -2470,6 +2500,7 @@ CoD.ZmNotifBGB_ContainerFactory.new = function ( menu, controller )
 				self.Glow:setRGB( 0, 0.42, 1 )
 				self.Glow:setAlpha( 0 )
 				GlowFrame2( Glow, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
@@ -2805,12 +2836,14 @@ CoD.ZmNotifBGB_ContainerFactory.new = function ( menu, controller )
 				CursorHint:beginAnimation( "keyframe", 3769, false, false, CoD.TweenType.Linear )
 				CursorHint:setAlpha( 0 )
 				CursorHint:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				Last5RoundTime:completeAnimation()
 				self.Last5RoundTime:setAlpha( 0 )
 				self.clipFinished( Last5RoundTime, {} )
 			end,
 			TextandTimeAttack = function ()
 				self:setupElementClipCounter( 24 )
+
 				local PanelFrame2 = function ( Panel, event )
 					local PanelFrame3 = function ( Panel, event )
 						local PanelFrame4 = function ( Panel, event )
@@ -3018,12 +3051,15 @@ CoD.ZmNotifBGB_ContainerFactory.new = function ( menu, controller )
 				basicImage:completeAnimation()
 				self.basicImage:setAlpha( 0 )
 				basicImageFrame2( basicImage, {} )
+
 				bgbGlowOrangeOver:completeAnimation()
 				self.bgbGlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( bgbGlowOrangeOver, {} )
+
 				bgbTexture:completeAnimation()
 				self.bgbTexture:setAlpha( 0 )
 				self.clipFinished( bgbTexture, {} )
+
 				bgbAbilitySwirl:completeAnimation()
 				self.bgbAbilitySwirl:setAlpha( 0 )
 				self.bgbAbilitySwirl:setZRot( 0 )
@@ -3161,6 +3197,7 @@ CoD.ZmNotifBGB_ContainerFactory.new = function ( menu, controller )
 				self.Glow:setRGB( 0, 0.42, 1 )
 				self.Glow:setAlpha( 0 )
 				GlowFrame2( Glow, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
@@ -3627,6 +3664,7 @@ CoD.ZmNotifBGB_ContainerFactory.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 		element.ZmNotif1CursorHint0:close()

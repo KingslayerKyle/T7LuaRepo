@@ -4,9 +4,11 @@
 CoD.CallingCards_loot_hotrod_hand = InheritFrom( LUI.UIElement )
 CoD.CallingCards_loot_hotrod_hand.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_loot_hotrod_hand )
 	self.id = "CallingCards_loot_hotrod_hand"
@@ -25,6 +27,7 @@ CoD.CallingCards_loot_hotrod_hand.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local devilHandFrame2 = function ( devilHand, event )
 					local devilHandFrame3 = function ( devilHand, event )
 						local devilHandFrame4 = function ( devilHand, event )
@@ -187,6 +190,7 @@ CoD.CallingCards_loot_hotrod_hand.new = function ( menu, controller )
 				self.devilHand:setTopBottom( true, false, 0, 108 )
 				self.devilHand:setZRot( 0 )
 				devilHandFrame2( devilHand, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

@@ -4,9 +4,11 @@
 CoD.CallingCards_GumGobblerZMWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_GumGobblerZMWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_GumGobblerZMWidget )
 	self.id = "CallingCards_GumGobblerZMWidget"
@@ -68,6 +70,7 @@ CoD.CallingCards_GumGobblerZMWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local BGInvertFrame2 = function ( BGInvert, event )
 					local BGInvertFrame3 = function ( BGInvert, event )
 						local BGInvertFrame4 = function ( BGInvert, event )
@@ -256,6 +259,7 @@ CoD.CallingCards_GumGobblerZMWidget.new = function ( menu, controller )
 				self.skull3:setLeftRight( true, false, 133, 197 )
 				self.skull3:setTopBottom( true, false, 31, 95 )
 				skull3Frame2( skull3, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

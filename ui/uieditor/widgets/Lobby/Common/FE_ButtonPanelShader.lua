@@ -4,9 +4,11 @@
 CoD.FE_ButtonPanelShader = InheritFrom( LUI.UIElement )
 CoD.FE_ButtonPanelShader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_ButtonPanelShader )
 	self.id = "FE_ButtonPanelShader"

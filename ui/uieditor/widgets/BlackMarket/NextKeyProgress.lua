@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.AAR.PerformanceTab.ContractCryptokeyBatch" )
 CoD.NextKeyProgress = InheritFrom( LUI.UIElement )
 CoD.NextKeyProgress.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.NextKeyProgress )
 	self.id = "NextKeyProgress"
@@ -191,57 +193,74 @@ CoD.NextKeyProgress.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				cryptokeyProgressBgGrey:completeAnimation()
 				self.cryptokeyProgressBgGrey:setAlpha( 0 )
 				self.clipFinished( cryptokeyProgressBgGrey, {} )
+
 				cachitBG0:completeAnimation()
 				self.cachitBG0:setAlpha( 0 )
 				self.clipFinished( cachitBG0, {} )
+
 				XpBarFrame:completeAnimation()
 				self.XpBarFrame:setAlpha( 1 )
 				self.clipFinished( XpBarFrame, {} )
+
 				cryptokeyProgressBg:completeAnimation()
 				self.cryptokeyProgressBg:setAlpha( 0.1 )
 				self.clipFinished( cryptokeyProgressBg, {} )
+
 				cryptokeyProgress:completeAnimation()
 				self.cryptokeyProgress:setAlpha( 1 )
 				self.clipFinished( cryptokeyProgress, {} )
+
 				cryptokeyProgressForNewKey:completeAnimation()
 				self.cryptokeyProgressForNewKey:setAlpha( 0 )
 				self.clipFinished( cryptokeyProgressForNewKey, {} )
+
 				MeterGlow:completeAnimation()
 				self.MeterGlow:setAlpha( 0.41 )
 				self.clipFinished( MeterGlow, {} )
+
 				nextKeyText:completeAnimation()
 				self.nextKeyText:setText( Engine.Localize( "MPUI_NEXT_KEY_CAPS" ) )
 				self.clipFinished( nextKeyText, {} )
+
 				CryptoCount:completeAnimation()
 				self.CryptoCount:setAlpha( 1 )
 				self.clipFinished( CryptoCount, {} )
+
 				CryptoKeyNewCount:completeAnimation()
 				self.CryptoKeyNewCount:setAlpha( 0 )
 				self.clipFinished( CryptoKeyNewCount, {} )
+
 				CryptoIcon0:completeAnimation()
 				self.CryptoIcon0:setAlpha( 0 )
 				self.clipFinished( CryptoIcon0, {} )
+
 				CryptoCountNew0:completeAnimation()
 				self.CryptoCountNew0:setAlpha( 0 )
 				self.clipFinished( CryptoCountNew0, {} )
+
 				ContractCryptokeyBatch:completeAnimation()
 				self.ContractCryptokeyBatch:setAlpha( 0 )
 				self.clipFinished( ContractCryptokeyBatch, {} )
+
 				highlight:completeAnimation()
 				self.highlight:setAlpha( 0 )
 				self.clipFinished( highlight, {} )
 			end,
 			NewXPNoNewKey = function ()
 				self:setupElementClipCounter( 10 )
+
 				cryptokeyProgressBgGrey:completeAnimation()
 				self.cryptokeyProgressBgGrey:setAlpha( 0 )
 				self.clipFinished( cryptokeyProgressBgGrey, {} )
+
 				cachitBG0:completeAnimation()
 				self.cachitBG0:setAlpha( 0 )
 				self.clipFinished( cachitBG0, {} )
+
 				cryptokeyProgress:completeAnimation()
 				self.cryptokeyProgress:setAlpha( 0 )
 				self.clipFinished( cryptokeyProgress, {} )
@@ -260,12 +279,15 @@ CoD.NextKeyProgress.new = function ( menu, controller )
 				cryptokeyProgressForNewKey:completeAnimation()
 				self.cryptokeyProgressForNewKey:setAlpha( 1 )
 				cryptokeyProgressForNewKeyFrame2( cryptokeyProgressForNewKey, {} )
+
 				CryptoKeyNewCount:completeAnimation()
 				self.CryptoKeyNewCount:setAlpha( 0 )
 				self.clipFinished( CryptoKeyNewCount, {} )
+
 				CryptoIcon0:completeAnimation()
 				self.CryptoIcon0:setAlpha( 0 )
 				self.clipFinished( CryptoIcon0, {} )
+
 				CryptoCountNew0:completeAnimation()
 				self.CryptoCountNew0:setAlpha( 0 )
 				self.clipFinished( CryptoCountNew0, {} )
@@ -286,18 +308,22 @@ CoD.NextKeyProgress.new = function ( menu, controller )
 				self.Sound:setPlaySoundDirect( true )
 				self.Sound:playSound( "uin_bm_bar_fill_main", controller )
 				SoundFrame2( Sound, {} )
+
 				ContractCryptokeyBatch:completeAnimation()
 				self.ContractCryptokeyBatch:setAlpha( 0 )
 				self.clipFinished( ContractCryptokeyBatch, {} )
+
 				highlight:completeAnimation()
 				self.highlight:setAlpha( 0 )
 				self.clipFinished( highlight, {} )
 			end,
 			NewKey = function ()
 				self:setupElementClipCounter( 16 )
+
 				cryptokeyProgressBgGrey:completeAnimation()
 				self.cryptokeyProgressBgGrey:setAlpha( 0 )
 				self.clipFinished( cryptokeyProgressBgGrey, {} )
+
 				cachitBG0:completeAnimation()
 				self.cachitBG0:setAlpha( 0 )
 				self.clipFinished( cachitBG0, {} )
@@ -373,6 +399,7 @@ CoD.NextKeyProgress.new = function ( menu, controller )
 				cryptokeyProgressBg:beginAnimation( "keyframe", 330, false, false, CoD.TweenType.Linear )
 				cryptokeyProgressBg:setAlpha( 0.1 )
 				cryptokeyProgressBg:registerEventHandler( "transition_complete_keyframe", f11_local1 )
+
 				cryptokeyProgress:completeAnimation()
 				self.cryptokeyProgress:setAlpha( 0 )
 				self.clipFinished( cryptokeyProgress, {} )
@@ -835,18 +862,22 @@ CoD.NextKeyProgress.new = function ( menu, controller )
 				self.Sound:setPlaySoundDirect( true )
 				self.Sound:playSound( "uin_bm_bar_fill_main", controller )
 				SoundFrame2( Sound, {} )
+
 				ContractCryptokeyBatch:completeAnimation()
 				self.ContractCryptokeyBatch:setAlpha( 0 )
 				self.clipFinished( ContractCryptokeyBatch, {} )
+
 				highlight:completeAnimation()
 				self.highlight:setAlpha( 0 )
 				self.clipFinished( highlight, {} )
 			end,
 			NewKeyBatch = function ()
 				self:setupElementClipCounter( 16 )
+
 				cryptokeyProgressBgGrey:completeAnimation()
 				self.cryptokeyProgressBgGrey:setAlpha( 0 )
 				self.clipFinished( cryptokeyProgressBgGrey, {} )
+
 				cachitBG0:completeAnimation()
 				self.cachitBG0:setAlpha( 0 )
 				self.clipFinished( cachitBG0, {} )
@@ -900,12 +931,15 @@ CoD.NextKeyProgress.new = function ( menu, controller )
 				cryptokeyProgressBg:completeAnimation()
 				self.cryptokeyProgressBg:setAlpha( 0 )
 				cryptokeyProgressBgFrame2( cryptokeyProgressBg, {} )
+
 				cryptokeyProgress:completeAnimation()
 				self.cryptokeyProgress:setAlpha( 0 )
 				self.clipFinished( cryptokeyProgress, {} )
+
 				cryptokeyProgressForNewKey:completeAnimation()
 				self.cryptokeyProgressForNewKey:setAlpha( 0 )
 				self.clipFinished( cryptokeyProgressForNewKey, {} )
+
 				MeterGlow:completeAnimation()
 				self.MeterGlow:setAlpha( 0 )
 				self.clipFinished( MeterGlow, {} )
@@ -934,13 +968,16 @@ CoD.NextKeyProgress.new = function ( menu, controller )
 				nextKeyText:completeAnimation()
 				self.nextKeyText:setAlpha( 0 )
 				nextKeyTextFrame2( nextKeyText, {} )
+
 				CryptoIcon:completeAnimation()
 				self.CryptoIcon:setAlpha( 1 )
 				self.clipFinished( CryptoIcon, {} )
+
 				CryptoCount:completeAnimation()
 				self.CryptoCount:setRGB( 1, 1, 1 )
 				self.CryptoCount:setAlpha( 1 )
 				self.clipFinished( CryptoCount, {} )
+
 				CryptoKeyNewCount:completeAnimation()
 				self.CryptoKeyNewCount:setLeftRight( true, false, 189.5, 357.5 )
 				self.CryptoKeyNewCount:setTopBottom( false, false, -13, 13 )
@@ -949,6 +986,7 @@ CoD.NextKeyProgress.new = function ( menu, controller )
 				self.CryptoKeyNewCount:setText( LocalizeToUpperString( "MENU_BONUS_CRYPTOKEYS" ) )
 				self.CryptoKeyNewCount:setLetterSpacing( 3 )
 				self.clipFinished( CryptoKeyNewCount, {} )
+
 				CryptoIcon0:completeAnimation()
 				self.CryptoIcon0:setLeftRight( true, false, 88.94, 118.24 )
 				self.CryptoIcon0:setTopBottom( false, false, -12.87, 15 )
@@ -1151,18 +1189,23 @@ CoD.NextKeyProgress.new = function ( menu, controller )
 		Retrieving = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				XpBarFrame:completeAnimation()
 				self.XpBarFrame:setAlpha( 0 )
 				self.clipFinished( XpBarFrame, {} )
+
 				cryptokeyProgressBg:completeAnimation()
 				self.cryptokeyProgressBg:setAlpha( 0 )
 				self.clipFinished( cryptokeyProgressBg, {} )
+
 				cryptokeyProgressForNewKey:completeAnimation()
 				self.cryptokeyProgressForNewKey:setAlpha( 0 )
 				self.clipFinished( cryptokeyProgressForNewKey, {} )
+
 				MeterGlow:completeAnimation()
 				self.MeterGlow:setAlpha( 0 )
 				self.clipFinished( MeterGlow, {} )
+
 				nextKeyText:completeAnimation()
 				self.nextKeyText:setText( Engine.Localize( "MPUI_BM_RETRIEVING_CRYPTOKEYS" ) )
 				self.clipFinished( nextKeyText, {} )
@@ -1171,30 +1214,38 @@ CoD.NextKeyProgress.new = function ( menu, controller )
 		HidePixels = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				XpBarFrame:completeAnimation()
 				self.XpBarFrame:setAlpha( 1 )
 				self.clipFinished( XpBarFrame, {} )
+
 				cryptokeyProgressBg:completeAnimation()
 				self.cryptokeyProgressBg:setAlpha( 0.1 )
 				self.clipFinished( cryptokeyProgressBg, {} )
+
 				cryptokeyProgressForNewKey:completeAnimation()
 				self.cryptokeyProgressForNewKey:setAlpha( 1 )
 				self.clipFinished( cryptokeyProgressForNewKey, {} )
+
 				MeterGlow:completeAnimation()
 				self.MeterGlow:setAlpha( 0.41 )
 				self.clipFinished( MeterGlow, {} )
+
 				nextKeyText:completeAnimation()
 				self.nextKeyText:setText( Engine.Localize( "MPUI_NEXT_KEY_CAPS" ) )
 				self.clipFinished( nextKeyText, {} )
 			end,
 			NewXPNoNewKey = function ()
 				self:setupElementClipCounter( 8 )
+
 				cryptokeyProgressBgGrey:completeAnimation()
 				self.cryptokeyProgressBgGrey:setAlpha( 0 )
 				self.clipFinished( cryptokeyProgressBgGrey, {} )
+
 				cachitBG0:completeAnimation()
 				self.cachitBG0:setAlpha( 0 )
 				self.clipFinished( cachitBG0, {} )
+
 				cryptokeyProgress:completeAnimation()
 				self.cryptokeyProgress:setAlpha( 0 )
 				self.clipFinished( cryptokeyProgress, {} )
@@ -1213,12 +1264,15 @@ CoD.NextKeyProgress.new = function ( menu, controller )
 				cryptokeyProgressForNewKey:completeAnimation()
 				self.cryptokeyProgressForNewKey:setAlpha( 1 )
 				cryptokeyProgressForNewKeyFrame2( cryptokeyProgressForNewKey, {} )
+
 				CryptoKeyNewCount:completeAnimation()
 				self.CryptoKeyNewCount:setAlpha( 0 )
 				self.clipFinished( CryptoKeyNewCount, {} )
+
 				CryptoIcon0:completeAnimation()
 				self.CryptoIcon0:setAlpha( 0 )
 				self.clipFinished( CryptoIcon0, {} )
+
 				CryptoCountNew0:completeAnimation()
 				self.CryptoCountNew0:setAlpha( 0 )
 				self.clipFinished( CryptoCountNew0, {} )
@@ -1242,9 +1296,11 @@ CoD.NextKeyProgress.new = function ( menu, controller )
 			end,
 			NewKey = function ()
 				self:setupElementClipCounter( 14 )
+
 				cryptokeyProgressBgGrey:completeAnimation()
 				self.cryptokeyProgressBgGrey:setAlpha( 0 )
 				self.clipFinished( cryptokeyProgressBgGrey, {} )
+
 				cachitBG0:completeAnimation()
 				self.cachitBG0:setAlpha( 0 )
 				self.clipFinished( cachitBG0, {} )
@@ -1320,6 +1376,7 @@ CoD.NextKeyProgress.new = function ( menu, controller )
 				cryptokeyProgressBg:beginAnimation( "keyframe", 330, false, false, CoD.TweenType.Linear )
 				cryptokeyProgressBg:setAlpha( 0.1 )
 				cryptokeyProgressBg:registerEventHandler( "transition_complete_keyframe", f82_local1 )
+
 				cryptokeyProgress:completeAnimation()
 				self.cryptokeyProgress:setAlpha( 0 )
 				self.clipFinished( cryptokeyProgress, {} )
@@ -1773,9 +1830,11 @@ CoD.NextKeyProgress.new = function ( menu, controller )
 			end,
 			NewKeyBatch = function ()
 				self:setupElementClipCounter( 14 )
+
 				cryptokeyProgressBgGrey:completeAnimation()
 				self.cryptokeyProgressBgGrey:setAlpha( 0 )
 				self.clipFinished( cryptokeyProgressBgGrey, {} )
+
 				cachitBG0:completeAnimation()
 				self.cachitBG0:setAlpha( 0 )
 				self.clipFinished( cachitBG0, {} )
@@ -1851,6 +1910,7 @@ CoD.NextKeyProgress.new = function ( menu, controller )
 				cryptokeyProgressBg:beginAnimation( "keyframe", 330, false, false, CoD.TweenType.Linear )
 				cryptokeyProgressBg:setAlpha( 0.1 )
 				cryptokeyProgressBg:registerEventHandler( "transition_complete_keyframe", f125_local1 )
+
 				cryptokeyProgress:completeAnimation()
 				self.cryptokeyProgress:setAlpha( 0 )
 				self.clipFinished( cryptokeyProgress, {} )
@@ -2304,6 +2364,7 @@ CoD.NextKeyProgress.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Retrieving",
@@ -2326,6 +2387,7 @@ CoD.NextKeyProgress.new = function ( menu, controller )
 			modelName = "CryptoKeyProgress.keyCount"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.XpBarFrame:close()
 		element.ContractCryptokeyBatch:close()

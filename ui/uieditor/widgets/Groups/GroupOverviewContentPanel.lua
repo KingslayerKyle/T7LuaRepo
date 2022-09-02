@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Groups.GroupsFeaturedListLarge" )
 CoD.GroupOverviewContentPanel = InheritFrom( LUI.UIElement )
 CoD.GroupOverviewContentPanel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupOverviewContentPanel )
 	self.id = "GroupOverviewContentPanel"
@@ -100,24 +102,30 @@ CoD.GroupOverviewContentPanel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Image:completeAnimation()
 				self.Image:setLeftRight( true, false, -1, 648 )
 				self.Image:setTopBottom( true, false, 418, 531 )
 				self.clipFinished( Image, {} )
+
 				Banner:completeAnimation()
 				self.Banner:setAlpha( 0.45 )
 				self.clipFinished( Banner, {} )
+
 				Banner0:completeAnimation()
 				self.Banner0:setLeftRight( true, false, 1, 645 )
 				self.Banner0:setTopBottom( true, false, 27, 53.25 )
 				self.Banner0:setAlpha( 0.45 )
 				self.clipFinished( Banner0, {} )
+
 				Message:completeAnimation()
 				self.Message:setAlpha( 1 )
 				self.clipFinished( Message, {} )
+
 				Featured:completeAnimation()
 				self.Featured:setAlpha( 1 )
 				self.clipFinished( Featured, {} )
+
 				StartMenuframenoBG000:completeAnimation()
 				self.StartMenuframenoBG000:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG000, {} )
@@ -126,18 +134,23 @@ CoD.GroupOverviewContentPanel.new = function ( menu, controller )
 		NonMemberView = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Banner:completeAnimation()
 				self.Banner:setAlpha( 0 )
 				self.clipFinished( Banner, {} )
+
 				Banner0:completeAnimation()
 				self.Banner0:setAlpha( 0 )
 				self.clipFinished( Banner0, {} )
+
 				Message:completeAnimation()
 				self.Message:setAlpha( 0 )
 				self.clipFinished( Message, {} )
+
 				Featured:completeAnimation()
 				self.Featured:setAlpha( 0 )
 				self.clipFinished( Featured, {} )
+
 				StartMenuframenoBG000:completeAnimation()
 				self.StartMenuframenoBG000:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG000, {} )
@@ -152,6 +165,7 @@ CoD.GroupOverviewContentPanel.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG000:close()
 		element.verticalScrollingTextBox:close()

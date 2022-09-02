@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventoryCastle.FuseWidget_Castle" )
 CoD.FuseBoxWidget_Castle = InheritFrom( LUI.UIElement )
 CoD.FuseBoxWidget_Castle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FuseBoxWidget_Castle )
 	self.id = "FuseBoxWidget_Castle"
@@ -36,9 +38,11 @@ CoD.FuseBoxWidget_Castle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				FuseWidgetCastle:completeAnimation()
 				self.FuseWidgetCastle:setAlpha( 0 )
 				self.clipFinished( FuseWidgetCastle, {} )
@@ -47,9 +51,11 @@ CoD.FuseBoxWidget_Castle.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
+
 				FuseWidgetCastle:completeAnimation()
 				self.FuseWidgetCastle:setLeftRight( true, false, -24.5, 31.5 )
 				self.FuseWidgetCastle:setTopBottom( true, false, 21, 140 )
@@ -60,15 +66,18 @@ CoD.FuseBoxWidget_Castle.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				FuseWidgetCastle:completeAnimation()
 				self.FuseWidgetCastle:setAlpha( 1 )
 				self.clipFinished( FuseWidgetCastle, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BgVisible",
@@ -99,6 +108,7 @@ CoD.FuseBoxWidget_Castle.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FuseWidgetCastle:close()
 	end )

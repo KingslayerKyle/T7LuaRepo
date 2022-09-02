@@ -21,6 +21,7 @@ CoD.GameSettings_Options.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GameSettings_Options )
 	self.id = "GameSettings_Options"
@@ -121,6 +122,7 @@ CoD.GameSettings_Options.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.VerticalListSpacer0:close()
 		element.List0:close()

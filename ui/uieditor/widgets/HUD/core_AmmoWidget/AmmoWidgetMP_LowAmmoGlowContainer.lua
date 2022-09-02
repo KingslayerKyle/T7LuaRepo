@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidgetMP_LowAmmoGlow" )
 CoD.AmmoWidgetMP_LowAmmoGlowContainer = InheritFrom( LUI.UIElement )
 CoD.AmmoWidgetMP_LowAmmoGlowContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidgetMP_LowAmmoGlowContainer )
 	self.id = "AmmoWidgetMP_LowAmmoGlowContainer"
@@ -126,6 +128,7 @@ CoD.AmmoWidgetMP_LowAmmoGlowContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				LowAmmoClip:completeAnimation()
 				self.LowAmmoClip:setLeftRight( true, false, 0, 46 )
 				self.LowAmmoClip:setTopBottom( true, false, 0, 34 )
@@ -133,6 +136,7 @@ CoD.AmmoWidgetMP_LowAmmoGlowContainer.new = function ( menu, controller )
 			end,
 			NoAmmo = function ()
 				self:setupElementClipCounter( 1 )
+
 				local LowAmmoClipFrame2 = function ( LowAmmoClip, event )
 					if not event.interrupted then
 						LowAmmoClip:beginAnimation( "keyframe", 500, true, true, CoD.TweenType.Linear )
@@ -155,6 +159,7 @@ CoD.AmmoWidgetMP_LowAmmoGlowContainer.new = function ( menu, controller )
 		Hero = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				LowAmmoClip:completeAnimation()
 				self.LowAmmoClip:setLeftRight( true, false, 0, 46 )
 				self.LowAmmoClip:setTopBottom( true, false, 0, 34 )
@@ -162,6 +167,7 @@ CoD.AmmoWidgetMP_LowAmmoGlowContainer.new = function ( menu, controller )
 			end,
 			NoAmmo = function ()
 				self:setupElementClipCounter( 1 )
+
 				local LowAmmoClipFrame2 = function ( LowAmmoClip, event )
 					local LowAmmoClipFrame3 = function ( LowAmmoClip, event )
 						if not event.interrupted then
@@ -190,6 +196,7 @@ CoD.AmmoWidgetMP_LowAmmoGlowContainer.new = function ( menu, controller )
 			end,
 			LowAmmo = function ()
 				self:setupElementClipCounter( 1 )
+
 				local LowAmmoClipFrame2 = function ( LowAmmoClip, event )
 					local LowAmmoClipFrame3 = function ( LowAmmoClip, event )
 						if not event.interrupted then
@@ -218,6 +225,7 @@ CoD.AmmoWidgetMP_LowAmmoGlowContainer.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local LowAmmoClipFrame2 = function ( LowAmmoClip, event )
 					local LowAmmoClipFrame3 = function ( LowAmmoClip, event )
 						if not event.interrupted then
@@ -248,6 +256,7 @@ CoD.AmmoWidgetMP_LowAmmoGlowContainer.new = function ( menu, controller )
 		LowAmmoNoReserve = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				LowAmmoClip:completeAnimation()
 				self.LowAmmoClip:setLeftRight( true, false, 36, 114 )
 				self.LowAmmoClip:setTopBottom( true, false, 0, 34 )
@@ -257,6 +266,7 @@ CoD.AmmoWidgetMP_LowAmmoGlowContainer.new = function ( menu, controller )
 		NoAmmoNoReserve = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				LowAmmoClip:completeAnimation()
 				self.LowAmmoClip:setLeftRight( true, false, 36, 114 )
 				self.LowAmmoClip:setTopBottom( true, false, 0, 34 )
@@ -264,6 +274,7 @@ CoD.AmmoWidgetMP_LowAmmoGlowContainer.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local LowAmmoClipFrame2 = function ( LowAmmoClip, event )
 					if not event.interrupted then
 						LowAmmoClip:beginAnimation( "keyframe", 589, true, true, CoD.TweenType.Linear )
@@ -286,6 +297,7 @@ CoD.AmmoWidgetMP_LowAmmoGlowContainer.new = function ( menu, controller )
 		LowAmmoDW = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				LowAmmoClip:completeAnimation()
 				self.LowAmmoClip:setLeftRight( true, false, -74, 46 )
 				self.LowAmmoClip:setTopBottom( true, false, 0, 34 )
@@ -293,6 +305,7 @@ CoD.AmmoWidgetMP_LowAmmoGlowContainer.new = function ( menu, controller )
 			end,
 			NoAmmoDW = function ()
 				self:setupElementClipCounter( 1 )
+
 				local LowAmmoClipFrame2 = function ( LowAmmoClip, event )
 					if not event.interrupted then
 						LowAmmoClip:beginAnimation( "keyframe", 500, true, true, CoD.TweenType.Linear )
@@ -315,6 +328,7 @@ CoD.AmmoWidgetMP_LowAmmoGlowContainer.new = function ( menu, controller )
 		NoAmmoDW = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				LowAmmoClip:completeAnimation()
 				self.LowAmmoClip:setLeftRight( true, false, -74, 114 )
 				self.LowAmmoClip:setTopBottom( true, false, 0, 34 )
@@ -322,6 +336,7 @@ CoD.AmmoWidgetMP_LowAmmoGlowContainer.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local LowAmmoClipFrame2 = function ( LowAmmoClip, event )
 					if not event.interrupted then
 						LowAmmoClip:beginAnimation( "keyframe", 589, true, true, CoD.TweenType.Linear )
@@ -344,6 +359,7 @@ CoD.AmmoWidgetMP_LowAmmoGlowContainer.new = function ( menu, controller )
 		LowAmmo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				LowAmmoClip:completeAnimation()
 				self.LowAmmoClip:setLeftRight( true, false, 0, 46 )
 				self.LowAmmoClip:setTopBottom( true, false, 0, 34 )
@@ -351,6 +367,7 @@ CoD.AmmoWidgetMP_LowAmmoGlowContainer.new = function ( menu, controller )
 			end,
 			NoAmmo = function ()
 				self:setupElementClipCounter( 1 )
+
 				local LowAmmoClipFrame2 = function ( LowAmmoClip, event )
 					if not event.interrupted then
 						LowAmmoClip:beginAnimation( "keyframe", 500, true, true, CoD.TweenType.Linear )
@@ -373,6 +390,7 @@ CoD.AmmoWidgetMP_LowAmmoGlowContainer.new = function ( menu, controller )
 		NoAmmo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				LowAmmoClip:completeAnimation()
 				self.LowAmmoClip:setLeftRight( true, false, 0, 114 )
 				self.LowAmmoClip:setTopBottom( true, false, 0, 34 )
@@ -380,6 +398,7 @@ CoD.AmmoWidgetMP_LowAmmoGlowContainer.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local LowAmmoClipFrame2 = function ( LowAmmoClip, event )
 					if not event.interrupted then
 						LowAmmoClip:beginAnimation( "keyframe", 589, true, true, CoD.TweenType.Linear )
@@ -400,6 +419,7 @@ CoD.AmmoWidgetMP_LowAmmoGlowContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LowAmmoClip:close()
 	end )

@@ -24,6 +24,7 @@ CoD.PrivateClientList.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PrivateClientList )
 	self.id = "PrivateClientList"
@@ -177,35 +178,43 @@ CoD.PrivateClientList.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				FEListHeaderFull0:completeAnimation()
 				self.FEListHeaderFull0:setAlpha( 0 )
 				self.clipFinished( FEListHeaderFull0, {} )
+
 				FEListSubHeader0:completeAnimation()
 				self.FEListSubHeader0:setAlpha( 0 )
 				self.clipFinished( FEListSubHeader0, {} )
+
 				friendsAndGroups:completeAnimation()
 				self.friendsAndGroups:setAlpha( 0 )
 				self.clipFinished( friendsAndGroups, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		ShowQuickJoin = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				FEListHeaderFull0:completeAnimation()
 				self.FEListHeaderFull0:setAlpha( 1 )
 				self.clipFinished( FEListHeaderFull0, {} )
+
 				FEListSubHeader0:completeAnimation()
 				self.FEListSubHeader0:setAlpha( 1 )
 				self.clipFinished( FEListSubHeader0, {} )
+
 				friendsAndGroups:completeAnimation()
 				self.friendsAndGroups:setAlpha( 1 )
 				self.clipFinished( friendsAndGroups, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ShowQuickJoin",
@@ -224,6 +233,7 @@ CoD.PrivateClientList.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEListSubHeader1:close()
 		element.lstLobbyList:close()

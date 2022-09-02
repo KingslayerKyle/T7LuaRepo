@@ -7,9 +7,11 @@ require( "ui.uieditor.menus.Safehouses.InspectingSingleCollectible" )
 CoD.mediumCollectibles = InheritFrom( LUI.UIElement )
 CoD.mediumCollectibles.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.mediumCollectibles )
 	self.id = "mediumCollectibles"
@@ -150,6 +152,7 @@ CoD.mediumCollectibles.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.collectibleItem0:close()
 		element.collectibleItem1:close()

@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ButtonPanel" )
 CoD.StartMenu_Options_Network_StatusOverview = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_Network_StatusOverview.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_Network_StatusOverview )
 	self.id = "StartMenu_Options_Network_StatusOverview"
@@ -81,21 +83,26 @@ CoD.StartMenu_Options_Network_StatusOverview.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				NetworkBox5:completeAnimation()
 				self.NetworkBox5:setAlpha( 1 )
 				self.clipFinished( NetworkBox5, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FirstPartyStateLabel:completeAnimation()
 				self.FirstPartyStateLabel:setLeftRight( true, false, 59, 525 )
 				self.FirstPartyStateLabel:setTopBottom( true, false, 12.23, 36 )
 				self.FirstPartyStateLabel:setRGB( 1, 1, 1 )
 				self.FirstPartyStateLabel:setText( Engine.Localize( "PLATFORM_OPTIONS_NETWORK_SIGNED_IN" ) )
 				self.clipFinished( FirstPartyStateLabel, {} )
+
 				ServerStateLabel:completeAnimation()
 				self.ServerStateLabel:setRGB( 0.55, 1, 0 )
 				self.ServerStateLabel:setText( Engine.Localize( "MENU_OPTIONS_NETWORK_COD_CONNECTED" ) )
@@ -103,18 +110,23 @@ CoD.StartMenu_Options_Network_StatusOverview.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FirstPartyStateLabel:completeAnimation()
 				self.FirstPartyStateLabel:setAlpha( 1 )
 				self.clipFinished( FirstPartyStateLabel, {} )
+
 				InternetStateLabel:completeAnimation()
 				self.InternetStateLabel:setAlpha( 0 )
 				self.clipFinished( InternetStateLabel, {} )
+
 				ServerStateLabel:completeAnimation()
 				self.ServerStateLabel:setAlpha( 1 )
 				self.clipFinished( ServerStateLabel, {} )
@@ -123,36 +135,46 @@ CoD.StartMenu_Options_Network_StatusOverview.new = function ( menu, controller )
 		NoInternet = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FirstPartyStateLabel:completeAnimation()
 				self.FirstPartyStateLabel:setAlpha( 0 )
 				self.clipFinished( FirstPartyStateLabel, {} )
+
 				InternetStateLabel:completeAnimation()
 				self.InternetStateLabel:setAlpha( 1 )
 				self.clipFinished( InternetStateLabel, {} )
+
 				ServerStateLabel:completeAnimation()
 				self.ServerStateLabel:setAlpha( 0 )
 				self.clipFinished( ServerStateLabel, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FirstPartyStateLabel:completeAnimation()
 				self.FirstPartyStateLabel:setAlpha( 0 )
 				self.clipFinished( FirstPartyStateLabel, {} )
+
 				InternetStateLabel:completeAnimation()
 				self.InternetStateLabel:setAlpha( 1 )
 				self.clipFinished( InternetStateLabel, {} )
+
 				ServerStateLabel:completeAnimation()
 				self.ServerStateLabel:setAlpha( 0 )
 				self.clipFinished( ServerStateLabel, {} )
@@ -161,16 +183,20 @@ CoD.StartMenu_Options_Network_StatusOverview.new = function ( menu, controller )
 		NotSignedInToLive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FirstPartyStateLabel:completeAnimation()
 				self.FirstPartyStateLabel:setRGB( 1, 1, 1 )
 				self.FirstPartyStateLabel:setText( Engine.Localize( "PLATFORM_OPTIONS_NETWORK_NOT_SIGNED_IN" ) )
 				self.clipFinished( FirstPartyStateLabel, {} )
+
 				ServerStateLabel:completeAnimation()
 				self.ServerStateLabel:setRGB( ColorSet.ResistanceHigh.r, ColorSet.ResistanceHigh.g, ColorSet.ResistanceHigh.b )
 				self.ServerStateLabel:setText( Engine.Localize( "MENU_OPTIONS_NETWORK_COD_NOT_CONNECTED" ) )
@@ -178,18 +204,23 @@ CoD.StartMenu_Options_Network_StatusOverview.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FirstPartyStateLabel:completeAnimation()
 				self.FirstPartyStateLabel:setText( Engine.Localize( "PLATFORM_OPTIONS_NETWORK_NOT_SIGNED_IN" ) )
 				self.clipFinished( FirstPartyStateLabel, {} )
+
 				InternetStateLabel:completeAnimation()
 				self.InternetStateLabel:setText( Engine.Localize( "MENU_OPTIONS_NETWORK_INTERNET_NOT_CONNECTED" ) )
 				self.clipFinished( InternetStateLabel, {} )
+
 				ServerStateLabel:completeAnimation()
 				self.ServerStateLabel:setText( Engine.Localize( "MENU_OPTIONS_NETWORK_COD_NOT_CONNECTED" ) )
 				self.clipFinished( ServerStateLabel, {} )
@@ -198,15 +229,19 @@ CoD.StartMenu_Options_Network_StatusOverview.new = function ( menu, controller )
 		NotConnectedToCodServer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FirstPartyStateLabel:completeAnimation()
 				self.FirstPartyStateLabel:setRGB( 1, 1, 1 )
 				self.clipFinished( FirstPartyStateLabel, {} )
+
 				ServerStateLabel:completeAnimation()
 				self.ServerStateLabel:setRGB( ColorSet.ResistanceHigh.r, ColorSet.ResistanceHigh.g, ColorSet.ResistanceHigh.b )
 				self.ServerStateLabel:setText( Engine.Localize( "MENU_OPTIONS_NETWORK_COD_NOT_CONNECTED" ) )
@@ -214,18 +249,23 @@ CoD.StartMenu_Options_Network_StatusOverview.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FirstPartyStateLabel:completeAnimation()
 				self.FirstPartyStateLabel:setAlpha( 1 )
 				self.clipFinished( FirstPartyStateLabel, {} )
+
 				InternetStateLabel:completeAnimation()
 				self.InternetStateLabel:setAlpha( 0 )
 				self.clipFinished( InternetStateLabel, {} )
+
 				ServerStateLabel:completeAnimation()
 				self.ServerStateLabel:setAlpha( 1 )
 				self.clipFinished( ServerStateLabel, {} )
@@ -234,15 +274,18 @@ CoD.StartMenu_Options_Network_StatusOverview.new = function ( menu, controller )
 		ArabicFrontEnd = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FirstPartyStateLabel:completeAnimation()
 				self.FirstPartyStateLabel:setAlpha( 1 )
 				self.clipFinished( FirstPartyStateLabel, {} )
+
 				ServerStateLabel:completeAnimation()
 				self.ServerStateLabel:setAlpha( 1 )
 				self.clipFinished( ServerStateLabel, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoInternet",
@@ -281,6 +324,7 @@ CoD.StartMenu_Options_Network_StatusOverview.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.NetworkBox5:close()
 		element.FocusBarT:close()

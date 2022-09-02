@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventoryStalingrad.PodControlPieceWidget" )
 CoD.PodControlWidget = InheritFrom( LUI.UIElement )
 CoD.PodControlWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PodControlWidget )
 	self.id = "PodControlWidget"
@@ -46,9 +48,11 @@ CoD.PodControlWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				PodControlPieceWidget:completeAnimation()
 				self.PodControlPieceWidget:setAlpha( 0 )
 				self.clipFinished( PodControlPieceWidget, {} )
@@ -57,6 +61,7 @@ CoD.PodControlWidget.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local bgFrame2 = function ( bg, event )
 					local bgFrame3 = function ( bg, event )
 						local bgFrame4 = function ( bg, event )
@@ -93,6 +98,7 @@ CoD.PodControlWidget.new = function ( menu, controller )
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				bgFrame2( bg, {} )
+
 				PodControlPieceWidget:completeAnimation()
 				self.PodControlPieceWidget:setLeftRight( true, false, 45.64, 144.64 )
 				self.PodControlPieceWidget:setTopBottom( true, false, 75.44, 172.42 )
@@ -104,15 +110,18 @@ CoD.PodControlWidget.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				PodControlPieceWidget:completeAnimation()
 				self.PodControlPieceWidget:setAlpha( 1 )
 				self.clipFinished( PodControlPieceWidget, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BgVisible",
@@ -143,6 +152,7 @@ CoD.PodControlWidget.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PodControlPieceWidget:close()
 	end )

@@ -25,9 +25,11 @@ end
 CoD.StartMenu_Challenges = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Challenges.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Challenges )
 	self.id = "StartMenu_Challenges"
@@ -383,6 +385,7 @@ CoD.StartMenu_Challenges.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CP:close()
 		element.MP:close()

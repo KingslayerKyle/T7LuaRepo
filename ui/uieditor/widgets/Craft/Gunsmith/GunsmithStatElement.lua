@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Craft.Gunsmith.GunsmithStatName" )
 CoD.GunsmithStatElement = InheritFrom( LUI.UIElement )
 CoD.GunsmithStatElement.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunsmithStatElement )
 	self.id = "GunsmithStatElement"
@@ -67,12 +69,15 @@ CoD.GunsmithStatElement.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				weaponStatValue:completeAnimation()
 				self.weaponStatValue:setAlpha( 0 )
 				self.clipFinished( weaponStatValue, {} )
+
 				variantStatValue:completeAnimation()
 				self.variantStatValue:setAlpha( 0 )
 				self.clipFinished( variantStatValue, {} )
+
 				statName:completeAnimation()
 				self.statName:setAlpha( 1 )
 				self.clipFinished( statName, {} )
@@ -81,12 +86,15 @@ CoD.GunsmithStatElement.new = function ( menu, controller )
 		StatName = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				weaponStatValue:completeAnimation()
 				self.weaponStatValue:setAlpha( 0 )
 				self.clipFinished( weaponStatValue, {} )
+
 				variantStatValue:completeAnimation()
 				self.variantStatValue:setAlpha( 0 )
 				self.clipFinished( variantStatValue, {} )
+
 				statName:completeAnimation()
 				self.statName:setAlpha( 1 )
 				self.clipFinished( statName, {} )
@@ -95,12 +103,15 @@ CoD.GunsmithStatElement.new = function ( menu, controller )
 		VariantStatValue = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				weaponStatValue:completeAnimation()
 				self.weaponStatValue:setAlpha( 0 )
 				self.clipFinished( weaponStatValue, {} )
+
 				variantStatValue:completeAnimation()
 				self.variantStatValue:setAlpha( 1 )
 				self.clipFinished( variantStatValue, {} )
+
 				statName:completeAnimation()
 				self.statName:setAlpha( 0 )
 				self.clipFinished( statName, {} )
@@ -109,18 +120,22 @@ CoD.GunsmithStatElement.new = function ( menu, controller )
 		WeaponStatValue = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				weaponStatValue:completeAnimation()
 				self.weaponStatValue:setAlpha( 1 )
 				self.clipFinished( weaponStatValue, {} )
+
 				variantStatValue:completeAnimation()
 				self.variantStatValue:setAlpha( 0 )
 				self.clipFinished( variantStatValue, {} )
+
 				statName:completeAnimation()
 				self.statName:setAlpha( 0 )
 				self.clipFinished( statName, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "StatName",
@@ -149,6 +164,7 @@ CoD.GunsmithStatElement.new = function ( menu, controller )
 			modelName = "type"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.weaponStatValue:close()
 		element.variantStatValue:close()

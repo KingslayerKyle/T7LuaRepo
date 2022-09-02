@@ -4,9 +4,11 @@
 CoD.tauntBindsWidget = InheritFrom( LUI.UIElement )
 CoD.tauntBindsWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.tauntBindsWidget )
 	self.id = "tauntBindsWidget"
@@ -48,18 +50,22 @@ CoD.tauntBindsWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				right:completeAnimation()
 				self.right:setAlpha( 0 )
 				self.clipFinished( right, {} )
+
 				left:completeAnimation()
 				self.left:setAlpha( 0 )
 				self.clipFinished( left, {} )
+
 				up:completeAnimation()
 				self.up:setAlpha( 0 )
 				self.clipFinished( up, {} )
 			end,
 			GesturesOn = function ()
 				self:setupElementClipCounter( 3 )
+
 				local rightFrame2 = function ( right, event )
 					if not event.interrupted then
 						right:beginAnimation( "keyframe", 600, false, false, CoD.TweenType.Linear )
@@ -110,18 +116,22 @@ CoD.tauntBindsWidget.new = function ( menu, controller )
 		NoGestures = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				right:completeAnimation()
 				self.right:setAlpha( 0 )
 				self.clipFinished( right, {} )
+
 				left:completeAnimation()
 				self.left:setAlpha( 0 )
 				self.clipFinished( left, {} )
+
 				up:completeAnimation()
 				self.up:setAlpha( 0 )
 				self.clipFinished( up, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoGestures",

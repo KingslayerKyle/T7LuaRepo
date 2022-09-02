@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FocusBarContainer" )
 CoD.CombatRecordItemButton = InheritFrom( LUI.UIElement )
 CoD.CombatRecordItemButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CombatRecordItemButton )
 	self.id = "CombatRecordItemButton"
@@ -121,47 +123,59 @@ CoD.CombatRecordItemButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setRGB( 0, 0, 0 )
 				self.BlackBox:setAlpha( 0.05 )
 				self.clipFinished( BlackBox, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setRGB( 1, 1, 1 )
 				self.BlackBox:setAlpha( 0 )
 				self.clipFinished( BlackBox, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				ButtonTitleBG:completeAnimation()
 				self.ButtonTitleBG:setAlpha( 0.4 )
 				self.clipFinished( ButtonTitleBG, {} )
+
 				ButtonTitle:completeAnimation()
 				self.ButtonTitle:setAlpha( 1 )
 				self.clipFinished( ButtonTitle, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactive:close()
 		element.BoxButtonLrgInactiveDiag:close()

@@ -4,9 +4,11 @@
 CoD.BM_BribeLabel_Backing = InheritFrom( LUI.UIElement )
 CoD.BM_BribeLabel_Backing.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_BribeLabel_Backing )
 	self.id = "BM_BribeLabel_Backing"
@@ -46,9 +48,11 @@ CoD.BM_BribeLabel_Backing.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Visible = function ()
 				self:setupElementClipCounter( 4 )
+
 				local LabelLeftFrame2 = function ( LabelLeft, event )
 					if not event.interrupted then
 						LabelLeft:beginAnimation( "keyframe", 300, true, false, CoD.TweenType.Bounce )

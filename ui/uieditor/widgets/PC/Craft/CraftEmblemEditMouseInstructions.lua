@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Craft.Paintshop.PaintshopChooseSide" )
 CoD.CraftEmblemEditMouseInstructions = InheritFrom( LUI.UIElement )
 CoD.CraftEmblemEditMouseInstructions.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CraftEmblemEditMouseInstructions )
 	self.id = "CraftEmblemEditMouseInstructions"
@@ -75,21 +77,27 @@ CoD.CraftEmblemEditMouseInstructions.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				fullBackground:completeAnimation()
 				self.fullBackground:setAlpha( 0.5 )
 				self.clipFinished( fullBackground, {} )
+
 				borderOutline:completeAnimation()
 				self.borderOutline:setAlpha( 1 )
 				self.clipFinished( borderOutline, {} )
+
 				header:completeAnimation()
 				self.header:setAlpha( 1 )
 				self.clipFinished( header, {} )
+
 				translateInstruction:completeAnimation()
 				self.translateInstruction:setAlpha( 1 )
 				self.clipFinished( translateInstruction, {} )
+
 				scaleInstruction:completeAnimation()
 				self.scaleInstruction:setAlpha( 1 )
 				self.clipFinished( scaleInstruction, {} )
+
 				materialScaleInstruction:completeAnimation()
 				self.materialScaleInstruction:setAlpha( 0 )
 				self.clipFinished( materialScaleInstruction, {} )
@@ -98,21 +106,27 @@ CoD.CraftEmblemEditMouseInstructions.new = function ( menu, controller )
 		MaterialScale = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				fullBackground:completeAnimation()
 				self.fullBackground:setAlpha( 0.5 )
 				self.clipFinished( fullBackground, {} )
+
 				borderOutline:completeAnimation()
 				self.borderOutline:setAlpha( 1 )
 				self.clipFinished( borderOutline, {} )
+
 				header:completeAnimation()
 				self.header:setAlpha( 1 )
 				self.clipFinished( header, {} )
+
 				translateInstruction:completeAnimation()
 				self.translateInstruction:setAlpha( 0 )
 				self.clipFinished( translateInstruction, {} )
+
 				scaleInstruction:completeAnimation()
 				self.scaleInstruction:setAlpha( 0 )
 				self.clipFinished( scaleInstruction, {} )
+
 				materialScaleInstruction:completeAnimation()
 				self.materialScaleInstruction:setAlpha( 1 )
 				self.clipFinished( materialScaleInstruction, {} )
@@ -121,27 +135,34 @@ CoD.CraftEmblemEditMouseInstructions.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				fullBackground:completeAnimation()
 				self.fullBackground:setAlpha( 0 )
 				self.clipFinished( fullBackground, {} )
+
 				borderOutline:completeAnimation()
 				self.borderOutline:setAlpha( 0 )
 				self.clipFinished( borderOutline, {} )
+
 				header:completeAnimation()
 				self.header:setAlpha( 0 )
 				self.clipFinished( header, {} )
+
 				translateInstruction:completeAnimation()
 				self.translateInstruction:setAlpha( 0 )
 				self.clipFinished( translateInstruction, {} )
+
 				scaleInstruction:completeAnimation()
 				self.scaleInstruction:setAlpha( 0 )
 				self.clipFinished( scaleInstruction, {} )
+
 				materialScaleInstruction:completeAnimation()
 				self.materialScaleInstruction:setAlpha( 0 )
 				self.clipFinished( materialScaleInstruction, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.borderOutline:close()
 		element.header:close()

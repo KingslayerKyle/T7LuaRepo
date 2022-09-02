@@ -4,9 +4,11 @@
 CoD.CallingCards_code_sea_diver = InheritFrom( LUI.UIElement )
 CoD.CallingCards_code_sea_diver.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_code_sea_diver )
 	self.id = "CallingCards_code_sea_diver"

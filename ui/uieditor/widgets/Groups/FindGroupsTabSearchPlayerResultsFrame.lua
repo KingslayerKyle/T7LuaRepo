@@ -12,9 +12,11 @@ end
 CoD.FindGroupsTabSearchPlayerResultsFrame = InheritFrom( LUI.UIElement )
 CoD.FindGroupsTabSearchPlayerResultsFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FindGroupsTabSearchPlayerResultsFrame )
 	self.id = "FindGroupsTabSearchPlayerResultsFrame"
@@ -98,9 +100,11 @@ CoD.FindGroupsTabSearchPlayerResultsFrame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PlayersList:completeAnimation()
 				self.PlayersList:setAlpha( 1 )
 				self.clipFinished( PlayersList, {} )
+
 				NoResults:completeAnimation()
 				self.NoResults:setAlpha( 0 )
 				self.clipFinished( NoResults, {} )
@@ -109,15 +113,18 @@ CoD.FindGroupsTabSearchPlayerResultsFrame.new = function ( menu, controller )
 		NoContent = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PlayersList:completeAnimation()
 				self.PlayersList:setAlpha( 0 )
 				self.clipFinished( PlayersList, {} )
+
 				NoResults:completeAnimation()
 				self.NoResults:setAlpha( 1 )
 				self.clipFinished( NoResults, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoContent",
@@ -134,6 +141,7 @@ CoD.FindGroupsTabSearchPlayerResultsFrame.new = function ( menu, controller )
 			modelName = "groups.searchPlayerResultsCount"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "close", function ( element )
 		SetGlobalModelValue( "socialRoot.tab", "groups" )
 	end )
@@ -145,6 +153,7 @@ CoD.FindGroupsTabSearchPlayerResultsFrame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PlayersList:close()
 	end )

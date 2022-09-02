@@ -4,9 +4,11 @@
 CoD.round = InheritFrom( LUI.UIElement )
 CoD.round.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.round )
 	self.id = "round"
@@ -50,6 +52,7 @@ CoD.round.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local txtRound0Frame2 = function ( txtRound0, event )
 					if not event.interrupted then
 						txtRound0:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )
@@ -85,9 +88,11 @@ CoD.round.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				txtRound0:completeAnimation()
 				self.txtRound0:setAlpha( 0 )
 				self.clipFinished( txtRound0, {} )
+
 				txtRound:completeAnimation()
 				self.txtRound:setAlpha( 0 )
 				self.clipFinished( txtRound, {} )

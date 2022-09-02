@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.onOffImage" )
 CoD.ElementalStaffItem = InheritFrom( LUI.UIElement )
 CoD.ElementalStaffItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ElementalStaffItem )
 	self.id = "ElementalStaffItem"
@@ -153,27 +155,35 @@ CoD.ElementalStaffItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				StaffPartL:completeAnimation()
 				self.StaffPartL:setAlpha( 1 )
 				self.clipFinished( StaffPartL, {} )
+
 				StaffPartU:completeAnimation()
 				self.StaffPartU:setAlpha( 1 )
 				self.clipFinished( StaffPartU, {} )
+
 				StaffPartM:completeAnimation()
 				self.StaffPartM:setAlpha( 1 )
 				self.clipFinished( StaffPartM, {} )
+
 				Record:completeAnimation()
 				self.Record:setAlpha( 0 )
 				self.clipFinished( Record, {} )
+
 				Staff:completeAnimation()
 				self.Staff:setAlpha( 0 )
 				self.clipFinished( Staff, {} )
+
 				UpgradedStaff:completeAnimation()
 				self.UpgradedStaff:setAlpha( 0 )
 				self.clipFinished( UpgradedStaff, {} )
+
 				Gem:completeAnimation()
 				self.Gem:setAlpha( 0 )
 				self.clipFinished( Gem, {} )
+
 				PlayerImage:completeAnimation()
 				self.PlayerImage:setAlpha( 0 )
 				self.clipFinished( PlayerImage, {} )
@@ -182,30 +192,39 @@ CoD.ElementalStaffItem.new = function ( menu, controller )
 		HaveUpgradedStaff = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				StaffPartL:completeAnimation()
 				self.StaffPartL:setAlpha( 0 )
 				self.clipFinished( StaffPartL, {} )
+
 				StaffPartU:completeAnimation()
 				self.StaffPartU:setAlpha( 0 )
 				self.clipFinished( StaffPartU, {} )
+
 				StaffPartM:completeAnimation()
 				self.StaffPartM:setAlpha( 0 )
 				self.clipFinished( StaffPartM, {} )
+
 				staffPartFg:completeAnimation()
 				self.staffPartFg:setAlpha( 0 )
 				self.clipFinished( staffPartFg, {} )
+
 				Record:completeAnimation()
 				self.Record:setAlpha( 0 )
 				self.clipFinished( Record, {} )
+
 				Staff:completeAnimation()
 				self.Staff:setAlpha( 1 )
 				self.clipFinished( Staff, {} )
+
 				UpgradedStaff:completeAnimation()
 				self.UpgradedStaff:setAlpha( 1 )
 				self.clipFinished( UpgradedStaff, {} )
+
 				Gem:completeAnimation()
 				self.Gem:setAlpha( 1 )
 				self.clipFinished( Gem, {} )
+
 				PlayerImage:completeAnimation()
 				self.PlayerImage:setAlpha( 1 )
 				self.clipFinished( PlayerImage, {} )
@@ -214,30 +233,39 @@ CoD.ElementalStaffItem.new = function ( menu, controller )
 		HaveStaff = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				StaffPartL:completeAnimation()
 				self.StaffPartL:setAlpha( 0 )
 				self.clipFinished( StaffPartL, {} )
+
 				StaffPartU:completeAnimation()
 				self.StaffPartU:setAlpha( 0 )
 				self.clipFinished( StaffPartU, {} )
+
 				StaffPartM:completeAnimation()
 				self.StaffPartM:setAlpha( 0 )
 				self.clipFinished( StaffPartM, {} )
+
 				staffPartFg:completeAnimation()
 				self.staffPartFg:setAlpha( 0 )
 				self.clipFinished( staffPartFg, {} )
+
 				Record:completeAnimation()
 				self.Record:setAlpha( 0 )
 				self.clipFinished( Record, {} )
+
 				Staff:completeAnimation()
 				self.Staff:setAlpha( 1 )
 				self.clipFinished( Staff, {} )
+
 				UpgradedStaff:completeAnimation()
 				self.UpgradedStaff:setAlpha( 0 )
 				self.clipFinished( UpgradedStaff, {} )
+
 				Gem:completeAnimation()
 				self.Gem:setAlpha( 1 )
 				self.clipFinished( Gem, {} )
+
 				PlayerImage:completeAnimation()
 				self.PlayerImage:setAlpha( 1 )
 				self.clipFinished( PlayerImage, {} )
@@ -246,24 +274,31 @@ CoD.ElementalStaffItem.new = function ( menu, controller )
 		HaveGem = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				StaffPartL:completeAnimation()
 				self.StaffPartL:setAlpha( 1 )
 				self.clipFinished( StaffPartL, {} )
+
 				StaffPartU:completeAnimation()
 				self.StaffPartU:setAlpha( 1 )
 				self.clipFinished( StaffPartU, {} )
+
 				StaffPartM:completeAnimation()
 				self.StaffPartM:setAlpha( 1 )
 				self.clipFinished( StaffPartM, {} )
+
 				Record:completeAnimation()
 				self.Record:setAlpha( 0 )
 				self.clipFinished( Record, {} )
+
 				Staff:completeAnimation()
 				self.Staff:setAlpha( 0 )
 				self.clipFinished( Staff, {} )
+
 				Gem:completeAnimation()
 				self.Gem:setAlpha( 1 )
 				self.clipFinished( Gem, {} )
+
 				PlayerImage:completeAnimation()
 				self.PlayerImage:setAlpha( 1 )
 				self.clipFinished( PlayerImage, {} )
@@ -272,33 +307,42 @@ CoD.ElementalStaffItem.new = function ( menu, controller )
 		HaveRecord = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				StaffPartL:completeAnimation()
 				self.StaffPartL:setAlpha( 1 )
 				self.clipFinished( StaffPartL, {} )
+
 				StaffPartU:completeAnimation()
 				self.StaffPartU:setAlpha( 1 )
 				self.clipFinished( StaffPartU, {} )
+
 				StaffPartM:completeAnimation()
 				self.StaffPartM:setAlpha( 1 )
 				self.clipFinished( StaffPartM, {} )
+
 				Record:completeAnimation()
 				self.Record:setAlpha( 1 )
 				self.clipFinished( Record, {} )
+
 				Staff:completeAnimation()
 				self.Staff:setAlpha( 0 )
 				self.clipFinished( Staff, {} )
+
 				UpgradedStaff:completeAnimation()
 				self.UpgradedStaff:setAlpha( 0 )
 				self.clipFinished( UpgradedStaff, {} )
+
 				Gem:completeAnimation()
 				self.Gem:setAlpha( 0 )
 				self.clipFinished( Gem, {} )
+
 				PlayerImage:completeAnimation()
 				self.PlayerImage:setAlpha( 0 )
 				self.clipFinished( PlayerImage, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HaveUpgradedStaff",
@@ -333,6 +377,7 @@ CoD.ElementalStaffItem.new = function ( menu, controller )
 			modelName = "quest_state"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StaffPartL:close()
 		element.StaffPartU:close()

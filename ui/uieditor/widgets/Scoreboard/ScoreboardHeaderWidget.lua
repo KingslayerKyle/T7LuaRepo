@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.Scoreboard.ScoreboardHeaderTitleWidget" )
 CoD.ScoreboardHeaderWidget = InheritFrom( LUI.UIElement )
 CoD.ScoreboardHeaderWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreboardHeaderWidget )
 	self.id = "ScoreboardHeaderWidget"
@@ -159,9 +161,11 @@ CoD.ScoreboardHeaderWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				GameTimer:completeAnimation()
 				self.GameTimer:setAlpha( 0 )
 				self.clipFinished( GameTimer, {} )
+
 				ScoreboardHeaderTitleWidget0:completeAnimation()
 				self.ScoreboardHeaderTitleWidget0:setLeftRight( true, false, 9, 303 )
 				self.ScoreboardHeaderTitleWidget0:setTopBottom( true, false, 7, 25 )
@@ -171,11 +175,13 @@ CoD.ScoreboardHeaderWidget.new = function ( menu, controller )
 		ShowTimer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				GameTimer:completeAnimation()
 				self.GameTimer:setLeftRight( true, false, 9, 63 )
 				self.GameTimer:setTopBottom( true, false, 7, 25 )
 				self.GameTimer:setAlpha( 1 )
 				self.clipFinished( GameTimer, {} )
+
 				ScoreboardHeaderTitleWidget0:completeAnimation()
 				self.ScoreboardHeaderTitleWidget0:setLeftRight( true, false, 76, 370 )
 				self.ScoreboardHeaderTitleWidget0:setTopBottom( true, false, 7, 25 )
@@ -183,6 +189,7 @@ CoD.ScoreboardHeaderWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ShowTimer",
@@ -214,6 +221,7 @@ CoD.ScoreboardHeaderWidget.new = function ( menu, controller )
 			modelName = "gameScore.gameTimeEnd"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Top3PlayerScoreBlurBox0:close()
 		element.VSpanel:close()

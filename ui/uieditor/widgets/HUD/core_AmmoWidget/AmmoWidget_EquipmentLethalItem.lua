@@ -10,9 +10,11 @@ end
 CoD.AmmoWidget_EquipmentLethalItem = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_EquipmentLethalItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_EquipmentLethalItem )
 	self.id = "AmmoWidget_EquipmentLethalItem"
@@ -114,32 +116,39 @@ CoD.AmmoWidget_EquipmentLethalItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Lethal1:completeAnimation()
 				self.Lethal1:setLeftRight( true, false, 5.75, 31.25 )
 				self.Lethal1:setTopBottom( true, false, 3.25, 28.75 )
 				self.Lethal1:setRGB( 1, 1, 1 )
 				self.Lethal1:setAlpha( 0 )
 				self.clipFinished( Lethal1, {} )
+
 				Lethal2b:completeAnimation()
 				self.Lethal2b:setAlpha( 0 )
 				self.clipFinished( Lethal2b, {} )
+
 				Lethal2:completeAnimation()
 				self.Lethal2:setRGB( 0.52, 0.52, 0.52 )
 				self.Lethal2:setAlpha( 0 )
 				self.clipFinished( Lethal2, {} )
+
 				Lethal3b:completeAnimation()
 				self.Lethal3b:setAlpha( 0 )
 				self.clipFinished( Lethal3b, {} )
+
 				Lethal3:completeAnimation()
 				self.Lethal3:setRGB( 0.52, 0.52, 0.52 )
 				self.Lethal3:setAlpha( 0 )
 				self.clipFinished( Lethal3, {} )
+
 				LethalEmpty:completeAnimation()
 				self.LethalEmpty:setAlpha( 1 )
 				self.clipFinished( LethalEmpty, {} )
 			end,
 			Single = function ()
 				self:setupElementClipCounter( 5 )
+
 				local Lethal1Frame2 = function ( Lethal1, event )
 					if not event.interrupted then
 						Lethal1:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -161,12 +170,15 @@ CoD.AmmoWidget_EquipmentLethalItem.new = function ( menu, controller )
 				self.Lethal1:setRGB( 1, 0, 0 )
 				self.Lethal1:setAlpha( 0 )
 				Lethal1Frame2( Lethal1, {} )
+
 				Lethal2b:completeAnimation()
 				self.Lethal2b:setAlpha( 0 )
 				self.clipFinished( Lethal2b, {} )
+
 				Lethal3b:completeAnimation()
 				self.Lethal3b:setAlpha( 0 )
 				self.clipFinished( Lethal3b, {} )
+
 				Lethal3:completeAnimation()
 				self.Lethal3:setAlpha( 0 )
 				self.clipFinished( Lethal3, {} )
@@ -190,29 +202,35 @@ CoD.AmmoWidget_EquipmentLethalItem.new = function ( menu, controller )
 		Single = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Lethal1:completeAnimation()
 				self.Lethal1:setLeftRight( true, false, 5.75, 31.25 )
 				self.Lethal1:setTopBottom( true, false, 3.25, 28.75 )
 				self.Lethal1:setRGB( 1, 1, 1 )
 				self.Lethal1:setAlpha( 1 )
 				self.clipFinished( Lethal1, {} )
+
 				Lethal2b:completeAnimation()
 				self.Lethal2b:setAlpha( 0 )
 				self.clipFinished( Lethal2b, {} )
+
 				Lethal2:completeAnimation()
 				self.Lethal2:setLeftRight( true, false, 2.75, 28.25 )
 				self.Lethal2:setTopBottom( true, false, 0.25, 25.75 )
 				self.Lethal2:setAlpha( 0 )
 				self.clipFinished( Lethal2, {} )
+
 				Lethal3b:completeAnimation()
 				self.Lethal3b:setAlpha( 0 )
 				self.clipFinished( Lethal3b, {} )
+
 				Lethal3:completeAnimation()
 				self.Lethal3:setAlpha( 0 )
 				self.clipFinished( Lethal3, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 3 )
+
 				local Lethal1Frame2 = function ( Lethal1, event )
 					if not event.interrupted then
 						Lethal1:beginAnimation( "keyframe", 300, true, false, CoD.TweenType.Bounce )
@@ -234,15 +252,18 @@ CoD.AmmoWidget_EquipmentLethalItem.new = function ( menu, controller )
 				self.Lethal1:setRGB( 1, 1, 1 )
 				self.Lethal1:setAlpha( 1 )
 				Lethal1Frame2( Lethal1, {} )
+
 				Lethal2b:completeAnimation()
 				self.Lethal2b:setAlpha( 0 )
 				self.clipFinished( Lethal2b, {} )
+
 				Lethal3b:completeAnimation()
 				self.Lethal3b:setAlpha( 0 )
 				self.clipFinished( Lethal3b, {} )
 			end,
 			Double = function ()
 				self:setupElementClipCounter( 4 )
+
 				local Lethal1Frame2 = function ( Lethal1, event )
 					if not event.interrupted then
 						Lethal1:beginAnimation( "keyframe", 400, false, true, CoD.TweenType.Back )
@@ -304,6 +325,7 @@ CoD.AmmoWidget_EquipmentLethalItem.new = function ( menu, controller )
 				self.Lethal2:setRGB( 1, 0, 0 )
 				self.Lethal2:setAlpha( 0 )
 				Lethal2Frame2( Lethal2, {} )
+
 				Lethal3b:completeAnimation()
 				self.Lethal3b:setAlpha( 0 )
 				self.clipFinished( Lethal3b, {} )
@@ -312,27 +334,32 @@ CoD.AmmoWidget_EquipmentLethalItem.new = function ( menu, controller )
 		Double = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Lethal1:completeAnimation()
 				self.Lethal1:setLeftRight( true, false, 7.75, 33.25 )
 				self.Lethal1:setTopBottom( true, false, 4.25, 29.75 )
 				self.Lethal1:setRGB( 0.52, 0.52, 0.52 )
 				self.Lethal1:setAlpha( 1 )
 				self.clipFinished( Lethal1, {} )
+
 				Lethal2b:completeAnimation()
 				self.Lethal2b:setLeftRight( true, false, 4.75, 30.25 )
 				self.Lethal2b:setTopBottom( true, false, 2.25, 27.75 )
 				self.Lethal2b:setAlpha( 1 )
 				self.clipFinished( Lethal2b, {} )
+
 				Lethal2:completeAnimation()
 				self.Lethal2:setLeftRight( true, false, 3.75, 29.25 )
 				self.Lethal2:setTopBottom( true, false, 1.25, 26.75 )
 				self.Lethal2:setRGB( 1, 1, 1 )
 				self.Lethal2:setAlpha( 1 )
 				self.clipFinished( Lethal2, {} )
+
 				Lethal3b:completeAnimation()
 				self.Lethal3b:setLeftRight( true, false, 0.75, 26.25 )
 				self.Lethal3b:setTopBottom( true, false, -0.75, 24.75 )
 				self.clipFinished( Lethal3b, {} )
+
 				Lethal3:completeAnimation()
 				self.Lethal3:setLeftRight( true, false, -0.25, 25.25 )
 				self.Lethal3:setTopBottom( true, false, -2.75, 22.75 )
@@ -342,6 +369,7 @@ CoD.AmmoWidget_EquipmentLethalItem.new = function ( menu, controller )
 			end,
 			Single = function ()
 				self:setupElementClipCounter( 5 )
+
 				local Lethal1Frame2 = function ( Lethal1, event )
 					if not event.interrupted then
 						Lethal1:beginAnimation( "keyframe", 400, false, true, CoD.TweenType.Back )
@@ -416,11 +444,13 @@ CoD.AmmoWidget_EquipmentLethalItem.new = function ( menu, controller )
 				self.Lethal2:setRGB( 1, 1, 1 )
 				self.Lethal2:setAlpha( 1 )
 				Lethal2Frame2( Lethal2, {} )
+
 				Lethal3b:completeAnimation()
 				self.Lethal3b:setLeftRight( true, false, 0.75, 26.25 )
 				self.Lethal3b:setTopBottom( true, false, -0.75, 24.75 )
 				self.Lethal3b:setAlpha( 0 )
 				self.clipFinished( Lethal3b, {} )
+
 				Lethal3:completeAnimation()
 				self.Lethal3:setLeftRight( true, false, -0.25, 25.25 )
 				self.Lethal3:setTopBottom( true, false, -2.75, 22.75 )
@@ -430,6 +460,7 @@ CoD.AmmoWidget_EquipmentLethalItem.new = function ( menu, controller )
 			end,
 			Triple = function ()
 				self:setupElementClipCounter( 5 )
+
 				local Lethal1Frame2 = function ( Lethal1, event )
 					if not event.interrupted then
 						Lethal1:beginAnimation( "keyframe", 400, false, true, CoD.TweenType.Back )
@@ -536,28 +567,33 @@ CoD.AmmoWidget_EquipmentLethalItem.new = function ( menu, controller )
 		Triple = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Lethal1:completeAnimation()
 				self.Lethal1:setLeftRight( true, false, 9.75, 35.25 )
 				self.Lethal1:setTopBottom( true, false, 5.25, 30.75 )
 				self.Lethal1:setRGB( 0.52, 0.52, 0.52 )
 				self.Lethal1:setAlpha( 1 )
 				self.clipFinished( Lethal1, {} )
+
 				Lethal2b:completeAnimation()
 				self.Lethal2b:setLeftRight( true, false, 6.75, 32.25 )
 				self.Lethal2b:setTopBottom( true, false, 4.25, 29.75 )
 				self.Lethal2b:setAlpha( 1 )
 				self.clipFinished( Lethal2b, {} )
+
 				Lethal2:completeAnimation()
 				self.Lethal2:setLeftRight( true, false, 5.75, 31.25 )
 				self.Lethal2:setTopBottom( true, false, 3.25, 28.75 )
 				self.Lethal2:setRGB( 0.52, 0.52, 0.52 )
 				self.Lethal2:setAlpha( 1 )
 				self.clipFinished( Lethal2, {} )
+
 				Lethal3b:completeAnimation()
 				self.Lethal3b:setLeftRight( true, false, 2.75, 28.25 )
 				self.Lethal3b:setTopBottom( true, false, 2.25, 27.75 )
 				self.Lethal3b:setAlpha( 1 )
 				self.clipFinished( Lethal3b, {} )
+
 				Lethal3:completeAnimation()
 				self.Lethal3:setLeftRight( true, false, 1.75, 27.25 )
 				self.Lethal3:setTopBottom( true, false, 1.25, 26.75 )
@@ -567,6 +603,7 @@ CoD.AmmoWidget_EquipmentLethalItem.new = function ( menu, controller )
 			end,
 			Double = function ()
 				self:setupElementClipCounter( 5 )
+
 				local Lethal1Frame2 = function ( Lethal1, event )
 					if not event.interrupted then
 						Lethal1:beginAnimation( "keyframe", 400, true, false, CoD.TweenType.Back )
@@ -682,6 +719,7 @@ CoD.AmmoWidget_EquipmentLethalItem.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LethalEmpty:close()
 		element.Lethal1:close()

@@ -23,9 +23,11 @@ end
 CoD.PlaylistDLC1CRM = InheritFrom( LUI.UIElement )
 CoD.PlaylistDLC1CRM.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.PlaylistDLC1CRM )
 	self.id = "PlaylistDLC1CRM"
@@ -164,39 +166,51 @@ CoD.PlaylistDLC1CRM.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				TitleDLC1:completeAnimation()
 				self.TitleDLC1:setAlpha( 0 )
 				self.clipFinished( TitleDLC1, {} )
+
 				TitleDLC2:completeAnimation()
 				self.TitleDLC2:setAlpha( 0 )
 				self.clipFinished( TitleDLC2, {} )
+
 				TitleDLC3:completeAnimation()
 				self.TitleDLC3:setAlpha( 0 )
 				self.clipFinished( TitleDLC3, {} )
+
 				TitleDLC4:completeAnimation()
 				self.TitleDLC4:setAlpha( 0 )
 				self.clipFinished( TitleDLC4, {} )
+
 				DownloadIcon:completeAnimation()
 				self.DownloadIcon:setAlpha( 0 )
 				self.clipFinished( DownloadIcon, {} )
+
 				ActionImage:completeAnimation()
 				self.ActionImage:setAlpha( 0 )
 				self.clipFinished( ActionImage, {} )
+
 				TextPurchaseDLC1:completeAnimation()
 				self.TextPurchaseDLC1:setAlpha( 0 )
 				self.clipFinished( TextPurchaseDLC1, {} )
+
 				TextPurchaseDLC2:completeAnimation()
 				self.TextPurchaseDLC2:setAlpha( 0 )
 				self.clipFinished( TextPurchaseDLC2, {} )
+
 				TextPurchaseDLC3:completeAnimation()
 				self.TextPurchaseDLC3:setAlpha( 0 )
 				self.clipFinished( TextPurchaseDLC3, {} )
+
 				TextPurchaseDLC4:completeAnimation()
 				self.TextPurchaseDLC4:setAlpha( 0 )
 				self.clipFinished( TextPurchaseDLC4, {} )
+
 				TextIncludes4New:completeAnimation()
 				self.TextIncludes4New:setAlpha( 0 )
 				self.clipFinished( TextIncludes4New, {} )
@@ -205,44 +219,58 @@ CoD.PlaylistDLC1CRM.new = function ( menu, controller )
 		dlc4_pc = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 1 )
 				self.clipFinished( BG, {} )
+
 				TitleDLC1:completeAnimation()
 				self.TitleDLC1:setAlpha( 0 )
 				self.clipFinished( TitleDLC1, {} )
+
 				TitleDLC2:completeAnimation()
 				self.TitleDLC2:setAlpha( 0 )
 				self.clipFinished( TitleDLC2, {} )
+
 				TitleDLC3:completeAnimation()
 				self.TitleDLC3:setAlpha( 0 )
 				self.clipFinished( TitleDLC3, {} )
+
 				TitleDLC4:completeAnimation()
 				self.TitleDLC4:setAlpha( 1 )
 				self.clipFinished( TitleDLC4, {} )
+
 				DownloadIcon:completeAnimation()
 				self.DownloadIcon:setAlpha( 1 )
 				self.clipFinished( DownloadIcon, {} )
+
 				ActionImage:completeAnimation()
 				self.ActionImage:setAlpha( 0 )
 				self.clipFinished( ActionImage, {} )
+
 				TextPurchaseDLC1:completeAnimation()
 				self.TextPurchaseDLC1:setAlpha( 0 )
 				self.clipFinished( TextPurchaseDLC1, {} )
+
 				TextPurchaseDLC2:completeAnimation()
 				self.TextPurchaseDLC2:setAlpha( 0 )
 				self.clipFinished( TextPurchaseDLC2, {} )
+
 				TextPurchaseDLC3:completeAnimation()
 				self.TextPurchaseDLC3:setAlpha( 0 )
 				self.clipFinished( TextPurchaseDLC3, {} )
+
 				TextPurchaseDLC4:completeAnimation()
 				self.TextPurchaseDLC4:setAlpha( 0 )
 				self.TextPurchaseDLC4:setText( Engine.Localize( "MENU_PURCHASE_SEASON_PASS" ) )
 				self.clipFinished( TextPurchaseDLC4, {} )
+
 				TextIncludes4New:completeAnimation()
 				self.TextIncludes4New:setAlpha( 1 )
 				self.clipFinished( TextIncludes4New, {} )
+
 				f3_local13:completeAnimation()
+
 				f3_local13.label:completeAnimation()
 				self.Keyshortcut:setAlpha( 1 )
 				self.Keyshortcut.label:setText( Engine.Localize( "MENU_PURCHASE_SEASON_PASS" ) )
@@ -252,46 +280,59 @@ CoD.PlaylistDLC1CRM.new = function ( menu, controller )
 		dlc4 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 1 )
 				self.clipFinished( BG, {} )
+
 				TitleDLC1:completeAnimation()
 				self.TitleDLC1:setAlpha( 0 )
 				self.clipFinished( TitleDLC1, {} )
+
 				TitleDLC2:completeAnimation()
 				self.TitleDLC2:setAlpha( 0 )
 				self.clipFinished( TitleDLC2, {} )
+
 				TitleDLC3:completeAnimation()
 				self.TitleDLC3:setAlpha( 0 )
 				self.clipFinished( TitleDLC3, {} )
+
 				TitleDLC4:completeAnimation()
 				self.TitleDLC4:setLeftRight( true, false, 38.62, 243.43 )
 				self.TitleDLC4:setTopBottom( true, false, 19.22, 61.89 )
 				self.TitleDLC4:setAlpha( 1 )
 				self.TitleDLC4:setImage( RegisterImage( "uie_t7_crm_dlc4_playlist_title" ) )
 				self.clipFinished( TitleDLC4, {} )
+
 				DownloadIcon:completeAnimation()
 				self.DownloadIcon:setAlpha( 1 )
 				self.clipFinished( DownloadIcon, {} )
+
 				ActionImage:completeAnimation()
 				self.ActionImage:setAlpha( 1 )
 				self.clipFinished( ActionImage, {} )
+
 				TextPurchaseDLC1:completeAnimation()
 				self.TextPurchaseDLC1:setAlpha( 0 )
 				self.clipFinished( TextPurchaseDLC1, {} )
+
 				TextPurchaseDLC2:completeAnimation()
 				self.TextPurchaseDLC2:setAlpha( 0 )
 				self.clipFinished( TextPurchaseDLC2, {} )
+
 				TextPurchaseDLC3:completeAnimation()
 				self.TextPurchaseDLC3:setAlpha( 0 )
 				self.clipFinished( TextPurchaseDLC3, {} )
+
 				TextPurchaseDLC4:completeAnimation()
 				self.TextPurchaseDLC4:setAlpha( 1 )
 				self.TextPurchaseDLC4:setText( Engine.Localize( "MENU_PURCHASE_DLC4" ) )
 				self.clipFinished( TextPurchaseDLC4, {} )
+
 				TextIncludes4New:completeAnimation()
 				self.TextIncludes4New:setAlpha( 1 )
 				self.clipFinished( TextIncludes4New, {} )
+
 				f3_local13:completeAnimation()
 				self.Keyshortcut:setAlpha( 0 )
 				self.clipFinished( f3_local13, {} )
@@ -300,39 +341,51 @@ CoD.PlaylistDLC1CRM.new = function ( menu, controller )
 		dlc3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 1 )
 				self.clipFinished( BG, {} )
+
 				TitleDLC1:completeAnimation()
 				self.TitleDLC1:setAlpha( 0 )
 				self.clipFinished( TitleDLC1, {} )
+
 				TitleDLC2:completeAnimation()
 				self.TitleDLC2:setAlpha( 0 )
 				self.clipFinished( TitleDLC2, {} )
+
 				TitleDLC3:completeAnimation()
 				self.TitleDLC3:setAlpha( 1 )
 				self.clipFinished( TitleDLC3, {} )
+
 				TitleDLC4:completeAnimation()
 				self.TitleDLC4:setAlpha( 0 )
 				self.clipFinished( TitleDLC4, {} )
+
 				DownloadIcon:completeAnimation()
 				self.DownloadIcon:setAlpha( 1 )
 				self.clipFinished( DownloadIcon, {} )
+
 				ActionImage:completeAnimation()
 				self.ActionImage:setAlpha( 1 )
 				self.clipFinished( ActionImage, {} )
+
 				TextPurchaseDLC1:completeAnimation()
 				self.TextPurchaseDLC1:setAlpha( 0 )
 				self.clipFinished( TextPurchaseDLC1, {} )
+
 				TextPurchaseDLC2:completeAnimation()
 				self.TextPurchaseDLC2:setAlpha( 0 )
 				self.clipFinished( TextPurchaseDLC2, {} )
+
 				TextPurchaseDLC3:completeAnimation()
 				self.TextPurchaseDLC3:setAlpha( 1 )
 				self.clipFinished( TextPurchaseDLC3, {} )
+
 				TextPurchaseDLC4:completeAnimation()
 				self.TextPurchaseDLC4:setAlpha( 0 )
 				self.clipFinished( TextPurchaseDLC4, {} )
+
 				TextIncludes4New:completeAnimation()
 				self.TextIncludes4New:setAlpha( 1 )
 				self.clipFinished( TextIncludes4New, {} )
@@ -341,44 +394,56 @@ CoD.PlaylistDLC1CRM.new = function ( menu, controller )
 		dlc2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 1 )
 				self.clipFinished( BG, {} )
+
 				TitleDLC1:completeAnimation()
 				self.TitleDLC1:setLeftRight( true, false, 36.62, 241.43 )
 				self.TitleDLC1:setTopBottom( true, false, 19.22, 61.89 )
 				self.TitleDLC1:setAlpha( 0 )
 				self.clipFinished( TitleDLC1, {} )
+
 				TitleDLC2:completeAnimation()
 				self.TitleDLC2:setLeftRight( true, false, 36.62, 241.43 )
 				self.TitleDLC2:setTopBottom( true, false, 19.22, 61.89 )
 				self.TitleDLC2:setAlpha( 1 )
 				self.TitleDLC2:setImage( RegisterImage( "uie_t7_crm_dlc2_playlist_title" ) )
 				self.clipFinished( TitleDLC2, {} )
+
 				TitleDLC3:completeAnimation()
 				self.TitleDLC3:setAlpha( 0 )
 				self.clipFinished( TitleDLC3, {} )
+
 				TitleDLC4:completeAnimation()
 				self.TitleDLC4:setAlpha( 0 )
 				self.clipFinished( TitleDLC4, {} )
+
 				DownloadIcon:completeAnimation()
 				self.DownloadIcon:setAlpha( 1 )
 				self.clipFinished( DownloadIcon, {} )
+
 				ActionImage:completeAnimation()
 				self.ActionImage:setAlpha( 1 )
 				self.clipFinished( ActionImage, {} )
+
 				TextPurchaseDLC1:completeAnimation()
 				self.TextPurchaseDLC1:setAlpha( 0 )
 				self.clipFinished( TextPurchaseDLC1, {} )
+
 				TextPurchaseDLC2:completeAnimation()
 				self.TextPurchaseDLC2:setAlpha( 1 )
 				self.clipFinished( TextPurchaseDLC2, {} )
+
 				TextPurchaseDLC3:completeAnimation()
 				self.TextPurchaseDLC3:setAlpha( 0 )
 				self.clipFinished( TextPurchaseDLC3, {} )
+
 				TextPurchaseDLC4:completeAnimation()
 				self.TextPurchaseDLC4:setAlpha( 0 )
 				self.clipFinished( TextPurchaseDLC4, {} )
+
 				TextIncludes4New:completeAnimation()
 				self.TextIncludes4New:setAlpha( 1 )
 				self.clipFinished( TextIncludes4New, {} )
@@ -387,45 +452,58 @@ CoD.PlaylistDLC1CRM.new = function ( menu, controller )
 		dlc1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 1 )
 				self.clipFinished( BG, {} )
+
 				TitleDLC1:completeAnimation()
 				self.TitleDLC1:setAlpha( 1 )
 				self.clipFinished( TitleDLC1, {} )
+
 				TitleDLC2:completeAnimation()
 				self.TitleDLC2:setAlpha( 0 )
 				self.clipFinished( TitleDLC2, {} )
+
 				TitleDLC3:completeAnimation()
 				self.TitleDLC3:setAlpha( 0 )
 				self.clipFinished( TitleDLC3, {} )
+
 				TitleDLC4:completeAnimation()
 				self.TitleDLC4:setAlpha( 0 )
 				self.clipFinished( TitleDLC4, {} )
+
 				DownloadIcon:completeAnimation()
 				self.DownloadIcon:setAlpha( 1 )
 				self.clipFinished( DownloadIcon, {} )
+
 				ActionImage:completeAnimation()
 				self.ActionImage:setAlpha( 1 )
 				self.clipFinished( ActionImage, {} )
+
 				TextPurchaseDLC1:completeAnimation()
 				self.TextPurchaseDLC1:setAlpha( 1 )
 				self.clipFinished( TextPurchaseDLC1, {} )
+
 				TextPurchaseDLC2:completeAnimation()
 				self.TextPurchaseDLC2:setAlpha( 0 )
 				self.clipFinished( TextPurchaseDLC2, {} )
+
 				TextPurchaseDLC3:completeAnimation()
 				self.TextPurchaseDLC3:setAlpha( 0 )
 				self.clipFinished( TextPurchaseDLC3, {} )
+
 				TextPurchaseDLC4:completeAnimation()
 				self.TextPurchaseDLC4:setAlpha( 0 )
 				self.clipFinished( TextPurchaseDLC4, {} )
+
 				TextIncludes4New:completeAnimation()
 				self.TextIncludes4New:setAlpha( 1 )
 				self.clipFinished( TextIncludes4New, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Keyshortcut:close()
 		element.ActionImage:close()

@@ -4,9 +4,11 @@
 CoD.GroupsItemRowStatus = InheritFrom( LUI.UIElement )
 CoD.GroupsItemRowStatus.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsItemRowStatus )
 	self.id = "GroupsItemRowStatus"
@@ -31,40 +33,49 @@ CoD.GroupsItemRowStatus.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				MemberStatus:completeAnimation()
 				self.MemberStatus:setAlpha( 0 )
 				self.clipFinished( MemberStatus, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Admin = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				MemberStatus:completeAnimation()
 				self.MemberStatus:setAlpha( 1 )
 				self.clipFinished( MemberStatus, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Owner = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				MemberStatus:completeAnimation()
 				self.MemberStatus:setAlpha( 1 )
 				self.MemberStatus:setText( Engine.Localize( "GROUPS_OWNER" ) )
@@ -72,12 +83,15 @@ CoD.GroupsItemRowStatus.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

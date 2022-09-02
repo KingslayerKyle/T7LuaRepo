@@ -28,9 +28,11 @@ end
 CoD.BubbleGumBuffInGame = InheritFrom( LUI.UIElement )
 CoD.BubbleGumBuffInGame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BubbleGumBuffInGame )
 	self.id = "BubbleGumBuffInGame"
@@ -120,9 +122,11 @@ CoD.BubbleGumBuffInGame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				GridItemBGBGlow:completeAnimation()
 				self.GridItemBGBGlow:setAlpha( 1 )
 				self.clipFinished( GridItemBGBGlow, {} )
+
 				BubbleGumBuffImage:completeAnimation()
 				self.BubbleGumBuffImage:setAlpha( 1 )
 				self.clipFinished( BubbleGumBuffImage, {} )
@@ -131,15 +135,18 @@ CoD.BubbleGumBuffInGame.new = function ( menu, controller )
 		OutOfBubbleGum = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				GridItemBGBGlow:completeAnimation()
 				self.GridItemBGBGlow:setAlpha( 0.25 )
 				self.clipFinished( GridItemBGBGlow, {} )
+
 				BubbleGumBuffImage:completeAnimation()
 				self.BubbleGumBuffImage:setAlpha( 0.5 )
 				self.clipFinished( BubbleGumBuffImage, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "OutOfBubbleGum",
@@ -164,6 +171,7 @@ CoD.BubbleGumBuffInGame.new = function ( menu, controller )
 			modelName = "itemIndex"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GridItemBGBGlow:close()
 		element.ConsumableLabel:close()

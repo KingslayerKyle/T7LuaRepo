@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CPSystems.Revive.BleedOut.bleedOutBlur1" )
 CoD.bleedOutBlurContainer = InheritFrom( LUI.UIElement )
 CoD.bleedOutBlurContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.bleedOutBlurContainer )
 	self.id = "bleedOutBlurContainer"
@@ -28,12 +30,14 @@ CoD.bleedOutBlurContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				bleedOutBlur10:completeAnimation()
 				self.bleedOutBlur10:setAlpha( 0 )
 				self.clipFinished( bleedOutBlur10, {} )
 			end,
 			BleedingOut = function ()
 				self:setupElementClipCounter( 1 )
+
 				local bleedOutBlur10Frame2 = function ( bleedOutBlur10, event )
 					local bleedOutBlur10Frame3 = function ( bleedOutBlur10, event )
 						local bleedOutBlur10Frame4 = function ( bleedOutBlur10, event )
@@ -92,22 +96,27 @@ CoD.bleedOutBlurContainer.new = function ( menu, controller )
 		BleedingOut = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			BleedingOut_Low = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		BleedingOut_Low = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Reviving = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BleedingOut",
@@ -152,6 +161,7 @@ CoD.bleedOutBlurContainer.new = function ( menu, controller )
 			modelName = "beingRevived"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.bleedOutBlur10:close()
 	end )

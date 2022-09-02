@@ -18,9 +18,11 @@ end
 CoD.StartMenu_Options_PC_InteractControls = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_PC_InteractControls.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_PC_InteractControls )
 	self.id = "StartMenu_Options_PC_InteractControls"
@@ -78,6 +80,7 @@ CoD.StartMenu_Options_PC_InteractControls.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.keybindList:close()
 		element.optionInfo:close()

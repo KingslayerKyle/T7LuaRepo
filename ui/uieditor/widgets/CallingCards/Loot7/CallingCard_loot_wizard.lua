@@ -4,9 +4,11 @@
 CoD.CallingCard_loot_wizard = InheritFrom( LUI.UIElement )
 CoD.CallingCard_loot_wizard.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCard_loot_wizard )
 	self.id = "CallingCard_loot_wizard"
@@ -153,6 +155,7 @@ CoD.CallingCard_loot_wizard.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				local Wizz2Frame2 = function ( Wizz2, event )
 					local Wizz2Frame3 = function ( Wizz2, event )
 						local Wizz2Frame4 = function ( Wizz2, event )
@@ -727,6 +730,7 @@ CoD.CallingCard_loot_wizard.new = function ( menu, controller )
 				Eyes0:completeAnimation()
 				self.Eyes0:setAlpha( 0 )
 				Eyes0Frame2( Eyes0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

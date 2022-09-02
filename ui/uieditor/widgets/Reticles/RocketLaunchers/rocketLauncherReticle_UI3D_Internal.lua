@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Reticles.BlackCell.TeamMateLockOn" )
 CoD.rocketLauncherReticle_UI3D_Internal = InheritFrom( LUI.UIElement )
 CoD.rocketLauncherReticle_UI3D_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.rocketLauncherReticle_UI3D_Internal )
 	self.id = "rocketLauncherReticle_UI3D_Internal"
@@ -63,18 +65,23 @@ CoD.rocketLauncherReticle_UI3D_Internal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				GreenBacking:completeAnimation()
 				self.GreenBacking:setRGB( 0.64, 1, 0.81 )
 				self.clipFinished( GreenBacking, {} )
+
 				reticle:completeAnimation()
 				self.reticle:setRGB( 0.64, 1, 0.81 )
 				self.clipFinished( reticle, {} )
+
 				Target:completeAnimation()
 				self.Target:setRGB( 0.64, 1, 0.81 )
 				self.clipFinished( Target, {} )
+
 				Timer:completeAnimation()
 				self.Timer:setRGB( 0.64, 1, 0.81 )
 				self.clipFinished( Timer, {} )
+
 				TeamMateLockOn:completeAnimation()
 				self.TeamMateLockOn:setRGB( 1, 1, 1 )
 				self.clipFinished( TeamMateLockOn, {} )
@@ -83,23 +90,28 @@ CoD.rocketLauncherReticle_UI3D_Internal.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				GreenBacking:completeAnimation()
 				self.GreenBacking:setRGB( 1, 0, 0 )
 				self.clipFinished( GreenBacking, {} )
+
 				reticle:completeAnimation()
 				self.reticle:setRGB( 1, 0, 0 )
 				self.reticle:setAlpha( 1 )
 				self.reticle:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( reticle, {} )
+
 				Target:completeAnimation()
 				self.Target:setRGB( 1, 0, 0 )
 				self.clipFinished( Target, {} )
+
 				Timer:completeAnimation()
 				self.Timer:setRGB( 1, 0, 0 )
 				self.clipFinished( Timer, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Target:close()
 		element.Timer:close()

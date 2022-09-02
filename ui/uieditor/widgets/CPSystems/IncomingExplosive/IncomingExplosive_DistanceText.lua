@@ -4,9 +4,11 @@
 CoD.IncomingExplosive_DistanceText = InheritFrom( LUI.UIElement )
 CoD.IncomingExplosive_DistanceText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.IncomingExplosive_DistanceText )
 	self.id = "IncomingExplosive_DistanceText"
@@ -42,9 +44,11 @@ CoD.IncomingExplosive_DistanceText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				textDistance:completeAnimation()
 				self.textDistance:setAlpha( 0 )
 				self.clipFinished( textDistance, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 0 )
 				self.clipFinished( TextBox0, {} )
@@ -53,9 +57,11 @@ CoD.IncomingExplosive_DistanceText.new = function ( menu, controller )
 		Grenade = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				textDistance:completeAnimation()
 				self.textDistance:setAlpha( 1 )
 				self.clipFinished( textDistance, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 1 )
 				self.clipFinished( TextBox0, {} )

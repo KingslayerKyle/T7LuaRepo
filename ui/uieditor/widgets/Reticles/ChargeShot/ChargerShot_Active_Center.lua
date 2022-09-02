@@ -4,9 +4,11 @@
 CoD.ChargerShot_Active_Center = InheritFrom( LUI.UIElement )
 CoD.ChargerShot_Active_Center.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChargerShot_Active_Center )
 	self.id = "ChargerShot_Active_Center"

@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FocusBarContainer" )
 CoD.MedalsGridItem = InheritFrom( LUI.UIElement )
 CoD.MedalsGridItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MedalsGridItem )
 	self.id = "MedalsGridItem"
@@ -165,61 +167,78 @@ CoD.MedalsGridItem.new = function ( menu, controller )
 		Arabic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				BoxButtonLrgInactiveStroke:completeAnimation()
 				self.BoxButtonLrgInactiveStroke:setAlpha( 0.8 )
 				self.clipFinished( BoxButtonLrgInactiveStroke, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				name:completeAnimation()
 				self.name:setLeftRight( true, false, 3, 174 )
 				self.name:setTopBottom( false, true, -22, -3 )
 				self.clipFinished( name, {} )
+
 				TimesEarned:completeAnimation()
 				self.TimesEarned:setLeftRight( true, false, 149, 174 )
 				self.TimesEarned:setTopBottom( false, true, -41, -22 )
 				self.clipFinished( TimesEarned, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 11 )
+
 				BoxButtonLrgInactiveStroke:completeAnimation()
 				self.BoxButtonLrgInactiveStroke:setAlpha( 0.8 )
 				self.clipFinished( BoxButtonLrgInactiveStroke, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				name:completeAnimation()
 				self.name:setLeftRight( true, false, 3, 174 )
 				self.name:setTopBottom( false, true, -22, -3 )
 				self.name:setAlpha( 1 )
 				self.clipFinished( name, {} )
+
 				TimesEarned:completeAnimation()
 				self.TimesEarned:setLeftRight( true, false, 149, 174 )
 				self.TimesEarned:setTopBottom( false, true, -41, -22 )
@@ -574,45 +593,57 @@ CoD.MedalsGridItem.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 11 )
+
 				BoxButtonLrgInactiveStroke:completeAnimation()
 				self.BoxButtonLrgInactiveStroke:setAlpha( 0.8 )
 				self.clipFinished( BoxButtonLrgInactiveStroke, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				name:completeAnimation()
 				self.name:setLeftRight( true, false, 3, 174 )
 				self.name:setTopBottom( false, true, -22, -3 )
 				self.name:setAlpha( 1 )
 				self.clipFinished( name, {} )
+
 				TimesEarned:completeAnimation()
 				self.TimesEarned:setLeftRight( true, false, 149, 174 )
 				self.TimesEarned:setTopBottom( false, true, -41, -22 )
 				self.clipFinished( TimesEarned, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgInactiveStroke:completeAnimation()
 				self.BoxButtonLrgInactiveStroke:setAlpha( 0.8 )
 				self.clipFinished( BoxButtonLrgInactiveStroke, {} )
@@ -631,14 +662,17 @@ CoD.MedalsGridItem.new = function ( menu, controller )
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				BoxButtonLrgInactiveFrame2( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				name:completeAnimation()
 				self.name:setLeftRight( true, false, 3, 174 )
 				self.name:setTopBottom( false, true, -22, -3 )
 				self.name:setAlpha( 1 )
 				self.clipFinished( name, {} )
+
 				TimesEarned:completeAnimation()
 				self.TimesEarned:setLeftRight( true, false, 149, 174 )
 				self.TimesEarned:setTopBottom( false, true, -41, -22 )
@@ -1021,42 +1055,54 @@ CoD.MedalsGridItem.new = function ( menu, controller )
 		DefaultState_backup = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				MedalImageBacking:completeAnimation()
 				self.MedalImageBacking:setAlpha( 1 )
 				self.clipFinished( MedalImageBacking, {} )
+
 				MedalImage:completeAnimation()
 				self.MedalImage:setAlpha( 1 )
 				self.clipFinished( MedalImage, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				MedalImageBacking:completeAnimation()
 				self.MedalImageBacking:setAlpha( 1 )
 				self.clipFinished( MedalImageBacking, {} )
+
 				MedalImage:completeAnimation()
 				self.MedalImage:setAlpha( 1 )
 				self.clipFinished( MedalImage, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 1 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 1 )
 				self.clipFinished( glitch2, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
@@ -1065,51 +1111,66 @@ CoD.MedalsGridItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				BoxButtonLrgInactiveStroke:completeAnimation()
 				self.BoxButtonLrgInactiveStroke:setAlpha( 0.8 )
 				self.clipFinished( BoxButtonLrgInactiveStroke, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 11 )
+
 				BoxButtonLrgInactiveStroke:completeAnimation()
 				self.BoxButtonLrgInactiveStroke:setAlpha( 0.8 )
 				self.clipFinished( BoxButtonLrgInactiveStroke, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				name:completeAnimation()
 				self.name:setAlpha( 1 )
 				self.clipFinished( name, {} )
+
 				TimesEarned:completeAnimation()
 				self.clipFinished( TimesEarned, {} )
 				local FocusBorderFrame2 = function ( FocusBorder, event )
@@ -1462,41 +1523,53 @@ CoD.MedalsGridItem.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 11 )
+
 				BoxButtonLrgInactiveStroke:completeAnimation()
 				self.BoxButtonLrgInactiveStroke:setAlpha( 0.8 )
 				self.clipFinished( BoxButtonLrgInactiveStroke, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				name:completeAnimation()
 				self.name:setAlpha( 1 )
 				self.clipFinished( name, {} )
+
 				TimesEarned:completeAnimation()
 				self.clipFinished( TimesEarned, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgInactiveStroke:completeAnimation()
 				self.BoxButtonLrgInactiveStroke:setAlpha( 0.8 )
 				self.clipFinished( BoxButtonLrgInactiveStroke, {} )
@@ -1515,12 +1588,15 @@ CoD.MedalsGridItem.new = function ( menu, controller )
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				BoxButtonLrgInactiveFrame2( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				name:completeAnimation()
 				self.name:setAlpha( 1 )
 				self.clipFinished( name, {} )
+
 				TimesEarned:completeAnimation()
 				self.clipFinished( TimesEarned, {} )
 				local FocusBorderFrame2 = function ( FocusBorder, event )
@@ -1899,6 +1975,7 @@ CoD.MedalsGridItem.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Arabic",
@@ -1913,6 +1990,7 @@ CoD.MedalsGridItem.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.name:close()
 		element.TimesEarned:close()

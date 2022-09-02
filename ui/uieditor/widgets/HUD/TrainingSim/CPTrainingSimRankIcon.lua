@@ -4,9 +4,11 @@
 CoD.CPTrainingSimRankIcon = InheritFrom( LUI.UIElement )
 CoD.CPTrainingSimRankIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CPTrainingSimRankIcon )
 	self.id = "CPTrainingSimRankIcon"
@@ -34,6 +36,7 @@ CoD.CPTrainingSimRankIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				RatingIcon:completeAnimation()
 				self.RatingIcon:setRGB( 0, 0, 0 )
 				self.clipFinished( RatingIcon, {} )
@@ -42,6 +45,7 @@ CoD.CPTrainingSimRankIcon.new = function ( menu, controller )
 		Show = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				RatingIcon:completeAnimation()
 				self.RatingIcon:setRGB( 1, 1, 1 )
 				self.clipFinished( RatingIcon, {} )

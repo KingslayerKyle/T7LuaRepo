@@ -13,9 +13,11 @@ end
 CoD.ZmAmmo_EquipContainer = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_EquipContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_EquipContainer )
 	self.id = "ZmAmmo_EquipContainer"

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BackgroundFrames.BackgroundPattern01" )
 CoD.PaintjobSlotsBack = InheritFrom( LUI.UIElement )
 CoD.PaintjobSlotsBack.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PaintjobSlotsBack )
 	self.id = "PaintjobSlotsBack"
@@ -27,14 +29,17 @@ CoD.PaintjobSlotsBack.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		SlotsFull = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BackgroundPattern01:close()
 	end )

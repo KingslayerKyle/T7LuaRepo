@@ -56,9 +56,11 @@ end
 CoD.MissionRecordVault_ChallengeSelectedInfo = InheritFrom( LUI.UIElement )
 CoD.MissionRecordVault_ChallengeSelectedInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MissionRecordVault_ChallengeSelectedInfo )
 	self.id = "MissionRecordVault_ChallengeSelectedInfo"
@@ -203,35 +205,45 @@ CoD.MissionRecordVault_ChallengeSelectedInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		NoAccolades = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				SecTitleBG:completeAnimation()
 				self.SecTitleBG:setAlpha( 0.65 )
 				self.clipFinished( SecTitleBG, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				Image30:completeAnimation()
 				self.Image30:setAlpha( 1 )
 				self.clipFinished( Image30, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 0 )
 				self.clipFinished( TextBox0, {} )
+
 				Image300:completeAnimation()
 				self.Image300:setAlpha( 1 )
 				self.clipFinished( Image300, {} )
+
 				TextBox1:completeAnimation()
 				self.TextBox1:setAlpha( 1 )
 				self.clipFinished( TextBox1, {} )
+
 				TextBox2:completeAnimation()
 				self.TextBox2:setAlpha( 0.55 )
 				self.clipFinished( TextBox2, {} )
+
 				MissionRecordVaultAccolade:completeAnimation()
 				self.MissionRecordVaultAccolade:setAlpha( 0 )
 				self.clipFinished( MissionRecordVaultAccolade, {} )
+
 				MissionRecordVaultYourBest:completeAnimation()
 				self.MissionRecordVaultYourBest:setAlpha( 0 )
 				self.clipFinished( MissionRecordVaultYourBest, {} )
@@ -240,19 +252,23 @@ CoD.MissionRecordVault_ChallengeSelectedInfo.new = function ( menu, controller )
 		Incomplete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setRGB( 1, 1, 1 )
 				self.TextBox0:setAlpha( 0 )
 				self.clipFinished( TextBox0, {} )
+
 				MissionRecordVaultYourBest:completeAnimation()
 				self.MissionRecordVaultYourBest:setAlpha( 0 )
 				self.clipFinished( MissionRecordVaultYourBest, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoAccolades",
@@ -283,6 +299,7 @@ CoD.MissionRecordVault_ChallengeSelectedInfo.new = function ( menu, controller )
 			modelName = "completed"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MissionRecordVaultAccolade:close()
 		element.MissionRecordVaultYourBest:close()

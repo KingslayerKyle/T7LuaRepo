@@ -26,6 +26,7 @@ local PostLoadFunc = function ( f1_arg0, f1_arg1 )
 				f1_arg0.CombatEfficiencyPulse:playClip( "ScoreAdded" )
 				f1_arg0.FocusMeterFillWhite:playClip( "ScoreAdded" )
 			end
+
 			f1_arg0.CombatEfficiencyPulse:completeAnimation()
 			f1_arg0.CombatEfficiencyPulse:setTopBottom( true, true, f1_local3 + f1_local13 * (1 - f1_local0), f1_local4 )
 			f1_arg0.CombatEfficiencyPulse:beginAnimation( "keyframe", 150, false, true, CoD.TweenType.Linear )
@@ -40,6 +41,7 @@ local PostLoadFunc = function ( f1_arg0, f1_arg1 )
 			f1_local0 = modelValue
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( f1_arg0, "close", function ()
 		f1_arg0.Fill:close()
 	end )
@@ -48,9 +50,11 @@ end
 CoD.ScrStk_MeterInternal = InheritFrom( LUI.UIElement )
 CoD.ScrStk_MeterInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScrStk_MeterInternal )
 	self.id = "ScrStk_MeterInternal"
@@ -124,27 +128,34 @@ CoD.ScrStk_MeterInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Back:completeAnimation()
 				self.Back:setAlpha( 0.5 )
 				self.clipFinished( Back, {} )
+
 				Fill:completeAnimation()
 				self.Fill:setAlpha( 1 )
 				self.clipFinished( Fill, {} )
+
 				FocusMeterBack:completeAnimation()
 				self.FocusMeterBack:setAlpha( 0 )
 				self.clipFinished( FocusMeterBack, {} )
+
 				FocusMeterFill:completeAnimation()
 				self.FocusMeterFill:setAlpha( 0 )
 				self.clipFinished( FocusMeterFill, {} )
+
 				CombatEfficiencyPulse:completeAnimation()
 				self.CombatEfficiencyPulse:setAlpha( 0 )
 				self.clipFinished( CombatEfficiencyPulse, {} )
+
 				FocusMeterFillWhite:completeAnimation()
 				self.FocusMeterFillWhite:setAlpha( 0 )
 				self.clipFinished( FocusMeterFillWhite, {} )
 			end,
 			CombatEfficiency = function ()
 				self:setupElementClipCounter( 6 )
+
 				local BackFrame2 = function ( Back, event )
 					if not event.interrupted then
 						Back:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -242,28 +253,35 @@ CoD.ScrStk_MeterInternal.new = function ( menu, controller )
 		CombatEfficiency = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Back:completeAnimation()
 				self.Back:setAlpha( 0 )
 				self.clipFinished( Back, {} )
+
 				Fill:completeAnimation()
 				self.Fill:setAlpha( 0 )
 				self.clipFinished( Fill, {} )
+
 				FocusMeterBack:completeAnimation()
 				self.FocusMeterBack:setRGB( 0.22, 0.38, 0.52 )
 				self.FocusMeterBack:setAlpha( 0 )
 				self.clipFinished( FocusMeterBack, {} )
+
 				FocusMeterFill:completeAnimation()
 				self.FocusMeterFill:setAlpha( 1 )
 				self.clipFinished( FocusMeterFill, {} )
+
 				CombatEfficiencyPulse:completeAnimation()
 				self.CombatEfficiencyPulse:setAlpha( 1 )
 				self.clipFinished( CombatEfficiencyPulse, {} )
+
 				FocusMeterFillWhite:completeAnimation()
 				self.FocusMeterFillWhite:setAlpha( 1 )
 				self.clipFinished( FocusMeterFillWhite, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 6 )
+
 				local BackFrame2 = function ( Back, event )
 					if not event.interrupted then
 						Back:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -359,6 +377,7 @@ CoD.ScrStk_MeterInternal.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CombatEfficiency",
@@ -375,6 +394,7 @@ CoD.ScrStk_MeterInternal.new = function ( menu, controller )
 			modelName = "playerAbilities.playerGadget3.isInUse"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CombatEfficiencyPulse:close()
 		element.FocusMeterFillWhite:close()

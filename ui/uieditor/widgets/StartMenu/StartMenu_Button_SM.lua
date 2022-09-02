@@ -12,9 +12,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_OnlineOnly" )
 CoD.StartMenu_Button_SM = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Button_SM.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Button_SM )
 	self.id = "StartMenu_Button_SM"
@@ -137,76 +139,101 @@ CoD.StartMenu_Button_SM.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				ImageText:completeAnimation()
 				self.ImageText:setAlpha( 1 )
 				self.clipFinished( ImageText, {} )
+
 				ImageContainer:completeAnimation()
+
 				ImageContainer.ImageContainer:completeAnimation()
 				self.ImageContainer.ImageContainer:setAlpha( 0.79 )
 				self.clipFinished( ImageContainer, {} )
+
 				LockBackground:completeAnimation()
 				self.LockBackground:setAlpha( 0.05 )
 				self.clipFinished( LockBackground, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				LOCKBlackCircle:completeAnimation()
 				self.LOCKBlackCircle:setAlpha( 0 )
 				self.clipFinished( LOCKBlackCircle, {} )
+
 				StartMenuIdentitySubTitle0:completeAnimation()
 				self.StartMenuIdentitySubTitle0:setAlpha( 1 )
 				self.clipFinished( StartMenuIdentitySubTitle0, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				lockedIcon:completeAnimation()
+
 				lockedIcon.lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.lockedIcon.lockedIcon:setAlpha( 0.56 )
 				self.clipFinished( lockedIcon, {} )
+
 				StartMenuOnlineOnly:completeAnimation()
 				self.StartMenuOnlineOnly:setAlpha( 0 )
 				self.clipFinished( StartMenuOnlineOnly, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				ImageContainer:completeAnimation()
+
 				ImageContainer.ImageContainer:completeAnimation()
 				self.ImageContainer.ImageContainer:setAlpha( 1 )
 				self.clipFinished( ImageContainer, {} )
+
 				LockBackground:completeAnimation()
 				self.LockBackground:setAlpha( 0 )
 				self.clipFinished( LockBackground, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				LOCKBlackCircle:completeAnimation()
 				self.LOCKBlackCircle:setAlpha( 0 )
 				self.clipFinished( LOCKBlackCircle, {} )
+
 				StartMenuIdentitySubTitle0:completeAnimation()
 				self.StartMenuIdentitySubTitle0:setAlpha( 1 )
 				self.clipFinished( StartMenuIdentitySubTitle0, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				StartMenuOnlineOnly:completeAnimation()
 				self.StartMenuOnlineOnly:setAlpha( 0 )
 				self.clipFinished( StartMenuOnlineOnly, {} )
@@ -215,54 +242,70 @@ CoD.StartMenu_Button_SM.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				LockBackground:completeAnimation()
 				self.LockBackground:setAlpha( 0.1 )
 				self.clipFinished( LockBackground, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0.4 )
 				self.clipFinished( TitleBg, {} )
+
 				LOCKBlackCircle:completeAnimation()
 				self.LOCKBlackCircle:setAlpha( 0.3 )
 				self.clipFinished( LOCKBlackCircle, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
+
 				StartMenuOnlineOnly:completeAnimation()
 				self.StartMenuOnlineOnly:setAlpha( 0 )
 				self.clipFinished( StartMenuOnlineOnly, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				LockBackground:completeAnimation()
 				self.LockBackground:setAlpha( 0 )
 				self.clipFinished( LockBackground, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0.4 )
 				self.clipFinished( TitleBg, {} )
+
 				LOCKBlackCircle:completeAnimation()
 				self.LOCKBlackCircle:setAlpha( 0.3 )
 				self.clipFinished( LOCKBlackCircle, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
+
 				StartMenuOnlineOnly:completeAnimation()
 				self.StartMenuOnlineOnly:setAlpha( 0 )
 				self.clipFinished( StartMenuOnlineOnly, {} )
@@ -271,44 +314,59 @@ CoD.StartMenu_Button_SM.new = function ( menu, controller )
 		OnlineOnly = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0.01 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				ImageText:completeAnimation()
 				self.ImageText:setAlpha( 1 )
 				self.clipFinished( ImageText, {} )
+
 				ImageContainer:completeAnimation()
+
 				ImageContainer.ImageContainer:completeAnimation()
 				self.ImageContainer:setAlpha( 1 )
 				self.ImageContainer.ImageContainer:setAlpha( 0.79 )
 				self.clipFinished( ImageContainer, {} )
+
 				LockBackground:completeAnimation()
 				self.LockBackground:setAlpha( 0.1 )
 				self.clipFinished( LockBackground, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				LOCKBlackCircle:completeAnimation()
 				self.LOCKBlackCircle:setAlpha( 0 )
 				self.clipFinished( LOCKBlackCircle, {} )
+
 				StartMenuIdentitySubTitle0:completeAnimation()
 				self.StartMenuIdentitySubTitle0:setAlpha( 1 )
 				self.clipFinished( StartMenuIdentitySubTitle0, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				lockedIcon:completeAnimation()
+
 				lockedIcon.lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.lockedIcon.lockedIcon:setAlpha( 0.56 )
 				self.clipFinished( lockedIcon, {} )
+
 				StartMenuOnlineOnly:completeAnimation()
+
 				StartMenuOnlineOnly.TextBox0:completeAnimation()
 				self.StartMenuOnlineOnly:setAlpha( 1 )
 				self.StartMenuOnlineOnly.TextBox0:setText( LocalizeToUpperString( "MENU_ONLINE_ONLY" ) )
@@ -316,35 +374,46 @@ CoD.StartMenu_Button_SM.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				ImageContainer:completeAnimation()
+
 				ImageContainer.ImageContainer:completeAnimation()
 				self.ImageContainer:setAlpha( 1 )
 				self.ImageContainer.ImageContainer:setAlpha( 1 )
 				self.clipFinished( ImageContainer, {} )
+
 				LockBackground:completeAnimation()
 				self.LockBackground:setAlpha( 0.05 )
 				self.clipFinished( LockBackground, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				LOCKBlackCircle:completeAnimation()
 				self.LOCKBlackCircle:setAlpha( 0 )
 				self.clipFinished( LOCKBlackCircle, {} )
+
 				StartMenuIdentitySubTitle0:completeAnimation()
 				self.StartMenuIdentitySubTitle0:setAlpha( 1 )
 				self.clipFinished( StartMenuIdentitySubTitle0, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				StartMenuOnlineOnly:completeAnimation()
 				self.StartMenuOnlineOnly:setAlpha( 1 )
 				self.clipFinished( StartMenuOnlineOnly, {} )
@@ -353,42 +422,55 @@ CoD.StartMenu_Button_SM.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				ImageText:completeAnimation()
 				self.ImageText:setAlpha( 0 )
 				self.clipFinished( ImageText, {} )
+
 				ImageContainer:completeAnimation()
 				self.ImageContainer:setAlpha( 0 )
 				self.clipFinished( ImageContainer, {} )
+
 				LockBackground:completeAnimation()
 				self.LockBackground:setAlpha( 0 )
 				self.clipFinished( LockBackground, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				LOCKBlackCircle:completeAnimation()
 				self.LOCKBlackCircle:setAlpha( 0 )
 				self.clipFinished( LOCKBlackCircle, {} )
+
 				StartMenuIdentitySubTitle0:completeAnimation()
 				self.StartMenuIdentitySubTitle0:setAlpha( 0 )
 				self.clipFinished( StartMenuIdentitySubTitle0, {} )
+
 				ClanTag:completeAnimation()
 				self.ClanTag:setAlpha( 0 )
 				self.clipFinished( ClanTag, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				StartMenuOnlineOnly:completeAnimation()
 				self.StartMenuOnlineOnly:setAlpha( 0 )
 				self.clipFinished( StartMenuOnlineOnly, {} )
@@ -397,44 +479,59 @@ CoD.StartMenu_Button_SM.new = function ( menu, controller )
 		ComingSoon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0.01 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				ImageText:completeAnimation()
 				self.ImageText:setAlpha( 1 )
 				self.clipFinished( ImageText, {} )
+
 				ImageContainer:completeAnimation()
+
 				ImageContainer.ImageContainer:completeAnimation()
 				self.ImageContainer:setAlpha( 1 )
 				self.ImageContainer.ImageContainer:setAlpha( 0.79 )
 				self.clipFinished( ImageContainer, {} )
+
 				LockBackground:completeAnimation()
 				self.LockBackground:setAlpha( 0.1 )
 				self.clipFinished( LockBackground, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				LOCKBlackCircle:completeAnimation()
 				self.LOCKBlackCircle:setAlpha( 0 )
 				self.clipFinished( LOCKBlackCircle, {} )
+
 				StartMenuIdentitySubTitle0:completeAnimation()
 				self.StartMenuIdentitySubTitle0:setAlpha( 1 )
 				self.clipFinished( StartMenuIdentitySubTitle0, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				lockedIcon:completeAnimation()
+
 				lockedIcon.lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.lockedIcon.lockedIcon:setAlpha( 0.56 )
 				self.clipFinished( lockedIcon, {} )
+
 				StartMenuOnlineOnly:completeAnimation()
+
 				StartMenuOnlineOnly.TextBox0:completeAnimation()
 				self.StartMenuOnlineOnly:setAlpha( 1 )
 				self.StartMenuOnlineOnly.TextBox0:setText( LocalizeToUpperString( "MENU_COMING_SOON" ) )
@@ -442,35 +539,46 @@ CoD.StartMenu_Button_SM.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				ImageContainer:completeAnimation()
+
 				ImageContainer.ImageContainer:completeAnimation()
 				self.ImageContainer:setAlpha( 1 )
 				self.ImageContainer.ImageContainer:setAlpha( 1 )
 				self.clipFinished( ImageContainer, {} )
+
 				LockBackground:completeAnimation()
 				self.LockBackground:setAlpha( 0 )
 				self.clipFinished( LockBackground, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				LOCKBlackCircle:completeAnimation()
 				self.LOCKBlackCircle:setAlpha( 0 )
 				self.clipFinished( LOCKBlackCircle, {} )
+
 				StartMenuIdentitySubTitle0:completeAnimation()
 				self.StartMenuIdentitySubTitle0:setAlpha( 1 )
 				self.clipFinished( StartMenuIdentitySubTitle0, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				StartMenuOnlineOnly:completeAnimation()
 				self.StartMenuOnlineOnly:setAlpha( 1 )
 				self.clipFinished( StartMenuOnlineOnly, {} )
@@ -479,44 +587,59 @@ CoD.StartMenu_Button_SM.new = function ( menu, controller )
 		NotAvailableInGame = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0.01 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				ImageText:completeAnimation()
 				self.ImageText:setAlpha( 1 )
 				self.clipFinished( ImageText, {} )
+
 				ImageContainer:completeAnimation()
+
 				ImageContainer.ImageContainer:completeAnimation()
 				self.ImageContainer:setAlpha( 1 )
 				self.ImageContainer.ImageContainer:setAlpha( 0.79 )
 				self.clipFinished( ImageContainer, {} )
+
 				LockBackground:completeAnimation()
 				self.LockBackground:setAlpha( 0.1 )
 				self.clipFinished( LockBackground, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				LOCKBlackCircle:completeAnimation()
 				self.LOCKBlackCircle:setAlpha( 0 )
 				self.clipFinished( LOCKBlackCircle, {} )
+
 				StartMenuIdentitySubTitle0:completeAnimation()
 				self.StartMenuIdentitySubTitle0:setAlpha( 1 )
 				self.clipFinished( StartMenuIdentitySubTitle0, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				lockedIcon:completeAnimation()
+
 				lockedIcon.lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.lockedIcon.lockedIcon:setAlpha( 0.56 )
 				self.clipFinished( lockedIcon, {} )
+
 				StartMenuOnlineOnly:completeAnimation()
+
 				StartMenuOnlineOnly.TextBox0:completeAnimation()
 				self.StartMenuOnlineOnly:setAlpha( 1 )
 				self.StartMenuOnlineOnly.TextBox0:setText( LocalizeToUpperString( "MENU_NOT_AVAILABLE_IN_GAME" ) )
@@ -524,36 +647,48 @@ CoD.StartMenu_Button_SM.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				ImageContainer:completeAnimation()
+
 				ImageContainer.ImageContainer:completeAnimation()
 				self.ImageContainer:setAlpha( 1 )
 				self.ImageContainer.ImageContainer:setAlpha( 1 )
 				self.clipFinished( ImageContainer, {} )
+
 				LockBackground:completeAnimation()
 				self.LockBackground:setAlpha( 0 )
 				self.clipFinished( LockBackground, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				LOCKBlackCircle:completeAnimation()
 				self.LOCKBlackCircle:setAlpha( 0 )
 				self.clipFinished( LOCKBlackCircle, {} )
+
 				StartMenuIdentitySubTitle0:completeAnimation()
 				self.StartMenuIdentitySubTitle0:setAlpha( 1 )
 				self.clipFinished( StartMenuIdentitySubTitle0, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				StartMenuOnlineOnly:completeAnimation()
+
 				StartMenuOnlineOnly.TextBox0:completeAnimation()
 				self.StartMenuOnlineOnly:setAlpha( 1 )
 				self.StartMenuOnlineOnly.TextBox0:setText( LocalizeToUpperString( "MENU_NOT_AVAILABLE_IN_GAME" ) )
@@ -561,6 +696,7 @@ CoD.StartMenu_Button_SM.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -594,6 +730,7 @@ CoD.StartMenu_Button_SM.new = function ( menu, controller )
 		}
 	} )
 	StartMenuOnlineOnly.id = "StartMenuOnlineOnly"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveDiag:close()
 		element.BoxButtonLrgInactive:close()

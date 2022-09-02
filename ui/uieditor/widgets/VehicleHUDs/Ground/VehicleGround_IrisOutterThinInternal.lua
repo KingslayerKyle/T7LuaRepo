@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Ground.VehicleGround_IrisOutterThin" )
 CoD.VehicleGround_IrisOutterThinInternal = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_IrisOutterThinInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VehicleGround_IrisOutterThinInternal )
 	self.id = "VehicleGround_IrisOutterThinInternal"
@@ -26,6 +28,7 @@ CoD.VehicleGround_IrisOutterThinInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local VehicleGroundIrisOutterThin0Frame2 = function ( VehicleGroundIrisOutterThin0, event )
 					local VehicleGroundIrisOutterThin0Frame3 = function ( VehicleGroundIrisOutterThin0, event )
 						local VehicleGroundIrisOutterThin0Frame4 = function ( VehicleGroundIrisOutterThin0, event )
@@ -171,10 +174,12 @@ CoD.VehicleGround_IrisOutterThinInternal.new = function ( menu, controller )
 				self.VehicleGroundIrisOutterThin0:setZRot( 0 )
 				self.VehicleGroundIrisOutterThin0:setZoom( 0 )
 				VehicleGroundIrisOutterThin0Frame2( VehicleGroundIrisOutterThin0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.VehicleGroundIrisOutterThin0:close()
 	end )

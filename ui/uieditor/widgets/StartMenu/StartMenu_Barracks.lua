@@ -10,6 +10,7 @@ require( "ui.uieditor.menus.Barracks.BarracksZM" )
 
 local PostLoadFunc = function ( f1_arg0, f1_arg1 )
 	CoD.UnlockablesTable = nil
+
 	LUI.OverrideFunction_CallOriginalSecond( f1_arg0, "close", function ( element )
 		CoD.UnlockablesTable = nil
 	end )
@@ -18,9 +19,11 @@ end
 CoD.StartMenu_Barracks = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Barracks.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Barracks )
 	self.id = "StartMenu_Barracks"
@@ -378,6 +381,7 @@ CoD.StartMenu_Barracks.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuBarracksButtonCP:close()
 		element.StartMenuBarracksButtonMP:close()

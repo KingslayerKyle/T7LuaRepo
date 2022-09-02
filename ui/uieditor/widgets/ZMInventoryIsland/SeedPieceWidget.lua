@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_FX.ZmFx_Spark2" )
 CoD.SeedPieceWidget = InheritFrom( LUI.UIElement )
 CoD.SeedPieceWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SeedPieceWidget )
 	self.id = "SeedPieceWidget"
@@ -44,18 +46,22 @@ CoD.SeedPieceWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				PieceImageNewGreen:completeAnimation()
 				self.PieceImageNewGreen:setAlpha( 0 )
 				self.clipFinished( PieceImageNewGreen, {} )
+
 				PieceImage:completeAnimation()
 				self.PieceImage:setAlpha( 0 )
 				self.clipFinished( PieceImage, {} )
 			end,
 			Found = function ()
 				self:setupElementClipCounter( 3 )
+
 				local ZmFxSpark20Frame2 = function ( ZmFxSpark20, event )
 					local ZmFxSpark20Frame3 = function ( ZmFxSpark20, event )
 						local ZmFxSpark20Frame4 = function ( ZmFxSpark20, event )
@@ -285,12 +291,15 @@ CoD.SeedPieceWidget.new = function ( menu, controller )
 		ScoreboardFound = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				PieceImageNewGreen:completeAnimation()
 				self.PieceImageNewGreen:setAlpha( 0 )
 				self.clipFinished( PieceImageNewGreen, {} )
+
 				PieceImage:completeAnimation()
 				self.PieceImage:setAlpha( 1 )
 				self.clipFinished( PieceImage, {} )
@@ -299,12 +308,15 @@ CoD.SeedPieceWidget.new = function ( menu, controller )
 		Found = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				PieceImageNewGreen:completeAnimation()
 				self.PieceImageNewGreen:setAlpha( 0 )
 				self.clipFinished( PieceImageNewGreen, {} )
+
 				PieceImage:completeAnimation()
 				self.PieceImage:setAlpha( 1 )
 				self.clipFinished( PieceImage, {} )
@@ -313,18 +325,22 @@ CoD.SeedPieceWidget.new = function ( menu, controller )
 		NotNewFound = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				PieceImageNewGreen:completeAnimation()
 				self.PieceImageNewGreen:setAlpha( 0 )
 				self.clipFinished( PieceImageNewGreen, {} )
+
 				PieceImage:completeAnimation()
 				self.PieceImage:setAlpha( 1 )
 				self.clipFinished( PieceImage, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ScoreboardFound",
@@ -381,6 +397,7 @@ CoD.SeedPieceWidget.new = function ( menu, controller )
 			modelName = "zmInventory.widget_bucket_parts"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmFxSpark20:close()
 	end )

@@ -4,9 +4,11 @@
 CoD.DeadSpectate_SpectatingModeButtonPrompt = InheritFrom( LUI.UIElement )
 CoD.DeadSpectate_SpectatingModeButtonPrompt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DeadSpectate_SpectatingModeButtonPrompt )
 	self.id = "DeadSpectate_SpectatingModeButtonPrompt"
@@ -43,9 +45,11 @@ CoD.DeadSpectate_SpectatingModeButtonPrompt.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				button:completeAnimation()
 				self.button:setAlpha( 1 )
 				self.clipFinished( button, {} )
+
 				buttonMouse:completeAnimation()
 				self.buttonMouse:setAlpha( 0 )
 				self.clipFinished( buttonMouse, {} )
@@ -54,15 +58,18 @@ CoD.DeadSpectate_SpectatingModeButtonPrompt.new = function ( menu, controller )
 		KeyMouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				button:completeAnimation()
 				self.button:setAlpha( 0 )
 				self.clipFinished( button, {} )
+
 				buttonMouse:completeAnimation()
 				self.buttonMouse:setAlpha( 1 )
 				self.clipFinished( buttonMouse, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "KeyMouse",
@@ -89,6 +96,7 @@ CoD.DeadSpectate_SpectatingModeButtonPrompt.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.button:close()
 		element.buttonMouse:close()

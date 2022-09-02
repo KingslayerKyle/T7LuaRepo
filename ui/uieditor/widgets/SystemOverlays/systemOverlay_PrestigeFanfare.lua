@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.SystemOverlays.systemOverlay_Layout_ForegroundMult
 CoD.systemOverlay_PrestigeFanfare = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_PrestigeFanfare.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_PrestigeFanfare )
 	self.id = "systemOverlay_PrestigeFanfare"
@@ -69,17 +71,20 @@ CoD.systemOverlay_PrestigeFanfare.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		DefaultStateZM = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CallingCard:completeAnimation()
 				self.CallingCard:setAlpha( 0 )
 				self.clipFinished( CallingCard, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DefaultStateZM",
@@ -103,6 +108,7 @@ CoD.systemOverlay_PrestigeFanfare.new = function ( menu, controller )
 		CoD.Menu.SetButtonLabel( f11_arg1, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_CONTINUE" )
 		return true
 	end, false )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Description:close()
 		element.PrestigeIcon:close()

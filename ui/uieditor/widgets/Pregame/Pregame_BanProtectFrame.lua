@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.CAC.cac_ButtonBoxLrgIdle" )
 CoD.Pregame_BanProtectFrame = InheritFrom( LUI.UIElement )
 CoD.Pregame_BanProtectFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_BanProtectFrame )
 	self.id = "Pregame_BanProtectFrame"

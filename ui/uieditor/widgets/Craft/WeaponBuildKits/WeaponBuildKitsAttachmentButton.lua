@@ -32,9 +32,11 @@ end
 CoD.WeaponBuildKitsAttachmentButton = InheritFrom( LUI.UIElement )
 CoD.WeaponBuildKitsAttachmentButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponBuildKitsAttachmentButton )
 	self.id = "WeaponBuildKitsAttachmentButton"
@@ -192,58 +194,75 @@ CoD.WeaponBuildKitsAttachmentButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactiveStroke:completeAnimation()
 				self.BoxButtonLrgInactiveStroke:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactiveStroke, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				attachmentImage:completeAnimation()
 				self.attachmentImage:setAlpha( 0 )
 				self.clipFinished( attachmentImage, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setRGB( 1, 1, 1 )
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				FocusWhiteT:completeAnimation()
 				self.FocusWhiteT:setAlpha( 0 )
 				self.clipFinished( FocusWhiteT, {} )
+
 				FocusWhiteB:completeAnimation()
 				self.FocusWhiteB:setAlpha( 0 )
 				self.clipFinished( FocusWhiteB, {} )
+
 				removeButton:completeAnimation()
 				self.removeButton:setAlpha( 0 )
 				self.clipFinished( removeButton, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 0 )
 				self.clipFinished( LockIcon, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
@@ -637,43 +656,54 @@ CoD.WeaponBuildKitsAttachmentButton.new = function ( menu, controller )
 				self.plusIcon:setRGB( 1, 0.43, 0.09 )
 				self.plusIcon:setAlpha( 0.45 )
 				plusIconFrame2( plusIcon, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				attachmentImage:completeAnimation()
 				self.attachmentImage:setAlpha( 0 )
 				self.clipFinished( attachmentImage, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 1 )
 				self.clipFinished( FocusBorder, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setRGB( 1, 0.43, 0.09 )
 				self.plusIcon:setAlpha( 0.69 )
 				self.clipFinished( plusIcon, {} )
+
 				removeButton:completeAnimation()
 				self.removeButton:setAlpha( 0 )
 				self.clipFinished( removeButton, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 9 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 129, false, false, CoD.TweenType.Linear )
@@ -1062,13 +1092,16 @@ CoD.WeaponBuildKitsAttachmentButton.new = function ( menu, controller )
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				glitch2Frame2( glitch2, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setRGB( 1, 1, 1 )
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
@@ -1077,43 +1110,55 @@ CoD.WeaponBuildKitsAttachmentButton.new = function ( menu, controller )
 		IsEquipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactiveStroke:completeAnimation()
 				self.BoxButtonLrgInactiveStroke:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveStroke, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				attachmentImage:completeAnimation()
 				self.attachmentImage:setAlpha( 1 )
 				self.clipFinished( attachmentImage, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setRGB( 0.98, 0.37, 0 )
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				removeButton:completeAnimation()
 				self.removeButton:setAlpha( 0 )
 				self.clipFinished( removeButton, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 0 )
 				self.clipFinished( LockIcon, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -1476,6 +1521,7 @@ CoD.WeaponBuildKitsAttachmentButton.new = function ( menu, controller )
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 1 )
 				glitch2Frame2( glitch2, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setRGB( 1, 0.38, 0.06 )
 				self.plusIcon:setAlpha( 0 )
@@ -1528,19 +1574,24 @@ CoD.WeaponBuildKitsAttachmentButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				attachmentImage:completeAnimation()
 				self.attachmentImage:setAlpha( 1 )
 				self.clipFinished( attachmentImage, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setRGB( 0.93, 0.4, 0.08 )
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				removeButton:completeAnimation()
 				self.removeButton:setAlpha( 1 )
 				self.clipFinished( removeButton, {} )
@@ -1577,6 +1628,7 @@ CoD.WeaponBuildKitsAttachmentButton.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 129, false, false, CoD.TweenType.Linear )
@@ -1965,6 +2017,7 @@ CoD.WeaponBuildKitsAttachmentButton.new = function ( menu, controller )
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				glitch2Frame2( glitch2, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setRGB( 0.92, 0.43, 0 )
 				self.plusIcon:setAlpha( 0 )
@@ -1984,9 +2037,11 @@ CoD.WeaponBuildKitsAttachmentButton.new = function ( menu, controller )
 				removeButton:completeAnimation()
 				self.removeButton:setAlpha( 1 )
 				removeButtonFrame2( removeButton, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
@@ -1995,43 +2050,56 @@ CoD.WeaponBuildKitsAttachmentButton.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactiveStroke:completeAnimation()
 				self.BoxButtonLrgInactiveStroke:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactiveStroke, {} )
+
 				attachmentImage:completeAnimation()
 				self.attachmentImage:setAlpha( 0 )
 				self.clipFinished( attachmentImage, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setRGB( 1, 1, 1 )
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				FocusWhiteT:completeAnimation()
 				self.FocusWhiteT:setAlpha( 0 )
 				self.clipFinished( FocusWhiteT, {} )
+
 				FocusWhiteB:completeAnimation()
 				self.FocusWhiteB:setAlpha( 0 )
 				self.clipFinished( FocusWhiteB, {} )
+
 				removeButton:completeAnimation()
 				self.removeButton:setAlpha( 0 )
 				self.clipFinished( removeButton, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 1 )
 				self.clipFinished( LockIcon, {} )
@@ -2040,37 +2108,47 @@ CoD.WeaponBuildKitsAttachmentButton.new = function ( menu, controller )
 		IsEquippedNoHintText = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactiveStroke:completeAnimation()
 				self.BoxButtonLrgInactiveStroke:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveStroke, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				attachmentImage:completeAnimation()
 				self.attachmentImage:setAlpha( 1 )
 				self.clipFinished( attachmentImage, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setRGB( 0.98, 0.37, 0 )
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				removeButton:completeAnimation()
 				self.removeButton:setAlpha( 0 )
 				self.clipFinished( removeButton, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 0 )
 				self.clipFinished( LockIcon, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 8 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -2433,6 +2511,7 @@ CoD.WeaponBuildKitsAttachmentButton.new = function ( menu, controller )
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 1 )
 				glitch2Frame2( glitch2, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setRGB( 1, 0.38, 0.06 )
 				self.plusIcon:setAlpha( 0 )
@@ -2455,25 +2534,31 @@ CoD.WeaponBuildKitsAttachmentButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				attachmentImage:completeAnimation()
 				self.attachmentImage:setAlpha( 1 )
 				self.clipFinished( attachmentImage, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setRGB( 0.93, 0.4, 0.08 )
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				removeButton:completeAnimation()
 				self.removeButton:setAlpha( 1 )
 				self.clipFinished( removeButton, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 8 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 129, false, false, CoD.TweenType.Linear )
@@ -2862,6 +2947,7 @@ CoD.WeaponBuildKitsAttachmentButton.new = function ( menu, controller )
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				glitch2Frame2( glitch2, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setRGB( 0.92, 0.43, 0 )
 				self.plusIcon:setAlpha( 0 )
@@ -2884,6 +2970,7 @@ CoD.WeaponBuildKitsAttachmentButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveDiag:close()
 		element.BoxButtonLrgInactiveStroke:close()

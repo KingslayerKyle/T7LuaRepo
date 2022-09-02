@@ -174,9 +174,11 @@ end
 CoD.WeatherApplet = InheritFrom( LUI.UIElement )
 CoD.WeatherApplet.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeatherApplet )
 	self.id = "WeatherApplet"
@@ -351,24 +353,30 @@ CoD.WeatherApplet.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Sun:completeAnimation()
 				self.Sun:setAlpha( 1 )
 				self.clipFinished( Sun, {} )
+
 				WeatherRainning:completeAnimation()
 				self.WeatherRainning:setAlpha( 0 )
 				self.clipFinished( WeatherRainning, {} )
+
 				WeatherSnowing:completeAnimation()
 				self.WeatherSnowing:setAlpha( 0 )
 				self.clipFinished( WeatherSnowing, {} )
+
 				WeatherCloudy:completeAnimation()
 				self.WeatherCloudy:setAlpha( 0 )
 				self.clipFinished( WeatherCloudy, {} )
+
 				Moon:completeAnimation()
 				self.Moon:setAlpha( 0 )
 				self.clipFinished( Moon, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local GeneralframeFrame2 = function ( Generalframe, event )
 					if not event.interrupted then
 						Generalframe:beginAnimation( "keyframe", 180, false, false, CoD.TweenType.Linear )
@@ -425,6 +433,7 @@ CoD.WeatherApplet.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local GeneralframeFrame2 = function ( Generalframe, event )
 					if not event.interrupted then
 						Generalframe:beginAnimation( "keyframe", 180, false, false, CoD.TweenType.Linear )
@@ -483,18 +492,23 @@ CoD.WeatherApplet.new = function ( menu, controller )
 		Sunny = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Sun:completeAnimation()
 				self.Sun:setAlpha( 0.95 )
 				self.clipFinished( Sun, {} )
+
 				WeatherRainning:completeAnimation()
 				self.WeatherRainning:setAlpha( 0 )
 				self.clipFinished( WeatherRainning, {} )
+
 				WeatherSnowing:completeAnimation()
 				self.WeatherSnowing:setAlpha( 0 )
 				self.clipFinished( WeatherSnowing, {} )
+
 				WeatherCloudy:completeAnimation()
 				self.WeatherCloudy:setAlpha( 0 )
 				self.clipFinished( WeatherCloudy, {} )
+
 				Moon:completeAnimation()
 				self.Moon:setAlpha( 0 )
 				self.clipFinished( Moon, {} )
@@ -503,18 +517,23 @@ CoD.WeatherApplet.new = function ( menu, controller )
 		Raining = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Sun:completeAnimation()
 				self.Sun:setAlpha( 0 )
 				self.clipFinished( Sun, {} )
+
 				WeatherRainning:completeAnimation()
 				self.WeatherRainning:setAlpha( 0.95 )
 				self.clipFinished( WeatherRainning, {} )
+
 				WeatherSnowing:completeAnimation()
 				self.WeatherSnowing:setAlpha( 0 )
 				self.clipFinished( WeatherSnowing, {} )
+
 				WeatherCloudy:completeAnimation()
 				self.WeatherCloudy:setAlpha( 0 )
 				self.clipFinished( WeatherCloudy, {} )
+
 				Moon:completeAnimation()
 				self.Moon:setAlpha( 0 )
 				self.clipFinished( Moon, {} )
@@ -523,18 +542,23 @@ CoD.WeatherApplet.new = function ( menu, controller )
 		Snowing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Sun:completeAnimation()
 				self.Sun:setAlpha( 0 )
 				self.clipFinished( Sun, {} )
+
 				WeatherRainning:completeAnimation()
 				self.WeatherRainning:setAlpha( 0 )
 				self.clipFinished( WeatherRainning, {} )
+
 				WeatherSnowing:completeAnimation()
 				self.WeatherSnowing:setAlpha( 0.95 )
 				self.clipFinished( WeatherSnowing, {} )
+
 				WeatherCloudy:completeAnimation()
 				self.WeatherCloudy:setAlpha( 0 )
 				self.clipFinished( WeatherCloudy, {} )
+
 				Moon:completeAnimation()
 				self.Moon:setAlpha( 0 )
 				self.clipFinished( Moon, {} )
@@ -543,18 +567,23 @@ CoD.WeatherApplet.new = function ( menu, controller )
 		PartlyCloudy = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Sun:completeAnimation()
 				self.Sun:setAlpha( 0 )
 				self.clipFinished( Sun, {} )
+
 				WeatherRainning:completeAnimation()
 				self.WeatherRainning:setAlpha( 0 )
 				self.clipFinished( WeatherRainning, {} )
+
 				WeatherSnowing:completeAnimation()
 				self.WeatherSnowing:setAlpha( 0 )
 				self.clipFinished( WeatherSnowing, {} )
+
 				WeatherCloudy:completeAnimation()
 				self.WeatherCloudy:setAlpha( 1 )
 				self.clipFinished( WeatherCloudy, {} )
+
 				Moon:completeAnimation()
 				self.Moon:setAlpha( 0 )
 				self.clipFinished( Moon, {} )
@@ -563,18 +592,23 @@ CoD.WeatherApplet.new = function ( menu, controller )
 		NightTimeClear = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Sun:completeAnimation()
 				self.Sun:setAlpha( 0 )
 				self.clipFinished( Sun, {} )
+
 				WeatherRainning:completeAnimation()
 				self.WeatherRainning:setAlpha( 0 )
 				self.clipFinished( WeatherRainning, {} )
+
 				WeatherSnowing:completeAnimation()
 				self.WeatherSnowing:setAlpha( 0 )
 				self.clipFinished( WeatherSnowing, {} )
+
 				WeatherCloudy:completeAnimation()
 				self.WeatherCloudy:setAlpha( 0 )
 				self.clipFinished( WeatherCloudy, {} )
+
 				Moon:completeAnimation()
 				self.Moon:setAlpha( 1 )
 				self.clipFinished( Moon, {} )
@@ -585,6 +619,7 @@ CoD.WeatherApplet.new = function ( menu, controller )
 	WeatherRainning.id = "WeatherRainning"
 	WeatherSnowing.id = "WeatherSnowing"
 	WeatherCloudy.id = "WeatherCloudy"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Generalframe:close()
 		element.FocusWidget:close()

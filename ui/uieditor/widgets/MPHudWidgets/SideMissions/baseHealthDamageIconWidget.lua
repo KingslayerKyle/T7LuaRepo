@@ -27,9 +27,11 @@ end
 CoD.baseHealthDamageIconWidget = InheritFrom( LUI.UIElement )
 CoD.baseHealthDamageIconWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.baseHealthDamageIconWidget )
 	self.id = "baseHealthDamageIconWidget"
@@ -56,11 +58,13 @@ CoD.baseHealthDamageIconWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				damageIcon:completeAnimation()
 				self.damageIcon:setLeftRight( true, true, 0, 0 )
 				self.damageIcon:setTopBottom( true, true, 0, 0 )
 				self.damageIcon:setAlpha( 0 )
 				self.clipFinished( damageIcon, {} )
+
 				healingIcon:completeAnimation()
 				self.healingIcon:setLeftRight( true, true, 0, 0 )
 				self.healingIcon:setTopBottom( true, true, 0, 0 )
@@ -71,6 +75,7 @@ CoD.baseHealthDamageIconWidget.new = function ( menu, controller )
 		TakingDamage = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local damageIconFrame2 = function ( damageIcon, event )
 					local damageIconFrame3 = function ( damageIcon, event )
 						if not event.interrupted then
@@ -102,15 +107,18 @@ CoD.baseHealthDamageIconWidget.new = function ( menu, controller )
 				self.damageIcon:setTopBottom( true, true, 0, 0 )
 				self.damageIcon:setAlpha( 1 )
 				damageIconFrame2( damageIcon, {} )
+
 				healingIcon:completeAnimation()
 				self.healingIcon:setAlpha( 0 )
 				self.clipFinished( healingIcon, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Healing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				damageIcon:completeAnimation()
 				self.damageIcon:setAlpha( 0 )
 				self.clipFinished( damageIcon, {} )
@@ -145,6 +153,7 @@ CoD.baseHealthDamageIconWidget.new = function ( menu, controller )
 				self.healingIcon:setTopBottom( true, true, 0, 0 )
 				self.healingIcon:setAlpha( 1 )
 				healingIconFrame2( healingIcon, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

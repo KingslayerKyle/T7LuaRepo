@@ -4,9 +4,11 @@
 CoD.ZmAmmo_DpadIconMineFactory = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_DpadIconMineFactory.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_DpadIconMineFactory )
 	self.id = "ZmAmmo_DpadIconMineFactory"
@@ -50,15 +52,18 @@ CoD.ZmAmmo_DpadIconMineFactory.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				IconImgMineDisabled:completeAnimation()
 				self.IconImgMineDisabled:setAlpha( 0 )
 				self.clipFinished( IconImgMineDisabled, {} )
+
 				IconImgMineActive:completeAnimation()
 				self.IconImgMineActive:setAlpha( 0 )
 				self.clipFinished( IconImgMineActive, {} )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 2 )
+
 				local IconImgMineBaseNewFrame2 = function ( IconImgMineBaseNew, event )
 					local IconImgMineBaseNewFrame3 = function ( IconImgMineBaseNew, event )
 						local IconImgMineBaseNewFrame4 = function ( IconImgMineBaseNew, event )
@@ -173,6 +178,7 @@ CoD.ZmAmmo_DpadIconMineFactory.new = function ( menu, controller )
 				IconImgMineBaseNew:completeAnimation()
 				self.IconImgMineBaseNew:setAlpha( 0 )
 				IconImgMineBaseNewFrame2( IconImgMineBaseNew, {} )
+
 				IconImgMineActive:completeAnimation()
 				self.IconImgMineActive:setAlpha( 1 )
 				self.clipFinished( IconImgMineActive, {} )
@@ -181,6 +187,7 @@ CoD.ZmAmmo_DpadIconMineFactory.new = function ( menu, controller )
 		InvalidUse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local IconImgMineBaseInvalidFrame2 = function ( IconImgMineBaseInvalid, event )
 					local IconImgMineBaseInvalidFrame3 = function ( IconImgMineBaseInvalid, event )
 						local IconImgMineBaseInvalidFrame4 = function ( IconImgMineBaseInvalid, event )
@@ -254,11 +261,13 @@ CoD.ZmAmmo_DpadIconMineFactory.new = function ( menu, controller )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				IconImgMineActive:completeAnimation()
 				self.IconImgMineActive:setAlpha( 1 )
 				self.clipFinished( IconImgMineActive, {} )
@@ -267,6 +276,7 @@ CoD.ZmAmmo_DpadIconMineFactory.new = function ( menu, controller )
 		New = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local IconImgMineBaseNewFrame2 = function ( IconImgMineBaseNew, event )
 					local IconImgMineBaseNewFrame3 = function ( IconImgMineBaseNew, event )
 						local IconImgMineBaseNewFrame4 = function ( IconImgMineBaseNew, event )
@@ -381,6 +391,7 @@ CoD.ZmAmmo_DpadIconMineFactory.new = function ( menu, controller )
 				IconImgMineBaseNew:completeAnimation()
 				self.IconImgMineBaseNew:setAlpha( 0 )
 				IconImgMineBaseNewFrame2( IconImgMineBaseNew, {} )
+
 				IconImgMineActive:completeAnimation()
 				self.IconImgMineActive:setAlpha( 1 )
 				self.clipFinished( IconImgMineActive, {} )
@@ -389,16 +400,19 @@ CoD.ZmAmmo_DpadIconMineFactory.new = function ( menu, controller )
 		Unavailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				IconImgMineDisabled:completeAnimation()
 				self.IconImgMineDisabled:setRGB( 0.35, 0.35, 0.35 )
 				self.IconImgMineDisabled:setAlpha( 1 )
 				self.clipFinished( IconImgMineDisabled, {} )
+
 				IconImgMineActive:completeAnimation()
 				self.IconImgMineActive:setAlpha( 0 )
 				self.clipFinished( IconImgMineActive, {} )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 2 )
+
 				local IconImgMineBaseNewFrame2 = function ( IconImgMineBaseNew, event )
 					local IconImgMineBaseNewFrame3 = function ( IconImgMineBaseNew, event )
 						local IconImgMineBaseNewFrame4 = function ( IconImgMineBaseNew, event )
@@ -513,12 +527,14 @@ CoD.ZmAmmo_DpadIconMineFactory.new = function ( menu, controller )
 				IconImgMineBaseNew:completeAnimation()
 				self.IconImgMineBaseNew:setAlpha( 0 )
 				IconImgMineBaseNewFrame2( IconImgMineBaseNew, {} )
+
 				IconImgMineActive:completeAnimation()
 				self.IconImgMineActive:setAlpha( 1 )
 				self.clipFinished( IconImgMineActive, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "InvalidUse",

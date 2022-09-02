@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.MapVote.MapVoteLabelLower" )
 CoD.MapVoteResult = InheritFrom( LUI.UIElement )
 CoD.MapVoteResult.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.MapVoteResult )
 	self.id = "MapVoteResult"
@@ -102,18 +104,23 @@ CoD.MapVoteResult.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 0 )
 				self.clipFinished( MapImage, {} )
+
 				OutcomeGrey:completeAnimation()
 				self.OutcomeGrey:setAlpha( 0 )
 				self.clipFinished( OutcomeGrey, {} )
+
 				OutcomeColor:completeAnimation()
 				self.OutcomeColor:setAlpha( 0 )
 				self.clipFinished( OutcomeColor, {} )
+
 				GameModeIcon:completeAnimation()
 				self.GameModeIcon:setAlpha( 0 )
 				self.clipFinished( GameModeIcon, {} )
+
 				Score:completeAnimation()
 				self.Score:setAlpha( 0 )
 				self.clipFinished( Score, {} )
@@ -122,17 +129,21 @@ CoD.MapVoteResult.new = function ( menu, controller )
 		Victory = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				OutcomeGrey:completeAnimation()
 				self.OutcomeGrey:setText( Engine.Localize( "MP_VICTORY_CAPS" ) )
 				self.clipFinished( OutcomeGrey, {} )
+
 				OutcomeColor:completeAnimation()
 				self.OutcomeColor:setRGB( 0.36, 1, 0.15 )
 				self.OutcomeColor:setAlpha( 0.7 )
 				self.OutcomeColor:setText( Engine.Localize( "MP_VICTORY_CAPS" ) )
 				self.clipFinished( OutcomeColor, {} )
+
 				GameModeIcon:completeAnimation()
 				self.GameModeIcon:setAlpha( 1 )
 				self.clipFinished( GameModeIcon, {} )
+
 				Score:completeAnimation()
 				self.Score:setAlpha( 1 )
 				self.clipFinished( Score, {} )
@@ -141,16 +152,20 @@ CoD.MapVoteResult.new = function ( menu, controller )
 		Defeat = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				OutcomeGrey:completeAnimation()
 				self.OutcomeGrey:setText( Engine.Localize( "MP_DEFEAT_CAPS" ) )
 				self.clipFinished( OutcomeGrey, {} )
+
 				OutcomeColor:completeAnimation()
 				self.OutcomeColor:setRGB( 1, 0, 0 )
 				self.OutcomeColor:setAlpha( 0.7 )
 				self.clipFinished( OutcomeColor, {} )
+
 				GameModeIcon:completeAnimation()
 				self.GameModeIcon:setAlpha( 1 )
 				self.clipFinished( GameModeIcon, {} )
+
 				Score:completeAnimation()
 				self.Score:setAlpha( 1 )
 				self.clipFinished( Score, {} )
@@ -159,22 +174,27 @@ CoD.MapVoteResult.new = function ( menu, controller )
 		Draw = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				OutcomeGrey:completeAnimation()
 				self.OutcomeGrey:setAlpha( 0 )
 				self.clipFinished( OutcomeGrey, {} )
+
 				OutcomeColor:completeAnimation()
 				self.OutcomeColor:setRGB( 0.8, 0.8, 0.8 )
 				self.OutcomeColor:setText( Engine.Localize( "MP_DRAW_CAPS" ) )
 				self.clipFinished( OutcomeColor, {} )
+
 				GameModeIcon:completeAnimation()
 				self.GameModeIcon:setAlpha( 1 )
 				self.clipFinished( GameModeIcon, {} )
+
 				Score:completeAnimation()
 				self.Score:setAlpha( 1 )
 				self.clipFinished( Score, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Victory",
@@ -195,6 +215,7 @@ CoD.MapVoteResult.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEMemberBlurPanelContainer0:close()
 		element.GameModeNew:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FeaturedFrame" )
 CoD.CP_FrameBox = InheritFrom( LUI.UIElement )
 CoD.CP_FrameBox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CP_FrameBox )
 	self.id = "CP_FrameBox"

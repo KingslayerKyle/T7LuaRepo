@@ -4,9 +4,11 @@
 CoD.vhud_turret_reticle_center = InheritFrom( LUI.UIElement )
 CoD.vhud_turret_reticle_center.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_turret_reticle_center )
 	self.id = "vhud_turret_reticle_center"
@@ -45,20 +47,25 @@ CoD.vhud_turret_reticle_center.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Zoom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

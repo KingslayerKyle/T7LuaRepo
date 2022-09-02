@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.HUD.ZM_AmmoWidget.ZmAmmo_SwordElectric" )
 CoD.ZmAmmo_ClipInfo = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_ClipInfo )
 	self.id = "ZmAmmo_ClipInfo"
@@ -173,46 +175,56 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( false, true, -135, -27 )
 				self.Clip:setTopBottom( false, true, -57, -9 )
 				self.Clip:setAlpha( 1 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, -76, 32 )
 				self.TotalAmmo:setTopBottom( false, true, -52.5, -4.5 )
 				self.TotalAmmo:setAlpha( 1 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 364.17, 492.17 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ZmAmmoSwordElectric:completeAnimation()
 				self.ZmAmmoSwordElectric:setLeftRight( true, false, 364.17, 492.17 )
 				self.ZmAmmoSwordElectric:setTopBottom( true, false, 7.5, 39.5 )
 				self.clipFinished( ZmAmmoSwordElectric, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( ClipDual, {} )
+
 				ZmFxFlsh:completeAnimation()
 				self.ZmFxFlsh:setAlpha( 0 )
 				self.clipFinished( ZmFxFlsh, {} )
 			end,
 			WeaponDual = function ()
 				self:setupElementClipCounter( 5 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, 0, 108 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 59, 167 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 364.17, 492.17 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, -63, 45 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -250,21 +262,25 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 			end,
 			Sword = function ()
 				self:setupElementClipCounter( 5 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( false, true, 261, 362 )
 				self.Clip:setTopBottom( false, true, -49, -1 )
 				self.Clip:setAlpha( 1 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, 292, 350 )
 				self.TotalAmmo:setTopBottom( false, true, -37, -7 )
 				self.TotalAmmo:setRGB( 1, 1, 1 )
 				self.TotalAmmo:setAlpha( 1 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 6, 134 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -302,6 +318,7 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 			end,
 			HeroWeapon = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ClipFrame2 = function ( Clip, event )
 					if not event.interrupted then
 						Clip:beginAnimation( "keyframe", 300, true, true, CoD.TweenType.Back )
@@ -319,18 +336,22 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 				self.Clip:setLeftRight( true, false, 0, 108 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				ClipFrame2( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 59, 167 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 364.17, 492.17 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( ClipDual, {} )
+
 				ZmFxFlsh:completeAnimation()
 				self.ZmFxFlsh:setAlpha( 0 )
 				self.clipFinished( ZmFxFlsh, {} )
@@ -339,47 +360,57 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 		ElectricSword = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( false, true, 261, 362 )
 				self.Clip:setTopBottom( false, true, -49, -1 )
 				self.Clip:setAlpha( 1 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, 292, 350 )
 				self.TotalAmmo:setTopBottom( false, true, -37, -7 )
 				self.TotalAmmo:setRGB( 1, 1, 1 )
 				self.TotalAmmo:setAlpha( 1 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 363, 491 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ZmAmmoSwordElectric:completeAnimation()
 				self.ZmAmmoSwordElectric:setLeftRight( true, false, 7, 135 )
 				self.ZmAmmoSwordElectric:setTopBottom( true, false, 7.5, 39.5 )
 				self.clipFinished( ZmAmmoSwordElectric, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( ClipDual, {} )
+
 				ZmFxFlsh:completeAnimation()
 				self.ZmFxFlsh:setAlpha( 0 )
 				self.clipFinished( ZmFxFlsh, {} )
 			end,
 			WeaponDual = function ()
 				self:setupElementClipCounter( 5 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, 0, 108 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 59, 167 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 364.17, 492.17 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, -63, 45 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -417,18 +448,22 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 			end,
 			Weapon = function ()
 				self:setupElementClipCounter( 5 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, 0, 108 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 59, 167 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 364.17, 492.17 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -466,18 +501,22 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 			end,
 			HeroWeapon = function ()
 				self:setupElementClipCounter( 5 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, 21, 129 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 374.17, 482.17 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 364.17, 492.17 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -517,47 +556,57 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 		Sword = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( false, true, 261, 362 )
 				self.Clip:setTopBottom( false, true, -49, -1 )
 				self.Clip:setAlpha( 1 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, 292, 350 )
 				self.TotalAmmo:setTopBottom( false, true, -37, -7 )
 				self.TotalAmmo:setRGB( 1, 1, 1 )
 				self.TotalAmmo:setAlpha( 1 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 6, 134 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ZmAmmoSwordElectric:completeAnimation()
 				self.ZmAmmoSwordElectric:setLeftRight( true, false, 364.17, 492.17 )
 				self.ZmAmmoSwordElectric:setTopBottom( true, false, 7.5, 39.5 )
 				self.clipFinished( ZmAmmoSwordElectric, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( ClipDual, {} )
+
 				ZmFxFlsh:completeAnimation()
 				self.ZmFxFlsh:setAlpha( 0 )
 				self.clipFinished( ZmFxFlsh, {} )
 			end,
 			WeaponDual = function ()
 				self:setupElementClipCounter( 5 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, 0, 108 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 59, 167 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 364.17, 492.17 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, -63, 45 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -595,18 +644,22 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 			end,
 			Weapon = function ()
 				self:setupElementClipCounter( 5 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, 0, 108 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 59, 167 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 364.17, 492.17 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -644,18 +697,22 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 			end,
 			HeroWeapon = function ()
 				self:setupElementClipCounter( 5 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, 21, 129 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 374.17, 482.17 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 364.17, 492.17 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -695,34 +752,41 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 		HeroWeapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, 21, 129 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.Clip:setAlpha( 1 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 59, 167 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.TotalAmmo:setAlpha( 1 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 364.17, 492.17 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ZmAmmoSwordElectric:completeAnimation()
 				self.ZmAmmoSwordElectric:setLeftRight( true, false, 364.17, 492.17 )
 				self.ZmAmmoSwordElectric:setTopBottom( true, false, 7.5, 39.5 )
 				self.clipFinished( ZmAmmoSwordElectric, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( ClipDual, {} )
+
 				ZmFxFlsh:completeAnimation()
 				self.ZmFxFlsh:setAlpha( 0 )
 				self.clipFinished( ZmFxFlsh, {} )
 			end,
 			WeaponDual = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ClipFrame2 = function ( Clip, event )
 					if not event.interrupted then
 						Clip:beginAnimation( "keyframe", 300, true, true, CoD.TweenType.Back )
@@ -740,14 +804,17 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 				self.Clip:setLeftRight( true, false, 21, 129 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				ClipFrame2( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 59, 167 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 364.17, 492.17 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, -63, 45 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -785,21 +852,25 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 			end,
 			Sword = function ()
 				self:setupElementClipCounter( 5 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( false, true, 261, 362 )
 				self.Clip:setTopBottom( false, true, -49, -1 )
 				self.Clip:setAlpha( 1 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, 292, 350 )
 				self.TotalAmmo:setTopBottom( false, true, -37, -7 )
 				self.TotalAmmo:setRGB( 1, 1, 1 )
 				self.TotalAmmo:setAlpha( 1 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 6, 134 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -837,6 +908,7 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 			end,
 			Weapon = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ClipFrame2 = function ( Clip, event )
 					if not event.interrupted then
 						Clip:beginAnimation( "keyframe", 300, true, true, CoD.TweenType.Back )
@@ -854,18 +926,22 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 				self.Clip:setLeftRight( true, false, 21, 129 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				ClipFrame2( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 59, 167 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 364.17, 492.17 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( ClipDual, {} )
+
 				ZmFxFlsh:completeAnimation()
 				self.ZmFxFlsh:setAlpha( 0 )
 				self.clipFinished( ZmFxFlsh, {} )
@@ -874,46 +950,56 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 		WeaponDoesNotUseAmmo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( false, true, -135, -27 )
 				self.Clip:setTopBottom( false, true, -57, -9 )
 				self.Clip:setAlpha( 0 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, -76, 32 )
 				self.TotalAmmo:setTopBottom( false, true, -52.5, -4.5 )
 				self.TotalAmmo:setAlpha( 0 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 364.17, 492.17 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ZmAmmoSwordElectric:completeAnimation()
 				self.ZmAmmoSwordElectric:setLeftRight( true, false, 364.17, 492.17 )
 				self.ZmAmmoSwordElectric:setTopBottom( true, false, 7.5, 39.5 )
 				self.clipFinished( ZmAmmoSwordElectric, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( ClipDual, {} )
+
 				ZmFxFlsh:completeAnimation()
 				self.ZmFxFlsh:setAlpha( 0 )
 				self.clipFinished( ZmFxFlsh, {} )
 			end,
 			WeaponDual = function ()
 				self:setupElementClipCounter( 5 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, 0, 108 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 59, 167 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 364.17, 492.17 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, -63, 45 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -951,21 +1037,25 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 			end,
 			Sword = function ()
 				self:setupElementClipCounter( 5 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( false, true, 261, 362 )
 				self.Clip:setTopBottom( false, true, -49, -1 )
 				self.Clip:setAlpha( 1 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, 292, 350 )
 				self.TotalAmmo:setTopBottom( false, true, -37, -7 )
 				self.TotalAmmo:setRGB( 1, 1, 1 )
 				self.TotalAmmo:setAlpha( 1 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 6, 134 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -1003,6 +1093,7 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 			end,
 			HeroWeapon = function ()
 				self:setupElementClipCounter( 4 )
+
 				local ClipFrame2 = function ( Clip, event )
 					if not event.interrupted then
 						Clip:beginAnimation( "keyframe", 300, true, true, CoD.TweenType.Back )
@@ -1020,14 +1111,17 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 				self.Clip:setLeftRight( true, false, 0, 108 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				ClipFrame2( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 59, 167 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 364.17, 492.17 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -1037,49 +1131,59 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 		WeaponDual = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, 0, 108 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.Clip:setAlpha( 1 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 59, 167 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.TotalAmmo:setAlpha( 1 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 364.17, 492.17 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ZmAmmoSwordElectric:completeAnimation()
 				self.ZmAmmoSwordElectric:setLeftRight( true, false, 364.17, 492.17 )
 				self.ZmAmmoSwordElectric:setTopBottom( true, false, 7.5, 39.5 )
 				self.clipFinished( ZmAmmoSwordElectric, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, -63, 45 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( ClipDual, {} )
+
 				ZmFxFlsh:completeAnimation()
 				self.ZmFxFlsh:setAlpha( 0 )
 				self.clipFinished( ZmFxFlsh, {} )
 			end,
 			Sword = function ()
 				self:setupElementClipCounter( 5 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( false, true, 261, 362 )
 				self.Clip:setTopBottom( false, true, -49, -1 )
 				self.Clip:setAlpha( 1 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, 292, 350 )
 				self.TotalAmmo:setTopBottom( false, true, -37, -7 )
 				self.TotalAmmo:setRGB( 1, 1, 1 )
 				self.TotalAmmo:setAlpha( 1 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 6, 134 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -1117,18 +1221,22 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 			end,
 			Weapon = function ()
 				self:setupElementClipCounter( 5 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, 0, 108 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 59, 167 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 364.17, 492.17 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -1166,6 +1274,7 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 			end,
 			HeroWeapon = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ClipFrame2 = function ( Clip, event )
 					if not event.interrupted then
 						Clip:beginAnimation( "keyframe", 300, true, true, CoD.TweenType.Back )
@@ -1183,14 +1292,17 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 				self.Clip:setLeftRight( true, false, 0, 108 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				ClipFrame2( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 59, 167 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 364.17, 492.17 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -1219,46 +1331,56 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 		Weapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( false, true, -135, -27 )
 				self.Clip:setTopBottom( false, true, -57, -9 )
 				self.Clip:setAlpha( 1 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, -76, 32 )
 				self.TotalAmmo:setTopBottom( false, true, -52.5, -4.5 )
 				self.TotalAmmo:setAlpha( 1 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 364.17, 492.17 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ZmAmmoSwordElectric:completeAnimation()
 				self.ZmAmmoSwordElectric:setLeftRight( true, false, 364.17, 492.17 )
 				self.ZmAmmoSwordElectric:setTopBottom( true, false, 7.5, 39.5 )
 				self.clipFinished( ZmAmmoSwordElectric, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( ClipDual, {} )
+
 				ZmFxFlsh:completeAnimation()
 				self.ZmFxFlsh:setAlpha( 0 )
 				self.clipFinished( ZmFxFlsh, {} )
 			end,
 			WeaponDual = function ()
 				self:setupElementClipCounter( 5 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, 0, 108 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 59, 167 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 364.17, 492.17 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, -63, 45 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -1296,21 +1418,25 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 			end,
 			Sword = function ()
 				self:setupElementClipCounter( 5 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( false, true, 261, 362 )
 				self.Clip:setTopBottom( false, true, -49, -1 )
 				self.Clip:setAlpha( 1 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, 292, 350 )
 				self.TotalAmmo:setTopBottom( false, true, -37, -7 )
 				self.TotalAmmo:setRGB( 1, 1, 1 )
 				self.TotalAmmo:setAlpha( 1 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 6, 134 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -1348,6 +1474,7 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 			end,
 			HeroWeapon = function ()
 				self:setupElementClipCounter( 4 )
+
 				local ClipFrame2 = function ( Clip, event )
 					if not event.interrupted then
 						Clip:beginAnimation( "keyframe", 300, true, true, CoD.TweenType.Back )
@@ -1365,14 +1492,17 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 				self.Clip:setLeftRight( true, false, 0, 108 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				ClipFrame2( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 59, 167 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				Sword:completeAnimation()
 				self.Sword:setLeftRight( true, false, 364.17, 492.17 )
 				self.Sword:setTopBottom( true, false, 8, 40 )
 				self.clipFinished( Sword, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -1380,6 +1510,7 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ElectricSword",
@@ -1465,6 +1596,7 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 			modelName = "currentWeapon.ammoInDWClip"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Clip:close()
 		element.TotalAmmo:close()

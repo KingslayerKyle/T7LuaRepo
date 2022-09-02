@@ -15,9 +15,11 @@ require( "ui.uieditor.widgets.Common.common_ButtonLabel_01" )
 CoD.GroupsRosterRow = InheritFrom( LUI.UIElement )
 CoD.GroupsRosterRow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsRosterRow )
 	self.id = "GroupsRosterRow"
@@ -277,48 +279,62 @@ CoD.GroupsRosterRow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setAlpha( 1 )
 				self.clipFinished( emblem, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				presence:completeAnimation()
 				self.presence:setAlpha( 1 )
 				self.clipFinished( presence, {} )
+
 				joinable:completeAnimation()
 				self.joinable:setAlpha( 1 )
 				self.clipFinished( joinable, {} )
+
 				MemberStatus:completeAnimation()
 				self.MemberStatus:setAlpha( 1 )
 				self.clipFinished( MemberStatus, {} )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 0 )
 				self.clipFinished( Spinner, {} )
+
 				commonButtonLabel:completeAnimation()
 				self.commonButtonLabel:setAlpha( 1 )
 				self.clipFinished( commonButtonLabel, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 90, false, false, CoD.TweenType.Linear )
@@ -507,33 +523,42 @@ CoD.GroupsRosterRow.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setAlpha( 1 )
 				self.clipFinished( emblem, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				presence:completeAnimation()
 				self.presence:setAlpha( 1 )
 				self.clipFinished( presence, {} )
+
 				joinable:completeAnimation()
 				self.joinable:setAlpha( 1 )
 				self.clipFinished( joinable, {} )
+
 				MemberStatus:completeAnimation()
 				self.MemberStatus:setAlpha( 1 )
 				self.clipFinished( MemberStatus, {} )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 0 )
 				self.clipFinished( Spinner, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 29, false, false, CoD.TweenType.Linear )
@@ -724,48 +749,62 @@ CoD.GroupsRosterRow.new = function ( menu, controller )
 		Loading = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setAlpha( 0 )
 				self.clipFinished( emblem, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				presence:completeAnimation()
 				self.presence:setAlpha( 0 )
 				self.clipFinished( presence, {} )
+
 				joinable:completeAnimation()
 				self.joinable:setAlpha( 0 )
 				self.clipFinished( joinable, {} )
+
 				MemberStatus:completeAnimation()
 				self.MemberStatus:setAlpha( 0 )
 				self.clipFinished( MemberStatus, {} )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 1 )
 				self.clipFinished( Spinner, {} )
+
 				commonButtonLabel:completeAnimation()
 				self.commonButtonLabel:setAlpha( 0 )
 				self.clipFinished( commonButtonLabel, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 90, false, false, CoD.TweenType.Linear )
@@ -954,33 +993,42 @@ CoD.GroupsRosterRow.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setAlpha( 0 )
 				self.clipFinished( emblem, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				presence:completeAnimation()
 				self.presence:setAlpha( 0 )
 				self.clipFinished( presence, {} )
+
 				joinable:completeAnimation()
 				self.joinable:setAlpha( 0 )
 				self.clipFinished( joinable, {} )
+
 				MemberStatus:completeAnimation()
 				self.MemberStatus:setAlpha( 0 )
 				self.clipFinished( MemberStatus, {} )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 1 )
 				self.clipFinished( Spinner, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 29, false, false, CoD.TweenType.Linear )
@@ -1169,6 +1217,7 @@ CoD.GroupsRosterRow.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Loading",
@@ -1185,6 +1234,7 @@ CoD.GroupsRosterRow.new = function ( menu, controller )
 			modelName = "groups.fetchGroupMembersInProgress"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveDiag:close()
 		element.BoxButtonLrgInactive:close()

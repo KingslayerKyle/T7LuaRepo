@@ -19,9 +19,11 @@ end
 CoD.OverviewTab = InheritFrom( LUI.UIElement )
 CoD.OverviewTab.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.OverviewTab )
 	self.id = "OverviewTab"
@@ -53,6 +55,7 @@ CoD.OverviewTab.new = function ( menu, controller )
 		FileshareSummaryFileUpdate( controller )
 	end )
 	GroupOverviewContentPanel.id = "GroupOverviewContentPanel"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GroupsSummary:close()
 		element.GroupOverviewContentPanel:close()

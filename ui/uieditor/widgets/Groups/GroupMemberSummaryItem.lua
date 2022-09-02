@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BorderThin" )
 CoD.GroupMemberSummaryItem = InheritFrom( LUI.UIElement )
 CoD.GroupMemberSummaryItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupMemberSummaryItem )
 	self.id = "GroupMemberSummaryItem"

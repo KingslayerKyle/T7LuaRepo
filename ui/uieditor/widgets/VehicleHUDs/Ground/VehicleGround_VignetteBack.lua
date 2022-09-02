@@ -4,9 +4,11 @@
 CoD.VehicleGround_VignetteBack = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_VignetteBack.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.VehicleGround_VignetteBack )
 	self.id = "VehicleGround_VignetteBack"

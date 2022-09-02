@@ -4,9 +4,11 @@
 CoD.DeadSpectate_SpectatingBar = InheritFrom( LUI.UIElement )
 CoD.DeadSpectate_SpectatingBar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DeadSpectate_SpectatingBar )
 	self.id = "DeadSpectate_SpectatingBar"
@@ -68,15 +70,19 @@ CoD.DeadSpectate_SpectatingBar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				leftButton:completeAnimation()
 				self.leftButton:setAlpha( 0 )
 				self.clipFinished( leftButton, {} )
+
 				spectatingLabel0:completeAnimation()
 				self.spectatingLabel0:setAlpha( 0 )
 				self.clipFinished( spectatingLabel0, {} )
+
 				spectatingLabel00:completeAnimation()
 				self.spectatingLabel00:setAlpha( 0 )
 				self.clipFinished( spectatingLabel00, {} )
+
 				rightButton:completeAnimation()
 				self.rightButton:setAlpha( 0 )
 				self.clipFinished( rightButton, {} )
@@ -85,15 +91,19 @@ CoD.DeadSpectate_SpectatingBar.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				leftButton:completeAnimation()
 				self.leftButton:setAlpha( 1 )
 				self.clipFinished( leftButton, {} )
+
 				spectatingLabel0:completeAnimation()
 				self.spectatingLabel0:setAlpha( 0.65 )
 				self.clipFinished( spectatingLabel0, {} )
+
 				spectatingLabel00:completeAnimation()
 				self.spectatingLabel00:setAlpha( 1 )
 				self.clipFinished( spectatingLabel00, {} )
+
 				rightButton:completeAnimation()
 				self.rightButton:setAlpha( 1 )
 				self.clipFinished( rightButton, {} )
@@ -102,21 +112,26 @@ CoD.DeadSpectate_SpectatingBar.new = function ( menu, controller )
 		VisibleLastPlayer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				leftButton:completeAnimation()
 				self.leftButton:setAlpha( 0 )
 				self.clipFinished( leftButton, {} )
+
 				spectatingLabel0:completeAnimation()
 				self.spectatingLabel0:setAlpha( 0.65 )
 				self.clipFinished( spectatingLabel0, {} )
+
 				spectatingLabel00:completeAnimation()
 				self.spectatingLabel00:setAlpha( 1 )
 				self.clipFinished( spectatingLabel00, {} )
+
 				rightButton:completeAnimation()
 				self.rightButton:setAlpha( 0 )
 				self.clipFinished( rightButton, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "VisibleLastPlayer",
@@ -220,6 +235,7 @@ CoD.DeadSpectate_SpectatingBar.new = function ( menu, controller )
 			modelName = "gameScore.alliesAlive"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.leftButton:close()
 		element.rightButton:close()

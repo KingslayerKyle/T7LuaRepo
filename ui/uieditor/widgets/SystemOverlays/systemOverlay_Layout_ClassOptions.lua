@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Scrollbars.verticalCounter" )
 CoD.systemOverlay_Layout_ClassOptions = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_Layout_ClassOptions.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_Layout_ClassOptions )
 	self.id = "systemOverlay_Layout_ClassOptions"
@@ -141,6 +143,7 @@ CoD.systemOverlay_Layout_ClassOptions.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.text:close()
 		element.options:close()

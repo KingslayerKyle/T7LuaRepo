@@ -4,9 +4,11 @@
 CoD.DamageWidget_BackCircleOutter = InheritFrom( LUI.UIElement )
 CoD.DamageWidget_BackCircleOutter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DamageWidget_BackCircleOutter )
 	self.id = "DamageWidget_BackCircleOutter"

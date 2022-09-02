@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.cac_3dTitleIntermediary" )
 CoD.CACBackgroundNoHero = InheritFrom( LUI.UIElement )
 CoD.CACBackgroundNoHero.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CACBackgroundNoHero )
 	self.id = "CACBackgroundNoHero"
@@ -54,6 +56,7 @@ CoD.CACBackgroundNoHero.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				TitleBacking0:completeAnimation()
 				self.TitleBacking0:setAlpha( 1 )
 				self.clipFinished( TitleBacking0, {} )
@@ -62,24 +65,29 @@ CoD.CACBackgroundNoHero.new = function ( menu, controller )
 		Update = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Intro = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Update2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Update3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsElementInState( element, "Update" ) then
 			SetElementStateByElementName( self, "cac3dTitleIntermediary0", controller, "Update" )
@@ -95,6 +103,7 @@ CoD.CACBackgroundNoHero.new = function ( menu, controller )
 			}, controller )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.classAllocation:close()
 		element.cac3dTitleIntermediary0:close()

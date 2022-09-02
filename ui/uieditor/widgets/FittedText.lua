@@ -4,6 +4,7 @@
 require( "ui.uieditor.widgets.Lobby.Common.FE_PanelNoBlur" )
 
 local PostLoadFunc = function ( f1_arg0, f1_arg1 )
+
 	LUI.OverrideFunction_CallOriginalFirst( f1_arg0.text, "setText", function ( element )
 		f1_arg0:setWidth( f1_arg0.text:getTextWidth() + 6 )
 	end )
@@ -12,9 +13,11 @@ end
 CoD.FittedText = InheritFrom( LUI.UIElement )
 CoD.FittedText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FittedText )
 	self.id = "FittedText"
@@ -35,6 +38,7 @@ CoD.FittedText.new = function ( menu, controller )
 	text:setTopBottom( true, false, 1.5, 21.5 )
 	text:setText( Engine.Localize( "MENU_NEW" ) )
 	text:setTTF( "fonts/RefrigeratorDeluxe-Regular.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( text, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 1 )
 	end )

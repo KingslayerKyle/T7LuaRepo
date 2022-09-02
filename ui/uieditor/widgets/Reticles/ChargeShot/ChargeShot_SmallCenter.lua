@@ -4,9 +4,11 @@
 CoD.ChargeShot_SmallCenter = InheritFrom( LUI.UIElement )
 CoD.ChargeShot_SmallCenter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChargeShot_SmallCenter )
 	self.id = "ChargeShot_SmallCenter"

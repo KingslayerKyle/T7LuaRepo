@@ -4,9 +4,11 @@
 CoD.StorePreviewImageWidget = InheritFrom( LUI.UIElement )
 CoD.StorePreviewImageWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StorePreviewImageWidget )
 	self.id = "StorePreviewImageWidget"
@@ -30,17 +32,20 @@ CoD.StorePreviewImageWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				previewImage:completeAnimation()
 				self.previewImage:setAlpha( 0 )
 				self.clipFinished( previewImage, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hide",
@@ -49,6 +54,7 @@ CoD.StorePreviewImageWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.previewImage:close()
 	end )

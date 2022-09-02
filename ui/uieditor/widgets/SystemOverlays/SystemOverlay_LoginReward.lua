@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.CAC.cac_PurchasingExtraSlots" )
 CoD.SystemOverlay_LoginReward = InheritFrom( LUI.UIElement )
 CoD.SystemOverlay_LoginReward.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SystemOverlay_LoginReward )
 	self.id = "SystemOverlay_LoginReward"
@@ -80,6 +82,7 @@ CoD.SystemOverlay_LoginReward.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ProcessingWidget:completeAnimation()
 				self.ProcessingWidget:setAlpha( 0 )
 				self.clipFinished( ProcessingWidget, {} )
@@ -88,6 +91,7 @@ CoD.SystemOverlay_LoginReward.new = function ( menu, controller )
 		Purchasing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ProcessingWidget:completeAnimation()
 				self.ProcessingWidget:setAlpha( 1 )
 				self.clipFinished( ProcessingWidget, {} )
@@ -102,6 +106,7 @@ CoD.SystemOverlay_LoginReward.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.supportInfo:close()
 		element.systemOverlayConnectLooping:close()

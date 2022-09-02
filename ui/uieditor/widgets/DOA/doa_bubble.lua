@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.DOA.doa_bubble_internal" )
 CoD.doa_bubble = InheritFrom( LUI.UIElement )
 CoD.doa_bubble.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.doa_bubble )
 	self.id = "doa_bubble"

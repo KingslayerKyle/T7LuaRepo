@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_GoldFrame" )
 CoD.CallingCards_loot_DeepSea = InheritFrom( LUI.UIElement )
 CoD.CallingCards_loot_DeepSea.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_loot_DeepSea )
 	self.id = "CallingCards_loot_DeepSea"
@@ -107,6 +109,7 @@ CoD.CallingCards_loot_DeepSea.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				local lightFrame2 = function ( light, event )
 					local lightFrame3 = function ( light, event )
 						local lightFrame4 = function ( light, event )
@@ -730,13 +733,16 @@ CoD.CallingCards_loot_DeepSea.new = function ( menu, controller )
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 0.6 )
 				Image1Frame2( Image1, {} )
+
 				CallingCardsGoldFrame:completeAnimation()
 				self.CallingCardsGoldFrame:setAlpha( 1 )
 				self.clipFinished( CallingCardsGoldFrame, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardsGoldFrame:close()
 	end )

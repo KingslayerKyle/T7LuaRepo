@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.AbilityWheel.AbilityWheel_Pixel" )
 CoD.LoadoutsAbilityWheel = InheritFrom( LUI.UIElement )
 CoD.LoadoutsAbilityWheel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LoadoutsAbilityWheel )
 	self.id = "LoadoutsAbilityWheel"

@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.HUD.core_MapWidget.MapWidget_BarTop" )
 CoD.CommsHeader = InheritFrom( LUI.UIElement )
 CoD.CommsHeader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CommsHeader )
 	self.id = "CommsHeader"
@@ -76,9 +78,11 @@ CoD.CommsHeader.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				panel:completeAnimation()
 				self.panel:setAlpha( 0 )
 				self.clipFinished( panel, {} )
+
 				icon:completeAnimation()
 				self.icon:setLeftRight( true, false, 0, 21.33 )
 				self.icon:setTopBottom( true, false, 0, 21.33 )
@@ -86,18 +90,21 @@ CoD.CommsHeader.new = function ( menu, controller )
 				self.icon:setZRot( 0 )
 				self.icon:setZoom( 5 )
 				self.clipFinished( icon, {} )
+
 				title:completeAnimation()
 				self.title:setLeftRight( true, false, 24.33, 201 )
 				self.title:setTopBottom( true, false, 3.66, 19.67 )
 				self.title:setAlpha( 0 )
 				self.title:setZoom( 5 )
 				self.clipFinished( title, {} )
+
 				BarBase:completeAnimation()
 				self.BarBase:setAlpha( 0 )
 				self.clipFinished( BarBase, {} )
 			end,
 			Add = function ()
 				self:setupElementClipCounter( 4 )
+
 				local f3_local0 = function ( f4_arg0, f4_arg1 )
 					local f4_local0 = function ( f5_arg0, f5_arg1 )
 						local f5_local0 = function ( f6_arg0, f6_arg1 )
@@ -350,6 +357,7 @@ CoD.CommsHeader.new = function ( menu, controller )
 			end,
 			Off = function ()
 				self:setupElementClipCounter( 4 )
+
 				local panelFrame2 = function ( panel, event )
 					local panelFrame3 = function ( panel, event )
 						local panelFrame4 = function ( panel, event )
@@ -551,6 +559,7 @@ CoD.CommsHeader.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.panel:close()
 		element.icon:close()

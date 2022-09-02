@@ -11,9 +11,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleNumBrdr" )
 CoD.MediaManager_CustomGameListItem = InheritFrom( LUI.UIElement )
 CoD.MediaManager_CustomGameListItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MediaManager_CustomGameListItem )
 	self.id = "MediaManager_CustomGameListItem"
@@ -164,20 +166,24 @@ CoD.MediaManager_CustomGameListItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, -2, 2 )
 				self.FocusBarT:setTopBottom( true, false, 0, 4 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, -2, 2 )
 				self.FocusBarB:setTopBottom( false, true, -3, 1 )
@@ -186,14 +192,17 @@ CoD.MediaManager_CustomGameListItem.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, -2, 2 )
 				self.FocusBarT:setTopBottom( true, false, 0, 4 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, -2, 2 )
 				self.FocusBarB:setTopBottom( false, true, -3, 1 )
@@ -202,18 +211,22 @@ CoD.MediaManager_CustomGameListItem.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveDiag:close()
 		element.BoxButtonLrgInactive:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMPromotional.ZM_PromoIconList" )
 CoD.LobbyDoubleXPWidgetContainer = InheritFrom( LUI.UIElement )
 CoD.LobbyDoubleXPWidgetContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyDoubleXPWidgetContainer )
 	self.id = "LobbyDoubleXPWidgetContainer"
@@ -28,6 +30,7 @@ CoD.LobbyDoubleXPWidgetContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ZMPromoIconList:completeAnimation()
 				self.ZMPromoIconList:setAlpha( 0 )
 				self.clipFinished( ZMPromoIconList, {} )
@@ -36,6 +39,7 @@ CoD.LobbyDoubleXPWidgetContainer.new = function ( menu, controller )
 		ZMTheaterLobby = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ZMPromoIconList:completeAnimation()
 				self.ZMPromoIconList:setAlpha( 0 )
 				self.clipFinished( ZMPromoIconList, {} )
@@ -44,6 +48,7 @@ CoD.LobbyDoubleXPWidgetContainer.new = function ( menu, controller )
 		ZMMainLobby = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ZMPromoIconListFrame2 = function ( ZMPromoIconList, event )
 					local ZMPromoIconListFrame3 = function ( ZMPromoIconList, event )
 						if not event.interrupted then
@@ -78,6 +83,7 @@ CoD.LobbyDoubleXPWidgetContainer.new = function ( menu, controller )
 		ZMPrivateLobby = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ZMPromoIconList:completeAnimation()
 				self.ZMPromoIconList:setLeftRight( true, false, 58, 260 )
 				self.ZMPromoIconList:setTopBottom( true, false, 405.01, 460.01 )
@@ -88,6 +94,7 @@ CoD.LobbyDoubleXPWidgetContainer.new = function ( menu, controller )
 		ZMPublicLobby = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ZMPromoIconList:completeAnimation()
 				self.ZMPromoIconList:setLeftRight( true, false, 58, 260 )
 				self.ZMPromoIconList:setTopBottom( true, false, 369.01, 424.01 )
@@ -95,6 +102,7 @@ CoD.LobbyDoubleXPWidgetContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ZMTheaterLobby",
@@ -137,6 +145,7 @@ CoD.LobbyDoubleXPWidgetContainer.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZMPromoIconList:close()
 	end )

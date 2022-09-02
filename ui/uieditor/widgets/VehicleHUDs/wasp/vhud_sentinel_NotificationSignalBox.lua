@@ -4,9 +4,11 @@
 CoD.vhud_sentinel_NotificationSignalBox = InheritFrom( LUI.UIElement )
 CoD.vhud_sentinel_NotificationSignalBox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_sentinel_NotificationSignalBox )
 	self.id = "vhud_sentinel_NotificationSignalBox"
@@ -110,42 +112,54 @@ CoD.vhud_sentinel_NotificationSignalBox.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				STRONG:completeAnimation()
 				self.STRONG:setAlpha( 1 )
 				self.clipFinished( STRONG, {} )
+
 				STRONG0:completeAnimation()
 				self.STRONG0:setAlpha( 1 )
 				self.clipFinished( STRONG0, {} )
+
 				WEAK:completeAnimation()
 				self.WEAK:setAlpha( 0 )
 				self.clipFinished( WEAK, {} )
+
 				WEAK0:completeAnimation()
 				self.WEAK0:setAlpha( 0 )
 				self.clipFinished( WEAK0, {} )
+
 				WEAK00:completeAnimation()
 				self.WEAK00:setAlpha( 0 )
 				self.clipFinished( WEAK00, {} )
+
 				WEAK000:completeAnimation()
 				self.WEAK000:setAlpha( 0 )
 				self.clipFinished( WEAK000, {} )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver, {} )
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 5 )
+
 				WEAK:completeAnimation()
 				self.WEAK:setAlpha( 0 )
 				self.clipFinished( WEAK, {} )
+
 				WEAK0:completeAnimation()
 				self.WEAK0:setAlpha( 0 )
 				self.clipFinished( WEAK0, {} )
+
 				WEAK00:completeAnimation()
 				self.WEAK00:setAlpha( 0 )
 				self.clipFinished( WEAK00, {} )
+
 				WEAK000:completeAnimation()
 				self.WEAK000:setAlpha( 0 )
 				self.clipFinished( WEAK000, {} )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver, {} )
@@ -154,9 +168,11 @@ CoD.vhud_sentinel_NotificationSignalBox.new = function ( menu, controller )
 		OutOfRange = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				STRONG:completeAnimation()
 				self.STRONG:setAlpha( 0 )
 				self.clipFinished( STRONG, {} )
+
 				STRONG0:completeAnimation()
 				self.STRONG0:setAlpha( 0 )
 				self.clipFinished( STRONG0, {} )
@@ -196,6 +212,7 @@ CoD.vhud_sentinel_NotificationSignalBox.new = function ( menu, controller )
 				WEAK:completeAnimation()
 				self.WEAK:setAlpha( 0.6 )
 				WEAKFrame2( WEAK, {} )
+
 				WEAK0:completeAnimation()
 				self.WEAK0:setAlpha( 0 )
 				self.WEAK0:setMaterial( LUI.UIImage.GetCachedMaterial( "sw4_2d_font_cached" ) )
@@ -309,10 +326,12 @@ CoD.vhud_sentinel_NotificationSignalBox.new = function ( menu, controller )
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0.1 )
 				GlowOrangeOverFrame2( GlowOrangeOver, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "OutOfRange",

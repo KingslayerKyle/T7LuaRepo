@@ -4,9 +4,11 @@
 CoD.BM_DecryptionTradeAgain = InheritFrom( LUI.UIElement )
 CoD.BM_DecryptionTradeAgain.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_DecryptionTradeAgain )
 	self.id = "BM_DecryptionTradeAgain"
@@ -31,6 +33,7 @@ CoD.BM_DecryptionTradeAgain.new = function ( menu, controller )
 		Bribe = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				tradeAgainText:completeAnimation()
 				self.tradeAgainText:setText( LocalizeToUpperString( "MPUI_BM_BRIBE" ) )
 				self.clipFinished( tradeAgainText, {} )
@@ -39,6 +42,7 @@ CoD.BM_DecryptionTradeAgain.new = function ( menu, controller )
 		GenericReward = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				tradeAgainText:completeAnimation()
 				self.tradeAgainText:setText( LocalizeToUpperString( "MPUI_BM_BRIBE" ) )
 				self.clipFinished( tradeAgainText, {} )
@@ -47,6 +51,7 @@ CoD.BM_DecryptionTradeAgain.new = function ( menu, controller )
 		GrandSlamReward = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				tradeAgainText:completeAnimation()
 				self.tradeAgainText:setText( LocalizeToUpperString( "MPUI_BM_BRIBE" ) )
 				self.clipFinished( tradeAgainText, {} )
@@ -55,6 +60,7 @@ CoD.BM_DecryptionTradeAgain.new = function ( menu, controller )
 		PurchaseBundle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				tradeAgainText:completeAnimation()
 				self.tradeAgainText:setText( LocalizeToUpperString( "MPUI_BM_BUNDLE" ) )
 				self.clipFinished( tradeAgainText, {} )
@@ -63,12 +69,14 @@ CoD.BM_DecryptionTradeAgain.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				tradeAgainText:completeAnimation()
 				self.tradeAgainText:setAlpha( 1 )
 				self.clipFinished( tradeAgainText, {} )
 			end,
 			Rolling = function ()
 				self:setupElementClipCounter( 1 )
+
 				tradeAgainText:completeAnimation()
 				self.tradeAgainText:setAlpha( 0 )
 				self.clipFinished( tradeAgainText, {} )
@@ -77,6 +85,7 @@ CoD.BM_DecryptionTradeAgain.new = function ( menu, controller )
 		Bundle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				tradeAgainText:completeAnimation()
 				self.tradeAgainText:setText( LocalizeToUpperString( "MPUI_BM_BUNDLE" ) )
 				self.clipFinished( tradeAgainText, {} )
@@ -85,12 +94,14 @@ CoD.BM_DecryptionTradeAgain.new = function ( menu, controller )
 		TradeAgain = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				tradeAgainText:completeAnimation()
 				self.tradeAgainText:setText( LocalizeToUpperString( "MPUI_BM_TRADE_AGAIN" ) )
 				self.clipFinished( tradeAgainText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Bribe",

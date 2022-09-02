@@ -4,9 +4,11 @@
 CoD.BM_LimitedItemRibbon = InheritFrom( LUI.UIElement )
 CoD.BM_LimitedItemRibbon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_LimitedItemRibbon )
 	self.id = "BM_LimitedItemRibbon"
@@ -48,6 +50,7 @@ CoD.BM_LimitedItemRibbon.new = function ( menu, controller )
 	Text:setLetterSpacing( 1.3 )
 	Text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	Text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( Text, "setText", function ( element, controller )
 		ScaleWidgetToLabelLeftJustify( self, element, 10 )
 	end )
@@ -58,15 +61,19 @@ CoD.BM_LimitedItemRibbon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				PromoRibbon:completeAnimation()
 				self.PromoRibbon:setAlpha( 0 )
 				self.clipFinished( PromoRibbon, {} )
+
 				PromoRibbon0:completeAnimation()
 				self.PromoRibbon0:setAlpha( 0 )
 				self.clipFinished( PromoRibbon0, {} )
+
 				PromoRibbon00:completeAnimation()
 				self.PromoRibbon00:setAlpha( 0 )
 				self.clipFinished( PromoRibbon00, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 0 )
 				self.clipFinished( Text, {} )
@@ -75,15 +82,19 @@ CoD.BM_LimitedItemRibbon.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				PromoRibbon:completeAnimation()
 				self.PromoRibbon:setAlpha( 1 )
 				self.clipFinished( PromoRibbon, {} )
+
 				PromoRibbon0:completeAnimation()
 				self.PromoRibbon0:setAlpha( 1 )
 				self.clipFinished( PromoRibbon0, {} )
+
 				PromoRibbon00:completeAnimation()
 				self.PromoRibbon00:setAlpha( 1 )
 				self.clipFinished( PromoRibbon00, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 1 )
 				self.clipFinished( Text, {} )

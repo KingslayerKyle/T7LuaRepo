@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_AbilityGlow" )
 CoD.AmmoWidget_AbilityRing = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_AbilityRing )
 	self.id = "AmmoWidget_AbilityRing"
@@ -100,6 +102,7 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 		AdvertisedReady = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				local ImgRingFillFrame2 = function ( ImgRingFill, event )
 					local ImgRingFillFrame3 = function ( ImgRingFill, event )
 						if not event.interrupted then
@@ -130,10 +133,12 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 				self.ImgRingFill:setAlpha( 1 )
 				self.ImgRingFill:setZoom( -10 )
 				ImgRingFillFrame2( ImgRingFill, {} )
+
 				ImgRingPattern:completeAnimation()
 				self.ImgRingPattern:setAlpha( Multiple( 2, 0 ) )
 				self.ImgRingPattern:setZoom( 8 )
 				self.clipFinished( ImgRingPattern, {} )
+
 				ImgRingPatternDuplicate:completeAnimation()
 				self.ImgRingPatternDuplicate:setRGB( 1, 0.91, 0.31 )
 				self.ImgRingPatternDuplicate:setAlpha( 0 )
@@ -196,16 +201,20 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 				self.Glow:setAlpha( 0.2 )
 				self.Glow:setScale( 0.9 )
 				GlowFrame2( Glow, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setAlpha( 0 )
 				self.clipFinished( Glow0, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ImgRingFillFrame2 = function ( ImgRingFill, event )
 					if not event.interrupted then
 						ImgRingFill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -302,6 +311,7 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 			end,
 			Charge = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ImgRingFillFrame2 = function ( ImgRingFill, event )
 					if not event.interrupted then
 						ImgRingFill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Back )
@@ -396,6 +406,7 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 			end,
 			InUse = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ImgRingFillFrame2 = function ( ImgRingFill, event )
 					if not event.interrupted then
 						ImgRingFill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Back )
@@ -490,6 +501,7 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 			end,
 			NoGadget = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ImgRingFillFrame2 = function ( ImgRingFill, event )
 					if not event.interrupted then
 						ImgRingFill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Back )
@@ -584,25 +596,30 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ImgRingFill:completeAnimation()
 				self.ImgRingFill:setRGB( 0.79, 0.86, 1 )
 				self.ImgRingFill:setAlpha( 1 )
 				self.ImgRingFill:setZoom( -10 )
 				self.clipFinished( ImgRingFill, {} )
+
 				ImgRingPattern:completeAnimation()
 				self.ImgRingPattern:setAlpha( Multiple( 2, 0 ) )
 				self.ImgRingPattern:setZoom( 6 )
 				self.clipFinished( ImgRingPattern, {} )
+
 				ImgRingPatternDuplicate:completeAnimation()
 				self.ImgRingPatternDuplicate:setRGB( 1, 1, 1 )
 				self.ImgRingPatternDuplicate:setAlpha( 0 )
 				self.ImgRingPatternDuplicate:setZoom( 6 )
 				self.clipFinished( ImgRingPatternDuplicate, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setRGB( 0.4, 0.65, 0.99 )
 				self.Glow:setAlpha( 0.24 )
@@ -674,6 +691,7 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 			end,
 			AdvertisedReady = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ImgRingFillFrame2 = function ( ImgRingFill, event )
 					if not event.interrupted then
 						ImgRingFill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Back )
@@ -784,6 +802,7 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 			end,
 			Charge = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ImgRingFillFrame2 = function ( ImgRingFill, event )
 					if not event.interrupted then
 						ImgRingFill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Back )
@@ -882,6 +901,7 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 			end,
 			InUse = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ImgRingFillFrame2 = function ( ImgRingFill, event )
 					if not event.interrupted then
 						ImgRingFill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Back )
@@ -980,6 +1000,7 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 			end,
 			NoGadget = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ImgRingFillFrame2 = function ( ImgRingFill, event )
 					if not event.interrupted then
 						ImgRingFill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Back )
@@ -1078,34 +1099,41 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 		Charge = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ImgRingFill:completeAnimation()
 				self.ImgRingFill:setRGB( 1, 1, 1 )
 				self.ImgRingFill:setAlpha( 0 )
 				self.ImgRingFill:setZoom( -10 )
 				self.clipFinished( ImgRingFill, {} )
+
 				ImgRingPattern:completeAnimation()
 				self.ImgRingPattern:setRGB( 0.83, 0.89, 1 )
 				self.ImgRingPattern:setAlpha( Multiple( 2, 2 ) )
 				self.ImgRingPattern:setZoom( 5 )
 				self.clipFinished( ImgRingPattern, {} )
+
 				ImgRingPatternDuplicate:completeAnimation()
 				self.ImgRingPatternDuplicate:setRGB( 1, 1, 1 )
 				self.ImgRingPatternDuplicate:setAlpha( 0 )
 				self.ImgRingPatternDuplicate:setZoom( 5 )
 				self.clipFinished( ImgRingPatternDuplicate, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setRGB( 1, 1, 1 )
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setAlpha( 0 )
 				self.clipFinished( Glow0, {} )
 			end,
 			AdvertisedReady = function ()
 				self:setupElementClipCounter( 6 )
+
 				local ImgRingFillFrame2 = function ( ImgRingFill, event )
 					if not event.interrupted then
 						ImgRingFill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -1247,6 +1275,7 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ImgRingFillFrame2 = function ( ImgRingFill, event )
 					if not event.interrupted then
 						ImgRingFill:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Back )
@@ -1345,6 +1374,7 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 			end,
 			InUse = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ImgRingFillFrame2 = function ( ImgRingFill, event )
 					if not event.interrupted then
 						ImgRingFill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Back )
@@ -1437,6 +1467,7 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 			end,
 			NoGadget = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ImgRingFillFrame2 = function ( ImgRingFill, event )
 					if not event.interrupted then
 						ImgRingFill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Back )
@@ -1531,34 +1562,41 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 		InUse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ImgRingFill:completeAnimation()
 				self.ImgRingFill:setRGB( 0.55, 0.69, 0.98 )
 				self.ImgRingFill:setAlpha( 0.7 )
 				self.ImgRingFill:setZoom( 15 )
 				self.clipFinished( ImgRingFill, {} )
+
 				ImgRingPattern:completeAnimation()
 				self.ImgRingPattern:setRGB( 0.4, 0.57, 0.9 )
 				self.ImgRingPattern:setAlpha( Multiple( 2, 0 ) )
 				self.ImgRingPattern:setZoom( -10 )
 				self.clipFinished( ImgRingPattern, {} )
+
 				ImgRingPatternDuplicate:completeAnimation()
 				self.ImgRingPatternDuplicate:setRGB( 1, 1, 1 )
 				self.ImgRingPatternDuplicate:setAlpha( 0 )
 				self.ImgRingPatternDuplicate:setZoom( -10 )
 				self.clipFinished( ImgRingPatternDuplicate, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setRGB( 1, 1, 1 )
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setAlpha( 0 )
 				self.clipFinished( Glow0, {} )
 			end,
 			AdvertisedReady = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ImgRingFillFrame2 = function ( ImgRingFill, event )
 					if not event.interrupted then
 						ImgRingFill:beginAnimation( "keyframe", 300, false, true, CoD.TweenType.Back )
@@ -1653,6 +1691,7 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ImgRingFillFrame2 = function ( ImgRingFill, event )
 					if not event.interrupted then
 						ImgRingFill:beginAnimation( "keyframe", 300, false, true, CoD.TweenType.Back )
@@ -1751,6 +1790,7 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 			end,
 			Charge = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ImgRingFillFrame2 = function ( ImgRingFill, event )
 					if not event.interrupted then
 						ImgRingFill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Back )
@@ -1843,6 +1883,7 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 			end,
 			NoGadget = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ImgRingFillFrame2 = function ( ImgRingFill, event )
 					if not event.interrupted then
 						ImgRingFill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Back )
@@ -1937,31 +1978,38 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 		NoGadget = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ImgRingFill:completeAnimation()
 				self.ImgRingFill:setAlpha( 0 )
 				self.clipFinished( ImgRingFill, {} )
+
 				ImgRingPattern:completeAnimation()
 				self.ImgRingPattern:setAlpha( Multiple( 2, 0 ) )
 				self.ImgRingPattern:setZoom( -10 )
 				self.clipFinished( ImgRingPattern, {} )
+
 				ImgRingPatternDuplicate:completeAnimation()
 				self.ImgRingPatternDuplicate:setRGB( 1, 1, 1 )
 				self.ImgRingPatternDuplicate:setAlpha( 0 )
 				self.ImgRingPatternDuplicate:setZoom( -10 )
 				self.clipFinished( ImgRingPatternDuplicate, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setRGB( 1, 1, 1 )
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setAlpha( 0 )
 				self.clipFinished( Glow0, {} )
 			end,
 			AdvertisedReady = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ImgRingFillFrame2 = function ( ImgRingFill, event )
 					if not event.interrupted then
 						ImgRingFill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -2054,6 +2102,7 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ImgRingFillFrame2 = function ( ImgRingFill, event )
 					if not event.interrupted then
 						ImgRingFill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -2150,6 +2199,7 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 			end,
 			InUse = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ImgRingFillFrame2 = function ( ImgRingFill, event )
 					if not event.interrupted then
 						ImgRingFill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -2242,6 +2292,7 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 			end,
 			Charge = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ImgRingFillFrame2 = function ( ImgRingFill, event )
 					if not event.interrupted then
 						ImgRingFill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -2334,6 +2385,7 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "AdvertisedReady",
@@ -2427,6 +2479,7 @@ CoD.AmmoWidget_AbilityRing.new = function ( menu, controller )
 			modelName = "playerAbilities.inRange"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Glow:close()
 		element.Glow0:close()

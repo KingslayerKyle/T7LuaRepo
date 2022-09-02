@@ -4,9 +4,11 @@
 CoD.CallingCards_SciFi_LenseFlare = InheritFrom( LUI.UIElement )
 CoD.CallingCards_SciFi_LenseFlare.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_SciFi_LenseFlare )
 	self.id = "CallingCards_SciFi_LenseFlare"
@@ -26,6 +28,7 @@ CoD.CallingCards_SciFi_LenseFlare.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local LenseFlareFrame2 = function ( LenseFlare, event )
 					local LenseFlareFrame3 = function ( LenseFlare, event )
 						local LenseFlareFrame4 = function ( LenseFlare, event )
@@ -195,6 +198,7 @@ CoD.CallingCards_SciFi_LenseFlare.new = function ( menu, controller )
 				LenseFlare:completeAnimation()
 				self.LenseFlare:setAlpha( 1 )
 				LenseFlareFrame2( LenseFlare, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

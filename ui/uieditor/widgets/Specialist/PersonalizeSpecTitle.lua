@@ -4,9 +4,11 @@
 CoD.PersonalizeSpecTitle = InheritFrom( LUI.UIElement )
 CoD.PersonalizeSpecTitle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PersonalizeSpecTitle )
 	self.id = "PersonalizeSpecTitle"
@@ -30,6 +32,7 @@ CoD.PersonalizeSpecTitle.new = function ( menu, controller )
 			weaponNameLabel:setText( Engine.Localize( LocalizeToUpperString( name ) ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( weaponNameLabel, "setText", function ( element, controller )
 		ScaleWidgetToLabelLeftJustify( self, element, 2 )
 		SetStateFromText( self, element, "DefaultState", "NoText" )
@@ -41,6 +44,7 @@ CoD.PersonalizeSpecTitle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				weaponNameLabel:completeAnimation()
 				self.weaponNameLabel:setAlpha( 1 )
 				self.clipFinished( weaponNameLabel, {} )
@@ -49,9 +53,11 @@ CoD.PersonalizeSpecTitle.new = function ( menu, controller )
 		ShowCurrentlyEquippedInfo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.weaponNameLabel:close()
 	end )

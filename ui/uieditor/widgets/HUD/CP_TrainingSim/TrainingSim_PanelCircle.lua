@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.ScoreInfo.ScoreInfo_PanelTimerInternal" )
 CoD.TrainingSim_PanelCircle = InheritFrom( LUI.UIElement )
 CoD.TrainingSim_PanelCircle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TrainingSim_PanelCircle )
 	self.id = "TrainingSim_PanelCircle"

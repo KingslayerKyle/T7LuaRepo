@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ButtonBoxLrgInactive" )
 CoD.scorestreakRequirementLabel = InheritFrom( LUI.UIElement )
 CoD.scorestreakRequirementLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.scorestreakRequirementLabel )
 	self.id = "scorestreakRequirementLabel"

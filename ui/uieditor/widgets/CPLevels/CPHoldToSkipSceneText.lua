@@ -20,6 +20,7 @@ CoD.CPHoldToSkipSceneText.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CPHoldToSkipSceneText )
 	self.id = "CPHoldToSkipSceneText"

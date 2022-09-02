@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.FooterButtonPrompt" )
 CoD.overworld_frame = InheritFrom( LUI.UIElement )
 CoD.overworld_frame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.overworld_frame )
 	self.id = "overworld_frame"
@@ -44,6 +46,7 @@ CoD.overworld_frame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				border:completeAnimation()
 				self.border:setAlpha( 1 )
 				self.clipFinished( border, {} )
@@ -52,12 +55,14 @@ CoD.overworld_frame.new = function ( menu, controller )
 		hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				border:completeAnimation()
 				self.border:setAlpha( 0 )
 				self.clipFinished( border, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Bbtn:close()
 	end )

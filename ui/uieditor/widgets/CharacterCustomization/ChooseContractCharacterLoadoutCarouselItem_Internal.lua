@@ -12,9 +12,11 @@ require( "ui.uieditor.widgets.Heroes.ChooseCharacterLoadout_ButtonFooter" )
 CoD.ChooseContractCharacterLoadoutCarouselItem_Internal = InheritFrom( LUI.UIElement )
 CoD.ChooseContractCharacterLoadoutCarouselItem_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.ChooseContractCharacterLoadoutCarouselItem_Internal )
 	self.id = "ChooseContractCharacterLoadoutCarouselItem_Internal"
@@ -179,8 +181,11 @@ CoD.ChooseContractCharacterLoadoutCarouselItem_Internal.new = function ( menu, c
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ChooseCharacterLoadoutButtonFooter:completeAnimation()
+
 				ChooseCharacterLoadoutButtonFooter.ChooseCharacterLoadoutButtonFooterBackOfCard0.backOfCardLabel:completeAnimation()
+
 				ChooseCharacterLoadoutButtonFooter.ChooseCharacterLoadoutButtonFooterPersonalize0.personalizeLabel:completeAnimation()
 				self.ChooseCharacterLoadoutButtonFooter.ChooseCharacterLoadoutButtonFooterBackOfCard0.backOfCardLabel:setText( Engine.Localize( "MENU_BACK_OF_CARD" ) )
 				self.ChooseCharacterLoadoutButtonFooter.ChooseCharacterLoadoutButtonFooterPersonalize0.personalizeLabel:setText( Engine.Localize( "CONTRACT_SIDE_BET" ) )
@@ -196,6 +201,7 @@ CoD.ChooseContractCharacterLoadoutCarouselItem_Internal.new = function ( menu, c
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.border:close()
 		element.FETitleNumBrdr2:close()

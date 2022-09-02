@@ -4,9 +4,11 @@
 CoD.woundedSoldier_EKG = InheritFrom( LUI.UIElement )
 CoD.woundedSoldier_EKG.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.woundedSoldier_EKG )
 	self.id = "woundedSoldier_EKG"

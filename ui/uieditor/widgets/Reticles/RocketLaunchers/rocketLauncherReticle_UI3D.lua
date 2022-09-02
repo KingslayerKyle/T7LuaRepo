@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Reticles.RocketLaunchers.rocketLauncherReticle_UI3
 CoD.rocketLauncherReticle_UI3D = InheritFrom( LUI.UIElement )
 CoD.rocketLauncherReticle_UI3D.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.rocketLauncherReticle_UI3D )
 	self.id = "rocketLauncherReticle_UI3D"
@@ -45,6 +47,7 @@ CoD.rocketLauncherReticle_UI3D.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				internal:completeAnimation()
 				self.internal:setAlpha( 1 )
 				self.clipFinished( internal, {} )
@@ -53,12 +56,14 @@ CoD.rocketLauncherReticle_UI3D.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				internal:completeAnimation()
 				self.internal:setAlpha( 0 )
 				self.clipFinished( internal, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -75,6 +80,7 @@ CoD.rocketLauncherReticle_UI3D.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_EMP_ACTIVE
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.internal:close()
 	end )

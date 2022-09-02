@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleNumBrdr" )
 CoD.WeeklyContractRewardsCarouselItem = InheritFrom( LUI.UIElement )
 CoD.WeeklyContractRewardsCarouselItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeeklyContractRewardsCarouselItem )
 	self.id = "WeeklyContractRewardsCarouselItem"
@@ -73,52 +75,65 @@ CoD.WeeklyContractRewardsCarouselItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				WeeklyContractRewardsCarouselItemInternal:completeAnimation()
 				self.WeeklyContractRewardsCarouselItemInternal:setScale( 1 )
 				self.clipFinished( WeeklyContractRewardsCarouselItemInternal, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setAlpha( 0 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				FocusBarB00:completeAnimation()
 				self.FocusBarB00:setAlpha( 0 )
 				self.clipFinished( FocusBarB00, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				WeeklyContractRewardsCarouselItemInternal:completeAnimation()
 				self.WeeklyContractRewardsCarouselItemInternal:setScale( 1.1 )
 				self.clipFinished( WeeklyContractRewardsCarouselItemInternal, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, -15, 15 )
 				self.FocusBarB:setTopBottom( false, true, 19, 23 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, -15, 15 )
 				self.FocusBarT:setTopBottom( true, false, -23, -19 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setAlpha( 0 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				FocusBarB00:completeAnimation()
 				self.FocusBarB00:setAlpha( 0 )
 				self.clipFinished( FocusBarB00, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local WeeklyContractRewardsCarouselItemInternalFrame2 = function ( WeeklyContractRewardsCarouselItemInternal, event )
 					local WeeklyContractRewardsCarouselItemInternalFrame3 = function ( WeeklyContractRewardsCarouselItemInternal, event )
 						if not event.interrupted then
@@ -149,34 +164,42 @@ CoD.WeeklyContractRewardsCarouselItem.new = function ( menu, controller )
 				self.WeeklyContractRewardsCarouselItemInternal:setTopBottom( true, true, 0, 0 )
 				self.WeeklyContractRewardsCarouselItemInternal:setScale( 1 )
 				WeeklyContractRewardsCarouselItemInternalFrame2( WeeklyContractRewardsCarouselItemInternal, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setAlpha( 0 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				FocusBarB00:completeAnimation()
 				self.FocusBarB00:setAlpha( 0 )
 				self.clipFinished( FocusBarB00, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 5 )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setLeftRight( false, false, -138, 138 )
 				self.FETitleNumBrdr0:setTopBottom( false, false, -220, 220 )
 				self.FETitleNumBrdr0:setAlpha( 1 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				FocusBarB00:completeAnimation()
 				self.FocusBarB00:setLeftRight( false, false, -142, 142 )
 				self.FocusBarB00:setTopBottom( false, false, -216, -222 )
 				self.FocusBarB00:setAlpha( 1 )
 				self.clipFinished( FocusBarB00, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setLeftRight( false, false, -142, 142 )
 				self.FocusBarB0:setTopBottom( false, false, 221, 217 )
@@ -185,6 +208,7 @@ CoD.WeeklyContractRewardsCarouselItem.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.WeeklyContractRewardsCarouselItemInternal:close()
 		element.FocusBarB:close()

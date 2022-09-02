@@ -4,9 +4,11 @@
 CoD.FileshareStat = InheritFrom( LUI.UIElement )
 CoD.FileshareStat.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FileshareStat )
 	self.id = "FileshareStat"
@@ -42,12 +44,15 @@ CoD.FileshareStat.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0.5 )
 				self.clipFinished( BG, {} )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 1 )
 				self.clipFinished( Icon, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 1 )
 				self.clipFinished( TextBox0, {} )
@@ -56,12 +61,15 @@ CoD.FileshareStat.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 0 )
 				self.clipFinished( Icon, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 0 )
 				self.clipFinished( TextBox0, {} )

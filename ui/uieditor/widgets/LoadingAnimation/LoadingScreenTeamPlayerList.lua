@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartGameFlow.LoadingScreenHeroListWidget" )
 CoD.LoadingScreenTeamPlayerList = InheritFrom( LUI.UIElement )
 CoD.LoadingScreenTeamPlayerList.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LoadingScreenTeamPlayerList )
 	self.id = "LoadingScreenTeamPlayerList"
@@ -67,9 +69,11 @@ CoD.LoadingScreenTeamPlayerList.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartLoading = function ()
 				self:setupElementClipCounter( 2 )
+
 				local Team2PlayerListFrame2 = function ( Team2PlayerList, event )
 					local Team2PlayerListFrame3 = function ( Team2PlayerList, event )
 						if not event.interrupted then
@@ -125,20 +129,24 @@ CoD.LoadingScreenTeamPlayerList.new = function ( menu, controller )
 		CodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Demo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Team2PlayerList:completeAnimation()
 				self.Team2PlayerList:setAlpha( 0 )
 				self.clipFinished( Team2PlayerList, {} )
+
 				Team1PlayerList:completeAnimation()
 				self.Team1PlayerList:setAlpha( 0 )
 				self.clipFinished( Team1PlayerList, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CodCaster",
@@ -164,6 +172,7 @@ CoD.LoadingScreenTeamPlayerList.new = function ( menu, controller )
 	CoD.Menu.AddNavigationHandler( menu, self, controller )
 	Team2PlayerList.id = "Team2PlayerList"
 	Team1PlayerList.id = "Team1PlayerList"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Team2PlayerList:close()
 		element.Team1PlayerList:close()

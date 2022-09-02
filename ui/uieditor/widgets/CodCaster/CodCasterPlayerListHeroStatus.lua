@@ -4,9 +4,11 @@
 CoD.CodCasterPlayerListHeroStatus = InheritFrom( LUI.UIElement )
 CoD.CodCasterPlayerListHeroStatus.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterPlayerListHeroStatus )
 	self.id = "CodCasterPlayerListHeroStatus"
@@ -73,15 +75,19 @@ CoD.CodCasterPlayerListHeroStatus.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				YellowFlash:completeAnimation()
 				self.YellowFlash:setAlpha( 0 )
 				self.clipFinished( YellowFlash, {} )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver, {} )
+
 				Pulse:completeAnimation()
 				self.Pulse:setAlpha( 0 )
 				self.clipFinished( Pulse, {} )
+
 				Fill:completeAnimation()
 				self.Fill:setAlpha( 1 )
 				self.clipFinished( Fill, {} )
@@ -90,6 +96,7 @@ CoD.CodCasterPlayerListHeroStatus.new = function ( menu, controller )
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local YellowFlashFrame2 = function ( YellowFlash, event )
 					local YellowFlashFrame3 = function ( YellowFlash, event )
 						if not event.interrupted then
@@ -131,21 +138,25 @@ CoD.CodCasterPlayerListHeroStatus.new = function ( menu, controller )
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0.3 )
 				GlowOrangeOverFrame2( GlowOrangeOver, {} )
+
 				Pulse:completeAnimation()
 				self.Pulse:setLeftRight( true, true, 0, 0 )
 				self.Pulse:setTopBottom( true, true, 0, 0 )
 				self.Pulse:setAlpha( 0 )
 				self.Pulse:setScale( 1 )
 				self.clipFinished( Pulse, {} )
+
 				Fill:completeAnimation()
 				self.Fill:setRGB( 1, 0.94, 0 )
 				self.clipFinished( Fill, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Primed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local YellowFlashFrame2 = function ( YellowFlash, event )
 					local YellowFlashFrame3 = function ( YellowFlash, event )
 						if not event.interrupted then
@@ -187,21 +198,25 @@ CoD.CodCasterPlayerListHeroStatus.new = function ( menu, controller )
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0.3 )
 				GlowOrangeOverFrame2( GlowOrangeOver, {} )
+
 				Pulse:completeAnimation()
 				self.Pulse:setLeftRight( true, true, 0, 0 )
 				self.Pulse:setTopBottom( true, true, 0, 0 )
 				self.Pulse:setAlpha( 0 )
 				self.Pulse:setScale( 1 )
 				self.clipFinished( Pulse, {} )
+
 				Fill:completeAnimation()
 				self.Fill:setRGB( 1, 0.95, 0 )
 				self.clipFinished( Fill, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local YellowFlashFrame2 = function ( YellowFlash, event )
 					if not event.interrupted then
 						YellowFlash:beginAnimation( "keyframe", 400, false, true, CoD.TweenType.Bounce )
@@ -232,6 +247,7 @@ CoD.CodCasterPlayerListHeroStatus.new = function ( menu, controller )
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				GlowOrangeOverFrame2( GlowOrangeOver, {} )
+
 				Pulse:completeAnimation()
 				self.Pulse:setAlpha( 0 )
 				self.clipFinished( Pulse, {} )
@@ -255,6 +271,7 @@ CoD.CodCasterPlayerListHeroStatus.new = function ( menu, controller )
 			end,
 			Charging = function ()
 				self:setupElementClipCounter( 4 )
+
 				local YellowFlashFrame2 = function ( YellowFlash, event )
 					local YellowFlashFrame3 = function ( YellowFlash, event )
 						if not event.interrupted then
@@ -296,12 +313,14 @@ CoD.CodCasterPlayerListHeroStatus.new = function ( menu, controller )
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0.3 )
 				GlowOrangeOverFrame2( GlowOrangeOver, {} )
+
 				Pulse:completeAnimation()
 				self.Pulse:setLeftRight( true, true, 0, 0 )
 				self.Pulse:setTopBottom( true, true, 0, 0 )
 				self.Pulse:setAlpha( 0 )
 				self.Pulse:setScale( 1 )
 				self.clipFinished( Pulse, {} )
+
 				Fill:completeAnimation()
 				self.Fill:setRGB( 1, 0.95, 0 )
 				self.clipFinished( Fill, {} )
@@ -310,15 +329,19 @@ CoD.CodCasterPlayerListHeroStatus.new = function ( menu, controller )
 		Charging = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				YellowFlash:completeAnimation()
 				self.YellowFlash:setAlpha( 0 )
 				self.clipFinished( YellowFlash, {} )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver, {} )
+
 				Pulse:completeAnimation()
 				self.Pulse:setAlpha( 0 )
 				self.clipFinished( Pulse, {} )
+
 				Fill:completeAnimation()
 				self.Fill:setRGB( 1, 1, 1 )
 				self.Fill:setAlpha( 1 )
@@ -326,6 +349,7 @@ CoD.CodCasterPlayerListHeroStatus.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Active",
@@ -360,6 +384,7 @@ CoD.CodCasterPlayerListHeroStatus.new = function ( menu, controller )
 			modelName = "heroState"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Fill:close()
 	end )

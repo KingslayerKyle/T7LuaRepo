@@ -4,9 +4,11 @@
 CoD.AmmoWidget_IventoryBox = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_IventoryBox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_IventoryBox )
 	self.id = "AmmoWidget_IventoryBox"
@@ -35,9 +37,11 @@ CoD.AmmoWidget_IventoryBox.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				imgBoxLethalEmpty:completeAnimation()
 				self.imgBoxLethalEmpty:setAlpha( 0 )
 				self.clipFinished( imgBoxLethalEmpty, {} )
+
 				imgBoxLethal:completeAnimation()
 				self.imgBoxLethal:setAlpha( 1 )
 				self.clipFinished( imgBoxLethal, {} )
@@ -46,9 +50,11 @@ CoD.AmmoWidget_IventoryBox.new = function ( menu, controller )
 		Empty = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				imgBoxLethalEmpty:completeAnimation()
 				self.imgBoxLethalEmpty:setAlpha( 1 )
 				self.clipFinished( imgBoxLethalEmpty, {} )
+
 				imgBoxLethal:completeAnimation()
 				self.imgBoxLethal:setAlpha( 0 )
 				self.clipFinished( imgBoxLethal, {} )

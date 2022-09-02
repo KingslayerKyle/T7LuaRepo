@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.EmblemGradientColorButton = InheritFrom( LUI.UIElement )
 CoD.EmblemGradientColorButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemGradientColorButton )
 	self.id = "EmblemGradientColorButton"
@@ -66,31 +68,39 @@ CoD.EmblemGradientColorButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				barBg:completeAnimation()
 				self.barBg:setAlpha( 0 )
 				self.clipFinished( barBg, {} )
+
 				Black:completeAnimation()
 				self.Black:setAlpha( 1 )
 				self.clipFinished( Black, {} )
+
 				color:completeAnimation()
 				self.color:setAlpha( 1 )
 				self.clipFinished( color, {} )
+
 				buttonBorder:completeAnimation()
 				self.buttonBorder:setRGB( 1, 1, 1 )
 				self.buttonBorder:setAlpha( 0.7 )
 				self.clipFinished( buttonBorder, {} )
+
 				noColorImage:completeAnimation()
 				self.noColorImage:setAlpha( 0 )
 				self.clipFinished( noColorImage, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				barBg:completeAnimation()
 				self.barBg:setAlpha( 1 )
 				self.clipFinished( barBg, {} )
+
 				Black:completeAnimation()
 				self.Black:setAlpha( 1 )
 				self.clipFinished( Black, {} )
+
 				buttonBorder:completeAnimation()
 				self.buttonBorder:setRGB( 1, 0.41, 0 )
 				self.buttonBorder:setAlpha( 1 )
@@ -100,31 +110,39 @@ CoD.EmblemGradientColorButton.new = function ( menu, controller )
 		NoColor = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				barBg:completeAnimation()
 				self.barBg:setAlpha( 0 )
 				self.clipFinished( barBg, {} )
+
 				Black:completeAnimation()
 				self.Black:setAlpha( 1 )
 				self.clipFinished( Black, {} )
+
 				color:completeAnimation()
 				self.color:setAlpha( 0 )
 				self.clipFinished( color, {} )
+
 				buttonBorder:completeAnimation()
 				self.buttonBorder:setRGB( 1, 1, 1 )
 				self.buttonBorder:setAlpha( 0.7 )
 				self.clipFinished( buttonBorder, {} )
+
 				noColorImage:completeAnimation()
 				self.noColorImage:setAlpha( 1 )
 				self.clipFinished( noColorImage, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				barBg:completeAnimation()
 				self.barBg:setAlpha( 1 )
 				self.clipFinished( barBg, {} )
+
 				Black:completeAnimation()
 				self.Black:setAlpha( 1 )
 				self.clipFinished( Black, {} )
+
 				buttonBorder:completeAnimation()
 				self.buttonBorder:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.buttonBorder:setAlpha( 1 )
@@ -132,6 +150,7 @@ CoD.EmblemGradientColorButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.buttonBorder:close()
 	end )

@@ -15,9 +15,11 @@ end
 CoD.FileshareSlotsAvailable = InheritFrom( LUI.UIElement )
 CoD.FileshareSlotsAvailable.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FileshareSlotsAvailable )
 	self.id = "FileshareSlotsAvailable"
@@ -96,16 +98,20 @@ CoD.FileshareSlotsAvailable.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				CountBG:completeAnimation()
 				self.CountBG:setAlpha( 1 )
 				self.clipFinished( CountBG, {} )
+
 				LblSlotsAvailable:completeAnimation()
 				self.LblSlotsAvailable:setLeftRight( true, false, 60.99, 237.01 )
 				self.LblSlotsAvailable:setTopBottom( true, false, 3, 27 )
 				self.clipFinished( LblSlotsAvailable, {} )
+
 				WaitingBG:completeAnimation()
 				self.WaitingBG:setAlpha( 0 )
 				self.clipFinished( WaitingBG, {} )
+
 				LblWaiting:completeAnimation()
 				self.LblWaiting:setAlpha( 0 )
 				self.clipFinished( LblWaiting, {} )
@@ -114,12 +120,15 @@ CoD.FileshareSlotsAvailable.new = function ( menu, controller )
 		Waiting = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				CountBG:completeAnimation()
 				self.CountBG:setAlpha( 1 )
 				self.clipFinished( CountBG, {} )
+
 				WaitingBG:completeAnimation()
 				self.WaitingBG:setAlpha( 1 )
 				self.clipFinished( WaitingBG, {} )
+
 				LblWaiting:completeAnimation()
 				self.LblWaiting:setAlpha( 1 )
 				self.clipFinished( LblWaiting, {} )
@@ -128,22 +137,27 @@ CoD.FileshareSlotsAvailable.new = function ( menu, controller )
 		NoSlots = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				CountBG:completeAnimation()
 				self.CountBG:setAlpha( 0 )
 				self.clipFinished( CountBG, {} )
+
 				LblSlotsAvailable:completeAnimation()
 				self.LblSlotsAvailable:setLeftRight( true, false, 60.99, 237.01 )
 				self.LblSlotsAvailable:setTopBottom( true, false, 3, 27 )
 				self.clipFinished( LblSlotsAvailable, {} )
+
 				WaitingBG:completeAnimation()
 				self.WaitingBG:setAlpha( 0 )
 				self.clipFinished( WaitingBG, {} )
+
 				LblWaiting:completeAnimation()
 				self.LblWaiting:setAlpha( 0 )
 				self.clipFinished( LblWaiting, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Waiting",
@@ -166,6 +180,7 @@ CoD.FileshareSlotsAvailable.new = function ( menu, controller )
 			modelName = "fileshareRoot.ready"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LblSlotsAvailable:close()
 		element.TxtSlots:close()

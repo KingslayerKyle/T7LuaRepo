@@ -4,9 +4,11 @@
 CoD.systemOverlay_Layout_ForegroundMultilineText = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_Layout_ForegroundMultilineText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_Layout_ForegroundMultilineText )
 	self.id = "systemOverlay_Layout_ForegroundMultilineText"
@@ -29,6 +31,7 @@ CoD.systemOverlay_Layout_ForegroundMultilineText.new = function ( menu, controll
 		end
 		return f2_local0
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( text, "setText", function ( element, controller )
 		UpdateWidgetHeightToMultilineTextWithMinimum( self, element, 0, 60 )
 	end )

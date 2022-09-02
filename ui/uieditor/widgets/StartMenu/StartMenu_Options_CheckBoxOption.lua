@@ -30,9 +30,11 @@ end
 CoD.StartMenu_Options_CheckBoxOption = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_CheckBoxOption.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_CheckBoxOption )
 	self.id = "StartMenu_Options_CheckBoxOption"
@@ -120,24 +122,30 @@ CoD.StartMenu_Options_CheckBoxOption.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				fullBorder:completeAnimation()
 				self.fullBorder:setAlpha( 0 )
 				self.clipFinished( fullBorder, {} )
+
 				checkboxBacking:completeAnimation()
 				self.checkboxBacking:setRGB( 0.78, 0.78, 0.78 )
 				self.clipFinished( checkboxBacking, {} )
+
 				CheckboxBkg:completeAnimation()
 				self.CheckboxBkg:setRGB( 1, 1, 1 )
 				self.CheckboxBkg:setAlpha( 1 )
 				self.clipFinished( CheckboxBkg, {} )
+
 				checkboxCheck:completeAnimation()
 				self.checkboxCheck:setRGB( 1, 0.45, 0 )
 				self.checkboxCheck:setAlpha( 0 )
 				self.clipFinished( checkboxCheck, {} )
+
 				labelText:completeAnimation()
 				self.labelText:setRGB( 1, 1, 1 )
 				self.labelText:setAlpha( 1 )
 				self.clipFinished( labelText, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
@@ -147,28 +155,35 @@ CoD.StartMenu_Options_CheckBoxOption.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				fullBorder:completeAnimation()
 				self.fullBorder:setAlpha( 1 )
 				self.clipFinished( fullBorder, {} )
+
 				checkboxBacking:completeAnimation()
 				self.checkboxBacking:setRGB( 0.87, 0.37, 0 )
 				self.clipFinished( checkboxBacking, {} )
+
 				CheckboxBkg:completeAnimation()
 				self.CheckboxBkg:setRGB( 1, 0.41, 0 )
 				self.CheckboxBkg:setAlpha( 1 )
 				self.clipFinished( CheckboxBkg, {} )
+
 				checkboxCheck:completeAnimation()
 				self.checkboxCheck:setAlpha( 0 )
 				self.clipFinished( checkboxCheck, {} )
+
 				labelText:completeAnimation()
 				self.labelText:setRGB( 1, 1, 1 )
 				self.labelText:setAlpha( 1 )
 				self.clipFinished( labelText, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, 0, 0 )
 				self.FocusBarT:setTopBottom( true, false, 0, 4 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, 0, 0 )
 				self.FocusBarB:setTopBottom( false, true, -5.5, 0 )
@@ -179,12 +194,15 @@ CoD.StartMenu_Options_CheckBoxOption.new = function ( menu, controller )
 		Checked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				fullBorder:completeAnimation()
 				self.fullBorder:setAlpha( 0 )
 				self.clipFinished( fullBorder, {} )
+
 				checkboxBacking:completeAnimation()
 				self.checkboxBacking:setRGB( 0.78, 0.78, 0.78 )
 				self.clipFinished( checkboxBacking, {} )
+
 				CheckboxBkg:completeAnimation()
 				self.CheckboxBkg:setRGB( 1, 1, 1 )
 				self.CheckboxBkg:setAlpha( 0.5 )
@@ -206,25 +224,31 @@ CoD.StartMenu_Options_CheckBoxOption.new = function ( menu, controller )
 				self.checkboxCheck:setRGB( 1, 1, 1 )
 				self.checkboxCheck:setAlpha( 1 )
 				checkboxCheckFrame2( checkboxCheck, {} )
+
 				labelText:completeAnimation()
 				self.labelText:setRGB( 1, 1, 1 )
 				self.labelText:setAlpha( 1 )
 				self.clipFinished( labelText, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				fullBorder:completeAnimation()
 				self.fullBorder:setAlpha( 1 )
 				self.clipFinished( fullBorder, {} )
+
 				checkboxBacking:completeAnimation()
 				self.checkboxBacking:setRGB( 0.87, 0.37, 0 )
 				self.clipFinished( checkboxBacking, {} )
+
 				CheckboxBkg:completeAnimation()
 				self.CheckboxBkg:setRGB( 1, 1, 1 )
 				self.CheckboxBkg:setAlpha( 0 )
@@ -246,6 +270,7 @@ CoD.StartMenu_Options_CheckBoxOption.new = function ( menu, controller )
 				self.checkboxCheck:setRGB( 0.87, 0.37, 0 )
 				self.checkboxCheck:setAlpha( 1 )
 				checkboxCheckFrame2( checkboxCheck, {} )
+
 				labelText:completeAnimation()
 				self.labelText:setRGB( 1, 1, 1 )
 				self.labelText:setAlpha( 1 )
@@ -293,22 +318,27 @@ CoD.StartMenu_Options_CheckBoxOption.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				checkboxBacking:completeAnimation()
 				self.checkboxBacking:setRGB( 0.2, 0.2, 0.2 )
 				self.clipFinished( checkboxBacking, {} )
+
 				CheckboxBkg:completeAnimation()
 				self.CheckboxBkg:setRGB( 0.2, 0.2, 0.2 )
 				self.clipFinished( CheckboxBkg, {} )
+
 				checkboxCheck:completeAnimation()
 				self.checkboxCheck:setRGB( 0.2, 0.2, 0.2 )
 				self.checkboxCheck:setAlpha( 0 )
 				self.clipFinished( checkboxCheck, {} )
+
 				labelText:completeAnimation()
 				self.labelText:setRGB( 0.2, 0.2, 0.2 )
 				self.clipFinished( labelText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Checked",
@@ -331,6 +361,7 @@ CoD.StartMenu_Options_CheckBoxOption.new = function ( menu, controller )
 			modelName = "disabled"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.fullBorder:close()
 		element.checkboxBacking:close()

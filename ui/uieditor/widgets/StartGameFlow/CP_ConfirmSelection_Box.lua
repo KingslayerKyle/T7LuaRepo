@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleLineSingle" )
 CoD.CP_ConfirmSelection_Box = InheritFrom( LUI.UIElement )
 CoD.CP_ConfirmSelection_Box.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CP_ConfirmSelection_Box )
 	self.id = "CP_ConfirmSelection_Box"

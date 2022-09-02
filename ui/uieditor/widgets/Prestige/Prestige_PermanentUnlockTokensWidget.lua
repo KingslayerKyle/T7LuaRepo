@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Prestige.Prestige_PermanentUnlockTokenStatic" )
 CoD.Prestige_PermanentUnlockTokensWidget = InheritFrom( LUI.UIElement )
 CoD.Prestige_PermanentUnlockTokensWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Prestige_PermanentUnlockTokensWidget )
 	self.id = "Prestige_PermanentUnlockTokensWidget"
@@ -51,6 +53,7 @@ CoD.Prestige_PermanentUnlockTokensWidget.new = function ( menu, controller )
 			tokenLabel:setText( GetPermanentUnlockTokenText( controller, permanentUnlockTokensCount ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( tokenLabel, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrapped( self, element, 0, 0 )
 	end )
@@ -61,12 +64,15 @@ CoD.Prestige_PermanentUnlockTokensWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setAlpha( 0 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				tokenPermanentUnlock:completeAnimation()
 				self.tokenPermanentUnlock:setAlpha( 0 )
 				self.clipFinished( tokenPermanentUnlock, {} )
+
 				tokenLabel:completeAnimation()
 				self.tokenLabel:setAlpha( 0 )
 				self.clipFinished( tokenLabel, {} )
@@ -75,18 +81,22 @@ CoD.Prestige_PermanentUnlockTokensWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setAlpha( 0.2 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				tokenPermanentUnlock:completeAnimation()
 				self.tokenPermanentUnlock:setAlpha( 1 )
 				self.clipFinished( tokenPermanentUnlock, {} )
+
 				tokenLabel:completeAnimation()
 				self.tokenLabel:setAlpha( 1 )
 				self.clipFinished( tokenLabel, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -95,6 +105,7 @@ CoD.Prestige_PermanentUnlockTokensWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FETitleNumBrdr0:close()
 		element.tokenPermanentUnlock:close()

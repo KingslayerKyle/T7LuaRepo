@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.DuplicateCounter = InheritFrom( LUI.UIElement )
 CoD.DuplicateCounter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DuplicateCounter )
 	self.id = "DuplicateCounter"
@@ -33,6 +35,7 @@ CoD.DuplicateCounter.new = function ( menu, controller )
 			count:setText( Engine.Localize( duplicateCount ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( count, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 1 )
 	end )
@@ -43,9 +46,11 @@ CoD.DuplicateCounter.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				labelBg:completeAnimation()
 				self.labelBg:setAlpha( 0 )
 				self.clipFinished( labelBg, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 0 )
 				self.clipFinished( count, {} )
@@ -54,15 +59,18 @@ CoD.DuplicateCounter.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				labelBg:completeAnimation()
 				self.labelBg:setAlpha( 1 )
 				self.clipFinished( labelBg, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 1 )
 				self.clipFinished( count, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -79,6 +87,7 @@ CoD.DuplicateCounter.new = function ( menu, controller )
 			modelName = "duplicateCount"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.labelBg:close()
 		element.count:close()

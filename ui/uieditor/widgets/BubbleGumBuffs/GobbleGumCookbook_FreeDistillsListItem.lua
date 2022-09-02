@@ -28,9 +28,11 @@ end
 CoD.GobbleGumCookbook_FreeDistillsListItem = InheritFrom( LUI.UIElement )
 CoD.GobbleGumCookbook_FreeDistillsListItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GobbleGumCookbook_FreeDistillsListItem )
 	self.id = "GobbleGumCookbook_FreeDistillsListItem"
@@ -139,60 +141,78 @@ CoD.GobbleGumCookbook_FreeDistillsListItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				FEFocusBarContainerTop:completeAnimation()
 				self.FEFocusBarContainerTop:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerTop, {} )
+
 				FEFocusBarContainerBottom:completeAnimation()
 				self.FEFocusBarContainerBottom:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerBottom, {} )
+
 				HowManyGiven:completeAnimation()
 				self.HowManyGiven:setAlpha( 0.85 )
 				self.clipFinished( HowManyGiven, {} )
+
 				FreeTextBox:completeAnimation()
 				self.FreeTextBox:setAlpha( 1 )
 				self.clipFinished( FreeTextBox, {} )
+
 				CryptokeyHintTextWidget:completeAnimation()
 				self.CryptokeyHintTextWidget:setAlpha( 0 )
 				self.clipFinished( CryptokeyHintTextWidget, {} )
+
 				Timer:completeAnimation()
 				self.Timer:setAlpha( 0 )
 				self.clipFinished( Timer, {} )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 0 )
 				self.clipFinished( icon, {} )
+
 				cacFocusBarContainerTop:completeAnimation()
 				self.cacFocusBarContainerTop:setAlpha( 0 )
 				self.clipFinished( cacFocusBarContainerTop, {} )
+
 				cacFocusBarContainerBottom:completeAnimation()
 				self.cacFocusBarContainerBottom:setAlpha( 0 )
 				self.clipFinished( cacFocusBarContainerBottom, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 9 )
+
 				FEFocusBarContainerTop:completeAnimation()
 				self.FEFocusBarContainerTop:setAlpha( 1 )
 				self.clipFinished( FEFocusBarContainerTop, {} )
+
 				FEFocusBarContainerBottom:completeAnimation()
 				self.FEFocusBarContainerBottom:setAlpha( 1 )
 				self.clipFinished( FEFocusBarContainerBottom, {} )
+
 				HowManyGiven:completeAnimation()
 				self.HowManyGiven:setAlpha( 0.85 )
 				self.clipFinished( HowManyGiven, {} )
+
 				FreeTextBox:completeAnimation()
 				self.FreeTextBox:setAlpha( 1 )
 				self.clipFinished( FreeTextBox, {} )
+
 				CryptokeyHintTextWidget:completeAnimation()
 				self.CryptokeyHintTextWidget:setAlpha( 0 )
 				self.clipFinished( CryptokeyHintTextWidget, {} )
+
 				Timer:completeAnimation()
 				self.Timer:setAlpha( 0 )
 				self.clipFinished( Timer, {} )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 0 )
 				self.clipFinished( icon, {} )
+
 				cacFocusBarContainerTop:completeAnimation()
 				self.cacFocusBarContainerTop:setAlpha( 0 )
 				self.clipFinished( cacFocusBarContainerTop, {} )
+
 				cacFocusBarContainerBottom:completeAnimation()
 				self.cacFocusBarContainerBottom:setAlpha( 0 )
 				self.clipFinished( cacFocusBarContainerBottom, {} )
@@ -201,60 +221,78 @@ CoD.GobbleGumCookbook_FreeDistillsListItem.new = function ( menu, controller )
 		ShowTimer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				FEFocusBarContainerTop:completeAnimation()
 				self.FEFocusBarContainerTop:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerTop, {} )
+
 				FEFocusBarContainerBottom:completeAnimation()
 				self.FEFocusBarContainerBottom:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerBottom, {} )
+
 				HowManyGiven:completeAnimation()
 				self.HowManyGiven:setAlpha( 0 )
 				self.clipFinished( HowManyGiven, {} )
+
 				FreeTextBox:completeAnimation()
 				self.FreeTextBox:setAlpha( 0.5 )
 				self.clipFinished( FreeTextBox, {} )
+
 				CryptokeyHintTextWidget:completeAnimation()
 				self.CryptokeyHintTextWidget:setAlpha( 0 )
 				self.clipFinished( CryptokeyHintTextWidget, {} )
+
 				Timer:completeAnimation()
 				self.Timer:setAlpha( 0.5 )
 				self.clipFinished( Timer, {} )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 0 )
 				self.clipFinished( icon, {} )
+
 				cacFocusBarContainerTop:completeAnimation()
 				self.cacFocusBarContainerTop:setAlpha( 0 )
 				self.clipFinished( cacFocusBarContainerTop, {} )
+
 				cacFocusBarContainerBottom:completeAnimation()
 				self.cacFocusBarContainerBottom:setAlpha( 0 )
 				self.clipFinished( cacFocusBarContainerBottom, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 9 )
+
 				FEFocusBarContainerTop:completeAnimation()
 				self.FEFocusBarContainerTop:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerTop, {} )
+
 				FEFocusBarContainerBottom:completeAnimation()
 				self.FEFocusBarContainerBottom:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerBottom, {} )
+
 				HowManyGiven:completeAnimation()
 				self.HowManyGiven:setAlpha( 0 )
 				self.clipFinished( HowManyGiven, {} )
+
 				FreeTextBox:completeAnimation()
 				self.FreeTextBox:setAlpha( 0.5 )
 				self.clipFinished( FreeTextBox, {} )
+
 				CryptokeyHintTextWidget:completeAnimation()
 				self.CryptokeyHintTextWidget:setAlpha( 1 )
 				self.clipFinished( CryptokeyHintTextWidget, {} )
+
 				Timer:completeAnimation()
 				self.Timer:setAlpha( 0.5 )
 				self.clipFinished( Timer, {} )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 0 )
 				self.clipFinished( icon, {} )
+
 				cacFocusBarContainerTop:completeAnimation()
 				self.cacFocusBarContainerTop:setAlpha( 1 )
 				self.clipFinished( cacFocusBarContainerTop, {} )
+
 				cacFocusBarContainerBottom:completeAnimation()
 				self.cacFocusBarContainerBottom:setAlpha( 1 )
 				self.clipFinished( cacFocusBarContainerBottom, {} )
@@ -263,66 +301,85 @@ CoD.GobbleGumCookbook_FreeDistillsListItem.new = function ( menu, controller )
 		HaveFreeDistills = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				FEFocusBarContainerTop:completeAnimation()
 				self.FEFocusBarContainerTop:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerTop, {} )
+
 				FEFocusBarContainerBottom:completeAnimation()
 				self.FEFocusBarContainerBottom:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerBottom, {} )
+
 				HowManyGiven:completeAnimation()
 				self.HowManyGiven:setAlpha( 0 )
 				self.clipFinished( HowManyGiven, {} )
+
 				FreeTextBox:completeAnimation()
 				self.FreeTextBox:setAlpha( 0.5 )
 				self.clipFinished( FreeTextBox, {} )
+
 				CryptokeyHintTextWidget:completeAnimation()
 				self.CryptokeyHintTextWidget:setAlpha( 0 )
 				self.clipFinished( CryptokeyHintTextWidget, {} )
+
 				Timer:completeAnimation()
 				self.Timer:setAlpha( 0 )
 				self.clipFinished( Timer, {} )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 0.5 )
 				self.clipFinished( icon, {} )
+
 				cacFocusBarContainerTop:completeAnimation()
 				self.cacFocusBarContainerTop:setAlpha( 0 )
 				self.clipFinished( cacFocusBarContainerTop, {} )
+
 				cacFocusBarContainerBottom:completeAnimation()
 				self.cacFocusBarContainerBottom:setAlpha( 0 )
 				self.clipFinished( cacFocusBarContainerBottom, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 9 )
+
 				FEFocusBarContainerTop:completeAnimation()
 				self.FEFocusBarContainerTop:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerTop, {} )
+
 				FEFocusBarContainerBottom:completeAnimation()
 				self.FEFocusBarContainerBottom:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerBottom, {} )
+
 				HowManyGiven:completeAnimation()
 				self.HowManyGiven:setAlpha( 0 )
 				self.clipFinished( HowManyGiven, {} )
+
 				FreeTextBox:completeAnimation()
 				self.FreeTextBox:setAlpha( 0.5 )
 				self.clipFinished( FreeTextBox, {} )
+
 				CryptokeyHintTextWidget:completeAnimation()
 				self.CryptokeyHintTextWidget:setAlpha( 1 )
 				self.clipFinished( CryptokeyHintTextWidget, {} )
+
 				Timer:completeAnimation()
 				self.Timer:setAlpha( 0 )
 				self.clipFinished( Timer, {} )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 0.5 )
 				self.clipFinished( icon, {} )
+
 				cacFocusBarContainerTop:completeAnimation()
 				self.cacFocusBarContainerTop:setAlpha( 1 )
 				self.clipFinished( cacFocusBarContainerTop, {} )
+
 				cacFocusBarContainerBottom:completeAnimation()
 				self.cacFocusBarContainerBottom:setAlpha( 1 )
 				self.clipFinished( cacFocusBarContainerBottom, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ShowTimer",
@@ -353,11 +410,13 @@ CoD.GobbleGumCookbook_FreeDistillsListItem.new = function ( menu, controller )
 			modelName = "GobbleGumDistills.freeDistills"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsSelfInState( self, "HaveFreeDistills" ) then
 			SetSelfModelValue( self, element, controller, "hintText", Engine.Localize( "ZMUI_COOKBOOK_FREE_HINT_HAVE_DISTILLS", math.floor( CoD.BubbleGumBuffUtility.GetRemainingUsesForDistill( controller, CoD.BubbleGumBuffUtility.FREE_DISTILL ) / CoD.BubbleGumBuffUtility.GetRecipeDistillCost() ) ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.cacButtonBoxLrgInactiveStroke0:close()
 		element.FEFocusBarContainerTop:close()

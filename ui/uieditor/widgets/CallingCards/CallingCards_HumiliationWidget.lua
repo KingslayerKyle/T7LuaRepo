@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_Humiliation_Skull" )
 CoD.CallingCards_HumiliationWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_HumiliationWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_HumiliationWidget )
 	self.id = "CallingCards_HumiliationWidget"
@@ -62,6 +64,7 @@ CoD.CallingCards_HumiliationWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local Flame1Frame2 = function ( Flame1, event )
 					local Flame1Frame3 = function ( Flame1, event )
 						if not event.interrupted then
@@ -182,10 +185,12 @@ CoD.CallingCards_HumiliationWidget.new = function ( menu, controller )
 				self.CallingCardsHumiliationSkull:setAlpha( 1 )
 				self.CallingCardsHumiliationSkull:setScale( 1 )
 				CallingCardsHumiliationSkullFrame2( CallingCardsHumiliationSkull, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardsHumiliationSkull:close()
 	end )

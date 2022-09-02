@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.ScoreInfo.ScoreInfo_MeterLine" )
 CoD.UserScoreContainer = InheritFrom( LUI.UIElement )
 CoD.UserScoreContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.UserScoreContainer )
 	self.id = "UserScoreContainer"
@@ -100,14 +102,17 @@ CoD.UserScoreContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				UserScore:completeAnimation()
 				self.UserScore:setLeftRight( true, false, 7.5, 62.5 )
 				self.UserScore:setTopBottom( false, false, -24, 20 )
 				self.clipFinished( UserScore, {} )
+
 				Meter:completeAnimation()
 				self.Meter:setLeftRight( true, false, 68, 119 )
 				self.Meter:setTopBottom( false, false, 395, 418 )
 				self.clipFinished( Meter, {} )
+
 				MeterLine:completeAnimation()
 				self.MeterLine:setLeftRight( false, false, -40.5, 10.5 )
 				self.MeterLine:setTopBottom( false, false, 395, 418 )
@@ -117,12 +122,15 @@ CoD.UserScoreContainer.new = function ( menu, controller )
 		Infected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				UserScore:completeAnimation()
 				self.UserScore:setAlpha( 0 )
 				self.clipFinished( UserScore, {} )
+
 				Meter:completeAnimation()
 				self.Meter:setAlpha( 0 )
 				self.clipFinished( Meter, {} )
+
 				MeterLine:completeAnimation()
 				self.MeterLine:setAlpha( 0 )
 				self.clipFinished( MeterLine, {} )
@@ -131,14 +139,17 @@ CoD.UserScoreContainer.new = function ( menu, controller )
 		Count3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				UserScore:completeAnimation()
 				self.UserScore:setLeftRight( true, false, 7.5, 62.5 )
 				self.UserScore:setTopBottom( false, false, -24, 20 )
 				self.clipFinished( UserScore, {} )
+
 				Meter:completeAnimation()
 				self.Meter:setLeftRight( true, false, 82.5, 133.5 )
 				self.Meter:setTopBottom( false, false, -13, 10 )
 				self.clipFinished( Meter, {} )
+
 				MeterLine:completeAnimation()
 				self.MeterLine:setLeftRight( false, false, -37, 14 )
 				self.MeterLine:setTopBottom( false, false, -13, 10 )
@@ -148,14 +159,17 @@ CoD.UserScoreContainer.new = function ( menu, controller )
 		Count4 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				UserScore:completeAnimation()
 				self.UserScore:setLeftRight( true, false, 7.5, 83.5 )
 				self.UserScore:setTopBottom( false, false, -24, 20 )
 				self.clipFinished( UserScore, {} )
+
 				Meter:completeAnimation()
 				self.Meter:setLeftRight( true, false, 103.5, 154.5 )
 				self.Meter:setTopBottom( false, false, -13, 10 )
 				self.clipFinished( Meter, {} )
+
 				MeterLine:completeAnimation()
 				self.MeterLine:setLeftRight( false, false, -17, 34 )
 				self.MeterLine:setTopBottom( false, false, -13, 10 )
@@ -165,14 +179,17 @@ CoD.UserScoreContainer.new = function ( menu, controller )
 		Count5 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				UserScore:completeAnimation()
 				self.UserScore:setLeftRight( true, false, 7.5, 103.5 )
 				self.UserScore:setTopBottom( false, false, -24, 20 )
 				self.clipFinished( UserScore, {} )
+
 				Meter:completeAnimation()
 				self.Meter:setLeftRight( true, false, 121.5, 172.5 )
 				self.Meter:setTopBottom( false, false, -13, 10 )
 				self.clipFinished( Meter, {} )
+
 				MeterLine:completeAnimation()
 				self.MeterLine:setLeftRight( false, false, 3, 54 )
 				self.MeterLine:setTopBottom( false, false, -13, 10 )
@@ -182,14 +199,17 @@ CoD.UserScoreContainer.new = function ( menu, controller )
 		Count6 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				UserScore:completeAnimation()
 				self.UserScore:setLeftRight( true, false, 7.5, 122.5 )
 				self.UserScore:setTopBottom( false, false, -24, 20 )
 				self.clipFinished( UserScore, {} )
+
 				Meter:completeAnimation()
 				self.Meter:setLeftRight( true, false, 140.5, 191.5 )
 				self.Meter:setTopBottom( false, false, -13, 10 )
 				self.clipFinished( Meter, {} )
+
 				MeterLine:completeAnimation()
 				self.MeterLine:setLeftRight( false, false, 23, 74 )
 				self.MeterLine:setTopBottom( false, false, -13, 10 )
@@ -199,14 +219,17 @@ CoD.UserScoreContainer.new = function ( menu, controller )
 		Count7 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				UserScore:completeAnimation()
 				self.UserScore:setLeftRight( true, false, 7.5, 144.5 )
 				self.UserScore:setTopBottom( false, false, -24, 20 )
 				self.clipFinished( UserScore, {} )
+
 				Meter:completeAnimation()
 				self.Meter:setLeftRight( true, false, 159.5, 210.5 )
 				self.Meter:setTopBottom( false, false, -13, 10 )
 				self.clipFinished( Meter, {} )
+
 				MeterLine:completeAnimation()
 				self.MeterLine:setLeftRight( false, false, 43, 94 )
 				self.MeterLine:setTopBottom( false, false, -13, 10 )
@@ -214,6 +237,7 @@ CoD.UserScoreContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Infected",
@@ -260,6 +284,7 @@ CoD.UserScoreContainer.new = function ( menu, controller )
 			modelName = "gameScore.playerScore"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Meter:close()
 		element.MeterLine:close()

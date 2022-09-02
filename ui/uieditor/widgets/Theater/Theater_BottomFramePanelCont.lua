@@ -4,9 +4,11 @@
 CoD.Theater_BottomFramePanelCont = InheritFrom( LUI.UIElement )
 CoD.Theater_BottomFramePanelCont.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Theater_BottomFramePanelCont )
 	self.id = "Theater_BottomFramePanelCont"

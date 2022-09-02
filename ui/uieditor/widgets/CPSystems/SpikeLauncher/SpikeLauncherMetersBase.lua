@@ -4,9 +4,11 @@
 CoD.SpikeLauncherMetersBase = InheritFrom( LUI.UIElement )
 CoD.SpikeLauncherMetersBase.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpikeLauncherMetersBase )
 	self.id = "SpikeLauncherMetersBase"
@@ -35,9 +37,11 @@ CoD.SpikeLauncherMetersBase.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				MeterLower:completeAnimation()
 				self.MeterLower:setAlpha( 1 )
 				self.clipFinished( MeterLower, {} )
+
 				MeterLowerColor:completeAnimation()
 				self.MeterLowerColor:setAlpha( 0 )
 				self.clipFinished( MeterLowerColor, {} )
@@ -46,9 +50,11 @@ CoD.SpikeLauncherMetersBase.new = function ( menu, controller )
 		StrongArea = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				MeterLower:completeAnimation()
 				self.MeterLower:setAlpha( 0 )
 				self.clipFinished( MeterLower, {} )
+
 				MeterLowerColor:completeAnimation()
 				self.MeterLowerColor:setAlpha( 1 )
 				self.clipFinished( MeterLowerColor, {} )

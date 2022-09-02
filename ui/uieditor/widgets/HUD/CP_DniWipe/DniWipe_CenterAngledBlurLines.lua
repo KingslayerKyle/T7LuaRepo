@@ -4,9 +4,11 @@
 CoD.DniWipe_CenterAngledBlurLines = InheritFrom( LUI.UIElement )
 CoD.DniWipe_CenterAngledBlurLines.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.DniWipe_CenterAngledBlurLines )
 	self.id = "DniWipe_CenterAngledBlurLines"
@@ -52,6 +54,7 @@ CoD.DniWipe_CenterAngledBlurLines.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local RGBangleLineFrame2 = function ( RGBangleLine, event )
 					local RGBangleLineFrame3 = function ( RGBangleLine, event )
 						if not event.interrupted then
@@ -172,6 +175,7 @@ CoD.DniWipe_CenterAngledBlurLines.new = function ( menu, controller )
 				self.Image2:setTopBottom( false, false, 106.44, 178.44 )
 				self.Image2:setAlpha( 0 )
 				Image2Frame2( Image2, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

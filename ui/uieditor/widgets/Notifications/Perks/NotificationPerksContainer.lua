@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Notifications.Perks.Notification_Perks" )
 CoD.NotificationPerksContainer = InheritFrom( LUI.UIElement )
 CoD.NotificationPerksContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.NotificationPerksContainer )
 	self.id = "NotificationPerksContainer"
@@ -167,6 +169,7 @@ CoD.NotificationPerksContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Perks:completeAnimation()
 				self.Perks:setAlpha( 0 )
 				self.Perks:setZoom( 0 )
@@ -174,6 +177,7 @@ CoD.NotificationPerksContainer.new = function ( menu, controller )
 			end,
 			hud_start = function ()
 				self:setupElementClipCounter( 1 )
+
 				local PerksFrame2 = function ( Perks, event )
 					local PerksFrame3 = function ( Perks, event )
 						local PerksFrame4 = function ( Perks, event )
@@ -215,6 +219,7 @@ CoD.NotificationPerksContainer.new = function ( menu, controller )
 			end,
 			hud_stop = function ()
 				self:setupElementClipCounter( 1 )
+
 				local PerksFrame2 = function ( Perks, event )
 					if not event.interrupted then
 						Perks:beginAnimation( "keyframe", 319, false, false, CoD.TweenType.Bounce )
@@ -235,6 +240,7 @@ CoD.NotificationPerksContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Perks:close()
 	end )

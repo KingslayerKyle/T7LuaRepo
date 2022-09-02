@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_SaleActive_Hori" )
 CoD.BlackMarketTradeAgainListItem = InheritFrom( LUI.UIElement )
 CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BlackMarketTradeAgainListItem )
 	self.id = "BlackMarketTradeAgainListItem"
@@ -131,50 +133,63 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Up:completeAnimation()
 				self.Up:setAlpha( 0 )
 				self.clipFinished( Up, {} )
+
 				down:completeAnimation()
 				self.down:setAlpha( 1 )
 				self.clipFinished( down, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setRGB( 1, 1, 1 )
 				self.cryptokeyCount:setAlpha( 1 )
 				self.clipFinished( cryptokeyCount, {} )
+
 				hintArrow0:completeAnimation()
 				self.hintArrow0:setAlpha( 0 )
 				self.clipFinished( hintArrow0, {} )
+
 				ItemHintText:completeAnimation()
 				self.ItemHintText:setAlpha( 0 )
 				self.clipFinished( ItemHintText, {} )
+
 				BMSaleActiveHori:completeAnimation()
 				self.BMSaleActiveHori:setAlpha( 0 )
 				self.clipFinished( BMSaleActiveHori, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				Up:completeAnimation()
 				self.Up:setAlpha( 0.9 )
 				self.clipFinished( Up, {} )
+
 				down:completeAnimation()
 				self.down:setAlpha( 1 )
 				self.clipFinished( down, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setRGB( 1, 1, 1 )
 				self.cryptokeyCount:setAlpha( 1 )
 				self.clipFinished( cryptokeyCount, {} )
+
 				ItemHintText:completeAnimation()
 				self.ItemHintText:setAlpha( 0 )
 				self.clipFinished( ItemHintText, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setAlpha( 1 )
 				self.clipFinished( arrow, {} )
+
 				BMSaleActiveHori:completeAnimation()
 				self.BMSaleActiveHori:setAlpha( 0 )
 				self.clipFinished( BMSaleActiveHori, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local UpFrame2 = function ( Up, event )
 					if not event.interrupted then
 						Up:beginAnimation( "keyframe", 129, false, false, CoD.TweenType.Linear )
@@ -205,10 +220,12 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 				down:completeAnimation()
 				self.down:setAlpha( 1 )
 				downFrame2( down, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setRGB( 1, 1, 1 )
 				self.cryptokeyCount:setAlpha( 1 )
 				self.clipFinished( cryptokeyCount, {} )
+
 				ItemHintText:completeAnimation()
 				self.ItemHintText:setAlpha( 0 )
 				self.clipFinished( ItemHintText, {} )
@@ -231,12 +248,14 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 				self.arrow:setTopBottom( true, false, 5.5, 22.5 )
 				self.arrow:setAlpha( 0 )
 				arrowFrame2( arrow, {} )
+
 				BMSaleActiveHori:completeAnimation()
 				self.BMSaleActiveHori:setAlpha( 0 )
 				self.clipFinished( BMSaleActiveHori, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local UpFrame2 = function ( Up, event )
 					if not event.interrupted then
 						Up:beginAnimation( "keyframe", 129, false, false, CoD.TweenType.Linear )
@@ -267,6 +286,7 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 				down:completeAnimation()
 				self.down:setAlpha( 0 )
 				downFrame2( down, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setRGB( 1, 1, 1 )
 				self.cryptokeyCount:setAlpha( 1 )
@@ -290,6 +310,7 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 				self.arrow:setTopBottom( true, false, 5.5, 22.5 )
 				self.arrow:setAlpha( 1 )
 				arrowFrame2( arrow, {} )
+
 				BMSaleActiveHori:completeAnimation()
 				self.BMSaleActiveHori:setAlpha( 0 )
 				self.clipFinished( BMSaleActiveHori, {} )
@@ -298,50 +319,63 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 		NotEnoughCODPoints = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Up:completeAnimation()
 				self.Up:setAlpha( 0 )
 				self.clipFinished( Up, {} )
+
 				down:completeAnimation()
 				self.down:setAlpha( 1 )
 				self.clipFinished( down, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setRGB( ColorSet.InsufficientFunds.r, ColorSet.InsufficientFunds.g, ColorSet.InsufficientFunds.b )
 				self.cryptokeyCount:setAlpha( 1 )
 				self.clipFinished( cryptokeyCount, {} )
+
 				hintArrow0:completeAnimation()
 				self.hintArrow0:setAlpha( 0 )
 				self.clipFinished( hintArrow0, {} )
+
 				ItemHintText:completeAnimation()
 				self.ItemHintText:setAlpha( 0 )
 				self.clipFinished( ItemHintText, {} )
+
 				BMSaleActiveHori:completeAnimation()
 				self.BMSaleActiveHori:setAlpha( 0 )
 				self.clipFinished( BMSaleActiveHori, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				Up:completeAnimation()
 				self.Up:setAlpha( 0.9 )
 				self.clipFinished( Up, {} )
+
 				down:completeAnimation()
 				self.down:setAlpha( 1 )
 				self.clipFinished( down, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setRGB( ColorSet.InsufficientFunds.r, ColorSet.InsufficientFunds.g, ColorSet.InsufficientFunds.b )
 				self.cryptokeyCount:setAlpha( 1 )
 				self.clipFinished( cryptokeyCount, {} )
+
 				ItemHintText:completeAnimation()
 				self.ItemHintText:setAlpha( 0 )
 				self.clipFinished( ItemHintText, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setAlpha( 1 )
 				self.clipFinished( arrow, {} )
+
 				BMSaleActiveHori:completeAnimation()
 				self.BMSaleActiveHori:setAlpha( 0 )
 				self.clipFinished( BMSaleActiveHori, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				local UpFrame2 = function ( Up, event )
 					if not event.interrupted then
 						Up:beginAnimation( "keyframe", 129, false, false, CoD.TweenType.Linear )
@@ -372,13 +406,16 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 				down:completeAnimation()
 				self.down:setAlpha( 1 )
 				downFrame2( down, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setRGB( ColorSet.InsufficientFunds.r, ColorSet.InsufficientFunds.g, ColorSet.InsufficientFunds.b )
 				self.cryptokeyCount:setAlpha( 1 )
 				self.clipFinished( cryptokeyCount, {} )
+
 				hintArrow0:completeAnimation()
 				self.hintArrow0:setAlpha( 0 )
 				self.clipFinished( hintArrow0, {} )
+
 				ItemHintText:completeAnimation()
 				self.ItemHintText:setAlpha( 0 )
 				self.clipFinished( ItemHintText, {} )
@@ -401,12 +438,14 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 				self.arrow:setTopBottom( true, false, 5.5, 22.5 )
 				self.arrow:setAlpha( 0 )
 				arrowFrame2( arrow, {} )
+
 				BMSaleActiveHori:completeAnimation()
 				self.BMSaleActiveHori:setAlpha( 0 )
 				self.clipFinished( BMSaleActiveHori, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local UpFrame2 = function ( Up, event )
 					if not event.interrupted then
 						Up:beginAnimation( "keyframe", 129, false, false, CoD.TweenType.Linear )
@@ -437,6 +476,7 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 				down:completeAnimation()
 				self.down:setAlpha( 0 )
 				downFrame2( down, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setRGB( ColorSet.InsufficientFunds.r, ColorSet.InsufficientFunds.g, ColorSet.InsufficientFunds.b )
 				self.cryptokeyCount:setAlpha( 1 )
@@ -460,6 +500,7 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 				self.arrow:setTopBottom( true, false, 5.5, 22.5 )
 				self.arrow:setAlpha( 1 )
 				arrowFrame2( arrow, {} )
+
 				BMSaleActiveHori:completeAnimation()
 				self.BMSaleActiveHori:setAlpha( 0 )
 				self.clipFinished( BMSaleActiveHori, {} )
@@ -468,53 +509,67 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 		LootSale = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				Up:completeAnimation()
 				self.Up:setAlpha( 0 )
 				self.clipFinished( Up, {} )
+
 				down:completeAnimation()
 				self.down:setAlpha( 1 )
 				self.clipFinished( down, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setRGB( 1, 1, 1 )
 				self.cryptokeyCount:setAlpha( 0 )
 				self.clipFinished( cryptokeyCount, {} )
+
 				hintArrow0:completeAnimation()
 				self.hintArrow0:setAlpha( 0 )
 				self.clipFinished( hintArrow0, {} )
+
 				ItemHintText:completeAnimation()
 				self.ItemHintText:setAlpha( 0 )
 				self.clipFinished( ItemHintText, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setAlpha( 0 )
 				self.clipFinished( arrow, {} )
+
 				BMSaleActiveHori:completeAnimation()
 				self.BMSaleActiveHori:setAlpha( 1 )
 				self.clipFinished( BMSaleActiveHori, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				Up:completeAnimation()
 				self.Up:setAlpha( 0.9 )
 				self.clipFinished( Up, {} )
+
 				down:completeAnimation()
 				self.down:setAlpha( 1 )
 				self.clipFinished( down, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setRGB( 1, 1, 1 )
 				self.cryptokeyCount:setAlpha( 0 )
 				self.clipFinished( cryptokeyCount, {} )
+
 				ItemHintText:completeAnimation()
 				self.ItemHintText:setAlpha( 0 )
 				self.clipFinished( ItemHintText, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setAlpha( 1 )
 				self.clipFinished( arrow, {} )
+
 				BMSaleActiveHori:completeAnimation()
 				self.BMSaleActiveHori:setAlpha( 1 )
 				self.clipFinished( BMSaleActiveHori, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local UpFrame2 = function ( Up, event )
 					if not event.interrupted then
 						Up:beginAnimation( "keyframe", 129, false, false, CoD.TweenType.Linear )
@@ -545,10 +600,12 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 				down:completeAnimation()
 				self.down:setAlpha( 1 )
 				downFrame2( down, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setRGB( 1, 1, 1 )
 				self.cryptokeyCount:setAlpha( 0 )
 				self.clipFinished( cryptokeyCount, {} )
+
 				ItemHintText:completeAnimation()
 				self.ItemHintText:setAlpha( 0 )
 				self.clipFinished( ItemHintText, {} )
@@ -571,12 +628,14 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 				self.arrow:setTopBottom( true, false, 5.5, 22.5 )
 				self.arrow:setAlpha( 0 )
 				arrowFrame2( arrow, {} )
+
 				BMSaleActiveHori:completeAnimation()
 				self.BMSaleActiveHori:setAlpha( 1 )
 				self.clipFinished( BMSaleActiveHori, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local UpFrame2 = function ( Up, event )
 					if not event.interrupted then
 						Up:beginAnimation( "keyframe", 129, false, false, CoD.TweenType.Linear )
@@ -607,6 +666,7 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 				down:completeAnimation()
 				self.down:setAlpha( 0 )
 				downFrame2( down, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setRGB( 1, 1, 1 )
 				self.cryptokeyCount:setAlpha( 0 )
@@ -630,6 +690,7 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 				self.arrow:setTopBottom( true, false, 5.5, 22.5 )
 				self.arrow:setAlpha( 1 )
 				arrowFrame2( arrow, {} )
+
 				BMSaleActiveHori:completeAnimation()
 				self.BMSaleActiveHori:setAlpha( 1 )
 				self.clipFinished( BMSaleActiveHori, {} )
@@ -638,48 +699,61 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 		NotEnoughCryptoKeys = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Up:completeAnimation()
 				self.Up:setAlpha( 0 )
 				self.clipFinished( Up, {} )
+
 				down:completeAnimation()
 				self.down:setAlpha( 1 )
 				self.clipFinished( down, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setRGB( ColorSet.InsufficientFunds.r, ColorSet.InsufficientFunds.g, ColorSet.InsufficientFunds.b )
 				self.clipFinished( cryptokeyCount, {} )
+
 				hintArrow0:completeAnimation()
 				self.hintArrow0:setAlpha( 0 )
 				self.clipFinished( hintArrow0, {} )
+
 				ItemHintText:completeAnimation()
+
 				ItemHintText.textCenterAlign:completeAnimation()
 				self.ItemHintText:setAlpha( 0 )
 				self.ItemHintText.textCenterAlign:setText( Engine.Localize( "MPUI_BM_NOT_ENOUGH_CRYPTOKEYS" ) )
 				self.clipFinished( ItemHintText, {} )
+
 				BMSaleActiveHori:completeAnimation()
 				self.BMSaleActiveHori:setAlpha( 0 )
 				self.clipFinished( BMSaleActiveHori, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				Up:completeAnimation()
 				self.Up:setAlpha( 0.9 )
 				self.clipFinished( Up, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setRGB( ColorSet.InsufficientFunds.r, ColorSet.InsufficientFunds.g, ColorSet.InsufficientFunds.b )
 				self.cryptokeyCount:setAlpha( 1 )
 				self.clipFinished( cryptokeyCount, {} )
+
 				ItemHintText:completeAnimation()
 				self.ItemHintText:setAlpha( 0 )
 				self.clipFinished( ItemHintText, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setAlpha( 1 )
 				self.clipFinished( arrow, {} )
+
 				BMSaleActiveHori:completeAnimation()
 				self.BMSaleActiveHori:setAlpha( 0 )
 				self.clipFinished( BMSaleActiveHori, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				local UpFrame2 = function ( Up, event )
 					if not event.interrupted then
 						Up:beginAnimation( "keyframe", 129, false, false, CoD.TweenType.Linear )
@@ -727,10 +801,13 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 				self.cryptokeyCount:setRGB( ColorSet.InsufficientFunds.r, ColorSet.InsufficientFunds.g, ColorSet.InsufficientFunds.b )
 				self.cryptokeyCount:setAlpha( 1 )
 				cryptokeyCountFrame2( cryptokeyCount, {} )
+
 				hintArrow0:completeAnimation()
 				self.hintArrow0:setAlpha( 0 )
 				self.clipFinished( hintArrow0, {} )
+
 				ItemHintText:completeAnimation()
+
 				ItemHintText.textCenterAlign:completeAnimation()
 				self.ItemHintText:setAlpha( 0 )
 				self.ItemHintText.textCenterAlign:setText( Engine.Localize( "MPUI_BM_NOT_ENOUGH_CRYPTOKEYS" ) )
@@ -754,12 +831,14 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 				self.arrow:setTopBottom( true, false, 5.5, 22.5 )
 				self.arrow:setAlpha( 0 )
 				arrowFrame2( arrow, {} )
+
 				BMSaleActiveHori:completeAnimation()
 				self.BMSaleActiveHori:setAlpha( 0 )
 				self.clipFinished( BMSaleActiveHori, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local UpFrame2 = function ( Up, event )
 					if not event.interrupted then
 						Up:beginAnimation( "keyframe", 129, false, false, CoD.TweenType.Linear )
@@ -790,6 +869,7 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 				down:completeAnimation()
 				self.down:setAlpha( 0 )
 				downFrame2( down, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setRGB( ColorSet.InsufficientFunds.r, ColorSet.InsufficientFunds.g, ColorSet.InsufficientFunds.b )
 				self.clipFinished( cryptokeyCount, {} )
@@ -812,12 +892,14 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 				self.arrow:setTopBottom( true, false, 5.5, 22.5 )
 				self.arrow:setAlpha( 1 )
 				arrowFrame2( arrow, {} )
+
 				BMSaleActiveHori:completeAnimation()
 				self.BMSaleActiveHori:setAlpha( 0 )
 				self.clipFinished( BMSaleActiveHori, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NotEnoughCODPoints",
@@ -870,11 +952,13 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 			modelName = "CryptoKeyProgress.keyCount"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsSelfInState( self, "LootSale" ) then
 			UpdateElementState( self, "BMSaleActiveHori", controller )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.hintArrow0:close()
 		element.ItemHintText:close()

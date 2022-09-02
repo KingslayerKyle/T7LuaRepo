@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.playercard.SelfIdentityBadge" )
 CoD.GenericMenuFrameIdentityNoFooter = InheritFrom( LUI.UIElement )
 CoD.GenericMenuFrameIdentityNoFooter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GenericMenuFrameIdentityNoFooter )
 	self.id = "GenericMenuFrameIdentityNoFooter"
@@ -67,6 +69,7 @@ CoD.GenericMenuFrameIdentityNoFooter.new = function ( menu, controller )
 			SetElementStateByElementName( self, "cac3dTitleIntermediary0", controller, "Update" )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.cac3dTitleIntermediary0:close()
 		element.SelfIdentityBadge:close()

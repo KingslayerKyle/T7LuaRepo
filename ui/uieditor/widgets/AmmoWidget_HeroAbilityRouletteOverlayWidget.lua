@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ButtonPanel" )
 CoD.AmmoWidget_HeroAbilityRouletteOverlayWidget = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_HeroAbilityRouletteOverlayWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_HeroAbilityRouletteOverlayWidget )
 	self.id = "AmmoWidget_HeroAbilityRouletteOverlayWidget"
@@ -42,6 +44,7 @@ CoD.AmmoWidget_HeroAbilityRouletteOverlayWidget.new = function ( menu, controlle
 	rerollInstruction:setTTF( "fonts/escom.ttf" )
 	rerollInstruction:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	rerollInstruction:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_MIDDLE )
+
 	LUI.OverrideFunction_CallOriginalFirst( rerollInstruction, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 10 )
 	end )
@@ -61,15 +64,18 @@ CoD.AmmoWidget_HeroAbilityRouletteOverlayWidget.new = function ( menu, controlle
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				box:completeAnimation()
 				self.box:setAlpha( 0 )
 				self.clipFinished( box, {} )
+
 				rerollInstruction:completeAnimation()
 				self.rerollInstruction:setAlpha( 1 )
 				self.clipFinished( rerollInstruction, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel0:close()
 	end )

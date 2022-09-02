@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Ground.VehicleGround_Iris" )
 CoD.vhud_sentinel_iris = InheritFrom( LUI.UIElement )
 CoD.vhud_sentinel_iris.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_sentinel_iris )
 	self.id = "vhud_sentinel_iris"
@@ -109,18 +111,22 @@ CoD.vhud_sentinel_iris.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				VignetteContainer:completeAnimation()
 				self.VignetteContainer:setAlpha( 0 )
 				self.clipFinished( VignetteContainer, {} )
+
 				VehicleGroundIris:completeAnimation()
 				self.VehicleGroundIris:setAlpha( 0 )
 				self.clipFinished( VehicleGroundIris, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		LeavingOperationZone_CP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local VignetteContainerFrame2 = function ( VignetteContainer, event )
 					local VignetteContainerFrame3 = function ( VignetteContainer, event )
 						local VignetteContainerFrame4 = function ( VignetteContainer, event )
@@ -241,21 +247,25 @@ CoD.vhud_sentinel_iris.new = function ( menu, controller )
 				self.VehicleGroundIris:setRGB( 1, 0.35, 0.35 )
 				self.VehicleGroundIris:setAlpha( 0.8 )
 				VehicleGroundIrisFrame2( VehicleGroundIris, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Campaign = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				VignetteContainer:completeAnimation()
 				self.VignetteContainer:setAlpha( 0.7 )
 				self.clipFinished( VignetteContainer, {} )
+
 				VehicleGroundIris:completeAnimation()
 				self.VehicleGroundIris:setAlpha( 0.8 )
 				self.clipFinished( VehicleGroundIris, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "LeavingOperationZone_CP",
@@ -286,6 +296,7 @@ CoD.vhud_sentinel_iris.new = function ( menu, controller )
 			modelName = "outOfRange"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.VignetteContainer:close()
 		element.VehicleGroundIris:close()

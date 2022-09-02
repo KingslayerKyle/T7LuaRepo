@@ -12,9 +12,11 @@ end
 CoD.AmmoWidget_SDBomb = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_SDBomb.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_SDBomb )
 	self.id = "AmmoWidget_SDBomb"
@@ -44,9 +46,11 @@ CoD.AmmoWidget_SDBomb.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setAlpha( 0 )
 				self.clipFinished( PanelGlow, {} )
+
 				SDBomb:completeAnimation()
 				self.SDBomb:setAlpha( 0 )
 				self.clipFinished( SDBomb, {} )
@@ -55,9 +59,11 @@ CoD.AmmoWidget_SDBomb.new = function ( menu, controller )
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setAlpha( 0 )
 				self.clipFinished( PanelGlow, {} )
+
 				SDBomb:completeAnimation()
 				self.SDBomb:setAlpha( 0 )
 				self.clipFinished( SDBomb, {} )
@@ -66,6 +72,7 @@ CoD.AmmoWidget_SDBomb.new = function ( menu, controller )
 		Show = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setAlpha( 0.41 )
 				self.clipFinished( PanelGlow, {} )
@@ -120,6 +127,7 @@ CoD.AmmoWidget_SDBomb.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hide",

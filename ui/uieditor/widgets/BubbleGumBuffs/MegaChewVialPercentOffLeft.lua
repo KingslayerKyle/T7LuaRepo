@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BubbleGumBuffs.MegaChewVialPercentOffBacking" )
 CoD.MegaChewVialPercentOffLeft = InheritFrom( LUI.UIElement )
 CoD.MegaChewVialPercentOffLeft.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MegaChewVialPercentOffLeft )
 	self.id = "MegaChewVialPercentOffLeft"
@@ -65,6 +67,7 @@ CoD.MegaChewVialPercentOffLeft.new = function ( menu, controller )
 		end
 		return f2_local0
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( nameText, "setText", function ( element, controller )
 		ScaleWidgetToLabelLeftJustify( self, element, 0 )
 	end )
@@ -75,15 +78,19 @@ CoD.MegaChewVialPercentOffLeft.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				MegaChewVialPercentOffBacking:completeAnimation()
 				self.MegaChewVialPercentOffBacking:setAlpha( 0 )
 				self.clipFinished( MegaChewVialPercentOffBacking, {} )
+
 				GlowBlueOver:completeAnimation()
 				self.GlowBlueOver:setAlpha( 0 )
 				self.clipFinished( GlowBlueOver, {} )
+
 				GlowBlueOver0:completeAnimation()
 				self.GlowBlueOver0:setAlpha( 0 )
 				self.clipFinished( GlowBlueOver0, {} )
+
 				nameText:completeAnimation()
 				self.nameText:setAlpha( 0 )
 				self.clipFinished( nameText, {} )
@@ -92,6 +99,7 @@ CoD.MegaChewVialPercentOffLeft.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				MegaChewVialPercentOffBacking:completeAnimation()
 				self.MegaChewVialPercentOffBacking:setAlpha( 1 )
 				self.clipFinished( MegaChewVialPercentOffBacking, {} )
@@ -171,13 +179,16 @@ CoD.MegaChewVialPercentOffLeft.new = function ( menu, controller )
 				self.GlowBlueOver0:setAlpha( 0 )
 				self.GlowBlueOver0:setScale( 1 )
 				GlowBlueOver0Frame2( GlowBlueOver0, {} )
+
 				nameText:completeAnimation()
 				self.nameText:setAlpha( 1 )
 				self.clipFinished( nameText, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -194,6 +205,7 @@ CoD.MegaChewVialPercentOffLeft.new = function ( menu, controller )
 			modelName = "autoevents.cycled"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MegaChewVialPercentOffBacking:close()
 	end )

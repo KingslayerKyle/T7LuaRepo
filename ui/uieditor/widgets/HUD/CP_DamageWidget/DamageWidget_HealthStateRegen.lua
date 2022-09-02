@@ -4,9 +4,11 @@
 CoD.DamageWidget_HealthStateRegen = InheritFrom( LUI.UIElement )
 CoD.DamageWidget_HealthStateRegen.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DamageWidget_HealthStateRegen )
 	self.id = "DamageWidget_HealthStateRegen"
@@ -57,19 +59,23 @@ CoD.DamageWidget_HealthStateRegen.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ImgStateShape:completeAnimation()
 				self.ImgStateShape:setRGB( 1, 1, 1 )
 				self.ImgStateShape:setAlpha( 0 )
 				self.clipFinished( ImgStateShape, {} )
+
 				ImgStateShape0:completeAnimation()
 				self.ImgStateShape0:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_slice" ) )
 				self.ImgStateShape0:setShaderVector( 0, 10, 0, 0, 0 )
 				self.ImgStateShape0:setShaderVector( 1, 1, 0, 0, 0 )
 				self.ImgStateShape0:setShaderVector( 2, 0.5, 0, 0, 0 )
 				self.clipFinished( ImgStateShape0, {} )
+
 				ImageGlitch1:completeAnimation()
 				self.ImageGlitch1:setAlpha( 0 )
 				self.clipFinished( ImageGlitch1, {} )
+
 				ImageGlitch2:completeAnimation()
 				self.ImageGlitch2:setAlpha( 0 )
 				self.clipFinished( ImageGlitch2, {} )
@@ -78,6 +84,7 @@ CoD.DamageWidget_HealthStateRegen.new = function ( menu, controller )
 		Regen = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local ImgStateShapeFrame2 = function ( ImgStateShape, event )
 					local ImgStateShapeFrame3 = function ( ImgStateShape, event )
 						local ImgStateShapeFrame4 = function ( ImgStateShape, event )

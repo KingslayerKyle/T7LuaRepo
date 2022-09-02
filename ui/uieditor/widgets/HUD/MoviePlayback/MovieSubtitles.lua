@@ -4,9 +4,11 @@
 CoD.MovieSubtitles = InheritFrom( LUI.UIElement )
 CoD.MovieSubtitles.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.MovieSubtitles )
 	self.id = "MovieSubtitles"

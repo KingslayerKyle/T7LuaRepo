@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.HUD.CenterConsole.CenterConsoleIcon" )
 CoD.CenterConsoleEntry = InheritFrom( LUI.UIElement )
 CoD.CenterConsoleEntry.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CenterConsoleEntry )
 	self.id = "CenterConsoleEntry"
@@ -92,9 +94,11 @@ CoD.CenterConsoleEntry.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			FadeOut = function ()
 				self:setupElementClipCounter( 1 )
+
 				local PanelFrame2 = function ( Panel, event )
 					if not event.interrupted then
 						Panel:beginAnimation( "keyframe", 280, false, false, CoD.TweenType.Bounce )
@@ -115,6 +119,7 @@ CoD.CenterConsoleEntry.new = function ( menu, controller )
 			end,
 			FadeIn = function ()
 				self:setupElementClipCounter( 1 )
+
 				local PanelFrame2 = function ( Panel, event )
 					local PanelFrame3 = function ( Panel, event )
 						local PanelFrame4 = function ( Panel, event )
@@ -221,6 +226,7 @@ CoD.CenterConsoleEntry.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 		element.Text1:close()

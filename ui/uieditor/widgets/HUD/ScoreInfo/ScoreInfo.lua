@@ -25,9 +25,11 @@ end
 CoD.ScoreInfo = InheritFrom( LUI.UIElement )
 CoD.ScoreInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreInfo )
 	self.id = "ScoreInfo"
@@ -288,63 +290,81 @@ CoD.ScoreInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				EnemyScorePanel:completeAnimation()
 				self.EnemyScorePanel:setAlpha( 0 )
 				self.clipFinished( EnemyScorePanel, {} )
+
 				UserScorePanel:completeAnimation()
 				self.UserScorePanel:setAlpha( 0 )
 				self.clipFinished( UserScorePanel, {} )
+
 				PanelTimer:completeAnimation()
 				self.PanelTimer:setAlpha( 0 )
 				self.clipFinished( PanelTimer, {} )
+
 				PanelCircle:completeAnimation()
 				self.PanelCircle:setAlpha( 0 )
 				self.clipFinished( PanelCircle, {} )
+
 				BackCircleInner:completeAnimation()
 				self.BackCircleInner:setAlpha( 0 )
 				self.BackCircleInner:setZoom( 10 )
 				self.clipFinished( BackCircleInner, {} )
+
 				PrimaryStatus:completeAnimation()
 				self.PrimaryStatus:setAlpha( 0 )
 				self.clipFinished( PrimaryStatus, {} )
+
 				GameTimer:completeAnimation()
+
 				GameTimer.Semi:completeAnimation()
+
 				GameTimer.Line1:completeAnimation()
+
 				GameTimer.Line2:completeAnimation()
 				self.GameTimer:setAlpha( 0 )
 				self.GameTimer.Semi:setAlpha( 0 )
 				self.GameTimer.Line1:setAlpha( 0 )
 				self.GameTimer.Line2:setAlpha( 0 )
 				self.clipFinished( GameTimer, {} )
+
 				RoundsContainer:completeAnimation()
 				self.RoundsContainer:setAlpha( 0 )
 				self.clipFinished( RoundsContainer, {} )
+
 				UserScore:completeAnimation()
 				self.UserScore:setAlpha( 0 )
 				self.clipFinished( UserScore, {} )
+
 				EnemyScore:completeAnimation()
 				self.EnemyScore:setAlpha( 0 )
 				self.clipFinished( EnemyScore, {} )
+
 				FactionContainer:completeAnimation()
 				self.FactionContainer:setLeftRight( false, false, -76.33, -4.33 )
 				self.FactionContainer:setTopBottom( false, false, -12.71, 59.96 )
 				self.FactionContainer:setAlpha( 0 )
 				self.clipFinished( FactionContainer, {} )
+
 				Dot3:completeAnimation()
 				self.Dot3:setLeftRight( true, false, 220, 224 )
 				self.Dot3:setTopBottom( true, false, 145, 149 )
 				self.Dot3:setAlpha( 0 )
 				self.clipFinished( Dot3, {} )
+
 				Dot5:completeAnimation()
 				self.Dot5:setLeftRight( true, false, 220, 224 )
 				self.Dot5:setTopBottom( true, false, 144.97, 148.97 )
 				self.Dot5:setAlpha( 0 )
 				self.clipFinished( Dot5, {} )
+
 				Dot6:completeAnimation()
 				self.Dot6:setLeftRight( true, false, 222, 226 )
 				self.Dot6:setTopBottom( true, false, 145, 149 )
 				self.Dot6:setAlpha( 0 )
 				self.clipFinished( Dot6, {} )
+
 				Dot7:completeAnimation()
 				self.Dot7:setLeftRight( true, false, 222, 226 )
 				self.Dot7:setTopBottom( true, false, 144.97, 148.97 )
@@ -353,6 +373,7 @@ CoD.ScoreInfo.new = function ( menu, controller )
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 15 )
+
 				local EnemyScorePanelFrame2 = function ( EnemyScorePanel, event )
 					local EnemyScorePanelFrame3 = function ( EnemyScorePanel, event )
 						local EnemyScorePanelFrame4 = function ( EnemyScorePanel, event )
@@ -1259,8 +1280,11 @@ CoD.ScoreInfo.new = function ( menu, controller )
 				end
 				
 				GameTimer:completeAnimation()
+
 				GameTimer.Semi:completeAnimation()
+
 				GameTimer.Line1:completeAnimation()
+
 				GameTimer.Line2:completeAnimation()
 				self.GameTimer:setAlpha( 0 )
 				self.GameTimer.Semi:setAlpha( 0 )
@@ -1803,61 +1827,79 @@ CoD.ScoreInfo.new = function ( menu, controller )
 		HudStart = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				EnemyScorePanel:completeAnimation()
 				self.EnemyScorePanel:setAlpha( 1 )
 				self.clipFinished( EnemyScorePanel, {} )
+
 				UserScorePanel:completeAnimation()
 				self.UserScorePanel:setAlpha( 1 )
 				self.clipFinished( UserScorePanel, {} )
+
 				PanelTimer:completeAnimation()
 				self.PanelTimer:setAlpha( 1 )
 				self.clipFinished( PanelTimer, {} )
+
 				PanelCircle:completeAnimation()
 				self.PanelCircle:setAlpha( 1 )
 				self.clipFinished( PanelCircle, {} )
+
 				BackCircleInner:completeAnimation()
 				self.BackCircleInner:setAlpha( 0.2 )
 				self.BackCircleInner:setZoom( -2 )
 				self.clipFinished( BackCircleInner, {} )
+
 				PrimaryStatus:completeAnimation()
 				self.PrimaryStatus:setAlpha( 1 )
 				self.clipFinished( PrimaryStatus, {} )
+
 				GameTimer:completeAnimation()
+
 				GameTimer.Semi:completeAnimation()
+
 				GameTimer.Line1:completeAnimation()
+
 				GameTimer.Line2:completeAnimation()
 				self.GameTimer:setAlpha( 1 )
 				self.GameTimer.Semi:setAlpha( 0.6 )
 				self.GameTimer.Line1:setAlpha( 0.8 )
 				self.GameTimer.Line2:setAlpha( 0.8 )
 				self.clipFinished( GameTimer, {} )
+
 				RoundsContainer:completeAnimation()
 				self.RoundsContainer:setAlpha( 1 )
 				self.clipFinished( RoundsContainer, {} )
+
 				UserScore:completeAnimation()
 				self.UserScore:setAlpha( 1 )
 				self.clipFinished( UserScore, {} )
+
 				EnemyScore:completeAnimation()
 				self.EnemyScore:setAlpha( 1 )
 				self.clipFinished( EnemyScore, {} )
+
 				FactionContainer:completeAnimation()
 				self.FactionContainer:setAlpha( 1 )
 				self.clipFinished( FactionContainer, {} )
+
 				Dot3:completeAnimation()
 				self.Dot3:setLeftRight( true, false, 305, 309 )
 				self.Dot3:setTopBottom( true, false, 115, 119 )
 				self.Dot3:setAlpha( 0.6 )
 				self.clipFinished( Dot3, {} )
+
 				Dot5:completeAnimation()
 				self.Dot5:setLeftRight( true, false, 305, 309 )
 				self.Dot5:setTopBottom( true, false, 186, 190 )
 				self.Dot5:setAlpha( 0.6 )
 				self.clipFinished( Dot5, {} )
+
 				Dot6:completeAnimation()
 				self.Dot6:setLeftRight( true, false, 222, 226 )
 				self.Dot6:setTopBottom( true, false, 115, 119 )
 				self.Dot6:setAlpha( 0.6 )
 				self.clipFinished( Dot6, {} )
+
 				Dot7:completeAnimation()
 				self.Dot7:setLeftRight( true, false, 222, 226 )
 				self.Dot7:setTopBottom( true, false, 186, 190 )
@@ -1866,6 +1908,7 @@ CoD.ScoreInfo.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 15 )
+
 				local EnemyScorePanelFrame2 = function ( EnemyScorePanel, event )
 					if not event.interrupted then
 						EnemyScorePanel:beginAnimation( "keyframe", 349, true, false, CoD.TweenType.Bounce )
@@ -2017,8 +2060,11 @@ CoD.ScoreInfo.new = function ( menu, controller )
 				end
 				
 				GameTimer:completeAnimation()
+
 				GameTimer.Semi:completeAnimation()
+
 				GameTimer.Line1:completeAnimation()
+
 				GameTimer.Line2:completeAnimation()
 				self.GameTimer:setAlpha( 1 )
 				self.GameTimer.Semi:setAlpha( 0.6 )
@@ -2236,9 +2282,11 @@ CoD.ScoreInfo.new = function ( menu, controller )
 		HudPause = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsElementInState( element, "HudStart" ) then
 			PlayClipOnElement( self, {
@@ -2247,6 +2295,7 @@ CoD.ScoreInfo.new = function ( menu, controller )
 			}, controller )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.EnemyScorePanel:close()
 		element.UserScorePanel:close()

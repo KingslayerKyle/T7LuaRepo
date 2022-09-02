@@ -61,9 +61,11 @@ end
 CoD.baseHealthDamageBarWidget = InheritFrom( LUI.UIElement )
 CoD.baseHealthDamageBarWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.baseHealthDamageBarWidget )
 	self.id = "baseHealthDamageBarWidget"
@@ -121,20 +123,24 @@ CoD.baseHealthDamageBarWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		LowHealthState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				baseHealthBar:completeAnimation()
 				self.baseHealthBar:setRGB( 0.97, 0.15, 0.11 )
 				self.clipFinished( baseHealthBar, {} )
 			end,
 			damageTaken = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.baseHealthDamageBorderWidget:close()
 	end )

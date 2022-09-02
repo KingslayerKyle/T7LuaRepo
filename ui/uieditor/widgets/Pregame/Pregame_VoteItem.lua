@@ -11,9 +11,11 @@ require( "ui.uieditor.widgets.Pregame.Pregame_FactionTeamColorBarHeader" )
 CoD.Pregame_VoteItem = InheritFrom( LUI.UIElement )
 CoD.Pregame_VoteItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_VoteItem )
 	self.id = "Pregame_VoteItem"
@@ -238,34 +240,40 @@ CoD.Pregame_VoteItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PregameItemVotePlayerIndicator:completeAnimation()
 				self.PregameItemVotePlayerIndicator:setAlpha( 0 )
 				self.clipFinished( PregameItemVotePlayerIndicator, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		ShowHeader = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PregameItemVotePlayerIndicator:completeAnimation()
 				self.PregameItemVotePlayerIndicator:setAlpha( 1 )
 				self.clipFinished( PregameItemVotePlayerIndicator, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		ShowFooter = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PregameItemVotePlayerIndicator:completeAnimation()
 				self.PregameItemVotePlayerIndicator:setAlpha( 0 )
 				self.clipFinished( PregameItemVotePlayerIndicator, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
@@ -277,6 +285,7 @@ CoD.Pregame_VoteItem.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PregameBanProtectIndicatorBackground:close()
 		element.GridItemButtonNew:close()

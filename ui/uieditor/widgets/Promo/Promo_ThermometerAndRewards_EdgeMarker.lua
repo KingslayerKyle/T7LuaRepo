@@ -4,9 +4,11 @@
 CoD.Promo_ThermometerAndRewards_EdgeMarker = InheritFrom( LUI.UIElement )
 CoD.Promo_ThermometerAndRewards_EdgeMarker.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Promo_ThermometerAndRewards_EdgeMarker )
 	self.id = "Promo_ThermometerAndRewards_EdgeMarker"
@@ -63,24 +65,30 @@ CoD.Promo_ThermometerAndRewards_EdgeMarker.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				EdgeGlow:completeAnimation()
 				self.EdgeGlow:setAlpha( 0 )
 				self.clipFinished( EdgeGlow, {} )
+
 				EdgeGlowAdd:completeAnimation()
 				self.EdgeGlowAdd:setAlpha( 0 )
 				self.clipFinished( EdgeGlowAdd, {} )
+
 				FlipbookAdd:completeAnimation()
 				self.FlipbookAdd:setAlpha( 0 )
 				self.clipFinished( FlipbookAdd, {} )
+
 				Flipbook1:completeAnimation()
 				self.Flipbook1:setAlpha( 0 )
 				self.clipFinished( Flipbook1, {} )
+
 				EdgeMarker:completeAnimation()
 				self.EdgeMarker:setAlpha( 1 )
 				self.clipFinished( EdgeMarker, {} )
 			end,
 			LoopAfterIntro = function ()
 				self:setupElementClipCounter( 5 )
+
 				local EdgeGlowFrame2 = function ( EdgeGlow, event )
 					local EdgeGlowFrame3 = function ( EdgeGlow, event )
 						local EdgeGlowFrame4 = function ( EdgeGlow, event )
@@ -303,9 +311,11 @@ CoD.Promo_ThermometerAndRewards_EdgeMarker.new = function ( menu, controller )
 				Flipbook1:completeAnimation()
 				self.Flipbook1:setAlpha( 0 )
 				Flipbook1Frame2( Flipbook1, {} )
+
 				EdgeMarker:completeAnimation()
 				self.EdgeMarker:setAlpha( 1 )
 				self.clipFinished( EdgeMarker, {} )
+
 				self.nextClip = "LoopAfterIntro"
 			end
 		}

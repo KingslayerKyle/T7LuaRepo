@@ -13,9 +13,11 @@ require( "ui.uieditor.widgets.Lobby.Lists.Members.IconControllerContainer" )
 CoD.Pregame_Client = InheritFrom( LUI.UIElement )
 CoD.Pregame_Client.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_Client )
 	self.id = "Pregame_Client"
@@ -335,14 +337,17 @@ CoD.Pregame_Client.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		ItemRestriction = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			CharacterDraft = function ()
 				self:setupElementClipCounter( 18 )
+
 				local FEButtonPanel1Frame2 = function ( FEButtonPanel1, event )
 					if not event.interrupted then
 						FEButtonPanel1:beginAnimation( "keyframe", 250, false, false, CoD.TweenType.Linear )
@@ -652,80 +657,99 @@ CoD.Pregame_Client.new = function ( menu, controller )
 		CharacterDraft = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				FEButtonPanel1:completeAnimation()
 				self.FEButtonPanel1:setLeftRight( true, false, 114, 339.79 )
 				self.FEButtonPanel1:setTopBottom( true, false, 2.5, 54.66 )
 				self.clipFinished( FEButtonPanel1, {} )
+
 				RankBackground:completeAnimation()
 				self.RankBackground:setLeftRight( true, false, 50.21, 108 )
 				self.RankBackground:setTopBottom( true, false, 49, 70 )
 				self.clipFinished( RankBackground, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setLeftRight( true, false, 53.9, 76.79 )
 				self.Rank:setTopBottom( true, false, 47.05, 71.05 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setLeftRight( true, false, 81, 103 )
 				self.RankIcon:setTopBottom( true, false, 49, 70 )
 				self.clipFinished( RankIcon, {} )
+
 				PregamePlayerName0:completeAnimation()
 				self.PregamePlayerName0:setLeftRight( true, false, 120, 339.79 )
 				self.PregamePlayerName0:setTopBottom( true, false, 15.08, 38.58 )
 				self.clipFinished( PregamePlayerName0, {} )
+
 				pixelA0:completeAnimation()
 				self.pixelA0:setLeftRight( true, false, 333, 369 )
 				self.pixelA0:setTopBottom( true, false, -1, 2.5 )
 				self.clipFinished( pixelA0, {} )
+
 				ImageX:completeAnimation()
 				self.ImageX:setAlpha( 1 )
 				self.clipFinished( ImageX, {} )
+
 				ImageBorder:completeAnimation()
 				self.ImageBorder:setLeftRight( true, false, 50, 108 )
 				self.ImageBorder:setTopBottom( true, false, 0, 57.37 )
 				self.clipFinished( ImageBorder, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, false, 41.71, 57.71 )
 				self.Image0:setTopBottom( true, false, 57.5, 69.5 )
 				self.clipFinished( Image0, {} )
+
 				CharacterRender:completeAnimation()
 				self.CharacterRender:setLeftRight( true, false, 47.71, 108.5 )
 				self.CharacterRender:setTopBottom( true, false, -0.4, 60.4 )
 				self.CharacterRender:setAlpha( 0 )
 				self.clipFinished( CharacterRender, {} )
+
 				pixelA00:completeAnimation()
 				self.pixelA00:setLeftRight( true, false, 333, 369 )
 				self.pixelA00:setTopBottom( true, false, 56, 59.5 )
 				self.clipFinished( pixelA00, {} )
+
 				Image00:completeAnimation()
 				self.Image00:setLeftRight( true, false, 41.71, 57.71 )
 				self.Image00:setTopBottom( true, false, -11, 1 )
 				self.clipFinished( Image00, {} )
+
 				CharacterName:completeAnimation()
 				self.CharacterName:setLeftRight( true, false, 125, 220 )
 				self.CharacterName:setTopBottom( true, false, 33, 51 )
 				self.CharacterName:setAlpha( 0 )
 				self.clipFinished( CharacterName, {} )
+
 				CharacterLoadout:completeAnimation()
 				self.CharacterLoadout:setLeftRight( true, false, 228, 323 )
 				self.CharacterLoadout:setTopBottom( true, false, 33, 51 )
 				self.CharacterLoadout:setAlpha( 0 )
 				self.clipFinished( CharacterLoadout, {} )
+
 				LineB1:completeAnimation()
 				self.LineB1:setLeftRight( true, false, 110, 346 )
 				self.LineB1:setTopBottom( true, false, -1, 3 )
 				self.clipFinished( LineB1, {} )
+
 				LineB00:completeAnimation()
 				self.LineB00:setLeftRight( true, false, 110, 346 )
 				self.LineB00:setTopBottom( true, false, 56, 60 )
 				self.clipFinished( LineB00, {} )
+
 				pixelA01:completeAnimation()
 				self.pixelA01:setLeftRight( true, false, 84, 120 )
 				self.pixelA01:setTopBottom( true, false, 14, 17.5 )
 				self.clipFinished( pixelA01, {} )
+
 				pixelA000:completeAnimation()
 				self.pixelA000:setLeftRight( true, false, 84, 120 )
 				self.pixelA000:setTopBottom( true, false, 40, 43.5 )
 				self.clipFinished( pixelA000, {} )
+
 				SizeElement:completeAnimation()
 				self.SizeElement:setLeftRight( true, false, 0, 425 )
 				self.SizeElement:setTopBottom( true, false, 0, 57 )
@@ -733,6 +757,7 @@ CoD.Pregame_Client.new = function ( menu, controller )
 			end,
 			CharacterDraftSelected = function ()
 				self:setupElementClipCounter( 21 )
+
 				local FEButtonPanel1Frame2 = function ( FEButtonPanel1, event )
 					if not event.interrupted then
 						FEButtonPanel1:beginAnimation( "keyframe", 239, false, false, CoD.TweenType.Linear )
@@ -801,11 +826,13 @@ CoD.Pregame_Client.new = function ( menu, controller )
 				self.RankIcon:setLeftRight( true, false, 81, 103 )
 				self.RankIcon:setTopBottom( true, false, 49, 70 )
 				RankIconFrame2( RankIcon, {} )
+
 				StateLeft:completeAnimation()
 				self.StateLeft:setLeftRight( true, false, 0, 27 )
 				self.StateLeft:setTopBottom( true, false, 15, 42 )
 				self.StateLeft:setAlpha( 1 )
 				self.clipFinished( StateLeft, {} )
+
 				StateRight:completeAnimation()
 				self.StateRight:setLeftRight( true, false, 378, 405 )
 				self.StateRight:setTopBottom( true, false, 14.49, 41.49 )
@@ -875,6 +902,7 @@ CoD.Pregame_Client.new = function ( menu, controller )
 				self.ImageX:setTopBottom( true, false, -1.4, 57.37 )
 				self.ImageX:setAlpha( 1 )
 				ImageXFrame2( ImageX, {} )
+
 				ImageBorder:completeAnimation()
 				self.ImageBorder:setLeftRight( true, false, 50, 108 )
 				self.ImageBorder:setTopBottom( true, false, 0, 57.37 )
@@ -1055,6 +1083,7 @@ CoD.Pregame_Client.new = function ( menu, controller )
 				self.pixelA000:setLeftRight( true, false, 84, 120 )
 				self.pixelA000:setTopBottom( true, false, 40, 43.5 )
 				pixelA000Frame2( pixelA000, {} )
+
 				SizeElement:completeAnimation()
 				self.SizeElement:setLeftRight( true, false, 0, 425 )
 				self.SizeElement:setTopBottom( true, false, 0, 57 )
@@ -1062,6 +1091,7 @@ CoD.Pregame_Client.new = function ( menu, controller )
 			end,
 			CharacterDraftForced = function ()
 				self:setupElementClipCounter( 21 )
+
 				local FEButtonPanel1Frame2 = function ( FEButtonPanel1, event )
 					if not event.interrupted then
 						FEButtonPanel1:beginAnimation( "keyframe", 239, false, false, CoD.TweenType.Linear )
@@ -1130,11 +1160,13 @@ CoD.Pregame_Client.new = function ( menu, controller )
 				self.RankIcon:setLeftRight( true, false, 81, 103 )
 				self.RankIcon:setTopBottom( true, false, 49, 70 )
 				RankIconFrame2( RankIcon, {} )
+
 				StateLeft:completeAnimation()
 				self.StateLeft:setLeftRight( true, false, 0, 27 )
 				self.StateLeft:setTopBottom( true, false, 15, 42 )
 				self.StateLeft:setAlpha( 1 )
 				self.clipFinished( StateLeft, {} )
+
 				StateRight:completeAnimation()
 				self.StateRight:setLeftRight( true, false, 378, 405 )
 				self.StateRight:setTopBottom( true, false, 14.49, 41.49 )
@@ -1204,6 +1236,7 @@ CoD.Pregame_Client.new = function ( menu, controller )
 				self.ImageX:setTopBottom( true, false, -1.4, 57.37 )
 				self.ImageX:setAlpha( 1 )
 				ImageXFrame2( ImageX, {} )
+
 				ImageBorder:completeAnimation()
 				self.ImageBorder:setLeftRight( true, false, 50, 108 )
 				self.ImageBorder:setTopBottom( true, false, 0, 57.37 )
@@ -1384,6 +1417,7 @@ CoD.Pregame_Client.new = function ( menu, controller )
 				self.pixelA000:setLeftRight( true, false, 84, 120 )
 				self.pixelA000:setTopBottom( true, false, 40, 43.5 )
 				pixelA000Frame2( pixelA000, {} )
+
 				SizeElement:completeAnimation()
 				self.SizeElement:setLeftRight( true, false, 0, 425 )
 				self.SizeElement:setTopBottom( true, false, 0, 57 )
@@ -1393,80 +1427,99 @@ CoD.Pregame_Client.new = function ( menu, controller )
 		CharacterDraftSelecting = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				FEButtonPanel1:completeAnimation()
 				self.FEButtonPanel1:setLeftRight( true, false, 114, 339.79 )
 				self.FEButtonPanel1:setTopBottom( true, false, 2.5, 54.66 )
 				self.clipFinished( FEButtonPanel1, {} )
+
 				RankBackground:completeAnimation()
 				self.RankBackground:setLeftRight( true, false, 50.21, 108 )
 				self.RankBackground:setTopBottom( true, false, 49, 70 )
 				self.clipFinished( RankBackground, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setLeftRight( true, false, 53.9, 76.79 )
 				self.Rank:setTopBottom( true, false, 47.05, 71.05 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setLeftRight( true, false, 81, 103 )
 				self.RankIcon:setTopBottom( true, false, 49, 70 )
 				self.clipFinished( RankIcon, {} )
+
 				PregamePlayerName0:completeAnimation()
 				self.PregamePlayerName0:setLeftRight( true, false, 120, 339.79 )
 				self.PregamePlayerName0:setTopBottom( true, false, 15.08, 38.58 )
 				self.clipFinished( PregamePlayerName0, {} )
+
 				pixelA0:completeAnimation()
 				self.pixelA0:setLeftRight( true, false, 333, 369 )
 				self.pixelA0:setTopBottom( true, false, -1, 2.5 )
 				self.clipFinished( pixelA0, {} )
+
 				ImageX:completeAnimation()
 				self.ImageX:setAlpha( 1 )
 				self.clipFinished( ImageX, {} )
+
 				ImageBorder:completeAnimation()
 				self.ImageBorder:setLeftRight( true, false, 50, 108 )
 				self.ImageBorder:setTopBottom( true, false, 0, 57.37 )
 				self.clipFinished( ImageBorder, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, false, 41.71, 57.71 )
 				self.Image0:setTopBottom( true, false, 57.5, 69.5 )
 				self.clipFinished( Image0, {} )
+
 				CharacterRender:completeAnimation()
 				self.CharacterRender:setLeftRight( true, false, 47.71, 108.5 )
 				self.CharacterRender:setTopBottom( true, false, -0.4, 60.4 )
 				self.CharacterRender:setAlpha( 0 )
 				self.clipFinished( CharacterRender, {} )
+
 				pixelA00:completeAnimation()
 				self.pixelA00:setLeftRight( true, false, 333, 369 )
 				self.pixelA00:setTopBottom( true, false, 56, 59.5 )
 				self.clipFinished( pixelA00, {} )
+
 				Image00:completeAnimation()
 				self.Image00:setLeftRight( true, false, 41.71, 57.71 )
 				self.Image00:setTopBottom( true, false, -11, 1 )
 				self.clipFinished( Image00, {} )
+
 				CharacterName:completeAnimation()
 				self.CharacterName:setLeftRight( true, false, 125, 220 )
 				self.CharacterName:setTopBottom( true, false, 33, 51 )
 				self.CharacterName:setAlpha( 0 )
 				self.clipFinished( CharacterName, {} )
+
 				CharacterLoadout:completeAnimation()
 				self.CharacterLoadout:setLeftRight( true, false, 228, 323 )
 				self.CharacterLoadout:setTopBottom( true, false, 33, 51 )
 				self.CharacterLoadout:setAlpha( 0 )
 				self.clipFinished( CharacterLoadout, {} )
+
 				LineB1:completeAnimation()
 				self.LineB1:setLeftRight( true, false, 110, 346 )
 				self.LineB1:setTopBottom( true, false, -1, 3 )
 				self.clipFinished( LineB1, {} )
+
 				LineB00:completeAnimation()
 				self.LineB00:setLeftRight( true, false, 110, 346 )
 				self.LineB00:setTopBottom( true, false, 56, 60 )
 				self.clipFinished( LineB00, {} )
+
 				pixelA01:completeAnimation()
 				self.pixelA01:setLeftRight( true, false, 84, 120 )
 				self.pixelA01:setTopBottom( true, false, 14, 17.5 )
 				self.clipFinished( pixelA01, {} )
+
 				pixelA000:completeAnimation()
 				self.pixelA000:setLeftRight( true, false, 84, 120 )
 				self.pixelA000:setTopBottom( true, false, 40, 43.5 )
 				self.clipFinished( pixelA000, {} )
+
 				SizeElement:completeAnimation()
 				self.SizeElement:setLeftRight( true, false, 0, 425 )
 				self.SizeElement:setTopBottom( true, false, 0, 57 )
@@ -1474,6 +1527,7 @@ CoD.Pregame_Client.new = function ( menu, controller )
 			end,
 			CharacterDraftSelected = function ()
 				self:setupElementClipCounter( 21 )
+
 				local FEButtonPanel1Frame2 = function ( FEButtonPanel1, event )
 					if not event.interrupted then
 						FEButtonPanel1:beginAnimation( "keyframe", 239, false, false, CoD.TweenType.Linear )
@@ -1542,11 +1596,13 @@ CoD.Pregame_Client.new = function ( menu, controller )
 				self.RankIcon:setLeftRight( true, false, 81, 103 )
 				self.RankIcon:setTopBottom( true, false, 49, 70 )
 				RankIconFrame2( RankIcon, {} )
+
 				StateLeft:completeAnimation()
 				self.StateLeft:setLeftRight( true, false, 0, 27 )
 				self.StateLeft:setTopBottom( true, false, 15, 42 )
 				self.StateLeft:setAlpha( 1 )
 				self.clipFinished( StateLeft, {} )
+
 				StateRight:completeAnimation()
 				self.StateRight:setLeftRight( true, false, 378, 405 )
 				self.StateRight:setTopBottom( true, false, 14.49, 41.49 )
@@ -1616,6 +1672,7 @@ CoD.Pregame_Client.new = function ( menu, controller )
 				self.ImageX:setTopBottom( true, false, -1.4, 57.37 )
 				self.ImageX:setAlpha( 1 )
 				ImageXFrame2( ImageX, {} )
+
 				ImageBorder:completeAnimation()
 				self.ImageBorder:setLeftRight( true, false, 50, 108 )
 				self.ImageBorder:setTopBottom( true, false, 0, 57.37 )
@@ -1796,6 +1853,7 @@ CoD.Pregame_Client.new = function ( menu, controller )
 				self.pixelA000:setLeftRight( true, false, 84, 120 )
 				self.pixelA000:setTopBottom( true, false, 40, 43.5 )
 				pixelA000Frame2( pixelA000, {} )
+
 				SizeElement:completeAnimation()
 				self.SizeElement:setLeftRight( true, false, 0, 425 )
 				self.SizeElement:setTopBottom( true, false, 0, 57 )
@@ -1803,6 +1861,7 @@ CoD.Pregame_Client.new = function ( menu, controller )
 			end,
 			CharacterDraftForced = function ()
 				self:setupElementClipCounter( 21 )
+
 				local FEButtonPanel1Frame2 = function ( FEButtonPanel1, event )
 					if not event.interrupted then
 						FEButtonPanel1:beginAnimation( "keyframe", 239, false, false, CoD.TweenType.Linear )
@@ -1871,11 +1930,13 @@ CoD.Pregame_Client.new = function ( menu, controller )
 				self.RankIcon:setLeftRight( true, false, 81, 103 )
 				self.RankIcon:setTopBottom( true, false, 49, 70 )
 				RankIconFrame2( RankIcon, {} )
+
 				StateLeft:completeAnimation()
 				self.StateLeft:setLeftRight( true, false, 0, 27 )
 				self.StateLeft:setTopBottom( true, false, 15, 42 )
 				self.StateLeft:setAlpha( 1 )
 				self.clipFinished( StateLeft, {} )
+
 				StateRight:completeAnimation()
 				self.StateRight:setLeftRight( true, false, 378, 405 )
 				self.StateRight:setTopBottom( true, false, 14.49, 41.49 )
@@ -1945,6 +2006,7 @@ CoD.Pregame_Client.new = function ( menu, controller )
 				self.ImageX:setTopBottom( true, false, -1.4, 57.37 )
 				self.ImageX:setAlpha( 1 )
 				ImageXFrame2( ImageX, {} )
+
 				ImageBorder:completeAnimation()
 				self.ImageBorder:setLeftRight( true, false, 50, 108 )
 				self.ImageBorder:setTopBottom( true, false, 0, 57.37 )
@@ -2125,6 +2187,7 @@ CoD.Pregame_Client.new = function ( menu, controller )
 				self.pixelA000:setLeftRight( true, false, 84, 120 )
 				self.pixelA000:setTopBottom( true, false, 40, 43.5 )
 				pixelA000Frame2( pixelA000, {} )
+
 				SizeElement:completeAnimation()
 				self.SizeElement:setLeftRight( true, false, 0, 425 )
 				self.SizeElement:setTopBottom( true, false, 0, 57 )
@@ -2134,67 +2197,83 @@ CoD.Pregame_Client.new = function ( menu, controller )
 		CharacterDraftSelected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				FEButtonPanel1:completeAnimation()
 				self.FEButtonPanel1:setLeftRight( true, false, 114, 339.79 )
 				self.FEButtonPanel1:setTopBottom( true, false, 2.5, 54.66 )
 				self.clipFinished( FEButtonPanel1, {} )
+
 				RankBackground:completeAnimation()
 				self.RankBackground:setLeftRight( true, false, 50.21, 108 )
 				self.RankBackground:setTopBottom( true, false, 49, 70 )
 				self.clipFinished( RankBackground, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setLeftRight( true, false, 53.9, 76.79 )
 				self.Rank:setTopBottom( true, false, 47.05, 71.05 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setLeftRight( true, false, 81, 103 )
 				self.RankIcon:setTopBottom( true, false, 49, 70 )
 				self.clipFinished( RankIcon, {} )
+
 				PregamePlayerName0:completeAnimation()
 				self.PregamePlayerName0:setLeftRight( true, false, 120, 339.79 )
 				self.PregamePlayerName0:setTopBottom( true, false, 8, 32 )
 				self.clipFinished( PregamePlayerName0, {} )
+
 				pixelA0:completeAnimation()
 				self.pixelA0:setLeftRight( true, false, 333, 369 )
 				self.pixelA0:setTopBottom( true, false, -1, 2.5 )
 				self.clipFinished( pixelA0, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, false, 41.71, 57.71 )
 				self.Image0:setTopBottom( true, false, 57.5, 69.5 )
 				self.clipFinished( Image0, {} )
+
 				CharacterRender:completeAnimation()
 				self.CharacterRender:setAlpha( 1 )
 				self.clipFinished( CharacterRender, {} )
+
 				pixelA00:completeAnimation()
 				self.pixelA00:setLeftRight( true, false, 333, 369 )
 				self.pixelA00:setTopBottom( true, false, 56, 59.5 )
 				self.clipFinished( pixelA00, {} )
+
 				Image00:completeAnimation()
 				self.Image00:setLeftRight( true, false, 41.71, 57.71 )
 				self.Image00:setTopBottom( true, false, -11, 1 )
 				self.clipFinished( Image00, {} )
+
 				CharacterName:completeAnimation()
 				self.CharacterName:setLeftRight( true, false, 125, 220 )
 				self.CharacterName:setTopBottom( true, false, 33, 51 )
 				self.CharacterName:setAlpha( 0.75 )
 				self.clipFinished( CharacterName, {} )
+
 				CharacterLoadout:completeAnimation()
 				self.CharacterLoadout:setLeftRight( true, false, 228, 323 )
 				self.CharacterLoadout:setTopBottom( true, false, 33, 51 )
 				self.CharacterLoadout:setAlpha( 0.75 )
 				self.clipFinished( CharacterLoadout, {} )
+
 				LineB1:completeAnimation()
 				self.LineB1:setLeftRight( true, false, 110, 346 )
 				self.LineB1:setTopBottom( true, false, -1, 3 )
 				self.clipFinished( LineB1, {} )
+
 				LineB00:completeAnimation()
 				self.LineB00:setLeftRight( true, false, 110, 346 )
 				self.LineB00:setTopBottom( true, false, 56, 60 )
 				self.clipFinished( LineB00, {} )
+
 				pixelA01:completeAnimation()
 				self.pixelA01:setLeftRight( true, false, 84, 120 )
 				self.pixelA01:setTopBottom( true, false, 14, 17.5 )
 				self.clipFinished( pixelA01, {} )
+
 				pixelA000:completeAnimation()
 				self.pixelA000:setLeftRight( true, false, 84, 120 )
 				self.pixelA000:setTopBottom( true, false, 40, 43.5 )
@@ -2204,67 +2283,83 @@ CoD.Pregame_Client.new = function ( menu, controller )
 		CACEdit = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				FEButtonPanel1:completeAnimation()
 				self.FEButtonPanel1:setLeftRight( true, false, 114, 339.79 )
 				self.FEButtonPanel1:setTopBottom( true, false, 2.5, 54.66 )
 				self.clipFinished( FEButtonPanel1, {} )
+
 				RankBackground:completeAnimation()
 				self.RankBackground:setLeftRight( true, false, 50.21, 108 )
 				self.RankBackground:setTopBottom( true, false, 49, 70 )
 				self.clipFinished( RankBackground, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setLeftRight( true, false, 53.9, 76.79 )
 				self.Rank:setTopBottom( true, false, 47.05, 71.05 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setLeftRight( true, false, 81, 103 )
 				self.RankIcon:setTopBottom( true, false, 49, 70 )
 				self.clipFinished( RankIcon, {} )
+
 				PregamePlayerName0:completeAnimation()
 				self.PregamePlayerName0:setLeftRight( true, false, 120, 339.79 )
 				self.PregamePlayerName0:setTopBottom( true, false, 8, 32 )
 				self.clipFinished( PregamePlayerName0, {} )
+
 				pixelA0:completeAnimation()
 				self.pixelA0:setLeftRight( true, false, 333, 369 )
 				self.pixelA0:setTopBottom( true, false, -1, 2.5 )
 				self.clipFinished( pixelA0, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, false, 41.71, 57.71 )
 				self.Image0:setTopBottom( true, false, 57.5, 69.5 )
 				self.clipFinished( Image0, {} )
+
 				CharacterRender:completeAnimation()
 				self.CharacterRender:setAlpha( 1 )
 				self.clipFinished( CharacterRender, {} )
+
 				pixelA00:completeAnimation()
 				self.pixelA00:setLeftRight( true, false, 333, 369 )
 				self.pixelA00:setTopBottom( true, false, 56, 59.5 )
 				self.clipFinished( pixelA00, {} )
+
 				Image00:completeAnimation()
 				self.Image00:setLeftRight( true, false, 41.71, 57.71 )
 				self.Image00:setTopBottom( true, false, -11, 1 )
 				self.clipFinished( Image00, {} )
+
 				CharacterName:completeAnimation()
 				self.CharacterName:setLeftRight( true, false, 125, 220 )
 				self.CharacterName:setTopBottom( true, false, 33, 51 )
 				self.CharacterName:setAlpha( 0.75 )
 				self.clipFinished( CharacterName, {} )
+
 				CharacterLoadout:completeAnimation()
 				self.CharacterLoadout:setLeftRight( true, false, 228, 323 )
 				self.CharacterLoadout:setTopBottom( true, false, 33, 51 )
 				self.CharacterLoadout:setAlpha( 0.75 )
 				self.clipFinished( CharacterLoadout, {} )
+
 				LineB1:completeAnimation()
 				self.LineB1:setLeftRight( true, false, 110, 346 )
 				self.LineB1:setTopBottom( true, false, -1, 3 )
 				self.clipFinished( LineB1, {} )
+
 				LineB00:completeAnimation()
 				self.LineB00:setLeftRight( true, false, 110, 346 )
 				self.LineB00:setTopBottom( true, false, 56, 60 )
 				self.clipFinished( LineB00, {} )
+
 				pixelA01:completeAnimation()
 				self.pixelA01:setLeftRight( true, false, 84, 120 )
 				self.pixelA01:setTopBottom( true, false, 14, 17.5 )
 				self.clipFinished( pixelA01, {} )
+
 				pixelA000:completeAnimation()
 				self.pixelA000:setLeftRight( true, false, 84, 120 )
 				self.pixelA000:setTopBottom( true, false, 40, 43.5 )
@@ -2274,67 +2369,83 @@ CoD.Pregame_Client.new = function ( menu, controller )
 		StreakEdit = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				FEButtonPanel1:completeAnimation()
 				self.FEButtonPanel1:setLeftRight( true, false, 114, 339.79 )
 				self.FEButtonPanel1:setTopBottom( true, false, 2.5, 54.66 )
 				self.clipFinished( FEButtonPanel1, {} )
+
 				RankBackground:completeAnimation()
 				self.RankBackground:setLeftRight( true, false, 50.21, 108 )
 				self.RankBackground:setTopBottom( true, false, 49, 70 )
 				self.clipFinished( RankBackground, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setLeftRight( true, false, 53.9, 76.79 )
 				self.Rank:setTopBottom( true, false, 47.05, 71.05 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setLeftRight( true, false, 81, 103 )
 				self.RankIcon:setTopBottom( true, false, 49, 70 )
 				self.clipFinished( RankIcon, {} )
+
 				PregamePlayerName0:completeAnimation()
 				self.PregamePlayerName0:setLeftRight( true, false, 120, 339.79 )
 				self.PregamePlayerName0:setTopBottom( true, false, 8, 32 )
 				self.clipFinished( PregamePlayerName0, {} )
+
 				pixelA0:completeAnimation()
 				self.pixelA0:setLeftRight( true, false, 333, 369 )
 				self.pixelA0:setTopBottom( true, false, -1, 2.5 )
 				self.clipFinished( pixelA0, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, false, 41.71, 57.71 )
 				self.Image0:setTopBottom( true, false, 57.5, 69.5 )
 				self.clipFinished( Image0, {} )
+
 				CharacterRender:completeAnimation()
 				self.CharacterRender:setAlpha( 1 )
 				self.clipFinished( CharacterRender, {} )
+
 				pixelA00:completeAnimation()
 				self.pixelA00:setLeftRight( true, false, 333, 369 )
 				self.pixelA00:setTopBottom( true, false, 56, 59.5 )
 				self.clipFinished( pixelA00, {} )
+
 				Image00:completeAnimation()
 				self.Image00:setLeftRight( true, false, 41.71, 57.71 )
 				self.Image00:setTopBottom( true, false, -11, 1 )
 				self.clipFinished( Image00, {} )
+
 				CharacterName:completeAnimation()
 				self.CharacterName:setLeftRight( true, false, 125, 220 )
 				self.CharacterName:setTopBottom( true, false, 33, 51 )
 				self.CharacterName:setAlpha( 0.75 )
 				self.clipFinished( CharacterName, {} )
+
 				CharacterLoadout:completeAnimation()
 				self.CharacterLoadout:setLeftRight( true, false, 228, 323 )
 				self.CharacterLoadout:setTopBottom( true, false, 33, 51 )
 				self.CharacterLoadout:setAlpha( 0.75 )
 				self.clipFinished( CharacterLoadout, {} )
+
 				LineB1:completeAnimation()
 				self.LineB1:setLeftRight( true, false, 110, 346 )
 				self.LineB1:setTopBottom( true, false, -1, 3 )
 				self.clipFinished( LineB1, {} )
+
 				LineB00:completeAnimation()
 				self.LineB00:setLeftRight( true, false, 110, 346 )
 				self.LineB00:setTopBottom( true, false, 56, 60 )
 				self.clipFinished( LineB00, {} )
+
 				pixelA01:completeAnimation()
 				self.pixelA01:setLeftRight( true, false, 84, 120 )
 				self.pixelA01:setTopBottom( true, false, 14, 17.5 )
 				self.clipFinished( pixelA01, {} )
+
 				pixelA000:completeAnimation()
 				self.pixelA000:setLeftRight( true, false, 84, 120 )
 				self.pixelA000:setTopBottom( true, false, 40, 43.5 )
@@ -2342,6 +2453,7 @@ CoD.Pregame_Client.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ItemRestriction",
@@ -2396,6 +2508,7 @@ CoD.Pregame_Client.new = function ( menu, controller )
 			modelName = "clientState"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel1:close()
 		element.RankBackground:close()

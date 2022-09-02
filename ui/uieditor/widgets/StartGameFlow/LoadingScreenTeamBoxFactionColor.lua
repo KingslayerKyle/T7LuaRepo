@@ -4,9 +4,11 @@
 CoD.LoadingScreenTeamBoxFactionColor = InheritFrom( LUI.UIElement )
 CoD.LoadingScreenTeamBoxFactionColor.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LoadingScreenTeamBoxFactionColor )
 	self.id = "LoadingScreenTeamBoxFactionColor"
@@ -27,6 +29,7 @@ CoD.LoadingScreenTeamBoxFactionColor.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FactionCOlorBox:completeAnimation()
 				self.FactionCOlorBox:setAlpha( 0 )
 				self.clipFinished( FactionCOlorBox, {} )
@@ -35,6 +38,7 @@ CoD.LoadingScreenTeamBoxFactionColor.new = function ( menu, controller )
 		FactionAxis = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FactionCOlorBox:completeAnimation()
 				self.FactionCOlorBox:setRGB( ColorSet.FactionAxis.r, ColorSet.FactionAxis.g, ColorSet.FactionAxis.b )
 				self.FactionCOlorBox:setAlpha( 1 )
@@ -44,6 +48,7 @@ CoD.LoadingScreenTeamBoxFactionColor.new = function ( menu, controller )
 		FactionAllie = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FactionCOlorBox:completeAnimation()
 				self.FactionCOlorBox:setRGB( ColorSet.FactionAllies.r, ColorSet.FactionAllies.g, ColorSet.FactionAllies.b )
 				self.FactionCOlorBox:setAlpha( 1 )

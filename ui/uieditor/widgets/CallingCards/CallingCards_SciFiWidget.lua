@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_Scifi_Fog" )
 CoD.CallingCards_SciFiWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_SciFiWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_SciFiWidget )
 	self.id = "CallingCards_SciFiWidget"
@@ -86,6 +88,7 @@ CoD.CallingCards_SciFiWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local GlowFrame2 = function ( Glow, event )
 					local GlowFrame3 = function ( Glow, event )
 						local GlowFrame4 = function ( Glow, event )
@@ -134,10 +137,12 @@ CoD.CallingCards_SciFiWidget.new = function ( menu, controller )
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 1 )
 				GlowFrame2( Glow, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardsSciFiufolights:close()
 		element.CallingCardsSciFiSteam:close()

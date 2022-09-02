@@ -23,9 +23,11 @@ end
 CoD.GobbleGumCookBookIcon = InheritFrom( LUI.UIElement )
 CoD.GobbleGumCookBookIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GobbleGumCookBookIcon )
 	self.id = "GobbleGumCookBookIcon"
@@ -112,12 +114,15 @@ CoD.GobbleGumCookBookIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				shadow:completeAnimation()
 				self.shadow:setAlpha( 1 )
 				self.clipFinished( shadow, {} )
+
 				GridItemBGBGlow:completeAnimation()
 				self.GridItemBGBGlow:setAlpha( 0 )
 				self.clipFinished( GridItemBGBGlow, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.itemImage:setScale( 0.8 )
@@ -127,12 +132,15 @@ CoD.GobbleGumCookBookIcon.new = function ( menu, controller )
 		NoConsumablesRemaining = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				shadow:completeAnimation()
 				self.shadow:setAlpha( 1 )
 				self.clipFinished( shadow, {} )
+
 				GridItemBGBGlow:completeAnimation()
 				self.GridItemBGBGlow:setAlpha( 0.1 )
 				self.clipFinished( GridItemBGBGlow, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.itemImage:setScale( 0.8 )
@@ -140,6 +148,7 @@ CoD.GobbleGumCookBookIcon.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoConsumablesRemaining",
@@ -156,6 +165,7 @@ CoD.GobbleGumCookBookIcon.new = function ( menu, controller )
 			modelName = "itemIndex"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GridItemBGBGlow:close()
 		element.ConsumableLabel:close()

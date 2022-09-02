@@ -24,9 +24,11 @@ end
 CoD.GunsmithVariantAttachments = InheritFrom( LUI.UIElement )
 CoD.GunsmithVariantAttachments.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunsmithVariantAttachments )
 	self.id = "GunsmithVariantAttachments"
@@ -1346,50 +1348,60 @@ CoD.GunsmithVariantAttachments.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Optic:completeAnimation()
 				self.Optic:setLeftRight( true, false, 0, 64 )
 				self.Optic:setTopBottom( true, false, 24, 88 )
 				self.Optic:setAlpha( 1 )
 				self.clipFinished( Optic, {} )
+
 				Attachment1:completeAnimation()
 				self.Attachment1:setLeftRight( true, false, 111.67, 175.67 )
 				self.Attachment1:setTopBottom( true, false, 24, 88 )
 				self.Attachment1:setAlpha( 1 )
 				self.clipFinished( Attachment1, {} )
+
 				Attachment2:completeAnimation()
 				self.Attachment2:setLeftRight( true, false, 180.67, 244.67 )
 				self.Attachment2:setTopBottom( true, false, 24, 88 )
 				self.Attachment2:setAlpha( 1 )
 				self.clipFinished( Attachment2, {} )
+
 				Attachment3:completeAnimation()
 				self.Attachment3:setLeftRight( true, false, 249.67, 313.67 )
 				self.Attachment3:setTopBottom( true, false, 24, 88 )
 				self.Attachment3:setAlpha( 1 )
 				self.clipFinished( Attachment3, {} )
+
 				Attachment4:completeAnimation()
 				self.Attachment4:setLeftRight( true, false, 320.1, 384.1 )
 				self.Attachment4:setTopBottom( true, false, 24, 88 )
 				self.Attachment4:setAlpha( 1 )
 				self.clipFinished( Attachment4, {} )
+
 				Attachment5:completeAnimation()
 				self.Attachment5:setLeftRight( true, false, 389.1, 453.1 )
 				self.Attachment5:setTopBottom( true, false, 24, 88 )
 				self.Attachment5:setAlpha( 1 )
 				self.clipFinished( Attachment5, {} )
+
 				paintjob:completeAnimation()
 				self.paintjob:setLeftRight( true, false, 501.77, 565.77 )
 				self.paintjob:setTopBottom( true, false, 24, 88 )
 				self.paintjob:setAlpha( 1 )
 				self.clipFinished( paintjob, {} )
+
 				Camo:completeAnimation()
 				self.Camo:setLeftRight( true, false, 611.44, 675.44 )
 				self.Camo:setTopBottom( true, false, 24, 88 )
 				self.Camo:setAlpha( 1 )
 				self.clipFinished( Camo, {} )
+
 				snapshot:completeAnimation()
 				self.snapshot:setLeftRight( true, false, 715.44, 779.44 )
 				self.snapshot:setTopBottom( true, false, 24, 88 )
 				self.clipFinished( snapshot, {} )
+
 				snapshotHeader:completeAnimation()
 				self.snapshotHeader:setLeftRight( true, false, 713.77, 829.44 )
 				self.snapshotHeader:setTopBottom( true, false, 0, 17 )
@@ -1399,62 +1411,80 @@ CoD.GunsmithVariantAttachments.new = function ( menu, controller )
 		SpecialWeapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				Optic:completeAnimation()
 				self.Optic:setAlpha( 0 )
 				self.clipFinished( Optic, {} )
+
 				Attachment1:completeAnimation()
 				self.Attachment1:setAlpha( 0 )
 				self.clipFinished( Attachment1, {} )
+
 				Attachment2:completeAnimation()
 				self.Attachment2:setAlpha( 0 )
 				self.clipFinished( Attachment2, {} )
+
 				Attachment3:completeAnimation()
 				self.Attachment3:setAlpha( 0 )
 				self.clipFinished( Attachment3, {} )
+
 				Attachment4:completeAnimation()
 				self.Attachment4:setAlpha( 0 )
 				self.clipFinished( Attachment4, {} )
+
 				Attachment5:completeAnimation()
 				self.Attachment5:setAlpha( 0 )
 				self.clipFinished( Attachment5, {} )
+
 				paintjob:completeAnimation()
 				self.paintjob:setLeftRight( true, false, 1, 65 )
 				self.paintjob:setTopBottom( true, false, 24, 88 )
 				self.paintjob:setAlpha( 1 )
 				self.clipFinished( paintjob, {} )
+
 				Camo:completeAnimation()
 				self.Camo:setLeftRight( true, false, 110.67, 174.67 )
 				self.Camo:setTopBottom( true, false, 24, 88 )
 				self.Camo:setAlpha( 1 )
 				self.clipFinished( Camo, {} )
+
 				OpticsHeader:completeAnimation()
+
 				OpticsHeader.text:completeAnimation()
 				self.OpticsHeader:setAlpha( 0 )
 				self.OpticsHeader.text:setText( Engine.Localize( "MPUI_OPTICS_CAPS" ) )
 				self.clipFinished( OpticsHeader, {} )
+
 				AttachmentsHeader:completeAnimation()
+
 				AttachmentsHeader.text:completeAnimation()
 				self.AttachmentsHeader:setAlpha( 0 )
 				self.AttachmentsHeader.text:setText( Engine.Localize( "MPUI_ATTACHMENTS_CAPS" ) )
 				self.clipFinished( AttachmentsHeader, {} )
+
 				PaintjobHeader:completeAnimation()
+
 				PaintjobHeader.text:completeAnimation()
 				self.PaintjobHeader:setLeftRight( true, false, 1, 109 )
 				self.PaintjobHeader:setTopBottom( true, false, 0, 17 )
 				self.PaintjobHeader:setAlpha( 1 )
 				self.PaintjobHeader.text:setText( Engine.Localize( "MENU_PAINTSHOP_PAINTJOB" ) )
 				self.clipFinished( PaintjobHeader, {} )
+
 				CamoHeader:completeAnimation()
+
 				CamoHeader.text:completeAnimation()
 				self.CamoHeader:setLeftRight( true, false, 111.67, 201.9 )
 				self.CamoHeader:setTopBottom( true, false, 0, 17 )
 				self.CamoHeader:setAlpha( 1 )
 				self.CamoHeader.text:setText( Engine.Localize( "MPUI_CAMO_CAPS" ) )
 				self.clipFinished( CamoHeader, {} )
+
 				snapshot:completeAnimation()
 				self.snapshot:setLeftRight( true, false, 218.38, 282.38 )
 				self.snapshot:setTopBottom( true, false, 24, 88 )
 				self.clipFinished( snapshot, {} )
+
 				snapshotHeader:completeAnimation()
 				self.snapshotHeader:setLeftRight( true, false, 216.72, 332.38 )
 				self.snapshotHeader:setTopBottom( true, false, 0, 17 )
@@ -1464,78 +1494,96 @@ CoD.GunsmithVariantAttachments.new = function ( menu, controller )
 		Handguns = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				Optic:completeAnimation()
 				self.Optic:setLeftRight( true, false, 0, 64 )
 				self.Optic:setTopBottom( true, false, 24, 88 )
 				self.Optic:setAlpha( 1 )
 				self.clipFinished( Optic, {} )
+
 				Attachment1:completeAnimation()
 				self.Attachment1:setLeftRight( true, false, 111.67, 175.67 )
 				self.Attachment1:setTopBottom( true, false, 24, 88 )
 				self.Attachment1:setAlpha( 1 )
 				self.clipFinished( Attachment1, {} )
+
 				Attachment2:completeAnimation()
 				self.Attachment2:setLeftRight( true, false, 180.67, 244.67 )
 				self.Attachment2:setTopBottom( true, false, 24, 88 )
 				self.Attachment2:setAlpha( 1 )
 				self.clipFinished( Attachment2, {} )
+
 				Attachment3:completeAnimation()
 				self.Attachment3:setLeftRight( true, false, 249.67, 313.67 )
 				self.Attachment3:setTopBottom( true, false, 24, 88 )
 				self.Attachment3:setAlpha( 0 )
 				self.clipFinished( Attachment3, {} )
+
 				Attachment4:completeAnimation()
 				self.Attachment4:setLeftRight( true, false, 320.1, 384.1 )
 				self.Attachment4:setTopBottom( true, false, 24, 88 )
 				self.Attachment4:setAlpha( 0 )
 				self.clipFinished( Attachment4, {} )
+
 				Attachment5:completeAnimation()
 				self.Attachment5:setLeftRight( true, false, 389.1, 453.1 )
 				self.Attachment5:setTopBottom( true, false, 24, 88 )
 				self.Attachment5:setAlpha( 0 )
 				self.clipFinished( Attachment5, {} )
+
 				paintjob:completeAnimation()
 				self.paintjob:setLeftRight( true, false, 294.1, 358.1 )
 				self.paintjob:setTopBottom( true, false, 24, 88 )
 				self.paintjob:setAlpha( 1 )
 				self.clipFinished( paintjob, {} )
+
 				Camo:completeAnimation()
 				self.Camo:setLeftRight( true, false, 402.1, 466.1 )
 				self.Camo:setTopBottom( true, false, 24, 88 )
 				self.Camo:setAlpha( 1 )
 				self.clipFinished( Camo, {} )
+
 				OpticsHeader:completeAnimation()
+
 				OpticsHeader.text:completeAnimation()
 				self.OpticsHeader:setLeftRight( true, false, 1, 109 )
 				self.OpticsHeader:setTopBottom( true, false, 0, 17 )
 				self.OpticsHeader:setAlpha( 1 )
 				self.OpticsHeader.text:setText( Engine.Localize( "MPUI_OPTICS_CAPS" ) )
 				self.clipFinished( OpticsHeader, {} )
+
 				AttachmentsHeader:completeAnimation()
+
 				AttachmentsHeader.text:completeAnimation()
 				self.AttachmentsHeader:setLeftRight( true, false, 111.67, 313.67 )
 				self.AttachmentsHeader:setTopBottom( true, false, 0, 17 )
 				self.AttachmentsHeader:setAlpha( 1 )
 				self.AttachmentsHeader.text:setText( Engine.Localize( "MPUI_ATTACHMENTS_CAPS" ) )
 				self.clipFinished( AttachmentsHeader, {} )
+
 				PaintjobHeader:completeAnimation()
+
 				PaintjobHeader.text:completeAnimation()
 				self.PaintjobHeader:setLeftRight( true, false, 294.1, 402.1 )
 				self.PaintjobHeader:setTopBottom( true, false, 0, 17 )
 				self.PaintjobHeader:setAlpha( 1 )
 				self.PaintjobHeader.text:setText( Engine.Localize( "MENU_PAINTSHOP_PAINTJOB" ) )
 				self.clipFinished( PaintjobHeader, {} )
+
 				CamoHeader:completeAnimation()
+
 				CamoHeader.text:completeAnimation()
 				self.CamoHeader:setLeftRight( true, false, 402.1, 492.33 )
 				self.CamoHeader:setTopBottom( true, false, 0, 17 )
 				self.CamoHeader:setAlpha( 1 )
 				self.CamoHeader.text:setText( Engine.Localize( "MPUI_CAMO_CAPS" ) )
 				self.clipFinished( CamoHeader, {} )
+
 				snapshot:completeAnimation()
 				self.snapshot:setLeftRight( true, false, 512.44, 576.44 )
 				self.snapshot:setTopBottom( true, false, 24, 88 )
 				self.clipFinished( snapshot, {} )
+
 				snapshotHeader:completeAnimation()
 				self.snapshotHeader:setLeftRight( true, false, 510.77, 626.44 )
 				self.snapshotHeader:setTopBottom( true, false, 0, 17 )
@@ -1545,30 +1593,36 @@ CoD.GunsmithVariantAttachments.new = function ( menu, controller )
 		ArabicFrontEnd = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				OpticsHeader:completeAnimation()
 				self.OpticsHeader:setLeftRight( true, false, 1, 64 )
 				self.OpticsHeader:setTopBottom( true, false, 0, 17 )
 				self.OpticsHeader:setAlpha( 1 )
 				self.clipFinished( OpticsHeader, {} )
+
 				AttachmentsHeader:completeAnimation()
 				self.AttachmentsHeader:setLeftRight( true, false, 111.67, 453.1 )
 				self.AttachmentsHeader:setTopBottom( true, false, 0, 17 )
 				self.AttachmentsHeader:setAlpha( 1 )
 				self.clipFinished( AttachmentsHeader, {} )
+
 				PaintjobHeader:completeAnimation()
 				self.PaintjobHeader:setLeftRight( true, false, 501.77, 565.77 )
 				self.PaintjobHeader:setTopBottom( true, false, 0, 17 )
 				self.PaintjobHeader:setAlpha( 1 )
 				self.clipFinished( PaintjobHeader, {} )
+
 				CamoHeader:completeAnimation()
 				self.CamoHeader:setLeftRight( true, false, 611.44, 675.44 )
 				self.CamoHeader:setTopBottom( true, false, 0, 17 )
 				self.CamoHeader:setAlpha( 1 )
 				self.clipFinished( CamoHeader, {} )
+
 				snapshot:completeAnimation()
 				self.snapshot:setLeftRight( true, false, 715.44, 779.44 )
 				self.snapshot:setTopBottom( true, false, 24, 88 )
 				self.clipFinished( snapshot, {} )
+
 				snapshotHeader:completeAnimation()
 				self.snapshotHeader:setLeftRight( true, false, 713.77, 829.44 )
 				self.snapshotHeader:setTopBottom( true, false, 0, 17 )
@@ -1576,6 +1630,7 @@ CoD.GunsmithVariantAttachments.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "SpecialWeapon",
@@ -1603,6 +1658,7 @@ CoD.GunsmithVariantAttachments.new = function ( menu, controller )
 		}
 	} )
 	CoD.Menu.AddNavigationHandler( menu, self, controller )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsElementInState( element, "SpecialWeapon" ) then
 			MakeElementNotFocusable( self, "Attachment1", controller )
@@ -1635,6 +1691,7 @@ CoD.GunsmithVariantAttachments.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Optic:close()
 		element.Attachment1:close()

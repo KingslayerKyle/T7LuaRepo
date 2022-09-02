@@ -18,6 +18,7 @@ CoD.SearchingForPlayer_Flipped.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SearchingForPlayer_Flipped )
 	self.id = "SearchingForPlayer_Flipped"
@@ -69,6 +70,7 @@ CoD.SearchingForPlayer_Flipped.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local Dot3Frame2 = function ( Dot3, event )
 					local Dot3Frame3 = function ( Dot3, event )
 						local Dot3Frame4 = function ( Dot3, event )
@@ -255,6 +257,7 @@ CoD.SearchingForPlayer_Flipped.new = function ( menu, controller )
 				Dot0:completeAnimation()
 				self.Dot0:setAlpha( 1 )
 				Dot0Frame2( Dot0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

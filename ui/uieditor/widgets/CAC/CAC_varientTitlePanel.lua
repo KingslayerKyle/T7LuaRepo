@@ -4,9 +4,11 @@
 CoD.CAC_varientTitlePanel = InheritFrom( LUI.UIElement )
 CoD.CAC_varientTitlePanel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CAC_varientTitlePanel )
 	self.id = "CAC_varientTitlePanel"

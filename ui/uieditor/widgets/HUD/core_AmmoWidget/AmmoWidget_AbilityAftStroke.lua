@@ -4,9 +4,11 @@
 CoD.AmmoWidget_AbilityAftStroke = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_AbilityAftStroke.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_AbilityAftStroke )
 	self.id = "AmmoWidget_AbilityAftStroke"

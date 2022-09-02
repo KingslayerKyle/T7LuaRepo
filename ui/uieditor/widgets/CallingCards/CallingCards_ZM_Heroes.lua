@@ -4,9 +4,11 @@
 CoD.CallingCards_ZM_Heroes = InheritFrom( LUI.UIElement )
 CoD.CallingCards_ZM_Heroes.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_ZM_Heroes )
 	self.id = "CallingCards_ZM_Heroes"
@@ -135,6 +137,7 @@ CoD.CallingCards_ZM_Heroes.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				local bgFrame2 = function ( bg, event )
 					if not event.interrupted then
 						bg:beginAnimation( "keyframe", 3980, false, false, CoD.TweenType.Linear )
@@ -171,6 +174,7 @@ CoD.CallingCards_ZM_Heroes.new = function ( menu, controller )
 				self.ember:setShaderVector( 0, 1, 1, 0, 0 )
 				self.ember:setShaderVector( 1, 0.03, 0, 0, 0 )
 				emberFrame2( ember, {} )
+
 				dudes:completeAnimation()
 				self.dudes:setAlpha( 1 )
 				self.clipFinished( dudes, {} )
@@ -790,15 +794,19 @@ CoD.CallingCards_ZM_Heroes.new = function ( menu, controller )
 				self.flash2:setTopBottom( true, false, 0, 120 )
 				self.flash2:setAlpha( 0 )
 				flash2Frame2( flash2, {} )
+
 				EMBER2c:completeAnimation()
 				self.EMBER2c:setAlpha( 0.3 )
 				self.clipFinished( EMBER2c, {} )
+
 				EMBER2b:completeAnimation()
 				self.EMBER2b:setAlpha( 0.4 )
 				self.clipFinished( EMBER2b, {} )
+
 				EMBER2:completeAnimation()
 				self.EMBER2:setAlpha( 1 )
 				self.clipFinished( EMBER2, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

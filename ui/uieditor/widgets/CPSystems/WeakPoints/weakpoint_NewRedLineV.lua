@@ -4,9 +4,11 @@
 CoD.weakpoint_NewRedLineV = InheritFrom( LUI.UIElement )
 CoD.weakpoint_NewRedLineV.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.weakpoint_NewRedLineV )
 	self.id = "weakpoint_NewRedLineV"

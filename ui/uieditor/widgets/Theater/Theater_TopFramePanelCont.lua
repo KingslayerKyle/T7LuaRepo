@@ -4,9 +4,11 @@
 CoD.Theater_TopFramePanelCont = InheritFrom( LUI.UIElement )
 CoD.Theater_TopFramePanelCont.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Theater_TopFramePanelCont )
 	self.id = "Theater_TopFramePanelCont"

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.ZM_AmmoWidgetFactory.ZmAmmo_TotalFactory" )
 CoD.ZmAmmo_ClipInfoFactory = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_ClipInfoFactory.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_ClipInfoFactory )
 	self.id = "ZmAmmo_ClipInfoFactory"
@@ -182,34 +184,41 @@ CoD.ZmAmmo_ClipInfoFactory.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( false, true, -147, -39 )
 				self.Clip:setTopBottom( false, true, -57, -9 )
 				self.Clip:setAlpha( 1 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, -76, 32 )
 				self.TotalAmmo:setTopBottom( false, true, -52.5, -4.5 )
 				self.TotalAmmo:setAlpha( 1 )
 				self.clipFinished( TotalAmmo, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( ClipDual, {} )
+
 				ZmFxFlsh:completeAnimation()
 				self.ZmFxFlsh:setAlpha( 0 )
 				self.clipFinished( ZmFxFlsh, {} )
 			end,
 			WeaponDual = function ()
 				self:setupElementClipCounter( 4 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, -5, 103 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 58, 166 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, -63, 45 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -247,14 +256,17 @@ CoD.ZmAmmo_ClipInfoFactory.new = function ( menu, controller )
 			end,
 			WeaponDualOffsetLeft = function ()
 				self:setupElementClipCounter( 4 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, -25, 83 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 38, 146 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, -83, 25 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -295,34 +307,41 @@ CoD.ZmAmmo_ClipInfoFactory.new = function ( menu, controller )
 		WeaponDoesNotUseAmmo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( false, true, -135, -27 )
 				self.Clip:setTopBottom( false, true, -57, -9 )
 				self.Clip:setAlpha( 0 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, -76, 32 )
 				self.TotalAmmo:setTopBottom( false, true, -52.5, -4.5 )
 				self.TotalAmmo:setAlpha( 0 )
 				self.clipFinished( TotalAmmo, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( ClipDual, {} )
+
 				ZmFxFlsh:completeAnimation()
 				self.ZmFxFlsh:setAlpha( 0 )
 				self.clipFinished( ZmFxFlsh, {} )
 			end,
 			WeaponDual = function ()
 				self:setupElementClipCounter( 4 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, -2, 106 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 59, 167 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, -63, 45 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -360,14 +379,17 @@ CoD.ZmAmmo_ClipInfoFactory.new = function ( menu, controller )
 			end,
 			WeaponDualOffsetLeft = function ()
 				self:setupElementClipCounter( 4 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, -12, 96 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 49, 157 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, -73, 35 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -407,34 +429,41 @@ CoD.ZmAmmo_ClipInfoFactory.new = function ( menu, controller )
 		WeaponDual = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, -2, 106 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.Clip:setAlpha( 1 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 59, 167 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.TotalAmmo:setAlpha( 1 )
 				self.clipFinished( TotalAmmo, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, -63, 45 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( ClipDual, {} )
+
 				ZmFxFlsh:completeAnimation()
 				self.ZmFxFlsh:setAlpha( 0 )
 				self.clipFinished( ZmFxFlsh, {} )
 			end,
 			Weapon = function ()
 				self:setupElementClipCounter( 4 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, -12, 96 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 59, 167 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -474,34 +503,41 @@ CoD.ZmAmmo_ClipInfoFactory.new = function ( menu, controller )
 		Weapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( false, true, -147, -39 )
 				self.Clip:setTopBottom( false, true, -57, -9 )
 				self.Clip:setAlpha( 1 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, -76, 32 )
 				self.TotalAmmo:setTopBottom( false, true, -52.5, -4.5 )
 				self.TotalAmmo:setAlpha( 1 )
 				self.clipFinished( TotalAmmo, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( ClipDual, {} )
+
 				ZmFxFlsh:completeAnimation()
 				self.ZmFxFlsh:setAlpha( 0 )
 				self.clipFinished( ZmFxFlsh, {} )
 			end,
 			WeaponDual = function ()
 				self:setupElementClipCounter( 4 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, -5, 103 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 59, 167 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, -63, 45 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -541,20 +577,24 @@ CoD.ZmAmmo_ClipInfoFactory.new = function ( menu, controller )
 		WeaponDualOffsetLeft = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, -22, 86 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.Clip:setAlpha( 1 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 39, 147 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.TotalAmmo:setAlpha( 1 )
 				self.clipFinished( TotalAmmo, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, -83, 25 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( ClipDual, {} )
+
 				ZmFxFlsh:completeAnimation()
 				self.ZmFxFlsh:setLeftRight( true, false, -14.77, 113.39 )
 				self.ZmFxFlsh:setTopBottom( true, false, -22, 69 )
@@ -563,14 +603,17 @@ CoD.ZmAmmo_ClipInfoFactory.new = function ( menu, controller )
 			end,
 			WeaponOffsetLeft = function ()
 				self:setupElementClipCounter( 4 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, -32, 76 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 39, 147 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 396, 504 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -610,20 +653,24 @@ CoD.ZmAmmo_ClipInfoFactory.new = function ( menu, controller )
 		WeaponOffsetLeft = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( true, false, -32, 76 )
 				self.Clip:setTopBottom( true, false, 0, 48 )
 				self.Clip:setAlpha( 1 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( true, false, 39, 147 )
 				self.TotalAmmo:setTopBottom( true, false, 4.5, 52.5 )
 				self.TotalAmmo:setAlpha( 1 )
 				self.clipFinished( TotalAmmo, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, 386, 494 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
 				self.clipFinished( ClipDual, {} )
+
 				ZmFxFlsh:completeAnimation()
 				self.ZmFxFlsh:setLeftRight( true, false, -14.77, 113.39 )
 				self.ZmFxFlsh:setTopBottom( true, false, -22, 69 )
@@ -632,14 +679,17 @@ CoD.ZmAmmo_ClipInfoFactory.new = function ( menu, controller )
 			end,
 			WeaponDualOffsetLeft = function ()
 				self:setupElementClipCounter( 4 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( false, true, -160, -52 )
 				self.Clip:setTopBottom( false, true, -57, -9 )
 				self.clipFinished( Clip, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, -96, 12 )
 				self.TotalAmmo:setTopBottom( false, true, -52.5, -4.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				ClipDual:completeAnimation()
 				self.ClipDual:setLeftRight( true, false, -83, 25 )
 				self.ClipDual:setTopBottom( true, false, 0, 48 )
@@ -677,6 +727,7 @@ CoD.ZmAmmo_ClipInfoFactory.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "WeaponDoesNotUseAmmo",
@@ -733,6 +784,7 @@ CoD.ZmAmmo_ClipInfoFactory.new = function ( menu, controller )
 			modelName = "currentWeapon.ammoInDWClip"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Clip:close()
 		element.TotalAmmo:close()

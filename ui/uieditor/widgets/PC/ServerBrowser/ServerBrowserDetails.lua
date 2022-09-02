@@ -38,9 +38,11 @@ end
 CoD.ServerBrowserDetails = InheritFrom( LUI.UIElement )
 CoD.ServerBrowserDetails.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ServerBrowserDetails )
 	self.id = "ServerBrowserDetails"
@@ -241,46 +243,61 @@ CoD.ServerBrowserDetails.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				mapImage:completeAnimation()
 				self.mapImage:setAlpha( 1 )
 				self.clipFinished( mapImage, {} )
+
 				description:completeAnimation()
 				self.description:setAlpha( 1 )
 				self.clipFinished( description, {} )
+
 				descriptionLabel:completeAnimation()
 				self.descriptionLabel:setAlpha( 1 )
 				self.clipFinished( descriptionLabel, {} )
+
 				mod:completeAnimation()
 				self.mod:setAlpha( 1 )
 				self.clipFinished( mod, {} )
+
 				modLabel:completeAnimation()
 				self.modLabel:setAlpha( 1 )
 				self.clipFinished( modLabel, {} )
+
 				name:completeAnimation()
 				self.name:setAlpha( 1 )
 				self.clipFinished( name, {} )
+
 				map:completeAnimation()
 				self.map:setAlpha( 1 )
 				self.clipFinished( map, {} )
+
 				gametype:completeAnimation()
 				self.gametype:setAlpha( 1 )
 				self.clipFinished( gametype, {} )
+
 				ip:completeAnimation()
 				self.ip:setAlpha( 1 )
 				self.clipFinished( ip, {} )
+
 				joinButton:completeAnimation()
 				self.joinButton:setAlpha( 1 )
 				self.clipFinished( joinButton, {} )
+
 				refreshButton:completeAnimation()
 				self.refreshButton:setAlpha( 1 )
 				self.clipFinished( refreshButton, {} )
+
 				favoriteButton:completeAnimation()
+
 				favoriteButton.btnDisplayText:completeAnimation()
+
 				favoriteButton.btnDisplayTextStroke:completeAnimation()
 				self.favoriteButton:setAlpha( 1 )
 				self.favoriteButton.btnDisplayText:setText( Engine.Localize( "MENU_ADD_TO_FAVORITES_CAPS" ) )
 				self.favoriteButton.btnDisplayTextStroke:setText( Engine.Localize( "MENU_ADD_TO_FAVORITES_CAPS" ) )
 				self.clipFinished( favoriteButton, {} )
+
 				playersList:completeAnimation()
 				self.playersList:setAlpha( 1 )
 				self.clipFinished( playersList, {} )
@@ -289,42 +306,55 @@ CoD.ServerBrowserDetails.new = function ( menu, controller )
 		NoServers = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				mapImage:completeAnimation()
 				self.mapImage:setAlpha( 0 )
 				self.clipFinished( mapImage, {} )
+
 				description:completeAnimation()
 				self.description:setAlpha( 0 )
 				self.clipFinished( description, {} )
+
 				descriptionLabel:completeAnimation()
 				self.descriptionLabel:setAlpha( 0 )
 				self.clipFinished( descriptionLabel, {} )
+
 				mod:completeAnimation()
 				self.mod:setAlpha( 0 )
 				self.clipFinished( mod, {} )
+
 				modLabel:completeAnimation()
 				self.modLabel:setAlpha( 0 )
 				self.clipFinished( modLabel, {} )
+
 				name:completeAnimation()
 				self.name:setAlpha( 0 )
 				self.clipFinished( name, {} )
+
 				map:completeAnimation()
 				self.map:setAlpha( 0 )
 				self.clipFinished( map, {} )
+
 				gametype:completeAnimation()
 				self.gametype:setAlpha( 0 )
 				self.clipFinished( gametype, {} )
+
 				ip:completeAnimation()
 				self.ip:setAlpha( 0 )
 				self.clipFinished( ip, {} )
+
 				joinButton:completeAnimation()
 				self.joinButton:setAlpha( 0 )
 				self.clipFinished( joinButton, {} )
+
 				refreshButton:completeAnimation()
 				self.refreshButton:setAlpha( 0 )
 				self.clipFinished( refreshButton, {} )
+
 				favoriteButton:completeAnimation()
 				self.favoriteButton:setAlpha( 0 )
 				self.clipFinished( favoriteButton, {} )
+
 				playersList:completeAnimation()
 				self.playersList:setAlpha( 0 )
 				self.clipFinished( playersList, {} )
@@ -333,46 +363,61 @@ CoD.ServerBrowserDetails.new = function ( menu, controller )
 		Favorites = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				mapImage:completeAnimation()
 				self.mapImage:setAlpha( 1 )
 				self.clipFinished( mapImage, {} )
+
 				description:completeAnimation()
 				self.description:setAlpha( 1 )
 				self.clipFinished( description, {} )
+
 				descriptionLabel:completeAnimation()
 				self.descriptionLabel:setAlpha( 1 )
 				self.clipFinished( descriptionLabel, {} )
+
 				mod:completeAnimation()
 				self.mod:setAlpha( 1 )
 				self.clipFinished( mod, {} )
+
 				modLabel:completeAnimation()
 				self.modLabel:setAlpha( 1 )
 				self.clipFinished( modLabel, {} )
+
 				name:completeAnimation()
 				self.name:setAlpha( 1 )
 				self.clipFinished( name, {} )
+
 				map:completeAnimation()
 				self.map:setAlpha( 1 )
 				self.clipFinished( map, {} )
+
 				gametype:completeAnimation()
 				self.gametype:setAlpha( 1 )
 				self.clipFinished( gametype, {} )
+
 				ip:completeAnimation()
 				self.ip:setAlpha( 1 )
 				self.clipFinished( ip, {} )
+
 				joinButton:completeAnimation()
 				self.joinButton:setAlpha( 1 )
 				self.clipFinished( joinButton, {} )
+
 				refreshButton:completeAnimation()
 				self.refreshButton:setAlpha( 1 )
 				self.clipFinished( refreshButton, {} )
+
 				favoriteButton:completeAnimation()
+
 				favoriteButton.btnDisplayText:completeAnimation()
+
 				favoriteButton.btnDisplayTextStroke:completeAnimation()
 				self.favoriteButton:setAlpha( 1 )
 				self.favoriteButton.btnDisplayText:setText( Engine.Localize( "PLATFORM_REMOVE_FROM_FAVORITES_CAPS" ) )
 				self.favoriteButton.btnDisplayTextStroke:setText( Engine.Localize( "PLATFORM_REMOVE_FROM_FAVORITES_CAPS" ) )
 				self.clipFinished( favoriteButton, {} )
+
 				playersList:completeAnimation()
 				self.playersList:setAlpha( 1 )
 				self.clipFinished( playersList, {} )
@@ -381,46 +426,61 @@ CoD.ServerBrowserDetails.new = function ( menu, controller )
 		History = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				mapImage:completeAnimation()
 				self.mapImage:setAlpha( 1 )
 				self.clipFinished( mapImage, {} )
+
 				description:completeAnimation()
 				self.description:setAlpha( 1 )
 				self.clipFinished( description, {} )
+
 				descriptionLabel:completeAnimation()
 				self.descriptionLabel:setAlpha( 1 )
 				self.clipFinished( descriptionLabel, {} )
+
 				mod:completeAnimation()
 				self.mod:setAlpha( 1 )
 				self.clipFinished( mod, {} )
+
 				modLabel:completeAnimation()
 				self.modLabel:setAlpha( 1 )
 				self.clipFinished( modLabel, {} )
+
 				name:completeAnimation()
 				self.name:setAlpha( 1 )
 				self.clipFinished( name, {} )
+
 				map:completeAnimation()
 				self.map:setAlpha( 1 )
 				self.clipFinished( map, {} )
+
 				gametype:completeAnimation()
 				self.gametype:setAlpha( 1 )
 				self.clipFinished( gametype, {} )
+
 				ip:completeAnimation()
 				self.ip:setAlpha( 1 )
 				self.clipFinished( ip, {} )
+
 				joinButton:completeAnimation()
 				self.joinButton:setAlpha( 1 )
 				self.clipFinished( joinButton, {} )
+
 				refreshButton:completeAnimation()
 				self.refreshButton:setAlpha( 1 )
 				self.clipFinished( refreshButton, {} )
+
 				favoriteButton:completeAnimation()
+
 				favoriteButton.btnDisplayText:completeAnimation()
+
 				favoriteButton.btnDisplayTextStroke:completeAnimation()
 				self.favoriteButton:setAlpha( 1 )
 				self.favoriteButton.btnDisplayText:setText( Engine.Localize( "PLATFORM_REMOVE_FROM_HISTORY_CAPS" ) )
 				self.favoriteButton.btnDisplayTextStroke:setText( Engine.Localize( "PLATFORM_REMOVE_FROM_HISTORY_CAPS" ) )
 				self.clipFinished( favoriteButton, {} )
+
 				playersList:completeAnimation()
 				self.playersList:setAlpha( 1 )
 				self.clipFinished( playersList, {} )
@@ -435,6 +495,7 @@ CoD.ServerBrowserDetails.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.map:close()
 		element.gametype:close()

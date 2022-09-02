@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Terminal.OmnipediaWidgetButtonsRight" )
 CoD.OmnipediaWidgetButtons = InheritFrom( LUI.UIElement )
 CoD.OmnipediaWidgetButtons.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.OmnipediaWidgetButtons )
 	self.id = "OmnipediaWidgetButtons"
@@ -49,6 +51,7 @@ CoD.OmnipediaWidgetButtons.new = function ( menu, controller )
 	
 	feLeftContainer:setModel( menu.buttonModel, controller )
 	OmnipediaWidgetButtonsRight:setModel( menu.buttonModel, controller )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.feLeftContainer:close()
 		element.OmnipediaWidgetButtonsRight:close()

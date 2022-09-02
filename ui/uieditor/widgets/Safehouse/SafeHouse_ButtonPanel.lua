@@ -4,9 +4,11 @@
 CoD.SafeHouse_ButtonPanel = InheritFrom( LUI.UIElement )
 CoD.SafeHouse_ButtonPanel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SafeHouse_ButtonPanel )
 	self.id = "SafeHouse_ButtonPanel"
@@ -26,22 +28,27 @@ CoD.SafeHouse_ButtonPanel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Transparent = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Safehouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Transparent",

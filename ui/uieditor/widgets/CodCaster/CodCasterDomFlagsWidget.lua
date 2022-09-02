@@ -131,9 +131,11 @@ end
 CoD.CodCasterDomFlagsWidget = InheritFrom( LUI.UIElement )
 CoD.CodCasterDomFlagsWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterDomFlagsWidget )
 	self.id = "CodCasterDomFlagsWidget"
@@ -164,19 +166,23 @@ CoD.CodCasterDomFlagsWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		CTF = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		SDorSRorDem = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CTF",
@@ -191,6 +197,7 @@ CoD.CodCasterDomFlagsWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.A:close()
 		element.B:close()

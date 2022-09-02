@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BackgroundFrames.BackgroundPattern01" )
 CoD.EmblemSlotsFull = InheritFrom( LUI.UIElement )
 CoD.EmblemSlotsFull.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemSlotsFull )
 	self.id = "EmblemSlotsFull"
@@ -111,18 +113,23 @@ CoD.EmblemSlotsFull.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				count:completeAnimation()
 				self.count:setRGB( 1, 1, 1 )
 				self.clipFinished( count, {} )
+
 				VariantSlots:completeAnimation()
 				self.VariantSlots:setAlpha( 1 )
 				self.clipFinished( VariantSlots, {} )
+
 				slotFulltext:completeAnimation()
 				self.slotFulltext:setAlpha( 0 )
 				self.clipFinished( slotFulltext, {} )
+
 				WarningBacking:completeAnimation()
 				self.WarningBacking:setAlpha( 0 )
 				self.clipFinished( WarningBacking, {} )
+
 				slotfullWarningImage:completeAnimation()
 				self.slotfullWarningImage:setAlpha( 0 )
 				self.clipFinished( slotfullWarningImage, {} )
@@ -131,14 +138,17 @@ CoD.EmblemSlotsFull.new = function ( menu, controller )
 		SlotsFull = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				count:completeAnimation()
 				self.count:setRGB( 1, 0, 0 )
 				self.clipFinished( count, {} )
+
 				VariantSlots:completeAnimation()
 				self.VariantSlots:setLeftRight( true, false, 0, 120 )
 				self.VariantSlots:setTopBottom( true, false, 1, 17 )
 				self.VariantSlots:setAlpha( 0 )
 				self.clipFinished( VariantSlots, {} )
+
 				slotFulltext:completeAnimation()
 				self.slotFulltext:setLeftRight( true, false, -0.5, 119.5 )
 				self.slotFulltext:setTopBottom( true, false, 1, 17 )
@@ -146,11 +156,13 @@ CoD.EmblemSlotsFull.new = function ( menu, controller )
 				self.slotFulltext:setAlpha( 1 )
 				self.slotFulltext:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 				self.clipFinished( slotFulltext, {} )
+
 				WarningBacking:completeAnimation()
 				self.WarningBacking:setLeftRight( true, false, -4, 4 )
 				self.WarningBacking:setTopBottom( true, false, 4.75, 17.75 )
 				self.WarningBacking:setAlpha( 1 )
 				self.clipFinished( WarningBacking, {} )
+
 				slotfullWarningImage:completeAnimation()
 				self.slotfullWarningImage:setLeftRight( true, false, -14.75, 14.75 )
 				self.slotfullWarningImage:setTopBottom( true, false, -5, 24.5 )
@@ -162,37 +174,47 @@ CoD.EmblemSlotsFull.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				CountBacking:completeAnimation()
 				self.CountBacking:setAlpha( 0 )
 				self.clipFinished( CountBacking, {} )
+
 				TitleBacking:completeAnimation()
 				self.TitleBacking:setAlpha( 0 )
 				self.clipFinished( TitleBacking, {} )
+
 				BackgroundPattern010:completeAnimation()
 				self.BackgroundPattern010:setAlpha( 0 )
 				self.clipFinished( BackgroundPattern010, {} )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 0 )
 				self.clipFinished( Image, {} )
+
 				count:completeAnimation()
 				self.count:setRGB( 1, 1, 1 )
 				self.count:setAlpha( 0 )
 				self.clipFinished( count, {} )
+
 				VariantSlots:completeAnimation()
 				self.VariantSlots:setAlpha( 0 )
 				self.clipFinished( VariantSlots, {} )
+
 				slotFulltext:completeAnimation()
 				self.slotFulltext:setAlpha( 0 )
 				self.clipFinished( slotFulltext, {} )
+
 				WarningBacking:completeAnimation()
 				self.WarningBacking:setAlpha( 0 )
 				self.clipFinished( WarningBacking, {} )
+
 				slotfullWarningImage:completeAnimation()
 				self.slotfullWarningImage:setAlpha( 0 )
 				self.clipFinished( slotfullWarningImage, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BackgroundPattern010:close()
 		element.count:close()

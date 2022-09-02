@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_BribeLabel_Backing" )
 CoD.BM_BribeLabel_Specialist = InheritFrom( LUI.UIElement )
 CoD.BM_BribeLabel_Specialist.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.BM_BribeLabel_Specialist )
 	self.id = "BM_BribeLabel_Specialist"
@@ -40,6 +42,7 @@ CoD.BM_BribeLabel_Specialist.new = function ( menu, controller )
 		end
 		return f2_local0
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( Text, "setText", function ( element, controller )
 		ScaleWidgetToLabelRightAligned( self, element, 50 )
 	end )
@@ -50,15 +53,18 @@ CoD.BM_BribeLabel_Specialist.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BMBribeLabelBacking:completeAnimation()
 				self.BMBribeLabelBacking:setAlpha( 0 )
 				self.clipFinished( BMBribeLabelBacking, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 0 )
 				self.clipFinished( Text, {} )
 			end,
 			Visible = function ()
 				self:setupElementClipCounter( 2 )
+
 				local BMBribeLabelBackingFrame2 = function ( BMBribeLabelBacking, event )
 					if not event.interrupted then
 						BMBribeLabelBacking:beginAnimation( "keyframe", 300, true, false, CoD.TweenType.Bounce )
@@ -94,15 +100,18 @@ CoD.BM_BribeLabel_Specialist.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BMBribeLabelBacking:completeAnimation()
 				self.BMBribeLabelBacking:setAlpha( 1 )
 				self.clipFinished( BMBribeLabelBacking, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 1 )
 				self.clipFinished( Text, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				local BMBribeLabelBackingFrame2 = function ( BMBribeLabelBacking, event )
 					if not event.interrupted then
 						BMBribeLabelBacking:beginAnimation( "keyframe", 300, true, false, CoD.TweenType.Bounce )
@@ -136,6 +145,7 @@ CoD.BM_BribeLabel_Specialist.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BMBribeLabelBacking:close()
 	end )

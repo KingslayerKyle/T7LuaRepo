@@ -4,9 +4,11 @@
 CoD.cac_ItemTitleGlow = InheritFrom( LUI.UIElement )
 CoD.cac_ItemTitleGlow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_ItemTitleGlow )
 	self.id = "cac_ItemTitleGlow"

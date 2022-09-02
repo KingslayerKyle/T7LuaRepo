@@ -4,9 +4,11 @@
 CoD.CodCasterLoadoutItemBackgroundAngle = InheritFrom( LUI.UIElement )
 CoD.CodCasterLoadoutItemBackgroundAngle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterLoadoutItemBackgroundAngle )
 	self.id = "CodCasterLoadoutItemBackgroundAngle"

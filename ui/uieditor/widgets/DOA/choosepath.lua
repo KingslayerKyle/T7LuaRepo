@@ -4,9 +4,11 @@
 CoD.choosepath = InheritFrom( LUI.UIElement )
 CoD.choosepath.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.choosepath )
 	self.id = "choosepath"
@@ -48,6 +50,7 @@ CoD.choosepath.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local f2_local0 = function ( f3_arg0, f3_arg1 )
 					if not f3_arg1.interrupted then
 						f3_arg0:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )
@@ -83,9 +86,11 @@ CoD.choosepath.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				txtChoosePath0:completeAnimation()
 				self.txtChoosePath0:setAlpha( 0 )
 				self.clipFinished( txtChoosePath0, {} )
+
 				txtChoosePath:completeAnimation()
 				self.txtChoosePath:setAlpha( 0 )
 				self.clipFinished( txtChoosePath, {} )

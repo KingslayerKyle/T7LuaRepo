@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.ZM_FX.ZmFx_Spark2Ext" )
 CoD.CallingCard_Clover_4 = InheritFrom( LUI.UIElement )
 CoD.CallingCard_Clover_4.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCard_Clover_4 )
 	self.id = "CallingCard_Clover_4"

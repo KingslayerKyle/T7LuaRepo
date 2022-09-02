@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Turret.vhud_turret_reticle" )
 CoD.vhud_turret_internal = InheritFrom( LUI.UIElement )
 CoD.vhud_turret_internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_turret_internal )
 	self.id = "vhud_turret_internal"

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Theater.Theater_FocusBar" )
 CoD.DemoControlsButtonDollyCameraTimeScale = InheritFrom( LUI.UIElement )
 CoD.DemoControlsButtonDollyCameraTimeScale.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DemoControlsButtonDollyCameraTimeScale )
 	self.id = "DemoControlsButtonDollyCameraTimeScale"
@@ -92,55 +94,69 @@ CoD.DemoControlsButtonDollyCameraTimeScale.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				whitebox:completeAnimation()
 				self.whitebox:setAlpha( 0 )
 				self.clipFinished( whitebox, {} )
+
 				x:completeAnimation()
 				self.x:setAlpha( 1 )
 				self.clipFinished( x, {} )
+
 				timescale:completeAnimation()
 				self.timescale:setRGB( 1, 1, 1 )
 				self.timescale:setAlpha( 1 )
 				self.clipFinished( timescale, {} )
+
 				uparrow:completeAnimation()
 				self.uparrow:setAlpha( 0 )
 				self.clipFinished( uparrow, {} )
+
 				downarrow:completeAnimation()
 				self.downarrow:setAlpha( 0 )
 				self.clipFinished( downarrow, {} )
+
 				TheaterFocusBarT:completeAnimation()
 				self.TheaterFocusBarT:setAlpha( 0 )
 				self.clipFinished( TheaterFocusBarT, {} )
+
 				TheaterFocusBarB:completeAnimation()
 				self.TheaterFocusBarB:setAlpha( 0 )
 				self.clipFinished( TheaterFocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				whitebox:completeAnimation()
 				self.whitebox:setLeftRight( true, false, 22, 56 )
 				self.whitebox:setTopBottom( true, false, 11.5, 35 )
 				self.whitebox:setAlpha( 0.15 )
 				self.clipFinished( whitebox, {} )
+
 				x:completeAnimation()
 				self.x:setAlpha( 1 )
 				self.clipFinished( x, {} )
+
 				timescale:completeAnimation()
 				self.timescale:setAlpha( 1 )
 				self.clipFinished( timescale, {} )
+
 				uparrow:completeAnimation()
 				self.uparrow:setLeftRight( false, false, 1.5, 17.5 )
 				self.uparrow:setTopBottom( false, false, -23, -11 )
 				self.uparrow:setAlpha( 1 )
 				self.clipFinished( uparrow, {} )
+
 				downarrow:completeAnimation()
 				self.downarrow:setLeftRight( false, false, 1.5, 17.5 )
 				self.downarrow:setTopBottom( false, false, 13, 23 )
 				self.downarrow:setAlpha( 1 )
 				self.clipFinished( downarrow, {} )
+
 				TheaterFocusBarT:completeAnimation()
 				self.TheaterFocusBarT:setAlpha( 1 )
 				self.clipFinished( TheaterFocusBarT, {} )
+
 				TheaterFocusBarB:completeAnimation()
 				self.TheaterFocusBarB:setAlpha( 1 )
 				self.clipFinished( TheaterFocusBarB, {} )
@@ -149,15 +165,19 @@ CoD.DemoControlsButtonDollyCameraTimeScale.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				x:completeAnimation()
 				self.x:setRGB( 0.7, 0.7, 0.7 )
 				self.clipFinished( x, {} )
+
 				timescale:completeAnimation()
 				self.timescale:setRGB( 0.7, 0.7, 0.7 )
 				self.clipFinished( timescale, {} )
+
 				uparrow:completeAnimation()
 				self.uparrow:setAlpha( 0 )
 				self.clipFinished( uparrow, {} )
+
 				downarrow:completeAnimation()
 				self.downarrow:setAlpha( 0 )
 				self.clipFinished( downarrow, {} )
@@ -166,45 +186,57 @@ CoD.DemoControlsButtonDollyCameraTimeScale.new = function ( menu, controller )
 		ShowOnlyUpArrow = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				whitebox:completeAnimation()
 				self.whitebox:setAlpha( 0 )
 				self.clipFinished( whitebox, {} )
+
 				x:completeAnimation()
 				self.x:setAlpha( 1 )
 				self.clipFinished( x, {} )
+
 				timescale:completeAnimation()
 				self.timescale:setRGB( 1, 1, 1 )
 				self.timescale:setAlpha( 1 )
 				self.clipFinished( timescale, {} )
+
 				uparrow:completeAnimation()
 				self.uparrow:setAlpha( 0 )
 				self.clipFinished( uparrow, {} )
+
 				downarrow:completeAnimation()
 				self.downarrow:setAlpha( 0 )
 				self.clipFinished( downarrow, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				whitebox:completeAnimation()
 				self.whitebox:setAlpha( 0.15 )
 				self.clipFinished( whitebox, {} )
+
 				x:completeAnimation()
 				self.x:setAlpha( 1 )
 				self.clipFinished( x, {} )
+
 				timescale:completeAnimation()
 				self.timescale:setAlpha( 1 )
 				self.clipFinished( timescale, {} )
+
 				uparrow:completeAnimation()
 				self.uparrow:setLeftRight( false, false, 1.5, 17.5 )
 				self.uparrow:setTopBottom( false, false, -23, -11 )
 				self.uparrow:setAlpha( 1 )
 				self.clipFinished( uparrow, {} )
+
 				downarrow:completeAnimation()
 				self.downarrow:setAlpha( 0 )
 				self.clipFinished( downarrow, {} )
+
 				TheaterFocusBarT:completeAnimation()
 				self.TheaterFocusBarT:setAlpha( 1 )
 				self.clipFinished( TheaterFocusBarT, {} )
+
 				TheaterFocusBarB:completeAnimation()
 				self.TheaterFocusBarB:setAlpha( 1 )
 				self.clipFinished( TheaterFocusBarB, {} )
@@ -213,51 +245,64 @@ CoD.DemoControlsButtonDollyCameraTimeScale.new = function ( menu, controller )
 		ShowOnlyDownArrow = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				whitebox:completeAnimation()
 				self.whitebox:setAlpha( 0 )
 				self.clipFinished( whitebox, {} )
+
 				x:completeAnimation()
 				self.x:setAlpha( 1 )
 				self.clipFinished( x, {} )
+
 				timescale:completeAnimation()
 				self.timescale:setRGB( 1, 1, 1 )
 				self.timescale:setAlpha( 1 )
 				self.clipFinished( timescale, {} )
+
 				uparrow:completeAnimation()
 				self.uparrow:setAlpha( 0 )
 				self.clipFinished( uparrow, {} )
+
 				downarrow:completeAnimation()
 				self.downarrow:setAlpha( 0 )
 				self.clipFinished( downarrow, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				whitebox:completeAnimation()
 				self.whitebox:setAlpha( 0.15 )
 				self.clipFinished( whitebox, {} )
+
 				x:completeAnimation()
 				self.x:setAlpha( 1 )
 				self.clipFinished( x, {} )
+
 				timescale:completeAnimation()
 				self.timescale:setAlpha( 1 )
 				self.clipFinished( timescale, {} )
+
 				uparrow:completeAnimation()
 				self.uparrow:setLeftRight( false, false, 1.5, 17.5 )
 				self.uparrow:setTopBottom( false, false, -23, -11 )
 				self.uparrow:setAlpha( 0 )
 				self.clipFinished( uparrow, {} )
+
 				downarrow:completeAnimation()
 				self.downarrow:setAlpha( 1 )
 				self.clipFinished( downarrow, {} )
+
 				TheaterFocusBarT:completeAnimation()
 				self.TheaterFocusBarT:setAlpha( 1 )
 				self.clipFinished( TheaterFocusBarT, {} )
+
 				TheaterFocusBarB:completeAnimation()
 				self.TheaterFocusBarB:setAlpha( 1 )
 				self.clipFinished( TheaterFocusBarB, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -346,6 +391,7 @@ CoD.DemoControlsButtonDollyCameraTimeScale.new = function ( menu, controller )
 			return false
 		end
 	end, false )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TheaterFocusBarT:close()
 		element.TheaterFocusBarB:close()

@@ -8,9 +8,11 @@ end
 CoD.GameSettings_ChangedIndicator = InheritFrom( LUI.UIElement )
 CoD.GameSettings_ChangedIndicator.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GameSettings_ChangedIndicator )
 	self.id = "GameSettings_ChangedIndicator"
@@ -37,6 +39,7 @@ CoD.GameSettings_ChangedIndicator.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ChangedIndicator:completeAnimation()
 				self.ChangedIndicator:setAlpha( 0 )
 				self.clipFinished( ChangedIndicator, {} )
@@ -45,9 +48,11 @@ CoD.GameSettings_ChangedIndicator.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ChangedIndicator:completeAnimation()
 				self.ChangedIndicator:setAlpha( 1 )
 				self.clipFinished( ChangedIndicator, {} )
+
 				ChangedIndicatorCP:completeAnimation()
 				self.ChangedIndicatorCP:setAlpha( 0 )
 				self.clipFinished( ChangedIndicatorCP, {} )
@@ -56,15 +61,18 @@ CoD.GameSettings_ChangedIndicator.new = function ( menu, controller )
 		VisibleCP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ChangedIndicator:completeAnimation()
 				self.ChangedIndicator:setAlpha( 0 )
 				self.clipFinished( ChangedIndicator, {} )
+
 				ChangedIndicatorCP:completeAnimation()
 				self.ChangedIndicatorCP:setAlpha( 1 )
 				self.clipFinished( ChangedIndicatorCP, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

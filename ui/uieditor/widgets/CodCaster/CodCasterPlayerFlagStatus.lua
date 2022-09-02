@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.Flag.PlayerFlag" )
 CoD.CodCasterPlayerFlagStatus = InheritFrom( LUI.UIElement )
 CoD.CodCasterPlayerFlagStatus.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterPlayerFlagStatus )
 	self.id = "CodCasterPlayerFlagStatus"
@@ -74,6 +76,7 @@ CoD.CodCasterPlayerFlagStatus.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FriendlyFlagStatus:completeAnimation()
 				self.FriendlyFlagStatus:setText( Engine.Localize( "" ) )
 				self.clipFinished( FriendlyFlagStatus, {} )
@@ -82,9 +85,11 @@ CoD.CodCasterPlayerFlagStatus.new = function ( menu, controller )
 		Flag_Held = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FriendlyFlagStatus:completeAnimation()
 				self.FriendlyFlagStatus:setText( Engine.Localize( "" ) )
 				self.clipFinished( FriendlyFlagStatus, {} )
+
 				FriendlyFlagCarrier:completeAnimation()
 				self.FriendlyFlagCarrier:setAlpha( 1 )
 				self.clipFinished( FriendlyFlagCarrier, {} )
@@ -93,9 +98,11 @@ CoD.CodCasterPlayerFlagStatus.new = function ( menu, controller )
 		Flag_Away = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FriendlyFlagStatus:completeAnimation()
 				self.FriendlyFlagStatus:setText( Engine.Localize( "OBJECTIVES_FLAG_AWAY_CAPS" ) )
 				self.clipFinished( FriendlyFlagStatus, {} )
+
 				FriendlyFlagCarrier:completeAnimation()
 				self.FriendlyFlagCarrier:setAlpha( 0 )
 				self.clipFinished( FriendlyFlagCarrier, {} )
@@ -104,15 +111,18 @@ CoD.CodCasterPlayerFlagStatus.new = function ( menu, controller )
 		Flag_At_Base = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FriendlyFlagStatus:completeAnimation()
 				self.FriendlyFlagStatus:setText( Engine.Localize( "OBJECTIVES_FLAG_HOME_CAPS" ) )
 				self.clipFinished( FriendlyFlagStatus, {} )
+
 				FriendlyFlagCarrier:completeAnimation()
 				self.FriendlyFlagCarrier:setAlpha( 0 )
 				self.clipFinished( FriendlyFlagCarrier, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Flag_Held",
@@ -149,6 +159,7 @@ CoD.CodCasterPlayerFlagStatus.new = function ( menu, controller )
 			modelName = "CTF.friendlyFlagAway"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 		element.PlayerFlag:close()

@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.CAC.Customization.CACGenericButton" )
 CoD.SystemOverlay_ActivateSpecialContract = InheritFrom( LUI.UIElement )
 CoD.SystemOverlay_ActivateSpecialContract.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SystemOverlay_ActivateSpecialContract )
 	self.id = "SystemOverlay_ActivateSpecialContract"
@@ -205,9 +207,11 @@ CoD.SystemOverlay_ActivateSpecialContract.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				RewardImage:completeAnimation()
 				self.RewardImage:setAlpha( 1 )
 				self.clipFinished( RewardImage, {} )
+
 				largeImage:completeAnimation()
 				self.largeImage:setAlpha( 0 )
 				self.clipFinished( largeImage, {} )
@@ -216,15 +220,18 @@ CoD.SystemOverlay_ActivateSpecialContract.new = function ( menu, controller )
 		SpecialContractReplaceConfirm = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				RewardImage:completeAnimation()
 				self.RewardImage:setAlpha( 0 )
 				self.clipFinished( RewardImage, {} )
+
 				largeImage:completeAnimation()
 				self.largeImage:setAlpha( 1 )
 				self.clipFinished( largeImage, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "SpecialContractReplaceConfirm",
@@ -249,6 +256,7 @@ CoD.SystemOverlay_ActivateSpecialContract.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RewardImage:close()
 		element.text:close()

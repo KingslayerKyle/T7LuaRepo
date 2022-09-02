@@ -4,9 +4,11 @@
 CoD.BowLauncherReticle_Dot = InheritFrom( LUI.UIElement )
 CoD.BowLauncherReticle_Dot.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BowLauncherReticle_Dot )
 	self.id = "BowLauncherReticle_Dot"
@@ -25,6 +27,7 @@ CoD.BowLauncherReticle_Dot.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CenterDot:completeAnimation()
 				self.CenterDot:setLeftRight( true, true, 0.5, -0.5 )
 				self.CenterDot:setTopBottom( true, true, 0.5, -0.5 )
@@ -34,6 +37,7 @@ CoD.BowLauncherReticle_Dot.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CenterDot:completeAnimation()
 				self.CenterDot:setLeftRight( true, true, 0, 0 )
 				self.CenterDot:setTopBottom( true, true, 0, 0 )
@@ -41,6 +45,7 @@ CoD.BowLauncherReticle_Dot.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",

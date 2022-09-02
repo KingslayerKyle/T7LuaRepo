@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_Contracts_SideBetCallingCard" )
 CoD.BM_contracts_choosespecialist_CC = InheritFrom( LUI.UIElement )
 CoD.BM_contracts_choosespecialist_CC.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_contracts_choosespecialist_CC )
 	self.id = "BM_contracts_choosespecialist_CC"
@@ -69,15 +71,19 @@ CoD.BM_contracts_choosespecialist_CC.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				SideBetCallingCard:completeAnimation()
 				self.SideBetCallingCard:setAlpha( 1 )
 				self.clipFinished( SideBetCallingCard, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 0 )
 				self.clipFinished( Lock, {} )
+
 				SideBetDescription:completeAnimation()
 				self.SideBetDescription:setAlpha( 1 )
 				self.SideBetDescription:setText( Engine.Localize( "BLACKJACK_CHALLENGE_SIDE_BET_DESC" ) )
@@ -87,15 +93,19 @@ CoD.BM_contracts_choosespecialist_CC.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				SideBetCallingCard:completeAnimation()
 				self.SideBetCallingCard:setAlpha( 0.25 )
 				self.clipFinished( SideBetCallingCard, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 1 )
 				self.clipFinished( black, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 1 )
 				self.clipFinished( Lock, {} )
+
 				SideBetDescription:completeAnimation()
 				self.SideBetDescription:setAlpha( 1 )
 				self.SideBetDescription:setText( Engine.Localize( "BLACKJACK_CHALLENGE_SIDE_BET_DESC" ) )
@@ -105,15 +115,19 @@ CoD.BM_contracts_choosespecialist_CC.new = function ( menu, controller )
 		CompletedCard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				SideBetCallingCard:completeAnimation()
 				self.SideBetCallingCard:setAlpha( 1 )
 				self.clipFinished( SideBetCallingCard, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 0 )
 				self.clipFinished( Lock, {} )
+
 				SideBetDescription:completeAnimation()
 				self.SideBetDescription:setAlpha( 1 )
 				self.SideBetDescription:setText( Engine.Localize( "BLACKJACK_CARD_COMPLETED" ) )
@@ -123,15 +137,19 @@ CoD.BM_contracts_choosespecialist_CC.new = function ( menu, controller )
 		CompletedCardSet = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				SideBetCallingCard:completeAnimation()
 				self.SideBetCallingCard:setAlpha( 1 )
 				self.clipFinished( SideBetCallingCard, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 0 )
 				self.clipFinished( Lock, {} )
+
 				SideBetDescription:completeAnimation()
 				self.SideBetDescription:setAlpha( 1 )
 				self.SideBetDescription:setText( Engine.Localize( "BLACKJACK_CARD_SET_COMPLETED" ) )
@@ -139,6 +157,7 @@ CoD.BM_contracts_choosespecialist_CC.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -175,6 +194,7 @@ CoD.BM_contracts_choosespecialist_CC.new = function ( menu, controller )
 			modelName = "isMastery"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SideBetCallingCard:close()
 	end )

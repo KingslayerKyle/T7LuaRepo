@@ -4,9 +4,11 @@
 CoD.GenericProjectedTabletInternal = InheritFrom( LUI.UIElement )
 CoD.GenericProjectedTabletInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GenericProjectedTabletInternal )
 	self.id = "GenericProjectedTabletInternal"
@@ -192,6 +194,7 @@ CoD.GenericProjectedTabletInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				local RegBackFrame2 = function ( RegBack, event )
 					local RegBackFrame3 = function ( RegBack, event )
 						local RegBackFrame4 = function ( RegBack, event )
@@ -397,6 +400,7 @@ CoD.GenericProjectedTabletInternal.new = function ( menu, controller )
 				self.AddBack:setAlpha( 0.2 )
 				self.AddBack:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
 				AddBackFrame2( AddBack, {} )
+
 				scroll:completeAnimation()
 				self.scroll:setAlpha( 0.1 )
 				self.clipFinished( scroll, {} )
@@ -986,6 +990,7 @@ CoD.GenericProjectedTabletInternal.new = function ( menu, controller )
 				self.targetSmall2:setTopBottom( true, false, 266, 329.59 )
 				self.targetSmall2:setAlpha( 1 )
 				targetSmall2Frame2( targetSmall2, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

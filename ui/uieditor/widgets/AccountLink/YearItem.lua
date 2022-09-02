@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FocusBarContainer" )
 CoD.YearItem = InheritFrom( LUI.UIElement )
 CoD.YearItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.YearItem )
 	self.id = "YearItem"
@@ -68,38 +70,47 @@ CoD.YearItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Text:completeAnimation()
 				self.Text:setRGB( 1, 1, 1 )
 				self.clipFinished( Text, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				Text:completeAnimation()
 				self.Text:setRGB( 1, 1, 1 )
 				self.clipFinished( Text, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, 0, 0 )
 				self.FocusBarB:setTopBottom( false, true, -3.5, 0 )
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				Text:completeAnimation()
 				self.Text:setRGB( 1, 1, 1 )
 				self.clipFinished( Text, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
@@ -108,12 +119,14 @@ CoD.YearItem.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Text:completeAnimation()
 				self.Text:setRGB( 0.5, 0.51, 0.52 )
 				self.clipFinished( Text, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG0:close()
 		element.FocusBarB:close()

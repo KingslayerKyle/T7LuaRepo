@@ -14,9 +14,11 @@ end
 CoD.Social_InfoPane_Presence = InheritFrom( LUI.UIElement )
 CoD.Social_InfoPane_Presence.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_InfoPane_Presence )
 	self.id = "Social_InfoPane_Presence"
@@ -153,27 +155,35 @@ CoD.Social_InfoPane_Presence.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				cacItemTitleGlow0:completeAnimation()
 				self.cacItemTitleGlow0:setAlpha( 1 )
 				self.clipFinished( cacItemTitleGlow0, {} )
+
 				joinable:completeAnimation()
 				self.joinable:setAlpha( 1 )
 				self.clipFinished( joinable, {} )
+
 				titleContextScroller:completeAnimation()
 				self.titleContextScroller:setAlpha( 1 )
 				self.clipFinished( titleContextScroller, {} )
+
 				titleActivityScroller:completeAnimation()
 				self.titleActivityScroller:setAlpha( 1 )
 				self.clipFinished( titleActivityScroller, {} )
+
 				presenceIcon:completeAnimation()
 				self.presenceIcon:setAlpha( 1 )
 				self.clipFinished( presenceIcon, {} )
+
 				presence:completeAnimation()
 				self.presence:setAlpha( 1 )
 				self.clipFinished( presence, {} )
+
 				primaryPresence:completeAnimation()
 				self.primaryPresence:setAlpha( 0 )
 				self.clipFinished( primaryPresence, {} )
+
 				platformPresenceScroller:completeAnimation()
 				self.platformPresenceScroller:setAlpha( 0 )
 				self.clipFinished( platformPresenceScroller, {} )
@@ -182,30 +192,38 @@ CoD.Social_InfoPane_Presence.new = function ( menu, controller )
 		ShowPlatformPresence = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				joinable:completeAnimation()
 				self.joinable:setAlpha( 0 )
 				self.clipFinished( joinable, {} )
+
 				titleContextScroller:completeAnimation()
 				self.titleContextScroller:setAlpha( 0 )
 				self.clipFinished( titleContextScroller, {} )
+
 				titleActivityScroller:completeAnimation()
 				self.titleActivityScroller:setAlpha( 0 )
 				self.clipFinished( titleActivityScroller, {} )
+
 				presenceIcon:completeAnimation()
 				self.presenceIcon:setAlpha( 0 )
 				self.clipFinished( presenceIcon, {} )
+
 				presence:completeAnimation()
 				self.presence:setAlpha( 0 )
 				self.clipFinished( presence, {} )
+
 				primaryPresence:completeAnimation()
 				self.primaryPresence:setAlpha( 1 )
 				self.clipFinished( primaryPresence, {} )
+
 				platformPresenceScroller:completeAnimation()
 				self.platformPresenceScroller:setAlpha( 1 )
 				self.clipFinished( platformPresenceScroller, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ShowPlatformPresence",
@@ -222,6 +240,7 @@ CoD.Social_InfoPane_Presence.new = function ( menu, controller )
 			modelName = "activity"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.cacItemTitleGlow0:close()
 		element.joinable:close()

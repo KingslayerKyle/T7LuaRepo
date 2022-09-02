@@ -4,9 +4,11 @@
 CoD.LobbyMemberReady = InheritFrom( LUI.UIElement )
 CoD.LobbyMemberReady.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyMemberReady )
 	self.id = "LobbyMemberReady"
@@ -46,29 +48,37 @@ CoD.LobbyMemberReady.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				readyImage:completeAnimation()
 				self.readyImage:setAlpha( 0 )
 				self.clipFinished( readyImage, {} )
+
 				readyImage0:completeAnimation()
 				self.readyImage0:setAlpha( 0 )
 				self.clipFinished( readyImage0, {} )
+
 				readyRing:completeAnimation()
 				self.readyRing:setAlpha( 0 )
 				self.clipFinished( readyRing, {} )
@@ -77,14 +87,17 @@ CoD.LobbyMemberReady.new = function ( menu, controller )
 		IsReady = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				readyImage:completeAnimation()
 				self.readyImage:setRGB( 0, 0.87, 0.1 )
 				self.readyImage:setAlpha( 1 )
 				self.clipFinished( readyImage, {} )
+
 				readyImage0:completeAnimation()
 				self.readyImage0:setRGB( 0, 0.87, 0.1 )
 				self.readyImage0:setAlpha( 0.15 )
 				self.clipFinished( readyImage0, {} )
+
 				readyRing:completeAnimation()
 				self.readyRing:setRGB( 1, 1, 1 )
 				self.readyRing:setAlpha( 0.6 )
@@ -94,14 +107,17 @@ CoD.LobbyMemberReady.new = function ( menu, controller )
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				readyImage:completeAnimation()
 				self.readyImage:setRGB( 1, 0, 0 )
 				self.readyImage:setAlpha( 1 )
 				self.clipFinished( readyImage, {} )
+
 				readyImage0:completeAnimation()
 				self.readyImage0:setRGB( 1, 0, 0 )
 				self.readyImage0:setAlpha( 0.15 )
 				self.clipFinished( readyImage0, {} )
+
 				readyRing:completeAnimation()
 				self.readyRing:setRGB( 1, 1, 1 )
 				self.readyRing:setAlpha( 0.6 )
@@ -109,6 +125,7 @@ CoD.LobbyMemberReady.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",

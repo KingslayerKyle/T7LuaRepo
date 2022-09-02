@@ -61,9 +61,11 @@ end, true )
 CoD.CallingCards_Set_BlackMarket = InheritFrom( LUI.UIElement )
 CoD.CallingCards_Set_BlackMarket.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_Set_BlackMarket )
 	self.id = "CallingCards_Set_BlackMarket"
@@ -151,6 +153,7 @@ CoD.CallingCards_Set_BlackMarket.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardSet:close()
 	end )

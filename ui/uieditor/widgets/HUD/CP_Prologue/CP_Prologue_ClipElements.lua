@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_Separator" )
 CoD.CP_Prologue_ClipElements = InheritFrom( LUI.UIElement )
 CoD.CP_Prologue_ClipElements.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CP_Prologue_ClipElements )
 	self.id = "CP_Prologue_ClipElements"
@@ -77,24 +79,29 @@ CoD.CP_Prologue_ClipElements.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BackLine1:completeAnimation()
 				self.BackLine1:setLeftRight( true, false, 18.67, 152.33 )
 				self.BackLine1:setTopBottom( true, false, 51.5, 54.5 )
 				self.clipFinished( BackLine1, {} )
+
 				BackLine2:completeAnimation()
 				self.BackLine2:setLeftRight( true, false, 18.67, 152.33 )
 				self.BackLine2:setTopBottom( true, false, 3.5, 6.5 )
 				self.clipFinished( BackLine2, {} )
+
 				ImgSemiCircle:completeAnimation()
 				self.ImgSemiCircle:setLeftRight( false, true, -141, -131.67 )
 				self.ImgSemiCircle:setTopBottom( true, false, 1, 55.67 )
 				self.ImgSemiCircle:setRGB( 1, 1, 1 )
 				self.clipFinished( ImgSemiCircle, {} )
+
 				ImgSeperator:completeAnimation()
 				self.ImgSeperator:setLeftRight( false, true, -71.84, -68.51 )
 				self.ImgSeperator:setTopBottom( true, false, 13.67, 48.34 )
 				self.ImgSeperator:setZRot( 0 )
 				self.clipFinished( ImgSeperator, {} )
+
 				ImgSeparatorDual:completeAnimation()
 				self.ImgSeparatorDual:setLeftRight( false, true, -57.16, -53.84 )
 				self.ImgSeparatorDual:setTopBottom( true, false, 198.67, 233.34 )
@@ -104,23 +111,28 @@ CoD.CP_Prologue_ClipElements.new = function ( menu, controller )
 		WeaponDual = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BackLine1:completeAnimation()
 				self.BackLine1:setLeftRight( true, false, -40, 157.33 )
 				self.BackLine1:setTopBottom( true, false, 51.5, 54.5 )
 				self.clipFinished( BackLine1, {} )
+
 				BackLine2:completeAnimation()
 				self.BackLine2:setLeftRight( true, false, 12, 70 )
 				self.BackLine2:setTopBottom( true, false, 2.5, 5.5 )
 				self.clipFinished( BackLine2, {} )
+
 				ImgSemiCircle:completeAnimation()
 				self.ImgSemiCircle:setLeftRight( false, true, -210, -200.67 )
 				self.ImgSemiCircle:setTopBottom( true, false, 1, 55.67 )
 				self.clipFinished( ImgSemiCircle, {} )
+
 				ImgSeperator:completeAnimation()
 				self.ImgSeperator:setLeftRight( false, true, -71.84, -68.51 )
 				self.ImgSeperator:setTopBottom( true, false, 13.67, 48.34 )
 				self.ImgSeperator:setZRot( 0 )
 				self.clipFinished( ImgSeperator, {} )
+
 				ImgSeparatorDual:completeAnimation()
 				self.ImgSeparatorDual:setLeftRight( false, true, -139.17, -135.84 )
 				self.ImgSeparatorDual:setTopBottom( true, false, 13.67, 48.34 )
@@ -131,24 +143,29 @@ CoD.CP_Prologue_ClipElements.new = function ( menu, controller )
 		Weapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BackLine1:completeAnimation()
 				self.BackLine1:setLeftRight( true, false, 23.67, 157.33 )
 				self.BackLine1:setTopBottom( true, false, 51.5, 54.5 )
 				self.clipFinished( BackLine1, {} )
+
 				BackLine2:completeAnimation()
 				self.BackLine2:setLeftRight( true, false, 23.67, 157.33 )
 				self.BackLine2:setTopBottom( true, false, 2.5, 5.5 )
 				self.clipFinished( BackLine2, {} )
+
 				ImgSemiCircle:completeAnimation()
 				self.ImgSemiCircle:setLeftRight( false, true, -141, -131.67 )
 				self.ImgSemiCircle:setTopBottom( true, false, 1, 55.67 )
 				self.ImgSemiCircle:setRGB( 1, 1, 1 )
 				self.clipFinished( ImgSemiCircle, {} )
+
 				ImgSeperator:completeAnimation()
 				self.ImgSeperator:setLeftRight( false, true, -71.84, -68.51 )
 				self.ImgSeperator:setTopBottom( true, false, 13.67, 48.34 )
 				self.ImgSeperator:setZRot( 0 )
 				self.clipFinished( ImgSeperator, {} )
+
 				ImgSeparatorDual:completeAnimation()
 				self.ImgSeparatorDual:setLeftRight( false, true, -57.16, -53.84 )
 				self.ImgSeparatorDual:setTopBottom( true, false, 198.67, 233.34 )
@@ -158,23 +175,28 @@ CoD.CP_Prologue_ClipElements.new = function ( menu, controller )
 		Knife = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BackLine1:completeAnimation()
 				self.BackLine1:setLeftRight( true, false, 55, 157.33 )
 				self.BackLine1:setTopBottom( true, false, 51.5, 54.5 )
 				self.clipFinished( BackLine1, {} )
+
 				BackLine2:completeAnimation()
 				self.BackLine2:setLeftRight( true, false, 55, 157.33 )
 				self.BackLine2:setTopBottom( true, false, 2.5, 5.5 )
 				self.clipFinished( BackLine2, {} )
+
 				ImgSemiCircle:completeAnimation()
 				self.ImgSemiCircle:setLeftRight( false, true, -110, -100.67 )
 				self.ImgSemiCircle:setTopBottom( true, false, 1, 55.67 )
 				self.clipFinished( ImgSemiCircle, {} )
+
 				ImgSeperator:completeAnimation()
 				self.ImgSeperator:setLeftRight( false, true, -56.84, -53.51 )
 				self.ImgSeperator:setTopBottom( true, false, 198.67, 233.34 )
 				self.ImgSeperator:setZRot( 90 )
 				self.clipFinished( ImgSeperator, {} )
+
 				ImgSeparatorDual:completeAnimation()
 				self.ImgSeparatorDual:setLeftRight( false, true, -57.16, -53.84 )
 				self.ImgSeparatorDual:setTopBottom( true, false, 198.67, 233.34 )
@@ -184,23 +206,28 @@ CoD.CP_Prologue_ClipElements.new = function ( menu, controller )
 		Weapon3Digits = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BackLine1:completeAnimation()
 				self.BackLine1:setLeftRight( true, false, 12, 157.33 )
 				self.BackLine1:setTopBottom( true, false, 51.5, 54.5 )
 				self.clipFinished( BackLine1, {} )
+
 				BackLine2:completeAnimation()
 				self.BackLine2:setLeftRight( true, false, 12, 157.33 )
 				self.BackLine2:setTopBottom( true, false, 2.5, 5.5 )
 				self.clipFinished( BackLine2, {} )
+
 				ImgSemiCircle:completeAnimation()
 				self.ImgSemiCircle:setLeftRight( false, true, -155, -145.67 )
 				self.ImgSemiCircle:setTopBottom( true, false, 1, 55.67 )
 				self.clipFinished( ImgSemiCircle, {} )
+
 				ImgSeperator:completeAnimation()
 				self.ImgSeperator:setLeftRight( false, true, -71.84, -68.51 )
 				self.ImgSeperator:setTopBottom( true, false, 13.67, 48.34 )
 				self.ImgSeperator:setZRot( 0 )
 				self.clipFinished( ImgSeperator, {} )
+
 				ImgSeparatorDual:completeAnimation()
 				self.ImgSeparatorDual:setLeftRight( false, true, -57.16, -53.84 )
 				self.ImgSeparatorDual:setTopBottom( true, false, 198.67, 233.34 )
@@ -208,6 +235,7 @@ CoD.CP_Prologue_ClipElements.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "WeaponDual",
@@ -258,6 +286,7 @@ CoD.CP_Prologue_ClipElements.new = function ( menu, controller )
 			modelName = "currentWeapon.clipMaxAmmo"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BackLine1:close()
 		element.BackLine2:close()

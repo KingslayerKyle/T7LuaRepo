@@ -4,9 +4,11 @@
 CoD.RankUpNotification_FooterBacking02 = InheritFrom( LUI.UIElement )
 CoD.RankUpNotification_FooterBacking02.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RankUpNotification_FooterBacking02 )
 	self.id = "RankUpNotification_FooterBacking02"
@@ -42,9 +44,11 @@ CoD.RankUpNotification_FooterBacking02.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

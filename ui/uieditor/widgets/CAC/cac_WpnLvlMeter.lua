@@ -4,9 +4,11 @@
 CoD.cac_WpnLvlMeter = InheritFrom( LUI.UIElement )
 CoD.cac_WpnLvlMeter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_WpnLvlMeter )
 	self.id = "cac_WpnLvlMeter"
@@ -61,14 +63,17 @@ CoD.cac_WpnLvlMeter.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		DoubleWeaponXP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Meter:completeAnimation()
 				self.Meter:setAlpha( 0 )
 				self.clipFinished( Meter, {} )
+
 				Meter2XP:completeAnimation()
 				self.Meter2XP:setAlpha( 1 )
 				self.clipFinished( Meter2XP, {} )
@@ -104,10 +109,12 @@ CoD.cac_WpnLvlMeter.new = function ( menu, controller )
 				self.glow:setAlpha( 0.8 )
 				self.glow:setXRot( 0 )
 				glowFrame2( glow, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DoubleWeaponXP",

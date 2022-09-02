@@ -22,9 +22,11 @@ end
 CoD.hintText = InheritFrom( LUI.UIElement )
 CoD.hintText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.hintText )
 	self.id = "hintText"
@@ -52,12 +54,14 @@ CoD.hintText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				hintTextInternal:completeAnimation()
 				self.hintTextInternal:setAlpha( 1 )
 				self.clipFinished( hintTextInternal, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.hintTextInternal:close()
 	end )

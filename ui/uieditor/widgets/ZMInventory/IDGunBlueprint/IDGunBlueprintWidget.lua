@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventory.IDGunBlueprint.IDGunBlueprintPieceWidg
 CoD.IDGunBlueprintWidget = InheritFrom( LUI.UIElement )
 CoD.IDGunBlueprintWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.IDGunBlueprintWidget )
 	self.id = "IDGunBlueprintWidget"
@@ -194,15 +196,19 @@ CoD.IDGunBlueprintWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				IDGunBlueprintPieceWidget1:completeAnimation()
 				self.IDGunBlueprintPieceWidget1:setAlpha( 0 )
 				self.clipFinished( IDGunBlueprintPieceWidget1, {} )
+
 				IDGunBlueprintPieceWidget2:completeAnimation()
 				self.IDGunBlueprintPieceWidget2:setAlpha( 0 )
 				self.clipFinished( IDGunBlueprintPieceWidget2, {} )
+
 				IDGunBlueprintPieceWidget3:completeAnimation()
 				self.IDGunBlueprintPieceWidget3:setAlpha( 0 )
 				self.clipFinished( IDGunBlueprintPieceWidget3, {} )
@@ -211,6 +217,7 @@ CoD.IDGunBlueprintWidget.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local BGFrame2 = function ( BG, event )
 					local BGFrame3 = function ( BG, event )
 						local BGFrame4 = function ( BG, event )
@@ -247,12 +254,15 @@ CoD.IDGunBlueprintWidget.new = function ( menu, controller )
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				BGFrame2( BG, {} )
+
 				IDGunBlueprintPieceWidget1:completeAnimation()
 				self.IDGunBlueprintPieceWidget1:setAlpha( 1 )
 				self.clipFinished( IDGunBlueprintPieceWidget1, {} )
+
 				IDGunBlueprintPieceWidget2:completeAnimation()
 				self.IDGunBlueprintPieceWidget2:setAlpha( 1 )
 				self.clipFinished( IDGunBlueprintPieceWidget2, {} )
+
 				IDGunBlueprintPieceWidget3:completeAnimation()
 				self.IDGunBlueprintPieceWidget3:setAlpha( 1 )
 				self.clipFinished( IDGunBlueprintPieceWidget3, {} )
@@ -261,21 +271,26 @@ CoD.IDGunBlueprintWidget.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				IDGunBlueprintPieceWidget1:completeAnimation()
 				self.IDGunBlueprintPieceWidget1:setAlpha( 1 )
 				self.clipFinished( IDGunBlueprintPieceWidget1, {} )
+
 				IDGunBlueprintPieceWidget2:completeAnimation()
 				self.IDGunBlueprintPieceWidget2:setAlpha( 1 )
 				self.clipFinished( IDGunBlueprintPieceWidget2, {} )
+
 				IDGunBlueprintPieceWidget3:completeAnimation()
 				self.IDGunBlueprintPieceWidget3:setAlpha( 1 )
 				self.clipFinished( IDGunBlueprintPieceWidget3, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BgVisible",
@@ -306,6 +321,7 @@ CoD.IDGunBlueprintWidget.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.IDGunBlueprintPieceWidget1:close()
 		element.IDGunBlueprintPieceWidget2:close()

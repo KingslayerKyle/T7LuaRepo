@@ -18,6 +18,7 @@ CoD.fe_NAT.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.fe_NAT )
 	self.id = "fe_NAT"
@@ -38,6 +39,7 @@ CoD.fe_NAT.new = function ( menu, controller )
 			Nat:setText( LocalizeWithNatType( lobbyNatType ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( Nat, "setText", function ( element, controller )
 		ScaleWidgetToLabelRightAligned( self, element, 0 )
 	end )
@@ -48,6 +50,7 @@ CoD.fe_NAT.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Nat:completeAnimation()
 				self.Nat:setAlpha( 1 )
 				self.clipFinished( Nat, {} )
@@ -56,12 +59,14 @@ CoD.fe_NAT.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Nat:completeAnimation()
 				self.Nat:setAlpha( 0 )
 				self.clipFinished( Nat, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -86,6 +91,7 @@ CoD.fe_NAT.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsElementInState( element, "Hidden" ) then
 			OverrideWidgetWidth( self, "0" )
@@ -93,6 +99,7 @@ CoD.fe_NAT.new = function ( menu, controller )
 			RestoreWidgetWidth( self )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Nat:close()
 	end )

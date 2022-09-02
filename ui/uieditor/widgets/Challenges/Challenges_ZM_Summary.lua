@@ -44,9 +44,11 @@ end
 CoD.Challenges_ZM_Summary = InheritFrom( LUI.UIElement )
 CoD.Challenges_ZM_Summary.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_ZM_Summary )
 	self.id = "Challenges_ZM_Summary"
@@ -490,6 +492,7 @@ CoD.Challenges_ZM_Summary.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				NearCompletionButton:completeAnimation()
 				self.NearCompletionButton:setAlpha( 1 )
 				self.clipFinished( NearCompletionButton, {} )
@@ -498,12 +501,14 @@ CoD.Challenges_ZM_Summary.new = function ( menu, controller )
 		NoNearComplete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				NearCompletionButton:completeAnimation()
 				self.NearCompletionButton:setAlpha( 0 )
 				self.clipFinished( NearCompletionButton, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoNearComplete",
@@ -533,6 +538,7 @@ CoD.Challenges_ZM_Summary.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.operationsTitle:close()
 		element.ZombieHunterButton:close()

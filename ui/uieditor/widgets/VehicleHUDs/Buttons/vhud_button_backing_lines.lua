@@ -4,9 +4,11 @@
 CoD.vhud_button_backing_lines = InheritFrom( LUI.UIElement )
 CoD.vhud_button_backing_lines.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_button_backing_lines )
 	self.id = "vhud_button_backing_lines"
@@ -92,9 +94,11 @@ CoD.vhud_button_backing_lines.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

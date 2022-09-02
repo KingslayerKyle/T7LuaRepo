@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventory.RocketShieldBluePrint.RocketShieldPiec
 CoD.DragonShieldWidgets_Stalingrad = InheritFrom( LUI.UIElement )
 CoD.DragonShieldWidgets_Stalingrad.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DragonShieldWidgets_Stalingrad )
 	self.id = "DragonShieldWidgets_Stalingrad"
@@ -169,15 +171,19 @@ CoD.DragonShieldWidgets_Stalingrad.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				MachineToolsPieceWidget1:completeAnimation()
 				self.MachineToolsPieceWidget1:setAlpha( 0 )
 				self.clipFinished( MachineToolsPieceWidget1, {} )
+
 				MachineToolsPieceWidget0:completeAnimation()
 				self.MachineToolsPieceWidget0:setAlpha( 0 )
 				self.clipFinished( MachineToolsPieceWidget0, {} )
+
 				MachineToolsPieceWidget2:completeAnimation()
 				self.MachineToolsPieceWidget2:setAlpha( 0 )
 				self.clipFinished( MachineToolsPieceWidget2, {} )
@@ -186,21 +192,25 @@ CoD.DragonShieldWidgets_Stalingrad.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				MachineToolsPieceWidget1:completeAnimation()
 				self.MachineToolsPieceWidget1:setLeftRight( true, false, -8, 81 )
 				self.MachineToolsPieceWidget1:setTopBottom( true, false, 24.24, 113.24 )
 				self.MachineToolsPieceWidget1:setAlpha( 1 )
 				self.MachineToolsPieceWidget1:setScale( 1.5 )
 				self.clipFinished( MachineToolsPieceWidget1, {} )
+
 				MachineToolsPieceWidget0:completeAnimation()
 				self.MachineToolsPieceWidget0:setLeftRight( true, false, 139, 228 )
 				self.MachineToolsPieceWidget0:setTopBottom( true, false, 23.24, 112.24 )
 				self.MachineToolsPieceWidget0:setAlpha( 1 )
 				self.MachineToolsPieceWidget0:setScale( 1.78 )
 				self.clipFinished( MachineToolsPieceWidget0, {} )
+
 				MachineToolsPieceWidget2:completeAnimation()
 				self.MachineToolsPieceWidget2:setLeftRight( true, false, 284.5, 373.5 )
 				self.MachineToolsPieceWidget2:setTopBottom( true, false, 22.24, 111.24 )
@@ -212,6 +222,7 @@ CoD.DragonShieldWidgets_Stalingrad.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local bgFrame2 = function ( bg, event )
 					local bgFrame3 = function ( bg, event )
 						local bgFrame4 = function ( bg, event )
@@ -248,18 +259,21 @@ CoD.DragonShieldWidgets_Stalingrad.new = function ( menu, controller )
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				bgFrame2( bg, {} )
+
 				MachineToolsPieceWidget1:completeAnimation()
 				self.MachineToolsPieceWidget1:setLeftRight( true, false, 3, 92 )
 				self.MachineToolsPieceWidget1:setTopBottom( true, false, 25.24, 114.24 )
 				self.MachineToolsPieceWidget1:setAlpha( 1 )
 				self.MachineToolsPieceWidget1:setScale( 1.05 )
 				self.clipFinished( MachineToolsPieceWidget1, {} )
+
 				MachineToolsPieceWidget0:completeAnimation()
 				self.MachineToolsPieceWidget0:setLeftRight( true, false, 79.86, 168.86 )
 				self.MachineToolsPieceWidget0:setTopBottom( true, false, 24.24, 113.24 )
 				self.MachineToolsPieceWidget0:setAlpha( 1 )
 				self.MachineToolsPieceWidget0:setScale( 1.07 )
 				self.clipFinished( MachineToolsPieceWidget0, {} )
+
 				MachineToolsPieceWidget2:completeAnimation()
 				self.MachineToolsPieceWidget2:setLeftRight( true, false, 153.29, 242.29 )
 				self.MachineToolsPieceWidget2:setTopBottom( true, false, 23.24, 112.24 )
@@ -269,6 +283,7 @@ CoD.DragonShieldWidgets_Stalingrad.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Scoreboard",
@@ -299,6 +314,7 @@ CoD.DragonShieldWidgets_Stalingrad.new = function ( menu, controller )
 			modelName = "zmInventory.widget_shield_parts"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MachineToolsPieceWidget1:close()
 		element.MachineToolsPieceWidget0:close()

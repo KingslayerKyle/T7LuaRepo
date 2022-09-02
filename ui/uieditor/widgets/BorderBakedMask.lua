@@ -4,9 +4,11 @@
 CoD.BorderBakedMask = InheritFrom( LUI.UIElement )
 CoD.BorderBakedMask.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BorderBakedMask )
 	self.id = "BorderBakedMask"

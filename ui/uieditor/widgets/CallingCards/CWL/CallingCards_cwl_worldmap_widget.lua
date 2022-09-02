@@ -4,9 +4,11 @@
 CoD.CallingCards_cwl_worldmap_widget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_cwl_worldmap_widget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_cwl_worldmap_widget )
 	self.id = "CallingCards_cwl_worldmap_widget"

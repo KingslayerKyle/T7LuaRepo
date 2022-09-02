@@ -4,9 +4,11 @@
 CoD.cac_PurchasingExtraSlots = InheritFrom( LUI.UIElement )
 CoD.cac_PurchasingExtraSlots.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_PurchasingExtraSlots )
 	self.id = "cac_PurchasingExtraSlots"
@@ -35,15 +37,18 @@ CoD.cac_PurchasingExtraSlots.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 1 )
 				self.clipFinished( Spinner, {} )
+
 				PurchasingText:completeAnimation()
 				self.PurchasingText:setAlpha( 1 )
 				self.clipFinished( PurchasingText, {} )
 			end,
 			StartPurchasing = function ()
 				self:setupElementClipCounter( 2 )
+
 				local SpinnerFrame2 = function ( Spinner, event )
 					if not event.interrupted then
 						Spinner:beginAnimation( "keyframe", 319, false, false, CoD.TweenType.Linear )
@@ -77,6 +82,7 @@ CoD.cac_PurchasingExtraSlots.new = function ( menu, controller )
 			end,
 			Purchasing = function ()
 				self:setupElementClipCounter( 2 )
+
 				local SpinnerFrame2 = function ( Spinner, event )
 					if not event.interrupted then
 						Spinner:beginAnimation( "keyframe", 319, false, false, CoD.TweenType.Linear )
@@ -107,10 +113,12 @@ CoD.cac_PurchasingExtraSlots.new = function ( menu, controller )
 				PurchasingText:completeAnimation()
 				self.PurchasingText:setAlpha( 1 )
 				PurchasingTextFrame2( PurchasingText, {} )
+
 				self.nextClip = "Purchasing"
 			end,
 			StopPurchasing = function ()
 				self:setupElementClipCounter( 2 )
+
 				local SpinnerFrame2 = function ( Spinner, event )
 					if not event.interrupted then
 						Spinner:beginAnimation( "keyframe", 409, false, false, CoD.TweenType.Linear )

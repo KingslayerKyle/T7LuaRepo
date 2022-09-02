@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.siegebot.vhud_siegebot_NotificationLin
 CoD.vhud_siegebot_missile_container = InheritFrom( LUI.UIElement )
 CoD.vhud_siegebot_missile_container.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_siegebot_missile_container )
 	self.id = "vhud_siegebot_missile_container"
@@ -57,20 +59,25 @@ CoD.vhud_siegebot_missile_container.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		EMP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "EMP",
@@ -87,6 +94,7 @@ CoD.vhud_siegebot_missile_container.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_EMP_ACTIVE
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vhudsiegebotmissilecount:close()
 		element.vhudsiegebotmissilelabel:close()

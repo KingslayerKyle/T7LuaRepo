@@ -4,9 +4,11 @@
 CoD.MagnifierReticle_Internal = InheritFrom( LUI.UIElement )
 CoD.MagnifierReticle_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MagnifierReticle_Internal )
 	self.id = "MagnifierReticle_Internal"
@@ -77,26 +79,32 @@ CoD.MagnifierReticle_Internal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				OutterRing:completeAnimation()
 				self.OutterRing:setAlpha( 1 )
 				self.OutterRing:setScale( 1.1 )
 				self.clipFinished( OutterRing, {} )
+
 				OneXring:completeAnimation()
 				self.OneXring:setAlpha( 0.75 )
 				self.clipFinished( OneXring, {} )
+
 				ZoomBAr:completeAnimation()
 				self.ZoomBAr:setRGB( 0.39, 1, 1 )
 				self.ZoomBAr:setAlpha( 0 )
 				self.clipFinished( ZoomBAr, {} )
+
 				ThreeX:completeAnimation()
 				self.ThreeX:setAlpha( 0 )
 				self.clipFinished( ThreeX, {} )
+
 				ZoomInBar:completeAnimation()
 				self.ZoomInBar:setAlpha( 0 )
 				self.clipFinished( ZoomInBar, {} )
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 7 )
+
 				OutterRing:completeAnimation()
 				self.OutterRing:setScale( 1.1 )
 				self.clipFinished( OutterRing, {} )
@@ -218,37 +226,45 @@ CoD.MagnifierReticle_Internal.new = function ( menu, controller )
 				ZoomInBar:completeAnimation()
 				self.ZoomInBar:setAlpha( 0 )
 				ZoomInBarFrame2( ZoomInBar, {} )
+
 				self.nextClip = "Zoom"
 			end
 		},
 		Zoom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				OutterRing:completeAnimation()
 				self.OutterRing:setRGB( 0.39, 1, 1 )
 				self.clipFinished( OutterRing, {} )
+
 				OneXring:completeAnimation()
 				self.OneXring:setLeftRight( true, false, 33, 367 )
 				self.OneXring:setTopBottom( true, false, 32.5, 366.5 )
 				self.OneXring:setAlpha( 1 )
 				self.clipFinished( OneXring, {} )
+
 				OneX:completeAnimation()
 				self.OneX:setLeftRight( true, false, 183.63, 219.63 )
 				self.OneX:setTopBottom( true, false, 336.98, 372.98 )
 				self.OneX:setAlpha( 0 )
 				self.clipFinished( OneX, {} )
+
 				OutterReticle:completeAnimation()
 				self.OutterReticle:setLeftRight( true, false, 160.33, 241 )
 				self.OutterReticle:setTopBottom( true, false, 160, 240.67 )
 				self.clipFinished( OutterReticle, {} )
+
 				ZoomBAr:completeAnimation()
 				self.ZoomBAr:setAlpha( 0 )
 				self.clipFinished( ZoomBAr, {} )
+
 				ThreeX:completeAnimation()
 				self.ThreeX:setLeftRight( true, false, 183.64, 219.61 )
 				self.ThreeX:setTopBottom( true, false, 336.98, 372.95 )
 				self.ThreeX:setAlpha( 1 )
 				self.clipFinished( ThreeX, {} )
+
 				ZoomInBar:completeAnimation()
 				self.ZoomInBar:setRGB( 0.39, 1, 1 )
 				self.ZoomInBar:setAlpha( 0 )
@@ -256,6 +272,7 @@ CoD.MagnifierReticle_Internal.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 7 )
+
 				OutterRing:completeAnimation()
 				self.OutterRing:setAlpha( 1 )
 				self.OutterRing:setScale( 1.1 )
@@ -366,12 +383,14 @@ CoD.MagnifierReticle_Internal.new = function ( menu, controller )
 				self.ThreeX:setTopBottom( true, false, 336.98, 372.95 )
 				self.ThreeX:setAlpha( 1 )
 				ThreeXFrame2( ThreeX, {} )
+
 				ZoomInBar:completeAnimation()
 				self.ZoomInBar:setAlpha( 0 )
 				self.clipFinished( ZoomInBar, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Zoom",

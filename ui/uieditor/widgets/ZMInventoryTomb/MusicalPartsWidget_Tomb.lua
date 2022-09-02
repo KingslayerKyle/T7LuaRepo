@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventory.RocketShieldBluePrint.RocketShieldPiec
 CoD.MusicalPartsWidget_Tomb = InheritFrom( LUI.UIElement )
 CoD.MusicalPartsWidget_Tomb.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MusicalPartsWidget_Tomb )
 	self.id = "MusicalPartsWidget_Tomb"
@@ -309,24 +311,31 @@ CoD.MusicalPartsWidget_Tomb.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				RecordPiece:completeAnimation()
 				self.RecordPiece:setAlpha( 0 )
 				self.clipFinished( RecordPiece, {} )
+
 				GramophonePiece:completeAnimation()
 				self.GramophonePiece:setAlpha( 0 )
 				self.clipFinished( GramophonePiece, {} )
+
 				WaterCrystal:completeAnimation()
 				self.WaterCrystal:setAlpha( 0 )
 				self.clipFinished( WaterCrystal, {} )
+
 				FireCrystal:completeAnimation()
 				self.FireCrystal:setAlpha( 0 )
 				self.clipFinished( FireCrystal, {} )
+
 				LightningCrystal:completeAnimation()
 				self.LightningCrystal:setAlpha( 0 )
 				self.clipFinished( LightningCrystal, {} )
+
 				AirCrystal:completeAnimation()
 				self.AirCrystal:setAlpha( 0 )
 				self.clipFinished( AirCrystal, {} )
@@ -335,6 +344,7 @@ CoD.MusicalPartsWidget_Tomb.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				local bgFrame2 = function ( bg, event )
 					local bgFrame3 = function ( bg, event )
 						local bgFrame4 = function ( bg, event )
@@ -371,21 +381,27 @@ CoD.MusicalPartsWidget_Tomb.new = function ( menu, controller )
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				bgFrame2( bg, {} )
+
 				RecordPiece:completeAnimation()
 				self.RecordPiece:setLeftRight( true, false, 117.5, 206.5 )
 				self.RecordPiece:setTopBottom( true, false, 18, 107 )
 				self.RecordPiece:setAlpha( 1 )
 				self.clipFinished( RecordPiece, {} )
+
 				GramophonePiece:completeAnimation()
 				self.GramophonePiece:setAlpha( 1 )
 				self.clipFinished( GramophonePiece, {} )
+
 				WaterCrystal:completeAnimation()
 				self.WaterCrystal:setLeftRight( true, false, 195, 284 )
 				self.WaterCrystal:setTopBottom( true, false, 18, 107 )
 				self.WaterCrystal:setAlpha( 1 )
 				self.clipFinished( WaterCrystal, {} )
+
 				FireCrystal:completeAnimation()
+
 				FireCrystal.PieceImageNewGreen:completeAnimation()
+
 				FireCrystal.PieceImage:completeAnimation()
 				self.FireCrystal:setLeftRight( true, false, 195, 284 )
 				self.FireCrystal:setTopBottom( true, false, 18, 107 )
@@ -393,11 +409,13 @@ CoD.MusicalPartsWidget_Tomb.new = function ( menu, controller )
 				self.FireCrystal.PieceImageNewGreen:setImage( RegisterImage( "uie_t7_zm_hd_craftable_element_fire" ) )
 				self.FireCrystal.PieceImage:setImage( RegisterImage( "uie_t7_zm_hd_craftable_element_fire" ) )
 				self.clipFinished( FireCrystal, {} )
+
 				LightningCrystal:completeAnimation()
 				self.LightningCrystal:setLeftRight( true, false, 195, 284 )
 				self.LightningCrystal:setTopBottom( true, false, 18, 107 )
 				self.LightningCrystal:setAlpha( 1 )
 				self.clipFinished( LightningCrystal, {} )
+
 				AirCrystal:completeAnimation()
 				self.AirCrystal:setLeftRight( true, false, 195, 284 )
 				self.AirCrystal:setTopBottom( true, false, 18, 107 )
@@ -408,32 +426,39 @@ CoD.MusicalPartsWidget_Tomb.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				RecordPiece:completeAnimation()
 				self.RecordPiece:setAlpha( 1 )
 				self.clipFinished( RecordPiece, {} )
+
 				GramophonePiece:completeAnimation()
 				self.GramophonePiece:setLeftRight( true, false, 39, 128 )
 				self.GramophonePiece:setTopBottom( true, false, 19.5, 108.5 )
 				self.GramophonePiece:setAlpha( 1 )
 				self.clipFinished( GramophonePiece, {} )
+
 				WaterCrystal:completeAnimation()
 				self.WaterCrystal:setLeftRight( true, false, 190.17, 279.17 )
 				self.WaterCrystal:setTopBottom( true, false, 20.5, 109.5 )
 				self.WaterCrystal:setAlpha( 1 )
 				self.clipFinished( WaterCrystal, {} )
+
 				FireCrystal:completeAnimation()
 				self.FireCrystal:setLeftRight( true, false, 187.5, 276.5 )
 				self.FireCrystal:setTopBottom( true, false, 20.5, 109.5 )
 				self.FireCrystal:setAlpha( 1 )
 				self.clipFinished( FireCrystal, {} )
+
 				LightningCrystal:completeAnimation()
 				self.LightningCrystal:setLeftRight( true, false, 187.5, 276.5 )
 				self.LightningCrystal:setTopBottom( true, false, 20.5, 109.5 )
 				self.LightningCrystal:setAlpha( 1 )
 				self.clipFinished( LightningCrystal, {} )
+
 				AirCrystal:completeAnimation()
 				self.AirCrystal:setLeftRight( true, false, 187.5, 276.5 )
 				self.AirCrystal:setTopBottom( true, false, 20.5, 109.5 )
@@ -442,6 +467,7 @@ CoD.MusicalPartsWidget_Tomb.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RecordPiece:close()
 		element.GramophonePiece:close()

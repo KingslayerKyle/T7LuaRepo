@@ -4,9 +4,11 @@
 CoD.CaptureGeneratorWedgeWidget = InheritFrom( LUI.UIElement )
 CoD.CaptureGeneratorWedgeWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CaptureGeneratorWedgeWidget )
 	self.id = "CaptureGeneratorWedgeWidget"
@@ -35,10 +37,12 @@ CoD.CaptureGeneratorWedgeWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				capturedWedge:completeAnimation()
 				self.capturedWedge:setRGB( 0, 0.5, 1 )
 				self.capturedWedge:setAlpha( 0 )
 				self.clipFinished( capturedWedge, {} )
+
 				capturedWedgeFlash:completeAnimation()
 				self.capturedWedgeFlash:setRGB( 0.36, 0.85, 0.96 )
 				self.capturedWedgeFlash:setAlpha( 0 )
@@ -46,6 +50,7 @@ CoD.CaptureGeneratorWedgeWidget.new = function ( menu, controller )
 			end,
 			Captured = function ()
 				self:setupElementClipCounter( 2 )
+
 				capturedWedge:completeAnimation()
 				self.capturedWedge:setRGB( 0, 0.5, 1 )
 				self.capturedWedge:setAlpha( 1 )
@@ -127,10 +132,12 @@ CoD.CaptureGeneratorWedgeWidget.new = function ( menu, controller )
 		CapturedScoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				capturedWedge:completeAnimation()
 				self.capturedWedge:setRGB( 0, 0.5, 1 )
 				self.capturedWedge:setAlpha( 1 )
 				self.clipFinished( capturedWedge, {} )
+
 				capturedWedgeFlash:completeAnimation()
 				self.capturedWedgeFlash:setRGB( 0.36, 0.85, 0.96 )
 				self.capturedWedgeFlash:setAlpha( 0 )
@@ -140,10 +147,12 @@ CoD.CaptureGeneratorWedgeWidget.new = function ( menu, controller )
 		Captured = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				capturedWedge:completeAnimation()
 				self.capturedWedge:setRGB( 0, 0.5, 1 )
 				self.capturedWedge:setAlpha( 1 )
 				self.clipFinished( capturedWedge, {} )
+
 				capturedWedgeFlash:completeAnimation()
 				self.capturedWedgeFlash:setRGB( 0.36, 0.85, 0.96 )
 				self.capturedWedgeFlash:setAlpha( 0 )
@@ -151,6 +160,7 @@ CoD.CaptureGeneratorWedgeWidget.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				capturedWedge:completeAnimation()
 				self.capturedWedge:setRGB( 0, 0.5, 1 )
 				self.capturedWedge:setAlpha( 0 )

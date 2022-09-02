@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Freerun.FR_TimerWidget" )
 CoD.FR_TimerContainer = InheritFrom( LUI.UIElement )
 CoD.FR_TimerContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FR_TimerContainer )
 	self.id = "FR_TimerContainer"
@@ -30,11 +32,13 @@ CoD.FR_TimerContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FRTimerWidgetFrame2 = function ( FRTimerWidget, event )
 					if not event.interrupted then
 						FRTimerWidget:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -53,6 +57,7 @@ CoD.FR_TimerContainer.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FRTimerWidgetFrame2 = function ( FRTimerWidget, event )
 					if not event.interrupted then
 						FRTimerWidget:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -71,6 +76,7 @@ CoD.FR_TimerContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FRTimerWidget:close()
 	end )

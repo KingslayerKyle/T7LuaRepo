@@ -22,9 +22,11 @@ end
 CoD.EventMessage = InheritFrom( LUI.UIElement )
 CoD.EventMessage.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EventMessage )
 	self.id = "EventMessage"
@@ -88,25 +90,30 @@ CoD.EventMessage.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				panel:completeAnimation()
 				self.panel:setLeftRight( true, true, 0, 1 )
 				self.panel:setTopBottom( true, true, 0, 2 )
 				self.panel:setAlpha( 0 )
 				self.clipFinished( panel, {} )
+
 				icon:completeAnimation()
 				self.icon:setLeftRight( true, false, 0, 21.33 )
 				self.icon:setTopBottom( true, false, 0, 21.33 )
 				self.icon:setAlpha( 0 )
 				self.clipFinished( icon, {} )
+
 				message:completeAnimation()
 				self.message:setRGB( 1, 1, 0.7 )
 				self.message:setAlpha( 0 )
 				self.clipFinished( message, {} )
+
 				Dot1:completeAnimation()
 				self.Dot1:setLeftRight( true, false, -11, -7 )
 				self.Dot1:setTopBottom( true, false, 9, 13 )
 				self.Dot1:setAlpha( 0 )
 				self.clipFinished( Dot1, {} )
+
 				Dot2:completeAnimation()
 				self.Dot2:setLeftRight( true, false, 330, 334 )
 				self.Dot2:setTopBottom( true, false, 9, 13 )
@@ -115,6 +122,7 @@ CoD.EventMessage.new = function ( menu, controller )
 			end,
 			Add = function ()
 				self:setupElementClipCounter( 5 )
+
 				local f6_local0 = function ( f7_arg0, f7_arg1 )
 					local f7_local0 = function ( f8_arg0, f8_arg1 )
 						local f8_local0 = function ( f9_arg0, f9_arg1 )
@@ -401,6 +409,7 @@ CoD.EventMessage.new = function ( menu, controller )
 			end,
 			Down = function ()
 				self:setupElementClipCounter( 5 )
+
 				local panelFrame2 = function ( panel, event )
 					local panelFrame3 = function ( panel, event )
 						if not event.interrupted then
@@ -556,6 +565,7 @@ CoD.EventMessage.new = function ( menu, controller )
 			end,
 			Off = function ()
 				self:setupElementClipCounter( 5 )
+
 				local panelFrame2 = function ( panel, event )
 					local panelFrame3 = function ( panel, event )
 						local panelFrame4 = function ( panel, event )
@@ -880,6 +890,7 @@ CoD.EventMessage.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.panel:close()
 		element.icon:close()

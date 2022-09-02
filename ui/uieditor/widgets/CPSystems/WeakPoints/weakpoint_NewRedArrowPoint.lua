@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CPSystems.WeakPoints.weakpoint_NewRedArrow" )
 CoD.weakpoint_NewRedArrowPoint = InheritFrom( LUI.UIElement )
 CoD.weakpoint_NewRedArrowPoint.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.weakpoint_NewRedArrowPoint )
 	self.id = "weakpoint_NewRedArrowPoint"
@@ -34,6 +36,7 @@ CoD.weakpoint_NewRedArrowPoint.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local weakpointNewRedArrow1Frame2 = function ( weakpointNewRedArrow1, event )
 					local weakpointNewRedArrow1Frame3 = function ( weakpointNewRedArrow1, event )
 						local weakpointNewRedArrow1Frame4 = function ( weakpointNewRedArrow1, event )
@@ -142,10 +145,12 @@ CoD.weakpoint_NewRedArrowPoint.new = function ( menu, controller )
 				self.weakpointNewRedArrow2:setTopBottom( false, false, -6, 18 )
 				self.weakpointNewRedArrow2:setAlpha( 0.5 )
 				weakpointNewRedArrow2Frame2( weakpointNewRedArrow2, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.weakpointNewRedArrow1:close()
 		element.weakpointNewRedArrow2:close()

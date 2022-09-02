@@ -4,9 +4,11 @@
 CoD.vhud_sentinel_outOfRangeLabels = InheritFrom( LUI.UIElement )
 CoD.vhud_sentinel_outOfRangeLabels.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_sentinel_outOfRangeLabels )
 	self.id = "vhud_sentinel_outOfRangeLabels"
@@ -52,9 +54,11 @@ CoD.vhud_sentinel_outOfRangeLabels.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				outOfRangeLabel:completeAnimation()
 				self.outOfRangeLabel:setAlpha( 0 )
 				self.clipFinished( outOfRangeLabel, {} )
+
 				outOfRangeTitle:completeAnimation()
 				self.outOfRangeTitle:setAlpha( 0 )
 				self.clipFinished( outOfRangeTitle, {} )
@@ -63,6 +67,7 @@ CoD.vhud_sentinel_outOfRangeLabels.new = function ( menu, controller )
 		LeavingOperationalZone = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local outOfRangeLabelFrame2 = function ( outOfRangeLabel, event )
 					local outOfRangeLabelFrame3 = function ( outOfRangeLabel, event )
 						local outOfRangeLabelFrame4 = function ( outOfRangeLabel, event )
@@ -556,10 +561,12 @@ CoD.vhud_sentinel_outOfRangeLabels.new = function ( menu, controller )
 				outOfRangeTitle:completeAnimation()
 				self.outOfRangeTitle:setAlpha( 1 )
 				outOfRangeTitleFrame2( outOfRangeTitle, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "LeavingOperationalZone",

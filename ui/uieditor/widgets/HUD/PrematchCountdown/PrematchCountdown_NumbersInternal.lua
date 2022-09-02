@@ -4,9 +4,11 @@
 CoD.PrematchCountdown_NumbersInternal = InheritFrom( LUI.UIElement )
 CoD.PrematchCountdown_NumbersInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PrematchCountdown_NumbersInternal )
 	self.id = "PrematchCountdown_NumbersInternal"
@@ -29,9 +31,11 @@ CoD.PrematchCountdown_NumbersInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Start = function ()
 				self:setupElementClipCounter( 1 )
+
 				local NumbersFrame2 = function ( Numbers, event )
 					if not event.interrupted then
 						Numbers:beginAnimation( "keyframe", 259, false, false, CoD.TweenType.Linear )

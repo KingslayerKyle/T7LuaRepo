@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.ZM_Revive.ZM_ReviveClampedArrow" )
 CoD.ZM_Revive = InheritFrom( LUI.UIElement )
 CoD.ZM_Revive.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZM_Revive )
 	self.id = "ZM_Revive"
@@ -72,12 +74,15 @@ CoD.ZM_Revive.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				playerName:completeAnimation()
 				self.playerName:setAlpha( 0 )
 				self.clipFinished( playerName, {} )
+
 				prompt:completeAnimation()
 				self.prompt:setAlpha( 0 )
 				self.clipFinished( prompt, {} )
+
 				ZMReviveClampedArrow:completeAnimation()
 				self.ZMReviveClampedArrow:setAlpha( 0 )
 				self.clipFinished( ZMReviveClampedArrow, {} )
@@ -86,12 +91,15 @@ CoD.ZM_Revive.new = function ( menu, controller )
 		Clamped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				playerName:completeAnimation()
 				self.playerName:setAlpha( 0 )
 				self.clipFinished( playerName, {} )
+
 				prompt:completeAnimation()
 				self.prompt:setAlpha( 0 )
 				self.clipFinished( prompt, {} )
+
 				ZMReviveClampedArrow:completeAnimation()
 				self.ZMReviveClampedArrow:setAlpha( 1 )
 				self.clipFinished( ZMReviveClampedArrow, {} )
@@ -100,12 +108,15 @@ CoD.ZM_Revive.new = function ( menu, controller )
 		Visible_Reviving = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				playerName:completeAnimation()
 				self.playerName:setAlpha( 0 )
 				self.clipFinished( playerName, {} )
+
 				prompt:completeAnimation()
 				self.prompt:setAlpha( 0 )
 				self.clipFinished( prompt, {} )
+
 				ZMReviveClampedArrow:completeAnimation()
 				self.ZMReviveClampedArrow:setAlpha( 0 )
 				self.clipFinished( ZMReviveClampedArrow, {} )
@@ -114,18 +125,22 @@ CoD.ZM_Revive.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				playerName:completeAnimation()
 				self.playerName:setAlpha( 1 )
 				self.clipFinished( playerName, {} )
+
 				prompt:completeAnimation()
 				self.prompt:setAlpha( 1 )
 				self.clipFinished( prompt, {} )
+
 				ZMReviveClampedArrow:completeAnimation()
 				self.ZMReviveClampedArrow:setAlpha( 0 )
 				self.clipFinished( ZMReviveClampedArrow, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Clamped",
@@ -170,6 +185,7 @@ CoD.ZM_Revive.new = function ( menu, controller )
 			modelName = "stateFlags"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZMReviveWidget:close()
 		element.ZMReviveClampedArrow:close()

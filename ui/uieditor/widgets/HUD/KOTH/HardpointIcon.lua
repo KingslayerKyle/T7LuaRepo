@@ -11,9 +11,11 @@ end
 CoD.HardpointIcon = InheritFrom( LUI.UIElement )
 CoD.HardpointIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.HardpointIcon )
 	self.id = "HardpointIcon"
@@ -81,55 +83,70 @@ CoD.HardpointIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			hud_start = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			hud_stop = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Neutral = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				ProgressMeterFrame:completeAnimation()
 				self.ProgressMeterFrame:setAlpha( 0 )
 				self.clipFinished( ProgressMeterFrame, {} )
+
 				progressMeter:completeAnimation()
 				self.progressMeter:setAlpha( 0 )
 				self.clipFinished( progressMeter, {} )
+
 				HardpointNeutral:completeAnimation()
 				self.HardpointNeutral:setAlpha( 1 )
 				self.clipFinished( HardpointNeutral, {} )
+
 				HardpointFriendly:completeAnimation()
 				self.HardpointFriendly:setAlpha( 0 )
 				self.clipFinished( HardpointFriendly, {} )
+
 				HardpointEnemy:completeAnimation()
 				self.HardpointEnemy:setAlpha( 0 )
 				self.clipFinished( HardpointEnemy, {} )
 			end,
 			hud_start = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			hud_stop = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		FriendlyControlled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				ProgressMeterFrame:completeAnimation()
 				self.ProgressMeterFrame:setAlpha( 0 )
 				self.clipFinished( ProgressMeterFrame, {} )
+
 				progressMeter:completeAnimation()
 				self.progressMeter:setAlpha( 0 )
 				self.clipFinished( progressMeter, {} )
+
 				HardpointNeutral:completeAnimation()
 				self.HardpointNeutral:setAlpha( 0 )
 				self.clipFinished( HardpointNeutral, {} )
+
 				HardpointFriendly:completeAnimation()
 				self.HardpointFriendly:setAlpha( 1 )
 				self.clipFinished( HardpointFriendly, {} )
+
 				HardpointEnemy:completeAnimation()
 				self.HardpointEnemy:setAlpha( 0 )
 				self.clipFinished( HardpointEnemy, {} )
@@ -138,18 +155,23 @@ CoD.HardpointIcon.new = function ( menu, controller )
 		EnemyControlled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				ProgressMeterFrame:completeAnimation()
 				self.ProgressMeterFrame:setAlpha( 0 )
 				self.clipFinished( ProgressMeterFrame, {} )
+
 				progressMeter:completeAnimation()
 				self.progressMeter:setAlpha( 0 )
 				self.clipFinished( progressMeter, {} )
+
 				HardpointNeutral:completeAnimation()
 				self.HardpointNeutral:setAlpha( 0 )
 				self.clipFinished( HardpointNeutral, {} )
+
 				HardpointFriendly:completeAnimation()
 				self.HardpointFriendly:setAlpha( 0 )
 				self.clipFinished( HardpointFriendly, {} )
+
 				HardpointEnemy:completeAnimation()
 				self.HardpointEnemy:setAlpha( 1 )
 				self.clipFinished( HardpointEnemy, {} )
@@ -158,18 +180,23 @@ CoD.HardpointIcon.new = function ( menu, controller )
 		Contested = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				ProgressMeterFrame:completeAnimation()
 				self.ProgressMeterFrame:setAlpha( 1 )
 				self.clipFinished( ProgressMeterFrame, {} )
+
 				progressMeter:completeAnimation()
 				self.progressMeter:setAlpha( 0.9 )
 				self.clipFinished( progressMeter, {} )
+
 				HardpointNeutral:completeAnimation()
 				self.HardpointNeutral:setAlpha( 1 )
 				self.clipFinished( HardpointNeutral, {} )
+
 				HardpointFriendly:completeAnimation()
 				self.HardpointFriendly:setAlpha( 0 )
 				self.clipFinished( HardpointFriendly, {} )
+
 				HardpointEnemy:completeAnimation()
 				self.HardpointEnemy:setAlpha( 0 )
 				self.clipFinished( HardpointEnemy, {} )
@@ -178,24 +205,30 @@ CoD.HardpointIcon.new = function ( menu, controller )
 		TeamControlled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				ProgressMeterFrame:completeAnimation()
 				self.ProgressMeterFrame:setAlpha( 0 )
 				self.clipFinished( ProgressMeterFrame, {} )
+
 				progressMeter:completeAnimation()
 				self.progressMeter:setAlpha( 0 )
 				self.clipFinished( progressMeter, {} )
+
 				HardpointNeutral:completeAnimation()
 				self.HardpointNeutral:setAlpha( 0 )
 				self.clipFinished( HardpointNeutral, {} )
+
 				HardpointFriendly:completeAnimation()
 				self.HardpointFriendly:setAlpha( 1 )
 				self.clipFinished( HardpointFriendly, {} )
+
 				HardpointEnemy:completeAnimation()
 				self.HardpointEnemy:setAlpha( 0 )
 				self.clipFinished( HardpointEnemy, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Neutral",
@@ -236,6 +269,7 @@ CoD.HardpointIcon.new = function ( menu, controller )
 			modelName = "Hardpoint.state"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.HardpointFriendly:close()
 		element.HardpointEnemy:close()

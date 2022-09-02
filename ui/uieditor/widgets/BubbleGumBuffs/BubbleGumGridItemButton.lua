@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.CAC.MenuChooseClass.ItemWidgets.HintTextArrow" )
 CoD.BubbleGumGridItemButton = InheritFrom( LUI.UIElement )
 CoD.BubbleGumGridItemButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BubbleGumGridItemButton )
 	self.id = "BubbleGumGridItemButton"
@@ -158,35 +160,43 @@ CoD.BubbleGumGridItemButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BubbleGumDLCTextPopupMega:completeAnimation()
 				self.BubbleGumDLCTextPopupMega:setAlpha( 0 )
 				self.clipFinished( BubbleGumDLCTextPopupMega, {} )
+
 				HintTextArrow0:completeAnimation()
 				self.HintTextArrow0:setAlpha( 0 )
 				self.clipFinished( HintTextArrow0, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		CanBuyDLCMega = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BubbleGumDLCTextPopupMega:completeAnimation()
 				self.BubbleGumDLCTextPopupMega:setAlpha( 0 )
 				self.clipFinished( BubbleGumDLCTextPopupMega, {} )
+
 				HintTextArrow0:completeAnimation()
 				self.HintTextArrow0:setAlpha( 0 )
 				self.clipFinished( HintTextArrow0, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 2 )
+
 				local BubbleGumDLCTextPopupMegaFrame2 = function ( BubbleGumDLCTextPopupMega, event )
 					if not event.interrupted then
 						BubbleGumDLCTextPopupMega:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -220,15 +230,18 @@ CoD.BubbleGumGridItemButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 2 )
+
 				BubbleGumDLCTextPopupMega:completeAnimation()
 				self.BubbleGumDLCTextPopupMega:setAlpha( 1 )
 				self.clipFinished( BubbleGumDLCTextPopupMega, {} )
+
 				HintTextArrow0:completeAnimation()
 				self.HintTextArrow0:setAlpha( 1 )
 				self.clipFinished( HintTextArrow0, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 2 )
+
 				local BubbleGumDLCTextPopupMegaFrame2 = function ( BubbleGumDLCTextPopupMega, event )
 					if not event.interrupted then
 						BubbleGumDLCTextPopupMega:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -264,15 +277,18 @@ CoD.BubbleGumGridItemButton.new = function ( menu, controller )
 		CanBuyDLCClassic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BubbleGumDLCTextPopupMega:completeAnimation()
 				self.BubbleGumDLCTextPopupMega:setAlpha( 0 )
 				self.clipFinished( BubbleGumDLCTextPopupMega, {} )
+
 				HintTextArrow0:completeAnimation()
 				self.HintTextArrow0:setAlpha( 0 )
 				self.clipFinished( HintTextArrow0, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				BubbleGumDLCTextPopupMega:completeAnimation()
 				self.BubbleGumDLCTextPopupMega:setAlpha( 0 )
 				self.clipFinished( BubbleGumDLCTextPopupMega, {} )
@@ -309,18 +325,22 @@ CoD.BubbleGumGridItemButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				BubbleGumDLCTextPopupMega:completeAnimation()
 				self.BubbleGumDLCTextPopupMega:setAlpha( 0 )
 				self.clipFinished( BubbleGumDLCTextPopupMega, {} )
+
 				BubbleGumDLCTextPopupClassic:completeAnimation()
 				self.BubbleGumDLCTextPopupClassic:setAlpha( 1 )
 				self.clipFinished( BubbleGumDLCTextPopupClassic, {} )
+
 				HintTextArrow0:completeAnimation()
 				self.HintTextArrow0:setAlpha( 1 )
 				self.clipFinished( HintTextArrow0, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				BubbleGumDLCTextPopupMega:completeAnimation()
 				self.BubbleGumDLCTextPopupMega:setAlpha( 0 )
 				self.clipFinished( BubbleGumDLCTextPopupMega, {} )
@@ -357,6 +377,7 @@ CoD.BubbleGumGridItemButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CanBuyDLCMega",
@@ -403,6 +424,7 @@ CoD.BubbleGumGridItemButton.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GridItemButtonNew:close()
 		element.DLCLabel0:close()

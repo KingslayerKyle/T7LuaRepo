@@ -4,9 +4,11 @@
 CoD.ScoreboardPingValue = InheritFrom( LUI.UIElement )
 CoD.ScoreboardPingValue.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreboardPingValue )
 	self.id = "ScoreboardPingValue"
@@ -41,9 +43,11 @@ CoD.ScoreboardPingValue.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PingValue:close()
 	end )

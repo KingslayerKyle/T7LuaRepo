@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_Contracts_DailyContractsTitle" )
 CoD.BM_Contracts_ContractProgressWidget = InheritFrom( LUI.UIElement )
 CoD.BM_Contracts_ContractProgressWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Contracts_ContractProgressWidget )
 	self.id = "BM_Contracts_ContractProgressWidget"

@@ -4,9 +4,11 @@
 CoD.Voip_Entry = InheritFrom( LUI.UIElement )
 CoD.Voip_Entry.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Voip_Entry )
 	self.id = "Voip_Entry"
@@ -72,15 +74,19 @@ CoD.Voip_Entry.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Entry:completeAnimation()
 				self.Entry:setAlpha( 1 )
 				self.clipFinished( Entry, {} )
+
 				talker:completeAnimation()
 				self.talker:setAlpha( 1 )
 				self.clipFinished( talker, {} )
+
 				enemyEntry:completeAnimation()
 				self.enemyEntry:setAlpha( 0 )
 				self.clipFinished( enemyEntry, {} )
+
 				enemyTalker:completeAnimation()
 				self.enemyTalker:setAlpha( 0 )
 				self.clipFinished( enemyTalker, {} )
@@ -89,15 +95,19 @@ CoD.Voip_Entry.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Entry:completeAnimation()
 				self.Entry:setAlpha( 0 )
 				self.clipFinished( Entry, {} )
+
 				talker:completeAnimation()
 				self.talker:setAlpha( 0 )
 				self.clipFinished( talker, {} )
+
 				enemyEntry:completeAnimation()
 				self.enemyEntry:setAlpha( 0 )
 				self.clipFinished( enemyEntry, {} )
+
 				enemyTalker:completeAnimation()
 				self.enemyTalker:setAlpha( 0 )
 				self.clipFinished( enemyTalker, {} )
@@ -106,21 +116,26 @@ CoD.Voip_Entry.new = function ( menu, controller )
 		EnemyTalking = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Entry:completeAnimation()
 				self.Entry:setAlpha( 0 )
 				self.clipFinished( Entry, {} )
+
 				talker:completeAnimation()
 				self.talker:setAlpha( 0 )
 				self.clipFinished( talker, {} )
+
 				enemyEntry:completeAnimation()
 				self.enemyEntry:setAlpha( 1 )
 				self.clipFinished( enemyEntry, {} )
+
 				enemyTalker:completeAnimation()
 				self.enemyTalker:setAlpha( 1 )
 				self.clipFinished( enemyTalker, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",
@@ -143,6 +158,7 @@ CoD.Voip_Entry.new = function ( menu, controller )
 			modelName = "status"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Entry:close()
 		element.enemyEntry:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.NewBreadcrumbCount" )
 CoD.CallingCards_BlackMarket_Set_CountWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_BlackMarket_Set_CountWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_BlackMarket_Set_CountWidget )
 	self.id = "CallingCards_BlackMarket_Set_CountWidget"
@@ -27,6 +29,7 @@ CoD.CallingCards_BlackMarket_Set_CountWidget.new = function ( menu, controller )
 			CallingCardSetCount:setText( Engine.Localize( setCount ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( CallingCardSetCount, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )
@@ -68,6 +71,7 @@ CoD.CallingCards_BlackMarket_Set_CountWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CallingCardSetCount:completeAnimation()
 				self.CallingCardSetCount:setLeftRight( true, false, 0, 100 )
 				self.CallingCardSetCount:setTopBottom( true, false, 2, 22 )
@@ -77,6 +81,7 @@ CoD.CallingCards_BlackMarket_Set_CountWidget.new = function ( menu, controller )
 		isBMClassified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CallingCardSetCount:completeAnimation()
 				self.CallingCardSetCount:setLeftRight( true, false, 0, 100 )
 				self.CallingCardSetCount:setTopBottom( true, false, 2, 22 )
@@ -87,6 +92,7 @@ CoD.CallingCards_BlackMarket_Set_CountWidget.new = function ( menu, controller )
 		CommonSet = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CallingCardSetCount:completeAnimation()
 				self.CallingCardSetCount:setLeftRight( false, false, -50, 50 )
 				self.CallingCardSetCount:setTopBottom( true, false, 70.5, 90.5 )
@@ -94,6 +100,7 @@ CoD.CallingCards_BlackMarket_Set_CountWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "isBMClassified",
@@ -116,6 +123,7 @@ CoD.CallingCards_BlackMarket_Set_CountWidget.new = function ( menu, controller )
 			modelName = "isSetBMClassified"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.breadcrumbCount:close()
 		element.CallingCardSetCount:close()

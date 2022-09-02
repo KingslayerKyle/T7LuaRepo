@@ -4,9 +4,11 @@
 CoD.HackingBar = InheritFrom( LUI.UIElement )
 CoD.HackingBar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.HackingBar )
 	self.id = "HackingBar"
@@ -74,14 +76,17 @@ CoD.HackingBar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Hacking = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BarScanning:completeAnimation()
 				self.BarScanning:setAlpha( 0 )
 				self.clipFinished( BarScanning, {} )
+
 				BarHacking:completeAnimation()
 				self.BarHacking:setAlpha( 1 )
 				self.BarHacking:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_wipe" ) )
@@ -94,9 +99,11 @@ CoD.HackingBar.new = function ( menu, controller )
 		Breaching = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BarScanning:completeAnimation()
 				self.BarScanning:setAlpha( 0 )
 				self.clipFinished( BarScanning, {} )
+
 				BarBreaching:completeAnimation()
 				self.BarBreaching:setAlpha( 1 )
 				self.BarBreaching:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_wipe" ) )
@@ -107,6 +114,7 @@ CoD.HackingBar.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hacking",
@@ -129,6 +137,7 @@ CoD.HackingBar.new = function ( menu, controller )
 			modelName = "hudItems.blackhat.status"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BarScanning:close()
 		element.BarHacking:close()

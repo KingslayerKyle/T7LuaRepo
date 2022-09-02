@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.CharacterCustomization.PersonalizeCharacterCarouse
 CoD.PersonalizeCharacter_SelectedItemField = InheritFrom( LUI.UIElement )
 CoD.PersonalizeCharacter_SelectedItemField.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PersonalizeCharacter_SelectedItemField )
 	self.id = "PersonalizeCharacter_SelectedItemField"

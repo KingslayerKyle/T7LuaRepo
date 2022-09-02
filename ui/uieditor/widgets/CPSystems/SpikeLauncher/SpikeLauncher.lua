@@ -14,9 +14,11 @@ require( "ui.uieditor.widgets.CPSystems.SpikeLauncher.SpikeLauncherMessage" )
 CoD.SpikeLauncher = InheritFrom( LUI.UIElement )
 CoD.SpikeLauncher.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpikeLauncher )
 	self.id = "SpikeLauncher"
@@ -233,56 +235,69 @@ CoD.SpikeLauncher.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		State1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				VignetteState1:completeAnimation()
 				self.VignetteState1:setAlpha( 1 )
 				self.clipFinished( VignetteState1, {} )
+
 				VignetteState2:completeAnimation()
 				self.VignetteState2:setAlpha( 0 )
 				self.clipFinished( VignetteState2, {} )
+
 				VignetteState3:completeAnimation()
 				self.VignetteState3:setAlpha( 0 )
 				self.clipFinished( VignetteState3, {} )
+
 				CircleAnim:completeAnimation()
 				self.CircleAnim:setAlpha( 0 )
 				self.clipFinished( CircleAnim, {} )
+
 				BackBox:completeAnimation()
 				self.BackBox:setLeftRight( true, false, 161.78, 163 )
 				self.BackBox:setTopBottom( true, false, 93.83, 158.83 )
 				self.BackBox:setAlpha( 0 )
 				self.clipFinished( BackBox, {} )
+
 				TriangleTop:completeAnimation()
 				self.TriangleTop:setRGB( 1, 1, 1 )
 				self.clipFinished( TriangleTop, {} )
+
 				ArrowLeft:completeAnimation()
 				self.ArrowLeft:setLeftRight( true, false, 131.67, 125 )
 				self.ArrowLeft:setTopBottom( true, false, 119.66, 133 )
 				self.ArrowLeft:setAlpha( 1 )
 				self.clipFinished( ArrowLeft, {} )
+
 				Sides:completeAnimation()
 				self.Sides:setLeftRight( true, false, 128, 195.85 )
 				self.Sides:setTopBottom( true, false, 129.16, 128.83 )
 				self.Sides:setAlpha( 0 )
 				self.clipFinished( Sides, {} )
+
 				DistanceText:completeAnimation()
 				self.DistanceText:setLeftRight( true, false, 213.61, 265 )
 				self.DistanceText:setTopBottom( true, false, 113.91, 126.41 )
 				self.DistanceText:setAlpha( 0 )
 				self.clipFinished( DistanceText, {} )
+
 				MessageText:completeAnimation()
 				self.MessageText:setLeftRight( true, false, 206.5, 228.49 )
 				self.MessageText:setTopBottom( true, false, 115.5, 140.83 )
 				self.MessageText:setAlpha( 0 )
 				self.clipFinished( MessageText, {} )
+
 				DataTextState2:completeAnimation()
 				self.DataTextState2:setLeftRight( true, false, 212.67, 290.06 )
 				self.DataTextState2:setTopBottom( true, false, 130, 135 )
 				self.DataTextState2:setAlpha( 0 )
 				self.clipFinished( DataTextState2, {} )
+
 				ArrowRight:completeAnimation()
 				self.ArrowRight:setLeftRight( true, false, 197.67, 191 )
 				self.ArrowRight:setTopBottom( true, false, 119.66, 133 )
@@ -291,6 +306,7 @@ CoD.SpikeLauncher.new = function ( menu, controller )
 			end,
 			State2 = function ()
 				self:setupElementClipCounter( 21 )
+
 				local VignetteState1Frame2 = function ( VignetteState1, event )
 					if not event.interrupted then
 						VignetteState1:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )
@@ -518,9 +534,13 @@ CoD.SpikeLauncher.new = function ( menu, controller )
 				end
 				
 				MessageText:completeAnimation()
+
 				MessageText.LineLowerL:completeAnimation()
+
 				MessageText.LineLowerM:completeAnimation()
+
 				MessageText.LineLowerR:completeAnimation()
+
 				MessageText.DescLbl:completeAnimation()
 				self.MessageText:setLeftRight( true, false, 206.5, 228.49 )
 				self.MessageText:setTopBottom( true, false, 115.5, 140.83 )
@@ -619,91 +639,116 @@ CoD.SpikeLauncher.new = function ( menu, controller )
 		State2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 21 )
+
 				VignetteState1:completeAnimation()
 				self.VignetteState1:setAlpha( 0 )
 				self.clipFinished( VignetteState1, {} )
+
 				VignetteState2:completeAnimation()
 				self.VignetteState2:setAlpha( 1 )
 				self.clipFinished( VignetteState2, {} )
+
 				VignetteState3:completeAnimation()
 				self.VignetteState3:setAlpha( 0 )
 				self.clipFinished( VignetteState3, {} )
+
 				CircleAnim:completeAnimation()
 				self.CircleAnim:setAlpha( 0.5 )
 				self.CircleAnim:setZoom( -150 )
 				self.clipFinished( CircleAnim, {} )
+
 				BackBox:completeAnimation()
 				self.BackBox:setLeftRight( true, false, 123, 200.94 )
 				self.BackBox:setTopBottom( true, false, 93.83, 158.83 )
 				self.BackBox:setAlpha( 1 )
 				self.clipFinished( BackBox, {} )
+
 				LargeTriangle:completeAnimation()
 				self.LargeTriangle:setAlpha( 0 )
 				self.clipFinished( LargeTriangle, {} )
+
 				TriangleTop:completeAnimation()
 				self.TriangleTop:setLeftRight( true, false, 168.42, 157.14 )
 				self.TriangleTop:setTopBottom( true, false, 85.16, 75.5 )
 				self.TriangleTop:setRGB( 1, 0.55, 0.14 )
 				self.TriangleTop:setZRot( 180 )
 				self.clipFinished( TriangleTop, {} )
+
 				IconWeak:completeAnimation()
 				self.IconWeak:setAlpha( 1 )
 				self.IconWeak:setYRot( 0 )
 				self.clipFinished( IconWeak, {} )
+
 				iconDestroy:completeAnimation()
 				self.iconDestroy:setAlpha( 0 )
 				self.iconDestroy:setYRot( -90 )
 				self.clipFinished( iconDestroy, {} )
+
 				FrameSide:completeAnimation()
 				self.FrameSide:setLeftRight( true, false, 128, 133 )
 				self.FrameSide:setTopBottom( true, false, 106.5, 146.83 )
 				self.FrameSide:setAlpha( 0 )
 				self.clipFinished( FrameSide, {} )
+
 				Meters:completeAnimation()
+
 				Meters.MetersBase:completeAnimation()
+
 				Meters.MetersTop:completeAnimation()
 				self.Meters.MetersBase:setAlpha( 0 )
 				self.Meters.MetersTop:setAlpha( 0 )
 				self.clipFinished( Meters, {} )
+
 				DestroyLineTop:completeAnimation()
 				self.DestroyLineTop:setLeftRight( true, false, 71, 123.33 )
 				self.DestroyLineTop:setTopBottom( true, false, 116.84, 120.17 )
 				self.DestroyLineTop:setAlpha( 0 )
 				self.clipFinished( DestroyLineTop, {} )
+
 				DestroyLineBottom:completeAnimation()
 				self.DestroyLineBottom:setLeftRight( true, false, 71, 123.33 )
 				self.DestroyLineBottom:setTopBottom( true, false, 136, 132.84 )
 				self.DestroyLineBottom:setAlpha( 0 )
 				self.clipFinished( DestroyLineBottom, {} )
+
 				ArrowLeft:completeAnimation()
 				self.ArrowLeft:setLeftRight( true, false, 116.67, 110 )
 				self.ArrowLeft:setTopBottom( true, false, 119.66, 133 )
 				self.ArrowLeft:setYRot( 0 )
 				self.ArrowLeft:setZRot( 180 )
 				self.clipFinished( ArrowLeft, {} )
+
 				Sides:completeAnimation()
 				self.Sides:setLeftRight( true, false, 128, 195.85 )
 				self.Sides:setTopBottom( true, false, 104.16, 153.83 )
 				self.clipFinished( Sides, {} )
+
 				AreaText:completeAnimation()
 				self.AreaText:setLeftRight( true, false, 113.28, 210.28 )
 				self.AreaText:setTopBottom( true, false, 96.84, 151.84 )
 				self.AreaText:setAlpha( 0 )
 				self.clipFinished( AreaText, {} )
+
 				DistanceText:completeAnimation()
 				self.DistanceText:setLeftRight( true, false, 213.61, 265 )
 				self.DistanceText:setTopBottom( true, false, 98.91, 111.41 )
 				self.DistanceText:setAlpha( 1 )
 				self.clipFinished( DistanceText, {} )
+
 				DataText:completeAnimation()
 				self.DataText:setLeftRight( true, false, 75.92, 195.98 )
 				self.DataText:setTopBottom( true, false, 146.83, 225.83 )
 				self.DataText:setAlpha( 0 )
 				self.clipFinished( DataText, {} )
+
 				MessageText:completeAnimation()
+
 				MessageText.LineLowerL:completeAnimation()
+
 				MessageText.LineLowerM:completeAnimation()
+
 				MessageText.LineLowerR:completeAnimation()
+
 				MessageText.DescLbl:completeAnimation()
 				self.MessageText:setLeftRight( true, false, 206.5, 329.49 )
 				self.MessageText:setTopBottom( true, false, 115.5, 140.83 )
@@ -712,11 +757,13 @@ CoD.SpikeLauncher.new = function ( menu, controller )
 				self.MessageText.LineLowerR:setRGB( 1, 0.55, 0.14 )
 				self.MessageText.DescLbl:setText( Engine.Localize( "W E A K N E S S" ) )
 				self.clipFinished( MessageText, {} )
+
 				DataTextState2:completeAnimation()
 				self.DataTextState2:setLeftRight( true, false, 212.67, 290.06 )
 				self.DataTextState2:setTopBottom( true, false, 145, 150 )
 				self.DataTextState2:setAlpha( 1 )
 				self.clipFinished( DataTextState2, {} )
+
 				ArrowRight:completeAnimation()
 				self.ArrowRight:setLeftRight( true, false, 214.67, 208 )
 				self.ArrowRight:setTopBottom( true, false, 119.66, 133 )
@@ -725,6 +772,7 @@ CoD.SpikeLauncher.new = function ( menu, controller )
 			end,
 			State1 = function ()
 				self:setupElementClipCounter( 21 )
+
 				local VignetteState1Frame2 = function ( VignetteState1, event )
 					if not event.interrupted then
 						VignetteState1:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )
@@ -755,6 +803,7 @@ CoD.SpikeLauncher.new = function ( menu, controller )
 				VignetteState2:completeAnimation()
 				self.VignetteState2:setAlpha( 1 )
 				VignetteState2Frame2( VignetteState2, {} )
+
 				VignetteState3:completeAnimation()
 				self.VignetteState3:setAlpha( 0 )
 				self.clipFinished( VignetteState3, {} )
@@ -794,6 +843,7 @@ CoD.SpikeLauncher.new = function ( menu, controller )
 				self.BackBox:setTopBottom( true, false, 93.83, 158.83 )
 				self.BackBox:setAlpha( 1 )
 				BackBoxFrame2( BackBox, {} )
+
 				LargeTriangle:completeAnimation()
 				self.LargeTriangle:setAlpha( 0 )
 				self.clipFinished( LargeTriangle, {} )
@@ -818,30 +868,38 @@ CoD.SpikeLauncher.new = function ( menu, controller )
 				self.TriangleTop:setRGB( 1, 0.55, 0.14 )
 				self.TriangleTop:setZRot( 180 )
 				TriangleTopFrame2( TriangleTop, {} )
+
 				IconWeak:completeAnimation()
 				self.IconWeak:setAlpha( 1 )
 				self.IconWeak:setYRot( 0 )
 				self.clipFinished( IconWeak, {} )
+
 				iconDestroy:completeAnimation()
 				self.iconDestroy:setAlpha( 0 )
 				self.iconDestroy:setYRot( -90 )
 				self.clipFinished( iconDestroy, {} )
+
 				FrameSide:completeAnimation()
 				self.FrameSide:setLeftRight( true, false, 128, 133 )
 				self.FrameSide:setTopBottom( true, false, 106.5, 146.83 )
 				self.FrameSide:setAlpha( 0 )
 				self.clipFinished( FrameSide, {} )
+
 				Meters:completeAnimation()
+
 				Meters.MetersBase:completeAnimation()
+
 				Meters.MetersTop:completeAnimation()
 				self.Meters.MetersBase:setAlpha( 0 )
 				self.Meters.MetersTop:setAlpha( 0 )
 				self.clipFinished( Meters, {} )
+
 				DestroyLineTop:completeAnimation()
 				self.DestroyLineTop:setLeftRight( true, false, 71, 123.33 )
 				self.DestroyLineTop:setTopBottom( true, false, 116.84, 120.17 )
 				self.DestroyLineTop:setAlpha( 0 )
 				self.clipFinished( DestroyLineTop, {} )
+
 				DestroyLineBottom:completeAnimation()
 				self.DestroyLineBottom:setLeftRight( true, false, 71, 123.33 )
 				self.DestroyLineBottom:setTopBottom( true, false, 136, 132.84 )
@@ -889,6 +947,7 @@ CoD.SpikeLauncher.new = function ( menu, controller )
 				self.Sides:setTopBottom( true, false, 104.16, 153.83 )
 				self.Sides:setAlpha( 0 )
 				SidesFrame2( Sides, {} )
+
 				AreaText:completeAnimation()
 				self.AreaText:setLeftRight( true, false, 113.28, 210.28 )
 				self.AreaText:setTopBottom( true, false, 96.84, 151.84 )
@@ -913,6 +972,7 @@ CoD.SpikeLauncher.new = function ( menu, controller )
 				self.DistanceText:setTopBottom( true, false, 98.91, 111.41 )
 				self.DistanceText:setAlpha( 1 )
 				DistanceTextFrame2( DistanceText, {} )
+
 				DataText:completeAnimation()
 				self.DataText:setLeftRight( true, false, 75.92, 195.98 )
 				self.DataText:setTopBottom( true, false, 146.83, 225.83 )
@@ -953,9 +1013,13 @@ CoD.SpikeLauncher.new = function ( menu, controller )
 				end
 				
 				MessageText:completeAnimation()
+
 				MessageText.LineLowerL:completeAnimation()
+
 				MessageText.LineLowerM:completeAnimation()
+
 				MessageText.LineLowerR:completeAnimation()
+
 				MessageText.DescLbl:completeAnimation()
 				self.MessageText:setLeftRight( true, false, 206.5, 329.49 )
 				self.MessageText:setTopBottom( true, false, 115.5, 140.83 )
@@ -1052,6 +1116,7 @@ CoD.SpikeLauncher.new = function ( menu, controller )
 			end,
 			State3 = function ()
 				self:setupElementClipCounter( 21 )
+
 				VignetteState1:completeAnimation()
 				self.VignetteState1:setAlpha( 0 )
 				self.clipFinished( VignetteState1, {} )
@@ -1551,9 +1616,13 @@ CoD.SpikeLauncher.new = function ( menu, controller )
 				end
 				
 				MessageText:completeAnimation()
+
 				MessageText.LineLowerL:completeAnimation()
+
 				MessageText.LineLowerM:completeAnimation()
+
 				MessageText.LineLowerR:completeAnimation()
+
 				MessageText.DescLbl:completeAnimation()
 				self.MessageText:setLeftRight( true, false, 206.5, 329.49 )
 				self.MessageText:setTopBottom( true, false, 115.5, 140.83 )
@@ -1606,94 +1675,119 @@ CoD.SpikeLauncher.new = function ( menu, controller )
 		State3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 21 )
+
 				VignetteState1:completeAnimation()
 				self.VignetteState1:setAlpha( 0 )
 				self.clipFinished( VignetteState1, {} )
+
 				VignetteState2:completeAnimation()
 				self.VignetteState2:setAlpha( 0 )
 				self.clipFinished( VignetteState2, {} )
+
 				VignetteState3:completeAnimation()
 				self.VignetteState3:setAlpha( 1 )
 				self.clipFinished( VignetteState3, {} )
+
 				CircleAnim:completeAnimation()
 				self.CircleAnim:setRGB( 1, 1, 1 )
 				self.CircleAnim:setAlpha( 1 )
 				self.CircleAnim:setZoom( -75 )
 				self.clipFinished( CircleAnim, {} )
+
 				BackBox:completeAnimation()
 				self.BackBox:setLeftRight( true, false, 37.94, 337.94 )
 				self.BackBox:setTopBottom( true, false, 93.83, 158.83 )
 				self.BackBox:setAlpha( 1 )
 				self.clipFinished( BackBox, {} )
+
 				LargeTriangle:completeAnimation()
 				self.LargeTriangle:setLeftRight( true, false, 61, 264.95 )
 				self.LargeTriangle:setTopBottom( true, false, 71.89, 238.91 )
 				self.LargeTriangle:setAlpha( 1 )
 				self.clipFinished( LargeTriangle, {} )
+
 				TriangleTop:completeAnimation()
 				self.TriangleTop:setRGB( 0.78, 0.13, 0.13 )
 				self.TriangleTop:setZRot( 0 )
 				self.clipFinished( TriangleTop, {} )
+
 				IconWeak:completeAnimation()
 				self.IconWeak:setAlpha( 1 )
 				self.IconWeak:setYRot( -90 )
 				self.clipFinished( IconWeak, {} )
+
 				iconDestroy:completeAnimation()
 				self.iconDestroy:setAlpha( 1 )
 				self.iconDestroy:setYRot( 0 )
 				self.clipFinished( iconDestroy, {} )
+
 				FrameSide:completeAnimation()
 				self.FrameSide:setLeftRight( true, false, 64, 69 )
 				self.FrameSide:setTopBottom( true, false, 106.5, 146.83 )
 				self.FrameSide:setAlpha( 1 )
 				self.clipFinished( FrameSide, {} )
+
 				Meters:completeAnimation()
+
 				Meters.MetersBase:completeAnimation()
+
 				Meters.MetersTop:completeAnimation()
 				self.Meters:setAlpha( 1 )
 				self.Meters.MetersBase:setAlpha( 1 )
 				self.Meters.MetersTop:setAlpha( 1 )
 				self.clipFinished( Meters, {} )
+
 				DestroyLineTop:completeAnimation()
 				self.DestroyLineTop:setLeftRight( true, false, 71, 123.33 )
 				self.DestroyLineTop:setTopBottom( true, false, 87.84, 91.16 )
 				self.DestroyLineTop:setAlpha( 1 )
 				self.clipFinished( DestroyLineTop, {} )
+
 				DestroyLineBottom:completeAnimation()
 				self.DestroyLineBottom:setLeftRight( true, false, 71, 123.33 )
 				self.DestroyLineBottom:setTopBottom( true, false, 164, 160.84 )
 				self.DestroyLineBottom:setAlpha( 1 )
 				self.clipFinished( DestroyLineBottom, {} )
+
 				ArrowLeft:completeAnimation()
 				self.ArrowLeft:setLeftRight( true, false, 52.67, 46 )
 				self.ArrowLeft:setTopBottom( true, false, 119.66, 133 )
 				self.ArrowLeft:setAlpha( 1 )
 				self.ArrowLeft:setZRot( 0 )
 				self.clipFinished( ArrowLeft, {} )
+
 				Sides:completeAnimation()
 				self.Sides:setLeftRight( true, false, 128, 195.85 )
 				self.Sides:setTopBottom( true, false, 104.16, 153.83 )
 				self.Sides:setAlpha( 1 )
 				self.clipFinished( Sides, {} )
+
 				AreaText:completeAnimation()
 				self.AreaText:setLeftRight( true, false, 48.16, 145.16 )
 				self.AreaText:setTopBottom( true, false, 97.83, 152.83 )
 				self.AreaText:setAlpha( 1 )
 				self.clipFinished( AreaText, {} )
+
 				DistanceText:completeAnimation()
 				self.DistanceText:setLeftRight( true, false, 213.61, 265 )
 				self.DistanceText:setTopBottom( true, false, 98.91, 111.41 )
 				self.DistanceText:setAlpha( 1 )
 				self.clipFinished( DistanceText, {} )
+
 				DataText:completeAnimation()
 				self.DataText:setLeftRight( true, false, 169.94, 290 )
 				self.DataText:setTopBottom( true, false, 146, 225 )
 				self.DataText:setAlpha( 1 )
 				self.clipFinished( DataText, {} )
+
 				MessageText:completeAnimation()
+
 				MessageText.LineLowerL:completeAnimation()
+
 				MessageText.LineLowerM:completeAnimation()
+
 				MessageText.LineLowerR:completeAnimation()
+
 				MessageText.DescLbl:completeAnimation()
 				self.MessageText:setLeftRight( true, false, 206.5, 310.49 )
 				self.MessageText:setTopBottom( true, false, 115.5, 140.83 )
@@ -1703,17 +1797,20 @@ CoD.SpikeLauncher.new = function ( menu, controller )
 				self.MessageText.LineLowerR:setRGB( 0.78, 0.13, 0.13 )
 				self.MessageText.DescLbl:setText( Engine.Localize( "D E S T R O Y" ) )
 				self.clipFinished( MessageText, {} )
+
 				DataTextState2:completeAnimation()
 				self.DataTextState2:setLeftRight( true, false, 212.67, 290.06 )
 				self.DataTextState2:setTopBottom( true, false, 145, 150 )
 				self.DataTextState2:setAlpha( 0 )
 				self.clipFinished( DataTextState2, {} )
+
 				ArrowRight:completeAnimation()
 				self.ArrowRight:setAlpha( 0 )
 				self.clipFinished( ArrowRight, {} )
 			end,
 			State2 = function ()
 				self:setupElementClipCounter( 21 )
+
 				VignetteState1:completeAnimation()
 				self.VignetteState1:setAlpha( 0 )
 				self.clipFinished( VignetteState1, {} )
@@ -2256,6 +2353,7 @@ CoD.SpikeLauncher.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CircleAnim:close()
 		element.BackBox:close()

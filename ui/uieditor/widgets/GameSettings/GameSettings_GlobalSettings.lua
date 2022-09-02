@@ -28,9 +28,11 @@ end )
 CoD.GameSettings_GlobalSettings = InheritFrom( LUI.UIElement )
 CoD.GameSettings_GlobalSettings.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GameSettings_GlobalSettings )
 	self.id = "GameSettings_GlobalSettings"
@@ -60,6 +62,7 @@ CoD.GameSettings_GlobalSettings.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local GameSettingsSelectedItemInfoFrame2 = function ( GameSettingsSelectedItemInfo, event )
 					if not event.interrupted then
 						GameSettingsSelectedItemInfo:beginAnimation( "keyframe", 250, false, false, CoD.TweenType.Linear )
@@ -74,6 +77,7 @@ CoD.GameSettings_GlobalSettings.new = function ( menu, controller )
 				end
 				
 				GameSettingsSelectedItemInfo:completeAnimation()
+
 				GameSettingsSelectedItemInfo.GameModeInfo:completeAnimation()
 				self.GameSettingsSelectedItemInfo.GameModeInfo:setAlpha( 1 )
 				GameSettingsSelectedItemInfoFrame2( GameSettingsSelectedItemInfo, {} )
@@ -88,6 +92,7 @@ CoD.GameSettings_GlobalSettings.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Options:close()
 		element.GameSettingsSelectedItemInfo:close()

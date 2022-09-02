@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.HUD.ZM_AmmoWidget.ZmAmmo_EquipEmpty" )
 CoD.ZmAmmo_EquipContainerFactory = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_EquipContainerFactory.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_EquipContainerFactory )
 	self.id = "ZmAmmo_EquipContainerFactory"
@@ -329,47 +331,58 @@ CoD.ZmAmmo_EquipContainerFactory.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		OffsetLeft = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				LethalGlow:completeAnimation()
 				self.LethalGlow:setLeftRight( true, false, 14.84, 62.99 )
 				self.LethalGlow:setTopBottom( true, false, 4.07, 52.22 )
 				self.clipFinished( LethalGlow, {} )
+
 				TacticalGlow:completeAnimation()
 				self.TacticalGlow:setLeftRight( true, false, -8, 40.15 )
 				self.TacticalGlow:setTopBottom( true, false, 2, 50.15 )
 				self.clipFinished( TacticalGlow, {} )
+
 				LethalGlowTop:completeAnimation()
 				self.LethalGlowTop:setLeftRight( true, false, 20.85, 55.65 )
 				self.LethalGlowTop:setTopBottom( true, false, 1, 49.15 )
 				self.clipFinished( LethalGlowTop, {} )
+
 				TacticalGlowTop:completeAnimation()
 				self.TacticalGlowTop:setLeftRight( true, false, -3.35, 31.44 )
 				self.TacticalGlowTop:setTopBottom( true, false, 2, 50.15 )
 				self.clipFinished( TacticalGlowTop, {} )
+
 				TacticalRing:completeAnimation()
 				self.TacticalRing:setLeftRight( true, false, 4.65, 40.65 )
 				self.TacticalRing:setTopBottom( true, false, 0.07, 36.07 )
 				self.clipFinished( TacticalRing, {} )
+
 				LethalRing:completeAnimation()
 				self.LethalRing:setLeftRight( true, false, 27.65, 63.65 )
 				self.LethalRing:setTopBottom( true, false, 0.07, 36.07 )
 				self.clipFinished( LethalRing, {} )
+
 				TacticalItem:completeAnimation()
 				self.TacticalItem:setLeftRight( true, false, -2.85, 34.15 )
 				self.TacticalItem:setTopBottom( true, false, 4.07, 36.07 )
 				self.clipFinished( TacticalItem, {} )
+
 				LethalItem:completeAnimation()
 				self.LethalItem:setLeftRight( true, false, 27.15, 64.15 )
 				self.LethalItem:setTopBottom( true, false, 3.82, 35.82 )
 				self.clipFinished( LethalItem, {} )
+
 				TacticalEmpty:completeAnimation()
 				self.TacticalEmpty:setLeftRight( true, false, 9.05, 35.05 )
 				self.TacticalEmpty:setTopBottom( true, false, 5.07, 31.07 )
 				self.clipFinished( TacticalEmpty, {} )
+
 				LethalEmpty:completeAnimation()
 				self.LethalEmpty:setLeftRight( true, false, 33.05, 59.05 )
 				self.LethalEmpty:setTopBottom( true, false, 5.07, 31.07 )
@@ -377,6 +390,7 @@ CoD.ZmAmmo_EquipContainerFactory.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LethalGlow:close()
 		element.TacticalGlow:close()

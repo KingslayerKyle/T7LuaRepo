@@ -4,9 +4,11 @@
 CoD.bleedOutClampedArrow = InheritFrom( LUI.UIElement )
 CoD.bleedOutClampedArrow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.bleedOutClampedArrow )
 	self.id = "bleedOutClampedArrow"

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.MenuChooseClass.CategoryHeader" )
 CoD.TacticalRigWidget = InheritFrom( LUI.UIElement )
 CoD.TacticalRigWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TacticalRigWidget )
 	self.id = "TacticalRigWidget"
@@ -133,6 +135,7 @@ CoD.TacticalRigWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TacRig2:close()
 		element.TacRig1:close()

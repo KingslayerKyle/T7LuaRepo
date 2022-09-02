@@ -4,9 +4,11 @@
 CoD.WinLossRatioWidget = InheritFrom( LUI.UIElement )
 CoD.WinLossRatioWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WinLossRatioWidget )
 	self.id = "WinLossRatioWidget"

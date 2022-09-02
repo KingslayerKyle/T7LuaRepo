@@ -13,9 +13,11 @@ require( "ui.uieditor.menus.Craft.Gunsmith.GunsmithCamoSelect" )
 CoD.WeaponBuildKitsVariantAttachments = InheritFrom( LUI.UIElement )
 CoD.WeaponBuildKitsVariantAttachments.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponBuildKitsVariantAttachments )
 	self.id = "WeaponBuildKitsVariantAttachments"
@@ -1117,61 +1119,73 @@ CoD.WeaponBuildKitsVariantAttachments.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				opticCategoryHeader:completeAnimation()
 				self.opticCategoryHeader:setLeftRight( true, false, 1, 64 )
 				self.opticCategoryHeader:setTopBottom( true, false, 0, 17 )
 				self.opticCategoryHeader:setAlpha( 1 )
 				self.clipFinished( opticCategoryHeader, {} )
+
 				attachCategoryHeader:completeAnimation()
 				self.attachCategoryHeader:setLeftRight( true, true, 112.67, -245.9 )
 				self.attachCategoryHeader:setTopBottom( true, false, 0, 17 )
 				self.attachCategoryHeader:setAlpha( 1 )
 				self.clipFinished( attachCategoryHeader, {} )
+
 				Optic:completeAnimation()
 				self.Optic:setLeftRight( true, false, 0, 64 )
 				self.Optic:setTopBottom( true, false, 24, 88 )
 				self.Optic:setAlpha( 1 )
 				self.clipFinished( Optic, {} )
+
 				Attachment1:completeAnimation()
 				self.Attachment1:setLeftRight( true, false, 111.67, 175.67 )
 				self.Attachment1:setTopBottom( true, false, 24, 88 )
 				self.Attachment1:setAlpha( 1 )
 				self.clipFinished( Attachment1, {} )
+
 				Attachment2:completeAnimation()
 				self.Attachment2:setLeftRight( true, false, 180.67, 244.67 )
 				self.Attachment2:setTopBottom( true, false, 24, 88 )
 				self.Attachment2:setAlpha( 1 )
 				self.clipFinished( Attachment2, {} )
+
 				Attachment3:completeAnimation()
 				self.Attachment3:setLeftRight( true, false, 249.67, 313.67 )
 				self.Attachment3:setTopBottom( true, false, 24, 88 )
 				self.Attachment3:setAlpha( 1 )
 				self.clipFinished( Attachment3, {} )
+
 				Attachment4:completeAnimation()
 				self.Attachment4:setLeftRight( true, false, 320.1, 384.1 )
 				self.Attachment4:setTopBottom( true, false, 24, 88 )
 				self.Attachment4:setAlpha( 1 )
 				self.clipFinished( Attachment4, {} )
+
 				Attachment5:completeAnimation()
 				self.Attachment5:setLeftRight( true, false, 389.1, 453.1 )
 				self.Attachment5:setTopBottom( true, false, 24, 88 )
 				self.Attachment5:setAlpha( 1 )
 				self.clipFinished( Attachment5, {} )
+
 				paintjobCategoryHeader:completeAnimation()
 				self.paintjobCategoryHeader:setLeftRight( true, false, 501.77, 579.77 )
 				self.paintjobCategoryHeader:setTopBottom( true, false, 0, 17 )
 				self.paintjobCategoryHeader:setAlpha( 1 )
 				self.clipFinished( paintjobCategoryHeader, {} )
+
 				camoCategoryHeader:completeAnimation()
 				self.camoCategoryHeader:setLeftRight( true, false, 611.44, 675.44 )
 				self.camoCategoryHeader:setTopBottom( true, false, 0, 17 )
 				self.camoCategoryHeader:setAlpha( 1 )
 				self.clipFinished( camoCategoryHeader, {} )
+
 				paintjob:completeAnimation()
 				self.paintjob:setLeftRight( true, false, 501.77, 565.77 )
 				self.paintjob:setTopBottom( true, false, 24, 88 )
 				self.paintjob:setAlpha( 1 )
 				self.clipFinished( paintjob, {} )
+
 				Camo:completeAnimation()
 				self.Camo:setLeftRight( true, false, 611.44, 675.44 )
 				self.Camo:setTopBottom( true, false, 24, 88 )
@@ -1182,45 +1196,57 @@ CoD.WeaponBuildKitsVariantAttachments.new = function ( menu, controller )
 		SpecialWeapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				opticCategoryHeader:completeAnimation()
 				self.opticCategoryHeader:setAlpha( 0 )
 				self.clipFinished( opticCategoryHeader, {} )
+
 				attachCategoryHeader:completeAnimation()
 				self.attachCategoryHeader:setAlpha( 0 )
 				self.clipFinished( attachCategoryHeader, {} )
+
 				Optic:completeAnimation()
 				self.Optic:setAlpha( 0 )
 				self.clipFinished( Optic, {} )
+
 				Attachment1:completeAnimation()
 				self.Attachment1:setAlpha( 0 )
 				self.clipFinished( Attachment1, {} )
+
 				Attachment2:completeAnimation()
 				self.Attachment2:setAlpha( 0 )
 				self.clipFinished( Attachment2, {} )
+
 				Attachment3:completeAnimation()
 				self.Attachment3:setAlpha( 0 )
 				self.clipFinished( Attachment3, {} )
+
 				Attachment4:completeAnimation()
 				self.Attachment4:setAlpha( 0 )
 				self.clipFinished( Attachment4, {} )
+
 				Attachment5:completeAnimation()
 				self.Attachment5:setAlpha( 0 )
 				self.clipFinished( Attachment5, {} )
+
 				paintjobCategoryHeader:completeAnimation()
 				self.paintjobCategoryHeader:setLeftRight( true, false, 1, 79 )
 				self.paintjobCategoryHeader:setTopBottom( true, false, 0, 17 )
 				self.paintjobCategoryHeader:setAlpha( 1 )
 				self.clipFinished( paintjobCategoryHeader, {} )
+
 				camoCategoryHeader:completeAnimation()
 				self.camoCategoryHeader:setLeftRight( true, false, 110.67, 176.67 )
 				self.camoCategoryHeader:setTopBottom( true, false, 0, 17 )
 				self.camoCategoryHeader:setAlpha( 1 )
 				self.clipFinished( camoCategoryHeader, {} )
+
 				paintjob:completeAnimation()
 				self.paintjob:setLeftRight( true, false, 1, 65 )
 				self.paintjob:setTopBottom( true, false, 24, 88 )
 				self.paintjob:setAlpha( 1 )
 				self.clipFinished( paintjob, {} )
+
 				Camo:completeAnimation()
 				self.Camo:setLeftRight( true, false, 110.67, 174.67 )
 				self.Camo:setTopBottom( true, false, 24, 88 )
@@ -1231,60 +1257,72 @@ CoD.WeaponBuildKitsVariantAttachments.new = function ( menu, controller )
 		Handguns = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				opticCategoryHeader:completeAnimation()
 				self.opticCategoryHeader:setLeftRight( true, false, 1, 64 )
 				self.opticCategoryHeader:setTopBottom( true, false, 0, 17 )
 				self.opticCategoryHeader:setAlpha( 1 )
 				self.clipFinished( opticCategoryHeader, {} )
+
 				attachCategoryHeader:completeAnimation()
 				self.attachCategoryHeader:setLeftRight( true, true, 112.67, -455.33 )
 				self.attachCategoryHeader:setTopBottom( true, false, 0, 17 )
 				self.attachCategoryHeader:setAlpha( 1 )
 				self.clipFinished( attachCategoryHeader, {} )
+
 				Optic:completeAnimation()
 				self.Optic:setLeftRight( true, false, 0, 64 )
 				self.Optic:setTopBottom( true, false, 24, 88 )
 				self.Optic:setAlpha( 1 )
 				self.clipFinished( Optic, {} )
+
 				Attachment1:completeAnimation()
 				self.Attachment1:setLeftRight( true, false, 111.67, 175.67 )
 				self.Attachment1:setTopBottom( true, false, 24, 88 )
 				self.Attachment1:setAlpha( 1 )
 				self.clipFinished( Attachment1, {} )
+
 				Attachment2:completeAnimation()
 				self.Attachment2:setLeftRight( true, false, 180.67, 244.67 )
 				self.Attachment2:setTopBottom( true, false, 24, 88 )
 				self.Attachment2:setAlpha( 1 )
 				self.clipFinished( Attachment2, {} )
+
 				Attachment3:completeAnimation()
 				self.Attachment3:setLeftRight( true, false, 249.67, 313.67 )
 				self.Attachment3:setTopBottom( true, false, 24, 88 )
 				self.Attachment3:setAlpha( 0 )
 				self.clipFinished( Attachment3, {} )
+
 				Attachment4:completeAnimation()
 				self.Attachment4:setLeftRight( true, false, 320.1, 384.1 )
 				self.Attachment4:setTopBottom( true, false, 24, 88 )
 				self.Attachment4:setAlpha( 0 )
 				self.clipFinished( Attachment4, {} )
+
 				Attachment5:completeAnimation()
 				self.Attachment5:setLeftRight( true, false, 389.1, 453.1 )
 				self.Attachment5:setTopBottom( true, false, 24, 88 )
 				self.Attachment5:setAlpha( 0 )
 				self.clipFinished( Attachment5, {} )
+
 				paintjobCategoryHeader:completeAnimation()
 				self.paintjobCategoryHeader:setLeftRight( true, false, 294.1, 372.1 )
 				self.paintjobCategoryHeader:setTopBottom( true, false, 0, 17 )
 				self.paintjobCategoryHeader:setAlpha( 1 )
 				self.clipFinished( paintjobCategoryHeader, {} )
+
 				camoCategoryHeader:completeAnimation()
 				self.camoCategoryHeader:setLeftRight( true, false, 402.1, 466.1 )
 				self.camoCategoryHeader:setTopBottom( true, false, 0, 17 )
 				self.clipFinished( camoCategoryHeader, {} )
+
 				paintjob:completeAnimation()
 				self.paintjob:setLeftRight( true, false, 294.1, 358.1 )
 				self.paintjob:setTopBottom( true, false, 24, 88 )
 				self.paintjob:setAlpha( 1 )
 				self.clipFinished( paintjob, {} )
+
 				Camo:completeAnimation()
 				self.Camo:setLeftRight( true, false, 402.1, 466.1 )
 				self.Camo:setTopBottom( true, false, 24, 88 )
@@ -1295,61 +1333,73 @@ CoD.WeaponBuildKitsVariantAttachments.new = function ( menu, controller )
 		Snipers = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				opticCategoryHeader:completeAnimation()
 				self.opticCategoryHeader:setLeftRight( true, false, 1, 64 )
 				self.opticCategoryHeader:setTopBottom( true, false, 0, 17 )
 				self.opticCategoryHeader:setAlpha( 1 )
 				self.clipFinished( opticCategoryHeader, {} )
+
 				attachCategoryHeader:completeAnimation()
 				self.attachCategoryHeader:setLeftRight( true, true, 112.67, -315.9 )
 				self.attachCategoryHeader:setTopBottom( true, false, 0, 17 )
 				self.attachCategoryHeader:setAlpha( 1 )
 				self.clipFinished( attachCategoryHeader, {} )
+
 				Optic:completeAnimation()
 				self.Optic:setLeftRight( true, false, 0, 64 )
 				self.Optic:setTopBottom( true, false, 24, 88 )
 				self.Optic:setAlpha( 1 )
 				self.clipFinished( Optic, {} )
+
 				Attachment1:completeAnimation()
 				self.Attachment1:setLeftRight( true, false, 111.67, 175.67 )
 				self.Attachment1:setTopBottom( true, false, 24, 88 )
 				self.Attachment1:setAlpha( 1 )
 				self.clipFinished( Attachment1, {} )
+
 				Attachment2:completeAnimation()
 				self.Attachment2:setLeftRight( true, false, 180.67, 244.67 )
 				self.Attachment2:setTopBottom( true, false, 24, 88 )
 				self.Attachment2:setAlpha( 1 )
 				self.clipFinished( Attachment2, {} )
+
 				Attachment3:completeAnimation()
 				self.Attachment3:setLeftRight( true, false, 249.67, 313.67 )
 				self.Attachment3:setTopBottom( true, false, 24, 88 )
 				self.Attachment3:setAlpha( 1 )
 				self.clipFinished( Attachment3, {} )
+
 				Attachment4:completeAnimation()
 				self.Attachment4:setLeftRight( true, false, 320.1, 384.1 )
 				self.Attachment4:setTopBottom( true, false, 24, 88 )
 				self.Attachment4:setAlpha( 1 )
 				self.clipFinished( Attachment4, {} )
+
 				Attachment5:completeAnimation()
 				self.Attachment5:setLeftRight( true, false, 389.1, 453.1 )
 				self.Attachment5:setTopBottom( true, false, 24, 88 )
 				self.Attachment5:setAlpha( 0 )
 				self.clipFinished( Attachment5, {} )
+
 				paintjobCategoryHeader:completeAnimation()
 				self.paintjobCategoryHeader:setLeftRight( true, false, 501.77, 579.77 )
 				self.paintjobCategoryHeader:setTopBottom( true, false, 0, 17 )
 				self.paintjobCategoryHeader:setAlpha( 1 )
 				self.clipFinished( paintjobCategoryHeader, {} )
+
 				camoCategoryHeader:completeAnimation()
 				self.camoCategoryHeader:setLeftRight( true, false, 611.44, 675.44 )
 				self.camoCategoryHeader:setTopBottom( true, false, 0, 17 )
 				self.camoCategoryHeader:setAlpha( 1 )
 				self.clipFinished( camoCategoryHeader, {} )
+
 				paintjob:completeAnimation()
 				self.paintjob:setLeftRight( true, false, 501.77, 565.77 )
 				self.paintjob:setTopBottom( true, false, 24, 88 )
 				self.paintjob:setAlpha( 1 )
 				self.clipFinished( paintjob, {} )
+
 				Camo:completeAnimation()
 				self.Camo:setLeftRight( true, false, 611.44, 675.44 )
 				self.Camo:setTopBottom( true, false, 24, 88 )
@@ -1358,6 +1408,7 @@ CoD.WeaponBuildKitsVariantAttachments.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "SpecialWeapon",
@@ -1379,6 +1430,7 @@ CoD.WeaponBuildKitsVariantAttachments.new = function ( menu, controller )
 		}
 	} )
 	CoD.Menu.AddNavigationHandler( menu, self, controller )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsElementInState( element, "SpecialWeapon" ) then
 			MakeElementNotFocusable( self, "Attachment1", controller )
@@ -1410,6 +1462,7 @@ CoD.WeaponBuildKitsVariantAttachments.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.opticCategoryHeader:close()
 		element.attachCategoryHeader:close()

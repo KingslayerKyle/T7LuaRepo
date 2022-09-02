@@ -13,9 +13,11 @@ end
 CoD.CodCaster_Options_Slider_Control_Item = InheritFrom( LUI.UIElement )
 CoD.CodCaster_Options_Slider_Control_Item.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCaster_Options_Slider_Control_Item )
 	self.id = "CodCaster_Options_Slider_Control_Item"
@@ -76,19 +78,23 @@ CoD.CodCaster_Options_Slider_Control_Item.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				TextBox:completeAnimation()
 				self.TextBox:setRGB( 1, 1, 1 )
 				self.TextBox:setAlpha( 1 )
 				self.clipFinished( TextBox, {} )
+
 				left:completeAnimation()
 				self.left:setAlpha( 1 )
 				self.clipFinished( left, {} )
+
 				right:completeAnimation()
 				self.right:setAlpha( 1 )
 				self.clipFinished( right, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
+
 				TextBox:completeAnimation()
 				self.TextBox:setRGB( ColorSet.FocusColor.r, ColorSet.FocusColor.g, ColorSet.FocusColor.b )
 				self.clipFinished( TextBox, {} )
@@ -97,15 +103,18 @@ CoD.CodCaster_Options_Slider_Control_Item.new = function ( menu, controller )
 		ArrowsHidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				left:completeAnimation()
 				self.left:setAlpha( 0 )
 				self.clipFinished( left, {} )
+
 				right:completeAnimation()
 				self.right:setAlpha( 0 )
 				self.clipFinished( right, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsElementInState( element, "DefaultState" ) then
 			SetElementStateByElementName( self, "arrow", controller, "DefaultState" )
@@ -119,6 +128,7 @@ CoD.CodCaster_Options_Slider_Control_Item.new = function ( menu, controller )
 			SetElementStateByElementName( self, "right", controller, "Hidden" )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.left:close()
 		element.right:close()

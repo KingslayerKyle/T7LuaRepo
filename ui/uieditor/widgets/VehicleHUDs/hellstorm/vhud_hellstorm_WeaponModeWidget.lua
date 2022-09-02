@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.hellstorm.vhud_hellstorm_NotificationC
 CoD.vhud_hellstorm_WeaponModeWidget = InheritFrom( LUI.UIElement )
 CoD.vhud_hellstorm_WeaponModeWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_hellstorm_WeaponModeWidget )
 	self.id = "vhud_hellstorm_WeaponModeWidget"
@@ -45,6 +47,7 @@ CoD.vhud_hellstorm_WeaponModeWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local vhudhellstormNotificationArmedFrame2 = function ( vhudhellstormNotificationArmed, event )
 					local vhudhellstormNotificationArmedFrame3 = function ( vhudhellstormNotificationArmed, event )
 						if not event.interrupted then
@@ -73,6 +76,7 @@ CoD.vhud_hellstorm_WeaponModeWidget.new = function ( menu, controller )
 				self.vhudhellstormNotificationArmed:setRGB( 1, 0, 0 )
 				self.vhudhellstormNotificationArmed:setAlpha( 1 )
 				vhudhellstormNotificationArmedFrame2( vhudhellstormNotificationArmed, {} )
+
 				vhudhellstormNotificationCluster:completeAnimation()
 				self.vhudhellstormNotificationCluster:setRGB( 1, 1, 1 )
 				self.vhudhellstormNotificationCluster:setAlpha( 1 )
@@ -112,6 +116,7 @@ CoD.vhud_hellstorm_WeaponModeWidget.new = function ( menu, controller )
 		Cluster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				vhudhellstormNotificationArmed:completeAnimation()
 				self.vhudhellstormNotificationArmed:setRGB( 1, 1, 1 )
 				self.vhudhellstormNotificationArmed:setAlpha( 1 )
@@ -174,10 +179,12 @@ CoD.vhud_hellstorm_WeaponModeWidget.new = function ( menu, controller )
 				self.GlowOrangeOver:setTopBottom( true, false, -1.35, 69.35 )
 				self.GlowOrangeOver:setAlpha( 0.4 )
 				GlowOrangeOverFrame2( GlowOrangeOver, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Cluster",
@@ -194,6 +201,7 @@ CoD.vhud_hellstorm_WeaponModeWidget.new = function ( menu, controller )
 			modelName = "ammo"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vhudhellstormNotificationArmed:close()
 		element.vhudhellstormNotificationCluster:close()

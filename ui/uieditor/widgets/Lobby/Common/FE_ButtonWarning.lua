@@ -4,9 +4,11 @@
 CoD.FE_ButtonWarning = InheritFrom( LUI.UIElement )
 CoD.FE_ButtonWarning.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_ButtonWarning )
 	self.id = "FE_ButtonWarning"
@@ -26,6 +28,7 @@ CoD.FE_ButtonWarning.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
@@ -34,6 +37,7 @@ CoD.FE_ButtonWarning.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 1 )
 				self.Image0:setYRot( 0 )
@@ -41,6 +45,7 @@ CoD.FE_ButtonWarning.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

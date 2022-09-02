@@ -42,9 +42,11 @@ end
 CoD.CaptureCrate = InheritFrom( LUI.UIElement )
 CoD.CaptureCrate.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CaptureCrate )
 	self.id = "CaptureCrate"
@@ -92,15 +94,19 @@ CoD.CaptureCrate.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setAlpha( 0 )
 				self.clipFinished( FEButtonPanel0, {} )
+
 				ImageBorder:completeAnimation()
 				self.ImageBorder:setAlpha( 0 )
 				self.clipFinished( ImageBorder, {} )
+
 				bar:completeAnimation()
 				self.bar:setAlpha( 0 )
 				self.clipFinished( bar, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0 )
 				self.clipFinished( text, {} )
@@ -109,16 +115,20 @@ CoD.CaptureCrate.new = function ( menu, controller )
 		Capture = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setAlpha( 0.4 )
 				self.clipFinished( FEButtonPanel0, {} )
+
 				ImageBorder:completeAnimation()
 				self.ImageBorder:setAlpha( 1 )
 				self.clipFinished( ImageBorder, {} )
+
 				bar:completeAnimation()
 				self.bar:setRGB( 1, 1, 1 )
 				self.bar:setAlpha( 0.95 )
 				self.clipFinished( bar, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 1 )
 				self.text:setText( Engine.Localize( "KILLSTREAK_CAPTURING_CRATE" ) )
@@ -128,16 +138,20 @@ CoD.CaptureCrate.new = function ( menu, controller )
 		Hack = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setAlpha( 0.4 )
 				self.clipFinished( FEButtonPanel0, {} )
+
 				ImageBorder:completeAnimation()
 				self.ImageBorder:setAlpha( 1 )
 				self.clipFinished( ImageBorder, {} )
+
 				bar:completeAnimation()
 				self.bar:setRGB( 0.71, 0.18, 0.13 )
 				self.bar:setAlpha( 0.85 )
 				self.clipFinished( bar, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 1 )
 				self.text:setText( Engine.Localize( "KILLSTREAK_HACKING_CRATE" ) )
@@ -147,16 +161,20 @@ CoD.CaptureCrate.new = function ( menu, controller )
 		Disarm = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setAlpha( 0.4 )
 				self.clipFinished( FEButtonPanel0, {} )
+
 				ImageBorder:completeAnimation()
 				self.ImageBorder:setAlpha( 1 )
 				self.clipFinished( ImageBorder, {} )
+
 				bar:completeAnimation()
 				self.bar:setRGB( 0.04, 0.65, 0.9 )
 				self.bar:setAlpha( 0.85 )
 				self.clipFinished( bar, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 1 )
 				self.text:setText( Engine.Localize( "KILLSTREAK_SUPPLY_DROP_DISARMING_CRATE" ) )
@@ -164,6 +182,7 @@ CoD.CaptureCrate.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Capture",
@@ -192,6 +211,7 @@ CoD.CaptureCrate.new = function ( menu, controller )
 			modelName = "hudItems.captureCrateState"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel0:close()
 		element.ImageBorder:close()

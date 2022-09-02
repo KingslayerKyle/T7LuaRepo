@@ -4,9 +4,11 @@
 CoD.AAR_Contracts_Pip = InheritFrom( LUI.UIElement )
 CoD.AAR_Contracts_Pip.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AAR_Contracts_Pip )
 	self.id = "AAR_Contracts_Pip"
@@ -33,9 +35,11 @@ CoD.AAR_Contracts_Pip.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Pipempty:completeAnimation()
 				self.Pipempty:setAlpha( 1 )
 				self.clipFinished( Pipempty, {} )
+
 				Pip:completeAnimation()
 				self.Pip:setRGB( 1, 1, 1 )
 				self.Pip:setAlpha( 0 )
@@ -45,11 +49,13 @@ CoD.AAR_Contracts_Pip.new = function ( menu, controller )
 		AllComplete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Pipempty:completeAnimation()
 				self.Pipempty:setLeftRight( true, true, 0, 0 )
 				self.Pipempty:setTopBottom( true, true, 0, 0 )
 				self.Pipempty:setAlpha( 0 )
 				self.clipFinished( Pipempty, {} )
+
 				Pip:completeAnimation()
 				self.Pip:setRGB( 1, 1, 1 )
 				self.clipFinished( Pip, {} )
@@ -58,9 +64,11 @@ CoD.AAR_Contracts_Pip.new = function ( menu, controller )
 		Complete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Pipempty:completeAnimation()
 				self.Pipempty:setAlpha( 0 )
 				self.clipFinished( Pipempty, {} )
+
 				Pip:completeAnimation()
 				self.Pip:setRGB( 1, 1, 1 )
 				self.Pip:setAlpha( 1 )

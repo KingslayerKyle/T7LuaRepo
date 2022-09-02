@@ -4,9 +4,11 @@
 CoD.Cookbook_Distills_Required = InheritFrom( LUI.UIElement )
 CoD.Cookbook_Distills_Required.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Cookbook_Distills_Required )
 	self.id = "Cookbook_Distills_Required"
@@ -41,6 +43,7 @@ CoD.Cookbook_Distills_Required.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DistillAmount:completeAnimation()
 				self.DistillAmount:setRGB( 0, 0, 0 )
 				self.clipFinished( DistillAmount, {} )
@@ -49,12 +52,14 @@ CoD.Cookbook_Distills_Required.new = function ( menu, controller )
 		NotEnoughDistills = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DistillAmount:completeAnimation()
 				self.DistillAmount:setRGB( 0.9, 0, 0 )
 				self.clipFinished( DistillAmount, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NotEnoughDistills",
@@ -71,6 +76,7 @@ CoD.Cookbook_Distills_Required.new = function ( menu, controller )
 			modelName = "GobbleGumDistills.totalDistills"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.DistillAmount:close()
 	end )

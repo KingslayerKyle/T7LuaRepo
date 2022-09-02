@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Notifications.NotificationQueueWidgets.TrialComple
 CoD.TrialCompleteNotification = InheritFrom( LUI.UIElement )
 CoD.TrialCompleteNotification.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TrialCompleteNotification )
 	self.id = "TrialCompleteNotification"
@@ -64,6 +66,7 @@ CoD.TrialCompleteNotification.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Sound:completeAnimation()
 				self.Sound:setPlaySoundDirect( true )
 				self.Sound:playSound( "zmb_trial_complete", controller )
@@ -71,6 +74,7 @@ CoD.TrialCompleteNotification.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmNotif1CursorHint:close()
 		element.TrialCompleteTitleBox:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.AmmoWidget_StatusPanelLeftWidget" )
 CoD.AmmoWidget_StatusPanelLeftContainer = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_StatusPanelLeftContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_StatusPanelLeftContainer )
 	self.id = "AmmoWidget_StatusPanelLeftContainer"
@@ -27,9 +29,11 @@ CoD.AmmoWidget_StatusPanelLeftContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AmmoWidgetStatusPanelLeftWidget:close()
 	end )

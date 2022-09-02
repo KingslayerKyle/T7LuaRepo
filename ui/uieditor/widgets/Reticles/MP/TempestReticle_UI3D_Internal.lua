@@ -4,9 +4,11 @@
 CoD.TempestReticle_UI3D_Internal = InheritFrom( LUI.UIElement )
 CoD.TempestReticle_UI3D_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TempestReticle_UI3D_Internal )
 	self.id = "TempestReticle_UI3D_Internal"

@@ -4,9 +4,11 @@
 CoD.ZmAmmo_DpadMeterPistolFactory = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_DpadMeterPistolFactory.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_DpadMeterPistolFactory )
 	self.id = "ZmAmmo_DpadMeterPistolFactory"
@@ -109,18 +111,23 @@ CoD.ZmAmmo_DpadMeterPistolFactory.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				SwordRingBack:completeAnimation()
 				self.SwordRingBack:setAlpha( 0 )
 				self.clipFinished( SwordRingBack, {} )
+
 				SwordRing:completeAnimation()
 				self.SwordRing:setAlpha( 0 )
 				self.clipFinished( SwordRing, {} )
+
 				SwordRingGlow:completeAnimation()
 				self.SwordRingGlow:setAlpha( 0 )
 				self.clipFinished( SwordRingGlow, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
+
 				SwordRingRed:completeAnimation()
 				self.SwordRingRed:setAlpha( 0 )
 				self.clipFinished( SwordRingRed, {} )
@@ -129,6 +136,7 @@ CoD.ZmAmmo_DpadMeterPistolFactory.new = function ( menu, controller )
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				SwordRing:completeAnimation()
 				self.SwordRing:setRGB( 1, 0.97, 0 )
 				self.SwordRing:setAlpha( 1 )
@@ -231,6 +239,7 @@ CoD.ZmAmmo_DpadMeterPistolFactory.new = function ( menu, controller )
 				SwordRingEdge:completeAnimation()
 				self.SwordRingEdge:setAlpha( 1 )
 				SwordRingEdgeFrame2( SwordRingEdge, {} )
+
 				SwordRingRed:completeAnimation()
 				self.SwordRingRed:setAlpha( 0 )
 				self.clipFinished( SwordRingRed, {} )
@@ -239,23 +248,28 @@ CoD.ZmAmmo_DpadMeterPistolFactory.new = function ( menu, controller )
 		Charge = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				SwordRing:completeAnimation()
 				self.SwordRing:setRGB( 0.23, 0.6, 0.87 )
 				self.SwordRing:setAlpha( 1 )
 				self.clipFinished( SwordRing, {} )
+
 				SwordRingGlow:completeAnimation()
 				self.SwordRingGlow:setAlpha( 0 )
 				self.clipFinished( SwordRingGlow, {} )
+
 				SwordRingEdge:completeAnimation()
 				self.SwordRingEdge:setRGB( 0, 0.8, 1 )
 				self.SwordRingEdge:setAlpha( 1 )
 				self.clipFinished( SwordRingEdge, {} )
+
 				SwordRingRed:completeAnimation()
 				self.SwordRingRed:setAlpha( 0 )
 				self.clipFinished( SwordRingRed, {} )
 			end,
 			UpdateCharge = function ()
 				self:setupElementClipCounter( 3 )
+
 				local SwordRingFrame2 = function ( SwordRing, event )
 					local SwordRingFrame3 = function ( SwordRing, event )
 						if not event.interrupted then
@@ -282,9 +296,11 @@ CoD.ZmAmmo_DpadMeterPistolFactory.new = function ( menu, controller )
 				SwordRing:completeAnimation()
 				self.SwordRing:setAlpha( 1 )
 				SwordRingFrame2( SwordRing, {} )
+
 				SwordRingGlow:completeAnimation()
 				self.SwordRingGlow:setAlpha( 0 )
 				self.clipFinished( SwordRingGlow, {} )
+
 				SwordRingEdge:completeAnimation()
 				self.SwordRingEdge:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.clipFinished( SwordRingEdge, {} )
@@ -293,17 +309,21 @@ CoD.ZmAmmo_DpadMeterPistolFactory.new = function ( menu, controller )
 		InUse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				SwordRing:completeAnimation()
 				self.SwordRing:setRGB( 1, 1, 1 )
 				self.SwordRing:setAlpha( 0 )
 				self.clipFinished( SwordRing, {} )
+
 				SwordRingGlow:completeAnimation()
 				self.SwordRingGlow:setAlpha( 1 )
 				self.clipFinished( SwordRingGlow, {} )
+
 				SwordRingEdge:completeAnimation()
 				self.SwordRingEdge:setRGB( 1, 1, 1 )
 				self.SwordRingEdge:setAlpha( 1 )
 				self.clipFinished( SwordRingEdge, {} )
+
 				SwordRingRed:completeAnimation()
 				self.SwordRingRed:setAlpha( 0 )
 				self.clipFinished( SwordRingRed, {} )
@@ -312,23 +332,28 @@ CoD.ZmAmmo_DpadMeterPistolFactory.new = function ( menu, controller )
 		InUseLow = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				SwordRing:completeAnimation()
 				self.SwordRing:setRGB( 1, 1, 1 )
 				self.SwordRing:setAlpha( 0 )
 				self.clipFinished( SwordRing, {} )
+
 				SwordRingGlow:completeAnimation()
 				self.SwordRingGlow:setAlpha( 0 )
 				self.clipFinished( SwordRingGlow, {} )
+
 				SwordRingEdge:completeAnimation()
 				self.SwordRingEdge:setRGB( 1, 1, 1 )
 				self.SwordRingEdge:setAlpha( 1 )
 				self.clipFinished( SwordRingEdge, {} )
+
 				SwordRingRed:completeAnimation()
 				self.SwordRingRed:setAlpha( 1 )
 				self.clipFinished( SwordRingRed, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Ready",
@@ -377,6 +402,7 @@ CoD.ZmAmmo_DpadMeterPistolFactory.new = function ( menu, controller )
 			PlayClip( self, "UpdateCharge", controller )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SwordRing:close()
 		element.SwordRingGlow:close()

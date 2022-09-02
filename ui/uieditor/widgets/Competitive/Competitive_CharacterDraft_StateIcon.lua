@@ -4,9 +4,11 @@
 CoD.Competitive_CharacterDraft_StateIcon = InheritFrom( LUI.UIElement )
 CoD.Competitive_CharacterDraft_StateIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Competitive_CharacterDraft_StateIcon )
 	self.id = "Competitive_CharacterDraft_StateIcon"
@@ -41,18 +43,22 @@ CoD.Competitive_CharacterDraft_StateIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Arrow0:completeAnimation()
 				self.Arrow0:setAlpha( 0 )
 				self.clipFinished( Arrow0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				checkmark:completeAnimation()
 				self.checkmark:setAlpha( 0 )
 				self.clipFinished( checkmark, {} )
 			end,
 			Choosing = function ()
 				self:setupElementClipCounter( 3 )
+
 				local Arrow0Frame2 = function ( Arrow0, event )
 					if not event.interrupted then
 						Arrow0:beginAnimation( "keyframe", 689, false, false, CoD.TweenType.Linear )
@@ -91,6 +97,7 @@ CoD.Competitive_CharacterDraft_StateIcon.new = function ( menu, controller )
 				self.Arrow:setTopBottom( true, false, -2, 28 )
 				self.Arrow:setAlpha( 0 )
 				ArrowFrame2( Arrow, {} )
+
 				checkmark:completeAnimation()
 				self.checkmark:setAlpha( 0 )
 				self.clipFinished( checkmark, {} )
@@ -99,19 +106,23 @@ CoD.Competitive_CharacterDraft_StateIcon.new = function ( menu, controller )
 		Choosing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Arrow0:completeAnimation()
 				self.Arrow0:setRGB( 0, 0, 0 )
 				self.Arrow0:setAlpha( 1 )
 				self.clipFinished( Arrow0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setRGB( 1, 1, 1 )
 				self.clipFinished( Arrow, {} )
+
 				checkmark:completeAnimation()
 				self.checkmark:setAlpha( 0 )
 				self.clipFinished( checkmark, {} )
 			end,
 			Complete = function ()
 				self:setupElementClipCounter( 3 )
+
 				local Arrow0Frame2 = function ( Arrow0, event )
 					if not event.interrupted then
 						Arrow0:beginAnimation( "keyframe", 490, false, false, CoD.TweenType.Linear )
@@ -164,6 +175,7 @@ CoD.Competitive_CharacterDraft_StateIcon.new = function ( menu, controller )
 			end,
 			Forced = function ()
 				self:setupElementClipCounter( 3 )
+
 				local Arrow0Frame2 = function ( Arrow0, event )
 					if not event.interrupted then
 						Arrow0:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -218,12 +230,15 @@ CoD.Competitive_CharacterDraft_StateIcon.new = function ( menu, controller )
 		Complete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Arrow0:completeAnimation()
 				self.Arrow0:setAlpha( 1 )
 				self.clipFinished( Arrow0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setRGB( 0.66, 0.85, 0.16 )
 				self.clipFinished( Arrow, {} )
+
 				checkmark:completeAnimation()
 				self.checkmark:setRGB( 0.66, 0.85, 0.16 )
 				self.checkmark:setAlpha( 1 )
@@ -231,6 +246,7 @@ CoD.Competitive_CharacterDraft_StateIcon.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 3 )
+
 				local Arrow0Frame2 = function ( Arrow0, event )
 					if not event.interrupted then
 						Arrow0:beginAnimation( "keyframe", 629, false, false, CoD.TweenType.Linear )
@@ -281,14 +297,17 @@ CoD.Competitive_CharacterDraft_StateIcon.new = function ( menu, controller )
 		Forced = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Arrow0:completeAnimation()
 				self.Arrow0:setRGB( 0, 0, 0 )
 				self.Arrow0:setAlpha( 1 )
 				self.clipFinished( Arrow0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setRGB( 1, 0.17, 0.23 )
 				self.Arrow:setAlpha( 1 )
 				self.clipFinished( Arrow, {} )
+
 				checkmark:completeAnimation()
 				self.checkmark:setRGB( 1, 0.17, 0.23 )
 				self.checkmark:setAlpha( 1 )
@@ -296,6 +315,7 @@ CoD.Competitive_CharacterDraft_StateIcon.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 3 )
+
 				local Arrow0Frame2 = function ( Arrow0, event )
 					if not event.interrupted then
 						Arrow0:beginAnimation( "keyframe", 689, false, false, CoD.TweenType.Linear )
@@ -344,6 +364,7 @@ CoD.Competitive_CharacterDraft_StateIcon.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Choosing",

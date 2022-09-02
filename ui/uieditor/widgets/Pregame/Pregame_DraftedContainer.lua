@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleNumBrdr" )
 CoD.Pregame_DraftedContainer = InheritFrom( LUI.UIElement )
 CoD.Pregame_DraftedContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_DraftedContainer )
 	self.id = "Pregame_DraftedContainer"
@@ -39,6 +41,7 @@ CoD.Pregame_DraftedContainer.new = function ( menu, controller )
 	Text:setLetterSpacing( 1 )
 	Text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	Text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( Text, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 10 )
 	end )

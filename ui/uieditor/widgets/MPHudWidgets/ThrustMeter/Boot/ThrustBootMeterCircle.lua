@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.MPHudWidgets.ThrustMeter.Boot.ThrustMeterDotsBoot"
 CoD.ThrustBootMeterCircle = InheritFrom( LUI.UIElement )
 CoD.ThrustBootMeterCircle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ThrustBootMeterCircle )
 	self.id = "ThrustBootMeterCircle"

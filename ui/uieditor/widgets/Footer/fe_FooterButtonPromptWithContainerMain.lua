@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.fe_FooterButtonPromptWithContainerMain = InheritFrom( LUI.UIElement )
 CoD.fe_FooterButtonPromptWithContainerMain.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.fe_FooterButtonPromptWithContainerMain )
 	self.id = "fe_FooterButtonPromptWithContainerMain"
@@ -90,6 +92,7 @@ CoD.fe_FooterButtonPromptWithContainerMain.new = function ( menu, controller )
 	label:setTopBottom( true, false, 22, 40 )
 	label:setText( Engine.Localize( "Select" ) )
 	label:setTTF( "fonts/default.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( label, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, -10 )
 	end )
@@ -118,37 +121,48 @@ CoD.fe_FooterButtonPromptWithContainerMain.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				feBTNBG0:completeAnimation()
 				self.feBTNBG0:setAlpha( 0 )
 				self.clipFinished( feBTNBG0, {} )
+
 				line:completeAnimation()
 				self.line:setAlpha( 0 )
 				self.clipFinished( line, {} )
+
 				left:completeAnimation()
 				self.left:setAlpha( 0 )
 				self.clipFinished( left, {} )
+
 				Right:completeAnimation()
 				self.Right:setAlpha( 0 )
 				self.clipFinished( Right, {} )
+
 				left0:completeAnimation()
 				self.left0:setAlpha( 0 )
 				self.clipFinished( left0, {} )
+
 				Right0:completeAnimation()
 				self.Right0:setAlpha( 0 )
 				self.clipFinished( Right0, {} )
+
 				line0:completeAnimation()
 				self.line0:setAlpha( 0 )
 				self.clipFinished( line0, {} )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setAlpha( 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setAlpha( 0 )
 				self.clipFinished( label, {} )
+
 				keybind:completeAnimation()
 				self.keybind:setAlpha( 0 )
 				self.keybind:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 				self.clipFinished( keybind, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 0 )
 				self.clipFinished( Border, {} )
@@ -157,19 +171,23 @@ CoD.fe_FooterButtonPromptWithContainerMain.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setRGB( 0.5, 0.5, 0.5 )
 				self.buttonPromptImage:setAlpha( 0.5 )
 				self.buttonPromptImage:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_saturation_normal" ) )
 				self.buttonPromptImage:setShaderVector( 0, 0, 0, 0, 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setRGB( 0.5, 0.5, 0.5 )
 				self.label:setAlpha( 0.5 )
 				self.clipFinished( label, {} )
+
 				keybind:completeAnimation()
 				self.keybind:setAlpha( 0 )
 				self.clipFinished( keybind, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 0 )
 				self.clipFinished( Border, {} )
@@ -178,71 +196,92 @@ CoD.fe_FooterButtonPromptWithContainerMain.new = function ( menu, controller )
 		Enabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				feBTNBG0:completeAnimation()
 				self.feBTNBG0:setAlpha( 1 )
 				self.clipFinished( feBTNBG0, {} )
+
 				line:completeAnimation()
 				self.line:setAlpha( 0.35 )
 				self.clipFinished( line, {} )
+
 				left:completeAnimation()
 				self.left:setAlpha( 0.35 )
 				self.clipFinished( left, {} )
+
 				Right:completeAnimation()
 				self.Right:setAlpha( 0.35 )
 				self.clipFinished( Right, {} )
+
 				left0:completeAnimation()
 				self.left0:setAlpha( 0.65 )
 				self.clipFinished( left0, {} )
+
 				Right0:completeAnimation()
 				self.Right0:setAlpha( 0.65 )
 				self.clipFinished( Right0, {} )
+
 				line0:completeAnimation()
 				self.line0:setAlpha( 0.65 )
 				self.clipFinished( line0, {} )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setAlpha( 1 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setRGB( 1, 1, 1 )
 				self.label:setAlpha( 1 )
 				self.clipFinished( label, {} )
+
 				keybind:completeAnimation()
 				self.keybind:setAlpha( 0 )
 				self.clipFinished( keybind, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 0 )
 				self.clipFinished( Border, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 10 )
+
 				feBTNBG0:completeAnimation()
 				self.feBTNBG0:setAlpha( 1 )
 				self.clipFinished( feBTNBG0, {} )
+
 				line:completeAnimation()
 				self.line:setAlpha( 0.35 )
 				self.clipFinished( line, {} )
+
 				left:completeAnimation()
 				self.left:setAlpha( 0.35 )
 				self.clipFinished( left, {} )
+
 				Right:completeAnimation()
 				self.Right:setAlpha( 0.35 )
 				self.clipFinished( Right, {} )
+
 				left0:completeAnimation()
 				self.left0:setAlpha( 0.65 )
 				self.clipFinished( left0, {} )
+
 				Right0:completeAnimation()
 				self.Right0:setAlpha( 0.65 )
 				self.clipFinished( Right0, {} )
+
 				line0:completeAnimation()
 				self.line0:setAlpha( 0.65 )
 				self.clipFinished( line0, {} )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setAlpha( 1 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setRGB( 0.87, 0.37, 0 )
 				self.label:setAlpha( 1 )
 				self.clipFinished( label, {} )
+
 				keybind:completeAnimation()
 				self.keybind:setAlpha( 0 )
 				self.clipFinished( keybind, {} )
@@ -251,19 +290,23 @@ CoD.fe_FooterButtonPromptWithContainerMain.new = function ( menu, controller )
 		DisabledPC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setRGB( 0.5, 0.5, 0.5 )
 				self.buttonPromptImage:setAlpha( 0 )
 				self.buttonPromptImage:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_saturation_normal" ) )
 				self.buttonPromptImage:setShaderVector( 0, 0, 0, 0, 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setRGB( 0.5, 0.5, 0.5 )
 				self.label:setAlpha( 0.5 )
 				self.clipFinished( label, {} )
+
 				keybind:completeAnimation()
 				self.keybind:setAlpha( 0.25 )
 				self.clipFinished( keybind, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 0 )
 				self.clipFinished( Border, {} )
@@ -272,67 +315,87 @@ CoD.fe_FooterButtonPromptWithContainerMain.new = function ( menu, controller )
 		EnabledPC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				feBTNBG0:completeAnimation()
 				self.feBTNBG0:setAlpha( 1 )
 				self.clipFinished( feBTNBG0, {} )
+
 				line:completeAnimation()
 				self.line:setAlpha( 0.35 )
 				self.clipFinished( line, {} )
+
 				left:completeAnimation()
 				self.left:setAlpha( 0.35 )
 				self.clipFinished( left, {} )
+
 				Right:completeAnimation()
 				self.Right:setAlpha( 0.35 )
 				self.clipFinished( Right, {} )
+
 				left0:completeAnimation()
 				self.left0:setAlpha( 0.65 )
 				self.clipFinished( left0, {} )
+
 				Right0:completeAnimation()
 				self.Right0:setAlpha( 0.65 )
 				self.clipFinished( Right0, {} )
+
 				line0:completeAnimation()
 				self.line0:setAlpha( 0.65 )
 				self.clipFinished( line0, {} )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setAlpha( 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setRGB( 1, 1, 1 )
 				self.label:setAlpha( 1 )
 				self.clipFinished( label, {} )
+
 				keybind:completeAnimation()
 				self.keybind:setAlpha( 1 )
 				self.clipFinished( keybind, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 0 )
 				self.clipFinished( Border, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 9 )
+
 				feBTNBG0:completeAnimation()
 				self.feBTNBG0:setAlpha( 1 )
 				self.clipFinished( feBTNBG0, {} )
+
 				line:completeAnimation()
 				self.line:setAlpha( 0.35 )
 				self.clipFinished( line, {} )
+
 				left:completeAnimation()
 				self.left:setAlpha( 0.35 )
 				self.clipFinished( left, {} )
+
 				Right:completeAnimation()
 				self.Right:setAlpha( 0.35 )
 				self.clipFinished( Right, {} )
+
 				left0:completeAnimation()
 				self.left0:setAlpha( 0.65 )
 				self.clipFinished( left0, {} )
+
 				Right0:completeAnimation()
 				self.Right0:setAlpha( 0.65 )
 				self.clipFinished( Right0, {} )
+
 				line0:completeAnimation()
 				self.line0:setAlpha( 0.65 )
 				self.clipFinished( line0, {} )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setAlpha( 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setRGB( 0.87, 0.37, 0 )
 				self.label:setAlpha( 1 )
@@ -340,6 +403,7 @@ CoD.fe_FooterButtonPromptWithContainerMain.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -366,6 +430,7 @@ CoD.fe_FooterButtonPromptWithContainerMain.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.feBTNBG0:close()
 		element.Border:close()

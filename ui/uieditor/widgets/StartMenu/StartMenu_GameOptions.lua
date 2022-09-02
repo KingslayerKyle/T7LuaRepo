@@ -25,9 +25,11 @@ end
 CoD.StartMenu_GameOptions = InheritFrom( LUI.UIElement )
 CoD.StartMenu_GameOptions.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_GameOptions )
 	self.id = "StartMenu_GameOptions"
@@ -245,18 +247,22 @@ CoD.StartMenu_GameOptions.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				minimap:completeAnimation()
 				self.minimap:setAlpha( 1 )
 				self.clipFinished( minimap, {} )
+
 				TitleGlow1:completeAnimation()
 				self.TitleGlow1:setAlpha( 1 )
 				self.clipFinished( TitleGlow1, {} )
+
 				mapName:completeAnimation()
 				self.mapName:setLeftRight( true, false, 469.3, 1023.87 )
 				self.mapName:setTopBottom( true, false, 5, 30 )
 				self.mapName:setRGB( 0, 0, 0 )
 				self.mapName:setAlpha( 1 )
 				self.clipFinished( mapName, {} )
+
 				mapLocation:completeAnimation()
 				self.mapLocation:setLeftRight( true, false, 469.3, 1018.39 )
 				self.mapLocation:setTopBottom( true, false, 9.41, 29.41 )
@@ -264,16 +270,20 @@ CoD.StartMenu_GameOptions.new = function ( menu, controller )
 				self.mapLocation:setAlpha( 1 )
 				self.mapLocation:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 				self.clipFinished( mapLocation, {} )
+
 				rankProgress:completeAnimation()
 				self.rankProgress:setLeftRight( true, false, 4.87, 1147.87 )
 				self.rankProgress:setTopBottom( true, false, 451, 517 )
 				self.clipFinished( rankProgress, {} )
+
 				GameType:completeAnimation()
 				self.GameType:setAlpha( 1 )
 				self.clipFinished( GameType, {} )
+
 				GameTypeDesc:completeAnimation()
 				self.GameTypeDesc:setAlpha( 1 )
 				self.clipFinished( GameTypeDesc, {} )
+
 				GameTypeIcon:completeAnimation()
 				self.GameTypeIcon:setAlpha( 1 )
 				self.clipFinished( GameTypeIcon, {} )
@@ -282,18 +292,22 @@ CoD.StartMenu_GameOptions.new = function ( menu, controller )
 		FreeRun = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				minimap:completeAnimation()
 				self.minimap:setAlpha( 0 )
 				self.clipFinished( minimap, {} )
+
 				TitleGlow1:completeAnimation()
 				self.TitleGlow1:setAlpha( 1 )
 				self.clipFinished( TitleGlow1, {} )
+
 				mapName:completeAnimation()
 				self.mapName:setLeftRight( true, false, 469.3, 1023.87 )
 				self.mapName:setTopBottom( true, false, 5, 30 )
 				self.mapName:setRGB( 0, 0, 0 )
 				self.mapName:setAlpha( 1 )
 				self.clipFinished( mapName, {} )
+
 				mapLocation:completeAnimation()
 				self.mapLocation:setLeftRight( true, false, 469.3, 1018.39 )
 				self.mapLocation:setTopBottom( true, false, 9.41, 29.41 )
@@ -301,22 +315,27 @@ CoD.StartMenu_GameOptions.new = function ( menu, controller )
 				self.mapLocation:setAlpha( 1 )
 				self.mapLocation:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 				self.clipFinished( mapLocation, {} )
+
 				rankProgress:completeAnimation()
 				self.rankProgress:setLeftRight( true, false, 4.87, 1147.87 )
 				self.rankProgress:setTopBottom( true, false, 451, 517 )
 				self.clipFinished( rankProgress, {} )
+
 				GameType:completeAnimation()
 				self.GameType:setAlpha( 1 )
 				self.clipFinished( GameType, {} )
+
 				GameTypeDesc:completeAnimation()
 				self.GameTypeDesc:setAlpha( 1 )
 				self.clipFinished( GameTypeDesc, {} )
+
 				GameTypeIcon:completeAnimation()
 				self.GameTypeIcon:setAlpha( 1 )
 				self.clipFinished( GameTypeIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "FreeRun",
@@ -333,6 +352,7 @@ CoD.StartMenu_GameOptions.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.buttonList:close()
 		element.minimap:close()

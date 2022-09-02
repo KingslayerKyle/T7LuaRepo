@@ -4,9 +4,11 @@
 CoD.outofbounds_scrollbarwidget = InheritFrom( LUI.UIElement )
 CoD.outofbounds_scrollbarwidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.outofbounds_scrollbarwidget )
 	self.id = "outofbounds_scrollbarwidget"
@@ -36,6 +38,7 @@ CoD.outofbounds_scrollbarwidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local Image8Frame2 = function ( Image8, event )
 					local Image8Frame3 = function ( Image8, event )
 						if not event.interrupted then
@@ -88,12 +91,14 @@ CoD.outofbounds_scrollbarwidget.new = function ( menu, controller )
 				Image9:completeAnimation()
 				self.Image9:setAlpha( 1 )
 				Image9Frame2( Image9, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		IsOutOfBounds = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

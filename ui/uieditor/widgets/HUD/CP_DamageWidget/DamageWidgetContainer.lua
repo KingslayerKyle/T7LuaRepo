@@ -16,9 +16,11 @@ end
 CoD.DamageWidgetContainer = InheritFrom( LUI.UIElement )
 CoD.DamageWidgetContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DamageWidgetContainer )
 	self.id = "DamageWidgetContainer"
@@ -55,12 +57,14 @@ CoD.DamageWidgetContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DamageWidget:completeAnimation()
 				self.DamageWidget:setAlpha( 1 )
 				self.clipFinished( DamageWidget, {} )
 			end,
 			WheelHide = function ()
 				self:setupElementClipCounter( 1 )
+
 				local DamageWidgetFrame2 = function ( DamageWidget, event )
 					if not event.interrupted then
 						DamageWidget:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -81,12 +85,14 @@ CoD.DamageWidgetContainer.new = function ( menu, controller )
 		WheelHide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DamageWidget:completeAnimation()
 				self.DamageWidget:setAlpha( 0.2 )
 				self.clipFinished( DamageWidget, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local DamageWidgetFrame2 = function ( DamageWidget, event )
 					if not event.interrupted then
 						DamageWidget:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -105,6 +111,7 @@ CoD.DamageWidgetContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.DamageWidget:close()
 	end )

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_FX.ZmFx_Spark1Img" )
 CoD.Blops4PreviewCC = InheritFrom( LUI.UIElement )
 CoD.Blops4PreviewCC.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.Blops4PreviewCC )
 	self.id = "Blops4PreviewCC"
@@ -125,6 +127,7 @@ CoD.Blops4PreviewCC.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				local CallingCardBlops4BgFrame2 = function ( CallingCardBlops4Bg, event )
 					if not event.interrupted then
 						CallingCardBlops4Bg:beginAnimation( "keyframe", 8000, false, false, CoD.TweenType.Linear )
@@ -629,10 +632,12 @@ CoD.Blops4PreviewCC.new = function ( menu, controller )
 				ZmFxSpark1Img1:setTopBottom( true, true, -46.15, 1.85 )
 				ZmFxSpark1Img1:setAlpha( 0 )
 				ZmFxSpark1Img1:registerEventHandler( "transition_complete_keyframe", f2_local8 )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmFxSpark1Img0:close()
 		element.ZmFxSpark1Img:close()

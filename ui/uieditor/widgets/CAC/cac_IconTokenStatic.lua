@@ -4,9 +4,11 @@
 CoD.cac_IconTokenStatic = InheritFrom( LUI.UIElement )
 CoD.cac_IconTokenStatic.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_IconTokenStatic )
 	self.id = "cac_IconTokenStatic"
@@ -72,21 +74,27 @@ CoD.cac_IconTokenStatic.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				imgTokenBox:completeAnimation()
 				self.imgTokenBox:setAlpha( 0 )
 				self.clipFinished( imgTokenBox, {} )
+
 				imgIconTokenMult:completeAnimation()
 				self.imgIconTokenMult:setAlpha( 0 )
 				self.clipFinished( imgIconTokenMult, {} )
+
 				imgIconTokenMultCP:completeAnimation()
 				self.imgIconTokenMultCP:setAlpha( 0 )
 				self.clipFinished( imgIconTokenMultCP, {} )
+
 				imgIconToken:completeAnimation()
 				self.imgIconToken:setAlpha( 0 )
 				self.clipFinished( imgIconToken, {} )
+
 				imgIconTokenCP:completeAnimation()
 				self.imgIconTokenCP:setAlpha( 0 )
 				self.clipFinished( imgIconTokenCP, {} )
+
 				glow:completeAnimation()
 				self.glow:setAlpha( RandomAddPercent( -15, 0 ) )
 				self.clipFinished( glow, {} )
@@ -95,20 +103,25 @@ CoD.cac_IconTokenStatic.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				imgTokenBox:completeAnimation()
 				self.imgTokenBox:setLeftRight( true, true, -1.89, 3.89 )
 				self.imgTokenBox:setTopBottom( true, true, -4, 4 )
 				self.imgTokenBox:setAlpha( 0 )
 				self.clipFinished( imgTokenBox, {} )
+
 				imgIconTokenMult:completeAnimation()
 				self.imgIconTokenMult:setAlpha( 0.43 )
 				self.clipFinished( imgIconTokenMult, {} )
+
 				imgIconTokenMultCP:completeAnimation()
 				self.imgIconTokenMultCP:setAlpha( 0 )
 				self.clipFinished( imgIconTokenMultCP, {} )
+
 				imgIconToken:completeAnimation()
 				self.imgIconToken:setAlpha( 0.92 )
 				self.clipFinished( imgIconToken, {} )
+
 				imgIconTokenCP:completeAnimation()
 				self.imgIconTokenCP:setAlpha( 0 )
 				self.clipFinished( imgIconTokenCP, {} )
@@ -137,24 +150,30 @@ CoD.cac_IconTokenStatic.new = function ( menu, controller )
 				glow:completeAnimation()
 				self.glow:setAlpha( RandomAddPercent( -15, 0.26 ) )
 				glowFrame2( glow, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		VisibleCP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				imgTokenBox:completeAnimation()
 				self.imgTokenBox:setAlpha( 1 )
 				self.clipFinished( imgTokenBox, {} )
+
 				imgIconTokenMult:completeAnimation()
 				self.imgIconTokenMult:setAlpha( 0 )
 				self.clipFinished( imgIconTokenMult, {} )
+
 				imgIconTokenMultCP:completeAnimation()
 				self.imgIconTokenMultCP:setAlpha( 0.43 )
 				self.clipFinished( imgIconTokenMultCP, {} )
+
 				imgIconToken:completeAnimation()
 				self.imgIconToken:setAlpha( 0 )
 				self.clipFinished( imgIconToken, {} )
+
 				imgIconTokenCP:completeAnimation()
 				self.imgIconTokenCP:setAlpha( 0.92 )
 				self.clipFinished( imgIconTokenCP, {} )
@@ -183,10 +202,12 @@ CoD.cac_IconTokenStatic.new = function ( menu, controller )
 				glow:completeAnimation()
 				self.glow:setAlpha( RandomAddPercent( -15, 0.26 ) )
 				glowFrame2( glow, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

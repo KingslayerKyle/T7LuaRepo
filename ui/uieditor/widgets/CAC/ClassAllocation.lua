@@ -14,9 +14,11 @@ end
 CoD.ClassAllocation = InheritFrom( LUI.UIElement )
 CoD.ClassAllocation.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ClassAllocation )
 	self.id = "ClassAllocation"
@@ -106,21 +108,27 @@ CoD.ClassAllocation.new = function ( menu, controller )
 		NoAllocationBar = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				TitleNumBrdr:completeAnimation()
 				self.TitleNumBrdr:setAlpha( 0 )
 				self.clipFinished( TitleNumBrdr, {} )
+
 				allocationSpent:completeAnimation()
 				self.allocationSpent:setAlpha( 0 )
 				self.clipFinished( allocationSpent, {} )
+
 				TextBoxSlash:completeAnimation()
 				self.TextBoxSlash:setAlpha( 0 )
 				self.clipFinished( TextBoxSlash, {} )
+
 				totalCapacityLabel:completeAnimation()
 				self.totalCapacityLabel:setAlpha( 0 )
 				self.clipFinished( totalCapacityLabel, {} )
+
 				capacityValueLabel:completeAnimation()
 				self.capacityValueLabel:setAlpha( 0 )
 				self.clipFinished( capacityValueLabel, {} )
+
 				UnlockTokensWidget:completeAnimation()
 				self.UnlockTokensWidget:setLeftRight( false, true, -239, 0 )
 				self.UnlockTokensWidget:setTopBottom( true, false, -1, 43 )
@@ -131,17 +139,26 @@ CoD.ClassAllocation.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				TitleNumBrdr:completeAnimation()
 				self.TitleNumBrdr:setLeftRight( false, true, 473, -297 )
 				self.TitleNumBrdr:setTopBottom( true, false, 37.5, -4.5 )
 				self.clipFinished( TitleNumBrdr, {} )
+
 				allocationSpent:completeAnimation()
+
 				allocationSpent.AllocationBar10:completeAnimation()
+
 				allocationSpent.AllocationBar11:completeAnimation()
+
 				allocationSpent.AllocationBar12:completeAnimation()
+
 				allocationSpent.AllocationBar13:completeAnimation()
+
 				allocationSpent.AllocationBar14:completeAnimation()
+
 				allocationSpent.AllocationBar15:completeAnimation()
+
 				allocationSpent.AllocationBar16:completeAnimation()
 				self.allocationSpent:setLeftRight( false, true, -291, 36 )
 				self.allocationSpent:setTopBottom( true, false, 1, 33 )
@@ -153,6 +170,7 @@ CoD.ClassAllocation.new = function ( menu, controller )
 				self.allocationSpent.AllocationBar15:setAlpha( 0 )
 				self.allocationSpent.AllocationBar16:setAlpha( 0 )
 				self.clipFinished( allocationSpent, {} )
+
 				UnlockTokensWidget:completeAnimation()
 				self.UnlockTokensWidget:setLeftRight( false, true, -543, -304 )
 				self.UnlockTokensWidget:setTopBottom( true, false, -1, 43 )
@@ -162,17 +180,26 @@ CoD.ClassAllocation.new = function ( menu, controller )
 		Alloc17 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				TitleNumBrdr:completeAnimation()
 				self.TitleNumBrdr:setLeftRight( false, true, 340, -430 )
 				self.TitleNumBrdr:setTopBottom( true, false, 37.5, -4.5 )
 				self.clipFinished( TitleNumBrdr, {} )
+
 				allocationSpent:completeAnimation()
+
 				allocationSpent.AllocationBar10:completeAnimation()
+
 				allocationSpent.AllocationBar11:completeAnimation()
+
 				allocationSpent.AllocationBar12:completeAnimation()
+
 				allocationSpent.AllocationBar13:completeAnimation()
+
 				allocationSpent.AllocationBar14:completeAnimation()
+
 				allocationSpent.AllocationBar15:completeAnimation()
+
 				allocationSpent.AllocationBar16:completeAnimation()
 				self.allocationSpent:setLeftRight( false, true, -424, -97 )
 				self.allocationSpent:setTopBottom( true, false, 1, 33 )
@@ -184,6 +211,7 @@ CoD.ClassAllocation.new = function ( menu, controller )
 				self.allocationSpent.AllocationBar15:setAlpha( 1 )
 				self.allocationSpent.AllocationBar16:setAlpha( 1 )
 				self.clipFinished( allocationSpent, {} )
+
 				UnlockTokensWidget:completeAnimation()
 				self.UnlockTokensWidget:setLeftRight( false, true, -644, -454 )
 				self.UnlockTokensWidget:setTopBottom( true, false, -1, 44 )
@@ -193,17 +221,26 @@ CoD.ClassAllocation.new = function ( menu, controller )
 		Alloc16 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				TitleNumBrdr:completeAnimation()
 				self.TitleNumBrdr:setLeftRight( false, true, 359, -411 )
 				self.TitleNumBrdr:setTopBottom( true, false, 37.5, -4.5 )
 				self.clipFinished( TitleNumBrdr, {} )
+
 				allocationSpent:completeAnimation()
+
 				allocationSpent.AllocationBar10:completeAnimation()
+
 				allocationSpent.AllocationBar11:completeAnimation()
+
 				allocationSpent.AllocationBar12:completeAnimation()
+
 				allocationSpent.AllocationBar13:completeAnimation()
+
 				allocationSpent.AllocationBar14:completeAnimation()
+
 				allocationSpent.AllocationBar15:completeAnimation()
+
 				allocationSpent.AllocationBar16:completeAnimation()
 				self.allocationSpent:setLeftRight( false, true, -405, -78 )
 				self.allocationSpent:setTopBottom( true, false, 1, 33 )
@@ -215,6 +252,7 @@ CoD.ClassAllocation.new = function ( menu, controller )
 				self.allocationSpent.AllocationBar15:setAlpha( 1 )
 				self.allocationSpent.AllocationBar16:setAlpha( 0 )
 				self.clipFinished( allocationSpent, {} )
+
 				UnlockTokensWidget:completeAnimation()
 				self.UnlockTokensWidget:setLeftRight( false, true, -625, -435 )
 				self.UnlockTokensWidget:setTopBottom( true, false, -1, 44 )
@@ -224,17 +262,26 @@ CoD.ClassAllocation.new = function ( menu, controller )
 		Alloc15 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				TitleNumBrdr:completeAnimation()
 				self.TitleNumBrdr:setLeftRight( false, true, 378, -392 )
 				self.TitleNumBrdr:setTopBottom( true, false, 37.5, -4.5 )
 				self.clipFinished( TitleNumBrdr, {} )
+
 				allocationSpent:completeAnimation()
+
 				allocationSpent.AllocationBar10:completeAnimation()
+
 				allocationSpent.AllocationBar11:completeAnimation()
+
 				allocationSpent.AllocationBar12:completeAnimation()
+
 				allocationSpent.AllocationBar13:completeAnimation()
+
 				allocationSpent.AllocationBar14:completeAnimation()
+
 				allocationSpent.AllocationBar15:completeAnimation()
+
 				allocationSpent.AllocationBar16:completeAnimation()
 				self.allocationSpent:setLeftRight( false, true, -386, -59 )
 				self.allocationSpent:setTopBottom( true, false, 1, 33 )
@@ -246,6 +293,7 @@ CoD.ClassAllocation.new = function ( menu, controller )
 				self.allocationSpent.AllocationBar15:setAlpha( 0 )
 				self.allocationSpent.AllocationBar16:setAlpha( 0 )
 				self.clipFinished( allocationSpent, {} )
+
 				UnlockTokensWidget:completeAnimation()
 				self.UnlockTokensWidget:setLeftRight( false, true, -606, -416 )
 				self.UnlockTokensWidget:setTopBottom( true, false, -1, 44 )
@@ -255,17 +303,26 @@ CoD.ClassAllocation.new = function ( menu, controller )
 		Alloc14 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				TitleNumBrdr:completeAnimation()
 				self.TitleNumBrdr:setLeftRight( false, true, 397, -373 )
 				self.TitleNumBrdr:setTopBottom( true, false, 37.5, -4.5 )
 				self.clipFinished( TitleNumBrdr, {} )
+
 				allocationSpent:completeAnimation()
+
 				allocationSpent.AllocationBar10:completeAnimation()
+
 				allocationSpent.AllocationBar11:completeAnimation()
+
 				allocationSpent.AllocationBar12:completeAnimation()
+
 				allocationSpent.AllocationBar13:completeAnimation()
+
 				allocationSpent.AllocationBar14:completeAnimation()
+
 				allocationSpent.AllocationBar15:completeAnimation()
+
 				allocationSpent.AllocationBar16:completeAnimation()
 				self.allocationSpent:setLeftRight( false, true, -367, -40 )
 				self.allocationSpent:setTopBottom( true, false, 1, 33 )
@@ -277,6 +334,7 @@ CoD.ClassAllocation.new = function ( menu, controller )
 				self.allocationSpent.AllocationBar15:setAlpha( 0 )
 				self.allocationSpent.AllocationBar16:setAlpha( 0 )
 				self.clipFinished( allocationSpent, {} )
+
 				UnlockTokensWidget:completeAnimation()
 				self.UnlockTokensWidget:setLeftRight( false, true, -587, -397 )
 				self.UnlockTokensWidget:setTopBottom( true, false, -1, 44 )
@@ -286,17 +344,26 @@ CoD.ClassAllocation.new = function ( menu, controller )
 		Alloc13 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				TitleNumBrdr:completeAnimation()
 				self.TitleNumBrdr:setLeftRight( false, true, 416, -354 )
 				self.TitleNumBrdr:setTopBottom( true, false, 37.5, -4.5 )
 				self.clipFinished( TitleNumBrdr, {} )
+
 				allocationSpent:completeAnimation()
+
 				allocationSpent.AllocationBar10:completeAnimation()
+
 				allocationSpent.AllocationBar11:completeAnimation()
+
 				allocationSpent.AllocationBar12:completeAnimation()
+
 				allocationSpent.AllocationBar13:completeAnimation()
+
 				allocationSpent.AllocationBar14:completeAnimation()
+
 				allocationSpent.AllocationBar15:completeAnimation()
+
 				allocationSpent.AllocationBar16:completeAnimation()
 				self.allocationSpent:setLeftRight( false, true, -348, -21 )
 				self.allocationSpent:setTopBottom( true, false, 1, 33 )
@@ -308,6 +375,7 @@ CoD.ClassAllocation.new = function ( menu, controller )
 				self.allocationSpent.AllocationBar15:setAlpha( 0 )
 				self.allocationSpent.AllocationBar16:setAlpha( 0 )
 				self.clipFinished( allocationSpent, {} )
+
 				UnlockTokensWidget:completeAnimation()
 				self.UnlockTokensWidget:setLeftRight( false, true, -568, -378 )
 				self.UnlockTokensWidget:setTopBottom( true, false, -1, 44 )
@@ -317,17 +385,26 @@ CoD.ClassAllocation.new = function ( menu, controller )
 		Alloc12 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				TitleNumBrdr:completeAnimation()
 				self.TitleNumBrdr:setLeftRight( false, true, 435, -335 )
 				self.TitleNumBrdr:setTopBottom( true, false, 37.5, -4.5 )
 				self.clipFinished( TitleNumBrdr, {} )
+
 				allocationSpent:completeAnimation()
+
 				allocationSpent.AllocationBar10:completeAnimation()
+
 				allocationSpent.AllocationBar11:completeAnimation()
+
 				allocationSpent.AllocationBar12:completeAnimation()
+
 				allocationSpent.AllocationBar13:completeAnimation()
+
 				allocationSpent.AllocationBar14:completeAnimation()
+
 				allocationSpent.AllocationBar15:completeAnimation()
+
 				allocationSpent.AllocationBar16:completeAnimation()
 				self.allocationSpent:setLeftRight( false, true, -329, -2 )
 				self.allocationSpent:setTopBottom( true, false, 1, 33 )
@@ -339,6 +416,7 @@ CoD.ClassAllocation.new = function ( menu, controller )
 				self.allocationSpent.AllocationBar15:setAlpha( 0 )
 				self.allocationSpent.AllocationBar16:setAlpha( 0 )
 				self.clipFinished( allocationSpent, {} )
+
 				UnlockTokensWidget:completeAnimation()
 				self.UnlockTokensWidget:setLeftRight( false, true, -549, -359 )
 				self.UnlockTokensWidget:setTopBottom( true, false, -1, 44 )
@@ -348,17 +426,26 @@ CoD.ClassAllocation.new = function ( menu, controller )
 		Alloc11 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				TitleNumBrdr:completeAnimation()
 				self.TitleNumBrdr:setLeftRight( false, true, 454, -316 )
 				self.TitleNumBrdr:setTopBottom( true, false, 37.5, -4.5 )
 				self.clipFinished( TitleNumBrdr, {} )
+
 				allocationSpent:completeAnimation()
+
 				allocationSpent.AllocationBar10:completeAnimation()
+
 				allocationSpent.AllocationBar11:completeAnimation()
+
 				allocationSpent.AllocationBar12:completeAnimation()
+
 				allocationSpent.AllocationBar13:completeAnimation()
+
 				allocationSpent.AllocationBar14:completeAnimation()
+
 				allocationSpent.AllocationBar15:completeAnimation()
+
 				allocationSpent.AllocationBar16:completeAnimation()
 				self.allocationSpent:setLeftRight( false, true, -310, 17 )
 				self.allocationSpent:setTopBottom( true, false, 1, 33 )
@@ -370,6 +457,7 @@ CoD.ClassAllocation.new = function ( menu, controller )
 				self.allocationSpent.AllocationBar15:setAlpha( 0 )
 				self.allocationSpent.AllocationBar16:setAlpha( 0 )
 				self.clipFinished( allocationSpent, {} )
+
 				UnlockTokensWidget:completeAnimation()
 				self.UnlockTokensWidget:setLeftRight( false, true, -530, -340 )
 				self.UnlockTokensWidget:setTopBottom( true, false, -1, 44 )
@@ -377,6 +465,7 @@ CoD.ClassAllocation.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoAllocationBar",
@@ -427,6 +516,7 @@ CoD.ClassAllocation.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TitleNumBrdr:close()
 		element.allocationSpent:close()

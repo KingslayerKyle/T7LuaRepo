@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.ItemGridButton = InheritFrom( LUI.UIElement )
 CoD.ItemGridButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ItemGridButton )
 	self.id = "ItemGridButton"
@@ -64,10 +66,12 @@ CoD.ItemGridButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				itemGridButtom:completeAnimation()
 				self.itemGridButtom:setRGB( 1, 1, 1 )
 				self.itemGridButtom:setZoom( 0 )
 				self.clipFinished( itemGridButtom, {} )
+
 				border:completeAnimation()
 				self.border:setAlpha( 0 )
 				self.border:setZoom( 0 )
@@ -75,9 +79,11 @@ CoD.ItemGridButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 2 )
+
 				itemGridButtom:completeAnimation()
 				self.itemGridButtom:setZoom( 25 )
 				self.clipFinished( itemGridButtom, {} )
+
 				border:completeAnimation()
 				self.border:setAlpha( 1 )
 				self.border:setZoom( 25 )
@@ -85,6 +91,7 @@ CoD.ItemGridButton.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 2 )
+
 				local itemGridButtomFrame2 = function ( itemGridButtom, event )
 					if not event.interrupted then
 						itemGridButtom:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -120,6 +127,7 @@ CoD.ItemGridButton.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 2 )
+
 				local itemGridButtomFrame2 = function ( itemGridButtom, event )
 					if not event.interrupted then
 						itemGridButtom:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -155,6 +163,7 @@ CoD.ItemGridButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.itemGridButtom:close()
 		element.border:close()

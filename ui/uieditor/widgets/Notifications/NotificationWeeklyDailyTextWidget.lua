@@ -4,9 +4,11 @@
 CoD.NotificationWeeklyDailyTextWidget = InheritFrom( LUI.UIElement )
 CoD.NotificationWeeklyDailyTextWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.NotificationWeeklyDailyTextWidget )
 	self.id = "NotificationWeeklyDailyTextWidget"
@@ -29,6 +31,7 @@ CoD.NotificationWeeklyDailyTextWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				WeeklyText:completeAnimation()
 				self.WeeklyText:setAlpha( 1 )
 				self.clipFinished( WeeklyText, {} )

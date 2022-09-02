@@ -4,9 +4,11 @@
 CoD.vhud_ms_OutsideLine = InheritFrom( LUI.UIElement )
 CoD.vhud_ms_OutsideLine.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ms_OutsideLine )
 	self.id = "vhud_ms_OutsideLine"
@@ -39,20 +41,25 @@ CoD.vhud_ms_OutsideLine.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Zoom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

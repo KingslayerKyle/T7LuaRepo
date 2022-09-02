@@ -4,9 +4,11 @@
 CoD.StartMenu_3dTitleLabel = InheritFrom( LUI.UIElement )
 CoD.StartMenu_3dTitleLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_3dTitleLabel )
 	self.id = "StartMenu_3dTitleLabel"
@@ -21,6 +23,7 @@ CoD.StartMenu_3dTitleLabel.new = function ( menu, controller )
 	Label0:setText( Engine.Localize( "WILDCARDS" ) )
 	Label0:setTTF( "fonts/FoundryGridnik-Bold.ttf" )
 	Label0:setLetterSpacing( -2.2 )
+
 	LUI.OverrideFunction_CallOriginalFirst( Label0, "setText", function ( element, controller )
 		if not IsCurrentMenu( menu, "ModeSelect" ) then
 			ScaleParentWidgetToLabel( self, element, 0 )
@@ -49,6 +52,7 @@ CoD.StartMenu_3dTitleLabel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Label0:completeAnimation()
 				self.Label0:setAlpha( 1 )
 				self.clipFinished( Label0, {} )
@@ -57,6 +61,7 @@ CoD.StartMenu_3dTitleLabel.new = function ( menu, controller )
 		LogoVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Label0:completeAnimation()
 				self.Label0:setAlpha( 0 )
 				self.clipFinished( Label0, {} )

@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.Store.StorePriceLabel" )
 CoD.StoreProductButton = InheritFrom( LUI.UIElement )
 CoD.StoreProductButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StoreProductButton )
 	self.id = "StoreProductButton"
@@ -146,27 +148,37 @@ CoD.StoreProductButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.8 )
 				self.clipFinished( itemImage, {} )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 0 )
 				self.clipFinished( alertIcon, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				price:completeAnimation()
+
 				price.StorePriceLabel.Panel:completeAnimation()
+
 				price.StorePriceLabel.Glow:completeAnimation()
+
 				price.StorePriceLabel.itemName:completeAnimation()
 				self.price.StorePriceLabel.Panel:setRGB( 0, 0, 0 )
 				self.price.StorePriceLabel.Panel:setAlpha( 0.85 )
@@ -174,12 +186,14 @@ CoD.StoreProductButton.new = function ( menu, controller )
 				self.price.StorePriceLabel.Glow:setAlpha( 0.25 )
 				self.price.StorePriceLabel.itemName:setRGB( 0.04, 0.8, 1 )
 				self.clipFinished( price, {} )
+
 				purchase:completeAnimation()
 				self.purchase:setAlpha( 0 )
 				self.clipFinished( purchase, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local itemImageFrame2 = function ( itemImage, event )
 					if not event.interrupted then
 						itemImage:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -329,9 +343,13 @@ CoD.StoreProductButton.new = function ( menu, controller )
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				FocusBarBFrame2( FocusBarB, {} )
+
 				price:completeAnimation()
+
 				price.StorePriceLabel.Panel:completeAnimation()
+
 				price.StorePriceLabel.Glow:completeAnimation()
+
 				price.StorePriceLabel.itemName:completeAnimation()
 				self.price:setAlpha( 1 )
 				self.price.StorePriceLabel.Panel:setRGB( 0, 0, 0 )
@@ -343,18 +361,25 @@ CoD.StoreProductButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				price:completeAnimation()
+
 				price.StorePriceLabel.Panel:completeAnimation()
+
 				price.StorePriceLabel.Glow:completeAnimation()
+
 				price.StorePriceLabel.itemName:completeAnimation()
 				self.price:setAlpha( 1 )
 				self.price.StorePriceLabel.Panel:setAlpha( 0.85 )
@@ -365,6 +390,7 @@ CoD.StoreProductButton.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local itemImageFrame2 = function ( itemImage, event )
 					if not event.interrupted then
 						itemImage:beginAnimation( "keyframe", 119, false, false, CoD.TweenType.Linear )
@@ -518,9 +544,13 @@ CoD.StoreProductButton.new = function ( menu, controller )
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				FocusBarBFrame2( FocusBarB, {} )
+
 				price:completeAnimation()
+
 				price.StorePriceLabel.Panel:completeAnimation()
+
 				price.StorePriceLabel.Glow:completeAnimation()
+
 				price.StorePriceLabel.itemName:completeAnimation()
 				self.price:setAlpha( 1 )
 				self.price.StorePriceLabel.Panel:setRGB( 0, 0, 0 )
@@ -534,28 +564,38 @@ CoD.StoreProductButton.new = function ( menu, controller )
 		Purchased = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.8 )
 				self.clipFinished( itemImage, {} )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 0 )
 				self.clipFinished( alertIcon, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setRGB( 0.56, 0.68, 0.27 )
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				price:completeAnimation()
+
 				price.StorePriceLabel.Panel:completeAnimation()
+
 				price.StorePriceLabel.Glow:completeAnimation()
+
 				price.StorePriceLabel.itemName:completeAnimation()
 				self.price:setAlpha( 0 )
 				self.price.StorePriceLabel.Panel:setRGB( 0, 0, 0 )
@@ -564,7 +604,9 @@ CoD.StoreProductButton.new = function ( menu, controller )
 				self.price.StorePriceLabel.Glow:setAlpha( 0.25 )
 				self.price.StorePriceLabel.itemName:setRGB( 1, 1, 0.04 )
 				self.clipFinished( price, {} )
+
 				purchase:completeAnimation()
+
 				purchase.Glow:completeAnimation()
 				self.purchase:setLeftRight( false, true, -68, -1 )
 				self.purchase:setTopBottom( true, false, 1, 20 )
@@ -574,6 +616,7 @@ CoD.StoreProductButton.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local itemImageFrame2 = function ( itemImage, event )
 					if not event.interrupted then
 						itemImage:beginAnimation( "keyframe", 119, false, false, CoD.TweenType.Linear )
@@ -723,9 +766,13 @@ CoD.StoreProductButton.new = function ( menu, controller )
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				FocusBarBFrame2( FocusBarB, {} )
+
 				price:completeAnimation()
+
 				price.StorePriceLabel.Panel:completeAnimation()
+
 				price.StorePriceLabel.Glow:completeAnimation()
+
 				price.StorePriceLabel.itemName:completeAnimation()
 				self.price:setAlpha( 0 )
 				self.price.StorePriceLabel.Panel:setRGB( 0, 0, 0 )
@@ -734,6 +781,7 @@ CoD.StoreProductButton.new = function ( menu, controller )
 				self.price.StorePriceLabel.Glow:setAlpha( 0.25 )
 				self.price.StorePriceLabel.itemName:setRGB( 1, 1, 0.04 )
 				self.clipFinished( price, {} )
+
 				purchase:completeAnimation()
 				self.purchase:setLeftRight( false, true, -68, -1 )
 				self.purchase:setTopBottom( true, false, 1, 20 )
@@ -742,22 +790,30 @@ CoD.StoreProductButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setRGB( 0.56, 0.68, 0.27 )
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				price:completeAnimation()
+
 				price.StorePriceLabel.Panel:completeAnimation()
+
 				price.StorePriceLabel.Glow:completeAnimation()
+
 				price.StorePriceLabel.itemName:completeAnimation()
 				self.price:setAlpha( 0 )
 				self.price.StorePriceLabel.Panel:setRGB( 0, 0, 0 )
@@ -766,6 +822,7 @@ CoD.StoreProductButton.new = function ( menu, controller )
 				self.price.StorePriceLabel.Glow:setAlpha( 0.25 )
 				self.price.StorePriceLabel.itemName:setRGB( 1, 1, 0.04 )
 				self.clipFinished( price, {} )
+
 				purchase:completeAnimation()
 				self.purchase:setLeftRight( false, true, -68, -1 )
 				self.purchase:setTopBottom( true, false, 1, 20 )
@@ -774,6 +831,7 @@ CoD.StoreProductButton.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local itemImageFrame2 = function ( itemImage, event )
 					if not event.interrupted then
 						itemImage:beginAnimation( "keyframe", 109, false, false, CoD.TweenType.Linear )
@@ -927,9 +985,13 @@ CoD.StoreProductButton.new = function ( menu, controller )
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				FocusBarBFrame2( FocusBarB, {} )
+
 				price:completeAnimation()
+
 				price.StorePriceLabel.Panel:completeAnimation()
+
 				price.StorePriceLabel.Glow:completeAnimation()
+
 				price.StorePriceLabel.itemName:completeAnimation()
 				self.price:setAlpha( 0 )
 				self.price.StorePriceLabel.Panel:setRGB( 0, 0, 0 )
@@ -938,6 +1000,7 @@ CoD.StoreProductButton.new = function ( menu, controller )
 				self.price.StorePriceLabel.Glow:setAlpha( 0.25 )
 				self.price.StorePriceLabel.itemName:setRGB( 1, 1, 0.04 )
 				self.clipFinished( price, {} )
+
 				purchase:completeAnimation()
 				self.purchase:setLeftRight( false, true, -68, -1 )
 				self.purchase:setTopBottom( true, false, 1, 20 )
@@ -948,27 +1011,37 @@ CoD.StoreProductButton.new = function ( menu, controller )
 		Sale = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.8 )
 				self.clipFinished( itemImage, {} )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 0 )
 				self.clipFinished( alertIcon, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				price:completeAnimation()
+
 				price.StorePriceLabel.Panel:completeAnimation()
+
 				price.StorePriceLabel.Glow:completeAnimation()
+
 				price.StorePriceLabel.itemName:completeAnimation()
 				self.price.StorePriceLabel.Panel:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.price.StorePriceLabel.Panel:setAlpha( 0.85 )
@@ -976,12 +1049,14 @@ CoD.StoreProductButton.new = function ( menu, controller )
 				self.price.StorePriceLabel.Glow:setAlpha( 0.35 )
 				self.price.StorePriceLabel.itemName:setRGB( 0, 0, 0 )
 				self.clipFinished( price, {} )
+
 				purchase:completeAnimation()
 				self.purchase:setAlpha( 0 )
 				self.clipFinished( purchase, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local itemImageFrame2 = function ( itemImage, event )
 					if not event.interrupted then
 						itemImage:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -1131,9 +1206,13 @@ CoD.StoreProductButton.new = function ( menu, controller )
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				FocusBarBFrame2( FocusBarB, {} )
+
 				price:completeAnimation()
+
 				price.StorePriceLabel.Panel:completeAnimation()
+
 				price.StorePriceLabel.Glow:completeAnimation()
+
 				price.StorePriceLabel.itemName:completeAnimation()
 				self.price:setAlpha( 1 )
 				self.price.StorePriceLabel.Panel:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
@@ -1145,18 +1224,25 @@ CoD.StoreProductButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				price:completeAnimation()
+
 				price.StorePriceLabel.Panel:completeAnimation()
+
 				price.StorePriceLabel.Glow:completeAnimation()
+
 				price.StorePriceLabel.itemName:completeAnimation()
 				self.price:setAlpha( 1 )
 				self.price.StorePriceLabel.Panel:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
@@ -1168,6 +1254,7 @@ CoD.StoreProductButton.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local itemImageFrame2 = function ( itemImage, event )
 					if not event.interrupted then
 						itemImage:beginAnimation( "keyframe", 119, false, false, CoD.TweenType.Linear )
@@ -1321,9 +1408,13 @@ CoD.StoreProductButton.new = function ( menu, controller )
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				FocusBarBFrame2( FocusBarB, {} )
+
 				price:completeAnimation()
+
 				price.StorePriceLabel.Panel:completeAnimation()
+
 				price.StorePriceLabel.Glow:completeAnimation()
+
 				price.StorePriceLabel.itemName:completeAnimation()
 				self.price:setAlpha( 1 )
 				self.price.StorePriceLabel.Panel:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
@@ -1335,6 +1426,7 @@ CoD.StoreProductButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Purchased",
@@ -1365,6 +1457,7 @@ CoD.StoreProductButton.new = function ( menu, controller )
 			modelName = "metadata"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgIdle:close()
 		element.productName:close()

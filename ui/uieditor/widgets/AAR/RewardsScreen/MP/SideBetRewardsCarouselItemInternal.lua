@@ -13,9 +13,11 @@ require( "ui.uieditor.widgets.AAR.RewardsScreen.MP.BlackmarketRewards54i" )
 CoD.SideBetRewardsCarouselItemInternal = InheritFrom( LUI.UIElement )
 CoD.SideBetRewardsCarouselItemInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SideBetRewardsCarouselItemInternal )
 	self.id = "SideBetRewardsCarouselItemInternal"

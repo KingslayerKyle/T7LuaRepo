@@ -4,9 +4,11 @@
 CoD.ChooseClass_ClassSetTabPip = InheritFrom( LUI.UIElement )
 CoD.ChooseClass_ClassSetTabPip.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.ChooseClass_ClassSetTabPip )
 	self.id = "ChooseClass_ClassSetTabPip"
@@ -37,10 +39,12 @@ CoD.ChooseClass_ClassSetTabPip.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				dot:completeAnimation()
 				self.dot:setRGB( 0.53, 0.53, 0.53 )
 				self.dot:setAlpha( 0.5 )
 				self.clipFinished( dot, {} )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setLeftRight( true, false, 2, 6 )
 				self.GlowOrangeOver:setTopBottom( true, false, -0.98, 8.98 )
@@ -52,6 +56,7 @@ CoD.ChooseClass_ClassSetTabPip.new = function ( menu, controller )
 		Selected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				dot:completeAnimation()
 				self.dot:setLeftRight( true, false, 1, 7 )
 				self.dot:setTopBottom( true, false, 3, 5 )
@@ -59,6 +64,7 @@ CoD.ChooseClass_ClassSetTabPip.new = function ( menu, controller )
 				self.dot:setAlpha( 0.7 )
 				self.dot:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_feather_blend" ) )
 				self.clipFinished( dot, {} )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setLeftRight( true, false, 2, 6 )
 				self.GlowOrangeOver:setTopBottom( true, false, -0.98, 8.98 )
@@ -72,10 +78,12 @@ CoD.ChooseClass_ClassSetTabPip.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				dot:completeAnimation()
 				self.dot:setRGB( 0.13, 0.13, 0.13 )
 				self.dot:setAlpha( 0.3 )
 				self.clipFinished( dot, {} )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setLeftRight( true, false, 2, 6 )
 				self.GlowOrangeOver:setTopBottom( true, false, -0.98, 8.98 )
@@ -85,6 +93,7 @@ CoD.ChooseClass_ClassSetTabPip.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Selected",

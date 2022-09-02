@@ -4,9 +4,11 @@
 CoD.CallingCards_code_double_duty_war = InheritFrom( LUI.UIElement )
 CoD.CallingCards_code_double_duty_war.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_code_double_duty_war )
 	self.id = "CallingCards_code_double_duty_war"
@@ -131,6 +133,7 @@ CoD.CallingCards_code_double_duty_war.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				dust:completeAnimation()
 				self.dust:setAlpha( 0.28 )
 				self.clipFinished( dust, {} )
@@ -308,6 +311,7 @@ CoD.CallingCards_code_double_duty_war.new = function ( menu, controller )
 				tankFlash02:beginAnimation( "keyframe", 720, false, false, CoD.TweenType.Linear )
 				tankFlash02:setAlpha( 0 )
 				tankFlash02:registerEventHandler( "transition_complete_keyframe", f2_local3 )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

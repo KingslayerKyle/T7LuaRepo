@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_Menu_LeftGraphics" )
 CoD.systemOverlay_reportGroup = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_reportGroup.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_reportGroup )
 	self.id = "systemOverlay_reportGroup"
@@ -156,6 +158,7 @@ CoD.systemOverlay_reportGroup.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ButtonList:close()
 		element.FEMenuLeftGraphics0:close()

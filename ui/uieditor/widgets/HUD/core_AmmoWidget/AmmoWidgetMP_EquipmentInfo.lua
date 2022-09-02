@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidgetMP_EquipmentTactical
 CoD.AmmoWidgetMP_EquipmentInfo = InheritFrom( LUI.UIElement )
 CoD.AmmoWidgetMP_EquipmentInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidgetMP_EquipmentInfo )
 	self.id = "AmmoWidgetMP_EquipmentInfo"

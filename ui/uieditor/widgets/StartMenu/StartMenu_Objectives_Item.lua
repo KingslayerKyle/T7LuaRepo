@@ -4,9 +4,11 @@
 CoD.StartMenu_Objectives_Item = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Objectives_Item.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Objectives_Item )
 	self.id = "StartMenu_Objectives_Item"
@@ -61,16 +63,20 @@ CoD.StartMenu_Objectives_Item.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				fill:completeAnimation()
 				self.fill:setAlpha( 0 )
 				self.clipFinished( fill, {} )
+
 				check:completeAnimation()
 				self.check:setAlpha( 0 )
 				self.clipFinished( check, {} )
+
 				objective:completeAnimation()
 				self.objective:setLeftRight( true, true, 1, -34 )
 				self.objective:setTopBottom( false, false, -10, 10 )
 				self.clipFinished( objective, {} )
+
 				subobjectiveImage:completeAnimation()
 				self.subobjectiveImage:setAlpha( 0 )
 				self.clipFinished( subobjectiveImage, {} )
@@ -79,17 +85,21 @@ CoD.StartMenu_Objectives_Item.new = function ( menu, controller )
 		completed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				fill:completeAnimation()
 				self.fill:setAlpha( 1 )
 				self.clipFinished( fill, {} )
+
 				check:completeAnimation()
 				self.check:setAlpha( 1 )
 				self.clipFinished( check, {} )
+
 				objective:completeAnimation()
 				self.objective:setLeftRight( true, true, 28, -113.12 )
 				self.objective:setTopBottom( false, false, -9, 9 )
 				self.objective:setAlpha( 0.5 )
 				self.clipFinished( objective, {} )
+
 				subobjectiveImage:completeAnimation()
 				self.subobjectiveImage:setAlpha( 0 )
 				self.clipFinished( subobjectiveImage, {} )
@@ -98,17 +108,21 @@ CoD.StartMenu_Objectives_Item.new = function ( menu, controller )
 		AwaitingSubobjective = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				fill:completeAnimation()
 				self.fill:setAlpha( 0 )
 				self.clipFinished( fill, {} )
+
 				check:completeAnimation()
 				self.check:setAlpha( 0 )
 				self.clipFinished( check, {} )
+
 				objective:completeAnimation()
 				self.objective:setLeftRight( true, true, 1, -34 )
 				self.objective:setTopBottom( false, false, -10, 10 )
 				self.objective:setAlpha( 1 )
 				self.clipFinished( objective, {} )
+
 				subobjectiveImage:completeAnimation()
 				self.subobjectiveImage:setAlpha( 0 )
 				self.clipFinished( subobjectiveImage, {} )
@@ -117,17 +131,21 @@ CoD.StartMenu_Objectives_Item.new = function ( menu, controller )
 		Subobjective = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				fill:completeAnimation()
 				self.fill:setAlpha( 0 )
 				self.clipFinished( fill, {} )
+
 				check:completeAnimation()
 				self.check:setAlpha( 0 )
 				self.clipFinished( check, {} )
+
 				objective:completeAnimation()
 				self.objective:setLeftRight( true, true, 54, -3 )
 				self.objective:setTopBottom( false, false, -10.5, 14.5 )
 				self.objective:setRGB( 0.95, 0.89, 0.03 )
 				self.clipFinished( objective, {} )
+
 				subobjectiveImage:completeAnimation()
 				self.subobjectiveImage:setLeftRight( true, false, 10, 50 )
 				self.subobjectiveImage:setTopBottom( false, false, -17, 23 )
@@ -138,22 +156,27 @@ CoD.StartMenu_Objectives_Item.new = function ( menu, controller )
 		AwaitingObjective = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				fill:completeAnimation()
 				self.fill:setAlpha( 0 )
 				self.clipFinished( fill, {} )
+
 				check:completeAnimation()
 				self.check:setAlpha( 0 )
 				self.clipFinished( check, {} )
+
 				objective:completeAnimation()
 				self.objective:setLeftRight( true, true, 1, -34 )
 				self.objective:setTopBottom( false, false, -10, 10 )
 				self.clipFinished( objective, {} )
+
 				subobjectiveImage:completeAnimation()
 				self.subobjectiveImage:setAlpha( 0 )
 				self.clipFinished( subobjectiveImage, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "completed",
@@ -180,6 +203,7 @@ CoD.StartMenu_Objectives_Item.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.objective:close()
 		element.subobjectiveImage:close()

@@ -4,9 +4,11 @@
 CoD.BGB_PurchasingVials = InheritFrom( LUI.UIElement )
 CoD.BGB_PurchasingVials.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BGB_PurchasingVials )
 	self.id = "BGB_PurchasingVials"
@@ -46,12 +48,14 @@ CoD.BGB_PurchasingVials.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BurningDuplicatesText:completeAnimation()
 				self.BurningDuplicatesText:setAlpha( 0 )
 				self.clipFinished( BurningDuplicatesText, {} )
 			end,
 			StartPurchasing = function ()
 				self:setupElementClipCounter( 3 )
+
 				BurningDuplicatesText:completeAnimation()
 				self.BurningDuplicatesText:setAlpha( 0 )
 				self.clipFinished( BurningDuplicatesText, {} )
@@ -227,6 +231,7 @@ CoD.BGB_PurchasingVials.new = function ( menu, controller )
 			end,
 			Purchasing = function ()
 				self:setupElementClipCounter( 3 )
+
 				BurningDuplicatesText:completeAnimation()
 				self.BurningDuplicatesText:setAlpha( 0 )
 				self.clipFinished( BurningDuplicatesText, {} )
@@ -399,10 +404,12 @@ CoD.BGB_PurchasingVials.new = function ( menu, controller )
 				self.crate0:setTopBottom( true, false, -8.88, 108.88 )
 				self.crate0:setAlpha( 0 )
 				crate0Frame2( crate0, {} )
+
 				self.nextClip = "Purchasing"
 			end,
 			StopPurchasing = function ()
 				self:setupElementClipCounter( 3 )
+
 				BurningDuplicatesText:completeAnimation()
 				self.BurningDuplicatesText:setAlpha( 0 )
 				self.clipFinished( BurningDuplicatesText, {} )
@@ -580,9 +587,11 @@ CoD.BGB_PurchasingVials.new = function ( menu, controller )
 		Vials = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartPurchasing = function ()
 				self:setupElementClipCounter( 3 )
+
 				local BurningDuplicatesTextFrame2 = function ( BurningDuplicatesText, event )
 					local BurningDuplicatesTextFrame3 = function ( BurningDuplicatesText, event )
 						if not event.interrupted then
@@ -615,6 +624,7 @@ CoD.BGB_PurchasingVials.new = function ( menu, controller )
 				self.BurningDuplicatesText:setAlpha( 0 )
 				self.BurningDuplicatesText:setScale( 1.5 )
 				BurningDuplicatesTextFrame2( BurningDuplicatesText, {} )
+
 				crate:completeAnimation()
 				self.crate:setLeftRight( true, false, -148.94, -11.57 )
 				self.crate:setTopBottom( true, false, -8.88, 108.88 )
@@ -625,6 +635,7 @@ CoD.BGB_PurchasingVials.new = function ( menu, controller )
 				self.crate:setShaderVector( 2, 0, 1.57, 0, 0 )
 				self.crate:setShaderVector( 3, 0, 0, 0, 0 )
 				self.clipFinished( crate, {} )
+
 				crate0:completeAnimation()
 				self.crate0:setLeftRight( true, false, -148.94, -11.56 )
 				self.crate0:setTopBottom( true, false, -8.88, 108.88 )
@@ -633,6 +644,7 @@ CoD.BGB_PurchasingVials.new = function ( menu, controller )
 			end,
 			Purchasing = function ()
 				self:setupElementClipCounter( 3 )
+
 				local BurningDuplicatesTextFrame2 = function ( BurningDuplicatesText, event )
 					local BurningDuplicatesTextFrame3 = function ( BurningDuplicatesText, event )
 						if not event.interrupted then
@@ -665,6 +677,7 @@ CoD.BGB_PurchasingVials.new = function ( menu, controller )
 				self.BurningDuplicatesText:setAlpha( 0.45 )
 				self.BurningDuplicatesText:setScale( 1.5 )
 				BurningDuplicatesTextFrame2( BurningDuplicatesText, {} )
+
 				crate:completeAnimation()
 				self.crate:setLeftRight( true, false, -148.94, -11.57 )
 				self.crate:setTopBottom( true, false, -8.88, 108.88 )
@@ -675,15 +688,18 @@ CoD.BGB_PurchasingVials.new = function ( menu, controller )
 				self.crate:setShaderVector( 2, 0, 1.57, 0, 0 )
 				self.crate:setShaderVector( 3, 0, 0, 0, 0 )
 				self.clipFinished( crate, {} )
+
 				crate0:completeAnimation()
 				self.crate0:setLeftRight( true, false, -148.94, -11.56 )
 				self.crate0:setTopBottom( true, false, -8.88, 108.88 )
 				self.crate0:setAlpha( 0 )
 				self.clipFinished( crate0, {} )
+
 				self.nextClip = "Purchasing"
 			end,
 			StopPurchasing = function ()
 				self:setupElementClipCounter( 3 )
+
 				local BurningDuplicatesTextFrame2 = function ( BurningDuplicatesText, event )
 					local BurningDuplicatesTextFrame3 = function ( BurningDuplicatesText, event )
 						if not event.interrupted then
@@ -716,9 +732,11 @@ CoD.BGB_PurchasingVials.new = function ( menu, controller )
 				self.BurningDuplicatesText:setAlpha( 1 )
 				self.BurningDuplicatesText:setScale( 1.5 )
 				BurningDuplicatesTextFrame2( BurningDuplicatesText, {} )
+
 				crate:completeAnimation()
 				self.crate:setAlpha( 0 )
 				self.clipFinished( crate, {} )
+
 				crate0:completeAnimation()
 				self.crate0:setLeftRight( true, false, -148.94, -11.56 )
 				self.crate0:setTopBottom( true, false, -8.88, 108.88 )
@@ -727,6 +745,7 @@ CoD.BGB_PurchasingVials.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Vials",

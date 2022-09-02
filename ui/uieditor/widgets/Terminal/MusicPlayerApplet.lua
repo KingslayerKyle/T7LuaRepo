@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Terminal.MusicPlayerAppletDisplay" )
 CoD.MusicPlayerApplet = InheritFrom( LUI.UIElement )
 CoD.MusicPlayerApplet.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MusicPlayerApplet )
 	self.id = "MusicPlayerApplet"
@@ -66,9 +68,11 @@ CoD.MusicPlayerApplet.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local GeneralframeFrame2 = function ( Generalframe, event )
 					if not event.interrupted then
 						Generalframe:beginAnimation( "keyframe", 180, false, false, CoD.TweenType.Linear )
@@ -176,27 +180,33 @@ CoD.MusicPlayerApplet.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				Generalframe:completeAnimation()
 				self.Generalframe:setLeftRight( true, true, 0, 0 )
 				self.Generalframe:setTopBottom( true, true, 15, 15 )
 				self.clipFinished( Generalframe, {} )
+
 				focus:completeAnimation()
 				self.focus:setLeftRight( true, true, 0, 0 )
 				self.focus:setTopBottom( true, true, 15, 15 )
 				self.clipFinished( focus, {} )
+
 				unfocused:completeAnimation()
 				self.unfocused:setLeftRight( true, true, 0, 0 )
 				self.unfocused:setTopBottom( true, true, 15, 15 )
 				self.clipFinished( unfocused, {} )
+
 				CallingCardLines0:completeAnimation()
 				self.CallingCardLines0:setLeftRight( true, false, -3, 212 )
 				self.CallingCardLines0:setTopBottom( true, false, 90, 102 )
 				self.clipFinished( CallingCardLines0, {} )
+
 				FocusWidget:completeAnimation()
 				self.FocusWidget:setLeftRight( true, true, -9, 7.71 )
 				self.FocusWidget:setTopBottom( true, false, -10.22, 9.78 )
 				self.FocusWidget:setAlpha( 1 )
 				self.clipFinished( FocusWidget, {} )
+
 				MusicPlayerAppletDisplay0:completeAnimation()
 				self.MusicPlayerAppletDisplay0:setLeftRight( true, false, 0, 209 )
 				self.MusicPlayerAppletDisplay0:setTopBottom( true, false, 21, 87 )
@@ -204,6 +214,7 @@ CoD.MusicPlayerApplet.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local GeneralframeFrame2 = function ( Generalframe, event )
 					if not event.interrupted then
 						Generalframe:beginAnimation( "keyframe", 180, false, false, CoD.TweenType.Linear )
@@ -311,6 +322,7 @@ CoD.MusicPlayerApplet.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Generalframe:close()
 		element.FocusWidget:close()

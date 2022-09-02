@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Paintshop.PaintjobSlotsBack" )
 CoD.PaintshopChooseIconName = InheritFrom( LUI.UIElement )
 CoD.PaintshopChooseIconName.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PaintshopChooseIconName )
 	self.id = "PaintshopChooseIconName"
@@ -34,6 +36,7 @@ CoD.PaintshopChooseIconName.new = function ( menu, controller )
 	itemName:setShaderVector( 1, 0.02, 0, 0, 0 )
 	itemName:setShaderVector( 2, 1, 0, 0, 0 )
 	itemName:setLetterSpacing( 0.6 )
+
 	LUI.OverrideFunction_CallOriginalFirst( itemName, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )

@@ -4,9 +4,11 @@
 CoD.ScoreInfo_Meter = InheritFrom( LUI.UIElement )
 CoD.ScoreInfo_Meter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreInfo_Meter )
 	self.id = "ScoreInfo_Meter"
@@ -62,12 +64,15 @@ CoD.ScoreInfo_Meter.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ImgMeterEnvBack:completeAnimation()
 				self.ImgMeterEnvBack:setAlpha( 0 )
 				self.clipFinished( ImgMeterEnvBack, {} )
+
 				ImgMeterEnvFill:completeAnimation()
 				self.ImgMeterEnvFill:setAlpha( 0 )
 				self.clipFinished( ImgMeterEnvFill, {} )
+
 				ImgMeterEnvFillLine:completeAnimation()
 				self.ImgMeterEnvFillLine:setAlpha( 0 )
 				self.clipFinished( ImgMeterEnvFillLine, {} )
@@ -76,18 +81,22 @@ CoD.ScoreInfo_Meter.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ImgMeterEnvBack:completeAnimation()
 				self.ImgMeterEnvBack:setAlpha( 1 )
 				self.clipFinished( ImgMeterEnvBack, {} )
+
 				ImgMeterEnvFill:completeAnimation()
 				self.ImgMeterEnvFill:setAlpha( 0 )
 				self.clipFinished( ImgMeterEnvFill, {} )
+
 				ImgMeterEnvFillLine:completeAnimation()
 				self.ImgMeterEnvFillLine:setAlpha( 1 )
 				self.clipFinished( ImgMeterEnvFillLine, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

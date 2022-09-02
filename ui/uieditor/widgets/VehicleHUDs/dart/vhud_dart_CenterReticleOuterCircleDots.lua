@@ -4,9 +4,11 @@
 CoD.vhud_dart_CenterReticleOuterCircleDots = InheritFrom( LUI.UIElement )
 CoD.vhud_dart_CenterReticleOuterCircleDots.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_dart_CenterReticleOuterCircleDots )
 	self.id = "vhud_dart_CenterReticleOuterCircleDots"
@@ -37,6 +39,7 @@ CoD.vhud_dart_CenterReticleOuterCircleDots.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local CenterReticleOuterCircleDots0Frame2 = function ( CenterReticleOuterCircleDots0, event )
 					local CenterReticleOuterCircleDots0Frame3 = function ( CenterReticleOuterCircleDots0, event )
 						if not event.interrupted then
@@ -89,10 +92,12 @@ CoD.vhud_dart_CenterReticleOuterCircleDots.new = function ( menu, controller )
 				CenterReticleOuterCircleDots:completeAnimation()
 				self.CenterReticleOuterCircleDots:setAlpha( 0.5 )
 				CenterReticleOuterCircleDotsFrame2( CenterReticleOuterCircleDots, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

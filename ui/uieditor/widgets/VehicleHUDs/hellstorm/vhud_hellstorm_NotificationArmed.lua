@@ -4,9 +4,11 @@
 CoD.vhud_hellstorm_NotificationArmed = InheritFrom( LUI.UIElement )
 CoD.vhud_hellstorm_NotificationArmed.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_hellstorm_NotificationArmed )
 	self.id = "vhud_hellstorm_NotificationArmed"

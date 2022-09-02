@@ -4,9 +4,11 @@
 CoD.GridItemUpgradeIconTacticalRig = InheritFrom( LUI.UIElement )
 CoD.GridItemUpgradeIconTacticalRig.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GridItemUpgradeIconTacticalRig )
 	self.id = "GridItemUpgradeIconTacticalRig"
@@ -36,9 +38,11 @@ CoD.GridItemUpgradeIconTacticalRig.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				UpgradedIcon:completeAnimation()
 				self.UpgradedIcon:setAlpha( 0 )
 				self.clipFinished( UpgradedIcon, {} )
+
 				UpgradableIcon:completeAnimation()
 				self.UpgradableIcon:setAlpha( 0 )
 				self.clipFinished( UpgradableIcon, {} )
@@ -47,9 +51,11 @@ CoD.GridItemUpgradeIconTacticalRig.new = function ( menu, controller )
 		Upgradable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				UpgradedIcon:completeAnimation()
 				self.UpgradedIcon:setAlpha( 0 )
 				self.clipFinished( UpgradedIcon, {} )
+
 				UpgradableIcon:completeAnimation()
 				self.UpgradableIcon:setAlpha( 1 )
 				self.clipFinished( UpgradableIcon, {} )
@@ -58,9 +64,11 @@ CoD.GridItemUpgradeIconTacticalRig.new = function ( menu, controller )
 		Upgraded = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				UpgradedIcon:completeAnimation()
 				self.UpgradedIcon:setAlpha( 1 )
 				self.clipFinished( UpgradedIcon, {} )
+
 				UpgradableIcon:completeAnimation()
 				self.UpgradableIcon:setAlpha( 0 )
 				self.UpgradableIcon:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )

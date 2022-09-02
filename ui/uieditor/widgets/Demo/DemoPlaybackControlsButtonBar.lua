@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Demo.DemoPlaybackControlsButtons" )
 CoD.DemoPlaybackControlsButtonBar = InheritFrom( LUI.UIElement )
 CoD.DemoPlaybackControlsButtonBar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DemoPlaybackControlsButtonBar )
 	self.id = "DemoPlaybackControlsButtonBar"
@@ -32,6 +34,7 @@ CoD.DemoPlaybackControlsButtonBar.new = function ( menu, controller )
 	self.DemoPlaybackControlsButtons = DemoPlaybackControlsButtons
 	
 	DemoPlaybackControlsButtons:setModel( menu.buttonModel, controller )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.DemoPlaybackControlsButtons:close()
 	end )

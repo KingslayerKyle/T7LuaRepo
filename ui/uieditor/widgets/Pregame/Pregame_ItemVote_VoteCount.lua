@@ -4,9 +4,11 @@
 CoD.Pregame_ItemVote_VoteCount = InheritFrom( LUI.UIElement )
 CoD.Pregame_ItemVote_VoteCount.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_ItemVote_VoteCount )
 	self.id = "Pregame_ItemVote_VoteCount"
@@ -43,9 +45,11 @@ CoD.Pregame_ItemVote_VoteCount.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				VoteCount:completeAnimation()
 				self.VoteCount:setAlpha( 0 )
 				self.clipFinished( VoteCount, {} )
+
 				VoteTitle:completeAnimation()
 				self.VoteTitle:setAlpha( 0 )
 				self.VoteTitle:setText( Engine.Localize( "MENU_VOTES_CAPS" ) )
@@ -55,9 +59,11 @@ CoD.Pregame_ItemVote_VoteCount.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				VoteCount:completeAnimation()
 				self.VoteCount:setAlpha( 1 )
 				self.clipFinished( VoteCount, {} )
+
 				VoteTitle:completeAnimation()
 				self.VoteTitle:setAlpha( 1 )
 				self.VoteTitle:setText( Engine.Localize( "MENU_VOTES_CAPS" ) )
@@ -67,9 +73,11 @@ CoD.Pregame_ItemVote_VoteCount.new = function ( menu, controller )
 		OneVoteVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				VoteCount:completeAnimation()
 				self.VoteCount:setAlpha( 1 )
 				self.clipFinished( VoteCount, {} )
+
 				VoteTitle:completeAnimation()
 				self.VoteTitle:setAlpha( 1 )
 				self.VoteTitle:setText( Engine.Localize( "MENU_VOTE_CAPS" ) )
@@ -77,6 +85,7 @@ CoD.Pregame_ItemVote_VoteCount.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -107,6 +116,7 @@ CoD.Pregame_ItemVote_VoteCount.new = function ( menu, controller )
 			modelName = "Pregame.maxVotes"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.VoteCount:close()
 	end )

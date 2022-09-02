@@ -58,9 +58,11 @@ end
 CoD.AmmoWidget_HeroAbilityContainer = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_HeroAbilityContainer )
 	self.id = "AmmoWidget_HeroAbilityContainer"
@@ -325,47 +327,61 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				MaskGlow:completeAnimation()
 				self.MaskGlow:setAlpha( 0 )
 				self.clipFinished( MaskGlow, {} )
+
 				EdgeGlow:completeAnimation()
 				self.EdgeGlow:setAlpha( 0 )
 				self.clipFinished( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0 )
 				self.clipFinished( BlackShadow, {} )
+
 				ReadyImage:completeAnimation()
 				self.ReadyImage:setAlpha( 0 )
 				self.clipFinished( ReadyImage, {} )
+
 				CircleOutter:completeAnimation()
 				self.CircleOutter:setAlpha( 0 )
 				self.clipFinished( CircleOutter, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
+
 				AbilityRingBackDeplete:completeAnimation()
 				self.AbilityRingBackDeplete:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDeplete, {} )
+
 				AbilityRingBack:completeAnimation()
 				self.AbilityRingBack:setAlpha( 0 )
 				self.clipFinished( AbilityRingBack, {} )
+
 				ThiefRingBG:completeAnimation()
 				self.ThiefRingBG:setAlpha( 0 )
 				self.clipFinished( ThiefRingBG, {} )
+
 				HeroWeaponRing:completeAnimation()
 				self.HeroWeaponRing:setRGB( 1, 1, 1 )
 				self.HeroWeaponRing:setAlpha( 0 )
 				self.clipFinished( HeroWeaponRing, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				HeroWeaponPulse:completeAnimation()
 				self.HeroWeaponPulse:setAlpha( 0 )
 				self.clipFinished( HeroWeaponPulse, {} )
+
 				HeroBackgroundGlowImage:completeAnimation()
 				self.HeroBackgroundGlowImage:setRGB( 1, 0.85, 0 )
 				self.HeroBackgroundGlowImage:setAlpha( 0 )
 				self.clipFinished( HeroBackgroundGlowImage, {} )
+
 				AbilityIconContainer:completeAnimation()
 				self.AbilityIconContainer:setAlpha( 0 )
 				self.clipFinished( AbilityIconContainer, {} )
@@ -374,45 +390,59 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 		HideSpecialistAbility = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				MaskGlow:completeAnimation()
 				self.MaskGlow:setAlpha( 0 )
 				self.clipFinished( MaskGlow, {} )
+
 				EdgeGlow:completeAnimation()
 				self.EdgeGlow:setAlpha( 0 )
 				self.clipFinished( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0 )
 				self.clipFinished( BlackShadow, {} )
+
 				ReadyImage:completeAnimation()
 				self.ReadyImage:setAlpha( 0 )
 				self.clipFinished( ReadyImage, {} )
+
 				CircleOutter:completeAnimation()
 				self.CircleOutter:setAlpha( 0 )
 				self.clipFinished( CircleOutter, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
+
 				AbilityRingBackDeplete:completeAnimation()
 				self.AbilityRingBackDeplete:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDeplete, {} )
+
 				AbilityRingBack:completeAnimation()
 				self.AbilityRingBack:setAlpha( 0 )
 				self.clipFinished( AbilityRingBack, {} )
+
 				ThiefRingBG:completeAnimation()
 				self.ThiefRingBG:setAlpha( 0 )
 				self.clipFinished( ThiefRingBG, {} )
+
 				HeroWeaponRing:completeAnimation()
 				self.HeroWeaponRing:setAlpha( 0 )
 				self.clipFinished( HeroWeaponRing, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				HeroWeaponPulse:completeAnimation()
 				self.HeroWeaponPulse:setAlpha( 0 )
 				self.clipFinished( HeroWeaponPulse, {} )
+
 				HeroBackgroundGlowImage:completeAnimation()
 				self.HeroBackgroundGlowImage:setAlpha( 0 )
 				self.clipFinished( HeroBackgroundGlowImage, {} )
+
 				AbilityIconContainer:completeAnimation()
 				self.AbilityIconContainer:setAlpha( 0 )
 				self.clipFinished( AbilityIconContainer, {} )
@@ -421,62 +451,77 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				MaskGlow:completeAnimation()
 				self.MaskGlow:setAlpha( 0.5 )
 				self.clipFinished( MaskGlow, {} )
+
 				EdgeGlow:completeAnimation()
 				self.EdgeGlow:setRGB( 0.73, 0.43, 0 )
 				self.EdgeGlow:setAlpha( 0.9 )
 				self.clipFinished( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0.2 )
 				self.clipFinished( BlackShadow, {} )
+
 				ReadyImage:completeAnimation()
 				self.ReadyImage:setRGB( 0.98, 0.67, 0 )
 				self.ReadyImage:setAlpha( 0.7 )
 				self.clipFinished( ReadyImage, {} )
+
 				CircleOutter:completeAnimation()
 				self.CircleOutter:setRGB( 0.95, 0.58, 0.19 )
 				self.CircleOutter:setAlpha( 1 )
 				self.clipFinished( CircleOutter, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setRGB( 0.28, 0.13, 0 )
 				self.AbilityRingBackDuplicate:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
+
 				AbilityRingBackDeplete:completeAnimation()
 				self.AbilityRingBackDeplete:setRGB( 0.84, 0.63, 0.21 )
 				self.AbilityRingBackDeplete:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDeplete, {} )
+
 				AbilityRingBack:completeAnimation()
 				self.AbilityRingBack:setRGB( 1, 1, 1 )
 				self.AbilityRingBack:setAlpha( 0 )
 				self.clipFinished( AbilityRingBack, {} )
+
 				ThiefRingBG:completeAnimation()
 				self.ThiefRingBG:setAlpha( 0 )
 				self.clipFinished( ThiefRingBG, {} )
+
 				HeroWeaponRing:completeAnimation()
 				self.HeroWeaponRing:setRGB( 1, 1, 1 )
 				self.HeroWeaponRing:setAlpha( 1 )
 				self.clipFinished( HeroWeaponRing, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setRGB( 1, 0.79, 0.15 )
 				self.Glow:setAlpha( 0.3 )
 				self.clipFinished( Glow, {} )
+
 				HeroWeaponPulse:completeAnimation()
 				self.HeroWeaponPulse:setAlpha( 0.5 )
 				self.clipFinished( HeroWeaponPulse, {} )
+
 				HeroBackgroundGlowImage:completeAnimation()
 				self.HeroBackgroundGlowImage:setLeftRight( false, false, -60, 60 )
 				self.HeroBackgroundGlowImage:setTopBottom( false, false, -53.5, 54.5 )
 				self.HeroBackgroundGlowImage:setRGB( 1, 0.85, 0 )
 				self.HeroBackgroundGlowImage:setAlpha( 0 )
 				self.clipFinished( HeroBackgroundGlowImage, {} )
+
 				AbilityIconContainer:completeAnimation()
 				self.AbilityIconContainer:setAlpha( 1 )
 				self.clipFinished( AbilityIconContainer, {} )
 			end,
 			Charge = function ()
 				self:setupElementClipCounter( 13 )
+
 				local MaskGlowFrame2 = function ( MaskGlow, event )
 					if not event.interrupted then
 						MaskGlow:beginAnimation( "keyframe", 360, false, false, CoD.TweenType.Linear )
@@ -509,6 +554,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 				self.EdgeGlow:setRGB( 0.73, 0.43, 0 )
 				self.EdgeGlow:setAlpha( 0.9 )
 				EdgeGlowFrame2( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0.2 )
 				self.clipFinished( BlackShadow, {} )
@@ -683,6 +729,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 			end,
 			InUse = function ()
 				self:setupElementClipCounter( 13 )
+
 				local MaskGlowFrame2 = function ( MaskGlow, event )
 					if not event.interrupted then
 						MaskGlow:beginAnimation( "keyframe", 629, false, false, CoD.TweenType.Linear )
@@ -715,9 +762,11 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 				self.EdgeGlow:setRGB( 0.73, 0.43, 0 )
 				self.EdgeGlow:setAlpha( 0.9 )
 				EdgeGlowFrame2( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0.2 )
 				self.clipFinished( BlackShadow, {} )
+
 				ReadyImage:completeAnimation()
 				self.ReadyImage:setRGB( 0.98, 0.67, 0 )
 				self.ReadyImage:setAlpha( 0.7 )
@@ -878,60 +927,75 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 		ChargeThief = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				MaskGlow:completeAnimation()
 				self.MaskGlow:setAlpha( 0 )
 				self.clipFinished( MaskGlow, {} )
+
 				EdgeGlow:completeAnimation()
 				self.EdgeGlow:setRGB( 0.73, 0.43, 0 )
 				self.EdgeGlow:setAlpha( 0 )
 				self.clipFinished( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0.2 )
 				self.clipFinished( BlackShadow, {} )
+
 				ReadyImage:completeAnimation()
 				self.ReadyImage:setRGB( 0.98, 0.67, 0 )
 				self.ReadyImage:setAlpha( 0 )
 				self.clipFinished( ReadyImage, {} )
+
 				CircleOutter:completeAnimation()
 				self.CircleOutter:setRGB( 0.95, 0.58, 0.19 )
 				self.CircleOutter:setAlpha( 0 )
 				self.clipFinished( CircleOutter, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setRGB( 0.28, 0.13, 0 )
 				self.AbilityRingBackDuplicate:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
+
 				AbilityRingBackDeplete:completeAnimation()
 				self.AbilityRingBackDeplete:setRGB( 0.84, 0.63, 0.21 )
 				self.AbilityRingBackDeplete:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDeplete, {} )
+
 				AbilityRingBack:completeAnimation()
 				self.AbilityRingBack:setRGB( 1, 1, 1 )
 				self.AbilityRingBack:setAlpha( 0 )
 				self.clipFinished( AbilityRingBack, {} )
+
 				ThiefRingBG:completeAnimation()
 				self.ThiefRingBG:setAlpha( 0.35 )
 				self.clipFinished( ThiefRingBG, {} )
+
 				HeroWeaponRing:completeAnimation()
 				self.HeroWeaponRing:setRGB( 1, 1, 1 )
 				self.HeroWeaponRing:setAlpha( 1 )
 				self.clipFinished( HeroWeaponRing, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setRGB( 1, 0.79, 0.15 )
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				HeroWeaponPulse:completeAnimation()
 				self.HeroWeaponPulse:setAlpha( 0 )
 				self.clipFinished( HeroWeaponPulse, {} )
+
 				HeroBackgroundGlowImage:completeAnimation()
 				self.HeroBackgroundGlowImage:setRGB( 1, 0.85, 0 )
 				self.HeroBackgroundGlowImage:setAlpha( 0 )
 				self.clipFinished( HeroBackgroundGlowImage, {} )
+
 				AbilityIconContainer:completeAnimation()
 				self.AbilityIconContainer:setAlpha( 1 )
 				self.clipFinished( AbilityIconContainer, {} )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 14 )
+
 				local MaskGlowFrame2 = function ( MaskGlow, event )
 					if not event.interrupted then
 						MaskGlow:beginAnimation( "keyframe", 400, false, false, CoD.TweenType.Linear )
@@ -964,6 +1028,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 				self.EdgeGlow:setRGB( 0.73, 0.43, 0 )
 				self.EdgeGlow:setAlpha( 0 )
 				EdgeGlowFrame2( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0.2 )
 				self.clipFinished( BlackShadow, {} )
@@ -1052,6 +1117,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 				self.AbilityRingBack:setRGB( 1, 1, 1 )
 				self.AbilityRingBack:setAlpha( 0 )
 				AbilityRingBackFrame2( AbilityRingBack, {} )
+
 				ThiefRingBG:completeAnimation()
 				self.ThiefRingBG:setAlpha( 0 )
 				self.clipFinished( ThiefRingBG, {} )
@@ -1238,6 +1304,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 			end,
 			InUse = function ()
 				self:setupElementClipCounter( 14 )
+
 				local MaskGlowFrame2 = function ( MaskGlow, event )
 					if not event.interrupted then
 						MaskGlow:beginAnimation( "keyframe", 400, false, false, CoD.TweenType.Linear )
@@ -1270,6 +1337,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 				self.EdgeGlow:setRGB( 0.73, 0.43, 0 )
 				self.EdgeGlow:setAlpha( 0 )
 				EdgeGlowFrame2( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0.2 )
 				self.clipFinished( BlackShadow, {} )
@@ -1358,6 +1426,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 				self.AbilityRingBack:setRGB( 1, 1, 1 )
 				self.AbilityRingBack:setAlpha( 0 )
 				AbilityRingBackFrame2( AbilityRingBack, {} )
+
 				ThiefRingBG:completeAnimation()
 				self.ThiefRingBG:setAlpha( 0 )
 				self.clipFinished( ThiefRingBG, {} )
@@ -1445,60 +1514,75 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 		ChargeGambler = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				MaskGlow:completeAnimation()
 				self.MaskGlow:setAlpha( 0 )
 				self.clipFinished( MaskGlow, {} )
+
 				EdgeGlow:completeAnimation()
 				self.EdgeGlow:setRGB( 0.73, 0.43, 0 )
 				self.EdgeGlow:setAlpha( 0 )
 				self.clipFinished( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0.2 )
 				self.clipFinished( BlackShadow, {} )
+
 				ReadyImage:completeAnimation()
 				self.ReadyImage:setRGB( 0.98, 0.67, 0 )
 				self.ReadyImage:setAlpha( 0 )
 				self.clipFinished( ReadyImage, {} )
+
 				CircleOutter:completeAnimation()
 				self.CircleOutter:setRGB( 0.95, 0.58, 0.19 )
 				self.CircleOutter:setAlpha( 0 )
 				self.clipFinished( CircleOutter, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setRGB( 0.28, 0.13, 0 )
 				self.AbilityRingBackDuplicate:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
+
 				AbilityRingBackDeplete:completeAnimation()
 				self.AbilityRingBackDeplete:setRGB( 0.84, 0.63, 0.21 )
 				self.AbilityRingBackDeplete:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDeplete, {} )
+
 				AbilityRingBack:completeAnimation()
 				self.AbilityRingBack:setRGB( 1, 1, 1 )
 				self.AbilityRingBack:setAlpha( 0 )
 				self.clipFinished( AbilityRingBack, {} )
+
 				ThiefRingBG:completeAnimation()
 				self.ThiefRingBG:setAlpha( 0 )
 				self.clipFinished( ThiefRingBG, {} )
+
 				HeroWeaponRing:completeAnimation()
 				self.HeroWeaponRing:setRGB( 1, 1, 1 )
 				self.HeroWeaponRing:setAlpha( 1 )
 				self.clipFinished( HeroWeaponRing, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setRGB( 1, 0.79, 0.15 )
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				HeroWeaponPulse:completeAnimation()
 				self.HeroWeaponPulse:setAlpha( 0 )
 				self.clipFinished( HeroWeaponPulse, {} )
+
 				HeroBackgroundGlowImage:completeAnimation()
 				self.HeroBackgroundGlowImage:setRGB( 1, 0.85, 0 )
 				self.HeroBackgroundGlowImage:setAlpha( 0 )
 				self.clipFinished( HeroBackgroundGlowImage, {} )
+
 				AbilityIconContainer:completeAnimation()
 				self.AbilityIconContainer:setAlpha( 1 )
 				self.clipFinished( AbilityIconContainer, {} )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 13 )
+
 				local MaskGlowFrame2 = function ( MaskGlow, event )
 					if not event.interrupted then
 						MaskGlow:beginAnimation( "keyframe", 400, false, false, CoD.TweenType.Linear )
@@ -1531,6 +1615,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 				EdgeGlow:setRGB( 0.73, 0.43, 0 )
 				EdgeGlow:setAlpha( 0 )
 				EdgeGlow:registerEventHandler( "transition_complete_keyframe", f86_local1 )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0.2 )
 				self.clipFinished( BlackShadow, {} )
@@ -1823,6 +1908,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 			end,
 			InUse = function ()
 				self:setupElementClipCounter( 13 )
+
 				local MaskGlowFrame2 = function ( MaskGlow, event )
 					if not event.interrupted then
 						MaskGlow:beginAnimation( "keyframe", 400, false, false, CoD.TweenType.Linear )
@@ -1855,6 +1941,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 				self.EdgeGlow:setRGB( 0.73, 0.43, 0 )
 				self.EdgeGlow:setAlpha( 0 )
 				EdgeGlowFrame2( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0.2 )
 				self.clipFinished( BlackShadow, {} )
@@ -2027,60 +2114,75 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 		Charge = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				MaskGlow:completeAnimation()
 				self.MaskGlow:setAlpha( 0 )
 				self.clipFinished( MaskGlow, {} )
+
 				EdgeGlow:completeAnimation()
 				self.EdgeGlow:setRGB( 0.73, 0.43, 0 )
 				self.EdgeGlow:setAlpha( 0 )
 				self.clipFinished( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0.2 )
 				self.clipFinished( BlackShadow, {} )
+
 				ReadyImage:completeAnimation()
 				self.ReadyImage:setRGB( 0.98, 0.67, 0 )
 				self.ReadyImage:setAlpha( 0 )
 				self.clipFinished( ReadyImage, {} )
+
 				CircleOutter:completeAnimation()
 				self.CircleOutter:setRGB( 0.95, 0.58, 0.19 )
 				self.CircleOutter:setAlpha( 0 )
 				self.clipFinished( CircleOutter, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setRGB( 0.28, 0.13, 0 )
 				self.AbilityRingBackDuplicate:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
+
 				AbilityRingBackDeplete:completeAnimation()
 				self.AbilityRingBackDeplete:setRGB( 0.84, 0.63, 0.21 )
 				self.AbilityRingBackDeplete:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDeplete, {} )
+
 				AbilityRingBack:completeAnimation()
 				self.AbilityRingBack:setRGB( 1, 1, 1 )
 				self.AbilityRingBack:setAlpha( 0 )
 				self.clipFinished( AbilityRingBack, {} )
+
 				ThiefRingBG:completeAnimation()
 				self.ThiefRingBG:setAlpha( 0 )
 				self.clipFinished( ThiefRingBG, {} )
+
 				HeroWeaponRing:completeAnimation()
 				self.HeroWeaponRing:setRGB( 1, 1, 1 )
 				self.HeroWeaponRing:setAlpha( 1 )
 				self.clipFinished( HeroWeaponRing, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setRGB( 1, 0.79, 0.15 )
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				HeroWeaponPulse:completeAnimation()
 				self.HeroWeaponPulse:setAlpha( 0 )
 				self.clipFinished( HeroWeaponPulse, {} )
+
 				HeroBackgroundGlowImage:completeAnimation()
 				self.HeroBackgroundGlowImage:setRGB( 1, 0.85, 0 )
 				self.HeroBackgroundGlowImage:setAlpha( 0 )
 				self.clipFinished( HeroBackgroundGlowImage, {} )
+
 				AbilityIconContainer:completeAnimation()
 				self.AbilityIconContainer:setAlpha( 1 )
 				self.clipFinished( AbilityIconContainer, {} )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 13 )
+
 				local MaskGlowFrame2 = function ( MaskGlow, event )
 					if not event.interrupted then
 						MaskGlow:beginAnimation( "keyframe", 400, false, false, CoD.TweenType.Linear )
@@ -2113,6 +2215,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 				self.EdgeGlow:setRGB( 0.73, 0.43, 0 )
 				self.EdgeGlow:setAlpha( 0 )
 				EdgeGlowFrame2( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0.2 )
 				self.clipFinished( BlackShadow, {} )
@@ -2384,6 +2487,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 			end,
 			InUse = function ()
 				self:setupElementClipCounter( 13 )
+
 				local MaskGlowFrame2 = function ( MaskGlow, event )
 					if not event.interrupted then
 						MaskGlow:beginAnimation( "keyframe", 400, false, false, CoD.TweenType.Linear )
@@ -2416,6 +2520,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 				self.EdgeGlow:setRGB( 0.73, 0.43, 0 )
 				self.EdgeGlow:setAlpha( 0 )
 				EdgeGlowFrame2( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0.2 )
 				self.clipFinished( BlackShadow, {} )
@@ -2588,60 +2693,75 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 		InUse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				MaskGlow:completeAnimation()
 				self.MaskGlow:setAlpha( 0.5 )
 				self.clipFinished( MaskGlow, {} )
+
 				EdgeGlow:completeAnimation()
 				self.EdgeGlow:setRGB( 0.73, 0.43, 0 )
 				self.EdgeGlow:setAlpha( 0.9 )
 				self.clipFinished( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0.2 )
 				self.clipFinished( BlackShadow, {} )
+
 				ReadyImage:completeAnimation()
 				self.ReadyImage:setRGB( 0.98, 0.67, 0 )
 				self.ReadyImage:setAlpha( 0.7 )
 				self.clipFinished( ReadyImage, {} )
+
 				CircleOutter:completeAnimation()
 				self.CircleOutter:setRGB( 0.95, 0.58, 0.19 )
 				self.CircleOutter:setAlpha( 1 )
 				self.clipFinished( CircleOutter, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setRGB( 0.28, 0.13, 0 )
 				self.AbilityRingBackDuplicate:setAlpha( 0.7 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
+
 				AbilityRingBackDeplete:completeAnimation()
 				self.AbilityRingBackDeplete:setRGB( 0.84, 0.63, 0.21 )
 				self.AbilityRingBackDeplete:setAlpha( 1 )
 				self.clipFinished( AbilityRingBackDeplete, {} )
+
 				AbilityRingBack:completeAnimation()
 				self.AbilityRingBack:setRGB( 1, 1, 1 )
 				self.AbilityRingBack:setAlpha( 1 )
 				self.clipFinished( AbilityRingBack, {} )
+
 				ThiefRingBG:completeAnimation()
 				self.ThiefRingBG:setAlpha( 0 )
 				self.clipFinished( ThiefRingBG, {} )
+
 				HeroWeaponRing:completeAnimation()
 				self.HeroWeaponRing:setRGB( 1, 1, 1 )
 				self.HeroWeaponRing:setAlpha( 1 )
 				self.clipFinished( HeroWeaponRing, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setRGB( 1, 0.79, 0.15 )
 				self.Glow:setAlpha( 0.05 )
 				self.clipFinished( Glow, {} )
+
 				HeroWeaponPulse:completeAnimation()
 				self.HeroWeaponPulse:setAlpha( 0 )
 				self.clipFinished( HeroWeaponPulse, {} )
+
 				HeroBackgroundGlowImage:completeAnimation()
 				self.HeroBackgroundGlowImage:setRGB( 1, 0.85, 0 )
 				self.HeroBackgroundGlowImage:setAlpha( 0 )
 				self.clipFinished( HeroBackgroundGlowImage, {} )
+
 				AbilityIconContainer:completeAnimation()
 				self.AbilityIconContainer:setAlpha( 1 )
 				self.clipFinished( AbilityIconContainer, {} )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 13 )
+
 				MaskGlow:beginAnimation( "keyframe", 400, false, false, CoD.TweenType.Linear )
 				MaskGlow:setAlpha( 0.5 )
 				MaskGlow:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
@@ -2662,9 +2782,11 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 				self.EdgeGlow:setRGB( 0.73, 0.43, 0 )
 				self.EdgeGlow:setAlpha( 0.9 )
 				EdgeGlowFrame2( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0.2 )
 				self.clipFinished( BlackShadow, {} )
+
 				ReadyImage:completeAnimation()
 				self.ReadyImage:setRGB( 0.98, 0.67, 0 )
 				self.ReadyImage:setAlpha( 0.7 )
@@ -2920,6 +3042,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 			end,
 			Charge = function ()
 				self:setupElementClipCounter( 13 )
+
 				local MaskGlowFrame2 = function ( MaskGlow, event )
 					if not event.interrupted then
 						MaskGlow:beginAnimation( "keyframe", 740, false, false, CoD.TweenType.Linear )
@@ -2952,6 +3075,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 				self.EdgeGlow:setRGB( 0.73, 0.43, 0 )
 				self.EdgeGlow:setAlpha( 0.9 )
 				EdgeGlowFrame2( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0.2 )
 				self.clipFinished( BlackShadow, {} )
@@ -3122,6 +3246,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 			end,
 			MedEnergy = function ()
 				self:setupElementClipCounter( 13 )
+
 				local MaskGlowFrame2 = function ( MaskGlow, event )
 					if not event.interrupted then
 						MaskGlow:beginAnimation( "keyframe", 699, false, false, CoD.TweenType.Linear )
@@ -3154,6 +3279,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 				self.EdgeGlow:setRGB( 0.73, 0.43, 0 )
 				self.EdgeGlow:setAlpha( 0.9 )
 				EdgeGlowFrame2( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0.2 )
 				self.clipFinished( BlackShadow, {} )
@@ -3328,58 +3454,73 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 		MedEnergy = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				MaskGlow:completeAnimation()
 				self.MaskGlow:setAlpha( 0.5 )
 				self.clipFinished( MaskGlow, {} )
+
 				EdgeGlow:completeAnimation()
 				self.EdgeGlow:setRGB( 0.73, 0.26, 0 )
 				self.EdgeGlow:setAlpha( 0.9 )
 				self.clipFinished( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0.2 )
 				self.clipFinished( BlackShadow, {} )
+
 				ReadyImage:completeAnimation()
 				self.ReadyImage:setRGB( 0.98, 0.44, 0 )
 				self.ReadyImage:setAlpha( 0.7 )
 				self.clipFinished( ReadyImage, {} )
+
 				CircleOutter:completeAnimation()
 				self.CircleOutter:setRGB( 1, 0.42, 0.15 )
 				self.CircleOutter:setAlpha( 1 )
 				self.clipFinished( CircleOutter, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setRGB( 1, 0.56, 0.15 )
 				self.AbilityRingBackDuplicate:setAlpha( 0.7 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
+
 				AbilityRingBackDeplete:completeAnimation()
 				self.AbilityRingBackDeplete:setRGB( 1, 0.44, 0.15 )
 				self.AbilityRingBackDeplete:setAlpha( 1 )
 				self.clipFinished( AbilityRingBackDeplete, {} )
+
 				AbilityRingBack:completeAnimation()
 				self.AbilityRingBack:setRGB( 1, 0.56, 0.15 )
 				self.AbilityRingBack:setAlpha( 1 )
 				self.clipFinished( AbilityRingBack, {} )
+
 				ThiefRingBG:completeAnimation()
 				self.ThiefRingBG:setAlpha( 0 )
 				self.clipFinished( ThiefRingBG, {} )
+
 				HeroWeaponRing:completeAnimation()
 				self.HeroWeaponRing:setAlpha( 1 )
 				self.clipFinished( HeroWeaponRing, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setRGB( 1, 0.56, 0.15 )
 				self.Glow:setAlpha( 0.05 )
 				self.clipFinished( Glow, {} )
+
 				HeroWeaponPulse:completeAnimation()
 				self.HeroWeaponPulse:setAlpha( 0 )
 				self.clipFinished( HeroWeaponPulse, {} )
+
 				HeroBackgroundGlowImage:completeAnimation()
 				self.HeroBackgroundGlowImage:setAlpha( 0 )
 				self.clipFinished( HeroBackgroundGlowImage, {} )
+
 				AbilityIconContainer:completeAnimation()
 				self.AbilityIconContainer:setAlpha( 1 )
 				self.clipFinished( AbilityIconContainer, {} )
 			end,
 			LowEnergy = function ()
 				self:setupElementClipCounter( 13 )
+
 				local MaskGlowFrame2 = function ( MaskGlow, event )
 					if not event.interrupted then
 						MaskGlow:beginAnimation( "keyframe", 349, false, false, CoD.TweenType.Linear )
@@ -3412,6 +3553,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 				self.EdgeGlow:setRGB( 0.73, 0.26, 0 )
 				self.EdgeGlow:setAlpha( 0.9 )
 				EdgeGlowFrame2( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0.2 )
 				self.clipFinished( BlackShadow, {} )
@@ -3580,6 +3722,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 			end,
 			Charge = function ()
 				self:setupElementClipCounter( 13 )
+
 				local MaskGlowFrame2 = function ( MaskGlow, event )
 					if not event.interrupted then
 						MaskGlow:beginAnimation( "keyframe", 680, false, false, CoD.TweenType.Bounce )
@@ -3612,6 +3755,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 				self.EdgeGlow:setRGB( 0.73, 0.26, 0 )
 				self.EdgeGlow:setAlpha( 0.9 )
 				EdgeGlowFrame2( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0.2 )
 				self.clipFinished( BlackShadow, {} )
@@ -3786,58 +3930,73 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 		LowEnergy = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				MaskGlow:completeAnimation()
 				self.MaskGlow:setAlpha( 0.5 )
 				self.clipFinished( MaskGlow, {} )
+
 				EdgeGlow:completeAnimation()
 				self.EdgeGlow:setRGB( 0.73, 0.03, 0 )
 				self.EdgeGlow:setAlpha( 0.9 )
 				self.clipFinished( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0.2 )
 				self.clipFinished( BlackShadow, {} )
+
 				ReadyImage:completeAnimation()
 				self.ReadyImage:setRGB( 0.98, 0.06, 0 )
 				self.ReadyImage:setAlpha( 0.7 )
 				self.clipFinished( ReadyImage, {} )
+
 				CircleOutter:completeAnimation()
 				self.CircleOutter:setRGB( 0.95, 0.29, 0.19 )
 				self.CircleOutter:setAlpha( 1 )
 				self.clipFinished( CircleOutter, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setRGB( 0.28, 0.01, 0 )
 				self.AbilityRingBackDuplicate:setAlpha( 0.7 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
+
 				AbilityRingBackDeplete:completeAnimation()
 				self.AbilityRingBackDeplete:setRGB( 0.84, 0.22, 0.21 )
 				self.AbilityRingBackDeplete:setAlpha( 1 )
 				self.clipFinished( AbilityRingBackDeplete, {} )
+
 				AbilityRingBack:completeAnimation()
 				self.AbilityRingBack:setRGB( 1, 0, 0 )
 				self.AbilityRingBack:setAlpha( 1 )
 				self.clipFinished( AbilityRingBack, {} )
+
 				ThiefRingBG:completeAnimation()
 				self.ThiefRingBG:setAlpha( 0 )
 				self.clipFinished( ThiefRingBG, {} )
+
 				HeroWeaponRing:completeAnimation()
 				self.HeroWeaponRing:setAlpha( 1 )
 				self.clipFinished( HeroWeaponRing, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setRGB( 1, 0.17, 0.15 )
 				self.Glow:setAlpha( 0.05 )
 				self.clipFinished( Glow, {} )
+
 				HeroWeaponPulse:completeAnimation()
 				self.HeroWeaponPulse:setAlpha( 0 )
 				self.clipFinished( HeroWeaponPulse, {} )
+
 				HeroBackgroundGlowImage:completeAnimation()
 				self.HeroBackgroundGlowImage:setAlpha( 0 )
 				self.clipFinished( HeroBackgroundGlowImage, {} )
+
 				AbilityIconContainer:completeAnimation()
 				self.AbilityIconContainer:setAlpha( 1 )
 				self.clipFinished( AbilityIconContainer, {} )
 			end,
 			Charge = function ()
 				self:setupElementClipCounter( 13 )
+
 				local MaskGlowFrame2 = function ( MaskGlow, event )
 					if not event.interrupted then
 						MaskGlow:beginAnimation( "keyframe", 769, false, false, CoD.TweenType.Bounce )
@@ -3870,6 +4029,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 				self.EdgeGlow:setRGB( 0.73, 0.03, 0 )
 				self.EdgeGlow:setAlpha( 0.9 )
 				EdgeGlowFrame2( EdgeGlow, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0.2 )
 				self.clipFinished( BlackShadow, {} )
@@ -4042,6 +4202,7 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AbilityRingBackDuplicate:close()
 		element.AbilityRingBackDeplete:close()

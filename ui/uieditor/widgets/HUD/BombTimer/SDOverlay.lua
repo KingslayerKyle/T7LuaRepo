@@ -14,9 +14,11 @@ end
 CoD.SDOverlay = InheritFrom( LUI.UIElement )
 CoD.SDOverlay.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SDOverlay )
 	self.id = "SDOverlay"
@@ -443,21 +445,25 @@ CoD.SDOverlay.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BombTimerWidgetA:completeAnimation()
 				self.BombTimerWidgetA:setLeftRight( true, false, 160, 232 )
 				self.BombTimerWidgetA:setTopBottom( true, false, 200, 224 )
 				self.BombTimerWidgetA:setAlpha( 1 )
 				self.clipFinished( BombTimerWidgetA, {} )
+
 				BombTimerWidgetB:completeAnimation()
 				self.BombTimerWidgetB:setLeftRight( true, false, 160, 232 )
 				self.BombTimerWidgetB:setTopBottom( true, false, 200, 224 )
 				self.BombTimerWidgetB:setAlpha( 1 )
 				self.clipFinished( BombTimerWidgetB, {} )
+
 				SDAliveCountFriendly:completeAnimation()
 				self.SDAliveCountFriendly:setLeftRight( true, false, 19.5, 143.5 )
 				self.SDAliveCountFriendly:setTopBottom( true, false, 195.67, 219.67 )
 				self.SDAliveCountFriendly:setAlpha( 1 )
 				self.clipFinished( SDAliveCountFriendly, {} )
+
 				SDAliveCountEnemy:completeAnimation()
 				self.SDAliveCountEnemy:setLeftRight( true, false, 19.5, 143.5 )
 				self.SDAliveCountEnemy:setTopBottom( true, false, 221.67, 245.67 )
@@ -468,19 +474,23 @@ CoD.SDOverlay.new = function ( menu, controller )
 		HideForCodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BombTimerWidgetA:completeAnimation()
 				self.BombTimerWidgetA:setLeftRight( true, false, 163.5, 235.5 )
 				self.BombTimerWidgetA:setTopBottom( true, false, 201.67, 225.67 )
 				self.BombTimerWidgetA:setAlpha( 0 )
 				self.clipFinished( BombTimerWidgetA, {} )
+
 				BombTimerWidgetB:completeAnimation()
 				self.BombTimerWidgetB:setLeftRight( true, false, 160.5, 232.5 )
 				self.BombTimerWidgetB:setTopBottom( true, false, 201.67, 225.67 )
 				self.BombTimerWidgetB:setAlpha( 0 )
 				self.clipFinished( BombTimerWidgetB, {} )
+
 				SDAliveCountFriendly:completeAnimation()
 				self.SDAliveCountFriendly:setAlpha( 0 )
 				self.clipFinished( SDAliveCountFriendly, {} )
+
 				SDAliveCountEnemy:completeAnimation()
 				self.SDAliveCountEnemy:setAlpha( 0 )
 				self.clipFinished( SDAliveCountEnemy, {} )
@@ -489,19 +499,23 @@ CoD.SDOverlay.new = function ( menu, controller )
 		DefaultStateHardcore = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BombTimerWidgetA:completeAnimation()
 				self.BombTimerWidgetA:setLeftRight( true, false, 64, 136 )
 				self.BombTimerWidgetA:setTopBottom( true, false, 197.67, 221.67 )
 				self.BombTimerWidgetA:setAlpha( 1 )
 				self.clipFinished( BombTimerWidgetA, {} )
+
 				BombTimerWidgetB:completeAnimation()
 				self.BombTimerWidgetB:setLeftRight( true, false, 61, 133 )
 				self.BombTimerWidgetB:setTopBottom( true, false, 197.67, 221.67 )
 				self.BombTimerWidgetB:setAlpha( 1 )
 				self.clipFinished( BombTimerWidgetB, {} )
+
 				SDAliveCountFriendly:completeAnimation()
 				self.SDAliveCountFriendly:setAlpha( 1 )
 				self.clipFinished( SDAliveCountFriendly, {} )
+
 				SDAliveCountEnemy:completeAnimation()
 				self.SDAliveCountEnemy:setAlpha( 1 )
 				self.clipFinished( SDAliveCountEnemy, {} )
@@ -510,21 +524,25 @@ CoD.SDOverlay.new = function ( menu, controller )
 		CodCasterLargeMinimap = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BombTimerWidgetA:completeAnimation()
 				self.BombTimerWidgetA:setLeftRight( true, false, 160, 232 )
 				self.BombTimerWidgetA:setTopBottom( true, false, 248, 272 )
 				self.BombTimerWidgetA:setAlpha( 1 )
 				self.clipFinished( BombTimerWidgetA, {} )
+
 				BombTimerWidgetB:completeAnimation()
 				self.BombTimerWidgetB:setLeftRight( true, false, 160, 232 )
 				self.BombTimerWidgetB:setTopBottom( true, false, 248, 272 )
 				self.BombTimerWidgetB:setAlpha( 1 )
 				self.clipFinished( BombTimerWidgetB, {} )
+
 				SDAliveCountFriendly:completeAnimation()
 				self.SDAliveCountFriendly:setLeftRight( true, false, 19.5, 143.5 )
 				self.SDAliveCountFriendly:setTopBottom( true, false, 244.67, 268.67 )
 				self.SDAliveCountFriendly:setAlpha( 1 )
 				self.clipFinished( SDAliveCountFriendly, {} )
+
 				SDAliveCountEnemy:completeAnimation()
 				self.SDAliveCountEnemy:setLeftRight( true, false, 19.5, 143.5 )
 				self.SDAliveCountEnemy:setTopBottom( true, false, 270.67, 294.67 )
@@ -535,21 +553,25 @@ CoD.SDOverlay.new = function ( menu, controller )
 		CodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BombTimerWidgetA:completeAnimation()
 				self.BombTimerWidgetA:setLeftRight( true, false, 160, 232 )
 				self.BombTimerWidgetA:setTopBottom( true, false, 200, 224 )
 				self.BombTimerWidgetA:setAlpha( 1 )
 				self.clipFinished( BombTimerWidgetA, {} )
+
 				BombTimerWidgetB:completeAnimation()
 				self.BombTimerWidgetB:setLeftRight( true, false, 160, 232 )
 				self.BombTimerWidgetB:setTopBottom( true, false, 200, 224 )
 				self.BombTimerWidgetB:setAlpha( 1 )
 				self.clipFinished( BombTimerWidgetB, {} )
+
 				SDAliveCountFriendly:completeAnimation()
 				self.SDAliveCountFriendly:setLeftRight( true, false, 19.5, 143.5 )
 				self.SDAliveCountFriendly:setTopBottom( true, false, 195.67, 219.67 )
 				self.SDAliveCountFriendly:setAlpha( 1 )
 				self.clipFinished( SDAliveCountFriendly, {} )
+
 				SDAliveCountEnemy:completeAnimation()
 				self.SDAliveCountEnemy:setLeftRight( true, false, 19.5, 143.5 )
 				self.SDAliveCountEnemy:setTopBottom( true, false, 221.67, 245.67 )
@@ -558,6 +580,7 @@ CoD.SDOverlay.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HideForCodCaster",
@@ -608,6 +631,7 @@ CoD.SDOverlay.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_HUD_HARDCORE
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BombTimerWidgetA:close()
 		element.BombTimerWidgetB:close()

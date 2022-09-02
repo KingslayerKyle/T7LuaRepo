@@ -322,9 +322,11 @@ end
 CoD.Outcome = InheritFrom( LUI.UIElement )
 CoD.Outcome.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Outcome )
 	self.id = "Outcome"
@@ -932,65 +934,84 @@ CoD.Outcome.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 18 )
+
 				LeftPanelR:completeAnimation()
 				self.LeftPanelR:setAlpha( 0 )
 				self.clipFinished( LeftPanelR, {} )
+
 				LeftPanelL:completeAnimation()
 				self.LeftPanelL:setAlpha( 0 )
 				self.clipFinished( LeftPanelL, {} )
+
 				VignetteBack:completeAnimation()
 				self.VignetteBack:setRGB( 0, 0, 0 )
 				self.clipFinished( VignetteBack, {} )
+
 				FFATopPlayerInfo:completeAnimation()
 				self.FFATopPlayerInfo:setAlpha( 0 )
 				self.clipFinished( FFATopPlayerInfo, {} )
+
 				FFAFirstRunnerUpPlayerInfo:completeAnimation()
 				self.FFAFirstRunnerUpPlayerInfo:setAlpha( 0 )
 				self.clipFinished( FFAFirstRunnerUpPlayerInfo, {} )
+
 				FFASecondRunnerUpPlayerInfo:completeAnimation()
 				self.FFASecondRunnerUpPlayerInfo:setAlpha( 0 )
 				self.clipFinished( FFASecondRunnerUpPlayerInfo, {} )
+
 				WinningTeamScoreNew:completeAnimation()
 				self.WinningTeamScoreNew:setAlpha( 0 )
 				self.clipFinished( WinningTeamScoreNew, {} )
+
 				LosingTeamScoreNew:completeAnimation()
 				self.LosingTeamScoreNew:setAlpha( 0 )
 				self.clipFinished( LosingTeamScoreNew, {} )
+
 				WinningTeamFactionNameNew:completeAnimation()
 				self.WinningTeamFactionNameNew:setAlpha( 0 )
 				self.clipFinished( WinningTeamFactionNameNew, {} )
+
 				WinningTeamFactionIconNew:completeAnimation()
 				self.WinningTeamFactionIconNew:setAlpha( 0 )
 				self.clipFinished( WinningTeamFactionIconNew, {} )
+
 				LosingTeamFactionNameNew:completeAnimation()
 				self.LosingTeamFactionNameNew:setAlpha( 0 )
 				self.clipFinished( LosingTeamFactionNameNew, {} )
+
 				LosingTeamFactionIconNew:completeAnimation()
 				self.LosingTeamFactionIconNew:setAlpha( 0 )
 				self.clipFinished( LosingTeamFactionIconNew, {} )
+
 				SubTitleNew:completeAnimation()
 				self.SubTitleNew:setAlpha( 0 )
 				self.clipFinished( SubTitleNew, {} )
+
 				VSBanner:completeAnimation()
 				self.VSBanner:setAlpha( 0 )
 				self.clipFinished( VSBanner, {} )
+
 				VSLabel:completeAnimation()
 				self.VSLabel:setLeftRight( false, false, -15, 15 )
 				self.VSLabel:setTopBottom( false, false, -6, 19 )
 				self.VSLabel:setAlpha( 0 )
 				self.clipFinished( VSLabel, {} )
+
 				WinnerFactionInfo:completeAnimation()
 				self.WinnerFactionInfo:setAlpha( 0 )
 				self.clipFinished( WinnerFactionInfo, {} )
+
 				TitleNew:completeAnimation()
 				self.TitleNew:setAlpha( 0 )
 				self.clipFinished( TitleNew, {} )
+
 				MatchBonusWidget0:completeAnimation()
 				self.MatchBonusWidget0:setAlpha( 0 )
 				self.clipFinished( MatchBonusWidget0, {} )
 			end,
 			Show_Two_Team = function ()
 				self:setupElementClipCounter( 19 )
+
 				local LeftPanelRFrame2 = function ( LeftPanelR, event )
 					if not event.interrupted then
 						LeftPanelR:beginAnimation( "keyframe", 300, false, true, CoD.TweenType.Linear )
@@ -1044,9 +1065,11 @@ CoD.Outcome.new = function ( menu, controller )
 				VignetteBack:completeAnimation()
 				self.VignetteBack:setRGB( 0, 0, 0 )
 				VignetteBackFrame2( VignetteBack, {} )
+
 				FFATopPlayerInfo:completeAnimation()
 				self.FFATopPlayerInfo:setAlpha( 0 )
 				self.clipFinished( FFATopPlayerInfo, {} )
+
 				FFASecondRunnerUpPlayerInfo:completeAnimation()
 				self.FFASecondRunnerUpPlayerInfo:setLeftRight( false, false, -269.5, 316.5 )
 				self.FFASecondRunnerUpPlayerInfo:setTopBottom( false, false, 64, 158 )
@@ -1340,6 +1363,7 @@ CoD.Outcome.new = function ( menu, controller )
 				VSLabel:completeAnimation()
 				self.VSLabel:setAlpha( 0 )
 				VSLabelFrame2( VSLabel, {} )
+
 				WinnerFactionInfo:completeAnimation()
 				self.WinnerFactionInfo:setAlpha( 0 )
 				self.clipFinished( WinnerFactionInfo, {} )
@@ -1396,6 +1420,7 @@ CoD.Outcome.new = function ( menu, controller )
 			end,
 			End_Transition = function ()
 				self:setupElementClipCounter( 22 )
+
 				local LeftPanelRFrame2 = function ( LeftPanelR, event )
 					if not event.interrupted then
 						LeftPanelR:beginAnimation( "keyframe", 400, false, false, CoD.TweenType.Linear )
@@ -1451,12 +1476,15 @@ CoD.Outcome.new = function ( menu, controller )
 				VignetteBack:completeAnimation()
 				self.VignetteBack:setRGB( 1, 1, 1 )
 				VignetteBackFrame2( VignetteBack, {} )
+
 				FFATopPlayerInfo:completeAnimation()
 				self.FFATopPlayerInfo:setAlpha( 0 )
 				self.clipFinished( FFATopPlayerInfo, {} )
+
 				FFAFirstRunnerUpPlayerInfo:completeAnimation()
 				self.FFAFirstRunnerUpPlayerInfo:setAlpha( 0 )
 				self.clipFinished( FFAFirstRunnerUpPlayerInfo, {} )
+
 				FFASecondRunnerUpPlayerInfo:completeAnimation()
 				self.FFASecondRunnerUpPlayerInfo:setAlpha( 0 )
 				self.clipFinished( FFASecondRunnerUpPlayerInfo, {} )
@@ -1544,6 +1572,7 @@ CoD.Outcome.new = function ( menu, controller )
 				WinningTeamFactionIconNew:completeAnimation()
 				self.WinningTeamFactionIconNew:setAlpha( 1 )
 				WinningTeamFactionIconNewFrame2( WinningTeamFactionIconNew, {} )
+
 				PlayerTimeToBeatBox:completeAnimation()
 				self.PlayerTimeToBeatBox:setAlpha( 0 )
 				self.clipFinished( PlayerTimeToBeatBox, {} )
@@ -1577,6 +1606,7 @@ CoD.Outcome.new = function ( menu, controller )
 				LosingTeamFactionIconNew:completeAnimation()
 				self.LosingTeamFactionIconNew:setAlpha( 1 )
 				LosingTeamFactionIconNewFrame2( LosingTeamFactionIconNew, {} )
+
 				EnemyTimeToBeatBox:completeAnimation()
 				self.EnemyTimeToBeatBox:setAlpha( 0 )
 				self.clipFinished( EnemyTimeToBeatBox, {} )
@@ -1707,6 +1737,7 @@ CoD.Outcome.new = function ( menu, controller )
 				self.TransitionImageTop:setTopBottom( true, false, -360, 0 )
 				self.TransitionImageTop:setAlpha( 0 )
 				TransitionImageTopFrame2( TransitionImageTop, {} )
+
 				WinnerFactionInfo:completeAnimation()
 				self.WinnerFactionInfo:setLeftRight( true, false, 64, 454 )
 				self.WinnerFactionInfo:setTopBottom( true, false, 37.5, 217.5 )
@@ -1767,6 +1798,7 @@ CoD.Outcome.new = function ( menu, controller )
 			end,
 			ShowFFAOutcome = function ()
 				self:setupElementClipCounter( 7 )
+
 				local VignetteBackFrame2 = function ( VignetteBack, event )
 					if not event.interrupted then
 						VignetteBack:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -1925,6 +1957,7 @@ CoD.Outcome.new = function ( menu, controller )
 			end,
 			ShowFFATie = function ()
 				self:setupElementClipCounter( 4 )
+
 				local VignetteBackFrame2 = function ( VignetteBack, event )
 					if not event.interrupted then
 						VignetteBack:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -2008,6 +2041,7 @@ CoD.Outcome.new = function ( menu, controller )
 			end,
 			End_Transition_FFA = function ()
 				self:setupElementClipCounter( 12 )
+
 				local VignetteBackFrame2 = function ( VignetteBack, event )
 					local VignetteBackFrame3 = function ( VignetteBack, event )
 						if not event.interrupted then
@@ -2078,9 +2112,11 @@ CoD.Outcome.new = function ( menu, controller )
 				FFASecondRunnerUpPlayerInfo:completeAnimation()
 				self.FFASecondRunnerUpPlayerInfo:setAlpha( 1 )
 				FFASecondRunnerUpPlayerInfoFrame2( FFASecondRunnerUpPlayerInfo, {} )
+
 				PlayerTimeToBeatBox:completeAnimation()
 				self.PlayerTimeToBeatBox:setAlpha( 0 )
 				self.clipFinished( PlayerTimeToBeatBox, {} )
+
 				EnemyTimeToBeatBox:completeAnimation()
 				self.EnemyTimeToBeatBox:setAlpha( 0 )
 				self.clipFinished( EnemyTimeToBeatBox, {} )
@@ -2181,6 +2217,7 @@ CoD.Outcome.new = function ( menu, controller )
 				self.TransitionImageTop:setTopBottom( true, false, -360, 0 )
 				self.TransitionImageTop:setAlpha( 0 )
 				TransitionImageTopFrame2( TransitionImageTop, {} )
+
 				WinnerFactionInfo:completeAnimation()
 				self.WinnerFactionInfo:setLeftRight( true, false, 64, 454 )
 				self.WinnerFactionInfo:setTopBottom( true, false, 37.5, 217.5 )
@@ -2241,6 +2278,7 @@ CoD.Outcome.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LeftPanelR:close()
 		element.LeftPanelL:close()

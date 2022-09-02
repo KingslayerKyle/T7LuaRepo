@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_BackLine" )
 CoD.TrainingSim_TimerLines = InheritFrom( LUI.UIElement )
 CoD.TrainingSim_TimerLines.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TrainingSim_TimerLines )
 	self.id = "TrainingSim_TimerLines"
@@ -51,15 +53,18 @@ CoD.TrainingSim_TimerLines.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Semi:completeAnimation()
 				self.Semi:setLeftRight( false, false, -10.5, 10.5 )
 				self.Semi:setTopBottom( false, false, -55.84, 17.67 )
 				self.Semi:setAlpha( 0.6 )
 				self.clipFinished( Semi, {} )
+
 				Line1:completeAnimation()
 				self.Line1:setLeftRight( false, false, -66.5, 2.5 )
 				self.Line1:setTopBottom( false, false, 17.67, 20.34 )
 				self.clipFinished( Line1, {} )
+
 				Line2:completeAnimation()
 				self.Line2:setLeftRight( false, false, -2.5, 66.5 )
 				self.Line2:setTopBottom( false, false, 17.67, 20.34 )
@@ -67,6 +72,7 @@ CoD.TrainingSim_TimerLines.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Semi:close()
 		element.Line1:close()

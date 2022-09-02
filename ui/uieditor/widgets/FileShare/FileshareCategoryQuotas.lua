@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Craft.EmblemEditor.EmblemEditorFrame" )
 CoD.FileshareCategoryQuotas = InheritFrom( LUI.UIElement )
 CoD.FileshareCategoryQuotas.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.FileshareCategoryQuotas )
 	self.id = "FileshareCategoryQuotas"
@@ -58,6 +60,7 @@ CoD.FileshareCategoryQuotas.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.List0:close()
 		element.EmblemEditorFrame0:close()

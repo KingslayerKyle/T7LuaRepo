@@ -4,9 +4,11 @@
 CoD.woundedSoldier_BPM = InheritFrom( LUI.UIElement )
 CoD.woundedSoldier_BPM.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.woundedSoldier_BPM )
 	self.id = "woundedSoldier_BPM"

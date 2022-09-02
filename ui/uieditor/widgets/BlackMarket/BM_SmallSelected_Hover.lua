@@ -4,9 +4,11 @@
 CoD.BM_SmallSelected_Hover = InheritFrom( LUI.UIElement )
 CoD.BM_SmallSelected_Hover.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_SmallSelected_Hover )
 	self.id = "BM_SmallSelected_Hover"
@@ -33,6 +35,7 @@ CoD.BM_SmallSelected_Hover.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local SmallSelectedFrame2 = function ( SmallSelected, event )
 					local SmallSelectedFrame3 = function ( SmallSelected, event )
 						if not event.interrupted then
@@ -59,9 +62,11 @@ CoD.BM_SmallSelected_Hover.new = function ( menu, controller )
 				SmallSelected:completeAnimation()
 				self.SmallSelected:setAlpha( 0 )
 				SmallSelectedFrame2( SmallSelected, {} )
+
 				SmallSelected1:completeAnimation()
 				self.SmallSelected1:setAlpha( 1 )
 				self.clipFinished( SmallSelected1, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

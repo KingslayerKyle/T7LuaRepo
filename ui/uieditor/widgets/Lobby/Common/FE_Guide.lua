@@ -4,9 +4,11 @@
 CoD.FE_Guide = InheritFrom( LUI.UIElement )
 CoD.FE_Guide.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_Guide )
 	self.id = "FE_Guide"
@@ -46,11 +48,13 @@ CoD.FE_Guide.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		SelectingPlaylist = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

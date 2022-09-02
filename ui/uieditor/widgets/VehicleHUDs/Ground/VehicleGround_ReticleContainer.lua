@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Ground.VehicleGround_ReticleNumbers" )
 CoD.VehicleGround_ReticleContainer = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_ReticleContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VehicleGround_ReticleContainer )
 	self.id = "VehicleGround_ReticleContainer"
@@ -89,31 +91,38 @@ CoD.VehicleGround_ReticleContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				ReticleU:completeAnimation()
 				self.ReticleU:setRGB( 0.74, 0.94, 0.99 )
 				self.clipFinished( ReticleU, {} )
+
 				SideArrow2:completeAnimation()
 				self.SideArrow2:setLeftRight( false, false, 27, 91 )
 				self.SideArrow2:setTopBottom( false, false, -2.5, 13.5 )
 				self.SideArrow2:setAlpha( 0 )
 				self.clipFinished( SideArrow2, {} )
+
 				ReticleMain:completeAnimation()
 				self.ReticleMain:setLeftRight( false, false, -32, 24 )
 				self.ReticleMain:setTopBottom( false, false, -27, 37 )
 				self.ReticleMain:setRGB( 1, 1, 1 )
 				self.ReticleMain:setZRot( 0 )
 				self.clipFinished( ReticleMain, {} )
+
 				SideArrow:completeAnimation()
 				self.SideArrow:setLeftRight( false, false, -91, -27 )
 				self.SideArrow:setTopBottom( false, false, -2.5, 13.5 )
 				self.SideArrow:setAlpha( 0 )
 				self.clipFinished( SideArrow, {} )
+
 				ReticleLL:completeAnimation()
 				self.ReticleLL:setRGB( 0.74, 0.94, 0.99 )
 				self.clipFinished( ReticleLL, {} )
+
 				ReticleLR:completeAnimation()
 				self.ReticleLR:setRGB( 0.74, 0.94, 0.99 )
 				self.clipFinished( ReticleLR, {} )
+
 				ReticleOverEnemy:completeAnimation()
 				self.ReticleOverEnemy:setRGB( 1, 1, 1 )
 				self.ReticleOverEnemy:setAlpha( 0 )
@@ -121,6 +130,7 @@ CoD.VehicleGround_ReticleContainer.new = function ( menu, controller )
 			end,
 			Lock = function ()
 				self:setupElementClipCounter( 7 )
+
 				local ReticleUFrame2 = function ( ReticleU, event )
 					if not event.interrupted then
 						ReticleU:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -387,12 +397,15 @@ CoD.VehicleGround_ReticleContainer.new = function ( menu, controller )
 		Lock = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				ReticleU:completeAnimation()
 				self.ReticleU:setRGB( 1, 0.03, 0 )
 				self.clipFinished( ReticleU, {} )
+
 				SideArrow2:completeAnimation()
 				self.SideArrow2:setAlpha( 1 )
 				self.clipFinished( SideArrow2, {} )
+
 				ReticleMain:completeAnimation()
 				self.ReticleMain:setLeftRight( false, false, -26, 30 )
 				self.ReticleMain:setTopBottom( false, false, -25, 39 )
@@ -400,21 +413,26 @@ CoD.VehicleGround_ReticleContainer.new = function ( menu, controller )
 				self.ReticleMain:setAlpha( 1 )
 				self.ReticleMain:setZRot( -180 )
 				self.clipFinished( ReticleMain, {} )
+
 				SideArrow:completeAnimation()
 				self.SideArrow:setAlpha( 1 )
 				self.clipFinished( SideArrow, {} )
+
 				ReticleLL:completeAnimation()
 				self.ReticleLL:setRGB( 1, 0, 0 )
 				self.clipFinished( ReticleLL, {} )
+
 				ReticleLR:completeAnimation()
 				self.ReticleLR:setRGB( 1, 0, 0.01 )
 				self.clipFinished( ReticleLR, {} )
+
 				ReticleOverEnemy:completeAnimation()
 				self.ReticleOverEnemy:setAlpha( 1 )
 				self.clipFinished( ReticleOverEnemy, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 7 )
+
 				local ReticleUFrame2 = function ( ReticleU, event )
 					if not event.interrupted then
 						ReticleU:beginAnimation( "keyframe", 90, false, false, CoD.TweenType.Linear )
@@ -618,6 +636,7 @@ CoD.VehicleGround_ReticleContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ReticleMain:close()
 		element.ReticleNumbers:close()

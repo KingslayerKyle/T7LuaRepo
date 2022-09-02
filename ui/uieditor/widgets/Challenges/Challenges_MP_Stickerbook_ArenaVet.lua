@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Challenges.Challenges_CallingCardProfiler_ArenaVet
 CoD.Challenges_MP_Stickerbook_ArenaVet = InheritFrom( LUI.UIElement )
 CoD.Challenges_MP_Stickerbook_ArenaVet.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_MP_Stickerbook_ArenaVet )
 	self.id = "Challenges_MP_Stickerbook_ArenaVet"
@@ -63,6 +65,7 @@ CoD.Challenges_MP_Stickerbook_ArenaVet.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MasterCallingCardWidget:close()
 		element.CallingCardGrid:close()

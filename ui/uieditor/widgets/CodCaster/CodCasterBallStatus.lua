@@ -15,9 +15,11 @@ end
 CoD.CodCasterBallStatus = InheritFrom( LUI.UIElement )
 CoD.CodCasterBallStatus.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterBallStatus )
 	self.id = "CodCasterBallStatus"
@@ -87,17 +89,21 @@ CoD.CodCasterBallStatus.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		AxisHeld = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				AlliesFlag:completeAnimation()
 				self.AlliesFlag:setAlpha( 0 )
 				self.clipFinished( AlliesFlag, {} )
+
 				NeutralFlag:completeAnimation()
 				self.NeutralFlag:setAlpha( 0 )
 				self.clipFinished( NeutralFlag, {} )
+
 				AxisFlag:completeAnimation()
 				self.AxisFlag:setAlpha( 1 )
 				self.clipFinished( AxisFlag, {} )
@@ -106,12 +112,15 @@ CoD.CodCasterBallStatus.new = function ( menu, controller )
 		AlliesHeld = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				AlliesFlag:completeAnimation()
 				self.AlliesFlag:setAlpha( 1 )
 				self.clipFinished( AlliesFlag, {} )
+
 				NeutralFlag:completeAnimation()
 				self.NeutralFlag:setAlpha( 0 )
 				self.clipFinished( NeutralFlag, {} )
+
 				AxisFlag:completeAnimation()
 				self.AxisFlag:setAlpha( 0 )
 				self.clipFinished( AxisFlag, {} )
@@ -120,18 +129,22 @@ CoD.CodCasterBallStatus.new = function ( menu, controller )
 		Neutral = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				AlliesFlag:completeAnimation()
 				self.AlliesFlag:setAlpha( 0 )
 				self.clipFinished( AlliesFlag, {} )
+
 				NeutralFlag:completeAnimation()
 				self.NeutralFlag:setAlpha( 1 )
 				self.clipFinished( NeutralFlag, {} )
+
 				AxisFlag:completeAnimation()
 				self.AxisFlag:setAlpha( 0 )
 				self.clipFinished( AxisFlag, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "AxisHeld",
@@ -168,6 +181,7 @@ CoD.CodCasterBallStatus.new = function ( menu, controller )
 			modelName = "ballGametype.ballHeldByFriendly"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AlliesFlag:close()
 		element.NeutralFlag:close()

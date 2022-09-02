@@ -4,9 +4,11 @@
 CoD.ChooseCharacter_HelpBubble_Arrow = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacter_HelpBubble_Arrow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.ChooseCharacter_HelpBubble_Arrow )
 	self.id = "ChooseCharacter_HelpBubble_Arrow"
@@ -38,6 +40,7 @@ CoD.ChooseCharacter_HelpBubble_Arrow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

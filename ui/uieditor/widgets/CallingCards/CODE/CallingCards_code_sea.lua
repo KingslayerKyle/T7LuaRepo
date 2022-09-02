@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CallingCards.CODE.CallingCards_code_sea_diver" )
 CoD.CallingCards_code_sea = InheritFrom( LUI.UIElement )
 CoD.CallingCards_code_sea.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_code_sea )
 	self.id = "CallingCards_code_sea"
@@ -106,6 +108,7 @@ CoD.CallingCards_code_sea.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				local bg2Frame2 = function ( bg2, event )
 					local bg2Frame3 = function ( bg2, event )
 						local bg2Frame4 = function ( bg2, event )
@@ -691,10 +694,12 @@ CoD.CallingCards_code_sea.new = function ( menu, controller )
 				self.Image00:setTopBottom( true, false, 21.08, 91.08 )
 				self.Image00:setAlpha( 0.5 )
 				Image00Frame2( Image00, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardscodeseasub:close()
 		element.CallingCardscodeseadiver:close()

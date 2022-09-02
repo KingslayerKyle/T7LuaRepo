@@ -4,9 +4,11 @@
 CoD.WeaponLevelUpNotification_TopBacking = InheritFrom( LUI.UIElement )
 CoD.WeaponLevelUpNotification_TopBacking.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponLevelUpNotification_TopBacking )
 	self.id = "WeaponLevelUpNotification_TopBacking"
@@ -39,12 +41,14 @@ CoD.WeaponLevelUpNotification_TopBacking.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TopLeft:completeAnimation()
 				self.TopLeft:setLeftRight( false, false, -204, -4 )
 				self.TopLeft:setTopBottom( true, false, 0, 80 )
 				self.TopLeft:setAlpha( 0.6 )
 				self.TopLeft:setScale( 1 )
 				self.clipFinished( TopLeft, {} )
+
 				TopRight:completeAnimation()
 				self.TopRight:setLeftRight( false, false, 4, 204 )
 				self.TopRight:setTopBottom( true, false, 0, 80 )
@@ -54,6 +58,7 @@ CoD.WeaponLevelUpNotification_TopBacking.new = function ( menu, controller )
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

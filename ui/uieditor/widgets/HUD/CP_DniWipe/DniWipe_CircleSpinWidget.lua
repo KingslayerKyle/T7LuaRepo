@@ -4,9 +4,11 @@
 CoD.DniWipe_CircleSpinWidget = InheritFrom( LUI.UIElement )
 CoD.DniWipe_CircleSpinWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.DniWipe_CircleSpinWidget )
 	self.id = "DniWipe_CircleSpinWidget"
@@ -36,6 +38,7 @@ CoD.DniWipe_CircleSpinWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local CenterCircleRGBFrame2 = function ( CenterCircleRGB, event )
 					if not event.interrupted then
 						CenterCircleRGB:beginAnimation( "keyframe", 2579, false, false, CoD.TweenType.Linear )
@@ -86,6 +89,7 @@ CoD.DniWipe_CircleSpinWidget.new = function ( menu, controller )
 				self.CenterCircleRGB0:setZoom( 0 )
 				self.CenterCircleRGB0:setScale( 1 )
 				CenterCircleRGB0Frame2( CenterCircleRGB0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

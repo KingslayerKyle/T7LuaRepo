@@ -4,9 +4,11 @@
 CoD.BM_Promo_Countdown2 = InheritFrom( LUI.UIElement )
 CoD.BM_Promo_Countdown2.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Promo_Countdown2 )
 	self.id = "BM_Promo_Countdown2"
@@ -41,6 +43,7 @@ CoD.BM_Promo_Countdown2.new = function ( menu, controller )
 	Expires:setText( Engine.Localize( "MPUI_BM_PROMO_EXPIRES" ) )
 	Expires:setTTF( "fonts/FoundryGridnik-Medium.ttf" )
 	Expires:setLetterSpacing( 1.1 )
+
 	LUI.OverrideFunction_CallOriginalFirst( Expires, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, -10 )
 	end )
@@ -51,11 +54,13 @@ CoD.BM_Promo_Countdown2.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )

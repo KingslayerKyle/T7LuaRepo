@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.LoadingAnimation.LoadingScreen_DoubleXPWidget" )
 CoD.LoadingScreenHeaderFooter = InheritFrom( LUI.UIElement )
 CoD.LoadingScreenHeaderFooter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LoadingScreenHeaderFooter )
 	self.id = "LoadingScreenHeaderFooter"
@@ -116,9 +118,11 @@ CoD.LoadingScreenHeaderFooter.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartLoading = function ()
 				self:setupElementClipCounter( 11 )
+
 				local LoadingImageFrame2 = function ( LoadingImage, event )
 					local LoadingImageFrame3 = function ( LoadingImage, event )
 						local LoadingImageFrame4 = function ( LoadingImage, event )
@@ -424,6 +428,7 @@ CoD.LoadingScreenHeaderFooter.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LoadingElem2:close()
 		element.LoadingElem1:close()

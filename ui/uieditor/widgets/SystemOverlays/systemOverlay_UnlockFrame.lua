@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleNumBrdr" )
 CoD.systemOverlay_UnlockFrame = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_UnlockFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_UnlockFrame )
 	self.id = "systemOverlay_UnlockFrame"
@@ -103,11 +105,13 @@ CoD.systemOverlay_UnlockFrame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		PermanentUnlock = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PermanentUnlockTokensWidget:completeAnimation()
 				self.PermanentUnlockTokensWidget:setLeftRight( true, false, 992, 1280 )
 				self.PermanentUnlockTokensWidget:setTopBottom( true, false, 49, 94 )
@@ -116,6 +120,7 @@ CoD.systemOverlay_UnlockFrame.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "PermanentUnlock",
@@ -140,6 +145,7 @@ CoD.systemOverlay_UnlockFrame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.foreground:close()
 		element.supportInfo:close()

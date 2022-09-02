@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_CompleteRibbon" )
 CoD.BM_Contracts_SpecialContractWidget = InheritFrom( LUI.UIElement )
 CoD.BM_Contracts_SpecialContractWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Contracts_SpecialContractWidget )
 	self.id = "BM_Contracts_SpecialContractWidget"
@@ -217,47 +219,60 @@ CoD.BM_Contracts_SpecialContractWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				header:completeAnimation()
 				self.header:setAlpha( 0.5 )
 				self.clipFinished( header, {} )
+
 				Background:completeAnimation()
 				self.Background:setLeftRight( true, true, 2.32, -1.5 )
 				self.Background:setTopBottom( true, true, 2.11, -2 )
 				self.Background:setAlpha( 1 )
 				self.clipFinished( Background, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setLeftRight( true, true, 2.32, -1.5 )
 				self.BackgroundCompleted:setTopBottom( true, true, 1.56, -2 )
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.BackgroundCompleted:setImage( RegisterImage( "uie_t7_blackmarket_contracts_bigframe_completed" ) )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				DividerVertical:completeAnimation()
 				self.DividerVertical:setAlpha( 1 )
 				self.clipFinished( DividerVertical, {} )
+
 				DividerHorizontal:completeAnimation()
 				self.DividerHorizontal:setAlpha( 0 )
 				self.clipFinished( DividerHorizontal, {} )
+
 				SpecialContractName:completeAnimation()
 				self.SpecialContractName:setAlpha( 1 )
 				self.clipFinished( SpecialContractName, {} )
+
 				SpecialContractDesc:completeAnimation()
 				self.SpecialContractDesc:setAlpha( 1 )
 				self.clipFinished( SpecialContractDesc, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				upperglow:completeAnimation()
 				self.upperglow:setLeftRight( false, false, -126.13, 122.13 )
 				self.upperglow:setTopBottom( true, false, -17.77, 30.28 )
 				self.upperglow:setAlpha( 0 )
 				self.clipFinished( upperglow, {} )
+
 				lowerglow:completeAnimation()
 				self.lowerglow:setLeftRight( false, false, -99, 85 )
 				self.lowerglow:setTopBottom( false, true, -6.75, 33.25 )
 				self.lowerglow:setAlpha( 0 )
 				self.clipFinished( lowerglow, {} )
+
 				RewardImage:completeAnimation()
+
 				RewardImage.ItemImage:completeAnimation()
+
 				RewardImage.CallingCard.CardIconFrame:completeAnimation()
 				self.RewardImage:setLeftRight( true, false, 489.04, 677.04 )
 				self.RewardImage:setTopBottom( true, false, 52.25, 156.25 )
@@ -265,37 +280,46 @@ CoD.BM_Contracts_SpecialContractWidget.new = function ( menu, controller )
 				self.RewardImage.ItemImage:setScale( 1 )
 				self.RewardImage.CallingCard.CardIconFrame:setScale( 0.49 )
 				self.clipFinished( RewardImage, {} )
+
 				NineSliceShaderImage:completeAnimation()
 				self.NineSliceShaderImage:setLeftRight( true, true, -5, 5 )
 				self.NineSliceShaderImage:setTopBottom( true, true, -4.54, 4 )
 				self.NineSliceShaderImage:setAlpha( 0 )
 				self.clipFinished( NineSliceShaderImage, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 0 )
 				self.clipFinished( CompletedIcon, {} )
+
 				BMCompleteRibbon:completeAnimation()
 				self.BMCompleteRibbon:setAlpha( 0 )
 				self.clipFinished( BMCompleteRibbon, {} )
+
 				BMCompleteRibbon0:completeAnimation()
 				self.BMCompleteRibbon0:setAlpha( 0 )
 				self.clipFinished( BMCompleteRibbon0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 10 )
+
 				header:completeAnimation()
 				self.header:setAlpha( 0.5 )
 				self.clipFinished( header, {} )
+
 				Background:completeAnimation()
 				self.Background:setLeftRight( true, true, 2.32, -1.5 )
 				self.Background:setTopBottom( true, true, 2.11, -2 )
 				self.Background:setAlpha( 1 )
 				self.clipFinished( Background, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				DividerVertical:completeAnimation()
 				self.DividerVertical:setAlpha( 1 )
 				self.clipFinished( DividerVertical, {} )
+
 				DividerHorizontal:completeAnimation()
 				self.DividerHorizontal:setAlpha( 0 )
 				self.clipFinished( DividerHorizontal, {} )
@@ -389,29 +413,36 @@ CoD.BM_Contracts_SpecialContractWidget.new = function ( menu, controller )
 				self.NineSliceShaderImage:setTopBottom( true, true, -4.54, 4 )
 				self.NineSliceShaderImage:setAlpha( 1 )
 				NineSliceShaderImageFrame2( NineSliceShaderImage, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 0 )
 				self.clipFinished( CompletedIcon, {} )
+
 				BMCompleteRibbon:completeAnimation()
 				self.BMCompleteRibbon:setAlpha( 0 )
 				self.clipFinished( BMCompleteRibbon, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 8 )
+
 				header:completeAnimation()
 				self.header:setAlpha( 0.5 )
 				self.clipFinished( header, {} )
+
 				Background:completeAnimation()
 				self.Background:setLeftRight( true, true, 2.32, -1.5 )
 				self.Background:setTopBottom( true, true, 2.11, -2 )
 				self.Background:setAlpha( 1 )
 				self.clipFinished( Background, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				DividerVertical:completeAnimation()
 				self.DividerVertical:setAlpha( 1 )
 				self.clipFinished( DividerVertical, {} )
+
 				DividerHorizontal:completeAnimation()
 				self.DividerHorizontal:setAlpha( 0 )
 				self.clipFinished( DividerHorizontal, {} )
@@ -475,20 +506,25 @@ CoD.BM_Contracts_SpecialContractWidget.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 8 )
+
 				header:completeAnimation()
 				self.header:setAlpha( 0.5 )
 				self.clipFinished( header, {} )
+
 				Background:completeAnimation()
 				self.Background:setLeftRight( true, true, 2.32, -1.5 )
 				self.Background:setTopBottom( true, true, 2.11, -2 )
 				self.Background:setAlpha( 1 )
 				self.clipFinished( Background, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				DividerVertical:completeAnimation()
 				self.DividerVertical:setAlpha( 1 )
 				self.clipFinished( DividerVertical, {} )
+
 				DividerHorizontal:completeAnimation()
 				self.DividerHorizontal:setAlpha( 0 )
 				self.clipFinished( DividerHorizontal, {} )
@@ -554,51 +590,67 @@ CoD.BM_Contracts_SpecialContractWidget.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				header:completeAnimation()
 				self.header:setAlpha( 0 )
 				self.clipFinished( header, {} )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0 )
 				self.clipFinished( Background, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				DividerVertical:completeAnimation()
 				self.DividerVertical:setAlpha( 0 )
 				self.clipFinished( DividerVertical, {} )
+
 				DividerHorizontal:completeAnimation()
 				self.DividerHorizontal:setAlpha( 0 )
 				self.clipFinished( DividerHorizontal, {} )
+
 				SpecialContractPercentCompleteWidget:completeAnimation()
 				self.SpecialContractPercentCompleteWidget:setAlpha( 0 )
 				self.clipFinished( SpecialContractPercentCompleteWidget, {} )
+
 				SpecialContractName:completeAnimation()
 				self.SpecialContractName:setAlpha( 0 )
 				self.clipFinished( SpecialContractName, {} )
+
 				SpecialContractDesc:completeAnimation()
 				self.SpecialContractDesc:setAlpha( 0 )
 				self.clipFinished( SpecialContractDesc, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 0 )
 				self.clipFinished( Title, {} )
+
 				upperglow:completeAnimation()
 				self.upperglow:setAlpha( 0 )
 				self.clipFinished( upperglow, {} )
+
 				lowerglow:completeAnimation()
 				self.lowerglow:setAlpha( 0 )
 				self.clipFinished( lowerglow, {} )
+
 				RewardImage:completeAnimation()
 				self.RewardImage:setAlpha( 0 )
 				self.clipFinished( RewardImage, {} )
+
 				NineSliceShaderImage:completeAnimation()
 				self.NineSliceShaderImage:setAlpha( 0 )
 				self.clipFinished( NineSliceShaderImage, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 0 )
 				self.clipFinished( CompletedIcon, {} )
+
 				BMCompleteRibbon:completeAnimation()
 				self.BMCompleteRibbon:setAlpha( 0 )
 				self.clipFinished( BMCompleteRibbon, {} )
+
 				BMCompleteRibbon0:completeAnimation()
 				self.BMCompleteRibbon0:setAlpha( 0 )
 				self.clipFinished( BMCompleteRibbon0, {} )
@@ -607,65 +659,80 @@ CoD.BM_Contracts_SpecialContractWidget.new = function ( menu, controller )
 		Short = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				Gradient:completeAnimation()
 				self.Gradient:setLeftRight( true, false, 2.32, 358.5 )
 				self.Gradient:setTopBottom( true, true, 3.17, -3 )
 				self.clipFinished( Gradient, {} )
+
 				header:completeAnimation()
 				self.header:setLeftRight( true, false, 1, 359 )
 				self.header:setTopBottom( true, false, 1.56, 41.56 )
 				self.header:setAlpha( 1 )
 				self.clipFinished( header, {} )
+
 				Background:completeAnimation()
 				self.Background:setLeftRight( true, true, 2.32, -361.5 )
 				self.Background:setTopBottom( true, true, 2.11, -2 )
 				self.clipFinished( Background, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setLeftRight( true, true, 2.32, -1.5 )
 				self.BackgroundCompleted:setTopBottom( true, true, 1.56, -2 )
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.BackgroundCompleted:setImage( RegisterImage( "uie_t7_blackmarket_contracts_bigframe_completed" ) )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				DividerVertical:completeAnimation()
 				self.DividerVertical:setAlpha( 0 )
 				self.clipFinished( DividerVertical, {} )
+
 				DividerHorizontal:completeAnimation()
 				self.DividerHorizontal:setLeftRight( true, false, 73.5, 297 )
 				self.DividerHorizontal:setTopBottom( true, false, 132.07, 140.06 )
 				self.DividerHorizontal:setAlpha( 1 )
 				self.clipFinished( DividerHorizontal, {} )
+
 				SpecialContractPercentCompleteWidget:completeAnimation()
 				self.SpecialContractPercentCompleteWidget:setLeftRight( true, false, 8.88, 98.88 )
 				self.SpecialContractPercentCompleteWidget:setTopBottom( true, false, 41.56, 131.56 )
 				self.SpecialContractPercentCompleteWidget:setScale( 0.9 )
 				self.clipFinished( SpecialContractPercentCompleteWidget, {} )
+
 				SpecialContractName:completeAnimation()
 				self.SpecialContractName:setLeftRight( true, false, 102.25, 343.75 )
 				self.SpecialContractName:setTopBottom( true, false, 59.05, 77.55 )
 				self.SpecialContractName:setAlpha( 1 )
 				self.clipFinished( SpecialContractName, {} )
+
 				SpecialContractDesc:completeAnimation()
 				self.SpecialContractDesc:setLeftRight( true, false, 102.25, 343.75 )
 				self.SpecialContractDesc:setTopBottom( true, false, 78.05, 96.05 )
 				self.SpecialContractDesc:setAlpha( 1 )
 				self.clipFinished( SpecialContractDesc, {} )
+
 				Title:completeAnimation()
 				self.Title:setLeftRight( true, false, 19.5, 335 )
 				self.Title:setTopBottom( true, false, 12.06, 31.06 )
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				upperglow:completeAnimation()
 				self.upperglow:setLeftRight( false, false, -306.13, -57.88 )
 				self.upperglow:setTopBottom( true, false, -17.77, 30.28 )
 				self.upperglow:setAlpha( 0 )
 				self.clipFinished( upperglow, {} )
+
 				lowerglow:completeAnimation()
 				self.lowerglow:setLeftRight( false, false, -279, -95 )
 				self.lowerglow:setTopBottom( false, true, -6.75, 33.25 )
 				self.lowerglow:setAlpha( 0 )
 				self.clipFinished( lowerglow, {} )
+
 				RewardImage:completeAnimation()
+
 				RewardImage.ItemImage:completeAnimation()
+
 				RewardImage.CallingCard.CardIconFrame:completeAnimation()
 				self.RewardImage:setLeftRight( true, false, 118.65, 251.85 )
 				self.RewardImage:setTopBottom( true, false, 137.07, 210.74 )
@@ -673,65 +740,79 @@ CoD.BM_Contracts_SpecialContractWidget.new = function ( menu, controller )
 				self.RewardImage.ItemImage:setScale( 0.71 )
 				self.RewardImage.CallingCard.CardIconFrame:setScale( 0.42 )
 				self.clipFinished( RewardImage, {} )
+
 				NineSliceShaderImage:completeAnimation()
 				self.NineSliceShaderImage:setLeftRight( true, true, -5, -354 )
 				self.NineSliceShaderImage:setTopBottom( true, true, -4.54, 4 )
 				self.NineSliceShaderImage:setAlpha( 0 )
 				self.clipFinished( NineSliceShaderImage, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 0 )
 				self.clipFinished( CompletedIcon, {} )
+
 				BMCompleteRibbon:completeAnimation()
 				self.BMCompleteRibbon:setAlpha( 0 )
 				self.clipFinished( BMCompleteRibbon, {} )
+
 				BMCompleteRibbon0:completeAnimation()
 				self.BMCompleteRibbon0:setAlpha( 0 )
 				self.clipFinished( BMCompleteRibbon0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 15 )
+
 				Gradient:completeAnimation()
 				self.Gradient:setLeftRight( true, false, 2.32, 358.5 )
 				self.Gradient:setTopBottom( true, true, 3.17, -3 )
 				self.clipFinished( Gradient, {} )
+
 				header:completeAnimation()
 				self.header:setLeftRight( true, false, 1, 359 )
 				self.header:setTopBottom( true, false, 1.56, 41.56 )
 				self.header:setAlpha( 1 )
 				self.clipFinished( header, {} )
+
 				Background:completeAnimation()
 				self.Background:setLeftRight( true, false, 2.32, 358.5 )
 				self.Background:setTopBottom( true, true, 2.11, -2 )
 				self.clipFinished( Background, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setLeftRight( true, true, 2.32, -1.5 )
 				self.BackgroundCompleted:setTopBottom( true, true, 1.56, -2 )
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.BackgroundCompleted:setImage( RegisterImage( "uie_t7_blackmarket_contracts_bigframe_completed" ) )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				DividerVertical:completeAnimation()
 				self.DividerVertical:setAlpha( 0 )
 				self.clipFinished( DividerVertical, {} )
+
 				DividerHorizontal:completeAnimation()
 				self.DividerHorizontal:setLeftRight( true, false, 73.5, 297 )
 				self.DividerHorizontal:setTopBottom( true, false, 132.07, 140.06 )
 				self.DividerHorizontal:setAlpha( 1 )
 				self.clipFinished( DividerHorizontal, {} )
+
 				SpecialContractPercentCompleteWidget:completeAnimation()
 				self.SpecialContractPercentCompleteWidget:setLeftRight( true, false, 8.88, 98.88 )
 				self.SpecialContractPercentCompleteWidget:setTopBottom( true, false, 41.56, 131.56 )
 				self.SpecialContractPercentCompleteWidget:setScale( 0.9 )
 				self.clipFinished( SpecialContractPercentCompleteWidget, {} )
+
 				SpecialContractName:completeAnimation()
 				self.SpecialContractName:setLeftRight( true, false, 102.25, 343.75 )
 				self.SpecialContractName:setTopBottom( true, false, 59.05, 77.55 )
 				self.SpecialContractName:setAlpha( 1 )
 				self.clipFinished( SpecialContractName, {} )
+
 				SpecialContractDesc:completeAnimation()
 				self.SpecialContractDesc:setLeftRight( true, false, 102.25, 343.75 )
 				self.SpecialContractDesc:setTopBottom( true, false, 78.05, 96.05 )
 				self.SpecialContractDesc:setAlpha( 1 )
 				self.clipFinished( SpecialContractDesc, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
@@ -824,58 +905,71 @@ CoD.BM_Contracts_SpecialContractWidget.new = function ( menu, controller )
 				self.NineSliceShaderImage:setTopBottom( true, true, -4.54, 4 )
 				self.NineSliceShaderImage:setAlpha( 0.8 )
 				NineSliceShaderImageFrame2( NineSliceShaderImage, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 0 )
 				self.clipFinished( CompletedIcon, {} )
+
 				BMCompleteRibbon0:completeAnimation()
 				self.BMCompleteRibbon0:setAlpha( 0 )
 				self.clipFinished( BMCompleteRibbon0, {} )
+
 				self.nextClip = "Focus"
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 14 )
+
 				Gradient:completeAnimation()
 				self.Gradient:setLeftRight( true, false, 2.32, 358.5 )
 				self.Gradient:setTopBottom( true, true, 3.17, -3 )
 				self.clipFinished( Gradient, {} )
+
 				header:completeAnimation()
 				self.header:setLeftRight( true, false, 1, 359 )
 				self.header:setTopBottom( true, false, 1.56, 41.56 )
 				self.header:setAlpha( 1 )
 				self.clipFinished( header, {} )
+
 				Background:completeAnimation()
 				self.Background:setLeftRight( true, false, 2.32, 358.5 )
 				self.Background:setTopBottom( true, true, 2.11, -2 )
 				self.clipFinished( Background, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setLeftRight( true, true, 2.32, -1.5 )
 				self.BackgroundCompleted:setTopBottom( true, true, 1.56, -2 )
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.BackgroundCompleted:setImage( RegisterImage( "uie_t7_blackmarket_contracts_bigframe_completed" ) )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				DividerVertical:completeAnimation()
 				self.DividerVertical:setAlpha( 0 )
 				self.clipFinished( DividerVertical, {} )
+
 				DividerHorizontal:completeAnimation()
 				self.DividerHorizontal:setLeftRight( true, false, 73.5, 297 )
 				self.DividerHorizontal:setTopBottom( true, false, 132.07, 140.06 )
 				self.DividerHorizontal:setAlpha( 1 )
 				self.clipFinished( DividerHorizontal, {} )
+
 				SpecialContractPercentCompleteWidget:completeAnimation()
 				self.SpecialContractPercentCompleteWidget:setLeftRight( true, false, 8.88, 98.88 )
 				self.SpecialContractPercentCompleteWidget:setTopBottom( true, false, 41.56, 131.56 )
 				self.SpecialContractPercentCompleteWidget:setScale( 0.9 )
 				self.clipFinished( SpecialContractPercentCompleteWidget, {} )
+
 				SpecialContractName:completeAnimation()
 				self.SpecialContractName:setLeftRight( true, false, 102.25, 343.75 )
 				self.SpecialContractName:setTopBottom( true, false, 59.05, 77.55 )
 				self.SpecialContractName:setAlpha( 1 )
 				self.clipFinished( SpecialContractName, {} )
+
 				SpecialContractDesc:completeAnimation()
 				self.SpecialContractDesc:setLeftRight( true, false, 102.25, 343.75 )
 				self.SpecialContractDesc:setTopBottom( true, false, 78.05, 96.05 )
 				self.SpecialContractDesc:setAlpha( 1 )
 				self.clipFinished( SpecialContractDesc, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
@@ -936,54 +1030,65 @@ CoD.BM_Contracts_SpecialContractWidget.new = function ( menu, controller )
 				self.NineSliceShaderImage:setTopBottom( true, true, -4.54, 4 )
 				self.NineSliceShaderImage:setAlpha( 0 )
 				NineSliceShaderImageFrame2( NineSliceShaderImage, {} )
+
 				BMCompleteRibbon0:completeAnimation()
 				self.BMCompleteRibbon0:setAlpha( 0 )
 				self.clipFinished( BMCompleteRibbon0, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 14 )
+
 				Gradient:completeAnimation()
 				self.Gradient:setLeftRight( true, false, 2.32, 358.5 )
 				self.Gradient:setTopBottom( true, true, 3.17, -3 )
 				self.clipFinished( Gradient, {} )
+
 				header:completeAnimation()
 				self.header:setLeftRight( true, false, 1, 359 )
 				self.header:setTopBottom( true, false, 1.56, 41.56 )
 				self.header:setAlpha( 1 )
 				self.clipFinished( header, {} )
+
 				Background:completeAnimation()
 				self.Background:setLeftRight( true, false, 2.32, 358.5 )
 				self.Background:setTopBottom( true, true, 2.11, -2 )
 				self.clipFinished( Background, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setLeftRight( true, true, 2.32, -1.5 )
 				self.BackgroundCompleted:setTopBottom( true, true, 1.56, -2 )
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.BackgroundCompleted:setImage( RegisterImage( "uie_t7_blackmarket_contracts_bigframe_completed" ) )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				DividerVertical:completeAnimation()
 				self.DividerVertical:setAlpha( 0 )
 				self.clipFinished( DividerVertical, {} )
+
 				DividerHorizontal:completeAnimation()
 				self.DividerHorizontal:setLeftRight( true, false, 73.5, 297 )
 				self.DividerHorizontal:setTopBottom( true, false, 132.07, 140.06 )
 				self.DividerHorizontal:setAlpha( 1 )
 				self.clipFinished( DividerHorizontal, {} )
+
 				SpecialContractPercentCompleteWidget:completeAnimation()
 				self.SpecialContractPercentCompleteWidget:setLeftRight( true, false, 8.88, 98.88 )
 				self.SpecialContractPercentCompleteWidget:setTopBottom( true, false, 41.56, 131.56 )
 				self.SpecialContractPercentCompleteWidget:setScale( 0.9 )
 				self.clipFinished( SpecialContractPercentCompleteWidget, {} )
+
 				SpecialContractName:completeAnimation()
 				self.SpecialContractName:setLeftRight( true, false, 102.25, 343.75 )
 				self.SpecialContractName:setTopBottom( true, false, 59.05, 77.55 )
 				self.SpecialContractName:setAlpha( 1 )
 				self.clipFinished( SpecialContractName, {} )
+
 				SpecialContractDesc:completeAnimation()
 				self.SpecialContractDesc:setLeftRight( true, false, 102.25, 343.75 )
 				self.SpecialContractDesc:setTopBottom( true, false, 78.05, 96.05 )
 				self.SpecialContractDesc:setAlpha( 1 )
 				self.clipFinished( SpecialContractDesc, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
@@ -1044,6 +1149,7 @@ CoD.BM_Contracts_SpecialContractWidget.new = function ( menu, controller )
 				self.NineSliceShaderImage:setTopBottom( true, true, -4.54, 4 )
 				self.NineSliceShaderImage:setAlpha( 1 )
 				NineSliceShaderImageFrame2( NineSliceShaderImage, {} )
+
 				BMCompleteRibbon0:completeAnimation()
 				self.BMCompleteRibbon0:setAlpha( 0 )
 				self.clipFinished( BMCompleteRibbon0, {} )
@@ -1052,39 +1158,50 @@ CoD.BM_Contracts_SpecialContractWidget.new = function ( menu, controller )
 		Completed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				header:completeAnimation()
 				self.header:setAlpha( 0.5 )
 				self.clipFinished( header, {} )
+
 				Background:completeAnimation()
 				self.Background:setLeftRight( true, false, 2.32, 718.5 )
 				self.Background:setTopBottom( true, true, 2.11, -2 )
 				self.Background:setAlpha( 1 )
 				self.clipFinished( Background, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				DividerVertical:completeAnimation()
 				self.DividerVertical:setAlpha( 1 )
 				self.clipFinished( DividerVertical, {} )
+
 				DividerHorizontal:completeAnimation()
 				self.DividerHorizontal:setAlpha( 0 )
 				self.clipFinished( DividerHorizontal, {} )
+
 				Title:completeAnimation()
 				self.Title:setLeftRight( true, false, 19.5, 415.25 )
 				self.Title:setTopBottom( true, false, 12.06, 31.06 )
 				self.clipFinished( Title, {} )
+
 				upperglow:completeAnimation()
 				self.upperglow:setLeftRight( false, false, -126.13, 122.13 )
 				self.upperglow:setTopBottom( true, false, -17.77, 30.28 )
 				self.upperglow:setAlpha( 0 )
 				self.clipFinished( upperglow, {} )
+
 				lowerglow:completeAnimation()
 				self.lowerglow:setLeftRight( false, false, -99, 85 )
 				self.lowerglow:setTopBottom( false, true, -6.75, 33.25 )
 				self.lowerglow:setAlpha( 0 )
 				self.clipFinished( lowerglow, {} )
+
 				RewardImage:completeAnimation()
+
 				RewardImage.ItemImage:completeAnimation()
+
 				RewardImage.CallingCard.CardIconFrame:completeAnimation()
 				self.RewardImage:setLeftRight( true, false, 489.04, 677.04 )
 				self.RewardImage:setTopBottom( true, false, 52.25, 156.25 )
@@ -1092,37 +1209,46 @@ CoD.BM_Contracts_SpecialContractWidget.new = function ( menu, controller )
 				self.RewardImage.ItemImage:setScale( 1 )
 				self.RewardImage.CallingCard.CardIconFrame:setScale( 0.49 )
 				self.clipFinished( RewardImage, {} )
+
 				NineSliceShaderImage:completeAnimation()
 				self.NineSliceShaderImage:setLeftRight( true, true, -5, 5 )
 				self.NineSliceShaderImage:setTopBottom( true, true, -4.54, 4 )
 				self.NineSliceShaderImage:setAlpha( 0 )
 				self.clipFinished( NineSliceShaderImage, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 1 )
 				self.clipFinished( CompletedIcon, {} )
+
 				BMCompleteRibbon:completeAnimation()
 				self.BMCompleteRibbon:setAlpha( 1 )
 				self.clipFinished( BMCompleteRibbon, {} )
+
 				BMCompleteRibbon0:completeAnimation()
 				self.BMCompleteRibbon0:setAlpha( 0 )
 				self.clipFinished( BMCompleteRibbon0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				header:completeAnimation()
 				self.header:setAlpha( 0.5 )
 				self.clipFinished( header, {} )
+
 				Background:completeAnimation()
 				self.Background:setLeftRight( true, true, 2.32, -1.5 )
 				self.Background:setTopBottom( true, true, 2.11, -2 )
 				self.Background:setAlpha( 1 )
 				self.clipFinished( Background, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				DividerVertical:completeAnimation()
 				self.DividerVertical:setAlpha( 1 )
 				self.clipFinished( DividerVertical, {} )
+
 				DividerHorizontal:completeAnimation()
 				self.DividerHorizontal:setAlpha( 0 )
 				self.clipFinished( DividerHorizontal, {} )
@@ -1216,24 +1342,30 @@ CoD.BM_Contracts_SpecialContractWidget.new = function ( menu, controller )
 				self.NineSliceShaderImage:setTopBottom( true, true, -4.54, 4 )
 				self.NineSliceShaderImage:setAlpha( 1 )
 				NineSliceShaderImageFrame2( NineSliceShaderImage, {} )
+
 				self.nextClip = "Focus"
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 8 )
+
 				header:completeAnimation()
 				self.header:setAlpha( 0.5 )
 				self.clipFinished( header, {} )
+
 				Background:completeAnimation()
 				self.Background:setLeftRight( true, true, 2.32, -1.5 )
 				self.Background:setTopBottom( true, true, 2.11, -2 )
 				self.Background:setAlpha( 1 )
 				self.clipFinished( Background, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				DividerVertical:completeAnimation()
 				self.DividerVertical:setAlpha( 1 )
 				self.clipFinished( DividerVertical, {} )
+
 				DividerHorizontal:completeAnimation()
 				self.DividerHorizontal:setAlpha( 0 )
 				self.clipFinished( DividerHorizontal, {} )
@@ -1297,20 +1429,25 @@ CoD.BM_Contracts_SpecialContractWidget.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 8 )
+
 				header:completeAnimation()
 				self.header:setAlpha( 0.5 )
 				self.clipFinished( header, {} )
+
 				Background:completeAnimation()
 				self.Background:setLeftRight( true, true, 2.32, -1.5 )
 				self.Background:setTopBottom( true, true, 2.11, -2 )
 				self.Background:setAlpha( 1 )
 				self.clipFinished( Background, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				DividerVertical:completeAnimation()
 				self.DividerVertical:setAlpha( 1 )
 				self.clipFinished( DividerVertical, {} )
+
 				DividerHorizontal:completeAnimation()
 				self.DividerHorizontal:setAlpha( 0 )
 				self.clipFinished( DividerHorizontal, {} )
@@ -1376,66 +1513,81 @@ CoD.BM_Contracts_SpecialContractWidget.new = function ( menu, controller )
 		CompletedShort = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				Gradient:completeAnimation()
 				self.Gradient:setLeftRight( true, false, 2.32, 358.5 )
 				self.Gradient:setTopBottom( true, true, 3.17, -3 )
 				self.clipFinished( Gradient, {} )
+
 				header:completeAnimation()
 				self.header:setLeftRight( true, false, 1, 359 )
 				self.header:setTopBottom( true, false, 1.56, 41.56 )
 				self.header:setAlpha( 1 )
 				self.clipFinished( header, {} )
+
 				Background:completeAnimation()
 				self.Background:setLeftRight( true, false, 2.32, 358.5 )
 				self.Background:setTopBottom( true, true, 2.11, -2 )
 				self.Background:setAlpha( 1 )
 				self.clipFinished( Background, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setLeftRight( true, true, 2.32, -1.5 )
 				self.BackgroundCompleted:setTopBottom( true, true, 1.56, -2 )
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.BackgroundCompleted:setImage( RegisterImage( "uie_t7_blackmarket_contracts_bigframe_completed" ) )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				DividerVertical:completeAnimation()
 				self.DividerVertical:setAlpha( 0 )
 				self.clipFinished( DividerVertical, {} )
+
 				DividerHorizontal:completeAnimation()
 				self.DividerHorizontal:setLeftRight( true, false, 73.5, 297 )
 				self.DividerHorizontal:setTopBottom( true, false, 132.07, 140.06 )
 				self.DividerHorizontal:setAlpha( 1 )
 				self.clipFinished( DividerHorizontal, {} )
+
 				SpecialContractPercentCompleteWidget:completeAnimation()
 				self.SpecialContractPercentCompleteWidget:setLeftRight( true, false, 8.88, 98.88 )
 				self.SpecialContractPercentCompleteWidget:setTopBottom( true, false, 41.56, 131.56 )
 				self.SpecialContractPercentCompleteWidget:setScale( 0.9 )
 				self.clipFinished( SpecialContractPercentCompleteWidget, {} )
+
 				SpecialContractName:completeAnimation()
 				self.SpecialContractName:setLeftRight( true, false, 102.25, 343.75 )
 				self.SpecialContractName:setTopBottom( true, false, 59.05, 77.55 )
 				self.SpecialContractName:setAlpha( 1 )
 				self.clipFinished( SpecialContractName, {} )
+
 				SpecialContractDesc:completeAnimation()
 				self.SpecialContractDesc:setLeftRight( true, false, 102.25, 343.75 )
 				self.SpecialContractDesc:setTopBottom( true, false, 78.05, 96.05 )
 				self.SpecialContractDesc:setAlpha( 1 )
 				self.clipFinished( SpecialContractDesc, {} )
+
 				Title:completeAnimation()
 				self.Title:setLeftRight( true, false, 19.5, 197 )
 				self.Title:setTopBottom( true, false, 12.06, 31.06 )
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				upperglow:completeAnimation()
 				self.upperglow:setLeftRight( false, false, -306.13, -57.88 )
 				self.upperglow:setTopBottom( true, false, -17.77, 30.28 )
 				self.upperglow:setAlpha( 0 )
 				self.clipFinished( upperglow, {} )
+
 				lowerglow:completeAnimation()
 				self.lowerglow:setLeftRight( false, false, -279, -95 )
 				self.lowerglow:setTopBottom( false, true, -6.75, 33.25 )
 				self.lowerglow:setAlpha( 0 )
 				self.clipFinished( lowerglow, {} )
+
 				RewardImage:completeAnimation()
+
 				RewardImage.ItemImage:completeAnimation()
+
 				RewardImage.CallingCard.CardIconFrame:completeAnimation()
 				self.RewardImage:setLeftRight( true, false, 118.65, 251.85 )
 				self.RewardImage:setTopBottom( true, false, 137.07, 210.74 )
@@ -1443,68 +1595,82 @@ CoD.BM_Contracts_SpecialContractWidget.new = function ( menu, controller )
 				self.RewardImage.ItemImage:setScale( 0.71 )
 				self.RewardImage.CallingCard.CardIconFrame:setScale( 0.42 )
 				self.clipFinished( RewardImage, {} )
+
 				NineSliceShaderImage:completeAnimation()
 				self.NineSliceShaderImage:setLeftRight( true, true, -5, -354 )
 				self.NineSliceShaderImage:setTopBottom( true, true, -4.54, 4 )
 				self.NineSliceShaderImage:setAlpha( 0 )
 				self.clipFinished( NineSliceShaderImage, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setLeftRight( false, true, -407.75, -358.75 )
 				self.CompletedIcon:setTopBottom( true, false, 5.56, 37.56 )
 				self.CompletedIcon:setAlpha( 1 )
 				self.clipFinished( CompletedIcon, {} )
+
 				BMCompleteRibbon:completeAnimation()
 				self.BMCompleteRibbon:setAlpha( 0 )
 				self.clipFinished( BMCompleteRibbon, {} )
+
 				BMCompleteRibbon0:completeAnimation()
 				self.BMCompleteRibbon0:setAlpha( 1 )
 				self.clipFinished( BMCompleteRibbon0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 13 )
+
 				Gradient:completeAnimation()
 				self.Gradient:setLeftRight( true, false, 2.32, 358.5 )
 				self.Gradient:setTopBottom( true, true, 3.17, -3 )
 				self.clipFinished( Gradient, {} )
+
 				header:completeAnimation()
 				self.header:setLeftRight( true, false, 1, 359 )
 				self.header:setTopBottom( true, false, 1.56, 41.56 )
 				self.header:setAlpha( 1 )
 				self.clipFinished( header, {} )
+
 				Background:completeAnimation()
 				self.Background:setLeftRight( true, true, 2.32, -361.5 )
 				self.Background:setTopBottom( true, true, 2.11, -2 )
 				self.Background:setAlpha( 1 )
 				self.clipFinished( Background, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setLeftRight( true, true, 2.32, -1.5 )
 				self.BackgroundCompleted:setTopBottom( true, true, 1.56, -2 )
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.BackgroundCompleted:setImage( RegisterImage( "uie_t7_blackmarket_contracts_bigframe_completed" ) )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				DividerVertical:completeAnimation()
 				self.DividerVertical:setAlpha( 0 )
 				self.clipFinished( DividerVertical, {} )
+
 				DividerHorizontal:completeAnimation()
 				self.DividerHorizontal:setLeftRight( true, false, 73.5, 297 )
 				self.DividerHorizontal:setTopBottom( true, false, 132.07, 140.06 )
 				self.DividerHorizontal:setAlpha( 1 )
 				self.clipFinished( DividerHorizontal, {} )
+
 				SpecialContractPercentCompleteWidget:completeAnimation()
 				self.SpecialContractPercentCompleteWidget:setLeftRight( true, false, 8.88, 98.88 )
 				self.SpecialContractPercentCompleteWidget:setTopBottom( true, false, 41.56, 131.56 )
 				self.SpecialContractPercentCompleteWidget:setScale( 0.9 )
 				self.clipFinished( SpecialContractPercentCompleteWidget, {} )
+
 				SpecialContractName:completeAnimation()
 				self.SpecialContractName:setLeftRight( true, false, 102.25, 343.75 )
 				self.SpecialContractName:setTopBottom( true, false, 59.05, 77.55 )
 				self.SpecialContractName:setAlpha( 1 )
 				self.clipFinished( SpecialContractName, {} )
+
 				SpecialContractDesc:completeAnimation()
 				self.SpecialContractDesc:setLeftRight( true, false, 102.25, 343.75 )
 				self.SpecialContractDesc:setTopBottom( true, false, 78.05, 96.05 )
 				self.SpecialContractDesc:setAlpha( 1 )
 				self.clipFinished( SpecialContractDesc, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
@@ -1598,53 +1764,64 @@ CoD.BM_Contracts_SpecialContractWidget.new = function ( menu, controller )
 				self.NineSliceShaderImage:setTopBottom( true, true, -4.54, 4 )
 				self.NineSliceShaderImage:setAlpha( 1 )
 				NineSliceShaderImageFrame2( NineSliceShaderImage, {} )
+
 				self.nextClip = "Focus"
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 13 )
+
 				Gradient:completeAnimation()
 				self.Gradient:setLeftRight( true, false, 2.32, 358.5 )
 				self.Gradient:setTopBottom( true, true, 3.17, -3 )
 				self.clipFinished( Gradient, {} )
+
 				header:completeAnimation()
 				self.header:setLeftRight( true, false, 1, 359 )
 				self.header:setTopBottom( true, false, 1.56, 41.56 )
 				self.header:setAlpha( 1 )
 				self.clipFinished( header, {} )
+
 				Background:completeAnimation()
 				self.Background:setLeftRight( true, true, 2.32, -361.5 )
 				self.Background:setTopBottom( true, true, 2.11, -2 )
 				self.Background:setAlpha( 1 )
 				self.clipFinished( Background, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setLeftRight( true, true, 2.32, -1.5 )
 				self.BackgroundCompleted:setTopBottom( true, true, 1.56, -2 )
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.BackgroundCompleted:setImage( RegisterImage( "uie_t7_blackmarket_contracts_bigframe_completed" ) )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				DividerVertical:completeAnimation()
 				self.DividerVertical:setAlpha( 0 )
 				self.clipFinished( DividerVertical, {} )
+
 				DividerHorizontal:completeAnimation()
 				self.DividerHorizontal:setLeftRight( true, false, 73.5, 297 )
 				self.DividerHorizontal:setTopBottom( true, false, 132.07, 140.06 )
 				self.DividerHorizontal:setAlpha( 1 )
 				self.clipFinished( DividerHorizontal, {} )
+
 				SpecialContractPercentCompleteWidget:completeAnimation()
 				self.SpecialContractPercentCompleteWidget:setLeftRight( true, false, 8.88, 98.88 )
 				self.SpecialContractPercentCompleteWidget:setTopBottom( true, false, 41.56, 131.56 )
 				self.SpecialContractPercentCompleteWidget:setScale( 0.9 )
 				self.clipFinished( SpecialContractPercentCompleteWidget, {} )
+
 				SpecialContractName:completeAnimation()
 				self.SpecialContractName:setLeftRight( true, false, 102.25, 343.75 )
 				self.SpecialContractName:setTopBottom( true, false, 59.05, 77.55 )
 				self.SpecialContractName:setAlpha( 1 )
 				self.clipFinished( SpecialContractName, {} )
+
 				SpecialContractDesc:completeAnimation()
 				self.SpecialContractDesc:setLeftRight( true, false, 102.25, 343.75 )
 				self.SpecialContractDesc:setTopBottom( true, false, 78.05, 96.05 )
 				self.SpecialContractDesc:setAlpha( 1 )
 				self.clipFinished( SpecialContractDesc, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
@@ -1708,49 +1885,59 @@ CoD.BM_Contracts_SpecialContractWidget.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 13 )
+
 				Gradient:completeAnimation()
 				self.Gradient:setLeftRight( true, false, 2.32, 358.5 )
 				self.Gradient:setTopBottom( true, true, 3.17, -3 )
 				self.clipFinished( Gradient, {} )
+
 				header:completeAnimation()
 				self.header:setLeftRight( true, false, 1, 359 )
 				self.header:setTopBottom( true, false, 1.56, 41.56 )
 				self.header:setAlpha( 1 )
 				self.clipFinished( header, {} )
+
 				Background:completeAnimation()
 				self.Background:setLeftRight( true, true, 2.32, -361.5 )
 				self.Background:setTopBottom( true, true, 2.11, -2 )
 				self.Background:setAlpha( 1 )
 				self.clipFinished( Background, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setLeftRight( true, true, 2.32, -1.5 )
 				self.BackgroundCompleted:setTopBottom( true, true, 1.56, -2 )
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.BackgroundCompleted:setImage( RegisterImage( "uie_t7_blackmarket_contracts_bigframe_completed" ) )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				DividerVertical:completeAnimation()
 				self.DividerVertical:setAlpha( 0 )
 				self.clipFinished( DividerVertical, {} )
+
 				DividerHorizontal:completeAnimation()
 				self.DividerHorizontal:setLeftRight( true, false, 73.5, 297 )
 				self.DividerHorizontal:setTopBottom( true, false, 132.07, 140.06 )
 				self.DividerHorizontal:setAlpha( 1 )
 				self.clipFinished( DividerHorizontal, {} )
+
 				SpecialContractPercentCompleteWidget:completeAnimation()
 				self.SpecialContractPercentCompleteWidget:setLeftRight( true, false, 8.88, 98.88 )
 				self.SpecialContractPercentCompleteWidget:setTopBottom( true, false, 41.56, 131.56 )
 				self.SpecialContractPercentCompleteWidget:setScale( 0.9 )
 				self.clipFinished( SpecialContractPercentCompleteWidget, {} )
+
 				SpecialContractName:completeAnimation()
 				self.SpecialContractName:setLeftRight( true, false, 102.25, 343.75 )
 				self.SpecialContractName:setTopBottom( true, false, 59.05, 77.55 )
 				self.SpecialContractName:setAlpha( 1 )
 				self.clipFinished( SpecialContractName, {} )
+
 				SpecialContractDesc:completeAnimation()
 				self.SpecialContractDesc:setLeftRight( true, false, 102.25, 343.75 )
 				self.SpecialContractDesc:setTopBottom( true, false, 78.05, 96.05 )
 				self.SpecialContractDesc:setAlpha( 1 )
 				self.clipFinished( SpecialContractDesc, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
@@ -1814,6 +2001,7 @@ CoD.BM_Contracts_SpecialContractWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SpecialContractPercentCompleteWidget:close()
 		element.RewardImage:close()

@@ -4,9 +4,11 @@
 CoD.cac_ElemsSideListBoxes = InheritFrom( LUI.UIElement )
 CoD.cac_ElemsSideListBoxes.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_ElemsSideListBoxes )
 	self.id = "cac_ElemsSideListBoxes"

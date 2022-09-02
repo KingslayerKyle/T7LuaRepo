@@ -4,9 +4,11 @@
 CoD.AmmoWidgetMP_EquipGlow = InheritFrom( LUI.UIElement )
 CoD.AmmoWidgetMP_EquipGlow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidgetMP_EquipGlow )
 	self.id = "AmmoWidgetMP_EquipGlow"
@@ -27,12 +29,14 @@ CoD.AmmoWidgetMP_EquipGlow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
 			end,
 			Shown = function ()
 				self:setupElementClipCounter( 1 )
+
 				local Image0Frame2 = function ( Image0, event )
 					if not event.interrupted then
 						Image0:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -53,12 +57,14 @@ CoD.AmmoWidgetMP_EquipGlow.new = function ( menu, controller )
 		Shown = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0.4 )
 				self.clipFinished( Image0, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local Image0Frame2 = function ( Image0, event )
 					if not event.interrupted then
 						Image0:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )

@@ -4,9 +4,11 @@
 CoD.CallingCards_BootcampWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_BootcampWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_BootcampWidget )
 	self.id = "CallingCards_BootcampWidget"
@@ -62,6 +64,7 @@ CoD.CallingCards_BootcampWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				bg:completeAnimation()
 				self.bg:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_tile_scroll_normal" ) )
 				self.bg:setShaderVector( 0, 1, 1, 0, 0 )
@@ -319,16 +322,19 @@ CoD.CallingCards_BootcampWidget.new = function ( menu, controller )
 				self.smoke:setTopBottom( true, false, 43, 91 )
 				self.smoke:setAlpha( 1 )
 				smokeFrame2( smoke, {} )
+
 				ramp:completeAnimation()
 				self.ramp:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_tile_scroll_normal" ) )
 				self.ramp:setShaderVector( 0, 1, 1, 0, 0 )
 				self.ramp:setShaderVector( 1, 0.5, 0, 0, 0 )
 				self.clipFinished( ramp, {} )
+
 				flag:completeAnimation()
 				self.flag:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_tile_scroll_normal" ) )
 				self.flag:setShaderVector( 0, 1, 1, 0, 0 )
 				self.flag:setShaderVector( 1, 0.5, 0, 0, 0 )
 				self.clipFinished( flag, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

@@ -28,9 +28,11 @@ end
 CoD.MissionObjectiveItemInternal = InheritFrom( LUI.UIElement )
 CoD.MissionObjectiveItemInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MissionObjectiveItemInternal )
 	self.id = "MissionObjectiveItemInternal"
@@ -68,9 +70,11 @@ CoD.MissionObjectiveItemInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				objectiveName:completeAnimation()
 				self.objectiveName:setRGB( 0.57, 0.58, 0.59 )
 				self.clipFinished( objectiveName, {} )
+
 				subobjectivesList:completeAnimation()
 				self.subobjectivesList:setAlpha( 1 )
 				self.clipFinished( subobjectivesList, {} )
@@ -79,9 +83,11 @@ CoD.MissionObjectiveItemInternal.new = function ( menu, controller )
 		Done = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				objectiveName:completeAnimation()
 				self.objectiveName:setRGB( 0.73, 0.74, 0.75 )
 				self.clipFinished( objectiveName, {} )
+
 				subobjectivesList:completeAnimation()
 				self.subobjectivesList:setAlpha( 0 )
 				self.clipFinished( subobjectivesList, {} )
@@ -90,15 +96,18 @@ CoD.MissionObjectiveItemInternal.new = function ( menu, controller )
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				objectiveName:completeAnimation()
 				self.objectiveName:setRGB( 0.57, 0.58, 0.59 )
 				self.clipFinished( objectiveName, {} )
+
 				subobjectivesList:completeAnimation()
 				self.subobjectivesList:setAlpha( 1 )
 				self.clipFinished( subobjectivesList, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.subobjectivesList:close()
 		element.objectiveName:close()

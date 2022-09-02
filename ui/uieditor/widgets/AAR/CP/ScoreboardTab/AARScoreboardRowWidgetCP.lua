@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FocusBarContainer" )
 CoD.AARScoreboardRowWidgetCP = InheritFrom( LUI.UIElement )
 CoD.AARScoreboardRowWidgetCP.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AARScoreboardRowWidgetCP )
 	self.id = "AARScoreboardRowWidgetCP"
@@ -254,43 +256,58 @@ CoD.AARScoreboardRowWidgetCP.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Rank:completeAnimation()
 				self.Rank:setRGB( 1, 1, 1 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setRGB( 1, 1, 1 )
 				self.clipFinished( RankIcon, {} )
+
 				Gamertag:completeAnimation()
 				self.Gamertag:setRGB( 1, 1, 1 )
 				self.clipFinished( Gamertag, {} )
+
 				ScoreColumn1:completeAnimation()
+
 				ScoreColumn1.Text:completeAnimation()
 				self.ScoreColumn1:setRGB( 1, 1, 1 )
 				self.ScoreColumn1.Text:setRGB( 1, 1, 1 )
 				self.clipFinished( ScoreColumn1, {} )
+
 				ScoreColumn2:completeAnimation()
+
 				ScoreColumn2.Text:completeAnimation()
 				self.ScoreColumn2:setRGB( 1, 1, 1 )
 				self.ScoreColumn2.Text:setRGB( 1, 1, 1 )
 				self.clipFinished( ScoreColumn2, {} )
+
 				ScoreColumn3:completeAnimation()
+
 				ScoreColumn3.Text:completeAnimation()
 				self.ScoreColumn3:setRGB( 1, 1, 1 )
 				self.ScoreColumn3.Text:setRGB( 1, 1, 1 )
 				self.clipFinished( ScoreColumn3, {} )
+
 				ScoreColumn4:completeAnimation()
+
 				ScoreColumn4.Text:completeAnimation()
 				self.ScoreColumn4:setRGB( 1, 1, 1 )
 				self.ScoreColumn4.Text:setRGB( 1, 1, 1 )
 				self.clipFinished( ScoreColumn4, {} )
+
 				ScoreColumn5:completeAnimation()
+
 				ScoreColumn5.Text:completeAnimation()
 				self.ScoreColumn5:setRGB( 1, 1, 1 )
 				self.ScoreColumn5.Text:setRGB( 1, 1, 1 )
 				self.clipFinished( ScoreColumn5, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
@@ -299,49 +316,65 @@ CoD.AARScoreboardRowWidgetCP.new = function ( menu, controller )
 		IsSelf = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Rank:completeAnimation()
 				self.Rank:setRGB( 1, 0.84, 0.04 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setRGB( 1, 1, 1 )
 				self.clipFinished( RankIcon, {} )
+
 				Gamertag:completeAnimation()
 				self.Gamertag:setRGB( 1, 0.84, 0.04 )
 				self.clipFinished( Gamertag, {} )
+
 				ScoreColumn1:completeAnimation()
+
 				ScoreColumn1.Text:completeAnimation()
 				self.ScoreColumn1:setRGB( 1, 1, 1 )
 				self.ScoreColumn1.Text:setRGB( 1, 0.84, 0.04 )
 				self.clipFinished( ScoreColumn1, {} )
+
 				ScoreColumn2:completeAnimation()
+
 				ScoreColumn2.Text:completeAnimation()
 				self.ScoreColumn2:setRGB( 1, 1, 1 )
 				self.ScoreColumn2.Text:setRGB( 1, 0.84, 0.04 )
 				self.clipFinished( ScoreColumn2, {} )
+
 				ScoreColumn3:completeAnimation()
+
 				ScoreColumn3.Text:completeAnimation()
 				self.ScoreColumn3:setRGB( 1, 1, 1 )
 				self.ScoreColumn3.Text:setRGB( 1, 0.84, 0.04 )
 				self.clipFinished( ScoreColumn3, {} )
+
 				ScoreColumn4:completeAnimation()
+
 				ScoreColumn4.Text:completeAnimation()
 				self.ScoreColumn4:setRGB( 1, 1, 1 )
 				self.ScoreColumn4.Text:setRGB( 1, 0.84, 0.04 )
 				self.clipFinished( ScoreColumn4, {} )
+
 				ScoreColumn5:completeAnimation()
+
 				ScoreColumn5.Text:completeAnimation()
 				self.ScoreColumn5:setRGB( 1, 1, 1 )
 				self.ScoreColumn5.Text:setRGB( 1, 0.84, 0.04 )
 				self.clipFinished( ScoreColumn5, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "IsSelf",
@@ -374,6 +407,7 @@ CoD.AARScoreboardRowWidgetCP.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_GAME_ENDED
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.VSpanel:close()
 		element.ScoreColumn1:close()

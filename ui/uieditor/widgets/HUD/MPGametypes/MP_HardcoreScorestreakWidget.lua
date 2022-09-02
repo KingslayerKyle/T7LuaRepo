@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ScoreInfo.ScoreInfo_PanelScale" )
 CoD.MP_HardcoreScorestreakWidget = InheritFrom( LUI.UIElement )
 CoD.MP_HardcoreScorestreakWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MP_HardcoreScorestreakWidget )
 	self.id = "MP_HardcoreScorestreakWidget"
@@ -29,6 +31,7 @@ CoD.MP_HardcoreScorestreakWidget.new = function ( menu, controller )
 	text:setTopBottom( true, false, 0, 25 )
 	text:setText( Engine.Localize( "MENU_NEW" ) )
 	text:setTTF( "fonts/default.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( text, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )
@@ -39,15 +42,18 @@ CoD.MP_HardcoreScorestreakWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0 )
 				self.clipFinished( text, {} )
 			end,
 			Show = function ()
 				self:setupElementClipCounter( 2 )
+
 				local PanelFrame2 = function ( Panel, event )
 					local PanelFrame3 = function ( Panel, event )
 						local PanelFrame4 = function ( Panel, event )
@@ -123,6 +129,7 @@ CoD.MP_HardcoreScorestreakWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 	end )

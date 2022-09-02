@@ -9,6 +9,7 @@ require( "ui.uieditor.widgets.Competitive.Competitive_SettingsSummary" )
 require( "ui.uieditor.widgets.Lobby.LobbyDoubleXPWidgetContainer" )
 
 local PostLoadFunc = function ( self, controller, menu )
+
 	LUI.OverrideFunction_CallOriginalFirst( self.MenuTitleContainer.MenuTitle.TextBox1.Label0, "setText", function ()
 		self.MenuTitleContainer:playClip( "Update" )
 		self.selectionList:playClip( "Update" )
@@ -18,9 +19,11 @@ end
 CoD.LeftContainer = InheritFrom( LUI.UIElement )
 CoD.LeftContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LeftContainer )
 	self.id = "LeftContainer"
@@ -147,31 +150,37 @@ CoD.LeftContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				MenuTitleContainer:completeAnimation()
 				self.MenuTitleContainer:setLeftRight( true, false, -75, 445 )
 				self.MenuTitleContainer:setTopBottom( true, false, 189.35, 335.35 )
 				self.MenuTitleContainer:setAlpha( 1 )
 				self.clipFinished( MenuTitleContainer, {} )
+
 				LocalWarning:completeAnimation()
 				self.LocalWarning:setLeftRight( true, false, 123.53, 623.53 )
 				self.LocalWarning:setTopBottom( true, false, 62, 82 )
 				self.clipFinished( LocalWarning, {} )
+
 				selectionList:completeAnimation()
 				self.selectionList:setLeftRight( true, false, 37.39, 647.39 )
 				self.selectionList:setTopBottom( true, false, 320, 666 )
 				self.selectionList:setAlpha( 1 )
 				self.clipFinished( selectionList, {} )
+
 				FEFeaturedCardsContainer:completeAnimation()
 				self.FEFeaturedCardsContainer:setLeftRight( true, false, 35.9, 395.9 )
 				self.FEFeaturedCardsContainer:setTopBottom( true, false, 40, 203 )
 				self.FEFeaturedCardsContainer:setAlpha( 1 )
 				self.clipFinished( FEFeaturedCardsContainer, {} )
+
 				LobbyDoubleXPWidgetContainer:completeAnimation()
 				self.LobbyDoubleXPWidgetContainer:setAlpha( 1 )
 				self.clipFinished( LobbyDoubleXPWidgetContainer, {} )
 			end,
 			MoveSelectionListUp = function ()
 				self:setupElementClipCounter( 3 )
+
 				local MenuTitleContainerFrame2 = function ( MenuTitleContainer, event )
 					local MenuTitleContainerFrame3 = function ( MenuTitleContainer, event )
 						if not event.interrupted then
@@ -262,26 +271,31 @@ CoD.LeftContainer.new = function ( menu, controller )
 			end,
 			SelectionListUp = function ()
 				self:setupElementClipCounter( 4 )
+
 				MenuTitleContainer:completeAnimation()
 				self.MenuTitleContainer:setLeftRight( true, false, -75, 445 )
 				self.MenuTitleContainer:setTopBottom( true, false, 24, 170 )
 				self.MenuTitleContainer:setAlpha( 1 )
 				self.clipFinished( MenuTitleContainer, {} )
+
 				LocalWarning:completeAnimation()
 				self.LocalWarning:setLeftRight( true, false, 123.53, 623.53 )
 				self.LocalWarning:setTopBottom( true, false, 62, 82 )
 				self.clipFinished( LocalWarning, {} )
+
 				selectionList:completeAnimation()
 				self.selectionList:setLeftRight( true, false, 37.39, 647.39 )
 				self.selectionList:setTopBottom( true, false, 134, 480 )
 				self.selectionList:setAlpha( 1 )
 				self.clipFinished( selectionList, {} )
+
 				FEFeaturedCardsContainer:completeAnimation()
 				self.FEFeaturedCardsContainer:setAlpha( 0 )
 				self.clipFinished( FEFeaturedCardsContainer, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 5 )
+
 				local MenuTitleContainerFrame2 = function ( MenuTitleContainer, event )
 					local MenuTitleContainerFrame3 = function ( MenuTitleContainer, event )
 						if not event.interrupted then
@@ -311,6 +325,7 @@ CoD.LeftContainer.new = function ( menu, controller )
 				self.MenuTitleContainer:setTopBottom( true, false, 189.35, 335.35 )
 				self.MenuTitleContainer:setAlpha( 0 )
 				MenuTitleContainerFrame2( MenuTitleContainer, {} )
+
 				LocalWarning:completeAnimation()
 				self.LocalWarning:setLeftRight( true, false, 123.53, 623.53 )
 				self.LocalWarning:setTopBottom( true, false, 62, 82 )
@@ -353,12 +368,14 @@ CoD.LeftContainer.new = function ( menu, controller )
 				self.selectionList:setTopBottom( true, false, 242, 588 )
 				self.selectionList:setAlpha( 1 )
 				selectionListFrame2( selectionList, {} )
+
 				FEFeaturedCardsContainer:completeAnimation()
 				self.FEFeaturedCardsContainer:setAlpha( 0 )
 				self.clipFinished( FEFeaturedCardsContainer, {} )
 			end,
 			ListUp = function ()
 				self:setupElementClipCounter( 5 )
+
 				local MenuTitleContainerFrame2 = function ( MenuTitleContainer, event )
 					local MenuTitleContainerFrame3 = function ( MenuTitleContainer, event )
 						if not event.interrupted then
@@ -489,27 +506,33 @@ CoD.LeftContainer.new = function ( menu, controller )
 		ListUp = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				MenuTitleContainer:completeAnimation()
 				self.MenuTitleContainer:setLeftRight( true, false, -75, 445 )
 				self.MenuTitleContainer:setTopBottom( true, false, 24, 170 )
 				self.MenuTitleContainer:setAlpha( 1 )
 				self.clipFinished( MenuTitleContainer, {} )
+
 				LocalWarning:completeAnimation()
 				self.LocalWarning:setAlpha( 0 )
 				self.clipFinished( LocalWarning, {} )
+
 				selectionList:completeAnimation()
 				self.selectionList:setLeftRight( true, false, 37.39, 647.39 )
 				self.selectionList:setTopBottom( true, false, 134, 480 )
 				self.clipFinished( selectionList, {} )
+
 				FEFeaturedCardsContainer:completeAnimation()
 				self.FEFeaturedCardsContainer:setAlpha( 0 )
 				self.clipFinished( FEFeaturedCardsContainer, {} )
+
 				LobbyDoubleXPWidgetContainer:completeAnimation()
 				self.LobbyDoubleXPWidgetContainer:setAlpha( 1 )
 				self.clipFinished( LobbyDoubleXPWidgetContainer, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 4 )
+
 				local MenuTitleContainerFrame2 = function ( MenuTitleContainer, event )
 					local MenuTitleContainerFrame3 = function ( MenuTitleContainer, event )
 						if not event.interrupted then
@@ -539,6 +562,7 @@ CoD.LeftContainer.new = function ( menu, controller )
 				self.MenuTitleContainer:setTopBottom( true, false, 24, 170 )
 				self.MenuTitleContainer:setAlpha( 1 )
 				MenuTitleContainerFrame2( MenuTitleContainer, {} )
+
 				LocalWarning:completeAnimation()
 				self.LocalWarning:setLeftRight( true, false, 123.53, 623.53 )
 				self.LocalWarning:setTopBottom( true, false, 62, 82 )
@@ -593,6 +617,7 @@ CoD.LeftContainer.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 5 )
+
 				local MenuTitleContainerFrame2 = function ( MenuTitleContainer, event )
 					local MenuTitleContainerFrame3 = function ( MenuTitleContainer, event )
 						if not event.interrupted then
@@ -622,6 +647,7 @@ CoD.LeftContainer.new = function ( menu, controller )
 				self.MenuTitleContainer:setTopBottom( true, false, 24, 170 )
 				self.MenuTitleContainer:setAlpha( 0 )
 				MenuTitleContainerFrame2( MenuTitleContainer, {} )
+
 				LocalWarning:completeAnimation()
 				self.LocalWarning:setAlpha( 0 )
 				self.clipFinished( LocalWarning, {} )
@@ -661,6 +687,7 @@ CoD.LeftContainer.new = function ( menu, controller )
 				self.selectionList:setLeftRight( true, false, 37.39, 647.39 )
 				self.selectionList:setTopBottom( true, false, 54, 400 )
 				selectionListFrame2( selectionList, {} )
+
 				FEFeaturedCardsContainer:completeAnimation()
 				self.FEFeaturedCardsContainer:setAlpha( 0 )
 				self.clipFinished( FEFeaturedCardsContainer, {} )
@@ -669,39 +696,47 @@ CoD.LeftContainer.new = function ( menu, controller )
 		mpLobbyOnline = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		mpLobbyOnlineGame = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		mpLobbyOnlineCustom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		ListUpCopy = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				MenuTitleContainer:completeAnimation()
 				self.MenuTitleContainer:setLeftRight( true, false, -75, 445 )
 				self.MenuTitleContainer:setTopBottom( true, false, 24, 170 )
 				self.MenuTitleContainer:setAlpha( 1 )
 				self.clipFinished( MenuTitleContainer, {} )
+
 				LocalWarning:completeAnimation()
 				self.LocalWarning:setAlpha( 0 )
 				self.clipFinished( LocalWarning, {} )
+
 				selectionList:completeAnimation()
 				self.selectionList:setLeftRight( true, false, 37.39, 647.39 )
 				self.selectionList:setTopBottom( true, false, 134, 480 )
 				self.clipFinished( selectionList, {} )
+
 				FEFeaturedCardsContainer:completeAnimation()
 				self.FEFeaturedCardsContainer:setAlpha( 0 )
 				self.clipFinished( FEFeaturedCardsContainer, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 3 )
+
 				local MenuTitleContainerFrame2 = function ( MenuTitleContainer, event )
 					local MenuTitleContainerFrame3 = function ( MenuTitleContainer, event )
 						if not event.interrupted then
@@ -731,6 +766,7 @@ CoD.LeftContainer.new = function ( menu, controller )
 				self.MenuTitleContainer:setTopBottom( true, false, 24, 170 )
 				self.MenuTitleContainer:setAlpha( 1 )
 				MenuTitleContainerFrame2( MenuTitleContainer, {} )
+
 				LocalWarning:completeAnimation()
 				self.LocalWarning:setLeftRight( true, false, 123.53, 623.53 )
 				self.LocalWarning:setTopBottom( true, false, 62, 82 )
@@ -756,6 +792,7 @@ CoD.LeftContainer.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 4 )
+
 				local MenuTitleContainerFrame2 = function ( MenuTitleContainer, event )
 					local MenuTitleContainerFrame3 = function ( MenuTitleContainer, event )
 						if not event.interrupted then
@@ -785,6 +822,7 @@ CoD.LeftContainer.new = function ( menu, controller )
 				self.MenuTitleContainer:setTopBottom( true, false, 24, 170 )
 				self.MenuTitleContainer:setAlpha( 0 )
 				MenuTitleContainerFrame2( MenuTitleContainer, {} )
+
 				LocalWarning:completeAnimation()
 				self.LocalWarning:setAlpha( 0 )
 				self.clipFinished( LocalWarning, {} )
@@ -835,6 +873,7 @@ CoD.LeftContainer.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MenuTitleContainer:close()
 		element.LocalWarning:close()

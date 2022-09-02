@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_CryptokeyCounterIcon" )
 CoD.SpecialContracts_StateIndicator = InheritFrom( LUI.UIElement )
 CoD.SpecialContracts_StateIndicator.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpecialContracts_StateIndicator )
 	self.id = "SpecialContracts_StateIndicator"
@@ -43,9 +45,11 @@ CoD.SpecialContracts_StateIndicator.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				CryptokeyIcon0:completeAnimation()
 				self.CryptokeyIcon0:setAlpha( 0 )
 				self.clipFinished( CryptokeyIcon0, {} )
+
 				ContractDesc0:completeAnimation()
 				self.ContractDesc0:setAlpha( 0 )
 				self.clipFinished( ContractDesc0, {} )
@@ -54,15 +58,18 @@ CoD.SpecialContracts_StateIndicator.new = function ( menu, controller )
 		Cost = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				CryptokeyIcon0:completeAnimation()
 				self.CryptokeyIcon0:setAlpha( 1 )
 				self.clipFinished( CryptokeyIcon0, {} )
+
 				ContractDesc0:completeAnimation()
 				self.ContractDesc0:setAlpha( 1 )
 				self.clipFinished( ContractDesc0, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CryptokeyIcon0:close()
 		element.ContractDesc0:close()

@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.StartGameFlow.LoadingScreenFactionIcon" )
 CoD.Pregame_FactionHeader = InheritFrom( LUI.UIElement )
 CoD.Pregame_FactionHeader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_FactionHeader )
 	self.id = "Pregame_FactionHeader"
@@ -279,70 +281,88 @@ CoD.Pregame_FactionHeader.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				Team2IconAndNameWidget:completeAnimation()
 				self.Team2IconAndNameWidget:setAlpha( 1 )
 				self.clipFinished( Team2IconAndNameWidget, {} )
+
 				Team1IconAndNameWidget:completeAnimation()
 				self.Team1IconAndNameWidget:setAlpha( 1 )
 				self.clipFinished( Team1IconAndNameWidget, {} )
+
 				FrameForCodCasterLeft:completeAnimation()
 				self.FrameForCodCasterLeft:setAlpha( 0 )
 				self.clipFinished( FrameForCodCasterLeft, {} )
+
 				FrameForCodCasterRight:completeAnimation()
 				self.FrameForCodCasterRight:setAlpha( 0 )
 				self.clipFinished( FrameForCodCasterRight, {} )
+
 				FrameForCodCasterLeft0:completeAnimation()
 				self.FrameForCodCasterLeft0:setLeftRight( true, false, 314.5, 640.5 )
 				self.FrameForCodCasterLeft0:setTopBottom( true, false, 31.97, 116.97 )
 				self.FrameForCodCasterLeft0:setAlpha( 1 )
 				self.clipFinished( FrameForCodCasterLeft0, {} )
+
 				FrameForCodCasterRight0:completeAnimation()
 				self.FrameForCodCasterRight0:setLeftRight( true, false, 654.5, 1008.5 )
 				self.FrameForCodCasterRight0:setTopBottom( true, false, 32.78, 117.78 )
 				self.FrameForCodCasterRight0:setAlpha( 1 )
 				self.clipFinished( FrameForCodCasterRight0, {} )
+
 				AxisColors:completeAnimation()
 				self.AxisColors:setLeftRight( true, false, 689.5, 993.25 )
 				self.AxisColors:setTopBottom( true, false, 52.9, 55.34 )
 				self.clipFinished( AxisColors, {} )
+
 				AlliesColors:completeAnimation()
 				self.AlliesColors:setLeftRight( true, false, 321.25, 623 )
 				self.AlliesColors:setTopBottom( true, false, 52.9, 55.34 )
 				self.clipFinished( AlliesColors, {} )
+
 				LoadingScreenVSCirclePnl:completeAnimation()
 				self.LoadingScreenVSCirclePnl:setAlpha( 0.5 )
 				self.clipFinished( LoadingScreenVSCirclePnl, {} )
+
 				VScircle:completeAnimation()
 				self.VScircle:setAlpha( 1 )
 				self.clipFinished( VScircle, {} )
+
 				VSlabel:completeAnimation()
 				self.VSlabel:setAlpha( 1 )
 				self.clipFinished( VSlabel, {} )
+
 				LoadingScreenFactionIcon0:completeAnimation()
 				self.LoadingScreenFactionIcon0:setLeftRight( false, false, 10, 147.75 )
 				self.LoadingScreenFactionIcon0:setTopBottom( false, false, -75.47, 62.28 )
 				self.LoadingScreenFactionIcon0:setAlpha( 1 )
 				self.clipFinished( LoadingScreenFactionIcon0, {} )
+
 				LoadingScreenFactionIcon:completeAnimation()
 				self.LoadingScreenFactionIcon:setLeftRight( false, false, -191.13, -53.38 )
 				self.LoadingScreenFactionIcon:setTopBottom( false, false, -75.47, 62.28 )
 				self.LoadingScreenFactionIcon:setAlpha( 1 )
 				self.clipFinished( LoadingScreenFactionIcon, {} )
+
 				FactionNameCDP:completeAnimation()
 				self.FactionNameCDP:setAlpha( 1 )
 				self.clipFinished( FactionNameCDP, {} )
+
 				FactionNameBlackOps:completeAnimation()
 				self.FactionNameBlackOps:setAlpha( 1 )
 				self.clipFinished( FactionNameBlackOps, {} )
+
 				FactionNameRightCodCaster:completeAnimation()
 				self.FactionNameRightCodCaster:setAlpha( 0 )
 				self.clipFinished( FactionNameRightCodCaster, {} )
+
 				FactionNameLeftCodCaster:completeAnimation()
 				self.FactionNameLeftCodCaster:setAlpha( 0 )
 				self.clipFinished( FactionNameLeftCodCaster, {} )
 			end,
 			StartLoading = function ()
 				self:setupElementClipCounter( 17 )
+
 				local VSglowFrame2 = function ( VSglow, event )
 					local VSglowFrame3 = function ( VSglow, event )
 						if not event.interrupted then
@@ -443,9 +463,11 @@ CoD.Pregame_FactionHeader.new = function ( menu, controller )
 				Team1IconAndNameWidget:completeAnimation()
 				self.Team1IconAndNameWidget:setAlpha( 0 )
 				Team1IconAndNameWidgetFrame2( Team1IconAndNameWidget, {} )
+
 				FrameForCodCasterLeft:completeAnimation()
 				self.FrameForCodCasterLeft:setAlpha( 0 )
 				self.clipFinished( FrameForCodCasterLeft, {} )
+
 				FrameForCodCasterRight:completeAnimation()
 				self.FrameForCodCasterRight:setAlpha( 0 )
 				self.clipFinished( FrameForCodCasterRight, {} )
@@ -715,6 +737,7 @@ CoD.Pregame_FactionHeader.new = function ( menu, controller )
 				FactionNameBlackOps:completeAnimation()
 				self.FactionNameBlackOps:setAlpha( 0 )
 				FactionNameBlackOpsFrame2( FactionNameBlackOps, {} )
+
 				FactionNameLeftCodCaster:completeAnimation()
 				self.FactionNameLeftCodCaster:setAlpha( 0 )
 				self.clipFinished( FactionNameLeftCodCaster, {} )
@@ -723,57 +746,72 @@ CoD.Pregame_FactionHeader.new = function ( menu, controller )
 		CodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				Team2IconAndNameWidget:completeAnimation()
 				self.Team2IconAndNameWidget:setAlpha( 0 )
 				self.clipFinished( Team2IconAndNameWidget, {} )
+
 				Team1IconAndNameWidget:completeAnimation()
 				self.Team1IconAndNameWidget:setAlpha( 0 )
 				self.clipFinished( Team1IconAndNameWidget, {} )
+
 				FrameForCodCasterLeft:completeAnimation()
 				self.FrameForCodCasterLeft:setAlpha( 1 )
 				self.clipFinished( FrameForCodCasterLeft, {} )
+
 				FrameForCodCasterRight:completeAnimation()
 				self.FrameForCodCasterRight:setAlpha( 1 )
 				self.clipFinished( FrameForCodCasterRight, {} )
+
 				FrameForCodCasterLeft0:completeAnimation()
 				self.FrameForCodCasterLeft0:setAlpha( 1 )
 				self.clipFinished( FrameForCodCasterLeft0, {} )
+
 				FrameForCodCasterRight0:completeAnimation()
 				self.FrameForCodCasterRight0:setAlpha( 1 )
 				self.clipFinished( FrameForCodCasterRight0, {} )
+
 				AxisColors:completeAnimation()
 				self.AxisColors:setLeftRight( true, false, 689.5, 1086.25 )
 				self.AxisColors:setTopBottom( true, false, 52.9, 55.34 )
 				self.clipFinished( AxisColors, {} )
+
 				AlliesColors:completeAnimation()
 				self.AlliesColors:setLeftRight( true, false, 226.25, 621.5 )
 				self.AlliesColors:setTopBottom( true, false, 52.9, 55.34 )
 				self.clipFinished( AlliesColors, {} )
+
 				LoadingScreenFactionIcon0:completeAnimation()
 				self.LoadingScreenFactionIcon0:setLeftRight( false, false, 7.13, 193.05 )
 				self.LoadingScreenFactionIcon0:setTopBottom( false, false, -75.47, 62.28 )
 				self.LoadingScreenFactionIcon0:setAlpha( 1 )
 				self.clipFinished( LoadingScreenFactionIcon0, {} )
+
 				LoadingScreenFactionIcon:completeAnimation()
 				self.LoadingScreenFactionIcon:setLeftRight( false, false, -231.05, -50.13 )
 				self.LoadingScreenFactionIcon:setTopBottom( false, false, -75.47, 62.28 )
 				self.LoadingScreenFactionIcon:setAlpha( 1 )
 				self.clipFinished( LoadingScreenFactionIcon, {} )
+
 				FactionNameCDP:completeAnimation()
 				self.FactionNameCDP:setAlpha( 0 )
 				self.clipFinished( FactionNameCDP, {} )
+
 				FactionNameBlackOps:completeAnimation()
 				self.FactionNameBlackOps:setAlpha( 0 )
 				self.clipFinished( FactionNameBlackOps, {} )
+
 				FactionNameRightCodCaster:completeAnimation()
 				self.FactionNameRightCodCaster:setAlpha( 1 )
 				self.clipFinished( FactionNameRightCodCaster, {} )
+
 				FactionNameLeftCodCaster:completeAnimation()
 				self.FactionNameLeftCodCaster:setAlpha( 1 )
 				self.clipFinished( FactionNameLeftCodCaster, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CodCaster",
@@ -790,6 +828,7 @@ CoD.Pregame_FactionHeader.new = function ( menu, controller )
 			modelName = "factions.isCoDCaster"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.VSglow:close()
 		element.Team2IconAndNameWidget:close()

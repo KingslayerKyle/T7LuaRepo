@@ -4,9 +4,11 @@
 CoD.Promo_ThermometerAndRewards_Idol = InheritFrom( LUI.UIElement )
 CoD.Promo_ThermometerAndRewards_Idol.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.Promo_ThermometerAndRewards_Idol )
 	self.id = "Promo_ThermometerAndRewards_Idol"
@@ -150,6 +152,7 @@ CoD.Promo_ThermometerAndRewards_Idol.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				local ThermometerGlowFrame2 = function ( ThermometerGlow, event )
 					local ThermometerGlowFrame3 = function ( ThermometerGlow, event )
 						local ThermometerGlowFrame4 = function ( ThermometerGlow, event )
@@ -653,51 +656,66 @@ CoD.Promo_ThermometerAndRewards_Idol.new = function ( menu, controller )
 				Image0:beginAnimation( "keyframe", 1769, false, false, CoD.TweenType.Linear )
 				Image0:setAlpha( 0 )
 				Image0:registerEventHandler( "transition_complete_keyframe", f2_local12 )
+
 				uinThmIdle:completeAnimation()
 				self.uinThmIdle:playSound( "uin_thm_idle", controller )
 				self.clipFinished( uinThmIdle, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		StopAnimations = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				ThermometerGlow:completeAnimation()
 				self.ThermometerGlow:setAlpha( 0 )
 				self.clipFinished( ThermometerGlow, {} )
+
 				biglightFlare:completeAnimation()
 				self.biglightFlare:setAlpha( 0 )
 				self.clipFinished( biglightFlare, {} )
+
 				GlowPulse:completeAnimation()
 				self.GlowPulse:setAlpha( 0 )
 				self.clipFinished( GlowPulse, {} )
+
 				GlowPulseOuter:completeAnimation()
 				self.GlowPulseOuter:setAlpha( 0 )
 				self.clipFinished( GlowPulseOuter, {} )
+
 				GlowPulseOuter2:completeAnimation()
 				self.GlowPulseOuter2:setAlpha( 0 )
 				self.clipFinished( GlowPulseOuter2, {} )
+
 				GlowPulseLine:completeAnimation()
 				self.GlowPulseLine:setAlpha( 0 )
 				self.clipFinished( GlowPulseLine, {} )
+
 				GlowPulseLine0:completeAnimation()
 				self.GlowPulseLine0:setAlpha( 0 )
 				self.clipFinished( GlowPulseLine0, {} )
+
 				GlowDots:completeAnimation()
 				self.GlowDots:setAlpha( 0 )
 				self.clipFinished( GlowDots, {} )
+
 				GlowDots2:completeAnimation()
 				self.GlowDots2:setAlpha( 0 )
 				self.clipFinished( GlowDots2, {} )
+
 				GlowDots3:completeAnimation()
 				self.GlowDots3:setAlpha( 0 )
 				self.clipFinished( GlowDots3, {} )
+
 				GlowDots4:completeAnimation()
 				self.GlowDots4:setAlpha( 0 )
 				self.clipFinished( GlowDots4, {} )
+
 				GlowDots5:completeAnimation()
 				self.GlowDots5:setAlpha( 0 )
 				self.clipFinished( GlowDots5, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )

@@ -4,9 +4,11 @@
 CoD.survived = InheritFrom( LUI.UIElement )
 CoD.survived.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.survived )
 	self.id = "survived"
@@ -48,6 +50,7 @@ CoD.survived.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local f2_local0 = function ( f3_arg0, f3_arg1 )
 					if not f3_arg1.interrupted then
 						f3_arg0:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )
@@ -83,9 +86,11 @@ CoD.survived.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				txt0:completeAnimation()
 				self.txt0:setAlpha( 0 )
 				self.clipFinished( txt0, {} )
+
 				txt:completeAnimation()
 				self.txt:setAlpha( 0 )
 				self.clipFinished( txt, {} )

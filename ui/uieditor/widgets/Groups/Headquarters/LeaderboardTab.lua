@@ -136,9 +136,11 @@ end
 CoD.LeaderboardTab = InheritFrom( LUI.UIElement )
 CoD.LeaderboardTab.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LeaderboardTab )
 	self.id = "LeaderboardTab"
@@ -606,39 +608,51 @@ CoD.LeaderboardTab.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BlackTint00:completeAnimation()
 				self.BlackTint00:setAlpha( 0 )
 				self.clipFinished( BlackTint00, {} )
+
 				CreateLeaderboardTitle:completeAnimation()
 				self.CreateLeaderboardTitle:setAlpha( 0 )
 				self.clipFinished( CreateLeaderboardTitle, {} )
+
 				CreateLeaderboardDesc:completeAnimation()
 				self.CreateLeaderboardDesc:setAlpha( 0 )
 				self.clipFinished( CreateLeaderboardDesc, {} )
+
 				NoLeaderboardDesc:completeAnimation()
 				self.NoLeaderboardDesc:setAlpha( 0 )
 				self.clipFinished( NoLeaderboardDesc, {} )
+
 				FileshareNoContentGraphic:completeAnimation()
 				self.FileshareNoContentGraphic:setAlpha( 0 )
 				self.clipFinished( FileshareNoContentGraphic, {} )
+
 				CreateLeaderboardButton:completeAnimation()
 				self.CreateLeaderboardButton:setAlpha( 0 )
 				self.clipFinished( CreateLeaderboardButton, {} )
+
 				UseDefaultButton:completeAnimation()
 				self.UseDefaultButton:setAlpha( 0 )
 				self.clipFinished( UseDefaultButton, {} )
+
 				Leaderboard:completeAnimation()
 				self.Leaderboard:setAlpha( 1 )
 				self.clipFinished( Leaderboard, {} )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0.5 )
 				self.clipFinished( Backing, {} )
+
 				GroupLeaderboardTitle:completeAnimation()
 				self.GroupLeaderboardTitle:setAlpha( 1 )
 				self.clipFinished( GroupLeaderboardTitle, {} )
+
 				featlineleft0:completeAnimation()
 				self.featlineleft0:setAlpha( 0 )
 				self.clipFinished( featlineleft0, {} )
+
 				featlineleft00:completeAnimation()
 				self.featlineleft00:setAlpha( 0 )
 				self.clipFinished( featlineleft00, {} )
@@ -647,44 +661,56 @@ CoD.LeaderboardTab.new = function ( menu, controller )
 		LeaderboardOptions = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BlackTint00:completeAnimation()
 				self.BlackTint00:setAlpha( 0.3 )
 				self.clipFinished( BlackTint00, {} )
+
 				CreateLeaderboardTitle:completeAnimation()
 				self.CreateLeaderboardTitle:setLeftRight( true, false, 20.5, 303.04 )
 				self.CreateLeaderboardTitle:setTopBottom( true, false, 2, 32 )
 				self.CreateLeaderboardTitle:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.CreateLeaderboardTitle:setAlpha( 1 )
 				self.clipFinished( CreateLeaderboardTitle, {} )
+
 				CreateLeaderboardDesc:completeAnimation()
 				self.CreateLeaderboardDesc:setLeftRight( true, false, 20.5, 384 )
 				self.CreateLeaderboardDesc:setTopBottom( true, false, 34, 53 )
 				self.CreateLeaderboardDesc:setAlpha( 1 )
 				self.clipFinished( CreateLeaderboardDesc, {} )
+
 				NoLeaderboardDesc:completeAnimation()
 				self.NoLeaderboardDesc:setAlpha( 0 )
 				self.clipFinished( NoLeaderboardDesc, {} )
+
 				FileshareNoContentGraphic:completeAnimation()
 				self.FileshareNoContentGraphic:setAlpha( 0 )
 				self.clipFinished( FileshareNoContentGraphic, {} )
+
 				CreateLeaderboardButton:completeAnimation()
 				self.CreateLeaderboardButton:setAlpha( 1 )
 				self.clipFinished( CreateLeaderboardButton, {} )
+
 				UseDefaultButton:completeAnimation()
 				self.UseDefaultButton:setAlpha( 1 )
 				self.clipFinished( UseDefaultButton, {} )
+
 				Leaderboard:completeAnimation()
 				self.Leaderboard:setAlpha( 0 )
 				self.clipFinished( Leaderboard, {} )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0 )
 				self.clipFinished( Backing, {} )
+
 				GroupLeaderboardTitle:completeAnimation()
 				self.GroupLeaderboardTitle:setAlpha( 0 )
 				self.clipFinished( GroupLeaderboardTitle, {} )
+
 				featlineleft0:completeAnimation()
 				self.featlineleft0:setAlpha( 0 )
 				self.clipFinished( featlineleft0, {} )
+
 				featlineleft00:completeAnimation()
 				self.featlineleft00:setAlpha( 0 )
 				self.clipFinished( featlineleft00, {} )
@@ -693,50 +719,64 @@ CoD.LeaderboardTab.new = function ( menu, controller )
 		NoLeaderboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				BlackTint00:completeAnimation()
 				self.BlackTint00:setAlpha( 0 )
 				self.clipFinished( BlackTint00, {} )
+
 				CreateLeaderboardTitle:completeAnimation()
 				self.CreateLeaderboardTitle:setAlpha( 0 )
 				self.clipFinished( CreateLeaderboardTitle, {} )
+
 				CreateLeaderboardDesc:completeAnimation()
 				self.CreateLeaderboardDesc:setAlpha( 0 )
 				self.clipFinished( CreateLeaderboardDesc, {} )
+
 				NoLeaderboardDesc:completeAnimation()
 				self.NoLeaderboardDesc:setAlpha( 1 )
 				self.clipFinished( NoLeaderboardDesc, {} )
+
 				FileshareNoContentGraphic:completeAnimation()
 				self.FileshareNoContentGraphic:setLeftRight( true, false, 21, 1144.5 )
 				self.FileshareNoContentGraphic:setTopBottom( true, false, 3.25, 482.75 )
 				self.FileshareNoContentGraphic:setAlpha( 1 )
 				self.clipFinished( FileshareNoContentGraphic, {} )
+
 				CreateLeaderboardButton:completeAnimation()
 				self.CreateLeaderboardButton:setAlpha( 0 )
 				self.clipFinished( CreateLeaderboardButton, {} )
+
 				UseDefaultButton:completeAnimation()
 				self.UseDefaultButton:setAlpha( 0 )
 				self.clipFinished( UseDefaultButton, {} )
+
 				Leaderboard:completeAnimation()
 				self.Leaderboard:setAlpha( 0 )
 				self.clipFinished( Leaderboard, {} )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0 )
 				self.clipFinished( Backing, {} )
+
 				GroupLeaderboardTitle:completeAnimation()
 				self.GroupLeaderboardTitle:setAlpha( 0 )
 				self.clipFinished( GroupLeaderboardTitle, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				featlineleft0:completeAnimation()
 				self.featlineleft0:setAlpha( 0 )
 				self.clipFinished( featlineleft0, {} )
+
 				featlineleft00:completeAnimation()
 				self.featlineleft00:setAlpha( 0 )
 				self.clipFinished( featlineleft00, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "LeaderboardOptions",
@@ -849,6 +889,7 @@ CoD.LeaderboardTab.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FileshareNoContentGraphic:close()
 		element.CreateLeaderboardButton:close()

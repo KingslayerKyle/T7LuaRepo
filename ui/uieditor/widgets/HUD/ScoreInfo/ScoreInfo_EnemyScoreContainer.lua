@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.ScoreInfo.ScoreInfo_MeterLine" )
 CoD.ScoreInfo_EnemyScoreContainer = InheritFrom( LUI.UIElement )
 CoD.ScoreInfo_EnemyScoreContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreInfo_EnemyScoreContainer )
 	self.id = "ScoreInfo_EnemyScoreContainer"
@@ -105,18 +107,22 @@ CoD.ScoreInfo_EnemyScoreContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				EnemyScore:completeAnimation()
 				self.EnemyScore:setLeftRight( true, false, 12.5, 65.5 )
 				self.EnemyScore:setTopBottom( false, false, -15, 12 )
 				self.clipFinished( EnemyScore, {} )
+
 				Meter:completeAnimation()
 				self.Meter:setLeftRight( true, false, 95.5, 146.5 )
 				self.Meter:setTopBottom( false, false, 181, 204 )
 				self.clipFinished( Meter, {} )
+
 				MeterLine:completeAnimation()
 				self.MeterLine:setLeftRight( false, false, 22, 73 )
 				self.MeterLine:setTopBottom( false, false, 181, 204 )
 				self.clipFinished( MeterLine, {} )
+
 				Separator:completeAnimation()
 				self.Separator:setLeftRight( true, false, 93.5, 101.5 )
 				self.Separator:setTopBottom( true, false, 199.5, 223.5 )
@@ -126,15 +132,19 @@ CoD.ScoreInfo_EnemyScoreContainer.new = function ( menu, controller )
 		Infected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				EnemyScore:completeAnimation()
 				self.EnemyScore:setAlpha( 0 )
 				self.clipFinished( EnemyScore, {} )
+
 				Meter:completeAnimation()
 				self.Meter:setAlpha( 0 )
 				self.clipFinished( Meter, {} )
+
 				MeterLine:completeAnimation()
 				self.MeterLine:setAlpha( 0 )
 				self.clipFinished( MeterLine, {} )
+
 				Separator:completeAnimation()
 				self.Separator:setAlpha( 0 )
 				self.clipFinished( Separator, {} )
@@ -143,18 +153,22 @@ CoD.ScoreInfo_EnemyScoreContainer.new = function ( menu, controller )
 		Count3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				EnemyScore:completeAnimation()
 				self.EnemyScore:setLeftRight( true, false, 12.5, 65.5 )
 				self.EnemyScore:setTopBottom( false, false, -15, 12 )
 				self.clipFinished( EnemyScore, {} )
+
 				Meter:completeAnimation()
 				self.Meter:setLeftRight( false, false, -9, 42 )
 				self.Meter:setTopBottom( false, false, -12, 11 )
 				self.clipFinished( Meter, {} )
+
 				MeterLine:completeAnimation()
 				self.MeterLine:setLeftRight( false, false, -3, 48 )
 				self.MeterLine:setTopBottom( false, false, -14, 9 )
 				self.clipFinished( MeterLine, {} )
+
 				Separator:completeAnimation()
 				self.Separator:setLeftRight( true, false, 63.5, 71.5 )
 				self.Separator:setTopBottom( true, false, 4.5, 28.5 )
@@ -165,18 +179,22 @@ CoD.ScoreInfo_EnemyScoreContainer.new = function ( menu, controller )
 		Count4 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				EnemyScore:completeAnimation()
 				self.EnemyScore:setLeftRight( true, false, 12.5, 65.5 )
 				self.EnemyScore:setTopBottom( false, false, -15, 12 )
 				self.clipFinished( EnemyScore, {} )
+
 				Meter:completeAnimation()
 				self.Meter:setLeftRight( true, false, 85.5, 136.5 )
 				self.Meter:setTopBottom( false, false, -12, 11 )
 				self.clipFinished( Meter, {} )
+
 				MeterLine:completeAnimation()
 				self.MeterLine:setLeftRight( false, false, -3, 48 )
 				self.MeterLine:setTopBottom( false, false, -14, 9 )
 				self.clipFinished( MeterLine, {} )
+
 				Separator:completeAnimation()
 				self.Separator:setLeftRight( true, false, 63.5, 71.5 )
 				self.Separator:setTopBottom( true, false, 4.5, 28.5 )
@@ -187,18 +205,22 @@ CoD.ScoreInfo_EnemyScoreContainer.new = function ( menu, controller )
 		Count5 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				EnemyScore:completeAnimation()
 				self.EnemyScore:setLeftRight( true, false, 8.5, 61.5 )
 				self.EnemyScore:setTopBottom( false, false, -15, 12 )
 				self.clipFinished( EnemyScore, {} )
+
 				Meter:completeAnimation()
 				self.Meter:setLeftRight( true, false, 84.5, 135.5 )
 				self.Meter:setTopBottom( false, false, -12, 11 )
 				self.clipFinished( Meter, {} )
+
 				MeterLine:completeAnimation()
 				self.MeterLine:setLeftRight( false, false, -3, 48 )
 				self.MeterLine:setTopBottom( false, false, -14, 9 )
 				self.clipFinished( MeterLine, {} )
+
 				Separator:completeAnimation()
 				self.Separator:setLeftRight( true, false, 68.5, 76.5 )
 				self.Separator:setTopBottom( true, false, 4.5, 28.5 )
@@ -208,18 +230,22 @@ CoD.ScoreInfo_EnemyScoreContainer.new = function ( menu, controller )
 		Count6 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				EnemyScore:completeAnimation()
 				self.EnemyScore:setLeftRight( true, false, 8.5, 73.5 )
 				self.EnemyScore:setTopBottom( false, false, -15, 12 )
 				self.clipFinished( EnemyScore, {} )
+
 				Meter:completeAnimation()
 				self.Meter:setLeftRight( true, false, 95.5, 146.5 )
 				self.Meter:setTopBottom( false, false, -12, 11 )
 				self.clipFinished( Meter, {} )
+
 				MeterLine:completeAnimation()
 				self.MeterLine:setLeftRight( false, false, 9, 60 )
 				self.MeterLine:setTopBottom( false, false, -14, 9 )
 				self.clipFinished( MeterLine, {} )
+
 				Separator:completeAnimation()
 				self.Separator:setLeftRight( true, false, 80.5, 88.5 )
 				self.Separator:setTopBottom( true, false, 4.5, 28.5 )
@@ -229,18 +255,22 @@ CoD.ScoreInfo_EnemyScoreContainer.new = function ( menu, controller )
 		Count7 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				EnemyScore:completeAnimation()
 				self.EnemyScore:setLeftRight( true, false, 8.5, 85.5 )
 				self.EnemyScore:setTopBottom( false, false, -15, 12 )
 				self.clipFinished( EnemyScore, {} )
+
 				Meter:completeAnimation()
 				self.Meter:setLeftRight( false, false, 20, 71 )
 				self.Meter:setTopBottom( false, false, -12, 11 )
 				self.clipFinished( Meter, {} )
+
 				MeterLine:completeAnimation()
 				self.MeterLine:setLeftRight( false, false, 22, 73 )
 				self.MeterLine:setTopBottom( false, false, -14, 9 )
 				self.clipFinished( MeterLine, {} )
+
 				Separator:completeAnimation()
 				self.Separator:setLeftRight( true, false, 93.5, 101.5 )
 				self.Separator:setTopBottom( true, false, 4.5, 28.5 )
@@ -248,6 +278,7 @@ CoD.ScoreInfo_EnemyScoreContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Infected",
@@ -294,6 +325,7 @@ CoD.ScoreInfo_EnemyScoreContainer.new = function ( menu, controller )
 			modelName = "gameScore.enemyScore"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Meter:close()
 		element.MeterLine:close()

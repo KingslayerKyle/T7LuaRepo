@@ -4,9 +4,11 @@
 CoD.BM_Contracts_ContractAmountWidget = InheritFrom( LUI.UIElement )
 CoD.BM_Contracts_ContractAmountWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Contracts_ContractAmountWidget )
 	self.id = "BM_Contracts_ContractAmountWidget"
@@ -91,21 +93,26 @@ CoD.BM_Contracts_ContractAmountWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Numberbacker:completeAnimation()
 				self.Numberbacker:setAlpha( 1 )
 				self.clipFinished( Numberbacker, {} )
+
 				GoldContracts:completeAnimation()
 				self.GoldContracts:setAlpha( 1 )
 				self.clipFinished( GoldContracts, {} )
+
 				SilverContracts:completeAnimation()
 				self.SilverContracts:setAlpha( 0 )
 				self.clipFinished( SilverContracts, {} )
+
 				ContractCounter:completeAnimation()
 				self.ContractCounter:setLeftRight( false, true, -100.75, -34.75 )
 				self.ContractCounter:setTopBottom( false, false, -20, 25 )
 				self.ContractCounter:setRGB( 0.93, 0.69, 0.35 )
 				self.ContractCounter:setAlpha( 1 )
 				self.clipFinished( ContractCounter, {} )
+
 				TextBoxMax:completeAnimation()
 				self.TextBoxMax:setLeftRight( false, true, -103.75, -30.75 )
 				self.TextBoxMax:setTopBottom( false, false, 8.5, 27.5 )
@@ -116,21 +123,26 @@ CoD.BM_Contracts_ContractAmountWidget.new = function ( menu, controller )
 		Max = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Numberbacker:completeAnimation()
 				self.Numberbacker:setAlpha( 1 )
 				self.clipFinished( Numberbacker, {} )
+
 				GoldContracts:completeAnimation()
 				self.GoldContracts:setAlpha( 1 )
 				self.clipFinished( GoldContracts, {} )
+
 				SilverContracts:completeAnimation()
 				self.SilverContracts:setAlpha( 0 )
 				self.clipFinished( SilverContracts, {} )
+
 				ContractCounter:completeAnimation()
 				self.ContractCounter:setLeftRight( false, true, -99.75, -33.75 )
 				self.ContractCounter:setTopBottom( false, false, -27, 18 )
 				self.ContractCounter:setRGB( 0.93, 0.69, 0.35 )
 				self.ContractCounter:setAlpha( 1 )
 				self.clipFinished( ContractCounter, {} )
+
 				TextBoxMax:completeAnimation()
 				self.TextBoxMax:setLeftRight( false, true, -102.75, -29.75 )
 				self.TextBoxMax:setTopBottom( false, false, 7.5, 26.5 )
@@ -142,20 +154,25 @@ CoD.BM_Contracts_ContractAmountWidget.new = function ( menu, controller )
 		None = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Numberbacker:completeAnimation()
 				self.Numberbacker:setAlpha( 1 )
 				self.clipFinished( Numberbacker, {} )
+
 				GoldContracts:completeAnimation()
 				self.GoldContracts:setAlpha( 0 )
 				self.clipFinished( GoldContracts, {} )
+
 				SilverContracts:completeAnimation()
 				self.SilverContracts:setAlpha( 1 )
 				self.clipFinished( SilverContracts, {} )
+
 				ContractCounter:completeAnimation()
 				self.ContractCounter:setLeftRight( false, true, -100.75, -34.75 )
 				self.ContractCounter:setTopBottom( false, false, -20, 25 )
 				self.ContractCounter:setRGB( 0.4, 0.4, 0.4 )
 				self.clipFinished( ContractCounter, {} )
+
 				TextBoxMax:completeAnimation()
 				self.TextBoxMax:setLeftRight( false, true, -103.75, -30.75 )
 				self.TextBoxMax:setTopBottom( false, false, 8.5, 27.5 )
@@ -164,6 +181,7 @@ CoD.BM_Contracts_ContractAmountWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Max",
@@ -178,6 +196,7 @@ CoD.BM_Contracts_ContractAmountWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ContractCounter:close()
 	end )

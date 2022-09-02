@@ -4,9 +4,11 @@
 CoD.AtviCopy = InheritFrom( LUI.UIElement )
 CoD.AtviCopy.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.AtviCopy )
 	self.id = "AtviCopy"
@@ -29,10 +31,12 @@ CoD.AtviCopy.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 				self.nextClip = "DefaultClip"
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 				self.nextClip = "Focus"
 			end
 		}

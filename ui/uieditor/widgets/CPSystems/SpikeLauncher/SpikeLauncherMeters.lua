@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CPSystems.SpikeLauncher.SpikeLauncherMetersTop" )
 CoD.SpikeLauncherMeters = InheritFrom( LUI.UIElement )
 CoD.SpikeLauncherMeters.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpikeLauncherMeters )
 	self.id = "SpikeLauncherMeters"

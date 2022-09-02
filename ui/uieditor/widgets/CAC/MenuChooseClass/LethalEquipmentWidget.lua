@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.MenuChooseClass.CategoryHeader" )
 CoD.LethalEquipmentWidget = InheritFrom( LUI.UIElement )
 CoD.LethalEquipmentWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LethalEquipmentWidget )
 	self.id = "LethalEquipmentWidget"
@@ -122,6 +124,7 @@ CoD.LethalEquipmentWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Equipment2:close()
 		element.Equipment1:close()

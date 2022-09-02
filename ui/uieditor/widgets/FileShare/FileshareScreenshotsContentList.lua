@@ -14,9 +14,11 @@ end
 CoD.FileshareScreenshotsContentList = InheritFrom( LUI.UIElement )
 CoD.FileshareScreenshotsContentList.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FileshareScreenshotsContentList )
 	self.id = "FileshareScreenshotsContentList"
@@ -183,6 +185,7 @@ CoD.FileshareScreenshotsContentList.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FileshareNoContentGraphic0:close()
 		element.contentList:close()

@@ -11,9 +11,11 @@ require( "ui.uieditor.widgets.CAC.cac_ButtonBoxLrgInactiveDiags" )
 CoD.Challenges_CallingCardProfiler_DarkOps = InheritFrom( LUI.UIElement )
 CoD.Challenges_CallingCardProfiler_DarkOps.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_CallingCardProfiler_DarkOps )
 	self.id = "Challenges_CallingCardProfiler_DarkOps"
@@ -163,24 +165,31 @@ CoD.Challenges_CallingCardProfiler_DarkOps.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				SelectedCardIcon:completeAnimation()
 				self.SelectedCardIcon:setAlpha( 1 )
 				self.clipFinished( SelectedCardIcon, {} )
+
 				CallingCardsFrameWidget0:completeAnimation()
 				self.CallingCardsFrameWidget0:setAlpha( 1 )
 				self.clipFinished( CallingCardsFrameWidget0, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				featlineleft0:completeAnimation()
 				self.featlineleft0:setAlpha( 0 )
 				self.clipFinished( featlineleft0, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				featlineleft000:completeAnimation()
 				self.featlineleft000:setAlpha( 0 )
 				self.clipFinished( featlineleft000, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
@@ -189,28 +198,35 @@ CoD.Challenges_CallingCardProfiler_DarkOps.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				SelectedCardIcon:completeAnimation()
 				self.SelectedCardIcon:setAlpha( 0 )
 				self.clipFinished( SelectedCardIcon, {} )
+
 				CallingCardsFrameWidget0:completeAnimation()
 				self.CallingCardsFrameWidget0:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget0, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0.4 )
 				self.clipFinished( TitleBg, {} )
+
 				featlineleft0:completeAnimation()
 				self.featlineleft0:setLeftRight( true, false, 175, 179 )
 				self.featlineleft0:setTopBottom( true, false, -117, 242 )
 				self.clipFinished( featlineleft0, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 1 )
 				self.clipFinished( LockedIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -227,6 +243,7 @@ CoD.Challenges_CallingCardProfiler_DarkOps.new = function ( menu, controller )
 			modelName = "isLocked"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG0:close()
 		element.BoxButtonLrgInactive:close()

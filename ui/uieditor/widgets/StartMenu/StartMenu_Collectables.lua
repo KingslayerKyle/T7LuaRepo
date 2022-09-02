@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_CollectableItem" )
 CoD.StartMenu_Collectables = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Collectables.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Collectables )
 	self.id = "StartMenu_Collectables"
@@ -51,6 +53,7 @@ CoD.StartMenu_Collectables.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				TextBox30:completeAnimation()
 				self.TextBox30:setAlpha( 1 )
 				self.clipFinished( TextBox30, {} )
@@ -59,17 +62,20 @@ CoD.StartMenu_Collectables.new = function ( menu, controller )
 		CP_PauseMenu = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				TextBox30:completeAnimation()
 				self.TextBox30:setAlpha( 0 )
 				self.clipFinished( TextBox30, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CP_PauseMenu",
@@ -100,6 +106,7 @@ CoD.StartMenu_Collectables.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.List:close()
 	end )

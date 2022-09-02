@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_PanelNoBlur" )
 CoD.StorePriceLabel = InheritFrom( LUI.UIElement )
 CoD.StorePriceLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StorePriceLabel )
 	self.id = "StorePriceLabel"
@@ -43,6 +45,7 @@ CoD.StorePriceLabel.new = function ( menu, controller )
 	itemName:setLetterSpacing( 0.5 )
 	itemName:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 	itemName:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_BOTTOM )
+
 	LUI.OverrideFunction_CallOriginalFirst( itemName, "setText", function ( element, controller )
 		ScaleWidgetToLabelRightAligned( self, element, 6 )
 	end )
@@ -53,9 +56,11 @@ CoD.StorePriceLabel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 	end )

@@ -4,9 +4,11 @@
 CoD.StartMenu_ConnectionMeter_PacketLossImage = InheritFrom( LUI.UIElement )
 CoD.StartMenu_ConnectionMeter_PacketLossImage.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.StartMenu_ConnectionMeter_PacketLossImage )
 	self.id = "StartMenu_ConnectionMeter_PacketLossImage"
@@ -42,12 +44,15 @@ CoD.StartMenu_ConnectionMeter_PacketLossImage.new = function ( menu, controller 
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Level1Image:completeAnimation()
 				self.Level1Image:setAlpha( 0 )
 				self.clipFinished( Level1Image, {} )
+
 				Level2Image:completeAnimation()
 				self.Level2Image:setAlpha( 0 )
 				self.clipFinished( Level2Image, {} )
+
 				Level3Image:completeAnimation()
 				self.Level3Image:setAlpha( 0 )
 				self.clipFinished( Level3Image, {} )
@@ -56,12 +61,15 @@ CoD.StartMenu_ConnectionMeter_PacketLossImage.new = function ( menu, controller 
 		Level1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Level1Image:completeAnimation()
 				self.Level1Image:setAlpha( 1 )
 				self.clipFinished( Level1Image, {} )
+
 				Level2Image:completeAnimation()
 				self.Level2Image:setAlpha( 0 )
 				self.clipFinished( Level2Image, {} )
+
 				Level3Image:completeAnimation()
 				self.Level3Image:setAlpha( 0 )
 				self.clipFinished( Level3Image, {} )
@@ -70,12 +78,15 @@ CoD.StartMenu_ConnectionMeter_PacketLossImage.new = function ( menu, controller 
 		Level2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Level1Image:completeAnimation()
 				self.Level1Image:setAlpha( 0 )
 				self.clipFinished( Level1Image, {} )
+
 				Level2Image:completeAnimation()
 				self.Level2Image:setAlpha( 1 )
 				self.clipFinished( Level2Image, {} )
+
 				Level3Image:completeAnimation()
 				self.Level3Image:setAlpha( 0 )
 				self.clipFinished( Level3Image, {} )
@@ -84,18 +95,22 @@ CoD.StartMenu_ConnectionMeter_PacketLossImage.new = function ( menu, controller 
 		Level3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Level1Image:completeAnimation()
 				self.Level1Image:setAlpha( 0 )
 				self.clipFinished( Level1Image, {} )
+
 				Level2Image:completeAnimation()
 				self.Level2Image:setAlpha( 0 )
 				self.clipFinished( Level2Image, {} )
+
 				Level3Image:completeAnimation()
 				self.Level3Image:setAlpha( 1 )
 				self.clipFinished( Level3Image, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Level1",

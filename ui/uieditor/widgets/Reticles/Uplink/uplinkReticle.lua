@@ -8,9 +8,11 @@ end
 CoD.uplinkReticle = InheritFrom( LUI.UIElement )
 CoD.uplinkReticle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.uplinkReticle )
 	self.id = "uplinkReticle"
@@ -31,6 +33,7 @@ CoD.uplinkReticle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				reticleNew:completeAnimation()
 				self.reticleNew:setRGB( 1, 1, 1 )
 				self.clipFinished( reticleNew, {} )
@@ -39,12 +42,14 @@ CoD.uplinkReticle.new = function ( menu, controller )
 		PassTarget = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				reticleNew:completeAnimation()
 				self.reticleNew:setRGB( ColorSet.FriendlyBlue.r, ColorSet.FriendlyBlue.g, ColorSet.FriendlyBlue.b )
 				self.clipFinished( reticleNew, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "PassTarget",

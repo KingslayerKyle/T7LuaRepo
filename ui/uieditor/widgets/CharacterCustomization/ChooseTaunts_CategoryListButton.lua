@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FocusBarContainer" )
 CoD.ChooseTaunts_CategoryListButton = InheritFrom( LUI.UIElement )
 CoD.ChooseTaunts_CategoryListButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseTaunts_CategoryListButton )
 	self.id = "ChooseTaunts_CategoryListButton"
@@ -85,24 +87,29 @@ CoD.ChooseTaunts_CategoryListButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FocusBarT0:completeAnimation()
 				self.FocusBarT0:setAlpha( 0 )
 				self.clipFinished( FocusBarT0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 2 )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 1 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FocusBarT0:completeAnimation()
 				self.FocusBarT0:setAlpha( 1 )
 				self.clipFinished( FocusBarT0, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG0:close()
 		element.StartMenuframenoBG1:close()

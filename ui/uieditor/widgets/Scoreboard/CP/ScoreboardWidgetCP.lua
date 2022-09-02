@@ -21,9 +21,11 @@ end
 CoD.ScoreboardWidgetCP = InheritFrom( LUI.UIElement )
 CoD.ScoreboardWidgetCP.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreboardWidgetCP )
 	self.id = "ScoreboardWidgetCP"
@@ -112,18 +114,22 @@ CoD.ScoreboardWidgetCP.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ScoreboardHeaderWidgetCP0:completeAnimation()
 				self.ScoreboardHeaderWidgetCP0:setAlpha( 0 )
 				self.clipFinished( ScoreboardHeaderWidgetCP0, {} )
+
 				ScoreboardFactionScoresListCP0:completeAnimation()
 				self.ScoreboardFactionScoresListCP0:setAlpha( 0 )
 				self.clipFinished( ScoreboardFactionScoresListCP0, {} )
+
 				ScoreboardWidgetButtonContainer:completeAnimation()
 				self.ScoreboardWidgetButtonContainer:setAlpha( 0 )
 				self.clipFinished( ScoreboardWidgetButtonContainer, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 2 )
+
 				local ScoreboardHeaderWidgetCP0Frame2 = function ( ScoreboardHeaderWidgetCP0, event )
 					if not event.interrupted then
 						ScoreboardHeaderWidgetCP0:beginAnimation( "keyframe", 189, false, false, CoD.TweenType.Linear )
@@ -159,14 +165,17 @@ CoD.ScoreboardWidgetCP.new = function ( menu, controller )
 		ArabicZombieAAR = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ScoreboardHeaderWidgetCP0:completeAnimation()
 				self.ScoreboardHeaderWidgetCP0:setLeftRight( true, false, 152.5, 954.5 )
 				self.ScoreboardHeaderWidgetCP0:setTopBottom( true, false, 0, 32 )
 				self.ScoreboardHeaderWidgetCP0:setAlpha( 1 )
 				self.clipFinished( ScoreboardHeaderWidgetCP0, {} )
+
 				ScoreboardFactionScoresListCP0:completeAnimation()
 				self.ScoreboardFactionScoresListCP0:setAlpha( 1 )
 				self.clipFinished( ScoreboardFactionScoresListCP0, {} )
+
 				ScoreboardWidgetButtonContainer:completeAnimation()
 				self.ScoreboardWidgetButtonContainer:setAlpha( 0 )
 				self.clipFinished( ScoreboardWidgetButtonContainer, {} )
@@ -175,12 +184,15 @@ CoD.ScoreboardWidgetCP.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ScoreboardHeaderWidgetCP0:completeAnimation()
 				self.ScoreboardHeaderWidgetCP0:setAlpha( 1 )
 				self.clipFinished( ScoreboardHeaderWidgetCP0, {} )
+
 				ScoreboardFactionScoresListCP0:completeAnimation()
 				self.ScoreboardFactionScoresListCP0:setAlpha( 1 )
 				self.clipFinished( ScoreboardFactionScoresListCP0, {} )
+
 				ScoreboardWidgetButtonContainer:completeAnimation()
 				self.ScoreboardWidgetButtonContainer:setAlpha( 1 )
 				self.clipFinished( ScoreboardWidgetButtonContainer, {} )
@@ -189,12 +201,15 @@ CoD.ScoreboardWidgetCP.new = function ( menu, controller )
 		ForceVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ScoreboardHeaderWidgetCP0:completeAnimation()
 				self.ScoreboardHeaderWidgetCP0:setAlpha( 1 )
 				self.clipFinished( ScoreboardHeaderWidgetCP0, {} )
+
 				ScoreboardFactionScoresListCP0:completeAnimation()
 				self.ScoreboardFactionScoresListCP0:setAlpha( 1 )
 				self.clipFinished( ScoreboardFactionScoresListCP0, {} )
+
 				ScoreboardWidgetButtonContainer:completeAnimation()
 				self.ScoreboardWidgetButtonContainer:setAlpha( 1 )
 				self.clipFinished( ScoreboardWidgetButtonContainer, {} )
@@ -203,18 +218,22 @@ CoD.ScoreboardWidgetCP.new = function ( menu, controller )
 		Frontend = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ScoreboardHeaderWidgetCP0:completeAnimation()
 				self.ScoreboardHeaderWidgetCP0:setAlpha( 0 )
 				self.clipFinished( ScoreboardHeaderWidgetCP0, {} )
+
 				ScoreboardFactionScoresListCP0:completeAnimation()
 				self.ScoreboardFactionScoresListCP0:setAlpha( 1 )
 				self.clipFinished( ScoreboardFactionScoresListCP0, {} )
+
 				ScoreboardWidgetButtonContainer:completeAnimation()
 				self.ScoreboardWidgetButtonContainer:setAlpha( 1 )
 				self.clipFinished( ScoreboardWidgetButtonContainer, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ArabicZombieAAR",
@@ -281,6 +300,7 @@ CoD.ScoreboardWidgetCP.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ScoreboardHeaderWidgetCP0:close()
 		element.ScoreboardFactionScoresListCP0:close()

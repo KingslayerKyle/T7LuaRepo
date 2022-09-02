@@ -4,9 +4,11 @@
 CoD.WeaponLevelUpNotification_FooterBacking01 = InheritFrom( LUI.UIElement )
 CoD.WeaponLevelUpNotification_FooterBacking01.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponLevelUpNotification_FooterBacking01 )
 	self.id = "WeaponLevelUpNotification_FooterBacking01"

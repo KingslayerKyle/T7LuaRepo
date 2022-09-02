@@ -4,9 +4,11 @@
 CoD.CallingCards_GameModeHeroicsWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_GameModeHeroicsWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_GameModeHeroicsWidget )
 	self.id = "CallingCards_GameModeHeroicsWidget"

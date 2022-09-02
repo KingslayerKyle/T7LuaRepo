@@ -4,9 +4,11 @@
 CoD.FEMenuLargeGraphics = InheritFrom( LUI.UIElement )
 CoD.FEMenuLargeGraphics.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FEMenuLargeGraphics )
 	self.id = "FEMenuLargeGraphics"

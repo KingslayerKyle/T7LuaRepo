@@ -4,9 +4,11 @@
 CoD.Top3PlayerScoreBlurBox = InheritFrom( LUI.UIElement )
 CoD.Top3PlayerScoreBlurBox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Top3PlayerScoreBlurBox )
 	self.id = "Top3PlayerScoreBlurBox"

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_BackCircle" )
 CoD.CPTrainingSimProgressWidget = InheritFrom( LUI.UIElement )
 CoD.CPTrainingSimProgressWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CPTrainingSimProgressWidget )
 	self.id = "CPTrainingSimProgressWidget"
@@ -80,12 +82,14 @@ CoD.CPTrainingSimProgressWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				glow:completeAnimation()
 				self.glow:setAlpha( 0 )
 				self.clipFinished( glow, {} )
 			end,
 			RankUp = function ()
 				self:setupElementClipCounter( 3 )
+
 				local progressRingFrame2 = function ( progressRing, event )
 					local progressRingFrame3 = function ( progressRing, event )
 						if not event.interrupted then
@@ -176,6 +180,7 @@ CoD.CPTrainingSimProgressWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BackCircle:close()
 	end )

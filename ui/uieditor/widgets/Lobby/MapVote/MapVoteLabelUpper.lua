@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ListHeaderGlow" )
 CoD.MapVoteLabelUpper = InheritFrom( LUI.UIElement )
 CoD.MapVoteLabelUpper.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MapVoteLabelUpper )
 	self.id = "MapVoteLabelUpper"
@@ -33,6 +35,7 @@ CoD.MapVoteLabelUpper.new = function ( menu, controller )
 	btnDisplayTextStroke:setShaderVector( 1, 0.06, 0, 0, 0 )
 	btnDisplayTextStroke:setShaderVector( 2, 1, 0, 0, 0 )
 	btnDisplayTextStroke:setLetterSpacing( 2.5 )
+
 	LUI.OverrideFunction_CallOriginalFirst( btnDisplayTextStroke, "setText", function ( element, controller )
 		ScaleWidgetToLabelLeftJustify( self, element, 2 )
 	end )
@@ -43,9 +46,11 @@ CoD.MapVoteLabelUpper.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEListHeaderGlow0:close()
 	end )

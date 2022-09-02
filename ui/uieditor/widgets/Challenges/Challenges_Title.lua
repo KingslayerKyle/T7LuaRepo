@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.Challenges_Title = InheritFrom( LUI.UIElement )
 CoD.Challenges_Title.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_Title )
 	self.id = "Challenges_Title"
@@ -50,6 +52,7 @@ CoD.Challenges_Title.new = function ( menu, controller )
 			weaponNameLabel:setText( Engine.Localize( name ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( weaponNameLabel, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 2 )
 	end )

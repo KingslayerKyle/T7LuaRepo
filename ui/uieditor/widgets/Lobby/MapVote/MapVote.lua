@@ -192,9 +192,11 @@ end
 CoD.MapVote = InheritFrom( LUI.UIElement )
 CoD.MapVote.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MapVote )
 	self.id = "MapVote"
@@ -621,57 +623,75 @@ CoD.MapVote.new = function ( menu, controller )
 		CPHidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 18 )
+
 				MapVoteItemVoteDecided:completeAnimation()
 				self.MapVoteItemVoteDecided:setAlpha( 0 )
 				self.clipFinished( MapVoteItemVoteDecided, {} )
+
 				MapVoteItemRandom:completeAnimation()
 				self.MapVoteItemRandom:setAlpha( 0 )
 				self.clipFinished( MapVoteItemRandom, {} )
+
 				MapVoteItemPrevious:completeAnimation()
 				self.MapVoteItemPrevious:setAlpha( 0 )
 				self.clipFinished( MapVoteItemPrevious, {} )
+
 				MapVoteItemNext:completeAnimation()
 				self.MapVoteItemNext:setAlpha( 0 )
 				self.clipFinished( MapVoteItemNext, {} )
+
 				FEListSubHeaderGlow0:completeAnimation()
 				self.FEListSubHeaderGlow0:setAlpha( 0 )
 				self.clipFinished( FEListSubHeaderGlow0, {} )
+
 				MapVoting:completeAnimation()
 				self.MapVoting:setAlpha( 0 )
 				self.clipFinished( MapVoting, {} )
+
 				LobbyStatus:completeAnimation()
 				self.LobbyStatus:setAlpha( 0 )
 				self.clipFinished( LobbyStatus, {} )
+
 				FETitleLineUpper:completeAnimation()
 				self.FETitleLineUpper:setAlpha( 0 )
 				self.clipFinished( FETitleLineUpper, {} )
+
 				FETitleLineUpper0:completeAnimation()
 				self.FETitleLineUpper0:setAlpha( 0 )
 				self.clipFinished( FETitleLineUpper0, {} )
+
 				FETitleLineBottom0:completeAnimation()
 				self.FETitleLineBottom0:setAlpha( 0 )
 				self.clipFinished( FETitleLineBottom0, {} )
+
 				FRBestTime:completeAnimation()
 				self.FRBestTime:setAlpha( 0 )
 				self.clipFinished( FRBestTime, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 0 )
 				self.clipFinished( FRDifficulty, {} )
+
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 0 )
 				self.clipFinished( ArenaRules, {} )
+
 				MapVoteNoDemoSelected:completeAnimation()
 				self.MapVoteNoDemoSelected:setAlpha( 0 )
 				self.clipFinished( MapVoteNoDemoSelected, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
+
 				FileshareSpinner:completeAnimation()
 				self.FileshareSpinner:setAlpha( 0 )
 				self.clipFinished( FileshareSpinner, {} )
+
 				DownloadPercent:completeAnimation()
 				self.DownloadPercent:setAlpha( 0 )
 				self.clipFinished( DownloadPercent, {} )
+
 				MapVoteOfficial:completeAnimation()
 				self.MapVoteOfficial:setAlpha( 0 )
 				self.clipFinished( MapVoteOfficial, {} )
@@ -680,57 +700,75 @@ CoD.MapVote.new = function ( menu, controller )
 		MPHidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 18 )
+
 				MapVoteItemVoteDecided:completeAnimation()
 				self.MapVoteItemVoteDecided:setAlpha( 0 )
 				self.clipFinished( MapVoteItemVoteDecided, {} )
+
 				MapVoteItemRandom:completeAnimation()
 				self.MapVoteItemRandom:setAlpha( 0 )
 				self.clipFinished( MapVoteItemRandom, {} )
+
 				MapVoteItemPrevious:completeAnimation()
 				self.MapVoteItemPrevious:setAlpha( 0 )
 				self.clipFinished( MapVoteItemPrevious, {} )
+
 				MapVoteItemNext:completeAnimation()
 				self.MapVoteItemNext:setAlpha( 0 )
 				self.clipFinished( MapVoteItemNext, {} )
+
 				FEListSubHeaderGlow0:completeAnimation()
 				self.FEListSubHeaderGlow0:setAlpha( 0 )
 				self.clipFinished( FEListSubHeaderGlow0, {} )
+
 				MapVoting:completeAnimation()
 				self.MapVoting:setAlpha( 0 )
 				self.clipFinished( MapVoting, {} )
+
 				LobbyStatus:completeAnimation()
 				self.LobbyStatus:setAlpha( 0 )
 				self.clipFinished( LobbyStatus, {} )
+
 				FETitleLineUpper:completeAnimation()
 				self.FETitleLineUpper:setAlpha( 0 )
 				self.clipFinished( FETitleLineUpper, {} )
+
 				FETitleLineUpper0:completeAnimation()
 				self.FETitleLineUpper0:setAlpha( 0 )
 				self.clipFinished( FETitleLineUpper0, {} )
+
 				FETitleLineBottom0:completeAnimation()
 				self.FETitleLineBottom0:setAlpha( 0 )
 				self.clipFinished( FETitleLineBottom0, {} )
+
 				FRBestTime:completeAnimation()
 				self.FRBestTime:setAlpha( 0 )
 				self.clipFinished( FRBestTime, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 0 )
 				self.clipFinished( FRDifficulty, {} )
+
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 0 )
 				self.clipFinished( ArenaRules, {} )
+
 				MapVoteNoDemoSelected:completeAnimation()
 				self.MapVoteNoDemoSelected:setAlpha( 0 )
 				self.clipFinished( MapVoteNoDemoSelected, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
+
 				FileshareSpinner:completeAnimation()
 				self.FileshareSpinner:setAlpha( 0 )
 				self.clipFinished( FileshareSpinner, {} )
+
 				DownloadPercent:completeAnimation()
 				self.DownloadPercent:setAlpha( 0 )
 				self.clipFinished( DownloadPercent, {} )
+
 				MapVoteOfficial:completeAnimation()
 				self.MapVoteOfficial:setAlpha( 0 )
 				self.clipFinished( MapVoteOfficial, {} )
@@ -739,57 +777,75 @@ CoD.MapVote.new = function ( menu, controller )
 		ZMHidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 18 )
+
 				MapVoteItemVoteDecided:completeAnimation()
 				self.MapVoteItemVoteDecided:setAlpha( 0 )
 				self.clipFinished( MapVoteItemVoteDecided, {} )
+
 				MapVoteItemRandom:completeAnimation()
 				self.MapVoteItemRandom:setAlpha( 0 )
 				self.clipFinished( MapVoteItemRandom, {} )
+
 				MapVoteItemPrevious:completeAnimation()
 				self.MapVoteItemPrevious:setAlpha( 0 )
 				self.clipFinished( MapVoteItemPrevious, {} )
+
 				MapVoteItemNext:completeAnimation()
 				self.MapVoteItemNext:setAlpha( 0 )
 				self.clipFinished( MapVoteItemNext, {} )
+
 				FEListSubHeaderGlow0:completeAnimation()
 				self.FEListSubHeaderGlow0:setAlpha( 0 )
 				self.clipFinished( FEListSubHeaderGlow0, {} )
+
 				MapVoting:completeAnimation()
 				self.MapVoting:setAlpha( 0 )
 				self.clipFinished( MapVoting, {} )
+
 				LobbyStatus:completeAnimation()
 				self.LobbyStatus:setAlpha( 0 )
 				self.clipFinished( LobbyStatus, {} )
+
 				FETitleLineUpper:completeAnimation()
 				self.FETitleLineUpper:setAlpha( 0 )
 				self.clipFinished( FETitleLineUpper, {} )
+
 				FETitleLineUpper0:completeAnimation()
 				self.FETitleLineUpper0:setAlpha( 0 )
 				self.clipFinished( FETitleLineUpper0, {} )
+
 				FETitleLineBottom0:completeAnimation()
 				self.FETitleLineBottom0:setAlpha( 0 )
 				self.clipFinished( FETitleLineBottom0, {} )
+
 				FRBestTime:completeAnimation()
 				self.FRBestTime:setAlpha( 0 )
 				self.clipFinished( FRBestTime, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 0 )
 				self.clipFinished( FRDifficulty, {} )
+
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 0 )
 				self.clipFinished( ArenaRules, {} )
+
 				MapVoteNoDemoSelected:completeAnimation()
 				self.MapVoteNoDemoSelected:setAlpha( 0 )
 				self.clipFinished( MapVoteNoDemoSelected, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
+
 				FileshareSpinner:completeAnimation()
 				self.FileshareSpinner:setAlpha( 0 )
 				self.clipFinished( FileshareSpinner, {} )
+
 				DownloadPercent:completeAnimation()
 				self.DownloadPercent:setAlpha( 0 )
 				self.clipFinished( DownloadPercent, {} )
+
 				MapVoteOfficial:completeAnimation()
 				self.MapVoteOfficial:setAlpha( 0 )
 				self.clipFinished( MapVoteOfficial, {} )
@@ -798,74 +854,94 @@ CoD.MapVote.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				MapVoteItemVoteDecided:completeAnimation()
 				self.MapVoteItemVoteDecided:setAlpha( 0 )
 				self.clipFinished( MapVoteItemVoteDecided, {} )
+
 				MapVoteItemRandom:completeAnimation()
 				self.MapVoteItemRandom:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemRandom:setTopBottom( false, false, 30, 88 )
 				self.MapVoteItemRandom:setAlpha( 0 )
 				self.clipFinished( MapVoteItemRandom, {} )
+
 				MapVoteItemPrevious:completeAnimation()
 				self.MapVoteItemPrevious:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemPrevious:setTopBottom( false, false, -30, 28 )
 				self.MapVoteItemPrevious:setAlpha( 0 )
 				self.clipFinished( MapVoteItemPrevious, {} )
+
 				MapVoteItemNext:completeAnimation()
 				self.MapVoteItemNext:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemNext:setTopBottom( false, false, -90, -32 )
 				self.MapVoteItemNext:setAlpha( 0 )
 				self.clipFinished( MapVoteItemNext, {} )
+
 				FEListSubHeaderGlow0:completeAnimation()
 				self.FEListSubHeaderGlow0:setAlpha( 0 )
 				self.clipFinished( FEListSubHeaderGlow0, {} )
+
 				MapVoting:completeAnimation()
 				self.MapVoting:setAlpha( 0 )
 				self.clipFinished( MapVoting, {} )
+
 				LobbyStatus:completeAnimation()
 				self.LobbyStatus:setAlpha( 0 )
 				self.clipFinished( LobbyStatus, {} )
+
 				FETitleLineUpper:completeAnimation()
 				self.FETitleLineUpper:setLeftRight( true, true, 0, 0 )
 				self.FETitleLineUpper:setTopBottom( false, false, -98, -94 )
 				self.FETitleLineUpper:setAlpha( 0 )
 				self.clipFinished( FETitleLineUpper, {} )
+
 				FETitleLineUpper0:completeAnimation()
 				self.FETitleLineUpper0:setAlpha( 0 )
 				self.clipFinished( FETitleLineUpper0, {} )
+
 				FETitleLineBottom0:completeAnimation()
 				self.FETitleLineBottom0:setAlpha( 0 )
 				self.clipFinished( FETitleLineBottom0, {} )
+
 				FRBestTime:completeAnimation()
 				self.FRBestTime:setAlpha( 0 )
 				self.clipFinished( FRBestTime, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 0 )
 				self.clipFinished( FRDifficulty, {} )
+
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 1 )
 				self.clipFinished( ArenaRules, {} )
+
 				MapVoteNoDemoSelected:completeAnimation()
 				self.MapVoteNoDemoSelected:setAlpha( 0 )
 				self.clipFinished( MapVoteNoDemoSelected, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
+
 				FileshareSpinner:completeAnimation()
 				self.FileshareSpinner:setAlpha( 0 )
 				self.clipFinished( FileshareSpinner, {} )
+
 				DownloadPercent:completeAnimation()
 				self.DownloadPercent:setAlpha( 0 )
 				self.clipFinished( DownloadPercent, {} )
+
 				MapVoteOfficial:completeAnimation()
 				self.MapVoteOfficial:setAlpha( 0 )
 				self.clipFinished( MapVoteOfficial, {} )
+
 				ZMLobbyEEList:completeAnimation()
 				self.ZMLobbyEEList:setAlpha( 0 )
 				self.clipFinished( ZMLobbyEEList, {} )
 			end,
 			MapVote = function ()
 				self:setupElementClipCounter( 15 )
+
 				MapVoteItemVoteDecided:completeAnimation()
 				self.MapVoteItemVoteDecided:setAlpha( 0 )
 				self.clipFinished( MapVoteItemVoteDecided, {} )
@@ -900,8 +976,11 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemRandom:completeAnimation()
+
 				MapVoteItemRandom.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemRandom.VoteType:completeAnimation()
+
 				MapVoteItemRandom.voteCount:completeAnimation()
 				self.MapVoteItemRandom:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemRandom:setTopBottom( false, false, 30, 88 )
@@ -941,8 +1020,11 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemPrevious:completeAnimation()
+
 				MapVoteItemPrevious.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemPrevious.VoteType:completeAnimation()
+
 				MapVoteItemPrevious.voteCount:completeAnimation()
 				self.MapVoteItemPrevious:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemPrevious:setTopBottom( false, false, -21, 37 )
@@ -972,8 +1054,11 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemNext:completeAnimation()
+
 				MapVoteItemNext.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemNext.VoteType:completeAnimation()
+
 				MapVoteItemNext.voteCount:completeAnimation()
 				self.MapVoteItemNext:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemNext:setTopBottom( false, false, -72, -14 )
@@ -1115,9 +1200,11 @@ CoD.MapVote.new = function ( menu, controller )
 				self.FETitleLineBottom0:setTopBottom( false, false, 87, 91 )
 				self.FETitleLineBottom0:setAlpha( 0 )
 				FETitleLineBottom0Frame2( FETitleLineBottom0, {} )
+
 				FRBestTime:completeAnimation()
 				self.FRBestTime:setAlpha( 0 )
 				self.clipFinished( FRBestTime, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 0 )
 				self.clipFinished( FRDifficulty, {} )
@@ -1136,6 +1223,7 @@ CoD.MapVote.new = function ( menu, controller )
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 0 )
 				ArenaRulesFrame2( ArenaRules, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
@@ -1167,6 +1255,7 @@ CoD.MapVote.new = function ( menu, controller )
 			end,
 			SelectedMap = function ()
 				self:setupElementClipCounter( 15 )
+
 				local MapVoteItemVoteDecidedFrame2 = function ( MapVoteItemVoteDecided, event )
 					if not event.interrupted then
 						MapVoteItemVoteDecided:beginAnimation( "keyframe", 289, false, false, CoD.TweenType.Bounce )
@@ -1185,6 +1274,7 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemVoteDecided:completeAnimation()
+
 				MapVoteItemVoteDecided.LobbyMemberBackingMask0:completeAnimation()
 				self.MapVoteItemVoteDecided:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemVoteDecided:setTopBottom( false, false, -81, 97 )
@@ -1213,8 +1303,11 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemRandom:completeAnimation()
+
 				MapVoteItemRandom.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemRandom.VoteType:completeAnimation()
+
 				MapVoteItemRandom.voteCount:completeAnimation()
 				self.MapVoteItemRandom:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemRandom:setTopBottom( false, false, 30, 88 )
@@ -1427,6 +1520,7 @@ CoD.MapVote.new = function ( menu, controller )
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 0 )
 				ArenaRulesFrame2( ArenaRules, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
@@ -1450,12 +1544,17 @@ CoD.MapVote.new = function ( menu, controller )
 		MapVote = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				MapVoteItemVoteDecided:completeAnimation()
 				self.MapVoteItemVoteDecided:setAlpha( 0 )
 				self.clipFinished( MapVoteItemVoteDecided, {} )
+
 				MapVoteItemRandom:completeAnimation()
+
 				MapVoteItemRandom.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemRandom.VoteType:completeAnimation()
+
 				MapVoteItemRandom.voteCount:completeAnimation()
 				self.MapVoteItemRandom:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemRandom:setTopBottom( false, false, 30, 88 )
@@ -1465,9 +1564,13 @@ CoD.MapVote.new = function ( menu, controller )
 				self.MapVoteItemRandom.VoteType:setAlpha( 1 )
 				self.MapVoteItemRandom.voteCount:setAlpha( 1 )
 				self.clipFinished( MapVoteItemRandom, {} )
+
 				MapVoteItemPrevious:completeAnimation()
+
 				MapVoteItemPrevious.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemPrevious.VoteType:completeAnimation()
+
 				MapVoteItemPrevious.voteCount:completeAnimation()
 				self.MapVoteItemPrevious:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemPrevious:setTopBottom( false, false, -21, 37 )
@@ -1477,59 +1580,77 @@ CoD.MapVote.new = function ( menu, controller )
 				self.MapVoteItemPrevious.VoteType:setAlpha( 1 )
 				self.MapVoteItemPrevious.voteCount:setAlpha( 1 )
 				self.clipFinished( MapVoteItemPrevious, {} )
+
 				MapVoteItemNext:completeAnimation()
+
 				MapVoteItemNext.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemNext.VoteType:completeAnimation()
+
 				MapVoteItemNext.voteCount:completeAnimation()
 				self.MapVoteItemNext:setAlpha( 1 )
 				self.MapVoteItemNext.LobbyMemberBackingMask0:setAlpha( 0.5 )
 				self.MapVoteItemNext.VoteType:setAlpha( 1 )
 				self.MapVoteItemNext.voteCount:setAlpha( 1 )
 				self.clipFinished( MapVoteItemNext, {} )
+
 				FEListSubHeaderGlow0:completeAnimation()
 				self.FEListSubHeaderGlow0:setAlpha( 1 )
 				self.clipFinished( FEListSubHeaderGlow0, {} )
+
 				MapVoting:completeAnimation()
 				self.MapVoting:setAlpha( 1 )
 				self.clipFinished( MapVoting, {} )
+
 				LobbyStatus:completeAnimation()
 				self.LobbyStatus:setLeftRight( false, true, -94.5, -66 )
 				self.LobbyStatus:setTopBottom( true, false, -6, 14 )
 				self.LobbyStatus:setAlpha( 1 )
 				self.clipFinished( LobbyStatus, {} )
+
 				FETitleLineUpper:completeAnimation()
 				self.FETitleLineUpper:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper, {} )
+
 				FETitleLineUpper0:completeAnimation()
 				self.FETitleLineUpper0:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper0, {} )
+
 				FETitleLineBottom0:completeAnimation()
 				self.FETitleLineBottom0:setAlpha( 1 )
 				self.clipFinished( FETitleLineBottom0, {} )
+
 				FRBestTime:completeAnimation()
 				self.FRBestTime:setAlpha( 0 )
 				self.clipFinished( FRBestTime, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 0 )
 				self.clipFinished( FRDifficulty, {} )
+
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 1 )
 				self.clipFinished( ArenaRules, {} )
+
 				MapVoteNoDemoSelected:completeAnimation()
 				self.MapVoteNoDemoSelected:setAlpha( 0 )
 				self.clipFinished( MapVoteNoDemoSelected, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
+
 				FileshareSpinner:completeAnimation()
 				self.FileshareSpinner:setAlpha( 0 )
 				self.clipFinished( FileshareSpinner, {} )
+
 				DownloadPercent:completeAnimation()
 				self.DownloadPercent:setAlpha( 0 )
 				self.clipFinished( DownloadPercent, {} )
 			end,
 			MapVoteChosenNext = function ()
 				self:setupElementClipCounter( 12 )
+
 				local MapVoteItemRandomFrame2 = function ( MapVoteItemRandom, event )
 					local MapVoteItemRandomFrame3 = function ( MapVoteItemRandom, event )
 						local MapVoteItemRandomFrame4 = function ( MapVoteItemRandom, event )
@@ -1678,8 +1799,11 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemNext:completeAnimation()
+
 				MapVoteItemNext.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemNext.VoteType:completeAnimation()
+
 				MapVoteItemNext.voteCount:completeAnimation()
 				self.MapVoteItemNext:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemNext:setTopBottom( false, false, -72, -14 )
@@ -1687,42 +1811,52 @@ CoD.MapVote.new = function ( menu, controller )
 				self.MapVoteItemNext.VoteType:setAlpha( 1 )
 				self.MapVoteItemNext.voteCount:setAlpha( 1 )
 				MapVoteItemNextFrame2( MapVoteItemNext, {} )
+
 				FEListSubHeaderGlow0:completeAnimation()
 				self.FEListSubHeaderGlow0:setAlpha( 1 )
 				self.clipFinished( FEListSubHeaderGlow0, {} )
+
 				LobbyStatus:completeAnimation()
 				self.LobbyStatus:setAlpha( 1 )
 				self.clipFinished( LobbyStatus, {} )
+
 				FETitleLineUpper:completeAnimation()
 				self.FETitleLineUpper:setLeftRight( true, true, 0, -53 )
 				self.FETitleLineUpper:setTopBottom( false, false, -76, -72 )
 				self.FETitleLineUpper:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper, {} )
+
 				FETitleLineUpper0:completeAnimation()
 				self.FETitleLineUpper0:setLeftRight( true, true, 0, -53 )
 				self.FETitleLineUpper0:setTopBottom( false, false, -99, -95 )
 				self.FETitleLineUpper0:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper0, {} )
+
 				FETitleLineBottom0:completeAnimation()
 				self.FETitleLineBottom0:setLeftRight( true, true, 0, -53 )
 				self.FETitleLineBottom0:setTopBottom( false, false, 87, 91 )
 				self.FETitleLineBottom0:setAlpha( 1 )
 				self.clipFinished( FETitleLineBottom0, {} )
+
 				FRBestTime:completeAnimation()
 				self.FRBestTime:setAlpha( 0 )
 				self.clipFinished( FRBestTime, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 0 )
 				self.clipFinished( FRDifficulty, {} )
+
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 1 )
 				self.clipFinished( ArenaRules, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
 			end,
 			MapVoteChosenPrevious = function ()
 				self:setupElementClipCounter( 12 )
+
 				local MapVoteItemRandomFrame2 = function ( MapVoteItemRandom, event )
 					local MapVoteItemRandomFrame3 = function ( MapVoteItemRandom, event )
 						local MapVoteItemRandomFrame4 = function ( MapVoteItemRandom, event )
@@ -1830,8 +1964,11 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemPrevious:completeAnimation()
+
 				MapVoteItemPrevious.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemPrevious.VoteType:completeAnimation()
+
 				MapVoteItemPrevious.voteCount:completeAnimation()
 				self.MapVoteItemPrevious:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemPrevious:setTopBottom( false, false, -21, 37 )
@@ -1902,36 +2039,46 @@ CoD.MapVote.new = function ( menu, controller )
 				self.MapVoteItemNext:setTopBottom( false, false, -72, -14 )
 				self.MapVoteItemNext:setAlpha( 1 )
 				MapVoteItemNextFrame2( MapVoteItemNext, {} )
+
 				FEListSubHeaderGlow0:completeAnimation()
 				self.FEListSubHeaderGlow0:setAlpha( 1 )
 				self.clipFinished( FEListSubHeaderGlow0, {} )
+
 				LobbyStatus:completeAnimation()
 				self.LobbyStatus:setAlpha( 1 )
 				self.clipFinished( LobbyStatus, {} )
+
 				FETitleLineUpper:completeAnimation()
 				self.FETitleLineUpper:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper, {} )
+
 				FETitleLineUpper0:completeAnimation()
 				self.FETitleLineUpper0:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper0, {} )
+
 				FETitleLineBottom0:completeAnimation()
 				self.FETitleLineBottom0:setAlpha( 1 )
 				self.clipFinished( FETitleLineBottom0, {} )
+
 				FRBestTime:completeAnimation()
 				self.FRBestTime:setAlpha( 0 )
 				self.clipFinished( FRBestTime, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 0 )
 				self.clipFinished( FRDifficulty, {} )
+
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 1 )
 				self.clipFinished( ArenaRules, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
 			end,
 			MapVoteChosenRandom = function ()
 				self:setupElementClipCounter( 12 )
+
 				local MapVoteItemRandomFrame2 = function ( MapVoteItemRandom, event )
 					local MapVoteItemRandomFrame3 = function ( MapVoteItemRandom, event )
 						if not event.interrupted then
@@ -1962,8 +2109,11 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemRandom:completeAnimation()
+
 				MapVoteItemRandom.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemRandom.VoteType:completeAnimation()
+
 				MapVoteItemRandom.voteCount:completeAnimation()
 				self.MapVoteItemRandom:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemRandom:setTopBottom( false, false, 30, 88 )
@@ -2085,36 +2235,46 @@ CoD.MapVote.new = function ( menu, controller )
 				self.MapVoteItemNext:setTopBottom( false, false, -72, -14 )
 				self.MapVoteItemNext:setAlpha( 1 )
 				MapVoteItemNextFrame2( MapVoteItemNext, {} )
+
 				FEListSubHeaderGlow0:completeAnimation()
 				self.FEListSubHeaderGlow0:setAlpha( 1 )
 				self.clipFinished( FEListSubHeaderGlow0, {} )
+
 				LobbyStatus:completeAnimation()
 				self.LobbyStatus:setAlpha( 1 )
 				self.clipFinished( LobbyStatus, {} )
+
 				FETitleLineUpper:completeAnimation()
 				self.FETitleLineUpper:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper, {} )
+
 				FETitleLineUpper0:completeAnimation()
 				self.FETitleLineUpper0:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper0, {} )
+
 				FETitleLineBottom0:completeAnimation()
 				self.FETitleLineBottom0:setAlpha( 1 )
 				self.clipFinished( FETitleLineBottom0, {} )
+
 				FRBestTime:completeAnimation()
 				self.FRBestTime:setAlpha( 0 )
 				self.clipFinished( FRBestTime, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 0 )
 				self.clipFinished( FRDifficulty, {} )
+
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 1 )
 				self.clipFinished( ArenaRules, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 15 )
+
 				MapVoteItemVoteDecided:completeAnimation()
 				self.MapVoteItemVoteDecided:setAlpha( 0 )
 				self.clipFinished( MapVoteItemVoteDecided, {} )
@@ -2139,8 +2299,11 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemRandom:completeAnimation()
+
 				MapVoteItemRandom.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemRandom.VoteType:completeAnimation()
+
 				MapVoteItemRandom.voteCount:completeAnimation()
 				self.MapVoteItemRandom:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemRandom:setTopBottom( false, false, 30, 88 )
@@ -2170,8 +2333,11 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemPrevious:completeAnimation()
+
 				MapVoteItemPrevious.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemPrevious.VoteType:completeAnimation()
+
 				MapVoteItemPrevious.voteCount:completeAnimation()
 				self.MapVoteItemPrevious:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemPrevious:setTopBottom( false, false, -21, 37 )
@@ -2201,8 +2367,11 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemNext:completeAnimation()
+
 				MapVoteItemNext.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemNext.VoteType:completeAnimation()
+
 				MapVoteItemNext.voteCount:completeAnimation()
 				self.MapVoteItemNext:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemNext:setTopBottom( false, false, -72, -14 )
@@ -2324,9 +2493,11 @@ CoD.MapVote.new = function ( menu, controller )
 				self.FETitleLineBottom0:setTopBottom( false, false, 87, 91 )
 				self.FETitleLineBottom0:setAlpha( 1 )
 				FETitleLineBottom0Frame2( FETitleLineBottom0, {} )
+
 				FRBestTime:completeAnimation()
 				self.FRBestTime:setAlpha( 0 )
 				self.clipFinished( FRBestTime, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 0 )
 				self.clipFinished( FRDifficulty, {} )
@@ -2345,6 +2516,7 @@ CoD.MapVote.new = function ( menu, controller )
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 1 )
 				ArenaRulesFrame2( ArenaRules, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
@@ -2368,7 +2540,9 @@ CoD.MapVote.new = function ( menu, controller )
 		SelectedMap = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 18 )
+
 				MapVoteItemVoteDecided:completeAnimation()
+
 				MapVoteItemVoteDecided.LobbyMemberBackingMask0:completeAnimation()
 				self.MapVoteItemVoteDecided:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemVoteDecided:setTopBottom( false, false, -81, 97 )
@@ -2397,8 +2571,11 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemRandom:completeAnimation()
+
 				MapVoteItemRandom.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemRandom.VoteType:completeAnimation()
+
 				MapVoteItemRandom.voteCount:completeAnimation()
 				self.MapVoteItemRandom:setLeftRight( true, true, 0, 0 )
 				self.MapVoteItemRandom:setTopBottom( false, false, -90, 88 )
@@ -2407,61 +2584,78 @@ CoD.MapVote.new = function ( menu, controller )
 				self.MapVoteItemRandom.VoteType:setAlpha( 0 )
 				self.MapVoteItemRandom.voteCount:setAlpha( 0 )
 				MapVoteItemRandomFrame2( MapVoteItemRandom, {} )
+
 				MapVoteItemPrevious:completeAnimation()
 				self.MapVoteItemPrevious:setAlpha( 0 )
 				self.clipFinished( MapVoteItemPrevious, {} )
+
 				MapVoteItemNext:completeAnimation()
 				self.MapVoteItemNext:setAlpha( 0 )
 				self.clipFinished( MapVoteItemNext, {} )
+
 				FEListSubHeaderGlow0:completeAnimation()
 				self.FEListSubHeaderGlow0:setLeftRight( true, true, 0, -52 )
 				self.FEListSubHeaderGlow0:setTopBottom( true, false, -7, 16 )
 				self.FEListSubHeaderGlow0:setAlpha( 1 )
 				self.clipFinished( FEListSubHeaderGlow0, {} )
+
 				MapVoting:completeAnimation()
 				self.MapVoting:setAlpha( 0 )
 				self.clipFinished( MapVoting, {} )
+
 				LobbyStatus:completeAnimation()
 				self.LobbyStatus:setLeftRight( false, true, -94.5, -66 )
 				self.LobbyStatus:setTopBottom( true, false, -6, 14 )
 				self.LobbyStatus:setAlpha( 1 )
 				self.clipFinished( LobbyStatus, {} )
+
 				FETitleLineUpper:completeAnimation()
 				self.FETitleLineUpper:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper, {} )
+
 				FETitleLineUpper0:completeAnimation()
 				self.FETitleLineUpper0:setAlpha( 0 )
 				self.clipFinished( FETitleLineUpper0, {} )
+
 				FETitleLineBottom0:completeAnimation()
 				self.FETitleLineBottom0:setAlpha( 1 )
 				self.clipFinished( FETitleLineBottom0, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 1 )
 				self.clipFinished( FRDifficulty, {} )
+
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 1 )
 				self.clipFinished( ArenaRules, {} )
+
 				MapVoteNoDemoSelected:completeAnimation()
 				self.MapVoteNoDemoSelected:setAlpha( 0 )
 				self.clipFinished( MapVoteNoDemoSelected, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
+
 				FileshareSpinner:completeAnimation()
 				self.FileshareSpinner:setAlpha( 0 )
 				self.clipFinished( FileshareSpinner, {} )
+
 				DownloadPercent:completeAnimation()
 				self.DownloadPercent:setAlpha( 0 )
 				self.clipFinished( DownloadPercent, {} )
+
 				MapVoteOfficial:completeAnimation()
 				self.MapVoteOfficial:setAlpha( 1 )
 				self.clipFinished( MapVoteOfficial, {} )
+
 				ZMLobbyEEList:completeAnimation()
 				self.ZMLobbyEEList:setAlpha( 1 )
 				self.clipFinished( ZMLobbyEEList, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 14 )
+
 				local MapVoteItemVoteDecidedFrame2 = function ( MapVoteItemVoteDecided, event )
 					if not event.interrupted then
 						MapVoteItemVoteDecided:beginAnimation( "keyframe", 529, false, false, CoD.TweenType.Bounce )
@@ -2480,6 +2674,7 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemVoteDecided:completeAnimation()
+
 				MapVoteItemVoteDecided.LobbyMemberBackingMask0:completeAnimation()
 				self.MapVoteItemVoteDecided:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemVoteDecided:setTopBottom( false, false, -81, 97 )
@@ -2508,8 +2703,11 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemRandom:completeAnimation()
+
 				MapVoteItemRandom.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemRandom.VoteType:completeAnimation()
+
 				MapVoteItemRandom.voteCount:completeAnimation()
 				self.MapVoteItemRandom:setLeftRight( true, true, 0, 0 )
 				self.MapVoteItemRandom:setTopBottom( false, false, -90, 88 )
@@ -2518,9 +2716,11 @@ CoD.MapVote.new = function ( menu, controller )
 				self.MapVoteItemRandom.VoteType:setAlpha( 0 )
 				self.MapVoteItemRandom.voteCount:setAlpha( 0 )
 				MapVoteItemRandomFrame2( MapVoteItemRandom, {} )
+
 				MapVoteItemPrevious:completeAnimation()
 				self.MapVoteItemPrevious:setAlpha( 0 )
 				self.clipFinished( MapVoteItemPrevious, {} )
+
 				MapVoteItemNext:completeAnimation()
 				self.MapVoteItemNext:setAlpha( 0 )
 				self.clipFinished( MapVoteItemNext, {} )
@@ -2543,6 +2743,7 @@ CoD.MapVote.new = function ( menu, controller )
 				self.FEListSubHeaderGlow0:setTopBottom( true, false, -7, 16 )
 				self.FEListSubHeaderGlow0:setAlpha( 1 )
 				FEListSubHeaderGlow0Frame2( FEListSubHeaderGlow0, {} )
+
 				MapVoting:completeAnimation()
 				self.MapVoting:setAlpha( 0 )
 				self.clipFinished( MapVoting, {} )
@@ -2648,6 +2849,7 @@ CoD.MapVote.new = function ( menu, controller )
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 1 )
 				ArenaRulesFrame2( ArenaRules, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
@@ -2671,42 +2873,54 @@ CoD.MapVote.new = function ( menu, controller )
 		MapVoteChosenNext = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				FETitleLineUpper:completeAnimation()
 				self.FETitleLineUpper:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper, {} )
+
 				FETitleLineUpper0:completeAnimation()
 				self.FETitleLineUpper0:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper0, {} )
+
 				FETitleLineBottom0:completeAnimation()
 				self.FETitleLineBottom0:setAlpha( 1 )
 				self.clipFinished( FETitleLineBottom0, {} )
+
 				FRBestTime:completeAnimation()
 				self.FRBestTime:setAlpha( 0 )
 				self.clipFinished( FRBestTime, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 0 )
 				self.clipFinished( FRDifficulty, {} )
+
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 1 )
 				self.clipFinished( ArenaRules, {} )
+
 				MapVoteNoDemoSelected:completeAnimation()
 				self.MapVoteNoDemoSelected:setAlpha( 0 )
 				self.clipFinished( MapVoteNoDemoSelected, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
+
 				FileshareSpinner:completeAnimation()
 				self.FileshareSpinner:setAlpha( 0 )
 				self.clipFinished( FileshareSpinner, {} )
+
 				DownloadPercent:completeAnimation()
 				self.DownloadPercent:setAlpha( 0 )
 				self.clipFinished( DownloadPercent, {} )
+
 				MapVoteOfficial:completeAnimation()
 				self.MapVoteOfficial:setAlpha( 0 )
 				self.clipFinished( MapVoteOfficial, {} )
 			end,
 			SelectedMap = function ()
 				self:setupElementClipCounter( 15 )
+
 				MapVoteItemVoteDecided:completeAnimation()
 				self.MapVoteItemVoteDecided:setLeftRight( true, true, 0, 0 )
 				self.MapVoteItemVoteDecided:setTopBottom( false, false, -90, 88 )
@@ -2855,8 +3069,11 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemNext:completeAnimation()
+
 				MapVoteItemNext.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemNext.VoteType:completeAnimation()
+
 				MapVoteItemNext.voteCount:completeAnimation()
 				self.MapVoteItemNext:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemNext:setTopBottom( false, false, -72, -14 )
@@ -2864,6 +3081,7 @@ CoD.MapVote.new = function ( menu, controller )
 				self.MapVoteItemNext.VoteType:setAlpha( 1 )
 				self.MapVoteItemNext.voteCount:setAlpha( 1 )
 				MapVoteItemNextFrame2( MapVoteItemNext, {} )
+
 				FEListSubHeaderGlow0:completeAnimation()
 				self.FEListSubHeaderGlow0:setAlpha( 1 )
 				self.clipFinished( FEListSubHeaderGlow0, {} )
@@ -2882,30 +3100,39 @@ CoD.MapVote.new = function ( menu, controller )
 				MapVoting:completeAnimation()
 				self.MapVoting:setAlpha( 1 )
 				MapVotingFrame2( MapVoting, {} )
+
 				LobbyStatus:completeAnimation()
 				self.LobbyStatus:setAlpha( 1 )
 				self.clipFinished( LobbyStatus, {} )
+
 				FETitleLineUpper:completeAnimation()
 				self.FETitleLineUpper:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper, {} )
+
 				FETitleLineUpper0:completeAnimation()
 				self.FETitleLineUpper0:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper0, {} )
+
 				FETitleLineBottom0:completeAnimation()
 				self.FETitleLineBottom0:setAlpha( 1 )
 				self.clipFinished( FETitleLineBottom0, {} )
+
 				FRBestTime:completeAnimation()
 				self.FRBestTime:setAlpha( 0 )
 				self.clipFinished( FRBestTime, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 0 )
 				self.clipFinished( FRDifficulty, {} )
+
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 1 )
 				self.clipFinished( ArenaRules, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
+
 				MapVoteOfficial:completeAnimation()
 				self.MapVoteOfficial:setAlpha( 0 )
 				self.clipFinished( MapVoteOfficial, {} )
@@ -2914,42 +3141,54 @@ CoD.MapVote.new = function ( menu, controller )
 		MapVoteChosenPrevious = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				FETitleLineUpper:completeAnimation()
 				self.FETitleLineUpper:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper, {} )
+
 				FETitleLineUpper0:completeAnimation()
 				self.FETitleLineUpper0:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper0, {} )
+
 				FETitleLineBottom0:completeAnimation()
 				self.FETitleLineBottom0:setAlpha( 1 )
 				self.clipFinished( FETitleLineBottom0, {} )
+
 				FRBestTime:completeAnimation()
 				self.FRBestTime:setAlpha( 0 )
 				self.clipFinished( FRBestTime, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 0 )
 				self.clipFinished( FRDifficulty, {} )
+
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 1 )
 				self.clipFinished( ArenaRules, {} )
+
 				MapVoteNoDemoSelected:completeAnimation()
 				self.MapVoteNoDemoSelected:setAlpha( 0 )
 				self.clipFinished( MapVoteNoDemoSelected, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
+
 				FileshareSpinner:completeAnimation()
 				self.FileshareSpinner:setAlpha( 0 )
 				self.clipFinished( FileshareSpinner, {} )
+
 				DownloadPercent:completeAnimation()
 				self.DownloadPercent:setAlpha( 0 )
 				self.clipFinished( DownloadPercent, {} )
+
 				MapVoteOfficial:completeAnimation()
 				self.MapVoteOfficial:setAlpha( 0 )
 				self.clipFinished( MapVoteOfficial, {} )
 			end,
 			SelectedMap = function ()
 				self:setupElementClipCounter( 14 )
+
 				local MapVoteItemRandomFrame2 = function ( MapVoteItemRandom, event )
 					local MapVoteItemRandomFrame3 = function ( MapVoteItemRandom, event )
 						local MapVoteItemRandomFrame4 = function ( MapVoteItemRandom, event )
@@ -3054,8 +3293,11 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemPrevious:completeAnimation()
+
 				MapVoteItemPrevious.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemPrevious.VoteType:completeAnimation()
+
 				MapVoteItemPrevious.voteCount:completeAnimation()
 				self.MapVoteItemPrevious:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemPrevious:setTopBottom( false, false, -21, 37 )
@@ -3125,6 +3367,7 @@ CoD.MapVote.new = function ( menu, controller )
 				self.MapVoteItemNext:setTopBottom( false, false, -72, -14 )
 				self.MapVoteItemNext:setAlpha( 1 )
 				MapVoteItemNextFrame2( MapVoteItemNext, {} )
+
 				FEListSubHeaderGlow0:completeAnimation()
 				self.FEListSubHeaderGlow0:setAlpha( 1 )
 				self.clipFinished( FEListSubHeaderGlow0, {} )
@@ -3143,30 +3386,39 @@ CoD.MapVote.new = function ( menu, controller )
 				MapVoting:completeAnimation()
 				self.MapVoting:setAlpha( 1 )
 				MapVotingFrame2( MapVoting, {} )
+
 				LobbyStatus:completeAnimation()
 				self.LobbyStatus:setAlpha( 1 )
 				self.clipFinished( LobbyStatus, {} )
+
 				FETitleLineUpper:completeAnimation()
 				self.FETitleLineUpper:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper, {} )
+
 				FETitleLineUpper0:completeAnimation()
 				self.FETitleLineUpper0:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper0, {} )
+
 				FETitleLineBottom0:completeAnimation()
 				self.FETitleLineBottom0:setAlpha( 1 )
 				self.clipFinished( FETitleLineBottom0, {} )
+
 				FRBestTime:completeAnimation()
 				self.FRBestTime:setAlpha( 0 )
 				self.clipFinished( FRBestTime, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 0 )
 				self.clipFinished( FRDifficulty, {} )
+
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 1 )
 				self.clipFinished( ArenaRules, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
+
 				MapVoteOfficial:completeAnimation()
 				self.MapVoteOfficial:setAlpha( 0 )
 				self.clipFinished( MapVoteOfficial, {} )
@@ -3175,42 +3427,54 @@ CoD.MapVote.new = function ( menu, controller )
 		MapVoteChosenRandom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				FETitleLineUpper:completeAnimation()
 				self.FETitleLineUpper:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper, {} )
+
 				FETitleLineUpper0:completeAnimation()
 				self.FETitleLineUpper0:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper0, {} )
+
 				FETitleLineBottom0:completeAnimation()
 				self.FETitleLineBottom0:setAlpha( 1 )
 				self.clipFinished( FETitleLineBottom0, {} )
+
 				FRBestTime:completeAnimation()
 				self.FRBestTime:setAlpha( 0 )
 				self.clipFinished( FRBestTime, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 0 )
 				self.clipFinished( FRDifficulty, {} )
+
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 1 )
 				self.clipFinished( ArenaRules, {} )
+
 				MapVoteNoDemoSelected:completeAnimation()
 				self.MapVoteNoDemoSelected:setAlpha( 0 )
 				self.clipFinished( MapVoteNoDemoSelected, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
+
 				FileshareSpinner:completeAnimation()
 				self.FileshareSpinner:setAlpha( 0 )
 				self.clipFinished( FileshareSpinner, {} )
+
 				DownloadPercent:completeAnimation()
 				self.DownloadPercent:setAlpha( 0 )
 				self.clipFinished( DownloadPercent, {} )
+
 				MapVoteOfficial:completeAnimation()
 				self.MapVoteOfficial:setAlpha( 0 )
 				self.clipFinished( MapVoteOfficial, {} )
 			end,
 			SelectedMap = function ()
 				self:setupElementClipCounter( 11 )
+
 				local MapVoteItemRandomFrame2 = function ( MapVoteItemRandom, event )
 					local MapVoteItemRandomFrame3 = function ( MapVoteItemRandom, event )
 						if not event.interrupted then
@@ -3241,8 +3505,11 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemRandom:completeAnimation()
+
 				MapVoteItemRandom.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemRandom.VoteType:completeAnimation()
+
 				MapVoteItemRandom.voteCount:completeAnimation()
 				self.MapVoteItemRandom:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemRandom:setTopBottom( false, false, 30, 88 )
@@ -3364,6 +3631,7 @@ CoD.MapVote.new = function ( menu, controller )
 				self.MapVoteItemNext:setTopBottom( false, false, -72, -14 )
 				self.MapVoteItemNext:setAlpha( 1 )
 				MapVoteItemNextFrame2( MapVoteItemNext, {} )
+
 				FEListSubHeaderGlow0:completeAnimation()
 				self.FEListSubHeaderGlow0:setAlpha( 1 )
 				self.clipFinished( FEListSubHeaderGlow0, {} )
@@ -3382,21 +3650,27 @@ CoD.MapVote.new = function ( menu, controller )
 				MapVoting:completeAnimation()
 				self.MapVoting:setAlpha( 1 )
 				MapVotingFrame2( MapVoting, {} )
+
 				LobbyStatus:completeAnimation()
 				self.LobbyStatus:setAlpha( 1 )
 				self.clipFinished( LobbyStatus, {} )
+
 				FRBestTime:completeAnimation()
 				self.FRBestTime:setAlpha( 0 )
 				self.clipFinished( FRBestTime, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 0 )
 				self.clipFinished( FRDifficulty, {} )
+
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 1 )
 				self.clipFinished( ArenaRules, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
+
 				MapVoteOfficial:completeAnimation()
 				self.MapVoteOfficial:setAlpha( 0 )
 				self.clipFinished( MapVoteOfficial, {} )
@@ -3405,7 +3679,9 @@ CoD.MapVote.new = function ( menu, controller )
 		DemoSelectedDownloading = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				MapVoteItemVoteDecided:completeAnimation()
+
 				MapVoteItemVoteDecided.LobbyMemberBackingMask0:completeAnimation()
 				self.MapVoteItemVoteDecided:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemVoteDecided:setTopBottom( false, false, -81, 97 )
@@ -3434,8 +3710,11 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemRandom:completeAnimation()
+
 				MapVoteItemRandom.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemRandom.VoteType:completeAnimation()
+
 				MapVoteItemRandom.voteCount:completeAnimation()
 				self.MapVoteItemRandom:setLeftRight( true, true, 0, 0 )
 				self.MapVoteItemRandom:setTopBottom( false, false, -90, 88 )
@@ -3444,58 +3723,74 @@ CoD.MapVote.new = function ( menu, controller )
 				self.MapVoteItemRandom.VoteType:setAlpha( 0 )
 				self.MapVoteItemRandom.voteCount:setAlpha( 0 )
 				MapVoteItemRandomFrame2( MapVoteItemRandom, {} )
+
 				MapVoteItemPrevious:completeAnimation()
 				self.MapVoteItemPrevious:setAlpha( 0 )
 				self.clipFinished( MapVoteItemPrevious, {} )
+
 				MapVoteItemNext:completeAnimation()
 				self.MapVoteItemNext:setAlpha( 0 )
 				self.clipFinished( MapVoteItemNext, {} )
+
 				FEListSubHeaderGlow0:completeAnimation()
 				self.FEListSubHeaderGlow0:setLeftRight( true, true, 0, -52 )
 				self.FEListSubHeaderGlow0:setTopBottom( true, false, -7, 16 )
 				self.FEListSubHeaderGlow0:setAlpha( 1 )
 				self.clipFinished( FEListSubHeaderGlow0, {} )
+
 				MapVoting:completeAnimation()
 				self.MapVoting:setAlpha( 0 )
 				self.clipFinished( MapVoting, {} )
+
 				LobbyStatus:completeAnimation()
 				self.LobbyStatus:setLeftRight( false, true, -94.5, -66 )
 				self.LobbyStatus:setTopBottom( true, false, -6, 14 )
 				self.LobbyStatus:setAlpha( 1 )
 				self.clipFinished( LobbyStatus, {} )
+
 				FETitleLineUpper:completeAnimation()
 				self.FETitleLineUpper:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper, {} )
+
 				FETitleLineUpper0:completeAnimation()
 				self.FETitleLineUpper0:setAlpha( 0 )
 				self.clipFinished( FETitleLineUpper0, {} )
+
 				FETitleLineBottom0:completeAnimation()
 				self.FETitleLineBottom0:setAlpha( 1 )
 				self.clipFinished( FETitleLineBottom0, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 1 )
 				self.clipFinished( FRDifficulty, {} )
+
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 1 )
 				self.clipFinished( ArenaRules, {} )
+
 				MapVoteNoDemoSelected:completeAnimation()
 				self.MapVoteNoDemoSelected:setAlpha( 0 )
 				self.clipFinished( MapVoteNoDemoSelected, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
+
 				FileshareSpinner:completeAnimation()
 				self.FileshareSpinner:setAlpha( 1 )
 				self.clipFinished( FileshareSpinner, {} )
+
 				DownloadPercent:completeAnimation()
 				self.DownloadPercent:setAlpha( 1 )
 				self.clipFinished( DownloadPercent, {} )
+
 				MapVoteOfficial:completeAnimation()
 				self.MapVoteOfficial:setAlpha( 0 )
 				self.clipFinished( MapVoteOfficial, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 13 )
+
 				local MapVoteItemVoteDecidedFrame2 = function ( MapVoteItemVoteDecided, event )
 					if not event.interrupted then
 						MapVoteItemVoteDecided:beginAnimation( "keyframe", 529, false, false, CoD.TweenType.Bounce )
@@ -3514,6 +3809,7 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemVoteDecided:completeAnimation()
+
 				MapVoteItemVoteDecided.LobbyMemberBackingMask0:completeAnimation()
 				self.MapVoteItemVoteDecided:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemVoteDecided:setTopBottom( false, false, -81, 97 )
@@ -3542,8 +3838,11 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemRandom:completeAnimation()
+
 				MapVoteItemRandom.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemRandom.VoteType:completeAnimation()
+
 				MapVoteItemRandom.voteCount:completeAnimation()
 				self.MapVoteItemRandom:setLeftRight( true, true, 0, 0 )
 				self.MapVoteItemRandom:setTopBottom( false, false, -90, 88 )
@@ -3552,9 +3851,11 @@ CoD.MapVote.new = function ( menu, controller )
 				self.MapVoteItemRandom.VoteType:setAlpha( 0 )
 				self.MapVoteItemRandom.voteCount:setAlpha( 0 )
 				MapVoteItemRandomFrame2( MapVoteItemRandom, {} )
+
 				MapVoteItemPrevious:completeAnimation()
 				self.MapVoteItemPrevious:setAlpha( 0 )
 				self.clipFinished( MapVoteItemPrevious, {} )
+
 				MapVoteItemNext:completeAnimation()
 				self.MapVoteItemNext:setAlpha( 0 )
 				self.clipFinished( MapVoteItemNext, {} )
@@ -3577,6 +3878,7 @@ CoD.MapVote.new = function ( menu, controller )
 				self.FEListSubHeaderGlow0:setTopBottom( true, false, -7, 16 )
 				self.FEListSubHeaderGlow0:setAlpha( 1 )
 				FEListSubHeaderGlow0Frame2( FEListSubHeaderGlow0, {} )
+
 				MapVoting:completeAnimation()
 				self.MapVoting:setAlpha( 0 )
 				self.clipFinished( MapVoting, {} )
@@ -3682,6 +3984,7 @@ CoD.MapVote.new = function ( menu, controller )
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 1 )
 				ArenaRulesFrame2( ArenaRules, {} )
+
 				MapVoteOfficial:completeAnimation()
 				self.MapVoteOfficial:setAlpha( 0 )
 				self.clipFinished( MapVoteOfficial, {} )
@@ -3690,7 +3993,9 @@ CoD.MapVote.new = function ( menu, controller )
 		NoDemoSelected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				MapVoteItemVoteDecided:completeAnimation()
+
 				MapVoteItemVoteDecided.LobbyMemberBackingMask0:completeAnimation()
 				self.MapVoteItemVoteDecided:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemVoteDecided:setTopBottom( false, false, -81, 97 )
@@ -3719,8 +4024,11 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemRandom:completeAnimation()
+
 				MapVoteItemRandom.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemRandom.VoteType:completeAnimation()
+
 				MapVoteItemRandom.voteCount:completeAnimation()
 				self.MapVoteItemRandom:setLeftRight( true, true, 0, 0 )
 				self.MapVoteItemRandom:setTopBottom( false, false, -90, 88 )
@@ -3729,58 +4037,74 @@ CoD.MapVote.new = function ( menu, controller )
 				self.MapVoteItemRandom.VoteType:setAlpha( 0 )
 				self.MapVoteItemRandom.voteCount:setAlpha( 0 )
 				MapVoteItemRandomFrame2( MapVoteItemRandom, {} )
+
 				MapVoteItemPrevious:completeAnimation()
 				self.MapVoteItemPrevious:setAlpha( 0 )
 				self.clipFinished( MapVoteItemPrevious, {} )
+
 				MapVoteItemNext:completeAnimation()
 				self.MapVoteItemNext:setAlpha( 0 )
 				self.clipFinished( MapVoteItemNext, {} )
+
 				FEListSubHeaderGlow0:completeAnimation()
 				self.FEListSubHeaderGlow0:setLeftRight( true, true, 0, -52 )
 				self.FEListSubHeaderGlow0:setTopBottom( true, false, -7, 16 )
 				self.FEListSubHeaderGlow0:setAlpha( 1 )
 				self.clipFinished( FEListSubHeaderGlow0, {} )
+
 				MapVoting:completeAnimation()
 				self.MapVoting:setAlpha( 0 )
 				self.clipFinished( MapVoting, {} )
+
 				LobbyStatus:completeAnimation()
 				self.LobbyStatus:setLeftRight( false, true, -94.5, -66 )
 				self.LobbyStatus:setTopBottom( true, false, -6, 14 )
 				self.LobbyStatus:setAlpha( 1 )
 				self.clipFinished( LobbyStatus, {} )
+
 				FETitleLineUpper:completeAnimation()
 				self.FETitleLineUpper:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper, {} )
+
 				FETitleLineUpper0:completeAnimation()
 				self.FETitleLineUpper0:setAlpha( 0 )
 				self.clipFinished( FETitleLineUpper0, {} )
+
 				FETitleLineBottom0:completeAnimation()
 				self.FETitleLineBottom0:setAlpha( 1 )
 				self.clipFinished( FETitleLineBottom0, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 1 )
 				self.clipFinished( FRDifficulty, {} )
+
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 1 )
 				self.clipFinished( ArenaRules, {} )
+
 				MapVoteNoDemoSelected:completeAnimation()
 				self.MapVoteNoDemoSelected:setAlpha( 1 )
 				self.clipFinished( MapVoteNoDemoSelected, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
+
 				FileshareSpinner:completeAnimation()
 				self.FileshareSpinner:setAlpha( 0 )
 				self.clipFinished( FileshareSpinner, {} )
+
 				DownloadPercent:completeAnimation()
 				self.DownloadPercent:setAlpha( 0 )
 				self.clipFinished( DownloadPercent, {} )
+
 				MapVoteOfficial:completeAnimation()
 				self.MapVoteOfficial:setAlpha( 0 )
 				self.clipFinished( MapVoteOfficial, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 13 )
+
 				local MapVoteItemVoteDecidedFrame2 = function ( MapVoteItemVoteDecided, event )
 					if not event.interrupted then
 						MapVoteItemVoteDecided:beginAnimation( "keyframe", 529, false, false, CoD.TweenType.Bounce )
@@ -3799,6 +4123,7 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemVoteDecided:completeAnimation()
+
 				MapVoteItemVoteDecided.LobbyMemberBackingMask0:completeAnimation()
 				self.MapVoteItemVoteDecided:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemVoteDecided:setTopBottom( false, false, -81, 97 )
@@ -3827,8 +4152,11 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemRandom:completeAnimation()
+
 				MapVoteItemRandom.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemRandom.VoteType:completeAnimation()
+
 				MapVoteItemRandom.voteCount:completeAnimation()
 				self.MapVoteItemRandom:setLeftRight( true, true, 0, 0 )
 				self.MapVoteItemRandom:setTopBottom( false, false, -90, 88 )
@@ -3837,9 +4165,11 @@ CoD.MapVote.new = function ( menu, controller )
 				self.MapVoteItemRandom.VoteType:setAlpha( 0 )
 				self.MapVoteItemRandom.voteCount:setAlpha( 0 )
 				MapVoteItemRandomFrame2( MapVoteItemRandom, {} )
+
 				MapVoteItemPrevious:completeAnimation()
 				self.MapVoteItemPrevious:setAlpha( 0 )
 				self.clipFinished( MapVoteItemPrevious, {} )
+
 				MapVoteItemNext:completeAnimation()
 				self.MapVoteItemNext:setAlpha( 0 )
 				self.clipFinished( MapVoteItemNext, {} )
@@ -3862,6 +4192,7 @@ CoD.MapVote.new = function ( menu, controller )
 				self.FEListSubHeaderGlow0:setTopBottom( true, false, -7, 16 )
 				self.FEListSubHeaderGlow0:setAlpha( 1 )
 				FEListSubHeaderGlow0Frame2( FEListSubHeaderGlow0, {} )
+
 				MapVoting:completeAnimation()
 				self.MapVoting:setAlpha( 0 )
 				self.clipFinished( MapVoting, {} )
@@ -3967,6 +4298,7 @@ CoD.MapVote.new = function ( menu, controller )
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 1 )
 				ArenaRulesFrame2( ArenaRules, {} )
+
 				MapVoteOfficial:completeAnimation()
 				self.MapVoteOfficial:setAlpha( 0 )
 				self.clipFinished( MapVoteOfficial, {} )
@@ -3975,61 +4307,79 @@ CoD.MapVote.new = function ( menu, controller )
 		GameResult = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 18 )
+
 				MapVoteItemVoteDecided:completeAnimation()
 				self.MapVoteItemVoteDecided:setAlpha( 0 )
 				self.clipFinished( MapVoteItemVoteDecided, {} )
+
 				MapVoteItemRandom:completeAnimation()
 				self.MapVoteItemRandom:setAlpha( 0 )
 				self.clipFinished( MapVoteItemRandom, {} )
+
 				MapVoteItemPrevious:completeAnimation()
 				self.MapVoteItemPrevious:setAlpha( 0 )
 				self.clipFinished( MapVoteItemPrevious, {} )
+
 				MapVoteItemNext:completeAnimation()
 				self.MapVoteItemNext:setAlpha( 0 )
 				self.clipFinished( MapVoteItemNext, {} )
+
 				FEListSubHeaderGlow0:completeAnimation()
 				self.FEListSubHeaderGlow0:setAlpha( 1 )
 				self.clipFinished( FEListSubHeaderGlow0, {} )
+
 				MapVoting:completeAnimation()
 				self.MapVoting:setAlpha( 0 )
 				self.clipFinished( MapVoting, {} )
+
 				LobbyStatus:completeAnimation()
 				self.LobbyStatus:setAlpha( 1 )
 				self.clipFinished( LobbyStatus, {} )
+
 				FETitleLineUpper:completeAnimation()
 				self.FETitleLineUpper:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper, {} )
+
 				FETitleLineUpper0:completeAnimation()
 				self.FETitleLineUpper0:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper0, {} )
+
 				FETitleLineBottom0:completeAnimation()
 				self.FETitleLineBottom0:setAlpha( 1 )
 				self.clipFinished( FETitleLineBottom0, {} )
+
 				FRBestTime:completeAnimation()
 				self.FRBestTime:setAlpha( 0 )
 				self.clipFinished( FRBestTime, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 0 )
 				self.clipFinished( FRDifficulty, {} )
+
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setLeftRight( true, false, 0, 303 )
 				self.ArenaRules:setTopBottom( true, false, -63, -12 )
 				self.ArenaRules:setAlpha( 0 )
 				self.clipFinished( ArenaRules, {} )
+
 				MapVoteNoDemoSelected:completeAnimation()
 				self.MapVoteNoDemoSelected:setAlpha( 0 )
 				self.clipFinished( MapVoteNoDemoSelected, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setLeftRight( true, false, 0, 303 )
 				self.MapVoteResult:setTopBottom( true, false, 18, 177 )
 				self.MapVoteResult:setAlpha( 1 )
 				self.clipFinished( MapVoteResult, {} )
+
 				FileshareSpinner:completeAnimation()
 				self.FileshareSpinner:setAlpha( 0 )
 				self.clipFinished( FileshareSpinner, {} )
+
 				DownloadPercent:completeAnimation()
 				self.DownloadPercent:setAlpha( 0 )
 				self.clipFinished( DownloadPercent, {} )
+
 				MapVoteOfficial:completeAnimation()
 				self.MapVoteOfficial:setAlpha( 0 )
 				self.clipFinished( MapVoteOfficial, {} )
@@ -4038,7 +4388,9 @@ CoD.MapVote.new = function ( menu, controller )
 		DemoSelectedFinished = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				MapVoteItemVoteDecided:completeAnimation()
+
 				MapVoteItemVoteDecided.LobbyMemberBackingMask0:completeAnimation()
 				self.MapVoteItemVoteDecided:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemVoteDecided:setTopBottom( false, false, -81, 97 )
@@ -4067,8 +4419,11 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemRandom:completeAnimation()
+
 				MapVoteItemRandom.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemRandom.VoteType:completeAnimation()
+
 				MapVoteItemRandom.voteCount:completeAnimation()
 				self.MapVoteItemRandom:setLeftRight( true, true, 0, 0 )
 				self.MapVoteItemRandom:setTopBottom( false, false, -90, 88 )
@@ -4077,58 +4432,74 @@ CoD.MapVote.new = function ( menu, controller )
 				self.MapVoteItemRandom.VoteType:setAlpha( 0 )
 				self.MapVoteItemRandom.voteCount:setAlpha( 0 )
 				MapVoteItemRandomFrame2( MapVoteItemRandom, {} )
+
 				MapVoteItemPrevious:completeAnimation()
 				self.MapVoteItemPrevious:setAlpha( 0 )
 				self.clipFinished( MapVoteItemPrevious, {} )
+
 				MapVoteItemNext:completeAnimation()
 				self.MapVoteItemNext:setAlpha( 0 )
 				self.clipFinished( MapVoteItemNext, {} )
+
 				FEListSubHeaderGlow0:completeAnimation()
 				self.FEListSubHeaderGlow0:setLeftRight( true, true, 0, -52 )
 				self.FEListSubHeaderGlow0:setTopBottom( true, false, -7, 16 )
 				self.FEListSubHeaderGlow0:setAlpha( 1 )
 				self.clipFinished( FEListSubHeaderGlow0, {} )
+
 				MapVoting:completeAnimation()
 				self.MapVoting:setAlpha( 0 )
 				self.clipFinished( MapVoting, {} )
+
 				LobbyStatus:completeAnimation()
 				self.LobbyStatus:setLeftRight( false, true, -94.5, -66 )
 				self.LobbyStatus:setTopBottom( true, false, -6, 14 )
 				self.LobbyStatus:setAlpha( 1 )
 				self.clipFinished( LobbyStatus, {} )
+
 				FETitleLineUpper:completeAnimation()
 				self.FETitleLineUpper:setAlpha( 1 )
 				self.clipFinished( FETitleLineUpper, {} )
+
 				FETitleLineUpper0:completeAnimation()
 				self.FETitleLineUpper0:setAlpha( 0 )
 				self.clipFinished( FETitleLineUpper0, {} )
+
 				FETitleLineBottom0:completeAnimation()
 				self.FETitleLineBottom0:setAlpha( 1 )
 				self.clipFinished( FETitleLineBottom0, {} )
+
 				FRDifficulty:completeAnimation()
 				self.FRDifficulty:setAlpha( 1 )
 				self.clipFinished( FRDifficulty, {} )
+
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 1 )
 				self.clipFinished( ArenaRules, {} )
+
 				MapVoteNoDemoSelected:completeAnimation()
 				self.MapVoteNoDemoSelected:setAlpha( 0 )
 				self.clipFinished( MapVoteNoDemoSelected, {} )
+
 				MapVoteResult:completeAnimation()
 				self.MapVoteResult:setAlpha( 0 )
 				self.clipFinished( MapVoteResult, {} )
+
 				FileshareSpinner:completeAnimation()
 				self.FileshareSpinner:setAlpha( 0 )
 				self.clipFinished( FileshareSpinner, {} )
+
 				DownloadPercent:completeAnimation()
 				self.DownloadPercent:setAlpha( 0 )
 				self.clipFinished( DownloadPercent, {} )
+
 				MapVoteOfficial:completeAnimation()
 				self.MapVoteOfficial:setAlpha( 0 )
 				self.clipFinished( MapVoteOfficial, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 13 )
+
 				local MapVoteItemVoteDecidedFrame2 = function ( MapVoteItemVoteDecided, event )
 					if not event.interrupted then
 						MapVoteItemVoteDecided:beginAnimation( "keyframe", 529, false, false, CoD.TweenType.Bounce )
@@ -4147,6 +4518,7 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemVoteDecided:completeAnimation()
+
 				MapVoteItemVoteDecided.LobbyMemberBackingMask0:completeAnimation()
 				self.MapVoteItemVoteDecided:setLeftRight( true, true, -27, -27 )
 				self.MapVoteItemVoteDecided:setTopBottom( false, false, -81, 97 )
@@ -4175,8 +4547,11 @@ CoD.MapVote.new = function ( menu, controller )
 				end
 				
 				MapVoteItemRandom:completeAnimation()
+
 				MapVoteItemRandom.LobbyMemberBackingMask0:completeAnimation()
+
 				MapVoteItemRandom.VoteType:completeAnimation()
+
 				MapVoteItemRandom.voteCount:completeAnimation()
 				self.MapVoteItemRandom:setLeftRight( true, true, 0, 0 )
 				self.MapVoteItemRandom:setTopBottom( false, false, -90, 88 )
@@ -4185,9 +4560,11 @@ CoD.MapVote.new = function ( menu, controller )
 				self.MapVoteItemRandom.VoteType:setAlpha( 0 )
 				self.MapVoteItemRandom.voteCount:setAlpha( 0 )
 				MapVoteItemRandomFrame2( MapVoteItemRandom, {} )
+
 				MapVoteItemPrevious:completeAnimation()
 				self.MapVoteItemPrevious:setAlpha( 0 )
 				self.clipFinished( MapVoteItemPrevious, {} )
+
 				MapVoteItemNext:completeAnimation()
 				self.MapVoteItemNext:setAlpha( 0 )
 				self.clipFinished( MapVoteItemNext, {} )
@@ -4210,6 +4587,7 @@ CoD.MapVote.new = function ( menu, controller )
 				self.FEListSubHeaderGlow0:setTopBottom( true, false, -7, 16 )
 				self.FEListSubHeaderGlow0:setAlpha( 1 )
 				FEListSubHeaderGlow0Frame2( FEListSubHeaderGlow0, {} )
+
 				MapVoting:completeAnimation()
 				self.MapVoting:setAlpha( 0 )
 				self.clipFinished( MapVoting, {} )
@@ -4315,12 +4693,14 @@ CoD.MapVote.new = function ( menu, controller )
 				ArenaRules:completeAnimation()
 				self.ArenaRules:setAlpha( 1 )
 				ArenaRulesFrame2( ArenaRules, {} )
+
 				MapVoteOfficial:completeAnimation()
 				self.MapVoteOfficial:setAlpha( 0 )
 				self.clipFinished( MapVoteOfficial, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CPHidden",
@@ -4442,6 +4822,7 @@ CoD.MapVote.new = function ( menu, controller )
 		} )
 	end )
 	CoD.Menu.AddNavigationHandler( menu, self, controller )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsInDefaultState( element ) then
 			DisableMouseButton( self, controller )
@@ -4461,6 +4842,7 @@ CoD.MapVote.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MapVoteItemVoteDecided:close()
 		element.MapVoteItemRandom:close()

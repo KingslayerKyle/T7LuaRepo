@@ -40,9 +40,11 @@ end
 CoD.Challenges_FrameWidget_Specialists = InheritFrom( LUI.UIElement )
 CoD.Challenges_FrameWidget_Specialists.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_FrameWidget_Specialists )
 	self.id = "Challenges_FrameWidget_Specialists"
@@ -398,6 +400,7 @@ CoD.Challenges_FrameWidget_Specialists.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.operationsTitle:close()
 		element.WeaponsButton:close()

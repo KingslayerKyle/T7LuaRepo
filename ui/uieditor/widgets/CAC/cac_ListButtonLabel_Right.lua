@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_PanelNoBlur" )
 CoD.cac_ListButtonLabel_Right = InheritFrom( LUI.UIElement )
 CoD.cac_ListButtonLabel_Right.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_ListButtonLabel_Right )
 	self.id = "cac_ListButtonLabel_Right"
@@ -38,6 +40,7 @@ CoD.cac_ListButtonLabel_Right.new = function ( menu, controller )
 			itemName:setText( Engine.Localize( name ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( itemName, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrappedRightAlign( self, element, 1, 1 )
 	end )
@@ -48,9 +51,11 @@ CoD.cac_ListButtonLabel_Right.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0.4 )
 				self.clipFinished( Panel, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 1 )
 				self.clipFinished( itemName, {} )
@@ -59,9 +64,11 @@ CoD.cac_ListButtonLabel_Right.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 0 )
 				self.clipFinished( itemName, {} )
@@ -70,9 +77,11 @@ CoD.cac_ListButtonLabel_Right.new = function ( menu, controller )
 		Arabic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0.4 )
 				self.clipFinished( Panel, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 1 )
 				self.itemName:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
@@ -80,6 +89,7 @@ CoD.cac_ListButtonLabel_Right.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -94,6 +104,7 @@ CoD.cac_ListButtonLabel_Right.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 		element.itemName:close()

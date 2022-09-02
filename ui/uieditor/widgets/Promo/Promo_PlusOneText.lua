@@ -4,9 +4,11 @@
 CoD.Promo_PlusOneText = InheritFrom( LUI.UIElement )
 CoD.Promo_PlusOneText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Promo_PlusOneText )
 	self.id = "Promo_PlusOneText"
@@ -53,21 +55,26 @@ CoD.Promo_PlusOneText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Label0:completeAnimation()
 				self.Label0:setAlpha( 0 )
 				self.clipFinished( Label0, {} )
+
 				GlowPulse:completeAnimation()
 				self.GlowPulse:setAlpha( 0 )
 				self.clipFinished( GlowPulse, {} )
+
 				GlowPulse0:completeAnimation()
 				self.GlowPulse0:setAlpha( 0 )
 				self.clipFinished( GlowPulse0, {} )
+
 				GlowPulse00:completeAnimation()
 				self.GlowPulse00:setAlpha( 0 )
 				self.clipFinished( GlowPulse00, {} )
 			end,
 			PlayAfterIntro = function ()
 				self:setupElementClipCounter( 4 )
+
 				local Label0Frame2 = function ( Label0, event )
 					local Label0Frame3 = function ( Label0, event )
 						local Label0Frame4 = function ( Label0, event )

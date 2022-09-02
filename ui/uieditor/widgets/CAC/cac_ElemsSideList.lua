@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_Menu_LeftGraphics" )
 CoD.cac_ElemsSideList = InheritFrom( LUI.UIElement )
 CoD.cac_ElemsSideList.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_ElemsSideList )
 	self.id = "cac_ElemsSideList"
@@ -36,12 +38,14 @@ CoD.cac_ElemsSideList.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				LineSide:completeAnimation()
 				self.LineSide:setAlpha( 0 )
 				self.clipFinished( LineSide, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEMenuLeftGraphics:close()
 	end )

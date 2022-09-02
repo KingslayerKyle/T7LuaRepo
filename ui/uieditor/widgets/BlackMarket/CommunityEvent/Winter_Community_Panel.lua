@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Promo.Promo_ZMHD_CommunityWidget_TitleAndDesc" )
 CoD.Winter_Community_Panel = InheritFrom( LUI.UIElement )
 CoD.Winter_Community_Panel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Winter_Community_Panel )
 	self.id = "Winter_Community_Panel"
@@ -57,6 +59,7 @@ CoD.Winter_Community_Panel.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.WinterCommunityThermometer:close()
 		element.TitleAndDesc:close()

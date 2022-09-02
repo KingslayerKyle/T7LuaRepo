@@ -4,9 +4,11 @@
 CoD.FE_TitleElemTopC = InheritFrom( LUI.UIElement )
 CoD.FE_TitleElemTopC.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_TitleElemTopC )
 	self.id = "FE_TitleElemTopC"
@@ -26,6 +28,7 @@ CoD.FE_TitleElemTopC.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local topcFrame2 = function ( topc, event )
 					local topcFrame3 = function ( topc, event )
 						local topcFrame4 = function ( topc, event )
@@ -64,6 +67,7 @@ CoD.FE_TitleElemTopC.new = function ( menu, controller )
 				self.topc:setLeftRight( true, false, 0, 24 )
 				self.topc:setTopBottom( true, false, 0, 4 )
 				topcFrame2( topc, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BackgroundFrames.BackgroundPattern03" )
 CoD.MatchStartWarning_TimerBkgd = InheritFrom( LUI.UIElement )
 CoD.MatchStartWarning_TimerBkgd.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.MatchStartWarning_TimerBkgd )
 	self.id = "MatchStartWarning_TimerBkgd"

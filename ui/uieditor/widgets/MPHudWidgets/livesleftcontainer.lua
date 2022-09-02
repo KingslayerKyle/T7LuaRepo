@@ -4,9 +4,11 @@
 CoD.LivesLeftContainer = InheritFrom( LUI.UIElement )
 CoD.LivesLeftContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LivesLeftContainer )
 	self.id = "LivesLeftContainer"
@@ -28,17 +30,20 @@ CoD.LivesLeftContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				LivesLeft:completeAnimation()
 				self.LivesLeft:setAlpha( 0 )
 				self.clipFinished( LivesLeft, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hide",

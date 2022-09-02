@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_Options_Network_PingListItem" 
 CoD.StartMenu_Options_Network_OverviewPanel = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_Network_OverviewPanel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_Network_OverviewPanel )
 	self.id = "StartMenu_Options_Network_OverviewPanel"
@@ -135,49 +137,61 @@ CoD.StartMenu_Options_Network_OverviewPanel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		PC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				NetworkBox2:completeAnimation()
 				self.NetworkBox2:setLeftRight( true, true, 0, 0 )
 				self.NetworkBox2:setTopBottom( true, false, 75.5, 145.5 )
 				self.clipFinished( NetworkBox2, {} )
+
 				NetworkBox3:completeAnimation()
 				self.NetworkBox3:setAlpha( 0 )
 				self.clipFinished( NetworkBox3, {} )
+
 				NetworkPanel1:completeAnimation()
 				self.NetworkPanel1:setAlpha( 0 )
 				self.clipFinished( NetworkPanel1, {} )
+
 				NetworkPanel3:completeAnimation()
 				self.NetworkPanel3:setLeftRight( true, true, 190, -12 )
 				self.NetworkPanel3:setTopBottom( true, false, 82.5, 136.5 )
 				self.clipFinished( NetworkPanel3, {} )
+
 				VersionLabel:completeAnimation()
 				self.VersionLabel:setLeftRight( true, false, 25, 134 )
 				self.VersionLabel:setTopBottom( true, false, 97, 122 )
 				self.clipFinished( VersionLabel, {} )
+
 				VersionValueLabel:completeAnimation()
 				self.VersionValueLabel:setLeftRight( true, false, 200, 400 )
 				self.VersionValueLabel:setTopBottom( true, false, 85.5, 105.5 )
 				self.clipFinished( VersionValueLabel, {} )
+
 				AboutPingBarsDesc:completeAnimation()
 				self.AboutPingBarsDesc:setAlpha( 0 )
 				self.clipFinished( AboutPingBarsDesc, {} )
+
 				AboutPingBarsLabel:completeAnimation()
 				self.AboutPingBarsLabel:setAlpha( 0 )
 				self.clipFinished( AboutPingBarsLabel, {} )
+
 				ConnectivityLabel:completeAnimation()
 				self.ConnectivityLabel:setLeftRight( true, false, 200, 400 )
 				self.ConnectivityLabel:setTopBottom( true, false, 109.5, 129.5 )
 				self.clipFinished( ConnectivityLabel, {} )
+
 				pingList:completeAnimation()
 				self.pingList:setAlpha( 0 )
 				self.clipFinished( pingList, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "PC",
@@ -186,6 +200,7 @@ CoD.StartMenu_Options_Network_OverviewPanel.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.NetworkBox1:close()
 		element.NetworkBox2:close()

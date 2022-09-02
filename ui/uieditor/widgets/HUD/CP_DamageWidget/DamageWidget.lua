@@ -13,9 +13,11 @@ require( "ui.uieditor.widgets.HUD.CP_DamageWidget.DamageWidget_Dot" )
 CoD.DamageWidget = InheritFrom( LUI.UIElement )
 CoD.DamageWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DamageWidget )
 	self.id = "DamageWidget"
@@ -329,6 +331,7 @@ CoD.DamageWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				PanelContainer:completeAnimation()
 				self.PanelContainer:setLeftRight( true, false, 4.83, 192.33 )
 				self.PanelContainer:setTopBottom( true, false, 6.67, 101.34 )
@@ -354,42 +357,55 @@ CoD.DamageWidget.new = function ( menu, controller )
 				self.BackGlow:setTopBottom( false, false, -47.25, 51.58 )
 				self.BackGlow:setAlpha( 0.2 )
 				BackGlowFrame2( BackGlow, {} )
+
 				UIGlow:completeAnimation()
 				self.UIGlow:setLeftRight( true, false, -20, 153.33 )
 				self.UIGlow:setTopBottom( true, false, -6.67, 122.67 )
 				self.UIGlow:setAlpha( 0.6 )
 				self.clipFinished( UIGlow, {} )
+
 				BackCircleOutter:completeAnimation()
 				self.BackCircleOutter:setAlpha( 1 )
 				self.BackCircleOutter:setZoom( -5 )
 				self.clipFinished( BackCircleOutter, {} )
+
 				BackCircleInner:completeAnimation()
 				self.BackCircleInner:setAlpha( 0.3 )
 				self.BackCircleInner:setZoom( -2 )
 				self.clipFinished( BackCircleInner, {} )
+
 				HealthState:completeAnimation()
 				self.HealthState:setAlpha( 1 )
 				self.HealthState:setZRot( 0 )
 				self.HealthState:setZoom( 0 )
 				self.clipFinished( HealthState, {} )
+
 				Repair:completeAnimation()
 				self.Repair:setAlpha( 1 )
 				self.Repair:setZRot( 0 )
 				self.Repair:setZoom( 5 )
 				self.clipFinished( Repair, {} )
+
 				BodyIndicatorSolid:completeAnimation()
 				self.BodyIndicatorSolid:setAlpha( 0.5 )
 				self.BodyIndicatorSolid:setZoom( 2 )
 				self.clipFinished( BodyIndicatorSolid, {} )
+
 				BodyIndicator:completeAnimation()
 				self.BodyIndicator:setAlpha( 1 )
 				self.BodyIndicator:setZoom( 2 )
 				self.clipFinished( BodyIndicator, {} )
+
 				EnviroHazardContainer:completeAnimation()
+
 				EnviroHazardContainer.EnviroHazard2:completeAnimation()
+
 				EnviroHazardContainer.DamageWidgetSemiCircle0:completeAnimation()
+
 				EnviroHazardContainer.AmmoWidgetBackLine:completeAnimation()
+
 				EnviroHazardContainer.AmmoWidgetBackLine0:completeAnimation()
+
 				EnviroHazardContainer.DamageWidgetArrow0:completeAnimation()
 				self.EnviroHazardContainer.EnviroHazard2:setZoom( 0 )
 				self.EnviroHazardContainer.DamageWidgetSemiCircle0:setAlpha( 0.6 )
@@ -399,31 +415,37 @@ CoD.DamageWidget.new = function ( menu, controller )
 				self.EnviroHazardContainer.AmmoWidgetBackLine0:setZoom( -3 )
 				self.EnviroHazardContainer.DamageWidgetArrow0:setAlpha( 1 )
 				self.clipFinished( EnviroHazardContainer, {} )
+
 				Dot1:completeAnimation()
 				self.Dot1:setLeftRight( true, false, 5, 9 )
 				self.Dot1:setTopBottom( true, false, 14, 18 )
 				self.Dot1:setAlpha( 0.6 )
 				self.clipFinished( Dot1, {} )
+
 				Dot2:completeAnimation()
 				self.Dot2:setLeftRight( true, false, 88, 92 )
 				self.Dot2:setTopBottom( true, false, 14, 18 )
 				self.Dot2:setAlpha( 0.6 )
 				self.clipFinished( Dot2, {} )
+
 				Dot3:completeAnimation()
 				self.Dot3:setLeftRight( true, false, 123.5, 127.5 )
 				self.Dot3:setTopBottom( true, false, 14, 18 )
 				self.Dot3:setAlpha( 0.6 )
 				self.clipFinished( Dot3, {} )
+
 				Dot4:completeAnimation()
 				self.Dot4:setLeftRight( true, false, 5, 9 )
 				self.Dot4:setTopBottom( true, false, 94.25, 98.25 )
 				self.Dot4:setAlpha( 0.6 )
 				self.clipFinished( Dot4, {} )
+
 				Dot5:completeAnimation()
 				self.Dot5:setLeftRight( true, false, 88, 92 )
 				self.Dot5:setTopBottom( true, false, 94.25, 98.25 )
 				self.Dot5:setAlpha( 0.6 )
 				self.clipFinished( Dot5, {} )
+
 				Dot6:completeAnimation()
 				self.Dot6:setLeftRight( true, false, 123.5, 127.5 )
 				self.Dot6:setTopBottom( true, false, 94.25, 98.25 )
@@ -432,6 +454,7 @@ CoD.DamageWidget.new = function ( menu, controller )
 			end,
 			Invisible = function ()
 				self:setupElementClipCounter( 16 )
+
 				local PanelContainerFrame2 = function ( PanelContainer, event )
 					if not event.interrupted then
 						PanelContainer:beginAnimation( "keyframe", 560, false, true, CoD.TweenType.Bounce )
@@ -613,10 +636,15 @@ CoD.DamageWidget.new = function ( menu, controller )
 				end
 				
 				EnviroHazardContainer:completeAnimation()
+
 				EnviroHazardContainer.EnviroHazard2:completeAnimation()
+
 				EnviroHazardContainer.DamageWidgetSemiCircle0:completeAnimation()
+
 				EnviroHazardContainer.AmmoWidgetBackLine:completeAnimation()
+
 				EnviroHazardContainer.AmmoWidgetBackLine0:completeAnimation()
+
 				EnviroHazardContainer.DamageWidgetArrow0:completeAnimation()
 				self.EnviroHazardContainer.EnviroHazard2:setZoom( 0 )
 				self.EnviroHazardContainer.DamageWidgetSemiCircle0:setAlpha( 0.6 )
@@ -745,50 +773,64 @@ CoD.DamageWidget.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				PanelContainer:completeAnimation()
 				self.PanelContainer:setLeftRight( true, false, 4.83, 94.33 )
 				self.PanelContainer:setTopBottom( true, false, 6.67, 101.34 )
 				self.PanelContainer:setAlpha( 0 )
 				self.PanelContainer:setZoom( -10 )
 				self.clipFinished( PanelContainer, {} )
+
 				BackGlow:completeAnimation()
 				self.BackGlow:setAlpha( 0 )
 				self.clipFinished( BackGlow, {} )
+
 				UIGlow:completeAnimation()
 				self.UIGlow:setLeftRight( true, false, -20, 153.33 )
 				self.UIGlow:setTopBottom( true, false, -6.5, 122.83 )
 				self.UIGlow:setAlpha( 0 )
 				self.clipFinished( UIGlow, {} )
+
 				BackCircleOutter:completeAnimation()
 				self.BackCircleOutter:setAlpha( 0 )
 				self.BackCircleOutter:setZoom( 40 )
 				self.clipFinished( BackCircleOutter, {} )
+
 				BackCircleInner:completeAnimation()
 				self.BackCircleInner:setAlpha( 0 )
 				self.BackCircleInner:setZoom( -2 )
 				self.clipFinished( BackCircleInner, {} )
+
 				HealthState:completeAnimation()
 				self.HealthState:setAlpha( 0 )
 				self.HealthState:setZRot( -90 )
 				self.HealthState:setZoom( 40 )
 				self.clipFinished( HealthState, {} )
+
 				Repair:completeAnimation()
 				self.Repair:setAlpha( 0 )
 				self.Repair:setZRot( 90 )
 				self.Repair:setZoom( 35 )
 				self.clipFinished( Repair, {} )
+
 				BodyIndicatorSolid:completeAnimation()
 				self.BodyIndicatorSolid:setAlpha( 0 )
 				self.BodyIndicatorSolid:setZoom( -27 )
 				self.clipFinished( BodyIndicatorSolid, {} )
+
 				BodyIndicator:completeAnimation()
 				self.BodyIndicator:setAlpha( 0 )
 				self.BodyIndicator:setZoom( 52 )
 				self.clipFinished( BodyIndicator, {} )
+
 				EnviroHazardContainer:completeAnimation()
+
 				EnviroHazardContainer.DamageWidgetSemiCircle0:completeAnimation()
+
 				EnviroHazardContainer.AmmoWidgetBackLine:completeAnimation()
+
 				EnviroHazardContainer.AmmoWidgetBackLine0:completeAnimation()
+
 				EnviroHazardContainer.DamageWidgetArrow0:completeAnimation()
 				self.EnviroHazardContainer.DamageWidgetSemiCircle0:setAlpha( 0 )
 				self.EnviroHazardContainer.AmmoWidgetBackLine:setAlpha( 0 )
@@ -797,31 +839,37 @@ CoD.DamageWidget.new = function ( menu, controller )
 				self.EnviroHazardContainer.AmmoWidgetBackLine0:setZoom( -20 )
 				self.EnviroHazardContainer.DamageWidgetArrow0:setAlpha( 0 )
 				self.clipFinished( EnviroHazardContainer, {} )
+
 				Dot1:completeAnimation()
 				self.Dot1:setLeftRight( true, false, 5, 9 )
 				self.Dot1:setTopBottom( true, false, 54, 58 )
 				self.Dot1:setAlpha( 0 )
 				self.clipFinished( Dot1, {} )
+
 				Dot2:completeAnimation()
 				self.Dot2:setLeftRight( true, false, 4, 8 )
 				self.Dot2:setTopBottom( true, false, 54, 58 )
 				self.Dot2:setAlpha( 0 )
 				self.clipFinished( Dot2, {} )
+
 				Dot3:completeAnimation()
 				self.Dot3:setLeftRight( true, false, 3.5, 7.5 )
 				self.Dot3:setTopBottom( true, false, 54, 58 )
 				self.Dot3:setAlpha( 0 )
 				self.clipFinished( Dot3, {} )
+
 				Dot4:completeAnimation()
 				self.Dot4:setLeftRight( true, false, 5, 9 )
 				self.Dot4:setTopBottom( true, false, 54.25, 58.25 )
 				self.Dot4:setAlpha( 0 )
 				self.clipFinished( Dot4, {} )
+
 				Dot5:completeAnimation()
 				self.Dot5:setLeftRight( true, false, 4, 8 )
 				self.Dot5:setTopBottom( true, false, 54.25, 58.25 )
 				self.Dot5:setAlpha( 0 )
 				self.clipFinished( Dot5, {} )
+
 				Dot6:completeAnimation()
 				self.Dot6:setLeftRight( true, false, 3.5, 7.5 )
 				self.Dot6:setTopBottom( true, false, 54.25, 58.25 )
@@ -830,6 +878,7 @@ CoD.DamageWidget.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 16 )
+
 				local PanelContainerFrame2 = function ( PanelContainer, event )
 					local PanelContainerFrame3 = function ( PanelContainer, event )
 						local PanelContainerFrame4 = function ( PanelContainer, event )
@@ -1500,9 +1549,13 @@ CoD.DamageWidget.new = function ( menu, controller )
 				end
 				
 				EnviroHazardContainer:completeAnimation()
+
 				EnviroHazardContainer.DamageWidgetSemiCircle0:completeAnimation()
+
 				EnviroHazardContainer.AmmoWidgetBackLine:completeAnimation()
+
 				EnviroHazardContainer.AmmoWidgetBackLine0:completeAnimation()
+
 				EnviroHazardContainer.DamageWidgetArrow0:completeAnimation()
 				self.EnviroHazardContainer.DamageWidgetSemiCircle0:setAlpha( 0 )
 				self.EnviroHazardContainer.AmmoWidgetBackLine:setAlpha( 0 )
@@ -1810,6 +1863,7 @@ CoD.DamageWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PanelContainer:close()
 		element.BackCircleOutter:close()

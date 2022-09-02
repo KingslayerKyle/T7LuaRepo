@@ -4,9 +4,11 @@
 CoD.uie_Border = InheritFrom( LUI.UIElement )
 CoD.uie_Border.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.uie_Border )
 	self.id = "uie_Border"

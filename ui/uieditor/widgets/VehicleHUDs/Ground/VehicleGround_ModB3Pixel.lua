@@ -4,9 +4,11 @@
 CoD.VehicleGround_ModB3Pixel = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_ModB3Pixel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.VehicleGround_ModB3Pixel )
 	self.id = "VehicleGround_ModB3Pixel"
@@ -26,6 +28,7 @@ CoD.VehicleGround_ModB3Pixel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local Image11Frame2 = function ( Image11, event )
 					local Image11Frame3 = function ( Image11, event )
 						local Image11Frame4 = function ( Image11, event )
@@ -62,15 +65,18 @@ CoD.VehicleGround_ModB3Pixel.new = function ( menu, controller )
 				Image11:completeAnimation()
 				self.Image11:setAlpha( 1 )
 				Image11Frame2( Image11, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.cac_LabelNew" )
 CoD.EmblemMaterialElement = InheritFrom( LUI.UIElement )
 CoD.EmblemMaterialElement.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemMaterialElement )
 	self.id = "EmblemMaterialElement"
@@ -81,40 +83,49 @@ CoD.EmblemMaterialElement.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 0 )
 				self.clipFinished( background, {} )
+
 				emblemMaterial:completeAnimation()
 				self.emblemMaterial:setAlpha( 1 )
 				self.clipFinished( emblemMaterial, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 0 )
 				self.clipFinished( bgImage, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:completeAnimation()
 				self.background:setLeftRight( true, true, 2, -2 )
 				self.background:setTopBottom( true, true, 2, -2 )
 				self.background:setRGB( 1, 0.41, 0 )
 				self.background:setAlpha( 1 )
 				self.clipFinished( background, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:completeAnimation()
 				self.background:setRGB( 1, 1, 1 )
 				self.background:setAlpha( 1 )
 				self.clipFinished( background, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
@@ -123,58 +134,73 @@ CoD.EmblemMaterialElement.new = function ( menu, controller )
 		BMClassified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 0 )
 				self.clipFinished( background, {} )
+
 				emblemMaterial:completeAnimation()
 				self.emblemMaterial:setAlpha( 0 )
 				self.clipFinished( emblemMaterial, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 1 )
 				self.clipFinished( bgImage, {} )
+
 				smallbargold:completeAnimation()
 				self.smallbargold:setAlpha( 0.65 )
 				self.clipFinished( smallbargold, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 1 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				background:completeAnimation()
 				self.background:setLeftRight( true, true, 2, -2 )
 				self.background:setTopBottom( true, true, 2, -2 )
 				self.background:setRGB( 1, 0.41, 0 )
 				self.background:setAlpha( 1 )
 				self.clipFinished( background, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 1 )
 				self.clipFinished( bgImage, {} )
+
 				smallbargold:completeAnimation()
 				self.smallbargold:setAlpha( 1 )
 				self.clipFinished( smallbargold, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 1 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 3 )
+
 				background:completeAnimation()
 				self.background:setRGB( 1, 1, 1 )
 				self.background:setAlpha( 1 )
 				self.clipFinished( background, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 1 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
@@ -183,46 +209,57 @@ CoD.EmblemMaterialElement.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 0 )
 				self.clipFinished( background, {} )
+
 				emblemMaterial:completeAnimation()
 				self.emblemMaterial:setAlpha( 0 )
 				self.clipFinished( emblemMaterial, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 0 )
 				self.clipFinished( bgImage, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				background:completeAnimation()
 				self.background:setLeftRight( true, true, 2, -2 )
 				self.background:setTopBottom( true, true, 2, -2 )
 				self.background:setRGB( 1, 0.41, 0 )
 				self.background:setAlpha( 1 )
 				self.clipFinished( background, {} )
+
 				emblemMaterial:completeAnimation()
 				self.emblemMaterial:setAlpha( 0 )
 				self.clipFinished( emblemMaterial, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 3 )
+
 				background:completeAnimation()
 				self.background:setRGB( 1, 1, 1 )
 				self.background:setAlpha( 1 )
 				self.clipFinished( background, {} )
+
 				emblemMaterial:completeAnimation()
 				self.emblemMaterial:setAlpha( 0 )
 				self.clipFinished( emblemMaterial, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
@@ -231,52 +268,64 @@ CoD.EmblemMaterialElement.new = function ( menu, controller )
 		New = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 0 )
 				self.clipFinished( background, {} )
+
 				emblemMaterial:completeAnimation()
 				self.emblemMaterial:setAlpha( 1 )
 				self.clipFinished( emblemMaterial, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 0 )
 				self.clipFinished( bgImage, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 1 )
 				self.clipFinished( IconNew, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				background:completeAnimation()
 				self.background:setLeftRight( true, true, 2, -2 )
 				self.background:setTopBottom( true, true, 2, -2 )
 				self.background:setRGB( 1, 0.41, 0 )
 				self.background:setAlpha( 1 )
 				self.clipFinished( background, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 1 )
 				self.clipFinished( IconNew, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 3 )
+
 				background:completeAnimation()
 				self.background:setRGB( 1, 1, 1 )
 				self.background:setAlpha( 1 )
 				self.clipFinished( background, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 1 )
 				self.clipFinished( IconNew, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BMClassified",
@@ -313,6 +362,7 @@ CoD.EmblemMaterialElement.new = function ( menu, controller )
 			modelName = "materialID"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.lockedIcon:close()
 		element.IconNew:close()

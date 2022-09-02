@@ -10,9 +10,11 @@ end
 CoD.ChatClientContainer = InheritFrom( LUI.UIElement )
 CoD.ChatClientContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChatClientContainer )
 	self.id = "ChatClientContainer"
@@ -41,17 +43,20 @@ CoD.ChatClientContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Hiden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ChatClient:completeAnimation()
 				self.ChatClient:setAlpha( 0 )
 				self.clipFinished( ChatClient, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hiden",
@@ -68,6 +73,7 @@ CoD.ChatClientContainer.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ChatClient:close()
 	end )

@@ -4,9 +4,11 @@
 CoD.RankIconAndNumberWidget = InheritFrom( LUI.UIElement )
 CoD.RankIconAndNumberWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RankIconAndNumberWidget )
 	self.id = "RankIconAndNumberWidget"
@@ -32,9 +34,11 @@ CoD.RankIconAndNumberWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			GrowBig = function ()
 				self:setupElementClipCounter( 2 )
+
 				local NextRankIconFrame2 = function ( NextRankIcon, event )
 					local NextRankIconFrame3 = function ( NextRankIcon, event )
 						if not event.interrupted then

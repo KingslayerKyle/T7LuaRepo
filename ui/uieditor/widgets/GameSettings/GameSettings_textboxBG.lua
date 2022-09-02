@@ -4,9 +4,11 @@
 CoD.GameSettings_textboxBG = InheritFrom( LUI.UIElement )
 CoD.GameSettings_textboxBG.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GameSettings_textboxBG )
 	self.id = "GameSettings_textboxBG"

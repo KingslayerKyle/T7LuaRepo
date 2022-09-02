@@ -24,9 +24,11 @@ end
 CoD.OverCapacityItem = InheritFrom( LUI.UIElement )
 CoD.OverCapacityItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.OverCapacityItem )
 	self.id = "OverCapacityItem"
@@ -199,36 +201,45 @@ CoD.OverCapacityItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				opticIndicator:completeAnimation()
 				self.opticIndicator:setAlpha( 0 )
 				self.clipFinished( opticIndicator, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setLeftRight( false, false, -42.5, 42.5 )
 				self.itemHintText:setTopBottom( false, true, 19, 39 )
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setRGB( 1, 1, 1 )
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
@@ -237,42 +248,54 @@ CoD.OverCapacityItem.new = function ( menu, controller )
 		Wildcard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 1 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0.8 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
@@ -281,50 +304,64 @@ CoD.OverCapacityItem.new = function ( menu, controller )
 		Small = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( false, false, -31, 31 )
 				self.sizeElement:setTopBottom( true, false, 0, 62 )
 				self.clipFinished( sizeElement, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( false, false, -31, 31 )
 				self.sizeElement:setTopBottom( true, false, 0, 62 )
 				self.clipFinished( sizeElement, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0.9 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0.8 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
@@ -333,60 +370,75 @@ CoD.OverCapacityItem.new = function ( menu, controller )
 		Weapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( false, false, -64.5, 64.5 )
 				self.sizeElement:setTopBottom( true, false, 0, 129 )
 				self.clipFinished( sizeElement, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( false, false, -64.5, 64.5 )
 				self.sizeElement:setTopBottom( true, false, 0, 129 )
 				self.clipFinished( sizeElement, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0.9 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0.8 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, 1, -1.5 )
 				self.FocusBarT:setTopBottom( true, false, 0, 4 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, 1, -1.5 )
 				self.FocusBarB:setTopBottom( false, true, -3, 1 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Wildcard",
@@ -415,6 +467,7 @@ CoD.OverCapacityItem.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.sizeElement:close()
 		element.itemHintText:close()

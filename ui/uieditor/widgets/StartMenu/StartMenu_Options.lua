@@ -91,9 +91,11 @@ end
 CoD.StartMenu_Options = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options )
 	self.id = "StartMenu_Options"
@@ -705,9 +707,11 @@ CoD.StartMenu_Options.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				CreditsSmall:completeAnimation()
 				self.CreditsSmall:setAlpha( 0 )
 				self.clipFinished( CreditsSmall, {} )
+
 				Privacy:completeAnimation()
 				self.Privacy:setAlpha( 0 )
 				self.clipFinished( Privacy, {} )
@@ -716,12 +720,14 @@ CoD.StartMenu_Options.new = function ( menu, controller )
 		PrivacySettings = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Credits:completeAnimation()
 				self.Credits:setAlpha( 0 )
 				self.clipFinished( Credits, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "PrivacySettings",
@@ -748,6 +754,7 @@ CoD.StartMenu_Options.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Muting:close()
 		element.Credits:close()

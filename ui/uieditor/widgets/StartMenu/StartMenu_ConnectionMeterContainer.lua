@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_ConnectionMeter" )
 CoD.StartMenu_ConnectionMeterContainer = InheritFrom( LUI.UIElement )
 CoD.StartMenu_ConnectionMeterContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.StartMenu_ConnectionMeterContainer )
 	self.id = "StartMenu_ConnectionMeterContainer"
@@ -35,9 +37,11 @@ CoD.StartMenu_ConnectionMeterContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				StartMenuConnectionMeter0:completeAnimation()
 				self.StartMenuConnectionMeter0:setAlpha( 0 )
 				self.clipFinished( StartMenuConnectionMeter0, {} )
+
 				ConnectionMeterLabel:completeAnimation()
 				self.ConnectionMeterLabel:setAlpha( 0 )
 				self.clipFinished( ConnectionMeterLabel, {} )
@@ -46,15 +50,18 @@ CoD.StartMenu_ConnectionMeterContainer.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				StartMenuConnectionMeter0:completeAnimation()
 				self.StartMenuConnectionMeter0:setAlpha( 1 )
 				self.clipFinished( StartMenuConnectionMeter0, {} )
+
 				ConnectionMeterLabel:completeAnimation()
 				self.ConnectionMeterLabel:setAlpha( 1 )
 				self.clipFinished( ConnectionMeterLabel, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -83,6 +90,7 @@ CoD.StartMenu_ConnectionMeterContainer.new = function ( menu, controller )
 	else
 		self:registerEventHandler( "on_session_end", LUI.UIElement.updateState )
 	end
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuConnectionMeter0:close()
 	end )

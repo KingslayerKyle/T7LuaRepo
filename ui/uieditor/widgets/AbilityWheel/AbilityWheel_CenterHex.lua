@@ -4,9 +4,11 @@
 CoD.AbilityWheel_CenterHex = InheritFrom( LUI.UIElement )
 CoD.AbilityWheel_CenterHex.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AbilityWheel_CenterHex )
 	self.id = "AbilityWheel_CenterHex"
@@ -27,6 +29,7 @@ CoD.AbilityWheel_CenterHex.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local HexCenter0Frame2 = function ( HexCenter0, event )
 					if not event.interrupted then
 						HexCenter0:beginAnimation( "keyframe", 39, false, false, CoD.TweenType.Linear )
@@ -45,6 +48,7 @@ CoD.AbilityWheel_CenterHex.new = function ( menu, controller )
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

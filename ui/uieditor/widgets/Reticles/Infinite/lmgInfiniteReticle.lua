@@ -10,9 +10,11 @@ end
 CoD.lmgInfiniteReticle = InheritFrom( LUI.UIElement )
 CoD.lmgInfiniteReticle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.lmgInfiniteReticle )
 	self.id = "lmgInfiniteReticle"

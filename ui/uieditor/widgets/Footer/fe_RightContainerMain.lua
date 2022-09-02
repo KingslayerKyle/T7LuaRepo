@@ -33,6 +33,7 @@ CoD.fe_RightContainerMain.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.fe_RightContainerMain )
 	self.id = "fe_RightContainerMain"

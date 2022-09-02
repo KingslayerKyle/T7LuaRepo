@@ -4,9 +4,11 @@
 CoD.CACHeroPreviewPanelImage = InheritFrom( LUI.UIElement )
 CoD.CACHeroPreviewPanelImage.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CACHeroPreviewPanelImage )
 	self.id = "CACHeroPreviewPanelImage"

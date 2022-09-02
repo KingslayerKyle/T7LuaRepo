@@ -18,9 +18,11 @@ end
 CoD.Social_InfoPane_Presence_Joinable = InheritFrom( LUI.UIElement )
 CoD.Social_InfoPane_Presence_Joinable.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_InfoPane_Presence_Joinable )
 	self.id = "Social_InfoPane_Presence_Joinable"
@@ -90,12 +92,15 @@ CoD.Social_InfoPane_Presence_Joinable.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 0 )
 				self.clipFinished( Icon, {} )
+
 				notjoinableText:completeAnimation()
 				self.notjoinableText:setAlpha( 1 )
 				self.clipFinished( notjoinableText, {} )
+
 				SocialJoinBtn:completeAnimation()
 				self.SocialJoinBtn:setAlpha( 1 )
 				self.clipFinished( SocialJoinBtn, {} )
@@ -104,12 +109,15 @@ CoD.Social_InfoPane_Presence_Joinable.new = function ( menu, controller )
 		LobbyLocked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 0 )
 				self.clipFinished( Icon, {} )
+
 				notjoinableText:completeAnimation()
 				self.notjoinableText:setAlpha( 0 )
 				self.clipFinished( notjoinableText, {} )
+
 				SocialJoinBtn:completeAnimation()
 				self.SocialJoinBtn:setAlpha( 0 )
 				self.clipFinished( SocialJoinBtn, {} )
@@ -118,12 +126,15 @@ CoD.Social_InfoPane_Presence_Joinable.new = function ( menu, controller )
 		HideJoinButton = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 0 )
 				self.clipFinished( Icon, {} )
+
 				notjoinableText:completeAnimation()
 				self.notjoinableText:setAlpha( 0 )
 				self.clipFinished( notjoinableText, {} )
+
 				SocialJoinBtn:completeAnimation()
 				self.SocialJoinBtn:setAlpha( 0 )
 				self.clipFinished( SocialJoinBtn, {} )
@@ -132,18 +143,22 @@ CoD.Social_InfoPane_Presence_Joinable.new = function ( menu, controller )
 		NotJoinable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 0 )
 				self.clipFinished( Icon, {} )
+
 				notjoinableText:completeAnimation()
 				self.notjoinableText:setAlpha( 1 )
 				self.clipFinished( notjoinableText, {} )
+
 				SocialJoinBtn:completeAnimation()
 				self.SocialJoinBtn:setAlpha( 0 )
 				self.clipFinished( SocialJoinBtn, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "LobbyLocked",
@@ -188,6 +203,7 @@ CoD.Social_InfoPane_Presence_Joinable.new = function ( menu, controller )
 			modelName = "joinable"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MissionRecordVaultlines01:close()
 		element.MissionRecordVaultlines010:close()

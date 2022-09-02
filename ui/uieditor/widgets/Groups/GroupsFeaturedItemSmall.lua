@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FocusBarContainer" )
 CoD.GroupsFeaturedItemSmall = InheritFrom( LUI.UIElement )
 CoD.GroupsFeaturedItemSmall.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.GroupsFeaturedItemSmall )
 	self.id = "GroupsFeaturedItemSmall"
@@ -214,62 +216,80 @@ CoD.GroupsFeaturedItemSmall.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				WCFileshareIconExtraCamRender0:completeAnimation()
 				self.WCFileshareIconExtraCamRender0:setLeftRight( true, false, -4.5, 324.5 )
 				self.WCFileshareIconExtraCamRender0:setTopBottom( false, true, -285.25, 83.75 )
 				self.clipFinished( WCFileshareIconExtraCamRender0, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 0 )
 				self.clipFinished( MapImage, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 0 )
 				self.clipFinished( Thumbnail, {} )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				TimeText:completeAnimation()
 				self.TimeText:setLeftRight( false, true, -206.13, -5 )
 				self.TimeText:setTopBottom( false, true, -22, -4 )
 				self.clipFinished( TimeText, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 0 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				ErrorImage:completeAnimation()
 				self.ErrorImage:setAlpha( 0 )
 				self.clipFinished( ErrorImage, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 9 )
+
 				WCFileshareIconExtraCamRender0:completeAnimation()
 				self.WCFileshareIconExtraCamRender0:setLeftRight( true, false, -4.5, 324.5 )
 				self.WCFileshareIconExtraCamRender0:setTopBottom( false, true, -285.25, 83.75 )
 				self.clipFinished( WCFileshareIconExtraCamRender0, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 0 )
 				self.clipFinished( MapImage, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 0 )
 				self.clipFinished( Thumbnail, {} )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				TimeText:completeAnimation()
 				self.TimeText:setLeftRight( false, true, -206.13, -5 )
 				self.TimeText:setTopBottom( false, true, -22, -4 )
 				self.clipFinished( TimeText, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 0 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				ErrorImage:completeAnimation()
 				self.ErrorImage:setAlpha( 0 )
 				self.clipFinished( ErrorImage, {} )
@@ -278,57 +298,72 @@ CoD.GroupsFeaturedItemSmall.new = function ( menu, controller )
 		InvalidNormal = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				WCFileshareIconExtraCamRender0:completeAnimation()
 				self.WCFileshareIconExtraCamRender0:setLeftRight( true, false, -4.5, 324.5 )
 				self.WCFileshareIconExtraCamRender0:setTopBottom( false, true, -285.25, 83.75 )
 				self.clipFinished( WCFileshareIconExtraCamRender0, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 0 )
 				self.clipFinished( MapImage, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 0 )
 				self.clipFinished( Thumbnail, {} )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				CategoryImage:completeAnimation()
 				self.CategoryImage:setAlpha( 0 )
 				self.clipFinished( CategoryImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 0 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				ErrorImage:completeAnimation()
 				self.ErrorImage:setAlpha( 1 )
 				self.clipFinished( ErrorImage, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 2 )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 2 )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 2 )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, -2, 2 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
@@ -337,30 +372,39 @@ CoD.GroupsFeaturedItemSmall.new = function ( menu, controller )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 9 )
+
 				WCFileshareIconExtraCamRender0:completeAnimation()
 				self.WCFileshareIconExtraCamRender0:setLeftRight( true, false, -4.5, 324.5 )
 				self.WCFileshareIconExtraCamRender0:setTopBottom( false, true, -285.25, 83.75 )
 				self.clipFinished( WCFileshareIconExtraCamRender0, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 0 )
 				self.clipFinished( MapImage, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 0 )
 				self.clipFinished( Thumbnail, {} )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				CategoryImage:completeAnimation()
 				self.CategoryImage:setAlpha( 0 )
 				self.clipFinished( CategoryImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 0 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				ErrorImage:completeAnimation()
 				self.ErrorImage:setAlpha( 1 )
 				self.clipFinished( ErrorImage, {} )
@@ -369,44 +413,56 @@ CoD.GroupsFeaturedItemSmall.new = function ( menu, controller )
 		InvalidShort = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				WCFileshareIconExtraCamRender0:completeAnimation()
 				self.WCFileshareIconExtraCamRender0:setLeftRight( true, false, -4.5, 324.5 )
 				self.WCFileshareIconExtraCamRender0:setTopBottom( false, true, -174, 0 )
 				self.clipFinished( WCFileshareIconExtraCamRender0, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 0 )
 				self.clipFinished( MapImage, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 0 )
 				self.clipFinished( Thumbnail, {} )
+
 				CategoryImage:completeAnimation()
 				self.CategoryImage:setAlpha( 0 )
 				self.clipFinished( CategoryImage, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				ErrorImage:completeAnimation()
 				self.ErrorImage:setAlpha( 1 )
 				self.clipFinished( ErrorImage, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 6 )
+
 				WCFileshareIconExtraCamRender0:completeAnimation()
 				self.WCFileshareIconExtraCamRender0:setLeftRight( true, false, -4.5, 324.5 )
 				self.WCFileshareIconExtraCamRender0:setTopBottom( false, true, -174, 0 )
 				self.clipFinished( WCFileshareIconExtraCamRender0, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 0 )
 				self.clipFinished( MapImage, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 0 )
 				self.clipFinished( Thumbnail, {} )
+
 				CategoryImage:completeAnimation()
 				self.CategoryImage:setAlpha( 0 )
 				self.clipFinished( CategoryImage, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				ErrorImage:completeAnimation()
 				self.ErrorImage:setAlpha( 1 )
 				self.clipFinished( ErrorImage, {} )
@@ -415,93 +471,119 @@ CoD.GroupsFeaturedItemSmall.new = function ( menu, controller )
 		Short = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				WCFileshareIconExtraCamRender0:completeAnimation()
 				self.WCFileshareIconExtraCamRender0:setLeftRight( true, false, -4.5, 324.5 )
 				self.WCFileshareIconExtraCamRender0:setTopBottom( false, true, -174, 0 )
 				self.clipFinished( WCFileshareIconExtraCamRender0, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 0 )
 				self.clipFinished( MapImage, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 0 )
 				self.clipFinished( Thumbnail, {} )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				ErrorImage:completeAnimation()
 				self.ErrorImage:setAlpha( 0 )
 				self.clipFinished( ErrorImage, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 7 )
+
 				WCFileshareIconExtraCamRender0:completeAnimation()
 				self.WCFileshareIconExtraCamRender0:setLeftRight( true, false, -4.5, 324.5 )
 				self.WCFileshareIconExtraCamRender0:setTopBottom( false, true, -174, 0 )
 				self.clipFinished( WCFileshareIconExtraCamRender0, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 0 )
 				self.clipFinished( MapImage, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 0 )
 				self.clipFinished( Thumbnail, {} )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				ErrorImage:completeAnimation()
 				self.ErrorImage:setAlpha( 0 )
 				self.clipFinished( ErrorImage, {} )
@@ -510,135 +592,173 @@ CoD.GroupsFeaturedItemSmall.new = function ( menu, controller )
 		Film = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				WCFileshareIconExtraCamRender0:completeAnimation()
 				self.WCFileshareIconExtraCamRender0:setLeftRight( true, false, -4.5, 324.5 )
 				self.WCFileshareIconExtraCamRender0:setTopBottom( false, true, -174, 0 )
 				self.clipFinished( WCFileshareIconExtraCamRender0, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 1 )
 				self.clipFinished( MapImage, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 0 )
 				self.clipFinished( Thumbnail, {} )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 1 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 1 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				ErrorImage:completeAnimation()
 				self.ErrorImage:setAlpha( 0 )
 				self.clipFinished( ErrorImage, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 8 )
+
 				WCFileshareIconExtraCamRender0:completeAnimation()
 				self.WCFileshareIconExtraCamRender0:setLeftRight( true, false, 1, 244 )
 				self.WCFileshareIconExtraCamRender0:setTopBottom( false, true, -137, -1 )
 				self.clipFinished( WCFileshareIconExtraCamRender0, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 1 )
 				self.clipFinished( MapImage, {} )
+
 				GameTypeImage:completeAnimation()
 				self.GameTypeImage:setLeftRight( false, false, -54.5, 61.5 )
 				self.GameTypeImage:setTopBottom( false, false, -71.75, 44.25 )
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 1 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 1 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				WCFileshareIconExtraCamRender0:completeAnimation()
 				self.WCFileshareIconExtraCamRender0:setLeftRight( true, false, 0, 244 )
 				self.WCFileshareIconExtraCamRender0:setTopBottom( false, true, -137, -1 )
 				self.clipFinished( WCFileshareIconExtraCamRender0, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 1 )
 				self.clipFinished( MapImage, {} )
+
 				GameTypeImage:completeAnimation()
 				self.GameTypeImage:setLeftRight( false, false, -54.5, 61.5 )
 				self.GameTypeImage:setTopBottom( false, false, -71.75, 44.25 )
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 1 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 1 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				WCFileshareIconExtraCamRender0:completeAnimation()
 				self.WCFileshareIconExtraCamRender0:setLeftRight( true, false, 1, 244 )
 				self.WCFileshareIconExtraCamRender0:setTopBottom( false, true, -137, -1 )
 				self.clipFinished( WCFileshareIconExtraCamRender0, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 1 )
 				self.clipFinished( MapImage, {} )
+
 				GameTypeImage:completeAnimation()
 				self.GameTypeImage:setLeftRight( false, false, -54.5, 61.5 )
 				self.GameTypeImage:setTopBottom( false, false, -71.75, 44.25 )
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 1 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 1 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 8 )
+
 				WCFileshareIconExtraCamRender0:completeAnimation()
 				self.WCFileshareIconExtraCamRender0:setLeftRight( true, false, -4.5, 324.5 )
 				self.WCFileshareIconExtraCamRender0:setTopBottom( false, true, -174, 0 )
 				self.clipFinished( WCFileshareIconExtraCamRender0, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 1 )
 				self.clipFinished( MapImage, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 0 )
 				self.clipFinished( Thumbnail, {} )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 1 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 1 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				ErrorImage:completeAnimation()
 				self.ErrorImage:setAlpha( 0 )
 				self.clipFinished( ErrorImage, {} )
@@ -647,112 +767,145 @@ CoD.GroupsFeaturedItemSmall.new = function ( menu, controller )
 		Clip = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				WCFileshareIconExtraCamRender0:completeAnimation()
 				self.WCFileshareIconExtraCamRender0:setLeftRight( true, false, -4.5, 324.5 )
 				self.WCFileshareIconExtraCamRender0:setTopBottom( false, true, -174, 0 )
 				self.clipFinished( WCFileshareIconExtraCamRender0, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 0 )
 				self.clipFinished( MapImage, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 1 )
 				self.clipFinished( Thumbnail, {} )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 1 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 0 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				ErrorImage:completeAnimation()
 				self.ErrorImage:setAlpha( 0 )
 				self.clipFinished( ErrorImage, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 1 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 1 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 1 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 1 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setLeftRight( false, false, -321.5, 321.5 )
 				self.Thumbnail:setTopBottom( false, false, -174, 173 )
 				self.clipFinished( Thumbnail, {} )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 1 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 1 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 8 )
+
 				WCFileshareIconExtraCamRender0:completeAnimation()
 				self.WCFileshareIconExtraCamRender0:setLeftRight( true, false, -4.5, 324.5 )
 				self.WCFileshareIconExtraCamRender0:setTopBottom( false, true, -174, 0 )
 				self.clipFinished( WCFileshareIconExtraCamRender0, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 0 )
 				self.clipFinished( MapImage, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 1 )
 				self.clipFinished( Thumbnail, {} )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 1 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 0 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				ErrorImage:completeAnimation()
 				self.ErrorImage:setAlpha( 0 )
 				self.clipFinished( ErrorImage, {} )
@@ -761,99 +914,126 @@ CoD.GroupsFeaturedItemSmall.new = function ( menu, controller )
 		Screenshot = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				WCFileshareIconExtraCamRender0:completeAnimation()
 				self.WCFileshareIconExtraCamRender0:setLeftRight( true, false, -4.5, 324.5 )
 				self.WCFileshareIconExtraCamRender0:setTopBottom( false, true, -174, 0 )
 				self.clipFinished( WCFileshareIconExtraCamRender0, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 0 )
 				self.clipFinished( MapImage, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 1 )
 				self.clipFinished( Thumbnail, {} )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				ErrorImage:completeAnimation()
 				self.ErrorImage:setAlpha( 0 )
 				self.clipFinished( ErrorImage, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 7 )
+
 				WCFileshareIconExtraCamRender0:completeAnimation()
 				self.WCFileshareIconExtraCamRender0:setLeftRight( true, false, -4.5, 324.5 )
 				self.WCFileshareIconExtraCamRender0:setTopBottom( false, true, -174, 0 )
 				self.clipFinished( WCFileshareIconExtraCamRender0, {} )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 0 )
 				self.clipFinished( MapImage, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 1 )
 				self.clipFinished( Thumbnail, {} )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				ErrorImage:completeAnimation()
 				self.ErrorImage:setAlpha( 0 )
 				self.clipFinished( ErrorImage, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "InvalidNormal",
@@ -936,6 +1116,7 @@ CoD.GroupsFeaturedItemSmall.new = function ( menu, controller )
 			modelName = "isValid"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgIdle:close()
 		element.Duration:close()

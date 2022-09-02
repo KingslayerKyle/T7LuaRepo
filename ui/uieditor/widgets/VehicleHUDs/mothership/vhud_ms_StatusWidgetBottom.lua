@@ -21,6 +21,7 @@ CoD.vhud_ms_StatusWidgetBottom.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ms_StatusWidgetBottom )
 	self.id = "vhud_ms_StatusWidgetBottom"
@@ -85,23 +86,29 @@ CoD.vhud_ms_StatusWidgetBottom.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Zoom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vhudmsNotificationOptic:close()
 		element.vhudmsNotificationFlir0:close()

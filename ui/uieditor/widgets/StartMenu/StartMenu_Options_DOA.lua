@@ -232,9 +232,11 @@ end, true )
 CoD.StartMenu_Options_DOA = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_DOA.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_DOA )
 	self.id = "StartMenu_Options_DOA"
@@ -315,6 +317,7 @@ CoD.StartMenu_Options_DOA.new = function ( menu, controller )
 			StartMenuOptionHighlight.DescTitle:setText( Engine.Localize( name ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "close", function ( element )
 		UpdateGamerprofile( self, element, controller )
 	end )
@@ -326,6 +329,7 @@ CoD.StartMenu_Options_DOA.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ButtonList:close()
 		element.StartMenuOptionHighlight:close()

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.DOA.mapdot" )
 CoD.overworld_map = InheritFrom( LUI.UIElement )
 CoD.overworld_map.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.overworld_map )
 	self.id = "overworld_map"

@@ -4,9 +4,11 @@
 CoD.IconController = InheritFrom( LUI.UIElement )
 CoD.IconController.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.IconController )
 	self.id = "IconController"
@@ -50,15 +52,19 @@ CoD.IconController.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				four:completeAnimation()
 				self.four:setAlpha( 0 )
 				self.clipFinished( four, {} )
+
 				three:completeAnimation()
 				self.three:setAlpha( 0 )
 				self.clipFinished( three, {} )
+
 				two:completeAnimation()
 				self.two:setAlpha( 0 )
 				self.clipFinished( two, {} )
+
 				one:completeAnimation()
 				self.one:setAlpha( 0 )
 				self.clipFinished( one, {} )
@@ -67,15 +73,19 @@ CoD.IconController.new = function ( menu, controller )
 		state1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				four:completeAnimation()
 				self.four:setAlpha( 0 )
 				self.clipFinished( four, {} )
+
 				three:completeAnimation()
 				self.three:setAlpha( 0 )
 				self.clipFinished( three, {} )
+
 				two:completeAnimation()
 				self.two:setAlpha( 0 )
 				self.clipFinished( two, {} )
+
 				one:completeAnimation()
 				self.one:setAlpha( 1 )
 				self.clipFinished( one, {} )
@@ -84,15 +94,19 @@ CoD.IconController.new = function ( menu, controller )
 		state2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				four:completeAnimation()
 				self.four:setAlpha( 0 )
 				self.clipFinished( four, {} )
+
 				three:completeAnimation()
 				self.three:setAlpha( 0 )
 				self.clipFinished( three, {} )
+
 				two:completeAnimation()
 				self.two:setAlpha( 1 )
 				self.clipFinished( two, {} )
+
 				one:completeAnimation()
 				self.one:setAlpha( 0 )
 				self.clipFinished( one, {} )
@@ -101,15 +115,19 @@ CoD.IconController.new = function ( menu, controller )
 		state3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				four:completeAnimation()
 				self.four:setAlpha( 0 )
 				self.clipFinished( four, {} )
+
 				three:completeAnimation()
 				self.three:setAlpha( 1 )
 				self.clipFinished( three, {} )
+
 				two:completeAnimation()
 				self.two:setAlpha( 0 )
 				self.clipFinished( two, {} )
+
 				one:completeAnimation()
 				self.one:setAlpha( 0 )
 				self.clipFinished( one, {} )
@@ -118,21 +136,26 @@ CoD.IconController.new = function ( menu, controller )
 		state4 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				four:completeAnimation()
 				self.four:setAlpha( 1 )
 				self.clipFinished( four, {} )
+
 				three:completeAnimation()
 				self.three:setAlpha( 0 )
 				self.clipFinished( three, {} )
+
 				two:completeAnimation()
 				self.two:setAlpha( 0 )
 				self.clipFinished( two, {} )
+
 				one:completeAnimation()
 				self.one:setAlpha( 0 )
 				self.clipFinished( one, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "state1",

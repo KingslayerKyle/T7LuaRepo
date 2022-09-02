@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartMenu.DOA.DOA_ControlHelp_Text" )
 CoD.DOA_ControlKBMouse = InheritFrom( LUI.UIElement )
 CoD.DOA_ControlKBMouse.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DOA_ControlKBMouse )
 	self.id = "DOA_ControlKBMouse"

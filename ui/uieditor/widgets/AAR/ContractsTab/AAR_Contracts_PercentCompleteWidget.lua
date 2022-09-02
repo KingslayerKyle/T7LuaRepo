@@ -4,9 +4,11 @@
 CoD.AAR_Contracts_PercentCompleteWidget = InheritFrom( LUI.UIElement )
 CoD.AAR_Contracts_PercentCompleteWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AAR_Contracts_PercentCompleteWidget )
 	self.id = "AAR_Contracts_PercentCompleteWidget"
@@ -78,19 +80,24 @@ CoD.AAR_Contracts_PercentCompleteWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BackgroundRing:completeAnimation()
 				self.BackgroundRing:setAlpha( 0.35 )
 				self.clipFinished( BackgroundRing, {} )
+
 				percentCompleteCircle:completeAnimation()
 				self.percentCompleteCircle:setAlpha( 1 )
 				self.clipFinished( percentCompleteCircle, {} )
+
 				percentText:completeAnimation()
 				self.percentText:setAlpha( 1 )
 				self.clipFinished( percentText, {} )
+
 				CrossLines:completeAnimation()
 				self.CrossLines:setRGB( 0.36, 0.36, 0.36 )
 				self.CrossLines:setAlpha( 0.35 )
 				self.clipFinished( CrossLines, {} )
+
 				star:completeAnimation()
 				self.star:setAlpha( 0 )
 				self.clipFinished( star, {} )
@@ -99,28 +106,35 @@ CoD.AAR_Contracts_PercentCompleteWidget.new = function ( menu, controller )
 		Complete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BackgroundRing:completeAnimation()
 				self.BackgroundRing:setAlpha( 0.35 )
 				self.clipFinished( BackgroundRing, {} )
+
 				percentCompleteCircle:completeAnimation()
 				self.percentCompleteCircle:setAlpha( 0 )
 				self.clipFinished( percentCompleteCircle, {} )
+
 				percentText:completeAnimation()
 				self.percentText:setAlpha( 0 )
 				self.clipFinished( percentText, {} )
+
 				CrossLines:completeAnimation()
 				self.CrossLines:setAlpha( 0.35 )
 				self.clipFinished( CrossLines, {} )
+
 				percentCompleteCircle0:completeAnimation()
 				self.percentCompleteCircle0:setAlpha( 1 )
 				self.percentCompleteCircle0:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( percentCompleteCircle0, {} )
+
 				star:completeAnimation()
 				self.star:setAlpha( 1 )
 				self.clipFinished( star, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Complete",

@@ -4,9 +4,11 @@
 CoD.BlackMarketCODPointContainerSmall = InheritFrom( LUI.UIElement )
 CoD.BlackMarketCODPointContainerSmall.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BlackMarketCODPointContainerSmall )
 	self.id = "BlackMarketCODPointContainerSmall"
@@ -52,9 +54,11 @@ CoD.BlackMarketCODPointContainerSmall.new = function ( menu, controller )
 		HiddenForLootSale = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				codpointIcon:completeAnimation()
 				self.codpointIcon:setAlpha( 0 )
 				self.clipFinished( codpointIcon, {} )
+
 				codpointText:completeAnimation()
 				self.codpointText:setAlpha( 0 )
 				self.clipFinished( codpointText, {} )
@@ -63,9 +67,11 @@ CoD.BlackMarketCODPointContainerSmall.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				codpointIcon:completeAnimation()
 				self.codpointIcon:setAlpha( 0 )
 				self.clipFinished( codpointIcon, {} )
+
 				codpointText:completeAnimation()
 				self.codpointText:setAlpha( 0 )
 				self.clipFinished( codpointText, {} )
@@ -74,13 +80,16 @@ CoD.BlackMarketCODPointContainerSmall.new = function ( menu, controller )
 		ShownInsufficientFunds = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				codpointIcon:completeAnimation()
 				self.codpointIcon:setAlpha( 1 )
 				self.clipFinished( codpointIcon, {} )
+
 				codpointText:completeAnimation()
 				self.codpointText:setRGB( 0.93, 0.17, 0.17 )
 				self.codpointText:setAlpha( 1 )
 				self.clipFinished( codpointText, {} )
+
 				codpointBalance:completeAnimation()
 				self.codpointBalance:setAlpha( 0 )
 				self.clipFinished( codpointBalance, {} )
@@ -89,13 +98,16 @@ CoD.BlackMarketCODPointContainerSmall.new = function ( menu, controller )
 		Shown = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				codpointIcon:completeAnimation()
 				self.codpointIcon:setAlpha( 1 )
 				self.clipFinished( codpointIcon, {} )
+
 				codpointText:completeAnimation()
 				self.codpointText:setRGB( 1, 1, 1 )
 				self.codpointText:setAlpha( 1 )
 				self.clipFinished( codpointText, {} )
+
 				codpointBalance:completeAnimation()
 				self.codpointBalance:setAlpha( 0 )
 				self.clipFinished( codpointBalance, {} )
@@ -104,13 +116,16 @@ CoD.BlackMarketCODPointContainerSmall.new = function ( menu, controller )
 		BalanceShownInsufficientFunds = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				codpointIcon:completeAnimation()
 				self.codpointIcon:setAlpha( 1 )
 				self.clipFinished( codpointIcon, {} )
+
 				codpointText:completeAnimation()
 				self.codpointText:setRGB( 0.93, 0.17, 0.17 )
 				self.codpointText:setAlpha( 0 )
 				self.clipFinished( codpointText, {} )
+
 				codpointBalance:completeAnimation()
 				self.codpointBalance:setRGB( 0.93, 0.17, 0.17 )
 				self.codpointBalance:setAlpha( 1 )
@@ -120,19 +135,23 @@ CoD.BlackMarketCODPointContainerSmall.new = function ( menu, controller )
 		BalanceShown = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				codpointIcon:completeAnimation()
 				self.codpointIcon:setAlpha( 1 )
 				self.clipFinished( codpointIcon, {} )
+
 				codpointText:completeAnimation()
 				self.codpointText:setRGB( 1, 1, 1 )
 				self.codpointText:setAlpha( 0 )
 				self.clipFinished( codpointText, {} )
+
 				codpointBalance:completeAnimation()
 				self.codpointBalance:setAlpha( 1 )
 				self.clipFinished( codpointBalance, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HiddenForLootSale",
@@ -181,6 +200,7 @@ CoD.BlackMarketCODPointContainerSmall.new = function ( menu, controller )
 			modelName = "CryptoKeyProgress.codPoints"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.codpointText:close()
 		element.codpointBalance:close()

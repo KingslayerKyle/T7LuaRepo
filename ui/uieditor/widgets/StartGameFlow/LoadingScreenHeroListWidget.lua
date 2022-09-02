@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.StartGameFlow.LoadingScreenTeamBoxFactionColor" )
 CoD.LoadingScreenHeroListWidget = InheritFrom( LUI.UIElement )
 CoD.LoadingScreenHeroListWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LoadingScreenHeroListWidget )
 	self.id = "LoadingScreenHeroListWidget"
@@ -131,9 +133,11 @@ CoD.LoadingScreenHeroListWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				HeroLoadoutItem:completeAnimation()
 				self.HeroLoadoutItem:setAlpha( 0 )
 				self.clipFinished( HeroLoadoutItem, {} )
+
 				LoadingScreenTeamBoxFactionColor:completeAnimation()
 				self.LoadingScreenTeamBoxFactionColor:setLeftRight( true, true, 1.56, -2 )
 				self.LoadingScreenTeamBoxFactionColor:setTopBottom( false, true, -4, 0 )
@@ -144,24 +148,29 @@ CoD.LoadingScreenHeroListWidget.new = function ( menu, controller )
 		FFA = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				LoadingScreenHeroListWidgetPlayerName:completeAnimation()
 				self.LoadingScreenHeroListWidgetPlayerName:setLeftRight( true, true, 0, 0 )
 				self.LoadingScreenHeroListWidgetPlayerName:setTopBottom( false, false, 33, 63 )
 				self.clipFinished( LoadingScreenHeroListWidgetPlayerName, {} )
+
 				HeroLoadoutItem:completeAnimation()
 				self.HeroLoadoutItem:setLeftRight( true, true, 0, 0 )
 				self.HeroLoadoutItem:setTopBottom( false, true, -31, -7 )
 				self.clipFinished( HeroLoadoutItem, {} )
+
 				VOIPImageByXUID:completeAnimation()
 				self.VOIPImageByXUID:setLeftRight( false, true, -14, 2 )
 				self.VOIPImageByXUID:setTopBottom( false, true, -40.5, -25.5 )
 				self.clipFinished( VOIPImageByXUID, {} )
+
 				LoadingScreenTeamBoxFactionColor:completeAnimation()
 				self.LoadingScreenTeamBoxFactionColor:setAlpha( 0 )
 				self.clipFinished( LoadingScreenTeamBoxFactionColor, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "FFA",
@@ -178,6 +187,7 @@ CoD.LoadingScreenHeroListWidget.new = function ( menu, controller )
 			modelName = "MapVote.mapVoteMapPreviousGametype"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LoadingScreenHeroListWidgetPlayerName:close()
 		element.LoadingScreenTeamBoxFactionColor:close()

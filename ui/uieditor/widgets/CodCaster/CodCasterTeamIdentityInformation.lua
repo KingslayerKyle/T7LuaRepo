@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BorderBakedSolid" )
 CoD.CodCasterTeamIdentityInformation = InheritFrom( LUI.UIElement )
 CoD.CodCasterTeamIdentityInformation.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterTeamIdentityInformation )
 	self.id = "CodCasterTeamIdentityInformation"
@@ -123,21 +125,27 @@ CoD.CodCasterTeamIdentityInformation.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				TeamLogoTitle:completeAnimation()
 				self.TeamLogoTitle:setAlpha( 1 )
 				self.clipFinished( TeamLogoTitle, {} )
+
 				TeamLogoImage:completeAnimation()
 				self.TeamLogoImage:setAlpha( 1 )
 				self.clipFinished( TeamLogoImage, {} )
+
 				TeamNameTitle:completeAnimation()
 				self.TeamNameTitle:setAlpha( 1 )
 				self.clipFinished( TeamNameTitle, {} )
+
 				TeamNameText:completeAnimation()
 				self.TeamNameText:setAlpha( 1 )
 				self.clipFinished( TeamNameText, {} )
+
 				TeamColorTitle:completeAnimation()
 				self.TeamColorTitle:setAlpha( 1 )
 				self.clipFinished( TeamColorTitle, {} )
+
 				TeamColorImage:completeAnimation()
 				self.TeamColorImage:setAlpha( 1 )
 				self.clipFinished( TeamColorImage, {} )
@@ -146,27 +154,34 @@ CoD.CodCasterTeamIdentityInformation.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				TeamLogoTitle:completeAnimation()
 				self.TeamLogoTitle:setAlpha( 0 )
 				self.clipFinished( TeamLogoTitle, {} )
+
 				TeamLogoImage:completeAnimation()
 				self.TeamLogoImage:setAlpha( 0 )
 				self.clipFinished( TeamLogoImage, {} )
+
 				TeamNameTitle:completeAnimation()
 				self.TeamNameTitle:setAlpha( 0 )
 				self.clipFinished( TeamNameTitle, {} )
+
 				TeamNameText:completeAnimation()
 				self.TeamNameText:setAlpha( 0 )
 				self.clipFinished( TeamNameText, {} )
+
 				TeamColorTitle:completeAnimation()
 				self.TeamColorTitle:setAlpha( 0 )
 				self.clipFinished( TeamColorTitle, {} )
+
 				TeamColorImage:completeAnimation()
 				self.TeamColorImage:setAlpha( 0 )
 				self.clipFinished( TeamColorImage, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BorderBakedSolid0:close()
 		element.BorderBakedSolid00:close()

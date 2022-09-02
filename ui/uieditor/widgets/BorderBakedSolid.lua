@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_frame_noBG" )
 CoD.BorderBakedSolid = InheritFrom( LUI.UIElement )
 CoD.BorderBakedSolid.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BorderBakedSolid )
 	self.id = "BorderBakedSolid"

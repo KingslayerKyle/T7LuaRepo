@@ -14,9 +14,11 @@ require( "ui.uieditor.widgets.MissionRecordVault.MissionRecordVault_Heading" )
 CoD.StartMenu_GameOptions_CP = InheritFrom( LUI.UIElement )
 CoD.StartMenu_GameOptions_CP.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_GameOptions_CP )
 	self.id = "StartMenu_GameOptions_CP"
@@ -277,9 +279,11 @@ CoD.StartMenu_GameOptions_CP.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				StartMenuScoreAndMissionRunTime:completeAnimation()
 				self.StartMenuScoreAndMissionRunTime:setAlpha( 1 )
 				self.clipFinished( StartMenuScoreAndMissionRunTime, {} )
+
 				line0:completeAnimation()
 				self.line0:setAlpha( 0.5 )
 				self.clipFinished( line0, {} )
@@ -288,12 +292,15 @@ CoD.StartMenu_GameOptions_CP.new = function ( menu, controller )
 		cpzm = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				rankProgress:completeAnimation()
 				self.rankProgress:setAlpha( 0 )
 				self.clipFinished( rankProgress, {} )
+
 				StartMenuObjectives:completeAnimation()
 				self.StartMenuObjectives:setAlpha( 0 )
 				self.clipFinished( StartMenuObjectives, {} )
+
 				StartMenuCollectables:completeAnimation()
 				self.StartMenuCollectables:setAlpha( 0 )
 				self.clipFinished( StartMenuCollectables, {} )
@@ -302,19 +309,24 @@ CoD.StartMenu_GameOptions_CP.new = function ( menu, controller )
 		hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				StartMenuScoreAndMissionRunTime:completeAnimation()
 				self.StartMenuScoreAndMissionRunTime:setAlpha( 0 )
 				self.clipFinished( StartMenuScoreAndMissionRunTime, {} )
+
 				StartMenuDifficultyIcon0:completeAnimation()
 				self.StartMenuDifficultyIcon0:setLeftRight( true, false, 849.51, 946.51 )
 				self.StartMenuDifficultyIcon0:setTopBottom( true, false, 170.25, 242.25 )
 				self.clipFinished( StartMenuDifficultyIcon0, {} )
+
 				Score:completeAnimation()
 				self.Score:setAlpha( 0 )
 				self.clipFinished( Score, {} )
+
 				line0:completeAnimation()
 				self.line0:setAlpha( 0 )
 				self.clipFinished( line0, {} )
+
 				DifficultyCompleteText:completeAnimation()
 				self.DifficultyCompleteText:setLeftRight( true, false, 853.14, 959.9 )
 				self.DifficultyCompleteText:setTopBottom( true, false, 146.25, 168.25 )
@@ -322,6 +334,7 @@ CoD.StartMenu_GameOptions_CP.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "cpzm",
@@ -347,6 +360,7 @@ CoD.StartMenu_GameOptions_CP.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.buttonList:close()
 		element.rankProgress:close()

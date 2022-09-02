@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.mothership.vhud_ms_LockArrow" )
 CoD.vhud_ms_LockOnNotification = InheritFrom( LUI.UIElement )
 CoD.vhud_ms_LockOnNotification.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ms_LockOnNotification )
 	self.id = "vhud_ms_LockOnNotification"
@@ -164,23 +166,29 @@ CoD.vhud_ms_LockOnNotification.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		On = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vhudmsLockBox:close()
 		element.vhudmsLockArrow:close()

@@ -12,9 +12,11 @@ end
 CoD.Cookbook_Recipe_Fill = InheritFrom( LUI.UIElement )
 CoD.Cookbook_Recipe_Fill.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Cookbook_Recipe_Fill )
 	self.id = "Cookbook_Recipe_Fill"
@@ -68,15 +70,18 @@ CoD.Cookbook_Recipe_Fill.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				fill:completeAnimation()
 				self.fill:setAlpha( 1 )
 				self.clipFinished( fill, {} )
+
 				fillAnimated:completeAnimation()
 				self.fillAnimated:setAlpha( 0 )
 				self.clipFinished( fillAnimated, {} )
 			end,
 			Drain = function ()
 				self:setupElementClipCounter( 2 )
+
 				fill:completeAnimation()
 				self.fill:setAlpha( 0 )
 				self.clipFinished( fill, {} )
@@ -108,6 +113,7 @@ CoD.Cookbook_Recipe_Fill.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.fill:close()
 		element.fillAnimated:close()

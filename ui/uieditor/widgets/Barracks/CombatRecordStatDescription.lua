@@ -4,9 +4,11 @@
 CoD.CombatRecordStatDescription = InheritFrom( LUI.UIElement )
 CoD.CombatRecordStatDescription.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CombatRecordStatDescription )
 	self.id = "CombatRecordStatDescription"
@@ -28,6 +30,7 @@ CoD.CombatRecordStatDescription.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				StatDescription:completeAnimation()
 				self.StatDescription:setAlpha( 1 )
 				self.clipFinished( StatDescription, {} )
@@ -36,12 +39,14 @@ CoD.CombatRecordStatDescription.new = function ( menu, controller )
 		Comparing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				StatDescription:completeAnimation()
 				self.StatDescription:setAlpha( 0 )
 				self.clipFinished( StatDescription, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Comparing",

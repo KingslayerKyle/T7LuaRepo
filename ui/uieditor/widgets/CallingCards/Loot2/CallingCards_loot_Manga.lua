@@ -4,9 +4,11 @@
 CoD.CallingCards_loot_Manga = InheritFrom( LUI.UIElement )
 CoD.CallingCards_loot_Manga.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_loot_Manga )
 	self.id = "CallingCards_loot_Manga"
@@ -39,6 +41,7 @@ CoD.CallingCards_loot_Manga.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 1 )
 				self.clipFinished( Image0, {} )
@@ -134,6 +137,7 @@ CoD.CallingCards_loot_Manga.new = function ( menu, controller )
 				Image10:completeAnimation()
 				self.Image10:setAlpha( 0 )
 				Image10Frame2( Image10, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

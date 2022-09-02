@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventory.RocketShieldBluePrint.RocketShieldPiec
 CoD.DragonStrikeWidgets_Stalingrad = InheritFrom( LUI.UIElement )
 CoD.DragonStrikeWidgets_Stalingrad.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DragonStrikeWidgets_Stalingrad )
 	self.id = "DragonStrikeWidgets_Stalingrad"
@@ -59,9 +61,11 @@ CoD.DragonStrikeWidgets_Stalingrad.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				MachineToolsPieceWidget0:completeAnimation()
 				self.MachineToolsPieceWidget0:setAlpha( 1 )
 				self.clipFinished( MachineToolsPieceWidget0, {} )
@@ -70,6 +74,7 @@ CoD.DragonStrikeWidgets_Stalingrad.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local bgFrame2 = function ( bg, event )
 					local bgFrame3 = function ( bg, event )
 						local bgFrame4 = function ( bg, event )
@@ -106,6 +111,7 @@ CoD.DragonStrikeWidgets_Stalingrad.new = function ( menu, controller )
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				bgFrame2( bg, {} )
+
 				MachineToolsPieceWidget0:completeAnimation()
 				self.MachineToolsPieceWidget0:setAlpha( 1 )
 				self.clipFinished( MachineToolsPieceWidget0, {} )
@@ -114,12 +120,14 @@ CoD.DragonStrikeWidgets_Stalingrad.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BgVisible",
@@ -150,6 +158,7 @@ CoD.DragonStrikeWidgets_Stalingrad.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MachineToolsPieceWidget0:close()
 	end )

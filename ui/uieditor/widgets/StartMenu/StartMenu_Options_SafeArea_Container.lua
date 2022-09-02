@@ -4,9 +4,11 @@
 CoD.StartMenu_Options_SafeArea_Container = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_SafeArea_Container.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_SafeArea_Container )
 	self.id = "StartMenu_Options_SafeArea_Container"
@@ -57,6 +59,7 @@ CoD.StartMenu_Options_SafeArea_Container.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				backgroundImage:completeAnimation()
 				self.backgroundImage:setAlpha( 0 )
 				self.clipFinished( backgroundImage, {} )
@@ -65,12 +68,14 @@ CoD.StartMenu_Options_SafeArea_Container.new = function ( menu, controller )
 		FirstTime = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				backgroundImage:completeAnimation()
 				self.backgroundImage:setAlpha( 0.7 )
 				self.clipFinished( backgroundImage, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "FirstTime",

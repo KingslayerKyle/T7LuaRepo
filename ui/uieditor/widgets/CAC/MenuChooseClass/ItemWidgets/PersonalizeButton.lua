@@ -39,9 +39,11 @@ end
 CoD.PersonalizeButton = InheritFrom( LUI.UIElement )
 CoD.PersonalizeButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PersonalizeButton )
 	self.id = "PersonalizeButton"
@@ -128,18 +130,23 @@ CoD.PersonalizeButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Whitebox:completeAnimation()
 				self.Whitebox:setAlpha( 0 )
 				self.clipFinished( Whitebox, {} )
+
 				fullBacking:completeAnimation()
 				self.fullBacking:setAlpha( 0 )
 				self.clipFinished( fullBacking, {} )
+
 				PersonalizeIcon:completeAnimation()
 				self.PersonalizeIcon:setAlpha( 0 )
 				self.clipFinished( PersonalizeIcon, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
@@ -148,45 +155,55 @@ CoD.PersonalizeButton.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Whitebox:completeAnimation()
 				self.Whitebox:setAlpha( 0 )
 				self.clipFinished( Whitebox, {} )
+
 				fullBacking:completeAnimation()
 				self.fullBacking:setAlpha( 0 )
 				self.fullBacking:setScale( 1 )
 				self.clipFinished( fullBacking, {} )
+
 				PersonalizeIcon:completeAnimation()
 				self.PersonalizeIcon:setRGB( 1, 1, 1 )
 				self.PersonalizeIcon:setAlpha( 0.75 )
 				self.PersonalizeIcon:setScale( 1 )
 				self.clipFinished( PersonalizeIcon, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 4 )
+
 				fullBacking:completeAnimation()
 				self.fullBacking:setAlpha( 0.8 )
 				self.fullBacking:setScale( 1 )
 				self.clipFinished( fullBacking, {} )
+
 				PersonalizeIcon:completeAnimation()
 				self.PersonalizeIcon:setRGB( 0.78, 0.78, 0.78 )
 				self.PersonalizeIcon:setAlpha( 1 )
 				self.PersonalizeIcon:setScale( 1 )
 				self.clipFinished( PersonalizeIcon, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 1 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 1 )
 				self.clipFinished( hintArrow, {} )
 			end,
 			GainOver = function ()
 				self:setupElementClipCounter( 2 )
+
 				local fullBackingFrame2 = function ( fullBacking, event )
 					if not event.interrupted then
 						fullBacking:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -222,6 +239,7 @@ CoD.PersonalizeButton.new = function ( menu, controller )
 			end,
 			LoseOver = function ()
 				self:setupElementClipCounter( 2 )
+
 				local fullBackingFrame2 = function ( fullBacking, event )
 					if not event.interrupted then
 						fullBacking:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -257,6 +275,7 @@ CoD.PersonalizeButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -293,6 +312,7 @@ CoD.PersonalizeButton.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.itemHintText:close()
 		element.hintArrow:close()

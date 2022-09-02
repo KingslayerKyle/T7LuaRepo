@@ -4,9 +4,11 @@
 CoD.LeaderboardMakerProgressBarSteps = InheritFrom( LUI.UIElement )
 CoD.LeaderboardMakerProgressBarSteps.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LeaderboardMakerProgressBarSteps )
 	self.id = "LeaderboardMakerProgressBarSteps"
@@ -167,46 +169,59 @@ CoD.LeaderboardMakerProgressBarSteps.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				FETabFocus:completeAnimation()
 				self.FETabFocus:setAlpha( 1 )
 				self.clipFinished( FETabFocus, {} )
+
 				FETabFocus0:completeAnimation()
 				self.FETabFocus0:setAlpha( 0 )
 				self.clipFinished( FETabFocus0, {} )
+
 				FETabFocus1:completeAnimation()
 				self.FETabFocus1:setAlpha( 0 )
 				self.clipFinished( FETabFocus1, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setLeftRight( true, true, -33.25, -123.75 )
 				self.Glow2:setTopBottom( true, false, -25.85, 50.85 )
 				self.Glow2:setScale( 0.9 )
 				self.clipFinished( Glow2, {} )
+
 				FETabIdle:completeAnimation()
 				self.FETabIdle:setAlpha( 0 )
 				self.clipFinished( FETabIdle, {} )
+
 				FETabIdle0:completeAnimation()
 				self.FETabIdle0:setAlpha( 1 )
 				self.clipFinished( FETabIdle0, {} )
+
 				FETabIdle1:completeAnimation()
 				self.FETabIdle1:setAlpha( 1 )
 				self.clipFinished( FETabIdle1, {} )
+
 				Three:completeAnimation()
 				self.Three:setRGB( 1, 1, 1 )
 				self.Three:setAlpha( 0.7 )
 				self.clipFinished( Three, {} )
+
 				Two:completeAnimation()
 				self.Two:setRGB( 1, 1, 1 )
 				self.Two:setAlpha( 0.7 )
 				self.clipFinished( Two, {} )
+
 				One:completeAnimation()
 				self.One:setRGB( 0, 0, 0 )
 				self.clipFinished( One, {} )
+
 				FETabFocus10:completeAnimation()
 				self.FETabFocus10:setAlpha( 0 )
 				self.clipFinished( FETabFocus10, {} )
+
 				FETabIdle10:completeAnimation()
 				self.FETabIdle10:setAlpha( 1 )
 				self.clipFinished( FETabIdle10, {} )
+
 				Four:completeAnimation()
 				self.Four:setAlpha( 1 )
 				self.clipFinished( Four, {} )
@@ -215,46 +230,59 @@ CoD.LeaderboardMakerProgressBarSteps.new = function ( menu, controller )
 		StepTwo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				FETabFocus:completeAnimation()
 				self.FETabFocus:setAlpha( 0 )
 				self.clipFinished( FETabFocus, {} )
+
 				FETabFocus0:completeAnimation()
 				self.FETabFocus0:setAlpha( 1 )
 				self.clipFinished( FETabFocus0, {} )
+
 				FETabFocus1:completeAnimation()
 				self.FETabFocus1:setAlpha( 0 )
 				self.clipFinished( FETabFocus1, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setLeftRight( true, true, 22, -69 )
 				self.Glow2:setTopBottom( true, false, -23.35, 53.35 )
 				self.Glow2:setScale( 0.8 )
 				self.clipFinished( Glow2, {} )
+
 				FETabIdle:completeAnimation()
 				self.FETabIdle:setAlpha( 1 )
 				self.clipFinished( FETabIdle, {} )
+
 				FETabIdle0:completeAnimation()
 				self.FETabIdle0:setAlpha( 0 )
 				self.clipFinished( FETabIdle0, {} )
+
 				FETabIdle1:completeAnimation()
 				self.FETabIdle1:setAlpha( 1 )
 				self.clipFinished( FETabIdle1, {} )
+
 				Three:completeAnimation()
 				self.Three:setRGB( 1, 1, 1 )
 				self.Three:setAlpha( 0.7 )
 				self.clipFinished( Three, {} )
+
 				Two:completeAnimation()
 				self.Two:setRGB( 0, 0, 0 )
 				self.clipFinished( Two, {} )
+
 				One:completeAnimation()
 				self.One:setRGB( 1, 1, 1 )
 				self.One:setAlpha( 0.7 )
 				self.clipFinished( One, {} )
+
 				FETabFocus10:completeAnimation()
 				self.FETabFocus10:setAlpha( 0 )
 				self.clipFinished( FETabFocus10, {} )
+
 				FETabIdle10:completeAnimation()
 				self.FETabIdle10:setAlpha( 1 )
 				self.clipFinished( FETabIdle10, {} )
+
 				Four:completeAnimation()
 				self.Four:setRGB( 1, 1, 1 )
 				self.Four:setAlpha( 1 )
@@ -264,46 +292,59 @@ CoD.LeaderboardMakerProgressBarSteps.new = function ( menu, controller )
 		StepThree = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				FETabFocus:completeAnimation()
 				self.FETabFocus:setAlpha( 0 )
 				self.clipFinished( FETabFocus, {} )
+
 				FETabFocus0:completeAnimation()
 				self.FETabFocus0:setAlpha( 0 )
 				self.clipFinished( FETabFocus0, {} )
+
 				FETabFocus1:completeAnimation()
 				self.FETabFocus1:setAlpha( 1 )
 				self.clipFinished( FETabFocus1, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setLeftRight( true, true, 76.5, -14.5 )
 				self.Glow2:setTopBottom( true, false, -26, 51 )
 				self.Glow2:setScale( 0.8 )
 				self.clipFinished( Glow2, {} )
+
 				FETabIdle:completeAnimation()
 				self.FETabIdle:setAlpha( 1 )
 				self.clipFinished( FETabIdle, {} )
+
 				FETabIdle0:completeAnimation()
 				self.FETabIdle0:setAlpha( 1 )
 				self.clipFinished( FETabIdle0, {} )
+
 				FETabIdle1:completeAnimation()
 				self.FETabIdle1:setAlpha( 0 )
 				self.clipFinished( FETabIdle1, {} )
+
 				Three:completeAnimation()
 				self.Three:setRGB( 0, 0, 0 )
 				self.clipFinished( Three, {} )
+
 				Two:completeAnimation()
 				self.Two:setRGB( 1, 1, 1 )
 				self.Two:setAlpha( 0.7 )
 				self.clipFinished( Two, {} )
+
 				One:completeAnimation()
 				self.One:setRGB( 1, 1, 1 )
 				self.One:setAlpha( 0.7 )
 				self.clipFinished( One, {} )
+
 				FETabFocus10:completeAnimation()
 				self.FETabFocus10:setAlpha( 0 )
 				self.clipFinished( FETabFocus10, {} )
+
 				FETabIdle10:completeAnimation()
 				self.FETabIdle10:setAlpha( 1 )
 				self.clipFinished( FETabIdle10, {} )
+
 				Four:completeAnimation()
 				self.Four:setRGB( 1, 1, 1 )
 				self.clipFinished( Four, {} )
@@ -312,46 +353,59 @@ CoD.LeaderboardMakerProgressBarSteps.new = function ( menu, controller )
 		StepFour = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				FETabFocus:completeAnimation()
 				self.FETabFocus:setAlpha( 0 )
 				self.clipFinished( FETabFocus, {} )
+
 				FETabFocus0:completeAnimation()
 				self.FETabFocus0:setAlpha( 0 )
 				self.clipFinished( FETabFocus0, {} )
+
 				FETabFocus1:completeAnimation()
 				self.FETabFocus1:setAlpha( 0 )
 				self.clipFinished( FETabFocus1, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setLeftRight( true, true, 131, 40 )
 				self.Glow2:setTopBottom( true, false, -25.85, 50.85 )
 				self.Glow2:setScale( 0.8 )
 				self.clipFinished( Glow2, {} )
+
 				FETabIdle:completeAnimation()
 				self.FETabIdle:setAlpha( 1 )
 				self.clipFinished( FETabIdle, {} )
+
 				FETabIdle0:completeAnimation()
 				self.FETabIdle0:setAlpha( 1 )
 				self.clipFinished( FETabIdle0, {} )
+
 				FETabIdle1:completeAnimation()
 				self.FETabIdle1:setAlpha( 1 )
 				self.clipFinished( FETabIdle1, {} )
+
 				Three:completeAnimation()
 				self.Three:setRGB( 1, 1, 1 )
 				self.clipFinished( Three, {} )
+
 				Two:completeAnimation()
 				self.Two:setRGB( 1, 1, 1 )
 				self.Two:setAlpha( 0.7 )
 				self.clipFinished( Two, {} )
+
 				One:completeAnimation()
 				self.One:setRGB( 1, 1, 1 )
 				self.One:setAlpha( 0.7 )
 				self.clipFinished( One, {} )
+
 				FETabFocus10:completeAnimation()
 				self.FETabFocus10:setAlpha( 1 )
 				self.clipFinished( FETabFocus10, {} )
+
 				FETabIdle10:completeAnimation()
 				self.FETabIdle10:setAlpha( 0 )
 				self.clipFinished( FETabIdle10, {} )
+
 				Four:completeAnimation()
 				self.Four:setRGB( 0, 0, 0 )
 				self.Four:setText( Engine.Localize( "4" ) )
@@ -359,6 +413,7 @@ CoD.LeaderboardMakerProgressBarSteps.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "StepTwo",

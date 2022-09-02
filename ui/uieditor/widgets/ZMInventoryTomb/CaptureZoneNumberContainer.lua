@@ -4,9 +4,11 @@
 CoD.CaptureZoneNumberContainer = InheritFrom( LUI.UIElement )
 CoD.CaptureZoneNumberContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CaptureZoneNumberContainer )
 	self.id = "CaptureZoneNumberContainer"
@@ -35,6 +37,7 @@ CoD.CaptureZoneNumberContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local NumberShadowFrame2 = function ( NumberShadow, event )
 					if not event.interrupted then
 						NumberShadow:beginAnimation( "keyframe", 1399, false, false, CoD.TweenType.Linear )
@@ -65,12 +68,14 @@ CoD.CaptureZoneNumberContainer.new = function ( menu, controller )
 				Number:completeAnimation()
 				self.Number:setAlpha( 1 )
 				NumberFrame2( Number, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		NotCapturing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local NumberShadowFrame2 = function ( NumberShadow, event )
 					if not event.interrupted then
 						NumberShadow:beginAnimation( "keyframe", 1399, false, false, CoD.TweenType.Linear )
@@ -86,9 +91,11 @@ CoD.CaptureZoneNumberContainer.new = function ( menu, controller )
 				NumberShadow:completeAnimation()
 				self.NumberShadow:setAlpha( 1 )
 				NumberShadowFrame2( NumberShadow, {} )
+
 				Number:completeAnimation()
 				self.Number:setAlpha( 0 )
 				self.clipFinished( Number, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

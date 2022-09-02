@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.MPGametypes.Escort.RobotStatus" )
 CoD.EscortOverlay = InheritFrom( LUI.UIElement )
 CoD.EscortOverlay.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EscortOverlay )
 	self.id = "EscortOverlay"
@@ -71,9 +73,11 @@ CoD.EscortOverlay.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				RobotStatus0:completeAnimation()
 				self.RobotStatus0:setAlpha( 0 )
 				self.clipFinished( RobotStatus0, {} )
+
 				RobotStatusForCodcaster:completeAnimation()
 				self.RobotStatusForCodcaster:setAlpha( 0 )
 				self.clipFinished( RobotStatusForCodcaster, {} )
@@ -82,9 +86,11 @@ CoD.EscortOverlay.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				RobotStatus0:completeAnimation()
 				self.RobotStatus0:setAlpha( 1 )
 				self.clipFinished( RobotStatus0, {} )
+
 				RobotStatusForCodcaster:completeAnimation()
 				self.RobotStatusForCodcaster:setAlpha( 0 )
 				self.clipFinished( RobotStatusForCodcaster, {} )
@@ -93,9 +99,11 @@ CoD.EscortOverlay.new = function ( menu, controller )
 		VisibleForCodCasterLargeMinimap = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				RobotStatus0:completeAnimation()
 				self.RobotStatus0:setAlpha( 0 )
 				self.clipFinished( RobotStatus0, {} )
+
 				RobotStatusForCodcaster:completeAnimation()
 				self.RobotStatusForCodcaster:setLeftRight( true, false, 22, 342 )
 				self.RobotStatusForCodcaster:setTopBottom( true, false, 222, 254 )
@@ -106,9 +114,11 @@ CoD.EscortOverlay.new = function ( menu, controller )
 		VisibleForCodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				RobotStatus0:completeAnimation()
 				self.RobotStatus0:setAlpha( 0 )
 				self.clipFinished( RobotStatus0, {} )
+
 				RobotStatusForCodcaster:completeAnimation()
 				self.RobotStatusForCodcaster:setLeftRight( true, false, 22, 342 )
 				self.RobotStatusForCodcaster:setTopBottom( true, false, 193, 225 )
@@ -117,6 +127,7 @@ CoD.EscortOverlay.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -282,6 +293,7 @@ CoD.EscortOverlay.new = function ( menu, controller )
 			modelName = "CodCaster.profileSettingsUpdated"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RobotStatus0:close()
 		element.RobotStatusForCodcaster:close()

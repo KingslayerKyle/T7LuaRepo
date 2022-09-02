@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Notifications.Global.Notif_Global_Title" )
 CoD.SpecialistChallengeNotification = InheritFrom( LUI.UIElement )
 CoD.SpecialistChallengeNotification.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpecialistChallengeNotification )
 	self.id = "SpecialistChallengeNotification"
@@ -207,6 +209,7 @@ CoD.SpecialistChallengeNotification.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				local CenterShadowFrame2 = function ( CenterShadow, event )
 					local CenterShadowFrame3 = function ( CenterShadow, event )
 						if not event.interrupted then
@@ -698,12 +701,14 @@ CoD.SpecialistChallengeNotification.new = function ( menu, controller )
 				self.image:setAlpha( 0 )
 				self.image:setScale( 1 )
 				imageFrame2( image, {} )
+
 				levelUpSound:completeAnimation()
 				self.levelUpSound:playSound( "weapon_level_up", controller )
 				self.clipFinished( levelUpSound, {} )
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 13 )
+
 				local f53_local0 = function ( f54_arg0, f54_arg1 )
 					if not f54_arg1.interrupted then
 						f54_arg0:beginAnimation( "keyframe", 119, false, false, CoD.TweenType.Linear )
@@ -1013,9 +1018,11 @@ CoD.SpecialistChallengeNotification.new = function ( menu, controller )
 				highlight:beginAnimation( "keyframe", 79, false, false, CoD.TweenType.Linear )
 				highlight:setAlpha( 1 )
 				highlight:registerEventHandler( "transition_complete_keyframe", f53_local8 )
+
 				imageG:completeAnimation()
 				self.imageG:setAlpha( 0 )
 				self.clipFinished( imageG, {} )
+
 				imageR:completeAnimation()
 				self.imageR:setAlpha( 0 )
 				self.clipFinished( imageR, {} )
@@ -1096,6 +1103,7 @@ CoD.SpecialistChallengeNotification.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.NotifGlobalTitleLine:close()
 		element.NotifGlobalTitle:close()

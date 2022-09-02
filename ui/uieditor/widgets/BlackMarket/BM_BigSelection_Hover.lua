@@ -4,9 +4,11 @@
 CoD.BM_BigSelection_Hover = InheritFrom( LUI.UIElement )
 CoD.BM_BigSelection_Hover.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_BigSelection_Hover )
 	self.id = "BM_BigSelection_Hover"
@@ -32,6 +34,7 @@ CoD.BM_BigSelection_Hover.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local BigCommonRareHoverFrame2 = function ( BigCommonRareHover, event )
 					local BigCommonRareHoverFrame3 = function ( BigCommonRareHover, event )
 						if not event.interrupted then
@@ -58,6 +61,7 @@ CoD.BM_BigSelection_Hover.new = function ( menu, controller )
 				BigCommonRareHover:completeAnimation()
 				self.BigCommonRareHover:setAlpha( 0 )
 				BigCommonRareHoverFrame2( BigCommonRareHover, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

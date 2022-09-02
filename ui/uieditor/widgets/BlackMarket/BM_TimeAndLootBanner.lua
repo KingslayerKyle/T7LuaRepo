@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_DateTimeAndTotalCount" )
 CoD.BM_TimeAndLootBanner = InheritFrom( LUI.UIElement )
 CoD.BM_TimeAndLootBanner.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_TimeAndLootBanner )
 	self.id = "BM_TimeAndLootBanner"
@@ -95,22 +97,28 @@ CoD.BM_TimeAndLootBanner.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				backing:completeAnimation()
 				self.backing:setAlpha( 0 )
 				self.clipFinished( backing, {} )
+
 				BMDateTimeAndTotalCount:completeAnimation()
 				self.BMDateTimeAndTotalCount:setLeftRight( true, false, 0, 245 )
 				self.BMDateTimeAndTotalCount:setTopBottom( true, false, 0, 38 )
 				self.clipFinished( BMDateTimeAndTotalCount, {} )
+
 				LootBanner:completeAnimation()
 				self.LootBanner:setAlpha( 0 )
 				self.clipFinished( LootBanner, {} )
+
 				LimitedItemBanner:completeAnimation()
 				self.LimitedItemBanner:setAlpha( 0 )
 				self.clipFinished( LimitedItemBanner, {} )
+
 				LootBannerText:completeAnimation()
 				self.LootBannerText:setAlpha( 0 )
 				self.clipFinished( LootBannerText, {} )
+
 				LimitedItemBannerText:completeAnimation()
 				self.LimitedItemBannerText:setAlpha( 0 )
 				self.clipFinished( LimitedItemBannerText, {} )
@@ -119,24 +127,31 @@ CoD.BM_TimeAndLootBanner.new = function ( menu, controller )
 		LimitedItemBanner = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				backing:completeAnimation()
 				self.backing:setAlpha( 1 )
 				self.clipFinished( backing, {} )
+
 				BMDateTimeAndTotalCount:completeAnimation()
+
 				BMDateTimeAndTotalCount.backing:completeAnimation()
 				self.BMDateTimeAndTotalCount:setLeftRight( true, false, 1, 246 )
 				self.BMDateTimeAndTotalCount:setTopBottom( true, false, 31, 69 )
 				self.BMDateTimeAndTotalCount.backing:setAlpha( 0 )
 				self.clipFinished( BMDateTimeAndTotalCount, {} )
+
 				LootBanner:completeAnimation()
 				self.LootBanner:setAlpha( 0 )
 				self.clipFinished( LootBanner, {} )
+
 				LimitedItemBanner:completeAnimation()
 				self.LimitedItemBanner:setAlpha( 1 )
 				self.clipFinished( LimitedItemBanner, {} )
+
 				LootBannerText:completeAnimation()
 				self.LootBannerText:setAlpha( 0 )
 				self.clipFinished( LootBannerText, {} )
+
 				LimitedItemBannerText:completeAnimation()
 				self.LimitedItemBannerText:setLeftRight( true, false, 32, 222 )
 				self.LimitedItemBannerText:setTopBottom( true, false, 7, 26 )
@@ -147,32 +162,40 @@ CoD.BM_TimeAndLootBanner.new = function ( menu, controller )
 		LootBanner = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				backing:completeAnimation()
 				self.backing:setAlpha( 1 )
 				self.clipFinished( backing, {} )
+
 				BMDateTimeAndTotalCount:completeAnimation()
+
 				BMDateTimeAndTotalCount.backing:completeAnimation()
 				self.BMDateTimeAndTotalCount:setLeftRight( true, false, 1, 246 )
 				self.BMDateTimeAndTotalCount:setTopBottom( true, false, 31, 69 )
 				self.BMDateTimeAndTotalCount.backing:setAlpha( 0 )
 				self.clipFinished( BMDateTimeAndTotalCount, {} )
+
 				LootBanner:completeAnimation()
 				self.LootBanner:setAlpha( 1 )
 				self.clipFinished( LootBanner, {} )
+
 				LimitedItemBanner:completeAnimation()
 				self.LimitedItemBanner:setAlpha( 0 )
 				self.clipFinished( LimitedItemBanner, {} )
+
 				LootBannerText:completeAnimation()
 				self.LootBannerText:setLeftRight( true, false, 32, 222 )
 				self.LootBannerText:setTopBottom( true, false, 7, 26 )
 				self.LootBannerText:setAlpha( 1 )
 				self.clipFinished( LootBannerText, {} )
+
 				LimitedItemBannerText:completeAnimation()
 				self.LimitedItemBannerText:setAlpha( 0 )
 				self.clipFinished( LimitedItemBannerText, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BMDateTimeAndTotalCount:close()
 	end )

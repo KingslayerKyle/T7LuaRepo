@@ -4,9 +4,11 @@
 CoD.TacticalModeStatusIndicatorWidget = InheritFrom( LUI.UIElement )
 CoD.TacticalModeStatusIndicatorWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TacticalModeStatusIndicatorWidget )
 	self.id = "TacticalModeStatusIndicatorWidget"
@@ -81,24 +83,31 @@ CoD.TacticalModeStatusIndicatorWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				arrowRight:completeAnimation()
 				self.arrowRight:setAlpha( 0 )
 				self.clipFinished( arrowRight, {} )
+
 				arrowLeft:completeAnimation()
 				self.arrowLeft:setAlpha( 0 )
 				self.clipFinished( arrowLeft, {} )
+
 				suppressedIcon:completeAnimation()
 				self.suppressedIcon:setAlpha( 0 )
 				self.clipFinished( suppressedIcon, {} )
+
 				shootingPlayerFlashingIcon:completeAnimation()
 				self.shootingPlayerFlashingIcon:setAlpha( 0 )
 				self.clipFinished( shootingPlayerFlashingIcon, {} )
+
 				shootingPlayerIcon:completeAnimation()
 				self.shootingPlayerIcon:setAlpha( 0 )
 				self.clipFinished( shootingPlayerIcon, {} )
+
 				shootingIcon:completeAnimation()
 				self.shootingIcon:setAlpha( 0 )
 				self.clipFinished( shootingIcon, {} )
+
 				maneuveringIcon:completeAnimation()
 				self.maneuveringIcon:setAlpha( 0 )
 				self.clipFinished( maneuveringIcon, {} )
@@ -107,24 +116,31 @@ CoD.TacticalModeStatusIndicatorWidget.new = function ( menu, controller )
 		Suppressed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				arrowRight:completeAnimation()
 				self.arrowRight:setAlpha( 0 )
 				self.clipFinished( arrowRight, {} )
+
 				arrowLeft:completeAnimation()
 				self.arrowLeft:setAlpha( 0 )
 				self.clipFinished( arrowLeft, {} )
+
 				suppressedIcon:completeAnimation()
 				self.suppressedIcon:setAlpha( 1 )
 				self.clipFinished( suppressedIcon, {} )
+
 				shootingPlayerFlashingIcon:completeAnimation()
 				self.shootingPlayerFlashingIcon:setAlpha( 0 )
 				self.clipFinished( shootingPlayerFlashingIcon, {} )
+
 				shootingPlayerIcon:completeAnimation()
 				self.shootingPlayerIcon:setAlpha( 0 )
 				self.clipFinished( shootingPlayerIcon, {} )
+
 				shootingIcon:completeAnimation()
 				self.shootingIcon:setAlpha( 0 )
 				self.clipFinished( shootingIcon, {} )
+
 				maneuveringIcon:completeAnimation()
 				self.maneuveringIcon:setAlpha( 0 )
 				self.clipFinished( maneuveringIcon, {} )
@@ -133,16 +149,19 @@ CoD.TacticalModeStatusIndicatorWidget.new = function ( menu, controller )
 		ManeuveringAndShootingPlayer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				arrowRight:completeAnimation()
 				self.arrowRight:setLeftRight( false, false, -26, -10 )
 				self.arrowRight:setTopBottom( false, false, -16, 16 )
 				self.arrowRight:setAlpha( 1 )
 				self.clipFinished( arrowRight, {} )
+
 				arrowLeft:completeAnimation()
 				self.arrowLeft:setLeftRight( false, false, 11, 27 )
 				self.arrowLeft:setTopBottom( false, false, -16, 16 )
 				self.arrowLeft:setAlpha( 1 )
 				self.clipFinished( arrowLeft, {} )
+
 				suppressedIcon:completeAnimation()
 				self.suppressedIcon:setAlpha( 0 )
 				self.clipFinished( suppressedIcon, {} )
@@ -172,43 +191,54 @@ CoD.TacticalModeStatusIndicatorWidget.new = function ( menu, controller )
 				shootingPlayerFlashingIcon:completeAnimation()
 				self.shootingPlayerFlashingIcon:setAlpha( 0 )
 				shootingPlayerFlashingIconFrame2( shootingPlayerFlashingIcon, {} )
+
 				shootingPlayerIcon:completeAnimation()
 				self.shootingPlayerIcon:setAlpha( 1 )
 				self.clipFinished( shootingPlayerIcon, {} )
+
 				shootingIcon:completeAnimation()
 				self.shootingIcon:setAlpha( 0 )
 				self.clipFinished( shootingIcon, {} )
+
 				maneuveringIcon:completeAnimation()
 				self.maneuveringIcon:setAlpha( 0 )
 				self.clipFinished( maneuveringIcon, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		ManeuveringAndShootingOther = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				arrowRight:completeAnimation()
 				self.arrowRight:setLeftRight( false, false, -26, -10 )
 				self.arrowRight:setTopBottom( false, false, -16, 16 )
 				self.arrowRight:setAlpha( 1 )
 				self.clipFinished( arrowRight, {} )
+
 				arrowLeft:completeAnimation()
 				self.arrowLeft:setLeftRight( false, false, 11, 27 )
 				self.arrowLeft:setTopBottom( false, false, -16, 16 )
 				self.arrowLeft:setAlpha( 1 )
 				self.clipFinished( arrowLeft, {} )
+
 				suppressedIcon:completeAnimation()
 				self.suppressedIcon:setAlpha( 0 )
 				self.clipFinished( suppressedIcon, {} )
+
 				shootingPlayerFlashingIcon:completeAnimation()
 				self.shootingPlayerFlashingIcon:setAlpha( 0 )
 				self.clipFinished( shootingPlayerFlashingIcon, {} )
+
 				shootingPlayerIcon:completeAnimation()
 				self.shootingPlayerIcon:setAlpha( 0 )
 				self.clipFinished( shootingPlayerIcon, {} )
+
 				shootingIcon:completeAnimation()
 				self.shootingIcon:setAlpha( 1 )
 				self.clipFinished( shootingIcon, {} )
+
 				maneuveringIcon:completeAnimation()
 				self.maneuveringIcon:setAlpha( 0 )
 				self.clipFinished( maneuveringIcon, {} )
@@ -217,28 +247,35 @@ CoD.TacticalModeStatusIndicatorWidget.new = function ( menu, controller )
 		ManeuveringOnly = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				arrowRight:completeAnimation()
 				self.arrowRight:setLeftRight( false, false, -16, 0 )
 				self.arrowRight:setTopBottom( false, false, -16, 16 )
 				self.arrowRight:setAlpha( 1 )
 				self.clipFinished( arrowRight, {} )
+
 				arrowLeft:completeAnimation()
 				self.arrowLeft:setLeftRight( false, false, 1, 17 )
 				self.arrowLeft:setTopBottom( false, false, -16, 16 )
 				self.arrowLeft:setAlpha( 1 )
 				self.clipFinished( arrowLeft, {} )
+
 				suppressedIcon:completeAnimation()
 				self.suppressedIcon:setAlpha( 0 )
 				self.clipFinished( suppressedIcon, {} )
+
 				shootingPlayerFlashingIcon:completeAnimation()
 				self.shootingPlayerFlashingIcon:setAlpha( 0 )
 				self.clipFinished( shootingPlayerFlashingIcon, {} )
+
 				shootingPlayerIcon:completeAnimation()
 				self.shootingPlayerIcon:setAlpha( 0 )
 				self.clipFinished( shootingPlayerIcon, {} )
+
 				shootingIcon:completeAnimation()
 				self.shootingIcon:setAlpha( 0 )
 				self.clipFinished( shootingIcon, {} )
+
 				maneuveringIcon:completeAnimation()
 				self.maneuveringIcon:setAlpha( 0 )
 				self.clipFinished( maneuveringIcon, {} )
@@ -247,12 +284,15 @@ CoD.TacticalModeStatusIndicatorWidget.new = function ( menu, controller )
 		ShootingPlayerOnly = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				arrowRight:completeAnimation()
 				self.arrowRight:setAlpha( 0 )
 				self.clipFinished( arrowRight, {} )
+
 				arrowLeft:completeAnimation()
 				self.arrowLeft:setAlpha( 0 )
 				self.clipFinished( arrowLeft, {} )
+
 				suppressedIcon:completeAnimation()
 				self.suppressedIcon:setAlpha( 0 )
 				self.clipFinished( suppressedIcon, {} )
@@ -282,45 +322,57 @@ CoD.TacticalModeStatusIndicatorWidget.new = function ( menu, controller )
 				shootingPlayerFlashingIcon:completeAnimation()
 				self.shootingPlayerFlashingIcon:setAlpha( 0 )
 				shootingPlayerFlashingIconFrame2( shootingPlayerFlashingIcon, {} )
+
 				shootingPlayerIcon:completeAnimation()
 				self.shootingPlayerIcon:setAlpha( 1 )
 				self.clipFinished( shootingPlayerIcon, {} )
+
 				shootingIcon:completeAnimation()
 				self.shootingIcon:setAlpha( 0 )
 				self.clipFinished( shootingIcon, {} )
+
 				maneuveringIcon:completeAnimation()
 				self.maneuveringIcon:setAlpha( 0 )
 				self.clipFinished( maneuveringIcon, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		ShootingOtherOnly = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				arrowRight:completeAnimation()
 				self.arrowRight:setAlpha( 0 )
 				self.clipFinished( arrowRight, {} )
+
 				arrowLeft:completeAnimation()
 				self.arrowLeft:setAlpha( 0 )
 				self.clipFinished( arrowLeft, {} )
+
 				suppressedIcon:completeAnimation()
 				self.suppressedIcon:setAlpha( 0 )
 				self.clipFinished( suppressedIcon, {} )
+
 				shootingPlayerFlashingIcon:completeAnimation()
 				self.shootingPlayerFlashingIcon:setAlpha( 0 )
 				self.clipFinished( shootingPlayerFlashingIcon, {} )
+
 				shootingPlayerIcon:completeAnimation()
 				self.shootingPlayerIcon:setRGB( 1, 0.84, 0.04 )
 				self.clipFinished( shootingPlayerIcon, {} )
+
 				shootingIcon:completeAnimation()
 				self.shootingIcon:setAlpha( 1 )
 				self.clipFinished( shootingIcon, {} )
+
 				maneuveringIcon:completeAnimation()
 				self.maneuveringIcon:setAlpha( 0 )
 				self.clipFinished( maneuveringIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Suppressed",

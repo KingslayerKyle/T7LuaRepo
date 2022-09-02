@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.LoadingScreenHeroListWidgetPlayerName = InheritFrom( LUI.UIElement )
 CoD.LoadingScreenHeroListWidgetPlayerName.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LoadingScreenHeroListWidgetPlayerName )
 	self.id = "LoadingScreenHeroListWidgetPlayerName"
@@ -67,9 +69,11 @@ CoD.LoadingScreenHeroListWidgetPlayerName.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TitleGlow1:completeAnimation()
 				self.TitleGlow1:setRGB( 0.89, 0.89, 0.89 )
 				self.clipFinished( TitleGlow1, {} )
+
 				WpnName:completeAnimation()
 				self.WpnName:setRGB( 1, 1, 1 )
 				self.clipFinished( WpnName, {} )
@@ -78,12 +82,14 @@ CoD.LoadingScreenHeroListWidgetPlayerName.new = function ( menu, controller )
 		Coloured = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				TitleGlow1:completeAnimation()
 				self.TitleGlow1:setRGB( 1, 0.84, 0.04 )
 				self.clipFinished( TitleGlow1, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel0:close()
 		element.FEButtonPanel00:close()

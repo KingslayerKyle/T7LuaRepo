@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Footer.fe_LeftContainer_NOTLobby" )
 CoD.featureOverlay_frameVLayout_Buttons = InheritFrom( LUI.UIElement )
 CoD.featureOverlay_frameVLayout_Buttons.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.featureOverlay_frameVLayout_Buttons )
 	self.id = "featureOverlay_frameVLayout_Buttons"

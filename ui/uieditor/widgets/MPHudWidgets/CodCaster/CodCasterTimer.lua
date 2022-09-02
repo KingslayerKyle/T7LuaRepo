@@ -4,9 +4,11 @@
 CoD.CodCasterTimer = InheritFrom( LUI.UIElement )
 CoD.CodCasterTimer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterTimer )
 	self.id = "CodCasterTimer"
@@ -38,9 +40,11 @@ CoD.CodCasterTimer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				GameTimer:completeAnimation()
 				self.GameTimer:setAlpha( 0 )
 				self.clipFinished( GameTimer, {} )
+
 				NoTimeLimit0:completeAnimation()
 				self.NoTimeLimit0:setAlpha( 0 )
 				self.clipFinished( NoTimeLimit0, {} )
@@ -49,10 +53,12 @@ CoD.CodCasterTimer.new = function ( menu, controller )
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				GameTimer:completeAnimation()
 				self.GameTimer:setRGB( 1, 1, 1 )
 				self.GameTimer:setAlpha( 1 )
 				self.clipFinished( GameTimer, {} )
+
 				NoTimeLimit0:completeAnimation()
 				self.NoTimeLimit0:setAlpha( 0 )
 				self.clipFinished( NoTimeLimit0, {} )
@@ -61,10 +67,12 @@ CoD.CodCasterTimer.new = function ( menu, controller )
 		TimeLow = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				GameTimer:completeAnimation()
 				self.GameTimer:setRGB( 1, 0, 0 )
 				self.GameTimer:setAlpha( 1 )
 				self.clipFinished( GameTimer, {} )
+
 				NoTimeLimit0:completeAnimation()
 				self.NoTimeLimit0:setAlpha( 0 )
 				self.clipFinished( NoTimeLimit0, {} )
@@ -73,15 +81,18 @@ CoD.CodCasterTimer.new = function ( menu, controller )
 		NoTimeLimit = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				GameTimer:completeAnimation()
 				self.GameTimer:setAlpha( 0 )
 				self.clipFinished( GameTimer, {} )
+
 				NoTimeLimit0:completeAnimation()
 				self.NoTimeLimit0:setAlpha( 1 )
 				self.clipFinished( NoTimeLimit0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Active",

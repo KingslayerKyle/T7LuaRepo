@@ -4,9 +4,11 @@
 CoD.BM_Contracts_LockBars = InheritFrom( LUI.UIElement )
 CoD.BM_Contracts_LockBars.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Contracts_LockBars )
 	self.id = "BM_Contracts_LockBars"
@@ -39,6 +41,7 @@ CoD.BM_Contracts_LockBars.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

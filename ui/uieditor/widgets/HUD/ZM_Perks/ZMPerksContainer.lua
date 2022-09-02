@@ -85,9 +85,11 @@ end
 CoD.ZMPerksContainer = InheritFrom( LUI.UIElement )
 CoD.ZMPerksContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZMPerksContainer )
 	self.id = "ZMPerksContainer"
@@ -110,6 +112,7 @@ CoD.ZMPerksContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PerkList:completeAnimation()
 				self.PerkList:setAlpha( 1 )
 				self.clipFinished( PerkList, {} )
@@ -118,12 +121,14 @@ CoD.ZMPerksContainer.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PerkList:completeAnimation()
 				self.PerkList:setAlpha( 0 )
 				self.clipFinished( PerkList, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -286,6 +291,7 @@ CoD.ZMPerksContainer.new = function ( menu, controller )
 		} )
 	end )
 	PerkList.id = "PerkList"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PerkList:close()
 	end )

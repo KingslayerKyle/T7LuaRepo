@@ -4,9 +4,11 @@
 CoD.AmmoWidgetMP_PanelCircle = InheritFrom( LUI.UIElement )
 CoD.AmmoWidgetMP_PanelCircle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidgetMP_PanelCircle )
 	self.id = "AmmoWidgetMP_PanelCircle"

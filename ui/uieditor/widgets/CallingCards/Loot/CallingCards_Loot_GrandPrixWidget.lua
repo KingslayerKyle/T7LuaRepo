@@ -4,9 +4,11 @@
 CoD.CallingCards_Loot_GrandPrixWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_Loot_GrandPrixWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_Loot_GrandPrixWidget )
 	self.id = "CallingCards_Loot_GrandPrixWidget"
@@ -55,6 +57,7 @@ CoD.CallingCards_Loot_GrandPrixWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local GlowFrame2 = function ( Glow, event )
 					local GlowFrame3 = function ( Glow, event )
 						local GlowFrame4 = function ( Glow, event )
@@ -344,6 +347,7 @@ CoD.CallingCards_Loot_GrandPrixWidget.new = function ( menu, controller )
 				self.Lrg:setLeftRight( true, false, 0, 480 )
 				self.Lrg:setTopBottom( true, false, 0, 120 )
 				LrgFrame2( Lrg, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

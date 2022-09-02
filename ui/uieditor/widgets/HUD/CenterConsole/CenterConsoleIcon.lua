@@ -4,9 +4,11 @@
 CoD.CenterConsoleIcon = InheritFrom( LUI.UIElement )
 CoD.CenterConsoleIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CenterConsoleIcon )
 	self.id = "CenterConsoleIcon"
@@ -27,9 +29,11 @@ CoD.CenterConsoleIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			FadeIn = function ()
 				self:setupElementClipCounter( 1 )
+
 				local IconFrame2 = function ( Icon, event )
 					local IconFrame3 = function ( Icon, event )
 						local IconFrame4 = function ( Icon, event )
@@ -133,6 +137,7 @@ CoD.CenterConsoleIcon.new = function ( menu, controller )
 			end,
 			FadeOut = function ()
 				self:setupElementClipCounter( 1 )
+
 				local IconFrame2 = function ( Icon, event )
 					if not event.interrupted then
 						Icon:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )

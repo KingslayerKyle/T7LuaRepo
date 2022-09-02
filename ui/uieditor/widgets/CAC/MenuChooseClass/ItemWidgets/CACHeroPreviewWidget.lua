@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleElemForeC" )
 CoD.CACHeroPreviewWidget = InheritFrom( LUI.UIElement )
 CoD.CACHeroPreviewWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CACHeroPreviewWidget )
 	self.id = "CACHeroPreviewWidget"
@@ -118,12 +120,15 @@ CoD.CACHeroPreviewWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				CACHeroPreviewPanelShader0:completeAnimation()
 				self.CACHeroPreviewPanelShader0:setAlpha( 0 )
 				self.clipFinished( CACHeroPreviewPanelShader0, {} )
+
 				heroImage:completeAnimation()
 				self.heroImage:setAlpha( 0 )
 				self.clipFinished( heroImage, {} )
+
 				circles:completeAnimation()
 				self.circles:setAlpha( 0 )
 				self.clipFinished( circles, {} )
@@ -132,18 +137,22 @@ CoD.CACHeroPreviewWidget.new = function ( menu, controller )
 		VisibleHero = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				CACHeroPreviewPanelShader0:completeAnimation()
 				self.CACHeroPreviewPanelShader0:setAlpha( 1 )
 				self.clipFinished( CACHeroPreviewPanelShader0, {} )
+
 				heroImage:completeAnimation()
 				self.heroImage:setAlpha( 1 )
 				self.clipFinished( heroImage, {} )
+
 				circles:completeAnimation()
 				self.circles:setAlpha( 1 )
 				self.clipFinished( circles, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 8 )
+
 				local CACHeroPreviewPanelShader0Frame2 = function ( CACHeroPreviewPanelShader0, event )
 					local CACHeroPreviewPanelShader0Frame3 = function ( CACHeroPreviewPanelShader0, event )
 						if not event.interrupted then
@@ -317,6 +326,7 @@ CoD.CACHeroPreviewWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "VisibleHero",
@@ -325,6 +335,7 @@ CoD.CACHeroPreviewWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CACHeroPreviewPanelShader0:close()
 		element.cacCharElements0:close()

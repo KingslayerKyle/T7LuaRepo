@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.EntityLockon.rocketLauncherLockon_Internal" )
 CoD.rocketLauncherLockon = InheritFrom( LUI.UIElement )
 CoD.rocketLauncherLockon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.rocketLauncherLockon )
 	self.id = "rocketLauncherLockon"
@@ -51,6 +53,7 @@ CoD.rocketLauncherLockon.new = function ( menu, controller )
 	LUI.OverrideFunction_CallOriginalFirst( self, "setModel", function ( element, controller )
 		CallCustomElementFunction_Element( element, "setupRocketLauncherTarget", controller )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.rocketLauncherLockonInternal0:close()
 	end )

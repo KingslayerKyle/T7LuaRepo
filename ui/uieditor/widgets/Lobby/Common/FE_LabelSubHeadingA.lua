@@ -18,6 +18,7 @@ CoD.FE_LabelSubHeadingA.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_LabelSubHeadingA )
 	self.id = "FE_LabelSubHeadingA"
@@ -31,6 +32,7 @@ CoD.FE_LabelSubHeadingA.new = function ( menu, controller )
 	Label0:setRGB( 0.58, 0.64, 0.65 )
 	Label0:setText( Engine.Localize( "33,241" ) )
 	Label0:setTTF( "fonts/escom.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( Label0, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )

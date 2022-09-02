@@ -4,9 +4,11 @@
 CoD.CallingCard_loot_blacklightposters = InheritFrom( LUI.UIElement )
 CoD.CallingCard_loot_blacklightposters.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCard_loot_blacklightposters )
 	self.id = "CallingCard_loot_blacklightposters"
@@ -66,6 +68,7 @@ CoD.CallingCard_loot_blacklightposters.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local bgFrame2 = function ( bg, event )
 					local bgFrame3 = function ( bg, event )
 						if not event.interrupted then
@@ -213,6 +216,7 @@ CoD.CallingCard_loot_blacklightposters.new = function ( menu, controller )
 				self.biker:setTopBottom( true, false, 0, 120 )
 				self.biker:setScale( 1 )
 				bikerFrame2( biker, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

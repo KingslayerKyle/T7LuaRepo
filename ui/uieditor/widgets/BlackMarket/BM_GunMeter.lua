@@ -13,9 +13,11 @@ end
 CoD.BM_GunMeter = InheritFrom( LUI.UIElement )
 CoD.BM_GunMeter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_GunMeter )
 	self.id = "BM_GunMeter"

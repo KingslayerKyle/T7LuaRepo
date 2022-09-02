@@ -4,9 +4,11 @@
 CoD.CallingCards_SpecialistAbilitiesWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_SpecialistAbilitiesWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_SpecialistAbilitiesWidget )
 	self.id = "CallingCards_SpecialistAbilitiesWidget"

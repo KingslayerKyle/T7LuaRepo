@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.HUD.ZM_FX.ZmFx_Spark2" )
 CoD.ZmRndDigits = InheritFrom( LUI.UIElement )
 CoD.ZmRndDigits.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmRndDigits )
 	self.id = "ZmRndDigits"
@@ -94,21 +96,26 @@ CoD.ZmRndDigits.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				DigitsInt:completeAnimation()
 				self.DigitsInt:setAlpha( 1 )
 				self.DigitsInt:setZRot( -10 )
 				self.DigitsInt:setZoom( 0 )
 				self.clipFinished( DigitsInt, {} )
+
 				DigitsOverlay:completeAnimation()
 				self.DigitsOverlay:setAlpha( 0 )
 				self.DigitsOverlay:setZRot( -19 )
 				self.clipFinished( DigitsOverlay, {} )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver, {} )
+
 				ZmFxFlsh10:completeAnimation()
 				self.ZmFxFlsh10:setAlpha( 1 )
 				self.clipFinished( ZmFxFlsh10, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setLeftRight( true, false, -12, 118 )
 				self.ZmFxSpark20:setTopBottom( true, false, -102, 114 )
@@ -118,6 +125,7 @@ CoD.ZmRndDigits.new = function ( menu, controller )
 			end,
 			Update = function ()
 				self:setupElementClipCounter( 5 )
+
 				DigitsInt:completeAnimation()
 				self.DigitsInt:setAlpha( 1 )
 				self.DigitsInt:setZRot( -10 )
@@ -283,6 +291,7 @@ CoD.ZmRndDigits.new = function ( menu, controller )
 				self.ZmFxFlsh10:setRGB( 0.9, 0.73, 0.68 )
 				self.ZmFxFlsh10:setAlpha( 1 )
 				ZmFxFlsh10Frame2( ZmFxFlsh10, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
@@ -293,6 +302,7 @@ CoD.ZmRndDigits.new = function ( menu, controller )
 		local f21_local0 = self
 		PlayClip( self, "Update", controller )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.DigitsInt:close()
 		element.DigitsOverlay:close()

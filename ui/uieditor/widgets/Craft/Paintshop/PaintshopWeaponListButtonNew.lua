@@ -15,9 +15,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_Contracts_LockBars" )
 CoD.PaintshopWeaponListButtonNew = InheritFrom( LUI.UIElement )
 CoD.PaintshopWeaponListButtonNew.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PaintshopWeaponListButtonNew )
 	self.id = "PaintshopWeaponListButtonNew"
@@ -210,54 +212,68 @@ CoD.PaintshopWeaponListButtonNew.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setLeftRight( true, true, -2, 2 )
 				self.BoxButtonLrgInactiveDiag:setTopBottom( true, true, -2, 2 )
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setLeftRight( true, true, -2, 2 )
 				self.BoxButtonLrgInactive:setTopBottom( true, true, -2, 2 )
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				Lblur:completeAnimation()
 				self.Lblur:setLeftRight( true, true, 0, 0 )
 				self.Lblur:setTopBottom( true, true, 0, 0 )
 				self.clipFinished( Lblur, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setLeftRight( true, false, 0, 65 )
 				self.itemImage:setTopBottom( true, true, 0, 0 )
 				self.clipFinished( itemImage, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				Glitch:completeAnimation()
 				self.Glitch:setAlpha( 0 )
 				self.clipFinished( Glitch, {} )
+
 				Glitch2:completeAnimation()
 				self.Glitch2:setAlpha( 0 )
 				self.clipFinished( Glitch2, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 8 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -273,15 +289,18 @@ CoD.PaintshopWeaponListButtonNew.new = function ( menu, controller )
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				BoxButtonLrgInactiveFrame2( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setLeftRight( true, true, -2, 2 )
 				self.BoxButtonLrgIdle:setTopBottom( true, true, -2, 2 )
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				Lblur:completeAnimation()
 				self.Lblur:setLeftRight( true, true, 0, 0 )
 				self.Lblur:setTopBottom( true, true, 0, 0 )
 				self.clipFinished( Lblur, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setLeftRight( true, false, 0, 65 )
 				self.itemImage:setTopBottom( true, true, 0, 0 )
@@ -519,46 +538,58 @@ CoD.PaintshopWeaponListButtonNew.new = function ( menu, controller )
 				Glitch2:completeAnimation()
 				self.Glitch2:setAlpha( 0 )
 				Glitch2Frame2( Glitch2, {} )
+
 				self.nextClip = "GainFocus"
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				arrowImage:completeAnimation()
 				self.arrowImage:setLeftRight( false, true, -1.66, -9.66 )
 				self.arrowImage:setTopBottom( false, false, -10.67, 13.33 )
 				self.clipFinished( arrowImage, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 1 )
 				self.clipFinished( itemName, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setLeftRight( true, false, 0, 65 )
 				self.itemImage:setTopBottom( true, true, 0, 0 )
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				Glitch:completeAnimation()
 				self.Glitch:setAlpha( 0.7 )
 				self.clipFinished( Glitch, {} )
+
 				Glitch2:completeAnimation()
 				self.Glitch2:setAlpha( 0 )
 				self.clipFinished( Glitch2, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -593,6 +624,7 @@ CoD.PaintshopWeaponListButtonNew.new = function ( menu, controller )
 				self.Lblur:setTopBottom( true, true, 0, 0 )
 				self.Lblur:setZoom( 0 )
 				LblurFrame2( Lblur, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setLeftRight( true, false, 0, 65 )
 				self.itemImage:setTopBottom( true, true, 0, 0 )
@@ -778,117 +810,154 @@ CoD.PaintshopWeaponListButtonNew.new = function ( menu, controller )
 		BMClassified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 20 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				Lblur:completeAnimation()
 				self.Lblur:setAlpha( 0 )
 				self.clipFinished( Lblur, {} )
+
 				arrowImage:completeAnimation()
 				self.arrowImage:setAlpha( 0 )
 				self.clipFinished( arrowImage, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 0 )
 				self.clipFinished( itemName, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
+
 				itemImageLine:completeAnimation()
 				self.itemImageLine:setAlpha( 0 )
 				self.clipFinished( itemImageLine, {} )
+
 				totalPaintjobs:completeAnimation()
 				self.totalPaintjobs:setAlpha( 0 )
 				self.clipFinished( totalPaintjobs, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				Glitch:completeAnimation()
 				self.Glitch:setAlpha( 0 )
 				self.clipFinished( Glitch, {} )
+
 				Glitch2:completeAnimation()
 				self.Glitch2:setAlpha( 0 )
 				self.clipFinished( Glitch2, {} )
+
 				blackMarketBackground:completeAnimation()
 				self.blackMarketBackground:setAlpha( 1 )
 				self.clipFinished( blackMarketBackground, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 1 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 1 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 17 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				Lblur:completeAnimation()
 				self.Lblur:setAlpha( 0 )
 				self.clipFinished( Lblur, {} )
+
 				arrowImage:completeAnimation()
 				self.arrowImage:setAlpha( 0 )
 				self.clipFinished( arrowImage, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 0 )
 				self.clipFinished( itemName, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
+
 				itemImageLine:completeAnimation()
 				self.itemImageLine:setAlpha( 0 )
 				self.clipFinished( itemImageLine, {} )
+
 				totalPaintjobs:completeAnimation()
 				self.totalPaintjobs:setAlpha( 0 )
 				self.clipFinished( totalPaintjobs, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				Glitch:completeAnimation()
 				self.Glitch:setAlpha( 0 )
 				self.clipFinished( Glitch, {} )
+
 				Glitch2:completeAnimation()
 				self.Glitch2:setAlpha( 0 )
 				self.clipFinished( Glitch2, {} )
+
 				blackMarketBackground:completeAnimation()
 				self.blackMarketBackground:setAlpha( 1 )
 				self.clipFinished( blackMarketBackground, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 1 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 1 )
 				self.clipFinished( blackMarketBrandIcon, {} )
@@ -897,126 +966,166 @@ CoD.PaintshopWeaponListButtonNew.new = function ( menu, controller )
 		ContractClassified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 20 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				Lblur:completeAnimation()
 				self.Lblur:setAlpha( 0 )
 				self.clipFinished( Lblur, {} )
+
 				arrowImage:completeAnimation()
 				self.arrowImage:setAlpha( 0 )
 				self.clipFinished( arrowImage, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 0 )
 				self.clipFinished( itemName, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
+
 				itemImageLine:completeAnimation()
 				self.itemImageLine:setAlpha( 0 )
 				self.clipFinished( itemImageLine, {} )
+
 				totalPaintjobs:completeAnimation()
 				self.totalPaintjobs:setAlpha( 0 )
 				self.clipFinished( totalPaintjobs, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				Glitch:completeAnimation()
 				self.Glitch:setAlpha( 0 )
 				self.clipFinished( Glitch, {} )
+
 				Glitch2:completeAnimation()
 				self.Glitch2:setAlpha( 0 )
 				self.clipFinished( Glitch2, {} )
+
 				blackMarketBackground:completeAnimation()
 				self.blackMarketBackground:setAlpha( 1 )
 				self.clipFinished( blackMarketBackground, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 1 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 1 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 1 )
 				self.clipFinished( bmContractBrandIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 20 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				Lblur:completeAnimation()
 				self.Lblur:setAlpha( 0 )
 				self.clipFinished( Lblur, {} )
+
 				arrowImage:completeAnimation()
 				self.arrowImage:setAlpha( 0 )
 				self.clipFinished( arrowImage, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 0 )
 				self.clipFinished( itemName, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
+
 				itemImageLine:completeAnimation()
 				self.itemImageLine:setAlpha( 0 )
 				self.clipFinished( itemImageLine, {} )
+
 				totalPaintjobs:completeAnimation()
 				self.totalPaintjobs:setAlpha( 0 )
 				self.clipFinished( totalPaintjobs, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				Glitch:completeAnimation()
 				self.Glitch:setAlpha( 0 )
 				self.clipFinished( Glitch, {} )
+
 				Glitch2:completeAnimation()
 				self.Glitch2:setAlpha( 0 )
 				self.clipFinished( Glitch2, {} )
+
 				blackMarketBackground:completeAnimation()
 				self.blackMarketBackground:setAlpha( 1 )
 				self.clipFinished( blackMarketBackground, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 1 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 1 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 1 )
 				self.clipFinished( bmContractBrandIcon, {} )
@@ -1025,35 +1134,45 @@ CoD.PaintshopWeaponListButtonNew.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.13 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setLeftRight( true, false, 0, 65 )
 				self.itemImage:setTopBottom( true, true, 0, 0 )
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0.8 )
 				self.clipFinished( lockedIcon, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
@@ -1062,50 +1181,64 @@ CoD.PaintshopWeaponListButtonNew.new = function ( menu, controller )
 		NotListFocus = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				Lblur:completeAnimation()
 				self.Lblur:setAlpha( 0.05 )
 				self.clipFinished( Lblur, {} )
+
 				arrowImage:completeAnimation()
 				self.arrowImage:setAlpha( 0 )
 				self.clipFinished( arrowImage, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 0.25 )
 				self.clipFinished( itemName, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setLeftRight( true, false, 0, 65 )
 				self.itemImage:setTopBottom( true, true, 0, 0 )
 				self.itemImage:setAlpha( 0.2 )
 				self.clipFinished( itemImage, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				Glitch2:completeAnimation()
 				self.Glitch2:setAlpha( 0 )
 				self.clipFinished( Glitch2, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BMClassified",
@@ -1148,6 +1281,7 @@ CoD.PaintshopWeaponListButtonNew.new = function ( menu, controller )
 			modelName = "isContractClassified"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveDiag:close()
 		element.BoxButtonLrgInactive:close()

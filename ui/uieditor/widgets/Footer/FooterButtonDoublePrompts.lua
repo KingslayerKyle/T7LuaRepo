@@ -36,6 +36,7 @@ end
 
 local f0_local1 = function ( f2_arg0, f2_arg1, f2_arg2 )
 	f2_arg0:setForceMouseEventDispatch( true )
+
 	LUI.OverrideFunction_CallOriginalFirst( f2_arg0, "setState", function ( element, controller )
 		f0_local0( f2_arg0 )
 	end )
@@ -73,6 +74,7 @@ CoD.FooterButtonDoublePrompts.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FooterButtonDoublePrompts )
 	self.id = "FooterButtonDoublePrompts"
@@ -114,6 +116,7 @@ CoD.FooterButtonDoublePrompts.new = function ( menu, controller )
 	label:setTopBottom( true, false, 7, 25 )
 	label:setText( Engine.Localize( "MPUI_CHANGE_ROLE" ) )
 	label:setTTF( "fonts/default.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( label, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, -10 )
 	end )
@@ -153,22 +156,27 @@ CoD.FooterButtonDoublePrompts.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BumperButtonWithKeyMouseLeft:completeAnimation()
 				self.BumperButtonWithKeyMouseLeft:setAlpha( 0 )
 				self.clipFinished( BumperButtonWithKeyMouseLeft, {} )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setRGB( 1, 1, 1 )
 				self.buttonPromptImage:setAlpha( 0 )
 				self.buttonPromptImage:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_saturation_normal" ) )
 				self.buttonPromptImage:setShaderVector( 0, 1, 0, 0, 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setRGB( 1, 1, 1 )
 				self.label:setAlpha( 0 )
 				self.clipFinished( label, {} )
+
 				BumperButtonWithKeyMouseRight:completeAnimation()
 				self.BumperButtonWithKeyMouseRight:setAlpha( 0 )
 				self.clipFinished( BumperButtonWithKeyMouseRight, {} )
+
 				buttonPromptImage1:completeAnimation()
 				self.buttonPromptImage1:setRGB( 1, 1, 1 )
 				self.buttonPromptImage1:setAlpha( 0 )
@@ -180,19 +188,24 @@ CoD.FooterButtonDoublePrompts.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BumperButtonWithKeyMouseLeft:completeAnimation()
 				self.BumperButtonWithKeyMouseLeft:setAlpha( 0.5 )
 				self.clipFinished( BumperButtonWithKeyMouseLeft, {} )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setAlpha( 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setRGB( 0.5, 0.5, 0.5 )
 				self.label:setAlpha( 0.5 )
 				self.clipFinished( label, {} )
+
 				BumperButtonWithKeyMouseRight:completeAnimation()
 				self.BumperButtonWithKeyMouseRight:setAlpha( 0.5 )
 				self.clipFinished( BumperButtonWithKeyMouseRight, {} )
+
 				buttonPromptImage1:completeAnimation()
 				self.buttonPromptImage1:setAlpha( 0 )
 				self.clipFinished( buttonPromptImage1, {} )
@@ -201,45 +214,56 @@ CoD.FooterButtonDoublePrompts.new = function ( menu, controller )
 		Enabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BumperButtonWithKeyMouseLeft:completeAnimation()
 				self.BumperButtonWithKeyMouseLeft:setAlpha( 1 )
 				self.clipFinished( BumperButtonWithKeyMouseLeft, {} )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setAlpha( 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setRGB( 1, 1, 1 )
 				self.label:setAlpha( 1 )
 				self.clipFinished( label, {} )
+
 				BumperButtonWithKeyMouseRight:completeAnimation()
 				self.BumperButtonWithKeyMouseRight:setAlpha( 1 )
 				self.clipFinished( BumperButtonWithKeyMouseRight, {} )
+
 				buttonPromptImage1:completeAnimation()
 				self.buttonPromptImage1:setAlpha( 0 )
 				self.clipFinished( buttonPromptImage1, {} )
 			end,
 			Hide = function ()
 				self:setupElementClipCounter( 5 )
+
 				BumperButtonWithKeyMouseLeft:completeAnimation()
 				self.BumperButtonWithKeyMouseLeft:setAlpha( 0 )
 				self.clipFinished( BumperButtonWithKeyMouseLeft, {} )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setLeftRight( true, false, 0, 32 )
 				self.buttonPromptImage:setTopBottom( true, false, 0, 31 )
 				self.buttonPromptImage:setAlpha( 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setAlpha( 0 )
 				self.clipFinished( label, {} )
+
 				BumperButtonWithKeyMouseRight:completeAnimation()
 				self.BumperButtonWithKeyMouseRight:setAlpha( 0 )
 				self.clipFinished( BumperButtonWithKeyMouseRight, {} )
+
 				buttonPromptImage1:completeAnimation()
 				self.buttonPromptImage1:setAlpha( 0 )
 				self.clipFinished( buttonPromptImage1, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -262,6 +286,7 @@ CoD.FooterButtonDoublePrompts.new = function ( menu, controller )
 			modelName = nil
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsElementInState( element, "DefaultState" ) then
 			OverrideWidgetWidth( self, "0" )
@@ -269,6 +294,7 @@ CoD.FooterButtonDoublePrompts.new = function ( menu, controller )
 			RestoreWidgetWidth( self )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BumperButtonWithKeyMouseLeft:close()
 		element.BumperButtonWithKeyMouseRight:close()

@@ -53,9 +53,11 @@ end
 CoD.ChooseCharacter_HelpBubble = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacter_HelpBubble.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacter_HelpBubble )
 	self.id = "ChooseCharacter_HelpBubble"
@@ -89,9 +91,11 @@ CoD.ChooseCharacter_HelpBubble.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Darken:completeAnimation()
 				self.Darken:setAlpha( 0 )
 				self.clipFinished( Darken, {} )
+
 				ChooseCharacterHelpBubbleWidget:completeAnimation()
 				self.ChooseCharacterHelpBubbleWidget:setAlpha( 0 )
 				self.clipFinished( ChooseCharacterHelpBubbleWidget, {} )
@@ -100,12 +104,14 @@ CoD.ChooseCharacter_HelpBubble.new = function ( menu, controller )
 		ChangedCharacter = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Darken:completeAnimation()
 				self.Darken:setAlpha( 0 )
 				self.clipFinished( Darken, {} )
 			end,
 			Complete = function ()
 				self:setupElementClipCounter( 2 )
+
 				Darken:completeAnimation()
 				self.Darken:setAlpha( 0 )
 				self.clipFinished( Darken, {} )
@@ -133,9 +139,11 @@ CoD.ChooseCharacter_HelpBubble.new = function ( menu, controller )
 		Complete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Darken:completeAnimation()
 				self.Darken:setAlpha( 0 )
 				self.clipFinished( Darken, {} )
+
 				ChooseCharacterHelpBubbleWidget:completeAnimation()
 				self.ChooseCharacterHelpBubbleWidget:setAlpha( 0 )
 				self.clipFinished( ChooseCharacterHelpBubbleWidget, {} )
@@ -144,10 +152,13 @@ CoD.ChooseCharacter_HelpBubble.new = function ( menu, controller )
 		Overview = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Darken:completeAnimation()
 				self.Darken:setAlpha( 0.5 )
 				self.clipFinished( Darken, {} )
+
 				ChooseCharacterHelpBubbleWidget:completeAnimation()
+
 				ChooseCharacterHelpBubbleWidget.ChooseCharacterHelpBubbleContainer.Description:completeAnimation()
 				self.ChooseCharacterHelpBubbleWidget:setLeftRight( true, false, 0, 150 )
 				self.ChooseCharacterHelpBubbleWidget:setTopBottom( true, false, 0, 161.89 )
@@ -156,6 +167,7 @@ CoD.ChooseCharacter_HelpBubble.new = function ( menu, controller )
 			end,
 			ChangedCharacter = function ()
 				self:setupElementClipCounter( 2 )
+
 				local DarkenFrame2 = function ( Darken, event )
 					if not event.interrupted then
 						Darken:beginAnimation( "keyframe", 400, false, false, CoD.TweenType.Linear )
@@ -310,6 +322,7 @@ CoD.ChooseCharacter_HelpBubble.new = function ( menu, controller )
 				end
 				
 				ChooseCharacterHelpBubbleWidget:completeAnimation()
+
 				ChooseCharacterHelpBubbleWidget.ChooseCharacterHelpBubbleContainer.Description:completeAnimation()
 				self.ChooseCharacterHelpBubbleWidget:setLeftRight( true, false, 0, 150 )
 				self.ChooseCharacterHelpBubbleWidget:setTopBottom( true, false, 0, 161.89 )
@@ -319,6 +332,7 @@ CoD.ChooseCharacter_HelpBubble.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Overview",
@@ -347,6 +361,7 @@ CoD.ChooseCharacter_HelpBubble.new = function ( menu, controller )
 			modelName = "firstTimeFlowState"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ChooseCharacterHelpBubbleWidget:close()
 	end )

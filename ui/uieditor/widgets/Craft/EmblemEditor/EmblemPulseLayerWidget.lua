@@ -4,9 +4,11 @@
 CoD.EmblemPulseLayerWidget = InheritFrom( LUI.UIElement )
 CoD.EmblemPulseLayerWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemPulseLayerWidget )
 	self.id = "EmblemPulseLayerWidget"
@@ -25,6 +27,7 @@ CoD.EmblemPulseLayerWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local emblemHiddenPulseLayerFrame2 = function ( emblemHiddenPulseLayer, event )
 					local emblemHiddenPulseLayerFrame3 = function ( emblemHiddenPulseLayer, event )
 						if not event.interrupted then
@@ -57,6 +60,7 @@ CoD.EmblemPulseLayerWidget.new = function ( menu, controller )
 			end,
 			Hide = function ()
 				self:setupElementClipCounter( 1 )
+
 				emblemHiddenPulseLayer:completeAnimation()
 				self.emblemHiddenPulseLayer:setAlpha( 0 )
 				self.clipFinished( emblemHiddenPulseLayer, {} )

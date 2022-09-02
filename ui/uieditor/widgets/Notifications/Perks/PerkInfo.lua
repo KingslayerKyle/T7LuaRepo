@@ -4,9 +4,11 @@
 CoD.PerkInfo = InheritFrom( LUI.UIElement )
 CoD.PerkInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PerkInfo )
 	self.id = "PerkInfo"
@@ -67,26 +69,31 @@ CoD.PerkInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				PerkImage1:completeAnimation()
 				self.PerkImage1:setLeftRight( false, true, -62, 0 )
 				self.PerkImage1:setTopBottom( true, false, 0, 62 )
 				self.PerkImage1:setAlpha( 0 )
 				self.clipFinished( PerkImage1, {} )
+
 				PerkImage0:completeAnimation()
 				self.PerkImage0:setLeftRight( false, true, -124, -62 )
 				self.PerkImage0:setTopBottom( true, false, 0, 62 )
 				self.PerkImage0:setAlpha( 0 )
 				self.clipFinished( PerkImage0, {} )
+
 				DoublePerkDescription:completeAnimation()
 				self.DoublePerkDescription:setLeftRight( false, true, -500, -126 )
 				self.DoublePerkDescription:setTopBottom( true, false, 18, 34 )
 				self.DoublePerkDescription:setAlpha( 0 )
 				self.clipFinished( DoublePerkDescription, {} )
+
 				DoublePerkDescriptionArabic:completeAnimation()
 				self.DoublePerkDescriptionArabic:setLeftRight( false, true, -500, -126 )
 				self.DoublePerkDescriptionArabic:setTopBottom( true, false, 18, 34 )
 				self.DoublePerkDescriptionArabic:setAlpha( 0 )
 				self.clipFinished( DoublePerkDescriptionArabic, {} )
+
 				SinglePerkDescription:completeAnimation()
 				self.SinglePerkDescription:setLeftRight( false, true, -500, -68 )
 				self.SinglePerkDescription:setTopBottom( true, false, 18, 34 )
@@ -97,24 +104,29 @@ CoD.PerkInfo.new = function ( menu, controller )
 		SinglePerk = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				PerkImage1:completeAnimation()
 				self.PerkImage1:setLeftRight( false, true, -62, 0 )
 				self.PerkImage1:setTopBottom( true, false, 0, 62 )
 				self.PerkImage1:setAlpha( 0 )
 				self.clipFinished( PerkImage1, {} )
+
 				PerkImage0:completeAnimation()
 				self.PerkImage0:setLeftRight( false, true, -62, 0 )
 				self.PerkImage0:setTopBottom( true, false, 0, 62 )
 				self.PerkImage0:setAlpha( 1 )
 				self.clipFinished( PerkImage0, {} )
+
 				DoublePerkDescription:completeAnimation()
 				self.DoublePerkDescription:setLeftRight( false, true, -500, -126 )
 				self.DoublePerkDescription:setTopBottom( true, false, 18, 34 )
 				self.DoublePerkDescription:setAlpha( 0 )
 				self.clipFinished( DoublePerkDescription, {} )
+
 				DoublePerkDescriptionArabic:completeAnimation()
 				self.DoublePerkDescriptionArabic:setAlpha( 0 )
 				self.clipFinished( DoublePerkDescriptionArabic, {} )
+
 				SinglePerkDescription:completeAnimation()
 				self.SinglePerkDescription:setLeftRight( false, true, -500, -62 )
 				self.SinglePerkDescription:setTopBottom( true, false, 18, 34 )
@@ -123,31 +135,37 @@ CoD.PerkInfo.new = function ( menu, controller )
 			end,
 			Show = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		DoublePerk = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				PerkImage1:completeAnimation()
 				self.PerkImage1:setLeftRight( false, true, -62, 0 )
 				self.PerkImage1:setTopBottom( true, false, 0, 62 )
 				self.PerkImage1:setAlpha( 1 )
 				self.clipFinished( PerkImage1, {} )
+
 				PerkImage0:completeAnimation()
 				self.PerkImage0:setLeftRight( false, true, -124, -62 )
 				self.PerkImage0:setTopBottom( true, false, 0, 62 )
 				self.PerkImage0:setAlpha( 1 )
 				self.clipFinished( PerkImage0, {} )
+
 				DoublePerkDescription:completeAnimation()
 				self.DoublePerkDescription:setLeftRight( false, true, -500, -126 )
 				self.DoublePerkDescription:setTopBottom( true, false, 18, 34 )
 				self.DoublePerkDescription:setAlpha( 1 )
 				self.clipFinished( DoublePerkDescription, {} )
+
 				DoublePerkDescriptionArabic:completeAnimation()
 				self.DoublePerkDescriptionArabic:setLeftRight( false, true, -500, -126 )
 				self.DoublePerkDescriptionArabic:setTopBottom( true, false, 18, 34 )
 				self.DoublePerkDescriptionArabic:setAlpha( 0 )
 				self.clipFinished( DoublePerkDescriptionArabic, {} )
+
 				SinglePerkDescription:completeAnimation()
 				self.SinglePerkDescription:setLeftRight( false, true, -500, -151 )
 				self.SinglePerkDescription:setTopBottom( true, false, 18, 34 )
@@ -158,26 +176,31 @@ CoD.PerkInfo.new = function ( menu, controller )
 		DoublePerkArabic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				PerkImage1:completeAnimation()
 				self.PerkImage1:setLeftRight( false, true, -62, 0 )
 				self.PerkImage1:setTopBottom( true, false, 0, 62 )
 				self.PerkImage1:setAlpha( 1 )
 				self.clipFinished( PerkImage1, {} )
+
 				PerkImage0:completeAnimation()
 				self.PerkImage0:setLeftRight( false, true, -124, -62 )
 				self.PerkImage0:setTopBottom( true, false, 0, 62 )
 				self.PerkImage0:setAlpha( 1 )
 				self.clipFinished( PerkImage0, {} )
+
 				DoublePerkDescription:completeAnimation()
 				self.DoublePerkDescription:setLeftRight( false, true, -500, -126 )
 				self.DoublePerkDescription:setTopBottom( true, false, 18, 34 )
 				self.DoublePerkDescription:setAlpha( 0 )
 				self.clipFinished( DoublePerkDescription, {} )
+
 				DoublePerkDescriptionArabic:completeAnimation()
 				self.DoublePerkDescriptionArabic:setLeftRight( false, true, -500, -126 )
 				self.DoublePerkDescriptionArabic:setTopBottom( true, false, 18, 34 )
 				self.DoublePerkDescriptionArabic:setAlpha( 1 )
 				self.clipFinished( DoublePerkDescriptionArabic, {} )
+
 				SinglePerkDescription:completeAnimation()
 				self.SinglePerkDescription:setLeftRight( false, true, -500, -151 )
 				self.SinglePerkDescription:setTopBottom( true, false, 18, 34 )

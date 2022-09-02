@@ -13,9 +13,11 @@ end
 CoD.AmmoWidget_AbilityContainer = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_AbilityContainer )
 	self.id = "AmmoWidget_AbilityContainer"
@@ -88,21 +90,27 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				GlowMultiply:completeAnimation()
 				self.GlowMultiply:setRGB( 0, 0, 0 )
 				self.clipFinished( GlowMultiply, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
+
 				AbilityRingBackDeplete:completeAnimation()
 				self.AbilityRingBackDeplete:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDeplete, {} )
+
 				AbilityRingBack:completeAnimation()
 				self.AbilityRingBack:setAlpha( 0 )
 				self.clipFinished( AbilityRingBack, {} )
+
 				AbilityRing:completeAnimation()
 				self.AbilityRing:setAlpha( 0 )
 				self.clipFinished( AbilityRing, {} )
+
 				AbilityIconContainer:completeAnimation()
 				self.AbilityIconContainer:setAlpha( 0 )
 				self.clipFinished( AbilityIconContainer, {} )
@@ -111,27 +119,34 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 		AdvertisedReady = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				GlowMultiply:completeAnimation()
 				self.GlowMultiply:setRGB( 0.5, 0.5, 0.5 )
 				self.clipFinished( GlowMultiply, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
+
 				AbilityRingBackDeplete:completeAnimation()
 				self.AbilityRingBackDeplete:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDeplete, {} )
+
 				AbilityRingBack:completeAnimation()
 				self.AbilityRingBack:setAlpha( 0 )
 				self.clipFinished( AbilityRingBack, {} )
+
 				AbilityRing:completeAnimation()
 				self.AbilityRing:setAlpha( 1 )
 				self.clipFinished( AbilityRing, {} )
+
 				AbilityIconContainer:completeAnimation()
 				self.AbilityIconContainer:setAlpha( 1 )
 				self.clipFinished( AbilityIconContainer, {} )
 			end,
 			Charge = function ()
 				self:setupElementClipCounter( 5 )
+
 				local GlowMultiplyFrame2 = function ( GlowMultiply, event )
 					if not event.interrupted then
 						GlowMultiply:beginAnimation( "keyframe", 319, false, false, CoD.TweenType.Linear )
@@ -147,6 +162,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 				GlowMultiply:completeAnimation()
 				self.GlowMultiply:setRGB( 0.5, 0.5, 0.5 )
 				GlowMultiplyFrame2( GlowMultiply, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
@@ -198,6 +214,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 			end,
 			InUse = function ()
 				self:setupElementClipCounter( 5 )
+
 				local GlowMultiplyFrame2 = function ( GlowMultiply, event )
 					if not event.interrupted then
 						GlowMultiply:beginAnimation( "keyframe", 419, false, false, CoD.TweenType.Linear )
@@ -276,6 +293,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 			end,
 			Stowed = function ()
 				self:setupElementClipCounter( 5 )
+
 				local GlowMultiplyFrame2 = function ( GlowMultiply, event )
 					if not event.interrupted then
 						GlowMultiply:beginAnimation( "keyframe", 430, false, false, CoD.TweenType.Linear )
@@ -291,6 +309,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 				GlowMultiply:completeAnimation()
 				self.GlowMultiply:setRGB( 0.5, 0.5, 0.5 )
 				GlowMultiplyFrame2( GlowMultiply, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
@@ -344,27 +363,34 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				GlowMultiply:completeAnimation()
 				self.GlowMultiply:setRGB( 0.4, 0.4, 0.4 )
 				self.clipFinished( GlowMultiply, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
+
 				AbilityRingBackDeplete:completeAnimation()
 				self.AbilityRingBackDeplete:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDeplete, {} )
+
 				AbilityRingBack:completeAnimation()
 				self.AbilityRingBack:setAlpha( 0 )
 				self.clipFinished( AbilityRingBack, {} )
+
 				AbilityRing:completeAnimation()
 				self.AbilityRing:setAlpha( 1 )
 				self.clipFinished( AbilityRing, {} )
+
 				AbilityIconContainer:completeAnimation()
 				self.AbilityIconContainer:setAlpha( 1 )
 				self.clipFinished( AbilityIconContainer, {} )
 			end,
 			Charge = function ()
 				self:setupElementClipCounter( 5 )
+
 				local GlowMultiplyFrame2 = function ( GlowMultiply, event )
 					if not event.interrupted then
 						GlowMultiply:beginAnimation( "keyframe", 370, false, false, CoD.TweenType.Linear )
@@ -380,6 +406,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 				GlowMultiply:completeAnimation()
 				self.GlowMultiply:setRGB( 0.4, 0.4, 0.4 )
 				GlowMultiplyFrame2( GlowMultiply, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
@@ -431,6 +458,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 			end,
 			InUse = function ()
 				self:setupElementClipCounter( 5 )
+
 				local GlowMultiplyFrame2 = function ( GlowMultiply, event )
 					if not event.interrupted then
 						GlowMultiply:beginAnimation( "keyframe", 370, false, false, CoD.TweenType.Linear )
@@ -509,6 +537,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 			end,
 			Stowed = function ()
 				self:setupElementClipCounter( 5 )
+
 				local GlowMultiplyFrame2 = function ( GlowMultiply, event )
 					if not event.interrupted then
 						GlowMultiply:beginAnimation( "keyframe", 479, false, false, CoD.TweenType.Linear )
@@ -524,6 +553,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 				GlowMultiply:completeAnimation()
 				self.GlowMultiply:setRGB( 0.4, 0.4, 0.4 )
 				GlowMultiplyFrame2( GlowMultiply, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
@@ -577,27 +607,34 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 		Charge = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				GlowMultiply:completeAnimation()
 				self.GlowMultiply:setRGB( 0, 0, 0 )
 				self.clipFinished( GlowMultiply, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
+
 				AbilityRingBackDeplete:completeAnimation()
 				self.AbilityRingBackDeplete:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDeplete, {} )
+
 				AbilityRingBack:completeAnimation()
 				self.AbilityRingBack:setAlpha( 0 )
 				self.clipFinished( AbilityRingBack, {} )
+
 				AbilityRing:completeAnimation()
 				self.AbilityRing:setAlpha( 1 )
 				self.clipFinished( AbilityRing, {} )
+
 				AbilityIconContainer:completeAnimation()
 				self.AbilityIconContainer:setAlpha( 1 )
 				self.clipFinished( AbilityIconContainer, {} )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 5 )
+
 				local GlowMultiplyFrame2 = function ( GlowMultiply, event )
 					if not event.interrupted then
 						GlowMultiply:beginAnimation( "keyframe", 509, false, false, CoD.TweenType.Linear )
@@ -613,6 +650,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 				GlowMultiply:completeAnimation()
 				self.GlowMultiply:setRGB( 0, 0, 0 )
 				GlowMultiplyFrame2( GlowMultiply, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
@@ -664,6 +702,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 			end,
 			InUse = function ()
 				self:setupElementClipCounter( 5 )
+
 				GlowMultiply:completeAnimation()
 				self.GlowMultiply:setRGB( 0.5, 0.5, 0.5 )
 				self.clipFinished( GlowMultiply, {} )
@@ -730,9 +769,11 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 			end,
 			Stowed = function ()
 				self:setupElementClipCounter( 5 )
+
 				GlowMultiply:completeAnimation()
 				self.GlowMultiply:setRGB( 0.5, 0.5, 0.5 )
 				self.clipFinished( GlowMultiply, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
@@ -784,6 +825,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 			end,
 			AdvertisedReady = function ()
 				self:setupElementClipCounter( 5 )
+
 				local GlowMultiplyFrame2 = function ( GlowMultiply, event )
 					if not event.interrupted then
 						GlowMultiply:beginAnimation( "keyframe", 349, false, false, CoD.TweenType.Linear )
@@ -799,6 +841,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 				GlowMultiply:completeAnimation()
 				self.GlowMultiply:setRGB( 0, 0, 0 )
 				GlowMultiplyFrame2( GlowMultiply, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
@@ -852,27 +895,34 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 		InUse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				GlowMultiply:completeAnimation()
 				self.GlowMultiply:setRGB( 0, 0, 0 )
 				self.clipFinished( GlowMultiply, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setAlpha( 0.4 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
+
 				AbilityRingBackDeplete:completeAnimation()
 				self.AbilityRingBackDeplete:setAlpha( 1 )
 				self.clipFinished( AbilityRingBackDeplete, {} )
+
 				AbilityRingBack:completeAnimation()
 				self.AbilityRingBack:setAlpha( 1 )
 				self.clipFinished( AbilityRingBack, {} )
+
 				AbilityRing:completeAnimation()
 				self.AbilityRing:setAlpha( 1 )
 				self.clipFinished( AbilityRing, {} )
+
 				AbilityIconContainer:completeAnimation()
 				self.AbilityIconContainer:setAlpha( 1 )
 				self.clipFinished( AbilityIconContainer, {} )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 5 )
+
 				local GlowMultiplyFrame2 = function ( GlowMultiply, event )
 					if not event.interrupted then
 						GlowMultiply:beginAnimation( "keyframe", 449, false, false, CoD.TweenType.Linear )
@@ -951,6 +1001,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 			end,
 			Charge = function ()
 				self:setupElementClipCounter( 4 )
+
 				local AbilityRingBackDuplicateFrame2 = function ( AbilityRingBackDuplicate, event )
 					if not event.interrupted then
 						AbilityRingBackDuplicate:beginAnimation( "keyframe", 709, false, false, CoD.TweenType.Linear )
@@ -1014,6 +1065,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 			end,
 			Stowed = function ()
 				self:setupElementClipCounter( 4 )
+
 				local AbilityRingBackDuplicateFrame2 = function ( AbilityRingBackDuplicate, event )
 					if not event.interrupted then
 						AbilityRingBackDuplicate:beginAnimation( "keyframe", 560, false, false, CoD.TweenType.Linear )
@@ -1077,6 +1129,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 			end,
 			AdvertisedReady = function ()
 				self:setupElementClipCounter( 5 )
+
 				local GlowMultiplyFrame2 = function ( GlowMultiply, event )
 					if not event.interrupted then
 						GlowMultiply:beginAnimation( "keyframe", 560, false, false, CoD.TweenType.Linear )
@@ -1157,27 +1210,34 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 		Stowed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				GlowMultiply:completeAnimation()
 				self.GlowMultiply:setRGB( 0, 0, 0 )
 				self.clipFinished( GlowMultiply, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
+
 				AbilityRingBackDeplete:completeAnimation()
 				self.AbilityRingBackDeplete:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDeplete, {} )
+
 				AbilityRingBack:completeAnimation()
 				self.AbilityRingBack:setAlpha( 0 )
 				self.clipFinished( AbilityRingBack, {} )
+
 				AbilityRing:completeAnimation()
 				self.AbilityRing:setAlpha( 0 )
 				self.clipFinished( AbilityRing, {} )
+
 				AbilityIconContainer:completeAnimation()
 				self.AbilityIconContainer:setAlpha( 1 )
 				self.clipFinished( AbilityIconContainer, {} )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 5 )
+
 				local GlowMultiplyFrame2 = function ( GlowMultiply, event )
 					if not event.interrupted then
 						GlowMultiply:beginAnimation( "keyframe", 600, false, false, CoD.TweenType.Linear )
@@ -1193,6 +1253,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 				GlowMultiply:completeAnimation()
 				self.GlowMultiply:setRGB( 0, 0, 0 )
 				GlowMultiplyFrame2( GlowMultiply, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
@@ -1244,6 +1305,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 			end,
 			Charge = function ()
 				self:setupElementClipCounter( 4 )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
@@ -1295,6 +1357,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 			end,
 			InUse = function ()
 				self:setupElementClipCounter( 4 )
+
 				local AbilityRingBackDuplicateFrame2 = function ( AbilityRingBackDuplicate, event )
 					if not event.interrupted then
 						AbilityRingBackDuplicate:beginAnimation( "keyframe", 430, false, false, CoD.TweenType.Linear )
@@ -1358,6 +1421,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 			end,
 			AdvertisedReady = function ()
 				self:setupElementClipCounter( 5 )
+
 				local GlowMultiplyFrame2 = function ( GlowMultiply, event )
 					if not event.interrupted then
 						GlowMultiply:beginAnimation( "keyframe", 620, false, false, CoD.TweenType.Linear )
@@ -1373,6 +1437,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 				GlowMultiply:completeAnimation()
 				self.GlowMultiply:setRGB( 0, 0, 0 )
 				GlowMultiplyFrame2( GlowMultiply, {} )
+
 				AbilityRingBackDuplicate:completeAnimation()
 				self.AbilityRingBackDuplicate:setAlpha( 0 )
 				self.clipFinished( AbilityRingBackDuplicate, {} )
@@ -1424,6 +1489,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "AdvertisedReady",
@@ -1525,6 +1591,7 @@ CoD.AmmoWidget_AbilityContainer.new = function ( menu, controller )
 			modelName = "currentWeapon.weapon"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AbilityRingBackDuplicate:close()
 		element.AbilityRingBackDeplete:close()

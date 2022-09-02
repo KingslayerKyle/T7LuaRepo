@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_GoldFrame" )
 CoD.CallingCard_loot_7deadlysins = InheritFrom( LUI.UIElement )
 CoD.CallingCard_loot_7deadlysins.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCard_loot_7deadlysins )
 	self.id = "CallingCard_loot_7deadlysins"
@@ -139,6 +141,7 @@ CoD.CallingCard_loot_7deadlysins.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				local Face1Frame2 = function ( Face1, event )
 					local Face1Frame3 = function ( Face1, event )
 						local Face1Frame4 = function ( Face1, event )
@@ -1134,10 +1137,12 @@ CoD.CallingCard_loot_7deadlysins.new = function ( menu, controller )
 				Smoke4c:completeAnimation()
 				self.Smoke4c:setAlpha( 0 )
 				Smoke4cFrame2( Smoke4c, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardsGoldFrame:close()
 	end )

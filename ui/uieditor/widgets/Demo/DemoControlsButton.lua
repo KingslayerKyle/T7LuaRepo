@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Theater.Theater_FocusBar" )
 CoD.DemoControlsButton = InheritFrom( LUI.UIElement )
 CoD.DemoControlsButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DemoControlsButton )
 	self.id = "DemoControlsButton"
@@ -59,31 +61,39 @@ CoD.DemoControlsButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				whitebox:completeAnimation()
 				self.whitebox:setAlpha( 0 )
 				self.clipFinished( whitebox, {} )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 1 )
 				self.icon:setYRot( 0 )
 				self.clipFinished( icon, {} )
+
 				TheaterFocusBarT0:completeAnimation()
 				self.TheaterFocusBarT0:setAlpha( 0 )
 				self.clipFinished( TheaterFocusBarT0, {} )
+
 				TheaterFocusBarB0:completeAnimation()
 				self.TheaterFocusBarB0:setAlpha( 0 )
 				self.clipFinished( TheaterFocusBarB0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				whitebox:completeAnimation()
 				self.whitebox:setAlpha( 0.15 )
 				self.clipFinished( whitebox, {} )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 1 )
 				self.clipFinished( icon, {} )
+
 				TheaterFocusBarT0:completeAnimation()
 				self.TheaterFocusBarT0:setAlpha( 1 )
 				self.clipFinished( TheaterFocusBarT0, {} )
+
 				TheaterFocusBarB0:completeAnimation()
 				self.TheaterFocusBarB0:setAlpha( 1 )
 				self.clipFinished( TheaterFocusBarB0, {} )
@@ -92,13 +102,16 @@ CoD.DemoControlsButton.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				icon:completeAnimation()
 				self.icon:setRGB( 0.7, 0.7, 0.7 )
 				self.icon:setAlpha( 1 )
 				self.clipFinished( icon, {} )
+
 				TheaterFocusBarT0:completeAnimation()
 				self.TheaterFocusBarT0:setAlpha( 0 )
 				self.clipFinished( TheaterFocusBarT0, {} )
+
 				TheaterFocusBarB0:completeAnimation()
 				self.TheaterFocusBarB0:setAlpha( 0 )
 				self.clipFinished( TheaterFocusBarB0, {} )
@@ -107,38 +120,47 @@ CoD.DemoControlsButton.new = function ( menu, controller )
 		DisabledWithFocus = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				whitebox:completeAnimation()
 				self.whitebox:setAlpha( 0 )
 				self.clipFinished( whitebox, {} )
+
 				icon:completeAnimation()
 				self.icon:setRGB( ColorSet.Disabled.r, ColorSet.Disabled.g, ColorSet.Disabled.b )
 				self.icon:setAlpha( 1 )
 				self.icon:setYRot( 0 )
 				self.clipFinished( icon, {} )
+
 				TheaterFocusBarT0:completeAnimation()
 				self.TheaterFocusBarT0:setAlpha( 0 )
 				self.clipFinished( TheaterFocusBarT0, {} )
+
 				TheaterFocusBarB0:completeAnimation()
 				self.TheaterFocusBarB0:setAlpha( 0 )
 				self.clipFinished( TheaterFocusBarB0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				whitebox:completeAnimation()
 				self.whitebox:setAlpha( 0.15 )
 				self.clipFinished( whitebox, {} )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 1 )
 				self.clipFinished( icon, {} )
+
 				TheaterFocusBarT0:completeAnimation()
 				self.TheaterFocusBarT0:setAlpha( 1 )
 				self.clipFinished( TheaterFocusBarT0, {} )
+
 				TheaterFocusBarB0:completeAnimation()
 				self.TheaterFocusBarB0:setAlpha( 1 )
 				self.clipFinished( TheaterFocusBarB0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -169,6 +191,7 @@ CoD.DemoControlsButton.new = function ( menu, controller )
 			modelName = "disabledWithFocus"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TheaterFocusBarT0:close()
 		element.TheaterFocusBarB0:close()

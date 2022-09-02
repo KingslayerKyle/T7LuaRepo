@@ -15,9 +15,11 @@ end
 CoD.StartMenu_Options_Slider_Small = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_Slider_Small.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_Slider_Small )
 	self.id = "StartMenu_Options_Slider_Small"
@@ -161,50 +163,64 @@ CoD.StartMenu_Options_Slider_Small.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 0.7 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				StartMenuframenoBG1:completeAnimation()
 				self.StartMenuframenoBG1:setAlpha( 0.7 )
 				self.clipFinished( StartMenuframenoBG1, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				Slider:completeAnimation()
 				self.Slider:setAlpha( 0.7 )
 				self.clipFinished( Slider, {} )
+
 				altText:completeAnimation()
 				self.altText:setRGB( 1, 1, 1 )
 				self.altText:setAlpha( 0.7 )
 				self.clipFinished( altText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				StartMenuframenoBG1:completeAnimation()
 				self.StartMenuframenoBG1:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG1, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				Slider:completeAnimation()
 				self.Slider:setAlpha( 1 )
 				self.clipFinished( Slider, {} )
+
 				altText:completeAnimation()
 				self.altText:setRGB( 1, 0.41, 0 )
 				self.altText:setAlpha( 1 )
 				self.clipFinished( altText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
@@ -213,24 +229,30 @@ CoD.StartMenu_Options_Slider_Small.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 0.6 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				StartMenuframenoBG1:completeAnimation()
 				self.StartMenuframenoBG1:setAlpha( 0.6 )
 				self.clipFinished( StartMenuframenoBG1, {} )
+
 				Title:completeAnimation()
 				self.Title:setRGB( 1, 1, 1 )
 				self.clipFinished( Title, {} )
+
 				Slider:completeAnimation()
 				self.Slider:setAlpha( 0.4 )
 				self.clipFinished( Slider, {} )
+
 				altText:completeAnimation()
 				self.altText:setAlpha( 0.4 )
 				self.clipFinished( altText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -247,6 +269,7 @@ CoD.StartMenu_Options_Slider_Small.new = function ( menu, controller )
 			modelName = "disabled"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsInDefaultState( element ) and IsSelfModelValueNil( element, controller, "action" ) then
 			DisableMouseButton( self, controller )
@@ -260,6 +283,7 @@ CoD.StartMenu_Options_Slider_Small.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG0:close()
 		element.StartMenuframenoBG1:close()

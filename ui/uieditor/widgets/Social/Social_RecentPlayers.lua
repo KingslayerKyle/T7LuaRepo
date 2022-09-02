@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.Social.Social_InfoPane" )
 CoD.Social_RecentPlayers = InheritFrom( LUI.UIElement )
 CoD.Social_RecentPlayers.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_RecentPlayers )
 	self.id = "Social_RecentPlayers"
@@ -151,15 +153,19 @@ CoD.Social_RecentPlayers.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				SocialNoFriends:completeAnimation()
 				self.SocialNoFriends:setAlpha( 0 )
 				self.clipFinished( SocialNoFriends, {} )
+
 				onlineList:completeAnimation()
 				self.onlineList:setAlpha( 1 )
 				self.clipFinished( onlineList, {} )
+
 				playerInfo:completeAnimation()
 				self.playerInfo:setAlpha( 1 )
 				self.clipFinished( playerInfo, {} )
+
 				noRecentPlayers:completeAnimation()
 				self.noRecentPlayers:setAlpha( 0 )
 				self.clipFinished( noRecentPlayers, {} )
@@ -168,25 +174,30 @@ CoD.Social_RecentPlayers.new = function ( menu, controller )
 		NoRecentPlayers = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setLeftRight( true, false, -1, 403 )
 				self.BlackTint:setTopBottom( true, false, -25, 557 )
 				self.clipFinished( BlackTint, {} )
+
 				SocialNoFriends:completeAnimation()
 				self.SocialNoFriends:setLeftRight( true, false, 14, 1126 )
 				self.SocialNoFriends:setTopBottom( true, false, 6, 456 )
 				self.SocialNoFriends:setAlpha( 1 )
 				self.clipFinished( SocialNoFriends, {} )
+
 				onlineList:completeAnimation()
 				self.onlineList:setLeftRight( true, false, 14, 388 )
 				self.onlineList:setTopBottom( true, false, 6, 456 )
 				self.onlineList:setAlpha( 0 )
 				self.clipFinished( onlineList, {} )
+
 				playerInfo:completeAnimation()
 				self.playerInfo:setLeftRight( false, true, -720, 66 )
 				self.playerInfo:setTopBottom( true, false, 6, 496 )
 				self.playerInfo:setAlpha( 0 )
 				self.clipFinished( playerInfo, {} )
+
 				noRecentPlayers:completeAnimation()
 				self.noRecentPlayers:setLeftRight( true, false, 15, 1165 )
 				self.noRecentPlayers:setTopBottom( true, false, 205, 229 )
@@ -195,6 +206,7 @@ CoD.Social_RecentPlayers.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoRecentPlayers",
@@ -213,6 +225,7 @@ CoD.Social_RecentPlayers.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SocialNoFriends:close()
 		element.onlineList:close()

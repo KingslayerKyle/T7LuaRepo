@@ -4,9 +4,11 @@
 CoD.vhud_dart_CenterTriLine = InheritFrom( LUI.UIElement )
 CoD.vhud_dart_CenterTriLine.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_dart_CenterTriLine )
 	self.id = "vhud_dart_CenterTriLine"

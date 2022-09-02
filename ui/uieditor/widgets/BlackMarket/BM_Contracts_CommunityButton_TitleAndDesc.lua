@@ -4,9 +4,11 @@
 CoD.BM_Contracts_CommunityButton_TitleAndDesc = InheritFrom( LUI.UIElement )
 CoD.BM_Contracts_CommunityButton_TitleAndDesc.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Contracts_CommunityButton_TitleAndDesc )
 	self.id = "BM_Contracts_CommunityButton_TitleAndDesc"
@@ -25,6 +27,7 @@ CoD.BM_Contracts_CommunityButton_TitleAndDesc.new = function ( menu, controller 
 	SpecialContractName:setLetterSpacing( -0.5 )
 	SpecialContractName:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	SpecialContractName:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( SpecialContractName, "setText", function ( element, controller )
 		UpdateWidgetHeightToMultilineText( self, element, 0 )
 	end )
@@ -46,34 +49,43 @@ CoD.BM_Contracts_CommunityButton_TitleAndDesc.new = function ( menu, controller 
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 				self.nextClip = "Focus"
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Complete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 				self.nextClip = "Focus"
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Complete",

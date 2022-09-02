@@ -4,9 +4,11 @@
 CoD.CPMapPerformanceRecord_Classified = InheritFrom( LUI.UIElement )
 CoD.CPMapPerformanceRecord_Classified.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CPMapPerformanceRecord_Classified )
 	self.id = "CPMapPerformanceRecord_Classified"
@@ -117,6 +119,7 @@ CoD.CPMapPerformanceRecord_Classified.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				TextBox70:completeAnimation()
 				self.TextBox70:setAlpha( 1 )
 				self.clipFinished( TextBox70, {} )
@@ -125,21 +128,26 @@ CoD.CPMapPerformanceRecord_Classified.new = function ( menu, controller )
 		NoAccolades = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				TextBox70:completeAnimation()
 				self.TextBox70:setAlpha( 0 )
 				self.clipFinished( TextBox70, {} )
+
 				TextBox301:completeAnimation()
 				self.TextBox301:setAlpha( 0 )
 				self.clipFinished( TextBox301, {} )
+
 				TextBox3010:completeAnimation()
 				self.TextBox3010:setAlpha( 0 )
 				self.clipFinished( TextBox3010, {} )
+
 				TextBox000:completeAnimation()
 				self.TextBox000:setAlpha( 0 )
 				self.clipFinished( TextBox000, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoAccolades",

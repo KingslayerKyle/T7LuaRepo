@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventoryIsland.MachineToolsPieceWidget" )
 CoD.MachineToolsBlueprintWidget_Island = InheritFrom( LUI.UIElement )
 CoD.MachineToolsBlueprintWidget_Island.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MachineToolsBlueprintWidget_Island )
 	self.id = "MachineToolsBlueprintWidget_Island"
@@ -244,15 +246,19 @@ CoD.MachineToolsBlueprintWidget_Island.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				MachineToolsPieceWidget1:completeAnimation()
 				self.MachineToolsPieceWidget1:setAlpha( 0 )
 				self.clipFinished( MachineToolsPieceWidget1, {} )
+
 				MachineToolsPieceWidget0:completeAnimation()
 				self.MachineToolsPieceWidget0:setAlpha( 0 )
 				self.clipFinished( MachineToolsPieceWidget0, {} )
+
 				MachineToolsPieceWidget2:completeAnimation()
 				self.MachineToolsPieceWidget2:setAlpha( 0 )
 				self.clipFinished( MachineToolsPieceWidget2, {} )
@@ -261,6 +267,7 @@ CoD.MachineToolsBlueprintWidget_Island.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local bgFrame2 = function ( bg, event )
 					local bgFrame3 = function ( bg, event )
 						local bgFrame4 = function ( bg, event )
@@ -297,12 +304,15 @@ CoD.MachineToolsBlueprintWidget_Island.new = function ( menu, controller )
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				bgFrame2( bg, {} )
+
 				MachineToolsPieceWidget1:completeAnimation()
 				self.MachineToolsPieceWidget1:setAlpha( 1 )
 				self.clipFinished( MachineToolsPieceWidget1, {} )
+
 				MachineToolsPieceWidget0:completeAnimation()
 				self.MachineToolsPieceWidget0:setAlpha( 1 )
 				self.clipFinished( MachineToolsPieceWidget0, {} )
+
 				MachineToolsPieceWidget2:completeAnimation()
 				self.MachineToolsPieceWidget2:setAlpha( 1 )
 				self.clipFinished( MachineToolsPieceWidget2, {} )
@@ -311,21 +321,26 @@ CoD.MachineToolsBlueprintWidget_Island.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				MachineToolsPieceWidget1:completeAnimation()
 				self.MachineToolsPieceWidget1:setAlpha( 1 )
 				self.clipFinished( MachineToolsPieceWidget1, {} )
+
 				MachineToolsPieceWidget0:completeAnimation()
 				self.MachineToolsPieceWidget0:setAlpha( 1 )
 				self.clipFinished( MachineToolsPieceWidget0, {} )
+
 				MachineToolsPieceWidget2:completeAnimation()
 				self.MachineToolsPieceWidget2:setAlpha( 1 )
 				self.clipFinished( MachineToolsPieceWidget2, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BgVisible",
@@ -356,6 +371,7 @@ CoD.MachineToolsBlueprintWidget_Island.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MachineToolsPieceWidget1:close()
 		element.MachineToolsPieceWidget0:close()

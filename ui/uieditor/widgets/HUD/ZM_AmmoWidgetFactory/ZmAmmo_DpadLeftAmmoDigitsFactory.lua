@@ -4,9 +4,11 @@
 CoD.ZmAmmo_DpadLeftAmmoDigitsFactory = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_DpadLeftAmmoDigitsFactory.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_DpadLeftAmmoDigitsFactory )
 	self.id = "ZmAmmo_DpadLeftAmmoDigitsFactory"
@@ -106,33 +108,43 @@ CoD.ZmAmmo_DpadLeftAmmoDigitsFactory.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Number9:completeAnimation()
 				self.Number9:setAlpha( 0 )
 				self.clipFinished( Number9, {} )
+
 				Number8:completeAnimation()
 				self.Number8:setAlpha( 0 )
 				self.clipFinished( Number8, {} )
+
 				Number7:completeAnimation()
 				self.Number7:setAlpha( 0 )
 				self.clipFinished( Number7, {} )
+
 				Number6:completeAnimation()
 				self.Number6:setAlpha( 0 )
 				self.clipFinished( Number6, {} )
+
 				Number5:completeAnimation()
 				self.Number5:setAlpha( 0 )
 				self.clipFinished( Number5, {} )
+
 				Number4:completeAnimation()
 				self.Number4:setAlpha( 0 )
 				self.clipFinished( Number4, {} )
+
 				Number3:completeAnimation()
 				self.Number3:setAlpha( 0 )
 				self.clipFinished( Number3, {} )
+
 				Number2:completeAnimation()
 				self.Number2:setAlpha( 0 )
 				self.clipFinished( Number2, {} )
+
 				Number1:completeAnimation()
 				self.Number1:setAlpha( 0 )
 				self.clipFinished( Number1, {} )
+
 				Number0:completeAnimation()
 				self.Number0:setAlpha( 0 )
 				self.clipFinished( Number0, {} )
@@ -141,33 +153,43 @@ CoD.ZmAmmo_DpadLeftAmmoDigitsFactory.new = function ( menu, controller )
 		Show9 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Number9:completeAnimation()
 				self.Number9:setAlpha( 1 )
 				self.clipFinished( Number9, {} )
+
 				Number8:completeAnimation()
 				self.Number8:setAlpha( 0 )
 				self.clipFinished( Number8, {} )
+
 				Number7:completeAnimation()
 				self.Number7:setAlpha( 0 )
 				self.clipFinished( Number7, {} )
+
 				Number6:completeAnimation()
 				self.Number6:setAlpha( 0 )
 				self.clipFinished( Number6, {} )
+
 				Number5:completeAnimation()
 				self.Number5:setAlpha( 0 )
 				self.clipFinished( Number5, {} )
+
 				Number4:completeAnimation()
 				self.Number4:setAlpha( 0 )
 				self.clipFinished( Number4, {} )
+
 				Number3:completeAnimation()
 				self.Number3:setAlpha( 0 )
 				self.clipFinished( Number3, {} )
+
 				Number2:completeAnimation()
 				self.Number2:setAlpha( 0 )
 				self.clipFinished( Number2, {} )
+
 				Number1:completeAnimation()
 				self.Number1:setAlpha( 0 )
 				self.clipFinished( Number1, {} )
+
 				Number0:completeAnimation()
 				self.Number0:setAlpha( 0 )
 				self.clipFinished( Number0, {} )
@@ -176,33 +198,43 @@ CoD.ZmAmmo_DpadLeftAmmoDigitsFactory.new = function ( menu, controller )
 		Show8 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Number9:completeAnimation()
 				self.Number9:setAlpha( 0 )
 				self.clipFinished( Number9, {} )
+
 				Number8:completeAnimation()
 				self.Number8:setAlpha( 1 )
 				self.clipFinished( Number8, {} )
+
 				Number7:completeAnimation()
 				self.Number7:setAlpha( 0 )
 				self.clipFinished( Number7, {} )
+
 				Number6:completeAnimation()
 				self.Number6:setAlpha( 0 )
 				self.clipFinished( Number6, {} )
+
 				Number5:completeAnimation()
 				self.Number5:setAlpha( 0 )
 				self.clipFinished( Number5, {} )
+
 				Number4:completeAnimation()
 				self.Number4:setAlpha( 0 )
 				self.clipFinished( Number4, {} )
+
 				Number3:completeAnimation()
 				self.Number3:setAlpha( 0 )
 				self.clipFinished( Number3, {} )
+
 				Number2:completeAnimation()
 				self.Number2:setAlpha( 0 )
 				self.clipFinished( Number2, {} )
+
 				Number1:completeAnimation()
 				self.Number1:setAlpha( 0 )
 				self.clipFinished( Number1, {} )
+
 				Number0:completeAnimation()
 				self.Number0:setAlpha( 0 )
 				self.clipFinished( Number0, {} )
@@ -211,33 +243,43 @@ CoD.ZmAmmo_DpadLeftAmmoDigitsFactory.new = function ( menu, controller )
 		Show7 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Number9:completeAnimation()
 				self.Number9:setAlpha( 0 )
 				self.clipFinished( Number9, {} )
+
 				Number8:completeAnimation()
 				self.Number8:setAlpha( 0 )
 				self.clipFinished( Number8, {} )
+
 				Number7:completeAnimation()
 				self.Number7:setAlpha( 1 )
 				self.clipFinished( Number7, {} )
+
 				Number6:completeAnimation()
 				self.Number6:setAlpha( 0 )
 				self.clipFinished( Number6, {} )
+
 				Number5:completeAnimation()
 				self.Number5:setAlpha( 0 )
 				self.clipFinished( Number5, {} )
+
 				Number4:completeAnimation()
 				self.Number4:setAlpha( 0 )
 				self.clipFinished( Number4, {} )
+
 				Number3:completeAnimation()
 				self.Number3:setAlpha( 0 )
 				self.clipFinished( Number3, {} )
+
 				Number2:completeAnimation()
 				self.Number2:setAlpha( 0 )
 				self.clipFinished( Number2, {} )
+
 				Number1:completeAnimation()
 				self.Number1:setAlpha( 0 )
 				self.clipFinished( Number1, {} )
+
 				Number0:completeAnimation()
 				self.Number0:setAlpha( 0 )
 				self.clipFinished( Number0, {} )
@@ -246,33 +288,43 @@ CoD.ZmAmmo_DpadLeftAmmoDigitsFactory.new = function ( menu, controller )
 		Show6 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Number9:completeAnimation()
 				self.Number9:setAlpha( 0 )
 				self.clipFinished( Number9, {} )
+
 				Number8:completeAnimation()
 				self.Number8:setAlpha( 0 )
 				self.clipFinished( Number8, {} )
+
 				Number7:completeAnimation()
 				self.Number7:setAlpha( 0 )
 				self.clipFinished( Number7, {} )
+
 				Number6:completeAnimation()
 				self.Number6:setAlpha( 1 )
 				self.clipFinished( Number6, {} )
+
 				Number5:completeAnimation()
 				self.Number5:setAlpha( 0 )
 				self.clipFinished( Number5, {} )
+
 				Number4:completeAnimation()
 				self.Number4:setAlpha( 0 )
 				self.clipFinished( Number4, {} )
+
 				Number3:completeAnimation()
 				self.Number3:setAlpha( 0 )
 				self.clipFinished( Number3, {} )
+
 				Number2:completeAnimation()
 				self.Number2:setAlpha( 0 )
 				self.clipFinished( Number2, {} )
+
 				Number1:completeAnimation()
 				self.Number1:setAlpha( 0 )
 				self.clipFinished( Number1, {} )
+
 				Number0:completeAnimation()
 				self.Number0:setAlpha( 0 )
 				self.clipFinished( Number0, {} )
@@ -281,33 +333,43 @@ CoD.ZmAmmo_DpadLeftAmmoDigitsFactory.new = function ( menu, controller )
 		Show5 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Number9:completeAnimation()
 				self.Number9:setAlpha( 0 )
 				self.clipFinished( Number9, {} )
+
 				Number8:completeAnimation()
 				self.Number8:setAlpha( 0 )
 				self.clipFinished( Number8, {} )
+
 				Number7:completeAnimation()
 				self.Number7:setAlpha( 0 )
 				self.clipFinished( Number7, {} )
+
 				Number6:completeAnimation()
 				self.Number6:setAlpha( 0 )
 				self.clipFinished( Number6, {} )
+
 				Number5:completeAnimation()
 				self.Number5:setAlpha( 1 )
 				self.clipFinished( Number5, {} )
+
 				Number4:completeAnimation()
 				self.Number4:setAlpha( 0 )
 				self.clipFinished( Number4, {} )
+
 				Number3:completeAnimation()
 				self.Number3:setAlpha( 0 )
 				self.clipFinished( Number3, {} )
+
 				Number2:completeAnimation()
 				self.Number2:setAlpha( 0 )
 				self.clipFinished( Number2, {} )
+
 				Number1:completeAnimation()
 				self.Number1:setAlpha( 0 )
 				self.clipFinished( Number1, {} )
+
 				Number0:completeAnimation()
 				self.Number0:setAlpha( 0 )
 				self.clipFinished( Number0, {} )
@@ -316,33 +378,43 @@ CoD.ZmAmmo_DpadLeftAmmoDigitsFactory.new = function ( menu, controller )
 		Show4 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Number9:completeAnimation()
 				self.Number9:setAlpha( 0 )
 				self.clipFinished( Number9, {} )
+
 				Number8:completeAnimation()
 				self.Number8:setAlpha( 0 )
 				self.clipFinished( Number8, {} )
+
 				Number7:completeAnimation()
 				self.Number7:setAlpha( 0 )
 				self.clipFinished( Number7, {} )
+
 				Number6:completeAnimation()
 				self.Number6:setAlpha( 0 )
 				self.clipFinished( Number6, {} )
+
 				Number5:completeAnimation()
 				self.Number5:setAlpha( 0 )
 				self.clipFinished( Number5, {} )
+
 				Number4:completeAnimation()
 				self.Number4:setAlpha( 1 )
 				self.clipFinished( Number4, {} )
+
 				Number3:completeAnimation()
 				self.Number3:setAlpha( 0 )
 				self.clipFinished( Number3, {} )
+
 				Number2:completeAnimation()
 				self.Number2:setAlpha( 0 )
 				self.clipFinished( Number2, {} )
+
 				Number1:completeAnimation()
 				self.Number1:setAlpha( 0 )
 				self.clipFinished( Number1, {} )
+
 				Number0:completeAnimation()
 				self.Number0:setAlpha( 0 )
 				self.clipFinished( Number0, {} )
@@ -351,33 +423,43 @@ CoD.ZmAmmo_DpadLeftAmmoDigitsFactory.new = function ( menu, controller )
 		Show3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Number9:completeAnimation()
 				self.Number9:setAlpha( 0 )
 				self.clipFinished( Number9, {} )
+
 				Number8:completeAnimation()
 				self.Number8:setAlpha( 0 )
 				self.clipFinished( Number8, {} )
+
 				Number7:completeAnimation()
 				self.Number7:setAlpha( 0 )
 				self.clipFinished( Number7, {} )
+
 				Number6:completeAnimation()
 				self.Number6:setAlpha( 0 )
 				self.clipFinished( Number6, {} )
+
 				Number5:completeAnimation()
 				self.Number5:setAlpha( 0 )
 				self.clipFinished( Number5, {} )
+
 				Number4:completeAnimation()
 				self.Number4:setAlpha( 0 )
 				self.clipFinished( Number4, {} )
+
 				Number3:completeAnimation()
 				self.Number3:setAlpha( 1 )
 				self.clipFinished( Number3, {} )
+
 				Number2:completeAnimation()
 				self.Number2:setAlpha( 0 )
 				self.clipFinished( Number2, {} )
+
 				Number1:completeAnimation()
 				self.Number1:setAlpha( 0 )
 				self.clipFinished( Number1, {} )
+
 				Number0:completeAnimation()
 				self.Number0:setAlpha( 0 )
 				self.clipFinished( Number0, {} )
@@ -386,21 +468,27 @@ CoD.ZmAmmo_DpadLeftAmmoDigitsFactory.new = function ( menu, controller )
 		Show2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Number5:completeAnimation()
 				self.Number5:setAlpha( 0 )
 				self.clipFinished( Number5, {} )
+
 				Number4:completeAnimation()
 				self.Number4:setAlpha( 0 )
 				self.clipFinished( Number4, {} )
+
 				Number3:completeAnimation()
 				self.Number3:setAlpha( 0 )
 				self.clipFinished( Number3, {} )
+
 				Number2:completeAnimation()
 				self.Number2:setAlpha( 1 )
 				self.clipFinished( Number2, {} )
+
 				Number1:completeAnimation()
 				self.Number1:setAlpha( 0 )
 				self.clipFinished( Number1, {} )
+
 				Number0:completeAnimation()
 				self.Number0:setAlpha( 0 )
 				self.clipFinished( Number0, {} )
@@ -409,33 +497,43 @@ CoD.ZmAmmo_DpadLeftAmmoDigitsFactory.new = function ( menu, controller )
 		Show1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Number9:completeAnimation()
 				self.Number9:setAlpha( 0 )
 				self.clipFinished( Number9, {} )
+
 				Number8:completeAnimation()
 				self.Number8:setAlpha( 0 )
 				self.clipFinished( Number8, {} )
+
 				Number7:completeAnimation()
 				self.Number7:setAlpha( 0 )
 				self.clipFinished( Number7, {} )
+
 				Number6:completeAnimation()
 				self.Number6:setAlpha( 0 )
 				self.clipFinished( Number6, {} )
+
 				Number5:completeAnimation()
 				self.Number5:setAlpha( 0 )
 				self.clipFinished( Number5, {} )
+
 				Number4:completeAnimation()
 				self.Number4:setAlpha( 0 )
 				self.clipFinished( Number4, {} )
+
 				Number3:completeAnimation()
 				self.Number3:setAlpha( 0 )
 				self.clipFinished( Number3, {} )
+
 				Number2:completeAnimation()
 				self.Number2:setAlpha( 0 )
 				self.clipFinished( Number2, {} )
+
 				Number1:completeAnimation()
 				self.Number1:setAlpha( 1 )
 				self.clipFinished( Number1, {} )
+
 				Number0:completeAnimation()
 				self.Number0:setAlpha( 0 )
 				self.clipFinished( Number0, {} )
@@ -444,21 +542,27 @@ CoD.ZmAmmo_DpadLeftAmmoDigitsFactory.new = function ( menu, controller )
 		Show0 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Number5:completeAnimation()
 				self.Number5:setAlpha( 0 )
 				self.clipFinished( Number5, {} )
+
 				Number4:completeAnimation()
 				self.Number4:setAlpha( 0 )
 				self.clipFinished( Number4, {} )
+
 				Number3:completeAnimation()
 				self.Number3:setAlpha( 0 )
 				self.clipFinished( Number3, {} )
+
 				Number2:completeAnimation()
 				self.Number2:setAlpha( 0 )
 				self.clipFinished( Number2, {} )
+
 				Number1:completeAnimation()
 				self.Number1:setAlpha( 0 )
 				self.clipFinished( Number1, {} )
+
 				Number0:completeAnimation()
 				self.Number0:setAlpha( 1 )
 				self.clipFinished( Number0, {} )
@@ -467,33 +571,43 @@ CoD.ZmAmmo_DpadLeftAmmoDigitsFactory.new = function ( menu, controller )
 		Faded = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Number9:completeAnimation()
 				self.Number9:setAlpha( 0 )
 				self.clipFinished( Number9, {} )
+
 				Number8:completeAnimation()
 				self.Number8:setAlpha( 0 )
 				self.clipFinished( Number8, {} )
+
 				Number7:completeAnimation()
 				self.Number7:setAlpha( 0 )
 				self.clipFinished( Number7, {} )
+
 				Number6:completeAnimation()
 				self.Number6:setAlpha( 0 )
 				self.clipFinished( Number6, {} )
+
 				Number5:completeAnimation()
 				self.Number5:setAlpha( 0 )
 				self.clipFinished( Number5, {} )
+
 				Number4:completeAnimation()
 				self.Number4:setAlpha( 0 )
 				self.clipFinished( Number4, {} )
+
 				Number3:completeAnimation()
 				self.Number3:setAlpha( 0 )
 				self.clipFinished( Number3, {} )
+
 				Number2:completeAnimation()
 				self.Number2:setAlpha( 0 )
 				self.clipFinished( Number2, {} )
+
 				Number1:completeAnimation()
 				self.Number1:setAlpha( 0 )
 				self.clipFinished( Number1, {} )
+
 				Number0:completeAnimation()
 				self.Number0:setAlpha( 0.2 )
 				self.clipFinished( Number0, {} )
@@ -502,33 +616,43 @@ CoD.ZmAmmo_DpadLeftAmmoDigitsFactory.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Number9:completeAnimation()
 				self.Number9:setAlpha( 0 )
 				self.clipFinished( Number9, {} )
+
 				Number8:completeAnimation()
 				self.Number8:setAlpha( 0 )
 				self.clipFinished( Number8, {} )
+
 				Number7:completeAnimation()
 				self.Number7:setAlpha( 0 )
 				self.clipFinished( Number7, {} )
+
 				Number6:completeAnimation()
 				self.Number6:setAlpha( 0 )
 				self.clipFinished( Number6, {} )
+
 				Number5:completeAnimation()
 				self.Number5:setAlpha( 0 )
 				self.clipFinished( Number5, {} )
+
 				Number4:completeAnimation()
 				self.Number4:setAlpha( 0 )
 				self.clipFinished( Number4, {} )
+
 				Number3:completeAnimation()
 				self.Number3:setAlpha( 0 )
 				self.clipFinished( Number3, {} )
+
 				Number2:completeAnimation()
 				self.Number2:setAlpha( 0 )
 				self.clipFinished( Number2, {} )
+
 				Number1:completeAnimation()
 				self.Number1:setAlpha( 0 )
 				self.clipFinished( Number1, {} )
+
 				Number0:completeAnimation()
 				self.Number0:setAlpha( 0 )
 				self.clipFinished( Number0, {} )

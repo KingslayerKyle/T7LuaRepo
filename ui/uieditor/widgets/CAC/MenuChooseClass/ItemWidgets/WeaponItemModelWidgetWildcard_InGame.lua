@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.RestrictedItemWarning" )
 CoD.WeaponItemModelWidgetWildcard_InGame = InheritFrom( LUI.UIElement )
 CoD.WeaponItemModelWidgetWildcard_InGame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponItemModelWidgetWildcard_InGame )
 	self.id = "WeaponItemModelWidgetWildcard_InGame"
@@ -100,15 +102,19 @@ CoD.WeaponItemModelWidgetWildcard_InGame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.8 )
 				self.clipFinished( itemImage, {} )
@@ -117,15 +123,19 @@ CoD.WeaponItemModelWidgetWildcard_InGame.new = function ( menu, controller )
 		Equipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.8 )
 				self.clipFinished( itemImage, {} )
@@ -134,15 +144,19 @@ CoD.WeaponItemModelWidgetWildcard_InGame.new = function ( menu, controller )
 		WeaponEquipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.8 )
 				self.clipFinished( itemImage, {} )
@@ -151,15 +165,19 @@ CoD.WeaponItemModelWidgetWildcard_InGame.new = function ( menu, controller )
 		Available = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
@@ -168,15 +186,19 @@ CoD.WeaponItemModelWidgetWildcard_InGame.new = function ( menu, controller )
 		NotEquippable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
@@ -185,15 +207,19 @@ CoD.WeaponItemModelWidgetWildcard_InGame.new = function ( menu, controller )
 		NotAvailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.4 )
 				self.clipFinished( itemImage, {} )
@@ -202,21 +228,26 @@ CoD.WeaponItemModelWidgetWildcard_InGame.new = function ( menu, controller )
 		NotVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Equipped",
@@ -255,6 +286,7 @@ CoD.WeaponItemModelWidgetWildcard_InGame.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RestrictedItemWarning:close()
 		element.itemImage:close()

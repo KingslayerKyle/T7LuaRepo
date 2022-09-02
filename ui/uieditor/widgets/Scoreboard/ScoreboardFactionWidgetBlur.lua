@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ButtonPanel" )
 CoD.ScoreboardFactionWidgetBlur = InheritFrom( LUI.UIElement )
 CoD.ScoreboardFactionWidgetBlur.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.ScoreboardFactionWidgetBlur )
 	self.id = "ScoreboardFactionWidgetBlur"
@@ -37,9 +39,11 @@ CoD.ScoreboardFactionWidgetBlur.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Top3PlayerScoreBlurBox:completeAnimation()
 				self.Top3PlayerScoreBlurBox:setAlpha( 1 )
 				self.clipFinished( Top3PlayerScoreBlurBox, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setAlpha( 0.45 )
 				self.clipFinished( VSpanel, {} )
@@ -48,15 +52,18 @@ CoD.ScoreboardFactionWidgetBlur.new = function ( menu, controller )
 		Frontend = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Top3PlayerScoreBlurBox:completeAnimation()
 				self.Top3PlayerScoreBlurBox:setAlpha( 0 )
 				self.clipFinished( Top3PlayerScoreBlurBox, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setAlpha( 0 )
 				self.clipFinished( VSpanel, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Top3PlayerScoreBlurBox:close()
 		element.VSpanel:close()

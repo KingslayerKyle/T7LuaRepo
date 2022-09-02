@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Terminal.FocusWidgetWhiteBars" )
 CoD.EntryModsLoad = InheritFrom( LUI.UIElement )
 CoD.EntryModsLoad.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EntryModsLoad )
 	self.id = "EntryModsLoad"
@@ -63,36 +65,46 @@ CoD.EntryModsLoad.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				FocusWidgetBG1:completeAnimation()
 				self.FocusWidgetBG1:setAlpha( 0 )
 				self.clipFinished( FocusWidgetBG1, {} )
+
 				FocusWidgetBG2:completeAnimation()
 				self.FocusWidgetBG2:setAlpha( 0 )
 				self.clipFinished( FocusWidgetBG2, {} )
+
 				FocusWidgetWhiteBars:completeAnimation()
 				self.FocusWidgetWhiteBars:setAlpha( 0 )
 				self.clipFinished( FocusWidgetWhiteBars, {} )
+
 				FocusWidgetWhiteBars0:completeAnimation()
 				self.FocusWidgetWhiteBars0:setAlpha( 0 )
 				self.clipFinished( FocusWidgetWhiteBars0, {} )
+
 				ModName:completeAnimation()
 				self.ModName:setRGB( 1, 1, 1 )
 				self.clipFinished( ModName, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				FocusWidgetBG1:completeAnimation()
 				self.FocusWidgetBG1:setAlpha( 1 )
 				self.clipFinished( FocusWidgetBG1, {} )
+
 				FocusWidgetBG2:completeAnimation()
 				self.FocusWidgetBG2:setAlpha( 1 )
 				self.clipFinished( FocusWidgetBG2, {} )
+
 				FocusWidgetWhiteBars:completeAnimation()
 				self.FocusWidgetWhiteBars:setAlpha( 1 )
 				self.clipFinished( FocusWidgetWhiteBars, {} )
+
 				FocusWidgetWhiteBars0:completeAnimation()
 				self.FocusWidgetWhiteBars0:setAlpha( 1 )
 				self.clipFinished( FocusWidgetWhiteBars0, {} )
+
 				ModName:completeAnimation()
 				self.ModName:setRGB( 1, 1, 1 )
 				self.clipFinished( ModName, {} )
@@ -101,44 +113,55 @@ CoD.EntryModsLoad.new = function ( menu, controller )
 		Loaded = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				FocusWidgetBG1:completeAnimation()
 				self.FocusWidgetBG1:setAlpha( 0 )
 				self.clipFinished( FocusWidgetBG1, {} )
+
 				FocusWidgetBG2:completeAnimation()
 				self.FocusWidgetBG2:setAlpha( 0 )
 				self.clipFinished( FocusWidgetBG2, {} )
+
 				FocusWidgetWhiteBars:completeAnimation()
 				self.FocusWidgetWhiteBars:setAlpha( 0 )
 				self.clipFinished( FocusWidgetWhiteBars, {} )
+
 				FocusWidgetWhiteBars0:completeAnimation()
 				self.FocusWidgetWhiteBars0:setLeftRight( true, true, -0.32, 0.68 )
 				self.FocusWidgetWhiteBars0:setTopBottom( true, false, 20.58, 27.42 )
 				self.FocusWidgetWhiteBars0:setAlpha( 0 )
 				self.clipFinished( FocusWidgetWhiteBars0, {} )
+
 				ModName:completeAnimation()
 				self.ModName:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.clipFinished( ModName, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				FocusWidgetBG1:completeAnimation()
 				self.FocusWidgetBG1:setAlpha( 1 )
 				self.clipFinished( FocusWidgetBG1, {} )
+
 				FocusWidgetBG2:completeAnimation()
 				self.FocusWidgetBG2:setAlpha( 1 )
 				self.clipFinished( FocusWidgetBG2, {} )
+
 				FocusWidgetWhiteBars:completeAnimation()
 				self.FocusWidgetWhiteBars:setAlpha( 1 )
 				self.clipFinished( FocusWidgetWhiteBars, {} )
+
 				FocusWidgetWhiteBars0:completeAnimation()
 				self.FocusWidgetWhiteBars0:setAlpha( 1 )
 				self.clipFinished( FocusWidgetWhiteBars0, {} )
+
 				ModName:completeAnimation()
 				self.ModName:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.clipFinished( ModName, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Loaded",
@@ -155,6 +178,7 @@ CoD.EntryModsLoad.new = function ( menu, controller )
 			modelName = "ugcName"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FocusWidgetBG1:close()
 		element.FocusWidgetBG2:close()

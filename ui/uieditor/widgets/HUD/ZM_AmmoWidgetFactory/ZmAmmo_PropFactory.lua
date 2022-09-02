@@ -39,9 +39,11 @@ end
 CoD.ZmAmmo_PropFactory = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_PropFactory.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_PropFactory )
 	self.id = "ZmAmmo_PropFactory"
@@ -954,6 +956,7 @@ CoD.ZmAmmo_PropFactory.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BulbLgFill:completeAnimation()
 				self.BulbLgFill:setAlpha( 0 )
 				self.clipFinished( BulbLgFill, {} )
@@ -962,12 +965,14 @@ CoD.ZmAmmo_PropFactory.new = function ( menu, controller )
 		WeaponDual = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BulbLgFill:completeAnimation()
 				self.BulbLgFill:setAlpha( 0.93 )
 				self.clipFinished( BulbLgFill, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "WeaponDual",
@@ -984,6 +989,7 @@ CoD.ZmAmmo_PropFactory.new = function ( menu, controller )
 			modelName = "currentWeapon.ammoInDWClip"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmAmmoHologramSmallFactory:close()
 		element.ZmAmmoParticleFX:close()

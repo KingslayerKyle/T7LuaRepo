@@ -21,9 +21,11 @@ end
 CoD.FE_FeaturedCard = InheritFrom( LUI.UIElement )
 CoD.FE_FeaturedCard.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.FE_FeaturedCard )
 	self.id = "FE_FeaturedCard"
@@ -79,18 +81,21 @@ CoD.FE_FeaturedCard.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BackgroundImage:completeAnimation()
 				self.BackgroundImage:setRGB( 1, 1, 1 )
 				self.clipFinished( BackgroundImage, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 1 )
+
 				BackgroundImage:completeAnimation()
 				self.BackgroundImage:setRGB( 1, 1, 1 )
 				self.clipFinished( BackgroundImage, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.OverClip:close()
 		element.BackgroundImage:close()

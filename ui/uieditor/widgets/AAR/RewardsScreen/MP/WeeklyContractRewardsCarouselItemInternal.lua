@@ -13,9 +13,11 @@ require( "ui.uieditor.widgets.AAR.RewardsScreen.MP.BlackmarketRewards54i" )
 CoD.WeeklyContractRewardsCarouselItemInternal = InheritFrom( LUI.UIElement )
 CoD.WeeklyContractRewardsCarouselItemInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeeklyContractRewardsCarouselItemInternal )
 	self.id = "WeeklyContractRewardsCarouselItemInternal"
@@ -310,14 +312,17 @@ CoD.WeeklyContractRewardsCarouselItemInternal.new = function ( menu, controller 
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		FirstContract = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TitleBacking0:completeAnimation()
 				self.TitleBacking0:setAlpha( 1 )
 				self.clipFinished( TitleBacking0, {} )
+
 				RequirementsComplete:completeAnimation()
 				self.RequirementsComplete:setAlpha( 1 )
 				self.clipFinished( RequirementsComplete, {} )
@@ -326,15 +331,18 @@ CoD.WeeklyContractRewardsCarouselItemInternal.new = function ( menu, controller 
 		SecondContract = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TitleBacking0:completeAnimation()
 				self.TitleBacking0:setAlpha( 1 )
 				self.clipFinished( TitleBacking0, {} )
+
 				RequirementsComplete:completeAnimation()
 				self.RequirementsComplete:setAlpha( 1 )
 				self.clipFinished( RequirementsComplete, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "FirstContract",
@@ -357,6 +365,7 @@ CoD.WeeklyContractRewardsCarouselItemInternal.new = function ( menu, controller 
 			modelName = "rewardCarouselItemType"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BorderBakedSolid0:close()
 		element.cacButtonBoxLrgInactiveStroke0:close()

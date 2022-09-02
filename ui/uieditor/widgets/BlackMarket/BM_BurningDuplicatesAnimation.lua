@@ -4,9 +4,11 @@
 CoD.BM_BurningDuplicatesAnimation = InheritFrom( LUI.UIElement )
 CoD.BM_BurningDuplicatesAnimation.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_BurningDuplicatesAnimation )
 	self.id = "BM_BurningDuplicatesAnimation"
@@ -87,21 +89,26 @@ CoD.BM_BurningDuplicatesAnimation.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Frame2:completeAnimation()
 				self.Frame2:setAlpha( 0 )
 				self.clipFinished( Frame2, {} )
+
 				FRame:completeAnimation()
 				self.FRame:setAlpha( 0 )
 				self.clipFinished( FRame, {} )
+
 				Blur:completeAnimation()
 				self.Blur:setAlpha( 0 )
 				self.clipFinished( Blur, {} )
+
 				Cryptokey:completeAnimation()
 				self.Cryptokey:setAlpha( 0 )
 				self.clipFinished( Cryptokey, {} )
 			end,
 			StartBurning = function ()
 				self:setupElementClipCounter( 4 )
+
 				local Frame2Frame2 = function ( Frame2, event )
 					local Frame2Frame3 = function ( Frame2, event )
 						local Frame2Frame4 = function ( Frame2, event )
@@ -259,6 +266,7 @@ CoD.BM_BurningDuplicatesAnimation.new = function ( menu, controller )
 			end,
 			Burning = function ()
 				self:setupElementClipCounter( 4 )
+
 				local Frame2Frame2 = function ( Frame2, event )
 					local Frame2Frame3 = function ( Frame2, event )
 						local Frame2Frame4 = function ( Frame2, event )
@@ -411,10 +419,12 @@ CoD.BM_BurningDuplicatesAnimation.new = function ( menu, controller )
 				Cryptokey:setAlpha( 0 )
 				Cryptokey:setScale( 1 )
 				Cryptokey:registerEventHandler( "transition_complete_keyframe", f15_local3 )
+
 				self.nextClip = "Burning"
 			end,
 			StopBurning = function ()
 				self:setupElementClipCounter( 8 )
+
 				local Frame2Frame2 = function ( Frame2, event )
 					local Frame2Frame3 = function ( Frame2, event )
 						local Frame2Frame4 = function ( Frame2, event )

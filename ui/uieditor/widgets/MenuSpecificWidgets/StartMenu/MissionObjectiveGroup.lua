@@ -16,9 +16,11 @@ end
 CoD.MissionObjectiveGroup = InheritFrom( LUI.UIElement )
 CoD.MissionObjectiveGroup.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MissionObjectiveGroup )
 	self.id = "MissionObjectiveGroup"
@@ -53,6 +55,7 @@ CoD.MissionObjectiveGroup.new = function ( menu, controller )
 			internal.groupHeaderText:setText( Engine.Localize( category ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.internal:close()
 	end )

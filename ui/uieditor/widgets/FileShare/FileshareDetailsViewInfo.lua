@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.CAC.MenuChooseClass.ItemWidgets.InfoPaneItemName" 
 CoD.FileshareDetailsViewInfo = InheritFrom( LUI.UIElement )
 CoD.FileshareDetailsViewInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FileshareDetailsViewInfo )
 	self.id = "FileshareDetailsViewInfo"
@@ -132,15 +134,19 @@ CoD.FileshareDetailsViewInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				feFooterContainerNOTLobby:completeAnimation()
 				self.feFooterContainerNOTLobby:setAlpha( 1 )
 				self.clipFinished( feFooterContainerNOTLobby, {} )
+
 				FileshareSelectedItemInfo:completeAnimation()
 				self.FileshareSelectedItemInfo:setAlpha( 1 )
 				self.clipFinished( FileshareSelectedItemInfo, {} )
+
 				ItemName:completeAnimation()
 				self.ItemName:setAlpha( 1 )
 				self.clipFinished( ItemName, {} )
+
 				EmblemName:completeAnimation()
 				self.EmblemName:setAlpha( 0 )
 				self.clipFinished( EmblemName, {} )
@@ -149,15 +155,19 @@ CoD.FileshareDetailsViewInfo.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				feFooterContainerNOTLobby:completeAnimation()
 				self.feFooterContainerNOTLobby:setAlpha( 0 )
 				self.clipFinished( feFooterContainerNOTLobby, {} )
+
 				FileshareSelectedItemInfo:completeAnimation()
 				self.FileshareSelectedItemInfo:setAlpha( 0 )
 				self.clipFinished( FileshareSelectedItemInfo, {} )
+
 				ItemName:completeAnimation()
 				self.ItemName:setAlpha( 0 )
 				self.clipFinished( ItemName, {} )
+
 				EmblemName:completeAnimation()
 				self.EmblemName:setAlpha( 0 )
 				self.clipFinished( EmblemName, {} )
@@ -166,21 +176,26 @@ CoD.FileshareDetailsViewInfo.new = function ( menu, controller )
 		Emblem = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				feFooterContainerNOTLobby:completeAnimation()
 				self.feFooterContainerNOTLobby:setAlpha( 1 )
 				self.clipFinished( feFooterContainerNOTLobby, {} )
+
 				FileshareSelectedItemInfo:completeAnimation()
 				self.FileshareSelectedItemInfo:setAlpha( 1 )
 				self.clipFinished( FileshareSelectedItemInfo, {} )
+
 				ItemName:completeAnimation()
 				self.ItemName:setAlpha( 0 )
 				self.clipFinished( ItemName, {} )
+
 				EmblemName:completeAnimation()
 				self.EmblemName:setAlpha( 1 )
 				self.clipFinished( EmblemName, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.feFooterContainerNOTLobby:close()
 		element.FileshareSelectedItemInfo:close()

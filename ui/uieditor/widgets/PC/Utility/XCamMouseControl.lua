@@ -13,6 +13,7 @@ local f0_local0 = function ( f1_arg0, f1_arg1, f1_arg2 )
 	f1_arg0:registerEventHandler( "mouseleave", function ( element, event )
 		Engine.SetMouseCursor( "" )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( f1_arg0, "close", function ()
 		Engine.SetMouseCursor( "" )
 	end )
@@ -27,9 +28,11 @@ end
 CoD.XCamMouseControl = InheritFrom( LUI.UIElement )
 CoD.XCamMouseControl.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.XCamMouseControl )
 	self.id = "XCamMouseControl"
@@ -48,12 +51,14 @@ CoD.XCamMouseControl.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				debugImage:completeAnimation()
 				self.debugImage:setAlpha( 0 )
 				self.clipFinished( debugImage, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 1 )
+
 				debugImage:completeAnimation()
 				self.debugImage:setAlpha( 0 )
 				self.clipFinished( debugImage, {} )

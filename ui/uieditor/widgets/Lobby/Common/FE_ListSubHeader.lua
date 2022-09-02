@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ListSubHeaderGlow" )
 CoD.FE_ListSubHeader = InheritFrom( LUI.UIElement )
 CoD.FE_ListSubHeader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_ListSubHeader )
 	self.id = "FE_ListSubHeader"
@@ -70,12 +72,15 @@ CoD.FE_ListSubHeader.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				FEListSubHeaderPanelShaderContainer0:completeAnimation()
 				self.FEListSubHeaderPanelShaderContainer0:setAlpha( 0 )
 				self.clipFinished( FEListSubHeaderPanelShaderContainer0, {} )
+
 				FEListSubHeaderGlow0:completeAnimation()
 				self.FEListSubHeaderGlow0:setAlpha( 0 )
 				self.clipFinished( FEListSubHeaderGlow0, {} )
+
 				StringA:completeAnimation()
 				self.StringA:setAlpha( 0 )
 				self.clipFinished( StringA, {} )
@@ -84,12 +89,15 @@ CoD.FE_ListSubHeader.new = function ( menu, controller )
 		PlayerCountState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				FEListSubHeaderPanelShaderContainer0:completeAnimation()
 				self.FEListSubHeaderPanelShaderContainer0:setAlpha( 1 )
 				self.clipFinished( FEListSubHeaderPanelShaderContainer0, {} )
+
 				FEListSubHeaderGlow0:completeAnimation()
 				self.FEListSubHeaderGlow0:setAlpha( 1 )
 				self.clipFinished( FEListSubHeaderGlow0, {} )
+
 				StringA:completeAnimation()
 				self.StringA:setAlpha( 1 )
 				self.clipFinished( StringA, {} )
@@ -98,18 +106,22 @@ CoD.FE_ListSubHeader.new = function ( menu, controller )
 		GroupCountState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				FEListSubHeaderPanelShaderContainer0:completeAnimation()
 				self.FEListSubHeaderPanelShaderContainer0:setAlpha( 1 )
 				self.clipFinished( FEListSubHeaderPanelShaderContainer0, {} )
+
 				FEListSubHeaderGlow0:completeAnimation()
 				self.FEListSubHeaderGlow0:setAlpha( 1 )
 				self.clipFinished( FEListSubHeaderGlow0, {} )
+
 				StringA:completeAnimation()
 				self.StringA:setAlpha( 1 )
 				self.clipFinished( StringA, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEListSubHeaderPanelShaderContainer0:close()
 		element.FEListSubHeaderGlow0:close()

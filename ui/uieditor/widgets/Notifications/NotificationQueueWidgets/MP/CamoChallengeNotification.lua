@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Notifications.Global.Notif_Global_Title" )
 CoD.CamoChallengeNotification = InheritFrom( LUI.UIElement )
 CoD.CamoChallengeNotification.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CamoChallengeNotification )
 	self.id = "CamoChallengeNotification"
@@ -272,6 +274,7 @@ CoD.CamoChallengeNotification.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				local CenterShadowFrame2 = function ( CenterShadow, event )
 					if not event.interrupted then
 						CenterShadow:beginAnimation( "keyframe", 159, false, false, CoD.TweenType.Linear )
@@ -862,12 +865,14 @@ CoD.CamoChallengeNotification.new = function ( menu, controller )
 				self.image:setAlpha( 1 )
 				self.image:setScale( 0 )
 				imageFrame2( image, {} )
+
 				UISound:completeAnimation()
 				self.UISound:playSound( "weapon_level_up", controller )
 				self.clipFinished( UISound, {} )
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 16 )
+
 				local CenterShadowFrame2 = function ( CenterShadow, event )
 					if not event.interrupted then
 						CenterShadow:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -1202,6 +1207,7 @@ CoD.CamoChallengeNotification.new = function ( menu, controller )
 				EdgeFill0:completeAnimation()
 				self.EdgeFill0:setAlpha( 0.2 )
 				EdgeFill0Frame2( EdgeFill0, {} )
+
 				CornerFillWide:completeAnimation()
 				self.CornerFillWide:setAlpha( 0 )
 				self.clipFinished( CornerFillWide, {} )
@@ -1373,9 +1379,11 @@ CoD.CamoChallengeNotification.new = function ( menu, controller )
 				NotifGlobalTitle:completeAnimation()
 				self.NotifGlobalTitle:setAlpha( 1 )
 				NotifGlobalTitleFrame2( NotifGlobalTitle, {} )
+
 				imageG:completeAnimation()
 				self.imageG:setAlpha( 0 )
 				self.clipFinished( imageG, {} )
+
 				imageR:completeAnimation()
 				self.imageR:setAlpha( 0 )
 				self.clipFinished( imageR, {} )
@@ -1429,6 +1437,7 @@ CoD.CamoChallengeNotification.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.NotifCamoCenterBacking:close()
 		element.NotifGlobalTitleLine:close()

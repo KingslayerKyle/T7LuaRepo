@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Buttons.vhud_generic_button_layout" )
 CoD.vhud_ms_Internal = InheritFrom( LUI.UIElement )
 CoD.vhud_ms_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ms_Internal )
 	self.id = "vhud_ms_Internal"
@@ -108,23 +110,28 @@ CoD.vhud_ms_Internal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				VignetteContainer:completeAnimation()
 				self.VignetteContainer:setAlpha( 1 )
 				self.clipFinished( VignetteContainer, {} )
+
 				VehicleGroundIris:completeAnimation()
 				self.VehicleGroundIris:setRGB( 1, 1, 1 )
 				self.VehicleGroundIris:setAlpha( 1 )
 				self.clipFinished( VehicleGroundIris, {} )
+
 				dpsVehicleReticle:completeAnimation()
 				self.dpsVehicleReticle:setRGB( 1, 1, 1 )
 				self.dpsVehicleReticle:setAlpha( 1 )
 				self.clipFinished( dpsVehicleReticle, {} )
+
 				vhudagrButtonContainer:completeAnimation()
 				self.vhudagrButtonContainer:setAlpha( 1 )
 				self.clipFinished( vhudagrButtonContainer, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.VignetteContainer:close()
 		element.VehicleGroundIris:close()

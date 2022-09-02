@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_CryptokeyCounterIcon" )
 CoD.AAR_Contracts_WeeklyContractsWidget = InheritFrom( LUI.UIElement )
 CoD.AAR_Contracts_WeeklyContractsWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AAR_Contracts_WeeklyContractsWidget )
 	self.id = "AAR_Contracts_WeeklyContractsWidget"
@@ -151,24 +153,31 @@ CoD.AAR_Contracts_WeeklyContractsWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				ContractProgress:completeAnimation()
 				self.ContractProgress:setAlpha( 1 )
 				self.clipFinished( ContractProgress, {} )
+
 				CryptokeyIcon:completeAnimation()
 				self.CryptokeyIcon:setAlpha( 1 )
 				self.clipFinished( CryptokeyIcon, {} )
+
 				Kryptokeys:completeAnimation()
 				self.Kryptokeys:setAlpha( 1 )
 				self.clipFinished( Kryptokeys, {} )
+
 				CategoryListLine000:completeAnimation()
 				self.CategoryListLine000:setAlpha( 0.15 )
 				self.clipFinished( CategoryListLine000, {} )
+
 				InvalidContractName:completeAnimation()
 				self.InvalidContractName:setAlpha( 0 )
 				self.clipFinished( InvalidContractName, {} )
+
 				InvalidContractDesc:completeAnimation()
 				self.InvalidContractDesc:setAlpha( 0 )
 				self.clipFinished( InvalidContractDesc, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 0 )
 				self.clipFinished( CompletedIcon, {} )
@@ -177,30 +186,39 @@ CoD.AAR_Contracts_WeeklyContractsWidget.new = function ( menu, controller )
 		InvalidContract = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ContractProgress:completeAnimation()
 				self.ContractProgress:setAlpha( 0 )
 				self.clipFinished( ContractProgress, {} )
+
 				CryptokeyIcon:completeAnimation()
 				self.CryptokeyIcon:setAlpha( 0 )
 				self.clipFinished( CryptokeyIcon, {} )
+
 				Kryptokeys:completeAnimation()
 				self.Kryptokeys:setAlpha( 0 )
 				self.clipFinished( Kryptokeys, {} )
+
 				CategoryListLine000:completeAnimation()
 				self.CategoryListLine000:setAlpha( 0 )
 				self.clipFinished( CategoryListLine000, {} )
+
 				Contracts:completeAnimation()
 				self.Contracts:setAlpha( 0 )
 				self.clipFinished( Contracts, {} )
+
 				cryptokey:completeAnimation()
 				self.cryptokey:setAlpha( 0 )
 				self.clipFinished( cryptokey, {} )
+
 				InvalidContractName:completeAnimation()
 				self.InvalidContractName:setAlpha( 1 )
 				self.clipFinished( InvalidContractName, {} )
+
 				InvalidContractDesc:completeAnimation()
 				self.InvalidContractDesc:setAlpha( 1 )
 				self.clipFinished( InvalidContractDesc, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 0 )
 				self.clipFinished( CompletedIcon, {} )
@@ -209,36 +227,46 @@ CoD.AAR_Contracts_WeeklyContractsWidget.new = function ( menu, controller )
 		Completed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ContractProgress:completeAnimation()
 				self.ContractProgress:setAlpha( 1 )
 				self.clipFinished( ContractProgress, {} )
+
 				CryptokeyIcon:completeAnimation()
 				self.CryptokeyIcon:setAlpha( 0 )
 				self.clipFinished( CryptokeyIcon, {} )
+
 				Kryptokeys:completeAnimation()
 				self.Kryptokeys:setAlpha( 0 )
 				self.clipFinished( Kryptokeys, {} )
+
 				CategoryListLine000:completeAnimation()
 				self.CategoryListLine000:setAlpha( 0 )
 				self.clipFinished( CategoryListLine000, {} )
+
 				Contracts:completeAnimation()
 				self.Contracts:setAlpha( 0 )
 				self.clipFinished( Contracts, {} )
+
 				cryptokey:completeAnimation()
 				self.cryptokey:setAlpha( 0 )
 				self.clipFinished( cryptokey, {} )
+
 				InvalidContractName:completeAnimation()
 				self.InvalidContractName:setAlpha( 0 )
 				self.clipFinished( InvalidContractName, {} )
+
 				InvalidContractDesc:completeAnimation()
 				self.InvalidContractDesc:setAlpha( 0 )
 				self.clipFinished( InvalidContractDesc, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 1 )
 				self.clipFinished( CompletedIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "InvalidContract",
@@ -270,6 +298,7 @@ CoD.AAR_Contracts_WeeklyContractsWidget.new = function ( menu, controller )
 		} )
 	end )
 	ContractProgress.id = "ContractProgress"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel0:close()
 		element.BMContractsAARtitle0:close()

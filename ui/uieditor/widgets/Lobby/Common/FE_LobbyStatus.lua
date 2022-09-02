@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.LobbyStateString" )
 CoD.FE_LobbyStatus = InheritFrom( LUI.UIElement )
 CoD.FE_LobbyStatus.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_LobbyStatus )
 	self.id = "FE_LobbyStatus"
@@ -179,6 +181,7 @@ CoD.FE_LobbyStatus.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				LobbyStatusString3:completeAnimation()
 				self.LobbyStatusString3:setLeftRight( true, false, 0, 278 )
 				self.LobbyStatusString3:setTopBottom( true, false, 48, 72 )
@@ -186,14 +189,17 @@ CoD.FE_LobbyStatus.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Update = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		customGames = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				LobbyStatusString3:completeAnimation()
 				self.LobbyStatusString3:setLeftRight( true, false, 0, 278 )
 				self.LobbyStatusString3:setTopBottom( true, false, -24, 0 )
@@ -201,6 +207,7 @@ CoD.FE_LobbyStatus.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "customGames",
@@ -217,6 +224,7 @@ CoD.FE_LobbyStatus.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LobbyStatusString3:close()
 		element.LobbyStatusString2:close()

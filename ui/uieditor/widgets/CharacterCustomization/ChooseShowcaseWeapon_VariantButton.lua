@@ -14,9 +14,11 @@ require( "ui.uieditor.widgets.horizontalScrollingTextBox_20pt" )
 CoD.ChooseShowcaseWeapon_VariantButton = InheritFrom( LUI.UIElement )
 CoD.ChooseShowcaseWeapon_VariantButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseShowcaseWeapon_VariantButton )
 	self.id = "ChooseShowcaseWeapon_VariantButton"
@@ -141,39 +143,50 @@ CoD.ChooseShowcaseWeapon_VariantButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				lockBackground:completeAnimation()
 				self.lockBackground:setAlpha( 0 )
 				self.clipFinished( lockBackground, {} )
+
 				lockIcon:completeAnimation()
 				self.lockIcon:setAlpha( 0 )
 				self.clipFinished( lockIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 90, false, false, CoD.TweenType.Linear )
@@ -189,6 +202,7 @@ CoD.ChooseShowcaseWeapon_VariantButton.new = function ( menu, controller )
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				BoxButtonLrgInactiveFrame2( BoxButtonLrgInactive, {} )
+
 				lockIcon:completeAnimation()
 				self.lockIcon:setAlpha( 0 )
 				self.clipFinished( lockIcon, {} )
@@ -542,24 +556,30 @@ CoD.ChooseShowcaseWeapon_VariantButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				lockBackground:completeAnimation()
 				self.lockBackground:setAlpha( 0 )
 				self.clipFinished( lockBackground, {} )
+
 				lockIcon:completeAnimation()
 				self.lockIcon:setAlpha( 0 )
 				self.clipFinished( lockIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
@@ -575,6 +595,7 @@ CoD.ChooseShowcaseWeapon_VariantButton.new = function ( menu, controller )
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				BoxButtonLrgInactiveFrame2( BoxButtonLrgInactive, {} )
+
 				lockBackground:completeAnimation()
 				self.lockBackground:setAlpha( 0 )
 				self.clipFinished( lockBackground, {} )
@@ -956,39 +977,50 @@ CoD.ChooseShowcaseWeapon_VariantButton.new = function ( menu, controller )
 		LockedContent = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				lockBackground:completeAnimation()
 				self.lockBackground:setAlpha( 0.6 )
 				self.clipFinished( lockBackground, {} )
+
 				lockIcon:completeAnimation()
 				self.lockIcon:setAlpha( 1 )
 				self.clipFinished( lockIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 8 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 90, false, false, CoD.TweenType.Linear )
@@ -1004,9 +1036,11 @@ CoD.ChooseShowcaseWeapon_VariantButton.new = function ( menu, controller )
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				BoxButtonLrgInactiveFrame2( BoxButtonLrgInactive, {} )
+
 				lockBackground:completeAnimation()
 				self.lockBackground:setAlpha( 0.6 )
 				self.clipFinished( lockBackground, {} )
+
 				lockIcon:completeAnimation()
 				self.lockIcon:setAlpha( 1 )
 				self.clipFinished( lockIcon, {} )
@@ -1360,24 +1394,30 @@ CoD.ChooseShowcaseWeapon_VariantButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				lockBackground:completeAnimation()
 				self.lockBackground:setAlpha( 0.6 )
 				self.clipFinished( lockBackground, {} )
+
 				lockIcon:completeAnimation()
 				self.lockIcon:setAlpha( 1 )
 				self.clipFinished( lockIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 8 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
@@ -1393,9 +1433,11 @@ CoD.ChooseShowcaseWeapon_VariantButton.new = function ( menu, controller )
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				BoxButtonLrgInactiveFrame2( BoxButtonLrgInactive, {} )
+
 				lockBackground:completeAnimation()
 				self.lockBackground:setAlpha( 0.6 )
 				self.clipFinished( lockBackground, {} )
+
 				lockIcon:completeAnimation()
 				self.lockIcon:setAlpha( 1 )
 				self.clipFinished( lockIcon, {} )
@@ -1775,6 +1817,7 @@ CoD.ChooseShowcaseWeapon_VariantButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "LockedContent",
@@ -1783,6 +1826,7 @@ CoD.ChooseShowcaseWeapon_VariantButton.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveDiag:close()
 		element.BoxButtonLrgInactive:close()

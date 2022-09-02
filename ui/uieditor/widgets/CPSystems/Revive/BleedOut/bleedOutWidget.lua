@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CPSystems.Revive.BleedOut.bleedOutClampedArrow" )
 CoD.bleedOutWidget = InheritFrom( LUI.UIElement )
 CoD.bleedOutWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.bleedOutWidget )
 	self.id = "bleedOutWidget"
@@ -72,15 +74,19 @@ CoD.bleedOutWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				playerName:completeAnimation()
 				self.playerName:setAlpha( 0 )
 				self.clipFinished( playerName, {} )
+
 				prompt:completeAnimation()
 				self.prompt:setAlpha( 0 )
 				self.clipFinished( prompt, {} )
+
 				bleedOutHealth0:completeAnimation()
 				self.bleedOutHealth0:setAlpha( 0 )
 				self.clipFinished( bleedOutHealth0, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setAlpha( 0 )
 				self.clipFinished( arrow, {} )
@@ -89,15 +95,19 @@ CoD.bleedOutWidget.new = function ( menu, controller )
 		Clamped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				playerName:completeAnimation()
 				self.playerName:setAlpha( 0 )
 				self.clipFinished( playerName, {} )
+
 				prompt:completeAnimation()
 				self.prompt:setAlpha( 0 )
 				self.clipFinished( prompt, {} )
+
 				bleedOutHealth0:completeAnimation()
 				self.bleedOutHealth0:setAlpha( 1 )
 				self.clipFinished( bleedOutHealth0, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setAlpha( 1 )
 				self.clipFinished( arrow, {} )
@@ -106,15 +116,19 @@ CoD.bleedOutWidget.new = function ( menu, controller )
 		Visible_Reviving = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				playerName:completeAnimation()
 				self.playerName:setAlpha( 0 )
 				self.clipFinished( playerName, {} )
+
 				prompt:completeAnimation()
 				self.prompt:setAlpha( 0 )
 				self.clipFinished( prompt, {} )
+
 				bleedOutHealth0:completeAnimation()
 				self.bleedOutHealth0:setAlpha( 1 )
 				self.clipFinished( bleedOutHealth0, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setAlpha( 0 )
 				self.clipFinished( arrow, {} )
@@ -123,21 +137,26 @@ CoD.bleedOutWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				playerName:completeAnimation()
 				self.playerName:setAlpha( 1 )
 				self.clipFinished( playerName, {} )
+
 				prompt:completeAnimation()
 				self.prompt:setAlpha( 1 )
 				self.clipFinished( prompt, {} )
+
 				bleedOutHealth0:completeAnimation()
 				self.bleedOutHealth0:setAlpha( 1 )
 				self.clipFinished( bleedOutHealth0, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setAlpha( 0 )
 				self.clipFinished( arrow, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Clamped",
@@ -182,6 +201,7 @@ CoD.bleedOutWidget.new = function ( menu, controller )
 			modelName = "stateFlags"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.bleedOutHealth0:close()
 		element.arrow:close()

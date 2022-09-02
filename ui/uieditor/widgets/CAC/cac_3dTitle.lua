@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_3dTitleInternal" )
 CoD.cac_3dTitle = InheritFrom( LUI.UIElement )
 CoD.cac_3dTitle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_3dTitle )
 	self.id = "cac_3dTitle"
@@ -34,6 +36,7 @@ CoD.cac_3dTitle.new = function ( menu, controller )
 	TextBox1:setShaderVector( 3, 0, 0, 0, 0 )
 	TextBox1:setShaderVector( 4, 0, 0, 0, 0 )
 	TextBox1.Label0:setText( Engine.Localize( "MENU_MULTIPLAYER_CAPS" ) )
+
 	LUI.OverrideFunction_CallOriginalFirst( TextBox1, "setText", function ( element, controller )
 		ScaleParentWidgetToLabel( self, element, 2 )
 	end )

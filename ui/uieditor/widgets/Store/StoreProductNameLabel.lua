@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_PanelNoBlur" )
 CoD.StoreProductNameLabel = InheritFrom( LUI.UIElement )
 CoD.StoreProductNameLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StoreProductNameLabel )
 	self.id = "StoreProductNameLabel"
@@ -33,6 +35,7 @@ CoD.StoreProductNameLabel.new = function ( menu, controller )
 	itemName:setLetterSpacing( 0.5 )
 	itemName:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	itemName:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_BOTTOM )
+
 	LUI.OverrideFunction_CallOriginalFirst( itemName, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrappedUp( self, element, 1, 1 )
 	end )
@@ -43,20 +46,24 @@ CoD.StoreProductNameLabel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 0 )
 				self.clipFinished( itemName, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 	end )

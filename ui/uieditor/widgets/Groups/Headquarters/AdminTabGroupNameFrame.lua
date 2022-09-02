@@ -12,9 +12,11 @@ end
 CoD.AdminTabGroupNameFrame = InheritFrom( LUI.UIElement )
 CoD.AdminTabGroupNameFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AdminTabGroupNameFrame )
 	self.id = "AdminTabGroupNameFrame"
@@ -98,13 +100,17 @@ CoD.AdminTabGroupNameFrame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				GroupsInputButton:completeAnimation()
 				self.GroupsInputButton:setAlpha( 1 )
 				self.clipFinished( GroupsInputButton, {} )
+
 				GroupsSubTitle0:completeAnimation()
 				self.GroupsSubTitle0:setAlpha( 1 )
 				self.clipFinished( GroupsSubTitle0, {} )
+
 				GroupsNoConentDetail:completeAnimation()
+
 				GroupsNoConentDetail.HeaderBkgd:completeAnimation()
 				self.GroupsNoConentDetail:setAlpha( 0 )
 				self.GroupsNoConentDetail.HeaderBkgd:setRGB( ColorSet.FactionAxis_CP.r, ColorSet.FactionAxis_CP.g, ColorSet.FactionAxis_CP.b )
@@ -114,17 +120,25 @@ CoD.AdminTabGroupNameFrame.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				GroupsInputButton:completeAnimation()
 				self.GroupsInputButton:setAlpha( 0 )
 				self.clipFinished( GroupsInputButton, {} )
+
 				GroupsSubTitle0:completeAnimation()
 				self.GroupsSubTitle0:setAlpha( 0 )
 				self.clipFinished( GroupsSubTitle0, {} )
+
 				GroupsNoConentDetail:completeAnimation()
+
 				GroupsNoConentDetail.HeaderBkgd:completeAnimation()
+
 				GroupsNoConentDetail.HeaderIcon:completeAnimation()
+
 				GroupsNoConentDetail.Header:completeAnimation()
+
 				GroupsNoConentDetail.Desc:completeAnimation()
+
 				GroupsNoConentDetail.Glow2:completeAnimation()
 				self.GroupsNoConentDetail:setAlpha( 1 )
 				self.GroupsNoConentDetail.HeaderBkgd:setRGB( 0.87, 0.3, 0.19 )
@@ -136,6 +150,7 @@ CoD.AdminTabGroupNameFrame.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -160,6 +175,7 @@ CoD.AdminTabGroupNameFrame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GroupsInputButton:close()
 		element.GroupsSubTitle0:close()

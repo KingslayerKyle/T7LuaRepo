@@ -14,9 +14,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FocusBarContainer" )
 CoD.StartMenu_Challenges_Button = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Challenges_Button.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Challenges_Button )
 	self.id = "StartMenu_Challenges_Button"
@@ -136,62 +138,80 @@ CoD.StartMenu_Challenges_Button.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.35 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				PercentComplete:completeAnimation()
 				self.PercentComplete:setAlpha( 1 )
 				self.clipFinished( PercentComplete, {} )
+
 				ButtonTitleBG:completeAnimation()
 				self.ButtonTitleBG:setAlpha( 0.05 )
 				self.clipFinished( ButtonTitleBG, {} )
+
 				NearCompletionWidget:completeAnimation()
 				self.NearCompletionWidget:setAlpha( 0 )
 				self.clipFinished( NearCompletionWidget, {} )
+
 				ChallengesTitle:completeAnimation()
 				self.ChallengesTitle:setAlpha( 0 )
 				self.clipFinished( ChallengesTitle, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 9 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				PercentComplete:completeAnimation()
 				self.PercentComplete:setAlpha( 1 )
 				self.clipFinished( PercentComplete, {} )
+
 				ButtonTitleBG:completeAnimation()
 				self.ButtonTitleBG:setLeftRight( true, true, 1, 0 )
 				self.ButtonTitleBG:setTopBottom( true, true, 1, -3 )
 				self.ButtonTitleBG:setAlpha( 0 )
 				self.clipFinished( ButtonTitleBG, {} )
+
 				NearCompletionWidget:completeAnimation()
 				self.NearCompletionWidget:setAlpha( 1 )
 				self.clipFinished( NearCompletionWidget, {} )
+
 				ChallengesTitle:completeAnimation()
 				self.ChallengesTitle:setAlpha( 1 )
 				self.clipFinished( ChallengesTitle, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
@@ -200,53 +220,68 @@ CoD.StartMenu_Challenges_Button.new = function ( menu, controller )
 		Disable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.35 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setLeftRight( false, false, -15, 15 )
 				self.lockedIcon:setTopBottom( false, false, -38.5, -6.5 )
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
+
 				PercentComplete:completeAnimation()
 				self.PercentComplete:setAlpha( 0 )
 				self.clipFinished( PercentComplete, {} )
+
 				ButtonTitleBG:completeAnimation()
 				self.ButtonTitleBG:setAlpha( 0.05 )
 				self.clipFinished( ButtonTitleBG, {} )
+
 				NearCompletionWidget:completeAnimation()
 				self.NearCompletionWidget:setAlpha( 0 )
 				self.clipFinished( NearCompletionWidget, {} )
+
 				ChallengesTitle:completeAnimation()
 				self.ChallengesTitle:setAlpha( 0 )
 				self.clipFinished( ChallengesTitle, {} )
 			end,
 			focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
+
 				PercentComplete:completeAnimation()
 				self.PercentComplete:setAlpha( 0 )
 				self.clipFinished( PercentComplete, {} )
+
 				ButtonTitleBG:completeAnimation()
 				self.ButtonTitleBG:setAlpha( 0 )
 				self.clipFinished( ButtonTitleBG, {} )
+
 				NearCompletionWidget:completeAnimation()
 				self.NearCompletionWidget:setAlpha( 0 )
 				self.clipFinished( NearCompletionWidget, {} )
+
 				ChallengesTitle:completeAnimation()
 				self.ChallengesTitle:setAlpha( 0 )
 				self.clipFinished( ChallengesTitle, {} )
@@ -255,60 +290,77 @@ CoD.StartMenu_Challenges_Button.new = function ( menu, controller )
 		NoNearComplete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.35 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				ButtonTitleBG:completeAnimation()
 				self.ButtonTitleBG:setAlpha( 0.05 )
 				self.clipFinished( ButtonTitleBG, {} )
+
 				NearCompletionWidget:completeAnimation()
 				self.NearCompletionWidget:setAlpha( 0 )
 				self.clipFinished( NearCompletionWidget, {} )
+
 				ChallengesTitle:completeAnimation()
 				self.ChallengesTitle:setAlpha( 0 )
 				self.clipFinished( ChallengesTitle, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				ButtonTitleBG:completeAnimation()
 				self.ButtonTitleBG:setAlpha( 0 )
 				self.clipFinished( ButtonTitleBG, {} )
+
 				NearCompletionWidget:completeAnimation()
 				self.NearCompletionWidget:setAlpha( 0 )
 				self.clipFinished( NearCompletionWidget, {} )
+
 				ChallengesTitle:completeAnimation()
 				self.ChallengesTitle:setAlpha( 0 )
 				self.clipFinished( ChallengesTitle, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactive:close()
 		element.StartMenuframenoBG0:close()

@@ -4,9 +4,11 @@
 CoD.SecretLogo = InheritFrom( LUI.UIElement )
 CoD.SecretLogo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SecretLogo )
 	self.id = "SecretLogo"
@@ -84,51 +86,66 @@ CoD.SecretLogo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BlueR:completeAnimation()
 				self.BlueR:setAlpha( 0 )
 				self.clipFinished( BlueR, {} )
+
 				BlueL:completeAnimation()
 				self.BlueL:setAlpha( 0 )
 				self.clipFinished( BlueL, {} )
+
 				InRing:completeAnimation()
 				self.InRing:setAlpha( 0 )
 				self.clipFinished( InRing, {} )
+
 				OutRing:completeAnimation()
 				self.OutRing:setAlpha( 0 )
 				self.clipFinished( OutRing, {} )
+
 				S:completeAnimation()
 				self.S:setAlpha( 0 )
 				self.clipFinished( S, {} )
+
 				INPiece2:completeAnimation()
 				self.INPiece2:setAlpha( 0 )
 				self.clipFinished( INPiece2, {} )
+
 				InPiece:completeAnimation()
 				self.InPiece:setAlpha( 0 )
 				self.clipFinished( InPiece, {} )
+
 				logo:completeAnimation()
 				self.logo:setAlpha( 1 )
 				self.clipFinished( logo, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 8 )
+
 				BlueR:completeAnimation()
 				self.BlueR:setAlpha( 0 )
 				self.clipFinished( BlueR, {} )
+
 				BlueL:completeAnimation()
 				self.BlueL:setAlpha( 0 )
 				self.clipFinished( BlueL, {} )
+
 				InRing:completeAnimation()
 				self.InRing:setAlpha( 0 )
 				self.clipFinished( InRing, {} )
+
 				OutRing:completeAnimation()
 				self.OutRing:setAlpha( 0 )
 				self.clipFinished( OutRing, {} )
+
 				S:completeAnimation()
 				self.S:setAlpha( 0 )
 				self.clipFinished( S, {} )
+
 				INPiece2:completeAnimation()
 				self.INPiece2:setAlpha( 0 )
 				self.clipFinished( INPiece2, {} )
+
 				InPiece:completeAnimation()
 				self.InPiece:setAlpha( 0 )
 				self.clipFinished( InPiece, {} )
@@ -150,6 +167,7 @@ CoD.SecretLogo.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				local f5_local0 = function ( f6_arg0, f6_arg1 )
 					local f6_local0 = function ( f7_arg0, f7_arg1 )
 						local f7_local0 = function ( f8_arg0, f8_arg1 )
@@ -546,31 +564,40 @@ CoD.SecretLogo.new = function ( menu, controller )
 				InPiece:setTopBottom( true, false, -8.65, 6.77 )
 				InPiece:setAlpha( 0 )
 				InPiece:registerEventHandler( "transition_complete_keyframe", f5_local6 )
+
 				logo:completeAnimation()
 				self.logo:setAlpha( 0 )
 				self.clipFinished( logo, {} )
+
 				self.nextClip = "Focus"
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 8 )
+
 				BlueR:completeAnimation()
 				self.BlueR:setAlpha( 0 )
 				self.clipFinished( BlueR, {} )
+
 				BlueL:completeAnimation()
 				self.BlueL:setAlpha( 0 )
 				self.clipFinished( BlueL, {} )
+
 				InRing:completeAnimation()
 				self.InRing:setAlpha( 0 )
 				self.clipFinished( InRing, {} )
+
 				OutRing:completeAnimation()
 				self.OutRing:setAlpha( 0 )
 				self.clipFinished( OutRing, {} )
+
 				S:completeAnimation()
 				self.S:setAlpha( 0 )
 				self.clipFinished( S, {} )
+
 				INPiece2:completeAnimation()
 				self.INPiece2:setAlpha( 0 )
 				self.clipFinished( INPiece2, {} )
+
 				InPiece:completeAnimation()
 				self.InPiece:setAlpha( 0 )
 				self.clipFinished( InPiece, {} )
@@ -594,9 +621,11 @@ CoD.SecretLogo.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

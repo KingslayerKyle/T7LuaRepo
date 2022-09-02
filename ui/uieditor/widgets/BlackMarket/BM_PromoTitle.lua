@@ -4,9 +4,11 @@
 CoD.BM_PromoTitle = InheritFrom( LUI.UIElement )
 CoD.BM_PromoTitle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_PromoTitle )
 	self.id = "BM_PromoTitle"
@@ -41,6 +43,7 @@ CoD.BM_PromoTitle.new = function ( menu, controller )
 	Title:setLetterSpacing( 1.6 )
 	Title:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	Title:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( Title, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 10 )
 	end )
@@ -51,6 +54,7 @@ CoD.BM_PromoTitle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

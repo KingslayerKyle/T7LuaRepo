@@ -8,9 +8,11 @@ end
 CoD.AllocationBar = InheritFrom( LUI.UIElement )
 CoD.AllocationBar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AllocationBar )
 	self.id = "AllocationBar"
@@ -49,15 +51,18 @@ CoD.AllocationBar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				dashBacking:completeAnimation()
 				self.dashBacking:setAlpha( 0.5 )
 				self.clipFinished( dashBacking, {} )
+
 				dash:completeAnimation()
 				self.dash:setAlpha( 0 )
 				self.clipFinished( dash, {} )
 			end,
 			PointSpending = function ()
 				self:setupElementClipCounter( 3 )
+
 				local dashBackingFrame2 = function ( dashBacking, event )
 					if not event.interrupted then
 						dashBacking:beginAnimation( "keyframe", 469, false, false, CoD.TweenType.Linear )
@@ -212,9 +217,11 @@ CoD.AllocationBar.new = function ( menu, controller )
 			end,
 			PointSpent = function ()
 				self:setupElementClipCounter( 2 )
+
 				dashBacking:completeAnimation()
 				self.dashBacking:setAlpha( 0 )
 				self.clipFinished( dashBacking, {} )
+
 				dash:completeAnimation()
 				self.dash:setAlpha( 1 )
 				self.clipFinished( dash, {} )

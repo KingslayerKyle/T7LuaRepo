@@ -30,9 +30,11 @@ end
 CoD.Notification_Medals = InheritFrom( LUI.UIElement )
 CoD.Notification_Medals.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Notification_Medals )
 	self.id = "Notification_Medals"
@@ -74,9 +76,11 @@ CoD.Notification_Medals.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			medal_received = function ()
 				self:setupElementClipCounter( 3 )
+
 				local ImageFrame2 = function ( Image, event )
 					local ImageFrame3 = function ( Image, event )
 						local ImageFrame4 = function ( Image, event )

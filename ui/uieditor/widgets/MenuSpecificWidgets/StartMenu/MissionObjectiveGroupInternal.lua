@@ -23,9 +23,11 @@ end
 CoD.MissionObjectiveGroupInternal = InheritFrom( LUI.UIElement )
 CoD.MissionObjectiveGroupInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MissionObjectiveGroupInternal )
 	self.id = "MissionObjectiveGroupInternal"
@@ -83,9 +85,11 @@ CoD.MissionObjectiveGroupInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:completeAnimation()
 				self.background:setRGB( 1, 1, 1 )
 				self.clipFinished( background, {} )
+
 				border:completeAnimation()
 				self.border:setAlpha( 1 )
 				self.clipFinished( border, {} )
@@ -94,9 +98,11 @@ CoD.MissionObjectiveGroupInternal.new = function ( menu, controller )
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:completeAnimation()
 				self.background:setRGB( 1, 1, 1 )
 				self.clipFinished( background, {} )
+
 				border:completeAnimation()
 				self.border:setAlpha( 1 )
 				self.clipFinished( border, {} )
@@ -105,9 +111,11 @@ CoD.MissionObjectiveGroupInternal.new = function ( menu, controller )
 		Done = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:completeAnimation()
 				self.background:setRGB( 0.84, 0.84, 0.84 )
 				self.clipFinished( background, {} )
+
 				border:completeAnimation()
 				self.border:setAlpha( 0 )
 				self.clipFinished( border, {} )
@@ -115,6 +123,7 @@ CoD.MissionObjectiveGroupInternal.new = function ( menu, controller )
 		}
 	}
 	objectivesList.id = "objectivesList"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.objectivesList:close()
 		element.border:close()

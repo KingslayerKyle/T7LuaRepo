@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.onOffImage" )
 CoD.ItemWeaponLevel = InheritFrom( LUI.UIElement )
 CoD.ItemWeaponLevel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ItemWeaponLevel )
 	self.id = "ItemWeaponLevel"
@@ -109,18 +111,23 @@ CoD.ItemWeaponLevel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				weaponLevel:completeAnimation()
 				self.weaponLevel:setAlpha( 0 )
 				self.clipFinished( weaponLevel, {} )
+
 				levelLabel:completeAnimation()
 				self.levelLabel:setAlpha( 0 )
 				self.clipFinished( levelLabel, {} )
+
 				prestigeStar1:completeAnimation()
 				self.prestigeStar1:setAlpha( 0 )
 				self.clipFinished( prestigeStar1, {} )
+
 				prestigeStar2:completeAnimation()
 				self.prestigeStar2:setAlpha( 0 )
 				self.clipFinished( prestigeStar2, {} )
@@ -129,22 +136,27 @@ CoD.ItemWeaponLevel.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( 0.97, 0.93, 0.07 )
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
+
 				weaponLevel:completeAnimation()
 				self.weaponLevel:setRGB( 0, 0, 0 )
 				self.weaponLevel:setAlpha( 1 )
 				self.clipFinished( weaponLevel, {} )
+
 				levelLabel:completeAnimation()
 				self.levelLabel:setRGB( 0.97, 0.93, 0.07 )
 				self.levelLabel:setAlpha( 1 )
 				self.clipFinished( levelLabel, {} )
+
 				prestigeStar1:completeAnimation()
 				self.prestigeStar1:setRGB( 0.97, 0.93, 0.07 )
 				self.prestigeStar1:setAlpha( 1 )
 				self.clipFinished( prestigeStar1, {} )
+
 				prestigeStar2:completeAnimation()
 				self.prestigeStar2:setRGB( 0.97, 0.93, 0.07 )
 				self.prestigeStar2:setAlpha( 1 )
@@ -154,22 +166,27 @@ CoD.ItemWeaponLevel.new = function ( menu, controller )
 		DoubleWeaponXP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( 0.31, 0.13, 0.47 )
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
+
 				weaponLevel:completeAnimation()
 				self.weaponLevel:setRGB( 1, 1, 1 )
 				self.weaponLevel:setAlpha( 1 )
 				self.clipFinished( weaponLevel, {} )
+
 				levelLabel:completeAnimation()
 				self.levelLabel:setRGB( 0.59, 0.36, 0.89 )
 				self.levelLabel:setAlpha( 1 )
 				self.clipFinished( levelLabel, {} )
+
 				prestigeStar1:completeAnimation()
 				self.prestigeStar1:setRGB( 0.59, 0.36, 0.89 )
 				self.prestigeStar1:setAlpha( 1 )
 				self.clipFinished( prestigeStar1, {} )
+
 				prestigeStar2:completeAnimation()
 				self.prestigeStar2:setRGB( 0.59, 0.36, 0.89 )
 				self.prestigeStar2:setAlpha( 1 )
@@ -177,6 +194,7 @@ CoD.ItemWeaponLevel.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DoubleWeaponXP",
@@ -199,6 +217,7 @@ CoD.ItemWeaponLevel.new = function ( menu, controller )
 			modelName = "itemIndex"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.prestigeStar1:close()
 		element.prestigeStar2:close()

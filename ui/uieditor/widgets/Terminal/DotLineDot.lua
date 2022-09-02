@@ -18,6 +18,7 @@ CoD.DotLineDot.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DotLineDot )
 	self.id = "DotLineDot"
@@ -50,34 +51,43 @@ CoD.DotLineDot.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Close_Nav = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Bookmark_Nav = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Closed_Nav = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Bookmark_Nav = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Bookmark_Nav = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Closed_Nav = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

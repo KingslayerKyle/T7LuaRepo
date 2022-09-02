@@ -38,9 +38,11 @@ end, true )
 CoD.KillcamHeader = InheritFrom( LUI.UIElement )
 CoD.KillcamHeader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.KillcamHeader )
 	self.id = "KillcamHeader"
@@ -100,13 +102,17 @@ CoD.KillcamHeader.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				KillcamWidgetTitle0:completeAnimation()
+
 				KillcamWidgetTitle0.KillcamText0:completeAnimation()
 				self.KillcamWidgetTitle0.KillcamText0:setText( Engine.Localize( "MP_KILLCAM_CAPS" ) )
 				self.clipFinished( KillcamWidgetTitle0, {} )
+
 				KillcamPerks:completeAnimation()
 				self.KillcamPerks:setAlpha( 0 )
 				self.clipFinished( KillcamPerks, {} )
+
 				KillcamKilledBy:completeAnimation()
 				self.KillcamKilledBy:setAlpha( 0 )
 				self.clipFinished( KillcamKilledBy, {} )
@@ -115,13 +121,17 @@ CoD.KillcamHeader.new = function ( menu, controller )
 		Killcam = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				KillcamWidgetTitle0:completeAnimation()
+
 				KillcamWidgetTitle0.KillcamText0:completeAnimation()
 				self.KillcamWidgetTitle0.KillcamText0:setText( Engine.Localize( "MP_KILLCAM_CAPS" ) )
 				self.clipFinished( KillcamWidgetTitle0, {} )
+
 				KillcamPerks:completeAnimation()
 				self.KillcamPerks:setAlpha( 1 )
 				self.clipFinished( KillcamPerks, {} )
+
 				KillcamKilledBy:completeAnimation()
 				self.KillcamKilledBy:setAlpha( 1 )
 				self.clipFinished( KillcamKilledBy, {} )
@@ -130,13 +140,17 @@ CoD.KillcamHeader.new = function ( menu, controller )
 		FinalKillcam = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				KillcamWidgetTitle0:completeAnimation()
+
 				KillcamWidgetTitle0.KillcamText0:completeAnimation()
 				self.KillcamWidgetTitle0.KillcamText0:setText( Engine.Localize( "MP_FINAL_KILLCAM_CAPS" ) )
 				self.clipFinished( KillcamWidgetTitle0, {} )
+
 				KillcamPerks:completeAnimation()
 				self.KillcamPerks:setAlpha( 1 )
 				self.clipFinished( KillcamPerks, {} )
+
 				KillcamKilledBy:completeAnimation()
 				self.KillcamKilledBy:setAlpha( 1 )
 				self.clipFinished( KillcamKilledBy, {} )
@@ -145,13 +159,17 @@ CoD.KillcamHeader.new = function ( menu, controller )
 		RoundEndingKillcam = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				KillcamWidgetTitle0:completeAnimation()
+
 				KillcamWidgetTitle0.KillcamText0:completeAnimation()
 				self.KillcamWidgetTitle0.KillcamText0:setText( Engine.Localize( "MP_ROUND_END_KILLCAM" ) )
 				self.clipFinished( KillcamWidgetTitle0, {} )
+
 				KillcamPerks:completeAnimation()
 				self.KillcamPerks:setAlpha( 1 )
 				self.clipFinished( KillcamPerks, {} )
+
 				KillcamKilledBy:completeAnimation()
 				self.KillcamKilledBy:setAlpha( 1 )
 				self.clipFinished( KillcamKilledBy, {} )
@@ -160,19 +178,24 @@ CoD.KillcamHeader.new = function ( menu, controller )
 		NemesisKillcam = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				KillcamWidgetTitle0:completeAnimation()
+
 				KillcamWidgetTitle0.KillcamText0:completeAnimation()
 				self.KillcamWidgetTitle0.KillcamText0:setText( Engine.Localize( "MP_NEMESIS_KILLCAM_CAPS" ) )
 				self.clipFinished( KillcamWidgetTitle0, {} )
+
 				KillcamPerks:completeAnimation()
 				self.KillcamPerks:setAlpha( 1 )
 				self.clipFinished( KillcamPerks, {} )
+
 				KillcamKilledBy:completeAnimation()
 				self.KillcamKilledBy:setAlpha( 1 )
 				self.clipFinished( KillcamKilledBy, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Killcam",
@@ -239,6 +262,7 @@ CoD.KillcamHeader.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_ROUND_END_KILLCAM
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsElementInState( element, "Killcam" ) then
 			PlayClipOnElement( self, {
@@ -255,6 +279,7 @@ CoD.KillcamHeader.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.KillcamWidgetVignetteTop0:close()
 		element.KillcamWidgetTitle0:close()

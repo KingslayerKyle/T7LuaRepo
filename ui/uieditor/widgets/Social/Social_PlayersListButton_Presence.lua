@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.horizontalScrollingTextBox_20pt" )
 CoD.Social_PlayersListButton_Presence = InheritFrom( LUI.UIElement )
 CoD.Social_PlayersListButton_Presence.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_PlayersListButton_Presence )
 	self.id = "Social_PlayersListButton_Presence"
@@ -55,12 +57,15 @@ CoD.Social_PlayersListButton_Presence.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				platformPresenceScroller:completeAnimation()
 				self.platformPresenceScroller:setAlpha( 0 )
 				self.clipFinished( platformPresenceScroller, {} )
+
 				titlePresenceScroller:completeAnimation()
 				self.titlePresenceScroller:setAlpha( 1 )
 				self.clipFinished( titlePresenceScroller, {} )
+
 				titlePresenceIcon:completeAnimation()
 				self.titlePresenceIcon:setAlpha( 1 )
 				self.clipFinished( titlePresenceIcon, {} )
@@ -69,18 +74,22 @@ CoD.Social_PlayersListButton_Presence.new = function ( menu, controller )
 		ShowPlatformPresence = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				platformPresenceScroller:completeAnimation()
 				self.platformPresenceScroller:setAlpha( 1 )
 				self.clipFinished( platformPresenceScroller, {} )
+
 				titlePresenceScroller:completeAnimation()
 				self.titlePresenceScroller:setAlpha( 0 )
 				self.clipFinished( titlePresenceScroller, {} )
+
 				titlePresenceIcon:completeAnimation()
 				self.titlePresenceIcon:setAlpha( 0 )
 				self.clipFinished( titlePresenceIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ShowPlatformPresence",
@@ -97,6 +106,7 @@ CoD.Social_PlayersListButton_Presence.new = function ( menu, controller )
 			modelName = "activity"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.platformPresenceScroller:close()
 		element.titlePresenceScroller:close()

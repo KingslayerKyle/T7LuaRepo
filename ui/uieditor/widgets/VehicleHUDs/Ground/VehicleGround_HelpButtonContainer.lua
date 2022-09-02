@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Ground.VehicleGround_HelpButton" )
 CoD.VehicleGround_HelpButtonContainer = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_HelpButtonContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VehicleGround_HelpButtonContainer )
 	self.id = "VehicleGround_HelpButtonContainer"
@@ -143,53 +145,64 @@ CoD.VehicleGround_HelpButtonContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				ArrowT:completeAnimation()
 				self.ArrowT:setLeftRight( true, false, 31, 55 )
 				self.ArrowT:setTopBottom( true, false, 35, 59 )
 				self.ArrowT:setAlpha( 0 )
 				self.clipFinished( ArrowT, {} )
+
 				ArrowL:completeAnimation()
 				self.ArrowL:setLeftRight( true, false, 30, 54 )
 				self.ArrowL:setTopBottom( true, false, 37, 61 )
 				self.ArrowL:setAlpha( 0 )
 				self.clipFinished( ArrowL, {} )
+
 				ArrowR:completeAnimation()
 				self.ArrowR:setLeftRight( true, false, 30, 54 )
 				self.ArrowR:setTopBottom( true, false, 36, 60 )
 				self.ArrowR:setAlpha( 0 )
 				self.clipFinished( ArrowR, {} )
+
 				Hex:completeAnimation()
 				self.Hex:setAlpha( 0 )
 				self.clipFinished( Hex, {} )
+
 				BracketB:completeAnimation()
 				self.BracketB:setLeftRight( true, false, 19, 67 )
 				self.BracketB:setTopBottom( true, false, 37, 61 )
 				self.BracketB:setAlpha( 0 )
 				self.clipFinished( BracketB, {} )
+
 				BracketT:completeAnimation()
 				self.BracketT:setLeftRight( true, false, 19, 67 )
 				self.BracketT:setTopBottom( true, false, 42, 58 )
 				self.BracketT:setAlpha( 0 )
 				self.clipFinished( BracketT, {} )
+
 				Pixel2:completeAnimation()
 				self.Pixel2:setLeftRight( true, false, 55, 71 )
 				self.Pixel2:setTopBottom( true, false, 62, 78 )
 				self.Pixel2:setAlpha( 0 )
 				self.clipFinished( Pixel2, {} )
+
 				Pixel1:completeAnimation()
 				self.Pixel1:setLeftRight( true, false, 17, 33 )
 				self.Pixel1:setTopBottom( true, false, 62, 78 )
 				self.Pixel1:setAlpha( 0 )
 				self.clipFinished( Pixel1, {} )
+
 				HelpButtonShader:completeAnimation()
 				self.HelpButtonShader:setAlpha( 0 )
 				self.clipFinished( HelpButtonShader, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0 )
 				self.clipFinished( text, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 10 )
+
 				local ArrowTFrame2 = function ( ArrowT, event )
 					local ArrowTFrame3 = function ( ArrowT, event )
 						if not event.interrupted then
@@ -473,53 +486,64 @@ CoD.VehicleGround_HelpButtonContainer.new = function ( menu, controller )
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				ArrowT:completeAnimation()
 				self.ArrowT:setLeftRight( true, false, 31, 55 )
 				self.ArrowT:setTopBottom( true, false, 0, 24 )
 				self.ArrowT:setAlpha( 0.4 )
 				self.clipFinished( ArrowT, {} )
+
 				ArrowL:completeAnimation()
 				self.ArrowL:setLeftRight( true, false, 0, 24 )
 				self.ArrowL:setTopBottom( true, false, 52, 76 )
 				self.ArrowL:setAlpha( 0.4 )
 				self.clipFinished( ArrowL, {} )
+
 				ArrowR:completeAnimation()
 				self.ArrowR:setLeftRight( true, false, 62, 86 )
 				self.ArrowR:setTopBottom( true, false, 52, 76 )
 				self.ArrowR:setAlpha( 0.4 )
 				self.clipFinished( ArrowR, {} )
+
 				Hex:completeAnimation()
 				self.Hex:setAlpha( 0.4 )
 				self.clipFinished( Hex, {} )
+
 				BracketB:completeAnimation()
 				self.BracketB:setLeftRight( true, false, 19, 67 )
 				self.BracketB:setTopBottom( true, false, 55, 79 )
 				self.BracketB:setAlpha( 0.5 )
 				self.clipFinished( BracketB, {} )
+
 				BracketT:completeAnimation()
 				self.BracketT:setLeftRight( true, false, 19, 67 )
 				self.BracketT:setTopBottom( true, false, 22, 38 )
 				self.BracketT:setAlpha( 0.5 )
 				self.clipFinished( BracketT, {} )
+
 				Pixel2:completeAnimation()
 				self.Pixel2:setLeftRight( true, false, 55, 71 )
 				self.Pixel2:setTopBottom( true, false, 93, 109 )
 				self.Pixel2:setAlpha( 0.2 )
 				self.clipFinished( Pixel2, {} )
+
 				Pixel1:completeAnimation()
 				self.Pixel1:setLeftRight( true, false, 17, 33 )
 				self.Pixel1:setTopBottom( true, false, 93, 109 )
 				self.Pixel1:setAlpha( 0.2 )
 				self.clipFinished( Pixel1, {} )
+
 				HelpButtonShader:completeAnimation()
 				self.HelpButtonShader:setAlpha( 0.9 )
 				self.clipFinished( HelpButtonShader, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0.7 )
 				self.clipFinished( text, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 10 )
+
 				local ArrowTFrame2 = function ( ArrowT, event )
 					if not event.interrupted then
 						ArrowT:beginAnimation( "keyframe", 750, true, true, CoD.TweenType.Back )
@@ -701,6 +725,7 @@ CoD.VehicleGround_HelpButtonContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Active",
@@ -717,6 +742,7 @@ CoD.VehicleGround_HelpButtonContainer.new = function ( menu, controller )
 			modelName = "text"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.HelpButtonShader:close()
 		element.text:close()

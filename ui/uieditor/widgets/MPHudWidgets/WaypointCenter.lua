@@ -4,9 +4,11 @@
 CoD.WaypointCenter = InheritFrom( LUI.UIElement )
 CoD.WaypointCenter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WaypointCenter )
 	self.id = "WaypointCenter"
@@ -25,6 +27,7 @@ CoD.WaypointCenter.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				waypointCenterImage:completeAnimation()
 				self.waypointCenterImage:setLeftRight( true, true, 0, 0 )
 				self.waypointCenterImage:setTopBottom( true, true, 0, 0 )
@@ -35,6 +38,7 @@ CoD.WaypointCenter.new = function ( menu, controller )
 		Pulsing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local waypointCenterImageFrame2 = function ( waypointCenterImage, event )
 					local waypointCenterImageFrame3 = function ( waypointCenterImage, event )
 						if not event.interrupted then
@@ -67,12 +71,14 @@ CoD.WaypointCenter.new = function ( menu, controller )
 				self.waypointCenterImage:setTopBottom( true, true, 0, 0 )
 				self.waypointCenterImage:setAlpha( 1 )
 				waypointCenterImageFrame2( waypointCenterImage, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		PulsingDeposit = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local waypointCenterImageFrame2 = function ( waypointCenterImage, event )
 					local waypointCenterImageFrame3 = function ( waypointCenterImage, event )
 						if not event.interrupted then
@@ -105,6 +111,7 @@ CoD.WaypointCenter.new = function ( menu, controller )
 				self.waypointCenterImage:setTopBottom( true, true, 0, 0 )
 				self.waypointCenterImage:setAlpha( 1 )
 				waypointCenterImageFrame2( waypointCenterImage, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

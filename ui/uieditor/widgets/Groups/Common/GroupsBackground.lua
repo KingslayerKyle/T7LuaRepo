@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Groups.GroupEmblemWidget" )
 CoD.GroupsBackground = InheritFrom( LUI.UIElement )
 CoD.GroupsBackground.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsBackground )
 	self.id = "GroupsBackground"
@@ -133,15 +135,19 @@ CoD.GroupsBackground.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				titleLabel:completeAnimation()
 				self.titleLabel:setAlpha( 1 )
 				self.clipFinished( titleLabel, {} )
+
 				GroupName:completeAnimation()
 				self.GroupName:setAlpha( 0 )
 				self.clipFinished( GroupName, {} )
+
 				GroupsHQSubheader:completeAnimation()
 				self.GroupsHQSubheader:setAlpha( 0 )
 				self.clipFinished( GroupsHQSubheader, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 0 )
 				self.clipFinished( GroupEmblemWidget, {} )
@@ -150,21 +156,26 @@ CoD.GroupsBackground.new = function ( menu, controller )
 		SelectedGroup = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				titleLabel:completeAnimation()
 				self.titleLabel:setAlpha( 0 )
 				self.clipFinished( titleLabel, {} )
+
 				GroupName:completeAnimation()
 				self.GroupName:setAlpha( 1 )
 				self.clipFinished( GroupName, {} )
+
 				GroupsHQSubheader:completeAnimation()
 				self.GroupsHQSubheader:setAlpha( 1 )
 				self.clipFinished( GroupsHQSubheader, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 1 )
 				self.clipFinished( GroupEmblemWidget, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TitleDotsWidget:close()
 		element.GroupsHQSubheader:close()

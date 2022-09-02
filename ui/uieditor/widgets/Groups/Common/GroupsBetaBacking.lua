@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BorderBakedSolid" )
 CoD.GroupsBetaBacking = InheritFrom( LUI.UIElement )
 CoD.GroupsBetaBacking.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsBetaBacking )
 	self.id = "GroupsBetaBacking"

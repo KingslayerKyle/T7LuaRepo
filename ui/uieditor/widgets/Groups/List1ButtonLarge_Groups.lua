@@ -11,9 +11,11 @@ require( "ui.uieditor.widgets.CAC.cac_FocusBarContainer" )
 CoD.List1ButtonLarge_Groups = InheritFrom( LUI.UIElement )
 CoD.List1ButtonLarge_Groups.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.List1ButtonLarge_Groups )
 	self.id = "List1ButtonLarge_Groups"
@@ -138,44 +140,57 @@ CoD.List1ButtonLarge_Groups.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setRGB( 1, 0.15, 0 )
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				LabelButton:completeAnimation()
+
 				LabelButton.itemName:completeAnimation()
 				self.LabelButton.itemName:setRGB( 0.82, 0.85, 0.88 )
 				self.clipFinished( LabelButton, {} )
+
 				FocusWhiteT:completeAnimation()
 				self.FocusWhiteT:setAlpha( 0 )
 				self.clipFinished( FocusWhiteT, {} )
+
 				FocusWhiteB:completeAnimation()
 				self.FocusWhiteB:setAlpha( 0 )
 				self.clipFinished( FocusWhiteB, {} )
+
 				DimCoverImage:completeAnimation()
 				self.DimCoverImage:setAlpha( 0 )
 				self.clipFinished( DimCoverImage, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 90, false, false, CoD.TweenType.Linear )
@@ -364,18 +379,22 @@ CoD.List1ButtonLarge_Groups.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 29, false, false, CoD.TweenType.Linear )
@@ -566,25 +585,30 @@ CoD.List1ButtonLarge_Groups.new = function ( menu, controller )
 		WithSelectedIcon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				SelectedIcon:completeAnimation()
 				self.SelectedIcon:setAlpha( 0 )
 				self.clipFinished( SelectedIcon, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setLeftRight( true, true, -12, 7 )
 				self.glitch:setTopBottom( true, false, -8.75, 4.75 )
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setLeftRight( true, true, -8.5, 8.5 )
 				self.glitch2:setTopBottom( false, true, -6, 9 )
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				DimCoverImage:completeAnimation()
 				self.DimCoverImage:setAlpha( 0 )
 				self.clipFinished( DimCoverImage, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local FocusBarTFrame2 = function ( FocusBarT, event )
 					local FocusBarTFrame3 = function ( FocusBarT, event )
 						local FocusBarTFrame4 = function ( FocusBarT, event )
@@ -858,15 +882,18 @@ CoD.List1ButtonLarge_Groups.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 2 )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local FocusBarTFrame2 = function ( FocusBarT, event )
 					local FocusBarTFrame3 = function ( FocusBarT, event )
 						local FocusBarTFrame4 = function ( FocusBarT, event )
@@ -1166,15 +1193,18 @@ CoD.List1ButtonLarge_Groups.new = function ( menu, controller )
 		Header = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				SelectedIcon:completeAnimation()
 				self.SelectedIcon:setAlpha( 0 )
 				self.clipFinished( SelectedIcon, {} )
+
 				DimCoverImage:completeAnimation()
 				self.DimCoverImage:setAlpha( 0 )
 				self.clipFinished( DimCoverImage, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "WithSelectedIcon",
@@ -1189,6 +1219,7 @@ CoD.List1ButtonLarge_Groups.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveDiag:close()
 		element.BoxButtonLrgInactive:close()

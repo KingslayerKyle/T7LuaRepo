@@ -4,9 +4,11 @@
 CoD.Notification_Medals_Backing_9Slice = InheritFrom( LUI.UIElement )
 CoD.Notification_Medals_Backing_9Slice.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Notification_Medals_Backing_9Slice )
 	self.id = "Notification_Medals_Backing_9Slice"
@@ -39,20 +41,25 @@ CoD.Notification_Medals_Backing_9Slice.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Combined = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",

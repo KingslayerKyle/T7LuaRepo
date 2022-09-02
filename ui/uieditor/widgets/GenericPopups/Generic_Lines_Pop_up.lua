@@ -4,9 +4,11 @@
 CoD.Generic_Lines_Pop_up = InheritFrom( LUI.UIElement )
 CoD.Generic_Lines_Pop_up.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.Generic_Lines_Pop_up )
 	self.id = "Generic_Lines_Pop_up"
@@ -72,16 +74,19 @@ CoD.Generic_Lines_Pop_up.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Waiting = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Processing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

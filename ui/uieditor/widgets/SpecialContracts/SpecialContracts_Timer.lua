@@ -4,9 +4,11 @@
 CoD.SpecialContracts_Timer = InheritFrom( LUI.UIElement )
 CoD.SpecialContracts_Timer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpecialContracts_Timer )
 	self.id = "SpecialContracts_Timer"
@@ -58,9 +60,11 @@ CoD.SpecialContracts_Timer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TriplePlayTimer:completeAnimation()
 				self.TriplePlayTimer:setAlpha( 0 )
 				self.clipFinished( TriplePlayTimer, {} )
+
 				GrandSlamTimer:completeAnimation()
 				self.GrandSlamTimer:setAlpha( 0 )
 				self.clipFinished( GrandSlamTimer, {} )
@@ -69,9 +73,11 @@ CoD.SpecialContracts_Timer.new = function ( menu, controller )
 		TriplePlay = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TriplePlayTimer:completeAnimation()
 				self.TriplePlayTimer:setAlpha( 1 )
 				self.clipFinished( TriplePlayTimer, {} )
+
 				GrandSlamTimer:completeAnimation()
 				self.GrandSlamTimer:setAlpha( 0 )
 				self.clipFinished( GrandSlamTimer, {} )
@@ -80,9 +86,11 @@ CoD.SpecialContracts_Timer.new = function ( menu, controller )
 		GrandSlam = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TriplePlayTimer:completeAnimation()
 				self.TriplePlayTimer:setAlpha( 0 )
 				self.clipFinished( TriplePlayTimer, {} )
+
 				GrandSlamTimer:completeAnimation()
 				self.GrandSlamTimer:setAlpha( 1 )
 				self.clipFinished( GrandSlamTimer, {} )

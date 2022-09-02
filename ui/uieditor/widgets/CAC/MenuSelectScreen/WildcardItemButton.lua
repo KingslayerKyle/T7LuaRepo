@@ -15,9 +15,11 @@ require( "ui.uieditor.widgets.CAC.RestrictedItemWarning" )
 CoD.WildcardItemButton = InheritFrom( LUI.UIElement )
 CoD.WildcardItemButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WildcardItemButton )
 	self.id = "WildcardItemButton"
@@ -268,57 +270,73 @@ CoD.WildcardItemButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 0 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 0 )
 				self.clipFinished( alertIcon, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 0 )
 				self.clipFinished( tokenUnlock, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setLeftRight( false, false, -43.5, 43.5 )
 				self.itemImage:setTopBottom( false, false, -58, 58 )
 				self.clipFinished( itemImage, {} )
+
 				infoText:completeAnimation()
 				self.infoText:setLeftRight( false, false, -120, 120 )
 				self.infoText:setTopBottom( false, true, 15, 127 )
 				self.infoText:setAlpha( 1 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0.65 )
 				self.clipFinished( hintArrow, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
@@ -327,42 +345,54 @@ CoD.WildcardItemButton.new = function ( menu, controller )
 		ContextualWildcardEquipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 0 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 1 )
 				self.clipFinished( equippedIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 1 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 1 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 1 )
 				self.clipFinished( equippedIcon, {} )
@@ -371,45 +401,58 @@ CoD.WildcardItemButton.new = function ( menu, controller )
 		ContextualWildcardLocked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 0 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 1 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 1 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
@@ -418,48 +461,62 @@ CoD.WildcardItemButton.new = function ( menu, controller )
 		ContextualWildcardNotAvailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.5 )
 				self.clipFinished( itemImage, {} )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 0 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0.02 )
 				self.clipFinished( FocusBarT, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 1 )
 				self.clipFinished( tokenUnlock, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.5 )
 				self.clipFinished( itemImage, {} )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 1 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 1 )
 				self.clipFinished( hintArrow, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
@@ -468,42 +525,54 @@ CoD.WildcardItemButton.new = function ( menu, controller )
 		ContextualWildcard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 0 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 1 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 1 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
@@ -512,44 +581,56 @@ CoD.WildcardItemButton.new = function ( menu, controller )
 		WildcardOverCapacityEquipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 0 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 1 )
 				self.clipFinished( equippedIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 0 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setLeftRight( false, false, -5, 5 )
 				self.hintArrow:setTopBottom( false, true, 0, 10 )
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 1 )
 				self.clipFinished( equippedIcon, {} )
@@ -558,44 +639,56 @@ CoD.WildcardItemButton.new = function ( menu, controller )
 		WildcardOverCapacity = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 0 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setLeftRight( false, false, -5, 5 )
 				self.hintArrow:setTopBottom( false, true, 0, 10 )
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 1 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 1 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
@@ -604,52 +697,66 @@ CoD.WildcardItemButton.new = function ( menu, controller )
 		Equipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 0 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0.02 )
 				self.clipFinished( FocusBarT, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 1 )
 				self.clipFinished( equippedIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 0 )
 				self.clipFinished( tokenUnlock, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				infoText:completeAnimation()
 				self.infoText:setLeftRight( false, false, -120, 120 )
 				self.infoText:setTopBottom( false, true, 15, 127 )
 				self.infoText:setAlpha( 1 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setLeftRight( false, false, -10, 10 )
 				self.hintArrow:setTopBottom( false, true, 0, 20 )
 				self.hintArrow:setAlpha( 0.8 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 1 )
 				self.clipFinished( equippedIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 0 )
 				self.clipFinished( tokenUnlock, {} )
@@ -658,46 +765,58 @@ CoD.WildcardItemButton.new = function ( menu, controller )
 		New = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 0 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setLeftRight( false, false, -10, 10 )
 				self.hintArrow:setTopBottom( false, true, 0, 20 )
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 1 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0.02 )
 				self.clipFinished( FocusBarT, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 1 )
 				self.clipFinished( tokenUnlock, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 1 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setLeftRight( false, false, -10, 10 )
 				self.hintArrow:setTopBottom( false, true, 0, 20 )
 				self.hintArrow:setAlpha( 0.8 )
 				self.clipFinished( hintArrow, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 1 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
@@ -706,42 +825,54 @@ CoD.WildcardItemButton.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 0 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0.02 )
 				self.clipFinished( FocusBarT, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 1 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 1 )
 				self.clipFinished( hintArrow, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
@@ -750,51 +881,66 @@ CoD.WildcardItemButton.new = function ( menu, controller )
 		NotAvailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.5 )
 				self.clipFinished( itemImage, {} )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 0 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0.02 )
 				self.clipFinished( FocusBarT, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 1 )
 				self.clipFinished( tokenUnlock, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.5 )
 				self.clipFinished( itemImage, {} )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 1 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 1 )
 				self.clipFinished( hintArrow, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
@@ -803,64 +949,82 @@ CoD.WildcardItemButton.new = function ( menu, controller )
 		MutuallyExclusive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 0 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 1 )
 				self.clipFinished( alertIcon, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 0 )
 				self.clipFinished( tokenUnlock, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setLeftRight( false, false, -43.5, 43.5 )
 				self.itemImage:setTopBottom( false, false, -58, 58 )
 				self.clipFinished( itemImage, {} )
+
 				infoText:completeAnimation()
 				self.infoText:setAlpha( 1 )
 				self.clipFinished( infoText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0.65 )
 				self.clipFinished( hintArrow, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 1 )
 				self.clipFinished( alertIcon, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ContextualWildcardEquipped",
@@ -952,6 +1116,7 @@ CoD.WildcardItemButton.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.itemImage:close()
 		element.StartMenuframenoBG0:close()

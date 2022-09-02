@@ -4,9 +4,11 @@
 CoD.LobbyMemberBackingMask = InheritFrom( LUI.UIElement )
 CoD.LobbyMemberBackingMask.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.LobbyMemberBackingMask )
 	self.id = "LobbyMemberBackingMask"

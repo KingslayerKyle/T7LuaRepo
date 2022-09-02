@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Reticles.ChargeShot.ChargeShot_OuterReticle" )
 CoD.ChargerShot_4corner_Bracket = InheritFrom( LUI.UIElement )
 CoD.ChargerShot_4corner_Bracket.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChargerShot_4corner_Bracket )
 	self.id = "ChargerShot_4corner_Bracket"
@@ -48,18 +50,22 @@ CoD.ChargerShot_4corner_Bracket.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ChargeShotOuterReticle0:completeAnimation()
 				self.ChargeShotOuterReticle0:setAlpha( 1 )
 				self.clipFinished( ChargeShotOuterReticle0, {} )
+
 				ChargeShotOuterReticle1:completeAnimation()
 				self.ChargeShotOuterReticle1:setAlpha( 1 )
 				self.clipFinished( ChargeShotOuterReticle1, {} )
+
 				ChargeShotOuterReticle3:completeAnimation()
 				self.ChargeShotOuterReticle3:setAlpha( 1 )
 				self.clipFinished( ChargeShotOuterReticle3, {} )
 			end,
 			Fire = function ()
 				self:setupElementClipCounter( 4 )
+
 				local ChargeShotOuterReticle0Frame2 = function ( ChargeShotOuterReticle0, event )
 					if not event.interrupted then
 						ChargeShotOuterReticle0:beginAnimation( "keyframe", 400, false, false, CoD.TweenType.Linear )
@@ -109,9 +115,11 @@ CoD.ChargerShot_4corner_Bracket.new = function ( menu, controller )
 			end,
 			Cancel = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ChargeShotOuterReticle0:close()
 		element.ChargeShotOuterReticle1:close()

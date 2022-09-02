@@ -4,9 +4,11 @@
 CoD.Kicker_Background = InheritFrom( LUI.UIElement )
 CoD.Kicker_Background.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Kicker_Background )
 	self.id = "Kicker_Background"
@@ -25,6 +27,7 @@ CoD.Kicker_Background.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

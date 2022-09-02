@@ -49,9 +49,11 @@ end
 CoD.VariantOptionsButton = InheritFrom( LUI.UIElement )
 CoD.VariantOptionsButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VariantOptionsButton )
 	self.id = "VariantOptionsButton"
@@ -138,18 +140,23 @@ CoD.VariantOptionsButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Whitebox:completeAnimation()
 				self.Whitebox:setAlpha( 0 )
 				self.clipFinished( Whitebox, {} )
+
 				fullBacking:completeAnimation()
 				self.fullBacking:setAlpha( 0 )
 				self.clipFinished( fullBacking, {} )
+
 				imageIcon:completeAnimation()
 				self.imageIcon:setAlpha( 0 )
 				self.clipFinished( imageIcon, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
@@ -158,47 +165,57 @@ CoD.VariantOptionsButton.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Whitebox:completeAnimation()
 				self.Whitebox:setAlpha( 0 )
 				self.clipFinished( Whitebox, {} )
+
 				fullBacking:completeAnimation()
 				self.fullBacking:setAlpha( 0 )
 				self.fullBacking:setScale( 1 )
 				self.clipFinished( fullBacking, {} )
+
 				imageIcon:completeAnimation()
 				self.imageIcon:setRGB( 1, 1, 1 )
 				self.imageIcon:setAlpha( 0.75 )
 				self.imageIcon:setScale( 1 )
 				self.clipFinished( imageIcon, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 4 )
+
 				fullBacking:completeAnimation()
 				self.fullBacking:setAlpha( 0.8 )
 				self.fullBacking:setScale( 1.2 )
 				self.clipFinished( fullBacking, {} )
+
 				imageIcon:completeAnimation()
 				self.imageIcon:setRGB( 0.78, 0.78, 0.78 )
 				self.imageIcon:setAlpha( 1 )
 				self.imageIcon:setScale( 1.2 )
 				self.clipFinished( imageIcon, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setLeftRight( true, false, -91, 22 )
 				self.itemHintText:setTopBottom( false, true, 3, 33 )
 				self.itemHintText:setAlpha( 1 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
 			end,
 			GainOver = function ()
 				self:setupElementClipCounter( 2 )
+
 				local fullBackingFrame2 = function ( fullBacking, event )
 					if not event.interrupted then
 						fullBacking:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -236,6 +253,7 @@ CoD.VariantOptionsButton.new = function ( menu, controller )
 			end,
 			LoseOver = function ()
 				self:setupElementClipCounter( 2 )
+
 				local fullBackingFrame2 = function ( fullBacking, event )
 					if not event.interrupted then
 						fullBacking:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -275,6 +293,7 @@ CoD.VariantOptionsButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -301,6 +320,7 @@ CoD.VariantOptionsButton.new = function ( menu, controller )
 	else
 		self:registerEventHandler( "input_source_changed", LUI.UIElement.updateState )
 	end
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.itemHintText:close()
 		element.hintArrow:close()

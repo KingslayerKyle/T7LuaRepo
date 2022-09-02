@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Buttons.vhud_button_backing_lines" )
 CoD.vhud_ms_ButtonWidget = InheritFrom( LUI.UIElement )
 CoD.vhud_ms_ButtonWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ms_ButtonWidget )
 	self.id = "vhud_ms_ButtonWidget"
@@ -103,21 +105,27 @@ CoD.vhud_ms_ButtonWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				vhudbuttonHexBlur:completeAnimation()
 				self.vhudbuttonHexBlur:setAlpha( 0 )
 				self.clipFinished( vhudbuttonHexBlur, {} )
+
 				backinglines:completeAnimation()
 				self.backinglines:setAlpha( 1 )
 				self.clipFinished( backinglines, {} )
+
 				prompt:completeAnimation()
 				self.prompt:setAlpha( 1 )
 				self.clipFinished( prompt, {} )
+
 				button0:completeAnimation()
 				self.button0:setAlpha( 0.1 )
 				self.clipFinished( button0, {} )
+
 				button1:completeAnimation()
 				self.button1:setAlpha( 0.15 )
 				self.clipFinished( button1, {} )
+
 				button:completeAnimation()
 				self.button:setAlpha( 0.65 )
 				self.clipFinished( button, {} )
@@ -126,21 +134,27 @@ CoD.vhud_ms_ButtonWidget.new = function ( menu, controller )
 		NotInUse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				vhudbuttonHexBlur:completeAnimation()
 				self.vhudbuttonHexBlur:setAlpha( 0 )
 				self.clipFinished( vhudbuttonHexBlur, {} )
+
 				backinglines:completeAnimation()
 				self.backinglines:setAlpha( 0 )
 				self.clipFinished( backinglines, {} )
+
 				prompt:completeAnimation()
 				self.prompt:setAlpha( 0 )
 				self.clipFinished( prompt, {} )
+
 				button0:completeAnimation()
 				self.button0:setAlpha( 0 )
 				self.clipFinished( button0, {} )
+
 				button1:completeAnimation()
 				self.button1:setAlpha( 0 )
 				self.clipFinished( button1, {} )
+
 				button:completeAnimation()
 				self.button:setAlpha( 0 )
 				self.clipFinished( button, {} )
@@ -149,18 +163,22 @@ CoD.vhud_ms_ButtonWidget.new = function ( menu, controller )
 		hideButtonImage = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				button0:completeAnimation()
 				self.button0:setAlpha( 0 )
 				self.clipFinished( button0, {} )
+
 				button1:completeAnimation()
 				self.button1:setAlpha( 0 )
 				self.clipFinished( button1, {} )
+
 				button:completeAnimation()
 				self.button:setAlpha( 0 )
 				self.clipFinished( button, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NotInUse",
@@ -191,6 +209,7 @@ CoD.vhud_ms_ButtonWidget.new = function ( menu, controller )
 			modelName = "bind"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vhudbuttonHexBlur:close()
 		element.backinglines:close()

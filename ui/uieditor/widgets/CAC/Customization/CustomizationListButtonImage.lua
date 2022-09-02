@@ -4,9 +4,11 @@
 CoD.CustomizationListButtonImage = InheritFrom( LUI.UIElement )
 CoD.CustomizationListButtonImage.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CustomizationListButtonImage )
 	self.id = "CustomizationListButtonImage"
@@ -44,9 +46,11 @@ CoD.CustomizationListButtonImage.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				image:completeAnimation()
 				self.image:setAlpha( 1 )
 				self.clipFinished( image, {} )
+
 				paintjobExtraCamRender:completeAnimation()
 				self.paintjobExtraCamRender:setAlpha( 0 )
 				self.clipFinished( paintjobExtraCamRender, {} )
@@ -55,15 +59,18 @@ CoD.CustomizationListButtonImage.new = function ( menu, controller )
 		PaintJob = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				image:completeAnimation()
 				self.image:setAlpha( 0 )
 				self.clipFinished( image, {} )
+
 				paintjobExtraCamRender:completeAnimation()
 				self.paintjobExtraCamRender:setAlpha( 1 )
 				self.clipFinished( paintjobExtraCamRender, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.image:close()
 		element.paintjobExtraCamRender:close()

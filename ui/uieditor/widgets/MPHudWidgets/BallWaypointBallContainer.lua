@@ -144,9 +144,11 @@ end
 CoD.BallWaypointBallContainer = InheritFrom( LUI.UIElement )
 CoD.BallWaypointBallContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BallWaypointBallContainer )
 	self.id = "BallWaypointBallContainer"

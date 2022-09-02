@@ -4,9 +4,11 @@
 CoD.BM_CryptokeyCounterIcon = InheritFrom( LUI.UIElement )
 CoD.BM_CryptokeyCounterIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_CryptokeyCounterIcon )
 	self.id = "BM_CryptokeyCounterIcon"
@@ -41,18 +43,22 @@ CoD.BM_CryptokeyCounterIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				ring:completeAnimation()
 				self.ring:setAlpha( 0 )
 				self.clipFinished( ring, {} )
+
 				cryptokey:completeAnimation()
 				self.cryptokey:setAlpha( 1 )
 				self.clipFinished( cryptokey, {} )
 			end,
 			Keybonus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local GlowFrame2 = function ( Glow, event )
 					local GlowFrame3 = function ( Glow, event )
 						local GlowFrame4 = function ( Glow, event )
@@ -174,6 +180,7 @@ CoD.BM_CryptokeyCounterIcon.new = function ( menu, controller )
 				self.ring:setAlpha( 0 )
 				self.ring:setScale( 1 )
 				ringFrame2( ring, {} )
+
 				cryptokey:completeAnimation()
 				self.cryptokey:setAlpha( 1 )
 				self.clipFinished( cryptokey, {} )

@@ -4,9 +4,11 @@
 CoD.GroupPrimaryWidget = InheritFrom( LUI.UIElement )
 CoD.GroupPrimaryWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupPrimaryWidget )
 	self.id = "GroupPrimaryWidget"
@@ -36,9 +38,11 @@ CoD.GroupPrimaryWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PrimaryIcon:completeAnimation()
 				self.PrimaryIcon:setAlpha( 0 )
 				self.clipFinished( PrimaryIcon, {} )
+
 				PrimaryLabel:completeAnimation()
 				self.PrimaryLabel:setAlpha( 0 )
 				self.clipFinished( PrimaryLabel, {} )
@@ -47,9 +51,11 @@ CoD.GroupPrimaryWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PrimaryIcon:completeAnimation()
 				self.PrimaryIcon:setAlpha( 1 )
 				self.clipFinished( PrimaryIcon, {} )
+
 				PrimaryLabel:completeAnimation()
 				self.PrimaryLabel:setAlpha( 1 )
 				self.clipFinished( PrimaryLabel, {} )

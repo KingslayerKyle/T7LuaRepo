@@ -4,9 +4,11 @@
 CoD.Prematch_WaitingForPlayers = InheritFrom( LUI.UIElement )
 CoD.Prematch_WaitingForPlayers.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Prematch_WaitingForPlayers )
 	self.id = "Prematch_WaitingForPlayers"
@@ -26,6 +28,7 @@ CoD.Prematch_WaitingForPlayers.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local waitingForPlayersLabelFrame2 = function ( waitingForPlayersLabel, event )
 					local waitingForPlayersLabelFrame3 = function ( waitingForPlayersLabel, event )
 						if not event.interrupted then
@@ -52,6 +55,7 @@ CoD.Prematch_WaitingForPlayers.new = function ( menu, controller )
 				waitingForPlayersLabel:completeAnimation()
 				self.waitingForPlayersLabel:setAlpha( 1 )
 				waitingForPlayersLabelFrame2( waitingForPlayersLabel, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

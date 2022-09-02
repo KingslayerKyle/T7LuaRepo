@@ -4,9 +4,11 @@
 CoD.vhud_agr_ReticleOutsideDotsUR = InheritFrom( LUI.UIElement )
 CoD.vhud_agr_ReticleOutsideDotsUR.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.vhud_agr_ReticleOutsideDotsUR )
 	self.id = "vhud_agr_ReticleOutsideDotsUR"

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ScoreInfo.ScoreInfo_PanelScale" )
 CoD.BombTimerWidgetInternal = InheritFrom( LUI.UIElement )
 CoD.BombTimerWidgetInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BombTimerWidgetInternal )
 	self.id = "BombTimerWidgetInternal"
@@ -91,27 +93,33 @@ CoD.BombTimerWidgetInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Attacking = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BombTimerBackground:completeAnimation()
 				self.BombTimerBackground:setLeftRight( true, false, 27, 73 )
 				self.BombTimerBackground:setTopBottom( true, false, 0, 24 )
 				self.clipFinished( BombTimerBackground, {} )
+
 				backgroundFriendly:completeAnimation()
 				self.backgroundFriendly:setLeftRight( true, false, 0, 27 )
 				self.backgroundFriendly:setTopBottom( true, false, 0, 24 )
 				self.backgroundFriendly:setAlpha( 1 )
 				self.clipFinished( backgroundFriendly, {} )
+
 				backgroundEnemy:completeAnimation()
 				self.backgroundEnemy:setAlpha( 0 )
 				self.clipFinished( backgroundEnemy, {} )
+
 				BombTimer:completeAnimation()
 				self.BombTimer:setLeftRight( true, false, 33, 73 )
 				self.BombTimer:setTopBottom( true, false, 0, 24 )
 				self.clipFinished( BombTimer, {} )
+
 				AOrBText:completeAnimation()
 				self.AOrBText:setLeftRight( true, false, 0, 27 )
 				self.AOrBText:setTopBottom( true, false, 0, 24 )
@@ -121,22 +129,27 @@ CoD.BombTimerWidgetInternal.new = function ( menu, controller )
 		Defending = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BombTimerBackground:completeAnimation()
 				self.BombTimerBackground:setLeftRight( true, false, 27, 73 )
 				self.BombTimerBackground:setTopBottom( true, false, 0, 24 )
 				self.clipFinished( BombTimerBackground, {} )
+
 				backgroundFriendly:completeAnimation()
 				self.backgroundFriendly:setLeftRight( true, false, 0, 27 )
 				self.backgroundFriendly:setTopBottom( true, false, 0, 24 )
 				self.backgroundFriendly:setAlpha( 0 )
 				self.clipFinished( backgroundFriendly, {} )
+
 				backgroundEnemy:completeAnimation()
 				self.backgroundEnemy:setAlpha( 1 )
 				self.clipFinished( backgroundEnemy, {} )
+
 				BombTimer:completeAnimation()
 				self.BombTimer:setLeftRight( true, false, 33, 73 )
 				self.BombTimer:setTopBottom( true, false, 0, 24 )
 				self.clipFinished( BombTimer, {} )
+
 				AOrBText:completeAnimation()
 				self.AOrBText:setLeftRight( true, false, 0, 27 )
 				self.AOrBText:setTopBottom( true, false, 0, 24 )
@@ -144,6 +157,7 @@ CoD.BombTimerWidgetInternal.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 		element.backgroundFriendly:close()

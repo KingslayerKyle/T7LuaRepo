@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ButtonFocus" )
 CoD.List1ButtonSmall_PH = InheritFrom( LUI.UIElement )
 CoD.List1ButtonSmall_PH.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.List1ButtonSmall_PH )
 	self.id = "List1ButtonSmall_PH"
@@ -83,22 +85,27 @@ CoD.List1ButtonSmall_PH.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setZoom( 0 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 1 )
 				self.FEButtonIdle:setZoom( 0 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 1 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
@@ -106,25 +113,31 @@ CoD.List1ButtonSmall_PH.new = function ( menu, controller )
 			end,
 			GainFocusOLD = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setZoom( 5 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 10 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setAlpha( 1 )
 				self.FEButtonFocus:setZoom( 10 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( 10 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 1 )
 				self.btnDisplayTextStroke:setZoom( 10 )
@@ -132,23 +145,29 @@ CoD.List1ButtonSmall_PH.new = function ( menu, controller )
 			end,
 			LoseFocusOLD = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -165,6 +184,7 @@ CoD.List1ButtonSmall_PH.new = function ( menu, controller )
 			modelName = "disabled"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanelShaderContainer:close()
 		element.FEButtonIdle:close()

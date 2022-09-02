@@ -4,9 +4,11 @@
 CoD.CallingCards_loot_bboy = InheritFrom( LUI.UIElement )
 CoD.CallingCards_loot_bboy.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_loot_bboy )
 	self.id = "CallingCards_loot_bboy"
@@ -53,6 +55,7 @@ CoD.CallingCards_loot_bboy.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local bg0Frame2 = function ( bg0, event )
 					local bg0Frame3 = function ( bg0, event )
 						local bg0Frame4 = function ( bg0, event )
@@ -369,6 +372,7 @@ CoD.CallingCards_loot_bboy.new = function ( menu, controller )
 				dude2:completeAnimation()
 				self.dude2:setAlpha( 0 )
 				dude2Frame2( dude2, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

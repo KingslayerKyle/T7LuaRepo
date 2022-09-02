@@ -13,9 +13,11 @@ end
 CoD.DemOverlay = InheritFrom( LUI.UIElement )
 CoD.DemOverlay.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DemOverlay )
 	self.id = "DemOverlay"
@@ -298,11 +300,13 @@ CoD.DemOverlay.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				DemBombTimerWidgetB:completeAnimation()
 				self.DemBombTimerWidgetB:setLeftRight( true, false, 16, 89 )
 				self.DemBombTimerWidgetB:setTopBottom( true, false, 222, 246 )
 				self.DemBombTimerWidgetB:setAlpha( 1 )
 				self.clipFinished( DemBombTimerWidgetB, {} )
+
 				DemBombTimerWidgetA:completeAnimation()
 				self.DemBombTimerWidgetA:setLeftRight( true, false, 16, 89 )
 				self.DemBombTimerWidgetA:setTopBottom( true, false, 196, 220 )
@@ -313,9 +317,11 @@ CoD.DemOverlay.new = function ( menu, controller )
 		HideForCodcaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				DemBombTimerWidgetB:completeAnimation()
 				self.DemBombTimerWidgetB:setAlpha( 0 )
 				self.clipFinished( DemBombTimerWidgetB, {} )
+
 				DemBombTimerWidgetA:completeAnimation()
 				self.DemBombTimerWidgetA:setAlpha( 0 )
 				self.clipFinished( DemBombTimerWidgetA, {} )
@@ -324,11 +330,13 @@ CoD.DemOverlay.new = function ( menu, controller )
 		CodCasterLargeMap = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				DemBombTimerWidgetB:completeAnimation()
 				self.DemBombTimerWidgetB:setLeftRight( true, false, 16, 89 )
 				self.DemBombTimerWidgetB:setTopBottom( true, false, 248, 272 )
 				self.DemBombTimerWidgetB:setAlpha( 1 )
 				self.clipFinished( DemBombTimerWidgetB, {} )
+
 				DemBombTimerWidgetA:completeAnimation()
 				self.DemBombTimerWidgetA:setLeftRight( true, false, 16, 89 )
 				self.DemBombTimerWidgetA:setTopBottom( true, false, 222, 246 )
@@ -339,11 +347,13 @@ CoD.DemOverlay.new = function ( menu, controller )
 		CodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				DemBombTimerWidgetB:completeAnimation()
 				self.DemBombTimerWidgetB:setLeftRight( true, false, 16, 89 )
 				self.DemBombTimerWidgetB:setTopBottom( true, false, 222, 246 )
 				self.DemBombTimerWidgetB:setAlpha( 1 )
 				self.clipFinished( DemBombTimerWidgetB, {} )
+
 				DemBombTimerWidgetA:completeAnimation()
 				self.DemBombTimerWidgetA:setLeftRight( true, false, 16, 89 )
 				self.DemBombTimerWidgetA:setTopBottom( true, false, 196, 220 )
@@ -352,6 +362,7 @@ CoD.DemOverlay.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HideForCodcaster",
@@ -388,6 +399,7 @@ CoD.DemOverlay.new = function ( menu, controller )
 			modelName = "CodCaster.profileSettingsUpdated"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.DemBombTimerWidgetB:close()
 		element.DemBombTimerWidgetA:close()

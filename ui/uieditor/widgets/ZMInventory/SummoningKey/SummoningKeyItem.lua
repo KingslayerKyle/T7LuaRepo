@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_FX.ZmFx_Spark2" )
 CoD.SummoningKeyItem = InheritFrom( LUI.UIElement )
 CoD.SummoningKeyItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SummoningKeyItem )
 	self.id = "SummoningKeyItem"
@@ -69,18 +71,23 @@ CoD.SummoningKeyItem.new = function ( menu, controller )
 		ScoreboardFound = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				SummoningKey:completeAnimation()
 				self.SummoningKey:setAlpha( 1 )
 				self.clipFinished( SummoningKey, {} )
+
 				SummoningKeyMissingImage:completeAnimation()
 				self.SummoningKeyMissingImage:setAlpha( 0 )
 				self.clipFinished( SummoningKeyMissingImage, {} )
+
 				SummoningKeyOtherPlayer:completeAnimation()
 				self.SummoningKeyOtherPlayer:setAlpha( 0 )
 				self.clipFinished( SummoningKeyOtherPlayer, {} )
+
 				OtherPlayerImage:completeAnimation()
 				self.OtherPlayerImage:setAlpha( 0 )
 				self.clipFinished( OtherPlayerImage, {} )
@@ -89,24 +96,30 @@ CoD.SummoningKeyItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				SummoningKey:completeAnimation()
 				self.SummoningKey:setAlpha( 0 )
 				self.clipFinished( SummoningKey, {} )
+
 				SummoningKeyMissingImage:completeAnimation()
 				self.SummoningKeyMissingImage:setAlpha( 0 )
 				self.clipFinished( SummoningKeyMissingImage, {} )
+
 				SummoningKeyOtherPlayer:completeAnimation()
 				self.SummoningKeyOtherPlayer:setAlpha( 0 )
 				self.clipFinished( SummoningKeyOtherPlayer, {} )
+
 				OtherPlayerImage:completeAnimation()
 				self.OtherPlayerImage:setAlpha( 0 )
 				self.clipFinished( OtherPlayerImage, {} )
 			end,
 			Found = function ()
 				self:setupElementClipCounter( 6 )
+
 				local ZmFxSpark20Frame2 = function ( ZmFxSpark20, event )
 					local ZmFxSpark20Frame3 = function ( ZmFxSpark20, event )
 						local ZmFxSpark20Frame4 = function ( ZmFxSpark20, event )
@@ -337,12 +350,15 @@ CoD.SummoningKeyItem.new = function ( menu, controller )
 				SummoningKey:completeAnimation()
 				self.SummoningKey:setAlpha( 0 )
 				SummoningKeyFrame2( SummoningKey, {} )
+
 				SummoningKeyMissingImage:completeAnimation()
 				self.SummoningKeyMissingImage:setAlpha( 0 )
 				self.clipFinished( SummoningKeyMissingImage, {} )
+
 				SummoningKeyOtherPlayer:completeAnimation()
 				self.SummoningKeyOtherPlayer:setAlpha( 0 )
 				self.clipFinished( SummoningKeyOtherPlayer, {} )
+
 				OtherPlayerImage:completeAnimation()
 				self.OtherPlayerImage:setAlpha( 0 )
 				self.clipFinished( OtherPlayerImage, {} )
@@ -351,6 +367,7 @@ CoD.SummoningKeyItem.new = function ( menu, controller )
 		Activated = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local SummoningKeyFrame2 = function ( SummoningKey, event )
 					local SummoningKeyFrame3 = function ( SummoningKey, event )
 						local SummoningKeyFrame4 = function ( SummoningKey, event )
@@ -399,12 +416,15 @@ CoD.SummoningKeyItem.new = function ( menu, controller )
 				SummoningKey:completeAnimation()
 				self.SummoningKey:setAlpha( 1 )
 				SummoningKeyFrame2( SummoningKey, {} )
+
 				SummoningKeyMissingImage:completeAnimation()
 				self.SummoningKeyMissingImage:setAlpha( 0 )
 				self.clipFinished( SummoningKeyMissingImage, {} )
+
 				SummoningKeyOtherPlayer:completeAnimation()
 				self.SummoningKeyOtherPlayer:setAlpha( 0 )
 				self.clipFinished( SummoningKeyOtherPlayer, {} )
+
 				OtherPlayerImage:completeAnimation()
 				self.OtherPlayerImage:setAlpha( 0 )
 				self.clipFinished( OtherPlayerImage, {} )
@@ -413,18 +433,23 @@ CoD.SummoningKeyItem.new = function ( menu, controller )
 		Found = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				SummoningKey:completeAnimation()
 				self.SummoningKey:setAlpha( 1 )
 				self.clipFinished( SummoningKey, {} )
+
 				SummoningKeyMissingImage:completeAnimation()
 				self.SummoningKeyMissingImage:setAlpha( 0 )
 				self.clipFinished( SummoningKeyMissingImage, {} )
+
 				SummoningKeyOtherPlayer:completeAnimation()
 				self.SummoningKeyOtherPlayer:setAlpha( 0 )
 				self.clipFinished( SummoningKeyOtherPlayer, {} )
+
 				OtherPlayerImage:completeAnimation()
 				self.OtherPlayerImage:setAlpha( 0 )
 				self.clipFinished( OtherPlayerImage, {} )
@@ -433,9 +458,11 @@ CoD.SummoningKeyItem.new = function ( menu, controller )
 		Missing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				SummoningKey:completeAnimation()
 				self.SummoningKey:setAlpha( 0 )
 				self.clipFinished( SummoningKey, {} )
@@ -492,18 +519,23 @@ CoD.SummoningKeyItem.new = function ( menu, controller )
 		ScoreboardMissing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				SummoningKey:completeAnimation()
 				self.SummoningKey:setAlpha( 0 )
 				self.clipFinished( SummoningKey, {} )
+
 				SummoningKeyMissingImage:completeAnimation()
 				self.SummoningKeyMissingImage:setAlpha( 0 )
 				self.clipFinished( SummoningKeyMissingImage, {} )
+
 				SummoningKeyOtherPlayer:completeAnimation()
 				self.SummoningKeyOtherPlayer:setAlpha( 0 )
 				self.clipFinished( SummoningKeyOtherPlayer, {} )
+
 				OtherPlayerImage:completeAnimation()
 				self.OtherPlayerImage:setAlpha( 0 )
 				self.clipFinished( OtherPlayerImage, {} )
@@ -512,12 +544,15 @@ CoD.SummoningKeyItem.new = function ( menu, controller )
 		InUseByOtherPlayer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				SummoningKey:completeAnimation()
 				self.SummoningKey:setAlpha( 0 )
 				self.clipFinished( SummoningKey, {} )
+
 				SummoningKeyMissingImage:completeAnimation()
 				self.SummoningKeyMissingImage:setAlpha( 0 )
 				self.clipFinished( SummoningKeyMissingImage, {} )
@@ -620,6 +655,7 @@ CoD.SummoningKeyItem.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "InUseByOtherPlayer",
@@ -720,6 +756,7 @@ CoD.SummoningKeyItem.new = function ( menu, controller )
 			modelName = "zmInventory.check_femme_memento"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmFxSpark20:close()
 	end )

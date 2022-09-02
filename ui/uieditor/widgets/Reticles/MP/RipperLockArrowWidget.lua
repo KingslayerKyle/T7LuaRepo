@@ -4,9 +4,11 @@
 CoD.RipperLockArrowWidget = InheritFrom( LUI.UIElement )
 CoD.RipperLockArrowWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.RipperLockArrowWidget )
 	self.id = "RipperLockArrowWidget"

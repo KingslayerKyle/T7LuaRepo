@@ -22,9 +22,11 @@ end
 CoD.LobbyMemberTeamSwitcher = InheritFrom( LUI.UIElement )
 CoD.LobbyMemberTeamSwitcher.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyMemberTeamSwitcher )
 	self.id = "LobbyMemberTeamSwitcher"
@@ -102,15 +104,18 @@ CoD.LobbyMemberTeamSwitcher.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BumperButtonWithKeyMouseLeft:completeAnimation()
 				self.BumperButtonWithKeyMouseLeft:setAlpha( 0 )
 				self.clipFinished( BumperButtonWithKeyMouseLeft, {} )
+
 				BumperButtonWithKeyMouseRight:completeAnimation()
 				self.BumperButtonWithKeyMouseRight:setAlpha( 0 )
 				self.clipFinished( BumperButtonWithKeyMouseRight, {} )
 			end,
 			TeamSwitch = function ()
 				self:setupElementClipCounter( 4 )
+
 				local spectatorColorFrame2 = function ( spectatorColor, event )
 					local spectatorColorFrame3 = function ( spectatorColor, event )
 						if not event.interrupted then
@@ -216,15 +221,18 @@ CoD.LobbyMemberTeamSwitcher.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				spectatorColor:completeAnimation()
 				self.spectatorColor:setAlpha( 0 )
 				self.clipFinished( spectatorColor, {} )
+
 				TeamSwitchName:completeAnimation()
 				self.TeamSwitchName:setAlpha( 0 )
 				self.clipFinished( TeamSwitchName, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",
@@ -241,6 +249,7 @@ CoD.LobbyMemberTeamSwitcher.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BumperButtonWithKeyMouseLeft:close()
 		element.BumperButtonWithKeyMouseRight:close()

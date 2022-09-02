@@ -11,9 +11,11 @@ end
 CoD.AmmoWidget_CleanCarryCount = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_CleanCarryCount.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_CleanCarryCount )
 	self.id = "AmmoWidget_CleanCarryCount"
@@ -81,6 +83,7 @@ CoD.AmmoWidget_CleanCarryCount.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local PanelGlowFrame2 = function ( PanelGlow, event )
 					local PanelGlowFrame3 = function ( PanelGlow, event )
 						if not event.interrupted then
@@ -113,22 +116,28 @@ CoD.AmmoWidget_CleanCarryCount.new = function ( menu, controller )
 				self.PanelGlow:setRGB( ColorSet.EnemyOrange.r, ColorSet.EnemyOrange.g, ColorSet.EnemyOrange.b )
 				self.PanelGlow:setAlpha( 0.6 )
 				PanelGlowFrame2( PanelGlow, {} )
+
 				AmmoWidgetCleanCarryIcon:completeAnimation()
 				self.AmmoWidgetCleanCarryIcon:setAlpha( 1 )
 				self.clipFinished( AmmoWidgetCleanCarryIcon, {} )
+
 				AmmoWidgetCleanCarryCountContainer:completeAnimation()
 				self.AmmoWidgetCleanCarryCountContainer:setAlpha( 1 )
 				self.clipFinished( AmmoWidgetCleanCarryCountContainer, {} )
+
 				CarriedTagCount:completeAnimation()
 				self.CarriedTagCount:setAlpha( 0.8 )
 				self.clipFinished( CarriedTagCount, {} )
+
 				FullLabel:completeAnimation()
 				self.FullLabel:setAlpha( 0 )
 				self.clipFinished( FullLabel, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			NoCount = function ()
 				self:setupElementClipCounter( 5 )
+
 				local PanelGlowFrame2 = function ( PanelGlow, event )
 					if not event.interrupted then
 						PanelGlow:beginAnimation( "keyframe", 170, false, true, CoD.TweenType.Bounce )
@@ -261,27 +270,34 @@ CoD.AmmoWidget_CleanCarryCount.new = function ( menu, controller )
 				CarriedTagCount:completeAnimation()
 				self.CarriedTagCount:setAlpha( 0.8 )
 				CarriedTagCountFrame2( CarriedTagCount, {} )
+
 				FullLabel:completeAnimation()
 				self.FullLabel:setAlpha( 0 )
 				self.clipFinished( FullLabel, {} )
+
 				self.nextClip = "NoCount"
 			end
 		},
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setAlpha( 0 )
 				self.clipFinished( PanelGlow, {} )
+
 				AmmoWidgetCleanCarryIcon:completeAnimation()
 				self.AmmoWidgetCleanCarryIcon:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetCleanCarryIcon, {} )
+
 				AmmoWidgetCleanCarryCountContainer:completeAnimation()
 				self.AmmoWidgetCleanCarryCountContainer:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetCleanCarryCountContainer, {} )
+
 				CarriedTagCount:completeAnimation()
 				self.CarriedTagCount:setAlpha( 0 )
 				self.clipFinished( CarriedTagCount, {} )
+
 				FullLabel:completeAnimation()
 				self.FullLabel:setAlpha( 0 )
 				self.clipFinished( FullLabel, {} )
@@ -290,24 +306,30 @@ CoD.AmmoWidget_CleanCarryCount.new = function ( menu, controller )
 		NoCount = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setAlpha( 0 )
 				self.clipFinished( PanelGlow, {} )
+
 				AmmoWidgetCleanCarryIcon:completeAnimation()
 				self.AmmoWidgetCleanCarryIcon:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetCleanCarryIcon, {} )
+
 				AmmoWidgetCleanCarryCountContainer:completeAnimation()
 				self.AmmoWidgetCleanCarryCountContainer:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetCleanCarryCountContainer, {} )
+
 				CarriedTagCount:completeAnimation()
 				self.CarriedTagCount:setAlpha( 0 )
 				self.clipFinished( CarriedTagCount, {} )
+
 				FullLabel:completeAnimation()
 				self.FullLabel:setAlpha( 0 )
 				self.clipFinished( FullLabel, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 5 )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setAlpha( 0 )
 				self.clipFinished( PanelGlow, {} )
@@ -422,6 +444,7 @@ CoD.AmmoWidget_CleanCarryCount.new = function ( menu, controller )
 				CarriedTagCount:completeAnimation()
 				self.CarriedTagCount:setAlpha( 0 )
 				CarriedTagCountFrame2( CarriedTagCount, {} )
+
 				FullLabel:completeAnimation()
 				self.FullLabel:setAlpha( 0 )
 				self.clipFinished( FullLabel, {} )
@@ -430,6 +453,7 @@ CoD.AmmoWidget_CleanCarryCount.new = function ( menu, controller )
 		Full = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local PanelGlowFrame2 = function ( PanelGlow, event )
 					local PanelGlowFrame3 = function ( PanelGlow, event )
 						local PanelGlowFrame4 = function ( PanelGlow, event )
@@ -484,6 +508,7 @@ CoD.AmmoWidget_CleanCarryCount.new = function ( menu, controller )
 				self.PanelGlow:setRGB( ColorSet.EnemyOrange.r, ColorSet.EnemyOrange.g, ColorSet.EnemyOrange.b )
 				self.PanelGlow:setAlpha( 0.6 )
 				PanelGlowFrame2( PanelGlow, {} )
+
 				AmmoWidgetCleanCarryIcon:completeAnimation()
 				self.AmmoWidgetCleanCarryIcon:setAlpha( 1 )
 				self.clipFinished( AmmoWidgetCleanCarryIcon, {} )
@@ -627,10 +652,12 @@ CoD.AmmoWidget_CleanCarryCount.new = function ( menu, controller )
 				self.FullLabel:setRGB( 0.27, 0.18, 0.18 )
 				self.FullLabel:setAlpha( 0 )
 				FullLabelFrame2( FullLabel, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			NoCount = function ()
 				self:setupElementClipCounter( 5 )
+
 				local PanelGlowFrame2 = function ( PanelGlow, event )
 					if not event.interrupted then
 						PanelGlow:beginAnimation( "keyframe", 170, false, true, CoD.TweenType.Bounce )
@@ -763,13 +790,16 @@ CoD.AmmoWidget_CleanCarryCount.new = function ( menu, controller )
 				CarriedTagCount:completeAnimation()
 				self.CarriedTagCount:setAlpha( 0.8 )
 				CarriedTagCountFrame2( CarriedTagCount, {} )
+
 				FullLabel:completeAnimation()
 				self.FullLabel:setAlpha( 0 )
 				self.clipFinished( FullLabel, {} )
+
 				self.nextClip = "NoCount"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hide",
@@ -798,6 +828,7 @@ CoD.AmmoWidget_CleanCarryCount.new = function ( menu, controller )
 			modelName = "hudItems.cleanCarryCount"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AmmoWidgetCleanCarryIcon:close()
 		element.AmmoWidgetCleanCarryCountContainer:close()

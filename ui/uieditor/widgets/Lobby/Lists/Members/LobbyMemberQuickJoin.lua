@@ -14,9 +14,11 @@ require( "ui.uieditor.widgets.Lobby.Lists.Members.LobbyMemberGamertag" )
 CoD.LobbyMemberQuickJoin = InheritFrom( LUI.UIElement )
 CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyMemberQuickJoin )
 	self.id = "LobbyMemberQuickJoin"
@@ -210,52 +212,64 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				LobbyLeaderIcon:completeAnimation()
 				self.LobbyLeaderIcon:setAlpha( 0 )
 				self.clipFinished( LobbyLeaderIcon, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, true, 60, -82 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( true, true, -0.5, 0 )
 				self.FEMemberBlurPanelContainer0:setZoom( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -14, 13.8 )
 				self.VSpanel:setZoom( 0 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setAlpha( 1 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -0.5, 27 )
 				self.LobbyMemberBacking:setAlpha( 0 )
 				self.LobbyMemberBacking:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				clanTag:completeAnimation()
 				self.clanTag:setRGB( 0.87, 0.9, 0.9 )
 				self.clanTag:setAlpha( 0 )
 				self.clanTag:setZoom( 0 )
 				self.clipFinished( clanTag, {} )
+
 				addControllerText:completeAnimation()
 				self.addControllerText:setAlpha( 0 )
 				self.clipFinished( addControllerText, {} )
+
 				MorePlaying:completeAnimation()
 				self.MorePlaying:setAlpha( 0 )
 				self.clipFinished( MorePlaying, {} )
+
 				playerCountText:completeAnimation()
 				self.playerCountText:setAlpha( 0 )
 				self.clipFinished( playerCountText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 26, 29 )
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
@@ -264,32 +278,40 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setZoom( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setZoom( 0 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 40 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setZoom( 0 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setAlpha( 1 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setAlpha( 0 )
 				self.LobbyMemberBacking:setZoom( 0 )
@@ -327,6 +349,7 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setScale( 1 )
 				self.clipFinished( VSpanel, {} )
@@ -373,47 +396,58 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		IsSelf = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				LobbyLeaderIcon:completeAnimation()
 				self.LobbyLeaderIcon:setAlpha( 1 )
 				self.clipFinished( LobbyLeaderIcon, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setAlpha( 1 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -0.5, 27 )
 				self.LobbyMemberBacking:setAlpha( 0 )
 				self.LobbyMemberBacking:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				clanTag:completeAnimation()
 				self.clanTag:setRGB( 0.96, 1, 0.33 )
 				self.clanTag:setAlpha( 0 )
 				self.clanTag:setZoom( 0 )
 				self.clipFinished( clanTag, {} )
+
 				addControllerText:completeAnimation()
 				self.addControllerText:setAlpha( 0 )
 				self.clipFinished( addControllerText, {} )
+
 				MorePlaying:completeAnimation()
 				self.MorePlaying:setAlpha( 0 )
 				self.clipFinished( MorePlaying, {} )
+
 				playerCountText:completeAnimation()
 				self.playerCountText:setAlpha( 0 )
 				self.clipFinished( playerCountText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 26, 29 )
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
@@ -422,27 +456,33 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, true, 60, -82 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( true, true, -5, 5 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -18.5, 18.5 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -5, 32 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -5, 32 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 29, 33 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -6, -2 )
@@ -451,6 +491,7 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -564,6 +605,7 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -679,45 +721,56 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 		IsFriend = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				LobbyLeaderIcon:completeAnimation()
 				self.LobbyLeaderIcon:setAlpha( 0 )
 				self.clipFinished( LobbyLeaderIcon, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setAlpha( 0.5 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setAlpha( 1 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -0.5, 27 )
 				self.LobbyMemberBacking:setAlpha( 0.6 )
 				self.LobbyMemberBacking:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				clanTag:completeAnimation()
 				self.clanTag:setRGB( 0.87, 0.9, 0.9 )
 				self.clanTag:setAlpha( 0 )
 				self.clanTag:setZoom( 0 )
 				self.clipFinished( clanTag, {} )
+
 				addControllerText:completeAnimation()
 				self.addControllerText:setAlpha( 0 )
 				self.clipFinished( addControllerText, {} )
+
 				MorePlaying:completeAnimation()
 				self.MorePlaying:setAlpha( 0 )
 				self.clipFinished( MorePlaying, {} )
+
 				playerCountText:completeAnimation()
 				self.playerCountText:setAlpha( 0 )
 				self.clipFinished( playerCountText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 26, 29 )
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
@@ -726,27 +779,33 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, true, 60, -82 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( true, true, -5, 5 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -18.5, 18.5 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -5, 32 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -5, 32 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 29, 33 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -6, -2 )
@@ -755,6 +814,7 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -868,6 +928,7 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -983,20 +1044,25 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 		IsGroupMember = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				LobbyLeaderIcon:completeAnimation()
 				self.LobbyLeaderIcon:setAlpha( 0 )
 				self.clipFinished( LobbyLeaderIcon, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setAlpha( 0.5 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setAlpha( 1 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -0.5, 27 )
@@ -1004,25 +1070,31 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 				self.LobbyMemberBacking:setAlpha( 0.65 )
 				self.LobbyMemberBacking:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				clanTag:completeAnimation()
 				self.clanTag:setRGB( 0.87, 0.9, 0.9 )
 				self.clanTag:setAlpha( 0 )
 				self.clanTag:setZoom( 0 )
 				self.clipFinished( clanTag, {} )
+
 				addControllerText:completeAnimation()
 				self.addControllerText:setAlpha( 0 )
 				self.clipFinished( addControllerText, {} )
+
 				MorePlaying:completeAnimation()
 				self.MorePlaying:setAlpha( 0 )
 				self.clipFinished( MorePlaying, {} )
+
 				playerCountText:completeAnimation()
 				self.playerCountText:setAlpha( 0 )
 				self.clipFinished( playerCountText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 26, 29 )
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
@@ -1031,18 +1103,22 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, true, 60, -82 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( true, true, -5, 5 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -18.5, 18.5 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -5, 32 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -5, 32 )
@@ -1050,11 +1126,13 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 				self.LobbyMemberBacking:setAlpha( 0.65 )
 				self.LobbyMemberBacking:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 29, 33 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -6, -2 )
@@ -1063,6 +1141,7 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -1176,6 +1255,7 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -1291,42 +1371,52 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 		IsOtherPartyMember = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				LobbyLeaderIcon:completeAnimation()
 				self.LobbyLeaderIcon:setAlpha( 1 )
 				self.clipFinished( LobbyLeaderIcon, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setAlpha( 1 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -0.5, 27 )
 				self.LobbyMemberBacking:setAlpha( 0 )
 				self.LobbyMemberBacking:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				clanTag:completeAnimation()
 				self.clanTag:setRGB( 0.87, 0.9, 0.9 )
 				self.clanTag:setAlpha( 0 )
 				self.clanTag:setZoom( 0 )
 				self.clipFinished( clanTag, {} )
+
 				addControllerText:completeAnimation()
 				self.addControllerText:setAlpha( 0 )
 				self.clipFinished( addControllerText, {} )
+
 				MorePlaying:completeAnimation()
 				self.MorePlaying:setAlpha( 0 )
 				self.clipFinished( MorePlaying, {} )
+
 				playerCountText:completeAnimation()
 				self.playerCountText:setAlpha( 0 )
 				self.clipFinished( playerCountText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 26, 29 )
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
@@ -1335,27 +1425,33 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, true, 60, -82 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( false, false, -18, 18 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -18, 18 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -4, 31 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -4, 31 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 29, 33 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -6, -2 )
@@ -1364,6 +1460,7 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -1477,6 +1574,7 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -1590,6 +1688,7 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -1622,6 +1721,7 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LobbyLeaderIcon:close()
 		element.PartyMemberIconNew:close()

@@ -15,9 +15,11 @@ end
 CoD.LoadingScreenTalkerWidgetCPZM = InheritFrom( LUI.UIElement )
 CoD.LoadingScreenTalkerWidgetCPZM.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LoadingScreenTalkerWidgetCPZM )
 	self.id = "LoadingScreenTalkerWidgetCPZM"

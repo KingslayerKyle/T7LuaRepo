@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Terminal.Frame_lineVertical" )
 CoD.Doa2VideoWidget = InheritFrom( LUI.UIElement )
 CoD.Doa2VideoWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Doa2VideoWidget )
 	self.id = "Doa2VideoWidget"
@@ -268,6 +270,7 @@ CoD.Doa2VideoWidget.new = function ( menu, controller )
 		CoD.Menu.SetButtonLabel( f6_arg1, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
 		return true
 	end, false )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Frameline0:close()
 		element.FramelineVertical00:close()

@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.CAC.cac_WpnLvlMeter" )
 CoD.GunsmithWeaponLevel = InheritFrom( LUI.UIElement )
 CoD.GunsmithWeaponLevel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunsmithWeaponLevel )
 	self.id = "GunsmithWeaponLevel"
@@ -140,48 +142,62 @@ CoD.GunsmithWeaponLevel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				WeaponMeterBacking:completeAnimation()
 				self.WeaponMeterBacking:setAlpha( 0 )
 				self.clipFinished( WeaponMeterBacking, {} )
+
 				levelBoxBg:completeAnimation()
 				self.levelBoxBg:setAlpha( 0 )
 				self.clipFinished( levelBoxBg, {} )
+
 				levelLabel:completeAnimation()
 				self.levelLabel:setAlpha( 0 )
 				self.clipFinished( levelLabel, {} )
+
 				levelTextBg:completeAnimation()
 				self.levelTextBg:setAlpha( 0 )
 				self.clipFinished( levelTextBg, {} )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				bg0:completeAnimation()
 				self.bg0:setAlpha( 0 )
 				self.clipFinished( bg0, {} )
+
 				currentLevelBacking:completeAnimation()
 				self.currentLevelBacking:setAlpha( 0 )
 				self.clipFinished( currentLevelBacking, {} )
+
 				currentLevel:completeAnimation()
 				self.currentLevel:setAlpha( 0 )
 				self.clipFinished( currentLevel, {} )
+
 				rightBox:completeAnimation()
 				self.rightBox:setAlpha( 0 )
 				self.clipFinished( rightBox, {} )
+
 				cacWpnLvlMeter0:completeAnimation()
 				self.cacWpnLvlMeter0:setAlpha( 0 )
 				self.clipFinished( cacWpnLvlMeter0, {} )
+
 				weaponLevel:completeAnimation()
 				self.weaponLevel:setAlpha( 0 )
 				self.clipFinished( weaponLevel, {} )
+
 				levelTextBg0:completeAnimation()
 				self.levelTextBg0:setAlpha( 0 )
 				self.clipFinished( levelTextBg0, {} )
+
 				nextLevel:completeAnimation()
 				self.nextLevel:setAlpha( 0 )
 				self.clipFinished( nextLevel, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 8 )
+
 				local levelBoxBgFrame2 = function ( levelBoxBg, event )
 					local levelBoxBgFrame3 = function ( levelBoxBg, event )
 						if not event.interrupted then
@@ -377,48 +393,62 @@ CoD.GunsmithWeaponLevel.new = function ( menu, controller )
 		DisplayLevel = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				WeaponMeterBacking:completeAnimation()
 				self.WeaponMeterBacking:setAlpha( 1 )
 				self.clipFinished( WeaponMeterBacking, {} )
+
 				levelBoxBg:completeAnimation()
 				self.levelBoxBg:setAlpha( 1 )
 				self.clipFinished( levelBoxBg, {} )
+
 				levelLabel:completeAnimation()
 				self.levelLabel:setAlpha( 1 )
 				self.clipFinished( levelLabel, {} )
+
 				levelTextBg:completeAnimation()
 				self.levelTextBg:setAlpha( 0 )
 				self.clipFinished( levelTextBg, {} )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0.25 )
 				self.clipFinished( bg, {} )
+
 				bg0:completeAnimation()
 				self.bg0:setAlpha( 0.25 )
 				self.clipFinished( bg0, {} )
+
 				currentLevelBacking:completeAnimation()
 				self.currentLevelBacking:setAlpha( 1 )
 				self.clipFinished( currentLevelBacking, {} )
+
 				currentLevel:completeAnimation()
 				self.currentLevel:setAlpha( 1 )
 				self.clipFinished( currentLevel, {} )
+
 				rightBox:completeAnimation()
 				self.rightBox:setAlpha( 1 )
 				self.clipFinished( rightBox, {} )
+
 				cacWpnLvlMeter0:completeAnimation()
 				self.cacWpnLvlMeter0:setAlpha( 1 )
 				self.clipFinished( cacWpnLvlMeter0, {} )
+
 				weaponLevel:completeAnimation()
 				self.weaponLevel:setAlpha( 0 )
 				self.clipFinished( weaponLevel, {} )
+
 				levelTextBg0:completeAnimation()
 				self.levelTextBg0:setAlpha( 0 )
 				self.clipFinished( levelTextBg0, {} )
+
 				nextLevel:completeAnimation()
 				self.nextLevel:setAlpha( 1 )
 				self.clipFinished( nextLevel, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 8 )
+
 				local levelBoxBgFrame2 = function ( levelBoxBg, event )
 					local levelBoxBgFrame3 = function ( levelBoxBg, event )
 						if not event.interrupted then
@@ -614,52 +644,66 @@ CoD.GunsmithWeaponLevel.new = function ( menu, controller )
 		MaxLevel = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				WeaponMeterBacking:completeAnimation()
 				self.WeaponMeterBacking:setAlpha( 0 )
 				self.clipFinished( WeaponMeterBacking, {} )
+
 				levelBoxBg:completeAnimation()
 				self.levelBoxBg:setAlpha( 1 )
 				self.clipFinished( levelBoxBg, {} )
+
 				levelLabel:completeAnimation()
 				self.levelLabel:setAlpha( 1 )
 				self.clipFinished( levelLabel, {} )
+
 				levelTextBg:completeAnimation()
 				self.levelTextBg:setLeftRight( true, false, 181, 213 )
 				self.levelTextBg:setTopBottom( true, false, 4, 36 )
 				self.levelTextBg:setAlpha( 1 )
 				self.clipFinished( levelTextBg, {} )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				bg0:completeAnimation()
 				self.bg0:setAlpha( 0 )
 				self.clipFinished( bg0, {} )
+
 				currentLevelBacking:completeAnimation()
 				self.currentLevelBacking:setAlpha( 0 )
 				self.clipFinished( currentLevelBacking, {} )
+
 				currentLevel:completeAnimation()
 				self.currentLevel:setAlpha( 0 )
 				self.clipFinished( currentLevel, {} )
+
 				rightBox:completeAnimation()
 				self.rightBox:setAlpha( 0 )
 				self.clipFinished( rightBox, {} )
+
 				cacWpnLvlMeter0:completeAnimation()
 				self.cacWpnLvlMeter0:setAlpha( 0 )
 				self.clipFinished( cacWpnLvlMeter0, {} )
+
 				weaponLevel:completeAnimation()
 				self.weaponLevel:setLeftRight( false, false, -28.5, 7.5 )
 				self.weaponLevel:setTopBottom( false, true, -30, -10 )
 				self.weaponLevel:setAlpha( 1 )
 				self.clipFinished( weaponLevel, {} )
+
 				levelTextBg0:completeAnimation()
 				self.levelTextBg0:setAlpha( 0 )
 				self.clipFinished( levelTextBg0, {} )
+
 				nextLevel:completeAnimation()
 				self.nextLevel:setAlpha( 0 )
 				self.clipFinished( nextLevel, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DisplayLevel",
@@ -674,6 +718,7 @@ CoD.GunsmithWeaponLevel.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.WeaponMeterBacking:close()
 		element.levelBoxBg:close()

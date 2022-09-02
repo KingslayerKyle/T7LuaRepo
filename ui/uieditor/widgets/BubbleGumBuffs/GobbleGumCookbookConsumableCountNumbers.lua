@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BubbleGumBuffs.GobbleGumCookbookNumbersWidget" )
 CoD.GobbleGumCookbookConsumableCountNumbers = InheritFrom( LUI.UIElement )
 CoD.GobbleGumCookbookConsumableCountNumbers.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GobbleGumCookbookConsumableCountNumbers )
 	self.id = "GobbleGumCookbookConsumableCountNumbers"
@@ -240,16 +242,19 @@ CoD.GobbleGumCookbookConsumableCountNumbers.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				OnesDigit:completeAnimation()
 				self.OnesDigit:setLeftRight( false, true, -54, -27 )
 				self.OnesDigit:setTopBottom( true, true, 0, 0 )
 				self.OnesDigit:setAlpha( 1 )
 				self.clipFinished( OnesDigit, {} )
+
 				TensDigit:completeAnimation()
 				self.TensDigit:setLeftRight( false, false, 8.5, 35.5 )
 				self.TensDigit:setTopBottom( true, true, 0, 66 )
 				self.TensDigit:setAlpha( 0 )
 				self.clipFinished( TensDigit, {} )
+
 				HundredsDigit:completeAnimation()
 				self.HundredsDigit:setLeftRight( true, false, 0, 27 )
 				self.HundredsDigit:setTopBottom( true, true, 0, 66 )
@@ -260,16 +265,19 @@ CoD.GobbleGumCookbookConsumableCountNumbers.new = function ( menu, controller )
 		Triple = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				OnesDigit:completeAnimation()
 				self.OnesDigit:setLeftRight( false, true, -27, 0 )
 				self.OnesDigit:setTopBottom( true, true, 0, 0 )
 				self.OnesDigit:setAlpha( 1 )
 				self.clipFinished( OnesDigit, {} )
+
 				TensDigit:completeAnimation()
 				self.TensDigit:setLeftRight( false, false, -13.5, 13.5 )
 				self.TensDigit:setTopBottom( true, true, 0, 0 )
 				self.TensDigit:setAlpha( 1 )
 				self.clipFinished( TensDigit, {} )
+
 				HundredsDigit:completeAnimation()
 				self.HundredsDigit:setLeftRight( true, false, 0, 27 )
 				self.HundredsDigit:setTopBottom( true, true, 0, 0 )
@@ -280,16 +288,19 @@ CoD.GobbleGumCookbookConsumableCountNumbers.new = function ( menu, controller )
 		Double = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				OnesDigit:completeAnimation()
 				self.OnesDigit:setLeftRight( false, true, -40.5, -13.5 )
 				self.OnesDigit:setTopBottom( true, true, 0, 0 )
 				self.OnesDigit:setAlpha( 1 )
 				self.clipFinished( OnesDigit, {} )
+
 				TensDigit:completeAnimation()
 				self.TensDigit:setLeftRight( false, false, -27, 0 )
 				self.TensDigit:setTopBottom( true, true, 0, 0 )
 				self.TensDigit:setAlpha( 1 )
 				self.clipFinished( TensDigit, {} )
+
 				HundredsDigit:completeAnimation()
 				self.HundredsDigit:setLeftRight( true, false, 40.5, 13.5 )
 				self.HundredsDigit:setTopBottom( true, true, 0, 0 )
@@ -298,6 +309,7 @@ CoD.GobbleGumCookbookConsumableCountNumbers.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.OnesDigit:close()
 		element.TensDigit:close()

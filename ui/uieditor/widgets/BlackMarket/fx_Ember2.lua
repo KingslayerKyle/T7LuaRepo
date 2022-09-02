@@ -4,9 +4,11 @@
 CoD.fx_Ember2 = InheritFrom( LUI.UIElement )
 CoD.fx_Ember2.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.fx_Ember2 )
 	self.id = "fx_Ember2"
@@ -85,6 +87,7 @@ CoD.fx_Ember2.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

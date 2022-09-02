@@ -21,6 +21,7 @@ CoD.BM_Promo_TitleAndCountdown.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Promo_TitleAndCountdown )
 	self.id = "BM_Promo_TitleAndCountdown"
@@ -52,6 +53,7 @@ CoD.BM_Promo_TitleAndCountdown.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BMPromoCountdown2:completeAnimation()
 				self.BMPromoCountdown2:setAlpha( 1 )
 				self.clipFinished( BMPromoCountdown2, {} )
@@ -60,12 +62,14 @@ CoD.BM_Promo_TitleAndCountdown.new = function ( menu, controller )
 		Notimer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BMPromoCountdown2:completeAnimation()
 				self.BMPromoCountdown2:setAlpha( 0 )
 				self.clipFinished( BMPromoCountdown2, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BMPromoTitle:close()
 		element.BMPromoCountdown2:close()

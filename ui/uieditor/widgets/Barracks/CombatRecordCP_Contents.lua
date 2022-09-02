@@ -15,9 +15,11 @@ require( "ui.uieditor.menus.Barracks.CombatRecordCP.CombatRecordCollectibles" )
 CoD.CombatRecordCP_Contents = InheritFrom( LUI.UIElement )
 CoD.CombatRecordCP_Contents.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CombatRecordCP_Contents )
 	self.id = "CombatRecordCP_Contents"
@@ -617,6 +619,7 @@ CoD.CombatRecordCP_Contents.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				local EmblemFrame2 = function ( Emblem, event )
 					if not event.interrupted then
 						Emblem:beginAnimation( "keyframe", 39, false, false, CoD.TweenType.Linear )
@@ -903,26 +906,32 @@ CoD.CombatRecordCP_Contents.new = function ( menu, controller )
 		Safehouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				WeaponsButton:completeAnimation()
 				self.WeaponsButton:setLeftRight( true, false, 0, 370 )
 				self.WeaponsButton:setTopBottom( true, false, 191, 355 )
 				self.clipFinished( WeaponsButton, {} )
+
 				EquipmentButton:completeAnimation()
 				self.EquipmentButton:setLeftRight( true, false, 377, 747 )
 				self.EquipmentButton:setTopBottom( true, false, 191, 355 )
 				self.clipFinished( EquipmentButton, {} )
+
 				CybercoreButton:completeAnimation()
 				self.CybercoreButton:setLeftRight( true, false, 754, 1124 )
 				self.CybercoreButton:setTopBottom( true, false, 191, 355 )
 				self.clipFinished( CybercoreButton, {} )
+
 				MissionButton:completeAnimation()
 				self.MissionButton:setLeftRight( true, false, 0, 370 )
 				self.MissionButton:setTopBottom( true, false, 362, 526 )
 				self.clipFinished( MissionButton, {} )
+
 				AccoladesButton:completeAnimation()
 				self.AccoladesButton:setLeftRight( true, false, 377, 747 )
 				self.AccoladesButton:setTopBottom( true, false, 362, 526 )
 				self.clipFinished( AccoladesButton, {} )
+
 				CollectibleButton:completeAnimation()
 				self.CollectibleButton:setLeftRight( true, false, 754, 1124 )
 				self.CollectibleButton:setTopBottom( true, false, 362, 526 )
@@ -930,6 +939,7 @@ CoD.CombatRecordCP_Contents.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Safehouse",
@@ -952,6 +962,7 @@ CoD.CombatRecordCP_Contents.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG00:close()
 		element.WeaponsButton:close()

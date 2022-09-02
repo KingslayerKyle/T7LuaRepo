@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_frame_noBG" )
 CoD.CombatRecordWinnersCircleStat = InheritFrom( LUI.UIElement )
 CoD.CombatRecordWinnersCircleStat.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CombatRecordWinnersCircleStat )
 	self.id = "CombatRecordWinnersCircleStat"

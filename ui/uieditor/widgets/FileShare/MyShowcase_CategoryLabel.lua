@@ -4,9 +4,11 @@
 CoD.MyShowcase_CategoryLabel = InheritFrom( LUI.UIElement )
 CoD.MyShowcase_CategoryLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MyShowcase_CategoryLabel )
 	self.id = "MyShowcase_CategoryLabel"
@@ -30,6 +32,7 @@ CoD.MyShowcase_CategoryLabel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				categoryName:completeAnimation()
 				self.categoryName:setLeftRight( true, false, 0, 256 )
 				self.categoryName:setTopBottom( true, false, 0, 19 )
@@ -40,12 +43,14 @@ CoD.MyShowcase_CategoryLabel.new = function ( menu, controller )
 		Theater = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				categoryName:completeAnimation()
 				self.categoryName:setAlpha( 0 )
 				self.clipFinished( categoryName, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Theater",

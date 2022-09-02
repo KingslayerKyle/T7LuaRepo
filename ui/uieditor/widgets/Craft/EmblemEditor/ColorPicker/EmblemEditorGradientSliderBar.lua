@@ -31,9 +31,11 @@ end
 CoD.EmblemEditorGradientSliderBar = InheritFrom( LUI.UIElement )
 CoD.EmblemEditorGradientSliderBar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemEditorGradientSliderBar )
 	self.id = "EmblemEditorGradientSliderBar"
@@ -102,52 +104,64 @@ CoD.EmblemEditorGradientSliderBar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				barBg:completeAnimation()
 				self.barBg:setRGB( 1, 1, 1 )
 				self.barBg:setAlpha( 1 )
 				self.clipFinished( barBg, {} )
+
 				barBg1:completeAnimation()
 				self.barBg1:setAlpha( 0 )
 				self.clipFinished( barBg1, {} )
+
 				pointer:completeAnimation()
 				self.pointer:setAlpha( 1 )
 				self.clipFinished( pointer, {} )
+
 				rightArrow:completeAnimation()
 				self.rightArrow:setRGB( 1, 1, 1 )
 				self.rightArrow:setAlpha( 0 )
 				self.clipFinished( rightArrow, {} )
+
 				leftArrow:completeAnimation()
 				self.leftArrow:setRGB( 1, 1, 1 )
 				self.leftArrow:setAlpha( 0 )
 				self.clipFinished( leftArrow, {} )
+
 				barBg2:completeAnimation()
 				self.barBg2:setAlpha( 0 )
 				self.clipFinished( barBg2, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				barBg:completeAnimation()
 				self.barBg:setLeftRight( true, true, -4, 4 )
 				self.barBg:setTopBottom( true, true, -3, 4 )
 				self.barBg:setRGB( 1, 0.41, 0 )
 				self.barBg:setAlpha( 1 )
 				self.clipFinished( barBg, {} )
+
 				barBg1:completeAnimation()
 				self.barBg1:setLeftRight( true, true, -2, 2 )
 				self.barBg1:setTopBottom( true, true, -3, -32 )
 				self.barBg1:setAlpha( 1 )
 				self.clipFinished( barBg1, {} )
+
 				pointer:completeAnimation()
 				self.pointer:setRGB( 1, 0.41, 0 )
 				self.clipFinished( pointer, {} )
+
 				rightArrow:completeAnimation()
 				self.rightArrow:setRGB( 1, 0.41, 0 )
 				self.rightArrow:setAlpha( 1 )
 				self.clipFinished( rightArrow, {} )
+
 				leftArrow:completeAnimation()
 				self.leftArrow:setRGB( 1, 0.41, 0 )
 				self.leftArrow:setAlpha( 1 )
 				self.clipFinished( leftArrow, {} )
+
 				barBg2:completeAnimation()
 				self.barBg2:setLeftRight( true, true, -2, 2 )
 				self.barBg2:setTopBottom( true, true, 32, 3 )
@@ -156,6 +170,7 @@ CoD.EmblemEditorGradientSliderBar.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.barBg:close()
 		element.pointer:close()

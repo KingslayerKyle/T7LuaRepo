@@ -4,9 +4,11 @@
 CoD.StartMenu_Options_PC_KeyBinderTooltip = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_PC_KeyBinderTooltip.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_PC_KeyBinderTooltip )
 	self.id = "StartMenu_Options_PC_KeyBinderTooltip"
@@ -46,9 +48,11 @@ CoD.StartMenu_Options_PC_KeyBinderTooltip.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				headerText:completeAnimation()
 				self.headerText:setAlpha( 1 )
 				self.clipFinished( headerText, {} )
+
 				descText:completeAnimation()
 				self.descText:setAlpha( 1 )
 				self.clipFinished( descText, {} )
@@ -57,18 +61,22 @@ CoD.StartMenu_Options_PC_KeyBinderTooltip.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				fullBacking:completeAnimation()
 				self.fullBacking:setAlpha( 0 )
 				self.clipFinished( fullBacking, {} )
+
 				headerText:completeAnimation()
 				self.headerText:setAlpha( 0 )
 				self.clipFinished( headerText, {} )
+
 				descText:completeAnimation()
 				self.descText:setAlpha( 0 )
 				self.clipFinished( descText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",

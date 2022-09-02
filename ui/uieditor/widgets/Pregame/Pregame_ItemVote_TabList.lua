@@ -20,9 +20,11 @@ end
 CoD.Pregame_ItemVote_TabList = InheritFrom( LUI.UIElement )
 CoD.Pregame_ItemVote_TabList.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_ItemVote_TabList )
 	self.id = "Pregame_ItemVote_TabList"
@@ -60,6 +62,7 @@ CoD.Pregame_ItemVote_TabList.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				grid:completeAnimation()
 				self.grid:setAlpha( 1 )
 				self.clipFinished( grid, {} )
@@ -68,12 +71,14 @@ CoD.Pregame_ItemVote_TabList.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				grid:completeAnimation()
 				self.grid:setAlpha( 0 )
 				self.clipFinished( grid, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.grid:close()
 	end )

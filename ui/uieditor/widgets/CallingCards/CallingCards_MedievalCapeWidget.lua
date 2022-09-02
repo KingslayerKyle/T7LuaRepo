@@ -4,9 +4,11 @@
 CoD.CallingCards_MedievalCapeWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_MedievalCapeWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_MedievalCapeWidget )
 	self.id = "CallingCards_MedievalCapeWidget"
@@ -57,6 +59,7 @@ CoD.CallingCards_MedievalCapeWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local f2_local0 = function ( f3_arg0, f3_arg1 )
 					local f3_local0 = function ( f4_arg0, f4_arg1 )
 						local f4_local0 = function ( f5_arg0, f5_arg1 )
@@ -236,6 +239,7 @@ CoD.CallingCards_MedievalCapeWidget.new = function ( menu, controller )
 				Cape:completeAnimation()
 				self.Cape:setAlpha( 1 )
 				CapeFrame2( Cape, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

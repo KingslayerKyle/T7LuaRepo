@@ -26,9 +26,11 @@ end
 CoD.StartMenu_Options_PC_Voice_Voice = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_PC_Voice_Voice.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_PC_Voice_Voice )
 	self.id = "StartMenu_Options_PC_Voice_Voice"
@@ -76,6 +78,7 @@ CoD.StartMenu_Options_PC_Voice_Voice.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.voiceOptionsList:close()
 		element.optionInfo:close()

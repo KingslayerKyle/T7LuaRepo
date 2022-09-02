@@ -7,6 +7,7 @@ require( "ui.uieditor.widgets.CAC.cac_CustomClassDecscription" )
 require( "ui.uieditor.widgets.PC.Utility.XCamMouseControl" )
 
 local PostLoadFunc = function ( self, controller, menu )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setModel", function ()
 		self:processEvent( {
 			name = "update_state",
@@ -18,9 +19,11 @@ end
 CoD.InfopanePreviewWidget = InheritFrom( LUI.UIElement )
 CoD.InfopanePreviewWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.InfopanePreviewWidget )
 	self.id = "InfopanePreviewWidget"
@@ -138,20 +141,25 @@ CoD.InfopanePreviewWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				itemName:completeAnimation()
+
 				itemName.weaponNameWithVariant.variantName:completeAnimation()
 				self.itemName:setAlpha( 1 )
 				self.itemName.weaponNameWithVariant.variantName:setAlpha( 1 )
 				self.clipFinished( itemName, {} )
+
 				weaponPreview:completeAnimation()
 				self.weaponPreview:setAlpha( 0 )
 				self.clipFinished( weaponPreview, {} )
+
 				categoryName:completeAnimation()
 				self.categoryName:setAlpha( 1 )
 				self.clipFinished( categoryName, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 3 )
+
 				local itemNameFrame2 = function ( itemName, event )
 					if not event.interrupted then
 						itemName:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Bounce )
@@ -167,6 +175,7 @@ CoD.InfopanePreviewWidget.new = function ( menu, controller )
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 0 )
 				itemNameFrame2( itemName, {} )
+
 				weaponPreview:completeAnimation()
 				self.weaponPreview:setAlpha( 0 )
 				self.clipFinished( weaponPreview, {} )
@@ -190,20 +199,25 @@ CoD.InfopanePreviewWidget.new = function ( menu, controller )
 		NonVariantNameSlot = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				itemName:completeAnimation()
+
 				itemName.weaponNameWithVariant.variantName:completeAnimation()
 				self.itemName:setAlpha( 1 )
 				self.itemName.weaponNameWithVariant.variantName:setAlpha( 0 )
 				self.clipFinished( itemName, {} )
+
 				weaponPreview:completeAnimation()
 				self.weaponPreview:setAlpha( 0 )
 				self.clipFinished( weaponPreview, {} )
+
 				categoryName:completeAnimation()
 				self.categoryName:setAlpha( 1 )
 				self.clipFinished( categoryName, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 3 )
+
 				local itemNameFrame2 = function ( itemName, event )
 					if not event.interrupted then
 						itemName:beginAnimation( "keyframe", 439, false, false, CoD.TweenType.Bounce )
@@ -219,10 +233,12 @@ CoD.InfopanePreviewWidget.new = function ( menu, controller )
 				end
 				
 				itemName:completeAnimation()
+
 				itemName.weaponNameWithVariant.variantName:completeAnimation()
 				self.itemName:setAlpha( 0 )
 				self.itemName.weaponNameWithVariant.variantName:setAlpha( 0 )
 				itemNameFrame2( itemName, {} )
+
 				weaponPreview:completeAnimation()
 				self.weaponPreview:setAlpha( 0 )
 				self.clipFinished( weaponPreview, {} )
@@ -246,20 +262,25 @@ CoD.InfopanePreviewWidget.new = function ( menu, controller )
 		SlotIsEmpty = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				itemName:completeAnimation()
+
 				itemName.weaponNameWithVariant.variantName:completeAnimation()
 				self.itemName:setAlpha( 1 )
 				self.itemName.weaponNameWithVariant.variantName:setAlpha( 0 )
 				self.clipFinished( itemName, {} )
+
 				weaponPreview:completeAnimation()
 				self.weaponPreview:setAlpha( 1 )
 				self.clipFinished( weaponPreview, {} )
+
 				categoryName:completeAnimation()
 				self.categoryName:setAlpha( 1 )
 				self.clipFinished( categoryName, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 3 )
+
 				local itemNameFrame2 = function ( itemName, event )
 					if not event.interrupted then
 						itemName:beginAnimation( "keyframe", 239, false, false, CoD.TweenType.Bounce )
@@ -275,6 +296,7 @@ CoD.InfopanePreviewWidget.new = function ( menu, controller )
 				end
 				
 				itemName:completeAnimation()
+
 				itemName.weaponNameWithVariant.variantName:completeAnimation()
 				self.itemName:setAlpha( 0 )
 				self.itemName.weaponNameWithVariant.variantName:setAlpha( 0 )
@@ -322,6 +344,7 @@ CoD.InfopanePreviewWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NonVariantNameSlot",
@@ -342,6 +365,7 @@ CoD.InfopanePreviewWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.itemName:close()
 		element.weaponPreview:close()

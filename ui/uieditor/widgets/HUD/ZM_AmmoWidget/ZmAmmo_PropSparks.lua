@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_FX.ZmFx_Spark2Ext" )
 CoD.ZmAmmo_PropSparks = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_PropSparks.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_PropSparks )
 	self.id = "ZmAmmo_PropSparks"
@@ -40,9 +42,11 @@ CoD.ZmAmmo_PropSparks.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ZmFxSpark2Ext00000:completeAnimation()
 				self.ZmFxSpark2Ext00000:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext00000, {} )
+
 				ZmFxSpark2Ext000000:completeAnimation()
 				self.ZmFxSpark2Ext000000:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext000000, {} )
@@ -51,15 +55,18 @@ CoD.ZmAmmo_PropSparks.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ZmFxSpark2Ext00000:completeAnimation()
 				self.ZmFxSpark2Ext00000:setAlpha( 1 )
 				self.clipFinished( ZmFxSpark2Ext00000, {} )
+
 				ZmFxSpark2Ext000000:completeAnimation()
 				self.ZmFxSpark2Ext000000:setAlpha( 1 )
 				self.clipFinished( ZmFxSpark2Ext000000, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -76,6 +83,7 @@ CoD.ZmAmmo_PropSparks.new = function ( menu, controller )
 			modelName = "zmInventory.super_ee"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmFxSpark2Ext00000:close()
 		element.ZmFxSpark2Ext000000:close()

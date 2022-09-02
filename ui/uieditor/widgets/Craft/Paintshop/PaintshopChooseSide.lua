@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ListSubHeaderGlow" )
 CoD.PaintshopChooseSide = InheritFrom( LUI.UIElement )
 CoD.PaintshopChooseSide.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PaintshopChooseSide )
 	self.id = "PaintshopChooseSide"

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.Social_InfoPane_Presence_NotInTitle = InheritFrom( LUI.UIElement )
 CoD.Social_InfoPane_Presence_NotInTitle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_InfoPane_Presence_NotInTitle )
 	self.id = "Social_InfoPane_Presence_NotInTitle"
@@ -61,9 +63,11 @@ CoD.Social_InfoPane_Presence_NotInTitle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				platformPresence:completeAnimation()
 				self.platformPresence:setAlpha( 1 )
 				self.clipFinished( platformPresence, {} )
+
 				statusText:completeAnimation()
 				self.statusText:setAlpha( 1 )
 				self.statusText:setText( Engine.Localize( "MENU_ONLINE" ) )
@@ -73,10 +77,12 @@ CoD.Social_InfoPane_Presence_NotInTitle.new = function ( menu, controller )
 		Offline = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				platformPresence:completeAnimation()
 				self.platformPresence:setRGB( 1, 1, 1 )
 				self.platformPresence:setAlpha( 0 )
 				self.clipFinished( platformPresence, {} )
+
 				statusText:completeAnimation()
 				self.statusText:setAlpha( 1 )
 				self.statusText:setText( Engine.Localize( "MENU_OFFLINE" ) )
@@ -84,6 +90,7 @@ CoD.Social_InfoPane_Presence_NotInTitle.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.cacItemTitleGlow0:close()
 	end )

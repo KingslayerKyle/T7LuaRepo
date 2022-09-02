@@ -4,9 +4,11 @@
 CoD.ZmAmmo_DpadIconBgm = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_DpadIconBgm.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_DpadIconBgm )
 	self.id = "ZmAmmo_DpadIconBgm"
@@ -61,15 +63,18 @@ CoD.ZmAmmo_DpadIconBgm.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				IconImgBgmDisabled:completeAnimation()
 				self.IconImgBgmDisabled:setAlpha( 0 )
 				self.clipFinished( IconImgBgmDisabled, {} )
+
 				IconImgBgmActive:completeAnimation()
 				self.IconImgBgmActive:setAlpha( 0 )
 				self.clipFinished( IconImgBgmActive, {} )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 2 )
+
 				local IconImgBgmBaseNewFrame2 = function ( IconImgBgmBaseNew, event )
 					local IconImgBgmBaseNewFrame3 = function ( IconImgBgmBaseNew, event )
 						local IconImgBgmBaseNewFrame4 = function ( IconImgBgmBaseNew, event )
@@ -184,6 +189,7 @@ CoD.ZmAmmo_DpadIconBgm.new = function ( menu, controller )
 				IconImgBgmBaseNew:completeAnimation()
 				self.IconImgBgmBaseNew:setAlpha( 0 )
 				IconImgBgmBaseNewFrame2( IconImgBgmBaseNew, {} )
+
 				IconImgBgmActive:completeAnimation()
 				self.IconImgBgmActive:setAlpha( 1 )
 				self.clipFinished( IconImgBgmActive, {} )
@@ -192,6 +198,7 @@ CoD.ZmAmmo_DpadIconBgm.new = function ( menu, controller )
 		InvalidUse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local IconImgBgmBaseInvalidFrame2 = function ( IconImgBgmBaseInvalid, event )
 					local IconImgBgmBaseInvalidFrame3 = function ( IconImgBgmBaseInvalid, event )
 						local IconImgBgmBaseInvalidFrame4 = function ( IconImgBgmBaseInvalid, event )
@@ -265,17 +272,20 @@ CoD.ZmAmmo_DpadIconBgm.new = function ( menu, controller )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				IconImgBgmActive:completeAnimation()
 				self.IconImgBgmActive:setAlpha( 1 )
 				self.clipFinished( IconImgBgmActive, {} )
 			end,
 			Activate = function ()
 				self:setupElementClipCounter( 2 )
+
 				IconImgBgmActive:completeAnimation()
 				self.IconImgBgmActive:setAlpha( 1 )
 				self.clipFinished( IconImgBgmActive, {} )
@@ -336,6 +346,7 @@ CoD.ZmAmmo_DpadIconBgm.new = function ( menu, controller )
 		New = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local IconImgBgmBaseNewFrame2 = function ( IconImgBgmBaseNew, event )
 					local IconImgBgmBaseNewFrame3 = function ( IconImgBgmBaseNew, event )
 						local IconImgBgmBaseNewFrame4 = function ( IconImgBgmBaseNew, event )
@@ -450,6 +461,7 @@ CoD.ZmAmmo_DpadIconBgm.new = function ( menu, controller )
 				IconImgBgmBaseNew:completeAnimation()
 				self.IconImgBgmBaseNew:setAlpha( 0 )
 				IconImgBgmBaseNewFrame2( IconImgBgmBaseNew, {} )
+
 				IconImgBgmActive:completeAnimation()
 				self.IconImgBgmActive:setAlpha( 1 )
 				self.clipFinished( IconImgBgmActive, {} )
@@ -458,16 +470,19 @@ CoD.ZmAmmo_DpadIconBgm.new = function ( menu, controller )
 		Unavailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				IconImgBgmDisabled:completeAnimation()
 				self.IconImgBgmDisabled:setRGB( 0.35, 0.35, 0.35 )
 				self.IconImgBgmDisabled:setAlpha( 1 )
 				self.clipFinished( IconImgBgmDisabled, {} )
+
 				IconImgBgmActive:completeAnimation()
 				self.IconImgBgmActive:setAlpha( 0 )
 				self.clipFinished( IconImgBgmActive, {} )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 2 )
+
 				local IconImgBgmBaseNewFrame2 = function ( IconImgBgmBaseNew, event )
 					local IconImgBgmBaseNewFrame3 = function ( IconImgBgmBaseNew, event )
 						local IconImgBgmBaseNewFrame4 = function ( IconImgBgmBaseNew, event )
@@ -582,12 +597,14 @@ CoD.ZmAmmo_DpadIconBgm.new = function ( menu, controller )
 				IconImgBgmBaseNew:completeAnimation()
 				self.IconImgBgmBaseNew:setAlpha( 0 )
 				IconImgBgmBaseNewFrame2( IconImgBgmBaseNew, {} )
+
 				IconImgBgmActive:completeAnimation()
 				self.IconImgBgmActive:setAlpha( 1 )
 				self.clipFinished( IconImgBgmActive, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "InvalidUse",

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Social.Social_PartyList" )
 CoD.Social_InfoPane_Party = InheritFrom( LUI.UIElement )
 CoD.Social_InfoPane_Party.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_InfoPane_Party )
 	self.id = "Social_InfoPane_Party"
@@ -73,6 +75,7 @@ CoD.Social_InfoPane_Party.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
@@ -84,6 +87,7 @@ CoD.Social_InfoPane_Party.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.cacItemTitleGlow0:close()
 		element.PLayerList:close()

@@ -41,9 +41,11 @@ end
 CoD.DamageWidgetEMP = InheritFrom( LUI.UIElement )
 CoD.DamageWidgetEMP.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DamageWidgetEMP )
 	self.id = "DamageWidgetEMP"
@@ -88,12 +90,15 @@ CoD.DamageWidgetEMP.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				EMPScoreInfo0Hess:completeAnimation()
 				self.EMPScoreInfo0Hess:setAlpha( 1 )
 				self.clipFinished( EMPScoreInfo0Hess, {} )
+
 				EMPScoreInfo1Hess:completeAnimation()
 				self.EMPScoreInfo1Hess:setAlpha( 0 )
 				self.clipFinished( EMPScoreInfo1Hess, {} )
+
 				EMPScoreInfo2Hess:completeAnimation()
 				self.EMPScoreInfo2Hess:setAlpha( 0 )
 				self.clipFinished( EMPScoreInfo2Hess, {} )
@@ -102,12 +107,15 @@ CoD.DamageWidgetEMP.new = function ( menu, controller )
 		Hess1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				EMPScoreInfo0Hess:completeAnimation()
 				self.EMPScoreInfo0Hess:setAlpha( 0 )
 				self.clipFinished( EMPScoreInfo0Hess, {} )
+
 				EMPScoreInfo1Hess:completeAnimation()
 				self.EMPScoreInfo1Hess:setAlpha( 1 )
 				self.clipFinished( EMPScoreInfo1Hess, {} )
+
 				EMPScoreInfo2Hess:completeAnimation()
 				self.EMPScoreInfo2Hess:setAlpha( 0 )
 				self.clipFinished( EMPScoreInfo2Hess, {} )
@@ -116,18 +124,22 @@ CoD.DamageWidgetEMP.new = function ( menu, controller )
 		Hess2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				EMPScoreInfo0Hess:completeAnimation()
 				self.EMPScoreInfo0Hess:setAlpha( 0 )
 				self.clipFinished( EMPScoreInfo0Hess, {} )
+
 				EMPScoreInfo1Hess:completeAnimation()
 				self.EMPScoreInfo1Hess:setAlpha( 0 )
 				self.clipFinished( EMPScoreInfo1Hess, {} )
+
 				EMPScoreInfo2Hess:completeAnimation()
 				self.EMPScoreInfo2Hess:setAlpha( 1 )
 				self.clipFinished( EMPScoreInfo2Hess, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hess1",

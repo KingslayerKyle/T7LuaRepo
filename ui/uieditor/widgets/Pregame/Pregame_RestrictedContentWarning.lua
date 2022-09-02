@@ -85,9 +85,11 @@ end
 CoD.Pregame_RestrictedContentWarning = InheritFrom( LUI.UIElement )
 CoD.Pregame_RestrictedContentWarning.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.Pregame_RestrictedContentWarning )
 	self.id = "Pregame_RestrictedContentWarning"
@@ -228,18 +230,23 @@ CoD.Pregame_RestrictedContentWarning.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 0 )
 				self.clipFinished( Title, {} )
+
 				Description:completeAnimation()
 				self.Description:setAlpha( 0 )
 				self.clipFinished( Description, {} )
+
 				BannedItemsList:completeAnimation()
 				self.BannedItemsList:setAlpha( 0 )
 				self.clipFinished( BannedItemsList, {} )
+
 				ButtonList:completeAnimation()
 				self.ButtonList:setAlpha( 0 )
 				self.clipFinished( ButtonList, {} )
+
 				PregameTimerOverlay:completeAnimation()
 				self.PregameTimerOverlay:setAlpha( 1 )
 				self.clipFinished( PregameTimerOverlay, {} )
@@ -248,15 +255,19 @@ CoD.Pregame_RestrictedContentWarning.new = function ( menu, controller )
 		NoBannedCacContent = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Title:completeAnimation()
 				self.Title:setText( Engine.Localize( "MENU_NO_CAC_CONTENT_BANNED_CAPS" ) )
 				self.clipFinished( Title, {} )
+
 				Description:completeAnimation()
 				self.Description:setText( Engine.Localize( "MENU_NO_CAC_CONTENT_BANNED_DESC" ) )
 				self.clipFinished( Description, {} )
+
 				BannedItemsList:completeAnimation()
 				self.BannedItemsList:setAlpha( 0 )
 				self.clipFinished( BannedItemsList, {} )
+
 				WarningText:completeAnimation()
 				self.WarningText:setAlpha( 0 )
 				self.clipFinished( WarningText, {} )
@@ -265,15 +276,19 @@ CoD.Pregame_RestrictedContentWarning.new = function ( menu, controller )
 		CacContentBannedEquipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Title:completeAnimation()
 				self.Title:setText( Engine.Localize( "MENU_CAC_CONTENT_BANNED_CAPS" ) )
 				self.clipFinished( Title, {} )
+
 				Description:completeAnimation()
 				self.Description:setText( Engine.Localize( "MENU_CAC_CONTENT_BANNED_DESC" ) )
 				self.clipFinished( Description, {} )
+
 				BannedItemsList:completeAnimation()
 				self.BannedItemsList:setAlpha( 1 )
 				self.clipFinished( BannedItemsList, {} )
+
 				WarningText:completeAnimation()
 				self.WarningText:setAlpha( 1 )
 				self.clipFinished( WarningText, {} )
@@ -282,15 +297,19 @@ CoD.Pregame_RestrictedContentWarning.new = function ( menu, controller )
 		NoEquippedBannedCacContent = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Title:completeAnimation()
 				self.Title:setText( Engine.Localize( "MENU_NO_CAC_CONTENT_BANNED_CAPS" ) )
 				self.clipFinished( Title, {} )
+
 				Description:completeAnimation()
 				self.Description:setText( Engine.Localize( "MENU_NO_EQUIPPED_BANNED_CAC_CONTENT_DESC" ) )
 				self.clipFinished( Description, {} )
+
 				BannedItemsList:completeAnimation()
 				self.BannedItemsList:setAlpha( 1 )
 				self.clipFinished( BannedItemsList, {} )
+
 				WarningText:completeAnimation()
 				self.WarningText:setAlpha( 1 )
 				self.clipFinished( WarningText, {} )
@@ -299,15 +318,19 @@ CoD.Pregame_RestrictedContentWarning.new = function ( menu, controller )
 		NoBannedScorestreaks = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Title:completeAnimation()
 				self.Title:setText( Engine.Localize( "MENU_NO_SCORESTREAK_CONTENT_BANNED_CAPS" ) )
 				self.clipFinished( Title, {} )
+
 				Description:completeAnimation()
 				self.Description:setText( Engine.Localize( "MENU_NO_SCORESTREAK_CONTENT_BANNED_DESC" ) )
 				self.clipFinished( Description, {} )
+
 				BannedItemsList:completeAnimation()
 				self.BannedItemsList:setAlpha( 0 )
 				self.clipFinished( BannedItemsList, {} )
+
 				WarningText:completeAnimation()
 				self.WarningText:setAlpha( 0 )
 				self.clipFinished( WarningText, {} )
@@ -316,15 +339,19 @@ CoD.Pregame_RestrictedContentWarning.new = function ( menu, controller )
 		BannedStreaksEquipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Title:completeAnimation()
 				self.Title:setText( Engine.Localize( "MENU_SCORESTREAK_CONTENT_BANNED_CAPS" ) )
 				self.clipFinished( Title, {} )
+
 				Description:completeAnimation()
 				self.Description:setText( Engine.Localize( "MENU_SCORESTREAK_CONTENT_BANNED_DESC" ) )
 				self.clipFinished( Description, {} )
+
 				BannedItemsList:completeAnimation()
 				self.BannedItemsList:setAlpha( 1 )
 				self.clipFinished( BannedItemsList, {} )
+
 				WarningText:completeAnimation()
 				self.WarningText:setAlpha( 1 )
 				self.clipFinished( WarningText, {} )
@@ -333,18 +360,23 @@ CoD.Pregame_RestrictedContentWarning.new = function ( menu, controller )
 		NoEquippedBannedStreaks = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Title:completeAnimation()
 				self.Title:setText( Engine.Localize( "MENU_NO_SCORESTREAK_CONTENT_BANNED_CAPS" ) )
 				self.clipFinished( Title, {} )
+
 				Description:completeAnimation()
 				self.Description:setText( Engine.Localize( "MENU_NO_BANNED_SCORESTREAKS_EQUIPPED_DESC" ) )
 				self.clipFinished( Description, {} )
+
 				BannedItemsList:completeAnimation()
 				self.BannedItemsList:setAlpha( 1 )
 				self.clipFinished( BannedItemsList, {} )
+
 				ButtonList:completeAnimation()
 				self.ButtonList:setAlpha( 1 )
 				self.clipFinished( ButtonList, {} )
+
 				WarningText:completeAnimation()
 				self.WarningText:setAlpha( 1 )
 				self.WarningText:setText( Engine.Localize( "MENU_ALL_BANNED_SCORESTREAKS" ) )
@@ -352,6 +384,7 @@ CoD.Pregame_RestrictedContentWarning.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoBannedCacContent",
@@ -501,6 +534,7 @@ CoD.Pregame_RestrictedContentWarning.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BannedItemsList:close()
 		element.ButtonList:close()

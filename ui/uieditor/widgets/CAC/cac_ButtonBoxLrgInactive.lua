@@ -4,9 +4,11 @@
 CoD.cac_ButtonBoxLrgInactive = InheritFrom( LUI.UIElement )
 CoD.cac_ButtonBoxLrgInactive.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_ButtonBoxLrgInactive )
 	self.id = "cac_ButtonBoxLrgInactive"
@@ -28,6 +30,7 @@ CoD.cac_ButtonBoxLrgInactive.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

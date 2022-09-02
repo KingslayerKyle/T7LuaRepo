@@ -4,9 +4,11 @@
 CoD.PodControlPieceWidget = InheritFrom( LUI.UIElement )
 CoD.PodControlPieceWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PodControlPieceWidget )
 	self.id = "PodControlPieceWidget"
@@ -30,9 +32,11 @@ CoD.PodControlPieceWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PieceImageNewGreen:completeAnimation()
 				self.PieceImageNewGreen:setAlpha( 0 )
 				self.clipFinished( PieceImageNewGreen, {} )
+
 				PieceImage:completeAnimation()
 				self.PieceImage:setAlpha( 0 )
 				self.clipFinished( PieceImage, {} )
@@ -41,15 +45,18 @@ CoD.PodControlPieceWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PieceImageNewGreen:completeAnimation()
 				self.PieceImageNewGreen:setAlpha( 1 )
 				self.clipFinished( PieceImageNewGreen, {} )
+
 				PieceImage:completeAnimation()
 				self.PieceImage:setAlpha( 1 )
 				self.clipFinished( PieceImage, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

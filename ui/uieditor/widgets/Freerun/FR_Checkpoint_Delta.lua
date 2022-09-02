@@ -4,9 +4,11 @@
 CoD.FR_Checkpoint_Delta = InheritFrom( LUI.UIElement )
 CoD.FR_Checkpoint_Delta.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FR_Checkpoint_Delta )
 	self.id = "FR_Checkpoint_Delta"
@@ -60,9 +62,11 @@ CoD.FR_Checkpoint_Delta.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TextBG:completeAnimation()
 				self.TextBG:setAlpha( 0.5 )
 				self.clipFinished( TextBG, {} )
+
 				BestTimeDeltaText:completeAnimation()
 				self.BestTimeDeltaText:setRGB( 1, 1, 1 )
 				self.BestTimeDeltaText:setAlpha( 0.9 )
@@ -72,9 +76,11 @@ CoD.FR_Checkpoint_Delta.new = function ( menu, controller )
 		Ahead = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TextBG:completeAnimation()
 				self.TextBG:setAlpha( 0.4 )
 				self.clipFinished( TextBG, {} )
+
 				BestTimeDeltaText:completeAnimation()
 				self.BestTimeDeltaText:setRGB( 0.01, 1, 0 )
 				self.BestTimeDeltaText:setAlpha( 0.9 )
@@ -84,9 +90,11 @@ CoD.FR_Checkpoint_Delta.new = function ( menu, controller )
 		Behind = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TextBG:completeAnimation()
 				self.TextBG:setAlpha( 0.4 )
 				self.clipFinished( TextBG, {} )
+
 				BestTimeDeltaText:completeAnimation()
 				self.BestTimeDeltaText:setRGB( 1, 0, 0 )
 				self.BestTimeDeltaText:setAlpha( 0.9 )
@@ -94,6 +102,7 @@ CoD.FR_Checkpoint_Delta.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Ahead",
@@ -147,6 +156,7 @@ CoD.FR_Checkpoint_Delta.new = function ( menu, controller )
 			modelName = "FreeRun.runState"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TextBG:close()
 		element.BestTimeDeltaText:close()

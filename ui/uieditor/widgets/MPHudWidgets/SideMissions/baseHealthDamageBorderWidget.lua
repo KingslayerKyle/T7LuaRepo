@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.baseHealthDamageBorderWidget = InheritFrom( LUI.UIElement )
 CoD.baseHealthDamageBorderWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.baseHealthDamageBorderWidget )
 	self.id = "baseHealthDamageBorderWidget"
@@ -27,6 +29,7 @@ CoD.baseHealthDamageBorderWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				border:completeAnimation()
 				self.border:setRGB( 0, 0, 0 )
 				self.clipFinished( border, {} )
@@ -35,6 +38,7 @@ CoD.baseHealthDamageBorderWidget.new = function ( menu, controller )
 		TakingDamage = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local borderFrame2 = function ( border, event )
 					local borderFrame3 = function ( border, event )
 						if not event.interrupted then
@@ -61,10 +65,12 @@ CoD.baseHealthDamageBorderWidget.new = function ( menu, controller )
 				border:completeAnimation()
 				self.border:setRGB( 0, 0, 0 )
 				borderFrame2( border, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.border:close()
 	end )

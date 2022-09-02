@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.button" )
 CoD.client_demo_files_button = InheritFrom( LUI.UIElement )
 CoD.client_demo_files_button.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.client_demo_files_button )
 	self.id = "client_demo_files_button"
@@ -91,6 +93,7 @@ CoD.client_demo_files_button.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Button:close()
 		element.Author:close()

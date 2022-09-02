@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.ZMInventory.Ritual.RitualItemInUseByOtherPlayer" )
 CoD.RitualItem = InheritFrom( LUI.UIElement )
 CoD.RitualItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RitualItem )
 	self.id = "RitualItem"
@@ -73,26 +75,35 @@ CoD.RitualItem.new = function ( menu, controller )
 		ScoreboardFound = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				CompletedImage:completeAnimation()
 				self.CompletedImage:setAlpha( 0 )
 				self.clipFinished( CompletedImage, {} )
+
 				WormImage:completeAnimation()
 				self.WormImage:setAlpha( 0 )
 				self.clipFinished( WormImage, {} )
+
 				RitualItemImage:completeAnimation()
 				self.RitualItemImage:setAlpha( 1 )
 				self.clipFinished( RitualItemImage, {} )
+
 				MissingImage:completeAnimation()
 				self.MissingImage:setAlpha( 0 )
 				self.clipFinished( MissingImage, {} )
+
 				RitualItemNewImage:completeAnimation()
 				self.RitualItemNewImage:setAlpha( 0 )
 				self.clipFinished( RitualItemNewImage, {} )
+
 				RitualItemInUseByOtherPlayer:completeAnimation()
+
 				RitualItemInUseByOtherPlayer.InUseByOtherPlayerImage:completeAnimation()
+
 				RitualItemInUseByOtherPlayer.PlayerImage:completeAnimation()
 				self.RitualItemInUseByOtherPlayer:setAlpha( 1 )
 				self.RitualItemInUseByOtherPlayer.InUseByOtherPlayerImage:setAlpha( 0 )
@@ -103,30 +114,38 @@ CoD.RitualItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				CompletedImage:completeAnimation()
 				self.CompletedImage:setAlpha( 0 )
 				self.clipFinished( CompletedImage, {} )
+
 				WormImage:completeAnimation()
 				self.WormImage:setAlpha( 0 )
 				self.clipFinished( WormImage, {} )
+
 				RitualItemImage:completeAnimation()
 				self.RitualItemImage:setAlpha( 0 )
 				self.clipFinished( RitualItemImage, {} )
+
 				MissingImage:completeAnimation()
 				self.MissingImage:setAlpha( 0 )
 				self.clipFinished( MissingImage, {} )
+
 				RitualItemNewImage:completeAnimation()
 				self.RitualItemNewImage:setAlpha( 0 )
 				self.clipFinished( RitualItemNewImage, {} )
+
 				RitualItemInUseByOtherPlayer:completeAnimation()
 				self.RitualItemInUseByOtherPlayer:setAlpha( 0 )
 				self.clipFinished( RitualItemInUseByOtherPlayer, {} )
 			end,
 			Found = function ()
 				self:setupElementClipCounter( 7 )
+
 				local ZmFxSpark20Frame2 = function ( ZmFxSpark20, event )
 					local ZmFxSpark20Frame3 = function ( ZmFxSpark20, event )
 						local ZmFxSpark20Frame4 = function ( ZmFxSpark20, event )
@@ -163,15 +182,19 @@ CoD.RitualItem.new = function ( menu, controller )
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				ZmFxSpark20Frame2( ZmFxSpark20, {} )
+
 				CompletedImage:completeAnimation()
 				self.CompletedImage:setAlpha( 0 )
 				self.clipFinished( CompletedImage, {} )
+
 				WormImage:completeAnimation()
 				self.WormImage:setAlpha( 0 )
 				self.clipFinished( WormImage, {} )
+
 				RitualItemImage:completeAnimation()
 				self.RitualItemImage:setAlpha( 0 )
 				self.clipFinished( RitualItemImage, {} )
+
 				MissingImage:completeAnimation()
 				self.MissingImage:setAlpha( 0 )
 				self.clipFinished( MissingImage, {} )
@@ -299,6 +322,7 @@ CoD.RitualItem.new = function ( menu, controller )
 				RitualItemNewImage:completeAnimation()
 				self.RitualItemNewImage:setAlpha( 0 )
 				RitualItemNewImageFrame2( RitualItemNewImage, {} )
+
 				RitualItemInUseByOtherPlayer:completeAnimation()
 				self.RitualItemInUseByOtherPlayer:setAlpha( 0 )
 				self.clipFinished( RitualItemInUseByOtherPlayer, {} )
@@ -307,12 +331,15 @@ CoD.RitualItem.new = function ( menu, controller )
 		Found = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				CompletedImage:completeAnimation()
 				self.CompletedImage:setAlpha( 0 )
 				self.clipFinished( CompletedImage, {} )
+
 				WormImage:completeAnimation()
 				self.WormImage:setAlpha( 0 )
 				self.clipFinished( WormImage, {} )
@@ -331,12 +358,14 @@ CoD.RitualItem.new = function ( menu, controller )
 				RitualItemImage:completeAnimation()
 				self.RitualItemImage:setAlpha( 1 )
 				RitualItemImageFrame2( RitualItemImage, {} )
+
 				MissingImage:completeAnimation()
 				self.MissingImage:setAlpha( 0 )
 				self.clipFinished( MissingImage, {} )
 				RitualItemNewImage:beginAnimation( "keyframe", 9, false, false, CoD.TweenType.Linear )
 				RitualItemNewImage:setAlpha( 0 )
 				RitualItemNewImage:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				RitualItemInUseByOtherPlayer:completeAnimation()
 				self.RitualItemInUseByOtherPlayer:setAlpha( 0 )
 				self.clipFinished( RitualItemInUseByOtherPlayer, {} )
@@ -345,24 +374,31 @@ CoD.RitualItem.new = function ( menu, controller )
 		Completed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				CompletedImage:completeAnimation()
 				self.CompletedImage:setAlpha( 1 )
 				self.clipFinished( CompletedImage, {} )
+
 				WormImage:completeAnimation()
 				self.WormImage:setAlpha( 0 )
 				self.clipFinished( WormImage, {} )
+
 				RitualItemImage:completeAnimation()
 				self.RitualItemImage:setAlpha( 0 )
 				self.clipFinished( RitualItemImage, {} )
+
 				MissingImage:completeAnimation()
 				self.MissingImage:setAlpha( 0 )
 				self.clipFinished( MissingImage, {} )
+
 				RitualItemNewImage:completeAnimation()
 				self.RitualItemNewImage:setAlpha( 0 )
 				self.clipFinished( RitualItemNewImage, {} )
+
 				RitualItemInUseByOtherPlayer:completeAnimation()
 				self.RitualItemInUseByOtherPlayer:setAlpha( 0 )
 				self.clipFinished( RitualItemInUseByOtherPlayer, {} )
@@ -371,29 +407,38 @@ CoD.RitualItem.new = function ( menu, controller )
 		Worm = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setLeftRight( false, false, -22.5, 22.5 )
 				self.ZmFxSpark20:setTopBottom( false, false, -36.5, 26.5 )
 				self.ZmFxSpark20:setRGB( 0.98, 1, 0 )
 				self.ZmFxSpark20:setAlpha( 1 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				CompletedImage:completeAnimation()
 				self.CompletedImage:setAlpha( 0 )
 				self.clipFinished( CompletedImage, {} )
+
 				WormImage:completeAnimation()
 				self.WormImage:setAlpha( 1 )
 				self.clipFinished( WormImage, {} )
+
 				RitualItemImage:completeAnimation()
 				self.RitualItemImage:setAlpha( 0 )
 				self.clipFinished( RitualItemImage, {} )
+
 				MissingImage:completeAnimation()
 				self.MissingImage:setAlpha( 0 )
 				self.clipFinished( MissingImage, {} )
+
 				RitualItemNewImage:completeAnimation()
 				self.RitualItemNewImage:setAlpha( 0 )
 				self.clipFinished( RitualItemNewImage, {} )
+
 				RitualItemInUseByOtherPlayer:completeAnimation()
+
 				RitualItemInUseByOtherPlayer.InUseByOtherPlayerImage:completeAnimation()
+
 				RitualItemInUseByOtherPlayer.PlayerImage:completeAnimation()
 				self.RitualItemInUseByOtherPlayer:setAlpha( 1 )
 				self.RitualItemInUseByOtherPlayer.InUseByOtherPlayerImage:setAlpha( 0 )
@@ -404,6 +449,7 @@ CoD.RitualItem.new = function ( menu, controller )
 		Activated = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				local ZmFxSpark20Frame2 = function ( ZmFxSpark20, event )
 					local ZmFxSpark20Frame3 = function ( ZmFxSpark20, event )
 						local ZmFxSpark20Frame4 = function ( ZmFxSpark20, event )
@@ -440,9 +486,11 @@ CoD.RitualItem.new = function ( menu, controller )
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				ZmFxSpark20Frame2( ZmFxSpark20, {} )
+
 				CompletedImage:completeAnimation()
 				self.CompletedImage:setAlpha( 0 )
 				self.clipFinished( CompletedImage, {} )
+
 				WormImage:completeAnimation()
 				self.WormImage:setAlpha( 0 )
 				self.clipFinished( WormImage, {} )
@@ -494,12 +542,15 @@ CoD.RitualItem.new = function ( menu, controller )
 				RitualItemImage:completeAnimation()
 				self.RitualItemImage:setAlpha( 0 )
 				RitualItemImageFrame2( RitualItemImage, {} )
+
 				MissingImage:completeAnimation()
 				self.MissingImage:setAlpha( 0 )
 				self.clipFinished( MissingImage, {} )
+
 				RitualItemNewImage:completeAnimation()
 				self.RitualItemNewImage:setAlpha( 0 )
 				self.clipFinished( RitualItemNewImage, {} )
+
 				RitualItemInUseByOtherPlayer:completeAnimation()
 				self.RitualItemInUseByOtherPlayer:setAlpha( 0 )
 				self.clipFinished( RitualItemInUseByOtherPlayer, {} )
@@ -508,21 +559,27 @@ CoD.RitualItem.new = function ( menu, controller )
 		InUseByOtherPlayer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				CompletedImage:completeAnimation()
 				self.CompletedImage:setAlpha( 0 )
 				self.clipFinished( CompletedImage, {} )
+
 				WormImage:completeAnimation()
 				self.WormImage:setAlpha( 0 )
 				self.clipFinished( WormImage, {} )
+
 				RitualItemImage:completeAnimation()
 				self.RitualItemImage:setAlpha( 0 )
 				self.clipFinished( RitualItemImage, {} )
+
 				MissingImage:completeAnimation()
 				self.MissingImage:setAlpha( 0 )
 				self.clipFinished( MissingImage, {} )
+
 				RitualItemNewImage:completeAnimation()
 				self.RitualItemNewImage:setAlpha( 0 )
 				self.clipFinished( RitualItemNewImage, {} )
@@ -579,15 +636,19 @@ CoD.RitualItem.new = function ( menu, controller )
 		Missing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				CompletedImage:completeAnimation()
 				self.CompletedImage:setAlpha( 0 )
 				self.clipFinished( CompletedImage, {} )
+
 				WormImage:completeAnimation()
 				self.WormImage:setAlpha( 0 )
 				self.clipFinished( WormImage, {} )
+
 				RitualItemImage:completeAnimation()
 				self.RitualItemImage:setAlpha( 0 )
 				self.clipFinished( RitualItemImage, {} )
@@ -639,15 +700,18 @@ CoD.RitualItem.new = function ( menu, controller )
 				MissingImage:completeAnimation()
 				self.MissingImage:setAlpha( 1 )
 				MissingImageFrame2( MissingImage, {} )
+
 				RitualItemNewImage:completeAnimation()
 				self.RitualItemNewImage:setAlpha( 0 )
 				self.clipFinished( RitualItemNewImage, {} )
+
 				RitualItemInUseByOtherPlayer:completeAnimation()
 				self.RitualItemInUseByOtherPlayer:setAlpha( 0 )
 				self.clipFinished( RitualItemInUseByOtherPlayer, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ScoreboardFound",
@@ -714,6 +778,7 @@ CoD.RitualItem.new = function ( menu, controller )
 			modelName = "zmInventory.widget_quest_items"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmFxSpark20:close()
 		element.RitualItemInUseByOtherPlayer:close()

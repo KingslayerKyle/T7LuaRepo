@@ -11,9 +11,11 @@ require( "ui.uieditor.widgets.Effects.fxGlitch1_Main" )
 CoD.KillcamPlayerInfo = InheritFrom( LUI.UIElement )
 CoD.KillcamPlayerInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.KillcamPlayerInfo )
 	self.id = "KillcamPlayerInfo"
@@ -230,72 +232,91 @@ CoD.KillcamPlayerInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				NemesisShadow:completeAnimation()
 				self.NemesisShadow:setAlpha( 0 )
 				self.clipFinished( NemesisShadow, {} )
+
 				NemesisLine2:completeAnimation()
 				self.NemesisLine2:setLeftRight( false, false, -63.78, -60 )
 				self.NemesisLine2:setTopBottom( false, false, -71, -47 )
 				self.NemesisLine2:setAlpha( 0 )
 				self.clipFinished( NemesisLine2, {} )
+
 				NemesisImageNormal:completeAnimation()
 				self.NemesisImageNormal:setAlpha( 0 )
 				self.clipFinished( NemesisImageNormal, {} )
+
 				NemesisImageAdd:completeAnimation()
 				self.NemesisImageAdd:setAlpha( 0 )
 				self.clipFinished( NemesisImageAdd, {} )
+
 				NemesisGlow:completeAnimation()
 				self.NemesisGlow:setAlpha( 0 )
 				self.clipFinished( NemesisGlow, {} )
+
 				NemesLine1:completeAnimation()
 				self.NemesLine1:setLeftRight( false, false, 59, 79.5 )
 				self.NemesLine1:setTopBottom( false, false, -71, -47 )
 				self.NemesLine1:setAlpha( 0 )
 				self.clipFinished( NemesLine1, {} )
+
 				LeftPanelR:completeAnimation()
 				self.LeftPanelR:setLeftRight( true, false, 356, 500 )
 				self.LeftPanelR:setTopBottom( true, false, -12, 68 )
 				self.LeftPanelR:setAlpha( 0 )
 				self.clipFinished( LeftPanelR, {} )
+
 				LeftPanelR0:completeAnimation()
 				self.LeftPanelR0:setLeftRight( true, false, 790, 934 )
 				self.LeftPanelR0:setTopBottom( true, false, -12, 68 )
 				self.LeftPanelR0:setAlpha( 0 )
 				self.clipFinished( LeftPanelR0, {} )
+
 				YouAndKillerWidget0:completeAnimation()
 				self.YouAndKillerWidget0:setAlpha( 0 )
 				self.clipFinished( YouAndKillerWidget0, {} )
+
 				YouAndKillerWidget00:completeAnimation()
 				self.YouAndKillerWidget00:setAlpha( 0 )
 				self.clipFinished( YouAndKillerWidget00, {} )
+
 				VictimPlayerCard:completeAnimation()
 				self.VictimPlayerCard:setLeftRight( true, false, 929, 1205 )
 				self.VictimPlayerCard:setTopBottom( true, false, -2, 57 )
 				self.VictimPlayerCard:setAlpha( 0 )
 				self.clipFinished( VictimPlayerCard, {} )
+
 				AttackerPlayerCard:completeAnimation()
 				self.AttackerPlayerCard:setLeftRight( true, false, 93.36, 360.36 )
 				self.AttackerPlayerCard:setTopBottom( true, false, -2, 57 )
 				self.AttackerPlayerCard:setAlpha( 0 )
 				self.clipFinished( AttackerPlayerCard, {} )
+
 				KillsLabel2:completeAnimation()
 				self.KillsLabel2:setAlpha( 0 )
 				self.clipFinished( KillsLabel2, {} )
+
 				KillsLabel1:completeAnimation()
 				self.KillsLabel1:setAlpha( 0 )
 				self.clipFinished( KillsLabel1, {} )
+
 				AttackerKillsNew:completeAnimation()
 				self.AttackerKillsNew:setAlpha( 0 )
 				self.clipFinished( AttackerKillsNew, {} )
+
 				VictimKillsNew:completeAnimation()
 				self.VictimKillsNew:setAlpha( 0 )
 				self.clipFinished( VictimKillsNew, {} )
+
 				VSBanner:completeAnimation()
 				self.VSBanner:setAlpha( 0 )
 				self.clipFinished( VSBanner, {} )
+
 				VSLabel:completeAnimation()
 				self.VSLabel:setAlpha( 0 )
 				self.clipFinished( VSLabel, {} )
+
 				KillsLabel20:completeAnimation()
 				self.KillsLabel20:setAlpha( 0 )
 				self.clipFinished( KillsLabel20, {} )
@@ -304,23 +325,29 @@ CoD.KillcamPlayerInfo.new = function ( menu, controller )
 		Killcam = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				NemesisShadow:completeAnimation()
 				self.NemesisShadow:setAlpha( 0 )
 				self.clipFinished( NemesisShadow, {} )
+
 				NemesisLine2:completeAnimation()
 				self.NemesisLine2:setLeftRight( false, false, -63.78, -60 )
 				self.NemesisLine2:setTopBottom( false, false, -71, -47 )
 				self.NemesisLine2:setAlpha( 0 )
 				self.clipFinished( NemesisLine2, {} )
+
 				NemesisImageNormal:completeAnimation()
 				self.NemesisImageNormal:setAlpha( 0 )
 				self.clipFinished( NemesisImageNormal, {} )
+
 				NemesisImageAdd:completeAnimation()
 				self.NemesisImageAdd:setAlpha( 0 )
 				self.clipFinished( NemesisImageAdd, {} )
+
 				NemesisGlow:completeAnimation()
 				self.NemesisGlow:setAlpha( 0 )
 				self.clipFinished( NemesisGlow, {} )
+
 				NemesLine1:completeAnimation()
 				self.NemesLine1:setLeftRight( false, false, 59, 79.5 )
 				self.NemesLine1:setTopBottom( false, false, -71, -47 )
@@ -590,6 +617,7 @@ CoD.KillcamPlayerInfo.new = function ( menu, controller )
 				VSLabel:completeAnimation()
 				self.VSLabel:setAlpha( 0 )
 				VSLabelFrame2( VSLabel, {} )
+
 				KillsLabel20:completeAnimation()
 				self.KillsLabel20:setAlpha( 0 )
 				self.clipFinished( KillsLabel20, {} )
@@ -598,6 +626,7 @@ CoD.KillcamPlayerInfo.new = function ( menu, controller )
 		NemesisKillcam = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 18 )
+
 				local NemesisShadowFrame2 = function ( NemesisShadow, event )
 					if not event.interrupted then
 						NemesisShadow:beginAnimation( "keyframe", 699, false, false, CoD.TweenType.Linear )
@@ -973,6 +1002,7 @@ CoD.KillcamPlayerInfo.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Killcam",
@@ -1003,6 +1033,7 @@ CoD.KillcamPlayerInfo.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_NEMESIS_KILLCAM
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsElementInState( element, "Killcam" ) then
 			PlayClipOnElement( self, {
@@ -1016,6 +1047,7 @@ CoD.KillcamPlayerInfo.new = function ( menu, controller )
 			}, controller )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LeftPanelR:close()
 		element.LeftPanelR0:close()

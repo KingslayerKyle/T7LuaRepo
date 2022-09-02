@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.SystemOverlays.featureOverlay_frameVLayout" )
 CoD.featureOverlay_Layout = InheritFrom( LUI.UIElement )
 CoD.featureOverlay_Layout.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.featureOverlay_Layout )
 	self.id = "featureOverlay_Layout"
@@ -54,6 +56,7 @@ CoD.featureOverlay_Layout.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.alertStatusBar:close()
 		element.vlayout:close()

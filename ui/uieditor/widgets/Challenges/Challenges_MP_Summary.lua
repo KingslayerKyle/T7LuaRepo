@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.Challenges.Challenges_OneHundredPercentWidget" )
 CoD.Challenges_MP_Summary = InheritFrom( LUI.UIElement )
 CoD.Challenges_MP_Summary.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_MP_Summary )
 	self.id = "Challenges_MP_Summary"
@@ -158,6 +160,7 @@ CoD.Challenges_MP_Summary.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				OneHundredPercentWidget:completeAnimation()
 				self.OneHundredPercentWidget:setLeftRight( true, false, 11, 602 )
 				self.OneHundredPercentWidget:setTopBottom( true, false, 383.25, 481.25 )
@@ -173,6 +176,7 @@ CoD.Challenges_MP_Summary.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ProgressWidget:close()
 		element.NearCompletionButton:close()

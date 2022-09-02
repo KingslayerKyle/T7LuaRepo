@@ -4,9 +4,11 @@
 CoD.ZmFx_Flsh1 = InheritFrom( LUI.UIElement )
 CoD.ZmFx_Flsh1.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmFx_Flsh1 )
 	self.id = "ZmFx_Flsh1"

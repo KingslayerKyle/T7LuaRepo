@@ -4,9 +4,11 @@
 CoD.VehicleGround_ModDNI = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_ModDNI.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VehicleGround_ModDNI )
 	self.id = "VehicleGround_ModDNI"
@@ -75,6 +77,7 @@ CoD.VehicleGround_ModDNI.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				local ModDNIFrame2 = function ( ModDNI, event )
 					local ModDNIFrame3 = function ( ModDNI, event )
 						if not event.interrupted then
@@ -467,15 +470,18 @@ CoD.VehicleGround_ModDNI.new = function ( menu, controller )
 				self.ModDNI0:setYRot( 0 )
 				self.ModDNI0:setZRot( 0 )
 				ModDNI0Frame2( ModDNI0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",

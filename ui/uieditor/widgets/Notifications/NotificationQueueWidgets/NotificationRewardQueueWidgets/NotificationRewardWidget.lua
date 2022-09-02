@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Notifications.NotificationQueueWidgets.Notificatio
 CoD.NotificationRewardWidget = InheritFrom( LUI.UIElement )
 CoD.NotificationRewardWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.NotificationRewardWidget )
 	self.id = "NotificationRewardWidget"
@@ -112,6 +114,7 @@ CoD.NotificationRewardWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local BackgroundFrame2 = function ( Background, event )
 					local BackgroundFrame3 = function ( Background, event )
 						local BackgroundFrame4 = function ( Background, event )
@@ -230,6 +233,7 @@ CoD.NotificationRewardWidget.new = function ( menu, controller )
 				end
 				
 				ImageScanline:completeAnimation()
+
 				ImageScanline.ImageScanline:completeAnimation()
 				self.ImageScanline:setAlpha( 0 )
 				self.ImageScanline:setScale( 3 )
@@ -337,6 +341,7 @@ CoD.NotificationRewardWidget.new = function ( menu, controller )
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BackgroundFrame2 = function ( Background, event )
 					local BackgroundFrame3 = function ( Background, event )
 						local BackgroundFrame4 = function ( Background, event )
@@ -447,6 +452,7 @@ CoD.NotificationRewardWidget.new = function ( menu, controller )
 				end
 				
 				ImageScanline:completeAnimation()
+
 				ImageScanline.ImageScanline:completeAnimation()
 				self.ImageScanline:setAlpha( 1 )
 				self.ImageScanline.ImageScanline:setShaderVector( 0, 0.05, 0, 0, 0 )
@@ -547,12 +553,14 @@ CoD.NotificationRewardWidget.new = function ( menu, controller )
 				NotificationRewardBorder:completeAnimation()
 				self.NotificationRewardBorder:setAlpha( 1 )
 				NotificationRewardBorderFrame2( NotificationRewardBorder, {} )
+
 				highlight:completeAnimation()
 				self.highlight:setAlpha( 0 )
 				self.clipFinished( highlight, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ImageScanline:close()
 		element.NotificationRewardBorder:close()

@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleNumBrdr" )
 CoD.GroupSliderWithTitle = InheritFrom( LUI.UIElement )
 CoD.GroupSliderWithTitle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupSliderWithTitle )
 	self.id = "GroupSliderWithTitle"
@@ -192,18 +194,22 @@ CoD.GroupSliderWithTitle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 0.7 )
 				self.clipFinished( Title, {} )
+
 				Slider:completeAnimation()
 				self.Slider:setAlpha( 0.7 )
 				self.clipFinished( Slider, {} )
+
 				buttonText:completeAnimation()
 				self.buttonText:setAlpha( 0 )
 				self.clipFinished( buttonText, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				local TitleFrame2 = function ( Title, event )
 					if not event.interrupted then
 						Title:beginAnimation( "keyframe", 109, false, false, CoD.TweenType.Linear )
@@ -602,30 +608,37 @@ CoD.GroupSliderWithTitle.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				Slider:completeAnimation()
 				self.Slider:setAlpha( 1 )
 				self.clipFinished( Slider, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, 331.25, -131.47 )
 				self.FocusBarT:setTopBottom( true, false, 1, 5 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, 331.25, -131.47 )
 				self.FocusBarB:setTopBottom( false, true, -4, 0 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setLeftRight( true, true, 333.25, -133.47 )
 				self.FocusBorder:setTopBottom( true, true, -0.5, 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setLeftRight( true, true, 321.25, -126.47 )
 				self.glitch:setTopBottom( true, false, -3.75, 9.75 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setLeftRight( true, true, 324.75, -124.97 )
 				self.glitch2:setTopBottom( false, true, -10, 5 )
@@ -633,6 +646,7 @@ CoD.GroupSliderWithTitle.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				local TitleFrame2 = function ( Title, event )
 					if not event.interrupted then
 						Title:beginAnimation( "keyframe", 159, false, false, CoD.TweenType.Linear )
@@ -1057,12 +1071,15 @@ CoD.GroupSliderWithTitle.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Title:completeAnimation()
 				self.Title:setRGB( 0.42, 0.42, 0.42 )
 				self.clipFinished( Title, {} )
+
 				Slider:completeAnimation()
 				self.Slider:setAlpha( 0.4 )
 				self.clipFinished( Slider, {} )
+
 				buttonText:completeAnimation()
 				self.buttonText:setAlpha( 0 )
 				self.clipFinished( buttonText, {} )
@@ -1071,6 +1088,7 @@ CoD.GroupSliderWithTitle.new = function ( menu, controller )
 		Selected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				buttonText:completeAnimation()
 				self.buttonText:setAlpha( 0 )
 				self.clipFinished( buttonText, {} )
@@ -1079,21 +1097,26 @@ CoD.GroupSliderWithTitle.new = function ( menu, controller )
 		ButtonOnly = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Socialbackground000:completeAnimation()
 				self.Socialbackground000:setAlpha( 1 )
 				self.clipFinished( Socialbackground000, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 0.7 )
 				self.clipFinished( Title, {} )
+
 				Slider:completeAnimation()
 				self.Slider:setAlpha( 0 )
 				self.clipFinished( Slider, {} )
+
 				buttonText:completeAnimation()
 				self.buttonText:setAlpha( 0.7 )
 				self.clipFinished( buttonText, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 8 )
+
 				local TitleFrame2 = function ( Title, event )
 					if not event.interrupted then
 						Title:beginAnimation( "keyframe", 109, false, false, CoD.TweenType.Linear )
@@ -1109,6 +1132,7 @@ CoD.GroupSliderWithTitle.new = function ( menu, controller )
 				Title:completeAnimation()
 				self.Title:setAlpha( 0.7 )
 				TitleFrame2( Title, {} )
+
 				Slider:completeAnimation()
 				self.Slider:setAlpha( 0 )
 				self.clipFinished( Slider, {} )
@@ -1497,40 +1521,49 @@ CoD.GroupSliderWithTitle.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				Slider:completeAnimation()
 				self.Slider:setAlpha( 1 )
 				self.clipFinished( Slider, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, 331.25, -131.47 )
 				self.FocusBarT:setTopBottom( true, false, 1, 5 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, 331.25, -131.47 )
 				self.FocusBarB:setTopBottom( false, true, -4, 0 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setLeftRight( true, true, 333.25, -133.47 )
 				self.FocusBorder:setTopBottom( true, true, -0.5, 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setLeftRight( true, true, 321.25, -126.47 )
 				self.glitch:setTopBottom( true, false, -3.75, 9.75 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setLeftRight( true, true, 324.75, -124.97 )
 				self.glitch2:setTopBottom( false, true, -10, 5 )
 				self.clipFinished( glitch2, {} )
+
 				buttonText:completeAnimation()
 				self.buttonText:setAlpha( 1 )
 				self.clipFinished( buttonText, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				local TitleFrame2 = function ( Title, event )
 					if not event.interrupted then
 						Title:beginAnimation( "keyframe", 159, false, false, CoD.TweenType.Linear )
@@ -1953,6 +1986,7 @@ CoD.GroupSliderWithTitle.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -1997,6 +2031,7 @@ CoD.GroupSliderWithTitle.new = function ( menu, controller )
 			modelName = "buttonOnly"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if not IsElementInState( element, "Selected" ) then
 			SetProperty( self, "hideArrows", true )
@@ -2016,6 +2051,7 @@ CoD.GroupSliderWithTitle.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Socialbackground000:close()
 		element.Socialbackground00:close()

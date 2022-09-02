@@ -4,9 +4,11 @@
 CoD.AmmoWidget_UIGlowWidget = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_UIGlowWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_UIGlowWidget )
 	self.id = "AmmoWidget_UIGlowWidget"
@@ -36,9 +38,11 @@ CoD.AmmoWidget_UIGlowWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				UIGlow:completeAnimation()
 				self.UIGlow:setAlpha( 0.6 )
 				self.clipFinished( UIGlow, {} )
+
 				UIGlowKnife:completeAnimation()
 				self.UIGlowKnife:setAlpha( 0 )
 				self.clipFinished( UIGlowKnife, {} )
@@ -47,9 +51,11 @@ CoD.AmmoWidget_UIGlowWidget.new = function ( menu, controller )
 		WeaponDual = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				UIGlow:completeAnimation()
 				self.UIGlow:setAlpha( 0.6 )
 				self.clipFinished( UIGlow, {} )
+
 				UIGlowKnife:completeAnimation()
 				self.UIGlowKnife:setAlpha( 0 )
 				self.clipFinished( UIGlowKnife, {} )
@@ -58,9 +64,11 @@ CoD.AmmoWidget_UIGlowWidget.new = function ( menu, controller )
 		Weapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				UIGlow:completeAnimation()
 				self.UIGlow:setAlpha( 0.6 )
 				self.clipFinished( UIGlow, {} )
+
 				UIGlowKnife:completeAnimation()
 				self.UIGlowKnife:setAlpha( 0 )
 				self.clipFinished( UIGlowKnife, {} )
@@ -69,9 +77,11 @@ CoD.AmmoWidget_UIGlowWidget.new = function ( menu, controller )
 		Knife = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				UIGlow:completeAnimation()
 				self.UIGlow:setAlpha( 0 )
 				self.clipFinished( UIGlow, {} )
+
 				UIGlowKnife:completeAnimation()
 				self.UIGlowKnife:setAlpha( 0.6 )
 				self.clipFinished( UIGlowKnife, {} )
@@ -80,15 +90,18 @@ CoD.AmmoWidget_UIGlowWidget.new = function ( menu, controller )
 		Weapon3Digits = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				UIGlow:completeAnimation()
 				self.UIGlow:setAlpha( 0.6 )
 				self.clipFinished( UIGlow, {} )
+
 				UIGlowKnife:completeAnimation()
 				self.UIGlowKnife:setAlpha( 0 )
 				self.clipFinished( UIGlowKnife, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "WeaponDual",

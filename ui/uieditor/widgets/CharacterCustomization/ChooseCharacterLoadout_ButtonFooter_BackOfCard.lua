@@ -20,9 +20,11 @@ end
 CoD.ChooseCharacterLoadout_ButtonFooter_BackOfCard = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacterLoadout_ButtonFooter_BackOfCard.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacterLoadout_ButtonFooter_BackOfCard )
 	self.id = "ChooseCharacterLoadout_ButtonFooter_BackOfCard"
@@ -59,6 +61,7 @@ CoD.ChooseCharacterLoadout_ButtonFooter_BackOfCard.new = function ( menu, contro
 	backOfCardLabel:setTopBottom( false, false, -15, 5 )
 	backOfCardLabel:setText( Engine.Localize( "MENU_BACK_OF_CARD" ) )
 	backOfCardLabel:setTTF( "fonts/RefrigeratorDeluxe-Regular.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( backOfCardLabel, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 5 )
 	end )
@@ -140,12 +143,15 @@ CoD.ChooseCharacterLoadout_ButtonFooter_BackOfCard.new = function ( menu, contro
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				backOfCardLabel:completeAnimation()
 				self.backOfCardLabel:setAlpha( 1 )
 				self.clipFinished( backOfCardLabel, {} )
+
 				buttonImage:completeAnimation()
 				self.buttonImage:setAlpha( 1 )
 				self.clipFinished( buttonImage, {} )
+
 				clickableButton:completeAnimation()
 				self.clickableButton:setAlpha( 0 )
 				self.clipFinished( clickableButton, {} )
@@ -154,18 +160,22 @@ CoD.ChooseCharacterLoadout_ButtonFooter_BackOfCard.new = function ( menu, contro
 		DefaultState_PC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				backOfCardLabel:completeAnimation()
 				self.backOfCardLabel:setAlpha( 0 )
 				self.clipFinished( backOfCardLabel, {} )
+
 				buttonImage:completeAnimation()
 				self.buttonImage:setAlpha( 0 )
 				self.clipFinished( buttonImage, {} )
+
 				clickableButton:completeAnimation()
 				self.clickableButton:setAlpha( 1 )
 				self.clipFinished( clickableButton, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DefaultState_PC",
@@ -192,6 +202,7 @@ CoD.ChooseCharacterLoadout_ButtonFooter_BackOfCard.new = function ( menu, contro
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BMContractsSpecialistbtnbg:close()
 		element.breadcrumbCount:close()

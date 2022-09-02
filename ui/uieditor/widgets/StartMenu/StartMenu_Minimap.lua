@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_frame_noBG" )
 CoD.StartMenu_Minimap = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Minimap.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.StartMenu_Minimap )
 	self.id = "StartMenu_Minimap"

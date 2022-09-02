@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.ListButton = InheritFrom( LUI.UIElement )
 CoD.ListButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ListButton )
 	self.id = "ListButton"
@@ -52,20 +54,24 @@ CoD.ListButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Background:completeAnimation()
 				self.Background:setRGB( 0.11, 0.14, 0.2 )
 				self.Background:setAlpha( 0 )
 				self.clipFinished( Background, {} )
+
 				Text:completeAnimation()
 				self.Text:setRGB( 1, 1, 1 )
 				self.Text:setAlpha( 1 )
 				self.clipFinished( Text, {} )
+
 				SelectionIndicator:completeAnimation()
 				self.SelectionIndicator:setAlpha( 0 )
 				self.clipFinished( SelectionIndicator, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local BackgroundFrame2 = function ( Background, event )
 					if not event.interrupted then
 						Background:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -114,6 +120,7 @@ CoD.ListButton.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 2 )
+
 				local BackgroundFrame2 = function ( Background, event )
 					if not event.interrupted then
 						Background:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -147,6 +154,7 @@ CoD.ListButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 2 )
+
 				local BackgroundFrame2 = function ( Background, event )
 					local BackgroundFrame3 = function ( Background, event )
 						if not event.interrupted then
@@ -188,10 +196,12 @@ CoD.ListButton.new = function ( menu, controller )
 				Text:completeAnimation()
 				self.Text:setAlpha( 0.8 )
 				TextFrame2( Text, {} )
+
 				self.nextClip = "Focus"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Text:close()
 		element.SelectionIndicator:close()

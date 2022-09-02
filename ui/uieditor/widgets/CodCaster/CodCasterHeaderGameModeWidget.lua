@@ -16,9 +16,11 @@ end
 CoD.CodCasterHeaderGameModeWidget = InheritFrom( LUI.UIElement )
 CoD.CodCasterHeaderGameModeWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterHeaderGameModeWidget )
 	self.id = "CodCasterHeaderGameModeWidget"
@@ -212,39 +214,51 @@ CoD.CodCasterHeaderGameModeWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				rightB:completeAnimation()
 				self.rightB:setAlpha( 0 )
 				self.clipFinished( rightB, {} )
+
 				leftBG0:completeAnimation()
 				self.leftBG0:setAlpha( 0 )
 				self.clipFinished( leftBG0, {} )
+
 				AlliesFlagStatus:completeAnimation()
 				self.AlliesFlagStatus:setAlpha( 0 )
 				self.clipFinished( AlliesFlagStatus, {} )
+
 				AxisFlagStatus:completeAnimation()
 				self.AxisFlagStatus:setAlpha( 0 )
 				self.clipFinished( AxisFlagStatus, {} )
+
 				BombTimerA:completeAnimation()
 				self.BombTimerA:setAlpha( 0 )
 				self.clipFinished( BombTimerA, {} )
+
 				BombTimerB:completeAnimation()
 				self.BombTimerB:setAlpha( 0 )
 				self.clipFinished( BombTimerB, {} )
+
 				AlliesNumPlayersAlive:completeAnimation()
 				self.AlliesNumPlayersAlive:setAlpha( 0 )
 				self.clipFinished( AlliesNumPlayersAlive, {} )
+
 				AxisNumPlayersAlive:completeAnimation()
 				self.AxisNumPlayersAlive:setAlpha( 0 )
 				self.clipFinished( AxisNumPlayersAlive, {} )
+
 				DomFlags:completeAnimation()
 				self.DomFlags:setAlpha( 0 )
 				self.clipFinished( DomFlags, {} )
+
 				Hardpoint:completeAnimation()
 				self.Hardpoint:setAlpha( 0 )
 				self.clipFinished( Hardpoint, {} )
+
 				UplinkBall:completeAnimation()
 				self.UplinkBall:setAlpha( 0 )
 				self.clipFinished( UplinkBall, {} )
+
 				SafeGuardRobot:completeAnimation()
 				self.SafeGuardRobot:setAlpha( 0 )
 				self.clipFinished( SafeGuardRobot, {} )
@@ -253,43 +267,55 @@ CoD.CodCasterHeaderGameModeWidget.new = function ( menu, controller )
 		CTF = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				rightB:completeAnimation()
 				self.rightB:setAlpha( 1 )
 				self.clipFinished( rightB, {} )
+
 				leftBG0:completeAnimation()
 				self.leftBG0:setAlpha( 1 )
 				self.clipFinished( leftBG0, {} )
+
 				AlliesFlagStatus:completeAnimation()
 				self.AlliesFlagStatus:setLeftRight( true, false, 3, 263 )
 				self.AlliesFlagStatus:setTopBottom( true, false, -3, 31 )
 				self.AlliesFlagStatus:setAlpha( 1 )
 				self.clipFinished( AlliesFlagStatus, {} )
+
 				AxisFlagStatus:completeAnimation()
 				self.AxisFlagStatus:setLeftRight( true, false, 243, 503 )
 				self.AxisFlagStatus:setTopBottom( true, false, -3, 31 )
 				self.AxisFlagStatus:setAlpha( 1 )
 				self.clipFinished( AxisFlagStatus, {} )
+
 				BombTimerA:completeAnimation()
 				self.BombTimerA:setAlpha( 0 )
 				self.clipFinished( BombTimerA, {} )
+
 				BombTimerB:completeAnimation()
 				self.BombTimerB:setAlpha( 0 )
 				self.clipFinished( BombTimerB, {} )
+
 				AlliesNumPlayersAlive:completeAnimation()
 				self.AlliesNumPlayersAlive:setAlpha( 0 )
 				self.clipFinished( AlliesNumPlayersAlive, {} )
+
 				AxisNumPlayersAlive:completeAnimation()
 				self.AxisNumPlayersAlive:setAlpha( 0 )
 				self.clipFinished( AxisNumPlayersAlive, {} )
+
 				DomFlags:completeAnimation()
 				self.DomFlags:setAlpha( 0 )
 				self.clipFinished( DomFlags, {} )
+
 				Hardpoint:completeAnimation()
 				self.Hardpoint:setAlpha( 0 )
 				self.clipFinished( Hardpoint, {} )
+
 				UplinkBall:completeAnimation()
 				self.UplinkBall:setAlpha( 0 )
 				self.clipFinished( UplinkBall, {} )
+
 				SafeGuardRobot:completeAnimation()
 				self.SafeGuardRobot:setAlpha( 0 )
 				self.clipFinished( SafeGuardRobot, {} )
@@ -298,43 +324,55 @@ CoD.CodCasterHeaderGameModeWidget.new = function ( menu, controller )
 		Dom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				rightB:completeAnimation()
 				self.rightB:setAlpha( 0 )
 				self.clipFinished( rightB, {} )
+
 				leftBG0:completeAnimation()
 				self.leftBG0:setAlpha( 0 )
 				self.clipFinished( leftBG0, {} )
+
 				AlliesFlagStatus:completeAnimation()
 				self.AlliesFlagStatus:setAlpha( 0 )
 				self.clipFinished( AlliesFlagStatus, {} )
+
 				AxisFlagStatus:completeAnimation()
 				self.AxisFlagStatus:setAlpha( 0 )
 				self.clipFinished( AxisFlagStatus, {} )
+
 				BombTimerA:completeAnimation()
 				self.BombTimerA:setAlpha( 0 )
 				self.clipFinished( BombTimerA, {} )
+
 				BombTimerB:completeAnimation()
 				self.BombTimerB:setAlpha( 0 )
 				self.clipFinished( BombTimerB, {} )
+
 				AlliesNumPlayersAlive:completeAnimation()
 				self.AlliesNumPlayersAlive:setAlpha( 0 )
 				self.clipFinished( AlliesNumPlayersAlive, {} )
+
 				AxisNumPlayersAlive:completeAnimation()
 				self.AxisNumPlayersAlive:setAlpha( 0 )
 				self.clipFinished( AxisNumPlayersAlive, {} )
+
 				DomFlags:completeAnimation()
 				self.DomFlags:setLeftRight( false, false, -47, 44 )
 				self.DomFlags:setTopBottom( true, false, 0, 30 )
 				self.DomFlags:setAlpha( 1 )
 				self.clipFinished( DomFlags, {} )
+
 				Hardpoint:completeAnimation()
 				self.Hardpoint:setLeftRight( false, false, -47, 44 )
 				self.Hardpoint:setTopBottom( true, false, 1, 62 )
 				self.Hardpoint:setAlpha( 0 )
 				self.clipFinished( Hardpoint, {} )
+
 				UplinkBall:completeAnimation()
 				self.UplinkBall:setAlpha( 0 )
 				self.clipFinished( UplinkBall, {} )
+
 				SafeGuardRobot:completeAnimation()
 				self.SafeGuardRobot:setAlpha( 0 )
 				self.clipFinished( SafeGuardRobot, {} )
@@ -343,41 +381,53 @@ CoD.CodCasterHeaderGameModeWidget.new = function ( menu, controller )
 		Hardpoint = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				rightB:completeAnimation()
 				self.rightB:setAlpha( 0 )
 				self.clipFinished( rightB, {} )
+
 				leftBG0:completeAnimation()
 				self.leftBG0:setAlpha( 0 )
 				self.clipFinished( leftBG0, {} )
+
 				AlliesFlagStatus:completeAnimation()
 				self.AlliesFlagStatus:setAlpha( 0 )
 				self.clipFinished( AlliesFlagStatus, {} )
+
 				AxisFlagStatus:completeAnimation()
 				self.AxisFlagStatus:setAlpha( 0 )
 				self.clipFinished( AxisFlagStatus, {} )
+
 				BombTimerA:completeAnimation()
 				self.BombTimerA:setAlpha( 0 )
 				self.clipFinished( BombTimerA, {} )
+
 				BombTimerB:completeAnimation()
 				self.BombTimerB:setAlpha( 0 )
 				self.clipFinished( BombTimerB, {} )
+
 				AlliesNumPlayersAlive:completeAnimation()
 				self.AlliesNumPlayersAlive:setAlpha( 0 )
 				self.clipFinished( AlliesNumPlayersAlive, {} )
+
 				AxisNumPlayersAlive:completeAnimation()
 				self.AxisNumPlayersAlive:setAlpha( 0 )
 				self.clipFinished( AxisNumPlayersAlive, {} )
+
 				DomFlags:completeAnimation()
 				self.DomFlags:setAlpha( 0 )
 				self.clipFinished( DomFlags, {} )
+
 				Hardpoint:completeAnimation()
 				self.Hardpoint:setLeftRight( false, false, -47, 44 )
 				self.Hardpoint:setTopBottom( true, false, -1, 59 )
 				self.Hardpoint:setAlpha( 1 )
 				self.clipFinished( Hardpoint, {} )
+
 				UplinkBall:completeAnimation()
 				self.UplinkBall:setAlpha( 0 )
 				self.clipFinished( UplinkBall, {} )
+
 				SafeGuardRobot:completeAnimation()
 				self.SafeGuardRobot:setAlpha( 0 )
 				self.clipFinished( SafeGuardRobot, {} )
@@ -386,43 +436,55 @@ CoD.CodCasterHeaderGameModeWidget.new = function ( menu, controller )
 		Uplink = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				rightB:completeAnimation()
 				self.rightB:setAlpha( 0 )
 				self.clipFinished( rightB, {} )
+
 				leftBG0:completeAnimation()
 				self.leftBG0:setAlpha( 0 )
 				self.clipFinished( leftBG0, {} )
+
 				AlliesFlagStatus:completeAnimation()
 				self.AlliesFlagStatus:setAlpha( 0 )
 				self.clipFinished( AlliesFlagStatus, {} )
+
 				AxisFlagStatus:completeAnimation()
 				self.AxisFlagStatus:setAlpha( 0 )
 				self.clipFinished( AxisFlagStatus, {} )
+
 				BombTimerA:completeAnimation()
 				self.BombTimerA:setAlpha( 0 )
 				self.clipFinished( BombTimerA, {} )
+
 				BombTimerB:completeAnimation()
 				self.BombTimerB:setAlpha( 0 )
 				self.clipFinished( BombTimerB, {} )
+
 				AlliesNumPlayersAlive:completeAnimation()
 				self.AlliesNumPlayersAlive:setAlpha( 0 )
 				self.clipFinished( AlliesNumPlayersAlive, {} )
+
 				AxisNumPlayersAlive:completeAnimation()
 				self.AxisNumPlayersAlive:setAlpha( 0 )
 				self.clipFinished( AxisNumPlayersAlive, {} )
+
 				DomFlags:completeAnimation()
 				self.DomFlags:setAlpha( 0 )
 				self.clipFinished( DomFlags, {} )
+
 				Hardpoint:completeAnimation()
 				self.Hardpoint:setLeftRight( false, false, -46, 47 )
 				self.Hardpoint:setTopBottom( true, false, 2, 62 )
 				self.Hardpoint:setAlpha( 0 )
 				self.clipFinished( Hardpoint, {} )
+
 				UplinkBall:completeAnimation()
 				self.UplinkBall:setLeftRight( false, false, -47, 44 )
 				self.UplinkBall:setTopBottom( true, false, 14, 70 )
 				self.UplinkBall:setAlpha( 1 )
 				self.clipFinished( UplinkBall, {} )
+
 				SafeGuardRobot:completeAnimation()
 				self.SafeGuardRobot:setAlpha( 0 )
 				self.clipFinished( SafeGuardRobot, {} )
@@ -431,43 +493,55 @@ CoD.CodCasterHeaderGameModeWidget.new = function ( menu, controller )
 		SafeGuard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				rightB:completeAnimation()
 				self.rightB:setAlpha( 0 )
 				self.clipFinished( rightB, {} )
+
 				leftBG0:completeAnimation()
 				self.leftBG0:setAlpha( 0 )
 				self.clipFinished( leftBG0, {} )
+
 				AlliesFlagStatus:completeAnimation()
 				self.AlliesFlagStatus:setAlpha( 0 )
 				self.clipFinished( AlliesFlagStatus, {} )
+
 				AxisFlagStatus:completeAnimation()
 				self.AxisFlagStatus:setAlpha( 0 )
 				self.clipFinished( AxisFlagStatus, {} )
+
 				BombTimerA:completeAnimation()
 				self.BombTimerA:setAlpha( 0 )
 				self.clipFinished( BombTimerA, {} )
+
 				BombTimerB:completeAnimation()
 				self.BombTimerB:setAlpha( 0 )
 				self.clipFinished( BombTimerB, {} )
+
 				AlliesNumPlayersAlive:completeAnimation()
 				self.AlliesNumPlayersAlive:setAlpha( 0 )
 				self.clipFinished( AlliesNumPlayersAlive, {} )
+
 				AxisNumPlayersAlive:completeAnimation()
 				self.AxisNumPlayersAlive:setAlpha( 0 )
 				self.clipFinished( AxisNumPlayersAlive, {} )
+
 				DomFlags:completeAnimation()
 				self.DomFlags:setAlpha( 0 )
 				self.clipFinished( DomFlags, {} )
+
 				Hardpoint:completeAnimation()
 				self.Hardpoint:setLeftRight( false, false, -46, 47 )
 				self.Hardpoint:setTopBottom( true, false, 2, 62 )
 				self.Hardpoint:setAlpha( 0 )
 				self.clipFinished( Hardpoint, {} )
+
 				UplinkBall:completeAnimation()
 				self.UplinkBall:setLeftRight( false, false, -47, 44 )
 				self.UplinkBall:setTopBottom( true, false, 4, 60 )
 				self.UplinkBall:setAlpha( 0 )
 				self.clipFinished( UplinkBall, {} )
+
 				SafeGuardRobot:completeAnimation()
 				self.SafeGuardRobot:setLeftRight( false, false, -47, 44 )
 				self.SafeGuardRobot:setTopBottom( true, false, -1, 55 )
@@ -478,52 +552,64 @@ CoD.CodCasterHeaderGameModeWidget.new = function ( menu, controller )
 		SD = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				rightB:completeAnimation()
 				self.rightB:setAlpha( 1 )
 				self.clipFinished( rightB, {} )
+
 				leftBG0:completeAnimation()
 				self.leftBG0:setAlpha( 1 )
 				self.clipFinished( leftBG0, {} )
+
 				AlliesFlagStatus:completeAnimation()
 				self.AlliesFlagStatus:setAlpha( 0 )
 				self.clipFinished( AlliesFlagStatus, {} )
+
 				AxisFlagStatus:completeAnimation()
 				self.AxisFlagStatus:setAlpha( 0 )
 				self.clipFinished( AxisFlagStatus, {} )
+
 				BombTimerA:completeAnimation()
 				self.BombTimerA:setLeftRight( false, false, -26, 20 )
 				self.BombTimerA:setTopBottom( true, false, 10, 40 )
 				self.BombTimerA:setAlpha( 1 )
 				self.clipFinished( BombTimerA, {} )
+
 				BombTimerB:completeAnimation()
 				self.BombTimerB:setLeftRight( false, false, -26, 20 )
 				self.BombTimerB:setTopBottom( true, false, 10, 40 )
 				self.BombTimerB:setAlpha( 1 )
 				self.clipFinished( BombTimerB, {} )
+
 				AlliesNumPlayersAlive:completeAnimation()
 				self.AlliesNumPlayersAlive:setLeftRight( true, false, 11, 262 )
 				self.AlliesNumPlayersAlive:setTopBottom( true, false, 6.5, 22.5 )
 				self.AlliesNumPlayersAlive:setAlpha( 1 )
 				self.clipFinished( AlliesNumPlayersAlive, {} )
+
 				AxisNumPlayersAlive:completeAnimation()
 				self.AxisNumPlayersAlive:setLeftRight( false, true, -256, -13 )
 				self.AxisNumPlayersAlive:setTopBottom( true, false, 4.99, 22.99 )
 				self.AxisNumPlayersAlive:setAlpha( 1 )
 				self.AxisNumPlayersAlive:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 				self.clipFinished( AxisNumPlayersAlive, {} )
+
 				DomFlags:completeAnimation()
 				self.DomFlags:setLeftRight( false, false, -47, 44 )
 				self.DomFlags:setTopBottom( true, false, 0, 30 )
 				self.DomFlags:setAlpha( 0 )
 				self.clipFinished( DomFlags, {} )
+
 				Hardpoint:completeAnimation()
 				self.Hardpoint:setLeftRight( false, false, -46, 47 )
 				self.Hardpoint:setTopBottom( true, false, 0, 61 )
 				self.Hardpoint:setAlpha( 0 )
 				self.clipFinished( Hardpoint, {} )
+
 				UplinkBall:completeAnimation()
 				self.UplinkBall:setAlpha( 0 )
 				self.clipFinished( UplinkBall, {} )
+
 				SafeGuardRobot:completeAnimation()
 				self.SafeGuardRobot:setAlpha( 0 )
 				self.clipFinished( SafeGuardRobot, {} )
@@ -532,58 +618,71 @@ CoD.CodCasterHeaderGameModeWidget.new = function ( menu, controller )
 		Dem = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				rightB:completeAnimation()
 				self.rightB:setAlpha( 1 )
 				self.clipFinished( rightB, {} )
+
 				leftBG0:completeAnimation()
 				self.leftBG0:setAlpha( 1 )
 				self.clipFinished( leftBG0, {} )
+
 				AlliesFlagStatus:completeAnimation()
 				self.AlliesFlagStatus:setAlpha( 0 )
 				self.clipFinished( AlliesFlagStatus, {} )
+
 				AxisFlagStatus:completeAnimation()
 				self.AxisFlagStatus:setAlpha( 0 )
 				self.clipFinished( AxisFlagStatus, {} )
+
 				BombTimerA:completeAnimation()
 				self.BombTimerA:setLeftRight( false, false, -46, 0 )
 				self.BombTimerA:setTopBottom( true, false, 10, 40 )
 				self.BombTimerA:setAlpha( 1 )
 				self.clipFinished( BombTimerA, {} )
+
 				BombTimerB:completeAnimation()
 				self.BombTimerB:setLeftRight( false, false, 0, 47 )
 				self.BombTimerB:setTopBottom( true, false, 10, 40 )
 				self.BombTimerB:setAlpha( 1 )
 				self.clipFinished( BombTimerB, {} )
+
 				AlliesNumPlayersAlive:completeAnimation()
 				self.AlliesNumPlayersAlive:setLeftRight( true, false, 11, 262 )
 				self.AlliesNumPlayersAlive:setTopBottom( true, false, 6.5, 22.5 )
 				self.AlliesNumPlayersAlive:setAlpha( 0 )
 				self.clipFinished( AlliesNumPlayersAlive, {} )
+
 				AxisNumPlayersAlive:completeAnimation()
 				self.AxisNumPlayersAlive:setLeftRight( false, true, -256, -13 )
 				self.AxisNumPlayersAlive:setTopBottom( true, false, 4.99, 22.99 )
 				self.AxisNumPlayersAlive:setAlpha( 0 )
 				self.AxisNumPlayersAlive:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 				self.clipFinished( AxisNumPlayersAlive, {} )
+
 				DomFlags:completeAnimation()
 				self.DomFlags:setLeftRight( false, false, -47, 44 )
 				self.DomFlags:setTopBottom( true, false, 0, 30 )
 				self.DomFlags:setAlpha( 0 )
 				self.clipFinished( DomFlags, {} )
+
 				Hardpoint:completeAnimation()
 				self.Hardpoint:setLeftRight( false, false, -46, 47 )
 				self.Hardpoint:setTopBottom( true, false, 0, 61 )
 				self.Hardpoint:setAlpha( 0 )
 				self.clipFinished( Hardpoint, {} )
+
 				UplinkBall:completeAnimation()
 				self.UplinkBall:setAlpha( 0 )
 				self.clipFinished( UplinkBall, {} )
+
 				SafeGuardRobot:completeAnimation()
 				self.SafeGuardRobot:setAlpha( 0 )
 				self.clipFinished( SafeGuardRobot, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CTF",
@@ -628,6 +727,7 @@ CoD.CodCasterHeaderGameModeWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AlliesFlagStatus:close()
 		element.AxisFlagStatus:close()

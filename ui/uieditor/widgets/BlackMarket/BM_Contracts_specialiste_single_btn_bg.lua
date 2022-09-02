@@ -4,9 +4,11 @@
 CoD.BM_Contracts_specialiste_single_btn_bg = InheritFrom( LUI.UIElement )
 CoD.BM_Contracts_specialiste_single_btn_bg.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Contracts_specialiste_single_btn_bg )
 	self.id = "BM_Contracts_specialiste_single_btn_bg"

@@ -4,9 +4,11 @@
 CoD.CommsWidget_CharacterBack = InheritFrom( LUI.UIElement )
 CoD.CommsWidget_CharacterBack.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CommsWidget_CharacterBack )
 	self.id = "CommsWidget_CharacterBack"
@@ -40,9 +42,11 @@ CoD.CommsWidget_CharacterBack.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ImgCharBack:completeAnimation()
 				self.ImgCharBack:setAlpha( 0.51 )
 				self.clipFinished( ImgCharBack, {} )
+
 				ImgCharBack0:completeAnimation()
 				self.ImgCharBack0:setAlpha( 0.52 )
 				self.clipFinished( ImgCharBack0, {} )
@@ -51,14 +55,17 @@ CoD.CommsWidget_CharacterBack.new = function ( menu, controller )
 		HudStart = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		HudStop = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

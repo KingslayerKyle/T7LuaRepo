@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_HelpItemsLabel" )
 CoD.ChooseCharacterLoadoutCarouselItem_BackListItem = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacterLoadoutCarouselItem_BackListItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacterLoadoutCarouselItem_BackListItem )
 	self.id = "ChooseCharacterLoadoutCarouselItem_BackListItem"
@@ -135,21 +137,25 @@ CoD.ChooseCharacterLoadoutCarouselItem_BackListItem.new = function ( menu, contr
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				GreenBox:completeAnimation()
 				self.GreenBox:setLeftRight( true, true, 47.16, -1 )
 				self.GreenBox:setTopBottom( false, false, -13, 13.5 )
 				self.GreenBox:setRGB( 0, 0, 0 )
 				self.GreenBox:setAlpha( 1 )
 				self.clipFinished( GreenBox, {} )
+
 				GreenBox0:completeAnimation()
 				self.GreenBox0:setLeftRight( true, true, 2, -207 )
 				self.GreenBox0:setTopBottom( false, false, -13, 13.5 )
 				self.GreenBox0:setRGB( 0, 0, 0 )
 				self.GreenBox0:setAlpha( 1 )
 				self.clipFinished( GreenBox0, {} )
+
 				text:completeAnimation()
 				self.text:setRGB( 0.82, 0.98, 1 )
 				self.clipFinished( text, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setRGB( 0, 0.82, 1 )
 				self.Arrow:setAlpha( 0 )
@@ -157,6 +163,7 @@ CoD.ChooseCharacterLoadoutCarouselItem_BackListItem.new = function ( menu, contr
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local GreenBoxFrame2 = function ( GreenBox, event )
 					if not event.interrupted then
 						GreenBox:beginAnimation( "keyframe", 270, false, false, CoD.TweenType.Bounce )
@@ -199,10 +206,12 @@ CoD.ChooseCharacterLoadoutCarouselItem_BackListItem.new = function ( menu, contr
 				self.GreenBox0:setRGB( 0.82, 0.98, 1 )
 				self.GreenBox0:setAlpha( 0 )
 				GreenBox0Frame2( GreenBox0, {} )
+
 				iconBorder:completeAnimation()
 				self.iconBorder:setLeftRight( true, false, 0, 39 )
 				self.iconBorder:setTopBottom( true, true, 1, -0.5 )
 				self.clipFinished( iconBorder, {} )
+
 				text:completeAnimation()
 				self.text:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.clipFinished( text, {} )
@@ -226,6 +235,7 @@ CoD.ChooseCharacterLoadoutCarouselItem_BackListItem.new = function ( menu, contr
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local GreenBoxFrame2 = function ( GreenBox, event )
 					if not event.interrupted then
 						GreenBox:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -260,6 +270,7 @@ CoD.ChooseCharacterLoadoutCarouselItem_BackListItem.new = function ( menu, contr
 				self.GreenBox0:setRGB( 0.82, 0.98, 1 )
 				self.GreenBox0:setAlpha( 0.2 )
 				GreenBox0Frame2( GreenBox0, {} )
+
 				iconBorder:completeAnimation()
 				self.iconBorder:setLeftRight( true, false, 0, 39 )
 				self.iconBorder:setTopBottom( true, true, 1, -0.5 )
@@ -297,6 +308,7 @@ CoD.ChooseCharacterLoadoutCarouselItem_BackListItem.new = function ( menu, contr
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEHelpItemsLabel0:close()
 		element.icon:close()

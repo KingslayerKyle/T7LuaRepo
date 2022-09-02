@@ -4,9 +4,11 @@
 CoD.CombatRecordStatRing = InheritFrom( LUI.UIElement )
 CoD.CombatRecordStatRing.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CombatRecordStatRing )
 	self.id = "CombatRecordStatRing"
@@ -80,6 +82,7 @@ CoD.CombatRecordStatRing.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ComparisonStatValue:completeAnimation()
 				self.ComparisonStatValue:setAlpha( 0 )
 				self.clipFinished( ComparisonStatValue, {} )
@@ -88,12 +91,14 @@ CoD.CombatRecordStatRing.new = function ( menu, controller )
 		Comparing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ComparisonStatValue:completeAnimation()
 				self.ComparisonStatValue:setAlpha( 1 )
 				self.clipFinished( ComparisonStatValue, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Comparing",

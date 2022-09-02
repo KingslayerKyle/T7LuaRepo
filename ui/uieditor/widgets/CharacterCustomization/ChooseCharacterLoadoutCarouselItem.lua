@@ -33,9 +33,11 @@ end
 CoD.ChooseCharacterLoadoutCarouselItem = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacterLoadoutCarouselItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacterLoadoutCarouselItem )
 	self.id = "ChooseCharacterLoadoutCarouselItem"
@@ -134,17 +136,29 @@ CoD.ChooseCharacterLoadoutCarouselItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				item:completeAnimation()
+
 				item.lockedCharacterWithBackground:completeAnimation()
+
 				item.lockedSliverRender:completeAnimation()
+
 				item.characterWithBackground:completeAnimation()
+
 				item.unlockSliverRender:completeAnimation()
+
 				item.heroNumber:completeAnimation()
+
 				item.border:completeAnimation()
+
 				item.infoArea:completeAnimation()
+
 				item.FETitleNumBrdr0:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.newIcon:completeAnimation()
+
 				item.ChooseCharacterLoadoutButtonFooter:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 30, -30 )
@@ -162,32 +176,48 @@ CoD.ChooseCharacterLoadoutCarouselItem.new = function ( menu, controller )
 				self.item.newIcon:setAlpha( 1 )
 				self.item.ChooseCharacterLoadoutButtonFooter:setAlpha( HideIfInPermanentUnlockMenu( 0 ) )
 				self.clipFinished( item, {} )
+
 				back:completeAnimation()
 				self.back:setAlpha( 0 )
 				self.clipFinished( back, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FocusBarB00:completeAnimation()
 				self.FocusBarB00:setAlpha( 0 )
 				self.clipFinished( FocusBarB00, {} )
+
 				BMBribeLabelSpecialist:completeAnimation()
 				self.BMBribeLabelSpecialist:setAlpha( 0 )
 				self.clipFinished( BMBribeLabelSpecialist, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				item:completeAnimation()
+
 				item.lockedCharacterWithBackground:completeAnimation()
+
 				item.lockedSliverRender:completeAnimation()
+
 				item.characterWithBackground:completeAnimation()
+
 				item.unlockSliverRender:completeAnimation()
+
 				item.heroNumber:completeAnimation()
+
 				item.border:completeAnimation()
+
 				item.infoArea:completeAnimation()
+
 				item.FETitleNumBrdr0:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.newIcon:completeAnimation()
+
 				item.ChooseCharacterLoadoutButtonFooter:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 0, 0 )
@@ -204,28 +234,42 @@ CoD.ChooseCharacterLoadoutCarouselItem.new = function ( menu, controller )
 				self.item.newIcon:setAlpha( 0 )
 				self.item.ChooseCharacterLoadoutButtonFooter:setAlpha( HideIfInPermanentUnlockMenu( 1 ) )
 				self.clipFinished( item, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FocusBarB00:completeAnimation()
 				self.FocusBarB00:setAlpha( 0 )
 				self.clipFinished( FocusBarB00, {} )
+
 				BMBribeLabelSpecialist:completeAnimation()
 				self.BMBribeLabelSpecialist:setAlpha( 1 )
 				self.clipFinished( BMBribeLabelSpecialist, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 4 )
+
 				item:completeAnimation()
+
 				item.lockedCharacterWithBackground:completeAnimation()
+
 				item.lockedSliverRender:completeAnimation()
+
 				item.characterWithBackground:completeAnimation()
+
 				item.unlockSliverRender:completeAnimation()
+
 				item.heroNumber:completeAnimation()
+
 				item.border:completeAnimation()
+
 				item.infoArea:completeAnimation()
+
 				item.FETitleNumBrdr0:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.newIcon:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 30, -30 )
@@ -240,12 +284,14 @@ CoD.ChooseCharacterLoadoutCarouselItem.new = function ( menu, controller )
 				self.item.lockImage:setAlpha( 0 )
 				self.item.newIcon:setAlpha( 0.9 )
 				self.clipFinished( item, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setLeftRight( false, false, -45.5, 45.5 )
 				self.FocusBarB0:setTopBottom( false, false, 221, 217 )
 				self.FocusBarB0:setAlpha( 1 )
 				self.FocusBarB0:setScale( 1 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FocusBarB00:completeAnimation()
 				self.FocusBarB00:setLeftRight( false, false, -45.5, 45.5 )
 				self.FocusBarB00:setTopBottom( false, false, -217, -221 )
@@ -253,12 +299,14 @@ CoD.ChooseCharacterLoadoutCarouselItem.new = function ( menu, controller )
 				self.FocusBarB00:setZRot( -180 )
 				self.FocusBarB00:setScale( 1 )
 				self.clipFinished( FocusBarB00, {} )
+
 				BMBribeLabelSpecialist:completeAnimation()
 				self.BMBribeLabelSpecialist:setAlpha( 0 )
 				self.clipFinished( BMBribeLabelSpecialist, {} )
 			end,
 			Flipped = function ()
 				self:setupElementClipCounter( 3 )
+
 				local itemFrame2 = function ( item, event )
 					local itemFrame3 = function ( item, event )
 						local itemFrame4 = function ( item, event )
@@ -351,6 +399,7 @@ CoD.ChooseCharacterLoadoutCarouselItem.new = function ( menu, controller )
 				self.back:setYRot( -90 )
 				self.back:setZoom( 20 )
 				backFrame2( back, {} )
+
 				BMBribeLabelSpecialist:completeAnimation()
 				self.BMBribeLabelSpecialist:setAlpha( 0 )
 				self.clipFinished( BMBribeLabelSpecialist, {} )
@@ -359,16 +408,27 @@ CoD.ChooseCharacterLoadoutCarouselItem.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				item:completeAnimation()
+
 				item.lockedCharacterWithBackground:completeAnimation()
+
 				item.lockedSliverRender:completeAnimation()
+
 				item.characterWithBackground:completeAnimation()
+
 				item.unlockSliverRender:completeAnimation()
+
 				item.heroNumber:completeAnimation()
+
 				item.border:completeAnimation()
+
 				item.infoArea:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.newIcon:completeAnimation()
+
 				item.ChooseCharacterLoadoutButtonFooter:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 30, -30 )
@@ -384,27 +444,40 @@ CoD.ChooseCharacterLoadoutCarouselItem.new = function ( menu, controller )
 				self.item.newIcon:setAlpha( 0 )
 				self.item.ChooseCharacterLoadoutButtonFooter:setAlpha( HideIfInPermanentUnlockMenu( 0 ) )
 				self.clipFinished( item, {} )
+
 				BMBribeLabelSpecialist:completeAnimation()
 				self.BMBribeLabelSpecialist:setAlpha( 0 )
 				self.clipFinished( BMBribeLabelSpecialist, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FocusBarB00:completeAnimation()
 				self.FocusBarB00:setAlpha( 0 )
 				self.clipFinished( FocusBarB00, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				item:completeAnimation()
+
 				item.lockedCharacterWithBackground:completeAnimation()
+
 				item.lockedSliverRender:completeAnimation()
+
 				item.characterWithBackground:completeAnimation()
+
 				item.unlockSliverRender:completeAnimation()
+
 				item.heroNumber:completeAnimation()
+
 				item.border:completeAnimation()
+
 				item.infoArea:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.newIcon:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 0, 0 )
@@ -418,27 +491,40 @@ CoD.ChooseCharacterLoadoutCarouselItem.new = function ( menu, controller )
 				self.item.lockImage:setAlpha( 1 )
 				self.item.newIcon:setAlpha( 0 )
 				self.clipFinished( item, {} )
+
 				BMBribeLabelSpecialist:completeAnimation()
 				self.BMBribeLabelSpecialist:setAlpha( 1 )
 				self.clipFinished( BMBribeLabelSpecialist, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FocusBarB00:completeAnimation()
 				self.FocusBarB00:setAlpha( 0 )
 				self.clipFinished( FocusBarB00, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 4 )
+
 				item:completeAnimation()
+
 				item.lockedCharacterWithBackground:completeAnimation()
+
 				item.lockedSliverRender:completeAnimation()
+
 				item.characterWithBackground:completeAnimation()
+
 				item.unlockSliverRender:completeAnimation()
+
 				item.heroNumber:completeAnimation()
+
 				item.border:completeAnimation()
+
 				item.infoArea:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.newIcon:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 30, -30 )
@@ -452,15 +538,18 @@ CoD.ChooseCharacterLoadoutCarouselItem.new = function ( menu, controller )
 				self.item.lockImage:setAlpha( 1 )
 				self.item.newIcon:setAlpha( 0 )
 				self.clipFinished( item, {} )
+
 				BMBribeLabelSpecialist:completeAnimation()
 				self.BMBribeLabelSpecialist:setAlpha( 0 )
 				self.clipFinished( BMBribeLabelSpecialist, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setLeftRight( false, false, -45.5, 45.5 )
 				self.FocusBarB0:setTopBottom( false, false, 221, 217 )
 				self.FocusBarB0:setAlpha( 1 )
 				self.FocusBarB0:setScale( 1 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FocusBarB00:completeAnimation()
 				self.FocusBarB00:setLeftRight( false, false, -45.5, 45.5 )
 				self.FocusBarB00:setTopBottom( false, false, -217, -221 )
@@ -473,13 +562,21 @@ CoD.ChooseCharacterLoadoutCarouselItem.new = function ( menu, controller )
 		Flipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				item:completeAnimation()
+
 				item.heroNumber:completeAnimation()
+
 				item.border:completeAnimation()
+
 				item.infoArea:completeAnimation()
+
 				item.FETitleNumBrdr0:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.newIcon:completeAnimation()
+
 				item.ChooseCharacterLoadoutButtonFooter:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 30, -30 )
@@ -494,16 +591,19 @@ CoD.ChooseCharacterLoadoutCarouselItem.new = function ( menu, controller )
 				self.item.newIcon:setAlpha( 1 )
 				self.item.ChooseCharacterLoadoutButtonFooter:setAlpha( HideIfInPermanentUnlockMenu( 0 ) )
 				self.clipFinished( item, {} )
+
 				back:completeAnimation()
 				self.back:setAlpha( 1 )
 				self.back:setZoom( 0 )
 				self.clipFinished( back, {} )
+
 				BMBribeLabelSpecialist:completeAnimation()
 				self.BMBribeLabelSpecialist:setAlpha( 0 )
 				self.clipFinished( BMBribeLabelSpecialist, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 3 )
+
 				local f27_local0 = function ( f28_arg0, f28_arg1 )
 					local f28_local0 = function ( f29_arg0, f29_arg1 )
 						local f29_local0 = function ( f30_arg0, f30_arg1 )
@@ -614,12 +714,19 @@ CoD.ChooseCharacterLoadoutCarouselItem.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				item:completeAnimation()
+
 				item.heroNumber:completeAnimation()
+
 				item.border:completeAnimation()
+
 				item.infoArea:completeAnimation()
+
 				item.FETitleNumBrdr0:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.newIcon:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 0, 0 )
@@ -632,17 +739,20 @@ CoD.ChooseCharacterLoadoutCarouselItem.new = function ( menu, controller )
 				self.item.lockImage:setAlpha( 0 )
 				self.item.newIcon:setAlpha( 0 )
 				self.clipFinished( item, {} )
+
 				back:completeAnimation()
 				self.back:setAlpha( 1 )
 				self.back:setYRot( 0 )
 				self.back:setZoom( 0 )
 				self.clipFinished( back, {} )
+
 				BMBribeLabelSpecialist:completeAnimation()
 				self.BMBribeLabelSpecialist:setAlpha( 0 )
 				self.clipFinished( BMBribeLabelSpecialist, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -658,6 +768,7 @@ CoD.ChooseCharacterLoadoutCarouselItem.new = function ( menu, controller )
 		}
 	} )
 	CoD.Menu.AddNavigationHandler( menu, self, controller )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsSelfInState( self, "Flipped" ) then
 			SetLoseFocusToElement( self, "item", controller )
@@ -683,6 +794,7 @@ CoD.ChooseCharacterLoadoutCarouselItem.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.item:close()
 		element.back:close()

@@ -4,9 +4,11 @@
 CoD.vhud_siegebot_directionalarrow = InheritFrom( LUI.UIElement )
 CoD.vhud_siegebot_directionalarrow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_siegebot_directionalarrow )
 	self.id = "vhud_siegebot_directionalarrow"
@@ -26,12 +28,15 @@ CoD.vhud_siegebot_directionalarrow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CWL.CallingCards_cwl_default_sonyLogo
 CoD.CallingCards_cwl_default = InheritFrom( LUI.UIElement )
 CoD.CallingCards_cwl_default.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_cwl_default )
 	self.id = "CallingCards_cwl_default"
@@ -144,6 +146,7 @@ CoD.CallingCards_cwl_default.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FlaresLargeFrame2 = function ( FlaresLarge, event )
 					local FlaresLargeFrame3 = function ( FlaresLarge, event )
 						local FlaresLargeFrame4 = function ( FlaresLarge, event )
@@ -523,10 +526,12 @@ CoD.CallingCards_cwl_default.new = function ( menu, controller )
 				self.glow2:setAlpha( 0 )
 				self.glow2:setScale( 1 )
 				glow2Frame2( glow2, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardscwldefaultsonyLogo:close()
 	end )

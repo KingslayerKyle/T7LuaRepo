@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.wasp.vhud_sentinel_outOfRangeLabels" )
 CoD.VHUD_Sentinel_Internal = InheritFrom( LUI.UIElement )
 CoD.VHUD_Sentinel_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VHUD_Sentinel_Internal )
 	self.id = "VHUD_Sentinel_Internal"
@@ -104,6 +106,7 @@ CoD.VHUD_Sentinel_Internal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local TextureOverlayDotsFrame2 = function ( TextureOverlayDots, event )
 					local TextureOverlayDotsFrame3 = function ( TextureOverlayDots, event )
 						local TextureOverlayDotsFrame4 = function ( TextureOverlayDots, event )
@@ -514,10 +517,12 @@ CoD.VHUD_Sentinel_Internal.new = function ( menu, controller )
 				TextureOverlayDots:completeAnimation()
 				self.TextureOverlayDots:setAlpha( 0 )
 				TextureOverlayDotsFrame2( TextureOverlayDots, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vhudsentineliris0:close()
 		element.VHUDSentinelReticle:close()

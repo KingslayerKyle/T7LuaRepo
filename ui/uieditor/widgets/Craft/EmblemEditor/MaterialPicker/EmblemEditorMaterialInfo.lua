@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Craft.Paintshop.PaintshopChoosePaintSide" )
 CoD.EmblemEditorMaterialInfo = InheritFrom( LUI.UIElement )
 CoD.EmblemEditorMaterialInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemEditorMaterialInfo )
 	self.id = "EmblemEditorMaterialInfo"

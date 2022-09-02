@@ -4,9 +4,11 @@
 CoD.BM_FlyEmberFX = InheritFrom( LUI.UIElement )
 CoD.BM_FlyEmberFX.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_FlyEmberFX )
 	self.id = "BM_FlyEmberFX"
@@ -53,6 +55,7 @@ CoD.BM_FlyEmberFX.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FlyingEmber1Frame2 = function ( FlyingEmber1, event )
 					local FlyingEmber1Frame3 = function ( FlyingEmber1, event )
 						if not event.interrupted then

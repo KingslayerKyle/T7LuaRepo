@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.JoinButtonPrompt = InheritFrom( LUI.UIElement )
 CoD.JoinButtonPrompt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.JoinButtonPrompt )
 	self.id = "JoinButtonPrompt"
@@ -50,12 +52,15 @@ CoD.JoinButtonPrompt.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				GpadButtonImage:completeAnimation()
 				self.GpadButtonImage:setAlpha( 1 )
 				self.clipFinished( GpadButtonImage, {} )
+
 				KMprompt:completeAnimation()
 				self.KMprompt:setAlpha( 0 )
 				self.clipFinished( KMprompt, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 0 )
 				self.clipFinished( Border, {} )
@@ -64,18 +69,22 @@ CoD.JoinButtonPrompt.new = function ( menu, controller )
 		KBMouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				GpadButtonImage:completeAnimation()
 				self.GpadButtonImage:setAlpha( 0 )
 				self.clipFinished( GpadButtonImage, {} )
+
 				KMprompt:completeAnimation()
 				self.KMprompt:setAlpha( 1 )
 				self.clipFinished( KMprompt, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 1 )
 				self.clipFinished( Border, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "KBMouse",
@@ -102,6 +111,7 @@ CoD.JoinButtonPrompt.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Border:close()
 		element.GpadButtonImage:close()

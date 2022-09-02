@@ -4,9 +4,11 @@
 CoD.bleedout_cross = InheritFrom( LUI.UIElement )
 CoD.bleedout_cross.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.bleedout_cross )
 	self.id = "bleedout_cross"

@@ -4,9 +4,11 @@
 CoD.BM_Bribe_WireLights = InheritFrom( LUI.UIElement )
 CoD.BM_Bribe_WireLights.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Bribe_WireLights )
 	self.id = "BM_Bribe_WireLights"
@@ -34,6 +36,7 @@ CoD.BM_Bribe_WireLights.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local BribeWiresLightsFrame2 = function ( BribeWiresLights, event )
 					local BribeWiresLightsFrame3 = function ( BribeWiresLights, event )
 						local BribeWiresLightsFrame4 = function ( BribeWiresLights, event )
@@ -98,6 +101,7 @@ CoD.BM_Bribe_WireLights.new = function ( menu, controller )
 				Mask:setLeftRight( true, true, -245.94, -191.06 )
 				Mask:setTopBottom( true, true, -344.82, 411.82 )
 				Mask:registerEventHandler( "transition_complete_keyframe", f2_local1 )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

@@ -12,9 +12,11 @@ require( "ui.uieditor.widgets.ZMInventoryIsland.IslandSkullWidget" )
 CoD.InventoryWidgetIsland = InheritFrom( LUI.UIElement )
 CoD.InventoryWidgetIsland.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.InventoryWidgetIsland )
 	self.id = "InventoryWidgetIsland"
@@ -159,42 +161,55 @@ CoD.InventoryWidgetIsland.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				RocketShield:completeAnimation()
 				self.RocketShield:setAlpha( 0 )
 				self.clipFinished( RocketShield, {} )
+
 				GasMask:completeAnimation()
 				self.GasMask:setAlpha( 0 )
 				self.clipFinished( GasMask, {} )
+
 				MachineTools:completeAnimation()
 				self.MachineTools:setAlpha( 0 )
 				self.clipFinished( MachineTools, {} )
+
 				WonderWeapon:completeAnimation()
 				self.WonderWeapon:setAlpha( 0 )
 				self.clipFinished( WonderWeapon, {} )
+
 				TextBucket:completeAnimation()
 				self.TextBucket:setAlpha( 0 )
 				self.clipFinished( TextBucket, {} )
+
 				TextShield:completeAnimation()
 				self.TextShield:setAlpha( 0 )
 				self.clipFinished( TextShield, {} )
+
 				TextGasMask:completeAnimation()
 				self.TextGasMask:setAlpha( 0 )
 				self.clipFinished( TextGasMask, {} )
+
 				TextMachineTools:completeAnimation()
 				self.TextMachineTools:setAlpha( 0 )
 				self.clipFinished( TextMachineTools, {} )
+
 				TextFNR:completeAnimation()
 				self.TextFNR:setAlpha( 0 )
 				self.clipFinished( TextFNR, {} )
+
 				TextSkull:completeAnimation()
 				self.TextSkull:setAlpha( 0 )
 				self.clipFinished( TextSkull, {} )
+
 				BucketAndSeedWidget0:completeAnimation()
 				self.BucketAndSeedWidget0:setAlpha( 0 )
 				self.clipFinished( BucketAndSeedWidget0, {} )
+
 				IslandSkullWidget0:completeAnimation()
 				self.IslandSkullWidget0:setAlpha( 0 )
 				self.clipFinished( IslandSkullWidget0, {} )
@@ -203,48 +218,62 @@ CoD.InventoryWidgetIsland.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 1 )
 				self.clipFinished( Image0, {} )
+
 				RocketShield:completeAnimation()
 				self.RocketShield:setAlpha( 1 )
 				self.clipFinished( RocketShield, {} )
+
 				GasMask:completeAnimation()
 				self.GasMask:setAlpha( 1 )
 				self.clipFinished( GasMask, {} )
+
 				MachineTools:completeAnimation()
 				self.MachineTools:setAlpha( 1 )
 				self.clipFinished( MachineTools, {} )
+
 				WonderWeapon:completeAnimation()
 				self.WonderWeapon:setAlpha( 1 )
 				self.clipFinished( WonderWeapon, {} )
+
 				TextBucket:completeAnimation()
 				self.TextBucket:setAlpha( 1 )
 				self.clipFinished( TextBucket, {} )
+
 				TextShield:completeAnimation()
 				self.TextShield:setAlpha( 1 )
 				self.clipFinished( TextShield, {} )
+
 				TextGasMask:completeAnimation()
 				self.TextGasMask:setAlpha( 1 )
 				self.clipFinished( TextGasMask, {} )
+
 				TextMachineTools:completeAnimation()
 				self.TextMachineTools:setAlpha( 1 )
 				self.clipFinished( TextMachineTools, {} )
+
 				TextFNR:completeAnimation()
 				self.TextFNR:setAlpha( 1 )
 				self.clipFinished( TextFNR, {} )
+
 				TextSkull:completeAnimation()
 				self.TextSkull:setAlpha( 1 )
 				self.clipFinished( TextSkull, {} )
+
 				BucketAndSeedWidget0:completeAnimation()
 				self.BucketAndSeedWidget0:setAlpha( 1 )
 				self.clipFinished( BucketAndSeedWidget0, {} )
+
 				IslandSkullWidget0:completeAnimation()
 				self.IslandSkullWidget0:setAlpha( 1 )
 				self.clipFinished( IslandSkullWidget0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -261,6 +290,7 @@ CoD.InventoryWidgetIsland.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RocketShield:close()
 		element.GasMask:close()

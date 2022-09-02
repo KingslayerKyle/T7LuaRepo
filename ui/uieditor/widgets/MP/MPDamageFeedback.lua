@@ -4,6 +4,7 @@
 require( "ui.uieditor.widgets.MP.MPDamageFeedback_PerkFeedback" )
 
 local PostLoadFunc = function ( self, controller, menu )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if controller == "DefaultState" then
 			if element.moveToDefaultTimer then
@@ -27,9 +28,11 @@ end
 CoD.MPDamageFeedback = InheritFrom( LUI.UIElement )
 CoD.MPDamageFeedback.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MPDamageFeedback )
 	self.id = "MPDamageFeedback"
@@ -66,14 +69,17 @@ CoD.MPDamageFeedback.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				perkFeedback:completeAnimation()
 				self.perkFeedback:setAlpha( 0 )
 				self.clipFinished( perkFeedback, {} )
+
 				damage:completeAnimation()
 				self.damage:setLeftRight( true, true, 0, 0 )
 				self.damage:setTopBottom( true, true, 0, 0 )
 				self.damage:setAlpha( 0 )
 				self.clipFinished( damage, {} )
+
 				death:completeAnimation()
 				self.death:setLeftRight( true, true, 0, 0 )
 				self.death:setTopBottom( true, true, 0, 0 )
@@ -84,6 +90,7 @@ CoD.MPDamageFeedback.new = function ( menu, controller )
 		Stage1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				perkFeedback:completeAnimation()
 				self.perkFeedback:setAlpha( 1 )
 				self.clipFinished( perkFeedback, {} )
@@ -118,6 +125,7 @@ CoD.MPDamageFeedback.new = function ( menu, controller )
 				self.damage:setRGB( 0.84, 0.99, 1 )
 				self.damage:setAlpha( 1 )
 				damageFrame2( damage, {} )
+
 				death:completeAnimation()
 				self.death:setLeftRight( true, true, -1, 1 )
 				self.death:setTopBottom( true, true, -1, 1 )
@@ -126,6 +134,7 @@ CoD.MPDamageFeedback.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 3 )
+
 				local perkFeedbackFrame2 = function ( perkFeedback, event )
 					if not event.interrupted then
 						perkFeedback:beginAnimation( "keyframe", 750, false, false, CoD.TweenType.Linear )
@@ -184,6 +193,7 @@ CoD.MPDamageFeedback.new = function ( menu, controller )
 		Stage2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				perkFeedback:completeAnimation()
 				self.perkFeedback:setAlpha( 1 )
 				self.clipFinished( perkFeedback, {} )
@@ -218,6 +228,7 @@ CoD.MPDamageFeedback.new = function ( menu, controller )
 				self.damage:setRGB( 0.84, 0.99, 1 )
 				self.damage:setAlpha( 1 )
 				damageFrame2( damage, {} )
+
 				death:completeAnimation()
 				self.death:setLeftRight( true, true, -2, 2 )
 				self.death:setTopBottom( true, true, -2, 2 )
@@ -226,6 +237,7 @@ CoD.MPDamageFeedback.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 3 )
+
 				local perkFeedbackFrame2 = function ( perkFeedback, event )
 					if not event.interrupted then
 						perkFeedback:beginAnimation( "keyframe", 750, false, false, CoD.TweenType.Linear )
@@ -284,6 +296,7 @@ CoD.MPDamageFeedback.new = function ( menu, controller )
 		Stage3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				perkFeedback:completeAnimation()
 				self.perkFeedback:setAlpha( 1 )
 				self.clipFinished( perkFeedback, {} )
@@ -318,6 +331,7 @@ CoD.MPDamageFeedback.new = function ( menu, controller )
 				self.damage:setRGB( 0.84, 0.99, 1 )
 				self.damage:setAlpha( 1 )
 				damageFrame2( damage, {} )
+
 				death:completeAnimation()
 				self.death:setLeftRight( true, true, -3, 3 )
 				self.death:setTopBottom( true, true, -3, 3 )
@@ -326,6 +340,7 @@ CoD.MPDamageFeedback.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 3 )
+
 				local perkFeedbackFrame2 = function ( perkFeedback, event )
 					if not event.interrupted then
 						perkFeedback:beginAnimation( "keyframe", 750, false, false, CoD.TweenType.Linear )
@@ -384,6 +399,7 @@ CoD.MPDamageFeedback.new = function ( menu, controller )
 		Stage4 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				perkFeedback:completeAnimation()
 				self.perkFeedback:setAlpha( 1 )
 				self.clipFinished( perkFeedback, {} )
@@ -418,6 +434,7 @@ CoD.MPDamageFeedback.new = function ( menu, controller )
 				self.damage:setRGB( 0.84, 0.99, 1 )
 				self.damage:setAlpha( 1 )
 				damageFrame2( damage, {} )
+
 				death:completeAnimation()
 				self.death:setLeftRight( true, true, -4, 4 )
 				self.death:setTopBottom( true, true, -4, 4 )
@@ -426,6 +443,7 @@ CoD.MPDamageFeedback.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 3 )
+
 				local perkFeedbackFrame2 = function ( perkFeedback, event )
 					if not event.interrupted then
 						perkFeedback:beginAnimation( "keyframe", 759, false, false, CoD.TweenType.Linear )
@@ -484,14 +502,17 @@ CoD.MPDamageFeedback.new = function ( menu, controller )
 		Death = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				perkFeedback:completeAnimation()
 				self.perkFeedback:setAlpha( 1 )
 				self.clipFinished( perkFeedback, {} )
+
 				damage:completeAnimation()
 				self.damage:setLeftRight( true, true, -5, 5 )
 				self.damage:setTopBottom( true, true, -5, 5 )
 				self.damage:setAlpha( 0 )
 				self.clipFinished( damage, {} )
+
 				death:completeAnimation()
 				self.death:setLeftRight( true, true, -5, 5 )
 				self.death:setTopBottom( true, true, -5, 5 )
@@ -500,6 +521,7 @@ CoD.MPDamageFeedback.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 3 )
+
 				local perkFeedbackFrame2 = function ( perkFeedback, event )
 					if not event.interrupted then
 						perkFeedback:beginAnimation( "keyframe", 750, false, false, CoD.TweenType.Linear )
@@ -558,6 +580,7 @@ CoD.MPDamageFeedback.new = function ( menu, controller )
 		Stage5 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				perkFeedback:completeAnimation()
 				self.perkFeedback:setAlpha( 1 )
 				self.clipFinished( perkFeedback, {} )
@@ -592,6 +615,7 @@ CoD.MPDamageFeedback.new = function ( menu, controller )
 				self.damage:setRGB( 0.84, 0.99, 1 )
 				self.damage:setAlpha( 1 )
 				damageFrame2( damage, {} )
+
 				death:completeAnimation()
 				self.death:setLeftRight( true, true, -5, 5 )
 				self.death:setTopBottom( true, true, -5, 5 )
@@ -600,6 +624,7 @@ CoD.MPDamageFeedback.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 3 )
+
 				local perkFeedbackFrame2 = function ( perkFeedback, event )
 					if not event.interrupted then
 						perkFeedback:beginAnimation( "keyframe", 750, false, false, CoD.TweenType.Linear )
@@ -656,6 +681,7 @@ CoD.MPDamageFeedback.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Stage1",
@@ -702,6 +728,7 @@ CoD.MPDamageFeedback.new = function ( menu, controller )
 			modelName = "damageFeedbackState"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.perkFeedback:close()
 	end )

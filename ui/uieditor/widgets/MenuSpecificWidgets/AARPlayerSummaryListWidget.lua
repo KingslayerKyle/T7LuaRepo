@@ -11,9 +11,11 @@ end
 CoD.AARPlayerSummaryListWidget = InheritFrom( LUI.UIElement )
 CoD.AARPlayerSummaryListWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AARPlayerSummaryListWidget )
 	self.id = "AARPlayerSummaryListWidget"
@@ -184,6 +186,7 @@ CoD.AARPlayerSummaryListWidget.new = function ( menu, controller )
 			AARMedalsListWidget3.medalNameLabel:setText( Engine.Localize( medalName3 ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.border:close()
 		element.AARMedalsListWidget1:close()

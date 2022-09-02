@@ -19,9 +19,11 @@ end
 CoD.PerformanceTabWidgetZM = InheritFrom( LUI.UIElement )
 CoD.PerformanceTabWidgetZM.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PerformanceTabWidgetZM )
 	self.id = "PerformanceTabWidgetZM"
@@ -293,6 +295,7 @@ CoD.PerformanceTabWidgetZM.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				local Panel10Frame2 = function ( Panel10, event )
 					if not event.interrupted then
 						Panel10:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -478,6 +481,7 @@ CoD.PerformanceTabWidgetZM.new = function ( menu, controller )
 		Offline = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				local Panel10Frame2 = function ( Panel10, event )
 					if not event.interrupted then
 						Panel10:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -658,18 +662,22 @@ CoD.PerformanceTabWidgetZM.new = function ( menu, controller )
 				XpBarContainer:completeAnimation()
 				self.XpBarContainer:setAlpha( 0 )
 				XpBarContainerFrame2( XpBarContainer, {} )
+
 				CompletionTimeLabel0:completeAnimation()
 				self.CompletionTimeLabel0:setAlpha( 0 )
 				self.clipFinished( CompletionTimeLabel0, {} )
+
 				Score00:completeAnimation()
 				self.Score00:setAlpha( 0 )
 				self.clipFinished( Score00, {} )
+
 				vial:completeAnimation()
 				self.vial:setAlpha( 0 )
 				self.clipFinished( vial, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Offline",
@@ -694,6 +702,7 @@ CoD.PerformanceTabWidgetZM.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel10:close()
 		element.Panel20:close()

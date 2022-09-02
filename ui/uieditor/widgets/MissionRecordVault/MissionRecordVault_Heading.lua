@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleLine" )
 CoD.MissionRecordVault_Heading = InheritFrom( LUI.UIElement )
 CoD.MissionRecordVault_Heading.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MissionRecordVault_Heading )
 	self.id = "MissionRecordVault_Heading"

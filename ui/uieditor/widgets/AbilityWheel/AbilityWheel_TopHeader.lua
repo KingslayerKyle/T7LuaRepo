@@ -4,9 +4,11 @@
 CoD.AbilityWheel_TopHeader = InheritFrom( LUI.UIElement )
 CoD.AbilityWheel_TopHeader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AbilityWheel_TopHeader )
 	self.id = "AbilityWheel_TopHeader"
@@ -37,6 +39,7 @@ CoD.AbilityWheel_TopHeader.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local TabImgFrame2 = function ( TabImg, event )
 					if not event.interrupted then
 						TabImg:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -52,20 +55,24 @@ CoD.AbilityWheel_TopHeader.new = function ( menu, controller )
 				TabImg:completeAnimation()
 				self.TabImg:setAlpha( RandomAddPercent( -10, 0 ) )
 				TabImgFrame2( TabImg, {} )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setRGB( 1, 0.44, 0.04 )
 				self.PanelGlow:setAlpha( 0 )
 				self.clipFinished( PanelGlow, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Control = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TabImg:completeAnimation()
 				self.TabImg:setRGB( 0.14, 0.44, 0.79 )
 				self.TabImg:setAlpha( RandomAddPercent( -10, 1 ) )
 				self.clipFinished( TabImg, {} )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setRGB( 0.14, 0.44, 0.79 )
 				self.PanelGlow:setAlpha( 0 )
@@ -75,10 +82,12 @@ CoD.AbilityWheel_TopHeader.new = function ( menu, controller )
 		Chaos = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TabImg:completeAnimation()
 				self.TabImg:setRGB( 0.96, 0.44, 0.02 )
 				self.TabImg:setAlpha( RandomAddPercent( -10, 1 ) )
 				self.clipFinished( TabImg, {} )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setRGB( 0.96, 0.44, 0.02 )
 				self.PanelGlow:setAlpha( 0 )
@@ -88,12 +97,14 @@ CoD.AbilityWheel_TopHeader.new = function ( menu, controller )
 		Martial = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TabImg:completeAnimation()
 				self.TabImg:setLeftRight( false, false, -95.5, 96.5 )
 				self.TabImg:setTopBottom( false, false, -9, 23 )
 				self.TabImg:setRGB( 0.22, 0.75, 0.16 )
 				self.TabImg:setAlpha( RandomAddPercent( -10, 1 ) )
 				self.clipFinished( TabImg, {} )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setRGB( 0.23, 0.75, 0.16 )
 				self.PanelGlow:setAlpha( 0 )
@@ -101,6 +112,7 @@ CoD.AbilityWheel_TopHeader.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Control",

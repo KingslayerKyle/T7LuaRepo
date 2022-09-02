@@ -45,9 +45,11 @@ end
 CoD.ThrustMeterBootContainer = InheritFrom( LUI.UIElement )
 CoD.ThrustMeterBootContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ThrustMeterBootContainer )
 	self.id = "ThrustMeterBootContainer"
@@ -122,6 +124,7 @@ CoD.ThrustMeterBootContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				InnerCircle:completeAnimation()
 				self.InnerCircle:setLeftRight( true, false, 24.67, 284.33 )
 				self.InnerCircle:setTopBottom( true, false, 22, 281.67 )
@@ -130,9 +133,13 @@ CoD.ThrustMeterBootContainer.new = function ( menu, controller )
 				self.InnerCircle:setZoom( -74 )
 				self.InnerCircle:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( InnerCircle, {} )
+
 				ThrustBootMeterCircle0:completeAnimation()
+
 				ThrustBootMeterCircle0.HashCircle:completeAnimation()
+
 				ThrustBootMeterCircle0.ThrustMeterDotsBoot.fill:completeAnimation()
+
 				ThrustBootMeterCircle0.ThrustMeterDotsBoot.dots:completeAnimation()
 				self.ThrustBootMeterCircle0:setAlpha( 0 )
 				self.ThrustBootMeterCircle0:setZRot( 0 )
@@ -143,26 +150,31 @@ CoD.ThrustMeterBootContainer.new = function ( menu, controller )
 				self.ThrustBootMeterCircle0.ThrustMeterDotsBoot.fill:setShaderVector( 0, 0.52, 0, 0, 0 )
 				self.ThrustBootMeterCircle0.ThrustMeterDotsBoot.dots:setAlpha( 1 )
 				self.clipFinished( ThrustBootMeterCircle0, {} )
+
 				Hash1:completeAnimation()
 				self.Hash1:setLeftRight( true, false, 246, 267.33 )
 				self.Hash1:setTopBottom( true, false, 39, 63 )
 				self.Hash1:setAlpha( 0 )
 				self.clipFinished( Hash1, {} )
+
 				Hash4:completeAnimation()
 				self.Hash4:setLeftRight( true, false, 62.67, 41.33 )
 				self.Hash4:setTopBottom( true, false, 39, 63 )
 				self.Hash4:setAlpha( 0 )
 				self.clipFinished( Hash4, {} )
+
 				Hash2:completeAnimation()
 				self.Hash2:setLeftRight( true, false, 246, 267.33 )
 				self.Hash2:setTopBottom( true, false, 265, 241 )
 				self.Hash2:setAlpha( 0 )
 				self.clipFinished( Hash2, {} )
+
 				Hash3:completeAnimation()
 				self.Hash3:setLeftRight( true, false, 62.67, 41.33 )
 				self.Hash3:setTopBottom( true, false, 265, 241 )
 				self.Hash3:setAlpha( 0 )
 				self.clipFinished( Hash3, {} )
+
 				ThrustBootChevron0:completeAnimation()
 				self.ThrustBootChevron0:setAlpha( 0 )
 				self.ThrustBootChevron0:setZRot( 29 )
@@ -170,6 +182,7 @@ CoD.ThrustMeterBootContainer.new = function ( menu, controller )
 			end,
 			thrust_boot = function ()
 				self:setupElementClipCounter( 7 )
+
 				local f6_local0 = function ( f7_arg0, f7_arg1 )
 					local f7_local0 = function ( f8_arg0, f8_arg1 )
 						local f8_local0 = function ( f9_arg0, f9_arg1 )
@@ -1150,6 +1163,7 @@ CoD.ThrustMeterBootContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ThrustBootMeterCircle0:close()
 		element.ThrustBootChevron0:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CPSystems.TacticalMode.ClampedShooterWidget_Intern
 CoD.ClampedShooterWidget = InheritFrom( LUI.UIElement )
 CoD.ClampedShooterWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ClampedShooterWidget )
 	self.id = "ClampedShooterWidget"
@@ -36,13 +38,16 @@ CoD.ClampedShooterWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				internal:completeAnimation()
+
 				internal.archetypeImage:completeAnimation()
 				self.internal.archetypeImage:setRGB( 0.64, 0.65, 0.67 )
 				self.clipFinished( internal, {} )
 			end,
 			Shooting = function ()
 				self:setupElementClipCounter( 1 )
+
 				local internalFrame2 = function ( internal, event )
 					local internalFrame3 = function ( internal, event )
 						local internalFrame4 = function ( internal, event )
@@ -101,15 +106,18 @@ CoD.ClampedShooterWidget.new = function ( menu, controller )
 				end
 				
 				internal:completeAnimation()
+
 				internal.archetypeImage:completeAnimation()
 				self.internal.archetypeImage:setRGB( 0.76, 0.79, 0.87 )
 				internalFrame2( internal, {} )
+
 				self.nextClip = "Shooting"
 			end
 		},
 		Shooting = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local internalFrame2 = function ( internal, event )
 					local internalFrame3 = function ( internal, event )
 						if not event.interrupted then
@@ -134,13 +142,16 @@ CoD.ClampedShooterWidget.new = function ( menu, controller )
 				end
 				
 				internal:completeAnimation()
+
 				internal.archetypeImage:completeAnimation()
 				self.internal.archetypeImage:setRGB( 1, 0.31, 0.2 )
 				internalFrame2( internal, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local internalFrame2 = function ( internal, event )
 					if not event.interrupted then
 						internal:beginAnimation( "keyframe", 70, false, false, CoD.TweenType.Linear )
@@ -155,12 +166,14 @@ CoD.ClampedShooterWidget.new = function ( menu, controller )
 				end
 				
 				internal:completeAnimation()
+
 				internal.archetypeImage:completeAnimation()
 				self.internal.archetypeImage:setRGB( 1, 0.31, 0.2 )
 				internalFrame2( internal, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Shooting",
@@ -177,6 +190,7 @@ CoD.ClampedShooterWidget.new = function ( menu, controller )
 			modelName = "shootingAtPlayer"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.internal:close()
 	end )

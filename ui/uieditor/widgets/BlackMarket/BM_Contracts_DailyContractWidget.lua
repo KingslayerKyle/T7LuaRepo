@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_Contracts_DoubleCryptokeys" )
 CoD.BM_Contracts_DailyContractWidget = InheritFrom( LUI.UIElement )
 CoD.BM_Contracts_DailyContractWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Contracts_DailyContractWidget )
 	self.id = "BM_Contracts_DailyContractWidget"
@@ -149,40 +151,52 @@ CoD.BM_Contracts_DailyContractWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				Divider:completeAnimation()
 				self.Divider:setAlpha( 1 )
 				self.clipFinished( Divider, {} )
+
 				BMContractstimer:completeAnimation()
 				self.clipFinished( BMContractstimer, {} )
+
 				BMContractsDoubleCryptokeys0:completeAnimation()
 				self.BMContractsDoubleCryptokeys0:setAlpha( 1 )
 				self.clipFinished( BMContractsDoubleCryptokeys0, {} )
+
 				NineSliceShaderImage:completeAnimation()
 				self.NineSliceShaderImage:setAlpha( 0 )
 				self.clipFinished( NineSliceShaderImage, {} )
+
 				upperglow:completeAnimation()
 				self.upperglow:setAlpha( 0 )
 				self.clipFinished( upperglow, {} )
+
 				lowerglow:completeAnimation()
 				self.lowerglow:setAlpha( 0 )
 				self.clipFinished( lowerglow, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 0 )
 				self.clipFinished( CompletedIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				Divider:completeAnimation()
 				self.Divider:setAlpha( 1 )
 				self.clipFinished( Divider, {} )
+
 				BMContractstimer:completeAnimation()
 				self.clipFinished( BMContractstimer, {} )
+
 				BMContractsDoubleCryptokeys0:completeAnimation()
 				self.BMContractsDoubleCryptokeys0:setAlpha( 1 )
 				self.clipFinished( BMContractsDoubleCryptokeys0, {} )
@@ -266,50 +280,64 @@ CoD.BM_Contracts_DailyContractWidget.new = function ( menu, controller )
 				lowerglow:completeAnimation()
 				self.lowerglow:setAlpha( 1 )
 				lowerglowFrame2( lowerglow, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 0 )
 				self.clipFinished( CompletedIcon, {} )
+
 				self.nextClip = "Focus"
 			end
 		},
 		InvalidContract = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				Divider:completeAnimation()
 				self.Divider:setAlpha( 0 )
 				self.clipFinished( Divider, {} )
+
 				BMContractstimer:completeAnimation()
 				self.clipFinished( BMContractstimer, {} )
+
 				BMContractsDoubleCryptokeys0:completeAnimation()
 				self.BMContractsDoubleCryptokeys0:setAlpha( 0 )
 				self.clipFinished( BMContractsDoubleCryptokeys0, {} )
+
 				NineSliceShaderImage:completeAnimation()
 				self.NineSliceShaderImage:setRGB( 1, 1, 1 )
 				self.NineSliceShaderImage:setAlpha( 0 )
 				self.clipFinished( NineSliceShaderImage, {} )
+
 				upperglow:completeAnimation()
 				self.upperglow:setAlpha( 0 )
 				self.clipFinished( upperglow, {} )
+
 				lowerglow:completeAnimation()
 				self.lowerglow:setAlpha( 0 )
 				self.clipFinished( lowerglow, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 0 )
 				self.clipFinished( CompletedIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				Divider:completeAnimation()
 				self.Divider:setAlpha( 0 )
 				self.clipFinished( Divider, {} )
+
 				BMContractstimer:completeAnimation()
 				self.clipFinished( BMContractstimer, {} )
+
 				BMContractsDoubleCryptokeys0:completeAnimation()
 				self.BMContractsDoubleCryptokeys0:setAlpha( 0 )
 				self.clipFinished( BMContractsDoubleCryptokeys0, {} )
@@ -393,41 +421,53 @@ CoD.BM_Contracts_DailyContractWidget.new = function ( menu, controller )
 				lowerglow:completeAnimation()
 				self.lowerglow:setAlpha( 1 )
 				lowerglowFrame2( lowerglow, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 0 )
 				self.clipFinished( CompletedIcon, {} )
+
 				self.nextClip = "Focus"
 			end
 		},
 		Completed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				header:completeAnimation()
 				self.header:setAlpha( 0.5 )
 				self.clipFinished( header, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				Background0:completeAnimation()
 				self.Background0:setAlpha( 1 )
 				self.clipFinished( Background0, {} )
+
 				Divider:completeAnimation()
 				self.Divider:setAlpha( 0 )
 				self.clipFinished( Divider, {} )
+
 				BMContractstimer:completeAnimation()
 				self.clipFinished( BMContractstimer, {} )
+
 				BMContractsDoubleCryptokeys0:completeAnimation()
 				self.BMContractsDoubleCryptokeys0:setAlpha( 0 )
 				self.clipFinished( BMContractsDoubleCryptokeys0, {} )
+
 				NineSliceShaderImage:completeAnimation()
 				self.NineSliceShaderImage:setAlpha( 0 )
 				self.clipFinished( NineSliceShaderImage, {} )
+
 				upperglow:completeAnimation()
 				self.upperglow:setAlpha( 0 )
 				self.clipFinished( upperglow, {} )
+
 				lowerglow:completeAnimation()
 				self.lowerglow:setAlpha( 0 )
 				self.clipFinished( lowerglow, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setLeftRight( false, true, -48, 1 )
 				self.CompletedIcon:setTopBottom( true, false, 2, 34 )
@@ -436,20 +476,26 @@ CoD.BM_Contracts_DailyContractWidget.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 10 )
+
 				header:completeAnimation()
 				self.header:setAlpha( 0.5 )
 				self.clipFinished( header, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				Background0:completeAnimation()
 				self.Background0:setAlpha( 1 )
 				self.clipFinished( Background0, {} )
+
 				Divider:completeAnimation()
 				self.Divider:setAlpha( 0 )
 				self.clipFinished( Divider, {} )
+
 				BMContractstimer:completeAnimation()
 				self.clipFinished( BMContractstimer, {} )
+
 				BMContractsDoubleCryptokeys0:completeAnimation()
 				self.BMContractsDoubleCryptokeys0:setAlpha( 0 )
 				self.clipFinished( BMContractsDoubleCryptokeys0, {} )
@@ -533,15 +579,18 @@ CoD.BM_Contracts_DailyContractWidget.new = function ( menu, controller )
 				lowerglow:completeAnimation()
 				self.lowerglow:setAlpha( 1 )
 				lowerglowFrame2( lowerglow, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setLeftRight( false, true, -48, 1 )
 				self.CompletedIcon:setTopBottom( true, false, 2, 34 )
 				self.CompletedIcon:setAlpha( 1 )
 				self.clipFinished( CompletedIcon, {} )
+
 				self.nextClip = "Focus"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "InvalidContract",
@@ -565,6 +614,7 @@ CoD.BM_Contracts_DailyContractWidget.new = function ( menu, controller )
 		} )
 	end )
 	ContractProgress.id = "ContractProgress"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ContractProgress:close()
 		element.BMContractstimer:close()

@@ -4,9 +4,11 @@
 CoD.checkboxNoLabel = InheritFrom( LUI.UIElement )
 CoD.checkboxNoLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.checkboxNoLabel )
 	self.id = "checkboxNoLabel"
@@ -32,10 +34,12 @@ CoD.checkboxNoLabel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				checkboxBkg:completeAnimation()
 				self.checkboxBkg:setRGB( 1, 1, 1 )
 				self.checkboxBkg:setAlpha( 1 )
 				self.clipFinished( checkboxBkg, {} )
+
 				checkboxCheck:completeAnimation()
 				self.checkboxCheck:setRGB( 1, 1, 1 )
 				self.checkboxCheck:setAlpha( 0 )
@@ -45,9 +49,11 @@ CoD.checkboxNoLabel.new = function ( menu, controller )
 		Checked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				checkboxBkg:completeAnimation()
 				self.checkboxBkg:setRGB( 1, 1, 1 )
 				self.clipFinished( checkboxBkg, {} )
+
 				checkboxCheck:completeAnimation()
 				self.checkboxCheck:setRGB( 1, 1, 1 )
 				self.checkboxCheck:setAlpha( 1 )
@@ -55,6 +61,7 @@ CoD.checkboxNoLabel.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Checked",

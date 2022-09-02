@@ -4,9 +4,11 @@
 CoD.MOTD_TitleAndBodyText = InheritFrom( LUI.UIElement )
 CoD.MOTD_TitleAndBodyText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.MOTD_TitleAndBodyText )
 	self.id = "MOTD_TitleAndBodyText"

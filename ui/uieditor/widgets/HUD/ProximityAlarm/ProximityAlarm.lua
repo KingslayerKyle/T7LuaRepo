@@ -25,6 +25,7 @@ CoD.ProximityAlarm.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ProximityAlarm )
 	self.id = "ProximityAlarm"
@@ -52,11 +53,13 @@ CoD.ProximityAlarm.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				icon:completeAnimation()
 				self.icon:setLeftRight( false, false, -70.5, -38.5 )
 				self.icon:setTopBottom( false, false, -16, 16 )
 				self.icon:setAlpha( 0 )
 				self.clipFinished( icon, {} )
+
 				text:completeAnimation()
 				self.text:setLeftRight( false, false, -22.5, 65.5 )
 				self.text:setTopBottom( false, false, -12.5, 12.5 )
@@ -67,15 +70,18 @@ CoD.ProximityAlarm.new = function ( menu, controller )
 		AlarmDeployed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 0 )
 				self.clipFinished( icon, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0 )
 				self.clipFinished( text, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				local iconFrame2 = function ( icon, event )
 					local iconFrame3 = function ( icon, event )
 						if not event.interrupted then
@@ -133,6 +139,7 @@ CoD.ProximityAlarm.new = function ( menu, controller )
 		AlarmOn = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local iconFrame2 = function ( icon, event )
 					local iconFrame3 = function ( icon, event )
 						local iconFrame4 = function ( icon, event )
@@ -207,10 +214,12 @@ CoD.ProximityAlarm.new = function ( menu, controller )
 				self.text:setAlpha( 1 )
 				self.text:setText( Engine.Localize( "WEAPON_C4_ALARM" ) )
 				textFrame2( text, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "AlarmDeployed",

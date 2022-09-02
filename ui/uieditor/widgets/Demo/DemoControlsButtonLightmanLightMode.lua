@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Theater.Theater_FocusBar" )
 CoD.DemoControlsButtonLightmanLightMode = InheritFrom( LUI.UIElement )
 CoD.DemoControlsButtonLightmanLightMode.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DemoControlsButtonLightmanLightMode )
 	self.id = "DemoControlsButtonLightmanLightMode"
@@ -92,45 +94,58 @@ CoD.DemoControlsButtonLightmanLightMode.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				whitebox:completeAnimation()
 				self.whitebox:setAlpha( 0 )
 				self.clipFinished( whitebox, {} )
+
 				border:completeAnimation()
 				self.border:setRGB( ColorSet.BadgeText.r, ColorSet.BadgeText.g, ColorSet.BadgeText.b )
 				self.clipFinished( border, {} )
+
 				icon:completeAnimation()
 				self.icon:setYRot( 0 )
 				self.clipFinished( icon, {} )
+
 				uparrow:completeAnimation()
 				self.uparrow:setAlpha( 0 )
 				self.clipFinished( uparrow, {} )
+
 				downarrow:completeAnimation()
 				self.downarrow:setAlpha( 0 )
 				self.clipFinished( downarrow, {} )
+
 				TheaterFocusBarT0:completeAnimation()
 				self.TheaterFocusBarT0:setAlpha( 0 )
 				self.clipFinished( TheaterFocusBarT0, {} )
+
 				TheaterFocusBarB0:completeAnimation()
 				self.TheaterFocusBarB0:setAlpha( 0 )
 				self.clipFinished( TheaterFocusBarB0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				whitebox:completeAnimation()
 				self.whitebox:setAlpha( 0.15 )
 				self.clipFinished( whitebox, {} )
+
 				border:completeAnimation()
 				self.border:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.clipFinished( border, {} )
+
 				uparrow:completeAnimation()
 				self.uparrow:setAlpha( 1 )
 				self.clipFinished( uparrow, {} )
+
 				downarrow:completeAnimation()
 				self.downarrow:setAlpha( 1 )
 				self.clipFinished( downarrow, {} )
+
 				TheaterFocusBarT0:completeAnimation()
 				self.TheaterFocusBarT0:setAlpha( 1 )
 				self.clipFinished( TheaterFocusBarT0, {} )
+
 				TheaterFocusBarB0:completeAnimation()
 				self.TheaterFocusBarB0:setAlpha( 1 )
 				self.clipFinished( TheaterFocusBarB0, {} )
@@ -139,15 +154,19 @@ CoD.DemoControlsButtonLightmanLightMode.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				border:completeAnimation()
 				self.border:setAlpha( 0 )
 				self.clipFinished( border, {} )
+
 				icon:completeAnimation()
 				self.icon:setRGB( ColorSet.Disabled.r, ColorSet.Disabled.g, ColorSet.Disabled.b )
 				self.clipFinished( icon, {} )
+
 				uparrow:completeAnimation()
 				self.uparrow:setAlpha( 0 )
 				self.clipFinished( uparrow, {} )
+
 				downarrow:completeAnimation()
 				self.downarrow:setAlpha( 0 )
 				self.clipFinished( downarrow, {} )
@@ -156,45 +175,58 @@ CoD.DemoControlsButtonLightmanLightMode.new = function ( menu, controller )
 		ShowOnlyUpArrow = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				whitebox:completeAnimation()
 				self.whitebox:setAlpha( 0 )
 				self.clipFinished( whitebox, {} )
+
 				border:completeAnimation()
 				self.border:setRGB( ColorSet.BadgeText.r, ColorSet.BadgeText.g, ColorSet.BadgeText.b )
 				self.clipFinished( border, {} )
+
 				icon:completeAnimation()
 				self.icon:setYRot( 0 )
 				self.clipFinished( icon, {} )
+
 				uparrow:completeAnimation()
 				self.uparrow:setAlpha( 0 )
 				self.clipFinished( uparrow, {} )
+
 				downarrow:completeAnimation()
 				self.downarrow:setAlpha( 0 )
 				self.clipFinished( downarrow, {} )
+
 				TheaterFocusBarT0:completeAnimation()
 				self.TheaterFocusBarT0:setAlpha( 0 )
 				self.clipFinished( TheaterFocusBarT0, {} )
+
 				TheaterFocusBarB0:completeAnimation()
 				self.TheaterFocusBarB0:setAlpha( 0 )
 				self.clipFinished( TheaterFocusBarB0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				whitebox:completeAnimation()
 				self.whitebox:setAlpha( 0.15 )
 				self.clipFinished( whitebox, {} )
+
 				border:completeAnimation()
 				self.border:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.clipFinished( border, {} )
+
 				uparrow:completeAnimation()
 				self.uparrow:setAlpha( 1 )
 				self.clipFinished( uparrow, {} )
+
 				downarrow:completeAnimation()
 				self.downarrow:setAlpha( 0 )
 				self.clipFinished( downarrow, {} )
+
 				TheaterFocusBarT0:completeAnimation()
 				self.TheaterFocusBarT0:setAlpha( 1 )
 				self.clipFinished( TheaterFocusBarT0, {} )
+
 				TheaterFocusBarB0:completeAnimation()
 				self.TheaterFocusBarB0:setAlpha( 1 )
 				self.clipFinished( TheaterFocusBarB0, {} )
@@ -203,51 +235,65 @@ CoD.DemoControlsButtonLightmanLightMode.new = function ( menu, controller )
 		ShowOnlyDownArrow = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				whitebox:completeAnimation()
 				self.whitebox:setAlpha( 0 )
 				self.clipFinished( whitebox, {} )
+
 				border:completeAnimation()
 				self.border:setRGB( ColorSet.BadgeText.r, ColorSet.BadgeText.g, ColorSet.BadgeText.b )
 				self.clipFinished( border, {} )
+
 				icon:completeAnimation()
 				self.icon:setYRot( 0 )
 				self.clipFinished( icon, {} )
+
 				uparrow:completeAnimation()
 				self.uparrow:setAlpha( 0 )
 				self.clipFinished( uparrow, {} )
+
 				downarrow:completeAnimation()
 				self.downarrow:setAlpha( 0 )
 				self.clipFinished( downarrow, {} )
+
 				TheaterFocusBarT0:completeAnimation()
 				self.TheaterFocusBarT0:setAlpha( 0 )
 				self.clipFinished( TheaterFocusBarT0, {} )
+
 				TheaterFocusBarB0:completeAnimation()
 				self.TheaterFocusBarB0:setAlpha( 0 )
 				self.clipFinished( TheaterFocusBarB0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				whitebox:completeAnimation()
 				self.whitebox:setAlpha( 0.15 )
 				self.clipFinished( whitebox, {} )
+
 				border:completeAnimation()
 				self.border:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.clipFinished( border, {} )
+
 				uparrow:completeAnimation()
 				self.uparrow:setAlpha( 0 )
 				self.clipFinished( uparrow, {} )
+
 				downarrow:completeAnimation()
 				self.downarrow:setAlpha( 1 )
 				self.clipFinished( downarrow, {} )
+
 				TheaterFocusBarT0:completeAnimation()
 				self.TheaterFocusBarT0:setAlpha( 1 )
 				self.clipFinished( TheaterFocusBarT0, {} )
+
 				TheaterFocusBarB0:completeAnimation()
 				self.TheaterFocusBarB0:setAlpha( 1 )
 				self.clipFinished( TheaterFocusBarB0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -298,6 +344,7 @@ CoD.DemoControlsButtonLightmanLightMode.new = function ( menu, controller )
 		CoD.Menu.SetButtonLabel( f18_arg1, Enum.LUIButton.LUI_KEY_DOWN, "" )
 		return false
 	end, false )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TheaterFocusBarT0:close()
 		element.TheaterFocusBarB0:close()

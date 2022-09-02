@@ -4,9 +4,11 @@
 CoD.EmblemColorElement = InheritFrom( LUI.UIElement )
 CoD.EmblemColorElement.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemColorElement )
 	self.id = "EmblemColorElement"
@@ -39,15 +41,18 @@ CoD.EmblemColorElement.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 0 )
 				self.clipFinished( background, {} )
+
 				colorElement:completeAnimation()
 				self.colorElement:setAlpha( 1 )
 				self.clipFinished( colorElement, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 2 )
+
 				local backgroundFrame2 = function ( background, event )
 					local backgroundFrame3 = function ( background, event )
 						local backgroundFrame4 = function ( background, event )
@@ -110,12 +115,14 @@ CoD.EmblemColorElement.new = function ( menu, controller )
 				self.background:setRGB( 1, 0.41, 0 )
 				self.background:setAlpha( 0.65 )
 				backgroundFrame2( background, {} )
+
 				colorElement:completeAnimation()
 				self.colorElement:setAlpha( 1 )
 				self.clipFinished( colorElement, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 2 )
+
 				local backgroundFrame2 = function ( background, event )
 					local backgroundFrame3 = function ( background, event )
 						local backgroundFrame4 = function ( background, event )
@@ -178,12 +185,14 @@ CoD.EmblemColorElement.new = function ( menu, controller )
 				self.background:setRGB( 1, 1, 1 )
 				self.background:setAlpha( 0.65 )
 				backgroundFrame2( background, {} )
+
 				colorElement:completeAnimation()
 				self.colorElement:setAlpha( 1 )
 				self.clipFinished( colorElement, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.colorElement:close()
 	end )

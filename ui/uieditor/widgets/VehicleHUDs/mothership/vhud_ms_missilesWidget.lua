@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.mothership.vhud_ms_missile" )
 CoD.vhud_ms_missilesWidget = InheritFrom( LUI.UIElement )
 CoD.vhud_ms_missilesWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ms_missilesWidget )
 	self.id = "vhud_ms_missilesWidget"
@@ -152,9 +154,11 @@ CoD.vhud_ms_missilesWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Bar:completeAnimation()
 				self.Bar:setAlpha( 1 )
 				self.clipFinished( Bar, {} )
+
 				solidbar:completeAnimation()
 				self.solidbar:setAlpha( 1 )
 				self.clipFinished( solidbar, {} )
@@ -163,15 +167,18 @@ CoD.vhud_ms_missilesWidget.new = function ( menu, controller )
 		Charging = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Bar:completeAnimation()
 				self.Bar:setAlpha( 1 )
 				self.clipFinished( Bar, {} )
+
 				solidbar:completeAnimation()
 				self.solidbar:setAlpha( 1 )
 				self.clipFinished( solidbar, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Charging",
@@ -188,6 +195,7 @@ CoD.vhud_ms_missilesWidget.new = function ( menu, controller )
 			modelName = "ammoReady"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vhudmsmissile:close()
 		element.vhudmsmissile0:close()

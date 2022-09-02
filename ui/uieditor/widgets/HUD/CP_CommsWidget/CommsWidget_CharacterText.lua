@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.CP_DamageWidget.DamageWidget_PanelNoBlur" )
 CoD.CommsWidget_CharacterText = InheritFrom( LUI.UIElement )
 CoD.CommsWidget_CharacterText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CommsWidget_CharacterText )
 	self.id = "CommsWidget_CharacterText"

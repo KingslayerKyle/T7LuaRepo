@@ -4,9 +4,11 @@
 CoD.CallingCards_code_ground_sun = InheritFrom( LUI.UIElement )
 CoD.CallingCards_code_ground_sun.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_code_ground_sun )
 	self.id = "CallingCards_code_ground_sun"
@@ -33,6 +35,7 @@ CoD.CallingCards_code_ground_sun.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				SUN2:completeAnimation()
 				self.SUN2:setAlpha( 1 )
 				self.clipFinished( SUN2, {} )
@@ -62,6 +65,7 @@ CoD.CallingCards_code_ground_sun.new = function ( menu, controller )
 				SUN:completeAnimation()
 				self.SUN:setAlpha( 0 )
 				SUNFrame2( SUN, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

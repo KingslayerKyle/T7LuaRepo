@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ScoreInfo.ScoreInfo_PanelScaleContainer" )
 CoD.ScoreInfo_PanelScale = InheritFrom( LUI.UIElement )
 CoD.ScoreInfo_PanelScale.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreInfo_PanelScale )
 	self.id = "ScoreInfo_PanelScale"
@@ -28,6 +30,7 @@ CoD.ScoreInfo_PanelScale.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ScoreInfoPanelScaleContainer0:completeAnimation()
 				self.ScoreInfoPanelScaleContainer0:setAlpha( 1 )
 				self.clipFinished( ScoreInfoPanelScaleContainer0, {} )
@@ -36,12 +39,14 @@ CoD.ScoreInfo_PanelScale.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ScoreInfoPanelScaleContainer0:completeAnimation()
 				self.ScoreInfoPanelScaleContainer0:setAlpha( 0 )
 				self.clipFinished( ScoreInfoPanelScaleContainer0, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ScoreInfoPanelScaleContainer0:close()
 	end )

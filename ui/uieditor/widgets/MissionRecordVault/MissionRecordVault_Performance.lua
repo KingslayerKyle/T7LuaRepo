@@ -9,6 +9,7 @@ require( "ui.uieditor.widgets.MissionRecordVault.MissionRecordVault_Difficulty" 
 
 local PreLoadFunc = function ( self, controller )
 	CoD.perController[controller].inspectingMap = Engine.GetModelValue( Engine.GetModel( Engine.GetGlobalModel(), "MissionRecordVaultMapInfo.mapId" ) )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "close", function ()
 		CoD.perController[controller].inspectingMap = nil
 	end )
@@ -17,9 +18,11 @@ end
 CoD.MissionRecordVault_Performance = InheritFrom( LUI.UIElement )
 CoD.MissionRecordVault_Performance.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MissionRecordVault_Performance )
 	self.id = "MissionRecordVault_Performance"
@@ -325,9 +328,11 @@ CoD.MissionRecordVault_Performance.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PerformanceTitleIncomplete:completeAnimation()
 				self.PerformanceTitleIncomplete:setAlpha( 0 )
 				self.clipFinished( PerformanceTitleIncomplete, {} )
+
 				PerformanceTitle:completeAnimation()
 				self.PerformanceTitle:setAlpha( 0.5 )
 				self.clipFinished( PerformanceTitle, {} )
@@ -336,15 +341,18 @@ CoD.MissionRecordVault_Performance.new = function ( menu, controller )
 		MissionIncomplete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PerformanceTitleIncomplete:completeAnimation()
 				self.PerformanceTitleIncomplete:setAlpha( 0.5 )
 				self.clipFinished( PerformanceTitleIncomplete, {} )
+
 				PerformanceTitle:completeAnimation()
 				self.PerformanceTitle:setAlpha( 0 )
 				self.clipFinished( PerformanceTitle, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "MissionIncomplete",
@@ -353,6 +361,7 @@ CoD.MissionRecordVault_Performance.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BorderThinKills0:close()
 		element.BorderThinKills:close()

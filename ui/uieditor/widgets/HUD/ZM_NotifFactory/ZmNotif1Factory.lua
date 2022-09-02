@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_Notif.ZmNotif1_BckScl" )
 CoD.ZmNotif1Factory = InheritFrom( LUI.UIElement )
 CoD.ZmNotif1Factory.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmNotif1Factory )
 	self.id = "ZmNotif1Factory"
@@ -46,6 +48,7 @@ CoD.ZmNotif1Factory.new = function ( menu, controller )
 	Label1:setRGB( 0.62, 0.96, 0.99 )
 	Label1:setText( Engine.Localize( "MENU_NEW" ) )
 	Label1:setTTF( "fonts/WEARETRIPPINShort.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( Label1, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 3 )
 	end )

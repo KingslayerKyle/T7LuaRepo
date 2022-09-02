@@ -4,9 +4,11 @@
 CoD.EventMessageText = InheritFrom( LUI.UIElement )
 CoD.EventMessageText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EventMessageText )
 	self.id = "EventMessageText"
@@ -36,9 +38,11 @@ CoD.EventMessageText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.message:close()
 	end )

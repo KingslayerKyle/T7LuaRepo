@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Friends.FriendsListRow_Internal" )
 CoD.FriendsListRow = InheritFrom( LUI.UIElement )
 CoD.FriendsListRow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FriendsListRow )
 	self.id = "FriendsListRow"
@@ -73,7 +75,9 @@ CoD.FriendsListRow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				internal:completeAnimation()
+
 				internal.highlight:completeAnimation()
 				self.internal:setAlpha( 1 )
 				self.internal.highlight:setAlpha( 0 )
@@ -81,6 +85,7 @@ CoD.FriendsListRow.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
+
 				local internalFrame2 = function ( internal, event )
 					local internalFrame3 = function ( internal, event )
 						if not event.interrupted then
@@ -107,21 +112,26 @@ CoD.FriendsListRow.new = function ( menu, controller )
 				end
 				
 				internal:completeAnimation()
+
 				internal.highlight:completeAnimation()
 				self.internal.highlight:setAlpha( 0 )
 				internalFrame2( internal, {} )
+
 				self.nextClip = "Focus"
 			end,
 			hideJoinableIcon = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		hideJoinableIcon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			hide = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
@@ -133,6 +143,7 @@ CoD.FriendsListRow.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.internal:close()
 	end )

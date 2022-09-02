@@ -15,9 +15,11 @@ end
 CoD.CombatRecordStatListItem = InheritFrom( LUI.UIElement )
 CoD.CombatRecordStatListItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CombatRecordStatListItem )
 	self.id = "CombatRecordStatListItem"
@@ -173,47 +175,60 @@ CoD.CombatRecordStatListItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				Stat:completeAnimation()
 				self.Stat:setLeftRight( false, true, -270, -10 )
 				self.Stat:setTopBottom( false, false, -12.5, 12.5 )
 				self.clipFinished( Stat, {} )
+
 				ComparisonStat:completeAnimation()
 				self.ComparisonStat:setAlpha( 0 )
 				self.clipFinished( ComparisonStat, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				Stat:completeAnimation()
 				self.Stat:setLeftRight( false, true, -270, -10 )
 				self.Stat:setTopBottom( false, false, -12.5, 12.5 )
 				self.clipFinished( Stat, {} )
+
 				ComparisonStat:completeAnimation()
 				self.ComparisonStat:setAlpha( 0 )
 				self.clipFinished( ComparisonStat, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
@@ -222,81 +237,106 @@ CoD.CombatRecordStatListItem.new = function ( menu, controller )
 		BMClassified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0 )
 				self.clipFinished( Background, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				blackMarketBackground:completeAnimation()
 				self.blackMarketBackground:setAlpha( 1 )
 				self.clipFinished( blackMarketBackground, {} )
+
 				ScrollingTextName:completeAnimation()
 				self.ScrollingTextName:setAlpha( 0 )
 				self.clipFinished( ScrollingTextName, {} )
+
 				Stat:completeAnimation()
 				self.Stat:setAlpha( 0 )
 				self.clipFinished( Stat, {} )
+
 				ComparisonStat:completeAnimation()
 				self.ComparisonStat:setAlpha( 0 )
 				self.clipFinished( ComparisonStat, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 1 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 1 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 11 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0 )
 				self.clipFinished( Background, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				blackMarketBackground:completeAnimation()
 				self.blackMarketBackground:setAlpha( 1 )
 				self.clipFinished( blackMarketBackground, {} )
+
 				ScrollingTextName:completeAnimation()
 				self.ScrollingTextName:setAlpha( 0 )
 				self.clipFinished( ScrollingTextName, {} )
+
 				Stat:completeAnimation()
 				self.Stat:setAlpha( 0 )
 				self.clipFinished( Stat, {} )
+
 				ComparisonStat:completeAnimation()
 				self.ComparisonStat:setAlpha( 0 )
 				self.clipFinished( ComparisonStat, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 1 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 1 )
 				self.clipFinished( blackMarketBrandIcon, {} )
@@ -305,90 +345,118 @@ CoD.CombatRecordStatListItem.new = function ( menu, controller )
 		ContractClassified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0 )
 				self.clipFinished( Background, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				blackMarketBackground:completeAnimation()
 				self.blackMarketBackground:setAlpha( 1 )
 				self.clipFinished( blackMarketBackground, {} )
+
 				ScrollingTextName:completeAnimation()
 				self.ScrollingTextName:setAlpha( 0 )
 				self.clipFinished( ScrollingTextName, {} )
+
 				Stat:completeAnimation()
 				self.Stat:setAlpha( 0 )
 				self.clipFinished( Stat, {} )
+
 				ComparisonStat:completeAnimation()
 				self.ComparisonStat:setAlpha( 0 )
 				self.clipFinished( ComparisonStat, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 1 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 1 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 1 )
 				self.clipFinished( bmContractBrandIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 14 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0 )
 				self.clipFinished( Background, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				blackMarketBackground:completeAnimation()
 				self.blackMarketBackground:setAlpha( 1 )
 				self.clipFinished( blackMarketBackground, {} )
+
 				ScrollingTextName:completeAnimation()
 				self.ScrollingTextName:setAlpha( 0 )
 				self.clipFinished( ScrollingTextName, {} )
+
 				Stat:completeAnimation()
 				self.Stat:setAlpha( 0 )
 				self.clipFinished( Stat, {} )
+
 				ComparisonStat:completeAnimation()
 				self.ComparisonStat:setAlpha( 0 )
 				self.clipFinished( ComparisonStat, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 1 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 1 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 1 )
 				self.clipFinished( bmContractBrandIcon, {} )
@@ -397,45 +465,57 @@ CoD.CombatRecordStatListItem.new = function ( menu, controller )
 		Comparing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				ComparisonStat:completeAnimation()
 				self.ComparisonStat:setAlpha( 1 )
 				self.clipFinished( ComparisonStat, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				ComparisonStat:completeAnimation()
 				self.ComparisonStat:setAlpha( 1 )
 				self.clipFinished( ComparisonStat, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BMClassified",
@@ -496,6 +576,7 @@ CoD.CombatRecordStatListItem.new = function ( menu, controller )
 			modelName = "OtherPlayerStats.Success"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactive:close()
 		element.BoxButtonLrgIdle:close()

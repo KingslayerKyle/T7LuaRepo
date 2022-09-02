@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.Console.ConsoleIcon" )
 CoD.ConsoleEntry = InheritFrom( LUI.UIElement )
 CoD.ConsoleEntry.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ConsoleEntry )
 	self.id = "ConsoleEntry"
@@ -93,9 +95,11 @@ CoD.ConsoleEntry.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			FadeOut = function ()
 				self:setupElementClipCounter( 1 )
+
 				local PanelFrame2 = function ( Panel, event )
 					if not event.interrupted then
 						Panel:beginAnimation( "keyframe", 280, false, false, CoD.TweenType.Bounce )
@@ -116,6 +120,7 @@ CoD.ConsoleEntry.new = function ( menu, controller )
 			end,
 			FadeIn = function ()
 				self:setupElementClipCounter( 1 )
+
 				local PanelFrame2 = function ( Panel, event )
 					local PanelFrame3 = function ( Panel, event )
 						local PanelFrame4 = function ( Panel, event )
@@ -222,6 +227,7 @@ CoD.ConsoleEntry.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Text1:close()
 		element.Icon1:close()

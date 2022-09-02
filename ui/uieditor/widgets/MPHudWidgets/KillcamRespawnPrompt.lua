@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ButtonPanel" )
 CoD.KillcamRespawnPrompt = InheritFrom( LUI.UIElement )
 CoD.KillcamRespawnPrompt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.KillcamRespawnPrompt )
 	self.id = "KillcamRespawnPrompt"
@@ -31,6 +33,7 @@ CoD.KillcamRespawnPrompt.new = function ( menu, controller )
 	RespawnPrompt:setTTF( "fonts/default.ttf" )
 	RespawnPrompt:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	RespawnPrompt:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( RespawnPrompt, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 4 )
 	end )
@@ -41,9 +44,11 @@ CoD.KillcamRespawnPrompt.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setAlpha( 0.4 )
 				self.clipFinished( FEButtonPanel0, {} )
+
 				RespawnPrompt:completeAnimation()
 				self.RespawnPrompt:setAlpha( 1 )
 				self.clipFinished( RespawnPrompt, {} )
@@ -52,15 +57,18 @@ CoD.KillcamRespawnPrompt.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setAlpha( 0 )
 				self.clipFinished( FEButtonPanel0, {} )
+
 				RespawnPrompt:completeAnimation()
 				self.RespawnPrompt:setAlpha( 0 )
 				self.clipFinished( RespawnPrompt, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -89,6 +97,7 @@ CoD.KillcamRespawnPrompt.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_ROUND_END_KILLCAM
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel0:close()
 	end )

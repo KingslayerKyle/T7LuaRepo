@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_Specialist8bit_eyes" )
 CoD.CallingCards_Specialist8bit_Reaper = InheritFrom( LUI.UIElement )
 CoD.CallingCards_Specialist8bit_Reaper.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_Specialist8bit_Reaper )
 	self.id = "CallingCards_Specialist8bit_Reaper"
@@ -86,6 +88,7 @@ CoD.CallingCards_Specialist8bit_Reaper.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				local armFrame2 = function ( arm, event )
 					local armFrame3 = function ( arm, event )
 						local armFrame4 = function ( arm, event )
@@ -302,6 +305,7 @@ CoD.CallingCards_Specialist8bit_Reaper.new = function ( menu, controller )
 				self.arm:setLeftRight( true, false, 235, 367 )
 				self.arm:setTopBottom( true, false, 0, 120 )
 				armFrame2( arm, {} )
+
 				body:completeAnimation()
 				self.body:setLeftRight( true, false, 347, 431 )
 				self.body:setTopBottom( true, false, 0, 120 )
@@ -499,6 +503,7 @@ CoD.CallingCards_Specialist8bit_Reaper.new = function ( menu, controller )
 				spark2:completeAnimation()
 				self.spark2:setAlpha( 0 )
 				spark2Frame2( spark2, {} )
+
 				eyeswidget:completeAnimation()
 				self.eyeswidget:setLeftRight( true, false, 359, 395 )
 				self.eyeswidget:setTopBottom( true, false, 14, 38 )
@@ -1188,10 +1193,12 @@ CoD.CallingCards_Specialist8bit_Reaper.new = function ( menu, controller )
 				self.Image3:setTopBottom( true, false, 28, 112 )
 				self.Image3:setAlpha( 1 )
 				Image3Frame2( Image3, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.eyeswidget:close()
 	end )

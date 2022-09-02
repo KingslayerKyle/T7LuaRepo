@@ -4,9 +4,11 @@
 CoD.CallingCards_Loot_LegendaryAnimals = InheritFrom( LUI.UIElement )
 CoD.CallingCards_Loot_LegendaryAnimals.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_Loot_LegendaryAnimals )
 	self.id = "CallingCards_Loot_LegendaryAnimals"
@@ -87,6 +89,7 @@ CoD.CallingCards_Loot_LegendaryAnimals.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local GlowFrame2 = function ( Glow, event )
 					local GlowFrame3 = function ( Glow, event )
 						local GlowFrame4 = function ( Glow, event )
@@ -635,6 +638,7 @@ CoD.CallingCards_Loot_LegendaryAnimals.new = function ( menu, controller )
 				Glow0:completeAnimation()
 				self.Glow0:setAlpha( 0 )
 				Glow0Frame2( Glow0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

@@ -10,9 +10,11 @@ end
 CoD.FileshareNoContent = InheritFrom( LUI.UIElement )
 CoD.FileshareNoContent.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FileshareNoContent )
 	self.id = "FileshareNoContent"
@@ -51,6 +53,7 @@ CoD.FileshareNoContent.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				NoContentTextbox:completeAnimation()
 				self.NoContentTextbox:setAlpha( 0 )
 				self.clipFinished( NoContentTextbox, {} )
@@ -59,6 +62,7 @@ CoD.FileshareNoContent.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				NoContentTextbox:completeAnimation()
 				self.NoContentTextbox:setAlpha( 1 )
 				self.NoContentTextbox:setText( FileshareGetNoContentString( controller, "MENU_FILESHARE_NO_CONTENT" ) )
@@ -68,6 +72,7 @@ CoD.FileshareNoContent.new = function ( menu, controller )
 		Publish = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				NoContentTextbox:completeAnimation()
 				self.NoContentTextbox:setAlpha( 1 )
 				self.NoContentTextbox:setText( FileshareGetNoContentString( controller, "MENU_FILESHARE_NO_CONTENT" ) )
@@ -77,6 +82,7 @@ CoD.FileshareNoContent.new = function ( menu, controller )
 		Loading = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				NoContentTextbox:completeAnimation()
 				self.NoContentTextbox:setAlpha( 1 )
 				self.NoContentTextbox:setText( FileshareGetNoContentString( controller, "MENU_FILESHARE_NO_CONTENT" ) )
@@ -84,6 +90,7 @@ CoD.FileshareNoContent.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -152,6 +159,7 @@ CoD.FileshareNoContent.new = function ( menu, controller )
 			modelName = "fileshareRoot.ready"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SpinnerFlipbook:close()
 	end )

@@ -4,9 +4,11 @@
 CoD.GroupsSummaryTBD = InheritFrom( LUI.UIElement )
 CoD.GroupsSummaryTBD.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsSummaryTBD )
 	self.id = "GroupsSummaryTBD"
@@ -43,6 +45,7 @@ CoD.GroupsSummaryTBD.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local Image0Frame2 = function ( Image0, event )
 					local Image0Frame3 = function ( Image0, event )
 						local Image0Frame4 = function ( Image0, event )
@@ -144,6 +147,7 @@ CoD.GroupsSummaryTBD.new = function ( menu, controller )
 				self.Image0:setTopBottom( true, false, -13.79, 147.57 )
 				self.Image0:setZRot( 0 )
 				Image0Frame2( Image0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

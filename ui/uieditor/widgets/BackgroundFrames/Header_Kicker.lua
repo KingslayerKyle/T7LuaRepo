@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BackgroundFrames.Kicker_Background" )
 CoD.Header_Kicker = InheritFrom( LUI.UIElement )
 CoD.Header_Kicker.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Header_Kicker )
 	self.id = "Header_Kicker"
@@ -29,6 +31,7 @@ CoD.Header_Kicker.new = function ( menu, controller )
 	Kickertxt:setTopBottom( true, false, 1.99, 17.99 )
 	Kickertxt:setText( Engine.Localize( "Public Match" ) )
 	Kickertxt:setTTF( "fonts/FoundryGridnik-Medium.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( Kickertxt, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )
@@ -39,9 +42,11 @@ CoD.Header_Kicker.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.KickerBackground:close()
 	end )

@@ -4,9 +4,11 @@
 CoD.CallingCards_SpecialistWeaponsWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_SpecialistWeaponsWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_SpecialistWeaponsWidget )
 	self.id = "CallingCards_SpecialistWeaponsWidget"
@@ -81,6 +83,7 @@ CoD.CallingCards_SpecialistWeaponsWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				local f2_local0 = function ( f3_arg0, f3_arg1 )
 					if not f3_arg1.interrupted then
 						f3_arg0:beginAnimation( "keyframe", 559, false, false, CoD.TweenType.Linear )
@@ -255,6 +258,7 @@ CoD.CallingCards_SpecialistWeaponsWidget.new = function ( menu, controller )
 				self.Ruin:setAlpha( 1 )
 				self.Ruin:setScale( 1 )
 				RuinFrame2( Ruin, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

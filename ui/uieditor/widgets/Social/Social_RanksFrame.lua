@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.cac_ButtonBoxLrgInactiveDiags" )
 CoD.Social_RanksFrame = InheritFrom( LUI.UIElement )
 CoD.Social_RanksFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_RanksFrame )
 	self.id = "Social_RanksFrame"

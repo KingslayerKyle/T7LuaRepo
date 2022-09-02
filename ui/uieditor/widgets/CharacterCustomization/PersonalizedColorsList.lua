@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CharacterCustomization.PersonalizedColorsListItem"
 CoD.PersonalizedColorsList = InheritFrom( LUI.UIElement )
 CoD.PersonalizedColorsList.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PersonalizedColorsList )
 	self.id = "PersonalizedColorsList"

@@ -14,9 +14,11 @@ require( "ui.uieditor.widgets.Common.common_ButtonLabel_01" )
 CoD.GroupsItemRow = InheritFrom( LUI.UIElement )
 CoD.GroupsItemRow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsItemRow )
 	self.id = "GroupsItemRow"
@@ -228,48 +230,60 @@ CoD.GroupsItemRow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 1 )
 				self.clipFinished( GroupEmblemWidget, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, -2, 2 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, -2, 2 )
 				self.FocusBarB:setTopBottom( false, true, 0, 4 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setLeftRight( true, true, -12, 7 )
 				self.glitch:setTopBottom( true, false, -8.75, 4.75 )
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setLeftRight( true, true, -8.5, 8.5 )
 				self.glitch2:setTopBottom( false, true, -6, 9 )
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				glitch0:completeAnimation()
 				self.glitch0:setAlpha( 0 )
 				self.clipFinished( glitch0, {} )
+
 				itemImageLine:completeAnimation()
 				self.itemImageLine:setAlpha( 0.3 )
 				self.clipFinished( itemImageLine, {} )
+
 				GroupsItemRowStatus:completeAnimation()
 				self.GroupsItemRowStatus:setAlpha( 1 )
 				self.clipFinished( GroupsItemRowStatus, {} )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 0 )
 				self.clipFinished( Spinner, {} )
+
 				commonButtonLabel:completeAnimation()
 				self.commonButtonLabel:setAlpha( 1 )
 				self.clipFinished( commonButtonLabel, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local FocusBarTFrame2 = function ( FocusBarT, event )
 					local FocusBarTFrame3 = function ( FocusBarT, event )
 						local FocusBarTFrame4 = function ( FocusBarT, event )
@@ -543,33 +557,42 @@ CoD.GroupsItemRow.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 1 )
 				self.clipFinished( GroupEmblemWidget, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				itemImageLine:completeAnimation()
 				self.itemImageLine:setAlpha( 0.3 )
 				self.clipFinished( itemImageLine, {} )
+
 				GroupsItemRowStatus:completeAnimation()
 				self.GroupsItemRowStatus:setAlpha( 1 )
 				self.clipFinished( GroupsItemRowStatus, {} )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 0 )
 				self.clipFinished( Spinner, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -884,51 +907,64 @@ CoD.GroupsItemRow.new = function ( menu, controller )
 		Loading = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 0 )
 				self.clipFinished( GroupEmblemWidget, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, -2, 2 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, -2, 2 )
 				self.FocusBarB:setTopBottom( false, true, 0, 4 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setLeftRight( true, true, -12, 7 )
 				self.glitch:setTopBottom( true, false, -8.75, 4.75 )
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setLeftRight( true, true, -8.5, 8.5 )
 				self.glitch2:setTopBottom( false, true, -6, 9 )
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				glitch0:completeAnimation()
 				self.glitch0:setAlpha( 0 )
 				self.clipFinished( glitch0, {} )
+
 				itemImageLine:completeAnimation()
 				self.itemImageLine:setAlpha( 0 )
 				self.clipFinished( itemImageLine, {} )
+
 				GroupsItemRowStatus:completeAnimation()
 				self.GroupsItemRowStatus:setAlpha( 0 )
 				self.clipFinished( GroupsItemRowStatus, {} )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 1 )
 				self.clipFinished( Spinner, {} )
+
 				GroupsSocialMainPrimaryGroupBadge:completeAnimation()
 				self.GroupsSocialMainPrimaryGroupBadge:setAlpha( 0 )
 				self.clipFinished( GroupsSocialMainPrimaryGroupBadge, {} )
+
 				commonButtonLabel:completeAnimation()
 				self.commonButtonLabel:setAlpha( 0 )
 				self.clipFinished( commonButtonLabel, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local FocusBarTFrame2 = function ( FocusBarT, event )
 					local FocusBarTFrame3 = function ( FocusBarT, event )
 						local FocusBarTFrame4 = function ( FocusBarT, event )
@@ -1202,33 +1238,42 @@ CoD.GroupsItemRow.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 0 )
 				self.clipFinished( GroupEmblemWidget, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				itemImageLine:completeAnimation()
 				self.itemImageLine:setAlpha( 0 )
 				self.clipFinished( itemImageLine, {} )
+
 				GroupsItemRowStatus:completeAnimation()
 				self.GroupsItemRowStatus:setAlpha( 0 )
 				self.clipFinished( GroupsItemRowStatus, {} )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 1 )
 				self.clipFinished( Spinner, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -1541,6 +1586,7 @@ CoD.GroupsItemRow.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Loading",
@@ -1558,6 +1604,7 @@ CoD.GroupsItemRow.new = function ( menu, controller )
 		} )
 	end )
 	GroupsItemRowStatus.id = "GroupsItemRowStatus"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveDiag:close()
 		element.BoxButtonLrgInactive:close()

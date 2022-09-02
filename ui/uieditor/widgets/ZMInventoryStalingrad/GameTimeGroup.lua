@@ -43,9 +43,11 @@ end
 CoD.GameTimeGroup = InheritFrom( LUI.UIElement )
 CoD.GameTimeGroup.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GameTimeGroup )
 	self.id = "GameTimeGroup"
@@ -187,35 +189,44 @@ CoD.GameTimeGroup.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				CurrentClockTime:completeAnimation()
 				self.CurrentClockTime:setAlpha( 0 )
 				self.clipFinished( CurrentClockTime, {} )
+
 				SurviveTime:completeAnimation()
 				self.SurviveTime:setAlpha( 0 )
 				self.clipFinished( SurviveTime, {} )
+
 				Last5RoundTime:completeAnimation()
 				self.Last5RoundTime:setAlpha( 0 )
 				self.clipFinished( Last5RoundTime, {} )
+
 				QuestTime:completeAnimation()
 				self.QuestTime:setAlpha( 0 )
 				self.clipFinished( QuestTime, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				CurrentClockTime:completeAnimation()
 				self.CurrentClockTime:setAlpha( 1 )
 				self.clipFinished( CurrentClockTime, {} )
+
 				SurviveTime:completeAnimation()
 				self.SurviveTime:setAlpha( 1 )
 				self.clipFinished( SurviveTime, {} )
+
 				Last5RoundTime:completeAnimation()
 				self.Last5RoundTime:setAlpha( 1 )
 				self.clipFinished( Last5RoundTime, {} )
+
 				QuestTime:completeAnimation()
 				self.QuestTime:setAlpha( 1 )
 				self.clipFinished( QuestTime, {} )
@@ -224,18 +235,22 @@ CoD.GameTimeGroup.new = function ( menu, controller )
 		InventoryScreen = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				SurviveTime:completeAnimation()
 				self.SurviveTime:setAlpha( 1 )
 				self.clipFinished( SurviveTime, {} )
+
 				Last5RoundTime:completeAnimation()
 				self.Last5RoundTime:setAlpha( 0 )
 				self.clipFinished( Last5RoundTime, {} )
+
 				QuestTime:completeAnimation()
 				self.QuestTime:setAlpha( 0 )
 				self.clipFinished( QuestTime, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -258,6 +273,7 @@ CoD.GameTimeGroup.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CurrentClockTime:close()
 		element.SurviveTime:close()

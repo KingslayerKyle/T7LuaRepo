@@ -4,9 +4,11 @@
 CoD.PlayerBalanceWidget = InheritFrom( LUI.UIElement )
 CoD.PlayerBalanceWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PlayerBalanceWidget )
 	self.id = "PlayerBalanceWidget"
@@ -62,6 +64,7 @@ CoD.PlayerBalanceWidget.new = function ( menu, controller )
 			BalanceId:setText( Engine.Localize( ToString( balanceId ) ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BalanceAmount:close()
 		element.BalanceId:close()

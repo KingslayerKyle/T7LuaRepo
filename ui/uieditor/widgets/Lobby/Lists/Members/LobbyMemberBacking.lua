@@ -4,9 +4,11 @@
 CoD.LobbyMemberBacking = InheritFrom( LUI.UIElement )
 CoD.LobbyMemberBacking.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyMemberBacking )
 	self.id = "LobbyMemberBacking"
@@ -28,6 +30,7 @@ CoD.LobbyMemberBacking.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 1 )
 				self.clipFinished( Image, {} )
@@ -36,6 +39,7 @@ CoD.LobbyMemberBacking.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 0 )
 				self.clipFinished( Image, {} )

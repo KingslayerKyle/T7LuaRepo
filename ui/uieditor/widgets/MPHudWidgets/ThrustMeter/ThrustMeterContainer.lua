@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.MPHudWidgets.ThrustMeter.ThrustMeter" )
 CoD.ThrustMeterContainer = InheritFrom( LUI.UIElement )
 CoD.ThrustMeterContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ThrustMeterContainer )
 	self.id = "ThrustMeterContainer"
@@ -34,15 +36,18 @@ CoD.ThrustMeterContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Bg:completeAnimation()
 				self.Bg:setAlpha( 0.3 )
 				self.clipFinished( Bg, {} )
+
 				ThrustMeter0:completeAnimation()
 				self.ThrustMeter0:setAlpha( 1 )
 				self.clipFinished( ThrustMeter0, {} )
 			end,
 			Hidden = function ()
 				self:setupElementClipCounter( 2 )
+
 				local BgFrame2 = function ( Bg, event )
 					local BgFrame3 = function ( Bg, event )
 						local BgFrame4 = function ( Bg, event )
@@ -183,6 +188,7 @@ CoD.ThrustMeterContainer.new = function ( menu, controller )
 			end,
 			FullEnergy = function ()
 				self:setupElementClipCounter( 2 )
+
 				Bg:completeAnimation()
 				self.Bg:setAlpha( 0.3 )
 				self.clipFinished( Bg, {} )
@@ -281,15 +287,18 @@ CoD.ThrustMeterContainer.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Bg:completeAnimation()
 				self.Bg:setAlpha( 0 )
 				self.clipFinished( Bg, {} )
+
 				ThrustMeter0:completeAnimation()
 				self.ThrustMeter0:setAlpha( 0 )
 				self.clipFinished( ThrustMeter0, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				local BgFrame2 = function ( Bg, event )
 					if not event.interrupted then
 						Bg:beginAnimation( "keyframe", 79, true, false, CoD.TweenType.Bounce )
@@ -325,15 +334,18 @@ CoD.ThrustMeterContainer.new = function ( menu, controller )
 		FullEnergy = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Bg:completeAnimation()
 				self.Bg:setAlpha( 0 )
 				self.clipFinished( Bg, {} )
+
 				ThrustMeter0:completeAnimation()
 				self.ThrustMeter0:setAlpha( 0 )
 				self.clipFinished( ThrustMeter0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -518,6 +530,7 @@ CoD.ThrustMeterContainer.new = function ( menu, controller )
 			modelName = "playerAbilities.playerEnergyRatio"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ThrustMeter0:close()
 	end )

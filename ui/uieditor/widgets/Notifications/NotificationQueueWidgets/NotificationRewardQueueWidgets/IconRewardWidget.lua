@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Notifications.NotificationQueueWidgets.Notificatio
 CoD.IconRewardWidget = InheritFrom( LUI.UIElement )
 CoD.IconRewardWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.IconRewardWidget )
 	self.id = "IconRewardWidget"
@@ -38,11 +40,13 @@ CoD.IconRewardWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ImageScanline:completeAnimation()
 				self.ImageScanline:setLeftRight( false, true, -48, 0 )
 				self.ImageScanline:setTopBottom( false, false, -24, 24 )
 				self.ImageScanline:setAlpha( 1 )
 				self.clipFinished( ImageScanline, {} )
+
 				Notification2xpReward:completeAnimation()
 				self.Notification2xpReward:setAlpha( 0 )
 				self.clipFinished( Notification2xpReward, {} )
@@ -51,11 +55,13 @@ CoD.IconRewardWidget.new = function ( menu, controller )
 		CallingCard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ImageScanline:completeAnimation()
 				self.ImageScanline:setLeftRight( false, true, -111, 19 )
 				self.ImageScanline:setTopBottom( false, false, -16, 16 )
 				self.ImageScanline:setAlpha( 1 )
 				self.clipFinished( ImageScanline, {} )
+
 				Notification2xpReward:completeAnimation()
 				self.Notification2xpReward:setAlpha( 0 )
 				self.clipFinished( Notification2xpReward, {} )
@@ -64,17 +70,20 @@ CoD.IconRewardWidget.new = function ( menu, controller )
 		DoubleXP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ImageScanline:completeAnimation()
 				self.ImageScanline:setLeftRight( false, true, -48, 0 )
 				self.ImageScanline:setTopBottom( false, false, -24, 24 )
 				self.ImageScanline:setAlpha( 0 )
 				self.clipFinished( ImageScanline, {} )
+
 				Notification2xpReward:completeAnimation()
 				self.Notification2xpReward:setAlpha( 1 )
 				self.clipFinished( Notification2xpReward, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CallingCard",
@@ -97,6 +106,7 @@ CoD.IconRewardWidget.new = function ( menu, controller )
 			modelName = "icon"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Notification2xpReward:close()
 	end )

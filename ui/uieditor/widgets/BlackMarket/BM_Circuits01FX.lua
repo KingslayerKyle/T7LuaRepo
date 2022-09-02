@@ -4,9 +4,11 @@
 CoD.BM_Circuits01FX = InheritFrom( LUI.UIElement )
 CoD.BM_Circuits01FX.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Circuits01FX )
 	self.id = "BM_Circuits01FX"
@@ -33,6 +35,7 @@ CoD.BM_Circuits01FX.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local Pixels04Frame2 = function ( Pixels04, event )
 					local Pixels04Frame3 = function ( Pixels04, event )
 						local Pixels04Frame4 = function ( Pixels04, event )

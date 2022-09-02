@@ -4,9 +4,11 @@
 CoD.RipperLockLineWidget = InheritFrom( LUI.UIElement )
 CoD.RipperLockLineWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.RipperLockLineWidget )
 	self.id = "RipperLockLineWidget"

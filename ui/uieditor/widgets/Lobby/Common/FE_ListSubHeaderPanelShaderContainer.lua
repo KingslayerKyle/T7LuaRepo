@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ListSubHeaderPanelShader" )
 CoD.FE_ListSubHeaderPanelShaderContainer = InheritFrom( LUI.UIElement )
 CoD.FE_ListSubHeaderPanelShaderContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_ListSubHeaderPanelShaderContainer )
 	self.id = "FE_ListSubHeaderPanelShaderContainer"

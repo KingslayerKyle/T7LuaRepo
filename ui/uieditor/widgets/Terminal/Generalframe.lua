@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Terminal.OnePxLine" )
 CoD.Generalframe = InheritFrom( LUI.UIElement )
 CoD.Generalframe.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Generalframe )
 	self.id = "Generalframe"
@@ -69,9 +71,11 @@ CoD.Generalframe.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.OnePxLine0:close()
 		element.OnePxLine00:close()

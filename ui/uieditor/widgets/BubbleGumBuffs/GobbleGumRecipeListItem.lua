@@ -22,9 +22,11 @@ end
 CoD.GobbleGumRecipeListItem = InheritFrom( LUI.UIElement )
 CoD.GobbleGumRecipeListItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GobbleGumRecipeListItem )
 	self.id = "GobbleGumRecipeListItem"
@@ -130,22 +132,27 @@ CoD.GobbleGumRecipeListItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				CookbookRecipeFill:completeAnimation()
 				self.CookbookRecipeFill:setAlpha( 1 )
 				self.clipFinished( CookbookRecipeFill, {} )
+
 				GobbleGumRecipeIcon:completeAnimation()
 				self.GobbleGumRecipeIcon:setAlpha( 1 )
 				self.clipFinished( GobbleGumRecipeIcon, {} )
+
 				CookbookIndicatorCircleTop:completeAnimation()
 				self.CookbookIndicatorCircleTop:setLeftRight( true, false, 259.5, 267.5 )
 				self.CookbookIndicatorCircleTop:setTopBottom( true, false, 51.5, 59.5 )
 				self.clipFinished( CookbookIndicatorCircleTop, {} )
+
 				Requirements:completeAnimation()
 				self.Requirements:setAlpha( 1 )
 				self.clipFinished( Requirements, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CookbookRecipeFill:close()
 		element.GobbleGumRecipeIcon:close()

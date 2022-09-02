@@ -4,9 +4,11 @@
 CoD.IncomingExplosive_Grenade = InheritFrom( LUI.UIElement )
 CoD.IncomingExplosive_Grenade.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.IncomingExplosive_Grenade )
 	self.id = "IncomingExplosive_Grenade"

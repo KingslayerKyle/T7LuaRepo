@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.CP_CommsWidget.CommsWidget_EventMessageRing" )
 CoD.CommsWidget_EventMessageRingContainer = InheritFrom( LUI.UIElement )
 CoD.CommsWidget_EventMessageRingContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CommsWidget_EventMessageRingContainer )
 	self.id = "CommsWidget_EventMessageRingContainer"
@@ -38,6 +40,7 @@ CoD.CommsWidget_EventMessageRingContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local CommsWidgetEventMessageRing00Frame2 = function ( CommsWidgetEventMessageRing00, event )
 					if not event.interrupted then
 						CommsWidgetEventMessageRing00:beginAnimation( "keyframe", 7019, false, false, CoD.TweenType.Linear )
@@ -245,15 +248,18 @@ CoD.CommsWidget_EventMessageRingContainer.new = function ( menu, controller )
 				self.CommsWidgetEventMessageRing0:setAlpha( 1 )
 				self.CommsWidgetEventMessageRing0:setZRot( 0 )
 				CommsWidgetEventMessageRing0Frame2( CommsWidgetEventMessageRing0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Fake = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CommsWidgetEventMessageRing00:close()
 		element.CommsWidgetEventMessageRing0:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_Objectives_Item" )
 CoD.StartMenu_Objectives = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Objectives.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Objectives )
 	self.id = "StartMenu_Objectives"
@@ -73,6 +75,7 @@ CoD.StartMenu_Objectives.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				objectives:completeAnimation()
 				self.objectives:setAlpha( 1 )
 				self.clipFinished( objectives, {} )
@@ -81,6 +84,7 @@ CoD.StartMenu_Objectives.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				objectives:completeAnimation()
 				self.objectives:setAlpha( 0 )
 				self.clipFinished( objectives, {} )
@@ -95,6 +99,7 @@ CoD.StartMenu_Objectives.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.objectives:close()
 	end )

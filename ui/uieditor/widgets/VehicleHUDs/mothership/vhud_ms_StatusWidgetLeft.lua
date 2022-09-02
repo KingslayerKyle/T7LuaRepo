@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.mothership.vhud_ms_NotificationBox" )
 CoD.vhud_ms_StatusWidgetLeft = InheritFrom( LUI.UIElement )
 CoD.vhud_ms_StatusWidgetLeft.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ms_StatusWidgetLeft )
 	self.id = "vhud_ms_StatusWidgetLeft"
@@ -48,23 +50,29 @@ CoD.vhud_ms_StatusWidgetLeft.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Zoom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vhudmsNotificationBox0:close()
 		element.ALTnumbers:close()

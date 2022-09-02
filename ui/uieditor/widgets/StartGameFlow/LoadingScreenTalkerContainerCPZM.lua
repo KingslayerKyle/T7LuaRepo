@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_PanelNoBlur" )
 CoD.LoadingScreenTalkerContainerCPZM = InheritFrom( LUI.UIElement )
 CoD.LoadingScreenTalkerContainerCPZM.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LoadingScreenTalkerContainerCPZM )
 	self.id = "LoadingScreenTalkerContainerCPZM"
@@ -43,6 +45,7 @@ CoD.LoadingScreenTalkerContainerCPZM.new = function ( menu, controller )
 			WpnName:setText( Engine.Localize( playerName ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( WpnName, "setText", function ( element, controller )
 		ScaleWidgetToLabelLeftJustify( self, element, 20 )
 	end )
@@ -55,6 +58,7 @@ CoD.LoadingScreenTalkerContainerCPZM.new = function ( menu, controller )
 			VOIPImageByXUID:setupVoipImageByXUID( playerxuid )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 		element.VOIPImageByXUID:close()

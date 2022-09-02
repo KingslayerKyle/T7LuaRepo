@@ -21,9 +21,11 @@ end
 CoD.ChooseCharacter_CardClickButton = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacter_CardClickButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacter_CardClickButton )
 	self.id = "ChooseCharacter_CardClickButton"
@@ -55,12 +57,14 @@ CoD.ChooseCharacter_CardClickButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				label:completeAnimation()
 				self.label:setRGB( 1, 1, 1 )
 				self.clipFinished( label, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 1 )
+
 				label:completeAnimation()
 				self.label:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.clipFinished( label, {} )

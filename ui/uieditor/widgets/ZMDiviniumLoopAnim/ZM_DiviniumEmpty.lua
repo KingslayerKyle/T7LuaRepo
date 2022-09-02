@@ -4,9 +4,11 @@
 CoD.ZM_DiviniumEmpty = InheritFrom( LUI.UIElement )
 CoD.ZM_DiviniumEmpty.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZM_DiviniumEmpty )
 	self.id = "ZM_DiviniumEmpty"
@@ -25,6 +27,7 @@ CoD.ZM_DiviniumEmpty.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

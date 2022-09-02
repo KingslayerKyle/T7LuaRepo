@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.DeadSpectate.DeadSpectate_SpectatingModeButton
 CoD.DeadSpectate_SpectatingMode = InheritFrom( LUI.UIElement )
 CoD.DeadSpectate_SpectatingMode.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DeadSpectate_SpectatingMode )
 	self.id = "DeadSpectate_SpectatingMode"
@@ -39,9 +41,11 @@ CoD.DeadSpectate_SpectatingMode.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				switchPrompt0:completeAnimation()
 				self.switchPrompt0:setAlpha( 0 )
 				self.clipFinished( switchPrompt0, {} )
+
 				button:completeAnimation()
 				self.button:setAlpha( 0 )
 				self.clipFinished( button, {} )
@@ -50,10 +54,12 @@ CoD.DeadSpectate_SpectatingMode.new = function ( menu, controller )
 		FirstPerson = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				switchPrompt0:completeAnimation()
 				self.switchPrompt0:setAlpha( 1 )
 				self.switchPrompt0:setText( Engine.Localize( "MPUI_FIRST_PERSON_VIEW" ) )
 				self.clipFinished( switchPrompt0, {} )
+
 				button:completeAnimation()
 				self.button:setAlpha( 1 )
 				self.clipFinished( button, {} )
@@ -62,16 +68,19 @@ CoD.DeadSpectate_SpectatingMode.new = function ( menu, controller )
 		ThirdPerson = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				switchPrompt0:completeAnimation()
 				self.switchPrompt0:setAlpha( 1 )
 				self.switchPrompt0:setText( Engine.Localize( "MPUI_THIRD_PERSON_VIEW" ) )
 				self.clipFinished( switchPrompt0, {} )
+
 				button:completeAnimation()
 				self.button:setAlpha( 1 )
 				self.clipFinished( button, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "FirstPerson",
@@ -127,6 +136,7 @@ CoD.DeadSpectate_SpectatingMode.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.button:close()
 	end )

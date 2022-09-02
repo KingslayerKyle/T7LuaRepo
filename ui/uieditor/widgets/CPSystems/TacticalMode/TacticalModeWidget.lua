@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CPSystems.TacticalMode.TacticalModeWidget_Internal
 CoD.TacticalModeWidget = InheritFrom( LUI.UIElement )
 CoD.TacticalModeWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TacticalModeWidget )
 	self.id = "TacticalModeWidget"

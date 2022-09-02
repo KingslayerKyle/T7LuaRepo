@@ -12,9 +12,11 @@ require( "ui.uieditor.widgets.Groups.GroupPrimaryWidget" )
 CoD.GroupsSummary = InheritFrom( LUI.UIElement )
 CoD.GroupsSummary.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsSummary )
 	self.id = "GroupsSummary"
@@ -203,42 +205,55 @@ CoD.GroupsSummary.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0 )
 				self.clipFinished( Backing, {} )
+
 				GroupMemberSummary:completeAnimation()
 				self.GroupMemberSummary:setAlpha( 1 )
 				self.clipFinished( GroupMemberSummary, {} )
+
 				GroupsSummaryStatus0:completeAnimation()
 				self.GroupsSummaryStatus0:setAlpha( 1 )
 				self.clipFinished( GroupsSummaryStatus0, {} )
+
 				Line1:completeAnimation()
 				self.Line1:setAlpha( 1 )
 				self.clipFinished( Line1, {} )
+
 				Line2:completeAnimation()
 				self.Line2:setAlpha( 1 )
 				self.clipFinished( Line2, {} )
+
 				cacItemTitleGlow0:completeAnimation()
 				self.cacItemTitleGlow0:setAlpha( 1 )
 				self.clipFinished( cacItemTitleGlow0, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.14 )
 				self.clipFinished( Glow, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 1 )
 				self.clipFinished( GroupEmblemWidget, {} )
+
 				StartMenuframenoBG00:completeAnimation()
 				self.StartMenuframenoBG00:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG00, {} )
+
 				GroupName:completeAnimation()
 				self.GroupName:setAlpha( 1 )
 				self.clipFinished( GroupName, {} )
+
 				DesciptionBacking:completeAnimation()
 				self.DesciptionBacking:setAlpha( 1 )
 				self.clipFinished( DesciptionBacking, {} )
+
 				Description:completeAnimation()
 				self.Description:setAlpha( 1 )
 				self.clipFinished( Description, {} )
+
 				GroupPrimaryWidget:completeAnimation()
 				self.GroupPrimaryWidget:setAlpha( 1 )
 				self.clipFinished( GroupPrimaryWidget, {} )
@@ -247,42 +262,55 @@ CoD.GroupsSummary.new = function ( menu, controller )
 		NoGroupSelected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0 )
 				self.clipFinished( Backing, {} )
+
 				GroupMemberSummary:completeAnimation()
 				self.GroupMemberSummary:setAlpha( 0 )
 				self.clipFinished( GroupMemberSummary, {} )
+
 				GroupsSummaryStatus0:completeAnimation()
 				self.GroupsSummaryStatus0:setAlpha( 0 )
 				self.clipFinished( GroupsSummaryStatus0, {} )
+
 				Line1:completeAnimation()
 				self.Line1:setAlpha( 0 )
 				self.clipFinished( Line1, {} )
+
 				Line2:completeAnimation()
 				self.Line2:setAlpha( 0 )
 				self.clipFinished( Line2, {} )
+
 				cacItemTitleGlow0:completeAnimation()
 				self.cacItemTitleGlow0:setAlpha( 0 )
 				self.clipFinished( cacItemTitleGlow0, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 0 )
 				self.clipFinished( GroupEmblemWidget, {} )
+
 				StartMenuframenoBG00:completeAnimation()
 				self.StartMenuframenoBG00:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG00, {} )
+
 				GroupName:completeAnimation()
 				self.GroupName:setAlpha( 0 )
 				self.clipFinished( GroupName, {} )
+
 				DesciptionBacking:completeAnimation()
 				self.DesciptionBacking:setAlpha( 0 )
 				self.clipFinished( DesciptionBacking, {} )
+
 				Description:completeAnimation()
 				self.Description:setAlpha( 0 )
 				self.clipFinished( Description, {} )
+
 				GroupPrimaryWidget:completeAnimation()
 				self.GroupPrimaryWidget:setAlpha( 0 )
 				self.clipFinished( GroupPrimaryWidget, {} )
@@ -291,48 +319,62 @@ CoD.GroupsSummary.new = function ( menu, controller )
 		InvitesGroupSummary = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0 )
 				self.clipFinished( Backing, {} )
+
 				GroupMemberSummary:completeAnimation()
 				self.GroupMemberSummary:setAlpha( 0 )
 				self.clipFinished( GroupMemberSummary, {} )
+
 				GroupsSummaryStatus0:completeAnimation()
 				self.GroupsSummaryStatus0:setAlpha( 1 )
 				self.clipFinished( GroupsSummaryStatus0, {} )
+
 				Line1:completeAnimation()
 				self.Line1:setAlpha( 1 )
 				self.clipFinished( Line1, {} )
+
 				Line2:completeAnimation()
 				self.Line2:setAlpha( 1 )
 				self.clipFinished( Line2, {} )
+
 				cacItemTitleGlow0:completeAnimation()
 				self.cacItemTitleGlow0:setAlpha( 1 )
 				self.clipFinished( cacItemTitleGlow0, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.14 )
 				self.clipFinished( Glow, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 1 )
 				self.clipFinished( GroupEmblemWidget, {} )
+
 				StartMenuframenoBG00:completeAnimation()
 				self.StartMenuframenoBG00:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG00, {} )
+
 				GroupName:completeAnimation()
 				self.GroupName:setAlpha( 1 )
 				self.clipFinished( GroupName, {} )
+
 				DesciptionBacking:completeAnimation()
 				self.DesciptionBacking:setAlpha( 1 )
 				self.clipFinished( DesciptionBacking, {} )
+
 				Description:completeAnimation()
 				self.Description:setAlpha( 1 )
 				self.clipFinished( Description, {} )
+
 				GroupPrimaryWidget:completeAnimation()
 				self.GroupPrimaryWidget:setAlpha( 1 )
 				self.clipFinished( GroupPrimaryWidget, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoGroupSelected",
@@ -355,6 +397,7 @@ CoD.GroupsSummary.new = function ( menu, controller )
 			modelName = "groupId"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GroupMemberSummary:close()
 		element.GroupsSummaryStatus0:close()

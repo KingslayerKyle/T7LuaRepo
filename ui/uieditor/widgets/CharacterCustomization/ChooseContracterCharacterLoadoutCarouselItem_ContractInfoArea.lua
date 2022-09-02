@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Blackjack.BlackJack_Activated" )
 CoD.ChooseContracterCharacterLoadoutCarouselItem_ContractInfoArea = InheritFrom( LUI.UIElement )
 CoD.ChooseContracterCharacterLoadoutCarouselItem_ContractInfoArea.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseContracterCharacterLoadoutCarouselItem_ContractInfoArea )
 	self.id = "ChooseContracterCharacterLoadoutCarouselItem_ContractInfoArea"
@@ -52,19 +54,23 @@ CoD.ChooseContracterCharacterLoadoutCarouselItem_ContractInfoArea.new = function
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				desc:completeAnimation()
 				self.desc:setRGB( 0.75, 0.75, 0.75 )
 				self.desc:setAlpha( 0 )
 				self.clipFinished( desc, {} )
+
 				BlackJackActivated:completeAnimation()
 				self.BlackJackActivated:setAlpha( 0 )
 				self.clipFinished( BlackJackActivated, {} )
+
 				hover:completeAnimation()
 				self.hover:setAlpha( 0 )
 				self.clipFinished( hover, {} )
 			end,
 			Activated = function ()
 				self:setupElementClipCounter( 2 )
+
 				local BlackJackActivatedFrame2 = function ( BlackJackActivated, event )
 					if not event.interrupted then
 						BlackJackActivated:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
@@ -137,18 +143,22 @@ CoD.ChooseContracterCharacterLoadoutCarouselItem_ContractInfoArea.new = function
 		Activated = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				desc:completeAnimation()
 				self.desc:setAlpha( 0 )
 				self.clipFinished( desc, {} )
+
 				BlackJackActivated:completeAnimation()
 				self.BlackJackActivated:setAlpha( 1 )
 				self.clipFinished( BlackJackActivated, {} )
+
 				hover:completeAnimation()
 				self.hover:setAlpha( 0 )
 				self.clipFinished( hover, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Activated",
@@ -165,6 +175,7 @@ CoD.ChooseContracterCharacterLoadoutCarouselItem_ContractInfoArea.new = function
 			modelName = "isActivated"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BlackJackActivated:close()
 	end )

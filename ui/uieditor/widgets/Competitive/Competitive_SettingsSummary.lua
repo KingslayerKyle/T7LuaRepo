@@ -19,9 +19,11 @@ end
 CoD.Competitive_SettingsSummary = InheritFrom( LUI.UIElement )
 CoD.Competitive_SettingsSummary.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Competitive_SettingsSummary )
 	self.id = "Competitive_SettingsSummary"
@@ -164,154 +166,186 @@ CoD.Competitive_SettingsSummary.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setLeftRight( true, false, 23, 164 )
 				self.BoxButtonLrgIdle:setTopBottom( true, false, 34.5, 175 )
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				pixelLL:completeAnimation()
 				self.pixelLL:setLeftRight( true, false, 0, 28 )
 				self.pixelLL:setTopBottom( false, false, 59, 63 )
 				self.pixelLL:setAlpha( 0 )
 				self.clipFinished( pixelLL, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 0 )
 				self.clipFinished( Image1, {} )
+
 				pixelMiddle:completeAnimation()
 				self.pixelMiddle:setLeftRight( true, false, -4, 28 )
 				self.pixelMiddle:setTopBottom( false, false, -33.04, 18.96 )
 				self.pixelMiddle:setAlpha( 0 )
 				self.clipFinished( pixelMiddle, {} )
+
 				FEFeaturedFrame0:completeAnimation()
 				self.FEFeaturedFrame0:setLeftRight( true, false, 26, 162 )
 				self.FEFeaturedFrame0:setTopBottom( true, false, 36, 172.92 )
 				self.FEFeaturedFrame0:setAlpha( 0 )
 				self.clipFinished( FEFeaturedFrame0, {} )
+
 				Vote:completeAnimation()
 				self.Vote:setLeftRight( true, false, 168, 444 )
 				self.Vote:setTopBottom( true, false, 37.5, 102.5 )
 				self.Vote:setAlpha( 0 )
 				self.clipFinished( Vote, {} )
+
 				GamemodeIcon:completeAnimation()
 				self.GamemodeIcon:setLeftRight( true, false, 28, 160 )
 				self.GamemodeIcon:setTopBottom( true, false, 38, 170 )
 				self.GamemodeIcon:setAlpha( 0 )
 				self.clipFinished( GamemodeIcon, {} )
+
 				Draft:completeAnimation()
 				self.Draft:setLeftRight( true, false, 168, 444 )
 				self.Draft:setTopBottom( true, false, 106.92, 171.92 )
 				self.Draft:setAlpha( 0 )
 				self.clipFinished( Draft, {} )
+
 				NoRules:completeAnimation()
 				self.NoRules:setAlpha( 0 )
 				self.clipFinished( NoRules, {} )
+
 				TickTR:completeAnimation()
 				self.TickTR:setLeftRight( true, false, 437, 473 )
 				self.TickTR:setTopBottom( true, false, 34, 37.5 )
 				self.TickTR:setAlpha( 0 )
 				self.clipFinished( TickTR, {} )
+
 				TickBR:completeAnimation()
 				self.TickBR:setLeftRight( true, false, 437, 473 )
 				self.TickBR:setTopBottom( true, false, 171, 174.5 )
 				self.TickBR:setAlpha( 0 )
 				self.clipFinished( TickBR, {} )
+
 				LineT:completeAnimation()
 				self.LineT:setLeftRight( true, false, 157, 450 )
 				self.LineT:setTopBottom( true, false, 34, 38 )
 				self.LineT:setAlpha( 0 )
 				self.clipFinished( LineT, {} )
+
 				LineB:completeAnimation()
 				self.LineB:setLeftRight( true, false, 157, 450 )
 				self.LineB:setTopBottom( true, false, 171, 175 )
 				self.LineB:setAlpha( 0 )
 				self.clipFinished( LineB, {} )
+
 				TickTL:completeAnimation()
 				self.TickTL:setLeftRight( true, false, 160, 176 )
 				self.TickTL:setTopBottom( true, false, 99, 111 )
 				self.TickTL:setAlpha( 0 )
 				self.clipFinished( TickTL, {} )
+
 				CompetitiveLobbyWidgetTitle:completeAnimation()
 				self.CompetitiveLobbyWidgetTitle:setAlpha( 0 )
 				self.clipFinished( CompetitiveLobbyWidgetTitle, {} )
 			end,
 			FadeIn = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			HideForGameStart = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		VoteAndDraftActive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setLeftRight( true, false, 23, 164 )
 				self.BoxButtonLrgIdle:setTopBottom( true, false, 34.5, 175 )
 				self.BoxButtonLrgIdle:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				pixelLL:completeAnimation()
 				self.pixelLL:setLeftRight( true, false, 0, 28 )
 				self.pixelLL:setTopBottom( false, false, 59, 63 )
 				self.pixelLL:setAlpha( 1 )
 				self.clipFinished( pixelLL, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setLeftRight( true, false, 0, 28 )
 				self.Image1:setTopBottom( false, false, -77, -73 )
 				self.Image1:setAlpha( 1 )
 				self.clipFinished( Image1, {} )
+
 				pixelMiddle:completeAnimation()
 				self.pixelMiddle:setLeftRight( true, false, -4, 28 )
 				self.pixelMiddle:setTopBottom( false, false, -33.04, 18.96 )
 				self.pixelMiddle:setAlpha( 1 )
 				self.clipFinished( pixelMiddle, {} )
+
 				FEFeaturedFrame0:completeAnimation()
 				self.FEFeaturedFrame0:setLeftRight( true, false, 26, 162 )
 				self.FEFeaturedFrame0:setTopBottom( true, false, 36, 172.92 )
 				self.FEFeaturedFrame0:setAlpha( 0.5 )
 				self.clipFinished( FEFeaturedFrame0, {} )
+
 				Vote:completeAnimation()
 				self.Vote:setLeftRight( true, false, 168, 444 )
 				self.Vote:setTopBottom( true, false, 37, 102 )
 				self.Vote:setAlpha( 1 )
 				self.clipFinished( Vote, {} )
+
 				GamemodeIcon:completeAnimation()
 				self.GamemodeIcon:setLeftRight( true, false, 28, 160 )
 				self.GamemodeIcon:setTopBottom( true, false, 38, 170 )
 				self.GamemodeIcon:setAlpha( 1 )
 				self.clipFinished( GamemodeIcon, {} )
+
 				Draft:completeAnimation()
 				self.Draft:setLeftRight( true, false, 168, 444 )
 				self.Draft:setTopBottom( true, false, 106.92, 171.92 )
 				self.Draft:setAlpha( 1 )
 				self.clipFinished( Draft, {} )
+
 				NoRules:completeAnimation()
 				self.NoRules:setAlpha( 0 )
 				self.clipFinished( NoRules, {} )
+
 				TickTR:completeAnimation()
 				self.TickTR:setLeftRight( true, false, 437, 473 )
 				self.TickTR:setTopBottom( true, false, 34, 37.5 )
 				self.TickTR:setAlpha( 1 )
 				self.clipFinished( TickTR, {} )
+
 				TickBR:completeAnimation()
 				self.TickBR:setLeftRight( true, false, 437, 473 )
 				self.TickBR:setTopBottom( true, false, 171, 174.5 )
 				self.TickBR:setAlpha( 1 )
 				self.clipFinished( TickBR, {} )
+
 				LineT:completeAnimation()
 				self.LineT:setLeftRight( true, false, 157, 450 )
 				self.LineT:setTopBottom( true, false, 34, 38 )
 				self.LineT:setAlpha( 1 )
 				self.clipFinished( LineT, {} )
+
 				LineB:completeAnimation()
 				self.LineB:setLeftRight( true, false, 157, 450 )
 				self.LineB:setTopBottom( true, false, 171, 175 )
 				self.LineB:setAlpha( 1 )
 				self.clipFinished( LineB, {} )
+
 				TickTL:completeAnimation()
 				self.TickTL:setLeftRight( true, false, 160, 176 )
 				self.TickTL:setTopBottom( true, false, 99, 111 )
 				self.TickTL:setAlpha( 1 )
 				self.clipFinished( TickTL, {} )
+
 				CompetitiveLobbyWidgetTitle:completeAnimation()
 				self.CompetitiveLobbyWidgetTitle:setLeftRight( true, false, 27, 442 )
 				self.CompetitiveLobbyWidgetTitle:setTopBottom( true, false, 1.5, 31.5 )
@@ -322,50 +356,65 @@ CoD.Competitive_SettingsSummary.new = function ( menu, controller )
 		VoteActive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				pixelLL:completeAnimation()
 				self.pixelLL:setAlpha( 1 )
 				self.clipFinished( pixelLL, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 1 )
 				self.clipFinished( Image1, {} )
+
 				pixelMiddle:completeAnimation()
 				self.pixelMiddle:setAlpha( 1 )
 				self.clipFinished( pixelMiddle, {} )
+
 				FEFeaturedFrame0:completeAnimation()
 				self.FEFeaturedFrame0:setAlpha( 0.5 )
 				self.clipFinished( FEFeaturedFrame0, {} )
+
 				Vote:completeAnimation()
 				self.Vote:setLeftRight( true, false, 168, 444 )
 				self.Vote:setTopBottom( true, false, 37, 170 )
 				self.Vote:setAlpha( 1 )
 				self.clipFinished( Vote, {} )
+
 				GamemodeIcon:completeAnimation()
 				self.GamemodeIcon:setAlpha( 1 )
 				self.clipFinished( GamemodeIcon, {} )
+
 				Draft:completeAnimation()
 				self.Draft:setAlpha( 0 )
 				self.clipFinished( Draft, {} )
+
 				NoRules:completeAnimation()
 				self.NoRules:setAlpha( 0 )
 				self.clipFinished( NoRules, {} )
+
 				TickTR:completeAnimation()
 				self.TickTR:setAlpha( 1 )
 				self.clipFinished( TickTR, {} )
+
 				TickBR:completeAnimation()
 				self.TickBR:setAlpha( 1 )
 				self.clipFinished( TickBR, {} )
+
 				LineT:completeAnimation()
 				self.LineT:setAlpha( 1 )
 				self.clipFinished( LineT, {} )
+
 				LineB:completeAnimation()
 				self.LineB:setAlpha( 1 )
 				self.clipFinished( LineB, {} )
+
 				TickTL:completeAnimation()
 				self.TickTL:setAlpha( 0 )
 				self.clipFinished( TickTL, {} )
+
 				CompetitiveLobbyWidgetTitle:completeAnimation()
 				self.CompetitiveLobbyWidgetTitle:setLeftRight( true, false, 27, 442 )
 				self.CompetitiveLobbyWidgetTitle:setTopBottom( true, false, 1.5, 31.5 )
@@ -376,50 +425,65 @@ CoD.Competitive_SettingsSummary.new = function ( menu, controller )
 		DraftActive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				pixelLL:completeAnimation()
 				self.pixelLL:setAlpha( 1 )
 				self.clipFinished( pixelLL, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 1 )
 				self.clipFinished( Image1, {} )
+
 				pixelMiddle:completeAnimation()
 				self.pixelMiddle:setAlpha( 1 )
 				self.clipFinished( pixelMiddle, {} )
+
 				FEFeaturedFrame0:completeAnimation()
 				self.FEFeaturedFrame0:setAlpha( 0.5 )
 				self.clipFinished( FEFeaturedFrame0, {} )
+
 				Vote:completeAnimation()
 				self.Vote:setAlpha( 0 )
 				self.clipFinished( Vote, {} )
+
 				GamemodeIcon:completeAnimation()
 				self.GamemodeIcon:setAlpha( 1 )
 				self.clipFinished( GamemodeIcon, {} )
+
 				Draft:completeAnimation()
 				self.Draft:setLeftRight( true, false, 168, 444 )
 				self.Draft:setTopBottom( true, false, 37, 170 )
 				self.Draft:setAlpha( 1 )
 				self.clipFinished( Draft, {} )
+
 				NoRules:completeAnimation()
 				self.NoRules:setAlpha( 0 )
 				self.clipFinished( NoRules, {} )
+
 				TickTR:completeAnimation()
 				self.TickTR:setAlpha( 1 )
 				self.clipFinished( TickTR, {} )
+
 				TickBR:completeAnimation()
 				self.TickBR:setAlpha( 1 )
 				self.clipFinished( TickBR, {} )
+
 				LineT:completeAnimation()
 				self.LineT:setAlpha( 1 )
 				self.clipFinished( LineT, {} )
+
 				LineB:completeAnimation()
 				self.LineB:setAlpha( 1 )
 				self.clipFinished( LineB, {} )
+
 				TickTL:completeAnimation()
 				self.TickTL:setAlpha( 0 )
 				self.clipFinished( TickTL, {} )
+
 				CompetitiveLobbyWidgetTitle:completeAnimation()
 				self.CompetitiveLobbyWidgetTitle:setLeftRight( true, false, 27, 442 )
 				self.CompetitiveLobbyWidgetTitle:setTopBottom( true, false, 1.5, 31.5 )
@@ -430,54 +494,70 @@ CoD.Competitive_SettingsSummary.new = function ( menu, controller )
 		NoRulesActive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				pixelLL:completeAnimation()
 				self.pixelLL:setAlpha( 1 )
 				self.clipFinished( pixelLL, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 1 )
 				self.clipFinished( Image1, {} )
+
 				pixelMiddle:completeAnimation()
 				self.pixelMiddle:setAlpha( 1 )
 				self.clipFinished( pixelMiddle, {} )
+
 				FEFeaturedFrame0:completeAnimation()
 				self.FEFeaturedFrame0:setAlpha( 0.5 )
 				self.clipFinished( FEFeaturedFrame0, {} )
+
 				Vote:completeAnimation()
 				self.Vote:setAlpha( 0 )
 				self.clipFinished( Vote, {} )
+
 				GamemodeIcon:completeAnimation()
 				self.GamemodeIcon:setAlpha( 1 )
 				self.clipFinished( GamemodeIcon, {} )
+
 				Draft:completeAnimation()
 				self.Draft:setLeftRight( true, false, 130, 406 )
 				self.Draft:setTopBottom( true, false, 77, 169 )
 				self.Draft:setAlpha( 0 )
 				self.clipFinished( Draft, {} )
+
 				NoRules:completeAnimation()
+
 				NoRules.Description:completeAnimation()
 				self.NoRules:setLeftRight( true, false, 169, 444 )
 				self.NoRules:setTopBottom( true, false, 37, 170 )
 				self.NoRules:setAlpha( 1 )
 				self.NoRules.Description:setText( Engine.Localize( "MENU_NO_RULES_ACTIVE" ) )
 				self.clipFinished( NoRules, {} )
+
 				TickTR:completeAnimation()
 				self.TickTR:setAlpha( 1 )
 				self.clipFinished( TickTR, {} )
+
 				TickBR:completeAnimation()
 				self.TickBR:setAlpha( 1 )
 				self.clipFinished( TickBR, {} )
+
 				LineT:completeAnimation()
 				self.LineT:setAlpha( 1 )
 				self.clipFinished( LineT, {} )
+
 				LineB:completeAnimation()
 				self.LineB:setAlpha( 1 )
 				self.clipFinished( LineB, {} )
+
 				TickTL:completeAnimation()
 				self.TickTL:setAlpha( 0 )
 				self.clipFinished( TickTL, {} )
+
 				CompetitiveLobbyWidgetTitle:completeAnimation()
 				self.CompetitiveLobbyWidgetTitle:setLeftRight( true, false, 27, 442 )
 				self.CompetitiveLobbyWidgetTitle:setTopBottom( true, false, 1.5, 31.5 )
@@ -486,6 +566,7 @@ CoD.Competitive_SettingsSummary.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "VoteAndDraftActive",
@@ -535,6 +616,7 @@ CoD.Competitive_SettingsSummary.new = function ( menu, controller )
 			modelName = "GametypeSettings.Update"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEFeaturedFrame0:close()
 		element.Vote:close()

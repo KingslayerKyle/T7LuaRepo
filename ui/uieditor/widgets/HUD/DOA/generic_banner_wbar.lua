@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.GenericUpdateBarWithLink" )
 CoD.generic_banner_wbar = InheritFrom( LUI.UIElement )
 CoD.generic_banner_wbar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.generic_banner_wbar )
 	self.id = "generic_banner_wbar"
@@ -75,12 +77,15 @@ CoD.generic_banner_wbar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 1 )
 				self.clipFinished( background, {} )
+
 				bannertext:completeAnimation()
 				self.bannertext:setAlpha( 1 )
 				self.clipFinished( bannertext, {} )
+
 				updatebar:completeAnimation()
 				self.updatebar:setAlpha( 1 )
 				self.clipFinished( updatebar, {} )
@@ -89,18 +94,22 @@ CoD.generic_banner_wbar.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 0 )
 				self.clipFinished( background, {} )
+
 				bannertext:completeAnimation()
 				self.bannertext:setAlpha( 0 )
 				self.clipFinished( bannertext, {} )
+
 				updatebar:completeAnimation()
 				self.updatebar:setAlpha( 0 )
 				self.clipFinished( updatebar, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.updatebar:close()
 		element.background:close()

@@ -4,9 +4,11 @@
 CoD.ChooseCharacterLoadoutCarouselItem_InfoAreaWeapon = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacterLoadoutCarouselItem_InfoAreaWeapon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.ChooseCharacterLoadoutCarouselItem_InfoAreaWeapon )
 	self.id = "ChooseCharacterLoadoutCarouselItem_InfoAreaWeapon"
@@ -27,6 +29,7 @@ CoD.ChooseCharacterLoadoutCarouselItem_InfoAreaWeapon.new = function ( menu, con
 	loadOutItemName:setTopBottom( true, false, 1, 23 )
 	loadOutItemName:setText( Engine.Localize( "Hero Weapon/Ability" ) )
 	loadOutItemName:setTTF( "fonts/escom.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( loadOutItemName, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )
@@ -37,6 +40,7 @@ CoD.ChooseCharacterLoadoutCarouselItem_InfoAreaWeapon.new = function ( menu, con
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

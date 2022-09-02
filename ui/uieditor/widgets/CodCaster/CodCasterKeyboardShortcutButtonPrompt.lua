@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.FooterButtonPromptWithPCKey" )
 CoD.CodCasterKeyboardShortcutButtonPrompt = InheritFrom( LUI.UIElement )
 CoD.CodCasterKeyboardShortcutButtonPrompt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterKeyboardShortcutButtonPrompt )
 	self.id = "CodCasterKeyboardShortcutButtonPrompt"
@@ -61,6 +63,7 @@ CoD.CodCasterKeyboardShortcutButtonPrompt.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FooterButtonPromptWithPCKey0:completeAnimation()
 				self.FooterButtonPromptWithPCKey0:setAlpha( 0 )
 				self.clipFinished( FooterButtonPromptWithPCKey0, {} )
@@ -69,12 +72,14 @@ CoD.CodCasterKeyboardShortcutButtonPrompt.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FooterButtonPromptWithPCKey0:completeAnimation()
 				self.FooterButtonPromptWithPCKey0:setAlpha( 1 )
 				self.clipFinished( FooterButtonPromptWithPCKey0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -91,6 +96,7 @@ CoD.CodCasterKeyboardShortcutButtonPrompt.new = function ( menu, controller )
 			modelName = "consoleKeyboardConnected"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FooterButtonPromptWithPCKey0:close()
 	end )

@@ -14,9 +14,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.wasp.vhud_sentinel_AltitudeInfo" )
 CoD.VHUD_Sentinel_Reticle = InheritFrom( LUI.UIElement )
 CoD.VHUD_Sentinel_Reticle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VHUD_Sentinel_Reticle )
 	self.id = "VHUD_Sentinel_Reticle"
@@ -517,9 +519,11 @@ CoD.VHUD_Sentinel_Reticle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 29 )
+
 				local BackgroundTintFrame2 = function ( BackgroundTint, event )
 					if not event.interrupted then
 						BackgroundTint:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -1264,6 +1268,7 @@ CoD.VHUD_Sentinel_Reticle.new = function ( menu, controller )
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 26 )
+
 				local BackgroundLinesTextureFrame2 = function ( BackgroundLinesTexture, event )
 					if not event.interrupted then
 						BackgroundLinesTexture:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -1454,6 +1459,7 @@ CoD.VHUD_Sentinel_Reticle.new = function ( menu, controller )
 				self.OutsideRingLines:setAlpha( 0.3 )
 				self.OutsideRingLines:setZoom( 0 )
 				OutsideRingLinesFrame2( OutsideRingLines, {} )
+
 				OutsideHashLineR1:completeAnimation()
 				self.OutsideHashLineR1:setLeftRight( false, false, 316.25, 420 )
 				self.OutsideHashLineR1:setTopBottom( false, false, -225.44, 229.49 )
@@ -1533,6 +1539,7 @@ CoD.VHUD_Sentinel_Reticle.new = function ( menu, controller )
 				self.OutsideHashLineR4:setTopBottom( false, false, -11.5, 13.99 )
 				self.OutsideHashLineR4:setAlpha( 1 )
 				OutsideHashLineR4Frame2( OutsideHashLineR4, {} )
+
 				OutsideHashLineR10:completeAnimation()
 				self.OutsideHashLineR10:setLeftRight( false, false, -417.75, -314 )
 				self.OutsideHashLineR10:setTopBottom( false, false, -226.44, 228.49 )
@@ -1846,124 +1853,150 @@ CoD.VHUD_Sentinel_Reticle.new = function ( menu, controller )
 		Zoom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 26 )
+
 				BackgroundLinesTexture:completeAnimation()
 				self.BackgroundLinesTexture:setZoom( -150 )
 				self.BackgroundLinesTexture:setScale( 1 )
 				self.clipFinished( BackgroundLinesTexture, {} )
+
 				OutsideRing:completeAnimation()
 				self.OutsideRing:setLeftRight( false, false, -201.42, 201.63 )
 				self.OutsideRing:setTopBottom( false, false, -200.5, 202.55 )
 				self.OutsideRing:setAlpha( 0.3 )
 				self.OutsideRing:setZoom( -218 )
 				self.clipFinished( OutsideRing, {} )
+
 				CenterUpperLine:completeAnimation()
 				self.CenterUpperLine:setLeftRight( false, false, -139.5, 139.5 )
 				self.CenterUpperLine:setTopBottom( false, false, -55.07, -39.13 )
 				self.CenterUpperLine:setAlpha( 0.2 )
 				self.clipFinished( CenterUpperLine, {} )
+
 				CenterLowerLine:completeAnimation()
 				self.CenterLowerLine:setLeftRight( false, false, -139.5, 139.5 )
 				self.CenterLowerLine:setTopBottom( false, false, 40.87, 56.81 )
 				self.CenterLowerLine:setAlpha( 0.2 )
 				self.clipFinished( CenterLowerLine, {} )
+
 				CenterReticleSolid:completeAnimation()
 				self.CenterReticleSolid:setLeftRight( false, false, -82.73, 85.18 )
 				self.CenterReticleSolid:setTopBottom( false, false, -42.95, 45 )
 				self.CenterReticleSolid:setAlpha( 0 )
 				self.CenterReticleSolid:setZoom( 98 )
 				self.clipFinished( CenterReticleSolid, {} )
+
 				CenterReticleLineR:completeAnimation()
 				self.CenterReticleLineR:setLeftRight( false, false, 85.18, 109.9 )
 				self.CenterReticleLineR:setTopBottom( false, false, -44.31, 46.36 )
 				self.clipFinished( CenterReticleLineR, {} )
+
 				CenterReticleLineL:completeAnimation()
 				self.CenterReticleLineL:setLeftRight( false, false, -109.5, -84.77 )
 				self.CenterReticleLineL:setTopBottom( false, false, -44.31, 46.36 )
 				self.clipFinished( CenterReticleLineL, {} )
+
 				OutsideRingLineBlurR:completeAnimation()
 				self.OutsideRingLineBlurR:setLeftRight( false, false, 217.4, 297.02 )
 				self.OutsideRingLineBlurR:setTopBottom( false, false, -170.68, 171.68 )
 				self.OutsideRingLineBlurR:setZoom( -150 )
 				self.clipFinished( OutsideRingLineBlurR, {} )
+
 				OusideRingLineBlurL:completeAnimation()
 				self.OusideRingLineBlurL:setLeftRight( false, false, -296.5, -216.88 )
 				self.OusideRingLineBlurL:setTopBottom( false, false, -170.68, 171.68 )
 				self.OusideRingLineBlurL:setZoom( -150 )
 				self.clipFinished( OusideRingLineBlurL, {} )
+
 				OutsideRingLines:completeAnimation()
 				self.OutsideRingLines:setLeftRight( false, false, -200.94, 201.11 )
 				self.OutsideRingLines:setTopBottom( false, false, -124.44, 124.83 )
 				self.OutsideRingLines:setAlpha( 0.3 )
 				self.OutsideRingLines:setZoom( -121 )
 				self.clipFinished( OutsideRingLines, {} )
+
 				OutsideHashLineR1:completeAnimation()
 				self.OutsideHashLineR1:setLeftRight( false, false, 316.25, 420 )
 				self.OutsideHashLineR1:setTopBottom( false, false, -225.44, 229.49 )
 				self.clipFinished( OutsideHashLineR1, {} )
+
 				OutsideHashLineR2:completeAnimation()
 				self.OutsideHashLineR2:setLeftRight( false, false, 291, 395.75 )
 				self.OutsideHashLineR2:setTopBottom( false, false, -127.87, 129.99 )
 				self.clipFinished( OutsideHashLineR2, {} )
+
 				OutsideHashLineR3:completeAnimation()
 				self.OutsideHashLineR3:setLeftRight( false, false, 267.62, 372.38 )
 				self.OutsideHashLineR3:setTopBottom( false, false, -43.82, 44.82 )
 				self.clipFinished( OutsideHashLineR3, {} )
+
 				OutsideHashLineR4:completeAnimation()
 				self.OutsideHashLineR4:setLeftRight( false, false, 239, 343 )
 				self.OutsideHashLineR4:setTopBottom( false, false, -11.5, 13.99 )
 				self.OutsideHashLineR4:setAlpha( 1 )
 				self.clipFinished( OutsideHashLineR4, {} )
+
 				OutsideHashLineR10:completeAnimation()
 				self.OutsideHashLineR10:setLeftRight( false, false, -417.75, -314 )
 				self.OutsideHashLineR10:setTopBottom( false, false, -226.44, 228.49 )
 				self.OutsideHashLineR10:setAlpha( 0.9 )
 				self.clipFinished( OutsideHashLineR10, {} )
+
 				OutsideHashLineR20:completeAnimation()
 				self.OutsideHashLineR20:setLeftRight( false, false, -391.75, -287 )
 				self.OutsideHashLineR20:setTopBottom( false, false, -127.87, 129.99 )
 				self.OutsideHashLineR20:setAlpha( 0.8 )
 				self.clipFinished( OutsideHashLineR20, {} )
+
 				OutsideHashLineR30:completeAnimation()
 				self.OutsideHashLineR30:setLeftRight( false, false, -368.38, -263.62 )
 				self.OutsideHashLineR30:setTopBottom( false, false, -42.82, 45.82 )
 				self.clipFinished( OutsideHashLineR30, {} )
+
 				OutsideHashLineR40:completeAnimation()
 				self.OutsideHashLineR40:setLeftRight( false, false, -335.75, -231.75 )
 				self.OutsideHashLineR40:setTopBottom( false, false, -12.5, 13.99 )
 				self.clipFinished( OutsideHashLineR40, {} )
+
 				OutsideLineUR:completeAnimation()
 				self.OutsideLineUR:setLeftRight( false, false, 228.81, 330.81 )
 				self.OutsideLineUR:setTopBottom( false, false, -87.76, -71.82 )
 				self.OutsideLineUR:setAlpha( 0.5 )
 				self.OutsideLineUR:setZoom( 0 )
 				self.clipFinished( OutsideLineUR, {} )
+
 				OutsideLineLR:completeAnimation()
 				self.OutsideLineLR:setLeftRight( false, false, 228.81, 330.81 )
 				self.OutsideLineLR:setTopBottom( false, false, 75.21, 91.15 )
 				self.OutsideLineLR:setAlpha( 0.5 )
 				self.clipFinished( OutsideLineLR, {} )
+
 				OutsideLineUL:completeAnimation()
 				self.OutsideLineUL:setLeftRight( false, false, -327.5, -225.5 )
 				self.OutsideLineUL:setTopBottom( false, false, -87.76, -71.82 )
 				self.OutsideLineUL:setAlpha( 0.5 )
 				self.clipFinished( OutsideLineUL, {} )
+
 				OutsideLineLL:completeAnimation()
 				self.OutsideLineLL:setLeftRight( false, false, -327.5, -225.5 )
 				self.OutsideLineLL:setTopBottom( false, false, 75.21, 91.15 )
 				self.OutsideLineLL:setAlpha( 0.5 )
 				self.clipFinished( OutsideLineLL, {} )
+
 				RGBLineUR:completeAnimation()
 				self.RGBLineUR:setLeftRight( false, false, 106.5, 136.5 )
 				self.RGBLineUR:setTopBottom( false, false, -39.13, -24.13 )
 				self.clipFinished( RGBLineUR, {} )
+
 				RGBLineLR:completeAnimation()
 				self.RGBLineLR:setLeftRight( false, false, 106.5, 136.5 )
 				self.RGBLineLR:setTopBottom( false, false, 25.87, 40.87 )
 				self.clipFinished( RGBLineLR, {} )
+
 				RGBLineUL:completeAnimation()
 				self.RGBLineUL:setLeftRight( false, false, -139.5, -109.5 )
 				self.RGBLineUL:setTopBottom( false, false, -39.13, -24.13 )
 				self.clipFinished( RGBLineUL, {} )
+
 				RGBLineLL:completeAnimation()
 				self.RGBLineLL:setLeftRight( false, false, -139.5, -109.5 )
 				self.RGBLineLL:setTopBottom( false, false, 25.87, 40.87 )
@@ -1971,6 +2004,7 @@ CoD.VHUD_Sentinel_Reticle.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 26 )
+
 				local BackgroundLinesTextureFrame2 = function ( BackgroundLinesTexture, event )
 					if not event.interrupted then
 						BackgroundLinesTexture:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -2562,6 +2596,7 @@ CoD.VHUD_Sentinel_Reticle.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vhudsentinelCenterReticle0:close()
 		element.vhudsentinelhorizonelements0:close()

@@ -4,9 +4,11 @@
 CoD.ZmPanel_RndInt = InheritFrom( LUI.UIElement )
 CoD.ZmPanel_RndInt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmPanel_RndInt )
 	self.id = "ZmPanel_RndInt"

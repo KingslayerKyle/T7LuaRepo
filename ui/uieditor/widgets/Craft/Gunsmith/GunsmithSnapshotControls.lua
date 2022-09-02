@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Footer.fe_RightContainerWithoutRightBoxes" )
 CoD.GunsmithSnapshotControls = InheritFrom( LUI.UIElement )
 CoD.GunsmithSnapshotControls.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunsmithSnapshotControls )
 	self.id = "GunsmithSnapshotControls"
@@ -131,21 +133,27 @@ CoD.GunsmithSnapshotControls.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 1 )
 				self.clipFinished( background, {} )
+
 				ButtonList:completeAnimation()
 				self.ButtonList:setAlpha( 1 )
 				self.clipFinished( ButtonList, {} )
+
 				HintText:completeAnimation()
 				self.HintText:setAlpha( 1 )
 				self.clipFinished( HintText, {} )
+
 				buttonBar:completeAnimation()
 				self.buttonBar:setAlpha( 1 )
 				self.clipFinished( buttonBar, {} )
+
 				LineLeft:completeAnimation()
 				self.LineLeft:setAlpha( 0.55 )
 				self.clipFinished( LineLeft, {} )
+
 				feRightContainerWithoutRightBoxes0:completeAnimation()
 				self.feRightContainerWithoutRightBoxes0:setAlpha( 1 )
 				self.clipFinished( feRightContainerWithoutRightBoxes0, {} )
@@ -154,21 +162,27 @@ CoD.GunsmithSnapshotControls.new = function ( menu, controller )
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 0 )
 				self.clipFinished( background, {} )
+
 				ButtonList:completeAnimation()
 				self.ButtonList:setAlpha( 0 )
 				self.clipFinished( ButtonList, {} )
+
 				HintText:completeAnimation()
 				self.HintText:setAlpha( 0 )
 				self.clipFinished( HintText, {} )
+
 				buttonBar:completeAnimation()
 				self.buttonBar:setAlpha( 0 )
 				self.clipFinished( buttonBar, {} )
+
 				LineLeft:completeAnimation()
 				self.LineLeft:setAlpha( 0 )
 				self.clipFinished( LineLeft, {} )
+
 				feRightContainerWithoutRightBoxes0:completeAnimation()
 				self.feRightContainerWithoutRightBoxes0:setAlpha( 0 )
 				self.clipFinished( feRightContainerWithoutRightBoxes0, {} )
@@ -183,6 +197,7 @@ CoD.GunsmithSnapshotControls.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ButtonList:close()
 		element.buttonBar:close()

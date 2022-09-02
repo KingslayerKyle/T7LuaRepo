@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Challenges.Challenges_PercentCompleteWidget_MD" )
 CoD.Challenges_Category_Title = InheritFrom( LUI.UIElement )
 CoD.Challenges_Category_Title.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_Category_Title )
 	self.id = "Challenges_Category_Title"
@@ -32,6 +34,7 @@ CoD.Challenges_Category_Title.new = function ( menu, controller )
 	PercentCompleteWidget:setTopBottom( false, false, -40, 40 )
 	PercentCompleteWidget.percentCompleteCircle:setShaderVector( 0, 0.5, 0, 0, 0 )
 	PercentCompleteWidget.percentText:setText( Engine.Localize( "50%" ) )
+
 	LUI.OverrideFunction_CallOriginalFirst( PercentCompleteWidget, "setState", function ( element, controller )
 		if IsElementInState( element, "Complete" ) then
 			SetState( self, "Complete" )

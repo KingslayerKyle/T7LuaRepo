@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Prestige.Prestige_PermanentUnlockTokensWidget" )
 CoD.Prestige_PermanentUnlockConfirmationOverlay = InheritFrom( LUI.UIElement )
 CoD.Prestige_PermanentUnlockConfirmationOverlay.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Prestige_PermanentUnlockConfirmationOverlay )
 	self.id = "Prestige_PermanentUnlockConfirmationOverlay"
@@ -62,11 +64,13 @@ CoD.Prestige_PermanentUnlockConfirmationOverlay.new = function ( menu, controlle
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		DefaultStateBGB = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				largeImage:completeAnimation()
 				self.largeImage:setLeftRight( true, false, 112, 368 )
 				self.largeImage:setTopBottom( true, true, 30, -34 )
@@ -74,6 +78,7 @@ CoD.Prestige_PermanentUnlockConfirmationOverlay.new = function ( menu, controlle
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DefaultStateBGB",
@@ -90,6 +95,7 @@ CoD.Prestige_PermanentUnlockConfirmationOverlay.new = function ( menu, controlle
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.foreground:close()
 		element.supportInfo:close()

@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.CAC.cac_ButtonBoxLrgInactiveStroke" )
 CoD.KDRGraphWidget = InheritFrom( LUI.UIElement )
 CoD.KDRGraphWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.KDRGraphWidget )
 	self.id = "KDRGraphWidget"

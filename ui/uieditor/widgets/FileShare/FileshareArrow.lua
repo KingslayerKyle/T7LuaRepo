@@ -14,9 +14,11 @@ end
 CoD.FileshareArrow = InheritFrom( LUI.UIElement )
 CoD.FileshareArrow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FileshareArrow )
 	self.id = "FileshareArrow"
@@ -36,6 +38,7 @@ CoD.FileshareArrow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ArrowR:completeAnimation()
 				self.ArrowR:setRGB( 1, 1, 1 )
 				self.ArrowR:setAlpha( 0.2 )
@@ -46,6 +49,7 @@ CoD.FileshareArrow.new = function ( menu, controller )
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ArrowRFrame2 = function ( ArrowR, event )
 					if not event.interrupted then
 						ArrowR:beginAnimation( "keyframe", 70, false, false, CoD.TweenType.Linear )
@@ -68,6 +72,7 @@ CoD.FileshareArrow.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ArrowRFrame2 = function ( ArrowR, event )
 					if not event.interrupted then
 						ArrowR:beginAnimation( "keyframe", 70, false, false, CoD.TweenType.Linear )
@@ -90,6 +95,7 @@ CoD.FileshareArrow.new = function ( menu, controller )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ArrowRFrame2 = function ( ArrowR, event )
 					if not event.interrupted then
 						ArrowR:beginAnimation( "keyframe", 70, false, false, CoD.TweenType.Linear )

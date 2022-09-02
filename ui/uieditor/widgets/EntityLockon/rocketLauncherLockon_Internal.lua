@@ -4,9 +4,11 @@
 CoD.rocketLauncherLockon_Internal = InheritFrom( LUI.UIElement )
 CoD.rocketLauncherLockon_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.rocketLauncherLockon_Internal )
 	self.id = "rocketLauncherLockon_Internal"
@@ -36,6 +38,7 @@ CoD.rocketLauncherLockon_Internal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image0:completeAnimation()
 				self.Image0:setRGB( 0.64, 1, 0.81 )
 				self.clipFinished( Image0, {} )
@@ -44,6 +47,7 @@ CoD.rocketLauncherLockon_Internal.new = function ( menu, controller )
 		LockedOn = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image0:completeAnimation()
 				self.Image0:setRGB( 0.79, 0.09, 0.12 )
 				self.clipFinished( Image0, {} )
@@ -52,12 +56,14 @@ CoD.rocketLauncherLockon_Internal.new = function ( menu, controller )
 		AcquiringLock = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image0:completeAnimation()
 				self.Image0:setRGB( 0.64, 1, 0.81 )
 				self.clipFinished( Image0, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Image0:close()
 	end )

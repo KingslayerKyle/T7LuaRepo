@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ListHeader" )
 CoD.FE_ListHeaderFull = InheritFrom( LUI.UIElement )
 CoD.FE_ListHeaderFull.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_ListHeaderFull )
 	self.id = "FE_ListHeaderFull"

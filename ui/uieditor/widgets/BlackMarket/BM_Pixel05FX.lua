@@ -4,9 +4,11 @@
 CoD.BM_Pixel05FX = InheritFrom( LUI.UIElement )
 CoD.BM_Pixel05FX.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Pixel05FX )
 	self.id = "BM_Pixel05FX"
@@ -35,6 +37,7 @@ CoD.BM_Pixel05FX.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local Pixels04Frame2 = function ( Pixels04, event )
 					local Pixels04Frame3 = function ( Pixels04, event )
 						local Pixels04Frame4 = function ( Pixels04, event )
@@ -432,9 +435,11 @@ CoD.BM_Pixel05FX.new = function ( menu, controller )
 				Pixels04:completeAnimation()
 				self.Pixels04:setAlpha( 0 )
 				Pixels04Frame2( Pixels04, {} )
+
 				mask:completeAnimation()
 				self.mask:setAlpha( 0 )
 				self.clipFinished( mask, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

@@ -4,9 +4,11 @@
 CoD.WaveformBlackHat = InheritFrom( LUI.UIElement )
 CoD.WaveformBlackHat.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WaveformBlackHat )
 	self.id = "WaveformBlackHat"
@@ -33,6 +35,7 @@ CoD.WaveformBlackHat.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ShaderImageFrame2 = function ( ShaderImage, event )
 					if not event.interrupted then
 						ShaderImage:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -55,6 +58,7 @@ CoD.WaveformBlackHat.new = function ( menu, controller )
 		Hacking = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ShaderImage:completeAnimation()
 				self.ShaderImage:setRGB( 1, 0.52, 0 )
 				self.ShaderImage:setAlpha( 1 )
@@ -64,6 +68,7 @@ CoD.WaveformBlackHat.new = function ( menu, controller )
 		Breaching = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ShaderImage:completeAnimation()
 				self.ShaderImage:setRGB( 1, 0, 0.02 )
 				self.ShaderImage:setAlpha( 1 )
@@ -71,6 +76,7 @@ CoD.WaveformBlackHat.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hacking",
@@ -93,6 +99,7 @@ CoD.WaveformBlackHat.new = function ( menu, controller )
 			modelName = "hudItems.blackhat.status"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ShaderImage:close()
 	end )

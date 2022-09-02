@@ -4,9 +4,11 @@
 CoD.CP_Prologue_FaceScanner_Flipbook = InheritFrom( LUI.UIElement )
 CoD.CP_Prologue_FaceScanner_Flipbook.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CP_Prologue_FaceScanner_Flipbook )
 	self.id = "CP_Prologue_FaceScanner_Flipbook"

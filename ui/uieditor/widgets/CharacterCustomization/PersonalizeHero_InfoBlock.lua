@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.BlackMarket.CryptokeyTypeNameLeft" )
 CoD.PersonalizeHero_InfoBlock = InheritFrom( LUI.UIElement )
 CoD.PersonalizeHero_InfoBlock.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PersonalizeHero_InfoBlock )
 	self.id = "PersonalizeHero_InfoBlock"
@@ -114,6 +116,7 @@ CoD.PersonalizeHero_InfoBlock.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CategoryDesc:completeAnimation()
 				self.CategoryDesc:setAlpha( 0 )
 				self.clipFinished( CategoryDesc, {} )
@@ -122,12 +125,14 @@ CoD.PersonalizeHero_InfoBlock.new = function ( menu, controller )
 		ShowCurrentlyEquippedInfo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CategoryDesc:completeAnimation()
 				self.CategoryDesc:setAlpha( 1 )
 				self.clipFinished( CategoryDesc, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CategoryDesc:close()
 		element.PersonalizeSpecTitle:close()

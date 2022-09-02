@@ -4,9 +4,11 @@
 CoD.ZM_ReviveBleedoutRedEyeGlow = InheritFrom( LUI.UIElement )
 CoD.ZM_ReviveBleedoutRedEyeGlow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZM_ReviveBleedoutRedEyeGlow )
 	self.id = "ZM_ReviveBleedoutRedEyeGlow"
@@ -29,6 +31,7 @@ CoD.ZM_ReviveBleedoutRedEyeGlow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local GlowOrangeOver0Frame2 = function ( GlowOrangeOver0, event )
 					local GlowOrangeOver0Frame3 = function ( GlowOrangeOver0, event )
 						local GlowOrangeOver0Frame4 = function ( GlowOrangeOver0, event )
@@ -143,10 +146,12 @@ CoD.ZM_ReviveBleedoutRedEyeGlow.new = function ( menu, controller )
 				GlowOrangeOver0:completeAnimation()
 				self.GlowOrangeOver0:setAlpha( 0 )
 				GlowOrangeOver0Frame2( GlowOrangeOver0, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			BleedingOut = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

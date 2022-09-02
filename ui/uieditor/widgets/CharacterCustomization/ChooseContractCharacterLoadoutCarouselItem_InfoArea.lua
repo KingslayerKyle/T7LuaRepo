@@ -28,9 +28,11 @@ end
 CoD.ChooseContractCharacterLoadoutCarouselItem_InfoArea = InheritFrom( LUI.UIElement )
 CoD.ChooseContractCharacterLoadoutCarouselItem_InfoArea.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseContractCharacterLoadoutCarouselItem_InfoArea )
 	self.id = "ChooseContractCharacterLoadoutCarouselItem_InfoArea"
@@ -323,18 +325,23 @@ CoD.ChooseContractCharacterLoadoutCarouselItem_InfoArea.new = function ( menu, c
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				loadoutItemDescription:completeAnimation()
 				self.loadoutItemDescription:setAlpha( 1 )
 				self.clipFinished( loadoutItemDescription, {} )
+
 				f5_local3:completeAnimation()
 				self.SelectText:setAlpha( 0 )
 				self.clipFinished( f5_local3, {} )
+
 				ChooseCharacterLoadoutCarouselItemInfoAreaWeapon:completeAnimation()
 				self.ChooseCharacterLoadoutCarouselItemInfoAreaWeapon:setAlpha( 1 )
 				self.clipFinished( ChooseCharacterLoadoutCarouselItemInfoAreaWeapon, {} )
+
 				loadoutOptions:completeAnimation()
 				self.loadoutOptions:setAlpha( 1 )
 				self.clipFinished( loadoutOptions, {} )
+
 				blackMarketDesc:completeAnimation()
 				self.blackMarketDesc:setAlpha( 0 )
 				self.clipFinished( blackMarketDesc, {} )
@@ -343,21 +350,26 @@ CoD.ChooseContractCharacterLoadoutCarouselItem_InfoArea.new = function ( menu, c
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				loadoutItemDescription:completeAnimation()
 				self.loadoutItemDescription:setAlpha( 0 )
 				self.clipFinished( loadoutItemDescription, {} )
+
 				ChooseCharacterLoadoutCarouselItemInfoAreaWeapon:completeAnimation()
 				self.ChooseCharacterLoadoutCarouselItemInfoAreaWeapon:setAlpha( 0 )
 				self.clipFinished( ChooseCharacterLoadoutCarouselItemInfoAreaWeapon, {} )
+
 				loadoutOptions:completeAnimation()
 				self.loadoutOptions:setAlpha( 0 )
 				self.clipFinished( loadoutOptions, {} )
+
 				BMContractsCharacterNotActivatedWidget:completeAnimation()
 				self.BMContractsCharacterNotActivatedWidget:setAlpha( 1 )
 				self.clipFinished( BMContractsCharacterNotActivatedWidget, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 3 )
+
 				local f28_local0 = function ( f29_arg0, f29_arg1 )
 					if not f29_arg1.interrupted then
 						f29_arg0:beginAnimation( "keyframe", 270, false, false, CoD.TweenType.Linear )
@@ -408,24 +420,30 @@ CoD.ChooseContractCharacterLoadoutCarouselItem_InfoArea.new = function ( menu, c
 		KeyboardAndMouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				loadoutItemDescription:completeAnimation()
 				self.loadoutItemDescription:setAlpha( 1 )
 				self.clipFinished( loadoutItemDescription, {} )
+
 				f5_local3:completeAnimation()
 				self.SelectText:setAlpha( 1 )
 				self.clipFinished( f5_local3, {} )
+
 				ChooseCharacterLoadoutCarouselItemInfoAreaWeapon:completeAnimation()
 				self.ChooseCharacterLoadoutCarouselItemInfoAreaWeapon:setAlpha( 1 )
 				self.clipFinished( ChooseCharacterLoadoutCarouselItemInfoAreaWeapon, {} )
+
 				loadoutOptions:completeAnimation()
 				self.loadoutOptions:setAlpha( 1 )
 				self.clipFinished( loadoutOptions, {} )
+
 				blackMarketDesc:completeAnimation()
 				self.blackMarketDesc:setAlpha( 0 )
 				self.clipFinished( blackMarketDesc, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -490,6 +508,7 @@ CoD.ChooseContractCharacterLoadoutCarouselItem_InfoArea.new = function ( menu, c
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ChooseCharacterLoadoutCarouselItemInfoAreaWeapon:close()
 		element.loadoutOptions:close()

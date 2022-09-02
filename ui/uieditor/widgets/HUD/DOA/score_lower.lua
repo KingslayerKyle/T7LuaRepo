@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.GenericUpdateBarWithLink" )
 CoD.score_lower = InheritFrom( LUI.UIElement )
 CoD.score_lower.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.score_lower )
 	self.id = "score_lower"
@@ -222,49 +224,65 @@ CoD.score_lower.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				score:completeAnimation()
 				self.score:setAlpha( 1 )
 				self.clipFinished( score, {} )
+
 				lives:completeAnimation()
 				self.lives:setAlpha( 1 )
 				self.clipFinished( lives, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 1 )
 				self.clipFinished( Image0, {} )
+
 				bombs:completeAnimation()
 				self.bombs:setAlpha( 1 )
 				self.clipFinished( bombs, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 1 )
 				self.clipFinished( Image1, {} )
+
 				boost:completeAnimation()
 				self.boost:setAlpha( 1 )
 				self.clipFinished( boost, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setAlpha( 1 )
 				self.clipFinished( Image2, {} )
+
 				points:completeAnimation()
 				self.points:setAlpha( 1 )
 				self.clipFinished( points, {} )
+
 				multiplier:completeAnimation()
 				self.multiplier:setAlpha( 1 )
 				self.clipFinished( multiplier, {} )
+
 				Label0:completeAnimation()
 				self.Label0:setAlpha( 1 )
 				self.clipFinished( Label0, {} )
+
 				PlayerName:completeAnimation()
 				self.PlayerName:setAlpha( 1 )
 				self.clipFinished( PlayerName, {} )
+
 				xbar1:completeAnimation()
 				self.xbar1:setAlpha( 1 )
 				self.clipFinished( xbar1, {} )
+
 				bulletbar1:completeAnimation()
 				self.bulletbar1:setAlpha( 1 )
 				self.clipFinished( bulletbar1, {} )
+
 				skull1:completeAnimation()
 				self.clipFinished( skull1, {} )
+
 				skull2:completeAnimation()
 				self.clipFinished( skull2, {} )
+
 				respawn:completeAnimation()
 				self.respawn:setAlpha( 1 )
 				self.clipFinished( respawn, {} )
@@ -273,55 +291,72 @@ CoD.score_lower.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				score:completeAnimation()
 				self.score:setAlpha( 0 )
 				self.clipFinished( score, {} )
+
 				lives:completeAnimation()
 				self.lives:setAlpha( 0 )
 				self.clipFinished( lives, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				bombs:completeAnimation()
 				self.bombs:setAlpha( 0 )
 				self.clipFinished( bombs, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 0 )
 				self.clipFinished( Image1, {} )
+
 				boost:completeAnimation()
 				self.boost:setAlpha( 0 )
 				self.clipFinished( boost, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setAlpha( 0 )
 				self.clipFinished( Image2, {} )
+
 				points:completeAnimation()
 				self.points:setAlpha( 0 )
 				self.clipFinished( points, {} )
+
 				multiplier:completeAnimation()
 				self.multiplier:setAlpha( 0 )
 				self.clipFinished( multiplier, {} )
+
 				Label0:completeAnimation()
 				self.Label0:setAlpha( 0 )
 				self.clipFinished( Label0, {} )
+
 				PlayerName:completeAnimation()
 				self.PlayerName:setAlpha( 0 )
 				self.clipFinished( PlayerName, {} )
+
 				xbar1:completeAnimation()
 				self.xbar1:setAlpha( 0 )
 				self.clipFinished( xbar1, {} )
+
 				bulletbar1:completeAnimation()
 				self.bulletbar1:setAlpha( 0 )
 				self.clipFinished( bulletbar1, {} )
+
 				skull1:completeAnimation()
 				self.clipFinished( skull1, {} )
+
 				skull2:completeAnimation()
 				self.clipFinished( skull2, {} )
+
 				respawn:completeAnimation()
 				self.respawn:setAlpha( 0 )
 				self.clipFinished( respawn, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.xbar1:close()
 		element.bulletbar1:close()

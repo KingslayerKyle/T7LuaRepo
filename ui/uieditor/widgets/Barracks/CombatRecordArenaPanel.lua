@@ -19,9 +19,11 @@ end
 CoD.CombatRecordArenaPanel = InheritFrom( LUI.UIElement )
 CoD.CombatRecordArenaPanel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CombatRecordArenaPanel )
 	self.id = "CombatRecordArenaPanel"
@@ -569,6 +571,7 @@ CoD.CombatRecordArenaPanel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				local EmblemFrame2 = function ( Emblem, event )
 					if not event.interrupted then
 						Emblem:beginAnimation( "keyframe", 39, false, false, CoD.TweenType.Linear )
@@ -945,6 +948,7 @@ CoD.CombatRecordArenaPanel.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Kills:close()
 		element.Wins:close()

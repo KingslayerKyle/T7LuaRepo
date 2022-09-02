@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.AbilityWheel.AbilityWheel_DNI" )
 CoD.AbilityWheel_DNIContainer = InheritFrom( LUI.UIElement )
 CoD.AbilityWheel_DNIContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AbilityWheel_DNIContainer )
 	self.id = "AbilityWheel_DNIContainer"
@@ -37,6 +39,7 @@ CoD.AbilityWheel_DNIContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local UpperElementsFrame2 = function ( UpperElements, event )
 					if not event.interrupted then
 						UpperElements:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -67,10 +70,12 @@ CoD.AbilityWheel_DNIContainer.new = function ( menu, controller )
 				DNI:completeAnimation()
 				self.DNI:setAlpha( 0.9 )
 				DNIFrame2( DNI, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.DNI:close()
 	end )

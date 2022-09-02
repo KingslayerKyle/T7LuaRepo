@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_FX.ZmFx_Spark2" )
 CoD.ZmAmmo_TotalFactory = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_TotalFactory.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_TotalFactory )
 	self.id = "ZmAmmo_TotalFactory"
@@ -98,38 +100,46 @@ CoD.ZmAmmo_TotalFactory.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				TotalGlow:completeAnimation()
 				self.TotalGlow:setLeftRight( true, false, -6.88, 83.9 )
 				self.TotalGlow:setTopBottom( true, false, -17, 69 )
 				self.TotalGlow:setRGB( 0, 0.35, 0.58 )
 				self.TotalGlow:setAlpha( 0.75 )
 				self.clipFinished( TotalGlow, {} )
+
 				TotalGlowTop:completeAnimation()
 				self.TotalGlowTop:setLeftRight( true, false, 20.8, 65.2 )
 				self.TotalGlowTop:setTopBottom( true, false, 4, 48.75 )
 				self.TotalGlowTop:setRGB( 0.19, 0.99, 0.96 )
 				self.TotalGlowTop:setAlpha( 0.1 )
 				self.clipFinished( TotalGlowTop, {} )
+
 				Total:completeAnimation()
 				self.Total:setRGB( 1, 0.99, 0.93 )
 				self.Total:setAlpha( 0.94 )
 				self.Total:setZoom( 0 )
 				self.clipFinished( Total, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				ZmFxFlsh:completeAnimation()
 				self.ZmFxFlsh:setAlpha( 0 )
 				self.clipFinished( ZmFxFlsh, {} )
 			end,
 			NoAmmo = function ()
 				self:setupElementClipCounter( 4 )
+
 				TotalGlow:completeAnimation()
 				self.TotalGlow:setRGB( 0.79, 0.26, 0.25 )
 				self.clipFinished( TotalGlow, {} )
+
 				TotalGlowTop:completeAnimation()
 				self.TotalGlowTop:setRGB( 1, 0.33, 0.36 )
 				self.clipFinished( TotalGlowTop, {} )
+
 				Total:completeAnimation()
 				self.Total:setRGB( 1, 0.49, 0.49 )
 				self.Total:setZoom( 0 )
@@ -154,6 +164,7 @@ CoD.ZmAmmo_TotalFactory.new = function ( menu, controller )
 			end,
 			HeroWeapon = function ()
 				self:setupElementClipCounter( 3 )
+
 				local TotalGlowFrame2 = function ( TotalGlow, event )
 					if not event.interrupted then
 						TotalGlow:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -210,9 +221,11 @@ CoD.ZmAmmo_TotalFactory.new = function ( menu, controller )
 			end,
 			AmmoPickup = function ()
 				self:setupElementClipCounter( 5 )
+
 				TotalGlow:completeAnimation()
 				self.TotalGlow:setAlpha( 0.48 )
 				self.clipFinished( TotalGlow, {} )
+
 				TotalGlowTop:completeAnimation()
 				self.TotalGlowTop:setAlpha( 0.27 )
 				self.clipFinished( TotalGlowTop, {} )
@@ -239,9 +252,11 @@ CoD.ZmAmmo_TotalFactory.new = function ( menu, controller )
 				self.Total:setAlpha( 0.05 )
 				self.Total:setZoom( 0 )
 				TotalFrame2( Total, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				ZmFxFlsh:completeAnimation()
 				self.ZmFxFlsh:setAlpha( 0 )
 				self.clipFinished( ZmFxFlsh, {} )
@@ -250,22 +265,27 @@ CoD.ZmAmmo_TotalFactory.new = function ( menu, controller )
 		NoAmmo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				TotalGlow:completeAnimation()
 				self.TotalGlow:setRGB( 0.79, 0.26, 0.25 )
 				self.TotalGlow:setAlpha( 0.48 )
 				self.clipFinished( TotalGlow, {} )
+
 				TotalGlowTop:completeAnimation()
 				self.TotalGlowTop:setRGB( 1, 0.33, 0.36 )
 				self.TotalGlowTop:setAlpha( 0.27 )
 				self.clipFinished( TotalGlowTop, {} )
+
 				Total:completeAnimation()
 				self.Total:setRGB( 1, 0.49, 0.49 )
 				self.Total:setAlpha( 0.94 )
 				self.Total:setZoom( 0 )
 				self.clipFinished( Total, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				ZmFxFlsh:completeAnimation()
 				self.ZmFxFlsh:setRGB( 1, 1, 1 )
 				self.ZmFxFlsh:setAlpha( 0 )
@@ -273,6 +293,7 @@ CoD.ZmAmmo_TotalFactory.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 6 )
+
 				local TotalGlowFrame2 = function ( TotalGlow, event )
 					if not event.interrupted then
 						TotalGlow:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
@@ -443,6 +464,7 @@ CoD.ZmAmmo_TotalFactory.new = function ( menu, controller )
 			end,
 			HeroWeapon = function ()
 				self:setupElementClipCounter( 3 )
+
 				local TotalGlowFrame2 = function ( TotalGlow, event )
 					if not event.interrupted then
 						TotalGlow:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -501,24 +523,30 @@ CoD.ZmAmmo_TotalFactory.new = function ( menu, controller )
 		HeroWeapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				TotalGlow:completeAnimation()
 				self.TotalGlow:setAlpha( 0 )
 				self.clipFinished( TotalGlow, {} )
+
 				TotalGlowTop:completeAnimation()
 				self.TotalGlowTop:setAlpha( 0 )
 				self.clipFinished( TotalGlowTop, {} )
+
 				Total:completeAnimation()
 				self.Total:setAlpha( 0 )
 				self.clipFinished( Total, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				ZmFxFlsh:completeAnimation()
 				self.ZmFxFlsh:setAlpha( 0 )
 				self.clipFinished( ZmFxFlsh, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 3 )
+
 				local TotalGlowFrame2 = function ( TotalGlow, event )
 					if not event.interrupted then
 						TotalGlow:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -575,6 +603,7 @@ CoD.ZmAmmo_TotalFactory.new = function ( menu, controller )
 			end,
 			NoAmmo = function ()
 				self:setupElementClipCounter( 3 )
+
 				local TotalGlowFrame2 = function ( TotalGlow, event )
 					if not event.interrupted then
 						TotalGlow:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -631,6 +660,7 @@ CoD.ZmAmmo_TotalFactory.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoAmmo",
@@ -657,6 +687,7 @@ CoD.ZmAmmo_TotalFactory.new = function ( menu, controller )
 		local f42_local0 = self
 		PlayClip( self, "AmmoPickup", controller )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmFxSpark20:close()
 		element.Total:close()

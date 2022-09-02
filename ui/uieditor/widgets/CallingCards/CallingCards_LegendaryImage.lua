@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_GoldFrame" )
 CoD.CallingCards_LegendaryImage = InheritFrom( LUI.UIElement )
 CoD.CallingCards_LegendaryImage.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_LegendaryImage )
 	self.id = "CallingCards_LegendaryImage"

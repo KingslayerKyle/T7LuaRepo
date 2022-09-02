@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BorderThin" )
 CoD.StartMenu_Barracks_Stat = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Barracks_Stat.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Barracks_Stat )
 	self.id = "StartMenu_Barracks_Stat"

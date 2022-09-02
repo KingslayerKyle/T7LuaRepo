@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ListHeaderGlow" )
 CoD.horizontalScrollingTextBoxGroups = InheritFrom( LUI.UIElement )
 CoD.horizontalScrollingTextBoxGroups.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.horizontalScrollingTextBoxGroups )
 	self.id = "horizontalScrollingTextBoxGroups"

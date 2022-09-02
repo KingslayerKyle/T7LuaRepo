@@ -43,9 +43,11 @@ end
 CoD.chooseClassCPClient_Ingame = InheritFrom( LUI.UIElement )
 CoD.chooseClassCPClient_Ingame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.chooseClassCPClient_Ingame )
 	self.id = "chooseClassCPClient_Ingame"
@@ -127,15 +129,19 @@ CoD.chooseClassCPClient_Ingame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				LBBumperButtonWithKeyMouse:completeAnimation()
 				self.LBBumperButtonWithKeyMouse:setAlpha( 1 )
 				self.clipFinished( LBBumperButtonWithKeyMouse, {} )
+
 				RBBumperButtonWithKeyMouse:completeAnimation()
 				self.RBBumperButtonWithKeyMouse:setAlpha( 1 )
 				self.clipFinished( RBBumperButtonWithKeyMouse, {} )
+
 				clientTitle:completeAnimation()
 				self.clientTitle:setAlpha( 1 )
 				self.clipFinished( clientTitle, {} )
+
 				pipList:completeAnimation()
 				self.pipList:setAlpha( 1 )
 				self.clipFinished( pipList, {} )
@@ -144,21 +150,26 @@ CoD.chooseClassCPClient_Ingame.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				LBBumperButtonWithKeyMouse:completeAnimation()
 				self.LBBumperButtonWithKeyMouse:setAlpha( 0 )
 				self.clipFinished( LBBumperButtonWithKeyMouse, {} )
+
 				RBBumperButtonWithKeyMouse:completeAnimation()
 				self.RBBumperButtonWithKeyMouse:setAlpha( 0 )
 				self.clipFinished( RBBumperButtonWithKeyMouse, {} )
+
 				clientTitle:completeAnimation()
 				self.clientTitle:setAlpha( 0 )
 				self.clipFinished( clientTitle, {} )
+
 				pipList:completeAnimation()
 				self.pipList:setAlpha( 0 )
 				self.clipFinished( pipList, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -167,6 +178,7 @@ CoD.chooseClassCPClient_Ingame.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LBBumperButtonWithKeyMouse:close()
 		element.RBBumperButtonWithKeyMouse:close()

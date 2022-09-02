@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidgetMP_HeldItemPanel" )
 CoD.AmmoWidgetMP_PanelContainer = InheritFrom( LUI.UIElement )
 CoD.AmmoWidgetMP_PanelContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidgetMP_PanelContainer )
 	self.id = "AmmoWidgetMP_PanelContainer"
@@ -67,6 +69,7 @@ CoD.AmmoWidgetMP_PanelContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PanelAmmo:completeAnimation()
 				self.PanelAmmo:setLeftRight( false, false, -114, 35 )
 				self.PanelAmmo:setTopBottom( false, false, -16.67, 29 )
@@ -76,6 +79,7 @@ CoD.AmmoWidgetMP_PanelContainer.new = function ( menu, controller )
 		GunDualClip = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PanelAmmo:completeAnimation()
 				self.PanelAmmo:setLeftRight( false, false, -147, -11 )
 				self.PanelAmmo:setTopBottom( false, false, -16.67, 29 )
@@ -85,6 +89,7 @@ CoD.AmmoWidgetMP_PanelContainer.new = function ( menu, controller )
 		Gun = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PanelAmmo:completeAnimation()
 				self.PanelAmmo:setLeftRight( false, false, -81, -11 )
 				self.PanelAmmo:setTopBottom( false, false, -16.67, 29 )
@@ -94,6 +99,7 @@ CoD.AmmoWidgetMP_PanelContainer.new = function ( menu, controller )
 		HeroWeapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PanelAmmo:completeAnimation()
 				self.PanelAmmo:setLeftRight( false, false, -81.34, 57 )
 				self.PanelAmmo:setTopBottom( false, false, -16.67, 29 )
@@ -103,6 +109,7 @@ CoD.AmmoWidgetMP_PanelContainer.new = function ( menu, controller )
 		WeaponDual = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PanelAmmo:completeAnimation()
 				self.PanelAmmo:setLeftRight( false, false, -180, 39 )
 				self.PanelAmmo:setTopBottom( false, false, -16.67, 29 )
@@ -112,6 +119,7 @@ CoD.AmmoWidgetMP_PanelContainer.new = function ( menu, controller )
 		Weapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PanelAmmo:completeAnimation()
 				self.PanelAmmo:setLeftRight( false, false, -114, 57 )
 				self.PanelAmmo:setTopBottom( false, false, -16.67, 29 )
@@ -121,6 +129,7 @@ CoD.AmmoWidgetMP_PanelContainer.new = function ( menu, controller )
 		Knife = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PanelAmmo:completeAnimation()
 				self.PanelAmmo:setLeftRight( false, false, -81.34, 47 )
 				self.PanelAmmo:setTopBottom( false, false, -16.67, 29 )
@@ -130,6 +139,7 @@ CoD.AmmoWidgetMP_PanelContainer.new = function ( menu, controller )
 		Weapon3Digits = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PanelAmmo:completeAnimation()
 				self.PanelAmmo:setLeftRight( false, false, -127, 39 )
 				self.PanelAmmo:setTopBottom( false, false, -16.67, 29 )
@@ -139,6 +149,7 @@ CoD.AmmoWidgetMP_PanelContainer.new = function ( menu, controller )
 		WeaponNoReserve = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PanelAmmo:completeAnimation()
 				self.PanelAmmo:setLeftRight( false, false, -81.34, 57 )
 				self.PanelAmmo:setTopBottom( false, false, -16.67, 29 )
@@ -146,6 +157,7 @@ CoD.AmmoWidgetMP_PanelContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "GunDualClip",
@@ -261,6 +273,7 @@ CoD.AmmoWidgetMP_PanelContainer.new = function ( menu, controller )
 			modelName = "currentWeapon.clipMaxAmmo"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PanelTactical:close()
 		element.PanelLethal:close()

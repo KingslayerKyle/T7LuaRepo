@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.ZMDiviniumLoopAnim.ZM_DiviniumEmpty" )
 CoD.ZM_DiviniumAnimFill = InheritFrom( LUI.UIElement )
 CoD.ZM_DiviniumAnimFill.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZM_DiviniumAnimFill )
 	self.id = "ZM_DiviniumAnimFill"
@@ -58,24 +60,30 @@ CoD.ZM_DiviniumAnimFill.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				Fill:completeAnimation()
 				self.Fill:setAlpha( 0 )
 				self.clipFinished( Fill, {} )
+
 				Vial:completeAnimation()
 				self.Vial:setAlpha( 0 )
 				self.clipFinished( Vial, {} )
+
 				ZMDiviniumFull:completeAnimation()
 				self.ZMDiviniumFull:setAlpha( 0 )
 				self.clipFinished( ZMDiviniumFull, {} )
+
 				ZMDiviniumEmpty:completeAnimation()
 				self.ZMDiviniumEmpty:setAlpha( 0 )
 				self.clipFinished( ZMDiviniumEmpty, {} )
 			end,
 			Start = function ()
 				self:setupElementClipCounter( 5 )
+
 				local GlowFrame2 = function ( Glow, event )
 					local GlowFrame3 = function ( Glow, event )
 						local GlowFrame4 = function ( Glow, event )
@@ -312,6 +320,7 @@ CoD.ZM_DiviniumAnimFill.new = function ( menu, controller )
 			end,
 			Stop = function ()
 				self:setupElementClipCounter( 5 )
+
 				local GlowFrame2 = function ( Glow, event )
 					local GlowFrame3 = function ( Glow, event )
 						local GlowFrame4 = function ( Glow, event )
@@ -548,6 +557,7 @@ CoD.ZM_DiviniumAnimFill.new = function ( menu, controller )
 			end,
 			Loop = function ()
 				self:setupElementClipCounter( 5 )
+
 				local GlowFrame2 = function ( Glow, event )
 					local GlowFrame3 = function ( Glow, event )
 						local GlowFrame4 = function ( Glow, event )
@@ -781,10 +791,12 @@ CoD.ZM_DiviniumAnimFill.new = function ( menu, controller )
 				self.ZMDiviniumEmpty:setAlpha( 0 )
 				self.ZMDiviniumEmpty:setScale( 0.8 )
 				ZMDiviniumEmptyFrame2( ZMDiviniumEmpty, {} )
+
 				self.nextClip = "Loop"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZMDiviniumFull:close()
 		element.ZMDiviniumEmpty:close()

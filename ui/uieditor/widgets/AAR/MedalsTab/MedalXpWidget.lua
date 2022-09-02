@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Notifications.NotificationQueueWidgets.Notificatio
 CoD.MedalXpWidget = InheritFrom( LUI.UIElement )
 CoD.MedalXpWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MedalXpWidget )
 	self.id = "MedalXpWidget"
@@ -43,9 +45,11 @@ CoD.MedalXpWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				XpIcon:completeAnimation()
 				self.XpIcon:setAlpha( 0 )
 				self.clipFinished( XpIcon, {} )
+
 				XpValue:completeAnimation()
 				self.XpValue:setAlpha( 0 )
 				self.clipFinished( XpValue, {} )
@@ -54,9 +58,11 @@ CoD.MedalXpWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				XpIcon:completeAnimation()
 				self.XpIcon:setAlpha( 1 )
 				self.clipFinished( XpIcon, {} )
+
 				XpValue:completeAnimation()
 				self.XpValue:setAlpha( 1 )
 				self.clipFinished( XpValue, {} )
@@ -65,18 +71,22 @@ CoD.MedalXpWidget.new = function ( menu, controller )
 		DoubleXP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				XpIcon:completeAnimation()
 				self.XpIcon:setAlpha( 0 )
 				self.clipFinished( XpIcon, {} )
+
 				XpValue:completeAnimation()
 				self.XpValue:setAlpha( 1 )
 				self.clipFinished( XpValue, {} )
+
 				Notification2xpReward:completeAnimation()
 				self.Notification2xpReward:setAlpha( 1 )
 				self.clipFinished( Notification2xpReward, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -99,6 +109,7 @@ CoD.MedalXpWidget.new = function ( menu, controller )
 			modelName = "aarType"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Notification2xpReward:close()
 	end )

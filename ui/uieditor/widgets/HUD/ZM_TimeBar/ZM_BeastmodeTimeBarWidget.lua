@@ -4,9 +4,11 @@
 CoD.ZM_BeastmodeTimeBarWidget = InheritFrom( LUI.UIElement )
 CoD.ZM_BeastmodeTimeBarWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZM_BeastmodeTimeBarWidget )
 	self.id = "ZM_BeastmodeTimeBarWidget"
@@ -55,12 +57,15 @@ CoD.ZM_BeastmodeTimeBarWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				TimeBarBack:completeAnimation()
 				self.TimeBarBack:setAlpha( 0 )
 				self.clipFinished( TimeBarBack, {} )
+
 				TimeBarFill:completeAnimation()
 				self.TimeBarFill:setAlpha( 0 )
 				self.clipFinished( TimeBarFill, {} )
+
 				TimeBarFill0:completeAnimation()
 				self.TimeBarFill0:setAlpha( 0 )
 				self.clipFinished( TimeBarFill0, {} )
@@ -69,9 +74,11 @@ CoD.ZM_BeastmodeTimeBarWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				TimeBarBack:completeAnimation()
 				self.TimeBarBack:setAlpha( 1 )
 				self.clipFinished( TimeBarBack, {} )
+
 				TimeBarFill:completeAnimation()
 				self.TimeBarFill:setAlpha( 1 )
 				self.TimeBarFill:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_wipe" ) )
@@ -79,12 +86,14 @@ CoD.ZM_BeastmodeTimeBarWidget.new = function ( menu, controller )
 				self.TimeBarFill:setShaderVector( 2, 1, 0, 0, 0 )
 				self.TimeBarFill:setShaderVector( 3, 0, 0, 0, 0 )
 				self.clipFinished( TimeBarFill, {} )
+
 				TimeBarFill0:completeAnimation()
 				self.TimeBarFill0:setAlpha( 0 )
 				self.clipFinished( TimeBarFill0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -101,6 +110,7 @@ CoD.ZM_BeastmodeTimeBarWidget.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_IS_PLAYER_ZOMBIE
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TimeBarFill:close()
 	end )

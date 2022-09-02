@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.PC.Utility.XCamMouseControl" )
 CoD.ChooseShowcaseWeapon_SelectionInfoWidget = InheritFrom( LUI.UIElement )
 CoD.ChooseShowcaseWeapon_SelectionInfoWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseShowcaseWeapon_SelectionInfoWidget )
 	self.id = "ChooseShowcaseWeapon_SelectionInfoWidget"
@@ -160,20 +162,25 @@ CoD.ChooseShowcaseWeapon_SelectionInfoWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				purchaseWeaponDescTextBox:completeAnimation()
 				self.purchaseWeaponDescTextBox:setAlpha( 0 )
 				self.clipFinished( purchaseWeaponDescTextBox, {} )
+
 				unlockWeaponDescTextBox:completeAnimation()
 				self.unlockWeaponDescTextBox:setLeftRight( true, false, 19.51, 275.51 )
 				self.unlockWeaponDescTextBox:setTopBottom( true, false, 54, 73 )
 				self.unlockWeaponDescTextBox:setAlpha( 0 )
 				self.clipFinished( unlockWeaponDescTextBox, {} )
+
 				weaponDescTextBox:completeAnimation()
 				self.weaponDescTextBox:setAlpha( 1 )
 				self.clipFinished( weaponDescTextBox, {} )
+
 				WeaponAttributesInternal:completeAnimation()
 				self.WeaponAttributesInternal:setAlpha( 1 )
 				self.clipFinished( WeaponAttributesInternal, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
@@ -182,21 +189,27 @@ CoD.ChooseShowcaseWeapon_SelectionInfoWidget.new = function ( menu, controller )
 		BMClassified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				purchaseWeaponDescTextBox:completeAnimation()
 				self.purchaseWeaponDescTextBox:setAlpha( 0 )
 				self.clipFinished( purchaseWeaponDescTextBox, {} )
+
 				unlockWeaponDescTextBox:completeAnimation()
 				self.unlockWeaponDescTextBox:setAlpha( 0 )
 				self.clipFinished( unlockWeaponDescTextBox, {} )
+
 				weaponDescTextBox:completeAnimation()
 				self.weaponDescTextBox:setAlpha( 1 )
 				self.clipFinished( weaponDescTextBox, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 1 )
 				self.clipFinished( itemName, {} )
+
 				WeaponAttributesInternal:completeAnimation()
 				self.WeaponAttributesInternal:setAlpha( 0 )
 				self.clipFinished( WeaponAttributesInternal, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
@@ -205,18 +218,23 @@ CoD.ChooseShowcaseWeapon_SelectionInfoWidget.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				purchaseWeaponDescTextBox:completeAnimation()
 				self.purchaseWeaponDescTextBox:setAlpha( 0 )
 				self.clipFinished( purchaseWeaponDescTextBox, {} )
+
 				unlockWeaponDescTextBox:completeAnimation()
 				self.unlockWeaponDescTextBox:setAlpha( 1 )
 				self.clipFinished( unlockWeaponDescTextBox, {} )
+
 				weaponDescTextBox:completeAnimation()
 				self.weaponDescTextBox:setAlpha( 0 )
 				self.clipFinished( weaponDescTextBox, {} )
+
 				WeaponAttributesInternal:completeAnimation()
 				self.WeaponAttributesInternal:setAlpha( 1 )
 				self.clipFinished( WeaponAttributesInternal, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0.66 )
 				self.clipFinished( lockedIcon, {} )
@@ -225,18 +243,23 @@ CoD.ChooseShowcaseWeapon_SelectionInfoWidget.new = function ( menu, controller )
 		NotAvailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				purchaseWeaponDescTextBox:completeAnimation()
 				self.purchaseWeaponDescTextBox:setAlpha( 1 )
 				self.clipFinished( purchaseWeaponDescTextBox, {} )
+
 				unlockWeaponDescTextBox:completeAnimation()
 				self.unlockWeaponDescTextBox:setAlpha( 0 )
 				self.clipFinished( unlockWeaponDescTextBox, {} )
+
 				weaponDescTextBox:completeAnimation()
 				self.weaponDescTextBox:setAlpha( 0 )
 				self.clipFinished( weaponDescTextBox, {} )
+
 				WeaponAttributesInternal:completeAnimation()
 				self.WeaponAttributesInternal:setAlpha( 1 )
 				self.clipFinished( WeaponAttributesInternal, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0.66 )
 				self.clipFinished( lockedIcon, {} )
@@ -245,26 +268,32 @@ CoD.ChooseShowcaseWeapon_SelectionInfoWidget.new = function ( menu, controller )
 		VariantSelect = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				purchaseWeaponDescTextBox:completeAnimation()
 				self.purchaseWeaponDescTextBox:setAlpha( 0 )
 				self.clipFinished( purchaseWeaponDescTextBox, {} )
+
 				unlockWeaponDescTextBox:completeAnimation()
 				self.unlockWeaponDescTextBox:setLeftRight( true, false, 19.51, 275.51 )
 				self.unlockWeaponDescTextBox:setTopBottom( true, false, 54, 73 )
 				self.unlockWeaponDescTextBox:setAlpha( 0 )
 				self.clipFinished( unlockWeaponDescTextBox, {} )
+
 				weaponDescTextBox:completeAnimation()
 				self.weaponDescTextBox:setAlpha( 0 )
 				self.clipFinished( weaponDescTextBox, {} )
+
 				WeaponAttributesInternal:completeAnimation()
 				self.WeaponAttributesInternal:setAlpha( 1 )
 				self.clipFinished( WeaponAttributesInternal, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BMClassified",
@@ -307,6 +336,7 @@ CoD.ChooseShowcaseWeapon_SelectionInfoWidget.new = function ( menu, controller )
 			modelName = "itemIndex"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.weaponDescTextBox:close()
 		element.itemName:close()

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CodCaster.CodCasterKillcamWidgetPnlRT" )
 CoD.KillcamWidgetPnlRT = InheritFrom( LUI.UIElement )
 CoD.KillcamWidgetPnlRT.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.KillcamWidgetPnlRT )
 	self.id = "KillcamWidgetPnlRT"
@@ -42,9 +44,11 @@ CoD.KillcamWidgetPnlRT.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				CodCasterKillcamWidgetPnlRT:completeAnimation()
 				self.CodCasterKillcamWidgetPnlRT:setAlpha( 0 )
 				self.clipFinished( CodCasterKillcamWidgetPnlRT, {} )
+
 				FactionColorBar:completeAnimation()
 				self.FactionColorBar:setAlpha( 0 )
 				self.clipFinished( FactionColorBar, {} )
@@ -53,15 +57,18 @@ CoD.KillcamWidgetPnlRT.new = function ( menu, controller )
 		CodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				CodCasterKillcamWidgetPnlRT:completeAnimation()
 				self.CodCasterKillcamWidgetPnlRT:setAlpha( 1 )
 				self.clipFinished( CodCasterKillcamWidgetPnlRT, {} )
+
 				FactionColorBar:completeAnimation()
 				self.FactionColorBar:setAlpha( 1 )
 				self.clipFinished( FactionColorBar, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CodCaster",
@@ -78,6 +85,7 @@ CoD.KillcamWidgetPnlRT.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_TEAM_SPECTATOR
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.KillcamWidgetPnlRTInt0:close()
 		element.CodCasterKillcamWidgetPnlRT:close()

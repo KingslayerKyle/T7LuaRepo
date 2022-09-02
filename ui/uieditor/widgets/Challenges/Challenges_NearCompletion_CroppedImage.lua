@@ -4,9 +4,11 @@
 CoD.Challenges_NearCompletion_CroppedImage = InheritFrom( LUI.UIElement )
 CoD.Challenges_NearCompletion_CroppedImage.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.Challenges_NearCompletion_CroppedImage )
 	self.id = "Challenges_NearCompletion_CroppedImage"

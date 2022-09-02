@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.cac_LockBig" )
 CoD.browseCollectibleInspectionArea = InheritFrom( LUI.UIElement )
 CoD.browseCollectibleInspectionArea.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.browseCollectibleInspectionArea )
 	self.id = "browseCollectibleInspectionArea"
@@ -130,24 +132,31 @@ CoD.browseCollectibleInspectionArea.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				extracam:completeAnimation()
 				self.extracam:setAlpha( 1 )
 				self.clipFinished( extracam, {} )
+
 				nameLabel:completeAnimation()
 				self.nameLabel:setAlpha( 1 )
 				self.clipFinished( nameLabel, {} )
+
 				location:completeAnimation()
 				self.location:setAlpha( 1 )
 				self.clipFinished( location, {} )
+
 				notFoundName:completeAnimation()
 				self.notFoundName:setAlpha( 0 )
 				self.clipFinished( notFoundName, {} )
+
 				notFoundLocation:completeAnimation()
 				self.notFoundLocation:setAlpha( 0 )
 				self.clipFinished( notFoundLocation, {} )
+
 				notFoundLock:completeAnimation()
 				self.notFoundLock:setAlpha( 0 )
 				self.clipFinished( notFoundLock, {} )
+
 				description:completeAnimation()
 				self.description:setAlpha( 1 )
 				self.clipFinished( description, {} )
@@ -156,30 +165,38 @@ CoD.browseCollectibleInspectionArea.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				extracam:completeAnimation()
 				self.extracam:setAlpha( 0 )
 				self.clipFinished( extracam, {} )
+
 				nameLabel:completeAnimation()
 				self.nameLabel:setAlpha( 0 )
 				self.clipFinished( nameLabel, {} )
+
 				location:completeAnimation()
 				self.location:setAlpha( 0 )
 				self.clipFinished( location, {} )
+
 				notFoundName:completeAnimation()
 				self.notFoundName:setAlpha( 1 )
 				self.clipFinished( notFoundName, {} )
+
 				notFoundLocation:completeAnimation()
 				self.notFoundLocation:setAlpha( 1 )
 				self.clipFinished( notFoundLocation, {} )
+
 				notFoundLock:completeAnimation()
 				self.notFoundLock:setAlpha( 1 )
 				self.clipFinished( notFoundLock, {} )
+
 				description:completeAnimation()
 				self.description:setAlpha( 0 )
 				self.clipFinished( description, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -196,6 +213,7 @@ CoD.browseCollectibleInspectionArea.new = function ( menu, controller )
 			modelName = "unlocked"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.nameLabel:close()
 		element.notFoundName:close()

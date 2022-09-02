@@ -25,9 +25,11 @@ end
 CoD.TempestReticle = InheritFrom( LUI.UIElement )
 CoD.TempestReticle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.TempestReticle )
 	self.id = "TempestReticle"
@@ -47,6 +49,7 @@ CoD.TempestReticle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				internal:completeAnimation()
 				self.internal:setRGB( 1, 1, 1 )
 				self.internal:setAlpha( 1 )
@@ -54,11 +57,13 @@ CoD.TempestReticle.new = function ( menu, controller )
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				internal:completeAnimation()
 				self.internal:setAlpha( 0 )
 				self.clipFinished( internal, {} )
@@ -67,6 +72,7 @@ CoD.TempestReticle.new = function ( menu, controller )
 		HiddenUsingOffhand = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				internal:completeAnimation()
 				self.internal:setAlpha( 0 )
 				self.clipFinished( internal, {} )
@@ -75,6 +81,7 @@ CoD.TempestReticle.new = function ( menu, controller )
 		OverEnemy = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				internal:completeAnimation()
 				self.internal:setRGB( 1, 0, 0 )
 				self.internal:setAlpha( 1 )
@@ -82,6 +89,7 @@ CoD.TempestReticle.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -253,6 +261,7 @@ CoD.TempestReticle.new = function ( menu, controller )
 			modelName = "currentWeapon.weaponOverEnemy"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.internal:close()
 	end )

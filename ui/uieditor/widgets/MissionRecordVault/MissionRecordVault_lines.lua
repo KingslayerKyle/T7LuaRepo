@@ -4,9 +4,11 @@
 CoD.MissionRecordVault_lines = InheritFrom( LUI.UIElement )
 CoD.MissionRecordVault_lines.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MissionRecordVault_lines )
 	self.id = "MissionRecordVault_lines"

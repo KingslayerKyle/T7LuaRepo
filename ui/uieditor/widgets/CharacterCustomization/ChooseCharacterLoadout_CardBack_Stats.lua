@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Heroes.ChooseCharacterLoadout_TabBar" )
 CoD.ChooseCharacterLoadout_CardBack_Stats = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacterLoadout_CardBack_Stats.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacterLoadout_CardBack_Stats )
 	self.id = "ChooseCharacterLoadout_CardBack_Stats"
@@ -695,6 +697,7 @@ CoD.ChooseCharacterLoadout_CardBack_Stats.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				local faceFrame2 = function ( face, event )
 					if not event.interrupted then
 						face:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Bounce )
@@ -878,6 +881,7 @@ CoD.ChooseCharacterLoadout_CardBack_Stats.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Border10:close()
 		element.iconBorder00:close()

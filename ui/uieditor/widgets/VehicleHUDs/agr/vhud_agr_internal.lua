@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Buttons.vhud_generic_button_layout" )
 CoD.vhud_agr_internal = InheritFrom( LUI.UIElement )
 CoD.vhud_agr_internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_agr_internal )
 	self.id = "vhud_agr_internal"

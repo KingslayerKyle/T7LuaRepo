@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.BubbleGumBuffs.BubbleGumBuffInGame" )
 CoD.BubbleGumPackInGame = InheritFrom( LUI.UIElement )
 CoD.BubbleGumPackInGame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BubbleGumPackInGame )
 	self.id = "BubbleGumPackInGame"
@@ -37,6 +39,7 @@ CoD.BubbleGumPackInGame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BubbleGumPack:completeAnimation()
 				self.BubbleGumPack:setAlpha( 0 )
 				self.clipFinished( BubbleGumPack, {} )
@@ -45,12 +48,14 @@ CoD.BubbleGumPackInGame.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BubbleGumPack:completeAnimation()
 				self.BubbleGumPack:setAlpha( 1 )
 				self.clipFinished( BubbleGumPack, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -68,6 +73,7 @@ CoD.BubbleGumPackInGame.new = function ( menu, controller )
 		} )
 	end )
 	BubbleGumPack.id = "BubbleGumPack"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BubbleGumPack:close()
 	end )

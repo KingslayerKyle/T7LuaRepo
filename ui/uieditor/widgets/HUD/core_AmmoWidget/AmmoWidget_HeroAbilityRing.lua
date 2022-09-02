@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_HeroAbilityRingThie
 CoD.AmmoWidget_HeroAbilityRing = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_HeroAbilityRing.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_HeroAbilityRing )
 	self.id = "AmmoWidget_HeroAbilityRing"
@@ -154,38 +156,48 @@ CoD.AmmoWidget_HeroAbilityRing.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				HeroRingBG:completeAnimation()
 				self.HeroRingBG:setAlpha( 0 )
 				self.clipFinished( HeroRingBG, {} )
+
 				HeroRingImage:completeAnimation()
 				self.HeroRingImage:setAlpha( 1 )
 				self.clipFinished( HeroRingImage, {} )
+
 				HeroRingFillImage:completeAnimation()
 				self.HeroRingFillImage:setLeftRight( true, true, 12, -12 )
 				self.HeroRingFillImage:setTopBottom( true, true, 12, -12 )
 				self.HeroRingFillImage:setAlpha( 1 )
 				self.HeroRingFillImage:setImage( RegisterImage( "uie_t7_core_hud_ammowidget_heroringfill" ) )
 				self.clipFinished( HeroRingFillImage, {} )
+
 				HeroRingGold:completeAnimation()
 				self.HeroRingGold:setRGB( 0.95, 0.8, 0 )
 				self.HeroRingGold:setAlpha( 0 )
 				self.clipFinished( HeroRingGold, {} )
+
 				HeroRingGold2:completeAnimation()
 				self.HeroRingGold2:setRGB( 0.95, 0.8, 0 )
 				self.HeroRingGold2:setAlpha( 0 )
 				self.clipFinished( HeroRingGold2, {} )
+
 				HeroRingGoldWeapon:completeAnimation()
 				self.HeroRingGoldWeapon:setAlpha( 0 )
 				self.clipFinished( HeroRingGoldWeapon, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
+
 				AbilitySwirl0:completeAnimation()
 				self.AbilitySwirl0:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl0, {} )
+
 				ImgRingDeplete00:completeAnimation()
 				self.ImgRingDeplete00:setAlpha( 0 )
 				self.clipFinished( ImgRingDeplete00, {} )
+
 				AmmoWidgetHeroAbilityRingThief:completeAnimation()
 				self.AmmoWidgetHeroAbilityRingThief:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetHeroAbilityRingThief, {} )
@@ -194,12 +206,15 @@ CoD.AmmoWidget_HeroAbilityRing.new = function ( menu, controller )
 		ReadyGadget = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				HeroRingBG:completeAnimation()
 				self.HeroRingBG:setAlpha( 0 )
 				self.clipFinished( HeroRingBG, {} )
+
 				HeroRingImage:completeAnimation()
 				self.HeroRingImage:setAlpha( 0 )
 				self.clipFinished( HeroRingImage, {} )
+
 				HeroRingFillImage:completeAnimation()
 				self.HeroRingFillImage:setLeftRight( true, true, 12, -12 )
 				self.HeroRingFillImage:setTopBottom( true, true, 12, -12 )
@@ -418,6 +433,7 @@ CoD.AmmoWidget_HeroAbilityRing.new = function ( menu, controller )
 				self.HeroRingGold2:setRGB( 0.95, 0.8, 0 )
 				self.HeroRingGold2:setAlpha( 0 )
 				HeroRingGold2Frame2( HeroRingGold2, {} )
+
 				HeroRingGoldWeapon:completeAnimation()
 				self.HeroRingGoldWeapon:setAlpha( 0 )
 				self.clipFinished( HeroRingGoldWeapon, {} )
@@ -646,15 +662,18 @@ CoD.AmmoWidget_HeroAbilityRing.new = function ( menu, controller )
 				self.AbilitySwirl0:setAlpha( 0 )
 				self.AbilitySwirl0:setZRot( -405 )
 				AbilitySwirl0Frame2( AbilitySwirl0, {} )
+
 				ImgRingDeplete00:completeAnimation()
 				self.ImgRingDeplete00:setAlpha( 0 )
 				self.clipFinished( ImgRingDeplete00, {} )
+
 				AmmoWidgetHeroAbilityRingThief:completeAnimation()
 				self.AmmoWidgetHeroAbilityRingThief:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetHeroAbilityRingThief, {} )
 			end,
 			InUseGadget = function ()
 				self:setupElementClipCounter( 8 )
+
 				local HeroRingImageFrame2 = function ( HeroRingImage, event )
 					if not event.interrupted then
 						HeroRingImage:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -757,6 +776,7 @@ CoD.AmmoWidget_HeroAbilityRing.new = function ( menu, controller )
 				self.AbilitySwirl:setAlpha( 0 )
 				self.AbilitySwirl:setZRot( 311 )
 				AbilitySwirlFrame2( AbilitySwirl, {} )
+
 				AbilitySwirl0:completeAnimation()
 				self.AbilitySwirl0:setLeftRight( true, true, 12, -12 )
 				self.AbilitySwirl0:setTopBottom( true, true, 12, -12 )
@@ -786,38 +806,48 @@ CoD.AmmoWidget_HeroAbilityRing.new = function ( menu, controller )
 		ChargeThief = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				HeroRingBG:completeAnimation()
 				self.HeroRingBG:setAlpha( 1 )
 				self.clipFinished( HeroRingBG, {} )
+
 				HeroRingImage:completeAnimation()
 				self.HeroRingImage:setAlpha( 0 )
 				self.clipFinished( HeroRingImage, {} )
+
 				HeroRingFillImage:completeAnimation()
 				self.HeroRingFillImage:setLeftRight( true, true, 14, -14 )
 				self.HeroRingFillImage:setTopBottom( true, true, 14, -14 )
 				self.HeroRingFillImage:setAlpha( 1 )
 				self.HeroRingFillImage:setImage( RegisterImage( "uie_t7_core_hud_ammowidget_bj_ringfill" ) )
 				self.clipFinished( HeroRingFillImage, {} )
+
 				HeroRingGold:completeAnimation()
 				self.HeroRingGold:setRGB( 0.95, 0.8, 0 )
 				self.HeroRingGold:setAlpha( 0 )
 				self.clipFinished( HeroRingGold, {} )
+
 				HeroRingGold2:completeAnimation()
 				self.HeroRingGold2:setRGB( 0.95, 0.8, 0 )
 				self.HeroRingGold2:setAlpha( 0 )
 				self.clipFinished( HeroRingGold2, {} )
+
 				HeroRingGoldWeapon:completeAnimation()
 				self.HeroRingGoldWeapon:setAlpha( 0 )
 				self.clipFinished( HeroRingGoldWeapon, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
+
 				AbilitySwirl0:completeAnimation()
 				self.AbilitySwirl0:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl0, {} )
+
 				ImgRingDeplete00:completeAnimation()
 				self.ImgRingDeplete00:setAlpha( 0 )
 				self.clipFinished( ImgRingDeplete00, {} )
+
 				AmmoWidgetHeroAbilityRingThief:completeAnimation()
 				self.AmmoWidgetHeroAbilityRingThief:setAlpha( 1 )
 				self.clipFinished( AmmoWidgetHeroAbilityRingThief, {} )
@@ -826,38 +856,48 @@ CoD.AmmoWidget_HeroAbilityRing.new = function ( menu, controller )
 		Charge = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				HeroRingBG:completeAnimation()
 				self.HeroRingBG:setAlpha( 0 )
 				self.clipFinished( HeroRingBG, {} )
+
 				HeroRingImage:completeAnimation()
 				self.HeroRingImage:setAlpha( 1 )
 				self.clipFinished( HeroRingImage, {} )
+
 				HeroRingFillImage:completeAnimation()
 				self.HeroRingFillImage:setLeftRight( true, true, 12, -12 )
 				self.HeroRingFillImage:setTopBottom( true, true, 12, -12 )
 				self.HeroRingFillImage:setAlpha( 1 )
 				self.HeroRingFillImage:setImage( RegisterImage( "uie_t7_core_hud_ammowidget_heroringfill" ) )
 				self.clipFinished( HeroRingFillImage, {} )
+
 				HeroRingGold:completeAnimation()
 				self.HeroRingGold:setRGB( 0.95, 0.8, 0 )
 				self.HeroRingGold:setAlpha( 0 )
 				self.clipFinished( HeroRingGold, {} )
+
 				HeroRingGold2:completeAnimation()
 				self.HeroRingGold2:setRGB( 0.95, 0.8, 0 )
 				self.HeroRingGold2:setAlpha( 0 )
 				self.clipFinished( HeroRingGold2, {} )
+
 				HeroRingGoldWeapon:completeAnimation()
 				self.HeroRingGoldWeapon:setAlpha( 0 )
 				self.clipFinished( HeroRingGoldWeapon, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
+
 				AbilitySwirl0:completeAnimation()
 				self.AbilitySwirl0:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl0, {} )
+
 				ImgRingDeplete00:completeAnimation()
 				self.ImgRingDeplete00:setAlpha( 0 )
 				self.clipFinished( ImgRingDeplete00, {} )
+
 				AmmoWidgetHeroAbilityRingThief:completeAnimation()
 				self.AmmoWidgetHeroAbilityRingThief:setAlpha( 1 )
 				self.clipFinished( AmmoWidgetHeroAbilityRingThief, {} )
@@ -866,45 +906,56 @@ CoD.AmmoWidget_HeroAbilityRing.new = function ( menu, controller )
 		InUseGadget = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				HeroRingBG:completeAnimation()
 				self.HeroRingBG:setAlpha( 0 )
 				self.clipFinished( HeroRingBG, {} )
+
 				HeroRingImage:completeAnimation()
 				self.HeroRingImage:setAlpha( 0 )
 				self.clipFinished( HeroRingImage, {} )
+
 				HeroRingFillImage:completeAnimation()
 				self.HeroRingFillImage:setLeftRight( true, true, 12, -12 )
 				self.HeroRingFillImage:setTopBottom( true, true, 12, -12 )
 				self.HeroRingFillImage:setAlpha( 0 )
 				self.HeroRingFillImage:setImage( RegisterImage( "uie_t7_core_hud_ammowidget_heroringfill" ) )
 				self.clipFinished( HeroRingFillImage, {} )
+
 				HeroRingGold:completeAnimation()
 				self.HeroRingGold:setRGB( 0.95, 0.8, 0 )
 				self.HeroRingGold:setAlpha( 1 )
 				self.clipFinished( HeroRingGold, {} )
+
 				HeroRingGold2:completeAnimation()
 				self.HeroRingGold2:setRGB( 0.95, 0.8, 0 )
 				self.HeroRingGold2:setAlpha( 1 )
 				self.clipFinished( HeroRingGold2, {} )
+
 				HeroRingGoldWeapon:completeAnimation()
 				self.HeroRingGoldWeapon:setAlpha( 0 )
 				self.clipFinished( HeroRingGoldWeapon, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
+
 				AbilitySwirl0:completeAnimation()
 				self.AbilitySwirl0:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl0, {} )
+
 				ImgRingDeplete00:completeAnimation()
 				self.ImgRingDeplete00:setRGB( 0.95, 0.8, 0 )
 				self.ImgRingDeplete00:setAlpha( 1 )
 				self.clipFinished( ImgRingDeplete00, {} )
+
 				AmmoWidgetHeroAbilityRingThief:completeAnimation()
 				self.AmmoWidgetHeroAbilityRingThief:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetHeroAbilityRingThief, {} )
 			end,
 			InUseGadgetLow = function ()
 				self:setupElementClipCounter( 6 )
+
 				local HeroRingImageFrame2 = function ( HeroRingImage, event )
 					if not event.interrupted then
 						HeroRingImage:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Bounce )
@@ -1006,45 +1057,56 @@ CoD.AmmoWidget_HeroAbilityRing.new = function ( menu, controller )
 		InUseGadgetMed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				HeroRingBG:completeAnimation()
 				self.HeroRingBG:setAlpha( 0 )
 				self.clipFinished( HeroRingBG, {} )
+
 				HeroRingImage:completeAnimation()
 				self.HeroRingImage:setAlpha( 0 )
 				self.clipFinished( HeroRingImage, {} )
+
 				HeroRingFillImage:completeAnimation()
 				self.HeroRingFillImage:setLeftRight( true, true, 12, -12 )
 				self.HeroRingFillImage:setTopBottom( true, true, 12, -12 )
 				self.HeroRingFillImage:setAlpha( 0 )
 				self.HeroRingFillImage:setImage( RegisterImage( "uie_t7_core_hud_ammowidget_heroringfill" ) )
 				self.clipFinished( HeroRingFillImage, {} )
+
 				HeroRingGold:completeAnimation()
 				self.HeroRingGold:setRGB( 0.95, 0.55, 0 )
 				self.HeroRingGold:setAlpha( 1 )
 				self.clipFinished( HeroRingGold, {} )
+
 				HeroRingGold2:completeAnimation()
 				self.HeroRingGold2:setRGB( 0.95, 0.55, 0 )
 				self.HeroRingGold2:setAlpha( 1 )
 				self.clipFinished( HeroRingGold2, {} )
+
 				HeroRingGoldWeapon:completeAnimation()
 				self.HeroRingGoldWeapon:setAlpha( 0 )
 				self.clipFinished( HeroRingGoldWeapon, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
+
 				AbilitySwirl0:completeAnimation()
 				self.AbilitySwirl0:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl0, {} )
+
 				ImgRingDeplete00:completeAnimation()
 				self.ImgRingDeplete00:setRGB( 0.95, 0.45, 0 )
 				self.ImgRingDeplete00:setAlpha( 1 )
 				self.clipFinished( ImgRingDeplete00, {} )
+
 				AmmoWidgetHeroAbilityRingThief:completeAnimation()
 				self.AmmoWidgetHeroAbilityRingThief:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetHeroAbilityRingThief, {} )
 			end,
 			Charge = function ()
 				self:setupElementClipCounter( 6 )
+
 				local HeroRingImageFrame2 = function ( HeroRingImage, event )
 					local HeroRingImageFrame3 = function ( HeroRingImage, event )
 						local HeroRingImageFrame4 = function ( HeroRingImage, event )
@@ -1320,6 +1382,7 @@ CoD.AmmoWidget_HeroAbilityRing.new = function ( menu, controller )
 			end,
 			InUseGadgetLow = function ()
 				self:setupElementClipCounter( 7 )
+
 				local HeroRingImageFrame2 = function ( HeroRingImage, event )
 					if not event.interrupted then
 						HeroRingImage:beginAnimation( "keyframe", 709, false, false, CoD.TweenType.Linear )
@@ -1436,45 +1499,56 @@ CoD.AmmoWidget_HeroAbilityRing.new = function ( menu, controller )
 		InUseGadgetLow = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				HeroRingBG:completeAnimation()
 				self.HeroRingBG:setAlpha( 0 )
 				self.clipFinished( HeroRingBG, {} )
+
 				HeroRingImage:completeAnimation()
 				self.HeroRingImage:setAlpha( 0 )
 				self.clipFinished( HeroRingImage, {} )
+
 				HeroRingFillImage:completeAnimation()
 				self.HeroRingFillImage:setLeftRight( true, true, 12, -12 )
 				self.HeroRingFillImage:setTopBottom( true, true, 12, -12 )
 				self.HeroRingFillImage:setAlpha( 0 )
 				self.HeroRingFillImage:setImage( RegisterImage( "uie_t7_core_hud_ammowidget_heroringfill" ) )
 				self.clipFinished( HeroRingFillImage, {} )
+
 				HeroRingGold:completeAnimation()
 				self.HeroRingGold:setRGB( 0.95, 0, 0.01 )
 				self.HeroRingGold:setAlpha( 1 )
 				self.clipFinished( HeroRingGold, {} )
+
 				HeroRingGold2:completeAnimation()
 				self.HeroRingGold2:setRGB( 0.95, 0, 0.01 )
 				self.HeroRingGold2:setAlpha( 1 )
 				self.clipFinished( HeroRingGold2, {} )
+
 				HeroRingGoldWeapon:completeAnimation()
 				self.HeroRingGoldWeapon:setAlpha( 0 )
 				self.clipFinished( HeroRingGoldWeapon, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
+
 				AbilitySwirl0:completeAnimation()
 				self.AbilitySwirl0:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl0, {} )
+
 				ImgRingDeplete00:completeAnimation()
 				self.ImgRingDeplete00:setRGB( 1, 0, 0.03 )
 				self.ImgRingDeplete00:setAlpha( 1 )
 				self.clipFinished( ImgRingDeplete00, {} )
+
 				AmmoWidgetHeroAbilityRingThief:completeAnimation()
 				self.AmmoWidgetHeroAbilityRingThief:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetHeroAbilityRingThief, {} )
 			end,
 			InUseGadget = function ()
 				self:setupElementClipCounter( 5 )
+
 				local HeroRingImageFrame2 = function ( HeroRingImage, event )
 					if not event.interrupted then
 						HeroRingImage:beginAnimation( "keyframe", 349, false, false, CoD.TweenType.Bounce )
@@ -1557,6 +1631,7 @@ CoD.AmmoWidget_HeroAbilityRing.new = function ( menu, controller )
 			end,
 			Charge = function ()
 				self:setupElementClipCounter( 6 )
+
 				local HeroRingImageFrame2 = function ( HeroRingImage, event )
 					local HeroRingImageFrame3 = function ( HeroRingImage, event )
 						local HeroRingImageFrame4 = function ( HeroRingImage, event )
@@ -1832,6 +1907,7 @@ CoD.AmmoWidget_HeroAbilityRing.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.HeroRingGoldWeapon:close()
 		element.AmmoWidgetHeroAbilityRingThief:close()

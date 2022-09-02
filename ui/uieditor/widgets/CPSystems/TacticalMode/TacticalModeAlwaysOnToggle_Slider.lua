@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_Options_Slider_Item_Arrow" )
 CoD.TacticalModeAlwaysOnToggle_Slider = InheritFrom( LUI.UIElement )
 CoD.TacticalModeAlwaysOnToggle_Slider.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TacticalModeAlwaysOnToggle_Slider )
 	self.id = "TacticalModeAlwaysOnToggle_Slider"
@@ -71,18 +73,22 @@ CoD.TacticalModeAlwaysOnToggle_Slider.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				left:completeAnimation()
 				self.left:setAlpha( 1 )
 				self.clipFinished( left, {} )
+
 				right:completeAnimation()
 				self.right:setAlpha( 1 )
 				self.clipFinished( right, {} )
+
 				TextBox:completeAnimation()
 				self.TextBox:setRGB( 1, 1, 1 )
 				self.clipFinished( TextBox, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
+
 				TextBox:completeAnimation()
 				self.TextBox:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.clipFinished( TextBox, {} )
@@ -91,24 +97,30 @@ CoD.TacticalModeAlwaysOnToggle_Slider.new = function ( menu, controller )
 		ArrowsHidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				left:completeAnimation()
 				self.left:setAlpha( 0 )
 				self.clipFinished( left, {} )
+
 				right:completeAnimation()
 				self.right:setAlpha( 0 )
 				self.clipFinished( right, {} )
+
 				TextBox:completeAnimation()
 				self.TextBox:setRGB( 1, 1, 1 )
 				self.clipFinished( TextBox, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				left:completeAnimation()
 				self.left:setAlpha( 0 )
 				self.clipFinished( left, {} )
+
 				right:completeAnimation()
 				self.right:setAlpha( 0 )
 				self.clipFinished( right, {} )
+
 				TextBox:completeAnimation()
 				self.TextBox:setRGB( 1, 0.41, 0 )
 				self.clipFinished( TextBox, {} )
@@ -117,24 +129,30 @@ CoD.TacticalModeAlwaysOnToggle_Slider.new = function ( menu, controller )
 		LeftArrowHidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				left:completeAnimation()
 				self.left:setAlpha( 0 )
 				self.clipFinished( left, {} )
+
 				right:completeAnimation()
 				self.right:setAlpha( 0.8 )
 				self.clipFinished( right, {} )
+
 				TextBox:completeAnimation()
 				self.TextBox:setRGB( 1, 1, 1 )
 				self.clipFinished( TextBox, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				left:completeAnimation()
 				self.left:setAlpha( 0 )
 				self.clipFinished( left, {} )
+
 				right:completeAnimation()
 				self.right:setAlpha( 0.8 )
 				self.clipFinished( right, {} )
+
 				TextBox:completeAnimation()
 				self.TextBox:setRGB( 1, 0.41, 0 )
 				self.clipFinished( TextBox, {} )
@@ -143,30 +161,37 @@ CoD.TacticalModeAlwaysOnToggle_Slider.new = function ( menu, controller )
 		RightArrowHidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				left:completeAnimation()
 				self.left:setAlpha( 0.8 )
 				self.clipFinished( left, {} )
+
 				right:completeAnimation()
 				self.right:setAlpha( 0 )
 				self.clipFinished( right, {} )
+
 				TextBox:completeAnimation()
 				self.TextBox:setRGB( 1, 1, 1 )
 				self.clipFinished( TextBox, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				left:completeAnimation()
 				self.left:setAlpha( 0.8 )
 				self.clipFinished( left, {} )
+
 				right:completeAnimation()
 				self.right:setAlpha( 0 )
 				self.clipFinished( right, {} )
+
 				TextBox:completeAnimation()
 				self.TextBox:setRGB( 1, 0.41, 0 )
 				self.clipFinished( TextBox, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsElementInState( element, "DefaultState" ) then
 			SetElementStateByElementName( self, "left", controller, "DefaultState" )
@@ -180,6 +205,7 @@ CoD.TacticalModeAlwaysOnToggle_Slider.new = function ( menu, controller )
 			SetElementStateByElementName( self, "right", controller, "Hidden" )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.left:close()
 		element.right:close()

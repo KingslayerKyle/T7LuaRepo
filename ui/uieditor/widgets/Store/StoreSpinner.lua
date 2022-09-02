@@ -4,9 +4,11 @@
 CoD.StoreSpinner = InheritFrom( LUI.UIElement )
 CoD.StoreSpinner.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.StoreSpinner )
 	self.id = "StoreSpinner"
@@ -29,6 +31,7 @@ CoD.StoreSpinner.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				SpinnerFlipbook:completeAnimation()
 				self.SpinnerFlipbook:setAlpha( 1 )
 				self.clipFinished( SpinnerFlipbook, {} )

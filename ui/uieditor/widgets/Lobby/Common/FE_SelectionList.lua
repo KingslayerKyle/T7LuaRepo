@@ -31,6 +31,7 @@ CoD.FE_SelectionList.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_SelectionList )
 	self.id = "FE_SelectionList"
@@ -115,15 +116,18 @@ CoD.FE_SelectionList.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Image3:completeAnimation()
 				self.Image3:setAlpha( 1 )
 				self.clipFinished( Image3, {} )
+
 				selectionList:completeAnimation()
 				self.selectionList:setAlpha( 1 )
 				self.clipFinished( selectionList, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 2 )
+
 				local Image3Frame2 = function ( Image3, event )
 					local Image3Frame3 = function ( Image3, event )
 						if not event.interrupted then
@@ -177,6 +181,7 @@ CoD.FE_SelectionList.new = function ( menu, controller )
 			end,
 			Update = function ()
 				self:setupElementClipCounter( 1 )
+
 				local selectionListFrame2 = function ( selectionList, event )
 					if not event.interrupted then
 						selectionList:beginAnimation( "keyframe", 129, false, false, CoD.TweenType.Bounce )
@@ -197,12 +202,15 @@ CoD.FE_SelectionList.new = function ( menu, controller )
 		DefaultStateArabic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Image3:completeAnimation()
 				self.Image3:setAlpha( 1 )
 				self.clipFinished( Image3, {} )
+
 				selectionList:completeAnimation()
 				self.selectionList:setAlpha( 1 )
 				self.clipFinished( selectionList, {} )
+
 				ContextualHelp:completeAnimation()
 				self.ContextualHelp:setLeftRight( true, false, 0, 280 )
 				self.ContextualHelp:setTopBottom( true, false, 306, 338 )
@@ -210,6 +218,7 @@ CoD.FE_SelectionList.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 2 )
+
 				local Image3Frame2 = function ( Image3, event )
 					local Image3Frame3 = function ( Image3, event )
 						if not event.interrupted then
@@ -263,6 +272,7 @@ CoD.FE_SelectionList.new = function ( menu, controller )
 			end,
 			Update = function ()
 				self:setupElementClipCounter( 1 )
+
 				local selectionListFrame2 = function ( selectionList, event )
 					if not event.interrupted then
 						selectionList:beginAnimation( "keyframe", 129, false, false, CoD.TweenType.Bounce )
@@ -281,6 +291,7 @@ CoD.FE_SelectionList.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DefaultStateArabic",
@@ -297,6 +308,7 @@ CoD.FE_SelectionList.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.selectionList:close()
 		element.ContextualHelp:close()

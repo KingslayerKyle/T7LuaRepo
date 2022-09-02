@@ -19,9 +19,11 @@ end
 CoD.Challenges_ZM_LobbyWidget = InheritFrom( LUI.UIElement )
 CoD.Challenges_ZM_LobbyWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_ZM_LobbyWidget )
 	self.id = "Challenges_ZM_LobbyWidget"
@@ -113,18 +115,23 @@ CoD.Challenges_ZM_LobbyWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				PercentCompleteWidget:completeAnimation()
 				self.PercentCompleteWidget:setAlpha( 1 )
 				self.clipFinished( PercentCompleteWidget, {} )
+
 				CompleteImage:completeAnimation()
 				self.CompleteImage:setAlpha( 0 )
 				self.clipFinished( CompleteImage, {} )
+
 				CompletedText:completeAnimation()
 				self.CompletedText:setAlpha( 0 )
 				self.clipFinished( CompletedText, {} )
@@ -133,18 +140,23 @@ CoD.Challenges_ZM_LobbyWidget.new = function ( menu, controller )
 		Complete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 0 )
 				self.clipFinished( Title, {} )
+
 				PercentCompleteWidget:completeAnimation()
 				self.PercentCompleteWidget:setAlpha( 0 )
 				self.clipFinished( PercentCompleteWidget, {} )
+
 				CompleteImage:completeAnimation()
 				self.CompleteImage:setAlpha( 1 )
 				self.clipFinished( CompleteImage, {} )
+
 				CompletedText:completeAnimation()
 				self.CompletedText:setLeftRight( false, false, -63.5, 146.5 )
 				self.CompletedText:setTopBottom( true, false, 30.88, 55.88 )
@@ -153,6 +165,7 @@ CoD.Challenges_ZM_LobbyWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Complete",
@@ -192,6 +205,7 @@ CoD.Challenges_ZM_LobbyWidget.new = function ( menu, controller )
 			modelName = "DailyChallengeWidget.Data.progressPercentage"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PercentCompleteWidget:close()
 		element.Title:close()

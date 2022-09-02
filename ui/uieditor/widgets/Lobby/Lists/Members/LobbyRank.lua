@@ -4,9 +4,11 @@
 CoD.LobbyRank = InheritFrom( LUI.UIElement )
 CoD.LobbyRank.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyRank )
 	self.id = "LobbyRank"
@@ -83,19 +85,23 @@ CoD.LobbyRank.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				rankIcon:completeAnimation()
 				self.rankIcon:setLeftRight( true, true, 27, -2 )
 				self.rankIcon:setTopBottom( true, true, 2, -2 )
 				self.rankIcon:setAlpha( 1 )
 				self.clipFinished( rankIcon, {} )
+
 				rankText:completeAnimation()
 				self.rankText:setLeftRight( true, true, -1, -23 )
 				self.rankText:setTopBottom( true, true, 2, -2 )
 				self.rankText:setAlpha( 1 )
 				self.clipFinished( rankText, {} )
+
 				arenaRankIcon:completeAnimation()
 				self.arenaRankIcon:setAlpha( 0 )
 				self.clipFinished( arenaRankIcon, {} )
+
 				arenaRankText:completeAnimation()
 				self.arenaRankText:setAlpha( 0 )
 				self.clipFinished( arenaRankText, {} )
@@ -104,17 +110,21 @@ CoD.LobbyRank.new = function ( menu, controller )
 		ArenaRank = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				rankIcon:completeAnimation()
 				self.rankIcon:setAlpha( 0 )
 				self.clipFinished( rankIcon, {} )
+
 				rankText:completeAnimation()
 				self.rankText:setAlpha( 0 )
 				self.clipFinished( rankText, {} )
+
 				arenaRankIcon:completeAnimation()
 				self.arenaRankIcon:setLeftRight( true, true, 27, -2 )
 				self.arenaRankIcon:setTopBottom( true, true, 2, -2 )
 				self.arenaRankIcon:setAlpha( 1 )
 				self.clipFinished( arenaRankIcon, {} )
+
 				arenaRankText:completeAnimation()
 				self.arenaRankText:setAlpha( 1 )
 				self.clipFinished( arenaRankText, {} )
@@ -123,9 +133,11 @@ CoD.LobbyRank.new = function ( menu, controller )
 		RankHidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				rankIcon:completeAnimation()
 				self.rankIcon:setAlpha( 0 )
 				self.clipFinished( rankIcon, {} )
+
 				rankText:completeAnimation()
 				self.rankText:setAlpha( 0 )
 				self.clipFinished( rankText, {} )
@@ -134,9 +146,11 @@ CoD.LobbyRank.new = function ( menu, controller )
 		FreeRun = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				rankIcon:completeAnimation()
 				self.rankIcon:setAlpha( 0 )
 				self.clipFinished( rankIcon, {} )
+
 				rankText:completeAnimation()
 				self.rankText:setAlpha( 0 )
 				self.clipFinished( rankText, {} )
@@ -145,9 +159,11 @@ CoD.LobbyRank.new = function ( menu, controller )
 		Custom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				rankIcon:completeAnimation()
 				self.rankIcon:setAlpha( 0 )
 				self.clipFinished( rankIcon, {} )
+
 				rankText:completeAnimation()
 				self.rankText:setAlpha( 0 )
 				self.clipFinished( rankText, {} )
@@ -156,15 +172,18 @@ CoD.LobbyRank.new = function ( menu, controller )
 		Theater = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				rankIcon:completeAnimation()
 				self.rankIcon:setAlpha( 0 )
 				self.clipFinished( rankIcon, {} )
+
 				rankText:completeAnimation()
 				self.rankText:setAlpha( 0 )
 				self.clipFinished( rankText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ArenaRank",
@@ -221,6 +240,7 @@ CoD.LobbyRank.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNetworkMode"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.rankIcon:close()
 		element.rankText:close()

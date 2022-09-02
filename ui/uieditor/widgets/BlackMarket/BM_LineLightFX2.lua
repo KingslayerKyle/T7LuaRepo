@@ -4,9 +4,11 @@
 CoD.BM_LineLightFX2 = InheritFrom( LUI.UIElement )
 CoD.BM_LineLightFX2.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_LineLightFX2 )
 	self.id = "BM_LineLightFX2"
@@ -34,6 +36,7 @@ CoD.BM_LineLightFX2.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local f2_local0 = function ( f3_arg0, f3_arg1 )
 					local f3_local0 = function ( f4_arg0, f4_arg1 )
 						local f4_local0 = function ( f5_arg0, f5_arg1 )
@@ -98,6 +101,7 @@ CoD.BM_LineLightFX2.new = function ( menu, controller )
 				Mask:setLeftRight( true, true, -163.25, -108.37 )
 				Mask:setTopBottom( true, true, -344.82, 411.82 )
 				Mask:registerEventHandler( "transition_complete_keyframe", f2_local1 )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

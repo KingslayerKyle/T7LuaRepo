@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_PanelNoBlur" )
 CoD.scorestreaks_BoxLabel = InheritFrom( LUI.UIElement )
 CoD.scorestreaks_BoxLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.scorestreaks_BoxLabel )
 	self.id = "scorestreaks_BoxLabel"
@@ -35,6 +37,7 @@ CoD.scorestreaks_BoxLabel.new = function ( menu, controller )
 			name:setText( Engine.Localize( GetItemNameFromIndex( itemIndex ) ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( name, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrappedUp( self, element, 2, 2 )
 	end )
@@ -45,9 +48,11 @@ CoD.scorestreaks_BoxLabel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 		element.name:close()

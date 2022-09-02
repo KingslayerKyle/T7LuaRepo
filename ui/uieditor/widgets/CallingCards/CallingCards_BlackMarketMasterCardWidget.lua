@@ -14,9 +14,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_Contracts_LockBars" )
 CoD.CallingCards_BlackMarketMasterCardWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_BlackMarketMasterCardWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_BlackMarketMasterCardWidget )
 	self.id = "CallingCards_BlackMarketMasterCardWidget"
@@ -165,54 +167,70 @@ CoD.CallingCards_BlackMarketMasterCardWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				MasterCallingCardIcon:completeAnimation()
 				self.MasterCallingCardIcon:setAlpha( 1 )
 				self.clipFinished( MasterCallingCardIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				bgImage0:completeAnimation()
 				self.bgImage0:setAlpha( 0.5 )
 				self.clipFinished( bgImage0, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				bgImage0:completeAnimation()
 				self.bgImage0:setAlpha( 0 )
 				self.clipFinished( bgImage0, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
@@ -221,51 +239,67 @@ CoD.CallingCards_BlackMarketMasterCardWidget.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				MasterCallingCardIcon:completeAnimation()
 				self.MasterCallingCardIcon:setAlpha( 0 )
 				self.clipFinished( MasterCallingCardIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				bgImage0:completeAnimation()
 				self.bgImage0:setAlpha( 0 )
 				self.clipFinished( bgImage0, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				EmblemName:completeAnimation()
 				self.EmblemName:setAlpha( 0 )
 				self.clipFinished( EmblemName, {} )
+
 				EmblemSubtitle:completeAnimation()
 				self.EmblemSubtitle:setAlpha( 0 )
 				self.clipFinished( EmblemSubtitle, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
@@ -274,57 +308,74 @@ CoD.CallingCards_BlackMarketMasterCardWidget.new = function ( menu, controller )
 		BMClassified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				MasterCallingCardIcon:completeAnimation()
 				self.MasterCallingCardIcon:setAlpha( 0 )
 				self.clipFinished( MasterCallingCardIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0.2 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				bgImage0:completeAnimation()
 				self.bgImage0:setAlpha( 0.5 )
 				self.clipFinished( bgImage0, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0.65 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 1 )
 				self.clipFinished( black, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0.65 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				bgImage0:completeAnimation()
 				self.bgImage0:setAlpha( 0 )
 				self.clipFinished( bgImage0, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 1 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 1 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
@@ -333,60 +384,78 @@ CoD.CallingCards_BlackMarketMasterCardWidget.new = function ( menu, controller )
 		ContractClassified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				MasterCallingCardIcon:completeAnimation()
 				self.MasterCallingCardIcon:setAlpha( 0 )
 				self.clipFinished( MasterCallingCardIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0.2 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				bgImage0:completeAnimation()
 				self.bgImage0:setAlpha( 0.5 )
 				self.clipFinished( bgImage0, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 1 )
 				self.clipFinished( black, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0.65 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0.65 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0.65 )
 				self.clipFinished( bmContractBrandIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				bgImage0:completeAnimation()
 				self.bgImage0:setAlpha( 0 )
 				self.clipFinished( bgImage0, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 1 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 1 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 1 )
 				self.clipFinished( bmContractBrandIcon, {} )
@@ -395,63 +464,81 @@ CoD.CallingCards_BlackMarketMasterCardWidget.new = function ( menu, controller )
 		New = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				MasterCallingCardIcon:completeAnimation()
 				self.MasterCallingCardIcon:setAlpha( 1 )
 				self.clipFinished( MasterCallingCardIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				bgImage0:completeAnimation()
 				self.bgImage0:setAlpha( 0.5 )
 				self.clipFinished( bgImage0, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 1 )
 				self.clipFinished( IconNew, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				bgImage0:completeAnimation()
 				self.bgImage0:setAlpha( 0 )
 				self.clipFinished( bgImage0, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 1 )
 				self.clipFinished( IconNew, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",
@@ -502,6 +589,7 @@ CoD.CallingCards_BlackMarketMasterCardWidget.new = function ( menu, controller )
 			modelName = "isContractClassified"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG0:close()
 		element.BoxButtonLrgInactive:close()

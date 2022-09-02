@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.Fileshare_BuyExtraSlots = InheritFrom( LUI.UIElement )
 CoD.Fileshare_BuyExtraSlots.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Fileshare_BuyExtraSlots )
 	self.id = "Fileshare_BuyExtraSlots"

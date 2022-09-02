@@ -13,9 +13,11 @@ require( "ui.uieditor.widgets.MPHudWidgets.OutOfBounds.outofbounds_dotblinkwidge
 CoD.OutOfBounds = InheritFrom( LUI.UIElement )
 CoD.OutOfBounds.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.OutOfBounds )
 	self.id = "OutOfBounds"
@@ -153,60 +155,77 @@ CoD.OutOfBounds.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				outofboundsVignetteContainer:completeAnimation()
 				self.outofboundsVignetteContainer:setRGB( 0, 0, 0 )
 				self.outofboundsVignetteContainer:setAlpha( 0 )
 				self.outofboundsVignetteContainer:setScale( 1.2 )
 				self.clipFinished( outofboundsVignetteContainer, {} )
+
 				Timer:completeAnimation()
 				self.Timer:setAlpha( 0 )
 				self.clipFinished( Timer, {} )
+
 				outofboundsscrollbarwidget:completeAnimation()
 				self.outofboundsscrollbarwidget:setAlpha( 0 )
 				self.clipFinished( outofboundsscrollbarwidget, {} )
+
 				outofboundsscrollbarwidget0:completeAnimation()
 				self.outofboundsscrollbarwidget0:setAlpha( 0 )
 				self.clipFinished( outofboundsscrollbarwidget0, {} )
+
 				outofboundsscrollbarwidget1:completeAnimation()
 				self.outofboundsscrollbarwidget1:setAlpha( 0 )
 				self.clipFinished( outofboundsscrollbarwidget1, {} )
+
 				outofboundsscrollbarwidget2:completeAnimation()
 				self.outofboundsscrollbarwidget2:setAlpha( 0 )
 				self.clipFinished( outofboundsscrollbarwidget2, {} )
+
 				outofboundsarrowswidget1:completeAnimation()
 				self.outofboundsarrowswidget1:setAlpha( 0 )
 				self.clipFinished( outofboundsarrowswidget1, {} )
+
 				outofboundsarrowswidget:completeAnimation()
 				self.outofboundsarrowswidget:setAlpha( 0 )
 				self.clipFinished( outofboundsarrowswidget, {} )
+
 				outofboundsarrowswidget00:completeAnimation()
 				self.outofboundsarrowswidget00:setAlpha( 0 )
 				self.clipFinished( outofboundsarrowswidget00, {} )
+
 				outofboundsarrowswidget0:completeAnimation()
 				self.outofboundsarrowswidget0:setAlpha( 0 )
 				self.clipFinished( outofboundsarrowswidget0, {} )
+
 				outofboundssidebar:completeAnimation()
 				self.outofboundssidebar:setAlpha( 0 )
 				self.clipFinished( outofboundssidebar, {} )
+
 				outofboundssidebar0:completeAnimation()
 				self.outofboundssidebar0:setAlpha( 0 )
 				self.clipFinished( outofboundssidebar0, {} )
+
 				outofboundstimerwidget:completeAnimation()
 				self.outofboundstimerwidget:setLeftRight( false, false, -51.5, 55.5 )
 				self.outofboundstimerwidget:setTopBottom( false, false, -108, -60 )
 				self.outofboundstimerwidget:setAlpha( 0 )
 				self.clipFinished( outofboundstimerwidget, {} )
+
 				outofboundstimerframedots:completeAnimation()
 				self.outofboundstimerframedots:setAlpha( 0 )
 				self.clipFinished( outofboundstimerframedots, {} )
+
 				outofboundswarningboxwidget:completeAnimation()
 				self.outofboundswarningboxwidget:setAlpha( 0 )
 				self.clipFinished( outofboundswarningboxwidget, {} )
+
 				outofboundsdotblinkwidget:completeAnimation()
 				self.outofboundsdotblinkwidget:setLeftRight( false, false, -2.5, 5.5 )
 				self.outofboundsdotblinkwidget:setTopBottom( false, false, -172, -164 )
 				self.outofboundsdotblinkwidget:setAlpha( 0 )
 				self.clipFinished( outofboundsdotblinkwidget, {} )
+
 				outofboundsdotblinkwidget0:completeAnimation()
 				self.outofboundsdotblinkwidget0:setLeftRight( false, false, -2.5, 5.5 )
 				self.outofboundsdotblinkwidget0:setTopBottom( false, false, 137, 145 )
@@ -217,6 +236,7 @@ CoD.OutOfBounds.new = function ( menu, controller )
 		IsOutOfBounds = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				outofboundsVignetteContainer:completeAnimation()
 				self.outofboundsVignetteContainer:setLeftRight( true, true, 0, 0 )
 				self.outofboundsVignetteContainer:setTopBottom( true, true, 0, 0 )
@@ -224,81 +244,97 @@ CoD.OutOfBounds.new = function ( menu, controller )
 				self.outofboundsVignetteContainer:setAlpha( 1 )
 				self.outofboundsVignetteContainer:setScale( 1.2 )
 				self.clipFinished( outofboundsVignetteContainer, {} )
+
 				Timer:completeAnimation()
 				self.Timer:setLeftRight( false, false, -51.5, 55.5 )
 				self.Timer:setTopBottom( false, false, -108, -60 )
 				self.Timer:setAlpha( 0 )
 				self.clipFinished( Timer, {} )
+
 				outofboundsscrollbarwidget:completeAnimation()
 				self.outofboundsscrollbarwidget:setLeftRight( false, false, 54.5, 302.88 )
 				self.outofboundsscrollbarwidget:setTopBottom( false, false, -101.06, -61 )
 				self.outofboundsscrollbarwidget:setAlpha( 1 )
 				self.clipFinished( outofboundsscrollbarwidget, {} )
+
 				outofboundsscrollbarwidget0:completeAnimation()
 				self.outofboundsscrollbarwidget0:setLeftRight( false, false, -300.88, -52.5 )
 				self.outofboundsscrollbarwidget0:setTopBottom( false, false, -101.06, -61 )
 				self.outofboundsscrollbarwidget0:setAlpha( 1 )
 				self.clipFinished( outofboundsscrollbarwidget0, {} )
+
 				outofboundsscrollbarwidget1:completeAnimation()
 				self.outofboundsscrollbarwidget1:setLeftRight( false, false, 53.5, 301.88 )
 				self.outofboundsscrollbarwidget1:setTopBottom( false, false, 55.94, 96 )
 				self.outofboundsscrollbarwidget1:setAlpha( 1 )
 				self.clipFinished( outofboundsscrollbarwidget1, {} )
+
 				outofboundsscrollbarwidget2:completeAnimation()
 				self.outofboundsscrollbarwidget2:setLeftRight( false, false, -299.88, -51.5 )
 				self.outofboundsscrollbarwidget2:setTopBottom( false, false, 55.94, 96 )
 				self.outofboundsscrollbarwidget2:setAlpha( 1 )
 				self.clipFinished( outofboundsscrollbarwidget2, {} )
+
 				outofboundsarrowswidget1:completeAnimation()
 				self.outofboundsarrowswidget1:setLeftRight( false, false, 295.88, 415.1 )
 				self.outofboundsarrowswidget1:setTopBottom( false, false, -113, 105 )
 				self.outofboundsarrowswidget1:setAlpha( 0.4 )
 				self.outofboundsarrowswidget1:setZoom( -30 )
 				self.clipFinished( outofboundsarrowswidget1, {} )
+
 				outofboundsarrowswidget:completeAnimation()
 				self.outofboundsarrowswidget:setLeftRight( false, false, 295.88, 415.1 )
 				self.outofboundsarrowswidget:setTopBottom( false, false, -113, 105 )
 				self.outofboundsarrowswidget:setAlpha( 1 )
 				self.clipFinished( outofboundsarrowswidget, {} )
+
 				outofboundsarrowswidget00:completeAnimation()
 				self.outofboundsarrowswidget00:setLeftRight( false, false, -411.93, -292.72 )
 				self.outofboundsarrowswidget00:setTopBottom( false, false, -113, 105 )
 				self.outofboundsarrowswidget00:setAlpha( 0.4 )
 				self.outofboundsarrowswidget00:setZoom( -30 )
 				self.clipFinished( outofboundsarrowswidget00, {} )
+
 				outofboundsarrowswidget0:completeAnimation()
 				self.outofboundsarrowswidget0:setLeftRight( false, false, -411.93, -292.72 )
 				self.outofboundsarrowswidget0:setTopBottom( false, false, -113, 105 )
 				self.outofboundsarrowswidget0:setAlpha( 1 )
 				self.clipFinished( outofboundsarrowswidget0, {} )
+
 				outofboundssidebar:completeAnimation()
 				self.outofboundssidebar:setLeftRight( false, false, 391.58, 654.83 )
 				self.outofboundssidebar:setTopBottom( false, false, -17.31, 13.5 )
 				self.outofboundssidebar:setAlpha( 1 )
 				self.clipFinished( outofboundssidebar, {} )
+
 				outofboundssidebar0:completeAnimation()
 				self.outofboundssidebar0:setLeftRight( false, false, -649.67, -386.42 )
 				self.outofboundssidebar0:setTopBottom( false, false, -17.31, 13.5 )
 				self.outofboundssidebar0:setAlpha( 1 )
 				self.clipFinished( outofboundssidebar0, {} )
+
 				outofboundstimerwidget:completeAnimation()
 				self.outofboundstimerwidget:setLeftRight( false, false, -51.5, 55.5 )
 				self.outofboundstimerwidget:setTopBottom( false, false, -108, -60 )
 				self.outofboundstimerwidget:setAlpha( 1 )
 				self.clipFinished( outofboundstimerwidget, {} )
+
 				outofboundstimerframedots:completeAnimation()
 				self.outofboundstimerframedots:setAlpha( 1 )
 				self.clipFinished( outofboundstimerframedots, {} )
+
 				outofboundswarningboxwidget:completeAnimation()
 				self.outofboundswarningboxwidget:setLeftRight( false, false, -331.38, 333.38 )
 				self.outofboundswarningboxwidget:setTopBottom( false, false, -97.23, 92.23 )
 				self.outofboundswarningboxwidget:setAlpha( 1 )
 				self.clipFinished( outofboundswarningboxwidget, {} )
+
 				outofboundsdotblinkwidget:completeAnimation()
 				self.outofboundsdotblinkwidget:setLeftRight( false, false, -2.5, 5.5 )
 				self.outofboundsdotblinkwidget:setTopBottom( false, false, -172, -164 )
 				self.outofboundsdotblinkwidget:setAlpha( 1 )
 				self.clipFinished( outofboundsdotblinkwidget, {} )
+
 				outofboundsdotblinkwidget0:completeAnimation()
 				self.outofboundsdotblinkwidget0:setLeftRight( false, false, -2.5, 5.5 )
 				self.outofboundsdotblinkwidget0:setTopBottom( false, false, 137, 145 )
@@ -307,6 +343,7 @@ CoD.OutOfBounds.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.outofboundsVignetteContainer:close()
 		element.outofboundsscrollbarwidget:close()

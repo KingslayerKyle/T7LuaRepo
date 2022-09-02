@@ -4,9 +4,11 @@
 CoD.CallingCards_100Percent = InheritFrom( LUI.UIElement )
 CoD.CallingCards_100Percent.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_100Percent )
 	self.id = "CallingCards_100Percent"
@@ -243,6 +245,7 @@ CoD.CallingCards_100Percent.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 25 )
+
 				local bgFrame2 = function ( bg, event )
 					local bgFrame3 = function ( bg, event )
 						local bgFrame4 = function ( bg, event )
@@ -1821,6 +1824,7 @@ CoD.CallingCards_100Percent.new = function ( menu, controller )
 				Glow:beginAnimation( "keyframe", 889, false, false, CoD.TweenType.Linear )
 				Glow:setAlpha( 0 )
 				Glow:registerEventHandler( "transition_complete_keyframe", f2_local24 )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

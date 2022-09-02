@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.Customization.CACGenericButton" )
 CoD.systemOverlay_DailyChallengeWarning = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_DailyChallengeWarning.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_DailyChallengeWarning )
 	self.id = "systemOverlay_DailyChallengeWarning"
@@ -137,12 +139,15 @@ CoD.systemOverlay_DailyChallengeWarning.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				DailyChallenge:completeAnimation()
 				self.DailyChallenge:setAlpha( 1 )
 				self.clipFinished( DailyChallenge, {} )
+
 				ChallengeDescription:completeAnimation()
 				self.ChallengeDescription:setAlpha( 1 )
 				self.clipFinished( ChallengeDescription, {} )
+
 				ChallengeButtonlist:completeAnimation()
 				self.ChallengeButtonlist:setAlpha( 1 )
 				self.clipFinished( ChallengeButtonlist, {} )
@@ -157,6 +162,7 @@ CoD.systemOverlay_DailyChallengeWarning.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ChallengeButtonlist:close()
 		element.DailyChallenge:close()

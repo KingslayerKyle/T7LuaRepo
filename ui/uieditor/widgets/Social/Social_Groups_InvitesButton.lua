@@ -13,9 +13,11 @@ require( "ui.uieditor.widgets.Groups.GroupEmblemWidget" )
 CoD.Social_Groups_InvitesButton = InheritFrom( LUI.UIElement )
 CoD.Social_Groups_InvitesButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_Groups_InvitesButton )
 	self.id = "Social_Groups_InvitesButton"
@@ -216,84 +218,106 @@ CoD.Social_Groups_InvitesButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				Socialbackground00:completeAnimation()
 				self.Socialbackground00:setLeftRight( true, false, 97.47, 374 )
 				self.Socialbackground00:setTopBottom( true, false, 0, 60 )
 				self.clipFinished( Socialbackground00, {} )
+
 				Socialbackground000:completeAnimation()
 				self.Socialbackground000:setLeftRight( true, false, 0, 96 )
 				self.Socialbackground000:setTopBottom( true, false, 0, 59.75 )
 				self.clipFinished( Socialbackground000, {} )
+
 				SentByGamertag:completeAnimation()
 				self.SentByGamertag:setAlpha( 1 )
 				self.clipFinished( SentByGamertag, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, -2, 2 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, -2, 2 )
 				self.FocusBarB:setTopBottom( false, true, 0, 4 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setLeftRight( true, true, -12, 7 )
 				self.glitch:setTopBottom( true, false, -8.75, 4.75 )
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setLeftRight( true, true, -8.5, 8.5 )
 				self.glitch2:setTopBottom( false, true, -6, 9 )
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				pixel:completeAnimation()
 				self.pixel:setLeftRight( false, true, -5, 3.5 )
 				self.pixel:setTopBottom( true, false, -3, 5.5 )
 				self.clipFinished( pixel, {} )
+
 				pixel0:completeAnimation()
 				self.pixel0:setLeftRight( false, true, -5, 3.5 )
 				self.pixel0:setTopBottom( false, true, -5.5, 3 )
 				self.clipFinished( pixel0, {} )
+
 				pixel1:completeAnimation()
 				self.pixel1:setLeftRight( false, true, -378.25, -369.75 )
 				self.pixel1:setTopBottom( true, false, -4, 4.5 )
 				self.clipFinished( pixel1, {} )
+
 				pixel00:completeAnimation()
 				self.pixel00:setLeftRight( false, true, -378.25, -369.75 )
 				self.pixel00:setTopBottom( false, true, -4.5, 4 )
 				self.clipFinished( pixel00, {} )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0.2 )
 				self.clipFinished( BlackTint, {} )
+
 				TimeSent:completeAnimation()
 				self.TimeSent:setAlpha( 0 )
 				self.clipFinished( TimeSent, {} )
+
 				GroupName:completeAnimation()
 				self.GroupName:setAlpha( 1 )
 				self.clipFinished( GroupName, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 1 )
 				self.clipFinished( GroupEmblemWidget, {} )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 0 )
 				self.clipFinished( Spinner, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
@@ -585,39 +609,50 @@ CoD.Social_Groups_InvitesButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				SentByGamertag:completeAnimation()
 				self.SentByGamertag:setAlpha( 1 )
 				self.clipFinished( SentByGamertag, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0 )
 				self.clipFinished( BlackTint, {} )
+
 				GroupName:completeAnimation()
 				self.GroupName:setAlpha( 1 )
 				self.clipFinished( GroupName, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 1 )
 				self.clipFinished( GroupEmblemWidget, {} )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 0 )
 				self.clipFinished( Spinner, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FocusBarTFrame2 = function ( FocusBarT, event )
 					local FocusBarTFrame3 = function ( FocusBarT, event )
 						local FocusBarTFrame4 = function ( FocusBarT, event )
@@ -932,84 +967,106 @@ CoD.Social_Groups_InvitesButton.new = function ( menu, controller )
 		Loading = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				Socialbackground00:completeAnimation()
 				self.Socialbackground00:setLeftRight( true, false, 97.47, 374 )
 				self.Socialbackground00:setTopBottom( true, false, 0, 60 )
 				self.clipFinished( Socialbackground00, {} )
+
 				Socialbackground000:completeAnimation()
 				self.Socialbackground000:setLeftRight( true, false, 0, 96 )
 				self.Socialbackground000:setTopBottom( true, false, 0, 59.75 )
 				self.clipFinished( Socialbackground000, {} )
+
 				SentByGamertag:completeAnimation()
 				self.SentByGamertag:setAlpha( 0 )
 				self.clipFinished( SentByGamertag, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, -2, 2 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, -2, 2 )
 				self.FocusBarB:setTopBottom( false, true, 0, 4 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setLeftRight( true, true, -12, 7 )
 				self.glitch:setTopBottom( true, false, -8.75, 4.75 )
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setLeftRight( true, true, -8.5, 8.5 )
 				self.glitch2:setTopBottom( false, true, -6, 9 )
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				pixel:completeAnimation()
 				self.pixel:setLeftRight( false, true, -5, 3.5 )
 				self.pixel:setTopBottom( true, false, -3, 5.5 )
 				self.clipFinished( pixel, {} )
+
 				pixel0:completeAnimation()
 				self.pixel0:setLeftRight( false, true, -5, 3.5 )
 				self.pixel0:setTopBottom( false, true, -5.5, 3 )
 				self.clipFinished( pixel0, {} )
+
 				pixel1:completeAnimation()
 				self.pixel1:setLeftRight( false, true, -378.25, -369.75 )
 				self.pixel1:setTopBottom( true, false, -4, 4.5 )
 				self.clipFinished( pixel1, {} )
+
 				pixel00:completeAnimation()
 				self.pixel00:setLeftRight( false, true, -378.25, -369.75 )
 				self.pixel00:setTopBottom( false, true, -4.5, 4 )
 				self.clipFinished( pixel00, {} )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0.2 )
 				self.clipFinished( BlackTint, {} )
+
 				TimeSent:completeAnimation()
 				self.TimeSent:setAlpha( 0 )
 				self.clipFinished( TimeSent, {} )
+
 				GroupName:completeAnimation()
 				self.GroupName:setAlpha( 0 )
 				self.clipFinished( GroupName, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 0 )
 				self.clipFinished( GroupEmblemWidget, {} )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 1 )
 				self.clipFinished( Spinner, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
@@ -1301,39 +1358,50 @@ CoD.Social_Groups_InvitesButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				SentByGamertag:completeAnimation()
 				self.SentByGamertag:setAlpha( 0 )
 				self.clipFinished( SentByGamertag, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0 )
 				self.clipFinished( BlackTint, {} )
+
 				GroupName:completeAnimation()
 				self.GroupName:setAlpha( 0 )
 				self.clipFinished( GroupName, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 0 )
 				self.clipFinished( GroupEmblemWidget, {} )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 1 )
 				self.clipFinished( Spinner, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FocusBarTFrame2 = function ( FocusBarT, event )
 					local FocusBarTFrame3 = function ( FocusBarT, event )
 						local FocusBarTFrame4 = function ( FocusBarT, event )
@@ -1646,6 +1714,7 @@ CoD.Social_Groups_InvitesButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Loading",
@@ -1670,6 +1739,7 @@ CoD.Social_Groups_InvitesButton.new = function ( menu, controller )
 			modelName = "groups.fetchGroupProfilesInProgress"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveDiag:close()
 		element.BoxButtonLrgInactive0:close()

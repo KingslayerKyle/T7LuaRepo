@@ -4,9 +4,11 @@
 CoD.Promo_Ribbon = InheritFrom( LUI.UIElement )
 CoD.Promo_Ribbon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Promo_Ribbon )
 	self.id = "Promo_Ribbon"
@@ -48,6 +50,7 @@ CoD.Promo_Ribbon.new = function ( menu, controller )
 	Text:setLetterSpacing( 1.3 )
 	Text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	Text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( Text, "setText", function ( element, controller )
 		ScaleWidgetToLabelLeftJustify( self, element, 10 )
 	end )
@@ -58,6 +61,7 @@ CoD.Promo_Ribbon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

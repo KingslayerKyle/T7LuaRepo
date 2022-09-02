@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_BackLine" )
 CoD.Pregame_TimerOverlay = InheritFrom( LUI.UIElement )
 CoD.Pregame_TimerOverlay.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_TimerOverlay )
 	self.id = "Pregame_TimerOverlay"
@@ -53,6 +55,7 @@ CoD.Pregame_TimerOverlay.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PregameTimer:completeAnimation()
 				self.PregameTimer:setAlpha( 0 )
 				self.clipFinished( PregameTimer, {} )
@@ -61,15 +64,19 @@ CoD.Pregame_TimerOverlay.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				fxGlitch1600:completeAnimation()
 				self.fxGlitch1600:setAlpha( 0 )
 				self.clipFinished( fxGlitch1600, {} )
+
 				PregameTimer:completeAnimation()
 				self.PregameTimer:setAlpha( 0 )
 				self.clipFinished( PregameTimer, {} )
+
 				LineBottom:completeAnimation()
 				self.LineBottom:setAlpha( 0 )
 				self.clipFinished( LineBottom, {} )
+
 				LineTop:completeAnimation()
 				self.LineTop:setAlpha( 0 )
 				self.clipFinished( LineTop, {} )
@@ -78,6 +85,7 @@ CoD.Pregame_TimerOverlay.new = function ( menu, controller )
 		ChooseClass = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local PregameTimerFrame2 = function ( PregameTimer, event )
 					if not event.interrupted then
 						PregameTimer:beginAnimation( "keyframe", 400, true, true, CoD.TweenType.Linear )
@@ -98,6 +106,7 @@ CoD.Pregame_TimerOverlay.new = function ( menu, controller )
 		CustomClass = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PregameTimer:completeAnimation()
 				self.PregameTimer:setAlpha( 1 )
 				self.clipFinished( PregameTimer, {} )
@@ -106,6 +115,7 @@ CoD.Pregame_TimerOverlay.new = function ( menu, controller )
 		WeaponSelect = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PregameTimer:completeAnimation()
 				self.PregameTimer:setAlpha( 1 )
 				self.clipFinished( PregameTimer, {} )
@@ -114,6 +124,7 @@ CoD.Pregame_TimerOverlay.new = function ( menu, controller )
 		AttachmentSelect = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PregameTimer:completeAnimation()
 				self.PregameTimer:setAlpha( 1 )
 				self.clipFinished( PregameTimer, {} )
@@ -122,6 +133,7 @@ CoD.Pregame_TimerOverlay.new = function ( menu, controller )
 		EquipmentSelect = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PregameTimer:completeAnimation()
 				self.PregameTimer:setAlpha( 1 )
 				self.clipFinished( PregameTimer, {} )
@@ -130,6 +142,7 @@ CoD.Pregame_TimerOverlay.new = function ( menu, controller )
 		PerkSelect = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PregameTimer:completeAnimation()
 				self.PregameTimer:setAlpha( 1 )
 				self.clipFinished( PregameTimer, {} )
@@ -138,6 +151,7 @@ CoD.Pregame_TimerOverlay.new = function ( menu, controller )
 		WildcardSelect = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PregameTimer:completeAnimation()
 				self.PregameTimer:setAlpha( 1 )
 				self.clipFinished( PregameTimer, {} )
@@ -146,6 +160,7 @@ CoD.Pregame_TimerOverlay.new = function ( menu, controller )
 		OverCapacity = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PregameTimer:completeAnimation()
 				self.PregameTimer:setAlpha( 1 )
 				self.clipFinished( PregameTimer, {} )
@@ -154,6 +169,7 @@ CoD.Pregame_TimerOverlay.new = function ( menu, controller )
 		CharacterSelect = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PregameTimer:completeAnimation()
 				self.PregameTimer:setAlpha( 1 )
 				self.clipFinished( PregameTimer, {} )
@@ -162,6 +178,7 @@ CoD.Pregame_TimerOverlay.new = function ( menu, controller )
 		ScorestreakSelect = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PregameTimer:completeAnimation()
 				self.PregameTimer:setAlpha( 1 )
 				self.clipFinished( PregameTimer, {} )
@@ -170,6 +187,7 @@ CoD.Pregame_TimerOverlay.new = function ( menu, controller )
 		BannedContent = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local fxGlitch1600Frame2 = function ( fxGlitch1600, event )
 					if not event.interrupted then
 						fxGlitch1600:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -189,16 +207,19 @@ CoD.Pregame_TimerOverlay.new = function ( menu, controller )
 				self.fxGlitch1600:setTopBottom( true, false, 89.5, 225 )
 				self.fxGlitch1600:setAlpha( 0 )
 				fxGlitch1600Frame2( fxGlitch1600, {} )
+
 				PregameTimer:completeAnimation()
 				self.PregameTimer:setLeftRight( true, false, 144, 310 )
 				self.PregameTimer:setTopBottom( true, false, 120, 230 )
 				self.PregameTimer:setAlpha( 1 )
 				self.clipFinished( PregameTimer, {} )
+
 				LineBottom:completeAnimation()
 				self.LineBottom:setLeftRight( true, false, 186.5, 218.5 )
 				self.LineBottom:setTopBottom( true, false, 234.89, 237.89 )
 				self.LineBottom:setAlpha( 1 )
 				self.clipFinished( LineBottom, {} )
+
 				LineTop:completeAnimation()
 				self.LineTop:setLeftRight( true, false, 186.5, 218.5 )
 				self.LineTop:setTopBottom( true, false, 81.89, 84.89 )
@@ -209,6 +230,7 @@ CoD.Pregame_TimerOverlay.new = function ( menu, controller )
 		PregameVote = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PregameTimer:completeAnimation()
 				self.PregameTimer:setLeftRight( true, false, 65, 186 )
 				self.PregameTimer:setTopBottom( true, false, 168, 248 )
@@ -219,12 +241,14 @@ CoD.Pregame_TimerOverlay.new = function ( menu, controller )
 		ClassOptions = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PregameTimer:completeAnimation()
 				self.PregameTimer:setAlpha( 1 )
 				self.clipFinished( PregameTimer, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -319,6 +343,7 @@ CoD.Pregame_TimerOverlay.new = function ( menu, controller )
 			modelName = "lobbyRoot.Pregame.state"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.fxGlitch1600:close()
 		element.PregameTimer:close()

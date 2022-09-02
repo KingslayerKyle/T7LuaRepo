@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.BlackmarketIndividualRewardItem = InheritFrom( LUI.UIElement )
 CoD.BlackmarketIndividualRewardItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BlackmarketIndividualRewardItem )
 	self.id = "BlackmarketIndividualRewardItem"
@@ -90,6 +92,7 @@ CoD.BlackmarketIndividualRewardItem.new = function ( menu, controller )
 			modelName = "rewardDesc"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Border:close()
 		element.EarnedKeys:close()

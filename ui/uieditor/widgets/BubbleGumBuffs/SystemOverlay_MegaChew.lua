@@ -16,6 +16,7 @@ local PreLoadFunc = function ( self, controller )
 end
 
 local PostLoadFunc = function ( self, controller, menu )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if controller == "HorizontalList" then
 			CoD.SwapFocusableElements( controller, self.optionsVertical, self.optionsHorizontal )
@@ -26,9 +27,11 @@ end
 CoD.SystemOverlay_MegaChew = InheritFrom( LUI.UIElement )
 CoD.SystemOverlay_MegaChew.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SystemOverlay_MegaChew )
 	self.id = "SystemOverlay_MegaChew"
@@ -448,14 +451,17 @@ CoD.SystemOverlay_MegaChew.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		HorizontalList = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				optionsVertical:completeAnimation()
 				self.optionsVertical:setAlpha( 0 )
 				self.clipFinished( optionsVertical, {} )
+
 				optionsHorizontal:completeAnimation()
 				self.optionsHorizontal:setLeftRight( true, false, 422, 947 )
 				self.optionsHorizontal:setTopBottom( true, false, 85, 275 )
@@ -466,12 +472,14 @@ CoD.SystemOverlay_MegaChew.new = function ( menu, controller )
 		Purchasing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ZMDiviniumAnimFill:completeAnimation()
 				self.ZMDiviniumAnimFill:setAlpha( 1 )
 				self.clipFinished( ZMDiviniumAnimFill, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HorizontalList",
@@ -496,6 +504,7 @@ CoD.SystemOverlay_MegaChew.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.text:close()
 		element.optionsVertical:close()

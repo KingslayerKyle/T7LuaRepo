@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.cac_WpnLvl" )
 CoD.WeaponBuildKitsVariantAttachmentList = InheritFrom( LUI.UIElement )
 CoD.WeaponBuildKitsVariantAttachmentList.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponBuildKitsVariantAttachmentList )
 	self.id = "WeaponBuildKitsVariantAttachmentList"
@@ -78,6 +80,7 @@ CoD.WeaponBuildKitsVariantAttachmentList.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.variantAttachments:close()
 		element.cacWpnLvl:close()

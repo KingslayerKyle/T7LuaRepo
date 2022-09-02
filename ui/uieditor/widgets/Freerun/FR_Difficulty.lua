@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_Identity_Subtitle_BG" )
 CoD.FR_Difficulty = InheritFrom( LUI.UIElement )
 CoD.FR_Difficulty.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FR_Difficulty )
 	self.id = "FR_Difficulty"
@@ -32,6 +34,7 @@ CoD.FR_Difficulty.new = function ( menu, controller )
 	SubTitle:setTTF( "fonts/RefrigeratorDeluxe-Regular.ttf" )
 	SubTitle:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	SubTitle:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( SubTitle, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 2 )
 	end )
@@ -42,9 +45,11 @@ CoD.FR_Difficulty.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				StartMenuIdentitySubtitleBG00:completeAnimation()
 				self.StartMenuIdentitySubtitleBG00:setAlpha( 0 )
 				self.clipFinished( StartMenuIdentitySubtitleBG00, {} )
+
 				SubTitle:completeAnimation()
 				self.SubTitle:setAlpha( 0 )
 				self.clipFinished( SubTitle, {} )
@@ -53,15 +58,18 @@ CoD.FR_Difficulty.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				StartMenuIdentitySubtitleBG00:completeAnimation()
 				self.StartMenuIdentitySubtitleBG00:setAlpha( 0.55 )
 				self.clipFinished( StartMenuIdentitySubtitleBG00, {} )
+
 				SubTitle:completeAnimation()
 				self.SubTitle:setAlpha( 1 )
 				self.clipFinished( SubTitle, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -78,6 +86,7 @@ CoD.FR_Difficulty.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuIdentitySubtitleBG00:close()
 	end )

@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.HUD.ScoreInfo.ScoreInfo_RdTriCont" )
 CoD.RoundsContainer = InheritFrom( LUI.UIElement )
 CoD.RoundsContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RoundsContainer )
 	self.id = "RoundsContainer"
@@ -94,15 +96,19 @@ CoD.RoundsContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Rounds:completeAnimation()
 				self.Rounds:setAlpha( 0 )
 				self.clipFinished( Rounds, {} )
+
 				RoundsUnlimited:completeAnimation()
 				self.RoundsUnlimited:setAlpha( 0 )
 				self.clipFinished( RoundsUnlimited, {} )
+
 				Overtime:completeAnimation()
 				self.Overtime:setAlpha( 0 )
 				self.clipFinished( Overtime, {} )
+
 				TriCont:completeAnimation()
 				self.TriCont:setAlpha( 0 )
 				self.clipFinished( TriCont, {} )
@@ -111,15 +117,19 @@ CoD.RoundsContainer.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Rounds:completeAnimation()
 				self.Rounds:setAlpha( 0 )
 				self.clipFinished( Rounds, {} )
+
 				RoundsUnlimited:completeAnimation()
 				self.RoundsUnlimited:setAlpha( 0 )
 				self.clipFinished( RoundsUnlimited, {} )
+
 				Overtime:completeAnimation()
 				self.Overtime:setAlpha( 0 )
 				self.clipFinished( Overtime, {} )
+
 				TriCont:completeAnimation()
 				self.TriCont:setAlpha( 0 )
 				self.clipFinished( TriCont, {} )
@@ -128,15 +138,19 @@ CoD.RoundsContainer.new = function ( menu, controller )
 		Overtime = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Rounds:completeAnimation()
 				self.Rounds:setAlpha( 0 )
 				self.clipFinished( Rounds, {} )
+
 				RoundsUnlimited:completeAnimation()
 				self.RoundsUnlimited:setAlpha( 0 )
 				self.clipFinished( RoundsUnlimited, {} )
+
 				Overtime:completeAnimation()
 				self.Overtime:setAlpha( 1 )
 				self.clipFinished( Overtime, {} )
+
 				TriCont:completeAnimation()
 				self.TriCont:setAlpha( 0 )
 				self.clipFinished( TriCont, {} )
@@ -145,18 +159,23 @@ CoD.RoundsContainer.new = function ( menu, controller )
 		Infected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Games:completeAnimation()
 				self.Games:setAlpha( 1 )
 				self.clipFinished( Games, {} )
+
 				Rounds:completeAnimation()
 				self.Rounds:setAlpha( 0 )
 				self.clipFinished( Rounds, {} )
+
 				RoundsUnlimited:completeAnimation()
 				self.RoundsUnlimited:setAlpha( 0 )
 				self.clipFinished( RoundsUnlimited, {} )
+
 				Overtime:completeAnimation()
 				self.Overtime:setAlpha( 0 )
 				self.clipFinished( Overtime, {} )
+
 				TriCont:completeAnimation()
 				self.TriCont:setAlpha( 0 )
 				self.clipFinished( TriCont, {} )
@@ -165,15 +184,19 @@ CoD.RoundsContainer.new = function ( menu, controller )
 		RoundBasedNoLimit = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Rounds:completeAnimation()
 				self.Rounds:setAlpha( 1 )
 				self.clipFinished( Rounds, {} )
+
 				RoundsUnlimited:completeAnimation()
 				self.RoundsUnlimited:setAlpha( 0 )
 				self.clipFinished( RoundsUnlimited, {} )
+
 				Overtime:completeAnimation()
 				self.Overtime:setAlpha( 0 )
 				self.clipFinished( Overtime, {} )
+
 				TriCont:completeAnimation()
 				self.TriCont:setAlpha( 0 )
 				self.clipFinished( TriCont, {} )
@@ -182,21 +205,26 @@ CoD.RoundsContainer.new = function ( menu, controller )
 		RoundBasedLimitedRounds = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Rounds:completeAnimation()
 				self.Rounds:setAlpha( 1 )
 				self.clipFinished( Rounds, {} )
+
 				RoundsUnlimited:completeAnimation()
 				self.RoundsUnlimited:setAlpha( 0 )
 				self.clipFinished( RoundsUnlimited, {} )
+
 				Overtime:completeAnimation()
 				self.Overtime:setAlpha( 0 )
 				self.clipFinished( Overtime, {} )
+
 				TriCont:completeAnimation()
 				self.TriCont:setAlpha( 1 )
 				self.clipFinished( TriCont, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Games:close()
 		element.Rounds:close()

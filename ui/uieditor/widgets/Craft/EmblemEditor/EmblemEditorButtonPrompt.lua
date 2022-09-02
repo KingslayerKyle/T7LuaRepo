@@ -4,9 +4,11 @@
 CoD.EmblemEditorButtonPrompt = InheritFrom( LUI.UIElement )
 CoD.EmblemEditorButtonPrompt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.EmblemEditorButtonPrompt )
 	self.id = "EmblemEditorButtonPrompt"
@@ -32,20 +34,24 @@ CoD.EmblemEditorButtonPrompt.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setAlpha( 1 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setAlpha( 1 )
 				self.clipFinished( label, {} )
 			end,
 			Hide = function ()
 				self:setupElementClipCounter( 2 )
+
 				buttonPromptImage:completeAnimation()
 				self.buttonPromptImage:setLeftRight( true, false, 0, 32 )
 				self.buttonPromptImage:setTopBottom( true, false, 0, 31 )
 				self.buttonPromptImage:setAlpha( 0 )
 				self.clipFinished( buttonPromptImage, {} )
+
 				label:completeAnimation()
 				self.label:setAlpha( 0 )
 				self.clipFinished( label, {} )

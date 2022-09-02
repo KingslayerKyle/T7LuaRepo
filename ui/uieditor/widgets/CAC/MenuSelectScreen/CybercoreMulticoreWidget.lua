@@ -4,9 +4,11 @@
 CoD.CybercoreMulticoreWidget = InheritFrom( LUI.UIElement )
 CoD.CybercoreMulticoreWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CybercoreMulticoreWidget )
 	self.id = "CybercoreMulticoreWidget"
@@ -37,11 +39,13 @@ CoD.CybercoreMulticoreWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				multicoreText:completeAnimation()
 				self.multicoreText:setLeftRight( false, true, -67, -3 )
 				self.multicoreText:setTopBottom( true, false, 0, 18 )
@@ -49,6 +53,7 @@ CoD.CybercoreMulticoreWidget.new = function ( menu, controller )
 				self.multicoreText:setText( Engine.Localize( "MENU_DEFAULT" ) )
 				self.multicoreText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 				self.clipFinished( multicoreText, {} )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 1 )
 				self.clipFinished( icon, {} )

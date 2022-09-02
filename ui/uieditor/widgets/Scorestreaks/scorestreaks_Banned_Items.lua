@@ -4,9 +4,11 @@
 CoD.scorestreaks_Banned_Items = InheritFrom( LUI.UIElement )
 CoD.scorestreaks_Banned_Items.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.scorestreaks_Banned_Items )
 	self.id = "scorestreaks_Banned_Items"
@@ -37,9 +39,11 @@ CoD.scorestreaks_Banned_Items.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				textRightAlign:completeAnimation()
 				self.textRightAlign:setAlpha( 0 )
 				self.clipFinished( textRightAlign, {} )
+
 				RestrictedWarning:completeAnimation()
 				self.RestrictedWarning:setAlpha( 0 )
 				self.clipFinished( RestrictedWarning, {} )
@@ -48,15 +52,18 @@ CoD.scorestreaks_Banned_Items.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				textRightAlign:completeAnimation()
 				self.textRightAlign:setAlpha( 1 )
 				self.clipFinished( textRightAlign, {} )
+
 				RestrictedWarning:completeAnimation()
 				self.RestrictedWarning:setAlpha( 1 )
 				self.clipFinished( RestrictedWarning, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

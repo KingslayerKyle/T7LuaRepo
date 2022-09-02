@@ -4,9 +4,11 @@
 CoD.onOffImage = InheritFrom( LUI.UIElement )
 CoD.onOffImage.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.onOffImage )
 	self.id = "onOffImage"
@@ -24,6 +26,7 @@ CoD.onOffImage.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				image:completeAnimation()
 				self.image:setAlpha( 0 )
 				self.clipFinished( image, {} )
@@ -32,6 +35,7 @@ CoD.onOffImage.new = function ( menu, controller )
 		On = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				image:completeAnimation()
 				self.image:setAlpha( 1 )
 				self.clipFinished( image, {} )

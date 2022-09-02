@@ -4,9 +4,11 @@
 CoD.LobbySlideEmblemInternalWidget = InheritFrom( LUI.UIElement )
 CoD.LobbySlideEmblemInternalWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbySlideEmblemInternalWidget )
 	self.id = "LobbySlideEmblemInternalWidget"
@@ -24,17 +26,21 @@ CoD.LobbySlideEmblemInternalWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			SlideLeft = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			SlideRight = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

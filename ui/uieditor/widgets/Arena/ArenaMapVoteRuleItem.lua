@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_MemberBlurPanelContainer" )
 CoD.ArenaMapVoteRuleItem = InheritFrom( LUI.UIElement )
 CoD.ArenaMapVoteRuleItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ArenaMapVoteRuleItem )
 	self.id = "ArenaMapVoteRuleItem"
@@ -59,15 +61,19 @@ CoD.ArenaMapVoteRuleItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BlackBack:completeAnimation()
 				self.BlackBack:setAlpha( 0 )
 				self.clipFinished( BlackBack, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setAlpha( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 0 )
 				self.clipFinished( Text, {} )
+
 				Carat:completeAnimation()
 				self.Carat:setAlpha( 0 )
 				self.clipFinished( Carat, {} )
@@ -76,21 +82,26 @@ CoD.ArenaMapVoteRuleItem.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BlackBack:completeAnimation()
 				self.BlackBack:setAlpha( 0.2 )
 				self.clipFinished( BlackBack, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 1 )
 				self.clipFinished( Text, {} )
+
 				Carat:completeAnimation()
 				self.Carat:setAlpha( 1 )
 				self.clipFinished( Carat, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -117,6 +128,7 @@ CoD.ArenaMapVoteRuleItem.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEMemberBlurPanelContainer0:close()
 		element.Text:close()

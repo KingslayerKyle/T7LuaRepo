@@ -4,9 +4,11 @@
 CoD.CallingCards_ToolsOfTheTradeCPWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_ToolsOfTheTradeCPWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_ToolsOfTheTradeCPWidget )
 	self.id = "CallingCards_ToolsOfTheTradeCPWidget"
@@ -67,6 +69,7 @@ CoD.CallingCards_ToolsOfTheTradeCPWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				local backwaveFrame2 = function ( backwave, event )
 					local backwaveFrame3 = function ( backwave, event )
 						if not event.interrupted then
@@ -457,6 +460,7 @@ CoD.CallingCards_ToolsOfTheTradeCPWidget.new = function ( menu, controller )
 				self.frontwave:setLeftRight( true, false, 192, 480 )
 				self.frontwave:setTopBottom( true, false, 84, 120 )
 				frontwaveFrame2( frontwave, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

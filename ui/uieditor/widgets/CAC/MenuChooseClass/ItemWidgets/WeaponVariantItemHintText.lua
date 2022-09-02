@@ -12,9 +12,11 @@ end
 CoD.WeaponVariantItemHintText = InheritFrom( LUI.UIElement )
 CoD.WeaponVariantItemHintText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponVariantItemHintText )
 	self.id = "WeaponVariantItemHintText"
@@ -60,6 +62,7 @@ CoD.WeaponVariantItemHintText.new = function ( menu, controller )
 			hintText:setText( Engine.Localize( _hintText ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( hintText, "setText", function ( element, controller )
 		CallCustomElementFunction_Self( self, "updateText", element )
 	end )
@@ -70,17 +73,21 @@ CoD.WeaponVariantItemHintText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				black:completeAnimation()
 				self.black:setAlpha( 1 )
 				self.clipFinished( black, {} )
+
 				cachitBG0:completeAnimation()
 				self.cachitBG0:setLeftRight( true, true, 0, 0 )
 				self.cachitBG0:setTopBottom( true, true, 0, 0 )
 				self.cachitBG0:setAlpha( 1 )
 				self.clipFinished( cachitBG0, {} )
+
 				warningIcon:completeAnimation()
 				self.warningIcon:setAlpha( 1 )
 				self.clipFinished( warningIcon, {} )
+
 				hintText:completeAnimation()
 				self.hintText:setAlpha( 1 )
 				self.clipFinished( hintText, {} )
@@ -89,21 +96,26 @@ CoD.WeaponVariantItemHintText.new = function ( menu, controller )
 		NoHintText = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				cachitBG0:completeAnimation()
 				self.cachitBG0:setAlpha( 0 )
 				self.clipFinished( cachitBG0, {} )
+
 				warningIcon:completeAnimation()
 				self.warningIcon:setAlpha( 0 )
 				self.clipFinished( warningIcon, {} )
+
 				hintText:completeAnimation()
 				self.hintText:setAlpha( 0 )
 				self.clipFinished( hintText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoHintText",
@@ -112,6 +124,7 @@ CoD.WeaponVariantItemHintText.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.hintText:close()
 	end )

@@ -28,9 +28,11 @@ end
 CoD.Challenges_CallingCardWidget = InheritFrom( LUI.UIElement )
 CoD.Challenges_CallingCardWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_CallingCardWidget )
 	self.id = "Challenges_CallingCardWidget"
@@ -131,36 +133,46 @@ CoD.Challenges_CallingCardWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0.2 )
 				self.clipFinished( bg, {} )
+
 				CallingCardsFrameWidget0:completeAnimation()
 				self.CallingCardsFrameWidget0:setAlpha( 1 )
 				self.clipFinished( CallingCardsFrameWidget0, {} )
+
 				DarkOpsClassifiedIcon:completeAnimation()
 				self.DarkOpsClassifiedIcon:setAlpha( 0 )
 				self.clipFinished( DarkOpsClassifiedIcon, {} )
+
 				BoxButtonLrgInactiveDiag0:completeAnimation()
 				self.BoxButtonLrgInactiveDiag0:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag0, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				DarkOpsClassifiedIcon:completeAnimation()
 				self.DarkOpsClassifiedIcon:setAlpha( 0 )
 				self.clipFinished( DarkOpsClassifiedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
@@ -169,45 +181,58 @@ CoD.Challenges_CallingCardWidget.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				CallingCardsFrameWidget0:completeAnimation()
 				self.CallingCardsFrameWidget0:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget0, {} )
+
 				DarkOpsClassifiedIcon:completeAnimation()
 				self.DarkOpsClassifiedIcon:setAlpha( 0 )
 				self.clipFinished( DarkOpsClassifiedIcon, {} )
+
 				BoxButtonLrgInactiveDiag0:completeAnimation()
 				self.BoxButtonLrgInactiveDiag0:setAlpha( 0.25 )
 				self.clipFinished( BoxButtonLrgInactiveDiag0, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				DarkOpsClassifiedIcon:completeAnimation()
 				self.DarkOpsClassifiedIcon:setAlpha( 0 )
 				self.clipFinished( DarkOpsClassifiedIcon, {} )
+
 				BoxButtonLrgInactiveDiag0:completeAnimation()
 				self.BoxButtonLrgInactiveDiag0:setAlpha( 0.25 )
 				self.clipFinished( BoxButtonLrgInactiveDiag0, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0.8 )
 				self.clipFinished( lockedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
@@ -216,50 +241,63 @@ CoD.Challenges_CallingCardWidget.new = function ( menu, controller )
 		Classified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				CallingCardsFrameWidget0:completeAnimation()
 				self.CallingCardsFrameWidget0:setLeftRight( true, true, -120, 120 )
 				self.CallingCardsFrameWidget0:setTopBottom( true, true, -30, 6 )
 				self.clipFinished( CallingCardsFrameWidget0, {} )
+
 				DarkOpsClassifiedIcon:completeAnimation()
 				self.DarkOpsClassifiedIcon:setAlpha( 1 )
 				self.clipFinished( DarkOpsClassifiedIcon, {} )
+
 				BoxButtonLrgInactiveDiag0:completeAnimation()
 				self.BoxButtonLrgInactiveDiag0:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag0, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.FocusBarT:setZoom( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				DarkOpsClassifiedIcon:completeAnimation()
 				self.DarkOpsClassifiedIcon:setAlpha( 1 )
 				self.clipFinished( DarkOpsClassifiedIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -282,6 +320,7 @@ CoD.Challenges_CallingCardWidget.new = function ( menu, controller )
 			modelName = "isLocked"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactive:close()
 		element.CallingCardsFrameWidget0:close()

@@ -4,9 +4,11 @@
 CoD.WaypointDistanceIndicatorContainer = InheritFrom( LUI.UIElement )
 CoD.WaypointDistanceIndicatorContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WaypointDistanceIndicatorContainer )
 	self.id = "WaypointDistanceIndicatorContainer"
@@ -30,6 +32,7 @@ CoD.WaypointDistanceIndicatorContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DistanceIndicator:completeAnimation()
 				self.DistanceIndicator:setLeftRight( true, true, 0, 0 )
 				self.DistanceIndicator:setTopBottom( false, false, -60, -39 )

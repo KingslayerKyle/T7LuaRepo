@@ -4,9 +4,11 @@
 CoD.BM_Bribe_title = InheritFrom( LUI.UIElement )
 CoD.BM_Bribe_title.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Bribe_title )
 	self.id = "BM_Bribe_title"
@@ -76,6 +78,7 @@ CoD.BM_Bribe_title.new = function ( menu, controller )
 	title:setShaderVector( 1, 0.01, 0, 0, 0 )
 	title:setShaderVector( 2, 1, 0, 0, 0 )
 	title:setLetterSpacing( 0.3 )
+
 	LUI.OverrideFunction_CallOriginalFirst( title, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 20 )
 	end )
@@ -86,21 +89,27 @@ CoD.BM_Bribe_title.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BribeTitle:completeAnimation()
 				self.BribeTitle:setRGB( 1, 1, 1 )
 				self.clipFinished( BribeTitle, {} )
+
 				BribeTitle1Add:completeAnimation()
 				self.BribeTitle1Add:setAlpha( 0 )
 				self.clipFinished( BribeTitle1Add, {} )
+
 				BribeTitle0:completeAnimation()
 				self.BribeTitle0:setRGB( 1, 1, 1 )
 				self.clipFinished( BribeTitle0, {} )
+
 				BribeTitle0Add:completeAnimation()
 				self.BribeTitle0Add:setAlpha( 0 )
 				self.clipFinished( BribeTitle0Add, {} )
+
 				BribeTitle00:completeAnimation()
 				self.BribeTitle00:setRGB( 1, 1, 1 )
 				self.clipFinished( BribeTitle00, {} )
+
 				BribeTitleAdd:completeAnimation()
 				self.BribeTitleAdd:setAlpha( 0 )
 				self.clipFinished( BribeTitleAdd, {} )
@@ -109,25 +118,31 @@ CoD.BM_Bribe_title.new = function ( menu, controller )
 		GoldFrame = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BribeTitle:completeAnimation()
 				self.BribeTitle:setRGB( 1, 0.78, 0.47 )
 				self.clipFinished( BribeTitle, {} )
+
 				BribeTitle1Add:completeAnimation()
 				self.BribeTitle1Add:setRGB( 1, 0.69, 0.26 )
 				self.BribeTitle1Add:setAlpha( 0.5 )
 				self.BribeTitle1Add:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
 				self.clipFinished( BribeTitle1Add, {} )
+
 				BribeTitle0:completeAnimation()
 				self.BribeTitle0:setRGB( 1, 0.78, 0.47 )
 				self.clipFinished( BribeTitle0, {} )
+
 				BribeTitle0Add:completeAnimation()
 				self.BribeTitle0Add:setRGB( 1, 0.69, 0.26 )
 				self.BribeTitle0Add:setAlpha( 0.5 )
 				self.BribeTitle0Add:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
 				self.clipFinished( BribeTitle0Add, {} )
+
 				BribeTitle00:completeAnimation()
 				self.BribeTitle00:setRGB( 1, 0.78, 0.47 )
 				self.clipFinished( BribeTitle00, {} )
+
 				BribeTitleAdd:completeAnimation()
 				self.BribeTitleAdd:setRGB( 1, 0.69, 0.26 )
 				self.BribeTitleAdd:setAlpha( 0.5 )

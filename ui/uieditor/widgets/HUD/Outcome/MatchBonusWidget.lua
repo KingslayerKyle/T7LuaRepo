@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Notifications.NotificationQueueWidgets.Notificatio
 CoD.MatchBonusWidget = InheritFrom( LUI.UIElement )
 CoD.MatchBonusWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MatchBonusWidget )
 	self.id = "MatchBonusWidget"
@@ -63,29 +65,36 @@ CoD.MatchBonusWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				XpIcon0:completeAnimation()
 				self.XpIcon0:setAlpha( 0 )
 				self.clipFinished( XpIcon0, {} )
+
 				MatchBonusNew0:completeAnimation()
 				self.MatchBonusNew0:setAlpha( 0 )
 				self.clipFinished( MatchBonusNew0, {} )
+
 				MatchBonusTitleNew0:completeAnimation()
 				self.MatchBonusTitleNew0:setAlpha( 0 )
 				self.clipFinished( MatchBonusTitleNew0, {} )
 			end,
 			Show_Two_Team = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			End_Transition = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			ShowFFAOutcome = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Shown = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local XpIcon0Frame2 = function ( XpIcon0, event )
 					local XpIcon0Frame3 = function ( XpIcon0, event )
 						local XpIcon0Frame4 = function ( XpIcon0, event )
@@ -222,6 +231,7 @@ CoD.MatchBonusWidget.new = function ( menu, controller )
 		DoubleXP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				XpIcon0:completeAnimation()
 				self.XpIcon0:setAlpha( 0 )
 				self.clipFinished( XpIcon0, {} )
@@ -359,6 +369,7 @@ CoD.MatchBonusWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Shown",
@@ -389,6 +400,7 @@ CoD.MatchBonusWidget.new = function ( menu, controller )
 			modelName = "gameScore.matchBonus"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MatchBonusNew0:close()
 		element.MatchBonusTitleNew0:close()

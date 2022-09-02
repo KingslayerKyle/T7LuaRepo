@@ -4,9 +4,11 @@
 CoD.IconJoinable = InheritFrom( LUI.UIElement )
 CoD.IconJoinable.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.IconJoinable )
 	self.id = "IconJoinable"
@@ -44,12 +46,15 @@ CoD.IconJoinable.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 0 )
 				self.clipFinished( Icon, {} )
+
 				Image4:completeAnimation()
 				self.Image4:setAlpha( 0 )
 				self.clipFinished( Image4, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
@@ -58,12 +63,15 @@ CoD.IconJoinable.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 1 )
 				self.clipFinished( Icon, {} )
+
 				Image4:completeAnimation()
 				self.Image4:setAlpha( 0 )
 				self.clipFinished( Image4, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )

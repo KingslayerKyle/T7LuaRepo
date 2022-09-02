@@ -4,9 +4,11 @@
 CoD.cac_IconTokenXLarge = InheritFrom( LUI.UIElement )
 CoD.cac_IconTokenXLarge.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_IconTokenXLarge )
 	self.id = "cac_IconTokenXLarge"
@@ -33,9 +35,11 @@ CoD.cac_IconTokenXLarge.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Token:completeAnimation()
 				self.Token:setAlpha( 0 )
 				self.clipFinished( Token, {} )
+
 				TokenCP:completeAnimation()
 				self.TokenCP:setAlpha( 0 )
 				self.clipFinished( TokenCP, {} )
@@ -44,9 +48,11 @@ CoD.cac_IconTokenXLarge.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Token:completeAnimation()
 				self.Token:setAlpha( 1 )
 				self.clipFinished( Token, {} )
+
 				TokenCP:completeAnimation()
 				self.TokenCP:setAlpha( 0 )
 				self.clipFinished( TokenCP, {} )
@@ -55,15 +61,18 @@ CoD.cac_IconTokenXLarge.new = function ( menu, controller )
 		VisibleCP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Token:completeAnimation()
 				self.Token:setAlpha( 0 )
 				self.clipFinished( Token, {} )
+
 				TokenCP:completeAnimation()
 				self.TokenCP:setAlpha( 1 )
 				self.clipFinished( TokenCP, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

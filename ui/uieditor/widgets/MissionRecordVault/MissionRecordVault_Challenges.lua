@@ -27,9 +27,11 @@ end
 CoD.MissionRecordVault_Challenges = InheritFrom( LUI.UIElement )
 CoD.MissionRecordVault_Challenges.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MissionRecordVault_Challenges )
 	self.id = "MissionRecordVault_Challenges"
@@ -122,6 +124,7 @@ CoD.MissionRecordVault_Challenges.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MissionRecordVaultChallengeSelectedInfo:close()
 		element.MissionRecordVaultHeading:close()

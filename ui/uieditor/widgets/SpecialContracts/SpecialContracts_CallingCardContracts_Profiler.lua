@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_Contracts_timer" )
 CoD.SpecialContracts_CallingCardContracts_Profiler = InheritFrom( LUI.UIElement )
 CoD.SpecialContracts_CallingCardContracts_Profiler.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpecialContracts_CallingCardContracts_Profiler )
 	self.id = "SpecialContracts_CallingCardContracts_Profiler"
@@ -243,18 +245,23 @@ CoD.SpecialContracts_CallingCardContracts_Profiler.new = function ( menu, contro
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				SelectedCardIcon:completeAnimation()
 				self.SelectedCardIcon:setAlpha( 1 )
 				self.clipFinished( SelectedCardIcon, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 0 )
 				self.clipFinished( Lock, {} )
@@ -263,18 +270,23 @@ CoD.SpecialContracts_CallingCardContracts_Profiler.new = function ( menu, contro
 		Complete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				SelectedCardIcon:completeAnimation()
 				self.SelectedCardIcon:setAlpha( 1 )
 				self.clipFinished( SelectedCardIcon, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 0 )
 				self.clipFinished( Lock, {} )
@@ -283,20 +295,25 @@ CoD.SpecialContracts_CallingCardContracts_Profiler.new = function ( menu, contro
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				SelectedCardIcon:completeAnimation()
 				self.SelectedCardIcon:setLeftRight( true, false, -67, 413 )
 				self.SelectedCardIcon:setTopBottom( true, false, 22.76, 142.76 )
 				self.SelectedCardIcon:setAlpha( 0.2 )
 				self.clipFinished( SelectedCardIcon, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 1 )
 				self.clipFinished( black, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 1 )
 				self.clipFinished( Lock, {} )
@@ -305,24 +322,30 @@ CoD.SpecialContracts_CallingCardContracts_Profiler.new = function ( menu, contro
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				SelectedCardIcon:completeAnimation()
 				self.SelectedCardIcon:setAlpha( 0.2 )
 				self.clipFinished( SelectedCardIcon, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 1 )
 				self.clipFinished( black, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 1 )
 				self.clipFinished( Lock, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Complete",
@@ -351,6 +374,7 @@ CoD.SpecialContracts_CallingCardContracts_Profiler.new = function ( menu, contro
 			modelName = "isComplete"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SelectedCardIcon:close()
 		element.BMGoldBarMed:close()

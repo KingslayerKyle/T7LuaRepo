@@ -4,9 +4,11 @@
 CoD.ChargeShot_ActiveLine = InheritFrom( LUI.UIElement )
 CoD.ChargeShot_ActiveLine.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChargeShot_ActiveLine )
 	self.id = "ChargeShot_ActiveLine"

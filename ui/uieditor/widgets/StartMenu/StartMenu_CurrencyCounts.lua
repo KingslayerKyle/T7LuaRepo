@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_CODpoints" )
 CoD.StartMenu_CurrencyCounts = InheritFrom( LUI.UIElement )
 CoD.StartMenu_CurrencyCounts.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_CurrencyCounts )
 	self.id = "StartMenu_CurrencyCounts"
@@ -73,18 +75,23 @@ CoD.StartMenu_CurrencyCounts.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BMCryptokeyCounterIcon:completeAnimation()
 				self.BMCryptokeyCounterIcon:setAlpha( 0 )
 				self.clipFinished( BMCryptokeyCounterIcon, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setAlpha( 0 )
 				self.clipFinished( cryptokeyCount, {} )
+
 				vial:completeAnimation()
 				self.vial:setAlpha( 0 )
 				self.clipFinished( vial, {} )
+
 				vialCount:completeAnimation()
 				self.vialCount:setAlpha( 0 )
 				self.clipFinished( vialCount, {} )
+
 				StartMenuCODpoints:completeAnimation()
 				self.StartMenuCODpoints:setAlpha( 0 )
 				self.clipFinished( StartMenuCODpoints, {} )
@@ -93,18 +100,23 @@ CoD.StartMenu_CurrencyCounts.new = function ( menu, controller )
 		ShowKeysAndVials = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BMCryptokeyCounterIcon:completeAnimation()
 				self.BMCryptokeyCounterIcon:setAlpha( 1 )
 				self.clipFinished( BMCryptokeyCounterIcon, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setAlpha( 1 )
 				self.clipFinished( cryptokeyCount, {} )
+
 				vial:completeAnimation()
 				self.vial:setAlpha( 1 )
 				self.clipFinished( vial, {} )
+
 				vialCount:completeAnimation()
 				self.vialCount:setAlpha( 1 )
 				self.clipFinished( vialCount, {} )
+
 				StartMenuCODpoints:completeAnimation()
 				self.StartMenuCODpoints:setAlpha( 0 )
 				self.clipFinished( StartMenuCODpoints, {} )
@@ -113,18 +125,23 @@ CoD.StartMenu_CurrencyCounts.new = function ( menu, controller )
 		Shown = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BMCryptokeyCounterIcon:completeAnimation()
 				self.BMCryptokeyCounterIcon:setAlpha( 1 )
 				self.clipFinished( BMCryptokeyCounterIcon, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setAlpha( 1 )
 				self.clipFinished( cryptokeyCount, {} )
+
 				vial:completeAnimation()
 				self.vial:setAlpha( 1 )
 				self.clipFinished( vial, {} )
+
 				vialCount:completeAnimation()
 				self.vialCount:setAlpha( 1 )
 				self.clipFinished( vialCount, {} )
+
 				StartMenuCODpoints:completeAnimation()
 				self.StartMenuCODpoints:setAlpha( 1 )
 				self.clipFinished( StartMenuCODpoints, {} )
@@ -133,18 +150,23 @@ CoD.StartMenu_CurrencyCounts.new = function ( menu, controller )
 		ShownOnlyCODPoints = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BMCryptokeyCounterIcon:completeAnimation()
 				self.BMCryptokeyCounterIcon:setAlpha( 0 )
 				self.clipFinished( BMCryptokeyCounterIcon, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setAlpha( 0 )
 				self.clipFinished( cryptokeyCount, {} )
+
 				vial:completeAnimation()
 				self.vial:setAlpha( 0 )
 				self.clipFinished( vial, {} )
+
 				vialCount:completeAnimation()
 				self.vialCount:setAlpha( 0 )
 				self.clipFinished( vialCount, {} )
+
 				StartMenuCODpoints:completeAnimation()
 				self.StartMenuCODpoints:setAlpha( 1 )
 				self.clipFinished( StartMenuCODpoints, {} )
@@ -153,18 +175,23 @@ CoD.StartMenu_CurrencyCounts.new = function ( menu, controller )
 		ShownOnlyKeys = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BMCryptokeyCounterIcon:completeAnimation()
 				self.BMCryptokeyCounterIcon:setAlpha( 1 )
 				self.clipFinished( BMCryptokeyCounterIcon, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setAlpha( 1 )
 				self.clipFinished( cryptokeyCount, {} )
+
 				vial:completeAnimation()
 				self.vial:setAlpha( 0 )
 				self.clipFinished( vial, {} )
+
 				vialCount:completeAnimation()
 				self.vialCount:setAlpha( 0 )
 				self.clipFinished( vialCount, {} )
+
 				StartMenuCODpoints:completeAnimation()
 				self.StartMenuCODpoints:setAlpha( 0 )
 				self.clipFinished( StartMenuCODpoints, {} )
@@ -173,28 +200,34 @@ CoD.StartMenu_CurrencyCounts.new = function ( menu, controller )
 		ShownAllExceptVials = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BMCryptokeyCounterIcon:completeAnimation()
 				self.BMCryptokeyCounterIcon:setLeftRight( true, false, 129.75, 154.75 )
 				self.BMCryptokeyCounterIcon:setTopBottom( true, false, 3, 27 )
 				self.BMCryptokeyCounterIcon:setAlpha( 1 )
 				self.clipFinished( BMCryptokeyCounterIcon, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setLeftRight( true, false, 155.75, 204 )
 				self.cryptokeyCount:setTopBottom( false, false, -11, 11 )
 				self.cryptokeyCount:setAlpha( 1 )
 				self.clipFinished( cryptokeyCount, {} )
+
 				vial:completeAnimation()
 				self.vial:setAlpha( 0 )
 				self.clipFinished( vial, {} )
+
 				vialCount:completeAnimation()
 				self.vialCount:setAlpha( 0 )
 				self.clipFinished( vialCount, {} )
+
 				StartMenuCODpoints:completeAnimation()
 				self.StartMenuCODpoints:setAlpha( 1 )
 				self.clipFinished( StartMenuCODpoints, {} )
 			end,
 			Bonus = function ()
 				self:setupElementClipCounter( 4 )
+
 				BMCryptokeyCounterIcon:completeAnimation()
 				self.BMCryptokeyCounterIcon:setLeftRight( true, false, 129.75, 154.75 )
 				self.BMCryptokeyCounterIcon:setTopBottom( false, false, -12, 12 )
@@ -255,9 +288,11 @@ CoD.StartMenu_CurrencyCounts.new = function ( menu, controller )
 				self.cryptokeyCount:setAlpha( 1 )
 				self.cryptokeyCount:setScale( 1 )
 				cryptokeyCountFrame2( cryptokeyCount, {} )
+
 				vial:completeAnimation()
 				self.vial:setAlpha( 0 )
 				self.clipFinished( vial, {} )
+
 				vialCount:completeAnimation()
 				self.vialCount:setAlpha( 0 )
 				self.clipFinished( vialCount, {} )
@@ -266,22 +301,27 @@ CoD.StartMenu_CurrencyCounts.new = function ( menu, controller )
 		ShownOnlyVials = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BMCryptokeyCounterIcon:completeAnimation()
 				self.BMCryptokeyCounterIcon:setAlpha( 0 )
 				self.clipFinished( BMCryptokeyCounterIcon, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setAlpha( 0 )
 				self.clipFinished( cryptokeyCount, {} )
+
 				vial:completeAnimation()
 				self.vial:setLeftRight( true, false, 82.25, 107.25 )
 				self.vial:setTopBottom( false, false, -12.5, 12.5 )
 				self.vial:setAlpha( 1 )
 				self.clipFinished( vial, {} )
+
 				vialCount:completeAnimation()
 				self.vialCount:setLeftRight( true, false, 103, 136 )
 				self.vialCount:setTopBottom( false, false, -11, 11 )
 				self.vialCount:setAlpha( 1 )
 				self.clipFinished( vialCount, {} )
+
 				StartMenuCODpoints:completeAnimation()
 				self.StartMenuCODpoints:setAlpha( 0 )
 				self.clipFinished( StartMenuCODpoints, {} )
@@ -290,28 +330,34 @@ CoD.StartMenu_CurrencyCounts.new = function ( menu, controller )
 		ShownAllExceptCryptoKeys = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BMCryptokeyCounterIcon:completeAnimation()
 				self.BMCryptokeyCounterIcon:setAlpha( 0 )
 				self.clipFinished( BMCryptokeyCounterIcon, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setAlpha( 0 )
 				self.clipFinished( cryptokeyCount, {} )
+
 				vial:completeAnimation()
 				self.vial:setLeftRight( true, false, 78, 103 )
 				self.vial:setTopBottom( false, false, -12.5, 12.5 )
 				self.vial:setAlpha( 1 )
 				self.clipFinished( vial, {} )
+
 				vialCount:completeAnimation()
 				self.vialCount:setLeftRight( true, false, 98.75, 131.75 )
 				self.vialCount:setTopBottom( false, false, -11, 11 )
 				self.vialCount:setAlpha( 1 )
 				self.clipFinished( vialCount, {} )
+
 				StartMenuCODpoints:completeAnimation()
 				self.StartMenuCODpoints:setAlpha( 1 )
 				self.clipFinished( StartMenuCODpoints, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ShowKeysAndVials",
@@ -372,6 +418,7 @@ CoD.StartMenu_CurrencyCounts.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNetworkMode"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BMCryptokeyCounterIcon:close()
 		element.StartMenuCODpoints:close()

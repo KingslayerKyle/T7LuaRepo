@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.arena.ArenaStarAnimation3" )
 CoD.LoopingstarAnimationTest = InheritFrom( LUI.UIElement )
 CoD.LoopingstarAnimationTest.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.LoopingstarAnimationTest )
 	self.id = "LoopingstarAnimationTest"
@@ -72,6 +74,7 @@ CoD.LoopingstarAnimationTest.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Glicth:completeAnimation()
 				self.Glicth:setAlpha( 0 )
 				self.clipFinished( Glicth, {} )
@@ -80,6 +83,7 @@ CoD.LoopingstarAnimationTest.new = function ( menu, controller )
 		StarLoop = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ArenaStarAnimation1Frame2 = function ( ArenaStarAnimation1, event )
 					if not event.interrupted then
 						ArenaStarAnimation1:beginAnimation( "keyframe", 200, true, false, CoD.TweenType.Linear )
@@ -129,6 +133,7 @@ CoD.LoopingstarAnimationTest.new = function ( menu, controller )
 				self.ArenaStarAnimation2:setTopBottom( false, false, -325, -135 )
 				self.ArenaStarAnimation2:setAlpha( 0 )
 				ArenaStarAnimation2Frame2( ArenaStarAnimation2, {} )
+
 				backing:completeAnimation()
 				self.backing:setAlpha( 0.42 )
 				self.clipFinished( backing, {} )
@@ -192,12 +197,14 @@ CoD.LoopingstarAnimationTest.new = function ( menu, controller )
 				self.highlight:setTopBottom( false, false, -77.5, 77.5 )
 				self.highlight:setAlpha( 0.2 )
 				highlightFrame2( highlight, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		StopAnimation = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ArenaStarAnimation1Frame2 = function ( ArenaStarAnimation1, event )
 					if not event.interrupted then
 						ArenaStarAnimation1:beginAnimation( "keyframe", 250, false, false, CoD.TweenType.Linear )
@@ -247,6 +254,7 @@ CoD.LoopingstarAnimationTest.new = function ( menu, controller )
 				self.ArenaStarAnimation2:setTopBottom( false, false, -325, -135 )
 				self.ArenaStarAnimation2:setAlpha( 0 )
 				ArenaStarAnimation2Frame2( ArenaStarAnimation2, {} )
+
 				backing:completeAnimation()
 				self.backing:setLeftRight( false, false, -111, 111 )
 				self.backing:setTopBottom( false, false, -25.5, 54 )
@@ -282,12 +290,14 @@ CoD.LoopingstarAnimationTest.new = function ( menu, controller )
 				self.Glicth:setTopBottom( false, false, -125, -48 )
 				self.Glicth:setAlpha( 0 )
 				GlicthFrame2( Glicth, {} )
+
 				highlight:completeAnimation()
 				self.highlight:setAlpha( 0.2 )
 				self.clipFinished( highlight, {} )
 			end,
 			FadeOut = function ()
 				self:setupElementClipCounter( 4 )
+
 				local backingFrame2 = function ( backing, event )
 					if not event.interrupted then
 						backing:beginAnimation( "keyframe", 500, false, true, CoD.TweenType.Linear )
@@ -354,6 +364,7 @@ CoD.LoopingstarAnimationTest.new = function ( menu, controller )
 				self.highlight00:setAlpha( 1 )
 				self.highlight00:setZRot( 278 )
 				highlight00Frame2( highlight00, {} )
+
 				Glicth:completeAnimation()
 				self.Glicth:setAlpha( 0 )
 				self.clipFinished( Glicth, {} )
@@ -414,6 +425,7 @@ CoD.LoopingstarAnimationTest.new = function ( menu, controller )
 		StarIntro = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ArenaStarAnimation1Frame2 = function ( ArenaStarAnimation1, event )
 					local ArenaStarAnimation1Frame3 = function ( ArenaStarAnimation1, event )
 						if not event.interrupted then
@@ -445,10 +457,12 @@ CoD.LoopingstarAnimationTest.new = function ( menu, controller )
 				self.ArenaStarAnimation1:setTopBottom( false, false, -324, -134 )
 				self.ArenaStarAnimation1:setAlpha( 0 )
 				ArenaStarAnimation1Frame2( ArenaStarAnimation1, {} )
+
 				ArenaStarAnimation2:completeAnimation()
 				self.ArenaStarAnimation2:setLeftRight( false, false, -95, 95 )
 				self.ArenaStarAnimation2:setTopBottom( false, false, -514, -324 )
 				self.clipFinished( ArenaStarAnimation2, {} )
+
 				backing:completeAnimation()
 				self.backing:setAlpha( 0.42 )
 				self.clipFinished( backing, {} )
@@ -482,6 +496,7 @@ CoD.LoopingstarAnimationTest.new = function ( menu, controller )
 				self.Glicth:setTopBottom( false, false, -125, -48 )
 				self.Glicth:setAlpha( 0 )
 				GlicthFrame2( Glicth, {} )
+
 				highlight:completeAnimation()
 				self.highlight:setAlpha( 0.2 )
 				self.highlight:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
@@ -489,6 +504,7 @@ CoD.LoopingstarAnimationTest.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ArenaStarAnimation1:close()
 		element.ArenaStarAnimation2:close()

@@ -210,6 +210,7 @@ end
 local PostLoadFunc = function ( self, controller, menu )
 	f0_local1( self, controller )
 	self.updateTree = f0_local3
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "close", function ()
 		local f10_local0 = Engine.CreateModel( Engine.GetModelForController( controller ), "CybercoreAbilityUpgradeTree" )
 		if f10_local0 then
@@ -221,9 +222,11 @@ end
 CoD.CybercoreUpgradeTreeWidget = InheritFrom( LUI.UIElement )
 CoD.CybercoreUpgradeTreeWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CybercoreUpgradeTreeWidget )
 	self.id = "CybercoreUpgradeTreeWidget"
@@ -634,6 +637,7 @@ CoD.CybercoreUpgradeTreeWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.nodeLinkLH:close()
 		element.nodeLinkL1:close()

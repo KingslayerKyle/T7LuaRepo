@@ -10,9 +10,11 @@ end
 CoD.AbilityWheel_ButtonBumperWidget = InheritFrom( LUI.UIElement )
 CoD.AbilityWheel_ButtonBumperWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AbilityWheel_ButtonBumperWidget )
 	self.id = "AbilityWheel_ButtonBumperWidget"
@@ -127,9 +129,11 @@ CoD.AbilityWheel_ButtonBumperWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BumperLeft:completeAnimation()
 				self.BumperLeft:setAlpha( 0.6 )
 				self.clipFinished( BumperLeft, {} )
+
 				BumperRight:completeAnimation()
 				self.BumperRight:setAlpha( 0.6 )
 				self.clipFinished( BumperRight, {} )
@@ -142,6 +146,7 @@ CoD.AbilityWheel_ButtonBumperWidget.new = function ( menu, controller )
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 2 )
+
 				HexLeft:beginAnimation( "keyframe", 239, false, false, CoD.TweenType.Linear )
 				HexLeft:setAlpha( 0.2 )
 				HexLeft:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
@@ -153,9 +158,11 @@ CoD.AbilityWheel_ButtonBumperWidget.new = function ( menu, controller )
 		KBMouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BumperLeft:completeAnimation()
 				self.BumperLeft:setAlpha( 0 )
 				self.clipFinished( BumperLeft, {} )
+
 				BumperRight:completeAnimation()
 				self.BumperRight:setAlpha( 0 )
 				self.clipFinished( BumperRight, {} )
@@ -168,6 +175,7 @@ CoD.AbilityWheel_ButtonBumperWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "KBMouse",
@@ -194,6 +202,7 @@ CoD.AbilityWheel_ButtonBumperWidget.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CycleOverButtonLeft:close()
 		element.CycleOverButtonRight:close()

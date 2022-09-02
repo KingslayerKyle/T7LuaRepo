@@ -4,9 +4,11 @@
 CoD.Outcome_title_PnlCenterInt = InheritFrom( LUI.UIElement )
 CoD.Outcome_title_PnlCenterInt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Outcome_title_PnlCenterInt )
 	self.id = "Outcome_title_PnlCenterInt"
@@ -26,21 +28,25 @@ CoD.Outcome_title_PnlCenterInt.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		VictoryGreen = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		DefeatRed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		OvertimeOrange = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

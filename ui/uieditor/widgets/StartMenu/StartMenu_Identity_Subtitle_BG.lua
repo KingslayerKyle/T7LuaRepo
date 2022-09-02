@@ -4,9 +4,11 @@
 CoD.StartMenu_Identity_Subtitle_BG = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Identity_Subtitle_BG.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Identity_Subtitle_BG )
 	self.id = "StartMenu_Identity_Subtitle_BG"
@@ -28,6 +30,7 @@ CoD.StartMenu_Identity_Subtitle_BG.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 1 )
 				self.clipFinished( Image, {} )
@@ -36,14 +39,17 @@ CoD.StartMenu_Identity_Subtitle_BG.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 0 )
 				self.clipFinished( Image, {} )

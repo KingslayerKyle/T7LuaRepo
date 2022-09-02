@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.AbilityWheel.AbilityWheel_Pixel" )
 CoD.IncomingExplosiveInternal = InheritFrom( LUI.UIElement )
 CoD.IncomingExplosiveInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.IncomingExplosiveInternal )
 	self.id = "IncomingExplosiveInternal"
@@ -98,28 +100,35 @@ CoD.IncomingExplosiveInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ElmTri:completeAnimation()
 				self.ElmTri:setAlpha( 0 )
 				self.ElmTri:setZoom( 20 )
 				self.clipFinished( ElmTri, {} )
+
 				Distance:completeAnimation()
 				self.Distance:setAlpha( 0 )
 				self.clipFinished( Distance, {} )
+
 				FillAll:completeAnimation()
 				self.FillAll:setAlpha( 0 )
 				self.clipFinished( FillAll, {} )
+
 				AbilityWheelPixel0:completeAnimation()
 				self.AbilityWheelPixel0:setAlpha( 0 )
 				self.clipFinished( AbilityWheelPixel0, {} )
+
 				AbilityWheelPixel00:completeAnimation()
 				self.AbilityWheelPixel00:setAlpha( 0 )
 				self.clipFinished( AbilityWheelPixel00, {} )
+
 				AbilityWheelPixel000:completeAnimation()
 				self.AbilityWheelPixel000:setAlpha( 0 )
 				self.clipFinished( AbilityWheelPixel000, {} )
 			end,
 			Visible = function ()
 				self:setupElementClipCounter( 6 )
+
 				local f8_local0 = function ( f9_arg0, f9_arg1 )
 					local f9_local0 = function ( f10_arg0, f10_arg1 )
 						local f10_local0 = function ( f11_arg0, f11_arg1 )
@@ -451,26 +460,32 @@ CoD.IncomingExplosiveInternal.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ElmTri:completeAnimation()
 				self.ElmTri:setAlpha( 1 )
 				self.ElmTri:setZoom( 0 )
 				self.clipFinished( ElmTri, {} )
+
 				Distance:completeAnimation()
 				self.Distance:setAlpha( 1 )
 				self.clipFinished( Distance, {} )
+
 				FillAll:completeAnimation()
 				self.FillAll:setAlpha( 1 )
 				self.clipFinished( FillAll, {} )
+
 				AbilityWheelPixel0:completeAnimation()
 				self.AbilityWheelPixel0:setLeftRight( true, false, 30, 38 )
 				self.AbilityWheelPixel0:setTopBottom( true, false, 108.17, 116.17 )
 				self.AbilityWheelPixel0:setAlpha( 1 )
 				self.clipFinished( AbilityWheelPixel0, {} )
+
 				AbilityWheelPixel00:completeAnimation()
 				self.AbilityWheelPixel00:setLeftRight( true, false, 139, 147 )
 				self.AbilityWheelPixel00:setTopBottom( true, false, 108.17, 116.17 )
 				self.AbilityWheelPixel00:setAlpha( 1 )
 				self.clipFinished( AbilityWheelPixel00, {} )
+
 				AbilityWheelPixel000:completeAnimation()
 				self.AbilityWheelPixel000:setLeftRight( true, false, 85, 93 )
 				self.AbilityWheelPixel000:setTopBottom( true, false, 201.5, 209.5 )
@@ -479,6 +494,7 @@ CoD.IncomingExplosiveInternal.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 6 )
+
 				local ElmTriFrame2 = function ( ElmTri, event )
 					local ElmTriFrame3 = function ( ElmTri, event )
 						local ElmTriFrame4 = function ( ElmTri, event )
@@ -781,6 +797,7 @@ CoD.IncomingExplosiveInternal.new = function ( menu, controller )
 				Distance:beginAnimation( "keyframe", 9, false, false, CoD.TweenType.Linear )
 				Distance:setAlpha( 1 )
 				Distance:registerEventHandler( "transition_complete_keyframe", f36_local1 )
+
 				FillAll:completeAnimation()
 				self.FillAll:setAlpha( 1 )
 				self.clipFinished( FillAll, {} )
@@ -844,6 +861,7 @@ CoD.IncomingExplosiveInternal.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -860,6 +878,7 @@ CoD.IncomingExplosiveInternal.new = function ( menu, controller )
 			modelName = "visible"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ElmTri:close()
 		element.Distance:close()

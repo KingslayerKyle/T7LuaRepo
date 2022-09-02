@@ -12,9 +12,11 @@ require( "ui.uieditor.widgets.Lobby.LobbySlide.LobbySlideSocialInfoWidget" )
 CoD.LobbySlideSelectedPlayerInfo = InheritFrom( LUI.UIElement )
 CoD.LobbySlideSelectedPlayerInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbySlideSelectedPlayerInfo )
 	self.id = "LobbySlideSelectedPlayerInfo"
@@ -136,28 +138,35 @@ CoD.LobbySlideSelectedPlayerInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				LobbySlideArenaWidget0:completeAnimation()
 				self.LobbySlideArenaWidget0:setAlpha( 0 )
 				self.clipFinished( LobbySlideArenaWidget0, {} )
+
 				rank:completeAnimation()
 				self.rank:setAlpha( 1 )
 				self.clipFinished( rank, {} )
+
 				playercard:completeAnimation()
 				self.playercard:setAlpha( 1 )
 				self.clipFinished( playercard, {} )
+
 				LobbySlideEmblemWidget:completeAnimation()
 				self.LobbySlideEmblemWidget:setAlpha( 1 )
 				self.clipFinished( LobbySlideEmblemWidget, {} )
+
 				LobbySlideMissingMapsWidget:completeAnimation()
 				self.LobbySlideMissingMapsWidget:setLeftRight( false, true, -321, -1 )
 				self.LobbySlideMissingMapsWidget:setTopBottom( true, false, 457.5, 517.5 )
 				self.LobbySlideMissingMapsWidget:setAlpha( 1 )
 				self.clipFinished( LobbySlideMissingMapsWidget, {} )
+
 				LobbySlideCommonGroupsWidget:completeAnimation()
 				self.LobbySlideCommonGroupsWidget:setLeftRight( true, false, -1, 319 )
 				self.LobbySlideCommonGroupsWidget:setTopBottom( true, false, 523.5, 599.5 )
 				self.LobbySlideCommonGroupsWidget:setAlpha( 1 )
 				self.clipFinished( LobbySlideCommonGroupsWidget, {} )
+
 				LobbySlideSocialInfoWidget:completeAnimation()
 				self.LobbySlideSocialInfoWidget:setLeftRight( true, false, 0, 320 )
 				self.LobbySlideSocialInfoWidget:setTopBottom( true, false, 453.5, 543.5 )
@@ -165,6 +174,7 @@ CoD.LobbySlideSelectedPlayerInfo.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 3 )
+
 				local rankFrame2 = function ( rank, event )
 					local rankFrame3 = function ( rank, event )
 						if not event.interrupted then
@@ -233,6 +243,7 @@ CoD.LobbySlideSelectedPlayerInfo.new = function ( menu, controller )
 			end,
 			Outro = function ()
 				self:setupElementClipCounter( 3 )
+
 				local rankFrame2 = function ( rank, event )
 					local rankFrame3 = function ( rank, event )
 						if not event.interrupted then
@@ -303,24 +314,31 @@ CoD.LobbySlideSelectedPlayerInfo.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				LobbySlideArenaWidget0:completeAnimation()
 				self.LobbySlideArenaWidget0:setAlpha( 0 )
 				self.clipFinished( LobbySlideArenaWidget0, {} )
+
 				rank:completeAnimation()
 				self.rank:setAlpha( 0 )
 				self.clipFinished( rank, {} )
+
 				playercard:completeAnimation()
 				self.playercard:setAlpha( 0 )
 				self.clipFinished( playercard, {} )
+
 				LobbySlideEmblemWidget:completeAnimation()
 				self.LobbySlideEmblemWidget:setAlpha( 0 )
 				self.clipFinished( LobbySlideEmblemWidget, {} )
+
 				LobbySlideMissingMapsWidget:completeAnimation()
 				self.LobbySlideMissingMapsWidget:setAlpha( 0 )
 				self.clipFinished( LobbySlideMissingMapsWidget, {} )
+
 				LobbySlideCommonGroupsWidget:completeAnimation()
 				self.LobbySlideCommonGroupsWidget:setAlpha( 0 )
 				self.clipFinished( LobbySlideCommonGroupsWidget, {} )
+
 				LobbySlideSocialInfoWidget:completeAnimation()
 				self.LobbySlideSocialInfoWidget:setAlpha( 0 )
 				self.clipFinished( LobbySlideSocialInfoWidget, {} )
@@ -329,28 +347,35 @@ CoD.LobbySlideSelectedPlayerInfo.new = function ( menu, controller )
 		RankInfoHidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				LobbySlideArenaWidget0:completeAnimation()
 				self.LobbySlideArenaWidget0:setAlpha( 0 )
 				self.clipFinished( LobbySlideArenaWidget0, {} )
+
 				rank:completeAnimation()
 				self.rank:setAlpha( 0 )
 				self.clipFinished( rank, {} )
+
 				playercard:completeAnimation()
 				self.playercard:setAlpha( 1 )
 				self.clipFinished( playercard, {} )
+
 				LobbySlideEmblemWidget:completeAnimation()
 				self.LobbySlideEmblemWidget:setAlpha( 1 )
 				self.clipFinished( LobbySlideEmblemWidget, {} )
+
 				LobbySlideMissingMapsWidget:completeAnimation()
 				self.LobbySlideMissingMapsWidget:setLeftRight( false, true, -321, -1 )
 				self.LobbySlideMissingMapsWidget:setTopBottom( true, false, 579.82, 642.82 )
 				self.LobbySlideMissingMapsWidget:setAlpha( 0 )
 				self.clipFinished( LobbySlideMissingMapsWidget, {} )
+
 				LobbySlideCommonGroupsWidget:completeAnimation()
 				self.LobbySlideCommonGroupsWidget:setLeftRight( true, false, 0, 320 )
 				self.LobbySlideCommonGroupsWidget:setTopBottom( true, false, 391.82, 556.82 )
 				self.LobbySlideCommonGroupsWidget:setAlpha( 1 )
 				self.clipFinished( LobbySlideCommonGroupsWidget, {} )
+
 				LobbySlideSocialInfoWidget:completeAnimation()
 				self.LobbySlideSocialInfoWidget:setLeftRight( true, false, 0, 320 )
 				self.LobbySlideSocialInfoWidget:setTopBottom( true, false, 323.82, 413.82 )
@@ -361,24 +386,31 @@ CoD.LobbySlideSelectedPlayerInfo.new = function ( menu, controller )
 		Lan = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				LobbySlideArenaWidget0:completeAnimation()
 				self.LobbySlideArenaWidget0:setAlpha( 0 )
 				self.clipFinished( LobbySlideArenaWidget0, {} )
+
 				rank:completeAnimation()
 				self.rank:setAlpha( 0 )
 				self.clipFinished( rank, {} )
+
 				playercard:completeAnimation()
 				self.playercard:setAlpha( 1 )
 				self.clipFinished( playercard, {} )
+
 				LobbySlideEmblemWidget:completeAnimation()
 				self.LobbySlideEmblemWidget:setAlpha( 1 )
 				self.clipFinished( LobbySlideEmblemWidget, {} )
+
 				LobbySlideMissingMapsWidget:completeAnimation()
 				self.LobbySlideMissingMapsWidget:setAlpha( 0 )
 				self.clipFinished( LobbySlideMissingMapsWidget, {} )
+
 				LobbySlideCommonGroupsWidget:completeAnimation()
 				self.LobbySlideCommonGroupsWidget:setAlpha( 0 )
 				self.clipFinished( LobbySlideCommonGroupsWidget, {} )
+
 				LobbySlideSocialInfoWidget:completeAnimation()
 				self.LobbySlideSocialInfoWidget:setAlpha( 0 )
 				self.clipFinished( LobbySlideSocialInfoWidget, {} )
@@ -387,30 +419,37 @@ CoD.LobbySlideSelectedPlayerInfo.new = function ( menu, controller )
 		Arena = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				LobbySlideArenaWidget0:completeAnimation()
 				self.LobbySlideArenaWidget0:setLeftRight( false, true, -321, -1 )
 				self.LobbySlideArenaWidget0:setTopBottom( true, false, 458, 548 )
 				self.LobbySlideArenaWidget0:setAlpha( 1 )
 				self.clipFinished( LobbySlideArenaWidget0, {} )
+
 				rank:completeAnimation()
 				self.rank:setAlpha( 1 )
 				self.clipFinished( rank, {} )
+
 				playercard:completeAnimation()
 				self.playercard:setAlpha( 1 )
 				self.clipFinished( playercard, {} )
+
 				LobbySlideEmblemWidget:completeAnimation()
 				self.LobbySlideEmblemWidget:setAlpha( 1 )
 				self.clipFinished( LobbySlideEmblemWidget, {} )
+
 				LobbySlideMissingMapsWidget:completeAnimation()
 				self.LobbySlideMissingMapsWidget:setLeftRight( false, true, -321, -1 )
 				self.LobbySlideMissingMapsWidget:setTopBottom( true, false, 564.82, 624.82 )
 				self.LobbySlideMissingMapsWidget:setAlpha( 1 )
 				self.clipFinished( LobbySlideMissingMapsWidget, {} )
+
 				LobbySlideCommonGroupsWidget:completeAnimation()
 				self.LobbySlideCommonGroupsWidget:setLeftRight( true, false, 0, 320 )
 				self.LobbySlideCommonGroupsWidget:setTopBottom( true, false, 645.82, 743.82 )
 				self.LobbySlideCommonGroupsWidget:setAlpha( 0 )
 				self.clipFinished( LobbySlideCommonGroupsWidget, {} )
+
 				LobbySlideSocialInfoWidget:completeAnimation()
 				self.LobbySlideSocialInfoWidget:setLeftRight( true, false, -1, 319 )
 				self.LobbySlideSocialInfoWidget:setTopBottom( true, false, 561.82, 651.82 )
@@ -419,6 +458,7 @@ CoD.LobbySlideSelectedPlayerInfo.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 4 )
+
 				local LobbySlideArenaWidget0Frame2 = function ( LobbySlideArenaWidget0, event )
 					local LobbySlideArenaWidget0Frame3 = function ( LobbySlideArenaWidget0, event )
 						local LobbySlideArenaWidget0Frame4 = function ( LobbySlideArenaWidget0, event )
@@ -529,28 +569,35 @@ CoD.LobbySlideSelectedPlayerInfo.new = function ( menu, controller )
 		Custom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				LobbySlideArenaWidget0:completeAnimation()
 				self.LobbySlideArenaWidget0:setAlpha( 0 )
 				self.clipFinished( LobbySlideArenaWidget0, {} )
+
 				rank:completeAnimation()
 				self.rank:setAlpha( 0 )
 				self.clipFinished( rank, {} )
+
 				playercard:completeAnimation()
 				self.playercard:setAlpha( 1 )
 				self.clipFinished( playercard, {} )
+
 				LobbySlideEmblemWidget:completeAnimation()
 				self.LobbySlideEmblemWidget:setAlpha( 1 )
 				self.clipFinished( LobbySlideEmblemWidget, {} )
+
 				LobbySlideMissingMapsWidget:completeAnimation()
 				self.LobbySlideMissingMapsWidget:setLeftRight( false, true, -321, -1 )
 				self.LobbySlideMissingMapsWidget:setTopBottom( true, false, 343.5, 403.5 )
 				self.LobbySlideMissingMapsWidget:setAlpha( 1 )
 				self.clipFinished( LobbySlideMissingMapsWidget, {} )
+
 				LobbySlideCommonGroupsWidget:completeAnimation()
 				self.LobbySlideCommonGroupsWidget:setLeftRight( true, false, -1, 319 )
 				self.LobbySlideCommonGroupsWidget:setTopBottom( true, false, 420, 585 )
 				self.LobbySlideCommonGroupsWidget:setAlpha( 0 )
 				self.clipFinished( LobbySlideCommonGroupsWidget, {} )
+
 				LobbySlideSocialInfoWidget:completeAnimation()
 				self.LobbySlideSocialInfoWidget:setLeftRight( true, false, -1, 319 )
 				self.LobbySlideSocialInfoWidget:setTopBottom( true, false, 340.5, 430.5 )
@@ -561,24 +608,31 @@ CoD.LobbySlideSelectedPlayerInfo.new = function ( menu, controller )
 		FreeRun = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				LobbySlideArenaWidget0:completeAnimation()
 				self.LobbySlideArenaWidget0:setAlpha( 0 )
 				self.clipFinished( LobbySlideArenaWidget0, {} )
+
 				rank:completeAnimation()
 				self.rank:setAlpha( 0 )
 				self.clipFinished( rank, {} )
+
 				playercard:completeAnimation()
 				self.playercard:setAlpha( 1 )
 				self.clipFinished( playercard, {} )
+
 				LobbySlideEmblemWidget:completeAnimation()
 				self.LobbySlideEmblemWidget:setAlpha( 1 )
 				self.clipFinished( LobbySlideEmblemWidget, {} )
+
 				LobbySlideMissingMapsWidget:completeAnimation()
 				self.LobbySlideMissingMapsWidget:setAlpha( 0 )
 				self.clipFinished( LobbySlideMissingMapsWidget, {} )
+
 				LobbySlideCommonGroupsWidget:completeAnimation()
 				self.LobbySlideCommonGroupsWidget:setAlpha( 0 )
 				self.clipFinished( LobbySlideCommonGroupsWidget, {} )
+
 				LobbySlideSocialInfoWidget:completeAnimation()
 				self.LobbySlideSocialInfoWidget:setLeftRight( true, false, -1, 319 )
 				self.LobbySlideSocialInfoWidget:setTopBottom( true, false, 342.5, 432.5 )
@@ -589,24 +643,31 @@ CoD.LobbySlideSelectedPlayerInfo.new = function ( menu, controller )
 		Theater = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				LobbySlideArenaWidget0:completeAnimation()
 				self.LobbySlideArenaWidget0:setAlpha( 0 )
 				self.clipFinished( LobbySlideArenaWidget0, {} )
+
 				rank:completeAnimation()
 				self.rank:setAlpha( 0 )
 				self.clipFinished( rank, {} )
+
 				playercard:completeAnimation()
 				self.playercard:setAlpha( 1 )
 				self.clipFinished( playercard, {} )
+
 				LobbySlideEmblemWidget:completeAnimation()
 				self.LobbySlideEmblemWidget:setAlpha( 1 )
 				self.clipFinished( LobbySlideEmblemWidget, {} )
+
 				LobbySlideMissingMapsWidget:completeAnimation()
 				self.LobbySlideMissingMapsWidget:setAlpha( 0 )
 				self.clipFinished( LobbySlideMissingMapsWidget, {} )
+
 				LobbySlideCommonGroupsWidget:completeAnimation()
 				self.LobbySlideCommonGroupsWidget:setAlpha( 0 )
 				self.clipFinished( LobbySlideCommonGroupsWidget, {} )
+
 				LobbySlideSocialInfoWidget:completeAnimation()
 				self.LobbySlideSocialInfoWidget:setLeftRight( true, false, -1, 319 )
 				self.LobbySlideSocialInfoWidget:setTopBottom( true, false, 342.5, 432.5 )
@@ -615,6 +676,7 @@ CoD.LobbySlideSelectedPlayerInfo.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -691,6 +753,7 @@ CoD.LobbySlideSelectedPlayerInfo.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LobbySlideArenaWidget0:close()
 		element.rank:close()

@@ -303,9 +303,11 @@ end
 CoD.CommsSystemWidget = InheritFrom( LUI.UIElement )
 CoD.CommsSystemWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CommsSystemWidget )
 	self.id = "CommsSystemWidget"
@@ -345,17 +347,20 @@ CoD.CommsSystemWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				MessageList:completeAnimation()
 				self.MessageList:setLeftRight( true, false, 75, 400 )
 				self.MessageList:setTopBottom( true, false, 30, 242 )
 				self.MessageList:setAlpha( 1 )
 				self.clipFinished( MessageList, {} )
+
 				CommsWidget:completeAnimation()
 				self.CommsWidget:setAlpha( 0 )
 				self.clipFinished( CommsWidget, {} )
 			end,
 			OffsiteCommsActive = function ()
 				self:setupElementClipCounter( 2 )
+
 				local MessageListFrame2 = function ( MessageList, event )
 					local MessageListFrame3 = function ( MessageList, event )
 						local MessageListFrame4 = function ( MessageList, event )
@@ -526,17 +531,20 @@ CoD.CommsSystemWidget.new = function ( menu, controller )
 		OffsiteCommsActive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				MessageList:completeAnimation()
 				self.MessageList:setLeftRight( true, false, 75, 400 )
 				self.MessageList:setTopBottom( true, false, 152, 364 )
 				self.MessageList:setAlpha( 1 )
 				self.clipFinished( MessageList, {} )
+
 				CommsWidget:completeAnimation()
 				self.CommsWidget:setAlpha( 1 )
 				self.clipFinished( CommsWidget, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				local f38_local0 = function ( f39_arg0, f39_arg1 )
 					local f39_local0 = function ( f40_arg0, f40_arg1 )
 						local f40_local0 = function ( f41_arg0, f41_arg1 )
@@ -705,6 +713,7 @@ CoD.CommsSystemWidget.new = function ( menu, controller )
 		}
 	}
 	MessageList.id = "MessageList"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MessageList:close()
 		element.CommsHeader:close()

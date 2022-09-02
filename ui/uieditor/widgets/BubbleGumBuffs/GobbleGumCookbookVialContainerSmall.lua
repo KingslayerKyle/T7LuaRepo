@@ -4,9 +4,11 @@
 CoD.GobbleGumCookbookVialContainerSmall = InheritFrom( LUI.UIElement )
 CoD.GobbleGumCookbookVialContainerSmall.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GobbleGumCookbookVialContainerSmall )
 	self.id = "GobbleGumCookbookVialContainerSmall"
@@ -38,9 +40,11 @@ CoD.GobbleGumCookbookVialContainerSmall.new = function ( menu, controller )
 		HiddenForLootSale = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				vialIcon:completeAnimation()
 				self.vialIcon:setAlpha( 0 )
 				self.clipFinished( vialIcon, {} )
+
 				vialText:completeAnimation()
 				self.vialText:setAlpha( 0 )
 				self.clipFinished( vialText, {} )
@@ -49,9 +53,11 @@ CoD.GobbleGumCookbookVialContainerSmall.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				vialIcon:completeAnimation()
 				self.vialIcon:setAlpha( 0 )
 				self.clipFinished( vialIcon, {} )
+
 				vialText:completeAnimation()
 				self.vialText:setAlpha( 0 )
 				self.clipFinished( vialText, {} )
@@ -60,9 +66,11 @@ CoD.GobbleGumCookbookVialContainerSmall.new = function ( menu, controller )
 		ShownInsufficientFunds = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				vialIcon:completeAnimation()
 				self.vialIcon:setAlpha( 1 )
 				self.clipFinished( vialIcon, {} )
+
 				vialText:completeAnimation()
 				self.vialText:setRGB( 0.93, 0.17, 0.17 )
 				self.vialText:setAlpha( 1 )
@@ -72,9 +80,11 @@ CoD.GobbleGumCookbookVialContainerSmall.new = function ( menu, controller )
 		Shown = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				vialIcon:completeAnimation()
 				self.vialIcon:setAlpha( 1 )
 				self.clipFinished( vialIcon, {} )
+
 				vialText:completeAnimation()
 				self.vialText:setRGB( 1, 1, 1 )
 				self.vialText:setAlpha( 1 )
@@ -82,6 +92,7 @@ CoD.GobbleGumCookbookVialContainerSmall.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HiddenForLootSale",
@@ -126,6 +137,7 @@ CoD.GobbleGumCookbookVialContainerSmall.new = function ( menu, controller )
 			modelName = "MegaChewTokens.remainingTokens"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vialText:close()
 	end )

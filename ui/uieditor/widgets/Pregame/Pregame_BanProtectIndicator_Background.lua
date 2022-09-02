@@ -4,9 +4,11 @@
 CoD.Pregame_BanProtectIndicator_Background = InheritFrom( LUI.UIElement )
 CoD.Pregame_BanProtectIndicator_Background.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_BanProtectIndicator_Background )
 	self.id = "Pregame_BanProtectIndicator_Background"
@@ -25,6 +27,7 @@ CoD.Pregame_BanProtectIndicator_Background.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 0 )
 				self.clipFinished( background, {} )
@@ -33,6 +36,7 @@ CoD.Pregame_BanProtectIndicator_Background.new = function ( menu, controller )
 		Protected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				background:completeAnimation()
 				self.background:setRGB( 0.66, 0.85, 0.16 )
 				self.background:setAlpha( 0 )
@@ -42,6 +46,7 @@ CoD.Pregame_BanProtectIndicator_Background.new = function ( menu, controller )
 		Banned = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				background:completeAnimation()
 				self.background:setRGB( 1, 0.17, 0.23 )
 				self.background:setAlpha( 0 )
@@ -49,6 +54,7 @@ CoD.Pregame_BanProtectIndicator_Background.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Protected",

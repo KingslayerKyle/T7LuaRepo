@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CharacterCustomization.PersonalizeCharacter_ColorO
 CoD.PersonalizeCharacter_ColorsList = InheritFrom( LUI.UIElement )
 CoD.PersonalizeCharacter_ColorsList.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PersonalizeCharacter_ColorsList )
 	self.id = "PersonalizeCharacter_ColorsList"
@@ -101,6 +103,7 @@ CoD.PersonalizeCharacter_ColorsList.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FETitleNumBrdr1:close()
 		element.colorsList:close()

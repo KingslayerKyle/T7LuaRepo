@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FeaturedFrame" )
 CoD.ZMLobbyEEWidget = InheritFrom( LUI.UIElement )
 CoD.ZMLobbyEEWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZMLobbyEEWidget )
 	self.id = "ZMLobbyEEWidget"
@@ -166,48 +168,63 @@ CoD.ZMLobbyEEWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				BackingHexaWhite:completeAnimation()
 				self.BackingHexaWhite:setAlpha( 0 )
 				self.clipFinished( BackingHexaWhite, {} )
+
 				BackingHexa:completeAnimation()
 				self.BackingHexa:setAlpha( 0 )
 				self.clipFinished( BackingHexa, {} )
+
 				BackingDark:completeAnimation()
 				self.BackingDark:setAlpha( 0 )
 				self.clipFinished( BackingDark, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				HexagonePatterns:completeAnimation()
 				self.HexagonePatterns:setAlpha( 0 )
 				self.clipFinished( HexagonePatterns, {} )
+
 				gatewormVisible:completeAnimation()
 				self.gatewormVisible:setAlpha( 0 )
 				self.clipFinished( gatewormVisible, {} )
+
 				gatewormComplete:completeAnimation()
 				self.gatewormComplete:setAlpha( 0 )
 				self.clipFinished( gatewormComplete, {} )
+
 				summoningKeyVisible:completeAnimation()
 				self.summoningKeyVisible:setAlpha( 0 )
 				self.clipFinished( summoningKeyVisible, {} )
+
 				summoningKeyComplete:completeAnimation()
 				self.summoningKeyComplete:setAlpha( 0 )
 				self.clipFinished( summoningKeyComplete, {} )
+
 				summoningKeyAllComplete:completeAnimation()
 				self.summoningKeyAllComplete:setAlpha( 0 )
 				self.clipFinished( summoningKeyAllComplete, {} )
+
 				gatewormAllComplete:completeAnimation()
 				self.gatewormAllComplete:setAlpha( 0 )
 				self.clipFinished( gatewormAllComplete, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setAlpha( 0 )
 				self.clipFinished( VSpanel, {} )
+
 				FEFeaturedFrame0:completeAnimation()
 				self.FEFeaturedFrame0:setAlpha( 0 )
 				self.clipFinished( FEFeaturedFrame0, {} )
@@ -216,46 +233,60 @@ CoD.ZMLobbyEEWidget.new = function ( menu, controller )
 		AllCompleteSummoningKey = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				BackingHexaWhite:completeAnimation()
 				self.BackingHexaWhite:setRGB( 0.05, 1, 0.63 )
 				self.BackingHexaWhite:setAlpha( 1 )
 				self.clipFinished( BackingHexaWhite, {} )
+
 				BackingHexa:completeAnimation()
 				self.BackingHexa:setAlpha( 0 )
 				self.clipFinished( BackingHexa, {} )
+
 				BackingDark:completeAnimation()
 				self.BackingDark:setAlpha( 0 )
 				self.clipFinished( BackingDark, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				gatewormVisible:completeAnimation()
 				self.gatewormVisible:setAlpha( 0 )
 				self.clipFinished( gatewormVisible, {} )
+
 				gatewormComplete:completeAnimation()
 				self.gatewormComplete:setAlpha( 0 )
 				self.clipFinished( gatewormComplete, {} )
+
 				gatewormComplete0:completeAnimation()
 				self.gatewormComplete0:setAlpha( 0 )
 				self.clipFinished( gatewormComplete0, {} )
+
 				summoningKeyVisible:completeAnimation()
 				self.summoningKeyVisible:setAlpha( 0 )
 				self.clipFinished( summoningKeyVisible, {} )
+
 				summoningKeyComplete:completeAnimation()
 				self.summoningKeyComplete:setAlpha( 0 )
 				self.clipFinished( summoningKeyComplete, {} )
+
 				summoningKeyAllComplete:completeAnimation()
 				self.summoningKeyAllComplete:setAlpha( 1 )
 				self.clipFinished( summoningKeyAllComplete, {} )
+
 				gatewormAllComplete:completeAnimation()
 				self.gatewormAllComplete:setAlpha( 0 )
 				self.clipFinished( gatewormAllComplete, {} )
+
 				gatewormAllComplete0:completeAnimation()
 				self.gatewormAllComplete0:setAlpha( 0 )
 				self.clipFinished( gatewormAllComplete0, {} )
+
 				FEFeaturedFrame0:completeAnimation()
 				self.FEFeaturedFrame0:setRGB( 0, 1, 0.03 )
 				self.FEFeaturedFrame0:setAlpha( 0 )
@@ -265,49 +296,63 @@ CoD.ZMLobbyEEWidget.new = function ( menu, controller )
 		AllCompleteGateworm = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				BackingHexaWhite:completeAnimation()
 				self.BackingHexaWhite:setRGB( 0.05, 1, 0.63 )
 				self.BackingHexaWhite:setAlpha( 1 )
 				self.clipFinished( BackingHexaWhite, {} )
+
 				BackingHexa:completeAnimation()
 				self.BackingHexa:setAlpha( 0 )
 				self.clipFinished( BackingHexa, {} )
+
 				BackingDark:completeAnimation()
 				self.BackingDark:setAlpha( 0 )
 				self.clipFinished( BackingDark, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				gatewormVisible:completeAnimation()
 				self.gatewormVisible:setAlpha( 0 )
 				self.clipFinished( gatewormVisible, {} )
+
 				gatewormComplete:completeAnimation()
 				self.gatewormComplete:setAlpha( 0 )
 				self.clipFinished( gatewormComplete, {} )
+
 				gatewormComplete0:completeAnimation()
 				self.gatewormComplete0:setAlpha( 0 )
 				self.clipFinished( gatewormComplete0, {} )
+
 				summoningKeyVisible:completeAnimation()
 				self.summoningKeyVisible:setAlpha( 0 )
 				self.clipFinished( summoningKeyVisible, {} )
+
 				summoningKeyComplete:completeAnimation()
 				self.summoningKeyComplete:setAlpha( 0 )
 				self.clipFinished( summoningKeyComplete, {} )
+
 				summoningKeyAllComplete:completeAnimation()
 				self.summoningKeyAllComplete:setAlpha( 0 )
 				self.clipFinished( summoningKeyAllComplete, {} )
+
 				gatewormAllComplete:completeAnimation()
 				self.gatewormAllComplete:setAlpha( 1 )
 				self.gatewormAllComplete:setScale( 0.95 )
 				self.clipFinished( gatewormAllComplete, {} )
+
 				gatewormAllComplete0:completeAnimation()
 				self.gatewormAllComplete0:setAlpha( 0.1 )
 				self.gatewormAllComplete0:setScale( 0.9 )
 				self.gatewormAllComplete0:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
 				self.clipFinished( gatewormAllComplete0, {} )
+
 				FEFeaturedFrame0:completeAnimation()
 				self.FEFeaturedFrame0:setRGB( 0.11, 1, 0 )
 				self.FEFeaturedFrame0:setAlpha( 0 )
@@ -317,57 +362,73 @@ CoD.ZMLobbyEEWidget.new = function ( menu, controller )
 		VisibleGateworm = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				BackingHexaWhite:completeAnimation()
 				self.BackingHexaWhite:setAlpha( 0 )
 				self.clipFinished( BackingHexaWhite, {} )
+
 				BackingHexa:completeAnimation()
 				self.BackingHexa:setAlpha( 1 )
 				self.BackingHexa:setImage( RegisterImage( "uie_t7_icon_inventory_worm_egg_container_black" ) )
 				self.clipFinished( BackingHexa, {} )
+
 				BackingDark:completeAnimation()
 				self.BackingDark:setAlpha( 0 )
 				self.clipFinished( BackingDark, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setRGB( 1, 1, 1 )
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				HexagonePatterns:completeAnimation()
 				self.HexagonePatterns:setAlpha( 0.28 )
 				self.clipFinished( HexagonePatterns, {} )
+
 				gatewormVisible:completeAnimation()
 				self.gatewormVisible:setRGB( 0.07, 0.04, 0.04 )
 				self.gatewormVisible:setAlpha( 1 )
 				self.gatewormVisible:setZRot( 0 )
 				self.gatewormVisible:setImage( RegisterImage( "uie_t7_icon_inventory_worm_disabled" ) )
 				self.clipFinished( gatewormVisible, {} )
+
 				gatewormComplete:completeAnimation()
 				self.gatewormComplete:setAlpha( 0 )
 				self.clipFinished( gatewormComplete, {} )
+
 				gatewormComplete0:completeAnimation()
 				self.gatewormComplete0:setAlpha( 0 )
 				self.clipFinished( gatewormComplete0, {} )
+
 				summoningKeyVisible:completeAnimation()
 				self.summoningKeyVisible:setAlpha( 0 )
 				self.summoningKeyVisible:setImage( RegisterImage( "uie_t7_icon_inventory_worm_disabled" ) )
 				self.clipFinished( summoningKeyVisible, {} )
+
 				summoningKeyComplete:completeAnimation()
 				self.summoningKeyComplete:setAlpha( 0 )
 				self.clipFinished( summoningKeyComplete, {} )
+
 				summoningKeyAllComplete:completeAnimation()
 				self.summoningKeyAllComplete:setAlpha( 0 )
 				self.clipFinished( summoningKeyAllComplete, {} )
+
 				gatewormAllComplete:completeAnimation()
 				self.gatewormAllComplete:setAlpha( 0 )
 				self.clipFinished( gatewormAllComplete, {} )
+
 				gatewormAllComplete0:completeAnimation()
 				self.gatewormAllComplete0:setAlpha( 0 )
 				self.clipFinished( gatewormAllComplete0, {} )
+
 				FEFeaturedFrame0:completeAnimation()
 				self.FEFeaturedFrame0:setAlpha( 0 )
 				self.clipFinished( FEFeaturedFrame0, {} )
@@ -376,54 +437,69 @@ CoD.ZMLobbyEEWidget.new = function ( menu, controller )
 		CompleteGateworm = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				BackingHexaWhite:completeAnimation()
 				self.BackingHexaWhite:setRGB( 0, 1, 0 )
 				self.BackingHexaWhite:setAlpha( 1 )
 				self.clipFinished( BackingHexaWhite, {} )
+
 				BackingHexa:completeAnimation()
 				self.BackingHexa:setRGB( 0.38, 0.97, 0 )
 				self.BackingHexa:setAlpha( 0 )
 				self.clipFinished( BackingHexa, {} )
+
 				BackingDark:completeAnimation()
 				self.BackingDark:setAlpha( 0 )
 				self.clipFinished( BackingDark, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				gatewormVisible:completeAnimation()
 				self.gatewormVisible:setAlpha( 0 )
 				self.clipFinished( gatewormVisible, {} )
+
 				gatewormComplete:completeAnimation()
 				self.gatewormComplete:setRGB( 1, 1, 1 )
 				self.gatewormComplete:setAlpha( 1 )
 				self.gatewormComplete:setScale( 0.95 )
 				self.gatewormComplete:setImage( RegisterImage( "uie_t7_icon_inventory_worm_new" ) )
 				self.clipFinished( gatewormComplete, {} )
+
 				gatewormComplete0:completeAnimation()
 				self.gatewormComplete0:setAlpha( 0 )
 				self.gatewormComplete0:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
 				self.clipFinished( gatewormComplete0, {} )
+
 				summoningKeyVisible:completeAnimation()
 				self.summoningKeyVisible:setAlpha( 0 )
 				self.clipFinished( summoningKeyVisible, {} )
+
 				summoningKeyComplete:completeAnimation()
 				self.summoningKeyComplete:setAlpha( 0 )
 				self.clipFinished( summoningKeyComplete, {} )
+
 				summoningKeyAllComplete:completeAnimation()
 				self.summoningKeyAllComplete:setAlpha( 0 )
 				self.clipFinished( summoningKeyAllComplete, {} )
+
 				gatewormAllComplete:completeAnimation()
 				self.gatewormAllComplete:setAlpha( 0 )
 				self.clipFinished( gatewormAllComplete, {} )
+
 				gatewormAllComplete0:completeAnimation()
 				self.gatewormAllComplete0:setAlpha( 0 )
 				self.clipFinished( gatewormAllComplete0, {} )
+
 				FEFeaturedFrame0:completeAnimation()
 				self.FEFeaturedFrame0:setRGB( 0.11, 1, 0 )
 				self.FEFeaturedFrame0:setAlpha( 0 )
@@ -433,50 +509,65 @@ CoD.ZMLobbyEEWidget.new = function ( menu, controller )
 		VisibleSummoningKey = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				BackingHexaWhite:completeAnimation()
 				self.BackingHexaWhite:setAlpha( 0 )
 				self.clipFinished( BackingHexaWhite, {} )
+
 				BackingHexa:completeAnimation()
 				self.BackingHexa:setAlpha( 1 )
 				self.clipFinished( BackingHexa, {} )
+
 				BackingDark:completeAnimation()
 				self.BackingDark:setAlpha( 0 )
 				self.clipFinished( BackingDark, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				gatewormVisible:completeAnimation()
 				self.gatewormVisible:setAlpha( 0 )
 				self.clipFinished( gatewormVisible, {} )
+
 				gatewormComplete:completeAnimation()
 				self.gatewormComplete:setAlpha( 0 )
 				self.clipFinished( gatewormComplete, {} )
+
 				gatewormComplete0:completeAnimation()
 				self.gatewormComplete0:setAlpha( 0 )
 				self.clipFinished( gatewormComplete0, {} )
+
 				summoningKeyVisible:completeAnimation()
 				self.summoningKeyVisible:setRGB( 0, 0, 0 )
 				self.summoningKeyVisible:setAlpha( 1 )
 				self.summoningKeyVisible:setScale( 0.9 )
 				self.clipFinished( summoningKeyVisible, {} )
+
 				summoningKeyComplete:completeAnimation()
 				self.summoningKeyComplete:setAlpha( 0 )
 				self.clipFinished( summoningKeyComplete, {} )
+
 				summoningKeyAllComplete:completeAnimation()
 				self.summoningKeyAllComplete:setAlpha( 0 )
 				self.clipFinished( summoningKeyAllComplete, {} )
+
 				gatewormAllComplete:completeAnimation()
 				self.gatewormAllComplete:setAlpha( 0 )
 				self.clipFinished( gatewormAllComplete, {} )
+
 				gatewormAllComplete0:completeAnimation()
 				self.gatewormAllComplete0:setAlpha( 0 )
 				self.clipFinished( gatewormAllComplete0, {} )
+
 				FEFeaturedFrame0:completeAnimation()
 				self.FEFeaturedFrame0:setAlpha( 0 )
 				self.clipFinished( FEFeaturedFrame0, {} )
@@ -485,40 +576,52 @@ CoD.ZMLobbyEEWidget.new = function ( menu, controller )
 		CompleteSummoningKey = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BackingHexaWhite:completeAnimation()
 				self.BackingHexaWhite:setRGB( 0, 1, 0.02 )
 				self.BackingHexaWhite:setAlpha( 1 )
 				self.clipFinished( BackingHexaWhite, {} )
+
 				BackingHexa:completeAnimation()
 				self.BackingHexa:setAlpha( 0 )
 				self.clipFinished( BackingHexa, {} )
+
 				BackingDark:completeAnimation()
 				self.BackingDark:setAlpha( 0 )
 				self.clipFinished( BackingDark, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				gatewormVisible:completeAnimation()
 				self.gatewormVisible:setAlpha( 0 )
 				self.clipFinished( gatewormVisible, {} )
+
 				gatewormComplete:completeAnimation()
 				self.gatewormComplete:setAlpha( 0 )
 				self.clipFinished( gatewormComplete, {} )
+
 				gatewormComplete0:completeAnimation()
 				self.gatewormComplete0:setAlpha( 0 )
 				self.clipFinished( gatewormComplete0, {} )
+
 				summoningKeyVisible:completeAnimation()
 				self.summoningKeyVisible:setAlpha( 0 )
 				self.clipFinished( summoningKeyVisible, {} )
+
 				summoningKeyComplete:completeAnimation()
 				self.summoningKeyComplete:setAlpha( 1 )
 				self.clipFinished( summoningKeyComplete, {} )
+
 				gatewormAllComplete0:completeAnimation()
 				self.gatewormAllComplete0:setAlpha( 0 )
 				self.clipFinished( gatewormAllComplete0, {} )
+
 				FEFeaturedFrame0:completeAnimation()
 				self.FEFeaturedFrame0:setRGB( 0.11, 1, 0 )
 				self.FEFeaturedFrame0:setAlpha( 0 )
@@ -526,6 +629,7 @@ CoD.ZMLobbyEEWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "AllCompleteSummoningKey",
@@ -676,6 +780,7 @@ CoD.ZMLobbyEEWidget.new = function ( menu, controller )
 			modelName = "showingAll"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.VSpanel:close()
 		element.FEFeaturedFrame0:close()

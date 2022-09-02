@@ -4,9 +4,11 @@
 CoD.ScriptDebugMenuListWidget = InheritFrom( LUI.UIElement )
 CoD.ScriptDebugMenuListWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScriptDebugMenuListWidget )
 	self.id = "ScriptDebugMenuListWidget"
@@ -48,9 +50,11 @@ CoD.ScriptDebugMenuListWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				selectedImage:completeAnimation()
 				self.selectedImage:setAlpha( 0 )
 				self.clipFinished( selectedImage, {} )
+
 				listItemName:completeAnimation()
 				self.listItemName:setLeftRight( true, false, 1, 157 )
 				self.listItemName:setTopBottom( false, false, -12, 8 )
@@ -58,11 +62,13 @@ CoD.ScriptDebugMenuListWidget.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 2 )
+
 				selectedImage:completeAnimation()
 				self.selectedImage:setLeftRight( true, true, 0, -592 )
 				self.selectedImage:setTopBottom( true, true, 0, 0 )
 				self.selectedImage:setAlpha( 1 )
 				self.clipFinished( selectedImage, {} )
+
 				listItemName:completeAnimation()
 				self.listItemName:setLeftRight( true, false, 15, 171 )
 				self.listItemName:setTopBottom( false, false, -12, 8 )
@@ -70,6 +76,7 @@ CoD.ScriptDebugMenuListWidget.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 2 )
+
 				local selectedImageFrame2 = function ( selectedImage, event )
 					if not event.interrupted then
 						selectedImage:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -89,6 +96,7 @@ CoD.ScriptDebugMenuListWidget.new = function ( menu, controller )
 				self.selectedImage:setTopBottom( true, true, 0, 0 )
 				self.selectedImage:setAlpha( 0 )
 				selectedImageFrame2( selectedImage, {} )
+
 				listItemName:completeAnimation()
 				self.listItemName:setLeftRight( true, false, 15, 171 )
 				self.listItemName:setTopBottom( false, false, -12, 8 )
@@ -96,6 +104,7 @@ CoD.ScriptDebugMenuListWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.listItemName:close()
 	end )

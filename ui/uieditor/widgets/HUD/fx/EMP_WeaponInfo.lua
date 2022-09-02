@@ -42,9 +42,11 @@ end
 CoD.EMP_WeaponInfo = InheritFrom( LUI.UIElement )
 CoD.EMP_WeaponInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EMP_WeaponInfo )
 	self.id = "EMP_WeaponInfo"

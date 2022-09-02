@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Scoreboard.ScoreboardPingHeader" )
 CoD.ScoreboardHeaderWidgetCP = InheritFrom( LUI.UIElement )
 CoD.ScoreboardHeaderWidgetCP.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreboardHeaderWidgetCP )
 	self.id = "ScoreboardHeaderWidgetCP"
@@ -124,6 +126,7 @@ CoD.ScoreboardHeaderWidgetCP.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 1 )
 				self.clipFinished( Panel, {} )
@@ -132,12 +135,14 @@ CoD.ScoreboardHeaderWidgetCP.new = function ( menu, controller )
 		GenesisEndGame = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "GenesisEndGame",
@@ -161,6 +166,7 @@ CoD.ScoreboardHeaderWidgetCP.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_GAME_ENDED
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 		element.ScoreColumn1Header:close()

@@ -18,6 +18,7 @@ CoD.FocusWidgetWhiteBars.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FocusWidgetWhiteBars )
 	self.id = "FocusWidgetWhiteBars"
@@ -50,6 +51,7 @@ CoD.FocusWidgetWhiteBars.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

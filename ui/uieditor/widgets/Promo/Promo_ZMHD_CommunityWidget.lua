@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Promo.Promo_ZMHD_CommunityWidget_TitleAndDesc" )
 CoD.Promo_ZMHD_CommunityWidget = InheritFrom( LUI.UIElement )
 CoD.Promo_ZMHD_CommunityWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Promo_ZMHD_CommunityWidget )
 	self.id = "Promo_ZMHD_CommunityWidget"
@@ -54,6 +56,7 @@ CoD.Promo_ZMHD_CommunityWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PromoZMHDThermometerAndRewards:close()
 		element.TitleAndDesc:close()

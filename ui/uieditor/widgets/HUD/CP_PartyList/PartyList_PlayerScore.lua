@@ -31,9 +31,11 @@ end
 CoD.PartyList_PlayerScore = InheritFrom( LUI.UIElement )
 CoD.PartyList_PlayerScore.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PartyList_PlayerScore )
 	self.id = "PartyList_PlayerScore"
@@ -71,12 +73,17 @@ CoD.PartyList_PlayerScore.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 1 )
 				self.clipFinished( Panel, {} )
+
 				ScoreInternal:completeAnimation()
+
 				ScoreInternal.Gamertag:completeAnimation()
+
 				ScoreInternal.ClanContainer:completeAnimation()
+
 				ScoreInternal.LblRank:completeAnimation()
 				self.ScoreInternal:setAlpha( 1 )
 				self.ScoreInternal.Gamertag:setRGB( 1, 1, 1 )
@@ -88,12 +95,17 @@ CoD.PartyList_PlayerScore.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 1 )
 				self.clipFinished( Panel, {} )
+
 				ScoreInternal:completeAnimation()
+
 				ScoreInternal.Gamertag:completeAnimation()
+
 				ScoreInternal.ClanContainer:completeAnimation()
+
 				ScoreInternal.LblRank:completeAnimation()
 				self.ScoreInternal:setAlpha( 1 )
 				self.ScoreInternal.Gamertag:setRGB( 1, 1, 1 )
@@ -105,9 +117,11 @@ CoD.PartyList_PlayerScore.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
+
 				ScoreInternal:completeAnimation()
 				self.ScoreInternal:setAlpha( 0 )
 				self.clipFinished( ScoreInternal, {} )
@@ -116,14 +130,19 @@ CoD.PartyList_PlayerScore.new = function ( menu, controller )
 		IsSelf = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Panel:completeAnimation()
 				self.Panel:setLeftRight( true, false, 89.39, 258.39 )
 				self.Panel:setTopBottom( true, false, -1.67, 22 )
 				self.Panel:setAlpha( 1 )
 				self.clipFinished( Panel, {} )
+
 				ScoreInternal:completeAnimation()
+
 				ScoreInternal.Gamertag:completeAnimation()
+
 				ScoreInternal.ClanContainer:completeAnimation()
+
 				ScoreInternal.LblRank:completeAnimation()
 				self.ScoreInternal:setRGB( 1, 1, 1 )
 				self.ScoreInternal:setAlpha( 1 )
@@ -135,6 +154,7 @@ CoD.PartyList_PlayerScore.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 		element.ScoreInternal:close()

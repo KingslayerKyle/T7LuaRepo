@@ -4,9 +4,11 @@
 CoD.CallingCards_ReturnFire_Stars = InheritFrom( LUI.UIElement )
 CoD.CallingCards_ReturnFire_Stars.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_ReturnFire_Stars )
 	self.id = "CallingCards_ReturnFire_Stars"
@@ -67,6 +69,7 @@ CoD.CallingCards_ReturnFire_Stars.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				local Image1Frame2 = function ( Image1, event )
 					local Image1Frame3 = function ( Image1, event )
 						local Image1Frame4 = function ( Image1, event )
@@ -432,6 +435,7 @@ CoD.CallingCards_ReturnFire_Stars.new = function ( menu, controller )
 				self.Image8:setTopBottom( true, false, 53.66, 67.31 )
 				self.Image8:setAlpha( 0 )
 				Image8Frame2( Image8, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

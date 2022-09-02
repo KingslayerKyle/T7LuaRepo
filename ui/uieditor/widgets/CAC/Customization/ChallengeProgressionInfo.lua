@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.verticalScrollingTextBox" )
 CoD.ChallengeProgressionInfo = InheritFrom( LUI.UIElement )
 CoD.ChallengeProgressionInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChallengeProgressionInfo )
 	self.id = "ChallengeProgressionInfo"
@@ -196,46 +198,59 @@ CoD.ChallengeProgressionInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				GreyBacking:completeAnimation()
 				self.GreyBacking:setAlpha( 0.25 )
 				self.clipFinished( GreyBacking, {} )
+
 				BlackBacking:completeAnimation()
 				self.BlackBacking:setAlpha( 0.25 )
 				self.clipFinished( BlackBacking, {} )
+
 				completedRewardImage:completeAnimation()
 				self.completedRewardImage:setAlpha( 0 )
 				self.clipFinished( completedRewardImage, {} )
+
 				ProgressionRewardImage:completeAnimation()
 				self.ProgressionRewardImage:setAlpha( 1 )
 				self.clipFinished( ProgressionRewardImage, {} )
+
 				ChallengeBonusXPInfo:completeAnimation()
 				self.ChallengeBonusXPInfo:setAlpha( 1 )
 				self.clipFinished( ChallengeBonusXPInfo, {} )
+
 				requirementTitle:completeAnimation()
 				self.requirementTitle:setLeftRight( true, true, 103.5, -4 )
 				self.requirementTitle:setTopBottom( true, false, 0, 24 )
 				self.requirementTitle:setAlpha( 1 )
 				self.clipFinished( requirementTitle, {} )
+
 				completedTitle:completeAnimation()
 				self.completedTitle:setAlpha( 0 )
 				self.clipFinished( completedTitle, {} )
+
 				progressBar:completeAnimation()
 				self.progressBar:setAlpha( 1 )
 				self.clipFinished( progressBar, {} )
+
 				progressText:completeAnimation()
 				self.progressText:setAlpha( 1 )
 				self.clipFinished( progressText, {} )
+
 				ProgressBarBorder:completeAnimation()
 				self.ProgressBarBorder:setAlpha( 1 )
 				self.clipFinished( ProgressBarBorder, {} )
+
 				verticalScrollingTextBox:completeAnimation()
 				self.verticalScrollingTextBox:setLeftRight( true, false, 103.5, 416 )
 				self.verticalScrollingTextBox:setTopBottom( true, false, 24, 66 )
 				self.verticalScrollingTextBox:setAlpha( 1 )
 				self.clipFinished( verticalScrollingTextBox, {} )
+
 				RewardBox:completeAnimation()
 				self.RewardBox:setAlpha( 0.2 )
 				self.clipFinished( RewardBox, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
@@ -244,46 +259,59 @@ CoD.ChallengeProgressionInfo.new = function ( menu, controller )
 		NotVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				GreyBacking:completeAnimation()
 				self.GreyBacking:setAlpha( 0 )
 				self.clipFinished( GreyBacking, {} )
+
 				BlackBacking:completeAnimation()
 				self.BlackBacking:setAlpha( 0 )
 				self.clipFinished( BlackBacking, {} )
+
 				completedRewardImage:completeAnimation()
 				self.completedRewardImage:setAlpha( 0 )
 				self.clipFinished( completedRewardImage, {} )
+
 				ProgressionRewardImage:completeAnimation()
 				self.ProgressionRewardImage:setAlpha( 0 )
 				self.clipFinished( ProgressionRewardImage, {} )
+
 				ChallengeBonusXPInfo:completeAnimation()
 				self.ChallengeBonusXPInfo:setAlpha( 0 )
 				self.clipFinished( ChallengeBonusXPInfo, {} )
+
 				requirementTitle:completeAnimation()
 				self.requirementTitle:setLeftRight( true, true, 103.5, -4 )
 				self.requirementTitle:setTopBottom( true, false, 0, 24 )
 				self.requirementTitle:setAlpha( 0 )
 				self.clipFinished( requirementTitle, {} )
+
 				completedTitle:completeAnimation()
 				self.completedTitle:setAlpha( 0 )
 				self.clipFinished( completedTitle, {} )
+
 				progressBar:completeAnimation()
 				self.progressBar:setAlpha( 0 )
 				self.clipFinished( progressBar, {} )
+
 				progressText:completeAnimation()
 				self.progressText:setAlpha( 0 )
 				self.clipFinished( progressText, {} )
+
 				ProgressBarBorder:completeAnimation()
 				self.ProgressBarBorder:setAlpha( 0 )
 				self.clipFinished( ProgressBarBorder, {} )
+
 				verticalScrollingTextBox:completeAnimation()
 				self.verticalScrollingTextBox:setLeftRight( true, false, 103.5, 401.5 )
 				self.verticalScrollingTextBox:setTopBottom( true, false, 25, 67 )
 				self.verticalScrollingTextBox:setAlpha( 0 )
 				self.clipFinished( verticalScrollingTextBox, {} )
+
 				RewardBox:completeAnimation()
 				self.RewardBox:setAlpha( 0 )
 				self.clipFinished( RewardBox, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
@@ -292,48 +320,61 @@ CoD.ChallengeProgressionInfo.new = function ( menu, controller )
 		bmComtracts = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				GreyBacking:completeAnimation()
 				self.GreyBacking:setAlpha( 0.25 )
 				self.clipFinished( GreyBacking, {} )
+
 				BlackBacking:completeAnimation()
 				self.BlackBacking:setAlpha( 0.25 )
 				self.clipFinished( BlackBacking, {} )
+
 				completedRewardImage:completeAnimation()
 				self.completedRewardImage:setAlpha( 1 )
 				self.clipFinished( completedRewardImage, {} )
+
 				ProgressionRewardImage:completeAnimation()
 				self.ProgressionRewardImage:setAlpha( 0 )
 				self.clipFinished( ProgressionRewardImage, {} )
+
 				ChallengeBonusXPInfo:completeAnimation()
 				self.ChallengeBonusXPInfo:setAlpha( 0 )
 				self.clipFinished( ChallengeBonusXPInfo, {} )
+
 				requirementTitle:completeAnimation()
 				self.requirementTitle:setLeftRight( true, true, 103.5, -4 )
 				self.requirementTitle:setTopBottom( true, false, 0, 24 )
 				self.requirementTitle:setAlpha( 0 )
 				self.clipFinished( requirementTitle, {} )
+
 				completedTitle:completeAnimation()
 				self.completedTitle:setLeftRight( false, true, -317.5, 5 )
 				self.completedTitle:setTopBottom( true, false, 17, 41 )
 				self.completedTitle:setAlpha( 1 )
 				self.clipFinished( completedTitle, {} )
+
 				progressBar:completeAnimation()
 				self.progressBar:setAlpha( 0 )
 				self.clipFinished( progressBar, {} )
+
 				progressText:completeAnimation()
 				self.progressText:setAlpha( 0 )
 				self.clipFinished( progressText, {} )
+
 				ProgressBarBorder:completeAnimation()
 				self.ProgressBarBorder:setAlpha( 0 )
 				self.clipFinished( ProgressBarBorder, {} )
+
 				verticalScrollingTextBox:completeAnimation()
 				self.verticalScrollingTextBox:setLeftRight( true, false, 103.5, 426 )
 				self.verticalScrollingTextBox:setTopBottom( true, false, 41, 83 )
 				self.verticalScrollingTextBox:setAlpha( 1 )
 				self.clipFinished( verticalScrollingTextBox, {} )
+
 				RewardBox:completeAnimation()
 				self.RewardBox:setAlpha( 0.2 )
 				self.clipFinished( RewardBox, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setLeftRight( true, false, 12.75, 85.75 )
 				self.bmContractBrandIcon:setTopBottom( true, false, 6.75, 79.75 )
@@ -344,48 +385,61 @@ CoD.ChallengeProgressionInfo.new = function ( menu, controller )
 		Completed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				GreyBacking:completeAnimation()
 				self.GreyBacking:setAlpha( 0.25 )
 				self.clipFinished( GreyBacking, {} )
+
 				BlackBacking:completeAnimation()
 				self.BlackBacking:setAlpha( 0.25 )
 				self.clipFinished( BlackBacking, {} )
+
 				completedRewardImage:completeAnimation()
 				self.completedRewardImage:setAlpha( 1 )
 				self.clipFinished( completedRewardImage, {} )
+
 				ProgressionRewardImage:completeAnimation()
 				self.ProgressionRewardImage:setAlpha( 0 )
 				self.clipFinished( ProgressionRewardImage, {} )
+
 				ChallengeBonusXPInfo:completeAnimation()
 				self.ChallengeBonusXPInfo:setAlpha( 0 )
 				self.clipFinished( ChallengeBonusXPInfo, {} )
+
 				requirementTitle:completeAnimation()
 				self.requirementTitle:setLeftRight( true, true, 103.5, -4 )
 				self.requirementTitle:setTopBottom( true, false, 0, 24 )
 				self.requirementTitle:setAlpha( 0 )
 				self.clipFinished( requirementTitle, {} )
+
 				completedTitle:completeAnimation()
 				self.completedTitle:setLeftRight( false, true, -317.5, 5 )
 				self.completedTitle:setTopBottom( true, false, 17, 41 )
 				self.completedTitle:setAlpha( 1 )
 				self.clipFinished( completedTitle, {} )
+
 				progressBar:completeAnimation()
 				self.progressBar:setAlpha( 0 )
 				self.clipFinished( progressBar, {} )
+
 				progressText:completeAnimation()
 				self.progressText:setAlpha( 0 )
 				self.clipFinished( progressText, {} )
+
 				ProgressBarBorder:completeAnimation()
 				self.ProgressBarBorder:setAlpha( 0 )
 				self.clipFinished( ProgressBarBorder, {} )
+
 				verticalScrollingTextBox:completeAnimation()
 				self.verticalScrollingTextBox:setLeftRight( true, false, 103.5, 426 )
 				self.verticalScrollingTextBox:setTopBottom( true, false, 41, 83 )
 				self.verticalScrollingTextBox:setAlpha( 1 )
 				self.clipFinished( verticalScrollingTextBox, {} )
+
 				RewardBox:completeAnimation()
 				self.RewardBox:setAlpha( 0.2 )
 				self.clipFinished( RewardBox, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
@@ -394,54 +448,68 @@ CoD.ChallengeProgressionInfo.new = function ( menu, controller )
 		NotAvailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				GreyBacking:completeAnimation()
 				self.GreyBacking:setAlpha( 0.25 )
 				self.clipFinished( GreyBacking, {} )
+
 				BlackBacking:completeAnimation()
 				self.BlackBacking:setAlpha( 0.25 )
 				self.clipFinished( BlackBacking, {} )
+
 				completedRewardImage:completeAnimation()
 				self.completedRewardImage:setAlpha( 0 )
 				self.clipFinished( completedRewardImage, {} )
+
 				ProgressionRewardImage:completeAnimation()
 				self.ProgressionRewardImage:setAlpha( 1 )
 				self.clipFinished( ProgressionRewardImage, {} )
+
 				ChallengeBonusXPInfo:completeAnimation()
 				self.ChallengeBonusXPInfo:setAlpha( 1 )
 				self.clipFinished( ChallengeBonusXPInfo, {} )
+
 				requirementTitle:completeAnimation()
 				self.requirementTitle:setLeftRight( true, true, 103.5, -4 )
 				self.requirementTitle:setTopBottom( true, false, 0, 24 )
 				self.requirementTitle:setAlpha( 1 )
 				self.clipFinished( requirementTitle, {} )
+
 				completedTitle:completeAnimation()
 				self.completedTitle:setAlpha( 0 )
 				self.clipFinished( completedTitle, {} )
+
 				progressBar:completeAnimation()
 				self.progressBar:setAlpha( 0 )
 				self.clipFinished( progressBar, {} )
+
 				progressText:completeAnimation()
 				self.progressText:setAlpha( 0 )
 				self.clipFinished( progressText, {} )
+
 				ProgressBarBorder:completeAnimation()
 				self.ProgressBarBorder:setAlpha( 0 )
 				self.clipFinished( ProgressBarBorder, {} )
+
 				verticalScrollingTextBox:completeAnimation()
 				self.verticalScrollingTextBox:setLeftRight( true, false, 103.5, 416 )
 				self.verticalScrollingTextBox:setTopBottom( true, false, 23, 65 )
 				self.verticalScrollingTextBox:setAlpha( 1 )
 				self.clipFinished( verticalScrollingTextBox, {} )
+
 				RewardBox:completeAnimation()
 				self.RewardBox:setLeftRight( true, true, -1, 1 )
 				self.RewardBox:setTopBottom( true, true, -1, 1 )
 				self.RewardBox:setAlpha( 0.2 )
 				self.clipFinished( RewardBox, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.completedRewardImage:close()
 		element.ProgressionRewardImage:close()

@@ -4,9 +4,11 @@
 CoD.VideoItem = InheritFrom( LUI.UIElement )
 CoD.VideoItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VideoItem )
 	self.id = "VideoItem"
@@ -35,18 +37,21 @@ CoD.VideoItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Video:completeAnimation()
 				self.Video:setRGB( 1, 1, 1 )
 				self.clipFinished( Video, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
+
 				Video:completeAnimation()
 				self.Video:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.clipFinished( Video, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 1 )
+
 				Video:completeAnimation()
 				self.Video:setRGB( ColorSet.PlayerYellow.r, ColorSet.PlayerYellow.g, ColorSet.PlayerYellow.b )
 				self.clipFinished( Video, {} )
@@ -55,6 +60,7 @@ CoD.VideoItem.new = function ( menu, controller )
 		Arabic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Video:completeAnimation()
 				self.Video:setLeftRight( true, false, -78, 100 )
 				self.Video:setTopBottom( true, false, 0, 18 )
@@ -63,12 +69,14 @@ CoD.VideoItem.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
+
 				Video:completeAnimation()
 				self.Video:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.clipFinished( Video, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Arabic",
@@ -77,6 +85,7 @@ CoD.VideoItem.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Video:close()
 	end )

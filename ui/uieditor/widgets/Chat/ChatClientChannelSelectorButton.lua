@@ -8,9 +8,11 @@ end
 CoD.ChatClientChannelSelectorButton = InheritFrom( LUI.UIElement )
 CoD.ChatClientChannelSelectorButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChatClientChannelSelectorButton )
 	self.id = "ChatClientChannelSelectorButton"
@@ -30,6 +32,7 @@ CoD.ChatClientChannelSelectorButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ChatBubbleImage:completeAnimation()
 				self.ChatBubbleImage:setRGB( 1, 1, 1 )
 				self.ChatBubbleImage:setAlpha( 1 )
@@ -37,6 +40,7 @@ CoD.ChatClientChannelSelectorButton.new = function ( menu, controller )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 1 )
+
 				ChatBubbleImage:completeAnimation()
 				self.ChatBubbleImage:setRGB( 1, 0.41, 0 )
 				self.ChatBubbleImage:setAlpha( 1 )
@@ -46,6 +50,7 @@ CoD.ChatClientChannelSelectorButton.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ChatBubbleImage:completeAnimation()
 				self.ChatBubbleImage:setRGB( 1, 1, 1 )
 				self.ChatBubbleImage:setAlpha( 0.75 )
@@ -53,6 +58,7 @@ CoD.ChatClientChannelSelectorButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",

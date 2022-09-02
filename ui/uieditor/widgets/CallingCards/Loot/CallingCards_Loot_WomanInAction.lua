@@ -4,9 +4,11 @@
 CoD.CallingCards_Loot_WomanInAction = InheritFrom( LUI.UIElement )
 CoD.CallingCards_Loot_WomanInAction.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_Loot_WomanInAction )
 	self.id = "CallingCards_Loot_WomanInAction"
@@ -42,6 +44,7 @@ CoD.CallingCards_Loot_WomanInAction.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local Image1Frame2 = function ( Image1, event )
 					local Image1Frame3 = function ( Image1, event )
 						local Image1Frame4 = function ( Image1, event )
@@ -574,6 +577,7 @@ CoD.CallingCards_Loot_WomanInAction.new = function ( menu, controller )
 				Glow0:completeAnimation()
 				self.Glow0:setAlpha( 0 )
 				Glow0Frame2( Glow0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

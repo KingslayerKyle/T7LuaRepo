@@ -4,9 +4,11 @@
 CoD.VehicleGround_Reticle = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_Reticle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VehicleGround_Reticle )
 	self.id = "VehicleGround_Reticle"

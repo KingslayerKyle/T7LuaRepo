@@ -4,9 +4,11 @@
 CoD.DniWipe_DniWidget = InheritFrom( LUI.UIElement )
 CoD.DniWipe_DniWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DniWipe_DniWidget )
 	self.id = "DniWipe_DniWidget"
@@ -59,6 +61,7 @@ CoD.DniWipe_DniWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ModDNIFrame2 = function ( ModDNI, event )
 					local ModDNIFrame3 = function ( ModDNI, event )
 						if not event.interrupted then
@@ -296,15 +299,18 @@ CoD.DniWipe_DniWidget.new = function ( menu, controller )
 				self.ModDNI0:setYRot( 0 )
 				self.ModDNI0:setZRot( 0 )
 				ModDNI0Frame2( ModDNI0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",

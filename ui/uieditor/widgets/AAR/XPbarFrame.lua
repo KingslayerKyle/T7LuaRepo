@@ -4,9 +4,11 @@
 CoD.XPbarFrame = InheritFrom( LUI.UIElement )
 CoD.XPbarFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.XPbarFrame )
 	self.id = "XPbarFrame"
@@ -78,6 +80,7 @@ CoD.XPbarFrame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

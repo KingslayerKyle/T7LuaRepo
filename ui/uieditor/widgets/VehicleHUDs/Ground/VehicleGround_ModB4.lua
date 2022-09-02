@@ -4,9 +4,11 @@
 CoD.VehicleGround_ModB4 = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_ModB4.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.VehicleGround_ModB4 )
 	self.id = "VehicleGround_ModB4"
@@ -50,6 +52,7 @@ CoD.VehicleGround_ModB4.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local Image13Frame2 = function ( Image13, event )
 					local Image13Frame3 = function ( Image13, event )
 						local Image13Frame4 = function ( Image13, event )
@@ -704,6 +707,7 @@ CoD.VehicleGround_ModB4.new = function ( menu, controller )
 				Image15:completeAnimation()
 				self.Image15:setRGB( 1, 1, 1 )
 				Image15Frame2( Image15, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

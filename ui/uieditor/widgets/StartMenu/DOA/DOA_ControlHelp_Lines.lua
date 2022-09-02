@@ -4,9 +4,11 @@
 CoD.DOA_ControlHelp_Lines = InheritFrom( LUI.UIElement )
 CoD.DOA_ControlHelp_Lines.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DOA_ControlHelp_Lines )
 	self.id = "DOA_ControlHelp_Lines"
@@ -41,12 +43,15 @@ CoD.DOA_ControlHelp_Lines.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				defaultLines:completeAnimation()
 				self.defaultLines:setAlpha( 1 )
 				self.clipFinished( defaultLines, {} )
+
 				redinsRallyLines:completeAnimation()
 				self.redinsRallyLines:setAlpha( 0 )
 				self.clipFinished( redinsRallyLines, {} )
+
 				DOAfpsLines:completeAnimation()
 				self.DOAfpsLines:setAlpha( 0 )
 				self.clipFinished( DOAfpsLines, {} )
@@ -55,14 +60,17 @@ CoD.DOA_ControlHelp_Lines.new = function ( menu, controller )
 		RedinsRally = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				defaultLines:completeAnimation()
 				self.defaultLines:setAlpha( 0 )
 				self.clipFinished( defaultLines, {} )
+
 				redinsRallyLines:completeAnimation()
 				self.redinsRallyLines:setLeftRight( true, true, -1, -1 )
 				self.redinsRallyLines:setTopBottom( true, true, -3, -3 )
 				self.redinsRallyLines:setAlpha( 1 )
 				self.clipFinished( redinsRallyLines, {} )
+
 				DOAfpsLines:completeAnimation()
 				self.DOAfpsLines:setAlpha( 0 )
 				self.clipFinished( DOAfpsLines, {} )
@@ -71,18 +79,22 @@ CoD.DOA_ControlHelp_Lines.new = function ( menu, controller )
 		DOAfps = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				defaultLines:completeAnimation()
 				self.defaultLines:setAlpha( 0 )
 				self.clipFinished( defaultLines, {} )
+
 				redinsRallyLines:completeAnimation()
 				self.redinsRallyLines:setAlpha( 0 )
 				self.clipFinished( redinsRallyLines, {} )
+
 				DOAfpsLines:completeAnimation()
 				self.DOAfpsLines:setAlpha( 1 )
 				self.clipFinished( DOAfpsLines, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "RedinsRally",

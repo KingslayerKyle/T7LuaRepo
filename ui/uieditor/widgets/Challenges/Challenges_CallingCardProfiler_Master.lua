@@ -12,9 +12,11 @@ require( "ui.uieditor.widgets.CAC.cac_lock" )
 CoD.Challenges_CallingCardProfiler_Master = InheritFrom( LUI.UIElement )
 CoD.Challenges_CallingCardProfiler_Master.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_CallingCardProfiler_Master )
 	self.id = "Challenges_CallingCardProfiler_Master"
@@ -187,18 +189,23 @@ CoD.Challenges_CallingCardProfiler_Master.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				featlineleft0:completeAnimation()
 				self.featlineleft0:setAlpha( 0 )
 				self.clipFinished( featlineleft0, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				featlineleft000:completeAnimation()
 				self.featlineleft000:setAlpha( 0 )
 				self.clipFinished( featlineleft000, {} )
@@ -207,27 +214,34 @@ CoD.Challenges_CallingCardProfiler_Master.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 1 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0.3 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0.4 )
 				self.clipFinished( TitleBg, {} )
+
 				featlineleft0:completeAnimation()
 				self.featlineleft0:setAlpha( 1 )
 				self.clipFinished( featlineleft0, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 1 )
 				self.clipFinished( LockedIcon, {} )
+
 				featlineleft000:completeAnimation()
 				self.featlineleft000:setAlpha( 1 )
 				self.clipFinished( featlineleft000, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -244,6 +258,7 @@ CoD.Challenges_CallingCardProfiler_Master.new = function ( menu, controller )
 			modelName = "isLocked"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG0:close()
 		element.PercentCompleteWidget:close()

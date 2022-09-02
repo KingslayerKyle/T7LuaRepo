@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CodCaster.CodCasterLoadoutItem" )
 CoD.CodCasterLoadoutListContainerContainer = InheritFrom( LUI.UIElement )
 CoD.CodCasterLoadoutListContainerContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterLoadoutListContainerContainer )
 	self.id = "CodCasterLoadoutListContainerContainer"
@@ -98,18 +100,22 @@ CoD.CodCasterLoadoutListContainerContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				CodCasterLoadoutListContainer:completeAnimation()
 				self.CodCasterLoadoutListContainer:setAlpha( 0 )
 				self.clipFinished( CodCasterLoadoutListContainer, {} )
+
 				PerksAlways:completeAnimation()
 				self.PerksAlways:setAlpha( 1 )
 				self.clipFinished( PerksAlways, {} )
+
 				PerksOnSpawn:completeAnimation()
 				self.PerksOnSpawn:setAlpha( 0 )
 				self.clipFinished( PerksOnSpawn, {} )
 			end,
 			Visible = function ()
 				self:setupElementClipCounter( 3 )
+
 				local CodCasterLoadoutListContainerFrame2 = function ( CodCasterLoadoutListContainer, event )
 					if not event.interrupted then
 						CodCasterLoadoutListContainer:beginAnimation( "keyframe", 310, false, false, CoD.TweenType.Linear )
@@ -129,15 +135,18 @@ CoD.CodCasterLoadoutListContainerContainer.new = function ( menu, controller )
 				self.CodCasterLoadoutListContainer:setTopBottom( true, false, 0, 97 )
 				self.CodCasterLoadoutListContainer:setAlpha( 1 )
 				CodCasterLoadoutListContainerFrame2( CodCasterLoadoutListContainer, {} )
+
 				PerksAlways:completeAnimation()
 				self.PerksAlways:setAlpha( 0 )
 				self.clipFinished( PerksAlways, {} )
+
 				PerksOnSpawn:completeAnimation()
 				self.PerksOnSpawn:setAlpha( 0 )
 				self.clipFinished( PerksOnSpawn, {} )
 			end,
 			ShowPerksOnSpawn = function ()
 				self:setupElementClipCounter( 1 )
+
 				local f12_local0 = function ( f13_arg0, f13_arg1 )
 					local f13_local0 = function ( f14_arg0, f14_arg1 )
 						local f14_local0 = function ( f15_arg0, f15_arg1 )
@@ -179,18 +188,22 @@ CoD.CodCasterLoadoutListContainerContainer.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				CodCasterLoadoutListContainer:completeAnimation()
 				self.CodCasterLoadoutListContainer:setAlpha( 1 )
 				self.clipFinished( CodCasterLoadoutListContainer, {} )
+
 				PerksAlways:completeAnimation()
 				self.PerksAlways:setAlpha( 0 )
 				self.clipFinished( PerksAlways, {} )
+
 				PerksOnSpawn:completeAnimation()
 				self.PerksOnSpawn:setAlpha( 0 )
 				self.clipFinished( PerksOnSpawn, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -213,6 +226,7 @@ CoD.CodCasterLoadoutListContainerContainer.new = function ( menu, controller )
 			PlayClip( self, "ShowPerksOnSpawn", controller )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CodCasterLoadoutListContainer:close()
 		element.PerksAlways:close()

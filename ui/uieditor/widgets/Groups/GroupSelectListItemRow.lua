@@ -12,9 +12,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FocusBarContainer" )
 CoD.GroupSelectListItemRow = InheritFrom( LUI.UIElement )
 CoD.GroupSelectListItemRow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupSelectListItemRow )
 	self.id = "GroupSelectListItemRow"
@@ -156,34 +158,43 @@ CoD.GroupSelectListItemRow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				SentText:completeAnimation()
 				self.SentText:setAlpha( 0 )
 				self.clipFinished( SentText, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, -2, 2 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, -2, 2 )
 				self.FocusBarB:setTopBottom( false, true, 0, 4 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setLeftRight( true, true, -12, 7 )
 				self.glitch:setTopBottom( true, false, -8.75, 4.75 )
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setLeftRight( true, true, -8.5, 8.5 )
 				self.glitch2:setTopBottom( false, true, -6, 9 )
@@ -192,12 +203,15 @@ CoD.GroupSelectListItemRow.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
@@ -474,24 +488,30 @@ CoD.GroupSelectListItemRow.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local FocusBarTFrame2 = function ( FocusBarT, event )
 					local FocusBarTFrame3 = function ( FocusBarT, event )
 						local FocusBarTFrame4 = function ( FocusBarT, event )
@@ -791,36 +811,44 @@ CoD.GroupSelectListItemRow.new = function ( menu, controller )
 		InviteSent = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				SentText:completeAnimation()
 				self.SentText:setAlpha( 1 )
 				self.clipFinished( SentText, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, -2, 2 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, -2, 2 )
 				self.FocusBarB:setTopBottom( false, true, 0, 4 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setLeftRight( true, true, -12, 7 )
 				self.glitch:setTopBottom( true, false, -8.75, 4.75 )
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setLeftRight( true, true, -8.5, 8.5 )
 				self.glitch2:setTopBottom( false, true, -6, 9 )
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				glitch0:completeAnimation()
 				self.glitch0:setAlpha( 0 )
 				self.clipFinished( glitch0, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				SentText:completeAnimation()
 				self.SentText:setAlpha( 1 )
 				self.clipFinished( SentText, {} )
@@ -1097,21 +1125,26 @@ CoD.GroupSelectListItemRow.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				SentText:completeAnimation()
 				self.SentText:setAlpha( 1 )
 				self.clipFinished( SentText, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				SentText:completeAnimation()
 				self.SentText:setAlpha( 1 )
 				self.clipFinished( SentText, {} )
@@ -1412,6 +1445,7 @@ CoD.GroupSelectListItemRow.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "InviteSent",
@@ -1428,6 +1462,7 @@ CoD.GroupSelectListItemRow.new = function ( menu, controller )
 			modelName = "inviteSent"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveDiag:close()
 		element.BoxButtonLrgInactive0:close()

@@ -4,9 +4,11 @@
 CoD.AmmoWidget_CleanCarryIcon = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_CleanCarryIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_CleanCarryIcon )
 	self.id = "AmmoWidget_CleanCarryIcon"
@@ -25,13 +27,16 @@ CoD.AmmoWidget_CleanCarryIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CleanIcon:completeAnimation()
 				self.CleanIcon:setScale( 1 )
 				self.clipFinished( CleanIcon, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			Full = function ()
 				self:setupElementClipCounter( 1 )
+
 				local CleanIconFrame2 = function ( CleanIcon, event )
 					local CleanIconFrame3 = function ( CleanIcon, event )
 						if not event.interrupted then

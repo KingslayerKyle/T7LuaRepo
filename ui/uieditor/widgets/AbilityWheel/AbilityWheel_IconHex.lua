@@ -4,9 +4,11 @@
 CoD.AbilityWheel_IconHex = InheritFrom( LUI.UIElement )
 CoD.AbilityWheel_IconHex.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AbilityWheel_IconHex )
 	self.id = "AbilityWheel_IconHex"
@@ -26,6 +28,7 @@ CoD.AbilityWheel_IconHex.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local IconHex0Frame2 = function ( IconHex0, event )
 					if not event.interrupted then
 						IconHex0:beginAnimation( "keyframe", 39, false, false, CoD.TweenType.Linear )
@@ -41,6 +44,7 @@ CoD.AbilityWheel_IconHex.new = function ( menu, controller )
 				IconHex0:completeAnimation()
 				self.IconHex0:setAlpha( RandomAddPercent( -10, 1 ) )
 				IconHex0Frame2( IconHex0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

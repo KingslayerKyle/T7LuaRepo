@@ -26,9 +26,11 @@ end
 CoD.GenericClickButton = InheritFrom( LUI.UIElement )
 CoD.GenericClickButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GenericClickButton )
 	self.id = "GenericClickButton"
@@ -96,6 +98,7 @@ CoD.GenericClickButton.new = function ( menu, controller )
 	label:setShaderVector( 2, 1, 0, 0, 0 )
 	label:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	label:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( label, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )
@@ -114,49 +117,61 @@ CoD.GenericClickButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 0, -11.86 )
 				self.Arrow:setTopBottom( false, false, -7, 7 )
 				self.clipFinished( Arrow, {} )
+
 				Glow21:completeAnimation()
 				self.Glow21:setAlpha( 0 )
 				self.clipFinished( Glow21, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 4 )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 8, -3.86 )
 				self.Arrow:setTopBottom( false, false, -7, 7 )
 				self.clipFinished( Arrow, {} )
+
 				Glow21:completeAnimation()
 				self.Glow21:setAlpha( 1 )
 				self.clipFinished( Glow21, {} )
 			end,
 			GainOver = function ()
 				self:setupElementClipCounter( 6 )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setAlpha( 1 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, 14.5, -14.5 )
 				self.FocusBarB:setTopBottom( false, true, -5.34, -9.34 )
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, 14.5, -14.5 )
 				self.FocusBarT:setTopBottom( true, false, 8.34, 4.34 )
@@ -212,6 +227,7 @@ CoD.GenericClickButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FocusBarB:close()
 		element.FocusBarT:close()

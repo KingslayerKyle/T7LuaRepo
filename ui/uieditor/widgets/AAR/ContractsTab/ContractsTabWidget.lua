@@ -19,9 +19,11 @@ end
 CoD.ContractsTabWidget = InheritFrom( LUI.UIElement )
 CoD.ContractsTabWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ContractsTabWidget )
 	self.id = "ContractsTabWidget"
@@ -167,33 +169,41 @@ CoD.ContractsTabWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				commonPanelBox01:completeAnimation()
 				self.commonPanelBox01:setLeftRight( true, false, 33, 309 )
 				self.commonPanelBox01:setTopBottom( true, false, 206, 532.59 )
 				self.clipFinished( commonPanelBox01, {} )
+
 				commonPanelBox02:completeAnimation()
 				self.commonPanelBox02:setLeftRight( true, false, 319, 818 )
 				self.commonPanelBox02:setTopBottom( true, false, 206, 532.59 )
 				self.clipFinished( commonPanelBox02, {} )
+
 				commonPanelBox030:completeAnimation()
 				self.commonPanelBox030:setLeftRight( true, false, 33, 818 )
 				self.commonPanelBox030:setTopBottom( true, false, 11.59, 196 )
 				self.clipFinished( commonPanelBox030, {} )
+
 				commonPanelBox031:completeAnimation()
 				self.commonPanelBox031:setAlpha( 0 )
 				self.clipFinished( commonPanelBox031, {} )
+
 				WeeklyContractsWidget:completeAnimation()
 				self.WeeklyContractsWidget:setLeftRight( true, false, 321, 818 )
 				self.WeeklyContractsWidget:setTopBottom( true, false, 206, 530 )
 				self.clipFinished( WeeklyContractsWidget, {} )
+
 				DailyContractWidget:completeAnimation()
 				self.DailyContractWidget:setLeftRight( true, false, 36, 308 )
 				self.DailyContractWidget:setTopBottom( true, false, 206, 530 )
 				self.clipFinished( DailyContractWidget, {} )
+
 				SpecialContractWidget:completeAnimation()
 				self.SpecialContractWidget:setLeftRight( true, false, 35, 817 )
 				self.SpecialContractWidget:setTopBottom( true, false, 13, 196 )
 				self.clipFinished( SpecialContractWidget, {} )
+
 				CommunityWidget:completeAnimation()
 				self.CommunityWidget:setAlpha( 0 )
 				self.clipFinished( CommunityWidget, {} )
@@ -202,35 +212,43 @@ CoD.ContractsTabWidget.new = function ( menu, controller )
 		CommunityVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				commonPanelBox01:completeAnimation()
 				self.commonPanelBox01:setLeftRight( true, false, 33, 309 )
 				self.commonPanelBox01:setTopBottom( true, false, 237, 532.59 )
 				self.clipFinished( commonPanelBox01, {} )
+
 				commonPanelBox02:completeAnimation()
 				self.commonPanelBox02:setLeftRight( true, false, 319, 818 )
 				self.commonPanelBox02:setTopBottom( true, false, 237, 532.59 )
 				self.clipFinished( commonPanelBox02, {} )
+
 				commonPanelBox030:completeAnimation()
 				self.commonPanelBox030:setLeftRight( true, false, 431, 818 )
 				self.commonPanelBox030:setTopBottom( true, false, 11.59, 226 )
 				self.clipFinished( commonPanelBox030, {} )
+
 				commonPanelBox031:completeAnimation()
 				self.commonPanelBox031:setLeftRight( true, false, 33, 420 )
 				self.commonPanelBox031:setTopBottom( true, false, 11.59, 226 )
 				self.commonPanelBox031:setAlpha( 1 )
 				self.clipFinished( commonPanelBox031, {} )
+
 				WeeklyContractsWidget:completeAnimation()
 				self.WeeklyContractsWidget:setLeftRight( true, false, 321, 818 )
 				self.WeeklyContractsWidget:setTopBottom( true, false, 237, 547 )
 				self.clipFinished( WeeklyContractsWidget, {} )
+
 				DailyContractWidget:completeAnimation()
 				self.DailyContractWidget:setLeftRight( true, false, 35, 309 )
 				self.DailyContractWidget:setTopBottom( true, false, 237, 541 )
 				self.clipFinished( DailyContractWidget, {} )
+
 				SpecialContractWidget:completeAnimation()
 				self.SpecialContractWidget:setLeftRight( true, false, 433, 817 )
 				self.SpecialContractWidget:setTopBottom( true, false, 14, 226 )
 				self.clipFinished( SpecialContractWidget, {} )
+
 				CommunityWidget:completeAnimation()
 				self.CommunityWidget:setLeftRight( true, false, 35, 419 )
 				self.CommunityWidget:setTopBottom( true, false, 13, 226 )
@@ -239,6 +257,7 @@ CoD.ContractsTabWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CommunityVisible",
@@ -247,6 +266,7 @@ CoD.ContractsTabWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.commonPanelBox01:close()
 		element.commonPanelBox02:close()

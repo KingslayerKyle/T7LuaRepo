@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ListHeader" )
 CoD.Pregame_PlayerName = InheritFrom( LUI.UIElement )
 CoD.Pregame_PlayerName.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_PlayerName )
 	self.id = "Pregame_PlayerName"
@@ -63,6 +65,7 @@ CoD.Pregame_PlayerName.new = function ( menu, controller )
 			btnDisplayTextStroke:setText( Engine.Localize( gamertag ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( btnDisplayTextStroke, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 15 )
 	end )
@@ -73,13 +76,17 @@ CoD.Pregame_PlayerName.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Name:completeAnimation()
 				self.Name:setRGB( 1, 1, 1 )
 				self.clipFinished( Name, {} )
+
 				ListHeader:completeAnimation()
+
 				ListHeader.btnDisplayTextStroke:completeAnimation()
 				self.ListHeader.btnDisplayTextStroke:setRGB( 1, 1, 1 )
 				self.clipFinished( ListHeader, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setRGB( 1, 1, 1 )
 				self.btnDisplayTextStroke:setAlpha( 1 )
@@ -89,15 +96,19 @@ CoD.Pregame_PlayerName.new = function ( menu, controller )
 		IsSelf = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Name:completeAnimation()
 				self.Name:setRGB( ColorSet.PlayerYellow.r, ColorSet.PlayerYellow.g, ColorSet.PlayerYellow.b )
 				self.Name:setAlpha( 0 )
 				self.clipFinished( Name, {} )
+
 				ListHeader:completeAnimation()
+
 				ListHeader.btnDisplayTextStroke:completeAnimation()
 				self.ListHeader:setAlpha( 0 )
 				self.ListHeader.btnDisplayTextStroke:setRGB( ColorSet.PlayerYellow.r, ColorSet.PlayerYellow.g, ColorSet.PlayerYellow.b )
 				self.clipFinished( ListHeader, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setRGB( 1, 0.84, 0.04 )
 				self.btnDisplayTextStroke:setAlpha( 1 )
@@ -110,6 +121,7 @@ CoD.Pregame_PlayerName.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "IsSelf",
@@ -126,6 +138,7 @@ CoD.Pregame_PlayerName.new = function ( menu, controller )
 			modelName = "xuid"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ListHeader:close()
 		element.Name:close()

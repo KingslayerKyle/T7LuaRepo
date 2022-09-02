@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FocusBarContainer" )
 CoD.TacRigUpgradeModelWidget = InheritFrom( LUI.UIElement )
 CoD.TacRigUpgradeModelWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TacRigUpgradeModelWidget )
 	self.id = "TacRigUpgradeModelWidget"
@@ -114,37 +116,47 @@ CoD.TacRigUpgradeModelWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0.05 )
 				self.clipFinished( UpgradeImage, {} )
+
 				TokenImage:completeAnimation()
 				self.TokenImage:setAlpha( 0 )
 				self.clipFinished( TokenImage, {} )
+
 				EquippedIcon:completeAnimation()
 				self.EquippedIcon:setRGB( 1, 1, 1 )
 				self.EquippedIcon:setAlpha( 0 )
 				self.clipFinished( EquippedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				DebugImage:completeAnimation()
 				self.DebugImage:setRGB( 1, 1, 1 )
 				self.clipFinished( DebugImage, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0.8 )
 				self.clipFinished( UpgradeImage, {} )
+
 				TokenImage:completeAnimation()
 				self.TokenImage:setAlpha( 0 )
 				self.clipFinished( TokenImage, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
@@ -153,42 +165,54 @@ CoD.TacRigUpgradeModelWidget.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0.25 )
 				self.clipFinished( UpgradeImage, {} )
+
 				LockImage:completeAnimation()
 				self.LockImage:setAlpha( 0.5 )
 				self.clipFinished( LockImage, {} )
+
 				EquippedIcon:completeAnimation()
 				self.EquippedIcon:setAlpha( 0 )
 				self.clipFinished( EquippedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				DebugImage:completeAnimation()
 				self.DebugImage:setRGB( 1, 0, 0 )
 				self.clipFinished( DebugImage, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0.25 )
 				self.clipFinished( UpgradeImage, {} )
+
 				LockImage:completeAnimation()
 				self.LockImage:setAlpha( 0.5 )
 				self.clipFinished( LockImage, {} )
+
 				EquippedIcon:completeAnimation()
 				self.EquippedIcon:setAlpha( 0 )
 				self.clipFinished( EquippedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				DebugImage:completeAnimation()
 				self.DebugImage:setRGB( 1, 0, 0 )
 				self.clipFinished( DebugImage, {} )
@@ -197,50 +221,64 @@ CoD.TacRigUpgradeModelWidget.new = function ( menu, controller )
 		NotPurchased = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0.5 )
 				self.clipFinished( UpgradeImage, {} )
+
 				LockImage:completeAnimation()
 				self.LockImage:setAlpha( 0 )
 				self.clipFinished( LockImage, {} )
+
 				TokenImage:completeAnimation()
 				self.TokenImage:setLeftRight( false, true, -20, 0 )
 				self.TokenImage:setTopBottom( true, false, 0, 20 )
 				self.TokenImage:setAlpha( 1 )
 				self.clipFinished( TokenImage, {} )
+
 				EquippedIcon:completeAnimation()
 				self.EquippedIcon:setAlpha( 0 )
 				self.clipFinished( EquippedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				DebugImage:completeAnimation()
 				self.DebugImage:setRGB( 0, 1, 0 )
 				self.clipFinished( DebugImage, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0.8 )
 				self.clipFinished( UpgradeImage, {} )
+
 				LockImage:completeAnimation()
 				self.LockImage:setAlpha( 0 )
 				self.clipFinished( LockImage, {} )
+
 				TokenImage:completeAnimation()
 				self.TokenImage:setAlpha( 1 )
 				self.clipFinished( TokenImage, {} )
+
 				EquippedIcon:completeAnimation()
 				self.EquippedIcon:setAlpha( 0 )
 				self.clipFinished( EquippedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				DebugImage:completeAnimation()
 				self.DebugImage:setRGB( 0, 1, 0 )
 				self.clipFinished( DebugImage, {} )
@@ -249,18 +287,23 @@ CoD.TacRigUpgradeModelWidget.new = function ( menu, controller )
 		NotVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0 )
 				self.clipFinished( UpgradeImage, {} )
+
 				TokenImage:completeAnimation()
 				self.TokenImage:setAlpha( 0 )
 				self.clipFinished( TokenImage, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
@@ -269,48 +312,61 @@ CoD.TacRigUpgradeModelWidget.new = function ( menu, controller )
 		Available = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0.25 )
 				self.clipFinished( UpgradeImage, {} )
+
 				LockImage:completeAnimation()
 				self.LockImage:setAlpha( 0 )
 				self.clipFinished( LockImage, {} )
+
 				EquippedIcon:completeAnimation()
 				self.EquippedIcon:setAlpha( 1 )
 				self.clipFinished( EquippedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				DebugImage:completeAnimation()
 				self.DebugImage:setRGB( 0, 0, 1 )
 				self.clipFinished( DebugImage, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				UpgradeImage:completeAnimation()
 				self.UpgradeImage:setAlpha( 0.8 )
 				self.clipFinished( UpgradeImage, {} )
+
 				LockImage:completeAnimation()
 				self.LockImage:setAlpha( 0 )
 				self.clipFinished( LockImage, {} )
+
 				EquippedIcon:completeAnimation()
 				self.EquippedIcon:setAlpha( 1 )
 				self.clipFinished( EquippedIcon, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				DebugImage:completeAnimation()
 				self.DebugImage:setRGB( 0, 0, 1 )
 				self.clipFinished( DebugImage, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -345,6 +401,7 @@ CoD.TacRigUpgradeModelWidget.new = function ( menu, controller )
 			modelName = "itemIndex"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveDiag:close()
 		element.BoxButtonLrgInactiveStroke:close()

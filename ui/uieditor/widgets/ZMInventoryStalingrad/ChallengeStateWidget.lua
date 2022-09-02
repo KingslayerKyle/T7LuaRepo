@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.cac_ButtonBoxLrgInactiveStroke" )
 CoD.ChallengeStateWidget = InheritFrom( LUI.UIElement )
 CoD.ChallengeStateWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChallengeStateWidget )
 	self.id = "ChallengeStateWidget"
@@ -65,22 +67,28 @@ CoD.ChallengeStateWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Backing:completeAnimation()
 				self.Backing:setLeftRight( true, false, 0, 85 )
 				self.Backing:setTopBottom( true, false, 0, 85 )
 				self.clipFinished( Backing, {} )
+
 				IconOutline:completeAnimation()
 				self.IconOutline:setAlpha( 1 )
 				self.clipFinished( IconOutline, {} )
+
 				BackPanel:completeAnimation()
 				self.BackPanel:setAlpha( 0 )
 				self.clipFinished( BackPanel, {} )
+
 				RewardUnclaimedImage:completeAnimation()
 				self.RewardUnclaimedImage:setAlpha( 0 )
 				self.clipFinished( RewardUnclaimedImage, {} )
+
 				RewardClaimedImage:completeAnimation()
 				self.RewardClaimedImage:setAlpha( 0 )
 				self.clipFinished( RewardClaimedImage, {} )
+
 				HighlightFrame:completeAnimation()
 				self.HighlightFrame:setAlpha( 0 )
 				self.clipFinished( HighlightFrame, {} )
@@ -89,19 +97,24 @@ CoD.ChallengeStateWidget.new = function ( menu, controller )
 		TrialIncomplete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				IconOutline:completeAnimation()
 				self.IconOutline:setAlpha( 1 )
 				self.clipFinished( IconOutline, {} )
+
 				BackPanel:completeAnimation()
 				self.BackPanel:setAlpha( 0 )
 				self.clipFinished( BackPanel, {} )
+
 				RewardUnclaimedImage:completeAnimation()
 				self.RewardUnclaimedImage:setRGB( 0, 0, 0 )
 				self.RewardUnclaimedImage:setAlpha( 0 )
 				self.clipFinished( RewardUnclaimedImage, {} )
+
 				RewardClaimedImage:completeAnimation()
 				self.RewardClaimedImage:setAlpha( 0 )
 				self.clipFinished( RewardClaimedImage, {} )
+
 				HighlightFrame:completeAnimation()
 				self.HighlightFrame:setAlpha( 0 )
 				self.clipFinished( HighlightFrame, {} )
@@ -110,19 +123,24 @@ CoD.ChallengeStateWidget.new = function ( menu, controller )
 		TrialCompleteRewardUnclaimed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				IconOutline:completeAnimation()
 				self.IconOutline:setAlpha( 0 )
 				self.clipFinished( IconOutline, {} )
+
 				BackPanel:completeAnimation()
 				self.BackPanel:setAlpha( 0 )
 				self.clipFinished( BackPanel, {} )
+
 				RewardUnclaimedImage:completeAnimation()
 				self.RewardUnclaimedImage:setRGB( 1, 1, 1 )
 				self.RewardUnclaimedImage:setAlpha( 1 )
 				self.clipFinished( RewardUnclaimedImage, {} )
+
 				RewardClaimedImage:completeAnimation()
 				self.RewardClaimedImage:setAlpha( 0 )
 				self.clipFinished( RewardClaimedImage, {} )
+
 				HighlightFrame:completeAnimation()
 				self.HighlightFrame:setAlpha( 0 )
 				self.clipFinished( HighlightFrame, {} )
@@ -131,19 +149,23 @@ CoD.ChallengeStateWidget.new = function ( menu, controller )
 		TrialCompleteRewardClaimed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				IconOutline:completeAnimation()
 				self.IconOutline:setAlpha( 0 )
 				self.clipFinished( IconOutline, {} )
+
 				RewardUnclaimedImage:completeAnimation()
 				self.RewardUnclaimedImage:setRGB( 1, 1, 1 )
 				self.RewardUnclaimedImage:setAlpha( 0 )
 				self.clipFinished( RewardUnclaimedImage, {} )
+
 				RewardClaimedImage:completeAnimation()
 				self.RewardClaimedImage:setAlpha( 1 )
 				self.clipFinished( RewardClaimedImage, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BackPanel:close()
 		element.HighlightFrame:close()

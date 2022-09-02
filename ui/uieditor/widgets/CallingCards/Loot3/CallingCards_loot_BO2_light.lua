@@ -4,9 +4,11 @@
 CoD.CallingCards_loot_BO2_light = InheritFrom( LUI.UIElement )
 CoD.CallingCards_loot_BO2_light.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_loot_BO2_light )
 	self.id = "CallingCards_loot_BO2_light"
@@ -29,6 +31,7 @@ CoD.CallingCards_loot_BO2_light.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local lightFrame2 = function ( light, event )
 					local lightFrame3 = function ( light, event )
 						local lightFrame4 = function ( light, event )
@@ -77,6 +80,7 @@ CoD.CallingCards_loot_BO2_light.new = function ( menu, controller )
 				light:completeAnimation()
 				self.light:setAlpha( 0.75 )
 				lightFrame2( light, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

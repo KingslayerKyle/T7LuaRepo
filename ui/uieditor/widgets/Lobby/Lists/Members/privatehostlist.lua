@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Lists.Members.LobbyMember" )
 CoD.PrivateHostList = InheritFrom( LUI.UIElement )
 CoD.PrivateHostList.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.PrivateHostList )
 	self.id = "PrivateHostList"
@@ -79,6 +81,7 @@ CoD.PrivateHostList.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.lstLobbyList:close()
 	end )

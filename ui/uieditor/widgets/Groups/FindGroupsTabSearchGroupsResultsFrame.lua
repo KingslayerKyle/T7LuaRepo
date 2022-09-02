@@ -20,9 +20,11 @@ end
 CoD.FindGroupsTabSearchGroupsResultsFrame = InheritFrom( LUI.UIElement )
 CoD.FindGroupsTabSearchGroupsResultsFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FindGroupsTabSearchGroupsResultsFrame )
 	self.id = "FindGroupsTabSearchGroupsResultsFrame"
@@ -47,6 +49,7 @@ CoD.FindGroupsTabSearchGroupsResultsFrame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FindGroupsTabSearchGroupsCommonWidget:close()
 	end )

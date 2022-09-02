@@ -4,9 +4,11 @@
 CoD.WeaponLevelUpNotification_LineFade = InheritFrom( LUI.UIElement )
 CoD.WeaponLevelUpNotification_LineFade.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponLevelUpNotification_LineFade )
 	self.id = "WeaponLevelUpNotification_LineFade"
@@ -42,9 +44,11 @@ CoD.WeaponLevelUpNotification_LineFade.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

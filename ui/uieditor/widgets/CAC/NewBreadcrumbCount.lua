@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.NewBreadcrumb" )
 CoD.NewBreadcrumbCount = InheritFrom( LUI.UIElement )
 CoD.NewBreadcrumbCount.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.NewBreadcrumbCount )
 	self.id = "NewBreadcrumbCount"
@@ -38,9 +40,11 @@ CoD.NewBreadcrumbCount.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				breadcrumb:completeAnimation()
 				self.breadcrumb:setAlpha( 0 )
 				self.clipFinished( breadcrumb, {} )
+
 				countText:completeAnimation()
 				self.countText:setAlpha( 0 )
 				self.clipFinished( countText, {} )
@@ -49,15 +53,18 @@ CoD.NewBreadcrumbCount.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				breadcrumb:completeAnimation()
 				self.breadcrumb:setAlpha( 1 )
 				self.clipFinished( breadcrumb, {} )
+
 				countText:completeAnimation()
 				self.countText:setAlpha( 1 )
 				self.clipFinished( countText, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.breadcrumb:close()
 	end )

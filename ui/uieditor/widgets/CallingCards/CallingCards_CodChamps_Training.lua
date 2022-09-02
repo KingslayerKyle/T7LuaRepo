@@ -4,9 +4,11 @@
 CoD.CallingCards_CodChamps_Training = InheritFrom( LUI.UIElement )
 CoD.CallingCards_CodChamps_Training.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_CodChamps_Training )
 	self.id = "CallingCards_CodChamps_Training"
@@ -85,6 +87,7 @@ CoD.CallingCards_CodChamps_Training.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				local boxer1Frame2 = function ( boxer1, event )
 					local boxer1Frame3 = function ( boxer1, event )
 						local boxer1Frame4 = function ( boxer1, event )
@@ -1010,6 +1013,7 @@ CoD.CallingCards_CodChamps_Training.new = function ( menu, controller )
 				light:completeAnimation()
 				self.light:setAlpha( 0.5 )
 				lightFrame2( light, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

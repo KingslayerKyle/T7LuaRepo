@@ -4,9 +4,11 @@
 CoD.TModeSetting_SurvivalistTacticalMode = InheritFrom( LUI.UIElement )
 CoD.TModeSetting_SurvivalistTacticalMode.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TModeSetting_SurvivalistTacticalMode )
 	self.id = "TModeSetting_SurvivalistTacticalMode"

@@ -71,9 +71,11 @@ end
 CoD.CharacterMiniSelector = InheritFrom( LUI.UIElement )
 CoD.CharacterMiniSelector.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CharacterMiniSelector )
 	self.id = "CharacterMiniSelector"
@@ -123,15 +125,19 @@ CoD.CharacterMiniSelector.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				characterGrid:completeAnimation()
 				self.characterGrid:setAlpha( 0 )
 				self.clipFinished( characterGrid, {} )
+
 				leftButton:completeAnimation()
 				self.leftButton:setAlpha( 0 )
 				self.clipFinished( leftButton, {} )
+
 				rightButton:completeAnimation()
 				self.rightButton:setAlpha( 0 )
 				self.clipFinished( rightButton, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setAlpha( 0 )
 				self.clipFinished( FETitleNumBrdr0, {} )
@@ -140,17 +146,21 @@ CoD.CharacterMiniSelector.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				characterGrid:completeAnimation()
 				self.characterGrid:setLeftRight( true, true, 44, -44 )
 				self.characterGrid:setTopBottom( true, true, 5, -5 )
 				self.characterGrid:setAlpha( 1 )
 				self.clipFinished( characterGrid, {} )
+
 				leftButton:completeAnimation()
 				self.leftButton:setAlpha( 1 )
 				self.clipFinished( leftButton, {} )
+
 				rightButton:completeAnimation()
 				self.rightButton:setAlpha( 1 )
 				self.clipFinished( rightButton, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setLeftRight( true, true, 30, -30 )
 				self.FETitleNumBrdr0:setTopBottom( true, true, 0, 0 )
@@ -158,6 +168,7 @@ CoD.CharacterMiniSelector.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -184,6 +195,7 @@ CoD.CharacterMiniSelector.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.characterGrid:close()
 		element.leftButton:close()

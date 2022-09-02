@@ -4,9 +4,11 @@
 CoD.vhud_sentinel_horizon_elements = InheritFrom( LUI.UIElement )
 CoD.vhud_sentinel_horizon_elements.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.vhud_sentinel_horizon_elements )
 	self.id = "vhud_sentinel_horizon_elements"
@@ -84,9 +86,11 @@ CoD.vhud_sentinel_horizon_elements.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 7 )
+
 				local f3_local0 = function ( f4_arg0, f4_arg1 )
 					if not f4_arg1.interrupted then
 						f4_arg0:beginAnimation( "keyframe", 90, false, false, CoD.TweenType.Linear )
@@ -291,6 +295,7 @@ CoD.vhud_sentinel_horizon_elements.new = function ( menu, controller )
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 7 )
+
 				local CenterReticleLineFrame2 = function ( CenterReticleLine, event )
 					if not event.interrupted then
 						CenterReticleLine:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -441,33 +446,40 @@ CoD.vhud_sentinel_horizon_elements.new = function ( menu, controller )
 		Zoom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				CenterReticleLine:completeAnimation()
 				self.CenterReticleLine:setLeftRight( false, false, -18, 17 )
 				self.CenterReticleLine:setTopBottom( false, false, -11.5, 12.5 )
 				self.CenterReticleLine:setZRot( 180 )
 				self.CenterReticleLine:setZoom( -200 )
 				self.clipFinished( CenterReticleLine, {} )
+
 				RightArrow:completeAnimation()
 				self.RightArrow:setLeftRight( false, false, 370.25, 399.25 )
 				self.RightArrow:setTopBottom( false, false, -9.17, 10.17 )
 				self.clipFinished( RightArrow, {} )
+
 				LeftArrow:completeAnimation()
 				self.LeftArrow:setLeftRight( false, false, -391.75, -362.75 )
 				self.LeftArrow:setTopBottom( false, false, -8.17, 11.17 )
 				self.clipFinished( LeftArrow, {} )
+
 				OutsideHashLineR5:completeAnimation()
 				self.OutsideHashLineR5:setLeftRight( false, false, 234.75, 340.25 )
 				self.OutsideHashLineR5:setTopBottom( false, false, -6.25, 9.99 )
 				self.OutsideHashLineR5:setAlpha( 1 )
 				self.clipFinished( OutsideHashLineR5, {} )
+
 				OutsideHashLineR50:completeAnimation()
 				self.OutsideHashLineR50:setLeftRight( false, false, -333.51, -228.01 )
 				self.OutsideHashLineR50:setTopBottom( false, false, -7.62, 8.62 )
 				self.clipFinished( OutsideHashLineR50, {} )
+
 				OutsideLineHorizonR:completeAnimation()
 				self.OutsideLineHorizonR:setLeftRight( false, false, 111.9, 217.4 )
 				self.OutsideLineHorizonR:setTopBottom( false, false, -6.25, 9.99 )
 				self.clipFinished( OutsideLineHorizonR, {} )
+
 				OutsideLineHorizonL:completeAnimation()
 				self.OutsideLineHorizonL:setLeftRight( false, false, -219.69, -114.19 )
 				self.OutsideLineHorizonL:setTopBottom( false, false, -6.25, 9.99 )
@@ -475,6 +487,7 @@ CoD.vhud_sentinel_horizon_elements.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 7 )
+
 				local CenterReticleLineFrame2 = function ( CenterReticleLine, event )
 					if not event.interrupted then
 						CenterReticleLine:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )

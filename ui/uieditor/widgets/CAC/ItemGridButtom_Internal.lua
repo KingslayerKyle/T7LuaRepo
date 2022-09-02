@@ -4,9 +4,11 @@
 CoD.ItemGridButtom_Internal = InheritFrom( LUI.UIElement )
 CoD.ItemGridButtom_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.ItemGridButtom_Internal )
 	self.id = "ItemGridButtom_Internal"
@@ -77,9 +79,11 @@ CoD.ItemGridButtom_Internal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 0 )
 				self.clipFinished( alertIcon, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
@@ -88,9 +92,11 @@ CoD.ItemGridButtom_Internal.new = function ( menu, controller )
 		Equipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 0 )
 				self.clipFinished( alertIcon, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 1 )
 				self.clipFinished( equippedIcon, {} )
@@ -99,15 +105,18 @@ CoD.ItemGridButtom_Internal.new = function ( menu, controller )
 		MutuallyExclusive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 1 )
 				self.clipFinished( alertIcon, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.nameLabel:close()
 		element.itemImage:close()

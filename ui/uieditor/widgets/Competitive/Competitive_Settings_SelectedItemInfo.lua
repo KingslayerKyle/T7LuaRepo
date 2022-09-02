@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.GameSettings.GameSettings_Optionstextbox" )
 CoD.Competitive_Settings_SelectedItemInfo = InheritFrom( LUI.UIElement )
 CoD.Competitive_Settings_SelectedItemInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Competitive_Settings_SelectedItemInfo )
 	self.id = "Competitive_Settings_SelectedItemInfo"
@@ -94,15 +96,18 @@ CoD.Competitive_Settings_SelectedItemInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		SquareImage = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ItemImage:completeAnimation()
 				self.ItemImage:setLeftRight( true, false, 844.5, 1096.5 )
 				self.ItemImage:setTopBottom( true, false, 290, 542 )
 				self.clipFinished( ItemImage, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 0.5 )
 				self.clipFinished( Border, {} )
@@ -111,10 +116,12 @@ CoD.Competitive_Settings_SelectedItemInfo.new = function ( menu, controller )
 		WeaponImage = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ItemImage:completeAnimation()
 				self.ItemImage:setLeftRight( true, false, 762.94, 1178.06 )
 				self.ItemImage:setTopBottom( true, false, 326.48, 506.52 )
 				self.clipFinished( ItemImage, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 0.5 )
 				self.clipFinished( Border, {} )
@@ -123,15 +130,18 @@ CoD.Competitive_Settings_SelectedItemInfo.new = function ( menu, controller )
 		CollapsedImage = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ItemImage:completeAnimation()
 				self.ItemImage:setAlpha( 0 )
 				self.clipFinished( ItemImage, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 0 )
 				self.clipFinished( Border, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GameSettingsGameModeName0:close()
 		element.GameSettingstitlebox:close()

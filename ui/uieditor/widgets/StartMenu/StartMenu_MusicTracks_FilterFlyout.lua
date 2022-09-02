@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_Options_Slider_Small" )
 CoD.StartMenu_MusicTracks_FilterFlyout = InheritFrom( LUI.UIElement )
 CoD.StartMenu_MusicTracks_FilterFlyout.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_MusicTracks_FilterFlyout )
 	self.id = "StartMenu_MusicTracks_FilterFlyout"
@@ -81,6 +83,7 @@ CoD.StartMenu_MusicTracks_FilterFlyout.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.optionsList:close()
 	end )

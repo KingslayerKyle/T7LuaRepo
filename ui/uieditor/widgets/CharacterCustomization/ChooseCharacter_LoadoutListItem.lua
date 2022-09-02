@@ -31,9 +31,11 @@ end
 CoD.ChooseCharacter_LoadoutListItem = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacter_LoadoutListItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacter_LoadoutListItem )
 	self.id = "ChooseCharacter_LoadoutListItem"
@@ -209,45 +211,56 @@ CoD.ChooseCharacter_LoadoutListItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				OrangeGlow:completeAnimation()
 				self.OrangeGlow:setAlpha( 0 )
 				self.clipFinished( OrangeGlow, {} )
+
 				OrangeGlow0:completeAnimation()
 				self.OrangeGlow0:setAlpha( 0 )
 				self.clipFinished( OrangeGlow0, {} )
+
 				itemOff:completeAnimation()
 				self.itemOff:setLeftRight( true, true, 0, 0 )
 				self.itemOff:setTopBottom( true, true, 0, 0 )
 				self.itemOff:setAlpha( 1 )
 				self.itemOff:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( itemOff, {} )
+
 				itemOn:completeAnimation()
 				self.itemOn:setLeftRight( true, true, 0, 0 )
 				self.itemOn:setTopBottom( true, true, 0, 0 )
 				self.itemOn:setAlpha( 0 )
 				self.clipFinished( itemOn, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setAlpha( 0 )
 				self.clipFinished( Glow0, {} )
+
 				cacToken:completeAnimation()
 				self.cacToken:setAlpha( 0 )
 				self.clipFinished( cacToken, {} )
+
 				lock:completeAnimation()
 				self.lock:setAlpha( HideIfInPermanentUnlockMenu( 0 ) )
 				self.clipFinished( lock, {} )
+
 				CompetitiveCharacterDraftDrafted:completeAnimation()
 				self.CompetitiveCharacterDraftDrafted:setLeftRight( true, false, 0, 90 )
 				self.CompetitiveCharacterDraftDrafted:setTopBottom( true, false, 0, 90 )
 				self.clipFinished( CompetitiveCharacterDraftDrafted, {} )
+
 				TokenRefundHint:completeAnimation()
 				self.TokenRefundHint:setAlpha( 0 )
 				self.clipFinished( TokenRefundHint, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				OrangeGlow:completeAnimation()
 				self.OrangeGlow:setAlpha( 0 )
 				self.clipFinished( OrangeGlow, {} )
+
 				itemOff:completeAnimation()
 				self.itemOff:setLeftRight( true, true, 0, 0 )
 				self.itemOff:setTopBottom( true, true, 0, 0 )
@@ -321,17 +334,21 @@ CoD.ChooseCharacter_LoadoutListItem.new = function ( menu, controller )
 				self.Glow0:setZoom( 13.47 )
 				self.Glow0:setScale( 1.3 )
 				Glow0Frame2( Glow0, {} )
+
 				cacToken:completeAnimation()
 				self.cacToken:setAlpha( 0 )
 				self.clipFinished( cacToken, {} )
+
 				lock:completeAnimation()
 				self.lock:setAlpha( HideIfInPermanentUnlockMenu( 0 ) )
 				self.clipFinished( lock, {} )
+
 				CompetitiveCharacterDraftDrafted:completeAnimation()
 				self.CompetitiveCharacterDraftDrafted:setLeftRight( true, false, -17.33, 107.33 )
 				self.CompetitiveCharacterDraftDrafted:setTopBottom( true, false, -15, 105 )
 				self.CompetitiveCharacterDraftDrafted:setAlpha( 1 )
 				self.clipFinished( CompetitiveCharacterDraftDrafted, {} )
+
 				TokenRefundHint:completeAnimation()
 				self.TokenRefundHint:setAlpha( 0 )
 				self.clipFinished( TokenRefundHint, {} )
@@ -340,35 +357,44 @@ CoD.ChooseCharacter_LoadoutListItem.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				OrangeGlow:completeAnimation()
 				self.OrangeGlow:setAlpha( 0 )
 				self.clipFinished( OrangeGlow, {} )
+
 				OrangeGlow0:completeAnimation()
 				self.OrangeGlow0:setAlpha( 0 )
 				self.clipFinished( OrangeGlow0, {} )
+
 				itemOff:completeAnimation()
 				self.itemOff:setLeftRight( true, true, 10, -10 )
 				self.itemOff:setTopBottom( true, true, 10, -10 )
 				self.itemOff:setAlpha( 1 )
 				self.clipFinished( itemOff, {} )
+
 				itemOn:completeAnimation()
 				self.itemOn:setAlpha( 0 )
 				self.clipFinished( itemOn, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setAlpha( 0 )
 				self.clipFinished( Glow0, {} )
+
 				cacToken:completeAnimation()
 				self.cacToken:setAlpha( 0 )
 				self.clipFinished( cacToken, {} )
+
 				lock:completeAnimation()
 				self.lock:setAlpha( HideIfInPermanentUnlockMenu( 1 ) )
 				self.clipFinished( lock, {} )
+
 				TokenRefundHint:completeAnimation()
 				self.TokenRefundHint:setAlpha( 0 )
 				self.clipFinished( TokenRefundHint, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				local OrangeGlowFrame2 = function ( OrangeGlow, event )
 					local OrangeGlowFrame3 = function ( OrangeGlow, event )
 						if not event.interrupted then
@@ -455,6 +481,7 @@ CoD.ChooseCharacter_LoadoutListItem.new = function ( menu, controller )
 				self.itemOff:setTopBottom( true, true, 10, -10 )
 				self.itemOff:setAlpha( 1 )
 				itemOffFrame2( itemOff, {} )
+
 				itemOn:completeAnimation()
 				self.itemOn:setAlpha( 0 )
 				self.clipFinished( itemOn, {} )
@@ -486,12 +513,15 @@ CoD.ChooseCharacter_LoadoutListItem.new = function ( menu, controller )
 				self.Glow0:setAlpha( 0 )
 				self.Glow0:setScale( 1.3 )
 				Glow0Frame2( Glow0, {} )
+
 				cacToken:completeAnimation()
 				self.cacToken:setAlpha( 0 )
 				self.clipFinished( cacToken, {} )
+
 				lock:completeAnimation()
 				self.lock:setAlpha( HideIfInPermanentUnlockMenu( 1 ) )
 				self.clipFinished( lock, {} )
+
 				TokenRefundHint:completeAnimation()
 				self.TokenRefundHint:setAlpha( 0 )
 				self.clipFinished( TokenRefundHint, {} )
@@ -500,35 +530,44 @@ CoD.ChooseCharacter_LoadoutListItem.new = function ( menu, controller )
 		NotAvailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				OrangeGlow:completeAnimation()
 				self.OrangeGlow:setAlpha( 0 )
 				self.clipFinished( OrangeGlow, {} )
+
 				OrangeGlow0:completeAnimation()
 				self.OrangeGlow0:setAlpha( 0 )
 				self.clipFinished( OrangeGlow0, {} )
+
 				itemOff:completeAnimation()
 				self.itemOff:setLeftRight( true, true, 10, -10 )
 				self.itemOff:setTopBottom( true, true, 10, -10 )
 				self.itemOff:setAlpha( 1 )
 				self.clipFinished( itemOff, {} )
+
 				itemOn:completeAnimation()
 				self.itemOn:setAlpha( 0 )
 				self.clipFinished( itemOn, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setAlpha( 0 )
 				self.clipFinished( Glow0, {} )
+
 				cacToken:completeAnimation()
 				self.cacToken:setAlpha( 1 )
 				self.clipFinished( cacToken, {} )
+
 				lock:completeAnimation()
 				self.lock:setAlpha( HideIfInPermanentUnlockMenu( 0 ) )
 				self.clipFinished( lock, {} )
+
 				TokenRefundHint:completeAnimation()
 				self.TokenRefundHint:setAlpha( 0 )
 				self.clipFinished( TokenRefundHint, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				local OrangeGlowFrame2 = function ( OrangeGlow, event )
 					local OrangeGlowFrame3 = function ( OrangeGlow, event )
 						if not event.interrupted then
@@ -615,6 +654,7 @@ CoD.ChooseCharacter_LoadoutListItem.new = function ( menu, controller )
 				self.itemOff:setTopBottom( true, true, 10, -10 )
 				self.itemOff:setAlpha( 1 )
 				itemOffFrame2( itemOff, {} )
+
 				itemOn:completeAnimation()
 				self.itemOn:setAlpha( 0 )
 				self.clipFinished( itemOn, {} )
@@ -646,12 +686,15 @@ CoD.ChooseCharacter_LoadoutListItem.new = function ( menu, controller )
 				self.Glow0:setAlpha( 0 )
 				self.Glow0:setScale( 1.3 )
 				Glow0Frame2( Glow0, {} )
+
 				cacToken:completeAnimation()
 				self.cacToken:setAlpha( 1 )
 				self.clipFinished( cacToken, {} )
+
 				lock:completeAnimation()
 				self.lock:setAlpha( HideIfInPermanentUnlockMenu( 0 ) )
 				self.clipFinished( lock, {} )
+
 				TokenRefundHint:completeAnimation()
 				self.TokenRefundHint:setAlpha( 0 )
 				self.clipFinished( TokenRefundHint, {} )
@@ -660,45 +703,56 @@ CoD.ChooseCharacter_LoadoutListItem.new = function ( menu, controller )
 		PermanentUnlockRefund = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				OrangeGlow:completeAnimation()
 				self.OrangeGlow:setAlpha( 0 )
 				self.clipFinished( OrangeGlow, {} )
+
 				OrangeGlow0:completeAnimation()
 				self.OrangeGlow0:setAlpha( 0 )
 				self.clipFinished( OrangeGlow0, {} )
+
 				itemOff:completeAnimation()
 				self.itemOff:setLeftRight( true, true, 0, 0 )
 				self.itemOff:setTopBottom( true, true, 0, 0 )
 				self.itemOff:setAlpha( 1 )
 				self.itemOff:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( itemOff, {} )
+
 				itemOn:completeAnimation()
 				self.itemOn:setLeftRight( true, true, 0, 0 )
 				self.itemOn:setTopBottom( true, true, 0, 0 )
 				self.itemOn:setAlpha( 0 )
 				self.clipFinished( itemOn, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setAlpha( 0 )
 				self.clipFinished( Glow0, {} )
+
 				cacToken:completeAnimation()
 				self.cacToken:setAlpha( 0 )
 				self.clipFinished( cacToken, {} )
+
 				lock:completeAnimation()
 				self.lock:setAlpha( HideIfInPermanentUnlockMenu( 0 ) )
 				self.clipFinished( lock, {} )
+
 				CompetitiveCharacterDraftDrafted:completeAnimation()
 				self.CompetitiveCharacterDraftDrafted:setLeftRight( true, false, 0, 90 )
 				self.CompetitiveCharacterDraftDrafted:setTopBottom( true, false, 0, 90 )
 				self.clipFinished( CompetitiveCharacterDraftDrafted, {} )
+
 				TokenRefundHint:completeAnimation()
 				self.TokenRefundHint:setAlpha( 0 )
 				self.clipFinished( TokenRefundHint, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				OrangeGlow:completeAnimation()
 				self.OrangeGlow:setAlpha( 0 )
 				self.clipFinished( OrangeGlow, {} )
+
 				itemOff:completeAnimation()
 				self.itemOff:setLeftRight( true, true, 0, 0 )
 				self.itemOff:setTopBottom( true, true, 0, 0 )
@@ -772,12 +826,15 @@ CoD.ChooseCharacter_LoadoutListItem.new = function ( menu, controller )
 				self.Glow0:setZoom( 13.47 )
 				self.Glow0:setScale( 1.3 )
 				Glow0Frame2( Glow0, {} )
+
 				cacToken:completeAnimation()
 				self.cacToken:setAlpha( 0 )
 				self.clipFinished( cacToken, {} )
+
 				lock:completeAnimation()
 				self.lock:setAlpha( HideIfInPermanentUnlockMenu( 0 ) )
 				self.clipFinished( lock, {} )
+
 				CompetitiveCharacterDraftDrafted:completeAnimation()
 				self.CompetitiveCharacterDraftDrafted:setLeftRight( true, false, -17.33, 107.33 )
 				self.CompetitiveCharacterDraftDrafted:setTopBottom( true, false, -15, 105 )
@@ -801,6 +858,7 @@ CoD.ChooseCharacter_LoadoutListItem.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -848,6 +906,7 @@ CoD.ChooseCharacter_LoadoutListItem.new = function ( menu, controller )
 			modelName = "itemIndex"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MouseHoverIcon:close()
 		element.Glow0:close()

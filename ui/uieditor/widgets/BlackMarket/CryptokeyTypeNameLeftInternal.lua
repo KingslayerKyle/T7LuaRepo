@@ -4,9 +4,11 @@
 CoD.CryptokeyTypeNameLeftInternal = InheritFrom( LUI.UIElement )
 CoD.CryptokeyTypeNameLeftInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CryptokeyTypeNameLeftInternal )
 	self.id = "CryptokeyTypeNameLeftInternal"
@@ -43,6 +45,7 @@ CoD.CryptokeyTypeNameLeftInternal.new = function ( menu, controller )
 	nameText:setLetterSpacing( 2 )
 	nameText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	nameText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( nameText, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )
@@ -53,18 +56,22 @@ CoD.CryptokeyTypeNameLeftInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Common = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( ColorSet.BlackMarketCommon.r, ColorSet.BlackMarketCommon.g, ColorSet.BlackMarketCommon.b )
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
+
 				GoldBG:completeAnimation()
 				self.GoldBG:setAlpha( 0 )
 				self.clipFinished( GoldBG, {} )
+
 				nameText:completeAnimation()
 				self.nameText:setRGB( 0, 0, 0 )
 				self.clipFinished( nameText, {} )
@@ -73,13 +80,16 @@ CoD.CryptokeyTypeNameLeftInternal.new = function ( menu, controller )
 		Rare = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( 0, 0.6, 0.9 )
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
+
 				GoldBG:completeAnimation()
 				self.GoldBG:setAlpha( 0 )
 				self.clipFinished( GoldBG, {} )
+
 				nameText:completeAnimation()
 				self.nameText:setRGB( 1, 1, 1 )
 				self.clipFinished( nameText, {} )
@@ -88,13 +98,16 @@ CoD.CryptokeyTypeNameLeftInternal.new = function ( menu, controller )
 		Legendary = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( ColorSet.BlackMarketLegendary.r, ColorSet.BlackMarketLegendary.g, ColorSet.BlackMarketLegendary.b )
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
+
 				GoldBG:completeAnimation()
 				self.GoldBG:setAlpha( 0 )
 				self.clipFinished( GoldBG, {} )
+
 				nameText:completeAnimation()
 				self.nameText:setRGB( 1, 1, 1 )
 				self.clipFinished( nameText, {} )
@@ -103,13 +116,16 @@ CoD.CryptokeyTypeNameLeftInternal.new = function ( menu, controller )
 		Epic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( 1, 0.67, 0 )
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
+
 				GoldBG:completeAnimation()
 				self.GoldBG:setAlpha( 0 )
 				self.clipFinished( GoldBG, {} )
+
 				nameText:completeAnimation()
 				self.nameText:setRGB( 1, 1, 1 )
 				self.clipFinished( nameText, {} )
@@ -118,10 +134,12 @@ CoD.CryptokeyTypeNameLeftInternal.new = function ( menu, controller )
 		Limited = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( ColorSet.BlackMarketLimited.r, ColorSet.BlackMarketLimited.g, ColorSet.BlackMarketLimited.b )
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				GoldBG:completeAnimation()
 				self.GoldBG:setLeftRight( true, true, 0, 0 )
 				self.GoldBG:setTopBottom( true, true, -8.68, 8.68 )
@@ -130,6 +148,7 @@ CoD.CryptokeyTypeNameLeftInternal.new = function ( menu, controller )
 				self.GoldBG:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_nineslice_normal" ) )
 				self.GoldBG:setShaderVector( 0, 0.86, 0, 0.4, 0.35 )
 				self.clipFinished( GoldBG, {} )
+
 				nameText:completeAnimation()
 				self.nameText:setRGB( 0, 0, 0 )
 				self.nameText:setScale( 0.9 )
@@ -137,6 +156,7 @@ CoD.CryptokeyTypeNameLeftInternal.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Common",

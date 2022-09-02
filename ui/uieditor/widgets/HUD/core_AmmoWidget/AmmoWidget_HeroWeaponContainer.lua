@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_HeroWeapon" )
 CoD.AmmoWidget_HeroWeaponContainer = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_HeroWeaponContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_HeroWeaponContainer )
 	self.id = "AmmoWidget_HeroWeaponContainer"
@@ -157,29 +159,35 @@ CoD.AmmoWidget_HeroWeaponContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				HeroWeaponSolid:completeAnimation()
 				self.HeroWeaponSolid:setAlpha( 0 )
 				self.clipFinished( HeroWeaponSolid, {} )
+
 				HeroWeaponShader:completeAnimation()
 				self.HeroWeaponShader:setAlpha( 0 )
 				self.clipFinished( HeroWeaponShader, {} )
 			end,
 			WheelHide = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				HeroWeaponSolid:completeAnimation()
 				self.HeroWeaponSolid:setAlpha( 0.7 )
 				self.clipFinished( HeroWeaponSolid, {} )
+
 				HeroWeaponShader:completeAnimation()
 				self.HeroWeaponShader:setAlpha( 1 )
 				self.clipFinished( HeroWeaponShader, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.HeroWeaponSolid:close()
 		element.HeroWeaponShader:close()

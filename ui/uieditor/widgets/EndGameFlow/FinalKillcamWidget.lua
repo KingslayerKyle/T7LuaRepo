@@ -24,9 +24,11 @@ end
 CoD.FinalKillcamWidget = InheritFrom( LUI.UIElement )
 CoD.FinalKillcamWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FinalKillcamWidget )
 	self.id = "FinalKillcamWidget"
@@ -136,21 +138,27 @@ CoD.FinalKillcamWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Header:completeAnimation()
 				self.Header:setAlpha( 0 )
 				self.clipFinished( Header, {} )
+
 				KillcamWidgetFctnPnl0:completeAnimation()
 				self.KillcamWidgetFctnPnl0:setAlpha( 0 )
 				self.clipFinished( KillcamWidgetFctnPnl0, {} )
+
 				Footer:completeAnimation()
 				self.Footer:setAlpha( 0 )
 				self.clipFinished( Footer, {} )
+
 				WinnerFactionInfo:completeAnimation()
 				self.WinnerFactionInfo:setAlpha( 0 )
 				self.clipFinished( WinnerFactionInfo, {} )
+
 				PlayerCard:completeAnimation()
 				self.PlayerCard:setAlpha( 0 )
 				self.clipFinished( PlayerCard, {} )
+
 				BlackForeground:completeAnimation()
 				self.BlackForeground:setAlpha( 0 )
 				self.clipFinished( BlackForeground, {} )
@@ -159,6 +167,7 @@ CoD.FinalKillcamWidget.new = function ( menu, controller )
 		FinalKillcam = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				local HeaderFrame2 = function ( Header, event )
 					local HeaderFrame3 = function ( Header, event )
 						local HeaderFrame4 = function ( Header, event )
@@ -258,6 +267,7 @@ CoD.FinalKillcamWidget.new = function ( menu, controller )
 				self.Footer:setTopBottom( false, false, 316.5, 428.5 )
 				self.Footer:setAlpha( 0 )
 				FooterFrame2( Footer, {} )
+
 				WinnerFactionInfo:completeAnimation()
 				self.WinnerFactionInfo:setAlpha( 1 )
 				self.clipFinished( WinnerFactionInfo, {} )
@@ -315,6 +325,7 @@ CoD.FinalKillcamWidget.new = function ( menu, controller )
 				self.PlayerCard:setTopBottom( false, true, 12.5, 71.5 )
 				self.PlayerCard:setAlpha( 0 )
 				PlayerCardFrame2( PlayerCard, {} )
+
 				BlackForeground:completeAnimation()
 				self.BlackForeground:setAlpha( 0 )
 				self.clipFinished( BlackForeground, {} )
@@ -359,6 +370,7 @@ CoD.FinalKillcamWidget.new = function ( menu, controller )
 			end,
 			End = function ()
 				self:setupElementClipCounter( 6 )
+
 				local HeaderFrame2 = function ( Header, event )
 					local HeaderFrame3 = function ( Header, event )
 						local HeaderFrame4 = function ( Header, event )
@@ -713,6 +725,7 @@ CoD.FinalKillcamWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "FinalKillcam",
@@ -742,6 +755,7 @@ CoD.FinalKillcamWidget.new = function ( menu, controller )
 		} )
 	end )
 	Header.id = "Header"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Header:close()
 		element.KillcamWidgetFctnPnl0:close()

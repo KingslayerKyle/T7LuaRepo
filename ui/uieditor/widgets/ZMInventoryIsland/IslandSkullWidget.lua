@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventoryIsland.IslandSkullWidgetSkull" )
 CoD.IslandSkullWidget = InheritFrom( LUI.UIElement )
 CoD.IslandSkullWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.IslandSkullWidget )
 	self.id = "IslandSkullWidget"
@@ -27,6 +29,7 @@ CoD.IslandSkullWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				IslandSkullWidgetSkull0:completeAnimation()
 				self.IslandSkullWidgetSkull0:setAlpha( 0 )
 				self.clipFinished( IslandSkullWidgetSkull0, {} )
@@ -35,12 +38,14 @@ CoD.IslandSkullWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				IslandSkullWidgetSkull0:completeAnimation()
 				self.IslandSkullWidgetSkull0:setAlpha( 1 )
 				self.clipFinished( IslandSkullWidgetSkull0, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.IslandSkullWidgetSkull0:close()
 	end )

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_HeroWeaponContainer
 CoD.AmmoWidgetMP_HeroWeaponAnimation = InheritFrom( LUI.UIElement )
 CoD.AmmoWidgetMP_HeroWeaponAnimation.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidgetMP_HeroWeaponAnimation )
 	self.id = "AmmoWidgetMP_HeroWeaponAnimation"
@@ -67,6 +69,7 @@ CoD.AmmoWidgetMP_HeroWeaponAnimation.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				AmmoWidgetHeroWeaponContainer0:completeAnimation()
 				self.AmmoWidgetHeroWeaponContainer0:setAlpha( 0 )
 				self.AmmoWidgetHeroWeaponContainer0:setZoom( 10 )
@@ -74,6 +77,7 @@ CoD.AmmoWidgetMP_HeroWeaponAnimation.new = function ( menu, controller )
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 1 )
+
 				local AmmoWidgetHeroWeaponContainer0Frame2 = function ( AmmoWidgetHeroWeaponContainer0, event )
 					local AmmoWidgetHeroWeaponContainer0Frame3 = function ( AmmoWidgetHeroWeaponContainer0, event )
 						local AmmoWidgetHeroWeaponContainer0Frame4 = function ( AmmoWidgetHeroWeaponContainer0, event )
@@ -208,6 +212,7 @@ CoD.AmmoWidgetMP_HeroWeaponAnimation.new = function ( menu, controller )
 		HudStart = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				AmmoWidgetHeroWeaponContainer0:completeAnimation()
 				self.AmmoWidgetHeroWeaponContainer0:setAlpha( 1 )
 				self.AmmoWidgetHeroWeaponContainer0:setZoom( 0 )
@@ -215,6 +220,7 @@ CoD.AmmoWidgetMP_HeroWeaponAnimation.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local AmmoWidgetHeroWeaponContainer0Frame2 = function ( AmmoWidgetHeroWeaponContainer0, event )
 					local AmmoWidgetHeroWeaponContainer0Frame3 = function ( AmmoWidgetHeroWeaponContainer0, event )
 						local AmmoWidgetHeroWeaponContainer0Frame4 = function ( AmmoWidgetHeroWeaponContainer0, event )
@@ -278,9 +284,11 @@ CoD.AmmoWidgetMP_HeroWeaponAnimation.new = function ( menu, controller )
 		HudPause = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AmmoWidgetHeroWeaponContainer0:close()
 	end )

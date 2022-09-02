@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.button_internal" )
 CoD.button = InheritFrom( LUI.UIElement )
 CoD.button.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.button )
 	self.id = "button"
@@ -31,6 +33,7 @@ CoD.button.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				buttoninternal0:completeAnimation()
 				self.buttoninternal0:setRGB( 1, 1, 1 )
 				self.buttoninternal0:setAlpha( 1 )
@@ -39,6 +42,7 @@ CoD.button.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
+
 				local buttoninternal0Frame2 = function ( buttoninternal0, event )
 					local buttoninternal0Frame3 = function ( buttoninternal0, event )
 						if not event.interrupted then
@@ -67,18 +71,21 @@ CoD.button.new = function ( menu, controller )
 				self.buttoninternal0:setRGB( 1, 0.6, 0.04 )
 				self.buttoninternal0:setZoom( 10 )
 				buttoninternal0Frame2( buttoninternal0, {} )
+
 				self.nextClip = "Focus"
 			end
 		},
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				buttoninternal0:completeAnimation()
 				self.buttoninternal0:setAlpha( 0 )
 				self.clipFinished( buttoninternal0, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local buttoninternal0Frame2 = function ( buttoninternal0, event )
 					if not event.interrupted then
 						buttoninternal0:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )
@@ -97,6 +104,7 @@ CoD.button.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.buttoninternal0:close()
 	end )

@@ -20,6 +20,7 @@ CoD.Playlist_SpecialEventWidget.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Playlist_SpecialEventWidget )
 	self.id = "Playlist_SpecialEventWidget"
@@ -56,12 +57,15 @@ CoD.Playlist_SpecialEventWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				PlaylistSpecialEvent2XP:completeAnimation()
 				self.PlaylistSpecialEvent2XP:setAlpha( 0 )
 				self.clipFinished( PlaylistSpecialEvent2XP, {} )
+
 				PlaylistSpecialEvent2XPWeapon:completeAnimation()
 				self.PlaylistSpecialEvent2XPWeapon:setAlpha( 0 )
 				self.clipFinished( PlaylistSpecialEvent2XPWeapon, {} )
+
 				PlaylistSpecialEvent2xCrypto:completeAnimation()
 				self.PlaylistSpecialEvent2xCrypto:setAlpha( 0 )
 				self.clipFinished( PlaylistSpecialEvent2xCrypto, {} )
@@ -70,12 +74,15 @@ CoD.Playlist_SpecialEventWidget.new = function ( menu, controller )
 		DoubleXPWeaponXP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				PlaylistSpecialEvent2XP:completeAnimation()
 				self.PlaylistSpecialEvent2XP:setAlpha( 1 )
 				self.clipFinished( PlaylistSpecialEvent2XP, {} )
+
 				PlaylistSpecialEvent2XPWeapon:completeAnimation()
 				self.PlaylistSpecialEvent2XPWeapon:setAlpha( 1 )
 				self.clipFinished( PlaylistSpecialEvent2XPWeapon, {} )
+
 				PlaylistSpecialEvent2xCrypto:completeAnimation()
 				self.PlaylistSpecialEvent2xCrypto:setAlpha( 0 )
 				self.clipFinished( PlaylistSpecialEvent2xCrypto, {} )
@@ -84,12 +91,15 @@ CoD.Playlist_SpecialEventWidget.new = function ( menu, controller )
 		DoubleXP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				PlaylistSpecialEvent2XP:completeAnimation()
 				self.PlaylistSpecialEvent2XP:setAlpha( 1 )
 				self.clipFinished( PlaylistSpecialEvent2XP, {} )
+
 				PlaylistSpecialEvent2XPWeapon:completeAnimation()
 				self.PlaylistSpecialEvent2XPWeapon:setAlpha( 0 )
 				self.clipFinished( PlaylistSpecialEvent2XPWeapon, {} )
+
 				PlaylistSpecialEvent2xCrypto:completeAnimation()
 				self.PlaylistSpecialEvent2xCrypto:setAlpha( 0 )
 				self.clipFinished( PlaylistSpecialEvent2xCrypto, {} )
@@ -98,12 +108,15 @@ CoD.Playlist_SpecialEventWidget.new = function ( menu, controller )
 		DoubleWeaponXP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				PlaylistSpecialEvent2XP:completeAnimation()
 				self.PlaylistSpecialEvent2XP:setAlpha( 0 )
 				self.clipFinished( PlaylistSpecialEvent2XP, {} )
+
 				PlaylistSpecialEvent2XPWeapon:completeAnimation()
 				self.PlaylistSpecialEvent2XPWeapon:setAlpha( 1 )
 				self.clipFinished( PlaylistSpecialEvent2XPWeapon, {} )
+
 				PlaylistSpecialEvent2xCrypto:completeAnimation()
 				self.PlaylistSpecialEvent2xCrypto:setAlpha( 0 )
 				self.clipFinished( PlaylistSpecialEvent2xCrypto, {} )
@@ -112,12 +125,15 @@ CoD.Playlist_SpecialEventWidget.new = function ( menu, controller )
 		DoubleCryptokeys = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				PlaylistSpecialEvent2XP:completeAnimation()
 				self.PlaylistSpecialEvent2XP:setAlpha( 0 )
 				self.clipFinished( PlaylistSpecialEvent2XP, {} )
+
 				PlaylistSpecialEvent2XPWeapon:completeAnimation()
 				self.PlaylistSpecialEvent2XPWeapon:setAlpha( 0 )
 				self.clipFinished( PlaylistSpecialEvent2XPWeapon, {} )
+
 				PlaylistSpecialEvent2xCrypto:completeAnimation()
 				self.PlaylistSpecialEvent2xCrypto:setAlpha( 1 )
 				self.clipFinished( PlaylistSpecialEvent2xCrypto, {} )
@@ -126,12 +142,15 @@ CoD.Playlist_SpecialEventWidget.new = function ( menu, controller )
 		DoubleXPDoubleCryptokeys = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				PlaylistSpecialEvent2XP:completeAnimation()
 				self.PlaylistSpecialEvent2XP:setAlpha( 1 )
 				self.clipFinished( PlaylistSpecialEvent2XP, {} )
+
 				PlaylistSpecialEvent2XPWeapon:completeAnimation()
 				self.PlaylistSpecialEvent2XPWeapon:setAlpha( 0 )
 				self.clipFinished( PlaylistSpecialEvent2XPWeapon, {} )
+
 				PlaylistSpecialEvent2xCrypto:completeAnimation()
 				self.PlaylistSpecialEvent2xCrypto:setAlpha( 1 )
 				self.clipFinished( PlaylistSpecialEvent2xCrypto, {} )
@@ -140,18 +159,22 @@ CoD.Playlist_SpecialEventWidget.new = function ( menu, controller )
 		WeaponXPDoubleCryptokeysCopy = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				PlaylistSpecialEvent2XP:completeAnimation()
 				self.PlaylistSpecialEvent2XP:setAlpha( 0 )
 				self.clipFinished( PlaylistSpecialEvent2XP, {} )
+
 				PlaylistSpecialEvent2XPWeapon:completeAnimation()
 				self.PlaylistSpecialEvent2XPWeapon:setAlpha( 1 )
 				self.clipFinished( PlaylistSpecialEvent2XPWeapon, {} )
+
 				PlaylistSpecialEvent2xCrypto:completeAnimation()
 				self.PlaylistSpecialEvent2xCrypto:setAlpha( 1 )
 				self.clipFinished( PlaylistSpecialEvent2xCrypto, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PlaylistSpecialEvent2XP:close()
 		element.PlaylistSpecialEvent2XPWeapon:close()

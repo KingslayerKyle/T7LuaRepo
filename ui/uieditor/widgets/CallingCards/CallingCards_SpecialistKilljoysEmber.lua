@@ -4,9 +4,11 @@
 CoD.CallingCards_SpecialistKilljoysEmber = InheritFrom( LUI.UIElement )
 CoD.CallingCards_SpecialistKilljoysEmber.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_SpecialistKilljoysEmber )
 	self.id = "CallingCards_SpecialistKilljoysEmber"
@@ -34,6 +36,7 @@ CoD.CallingCards_SpecialistKilljoysEmber.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local emberFrame2 = function ( ember, event )
 					local emberFrame3 = function ( ember, event )
 						local emberFrame4 = function ( ember, event )
@@ -132,6 +135,7 @@ CoD.CallingCards_SpecialistKilljoysEmber.new = function ( menu, controller )
 				self.Image0:setLeftRight( true, false, -145, 335 )
 				self.Image0:setTopBottom( true, false, -99, 21 )
 				Image0Frame2( Image0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

@@ -4,9 +4,11 @@
 CoD.BlackMarketCryptokeyContainerSmall = InheritFrom( LUI.UIElement )
 CoD.BlackMarketCryptokeyContainerSmall.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BlackMarketCryptokeyContainerSmall )
 	self.id = "BlackMarketCryptokeyContainerSmall"
@@ -68,6 +70,7 @@ CoD.BlackMarketCryptokeyContainerSmall.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CryptoCount:completeAnimation()
 				self.CryptoCount:setRGB( 1, 1, 1 )
 				self.clipFinished( CryptoCount, {} )
@@ -76,9 +79,11 @@ CoD.BlackMarketCryptokeyContainerSmall.new = function ( menu, controller )
 		InsufficientFunds = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				CryptoIcon:completeAnimation()
 				self.CryptoIcon:setAlpha( 1 )
 				self.clipFinished( CryptoIcon, {} )
+
 				CryptoCount:completeAnimation()
 				self.CryptoCount:setRGB( 0.93, 0.17, 0.17 )
 				self.CryptoCount:setAlpha( 1 )
@@ -88,13 +93,16 @@ CoD.BlackMarketCryptokeyContainerSmall.new = function ( menu, controller )
 		ShowBalanceInsufficientFunds = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				CryptoIcon:completeAnimation()
 				self.CryptoIcon:setAlpha( 1 )
 				self.clipFinished( CryptoIcon, {} )
+
 				CryptoCount:completeAnimation()
 				self.CryptoCount:setRGB( 0.93, 0.17, 0.17 )
 				self.CryptoCount:setAlpha( 0 )
 				self.clipFinished( CryptoCount, {} )
+
 				CryptoBalance:completeAnimation()
 				self.CryptoBalance:setRGB( 0.93, 0.17, 0.17 )
 				self.CryptoBalance:setAlpha( 1 )
@@ -104,13 +112,16 @@ CoD.BlackMarketCryptokeyContainerSmall.new = function ( menu, controller )
 		ShowBalance = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				CryptoIcon:completeAnimation()
 				self.CryptoIcon:setAlpha( 1 )
 				self.clipFinished( CryptoIcon, {} )
+
 				CryptoCount:completeAnimation()
 				self.CryptoCount:setRGB( 1, 1, 1 )
 				self.CryptoCount:setAlpha( 0 )
 				self.clipFinished( CryptoCount, {} )
+
 				CryptoBalance:completeAnimation()
 				self.CryptoBalance:setRGB( 1, 1, 1 )
 				self.CryptoBalance:setAlpha( 1 )
@@ -118,6 +129,7 @@ CoD.BlackMarketCryptokeyContainerSmall.new = function ( menu, controller )
 			end,
 			Bonus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local f8_local0 = function ( f9_arg0, f9_arg1 )
 					local f9_local0 = function ( f10_arg0, f10_arg1 )
 						local f10_local0 = function ( f11_arg0, f11_arg1 )
@@ -215,6 +227,7 @@ CoD.BlackMarketCryptokeyContainerSmall.new = function ( menu, controller )
 				self.ring:setAlpha( 0 )
 				self.ring:setScale( 1 )
 				ringFrame2( ring, {} )
+
 				CryptoCount:completeAnimation()
 				self.CryptoCount:setAlpha( 0 )
 				self.clipFinished( CryptoCount, {} )
@@ -278,24 +291,30 @@ CoD.BlackMarketCryptokeyContainerSmall.new = function ( menu, controller )
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				ring:completeAnimation()
 				self.ring:setAlpha( 0 )
 				self.clipFinished( ring, {} )
+
 				CryptoIcon:completeAnimation()
 				self.CryptoIcon:setAlpha( 0 )
 				self.clipFinished( CryptoIcon, {} )
+
 				CryptoCount:completeAnimation()
 				self.CryptoCount:setAlpha( 0 )
 				self.clipFinished( CryptoCount, {} )
+
 				CryptoBalance:completeAnimation()
 				self.CryptoBalance:setAlpha( 0 )
 				self.clipFinished( CryptoBalance, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "InsufficientFunds",
@@ -338,6 +357,7 @@ CoD.BlackMarketCryptokeyContainerSmall.new = function ( menu, controller )
 			modelName = "itemCount"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CryptoCount:close()
 		element.CryptoBalance:close()

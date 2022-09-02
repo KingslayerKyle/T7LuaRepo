@@ -32,9 +32,11 @@ end
 CoD.GunsmithVariantItemND = InheritFrom( LUI.UIElement )
 CoD.GunsmithVariantItemND.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunsmithVariantItemND )
 	self.id = "GunsmithVariantItemND"
@@ -205,60 +207,78 @@ CoD.GunsmithVariantItemND.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				extraCamRender:completeAnimation()
 				self.extraCamRender:setAlpha( 0.8 )
 				self.clipFinished( extraCamRender, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 0 )
 				self.clipFinished( alertIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				variantOptionsButton:completeAnimation()
 				self.variantOptionsButton:setAlpha( 0 )
 				self.clipFinished( variantOptionsButton, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setAlpha( 0 )
 				self.clipFinished( emptyLayerIcon, {} )
+
 				Panel0:completeAnimation()
 				self.Panel0:setAlpha( 0.4 )
 				self.clipFinished( Panel0, {} )
+
 				horizontalScrollingTextBox20pt:completeAnimation()
 				self.horizontalScrollingTextBox20pt:setAlpha( 1 )
 				self.clipFinished( horizontalScrollingTextBox20pt, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 9 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 90, false, false, CoD.TweenType.Linear )
@@ -651,33 +671,41 @@ CoD.GunsmithVariantItemND.new = function ( menu, controller )
 				variantOptionsButton:completeAnimation()
 				self.variantOptionsButton:setAlpha( 0 )
 				variantOptionsButtonFrame2( variantOptionsButton, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setAlpha( 0 )
 				self.clipFinished( emptyLayerIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				extraCamRender:completeAnimation()
 				self.extraCamRender:setAlpha( 1 )
 				self.clipFinished( extraCamRender, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				variantOptionsButton:completeAnimation()
 				self.variantOptionsButton:setAlpha( 1 )
 				self.clipFinished( variantOptionsButton, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setAlpha( 0 )
 				self.clipFinished( emptyLayerIcon, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 9 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
@@ -1096,6 +1124,7 @@ CoD.GunsmithVariantItemND.new = function ( menu, controller )
 				variantOptionsButton:completeAnimation()
 				self.variantOptionsButton:setAlpha( 1 )
 				variantOptionsButtonFrame2( variantOptionsButton, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setAlpha( 0 )
 				self.clipFinished( emptyLayerIcon, {} )
@@ -1104,55 +1133,71 @@ CoD.GunsmithVariantItemND.new = function ( menu, controller )
 		EmptySlot = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 0 )
 				self.clipFinished( alertIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setRGB( 1, 1, 1 )
 				self.emptyLayerIcon:setAlpha( 1 )
 				self.clipFinished( emptyLayerIcon, {} )
+
 				Panel0:completeAnimation()
 				self.Panel0:setAlpha( 0.4 )
 				self.clipFinished( Panel0, {} )
+
 				horizontalScrollingTextBox20pt:completeAnimation()
 				self.horizontalScrollingTextBox20pt:setAlpha( 1 )
 				self.clipFinished( horizontalScrollingTextBox20pt, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 90, false, false, CoD.TweenType.Linear )
@@ -1515,6 +1560,7 @@ CoD.GunsmithVariantItemND.new = function ( menu, controller )
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 1 )
 				glitch2Frame2( glitch2, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setRGB( 1, 0.41, 0 )
 				self.emptyLayerIcon:setAlpha( 1 )
@@ -1522,15 +1568,19 @@ CoD.GunsmithVariantItemND.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setRGB( 1, 0.41, 0 )
 				self.emptyLayerIcon:setAlpha( 1 )
@@ -1538,6 +1588,7 @@ CoD.GunsmithVariantItemND.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
@@ -1926,6 +1977,7 @@ CoD.GunsmithVariantItemND.new = function ( menu, controller )
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				glitch2Frame2( glitch2, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setRGB( 1, 1, 1 )
 				self.emptyLayerIcon:setAlpha( 1 )
@@ -1933,6 +1985,7 @@ CoD.GunsmithVariantItemND.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveDiag:close()
 		element.BoxButtonLrgInactive:close()

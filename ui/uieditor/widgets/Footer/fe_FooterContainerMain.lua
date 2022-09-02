@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Footer.fe_LeftContainerMain" )
 CoD.fe_FooterContainerMain = InheritFrom( LUI.UIElement )
 CoD.fe_FooterContainerMain.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.fe_FooterContainerMain )
 	self.id = "fe_FooterContainerMain"
@@ -54,6 +56,7 @@ CoD.fe_FooterContainerMain.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local blackleftBGFrame2 = function ( blackleftBG, event )
 					local blackleftBGFrame3 = function ( blackleftBG, event )
 						if not event.interrupted then
@@ -147,6 +150,7 @@ CoD.fe_FooterContainerMain.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.feRightContainer:close()
 		element.PressStartText:close()

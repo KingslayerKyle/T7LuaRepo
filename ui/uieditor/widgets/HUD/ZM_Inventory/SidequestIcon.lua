@@ -4,9 +4,11 @@
 CoD.SidequestIcon = InheritFrom( LUI.UIElement )
 CoD.SidequestIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SidequestIcon )
 	self.id = "SidequestIcon"
@@ -51,12 +53,15 @@ CoD.SidequestIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ClipGlowTop:completeAnimation()
 				self.ClipGlowTop:setAlpha( 0 )
 				self.clipFinished( ClipGlowTop, {} )
+
 				ClipGlow:completeAnimation()
 				self.ClipGlow:setAlpha( 0 )
 				self.clipFinished( ClipGlow, {} )
+
 				image:completeAnimation()
 				self.image:setAlpha( 0 )
 				self.clipFinished( image, {} )
@@ -65,18 +70,22 @@ CoD.SidequestIcon.new = function ( menu, controller )
 		NewIcon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ClipGlowTop:completeAnimation()
 				self.ClipGlowTop:setAlpha( 0.5 )
 				self.clipFinished( ClipGlowTop, {} )
+
 				ClipGlow:completeAnimation()
 				self.ClipGlow:setAlpha( 0.1 )
 				self.clipFinished( ClipGlow, {} )
+
 				image:completeAnimation()
 				self.image:setAlpha( 1 )
 				self.clipFinished( image, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NewIcon",
@@ -93,6 +102,7 @@ CoD.SidequestIcon.new = function ( menu, controller )
 			modelName = "newIcon"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.image:close()
 	end )

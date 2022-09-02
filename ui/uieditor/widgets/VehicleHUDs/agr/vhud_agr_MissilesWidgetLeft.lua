@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.agr.vhud_agr_NotificationMissiles" )
 CoD.vhud_agr_MissilesWidgetLeft = InheritFrom( LUI.UIElement )
 CoD.vhud_agr_MissilesWidgetLeft.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.vhud_agr_MissilesWidgetLeft )
 	self.id = "vhud_agr_MissilesWidgetLeft"
@@ -85,15 +87,19 @@ CoD.vhud_agr_MissilesWidgetLeft.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vhudagrNotificationBox:close()
 		element.vhudagrNotificationLine:close()

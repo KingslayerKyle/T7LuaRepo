@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ScoreInfo.ScoreInfo_PanelCircleInternal" )
 CoD.ScoreInfo_PanelCircle = InheritFrom( LUI.UIElement )
 CoD.ScoreInfo_PanelCircle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreInfo_PanelCircle )
 	self.id = "ScoreInfo_PanelCircle"

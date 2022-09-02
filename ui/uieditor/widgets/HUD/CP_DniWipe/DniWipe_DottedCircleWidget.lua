@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.CP_DniWipe.DniWipe_TopLineBlink" )
 CoD.DniWipe_DottedCircleWidget = InheritFrom( LUI.UIElement )
 CoD.DniWipe_DottedCircleWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.DniWipe_DottedCircleWidget )
 	self.id = "DniWipe_DottedCircleWidget"
@@ -93,6 +95,7 @@ CoD.DniWipe_DottedCircleWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				local CenterCircleDots0Frame2 = function ( CenterCircleDots0, event )
 					local CenterCircleDots0Frame3 = function ( CenterCircleDots0, event )
 						local CenterCircleDots0Frame4 = function ( CenterCircleDots0, event )
@@ -657,10 +660,12 @@ CoD.DniWipe_DottedCircleWidget.new = function ( menu, controller )
 				self.msDoubleArrowsUpper0:setTopBottom( false, false, 199.25, 223.75 )
 				self.msDoubleArrowsUpper0:setAlpha( 0 )
 				msDoubleArrowsUpper0Frame2( msDoubleArrowsUpper0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Glow0:close()
 		element.DniWipeTopLineBlink:close()

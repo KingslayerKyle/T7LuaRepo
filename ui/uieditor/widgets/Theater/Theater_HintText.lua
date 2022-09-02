@@ -4,9 +4,11 @@
 CoD.Theater_HintText = InheritFrom( LUI.UIElement )
 CoD.Theater_HintText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Theater_HintText )
 	self.id = "Theater_HintText"

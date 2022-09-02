@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Groups.GroupsBetaWidget" )
 CoD.GroupsBetaSafeAreaContainer = InheritFrom( LUI.UIElement )
 CoD.GroupsBetaSafeAreaContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsBetaSafeAreaContainer )
 	self.id = "GroupsBetaSafeAreaContainer"
@@ -27,6 +29,7 @@ CoD.GroupsBetaSafeAreaContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				GroupsBetaWidget:completeAnimation()
 				self.GroupsBetaWidget:setAlpha( 0 )
 				self.clipFinished( GroupsBetaWidget, {} )
@@ -35,12 +38,14 @@ CoD.GroupsBetaSafeAreaContainer.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				GroupsBetaWidget:completeAnimation()
 				self.GroupsBetaWidget:setAlpha( 1 )
 				self.clipFinished( GroupsBetaWidget, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GroupsBetaWidget:close()
 	end )

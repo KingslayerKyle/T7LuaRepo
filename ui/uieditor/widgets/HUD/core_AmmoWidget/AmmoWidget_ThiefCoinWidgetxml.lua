@@ -4,9 +4,11 @@
 CoD.AmmoWidget_ThiefCoinWidgetxml = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_ThiefCoinWidgetxml.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_ThiefCoinWidgetxml )
 	self.id = "AmmoWidget_ThiefCoinWidgetxml"

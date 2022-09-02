@@ -4,9 +4,11 @@
 CoD.CallingCards_Humiliation_Skull = InheritFrom( LUI.UIElement )
 CoD.CallingCards_Humiliation_Skull.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_Humiliation_Skull )
 	self.id = "CallingCards_Humiliation_Skull"
@@ -49,6 +51,7 @@ CoD.CallingCards_Humiliation_Skull.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local GlowOrangeOver0Frame2 = function ( GlowOrangeOver0, event )
 					local GlowOrangeOver0Frame3 = function ( GlowOrangeOver0, event )
 						local GlowOrangeOver0Frame4 = function ( GlowOrangeOver0, event )
@@ -233,6 +236,7 @@ CoD.CallingCards_Humiliation_Skull.new = function ( menu, controller )
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				Image0Frame2( Image0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

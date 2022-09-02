@@ -25,9 +25,11 @@ end
 CoD.Leaderboard_WarningText = InheritFrom( LUI.UIElement )
 CoD.Leaderboard_WarningText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Leaderboard_WarningText )
 	self.id = "Leaderboard_WarningText"
@@ -50,11 +52,13 @@ CoD.Leaderboard_WarningText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 1 )
 				self.clipFinished( Text, {} )
@@ -63,6 +67,7 @@ CoD.Leaderboard_WarningText.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 0 )
 				self.clipFinished( Text, {} )

@@ -4,9 +4,11 @@
 CoD.heroCustomizationOption_EquippedIcon = InheritFrom( LUI.UIElement )
 CoD.heroCustomizationOption_EquippedIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.heroCustomizationOption_EquippedIcon )
 	self.id = "heroCustomizationOption_EquippedIcon"
@@ -27,6 +29,7 @@ CoD.heroCustomizationOption_EquippedIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
@@ -35,15 +38,18 @@ CoD.heroCustomizationOption_EquippedIcon.new = function ( menu, controller )
 		Equipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 1 )
 				self.clipFinished( equippedIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Equipped",

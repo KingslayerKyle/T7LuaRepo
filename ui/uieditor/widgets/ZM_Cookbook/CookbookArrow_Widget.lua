@@ -4,9 +4,11 @@
 CoD.CookbookArrow_Widget = InheritFrom( LUI.UIElement )
 CoD.CookbookArrow_Widget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CookbookArrow_Widget )
 	self.id = "CookbookArrow_Widget"
@@ -66,6 +68,7 @@ CoD.CookbookArrow_Widget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ArrowFrame2 = function ( Arrow, event )
 					local ArrowFrame3 = function ( Arrow, event )
 						local ArrowFrame4 = function ( Arrow, event )
@@ -475,6 +478,7 @@ CoD.CookbookArrow_Widget.new = function ( menu, controller )
 				self.Arrow:setLeftRight( false, false, -47, 47 )
 				self.Arrow:setTopBottom( false, false, -78.33, 78.33 )
 				ArrowFrame2( Arrow, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

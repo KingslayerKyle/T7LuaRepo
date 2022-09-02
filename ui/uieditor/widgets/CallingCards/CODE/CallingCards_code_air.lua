@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CODE.CallingCards_code_air_plane" )
 CoD.CallingCards_code_air = InheritFrom( LUI.UIElement )
 CoD.CallingCards_code_air.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_code_air )
 	self.id = "CallingCards_code_air"
@@ -81,6 +83,7 @@ CoD.CallingCards_code_air.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local CallingCardscodeairplane0Frame2 = function ( CallingCardscodeairplane0, event )
 					local CallingCardscodeairplane0Frame3 = function ( CallingCardscodeairplane0, event )
 						local CallingCardscodeairplane0Frame4 = function ( CallingCardscodeairplane0, event )
@@ -153,15 +156,18 @@ CoD.CallingCards_code_air.new = function ( menu, controller )
 				self.CallingCardscodeairplane0:setLeftRight( true, false, 0, 480 )
 				self.CallingCardscodeairplane0:setTopBottom( true, false, 0, 120 )
 				CallingCardscodeairplane0Frame2( CallingCardscodeairplane0, {} )
+
 				clouds:completeAnimation()
 				self.clouds:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_tile_scroll_normal" ) )
 				self.clouds:setShaderVector( 0, 1, 1, 0, 0 )
 				self.clouds:setShaderVector( 1, 1.5, 0, 0, 0 )
 				self.clipFinished( clouds, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardscodeairplane0:close()
 	end )

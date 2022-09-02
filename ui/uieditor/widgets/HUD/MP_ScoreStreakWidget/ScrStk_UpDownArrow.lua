@@ -4,9 +4,11 @@
 CoD.ScrStk_UpDownArrow = InheritFrom( LUI.UIElement )
 CoD.ScrStk_UpDownArrow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScrStk_UpDownArrow )
 	self.id = "ScrStk_UpDownArrow"
@@ -26,23 +28,28 @@ CoD.ScrStk_UpDownArrow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ArrowSide:completeAnimation()
 				self.ArrowSide:setAlpha( 0 )
 				self.clipFinished( ArrowSide, {} )
 			end,
 			Charging = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			ReadyMiddle = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Inactive = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Shown = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ArrowSide:completeAnimation()
 				self.ArrowSide:setAlpha( 1 )
 				self.clipFinished( ArrowSide, {} )

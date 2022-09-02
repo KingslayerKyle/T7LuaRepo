@@ -54,9 +54,11 @@ end
 CoD.ChooseClass_ClassSetTabWidget = InheritFrom( LUI.UIElement )
 CoD.ChooseClass_ClassSetTabWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseClass_ClassSetTabWidget )
 	self.id = "ChooseClass_ClassSetTabWidget"
@@ -116,12 +118,15 @@ CoD.ChooseClass_ClassSetTabWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				LeftBumperImage:completeAnimation()
 				self.LeftBumperImage:setAlpha( 0 )
 				self.clipFinished( LeftBumperImage, {} )
+
 				Internal:completeAnimation()
 				self.Internal:setAlpha( 0 )
 				self.clipFinished( Internal, {} )
+
 				RightBumperImage:completeAnimation()
 				self.RightBumperImage:setAlpha( 0 )
 				self.clipFinished( RightBumperImage, {} )
@@ -130,18 +135,22 @@ CoD.ChooseClass_ClassSetTabWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				LeftBumperImage:completeAnimation()
 				self.LeftBumperImage:setAlpha( 1 )
 				self.clipFinished( LeftBumperImage, {} )
+
 				Internal:completeAnimation()
 				self.Internal:setAlpha( 1 )
 				self.clipFinished( Internal, {} )
+
 				RightBumperImage:completeAnimation()
 				self.RightBumperImage:setAlpha( 1 )
 				self.clipFinished( RightBumperImage, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LeftBumperImage:close()
 		element.Internal:close()

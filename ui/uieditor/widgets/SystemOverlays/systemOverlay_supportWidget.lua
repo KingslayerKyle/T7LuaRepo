@@ -4,9 +4,11 @@
 CoD.systemOverlay_supportWidget = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_supportWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_supportWidget )
 	self.id = "systemOverlay_supportWidget"
@@ -39,9 +41,11 @@ CoD.systemOverlay_supportWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				supportBacking:completeAnimation()
 				self.supportBacking:setAlpha( 0.6 )
 				self.clipFinished( supportBacking, {} )
+
 				supportingText:completeAnimation()
 				self.supportingText:setAlpha( 1 )
 				self.clipFinished( supportingText, {} )
@@ -50,15 +54,18 @@ CoD.systemOverlay_supportWidget.new = function ( menu, controller )
 		NoSupport = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				supportBacking:completeAnimation()
 				self.supportBacking:setAlpha( 0 )
 				self.clipFinished( supportBacking, {} )
+
 				supportingText:completeAnimation()
 				self.supportingText:setAlpha( 0 )
 				self.clipFinished( supportingText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoSupport",
@@ -75,6 +82,7 @@ CoD.systemOverlay_supportWidget.new = function ( menu, controller )
 			modelName = "supportText"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.supportingText:close()
 	end )

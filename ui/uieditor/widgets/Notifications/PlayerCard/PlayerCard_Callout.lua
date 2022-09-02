@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Notifications.PlayerCard.PlayerCard" )
 CoD.PlayerCard_Callout = InheritFrom( LUI.UIElement )
 CoD.PlayerCard_Callout.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PlayerCard_Callout )
 	self.id = "PlayerCard_Callout"
@@ -50,12 +52,14 @@ CoD.PlayerCard_Callout.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PlayerCard:completeAnimation()
 				self.PlayerCard:setAlpha( 0 )
 				self.clipFinished( PlayerCard, {} )
 			end,
 			Side = function ()
 				self:setupElementClipCounter( 1 )
+
 				local PlayerCardFrame2 = function ( PlayerCard, event )
 					local PlayerCardFrame3 = function ( PlayerCard, event )
 						local PlayerCardFrame4 = function ( PlayerCard, event )
@@ -124,6 +128,7 @@ CoD.PlayerCard_Callout.new = function ( menu, controller )
 		HideForCodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PlayerCard:completeAnimation()
 				self.PlayerCard:setAlpha( 0 )
 				self.clipFinished( PlayerCard, {} )
@@ -132,12 +137,14 @@ CoD.PlayerCard_Callout.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PlayerCard:completeAnimation()
 				self.PlayerCard:setAlpha( 0 )
 				self.clipFinished( PlayerCard, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HideForCodCaster",
@@ -194,6 +201,7 @@ CoD.PlayerCard_Callout.new = function ( menu, controller )
 			ProcessPlayerCallout( f21_local0, controller, model )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PlayerCard:close()
 	end )

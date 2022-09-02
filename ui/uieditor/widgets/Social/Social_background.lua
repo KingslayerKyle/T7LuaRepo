@@ -4,9 +4,11 @@
 CoD.Social_background = InheritFrom( LUI.UIElement )
 CoD.Social_background.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_background )
 	self.id = "Social_background"
@@ -25,6 +27,7 @@ CoD.Social_background.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

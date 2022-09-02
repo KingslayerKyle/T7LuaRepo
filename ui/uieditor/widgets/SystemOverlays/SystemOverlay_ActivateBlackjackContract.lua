@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.Customization.CACGenericButton" )
 CoD.SystemOverlay_ActivateBlackjackContract = InheritFrom( LUI.UIElement )
 CoD.SystemOverlay_ActivateBlackjackContract.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SystemOverlay_ActivateBlackjackContract )
 	self.id = "SystemOverlay_ActivateBlackjackContract"
@@ -140,6 +142,7 @@ CoD.SystemOverlay_ActivateBlackjackContract.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.text:close()
 		element.options:close()

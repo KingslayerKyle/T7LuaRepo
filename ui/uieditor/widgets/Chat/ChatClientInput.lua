@@ -62,9 +62,11 @@ end
 CoD.ChatClientInput = InheritFrom( LUI.UIElement )
 CoD.ChatClientInput.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChatClientInput )
 	self.id = "ChatClientInput"

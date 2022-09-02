@@ -4,9 +4,11 @@
 CoD.QuestEggInternal = InheritFrom( LUI.UIElement )
 CoD.QuestEggInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.QuestEggInternal )
 	self.id = "QuestEggInternal"
@@ -63,36 +65,46 @@ CoD.QuestEggInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				State1:completeAnimation()
 				self.State1:setAlpha( 0 )
 				self.clipFinished( State1, {} )
+
 				State2:completeAnimation()
 				self.State2:setAlpha( 0 )
 				self.clipFinished( State2, {} )
+
 				State3:completeAnimation()
 				self.State3:setAlpha( 0 )
 				self.clipFinished( State3, {} )
+
 				State4:completeAnimation()
 				self.State4:setAlpha( 0 )
 				self.clipFinished( State4, {} )
+
 				DefaultEggState:completeAnimation()
 				self.DefaultEggState:setAlpha( 0 )
 				self.clipFinished( DefaultEggState, {} )
+
 				MissingImage:completeAnimation()
 				self.MissingImage:setAlpha( 0 )
 				self.clipFinished( MissingImage, {} )
 			end,
 			DefaultEgg = function ()
 				self:setupElementClipCounter( 6 )
+
 				State1:completeAnimation()
 				self.State1:setAlpha( 0 )
 				self.clipFinished( State1, {} )
+
 				State2:completeAnimation()
 				self.State2:setAlpha( 0 )
 				self.clipFinished( State2, {} )
+
 				State3:completeAnimation()
 				self.State3:setAlpha( 0 )
 				self.clipFinished( State3, {} )
+
 				State4:completeAnimation()
 				self.State4:setAlpha( 0 )
 				self.clipFinished( State4, {} )
@@ -144,6 +156,7 @@ CoD.QuestEggInternal.new = function ( menu, controller )
 				DefaultEggState:completeAnimation()
 				self.DefaultEggState:setAlpha( 1 )
 				DefaultEggStateFrame2( DefaultEggState, {} )
+
 				MissingImage:completeAnimation()
 				self.MissingImage:setAlpha( 0 )
 				self.clipFinished( MissingImage, {} )
@@ -152,21 +165,27 @@ CoD.QuestEggInternal.new = function ( menu, controller )
 		State1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				State1:completeAnimation()
 				self.State1:setAlpha( 1 )
 				self.clipFinished( State1, {} )
+
 				State2:completeAnimation()
 				self.State2:setAlpha( 0 )
 				self.clipFinished( State2, {} )
+
 				State3:completeAnimation()
 				self.State3:setAlpha( 0 )
 				self.clipFinished( State3, {} )
+
 				State4:completeAnimation()
 				self.State4:setAlpha( 0 )
 				self.clipFinished( State4, {} )
+
 				DefaultEggState:completeAnimation()
 				self.DefaultEggState:setAlpha( 0 )
 				self.clipFinished( DefaultEggState, {} )
+
 				MissingImage:completeAnimation()
 				self.MissingImage:setAlpha( 0 )
 				self.clipFinished( MissingImage, {} )
@@ -175,21 +194,27 @@ CoD.QuestEggInternal.new = function ( menu, controller )
 		State2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				State1:completeAnimation()
 				self.State1:setAlpha( 0 )
 				self.clipFinished( State1, {} )
+
 				State2:completeAnimation()
 				self.State2:setAlpha( 1 )
 				self.clipFinished( State2, {} )
+
 				State3:completeAnimation()
 				self.State3:setAlpha( 0 )
 				self.clipFinished( State3, {} )
+
 				State4:completeAnimation()
 				self.State4:setAlpha( 0 )
 				self.clipFinished( State4, {} )
+
 				DefaultEggState:completeAnimation()
 				self.DefaultEggState:setAlpha( 0 )
 				self.clipFinished( DefaultEggState, {} )
+
 				MissingImage:completeAnimation()
 				self.MissingImage:setAlpha( 0 )
 				self.clipFinished( MissingImage, {} )
@@ -198,21 +223,27 @@ CoD.QuestEggInternal.new = function ( menu, controller )
 		State3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				State1:completeAnimation()
 				self.State1:setAlpha( 0 )
 				self.clipFinished( State1, {} )
+
 				State2:completeAnimation()
 				self.State2:setAlpha( 0 )
 				self.clipFinished( State2, {} )
+
 				State3:completeAnimation()
 				self.State3:setAlpha( 1 )
 				self.clipFinished( State3, {} )
+
 				State4:completeAnimation()
 				self.State4:setAlpha( 0 )
 				self.clipFinished( State4, {} )
+
 				DefaultEggState:completeAnimation()
 				self.DefaultEggState:setAlpha( 0 )
 				self.clipFinished( DefaultEggState, {} )
+
 				MissingImage:completeAnimation()
 				self.MissingImage:setAlpha( 0 )
 				self.clipFinished( MissingImage, {} )
@@ -221,21 +252,27 @@ CoD.QuestEggInternal.new = function ( menu, controller )
 		State4 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				State1:completeAnimation()
 				self.State1:setAlpha( 0 )
 				self.clipFinished( State1, {} )
+
 				State2:completeAnimation()
 				self.State2:setAlpha( 0 )
 				self.clipFinished( State2, {} )
+
 				State3:completeAnimation()
 				self.State3:setAlpha( 0 )
 				self.clipFinished( State3, {} )
+
 				State4:completeAnimation()
 				self.State4:setAlpha( 1 )
 				self.clipFinished( State4, {} )
+
 				DefaultEggState:completeAnimation()
 				self.DefaultEggState:setAlpha( 0 )
 				self.clipFinished( DefaultEggState, {} )
+
 				MissingImage:completeAnimation()
 				self.MissingImage:setAlpha( 0 )
 				self.clipFinished( MissingImage, {} )
@@ -244,21 +281,27 @@ CoD.QuestEggInternal.new = function ( menu, controller )
 		DefaultEgg = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				State1:completeAnimation()
 				self.State1:setAlpha( 0 )
 				self.clipFinished( State1, {} )
+
 				State2:completeAnimation()
 				self.State2:setAlpha( 0 )
 				self.clipFinished( State2, {} )
+
 				State3:completeAnimation()
 				self.State3:setAlpha( 0 )
 				self.clipFinished( State3, {} )
+
 				State4:completeAnimation()
 				self.State4:setAlpha( 0 )
 				self.clipFinished( State4, {} )
+
 				DefaultEggState:completeAnimation()
 				self.DefaultEggState:setAlpha( 1 )
 				self.clipFinished( DefaultEggState, {} )
+
 				MissingImage:completeAnimation()
 				self.MissingImage:setAlpha( 0 )
 				self.clipFinished( MissingImage, {} )
@@ -267,27 +310,34 @@ CoD.QuestEggInternal.new = function ( menu, controller )
 		Missing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				State1:completeAnimation()
 				self.State1:setAlpha( 0 )
 				self.clipFinished( State1, {} )
+
 				State2:completeAnimation()
 				self.State2:setAlpha( 0 )
 				self.clipFinished( State2, {} )
+
 				State3:completeAnimation()
 				self.State3:setAlpha( 0 )
 				self.clipFinished( State3, {} )
+
 				State4:completeAnimation()
 				self.State4:setAlpha( 0 )
 				self.clipFinished( State4, {} )
+
 				DefaultEggState:completeAnimation()
 				self.DefaultEggState:setAlpha( 0 )
 				self.clipFinished( DefaultEggState, {} )
+
 				MissingImage:completeAnimation()
 				self.MissingImage:setAlpha( 1 )
 				self.clipFinished( MissingImage, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "State1",

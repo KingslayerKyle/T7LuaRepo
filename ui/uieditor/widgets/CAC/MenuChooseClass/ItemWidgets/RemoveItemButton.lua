@@ -42,9 +42,11 @@ end
 CoD.RemoveItemButton = InheritFrom( LUI.UIElement )
 CoD.RemoveItemButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RemoveItemButton )
 	self.id = "RemoveItemButton"
@@ -131,18 +133,23 @@ CoD.RemoveItemButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Whitebox:completeAnimation()
 				self.Whitebox:setAlpha( 0 )
 				self.clipFinished( Whitebox, {} )
+
 				fullBacking:completeAnimation()
 				self.fullBacking:setAlpha( 0 )
 				self.clipFinished( fullBacking, {} )
+
 				RemoveIcon:completeAnimation()
 				self.RemoveIcon:setAlpha( 0 )
 				self.clipFinished( RemoveIcon, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
@@ -151,45 +158,56 @@ CoD.RemoveItemButton.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Whitebox:completeAnimation()
 				self.Whitebox:setAlpha( 0.95 )
 				self.clipFinished( Whitebox, {} )
+
 				fullBacking:completeAnimation()
 				self.fullBacking:setAlpha( 0 )
 				self.fullBacking:setScale( 1 )
 				self.clipFinished( fullBacking, {} )
+
 				RemoveIcon:completeAnimation()
 				self.RemoveIcon:setRGB( 1, 1, 1 )
 				self.RemoveIcon:setAlpha( 0.75 )
 				self.RemoveIcon:setScale( 1 )
 				self.clipFinished( RemoveIcon, {} )
+
 				itemHintText:completeAnimation()
 				self.itemHintText:setAlpha( 0 )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 0 )
 				self.clipFinished( hintArrow, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 4 )
+
 				fullBacking:completeAnimation()
 				self.fullBacking:setAlpha( 0.8 )
 				self.clipFinished( fullBacking, {} )
+
 				RemoveIcon:completeAnimation()
 				self.RemoveIcon:setRGB( 0.78, 0.78, 0.78 )
 				self.RemoveIcon:setAlpha( 1 )
 				self.clipFinished( RemoveIcon, {} )
+
 				itemHintText:completeAnimation()
+
 				itemHintText.textCenterAlign:completeAnimation()
 				self.itemHintText:setAlpha( 1 )
 				self.itemHintText.textCenterAlign:setText( Engine.Localize( "MENU_REMOVE" ) )
 				self.clipFinished( itemHintText, {} )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setAlpha( 1 )
 				self.clipFinished( hintArrow, {} )
 			end,
 			GainOver = function ()
 				self:setupElementClipCounter( 2 )
+
 				local fullBackingFrame2 = function ( fullBacking, event )
 					if not event.interrupted then
 						fullBacking:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -225,6 +243,7 @@ CoD.RemoveItemButton.new = function ( menu, controller )
 			end,
 			LoseOver = function ()
 				self:setupElementClipCounter( 2 )
+
 				local fullBackingFrame2 = function ( fullBacking, event )
 					if not event.interrupted then
 						fullBacking:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -260,6 +279,7 @@ CoD.RemoveItemButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -300,6 +320,7 @@ CoD.RemoveItemButton.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.itemHintText:close()
 		element.hintArrow:close()

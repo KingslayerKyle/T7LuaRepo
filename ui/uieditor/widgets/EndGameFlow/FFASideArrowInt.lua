@@ -4,9 +4,11 @@
 CoD.FFASideArrowInt = InheritFrom( LUI.UIElement )
 CoD.FFASideArrowInt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FFASideArrowInt )
 	self.id = "FFASideArrowInt"

@@ -4,9 +4,11 @@
 CoD.PersonalizeCharacter_CPProgressionMessage = InheritFrom( LUI.UIElement )
 CoD.PersonalizeCharacter_CPProgressionMessage.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PersonalizeCharacter_CPProgressionMessage )
 	self.id = "PersonalizeCharacter_CPProgressionMessage"
@@ -28,6 +30,7 @@ CoD.PersonalizeCharacter_CPProgressionMessage.new = function ( menu, controller 
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				campaignProgressionMessage:completeAnimation()
 				self.campaignProgressionMessage:setAlpha( 0 )
 				self.clipFinished( campaignProgressionMessage, {} )
@@ -36,6 +39,7 @@ CoD.PersonalizeCharacter_CPProgressionMessage.new = function ( menu, controller 
 		NeedMessage = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				campaignProgressionMessage:completeAnimation()
 				self.campaignProgressionMessage:setAlpha( 1 )
 				self.clipFinished( campaignProgressionMessage, {} )

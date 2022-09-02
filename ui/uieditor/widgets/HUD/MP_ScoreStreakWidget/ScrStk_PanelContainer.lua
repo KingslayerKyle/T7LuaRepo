@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ScoreInfo.ScoreInfo_PanelScale" )
 CoD.ScrStk_PanelContainer = InheritFrom( LUI.UIElement )
 CoD.ScrStk_PanelContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScrStk_PanelContainer )
 	self.id = "ScrStk_PanelContainer"
@@ -28,6 +30,7 @@ CoD.ScrStk_PanelContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Panel:completeAnimation()
 				self.Panel:setLeftRight( false, false, -30.5, 30.5 )
 				self.Panel:setTopBottom( false, false, 40, 83 )
@@ -37,6 +40,7 @@ CoD.ScrStk_PanelContainer.new = function ( menu, controller )
 		Scr2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Panel:completeAnimation()
 				self.Panel:setLeftRight( false, false, -30.5, 30.5 )
 				self.Panel:setTopBottom( false, false, -2, 83 )
@@ -46,6 +50,7 @@ CoD.ScrStk_PanelContainer.new = function ( menu, controller )
 		Scr3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Panel:completeAnimation()
 				self.Panel:setLeftRight( false, false, -30.5, 30.5 )
 				self.Panel:setTopBottom( false, false, -44, 83 )
@@ -55,6 +60,7 @@ CoD.ScrStk_PanelContainer.new = function ( menu, controller )
 		Scr4 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Panel:completeAnimation()
 				self.Panel:setLeftRight( false, false, -30.5, 30.5 )
 				self.Panel:setTopBottom( false, false, -83, 83 )
@@ -62,6 +68,7 @@ CoD.ScrStk_PanelContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 	end )

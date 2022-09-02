@@ -4,9 +4,11 @@
 CoD.ZM_Cookbook_RingWidget = InheritFrom( LUI.UIElement )
 CoD.ZM_Cookbook_RingWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZM_Cookbook_RingWidget )
 	self.id = "ZM_Cookbook_RingWidget"
@@ -35,17 +37,20 @@ CoD.ZM_Cookbook_RingWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ring:completeAnimation()
 				self.ring:setAlpha( 0 )
 				self.clipFinished( ring, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Yellow = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ring:completeAnimation()
 				self.ring:setRGB( 1, 0.75, 0.16 )
 				self.ring:setAlpha( 1 )
@@ -55,6 +60,7 @@ CoD.ZM_Cookbook_RingWidget.new = function ( menu, controller )
 		Green = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ring:completeAnimation()
 				self.ring:setRGB( 0.19, 0.6, 0.2 )
 				self.ring:setAlpha( 1 )
@@ -64,6 +70,7 @@ CoD.ZM_Cookbook_RingWidget.new = function ( menu, controller )
 		Blue = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ring:completeAnimation()
 				self.ring:setRGB( 0.2, 0.53, 0.71 )
 				self.ring:setAlpha( 1 )
@@ -73,6 +80,7 @@ CoD.ZM_Cookbook_RingWidget.new = function ( menu, controller )
 		Purple = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ring:completeAnimation()
 				self.ring:setRGB( 0.42, 0.19, 0.6 )
 				self.ring:setAlpha( 1 )
@@ -80,6 +88,7 @@ CoD.ZM_Cookbook_RingWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Yellow",

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.DeadSpectate.DeadSpectate_Internal" )
 CoD.DeadSpectate = InheritFrom( LUI.UIElement )
 CoD.DeadSpectate.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DeadSpectate )
 	self.id = "DeadSpectate"
@@ -41,6 +43,7 @@ CoD.DeadSpectate.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				internal:completeAnimation()
 				self.internal:setAlpha( 0 )
 				self.clipFinished( internal, {} )
@@ -49,12 +52,14 @@ CoD.DeadSpectate.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				internal:completeAnimation()
 				self.internal:setAlpha( 1 )
 				self.clipFinished( internal, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -127,6 +132,7 @@ CoD.DeadSpectate.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_UI_ACTIVE
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.internal:close()
 	end )

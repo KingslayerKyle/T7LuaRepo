@@ -18,9 +18,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.agr.vhud_agr_TimeBar" )
 CoD.vhud_quadtank_reticle = InheritFrom( LUI.UIElement )
 CoD.vhud_quadtank_reticle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_quadtank_reticle )
 	self.id = "vhud_quadtank_reticle"
@@ -329,9 +331,11 @@ CoD.vhud_quadtank_reticle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 33 )
+
 				local agrCenterPointFrame2 = function ( agrCenterPoint, event )
 					if not event.interrupted then
 						agrCenterPoint:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -1694,6 +1698,7 @@ CoD.vhud_quadtank_reticle.new = function ( menu, controller )
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 28 )
+
 				local agrReticleOutsideDotsBlurURFrame2 = function ( agrReticleOutsideDotsBlurUR, event )
 					if not event.interrupted then
 						agrReticleOutsideDotsBlurUR:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -2181,122 +2186,151 @@ CoD.vhud_quadtank_reticle.new = function ( menu, controller )
 		Zoom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 29 )
+
 				agrCenterPoint:completeAnimation()
 				self.agrCenterPoint:setLeftRight( false, false, -9, 7 )
 				self.agrCenterPoint:setTopBottom( false, false, -8, 8 )
 				self.clipFinished( agrCenterPoint, {} )
+
 				agrReticleOutsideDotsBlurUR:completeAnimation()
 				self.agrReticleOutsideDotsBlurUR:setLeftRight( false, false, 173.43, 335.71 )
 				self.agrReticleOutsideDotsBlurUR:setTopBottom( false, false, -108.89, -49.11 )
 				self.clipFinished( agrReticleOutsideDotsBlurUR, {} )
+
 				agrReticleOutsideDotsBlurUL:completeAnimation()
 				self.agrReticleOutsideDotsBlurUL:setLeftRight( false, false, -343.62, -181.34 )
 				self.agrReticleOutsideDotsBlurUL:setTopBottom( false, false, -108.89, -49.11 )
 				self.clipFinished( agrReticleOutsideDotsBlurUL, {} )
+
 				agrReticleOutsideDotsBlurLR:completeAnimation()
 				self.agrReticleOutsideDotsBlurLR:setLeftRight( false, false, 173.43, 335.71 )
 				self.agrReticleOutsideDotsBlurLR:setTopBottom( false, false, 44.2, 103.99 )
 				self.clipFinished( agrReticleOutsideDotsBlurLR, {} )
+
 				agrReticleOutsideDotsBlurLL:completeAnimation()
 				self.agrReticleOutsideDotsBlurLL:setLeftRight( false, false, -343.62, -181.34 )
 				self.agrReticleOutsideDotsBlurLL:setTopBottom( false, false, 45.36, 105.14 )
 				self.clipFinished( agrReticleOutsideDotsBlurLL, {} )
+
 				agrReticleFocusBlurL:completeAnimation()
 				self.agrReticleFocusBlurL:setLeftRight( false, false, -212.34, -25.67 )
 				self.agrReticleFocusBlurL:setTopBottom( false, false, -93, 93 )
 				self.clipFinished( agrReticleFocusBlurL, {} )
+
 				agrReticleFocusBlurR:completeAnimation()
 				self.agrReticleFocusBlurR:setLeftRight( false, false, 25.12, 203.68 )
 				self.agrReticleFocusBlurR:setTopBottom( false, false, -93, 93 )
 				self.clipFinished( agrReticleFocusBlurR, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( false, false, 226.55, 429.7 )
 				self.Image0:setTopBottom( false, false, -266.91, -108.89 )
 				self.clipFinished( Image0, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setLeftRight( false, false, 226.55, 429.7 )
 				self.Image1:setTopBottom( false, false, 109, 267.01 )
 				self.clipFinished( Image1, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setLeftRight( false, false, -435.17, -232.01 )
 				self.Image2:setTopBottom( false, false, -266.91, -108.89 )
 				self.clipFinished( Image2, {} )
+
 				Image3:completeAnimation()
 				self.Image3:setLeftRight( false, false, -435.17, -232.01 )
 				self.Image3:setTopBottom( false, false, 105.14, 263.16 )
 				self.clipFinished( Image3, {} )
+
 				vhudagrReticleFocusFrameRight:completeAnimation()
 				self.vhudagrReticleFocusFrameRight:setLeftRight( false, false, -7, 153.73 )
 				self.vhudagrReticleFocusFrameRight:setTopBottom( false, false, -44.2, 44.2 )
 				self.clipFinished( vhudagrReticleFocusFrameRight, {} )
+
 				vhudagrReticleFocusFrameLeft:completeAnimation()
 				self.vhudagrReticleFocusFrameLeft:setLeftRight( false, false, -155.73, 5 )
 				self.vhudagrReticleFocusFrameLeft:setTopBottom( false, false, -44.2, 44.2 )
 				self.clipFinished( vhudagrReticleFocusFrameLeft, {} )
+
 				vhudagrReticleHairlineBottom:completeAnimation()
 				self.vhudagrReticleHairlineBottom:setLeftRight( false, false, -9, 7 )
 				self.vhudagrReticleHairlineBottom:setTopBottom( false, false, 30, 70 )
 				self.clipFinished( vhudagrReticleHairlineBottom, {} )
+
 				vhudagrReticleHairlineTop:completeAnimation()
 				self.vhudagrReticleHairlineTop:setLeftRight( false, false, -9, 7 )
 				self.vhudagrReticleHairlineTop:setTopBottom( false, false, -69.11, -29.11 )
 				self.clipFinished( vhudagrReticleHairlineTop, {} )
+
 				vhudagrReticleOutsideLine:completeAnimation()
 				self.vhudagrReticleOutsideLine:setLeftRight( false, false, 93.43, 165 )
 				self.vhudagrReticleOutsideLine:setTopBottom( false, false, -120.83, -65.17 )
 				self.clipFinished( vhudagrReticleOutsideLine, {} )
+
 				vhudagrReticleOutsideDotsUR:completeAnimation()
 				self.vhudagrReticleOutsideDotsUR:setLeftRight( false, false, 73.36, 136.96 )
 				self.vhudagrReticleOutsideDotsUR:setTopBottom( false, false, -49.11, -17.31 )
 				self.vhudagrReticleOutsideDotsUR:setAlpha( 1 )
 				self.clipFinished( vhudagrReticleOutsideDotsUR, {} )
+
 				vhudagrReticleOutsideDotsLR:completeAnimation()
 				self.vhudagrReticleOutsideDotsLR:setLeftRight( false, false, 73.36, 136.96 )
 				self.vhudagrReticleOutsideDotsLR:setTopBottom( false, false, 18.3, 50.1 )
 				self.vhudagrReticleOutsideDotsLR:setAlpha( 1 )
 				self.clipFinished( vhudagrReticleOutsideDotsLR, {} )
+
 				vhudagrReticleOutsideDotsUR0:completeAnimation()
 				self.vhudagrReticleOutsideDotsUR0:setLeftRight( false, false, -138.96, -75.36 )
 				self.vhudagrReticleOutsideDotsUR0:setTopBottom( false, false, 18.3, 50.1 )
 				self.vhudagrReticleOutsideDotsUR0:setAlpha( 1 )
 				self.clipFinished( vhudagrReticleOutsideDotsUR0, {} )
+
 				vhudagrReticleOutsideDotsLR0:completeAnimation()
 				self.vhudagrReticleOutsideDotsLR0:setLeftRight( false, false, -138.96, -75.36 )
 				self.vhudagrReticleOutsideDotsLR0:setTopBottom( false, false, -49.11, -17.31 )
 				self.vhudagrReticleOutsideDotsLR0:setAlpha( 1 )
 				self.clipFinished( vhudagrReticleOutsideDotsLR0, {} )
+
 				vhudagrOutsideLine:completeAnimation()
 				self.vhudagrOutsideLine:setLeftRight( false, false, 233, 287.25 )
 				self.vhudagrOutsideLine:setTopBottom( false, false, -7.5, 8 )
 				self.clipFinished( vhudagrOutsideLine, {} )
+
 				vhudagrOutsideLine0:completeAnimation()
 				self.vhudagrOutsideLine0:setLeftRight( false, false, -289.6, -235.35 )
 				self.vhudagrOutsideLine0:setTopBottom( false, false, -7.5, 8 )
 				self.clipFinished( vhudagrOutsideLine0, {} )
+
 				vhudagrReticleCenterHairline:completeAnimation()
 				self.vhudagrReticleCenterHairline:setLeftRight( false, false, 3.18, 20.18 )
 				self.vhudagrReticleCenterHairline:setTopBottom( false, false, -4.25, 4.25 )
 				self.clipFinished( vhudagrReticleCenterHairline, {} )
+
 				vhudagrReticleCenterHairline0:completeAnimation()
 				self.vhudagrReticleCenterHairline0:setLeftRight( false, false, -21, -4 )
 				self.vhudagrReticleCenterHairline0:setTopBottom( false, false, -3.73, 4.77 )
 				self.clipFinished( vhudagrReticleCenterHairline0, {} )
+
 				vhudagrReticleOutsideLine0:completeAnimation()
 				self.vhudagrReticleOutsideLine0:setLeftRight( false, false, -179, -107.43 )
 				self.vhudagrReticleOutsideLine0:setTopBottom( false, false, -120.83, -65.17 )
 				self.clipFinished( vhudagrReticleOutsideLine0, {} )
+
 				vhudagrReticleOutsideLine1:completeAnimation()
 				self.vhudagrReticleOutsideLine1:setLeftRight( false, false, 93.43, 165 )
 				self.vhudagrReticleOutsideLine1:setTopBottom( false, false, 65.17, 120.83 )
 				self.clipFinished( vhudagrReticleOutsideLine1, {} )
+
 				vhudagrReticleOutsideLine2:completeAnimation()
 				self.vhudagrReticleOutsideLine2:setLeftRight( false, false, -179, -107.43 )
 				self.vhudagrReticleOutsideLine2:setTopBottom( false, false, 65.17, 120.83 )
 				self.clipFinished( vhudagrReticleOutsideLine2, {} )
+
 				vhudagrReticleCenterHairline1:completeAnimation()
 				self.vhudagrReticleCenterHairline1:setLeftRight( false, false, 3.18, 20.18 )
 				self.vhudagrReticleCenterHairline1:setTopBottom( false, false, -4.25, 4.25 )
 				self.clipFinished( vhudagrReticleCenterHairline1, {} )
+
 				vhudagrReticleCenterHairline00:completeAnimation()
 				self.vhudagrReticleCenterHairline00:setLeftRight( false, false, -21, -4 )
 				self.vhudagrReticleCenterHairline00:setTopBottom( false, false, -3.73, 4.77 )
@@ -2304,6 +2338,7 @@ CoD.vhud_quadtank_reticle.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 28 )
+
 				local agrReticleOutsideDotsBlurURFrame2 = function ( agrReticleOutsideDotsBlurUR, event )
 					if not event.interrupted then
 						agrReticleOutsideDotsBlurUR:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -2791,6 +2826,7 @@ CoD.vhud_quadtank_reticle.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vhudmsLockOnNotification:close()
 		element.quadtankDamageIcon:close()

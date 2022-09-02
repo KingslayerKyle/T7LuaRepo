@@ -4,9 +4,11 @@
 CoD.BM_TradeAgainFocus = InheritFrom( LUI.UIElement )
 CoD.BM_TradeAgainFocus.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_TradeAgainFocus )
 	self.id = "BM_TradeAgainFocus"
@@ -26,6 +28,7 @@ CoD.BM_TradeAgainFocus.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Framefocus:completeAnimation()
 				self.Framefocus:setAlpha( 0 )
 				self.clipFinished( Framefocus, {} )
@@ -34,6 +37,7 @@ CoD.BM_TradeAgainFocus.new = function ( menu, controller )
 		Highlighted = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FramefocusFrame2 = function ( Framefocus, event )
 					if not event.interrupted then
 						Framefocus:beginAnimation( "keyframe", 219, false, false, CoD.TweenType.Linear )
@@ -54,6 +58,7 @@ CoD.BM_TradeAgainFocus.new = function ( menu, controller )
 		Off = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FramefocusFrame2 = function ( Framefocus, event )
 					if not event.interrupted then
 						Framefocus:beginAnimation( "keyframe", 219, false, false, CoD.TweenType.Linear )

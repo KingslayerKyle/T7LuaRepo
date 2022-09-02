@@ -16,9 +16,11 @@ end
 CoD.ScoreInfo_Emblem = InheritFrom( LUI.UIElement )
 CoD.ScoreInfo_Emblem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreInfo_Emblem )
 	self.id = "ScoreInfo_Emblem"

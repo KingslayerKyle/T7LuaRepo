@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidgetMP_PanelEquipContain
 CoD.AmmoWidgetMP_HeldItemPanel = InheritFrom( LUI.UIElement )
 CoD.AmmoWidgetMP_HeldItemPanel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidgetMP_HeldItemPanel )
 	self.id = "AmmoWidgetMP_HeldItemPanel"
@@ -29,12 +31,14 @@ CoD.AmmoWidgetMP_HeldItemPanel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				AmmoWidgetMPPanelEquipContainer0:completeAnimation()
 				self.AmmoWidgetMPPanelEquipContainer0:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetMPPanelEquipContainer0, {} )
 			end,
 			Show = function ()
 				self:setupElementClipCounter( 1 )
+
 				local AmmoWidgetMPPanelEquipContainer0Frame2 = function ( AmmoWidgetMPPanelEquipContainer0, event )
 					if not event.interrupted then
 						AmmoWidgetMPPanelEquipContainer0:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -55,12 +59,14 @@ CoD.AmmoWidgetMP_HeldItemPanel.new = function ( menu, controller )
 		Show = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				AmmoWidgetMPPanelEquipContainer0:completeAnimation()
 				self.AmmoWidgetMPPanelEquipContainer0:setAlpha( 1 )
 				self.clipFinished( AmmoWidgetMPPanelEquipContainer0, {} )
 			end,
 			Hide = function ()
 				self:setupElementClipCounter( 1 )
+
 				local AmmoWidgetMPPanelEquipContainer0Frame2 = function ( AmmoWidgetMPPanelEquipContainer0, event )
 					if not event.interrupted then
 						AmmoWidgetMPPanelEquipContainer0:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -81,12 +87,14 @@ CoD.AmmoWidgetMP_HeldItemPanel.new = function ( menu, controller )
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				AmmoWidgetMPPanelEquipContainer0:completeAnimation()
 				self.AmmoWidgetMPPanelEquipContainer0:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetMPPanelEquipContainer0, {} )
 			end,
 			Show = function ()
 				self:setupElementClipCounter( 1 )
+
 				local AmmoWidgetMPPanelEquipContainer0Frame2 = function ( AmmoWidgetMPPanelEquipContainer0, event )
 					if not event.interrupted then
 						AmmoWidgetMPPanelEquipContainer0:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -105,6 +113,7 @@ CoD.AmmoWidgetMP_HeldItemPanel.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Show",
@@ -135,6 +144,7 @@ CoD.AmmoWidgetMP_HeldItemPanel.new = function ( menu, controller )
 			modelName = "deadSpectator.playerIndex"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AmmoWidgetMPPanelEquipContainer0:close()
 	end )

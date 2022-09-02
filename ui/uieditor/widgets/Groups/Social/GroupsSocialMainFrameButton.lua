@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.CAC.cac_FocusBarContainer" )
 CoD.GroupsSocialMainFrameButton = InheritFrom( LUI.UIElement )
 CoD.GroupsSocialMainFrameButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsSocialMainFrameButton )
 	self.id = "GroupsSocialMainFrameButton"
@@ -158,42 +160,51 @@ CoD.GroupsSocialMainFrameButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setRGB( 1, 1, 1 )
 				self.BoxButtonLrgInactive0:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				NumItems:completeAnimation()
 				self.NumItems:setAlpha( 1 )
 				self.clipFinished( NumItems, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, -2, 2 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, -2, 2 )
 				self.FocusBarB:setTopBottom( false, true, 0, 4 )
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setLeftRight( true, true, -12, 7 )
 				self.glitch:setTopBottom( true, false, -8.75, 4.75 )
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				f1_local8:completeAnimation()
 				self.glitch2:setLeftRight( true, true, -8.5, 8.5 )
 				self.glitch2:setTopBottom( false, true, -6, 9 )
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( f1_local8, {} )
+
 				glitch0:completeAnimation()
 				self.glitch0:setAlpha( 0 )
 				self.clipFinished( glitch0, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 1 )
 				self.clipFinished( Text, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				local BoxButtonLrgInactive0Frame2 = function ( BoxButtonLrgInactive0, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive0:beginAnimation( "keyframe", 79, false, false, CoD.TweenType.Linear )
@@ -209,6 +220,7 @@ CoD.GroupsSocialMainFrameButton.new = function ( menu, controller )
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 0.4 )
 				BoxButtonLrgInactive0Frame2( BoxButtonLrgInactive0, {} )
+
 				NumItems:completeAnimation()
 				self.NumItems:setAlpha( 1 )
 				self.clipFinished( NumItems, {} )
@@ -482,34 +494,42 @@ CoD.GroupsSocialMainFrameButton.new = function ( menu, controller )
 				f1_local8:completeAnimation()
 				self.glitch2:setAlpha( 1 )
 				f1_local8Frame2( f1_local8, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 1 )
 				self.clipFinished( Text, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setRGB( 1, 1, 1 )
 				self.BoxButtonLrgInactive0:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setRGB( 1, 1, 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				NumItems:completeAnimation()
 				self.NumItems:setAlpha( 1 )
 				self.clipFinished( NumItems, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 1 )
 				self.clipFinished( Text, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				local BoxButtonLrgInactive0Frame2 = function ( BoxButtonLrgInactive0, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive0:beginAnimation( "keyframe", 70, false, false, CoD.TweenType.Linear )
@@ -525,6 +545,7 @@ CoD.GroupsSocialMainFrameButton.new = function ( menu, controller )
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 1 )
 				BoxButtonLrgInactive0Frame2( BoxButtonLrgInactive0, {} )
+
 				NumItems:completeAnimation()
 				self.NumItems:setAlpha( 1 )
 				self.clipFinished( NumItems, {} )
@@ -822,6 +843,7 @@ CoD.GroupsSocialMainFrameButton.new = function ( menu, controller )
 				f1_local8:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				f1_local8Frame2( f1_local8, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 1 )
 				self.clipFinished( Text, {} )
@@ -830,39 +852,48 @@ CoD.GroupsSocialMainFrameButton.new = function ( menu, controller )
 		DisableState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				NumItems:completeAnimation()
 				self.NumItems:setAlpha( 0.5 )
 				self.clipFinished( NumItems, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, -2, 2 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, -2, 2 )
 				self.FocusBarB:setTopBottom( false, true, 0, 4 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setLeftRight( true, true, -12, 7 )
 				self.glitch:setTopBottom( true, false, -8.75, 4.75 )
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				f1_local8:completeAnimation()
 				self.glitch2:setLeftRight( true, true, -8.5, 8.5 )
 				self.glitch2:setTopBottom( false, true, -6, 9 )
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( f1_local8, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 0.5 )
 				self.clipFinished( Text, {} )
+
 				FocusWhiteT:completeAnimation()
 				self.FocusWhiteT:setAlpha( 0 )
 				self.clipFinished( FocusWhiteT, {} )
+
 				FocusWhiteB:completeAnimation()
 				self.FocusWhiteB:setAlpha( 0 )
 				self.clipFinished( FocusWhiteB, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				NumItems:completeAnimation()
 				self.NumItems:setAlpha( 1 )
 				self.clipFinished( NumItems, {} )
@@ -1006,6 +1037,7 @@ CoD.GroupsSocialMainFrameButton.new = function ( menu, controller )
 				self.glitch2:setRGB( 1, 1, 1 )
 				self.glitch2:setAlpha( 1 )
 				f1_local8Frame2( f1_local8, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 1 )
 				self.clipFinished( Text, {} )
@@ -1108,21 +1140,26 @@ CoD.GroupsSocialMainFrameButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				NumItems:completeAnimation()
 				self.NumItems:setAlpha( 1 )
 				self.clipFinished( NumItems, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 1 )
 				self.clipFinished( Text, {} )
+
 				FocusWhiteT:completeAnimation()
 				self.FocusWhiteT:setAlpha( 1 )
 				self.clipFinished( FocusWhiteT, {} )
+
 				FocusWhiteB:completeAnimation()
 				self.FocusWhiteB:setAlpha( 1 )
 				self.clipFinished( FocusWhiteB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				NumItems:completeAnimation()
 				self.NumItems:setAlpha( 1 )
 				self.clipFinished( NumItems, {} )
@@ -1286,6 +1323,7 @@ CoD.GroupsSocialMainFrameButton.new = function ( menu, controller )
 				self.glitch2:setRGB( 1, 1, 1 )
 				self.glitch2:setAlpha( 0 )
 				f1_local8Frame2( f1_local8, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 1 )
 				self.clipFinished( Text, {} )
@@ -1432,6 +1470,7 @@ CoD.GroupsSocialMainFrameButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveDiag:close()
 		element.BoxButtonLrgInactive0:close()

@@ -18,9 +18,11 @@ end
 CoD.LobbyMemberMP45 = InheritFrom( LUI.UIElement )
 CoD.LobbyMemberMP45.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyMemberMP45 )
 	self.id = "LobbyMemberMP45"
@@ -76,25 +78,30 @@ CoD.LobbyMemberMP45.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				icon:completeAnimation()
 				self.icon:setZRot( 0 )
 				self.clipFinished( icon, {} )
+
 				hintText:completeAnimation()
 				self.hintText:setAlpha( 0 )
 				self.clipFinished( hintText, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 2 )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 0 )
 				self.icon:setZRot( -90 )
 				self.clipFinished( icon, {} )
+
 				hintText:completeAnimation()
 				self.hintText:setAlpha( 1 )
 				self.clipFinished( hintText, {} )
 			end,
 			GainOver = function ()
 				self:setupElementClipCounter( 2 )
+
 				local iconFrame2 = function ( icon, event )
 					if not event.interrupted then
 						icon:beginAnimation( "keyframe", 250, false, false, CoD.TweenType.Linear )
@@ -130,6 +137,7 @@ CoD.LobbyMemberMP45.new = function ( menu, controller )
 			end,
 			LoseOver = function ()
 				self:setupElementClipCounter( 2 )
+
 				local iconFrame2 = function ( icon, event )
 					if not event.interrupted then
 						icon:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -165,6 +173,7 @@ CoD.LobbyMemberMP45.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.hintText:close()
 	end )

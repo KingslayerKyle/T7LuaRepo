@@ -13,9 +13,11 @@ end
 CoD.GroupsSocialMembersFrameWidget = InheritFrom( LUI.UIElement )
 CoD.GroupsSocialMembersFrameWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsSocialMembersFrameWidget )
 	self.id = "GroupsSocialMembersFrameWidget"
@@ -120,6 +122,7 @@ CoD.GroupsSocialMembersFrameWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GroupsRosterList:close()
 		element.GroupMemberInfoPane:close()

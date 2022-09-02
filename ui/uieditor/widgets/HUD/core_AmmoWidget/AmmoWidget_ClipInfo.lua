@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_ClipMeterColor" )
 CoD.AmmoWidget_ClipInfo = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_ClipInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_ClipInfo )
 	self.id = "AmmoWidget_ClipInfo"
@@ -224,22 +226,27 @@ CoD.AmmoWidget_ClipInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( false, true, -148, -47 )
 				self.Clip:setTopBottom( false, true, -49, -1 )
 				self.clipFinished( Clip, {} )
+
 				Knife:completeAnimation()
 				self.Knife:setLeftRight( false, true, 256, 341 )
 				self.Knife:setTopBottom( false, true, -38, -12 )
 				self.clipFinished( Knife, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, -60, -2 )
 				self.TotalAmmo:setTopBottom( false, true, -37.5, -7.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				AmmoColorBar:completeAnimation()
 				self.AmmoColorBar:setLeftRight( true, false, 79, 130 )
 				self.AmmoColorBar:setTopBottom( true, false, 49.5, 54.5 )
 				self.clipFinished( AmmoColorBar, {} )
+
 				ClipMeter:completeAnimation()
 				self.ClipMeter:setLeftRight( true, false, 12.5, 61.5 )
 				self.ClipMeter:setTopBottom( true, false, 49.5, 55.5 )
@@ -249,22 +256,27 @@ CoD.AmmoWidget_ClipInfo.new = function ( menu, controller )
 		Weapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( false, true, -148, -47 )
 				self.Clip:setTopBottom( false, true, -49, -1 )
 				self.clipFinished( Clip, {} )
+
 				Knife:completeAnimation()
 				self.Knife:setLeftRight( false, true, 256, 341 )
 				self.Knife:setTopBottom( false, true, -38, -12 )
 				self.clipFinished( Knife, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, -60, -2 )
 				self.TotalAmmo:setTopBottom( false, true, -37.5, -7.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				AmmoColorBar:completeAnimation()
 				self.AmmoColorBar:setLeftRight( false, true, -56, -5 )
 				self.AmmoColorBar:setTopBottom( false, true, -7.5, -2.5 )
 				self.clipFinished( AmmoColorBar, {} )
+
 				ClipMeter:completeAnimation()
 				self.ClipMeter:setLeftRight( false, true, -122.5, -73.5 )
 				self.ClipMeter:setTopBottom( false, true, -7.5, -1.5 )
@@ -274,22 +286,27 @@ CoD.AmmoWidget_ClipInfo.new = function ( menu, controller )
 		Knife = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( false, true, 261, 362 )
 				self.Clip:setTopBottom( false, true, -49, -1 )
 				self.clipFinished( Clip, {} )
+
 				Knife:completeAnimation()
 				self.Knife:setLeftRight( false, true, -89, -4 )
 				self.Knife:setTopBottom( false, true, -39, -13 )
 				self.clipFinished( Knife, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, 292, 350 )
 				self.TotalAmmo:setTopBottom( false, true, -37, -7 )
 				self.clipFinished( TotalAmmo, {} )
+
 				AmmoColorBar:completeAnimation()
 				self.AmmoColorBar:setLeftRight( false, true, 239, 345 )
 				self.AmmoColorBar:setTopBottom( false, true, -4, 0 )
 				self.clipFinished( AmmoColorBar, {} )
+
 				ClipMeter:completeAnimation()
 				self.ClipMeter:setLeftRight( true, false, 371.5, 420.5 )
 				self.ClipMeter:setTopBottom( true, false, 50, 56 )
@@ -299,22 +316,27 @@ CoD.AmmoWidget_ClipInfo.new = function ( menu, controller )
 		Weapon3Digits = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( false, true, -154, -53 )
 				self.Clip:setTopBottom( false, true, -49, -1 )
 				self.clipFinished( Clip, {} )
+
 				Knife:completeAnimation()
 				self.Knife:setLeftRight( false, true, 256, 341 )
 				self.Knife:setTopBottom( false, true, -38, -12 )
 				self.clipFinished( Knife, {} )
+
 				TotalAmmo:completeAnimation()
 				self.TotalAmmo:setLeftRight( false, true, -60, -2 )
 				self.TotalAmmo:setTopBottom( false, true, -37.5, -7.5 )
 				self.clipFinished( TotalAmmo, {} )
+
 				AmmoColorBar:completeAnimation()
 				self.AmmoColorBar:setLeftRight( true, false, 79, 130 )
 				self.AmmoColorBar:setTopBottom( true, false, 49.5, 54.5 )
 				self.clipFinished( AmmoColorBar, {} )
+
 				ClipMeter:completeAnimation()
 				self.ClipMeter:setLeftRight( true, false, 1.5, 64.5 )
 				self.ClipMeter:setTopBottom( true, false, 49.5, 55.5 )
@@ -322,6 +344,7 @@ CoD.AmmoWidget_ClipInfo.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Weapon",
@@ -372,6 +395,7 @@ CoD.AmmoWidget_ClipInfo.new = function ( menu, controller )
 			modelName = "playerAbilities.playerGadget3.isInUse"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Clip:close()
 		element.Knife:close()

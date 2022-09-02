@@ -19,9 +19,11 @@ end
 CoD.AmmoWidget_HeroAbilityRouletteOverlay = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_HeroAbilityRouletteOverlay.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_HeroAbilityRouletteOverlay )
 	self.id = "AmmoWidget_HeroAbilityRouletteOverlay"
@@ -202,54 +204,69 @@ CoD.AmmoWidget_HeroAbilityRouletteOverlay.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				EdgeGlow:completeAnimation()
 				self.EdgeGlow:setAlpha( 0 )
 				self.clipFinished( EdgeGlow, {} )
+
 				ImgIcon:completeAnimation()
 				self.ImgIcon:setAlpha( 0 )
 				self.clipFinished( ImgIcon, {} )
+
 				backing:completeAnimation()
 				self.backing:setAlpha( 0 )
 				self.clipFinished( backing, {} )
+
 				Texture1:completeAnimation()
 				self.Texture1:setAlpha( 0 )
 				self.clipFinished( Texture1, {} )
+
 				Texture2:completeAnimation()
 				self.Texture2:setAlpha( 0 )
 				self.clipFinished( Texture2, {} )
+
 				Card1:completeAnimation()
 				self.Card1:setRGB( 0.62, 0.96, 1 )
 				self.Card1:setAlpha( 0 )
 				self.clipFinished( Card1, {} )
+
 				CardBack:completeAnimation()
 				self.CardBack:setAlpha( 0 )
 				self.clipFinished( CardBack, {} )
+
 				CardFront:completeAnimation()
 				self.CardFront:setAlpha( 0 )
 				self.clipFinished( CardFront, {} )
+
 				HeroBackgroundGlowImage:completeAnimation()
 				self.HeroBackgroundGlowImage:setAlpha( 0 )
 				self.clipFinished( HeroBackgroundGlowImage, {} )
+
 				HeroBackgroundGlowImage0:completeAnimation()
 				self.HeroBackgroundGlowImage0:setAlpha( 0 )
 				self.clipFinished( HeroBackgroundGlowImage0, {} )
+
 				AmmoWidgetHeroAbilityRouletteOverlayWidget0:completeAnimation()
 				self.AmmoWidgetHeroAbilityRouletteOverlayWidget0:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetHeroAbilityRouletteOverlayWidget0, {} )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver, {} )
 			end,
 			NewClipName = function ()
 				self:setupElementClipCounter( 14 )
+
 				EdgeGlow:completeAnimation()
 				self.EdgeGlow:setLeftRight( false, false, -43, 45 )
 				self.EdgeGlow:setTopBottom( false, false, -44, 44 )
 				self.clipFinished( EdgeGlow, {} )
+
 				ImgIcon:completeAnimation()
 				self.ImgIcon:setLeftRight( true, true, 2, -2 )
 				self.ImgIcon:setTopBottom( true, true, 2, -2 )
 				self.clipFinished( ImgIcon, {} )
+
 				backing:completeAnimation()
 				self.backing:setLeftRight( false, false, -22.93, 22.93 )
 				self.backing:setTopBottom( false, false, -28.17, 28.17 )
@@ -496,6 +513,7 @@ CoD.AmmoWidget_HeroAbilityRouletteOverlay.new = function ( menu, controller )
 				self.CardFront:setZoom( 0 )
 				self.CardFront:setScale( 1.6 )
 				CardFrontFrame2( CardFront, {} )
+
 				Card2b:completeAnimation()
 				self.Card2b:setLeftRight( false, false, -9, 60 )
 				self.Card2b:setTopBottom( false, false, -34.5, 34.5 )
@@ -682,6 +700,7 @@ CoD.AmmoWidget_HeroAbilityRouletteOverlay.new = function ( menu, controller )
 		Preroll = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				local EdgeGlowFrame2 = function ( EdgeGlow, event )
 					local EdgeGlowFrame3 = function ( EdgeGlow, event )
 						local EdgeGlowFrame4 = function ( EdgeGlow, event )
@@ -1361,6 +1380,7 @@ CoD.AmmoWidget_HeroAbilityRouletteOverlay.new = function ( menu, controller )
 				self.Glow:setTopBottom( true, true, 4, -4 )
 				self.Glow:setAlpha( 0 )
 				GlowFrame2( Glow, {} )
+
 				AmmoWidgetHeroAbilityRouletteOverlayWidget0:completeAnimation()
 				self.AmmoWidgetHeroAbilityRouletteOverlayWidget0:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetHeroAbilityRouletteOverlayWidget0, {} )
@@ -1408,14 +1428,17 @@ CoD.AmmoWidget_HeroAbilityRouletteOverlay.new = function ( menu, controller )
 			end,
 			PrerollState = function ()
 				self:setupElementClipCounter( 14 )
+
 				EdgeGlow:completeAnimation()
 				self.EdgeGlow:setLeftRight( false, false, -43, 45 )
 				self.EdgeGlow:setTopBottom( false, false, -44, 44 )
 				self.clipFinished( EdgeGlow, {} )
+
 				ImgIcon:completeAnimation()
 				self.ImgIcon:setLeftRight( true, true, 2, -2 )
 				self.ImgIcon:setTopBottom( true, true, 2, -2 )
 				self.clipFinished( ImgIcon, {} )
+
 				backing:completeAnimation()
 				self.backing:setLeftRight( false, false, -22.93, 22.93 )
 				self.backing:setTopBottom( false, false, -28.17, 28.17 )
@@ -1871,41 +1894,53 @@ CoD.AmmoWidget_HeroAbilityRouletteOverlay.new = function ( menu, controller )
 		PrerollState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				EdgeGlow:completeAnimation()
 				self.EdgeGlow:setAlpha( 0 )
 				self.clipFinished( EdgeGlow, {} )
+
 				ImgIcon:completeAnimation()
 				self.ImgIcon:setAlpha( 0 )
 				self.clipFinished( ImgIcon, {} )
+
 				backing:completeAnimation()
 				self.backing:setAlpha( 0 )
 				self.clipFinished( backing, {} )
+
 				Texture1:completeAnimation()
 				self.Texture1:setAlpha( 0 )
 				self.Texture1:setScale( 1.5 )
 				self.clipFinished( Texture1, {} )
+
 				Texture2:completeAnimation()
 				self.Texture2:setAlpha( 0 )
 				self.clipFinished( Texture2, {} )
+
 				Card1:completeAnimation()
 				self.Card1:setRGB( 0.62, 0.96, 1 )
 				self.Card1:setAlpha( 0 )
 				self.clipFinished( Card1, {} )
+
 				CardBack:completeAnimation()
 				self.CardBack:setAlpha( 0 )
 				self.clipFinished( CardBack, {} )
+
 				CardFront:completeAnimation()
 				self.CardFront:setAlpha( 0 )
 				self.clipFinished( CardFront, {} )
+
 				HeroBackgroundGlowImage:completeAnimation()
 				self.HeroBackgroundGlowImage:setAlpha( 0 )
 				self.clipFinished( HeroBackgroundGlowImage, {} )
+
 				HeroBackgroundGlowImage0:completeAnimation()
 				self.HeroBackgroundGlowImage0:setAlpha( 0 )
 				self.clipFinished( HeroBackgroundGlowImage0, {} )
+
 				AmmoWidgetHeroAbilityRouletteOverlayWidget0:completeAnimation()
 				self.AmmoWidgetHeroAbilityRouletteOverlayWidget0:setAlpha( 1 )
 				self.clipFinished( AmmoWidgetHeroAbilityRouletteOverlayWidget0, {} )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver, {} )
@@ -1914,6 +1949,7 @@ CoD.AmmoWidget_HeroAbilityRouletteOverlay.new = function ( menu, controller )
 		Rolling = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				local EdgeGlowFrame2 = function ( EdgeGlow, event )
 					local EdgeGlowFrame3 = function ( EdgeGlow, event )
 						local EdgeGlowFrame4 = function ( EdgeGlow, event )
@@ -2358,6 +2394,7 @@ CoD.AmmoWidget_HeroAbilityRouletteOverlay.new = function ( menu, controller )
 				CardFront:setZoom( 0 )
 				CardFront:setScale( 1 )
 				CardFront:registerEventHandler( "transition_complete_keyframe", f122_local7 )
+
 				Card2b:completeAnimation()
 				self.Card2b:setLeftRight( false, false, -9, 60 )
 				self.Card2b:setTopBottom( false, false, -34.5, 34.5 )
@@ -2451,6 +2488,7 @@ CoD.AmmoWidget_HeroAbilityRouletteOverlay.new = function ( menu, controller )
 				self.Glow:setTopBottom( true, true, 4, -4 )
 				self.Glow:setAlpha( 0 )
 				GlowFrame2( Glow, {} )
+
 				AmmoWidgetHeroAbilityRouletteOverlayWidget0:completeAnimation()
 				self.AmmoWidgetHeroAbilityRouletteOverlayWidget0:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetHeroAbilityRouletteOverlayWidget0, {} )
@@ -2498,14 +2536,17 @@ CoD.AmmoWidget_HeroAbilityRouletteOverlay.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 14 )
+
 				EdgeGlow:completeAnimation()
 				self.EdgeGlow:setLeftRight( false, false, -43, 45 )
 				self.EdgeGlow:setTopBottom( false, false, -44, 44 )
 				self.clipFinished( EdgeGlow, {} )
+
 				ImgIcon:completeAnimation()
 				self.ImgIcon:setLeftRight( true, true, 2, -2 )
 				self.ImgIcon:setTopBottom( true, true, 2, -2 )
 				self.clipFinished( ImgIcon, {} )
+
 				backing:completeAnimation()
 				self.backing:setLeftRight( false, false, -22.93, 22.93 )
 				self.backing:setTopBottom( false, false, -28.17, 28.17 )
@@ -2901,6 +2942,7 @@ CoD.AmmoWidget_HeroAbilityRouletteOverlay.new = function ( menu, controller )
 				self.Glow:setAlpha( 0 )
 				self.Glow:setScale( 0.4 )
 				GlowFrame2( Glow, {} )
+
 				AmmoWidgetHeroAbilityRouletteOverlayWidget0:completeAnimation()
 				self.AmmoWidgetHeroAbilityRouletteOverlayWidget0:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetHeroAbilityRouletteOverlayWidget0, {} )
@@ -2947,6 +2989,7 @@ CoD.AmmoWidget_HeroAbilityRouletteOverlay.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Preroll",
@@ -3103,6 +3146,7 @@ CoD.AmmoWidget_HeroAbilityRouletteOverlay.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_EMP_ACTIVE
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ImgIcon:close()
 		element.Glow:close()

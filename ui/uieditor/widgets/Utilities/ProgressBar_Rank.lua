@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.AAR.XPbarFrame" )
 CoD.ProgressBar_Rank = InheritFrom( LUI.UIElement )
 CoD.ProgressBar_Rank.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ProgressBar_Rank )
 	self.id = "ProgressBar_Rank"
@@ -164,36 +166,47 @@ CoD.ProgressBar_Rank.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				XpBarBg:completeAnimation()
 				self.XpBarBg:setAlpha( 0.28 )
 				self.clipFinished( XpBarBg, {} )
+
 				XpBarFrame:completeAnimation()
 				self.XpBarFrame:setAlpha( 1 )
 				self.clipFinished( XpBarFrame, {} )
+
 				curRank:completeAnimation()
 				self.curRank:setAlpha( 1 )
 				self.clipFinished( curRank, {} )
+
 				curRankImg:completeAnimation()
 				self.curRankImg:setAlpha( 1 )
 				self.clipFinished( curRankImg, {} )
+
 				progress:completeAnimation()
 				self.progress:setAlpha( 1 )
 				self.clipFinished( progress, {} )
+
 				nextRank:completeAnimation()
 				self.nextRank:setAlpha( 1 )
 				self.clipFinished( nextRank, {} )
+
 				nextRankImage:completeAnimation()
 				self.nextRankImage:setAlpha( 1 )
 				self.clipFinished( nextRankImage, {} )
+
 				nextRankDesc:completeAnimation()
 				self.nextRankDesc:setAlpha( 1 )
 				self.clipFinished( nextRankDesc, {} )
+
 				nextRankDesc0:completeAnimation()
 				self.nextRankDesc0:setAlpha( 1 )
 				self.clipFinished( nextRankDesc0, {} )
+
 				nextRankDesc00:completeAnimation()
 				self.nextRankDesc00:setAlpha( 1 )
 				self.clipFinished( nextRankDesc00, {} )
+
 				maxRankTextBox:completeAnimation()
 				self.maxRankTextBox:setAlpha( 0 )
 				self.clipFinished( maxRankTextBox, {} )
@@ -202,36 +215,47 @@ CoD.ProgressBar_Rank.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				XpBarBg:completeAnimation()
 				self.XpBarBg:setAlpha( 0 )
 				self.clipFinished( XpBarBg, {} )
+
 				XpBarFrame:completeAnimation()
 				self.XpBarFrame:setAlpha( 0 )
 				self.clipFinished( XpBarFrame, {} )
+
 				curRank:completeAnimation()
 				self.curRank:setAlpha( 0 )
 				self.clipFinished( curRank, {} )
+
 				curRankImg:completeAnimation()
 				self.curRankImg:setAlpha( 0 )
 				self.clipFinished( curRankImg, {} )
+
 				progress:completeAnimation()
 				self.progress:setAlpha( 0 )
 				self.clipFinished( progress, {} )
+
 				nextRank:completeAnimation()
 				self.nextRank:setAlpha( 0 )
 				self.clipFinished( nextRank, {} )
+
 				nextRankImage:completeAnimation()
 				self.nextRankImage:setAlpha( 0 )
 				self.clipFinished( nextRankImage, {} )
+
 				nextRankDesc:completeAnimation()
 				self.nextRankDesc:setAlpha( 0 )
 				self.clipFinished( nextRankDesc, {} )
+
 				nextRankDesc0:completeAnimation()
 				self.nextRankDesc0:setAlpha( 0 )
 				self.clipFinished( nextRankDesc0, {} )
+
 				nextRankDesc00:completeAnimation()
 				self.nextRankDesc00:setAlpha( 0 )
 				self.clipFinished( nextRankDesc00, {} )
+
 				maxRankTextBox:completeAnimation()
 				self.maxRankTextBox:setAlpha( 0 )
 				self.clipFinished( maxRankTextBox, {} )
@@ -240,36 +264,47 @@ CoD.ProgressBar_Rank.new = function ( menu, controller )
 		MaxLevelCP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				XpBarBg:completeAnimation()
 				self.XpBarBg:setAlpha( 0.28 )
 				self.clipFinished( XpBarBg, {} )
+
 				XpBarFrame:completeAnimation()
 				self.XpBarFrame:setAlpha( 1 )
 				self.clipFinished( XpBarFrame, {} )
+
 				curRank:completeAnimation()
 				self.curRank:setAlpha( 1 )
 				self.clipFinished( curRank, {} )
+
 				curRankImg:completeAnimation()
 				self.curRankImg:setAlpha( 1 )
 				self.clipFinished( curRankImg, {} )
+
 				progress:completeAnimation()
 				self.progress:setAlpha( 0 )
 				self.clipFinished( progress, {} )
+
 				nextRank:completeAnimation()
 				self.nextRank:setAlpha( 0 )
 				self.clipFinished( nextRank, {} )
+
 				nextRankImage:completeAnimation()
 				self.nextRankImage:setAlpha( 0 )
 				self.clipFinished( nextRankImage, {} )
+
 				nextRankDesc:completeAnimation()
 				self.nextRankDesc:setAlpha( 0 )
 				self.clipFinished( nextRankDesc, {} )
+
 				nextRankDesc0:completeAnimation()
 				self.nextRankDesc0:setAlpha( 0 )
 				self.clipFinished( nextRankDesc0, {} )
+
 				nextRankDesc00:completeAnimation()
 				self.nextRankDesc00:setAlpha( 0 )
 				self.clipFinished( nextRankDesc00, {} )
+
 				maxRankTextBox:completeAnimation()
 				self.maxRankTextBox:setLeftRight( false, true, -104, -27 )
 				self.maxRankTextBox:setTopBottom( false, true, -41, -17 )
@@ -281,36 +316,47 @@ CoD.ProgressBar_Rank.new = function ( menu, controller )
 		MaxLevel = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				XpBarBg:completeAnimation()
 				self.XpBarBg:setAlpha( 0.28 )
 				self.clipFinished( XpBarBg, {} )
+
 				XpBarFrame:completeAnimation()
 				self.XpBarFrame:setAlpha( 1 )
 				self.clipFinished( XpBarFrame, {} )
+
 				curRank:completeAnimation()
 				self.curRank:setAlpha( 1 )
 				self.clipFinished( curRank, {} )
+
 				curRankImg:completeAnimation()
 				self.curRankImg:setAlpha( 1 )
 				self.clipFinished( curRankImg, {} )
+
 				progress:completeAnimation()
 				self.progress:setAlpha( 1 )
 				self.clipFinished( progress, {} )
+
 				nextRank:completeAnimation()
 				self.nextRank:setAlpha( 0 )
 				self.clipFinished( nextRank, {} )
+
 				nextRankImage:completeAnimation()
 				self.nextRankImage:setAlpha( 0 )
 				self.clipFinished( nextRankImage, {} )
+
 				nextRankDesc:completeAnimation()
 				self.nextRankDesc:setAlpha( 1 )
 				self.clipFinished( nextRankDesc, {} )
+
 				nextRankDesc0:completeAnimation()
 				self.nextRankDesc0:setAlpha( 1 )
 				self.clipFinished( nextRankDesc0, {} )
+
 				nextRankDesc00:completeAnimation()
 				self.nextRankDesc00:setAlpha( 1 )
 				self.clipFinished( nextRankDesc00, {} )
+
 				maxRankTextBox:completeAnimation()
 				self.maxRankTextBox:setAlpha( 1 )
 				self.clipFinished( maxRankTextBox, {} )
@@ -319,42 +365,54 @@ CoD.ProgressBar_Rank.new = function ( menu, controller )
 		MaxParagonLevel = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				XpBarBg:completeAnimation()
 				self.XpBarBg:setAlpha( 0 )
 				self.clipFinished( XpBarBg, {} )
+
 				XpBarFrame:completeAnimation()
 				self.XpBarFrame:setAlpha( 0 )
 				self.clipFinished( XpBarFrame, {} )
+
 				curRank:completeAnimation()
 				self.curRank:setAlpha( 0 )
 				self.clipFinished( curRank, {} )
+
 				curRankImg:completeAnimation()
 				self.curRankImg:setAlpha( 0 )
 				self.clipFinished( curRankImg, {} )
+
 				progress:completeAnimation()
 				self.progress:setAlpha( 0 )
 				self.clipFinished( progress, {} )
+
 				nextRank:completeAnimation()
 				self.nextRank:setAlpha( 0 )
 				self.clipFinished( nextRank, {} )
+
 				nextRankImage:completeAnimation()
 				self.nextRankImage:setAlpha( 0 )
 				self.clipFinished( nextRankImage, {} )
+
 				nextRankDesc:completeAnimation()
 				self.nextRankDesc:setAlpha( 0 )
 				self.clipFinished( nextRankDesc, {} )
+
 				nextRankDesc0:completeAnimation()
 				self.nextRankDesc0:setAlpha( 0 )
 				self.clipFinished( nextRankDesc0, {} )
+
 				nextRankDesc00:completeAnimation()
 				self.nextRankDesc00:setAlpha( 0 )
 				self.clipFinished( nextRankDesc00, {} )
+
 				maxRankTextBox:completeAnimation()
 				self.maxRankTextBox:setAlpha( 0 )
 				self.clipFinished( maxRankTextBox, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -410,6 +468,7 @@ CoD.ProgressBar_Rank.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.XpBarFrame:close()
 		element.curRank:close()

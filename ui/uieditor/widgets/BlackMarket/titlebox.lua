@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.Titlebox = InheritFrom( LUI.UIElement )
 CoD.Titlebox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Titlebox )
 	self.id = "Titlebox"
@@ -45,6 +47,7 @@ CoD.Titlebox.new = function ( menu, controller )
 	ScorestreaksLabel:setLetterSpacing( 0.6 )
 	ScorestreaksLabel:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	ScorestreaksLabel:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( ScorestreaksLabel, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 2 )
 	end )

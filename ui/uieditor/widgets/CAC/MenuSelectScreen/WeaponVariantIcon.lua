@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_lock" )
 CoD.WeaponVariantIcon = InheritFrom( LUI.UIElement )
 CoD.WeaponVariantIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponVariantIcon )
 	self.id = "WeaponVariantIcon"
@@ -48,12 +50,15 @@ CoD.WeaponVariantIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 1 )
 				self.clipFinished( icon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				showcaseWeaponLockIcon:completeAnimation()
 				self.showcaseWeaponLockIcon:setAlpha( 0 )
 				self.clipFinished( showcaseWeaponLockIcon, {} )
@@ -62,12 +67,15 @@ CoD.WeaponVariantIcon.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 0.5 )
 				self.clipFinished( icon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
+
 				showcaseWeaponLockIcon:completeAnimation()
 				self.showcaseWeaponLockIcon:setAlpha( 0 )
 				self.clipFinished( showcaseWeaponLockIcon, {} )
@@ -76,18 +84,22 @@ CoD.WeaponVariantIcon.new = function ( menu, controller )
 		ShowcaseWeaponLocked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 0.5 )
 				self.clipFinished( icon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				showcaseWeaponLockIcon:completeAnimation()
 				self.showcaseWeaponLockIcon:setAlpha( 1 )
 				self.clipFinished( showcaseWeaponLockIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -102,6 +114,7 @@ CoD.WeaponVariantIcon.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.showcaseWeaponLockIcon:close()
 		element.icon:close()

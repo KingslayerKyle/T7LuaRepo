@@ -648,6 +648,7 @@ f0_local22 = function ( f29_arg0 )
 		menu = f29_arg0.menu
 	} )
 	local self = LUI.UIElement.new()
+
 	self:setLeftRight( false, false, 0, 0 )
 	self:setTopBottom( true, false, f0_local3, f0_local3 )
 	self:setAlpha( 1 )
@@ -713,9 +714,11 @@ end
 CoD.NotificationQueue = InheritFrom( LUI.UIElement )
 CoD.NotificationQueue.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.NotificationQueue )
 	self.id = "NotificationQueue"
@@ -733,6 +736,7 @@ CoD.NotificationQueue.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				NotificationRewardQueue:completeAnimation()
 				self.NotificationRewardQueue:setAlpha( 1 )
 				self.clipFinished( NotificationRewardQueue, {} )
@@ -741,12 +745,14 @@ CoD.NotificationQueue.new = function ( menu, controller )
 		MPSplitscreen = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				NotificationRewardQueue:completeAnimation()
 				self.NotificationRewardQueue:setAlpha( 0 )
 				self.clipFinished( NotificationRewardQueue, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "MPSplitscreen",
@@ -763,6 +769,7 @@ CoD.NotificationQueue.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.NotificationRewardQueue:close()
 	end )

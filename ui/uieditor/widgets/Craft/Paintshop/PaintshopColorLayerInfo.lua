@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Craft.Paintshop.PaintshopChoosePaintSide" )
 CoD.PaintshopColorLayerInfo = InheritFrom( LUI.UIElement )
 CoD.PaintshopColorLayerInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PaintshopColorLayerInfo )
 	self.id = "PaintshopColorLayerInfo"
@@ -193,21 +195,27 @@ CoD.PaintshopColorLayerInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				color0OpacityText:completeAnimation()
 				self.color0OpacityText:setText( Engine.Localize( "MENU_EMBLEM_LAYER_OPACITY" ) )
 				self.clipFinished( color0OpacityText, {} )
+
 				choosePaintSide:completeAnimation()
 				self.choosePaintSide:setAlpha( 0 )
 				self.clipFinished( choosePaintSide, {} )
+
 				color1OpacityText:completeAnimation()
 				self.color1OpacityText:setAlpha( 0 )
 				self.clipFinished( color1OpacityText, {} )
+
 				color1OpacityValue:completeAnimation()
 				self.color1OpacityValue:setAlpha( 0 )
 				self.clipFinished( color1OpacityValue, {} )
+
 				rotationText:completeAnimation()
 				self.rotationText:setAlpha( 0 )
 				self.clipFinished( rotationText, {} )
+
 				rotationValue:completeAnimation()
 				self.rotationValue:setAlpha( 0 )
 				self.clipFinished( rotationValue, {} )
@@ -216,32 +224,40 @@ CoD.PaintshopColorLayerInfo.new = function ( menu, controller )
 		GradientColorInfo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				color0OpacityText:completeAnimation()
 				self.color0OpacityText:setText( Engine.Localize( "MENU_EMBLEM_COLOR_1_OPACITY" ) )
 				self.clipFinished( color0OpacityText, {} )
+
 				color0OpacityValue:completeAnimation()
 				self.color0OpacityValue:setAlpha( 1 )
 				self.clipFinished( color0OpacityValue, {} )
+
 				choosePaintSide:completeAnimation()
 				self.choosePaintSide:setAlpha( 0 )
 				self.clipFinished( choosePaintSide, {} )
+
 				color1OpacityText:completeAnimation()
 				self.color1OpacityText:setAlpha( 1 )
 				self.clipFinished( color1OpacityText, {} )
+
 				color1OpacityValue:completeAnimation()
 				self.color1OpacityValue:setAlpha( 1 )
 				self.clipFinished( color1OpacityValue, {} )
+
 				rotationText:completeAnimation()
 				self.rotationText:setLeftRight( true, false, 10, 147.47 )
 				self.rotationText:setTopBottom( true, false, 117.5, 136.5 )
 				self.rotationText:setAlpha( 1 )
 				self.clipFinished( rotationText, {} )
+
 				rotationValue:completeAnimation()
 				self.rotationValue:setAlpha( 1 )
 				self.clipFinished( rotationValue, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.cacButtonBoxLrgInactiveStroke0:close()
 		element.layerUsedValue:close()

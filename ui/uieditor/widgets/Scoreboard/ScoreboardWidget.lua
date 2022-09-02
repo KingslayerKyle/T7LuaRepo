@@ -57,9 +57,11 @@ local f0_local1 = function ( f2_arg0 )
 end
 
 local PostLoadFunc = function ( self, controller, menu )
+
 	LUI.OverrideFunction_CallOriginalFirst( self.ScoreboardFactionScoresList.Team1, "updateLayout", function ( element )
 		f0_local0( self, controller )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self.ScoreboardFactionScoresList.Team2, "updateLayout", function ( element )
 		f0_local0( self, controller )
 	end )
@@ -128,9 +130,11 @@ end
 CoD.ScoreboardWidget = InheritFrom( LUI.UIElement )
 CoD.ScoreboardWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreboardWidget )
 	self.id = "ScoreboardWidget"
@@ -332,27 +336,34 @@ CoD.ScoreboardWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ScoreboardFactionScoresList:completeAnimation()
 				self.ScoreboardFactionScoresList:setAlpha( 0 )
 				self.clipFinished( ScoreboardFactionScoresList, {} )
+
 				ScoreboardFactionWidget1:completeAnimation()
 				self.ScoreboardFactionWidget1:setAlpha( 0 )
 				self.clipFinished( ScoreboardFactionWidget1, {} )
+
 				ScoreboardFactionWidget2:completeAnimation()
 				self.ScoreboardFactionWidget2:setAlpha( 0 )
 				self.clipFinished( ScoreboardFactionWidget2, {} )
+
 				ScoreboardHeaderWidget:completeAnimation()
 				self.ScoreboardHeaderWidget:setAlpha( 0 )
 				self.clipFinished( ScoreboardHeaderWidget, {} )
+
 				ScoreboardWidgetButtonContainer:completeAnimation()
 				self.ScoreboardWidgetButtonContainer:setAlpha( 0 )
 				self.clipFinished( ScoreboardWidgetButtonContainer, {} )
+
 				ScoreboardFactionWidget3:completeAnimation()
 				self.ScoreboardFactionWidget3:setAlpha( 0 )
 				self.clipFinished( ScoreboardFactionWidget3, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ScoreboardFactionScoresListFrame2 = function ( ScoreboardFactionScoresList, event )
 					local ScoreboardFactionScoresListFrame3 = function ( ScoreboardFactionScoresList, event )
 						if not event.interrupted then
@@ -443,6 +454,7 @@ CoD.ScoreboardWidget.new = function ( menu, controller )
 				ScoreboardHeaderWidget:completeAnimation()
 				self.ScoreboardHeaderWidget:setAlpha( 0 )
 				ScoreboardHeaderWidgetFrame2( ScoreboardHeaderWidget, {} )
+
 				ScoreboardFactionWidget3:completeAnimation()
 				self.ScoreboardFactionWidget3:setAlpha( 0 )
 				self.clipFinished( ScoreboardFactionWidget3, {} )
@@ -451,21 +463,27 @@ CoD.ScoreboardWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ScoreboardFactionScoresList:completeAnimation()
 				self.ScoreboardFactionScoresList:setAlpha( 1 )
 				self.clipFinished( ScoreboardFactionScoresList, {} )
+
 				ScoreboardFactionWidget1:completeAnimation()
 				self.ScoreboardFactionWidget1:setAlpha( 1 )
 				self.clipFinished( ScoreboardFactionWidget1, {} )
+
 				ScoreboardFactionWidget2:completeAnimation()
 				self.ScoreboardFactionWidget2:setAlpha( 1 )
 				self.clipFinished( ScoreboardFactionWidget2, {} )
+
 				ScoreboardHeaderWidget:completeAnimation()
 				self.ScoreboardHeaderWidget:setAlpha( 1 )
 				self.clipFinished( ScoreboardHeaderWidget, {} )
+
 				ScoreboardWidgetButtonContainer:completeAnimation()
 				self.ScoreboardWidgetButtonContainer:setAlpha( 1 )
 				self.clipFinished( ScoreboardWidgetButtonContainer, {} )
+
 				ScoreboardFactionWidget3:completeAnimation()
 				self.ScoreboardFactionWidget3:setAlpha( 0 )
 				self.clipFinished( ScoreboardFactionWidget3, {} )
@@ -474,18 +492,23 @@ CoD.ScoreboardWidget.new = function ( menu, controller )
 		ForceVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				ScoreboardFactionScoresList:completeAnimation()
 				self.ScoreboardFactionScoresList:setAlpha( 1 )
 				self.clipFinished( ScoreboardFactionScoresList, {} )
+
 				ScoreboardFactionWidget1:completeAnimation()
 				self.ScoreboardFactionWidget1:setAlpha( 1 )
 				self.clipFinished( ScoreboardFactionWidget1, {} )
+
 				ScoreboardFactionWidget2:completeAnimation()
 				self.ScoreboardFactionWidget2:setAlpha( 1 )
 				self.clipFinished( ScoreboardFactionWidget2, {} )
+
 				ScoreboardHeaderWidget:completeAnimation()
 				self.ScoreboardHeaderWidget:setAlpha( 1 )
 				self.clipFinished( ScoreboardHeaderWidget, {} )
+
 				ScoreboardFactionWidget3:completeAnimation()
 				self.ScoreboardFactionWidget3:setAlpha( 0 )
 				self.clipFinished( ScoreboardFactionWidget3, {} )
@@ -494,10 +517,12 @@ CoD.ScoreboardWidget.new = function ( menu, controller )
 		ArabicFrontend = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ScoreboardFactionScoresList:completeAnimation()
 				self.ScoreboardFactionScoresList:setLeftRight( true, false, 126, 954 )
 				self.ScoreboardFactionScoresList:setTopBottom( true, false, 33, 645 )
 				self.clipFinished( ScoreboardFactionScoresList, {} )
+
 				ScoreboardFactionWidget3:completeAnimation()
 				self.ScoreboardFactionWidget3:setAlpha( 0 )
 				self.clipFinished( ScoreboardFactionWidget3, {} )
@@ -506,21 +531,27 @@ CoD.ScoreboardWidget.new = function ( menu, controller )
 		Frontend = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ScoreboardFactionScoresList:completeAnimation()
 				self.ScoreboardFactionScoresList:setAlpha( 1 )
 				self.clipFinished( ScoreboardFactionScoresList, {} )
+
 				ScoreboardFactionWidget1:completeAnimation()
 				self.ScoreboardFactionWidget1:setAlpha( 1 )
 				self.clipFinished( ScoreboardFactionWidget1, {} )
+
 				ScoreboardFactionWidget2:completeAnimation()
 				self.ScoreboardFactionWidget2:setAlpha( 1 )
 				self.clipFinished( ScoreboardFactionWidget2, {} )
+
 				ScoreboardHeaderWidget:completeAnimation()
 				self.ScoreboardHeaderWidget:setAlpha( 0 )
 				self.clipFinished( ScoreboardHeaderWidget, {} )
+
 				ScoreboardWidgetButtonContainer:completeAnimation()
 				self.ScoreboardWidgetButtonContainer:setAlpha( 0 )
 				self.clipFinished( ScoreboardWidgetButtonContainer, {} )
+
 				ScoreboardFactionWidget3:completeAnimation()
 				self.ScoreboardFactionWidget3:setAlpha( 0 )
 				self.clipFinished( ScoreboardFactionWidget3, {} )
@@ -529,27 +560,34 @@ CoD.ScoreboardWidget.new = function ( menu, controller )
 		CodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ScoreboardFactionScoresList:completeAnimation()
 				self.ScoreboardFactionScoresList:setAlpha( 1 )
 				self.clipFinished( ScoreboardFactionScoresList, {} )
+
 				ScoreboardFactionWidget1:completeAnimation()
 				self.ScoreboardFactionWidget1:setAlpha( 0 )
 				self.clipFinished( ScoreboardFactionWidget1, {} )
+
 				ScoreboardFactionWidget2:completeAnimation()
 				self.ScoreboardFactionWidget2:setAlpha( 0 )
 				self.clipFinished( ScoreboardFactionWidget2, {} )
+
 				ScoreboardHeaderWidget:completeAnimation()
 				self.ScoreboardHeaderWidget:setAlpha( 1 )
 				self.clipFinished( ScoreboardHeaderWidget, {} )
+
 				ScoreboardWidgetButtonContainer:completeAnimation()
 				self.ScoreboardWidgetButtonContainer:setAlpha( 1 )
 				self.clipFinished( ScoreboardWidgetButtonContainer, {} )
+
 				ScoreboardFactionWidget3:completeAnimation()
 				self.ScoreboardFactionWidget3:setAlpha( 1 )
 				self.clipFinished( ScoreboardFactionWidget3, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CodCaster",
@@ -636,6 +674,7 @@ CoD.ScoreboardWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ScoreboardFactionScoresList:close()
 		element.ScoreboardFactionWidget1:close()

@@ -4,9 +4,11 @@
 CoD.vhud_siegebot_damage_top = InheritFrom( LUI.UIElement )
 CoD.vhud_siegebot_damage_top.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_siegebot_damage_top )
 	self.id = "vhud_siegebot_damage_top"
@@ -96,35 +98,44 @@ CoD.vhud_siegebot_damage_top.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				none:completeAnimation()
 				self.none:setAlpha( 1 )
 				self.clipFinished( none, {} )
+
 				low:completeAnimation()
 				self.low:setAlpha( 0 )
 				self.clipFinished( low, {} )
+
 				medium:completeAnimation()
 				self.medium:setAlpha( 0 )
 				self.clipFinished( medium, {} )
+
 				high:completeAnimation()
 				self.high:setAlpha( 0 )
 				self.clipFinished( high, {} )
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		damage_high = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				none:completeAnimation()
 				self.none:setAlpha( 1 )
 				self.clipFinished( none, {} )
+
 				low:completeAnimation()
 				self.low:setAlpha( 0 )
 				self.clipFinished( low, {} )
+
 				medium:completeAnimation()
 				self.medium:setAlpha( 0 )
 				self.clipFinished( medium, {} )
@@ -190,21 +201,26 @@ CoD.vhud_siegebot_damage_top.new = function ( menu, controller )
 				self.high:setAlpha( 0 )
 				self.high:setScale( 1 )
 				highFrame2( high, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		damage_medium = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				none:completeAnimation()
 				self.none:setAlpha( 1 )
 				self.clipFinished( none, {} )
+
 				low:completeAnimation()
 				self.low:setAlpha( 0 )
 				self.clipFinished( low, {} )
+
 				medium:completeAnimation()
 				self.medium:setAlpha( 0.8 )
 				self.clipFinished( medium, {} )
+
 				high:completeAnimation()
 				self.high:setAlpha( 0 )
 				self.clipFinished( high, {} )
@@ -213,15 +229,19 @@ CoD.vhud_siegebot_damage_top.new = function ( menu, controller )
 		damage_low = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				none:completeAnimation()
 				self.none:setAlpha( 1 )
 				self.clipFinished( none, {} )
+
 				low:completeAnimation()
 				self.low:setAlpha( 0.5 )
 				self.clipFinished( low, {} )
+
 				medium:completeAnimation()
 				self.medium:setAlpha( 0 )
 				self.clipFinished( medium, {} )
+
 				high:completeAnimation()
 				self.high:setAlpha( 0 )
 				self.clipFinished( high, {} )
@@ -230,9 +250,11 @@ CoD.vhud_siegebot_damage_top.new = function ( menu, controller )
 		EMP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "damage_high",

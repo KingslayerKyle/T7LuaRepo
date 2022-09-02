@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Scorestreaks.CallingScorestreaks.GenericProjectedT
 CoD.GenericProjectedTablet = InheritFrom( LUI.UIElement )
 CoD.GenericProjectedTablet.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GenericProjectedTablet )
 	self.id = "GenericProjectedTablet"

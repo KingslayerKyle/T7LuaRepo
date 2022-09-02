@@ -4,9 +4,11 @@
 CoD.Social_Rank_PrestigeText = InheritFrom( LUI.UIElement )
 CoD.Social_Rank_PrestigeText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_Rank_PrestigeText )
 	self.id = "Social_Rank_PrestigeText"
@@ -26,6 +28,7 @@ CoD.Social_Rank_PrestigeText.new = function ( menu, controller )
 	prestige:setLetterSpacing( 0.9 )
 	prestige:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	prestige:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( prestige, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrappedUp( self, element, 0, 0 )
 	end )

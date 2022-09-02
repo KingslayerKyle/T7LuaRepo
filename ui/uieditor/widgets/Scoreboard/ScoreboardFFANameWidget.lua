@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.ScoreboardFFANameWidget = InheritFrom( LUI.UIElement )
 CoD.ScoreboardFFANameWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.ScoreboardFFANameWidget )
 	self.id = "ScoreboardFFANameWidget"
@@ -34,6 +36,7 @@ CoD.ScoreboardFFANameWidget.new = function ( menu, controller )
 	FactionName:setShaderVector( 1, 0, 0, 0, 0 )
 	FactionName:setShaderVector( 2, 1, 0, 0, 0 )
 	FactionName:setLetterSpacing( 0.5 )
+
 	LUI.OverrideFunction_CallOriginalFirst( FactionName, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 10 )
 	end )

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Craft.WeaponBuildKits.WeaponBuildKitsAttachmentPre
 CoD.WeaponBuildKitsAttachmentsPreview = InheritFrom( LUI.UIElement )
 CoD.WeaponBuildKitsAttachmentsPreview.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponBuildKitsAttachmentsPreview )
 	self.id = "WeaponBuildKitsAttachmentsPreview"
@@ -244,21 +246,27 @@ CoD.WeaponBuildKitsAttachmentsPreview.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Optic:completeAnimation()
 				self.Optic:setAlpha( 1 )
 				self.clipFinished( Optic, {} )
+
 				Attachment1:completeAnimation()
 				self.Attachment1:setAlpha( 1 )
 				self.clipFinished( Attachment1, {} )
+
 				Attachment2:completeAnimation()
 				self.Attachment2:setAlpha( 1 )
 				self.clipFinished( Attachment2, {} )
+
 				Attachment3:completeAnimation()
 				self.Attachment3:setAlpha( 1 )
 				self.clipFinished( Attachment3, {} )
+
 				Attachment4:completeAnimation()
 				self.Attachment4:setAlpha( 1 )
 				self.clipFinished( Attachment4, {} )
+
 				Attachment5:completeAnimation()
 				self.Attachment5:setAlpha( 1 )
 				self.clipFinished( Attachment5, {} )
@@ -267,21 +275,27 @@ CoD.WeaponBuildKitsAttachmentsPreview.new = function ( menu, controller )
 		SpecialWeapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Optic:completeAnimation()
 				self.Optic:setAlpha( 0 )
 				self.clipFinished( Optic, {} )
+
 				Attachment1:completeAnimation()
 				self.Attachment1:setAlpha( 0 )
 				self.clipFinished( Attachment1, {} )
+
 				Attachment2:completeAnimation()
 				self.Attachment2:setAlpha( 0 )
 				self.clipFinished( Attachment2, {} )
+
 				Attachment3:completeAnimation()
 				self.Attachment3:setAlpha( 0 )
 				self.clipFinished( Attachment3, {} )
+
 				Attachment4:completeAnimation()
 				self.Attachment4:setAlpha( 0 )
 				self.clipFinished( Attachment4, {} )
+
 				Attachment5:completeAnimation()
 				self.Attachment5:setAlpha( 0 )
 				self.clipFinished( Attachment5, {} )
@@ -290,21 +304,27 @@ CoD.WeaponBuildKitsAttachmentsPreview.new = function ( menu, controller )
 		Handguns = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Optic:completeAnimation()
 				self.Optic:setAlpha( 1 )
 				self.clipFinished( Optic, {} )
+
 				Attachment1:completeAnimation()
 				self.Attachment1:setAlpha( 1 )
 				self.clipFinished( Attachment1, {} )
+
 				Attachment2:completeAnimation()
 				self.Attachment2:setAlpha( 1 )
 				self.clipFinished( Attachment2, {} )
+
 				Attachment3:completeAnimation()
 				self.Attachment3:setAlpha( 0 )
 				self.clipFinished( Attachment3, {} )
+
 				Attachment4:completeAnimation()
 				self.Attachment4:setAlpha( 0 )
 				self.clipFinished( Attachment4, {} )
+
 				Attachment5:completeAnimation()
 				self.Attachment5:setAlpha( 0 )
 				self.clipFinished( Attachment5, {} )
@@ -313,27 +333,34 @@ CoD.WeaponBuildKitsAttachmentsPreview.new = function ( menu, controller )
 		Snipers = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Optic:completeAnimation()
 				self.Optic:setAlpha( 1 )
 				self.clipFinished( Optic, {} )
+
 				Attachment1:completeAnimation()
 				self.Attachment1:setAlpha( 1 )
 				self.clipFinished( Attachment1, {} )
+
 				Attachment2:completeAnimation()
 				self.Attachment2:setAlpha( 1 )
 				self.clipFinished( Attachment2, {} )
+
 				Attachment3:completeAnimation()
 				self.Attachment3:setAlpha( 1 )
 				self.clipFinished( Attachment3, {} )
+
 				Attachment4:completeAnimation()
 				self.Attachment4:setAlpha( 1 )
 				self.clipFinished( Attachment4, {} )
+
 				Attachment5:completeAnimation()
 				self.Attachment5:setAlpha( 0 )
 				self.clipFinished( Attachment5, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "SpecialWeapon",
@@ -354,6 +381,7 @@ CoD.WeaponBuildKitsAttachmentsPreview.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsElementInState( element, "SpecialWeapon" ) then
 			MakeElementNotFocusable( self, "Attachment1", controller )
@@ -370,6 +398,7 @@ CoD.WeaponBuildKitsAttachmentsPreview.new = function ( menu, controller )
 			MakeElementNotFocusable( self, "Attachment5", controller )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Optic:close()
 		element.Attachment1:close()

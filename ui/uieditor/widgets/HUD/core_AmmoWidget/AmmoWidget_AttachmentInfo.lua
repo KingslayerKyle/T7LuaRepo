@@ -33,9 +33,11 @@ end
 CoD.AmmoWidget_AttachmentInfo = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_AttachmentInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_AttachmentInfo )
 	self.id = "AmmoWidget_AttachmentInfo"
@@ -80,6 +82,7 @@ CoD.AmmoWidget_AttachmentInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local AttachmentInfoFrame2 = function ( AttachmentInfo, event )
 					local AttachmentInfoFrame3 = function ( AttachmentInfo, event )
 						local AttachmentInfoFrame4 = function ( AttachmentInfo, event )
@@ -378,6 +381,7 @@ CoD.AmmoWidget_AttachmentInfo.new = function ( menu, controller )
 			end,
 			NoAttachments = function ()
 				self:setupElementClipCounter( 4 )
+
 				local AttachmentInfoFrame2 = function ( AttachmentInfo, event )
 					local AttachmentInfoFrame3 = function ( AttachmentInfo, event )
 						local AttachmentInfoFrame4 = function ( AttachmentInfo, event )
@@ -792,16 +796,20 @@ CoD.AmmoWidget_AttachmentInfo.new = function ( menu, controller )
 		NoAttachments = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				AttachmentInfo:completeAnimation()
 				self.AttachmentInfo:setAlpha( 0 )
 				self.clipFinished( AttachmentInfo, {} )
+
 				AttachmentInfoFireRate:completeAnimation()
 				self.AttachmentInfoFireRate:setAlpha( 1 )
 				self.clipFinished( AttachmentInfoFireRate, {} )
+
 				Pixel0:completeAnimation()
 				self.Pixel0:setLeftRight( true, false, 249.25, 334.25 )
 				self.Pixel0:setTopBottom( true, false, 4.5, 6 )
 				self.clipFinished( Pixel0, {} )
+
 				Pixel1:completeAnimation()
 				self.Pixel1:setLeftRight( true, false, 249.25, 334.25 )
 				self.Pixel1:setTopBottom( true, false, 12.5, 14 )
@@ -809,6 +817,7 @@ CoD.AmmoWidget_AttachmentInfo.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 4 )
+
 				local f69_local0 = function ( f70_arg0, f70_arg1 )
 					local f70_local0 = function ( f71_arg0, f71_arg1 )
 						local f71_local0 = function ( f72_arg0, f72_arg1 )
@@ -1210,15 +1219,18 @@ CoD.AmmoWidget_AttachmentInfo.new = function ( menu, controller )
 		HeroWeapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				AttachmentInfo:completeAnimation()
 				self.AttachmentInfo:setAlpha( 0 )
 				self.clipFinished( AttachmentInfo, {} )
+
 				AttachmentInfoFireRate:completeAnimation()
 				self.AttachmentInfoFireRate:setAlpha( 0.5 )
 				self.clipFinished( AttachmentInfoFireRate, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AttachmentInfo:close()
 		element.AttachmentInfoFireRate:close()

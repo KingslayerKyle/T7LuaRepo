@@ -4,9 +4,11 @@
 CoD.FE_ImageA = InheritFrom( LUI.UIElement )
 CoD.FE_ImageA.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_ImageA )
 	self.id = "FE_ImageA"

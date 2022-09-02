@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_FrameWidget" )
 CoD.BM_Contracts_SideBetCallingCard = InheritFrom( LUI.UIElement )
 CoD.BM_Contracts_SideBetCallingCard.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Contracts_SideBetCallingCard )
 	self.id = "BM_Contracts_SideBetCallingCard"

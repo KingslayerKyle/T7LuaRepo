@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventoryStalingrad.DragonEggPieceWidget" )
 CoD.DragonEggWidget = InheritFrom( LUI.UIElement )
 CoD.DragonEggWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DragonEggWidget )
 	self.id = "DragonEggWidget"
@@ -110,15 +112,19 @@ CoD.DragonEggWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				DragonEggPieceWidget:completeAnimation()
 				self.DragonEggPieceWidget:setAlpha( 0 )
 				self.clipFinished( DragonEggPieceWidget, {} )
+
 				DragonEggMeter:completeAnimation()
 				self.DragonEggMeter:setAlpha( 0 )
 				self.clipFinished( DragonEggMeter, {} )
+
 				DragonEggFill:completeAnimation()
 				self.DragonEggFill:setAlpha( 0 )
 				self.clipFinished( DragonEggFill, {} )
@@ -127,15 +133,19 @@ CoD.DragonEggWidget.new = function ( menu, controller )
 		ScoreboardHidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				DragonEggPieceWidget:completeAnimation()
 				self.DragonEggPieceWidget:setAlpha( 0 )
 				self.clipFinished( DragonEggPieceWidget, {} )
+
 				DragonEggMeter:completeAnimation()
 				self.DragonEggMeter:setAlpha( 0 )
 				self.clipFinished( DragonEggMeter, {} )
+
 				DragonEggFill:completeAnimation()
 				self.DragonEggFill:setAlpha( 0 )
 				self.clipFinished( DragonEggFill, {} )
@@ -144,15 +154,19 @@ CoD.DragonEggWidget.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				DragonEggPieceWidget:completeAnimation()
 				self.DragonEggPieceWidget:setAlpha( 1 )
 				self.clipFinished( DragonEggPieceWidget, {} )
+
 				DragonEggMeter:completeAnimation()
 				self.DragonEggMeter:setAlpha( 0.75 )
 				self.clipFinished( DragonEggMeter, {} )
+
 				DragonEggFill:completeAnimation()
 				self.DragonEggFill:setAlpha( 1 )
 				self.clipFinished( DragonEggFill, {} )
@@ -161,6 +175,7 @@ CoD.DragonEggWidget.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local BGFrame2 = function ( BG, event )
 					local BGFrame3 = function ( BG, event )
 						local BGFrame4 = function ( BG, event )
@@ -197,18 +212,22 @@ CoD.DragonEggWidget.new = function ( menu, controller )
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				BGFrame2( BG, {} )
+
 				DragonEggPieceWidget:completeAnimation()
 				self.DragonEggPieceWidget:setAlpha( 1 )
 				self.clipFinished( DragonEggPieceWidget, {} )
+
 				DragonEggMeter:completeAnimation()
 				self.DragonEggMeter:setAlpha( 0 )
 				self.clipFinished( DragonEggMeter, {} )
+
 				DragonEggFill:completeAnimation()
 				self.DragonEggFill:setAlpha( 0 )
 				self.clipFinished( DragonEggFill, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ScoreboardHidden",
@@ -253,6 +272,7 @@ CoD.DragonEggWidget.new = function ( menu, controller )
 			modelName = "zmInventory.widget_egg"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.DragonEggPieceWidget:close()
 		element.DragonEggFill:close()

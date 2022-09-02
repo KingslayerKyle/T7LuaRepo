@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.SystemOverlays.systemOverlay_alertStatusBar" )
 CoD.systemOverlay_Full_Layout_Pregame = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_Full_Layout_Pregame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_Full_Layout_Pregame )
 	self.id = "systemOverlay_Full_Layout_Pregame"
@@ -126,6 +128,7 @@ CoD.systemOverlay_Full_Layout_Pregame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				local backingFrame2 = function ( backing, event )
 					local backingFrame3 = function ( backing, event )
 						local backingFrame4 = function ( backing, event )
@@ -377,6 +380,7 @@ CoD.systemOverlay_Full_Layout_Pregame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.VignetteBack:close()
 		element.buttons:close()

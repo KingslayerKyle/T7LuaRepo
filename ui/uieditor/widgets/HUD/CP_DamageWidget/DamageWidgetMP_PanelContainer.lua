@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.CP_DamageWidget.DamageWidget_Panel" )
 CoD.DamageWidgetMP_PanelContainer = InheritFrom( LUI.UIElement )
 CoD.DamageWidgetMP_PanelContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DamageWidgetMP_PanelContainer )
 	self.id = "DamageWidgetMP_PanelContainer"
@@ -28,9 +30,11 @@ CoD.DamageWidgetMP_PanelContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PanelAmmo0:close()
 	end )

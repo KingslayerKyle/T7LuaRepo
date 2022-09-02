@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_PanelNoBlur" )
 CoD.cac_ListButtonLabelCollectible = InheritFrom( LUI.UIElement )
 CoD.cac_ListButtonLabelCollectible.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_ListButtonLabelCollectible )
 	self.id = "cac_ListButtonLabelCollectible"
@@ -45,6 +47,7 @@ CoD.cac_ListButtonLabelCollectible.new = function ( menu, controller )
 		end
 		return f3_local0
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( itemName, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrappedUp( self, element, 1, 1 )
 	end )
@@ -55,9 +58,11 @@ CoD.cac_ListButtonLabelCollectible.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0.4 )
 				self.clipFinished( Panel, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 1 )
 				self.clipFinished( itemName, {} )
@@ -66,15 +71,18 @@ CoD.cac_ListButtonLabelCollectible.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 0 )
 				self.clipFinished( itemName, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 		element.itemName:close()

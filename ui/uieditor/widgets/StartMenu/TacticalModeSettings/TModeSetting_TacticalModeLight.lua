@@ -4,9 +4,11 @@
 CoD.TModeSetting_TacticalModeLight = InheritFrom( LUI.UIElement )
 CoD.TModeSetting_TacticalModeLight.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TModeSetting_TacticalModeLight )
 	self.id = "TModeSetting_TacticalModeLight"

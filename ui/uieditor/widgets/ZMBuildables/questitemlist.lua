@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMBuildables.BuildableIcon" )
 CoD.QuestItemList = InheritFrom( LUI.UIElement )
 CoD.QuestItemList.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.QuestItemList )
 	self.id = "QuestItemList"
@@ -33,12 +35,14 @@ CoD.QuestItemList.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				questList:completeAnimation()
 				self.questList:setAlpha( 0 )
 				self.clipFinished( questList, {} )
 			end,
 			ItemPickUp = function ()
 				self:setupElementClipCounter( 1 )
+
 				local questListFrame2 = function ( questList, event )
 					local questListFrame3 = function ( questList, event )
 						local questListFrame4 = function ( questList, event )
@@ -80,6 +84,7 @@ CoD.QuestItemList.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				questList:completeAnimation()
 				self.questList:setAlpha( 1 )
 				self.clipFinished( questList, {} )
@@ -94,6 +99,7 @@ CoD.QuestItemList.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.questList:close()
 	end )

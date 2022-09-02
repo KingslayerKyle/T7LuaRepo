@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.AbilityWheel.AbilityWheel_Pixel" )
 CoD.DamageWidget_Dot = InheritFrom( LUI.UIElement )
 CoD.DamageWidget_Dot.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DamageWidget_Dot )
 	self.id = "DamageWidget_Dot"

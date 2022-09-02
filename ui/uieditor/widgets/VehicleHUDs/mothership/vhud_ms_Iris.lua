@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Ground.VehicleGround_IrisInnerContaine
 CoD.vhud_ms_Iris = InheritFrom( LUI.UIElement )
 CoD.vhud_ms_Iris.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ms_Iris )
 	self.id = "vhud_ms_Iris"
@@ -76,9 +78,11 @@ CoD.vhud_ms_Iris.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 6 )
+
 				local f3_local0 = function ( f4_arg0, f4_arg1 )
 					if not f4_arg1.interrupted then
 						f4_arg0:beginAnimation( "keyframe", 1519, false, true, CoD.TweenType.Linear )
@@ -306,6 +310,7 @@ CoD.vhud_ms_Iris.new = function ( menu, controller )
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 6 )
+
 				local OutterDigi0Frame2 = function ( OutterDigi0, event )
 					if not event.interrupted then
 						OutterDigi0:beginAnimation( "keyframe", 319, true, true, CoD.TweenType.Linear )
@@ -448,6 +453,7 @@ CoD.vhud_ms_Iris.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.OutterDigi0:close()
 		element.OutterThinInternal0:close()

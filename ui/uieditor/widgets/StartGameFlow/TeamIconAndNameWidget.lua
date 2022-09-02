@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartGameFlow.LoadingScreenFactionBoxPnl" )
 CoD.TeamIconAndNameWidget = InheritFrom( LUI.UIElement )
 CoD.TeamIconAndNameWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TeamIconAndNameWidget )
 	self.id = "TeamIconAndNameWidget"

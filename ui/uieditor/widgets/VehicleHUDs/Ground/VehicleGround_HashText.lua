@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Ground.VehicleGround_HashTextInternal"
 CoD.VehicleGround_HashText = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_HashText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VehicleGround_HashText )
 	self.id = "VehicleGround_HashText"
@@ -63,6 +65,7 @@ CoD.VehicleGround_HashText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local ArrowFrame2 = function ( Arrow, event )
 					local ArrowFrame3 = function ( Arrow, event )
 						local ArrowFrame4 = function ( Arrow, event )
@@ -850,10 +853,12 @@ CoD.VehicleGround_HashText.new = function ( menu, controller )
 				TextStrike:completeAnimation()
 				self.TextStrike:setAlpha( 1 )
 				TextStrikeFrame2( TextStrike, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.VehicleGroundHashTextInternal0:close()
 	end )

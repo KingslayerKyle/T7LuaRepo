@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ArabicAlignTextBox" )
 CoD.ChallengeBonusXPInfo = InheritFrom( LUI.UIElement )
 CoD.ChallengeBonusXPInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChallengeBonusXPInfo )
 	self.id = "ChallengeBonusXPInfo"
@@ -42,9 +44,11 @@ CoD.ChallengeBonusXPInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				xpIcon:completeAnimation()
 				self.xpIcon:setAlpha( 1 )
 				self.clipFinished( xpIcon, {} )
+
 				xpRewardText:completeAnimation()
 				self.xpRewardText:setAlpha( 1 )
 				self.clipFinished( xpRewardText, {} )
@@ -53,15 +57,18 @@ CoD.ChallengeBonusXPInfo.new = function ( menu, controller )
 		NotVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				xpIcon:completeAnimation()
 				self.xpIcon:setAlpha( 0 )
 				self.clipFinished( xpIcon, {} )
+
 				xpRewardText:completeAnimation()
 				self.xpRewardText:setAlpha( 0 )
 				self.clipFinished( xpRewardText, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.xpRewardText:close()
 	end )

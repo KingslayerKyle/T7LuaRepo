@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZM_Cookbook.Cookbook_FlowAnim_MiddleLarge" )
 CoD.Cookbook_Main_Result = InheritFrom( LUI.UIElement )
 CoD.Cookbook_Main_Result.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Cookbook_Main_Result )
 	self.id = "Cookbook_Main_Result"
@@ -72,10 +74,13 @@ CoD.Cookbook_Main_Result.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FlatFill:completeAnimation()
 				self.FlatFill:setAlpha( 0 )
 				self.clipFinished( FlatFill, {} )
+
 				CookbookFlowAnimMiddleLarge:completeAnimation()
+
 				CookbookFlowAnimMiddleLarge.FlowTop:completeAnimation()
 				self.CookbookFlowAnimMiddleLarge.FlowTop:setAlpha( 0 )
 				self.clipFinished( CookbookFlowAnimMiddleLarge, {} )
@@ -84,16 +89,20 @@ CoD.Cookbook_Main_Result.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FlatFill:completeAnimation()
 				self.FlatFill:setAlpha( 0 )
 				self.clipFinished( FlatFill, {} )
+
 				CookbookFlowAnimMiddleLarge:completeAnimation()
+
 				CookbookFlowAnimMiddleLarge.FlowTop:completeAnimation()
 				self.CookbookFlowAnimMiddleLarge.FlowTop:setAlpha( 0 )
 				self.clipFinished( CookbookFlowAnimMiddleLarge, {} )
 			end,
 			Animate = function ()
 				self:setupElementClipCounter( 3 )
+
 				local FlatFillFrame2 = function ( FlatFill, event )
 					local FlatFillFrame3 = function ( FlatFill, event )
 						local FlatFillFrame4 = function ( FlatFill, event )
@@ -232,12 +241,14 @@ CoD.Cookbook_Main_Result.new = function ( menu, controller )
 				end
 				
 				CookbookFlowAnimMiddleLarge:completeAnimation()
+
 				CookbookFlowAnimMiddleLarge.FlowTop:completeAnimation()
 				self.CookbookFlowAnimMiddleLarge.FlowTop:setAlpha( 0 )
 				CookbookFlowAnimMiddleLargeFrame2( CookbookFlowAnimMiddleLarge, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -254,6 +265,7 @@ CoD.Cookbook_Main_Result.new = function ( menu, controller )
 			modelName = "itemIndex"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CookbookFlowAnimMiddleLarge:close()
 		element.FlatFill:close()

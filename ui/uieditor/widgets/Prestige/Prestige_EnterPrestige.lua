@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Prestige.Prestige_Button_Title" )
 CoD.Prestige_EnterPrestige = InheritFrom( LUI.UIElement )
 CoD.Prestige_EnterPrestige.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Prestige_EnterPrestige )
 	self.id = "Prestige_EnterPrestige"
@@ -98,56 +100,72 @@ CoD.Prestige_EnterPrestige.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0.05 )
 				self.clipFinished( BlackBox, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 0 )
 				self.clipFinished( LockIcon, {} )
+
 				LockedHint:completeAnimation()
 				self.LockedHint:setAlpha( 0 )
 				self.clipFinished( LockedHint, {} )
+
 				PrestigeIcon:completeAnimation()
 				self.PrestigeIcon:setAlpha( 1 )
 				self.clipFinished( PrestigeIcon, {} )
+
 				PrestigeCallingCard:completeAnimation()
 				self.PrestigeCallingCard:setAlpha( 1 )
 				self.clipFinished( PrestigeCallingCard, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0 )
 				self.clipFinished( BlackBox, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 0 )
 				self.clipFinished( LockIcon, {} )
+
 				LockedHint:completeAnimation()
 				self.LockedHint:setAlpha( 0 )
 				self.clipFinished( LockedHint, {} )
+
 				PrestigeIcon:completeAnimation()
 				self.PrestigeIcon:setAlpha( 1 )
 				self.clipFinished( PrestigeIcon, {} )
+
 				PrestigeCallingCard:completeAnimation()
 				self.PrestigeCallingCard:setAlpha( 1 )
 				self.clipFinished( PrestigeCallingCard, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, 0, -2 )
 				self.FocusBarT:setTopBottom( true, false, -1, 3 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, 0, -2 )
 				self.FocusBarB:setTopBottom( false, true, -3, 1 )
@@ -158,54 +176,70 @@ CoD.Prestige_EnterPrestige.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0.05 )
 				self.clipFinished( BlackBox, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 1 )
 				self.clipFinished( LockIcon, {} )
+
 				LockedHint:completeAnimation()
 				self.LockedHint:setAlpha( 1 )
 				self.clipFinished( LockedHint, {} )
+
 				PrestigeIcon:completeAnimation()
 				self.PrestigeIcon:setAlpha( 0 )
 				self.clipFinished( PrestigeIcon, {} )
+
 				PrestigeCallingCard:completeAnimation()
 				self.PrestigeCallingCard:setAlpha( 0 )
 				self.clipFinished( PrestigeCallingCard, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0 )
 				self.clipFinished( BlackBox, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 1 )
 				self.clipFinished( LockIcon, {} )
+
 				LockedHint:completeAnimation()
 				self.LockedHint:setAlpha( 1 )
 				self.clipFinished( LockedHint, {} )
+
 				PrestigeIcon:completeAnimation()
 				self.PrestigeIcon:setAlpha( 0 )
 				self.clipFinished( PrestigeIcon, {} )
+
 				PrestigeCallingCard:completeAnimation()
 				self.PrestigeCallingCard:setAlpha( 0 )
 				self.clipFinished( PrestigeCallingCard, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
@@ -214,54 +248,70 @@ CoD.Prestige_EnterPrestige.new = function ( menu, controller )
 		PrestigeMasterLocked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0.05 )
 				self.clipFinished( BlackBox, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 1 )
 				self.clipFinished( LockIcon, {} )
+
 				LockedHint:completeAnimation()
 				self.LockedHint:setAlpha( 1 )
 				self.clipFinished( LockedHint, {} )
+
 				PrestigeIcon:completeAnimation()
 				self.PrestigeIcon:setAlpha( 0 )
 				self.clipFinished( PrestigeIcon, {} )
+
 				PrestigeCallingCard:completeAnimation()
 				self.PrestigeCallingCard:setAlpha( 0 )
 				self.clipFinished( PrestigeCallingCard, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0 )
 				self.clipFinished( BlackBox, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 1 )
 				self.clipFinished( LockIcon, {} )
+
 				LockedHint:completeAnimation()
 				self.LockedHint:setAlpha( 1 )
 				self.clipFinished( LockedHint, {} )
+
 				PrestigeIcon:completeAnimation()
 				self.PrestigeIcon:setAlpha( 0 )
 				self.clipFinished( PrestigeIcon, {} )
+
 				PrestigeCallingCard:completeAnimation()
 				self.PrestigeCallingCard:setAlpha( 0 )
 				self.clipFinished( PrestigeCallingCard, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
@@ -270,60 +320,76 @@ CoD.Prestige_EnterPrestige.new = function ( menu, controller )
 		DefaultStateZM = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0.05 )
 				self.clipFinished( BlackBox, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 0 )
 				self.clipFinished( LockIcon, {} )
+
 				LockedHint:completeAnimation()
 				self.LockedHint:setAlpha( 0 )
 				self.clipFinished( LockedHint, {} )
+
 				PrestigeIcon:completeAnimation()
 				self.PrestigeIcon:setLeftRight( true, false, 271, 451 )
 				self.PrestigeIcon:setTopBottom( true, false, 30, 210 )
 				self.PrestigeIcon:setAlpha( 1 )
 				self.clipFinished( PrestigeIcon, {} )
+
 				PrestigeCallingCard:completeAnimation()
 				self.PrestigeCallingCard:setAlpha( 0 )
 				self.clipFinished( PrestigeCallingCard, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0 )
 				self.clipFinished( BlackBox, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 0 )
 				self.clipFinished( LockIcon, {} )
+
 				LockedHint:completeAnimation()
 				self.LockedHint:setAlpha( 0 )
 				self.clipFinished( LockedHint, {} )
+
 				PrestigeIcon:completeAnimation()
 				self.PrestigeIcon:setLeftRight( true, false, 271, 451 )
 				self.PrestigeIcon:setTopBottom( true, false, 30, 210 )
 				self.PrestigeIcon:setAlpha( 1 )
 				self.clipFinished( PrestigeIcon, {} )
+
 				PrestigeCallingCard:completeAnimation()
 				self.PrestigeCallingCard:setAlpha( 0 )
 				self.clipFinished( PrestigeCallingCard, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, 0, -2 )
 				self.FocusBarT:setTopBottom( true, false, -1, 3 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, 0, -2 )
 				self.FocusBarB:setTopBottom( false, true, -3, 1 )
@@ -340,6 +406,7 @@ CoD.Prestige_EnterPrestige.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactive:close()
 		element.LockIcon:close()

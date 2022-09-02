@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZM_Cookbook.Cookbook_FlowAnim_Bottom" )
 CoD.Cookbook_FlowAnim_Bottom_Bg = InheritFrom( LUI.UIElement )
 CoD.Cookbook_FlowAnim_Bottom_Bg.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Cookbook_FlowAnim_Bottom_Bg )
 	self.id = "Cookbook_FlowAnim_Bottom_Bg"
@@ -53,9 +55,11 @@ CoD.Cookbook_FlowAnim_Bottom_Bg.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FillBottom:completeAnimation()
 				self.FillBottom:setAlpha( 0 )
 				self.clipFinished( FillBottom, {} )
+
 				CookbookFlowAnimBottom:completeAnimation()
 				self.CookbookFlowAnimBottom:setAlpha( 0 )
 				self.clipFinished( CookbookFlowAnimBottom, {} )
@@ -64,10 +68,13 @@ CoD.Cookbook_FlowAnim_Bottom_Bg.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FillBottom:completeAnimation()
 				self.FillBottom:setAlpha( 0 )
 				self.clipFinished( FillBottom, {} )
+
 				CookbookFlowAnimBottom:completeAnimation()
+
 				CookbookFlowAnimBottom.FlowTop:completeAnimation()
 				self.CookbookFlowAnimBottom:setAlpha( 1 )
 				self.CookbookFlowAnimBottom.FlowTop:setAlpha( 0 )
@@ -75,6 +82,7 @@ CoD.Cookbook_FlowAnim_Bottom_Bg.new = function ( menu, controller )
 			end,
 			Animate = function ()
 				self:setupElementClipCounter( 2 )
+
 				local FillBottomFrame2 = function ( FillBottom, event )
 					local FillBottomFrame3 = function ( FillBottom, event )
 						local FillBottomFrame4 = function ( FillBottom, event )
@@ -169,6 +177,7 @@ CoD.Cookbook_FlowAnim_Bottom_Bg.new = function ( menu, controller )
 				end
 				
 				CookbookFlowAnimBottom:completeAnimation()
+
 				CookbookFlowAnimBottom.FlowTop:completeAnimation()
 				self.CookbookFlowAnimBottom:setAlpha( 1 )
 				self.CookbookFlowAnimBottom.FlowTop:setAlpha( 0 )
@@ -176,6 +185,7 @@ CoD.Cookbook_FlowAnim_Bottom_Bg.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -192,6 +202,7 @@ CoD.Cookbook_FlowAnim_Bottom_Bg.new = function ( menu, controller )
 			modelName = "itemIndex"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CookbookFlowAnimBottom:close()
 		element.FillBottom:close()

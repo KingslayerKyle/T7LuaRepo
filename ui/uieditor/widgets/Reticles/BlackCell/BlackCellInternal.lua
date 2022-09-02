@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.Reticles.BlackCell.Target" )
 CoD.BlackCellInternal = InheritFrom( LUI.UIElement )
 CoD.BlackCellInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BlackCellInternal )
 	self.id = "BlackCellInternal"

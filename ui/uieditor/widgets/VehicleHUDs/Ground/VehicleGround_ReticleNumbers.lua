@@ -4,9 +4,11 @@
 CoD.VehicleGround_ReticleNumbers = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_ReticleNumbers.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VehicleGround_ReticleNumbers )
 	self.id = "VehicleGround_ReticleNumbers"
@@ -72,6 +74,7 @@ CoD.VehicleGround_ReticleNumbers.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local ReticleTextTFrame2 = function ( ReticleTextT, event )
 					local ReticleTextTFrame3 = function ( ReticleTextT, event )
 						local ReticleTextTFrame4 = function ( ReticleTextT, event )
@@ -432,6 +435,7 @@ CoD.VehicleGround_ReticleNumbers.new = function ( menu, controller )
 				ReticleTextR:completeAnimation()
 				self.ReticleTextR:setText( Engine.Localize( "X-0/90" ) )
 				ReticleTextRFrame2( ReticleTextR, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

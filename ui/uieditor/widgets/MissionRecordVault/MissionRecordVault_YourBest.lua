@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CPLevels.CPFrame" )
 CoD.MissionRecordVault_YourBest = InheritFrom( LUI.UIElement )
 CoD.MissionRecordVault_YourBest.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MissionRecordVault_YourBest )
 	self.id = "MissionRecordVault_YourBest"
@@ -55,11 +57,13 @@ CoD.MissionRecordVault_YourBest.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		NoAccolades = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				value:completeAnimation()
 				self.value:setAlpha( 0 )
 				self.clipFinished( value, {} )
@@ -68,9 +72,11 @@ CoD.MissionRecordVault_YourBest.new = function ( menu, controller )
 		Incomplete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Image1:completeAnimation()
 				self.Image1:setRGB( 0.75, 0.75, 0.75 )
 				self.clipFinished( Image1, {} )
+
 				value:completeAnimation()
 				self.value:setRGB( 1, 1, 1 )
 				self.value:setAlpha( 0 )
@@ -78,6 +84,7 @@ CoD.MissionRecordVault_YourBest.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoAccolades",
@@ -108,6 +115,7 @@ CoD.MissionRecordVault_YourBest.new = function ( menu, controller )
 			modelName = "completed"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CPFrame0:close()
 	end )

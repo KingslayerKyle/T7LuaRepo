@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_GoldFrame" )
 CoD.CallingCards_CartoonZombiesWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_CartoonZombiesWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_CartoonZombiesWidget )
 	self.id = "CallingCards_CartoonZombiesWidget"
@@ -78,6 +80,7 @@ CoD.CallingCards_CartoonZombiesWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local faceglowFrame2 = function ( faceglow, event )
 					local faceglowFrame3 = function ( faceglow, event )
 						local faceglowFrame4 = function ( faceglow, event )
@@ -415,10 +418,12 @@ CoD.CallingCards_CartoonZombiesWidget.new = function ( menu, controller )
 				flyblur:setTopBottom( true, false, 78, 126 )
 				flyblur:setAlpha( 0 )
 				flyblur:registerEventHandler( "transition_complete_keyframe", f2_local3 )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardsCartoonZombiesFirefly:close()
 		element.CallingCardsCartoonZombiesFirefly0:close()

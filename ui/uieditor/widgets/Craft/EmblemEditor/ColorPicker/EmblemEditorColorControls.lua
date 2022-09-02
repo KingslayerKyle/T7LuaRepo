@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Craft.Paintshop.PaintshopChoosePaintSide" )
 CoD.EmblemEditorColorControls = InheritFrom( LUI.UIElement )
 CoD.EmblemEditorColorControls.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemEditorColorControls )
 	self.id = "EmblemEditorColorControls"
@@ -159,12 +161,15 @@ CoD.EmblemEditorColorControls.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				rsOpacity:completeAnimation()
 				self.rsOpacity:setAlpha( 1 )
 				self.clipFinished( rsOpacity, {} )
+
 				lsOpacity:completeAnimation()
 				self.lsOpacity:setAlpha( 1 )
 				self.clipFinished( lsOpacity, {} )
+
 				opacityText:completeAnimation()
 				self.opacityText:setAlpha( 1 )
 				self.clipFinished( opacityText, {} )
@@ -173,25 +178,33 @@ CoD.EmblemEditorColorControls.new = function ( menu, controller )
 		Gradient = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				rsOpacity:completeAnimation()
 				self.rsOpacity:setAlpha( 1 )
 				self.clipFinished( rsOpacity, {} )
+
 				lsOpacity:completeAnimation()
 				self.lsOpacity:setAlpha( 1 )
 				self.clipFinished( lsOpacity, {} )
+
 				opacityText:completeAnimation()
 				self.opacityText:setAlpha( 1 )
 				self.clipFinished( opacityText, {} )
+
 				rotateText:completeAnimation()
 				self.rotateText:setAlpha( 0 )
 				self.clipFinished( rotateText, {} )
+
 				rightTriggerButton:completeAnimation()
 				self.rightTriggerButton:setAlpha( 0 )
 				self.clipFinished( rightTriggerButton, {} )
+
 				leftTriggerButton:completeAnimation()
 				self.leftTriggerButton:setAlpha( 0 )
 				self.clipFinished( leftTriggerButton, {} )
+
 				ToggleOutline:completeAnimation()
+
 				ToggleOutline.label:completeAnimation()
 				self.ToggleOutline.label:setText( Engine.Localize( "MENU_EMBLEM_TOGGLE_TO_GRADIENT" ) )
 				self.clipFinished( ToggleOutline, {} )
@@ -200,26 +213,34 @@ CoD.EmblemEditorColorControls.new = function ( menu, controller )
 		Solid = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				rsOpacity:completeAnimation()
 				self.rsOpacity:setAlpha( 1 )
 				self.clipFinished( rsOpacity, {} )
+
 				lsOpacity:completeAnimation()
 				self.lsOpacity:setAlpha( 1 )
 				self.clipFinished( lsOpacity, {} )
+
 				opacityText:completeAnimation()
 				self.opacityText:setAlpha( 1 )
 				self.clipFinished( opacityText, {} )
+
 				rotateText:completeAnimation()
 				self.rotateText:setAlpha( 1 )
 				self.rotateText:setText( Engine.Localize( "MENU_EMBLEM_ROTATE_GRADIENT" ) )
 				self.clipFinished( rotateText, {} )
+
 				rightTriggerButton:completeAnimation()
 				self.rightTriggerButton:setAlpha( 1 )
 				self.clipFinished( rightTriggerButton, {} )
+
 				leftTriggerButton:completeAnimation()
 				self.leftTriggerButton:setAlpha( 1 )
 				self.clipFinished( leftTriggerButton, {} )
+
 				ToggleOutline:completeAnimation()
+
 				ToggleOutline.label:completeAnimation()
 				self.ToggleOutline.label:setText( Engine.Localize( "MENU_EMBLEM_TOGGLE_SOLID" ) )
 				self.clipFinished( ToggleOutline, {} )
@@ -228,22 +249,28 @@ CoD.EmblemEditorColorControls.new = function ( menu, controller )
 		NoColor = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				rsOpacity:completeAnimation()
 				self.rsOpacity:setAlpha( 0.2 )
 				self.clipFinished( rsOpacity, {} )
+
 				lsOpacity:completeAnimation()
 				self.lsOpacity:setAlpha( 0.2 )
 				self.clipFinished( lsOpacity, {} )
+
 				opacityText:completeAnimation()
 				self.opacityText:setAlpha( 0.2 )
 				self.clipFinished( opacityText, {} )
+
 				ToggleOutline:completeAnimation()
+
 				ToggleOutline.label:completeAnimation()
 				self.ToggleOutline.label:setText( Engine.Localize( "MENU_EMBLEM_TOGGLE_SOLID" ) )
 				self.clipFinished( ToggleOutline, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.cacButtonBoxLrgInactiveStroke0:close()
 		element.rsOpacity:close()

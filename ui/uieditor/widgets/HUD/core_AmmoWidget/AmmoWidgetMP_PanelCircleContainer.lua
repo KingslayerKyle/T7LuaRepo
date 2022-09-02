@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidgetMP_PanelCircle" )
 CoD.AmmoWidgetMP_PanelCircleContainer = InheritFrom( LUI.UIElement )
 CoD.AmmoWidgetMP_PanelCircleContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidgetMP_PanelCircleContainer )
 	self.id = "AmmoWidgetMP_PanelCircleContainer"
@@ -28,9 +30,11 @@ CoD.AmmoWidgetMP_PanelCircleContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PanelOctagon:close()
 	end )

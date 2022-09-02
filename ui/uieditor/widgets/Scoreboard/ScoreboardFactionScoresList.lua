@@ -24,11 +24,13 @@ local PostLoadFunc = function ( self, controller, menu )
 		self.Team1.navigation.down = nil
 	end
 	if not CoD.isMultiplayer then
+
 		LUI.OverrideFunction_CallOriginalSecond( self.Team1, "navigateItemUp", function ( element )
 			if Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN ) then
 				Engine.BlockGameFromKeyEvent()
 			end
 		end )
+
 		LUI.OverrideFunction_CallOriginalSecond( self.Team1, "navigateItemDown", function ( element )
 			if Engine.IsVisibilityBitSet( controller, Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN ) then
 				Engine.BlockGameFromKeyEvent()
@@ -58,6 +60,7 @@ CoD.ScoreboardFactionScoresList.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreboardFactionScoresList )
 	self.id = "ScoreboardFactionScoresList"
@@ -344,6 +347,7 @@ CoD.ScoreboardFactionScoresList.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Team1:close()
 		element.Team2:close()

@@ -18,6 +18,7 @@ CoD.Startmenu_MapLocationDate.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Startmenu_MapLocationDate )
 	self.id = "Startmenu_MapLocationDate"
@@ -87,17 +88,20 @@ CoD.Startmenu_MapLocationDate.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		cpzm = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				separator:completeAnimation()
 				self.separator:setAlpha( 0 )
 				self.clipFinished( separator, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "cpzm",
@@ -106,6 +110,7 @@ CoD.Startmenu_MapLocationDate.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.location:close()
 		element.dateTime:close()

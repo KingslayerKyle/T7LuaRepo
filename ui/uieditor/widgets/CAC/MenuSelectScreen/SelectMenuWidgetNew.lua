@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.MenuSelectScreen.SelectionInfoWidgetNew" )
 CoD.SelectMenuWidgetNew = InheritFrom( LUI.UIElement )
 CoD.SelectMenuWidgetNew.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SelectMenuWidgetNew )
 	self.id = "SelectMenuWidgetNew"
@@ -50,6 +52,7 @@ CoD.SelectMenuWidgetNew.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				selectionInfoWidget:completeAnimation()
 				self.selectionInfoWidget:setLeftRight( true, true, 368, -62 )
 				self.selectionInfoWidget:setTopBottom( true, false, 124, 720 )
@@ -57,6 +60,7 @@ CoD.SelectMenuWidgetNew.new = function ( menu, controller )
 			end,
 			GridLayout = function ()
 				self:setupElementClipCounter( 1 )
+
 				local selectionInfoWidgetFrame2 = function ( selectionInfoWidget, event )
 					if not event.interrupted then
 						selectionInfoWidget:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -79,6 +83,7 @@ CoD.SelectMenuWidgetNew.new = function ( menu, controller )
 		GridLayout = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				selectionInfoWidget:completeAnimation()
 				self.selectionInfoWidget:setLeftRight( true, true, 430, 0 )
 				self.selectionInfoWidget:setTopBottom( true, false, 124, 720 )
@@ -87,6 +92,7 @@ CoD.SelectMenuWidgetNew.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local selectionInfoWidgetFrame2 = function ( selectionInfoWidget, event )
 					if not event.interrupted then
 						selectionInfoWidget:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -107,6 +113,7 @@ CoD.SelectMenuWidgetNew.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.background:close()
 		element.selectionInfoWidget:close()

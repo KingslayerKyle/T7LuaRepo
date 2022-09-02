@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.GenericPopups.SideModalDialogButton" )
 CoD.SideModalButtonList = InheritFrom( LUI.UIElement )
 CoD.SideModalButtonList.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SideModalButtonList )
 	self.id = "SideModalButtonList"
@@ -95,6 +97,7 @@ CoD.SideModalButtonList.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.List0:close()
 		element.Title:close()

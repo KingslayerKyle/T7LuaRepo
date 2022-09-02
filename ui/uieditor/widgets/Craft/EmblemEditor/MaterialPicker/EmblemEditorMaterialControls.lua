@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Craft.EmblemEditor.EmblemEditorButtonPrompt" )
 CoD.EmblemEditorMaterialControls = InheritFrom( LUI.UIElement )
 CoD.EmblemEditorMaterialControls.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemEditorMaterialControls )
 	self.id = "EmblemEditorMaterialControls"
@@ -145,9 +147,11 @@ CoD.EmblemEditorMaterialControls.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FreeScale:completeAnimation()
 				self.FreeScale:setAlpha( 0 )
 				self.clipFinished( FreeScale, {} )
+
 				FixedScale:completeAnimation()
 				self.FixedScale:setAlpha( 1 )
 				self.clipFinished( FixedScale, {} )
@@ -156,9 +160,11 @@ CoD.EmblemEditorMaterialControls.new = function ( menu, controller )
 		FixedScale = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FreeScale:completeAnimation()
 				self.FreeScale:setAlpha( 0 )
 				self.clipFinished( FreeScale, {} )
+
 				FixedScale:completeAnimation()
 				self.FixedScale:setAlpha( 1 )
 				self.clipFinished( FixedScale, {} )
@@ -167,15 +173,18 @@ CoD.EmblemEditorMaterialControls.new = function ( menu, controller )
 		FreeScale = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FreeScale:completeAnimation()
 				self.FreeScale:setAlpha( 1 )
 				self.clipFinished( FreeScale, {} )
+
 				FixedScale:completeAnimation()
 				self.FixedScale:setAlpha( 0 )
 				self.clipFinished( FixedScale, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.cacButtonBoxLrgInactiveStroke0:close()
 		element.ChangeColor:close()

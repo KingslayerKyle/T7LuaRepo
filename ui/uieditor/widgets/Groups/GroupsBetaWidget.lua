@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Groups.Common.GroupsBetaInternal" )
 CoD.GroupsBetaWidget = InheritFrom( LUI.UIElement )
 CoD.GroupsBetaWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsBetaWidget )
 	self.id = "GroupsBetaWidget"

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.Theater_TitleLabel = InheritFrom( LUI.UIElement )
 CoD.Theater_TitleLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Theater_TitleLabel )
 	self.id = "Theater_TitleLabel"
@@ -45,6 +47,7 @@ CoD.Theater_TitleLabel.new = function ( menu, controller )
 	ScorestreaksLabel:setLetterSpacing( 0.6 )
 	ScorestreaksLabel:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	ScorestreaksLabel:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( ScorestreaksLabel, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 2 )
 	end )
@@ -55,9 +58,11 @@ CoD.Theater_TitleLabel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TitleGlow1:close()
 	end )

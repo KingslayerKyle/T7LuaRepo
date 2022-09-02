@@ -22,9 +22,11 @@ end
 CoD.FE_LiveEventFeatureCard = InheritFrom( LUI.UIElement )
 CoD.FE_LiveEventFeatureCard.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_LiveEventFeatureCard )
 	self.id = "FE_LiveEventFeatureCard"
@@ -102,18 +104,21 @@ CoD.FE_LiveEventFeatureCard.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				backing:completeAnimation()
 				self.backing:setAlpha( 1 )
 				self.clipFinished( backing, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 1 )
+
 				backing:completeAnimation()
 				self.backing:setAlpha( 1 )
 				self.clipFinished( backing, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.twitchIcon:close()
 		element.LiveEventViewerStatusWidget0:close()

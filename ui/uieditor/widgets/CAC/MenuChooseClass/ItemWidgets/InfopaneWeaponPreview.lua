@@ -4,9 +4,11 @@
 CoD.InfopaneWeaponPreview = InheritFrom( LUI.UIElement )
 CoD.InfopaneWeaponPreview.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.InfopaneWeaponPreview )
 	self.id = "InfopaneWeaponPreview"
@@ -69,15 +71,19 @@ CoD.InfopaneWeaponPreview.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				wideImage:completeAnimation()
 				self.wideImage:setAlpha( 0 )
 				self.clipFinished( wideImage, {} )
+
 				squareImage:completeAnimation()
 				self.squareImage:setAlpha( 1 )
 				self.clipFinished( squareImage, {} )
+
 				emptyWideImage:completeAnimation()
 				self.emptyWideImage:setAlpha( 0 )
 				self.clipFinished( emptyWideImage, {} )
+
 				emptySquareImage:completeAnimation()
 				self.emptySquareImage:setAlpha( 0 )
 				self.clipFinished( emptySquareImage, {} )
@@ -86,15 +92,19 @@ CoD.InfopaneWeaponPreview.new = function ( menu, controller )
 		WideImage = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				wideImage:completeAnimation()
 				self.wideImage:setAlpha( 1 )
 				self.clipFinished( wideImage, {} )
+
 				squareImage:completeAnimation()
 				self.squareImage:setAlpha( 0 )
 				self.clipFinished( squareImage, {} )
+
 				emptyWideImage:completeAnimation()
 				self.emptyWideImage:setAlpha( 0 )
 				self.clipFinished( emptyWideImage, {} )
+
 				emptySquareImage:completeAnimation()
 				self.emptySquareImage:setAlpha( 0 )
 				self.clipFinished( emptySquareImage, {} )
@@ -103,15 +113,19 @@ CoD.InfopaneWeaponPreview.new = function ( menu, controller )
 		EmptySquareImage = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				wideImage:completeAnimation()
 				self.wideImage:setAlpha( 0 )
 				self.clipFinished( wideImage, {} )
+
 				squareImage:completeAnimation()
 				self.squareImage:setAlpha( 0 )
 				self.clipFinished( squareImage, {} )
+
 				emptyWideImage:completeAnimation()
 				self.emptyWideImage:setAlpha( 0 )
 				self.clipFinished( emptyWideImage, {} )
+
 				emptySquareImage:completeAnimation()
 				self.emptySquareImage:setAlpha( 0.15 )
 				self.clipFinished( emptySquareImage, {} )
@@ -120,21 +134,26 @@ CoD.InfopaneWeaponPreview.new = function ( menu, controller )
 		EmptyWideImage = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				wideImage:completeAnimation()
 				self.wideImage:setAlpha( 0 )
 				self.clipFinished( wideImage, {} )
+
 				squareImage:completeAnimation()
 				self.squareImage:setAlpha( 0 )
 				self.clipFinished( squareImage, {} )
+
 				emptyWideImage:completeAnimation()
 				self.emptyWideImage:setAlpha( 0.15 )
 				self.clipFinished( emptyWideImage, {} )
+
 				emptySquareImage:completeAnimation()
 				self.emptySquareImage:setAlpha( 0 )
 				self.clipFinished( emptySquareImage, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.wideImage:close()
 		element.squareImage:close()

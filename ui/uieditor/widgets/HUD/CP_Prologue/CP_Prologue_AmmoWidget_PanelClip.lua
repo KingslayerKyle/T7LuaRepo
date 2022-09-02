@@ -4,9 +4,11 @@
 CoD.CP_Prologue_AmmoWidget_PanelClip = InheritFrom( LUI.UIElement )
 CoD.CP_Prologue_AmmoWidget_PanelClip.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CP_Prologue_AmmoWidget_PanelClip )
 	self.id = "CP_Prologue_AmmoWidget_PanelClip"

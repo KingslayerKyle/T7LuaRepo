@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Ground.VehicleGround_VignetteBack" )
 CoD.scorestreakVignetteContainer = InheritFrom( LUI.UIElement )
 CoD.scorestreakVignetteContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.scorestreakVignetteContainer )
 	self.id = "scorestreakVignetteContainer"
@@ -28,6 +30,7 @@ CoD.scorestreakVignetteContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local VignetteBackFrame2 = function ( VignetteBack, event )
 					if not event.interrupted then
 						VignetteBack:beginAnimation( "keyframe", 3930, false, false, CoD.TweenType.Linear )
@@ -46,6 +49,7 @@ CoD.scorestreakVignetteContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.VignetteBack:close()
 	end )

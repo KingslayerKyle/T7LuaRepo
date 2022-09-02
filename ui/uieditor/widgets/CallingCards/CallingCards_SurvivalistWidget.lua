@@ -4,9 +4,11 @@
 CoD.CallingCards_SurvivalistWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_SurvivalistWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_SurvivalistWidget )
 	self.id = "CallingCards_SurvivalistWidget"
@@ -93,6 +95,7 @@ CoD.CallingCards_SurvivalistWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				local cloud4Frame2 = function ( cloud4, event )
 					local cloud4Frame3 = function ( cloud4, event )
 						if not event.interrupted then
@@ -138,6 +141,7 @@ CoD.CallingCards_SurvivalistWidget.new = function ( menu, controller )
 				cloud40:beginAnimation( "keyframe", 1450, false, false, CoD.TweenType.Linear )
 				cloud40:setAlpha( 0 )
 				cloud40:registerEventHandler( "transition_complete_keyframe", f2_local1 )
+
 				cloud10:completeAnimation()
 				self.cloud10:setAlpha( 1 )
 				self.clipFinished( cloud10, {} )
@@ -440,6 +444,7 @@ CoD.CallingCards_SurvivalistWidget.new = function ( menu, controller )
 				self.car:setLeftRight( true, false, 90, 276 )
 				self.car:setTopBottom( true, false, 49.45, 120 )
 				carFrame2( car, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

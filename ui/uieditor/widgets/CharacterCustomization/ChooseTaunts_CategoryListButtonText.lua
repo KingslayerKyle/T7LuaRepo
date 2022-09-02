@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.NewBreadcrumb" )
 CoD.ChooseTaunts_CategoryListButtonText = InheritFrom( LUI.UIElement )
 CoD.ChooseTaunts_CategoryListButtonText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseTaunts_CategoryListButtonText )
 	self.id = "ChooseTaunts_CategoryListButtonText"
@@ -27,6 +29,7 @@ CoD.ChooseTaunts_CategoryListButtonText.new = function ( menu, controller )
 			Title:setText( Engine.Localize( categoryName ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( Title, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 2 )
 	end )
@@ -44,6 +47,7 @@ CoD.ChooseTaunts_CategoryListButtonText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				newIcon:completeAnimation()
 				self.newIcon:setAlpha( 0 )
 				self.clipFinished( newIcon, {} )
@@ -52,12 +56,14 @@ CoD.ChooseTaunts_CategoryListButtonText.new = function ( menu, controller )
 		BreadcrumbVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				newIcon:completeAnimation()
 				self.newIcon:setAlpha( 1 )
 				self.clipFinished( newIcon, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.newIcon:close()
 		element.Title:close()

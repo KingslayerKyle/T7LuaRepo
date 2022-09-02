@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.core_MapWidget.MapWidget" )
 CoD.MapWidgetContainer = InheritFrom( LUI.UIElement )
 CoD.MapWidgetContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MapWidgetContainer )
 	self.id = "MapWidgetContainer"
@@ -37,11 +39,13 @@ CoD.MapWidgetContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				MapWidget:completeAnimation()
 				self.clipFinished( MapWidget, {} )
 			end,
 			HudStop = function ()
 				self:setupElementClipCounter( 1 )
+
 				local MapWidgetFrame2 = function ( MapWidget, event )
 					local MapWidgetFrame3 = function ( MapWidget, event )
 						local MapWidgetFrame4 = function ( MapWidget, event )
@@ -268,6 +272,7 @@ CoD.MapWidgetContainer.new = function ( menu, controller )
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 1 )
+
 				local MapWidgetFrame2 = function ( MapWidget, event )
 					local MapWidgetFrame3 = function ( MapWidget, event )
 						local MapWidgetFrame4 = function ( MapWidget, event )
@@ -556,11 +561,13 @@ CoD.MapWidgetContainer.new = function ( menu, controller )
 		HudStart = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				MapWidget:completeAnimation()
 				self.clipFinished( MapWidget, {} )
 			end,
 			HudStop = function ()
 				self:setupElementClipCounter( 1 )
+
 				local MapWidgetFrame2 = function ( MapWidget, event )
 					local MapWidgetFrame3 = function ( MapWidget, event )
 						local MapWidgetFrame4 = function ( MapWidget, event )
@@ -789,11 +796,13 @@ CoD.MapWidgetContainer.new = function ( menu, controller )
 		HudStop = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				MapWidget:completeAnimation()
 				self.clipFinished( MapWidget, {} )
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 1 )
+
 				local MapWidgetFrame2 = function ( MapWidget, event )
 					local MapWidgetFrame3 = function ( MapWidget, event )
 						local MapWidgetFrame4 = function ( MapWidget, event )
@@ -1080,6 +1089,7 @@ CoD.MapWidgetContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MapWidget:close()
 	end )

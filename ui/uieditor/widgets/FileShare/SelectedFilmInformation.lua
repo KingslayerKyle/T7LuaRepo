@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.Theater.Theater_TitleLabel" )
 CoD.SelectedFilmInformation = InheritFrom( LUI.UIElement )
 CoD.SelectedFilmInformation.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SelectedFilmInformation )
 	self.id = "SelectedFilmInformation"
@@ -208,21 +210,27 @@ CoD.SelectedFilmInformation.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 0 )
 				self.clipFinished( MapImage, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 1 )
 				self.clipFinished( Thumbnail, {} )
+
 				GameTypeImage:completeAnimation()
 				self.GameTypeImage:setAlpha( 0 )
 				self.clipFinished( GameTypeImage, {} )
+
 				AuthorName:completeAnimation()
 				self.AuthorName:setAlpha( 1 )
 				self.clipFinished( AuthorName, {} )
+
 				MatchType:completeAnimation()
 				self.MatchType:setAlpha( 0 )
 				self.clipFinished( MatchType, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 0 )
 				self.clipFinished( BookmarkedItem, {} )
@@ -231,21 +239,27 @@ CoD.SelectedFilmInformation.new = function ( menu, controller )
 		Film = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 1 )
 				self.clipFinished( MapImage, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 0 )
 				self.clipFinished( Thumbnail, {} )
+
 				GameTypeImage:completeAnimation()
 				self.GameTypeImage:setAlpha( 1 )
 				self.clipFinished( GameTypeImage, {} )
+
 				AuthorName:completeAnimation()
 				self.AuthorName:setAlpha( 1 )
 				self.clipFinished( AuthorName, {} )
+
 				MatchType:completeAnimation()
 				self.MatchType:setAlpha( 1 )
 				self.clipFinished( MatchType, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 1 )
 				self.clipFinished( BookmarkedItem, {} )
@@ -254,27 +268,34 @@ CoD.SelectedFilmInformation.new = function ( menu, controller )
 		FilmNoAuthor = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				MapImage:completeAnimation()
 				self.MapImage:setAlpha( 1 )
 				self.clipFinished( MapImage, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 0 )
 				self.clipFinished( Thumbnail, {} )
+
 				GameTypeImage:completeAnimation()
 				self.GameTypeImage:setAlpha( 1 )
 				self.clipFinished( GameTypeImage, {} )
+
 				AuthorName:completeAnimation()
 				self.AuthorName:setAlpha( 0 )
 				self.clipFinished( AuthorName, {} )
+
 				MatchType:completeAnimation()
 				self.MatchType:setAlpha( 1 )
 				self.clipFinished( MatchType, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 1 )
 				self.clipFinished( BookmarkedItem, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Film",
@@ -305,6 +326,7 @@ CoD.SelectedFilmInformation.new = function ( menu, controller )
 			modelName = "matchMakingMode"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SelectedFilmSummaryInformation:close()
 		element.BookmarkedItem:close()

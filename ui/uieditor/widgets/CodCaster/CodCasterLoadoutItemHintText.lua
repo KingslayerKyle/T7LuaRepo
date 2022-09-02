@@ -4,9 +4,11 @@
 CoD.CodCasterLoadoutItemHintText = InheritFrom( LUI.UIElement )
 CoD.CodCasterLoadoutItemHintText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterLoadoutItemHintText )
 	self.id = "CodCasterLoadoutItemHintText"
@@ -42,6 +44,7 @@ CoD.CodCasterLoadoutItemHintText.new = function ( menu, controller )
 	text:setLetterSpacing( 1 )
 	text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( text, "setText", function ( element, controller )
 		ScaleWidgetToLabelCenteredWrapped( self, element, 4, 4 )
 	end )
@@ -52,18 +55,22 @@ CoD.CodCasterLoadoutItemHintText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				arrowUp:completeAnimation()
 				self.arrowUp:setAlpha( 0 )
 				self.clipFinished( arrowUp, {} )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0 )
 				self.clipFinished( text, {} )
 			end,
 			HintMulti = function ()
 				self:setupElementClipCounter( 3 )
+
 				arrowUp:completeAnimation()
 				self.arrowUp:setAlpha( 1 )
 				self.clipFinished( arrowUp, {} )
@@ -142,12 +149,15 @@ CoD.CodCasterLoadoutItemHintText.new = function ( menu, controller )
 			end,
 			HintSingle = function ()
 				self:setupElementClipCounter( 3 )
+
 				arrowUp:completeAnimation()
 				self.arrowUp:setAlpha( 1 )
 				self.clipFinished( arrowUp, {} )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 1 )
 				self.clipFinished( text, {} )

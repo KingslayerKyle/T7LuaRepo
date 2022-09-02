@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Freerun.FR_InfoWidget" )
 CoD.FR_InfoContainer = InheritFrom( LUI.UIElement )
 CoD.FR_InfoContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FR_InfoContainer )
 	self.id = "FR_InfoContainer"
@@ -31,6 +33,7 @@ CoD.FR_InfoContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FRInfoWidget:completeAnimation()
 				self.FRInfoWidget:setLeftRight( true, false, -23, 293 )
 				self.FRInfoWidget:setTopBottom( true, false, -2.2, 203.8 )
@@ -38,20 +41,25 @@ CoD.FR_InfoContainer.new = function ( menu, controller )
 			end,
 			Penalty = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			FaultAnim = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			RetryAnim = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			SetCheckpointDelta = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FRInfoWidgetFrame2 = function ( FRInfoWidget, event )
 					if not event.interrupted then
 						FRInfoWidget:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -70,9 +78,11 @@ CoD.FR_InfoContainer.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FRInfoWidget:close()
 	end )

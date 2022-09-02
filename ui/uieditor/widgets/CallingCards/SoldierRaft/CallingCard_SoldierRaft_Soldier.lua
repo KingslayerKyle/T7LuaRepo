@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.SoldierRaft.CallingCard_SoldierRaft_F
 CoD.CallingCard_SoldierRaft_Soldier = InheritFrom( LUI.UIElement )
 CoD.CallingCard_SoldierRaft_Soldier.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCard_SoldierRaft_Soldier )
 	self.id = "CallingCard_SoldierRaft_Soldier"
@@ -56,6 +58,7 @@ CoD.CallingCard_SoldierRaft_Soldier.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local ArmFrame2 = function ( Arm, event )
 					local ArmFrame3 = function ( Arm, event )
 						local ArmFrame4 = function ( Arm, event )
@@ -709,10 +712,12 @@ CoD.CallingCard_SoldierRaft_Soldier.new = function ( menu, controller )
 				Flash:completeAnimation()
 				self.Flash:setAlpha( 0 )
 				FlashFrame2( Flash, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Flag:close()
 	end )

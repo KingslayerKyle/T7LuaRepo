@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.BubbleGumBuffTitle = InheritFrom( LUI.UIElement )
 CoD.BubbleGumBuffTitle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BubbleGumBuffTitle )
 	self.id = "BubbleGumBuffTitle"
@@ -43,6 +45,7 @@ CoD.BubbleGumBuffTitle.new = function ( menu, controller )
 	EquippedBuffsLabel:setShaderVector( 1, 0.02, 0, 0, 0 )
 	EquippedBuffsLabel:setShaderVector( 2, 1, 0, 0, 0 )
 	EquippedBuffsLabel:setLetterSpacing( 1 )
+
 	LUI.OverrideFunction_CallOriginalFirst( EquippedBuffsLabel, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 2 )
 	end )

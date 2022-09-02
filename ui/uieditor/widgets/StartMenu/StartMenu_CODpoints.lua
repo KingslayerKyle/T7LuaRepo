@@ -4,9 +4,11 @@
 CoD.StartMenu_CODpoints = InheritFrom( LUI.UIElement )
 CoD.StartMenu_CODpoints.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_CODpoints )
 	self.id = "StartMenu_CODpoints"
@@ -64,18 +66,23 @@ CoD.StartMenu_CODpoints.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				ring:completeAnimation()
 				self.ring:setAlpha( 0 )
 				self.clipFinished( ring, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				codpoints:completeAnimation()
 				self.codpoints:setAlpha( 1 )
 				self.clipFinished( codpoints, {} )
+
 				codpointGlint:completeAnimation()
 				self.codpointGlint:setAlpha( 0 )
 				self.clipFinished( codpointGlint, {} )
+
 				codpointsCount:completeAnimation()
 				self.codpointsCount:setAlpha( 1 )
 				self.clipFinished( codpointsCount, {} )
@@ -84,6 +91,7 @@ CoD.StartMenu_CODpoints.new = function ( menu, controller )
 		ShowShimmer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local f4_local0 = function ( f5_arg0, f5_arg1 )
 					local f5_local0 = function ( f6_arg0, f6_arg1 )
 						local f6_local0 = function ( f7_arg0, f7_arg1 )
@@ -307,10 +315,12 @@ CoD.StartMenu_CODpoints.new = function ( menu, controller )
 				self.codpointGlint:setMaterial( LUI.UIImage.GetCachedMaterial( "sw4_2d_bitchin_glint_reveal" ) )
 				self.codpointGlint:setShaderVector( 0, 0.01, 0, 0, 0 )
 				codpointGlintFrame2( codpointGlint, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ShowShimmer",
@@ -327,6 +337,7 @@ CoD.StartMenu_CODpoints.new = function ( menu, controller )
 			modelName = "CryptoKeyProgress.codPoints"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.codpointsCount:close()
 	end )

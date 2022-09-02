@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ScoreInfo.ScoreInfo_PanelScale" )
 CoD.FractureTimer = InheritFrom( LUI.UIElement )
 CoD.FractureTimer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FractureTimer )
 	self.id = "FractureTimer"
@@ -52,64 +54,80 @@ CoD.FractureTimer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
+
 				ShadowGlow:completeAnimation()
 				self.ShadowGlow:setAlpha( 0 )
 				self.clipFinished( ShadowGlow, {} )
+
 				DepositTimer:completeAnimation()
 				self.DepositTimer:setAlpha( 0 )
 				self.clipFinished( DepositTimer, {} )
 			end,
 			hud_start = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			hud_stop = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Deposit = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 1 )
 				self.clipFinished( Panel, {} )
+
 				ShadowGlow:completeAnimation()
 				self.ShadowGlow:setAlpha( 0.2 )
 				self.clipFinished( ShadowGlow, {} )
+
 				DepositTimer:completeAnimation()
 				self.DepositTimer:setAlpha( 1 )
 				self.clipFinished( DepositTimer, {} )
 			end,
 			hud_start = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			hud_stop = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		DepositForCodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 1 )
 				self.clipFinished( Panel, {} )
+
 				ShadowGlow:completeAnimation()
 				self.ShadowGlow:setAlpha( 0.2 )
 				self.clipFinished( ShadowGlow, {} )
+
 				DepositTimer:completeAnimation()
 				self.DepositTimer:setAlpha( 1 )
 				self.clipFinished( DepositTimer, {} )
 			end,
 			hud_start = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			hud_stop = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Deposit",
@@ -300,6 +318,7 @@ CoD.FractureTimer.new = function ( menu, controller )
 			modelName = "CodCaster.profileSettingsUpdated"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 	end )

@@ -8,6 +8,7 @@ local f0_local0 = function ( f1_arg0, f1_arg1 )
 		return 
 	else
 		f1_arg0:setForceMouseEventDispatch( true )
+
 		LUI.OverrideFunction_CallOriginalFirst( f1_arg0, "setState", function ( element, controller )
 			if IsSelfInState( f1_arg0, "CACOptionsVisible" ) then
 				f1_arg0.CaCOptions:setMouseDisabled( false )
@@ -210,6 +211,7 @@ CoD.Competitive_SettingsButtons_Flyout.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Competitive_SettingsButtons_Flyout )
 	self.id = "Competitive_SettingsButtons_Flyout"
@@ -340,9 +342,11 @@ CoD.Competitive_SettingsButtons_Flyout.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ButtonList:completeAnimation()
 				self.ButtonList:setAlpha( 1 )
 				self.clipFinished( ButtonList, {} )
+
 				CaCOptions:completeAnimation()
 				self.CaCOptions:setAlpha( 0 )
 				self.clipFinished( CaCOptions, {} )
@@ -351,9 +355,11 @@ CoD.Competitive_SettingsButtons_Flyout.new = function ( menu, controller )
 		CACOptionsVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ButtonList:completeAnimation()
 				self.ButtonList:setAlpha( 0.5 )
 				self.clipFinished( ButtonList, {} )
+
 				CaCOptions:completeAnimation()
 				self.CaCOptions:setAlpha( 1 )
 				self.clipFinished( CaCOptions, {} )
@@ -361,6 +367,7 @@ CoD.Competitive_SettingsButtons_Flyout.new = function ( menu, controller )
 		}
 	}
 	CoD.Menu.AddNavigationHandler( menu, self, controller )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "close", function ( element )
 		SetGlobalModelValueFalse( "lobbyRoot.ShowCACItemBansRestrictionFlyout" )
 	end )
@@ -390,6 +397,7 @@ CoD.Competitive_SettingsButtons_Flyout.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ButtonList:close()
 		element.CaCOptions:close()

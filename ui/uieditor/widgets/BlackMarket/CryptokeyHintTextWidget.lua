@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BlackMarket.CryptokeyItemHintTextInternal_Left" )
 CoD.CryptokeyHintTextWidget = InheritFrom( LUI.UIElement )
 CoD.CryptokeyHintTextWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CryptokeyHintTextWidget )
 	self.id = "CryptokeyHintTextWidget"
@@ -75,12 +77,15 @@ CoD.CryptokeyHintTextWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				CenteredHintText:completeAnimation()
 				self.CenteredHintText:setAlpha( 1 )
 				self.clipFinished( CenteredHintText, {} )
+
 				LeftHintText:completeAnimation()
 				self.LeftHintText:setAlpha( 0 )
 				self.clipFinished( LeftHintText, {} )
+
 				RightHintText:completeAnimation()
 				self.RightHintText:setLeftRight( false, true, -449.5, -17.5 )
 				self.RightHintText:setTopBottom( true, false, 10.25, 53.25 )
@@ -91,12 +96,15 @@ CoD.CryptokeyHintTextWidget.new = function ( menu, controller )
 		LeftColumn = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				CenteredHintText:completeAnimation()
 				self.CenteredHintText:setAlpha( 0 )
 				self.clipFinished( CenteredHintText, {} )
+
 				LeftHintText:completeAnimation()
 				self.LeftHintText:setAlpha( 1 )
 				self.clipFinished( LeftHintText, {} )
+
 				RightHintText:completeAnimation()
 				self.RightHintText:setAlpha( 0 )
 				self.clipFinished( RightHintText, {} )
@@ -105,18 +113,22 @@ CoD.CryptokeyHintTextWidget.new = function ( menu, controller )
 		RightColumn = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				CenteredHintText:completeAnimation()
 				self.CenteredHintText:setAlpha( 0 )
 				self.clipFinished( CenteredHintText, {} )
+
 				LeftHintText:completeAnimation()
 				self.LeftHintText:setAlpha( 0 )
 				self.clipFinished( LeftHintText, {} )
+
 				RightHintText:completeAnimation()
 				self.RightHintText:setAlpha( 1 )
 				self.clipFinished( RightHintText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "LeftColumn",
@@ -139,6 +151,7 @@ CoD.CryptokeyHintTextWidget.new = function ( menu, controller )
 			modelName = "hintTextAlign"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CenteredHintText:close()
 		element.LeftHintText:close()

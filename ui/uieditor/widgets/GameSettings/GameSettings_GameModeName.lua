@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.GameSettings.GameSettings_textboxBG" )
 CoD.GameSettings_GameModeName = InheritFrom( LUI.UIElement )
 CoD.GameSettings_GameModeName.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GameSettings_GameModeName )
 	self.id = "GameSettings_GameModeName"

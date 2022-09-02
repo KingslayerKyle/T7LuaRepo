@@ -4,9 +4,11 @@
 CoD.BM_BurnProgressIndicator = InheritFrom( LUI.UIElement )
 CoD.BM_BurnProgressIndicator.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_BurnProgressIndicator )
 	self.id = "BM_BurnProgressIndicator"

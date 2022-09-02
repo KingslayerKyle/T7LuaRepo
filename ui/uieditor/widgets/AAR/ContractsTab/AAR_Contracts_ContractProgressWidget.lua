@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.AAR.ContractsTab.AAR_Contracts_PercentCompleteWidg
 CoD.AAR_Contracts_ContractProgressWidget = InheritFrom( LUI.UIElement )
 CoD.AAR_Contracts_ContractProgressWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AAR_Contracts_ContractProgressWidget )
 	self.id = "AAR_Contracts_ContractProgressWidget"

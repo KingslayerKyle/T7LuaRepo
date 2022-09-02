@@ -4,9 +4,11 @@
 CoD.StartMenu_Options_PrivacySettingsPageCounter = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_PrivacySettingsPageCounter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_PrivacySettingsPageCounter )
 	self.id = "StartMenu_Options_PrivacySettingsPageCounter"
@@ -58,12 +60,15 @@ CoD.StartMenu_Options_PrivacySettingsPageCounter.new = function ( menu, controll
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				CurrentItem:completeAnimation()
 				self.CurrentItem:setAlpha( 1 )
 				self.clipFinished( CurrentItem, {} )
+
 				Dividor:completeAnimation()
 				self.Dividor:setAlpha( 1 )
 				self.clipFinished( Dividor, {} )
+
 				Count:completeAnimation()
 				self.Count:setAlpha( 1 )
 				self.clipFinished( Count, {} )
@@ -72,18 +77,22 @@ CoD.StartMenu_Options_PrivacySettingsPageCounter.new = function ( menu, controll
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				CurrentItem:completeAnimation()
 				self.CurrentItem:setAlpha( 0 )
 				self.clipFinished( CurrentItem, {} )
+
 				Dividor:completeAnimation()
 				self.Dividor:setAlpha( 0 )
 				self.clipFinished( Dividor, {} )
+
 				Count:completeAnimation()
 				self.Count:setAlpha( 0 )
 				self.clipFinished( Count, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -100,6 +109,7 @@ CoD.StartMenu_Options_PrivacySettingsPageCounter.new = function ( menu, controll
 			modelName = "PrivacySettingManagementForm.lastPage"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CurrentItem:close()
 		element.Count:close()

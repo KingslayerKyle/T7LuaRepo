@@ -8,9 +8,11 @@ end
 CoD.CharacterMiniSelectorItem = InheritFrom( LUI.UIElement )
 CoD.CharacterMiniSelectorItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CharacterMiniSelectorItem )
 	self.id = "CharacterMiniSelectorItem"
@@ -39,20 +41,24 @@ CoD.CharacterMiniSelectorItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				CheckboxBkg:completeAnimation()
 				self.CheckboxBkg:setRGB( 1, 0.99, 0.97 )
 				self.CheckboxBkg:setAlpha( 1 )
 				self.clipFinished( CheckboxBkg, {} )
+
 				checkboxCheck:completeAnimation()
 				self.checkboxCheck:setAlpha( 0 )
 				self.clipFinished( checkboxCheck, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 2 )
+
 				CheckboxBkg:completeAnimation()
 				self.CheckboxBkg:setRGB( 0.96, 0.45, 0 )
 				self.CheckboxBkg:setAlpha( 1 )
 				self.clipFinished( CheckboxBkg, {} )
+
 				checkboxCheck:completeAnimation()
 				self.checkboxCheck:setRGB( 1, 0.45, 0 )
 				self.checkboxCheck:setAlpha( 0 )
@@ -60,9 +66,11 @@ CoD.CharacterMiniSelectorItem.new = function ( menu, controller )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 2 )
+
 				CheckboxBkg:completeAnimation()
 				self.CheckboxBkg:setAlpha( 0 )
 				self.clipFinished( CheckboxBkg, {} )
+
 				checkboxCheck:completeAnimation()
 				self.checkboxCheck:setAlpha( 1 )
 				self.clipFinished( checkboxCheck, {} )

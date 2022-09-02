@@ -18,9 +18,11 @@ end
 CoD.ChooseTaunts_TauntOptions = InheritFrom( LUI.UIElement )
 CoD.ChooseTaunts_TauntOptions.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseTaunts_TauntOptions )
 	self.id = "ChooseTaunts_TauntOptions"
@@ -188,6 +190,7 @@ CoD.ChooseTaunts_TauntOptions.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.optionsList:close()
 		element.verticalCounter0:close()

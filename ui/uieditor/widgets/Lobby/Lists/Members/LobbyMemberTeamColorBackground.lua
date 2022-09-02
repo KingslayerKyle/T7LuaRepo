@@ -17,9 +17,11 @@ end
 CoD.LobbyMemberTeamColorBackground = InheritFrom( LUI.UIElement )
 CoD.LobbyMemberTeamColorBackground.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyMemberTeamColorBackground )
 	self.id = "LobbyMemberTeamColorBackground"
@@ -58,12 +60,15 @@ CoD.LobbyMemberTeamColorBackground.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				spectatorColor:completeAnimation()
 				self.spectatorColor:setAlpha( 0 )
 				self.clipFinished( spectatorColor, {} )
+
 				alliesColor:completeAnimation()
 				self.alliesColor:setAlpha( 0 )
 				self.clipFinished( alliesColor, {} )
+
 				axisColor:completeAnimation()
 				self.axisColor:setAlpha( 0 )
 				self.clipFinished( axisColor, {} )
@@ -72,12 +77,15 @@ CoD.LobbyMemberTeamColorBackground.new = function ( menu, controller )
 		Axis = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				spectatorColor:completeAnimation()
 				self.spectatorColor:setAlpha( 0 )
 				self.clipFinished( spectatorColor, {} )
+
 				alliesColor:completeAnimation()
 				self.alliesColor:setAlpha( 0 )
 				self.clipFinished( alliesColor, {} )
+
 				axisColor:completeAnimation()
 				self.axisColor:setAlpha( 0.25 )
 				self.axisColor:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
@@ -87,13 +95,16 @@ CoD.LobbyMemberTeamColorBackground.new = function ( menu, controller )
 		Allies = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				spectatorColor:completeAnimation()
 				self.spectatorColor:setAlpha( 0 )
 				self.clipFinished( spectatorColor, {} )
+
 				alliesColor:completeAnimation()
 				self.alliesColor:setAlpha( 0.25 )
 				self.alliesColor:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_feather_blend" ) )
 				self.clipFinished( alliesColor, {} )
+
 				axisColor:completeAnimation()
 				self.axisColor:setAlpha( 0 )
 				self.clipFinished( axisColor, {} )
@@ -102,12 +113,15 @@ CoD.LobbyMemberTeamColorBackground.new = function ( menu, controller )
 		Spectator = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				spectatorColor:completeAnimation()
 				self.spectatorColor:setAlpha( 0.25 )
 				self.clipFinished( spectatorColor, {} )
+
 				alliesColor:completeAnimation()
 				self.alliesColor:setAlpha( 0 )
 				self.clipFinished( alliesColor, {} )
+
 				axisColor:completeAnimation()
 				self.axisColor:setAlpha( 0 )
 				self.clipFinished( axisColor, {} )

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.LiveEventViewerFooter" )
 CoD.LiveEventViewerFooterContainer = InheritFrom( LUI.UIElement )
 CoD.LiveEventViewerFooterContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LiveEventViewerFooterContainer )
 	self.id = "LiveEventViewerFooterContainer"
@@ -32,6 +34,7 @@ CoD.LiveEventViewerFooterContainer.new = function ( menu, controller )
 	self.LiveEventViewerFooter0 = LiveEventViewerFooter0
 	
 	LiveEventViewerFooter0:setModel( menu.buttonModel, controller )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LiveEventViewerFooter0:close()
 	end )

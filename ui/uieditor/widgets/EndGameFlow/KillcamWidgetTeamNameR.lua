@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.KillcamWidgetTeamNameR = InheritFrom( LUI.UIElement )
 CoD.KillcamWidgetTeamNameR.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.KillcamWidgetTeamNameR )
 	self.id = "KillcamWidgetTeamNameR"
@@ -48,6 +50,7 @@ CoD.KillcamWidgetTeamNameR.new = function ( menu, controller )
 			weaponNameLabel:setText( Engine.Localize( name ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( weaponNameLabel, "setText", function ( element, controller )
 		ScaleWidgetToLabelRightAligned( self, element, 2 )
 		SetStateFromText( self, element, "DefaultState", "NoText" )
@@ -59,12 +62,15 @@ CoD.KillcamWidgetTeamNameR.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				cacItemTitleGlow0:completeAnimation()
 				self.cacItemTitleGlow0:setAlpha( 1 )
 				self.clipFinished( cacItemTitleGlow0, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.14 )
 				self.clipFinished( Glow, {} )
+
 				weaponNameLabel:completeAnimation()
 				self.weaponNameLabel:setAlpha( 1 )
 				self.clipFinished( weaponNameLabel, {} )
@@ -73,18 +79,22 @@ CoD.KillcamWidgetTeamNameR.new = function ( menu, controller )
 		NoText = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				cacItemTitleGlow0:completeAnimation()
 				self.cacItemTitleGlow0:setAlpha( 0 )
 				self.clipFinished( cacItemTitleGlow0, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				weaponNameLabel:completeAnimation()
 				self.weaponNameLabel:setAlpha( 0 )
 				self.clipFinished( weaponNameLabel, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoText",
@@ -93,6 +103,7 @@ CoD.KillcamWidgetTeamNameR.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.cacItemTitleGlow0:close()
 		element.weaponNameLabel:close()

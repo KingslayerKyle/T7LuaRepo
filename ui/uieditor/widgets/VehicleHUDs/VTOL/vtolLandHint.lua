@@ -4,9 +4,11 @@
 CoD.vtolLandHint = InheritFrom( LUI.UIElement )
 CoD.vtolLandHint.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vtolLandHint )
 	self.id = "vtolLandHint"
@@ -28,6 +30,7 @@ CoD.vtolLandHint.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				LandHint:completeAnimation()
 				self.LandHint:setAlpha( 0 )
 				self.clipFinished( LandHint, {} )
@@ -36,6 +39,7 @@ CoD.vtolLandHint.new = function ( menu, controller )
 		Show = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local LandHintFrame2 = function ( LandHint, event )
 					if not event.interrupted then
 						LandHint:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )
@@ -56,12 +60,14 @@ CoD.vtolLandHint.new = function ( menu, controller )
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				LandHint:completeAnimation()
 				self.LandHint:setAlpha( 0 )
 				self.clipFinished( LandHint, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Show",

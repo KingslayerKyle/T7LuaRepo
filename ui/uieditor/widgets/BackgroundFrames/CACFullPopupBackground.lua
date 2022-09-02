@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.SystemOverlays.systemOverlay_alertStatusBar" )
 CoD.CACFullPopupBackground = InheritFrom( LUI.UIElement )
 CoD.CACFullPopupBackground.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CACFullPopupBackground )
 	self.id = "CACFullPopupBackground"

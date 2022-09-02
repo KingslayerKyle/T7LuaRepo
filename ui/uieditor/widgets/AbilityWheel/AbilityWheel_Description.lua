@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.AbilityWheel.AbilityWheel_DescriptionText" )
 CoD.AbilityWheel_Description = InheritFrom( LUI.UIElement )
 CoD.AbilityWheel_Description.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AbilityWheel_Description )
 	self.id = "AbilityWheel_Description"
@@ -75,9 +77,11 @@ CoD.AbilityWheel_Description.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Inactive = function ()
 				self:setupElementClipCounter( 1 )
+
 				local AbilityWheelDescriptionBottomFrame2 = function ( AbilityWheelDescriptionBottom, event )
 					local AbilityWheelDescriptionBottomFrame3 = function ( AbilityWheelDescriptionBottom, event )
 						local AbilityWheelDescriptionBottomFrame4 = function ( AbilityWheelDescriptionBottom, event )
@@ -140,12 +144,15 @@ CoD.AbilityWheel_Description.new = function ( menu, controller )
 		Inactive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AbilityWheelDescriptionBottom:close()
 		element.AbilityWheelDescriptionText:close()

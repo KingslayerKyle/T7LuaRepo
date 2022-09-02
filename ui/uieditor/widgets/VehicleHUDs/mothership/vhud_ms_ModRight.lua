@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Ground.VehicleGround_ModT4" )
 CoD.vhud_ms_ModRight = InheritFrom( LUI.UIElement )
 CoD.vhud_ms_ModRight.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ms_ModRight )
 	self.id = "vhud_ms_ModRight"
@@ -34,6 +36,7 @@ CoD.vhud_ms_ModRight.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local ModT1Frame2 = function ( ModT1, event )
 					local ModT1Frame3 = function ( ModT1, event )
 						local ModT1Frame4 = function ( ModT1, event )
@@ -481,15 +484,18 @@ CoD.vhud_ms_ModRight.new = function ( menu, controller )
 				ModT2:setTopBottom( true, false, 0, 36 )
 				ModT2:setAlpha( 1 )
 				ModT2:registerEventHandler( "transition_complete_keyframe", f2_local1 )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -506,6 +512,7 @@ CoD.vhud_ms_ModRight.new = function ( menu, controller )
 			modelName = "vehicleType"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ModT1:close()
 		element.ModT2:close()

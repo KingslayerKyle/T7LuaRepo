@@ -4,9 +4,11 @@
 CoD.AAR_PT_Numbers = InheritFrom( LUI.UIElement )
 CoD.AAR_PT_Numbers.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AAR_PT_Numbers )
 	self.id = "AAR_PT_Numbers"
@@ -29,9 +31,11 @@ CoD.AAR_PT_Numbers.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Start = function ()
 				self:setupElementClipCounter( 1 )
+
 				local NumbersFrame2 = function ( Numbers, event )
 					if not event.interrupted then
 						Numbers:beginAnimation( "keyframe", 259, false, false, CoD.TweenType.Linear )

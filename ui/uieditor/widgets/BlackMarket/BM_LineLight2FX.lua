@@ -9,6 +9,7 @@ local PostLoadFunc = function ( f1_arg0, f1_arg1 )
 		f1_arg0:playClip( "LineFX_0" .. math.random( 1, f1_local0 ) )
 	end )
 	f1_arg0:addElement( f1_arg0.playClipTimer )
+
 	LUI.OverrideFunction_CallOriginalSecond( f1_arg0, "close", function ( element )
 		element.playClipTimer:close()
 	end )
@@ -17,9 +18,11 @@ end
 CoD.BM_LineLight2FX = InheritFrom( LUI.UIElement )
 CoD.BM_LineLight2FX.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_LineLight2FX )
 	self.id = "BM_LineLight2FX"
@@ -71,18 +74,23 @@ CoD.BM_LineLight2FX.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LineFX_01 = function ()
 				self:setupElementClipCounter( 5 )
+
 				LineLightFX04:completeAnimation()
 				self.LineLightFX04:setAlpha( 0 )
 				self.clipFinished( LineLightFX04, {} )
+
 				LineLightFX03:completeAnimation()
 				self.LineLightFX03:setAlpha( 0 )
 				self.clipFinished( LineLightFX03, {} )
+
 				LineLightFX02:completeAnimation()
 				self.LineLightFX02:setAlpha( 0 )
 				self.clipFinished( LineLightFX02, {} )
+
 				LineLightFX:completeAnimation()
 				self.LineLightFX:setAlpha( 1 )
 				self.clipFinished( LineLightFX, {} )
@@ -108,15 +116,19 @@ CoD.BM_LineLight2FX.new = function ( menu, controller )
 			end,
 			LineFX_02 = function ()
 				self:setupElementClipCounter( 5 )
+
 				LineLightFX04:completeAnimation()
 				self.LineLightFX04:setAlpha( 0 )
 				self.clipFinished( LineLightFX04, {} )
+
 				LineLightFX03:completeAnimation()
 				self.LineLightFX03:setAlpha( 0 )
 				self.clipFinished( LineLightFX03, {} )
+
 				LineLightFX02:completeAnimation()
 				self.LineLightFX02:setAlpha( 1 )
 				self.clipFinished( LineLightFX02, {} )
+
 				LineLightFX:completeAnimation()
 				self.LineLightFX:setAlpha( 0 )
 				self.clipFinished( LineLightFX, {} )
@@ -142,15 +154,19 @@ CoD.BM_LineLight2FX.new = function ( menu, controller )
 			end,
 			LineFX_03 = function ()
 				self:setupElementClipCounter( 5 )
+
 				LineLightFX04:completeAnimation()
 				self.LineLightFX04:setAlpha( 0 )
 				self.clipFinished( LineLightFX04, {} )
+
 				LineLightFX03:completeAnimation()
 				self.LineLightFX03:setAlpha( 1 )
 				self.clipFinished( LineLightFX03, {} )
+
 				LineLightFX02:completeAnimation()
 				self.LineLightFX02:setAlpha( 0 )
 				self.clipFinished( LineLightFX02, {} )
+
 				LineLightFX:completeAnimation()
 				self.LineLightFX:setAlpha( 0 )
 				self.clipFinished( LineLightFX, {} )
@@ -176,15 +192,19 @@ CoD.BM_LineLight2FX.new = function ( menu, controller )
 			end,
 			LineFX_04 = function ()
 				self:setupElementClipCounter( 5 )
+
 				LineLightFX04:completeAnimation()
 				self.LineLightFX04:setAlpha( 1 )
 				self.clipFinished( LineLightFX04, {} )
+
 				LineLightFX03:completeAnimation()
 				self.LineLightFX03:setAlpha( 0 )
 				self.clipFinished( LineLightFX03, {} )
+
 				LineLightFX02:completeAnimation()
 				self.LineLightFX02:setAlpha( 0 )
 				self.clipFinished( LineLightFX02, {} )
+
 				LineLightFX:completeAnimation()
 				self.LineLightFX:setAlpha( 0 )
 				self.clipFinished( LineLightFX, {} )
@@ -210,6 +230,7 @@ CoD.BM_LineLight2FX.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BMTriangleMask:close()
 	end )

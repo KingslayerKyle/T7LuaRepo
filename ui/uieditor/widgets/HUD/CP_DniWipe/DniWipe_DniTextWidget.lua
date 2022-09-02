@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ButtonPanel" )
 CoD.DniWipe_DniTextWidget = InheritFrom( LUI.UIElement )
 CoD.DniWipe_DniTextWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.DniWipe_DniTextWidget )
 	self.id = "DniWipe_DniTextWidget"
@@ -40,6 +42,7 @@ CoD.DniWipe_DniTextWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local DNIFrame2 = function ( DNI, event )
 					local DNIFrame3 = function ( DNI, event )
 						local DNIFrame4 = function ( DNI, event )
@@ -176,10 +179,12 @@ CoD.DniWipe_DniTextWidget.new = function ( menu, controller )
 				DNI:completeAnimation()
 				self.DNI:setAlpha( 0.9 )
 				DNIFrame2( DNI, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel0:close()
 	end )

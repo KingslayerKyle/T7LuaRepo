@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_Button_SM" )
 CoD.MyShowcase_Categories = InheritFrom( LUI.UIElement )
 CoD.MyShowcase_Categories.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MyShowcase_Categories )
 	self.id = "MyShowcase_Categories"
@@ -243,6 +245,7 @@ CoD.MyShowcase_Categories.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Gunsmith:close()
 		element.OutfitsCP:close()

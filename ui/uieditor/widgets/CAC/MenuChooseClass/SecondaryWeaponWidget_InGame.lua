@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.CAC.cac_ListButtonLabelMedium" )
 CoD.SecondaryWeaponWidget_InGame = InheritFrom( LUI.UIElement )
 CoD.SecondaryWeaponWidget_InGame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SecondaryWeaponWidget_InGame )
 	self.id = "SecondaryWeaponWidget_InGame"

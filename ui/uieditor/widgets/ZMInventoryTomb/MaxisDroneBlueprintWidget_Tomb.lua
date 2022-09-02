@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventory.RocketShieldBluePrint.RocketShieldPiec
 CoD.MaxisDroneBlueprintWidget_Tomb = InheritFrom( LUI.UIElement )
 CoD.MaxisDroneBlueprintWidget_Tomb.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MaxisDroneBlueprintWidget_Tomb )
 	self.id = "MaxisDroneBlueprintWidget_Tomb"
@@ -168,15 +170,19 @@ CoD.MaxisDroneBlueprintWidget_Tomb.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				MaxisDronePieceWidget1:completeAnimation()
 				self.MaxisDronePieceWidget1:setAlpha( 0 )
 				self.clipFinished( MaxisDronePieceWidget1, {} )
+
 				MaxisDronePieceWidget2:completeAnimation()
 				self.MaxisDronePieceWidget2:setAlpha( 0 )
 				self.clipFinished( MaxisDronePieceWidget2, {} )
+
 				MaxisDronePieceWidget3:completeAnimation()
 				self.MaxisDronePieceWidget3:setAlpha( 0 )
 				self.clipFinished( MaxisDronePieceWidget3, {} )
@@ -185,21 +191,25 @@ CoD.MaxisDroneBlueprintWidget_Tomb.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				MaxisDronePieceWidget1:completeAnimation()
 				self.MaxisDronePieceWidget1:setLeftRight( true, false, 13.5, 102.5 )
 				self.MaxisDronePieceWidget1:setTopBottom( true, false, 21, 110 )
 				self.MaxisDronePieceWidget1:setAlpha( 1 )
 				self.MaxisDronePieceWidget1:setScale( 1.05 )
 				self.clipFinished( MaxisDronePieceWidget1, {} )
+
 				MaxisDronePieceWidget2:completeAnimation()
 				self.MaxisDronePieceWidget2:setLeftRight( true, false, 108.5, 197.5 )
 				self.MaxisDronePieceWidget2:setTopBottom( true, false, 20, 109 )
 				self.MaxisDronePieceWidget2:setAlpha( 1 )
 				self.MaxisDronePieceWidget2:setScale( 1 )
 				self.clipFinished( MaxisDronePieceWidget2, {} )
+
 				MaxisDronePieceWidget3:completeAnimation()
 				self.MaxisDronePieceWidget3:setLeftRight( true, false, 197.5, 286.5 )
 				self.MaxisDronePieceWidget3:setTopBottom( true, false, 20, 109 )
@@ -211,6 +221,7 @@ CoD.MaxisDroneBlueprintWidget_Tomb.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local bgFrame2 = function ( bg, event )
 					local bgFrame3 = function ( bg, event )
 						local bgFrame4 = function ( bg, event )
@@ -247,18 +258,21 @@ CoD.MaxisDroneBlueprintWidget_Tomb.new = function ( menu, controller )
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				bgFrame2( bg, {} )
+
 				MaxisDronePieceWidget1:completeAnimation()
 				self.MaxisDronePieceWidget1:setLeftRight( true, false, 41, 130 )
 				self.MaxisDronePieceWidget1:setTopBottom( true, false, 19, 108 )
 				self.MaxisDronePieceWidget1:setAlpha( 1 )
 				self.MaxisDronePieceWidget1:setScale( 0.89 )
 				self.clipFinished( MaxisDronePieceWidget1, {} )
+
 				MaxisDronePieceWidget2:completeAnimation()
 				self.MaxisDronePieceWidget2:setLeftRight( true, false, 125.5, 214.5 )
 				self.MaxisDronePieceWidget2:setTopBottom( true, false, 16, 105 )
 				self.MaxisDronePieceWidget2:setAlpha( 1 )
 				self.MaxisDronePieceWidget2:setScale( 0.82 )
 				self.clipFinished( MaxisDronePieceWidget2, {} )
+
 				MaxisDronePieceWidget3:completeAnimation()
 				self.MaxisDronePieceWidget3:setLeftRight( true, false, 205.5, 294.5 )
 				self.MaxisDronePieceWidget3:setTopBottom( true, false, 16.5, 105.5 )
@@ -268,6 +282,7 @@ CoD.MaxisDroneBlueprintWidget_Tomb.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Scoreboard",
@@ -298,6 +313,7 @@ CoD.MaxisDroneBlueprintWidget_Tomb.new = function ( menu, controller )
 			modelName = "zmInventory.show_maxis_drone_parts_widget"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MaxisDronePieceWidget1:close()
 		element.MaxisDronePieceWidget2:close()

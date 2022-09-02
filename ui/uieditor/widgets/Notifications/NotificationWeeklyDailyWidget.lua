@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Notifications.NotificationWeeklyDailyTextWidget" )
 CoD.NotificationWeeklyDailyWidget = InheritFrom( LUI.UIElement )
 CoD.NotificationWeeklyDailyWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.NotificationWeeklyDailyWidget )
 	self.id = "NotificationWeeklyDailyWidget"
@@ -33,6 +35,7 @@ CoD.NotificationWeeklyDailyWidget.new = function ( menu, controller )
 	NotificationWeeklyDailyTextWidget:setTopBottom( false, true, -16.92, 2.08 )
 	NotificationWeeklyDailyTextWidget:setScale( 0.76 )
 	NotificationWeeklyDailyTextWidget.WeeklyText:setText( Engine.Localize( "MPUI_BM_CONTRACT_WEEKLY" ) )
+
 	LUI.OverrideFunction_CallOriginalFirst( NotificationWeeklyDailyTextWidget, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 1 )
 	end )
@@ -43,12 +46,14 @@ CoD.NotificationWeeklyDailyWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				weeklydailybacker:completeAnimation()
 				self.weeklydailybacker:setAlpha( 1 )
 				self.clipFinished( weeklydailybacker, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.NotificationWeeklyDailyTextWidget:close()
 	end )

@@ -4,9 +4,11 @@
 CoD.SpikeLuancherSpikeCounter_TitleReady = InheritFrom( LUI.UIElement )
 CoD.SpikeLuancherSpikeCounter_TitleReady.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpikeLuancherSpikeCounter_TitleReady )
 	self.id = "SpikeLuancherSpikeCounter_TitleReady"
@@ -41,12 +43,15 @@ CoD.SpikeLuancherSpikeCounter_TitleReady.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Ready:completeAnimation()
 				self.Ready:setAlpha( 0 )
 				self.clipFinished( Ready, {} )
+
 				Standby:completeAnimation()
 				self.Standby:setAlpha( 1 )
 				self.clipFinished( Standby, {} )
+
 				Blast:completeAnimation()
 				self.Blast:setAlpha( 0 )
 				self.clipFinished( Blast, {} )
@@ -55,9 +60,11 @@ CoD.SpikeLuancherSpikeCounter_TitleReady.new = function ( menu, controller )
 		Blasting = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Ready:completeAnimation()
 				self.Ready:setAlpha( 0 )
 				self.clipFinished( Ready, {} )
+
 				Standby:completeAnimation()
 				self.Standby:setAlpha( 0 )
 				self.clipFinished( Standby, {} )
@@ -129,10 +136,12 @@ CoD.SpikeLuancherSpikeCounter_TitleReady.new = function ( menu, controller )
 				Blast:completeAnimation()
 				self.Blast:setAlpha( 1 )
 				BlastFrame2( Blast, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				local StandbyFrame2 = function ( Standby, event )
 					local StandbyFrame3 = function ( Standby, event )
 						local StandbyFrame4 = function ( Standby, event )
@@ -200,12 +209,15 @@ CoD.SpikeLuancherSpikeCounter_TitleReady.new = function ( menu, controller )
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Ready:completeAnimation()
 				self.Ready:setAlpha( 1 )
 				self.clipFinished( Ready, {} )
+
 				Standby:completeAnimation()
 				self.Standby:setAlpha( 0 )
 				self.clipFinished( Standby, {} )
+
 				Blast:completeAnimation()
 				self.Blast:setAlpha( 0 )
 				self.clipFinished( Blast, {} )

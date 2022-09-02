@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.HUD.CP_DamageWidget.DamageWidget_Panel" )
 CoD.AmmoWidget_PanelContainer = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_PanelContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_PanelContainer )
 	self.id = "AmmoWidget_PanelContainer"
@@ -58,11 +60,13 @@ CoD.AmmoWidget_PanelContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelClip:completeAnimation()
 				self.PanelClip:setLeftRight( false, true, -228, -156 )
 				self.PanelClip:setTopBottom( true, false, 34.34, 79.67 )
 				self.PanelClip:setAlpha( 1 )
 				self.clipFinished( PanelClip, {} )
+
 				PanelAmmo:completeAnimation()
 				self.PanelAmmo:setLeftRight( false, true, -158.34, -87.01 )
 				self.PanelAmmo:setTopBottom( true, false, 38.66, 80 )
@@ -72,11 +76,13 @@ CoD.AmmoWidget_PanelContainer.new = function ( menu, controller )
 		Knife = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelClip:completeAnimation()
 				self.PanelClip:setLeftRight( false, true, -228, -196 )
 				self.PanelClip:setTopBottom( true, false, 34.34, 79.67 )
 				self.PanelClip:setAlpha( 0 )
 				self.clipFinished( PanelClip, {} )
+
 				PanelAmmo:completeAnimation()
 				self.PanelAmmo:setLeftRight( false, true, -195.34, -87.01 )
 				self.PanelAmmo:setTopBottom( true, false, 38.66, 80 )
@@ -86,11 +92,13 @@ CoD.AmmoWidget_PanelContainer.new = function ( menu, controller )
 		Weapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelClip:completeAnimation()
 				self.PanelClip:setLeftRight( false, true, -228, -156 )
 				self.PanelClip:setTopBottom( true, false, 34.34, 79.67 )
 				self.PanelClip:setAlpha( 1 )
 				self.clipFinished( PanelClip, {} )
+
 				PanelAmmo:completeAnimation()
 				self.PanelAmmo:setLeftRight( false, true, -158.34, -87.01 )
 				self.PanelAmmo:setTopBottom( true, false, 38.66, 80 )
@@ -98,11 +106,13 @@ CoD.AmmoWidget_PanelContainer.new = function ( menu, controller )
 			end,
 			Knife = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Weapon3Digits = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PanelClip:completeAnimation()
 				self.PanelClip:setLeftRight( false, true, -241, -156 )
 				self.PanelClip:setTopBottom( true, false, 34.34, 79.67 )
@@ -112,12 +122,14 @@ CoD.AmmoWidget_PanelContainer.new = function ( menu, controller )
 		Prologue = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PanelOctagon:completeAnimation()
 				self.PanelOctagon:setAlpha( 0 )
 				self.clipFinished( PanelOctagon, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PanelLethal:close()
 		element.PanelTactical:close()

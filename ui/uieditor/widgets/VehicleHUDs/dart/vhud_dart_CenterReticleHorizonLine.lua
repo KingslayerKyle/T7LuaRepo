@@ -4,9 +4,11 @@
 CoD.vhud_dart_CenterReticleHorizonLine = InheritFrom( LUI.UIElement )
 CoD.vhud_dart_CenterReticleHorizonLine.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_dart_CenterReticleHorizonLine )
 	self.id = "vhud_dart_CenterReticleHorizonLine"

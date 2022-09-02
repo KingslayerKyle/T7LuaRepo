@@ -4,9 +4,11 @@
 CoD.ThrustMeterChevron = InheritFrom( LUI.UIElement )
 CoD.ThrustMeterChevron.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ThrustMeterChevron )
 	self.id = "ThrustMeterChevron"
@@ -34,9 +36,11 @@ CoD.ThrustMeterChevron.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Drain = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image00:completeAnimation()
 				self.Image00:setLeftRight( false, false, 4, 12 )
 				self.Image00:setTopBottom( false, true, -12, 4 )
@@ -46,6 +50,7 @@ CoD.ThrustMeterChevron.new = function ( menu, controller )
 			end,
 			Fill = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image00:completeAnimation()
 				self.Image00:setLeftRight( false, false, 5, 13 )
 				self.Image00:setTopBottom( false, true, -12, 4 )

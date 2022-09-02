@@ -22,9 +22,11 @@ end
 CoD.BlackHat_Internal = InheritFrom( LUI.UIElement )
 CoD.BlackHat_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BlackHat_Internal )
 	self.id = "BlackHat_Internal"
@@ -225,6 +227,7 @@ CoD.BlackHat_Internal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 22 )
+
 				BgScanning:completeAnimation()
 				self.BgScanning:setAlpha( 1 )
 				self.clipFinished( BgScanning, {} )
@@ -312,35 +315,45 @@ CoD.BlackHat_Internal.new = function ( menu, controller )
 				self.BgScanningDetail:setAlpha( 0 )
 				self.BgScanningDetail:setScale( 0.93 )
 				BgScanningDetailFrame2( BgScanningDetail, {} )
+
 				BgHacking:completeAnimation()
 				self.BgHacking:setAlpha( 0 )
 				self.clipFinished( BgHacking, {} )
+
 				BgHackingDetail:completeAnimation()
 				self.BgHackingDetail:setAlpha( 0 )
 				self.clipFinished( BgHackingDetail, {} )
+
 				BgBreaching:completeAnimation()
 				self.BgBreaching:setAlpha( 0 )
 				self.clipFinished( BgBreaching, {} )
+
 				BgBreachingDetail:completeAnimation()
 				self.BgBreachingDetail:setAlpha( 0 )
 				self.clipFinished( BgBreachingDetail, {} )
+
 				BgError:completeAnimation()
 				self.BgError:setAlpha( 0 )
 				self.clipFinished( BgError, {} )
+
 				BgErrorDetail:completeAnimation()
 				self.BgErrorDetail:setAlpha( 0 )
 				self.clipFinished( BgErrorDetail, {} )
+
 				BgErrorXmarks:completeAnimation()
 				self.BgErrorXmarks:setAlpha( 0 )
 				self.BgErrorXmarks:setScale( 1 )
 				self.clipFinished( BgErrorXmarks, {} )
+
 				BgErrorStripes:completeAnimation()
 				self.BgErrorStripes:setAlpha( 0 )
 				self.clipFinished( BgErrorStripes, {} )
+
 				BgErrorIcon:completeAnimation()
 				self.BgErrorIcon:setAlpha( 0 )
 				self.BgErrorIcon:setScale( 1 )
 				self.clipFinished( BgErrorIcon, {} )
+
 				BfErrorIconGlow:completeAnimation()
 				self.BfErrorIconGlow:setAlpha( 0 )
 				self.clipFinished( BfErrorIconGlow, {} )
@@ -361,10 +374,12 @@ CoD.BlackHat_Internal.new = function ( menu, controller )
 				IconScanning:setAlpha( 0 )
 				IconScanning:setScale( 0.9 )
 				IconScanning:registerEventHandler( "transition_complete_keyframe", f4_local1 )
+
 				IconBreaching:completeAnimation()
 				self.IconBreaching:setAlpha( 0 )
 				self.IconBreaching:setScale( 0.8 )
 				self.clipFinished( IconBreaching, {} )
+
 				IconHacking:completeAnimation()
 				self.IconHacking:setAlpha( 0 )
 				self.IconHacking:setScale( 0.8 )
@@ -389,18 +404,23 @@ CoD.BlackHat_Internal.new = function ( menu, controller )
 				PercentText:beginAnimation( "keyframe", 870, false, false, CoD.TweenType.Linear )
 				PercentText:setAlpha( 1 )
 				PercentText:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 0 )
 				self.clipFinished( Spinner, {} )
+
 				HackingBarRight:completeAnimation()
 				self.HackingBarRight:setAlpha( 1 )
 				self.clipFinished( HackingBarRight, {} )
+
 				HackingBarLeft:completeAnimation()
 				self.HackingBarLeft:setAlpha( 1 )
 				self.clipFinished( HackingBarLeft, {} )
+
 				WaveformBlackHat:completeAnimation()
 				self.WaveformBlackHat:setAlpha( 1 )
 				self.clipFinished( WaveformBlackHat, {} )
+
 				blackhatEmp0:completeAnimation()
 				self.blackhatEmp0:setAlpha( 0 )
 				self.clipFinished( blackhatEmp0, {} )
@@ -409,9 +429,11 @@ CoD.BlackHat_Internal.new = function ( menu, controller )
 		TeamHacking = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 22 )
+
 				BgScanning:completeAnimation()
 				self.BgScanning:setAlpha( 0 )
 				self.clipFinished( BgScanning, {} )
+
 				BgScanningDetail:completeAnimation()
 				self.BgScanningDetail:setAlpha( 0 )
 				self.BgScanningDetail:setScale( 1 )
@@ -446,36 +468,46 @@ CoD.BlackHat_Internal.new = function ( menu, controller )
 				BgHackingDetail:completeAnimation()
 				self.BgHackingDetail:setAlpha( 0 )
 				BgHackingDetailFrame2( BgHackingDetail, {} )
+
 				BgBreaching:completeAnimation()
 				self.BgBreaching:setAlpha( 0 )
 				self.clipFinished( BgBreaching, {} )
+
 				BgBreachingDetail:completeAnimation()
 				self.BgBreachingDetail:setAlpha( 0 )
 				self.clipFinished( BgBreachingDetail, {} )
+
 				BgError:completeAnimation()
 				self.BgError:setAlpha( 0 )
 				self.clipFinished( BgError, {} )
+
 				BgErrorDetail:completeAnimation()
 				self.BgErrorDetail:setAlpha( 0 )
 				self.clipFinished( BgErrorDetail, {} )
+
 				BgErrorXmarks:completeAnimation()
 				self.BgErrorXmarks:setAlpha( 0 )
 				self.BgErrorXmarks:setScale( 1 )
 				self.clipFinished( BgErrorXmarks, {} )
+
 				BgErrorStripes:completeAnimation()
 				self.BgErrorStripes:setAlpha( 0 )
 				self.clipFinished( BgErrorStripes, {} )
+
 				BgErrorIcon:completeAnimation()
 				self.BgErrorIcon:setAlpha( 0 )
 				self.BgErrorIcon:setScale( 1 )
 				self.clipFinished( BgErrorIcon, {} )
+
 				BfErrorIconGlow:completeAnimation()
 				self.BfErrorIconGlow:setAlpha( 0 )
 				self.clipFinished( BfErrorIconGlow, {} )
+
 				IconScanning:completeAnimation()
 				self.IconScanning:setAlpha( 0 )
 				self.IconScanning:setScale( 0.8 )
 				self.clipFinished( IconScanning, {} )
+
 				IconBreaching:completeAnimation()
 				self.IconBreaching:setAlpha( 0 )
 				self.IconBreaching:setScale( 0.8 )
@@ -517,18 +549,23 @@ CoD.BlackHat_Internal.new = function ( menu, controller )
 				PercentText:beginAnimation( "keyframe", 870, false, false, CoD.TweenType.Linear )
 				PercentText:setAlpha( 1 )
 				PercentText:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 0 )
 				self.clipFinished( Spinner, {} )
+
 				HackingBarRight:completeAnimation()
 				self.HackingBarRight:setAlpha( 1 )
 				self.clipFinished( HackingBarRight, {} )
+
 				HackingBarLeft:completeAnimation()
 				self.HackingBarLeft:setAlpha( 1 )
 				self.clipFinished( HackingBarLeft, {} )
+
 				WaveformBlackHat:completeAnimation()
 				self.WaveformBlackHat:setAlpha( 1 )
 				self.clipFinished( WaveformBlackHat, {} )
+
 				blackhatEmp0:completeAnimation()
 				self.blackhatEmp0:setAlpha( 0 )
 				self.clipFinished( blackhatEmp0, {} )
@@ -537,9 +574,11 @@ CoD.BlackHat_Internal.new = function ( menu, controller )
 		Hacking = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 22 )
+
 				BgScanning:completeAnimation()
 				self.BgScanning:setAlpha( 0 )
 				self.clipFinished( BgScanning, {} )
+
 				BgScanningDetail:completeAnimation()
 				self.BgScanningDetail:setAlpha( 0 )
 				self.BgScanningDetail:setScale( 1 )
@@ -574,36 +613,46 @@ CoD.BlackHat_Internal.new = function ( menu, controller )
 				BgHackingDetail:completeAnimation()
 				self.BgHackingDetail:setAlpha( 0 )
 				BgHackingDetailFrame2( BgHackingDetail, {} )
+
 				BgBreaching:completeAnimation()
 				self.BgBreaching:setAlpha( 0 )
 				self.clipFinished( BgBreaching, {} )
+
 				BgBreachingDetail:completeAnimation()
 				self.BgBreachingDetail:setAlpha( 0 )
 				self.clipFinished( BgBreachingDetail, {} )
+
 				BgError:completeAnimation()
 				self.BgError:setAlpha( 0 )
 				self.clipFinished( BgError, {} )
+
 				BgErrorDetail:completeAnimation()
 				self.BgErrorDetail:setAlpha( 0 )
 				self.clipFinished( BgErrorDetail, {} )
+
 				BgErrorXmarks:completeAnimation()
 				self.BgErrorXmarks:setAlpha( 0 )
 				self.BgErrorXmarks:setScale( 1 )
 				self.clipFinished( BgErrorXmarks, {} )
+
 				BgErrorStripes:completeAnimation()
 				self.BgErrorStripes:setAlpha( 0 )
 				self.clipFinished( BgErrorStripes, {} )
+
 				BgErrorIcon:completeAnimation()
 				self.BgErrorIcon:setAlpha( 0 )
 				self.BgErrorIcon:setScale( 1 )
 				self.clipFinished( BgErrorIcon, {} )
+
 				BfErrorIconGlow:completeAnimation()
 				self.BfErrorIconGlow:setAlpha( 0 )
 				self.clipFinished( BfErrorIconGlow, {} )
+
 				IconScanning:completeAnimation()
 				self.IconScanning:setAlpha( 0 )
 				self.IconScanning:setScale( 0.8 )
 				self.clipFinished( IconScanning, {} )
+
 				IconBreaching:completeAnimation()
 				self.IconBreaching:setAlpha( 0 )
 				self.IconBreaching:setScale( 0.8 )
@@ -645,18 +694,23 @@ CoD.BlackHat_Internal.new = function ( menu, controller )
 				PercentText:beginAnimation( "keyframe", 870, false, false, CoD.TweenType.Linear )
 				PercentText:setAlpha( 1 )
 				PercentText:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 0 )
 				self.clipFinished( Spinner, {} )
+
 				HackingBarRight:completeAnimation()
 				self.HackingBarRight:setAlpha( 1 )
 				self.clipFinished( HackingBarRight, {} )
+
 				HackingBarLeft:completeAnimation()
 				self.HackingBarLeft:setAlpha( 1 )
 				self.clipFinished( HackingBarLeft, {} )
+
 				WaveformBlackHat:completeAnimation()
 				self.WaveformBlackHat:setAlpha( 1 )
 				self.clipFinished( WaveformBlackHat, {} )
+
 				blackhatEmp0:completeAnimation()
 				self.blackhatEmp0:setAlpha( 0 )
 				self.clipFinished( blackhatEmp0, {} )
@@ -665,16 +719,20 @@ CoD.BlackHat_Internal.new = function ( menu, controller )
 		Breaching = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 22 )
+
 				BgScanning:completeAnimation()
 				self.BgScanning:setAlpha( 1 )
 				self.clipFinished( BgScanning, {} )
+
 				BgScanningDetail:completeAnimation()
 				self.BgScanningDetail:setAlpha( 1 )
 				self.BgScanningDetail:setScale( 1 )
 				self.clipFinished( BgScanningDetail, {} )
+
 				BgHacking:completeAnimation()
 				self.BgHacking:setAlpha( 0 )
 				self.clipFinished( BgHacking, {} )
+
 				BgHackingDetail:completeAnimation()
 				self.BgHackingDetail:setAlpha( 0 )
 				self.clipFinished( BgHackingDetail, {} )
@@ -708,23 +766,29 @@ CoD.BlackHat_Internal.new = function ( menu, controller )
 				BgBreachingDetail:completeAnimation()
 				self.BgBreachingDetail:setAlpha( 0 )
 				BgBreachingDetailFrame2( BgBreachingDetail, {} )
+
 				BgError:completeAnimation()
 				self.BgError:setAlpha( 0 )
 				self.clipFinished( BgError, {} )
+
 				BgErrorDetail:completeAnimation()
 				self.BgErrorDetail:setAlpha( 0 )
 				self.clipFinished( BgErrorDetail, {} )
+
 				BgErrorXmarks:completeAnimation()
 				self.BgErrorXmarks:setAlpha( 0 )
 				self.BgErrorXmarks:setScale( 1 )
 				self.clipFinished( BgErrorXmarks, {} )
+
 				BgErrorStripes:completeAnimation()
 				self.BgErrorStripes:setAlpha( 0 )
 				self.clipFinished( BgErrorStripes, {} )
+
 				BgErrorIcon:completeAnimation()
 				self.BgErrorIcon:setAlpha( 0 )
 				self.BgErrorIcon:setScale( 1 )
 				self.clipFinished( BgErrorIcon, {} )
+
 				BfErrorIconGlow:completeAnimation()
 				self.BfErrorIconGlow:setAlpha( 0 )
 				self.clipFinished( BfErrorIconGlow, {} )
@@ -762,6 +826,7 @@ CoD.BlackHat_Internal.new = function ( menu, controller )
 				IconBreaching:setAlpha( 0 )
 				IconBreaching:setScale( 0.9 )
 				IconBreaching:registerEventHandler( "transition_complete_keyframe", f24_local3 )
+
 				IconHacking:completeAnimation()
 				self.IconHacking:setAlpha( 0 )
 				self.IconHacking:setScale( 0.8 )
@@ -786,18 +851,23 @@ CoD.BlackHat_Internal.new = function ( menu, controller )
 				PercentText:beginAnimation( "keyframe", 870, false, false, CoD.TweenType.Linear )
 				PercentText:setAlpha( 1 )
 				PercentText:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 0 )
 				self.clipFinished( Spinner, {} )
+
 				HackingBarRight:completeAnimation()
 				self.HackingBarRight:setAlpha( 1 )
 				self.clipFinished( HackingBarRight, {} )
+
 				HackingBarLeft:completeAnimation()
 				self.HackingBarLeft:setAlpha( 1 )
 				self.clipFinished( HackingBarLeft, {} )
+
 				WaveformBlackHat:completeAnimation()
 				self.WaveformBlackHat:setAlpha( 1 )
 				self.clipFinished( WaveformBlackHat, {} )
+
 				blackhatEmp0:completeAnimation()
 				self.blackhatEmp0:setAlpha( 0 )
 				self.clipFinished( blackhatEmp0, {} )
@@ -806,22 +876,28 @@ CoD.BlackHat_Internal.new = function ( menu, controller )
 		Error = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 22 )
+
 				BgScanning:completeAnimation()
 				self.BgScanning:setAlpha( 1 )
 				self.clipFinished( BgScanning, {} )
+
 				BgScanningDetail:completeAnimation()
 				self.BgScanningDetail:setAlpha( 1 )
 				self.BgScanningDetail:setScale( 1 )
 				self.clipFinished( BgScanningDetail, {} )
+
 				BgHacking:completeAnimation()
 				self.BgHacking:setAlpha( 0 )
 				self.clipFinished( BgHacking, {} )
+
 				BgHackingDetail:completeAnimation()
 				self.BgHackingDetail:setAlpha( 0 )
 				self.clipFinished( BgHackingDetail, {} )
+
 				BgBreaching:completeAnimation()
 				self.BgBreaching:setAlpha( 0 )
 				self.clipFinished( BgBreaching, {} )
+
 				BgBreachingDetail:completeAnimation()
 				self.BgBreachingDetail:setAlpha( 0 )
 				self.clipFinished( BgBreachingDetail, {} )
@@ -1052,36 +1128,46 @@ CoD.BlackHat_Internal.new = function ( menu, controller )
 				BfErrorIconGlow:beginAnimation( "keyframe", 400, false, false, CoD.TweenType.Linear )
 				BfErrorIconGlow:setAlpha( 0 )
 				BfErrorIconGlow:registerEventHandler( "transition_complete_keyframe", f30_local5 )
+
 				IconScanning:completeAnimation()
 				self.IconScanning:setAlpha( 0 )
 				self.IconScanning:setScale( 0.8 )
 				self.clipFinished( IconScanning, {} )
+
 				IconBreaching:completeAnimation()
 				self.IconBreaching:setAlpha( 0 )
 				self.IconBreaching:setScale( 0.8 )
 				self.clipFinished( IconBreaching, {} )
+
 				IconHacking:completeAnimation()
 				self.IconHacking:setAlpha( 0 )
 				self.IconHacking:setScale( 0.8 )
 				self.clipFinished( IconHacking, {} )
+
 				StatusText:completeAnimation()
 				self.StatusText:setAlpha( 1 )
 				self.clipFinished( StatusText, {} )
+
 				PercentText:completeAnimation()
 				self.PercentText:setAlpha( 0 )
 				self.clipFinished( PercentText, {} )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 0 )
 				self.clipFinished( Spinner, {} )
+
 				HackingBarRight:completeAnimation()
 				self.HackingBarRight:setAlpha( 1 )
 				self.clipFinished( HackingBarRight, {} )
+
 				HackingBarLeft:completeAnimation()
 				self.HackingBarLeft:setAlpha( 1 )
 				self.clipFinished( HackingBarLeft, {} )
+
 				WaveformBlackHat:completeAnimation()
 				self.WaveformBlackHat:setAlpha( 1 )
 				self.clipFinished( WaveformBlackHat, {} )
+
 				blackhatEmp0:completeAnimation()
 				self.blackhatEmp0:setAlpha( 0 )
 				self.clipFinished( blackhatEmp0, {} )
@@ -1090,81 +1176,104 @@ CoD.BlackHat_Internal.new = function ( menu, controller )
 		EMP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 22 )
+
 				BgScanning:completeAnimation()
 				self.BgScanning:setAlpha( 0 )
 				self.clipFinished( BgScanning, {} )
+
 				BgScanningDetail:completeAnimation()
 				self.BgScanningDetail:setAlpha( 0 )
 				self.BgScanningDetail:setScale( 1 )
 				self.clipFinished( BgScanningDetail, {} )
+
 				BgHacking:completeAnimation()
 				self.BgHacking:setAlpha( 0 )
 				self.clipFinished( BgHacking, {} )
+
 				BgHackingDetail:completeAnimation()
 				self.BgHackingDetail:setAlpha( 0 )
 				self.clipFinished( BgHackingDetail, {} )
+
 				BgBreaching:completeAnimation()
 				self.BgBreaching:setAlpha( 0 )
 				self.clipFinished( BgBreaching, {} )
+
 				BgBreachingDetail:completeAnimation()
 				self.BgBreachingDetail:setAlpha( 0 )
 				self.clipFinished( BgBreachingDetail, {} )
+
 				BgError:completeAnimation()
 				self.BgError:setAlpha( 0 )
 				self.clipFinished( BgError, {} )
+
 				BgErrorDetail:completeAnimation()
 				self.BgErrorDetail:setAlpha( 0 )
 				self.clipFinished( BgErrorDetail, {} )
+
 				BgErrorXmarks:completeAnimation()
 				self.BgErrorXmarks:setAlpha( 0 )
 				self.BgErrorXmarks:setScale( 1 )
 				self.clipFinished( BgErrorXmarks, {} )
+
 				BgErrorStripes:completeAnimation()
 				self.BgErrorStripes:setAlpha( 0 )
 				self.clipFinished( BgErrorStripes, {} )
+
 				BgErrorIcon:completeAnimation()
 				self.BgErrorIcon:setAlpha( 0 )
 				self.BgErrorIcon:setScale( 1 )
 				self.clipFinished( BgErrorIcon, {} )
+
 				BfErrorIconGlow:completeAnimation()
 				self.BfErrorIconGlow:setAlpha( 0 )
 				self.clipFinished( BfErrorIconGlow, {} )
+
 				IconScanning:completeAnimation()
 				self.IconScanning:setAlpha( 0 )
 				self.IconScanning:setScale( 0.8 )
 				self.clipFinished( IconScanning, {} )
+
 				IconBreaching:completeAnimation()
 				self.IconBreaching:setAlpha( 0 )
 				self.IconBreaching:setScale( 0.8 )
 				self.clipFinished( IconBreaching, {} )
+
 				IconHacking:completeAnimation()
 				self.IconHacking:setAlpha( 0 )
 				self.IconHacking:setScale( 0.8 )
 				self.clipFinished( IconHacking, {} )
+
 				StatusText:completeAnimation()
 				self.StatusText:setAlpha( 0 )
 				self.clipFinished( StatusText, {} )
+
 				PercentText:completeAnimation()
 				self.PercentText:setAlpha( 0 )
 				self.clipFinished( PercentText, {} )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 0 )
 				self.clipFinished( Spinner, {} )
+
 				HackingBarRight:completeAnimation()
 				self.HackingBarRight:setAlpha( 0 )
 				self.clipFinished( HackingBarRight, {} )
+
 				HackingBarLeft:completeAnimation()
 				self.HackingBarLeft:setAlpha( 0 )
 				self.clipFinished( HackingBarLeft, {} )
+
 				WaveformBlackHat:completeAnimation()
 				self.WaveformBlackHat:setAlpha( 0 )
 				self.clipFinished( WaveformBlackHat, {} )
+
 				blackhatEmp0:completeAnimation()
 				self.blackhatEmp0:setAlpha( 1 )
 				self.clipFinished( blackhatEmp0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "TeamHacking",
@@ -1221,6 +1330,7 @@ CoD.BlackHat_Internal.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_EMP_ACTIVE
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.HackingBarRight:close()
 		element.HackingBarLeft:close()

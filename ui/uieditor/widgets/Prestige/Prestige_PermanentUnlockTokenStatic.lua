@@ -4,9 +4,11 @@
 CoD.Prestige_PermanentUnlockTokenStatic = InheritFrom( LUI.UIElement )
 CoD.Prestige_PermanentUnlockTokenStatic.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Prestige_PermanentUnlockTokenStatic )
 	self.id = "Prestige_PermanentUnlockTokenStatic"
@@ -55,15 +57,19 @@ CoD.Prestige_PermanentUnlockTokenStatic.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				imgTokenBox:completeAnimation()
 				self.imgTokenBox:setAlpha( 0 )
 				self.clipFinished( imgTokenBox, {} )
+
 				imgIconTokenMult:completeAnimation()
 				self.imgIconTokenMult:setAlpha( 0 )
 				self.clipFinished( imgIconTokenMult, {} )
+
 				imgIconToken:completeAnimation()
 				self.imgIconToken:setAlpha( 0 )
 				self.clipFinished( imgIconToken, {} )
+
 				glow:completeAnimation()
 				self.glow:setAlpha( RandomAddPercent( -15, 0 ) )
 				self.clipFinished( glow, {} )
@@ -72,14 +78,17 @@ CoD.Prestige_PermanentUnlockTokenStatic.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				imgTokenBox:completeAnimation()
 				self.imgTokenBox:setLeftRight( true, true, -1.89, 3.89 )
 				self.imgTokenBox:setTopBottom( true, true, -4, 4 )
 				self.imgTokenBox:setAlpha( 0 )
 				self.clipFinished( imgTokenBox, {} )
+
 				imgIconTokenMult:completeAnimation()
 				self.imgIconTokenMult:setAlpha( 0.43 )
 				self.clipFinished( imgIconTokenMult, {} )
+
 				imgIconToken:completeAnimation()
 				self.imgIconToken:setAlpha( 0.92 )
 				self.clipFinished( imgIconToken, {} )
@@ -108,6 +117,7 @@ CoD.Prestige_PermanentUnlockTokenStatic.new = function ( menu, controller )
 				glow:completeAnimation()
 				self.glow:setAlpha( RandomAddPercent( -15, 0.26 ) )
 				glowFrame2( glow, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

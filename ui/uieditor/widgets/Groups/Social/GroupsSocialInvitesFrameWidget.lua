@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Groups.GroupsSummary" )
 CoD.GroupsSocialInvitesFrameWidget = InheritFrom( LUI.UIElement )
 CoD.GroupsSocialInvitesFrameWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsSocialInvitesFrameWidget )
 	self.id = "GroupsSocialInvitesFrameWidget"
@@ -93,6 +95,7 @@ CoD.GroupsSocialInvitesFrameWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.InvitesList:close()
 		element.GroupInvitesTitle:close()

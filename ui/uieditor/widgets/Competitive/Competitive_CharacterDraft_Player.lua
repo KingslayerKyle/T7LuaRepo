@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Competitive.Competitive_CharacterDraft_CharacterSe
 CoD.Competitive_CharacterDraft_Player = InheritFrom( LUI.UIElement )
 CoD.Competitive_CharacterDraft_Player.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Competitive_CharacterDraft_Player )
 	self.id = "Competitive_CharacterDraft_Player"
@@ -242,39 +244,49 @@ CoD.Competitive_CharacterDraft_Player.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		ItemRestriction = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				FEButtonPanel1:completeAnimation()
 				self.FEButtonPanel1:setLeftRight( true, false, 50.21, 373.79 )
 				self.FEButtonPanel1:setTopBottom( true, false, 21.5, 49 )
 				self.clipFinished( FEButtonPanel1, {} )
+
 				FEButtonPanel2:completeAnimation()
 				self.FEButtonPanel2:setAlpha( 0 )
 				self.clipFinished( FEButtonPanel2, {} )
+
 				Name:completeAnimation()
 				self.Name:setLeftRight( true, false, 124.44, 372.59 )
 				self.Name:setTopBottom( true, false, 25, 45 )
 				self.clipFinished( Name, {} )
+
 				CharacterName:completeAnimation()
 				self.CharacterName:setAlpha( 0 )
 				self.clipFinished( CharacterName, {} )
+
 				CharacterAbility:completeAnimation()
 				self.CharacterAbility:setAlpha( 0 )
 				self.clipFinished( CharacterAbility, {} )
+
 				RankBackground:completeAnimation()
 				self.RankBackground:setAlpha( 0 )
 				self.clipFinished( RankBackground, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setLeftRight( true, false, 50, 72.9 )
 				self.Rank:setTopBottom( true, false, 27, 46 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setLeftRight( true, false, 78.9, 96.9 )
 				self.RankIcon:setTopBottom( true, false, 26.5, 44.5 )
 				self.clipFinished( RankIcon, {} )
+
 				CharacterRender:completeAnimation()
 				self.CharacterRender:setAlpha( 0 )
 				self.clipFinished( CharacterRender, {} )
@@ -283,56 +295,67 @@ CoD.Competitive_CharacterDraft_Player.new = function ( menu, controller )
 		SpecialistDraft = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				FEButtonPanel1:completeAnimation()
 				self.FEButtonPanel1:setLeftRight( true, false, 111, 373.79 )
 				self.FEButtonPanel1:setTopBottom( true, false, 0, 70 )
 				self.FEButtonPanel1:setAlpha( 0.26 )
 				self.clipFinished( FEButtonPanel1, {} )
+
 				FEButtonPanel2:completeAnimation()
 				self.FEButtonPanel2:setLeftRight( true, false, 50.21, 108 )
 				self.FEButtonPanel2:setTopBottom( true, false, 0, 70 )
 				self.FEButtonPanel2:setAlpha( 0.26 )
 				self.clipFinished( FEButtonPanel2, {} )
+
 				Name:completeAnimation()
 				self.Name:setLeftRight( true, false, 124.44, 372.59 )
 				self.Name:setTopBottom( true, false, 11.5, 31.5 )
 				self.Name:setAlpha( 1 )
 				self.clipFinished( Name, {} )
+
 				CharacterName:completeAnimation()
 				self.CharacterName:setLeftRight( true, false, 124.44, 224.59 )
 				self.CharacterName:setTopBottom( true, false, 36, 55 )
 				self.CharacterName:setAlpha( 1 )
 				self.clipFinished( CharacterName, {} )
+
 				CharacterAbility:completeAnimation()
 				self.CharacterAbility:setLeftRight( true, false, 224.59, 324.73 )
 				self.CharacterAbility:setTopBottom( true, false, 36, 55 )
 				self.CharacterAbility:setAlpha( 1 )
 				self.clipFinished( CharacterAbility, {} )
+
 				RankBackground:completeAnimation()
 				self.RankBackground:setLeftRight( true, false, 50.21, 108 )
 				self.RankBackground:setTopBottom( true, false, 50, 71 )
 				self.RankBackground:setAlpha( 0.26 )
 				self.clipFinished( RankBackground, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setLeftRight( true, false, 50, 72.9 )
 				self.Rank:setTopBottom( true, false, 52, 71 )
 				self.Rank:setAlpha( 1 )
 				self.clipFinished( Rank, {} )
+
 				RankIcon:completeAnimation()
 				self.RankIcon:setLeftRight( true, false, 78.9, 96.9 )
 				self.RankIcon:setTopBottom( true, false, 51.5, 69.5 )
 				self.RankIcon:setAlpha( 1 )
 				self.clipFinished( RankIcon, {} )
+
 				StateLeft:completeAnimation()
 				self.StateLeft:setLeftRight( true, false, 0, 27 )
 				self.StateLeft:setTopBottom( true, false, 21.5, 48.5 )
 				self.StateLeft:setAlpha( 1 )
 				self.clipFinished( StateLeft, {} )
+
 				StateRight:completeAnimation()
 				self.StateRight:setLeftRight( true, false, 398, 425 )
 				self.StateRight:setTopBottom( true, false, 22, 49 )
 				self.StateRight:setAlpha( 1 )
 				self.clipFinished( StateRight, {} )
+
 				CharacterRender:completeAnimation()
 				self.CharacterRender:setLeftRight( true, false, 53.9, 103.9 )
 				self.CharacterRender:setTopBottom( true, false, 0, 50 )
@@ -341,6 +364,7 @@ CoD.Competitive_CharacterDraft_Player.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel1:close()
 		element.FEButtonPanel2:close()

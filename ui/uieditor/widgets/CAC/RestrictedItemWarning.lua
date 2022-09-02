@@ -4,9 +4,11 @@
 CoD.RestrictedItemWarning = InheritFrom( LUI.UIElement )
 CoD.RestrictedItemWarning.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RestrictedItemWarning )
 	self.id = "RestrictedItemWarning"
@@ -26,6 +28,7 @@ CoD.RestrictedItemWarning.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				RestrictedWarning:completeAnimation()
 				self.RestrictedWarning:setAlpha( 0 )
 				self.clipFinished( RestrictedWarning, {} )
@@ -34,6 +37,7 @@ CoD.RestrictedItemWarning.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				RestrictedWarning:completeAnimation()
 				self.RestrictedWarning:setAlpha( 1 )
 				self.clipFinished( RestrictedWarning, {} )

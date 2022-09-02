@@ -4,9 +4,11 @@
 CoD.ScrStk_CombatEfficiencyScrollFX = InheritFrom( LUI.UIElement )
 CoD.ScrStk_CombatEfficiencyScrollFX.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScrStk_CombatEfficiencyScrollFX )
 	self.id = "ScrStk_CombatEfficiencyScrollFX"
@@ -35,9 +37,11 @@ CoD.ScrStk_CombatEfficiencyScrollFX.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			ScoreAdded = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

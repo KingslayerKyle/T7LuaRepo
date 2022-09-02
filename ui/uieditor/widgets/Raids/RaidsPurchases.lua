@@ -14,9 +14,11 @@ end
 CoD.RaidsPurchases = InheritFrom( LUI.UIElement )
 CoD.RaidsPurchases.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.RaidsPurchases )
 	self.id = "RaidsPurchases"
@@ -207,6 +209,7 @@ CoD.RaidsPurchases.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Buy:completeAnimation()
 				self.Buy:setAlpha( 1 )
 				self.clipFinished( Buy, {} )
@@ -221,6 +224,7 @@ CoD.RaidsPurchases.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PurchasesList:close()
 		element.Buy:close()

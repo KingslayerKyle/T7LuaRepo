@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.WeaponAttributesBar" )
 CoD.WeaponAttributes_Internal = InheritFrom( LUI.UIElement )
 CoD.WeaponAttributes_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponAttributes_Internal )
 	self.id = "WeaponAttributes_Internal"

@@ -13,9 +13,11 @@ require( "ui.uieditor.widgets.ZMPromotional.ZM_Promo_Ribbon" )
 CoD.BGB_PurchaseLiquidDiviniumWidget = InheritFrom( LUI.UIElement )
 CoD.BGB_PurchaseLiquidDiviniumWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BGB_PurchaseLiquidDiviniumWidget )
 	self.id = "BGB_PurchaseLiquidDiviniumWidget"
@@ -230,39 +232,50 @@ CoD.BGB_PurchaseLiquidDiviniumWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 0.25 )
 				self.clipFinished( background, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0.1 )
 				self.clipFinished( BlackBox, {} )
+
 				Icon:completeAnimation()
 				self.Icon:setRGB( 0.71, 0.71, 0.71 )
 				self.Icon:setScale( 1 )
 				self.clipFinished( Icon, {} )
+
 				FEFocusBarContainerBottom:completeAnimation()
 				self.FEFocusBarContainerBottom:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerBottom, {} )
+
 				FEFocusBarContainerTop:completeAnimation()
 				self.FEFocusBarContainerTop:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerTop, {} )
+
 				MegaChewFactoryCODPointContainerSmall0:completeAnimation()
 				self.MegaChewFactoryCODPointContainerSmall0:setAlpha( 0.7 )
 				self.clipFinished( MegaChewFactoryCODPointContainerSmall0, {} )
+
 				Label0:completeAnimation()
 				self.Label0:setLeftRight( true, false, 8.5, 208.5 )
 				self.Label0:setTopBottom( true, false, 143.72, 188.72 )
 				self.Label0:setAlpha( 0.5 )
 				self.clipFinished( Label0, {} )
+
 				ZmBGBLiquidDivGlow:completeAnimation()
 				self.ZmBGBLiquidDivGlow:setAlpha( 0 )
 				self.clipFinished( ZmBGBLiquidDivGlow, {} )
+
 				MegaChewFactorySaleActive0:completeAnimation()
 				self.MegaChewFactorySaleActive0:setAlpha( 0 )
 				self.clipFinished( MegaChewFactorySaleActive0, {} )
+
 				BlackMarketCryptokeyContainerSmall:completeAnimation()
 				self.BlackMarketCryptokeyContainerSmall:setAlpha( 0 )
 				self.clipFinished( BlackMarketCryptokeyContainerSmall, {} )
+
 				ZMExpiresIn:completeAnimation()
 				self.ZMExpiresIn:setLeftRight( true, false, 6.14, 171 )
 				self.ZMExpiresIn:setTopBottom( true, false, 146.69, 198.69 )
@@ -271,6 +284,7 @@ CoD.BGB_PurchaseLiquidDiviniumWidget.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 10 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 0.4 )
 				self.clipFinished( background, {} )
@@ -308,9 +322,11 @@ CoD.BGB_PurchaseLiquidDiviniumWidget.new = function ( menu, controller )
 				self.Icon:setAlpha( 1 )
 				self.Icon:setScale( 1 )
 				IconFrame2( Icon, {} )
+
 				FEFocusBarContainerBottom:completeAnimation()
 				self.FEFocusBarContainerBottom:setAlpha( 1 )
 				self.clipFinished( FEFocusBarContainerBottom, {} )
+
 				FEFocusBarContainerTop:completeAnimation()
 				self.FEFocusBarContainerTop:setAlpha( 1 )
 				self.clipFinished( FEFocusBarContainerTop, {} )
@@ -348,12 +364,15 @@ CoD.BGB_PurchaseLiquidDiviniumWidget.new = function ( menu, controller )
 				self.Label0:setTopBottom( true, false, 143.72, 188.72 )
 				self.Label0:setAlpha( 0.5 )
 				Label0Frame2( Label0, {} )
+
 				ZmBGBLiquidDivGlow:completeAnimation()
 				self.ZmBGBLiquidDivGlow:setAlpha( 1 )
 				self.clipFinished( ZmBGBLiquidDivGlow, {} )
+
 				BlackMarketCryptokeyContainerSmall:completeAnimation()
 				self.BlackMarketCryptokeyContainerSmall:setAlpha( 0 )
 				self.clipFinished( BlackMarketCryptokeyContainerSmall, {} )
+
 				ZMExpiresIn:completeAnimation()
 				self.ZMExpiresIn:setLeftRight( true, false, 6.14, 171 )
 				self.ZMExpiresIn:setTopBottom( true, false, 146.69, 198.69 )
@@ -364,39 +383,50 @@ CoD.BGB_PurchaseLiquidDiviniumWidget.new = function ( menu, controller )
 		NoVials = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 0.25 )
 				self.clipFinished( background, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0.1 )
 				self.clipFinished( BlackBox, {} )
+
 				Icon:completeAnimation()
 				self.Icon:setRGB( 0.71, 0.71, 0.71 )
 				self.Icon:setScale( 1 )
 				self.clipFinished( Icon, {} )
+
 				FEFocusBarContainerBottom:completeAnimation()
 				self.FEFocusBarContainerBottom:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerBottom, {} )
+
 				FEFocusBarContainerTop:completeAnimation()
 				self.FEFocusBarContainerTop:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerTop, {} )
+
 				MegaChewFactoryCODPointContainerSmall0:completeAnimation()
 				self.MegaChewFactoryCODPointContainerSmall0:setAlpha( 0.7 )
 				self.clipFinished( MegaChewFactoryCODPointContainerSmall0, {} )
+
 				Label0:completeAnimation()
 				self.Label0:setLeftRight( true, false, 8.5, 208.5 )
 				self.Label0:setTopBottom( true, false, 143.72, 188.72 )
 				self.Label0:setAlpha( 0 )
 				self.clipFinished( Label0, {} )
+
 				ZmBGBLiquidDivGlow:completeAnimation()
 				self.ZmBGBLiquidDivGlow:setAlpha( 0 )
 				self.clipFinished( ZmBGBLiquidDivGlow, {} )
+
 				MegaChewFactorySaleActive0:completeAnimation()
 				self.MegaChewFactorySaleActive0:setAlpha( 0 )
 				self.clipFinished( MegaChewFactorySaleActive0, {} )
+
 				BlackMarketCryptokeyContainerSmall:completeAnimation()
 				self.BlackMarketCryptokeyContainerSmall:setAlpha( 0 )
 				self.clipFinished( BlackMarketCryptokeyContainerSmall, {} )
+
 				ZMExpiresIn:completeAnimation()
 				self.ZMExpiresIn:setLeftRight( true, false, 6.14, 171 )
 				self.ZMExpiresIn:setTopBottom( true, false, 146.69, 198.69 )
@@ -405,6 +435,7 @@ CoD.BGB_PurchaseLiquidDiviniumWidget.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 10 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 0.4 )
 				self.clipFinished( background, {} )
@@ -442,9 +473,11 @@ CoD.BGB_PurchaseLiquidDiviniumWidget.new = function ( menu, controller )
 				self.Icon:setAlpha( 1 )
 				self.Icon:setScale( 1 )
 				IconFrame2( Icon, {} )
+
 				FEFocusBarContainerBottom:completeAnimation()
 				self.FEFocusBarContainerBottom:setAlpha( 1 )
 				self.clipFinished( FEFocusBarContainerBottom, {} )
+
 				FEFocusBarContainerTop:completeAnimation()
 				self.FEFocusBarContainerTop:setAlpha( 1 )
 				self.clipFinished( FEFocusBarContainerTop, {} )
@@ -463,15 +496,19 @@ CoD.BGB_PurchaseLiquidDiviniumWidget.new = function ( menu, controller )
 				MegaChewFactoryCODPointContainerSmall0:completeAnimation()
 				self.MegaChewFactoryCODPointContainerSmall0:setAlpha( 0.7 )
 				MegaChewFactoryCODPointContainerSmall0Frame2( MegaChewFactoryCODPointContainerSmall0, {} )
+
 				Label0:completeAnimation()
 				self.Label0:setAlpha( 0 )
 				self.clipFinished( Label0, {} )
+
 				ZmBGBLiquidDivGlow:completeAnimation()
 				self.ZmBGBLiquidDivGlow:setAlpha( 1 )
 				self.clipFinished( ZmBGBLiquidDivGlow, {} )
+
 				BlackMarketCryptokeyContainerSmall:completeAnimation()
 				self.BlackMarketCryptokeyContainerSmall:setAlpha( 0 )
 				self.clipFinished( BlackMarketCryptokeyContainerSmall, {} )
+
 				ZMExpiresIn:completeAnimation()
 				self.ZMExpiresIn:setLeftRight( true, false, 6.14, 171 )
 				self.ZMExpiresIn:setTopBottom( true, false, 146.69, 198.69 )
@@ -482,39 +519,50 @@ CoD.BGB_PurchaseLiquidDiviniumWidget.new = function ( menu, controller )
 		SaleActive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 0.25 )
 				self.clipFinished( background, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0.1 )
 				self.clipFinished( BlackBox, {} )
+
 				Icon:completeAnimation()
 				self.Icon:setRGB( 0.71, 0.71, 0.71 )
 				self.Icon:setScale( 1 )
 				self.clipFinished( Icon, {} )
+
 				FEFocusBarContainerBottom:completeAnimation()
 				self.FEFocusBarContainerBottom:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerBottom, {} )
+
 				FEFocusBarContainerTop:completeAnimation()
 				self.FEFocusBarContainerTop:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerTop, {} )
+
 				MegaChewFactoryCODPointContainerSmall0:completeAnimation()
 				self.MegaChewFactoryCODPointContainerSmall0:setLeftRight( true, false, 11.5, 90.5 )
 				self.MegaChewFactoryCODPointContainerSmall0:setTopBottom( true, false, 9.28, 37.28 )
 				self.MegaChewFactoryCODPointContainerSmall0:setAlpha( 0.7 )
 				self.clipFinished( MegaChewFactoryCODPointContainerSmall0, {} )
+
 				Label0:completeAnimation()
 				self.Label0:setAlpha( 0.5 )
 				self.clipFinished( Label0, {} )
+
 				ZmBGBLiquidDivGlow:completeAnimation()
 				self.ZmBGBLiquidDivGlow:setAlpha( 0 )
 				self.clipFinished( ZmBGBLiquidDivGlow, {} )
+
 				MegaChewFactorySaleActive0:completeAnimation()
 				self.MegaChewFactorySaleActive0:setAlpha( 0.7 )
 				self.clipFinished( MegaChewFactorySaleActive0, {} )
+
 				BlackMarketCryptokeyContainerSmall:completeAnimation()
 				self.BlackMarketCryptokeyContainerSmall:setAlpha( 0 )
 				self.clipFinished( BlackMarketCryptokeyContainerSmall, {} )
+
 				ZMExpiresIn:completeAnimation()
 				self.ZMExpiresIn:setLeftRight( true, false, 6.14, 171 )
 				self.ZMExpiresIn:setTopBottom( true, false, 146.69, 198.69 )
@@ -523,6 +571,7 @@ CoD.BGB_PurchaseLiquidDiviniumWidget.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 11 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 0.4 )
 				self.clipFinished( background, {} )
@@ -560,9 +609,11 @@ CoD.BGB_PurchaseLiquidDiviniumWidget.new = function ( menu, controller )
 				self.Icon:setAlpha( 1 )
 				self.Icon:setScale( 1 )
 				IconFrame2( Icon, {} )
+
 				FEFocusBarContainerBottom:completeAnimation()
 				self.FEFocusBarContainerBottom:setAlpha( 1 )
 				self.clipFinished( FEFocusBarContainerBottom, {} )
+
 				FEFocusBarContainerTop:completeAnimation()
 				self.FEFocusBarContainerTop:setAlpha( 1 )
 				self.clipFinished( FEFocusBarContainerTop, {} )
@@ -596,6 +647,7 @@ CoD.BGB_PurchaseLiquidDiviniumWidget.new = function ( menu, controller )
 				Label0:completeAnimation()
 				self.Label0:setAlpha( 0.5 )
 				Label0Frame2( Label0, {} )
+
 				ZmBGBLiquidDivGlow:completeAnimation()
 				self.ZmBGBLiquidDivGlow:setAlpha( 1 )
 				self.clipFinished( ZmBGBLiquidDivGlow, {} )
@@ -614,6 +666,7 @@ CoD.BGB_PurchaseLiquidDiviniumWidget.new = function ( menu, controller )
 				MegaChewFactorySaleActive0:completeAnimation()
 				self.MegaChewFactorySaleActive0:setAlpha( 0.7 )
 				MegaChewFactorySaleActive0Frame2( MegaChewFactorySaleActive0, {} )
+
 				BlackMarketCryptokeyContainerSmall:completeAnimation()
 				self.BlackMarketCryptokeyContainerSmall:setAlpha( 0 )
 				self.clipFinished( BlackMarketCryptokeyContainerSmall, {} )
@@ -641,46 +694,59 @@ CoD.BGB_PurchaseLiquidDiviniumWidget.new = function ( menu, controller )
 		DiviniumOffer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 0.25 )
 				self.clipFinished( background, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0.1 )
 				self.clipFinished( BlackBox, {} )
+
 				Icon:completeAnimation()
 				self.Icon:setRGB( 0.71, 0.71, 0.71 )
 				self.Icon:setScale( 1 )
 				self.clipFinished( Icon, {} )
+
 				FEFocusBarContainerBottom:completeAnimation()
 				self.FEFocusBarContainerBottom:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerBottom, {} )
+
 				FEFocusBarContainerTop:completeAnimation()
 				self.FEFocusBarContainerTop:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerTop, {} )
+
 				MegaChewFactoryCODPointContainerSmall0:completeAnimation()
 				self.MegaChewFactoryCODPointContainerSmall0:setAlpha( 0 )
 				self.clipFinished( MegaChewFactoryCODPointContainerSmall0, {} )
+
 				Label0:completeAnimation()
 				self.Label0:setLeftRight( true, false, 8.5, 208.5 )
 				self.Label0:setTopBottom( true, false, 124.72, 169.72 )
 				self.Label0:setAlpha( 0.5 )
 				self.clipFinished( Label0, {} )
+
 				ZmBGBLiquidDivGlow:completeAnimation()
 				self.ZmBGBLiquidDivGlow:setAlpha( 0 )
 				self.clipFinished( ZmBGBLiquidDivGlow, {} )
+
 				MegaChewFactorySaleActive0:completeAnimation()
 				self.MegaChewFactorySaleActive0:setAlpha( 0 )
 				self.clipFinished( MegaChewFactorySaleActive0, {} )
+
 				BlackMarketCryptokeyContainerSmall:completeAnimation()
 				self.BlackMarketCryptokeyContainerSmall:setAlpha( 1 )
 				self.clipFinished( BlackMarketCryptokeyContainerSmall, {} )
+
 				ZMExpiresIn:completeAnimation()
+
 				ZMExpiresIn.Text:completeAnimation()
 				self.ZMExpiresIn:setAlpha( 1 )
 				self.clipFinished( ZMExpiresIn, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 11 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 0.4 )
 				self.clipFinished( background, {} )
@@ -718,9 +784,11 @@ CoD.BGB_PurchaseLiquidDiviniumWidget.new = function ( menu, controller )
 				self.Icon:setAlpha( 1 )
 				self.Icon:setScale( 1 )
 				IconFrame2( Icon, {} )
+
 				FEFocusBarContainerBottom:completeAnimation()
 				self.FEFocusBarContainerBottom:setAlpha( 1 )
 				self.clipFinished( FEFocusBarContainerBottom, {} )
+
 				FEFocusBarContainerTop:completeAnimation()
 				self.FEFocusBarContainerTop:setAlpha( 1 )
 				self.clipFinished( FEFocusBarContainerTop, {} )
@@ -758,21 +826,26 @@ CoD.BGB_PurchaseLiquidDiviniumWidget.new = function ( menu, controller )
 				self.Label0:setTopBottom( true, false, 124.72, 169.72 )
 				self.Label0:setAlpha( 0.5 )
 				Label0Frame2( Label0, {} )
+
 				ZmBGBLiquidDivGlow:completeAnimation()
 				self.ZmBGBLiquidDivGlow:setAlpha( 1 )
 				self.clipFinished( ZmBGBLiquidDivGlow, {} )
+
 				MegaChewFactorySaleActive0:completeAnimation()
 				self.MegaChewFactorySaleActive0:setAlpha( 0 )
 				self.clipFinished( MegaChewFactorySaleActive0, {} )
+
 				BlackMarketCryptokeyContainerSmall:completeAnimation()
 				self.BlackMarketCryptokeyContainerSmall:setAlpha( 1 )
 				self.clipFinished( BlackMarketCryptokeyContainerSmall, {} )
+
 				ZMExpiresIn:completeAnimation()
 				self.ZMExpiresIn:setAlpha( 1 )
 				self.clipFinished( ZMExpiresIn, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoVials",
@@ -827,6 +900,7 @@ CoD.BGB_PurchaseLiquidDiviniumWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEFocusBarContainerBottom:close()
 		element.FEFocusBarContainerTop:close()

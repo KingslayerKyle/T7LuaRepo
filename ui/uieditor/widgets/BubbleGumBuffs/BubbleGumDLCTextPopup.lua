@@ -4,9 +4,11 @@
 CoD.BubbleGumDLCTextPopup = InheritFrom( LUI.UIElement )
 CoD.BubbleGumDLCTextPopup.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BubbleGumDLCTextPopup )
 	self.id = "BubbleGumDLCTextPopup"
@@ -40,6 +42,7 @@ CoD.BubbleGumDLCTextPopup.new = function ( menu, controller )
 	textCenterAlign:setLetterSpacing( 0.5 )
 	textCenterAlign:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	textCenterAlign:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( textCenterAlign, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrappedLeftAlign( self, element, 8, 8 )
 	end )
@@ -50,11 +53,13 @@ CoD.BubbleGumDLCTextPopup.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Below = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

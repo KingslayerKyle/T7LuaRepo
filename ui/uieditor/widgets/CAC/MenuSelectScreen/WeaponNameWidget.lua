@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.WeaponNameWidget = InheritFrom( LUI.UIElement )
 CoD.WeaponNameWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponNameWidget )
 	self.id = "WeaponNameWidget"
@@ -56,6 +58,7 @@ CoD.WeaponNameWidget.new = function ( menu, controller )
 		end
 		return f3_local0
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( weaponNameLabel, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 2 )
 		SetStateFromText( self, element, "DefaultState", "NoText" )
@@ -67,35 +70,43 @@ CoD.WeaponNameWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				cacItemTitleGlow0:completeAnimation()
 				self.cacItemTitleGlow0:setAlpha( 1 )
 				self.clipFinished( cacItemTitleGlow0, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.14 )
 				self.clipFinished( Glow, {} )
+
 				weaponNameLabel:completeAnimation()
 				self.weaponNameLabel:setAlpha( 1 )
 				self.clipFinished( weaponNameLabel, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		NoText = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				cacItemTitleGlow0:completeAnimation()
 				self.cacItemTitleGlow0:setAlpha( 0 )
 				self.clipFinished( cacItemTitleGlow0, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				weaponNameLabel:completeAnimation()
 				self.weaponNameLabel:setAlpha( 0 )
 				self.clipFinished( weaponNameLabel, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoText",
@@ -104,6 +115,7 @@ CoD.WeaponNameWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.cacItemTitleGlow0:close()
 		element.weaponNameLabel:close()

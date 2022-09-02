@@ -4,9 +4,11 @@
 CoD.FR_RetriesNumbersBox = InheritFrom( LUI.UIElement )
 CoD.FR_RetriesNumbersBox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FR_RetriesNumbersBox )
 	self.id = "FR_RetriesNumbersBox"
@@ -38,9 +40,11 @@ CoD.FR_RetriesNumbersBox.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			FaultAnim = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

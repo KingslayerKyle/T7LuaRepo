@@ -11,9 +11,11 @@ end
 CoD.OptionsTab = InheritFrom( LUI.UIElement )
 CoD.OptionsTab.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.OptionsTab )
 	self.id = "OptionsTab"
@@ -86,6 +88,7 @@ CoD.OptionsTab.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.selectionList:close()
 		element.todoBorder:close()

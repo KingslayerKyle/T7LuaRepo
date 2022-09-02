@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.dart.vhud_dart_CenterReticleHorizonLin
 CoD.vhud_dart_reticle_roll = InheritFrom( LUI.UIElement )
 CoD.vhud_dart_reticle_roll.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_dart_reticle_roll )
 	self.id = "vhud_dart_reticle_roll"
@@ -60,6 +62,7 @@ CoD.vhud_dart_reticle_roll.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local f2_local0 = function ( f3_arg0, f3_arg1 )
 					if not f3_arg1.interrupted then
 						f3_arg0:beginAnimation( "keyframe", 20, false, false, CoD.TweenType.Linear )
@@ -138,6 +141,7 @@ CoD.vhud_dart_reticle_roll.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vhuddartCenterReticleHorizonLine0:close()
 	end )

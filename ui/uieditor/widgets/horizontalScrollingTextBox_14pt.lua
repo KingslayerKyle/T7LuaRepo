@@ -4,9 +4,11 @@
 CoD.horizontalScrollingTextBox_14pt = InheritFrom( LUI.UIElement )
 CoD.horizontalScrollingTextBox_14pt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.horizontalScrollingTextBox_14pt )
 	self.id = "horizontalScrollingTextBox_14pt"

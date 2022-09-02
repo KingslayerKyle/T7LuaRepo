@@ -4,9 +4,11 @@
 CoD.StartMenuButtonItem = InheritFrom( LUI.UIElement )
 CoD.StartMenuButtonItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.StartMenuButtonItem )
 	self.id = "StartMenuButtonItem"
@@ -44,15 +46,18 @@ CoD.StartMenuButtonItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:completeAnimation()
 				self.background:setAlpha( 0 )
 				self.clipFinished( background, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 1 )
 				self.clipFinished( text, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 2 )
+
 				local backgroundFrame2 = function ( background, event )
 					if not event.interrupted then
 						background:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -86,6 +91,7 @@ CoD.StartMenuButtonItem.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
 				self.background:setAlpha( 1 )
 				background:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
@@ -95,6 +101,7 @@ CoD.StartMenuButtonItem.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 2 )
+
 				local backgroundFrame2 = function ( background, event )
 					if not event.interrupted then
 						background:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -128,6 +135,7 @@ CoD.StartMenuButtonItem.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.text:close()
 	end )

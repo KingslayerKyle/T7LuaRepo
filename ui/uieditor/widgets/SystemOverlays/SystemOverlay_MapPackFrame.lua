@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.SystemOverlays.systemOverlay_supportWidget" )
 CoD.SystemOverlay_MapPackFrame = InheritFrom( LUI.UIElement )
 CoD.SystemOverlay_MapPackFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SystemOverlay_MapPackFrame )
 	self.id = "SystemOverlay_MapPackFrame"
@@ -58,6 +60,7 @@ CoD.SystemOverlay_MapPackFrame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.foreground:close()
 		element.supportInfo:close()

@@ -4,9 +4,11 @@
 CoD.AmmoWidget_BackCircleOutter = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_BackCircleOutter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_BackCircleOutter )
 	self.id = "AmmoWidget_BackCircleOutter"

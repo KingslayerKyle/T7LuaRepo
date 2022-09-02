@@ -41,9 +41,11 @@ end
 CoD.EMP_ScoreInfo = InheritFrom( LUI.UIElement )
 CoD.EMP_ScoreInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EMP_ScoreInfo )
 	self.id = "EMP_ScoreInfo"
@@ -78,9 +80,11 @@ CoD.EMP_ScoreInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				EMPScoreInfoBlackOps:completeAnimation()
 				self.EMPScoreInfoBlackOps:setAlpha( 0 )
 				self.clipFinished( EMPScoreInfoBlackOps, {} )
+
 				EMPScoreInfoCDP:completeAnimation()
 				self.EMPScoreInfoCDP:setAlpha( 0 )
 				self.clipFinished( EMPScoreInfoCDP, {} )
@@ -89,9 +93,11 @@ CoD.EMP_ScoreInfo.new = function ( menu, controller )
 		axis = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				EMPScoreInfoBlackOps:completeAnimation()
 				self.EMPScoreInfoBlackOps:setAlpha( 0 )
 				self.clipFinished( EMPScoreInfoBlackOps, {} )
+
 				EMPScoreInfoCDP:completeAnimation()
 				self.EMPScoreInfoCDP:setAlpha( 1 )
 				self.clipFinished( EMPScoreInfoCDP, {} )
@@ -100,9 +106,11 @@ CoD.EMP_ScoreInfo.new = function ( menu, controller )
 		allies = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				EMPScoreInfoBlackOps:completeAnimation()
 				self.EMPScoreInfoBlackOps:setAlpha( 1 )
 				self.clipFinished( EMPScoreInfoBlackOps, {} )
+
 				EMPScoreInfoCDP:completeAnimation()
 				self.EMPScoreInfoCDP:setAlpha( 0 )
 				self.clipFinished( EMPScoreInfoCDP, {} )
@@ -111,15 +119,18 @@ CoD.EMP_ScoreInfo.new = function ( menu, controller )
 		emblem = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				EMPScoreInfoBlackOps:completeAnimation()
 				self.EMPScoreInfoBlackOps:setAlpha( 1 )
 				self.clipFinished( EMPScoreInfoBlackOps, {} )
+
 				EMPScoreInfoCDP:completeAnimation()
 				self.EMPScoreInfoCDP:setAlpha( 0 )
 				self.clipFinished( EMPScoreInfoCDP, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "axis",

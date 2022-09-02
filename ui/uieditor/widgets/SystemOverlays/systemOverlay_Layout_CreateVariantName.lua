@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Lobby.Common.List1ButtonLarge_Left_ND" )
 CoD.systemOverlay_Layout_CreateVariantName = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_Layout_CreateVariantName.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_Layout_CreateVariantName )
 	self.id = "systemOverlay_Layout_CreateVariantName"
@@ -188,6 +190,7 @@ CoD.systemOverlay_Layout_CreateVariantName.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.text:close()
 		element.input:close()

@@ -16,9 +16,11 @@ end
 CoD.AdminTabGroupAdminsFrame = InheritFrom( LUI.UIElement )
 CoD.AdminTabGroupAdminsFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AdminTabGroupAdminsFrame )
 	self.id = "AdminTabGroupAdminsFrame"
@@ -89,11 +91,15 @@ CoD.AdminTabGroupAdminsFrame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				AdminsList:completeAnimation()
 				self.AdminsList:setAlpha( 1 )
 				self.clipFinished( AdminsList, {} )
+
 				GroupsNoConentDetail:completeAnimation()
+
 				GroupsNoConentDetail.HeaderBkgd:completeAnimation()
+
 				GroupsNoConentDetail.Glow2:completeAnimation()
 				self.GroupsNoConentDetail:setLeftRight( true, false, 0, 268 )
 				self.GroupsNoConentDetail:setTopBottom( true, false, 0, 270 )
@@ -106,14 +112,21 @@ CoD.AdminTabGroupAdminsFrame.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				AdminsList:completeAnimation()
 				self.AdminsList:setAlpha( 0 )
 				self.clipFinished( AdminsList, {} )
+
 				GroupsNoConentDetail:completeAnimation()
+
 				GroupsNoConentDetail.HeaderBkgd:completeAnimation()
+
 				GroupsNoConentDetail.HeaderIcon:completeAnimation()
+
 				GroupsNoConentDetail.Header:completeAnimation()
+
 				GroupsNoConentDetail.Desc:completeAnimation()
+
 				GroupsNoConentDetail.Glow2:completeAnimation()
 				self.GroupsNoConentDetail:setLeftRight( true, false, 0, 268 )
 				self.GroupsNoConentDetail:setTopBottom( true, false, 0, 270 )
@@ -129,14 +142,21 @@ CoD.AdminTabGroupAdminsFrame.new = function ( menu, controller )
 		NoContent = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				AdminsList:completeAnimation()
 				self.AdminsList:setAlpha( 0 )
 				self.clipFinished( AdminsList, {} )
+
 				GroupsNoConentDetail:completeAnimation()
+
 				GroupsNoConentDetail.HeaderBkgd:completeAnimation()
+
 				GroupsNoConentDetail.HeaderIcon:completeAnimation()
+
 				GroupsNoConentDetail.Header:completeAnimation()
+
 				GroupsNoConentDetail.Desc:completeAnimation()
+
 				GroupsNoConentDetail.Glow2:completeAnimation()
 				self.GroupsNoConentDetail:setLeftRight( true, false, 0, 268 )
 				self.GroupsNoConentDetail:setTopBottom( true, false, 0, 186 )
@@ -150,6 +170,7 @@ CoD.AdminTabGroupAdminsFrame.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -180,6 +201,7 @@ CoD.AdminTabGroupAdminsFrame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AdminsList:close()
 		element.GroupsNoConentDetail:close()

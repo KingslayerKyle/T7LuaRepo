@@ -4,9 +4,11 @@
 CoD.CenterReticle = InheritFrom( LUI.UIElement )
 CoD.CenterReticle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CenterReticle )
 	self.id = "CenterReticle"
@@ -75,21 +77,27 @@ CoD.CenterReticle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				LeftInside:completeAnimation()
 				self.LeftInside:setRGB( 1, 1, 1 )
 				self.clipFinished( LeftInside, {} )
+
 				RightInside:completeAnimation()
 				self.RightInside:setRGB( 1, 1, 1 )
 				self.clipFinished( RightInside, {} )
+
 				Center:completeAnimation()
 				self.Center:setRGB( 1, 1, 1 )
 				self.clipFinished( Center, {} )
+
 				centerBottom:completeAnimation()
 				self.centerBottom:setRGB( 0.64, 1, 0.81 )
 				self.clipFinished( centerBottom, {} )
+
 				Top:completeAnimation()
 				self.Top:setRGB( 1, 1, 1 )
 				self.clipFinished( Top, {} )
+
 				Bottom:completeAnimation()
 				self.Bottom:setRGB( 1, 1, 1 )
 				self.clipFinished( Bottom, {} )
@@ -98,21 +106,27 @@ CoD.CenterReticle.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				LeftInside:completeAnimation()
 				self.LeftInside:setRGB( 1, 0.15, 0.15 )
 				self.clipFinished( LeftInside, {} )
+
 				RightInside:completeAnimation()
 				self.RightInside:setRGB( 1, 0.15, 0.15 )
 				self.clipFinished( RightInside, {} )
+
 				Center:completeAnimation()
 				self.Center:setRGB( 1, 0.15, 0.15 )
 				self.clipFinished( Center, {} )
+
 				centerBottom:completeAnimation()
 				self.centerBottom:setRGB( 1, 0.15, 0.15 )
 				self.clipFinished( centerBottom, {} )
+
 				Top:completeAnimation()
 				self.Top:setRGB( 1, 0.15, 0.15 )
 				self.clipFinished( Top, {} )
+
 				Bottom:completeAnimation()
 				self.Bottom:setRGB( 1, 0.15, 0.15 )
 				self.clipFinished( Bottom, {} )

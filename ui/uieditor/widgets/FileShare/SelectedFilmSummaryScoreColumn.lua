@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BorderThin" )
 CoD.SelectedFilmSummaryScoreColumn = InheritFrom( LUI.UIElement )
 CoD.SelectedFilmSummaryScoreColumn.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SelectedFilmSummaryScoreColumn )
 	self.id = "SelectedFilmSummaryScoreColumn"
@@ -63,14 +65,17 @@ CoD.SelectedFilmSummaryScoreColumn.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -87,6 +92,7 @@ CoD.SelectedFilmSummaryScoreColumn.new = function ( menu, controller )
 			modelName = "isValid"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BorderThin01:close()
 	end )

@@ -4,9 +4,11 @@
 CoD.Pregame_FactionTeamColorBarHeader = InheritFrom( LUI.UIElement )
 CoD.Pregame_FactionTeamColorBarHeader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_FactionTeamColorBarHeader )
 	self.id = "Pregame_FactionTeamColorBarHeader"
@@ -42,9 +44,11 @@ CoD.Pregame_FactionTeamColorBarHeader.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				AxisColor:completeAnimation()
 				self.AxisColor:setAlpha( 0 )
 				self.clipFinished( AxisColor, {} )
+
 				AlliesColor:completeAnimation()
 				self.AlliesColor:setAlpha( 0 )
 				self.clipFinished( AlliesColor, {} )
@@ -53,9 +57,11 @@ CoD.Pregame_FactionTeamColorBarHeader.new = function ( menu, controller )
 		IfAxisTeam = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				AxisColor:completeAnimation()
 				self.AxisColor:setAlpha( 1 )
 				self.clipFinished( AxisColor, {} )
+
 				AlliesColor:completeAnimation()
 				self.AlliesColor:setAlpha( 0 )
 				self.clipFinished( AlliesColor, {} )
@@ -64,15 +70,18 @@ CoD.Pregame_FactionTeamColorBarHeader.new = function ( menu, controller )
 		IfAlliesTeam = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				AxisColor:completeAnimation()
 				self.AxisColor:setAlpha( 0 )
 				self.clipFinished( AxisColor, {} )
+
 				AlliesColor:completeAnimation()
 				self.AlliesColor:setAlpha( 1 )
 				self.clipFinished( AlliesColor, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "IfAxisTeam",
@@ -95,6 +104,7 @@ CoD.Pregame_FactionTeamColorBarHeader.new = function ( menu, controller )
 			modelName = "intData"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AxisColor:close()
 		element.AlliesColor:close()

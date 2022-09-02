@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.ZMInventoryTomb.ElementalStaffItem" )
 CoD.ElementalStaffContainer = InheritFrom( LUI.UIElement )
 CoD.ElementalStaffContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ElementalStaffContainer )
 	self.id = "ElementalStaffContainer"
@@ -42,9 +44,11 @@ CoD.ElementalStaffContainer.new = function ( menu, controller )
 		ScoreboardFound = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				ElementalStaffItem:completeAnimation()
 				self.ElementalStaffItem:setAlpha( 1 )
 				self.clipFinished( ElementalStaffItem, {} )
@@ -53,15 +57,18 @@ CoD.ElementalStaffContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				ElementalStaffItem:completeAnimation()
 				self.ElementalStaffItem:setAlpha( 1 )
 				self.clipFinished( ElementalStaffItem, {} )
 			end,
 			Found = function ()
 				self:setupElementClipCounter( 2 )
+
 				local ZmFxSpark20Frame2 = function ( ZmFxSpark20, event )
 					local ZmFxSpark20Frame3 = function ( ZmFxSpark20, event )
 						local ZmFxSpark20Frame4 = function ( ZmFxSpark20, event )
@@ -137,6 +144,7 @@ CoD.ElementalStaffContainer.new = function ( menu, controller )
 			end,
 			Show = function ()
 				self:setupElementClipCounter( 2 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
@@ -181,9 +189,11 @@ CoD.ElementalStaffContainer.new = function ( menu, controller )
 		Show = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				ElementalStaffItem:completeAnimation()
 				self.ElementalStaffItem:setAlpha( 1 )
 				self.clipFinished( ElementalStaffItem, {} )
@@ -192,15 +202,18 @@ CoD.ElementalStaffContainer.new = function ( menu, controller )
 		Found = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				ElementalStaffItem:completeAnimation()
 				self.ElementalStaffItem:setAlpha( 1 )
 				self.clipFinished( ElementalStaffItem, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ScoreboardFound",
@@ -237,6 +250,7 @@ CoD.ElementalStaffContainer.new = function ( menu, controller )
 			modelName = "visible"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmFxSpark20:close()
 		element.ElementalStaffItem:close()

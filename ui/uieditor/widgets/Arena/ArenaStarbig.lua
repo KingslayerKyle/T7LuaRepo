@@ -14,9 +14,11 @@ end
 CoD.ArenaStarbig = InheritFrom( LUI.UIElement )
 CoD.ArenaStarbig.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ArenaStarbig )
 	self.id = "ArenaStarbig"
@@ -79,9 +81,11 @@ CoD.ArenaStarbig.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				outline:completeAnimation()
 				self.outline:setAlpha( 1 )
 				self.clipFinished( outline, {} )
+
 				active:completeAnimation()
 				self.active:setAlpha( 1 )
 				self.clipFinished( active, {} )
@@ -90,15 +94,19 @@ CoD.ArenaStarbig.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Dust:completeAnimation()
 				self.Dust:setAlpha( 0 )
 				self.clipFinished( Dust, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				outline:completeAnimation()
 				self.outline:setAlpha( 0 )
 				self.clipFinished( outline, {} )
+
 				active:completeAnimation()
 				self.active:setAlpha( 0 )
 				self.clipFinished( active, {} )
@@ -107,15 +115,19 @@ CoD.ArenaStarbig.new = function ( menu, controller )
 		Inactive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Dust:completeAnimation()
 				self.Dust:setAlpha( 0 )
 				self.clipFinished( Dust, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				outline:completeAnimation()
 				self.outline:setAlpha( 0.5 )
 				self.clipFinished( outline, {} )
+
 				active:completeAnimation()
 				self.active:setRGB( 1, 0.74, 0.01 )
 				self.active:setAlpha( 0 )
@@ -125,6 +137,7 @@ CoD.ArenaStarbig.new = function ( menu, controller )
 		Earned = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local activeFrame2 = function ( active, event )
 					if not event.interrupted then
 						active:beginAnimation( "keyframe", 1840, false, false, CoD.TweenType.Linear )
@@ -211,6 +224,7 @@ CoD.ArenaStarbig.new = function ( menu, controller )
 		NewlyEarned = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local DustFrame2 = function ( Dust, event )
 					local DustFrame3 = function ( Dust, event )
 						local DustFrame4 = function ( Dust, event )
@@ -285,6 +299,7 @@ CoD.ArenaStarbig.new = function ( menu, controller )
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				GlowFrame2( Glow, {} )
+
 				outline:completeAnimation()
 				self.outline:setAlpha( 0.5 )
 				self.clipFinished( outline, {} )
@@ -349,6 +364,7 @@ CoD.ArenaStarbig.new = function ( menu, controller )
 		Lost = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local DustFrame2 = function ( Dust, event )
 					local DustFrame3 = function ( Dust, event )
 						local DustFrame4 = function ( Dust, event )
@@ -402,9 +418,11 @@ CoD.ArenaStarbig.new = function ( menu, controller )
 				self.Dust:setAlpha( 0 )
 				self.Dust:setScale( 1 )
 				DustFrame2( Dust, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				outline:completeAnimation()
 				self.outline:setAlpha( 0.5 )
 				self.clipFinished( outline, {} )
@@ -451,6 +469,7 @@ CoD.ArenaStarbig.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",

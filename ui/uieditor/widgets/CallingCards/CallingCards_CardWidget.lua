@@ -52,9 +52,11 @@ end
 CoD.CallingCards_CardWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_CardWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_CardWidget )
 	self.id = "CallingCards_CardWidget"
@@ -232,78 +234,102 @@ CoD.CallingCards_CardWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 1 )
 				self.clipFinished( Background, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 1 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
+
 				PackageImage:completeAnimation()
 				self.PackageImage:setAlpha( 0 )
 				self.clipFinished( PackageImage, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				DuplicateCounter:completeAnimation()
 				self.DuplicateCounter:setAlpha( 1 )
 				self.clipFinished( DuplicateCounter, {} )
+
 				BMPromoRibbon:completeAnimation()
 				self.BMPromoRibbon:setAlpha( 0 )
 				self.clipFinished( BMPromoRibbon, {} )
+
 				DownloadIcon:completeAnimation()
 				self.DownloadIcon:setAlpha( 0 )
 				self.clipFinished( DownloadIcon, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 1 )
 				self.clipFinished( Background, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 1 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
+
 				PackageImage:completeAnimation()
 				self.PackageImage:setAlpha( 0 )
 				self.clipFinished( PackageImage, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
@@ -312,98 +338,127 @@ CoD.CallingCards_CardWidget.new = function ( menu, controller )
 		BMClassified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 18 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.8 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0 )
 				self.clipFinished( Background, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 0 )
 				self.clipFinished( bgImage, {} )
+
 				black:completeAnimation()
 				self.black:setLeftRight( true, false, 100, 140 )
 				self.black:setTopBottom( true, false, 26.5, 33.5 )
 				self.black:setRGB( 0.11, 0.11, 0.11 )
 				self.black:setAlpha( 1 )
 				self.clipFinished( black, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0.9 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0.9 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
+
 				PackageImage:completeAnimation()
 				self.PackageImage:setAlpha( 0 )
 				self.clipFinished( PackageImage, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				DuplicateCounter:completeAnimation()
 				self.DuplicateCounter:setAlpha( 0 )
 				self.clipFinished( DuplicateCounter, {} )
+
 				BMPromoRibbon:completeAnimation()
 				self.BMPromoRibbon:setAlpha( 0 )
 				self.clipFinished( BMPromoRibbon, {} )
+
 				DownloadIcon:completeAnimation()
 				self.DownloadIcon:setAlpha( 0 )
 				self.clipFinished( DownloadIcon, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 11 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				Background:completeAnimation()
 				self.Background:setRGB( 0.11, 0.11, 0.11 )
 				self.clipFinished( Background, {} )
+
 				black:completeAnimation()
 				self.black:setLeftRight( true, false, 91, 148 )
 				self.black:setTopBottom( true, false, 23.5, 36.5 )
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 1 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 1 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
+
 				PackageImage:completeAnimation()
 				self.PackageImage:setAlpha( 0 )
 				self.clipFinished( PackageImage, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
@@ -412,107 +467,139 @@ CoD.CallingCards_CardWidget.new = function ( menu, controller )
 		ContractClassified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 18 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.8 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0 )
 				self.clipFinished( Background, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 0 )
 				self.clipFinished( bgImage, {} )
+
 				black:completeAnimation()
 				self.black:setLeftRight( true, false, 100, 140 )
 				self.black:setTopBottom( true, false, 26.5, 33.5 )
 				self.black:setRGB( 0.11, 0.11, 0.11 )
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
+
 				PackageImage:completeAnimation()
 				self.PackageImage:setAlpha( 0 )
 				self.clipFinished( PackageImage, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				DuplicateCounter:completeAnimation()
 				self.DuplicateCounter:setAlpha( 0 )
 				self.clipFinished( DuplicateCounter, {} )
+
 				BMPromoRibbon:completeAnimation()
 				self.BMPromoRibbon:setAlpha( 0 )
 				self.clipFinished( BMPromoRibbon, {} )
+
 				DownloadIcon:completeAnimation()
 				self.DownloadIcon:setAlpha( 0 )
 				self.clipFinished( DownloadIcon, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 1 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 1 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 1 )
 				self.clipFinished( bmContractBrandIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 14 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				Background:completeAnimation()
 				self.Background:setRGB( 0.11, 0.11, 0.11 )
 				self.clipFinished( Background, {} )
+
 				black:completeAnimation()
 				self.black:setLeftRight( true, false, 91, 148 )
 				self.black:setTopBottom( true, false, 23.5, 36.5 )
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
+
 				PackageImage:completeAnimation()
 				self.PackageImage:setAlpha( 0 )
 				self.clipFinished( PackageImage, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 1 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 1 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 1 )
 				self.clipFinished( bmContractBrandIcon, {} )
@@ -521,75 +608,98 @@ CoD.CallingCards_CardWidget.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.8 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0 )
 				self.clipFinished( Background, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 0 )
 				self.clipFinished( bgImage, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
+
 				PackageImage:completeAnimation()
 				self.PackageImage:setAlpha( 0 )
 				self.clipFinished( PackageImage, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0.15 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 1 )
 				self.clipFinished( LockedIcon, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				DuplicateCounter:completeAnimation()
 				self.DuplicateCounter:setAlpha( 0 )
 				self.clipFinished( DuplicateCounter, {} )
+
 				BMPromoRibbon:completeAnimation()
 				self.BMPromoRibbon:setAlpha( 0 )
 				self.clipFinished( BMPromoRibbon, {} )
+
 				DownloadIcon:completeAnimation()
 				self.DownloadIcon:setAlpha( 0 )
 				self.clipFinished( DownloadIcon, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0 )
 				self.clipFinished( Background, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 0 )
 				self.clipFinished( bgImage, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
+
 				PackageImage:completeAnimation()
 				self.PackageImage:setAlpha( 0 )
 				self.clipFinished( PackageImage, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0.15 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 1 )
 				self.clipFinished( LockedIcon, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
@@ -598,85 +708,111 @@ CoD.CallingCards_CardWidget.new = function ( menu, controller )
 		Package = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 1 )
 				self.clipFinished( Background, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
+
 				PackageImage:completeAnimation()
 				self.PackageImage:setAlpha( 1 )
 				self.clipFinished( PackageImage, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				DuplicateCounter:completeAnimation()
 				self.DuplicateCounter:setAlpha( 1 )
 				self.clipFinished( DuplicateCounter, {} )
+
 				BMPromoRibbon:completeAnimation()
 				self.BMPromoRibbon:setAlpha( 1 )
 				self.clipFinished( BMPromoRibbon, {} )
+
 				DownloadIcon:completeAnimation()
 				self.DownloadIcon:setAlpha( 1 )
 				self.DownloadIcon:setScale( 1 )
 				self.clipFinished( DownloadIcon, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 10 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 1 )
 				self.clipFinished( Background, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
+
 				PackageImage:completeAnimation()
 				self.PackageImage:setAlpha( 1 )
 				self.clipFinished( PackageImage, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				BMPromoRibbon:completeAnimation()
 				self.BMPromoRibbon:setAlpha( 1 )
 				self.clipFinished( BMPromoRibbon, {} )
+
 				DownloadIcon:completeAnimation()
 				self.DownloadIcon:setAlpha( 1 )
 				self.clipFinished( DownloadIcon, {} )
@@ -685,96 +821,125 @@ CoD.CallingCards_CardWidget.new = function ( menu, controller )
 		New = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.8 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0 )
 				self.clipFinished( Background, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 0 )
 				self.clipFinished( bgImage, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 1 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
+
 				PackageImage:completeAnimation()
 				self.PackageImage:setAlpha( 0 )
 				self.clipFinished( PackageImage, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 1 )
 				self.clipFinished( IconNew, {} )
+
 				DuplicateCounter:completeAnimation()
 				self.DuplicateCounter:setAlpha( 1 )
 				self.clipFinished( DuplicateCounter, {} )
+
 				BMPromoRibbon:completeAnimation()
 				self.BMPromoRibbon:setAlpha( 0 )
 				self.clipFinished( BMPromoRibbon, {} )
+
 				DownloadIcon:completeAnimation()
 				self.DownloadIcon:setAlpha( 0 )
 				self.clipFinished( DownloadIcon, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 11 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0 )
 				self.clipFinished( Background, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 0 )
 				self.clipFinished( bgImage, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 1 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
+
 				PackageImage:completeAnimation()
 				self.PackageImage:setAlpha( 0 )
 				self.clipFinished( PackageImage, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 1 )
 				self.clipFinished( IconNew, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BMClassified",
@@ -841,6 +1006,7 @@ CoD.CallingCards_CardWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactive:close()
 		element.BMGoldBarMed:close()

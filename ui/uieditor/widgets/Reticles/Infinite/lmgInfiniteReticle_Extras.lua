@@ -4,9 +4,11 @@
 CoD.lmgInfiniteReticle_Extras = InheritFrom( LUI.UIElement )
 CoD.lmgInfiniteReticle_Extras.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.lmgInfiniteReticle_Extras )
 	self.id = "lmgInfiniteReticle_Extras"
@@ -90,33 +92,40 @@ CoD.lmgInfiniteReticle_Extras.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Printing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		WeaponFiring = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Printing = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		MagazineFull = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		EmptyMagazine = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Printing",

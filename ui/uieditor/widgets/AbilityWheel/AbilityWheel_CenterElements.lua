@@ -4,9 +4,11 @@
 CoD.AbilityWheel_CenterElements = InheritFrom( LUI.UIElement )
 CoD.AbilityWheel_CenterElements.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AbilityWheel_CenterElements )
 	self.id = "AbilityWheel_CenterElements"
@@ -43,6 +45,7 @@ CoD.AbilityWheel_CenterElements.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Grad:completeAnimation()
 				self.Grad:setAlpha( 1 )
 				self.clipFinished( Grad, {} )
@@ -98,6 +101,7 @@ CoD.AbilityWheel_CenterElements.new = function ( menu, controller )
 				TitleBar:completeAnimation()
 				self.TitleBar:setAlpha( RandomAddPercent( -10, 0.2 ) )
 				TitleBarFrame2( TitleBar, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

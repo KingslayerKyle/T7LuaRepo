@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.cac_IconTokenXLarge" )
 CoD.ZM_LockBig = InheritFrom( LUI.UIElement )
 CoD.ZM_LockBig.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZM_LockBig )
 	self.id = "ZM_LockBig"
@@ -104,33 +106,43 @@ CoD.ZM_LockBig.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				LineSide:completeAnimation()
 				self.LineSide:setAlpha( 0 )
 				self.clipFinished( LineSide, {} )
+
 				LineSide0:completeAnimation()
 				self.LineSide0:setAlpha( 0 )
 				self.clipFinished( LineSide0, {} )
+
 				LineSide00:completeAnimation()
 				self.LineSide00:setAlpha( 0 )
 				self.clipFinished( LineSide00, {} )
+
 				LineSide000:completeAnimation()
 				self.LineSide000:setAlpha( 0 )
 				self.clipFinished( LineSide000, {} )
+
 				circles:completeAnimation()
 				self.circles:setAlpha( 0 )
 				self.clipFinished( circles, {} )
+
 				circles0:completeAnimation()
 				self.circles0:setAlpha( 0 )
 				self.clipFinished( circles0, {} )
+
 				circles00:completeAnimation()
 				self.circles00:setAlpha( 0 )
 				self.clipFinished( circles00, {} )
+
 				lockedIcon0:completeAnimation()
 				self.lockedIcon0:setAlpha( 0 )
 				self.clipFinished( lockedIcon0, {} )
+
 				cacIconTokenXLarge0:completeAnimation()
 				self.cacIconTokenXLarge0:setAlpha( 0 )
 				self.clipFinished( cacIconTokenXLarge0, {} )
+
 				circles000:completeAnimation()
 				self.circles000:setAlpha( 0 )
 				self.clipFinished( circles000, {} )
@@ -139,34 +151,44 @@ CoD.ZM_LockBig.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				LineSide:completeAnimation()
 				self.LineSide:setAlpha( 1 )
 				self.clipFinished( LineSide, {} )
+
 				LineSide0:completeAnimation()
 				self.LineSide0:setAlpha( 1 )
 				self.clipFinished( LineSide0, {} )
+
 				LineSide00:completeAnimation()
 				self.LineSide00:setAlpha( 1 )
 				self.clipFinished( LineSide00, {} )
+
 				LineSide000:completeAnimation()
 				self.LineSide000:setAlpha( 1 )
 				self.clipFinished( LineSide000, {} )
+
 				circles:completeAnimation()
 				self.circles:setAlpha( 1 )
 				self.clipFinished( circles, {} )
+
 				circles0:completeAnimation()
 				self.circles0:setAlpha( 1 )
 				self.clipFinished( circles0, {} )
+
 				circles00:completeAnimation()
 				self.circles00:setAlpha( 1 )
 				self.clipFinished( circles00, {} )
+
 				lockedIcon0:completeAnimation()
 				self.lockedIcon0:setAlpha( 1 )
 				self.lockedIcon0:setYRot( 0 )
 				self.clipFinished( lockedIcon0, {} )
+
 				cacIconTokenXLarge0:completeAnimation()
 				self.cacIconTokenXLarge0:setAlpha( 0 )
 				self.clipFinished( cacIconTokenXLarge0, {} )
+
 				circles000:completeAnimation()
 				self.circles000:setAlpha( 1 )
 				self.clipFinished( circles000, {} )
@@ -175,34 +197,44 @@ CoD.ZM_LockBig.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				LineSide:completeAnimation()
 				self.LineSide:setAlpha( 1 )
 				self.clipFinished( LineSide, {} )
+
 				LineSide0:completeAnimation()
 				self.LineSide0:setAlpha( 1 )
 				self.clipFinished( LineSide0, {} )
+
 				LineSide00:completeAnimation()
 				self.LineSide00:setAlpha( 1 )
 				self.clipFinished( LineSide00, {} )
+
 				LineSide000:completeAnimation()
 				self.LineSide000:setAlpha( 1 )
 				self.clipFinished( LineSide000, {} )
+
 				circles:completeAnimation()
 				self.circles:setAlpha( 1 )
 				self.clipFinished( circles, {} )
+
 				circles0:completeAnimation()
 				self.circles0:setAlpha( 1 )
 				self.clipFinished( circles0, {} )
+
 				circles00:completeAnimation()
 				self.circles00:setAlpha( 1 )
 				self.clipFinished( circles00, {} )
+
 				lockedIcon0:completeAnimation()
 				self.lockedIcon0:setAlpha( 1 )
 				self.lockedIcon0:setYRot( 0 )
 				self.clipFinished( lockedIcon0, {} )
+
 				cacIconTokenXLarge0:completeAnimation()
 				self.cacIconTokenXLarge0:setAlpha( 0 )
 				self.clipFinished( cacIconTokenXLarge0, {} )
+
 				circles000:completeAnimation()
 				self.circles000:setAlpha( 1 )
 				self.clipFinished( circles000, {} )
@@ -211,40 +243,51 @@ CoD.ZM_LockBig.new = function ( menu, controller )
 		NotAvailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				LineSide:completeAnimation()
 				self.LineSide:setAlpha( 1 )
 				self.clipFinished( LineSide, {} )
+
 				LineSide0:completeAnimation()
 				self.LineSide0:setAlpha( 1 )
 				self.clipFinished( LineSide0, {} )
+
 				LineSide00:completeAnimation()
 				self.LineSide00:setAlpha( 1 )
 				self.clipFinished( LineSide00, {} )
+
 				LineSide000:completeAnimation()
 				self.LineSide000:setAlpha( 1 )
 				self.clipFinished( LineSide000, {} )
+
 				circles:completeAnimation()
 				self.circles:setAlpha( 1 )
 				self.clipFinished( circles, {} )
+
 				circles0:completeAnimation()
 				self.circles0:setAlpha( 1 )
 				self.clipFinished( circles0, {} )
+
 				circles00:completeAnimation()
 				self.circles00:setAlpha( 1 )
 				self.clipFinished( circles00, {} )
+
 				lockedIcon0:completeAnimation()
 				self.lockedIcon0:setAlpha( 0 )
 				self.clipFinished( lockedIcon0, {} )
+
 				cacIconTokenXLarge0:completeAnimation()
 				self.cacIconTokenXLarge0:setAlpha( 1 )
 				self.cacIconTokenXLarge0:setYRot( 0 )
 				self.clipFinished( cacIconTokenXLarge0, {} )
+
 				circles000:completeAnimation()
 				self.circles000:setAlpha( 1 )
 				self.clipFinished( circles000, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -279,6 +322,7 @@ CoD.ZM_LockBig.new = function ( menu, controller )
 			modelName = "itemIndex"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.lockedIcon0:close()
 		element.cacIconTokenXLarge0:close()

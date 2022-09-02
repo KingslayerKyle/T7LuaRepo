@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CodCaster.codcaster_options_slider_small" )
 CoD.CodCasterSettingsSideBarLoadoutSettings = InheritFrom( LUI.UIElement )
 CoD.CodCasterSettingsSideBarLoadoutSettings.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterSettingsSideBarLoadoutSettings )
 	self.id = "CodCasterSettingsSideBarLoadoutSettings"
@@ -49,6 +51,7 @@ CoD.CodCasterSettingsSideBarLoadoutSettings.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
@@ -60,6 +63,7 @@ CoD.CodCasterSettingsSideBarLoadoutSettings.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ButtonList:close()
 		element.Hint:close()

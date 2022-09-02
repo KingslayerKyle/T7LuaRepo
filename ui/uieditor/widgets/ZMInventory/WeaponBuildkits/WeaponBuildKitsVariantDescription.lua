@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.CAC_varientTitlePanel" )
 CoD.WeaponBuildKitsVariantDescription = InheritFrom( LUI.UIElement )
 CoD.WeaponBuildKitsVariantDescription.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponBuildKitsVariantDescription )
 	self.id = "WeaponBuildKitsVariantDescription"
@@ -31,6 +33,7 @@ CoD.WeaponBuildKitsVariantDescription.new = function ( menu, controller )
 	highlightedDescription:setLineSpacing( 0.5 )
 	highlightedDescription:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	highlightedDescription:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( highlightedDescription, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrapped( self, element, 0, 0 )
 	end )

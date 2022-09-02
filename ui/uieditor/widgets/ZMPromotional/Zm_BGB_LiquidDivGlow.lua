@@ -4,9 +4,11 @@
 CoD.Zm_BGB_LiquidDivGlow = InheritFrom( LUI.UIElement )
 CoD.Zm_BGB_LiquidDivGlow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Zm_BGB_LiquidDivGlow )
 	self.id = "Zm_BGB_LiquidDivGlow"
@@ -31,12 +33,14 @@ CoD.Zm_BGB_LiquidDivGlow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
+
 				local GlowFrame2 = function ( Glow, event )
 					local GlowFrame3 = function ( Glow, event )
 						if not event.interrupted then
@@ -63,6 +67,7 @@ CoD.Zm_BGB_LiquidDivGlow.new = function ( menu, controller )
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.1 )
 				GlowFrame2( Glow, {} )
+
 				self.nextClip = "Focus"
 			end
 		}

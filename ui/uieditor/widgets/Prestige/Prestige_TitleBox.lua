@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.Prestige_TitleBox = InheritFrom( LUI.UIElement )
 CoD.Prestige_TitleBox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Prestige_TitleBox )
 	self.id = "Prestige_TitleBox"
@@ -45,6 +47,7 @@ CoD.Prestige_TitleBox.new = function ( menu, controller )
 	Title:setLetterSpacing( 0.6 )
 	Title:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	Title:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( Title, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 2 )
 	end )

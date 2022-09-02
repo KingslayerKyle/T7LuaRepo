@@ -4,9 +4,11 @@
 CoD.Leaderboard_VerticalCounter = InheritFrom( LUI.UIElement )
 CoD.Leaderboard_VerticalCounter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Leaderboard_VerticalCounter )
 	self.id = "Leaderboard_VerticalCounter"
@@ -66,19 +68,24 @@ CoD.Leaderboard_VerticalCounter.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				currentItem:completeAnimation()
 				self.currentItem:setAlpha( 1 )
 				self.clipFinished( currentItem, {} )
+
 				dividor:completeAnimation()
 				self.dividor:setAlpha( 1 )
 				self.clipFinished( dividor, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 1 )
 				self.clipFinished( count, {} )
+
 				upArrow:completeAnimation()
 				self.upArrow:setRGB( 1, 0.41, 0 )
 				self.upArrow:setAlpha( 1 )
 				self.clipFinished( upArrow, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setRGB( 1, 0.41, 0 )
 				self.downArrow:setAlpha( 1 )
@@ -88,18 +95,23 @@ CoD.Leaderboard_VerticalCounter.new = function ( menu, controller )
 		AtTopAndBottom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				currentItem:completeAnimation()
 				self.currentItem:setAlpha( 0 )
 				self.clipFinished( currentItem, {} )
+
 				dividor:completeAnimation()
 				self.dividor:setAlpha( 0 )
 				self.clipFinished( dividor, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 0 )
 				self.clipFinished( count, {} )
+
 				upArrow:completeAnimation()
 				self.upArrow:setAlpha( 0 )
 				self.clipFinished( upArrow, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setAlpha( 0 )
 				self.clipFinished( downArrow, {} )
@@ -108,19 +120,24 @@ CoD.Leaderboard_VerticalCounter.new = function ( menu, controller )
 		AtTop = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				currentItem:completeAnimation()
 				self.currentItem:setAlpha( 1 )
 				self.clipFinished( currentItem, {} )
+
 				dividor:completeAnimation()
 				self.dividor:setAlpha( 1 )
 				self.clipFinished( dividor, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 1 )
 				self.clipFinished( count, {} )
+
 				upArrow:completeAnimation()
 				self.upArrow:setRGB( 1, 0.41, 0 )
 				self.upArrow:setAlpha( 1 )
 				self.clipFinished( upArrow, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setRGB( 0.2, 0.29, 0.33 )
 				self.downArrow:setAlpha( 1 )
@@ -130,19 +147,24 @@ CoD.Leaderboard_VerticalCounter.new = function ( menu, controller )
 		AtBottom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				currentItem:completeAnimation()
 				self.currentItem:setAlpha( 1 )
 				self.clipFinished( currentItem, {} )
+
 				dividor:completeAnimation()
 				self.dividor:setAlpha( 1 )
 				self.clipFinished( dividor, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 1 )
 				self.clipFinished( count, {} )
+
 				upArrow:completeAnimation()
 				self.upArrow:setRGB( 0.2, 0.29, 0.33 )
 				self.upArrow:setAlpha( 1 )
 				self.clipFinished( upArrow, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setRGB( 1, 0.41, 0 )
 				self.downArrow:setAlpha( 1 )
@@ -150,6 +172,7 @@ CoD.Leaderboard_VerticalCounter.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "AtTopAndBottom",

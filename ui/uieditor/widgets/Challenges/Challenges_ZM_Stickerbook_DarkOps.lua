@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Challenges.Challenges_CallingCardProfiler_DarkOps"
 CoD.Challenges_ZM_Stickerbook_DarkOps = InheritFrom( LUI.UIElement )
 CoD.Challenges_ZM_Stickerbook_DarkOps.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_ZM_Stickerbook_DarkOps )
 	self.id = "Challenges_ZM_Stickerbook_DarkOps"
@@ -72,6 +74,7 @@ CoD.Challenges_ZM_Stickerbook_DarkOps.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardGrid:close()
 		element.CallingCardProfiler:close()

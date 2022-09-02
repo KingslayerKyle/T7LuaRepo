@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ButtonPanel" )
 CoD.PrematchCountdown_BeginsIn = InheritFrom( LUI.UIElement )
 CoD.PrematchCountdown_BeginsIn.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PrematchCountdown_BeginsIn )
 	self.id = "PrematchCountdown_BeginsIn"
@@ -42,6 +44,7 @@ CoD.PrematchCountdown_BeginsIn.new = function ( menu, controller )
 	MatchText:setText( Engine.Localize( "MP_MATCH_STARTING_IN" ) )
 	MatchText:setTTF( "fonts/escom.ttf" )
 	MatchText:setLetterSpacing( 2.7 )
+
 	LUI.OverrideFunction_CallOriginalFirst( MatchText, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 15 )
 	end )

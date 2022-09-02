@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.GameSettings_titlesecbox = InheritFrom( LUI.UIElement )
 CoD.GameSettings_titlesecbox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GameSettings_titlesecbox )
 	self.id = "GameSettings_titlesecbox"
@@ -53,6 +55,7 @@ CoD.GameSettings_titlesecbox.new = function ( menu, controller )
 	Textbox:setLetterSpacing( 0.6 )
 	Textbox:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	Textbox:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( Textbox, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 2 )
 	end )

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CharacterCustomization.ChooseCharacter_HelpBubble_
 CoD.ChooseCharacter_HelpBubble_ButtonContainer = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacter_HelpBubble_ButtonContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacter_HelpBubble_ButtonContainer )
 	self.id = "ChooseCharacter_HelpBubble_ButtonContainer"
@@ -35,9 +37,11 @@ CoD.ChooseCharacter_HelpBubble_ButtonContainer.new = function ( menu, controller
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ChooseCharacterHelpBubbleButtonLBRB:completeAnimation()
 				self.ChooseCharacterHelpBubbleButtonLBRB:setAlpha( 1 )
 				self.clipFinished( ChooseCharacterHelpBubbleButtonLBRB, {} )
+
 				ChooseCharacterHelpBubbleButtonPC:completeAnimation()
 				self.ChooseCharacterHelpBubbleButtonPC:setAlpha( 0 )
 				self.clipFinished( ChooseCharacterHelpBubbleButtonPC, {} )
@@ -46,15 +50,18 @@ CoD.ChooseCharacter_HelpBubble_ButtonContainer.new = function ( menu, controller
 		PC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ChooseCharacterHelpBubbleButtonLBRB:completeAnimation()
 				self.ChooseCharacterHelpBubbleButtonLBRB:setAlpha( 0 )
 				self.clipFinished( ChooseCharacterHelpBubbleButtonLBRB, {} )
+
 				ChooseCharacterHelpBubbleButtonPC:completeAnimation()
 				self.ChooseCharacterHelpBubbleButtonPC:setAlpha( 1 )
 				self.clipFinished( ChooseCharacterHelpBubbleButtonPC, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "PC",
@@ -81,6 +88,7 @@ CoD.ChooseCharacter_HelpBubble_ButtonContainer.new = function ( menu, controller
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ChooseCharacterHelpBubbleButtonLBRB:close()
 		element.ChooseCharacterHelpBubbleButtonPC:close()

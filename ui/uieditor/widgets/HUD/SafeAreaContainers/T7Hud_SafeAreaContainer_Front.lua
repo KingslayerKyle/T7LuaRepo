@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.safeframe_playercard" )
 CoD.T7Hud_SafeAreaContainer_Front = InheritFrom( LUI.UIElement )
 CoD.T7Hud_SafeAreaContainer_Front.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.T7Hud_SafeAreaContainer_Front )
 	self.id = "T7Hud_SafeAreaContainer_Front"
@@ -37,6 +39,7 @@ CoD.T7Hud_SafeAreaContainer_Front.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Console:completeAnimation()
 				self.Console:setAlpha( 1 )
 				self.clipFinished( Console, {} )
@@ -45,12 +48,14 @@ CoD.T7Hud_SafeAreaContainer_Front.new = function ( menu, controller )
 		MPSplitscreen = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Console:completeAnimation()
 				self.Console:setAlpha( 0 )
 				self.clipFinished( Console, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "MPSplitscreen",
@@ -67,6 +72,7 @@ CoD.T7Hud_SafeAreaContainer_Front.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Console:close()
 		element.safeframeplayercard:close()

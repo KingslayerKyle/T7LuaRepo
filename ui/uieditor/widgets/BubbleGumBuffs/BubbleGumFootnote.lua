@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ButtonPanel" )
 CoD.BubbleGumFootnote = InheritFrom( LUI.UIElement )
 CoD.BubbleGumFootnote.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BubbleGumFootnote )
 	self.id = "BubbleGumFootnote"

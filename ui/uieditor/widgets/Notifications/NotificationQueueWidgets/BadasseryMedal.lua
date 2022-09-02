@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Notifications.NotificationQueueWidgets.Notificatio
 CoD.BadasseryMedal = InheritFrom( LUI.UIElement )
 CoD.BadasseryMedal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BadasseryMedal )
 	self.id = "BadasseryMedal"
@@ -191,6 +193,7 @@ CoD.BadasseryMedal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				local BackingFrame2 = function ( Backing, event )
 					local BackingFrame3 = function ( Backing, event )
 						if not event.interrupted then
@@ -788,6 +791,7 @@ CoD.BadasseryMedal.new = function ( menu, controller )
 				self.Flash:setScale( 1 )
 				self.Flash:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
 				FlashFrame2( Flash, {} )
+
 				appearSound:completeAnimation()
 				self.appearSound:playSound( "medal_earned", controller )
 				self.clipFinished( appearSound, {} )
@@ -1011,12 +1015,14 @@ CoD.BadasseryMedal.new = function ( menu, controller )
 				self.Title:setAlpha( 0 )
 				self.Title:setScale( 0.1 )
 				TitleFrame2( Title, {} )
+
 				Notification2xpReward:completeAnimation()
 				self.Notification2xpReward:setAlpha( 0 )
 				self.clipFinished( Notification2xpReward, {} )
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 7 )
+
 				local BackingFrame2 = function ( Backing, event )
 					if not event.interrupted then
 						Backing:beginAnimation( "keyframe", 250, false, false, CoD.TweenType.Linear )
@@ -1290,6 +1296,7 @@ CoD.BadasseryMedal.new = function ( menu, controller )
 			end,
 			Combined = function ()
 				self:setupElementClipCounter( 6 )
+
 				local RedBackingFrame2 = function ( RedBacking, event )
 					if not event.interrupted then
 						RedBacking:beginAnimation( "keyframe", 349, false, false, CoD.TweenType.Linear )
@@ -1427,6 +1434,7 @@ CoD.BadasseryMedal.new = function ( menu, controller )
 		DoubleXP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				local BackingFrame2 = function ( Backing, event )
 					local BackingFrame3 = function ( Backing, event )
 						if not event.interrupted then
@@ -2024,6 +2032,7 @@ CoD.BadasseryMedal.new = function ( menu, controller )
 				self.Flash:setScale( 1 )
 				self.Flash:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
 				FlashFrame2( Flash, {} )
+
 				appearSound:completeAnimation()
 				self.appearSound:playSound( "medal_earned", controller )
 				self.clipFinished( appearSound, {} )
@@ -2275,6 +2284,7 @@ CoD.BadasseryMedal.new = function ( menu, controller )
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 8 )
+
 				local BackingFrame2 = function ( Backing, event )
 					if not event.interrupted then
 						Backing:beginAnimation( "keyframe", 250, false, false, CoD.TweenType.Linear )
@@ -2563,6 +2573,7 @@ CoD.BadasseryMedal.new = function ( menu, controller )
 			end,
 			Combined = function ()
 				self:setupElementClipCounter( 7 )
+
 				local RedBackingFrame2 = function ( RedBacking, event )
 					if not event.interrupted then
 						RedBacking:beginAnimation( "keyframe", 349, false, false, CoD.TweenType.Linear )
@@ -2715,6 +2726,7 @@ CoD.BadasseryMedal.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DoubleXP",
@@ -2723,6 +2735,7 @@ CoD.BadasseryMedal.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Title:close()
 		element.Notification2xpReward:close()

@@ -4,9 +4,11 @@
 CoD.CallingCards_CartoonZombies_Firefly = InheritFrom( LUI.UIElement )
 CoD.CallingCards_CartoonZombies_Firefly.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_CartoonZombies_Firefly )
 	self.id = "CallingCards_CartoonZombies_Firefly"
@@ -35,6 +37,7 @@ CoD.CallingCards_CartoonZombies_Firefly.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local LightFrame2 = function ( Light, event )
 					local LightFrame3 = function ( Light, event )
 						local LightFrame4 = function ( Light, event )
@@ -116,6 +119,7 @@ CoD.CallingCards_CartoonZombies_Firefly.new = function ( menu, controller )
 				Light:completeAnimation()
 				self.Light:setAlpha( 0.2 )
 				LightFrame2( Light, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ListSubHeaderGlow" )
 CoD.MapVoteHeader = InheritFrom( LUI.UIElement )
 CoD.MapVoteHeader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MapVoteHeader )
 	self.id = "MapVoteHeader"
@@ -36,15 +38,18 @@ CoD.MapVoteHeader.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				FEListSubHeaderGlow00:completeAnimation()
 				self.FEListSubHeaderGlow00:setAlpha( 1 )
 				self.clipFinished( FEListSubHeaderGlow00, {} )
 			end,
 			Invisible = function ()
 				self:setupElementClipCounter( 2 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 360, false, false, CoD.TweenType.Bounce )
@@ -80,15 +85,18 @@ CoD.MapVoteHeader.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setAlpha( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				FEListSubHeaderGlow00:completeAnimation()
 				self.FEListSubHeaderGlow00:setAlpha( 0 )
 				self.clipFinished( FEListSubHeaderGlow00, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 379, false, false, CoD.TweenType.Bounce )
@@ -122,6 +130,7 @@ CoD.MapVoteHeader.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",
@@ -138,6 +147,7 @@ CoD.MapVoteHeader.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyStatus"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEMemberBlurPanelContainer0:close()
 		element.FEListSubHeaderGlow00:close()

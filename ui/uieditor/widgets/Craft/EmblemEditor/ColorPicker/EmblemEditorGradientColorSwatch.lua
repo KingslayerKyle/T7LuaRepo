@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Craft.Paintshop.PaintshopButtonPrompt" )
 CoD.EmblemEditorGradientColorSwatch = InheritFrom( LUI.UIElement )
 CoD.EmblemEditorGradientColorSwatch.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemEditorGradientColorSwatch )
 	self.id = "EmblemEditorGradientColorSwatch"
@@ -150,6 +152,7 @@ CoD.EmblemEditorGradientColorSwatch.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.lastSavedColor:close()
 		element.emblemColorSwatch:close()

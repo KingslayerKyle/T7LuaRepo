@@ -4,9 +4,11 @@
 CoD.cac_NewTag = InheritFrom( LUI.UIElement )
 CoD.cac_NewTag.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_NewTag )
 	self.id = "cac_NewTag"
@@ -38,9 +40,11 @@ CoD.cac_NewTag.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 0 )
 				self.clipFinished( TextBox0, {} )
@@ -49,24 +53,30 @@ CoD.cac_NewTag.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 1 )
 				self.clipFinished( Image0, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 1 )
 				self.clipFinished( TextBox0, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

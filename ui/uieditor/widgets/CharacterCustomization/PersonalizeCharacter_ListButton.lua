@@ -13,9 +13,11 @@ require( "ui.uieditor.widgets.CAC.NewBreadcrumbCount" )
 CoD.PersonalizeCharacter_ListButton = InheritFrom( LUI.UIElement )
 CoD.PersonalizeCharacter_ListButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PersonalizeCharacter_ListButton )
 	self.id = "PersonalizeCharacter_ListButton"
@@ -180,32 +182,40 @@ CoD.PersonalizeCharacter_ListButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				FETitleNumBrdr1:completeAnimation()
 				self.FETitleNumBrdr1:setLeftRight( true, true, 0, 0 )
 				self.FETitleNumBrdr1:setTopBottom( true, true, 0, 0 )
 				self.FETitleNumBrdr1:setAlpha( 1 )
 				self.clipFinished( FETitleNumBrdr1, {} )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( true, false, 2, 337 )
 				self.sizeElement:setTopBottom( true, false, -78, 22 )
 				self.clipFinished( sizeElement, {} )
+
 				categoryImage:completeAnimation()
 				self.categoryImage:setAlpha( 1 )
 				self.clipFinished( categoryImage, {} )
+
 				text:completeAnimation()
 				self.clipFinished( text, {} )
+
 				colorList:completeAnimation()
 				self.colorList:setAlpha( 0 )
 				self.clipFinished( colorList, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -571,18 +581,22 @@ CoD.PersonalizeCharacter_ListButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -976,27 +990,33 @@ CoD.PersonalizeCharacter_ListButton.new = function ( menu, controller )
 		ColorList = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( true, false, 0, 335 )
 				self.sizeElement:setTopBottom( true, false, 0, 38 )
 				self.clipFinished( sizeElement, {} )
+
 				categoryImage:completeAnimation()
 				self.categoryImage:setAlpha( 0 )
 				self.clipFinished( categoryImage, {} )
+
 				colorList:completeAnimation()
 				self.colorList:setLeftRight( false, true, -115, -22 )
 				self.colorList:setTopBottom( false, false, -15, 15 )
 				self.colorList:setAlpha( 1 )
 				self.clipFinished( colorList, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -1362,18 +1382,22 @@ CoD.PersonalizeCharacter_ListButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -1767,29 +1791,36 @@ CoD.PersonalizeCharacter_ListButton.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( true, false, 0, 335 )
 				self.sizeElement:setTopBottom( true, false, 0, 100 )
 				self.clipFinished( sizeElement, {} )
+
 				categoryImage:completeAnimation()
 				self.categoryImage:setRGB( 1, 1, 1 )
 				self.categoryImage:setAlpha( 0.45 )
 				self.clipFinished( categoryImage, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0.45 )
 				self.clipFinished( text, {} )
+
 				colorList:completeAnimation()
 				self.colorList:setAlpha( 0 )
 				self.clipFinished( colorList, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -2155,27 +2186,34 @@ CoD.PersonalizeCharacter_ListButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0.5 )
 				self.clipFinished( text, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -2567,6 +2605,7 @@ CoD.PersonalizeCharacter_ListButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ColorList",
@@ -2605,6 +2644,7 @@ CoD.PersonalizeCharacter_ListButton.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FETitleNumBrdr1:close()
 		element.BoxButtonLrgInactiveDiag:close()

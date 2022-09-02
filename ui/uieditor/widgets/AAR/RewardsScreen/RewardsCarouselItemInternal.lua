@@ -11,9 +11,11 @@ require( "ui.uieditor.widgets.Notifications.RankUp.RankUpNotification_FooterBack
 CoD.RewardsCarouselItemInternal = InheritFrom( LUI.UIElement )
 CoD.RewardsCarouselItemInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RewardsCarouselItemInternal )
 	self.id = "RewardsCarouselItemInternal"
@@ -235,33 +237,44 @@ CoD.RewardsCarouselItemInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				highlight:completeAnimation()
 				self.highlight:setLeftRight( false, false, -103.94, 102.94 )
 				self.highlight:setTopBottom( true, false, -29.5, 155 )
 				self.highlight:setRGB( 0.27, 0.85, 1 )
 				self.highlight:setAlpha( 0.15 )
 				self.clipFinished( highlight, {} )
+
 				IndividualRewardItem1:completeAnimation()
+
 				IndividualRewardItem1.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem1.NotificationRewardBorder:setRGB( ColorSet.RewardRankup.r, ColorSet.RewardRankup.g, ColorSet.RewardRankup.b )
 				self.clipFinished( IndividualRewardItem1, {} )
+
 				IndividualRewardItem2:completeAnimation()
+
 				IndividualRewardItem2.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem2.NotificationRewardBorder:setRGB( ColorSet.RewardRankup.r, ColorSet.RewardRankup.g, ColorSet.RewardRankup.b )
 				self.clipFinished( IndividualRewardItem2, {} )
+
 				IndividualRewardItem3:completeAnimation()
+
 				IndividualRewardItem3.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem3:setRGB( 1, 1, 1 )
 				self.IndividualRewardItem3.NotificationRewardBorder:setRGB( ColorSet.RewardRankup.r, ColorSet.RewardRankup.g, ColorSet.RewardRankup.b )
 				self.clipFinished( IndividualRewardItem3, {} )
+
 				IndividualRewardItem4:completeAnimation()
+
 				IndividualRewardItem4.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem4:setRGB( 1, 1, 1 )
 				self.IndividualRewardItem4.NotificationRewardBorder:setRGB( ColorSet.RewardRankup.r, ColorSet.RewardRankup.g, ColorSet.RewardRankup.b )
 				self.clipFinished( IndividualRewardItem4, {} )
+
 				RankUpNotificationFooterBacking:completeAnimation()
 				self.RankUpNotificationFooterBacking:setRGB( ColorSet.RewardRankup.r, ColorSet.RewardRankup.g, ColorSet.RewardRankup.b )
 				self.clipFinished( RankUpNotificationFooterBacking, {} )
+
 				CardDescription:completeAnimation()
 				self.CardDescription:setRGB( 1, 1, 1 )
 				self.clipFinished( CardDescription, {} )
@@ -270,35 +283,47 @@ CoD.RewardsCarouselItemInternal.new = function ( menu, controller )
 		WeaponLevelUp = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				highlight:completeAnimation()
 				self.highlight:setLeftRight( false, false, -201, 202 )
 				self.highlight:setTopBottom( true, false, -49, 150 )
 				self.highlight:setRGB( ColorSet.RewardWeaponLevel.r, ColorSet.RewardWeaponLevel.g, ColorSet.RewardWeaponLevel.b )
 				self.highlight:setAlpha( 0.1 )
 				self.clipFinished( highlight, {} )
+
 				CardImage:completeAnimation()
 				self.CardImage:setLeftRight( true, false, -5.81, 281.68 )
 				self.CardImage:setTopBottom( true, false, -1.46, 123.23 )
 				self.clipFinished( CardImage, {} )
+
 				IndividualRewardItem1:completeAnimation()
+
 				IndividualRewardItem1.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem1.NotificationRewardBorder:setRGB( ColorSet.RewardWeaponLevel.r, ColorSet.RewardWeaponLevel.g, ColorSet.RewardWeaponLevel.b )
 				self.clipFinished( IndividualRewardItem1, {} )
+
 				IndividualRewardItem2:completeAnimation()
+
 				IndividualRewardItem2.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem2.NotificationRewardBorder:setRGB( ColorSet.RewardWeaponLevel.r, ColorSet.RewardWeaponLevel.g, ColorSet.RewardWeaponLevel.b )
 				self.clipFinished( IndividualRewardItem2, {} )
+
 				IndividualRewardItem3:completeAnimation()
+
 				IndividualRewardItem3.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem3.NotificationRewardBorder:setRGB( ColorSet.RewardWeaponLevel.r, ColorSet.RewardWeaponLevel.g, ColorSet.RewardWeaponLevel.b )
 				self.clipFinished( IndividualRewardItem3, {} )
+
 				IndividualRewardItem4:completeAnimation()
+
 				IndividualRewardItem4.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem4.NotificationRewardBorder:setRGB( ColorSet.RewardWeaponLevel.r, ColorSet.RewardWeaponLevel.g, ColorSet.RewardWeaponLevel.b )
 				self.clipFinished( IndividualRewardItem4, {} )
+
 				RankUpNotificationFooterBacking:completeAnimation()
 				self.RankUpNotificationFooterBacking:setRGB( ColorSet.RewardWeaponLevel.r, ColorSet.RewardWeaponLevel.g, ColorSet.RewardWeaponLevel.b )
 				self.clipFinished( RankUpNotificationFooterBacking, {} )
+
 				CardDescription:completeAnimation()
 				self.CardDescription:setRGB( 1, 1, 1 )
 				self.clipFinished( CardDescription, {} )
@@ -307,37 +332,49 @@ CoD.RewardsCarouselItemInternal.new = function ( menu, controller )
 		ChallengeCompleted = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				highlight:completeAnimation()
 				self.highlight:setLeftRight( false, false, -103.94, 102.94 )
 				self.highlight:setTopBottom( true, false, -29.5, 155 )
 				self.highlight:setRGB( 0.27, 0.85, 1 )
 				self.highlight:setAlpha( 0.15 )
 				self.clipFinished( highlight, {} )
+
 				CardImage:completeAnimation()
 				self.CardImage:setLeftRight( true, false, 8, 268.11 )
 				self.CardImage:setTopBottom( true, false, 30.48, 97.69 )
 				self.clipFinished( CardImage, {} )
+
 				IndividualRewardItem1:completeAnimation()
+
 				IndividualRewardItem1.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem1.NotificationRewardBorder:setRGB( ColorSet.RewardRankup.r, ColorSet.RewardRankup.g, ColorSet.RewardRankup.b )
 				self.clipFinished( IndividualRewardItem1, {} )
+
 				IndividualRewardItem2:completeAnimation()
+
 				IndividualRewardItem2.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem2.NotificationRewardBorder:setRGB( ColorSet.RewardRankup.r, ColorSet.RewardRankup.g, ColorSet.RewardRankup.b )
 				self.clipFinished( IndividualRewardItem2, {} )
+
 				IndividualRewardItem3:completeAnimation()
+
 				IndividualRewardItem3.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem3:setRGB( 1, 1, 1 )
 				self.IndividualRewardItem3.NotificationRewardBorder:setRGB( ColorSet.RewardRankup.r, ColorSet.RewardRankup.g, ColorSet.RewardRankup.b )
 				self.clipFinished( IndividualRewardItem3, {} )
+
 				IndividualRewardItem4:completeAnimation()
+
 				IndividualRewardItem4.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem4:setRGB( 1, 1, 1 )
 				self.IndividualRewardItem4.NotificationRewardBorder:setRGB( ColorSet.RewardRankup.r, ColorSet.RewardRankup.g, ColorSet.RewardRankup.b )
 				self.clipFinished( IndividualRewardItem4, {} )
+
 				RankUpNotificationFooterBacking:completeAnimation()
 				self.RankUpNotificationFooterBacking:setRGB( ColorSet.RewardRankup.r, ColorSet.RewardRankup.g, ColorSet.RewardRankup.b )
 				self.clipFinished( RankUpNotificationFooterBacking, {} )
+
 				CardDescription:completeAnimation()
 				self.CardDescription:setRGB( 1, 1, 1 )
 				self.clipFinished( CardDescription, {} )
@@ -346,39 +383,51 @@ CoD.RewardsCarouselItemInternal.new = function ( menu, controller )
 		ParagonRankUp = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				highlight:completeAnimation()
 				self.highlight:setLeftRight( false, false, -103.94, 102.94 )
 				self.highlight:setTopBottom( true, false, -29.5, 155 )
 				self.highlight:setRGB( 0.27, 0.85, 1 )
 				self.highlight:setAlpha( 0.15 )
 				self.clipFinished( highlight, {} )
+
 				IndividualRewardItem1:completeAnimation()
+
 				IndividualRewardItem1.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem1.NotificationRewardBorder:setRGB( ColorSet.RewardRankup.r, ColorSet.RewardRankup.g, ColorSet.RewardRankup.b )
 				self.clipFinished( IndividualRewardItem1, {} )
+
 				IndividualRewardItem2:completeAnimation()
+
 				IndividualRewardItem2.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem2.NotificationRewardBorder:setRGB( ColorSet.RewardRankup.r, ColorSet.RewardRankup.g, ColorSet.RewardRankup.b )
 				self.clipFinished( IndividualRewardItem2, {} )
+
 				IndividualRewardItem3:completeAnimation()
+
 				IndividualRewardItem3.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem3:setRGB( 1, 1, 1 )
 				self.IndividualRewardItem3.NotificationRewardBorder:setRGB( ColorSet.RewardRankup.r, ColorSet.RewardRankup.g, ColorSet.RewardRankup.b )
 				self.clipFinished( IndividualRewardItem3, {} )
+
 				IndividualRewardItem4:completeAnimation()
+
 				IndividualRewardItem4.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem4:setRGB( 1, 1, 1 )
 				self.IndividualRewardItem4.NotificationRewardBorder:setRGB( ColorSet.RewardRankup.r, ColorSet.RewardRankup.g, ColorSet.RewardRankup.b )
 				self.clipFinished( IndividualRewardItem4, {} )
+
 				RankUpNotificationFooterBacking:completeAnimation()
 				self.RankUpNotificationFooterBacking:setRGB( ColorSet.RewardRankup.r, ColorSet.RewardRankup.g, ColorSet.RewardRankup.b )
 				self.clipFinished( RankUpNotificationFooterBacking, {} )
+
 				CardDescription:completeAnimation()
 				self.CardDescription:setRGB( ColorSet.ParagonRank.r, ColorSet.ParagonRank.g, ColorSet.ParagonRank.b )
 				self.clipFinished( CardDescription, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "WeaponLevelUp",
@@ -407,6 +456,7 @@ CoD.RewardsCarouselItemInternal.new = function ( menu, controller )
 			modelName = "rewardCarouselItemType"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BorderBakedSolid0:close()
 		element.cacButtonBoxLrgInactiveStroke0:close()

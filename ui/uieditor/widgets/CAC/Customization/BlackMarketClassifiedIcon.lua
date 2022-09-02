@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_GoldBarMed" )
 CoD.BlackMarketClassifiedIcon = InheritFrom( LUI.UIElement )
 CoD.BlackMarketClassifiedIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BlackMarketClassifiedIcon )
 	self.id = "BlackMarketClassifiedIcon"
@@ -41,9 +43,11 @@ CoD.BlackMarketClassifiedIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BMGoldBarMed:close()
 	end )

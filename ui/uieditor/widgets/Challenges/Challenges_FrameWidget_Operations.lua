@@ -49,9 +49,11 @@ end
 CoD.Challenges_FrameWidget_Operations = InheritFrom( LUI.UIElement )
 CoD.Challenges_FrameWidget_Operations.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_FrameWidget_Operations )
 	self.id = "Challenges_FrameWidget_Operations"
@@ -693,6 +695,7 @@ CoD.Challenges_FrameWidget_Operations.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.operationsTitle:close()
 		element.BootcampButton:close()

@@ -65,9 +65,11 @@ end
 CoD.baseHealthWidget = InheritFrom( LUI.UIElement )
 CoD.baseHealthWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.baseHealthWidget )
 	self.id = "baseHealthWidget"
@@ -92,9 +94,11 @@ CoD.baseHealthWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				iconWidget:completeAnimation()
 				self.iconWidget:setAlpha( 0 )
 				self.clipFinished( iconWidget, {} )
+
 				damageBarWidget:completeAnimation()
 				self.damageBarWidget:setAlpha( 0 )
 				self.clipFinished( damageBarWidget, {} )
@@ -103,15 +107,18 @@ CoD.baseHealthWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				iconWidget:completeAnimation()
 				self.iconWidget:setAlpha( 1 )
 				self.clipFinished( iconWidget, {} )
+
 				damageBarWidget:completeAnimation()
 				self.damageBarWidget:setAlpha( 1 )
 				self.clipFinished( damageBarWidget, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.iconWidget:close()
 		element.damageBarWidget:close()

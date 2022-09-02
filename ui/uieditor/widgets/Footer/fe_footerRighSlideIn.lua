@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Footer.fe_LeftContainer_NOTLobby" )
 CoD.fe_footerRighSlideIn = InheritFrom( LUI.UIElement )
 CoD.fe_footerRighSlideIn.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.fe_footerRighSlideIn )
 	self.id = "fe_footerRighSlideIn"

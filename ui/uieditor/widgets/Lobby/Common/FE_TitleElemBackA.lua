@@ -4,9 +4,11 @@
 CoD.FE_TitleElemBackA = InheritFrom( LUI.UIElement )
 CoD.FE_TitleElemBackA.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_TitleElemBackA )
 	self.id = "FE_TitleElemBackA"
@@ -27,6 +29,7 @@ CoD.FE_TitleElemBackA.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local backaFrame2 = function ( backa, event )
 					local backaFrame3 = function ( backa, event )
 						local backaFrame4 = function ( backa, event )
@@ -75,6 +78,7 @@ CoD.FE_TitleElemBackA.new = function ( menu, controller )
 				self.backa:setLeftRight( true, false, 0, 36 )
 				self.backa:setTopBottom( true, false, 0, 120 )
 				backaFrame2( backa, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

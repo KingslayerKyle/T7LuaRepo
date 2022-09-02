@@ -4,9 +4,11 @@
 CoD.Notif_Camo_CenterBacking = InheritFrom( LUI.UIElement )
 CoD.Notif_Camo_CenterBacking.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Notif_Camo_CenterBacking )
 	self.id = "Notif_Camo_CenterBacking"
@@ -46,9 +48,11 @@ CoD.Notif_Camo_CenterBacking.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

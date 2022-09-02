@@ -4,9 +4,11 @@
 CoD.AmmoWidget_EquipmentEmpty = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_EquipmentEmpty.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_EquipmentEmpty )
 	self.id = "AmmoWidget_EquipmentEmpty"
@@ -46,16 +48,19 @@ CoD.AmmoWidget_EquipmentEmpty.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ImgIcon:completeAnimation()
 				self.ImgIcon:setLeftRight( true, true, 0, 0 )
 				self.ImgIcon:setTopBottom( true, true, 0, 0 )
 				self.ImgIcon:setAlpha( 0 )
 				self.clipFinished( ImgIcon, {} )
+
 				ImgIconGrow:completeAnimation()
 				self.ImgIconGrow:setLeftRight( true, true, 0, 0 )
 				self.ImgIconGrow:setTopBottom( true, true, 0, 0 )
 				self.ImgIconGrow:setAlpha( 0 )
 				self.clipFinished( ImgIconGrow, {} )
+
 				EmptyFlash:completeAnimation()
 				self.EmptyFlash:setAlpha( 0 )
 				self.clipFinished( EmptyFlash, {} )
@@ -64,6 +69,7 @@ CoD.AmmoWidget_EquipmentEmpty.new = function ( menu, controller )
 		Empty = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local ImgIconFrame2 = function ( ImgIcon, event )
 					if not event.interrupted then
 						ImgIcon:beginAnimation( "keyframe", 349, false, false, CoD.TweenType.Linear )

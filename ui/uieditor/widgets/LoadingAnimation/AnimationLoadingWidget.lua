@@ -4,9 +4,11 @@
 CoD.AnimationLoadingWidget = InheritFrom( LUI.UIElement )
 CoD.AnimationLoadingWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.AnimationLoadingWidget )
 	self.id = "AnimationLoadingWidget"
@@ -500,6 +502,7 @@ CoD.AnimationLoadingWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 48 )
+
 				local GlowFrame2 = function ( Glow, event )
 					local GlowFrame3 = function ( Glow, event )
 						if not event.interrupted then
@@ -2342,6 +2345,7 @@ CoD.AnimationLoadingWidget.new = function ( menu, controller )
 				LineOutsideLL:completeAnimation()
 				self.LineOutsideLL:setAlpha( 0.25 )
 				LineOutsideLLFrame2( LineOutsideLL, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

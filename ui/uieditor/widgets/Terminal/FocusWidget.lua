@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Terminal.FocusWidgetWhiteBars" )
 CoD.FocusWidget = InheritFrom( LUI.UIElement )
 CoD.FocusWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FocusWidget )
 	self.id = "FocusWidget"
@@ -66,9 +68,11 @@ CoD.FocusWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FocusWidgetBG0:close()
 		element.FocusWidgetBG1:close()

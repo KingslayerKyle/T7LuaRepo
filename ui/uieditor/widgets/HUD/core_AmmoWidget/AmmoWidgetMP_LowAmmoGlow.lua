@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ButtonPanel" )
 CoD.AmmoWidgetMP_LowAmmoGlow = InheritFrom( LUI.UIElement )
 CoD.AmmoWidgetMP_LowAmmoGlow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidgetMP_LowAmmoGlow )
 	self.id = "AmmoWidgetMP_LowAmmoGlow"
@@ -27,18 +29,21 @@ CoD.AmmoWidgetMP_LowAmmoGlow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setAlpha( 0 )
 				self.clipFinished( FEButtonPanel0, {} )
 			end,
 			LowAmmo = function ()
 				self:setupElementClipCounter( 1 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setAlpha( 0 )
 				self.clipFinished( FEButtonPanel0, {} )
 			end,
 			NoAmmo = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FEButtonPanel0Frame2 = function ( FEButtonPanel0, event )
 					if not event.interrupted then
 						FEButtonPanel0:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Bounce )
@@ -59,12 +64,14 @@ CoD.AmmoWidgetMP_LowAmmoGlow.new = function ( menu, controller )
 		Hero = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setAlpha( 0 )
 				self.clipFinished( FEButtonPanel0, {} )
 			end,
 			LowAmmo = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FEButtonPanel0Frame2 = function ( FEButtonPanel0, event )
 					if not event.interrupted then
 						FEButtonPanel0:beginAnimation( "keyframe", 639, false, false, CoD.TweenType.Bounce )
@@ -83,6 +90,7 @@ CoD.AmmoWidgetMP_LowAmmoGlow.new = function ( menu, controller )
 			end,
 			NoAmmo = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FEButtonPanel0Frame2 = function ( FEButtonPanel0, event )
 					if not event.interrupted then
 						FEButtonPanel0:beginAnimation( "keyframe", 649, false, false, CoD.TweenType.Bounce )
@@ -103,18 +111,21 @@ CoD.AmmoWidgetMP_LowAmmoGlow.new = function ( menu, controller )
 		LowAmmo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setAlpha( 0 )
 				self.clipFinished( FEButtonPanel0, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setAlpha( 0 )
 				self.clipFinished( FEButtonPanel0, {} )
 			end,
 			NoAmmo = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FEButtonPanel0Frame2 = function ( FEButtonPanel0, event )
 					if not event.interrupted then
 						FEButtonPanel0:beginAnimation( "keyframe", 730, false, false, CoD.TweenType.Bounce )
@@ -133,6 +144,7 @@ CoD.AmmoWidgetMP_LowAmmoGlow.new = function ( menu, controller )
 			end,
 			Hero = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FEButtonPanel0Frame2 = function ( FEButtonPanel0, event )
 					if not event.interrupted then
 						FEButtonPanel0:beginAnimation( "keyframe", 610, false, false, CoD.TweenType.Bounce )
@@ -151,6 +163,7 @@ CoD.AmmoWidgetMP_LowAmmoGlow.new = function ( menu, controller )
 			end,
 			Knife = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FEButtonPanel0Frame2 = function ( FEButtonPanel0, event )
 					if not event.interrupted then
 						FEButtonPanel0:beginAnimation( "keyframe", 610, false, false, CoD.TweenType.Bounce )
@@ -171,12 +184,14 @@ CoD.AmmoWidgetMP_LowAmmoGlow.new = function ( menu, controller )
 		NoAmmo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setAlpha( 0.4 )
 				self.clipFinished( FEButtonPanel0, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FEButtonPanel0Frame2 = function ( FEButtonPanel0, event )
 					if not event.interrupted then
 						FEButtonPanel0:beginAnimation( "keyframe", 750, false, false, CoD.TweenType.Bounce )
@@ -195,6 +210,7 @@ CoD.AmmoWidgetMP_LowAmmoGlow.new = function ( menu, controller )
 			end,
 			LowAmmo = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FEButtonPanel0Frame2 = function ( FEButtonPanel0, event )
 					if not event.interrupted then
 						FEButtonPanel0:beginAnimation( "keyframe", 639, false, false, CoD.TweenType.Bounce )
@@ -213,6 +229,7 @@ CoD.AmmoWidgetMP_LowAmmoGlow.new = function ( menu, controller )
 			end,
 			Hero = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FEButtonPanel0Frame2 = function ( FEButtonPanel0, event )
 					if not event.interrupted then
 						FEButtonPanel0:beginAnimation( "keyframe", 759, false, false, CoD.TweenType.Bounce )
@@ -231,6 +248,7 @@ CoD.AmmoWidgetMP_LowAmmoGlow.new = function ( menu, controller )
 			end,
 			Knife = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FEButtonPanel0Frame2 = function ( FEButtonPanel0, event )
 					if not event.interrupted then
 						FEButtonPanel0:beginAnimation( "keyframe", 759, false, false, CoD.TweenType.Bounce )
@@ -251,12 +269,14 @@ CoD.AmmoWidgetMP_LowAmmoGlow.new = function ( menu, controller )
 		Knife = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setAlpha( 0 )
 				self.clipFinished( FEButtonPanel0, {} )
 			end,
 			LowAmmo = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FEButtonPanel0Frame2 = function ( FEButtonPanel0, event )
 					if not event.interrupted then
 						FEButtonPanel0:beginAnimation( "keyframe", 639, false, false, CoD.TweenType.Bounce )
@@ -275,6 +295,7 @@ CoD.AmmoWidgetMP_LowAmmoGlow.new = function ( menu, controller )
 			end,
 			NoAmmo = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FEButtonPanel0Frame2 = function ( FEButtonPanel0, event )
 					if not event.interrupted then
 						FEButtonPanel0:beginAnimation( "keyframe", 649, false, false, CoD.TweenType.Bounce )
@@ -293,6 +314,7 @@ CoD.AmmoWidgetMP_LowAmmoGlow.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel0:close()
 	end )

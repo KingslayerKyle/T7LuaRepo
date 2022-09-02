@@ -11,9 +11,11 @@ require( "ui.uieditor.widgets.EndGameFlow.KillcamWidgetNumbers" )
 CoD.Top3PlayersScreenScoreWidget1 = InheritFrom( LUI.UIElement )
 CoD.Top3PlayersScreenScoreWidget1.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Top3PlayersScreenScoreWidget1 )
 	self.id = "Top3PlayersScreenScoreWidget1"

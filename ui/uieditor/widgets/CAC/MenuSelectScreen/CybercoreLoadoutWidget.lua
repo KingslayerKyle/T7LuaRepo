@@ -22,9 +22,11 @@ end
 CoD.CybercoreLoadoutWidget = InheritFrom( LUI.UIElement )
 CoD.CybercoreLoadoutWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CybercoreLoadoutWidget )
 	self.id = "CybercoreLoadoutWidget"
@@ -117,16 +119,20 @@ CoD.CybercoreLoadoutWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:completeAnimation()
 				self.clipFinished( background, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:completeAnimation()
 				self.clipFinished( background, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0.5 )
 				self.clipFinished( Glow2, {} )
@@ -135,30 +141,37 @@ CoD.CybercoreLoadoutWidget.new = function ( menu, controller )
 		Multicore = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				multicoreInstruction:completeAnimation()
 				self.multicoreInstruction:setAlpha( 1 )
 				self.clipFinished( multicoreInstruction, {} )
+
 				ChangeCybercoreLabel:completeAnimation()
 				self.ChangeCybercoreLabel:setAlpha( 0 )
 				self.clipFinished( ChangeCybercoreLabel, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 3 )
+
 				multicoreInstruction:completeAnimation()
 				self.multicoreInstruction:setAlpha( 1 )
 				self.clipFinished( multicoreInstruction, {} )
+
 				ChangeCybercoreLabel:completeAnimation()
 				self.ChangeCybercoreLabel:setAlpha( 0 )
 				self.clipFinished( ChangeCybercoreLabel, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0.5 )
 				self.clipFinished( Glow2, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Multicore",
@@ -167,6 +180,7 @@ CoD.CybercoreLoadoutWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CybercoreMulticoreWidget0:close()
 		element.cyberCoreTiles:close()

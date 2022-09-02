@@ -4,9 +4,11 @@
 CoD.OutcomeFactionIconItem = InheritFrom( LUI.UIElement )
 CoD.OutcomeFactionIconItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.OutcomeFactionIconItem )
 	self.id = "OutcomeFactionIconItem"
@@ -82,6 +84,7 @@ CoD.OutcomeFactionIconItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				local WinningTeamFactionIcon0Frame2 = function ( WinningTeamFactionIcon0, event )
 					local WinningTeamFactionIcon0Frame3 = function ( WinningTeamFactionIcon0, event )
 						if not event.interrupted then
@@ -262,24 +265,31 @@ CoD.OutcomeFactionIconItem.new = function ( menu, controller )
 		Killcam = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				WinningTeamFactionIcon0:completeAnimation()
 				self.WinningTeamFactionIcon0:setAlpha( 0 )
 				self.clipFinished( WinningTeamFactionIcon0, {} )
+
 				WinningTeamFactionIcon:completeAnimation()
 				self.WinningTeamFactionIcon:setAlpha( 0 )
 				self.clipFinished( WinningTeamFactionIcon, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 0 )
 				self.clipFinished( Image1, {} )
+
 				Pixel20100:completeAnimation()
 				self.Pixel20100:setAlpha( 0 )
 				self.clipFinished( Pixel20100, {} )
+
 				Pixel201000:completeAnimation()
 				self.Pixel201000:setAlpha( 0 )
 				self.clipFinished( Pixel201000, {} )
+
 				Pixel201001:completeAnimation()
 				self.Pixel201001:setAlpha( 0 )
 				self.clipFinished( Pixel201001, {} )
+
 				Pixel2010000:completeAnimation()
 				self.Pixel2010000:setAlpha( 0 )
 				self.clipFinished( Pixel2010000, {} )
@@ -288,6 +298,7 @@ CoD.OutcomeFactionIconItem.new = function ( menu, controller )
 		FinalKillcam = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				local WinningTeamFactionIcon0Frame2 = function ( WinningTeamFactionIcon0, event )
 					local WinningTeamFactionIcon0Frame3 = function ( WinningTeamFactionIcon0, event )
 						if not event.interrupted then

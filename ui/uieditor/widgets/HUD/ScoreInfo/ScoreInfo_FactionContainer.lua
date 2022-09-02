@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ScoreInfo.ScoreInfo_Emblem" )
 CoD.ScoreInfo_FactionContainer = InheritFrom( LUI.UIElement )
 CoD.ScoreInfo_FactionContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreInfo_FactionContainer )
 	self.id = "ScoreInfo_FactionContainer"
@@ -52,15 +54,19 @@ CoD.ScoreInfo_FactionContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				MaskGlow:completeAnimation()
 				self.MaskGlow:setAlpha( 0 )
 				self.clipFinished( MaskGlow, {} )
+
 				Emblem:completeAnimation()
 				self.Emblem:setAlpha( 0 )
 				self.clipFinished( Emblem, {} )
+
 				factionalliesAdd:completeAnimation()
 				self.factionalliesAdd:setAlpha( 0 )
 				self.clipFinished( factionalliesAdd, {} )
+
 				factionaxisAdd:completeAnimation()
 				self.factionaxisAdd:setAlpha( 0 )
 				self.clipFinished( factionaxisAdd, {} )
@@ -69,17 +75,21 @@ CoD.ScoreInfo_FactionContainer.new = function ( menu, controller )
 		Emblem = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				MaskGlow:completeAnimation()
 				self.MaskGlow:setAlpha( 0.69 )
 				self.clipFinished( MaskGlow, {} )
+
 				Emblem:completeAnimation()
 				self.Emblem:setAlpha( 1 )
 				self.clipFinished( Emblem, {} )
+
 				factionalliesAdd:completeAnimation()
 				self.factionalliesAdd:setLeftRight( true, false, -7, 79 )
 				self.factionalliesAdd:setTopBottom( true, false, -6, 80 )
 				self.factionalliesAdd:setAlpha( 0 )
 				self.clipFinished( factionalliesAdd, {} )
+
 				factionaxisAdd:completeAnimation()
 				self.factionaxisAdd:setAlpha( 0 )
 				self.clipFinished( factionaxisAdd, {} )
@@ -88,17 +98,21 @@ CoD.ScoreInfo_FactionContainer.new = function ( menu, controller )
 		Faction1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				MaskGlow:completeAnimation()
 				self.MaskGlow:setAlpha( 0.5 )
 				self.clipFinished( MaskGlow, {} )
+
 				Emblem:completeAnimation()
 				self.Emblem:setAlpha( 0 )
 				self.clipFinished( Emblem, {} )
+
 				factionalliesAdd:completeAnimation()
 				self.factionalliesAdd:setLeftRight( true, false, -7, 79 )
 				self.factionalliesAdd:setTopBottom( true, false, -6, 80 )
 				self.factionalliesAdd:setAlpha( 1 )
 				self.clipFinished( factionalliesAdd, {} )
+
 				factionaxisAdd:completeAnimation()
 				self.factionaxisAdd:setLeftRight( true, false, -8.5, 79.5 )
 				self.factionaxisAdd:setTopBottom( true, false, -8.5, 79.5 )
@@ -109,17 +123,21 @@ CoD.ScoreInfo_FactionContainer.new = function ( menu, controller )
 		Faction2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				MaskGlow:completeAnimation()
 				self.MaskGlow:setAlpha( 0.5 )
 				self.clipFinished( MaskGlow, {} )
+
 				Emblem:completeAnimation()
 				self.Emblem:setAlpha( 0 )
 				self.clipFinished( Emblem, {} )
+
 				factionalliesAdd:completeAnimation()
 				self.factionalliesAdd:setLeftRight( true, false, -7, 79 )
 				self.factionalliesAdd:setTopBottom( true, false, -6, 80 )
 				self.factionalliesAdd:setAlpha( 0 )
 				self.clipFinished( factionalliesAdd, {} )
+
 				factionaxisAdd:completeAnimation()
 				self.factionaxisAdd:setLeftRight( true, false, -8.5, 79.5 )
 				self.factionaxisAdd:setTopBottom( true, false, -8.5, 79.5 )
@@ -130,17 +148,21 @@ CoD.ScoreInfo_FactionContainer.new = function ( menu, controller )
 		Faction1CodCast = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				MaskGlow:completeAnimation()
 				self.MaskGlow:setAlpha( 0.5 )
 				self.clipFinished( MaskGlow, {} )
+
 				Emblem:completeAnimation()
 				self.Emblem:setAlpha( 0 )
 				self.clipFinished( Emblem, {} )
+
 				factionalliesAdd:completeAnimation()
 				self.factionalliesAdd:setLeftRight( true, false, -34.5, 105.5 )
 				self.factionalliesAdd:setTopBottom( true, false, -6, 80 )
 				self.factionalliesAdd:setAlpha( 1 )
 				self.clipFinished( factionalliesAdd, {} )
+
 				factionaxisAdd:completeAnimation()
 				self.factionaxisAdd:setLeftRight( true, false, -34.5, 105.5 )
 				self.factionaxisAdd:setTopBottom( true, false, -8.5, 79.5 )
@@ -151,17 +173,21 @@ CoD.ScoreInfo_FactionContainer.new = function ( menu, controller )
 		Faction2CodCast = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				MaskGlow:completeAnimation()
 				self.MaskGlow:setAlpha( 0.5 )
 				self.clipFinished( MaskGlow, {} )
+
 				Emblem:completeAnimation()
 				self.Emblem:setAlpha( 0 )
 				self.clipFinished( Emblem, {} )
+
 				factionalliesAdd:completeAnimation()
 				self.factionalliesAdd:setLeftRight( true, false, -34.5, 105.5 )
 				self.factionalliesAdd:setTopBottom( true, false, -6, 80 )
 				self.factionalliesAdd:setAlpha( 0 )
 				self.clipFinished( factionalliesAdd, {} )
+
 				factionaxisAdd:completeAnimation()
 				self.factionaxisAdd:setLeftRight( true, false, -34.5, 105.5 )
 				self.factionaxisAdd:setTopBottom( true, false, -8.5, 79.5 )
@@ -170,6 +196,7 @@ CoD.ScoreInfo_FactionContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Emblem",
@@ -226,6 +253,7 @@ CoD.ScoreInfo_FactionContainer.new = function ( menu, controller )
 			modelName = "factions.isCoDCaster"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Emblem:close()
 	end )

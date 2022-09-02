@@ -12,9 +12,11 @@ require( "ui.uieditor.widgets.verticalScrollingTextBox18" )
 CoD.MPChallengeRewardsCarouselItemInternal = InheritFrom( LUI.UIElement )
 CoD.MPChallengeRewardsCarouselItemInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MPChallengeRewardsCarouselItemInternal )
 	self.id = "MPChallengeRewardsCarouselItemInternal"
@@ -203,25 +205,35 @@ CoD.MPChallengeRewardsCarouselItemInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				highlight:completeAnimation()
 				self.highlight:setRGB( ColorSet.RewardChallenge.r, ColorSet.RewardChallenge.g, ColorSet.RewardChallenge.b )
 				self.clipFinished( highlight, {} )
+
 				IndividualRewardItem1:completeAnimation()
+
 				IndividualRewardItem1.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem1.NotificationRewardBorder:setRGB( ColorSet.RewardChallenge.r, ColorSet.RewardChallenge.g, ColorSet.RewardChallenge.b )
 				self.clipFinished( IndividualRewardItem1, {} )
+
 				IndividualRewardItem2:completeAnimation()
+
 				IndividualRewardItem2.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem2.NotificationRewardBorder:setRGB( ColorSet.RewardChallenge.r, ColorSet.RewardChallenge.g, ColorSet.RewardChallenge.b )
 				self.clipFinished( IndividualRewardItem2, {} )
+
 				IndividualRewardItem3:completeAnimation()
+
 				IndividualRewardItem3.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem3.NotificationRewardBorder:setRGB( ColorSet.RewardChallenge.r, ColorSet.RewardChallenge.g, ColorSet.RewardChallenge.b )
 				self.clipFinished( IndividualRewardItem3, {} )
+
 				IndividualRewardItem4:completeAnimation()
+
 				IndividualRewardItem4.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem4.NotificationRewardBorder:setRGB( ColorSet.RewardChallenge.r, ColorSet.RewardChallenge.g, ColorSet.RewardChallenge.b )
 				self.clipFinished( IndividualRewardItem4, {} )
+
 				RankUpNotificationFooterBacking:completeAnimation()
 				self.RankUpNotificationFooterBacking:setRGB( ColorSet.RewardChallenge.r, ColorSet.RewardChallenge.g, ColorSet.RewardChallenge.b )
 				self.clipFinished( RankUpNotificationFooterBacking, {} )
@@ -230,31 +242,42 @@ CoD.MPChallengeRewardsCarouselItemInternal.new = function ( menu, controller )
 		ArenaChallenge = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				highlight:completeAnimation()
 				self.highlight:setRGB( ColorSet.RewardArenaChallenge.r, ColorSet.RewardArenaChallenge.g, ColorSet.RewardArenaChallenge.b )
 				self.clipFinished( highlight, {} )
+
 				IndividualRewardItem1:completeAnimation()
+
 				IndividualRewardItem1.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem1.NotificationRewardBorder:setRGB( ColorSet.RewardArenaChallenge.r, ColorSet.RewardArenaChallenge.g, ColorSet.RewardArenaChallenge.b )
 				self.clipFinished( IndividualRewardItem1, {} )
+
 				IndividualRewardItem2:completeAnimation()
+
 				IndividualRewardItem2.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem2.NotificationRewardBorder:setRGB( ColorSet.RewardArenaChallenge.r, ColorSet.RewardArenaChallenge.g, ColorSet.RewardArenaChallenge.b )
 				self.clipFinished( IndividualRewardItem2, {} )
+
 				IndividualRewardItem3:completeAnimation()
+
 				IndividualRewardItem3.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem3.NotificationRewardBorder:setRGB( ColorSet.RewardArenaChallenge.r, ColorSet.RewardArenaChallenge.g, ColorSet.RewardArenaChallenge.b )
 				self.clipFinished( IndividualRewardItem3, {} )
+
 				IndividualRewardItem4:completeAnimation()
+
 				IndividualRewardItem4.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem4.NotificationRewardBorder:setRGB( ColorSet.RewardArenaChallenge.r, ColorSet.RewardArenaChallenge.g, ColorSet.RewardArenaChallenge.b )
 				self.clipFinished( IndividualRewardItem4, {} )
+
 				RankUpNotificationFooterBacking:completeAnimation()
 				self.RankUpNotificationFooterBacking:setRGB( ColorSet.RewardArenaChallenge.r, ColorSet.RewardArenaChallenge.g, ColorSet.RewardArenaChallenge.b )
 				self.clipFinished( RankUpNotificationFooterBacking, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ArenaChallenge",
@@ -271,6 +294,7 @@ CoD.MPChallengeRewardsCarouselItemInternal.new = function ( menu, controller )
 			modelName = "rewardCarouselItemType"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BorderBakedSolid0:close()
 		element.cacButtonBoxLrgInactiveStroke0:close()

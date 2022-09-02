@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_ClipContainerValue"
 CoD.AmmoWidgetMP_ClipContainerHero = InheritFrom( LUI.UIElement )
 CoD.AmmoWidgetMP_ClipContainerHero.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidgetMP_ClipContainerHero )
 	self.id = "AmmoWidgetMP_ClipContainerHero"
@@ -33,12 +35,14 @@ CoD.AmmoWidgetMP_ClipContainerHero.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Clip:completeAnimation()
 				self.Clip:setAlpha( 0 )
 				self.clipFinished( Clip, {} )
 			end,
 			Hero = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ClipFrame2 = function ( Clip, event )
 					if not event.interrupted then
 						Clip:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Bounce )
@@ -59,12 +63,14 @@ CoD.AmmoWidgetMP_ClipContainerHero.new = function ( menu, controller )
 		Hero = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Clip:completeAnimation()
 				self.Clip:setAlpha( 1 )
 				self.clipFinished( Clip, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ClipFrame2 = function ( Clip, event )
 					if not event.interrupted then
 						Clip:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Bounce )
@@ -83,6 +89,7 @@ CoD.AmmoWidgetMP_ClipContainerHero.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Clip:close()
 	end )

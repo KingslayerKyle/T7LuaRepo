@@ -4,9 +4,11 @@
 CoD.Theater_FocusBar = InheritFrom( LUI.UIElement )
 CoD.Theater_FocusBar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Theater_FocusBar )
 	self.id = "Theater_FocusBar"
@@ -52,6 +54,7 @@ CoD.Theater_FocusBar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local Glow2Frame2 = function ( Glow2, event )
 					local Glow2Frame3 = function ( Glow2, event )
 						if not event.interrupted then
@@ -78,6 +81,7 @@ CoD.Theater_FocusBar.new = function ( menu, controller )
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0.69 )
 				Glow2Frame2( Glow2, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

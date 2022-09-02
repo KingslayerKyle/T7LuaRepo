@@ -4,9 +4,11 @@
 CoD.dpsReticleZoom = InheritFrom( LUI.UIElement )
 CoD.dpsReticleZoom.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.dpsReticleZoom )
 	self.id = "dpsReticleZoom"

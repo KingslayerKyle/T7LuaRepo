@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.MPHudWidgets.ThrustMeter.ThrustMeterChevronThin" )
 CoD.ThrustMeterArrows = InheritFrom( LUI.UIElement )
 CoD.ThrustMeterArrows.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ThrustMeterArrows )
 	self.id = "ThrustMeterArrows"

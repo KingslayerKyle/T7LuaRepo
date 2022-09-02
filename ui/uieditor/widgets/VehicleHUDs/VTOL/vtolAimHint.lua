@@ -4,9 +4,11 @@
 CoD.vtolAimHint = InheritFrom( LUI.UIElement )
 CoD.vtolAimHint.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vtolAimHint )
 	self.id = "vtolAimHint"
@@ -28,6 +30,7 @@ CoD.vtolAimHint.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				AimHint:completeAnimation()
 				self.AimHint:setAlpha( 0 )
 				self.clipFinished( AimHint, {} )
@@ -36,6 +39,7 @@ CoD.vtolAimHint.new = function ( menu, controller )
 		Show = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local AimHintFrame2 = function ( AimHint, event )
 					local AimHintFrame3 = function ( AimHint, event )
 						if not event.interrupted then
@@ -62,18 +66,21 @@ CoD.vtolAimHint.new = function ( menu, controller )
 				AimHint:completeAnimation()
 				self.AimHint:setAlpha( 1 )
 				AimHintFrame2( AimHint, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				AimHint:completeAnimation()
 				self.AimHint:setAlpha( 0 )
 				self.clipFinished( AimHint, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Show",

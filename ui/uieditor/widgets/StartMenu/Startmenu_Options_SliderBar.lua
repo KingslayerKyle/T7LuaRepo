@@ -120,9 +120,11 @@ end
 CoD.StartMenu_Options_SliderBar = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_SliderBar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_SliderBar )
 	self.id = "StartMenu_Options_SliderBar"
@@ -225,78 +227,97 @@ CoD.StartMenu_Options_SliderBar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				frameOutline:completeAnimation()
 				self.frameOutline:setAlpha( 0 )
 				self.clipFinished( frameOutline, {} )
+
 				label:completeAnimation()
 				self.label:setAlpha( 1 )
 				self.clipFinished( label, {} )
+
 				numeric:completeAnimation()
 				self.numeric:setAlpha( 0.5 )
 				self.clipFinished( numeric, {} )
+
 				FilledPartBg:completeAnimation()
 				self.FilledPartBg:setLeftRight( true, false, 254.41, 434.41 )
 				self.FilledPartBg:setTopBottom( false, false, -0.5, 0.5 )
 				self.FilledPartBg:setAlpha( 0 )
 				self.clipFinished( FilledPartBg, {} )
+
 				FilledPart:completeAnimation()
 				self.FilledPart:setRGB( 1, 1, 1 )
 				self.clipFinished( FilledPart, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setLeftRight( true, true, 252.41, -60.59 )
 				self.FETitleNumBrdr0:setTopBottom( true, true, 15.5, -15.5 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				Bar:completeAnimation()
 				self.Bar:setRGB( 1, 1, 1 )
 				self.clipFinished( Bar, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 9 )
+
 				frameOutline:completeAnimation()
 				self.frameOutline:setRGB( 0.87, 0.37, 0 )
 				self.frameOutline:setAlpha( 1 )
 				self.clipFinished( frameOutline, {} )
+
 				label:completeAnimation()
 				self.label:setAlpha( 1 )
 				self.clipFinished( label, {} )
+
 				numeric:completeAnimation()
 				self.numeric:setAlpha( 1 )
 				self.clipFinished( numeric, {} )
+
 				FilledPartBg:completeAnimation()
 				self.FilledPartBg:setLeftRight( true, false, 254.41, 434.41 )
 				self.FilledPartBg:setTopBottom( false, false, -0.5, 0.5 )
 				self.FilledPartBg:setAlpha( 0 )
 				self.clipFinished( FilledPartBg, {} )
+
 				FilledPart:completeAnimation()
 				self.FilledPart:setRGB( 0.87, 0.37, 0 )
 				self.clipFinished( FilledPart, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, 0, 0 )
 				self.FocusBarT:setTopBottom( true, false, 0, 5.5 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, 0, 0 )
 				self.FocusBarB:setTopBottom( false, true, -5.5, 0 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setLeftRight( true, true, 252.41, -60.59 )
 				self.FETitleNumBrdr0:setTopBottom( true, true, 15.5, -15.5 )
 				self.FETitleNumBrdr0:setAlpha( 1 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				Bar:completeAnimation()
 				self.Bar:setRGB( 0.87, 0.37, 0 )
 				self.clipFinished( Bar, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.frameOutline:close()
 		element.StartMenuframenoBG00:close()

@@ -4,9 +4,11 @@
 CoD.Cookbook_FlowAnim_Middle = InheritFrom( LUI.UIElement )
 CoD.Cookbook_FlowAnim_Middle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.Cookbook_FlowAnim_Middle )
 	self.id = "Cookbook_FlowAnim_Middle"
@@ -37,6 +39,7 @@ CoD.Cookbook_FlowAnim_Middle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

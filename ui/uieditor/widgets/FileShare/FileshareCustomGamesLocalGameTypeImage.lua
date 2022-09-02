@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.BorderBakedSolid" )
 CoD.FileshareCustomGamesLocalGameTypeImage = InheritFrom( LUI.UIElement )
 CoD.FileshareCustomGamesLocalGameTypeImage.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FileshareCustomGamesLocalGameTypeImage )
 	self.id = "FileshareCustomGamesLocalGameTypeImage"
@@ -41,12 +43,15 @@ CoD.FileshareCustomGamesLocalGameTypeImage.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				LocalGameTypeImage:completeAnimation()
 				self.LocalGameTypeImage:setAlpha( 1 )
 				self.clipFinished( LocalGameTypeImage, {} )
+
 				BorderBakedBlur:completeAnimation()
 				self.BorderBakedBlur:setAlpha( 0.4 )
 				self.clipFinished( BorderBakedBlur, {} )
+
 				BorderBakedSolid:completeAnimation()
 				self.BorderBakedSolid:setAlpha( 0.5 )
 				self.clipFinished( BorderBakedSolid, {} )
@@ -55,18 +60,22 @@ CoD.FileshareCustomGamesLocalGameTypeImage.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				LocalGameTypeImage:completeAnimation()
 				self.LocalGameTypeImage:setAlpha( 0 )
 				self.clipFinished( LocalGameTypeImage, {} )
+
 				BorderBakedBlur:completeAnimation()
 				self.BorderBakedBlur:setAlpha( 0 )
 				self.clipFinished( BorderBakedBlur, {} )
+
 				BorderBakedSolid:completeAnimation()
 				self.BorderBakedSolid:setAlpha( 0 )
 				self.clipFinished( BorderBakedSolid, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BorderBakedBlur:close()
 		element.BorderBakedSolid:close()

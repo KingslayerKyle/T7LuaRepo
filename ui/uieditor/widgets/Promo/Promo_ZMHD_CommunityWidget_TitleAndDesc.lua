@@ -4,9 +4,11 @@
 CoD.Promo_ZMHD_CommunityWidget_TitleAndDesc = InheritFrom( LUI.UIElement )
 CoD.Promo_ZMHD_CommunityWidget_TitleAndDesc.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Promo_ZMHD_CommunityWidget_TitleAndDesc )
 	self.id = "Promo_ZMHD_CommunityWidget_TitleAndDesc"
@@ -22,6 +24,7 @@ CoD.Promo_ZMHD_CommunityWidget_TitleAndDesc.new = function ( menu, controller )
 	title:setTTF( "fonts/FoundryGridnik-Bold.ttf" )
 	title:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	title:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( title, "setText", function ( element, controller )
 		UpdateWidgetHeightToMultilineText( self, element, 0 )
 	end )
@@ -44,6 +47,7 @@ CoD.Promo_ZMHD_CommunityWidget_TitleAndDesc.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local txtDescriptionFrame2 = function ( txtDescription, event )
 					if not event.interrupted then
 						txtDescription:beginAnimation( "keyframe", 3000, false, false, CoD.TweenType.Linear )

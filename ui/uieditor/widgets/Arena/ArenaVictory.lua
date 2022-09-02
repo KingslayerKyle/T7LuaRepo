@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ButtonPanel" )
 CoD.ArenaVictory = InheritFrom( LUI.UIElement )
 CoD.ArenaVictory.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ArenaVictory )
 	self.id = "ArenaVictory"
@@ -126,6 +128,7 @@ CoD.ArenaVictory.new = function ( menu, controller )
 	Grey:setText( Engine.Localize( "MP_VICTORY_CAPS" ) )
 	Grey:setTTF( "fonts/FoundryGridnik-Bold.ttf" )
 	Grey:setLetterSpacing( 0.5 )
+
 	LUI.OverrideFunction_CallOriginalFirst( Grey, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 30 )
 	end )
@@ -139,6 +142,7 @@ CoD.ArenaVictory.new = function ( menu, controller )
 	Title:setText( Engine.Localize( "" ) )
 	Title:setTTF( "fonts/FoundryGridnik-Bold.ttf" )
 	Title:setLetterSpacing( 0.5 )
+
 	LUI.OverrideFunction_CallOriginalFirst( Title, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 30 )
 	end )
@@ -165,6 +169,7 @@ CoD.ArenaVictory.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 0 )
 				self.Title:setText( Engine.Localize( "" ) )
@@ -174,9 +179,11 @@ CoD.ArenaVictory.new = function ( menu, controller )
 		Victory = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Grey:completeAnimation()
 				self.Grey:setText( Engine.Localize( "MP_VICTORY_CAPS" ) )
 				self.clipFinished( Grey, {} )
+
 				Title:completeAnimation()
 				self.Title:setRGB( 0.36, 1, 0.15 )
 				self.Title:setAlpha( 0.65 )
@@ -187,9 +194,11 @@ CoD.ArenaVictory.new = function ( menu, controller )
 		Defeat = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Grey:completeAnimation()
 				self.Grey:setText( Engine.Localize( "MP_DEFEAT_CAPS" ) )
 				self.clipFinished( Grey, {} )
+
 				Title:completeAnimation()
 				self.Title:setRGB( 1, 0.01, 0 )
 				self.Title:setAlpha( 0.7 )
@@ -200,9 +209,11 @@ CoD.ArenaVictory.new = function ( menu, controller )
 		Draw = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Grey:completeAnimation()
 				self.Grey:setAlpha( 0 )
 				self.clipFinished( Grey, {} )
+
 				Title:completeAnimation()
 				self.Title:setRGB( 0.8, 0.8, 0.8 )
 				self.Title:setAlpha( 1 )
@@ -211,6 +222,7 @@ CoD.ArenaVictory.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Victory",
@@ -231,6 +243,7 @@ CoD.ArenaVictory.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.OutcometitlePnlCenter:close()
 		element.ColorBox:close()

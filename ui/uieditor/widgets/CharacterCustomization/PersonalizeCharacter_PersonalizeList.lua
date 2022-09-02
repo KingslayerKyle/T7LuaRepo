@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CharacterCustomization.PersonalizeCharacter_ListBu
 CoD.PersonalizeCharacter_PersonalizeList = InheritFrom( LUI.UIElement )
 CoD.PersonalizeCharacter_PersonalizeList.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PersonalizeCharacter_PersonalizeList )
 	self.id = "PersonalizeCharacter_PersonalizeList"
@@ -90,6 +92,7 @@ CoD.PersonalizeCharacter_PersonalizeList.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.customizationList:close()
 	end )

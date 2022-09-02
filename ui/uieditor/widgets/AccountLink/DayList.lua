@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Scrollbars.verticalScrollbarNew" )
 CoD.DayList = InheritFrom( LUI.UIElement )
 CoD.DayList.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DayList )
 	self.id = "DayList"
@@ -78,6 +80,7 @@ CoD.DayList.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DropdownList:completeAnimation()
 				self.DropdownList:setAlpha( 0 )
 				self.clipFinished( DropdownList, {} )
@@ -86,12 +89,14 @@ CoD.DayList.new = function ( menu, controller )
 		InUse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DropdownList:completeAnimation()
 				self.DropdownList:setAlpha( 1 )
 				self.clipFinished( DropdownList, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "InUse",
@@ -100,6 +105,7 @@ CoD.DayList.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsInDefaultState( element ) then
 			MakeElementNotFocusable( self, "DropdownList", controller )
@@ -114,6 +120,7 @@ CoD.DayList.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.DropdownRoot:close()
 		element.DropdownList:close()

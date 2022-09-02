@@ -4,9 +4,11 @@
 CoD.CallingCards_code_double_duty_home = InheritFrom( LUI.UIElement )
 CoD.CallingCards_code_double_duty_home.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_code_double_duty_home )
 	self.id = "CallingCards_code_double_duty_home"
@@ -77,6 +79,7 @@ CoD.CallingCards_code_double_duty_home.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local f2_local0 = function ( f3_arg0, f3_arg1 )
 					local f3_local0 = function ( f4_arg0, f4_arg1 )
 						local f4_local0 = function ( f5_arg0, f5_arg1 )
@@ -185,6 +188,7 @@ CoD.CallingCards_code_double_duty_home.new = function ( menu, controller )
 				self.plane:setLeftRight( true, false, -52, 0 )
 				self.plane:setTopBottom( true, false, 6.64, 34.64 )
 				planeFrame2( plane, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

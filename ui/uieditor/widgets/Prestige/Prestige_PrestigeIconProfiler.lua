@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Prestige.Prestige_MasterTierWidget" )
 CoD.Prestige_PrestigeIconProfiler = InheritFrom( LUI.UIElement )
 CoD.Prestige_PrestigeIconProfiler.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Prestige_PrestigeIconProfiler )
 	self.id = "Prestige_PrestigeIconProfiler"
@@ -86,6 +88,7 @@ CoD.Prestige_PrestigeIconProfiler.new = function ( menu, controller )
 	PrestigeMasterText:setLetterSpacing( 1 )
 	PrestigeMasterText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	PrestigeMasterText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( PrestigeMasterText, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )
@@ -150,12 +153,15 @@ CoD.Prestige_PrestigeIconProfiler.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				LockBG:completeAnimation()
 				self.LockBG:setAlpha( 0 )
 				self.clipFinished( LockBG, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 0 )
 				self.clipFinished( LockIcon, {} )
+
 				PrestigeIcon:completeAnimation()
 				self.PrestigeIcon:setAlpha( 1 )
 				self.clipFinished( PrestigeIcon, {} )
@@ -164,18 +170,22 @@ CoD.Prestige_PrestigeIconProfiler.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				LockBG:completeAnimation()
 				self.LockBG:setAlpha( 1 )
 				self.clipFinished( LockBG, {} )
+
 				LockIcon:completeAnimation()
 				self.LockIcon:setAlpha( 1 )
 				self.clipFinished( LockIcon, {} )
+
 				PrestigeIcon:completeAnimation()
 				self.PrestigeIcon:setAlpha( 0 )
 				self.clipFinished( PrestigeIcon, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PrestigeMasterBG:close()
 		element.RankTextBorder:close()

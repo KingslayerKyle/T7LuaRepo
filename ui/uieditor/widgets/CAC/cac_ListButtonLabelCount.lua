@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ListButtonLabel_Right" )
 CoD.cac_ListButtonLabelCount = InheritFrom( LUI.UIElement )
 CoD.cac_ListButtonLabelCount.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_ListButtonLabelCount )
 	self.id = "cac_ListButtonLabelCount"
@@ -38,9 +40,11 @@ CoD.cac_ListButtonLabelCount.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Arrow:completeAnimation()
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				ButtonLabelCount:completeAnimation()
 				self.ButtonLabelCount:setAlpha( 0 )
 				self.clipFinished( ButtonLabelCount, {} )
@@ -49,12 +53,14 @@ CoD.cac_ListButtonLabelCount.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Arrow:completeAnimation()
 				self.Arrow:setAlpha( 0.6 )
 				self.clipFinished( Arrow, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ButtonLabelCount:close()
 	end )

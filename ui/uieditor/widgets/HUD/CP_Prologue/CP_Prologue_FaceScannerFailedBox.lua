@@ -4,9 +4,11 @@
 CoD.CP_Prologue_FaceScannerFailedBox = InheritFrom( LUI.UIElement )
 CoD.CP_Prologue_FaceScannerFailedBox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CP_Prologue_FaceScannerFailedBox )
 	self.id = "CP_Prologue_FaceScannerFailedBox"
@@ -36,6 +38,7 @@ CoD.CP_Prologue_FaceScannerFailedBox.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local FailedBoxFrame2 = function ( FailedBox, event )
 					local FailedBoxFrame3 = function ( FailedBox, event )
 						if not event.interrupted then
@@ -121,22 +124,26 @@ CoD.CP_Prologue_FaceScannerFailedBox.new = function ( menu, controller )
 				targetSmall2:completeAnimation()
 				self.targetSmall2:setAlpha( 0 )
 				targetSmall2Frame2( targetSmall2, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Scanning = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Found = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Failed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

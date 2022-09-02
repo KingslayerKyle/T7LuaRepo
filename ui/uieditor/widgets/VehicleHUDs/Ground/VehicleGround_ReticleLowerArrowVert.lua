@@ -4,9 +4,11 @@
 CoD.VehicleGround_ReticleLowerArrowVert = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_ReticleLowerArrowVert.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VehicleGround_ReticleLowerArrowVert )
 	self.id = "VehicleGround_ReticleLowerArrowVert"
@@ -27,6 +29,7 @@ CoD.VehicleGround_ReticleLowerArrowVert.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ReticleLowerArrowVertFrame2 = function ( ReticleLowerArrowVert, event )
 					local ReticleLowerArrowVertFrame3 = function ( ReticleLowerArrowVert, event )
 						local ReticleLowerArrowVertFrame4 = function ( ReticleLowerArrowVert, event )
@@ -63,15 +66,18 @@ CoD.VehicleGround_ReticleLowerArrowVert.new = function ( menu, controller )
 				ReticleLowerArrowVert:completeAnimation()
 				self.ReticleLowerArrowVert:setAlpha( 1 )
 				ReticleLowerArrowVertFrame2( ReticleLowerArrowVert, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",

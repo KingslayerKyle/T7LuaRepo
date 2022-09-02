@@ -4,9 +4,11 @@
 CoD.uplink_IconandTextArmorbg = InheritFrom( LUI.UIElement )
 CoD.uplink_IconandTextArmorbg.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.uplink_IconandTextArmorbg )
 	self.id = "uplink_IconandTextArmorbg"
@@ -37,6 +39,7 @@ CoD.uplink_IconandTextArmorbg.new = function ( menu, controller )
 	armorLabel:setTopBottom( true, false, 0, 20 )
 	armorLabel:setText( Engine.Localize( "MP_HUD_UPLINK_ARMOR" ) )
 	armorLabel:setTTF( "fonts/escom.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( armorLabel, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 1 )
 	end )
@@ -47,6 +50,7 @@ CoD.uplink_IconandTextArmorbg.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

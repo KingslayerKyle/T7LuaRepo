@@ -4,9 +4,11 @@
 CoD.ChargerShot_ActiveLock = InheritFrom( LUI.UIElement )
 CoD.ChargerShot_ActiveLock.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChargerShot_ActiveLock )
 	self.id = "ChargerShot_ActiveLock"

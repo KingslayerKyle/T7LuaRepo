@@ -4,9 +4,11 @@
 CoD.InGamePlayerListRow = InheritFrom( LUI.UIElement )
 CoD.InGamePlayerListRow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.InGamePlayerListRow )
 	self.id = "InGamePlayerListRow"
@@ -83,6 +85,7 @@ CoD.InGamePlayerListRow.new = function ( menu, controller )
 			playerName:setText( playerNameText )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.teamBackground:close()
 		element.rankText:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.MenuSelectScreen.WeaponNameWidget" )
 CoD.EmblemEditorMaterialChallengeWidget = InheritFrom( LUI.UIElement )
 CoD.EmblemEditorMaterialChallengeWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemEditorMaterialChallengeWidget )
 	self.id = "EmblemEditorMaterialChallengeWidget"
@@ -106,20 +108,25 @@ CoD.EmblemEditorMaterialChallengeWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				requirementDesc:completeAnimation()
 				self.requirementDesc:setLeftRight( false, true, -317.5, -5 )
 				self.requirementDesc:setTopBottom( true, false, 33.5, 53.5 )
 				self.requirementDesc:setAlpha( 1 )
 				self.clipFinished( requirementDesc, {} )
+
 				completedTitle:completeAnimation()
 				self.completedTitle:setAlpha( 0 )
 				self.clipFinished( completedTitle, {} )
+
 				progressBarBg:completeAnimation()
 				self.progressBarBg:setAlpha( 0.6 )
 				self.clipFinished( progressBarBg, {} )
+
 				progressBar:completeAnimation()
 				self.progressBar:setAlpha( 1 )
 				self.clipFinished( progressBar, {} )
+
 				progressText:completeAnimation()
 				self.progressText:setAlpha( 1 )
 				self.clipFinished( progressText, {} )
@@ -128,18 +135,23 @@ CoD.EmblemEditorMaterialChallengeWidget.new = function ( menu, controller )
 		NotVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				requirementDesc:completeAnimation()
 				self.requirementDesc:setAlpha( 0 )
 				self.clipFinished( requirementDesc, {} )
+
 				completedTitle:completeAnimation()
 				self.completedTitle:setAlpha( 0 )
 				self.clipFinished( completedTitle, {} )
+
 				progressBarBg:completeAnimation()
 				self.progressBarBg:setAlpha( 0 )
 				self.clipFinished( progressBarBg, {} )
+
 				progressBar:completeAnimation()
 				self.progressBar:setAlpha( 0 )
 				self.clipFinished( progressBar, {} )
+
 				progressText:completeAnimation()
 				self.progressText:setAlpha( 0 )
 				self.clipFinished( progressText, {} )
@@ -148,28 +160,34 @@ CoD.EmblemEditorMaterialChallengeWidget.new = function ( menu, controller )
 		Completed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				requirementDesc:completeAnimation()
 				self.requirementDesc:setLeftRight( false, true, -317.5, -5 )
 				self.requirementDesc:setTopBottom( true, false, 53.5, 73.5 )
 				self.requirementDesc:setAlpha( 1 )
 				self.clipFinished( requirementDesc, {} )
+
 				completedTitle:completeAnimation()
 				self.completedTitle:setLeftRight( false, true, -317.5, -5 )
 				self.completedTitle:setTopBottom( true, false, 25.5, 49.5 )
 				self.completedTitle:setAlpha( 1 )
 				self.clipFinished( completedTitle, {} )
+
 				progressBarBg:completeAnimation()
 				self.progressBarBg:setAlpha( 0 )
 				self.clipFinished( progressBarBg, {} )
+
 				progressBar:completeAnimation()
 				self.progressBar:setAlpha( 0 )
 				self.clipFinished( progressBar, {} )
+
 				progressText:completeAnimation()
 				self.progressText:setAlpha( 0 )
 				self.clipFinished( progressText, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.camoName:close()
 		element.requirementDesc:close()

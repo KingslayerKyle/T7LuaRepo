@@ -4,9 +4,11 @@
 CoD.FR_BestTimeHud = InheritFrom( LUI.UIElement )
 CoD.FR_BestTimeHud.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FR_BestTimeHud )
 	self.id = "FR_BestTimeHud"
@@ -88,37 +90,46 @@ CoD.FR_BestTimeHud.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BestTimeText:completeAnimation()
 				self.BestTimeText:setAlpha( 1 )
 				self.clipFinished( BestTimeText, {} )
+
 				BestTimeValueText:completeAnimation()
 				self.BestTimeValueText:setLeftRight( true, true, 24.94, -11.41 )
 				self.BestTimeValueText:setTopBottom( true, true, 30.2, -5.8 )
 				self.BestTimeValueText:setAlpha( 1 )
 				self.clipFinished( BestTimeValueText, {} )
+
 				setBestTime:completeAnimation()
 				self.setBestTime:setAlpha( 0 )
 				self.clipFinished( setBestTime, {} )
+
 				setBestTimeValue:completeAnimation()
 				self.setBestTimeValue:setAlpha( 0 )
 				self.clipFinished( setBestTimeValue, {} )
 			end,
 			FaultAnim = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Inactive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BestTimeText:completeAnimation()
 				self.BestTimeText:setAlpha( 0 )
 				self.clipFinished( BestTimeText, {} )
+
 				BestTimeValueText:completeAnimation()
 				self.BestTimeValueText:setAlpha( 0 )
 				self.clipFinished( BestTimeValueText, {} )
+
 				setBestTime:completeAnimation()
 				self.setBestTime:setAlpha( 1 )
 				self.clipFinished( setBestTime, {} )
+
 				setBestTimeValue:completeAnimation()
 				self.setBestTimeValue:setLeftRight( true, true, 7.94, -6.41 )
 				self.setBestTimeValue:setTopBottom( true, true, 27.2, -8.8 )
@@ -127,6 +138,7 @@ CoD.FR_BestTimeHud.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Inactive",
@@ -143,6 +155,7 @@ CoD.FR_BestTimeHud.new = function ( menu, controller )
 			modelName = "bestTime"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BestTimeValueText:close()
 		element.setBestTimeValue:close()

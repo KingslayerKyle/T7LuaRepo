@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.MissionRecordVault.MissionRecordVault_lines" )
 CoD.ServerBrowserCheckBox = InheritFrom( LUI.UIElement )
 CoD.ServerBrowserCheckBox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ServerBrowserCheckBox )
 	self.id = "ServerBrowserCheckBox"
@@ -85,40 +87,50 @@ CoD.ServerBrowserCheckBox.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				backing:completeAnimation()
 				self.backing:setLeftRight( true, false, 0, 400 )
 				self.backing:setTopBottom( true, false, 0, 25 )
 				self.backing:setAlpha( 0 )
 				self.clipFinished( backing, {} )
+
 				checkbox:completeAnimation()
 				self.checkbox:setRGB( 1, 1, 1 )
 				self.clipFinished( checkbox, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setRGB( 1, 1, 1 )
 				self.clipFinished( itemName, {} )
+
 				MissionRecordVaultlines010:completeAnimation()
 				self.MissionRecordVaultlines010:setAlpha( 0 )
 				self.clipFinished( MissionRecordVaultlines010, {} )
+
 				MissionRecordVaultlines0100:completeAnimation()
 				self.MissionRecordVaultlines0100:setAlpha( 0 )
 				self.clipFinished( MissionRecordVaultlines0100, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				backing:completeAnimation()
 				self.backing:setAlpha( 0 )
 				self.clipFinished( backing, {} )
+
 				checkbox:completeAnimation()
 				self.checkbox:setRGB( 1, 1, 1 )
 				self.clipFinished( checkbox, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.clipFinished( itemName, {} )
+
 				MissionRecordVaultlines010:completeAnimation()
 				self.MissionRecordVaultlines010:setLeftRight( true, true, 499, -500 )
 				self.MissionRecordVaultlines010:setTopBottom( false, true, -30.5, -19.44 )
 				self.MissionRecordVaultlines010:setAlpha( 1 )
 				self.clipFinished( MissionRecordVaultlines010, {} )
+
 				MissionRecordVaultlines0100:completeAnimation()
 				self.MissionRecordVaultlines0100:setLeftRight( true, true, 499, -500 )
 				self.MissionRecordVaultlines0100:setTopBottom( false, true, -2.5, 1.56 )
@@ -129,15 +141,18 @@ CoD.ServerBrowserCheckBox.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				checkbox:completeAnimation()
 				self.checkbox:setRGB( ColorSet.Disabled.r, ColorSet.Disabled.g, ColorSet.Disabled.b )
 				self.clipFinished( checkbox, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setRGB( ColorSet.Disabled.r, ColorSet.Disabled.g, ColorSet.Disabled.b )
 				self.clipFinished( itemName, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.checkbox:close()
 		element.itemName:close()

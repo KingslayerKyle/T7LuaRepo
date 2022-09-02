@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartGameFlow.GameTypeAndMapNameWidgetTitle" )
 CoD.GameTypeAndMapNameWidget = InheritFrom( LUI.UIElement )
 CoD.GameTypeAndMapNameWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GameTypeAndMapNameWidget )
 	self.id = "GameTypeAndMapNameWidget"

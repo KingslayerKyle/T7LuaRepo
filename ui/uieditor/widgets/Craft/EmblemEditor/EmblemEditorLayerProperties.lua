@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Craft.EmblemEditor.GroupFractionLabel" )
 CoD.EmblemEditorLayerProperties = InheritFrom( LUI.UIElement )
 CoD.EmblemEditorLayerProperties.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemEditorLayerProperties )
 	self.id = "EmblemEditorLayerProperties"
@@ -342,80 +344,103 @@ CoD.EmblemEditorLayerProperties.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 23 )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, true, 0.45, 0 )
 				self.Image0:setTopBottom( true, true, 0, -122 )
 				self.clipFinished( Image0, {} )
+
 				cacButtonBoxLrgInactiveStroke0:completeAnimation()
 				self.cacButtonBoxLrgInactiveStroke0:setLeftRight( true, false, -2, 170 )
 				self.cacButtonBoxLrgInactiveStroke0:setTopBottom( true, false, -1.45, 67 )
 				self.clipFinished( cacButtonBoxLrgInactiveStroke0, {} )
+
 				positionText:completeAnimation()
 				self.positionText:setAlpha( 0 )
 				self.clipFinished( positionText, {} )
+
 				scaleText:completeAnimation()
 				self.scaleText:setAlpha( 0 )
 				self.clipFinished( scaleText, {} )
+
 				rotationText:completeAnimation()
 				self.rotationText:setAlpha( 0 )
 				self.clipFinished( rotationText, {} )
+
 				opacityText:completeAnimation()
 				self.opacityText:setAlpha( 0 )
 				self.clipFinished( opacityText, {} )
+
 				xPositionValue:completeAnimation()
 				self.xPositionValue:setAlpha( 0 )
 				self.clipFinished( xPositionValue, {} )
+
 				yPositionValue:completeAnimation()
 				self.yPositionValue:setAlpha( 0 )
 				self.clipFinished( yPositionValue, {} )
+
 				xScaleValue:completeAnimation()
 				self.xScaleValue:setAlpha( 0 )
 				self.clipFinished( xScaleValue, {} )
+
 				yScaleValue:completeAnimation()
 				self.yScaleValue:setAlpha( 0 )
 				self.clipFinished( yScaleValue, {} )
+
 				rotationValue:completeAnimation()
 				self.rotationValue:setAlpha( 0 )
 				self.clipFinished( rotationValue, {} )
+
 				opacityValue:completeAnimation()
 				self.opacityValue:setAlpha( 0 )
 				self.clipFinished( opacityValue, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 0 )
 				self.clipFinished( TextBox0, {} )
+
 				TextBox1:completeAnimation()
 				self.TextBox1:setAlpha( 0 )
 				self.clipFinished( TextBox1, {} )
+
 				TextBox2:completeAnimation()
 				self.TextBox2:setAlpha( 0 )
 				self.clipFinished( TextBox2, {} )
+
 				TextBox3:completeAnimation()
 				self.TextBox3:setAlpha( 0 )
 				self.clipFinished( TextBox3, {} )
+
 				TextBox4:completeAnimation()
 				self.TextBox4:setLeftRight( true, false, 10, 168 )
 				self.TextBox4:setTopBottom( true, false, 5, 24 )
 				self.TextBox4:setAlpha( 1 )
 				self.clipFinished( TextBox4, {} )
+
 				CategoryListLine:completeAnimation()
 				self.CategoryListLine:setAlpha( 0 )
 				self.clipFinished( CategoryListLine, {} )
+
 				CategoryListLine0:completeAnimation()
 				self.CategoryListLine0:setAlpha( 0 )
 				self.clipFinished( CategoryListLine0, {} )
+
 				linkedLayerText:completeAnimation()
 				self.linkedLayerText:setLeftRight( true, false, 10, 162.94 )
 				self.linkedLayerText:setTopBottom( true, false, 43, 62 )
 				self.linkedLayerText:setAlpha( 0 )
 				self.clipFinished( linkedLayerText, {} )
+
 				linkedLayersValue:completeAnimation()
 				self.linkedLayersValue:setAlpha( 0 )
 				self.clipFinished( linkedLayersValue, {} )
+
 				groupsUsedText:completeAnimation()
 				self.groupsUsedText:setLeftRight( true, false, 10, 162.94 )
 				self.groupsUsedText:setTopBottom( true, false, 24, 43 )
 				self.groupsUsedText:setAlpha( 0 )
 				self.clipFinished( groupsUsedText, {} )
+
 				groupsUsedValue:completeAnimation()
 				self.groupsUsedValue:setAlpha( 0 )
 				self.clipFinished( groupsUsedValue, {} )
@@ -424,77 +449,100 @@ CoD.EmblemEditorLayerProperties.new = function ( menu, controller )
 		EditModeLayerProperties = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 23 )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, true, 0.45, 0 )
 				self.Image0:setTopBottom( true, true, 0, 0 )
 				self.clipFinished( Image0, {} )
+
 				cacButtonBoxLrgInactiveStroke0:completeAnimation()
 				self.cacButtonBoxLrgInactiveStroke0:setLeftRight( true, false, -2, 170 )
 				self.cacButtonBoxLrgInactiveStroke0:setTopBottom( true, false, -1.45, 192 )
 				self.clipFinished( cacButtonBoxLrgInactiveStroke0, {} )
+
 				positionText:completeAnimation()
 				self.positionText:setAlpha( 1 )
 				self.clipFinished( positionText, {} )
+
 				scaleText:completeAnimation()
 				self.scaleText:setAlpha( 1 )
 				self.clipFinished( scaleText, {} )
+
 				rotationText:completeAnimation()
 				self.rotationText:setAlpha( 1 )
 				self.clipFinished( rotationText, {} )
+
 				opacityText:completeAnimation()
 				self.opacityText:setAlpha( 1 )
 				self.clipFinished( opacityText, {} )
+
 				xPositionValue:completeAnimation()
 				self.xPositionValue:setAlpha( 1 )
 				self.clipFinished( xPositionValue, {} )
+
 				yPositionValue:completeAnimation()
 				self.yPositionValue:setAlpha( 1 )
 				self.clipFinished( yPositionValue, {} )
+
 				xScaleValue:completeAnimation()
 				self.xScaleValue:setAlpha( 1 )
 				self.clipFinished( xScaleValue, {} )
+
 				yScaleValue:completeAnimation()
 				self.yScaleValue:setAlpha( 1 )
 				self.clipFinished( yScaleValue, {} )
+
 				rotationValue:completeAnimation()
 				self.rotationValue:setAlpha( 1 )
 				self.clipFinished( rotationValue, {} )
+
 				opacityValue:completeAnimation()
 				self.opacityValue:setAlpha( 1 )
 				self.clipFinished( opacityValue, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 1 )
 				self.clipFinished( TextBox0, {} )
+
 				TextBox1:completeAnimation()
 				self.TextBox1:setAlpha( 1 )
 				self.clipFinished( TextBox1, {} )
+
 				TextBox2:completeAnimation()
 				self.TextBox2:setAlpha( 1 )
 				self.clipFinished( TextBox2, {} )
+
 				TextBox3:completeAnimation()
 				self.TextBox3:setAlpha( 1 )
 				self.clipFinished( TextBox3, {} )
+
 				TextBox4:completeAnimation()
 				self.TextBox4:setLeftRight( true, false, 10, 162.94 )
 				self.TextBox4:setTopBottom( true, false, 5, 24 )
 				self.clipFinished( TextBox4, {} )
+
 				CategoryListLine:completeAnimation()
 				self.CategoryListLine:setAlpha( 0.45 )
 				self.clipFinished( CategoryListLine, {} )
+
 				CategoryListLine0:completeAnimation()
 				self.CategoryListLine0:setAlpha( 0.45 )
 				self.clipFinished( CategoryListLine0, {} )
+
 				linkedLayerText:completeAnimation()
 				self.linkedLayerText:setAlpha( 0 )
 				self.clipFinished( linkedLayerText, {} )
+
 				linkedLayersValue:completeAnimation()
 				self.linkedLayersValue:setAlpha( 0 )
 				self.clipFinished( linkedLayersValue, {} )
+
 				groupsUsedText:completeAnimation()
 				self.groupsUsedText:setLeftRight( true, false, 10, 162.94 )
 				self.groupsUsedText:setTopBottom( true, false, 24, 43 )
 				self.groupsUsedText:setAlpha( 0 )
 				self.clipFinished( groupsUsedText, {} )
+
 				groupsUsedValue:completeAnimation()
 				self.groupsUsedValue:setAlpha( 0 )
 				self.clipFinished( groupsUsedValue, {} )
@@ -503,81 +551,103 @@ CoD.EmblemEditorLayerProperties.new = function ( menu, controller )
 		ArabicFrontEnd = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 22 )
+
 				cacButtonBoxLrgInactiveStroke0:completeAnimation()
 				self.cacButtonBoxLrgInactiveStroke0:setLeftRight( true, false, -2, 170 )
 				self.cacButtonBoxLrgInactiveStroke0:setTopBottom( true, false, -1.45, 68 )
 				self.clipFinished( cacButtonBoxLrgInactiveStroke0, {} )
+
 				positionText:completeAnimation()
 				self.positionText:setAlpha( 0 )
 				self.clipFinished( positionText, {} )
+
 				scaleText:completeAnimation()
 				self.scaleText:setAlpha( 0 )
 				self.clipFinished( scaleText, {} )
+
 				rotationText:completeAnimation()
 				self.rotationText:setAlpha( 0 )
 				self.clipFinished( rotationText, {} )
+
 				opacityText:completeAnimation()
 				self.opacityText:setAlpha( 0 )
 				self.clipFinished( opacityText, {} )
+
 				xPositionValue:completeAnimation()
 				self.xPositionValue:setAlpha( 0 )
 				self.clipFinished( xPositionValue, {} )
+
 				yPositionValue:completeAnimation()
 				self.yPositionValue:setAlpha( 0 )
 				self.clipFinished( yPositionValue, {} )
+
 				xScaleValue:completeAnimation()
 				self.xScaleValue:setAlpha( 0 )
 				self.clipFinished( xScaleValue, {} )
+
 				yScaleValue:completeAnimation()
 				self.yScaleValue:setAlpha( 0 )
 				self.clipFinished( yScaleValue, {} )
+
 				rotationValue:completeAnimation()
 				self.rotationValue:setAlpha( 0 )
 				self.clipFinished( rotationValue, {} )
+
 				opacityValue:completeAnimation()
 				self.opacityValue:setAlpha( 0 )
 				self.clipFinished( opacityValue, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 0 )
 				self.clipFinished( TextBox0, {} )
+
 				TextBox1:completeAnimation()
 				self.TextBox1:setAlpha( 0 )
 				self.clipFinished( TextBox1, {} )
+
 				TextBox2:completeAnimation()
 				self.TextBox2:setAlpha( 0 )
 				self.clipFinished( TextBox2, {} )
+
 				TextBox3:completeAnimation()
 				self.TextBox3:setAlpha( 0 )
 				self.clipFinished( TextBox3, {} )
+
 				TextBox4:completeAnimation()
 				self.TextBox4:setLeftRight( true, false, 10, 162.94 )
 				self.TextBox4:setTopBottom( true, false, 5, 24 )
 				self.TextBox4:setAlpha( 1 )
 				self.TextBox4:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 				self.clipFinished( TextBox4, {} )
+
 				CategoryListLine:completeAnimation()
 				self.CategoryListLine:setAlpha( 0 )
 				self.clipFinished( CategoryListLine, {} )
+
 				CategoryListLine0:completeAnimation()
 				self.CategoryListLine0:setAlpha( 0 )
 				self.clipFinished( CategoryListLine0, {} )
+
 				linkedLayerText:completeAnimation()
 				self.linkedLayerText:setLeftRight( true, false, 10, 162.94 )
 				self.linkedLayerText:setTopBottom( true, false, 43, 62 )
 				self.linkedLayerText:setAlpha( 0 )
 				self.linkedLayerText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 				self.clipFinished( linkedLayerText, {} )
+
 				linkedLayersValue:completeAnimation()
 				self.linkedLayersValue:setLeftRight( false, true, -158, -5 )
 				self.linkedLayersValue:setTopBottom( true, false, 43, 62 )
 				self.linkedLayersValue:setAlpha( 0 )
 				self.clipFinished( linkedLayersValue, {} )
+
 				groupsUsedText:completeAnimation()
 				self.groupsUsedText:setLeftRight( true, false, 10, 162.94 )
 				self.groupsUsedText:setTopBottom( true, false, 24, 43 )
 				self.groupsUsedText:setAlpha( 0 )
 				self.groupsUsedText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 				self.clipFinished( groupsUsedText, {} )
+
 				groupsUsedValue:completeAnimation()
 				self.groupsUsedValue:setLeftRight( false, true, -158, -5 )
 				self.groupsUsedValue:setTopBottom( true, false, 19.5, 43 )
@@ -586,6 +656,7 @@ CoD.EmblemEditorLayerProperties.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "EditModeLayerProperties",
@@ -606,6 +677,7 @@ CoD.EmblemEditorLayerProperties.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.cacButtonBoxLrgInactiveStroke0:close()
 		element.layerUsedValue:close()

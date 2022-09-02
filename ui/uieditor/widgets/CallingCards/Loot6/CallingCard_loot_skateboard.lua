@@ -4,9 +4,11 @@
 CoD.CallingCard_loot_skateboard = InheritFrom( LUI.UIElement )
 CoD.CallingCard_loot_skateboard.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCard_loot_skateboard )
 	self.id = "CallingCard_loot_skateboard"
@@ -107,6 +109,7 @@ CoD.CallingCard_loot_skateboard.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				local eye1Frame2 = function ( eye1, event )
 					local eye1Frame3 = function ( eye1, event )
 						local eye1Frame4 = function ( eye1, event )
@@ -1391,6 +1394,7 @@ CoD.CallingCard_loot_skateboard.new = function ( menu, controller )
 				self.pupil5:setLeftRight( true, false, 422, 446 )
 				self.pupil5:setTopBottom( true, false, 26, 50 )
 				pupil5Frame2( pupil5, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

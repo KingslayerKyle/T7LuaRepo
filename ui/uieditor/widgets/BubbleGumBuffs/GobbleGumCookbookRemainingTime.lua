@@ -4,9 +4,11 @@
 CoD.GobbleGumCookbookRemainingTime = InheritFrom( LUI.UIElement )
 CoD.GobbleGumCookbookRemainingTime.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GobbleGumCookbookRemainingTime )
 	self.id = "GobbleGumCookbookRemainingTime"
@@ -34,24 +36,30 @@ CoD.GobbleGumCookbookRemainingTime.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Cooking = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartCooking = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Cooking = function ()
 				self:setupElementClipCounter( 0 )
+
 				self.nextClip = "Cooking"
 			end,
 			EndCooking = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.remainingTime:close()
 	end )

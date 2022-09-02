@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.siegebot.vhud_siegebot_EMPwidget" )
 CoD.vhud_siegebot_reticle = InheritFrom( LUI.UIElement )
 CoD.vhud_siegebot_reticle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_siegebot_reticle )
 	self.id = "vhud_siegebot_reticle"
@@ -270,9 +272,11 @@ CoD.vhud_siegebot_reticle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 22 )
+
 				local agrCenterPointFrame2 = function ( agrCenterPoint, event )
 					if not event.interrupted then
 						agrCenterPoint:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -1072,6 +1076,7 @@ CoD.vhud_siegebot_reticle.new = function ( menu, controller )
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 12 )
+
 				agrCenterPoint:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
 				agrCenterPoint:setLeftRight( false, false, -9, 7 )
 				agrCenterPoint:setTopBottom( false, false, -8, 8 )
@@ -1288,49 +1293,60 @@ CoD.vhud_siegebot_reticle.new = function ( menu, controller )
 		Zoom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				HairlineTop:completeAnimation()
 				self.HairlineTop:setLeftRight( false, false, -13, 11 )
 				self.HairlineTop:setTopBottom( false, false, -32.5, -20.5 )
 				self.HairlineTop:setAlpha( 0 )
 				self.clipFinished( HairlineTop, {} )
+
 				HairlineRight:completeAnimation()
 				self.HairlineRight:setLeftRight( false, false, 15, 27 )
 				self.HairlineRight:setTopBottom( false, false, 15.5, 27.5 )
 				self.HairlineRight:setAlpha( 0 )
 				self.clipFinished( HairlineRight, {} )
+
 				HairlineLeft:completeAnimation()
 				self.HairlineLeft:setLeftRight( false, false, -28, -16 )
 				self.HairlineLeft:setTopBottom( false, false, 15.5, 27.5 )
 				self.HairlineLeft:setAlpha( 0 )
 				self.clipFinished( HairlineLeft, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( false, false, -13, 11 )
 				self.Image0:setTopBottom( false, false, -21.5, -14.5 )
 				self.clipFinished( Image0, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setLeftRight( false, false, -13, 11 )
 				self.Image1:setTopBottom( false, false, 15.5, 22 )
 				self.clipFinished( Image1, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setLeftRight( false, false, 4.5, 88.5 )
 				self.Image2:setTopBottom( false, false, -6.45, 5.55 )
 				self.clipFinished( Image2, {} )
+
 				Image3:completeAnimation()
 				self.Image3:setLeftRight( false, false, -91.75, -7.75 )
 				self.Image3:setTopBottom( false, false, -6.45, 5.55 )
 				self.clipFinished( Image3, {} )
+
 				Image4:completeAnimation()
 				self.Image4:setLeftRight( false, false, 107.43, 131.43 )
 				self.Image4:setTopBottom( false, false, -6.45, 5.55 )
 				self.clipFinished( Image4, {} )
+
 				Image5:completeAnimation()
 				self.Image5:setLeftRight( false, false, 147.43, 171.43 )
 				self.Image5:setTopBottom( false, false, -6.45, 5.55 )
 				self.clipFinished( Image5, {} )
+
 				Image6:completeAnimation()
 				self.Image6:setLeftRight( false, false, -166.75, -142.75 )
 				self.Image6:setTopBottom( false, false, -6.45, 5.55 )
 				self.clipFinished( Image6, {} )
+
 				Image7:completeAnimation()
 				self.Image7:setLeftRight( false, false, -129.57, -105.57 )
 				self.Image7:setTopBottom( false, false, -6.45, 5.55 )
@@ -1338,6 +1354,7 @@ CoD.vhud_siegebot_reticle.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 11 )
+
 				local HairlineTopFrame2 = function ( HairlineTop, event )
 					if not event.interrupted then
 						HairlineTop:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -1550,6 +1567,7 @@ CoD.vhud_siegebot_reticle.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vhudsiegebotmissilecontainer:close()
 		element.vhudsiegebotdamagebottom:close()

@@ -47,9 +47,11 @@ end
 CoD.CodCasterSpectate = InheritFrom( LUI.UIElement )
 CoD.CodCasterSpectate.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterSpectate )
 	self.id = "CodCasterSpectate"
@@ -243,70 +245,91 @@ CoD.CodCasterSpectate.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				BG1:completeAnimation()
 				self.BG1:setAlpha( 0 )
 				self.clipFinished( BG1, {} )
+
 				WhiteBG:completeAnimation()
 				self.WhiteBG:setAlpha( 0 )
 				self.clipFinished( WhiteBG, {} )
+
 				CodCasterLoadoutListContainerContainer:completeAnimation()
 				self.CodCasterLoadoutListContainerContainer:setAlpha( 0 )
 				self.clipFinished( CodCasterLoadoutListContainerContainer, {} )
+
 				playerNameBGAccent:completeAnimation()
 				self.playerNameBGAccent:setAlpha( 0 )
 				self.clipFinished( playerNameBGAccent, {} )
+
 				playerNameBG:completeAnimation()
 				self.playerNameBG:setAlpha( 0 )
 				self.clipFinished( playerNameBG, {} )
+
 				teamNameBG:completeAnimation()
 				self.teamNameBG:setAlpha( 0 )
 				self.clipFinished( teamNameBG, {} )
+
 				teamColorArrow:completeAnimation()
 				self.teamColorArrow:setAlpha( 0 )
 				self.clipFinished( teamColorArrow, {} )
+
 				teamColor:completeAnimation()
 				self.teamColor:setAlpha( 0 )
 				self.clipFinished( teamColor, {} )
+
 				spectatingBar:completeAnimation()
 				self.spectatingBar:setAlpha( 0 )
 				self.clipFinished( spectatingBar, {} )
+
 				DeadSpectateSpectatingBarPC:completeAnimation()
 				self.DeadSpectateSpectatingBarPC:setAlpha( 0 )
 				self.clipFinished( DeadSpectateSpectatingBarPC, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setAlpha( 0 )
 				self.clipFinished( arrow, {} )
+
 				playerName:completeAnimation()
 				self.playerName:setAlpha( 0 )
 				self.clipFinished( playerName, {} )
+
 				teamName:completeAnimation()
 				self.teamName:setRGB( 0, 0, 0 )
 				self.teamName:setAlpha( 0 )
 				self.clipFinished( teamName, {} )
+
 				HeroExtraCamRenderByIndex:completeAnimation()
 				self.HeroExtraCamRenderByIndex:setAlpha( 0 )
 				self.clipFinished( HeroExtraCamRenderByIndex, {} )
+
 				GlowWhiteOver:completeAnimation()
 				self.GlowWhiteOver:setAlpha( 0 )
 				self.clipFinished( GlowWhiteOver, {} )
+
 				GlowWhiteOver0:completeAnimation()
 				self.GlowWhiteOver0:setAlpha( 0 )
 				self.clipFinished( GlowWhiteOver0, {} )
 			end,
 			SelectionChanged = function ()
 				self:setupElementClipCounter( 9 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				BG1:completeAnimation()
 				self.BG1:setAlpha( 1 )
 				self.clipFinished( BG1, {} )
+
 				playerNameBGAccent:completeAnimation()
 				self.playerNameBGAccent:setAlpha( 0.6 )
 				self.clipFinished( playerNameBGAccent, {} )
+
 				playerNameBG:completeAnimation()
 				self.playerNameBG:setAlpha( 0.8 )
 				self.clipFinished( playerNameBG, {} )
@@ -329,6 +352,7 @@ CoD.CodCasterSpectate.new = function ( menu, controller )
 				self.teamColorArrow:setTopBottom( true, false, 3, 44 )
 				self.teamColorArrow:setAlpha( 1 )
 				teamColorArrowFrame2( teamColorArrow, {} )
+
 				teamColor:completeAnimation()
 				self.teamColor:setAlpha( 1 )
 				self.clipFinished( teamColor, {} )
@@ -351,6 +375,7 @@ CoD.CodCasterSpectate.new = function ( menu, controller )
 				self.arrow:setTopBottom( true, false, 3, 44 )
 				self.arrow:setAlpha( 1 )
 				arrowFrame2( arrow, {} )
+
 				teamName:completeAnimation()
 				self.teamName:setRGB( 1, 1, 1 )
 				self.clipFinished( teamName, {} )
@@ -374,12 +399,15 @@ CoD.CodCasterSpectate.new = function ( menu, controller )
 			end,
 			SelectionChangedEnd = function ()
 				self:setupElementClipCounter( 8 )
+
 				BG1:completeAnimation()
 				self.BG1:setAlpha( 1 )
 				self.clipFinished( BG1, {} )
+
 				playerNameBGAccent:completeAnimation()
 				self.playerNameBGAccent:setAlpha( 0.6 )
 				self.clipFinished( playerNameBGAccent, {} )
+
 				playerNameBG:completeAnimation()
 				self.playerNameBG:setAlpha( 0.8 )
 				self.clipFinished( playerNameBG, {} )
@@ -402,6 +430,7 @@ CoD.CodCasterSpectate.new = function ( menu, controller )
 				self.teamColorArrow:setTopBottom( true, false, 3, 44 )
 				self.teamColorArrow:setAlpha( 1 )
 				teamColorArrowFrame2( teamColorArrow, {} )
+
 				teamColor:completeAnimation()
 				self.teamColor:setAlpha( 1 )
 				self.clipFinished( teamColor, {} )
@@ -424,6 +453,7 @@ CoD.CodCasterSpectate.new = function ( menu, controller )
 				self.arrow:setTopBottom( true, false, 3, 44 )
 				self.arrow:setAlpha( 1 )
 				arrowFrame2( arrow, {} )
+
 				teamName:completeAnimation()
 				self.teamName:setRGB( 1, 1, 1 )
 				self.clipFinished( teamName, {} )
@@ -449,88 +479,113 @@ CoD.CodCasterSpectate.new = function ( menu, controller )
 		ShowWithSpecialist = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				bg:completeAnimation()
 				self.bg:setLeftRight( true, false, 159, 296 )
 				self.bg:setTopBottom( true, false, 1, 73 )
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				BG1:completeAnimation()
 				self.BG1:setAlpha( 1 )
 				self.clipFinished( BG1, {} )
+
 				WhiteBG:completeAnimation()
 				self.WhiteBG:setAlpha( 0 )
 				self.clipFinished( WhiteBG, {} )
+
 				CodCasterLoadoutListContainerContainer:completeAnimation()
 				self.CodCasterLoadoutListContainerContainer:setAlpha( 1 )
 				self.clipFinished( CodCasterLoadoutListContainerContainer, {} )
+
 				playerNameBGAccent:completeAnimation()
 				self.playerNameBGAccent:setAlpha( 0.6 )
 				self.clipFinished( playerNameBGAccent, {} )
+
 				playerNameBG:completeAnimation()
 				self.playerNameBG:setAlpha( 0.8 )
 				self.clipFinished( playerNameBG, {} )
+
 				teamNameBG:completeAnimation()
 				self.teamNameBG:setAlpha( 0.85 )
 				self.clipFinished( teamNameBG, {} )
+
 				teamColorArrow:completeAnimation()
 				self.teamColorArrow:setAlpha( 1 )
 				self.clipFinished( teamColorArrow, {} )
+
 				teamColor:completeAnimation()
 				self.teamColor:setAlpha( 1 )
 				self.clipFinished( teamColor, {} )
+
 				spectatingBar:completeAnimation()
 				self.spectatingBar:setAlpha( 1 )
 				self.clipFinished( spectatingBar, {} )
+
 				DeadSpectateSpectatingBarPC:completeAnimation()
 				self.DeadSpectateSpectatingBarPC:setAlpha( 1 )
 				self.clipFinished( DeadSpectateSpectatingBarPC, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setAlpha( 1 )
 				self.clipFinished( arrow, {} )
+
 				playerName:completeAnimation()
 				self.playerName:setAlpha( 1 )
 				self.clipFinished( playerName, {} )
+
 				teamName:completeAnimation()
 				self.teamName:setRGB( 1, 1, 1 )
 				self.teamName:setAlpha( 1 )
 				self.clipFinished( teamName, {} )
+
 				HeroExtraCamRenderByIndex:completeAnimation()
 				self.HeroExtraCamRenderByIndex:setAlpha( 1 )
 				self.clipFinished( HeroExtraCamRenderByIndex, {} )
+
 				GlowWhiteOver:completeAnimation()
 				self.GlowWhiteOver:setAlpha( 0 )
 				self.clipFinished( GlowWhiteOver, {} )
+
 				GlowWhiteOver0:completeAnimation()
 				self.GlowWhiteOver0:setAlpha( 0 )
 				self.clipFinished( GlowWhiteOver0, {} )
 			end,
 			SelectionChanged = function ()
 				self:setupElementClipCounter( 10 )
+
 				BG1:completeAnimation()
 				self.BG1:setAlpha( 1 )
 				self.clipFinished( BG1, {} )
+
 				playerNameBGAccent:completeAnimation()
 				self.playerNameBGAccent:setAlpha( 0.6 )
 				self.clipFinished( playerNameBGAccent, {} )
+
 				playerNameBG:completeAnimation()
 				self.playerNameBG:setAlpha( 0.8 )
 				self.clipFinished( playerNameBG, {} )
+
 				teamColorArrow:completeAnimation()
 				self.teamColorArrow:setLeftRight( true, false, -3.94, 181.7 )
 				self.teamColorArrow:setTopBottom( true, false, 3, 44 )
 				self.teamColorArrow:setAlpha( 1 )
 				self.clipFinished( teamColorArrow, {} )
+
 				teamColor:completeAnimation()
 				self.teamColor:setAlpha( 1 )
 				self.clipFinished( teamColor, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setLeftRight( true, false, -3.3, 21.3 )
 				self.arrow:setTopBottom( true, false, 3, 44 )
 				self.arrow:setAlpha( 1 )
 				self.clipFinished( arrow, {} )
+
 				teamName:completeAnimation()
 				self.teamName:setRGB( 1, 1, 1 )
 				self.clipFinished( teamName, {} )
+
 				TransitionBar:completeAnimation()
 				self.TransitionBar:setLeftRight( true, false, 0, 0 )
 				self.TransitionBar:setTopBottom( true, false, 4, 43 )
@@ -574,29 +629,37 @@ CoD.CodCasterSpectate.new = function ( menu, controller )
 			end,
 			SelectionChangedEnd = function ()
 				self:setupElementClipCounter( 10 )
+
 				BG1:completeAnimation()
 				self.BG1:setAlpha( 1 )
 				self.clipFinished( BG1, {} )
+
 				playerNameBGAccent:completeAnimation()
 				self.playerNameBGAccent:setAlpha( 0.6 )
 				self.clipFinished( playerNameBGAccent, {} )
+
 				playerNameBG:completeAnimation()
 				self.playerNameBG:setAlpha( 0.8 )
 				self.clipFinished( playerNameBG, {} )
+
 				teamColorArrow:completeAnimation()
 				self.teamColorArrow:setLeftRight( true, false, -3.94, 181.7 )
 				self.teamColorArrow:setTopBottom( true, false, 3, 44 )
 				self.clipFinished( teamColorArrow, {} )
+
 				teamColor:completeAnimation()
 				self.teamColor:setAlpha( 1 )
 				self.clipFinished( teamColor, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setLeftRight( true, false, -3.3, 21.3 )
 				self.arrow:setTopBottom( true, false, 3, 44 )
 				self.clipFinished( arrow, {} )
+
 				teamName:completeAnimation()
 				self.teamName:setRGB( 1, 1, 1 )
 				self.clipFinished( teamName, {} )
+
 				TransitionBar:completeAnimation()
 				self.TransitionBar:setLeftRight( true, false, 0, 0 )
 				self.TransitionBar:setTopBottom( true, false, 4, 43 )
@@ -642,75 +705,96 @@ CoD.CodCasterSpectate.new = function ( menu, controller )
 		ShowWithoutSpecialist = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				BG1:completeAnimation()
 				self.BG1:setAlpha( 1 )
 				self.clipFinished( BG1, {} )
+
 				WhiteBG:completeAnimation()
 				self.WhiteBG:setAlpha( 0 )
 				self.clipFinished( WhiteBG, {} )
+
 				CodCasterLoadoutListContainerContainer:completeAnimation()
 				self.CodCasterLoadoutListContainerContainer:setLeftRight( true, false, 226, 1308 )
 				self.CodCasterLoadoutListContainerContainer:setTopBottom( true, false, -19, 53 )
 				self.CodCasterLoadoutListContainerContainer:setAlpha( 1 )
 				self.clipFinished( CodCasterLoadoutListContainerContainer, {} )
+
 				playerNameBG:completeAnimation()
 				self.playerNameBG:setAlpha( 0.8 )
 				self.clipFinished( playerNameBG, {} )
+
 				teamNameBG:completeAnimation()
 				self.teamNameBG:setAlpha( 0.85 )
 				self.clipFinished( teamNameBG, {} )
+
 				teamColor:completeAnimation()
 				self.teamColor:setAlpha( 1 )
 				self.clipFinished( teamColor, {} )
+
 				spectatingBar:completeAnimation()
 				self.spectatingBar:setAlpha( 1 )
 				self.clipFinished( spectatingBar, {} )
+
 				DeadSpectateSpectatingBarPC:completeAnimation()
 				self.DeadSpectateSpectatingBarPC:setAlpha( 1 )
 				self.clipFinished( DeadSpectateSpectatingBarPC, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setAlpha( 1 )
 				self.clipFinished( arrow, {} )
+
 				playerName:completeAnimation()
 				self.playerName:setAlpha( 1 )
 				self.clipFinished( playerName, {} )
+
 				teamName:completeAnimation()
 				self.teamName:setRGB( 1, 1, 1 )
 				self.teamName:setAlpha( 1 )
 				self.clipFinished( teamName, {} )
+
 				HeroExtraCamRenderByIndex:completeAnimation()
 				self.HeroExtraCamRenderByIndex:setAlpha( 0 )
 				self.clipFinished( HeroExtraCamRenderByIndex, {} )
 			end,
 			SelectionChanged = function ()
 				self:setupElementClipCounter( 10 )
+
 				BG1:completeAnimation()
 				self.BG1:setAlpha( 1 )
 				self.clipFinished( BG1, {} )
+
 				playerNameBGAccent:completeAnimation()
 				self.playerNameBGAccent:setAlpha( 0.6 )
 				self.clipFinished( playerNameBGAccent, {} )
+
 				playerNameBG:completeAnimation()
 				self.playerNameBG:setAlpha( 0.8 )
 				self.clipFinished( playerNameBG, {} )
+
 				teamColorArrow:completeAnimation()
 				self.teamColorArrow:setLeftRight( true, false, -3.94, 181.7 )
 				self.teamColorArrow:setTopBottom( true, false, 3, 44 )
 				self.clipFinished( teamColorArrow, {} )
+
 				teamColor:completeAnimation()
 				self.teamColor:setAlpha( 1 )
 				self.clipFinished( teamColor, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setLeftRight( true, false, -3.3, 21.3 )
 				self.arrow:setTopBottom( true, false, 3, 44 )
 				self.arrow:setAlpha( 1 )
 				self.clipFinished( arrow, {} )
+
 				teamName:completeAnimation()
 				self.teamName:setRGB( 1, 1, 1 )
 				self.clipFinished( teamName, {} )
+
 				TransitionBar:completeAnimation()
 				self.TransitionBar:setLeftRight( true, false, 0, 0 )
 				self.TransitionBar:setTopBottom( true, false, 4, 43 )
@@ -754,30 +838,38 @@ CoD.CodCasterSpectate.new = function ( menu, controller )
 			end,
 			SelectionChangedEnd = function ()
 				self:setupElementClipCounter( 10 )
+
 				BG1:completeAnimation()
 				self.BG1:setAlpha( 1 )
 				self.clipFinished( BG1, {} )
+
 				playerNameBGAccent:completeAnimation()
 				self.playerNameBGAccent:setAlpha( 0.6 )
 				self.clipFinished( playerNameBGAccent, {} )
+
 				playerNameBG:completeAnimation()
 				self.playerNameBG:setAlpha( 0.8 )
 				self.clipFinished( playerNameBG, {} )
+
 				teamColorArrow:completeAnimation()
 				self.teamColorArrow:setLeftRight( true, false, -3.94, 181.7 )
 				self.teamColorArrow:setTopBottom( true, false, 3, 44 )
 				self.clipFinished( teamColorArrow, {} )
+
 				teamColor:completeAnimation()
 				self.teamColor:setAlpha( 1 )
 				self.clipFinished( teamColor, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setLeftRight( true, false, -3.3, 21.3 )
 				self.arrow:setTopBottom( true, false, 3, 44 )
 				self.arrow:setAlpha( 1 )
 				self.clipFinished( arrow, {} )
+
 				teamName:completeAnimation()
 				self.teamName:setRGB( 1, 1, 1 )
 				self.clipFinished( teamName, {} )
+
 				TransitionBar:completeAnimation()
 				self.TransitionBar:setLeftRight( true, false, 0, 0 )
 				self.TransitionBar:setTopBottom( true, false, 4, 43 )
@@ -821,6 +913,7 @@ CoD.CodCasterSpectate.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ShowWithSpecialist",
@@ -865,6 +958,7 @@ CoD.CodCasterSpectate.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.bg:close()
 		element.BG1:close()

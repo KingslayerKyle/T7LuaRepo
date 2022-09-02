@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.agr.vhud_agr_missile" )
 CoD.vhud_agr_NotificationMissiles = InheritFrom( LUI.UIElement )
 CoD.vhud_agr_NotificationMissiles.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.vhud_agr_NotificationMissiles )
 	self.id = "vhud_agr_NotificationMissiles"

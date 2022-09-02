@@ -4,9 +4,11 @@
 CoD.CallingCards_BasicImage = InheritFrom( LUI.UIElement )
 CoD.CallingCards_BasicImage.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_BasicImage )
 	self.id = "CallingCards_BasicImage"

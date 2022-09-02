@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CodCaster.codcaster_options_button_small" )
 CoD.Leaderboard_ResetFilter = InheritFrom( LUI.UIElement )
 CoD.Leaderboard_ResetFilter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Leaderboard_ResetFilter )
 	self.id = "Leaderboard_ResetFilter"
@@ -87,29 +89,36 @@ CoD.Leaderboard_ResetFilter.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ListReset:completeAnimation()
 				self.ListReset:setAlpha( 1 )
 				self.clipFinished( ListReset, {} )
+
 				ResetTitle:completeAnimation()
 				self.ResetTitle:setAlpha( 1 )
 				self.clipFinished( ResetTitle, {} )
+
 				ResetHint:completeAnimation()
 				self.ResetHint:setAlpha( 1 )
 				self.clipFinished( ResetHint, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ListReset:completeAnimation()
 				self.ListReset:setAlpha( 0 )
 				self.clipFinished( ListReset, {} )
+
 				ResetTitle:completeAnimation()
 				self.ResetTitle:setAlpha( 0 )
 				self.clipFinished( ResetTitle, {} )
+
 				ResetHint:completeAnimation()
 				self.ResetHint:setAlpha( 0 )
 				self.clipFinished( ResetHint, {} )
@@ -124,6 +133,7 @@ CoD.Leaderboard_ResetFilter.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ListReset:close()
 		element.ResetHint:close()

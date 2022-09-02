@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.CAC.cac_ListButtonLabel" )
 CoD.StoreCategoryButton = InheritFrom( LUI.UIElement )
 CoD.StoreCategoryButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StoreCategoryButton )
 	self.id = "StoreCategoryButton"
@@ -95,34 +97,42 @@ CoD.StoreCategoryButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				Lbutton:completeAnimation()
 				self.Lbutton:setLeftRight( true, true, 0, 0 )
 				self.Lbutton:setTopBottom( true, true, 0, 0 )
 				self.Lbutton:setAlpha( 0 )
 				self.clipFinished( Lbutton, {} )
+
 				FEFocusBarContainer0:completeAnimation()
 				self.FEFocusBarContainer0:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainer0, {} )
+
 				itemImageBg:completeAnimation()
 				self.itemImageBg:setZoom( 0 )
 				self.clipFinished( itemImageBg, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 1 )
 				self.clipFinished( itemName, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setLeftRight( true, false, 13.2, 54 )
 				self.itemImage:setTopBottom( false, false, -19.32, 18.98 )
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setLeftRight( true, true, 0, 0 )
 				self.BoxButtonLrgIdle:setTopBottom( true, true, 0, 0 )
@@ -286,9 +296,11 @@ CoD.StoreCategoryButton.new = function ( menu, controller )
 				self.itemImageBg:setAlpha( 1 )
 				self.itemImageBg:setZoom( 0 )
 				itemImageBgFrame2( itemImageBg, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 1 )
 				self.clipFinished( itemName, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setLeftRight( true, false, 13.2, 54 )
 				self.itemImage:setTopBottom( false, false, -19.32, 18.98 )
@@ -341,38 +353,47 @@ CoD.StoreCategoryButton.new = function ( menu, controller )
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				FocusBarBFrame2( FocusBarB, {} )
+
 				self.nextClip = "GainFocus"
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				Lbutton:completeAnimation()
 				self.Lbutton:setAlpha( 1 )
 				self.Lbutton:setZoom( 0 )
 				self.clipFinished( Lbutton, {} )
+
 				FEFocusBarContainer0:completeAnimation()
 				self.FEFocusBarContainer0:setAlpha( 1 )
 				self.clipFinished( FEFocusBarContainer0, {} )
+
 				itemImageBg:completeAnimation()
 				self.itemImageBg:setZoom( 0 )
 				self.clipFinished( itemImageBg, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 1 )
 				self.clipFinished( itemName, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setLeftRight( true, false, 13.2, 54 )
 				self.itemImage:setTopBottom( false, false, -19.32, 18.98 )
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				itemImageLine:completeAnimation()
 				self.itemImageLine:setLeftRight( true, false, 65, 69 )
 				self.itemImageLine:setTopBottom( false, false, -30.5, 30.5 )
 				self.clipFinished( itemImageLine, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
@@ -427,9 +448,11 @@ CoD.StoreCategoryButton.new = function ( menu, controller )
 				self.itemImageBg:setAlpha( 0.35 )
 				self.itemImageBg:setZoom( 0 )
 				itemImageBgFrame2( itemImageBg, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 1 )
 				self.clipFinished( itemName, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setLeftRight( true, false, 13.2, 54 )
 				self.itemImage:setTopBottom( false, false, -19.32, 18.98 )
@@ -455,53 +478,67 @@ CoD.StoreCategoryButton.new = function ( menu, controller )
 		NoListFocus = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Lbutton:completeAnimation()
 				self.Lbutton:setAlpha( 0 )
 				self.clipFinished( Lbutton, {} )
+
 				FEFocusBarContainer0:completeAnimation()
 				self.FEFocusBarContainer0:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainer0, {} )
+
 				itemImageBg:completeAnimation()
 				self.itemImageBg:setAlpha( 0.17 )
 				self.clipFinished( itemImageBg, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 0.25 )
 				self.clipFinished( itemName, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.2 )
 				self.clipFinished( itemImage, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				Lbutton:completeAnimation()
 				self.Lbutton:setLeftRight( true, true, 0, 0 )
 				self.Lbutton:setTopBottom( true, true, 0, 0 )
 				self.Lbutton:setAlpha( 1 )
 				self.clipFinished( Lbutton, {} )
+
 				FEFocusBarContainer0:completeAnimation()
 				self.FEFocusBarContainer0:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainer0, {} )
+
 				itemImageBg:completeAnimation()
 				self.itemImageBg:setZoom( 0 )
 				self.clipFinished( itemImageBg, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 1 )
 				self.clipFinished( itemName, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgIdle:close()
 		element.Lbutton:close()

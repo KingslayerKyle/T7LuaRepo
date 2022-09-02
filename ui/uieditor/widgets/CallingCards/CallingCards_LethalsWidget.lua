@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_Lethals_Glow" )
 CoD.CallingCards_LethalsWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_LethalsWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_LethalsWidget )
 	self.id = "CallingCards_LethalsWidget"

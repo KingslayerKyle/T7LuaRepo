@@ -22,9 +22,11 @@ end
 CoD.CharacterMiniSelectorRightButton = InheritFrom( LUI.UIElement )
 CoD.CharacterMiniSelectorRightButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CharacterMiniSelectorRightButton )
 	self.id = "CharacterMiniSelectorRightButton"
@@ -51,24 +53,29 @@ CoD.CharacterMiniSelectorRightButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setRGB( 1, 1, 1 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				arrowButton:completeAnimation()
 				self.arrowButton:setRGB( 1, 1, 1 )
 				self.clipFinished( arrowButton, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 2 )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setRGB( 1, 1, 1 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				arrowButton:completeAnimation()
 				self.arrowButton:setRGB( 1, 0.45, 0 )
 				self.clipFinished( arrowButton, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FETitleNumBrdr0:close()
 	end )

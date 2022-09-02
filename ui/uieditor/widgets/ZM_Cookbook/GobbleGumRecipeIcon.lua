@@ -19,9 +19,11 @@ end
 CoD.GobbleGumRecipeIcon = InheritFrom( LUI.UIElement )
 CoD.GobbleGumRecipeIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GobbleGumRecipeIcon )
 	self.id = "GobbleGumRecipeIcon"
@@ -54,6 +56,7 @@ CoD.GobbleGumRecipeIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.itemImage:setScale( 1 )
@@ -63,6 +66,7 @@ CoD.GobbleGumRecipeIcon.new = function ( menu, controller )
 		NoConsumablesRemaining = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.itemImage:setScale( 1 )
@@ -70,6 +74,7 @@ CoD.GobbleGumRecipeIcon.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoConsumablesRemaining",
@@ -86,6 +91,7 @@ CoD.GobbleGumRecipeIcon.new = function ( menu, controller )
 			modelName = "itemIndex"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.itemImage:close()
 	end )

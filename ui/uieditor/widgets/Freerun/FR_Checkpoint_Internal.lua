@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Freerun.FR_Checkpoint_Delta" )
 CoD.FR_Checkpoint_Internal = InheritFrom( LUI.UIElement )
 CoD.FR_Checkpoint_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FR_Checkpoint_Internal )
 	self.id = "FR_Checkpoint_Internal"
@@ -59,6 +61,7 @@ CoD.FR_Checkpoint_Internal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FRCheckpointDelta:completeAnimation()
 				self.FRCheckpointDelta:setAlpha( 0 )
 				self.clipFinished( FRCheckpointDelta, {} )
@@ -67,12 +70,14 @@ CoD.FR_Checkpoint_Internal.new = function ( menu, controller )
 		TimeVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FRCheckpointDelta:completeAnimation()
 				self.FRCheckpointDelta:setAlpha( 1 )
 				self.clipFinished( FRCheckpointDelta, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "TimeVisible",
@@ -89,6 +94,7 @@ CoD.FR_Checkpoint_Internal.new = function ( menu, controller )
 			modelName = "FreeRun.runState"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FRCheckpointDelta:close()
 	end )

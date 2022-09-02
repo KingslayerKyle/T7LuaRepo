@@ -18,6 +18,7 @@ local PostLoadFunc = function ( f1_arg0, f1_arg1 )
 		f1_arg0.WildcardHeader:close()
 	end
 	if CoD.isPC then
+
 		f1_arg0:setUseStencil( false )
 	end
 end
@@ -25,9 +26,11 @@ end
 CoD.chooseClassWidget = InheritFrom( LUI.UIElement )
 CoD.chooseClassWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.chooseClassWidget )
 	self.id = "chooseClassWidget"
@@ -311,40 +314,49 @@ CoD.chooseClassWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				primarySecondarySpacer:completeAnimation()
 				self.primarySecondarySpacer:setAlpha( 0 )
 				self.clipFinished( primarySecondarySpacer, {} )
+
 				SpecialtyPerks:completeAnimation()
 				self.SpecialtyPerks:setLeftRight( false, false, -25.5, 170.5 )
 				self.SpecialtyPerks:setTopBottom( true, false, 358, 503 )
 				self.SpecialtyPerks:setAlpha( 1 )
 				self.clipFinished( SpecialtyPerks, {} )
+
 				LethalEquipment:completeAnimation()
 				self.LethalEquipment:setLeftRight( false, false, -170.5, -108.5 )
 				self.LethalEquipment:setTopBottom( true, false, 358, 503 )
 				self.clipFinished( LethalEquipment, {} )
+
 				TacticalEquipment:completeAnimation()
 				self.TacticalEquipment:setLeftRight( false, false, -103.5, -41.5 )
 				self.TacticalEquipment:setTopBottom( true, false, 358, 503 )
 				self.clipFinished( TacticalEquipment, {} )
+
 				TacticalRig:completeAnimation()
 				self.TacticalRig:setLeftRight( false, false, -25.5, 36.5 )
 				self.TacticalRig:setTopBottom( true, false, 358, 503 )
 				self.TacticalRig:setAlpha( 0 )
 				self.clipFinished( TacticalRig, {} )
+
 				Wildcards:completeAnimation()
 				self.Wildcards:setLeftRight( false, false, -225, 225 )
 				self.Wildcards:setTopBottom( true, false, 527, 685 )
 				self.clipFinished( Wildcards, {} )
+
 				WildcardHeader:completeAnimation()
 				self.WildcardHeader:setAlpha( 1 )
 				self.clipFinished( WildcardHeader, {} )
 			end,
 			Wildcards = function ()
 				self:setupElementClipCounter( 4 )
+
 				secondaryEquipmentSpacer:completeAnimation()
 				self.secondaryEquipmentSpacer:setAlpha( 0 )
 				self.clipFinished( secondaryEquipmentSpacer, {} )
+
 				primarySecondarySpacer:completeAnimation()
 				self.primarySecondarySpacer:setAlpha( 0 )
 				self.clipFinished( primarySecondarySpacer, {} )
@@ -383,6 +395,7 @@ CoD.chooseClassWidget.new = function ( menu, controller )
 			end,
 			WildcardDefault = function ()
 				self:setupElementClipCounter( 1 )
+
 				Wildcards:completeAnimation()
 				self.Wildcards:setAlpha( 1 )
 				self.clipFinished( Wildcards, {} )
@@ -391,47 +404,58 @@ CoD.chooseClassWidget.new = function ( menu, controller )
 		Wildcards = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				primarySecondarySpacer:completeAnimation()
 				self.primarySecondarySpacer:setAlpha( 0 )
 				self.clipFinished( primarySecondarySpacer, {} )
+
 				SpecialtyPerks:completeAnimation()
 				self.SpecialtyPerks:setLeftRight( false, false, -25.5, 170.5 )
 				self.SpecialtyPerks:setTopBottom( true, false, 358, 420.5 )
 				self.clipFinished( SpecialtyPerks, {} )
+
 				LethalEquipment:completeAnimation()
 				self.LethalEquipment:setLeftRight( false, false, -170.5, -108.5 )
 				self.LethalEquipment:setTopBottom( true, false, 358, 420.5 )
 				self.clipFinished( LethalEquipment, {} )
+
 				TacticalEquipment:completeAnimation()
 				self.TacticalEquipment:setLeftRight( false, false, -103.5, -41.5 )
 				self.TacticalEquipment:setTopBottom( true, false, 358, 420.5 )
 				self.clipFinished( TacticalEquipment, {} )
+
 				TacticalRig:completeAnimation()
 				self.TacticalRig:setLeftRight( false, false, -25.5, 36.5 )
 				self.TacticalRig:setTopBottom( true, false, 358, 420.5 )
 				self.clipFinished( TacticalRig, {} )
+
 				Wildcards:completeAnimation()
 				self.Wildcards:setLeftRight( false, false, -225, 225 )
 				self.Wildcards:setTopBottom( true, false, 470.5, 628.5 )
 				self.clipFinished( Wildcards, {} )
+
 				WildcardHeader:completeAnimation()
 				self.WildcardHeader:setAlpha( 0 )
 				self.clipFinished( WildcardHeader, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 6 )
+
 				SpecialtyPerks:completeAnimation()
 				self.SpecialtyPerks:setLeftRight( false, false, -25.5, 170.5 )
 				self.SpecialtyPerks:setTopBottom( true, false, 358, 420.5 )
 				self.clipFinished( SpecialtyPerks, {} )
+
 				LethalEquipment:completeAnimation()
 				self.LethalEquipment:setLeftRight( false, false, -170.5, -108.5 )
 				self.LethalEquipment:setTopBottom( true, false, 358, 420.5 )
 				self.clipFinished( LethalEquipment, {} )
+
 				TacticalEquipment:completeAnimation()
 				self.TacticalEquipment:setLeftRight( false, false, -103.5, -41.5 )
 				self.TacticalEquipment:setTopBottom( true, false, 358, 420.5 )
 				self.clipFinished( TacticalEquipment, {} )
+
 				TacticalRig:completeAnimation()
 				self.TacticalRig:setLeftRight( false, false, -25.5, 36.5 )
 				self.TacticalRig:setTopBottom( true, false, 358, 420.5 )
@@ -471,21 +495,26 @@ CoD.chooseClassWidget.new = function ( menu, controller )
 			end,
 			Campaign = function ()
 				self:setupElementClipCounter( 7 )
+
 				primarySecondarySpacer:completeAnimation()
 				self.primarySecondarySpacer:setAlpha( 0 )
 				self.clipFinished( primarySecondarySpacer, {} )
+
 				SpecialtyPerks:completeAnimation()
 				self.SpecialtyPerks:setLeftRight( false, false, -25.5, 170.5 )
 				self.SpecialtyPerks:setTopBottom( true, false, 358, 420.5 )
 				self.clipFinished( SpecialtyPerks, {} )
+
 				LethalEquipment:completeAnimation()
 				self.LethalEquipment:setLeftRight( false, false, -170.5, -108.5 )
 				self.LethalEquipment:setTopBottom( true, false, 358, 420.5 )
 				self.clipFinished( LethalEquipment, {} )
+
 				TacticalEquipment:completeAnimation()
 				self.TacticalEquipment:setLeftRight( false, false, -103.5, -41.5 )
 				self.TacticalEquipment:setTopBottom( true, false, 358, 420.5 )
 				self.clipFinished( TacticalEquipment, {} )
+
 				TacticalRig:completeAnimation()
 				self.TacticalRig:setLeftRight( false, false, -25.5, 36.5 )
 				self.TacticalRig:setTopBottom( true, false, 358, 420.5 )
@@ -527,32 +556,39 @@ CoD.chooseClassWidget.new = function ( menu, controller )
 		Campaign = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				SpecialtyPerks:completeAnimation()
 				self.SpecialtyPerks:setAlpha( 0 )
 				self.clipFinished( SpecialtyPerks, {} )
+
 				LethalEquipment:completeAnimation()
 				self.LethalEquipment:setLeftRight( false, false, -170.5, -108.5 )
 				self.LethalEquipment:setTopBottom( true, false, 358, 503 )
 				self.clipFinished( LethalEquipment, {} )
+
 				TacticalEquipment:completeAnimation()
 				self.TacticalEquipment:setLeftRight( false, false, -103.5, -41.5 )
 				self.TacticalEquipment:setTopBottom( true, false, 358, 503 )
 				self.clipFinished( TacticalEquipment, {} )
+
 				TacticalRig:completeAnimation()
 				self.TacticalRig:setLeftRight( false, false, -25.5, 36.5 )
 				self.TacticalRig:setTopBottom( true, false, 358, 503 )
 				self.TacticalRig:setAlpha( 1 )
 				self.clipFinished( TacticalRig, {} )
+
 				Wildcards:completeAnimation()
 				self.Wildcards:setLeftRight( false, false, -225, 225 )
 				self.Wildcards:setTopBottom( true, false, 527, 685 )
 				self.clipFinished( Wildcards, {} )
+
 				WildcardHeader:completeAnimation()
 				self.WildcardHeader:setAlpha( 1 )
 				self.clipFinished( WildcardHeader, {} )
 			end,
 			Wildcards = function ()
 				self:setupElementClipCounter( 2 )
+
 				local WildcardsFrame2 = function ( Wildcards, event )
 					if not event.interrupted then
 						Wildcards:beginAnimation( "keyframe", 250, false, false, CoD.TweenType.Linear )
@@ -588,6 +624,7 @@ CoD.chooseClassWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Wildcards",
@@ -627,6 +664,7 @@ CoD.chooseClassWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SpecialtyPerks:close()
 		element.LethalEquipment:close()

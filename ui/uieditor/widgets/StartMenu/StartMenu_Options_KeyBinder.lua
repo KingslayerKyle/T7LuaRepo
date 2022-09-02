@@ -45,9 +45,11 @@ end
 CoD.StartMenu_Options_KeyBinder = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_KeyBinder.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_KeyBinder )
 	self.id = "StartMenu_Options_KeyBinder"
@@ -139,81 +141,99 @@ CoD.StartMenu_Options_KeyBinder.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				fullBacking:completeAnimation()
 				self.fullBacking:setLeftRight( true, true, 4, -2 )
 				self.fullBacking:setTopBottom( true, true, 2, -2.75 )
 				self.fullBacking:setRGB( 0.1, 0.1, 0.1 )
 				self.clipFinished( fullBacking, {} )
+
 				keybindBacking:completeAnimation()
 				self.keybindBacking:setRGB( 0.39, 0.39, 0.39 )
 				self.keybindBacking:setAlpha( 0 )
 				self.clipFinished( keybindBacking, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setRGB( 0.87, 0.37, 0 )
 				self.StartMenuframenoBG0:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, false, 4, 497 )
 				self.Image0:setTopBottom( true, false, 2, 31.25 )
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				actionText:completeAnimation()
 				self.actionText:setLeftRight( true, false, 10, 200 )
 				self.actionText:setTopBottom( true, false, 5.5, 30.5 )
 				self.actionText:setAlpha( 1 )
 				self.clipFinished( actionText, {} )
+
 				keybindText:completeAnimation()
 				self.keybindText:setRGB( 1, 1, 1 )
 				self.keybindText:setAlpha( 0.5 )
 				self.clipFinished( keybindText, {} )
+
 				StartMenuframenoBG000:completeAnimation()
 				self.StartMenuframenoBG000:setLeftRight( true, true, 2, 0 )
 				self.StartMenuframenoBG000:setTopBottom( true, true, 0, 0 )
 				self.clipFinished( StartMenuframenoBG000, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 9 )
+
 				fullBacking:completeAnimation()
 				self.fullBacking:setRGB( 0.1, 0.1, 0.1 )
 				self.clipFinished( fullBacking, {} )
+
 				keybindBacking:completeAnimation()
 				self.keybindBacking:setRGB( 0.87, 0.37, 0 )
 				self.clipFinished( keybindBacking, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setLeftRight( true, true, 2, 0 )
 				self.StartMenuframenoBG0:setTopBottom( true, true, 0, 0 )
 				self.StartMenuframenoBG0:setRGB( 0.87, 0.37, 0 )
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, false, 4, 497 )
 				self.Image0:setTopBottom( true, false, 2, 31.25 )
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				actionText:completeAnimation()
 				self.actionText:setLeftRight( true, false, 10, 200 )
 				self.actionText:setTopBottom( true, false, 5.5, 30.5 )
 				self.actionText:setAlpha( 1 )
 				self.clipFinished( actionText, {} )
+
 				keybindText:completeAnimation()
 				self.keybindText:setRGB( 1, 1, 1 )
 				self.keybindText:setAlpha( 1 )
 				self.clipFinished( keybindText, {} )
+
 				StartMenuframenoBG000:completeAnimation()
 				self.StartMenuframenoBG000:setLeftRight( true, true, 2, 0 )
 				self.StartMenuframenoBG000:setTopBottom( true, true, 0, 0 )
 				self.clipFinished( StartMenuframenoBG000, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, 2, 0 )
 				self.FocusBarB:setTopBottom( false, true, -5.5, 0 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, 2, 0 )
 				self.FocusBarT:setTopBottom( true, false, 0, 4 )
@@ -224,78 +244,96 @@ CoD.StartMenu_Options_KeyBinder.new = function ( menu, controller )
 		WaitingForBind = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				fullBacking:completeAnimation()
 				self.fullBacking:setLeftRight( true, true, 4, -2 )
 				self.fullBacking:setTopBottom( true, true, 2, -2.75 )
 				self.fullBacking:setRGB( 0.39, 0.39, 0.39 )
 				self.clipFinished( fullBacking, {} )
+
 				keybindBacking:completeAnimation()
 				self.keybindBacking:setRGB( 0.1, 0.1, 0.1 )
 				self.clipFinished( keybindBacking, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setLeftRight( true, true, 2, 0 )
 				self.StartMenuframenoBG0:setTopBottom( true, true, 0, 0 )
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, false, 4, 498 )
 				self.Image0:setTopBottom( true, false, 2, 31.25 )
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				actionText:completeAnimation()
 				self.actionText:setAlpha( 1 )
 				self.clipFinished( actionText, {} )
+
 				keybindText:completeAnimation()
 				self.keybindText:setRGB( 1, 1, 1 )
 				self.clipFinished( keybindText, {} )
+
 				StartMenuframenoBG000:completeAnimation()
 				self.StartMenuframenoBG000:setLeftRight( true, true, 2, 0 )
 				self.StartMenuframenoBG000:setTopBottom( true, true, 0, 0 )
 				self.clipFinished( StartMenuframenoBG000, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				fullBacking:completeAnimation()
 				self.fullBacking:setLeftRight( true, true, 4, -2 )
 				self.fullBacking:setTopBottom( true, true, 2, -2.75 )
 				self.fullBacking:setRGB( 0.39, 0.39, 0.39 )
 				self.clipFinished( fullBacking, {} )
+
 				keybindBacking:completeAnimation()
 				self.keybindBacking:setRGB( 0.1, 0.1, 0.1 )
 				self.clipFinished( keybindBacking, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setLeftRight( true, true, 2, 0 )
 				self.StartMenuframenoBG0:setTopBottom( true, true, 0, 0 )
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, false, 4, 498 )
 				self.Image0:setTopBottom( true, false, 2, 31.25 )
 				self.Image0:setAlpha( 0.67 )
 				self.clipFinished( Image0, {} )
+
 				keybindText:completeAnimation()
 				self.keybindText:setRGB( 1, 1, 1 )
 				self.clipFinished( keybindText, {} )
+
 				StartMenuframenoBG000:completeAnimation()
 				self.StartMenuframenoBG000:setLeftRight( true, true, 2, 0 )
 				self.StartMenuframenoBG000:setTopBottom( true, true, 0, 0 )
 				self.StartMenuframenoBG000:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG000, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG0:close()
 		element.StartMenuframenoBG000:close()

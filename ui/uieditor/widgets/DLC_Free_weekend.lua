@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.DLC_Free_TitleAndText" )
 CoD.DLC_Free_weekend = InheritFrom( LUI.UIElement )
 CoD.DLC_Free_weekend.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DLC_Free_weekend )
 	self.id = "DLC_Free_weekend"
@@ -29,6 +31,7 @@ CoD.DLC_Free_weekend.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DLCFreeTitleAndText:completeAnimation()
 				self.DLCFreeTitleAndText:setAlpha( 0 )
 				self.clipFinished( DLCFreeTitleAndText, {} )
@@ -37,12 +40,14 @@ CoD.DLC_Free_weekend.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DLCFreeTitleAndText:completeAnimation()
 				self.DLCFreeTitleAndText:setAlpha( 1 )
 				self.clipFinished( DLCFreeTitleAndText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -51,6 +56,7 @@ CoD.DLC_Free_weekend.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.DLCFreeTitleAndText:close()
 	end )

@@ -37,6 +37,7 @@ local f0_local3 = function ( f4_arg0, f4_arg1, f4_arg2 )
 	f4_arg0:registerEventHandler( "mousedrag", function ( element, event )
 		f0_local2( element, event )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( f4_arg0, "setModel", function ( element, controller )
 		local f7_local0 = CoD.PCUtil.GetModelValues( controller, {
 			"actionName",
@@ -83,9 +84,11 @@ end
 CoD.CraftActionSlider = InheritFrom( LUI.UIElement )
 CoD.CraftActionSlider.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CraftActionSlider )
 	self.id = "CraftActionSlider"
@@ -167,37 +170,46 @@ CoD.CraftActionSlider.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				actionName:completeAnimation()
 				self.actionName:setAlpha( 1 )
 				self.clipFinished( actionName, {} )
+
 				sliderFill:completeAnimation()
 				self.sliderFill:setRGB( 1, 1, 1 )
 				self.sliderFill:setAlpha( 1 )
 				self.clipFinished( sliderFill, {} )
+
 				sliderBar:completeAnimation()
 				self.sliderBar:setRGB( 1, 1, 1 )
 				self.sliderBar:setAlpha( 1 )
 				self.clipFinished( sliderBar, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 4 )
+
 				sliderFill:completeAnimation()
 				self.sliderFill:setRGB( 0.87, 0.37, 0 )
 				self.clipFinished( sliderFill, {} )
+
 				sliderBar:completeAnimation()
 				self.sliderBar:setRGB( 0.87, 0.37, 0 )
 				self.clipFinished( sliderBar, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, -1, 1 )
 				self.FocusBarT:setTopBottom( true, false, -2, 2 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, -1, 1 )
 				self.FocusBarB:setTopBottom( false, true, -2.75, 2.75 )
@@ -208,18 +220,22 @@ CoD.CraftActionSlider.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				actionName:completeAnimation()
 				self.actionName:setAlpha( 0.25 )
 				self.clipFinished( actionName, {} )
+
 				sliderFill:completeAnimation()
 				self.sliderFill:setAlpha( 0.25 )
 				self.clipFinished( sliderFill, {} )
+
 				sliderBar:completeAnimation()
 				self.sliderBar:setAlpha( 0.25 )
 				self.clipFinished( sliderBar, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -236,6 +252,7 @@ CoD.CraftActionSlider.new = function ( menu, controller )
 			modelName = "disabled"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.sliderBack:close()
 		element.FocusBarT:close()

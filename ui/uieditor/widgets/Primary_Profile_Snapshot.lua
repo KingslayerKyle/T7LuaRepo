@@ -11,9 +11,11 @@ require( "ui.uieditor.widgets.CAC.cac_FocusBarContainer" )
 CoD.Primary_Profile_Snapshot = InheritFrom( LUI.UIElement )
 CoD.Primary_Profile_Snapshot.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Primary_Profile_Snapshot )
 	self.id = "Primary_Profile_Snapshot"
@@ -119,65 +121,84 @@ CoD.Primary_Profile_Snapshot.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setRGB( 0, 0, 0 )
 				self.BlackBox:setAlpha( 0.05 )
 				self.clipFinished( BlackBox, {} )
+
 				BoxButtonLrgInactiveDiag0:completeAnimation()
 				self.BoxButtonLrgInactiveDiag0:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag0, {} )
+
 				FocusWhiteT:completeAnimation()
 				self.FocusWhiteT:setAlpha( 0 )
 				self.clipFinished( FocusWhiteT, {} )
+
 				FocusWhiteB:completeAnimation()
 				self.FocusWhiteB:setAlpha( 0 )
 				self.clipFinished( FocusWhiteB, {} )
+
 				TopFocusBar:completeAnimation()
 				self.TopFocusBar:setAlpha( 0 )
 				self.clipFinished( TopFocusBar, {} )
+
 				BottomFocusBar:completeAnimation()
 				self.BottomFocusBar:setAlpha( 0 )
 				self.clipFinished( BottomFocusBar, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 10 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setRGB( 1, 1, 1 )
 				self.BlackBox:setAlpha( 0 )
 				self.clipFinished( BlackBox, {} )
+
 				BoxButtonLrgInactiveDiag0:completeAnimation()
 				self.BoxButtonLrgInactiveDiag0:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactiveDiag0, {} )
+
 				FocusWhiteT:completeAnimation()
 				self.FocusWhiteT:setAlpha( 0 )
 				self.clipFinished( FocusWhiteT, {} )
+
 				FocusWhiteB:completeAnimation()
 				self.FocusWhiteB:setAlpha( 0 )
 				self.clipFinished( FocusWhiteB, {} )
+
 				TopFocusBar:completeAnimation()
 				self.TopFocusBar:setAlpha( 1 )
 				self.clipFinished( TopFocusBar, {} )
+
 				BottomFocusBar:completeAnimation()
 				self.BottomFocusBar:setAlpha( 1 )
 				self.clipFinished( BottomFocusBar, {} )
@@ -192,6 +213,7 @@ CoD.Primary_Profile_Snapshot.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveDiag:close()
 		element.BoxButtonLrgInactive:close()

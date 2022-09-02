@@ -4,9 +4,11 @@
 CoD.weakpoint_NewArrowSmall = InheritFrom( LUI.UIElement )
 CoD.weakpoint_NewArrowSmall.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.weakpoint_NewArrowSmall )
 	self.id = "weakpoint_NewArrowSmall"

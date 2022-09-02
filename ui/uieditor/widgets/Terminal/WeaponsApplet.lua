@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Terminal.FocusWidget" )
 CoD.WeaponsApplet = InheritFrom( LUI.UIElement )
 CoD.WeaponsApplet.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponsApplet )
 	self.id = "WeaponsApplet"
@@ -67,9 +69,11 @@ CoD.WeaponsApplet.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local GeneralframeFrame2 = function ( Generalframe, event )
 					if not event.interrupted then
 						Generalframe:beginAnimation( "keyframe", 180, false, false, CoD.TweenType.Linear )
@@ -179,26 +183,32 @@ CoD.WeaponsApplet.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				Generalframe:completeAnimation()
 				self.Generalframe:setLeftRight( true, true, 0, 0 )
 				self.Generalframe:setTopBottom( true, true, 15, 15 )
 				self.clipFinished( Generalframe, {} )
+
 				focus:completeAnimation()
 				self.focus:setLeftRight( true, true, 0, 0 )
 				self.focus:setTopBottom( true, true, 15, 15 )
 				self.clipFinished( focus, {} )
+
 				unfocused:completeAnimation()
 				self.unfocused:setLeftRight( true, true, 0, 0 )
 				self.unfocused:setTopBottom( true, true, 15, 15 )
 				self.clipFinished( unfocused, {} )
+
 				GunContainer:completeAnimation()
 				self.GunContainer:setLeftRight( false, false, -142.58, 142.58 )
 				self.GunContainer:setTopBottom( true, false, 38.23, 170.25 )
 				self.clipFinished( GunContainer, {} )
+
 				CallingCardLines0000:completeAnimation()
 				self.CallingCardLines0000:setLeftRight( true, true, -2, 0 )
 				self.CallingCardLines0000:setTopBottom( false, true, 16, 34.12 )
 				self.clipFinished( CallingCardLines0000, {} )
+
 				FocusWidget:completeAnimation()
 				self.FocusWidget:setLeftRight( true, true, -9, 7.71 )
 				self.FocusWidget:setTopBottom( true, false, -10, 10 )
@@ -206,6 +216,7 @@ CoD.WeaponsApplet.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local GeneralframeFrame2 = function ( Generalframe, event )
 					if not event.interrupted then
 						Generalframe:beginAnimation( "keyframe", 180, false, false, CoD.TweenType.Linear )
@@ -317,12 +328,15 @@ CoD.WeaponsApplet.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Generalframe:close()
 		element.FocusWidget:close()

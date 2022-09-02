@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ButtonBoxLrgInactiveStroke" )
 CoD.MissionRecordVault_FrameBG = InheritFrom( LUI.UIElement )
 CoD.MissionRecordVault_FrameBG.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MissionRecordVault_FrameBG )
 	self.id = "MissionRecordVault_FrameBG"

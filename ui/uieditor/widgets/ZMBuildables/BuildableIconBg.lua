@@ -4,9 +4,11 @@
 CoD.BuildableIconBg = InheritFrom( LUI.UIElement )
 CoD.BuildableIconBg.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.BuildableIconBg )
 	self.id = "BuildableIconBg"

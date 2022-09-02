@@ -10,9 +10,11 @@ end
 CoD.GameSettings_AttachmentOptionsPopup = InheritFrom( LUI.UIElement )
 CoD.GameSettings_AttachmentOptionsPopup.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.GameSettings_AttachmentOptionsPopup )
 	self.id = "GameSettings_AttachmentOptionsPopup"
@@ -94,6 +96,7 @@ CoD.GameSettings_AttachmentOptionsPopup.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Options:close()
 		element.Title:close()

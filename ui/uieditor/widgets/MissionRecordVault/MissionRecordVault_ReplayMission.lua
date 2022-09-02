@@ -32,9 +32,11 @@ end
 CoD.MissionRecordVault_ReplayMission = InheritFrom( LUI.UIElement )
 CoD.MissionRecordVault_ReplayMission.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MissionRecordVault_ReplayMission )
 	self.id = "MissionRecordVault_ReplayMission"
@@ -152,6 +154,7 @@ CoD.MissionRecordVault_ReplayMission.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MapList:close()
 		element.MissionRecordVaultHeading:close()

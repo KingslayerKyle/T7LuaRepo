@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Social.Social_CallingCardSubTitle" )
 CoD.Social_CallingCard = InheritFrom( LUI.UIElement )
 CoD.Social_CallingCard.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_CallingCard )
 	self.id = "Social_CallingCard"

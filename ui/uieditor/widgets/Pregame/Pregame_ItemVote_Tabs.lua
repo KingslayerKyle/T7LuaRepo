@@ -13,9 +13,11 @@ end
 CoD.Pregame_ItemVote_Tabs = InheritFrom( LUI.UIElement )
 CoD.Pregame_ItemVote_Tabs.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_ItemVote_Tabs )
 	self.id = "Pregame_ItemVote_Tabs"

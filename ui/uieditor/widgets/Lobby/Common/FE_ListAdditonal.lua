@@ -10,9 +10,11 @@ end
 CoD.FE_ListAdditonal = InheritFrom( LUI.UIElement )
 CoD.FE_ListAdditonal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_ListAdditonal )
 	self.id = "FE_ListAdditonal"
@@ -69,12 +71,15 @@ CoD.FE_ListAdditonal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				StringA:completeAnimation()
 				self.StringA:setAlpha( 0 )
 				self.clipFinished( StringA, {} )
+
 				Image3:completeAnimation()
 				self.Image3:setAlpha( 0 )
 				self.clipFinished( Image3, {} )
+
 				f2_local3:completeAnimation()
 				self.SplitscreenLobbyButtonPC:setAlpha( 0 )
 				self.clipFinished( f2_local3, {} )
@@ -83,13 +88,16 @@ CoD.FE_ListAdditonal.new = function ( menu, controller )
 		AddControllerState_Play = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				StringA:completeAnimation()
 				self.StringA:setAlpha( 1 )
 				self.StringA:setText( Engine.Localize( "PLATFORM_FEEDER_SECONDARY_CONTROLLER_PLAY" ) )
 				self.clipFinished( StringA, {} )
+
 				Image3:completeAnimation()
 				self.Image3:setAlpha( 1 )
 				self.clipFinished( Image3, {} )
+
 				f2_local3:completeAnimation()
 				self.SplitscreenLobbyButtonPC:setAlpha( 0 )
 				self.clipFinished( f2_local3, {} )
@@ -98,13 +106,16 @@ CoD.FE_ListAdditonal.new = function ( menu, controller )
 		AddControllerState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				StringA:completeAnimation()
 				self.StringA:setAlpha( 1 )
 				self.StringA:setText( Engine.Localize( "PLATFORM_FEEDER_SECONDARY_CONTROLLER_PLUGIN" ) )
 				self.clipFinished( StringA, {} )
+
 				Image3:completeAnimation()
 				self.Image3:setAlpha( 1 )
 				self.clipFinished( Image3, {} )
+
 				f2_local3:completeAnimation()
 				self.SplitscreenLobbyButtonPC:setAlpha( 0 )
 				self.clipFinished( f2_local3, {} )
@@ -113,18 +124,22 @@ CoD.FE_ListAdditonal.new = function ( menu, controller )
 		SplitscreenButtonPC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				StringA:completeAnimation()
 				self.StringA:setAlpha( 0 )
 				self.clipFinished( StringA, {} )
+
 				Image3:completeAnimation()
 				self.Image3:setAlpha( 0 )
 				self.clipFinished( Image3, {} )
+
 				f2_local3:completeAnimation()
 				self.SplitscreenLobbyButtonPC:setAlpha( 1 )
 				self.clipFinished( f2_local3, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "AddControllerState_Play",
@@ -232,6 +247,7 @@ CoD.FE_ListAdditonal.new = function ( menu, controller )
 			modelName = "lobbyRoot.privateClient.update"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SplitscreenLobbyButtonPC:close()
 	end )

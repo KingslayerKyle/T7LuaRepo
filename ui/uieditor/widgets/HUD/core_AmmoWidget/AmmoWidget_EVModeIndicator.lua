@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_StatusPanelLeftCont
 CoD.AmmoWidget_EVModeIndicator = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_EVModeIndicator.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_EVModeIndicator )
 	self.id = "AmmoWidget_EVModeIndicator"
@@ -84,23 +86,29 @@ CoD.AmmoWidget_EVModeIndicator.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				AmmoWidgetStatusPanelLeftContainer:completeAnimation()
 				self.AmmoWidgetStatusPanelLeftContainer:setAlpha( 1 )
 				self.clipFinished( AmmoWidgetStatusPanelLeftContainer, {} )
+
 				Outline:completeAnimation()
 				self.Outline:setAlpha( 0.4 )
 				self.clipFinished( Outline, {} )
+
 				tacModePlaceholder:completeAnimation()
 				self.tacModePlaceholder:setRGB( 0.35, 0.35, 0.35 )
 				self.tacModePlaceholder:setAlpha( 0 )
 				self.clipFinished( tacModePlaceholder, {} )
+
 				ActiveFill:completeAnimation()
 				self.ActiveFill:setAlpha( 0 )
 				self.clipFinished( ActiveFill, {} )
+
 				Icon0:completeAnimation()
 				self.Icon0:setRGB( 0.43, 0.43, 0.43 )
 				self.Icon0:setAlpha( 0.15 )
 				self.clipFinished( Icon0, {} )
+
 				Icon:completeAnimation()
 				self.Icon:setRGB( 0.67, 0.67, 0.67 )
 				self.Icon:setAlpha( 0.6 )
@@ -110,21 +118,27 @@ CoD.AmmoWidget_EVModeIndicator.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				AmmoWidgetStatusPanelLeftContainer:completeAnimation()
 				self.AmmoWidgetStatusPanelLeftContainer:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetStatusPanelLeftContainer, {} )
+
 				Outline:completeAnimation()
 				self.Outline:setAlpha( 0 )
 				self.clipFinished( Outline, {} )
+
 				tacModePlaceholder:completeAnimation()
 				self.tacModePlaceholder:setAlpha( 0 )
 				self.clipFinished( tacModePlaceholder, {} )
+
 				ActiveFill:completeAnimation()
 				self.ActiveFill:setAlpha( 0 )
 				self.clipFinished( ActiveFill, {} )
+
 				Icon0:completeAnimation()
 				self.Icon0:setAlpha( 0 )
 				self.clipFinished( Icon0, {} )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 0 )
 				self.clipFinished( Icon, {} )
@@ -133,22 +147,28 @@ CoD.AmmoWidget_EVModeIndicator.new = function ( menu, controller )
 		Activated = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				AmmoWidgetStatusPanelLeftContainer:completeAnimation()
 				self.AmmoWidgetStatusPanelLeftContainer:setAlpha( 1 )
 				self.clipFinished( AmmoWidgetStatusPanelLeftContainer, {} )
+
 				Outline:completeAnimation()
 				self.Outline:setAlpha( 0.4 )
 				self.clipFinished( Outline, {} )
+
 				tacModePlaceholder:completeAnimation()
 				self.tacModePlaceholder:setRGB( 0.98, 1, 0.19 )
 				self.tacModePlaceholder:setAlpha( 0 )
 				self.clipFinished( tacModePlaceholder, {} )
+
 				ActiveFill:completeAnimation()
 				self.ActiveFill:setAlpha( 0.85 )
 				self.clipFinished( ActiveFill, {} )
+
 				Icon0:completeAnimation()
 				self.Icon0:setAlpha( 0 )
 				self.clipFinished( Icon0, {} )
+
 				Icon:completeAnimation()
 				self.Icon:setRGB( 1, 1, 1 )
 				self.Icon:setAlpha( 1 )
@@ -156,6 +176,7 @@ CoD.AmmoWidget_EVModeIndicator.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -178,6 +199,7 @@ CoD.AmmoWidget_EVModeIndicator.new = function ( menu, controller )
 			modelName = "hudItems.tacticalModeActivated"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AmmoWidgetStatusPanelLeftContainer:close()
 	end )

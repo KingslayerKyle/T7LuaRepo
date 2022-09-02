@@ -4,9 +4,11 @@
 CoD.QuickJoinRank = InheritFrom( LUI.UIElement )
 CoD.QuickJoinRank.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.QuickJoinRank )
 	self.id = "QuickJoinRank"
@@ -52,11 +54,13 @@ CoD.QuickJoinRank.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				rankIcon:completeAnimation()
 				self.rankIcon:setLeftRight( true, true, 27, -2 )
 				self.rankIcon:setTopBottom( true, true, 2, -2 )
 				self.rankIcon:setAlpha( 1 )
 				self.clipFinished( rankIcon, {} )
+
 				rankText:completeAnimation()
 				self.rankText:setLeftRight( true, true, -1, -23 )
 				self.rankText:setTopBottom( true, true, 2, -2 )
@@ -65,6 +69,7 @@ CoD.QuickJoinRank.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.rankIcon:close()
 		element.rankText:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ButtonPanel" )
 CoD.ScrStk_MeterPanel = InheritFrom( LUI.UIElement )
 CoD.ScrStk_MeterPanel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScrStk_MeterPanel )
 	self.id = "ScrStk_MeterPanel"
@@ -55,21 +57,26 @@ CoD.ScrStk_MeterPanel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Fill:completeAnimation()
 				self.Fill:setAlpha( 0 )
 				self.clipFinished( Fill, {} )
+
 				Fill2:completeAnimation()
 				self.Fill2:setAlpha( 0.5 )
 				self.clipFinished( Fill2, {} )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setAlpha( 0 )
 				self.clipFinished( FEButtonPanel0, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
 			end,
 			Combat = function ()
 				self:setupElementClipCounter( 3 )
+
 				local FillFrame2 = function ( Fill, event )
 					if not event.interrupted then
 						Fill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -120,18 +127,22 @@ CoD.ScrStk_MeterPanel.new = function ( menu, controller )
 		Combat = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Fill:completeAnimation()
 				self.Fill:setAlpha( 0 )
 				self.clipFinished( Fill, {} )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setAlpha( 0.5 )
 				self.clipFinished( FEButtonPanel0, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0.26 )
 				self.clipFinished( Image0, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 3 )
+
 				local FillFrame2 = function ( Fill, event )
 					if not event.interrupted then
 						Fill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -180,6 +191,7 @@ CoD.ScrStk_MeterPanel.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Combat",
@@ -196,6 +208,7 @@ CoD.ScrStk_MeterPanel.new = function ( menu, controller )
 			modelName = "playerAbilities.playerGadget3.isInUse"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel0:close()
 	end )

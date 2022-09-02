@@ -21,6 +21,7 @@ CoD.LoadingScreen_DoubleXPWidget.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LoadingScreen_DoubleXPWidget )
 	self.id = "LoadingScreen_DoubleXPWidget"
@@ -55,20 +56,25 @@ CoD.LoadingScreen_DoubleXPWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartLoading = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		TripleDouble = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				cryptokeyBack0:completeAnimation()
 				self.cryptokeyBack0:setAlpha( 1 )
 				self.clipFinished( cryptokeyBack0, {} )
+
 				Notification2xpWeaponReward:completeAnimation()
 				self.Notification2xpWeaponReward:setAlpha( 1 )
 				self.clipFinished( Notification2xpWeaponReward, {} )
+
 				Notification2xpReward:completeAnimation()
 				self.Notification2xpReward:setAlpha( 1 )
 				self.clipFinished( Notification2xpReward, {} )
@@ -77,12 +83,15 @@ CoD.LoadingScreen_DoubleXPWidget.new = function ( menu, controller )
 		DoubleXPDoubleWeaponXP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				cryptokeyBack0:completeAnimation()
 				self.cryptokeyBack0:setAlpha( 0 )
 				self.clipFinished( cryptokeyBack0, {} )
+
 				Notification2xpWeaponReward:completeAnimation()
 				self.Notification2xpWeaponReward:setAlpha( 1 )
 				self.clipFinished( Notification2xpWeaponReward, {} )
+
 				Notification2xpReward:completeAnimation()
 				self.Notification2xpReward:setAlpha( 1 )
 				self.clipFinished( Notification2xpReward, {} )
@@ -91,12 +100,15 @@ CoD.LoadingScreen_DoubleXPWidget.new = function ( menu, controller )
 		DoubleXP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				cryptokeyBack0:completeAnimation()
 				self.cryptokeyBack0:setAlpha( 0 )
 				self.clipFinished( cryptokeyBack0, {} )
+
 				Notification2xpWeaponReward:completeAnimation()
 				self.Notification2xpWeaponReward:setAlpha( 0 )
 				self.clipFinished( Notification2xpWeaponReward, {} )
+
 				Notification2xpReward:completeAnimation()
 				self.Notification2xpReward:setAlpha( 1 )
 				self.clipFinished( Notification2xpReward, {} )
@@ -105,12 +117,15 @@ CoD.LoadingScreen_DoubleXPWidget.new = function ( menu, controller )
 		DoubleWeaponXP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				cryptokeyBack0:completeAnimation()
 				self.cryptokeyBack0:setAlpha( 0 )
 				self.clipFinished( cryptokeyBack0, {} )
+
 				Notification2xpWeaponReward:completeAnimation()
 				self.Notification2xpWeaponReward:setAlpha( 1 )
 				self.clipFinished( Notification2xpWeaponReward, {} )
+
 				Notification2xpReward:completeAnimation()
 				self.Notification2xpReward:setAlpha( 0 )
 				self.clipFinished( Notification2xpReward, {} )
@@ -119,18 +134,22 @@ CoD.LoadingScreen_DoubleXPWidget.new = function ( menu, controller )
 		Doubleloot = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				cryptokeyBack0:completeAnimation()
 				self.cryptokeyBack0:setAlpha( 1 )
 				self.clipFinished( cryptokeyBack0, {} )
+
 				Notification2xpWeaponReward:completeAnimation()
 				self.Notification2xpWeaponReward:setAlpha( 0 )
 				self.clipFinished( Notification2xpWeaponReward, {} )
+
 				Notification2xpReward:completeAnimation()
 				self.Notification2xpReward:setAlpha( 0 )
 				self.clipFinished( Notification2xpReward, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "TripleDouble",
@@ -170,6 +189,7 @@ CoD.LoadingScreen_DoubleXPWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Notification2xpWeaponReward:close()
 		element.Notification2xpReward:close()

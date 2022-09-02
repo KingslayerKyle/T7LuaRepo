@@ -38,6 +38,7 @@ CoD.PartyList_PlayerScoreInternal.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PartyList_PlayerScoreInternal )
 	self.id = "PartyList_PlayerScoreInternal"
@@ -150,18 +151,22 @@ CoD.PartyList_PlayerScoreInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Gamertag:completeAnimation()
 				self.Gamertag:setRGB( 1, 1, 1 )
 				self.clipFinished( Gamertag, {} )
+
 				ClanContainer:completeAnimation()
 				self.ClanContainer:setRGB( 1, 1, 1 )
 				self.clipFinished( ClanContainer, {} )
+
 				LblRank:completeAnimation()
 				self.LblRank:setRGB( 1, 1, 1 )
 				self.clipFinished( LblRank, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ClanContainer:close()
 		element.ScoreRankIcon:close()

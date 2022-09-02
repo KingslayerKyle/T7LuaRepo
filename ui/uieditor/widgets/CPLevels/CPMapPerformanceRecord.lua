@@ -4,9 +4,11 @@
 CoD.CPMapPerformanceRecord = InheritFrom( LUI.UIElement )
 CoD.CPMapPerformanceRecord.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CPMapPerformanceRecord )
 	self.id = "CPMapPerformanceRecord"
@@ -122,9 +124,11 @@ CoD.CPMapPerformanceRecord.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TextBox70:completeAnimation()
 				self.TextBox70:setAlpha( 1 )
 				self.clipFinished( TextBox70, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 1 )
 				self.clipFinished( TextBox0, {} )
@@ -133,15 +137,19 @@ CoD.CPMapPerformanceRecord.new = function ( menu, controller )
 		NoAccolades = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				TextBox70:completeAnimation()
 				self.TextBox70:setAlpha( 0 )
 				self.clipFinished( TextBox70, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 0 )
 				self.clipFinished( TextBox0, {} )
+
 				TextBox301:completeAnimation()
 				self.TextBox301:setAlpha( 0 )
 				self.clipFinished( TextBox301, {} )
+
 				TextBox3010:completeAnimation()
 				self.TextBox3010:setAlpha( 0 )
 				self.clipFinished( TextBox3010, {} )
@@ -150,21 +158,26 @@ CoD.CPMapPerformanceRecord.new = function ( menu, controller )
 		NoCollectiblesLoaded = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				TextBox70:completeAnimation()
 				self.TextBox70:setAlpha( 0 )
 				self.clipFinished( TextBox70, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 0 )
 				self.clipFinished( TextBox0, {} )
+
 				TextBox301:completeAnimation()
 				self.TextBox301:setAlpha( 0 )
 				self.clipFinished( TextBox301, {} )
+
 				TextBox3010:completeAnimation()
 				self.TextBox3010:setAlpha( 0 )
 				self.clipFinished( TextBox3010, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoAccolades",
@@ -187,6 +200,7 @@ CoD.CPMapPerformanceRecord.new = function ( menu, controller )
 			modelName = "collectiblesTotal"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TextBox00:close()
 	end )

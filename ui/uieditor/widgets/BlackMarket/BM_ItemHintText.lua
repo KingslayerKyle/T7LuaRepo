@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.NewBreadcrumb" )
 CoD.BM_ItemHintText = InheritFrom( LUI.UIElement )
 CoD.BM_ItemHintText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_ItemHintText )
 	self.id = "BM_ItemHintText"
@@ -68,23 +70,29 @@ CoD.BM_ItemHintText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		PCHidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				cachitBG0:completeAnimation()
 				self.cachitBG0:setAlpha( 0 )
 				self.clipFinished( cachitBG0, {} )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0 )
 				self.clipFinished( Backing, {} )
+
 				textCenterAlign:completeAnimation()
 				self.textCenterAlign:setAlpha( 0 )
 				self.clipFinished( textCenterAlign, {} )
+
 				newIcon:completeAnimation()
 				self.newIcon:setAlpha( 0 )
 				self.clipFinished( newIcon, {} )
@@ -93,18 +101,23 @@ CoD.BM_ItemHintText.new = function ( menu, controller )
 		NoHintText = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				cachitBG0:completeAnimation()
 				self.cachitBG0:setAlpha( 0 )
 				self.clipFinished( cachitBG0, {} )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0 )
 				self.clipFinished( Backing, {} )
+
 				textCenterAlign:completeAnimation()
 				self.textCenterAlign:setAlpha( 0 )
 				self.clipFinished( textCenterAlign, {} )
+
 				newIcon:completeAnimation()
 				self.newIcon:setAlpha( 0 )
 				self.clipFinished( newIcon, {} )
@@ -113,18 +126,22 @@ CoD.BM_ItemHintText.new = function ( menu, controller )
 		RightHasNew = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				black:completeAnimation()
 				self.black:setAlpha( 1 )
 				self.clipFinished( black, {} )
+
 				cachitBG0:completeAnimation()
 				self.cachitBG0:setAlpha( 1 )
 				self.clipFinished( cachitBG0, {} )
+
 				textCenterAlign:completeAnimation()
 				self.textCenterAlign:setLeftRight( true, true, 0, -20 )
 				self.textCenterAlign:setTopBottom( false, false, -8, 8 )
 				self.textCenterAlign:setAlpha( 1 )
 				self.textCenterAlign:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 				self.clipFinished( textCenterAlign, {} )
+
 				newIcon:completeAnimation()
 				self.newIcon:setAlpha( 1 )
 				self.clipFinished( newIcon, {} )
@@ -133,18 +150,22 @@ CoD.BM_ItemHintText.new = function ( menu, controller )
 		CenterHasNew = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				black:completeAnimation()
 				self.black:setAlpha( 1 )
 				self.clipFinished( black, {} )
+
 				cachitBG0:completeAnimation()
 				self.cachitBG0:setAlpha( 1 )
 				self.clipFinished( cachitBG0, {} )
+
 				textCenterAlign:completeAnimation()
 				self.textCenterAlign:setLeftRight( true, true, 4, -4 )
 				self.textCenterAlign:setTopBottom( false, false, 6, 22 )
 				self.textCenterAlign:setAlpha( 1 )
 				self.textCenterAlign:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 				self.clipFinished( textCenterAlign, {} )
+
 				newIcon:completeAnimation()
 				self.newIcon:setAlpha( 1 )
 				self.clipFinished( newIcon, {} )
@@ -153,18 +174,22 @@ CoD.BM_ItemHintText.new = function ( menu, controller )
 		LeftAlign = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				black:completeAnimation()
 				self.black:setAlpha( 1 )
 				self.clipFinished( black, {} )
+
 				cachitBG0:completeAnimation()
 				self.cachitBG0:setAlpha( 1 )
 				self.clipFinished( cachitBG0, {} )
+
 				textCenterAlign:completeAnimation()
 				self.textCenterAlign:setLeftRight( true, true, 10, -10 )
 				self.textCenterAlign:setTopBottom( false, false, 5, 21 )
 				self.textCenterAlign:setAlpha( 1 )
 				self.textCenterAlign:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 				self.clipFinished( textCenterAlign, {} )
+
 				newIcon:completeAnimation()
 				self.newIcon:setAlpha( 0 )
 				self.clipFinished( newIcon, {} )
@@ -173,18 +198,22 @@ CoD.BM_ItemHintText.new = function ( menu, controller )
 		RightAlign = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				black:completeAnimation()
 				self.black:setAlpha( 1 )
 				self.clipFinished( black, {} )
+
 				cachitBG0:completeAnimation()
 				self.cachitBG0:setAlpha( 1 )
 				self.clipFinished( cachitBG0, {} )
+
 				textCenterAlign:completeAnimation()
 				self.textCenterAlign:setLeftRight( true, true, 0, -8 )
 				self.textCenterAlign:setTopBottom( false, false, -8, 8 )
 				self.textCenterAlign:setAlpha( 1 )
 				self.textCenterAlign:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 				self.clipFinished( textCenterAlign, {} )
+
 				newIcon:completeAnimation()
 				self.newIcon:setAlpha( 0 )
 				self.clipFinished( newIcon, {} )
@@ -193,16 +222,20 @@ CoD.BM_ItemHintText.new = function ( menu, controller )
 		CenterAlign = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				cachitBG0:completeAnimation()
 				self.cachitBG0:setAlpha( 0 )
 				self.clipFinished( cachitBG0, {} )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 1 )
 				self.Backing:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( Backing, {} )
+
 				textCenterAlign:completeAnimation()
 				self.textCenterAlign:setLeftRight( true, true, 4, -4 )
 				self.textCenterAlign:setTopBottom( false, false, 5, 21 )
@@ -210,12 +243,14 @@ CoD.BM_ItemHintText.new = function ( menu, controller )
 				self.textCenterAlign:setScale( 1.1 )
 				self.textCenterAlign:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 				self.clipFinished( textCenterAlign, {} )
+
 				newIcon:completeAnimation()
 				self.newIcon:setAlpha( 0 )
 				self.clipFinished( newIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "PCHidden",
@@ -268,6 +303,7 @@ CoD.BM_ItemHintText.new = function ( menu, controller )
 			modelName = nil
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.newIcon:close()
 	end )

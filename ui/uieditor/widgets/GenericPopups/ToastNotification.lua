@@ -90,9 +90,11 @@ end
 CoD.ToastNotification = InheritFrom( LUI.UIElement )
 CoD.ToastNotification.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ToastNotification )
 	self.id = "ToastNotification"
@@ -121,12 +123,14 @@ CoD.ToastNotification.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ToastContainer:completeAnimation()
 				self.ToastContainer:setAlpha( 0 )
 				self.clipFinished( ToastContainer, {} )
 			end,
 			Show = function ()
 				self:setupElementClipCounter( 2 )
+
 				local ToastContainerFrame2 = function ( ToastContainer, event )
 					local ToastContainerFrame3 = function ( ToastContainer, event )
 						local ToastContainerFrame4 = function ( ToastContainer, event )
@@ -203,6 +207,7 @@ CoD.ToastNotification.new = function ( menu, controller )
 				self.ToastContainer:setTopBottom( false, true, 65, 130 )
 				self.ToastContainer:setAlpha( 0 )
 				ToastContainerFrame2( ToastContainer, {} )
+
 				Sound:completeAnimation()
 				self.Sound:setPlaySoundDirect( true )
 				self.Sound:playSound( "uin_bm_popup", controller )
@@ -210,6 +215,7 @@ CoD.ToastNotification.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ToastContainer:close()
 	end )

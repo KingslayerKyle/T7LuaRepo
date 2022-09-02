@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.CAC_varientTitlePanel" )
 CoD.cac_CustomClassDecscription = InheritFrom( LUI.UIElement )
 CoD.cac_CustomClassDecscription.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_CustomClassDecscription )
 	self.id = "cac_CustomClassDecscription"
@@ -36,6 +38,7 @@ CoD.cac_CustomClassDecscription.new = function ( menu, controller )
 			weaponDescTextBox:setText( Engine.Localize( desc ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( weaponDescTextBox, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrapped( self, element, 1, 1 )
 	end )
@@ -46,9 +49,11 @@ CoD.cac_CustomClassDecscription.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CACvarientTitlePanel0:close()
 		element.weaponDescTextBox:close()

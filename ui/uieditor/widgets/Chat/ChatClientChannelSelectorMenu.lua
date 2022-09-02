@@ -23,9 +23,11 @@ end
 CoD.ChatClientChannelSelectorMenu = InheritFrom( LUI.UIElement )
 CoD.ChatClientChannelSelectorMenu.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChatClientChannelSelectorMenu )
 	self.id = "ChatClientChannelSelectorMenu"

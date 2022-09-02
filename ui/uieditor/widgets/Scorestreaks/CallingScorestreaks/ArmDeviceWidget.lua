@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Scorestreaks.CallingScorestreaks.ArmDeviceWidgetIn
 CoD.ArmDeviceWidget = InheritFrom( LUI.UIElement )
 CoD.ArmDeviceWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ArmDeviceWidget )
 	self.id = "ArmDeviceWidget"

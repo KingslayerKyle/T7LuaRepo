@@ -4,9 +4,11 @@
 CoD.BM_Bribe_Expires = InheritFrom( LUI.UIElement )
 CoD.BM_Bribe_Expires.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Bribe_Expires )
 	self.id = "BM_Bribe_Expires"
@@ -44,6 +46,7 @@ CoD.BM_Bribe_Expires.new = function ( menu, controller )
 	Text:setLetterSpacing( -1 )
 	Text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 	Text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( Text, "setText", function ( element, controller )
 		ScaleWidgetToLabelRightAlignedNoReverse( self, element, 0 )
 	end )
@@ -54,6 +57,7 @@ CoD.BM_Bribe_Expires.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Text:completeAnimation()
 				self.Text:setRGB( 0.69, 1, 0.83 )
 				self.clipFinished( Text, {} )
@@ -62,12 +66,14 @@ CoD.BM_Bribe_Expires.new = function ( menu, controller )
 		NearExpiryTime = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Text:completeAnimation()
 				self.Text:setRGB( 0.77, 0.08, 0.08 )
 				self.clipFinished( Text, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NearExpiryTime",

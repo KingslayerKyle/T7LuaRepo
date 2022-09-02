@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_KillerEyes" )
 CoD.CallingCards_Perk1Widget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_Perk1Widget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_Perk1Widget )
 	self.id = "CallingCards_Perk1Widget"
@@ -81,6 +83,7 @@ CoD.CallingCards_Perk1Widget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local REDFrame2 = function ( RED, event )
 					local REDFrame3 = function ( RED, event )
 						if not event.interrupted then
@@ -163,18 +166,22 @@ CoD.CallingCards_Perk1Widget.new = function ( menu, controller )
 				self.flameleft:setRGB( 1, 1, 1 )
 				self.flameleft:setAlpha( 1 )
 				flameleftFrame2( flameleft, {} )
+
 				hand:completeAnimation()
 				self.hand:setLeftRight( true, false, 65.25, 159 )
 				self.hand:setTopBottom( true, false, 17, 142 )
 				self.hand:setZRot( 0 )
 				self.clipFinished( hand, {} )
+
 				CallingCardsKillerEyes0:completeAnimation()
 				self.CallingCardsKillerEyes0:setAlpha( 1 )
 				self.clipFinished( CallingCardsKillerEyes0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardsKillerEyes0:close()
 	end )

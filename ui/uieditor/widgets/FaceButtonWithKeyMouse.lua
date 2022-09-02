@@ -8,9 +8,11 @@ end
 CoD.FaceButtonWithKeyMouse = InheritFrom( LUI.UIElement )
 CoD.FaceButtonWithKeyMouse.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FaceButtonWithKeyMouse )
 	self.id = "FaceButtonWithKeyMouse"
@@ -42,9 +44,11 @@ CoD.FaceButtonWithKeyMouse.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				KeyMouseImage:completeAnimation()
 				self.KeyMouseImage:setAlpha( 0 )
 				self.clipFinished( KeyMouseImage, {} )
+
 				ControllerImage:completeAnimation()
 				self.ControllerImage:setAlpha( 1 )
 				self.clipFinished( ControllerImage, {} )
@@ -53,9 +57,11 @@ CoD.FaceButtonWithKeyMouse.new = function ( menu, controller )
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				KeyMouseImage:completeAnimation()
 				self.KeyMouseImage:setAlpha( 0 )
 				self.clipFinished( KeyMouseImage, {} )
+
 				ControllerImage:completeAnimation()
 				self.ControllerImage:setAlpha( 0 )
 				self.clipFinished( ControllerImage, {} )
@@ -64,25 +70,30 @@ CoD.FaceButtonWithKeyMouse.new = function ( menu, controller )
 		KeyMouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				KeyMouseImage:completeAnimation()
 				self.KeyMouseImage:setRGB( 1, 1, 1 )
 				self.KeyMouseImage:setAlpha( 1 )
 				self.clipFinished( KeyMouseImage, {} )
+
 				ControllerImage:completeAnimation()
 				self.ControllerImage:setAlpha( 0 )
 				self.clipFinished( ControllerImage, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 2 )
+
 				KeyMouseImage:completeAnimation()
 				self.KeyMouseImage:setRGB( 1, 0.41, 0 )
 				self.clipFinished( KeyMouseImage, {} )
+
 				ControllerImage:completeAnimation()
 				self.ControllerImage:setAlpha( 0 )
 				self.clipFinished( ControllerImage, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hide",
@@ -115,6 +126,7 @@ CoD.FaceButtonWithKeyMouse.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ControllerImage:close()
 	end )

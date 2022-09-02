@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Theater.Theater_BottomFramePanelCont" )
 CoD.Theater_BottomFramePanel = InheritFrom( LUI.UIElement )
 CoD.Theater_BottomFramePanel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Theater_BottomFramePanel )
 	self.id = "Theater_BottomFramePanel"

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_CryptokeyCounterIcon" )
 CoD.AAR_Contracts_DoubleCryptokeys = InheritFrom( LUI.UIElement )
 CoD.AAR_Contracts_DoubleCryptokeys.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AAR_Contracts_DoubleCryptokeys )
 	self.id = "AAR_Contracts_DoubleCryptokeys"
@@ -85,28 +87,35 @@ CoD.AAR_Contracts_DoubleCryptokeys.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				CryptokeyIcon:completeAnimation()
 				self.CryptokeyIcon:setLeftRight( false, false, 6, 34 )
 				self.CryptokeyIcon:setTopBottom( false, true, -62, -34 )
 				self.CryptokeyIcon:setAlpha( 1 )
 				self.clipFinished( CryptokeyIcon, {} )
+
 				DoubleCryptokeys:completeAnimation()
 				self.DoubleCryptokeys:setAlpha( 0 )
 				self.clipFinished( DoubleCryptokeys, {} )
+
 				redbox:completeAnimation()
 				self.redbox:setAlpha( 0 )
 				self.clipFinished( redbox, {} )
+
 				ContractDesc0:completeAnimation()
 				self.ContractDesc0:setLeftRight( false, false, 39, 67 )
 				self.ContractDesc0:setTopBottom( false, true, -56.76, -36.76 )
 				self.ContractDesc0:setAlpha( 1 )
 				self.clipFinished( ContractDesc0, {} )
+
 				ContractDescREd:completeAnimation()
 				self.ContractDescREd:setAlpha( 0 )
 				self.clipFinished( ContractDescREd, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setAlpha( 0 )
 				self.clipFinished( arrow, {} )
+
 				ContractDescPromo:completeAnimation()
 				self.ContractDescPromo:setAlpha( 0 )
 				self.clipFinished( ContractDescPromo, {} )
@@ -115,26 +124,31 @@ CoD.AAR_Contracts_DoubleCryptokeys.new = function ( menu, controller )
 		DoubleCryptoKeys = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				CryptokeyIcon:completeAnimation()
 				self.CryptokeyIcon:setLeftRight( false, false, 6, 34 )
 				self.CryptokeyIcon:setTopBottom( false, true, -62, -34 )
 				self.CryptokeyIcon:setAlpha( 1 )
 				self.clipFinished( CryptokeyIcon, {} )
+
 				DoubleCryptokeys:completeAnimation()
 				self.DoubleCryptokeys:setLeftRight( true, false, -1, 95 )
 				self.DoubleCryptokeys:setTopBottom( false, true, -102, -14 )
 				self.DoubleCryptokeys:setAlpha( 1 )
 				self.clipFinished( DoubleCryptokeys, {} )
+
 				redbox:completeAnimation()
 				self.redbox:setLeftRight( true, false, 106, 130 )
 				self.redbox:setTopBottom( true, false, 29, 53 )
 				self.redbox:setAlpha( 0 )
 				self.clipFinished( redbox, {} )
+
 				ContractDesc0:completeAnimation()
 				self.ContractDesc0:setLeftRight( false, false, 39, 67 )
 				self.ContractDesc0:setTopBottom( false, true, -56.76, -36.76 )
 				self.ContractDesc0:setAlpha( 0 )
 				self.clipFinished( ContractDesc0, {} )
+
 				ContractDescREd:completeAnimation()
 				self.ContractDescREd:setLeftRight( false, false, -7, 28 )
 				self.ContractDescREd:setTopBottom( false, true, -57, -37 )
@@ -142,11 +156,13 @@ CoD.AAR_Contracts_DoubleCryptokeys.new = function ( menu, controller )
 				self.ContractDescREd:setText( Engine.Localize( "10" ) )
 				self.ContractDescREd:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 				self.clipFinished( ContractDescREd, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setLeftRight( true, false, 135, 144 )
 				self.arrow:setTopBottom( true, false, 37, 46 )
 				self.arrow:setAlpha( 0 )
 				self.clipFinished( arrow, {} )
+
 				ContractDescPromo:completeAnimation()
 				self.ContractDescPromo:setLeftRight( false, false, 39, 87 )
 				self.ContractDescPromo:setTopBottom( false, true, -57, -37 )
@@ -155,6 +171,7 @@ CoD.AAR_Contracts_DoubleCryptokeys.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CryptokeyIcon:close()
 	end )

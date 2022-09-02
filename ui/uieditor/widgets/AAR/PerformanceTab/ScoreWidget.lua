@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_Identity_SubTitle" )
 CoD.ScoreWidget = InheritFrom( LUI.UIElement )
 CoD.ScoreWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreWidget )
 	self.id = "ScoreWidget"
@@ -66,7 +68,9 @@ CoD.ScoreWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Score:completeAnimation()
+
 				Score.Numbers:completeAnimation()
 				self.Score.Numbers:setRGB( 0.8, 0.8, 0.8 )
 				self.clipFinished( Score, {} )
@@ -75,13 +79,16 @@ CoD.ScoreWidget.new = function ( menu, controller )
 		Best = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Score:completeAnimation()
+
 				Score.Numbers:completeAnimation()
 				self.Score.Numbers:setRGB( 0.95, 0.91, 0.11 )
 				self.clipFinished( Score, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel0:close()
 		element.Score:close()

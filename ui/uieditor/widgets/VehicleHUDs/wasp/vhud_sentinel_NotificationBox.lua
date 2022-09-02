@@ -4,9 +4,11 @@
 CoD.vhud_sentinel_NotificationBox = InheritFrom( LUI.UIElement )
 CoD.vhud_sentinel_NotificationBox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_sentinel_NotificationBox )
 	self.id = "vhud_sentinel_NotificationBox"
@@ -50,6 +52,7 @@ CoD.vhud_sentinel_NotificationBox.new = function ( menu, controller )
 	SignalText:setShaderVector( 4, 0, 0, 0, 0 )
 	SignalText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	SignalText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( SignalText, "setText", function ( element, controller )
 		ScaleWidgetToLabelCenteredWithMinimum( self, element, 20, 81 )
 	end )

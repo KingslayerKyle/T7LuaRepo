@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_Menu_LeftGraphics" )
 CoD.systemOverlay_reportPlayer = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_reportPlayer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_reportPlayer )
 	self.id = "systemOverlay_reportPlayer"
@@ -170,6 +172,7 @@ CoD.systemOverlay_reportPlayer.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ButtonList:close()
 		element.CallingCard:close()

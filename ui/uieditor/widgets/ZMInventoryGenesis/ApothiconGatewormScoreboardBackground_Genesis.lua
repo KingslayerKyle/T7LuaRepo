@@ -4,9 +4,11 @@
 CoD.ApothiconGatewormScoreboardBackground_Genesis = InheritFrom( LUI.UIElement )
 CoD.ApothiconGatewormScoreboardBackground_Genesis.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ApothiconGatewormScoreboardBackground_Genesis )
 	self.id = "ApothiconGatewormScoreboardBackground_Genesis"
@@ -36,9 +38,11 @@ CoD.ApothiconGatewormScoreboardBackground_Genesis.new = function ( menu, control
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BaseGatewormOverlay:completeAnimation()
 				self.BaseGatewormOverlay:setAlpha( 0 )
 				self.clipFinished( BaseGatewormOverlay, {} )
+
 				TextApothicon:completeAnimation()
 				self.TextApothicon:setAlpha( 0 )
 				self.TextApothicon:setText( Engine.Localize( "ZM_GENESIS_APOTHICONEGG" ) )
@@ -48,9 +52,11 @@ CoD.ApothiconGatewormScoreboardBackground_Genesis.new = function ( menu, control
 		GateWorm = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BaseGatewormOverlay:completeAnimation()
 				self.BaseGatewormOverlay:setAlpha( 1 )
 				self.clipFinished( BaseGatewormOverlay, {} )
+
 				TextApothicon:completeAnimation()
 				self.TextApothicon:setAlpha( 1 )
 				self.TextApothicon:setText( Engine.Localize( "ZM_GENESIS_GATEWORM" ) )
@@ -60,9 +66,11 @@ CoD.ApothiconGatewormScoreboardBackground_Genesis.new = function ( menu, control
 		ApothiconEgg = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BaseGatewormOverlay:completeAnimation()
 				self.BaseGatewormOverlay:setAlpha( 0 )
 				self.clipFinished( BaseGatewormOverlay, {} )
+
 				TextApothicon:completeAnimation()
 				self.TextApothicon:setAlpha( 1 )
 				self.TextApothicon:setText( Engine.Localize( "ZM_GENESIS_APOTHICONEGG" ) )
@@ -70,6 +78,7 @@ CoD.ApothiconGatewormScoreboardBackground_Genesis.new = function ( menu, control
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "GateWorm",

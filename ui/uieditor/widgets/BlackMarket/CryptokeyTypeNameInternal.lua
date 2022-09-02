@@ -4,9 +4,11 @@
 CoD.CryptokeyTypeNameInternal = InheritFrom( LUI.UIElement )
 CoD.CryptokeyTypeNameInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CryptokeyTypeNameInternal )
 	self.id = "CryptokeyTypeNameInternal"
@@ -33,6 +35,7 @@ CoD.CryptokeyTypeNameInternal.new = function ( menu, controller )
 	nameText:setLetterSpacing( 2 )
 	nameText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	nameText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( nameText, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 7 )
 	end )
@@ -43,9 +46,11 @@ CoD.CryptokeyTypeNameInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( 0, 0.6, 0.9 )
 				self.clipFinished( bg, {} )
+
 				nameText:completeAnimation()
 				self.nameText:setAlpha( 1 )
 				self.clipFinished( nameText, {} )
@@ -54,9 +59,11 @@ CoD.CryptokeyTypeNameInternal.new = function ( menu, controller )
 		Common = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( ColorSet.BlackMarketCommon.r, ColorSet.BlackMarketCommon.g, ColorSet.BlackMarketCommon.b )
 				self.clipFinished( bg, {} )
+
 				nameText:completeAnimation()
 				self.nameText:setRGB( 0, 0, 0 )
 				self.clipFinished( nameText, {} )
@@ -65,9 +72,11 @@ CoD.CryptokeyTypeNameInternal.new = function ( menu, controller )
 		Rare = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( 0, 0.6, 0.9 )
 				self.clipFinished( bg, {} )
+
 				nameText:completeAnimation()
 				self.nameText:setRGB( 1, 1, 1 )
 				self.clipFinished( nameText, {} )
@@ -76,9 +85,11 @@ CoD.CryptokeyTypeNameInternal.new = function ( menu, controller )
 		Legendary = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( ColorSet.BlackMarketLegendary.r, ColorSet.BlackMarketLegendary.g, ColorSet.BlackMarketLegendary.b )
 				self.clipFinished( bg, {} )
+
 				nameText:completeAnimation()
 				self.nameText:setRGB( 1, 1, 1 )
 				self.clipFinished( nameText, {} )
@@ -87,9 +98,11 @@ CoD.CryptokeyTypeNameInternal.new = function ( menu, controller )
 		Epic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( 1, 0.67, 0 )
 				self.clipFinished( bg, {} )
+
 				nameText:completeAnimation()
 				self.nameText:setRGB( 1, 1, 1 )
 				self.clipFinished( nameText, {} )
@@ -98,9 +111,11 @@ CoD.CryptokeyTypeNameInternal.new = function ( menu, controller )
 		Bribe = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( 1, 1, 1 )
 				self.clipFinished( bg, {} )
+
 				nameText:completeAnimation()
 				self.nameText:setRGB( 0, 0, 0 )
 				self.clipFinished( nameText, {} )
@@ -109,9 +124,11 @@ CoD.CryptokeyTypeNameInternal.new = function ( menu, controller )
 		Bundle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( 0, 0.6, 0.9 )
 				self.clipFinished( bg, {} )
+
 				nameText:completeAnimation()
 				self.nameText:setAlpha( 1 )
 				self.clipFinished( nameText, {} )
@@ -120,9 +137,11 @@ CoD.CryptokeyTypeNameInternal.new = function ( menu, controller )
 		SixPack = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( ColorSet.BlackMarketCommon.r, ColorSet.BlackMarketCommon.g, ColorSet.BlackMarketCommon.b )
 				self.clipFinished( bg, {} )
+
 				nameText:completeAnimation()
 				self.nameText:setRGB( 0, 0, 0 )
 				self.clipFinished( nameText, {} )
@@ -131,15 +150,18 @@ CoD.CryptokeyTypeNameInternal.new = function ( menu, controller )
 		Limited = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( ColorSet.BlackMarketLimited.r, ColorSet.BlackMarketLimited.g, ColorSet.BlackMarketLimited.b )
 				self.clipFinished( bg, {} )
+
 				nameText:completeAnimation()
 				self.nameText:setRGB( 0, 0, 0 )
 				self.clipFinished( nameText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Common",

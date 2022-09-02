@@ -4,9 +4,11 @@
 CoD.List1ButtonLarge_internal = InheritFrom( LUI.UIElement )
 CoD.List1ButtonLarge_internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.List1ButtonLarge_internal )
 	self.id = "List1ButtonLarge_internal"

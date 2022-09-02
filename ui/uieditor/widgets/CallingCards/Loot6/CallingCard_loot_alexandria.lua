@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CallingCards.Loot6.CallingCard_loot_alexandria_clo
 CoD.CallingCard_loot_alexandria = InheritFrom( LUI.UIElement )
 CoD.CallingCard_loot_alexandria.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCard_loot_alexandria )
 	self.id = "CallingCard_loot_alexandria"
@@ -83,6 +85,7 @@ CoD.CallingCard_loot_alexandria.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				CallingCardlootalexandriaclouds:completeAnimation()
 				self.CallingCardlootalexandriaclouds:setAlpha( 1 )
 				self.clipFinished( CallingCardlootalexandriaclouds, {} )
@@ -548,10 +551,12 @@ CoD.CallingCard_loot_alexandria.new = function ( menu, controller )
 				light10:completeAnimation()
 				self.light10:setAlpha( 1 )
 				light10Frame2( light10, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardlootalexandriabolts:close()
 		element.CallingCardlootalexandriaclouds:close()

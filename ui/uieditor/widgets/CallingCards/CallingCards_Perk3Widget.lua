@@ -4,9 +4,11 @@
 CoD.CallingCards_Perk3Widget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_Perk3Widget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_Perk3Widget )
 	self.id = "CallingCards_Perk3Widget"
@@ -46,6 +48,7 @@ CoD.CallingCards_Perk3Widget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local GlowFrame2 = function ( Glow, event )
 					local GlowFrame3 = function ( Glow, event )
 						if not event.interrupted then
@@ -72,6 +75,7 @@ CoD.CallingCards_Perk3Widget.new = function ( menu, controller )
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				GlowFrame2( Glow, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

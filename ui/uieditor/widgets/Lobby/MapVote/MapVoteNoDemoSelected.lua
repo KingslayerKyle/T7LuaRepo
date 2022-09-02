@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.MapVote.MapVoteLabelLower" )
 CoD.MapVoteNoDemoSelected = InheritFrom( LUI.UIElement )
 CoD.MapVoteNoDemoSelected.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MapVoteNoDemoSelected )
 	self.id = "MapVoteNoDemoSelected"
@@ -55,21 +57,26 @@ CoD.MapVoteNoDemoSelected.new = function ( menu, controller )
 		CPHidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BlackBack:completeAnimation()
 				self.BlackBack:setAlpha( 0 )
 				self.clipFinished( BlackBack, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setAlpha( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 0 )
 				self.clipFinished( Icon, {} )
+
 				GameModeNew:completeAnimation()
 				self.GameModeNew:setAlpha( 0 )
 				self.clipFinished( GameModeNew, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CPHidden",
@@ -86,6 +93,7 @@ CoD.MapVoteNoDemoSelected.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEMemberBlurPanelContainer0:close()
 		element.GameModeNew:close()

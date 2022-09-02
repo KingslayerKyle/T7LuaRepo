@@ -4,9 +4,11 @@
 CoD.StartMenu_ImageContainer = InheritFrom( LUI.UIElement )
 CoD.StartMenu_ImageContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_ImageContainer )
 	self.id = "StartMenu_ImageContainer"
@@ -24,6 +26,7 @@ CoD.StartMenu_ImageContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

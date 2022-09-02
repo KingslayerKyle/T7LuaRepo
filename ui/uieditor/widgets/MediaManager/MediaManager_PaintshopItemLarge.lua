@@ -11,9 +11,11 @@ end
 CoD.MediaManager_PaintshopItemLarge = InheritFrom( LUI.UIElement )
 CoD.MediaManager_PaintshopItemLarge.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MediaManager_PaintshopItemLarge )
 	self.id = "MediaManager_PaintshopItemLarge"
@@ -94,24 +96,31 @@ CoD.MediaManager_PaintshopItemLarge.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				extraCamRender:completeAnimation()
 				self.extraCamRender:setAlpha( 1 )
 				self.clipFinished( extraCamRender, {} )
+
 				WeaponNameBg:completeAnimation()
 				self.WeaponNameBg:setAlpha( 0.8 )
 				self.clipFinished( WeaponNameBg, {} )
+
 				WeaponName:completeAnimation()
 				self.WeaponName:setAlpha( 1 )
 				self.clipFinished( WeaponName, {} )
+
 				PaintjobName:completeAnimation()
 				self.PaintjobName:setAlpha( 1 )
 				self.clipFinished( PaintjobName, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 0.85 )
 				self.clipFinished( StartMenuframenoBG0, {} )
@@ -120,30 +129,38 @@ CoD.MediaManager_PaintshopItemLarge.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				extraCamRender:completeAnimation()
 				self.extraCamRender:setAlpha( 0 )
 				self.clipFinished( extraCamRender, {} )
+
 				WeaponNameBg:completeAnimation()
 				self.WeaponNameBg:setAlpha( 0 )
 				self.clipFinished( WeaponNameBg, {} )
+
 				WeaponName:completeAnimation()
 				self.WeaponName:setAlpha( 0 )
 				self.clipFinished( WeaponName, {} )
+
 				PaintjobName:completeAnimation()
 				self.PaintjobName:setAlpha( 0 )
 				self.clipFinished( PaintjobName, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -160,6 +177,7 @@ CoD.MediaManager_PaintshopItemLarge.new = function ( menu, controller )
 			modelName = "MediaManager.slotsUsed"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgIdle:close()
 		element.StartMenuframenoBG0:close()

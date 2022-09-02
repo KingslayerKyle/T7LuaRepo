@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.ChooseCharacter_HelpBubble_Button_LBRB = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacter_HelpBubble_Button_LBRB.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacter_HelpBubble_Button_LBRB )
 	self.id = "ChooseCharacter_HelpBubble_Button_LBRB"
@@ -194,42 +196,55 @@ CoD.ChooseCharacter_HelpBubble_Button_LBRB.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0 )
 				self.clipFinished( Background, {} )
+
 				FETabIdle0:completeAnimation()
 				self.FETabIdle0:setAlpha( 0 )
 				self.clipFinished( FETabIdle0, {} )
+
 				PressText:completeAnimation()
 				self.PressText:setAlpha( 0 )
 				self.clipFinished( PressText, {} )
+
 				LBIcon:completeAnimation()
 				self.LBIcon:setAlpha( 0 )
 				self.clipFinished( LBIcon, {} )
+
 				RBIcon:completeAnimation()
 				self.RBIcon:setAlpha( 0 )
 				self.clipFinished( RBIcon, {} )
+
 				BrowseThemText:completeAnimation()
 				self.BrowseThemText:setAlpha( 0 )
 				self.clipFinished( BrowseThemText, {} )
+
 				StickMove:completeAnimation()
 				self.StickMove:setAlpha( 0 )
 				self.clipFinished( StickMove, {} )
+
 				TriangleBorder:completeAnimation()
 				self.TriangleBorder:setAlpha( 0 )
 				self.clipFinished( TriangleBorder, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 0 )
 				self.clipFinished( Image1, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				emblemline0:completeAnimation()
 				self.emblemline0:setAlpha( 0 )
 				self.clipFinished( emblemline0, {} )
+
 				arrowUp:completeAnimation()
 				self.arrowUp:setAlpha( 0 )
 				self.clipFinished( arrowUp, {} )
+
 				arrowUp0:completeAnimation()
 				self.arrowUp0:setAlpha( 0 )
 				self.clipFinished( arrowUp0, {} )
@@ -238,12 +253,15 @@ CoD.ChooseCharacter_HelpBubble_Button_LBRB.new = function ( menu, controller )
 		LBRB = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0.7 )
 				self.clipFinished( Background, {} )
+
 				FETabIdle0:completeAnimation()
 				self.FETabIdle0:setAlpha( 1 )
 				self.clipFinished( FETabIdle0, {} )
+
 				PressText:completeAnimation()
 				self.PressText:setAlpha( 1 )
 				self.clipFinished( PressText, {} )
@@ -299,39 +317,50 @@ CoD.ChooseCharacter_HelpBubble_Button_LBRB.new = function ( menu, controller )
 				RBIcon:completeAnimation()
 				self.RBIcon:setAlpha( 0.15 )
 				RBIconFrame2( RBIcon, {} )
+
 				BrowseThemText:completeAnimation()
 				self.BrowseThemText:setAlpha( 1 )
 				self.clipFinished( BrowseThemText, {} )
+
 				StickMove:completeAnimation()
 				self.StickMove:setAlpha( 0 )
 				self.clipFinished( StickMove, {} )
+
 				arrowUp:completeAnimation()
 				self.arrowUp:setAlpha( 0 )
 				self.clipFinished( arrowUp, {} )
+
 				arrowUp0:completeAnimation()
 				self.arrowUp0:setAlpha( 0 )
 				self.clipFinished( arrowUp0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Stick = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0.7 )
 				self.clipFinished( Background, {} )
+
 				FETabIdle0:completeAnimation()
 				self.FETabIdle0:setAlpha( 1 )
 				self.clipFinished( FETabIdle0, {} )
+
 				PressText:completeAnimation()
 				self.PressText:setAlpha( 0 )
 				self.clipFinished( PressText, {} )
+
 				LBIcon:completeAnimation()
 				self.LBIcon:setAlpha( 0 )
 				self.clipFinished( LBIcon, {} )
+
 				RBIcon:completeAnimation()
 				self.RBIcon:setAlpha( 0 )
 				self.clipFinished( RBIcon, {} )
+
 				BrowseThemText:completeAnimation()
 				self.BrowseThemText:setAlpha( 1 )
 				self.clipFinished( BrowseThemText, {} )
@@ -457,36 +486,45 @@ CoD.ChooseCharacter_HelpBubble_Button_LBRB.new = function ( menu, controller )
 				self.arrowUp0:setTopBottom( false, false, -4.5, 4.5 )
 				self.arrowUp0:setAlpha( 0 )
 				arrowUp0Frame2( arrowUp0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		StickCopy = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0.7 )
 				self.clipFinished( Background, {} )
+
 				FETabIdle0:completeAnimation()
 				self.FETabIdle0:setAlpha( 1 )
 				self.clipFinished( FETabIdle0, {} )
+
 				PressText:completeAnimation()
 				self.PressText:setAlpha( 1 )
 				self.clipFinished( PressText, {} )
+
 				LBIcon:completeAnimation()
 				self.LBIcon:setAlpha( 0 )
 				self.clipFinished( LBIcon, {} )
+
 				RBIcon:completeAnimation()
 				self.RBIcon:setAlpha( 0 )
 				self.clipFinished( RBIcon, {} )
+
 				BrowseThemText:completeAnimation()
 				self.BrowseThemText:setAlpha( 1 )
 				self.clipFinished( BrowseThemText, {} )
+
 				StickMove:completeAnimation()
 				self.StickMove:setAlpha( 1 )
 				self.clipFinished( StickMove, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "LBRB",
@@ -515,6 +553,7 @@ CoD.ChooseCharacter_HelpBubble_Button_LBRB.new = function ( menu, controller )
 			modelName = "firstTimeFlowState"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LBIcon:close()
 		element.RBIcon:close()

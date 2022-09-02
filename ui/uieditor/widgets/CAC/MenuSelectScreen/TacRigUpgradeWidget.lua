@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.CAC.cac_3dTitleIntermediary" )
 CoD.TacRigUpgradeWidget = InheritFrom( LUI.UIElement )
 CoD.TacRigUpgradeWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TacRigUpgradeWidget )
 	self.id = "TacRigUpgradeWidget"
@@ -62,12 +64,14 @@ CoD.TacRigUpgradeWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				cac3dTitleIntermediary:completeAnimation()
 				self.cac3dTitleIntermediary:setAlpha( 1 )
 				self.clipFinished( cac3dTitleIntermediary, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TacRigInfoWidget:close()
 		element.UnlockTokensWidget:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HelperWidgets.TextWithBg" )
 CoD.AARScoreboardHeaderWidget = InheritFrom( LUI.UIElement )
 CoD.AARScoreboardHeaderWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AARScoreboardHeaderWidget )
 	self.id = "AARScoreboardHeaderWidget"

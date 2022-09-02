@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventory.SummoningKey.SummoningKeyItem" )
 CoD.SummoningKeyWidget = InheritFrom( LUI.UIElement )
 CoD.SummoningKeyWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SummoningKeyWidget )
 	self.id = "SummoningKeyWidget"
@@ -41,9 +43,11 @@ CoD.SummoningKeyWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				SummoningKeyBg:completeAnimation()
 				self.SummoningKeyBg:setAlpha( 0 )
 				self.clipFinished( SummoningKeyBg, {} )
+
 				SummoningKeyItem:completeAnimation()
 				self.SummoningKeyItem:setAlpha( 0 )
 				self.clipFinished( SummoningKeyItem, {} )
@@ -52,15 +56,18 @@ CoD.SummoningKeyWidget.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				SummoningKeyBg:completeAnimation()
 				self.SummoningKeyBg:setAlpha( 0 )
 				self.clipFinished( SummoningKeyBg, {} )
+
 				SummoningKeyItem:completeAnimation()
 				self.SummoningKeyItem:setAlpha( 1 )
 				self.clipFinished( SummoningKeyItem, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BgVisible",
@@ -77,6 +84,7 @@ CoD.SummoningKeyWidget.new = function ( menu, controller )
 			modelName = "zmInventory.widget_quest_items"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SummoningKeyItem:close()
 	end )

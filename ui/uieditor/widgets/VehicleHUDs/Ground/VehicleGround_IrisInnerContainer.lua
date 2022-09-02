@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Ground.VehicleGround_IrisInner" )
 CoD.VehicleGround_IrisInnerContainer = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_IrisInnerContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VehicleGround_IrisInnerContainer )
 	self.id = "VehicleGround_IrisInnerContainer"
@@ -30,6 +32,7 @@ CoD.VehicleGround_IrisInnerContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local VehicleGroundIrisInner0Frame2 = function ( VehicleGroundIrisInner0, event )
 					local VehicleGroundIrisInner0Frame3 = function ( VehicleGroundIrisInner0, event )
 						local VehicleGroundIrisInner0Frame4 = function ( VehicleGroundIrisInner0, event )
@@ -216,15 +219,18 @@ CoD.VehicleGround_IrisInnerContainer.new = function ( menu, controller )
 				self.VehicleGroundIrisInner0:setZRot( 0 )
 				self.VehicleGroundIrisInner0:setZoom( -149 )
 				VehicleGroundIrisInner0Frame2( VehicleGroundIrisInner0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		LeavingOperationalZone = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "LeavingOperationalZone",
@@ -241,6 +247,7 @@ CoD.VehicleGround_IrisInnerContainer.new = function ( menu, controller )
 			modelName = "outOfRange"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.VehicleGroundIrisInner0:close()
 	end )

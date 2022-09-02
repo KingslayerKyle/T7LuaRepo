@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.ZMPromotional.ZM_PromoIconList" )
 CoD.StartMenu_GameOptions_ZM = InheritFrom( LUI.UIElement )
 CoD.StartMenu_GameOptions_ZM.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_GameOptions_ZM )
 	self.id = "StartMenu_GameOptions_ZM"
@@ -123,6 +125,7 @@ CoD.StartMenu_GameOptions_ZM.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				rankProgress:completeAnimation()
 				self.rankProgress:setLeftRight( true, false, 4.87, 1147.87 )
 				self.rankProgress:setTopBottom( true, false, 451, 517 )
@@ -132,6 +135,7 @@ CoD.StartMenu_GameOptions_ZM.new = function ( menu, controller )
 		CP_PauseMenu = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				rankProgress:completeAnimation()
 				self.rankProgress:setLeftRight( true, false, 12, 307 )
 				self.rankProgress:setTopBottom( true, false, 172.91, 238.91 )
@@ -139,6 +143,7 @@ CoD.StartMenu_GameOptions_ZM.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CP_PauseMenu",
@@ -163,6 +168,7 @@ CoD.StartMenu_GameOptions_ZM.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.buttonList:close()
 		element.rankProgress:close()

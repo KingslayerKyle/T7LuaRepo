@@ -11,9 +11,11 @@ end
 CoD.IngameChatClient = InheritFrom( LUI.UIElement )
 CoD.IngameChatClient.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.IngameChatClient )
 	self.id = "IngameChatClient"
@@ -77,6 +79,7 @@ CoD.IngameChatClient.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				InputText:completeAnimation()
 				self.InputText:setAlpha( 0 )
 				self.clipFinished( InputText, {} )
@@ -85,12 +88,14 @@ CoD.IngameChatClient.new = function ( menu, controller )
 		Chatting = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				InputText:completeAnimation()
 				self.InputText:setAlpha( 1 )
 				self.clipFinished( InputText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Chatting",
@@ -108,6 +113,7 @@ CoD.IngameChatClient.new = function ( menu, controller )
 		} )
 	end )
 	ChatEntriesList.id = "ChatEntriesList"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ChatEntriesList:close()
 		element.InputText:close()

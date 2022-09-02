@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ButtonPanel" )
 CoD.cursorhint_text = InheritFrom( LUI.UIElement )
 CoD.cursorhint_text.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cursorhint_text )
 	self.id = "cursorhint_text"
@@ -37,6 +39,7 @@ CoD.cursorhint_text.new = function ( menu, controller )
 			CursorHintText:setText( Engine.Localize( cursorHintText ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( CursorHintText, "setText", function ( element, controller )
 		ScaleWidgetToLabelCenteredWrapped( self, element, 5, 0 )
 	end )

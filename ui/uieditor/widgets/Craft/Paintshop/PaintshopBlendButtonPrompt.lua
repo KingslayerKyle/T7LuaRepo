@@ -4,9 +4,11 @@
 CoD.PaintshopBlendButtonPrompt = InheritFrom( LUI.UIElement )
 CoD.PaintshopBlendButtonPrompt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.PaintshopBlendButtonPrompt )
 	self.id = "PaintshopBlendButtonPrompt"
@@ -38,6 +40,7 @@ CoD.PaintshopBlendButtonPrompt.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				label:completeAnimation()
 				self.label:setAlpha( 1 )
 				self.label:setText( Engine.Localize( "MENU_EMBLEM_TOGGLE_TO_STICKER" ) )
@@ -47,6 +50,7 @@ CoD.PaintshopBlendButtonPrompt.new = function ( menu, controller )
 		Blend = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				label:completeAnimation()
 				self.label:setText( Engine.Localize( "MENU_EMBLEM_TOGGLE_TO_BLEND" ) )
 				self.clipFinished( label, {} )
@@ -55,12 +59,14 @@ CoD.PaintshopBlendButtonPrompt.new = function ( menu, controller )
 		Sticker = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				label:completeAnimation()
 				self.label:setText( Engine.Localize( "MENU_EMBLEM_TOGGLE_TO_STICKER" ) )
 				self.clipFinished( label, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Blend",
@@ -83,6 +89,7 @@ CoD.PaintshopBlendButtonPrompt.new = function ( menu, controller )
 			modelName = "blend"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.buttonPromptImage:close()
 	end )

@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.HUD.CP_DamageWidget.DamageWidget_Pixel" )
 CoD.DamageWidget_EnviroHazardContainer = InheritFrom( LUI.UIElement )
 CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DamageWidget_EnviroHazardContainer )
 	self.id = "DamageWidget_EnviroHazardContainer"
@@ -128,18 +130,27 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				ImgHess2Glow:completeAnimation()
 				self.ImgHess2Glow:setAlpha( 0 )
 				self.clipFinished( ImgHess2Glow, {} )
+
 				ImgHess1Glow:completeAnimation()
 				self.ImgHess1Glow:setAlpha( 0 )
 				self.clipFinished( ImgHess1Glow, {} )
+
 				EnviroHazard1:completeAnimation()
+
 				EnviroHazard1.EnviroHazardMeter:completeAnimation()
+
 				EnviroHazard1.IconEnviroHazard:completeAnimation()
+
 				EnviroHazard1.MeterText:completeAnimation()
+
 				EnviroHazard1.AmmoWidgetBackCircleOutter0:completeAnimation()
+
 				EnviroHazard1.DamageWidgetArrow0:completeAnimation()
+
 				EnviroHazard1.DamageWidgetArrow1:completeAnimation()
 				self.EnviroHazard1:setLeftRight( true, false, 9, 162 )
 				self.EnviroHazard1:setTopBottom( false, true, -65, -39.33 )
@@ -151,12 +162,19 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 				self.EnviroHazard1.DamageWidgetArrow0:setAlpha( 0 )
 				self.EnviroHazard1.DamageWidgetArrow1:setAlpha( 0 )
 				self.clipFinished( EnviroHazard1, {} )
+
 				EnviroHazard2:completeAnimation()
+
 				EnviroHazard2.EnviroHazardMeter:completeAnimation()
+
 				EnviroHazard2.IconEnviroHazard:completeAnimation()
+
 				EnviroHazard2.MeterText:completeAnimation()
+
 				EnviroHazard2.AmmoWidgetBackCircleOutter0:completeAnimation()
+
 				EnviroHazard2.DamageWidgetArrow0:completeAnimation()
+
 				EnviroHazard2.DamageWidgetArrow1:completeAnimation()
 				self.EnviroHazard2:setLeftRight( true, false, 9, 162.01 )
 				self.EnviroHazard2:setTopBottom( false, true, -40.5, -14.83 )
@@ -168,24 +186,29 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 				self.EnviroHazard2.DamageWidgetArrow0:setAlpha( 0 )
 				self.EnviroHazard2.DamageWidgetArrow1:setAlpha( 0 )
 				self.clipFinished( EnviroHazard2, {} )
+
 				DamageWidgetSemiCircle0:completeAnimation()
 				self.DamageWidgetSemiCircle0:setLeftRight( true, false, -5.67, 17.66 )
 				self.DamageWidgetSemiCircle0:setTopBottom( true, false, 0, 80 )
 				self.clipFinished( DamageWidgetSemiCircle0, {} )
+
 				AmmoWidgetBackLine:completeAnimation()
 				self.AmmoWidgetBackLine:setLeftRight( true, false, -66, 4.33 )
 				self.AmmoWidgetBackLine:setTopBottom( true, false, 7, 9.67 )
 				self.clipFinished( AmmoWidgetBackLine, {} )
+
 				AmmoWidgetBackLine0:completeAnimation()
 				self.AmmoWidgetBackLine0:setLeftRight( true, false, -66, 4.33 )
 				self.AmmoWidgetBackLine0:setTopBottom( true, false, 69, 71.67 )
 				self.clipFinished( AmmoWidgetBackLine0, {} )
+
 				DamageWidgetArrow0:completeAnimation()
 				self.DamageWidgetArrow0:setZRot( 0 )
 				self.clipFinished( DamageWidgetArrow0, {} )
 			end,
 			Hess1 = function ()
 				self:setupElementClipCounter( 9 )
+
 				ImgHess2Glow:completeAnimation()
 				self.ImgHess2Glow:setAlpha( 0 )
 				self.clipFinished( ImgHess2Glow, {} )
@@ -597,11 +620,17 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 				end
 				
 				EnviroHazard1:completeAnimation()
+
 				EnviroHazard1.EnviroHazardMeter:completeAnimation()
+
 				EnviroHazard1.IconEnviroHazard:completeAnimation()
+
 				EnviroHazard1.MeterText:completeAnimation()
+
 				EnviroHazard1.AmmoWidgetBackCircleOutter0:completeAnimation()
+
 				EnviroHazard1.DamageWidgetArrow0:completeAnimation()
+
 				EnviroHazard1.DamageWidgetArrow1:completeAnimation()
 				self.EnviroHazard1:setLeftRight( true, false, 9, 162 )
 				self.EnviroHazard1:setTopBottom( false, true, -53, -27.33 )
@@ -613,6 +642,7 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 				self.EnviroHazard1.DamageWidgetArrow0:setAlpha( 0 )
 				self.EnviroHazard1.DamageWidgetArrow1:setAlpha( 0 )
 				EnviroHazard1Frame2( EnviroHazard1, {} )
+
 				EnviroHazard2:completeAnimation()
 				self.EnviroHazard2:setLeftRight( true, false, 9, 162.01 )
 				self.EnviroHazard2:setTopBottom( false, true, -40.5, -14.83 )
@@ -930,6 +960,7 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 			end,
 			Hess2 = function ()
 				self:setupElementClipCounter( 9 )
+
 				local ImgHess2GlowFrame2 = function ( ImgHess2Glow, event )
 					if not event.interrupted then
 						ImgHess2Glow:beginAnimation( "keyframe", 629, false, false, CoD.TweenType.Linear )
@@ -945,6 +976,7 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 				ImgHess2Glow:completeAnimation()
 				self.ImgHess2Glow:setAlpha( 0 )
 				ImgHess2GlowFrame2( ImgHess2Glow, {} )
+
 				ImgHess1Glow:completeAnimation()
 				self.ImgHess1Glow:setAlpha( 0 )
 				self.clipFinished( ImgHess1Glow, {} )
@@ -1341,11 +1373,17 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 				end
 				
 				EnviroHazard1:completeAnimation()
+
 				EnviroHazard1.EnviroHazardMeter:completeAnimation()
+
 				EnviroHazard1.IconEnviroHazard:completeAnimation()
+
 				EnviroHazard1.MeterText:completeAnimation()
+
 				EnviroHazard1.AmmoWidgetBackCircleOutter0:completeAnimation()
+
 				EnviroHazard1.DamageWidgetArrow0:completeAnimation()
+
 				EnviroHazard1.DamageWidgetArrow1:completeAnimation()
 				self.EnviroHazard1:setLeftRight( true, false, 9, 162 )
 				self.EnviroHazard1:setTopBottom( false, true, -65, -39.33 )
@@ -1810,10 +1848,15 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 				end
 				
 				EnviroHazard2:completeAnimation()
+
 				EnviroHazard2.EnviroHazardMeter:completeAnimation()
+
 				EnviroHazard2.IconEnviroHazard:completeAnimation()
+
 				EnviroHazard2.MeterText:completeAnimation()
+
 				EnviroHazard2.AmmoWidgetBackCircleOutter0:completeAnimation()
+
 				EnviroHazard2.DamageWidgetArrow1:completeAnimation()
 				self.EnviroHazard2:setLeftRight( true, false, 9, 162.01 )
 				self.EnviroHazard2:setTopBottom( false, true, -40.5, -14.83 )
@@ -2138,18 +2181,27 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 		Hess1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				ImgHess2Glow:completeAnimation()
 				self.ImgHess2Glow:setAlpha( 0 )
 				self.clipFinished( ImgHess2Glow, {} )
+
 				ImgHess1Glow:completeAnimation()
 				self.ImgHess1Glow:setAlpha( 0.4 )
 				self.clipFinished( ImgHess1Glow, {} )
+
 				EnviroHazard1:completeAnimation()
+
 				EnviroHazard1.EnviroHazardMeter:completeAnimation()
+
 				EnviroHazard1.IconEnviroHazard:completeAnimation()
+
 				EnviroHazard1.MeterText:completeAnimation()
+
 				EnviroHazard1.AmmoWidgetBackCircleOutter0:completeAnimation()
+
 				EnviroHazard1.DamageWidgetArrow0:completeAnimation()
+
 				EnviroHazard1.DamageWidgetArrow1:completeAnimation()
 				self.EnviroHazard1:setLeftRight( true, false, 9, 162 )
 				self.EnviroHazard1:setTopBottom( false, true, -53, -27.33 )
@@ -2161,12 +2213,19 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 				self.EnviroHazard1.DamageWidgetArrow0:setAlpha( 0 )
 				self.EnviroHazard1.DamageWidgetArrow1:setAlpha( 0 )
 				self.clipFinished( EnviroHazard1, {} )
+
 				EnviroHazard2:completeAnimation()
+
 				EnviroHazard2.EnviroHazardMeter:completeAnimation()
+
 				EnviroHazard2.IconEnviroHazard:completeAnimation()
+
 				EnviroHazard2.MeterText:completeAnimation()
+
 				EnviroHazard2.AmmoWidgetBackCircleOutter0:completeAnimation()
+
 				EnviroHazard2.DamageWidgetArrow0:completeAnimation()
+
 				EnviroHazard2.DamageWidgetArrow1:completeAnimation()
 				self.EnviroHazard2:setLeftRight( true, false, 9, 162.01 )
 				self.EnviroHazard2:setTopBottom( false, true, -39, -15.33 )
@@ -2178,25 +2237,30 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 				self.EnviroHazard2.DamageWidgetArrow0:setAlpha( 0 )
 				self.EnviroHazard2.DamageWidgetArrow1:setAlpha( 0 )
 				self.clipFinished( EnviroHazard2, {} )
+
 				DamageWidgetSemiCircle0:completeAnimation()
 				self.DamageWidgetSemiCircle0:setLeftRight( true, false, 19.33, 42.66 )
 				self.DamageWidgetSemiCircle0:setTopBottom( true, false, 0, 80 )
 				self.DamageWidgetSemiCircle0:setAlpha( 1 )
 				self.clipFinished( DamageWidgetSemiCircle0, {} )
+
 				AmmoWidgetBackLine:completeAnimation()
 				self.AmmoWidgetBackLine:setLeftRight( true, false, -66, 29 )
 				self.AmmoWidgetBackLine:setTopBottom( true, false, 7, 9.67 )
 				self.clipFinished( AmmoWidgetBackLine, {} )
+
 				AmmoWidgetBackLine0:completeAnimation()
 				self.AmmoWidgetBackLine0:setLeftRight( true, false, -66, 31 )
 				self.AmmoWidgetBackLine0:setTopBottom( true, false, 69, 71.67 )
 				self.clipFinished( AmmoWidgetBackLine0, {} )
+
 				DamageWidgetArrow0:completeAnimation()
 				self.DamageWidgetArrow0:setZRot( 180 )
 				self.clipFinished( DamageWidgetArrow0, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 9 )
+
 				ImgHess2Glow:completeAnimation()
 				self.ImgHess2Glow:setAlpha( 0 )
 				self.clipFinished( ImgHess2Glow, {} )
@@ -2278,11 +2342,17 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 				end
 				
 				EnviroHazard1:completeAnimation()
+
 				EnviroHazard1.EnviroHazardMeter:completeAnimation()
+
 				EnviroHazard1.IconEnviroHazard:completeAnimation()
+
 				EnviroHazard1.MeterText:completeAnimation()
+
 				EnviroHazard1.AmmoWidgetBackCircleOutter0:completeAnimation()
+
 				EnviroHazard1.DamageWidgetArrow0:completeAnimation()
+
 				EnviroHazard1.DamageWidgetArrow1:completeAnimation()
 				self.EnviroHazard1:setLeftRight( true, false, 9, 162 )
 				self.EnviroHazard1:setTopBottom( false, true, -53, -27.33 )
@@ -2294,6 +2364,7 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 				self.EnviroHazard1.DamageWidgetArrow0:setAlpha( 0 )
 				self.EnviroHazard1.DamageWidgetArrow1:setAlpha( 0 )
 				EnviroHazard1Frame2( EnviroHazard1, {} )
+
 				EnviroHazard2:completeAnimation()
 				self.EnviroHazard2:setLeftRight( true, false, 9, 162.01 )
 				self.EnviroHazard2:setTopBottom( false, true, -39, -15.33 )
@@ -2365,12 +2436,14 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 				DamageWidgetArrow0:beginAnimation( "keyframe", 239, false, false, CoD.TweenType.Linear )
 				DamageWidgetArrow0:setZRot( 180 )
 				DamageWidgetArrow0:registerEventHandler( "transition_complete_keyframe", f156_local5 )
+
 				DamageWidgetPixel0:completeAnimation()
 				self.DamageWidgetPixel0:setAlpha( 0 )
 				self.clipFinished( DamageWidgetPixel0, {} )
 			end,
 			Hess2 = function ()
 				self:setupElementClipCounter( 4 )
+
 				local ImgHess2GlowFrame2 = function ( ImgHess2Glow, event )
 					if not event.interrupted then
 						ImgHess2Glow:beginAnimation( "keyframe", 649, false, false, CoD.TweenType.Linear )
@@ -2422,8 +2495,11 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 				end
 				
 				EnviroHazard1:completeAnimation()
+
 				EnviroHazard1.EnviroHazardMeter:completeAnimation()
+
 				EnviroHazard1.IconEnviroHazard:completeAnimation()
+
 				EnviroHazard1.MeterText:completeAnimation()
 				self.EnviroHazard1:setLeftRight( true, false, 9, 162 )
 				self.EnviroHazard1:setTopBottom( false, true, -53, -27.33 )
@@ -2885,10 +2961,15 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 				end
 				
 				EnviroHazard2:completeAnimation()
+
 				EnviroHazard2.EnviroHazardMeter:completeAnimation()
+
 				EnviroHazard2.IconEnviroHazard:completeAnimation()
+
 				EnviroHazard2.MeterText:completeAnimation()
+
 				EnviroHazard2.AmmoWidgetBackCircleOutter0:completeAnimation()
+
 				EnviroHazard2.DamageWidgetArrow1:completeAnimation()
 				self.EnviroHazard2:setLeftRight( true, false, 9, 162.01 )
 				self.EnviroHazard2:setTopBottom( false, true, -40.5, -14.83 )
@@ -2904,15 +2985,21 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 		Hess2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ImgHess2Glow:completeAnimation()
 				self.ImgHess2Glow:setAlpha( 0.6 )
 				self.clipFinished( ImgHess2Glow, {} )
+
 				ImgHess1Glow:completeAnimation()
 				self.ImgHess1Glow:setAlpha( 0 )
 				self.clipFinished( ImgHess1Glow, {} )
+
 				EnviroHazard1:completeAnimation()
+
 				EnviroHazard1.EnviroHazardMeter:completeAnimation()
+
 				EnviroHazard1.IconEnviroHazard:completeAnimation()
+
 				EnviroHazard1.MeterText:completeAnimation()
 				self.EnviroHazard1:setLeftRight( true, false, 9, 162 )
 				self.EnviroHazard1:setTopBottom( false, true, -65, -39.33 )
@@ -2921,9 +3008,13 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 				self.EnviroHazard1.IconEnviroHazard:setAlpha( 1 )
 				self.EnviroHazard1.MeterText:setAlpha( 1 )
 				self.clipFinished( EnviroHazard1, {} )
+
 				EnviroHazard2:completeAnimation()
+
 				EnviroHazard2.EnviroHazardMeter:completeAnimation()
+
 				EnviroHazard2.IconEnviroHazard:completeAnimation()
+
 				EnviroHazard2.MeterText:completeAnimation()
 				self.EnviroHazard2:setLeftRight( true, false, 9, 162.01 )
 				self.EnviroHazard2:setTopBottom( false, true, -40.5, -14.83 )
@@ -2932,28 +3023,34 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 				self.EnviroHazard2.IconEnviroHazard:setAlpha( 1 )
 				self.EnviroHazard2.MeterText:setAlpha( 1 )
 				self.clipFinished( EnviroHazard2, {} )
+
 				DamageWidgetSemiCircle0:completeAnimation()
 				self.DamageWidgetSemiCircle0:setLeftRight( true, false, 19.33, 42.66 )
 				self.DamageWidgetSemiCircle0:setTopBottom( true, false, 0, 80 )
 				self.DamageWidgetSemiCircle0:setAlpha( 1 )
 				self.clipFinished( DamageWidgetSemiCircle0, {} )
+
 				AmmoWidgetBackLine:completeAnimation()
 				self.AmmoWidgetBackLine:setLeftRight( true, false, -66, 29 )
 				self.AmmoWidgetBackLine:setTopBottom( true, false, 7, 9.67 )
 				self.clipFinished( AmmoWidgetBackLine, {} )
+
 				AmmoWidgetBackLine0:completeAnimation()
 				self.AmmoWidgetBackLine0:setLeftRight( true, false, -66, 31 )
 				self.AmmoWidgetBackLine0:setTopBottom( true, false, 69, 71.67 )
 				self.clipFinished( AmmoWidgetBackLine0, {} )
+
 				DamageWidgetArrow0:completeAnimation()
 				self.DamageWidgetArrow0:setZRot( 180 )
 				self.clipFinished( DamageWidgetArrow0, {} )
+
 				DamageWidgetPixel0:completeAnimation()
 				self.DamageWidgetPixel0:setAlpha( 0 )
 				self.clipFinished( DamageWidgetPixel0, {} )
 			end,
 			Hess1 = function ()
 				self:setupElementClipCounter( 4 )
+
 				local ImgHess2GlowFrame2 = function ( ImgHess2Glow, event )
 					if not event.interrupted then
 						ImgHess2Glow:beginAnimation( "keyframe", 259, false, false, CoD.TweenType.Linear )
@@ -3070,8 +3167,11 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 				end
 				
 				EnviroHazard2:completeAnimation()
+
 				EnviroHazard2.EnviroHazardMeter:completeAnimation()
+
 				EnviroHazard2.IconEnviroHazard:completeAnimation()
+
 				EnviroHazard2.MeterText:completeAnimation()
 				self.EnviroHazard2:setLeftRight( true, false, 9, 162.01 )
 				self.EnviroHazard2:setTopBottom( false, true, -40.5, -14.83 )
@@ -3083,6 +3183,7 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 8 )
+
 				local ImgHess2GlowFrame2 = function ( ImgHess2Glow, event )
 					if not event.interrupted then
 						ImgHess2Glow:beginAnimation( "keyframe", 389, false, false, CoD.TweenType.Linear )
@@ -3098,6 +3199,7 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 				ImgHess2Glow:completeAnimation()
 				self.ImgHess2Glow:setAlpha( 0.6 )
 				ImgHess2GlowFrame2( ImgHess2Glow, {} )
+
 				ImgHess1Glow:completeAnimation()
 				self.ImgHess1Glow:setAlpha( 0 )
 				self.clipFinished( ImgHess1Glow, {} )
@@ -3168,8 +3270,11 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 				end
 				
 				EnviroHazard1:completeAnimation()
+
 				EnviroHazard1.EnviroHazardMeter:completeAnimation()
+
 				EnviroHazard1.IconEnviroHazard:completeAnimation()
+
 				EnviroHazard1.MeterText:completeAnimation()
 				self.EnviroHazard1:setLeftRight( true, false, 9, 162 )
 				self.EnviroHazard1:setTopBottom( false, true, -65, -39.33 )
@@ -3235,8 +3340,11 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 				end
 				
 				EnviroHazard2:completeAnimation()
+
 				EnviroHazard2.EnviroHazardMeter:completeAnimation()
+
 				EnviroHazard2.IconEnviroHazard:completeAnimation()
+
 				EnviroHazard2.MeterText:completeAnimation()
 				self.EnviroHazard2:setLeftRight( true, false, 9, 162.01 )
 				self.EnviroHazard2:setTopBottom( false, true, -40.5, -14.83 )
@@ -3314,6 +3422,7 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.EnviroHazard1:close()
 		element.EnviroHazard2:close()

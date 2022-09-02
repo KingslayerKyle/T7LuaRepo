@@ -14,9 +14,11 @@ end
 CoD.FileshareCategoryContentList = InheritFrom( LUI.UIElement )
 CoD.FileshareCategoryContentList.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FileshareCategoryContentList )
 	self.id = "FileshareCategoryContentList"
@@ -164,14 +166,17 @@ CoD.FileshareCategoryContentList.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				FileshareNoContentGraphic:completeAnimation()
 				self.FileshareNoContentGraphic:setLeftRight( true, false, 11.5, 760.5 )
 				self.FileshareNoContentGraphic:setTopBottom( true, false, 1, 479 )
 				self.clipFinished( FileshareNoContentGraphic, {} )
+
 				verticalCounter:completeAnimation()
 				self.verticalCounter:setLeftRight( true, false, 285, 485 )
 				self.verticalCounter:setTopBottom( true, false, 482, 507 )
 				self.clipFinished( verticalCounter, {} )
+
 				contentList:completeAnimation()
 				self.contentList:setLeftRight( true, false, 10.5, 735.5 )
 				self.contentList:setTopBottom( true, false, 1, 481 )
@@ -181,19 +186,23 @@ CoD.FileshareCategoryContentList.new = function ( menu, controller )
 		GroupsOverviewRecentShowcase = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				FileshareNoContentGraphic:completeAnimation()
 				self.FileshareNoContentGraphic:setLeftRight( true, false, 14.5, 388 )
 				self.FileshareNoContentGraphic:setTopBottom( true, false, 1, 372.5 )
 				self.clipFinished( FileshareNoContentGraphic, {} )
+
 				verticalCounter:completeAnimation()
 				self.verticalCounter:setLeftRight( true, false, 95, 295 )
 				self.verticalCounter:setTopBottom( true, false, 440.5, 465.5 )
 				self.clipFinished( verticalCounter, {} )
+
 				contentList:completeAnimation()
 				self.contentList:setLeftRight( true, false, 59.5, 784.5 )
 				self.contentList:setTopBottom( true, false, -23, 457 )
 				self.contentList:setScale( 0.9 )
 				self.clipFinished( contentList, {} )
+
 				FileshareNoContent:completeAnimation()
 				self.FileshareNoContent:setLeftRight( true, false, 14.5, 379.5 )
 				self.FileshareNoContent:setTopBottom( true, false, 171.75, 201.75 )
@@ -220,6 +229,7 @@ CoD.FileshareCategoryContentList.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FileshareNoContentGraphic:close()
 		element.verticalCounter:close()

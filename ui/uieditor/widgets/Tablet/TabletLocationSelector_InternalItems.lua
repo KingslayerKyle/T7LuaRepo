@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Minimap.MinimapHelperItems" )
 CoD.TabletLocationSelector_InternalItems = InheritFrom( LUI.UIElement )
 CoD.TabletLocationSelector_InternalItems.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TabletLocationSelector_InternalItems )
 	self.id = "TabletLocationSelector_InternalItems"

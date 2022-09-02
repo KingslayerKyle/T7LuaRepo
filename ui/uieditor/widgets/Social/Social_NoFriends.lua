@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Pregame.Pregame_BanProtectFrame" )
 CoD.Social_NoFriends = InheritFrom( LUI.UIElement )
 CoD.Social_NoFriends.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_NoFriends )
 	self.id = "Social_NoFriends"
@@ -119,9 +121,11 @@ CoD.Social_NoFriends.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PregameBanProtectFrame0000:close()
 		element.PregameBanProtectFrame00000:close()

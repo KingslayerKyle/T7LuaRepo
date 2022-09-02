@@ -4,9 +4,11 @@
 CoD.AmmoWidget_Separator = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_Separator.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_Separator )
 	self.id = "AmmoWidget_Separator"

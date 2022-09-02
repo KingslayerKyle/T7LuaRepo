@@ -4,9 +4,11 @@
 CoD.AbilityWheel_Bracket = InheritFrom( LUI.UIElement )
 CoD.AbilityWheel_Bracket.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AbilityWheel_Bracket )
 	self.id = "AbilityWheel_Bracket"
@@ -27,6 +29,7 @@ CoD.AbilityWheel_Bracket.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local Bracket0Frame2 = function ( Bracket0, event )
 					if not event.interrupted then
 						Bracket0:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -44,6 +47,7 @@ CoD.AbilityWheel_Bracket.new = function ( menu, controller )
 				self.Bracket0:setRGB( 1, 1, 1 )
 				self.Bracket0:setAlpha( RandomAddPercent( -10, 1 ) )
 				Bracket0Frame2( Bracket0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

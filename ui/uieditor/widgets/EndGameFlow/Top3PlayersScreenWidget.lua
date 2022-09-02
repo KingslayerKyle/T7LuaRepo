@@ -57,9 +57,11 @@ end
 CoD.Top3PlayersScreenWidget = InheritFrom( LUI.UIElement )
 CoD.Top3PlayersScreenWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Top3PlayersScreenWidget )
 	self.id = "Top3PlayersScreenWidget"
@@ -227,6 +229,7 @@ CoD.Top3PlayersScreenWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				local KillcamHeaderFrame2 = function ( KillcamHeader, event )
 					if not event.interrupted then
 						KillcamHeader:beginAnimation( "keyframe", 620, false, true, CoD.TweenType.Linear )
@@ -380,6 +383,7 @@ CoD.Top3PlayersScreenWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.KillcamHeader:close()
 		element.Player2ScoreWidget:close()

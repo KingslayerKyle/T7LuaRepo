@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.CAC_varientTitlePanel" )
 CoD.GunSmithSubDescription = InheritFrom( LUI.UIElement )
 CoD.GunSmithSubDescription.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunSmithSubDescription )
 	self.id = "GunSmithSubDescription"
@@ -31,6 +33,7 @@ CoD.GunSmithSubDescription.new = function ( menu, controller )
 	weaponDescTextBox:setTTF( "fonts/RefrigeratorDeluxe-Regular.ttf" )
 	weaponDescTextBox:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	weaponDescTextBox:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( weaponDescTextBox, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrapped( self, element, 0, 0 )
 	end )
@@ -41,9 +44,11 @@ CoD.GunSmithSubDescription.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CACvarientTitlePanel0:close()
 	end )

@@ -4,9 +4,11 @@
 CoD.SystemOverlaySpinner = InheritFrom( LUI.UIElement )
 CoD.SystemOverlaySpinner.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SystemOverlaySpinner )
 	self.id = "SystemOverlaySpinner"
@@ -41,6 +43,7 @@ CoD.SystemOverlaySpinner.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local Image1Frame2 = function ( Image1, event )
 					local Image1Frame3 = function ( Image1, event )
 						local Image1Frame4 = function ( Image1, event )
@@ -182,6 +185,7 @@ CoD.SystemOverlaySpinner.new = function ( menu, controller )
 				Image100:completeAnimation()
 				self.Image100:setAlpha( 0 )
 				Image100Frame2( Image100, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

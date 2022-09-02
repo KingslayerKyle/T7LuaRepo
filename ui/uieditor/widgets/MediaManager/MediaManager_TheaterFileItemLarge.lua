@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_frame_noBG" )
 CoD.MediaManager_TheaterFileItemLarge = InheritFrom( LUI.UIElement )
 CoD.MediaManager_TheaterFileItemLarge.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MediaManager_TheaterFileItemLarge )
 	self.id = "MediaManager_TheaterFileItemLarge"
@@ -90,24 +92,31 @@ CoD.MediaManager_TheaterFileItemLarge.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 1 )
 				self.clipFinished( Thumbnail, {} )
+
 				NameBg:completeAnimation()
 				self.NameBg:setAlpha( 0.8 )
 				self.clipFinished( NameBg, {} )
+
 				Name:completeAnimation()
 				self.Name:setAlpha( 1 )
 				self.clipFinished( Name, {} )
+
 				Description:completeAnimation()
 				self.Description:setAlpha( 1 )
 				self.clipFinished( Description, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 0.85 )
 				self.clipFinished( StartMenuframenoBG0, {} )
@@ -116,30 +125,38 @@ CoD.MediaManager_TheaterFileItemLarge.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				Thumbnail:completeAnimation()
 				self.Thumbnail:setAlpha( 0 )
 				self.clipFinished( Thumbnail, {} )
+
 				NameBg:completeAnimation()
 				self.NameBg:setAlpha( 0 )
 				self.clipFinished( NameBg, {} )
+
 				Name:completeAnimation()
 				self.Name:setAlpha( 0 )
 				self.clipFinished( Name, {} )
+
 				Description:completeAnimation()
 				self.Description:setAlpha( 0 )
 				self.clipFinished( Description, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -156,6 +173,7 @@ CoD.MediaManager_TheaterFileItemLarge.new = function ( menu, controller )
 			modelName = "MediaManager.slotsUsed"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgIdle:close()
 		element.StartMenuframenoBG0:close()

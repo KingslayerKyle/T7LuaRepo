@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.cac_ButtonBoxLrgInactiveDiags" )
 CoD.BorderThin = InheritFrom( LUI.UIElement )
 CoD.BorderThin.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.BorderThin )
 	self.id = "BorderThin"

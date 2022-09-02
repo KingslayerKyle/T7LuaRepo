@@ -30,9 +30,11 @@ end
 CoD.Pregame_ItemVote_BanProtectPopup = InheritFrom( LUI.UIElement )
 CoD.Pregame_ItemVote_BanProtectPopup.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.Pregame_ItemVote_BanProtectPopup )
 	self.id = "Pregame_ItemVote_BanProtectPopup"
@@ -165,8 +167,11 @@ CoD.Pregame_ItemVote_BanProtectPopup.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PregameItemVoteBanProtectPopupAlert:completeAnimation()
+
 				PregameItemVoteBanProtectPopupAlert.BannedIcon:completeAnimation()
+
 				PregameItemVoteBanProtectPopupAlert.ProtectedIcon:completeAnimation()
 				self.PregameItemVoteBanProtectPopupAlert:setAlpha( 0 )
 				self.PregameItemVoteBanProtectPopupAlert.BannedIcon:setAlpha( 0 )
@@ -177,9 +182,13 @@ CoD.Pregame_ItemVote_BanProtectPopup.new = function ( menu, controller )
 		Banned = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PregameItemVoteBanProtectPopupAlert:completeAnimation()
+
 				PregameItemVoteBanProtectPopupAlert.Text:completeAnimation()
+
 				PregameItemVoteBanProtectPopupAlert.BannedIcon:completeAnimation()
+
 				PregameItemVoteBanProtectPopupAlert.ProtectedIcon:completeAnimation()
 				self.PregameItemVoteBanProtectPopupAlert:setAlpha( 1 )
 				self.PregameItemVoteBanProtectPopupAlert.Text:setText( Engine.Localize( "MENU_BANNED_BY" ) )
@@ -191,9 +200,13 @@ CoD.Pregame_ItemVote_BanProtectPopup.new = function ( menu, controller )
 		Protected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PregameItemVoteBanProtectPopupAlert:completeAnimation()
+
 				PregameItemVoteBanProtectPopupAlert.Text:completeAnimation()
+
 				PregameItemVoteBanProtectPopupAlert.BannedIcon:completeAnimation()
+
 				PregameItemVoteBanProtectPopupAlert.ProtectedIcon:completeAnimation()
 				self.PregameItemVoteBanProtectPopupAlert:setAlpha( 1 )
 				self.PregameItemVoteBanProtectPopupAlert.Text:setText( Engine.Localize( "MENU_PROTECTED_BY" ) )
@@ -203,6 +216,7 @@ CoD.Pregame_ItemVote_BanProtectPopup.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Banned",
@@ -236,6 +250,7 @@ CoD.Pregame_ItemVote_BanProtectPopup.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ButtonList:close()
 		element.PregameItemVoteBanProtectPopupAlert:close()

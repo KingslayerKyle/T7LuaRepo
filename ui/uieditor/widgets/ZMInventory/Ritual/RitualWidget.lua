@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventory.Ritual.RitualItem" )
 CoD.RitualWidget = InheritFrom( LUI.UIElement )
 CoD.RitualWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RitualWidget )
 	self.id = "RitualWidget"
@@ -641,18 +643,23 @@ CoD.RitualWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				RitualBg:completeAnimation()
 				self.RitualBg:setAlpha( 0 )
 				self.clipFinished( RitualBg, {} )
+
 				RitualItem1:completeAnimation()
 				self.RitualItem1:setAlpha( 0 )
 				self.clipFinished( RitualItem1, {} )
+
 				RitualItem2:completeAnimation()
 				self.RitualItem2:setAlpha( 0 )
 				self.clipFinished( RitualItem2, {} )
+
 				RitualItem3:completeAnimation()
 				self.RitualItem3:setAlpha( 0 )
 				self.clipFinished( RitualItem3, {} )
+
 				RitualItem4:completeAnimation()
 				self.RitualItem4:setAlpha( 0 )
 				self.clipFinished( RitualItem4, {} )
@@ -661,6 +668,7 @@ CoD.RitualWidget.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local RitualBgFrame2 = function ( RitualBg, event )
 					local RitualBgFrame3 = function ( RitualBg, event )
 						local RitualBgFrame4 = function ( RitualBg, event )
@@ -731,15 +739,19 @@ CoD.RitualWidget.new = function ( menu, controller )
 				RitualBg:completeAnimation()
 				self.RitualBg:setAlpha( 0 )
 				RitualBgFrame2( RitualBg, {} )
+
 				RitualItem1:completeAnimation()
 				self.RitualItem1:setAlpha( 1 )
 				self.clipFinished( RitualItem1, {} )
+
 				RitualItem2:completeAnimation()
 				self.RitualItem2:setAlpha( 1 )
 				self.clipFinished( RitualItem2, {} )
+
 				RitualItem3:completeAnimation()
 				self.RitualItem3:setAlpha( 1 )
 				self.clipFinished( RitualItem3, {} )
+
 				RitualItem4:completeAnimation()
 				self.RitualItem4:setAlpha( 1 )
 				self.clipFinished( RitualItem4, {} )
@@ -748,24 +760,30 @@ CoD.RitualWidget.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				RitualBg:completeAnimation()
 				self.RitualBg:setAlpha( 0 )
 				self.clipFinished( RitualBg, {} )
+
 				RitualItem1:completeAnimation()
 				self.RitualItem1:setAlpha( 1 )
 				self.clipFinished( RitualItem1, {} )
+
 				RitualItem2:completeAnimation()
 				self.RitualItem2:setAlpha( 1 )
 				self.clipFinished( RitualItem2, {} )
+
 				RitualItem3:completeAnimation()
 				self.RitualItem3:setAlpha( 1 )
 				self.clipFinished( RitualItem3, {} )
+
 				RitualItem4:completeAnimation()
 				self.RitualItem4:setAlpha( 1 )
 				self.clipFinished( RitualItem4, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BgVisible",
@@ -796,6 +814,7 @@ CoD.RitualWidget.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RitualItem1:close()
 		element.RitualItem2:close()

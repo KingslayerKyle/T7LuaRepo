@@ -4,9 +4,11 @@
 CoD.TempestReticleInternal = InheritFrom( LUI.UIElement )
 CoD.TempestReticleInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TempestReticleInternal )
 	self.id = "TempestReticleInternal"
@@ -199,18 +201,22 @@ CoD.TempestReticleInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ReticleLineBottom:completeAnimation()
 				self.ReticleLineBottom:setLeftRight( false, false, -6, 6 )
 				self.ReticleLineBottom:setTopBottom( false, false, -8, 40 )
 				self.clipFinished( ReticleLineBottom, {} )
+
 				ReticleLineTop:completeAnimation()
 				self.ReticleLineTop:setLeftRight( false, false, -6, 6 )
 				self.ReticleLineTop:setTopBottom( false, false, -39, 8 )
 				self.clipFinished( ReticleLineTop, {} )
+
 				ReticleLineRight:completeAnimation()
 				self.ReticleLineRight:setLeftRight( false, false, -2, 36 )
 				self.ReticleLineRight:setTopBottom( false, false, -7, 7 )
 				self.clipFinished( ReticleLineRight, {} )
+
 				ReticleLineLeft:completeAnimation()
 				self.ReticleLineLeft:setLeftRight( false, false, -36, 2 )
 				self.ReticleLineLeft:setTopBottom( false, false, -7, 7 )
@@ -218,6 +224,7 @@ CoD.TempestReticleInternal.new = function ( menu, controller )
 			end,
 			Fire = function ()
 				self:setupElementClipCounter( 17 )
+
 				centerDot:completeAnimation()
 				self.centerDot:setLeftRight( false, false, -6, 6 )
 				self.centerDot:setTopBottom( false, false, -6, 6 )
@@ -875,46 +882,55 @@ CoD.TempestReticleInternal.new = function ( menu, controller )
 		Fire = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				centerDot:completeAnimation()
 				self.centerDot:setLeftRight( false, false, -6, 6 )
 				self.centerDot:setTopBottom( false, false, -6, 6 )
 				self.centerDot:setAlpha( 0.7 )
 				self.clipFinished( centerDot, {} )
+
 				ReticleLineBottom:completeAnimation()
 				self.ReticleLineBottom:setLeftRight( false, false, -6, 6 )
 				self.ReticleLineBottom:setTopBottom( false, false, 25, 73 )
 				self.ReticleLineBottom:setAlpha( 0.8 )
 				self.clipFinished( ReticleLineBottom, {} )
+
 				ReticleLineTop:completeAnimation()
 				self.ReticleLineTop:setLeftRight( false, false, -6, 6 )
 				self.ReticleLineTop:setTopBottom( false, false, -72, -25 )
 				self.ReticleLineTop:setAlpha( 0.8 )
 				self.clipFinished( ReticleLineTop, {} )
+
 				ReticleLineRight:completeAnimation()
 				self.ReticleLineRight:setLeftRight( false, false, 30, 68 )
 				self.ReticleLineRight:setTopBottom( false, false, -7, 7 )
 				self.ReticleLineRight:setAlpha( 0.8 )
 				self.clipFinished( ReticleLineRight, {} )
+
 				ReticleLineLeft:completeAnimation()
 				self.ReticleLineLeft:setLeftRight( false, false, -67, -29 )
 				self.ReticleLineLeft:setTopBottom( false, false, -7, 7 )
 				self.ReticleLineLeft:setAlpha( 0.8 )
 				self.clipFinished( ReticleLineLeft, {} )
+
 				OuterLineAngleCenter:completeAnimation()
 				self.OuterLineAngleCenter:setLeftRight( false, false, 11, 23 )
 				self.OuterLineAngleCenter:setTopBottom( false, false, -33.5, 2.5 )
 				self.OuterLineAngleCenter:setAlpha( 1 )
 				self.clipFinished( OuterLineAngleCenter, {} )
+
 				OuterLineAngleCenter0:completeAnimation()
 				self.OuterLineAngleCenter0:setLeftRight( false, false, -22, -10 )
 				self.OuterLineAngleCenter0:setTopBottom( false, false, -33.5, 2.5 )
 				self.OuterLineAngleCenter0:setAlpha( 1 )
 				self.clipFinished( OuterLineAngleCenter0, {} )
+
 				OuterLineAngleCenter1:completeAnimation()
 				self.OuterLineAngleCenter1:setLeftRight( false, false, 11, 23 )
 				self.OuterLineAngleCenter1:setTopBottom( false, false, -3, 33 )
 				self.OuterLineAngleCenter1:setAlpha( 1 )
 				self.clipFinished( OuterLineAngleCenter1, {} )
+
 				OuterLineAngleCenterLL:completeAnimation()
 				self.OuterLineAngleCenterLL:setLeftRight( false, false, -22, -10 )
 				self.OuterLineAngleCenterLL:setTopBottom( false, false, -3, 33 )
@@ -923,6 +939,7 @@ CoD.TempestReticleInternal.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 9 )
+
 				centerDot:completeAnimation()
 				self.centerDot:setLeftRight( false, false, -6, 6 )
 				self.centerDot:setTopBottom( false, false, -6, 6 )

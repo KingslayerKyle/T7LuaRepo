@@ -18,6 +18,7 @@ CoD.Frame_lineVertical.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Frame_lineVertical )
 	self.id = "Frame_lineVertical"

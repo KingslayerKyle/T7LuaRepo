@@ -4,9 +4,11 @@
 CoD.BlackmarketRewards54i = InheritFrom( LUI.UIElement )
 CoD.BlackmarketRewards54i.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BlackmarketRewards54i )
 	self.id = "BlackmarketRewards54i"
@@ -39,6 +41,7 @@ CoD.BlackmarketRewards54i.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				text:completeAnimation()
 				self.text:setLeftRight( true, false, 44.07, 187.67 )
 				self.text:setTopBottom( true, false, 7, 24 )
@@ -48,6 +51,7 @@ CoD.BlackmarketRewards54i.new = function ( menu, controller )
 		SideBet = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				text:completeAnimation()
 				self.text:setLeftRight( true, false, 44.4, 188 )
 				self.text:setTopBottom( true, false, 13.25, 30.25 )

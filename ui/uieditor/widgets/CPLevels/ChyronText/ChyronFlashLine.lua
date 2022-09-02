@@ -4,9 +4,11 @@
 CoD.ChyronFlashLine = InheritFrom( LUI.UIElement )
 CoD.ChyronFlashLine.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChyronFlashLine )
 	self.id = "ChyronFlashLine"
@@ -25,9 +27,11 @@ CoD.ChyronFlashLine.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Flash1 = function ()
 				self:setupElementClipCounter( 1 )
+
 				local LineImageFrame2 = function ( LineImage, event )
 					local LineImageFrame3 = function ( LineImage, event )
 						if not event.interrupted then
@@ -57,6 +61,7 @@ CoD.ChyronFlashLine.new = function ( menu, controller )
 			end,
 			Flash2 = function ()
 				self:setupElementClipCounter( 1 )
+
 				local f6_local0 = function ( f7_arg0, f7_arg1 )
 					local f7_local0 = function ( f8_arg0, f8_arg1 )
 						if not f8_arg1.interrupted then
@@ -86,6 +91,7 @@ CoD.ChyronFlashLine.new = function ( menu, controller )
 			end,
 			Flash3 = function ()
 				self:setupElementClipCounter( 1 )
+
 				local f9_local0 = function ( f10_arg0, f10_arg1 )
 					local f10_local0 = function ( f11_arg0, f11_arg1 )
 						if not f11_arg1.interrupted then
@@ -115,6 +121,7 @@ CoD.ChyronFlashLine.new = function ( menu, controller )
 			end,
 			Flash4 = function ()
 				self:setupElementClipCounter( 1 )
+
 				local f12_local0 = function ( f13_arg0, f13_arg1 )
 					local f13_local0 = function ( f14_arg0, f14_arg1 )
 						if not f14_arg1.interrupted then

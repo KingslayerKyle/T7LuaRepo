@@ -4,9 +4,11 @@
 CoD.ChooseCharacter_HelpBubble_ButtonBackground = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacter_HelpBubble_ButtonBackground.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacter_HelpBubble_ButtonBackground )
 	self.id = "ChooseCharacter_HelpBubble_ButtonBackground"
@@ -25,12 +27,14 @@ CoD.ChooseCharacter_HelpBubble_ButtonBackground.new = function ( menu, controlle
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ButtonBackground:completeAnimation()
 				self.ButtonBackground:setAlpha( 1 )
 				self.clipFinished( ButtonBackground, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

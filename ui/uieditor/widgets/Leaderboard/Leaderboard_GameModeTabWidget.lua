@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Leaderboard.Leaderboard_GameModeTabInternal" )
 CoD.Leaderboard_GameModeTabWidget = InheritFrom( LUI.UIElement )
 CoD.Leaderboard_GameModeTabWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Leaderboard_GameModeTabWidget )
 	self.id = "Leaderboard_GameModeTabWidget"
@@ -69,12 +71,15 @@ CoD.Leaderboard_GameModeTabWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				RightBumperImage:completeAnimation()
 				self.RightBumperImage:setAlpha( 1 )
 				self.clipFinished( RightBumperImage, {} )
+
 				Internal:completeAnimation()
 				self.Internal:setAlpha( 1 )
 				self.clipFinished( Internal, {} )
+
 				LeftBumperImage:completeAnimation()
 				self.LeftBumperImage:setAlpha( 1 )
 				self.clipFinished( LeftBumperImage, {} )
@@ -83,18 +88,22 @@ CoD.Leaderboard_GameModeTabWidget.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				RightBumperImage:completeAnimation()
 				self.RightBumperImage:setAlpha( 0 )
 				self.clipFinished( RightBumperImage, {} )
+
 				Internal:completeAnimation()
 				self.Internal:setAlpha( 0 )
 				self.clipFinished( Internal, {} )
+
 				LeftBumperImage:completeAnimation()
 				self.LeftBumperImage:setAlpha( 0 )
 				self.clipFinished( LeftBumperImage, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RightBumperImage:close()
 		element.Internal:close()

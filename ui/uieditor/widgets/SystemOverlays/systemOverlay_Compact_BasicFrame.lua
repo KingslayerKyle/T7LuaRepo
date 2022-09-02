@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.SystemOverlays.systemOverlay_Layout_GenericForegro
 CoD.systemOverlay_Compact_BasicFrame = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_Compact_BasicFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_Compact_BasicFrame )
 	self.id = "systemOverlay_Compact_BasicFrame"
@@ -79,27 +81,33 @@ CoD.systemOverlay_Compact_BasicFrame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				SystemOverlaySpinner:completeAnimation()
 				self.SystemOverlaySpinner:setAlpha( 0 )
 				self.clipFinished( SystemOverlaySpinner, {} )
+
 				systemOverlayConnectLooping:completeAnimation()
 				self.systemOverlayConnectLooping:setAlpha( 0 )
 				self.clipFinished( systemOverlayConnectLooping, {} )
+
 				systemOverlayFadeMask:completeAnimation()
 				self.systemOverlayFadeMask:setAlpha( 0 )
 				self.clipFinished( systemOverlayFadeMask, {} )
 			end,
 			LoadingLoop = function ()
 				self:setupElementClipCounter( 3 )
+
 				SystemOverlaySpinner:completeAnimation()
 				self.SystemOverlaySpinner:setLeftRight( true, false, 423.4, 722.4 )
 				self.SystemOverlaySpinner:setTopBottom( true, false, 44.5, 55.5 )
 				self.SystemOverlaySpinner:setAlpha( 0 )
 				self.SystemOverlaySpinner:setRFTMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( SystemOverlaySpinner, {} )
+
 				systemOverlayConnectLooping:completeAnimation()
 				self.systemOverlayConnectLooping:setAlpha( 1 )
 				self.clipFinished( systemOverlayConnectLooping, {} )
+
 				systemOverlayFadeMask:completeAnimation()
 				self.systemOverlayFadeMask:setAlpha( 0 )
 				self.clipFinished( systemOverlayFadeMask, {} )
@@ -114,6 +122,7 @@ CoD.systemOverlay_Compact_BasicFrame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.supportInfo:close()
 		element.SystemOverlaySpinner:close()

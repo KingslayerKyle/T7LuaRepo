@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Craft.Gunsmith.GunsmithVariantAttachments" )
 CoD.GunsmithVariantAttachmentList = InheritFrom( LUI.UIElement )
 CoD.GunsmithVariantAttachmentList.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunsmithVariantAttachmentList )
 	self.id = "GunsmithVariantAttachmentList"
@@ -50,6 +52,7 @@ CoD.GunsmithVariantAttachmentList.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.variantAttachments:close()
 	end )

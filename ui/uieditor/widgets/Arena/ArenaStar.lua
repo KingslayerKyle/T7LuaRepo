@@ -4,9 +4,11 @@
 CoD.ArenaStar = InheritFrom( LUI.UIElement )
 CoD.ArenaStar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.ArenaStar )
 	self.id = "ArenaStar"
@@ -32,9 +34,11 @@ CoD.ArenaStar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				outline:completeAnimation()
 				self.outline:setAlpha( 1 )
 				self.clipFinished( outline, {} )
+
 				active:completeAnimation()
 				self.active:setAlpha( 1 )
 				self.clipFinished( active, {} )
@@ -43,9 +47,11 @@ CoD.ArenaStar.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				outline:completeAnimation()
 				self.outline:setAlpha( 0 )
 				self.clipFinished( outline, {} )
+
 				active:completeAnimation()
 				self.active:setAlpha( 0 )
 				self.clipFinished( active, {} )
@@ -54,9 +60,11 @@ CoD.ArenaStar.new = function ( menu, controller )
 		Inactive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				outline:completeAnimation()
 				self.outline:setAlpha( 1 )
 				self.clipFinished( outline, {} )
+
 				active:completeAnimation()
 				self.active:setRGB( 1, 0.74, 0.01 )
 				self.active:setAlpha( 0 )
@@ -66,6 +74,7 @@ CoD.ArenaStar.new = function ( menu, controller )
 		Earned = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				outline:completeAnimation()
 				self.outline:setAlpha( 1 )
 				self.clipFinished( outline, {} )
@@ -93,6 +102,7 @@ CoD.ArenaStar.new = function ( menu, controller )
 		NewlyEarned = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local activeFrame2 = function ( active, event )
 					local activeFrame3 = function ( active, event )
 						if not event.interrupted then
@@ -123,6 +133,7 @@ CoD.ArenaStar.new = function ( menu, controller )
 		Lost = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local activeFrame2 = function ( active, event )
 					local activeFrame3 = function ( active, event )
 						if not event.interrupted then
@@ -151,6 +162,7 @@ CoD.ArenaStar.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",

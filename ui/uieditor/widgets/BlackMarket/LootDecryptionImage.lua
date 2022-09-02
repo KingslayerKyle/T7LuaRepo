@@ -18,9 +18,11 @@ end
 CoD.LootDecryptionImage = InheritFrom( LUI.UIElement )
 CoD.LootDecryptionImage.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LootDecryptionImage )
 	self.id = "LootDecryptionImage"
@@ -53,6 +55,7 @@ CoD.LootDecryptionImage.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				lootImage:completeAnimation()
 				self.lootImage:setLeftRight( false, false, -103.75, 103.75 )
 				self.lootImage:setTopBottom( false, false, -45, 45 )
@@ -60,6 +63,7 @@ CoD.LootDecryptionImage.new = function ( menu, controller )
 				self.lootImage:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_saturation_normal" ) )
 				self.lootImage:setShaderVector( 0, 1, 0, 0, 0 )
 				self.clipFinished( lootImage, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setLeftRight( false, false, -112.5, 112.5 )
 				self.itemImage:setTopBottom( false, false, -78, 78 )
@@ -70,6 +74,7 @@ CoD.LootDecryptionImage.new = function ( menu, controller )
 		Dimensions4by1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				lootImage:completeAnimation()
 				self.lootImage:setLeftRight( false, false, -104, 104 )
 				self.lootImage:setTopBottom( false, false, -26, 26 )
@@ -77,6 +82,7 @@ CoD.LootDecryptionImage.new = function ( menu, controller )
 				self.lootImage:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_saturation_normal" ) )
 				self.lootImage:setShaderVector( 0, 1, 0, 0, 0 )
 				self.clipFinished( lootImage, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setLeftRight( false, false, -112.5, 112.5 )
 				self.itemImage:setTopBottom( false, false, -78, 78 )
@@ -87,6 +93,7 @@ CoD.LootDecryptionImage.new = function ( menu, controller )
 		Decal = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				lootImage:completeAnimation()
 				self.lootImage:setLeftRight( false, false, -58, 58 )
 				self.lootImage:setTopBottom( false, false, -55, 61 )
@@ -95,6 +102,7 @@ CoD.LootDecryptionImage.new = function ( menu, controller )
 				self.lootImage:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_saturation_normal" ) )
 				self.lootImage:setShaderVector( 0, 0, 0, 0, 0 )
 				self.clipFinished( lootImage, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setLeftRight( false, false, -112.5, 112.5 )
 				self.itemImage:setTopBottom( false, false, -78, 78 )
@@ -105,11 +113,13 @@ CoD.LootDecryptionImage.new = function ( menu, controller )
 		EpicTaunt = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				lootImage:completeAnimation()
 				self.lootImage:setLeftRight( false, false, -78, 78 )
 				self.lootImage:setTopBottom( false, false, -86.3, 86.3 )
 				self.lootImage:setAlpha( 1 )
 				self.clipFinished( lootImage, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
@@ -118,11 +128,13 @@ CoD.LootDecryptionImage.new = function ( menu, controller )
 		LimitedItem = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				lootImage:completeAnimation()
 				self.lootImage:setLeftRight( false, false, -78, 78 )
 				self.lootImage:setTopBottom( false, false, -86.3, 86.3 )
 				self.lootImage:setAlpha( 1 )
 				self.clipFinished( lootImage, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
@@ -131,6 +143,7 @@ CoD.LootDecryptionImage.new = function ( menu, controller )
 		Dimensions1by1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				lootImage:completeAnimation()
 				self.lootImage:setLeftRight( false, false, -58, 58 )
 				self.lootImage:setTopBottom( false, false, -58, 58 )
@@ -138,6 +151,7 @@ CoD.LootDecryptionImage.new = function ( menu, controller )
 				self.lootImage:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_saturation_normal" ) )
 				self.lootImage:setShaderVector( 0, 1, 0, 0, 0 )
 				self.clipFinished( lootImage, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setLeftRight( false, false, -112.5, 112.5 )
 				self.itemImage:setTopBottom( false, false, -78, 78 )
@@ -148,6 +162,7 @@ CoD.LootDecryptionImage.new = function ( menu, controller )
 		Emblem = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				lootImage:completeAnimation()
 				self.lootImage:setLeftRight( false, false, -140, 140 )
 				self.lootImage:setTopBottom( false, false, -35, 35 )
@@ -155,6 +170,7 @@ CoD.LootDecryptionImage.new = function ( menu, controller )
 				self.lootImage:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_saturation_normal" ) )
 				self.lootImage:setShaderVector( 0, 1, 0, 0, 0 )
 				self.clipFinished( lootImage, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setLeftRight( false, false, -77.88, 77.88 )
 				self.itemImage:setTopBottom( false, false, -54, 54 )
@@ -163,6 +179,7 @@ CoD.LootDecryptionImage.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Dimensions4by1",
@@ -217,6 +234,7 @@ CoD.LootDecryptionImage.new = function ( menu, controller )
 			modelName = "rarity"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.itemImage:close()
 	end )

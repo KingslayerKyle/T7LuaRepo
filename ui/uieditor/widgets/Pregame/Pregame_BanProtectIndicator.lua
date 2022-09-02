@@ -4,9 +4,11 @@
 CoD.Pregame_BanProtectIndicator = InheritFrom( LUI.UIElement )
 CoD.Pregame_BanProtectIndicator.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_BanProtectIndicator )
 	self.id = "Pregame_BanProtectIndicator"
@@ -49,15 +51,19 @@ CoD.Pregame_BanProtectIndicator.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				protected:completeAnimation()
 				self.protected:setAlpha( 0 )
 				self.clipFinished( protected, {} )
+
 				banned:completeAnimation()
 				self.banned:setAlpha( 0 )
 				self.clipFinished( banned, {} )
+
 				line:completeAnimation()
 				self.line:setAlpha( 0 )
 				self.clipFinished( line, {} )
+
 				line0:completeAnimation()
 				self.line0:setAlpha( 0 )
 				self.clipFinished( line0, {} )
@@ -66,17 +72,21 @@ CoD.Pregame_BanProtectIndicator.new = function ( menu, controller )
 		Protected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				protected:completeAnimation()
 				self.protected:setAlpha( 0.85 )
 				self.clipFinished( protected, {} )
+
 				banned:completeAnimation()
 				self.banned:setAlpha( 0 )
 				self.clipFinished( banned, {} )
+
 				line:completeAnimation()
 				self.line:setRGB( 0.66, 0.85, 0.16 )
 				self.line:setAlpha( 0.8 )
 				self.line:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
 				self.clipFinished( line, {} )
+
 				line0:completeAnimation()
 				self.line0:setRGB( 0.66, 0.85, 0.16 )
 				self.line0:setAlpha( 0.8 )
@@ -87,20 +97,24 @@ CoD.Pregame_BanProtectIndicator.new = function ( menu, controller )
 		Banned = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				protected:completeAnimation()
 				self.protected:setLeftRight( false, false, -13, 14 )
 				self.protected:setTopBottom( true, false, 38, 70 )
 				self.protected:setAlpha( 0 )
 				self.clipFinished( protected, {} )
+
 				banned:completeAnimation()
 				self.banned:setRGB( 1, 1, 1 )
 				self.banned:setAlpha( 0.85 )
 				self.clipFinished( banned, {} )
+
 				line:completeAnimation()
 				self.line:setRGB( 1, 0.17, 0.23 )
 				self.line:setAlpha( 0.8 )
 				self.line:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
 				self.clipFinished( line, {} )
+
 				line0:completeAnimation()
 				self.line0:setRGB( 1, 0.17, 0.23 )
 				self.line0:setAlpha( 0.8 )
@@ -109,6 +123,7 @@ CoD.Pregame_BanProtectIndicator.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Protected",

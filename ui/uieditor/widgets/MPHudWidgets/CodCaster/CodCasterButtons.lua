@@ -21,6 +21,7 @@ CoD.CodCasterButtons.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterButtons )
 	self.id = "CodCasterButtons"
@@ -480,30 +481,37 @@ CoD.CodCasterButtons.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				SelectPlayer:completeAnimation()
 				self.SelectPlayer:setRGB( 1, 1, 1 )
 				self.SelectPlayer:setAlpha( 1 )
 				self.clipFinished( SelectPlayer, {} )
+
 				HighlightPlayer:completeAnimation()
 				self.HighlightPlayer:setRGB( 1, 1, 1 )
 				self.HighlightPlayer:setAlpha( 1 )
 				self.clipFinished( HighlightPlayer, {} )
+
 				QuickSettingsSideBar:completeAnimation()
 				self.QuickSettingsSideBar:setRGB( 1, 1, 1 )
 				self.QuickSettingsSideBar:setAlpha( 1 )
 				self.clipFinished( QuickSettingsSideBar, {} )
+
 				SettingsSideBar:completeAnimation()
 				self.SettingsSideBar:setRGB( 1, 1, 1 )
 				self.SettingsSideBar:setAlpha( 1 )
 				self.clipFinished( SettingsSideBar, {} )
+
 				Toolbar:completeAnimation()
 				self.Toolbar:setRGB( 1, 1, 1 )
 				self.Toolbar:setAlpha( 1 )
 				self.clipFinished( Toolbar, {} )
+
 				Map:completeAnimation()
 				self.Map:setRGB( 1, 1, 1 )
 				self.Map:setAlpha( 1 )
 				self.clipFinished( Map, {} )
+
 				LoadoutView:completeAnimation()
 				self.LoadoutView:setRGB( 1, 1, 1 )
 				self.LoadoutView:setAlpha( 1 )
@@ -513,21 +521,27 @@ CoD.CodCasterButtons.new = function ( menu, controller )
 		QuickSettingsSideBarOpened = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				SelectPlayer:completeAnimation()
 				self.SelectPlayer:setRGB( ColorSet.CodCaster.r, ColorSet.CodCaster.g, ColorSet.CodCaster.b )
 				self.clipFinished( SelectPlayer, {} )
+
 				HighlightPlayer:completeAnimation()
 				self.HighlightPlayer:setRGB( ColorSet.CodCaster.r, ColorSet.CodCaster.g, ColorSet.CodCaster.b )
 				self.clipFinished( HighlightPlayer, {} )
+
 				SettingsSideBar:completeAnimation()
 				self.SettingsSideBar:setRGB( ColorSet.CodCaster.r, ColorSet.CodCaster.g, ColorSet.CodCaster.b )
 				self.clipFinished( SettingsSideBar, {} )
+
 				Toolbar:completeAnimation()
 				self.Toolbar:setRGB( ColorSet.CodCaster.r, ColorSet.CodCaster.g, ColorSet.CodCaster.b )
 				self.clipFinished( Toolbar, {} )
+
 				Map:completeAnimation()
 				self.Map:setRGB( ColorSet.CodCaster.r, ColorSet.CodCaster.g, ColorSet.CodCaster.b )
 				self.clipFinished( Map, {} )
+
 				LoadoutView:completeAnimation()
 				self.LoadoutView:setRGB( ColorSet.CodCaster.r, ColorSet.CodCaster.g, ColorSet.CodCaster.b )
 				self.clipFinished( LoadoutView, {} )
@@ -536,24 +550,31 @@ CoD.CodCasterButtons.new = function ( menu, controller )
 		SettingsSideBarOpened = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				SelectPlayer:completeAnimation()
 				self.SelectPlayer:setRGB( ColorSet.CodCaster.r, ColorSet.CodCaster.g, ColorSet.CodCaster.b )
 				self.clipFinished( SelectPlayer, {} )
+
 				HighlightPlayer:completeAnimation()
 				self.HighlightPlayer:setRGB( ColorSet.CodCaster.r, ColorSet.CodCaster.g, ColorSet.CodCaster.b )
 				self.clipFinished( HighlightPlayer, {} )
+
 				QuickSettingsSideBar:completeAnimation()
 				self.QuickSettingsSideBar:setRGB( ColorSet.CodCaster.r, ColorSet.CodCaster.g, ColorSet.CodCaster.b )
 				self.clipFinished( QuickSettingsSideBar, {} )
+
 				SettingsSideBar:completeAnimation()
 				self.SettingsSideBar:setRGB( 1, 1, 1 )
 				self.clipFinished( SettingsSideBar, {} )
+
 				Toolbar:completeAnimation()
 				self.Toolbar:setRGB( ColorSet.CodCaster.r, ColorSet.CodCaster.g, ColorSet.CodCaster.b )
 				self.clipFinished( Toolbar, {} )
+
 				Map:completeAnimation()
 				self.Map:setRGB( ColorSet.CodCaster.r, ColorSet.CodCaster.g, ColorSet.CodCaster.b )
 				self.clipFinished( Map, {} )
+
 				LoadoutView:completeAnimation()
 				self.LoadoutView:setRGB( ColorSet.CodCaster.r, ColorSet.CodCaster.g, ColorSet.CodCaster.b )
 				self.clipFinished( LoadoutView, {} )
@@ -562,30 +583,38 @@ CoD.CodCasterButtons.new = function ( menu, controller )
 		ScoreboardOpened = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				SelectPlayer:completeAnimation()
 				self.SelectPlayer:setRGB( ColorSet.WaypointNeutral.r, ColorSet.WaypointNeutral.g, ColorSet.WaypointNeutral.b )
 				self.clipFinished( SelectPlayer, {} )
+
 				HighlightPlayer:completeAnimation()
 				self.HighlightPlayer:setRGB( ColorSet.WaypointNeutral.r, ColorSet.WaypointNeutral.g, ColorSet.WaypointNeutral.b )
 				self.clipFinished( HighlightPlayer, {} )
+
 				QuickSettingsSideBar:completeAnimation()
 				self.QuickSettingsSideBar:setRGB( 0.37, 0.37, 0.36 )
 				self.clipFinished( QuickSettingsSideBar, {} )
+
 				SettingsSideBar:completeAnimation()
 				self.SettingsSideBar:setRGB( ColorSet.CodCaster.r, ColorSet.CodCaster.g, ColorSet.CodCaster.b )
 				self.clipFinished( SettingsSideBar, {} )
+
 				Toolbar:completeAnimation()
 				self.Toolbar:setRGB( ColorSet.WaypointNeutral.r, ColorSet.WaypointNeutral.g, ColorSet.WaypointNeutral.b )
 				self.clipFinished( Toolbar, {} )
+
 				Map:completeAnimation()
 				self.Map:setRGB( ColorSet.CodCaster.r, ColorSet.CodCaster.g, ColorSet.CodCaster.b )
 				self.clipFinished( Map, {} )
+
 				LoadoutView:completeAnimation()
 				self.LoadoutView:setRGB( ColorSet.CodCaster.r, ColorSet.CodCaster.g, ColorSet.CodCaster.b )
 				self.clipFinished( LoadoutView, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "QuickSettingsSideBarOpened",
@@ -630,6 +659,7 @@ CoD.CodCasterButtons.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SelectPlayer:close()
 		element.HighlightPlayer:close()

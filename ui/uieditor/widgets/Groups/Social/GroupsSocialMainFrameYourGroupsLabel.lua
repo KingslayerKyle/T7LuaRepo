@@ -4,9 +4,11 @@
 CoD.GroupsSocialMainFrameYourGroupsLabel = InheritFrom( LUI.UIElement )
 CoD.GroupsSocialMainFrameYourGroupsLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsSocialMainFrameYourGroupsLabel )
 	self.id = "GroupsSocialMainFrameYourGroupsLabel"
@@ -41,9 +43,11 @@ CoD.GroupsSocialMainFrameYourGroupsLabel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				SelfGroupsLabel:completeAnimation()
 				self.SelfGroupsLabel:setAlpha( 0 )
 				self.clipFinished( SelfGroupsLabel, {} )
+
 				FriendsGroupsLabel:completeAnimation()
 				self.FriendsGroupsLabel:setAlpha( 0 )
 				self.clipFinished( FriendsGroupsLabel, {} )
@@ -52,12 +56,14 @@ CoD.GroupsSocialMainFrameYourGroupsLabel.new = function ( menu, controller )
 		YourGroups = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				SelfGroupsLabel:completeAnimation()
 				self.SelfGroupsLabel:setLeftRight( true, false, 0, 374 )
 				self.SelfGroupsLabel:setTopBottom( true, false, 0, 19 )
 				self.SelfGroupsLabel:setRGB( ColorSet.FocusColor.r, ColorSet.FocusColor.g, ColorSet.FocusColor.b )
 				self.SelfGroupsLabel:setAlpha( 1 )
 				self.clipFinished( SelfGroupsLabel, {} )
+
 				FriendsGroupsLabel:completeAnimation()
 				self.FriendsGroupsLabel:setAlpha( 0 )
 				self.clipFinished( FriendsGroupsLabel, {} )
@@ -66,15 +72,18 @@ CoD.GroupsSocialMainFrameYourGroupsLabel.new = function ( menu, controller )
 		FriendsGroups = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				SelfGroupsLabel:completeAnimation()
 				self.SelfGroupsLabel:setAlpha( 0 )
 				self.clipFinished( SelfGroupsLabel, {} )
+
 				FriendsGroupsLabel:completeAnimation()
 				self.FriendsGroupsLabel:setAlpha( 1 )
 				self.clipFinished( FriendsGroupsLabel, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "YourGroups",

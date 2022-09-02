@@ -4,9 +4,11 @@
 CoD.Social_InfoPane_Friendship = InheritFrom( LUI.UIElement )
 CoD.Social_InfoPane_Friendship.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_InfoPane_Friendship )
 	self.id = "Social_InfoPane_Friendship"
@@ -28,6 +30,7 @@ CoD.Social_InfoPane_Friendship.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				yourFriend:completeAnimation()
 				self.yourFriend:setAlpha( 0 )
 				self.clipFinished( yourFriend, {} )
@@ -36,12 +39,14 @@ CoD.Social_InfoPane_Friendship.new = function ( menu, controller )
 		YourFriend = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				yourFriend:completeAnimation()
 				self.yourFriend:setAlpha( 1 )
 				self.clipFinished( yourFriend, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "YourFriend",

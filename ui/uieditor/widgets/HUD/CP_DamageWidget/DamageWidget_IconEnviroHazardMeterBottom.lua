@@ -4,9 +4,11 @@
 CoD.DamageWidget_IconEnviroHazardMeterBottom = InheritFrom( LUI.UIElement )
 CoD.DamageWidget_IconEnviroHazardMeterBottom.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DamageWidget_IconEnviroHazardMeterBottom )
 	self.id = "DamageWidget_IconEnviroHazardMeterBottom"
@@ -54,9 +56,11 @@ CoD.DamageWidget_IconEnviroHazardMeterBottom.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ImgMeterEnvBack:completeAnimation()
 				self.ImgMeterEnvBack:setRGB( 0.79, 0.88, 0 )
 				self.clipFinished( ImgMeterEnvBack, {} )
+
 				ImgMeterEnvFill:completeAnimation()
 				self.ImgMeterEnvFill:setRGB( 0.79, 0.88, 0 )
 				self.ImgMeterEnvFill:setAlpha( 1 )
@@ -66,6 +70,7 @@ CoD.DamageWidget_IconEnviroHazardMeterBottom.new = function ( menu, controller )
 		Critical = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ImgMeterEnvBack:completeAnimation()
 				self.ImgMeterEnvBack:setRGB( 1, 0, 0 )
 				self.clipFinished( ImgMeterEnvBack, {} )
@@ -150,6 +155,7 @@ CoD.DamageWidget_IconEnviroHazardMeterBottom.new = function ( menu, controller )
 				self.ImgMeterEnvFill:setRGB( 0.88, 0.1, 0 )
 				self.ImgMeterEnvFill:setAlpha( 1 )
 				ImgMeterEnvFillFrame2( ImgMeterEnvFill, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

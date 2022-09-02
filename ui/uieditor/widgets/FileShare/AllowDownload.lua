@@ -4,9 +4,11 @@
 CoD.AllowDownload = InheritFrom( LUI.UIElement )
 CoD.AllowDownload.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AllowDownload )
 	self.id = "AllowDownload"
@@ -32,6 +34,7 @@ CoD.AllowDownload.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image0:completeAnimation()
 				self.Image0:setRGB( 0.5, 0.5, 0.5 )
 				self.clipFinished( Image0, {} )
@@ -40,12 +43,14 @@ CoD.AllowDownload.new = function ( menu, controller )
 		AllowDownload = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image0:completeAnimation()
 				self.Image0:setRGB( 0.02, 1, 0 )
 				self.clipFinished( Image0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "AllowDownload",

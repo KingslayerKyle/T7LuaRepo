@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.CAC.cac_ButtonBoxLrgInactiveStroke" )
 CoD.GameTimeWidget = InheritFrom( LUI.UIElement )
 CoD.GameTimeWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GameTimeWidget )
 	self.id = "GameTimeWidget"
@@ -85,21 +87,27 @@ CoD.GameTimeWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setAlpha( 0 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0 )
 				self.clipFinished( Backing, {} )
+
 				BackPanel:completeAnimation()
 				self.BackPanel:setAlpha( 0 )
 				self.clipFinished( BackPanel, {} )
+
 				TimeElasped:completeAnimation()
 				self.TimeElasped:setAlpha( 0 )
 				self.clipFinished( TimeElasped, {} )
+
 				GameTimer:completeAnimation()
 				self.GameTimer:setAlpha( 0 )
 				self.clipFinished( GameTimer, {} )
+
 				HighlightFrame:completeAnimation()
 				self.HighlightFrame:setAlpha( 0 )
 				self.clipFinished( HighlightFrame, {} )
@@ -108,27 +116,34 @@ CoD.GameTimeWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setAlpha( 0.8 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0.64 )
 				self.clipFinished( Backing, {} )
+
 				BackPanel:completeAnimation()
 				self.BackPanel:setAlpha( 0.4 )
 				self.clipFinished( BackPanel, {} )
+
 				TimeElasped:completeAnimation()
 				self.TimeElasped:setAlpha( 1 )
 				self.clipFinished( TimeElasped, {} )
+
 				GameTimer:completeAnimation()
 				self.GameTimer:setAlpha( 1 )
 				self.clipFinished( GameTimer, {} )
+
 				HighlightFrame:completeAnimation()
 				self.HighlightFrame:setAlpha( 1 )
 				self.clipFinished( HighlightFrame, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -145,6 +160,7 @@ CoD.GameTimeWidget.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanelShaderContainer:close()
 		element.BackPanel:close()

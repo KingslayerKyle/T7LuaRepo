@@ -4,9 +4,11 @@
 CoD.TrainingSim_CombatImmersionBox = InheritFrom( LUI.UIElement )
 CoD.TrainingSim_CombatImmersionBox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TrainingSim_CombatImmersionBox )
 	self.id = "TrainingSim_CombatImmersionBox"
@@ -37,12 +39,15 @@ CoD.TrainingSim_CombatImmersionBox.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			round_complete = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			immersion_complete = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

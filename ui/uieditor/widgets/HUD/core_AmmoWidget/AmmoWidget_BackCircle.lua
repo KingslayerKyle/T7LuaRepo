@@ -4,9 +4,11 @@
 CoD.AmmoWidget_BackCircle = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_BackCircle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_BackCircle )
 	self.id = "AmmoWidget_BackCircle"

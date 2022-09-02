@@ -4,9 +4,11 @@
 CoD.vhud_turret_damageicon = InheritFrom( LUI.UIElement )
 CoD.vhud_turret_damageicon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.vhud_turret_damageicon )
 	self.id = "vhud_turret_damageicon"

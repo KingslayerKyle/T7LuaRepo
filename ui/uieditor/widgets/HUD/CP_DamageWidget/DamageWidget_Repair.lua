@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.CP_DamageWidget.DamageWidget_RepairMeter" )
 CoD.DamageWidget_Repair = InheritFrom( LUI.UIElement )
 CoD.DamageWidget_Repair.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DamageWidget_Repair )
 	self.id = "DamageWidget_Repair"
@@ -73,11 +75,13 @@ CoD.DamageWidget_Repair.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				RepairMeter:completeAnimation()
 				self.RepairMeter:setLeftRight( true, false, 14, 95 )
 				self.RepairMeter:setTopBottom( true, false, 14, 95 )
@@ -86,6 +90,7 @@ CoD.DamageWidget_Repair.new = function ( menu, controller )
 			end,
 			Visible = function ()
 				self:setupElementClipCounter( 1 )
+
 				local RepairMeterFrame2 = function ( RepairMeter, event )
 					if not event.interrupted then
 						RepairMeter:beginAnimation( "keyframe", 300, false, true, CoD.TweenType.Linear )
@@ -110,6 +115,7 @@ CoD.DamageWidget_Repair.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				RepairMeter:completeAnimation()
 				self.RepairMeter:setLeftRight( true, false, 0, 109 )
 				self.RepairMeter:setTopBottom( true, false, 0, 109 )
@@ -118,6 +124,7 @@ CoD.DamageWidget_Repair.new = function ( menu, controller )
 			end,
 			Invisible = function ()
 				self:setupElementClipCounter( 1 )
+
 				local RepairMeterFrame2 = function ( RepairMeter, event )
 					if not event.interrupted then
 						RepairMeter:beginAnimation( "keyframe", 300, true, false, CoD.TweenType.Linear )
@@ -140,6 +147,7 @@ CoD.DamageWidget_Repair.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RepairMeter:close()
 	end )

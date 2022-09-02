@@ -19,9 +19,11 @@ end
 CoD.CodCasterHeaderNonTeamBased = InheritFrom( LUI.UIElement )
 CoD.CodCasterHeaderNonTeamBased.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterHeaderNonTeamBased )
 	self.id = "CodCasterHeaderNonTeamBased"

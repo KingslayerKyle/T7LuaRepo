@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_frame_noBG" )
 CoD.CombatRecordMedal = InheritFrom( LUI.UIElement )
 CoD.CombatRecordMedal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CombatRecordMedal )
 	self.id = "CombatRecordMedal"

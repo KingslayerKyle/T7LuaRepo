@@ -4,9 +4,11 @@
 CoD.DamageWidget_RepairMeter = InheritFrom( LUI.UIElement )
 CoD.DamageWidget_RepairMeter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DamageWidget_RepairMeter )
 	self.id = "DamageWidget_RepairMeter"
@@ -122,21 +124,27 @@ CoD.DamageWidget_RepairMeter.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Regen5:completeAnimation()
 				self.Regen5:setAlpha( 0 )
 				self.clipFinished( Regen5, {} )
+
 				Regen4:completeAnimation()
 				self.Regen4:setAlpha( 0 )
 				self.clipFinished( Regen4, {} )
+
 				Regen3:completeAnimation()
 				self.Regen3:setAlpha( 0 )
 				self.clipFinished( Regen3, {} )
+
 				Regen2:completeAnimation()
 				self.Regen2:setAlpha( 0 )
 				self.clipFinished( Regen2, {} )
+
 				Regen1:completeAnimation()
 				self.Regen1:setAlpha( 0 )
 				self.clipFinished( Regen1, {} )
+
 				Line:completeAnimation()
 				self.Line:setAlpha( 0 )
 				self.clipFinished( Line, {} )
@@ -145,27 +153,34 @@ CoD.DamageWidget_RepairMeter.new = function ( menu, controller )
 		State0 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Regen5:completeAnimation()
 				self.Regen5:setAlpha( 0 )
 				self.clipFinished( Regen5, {} )
+
 				Regen4:completeAnimation()
 				self.Regen4:setAlpha( 0 )
 				self.clipFinished( Regen4, {} )
+
 				Regen3:completeAnimation()
 				self.Regen3:setAlpha( 0 )
 				self.clipFinished( Regen3, {} )
+
 				Regen2:completeAnimation()
 				self.Regen2:setAlpha( 0 )
 				self.clipFinished( Regen2, {} )
+
 				Regen1:completeAnimation()
 				self.Regen1:setAlpha( 0 )
 				self.clipFinished( Regen1, {} )
+
 				Line:completeAnimation()
 				self.Line:setAlpha( 0 )
 				self.clipFinished( Line, {} )
 			end,
 			State1 = function ()
 				self:setupElementClipCounter( 2 )
+
 				local Regen1Frame2 = function ( Regen1, event )
 					local Regen1Frame3 = function ( Regen1, event )
 						local Regen1Frame4 = function ( Regen1, event )
@@ -341,27 +356,34 @@ CoD.DamageWidget_RepairMeter.new = function ( menu, controller )
 		State1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Regen5:completeAnimation()
 				self.Regen5:setAlpha( 0 )
 				self.clipFinished( Regen5, {} )
+
 				Regen4:completeAnimation()
 				self.Regen4:setAlpha( 0 )
 				self.clipFinished( Regen4, {} )
+
 				Regen3:completeAnimation()
 				self.Regen3:setAlpha( 0 )
 				self.clipFinished( Regen3, {} )
+
 				Regen2:completeAnimation()
 				self.Regen2:setAlpha( 0 )
 				self.clipFinished( Regen2, {} )
+
 				Regen1:completeAnimation()
 				self.Regen1:setAlpha( 1 )
 				self.clipFinished( Regen1, {} )
+
 				sfx:completeAnimation()
 				self.sfx:playSound( "gdt_cybercore_regen_tick_1" )
 				self.clipFinished( sfx, {} )
 			end,
 			State0 = function ()
 				self:setupElementClipCounter( 2 )
+
 				local Regen1Frame2 = function ( Regen1, event )
 					local Regen1Frame3 = function ( Regen1, event )
 						local Regen1Frame4 = function ( Regen1, event )
@@ -484,12 +506,14 @@ CoD.DamageWidget_RepairMeter.new = function ( menu, controller )
 				Regen1:completeAnimation()
 				self.Regen1:setAlpha( 1 )
 				Regen1Frame2( Regen1, {} )
+
 				Line:completeAnimation()
 				self.Line:setAlpha( 0 )
 				self.clipFinished( Line, {} )
 			end,
 			State2 = function ()
 				self:setupElementClipCounter( 2 )
+
 				local Regen2Frame2 = function ( Regen2, event )
 					local Regen2Frame3 = function ( Regen2, event )
 						local Regen2Frame4 = function ( Regen2, event )
@@ -675,27 +699,34 @@ CoD.DamageWidget_RepairMeter.new = function ( menu, controller )
 		State2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Regen5:completeAnimation()
 				self.Regen5:setAlpha( 0 )
 				self.clipFinished( Regen5, {} )
+
 				Regen4:completeAnimation()
 				self.Regen4:setAlpha( 0 )
 				self.clipFinished( Regen4, {} )
+
 				Regen3:completeAnimation()
 				self.Regen3:setAlpha( 0 )
 				self.clipFinished( Regen3, {} )
+
 				Regen2:completeAnimation()
 				self.Regen2:setAlpha( 1 )
 				self.clipFinished( Regen2, {} )
+
 				Regen1:completeAnimation()
 				self.Regen1:setAlpha( 1 )
 				self.clipFinished( Regen1, {} )
+
 				sfx:completeAnimation()
 				self.sfx:playSound( "gdt_cybercore_regen_tick_2" )
 				self.clipFinished( sfx, {} )
 			end,
 			State0 = function ()
 				self:setupElementClipCounter( 3 )
+
 				local Regen2Frame2 = function ( Regen2, event )
 					local Regen2Frame3 = function ( Regen2, event )
 						local Regen2Frame4 = function ( Regen2, event )
@@ -940,12 +971,14 @@ CoD.DamageWidget_RepairMeter.new = function ( menu, controller )
 				Regen1:beginAnimation( "keyframe", 9, false, false, CoD.TweenType.Linear )
 				Regen1:setAlpha( 1 )
 				Regen1:registerEventHandler( "transition_complete_keyframe", f49_local1 )
+
 				Line:completeAnimation()
 				self.Line:setAlpha( 0 )
 				self.clipFinished( Line, {} )
 			end,
 			State3 = function ()
 				self:setupElementClipCounter( 2 )
+
 				local Regen3Frame2 = function ( Regen3, event )
 					local Regen3Frame3 = function ( Regen3, event )
 						local Regen3Frame4 = function ( Regen3, event )
@@ -1131,27 +1164,34 @@ CoD.DamageWidget_RepairMeter.new = function ( menu, controller )
 		State3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Regen5:completeAnimation()
 				self.Regen5:setAlpha( 0 )
 				self.clipFinished( Regen5, {} )
+
 				Regen4:completeAnimation()
 				self.Regen4:setAlpha( 0 )
 				self.clipFinished( Regen4, {} )
+
 				Regen3:completeAnimation()
 				self.Regen3:setAlpha( 1 )
 				self.clipFinished( Regen3, {} )
+
 				Regen2:completeAnimation()
 				self.Regen2:setAlpha( 1 )
 				self.clipFinished( Regen2, {} )
+
 				Regen1:completeAnimation()
 				self.Regen1:setAlpha( 1 )
 				self.clipFinished( Regen1, {} )
+
 				sfx:completeAnimation()
 				self.sfx:playSound( "gdt_cybercore_regen_tick_3" )
 				self.clipFinished( sfx, {} )
 			end,
 			State0 = function ()
 				self:setupElementClipCounter( 4 )
+
 				local f89_local0 = function ( f90_arg0, f90_arg1 )
 					local f90_local0 = function ( f91_arg0, f91_arg1 )
 						local f91_local0 = function ( f92_arg0, f92_arg1 )
@@ -1518,12 +1558,14 @@ CoD.DamageWidget_RepairMeter.new = function ( menu, controller )
 				Regen1:beginAnimation( "keyframe", 9, false, false, CoD.TweenType.Linear )
 				Regen1:setAlpha( 1 )
 				Regen1:registerEventHandler( "transition_complete_keyframe", f89_local2 )
+
 				Line:completeAnimation()
 				self.Line:setAlpha( 0 )
 				self.clipFinished( Line, {} )
 			end,
 			State4 = function ()
 				self:setupElementClipCounter( 2 )
+
 				local Regen4Frame2 = function ( Regen4, event )
 					local Regen4Frame3 = function ( Regen4, event )
 						local Regen4Frame4 = function ( Regen4, event )
@@ -1709,27 +1751,34 @@ CoD.DamageWidget_RepairMeter.new = function ( menu, controller )
 		State4 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Regen5:completeAnimation()
 				self.Regen5:setAlpha( 0 )
 				self.clipFinished( Regen5, {} )
+
 				Regen4:completeAnimation()
 				self.Regen4:setAlpha( 1 )
 				self.clipFinished( Regen4, {} )
+
 				Regen3:completeAnimation()
 				self.Regen3:setAlpha( 1 )
 				self.clipFinished( Regen3, {} )
+
 				Regen2:completeAnimation()
 				self.Regen2:setAlpha( 1 )
 				self.clipFinished( Regen2, {} )
+
 				Regen1:completeAnimation()
 				self.Regen1:setAlpha( 1 )
 				self.clipFinished( Regen1, {} )
+
 				sfx:completeAnimation()
 				self.sfx:playSound( "gdt_cybercore_regen_tick_4" )
 				self.clipFinished( sfx, {} )
 			end,
 			State0 = function ()
 				self:setupElementClipCounter( 5 )
+
 				local Regen4Frame2 = function ( Regen4, event )
 					local Regen4Frame3 = function ( Regen4, event )
 						local Regen4Frame4 = function ( Regen4, event )
@@ -2207,12 +2256,14 @@ CoD.DamageWidget_RepairMeter.new = function ( menu, controller )
 				Regen1:beginAnimation( "keyframe", 19, false, false, CoD.TweenType.Linear )
 				Regen1:setAlpha( 1 )
 				Regen1:registerEventHandler( "transition_complete_keyframe", f140_local3 )
+
 				Line:completeAnimation()
 				self.Line:setAlpha( 0 )
 				self.clipFinished( Line, {} )
 			end,
 			State5 = function ()
 				self:setupElementClipCounter( 2 )
+
 				local Regen5Frame2 = function ( Regen5, event )
 					local Regen5Frame3 = function ( Regen5, event )
 						local Regen5Frame4 = function ( Regen5, event )
@@ -2398,6 +2449,7 @@ CoD.DamageWidget_RepairMeter.new = function ( menu, controller )
 		State5 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local Regen5Frame2 = function ( Regen5, event )
 					local Regen5Frame3 = function ( Regen5, event )
 						if not event.interrupted then
@@ -2526,6 +2578,7 @@ CoD.DamageWidget_RepairMeter.new = function ( menu, controller )
 			end,
 			State0 = function ()
 				self:setupElementClipCounter( 6 )
+
 				local Regen5Frame2 = function ( Regen5, event )
 					local Regen5Frame3 = function ( Regen5, event )
 						local Regen5Frame4 = function ( Regen5, event )
@@ -3125,6 +3178,7 @@ CoD.DamageWidget_RepairMeter.new = function ( menu, controller )
 				Regen1:beginAnimation( "keyframe", 90, false, false, CoD.TweenType.Linear )
 				Regen1:setAlpha( 1 )
 				Regen1:registerEventHandler( "transition_complete_keyframe", f211_local4 )
+
 				Line:completeAnimation()
 				self.Line:setAlpha( 0 )
 				self.clipFinished( Line, {} )

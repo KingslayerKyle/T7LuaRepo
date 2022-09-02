@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.LobbySlide.LobbySlideSocialInfoJoinable" )
 CoD.LobbySlideSocialInfoWidget = InheritFrom( LUI.UIElement )
 CoD.LobbySlideSocialInfoWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbySlideSocialInfoWidget )
 	self.id = "LobbySlideSocialInfoWidget"
@@ -169,39 +171,51 @@ CoD.LobbySlideSocialInfoWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				FEListHeaderGlow1:completeAnimation()
 				self.FEListHeaderGlow1:setAlpha( 0 )
 				self.clipFinished( FEListHeaderGlow1, {} )
+
 				TickTR:completeAnimation()
 				self.TickTR:setAlpha( 0 )
 				self.clipFinished( TickTR, {} )
+
 				TickBR:completeAnimation()
 				self.TickBR:setAlpha( 0 )
 				self.clipFinished( TickBR, {} )
+
 				LineT:completeAnimation()
 				self.LineT:setAlpha( 0 )
 				self.clipFinished( LineT, {} )
+
 				LineB:completeAnimation()
 				self.LineB:setAlpha( 0 )
 				self.clipFinished( LineB, {} )
+
 				pixelU0:completeAnimation()
 				self.pixelU0:setAlpha( 0 )
 				self.clipFinished( pixelU0, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 0 )
 				self.clipFinished( Image1, {} )
+
 				joinable:completeAnimation()
 				self.joinable:setAlpha( 0 )
 				self.clipFinished( joinable, {} )
+
 				FEListHeaderGlow0:completeAnimation()
 				self.FEListHeaderGlow0:setAlpha( 0 )
 				self.clipFinished( FEListHeaderGlow0, {} )
+
 				presence:completeAnimation()
 				self.presence:setAlpha( 0 )
 				self.clipFinished( presence, {} )
+
 				GroupMember:completeAnimation()
 				self.GroupMember:setAlpha( 0 )
 				self.clipFinished( GroupMember, {} )
+
 				Friend:completeAnimation()
 				self.Friend:setAlpha( 0 )
 				self.clipFinished( Friend, {} )
@@ -210,39 +224,51 @@ CoD.LobbySlideSocialInfoWidget.new = function ( menu, controller )
 		JapaneseFriend = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				FEListHeaderGlow1:completeAnimation()
 				self.FEListHeaderGlow1:setAlpha( 0.06 )
 				self.clipFinished( FEListHeaderGlow1, {} )
+
 				TickTR:completeAnimation()
 				self.TickTR:setAlpha( 1 )
 				self.clipFinished( TickTR, {} )
+
 				TickBR:completeAnimation()
 				self.TickBR:setAlpha( 1 )
 				self.clipFinished( TickBR, {} )
+
 				LineT:completeAnimation()
 				self.LineT:setAlpha( 1 )
 				self.clipFinished( LineT, {} )
+
 				LineB:completeAnimation()
 				self.LineB:setAlpha( 1 )
 				self.clipFinished( LineB, {} )
+
 				pixelU0:completeAnimation()
 				self.pixelU0:setAlpha( 1 )
 				self.clipFinished( pixelU0, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 1 )
 				self.clipFinished( Image1, {} )
+
 				joinable:completeAnimation()
 				self.joinable:setAlpha( 1 )
 				self.clipFinished( joinable, {} )
+
 				FEListHeaderGlow0:completeAnimation()
 				self.FEListHeaderGlow0:setAlpha( 0.6 )
 				self.clipFinished( FEListHeaderGlow0, {} )
+
 				presence:completeAnimation()
 				self.presence:setAlpha( 1 )
 				self.clipFinished( presence, {} )
+
 				GroupMember:completeAnimation()
 				self.GroupMember:setAlpha( 0 )
 				self.clipFinished( GroupMember, {} )
+
 				Friend:completeAnimation()
 				self.Friend:setAlpha( 0 )
 				self.clipFinished( Friend, {} )
@@ -251,39 +277,51 @@ CoD.LobbySlideSocialInfoWidget.new = function ( menu, controller )
 		JapaneseGroupMember = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				FEListHeaderGlow1:completeAnimation()
 				self.FEListHeaderGlow1:setAlpha( 0.06 )
 				self.clipFinished( FEListHeaderGlow1, {} )
+
 				TickTR:completeAnimation()
 				self.TickTR:setAlpha( 1 )
 				self.clipFinished( TickTR, {} )
+
 				TickBR:completeAnimation()
 				self.TickBR:setAlpha( 1 )
 				self.clipFinished( TickBR, {} )
+
 				LineT:completeAnimation()
 				self.LineT:setAlpha( 1 )
 				self.clipFinished( LineT, {} )
+
 				LineB:completeAnimation()
 				self.LineB:setAlpha( 1 )
 				self.clipFinished( LineB, {} )
+
 				pixelU0:completeAnimation()
 				self.pixelU0:setAlpha( 1 )
 				self.clipFinished( pixelU0, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 1 )
 				self.clipFinished( Image1, {} )
+
 				joinable:completeAnimation()
 				self.joinable:setAlpha( 1 )
 				self.clipFinished( joinable, {} )
+
 				FEListHeaderGlow0:completeAnimation()
 				self.FEListHeaderGlow0:setAlpha( 0.6 )
 				self.clipFinished( FEListHeaderGlow0, {} )
+
 				presence:completeAnimation()
 				self.presence:setAlpha( 1 )
 				self.clipFinished( presence, {} )
+
 				GroupMember:completeAnimation()
 				self.GroupMember:setAlpha( 0 )
 				self.clipFinished( GroupMember, {} )
+
 				Friend:completeAnimation()
 				self.Friend:setAlpha( 0 )
 				self.clipFinished( Friend, {} )
@@ -292,39 +330,51 @@ CoD.LobbySlideSocialInfoWidget.new = function ( menu, controller )
 		Friend = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				FEListHeaderGlow1:completeAnimation()
 				self.FEListHeaderGlow1:setAlpha( 0.06 )
 				self.clipFinished( FEListHeaderGlow1, {} )
+
 				TickTR:completeAnimation()
 				self.TickTR:setAlpha( 1 )
 				self.clipFinished( TickTR, {} )
+
 				TickBR:completeAnimation()
 				self.TickBR:setAlpha( 1 )
 				self.clipFinished( TickBR, {} )
+
 				LineT:completeAnimation()
 				self.LineT:setAlpha( 1 )
 				self.clipFinished( LineT, {} )
+
 				LineB:completeAnimation()
 				self.LineB:setAlpha( 1 )
 				self.clipFinished( LineB, {} )
+
 				pixelU0:completeAnimation()
 				self.pixelU0:setAlpha( 1 )
 				self.clipFinished( pixelU0, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 1 )
 				self.clipFinished( Image1, {} )
+
 				joinable:completeAnimation()
 				self.joinable:setAlpha( 1 )
 				self.clipFinished( joinable, {} )
+
 				FEListHeaderGlow0:completeAnimation()
 				self.FEListHeaderGlow0:setAlpha( 0.6 )
 				self.clipFinished( FEListHeaderGlow0, {} )
+
 				presence:completeAnimation()
 				self.presence:setAlpha( 1 )
 				self.clipFinished( presence, {} )
+
 				GroupMember:completeAnimation()
 				self.GroupMember:setAlpha( 0 )
 				self.clipFinished( GroupMember, {} )
+
 				Friend:completeAnimation()
 				self.Friend:setAlpha( 1 )
 				self.clipFinished( Friend, {} )
@@ -333,45 +383,58 @@ CoD.LobbySlideSocialInfoWidget.new = function ( menu, controller )
 		GroupMember = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				FEListHeaderGlow1:completeAnimation()
 				self.FEListHeaderGlow1:setAlpha( 0.06 )
 				self.clipFinished( FEListHeaderGlow1, {} )
+
 				TickTR:completeAnimation()
 				self.TickTR:setAlpha( 1 )
 				self.clipFinished( TickTR, {} )
+
 				TickBR:completeAnimation()
 				self.TickBR:setAlpha( 1 )
 				self.clipFinished( TickBR, {} )
+
 				LineT:completeAnimation()
 				self.LineT:setAlpha( 1 )
 				self.clipFinished( LineT, {} )
+
 				LineB:completeAnimation()
 				self.LineB:setAlpha( 1 )
 				self.clipFinished( LineB, {} )
+
 				pixelU0:completeAnimation()
 				self.pixelU0:setAlpha( 1 )
 				self.clipFinished( pixelU0, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 1 )
 				self.clipFinished( Image1, {} )
+
 				joinable:completeAnimation()
 				self.joinable:setAlpha( 1 )
 				self.clipFinished( joinable, {} )
+
 				FEListHeaderGlow0:completeAnimation()
 				self.FEListHeaderGlow0:setAlpha( 0.6 )
 				self.clipFinished( FEListHeaderGlow0, {} )
+
 				presence:completeAnimation()
 				self.presence:setAlpha( 1 )
 				self.clipFinished( presence, {} )
+
 				GroupMember:completeAnimation()
 				self.GroupMember:setAlpha( 1 )
 				self.clipFinished( GroupMember, {} )
+
 				Friend:completeAnimation()
 				self.Friend:setAlpha( 0 )
 				self.clipFinished( Friend, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "JapaneseFriend",
@@ -457,6 +520,7 @@ CoD.LobbySlideSocialInfoWidget.new = function ( menu, controller )
 			modelName = "friend"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEListHeaderGlow1:close()
 		element.joinable:close()

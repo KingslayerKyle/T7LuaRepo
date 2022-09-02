@@ -4,9 +4,11 @@
 CoD.RitualItemTitle = InheritFrom( LUI.UIElement )
 CoD.RitualItemTitle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RitualItemTitle )
 	self.id = "RitualItemTitle"
@@ -36,9 +38,11 @@ CoD.RitualItemTitle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				LabelBaseLargeRituals:completeAnimation()
 				self.LabelBaseLargeRituals:setAlpha( 0 )
 				self.clipFinished( LabelBaseLargeRituals, {} )
+
 				SacrificeRituals:completeAnimation()
 				self.SacrificeRituals:setAlpha( 0 )
 				self.clipFinished( SacrificeRituals, {} )
@@ -47,15 +51,18 @@ CoD.RitualItemTitle.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				LabelBaseLargeRituals:completeAnimation()
 				self.LabelBaseLargeRituals:setAlpha( 1 )
 				self.clipFinished( LabelBaseLargeRituals, {} )
+
 				SacrificeRituals:completeAnimation()
 				self.SacrificeRituals:setAlpha( 1 )
 				self.clipFinished( SacrificeRituals, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

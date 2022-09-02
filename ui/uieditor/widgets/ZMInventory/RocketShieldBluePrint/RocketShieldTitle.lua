@@ -4,9 +4,11 @@
 CoD.RocketShieldTitle = InheritFrom( LUI.UIElement )
 CoD.RocketShieldTitle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RocketShieldTitle )
 	self.id = "RocketShieldTitle"
@@ -36,9 +38,11 @@ CoD.RocketShieldTitle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				LabelBaseLargeShield:completeAnimation()
 				self.LabelBaseLargeShield:setAlpha( 0 )
 				self.clipFinished( LabelBaseLargeShield, {} )
+
 				RocketShield:completeAnimation()
 				self.RocketShield:setAlpha( 0 )
 				self.clipFinished( RocketShield, {} )
@@ -47,15 +51,18 @@ CoD.RocketShieldTitle.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				LabelBaseLargeShield:completeAnimation()
 				self.LabelBaseLargeShield:setAlpha( 1 )
 				self.clipFinished( LabelBaseLargeShield, {} )
+
 				RocketShield:completeAnimation()
 				self.RocketShield:setAlpha( 1 )
 				self.clipFinished( RocketShield, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

@@ -4,9 +4,11 @@
 CoD.ChooseShowcaseWeapon_LockedVariantText = InheritFrom( LUI.UIElement )
 CoD.ChooseShowcaseWeapon_LockedVariantText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseShowcaseWeapon_LockedVariantText )
 	self.id = "ChooseShowcaseWeapon_LockedVariantText"
@@ -28,23 +30,27 @@ CoD.ChooseShowcaseWeapon_LockedVariantText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				lockedVariantText:completeAnimation()
 				self.lockedVariantText:setAlpha( 0 )
 				self.clipFinished( lockedVariantText, {} )
 			end,
 			ShowVariants = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		ShowText = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				lockedVariantText:completeAnimation()
 				self.lockedVariantText:setAlpha( 1 )
 				self.clipFinished( lockedVariantText, {} )
 			end,
 			ShowVariants = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

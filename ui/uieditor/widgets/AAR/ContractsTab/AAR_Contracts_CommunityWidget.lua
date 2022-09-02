@@ -30,9 +30,11 @@ end
 CoD.AAR_Contracts_CommunityWidget = InheritFrom( LUI.UIElement )
 CoD.AAR_Contracts_CommunityWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AAR_Contracts_CommunityWidget )
 	self.id = "AAR_Contracts_CommunityWidget"
@@ -162,18 +164,23 @@ CoD.AAR_Contracts_CommunityWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setAlpha( 0.4 )
 				self.clipFinished( FEButtonPanel0, {} )
+
 				SpecialContractName:completeAnimation()
 				self.SpecialContractName:setAlpha( 1 )
 				self.clipFinished( SpecialContractName, {} )
+
 				SpecialContractDesc:completeAnimation()
 				self.SpecialContractDesc:setAlpha( 1 )
 				self.clipFinished( SpecialContractDesc, {} )
+
 				CategoryListLine000:completeAnimation()
 				self.CategoryListLine000:setAlpha( 0.25 )
 				self.clipFinished( CategoryListLine000, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 0 )
 				self.clipFinished( CompletedIcon, {} )
@@ -182,18 +189,23 @@ CoD.AAR_Contracts_CommunityWidget.new = function ( menu, controller )
 		Complete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setAlpha( 0.4 )
 				self.clipFinished( FEButtonPanel0, {} )
+
 				SpecialContractName:completeAnimation()
 				self.SpecialContractName:setAlpha( 1 )
 				self.clipFinished( SpecialContractName, {} )
+
 				SpecialContractDesc:completeAnimation()
 				self.SpecialContractDesc:setAlpha( 1 )
 				self.clipFinished( SpecialContractDesc, {} )
+
 				CategoryListLine000:completeAnimation()
 				self.CategoryListLine000:setAlpha( 0.25 )
 				self.clipFinished( CategoryListLine000, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setLeftRight( false, true, -44, 5 )
 				self.CompletedIcon:setTopBottom( true, false, 1, 33 )
@@ -202,6 +214,7 @@ CoD.AAR_Contracts_CommunityWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Complete",
@@ -210,6 +223,7 @@ CoD.AAR_Contracts_CommunityWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel0:close()
 		element.BMContractsAARtitle:close()

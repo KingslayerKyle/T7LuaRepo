@@ -4,9 +4,11 @@
 CoD.CallingCards_loot_zeus = InheritFrom( LUI.UIElement )
 CoD.CallingCards_loot_zeus.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_loot_zeus )
 	self.id = "CallingCards_loot_zeus"
@@ -213,6 +215,7 @@ CoD.CallingCards_loot_zeus.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 22 )
+
 				local bgFrame2 = function ( bg, event )
 					if not event.interrupted then
 						bg:beginAnimation( "keyframe", 3980, false, false, CoD.TweenType.Linear )
@@ -532,6 +535,7 @@ CoD.CallingCards_loot_zeus.new = function ( menu, controller )
 				bgbright:completeAnimation()
 				self.bgbright:setAlpha( 0.5 )
 				bgbrightFrame2( bgbright, {} )
+
 				dude:completeAnimation()
 				self.dude:setAlpha( 1 )
 				self.clipFinished( dude, {} )
@@ -847,6 +851,7 @@ CoD.CallingCards_loot_zeus.new = function ( menu, controller )
 				dudebright:completeAnimation()
 				self.dudebright:setAlpha( 0.5 )
 				dudebrightFrame2( dudebright, {} )
+
 				dudeR:completeAnimation()
 				self.dudeR:setAlpha( 1 )
 				self.dudeR:setImage( RegisterImage( "uie_t7_callingcard_mp_zeus_body_light" ) )
@@ -963,6 +968,7 @@ CoD.CallingCards_loot_zeus.new = function ( menu, controller )
 				firestill1a:completeAnimation()
 				self.firestill1a:setAlpha( 0.3 )
 				firestill1aFrame2( firestill1a, {} )
+
 				firestill1b:completeAnimation()
 				self.firestill1b:setAlpha( 1 )
 				self.clipFinished( firestill1b, {} )
@@ -1080,36 +1086,47 @@ CoD.CallingCards_loot_zeus.new = function ( menu, controller )
 				firestill2a:completeAnimation()
 				self.firestill2a:setAlpha( 0.4 )
 				firestill2aFrame2( firestill2a, {} )
+
 				firestill2b:completeAnimation()
 				self.firestill2b:setAlpha( 1 )
 				self.clipFinished( firestill2b, {} )
+
 				smokesmall:completeAnimation()
 				self.smokesmall:setAlpha( 1 )
 				self.clipFinished( smokesmall, {} )
+
 				smokelarge2:completeAnimation()
 				self.smokelarge2:setAlpha( 0.5 )
 				self.clipFinished( smokelarge2, {} )
+
 				smokelarge20:completeAnimation()
 				self.smokelarge20:setAlpha( 0.5 )
 				self.clipFinished( smokelarge20, {} )
+
 				smokesmall2:completeAnimation()
 				self.smokesmall2:setAlpha( 1 )
 				self.clipFinished( smokesmall2, {} )
+
 				EMBER2c1:completeAnimation()
 				self.EMBER2c1:setAlpha( 1 )
 				self.clipFinished( EMBER2c1, {} )
+
 				EMBER2c2:completeAnimation()
 				self.EMBER2c2:setAlpha( 1 )
 				self.clipFinished( EMBER2c2, {} )
+
 				EMBER2c3:completeAnimation()
 				self.EMBER2c3:setAlpha( 1 )
 				self.clipFinished( EMBER2c3, {} )
+
 				EMBER2c4:completeAnimation()
 				self.EMBER2c4:setAlpha( 1 )
 				self.clipFinished( EMBER2c4, {} )
+
 				flipbook:completeAnimation()
 				self.flipbook:setAlpha( 1 )
 				self.clipFinished( flipbook, {} )
+
 				flipbook0:completeAnimation()
 				self.flipbook0:setAlpha( 1 )
 				self.clipFinished( flipbook0, {} )
@@ -1251,6 +1268,7 @@ CoD.CallingCards_loot_zeus.new = function ( menu, controller )
 				self.rays3:setTopBottom( true, false, 0.31, 120.31 )
 				self.rays3:setAlpha( 0.51 )
 				rays3Frame2( rays3, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

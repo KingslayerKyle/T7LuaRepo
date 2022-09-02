@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Scrollbars.verticalCounter" )
 CoD.PaintjobSelector = InheritFrom( LUI.UIElement )
 CoD.PaintjobSelector.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PaintjobSelector )
 	self.id = "PaintjobSelector"
@@ -107,6 +109,7 @@ CoD.PaintjobSelector.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				paintjobsList:completeAnimation()
 				self.paintjobsList:setLeftRight( true, false, 0, 338 )
 				self.paintjobsList:setTopBottom( true, false, 0, 453 )
@@ -122,6 +125,7 @@ CoD.PaintjobSelector.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.paintjobsList:close()
 	end )

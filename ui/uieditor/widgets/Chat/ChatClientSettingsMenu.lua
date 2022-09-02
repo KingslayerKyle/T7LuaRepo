@@ -24,9 +24,11 @@ end
 CoD.ChatClientSettingsMenu = InheritFrom( LUI.UIElement )
 CoD.ChatClientSettingsMenu.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChatClientSettingsMenu )
 	self.id = "ChatClientSettingsMenu"
@@ -176,12 +178,14 @@ CoD.ChatClientSettingsMenu.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BackGroundImageTop:completeAnimation()
 				self.BackGroundImageTop:setAlpha( 0.7 )
 				self.clipFinished( BackGroundImageTop, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ShowChannels:close()
 		element.ShowTimestamps:close()

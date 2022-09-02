@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleNumBrdr" )
 CoD.Challenges_TierIcon = InheritFrom( LUI.UIElement )
 CoD.Challenges_TierIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_TierIcon )
 	self.id = "Challenges_TierIcon"
@@ -107,21 +109,27 @@ CoD.Challenges_TierIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Background:completeAnimation()
 				self.Background:setRGB( 0.6, 0.6, 0.42 )
 				self.clipFinished( Background, {} )
+
 				TierText:completeAnimation()
 				self.TierText:setRGB( 1, 1, 1 )
 				self.clipFinished( TierText, {} )
+
 				CurrentTierArrow:completeAnimation()
 				self.CurrentTierArrow:setAlpha( 0 )
 				self.clipFinished( CurrentTierArrow, {} )
+
 				XPIcon:completeAnimation()
 				self.XPIcon:setAlpha( 0 )
 				self.clipFinished( XPIcon, {} )
+
 				XPText:completeAnimation()
 				self.XPText:setAlpha( 0 )
 				self.clipFinished( XPText, {} )
+
 				box:completeAnimation()
 				self.box:setAlpha( 0 )
 				self.clipFinished( box, {} )
@@ -130,22 +138,28 @@ CoD.Challenges_TierIcon.new = function ( menu, controller )
 		Unreached = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Background:completeAnimation()
 				self.Background:setRGB( 0.6, 0.6, 0.42 )
 				self.Background:setAlpha( 0 )
 				self.clipFinished( Background, {} )
+
 				TierText:completeAnimation()
 				self.TierText:setRGB( 1, 1, 1 )
 				self.clipFinished( TierText, {} )
+
 				CurrentTierArrow:completeAnimation()
 				self.CurrentTierArrow:setAlpha( 0 )
 				self.clipFinished( CurrentTierArrow, {} )
+
 				XPIcon:completeAnimation()
 				self.XPIcon:setAlpha( 0 )
 				self.clipFinished( XPIcon, {} )
+
 				XPText:completeAnimation()
 				self.XPText:setAlpha( 0 )
 				self.clipFinished( XPText, {} )
+
 				box:completeAnimation()
 				self.box:setAlpha( 0 )
 				self.clipFinished( box, {} )
@@ -154,33 +168,41 @@ CoD.Challenges_TierIcon.new = function ( menu, controller )
 		CurrentTier = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				ImageX:completeAnimation()
 				self.ImageX:setRGB( 0, 0, 0 )
 				self.clipFinished( ImageX, {} )
+
 				Background:completeAnimation()
 				self.Background:setRGB( 1, 0.93, 0 )
 				self.Background:setAlpha( 0.7 )
 				self.clipFinished( Background, {} )
+
 				TierText:completeAnimation()
 				self.TierText:setRGB( 0, 0, 0 )
 				self.clipFinished( TierText, {} )
+
 				CurrentTierArrow:completeAnimation()
 				self.CurrentTierArrow:setAlpha( 1 )
 				self.clipFinished( CurrentTierArrow, {} )
+
 				XPIcon:completeAnimation()
 				self.XPIcon:setAlpha( 1 )
 				self.clipFinished( XPIcon, {} )
+
 				XPText:completeAnimation()
 				self.XPText:setLeftRight( true, false, 34, 96 )
 				self.XPText:setTopBottom( false, true, -26, -6 )
 				self.XPText:setAlpha( 1 )
 				self.clipFinished( XPText, {} )
+
 				box:completeAnimation()
 				self.box:setAlpha( 0.8 )
 				self.clipFinished( box, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Unreached",
@@ -211,6 +233,7 @@ CoD.Challenges_TierIcon.new = function ( menu, controller )
 			modelName = "isCurrentTier"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ImageBorder:close()
 		element.ImageX:close()

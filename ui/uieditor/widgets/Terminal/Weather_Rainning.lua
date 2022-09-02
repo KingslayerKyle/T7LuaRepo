@@ -4,9 +4,11 @@
 CoD.Weather_Rainning = InheritFrom( LUI.UIElement )
 CoD.Weather_Rainning.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Weather_Rainning )
 	self.id = "Weather_Rainning"
@@ -55,25 +57,31 @@ CoD.Weather_Rainning.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Sunny = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Raining = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CloudBig:completeAnimation()
 				self.CloudBig:setAlpha( 1 )
 				self.clipFinished( CloudBig, {} )
@@ -82,16 +90,19 @@ CoD.Weather_Rainning.new = function ( menu, controller )
 		Snowing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		PartlyCloudy = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		NightTimeClear = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventoryCastle.RagnarokPieceWidget" )
 CoD.RagnarokBlueprintWidget_Castle = InheritFrom( LUI.UIElement )
 CoD.RagnarokBlueprintWidget_Castle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RagnarokBlueprintWidget_Castle )
 	self.id = "RagnarokBlueprintWidget_Castle"
@@ -218,15 +220,19 @@ CoD.RagnarokBlueprintWidget_Castle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				RagnarokPieceWidgetBody:completeAnimation()
 				self.RagnarokPieceWidgetBody:setAlpha( 0 )
 				self.clipFinished( RagnarokPieceWidgetBody, {} )
+
 				RagnarokPieceWidgetGuards:completeAnimation()
 				self.RagnarokPieceWidgetGuards:setAlpha( 0 )
 				self.clipFinished( RagnarokPieceWidgetGuards, {} )
+
 				RagnarokPieceWidgetHandle:completeAnimation()
 				self.RagnarokPieceWidgetHandle:setAlpha( 0 )
 				self.clipFinished( RagnarokPieceWidgetHandle, {} )
@@ -235,6 +241,7 @@ CoD.RagnarokBlueprintWidget_Castle.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local BGFrame2 = function ( BG, event )
 					local BGFrame3 = function ( BG, event )
 						local BGFrame4 = function ( BG, event )
@@ -271,18 +278,21 @@ CoD.RagnarokBlueprintWidget_Castle.new = function ( menu, controller )
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				BGFrame2( BG, {} )
+
 				RagnarokPieceWidgetBody:completeAnimation()
 				self.RagnarokPieceWidgetBody:setLeftRight( true, false, 176, 265 )
 				self.RagnarokPieceWidgetBody:setTopBottom( true, false, 23.23, 112.23 )
 				self.RagnarokPieceWidgetBody:setAlpha( 1 )
 				self.RagnarokPieceWidgetBody:setScale( 0.85 )
 				self.clipFinished( RagnarokPieceWidgetBody, {} )
+
 				RagnarokPieceWidgetGuards:completeAnimation()
 				self.RagnarokPieceWidgetGuards:setLeftRight( true, false, 8, 97 )
 				self.RagnarokPieceWidgetGuards:setTopBottom( true, false, 25.23, 114.23 )
 				self.RagnarokPieceWidgetGuards:setAlpha( 1 )
 				self.RagnarokPieceWidgetGuards:setScale( 0.85 )
 				self.clipFinished( RagnarokPieceWidgetGuards, {} )
+
 				RagnarokPieceWidgetHandle:completeAnimation()
 				self.RagnarokPieceWidgetHandle:setLeftRight( true, false, 93, 182 )
 				self.RagnarokPieceWidgetHandle:setTopBottom( true, false, 25.23, 114.23 )
@@ -294,23 +304,27 @@ CoD.RagnarokBlueprintWidget_Castle.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BG:completeAnimation()
 				self.BG:setLeftRight( true, false, -39.8, 284 )
 				self.BG:setTopBottom( true, false, -47.94, 187.41 )
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				RagnarokPieceWidgetBody:completeAnimation()
 				self.RagnarokPieceWidgetBody:setLeftRight( true, false, 234, 323 )
 				self.RagnarokPieceWidgetBody:setTopBottom( true, false, 21.23, 110.23 )
 				self.RagnarokPieceWidgetBody:setAlpha( 1 )
 				self.RagnarokPieceWidgetBody:setScale( 0.9 )
 				self.clipFinished( RagnarokPieceWidgetBody, {} )
+
 				RagnarokPieceWidgetGuards:completeAnimation()
 				self.RagnarokPieceWidgetGuards:setLeftRight( true, false, 19, 108 )
 				self.RagnarokPieceWidgetGuards:setTopBottom( true, false, 23.23, 112.23 )
 				self.RagnarokPieceWidgetGuards:setAlpha( 1 )
 				self.RagnarokPieceWidgetGuards:setScale( 0.9 )
 				self.clipFinished( RagnarokPieceWidgetGuards, {} )
+
 				RagnarokPieceWidgetHandle:completeAnimation()
 				self.RagnarokPieceWidgetHandle:setLeftRight( true, false, 126.1, 215.1 )
 				self.RagnarokPieceWidgetHandle:setTopBottom( true, false, 22.23, 111.23 )
@@ -320,6 +334,7 @@ CoD.RagnarokBlueprintWidget_Castle.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BgVisible",
@@ -350,6 +365,7 @@ CoD.RagnarokBlueprintWidget_Castle.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RagnarokPieceWidgetBody:close()
 		element.RagnarokPieceWidgetGuards:close()

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CharacterCustomization.chooseCharacterLoadoutBumpe
 CoD.ChooseCharacter_TabBar = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacter_TabBar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacter_TabBar )
 	self.id = "ChooseCharacter_TabBar"
@@ -137,27 +139,35 @@ CoD.ChooseCharacter_TabBar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				CategoryListPanel:completeAnimation()
 				self.CategoryListPanel:setAlpha( 1 )
 				self.clipFinished( CategoryListPanel, {} )
+
 				FETabIdle1:completeAnimation()
 				self.FETabIdle1:setAlpha( 1 )
 				self.clipFinished( FETabIdle1, {} )
+
 				FETabIdle:completeAnimation()
 				self.FETabIdle:setAlpha( 1 )
 				self.clipFinished( FETabIdle, {} )
+
 				FETabIdle0:completeAnimation()
 				self.FETabIdle0:setAlpha( 1 )
 				self.clipFinished( FETabIdle0, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setAlpha( 1 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				rightBumper:completeAnimation()
 				self.rightBumper:setAlpha( 1 )
 				self.clipFinished( rightBumper, {} )
+
 				leftBumper:completeAnimation()
 				self.leftBumper:setAlpha( 1 )
 				self.clipFinished( leftBumper, {} )
+
 				TabBarLabel:completeAnimation()
 				self.TabBarLabel:setAlpha( 1 )
 				self.clipFinished( TabBarLabel, {} )
@@ -166,33 +176,42 @@ CoD.ChooseCharacter_TabBar.new = function ( menu, controller )
 		invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				CategoryListPanel:completeAnimation()
 				self.CategoryListPanel:setAlpha( 0 )
 				self.clipFinished( CategoryListPanel, {} )
+
 				FETabIdle1:completeAnimation()
 				self.FETabIdle1:setAlpha( 0 )
 				self.clipFinished( FETabIdle1, {} )
+
 				FETabIdle:completeAnimation()
 				self.FETabIdle:setAlpha( 0 )
 				self.clipFinished( FETabIdle, {} )
+
 				FETabIdle0:completeAnimation()
 				self.FETabIdle0:setAlpha( 0 )
 				self.clipFinished( FETabIdle0, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setAlpha( 0 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				rightBumper:completeAnimation()
 				self.rightBumper:setAlpha( 0 )
 				self.clipFinished( rightBumper, {} )
+
 				leftBumper:completeAnimation()
 				self.leftBumper:setAlpha( 0 )
 				self.clipFinished( leftBumper, {} )
+
 				TabBarLabel:completeAnimation()
 				self.TabBarLabel:setAlpha( 0 )
 				self.clipFinished( TabBarLabel, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "invisible",
@@ -209,6 +228,7 @@ CoD.ChooseCharacter_TabBar.new = function ( menu, controller )
 			modelName = nil
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FETitleNumBrdr0:close()
 		element.rightBumper:close()

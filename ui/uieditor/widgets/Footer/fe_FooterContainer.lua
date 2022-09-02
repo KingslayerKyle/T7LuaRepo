@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.PC.Utility.StarterPackWatermark" )
 CoD.fe_FooterContainer = InheritFrom( LUI.UIElement )
 CoD.fe_FooterContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.fe_FooterContainer )
 	self.id = "fe_FooterContainer"
@@ -78,9 +80,11 @@ CoD.fe_FooterContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.feNAT:close()
 		element.feRightContainer:close()

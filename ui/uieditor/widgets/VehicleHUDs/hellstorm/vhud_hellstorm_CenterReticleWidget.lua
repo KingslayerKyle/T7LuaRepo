@@ -4,9 +4,11 @@
 CoD.vhud_hellstorm_CenterReticleWidget = InheritFrom( LUI.UIElement )
 CoD.vhud_hellstorm_CenterReticleWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.vhud_hellstorm_CenterReticleWidget )
 	self.id = "vhud_hellstorm_CenterReticleWidget"
@@ -50,6 +52,7 @@ CoD.vhud_hellstorm_CenterReticleWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local CenterReticleHashFrame2 = function ( CenterReticleHash, event )
 					local CenterReticleHashFrame3 = function ( CenterReticleHash, event )
 						if not event.interrupted then
@@ -122,82 +125,102 @@ CoD.vhud_hellstorm_CenterReticleWidget.new = function ( menu, controller )
 				self.CenterReticleHash0:setShaderVector( 2, 0.62, 0, 0, 0 )
 				self.CenterReticleHash0:setShaderVector( 3, 2.05, -0.45, 0, 0 )
 				CenterReticleHash0Frame2( CenterReticleHash0, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		LowAltitude = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		LowAltitude_Slow = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		LowAltitude_Boost = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		MediumAltitude = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		MediumAltitude_Slow = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		MediumAltitude_Boost = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		HighAltitude = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		HighAltitude_Slow = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		HighAltitude_Boost = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

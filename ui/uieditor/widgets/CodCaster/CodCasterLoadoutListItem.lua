@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CodCaster.CodCasterLoadoutItemBackground" )
 CoD.CodCasterLoadoutListItem = InheritFrom( LUI.UIElement )
 CoD.CodCasterLoadoutListItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterLoadoutListItem )
 	self.id = "CodCasterLoadoutListItem"

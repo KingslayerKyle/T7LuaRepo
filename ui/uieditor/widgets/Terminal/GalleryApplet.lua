@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Terminal.FocusWidget" )
 CoD.GalleryApplet = InheritFrom( LUI.UIElement )
 CoD.GalleryApplet.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GalleryApplet )
 	self.id = "GalleryApplet"
@@ -53,9 +55,11 @@ CoD.GalleryApplet.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local GeneralframeFrame2 = function ( Generalframe, event )
 					if not event.interrupted then
 						Generalframe:beginAnimation( "keyframe", 180, false, false, CoD.TweenType.Linear )
@@ -131,20 +135,24 @@ CoD.GalleryApplet.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				Generalframe:completeAnimation()
 				self.Generalframe:setLeftRight( true, true, 0, 0 )
 				self.Generalframe:setTopBottom( true, true, 15, 15 )
 				self.clipFinished( Generalframe, {} )
+
 				Image:completeAnimation()
 				self.Image:setLeftRight( true, false, 0, 303 )
 				self.Image:setTopBottom( true, false, 16, 190 )
 				self.Image:setAlpha( 1 )
 				self.clipFinished( Image, {} )
+
 				FocusWidget:completeAnimation()
 				self.FocusWidget:setLeftRight( true, true, -9, 7.71 )
 				self.FocusWidget:setTopBottom( true, false, -10, 10 )
 				self.FocusWidget:setAlpha( 1 )
 				self.clipFinished( FocusWidget, {} )
+
 				CallingCardLines000:completeAnimation()
 				self.CallingCardLines000:setLeftRight( true, false, 0, 304 )
 				self.CallingCardLines000:setTopBottom( true, false, 191, 209.08 )
@@ -152,6 +160,7 @@ CoD.GalleryApplet.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local GeneralframeFrame2 = function ( Generalframe, event )
 					if not event.interrupted then
 						Generalframe:beginAnimation( "keyframe", 180, false, false, CoD.TweenType.Linear )
@@ -229,12 +238,15 @@ CoD.GalleryApplet.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Generalframe:close()
 		element.FocusWidget:close()

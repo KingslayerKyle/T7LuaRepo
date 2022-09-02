@@ -4,9 +4,11 @@
 CoD.Social_LeaderIcon = InheritFrom( LUI.UIElement )
 CoD.Social_LeaderIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_LeaderIcon )
 	self.id = "Social_LeaderIcon"

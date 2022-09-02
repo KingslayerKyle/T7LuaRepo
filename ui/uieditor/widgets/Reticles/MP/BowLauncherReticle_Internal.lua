@@ -11,9 +11,11 @@ require( "ui.uieditor.widgets.Reticles.MP.BowLauncherReticle_Dot" )
 CoD.BowLauncherReticle_Internal = InheritFrom( LUI.UIElement )
 CoD.BowLauncherReticle_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BowLauncherReticle_Internal )
 	self.id = "BowLauncherReticle_Internal"
@@ -130,6 +132,7 @@ CoD.BowLauncherReticle_Internal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				local reticleFrame2 = function ( reticle, event )
 					local reticleFrame3 = function ( reticle, event )
 						local reticleFrame4 = function ( reticle, event )
@@ -170,6 +173,7 @@ CoD.BowLauncherReticle_Internal.new = function ( menu, controller )
 				end
 				
 				reticle:completeAnimation()
+
 				reticle.shader:completeAnimation()
 				self.reticle:setLeftRight( false, false, -50, 50 )
 				self.reticle:setTopBottom( false, false, -50, 50 )
@@ -264,6 +268,7 @@ CoD.BowLauncherReticle_Internal.new = function ( menu, controller )
 			end,
 			Drawing = function ()
 				self:setupElementClipCounter( 1 )
+
 				local reticleFrame2 = function ( reticle, event )
 					if not event.interrupted then
 						reticle:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -279,6 +284,7 @@ CoD.BowLauncherReticle_Internal.new = function ( menu, controller )
 				end
 				
 				reticle:completeAnimation()
+
 				reticle.shader:completeAnimation()
 				self.reticle:setAlpha( 1 )
 				self.reticle.shader:setShaderVector( 3, 0, 30, 80, 0 )
@@ -288,7 +294,9 @@ CoD.BowLauncherReticle_Internal.new = function ( menu, controller )
 		Drawing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				reticle:completeAnimation()
+
 				reticle.shader:completeAnimation()
 				self.reticle:setAlpha( 0.4 )
 				self.reticle.shader:setShaderVector( 3, 1, 30, 80, 0 )
@@ -296,7 +304,9 @@ CoD.BowLauncherReticle_Internal.new = function ( menu, controller )
 			end,
 			StartupComplete = function ()
 				self:setupElementClipCounter( 1 )
+
 				reticle:completeAnimation()
+
 				reticle.shader:completeAnimation()
 				self.reticle:setAlpha( 1 )
 				self.reticle.shader:setShaderVector( 3, 0, 30, 80, 0 )
@@ -306,29 +316,37 @@ CoD.BowLauncherReticle_Internal.new = function ( menu, controller )
 		StartupComplete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				reticle:completeAnimation()
+
 				reticle.shader:completeAnimation()
 				self.reticle:setAlpha( 1 )
 				self.reticle.shader:setShaderVector( 3, 0, 30, 80, 0 )
 				self.clipFinished( reticle, {} )
+
 				BowLauncherReticleL1:completeAnimation()
 				self.BowLauncherReticleL1:setAlpha( 1 )
 				self.clipFinished( BowLauncherReticleL1, {} )
+
 				BowLauncherReticleL2:completeAnimation()
 				self.BowLauncherReticleL2:setAlpha( 1 )
 				self.clipFinished( BowLauncherReticleL2, {} )
+
 				BowLauncherReticleL3:completeAnimation()
 				self.BowLauncherReticleL3:setAlpha( 1 )
 				self.clipFinished( BowLauncherReticleL3, {} )
+
 				BowLauncherReticleL4:completeAnimation()
 				self.BowLauncherReticleL4:setAlpha( 1 )
 				self.clipFinished( BowLauncherReticleL4, {} )
+
 				BowLauncherReticleDot:completeAnimation()
 				self.BowLauncherReticleDot:setAlpha( 1 )
 				self.clipFinished( BowLauncherReticleDot, {} )
 			end,
 			Drawing = function ()
 				self:setupElementClipCounter( 1 )
+
 				local reticleFrame2 = function ( reticle, event )
 					if not event.interrupted then
 						reticle:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -344,6 +362,7 @@ CoD.BowLauncherReticle_Internal.new = function ( menu, controller )
 				end
 				
 				reticle:completeAnimation()
+
 				reticle.shader:completeAnimation()
 				self.reticle:setAlpha( 1 )
 				self.reticle.shader:setShaderVector( 3, 0, 30, 80, 0 )
@@ -351,6 +370,7 @@ CoD.BowLauncherReticle_Internal.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Drawing",
@@ -373,9 +393,11 @@ CoD.BowLauncherReticle_Internal.new = function ( menu, controller )
 			modelName = "currentWeapon.currentShotCharge"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		SetProperty( self, "startupComplete", true )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.reticle:close()
 		element.BowLauncherReticleL1:close()

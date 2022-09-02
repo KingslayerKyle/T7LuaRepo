@@ -4,9 +4,11 @@
 CoD.systemOverlay_alertStatusBar = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_alertStatusBar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_alertStatusBar )
 	self.id = "systemOverlay_alertStatusBar"
@@ -25,6 +27,7 @@ CoD.systemOverlay_alertStatusBar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				alertStatus:completeAnimation()
 				self.alertStatus:setRGB( 0.97, 0.58, 0.15 )
 				self.clipFinished( alertStatus, {} )
@@ -33,6 +36,7 @@ CoD.systemOverlay_alertStatusBar.new = function ( menu, controller )
 		Alert = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				alertStatus:completeAnimation()
 				self.alertStatus:setRGB( 0.93, 0.11, 0.15 )
 				self.clipFinished( alertStatus, {} )
@@ -41,12 +45,14 @@ CoD.systemOverlay_alertStatusBar.new = function ( menu, controller )
 		Blackmarket = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				alertStatus:completeAnimation()
 				self.alertStatus:setRGB( 0.25, 0.38, 0.35 )
 				self.clipFinished( alertStatus, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Alert",

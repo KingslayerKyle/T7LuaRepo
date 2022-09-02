@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CPSystems.TacticalMode.ClampedShooterWidgetArrow" 
 CoD.ClampedShooterWidget_Internal = InheritFrom( LUI.UIElement )
 CoD.ClampedShooterWidget_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ClampedShooterWidget_Internal )
 	self.id = "ClampedShooterWidget_Internal"

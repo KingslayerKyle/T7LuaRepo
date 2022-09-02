@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BorderBakedSolid" )
 CoD.GroupsNoConentDetail = InheritFrom( LUI.UIElement )
 CoD.GroupsNoConentDetail.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsNoConentDetail )
 	self.id = "GroupsNoConentDetail"
@@ -88,28 +90,36 @@ CoD.GroupsNoConentDetail.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Bkgd:completeAnimation()
 				self.Bkgd:setAlpha( 0.6 )
 				self.clipFinished( Bkgd, {} )
+
 				BorderBakedSolid:completeAnimation()
 				self.BorderBakedSolid:setAlpha( 1 )
 				self.clipFinished( BorderBakedSolid, {} )
+
 				DescFrame:completeAnimation()
 				self.DescFrame:setAlpha( 0.1 )
 				self.clipFinished( DescFrame, {} )
+
 				HeaderBkgd:completeAnimation()
 				self.HeaderBkgd:setAlpha( 0.6 )
 				self.clipFinished( HeaderBkgd, {} )
+
 				HeaderIcon:completeAnimation()
 				self.HeaderIcon:setAlpha( 1 )
 				self.clipFinished( HeaderIcon, {} )
+
 				Header:completeAnimation()
 				self.Header:setAlpha( 1 )
 				self.clipFinished( Header, {} )
+
 				Desc:completeAnimation()
 				self.Desc:setRGB( 0.55, 0.55, 0.55 )
 				self.Desc:setAlpha( 1 )
 				self.clipFinished( Desc, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 1 )
 				self.clipFinished( Glow2, {} )
@@ -118,33 +128,42 @@ CoD.GroupsNoConentDetail.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Bkgd:completeAnimation()
 				self.Bkgd:setAlpha( 0 )
 				self.clipFinished( Bkgd, {} )
+
 				BorderBakedSolid:completeAnimation()
 				self.BorderBakedSolid:setAlpha( 0 )
 				self.clipFinished( BorderBakedSolid, {} )
+
 				DescFrame:completeAnimation()
 				self.DescFrame:setAlpha( 0 )
 				self.clipFinished( DescFrame, {} )
+
 				HeaderBkgd:completeAnimation()
 				self.HeaderBkgd:setAlpha( 0 )
 				self.clipFinished( HeaderBkgd, {} )
+
 				HeaderIcon:completeAnimation()
 				self.HeaderIcon:setAlpha( 0 )
 				self.clipFinished( HeaderIcon, {} )
+
 				Header:completeAnimation()
 				self.Header:setAlpha( 0 )
 				self.clipFinished( Header, {} )
+
 				Desc:completeAnimation()
 				self.Desc:setAlpha( 0 )
 				self.clipFinished( Desc, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BorderBakedSolid:close()
 	end )

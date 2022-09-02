@@ -4,9 +4,11 @@
 CoD.AbilityWheel_ColorPanel = InheritFrom( LUI.UIElement )
 CoD.AbilityWheel_ColorPanel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AbilityWheel_ColorPanel )
 	self.id = "AbilityWheel_ColorPanel"
@@ -37,21 +39,25 @@ CoD.AbilityWheel_ColorPanel.new = function ( menu, controller )
 		Unavailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setAlpha( 0 )
 				self.clipFinished( PanelGlow, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		ControlCore = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setRGB( 0.07, 0.78, 0.97 )
 				self.PanelGlow:setAlpha( 0.5 )
 				self.clipFinished( PanelGlow, {} )
+
 				CyberFrame:completeAnimation()
 				self.CyberFrame:setLeftRight( true, false, 0, 120 )
 				self.CyberFrame:setTopBottom( true, false, 0, 120 )
@@ -62,15 +68,18 @@ CoD.AbilityWheel_ColorPanel.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		MartialCore = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setRGB( 0.33, 0.76, 0.1 )
 				self.PanelGlow:setAlpha( 0.5 )
 				self.clipFinished( PanelGlow, {} )
+
 				CyberFrame:completeAnimation()
 				self.CyberFrame:setLeftRight( true, false, 0, 120 )
 				self.CyberFrame:setTopBottom( true, false, 0, 120 )
@@ -80,15 +89,18 @@ CoD.AbilityWheel_ColorPanel.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		ChaosCore = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setRGB( 0.97, 0.36, 0.07 )
 				self.PanelGlow:setAlpha( 0.5 )
 				self.clipFinished( PanelGlow, {} )
+
 				CyberFrame:completeAnimation()
 				self.CyberFrame:setLeftRight( true, false, 0, 120 )
 				self.CyberFrame:setTopBottom( true, false, 0, 120 )
@@ -98,17 +110,20 @@ CoD.AbilityWheel_ColorPanel.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setAlpha( 0 )
 				self.clipFinished( PanelGlow, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Unavailable",

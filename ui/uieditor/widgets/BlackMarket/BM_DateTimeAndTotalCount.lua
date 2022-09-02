@@ -4,9 +4,11 @@
 CoD.BM_DateTimeAndTotalCount = InheritFrom( LUI.UIElement )
 CoD.BM_DateTimeAndTotalCount.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_DateTimeAndTotalCount )
 	self.id = "BM_DateTimeAndTotalCount"
@@ -56,10 +58,12 @@ CoD.BM_DateTimeAndTotalCount.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				dateTimeReceived:completeAnimation()
 				self.dateTimeReceived:setLeftRight( false, false, -122, 122 )
 				self.dateTimeReceived:setTopBottom( true, false, 5, 22 )
 				self.clipFinished( dateTimeReceived, {} )
+
 				TotalCount:completeAnimation()
 				self.TotalCount:setLeftRight( false, false, -122.5, 122.5 )
 				self.TotalCount:setTopBottom( true, false, 20, 38 )
@@ -69,10 +73,12 @@ CoD.BM_DateTimeAndTotalCount.new = function ( menu, controller )
 		Condensed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				dateTimeReceived:completeAnimation()
 				self.dateTimeReceived:setLeftRight( false, false, -122, 122 )
 				self.dateTimeReceived:setTopBottom( true, false, -2, 15 )
 				self.clipFinished( dateTimeReceived, {} )
+
 				TotalCount:completeAnimation()
 				self.TotalCount:setLeftRight( false, false, -122.5, 122.5 )
 				self.TotalCount:setTopBottom( true, false, 12, 30 )
@@ -80,6 +86,7 @@ CoD.BM_DateTimeAndTotalCount.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.dateTimeReceived:close()
 		element.TotalCount:close()

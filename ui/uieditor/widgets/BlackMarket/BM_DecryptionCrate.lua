@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.BlackMarket.fx_glow" )
 CoD.BM_DecryptionCrate = InheritFrom( LUI.UIElement )
 CoD.BM_DecryptionCrate.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_DecryptionCrate )
 	self.id = "BM_DecryptionCrate"
@@ -587,96 +589,126 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 		Common = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 29 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 0 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				SixPackCommonBundleOnOpen:completeAnimation()
 				self.SixPackCommonBundleOnOpen:setAlpha( 0 )
 				self.clipFinished( SixPackCommonBundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 1 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				BundleExperimentRareCount:completeAnimation()
 				self.BundleExperimentRareCount:setAlpha( 0 )
 				self.clipFinished( BundleExperimentRareCount, {} )
+
 				CodeBundleRareCount:completeAnimation()
 				self.CodeBundleRareCount:setAlpha( 0 )
 				self.clipFinished( CodeBundleRareCount, {} )
+
 				NoDupesRareCount:completeAnimation()
 				self.NoDupesRareCount:setAlpha( 0 )
 				self.clipFinished( NoDupesRareCount, {} )
+
 				HundredBundleCount:completeAnimation()
 				self.HundredBundleCount:setAlpha( 0 )
 				self.clipFinished( HundredBundleCount, {} )
+
 				DailyDoubleRareCount:completeAnimation()
 				self.DailyDoubleRareCount:setAlpha( 0 )
 				self.clipFinished( DailyDoubleRareCount, {} )
+
 				SixPackCommonCount:completeAnimation()
 				self.SixPackCommonCount:setAlpha( 0 )
 				self.clipFinished( SixPackCommonCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				GenericRewardImage:completeAnimation()
 				self.GenericRewardImage:setAlpha( 0 )
 				self.clipFinished( GenericRewardImage, {} )
+
 				GenericRewardCount0:completeAnimation()
 				self.GenericRewardCount0:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount0, {} )
+
 				GenericRewardCount:completeAnimation()
 				self.GenericRewardCount:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount, {} )
+
 				WeaponBribe3Count0:completeAnimation()
 				self.WeaponBribe3Count0:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count0, {} )
+
 				WeaponBribe3Count:completeAnimation()
 				self.WeaponBribe3Count:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count, {} )
+
 				LimitedEditionCamoCount0:completeAnimation()
 				self.LimitedEditionCamoCount0:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount0, {} )
+
 				LimitedEditionCamoCount:completeAnimation()
 				self.LimitedEditionCamoCount:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 14 )
+
 				local glow00Frame2 = function ( glow00, event )
 					local glow00Frame3 = function ( glow00, event )
 						if not event.interrupted then
@@ -705,21 +737,27 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 				self.glow00:setRGB( 1, 1, 1 )
 				self.glow00:setAlpha( 0 )
 				glow00Frame2( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 0 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 1 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 1 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 1 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 1 )
 				self.clipFinished( CommonOn, {} )
@@ -749,228 +787,293 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				glow0Frame2( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				self.nextClip = "Focus"
 			end
 		},
 		IncentiveRare = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 36 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 0 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				SixPackCommonBundleOnOpen:completeAnimation()
 				self.SixPackCommonBundleOnOpen:setAlpha( 0 )
 				self.clipFinished( SixPackCommonBundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setLeftRight( false, false, -80.5, 80.5 )
 				self.BribeOn:setTopBottom( true, false, -40.46, 120.54 )
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setLeftRight( false, false, -80.5, 80.5 )
 				self.glowBribe:setTopBottom( true, false, -40.46, 120.54 )
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				BundleExperimentRareCount:completeAnimation()
 				self.BundleExperimentRareCount:setAlpha( 0 )
 				self.clipFinished( BundleExperimentRareCount, {} )
+
 				CodeBundleRareCount:completeAnimation()
 				self.CodeBundleRareCount:setAlpha( 0 )
 				self.clipFinished( CodeBundleRareCount, {} )
+
 				NoDupesRareCount:completeAnimation()
 				self.NoDupesRareCount:setAlpha( 0 )
 				self.clipFinished( NoDupesRareCount, {} )
+
 				HundredBundleCount:completeAnimation()
 				self.HundredBundleCount:setAlpha( 0 )
 				self.clipFinished( HundredBundleCount, {} )
+
 				DailyDoubleRareCount:completeAnimation()
 				self.DailyDoubleRareCount:setAlpha( 0 )
 				self.clipFinished( DailyDoubleRareCount, {} )
+
 				SixPackCommonCount:completeAnimation()
 				self.SixPackCommonCount:setAlpha( 0 )
 				self.clipFinished( SixPackCommonCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				IncentiveRare:completeAnimation()
 				self.IncentiveRare:setLeftRight( true, false, -32.93, 111.07 )
 				self.IncentiveRare:setTopBottom( true, false, -92.46, 87.54 )
 				self.IncentiveRare:setAlpha( 1 )
 				self.clipFinished( IncentiveRare, {} )
+
 				IncentiveWeapon:completeAnimation()
 				self.IncentiveWeapon:setAlpha( 0 )
 				self.clipFinished( IncentiveWeapon, {} )
+
 				GenericRewardImage:completeAnimation()
 				self.GenericRewardImage:setAlpha( 0 )
 				self.clipFinished( GenericRewardImage, {} )
+
 				IncentiveNumberbacker:completeAnimation()
 				self.IncentiveNumberbacker:setLeftRight( true, false, -45, 123 )
 				self.IncentiveNumberbacker:setTopBottom( true, false, 35, 107 )
 				self.IncentiveNumberbacker:setAlpha( 1 )
 				self.clipFinished( IncentiveNumberbacker, {} )
+
 				WeaponIncentiveCount:completeAnimation()
 				self.WeaponIncentiveCount:setAlpha( 0 )
 				self.clipFinished( WeaponIncentiveCount, {} )
+
 				WeaponIncentiveCount0:completeAnimation()
 				self.WeaponIncentiveCount0:setAlpha( 0 )
 				self.clipFinished( WeaponIncentiveCount0, {} )
+
 				RareIncentiveCount0:completeAnimation()
 				self.RareIncentiveCount0:setLeftRight( true, false, -61.93, 138.07 )
 				self.RareIncentiveCount0:setTopBottom( true, false, 54.75, 88.75 )
 				self.RareIncentiveCount0:setAlpha( 1 )
 				self.clipFinished( RareIncentiveCount0, {} )
+
 				RareIncentiveCount:completeAnimation()
 				self.RareIncentiveCount:setLeftRight( true, false, -61.93, 138.07 )
 				self.RareIncentiveCount:setTopBottom( true, false, 53.75, 87.75 )
 				self.RareIncentiveCount:setAlpha( 1 )
 				self.clipFinished( RareIncentiveCount, {} )
+
 				GenericRewardCount0:completeAnimation()
 				self.GenericRewardCount0:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount0, {} )
+
 				GenericRewardCount:completeAnimation()
 				self.GenericRewardCount:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount, {} )
+
 				WeaponBribe3Count0:completeAnimation()
 				self.WeaponBribe3Count0:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count0, {} )
+
 				WeaponBribe3Count:completeAnimation()
 				self.WeaponBribe3Count:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count, {} )
+
 				LimitedEditionCamoCount0:completeAnimation()
 				self.LimitedEditionCamoCount0:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount0, {} )
+
 				LimitedEditionCamoCount:completeAnimation()
 				self.LimitedEditionCamoCount:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 22 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 0 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setLeftRight( false, false, -80.5, 80.5 )
 				self.BribeOn:setTopBottom( true, false, -40.46, 120.54 )
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setLeftRight( false, false, -80.5, 80.5 )
 				self.glowBribe:setTopBottom( true, false, -40.46, 120.54 )
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				IncentiveRare:completeAnimation()
 				self.IncentiveRare:setLeftRight( true, false, -32.93, 111.07 )
 				self.IncentiveRare:setTopBottom( true, false, -92.46, 87.54 )
 				self.IncentiveRare:setAlpha( 1 )
 				self.clipFinished( IncentiveRare, {} )
+
 				IncentiveWeapon:completeAnimation()
 				self.IncentiveWeapon:setAlpha( 0 )
 				self.clipFinished( IncentiveWeapon, {} )
+
 				IncentiveNumberbacker:completeAnimation()
 				self.IncentiveNumberbacker:setLeftRight( true, false, -45, 123 )
 				self.IncentiveNumberbacker:setTopBottom( true, false, 35, 107 )
 				self.IncentiveNumberbacker:setAlpha( 1 )
 				self.clipFinished( IncentiveNumberbacker, {} )
+
 				WeaponIncentiveCount:completeAnimation()
 				self.WeaponIncentiveCount:setAlpha( 0 )
 				self.clipFinished( WeaponIncentiveCount, {} )
+
 				WeaponIncentiveCount0:completeAnimation()
 				self.WeaponIncentiveCount0:setAlpha( 0 )
 				self.clipFinished( WeaponIncentiveCount0, {} )
+
 				RareIncentiveCount0:completeAnimation()
 				self.RareIncentiveCount0:setLeftRight( true, false, -61.93, 138.07 )
 				self.RareIncentiveCount0:setTopBottom( true, false, 54.75, 88.75 )
 				self.RareIncentiveCount0:setAlpha( 1 )
 				self.clipFinished( RareIncentiveCount0, {} )
+
 				RareIncentiveCount:completeAnimation()
 				self.RareIncentiveCount:setLeftRight( true, false, -61.93, 138.07 )
 				self.RareIncentiveCount:setTopBottom( true, false, 53.75, 87.75 )
@@ -981,192 +1084,248 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 		IncentiveWeapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 35 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 0 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				SixPackCommonBundleOnOpen:completeAnimation()
 				self.SixPackCommonBundleOnOpen:setAlpha( 0 )
 				self.clipFinished( SixPackCommonBundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setLeftRight( false, false, -80.5, 80.5 )
 				self.BribeOn:setTopBottom( true, false, -40.46, 120.54 )
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setLeftRight( false, false, -80.5, 80.5 )
 				self.glowBribe:setTopBottom( true, false, -40.46, 120.54 )
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				BundleExperimentRareCount:completeAnimation()
 				self.BundleExperimentRareCount:setAlpha( 0 )
 				self.clipFinished( BundleExperimentRareCount, {} )
+
 				CodeBundleRareCount:completeAnimation()
 				self.CodeBundleRareCount:setAlpha( 0 )
 				self.clipFinished( CodeBundleRareCount, {} )
+
 				NoDupesRareCount:completeAnimation()
 				self.NoDupesRareCount:setAlpha( 0 )
 				self.clipFinished( NoDupesRareCount, {} )
+
 				HundredBundleCount:completeAnimation()
 				self.HundredBundleCount:setAlpha( 0 )
 				self.clipFinished( HundredBundleCount, {} )
+
 				DailyDoubleRareCount:completeAnimation()
 				self.DailyDoubleRareCount:setAlpha( 0 )
 				self.clipFinished( DailyDoubleRareCount, {} )
+
 				SixPackCommonCount:completeAnimation()
 				self.SixPackCommonCount:setAlpha( 0 )
 				self.clipFinished( SixPackCommonCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				IncentiveRare:completeAnimation()
 				self.IncentiveRare:setAlpha( 0 )
 				self.clipFinished( IncentiveRare, {} )
+
 				IncentiveWeapon:completeAnimation()
 				self.IncentiveWeapon:setAlpha( 1 )
 				self.clipFinished( IncentiveWeapon, {} )
+
 				GenericRewardImage:completeAnimation()
 				self.GenericRewardImage:setAlpha( 0 )
 				self.clipFinished( GenericRewardImage, {} )
+
 				IncentiveNumberbacker:completeAnimation()
 				self.IncentiveNumberbacker:setLeftRight( true, false, -45, 123 )
 				self.IncentiveNumberbacker:setTopBottom( true, false, 0, 72 )
 				self.IncentiveNumberbacker:setAlpha( 1 )
 				self.clipFinished( IncentiveNumberbacker, {} )
+
 				WeaponIncentiveCount:completeAnimation()
 				self.WeaponIncentiveCount:setLeftRight( true, false, -61.5, 138.5 )
 				self.WeaponIncentiveCount:setTopBottom( true, false, 19, 53 )
 				self.WeaponIncentiveCount:setAlpha( 0.75 )
 				self.clipFinished( WeaponIncentiveCount, {} )
+
 				WeaponIncentiveCount0:completeAnimation()
 				self.WeaponIncentiveCount0:setLeftRight( true, false, -61.5, 138.5 )
 				self.WeaponIncentiveCount0:setTopBottom( true, false, 18, 52 )
 				self.WeaponIncentiveCount0:setAlpha( 1 )
 				self.clipFinished( WeaponIncentiveCount0, {} )
+
 				RareIncentiveCount:completeAnimation()
 				self.RareIncentiveCount:setAlpha( 0 )
 				self.clipFinished( RareIncentiveCount, {} )
+
 				GenericRewardCount0:completeAnimation()
 				self.GenericRewardCount0:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount0, {} )
+
 				GenericRewardCount:completeAnimation()
 				self.GenericRewardCount:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount, {} )
+
 				WeaponBribe3Count0:completeAnimation()
 				self.WeaponBribe3Count0:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count0, {} )
+
 				WeaponBribe3Count:completeAnimation()
 				self.WeaponBribe3Count:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count, {} )
+
 				LimitedEditionCamoCount0:completeAnimation()
 				self.LimitedEditionCamoCount0:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount0, {} )
+
 				LimitedEditionCamoCount:completeAnimation()
 				self.LimitedEditionCamoCount:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 21 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 0 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setLeftRight( false, false, -80.5, 80.5 )
 				self.BribeOn:setTopBottom( true, false, -40.46, 120.54 )
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setLeftRight( false, false, -80.5, 80.5 )
 				self.glowBribe:setTopBottom( true, false, -40.46, 120.54 )
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				IncentiveRare:completeAnimation()
 				self.IncentiveRare:setAlpha( 0 )
 				self.clipFinished( IncentiveRare, {} )
+
 				IncentiveWeapon:completeAnimation()
 				self.IncentiveWeapon:setAlpha( 1 )
 				self.clipFinished( IncentiveWeapon, {} )
+
 				IncentiveNumberbacker:completeAnimation()
 				self.IncentiveNumberbacker:setLeftRight( true, false, -45, 123 )
 				self.IncentiveNumberbacker:setTopBottom( true, false, 0, 72 )
 				self.IncentiveNumberbacker:setAlpha( 1 )
 				self.clipFinished( IncentiveNumberbacker, {} )
+
 				WeaponIncentiveCount:completeAnimation()
 				self.WeaponIncentiveCount:setAlpha( 0.75 )
 				self.clipFinished( WeaponIncentiveCount, {} )
+
 				WeaponIncentiveCount0:completeAnimation()
 				self.WeaponIncentiveCount0:setAlpha( 1 )
 				self.clipFinished( WeaponIncentiveCount0, {} )
+
 				RareIncentiveCount:completeAnimation()
 				self.RareIncentiveCount:setAlpha( 0 )
 				self.clipFinished( RareIncentiveCount, {} )
@@ -1175,201 +1334,260 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 		GenericReward = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 35 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 0 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				SixPackCommonBundleOnOpen:completeAnimation()
 				self.SixPackCommonBundleOnOpen:setAlpha( 0 )
 				self.clipFinished( SixPackCommonBundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setLeftRight( false, false, -80.5, 80.5 )
 				self.BribeOn:setTopBottom( true, false, -40.46, 120.54 )
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setLeftRight( false, false, -80.5, 80.5 )
 				self.glowBribe:setTopBottom( true, false, -40.46, 120.54 )
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				BundleExperimentRareCount:completeAnimation()
 				self.BundleExperimentRareCount:setAlpha( 0 )
 				self.clipFinished( BundleExperimentRareCount, {} )
+
 				CodeBundleRareCount:completeAnimation()
 				self.CodeBundleRareCount:setAlpha( 0 )
 				self.clipFinished( CodeBundleRareCount, {} )
+
 				NoDupesRareCount:completeAnimation()
 				self.NoDupesRareCount:setAlpha( 0 )
 				self.clipFinished( NoDupesRareCount, {} )
+
 				HundredBundleCount:completeAnimation()
 				self.HundredBundleCount:setAlpha( 0 )
 				self.clipFinished( HundredBundleCount, {} )
+
 				DailyDoubleRareCount:completeAnimation()
 				self.DailyDoubleRareCount:setAlpha( 0 )
 				self.clipFinished( DailyDoubleRareCount, {} )
+
 				SixPackCommonCount:completeAnimation()
 				self.SixPackCommonCount:setAlpha( 0 )
 				self.clipFinished( SixPackCommonCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				IncentiveRare:completeAnimation()
 				self.IncentiveRare:setAlpha( 0 )
 				self.clipFinished( IncentiveRare, {} )
+
 				IncentiveWeapon:completeAnimation()
 				self.IncentiveWeapon:setAlpha( 0 )
 				self.clipFinished( IncentiveWeapon, {} )
+
 				GenericRewardImage:completeAnimation()
 				self.GenericRewardImage:setAlpha( 1 )
 				self.clipFinished( GenericRewardImage, {} )
+
 				IncentiveNumberbacker:completeAnimation()
 				self.IncentiveNumberbacker:setLeftRight( true, false, -45, 123 )
 				self.IncentiveNumberbacker:setTopBottom( true, false, 0, 72 )
 				self.IncentiveNumberbacker:setAlpha( 1 )
 				self.clipFinished( IncentiveNumberbacker, {} )
+
 				WeaponIncentiveCount:completeAnimation()
 				self.WeaponIncentiveCount:setLeftRight( true, false, -61.5, 138.5 )
 				self.WeaponIncentiveCount:setTopBottom( true, false, 19, 53 )
 				self.WeaponIncentiveCount:setAlpha( 0 )
 				self.clipFinished( WeaponIncentiveCount, {} )
+
 				WeaponIncentiveCount0:completeAnimation()
 				self.WeaponIncentiveCount0:setLeftRight( true, false, -61.5, 138.5 )
 				self.WeaponIncentiveCount0:setTopBottom( true, false, 18, 52 )
 				self.WeaponIncentiveCount0:setAlpha( 0 )
 				self.clipFinished( WeaponIncentiveCount0, {} )
+
 				RareIncentiveCount:completeAnimation()
 				self.RareIncentiveCount:setAlpha( 0 )
 				self.clipFinished( RareIncentiveCount, {} )
+
 				GenericRewardCount0:completeAnimation()
 				self.GenericRewardCount0:setAlpha( 0.75 )
 				self.clipFinished( GenericRewardCount0, {} )
+
 				GenericRewardCount:completeAnimation()
 				self.GenericRewardCount:setAlpha( 1 )
 				self.clipFinished( GenericRewardCount, {} )
+
 				WeaponBribe3Count0:completeAnimation()
 				self.WeaponBribe3Count0:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count0, {} )
+
 				WeaponBribe3Count:completeAnimation()
 				self.WeaponBribe3Count:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count, {} )
+
 				LimitedEditionCamoCount0:completeAnimation()
 				self.LimitedEditionCamoCount0:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount0, {} )
+
 				LimitedEditionCamoCount:completeAnimation()
 				self.LimitedEditionCamoCount:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 24 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 0 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setLeftRight( false, false, -80.5, 80.5 )
 				self.BribeOn:setTopBottom( true, false, -40.46, 120.54 )
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setLeftRight( false, false, -80.5, 80.5 )
 				self.glowBribe:setTopBottom( true, false, -40.46, 120.54 )
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				IncentiveRare:completeAnimation()
 				self.IncentiveRare:setAlpha( 0 )
 				self.clipFinished( IncentiveRare, {} )
+
 				IncentiveWeapon:completeAnimation()
 				self.IncentiveWeapon:setAlpha( 0 )
 				self.clipFinished( IncentiveWeapon, {} )
+
 				GenericRewardImage:completeAnimation()
 				self.GenericRewardImage:setAlpha( 1 )
 				self.clipFinished( GenericRewardImage, {} )
+
 				IncentiveNumberbacker:completeAnimation()
 				self.IncentiveNumberbacker:setLeftRight( true, false, -45, 123 )
 				self.IncentiveNumberbacker:setTopBottom( true, false, 0, 72 )
 				self.IncentiveNumberbacker:setAlpha( 1 )
 				self.clipFinished( IncentiveNumberbacker, {} )
+
 				WeaponIncentiveCount:completeAnimation()
 				self.WeaponIncentiveCount:setAlpha( 0 )
 				self.clipFinished( WeaponIncentiveCount, {} )
+
 				WeaponIncentiveCount0:completeAnimation()
 				self.WeaponIncentiveCount0:setAlpha( 0 )
 				self.clipFinished( WeaponIncentiveCount0, {} )
+
 				RareIncentiveCount:completeAnimation()
 				self.RareIncentiveCount:setAlpha( 0 )
 				self.clipFinished( RareIncentiveCount, {} )
+
 				GenericRewardCount0:completeAnimation()
 				self.GenericRewardCount0:setAlpha( 0.75 )
 				self.clipFinished( GenericRewardCount0, {} )
+
 				GenericRewardCount:completeAnimation()
 				self.GenericRewardCount:setAlpha( 1 )
 				self.clipFinished( GenericRewardCount, {} )
@@ -1378,144 +1596,185 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 		SixPackCommonBundle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 29 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 0 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				SixPackCommonBundleOnOpen:completeAnimation()
 				self.SixPackCommonBundleOnOpen:setAlpha( 1 )
 				self.clipFinished( SixPackCommonBundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setLeftRight( false, false, -80.5, 80.5 )
 				self.BribeOn:setTopBottom( true, false, -40.46, 120.54 )
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setLeftRight( false, false, -80.5, 80.5 )
 				self.glowBribe:setTopBottom( true, false, -40.46, 120.54 )
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				BundleExperimentRareCount:completeAnimation()
 				self.BundleExperimentRareCount:setAlpha( 0 )
 				self.clipFinished( BundleExperimentRareCount, {} )
+
 				CodeBundleRareCount:completeAnimation()
 				self.CodeBundleRareCount:setAlpha( 0 )
 				self.clipFinished( CodeBundleRareCount, {} )
+
 				NoDupesRareCount:completeAnimation()
 				self.NoDupesRareCount:setAlpha( 0 )
 				self.clipFinished( NoDupesRareCount, {} )
+
 				HundredBundleCount:completeAnimation()
 				self.HundredBundleCount:setAlpha( 0 )
 				self.clipFinished( HundredBundleCount, {} )
+
 				DailyDoubleRareCount:completeAnimation()
 				self.DailyDoubleRareCount:setAlpha( 0 )
 				self.clipFinished( DailyDoubleRareCount, {} )
+
 				SixPackCommonCount:completeAnimation()
 				self.SixPackCommonCount:setAlpha( 1 )
 				self.clipFinished( SixPackCommonCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				GenericRewardImage:completeAnimation()
 				self.GenericRewardImage:setAlpha( 0 )
 				self.clipFinished( GenericRewardImage, {} )
+
 				GenericRewardCount0:completeAnimation()
 				self.GenericRewardCount0:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount0, {} )
+
 				GenericRewardCount:completeAnimation()
 				self.GenericRewardCount:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount, {} )
+
 				WeaponBribe3Count0:completeAnimation()
 				self.WeaponBribe3Count0:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count0, {} )
+
 				WeaponBribe3Count:completeAnimation()
 				self.WeaponBribe3Count:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count, {} )
+
 				LimitedEditionCamoCount0:completeAnimation()
 				self.LimitedEditionCamoCount0:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount0, {} )
+
 				LimitedEditionCamoCount:completeAnimation()
 				self.LimitedEditionCamoCount:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 14 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 0 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				SixPackCommonBundleOnOpen:completeAnimation()
 				self.SixPackCommonBundleOnOpen:setAlpha( 1 )
 				self.clipFinished( SixPackCommonBundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setLeftRight( true, false, -43.25, 126.35 )
 				self.smokewidget:setTopBottom( true, false, -69.96, 108.54 )
 				self.smokewidget:setRGB( 1, 1, 1 )
 				self.smokewidget:setAlpha( 1 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setLeftRight( true, false, -30.45, 113.55 )
 				self.fxEmber2:setTopBottom( true, false, -54.96, 125.04 )
 				self.fxEmber2:setRGB( 1, 1, 1 )
 				self.fxEmber2:setAlpha( 1 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setLeftRight( true, false, -34.25, 117.35 )
 				self.fxEmber:setTopBottom( true, false, -42.46, 147.04 )
 				self.fxEmber:setRGB( 1, 1, 1 )
 				self.fxEmber:setAlpha( 1 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setRGB( 0.22, 0.93, 0.93 )
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
@@ -1572,150 +1831,192 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 				self.glowBundleOutline:setRGB( 1, 1, 1 )
 				self.glowBundleOutline:setAlpha( 0 )
 				glowBundleOutlineFrame2( glowBundleOutline, {} )
+
 				self.nextClip = "Focus"
 			end
 		},
 		DailyDoubleRareBundle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 29 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 1 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				SixPackCommonBundleOnOpen:completeAnimation()
 				self.SixPackCommonBundleOnOpen:setAlpha( 0 )
 				self.clipFinished( SixPackCommonBundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setLeftRight( false, false, -80.5, 80.5 )
 				self.BribeOn:setTopBottom( true, false, -40.46, 120.54 )
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setLeftRight( false, false, -80.5, 80.5 )
 				self.glowBribe:setTopBottom( true, false, -40.46, 120.54 )
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				BundleExperimentRareCount:completeAnimation()
 				self.BundleExperimentRareCount:setAlpha( 0 )
 				self.clipFinished( BundleExperimentRareCount, {} )
+
 				CodeBundleRareCount:completeAnimation()
 				self.CodeBundleRareCount:setAlpha( 0 )
 				self.clipFinished( CodeBundleRareCount, {} )
+
 				NoDupesRareCount:completeAnimation()
 				self.NoDupesRareCount:setAlpha( 0 )
 				self.clipFinished( NoDupesRareCount, {} )
+
 				HundredBundleCount:completeAnimation()
 				self.HundredBundleCount:setAlpha( 0 )
 				self.clipFinished( HundredBundleCount, {} )
+
 				DailyDoubleRareCount:completeAnimation()
 				self.DailyDoubleRareCount:setAlpha( 1 )
 				self.clipFinished( DailyDoubleRareCount, {} )
+
 				SixPackCommonCount:completeAnimation()
 				self.SixPackCommonCount:setAlpha( 0 )
 				self.clipFinished( SixPackCommonCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				GenericRewardImage:completeAnimation()
 				self.GenericRewardImage:setAlpha( 0 )
 				self.clipFinished( GenericRewardImage, {} )
+
 				GenericRewardCount0:completeAnimation()
 				self.GenericRewardCount0:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount0, {} )
+
 				GenericRewardCount:completeAnimation()
 				self.GenericRewardCount:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount, {} )
+
 				WeaponBribe3Count0:completeAnimation()
 				self.WeaponBribe3Count0:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count0, {} )
+
 				WeaponBribe3Count:completeAnimation()
 				self.WeaponBribe3Count:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count, {} )
+
 				LimitedEditionCamoCount0:completeAnimation()
 				self.LimitedEditionCamoCount0:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount0, {} )
+
 				LimitedEditionCamoCount:completeAnimation()
 				self.LimitedEditionCamoCount:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 14 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 1 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setLeftRight( true, false, -43.25, 126.35 )
 				self.smokewidget:setTopBottom( true, false, -69.96, 108.54 )
 				self.smokewidget:setRGB( 0.22, 0.93, 0.93 )
 				self.smokewidget:setAlpha( 1 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setLeftRight( true, false, -30.45, 113.55 )
 				self.fxEmber2:setTopBottom( true, false, -54.96, 125.04 )
 				self.fxEmber2:setRGB( 0.22, 0.93, 0.93 )
 				self.fxEmber2:setAlpha( 1 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setLeftRight( true, false, -34.25, 117.35 )
 				self.fxEmber:setTopBottom( true, false, -42.46, 147.04 )
 				self.fxEmber:setRGB( 0.22, 0.93, 0.93 )
 				self.fxEmber:setAlpha( 1 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setRGB( 0.22, 0.93, 0.93 )
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
@@ -1773,150 +2074,192 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 				self.glowBundleOutline:setRGB( 0.22, 0.93, 0.93 )
 				self.glowBundleOutline:setAlpha( 0 )
 				glowBundleOutlineFrame2( glowBundleOutline, {} )
+
 				self.nextClip = "Focus"
 			end
 		},
 		HundredBundle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 29 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 1 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				SixPackCommonBundleOnOpen:completeAnimation()
 				self.SixPackCommonBundleOnOpen:setAlpha( 0 )
 				self.clipFinished( SixPackCommonBundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setLeftRight( false, false, -80.5, 80.5 )
 				self.BribeOn:setTopBottom( true, false, -40.46, 120.54 )
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setLeftRight( false, false, -80.5, 80.5 )
 				self.glowBribe:setTopBottom( true, false, -40.46, 120.54 )
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				BundleExperimentRareCount:completeAnimation()
 				self.BundleExperimentRareCount:setAlpha( 0 )
 				self.clipFinished( BundleExperimentRareCount, {} )
+
 				CodeBundleRareCount:completeAnimation()
 				self.CodeBundleRareCount:setAlpha( 0 )
 				self.clipFinished( CodeBundleRareCount, {} )
+
 				NoDupesRareCount:completeAnimation()
 				self.NoDupesRareCount:setAlpha( 0 )
 				self.clipFinished( NoDupesRareCount, {} )
+
 				HundredBundleCount:completeAnimation()
 				self.HundredBundleCount:setAlpha( 1 )
 				self.clipFinished( HundredBundleCount, {} )
+
 				DailyDoubleRareCount:completeAnimation()
 				self.DailyDoubleRareCount:setAlpha( 0 )
 				self.clipFinished( DailyDoubleRareCount, {} )
+
 				SixPackCommonCount:completeAnimation()
 				self.SixPackCommonCount:setAlpha( 0 )
 				self.clipFinished( SixPackCommonCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				GenericRewardImage:completeAnimation()
 				self.GenericRewardImage:setAlpha( 0 )
 				self.clipFinished( GenericRewardImage, {} )
+
 				GenericRewardCount0:completeAnimation()
 				self.GenericRewardCount0:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount0, {} )
+
 				GenericRewardCount:completeAnimation()
 				self.GenericRewardCount:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount, {} )
+
 				WeaponBribe3Count0:completeAnimation()
 				self.WeaponBribe3Count0:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count0, {} )
+
 				WeaponBribe3Count:completeAnimation()
 				self.WeaponBribe3Count:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count, {} )
+
 				LimitedEditionCamoCount0:completeAnimation()
 				self.LimitedEditionCamoCount0:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount0, {} )
+
 				LimitedEditionCamoCount:completeAnimation()
 				self.LimitedEditionCamoCount:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 14 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 1 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setLeftRight( true, false, -43.25, 126.35 )
 				self.smokewidget:setTopBottom( true, false, -69.96, 108.54 )
 				self.smokewidget:setRGB( 0.22, 0.93, 0.93 )
 				self.smokewidget:setAlpha( 1 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setLeftRight( true, false, -30.45, 113.55 )
 				self.fxEmber2:setTopBottom( true, false, -54.96, 125.04 )
 				self.fxEmber2:setRGB( 0.22, 0.93, 0.93 )
 				self.fxEmber2:setAlpha( 1 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setLeftRight( true, false, -34.25, 117.35 )
 				self.fxEmber:setTopBottom( true, false, -42.46, 147.04 )
 				self.fxEmber:setRGB( 0.22, 0.93, 0.93 )
 				self.fxEmber:setAlpha( 1 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setRGB( 0.22, 0.93, 0.93 )
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
@@ -1974,150 +2317,192 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 				self.glowBundleOutline:setRGB( 0.22, 0.93, 0.93 )
 				self.glowBundleOutline:setAlpha( 0 )
 				glowBundleOutlineFrame2( glowBundleOutline, {} )
+
 				self.nextClip = "Focus"
 			end
 		},
 		BundleExperimentRareBundle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 29 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 1 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				SixPackCommonBundleOnOpen:completeAnimation()
 				self.SixPackCommonBundleOnOpen:setAlpha( 0 )
 				self.clipFinished( SixPackCommonBundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setLeftRight( false, false, -80.5, 80.5 )
 				self.BribeOn:setTopBottom( true, false, -40.46, 120.54 )
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setLeftRight( false, false, -80.5, 80.5 )
 				self.glowBribe:setTopBottom( true, false, -40.46, 120.54 )
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				BundleExperimentRareCount:completeAnimation()
 				self.BundleExperimentRareCount:setAlpha( 1 )
 				self.clipFinished( BundleExperimentRareCount, {} )
+
 				CodeBundleRareCount:completeAnimation()
 				self.CodeBundleRareCount:setAlpha( 0 )
 				self.clipFinished( CodeBundleRareCount, {} )
+
 				NoDupesRareCount:completeAnimation()
 				self.NoDupesRareCount:setAlpha( 0 )
 				self.clipFinished( NoDupesRareCount, {} )
+
 				HundredBundleCount:completeAnimation()
 				self.HundredBundleCount:setAlpha( 0 )
 				self.clipFinished( HundredBundleCount, {} )
+
 				DailyDoubleRareCount:completeAnimation()
 				self.DailyDoubleRareCount:setAlpha( 0 )
 				self.clipFinished( DailyDoubleRareCount, {} )
+
 				SixPackCommonCount:completeAnimation()
 				self.SixPackCommonCount:setAlpha( 0 )
 				self.clipFinished( SixPackCommonCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				GenericRewardImage:completeAnimation()
 				self.GenericRewardImage:setAlpha( 0 )
 				self.clipFinished( GenericRewardImage, {} )
+
 				GenericRewardCount0:completeAnimation()
 				self.GenericRewardCount0:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount0, {} )
+
 				GenericRewardCount:completeAnimation()
 				self.GenericRewardCount:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount, {} )
+
 				WeaponBribe3Count0:completeAnimation()
 				self.WeaponBribe3Count0:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count0, {} )
+
 				WeaponBribe3Count:completeAnimation()
 				self.WeaponBribe3Count:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count, {} )
+
 				LimitedEditionCamoCount0:completeAnimation()
 				self.LimitedEditionCamoCount0:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount0, {} )
+
 				LimitedEditionCamoCount:completeAnimation()
 				self.LimitedEditionCamoCount:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 15 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 1 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setLeftRight( true, false, -43.25, 126.35 )
 				self.smokewidget:setTopBottom( true, false, -69.96, 108.54 )
 				self.smokewidget:setRGB( 0.22, 0.93, 0.93 )
 				self.smokewidget:setAlpha( 1 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setLeftRight( true, false, -30.45, 113.55 )
 				self.fxEmber2:setTopBottom( true, false, -54.96, 125.04 )
 				self.fxEmber2:setRGB( 0.22, 0.93, 0.93 )
 				self.fxEmber2:setAlpha( 1 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setLeftRight( true, false, -34.25, 117.35 )
 				self.fxEmber:setTopBottom( true, false, -42.46, 147.04 )
 				self.fxEmber:setRGB( 0.22, 0.93, 0.93 )
 				self.fxEmber:setAlpha( 1 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setRGB( 0.22, 0.93, 0.93 )
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
@@ -2147,6 +2532,7 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 				BundleExperimentRareCount:completeAnimation()
 				self.BundleExperimentRareCount:setAlpha( 0.8 )
 				BundleExperimentRareCountFrame2( BundleExperimentRareCount, {} )
+
 				DailyDoubleRareCount:completeAnimation()
 				self.DailyDoubleRareCount:setAlpha( 0 )
 				self.clipFinished( DailyDoubleRareCount, {} )
@@ -2178,150 +2564,192 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 				self.glowBundleOutline:setRGB( 0.22, 0.93, 0.93 )
 				self.glowBundleOutline:setAlpha( 0 )
 				glowBundleOutlineFrame2( glowBundleOutline, {} )
+
 				self.nextClip = "Focus"
 			end
 		},
 		NoDupesRareBundle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 29 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 1 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				SixPackCommonBundleOnOpen:completeAnimation()
 				self.SixPackCommonBundleOnOpen:setAlpha( 0 )
 				self.clipFinished( SixPackCommonBundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setLeftRight( false, false, -80.5, 80.5 )
 				self.BribeOn:setTopBottom( true, false, -40.46, 120.54 )
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setLeftRight( false, false, -80.5, 80.5 )
 				self.glowBribe:setTopBottom( true, false, -40.46, 120.54 )
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				BundleExperimentRareCount:completeAnimation()
 				self.BundleExperimentRareCount:setAlpha( 0 )
 				self.clipFinished( BundleExperimentRareCount, {} )
+
 				CodeBundleRareCount:completeAnimation()
 				self.CodeBundleRareCount:setAlpha( 0 )
 				self.clipFinished( CodeBundleRareCount, {} )
+
 				NoDupesRareCount:completeAnimation()
 				self.NoDupesRareCount:setAlpha( 1 )
 				self.clipFinished( NoDupesRareCount, {} )
+
 				HundredBundleCount:completeAnimation()
 				self.HundredBundleCount:setAlpha( 0 )
 				self.clipFinished( HundredBundleCount, {} )
+
 				DailyDoubleRareCount:completeAnimation()
 				self.DailyDoubleRareCount:setAlpha( 0 )
 				self.clipFinished( DailyDoubleRareCount, {} )
+
 				SixPackCommonCount:completeAnimation()
 				self.SixPackCommonCount:setAlpha( 0 )
 				self.clipFinished( SixPackCommonCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				GenericRewardImage:completeAnimation()
 				self.GenericRewardImage:setAlpha( 0 )
 				self.clipFinished( GenericRewardImage, {} )
+
 				GenericRewardCount0:completeAnimation()
 				self.GenericRewardCount0:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount0, {} )
+
 				GenericRewardCount:completeAnimation()
 				self.GenericRewardCount:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount, {} )
+
 				WeaponBribe3Count0:completeAnimation()
 				self.WeaponBribe3Count0:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count0, {} )
+
 				WeaponBribe3Count:completeAnimation()
 				self.WeaponBribe3Count:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count, {} )
+
 				LimitedEditionCamoCount0:completeAnimation()
 				self.LimitedEditionCamoCount0:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount0, {} )
+
 				LimitedEditionCamoCount:completeAnimation()
 				self.LimitedEditionCamoCount:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 15 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 1 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setLeftRight( true, false, -43.25, 126.35 )
 				self.smokewidget:setTopBottom( true, false, -69.96, 108.54 )
 				self.smokewidget:setRGB( 0.22, 0.93, 0.93 )
 				self.smokewidget:setAlpha( 1 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setLeftRight( true, false, -30.45, 113.55 )
 				self.fxEmber2:setTopBottom( true, false, -54.96, 125.04 )
 				self.fxEmber2:setRGB( 0.22, 0.93, 0.93 )
 				self.fxEmber2:setAlpha( 1 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setLeftRight( true, false, -34.25, 117.35 )
 				self.fxEmber:setTopBottom( true, false, -42.46, 147.04 )
 				self.fxEmber:setRGB( 0.22, 0.93, 0.93 )
 				self.fxEmber:setAlpha( 1 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setRGB( 0.22, 0.93, 0.93 )
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
@@ -2351,6 +2779,7 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 				NoDupesRareCount:completeAnimation()
 				self.NoDupesRareCount:setAlpha( 0.8 )
 				NoDupesRareCountFrame2( NoDupesRareCount, {} )
+
 				DailyDoubleRareCount:completeAnimation()
 				self.DailyDoubleRareCount:setAlpha( 0 )
 				self.clipFinished( DailyDoubleRareCount, {} )
@@ -2382,153 +2811,196 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 				self.glowBundleOutline:setRGB( 0.22, 0.93, 0.93 )
 				self.glowBundleOutline:setAlpha( 0 )
 				glowBundleOutlineFrame2( glowBundleOutline, {} )
+
 				self.nextClip = "Focus"
 			end
 		},
 		CodeBundleRareBundle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 29 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 1 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				SixPackCommonBundleOnOpen:completeAnimation()
 				self.SixPackCommonBundleOnOpen:setAlpha( 0 )
 				self.clipFinished( SixPackCommonBundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setLeftRight( false, false, -80.5, 80.5 )
 				self.BribeOn:setTopBottom( true, false, -40.46, 120.54 )
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setLeftRight( false, false, -80.5, 80.5 )
 				self.glowBribe:setTopBottom( true, false, -40.46, 120.54 )
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				BundleExperimentRareCount:completeAnimation()
 				self.BundleExperimentRareCount:setAlpha( 0 )
 				self.clipFinished( BundleExperimentRareCount, {} )
+
 				CodeBundleRareCount:completeAnimation()
 				self.CodeBundleRareCount:setAlpha( 1 )
 				self.clipFinished( CodeBundleRareCount, {} )
+
 				NoDupesRareCount:completeAnimation()
 				self.NoDupesRareCount:setAlpha( 0 )
 				self.clipFinished( NoDupesRareCount, {} )
+
 				HundredBundleCount:completeAnimation()
 				self.HundredBundleCount:setAlpha( 0 )
 				self.clipFinished( HundredBundleCount, {} )
+
 				DailyDoubleRareCount:completeAnimation()
 				self.DailyDoubleRareCount:setAlpha( 0 )
 				self.clipFinished( DailyDoubleRareCount, {} )
+
 				SixPackCommonCount:completeAnimation()
 				self.SixPackCommonCount:setAlpha( 0 )
 				self.clipFinished( SixPackCommonCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				GenericRewardImage:completeAnimation()
 				self.GenericRewardImage:setAlpha( 0 )
 				self.clipFinished( GenericRewardImage, {} )
+
 				GenericRewardCount0:completeAnimation()
 				self.GenericRewardCount0:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount0, {} )
+
 				GenericRewardCount:completeAnimation()
 				self.GenericRewardCount:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount, {} )
+
 				WeaponBribe3Count0:completeAnimation()
 				self.WeaponBribe3Count0:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count0, {} )
+
 				WeaponBribe3Count:completeAnimation()
 				self.WeaponBribe3Count:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count, {} )
+
 				LimitedEditionCamoCount0:completeAnimation()
 				self.LimitedEditionCamoCount0:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount0, {} )
+
 				LimitedEditionCamoCount:completeAnimation()
 				self.LimitedEditionCamoCount:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 16 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 1 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setLeftRight( true, false, -43.25, 126.35 )
 				self.smokewidget:setTopBottom( true, false, -69.96, 108.54 )
 				self.smokewidget:setRGB( 0.22, 0.93, 0.93 )
 				self.smokewidget:setAlpha( 1 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setLeftRight( true, false, -30.45, 113.55 )
 				self.fxEmber2:setTopBottom( true, false, -54.96, 125.04 )
 				self.fxEmber2:setRGB( 0.22, 0.93, 0.93 )
 				self.fxEmber2:setAlpha( 1 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setLeftRight( true, false, -34.25, 117.35 )
 				self.fxEmber:setTopBottom( true, false, -42.46, 147.04 )
 				self.fxEmber:setRGB( 0.22, 0.93, 0.93 )
 				self.fxEmber:setAlpha( 1 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setRGB( 0.22, 0.93, 0.93 )
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleExperimentRareCount:completeAnimation()
 				self.BundleExperimentRareCount:setAlpha( 0 )
 				self.clipFinished( BundleExperimentRareCount, {} )
@@ -2558,6 +3030,7 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 				CodeBundleRareCount:completeAnimation()
 				self.CodeBundleRareCount:setAlpha( 0.8 )
 				CodeBundleRareCountFrame2( CodeBundleRareCount, {} )
+
 				DailyDoubleRareCount:completeAnimation()
 				self.DailyDoubleRareCount:setAlpha( 0 )
 				self.clipFinished( DailyDoubleRareCount, {} )
@@ -2589,225 +3062,289 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 				self.glowBundleOutline:setRGB( 0.22, 0.93, 0.93 )
 				self.glowBundleOutline:setAlpha( 0 )
 				glowBundleOutlineFrame2( glowBundleOutline, {} )
+
 				self.nextClip = "Focus"
 			end
 		},
 		WeaponBribe3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 36 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 0 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				SixPackCommonBundleOnOpen:completeAnimation()
 				self.SixPackCommonBundleOnOpen:setAlpha( 0 )
 				self.clipFinished( SixPackCommonBundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setLeftRight( false, false, -80.5, 80.5 )
 				self.BribeOn:setTopBottom( true, false, -40.46, 120.54 )
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setLeftRight( false, false, -80.5, 80.5 )
 				self.glowBribe:setTopBottom( true, false, -40.46, 120.54 )
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				BundleExperimentRareCount:completeAnimation()
 				self.BundleExperimentRareCount:setAlpha( 0 )
 				self.clipFinished( BundleExperimentRareCount, {} )
+
 				CodeBundleRareCount:completeAnimation()
 				self.CodeBundleRareCount:setAlpha( 0 )
 				self.clipFinished( CodeBundleRareCount, {} )
+
 				NoDupesRareCount:completeAnimation()
 				self.NoDupesRareCount:setAlpha( 0 )
 				self.clipFinished( NoDupesRareCount, {} )
+
 				HundredBundleCount:completeAnimation()
 				self.HundredBundleCount:setAlpha( 0 )
 				self.clipFinished( HundredBundleCount, {} )
+
 				DailyDoubleRareCount:completeAnimation()
 				self.DailyDoubleRareCount:setAlpha( 0 )
 				self.clipFinished( DailyDoubleRareCount, {} )
+
 				SixPackCommonCount:completeAnimation()
 				self.SixPackCommonCount:setAlpha( 0 )
 				self.clipFinished( SixPackCommonCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				IncentiveRare:completeAnimation()
 				self.IncentiveRare:setAlpha( 0 )
 				self.clipFinished( IncentiveRare, {} )
+
 				IncentiveWeapon:completeAnimation()
 				self.IncentiveWeapon:setAlpha( 0 )
 				self.clipFinished( IncentiveWeapon, {} )
+
 				GenericRewardImage:completeAnimation()
 				self.GenericRewardImage:setAlpha( 0 )
 				self.clipFinished( GenericRewardImage, {} )
+
 				GenericRewardImage0:completeAnimation()
 				self.GenericRewardImage0:setAlpha( 1 )
 				self.clipFinished( GenericRewardImage0, {} )
+
 				IncentiveNumberbacker:completeAnimation()
 				self.IncentiveNumberbacker:setLeftRight( true, false, -45, 123 )
 				self.IncentiveNumberbacker:setTopBottom( true, false, 35, 107 )
 				self.IncentiveNumberbacker:setAlpha( 1 )
 				self.clipFinished( IncentiveNumberbacker, {} )
+
 				WeaponIncentiveCount:completeAnimation()
 				self.WeaponIncentiveCount:setLeftRight( true, false, -61.5, 138.5 )
 				self.WeaponIncentiveCount:setTopBottom( true, false, 19, 53 )
 				self.WeaponIncentiveCount:setAlpha( 0 )
 				self.clipFinished( WeaponIncentiveCount, {} )
+
 				WeaponIncentiveCount0:completeAnimation()
 				self.WeaponIncentiveCount0:setLeftRight( true, false, -61.5, 138.5 )
 				self.WeaponIncentiveCount0:setTopBottom( true, false, 18, 52 )
 				self.WeaponIncentiveCount0:setAlpha( 0 )
 				self.clipFinished( WeaponIncentiveCount0, {} )
+
 				RareIncentiveCount:completeAnimation()
 				self.RareIncentiveCount:setAlpha( 0 )
 				self.clipFinished( RareIncentiveCount, {} )
+
 				GenericRewardCount0:completeAnimation()
 				self.GenericRewardCount0:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount0, {} )
+
 				GenericRewardCount:completeAnimation()
 				self.GenericRewardCount:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount, {} )
+
 				WeaponBribe3Count0:completeAnimation()
 				self.WeaponBribe3Count0:setLeftRight( true, false, -61.93, 138.07 )
 				self.WeaponBribe3Count0:setTopBottom( true, false, 54.75, 88.75 )
 				self.WeaponBribe3Count0:setAlpha( 0.75 )
 				self.clipFinished( WeaponBribe3Count0, {} )
+
 				WeaponBribe3Count:completeAnimation()
 				self.WeaponBribe3Count:setLeftRight( true, false, -61.93, 138.07 )
 				self.WeaponBribe3Count:setTopBottom( true, false, 53.75, 87.75 )
 				self.WeaponBribe3Count:setAlpha( 1 )
 				self.clipFinished( WeaponBribe3Count, {} )
+
 				LimitedEditionCamoCount0:completeAnimation()
 				self.LimitedEditionCamoCount0:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount0, {} )
+
 				LimitedEditionCamoCount:completeAnimation()
 				self.LimitedEditionCamoCount:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 27 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 0 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setLeftRight( false, false, -80.5, 80.5 )
 				self.BribeOn:setTopBottom( true, false, -40.46, 120.54 )
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setLeftRight( false, false, -80.5, 80.5 )
 				self.glowBribe:setTopBottom( true, false, -40.46, 120.54 )
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				IncentiveRare:completeAnimation()
 				self.IncentiveRare:setAlpha( 0 )
 				self.clipFinished( IncentiveRare, {} )
+
 				IncentiveWeapon:completeAnimation()
 				self.IncentiveWeapon:setAlpha( 0 )
 				self.clipFinished( IncentiveWeapon, {} )
+
 				GenericRewardImage:completeAnimation()
 				self.GenericRewardImage:setAlpha( 0 )
 				self.clipFinished( GenericRewardImage, {} )
+
 				GenericRewardImage0:completeAnimation()
 				self.GenericRewardImage0:setAlpha( 1 )
 				self.clipFinished( GenericRewardImage0, {} )
+
 				IncentiveNumberbacker:completeAnimation()
 				self.IncentiveNumberbacker:setLeftRight( true, false, -45, 123 )
 				self.IncentiveNumberbacker:setTopBottom( true, false, 35, 107 )
 				self.IncentiveNumberbacker:setAlpha( 1 )
 				self.clipFinished( IncentiveNumberbacker, {} )
+
 				WeaponIncentiveCount:completeAnimation()
 				self.WeaponIncentiveCount:setAlpha( 0 )
 				self.clipFinished( WeaponIncentiveCount, {} )
+
 				WeaponIncentiveCount0:completeAnimation()
 				self.WeaponIncentiveCount0:setAlpha( 0 )
 				self.clipFinished( WeaponIncentiveCount0, {} )
+
 				RareIncentiveCount:completeAnimation()
 				self.RareIncentiveCount:setAlpha( 0 )
 				self.clipFinished( RareIncentiveCount, {} )
+
 				GenericRewardCount0:completeAnimation()
 				self.GenericRewardCount0:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount0, {} )
+
 				GenericRewardCount:completeAnimation()
 				self.GenericRewardCount:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount, {} )
+
 				WeaponBribe3Count0:completeAnimation()
 				self.WeaponBribe3Count0:setLeftRight( true, false, -61.93, 138.07 )
 				self.WeaponBribe3Count0:setTopBottom( true, false, 54.75, 88.75 )
 				self.WeaponBribe3Count0:setAlpha( 0.75 )
 				self.clipFinished( WeaponBribe3Count0, {} )
+
 				WeaponBribe3Count:completeAnimation()
 				self.WeaponBribe3Count:setLeftRight( true, false, -61.93, 138.07 )
 				self.WeaponBribe3Count:setTopBottom( true, false, 53.75, 87.75 )
@@ -2818,128 +3355,164 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 		LimitedEditionCamo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 36 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 0 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				SixPackCommonBundleOnOpen:completeAnimation()
 				self.SixPackCommonBundleOnOpen:setAlpha( 0 )
 				self.clipFinished( SixPackCommonBundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setLeftRight( false, false, -80.5, 80.5 )
 				self.BribeOn:setTopBottom( true, false, -40.46, 120.54 )
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setLeftRight( false, false, -80.5, 80.5 )
 				self.glowBribe:setTopBottom( true, false, -40.46, 120.54 )
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				BundleExperimentRareCount:completeAnimation()
 				self.BundleExperimentRareCount:setAlpha( 0 )
 				self.clipFinished( BundleExperimentRareCount, {} )
+
 				CodeBundleRareCount:completeAnimation()
 				self.CodeBundleRareCount:setAlpha( 0 )
 				self.clipFinished( CodeBundleRareCount, {} )
+
 				NoDupesRareCount:completeAnimation()
 				self.NoDupesRareCount:setAlpha( 0 )
 				self.clipFinished( NoDupesRareCount, {} )
+
 				HundredBundleCount:completeAnimation()
 				self.HundredBundleCount:setAlpha( 0 )
 				self.clipFinished( HundredBundleCount, {} )
+
 				DailyDoubleRareCount:completeAnimation()
 				self.DailyDoubleRareCount:setAlpha( 0 )
 				self.clipFinished( DailyDoubleRareCount, {} )
+
 				SixPackCommonCount:completeAnimation()
 				self.SixPackCommonCount:setAlpha( 0 )
 				self.clipFinished( SixPackCommonCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				IncentiveRare:completeAnimation()
 				self.IncentiveRare:setAlpha( 0 )
 				self.clipFinished( IncentiveRare, {} )
+
 				IncentiveWeapon:completeAnimation()
 				self.IncentiveWeapon:setAlpha( 0 )
 				self.clipFinished( IncentiveWeapon, {} )
+
 				GenericRewardImage:completeAnimation()
 				self.GenericRewardImage:setAlpha( 0 )
 				self.clipFinished( GenericRewardImage, {} )
+
 				GenericRewardImage0:completeAnimation()
 				self.GenericRewardImage0:setAlpha( 1 )
 				self.clipFinished( GenericRewardImage0, {} )
+
 				IncentiveNumberbacker:completeAnimation()
 				self.IncentiveNumberbacker:setLeftRight( true, false, -45, 123 )
 				self.IncentiveNumberbacker:setTopBottom( true, false, 35, 107 )
 				self.IncentiveNumberbacker:setAlpha( 1 )
 				self.clipFinished( IncentiveNumberbacker, {} )
+
 				WeaponIncentiveCount:completeAnimation()
 				self.WeaponIncentiveCount:setLeftRight( true, false, -61.5, 138.5 )
 				self.WeaponIncentiveCount:setTopBottom( true, false, 19, 53 )
 				self.WeaponIncentiveCount:setAlpha( 0 )
 				self.clipFinished( WeaponIncentiveCount, {} )
+
 				WeaponIncentiveCount0:completeAnimation()
 				self.WeaponIncentiveCount0:setLeftRight( true, false, -61.5, 138.5 )
 				self.WeaponIncentiveCount0:setTopBottom( true, false, 18, 52 )
 				self.WeaponIncentiveCount0:setAlpha( 0 )
 				self.clipFinished( WeaponIncentiveCount0, {} )
+
 				RareIncentiveCount:completeAnimation()
 				self.RareIncentiveCount:setAlpha( 0 )
 				self.clipFinished( RareIncentiveCount, {} )
+
 				GenericRewardCount0:completeAnimation()
 				self.GenericRewardCount0:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount0, {} )
+
 				GenericRewardCount:completeAnimation()
 				self.GenericRewardCount:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount, {} )
+
 				WeaponBribe3Count0:completeAnimation()
 				self.WeaponBribe3Count0:setLeftRight( true, false, -61.93, 138.07 )
 				self.WeaponBribe3Count0:setTopBottom( true, false, 54.75, 88.75 )
 				self.WeaponBribe3Count0:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count0, {} )
+
 				WeaponBribe3Count:completeAnimation()
 				self.WeaponBribe3Count:setLeftRight( true, false, -61.93, 138.07 )
 				self.WeaponBribe3Count:setTopBottom( true, false, 53.75, 87.75 )
 				self.WeaponBribe3Count:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count, {} )
+
 				LimitedEditionCamoCount0:completeAnimation()
 				self.LimitedEditionCamoCount0:setLeftRight( true, false, -61.93, 138.07 )
 				self.LimitedEditionCamoCount0:setTopBottom( true, false, 54.75, 88.75 )
 				self.LimitedEditionCamoCount0:setAlpha( 0.75 )
 				self.clipFinished( LimitedEditionCamoCount0, {} )
+
 				LimitedEditionCamoCount:completeAnimation()
 				self.LimitedEditionCamoCount:setLeftRight( true, false, -61.93, 138.07 )
 				self.LimitedEditionCamoCount:setTopBottom( true, false, 53.75, 87.75 )
@@ -2948,103 +3521,132 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 29 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 0 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setLeftRight( false, false, -80.5, 80.5 )
 				self.BribeOn:setTopBottom( true, false, -40.46, 120.54 )
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setLeftRight( false, false, -80.5, 80.5 )
 				self.glowBribe:setTopBottom( true, false, -40.46, 120.54 )
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				IncentiveRare:completeAnimation()
 				self.IncentiveRare:setAlpha( 0 )
 				self.clipFinished( IncentiveRare, {} )
+
 				IncentiveWeapon:completeAnimation()
 				self.IncentiveWeapon:setAlpha( 0 )
 				self.clipFinished( IncentiveWeapon, {} )
+
 				GenericRewardImage:completeAnimation()
 				self.GenericRewardImage:setAlpha( 0 )
 				self.clipFinished( GenericRewardImage, {} )
+
 				GenericRewardImage0:completeAnimation()
 				self.GenericRewardImage0:setAlpha( 1 )
 				self.clipFinished( GenericRewardImage0, {} )
+
 				IncentiveNumberbacker:completeAnimation()
 				self.IncentiveNumberbacker:setLeftRight( true, false, -45, 123 )
 				self.IncentiveNumberbacker:setTopBottom( true, false, 35, 107 )
 				self.IncentiveNumberbacker:setAlpha( 1 )
 				self.clipFinished( IncentiveNumberbacker, {} )
+
 				WeaponIncentiveCount:completeAnimation()
 				self.WeaponIncentiveCount:setAlpha( 0 )
 				self.clipFinished( WeaponIncentiveCount, {} )
+
 				WeaponIncentiveCount0:completeAnimation()
 				self.WeaponIncentiveCount0:setAlpha( 0 )
 				self.clipFinished( WeaponIncentiveCount0, {} )
+
 				RareIncentiveCount:completeAnimation()
 				self.RareIncentiveCount:setAlpha( 0 )
 				self.clipFinished( RareIncentiveCount, {} )
+
 				GenericRewardCount0:completeAnimation()
 				self.GenericRewardCount0:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount0, {} )
+
 				GenericRewardCount:completeAnimation()
 				self.GenericRewardCount:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount, {} )
+
 				WeaponBribe3Count0:completeAnimation()
 				self.WeaponBribe3Count0:setLeftRight( true, false, -61.93, 138.07 )
 				self.WeaponBribe3Count0:setTopBottom( true, false, 54.75, 88.75 )
 				self.WeaponBribe3Count0:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count0, {} )
+
 				WeaponBribe3Count:completeAnimation()
 				self.WeaponBribe3Count:setLeftRight( true, false, -61.93, 138.07 )
 				self.WeaponBribe3Count:setTopBottom( true, false, 53.75, 87.75 )
 				self.WeaponBribe3Count:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count, {} )
+
 				LimitedEditionCamoCount0:completeAnimation()
 				self.LimitedEditionCamoCount0:setLeftRight( true, false, -61.93, 138.07 )
 				self.LimitedEditionCamoCount0:setTopBottom( true, false, 54.75, 88.75 )
 				self.LimitedEditionCamoCount0:setAlpha( 0.75 )
 				self.clipFinished( LimitedEditionCamoCount0, {} )
+
 				LimitedEditionCamoCount:completeAnimation()
 				self.LimitedEditionCamoCount:setLeftRight( true, false, -61.93, 138.07 )
 				self.LimitedEditionCamoCount:setTopBottom( true, false, 53.75, 87.75 )
@@ -3055,148 +3657,190 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 		RareBundle10for5 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 30 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 1 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				SixPackCommonBundleOnOpen:completeAnimation()
 				self.SixPackCommonBundleOnOpen:setAlpha( 0 )
 				self.clipFinished( SixPackCommonBundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setLeftRight( false, false, -80.5, 80.5 )
 				self.BribeOn:setTopBottom( true, false, -40.46, 120.54 )
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setLeftRight( false, false, -80.5, 80.5 )
 				self.glowBribe:setTopBottom( true, false, -40.46, 120.54 )
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				BundleExperimentRareCount:completeAnimation()
 				self.BundleExperimentRareCount:setAlpha( 0 )
 				self.clipFinished( BundleExperimentRareCount, {} )
+
 				CodeBundleRareCount:completeAnimation()
 				self.CodeBundleRareCount:setAlpha( 0 )
 				self.clipFinished( CodeBundleRareCount, {} )
+
 				NoDupesRareCount:completeAnimation()
 				self.NoDupesRareCount:setAlpha( 0 )
 				self.clipFinished( NoDupesRareCount, {} )
+
 				HundredBundleCount:completeAnimation()
 				self.HundredBundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.HundredBundleCount:setAlpha( 0 )
 				self.clipFinished( HundredBundleCount, {} )
+
 				DailyDoubleRareCount:completeAnimation()
 				self.DailyDoubleRareCount:setAlpha( 0 )
 				self.clipFinished( DailyDoubleRareCount, {} )
+
 				SixPackCommonCount:completeAnimation()
 				self.SixPackCommonCount:setAlpha( 0 )
 				self.clipFinished( SixPackCommonCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				GenericRewardImage:completeAnimation()
 				self.GenericRewardImage:setAlpha( 0 )
 				self.clipFinished( GenericRewardImage, {} )
+
 				GenericRewardCount0:completeAnimation()
 				self.GenericRewardCount0:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount0, {} )
+
 				GenericRewardCount:completeAnimation()
 				self.GenericRewardCount:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount, {} )
+
 				WeaponBribe3Count0:completeAnimation()
 				self.WeaponBribe3Count0:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count0, {} )
+
 				WeaponBribe3Count:completeAnimation()
 				self.WeaponBribe3Count:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count, {} )
+
 				LimitedEditionCamoCount0:completeAnimation()
 				self.LimitedEditionCamoCount0:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount0, {} )
+
 				LimitedEditionCamoCount:completeAnimation()
 				self.LimitedEditionCamoCount:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount, {} )
+
 				RareBundle10for5Count:completeAnimation()
 				self.RareBundle10for5Count:setAlpha( 1 )
 				self.clipFinished( RareBundle10for5Count, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 14 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 1 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setLeftRight( true, false, -43.25, 126.35 )
 				self.smokewidget:setTopBottom( true, false, -69.96, 108.54 )
 				self.smokewidget:setRGB( 0.22, 0.93, 0.93 )
 				self.smokewidget:setAlpha( 1 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setLeftRight( true, false, -30.45, 113.55 )
 				self.fxEmber2:setTopBottom( true, false, -54.96, 125.04 )
 				self.fxEmber2:setRGB( 0.22, 0.93, 0.93 )
 				self.fxEmber2:setAlpha( 1 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setLeftRight( true, false, -34.25, 117.35 )
 				self.fxEmber:setTopBottom( true, false, -42.46, 147.04 )
 				self.fxEmber:setRGB( 0.22, 0.93, 0.93 )
 				self.fxEmber:setAlpha( 1 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setRGB( 0.22, 0.93, 0.93 )
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
@@ -3254,160 +3898,205 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 				self.glowBundleOutline:setRGB( 0.22, 0.93, 0.93 )
 				self.glowBundleOutline:setAlpha( 0 )
 				glowBundleOutlineFrame2( glowBundleOutline, {} )
+
 				self.nextClip = "Focus"
 			end
 		},
 		Rare15Bundle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 31 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 1 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				SixPackCommonBundleOnOpen:completeAnimation()
 				self.SixPackCommonBundleOnOpen:setAlpha( 0 )
 				self.clipFinished( SixPackCommonBundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setLeftRight( false, false, -80.5, 80.5 )
 				self.BribeOn:setTopBottom( true, false, -40.46, 120.54 )
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setLeftRight( false, false, -80.5, 80.5 )
 				self.glowBribe:setTopBottom( true, false, -40.46, 120.54 )
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				BundleExperimentRareCount:completeAnimation()
 				self.BundleExperimentRareCount:setAlpha( 0 )
 				self.clipFinished( BundleExperimentRareCount, {} )
+
 				CodeBundleRareCount:completeAnimation()
 				self.CodeBundleRareCount:setAlpha( 0 )
 				self.clipFinished( CodeBundleRareCount, {} )
+
 				NoDupesRareCount:completeAnimation()
 				self.NoDupesRareCount:setAlpha( 0 )
 				self.clipFinished( NoDupesRareCount, {} )
+
 				HundredBundleCount:completeAnimation()
 				self.HundredBundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.HundredBundleCount:setAlpha( 0 )
 				self.clipFinished( HundredBundleCount, {} )
+
 				DailyDoubleRareCount:completeAnimation()
 				self.DailyDoubleRareCount:setAlpha( 0 )
 				self.clipFinished( DailyDoubleRareCount, {} )
+
 				SixPackCommonCount:completeAnimation()
 				self.SixPackCommonCount:setAlpha( 0 )
 				self.clipFinished( SixPackCommonCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				GenericRewardImage:completeAnimation()
 				self.GenericRewardImage:setAlpha( 0 )
 				self.clipFinished( GenericRewardImage, {} )
+
 				GenericRewardCount0:completeAnimation()
 				self.GenericRewardCount0:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount0, {} )
+
 				GenericRewardCount:completeAnimation()
 				self.GenericRewardCount:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount, {} )
+
 				WeaponBribe3Count0:completeAnimation()
 				self.WeaponBribe3Count0:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count0, {} )
+
 				WeaponBribe3Count:completeAnimation()
 				self.WeaponBribe3Count:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count, {} )
+
 				LimitedEditionCamoCount0:completeAnimation()
 				self.LimitedEditionCamoCount0:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount0, {} )
+
 				LimitedEditionCamoCount:completeAnimation()
 				self.LimitedEditionCamoCount:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount, {} )
+
 				RareBundle10for5Count:completeAnimation()
 				self.RareBundle10for5Count:setAlpha( 0 )
 				self.clipFinished( RareBundle10for5Count, {} )
+
 				Rare15BundleCount:completeAnimation()
 				self.Rare15BundleCount:setAlpha( 1 )
 				self.clipFinished( Rare15BundleCount, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 16 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 1 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setLeftRight( true, false, -43.25, 126.35 )
 				self.smokewidget:setTopBottom( true, false, -69.96, 108.54 )
 				self.smokewidget:setRGB( 0.22, 0.93, 0.93 )
 				self.smokewidget:setAlpha( 1 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setLeftRight( true, false, -30.45, 113.55 )
 				self.fxEmber2:setTopBottom( true, false, -54.96, 125.04 )
 				self.fxEmber2:setRGB( 0.22, 0.93, 0.93 )
 				self.fxEmber2:setAlpha( 1 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setLeftRight( true, false, -34.25, 117.35 )
 				self.fxEmber:setTopBottom( true, false, -42.46, 147.04 )
 				self.fxEmber:setRGB( 0.22, 0.93, 0.93 )
 				self.fxEmber:setAlpha( 1 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setRGB( 0.22, 0.93, 0.93 )
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				HundredBundleCount:completeAnimation()
 				self.HundredBundleCount:setAlpha( 0 )
 				self.clipFinished( HundredBundleCount, {} )
@@ -3439,6 +4128,7 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 				self.glowBundleOutline:setRGB( 0.22, 0.93, 0.93 )
 				self.glowBundleOutline:setAlpha( 0 )
 				glowBundleOutlineFrame2( glowBundleOutline, {} )
+
 				RareBundle10for5Count:completeAnimation()
 				self.RareBundle10for5Count:setAlpha( 0 )
 				self.clipFinished( RareBundle10for5Count, {} )
@@ -3468,163 +4158,209 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 				Rare15BundleCount:completeAnimation()
 				self.Rare15BundleCount:setAlpha( 0.8 )
 				Rare15BundleCountFrame2( Rare15BundleCount, {} )
+
 				self.nextClip = "Focus"
 			end
 		},
 		OutfitBribe = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 32 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 1 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				SixPackCommonBundleOnOpen:completeAnimation()
 				self.SixPackCommonBundleOnOpen:setAlpha( 0 )
 				self.clipFinished( SixPackCommonBundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setLeftRight( false, false, -80.5, 80.5 )
 				self.BribeOn:setTopBottom( true, false, -40.46, 120.54 )
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setLeftRight( false, false, -80.5, 80.5 )
 				self.glowBribe:setTopBottom( true, false, -40.46, 120.54 )
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				BundleExperimentRareCount:completeAnimation()
 				self.BundleExperimentRareCount:setAlpha( 0 )
 				self.clipFinished( BundleExperimentRareCount, {} )
+
 				CodeBundleRareCount:completeAnimation()
 				self.CodeBundleRareCount:setAlpha( 0 )
 				self.clipFinished( CodeBundleRareCount, {} )
+
 				NoDupesRareCount:completeAnimation()
 				self.NoDupesRareCount:setAlpha( 0 )
 				self.clipFinished( NoDupesRareCount, {} )
+
 				HundredBundleCount:completeAnimation()
 				self.HundredBundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.HundredBundleCount:setAlpha( 0 )
 				self.clipFinished( HundredBundleCount, {} )
+
 				DailyDoubleRareCount:completeAnimation()
 				self.DailyDoubleRareCount:setAlpha( 0 )
 				self.clipFinished( DailyDoubleRareCount, {} )
+
 				SixPackCommonCount:completeAnimation()
 				self.SixPackCommonCount:setAlpha( 0 )
 				self.clipFinished( SixPackCommonCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				GenericRewardImage:completeAnimation()
 				self.GenericRewardImage:setAlpha( 0 )
 				self.clipFinished( GenericRewardImage, {} )
+
 				GenericRewardCount0:completeAnimation()
 				self.GenericRewardCount0:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount0, {} )
+
 				GenericRewardCount:completeAnimation()
 				self.GenericRewardCount:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount, {} )
+
 				WeaponBribe3Count0:completeAnimation()
 				self.WeaponBribe3Count0:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count0, {} )
+
 				WeaponBribe3Count:completeAnimation()
 				self.WeaponBribe3Count:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count, {} )
+
 				LimitedEditionCamoCount0:completeAnimation()
 				self.LimitedEditionCamoCount0:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount0, {} )
+
 				LimitedEditionCamoCount:completeAnimation()
 				self.LimitedEditionCamoCount:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount, {} )
+
 				RareBundle10for5Count:completeAnimation()
 				self.RareBundle10for5Count:setAlpha( 0 )
 				self.clipFinished( RareBundle10for5Count, {} )
+
 				Rare15BundleCount:completeAnimation()
 				self.Rare15BundleCount:setAlpha( 0 )
 				self.clipFinished( Rare15BundleCount, {} )
+
 				OutfitBribeCount:completeAnimation()
 				self.OutfitBribeCount:setAlpha( 1 )
 				self.clipFinished( OutfitBribeCount, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 17 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 1 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setLeftRight( true, false, -43.25, 126.35 )
 				self.smokewidget:setTopBottom( true, false, -69.96, 108.54 )
 				self.smokewidget:setRGB( 0.22, 0.93, 0.93 )
 				self.smokewidget:setAlpha( 1 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setLeftRight( true, false, -30.45, 113.55 )
 				self.fxEmber2:setTopBottom( true, false, -54.96, 125.04 )
 				self.fxEmber2:setRGB( 0.22, 0.93, 0.93 )
 				self.fxEmber2:setAlpha( 1 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setLeftRight( true, false, -34.25, 117.35 )
 				self.fxEmber:setTopBottom( true, false, -42.46, 147.04 )
 				self.fxEmber:setRGB( 0.22, 0.93, 0.93 )
 				self.fxEmber:setAlpha( 1 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setRGB( 0.22, 0.93, 0.93 )
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				HundredBundleCount:completeAnimation()
 				self.HundredBundleCount:setAlpha( 0 )
 				self.clipFinished( HundredBundleCount, {} )
@@ -3656,9 +4392,11 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 				self.glowBundleOutline:setRGB( 0.22, 0.93, 0.93 )
 				self.glowBundleOutline:setAlpha( 0 )
 				glowBundleOutlineFrame2( glowBundleOutline, {} )
+
 				RareBundle10for5Count:completeAnimation()
 				self.RareBundle10for5Count:setAlpha( 0 )
 				self.clipFinished( RareBundle10for5Count, {} )
+
 				Rare15BundleCount:completeAnimation()
 				self.Rare15BundleCount:setAlpha( 0 )
 				self.clipFinished( Rare15BundleCount, {} )
@@ -3688,150 +4426,192 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 				OutfitBribeCount:completeAnimation()
 				self.OutfitBribeCount:setAlpha( 0.8 )
 				OutfitBribeCountFrame2( OutfitBribeCount, {} )
+
 				self.nextClip = "Focus"
 			end
 		},
 		Bundle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 29 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 1 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				SixPackCommonBundleOnOpen:completeAnimation()
 				self.SixPackCommonBundleOnOpen:setAlpha( 0 )
 				self.clipFinished( SixPackCommonBundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setLeftRight( false, false, -80.5, 80.5 )
 				self.BribeOn:setTopBottom( true, false, -40.46, 120.54 )
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setLeftRight( false, false, -80.5, 80.5 )
 				self.glowBribe:setTopBottom( true, false, -40.46, 120.54 )
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setRGB( 0.97, 0.95, 0.68 )
 				self.BundleCount:setAlpha( 1 )
 				self.clipFinished( BundleCount, {} )
+
 				BundleExperimentRareCount:completeAnimation()
 				self.BundleExperimentRareCount:setAlpha( 0 )
 				self.clipFinished( BundleExperimentRareCount, {} )
+
 				CodeBundleRareCount:completeAnimation()
 				self.CodeBundleRareCount:setAlpha( 0 )
 				self.clipFinished( CodeBundleRareCount, {} )
+
 				NoDupesRareCount:completeAnimation()
 				self.NoDupesRareCount:setAlpha( 0 )
 				self.clipFinished( NoDupesRareCount, {} )
+
 				HundredBundleCount:completeAnimation()
 				self.HundredBundleCount:setAlpha( 0 )
 				self.clipFinished( HundredBundleCount, {} )
+
 				DailyDoubleRareCount:completeAnimation()
 				self.DailyDoubleRareCount:setAlpha( 0 )
 				self.clipFinished( DailyDoubleRareCount, {} )
+
 				SixPackCommonCount:completeAnimation()
 				self.SixPackCommonCount:setAlpha( 0 )
 				self.clipFinished( SixPackCommonCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				GenericRewardImage:completeAnimation()
 				self.GenericRewardImage:setAlpha( 0 )
 				self.clipFinished( GenericRewardImage, {} )
+
 				GenericRewardCount0:completeAnimation()
 				self.GenericRewardCount0:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount0, {} )
+
 				GenericRewardCount:completeAnimation()
 				self.GenericRewardCount:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount, {} )
+
 				WeaponBribe3Count0:completeAnimation()
 				self.WeaponBribe3Count0:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count0, {} )
+
 				WeaponBribe3Count:completeAnimation()
 				self.WeaponBribe3Count:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count, {} )
+
 				LimitedEditionCamoCount0:completeAnimation()
 				self.LimitedEditionCamoCount0:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount0, {} )
+
 				LimitedEditionCamoCount:completeAnimation()
 				self.LimitedEditionCamoCount:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 14 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 1 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setLeftRight( true, false, -43.25, 126.35 )
 				self.smokewidget:setTopBottom( true, false, -69.96, 108.54 )
 				self.smokewidget:setRGB( 0.22, 0.93, 0.93 )
 				self.smokewidget:setAlpha( 1 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setLeftRight( true, false, -30.45, 113.55 )
 				self.fxEmber2:setTopBottom( true, false, -54.96, 125.04 )
 				self.fxEmber2:setRGB( 0.22, 0.93, 0.93 )
 				self.fxEmber2:setAlpha( 1 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setLeftRight( true, false, -34.25, 117.35 )
 				self.fxEmber:setTopBottom( true, false, -42.46, 147.04 )
 				self.fxEmber:setRGB( 0.22, 0.93, 0.93 )
 				self.fxEmber:setAlpha( 1 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setRGB( 0.22, 0.93, 0.93 )
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
@@ -3889,102 +4669,133 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 				self.glowBundleOutline:setRGB( 0.22, 0.93, 0.93 )
 				self.glowBundleOutline:setAlpha( 0 )
 				glowBundleOutlineFrame2( glowBundleOutline, {} )
+
 				self.nextClip = "Focus"
 			end
 		},
 		Rare = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 29 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 0 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				SixPackCommonBundleOnOpen:completeAnimation()
 				self.SixPackCommonBundleOnOpen:setAlpha( 0 )
 				self.clipFinished( SixPackCommonBundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 1 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				BundleExperimentRareCount:completeAnimation()
 				self.BundleExperimentRareCount:setAlpha( 0 )
 				self.clipFinished( BundleExperimentRareCount, {} )
+
 				CodeBundleRareCount:completeAnimation()
 				self.CodeBundleRareCount:setAlpha( 0 )
 				self.clipFinished( CodeBundleRareCount, {} )
+
 				NoDupesRareCount:completeAnimation()
 				self.NoDupesRareCount:setAlpha( 0 )
 				self.clipFinished( NoDupesRareCount, {} )
+
 				HundredBundleCount:completeAnimation()
 				self.HundredBundleCount:setAlpha( 0 )
 				self.clipFinished( HundredBundleCount, {} )
+
 				DailyDoubleRareCount:completeAnimation()
 				self.DailyDoubleRareCount:setAlpha( 0 )
 				self.clipFinished( DailyDoubleRareCount, {} )
+
 				SixPackCommonCount:completeAnimation()
 				self.SixPackCommonCount:setAlpha( 0 )
 				self.clipFinished( SixPackCommonCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				GenericRewardImage:completeAnimation()
 				self.GenericRewardImage:setAlpha( 0 )
 				self.clipFinished( GenericRewardImage, {} )
+
 				GenericRewardCount0:completeAnimation()
 				self.GenericRewardCount0:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount0, {} )
+
 				GenericRewardCount:completeAnimation()
 				self.GenericRewardCount:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount, {} )
+
 				WeaponBribe3Count0:completeAnimation()
 				self.WeaponBribe3Count0:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count0, {} )
+
 				WeaponBribe3Count:completeAnimation()
 				self.WeaponBribe3Count:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count, {} )
+
 				LimitedEditionCamoCount0:completeAnimation()
 				self.LimitedEditionCamoCount0:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount0, {} )
+
 				LimitedEditionCamoCount:completeAnimation()
 				self.LimitedEditionCamoCount:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 14 )
+
 				local glow00Frame2 = function ( glow00, event )
 					local glow00Frame3 = function ( glow00, event )
 						if not event.interrupted then
@@ -4011,23 +4822,29 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				glow00Frame2( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 0 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setRGB( 0.22, 0.93, 0.93 )
 				self.smokewidget:setAlpha( 1 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setRGB( 0.22, 0.93, 0.93 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setRGB( 0.22, 0.93, 0.93 )
 				self.fxEmber:setAlpha( 1 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 1 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
@@ -4059,154 +4876,199 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 				self.glow0:setRGB( 0.22, 0.93, 0.93 )
 				self.glow0:setAlpha( 0 )
 				glow0Frame2( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setAlpha( 0 )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setAlpha( 0 )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				self.nextClip = "Focus"
 			end
 		},
 		Bribe = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 29 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 0 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				SixPackCommonBundleOnOpen:completeAnimation()
 				self.SixPackCommonBundleOnOpen:setAlpha( 0 )
 				self.clipFinished( SixPackCommonBundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setAlpha( 0 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				fxglow:completeAnimation()
 				self.fxglow:setAlpha( 0 )
 				self.clipFinished( fxglow, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setLeftRight( false, false, -80.5, 80.5 )
 				self.BribeOn:setTopBottom( true, false, -40.46, 120.54 )
 				self.BribeOn:setAlpha( 1 )
 				self.BribeOn:setImage( RegisterImage( GetImageForCurrentBribe( controller, "uie_t7_blackmarket_crate_bribe_chip_taunt" ) ) )
 				self.clipFinished( BribeOn, {} )
+
 				glowBribe:completeAnimation()
 				self.glowBribe:setLeftRight( false, false, -80.5, 80.5 )
 				self.glowBribe:setTopBottom( true, false, -40.46, 120.54 )
 				self.glowBribe:setAlpha( 0 )
 				self.glowBribe:setImage( RegisterImage( AppendString( "_hover", GetImageForCurrentBribe( controller, "uie_t7_blackmarket_crate_bribe_chip_taunt" ) ) ) )
 				self.clipFinished( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				BundleExperimentRareCount:completeAnimation()
 				self.BundleExperimentRareCount:setAlpha( 0 )
 				self.clipFinished( BundleExperimentRareCount, {} )
+
 				CodeBundleRareCount:completeAnimation()
 				self.CodeBundleRareCount:setAlpha( 0 )
 				self.clipFinished( CodeBundleRareCount, {} )
+
 				NoDupesRareCount:completeAnimation()
 				self.NoDupesRareCount:setAlpha( 0 )
 				self.clipFinished( NoDupesRareCount, {} )
+
 				HundredBundleCount:completeAnimation()
 				self.HundredBundleCount:setAlpha( 0 )
 				self.clipFinished( HundredBundleCount, {} )
+
 				DailyDoubleRareCount:completeAnimation()
 				self.DailyDoubleRareCount:setAlpha( 0 )
 				self.clipFinished( DailyDoubleRareCount, {} )
+
 				SixPackCommonCount:completeAnimation()
 				self.SixPackCommonCount:setAlpha( 0 )
 				self.clipFinished( SixPackCommonCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				GenericRewardImage:completeAnimation()
 				self.GenericRewardImage:setAlpha( 0 )
 				self.clipFinished( GenericRewardImage, {} )
+
 				GenericRewardCount0:completeAnimation()
 				self.GenericRewardCount0:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount0, {} )
+
 				GenericRewardCount:completeAnimation()
 				self.GenericRewardCount:setAlpha( 0 )
 				self.clipFinished( GenericRewardCount, {} )
+
 				WeaponBribe3Count0:completeAnimation()
 				self.WeaponBribe3Count0:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count0, {} )
+
 				WeaponBribe3Count:completeAnimation()
 				self.WeaponBribe3Count:setAlpha( 0 )
 				self.clipFinished( WeaponBribe3Count, {} )
+
 				LimitedEditionCamoCount0:completeAnimation()
 				self.LimitedEditionCamoCount0:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount0, {} )
+
 				LimitedEditionCamoCount:completeAnimation()
 				self.LimitedEditionCamoCount:setAlpha( 0 )
 				self.clipFinished( LimitedEditionCamoCount, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 14 )
+
 				glow00:completeAnimation()
 				self.glow00:setAlpha( 0 )
 				self.clipFinished( glow00, {} )
+
 				BundleOnOpen:completeAnimation()
 				self.BundleOnOpen:setAlpha( 0 )
 				self.clipFinished( BundleOnOpen, {} )
+
 				smokewidget:completeAnimation()
 				self.smokewidget:setRGB( 0.22, 0.93, 0.93 )
 				self.smokewidget:setAlpha( 1 )
 				self.clipFinished( smokewidget, {} )
+
 				fxEmber2:completeAnimation()
 				self.fxEmber2:setRGB( 0.22, 0.93, 0.93 )
 				self.fxEmber2:setAlpha( 0 )
 				self.clipFinished( fxEmber2, {} )
+
 				fxEmber:completeAnimation()
 				self.fxEmber:setRGB( 0.22, 0.93, 0.93 )
 				self.fxEmber:setAlpha( 0 )
 				self.clipFinished( fxEmber, {} )
+
 				RareOn:completeAnimation()
 				self.RareOn:setAlpha( 0 )
 				self.clipFinished( RareOn, {} )
+
 				CommonOn:completeAnimation()
 				self.CommonOn:setAlpha( 0 )
 				self.clipFinished( CommonOn, {} )
+
 				glow0:completeAnimation()
 				self.glow0:setRGB( 0.22, 0.93, 0.93 )
 				self.glow0:setAlpha( 0 )
 				self.clipFinished( glow0, {} )
+
 				BribeOn:completeAnimation()
 				self.BribeOn:setAlpha( 1 )
 				self.clipFinished( BribeOn, {} )
@@ -4236,22 +5098,28 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 				glowBribe:completeAnimation()
 				self.glowBribe:setAlpha( 0 )
 				glowBribeFrame2( glowBribe, {} )
+
 				BundleOn:completeAnimation()
 				self.BundleOn:setAlpha( 0 )
 				self.clipFinished( BundleOn, {} )
+
 				glowBundle:completeAnimation()
 				self.glowBundle:setAlpha( 0 )
 				self.clipFinished( glowBundle, {} )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
+
 				glowBundleOutline:completeAnimation()
 				self.glowBundleOutline:setAlpha( 0 )
 				self.clipFinished( glowBundleOutline, {} )
+
 				self.nextClip = "Focus"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Common",
@@ -4362,6 +5230,7 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.smokewidget:close()
 		element.fxEmber2:close()

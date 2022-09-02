@@ -14,9 +14,11 @@ require( "ui.uieditor.widgets.CAC.MenuChooseClass.PrimaryWeaponAttachmentsWidget
 CoD.chooseClassWidget_Ingame = InheritFrom( LUI.UIElement )
 CoD.chooseClassWidget_Ingame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.chooseClassWidget_Ingame )
 	self.id = "chooseClassWidget_Ingame"
@@ -200,30 +202,37 @@ CoD.chooseClassWidget_Ingame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				SpecialtyPerks:completeAnimation()
 				self.SpecialtyPerks:setAlpha( 1 )
 				self.clipFinished( SpecialtyPerks, {} )
+
 				LethalEquipment:completeAnimation()
 				self.LethalEquipment:setLeftRight( false, false, -170.5, -108.5 )
 				self.LethalEquipment:setTopBottom( true, false, 358, 503 )
 				self.clipFinished( LethalEquipment, {} )
+
 				TacticalEquipment:completeAnimation()
 				self.TacticalEquipment:setLeftRight( false, false, -103.5, -41.5 )
 				self.TacticalEquipment:setTopBottom( true, false, 358, 503 )
 				self.clipFinished( TacticalEquipment, {} )
+
 				TacticalRig:completeAnimation()
 				self.TacticalRig:setAlpha( 0 )
 				self.clipFinished( TacticalRig, {} )
+
 				Wildcards:completeAnimation()
 				self.Wildcards:setLeftRight( false, false, -116, 116 )
 				self.Wildcards:setTopBottom( false, true, -56.5, 101.5 )
 				self.clipFinished( Wildcards, {} )
+
 				WildcardHeader:completeAnimation()
 				self.WildcardHeader:setAlpha( 1 )
 				self.clipFinished( WildcardHeader, {} )
 			end,
 			Wildcards = function ()
 				self:setupElementClipCounter( 2 )
+
 				local WildcardsFrame2 = function ( Wildcards, event )
 					if not event.interrupted then
 						Wildcards:beginAnimation( "keyframe", 250, true, true, CoD.TweenType.Back )
@@ -261,16 +270,19 @@ CoD.chooseClassWidget_Ingame.new = function ( menu, controller )
 		Wildcards = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Wildcards:completeAnimation()
 				self.Wildcards:setLeftRight( false, false, -116, 116 )
 				self.Wildcards:setTopBottom( false, true, -153.5, 4.5 )
 				self.clipFinished( Wildcards, {} )
+
 				WildcardHeader:completeAnimation()
 				self.WildcardHeader:setAlpha( 0 )
 				self.clipFinished( WildcardHeader, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				local WildcardsFrame2 = function ( Wildcards, event )
 					if not event.interrupted then
 						Wildcards:beginAnimation( "keyframe", 250, true, true, CoD.TweenType.Linear )
@@ -306,6 +318,7 @@ CoD.chooseClassWidget_Ingame.new = function ( menu, controller )
 			end,
 			Campaign = function ()
 				self:setupElementClipCounter( 2 )
+
 				local WildcardsFrame2 = function ( Wildcards, event )
 					if not event.interrupted then
 						Wildcards:beginAnimation( "keyframe", 250, true, true, CoD.TweenType.Linear )
@@ -343,30 +356,37 @@ CoD.chooseClassWidget_Ingame.new = function ( menu, controller )
 		Campaign = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				SpecialtyPerks:completeAnimation()
 				self.SpecialtyPerks:setAlpha( 0 )
 				self.clipFinished( SpecialtyPerks, {} )
+
 				LethalEquipment:completeAnimation()
 				self.LethalEquipment:setLeftRight( false, false, -170.5, -108.5 )
 				self.LethalEquipment:setTopBottom( true, false, 358, 503 )
 				self.clipFinished( LethalEquipment, {} )
+
 				TacticalEquipment:completeAnimation()
 				self.TacticalEquipment:setLeftRight( false, false, -103.5, -41.5 )
 				self.TacticalEquipment:setTopBottom( true, false, 358, 503 )
 				self.clipFinished( TacticalEquipment, {} )
+
 				TacticalRig:completeAnimation()
 				self.TacticalRig:setAlpha( 1 )
 				self.clipFinished( TacticalRig, {} )
+
 				Wildcards:completeAnimation()
 				self.Wildcards:setLeftRight( false, false, -116, 116 )
 				self.Wildcards:setTopBottom( false, true, -56.5, 101.5 )
 				self.clipFinished( Wildcards, {} )
+
 				WildcardHeader:completeAnimation()
 				self.WildcardHeader:setAlpha( 1 )
 				self.clipFinished( WildcardHeader, {} )
 			end,
 			Wildcards = function ()
 				self:setupElementClipCounter( 2 )
+
 				local WildcardsFrame2 = function ( Wildcards, event )
 					if not event.interrupted then
 						Wildcards:beginAnimation( "keyframe", 250, false, false, CoD.TweenType.Linear )
@@ -402,6 +422,7 @@ CoD.chooseClassWidget_Ingame.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Wildcards",
@@ -432,6 +453,7 @@ CoD.chooseClassWidget_Ingame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SpecialtyPerks:close()
 		element.LethalEquipment:close()

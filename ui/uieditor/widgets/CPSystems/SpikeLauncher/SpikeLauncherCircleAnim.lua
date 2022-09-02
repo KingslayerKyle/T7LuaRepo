@@ -4,9 +4,11 @@
 CoD.SpikeLauncherCircleAnim = InheritFrom( LUI.UIElement )
 CoD.SpikeLauncherCircleAnim.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpikeLauncherCircleAnim )
 	self.id = "SpikeLauncherCircleAnim"
@@ -26,6 +28,7 @@ CoD.SpikeLauncherCircleAnim.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local Image30Frame2 = function ( Image30, event )
 					local Image30Frame3 = function ( Image30, event )
 						local Image30Frame4 = function ( Image30, event )
@@ -84,6 +87,7 @@ CoD.SpikeLauncherCircleAnim.new = function ( menu, controller )
 				self.Image30:setTopBottom( true, true, 100, -100 )
 				self.Image30:setAlpha( 0 )
 				Image30Frame2( Image30, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

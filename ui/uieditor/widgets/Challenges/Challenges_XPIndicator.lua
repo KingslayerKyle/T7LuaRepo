@@ -4,9 +4,11 @@
 CoD.Challenges_XPIndicator = InheritFrom( LUI.UIElement )
 CoD.Challenges_XPIndicator.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_XPIndicator )
 	self.id = "Challenges_XPIndicator"
@@ -33,9 +35,11 @@ CoD.Challenges_XPIndicator.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				XPIcon:completeAnimation()
 				self.XPIcon:setAlpha( 1 )
 				self.clipFinished( XPIcon, {} )
+
 				XPText:completeAnimation()
 				self.XPText:setAlpha( 1 )
 				self.clipFinished( XPText, {} )
@@ -44,9 +48,11 @@ CoD.Challenges_XPIndicator.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				XPIcon:completeAnimation()
 				self.XPIcon:setAlpha( 0 )
 				self.clipFinished( XPIcon, {} )
+
 				XPText:completeAnimation()
 				self.XPText:setAlpha( 0 )
 				self.clipFinished( XPText, {} )

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.cac_ButtonBoxLrgInactiveStroke" )
 CoD.NetworkStatsRowWidgetContainer = InheritFrom( LUI.UIElement )
 CoD.NetworkStatsRowWidgetContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.NetworkStatsRowWidgetContainer )
 	self.id = "NetworkStatsRowWidgetContainer"
@@ -36,9 +38,11 @@ CoD.NetworkStatsRowWidgetContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				NetworkStatsRowWidget0:completeAnimation()
 				self.NetworkStatsRowWidget0:setAlpha( 1 )
 				self.clipFinished( NetworkStatsRowWidget0, {} )
+
 				cacButtonBoxLrgInactiveStroke0:completeAnimation()
 				self.cacButtonBoxLrgInactiveStroke0:setAlpha( 1 )
 				self.clipFinished( cacButtonBoxLrgInactiveStroke0, {} )
@@ -47,9 +51,11 @@ CoD.NetworkStatsRowWidgetContainer.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				NetworkStatsRowWidget0:completeAnimation()
 				self.NetworkStatsRowWidget0:setAlpha( 0 )
 				self.clipFinished( NetworkStatsRowWidget0, {} )
+
 				cacButtonBoxLrgInactiveStroke0:completeAnimation()
 				self.cacButtonBoxLrgInactiveStroke0:setAlpha( 0 )
 				self.clipFinished( cacButtonBoxLrgInactiveStroke0, {} )
@@ -58,15 +64,18 @@ CoD.NetworkStatsRowWidgetContainer.new = function ( menu, controller )
 		Demo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				NetworkStatsRowWidget0:completeAnimation()
 				self.NetworkStatsRowWidget0:setAlpha( 0 )
 				self.clipFinished( NetworkStatsRowWidget0, {} )
+
 				cacButtonBoxLrgInactiveStroke0:completeAnimation()
 				self.cacButtonBoxLrgInactiveStroke0:setAlpha( 0 )
 				self.clipFinished( cacButtonBoxLrgInactiveStroke0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",
@@ -81,6 +90,7 @@ CoD.NetworkStatsRowWidgetContainer.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.NetworkStatsRowWidget0:close()
 		element.cacButtonBoxLrgInactiveStroke0:close()

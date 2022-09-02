@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.mothership.vhud_ms_ButtonWidget" )
 CoD.vhud_generic_key_mouse_layout = InheritFrom( LUI.UIElement )
 CoD.vhud_generic_key_mouse_layout.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_generic_key_mouse_layout )
 	self.id = "vhud_generic_key_mouse_layout"

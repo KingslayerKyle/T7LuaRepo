@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.TrialComplete_TitleBox = InheritFrom( LUI.UIElement )
 CoD.TrialComplete_TitleBox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TrialComplete_TitleBox )
 	self.id = "TrialComplete_TitleBox"
@@ -45,6 +47,7 @@ CoD.TrialComplete_TitleBox.new = function ( menu, controller )
 	ScorestreaksLabel:setLetterSpacing( 0.6 )
 	ScorestreaksLabel:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	ScorestreaksLabel:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( ScorestreaksLabel, "setText", function ( element, controller )
 		ScaleWidgetToLabelCenteredWrapped( self, element, 2, 0 )
 	end )

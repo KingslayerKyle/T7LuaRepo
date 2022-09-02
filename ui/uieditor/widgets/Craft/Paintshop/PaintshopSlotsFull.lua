@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BackgroundFrames.BackgroundPattern01" )
 CoD.PaintshopSlotsFull = InheritFrom( LUI.UIElement )
 CoD.PaintshopSlotsFull.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PaintshopSlotsFull )
 	self.id = "PaintshopSlotsFull"
@@ -108,18 +110,23 @@ CoD.PaintshopSlotsFull.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				count:completeAnimation()
 				self.count:setRGB( 1, 1, 1 )
 				self.clipFinished( count, {} )
+
 				VariantSlots:completeAnimation()
 				self.VariantSlots:setAlpha( 1 )
 				self.clipFinished( VariantSlots, {} )
+
 				slotFulltext:completeAnimation()
 				self.slotFulltext:setAlpha( 0 )
 				self.clipFinished( slotFulltext, {} )
+
 				WarningBacking:completeAnimation()
 				self.WarningBacking:setAlpha( 0 )
 				self.clipFinished( WarningBacking, {} )
+
 				slotfullWarningImage:completeAnimation()
 				self.slotfullWarningImage:setAlpha( 0 )
 				self.clipFinished( slotfullWarningImage, {} )
@@ -128,14 +135,17 @@ CoD.PaintshopSlotsFull.new = function ( menu, controller )
 		SlotsFull = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				count:completeAnimation()
 				self.count:setRGB( 1, 0, 0 )
 				self.clipFinished( count, {} )
+
 				VariantSlots:completeAnimation()
 				self.VariantSlots:setLeftRight( true, false, 0, 120 )
 				self.VariantSlots:setTopBottom( true, false, 1, 17 )
 				self.VariantSlots:setAlpha( 0 )
 				self.clipFinished( VariantSlots, {} )
+
 				slotFulltext:completeAnimation()
 				self.slotFulltext:setLeftRight( true, false, -0.5, 119.5 )
 				self.slotFulltext:setTopBottom( true, false, 1, 17 )
@@ -143,11 +153,13 @@ CoD.PaintshopSlotsFull.new = function ( menu, controller )
 				self.slotFulltext:setAlpha( 1 )
 				self.slotFulltext:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 				self.clipFinished( slotFulltext, {} )
+
 				WarningBacking:completeAnimation()
 				self.WarningBacking:setLeftRight( true, false, -4, 4 )
 				self.WarningBacking:setTopBottom( true, false, 4.75, 17.75 )
 				self.WarningBacking:setAlpha( 1 )
 				self.clipFinished( WarningBacking, {} )
+
 				slotfullWarningImage:completeAnimation()
 				self.slotfullWarningImage:setLeftRight( true, false, -14.75, 14.75 )
 				self.slotfullWarningImage:setTopBottom( true, false, -5, 24.5 )
@@ -157,6 +169,7 @@ CoD.PaintshopSlotsFull.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BackgroundPattern010:close()
 		element.count:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_Bread_linker" )
 CoD.FE_BlackMarketSpecialBreadcrumb = InheritFrom( LUI.UIElement )
 CoD.FE_BlackMarketSpecialBreadcrumb.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_BlackMarketSpecialBreadcrumb )
 	self.id = "FE_BlackMarketSpecialBreadcrumb"
@@ -54,6 +56,7 @@ CoD.FE_BlackMarketSpecialBreadcrumb.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local f2_local0 = function ( f3_arg0, f3_arg1 )
 					local f3_local0 = function ( f4_arg0, f4_arg1 )
 						local f4_local0 = function ( f5_arg0, f5_arg1 )
@@ -161,10 +164,12 @@ CoD.FE_BlackMarketSpecialBreadcrumb.new = function ( menu, controller )
 				self.BreadGlint:setMaterial( LUI.UIImage.GetCachedMaterial( "sw4_2d_bitchin_glint_reveal" ) )
 				self.BreadGlint:setShaderVector( 0, 0, 0, 0, 0 )
 				BreadGlintFrame2( BreadGlint, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BMBreadlinker:close()
 	end )

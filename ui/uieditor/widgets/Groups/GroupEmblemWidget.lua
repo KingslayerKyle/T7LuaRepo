@@ -4,9 +4,11 @@
 CoD.GroupEmblemWidget = InheritFrom( LUI.UIElement )
 CoD.GroupEmblemWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupEmblemWidget )
 	self.id = "GroupEmblemWidget"
@@ -41,9 +43,11 @@ CoD.GroupEmblemWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				GroupEmblem:completeAnimation()
 				self.GroupEmblem:setAlpha( 0 )
 				self.clipFinished( GroupEmblem, {} )
+
 				DefaultEmblem:completeAnimation()
 				self.DefaultEmblem:setAlpha( 1 )
 				self.clipFinished( DefaultEmblem, {} )
@@ -52,9 +56,11 @@ CoD.GroupEmblemWidget.new = function ( menu, controller )
 		DefaultGroupEmblem = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				GroupEmblem:completeAnimation()
 				self.GroupEmblem:setAlpha( 0 )
 				self.clipFinished( GroupEmblem, {} )
+
 				DefaultEmblem:completeAnimation()
 				self.DefaultEmblem:setAlpha( 1 )
 				self.clipFinished( DefaultEmblem, {} )
@@ -63,15 +69,18 @@ CoD.GroupEmblemWidget.new = function ( menu, controller )
 		ShowGroupEmblem = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				GroupEmblem:completeAnimation()
 				self.GroupEmblem:setAlpha( 1 )
 				self.clipFinished( GroupEmblem, {} )
+
 				DefaultEmblem:completeAnimation()
 				self.DefaultEmblem:setAlpha( 0 )
 				self.clipFinished( DefaultEmblem, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DefaultGroupEmblem",

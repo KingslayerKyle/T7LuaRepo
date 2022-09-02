@@ -4,9 +4,11 @@
 CoD.CallingCards_code_air_plane = InheritFrom( LUI.UIElement )
 CoD.CallingCards_code_air_plane.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_code_air_plane )
 	self.id = "CallingCards_code_air_plane"

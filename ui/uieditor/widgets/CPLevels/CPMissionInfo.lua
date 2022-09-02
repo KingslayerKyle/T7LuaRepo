@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.CPLevels.CPMapPerformanceRecord_Classified" )
 CoD.CPMissionInfo = InheritFrom( LUI.UIElement )
 CoD.CPMissionInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CPMissionInfo )
 	self.id = "CPMissionInfo"
@@ -155,30 +157,39 @@ CoD.CPMissionInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				Description:completeAnimation()
 				self.Description:setAlpha( 0.55 )
 				self.clipFinished( Description, {} )
+
 				Description0:completeAnimation()
 				self.Description0:setAlpha( 0 )
 				self.clipFinished( Description0, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				CPMapPerformanceRecord:completeAnimation()
 				self.CPMapPerformanceRecord:setAlpha( 1 )
 				self.clipFinished( CPMapPerformanceRecord, {} )
+
 				CPMissionTitle:completeAnimation()
 				self.CPMissionTitle:setAlpha( 1 )
 				self.clipFinished( CPMissionTitle, {} )
+
 				CPMapInfoWidget:completeAnimation()
 				self.CPMapInfoWidget:setAlpha( 1 )
 				self.clipFinished( CPMapInfoWidget, {} )
+
 				ClassifiedText:completeAnimation()
 				self.ClassifiedText:setAlpha( 0 )
 				self.clipFinished( ClassifiedText, {} )
+
 				CPMapPerformanceRecordClassified:completeAnimation()
 				self.CPMapPerformanceRecordClassified:setAlpha( 0 )
 				self.clipFinished( CPMapPerformanceRecordClassified, {} )
+
 				difficulty:completeAnimation()
 				self.clipFinished( difficulty, {} )
 			end
@@ -186,36 +197,46 @@ CoD.CPMissionInfo.new = function ( menu, controller )
 		Classified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				Description:completeAnimation()
 				self.Description:setAlpha( 0 )
 				self.clipFinished( Description, {} )
+
 				Description0:completeAnimation()
 				self.Description0:setAlpha( 0.55 )
 				self.Description0:setText( Engine.Localize( "MENU_CLASSIFIED" ) )
 				self.clipFinished( Description0, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0.9 )
 				self.clipFinished( Image0, {} )
+
 				CPMapPerformanceRecord:completeAnimation()
 				self.CPMapPerformanceRecord:setAlpha( 0 )
 				self.clipFinished( CPMapPerformanceRecord, {} )
+
 				CPMissionTitle:completeAnimation()
 				self.CPMissionTitle:setAlpha( 1 )
 				self.clipFinished( CPMissionTitle, {} )
+
 				CPMapInfoWidget:completeAnimation()
 				self.CPMapInfoWidget:setAlpha( 0 )
 				self.clipFinished( CPMapInfoWidget, {} )
+
 				ClassifiedText:completeAnimation()
 				self.ClassifiedText:setAlpha( 1 )
 				self.clipFinished( ClassifiedText, {} )
+
 				CPMapPerformanceRecordClassified:completeAnimation()
 				self.CPMapPerformanceRecordClassified:setAlpha( 1 )
 				self.clipFinished( CPMapPerformanceRecordClassified, {} )
+
 				difficulty:completeAnimation()
 				self.clipFinished( difficulty, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Classified",
@@ -232,6 +253,7 @@ CoD.CPMissionInfo.new = function ( menu, controller )
 			modelName = "classified"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CPMapPerformanceRecord:close()
 		element.CPMissionTitle:close()

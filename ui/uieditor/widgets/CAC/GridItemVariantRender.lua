@@ -4,9 +4,11 @@
 CoD.GridItemVariantRender = InheritFrom( LUI.UIElement )
 CoD.GridItemVariantRender.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GridItemVariantRender )
 	self.id = "GridItemVariantRender"
@@ -72,15 +74,19 @@ CoD.GridItemVariantRender.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				itemImageRenderSolid:completeAnimation()
 				self.itemImageRenderSolid:setAlpha( 0 )
 				self.clipFinished( itemImageRenderSolid, {} )
+
 				itemImageRender:completeAnimation()
 				self.itemImageRender:setAlpha( 0 )
 				self.clipFinished( itemImageRender, {} )
+
 				itemImageSolid:completeAnimation()
 				self.itemImageSolid:setAlpha( 0.2 )
 				self.clipFinished( itemImageSolid, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.8 )
 				self.clipFinished( itemImage, {} )
@@ -89,21 +95,26 @@ CoD.GridItemVariantRender.new = function ( menu, controller )
 		Render = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				itemImageRenderSolid:completeAnimation()
 				self.itemImageRenderSolid:setAlpha( 0.2 )
 				self.clipFinished( itemImageRenderSolid, {} )
+
 				itemImageRender:completeAnimation()
 				self.itemImageRender:setAlpha( 1 )
 				self.clipFinished( itemImageRender, {} )
+
 				itemImageSolid:completeAnimation()
 				self.itemImageSolid:setAlpha( 0 )
 				self.clipFinished( itemImageSolid, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Render",
@@ -112,6 +123,7 @@ CoD.GridItemVariantRender.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.itemImageRenderSolid:close()
 		element.itemImageRender:close()

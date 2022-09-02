@@ -31,9 +31,11 @@ end
 CoD.DOA_ControlHelp_Text = InheritFrom( LUI.UIElement )
 CoD.DOA_ControlHelp_Text.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DOA_ControlHelp_Text )
 	self.id = "DOA_ControlHelp_Text"
@@ -77,12 +79,15 @@ CoD.DOA_ControlHelp_Text.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				defaultText:completeAnimation()
 				self.defaultText:setAlpha( 1 )
 				self.clipFinished( defaultText, {} )
+
 				drivingText:completeAnimation()
 				self.drivingText:setAlpha( 0 )
 				self.clipFinished( drivingText, {} )
+
 				doaFPSText:completeAnimation()
 				self.doaFPSText:setAlpha( 0 )
 				self.clipFinished( doaFPSText, {} )
@@ -91,12 +96,15 @@ CoD.DOA_ControlHelp_Text.new = function ( menu, controller )
 		Driving = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				defaultText:completeAnimation()
 				self.defaultText:setAlpha( 0 )
 				self.clipFinished( defaultText, {} )
+
 				drivingText:completeAnimation()
 				self.drivingText:setAlpha( 1 )
 				self.clipFinished( drivingText, {} )
+
 				doaFPSText:completeAnimation()
 				self.doaFPSText:setAlpha( 0 )
 				self.clipFinished( doaFPSText, {} )
@@ -105,18 +113,22 @@ CoD.DOA_ControlHelp_Text.new = function ( menu, controller )
 		DOAFPS = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				defaultText:completeAnimation()
 				self.defaultText:setAlpha( 0 )
 				self.clipFinished( defaultText, {} )
+
 				drivingText:completeAnimation()
 				self.drivingText:setAlpha( 0 )
 				self.clipFinished( drivingText, {} )
+
 				doaFPSText:completeAnimation()
 				self.doaFPSText:setAlpha( 1 )
 				self.clipFinished( doaFPSText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Driving",

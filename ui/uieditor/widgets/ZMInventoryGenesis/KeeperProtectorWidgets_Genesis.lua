@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventory.RocketShieldBluePrint.RocketShieldPiec
 CoD.KeeperProtectorWidgets_Genesis = InheritFrom( LUI.UIElement )
 CoD.KeeperProtectorWidgets_Genesis.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.KeeperProtectorWidgets_Genesis )
 	self.id = "KeeperProtectorWidgets_Genesis"
@@ -169,15 +171,19 @@ CoD.KeeperProtectorWidgets_Genesis.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				MachineToolsPieceWidget1:completeAnimation()
 				self.MachineToolsPieceWidget1:setAlpha( 0 )
 				self.clipFinished( MachineToolsPieceWidget1, {} )
+
 				MachineToolsPieceWidget0:completeAnimation()
 				self.MachineToolsPieceWidget0:setAlpha( 0 )
 				self.clipFinished( MachineToolsPieceWidget0, {} )
+
 				MachineToolsPieceWidget2:completeAnimation()
 				self.MachineToolsPieceWidget2:setAlpha( 0 )
 				self.clipFinished( MachineToolsPieceWidget2, {} )
@@ -186,21 +192,25 @@ CoD.KeeperProtectorWidgets_Genesis.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				MachineToolsPieceWidget1:completeAnimation()
 				self.MachineToolsPieceWidget1:setLeftRight( true, false, 11, 100 )
 				self.MachineToolsPieceWidget1:setTopBottom( true, false, 26.24, 115.24 )
 				self.MachineToolsPieceWidget1:setAlpha( 1 )
 				self.MachineToolsPieceWidget1:setScale( 1.2 )
 				self.clipFinished( MachineToolsPieceWidget1, {} )
+
 				MachineToolsPieceWidget0:completeAnimation()
 				self.MachineToolsPieceWidget0:setLeftRight( true, false, 111, 200 )
 				self.MachineToolsPieceWidget0:setTopBottom( true, false, 26.24, 115.24 )
 				self.MachineToolsPieceWidget0:setAlpha( 1 )
 				self.MachineToolsPieceWidget0:setScale( 1.3 )
 				self.clipFinished( MachineToolsPieceWidget0, {} )
+
 				MachineToolsPieceWidget2:completeAnimation()
 				self.MachineToolsPieceWidget2:setLeftRight( true, false, 210.5, 299.5 )
 				self.MachineToolsPieceWidget2:setTopBottom( true, false, 26.24, 115.24 )
@@ -212,6 +222,7 @@ CoD.KeeperProtectorWidgets_Genesis.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local bgFrame2 = function ( bg, event )
 					local bgFrame3 = function ( bg, event )
 						local bgFrame4 = function ( bg, event )
@@ -248,18 +259,21 @@ CoD.KeeperProtectorWidgets_Genesis.new = function ( menu, controller )
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				bgFrame2( bg, {} )
+
 				MachineToolsPieceWidget1:completeAnimation()
 				self.MachineToolsPieceWidget1:setLeftRight( true, false, 5, 92 )
 				self.MachineToolsPieceWidget1:setTopBottom( true, false, 26.24, 113.24 )
 				self.MachineToolsPieceWidget1:setAlpha( 1 )
 				self.MachineToolsPieceWidget1:setScale( 0.9 )
 				self.clipFinished( MachineToolsPieceWidget1, {} )
+
 				MachineToolsPieceWidget0:completeAnimation()
 				self.MachineToolsPieceWidget0:setLeftRight( true, false, 72.86, 161.86 )
 				self.MachineToolsPieceWidget0:setTopBottom( true, false, 25.24, 114.24 )
 				self.MachineToolsPieceWidget0:setAlpha( 1 )
 				self.MachineToolsPieceWidget0:setScale( 1 )
 				self.clipFinished( MachineToolsPieceWidget0, {} )
+
 				MachineToolsPieceWidget2:completeAnimation()
 				self.MachineToolsPieceWidget2:setLeftRight( true, false, 146.29, 235.29 )
 				self.MachineToolsPieceWidget2:setTopBottom( true, false, 25.24, 114.24 )
@@ -269,6 +283,7 @@ CoD.KeeperProtectorWidgets_Genesis.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Scoreboard",
@@ -299,6 +314,7 @@ CoD.KeeperProtectorWidgets_Genesis.new = function ( menu, controller )
 			modelName = "zmInventory.widget_keeper_protector_parts"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MachineToolsPieceWidget1:close()
 		element.MachineToolsPieceWidget0:close()

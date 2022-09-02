@@ -31,9 +31,11 @@ end
 CoD.ServerBrowserHeaderNamedColumn = InheritFrom( LUI.UIElement )
 CoD.ServerBrowserHeaderNamedColumn.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ServerBrowserHeaderNamedColumn )
 	self.id = "ServerBrowserHeaderNamedColumn"
@@ -69,18 +71,22 @@ CoD.ServerBrowserHeaderNamedColumn.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:completeAnimation()
 				self.background:setRGB( 0.2, 0.2, 0.2 )
 				self.clipFinished( background, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setAlpha( 0 )
 				self.clipFinished( arrow, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:completeAnimation()
 				self.background:setRGB( 1, 0.53, 0 )
 				self.clipFinished( background, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setAlpha( 0 )
 				self.clipFinished( arrow, {} )
@@ -89,9 +95,11 @@ CoD.ServerBrowserHeaderNamedColumn.new = function ( menu, controller )
 		SortAscend = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:completeAnimation()
 				self.background:setRGB( 0.2, 0.2, 0.2 )
 				self.clipFinished( background, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setAlpha( 1 )
 				self.arrow:setZRot( 0 )
@@ -99,9 +107,11 @@ CoD.ServerBrowserHeaderNamedColumn.new = function ( menu, controller )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:completeAnimation()
 				self.background:setRGB( 1, 0.53, 0 )
 				self.clipFinished( background, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setAlpha( 1 )
 				self.arrow:setZRot( 0 )
@@ -111,9 +121,11 @@ CoD.ServerBrowserHeaderNamedColumn.new = function ( menu, controller )
 		SortDescend = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:completeAnimation()
 				self.background:setRGB( 0.2, 0.2, 0.2 )
 				self.clipFinished( background, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setAlpha( 1 )
 				self.arrow:setZRot( 180 )
@@ -121,9 +133,11 @@ CoD.ServerBrowserHeaderNamedColumn.new = function ( menu, controller )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:completeAnimation()
 				self.background:setRGB( 1, 0.53, 0 )
 				self.clipFinished( background, {} )
+
 				arrow:completeAnimation()
 				self.arrow:setAlpha( 1 )
 				self.arrow:setZRot( 180 )
@@ -131,6 +145,7 @@ CoD.ServerBrowserHeaderNamedColumn.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "SortAscend",
@@ -153,6 +168,7 @@ CoD.ServerBrowserHeaderNamedColumn.new = function ( menu, controller )
 			modelName = "serverBrowser.serverListSortType"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.name:close()
 	end )

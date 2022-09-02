@@ -4,9 +4,11 @@
 CoD.CombatRecordSummaryStatSmall = InheritFrom( LUI.UIElement )
 CoD.CombatRecordSummaryStatSmall.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CombatRecordSummaryStatSmall )
 	self.id = "CombatRecordSummaryStatSmall"

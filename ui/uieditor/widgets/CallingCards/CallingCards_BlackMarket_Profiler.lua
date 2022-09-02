@@ -15,9 +15,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_Contracts_LockBars" )
 CoD.CallingCards_BlackMarket_Profiler = InheritFrom( LUI.UIElement )
 CoD.CallingCards_BlackMarket_Profiler.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_BlackMarket_Profiler )
 	self.id = "CallingCards_BlackMarket_Profiler"
@@ -182,39 +184,51 @@ CoD.CallingCards_BlackMarket_Profiler.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				SelectedCardIcon:completeAnimation()
 				self.SelectedCardIcon:setAlpha( 1 )
 				self.clipFinished( SelectedCardIcon, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				featlineleft0:completeAnimation()
 				self.featlineleft0:setAlpha( 0 )
 				self.clipFinished( featlineleft0, {} )
+
 				featlineleft000:completeAnimation()
 				self.featlineleft000:setAlpha( 0 )
 				self.clipFinished( featlineleft000, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
@@ -223,48 +237,61 @@ CoD.CallingCards_BlackMarket_Profiler.new = function ( menu, controller )
 		BMClassfied = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setLeftRight( true, true, 3, -2 )
 				self.bgImage:setTopBottom( true, false, 3, 89 )
 				self.bgImage:setAlpha( 1 )
 				self.clipFinished( bgImage, {} )
+
 				SelectedCardIcon:completeAnimation()
 				self.SelectedCardIcon:setAlpha( 0 )
 				self.clipFinished( SelectedCardIcon, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setLeftRight( true, false, 16, 334 )
 				self.BMGoldBarMed:setTopBottom( true, false, 32.18, 62.08 )
 				self.BMGoldBarMed:setAlpha( 1 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setLeftRight( false, false, -28.25, 36.25 )
 				self.blackMarketBrandIcon:setTopBottom( true, false, 13.75, 78.25 )
 				self.blackMarketBrandIcon:setAlpha( 1 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				featlineleft0:completeAnimation()
 				self.featlineleft0:setAlpha( 0 )
 				self.clipFinished( featlineleft0, {} )
+
 				featlineleft000:completeAnimation()
 				self.featlineleft000:setAlpha( 0 )
 				self.clipFinished( featlineleft000, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
@@ -273,48 +300,61 @@ CoD.CallingCards_BlackMarket_Profiler.new = function ( menu, controller )
 		ContractClassified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setLeftRight( true, true, 3, -2 )
 				self.bgImage:setTopBottom( true, false, 3, 89 )
 				self.bgImage:setAlpha( 1 )
 				self.clipFinished( bgImage, {} )
+
 				SelectedCardIcon:completeAnimation()
 				self.SelectedCardIcon:setAlpha( 0 )
 				self.clipFinished( SelectedCardIcon, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setLeftRight( true, false, 16, 334 )
 				self.BMGoldBarMed:setTopBottom( true, false, 32.18, 62.08 )
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setLeftRight( false, false, -28.25, 36.25 )
 				self.blackMarketBrandIcon:setTopBottom( true, false, 13.75, 78.25 )
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				featlineleft0:completeAnimation()
 				self.featlineleft0:setAlpha( 0 )
 				self.clipFinished( featlineleft0, {} )
+
 				featlineleft000:completeAnimation()
 				self.featlineleft000:setAlpha( 0 )
 				self.clipFinished( featlineleft000, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 1 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 1 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 1 )
 				self.clipFinished( bmContractBrandIcon, {} )
@@ -323,45 +363,58 @@ CoD.CallingCards_BlackMarket_Profiler.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				SelectedCardIcon:completeAnimation()
 				self.SelectedCardIcon:setAlpha( 0.7 )
 				self.clipFinished( SelectedCardIcon, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				featlineleft0:completeAnimation()
 				self.featlineleft0:setAlpha( 1 )
 				self.clipFinished( featlineleft0, {} )
+
 				featlineleft000:completeAnimation()
 				self.featlineleft000:setAlpha( 1 )
 				self.clipFinished( featlineleft000, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0.4 )
 				self.clipFinished( TitleBg, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 1 )
 				self.clipFinished( LockedIcon, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BMClassfied",
@@ -406,6 +459,7 @@ CoD.CallingCards_BlackMarket_Profiler.new = function ( menu, controller )
 			modelName = "isLocked"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactive:close()
 		element.StartMenuframenoBG0:close()

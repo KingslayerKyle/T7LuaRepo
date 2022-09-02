@@ -4,9 +4,11 @@
 CoD.ChargerShot_Brackets = InheritFrom( LUI.UIElement )
 CoD.ChargerShot_Brackets.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChargerShot_Brackets )
 	self.id = "ChargerShot_Brackets"
@@ -61,13 +63,16 @@ CoD.ChargerShot_Brackets.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Fire = function ()
 				self:setupElementClipCounter( 0 )
+
 				self.nextClip = "Fire"
 			end,
 			Cancel = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

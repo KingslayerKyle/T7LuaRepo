@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.CharacterCustomization.ChooseCharacterLoadout_Card
 CoD.ChooseCharacterLoadout_CardBack_LockedTransmission_Assignment = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacterLoadout_CardBack_LockedTransmission_Assignment.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacterLoadout_CardBack_LockedTransmission_Assignment )
 	self.id = "ChooseCharacterLoadout_CardBack_LockedTransmission_Assignment"
@@ -153,42 +155,55 @@ CoD.ChooseCharacterLoadout_CardBack_LockedTransmission_Assignment.new = function
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				assignmentText:completeAnimation()
 				self.assignmentText:setAlpha( 0.8 )
 				self.clipFinished( assignmentText, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 1 )
 				self.clipFinished( Image0, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 1 )
 				self.clipFinished( Image1, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setAlpha( 1 )
 				self.clipFinished( Image2, {} )
+
 				Image35:completeAnimation()
 				self.Image35:setAlpha( 1 )
 				self.clipFinished( Image35, {} )
+
 				TabBar1:completeAnimation()
 				self.TabBar1:setAlpha( 1 )
 				self.clipFinished( TabBar1, {} )
+
 				assignmentLabel:completeAnimation()
 				self.assignmentLabel:setAlpha( 1 )
 				self.clipFinished( assignmentLabel, {} )
+
 				assignmentBorder:completeAnimation()
 				self.assignmentBorder:setAlpha( 1 )
 				self.clipFinished( assignmentBorder, {} )
+
 				Image300:completeAnimation()
 				self.Image300:setAlpha( 1 )
 				self.clipFinished( Image300, {} )
+
 				Image311:completeAnimation()
 				self.Image311:setAlpha( 1 )
 				self.clipFinished( Image311, {} )
+
 				Image42:completeAnimation()
 				self.Image42:setAlpha( 1 )
 				self.clipFinished( Image42, {} )
+
 				Image43:completeAnimation()
 				self.Image43:setAlpha( 1 )
 				self.clipFinished( Image43, {} )
+
 				progress:completeAnimation()
 				self.progress:setAlpha( 1 )
 				self.clipFinished( progress, {} )
@@ -197,48 +212,62 @@ CoD.ChooseCharacterLoadout_CardBack_LockedTransmission_Assignment.new = function
 		NoAssignment = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				assignmentText:completeAnimation()
 				self.assignmentText:setAlpha( 0 )
 				self.clipFinished( assignmentText, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 0 )
 				self.clipFinished( Image1, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setAlpha( 0 )
 				self.clipFinished( Image2, {} )
+
 				Image35:completeAnimation()
 				self.Image35:setAlpha( 0 )
 				self.clipFinished( Image35, {} )
+
 				TabBar1:completeAnimation()
 				self.TabBar1:setAlpha( 0 )
 				self.clipFinished( TabBar1, {} )
+
 				assignmentLabel:completeAnimation()
 				self.assignmentLabel:setAlpha( 0 )
 				self.clipFinished( assignmentLabel, {} )
+
 				assignmentBorder:completeAnimation()
 				self.assignmentBorder:setAlpha( 0 )
 				self.clipFinished( assignmentBorder, {} )
+
 				Image300:completeAnimation()
 				self.Image300:setAlpha( 0 )
 				self.clipFinished( Image300, {} )
+
 				Image311:completeAnimation()
 				self.Image311:setAlpha( 0 )
 				self.clipFinished( Image311, {} )
+
 				Image42:completeAnimation()
 				self.Image42:setAlpha( 0 )
 				self.clipFinished( Image42, {} )
+
 				Image43:completeAnimation()
 				self.Image43:setAlpha( 0 )
 				self.clipFinished( Image43, {} )
+
 				progress:completeAnimation()
 				self.progress:setAlpha( 0 )
 				self.clipFinished( progress, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoAssignment",
@@ -255,6 +284,7 @@ CoD.ChooseCharacterLoadout_CardBack_LockedTransmission_Assignment.new = function
 			modelName = "assignment"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.assignmentText:close()
 		element.TabBar1:close()

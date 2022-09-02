@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.MP.MatchSettings.matchSettingsInfo" )
 CoD.playlistCategoryMatchSettingsInfo = InheritFrom( LUI.UIElement )
 CoD.playlistCategoryMatchSettingsInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.playlistCategoryMatchSettingsInfo )
 	self.id = "playlistCategoryMatchSettingsInfo"
@@ -52,9 +54,11 @@ CoD.playlistCategoryMatchSettingsInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.categoryInfo:close()
 		element.playlistCount:close()

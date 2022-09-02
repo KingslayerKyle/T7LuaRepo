@@ -20,6 +20,7 @@ CoD.SlotsRemaining.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.SlotsRemaining )
 	self.id = "SlotsRemaining"

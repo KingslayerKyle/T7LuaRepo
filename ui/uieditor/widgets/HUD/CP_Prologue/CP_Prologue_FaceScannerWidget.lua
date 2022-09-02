@@ -16,9 +16,11 @@ require( "ui.uieditor.widgets.HUD.CP_Prologue.CP_Prologue_FaceScannerDots" )
 CoD.CP_Prologue_FaceScannerWidget = InheritFrom( LUI.UIElement )
 CoD.CP_Prologue_FaceScannerWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CP_Prologue_FaceScannerWidget )
 	self.id = "CP_Prologue_FaceScannerWidget"
@@ -331,54 +333,65 @@ CoD.CP_Prologue_FaceScannerWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Scanning = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				CPPrologueFaceScannerFlipbook:completeAnimation()
+
 				CPPrologueFaceScannerFlipbook.PrologueFlipbok:completeAnimation()
 				self.CPPrologueFaceScannerFlipbook:setLeftRight( true, false, 43.5, 235.5 )
 				self.CPPrologueFaceScannerFlipbook:setTopBottom( true, false, 62, 302 )
 				self.CPPrologueFaceScannerFlipbook:setAlpha( 1 )
 				self.CPPrologueFaceScannerFlipbook.PrologueFlipbok:setShaderVector( 1, 6, 0, 0, 0 )
 				self.clipFinished( CPPrologueFaceScannerFlipbook, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setLeftRight( true, false, 43.5, 235.5 )
 				self.TitleBg:setTopBottom( true, false, 38, 61 )
 				self.TitleBg:setAlpha( 0.4 )
 				self.clipFinished( TitleBg, {} )
+
 				Image3:completeAnimation()
 				self.Image3:setLeftRight( true, false, 43.5, 235.5 )
 				self.Image3:setTopBottom( true, false, 14, 37 )
 				self.Image3:setRGB( 0, 0, 0 )
 				self.Image3:setAlpha( 0.4 )
 				self.clipFinished( Image3, {} )
+
 				Title:completeAnimation()
 				self.Title:setLeftRight( true, false, 102, 181 )
 				self.Title:setTopBottom( true, false, 17, 36 )
 				self.Title:setAlpha( 1 )
 				self.Title:setText( Engine.Localize( "MPUI_BLACKHAT_SCANNING" ) )
 				self.clipFinished( Title, {} )
+
 				Label0:completeAnimation()
 				self.Label0:setText( Engine.Localize( "MENU_CP_PROLOGUE_ANALYZING" ) )
 				self.clipFinished( Label0, {} )
+
 				CPPrologueFaceScannerCircleDots:completeAnimation()
 				self.CPPrologueFaceScannerCircleDots:setLeftRight( true, false, 36.63, 242 )
 				self.CPPrologueFaceScannerCircleDots:setTopBottom( true, false, 60.56, 265.94 )
 				self.CPPrologueFaceScannerCircleDots:setAlpha( 0.6 )
 				self.clipFinished( CPPrologueFaceScannerCircleDots, {} )
+
 				CPPrologueFaceScannerCircleDash:completeAnimation()
 				self.CPPrologueFaceScannerCircleDash:setLeftRight( true, false, 78.13, 205.37 )
 				self.CPPrologueFaceScannerCircleDash:setTopBottom( true, false, 99.63, 226.87 )
 				self.CPPrologueFaceScannerCircleDash:setAlpha( 0.5 )
 				self.CPPrologueFaceScannerCircleDash:setScale( 2 )
 				self.clipFinished( CPPrologueFaceScannerCircleDash, {} )
+
 				CPPrologueFaceScannerBlurLines:completeAnimation()
 				self.CPPrologueFaceScannerBlurLines:setLeftRight( true, false, -41.66, 319.34 )
 				self.CPPrologueFaceScannerBlurLines:setTopBottom( true, false, -16.91, 344.09 )
 				self.CPPrologueFaceScannerBlurLines:setAlpha( 1 )
 				self.clipFinished( CPPrologueFaceScannerBlurLines, {} )
+
 				CPPrologueFaceScannerFailedBox:completeAnimation()
 				self.CPPrologueFaceScannerFailedBox:setAlpha( 0 )
 				self.clipFinished( CPPrologueFaceScannerFailedBox, {} )
@@ -387,31 +400,39 @@ CoD.CP_Prologue_FaceScannerWidget.new = function ( menu, controller )
 		Found = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 22 )
+
 				CPPrologueFaceScannerFoundBox:completeAnimation()
 				self.CPPrologueFaceScannerFoundBox:setLeftRight( true, false, 44, 234.5 )
 				self.CPPrologueFaceScannerFoundBox:setTopBottom( true, false, 63, 301 )
 				self.CPPrologueFaceScannerFoundBox:setAlpha( 1 )
 				self.clipFinished( CPPrologueFaceScannerFoundBox, {} )
+
 				CPPrologueFaceScannerFlipbook:completeAnimation()
+
 				CPPrologueFaceScannerFlipbook.PrologueFlipbok:completeAnimation()
 				self.CPPrologueFaceScannerFlipbook.PrologueFlipbok:setShaderVector( 1, 0, 0, 0, 0 )
 				self.clipFinished( CPPrologueFaceScannerFlipbook, {} )
+
 				Image3:completeAnimation()
 				self.Image3:setLeftRight( true, false, 43.5, 235.5 )
 				self.Image3:setTopBottom( true, false, 14, 37 )
 				self.Image3:setAlpha( 0.4 )
 				self.clipFinished( Image3, {} )
+
 				Title:completeAnimation()
 				self.Title:setLeftRight( true, false, 90.5, 169.5 )
 				self.Title:setTopBottom( true, false, 17, 36 )
 				self.Title:setText( Engine.Localize( "MENU_CP_PROLOGUE_FOUND" ) )
 				self.clipFinished( Title, {} )
+
 				Label0:completeAnimation()
 				self.Label0:setText( Engine.Localize( "MENU_CP_PROLOGUE_ANALYZING" ) )
 				self.clipFinished( Label0, {} )
+
 				CPPrologueFaceScannerCircleDash:completeAnimation()
 				self.CPPrologueFaceScannerCircleDash:setAlpha( 0 )
 				self.clipFinished( CPPrologueFaceScannerCircleDash, {} )
+
 				CPPrologueFaceScannerFailedBox:completeAnimation()
 				self.CPPrologueFaceScannerFailedBox:setAlpha( 0 )
 				self.clipFinished( CPPrologueFaceScannerFailedBox, {} )
@@ -982,46 +1003,59 @@ CoD.CP_Prologue_FaceScannerWidget.new = function ( menu, controller )
 		Failed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				CPPrologueFaceScannerFlipbook:completeAnimation()
 				self.CPPrologueFaceScannerFlipbook:setAlpha( 0 )
 				self.clipFinished( CPPrologueFaceScannerFlipbook, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				Image3:completeAnimation()
 				self.Image3:setRGB( 1, 0, 0 )
 				self.Image3:setAlpha( 0 )
 				self.clipFinished( Image3, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 0 )
 				self.Title:setText( Engine.Localize( "NO MATCHES FOUND" ) )
 				self.clipFinished( Title, {} )
+
 				Label0:completeAnimation()
 				self.Label0:setAlpha( 0 )
 				self.clipFinished( Label0, {} )
+
 				Image5:completeAnimation()
 				self.Image5:setAlpha( 0 )
 				self.clipFinished( Image5, {} )
+
 				Image6:completeAnimation()
 				self.Image6:setAlpha( 0 )
 				self.clipFinished( Image6, {} )
+
 				DNImod:completeAnimation()
 				self.DNImod:setAlpha( 1 )
 				self.clipFinished( DNImod, {} )
+
 				CPPrologueFaceScannerCircleDots:completeAnimation()
 				self.CPPrologueFaceScannerCircleDots:setAlpha( 0 )
 				self.clipFinished( CPPrologueFaceScannerCircleDots, {} )
+
 				CPPrologueFaceScannerCircleDash:completeAnimation()
 				self.CPPrologueFaceScannerCircleDash:setAlpha( 0 )
 				self.clipFinished( CPPrologueFaceScannerCircleDash, {} )
+
 				CPPrologueFaceScannerFailedBox:completeAnimation()
 				self.CPPrologueFaceScannerFailedBox:setLeftRight( true, false, 44, 234.5 )
 				self.CPPrologueFaceScannerFailedBox:setTopBottom( true, false, 63, 301 )
 				self.CPPrologueFaceScannerFailedBox:setAlpha( 1 )
 				self.clipFinished( CPPrologueFaceScannerFailedBox, {} )
+
 				FailedBox:completeAnimation()
 				self.FailedBox:setAlpha( 0.25 )
 				self.clipFinished( FailedBox, {} )
+
 				FailedText:completeAnimation()
 				self.FailedText:setLeftRight( true, false, 107, 169.5 )
 				self.FailedText:setTopBottom( true, false, 147.96, 173.5 )
@@ -1031,6 +1065,7 @@ CoD.CP_Prologue_FaceScannerWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CPPrologueFaceScannerFoundBox:close()
 		element.CPPrologueFaceScannerFlipbook:close()

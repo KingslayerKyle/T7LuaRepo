@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.MenuSpecificWidgets.StartMenu.StartMenuButtonItem"
 CoD.SelectionListButton = InheritFrom( LUI.UIElement )
 CoD.SelectionListButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.SelectionListButton )
 	self.id = "SelectionListButton"
@@ -36,6 +38,7 @@ CoD.SelectionListButton.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.internal:close()
 	end )

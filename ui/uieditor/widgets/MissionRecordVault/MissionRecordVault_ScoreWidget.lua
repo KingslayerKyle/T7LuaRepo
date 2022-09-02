@@ -4,9 +4,11 @@
 CoD.MissionRecordVault_ScoreWidget = InheritFrom( LUI.UIElement )
 CoD.MissionRecordVault_ScoreWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MissionRecordVault_ScoreWidget )
 	self.id = "MissionRecordVault_ScoreWidget"
@@ -62,6 +64,7 @@ CoD.MissionRecordVault_ScoreWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				highestScore:completeAnimation()
 				self.highestScore:setAlpha( 0 )
 				self.clipFinished( highestScore, {} )
@@ -70,12 +73,15 @@ CoD.MissionRecordVault_ScoreWidget.new = function ( menu, controller )
 		Completed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				currentScore:completeAnimation()
 				self.currentScore:setAlpha( 0 )
 				self.clipFinished( currentScore, {} )
+
 				TextBox40:completeAnimation()
 				self.TextBox40:setText( Engine.Localize( "CPUI_COMPLETE" ) )
 				self.clipFinished( TextBox40, {} )
+
 				highestScore:completeAnimation()
 				self.highestScore:setAlpha( 1 )
 				self.clipFinished( highestScore, {} )
@@ -84,12 +90,15 @@ CoD.MissionRecordVault_ScoreWidget.new = function ( menu, controller )
 		Safehouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				currentScore:completeAnimation()
 				self.currentScore:setAlpha( 0 )
 				self.clipFinished( currentScore, {} )
+
 				TextBox40:completeAnimation()
 				self.TextBox40:setText( Engine.Localize( "CPUI_YOUR_BEST" ) )
 				self.clipFinished( TextBox40, {} )
+
 				highestScore:completeAnimation()
 				self.highestScore:setAlpha( 1 )
 				self.clipFinished( highestScore, {} )
@@ -98,12 +107,15 @@ CoD.MissionRecordVault_ScoreWidget.new = function ( menu, controller )
 		InProgress = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				currentScore:completeAnimation()
 				self.currentScore:setAlpha( 1 )
 				self.clipFinished( currentScore, {} )
+
 				TextBox40:completeAnimation()
 				self.TextBox40:setText( Engine.Localize( "CPUI_IN_PROGRESS" ) )
 				self.clipFinished( TextBox40, {} )
+
 				highestScore:completeAnimation()
 				self.highestScore:setAlpha( 0 )
 				self.clipFinished( highestScore, {} )
@@ -112,12 +124,14 @@ CoD.MissionRecordVault_ScoreWidget.new = function ( menu, controller )
 		NoAccolades = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				currentScore:completeAnimation()
 				self.currentScore:setAlpha( 1 )
 				self.clipFinished( currentScore, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Completed",
@@ -160,6 +174,7 @@ CoD.MissionRecordVault_ScoreWidget.new = function ( menu, controller )
 			modelName = "challengeImage"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.currentScore:close()
 		element.highestScore:close()

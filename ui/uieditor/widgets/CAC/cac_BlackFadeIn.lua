@@ -4,9 +4,11 @@
 CoD.cac_BlackFadeIn = InheritFrom( LUI.UIElement )
 CoD.cac_BlackFadeIn.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_BlackFadeIn )
 	self.id = "cac_BlackFadeIn"
@@ -26,12 +28,14 @@ CoD.cac_BlackFadeIn.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BlackImage:completeAnimation()
 				self.BlackImage:setAlpha( 0 )
 				self.clipFinished( BlackImage, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 1 )
+
 				local BlackImageFrame2 = function ( BlackImage, event )
 					local BlackImageFrame3 = function ( BlackImage, event )
 						if not event.interrupted then

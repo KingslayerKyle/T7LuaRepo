@@ -4,9 +4,11 @@
 CoD.ZM_Promo_50percentInternal = InheritFrom( LUI.UIElement )
 CoD.ZM_Promo_50percentInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZM_Promo_50percentInternal )
 	self.id = "ZM_Promo_50percentInternal"
@@ -38,6 +40,7 @@ CoD.ZM_Promo_50percentInternal.new = function ( menu, controller )
 	MarketingShadow:setLetterSpacing( -2 )
 	MarketingShadow:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	MarketingShadow:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( MarketingShadow, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 6 )
 	end )
@@ -57,6 +60,7 @@ CoD.ZM_Promo_50percentInternal.new = function ( menu, controller )
 	Marketing:setLetterSpacing( -2 )
 	Marketing:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	Marketing:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( Marketing, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 6 )
 	end )
@@ -67,19 +71,23 @@ CoD.ZM_Promo_50percentInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		HorizontalList = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Purchasing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HorizontalList",

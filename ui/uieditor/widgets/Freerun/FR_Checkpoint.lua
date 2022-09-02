@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Freerun.FR_Checkpoint_Internal" )
 CoD.FR_Checkpoint = InheritFrom( LUI.UIElement )
 CoD.FR_Checkpoint.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FR_Checkpoint )
 	self.id = "FR_Checkpoint"
@@ -31,12 +33,14 @@ CoD.FR_Checkpoint.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FRCheckpointInternal:completeAnimation()
 				self.FRCheckpointInternal:setAlpha( 1 )
 				self.clipFinished( FRCheckpointInternal, {} )
 			end,
 			Checkpoint = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FRCheckpointInternalFrame2 = function ( FRCheckpointInternal, event )
 					local FRCheckpointInternalFrame3 = function ( FRCheckpointInternal, event )
 						local FRCheckpointInternalFrame4 = function ( FRCheckpointInternal, event )
@@ -84,12 +88,14 @@ CoD.FR_Checkpoint.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FRCheckpointInternal:completeAnimation()
 				self.FRCheckpointInternal:setAlpha( 0 )
 				self.clipFinished( FRCheckpointInternal, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",
@@ -120,6 +126,7 @@ CoD.FR_Checkpoint.new = function ( menu, controller )
 			PlayClip( self, "Checkpoint", controller )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FRCheckpointInternal:close()
 	end )

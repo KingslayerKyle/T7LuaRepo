@@ -4,9 +4,11 @@
 CoD.StartMenu_CampaignBGTextures = InheritFrom( LUI.UIElement )
 CoD.StartMenu_CampaignBGTextures.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_CampaignBGTextures )
 	self.id = "StartMenu_CampaignBGTextures"
@@ -81,6 +83,7 @@ CoD.StartMenu_CampaignBGTextures.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local TextureLFrame2 = function ( TextureL, event )
 					local TextureLFrame3 = function ( TextureL, event )
 						if not event.interrupted then
@@ -144,6 +147,7 @@ CoD.StartMenu_CampaignBGTextures.new = function ( menu, controller )
 				TextureR:completeAnimation()
 				self.TextureR:setAlpha( RandomAddPercent( 40, 0.41 ) )
 				TextureRFrame2( TextureR, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

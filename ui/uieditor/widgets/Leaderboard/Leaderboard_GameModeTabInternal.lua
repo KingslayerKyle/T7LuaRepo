@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Leaderboard.Leaderboard_GameModeTabItem" )
 CoD.Leaderboard_GameModeTabInternal = InheritFrom( LUI.UIElement )
 CoD.Leaderboard_GameModeTabInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Leaderboard_GameModeTabInternal )
 	self.id = "Leaderboard_GameModeTabInternal"

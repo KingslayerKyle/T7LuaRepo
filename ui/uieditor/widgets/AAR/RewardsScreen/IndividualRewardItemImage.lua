@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Notifications.NotificationQueueWidgets.Notificatio
 CoD.IndividualRewardItemImage = InheritFrom( LUI.UIElement )
 CoD.IndividualRewardItemImage.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.IndividualRewardItemImage )
 	self.id = "IndividualRewardItemImage"
@@ -48,14 +50,17 @@ CoD.IndividualRewardItemImage.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				RewardImage:completeAnimation()
 				self.RewardImage:setLeftRight( true, true, 0, 0 )
 				self.RewardImage:setTopBottom( true, true, 0, 0 )
 				self.RewardImage:setAlpha( 1 )
 				self.clipFinished( RewardImage, {} )
+
 				Notification2xpReward:completeAnimation()
 				self.Notification2xpReward:setAlpha( 0 )
 				self.clipFinished( Notification2xpReward, {} )
+
 				DoubleCryptokeys:completeAnimation()
 				self.DoubleCryptokeys:setAlpha( 0 )
 				self.clipFinished( DoubleCryptokeys, {} )
@@ -64,13 +69,16 @@ CoD.IndividualRewardItemImage.new = function ( menu, controller )
 		CallingCard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				RewardImage:completeAnimation()
 				self.RewardImage:setLeftRight( true, false, -118, 85 )
 				self.RewardImage:setTopBottom( true, false, 0, 50 )
 				self.clipFinished( RewardImage, {} )
+
 				Notification2xpReward:completeAnimation()
 				self.Notification2xpReward:setAlpha( 0 )
 				self.clipFinished( Notification2xpReward, {} )
+
 				DoubleCryptokeys:completeAnimation()
 				self.DoubleCryptokeys:setAlpha( 0 )
 				self.clipFinished( DoubleCryptokeys, {} )
@@ -79,18 +87,22 @@ CoD.IndividualRewardItemImage.new = function ( menu, controller )
 		DoubleXP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				RewardImage:completeAnimation()
 				self.RewardImage:setAlpha( 0 )
 				self.clipFinished( RewardImage, {} )
+
 				Notification2xpReward:completeAnimation()
 				self.Notification2xpReward:setAlpha( 1 )
 				self.clipFinished( Notification2xpReward, {} )
+
 				DoubleCryptokeys:completeAnimation()
 				self.DoubleCryptokeys:setAlpha( 0 )
 				self.clipFinished( DoubleCryptokeys, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CallingCard",
@@ -121,6 +133,7 @@ CoD.IndividualRewardItemImage.new = function ( menu, controller )
 			modelName = "rewardImage"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Notification2xpReward:close()
 		element.RewardImage:close()

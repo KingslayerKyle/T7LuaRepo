@@ -83,9 +83,11 @@ end
 CoD.ScrStk_Container = InheritFrom( LUI.UIElement )
 CoD.ScrStk_Container.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScrStk_Container )
 	self.id = "ScrStk_Container"
@@ -151,21 +153,26 @@ CoD.ScrStk_Container.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ScrStkCombatEfficiencyBackGlow0:completeAnimation()
 				self.ScrStkCombatEfficiencyBackGlow0:setAlpha( 0 )
 				self.clipFinished( ScrStkCombatEfficiencyBackGlow0, {} )
+
 				ScrStkPanelContainer0:completeAnimation()
 				self.ScrStkPanelContainer0:setAlpha( 0 )
 				self.clipFinished( ScrStkPanelContainer0, {} )
+
 				ScrStkMeter1:completeAnimation()
 				self.ScrStkMeter1:setAlpha( 0 )
 				self.clipFinished( ScrStkMeter1, {} )
+
 				ScrStkButtons:completeAnimation()
 				self.ScrStkButtons:setAlpha( 0 )
 				self.clipFinished( ScrStkButtons, {} )
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 4 )
+
 				local ScrStkCombatEfficiencyBackGlow0Frame2 = function ( ScrStkCombatEfficiencyBackGlow0, event )
 					if not event.interrupted then
 						ScrStkCombatEfficiencyBackGlow0:beginAnimation( "keyframe", 59, false, false, CoD.TweenType.Linear )
@@ -241,21 +248,26 @@ CoD.ScrStk_Container.new = function ( menu, controller )
 		HudStart = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ScrStkCombatEfficiencyBackGlow0:completeAnimation()
 				self.ScrStkCombatEfficiencyBackGlow0:setAlpha( 0.53 )
 				self.clipFinished( ScrStkCombatEfficiencyBackGlow0, {} )
+
 				ScrStkPanelContainer0:completeAnimation()
 				self.ScrStkPanelContainer0:setAlpha( 1 )
 				self.clipFinished( ScrStkPanelContainer0, {} )
+
 				ScrStkMeter1:completeAnimation()
 				self.ScrStkMeter1:setAlpha( 1 )
 				self.clipFinished( ScrStkMeter1, {} )
+
 				ScrStkButtons:completeAnimation()
 				self.ScrStkButtons:setAlpha( 1 )
 				self.clipFinished( ScrStkButtons, {} )
 			end,
 			HudStop = function ()
 				self:setupElementClipCounter( 4 )
+
 				local ScrStkCombatEfficiencyBackGlow0Frame2 = function ( ScrStkCombatEfficiencyBackGlow0, event )
 					if not event.interrupted then
 						ScrStkCombatEfficiencyBackGlow0:beginAnimation( "keyframe", 239, false, false, CoD.TweenType.Linear )
@@ -331,21 +343,26 @@ CoD.ScrStk_Container.new = function ( menu, controller )
 		ShowForCodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ScrStkCombatEfficiencyBackGlow0:completeAnimation()
 				self.ScrStkCombatEfficiencyBackGlow0:setAlpha( 0.53 )
 				self.clipFinished( ScrStkCombatEfficiencyBackGlow0, {} )
+
 				ScrStkPanelContainer0:completeAnimation()
 				self.ScrStkPanelContainer0:setAlpha( 1 )
 				self.clipFinished( ScrStkPanelContainer0, {} )
+
 				ScrStkMeter1:completeAnimation()
 				self.ScrStkMeter1:setAlpha( 1 )
 				self.clipFinished( ScrStkMeter1, {} )
+
 				ScrStkButtons:completeAnimation()
 				self.ScrStkButtons:setAlpha( 1 )
 				self.clipFinished( ScrStkButtons, {} )
 			end,
 			HudStop = function ()
 				self:setupElementClipCounter( 4 )
+
 				local ScrStkCombatEfficiencyBackGlow0Frame2 = function ( ScrStkCombatEfficiencyBackGlow0, event )
 					if not event.interrupted then
 						ScrStkCombatEfficiencyBackGlow0:beginAnimation( "keyframe", 239, false, false, CoD.TweenType.Linear )
@@ -419,6 +436,7 @@ CoD.ScrStk_Container.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HudStart",
@@ -457,6 +475,7 @@ CoD.ScrStk_Container.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ScrStkCombatEfficiencyBackGlow0:close()
 		element.ScrStkPanelContainer0:close()

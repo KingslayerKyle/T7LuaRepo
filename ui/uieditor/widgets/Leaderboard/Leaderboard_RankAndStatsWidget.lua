@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Leaderboard.Leaderboard_StatWidget" )
 CoD.Leaderboard_RankAndStatsWidget = InheritFrom( LUI.UIElement )
 CoD.Leaderboard_RankAndStatsWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Leaderboard_RankAndStatsWidget )
 	self.id = "Leaderboard_RankAndStatsWidget"
@@ -112,21 +114,27 @@ CoD.Leaderboard_RankAndStatsWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				rankIcon:completeAnimation()
 				self.rankIcon:setAlpha( 0 )
 				self.clipFinished( rankIcon, {} )
+
 				rankText:completeAnimation()
 				self.rankText:setAlpha( 0 )
 				self.clipFinished( rankText, {} )
+
 				ListHeader0:completeAnimation()
 				self.ListHeader0:setAlpha( 0 )
 				self.clipFinished( ListHeader0, {} )
+
 				StatWidget1:completeAnimation()
 				self.StatWidget1:setAlpha( 0 )
 				self.clipFinished( StatWidget1, {} )
+
 				StatWidget2:completeAnimation()
 				self.StatWidget2:setAlpha( 0 )
 				self.clipFinished( StatWidget2, {} )
+
 				StatWidget3:completeAnimation()
 				self.StatWidget3:setAlpha( 0 )
 				self.clipFinished( StatWidget3, {} )
@@ -135,21 +143,27 @@ CoD.Leaderboard_RankAndStatsWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				rankIcon:completeAnimation()
 				self.rankIcon:setAlpha( 1 )
 				self.clipFinished( rankIcon, {} )
+
 				rankText:completeAnimation()
 				self.rankText:setAlpha( 1 )
 				self.clipFinished( rankText, {} )
+
 				ListHeader0:completeAnimation()
 				self.ListHeader0:setAlpha( 1 )
 				self.clipFinished( ListHeader0, {} )
+
 				StatWidget1:completeAnimation()
 				self.StatWidget1:setAlpha( 1 )
 				self.clipFinished( StatWidget1, {} )
+
 				StatWidget2:completeAnimation()
 				self.StatWidget2:setAlpha( 1 )
 				self.clipFinished( StatWidget2, {} )
+
 				StatWidget3:completeAnimation()
 				self.StatWidget3:setAlpha( 1 )
 				self.clipFinished( StatWidget3, {} )
@@ -158,25 +172,31 @@ CoD.Leaderboard_RankAndStatsWidget.new = function ( menu, controller )
 		Freerun = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				rankIcon:completeAnimation()
 				self.rankIcon:setAlpha( 0 )
 				self.clipFinished( rankIcon, {} )
+
 				rankText:completeAnimation()
 				self.rankText:setAlpha( 0 )
 				self.clipFinished( rankText, {} )
+
 				ListHeader0:completeAnimation()
 				self.ListHeader0:setAlpha( 0 )
 				self.clipFinished( ListHeader0, {} )
+
 				StatWidget1:completeAnimation()
 				self.StatWidget1:setLeftRight( true, false, 4, 104 )
 				self.StatWidget1:setTopBottom( true, false, 2, 87 )
 				self.StatWidget1:setAlpha( 1 )
 				self.clipFinished( StatWidget1, {} )
+
 				StatWidget2:completeAnimation()
 				self.StatWidget2:setLeftRight( false, false, -50, 50 )
 				self.StatWidget2:setTopBottom( true, false, 2, 87 )
 				self.StatWidget2:setAlpha( 1 )
 				self.clipFinished( StatWidget2, {} )
+
 				StatWidget3:completeAnimation()
 				self.StatWidget3:setLeftRight( false, true, -104, -4 )
 				self.StatWidget3:setTopBottom( true, false, 2, 87 )
@@ -187,25 +207,31 @@ CoD.Leaderboard_RankAndStatsWidget.new = function ( menu, controller )
 		DOA = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				rankIcon:completeAnimation()
 				self.rankIcon:setAlpha( 0 )
 				self.clipFinished( rankIcon, {} )
+
 				rankText:completeAnimation()
 				self.rankText:setAlpha( 0 )
 				self.clipFinished( rankText, {} )
+
 				ListHeader0:completeAnimation()
 				self.ListHeader0:setAlpha( 0 )
 				self.clipFinished( ListHeader0, {} )
+
 				StatWidget1:completeAnimation()
 				self.StatWidget1:setLeftRight( true, false, 4, 104 )
 				self.StatWidget1:setTopBottom( true, false, 2, 87 )
 				self.StatWidget1:setAlpha( 1 )
 				self.clipFinished( StatWidget1, {} )
+
 				StatWidget2:completeAnimation()
 				self.StatWidget2:setLeftRight( false, false, -50, 50 )
 				self.StatWidget2:setTopBottom( true, false, 2, 87 )
 				self.StatWidget2:setAlpha( 1 )
 				self.clipFinished( StatWidget2, {} )
+
 				StatWidget3:completeAnimation()
 				self.StatWidget3:setLeftRight( false, true, -104, -4 )
 				self.StatWidget3:setTopBottom( true, false, 2, 87 )
@@ -216,25 +242,31 @@ CoD.Leaderboard_RankAndStatsWidget.new = function ( menu, controller )
 		Rankless = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				rankIcon:completeAnimation()
 				self.rankIcon:setAlpha( 0 )
 				self.clipFinished( rankIcon, {} )
+
 				rankText:completeAnimation()
 				self.rankText:setAlpha( 0 )
 				self.clipFinished( rankText, {} )
+
 				ListHeader0:completeAnimation()
 				self.ListHeader0:setAlpha( 0 )
 				self.clipFinished( ListHeader0, {} )
+
 				StatWidget1:completeAnimation()
 				self.StatWidget1:setLeftRight( true, false, 4, 104 )
 				self.StatWidget1:setTopBottom( true, false, 2, 87 )
 				self.StatWidget1:setAlpha( 1 )
 				self.clipFinished( StatWidget1, {} )
+
 				StatWidget2:completeAnimation()
 				self.StatWidget2:setLeftRight( false, false, -50, 50 )
 				self.StatWidget2:setTopBottom( true, false, 2, 87 )
 				self.StatWidget2:setAlpha( 1 )
 				self.clipFinished( StatWidget2, {} )
+
 				StatWidget3:completeAnimation()
 				self.StatWidget3:setLeftRight( false, true, -104, -4 )
 				self.StatWidget3:setTopBottom( true, false, 2, 87 )
@@ -243,6 +275,7 @@ CoD.Leaderboard_RankAndStatsWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.rankIcon:close()
 		element.rankText:close()

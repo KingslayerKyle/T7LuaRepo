@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CodCaster.CodCasterPlayerListHeaderWidget" )
 CoD.CodCasterPlayerListHeaderWidgetContainer = InheritFrom( LUI.UIElement )
 CoD.CodCasterPlayerListHeaderWidgetContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterPlayerListHeaderWidgetContainer )
 	self.id = "CodCasterPlayerListHeaderWidgetContainer"
@@ -36,9 +38,11 @@ CoD.CodCasterPlayerListHeaderWidgetContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Header:completeAnimation()
 				self.Header:setAlpha( 0 )
 				self.clipFinished( Header, {} )
+
 				ListenIn:completeAnimation()
 				self.ListenIn:setAlpha( 0 )
 				self.clipFinished( ListenIn, {} )
@@ -47,14 +51,19 @@ CoD.CodCasterPlayerListHeaderWidgetContainer.new = function ( menu, controller )
 		VisibleSelectedTeam = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Header:completeAnimation()
+
 				Header.whiteBG:completeAnimation()
+
 				Header.whiteBGAccent2:completeAnimation()
+
 				Header.whiteBGcolor:completeAnimation()
 				self.Header.whiteBG:setAlpha( 0 )
 				self.Header.whiteBGAccent2:setAlpha( 0.5 )
 				self.Header.whiteBGcolor:setAlpha( 0.7 )
 				self.clipFinished( Header, {} )
+
 				ListenIn:completeAnimation()
 				self.ListenIn:setAlpha( 0 )
 				self.clipFinished( ListenIn, {} )
@@ -63,14 +72,19 @@ CoD.CodCasterPlayerListHeaderWidgetContainer.new = function ( menu, controller )
 		VisibleSelectedTeamWithListenIn = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Header:completeAnimation()
+
 				Header.whiteBG:completeAnimation()
+
 				Header.whiteBGAccent2:completeAnimation()
+
 				Header.whiteBGcolor:completeAnimation()
 				self.Header.whiteBG:setAlpha( 0 )
 				self.Header.whiteBGAccent2:setAlpha( 0.5 )
 				self.Header.whiteBGcolor:setAlpha( 0.7 )
 				self.clipFinished( Header, {} )
+
 				ListenIn:completeAnimation()
 				self.ListenIn:setAlpha( 1 )
 				self.clipFinished( ListenIn, {} )
@@ -79,15 +93,20 @@ CoD.CodCasterPlayerListHeaderWidgetContainer.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Header:completeAnimation()
+
 				Header.whiteBG:completeAnimation()
+
 				Header.whiteBGAccent2:completeAnimation()
+
 				Header.whiteBGcolor:completeAnimation()
 				self.Header:setAlpha( 1 )
 				self.Header.whiteBG:setAlpha( 0.7 )
 				self.Header.whiteBGAccent2:setAlpha( 0 )
 				self.Header.whiteBGcolor:setAlpha( 0 )
 				self.clipFinished( Header, {} )
+
 				ListenIn:completeAnimation()
 				self.ListenIn:setAlpha( 0 )
 				self.clipFinished( ListenIn, {} )
@@ -96,21 +115,27 @@ CoD.CodCasterPlayerListHeaderWidgetContainer.new = function ( menu, controller )
 		VisibleWithListenIn = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Header:completeAnimation()
+
 				Header.whiteBG:completeAnimation()
+
 				Header.whiteBGAccent2:completeAnimation()
+
 				Header.whiteBGcolor:completeAnimation()
 				self.Header:setAlpha( 1 )
 				self.Header.whiteBG:setAlpha( 0.7 )
 				self.Header.whiteBGAccent2:setAlpha( 0 )
 				self.Header.whiteBGcolor:setAlpha( 0 )
 				self.clipFinished( Header, {} )
+
 				ListenIn:completeAnimation()
 				self.ListenIn:setAlpha( 1 )
 				self.clipFinished( ListenIn, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Header:close()
 	end )

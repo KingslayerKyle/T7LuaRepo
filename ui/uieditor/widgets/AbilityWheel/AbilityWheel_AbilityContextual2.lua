@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.AbilityWheel.AbilityWheel_DescriptionContextual" )
 CoD.AbilityWheel_AbilityContextual2 = InheritFrom( LUI.UIElement )
 CoD.AbilityWheel_AbilityContextual2.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AbilityWheel_AbilityContextual2 )
 	self.id = "AbilityWheel_AbilityContextual2"
@@ -113,27 +115,33 @@ CoD.AbilityWheel_AbilityContextual2.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Frame:completeAnimation()
 				self.Frame:setLeftRight( false, false, -37, 32.61 )
 				self.Frame:setTopBottom( false, false, -76.84, 3.16 )
 				self.Frame:setAlpha( 1 )
 				self.Frame:setScale( 0.9 )
 				self.clipFinished( Frame, {} )
+
 				Pixel:completeAnimation()
 				self.Pixel:setAlpha( 0 )
 				self.clipFinished( Pixel, {} )
+
 				AbilityWheelIcon0:completeAnimation()
 				self.AbilityWheelIcon0:setLeftRight( false, false, -21.43, 27.43 )
 				self.AbilityWheelIcon0:setTopBottom( false, false, -57.7, -8.84 )
 				self.AbilityWheelIcon0:setAlpha( 1 )
 				self.AbilityWheelIcon0:setScale( 1 )
 				self.clipFinished( AbilityWheelIcon0, {} )
+
 				AbilityWheelDescriptionContextual0:completeAnimation()
 				self.AbilityWheelDescriptionContextual0:setAlpha( 0.9 )
 				self.clipFinished( AbilityWheelDescriptionContextual0, {} )
+
 				PanelGlow00:completeAnimation()
 				self.PanelGlow00:setAlpha( 0 )
 				self.clipFinished( PanelGlow00, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( RandomAddPercent( -30, 1 ) )
 				self.clipFinished( Title, {} )
@@ -142,27 +150,34 @@ CoD.AbilityWheel_AbilityContextual2.new = function ( menu, controller )
 		Inactive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Frame:completeAnimation()
 				self.Frame:setAlpha( 0 )
 				self.clipFinished( Frame, {} )
+
 				Pixel:completeAnimation()
 				self.Pixel:setAlpha( 0 )
 				self.clipFinished( Pixel, {} )
+
 				AbilityWheelIcon0:completeAnimation()
 				self.AbilityWheelIcon0:setAlpha( 0 )
 				self.clipFinished( AbilityWheelIcon0, {} )
+
 				AbilityWheelDescriptionContextual0:completeAnimation()
 				self.AbilityWheelDescriptionContextual0:setAlpha( 0 )
 				self.clipFinished( AbilityWheelDescriptionContextual0, {} )
+
 				PanelGlow00:completeAnimation()
 				self.PanelGlow00:setAlpha( 0 )
 				self.clipFinished( PanelGlow00, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( RandomAddPercent( -30, 0 ) )
 				self.clipFinished( Title, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Pixel:close()
 		element.AbilityWheelIcon0:close()

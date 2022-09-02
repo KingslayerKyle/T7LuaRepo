@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.LoadingAnimation.LoadingScreen_DoubleXPLabel" )
 CoD.DoubleLoot_small = InheritFrom( LUI.UIElement )
 CoD.DoubleLoot_small.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DoubleLoot_small )
 	self.id = "DoubleLoot_small"
@@ -40,9 +42,11 @@ CoD.DoubleLoot_small.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				LoadingScreenDoubleXPLabel:completeAnimation()
 				self.LoadingScreenDoubleXPLabel:setAlpha( 0 )
 				self.clipFinished( LoadingScreenDoubleXPLabel, {} )
+
 				cryptokeyBack:completeAnimation()
 				self.cryptokeyBack:setAlpha( 0 )
 				self.clipFinished( cryptokeyBack, {} )
@@ -51,6 +55,7 @@ CoD.DoubleLoot_small.new = function ( menu, controller )
 		DoubleLoot = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				LoadingScreenDoubleXPLabel:completeAnimation()
 				self.LoadingScreenDoubleXPLabel:setAlpha( 0 )
 				self.clipFinished( LoadingScreenDoubleXPLabel, {} )
@@ -94,10 +99,12 @@ CoD.DoubleLoot_small.new = function ( menu, controller )
 				self.cryptokeyBack:setMaterial( LUI.UIImage.GetCachedMaterial( "sw4_2d_bitchin_glint" ) )
 				self.cryptokeyBack:setShaderVector( 0, 0.01, 0, 0, 0 )
 				cryptokeyBackFrame2( cryptokeyBack, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DoubleLoot",
@@ -106,6 +113,7 @@ CoD.DoubleLoot_small.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LoadingScreenDoubleXPLabel:close()
 	end )

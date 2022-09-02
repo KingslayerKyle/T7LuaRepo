@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_AbilityGlow" )
 CoD.GasMaskStatus = InheritFrom( LUI.UIElement )
 CoD.GasMaskStatus.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GasMaskStatus )
 	self.id = "GasMaskStatus"
@@ -98,28 +100,35 @@ CoD.GasMaskStatus.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver, {} )
+
 				RingGlow:completeAnimation()
 				self.RingGlow:setAlpha( 0 )
 				self.clipFinished( RingGlow, {} )
+
 				RingMiddle:completeAnimation()
 				self.RingMiddle:setAlpha( 0 )
 				self.clipFinished( RingMiddle, {} )
+
 				RingTopBleedOut:completeAnimation()
 				self.RingTopBleedOut:setRGB( 1, 0.92, 0 )
 				self.RingTopBleedOut:setAlpha( 0 )
 				self.clipFinished( RingTopBleedOut, {} )
+
 				gasMask:completeAnimation()
 				self.gasMask:setAlpha( 0 )
 				self.clipFinished( gasMask, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setAlpha( 0 )
 				self.clipFinished( Glow0, {} )
 			end,
 			Acquired = function ()
 				self:setupElementClipCounter( 7 )
+
 				local GlowOrangeOverFrame2 = function ( GlowOrangeOver, event )
 					local GlowOrangeOverFrame3 = function ( GlowOrangeOver, event )
 						local GlowOrangeOverFrame4 = function ( GlowOrangeOver, event )
@@ -157,6 +166,7 @@ CoD.GasMaskStatus.new = function ( menu, controller )
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				GlowOrangeOverFrame2( GlowOrangeOver, {} )
+
 				RingGlow:completeAnimation()
 				self.RingGlow:setAlpha( 0 )
 				self.clipFinished( RingGlow, {} )
@@ -271,9 +281,11 @@ CoD.GasMaskStatus.new = function ( menu, controller )
 				gasMask:completeAnimation()
 				self.gasMask:setAlpha( 0 )
 				gasMaskFrame2( gasMask, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setAlpha( 0 )
 				self.clipFinished( Glow0, {} )
@@ -282,22 +294,28 @@ CoD.GasMaskStatus.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver, {} )
+
 				RingGlow:completeAnimation()
 				self.RingGlow:setAlpha( 0 )
 				self.clipFinished( RingGlow, {} )
+
 				RingMiddle:completeAnimation()
 				self.RingMiddle:setAlpha( 0 )
 				self.clipFinished( RingMiddle, {} )
+
 				RingTopBleedOut:completeAnimation()
 				self.RingTopBleedOut:setRGB( 1, 0.92, 0 )
 				self.RingTopBleedOut:setAlpha( 0 )
 				self.clipFinished( RingTopBleedOut, {} )
+
 				gasMask:completeAnimation()
 				self.gasMask:setAlpha( 0 )
 				self.clipFinished( gasMask, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setAlpha( 0 )
 				self.clipFinished( Glow0, {} )
@@ -306,6 +324,7 @@ CoD.GasMaskStatus.new = function ( menu, controller )
 		MaskEmpty = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				local GlowOrangeOverFrame2 = function ( GlowOrangeOver, event )
 					local GlowOrangeOverFrame3 = function ( GlowOrangeOver, event )
 						local GlowOrangeOverFrame4 = function ( GlowOrangeOver, event )
@@ -356,14 +375,17 @@ CoD.GasMaskStatus.new = function ( menu, controller )
 				self.GlowOrangeOver:setRGB( 0.61, 0.01, 0 )
 				self.GlowOrangeOver:setAlpha( 0.4 )
 				GlowOrangeOverFrame2( GlowOrangeOver, {} )
+
 				RingGlow:completeAnimation()
 				self.RingGlow:setRGB( 1, 0, 0.12 )
 				self.RingGlow:setAlpha( 0 )
 				self.clipFinished( RingGlow, {} )
+
 				RingMiddle:completeAnimation()
 				self.RingMiddle:setRGB( 1, 0, 0 )
 				self.RingMiddle:setAlpha( 0.06 )
 				self.clipFinished( RingMiddle, {} )
+
 				RingTopBleedOut:completeAnimation()
 				self.RingTopBleedOut:setRGB( 1, 0, 0.06 )
 				self.RingTopBleedOut:setAlpha( 1 )
@@ -396,6 +418,7 @@ CoD.GasMaskStatus.new = function ( menu, controller )
 				self.gasMask:setAlpha( 1 )
 				self.gasMask:setScale( 1 )
 				gasMaskFrame2( gasMask, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
@@ -427,12 +450,14 @@ CoD.GasMaskStatus.new = function ( menu, controller )
 				self.Glow0:setRGB( 1, 0, 0 )
 				self.Glow0:setAlpha( 0.1 )
 				Glow0Frame2( Glow0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		InUse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				local GlowOrangeOverFrame2 = function ( GlowOrangeOver, event )
 					local GlowOrangeOverFrame3 = function ( GlowOrangeOver, event )
 						if not event.interrupted then
@@ -459,12 +484,15 @@ CoD.GasMaskStatus.new = function ( menu, controller )
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0.4 )
 				GlowOrangeOverFrame2( GlowOrangeOver, {} )
+
 				RingGlow:completeAnimation()
 				self.RingGlow:setAlpha( 0 )
 				self.clipFinished( RingGlow, {} )
+
 				RingMiddle:completeAnimation()
 				self.RingMiddle:setAlpha( 0.1 )
 				self.clipFinished( RingMiddle, {} )
+
 				RingTopBleedOut:completeAnimation()
 				self.RingTopBleedOut:setRGB( 1, 0.92, 0 )
 				self.RingTopBleedOut:setAlpha( 1 )
@@ -497,6 +525,7 @@ CoD.GasMaskStatus.new = function ( menu, controller )
 				self.gasMask:setAlpha( 1 )
 				self.gasMask:setScale( 1 )
 				gasMaskFrame2( gasMask, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setLeftRight( false, false, -67.86, 69 )
 				self.AbilitySwirl:setTopBottom( false, false, -69, 67.86 )
@@ -528,36 +557,45 @@ CoD.GasMaskStatus.new = function ( menu, controller )
 				Glow0:completeAnimation()
 				self.Glow0:setAlpha( 0 )
 				Glow0Frame2( Glow0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Acquired = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver, {} )
+
 				RingGlow:completeAnimation()
 				self.RingGlow:setAlpha( 0 )
 				self.clipFinished( RingGlow, {} )
+
 				RingMiddle:completeAnimation()
 				self.RingMiddle:setAlpha( 0 )
 				self.clipFinished( RingMiddle, {} )
+
 				RingTopBleedOut:completeAnimation()
 				self.RingTopBleedOut:setAlpha( 0 )
 				self.clipFinished( RingTopBleedOut, {} )
+
 				gasMask:completeAnimation()
 				self.gasMask:setAlpha( 0 )
 				self.clipFinished( gasMask, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setAlpha( 0 )
 				self.clipFinished( Glow0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -600,6 +638,7 @@ CoD.GasMaskStatus.new = function ( menu, controller )
 			modelName = "zmInventory.gaskmask_gasmask_progress"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Glow0:close()
 		element.RingTopBleedOut:close()

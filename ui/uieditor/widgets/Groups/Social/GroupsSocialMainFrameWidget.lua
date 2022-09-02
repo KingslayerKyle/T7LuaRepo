@@ -16,9 +16,11 @@ require( "ui.uieditor.menus.Groups.FindGroups" )
 CoD.GroupsSocialMainFrameWidget = InheritFrom( LUI.UIElement )
 CoD.GroupsSocialMainFrameWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsSocialMainFrameWidget )
 	self.id = "GroupsSocialMainFrameWidget"
@@ -379,6 +381,7 @@ CoD.GroupsSocialMainFrameWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ButtonList:close()
 		element.GroupsSummary:close()

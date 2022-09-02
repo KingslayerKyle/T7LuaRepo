@@ -4,9 +4,11 @@
 CoD.ScoreInfo_TimeSemi = InheritFrom( LUI.UIElement )
 CoD.ScoreInfo_TimeSemi.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreInfo_TimeSemi )
 	self.id = "ScoreInfo_TimeSemi"

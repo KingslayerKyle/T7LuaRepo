@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.AAR.RewardsScreen.IndividualRewardItemImage" )
 CoD.IndividualRewardItem = InheritFrom( LUI.UIElement )
 CoD.IndividualRewardItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.IndividualRewardItem )
 	self.id = "IndividualRewardItem"
@@ -72,6 +74,7 @@ CoD.IndividualRewardItem.new = function ( menu, controller )
 			TextBox0:setText( Engine.Localize( rewardDesc ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( TextBox0, "setText", function ( element, controller )
 		if not IsCurrentLanguageReversed() then
 			ScaleWidgetToLabelWrapped( self, element, 1, 1 )
@@ -95,14 +98,17 @@ CoD.IndividualRewardItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				RewardTitle:completeAnimation()
 				self.RewardTitle:setLeftRight( true, false, 61.97, 238 )
 				self.RewardTitle:setTopBottom( true, false, 10.5, 30.5 )
 				self.RewardTitle:setAlpha( 1 )
 				self.clipFinished( RewardTitle, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 1 )
 				self.clipFinished( TextBox0, {} )
+
 				IndividualRewardItemImage0:completeAnimation()
 				self.IndividualRewardItemImage0:setLeftRight( true, false, 5, 55 )
 				self.IndividualRewardItemImage0:setTopBottom( true, false, 4.5, 54.5 )
@@ -112,14 +118,17 @@ CoD.IndividualRewardItem.new = function ( menu, controller )
 		NoDescription = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				RewardTitle:completeAnimation()
 				self.RewardTitle:setLeftRight( true, false, 61.97, 238 )
 				self.RewardTitle:setTopBottom( true, false, 19.5, 39.5 )
 				self.RewardTitle:setAlpha( 1 )
 				self.clipFinished( RewardTitle, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 0 )
 				self.clipFinished( TextBox0, {} )
+
 				IndividualRewardItemImage0:completeAnimation()
 				self.IndividualRewardItemImage0:setLeftRight( true, false, 5, 55 )
 				self.IndividualRewardItemImage0:setTopBottom( true, false, 4.5, 54.5 )
@@ -129,14 +138,17 @@ CoD.IndividualRewardItem.new = function ( menu, controller )
 		Incentive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				RewardTitle:completeAnimation()
 				self.RewardTitle:setLeftRight( true, false, 61.97, 238 )
 				self.RewardTitle:setTopBottom( true, false, 10.5, 30.5 )
 				self.RewardTitle:setAlpha( 1 )
 				self.clipFinished( RewardTitle, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 1 )
 				self.clipFinished( TextBox0, {} )
+
 				IndividualRewardItemImage0:completeAnimation()
 				self.IndividualRewardItemImage0:setLeftRight( true, false, 1, 59 )
 				self.IndividualRewardItemImage0:setTopBottom( true, false, 0.5, 58.5 )
@@ -144,6 +156,7 @@ CoD.IndividualRewardItem.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoDescription",
@@ -166,6 +179,7 @@ CoD.IndividualRewardItem.new = function ( menu, controller )
 			modelName = "rewardDesc"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.NotificationRewardBorder:close()
 		element.Border:close()

@@ -4,9 +4,11 @@
 CoD.vhud_ms_NotificationOptic = InheritFrom( LUI.UIElement )
 CoD.vhud_ms_NotificationOptic.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ms_NotificationOptic )
 	self.id = "vhud_ms_NotificationOptic"
@@ -55,6 +57,7 @@ CoD.vhud_ms_NotificationOptic.new = function ( menu, controller )
 	OPTIC:setShaderVector( 4, 0, 0, 0, 0 )
 	OPTIC:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	OPTIC:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( OPTIC, "setText", function ( element, controller )
 		ScaleWidgetToLabelCenteredWithMinimum( self, element, 25, 81 )
 	end )
@@ -74,25 +77,30 @@ CoD.vhud_ms_NotificationOptic.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver, {} )
+
 				arrowUp:completeAnimation()
 				self.arrowUp:setAlpha( 0 )
 				self.clipFinished( arrowUp, {} )
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setRGB( 0.42, 0.93, 1 )
 				self.GlowOrangeOver:setAlpha( 0.4 )
 				self.GlowOrangeOver:setScale( 1.2 )
 				self.clipFinished( GlowOrangeOver, {} )
+
 				arrowUp:completeAnimation()
 				self.arrowUp:setAlpha( 0.6 )
 				self.clipFinished( arrowUp, {} )

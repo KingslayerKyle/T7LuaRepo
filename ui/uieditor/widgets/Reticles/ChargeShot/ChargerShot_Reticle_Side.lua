@@ -4,9 +4,11 @@
 CoD.ChargerShot_Reticle_Side = InheritFrom( LUI.UIElement )
 CoD.ChargerShot_Reticle_Side.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChargerShot_Reticle_Side )
 	self.id = "ChargerShot_Reticle_Side"

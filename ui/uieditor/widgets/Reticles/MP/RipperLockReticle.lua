@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Reticles.MP.RipperLockArrowWidget" )
 CoD.RipperLockReticle = InheritFrom( LUI.UIElement )
 CoD.RipperLockReticle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RipperLockReticle )
 	self.id = "RipperLockReticle"
@@ -113,46 +115,59 @@ CoD.RipperLockReticle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				GlowLarge:completeAnimation()
 				self.GlowLarge:setAlpha( 0 )
 				self.GlowLarge:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
 				self.clipFinished( GlowLarge, {} )
+
 				RipperLockLineWidgetUR:completeAnimation()
 				self.RipperLockLineWidgetUR:setAlpha( 0 )
 				self.clipFinished( RipperLockLineWidgetUR, {} )
+
 				RipperLockLineWidgetUL:completeAnimation()
 				self.RipperLockLineWidgetUL:setAlpha( 0 )
 				self.clipFinished( RipperLockLineWidgetUL, {} )
+
 				RipperLockLineWidgetLR:completeAnimation()
 				self.RipperLockLineWidgetLR:setAlpha( 0 )
 				self.clipFinished( RipperLockLineWidgetLR, {} )
+
 				RipperLockLineWidgetLL:completeAnimation()
 				self.RipperLockLineWidgetLL:setAlpha( 0 )
 				self.clipFinished( RipperLockLineWidgetLL, {} )
+
 				RipperLockArrowWidgetTop:completeAnimation()
 				self.RipperLockArrowWidgetTop:setAlpha( 0 )
 				self.clipFinished( RipperLockArrowWidgetTop, {} )
+
 				RipperLockArrowWidgetBottom:completeAnimation()
 				self.RipperLockArrowWidgetBottom:setAlpha( 0 )
 				self.clipFinished( RipperLockArrowWidgetBottom, {} )
+
 				RipperLockArrowWidgetLeft:completeAnimation()
 				self.RipperLockArrowWidgetLeft:setAlpha( 0 )
 				self.clipFinished( RipperLockArrowWidgetLeft, {} )
+
 				RipperLockArrowWidgetRight:completeAnimation()
 				self.RipperLockArrowWidgetRight:setAlpha( 0 )
 				self.clipFinished( RipperLockArrowWidgetRight, {} )
+
 				GlowSmall:completeAnimation()
 				self.GlowSmall:setAlpha( 0 )
 				self.clipFinished( GlowSmall, {} )
+
 				GlowSmall0:completeAnimation()
 				self.GlowSmall0:setAlpha( 0 )
 				self.clipFinished( GlowSmall0, {} )
+
 				GlowSmall00:completeAnimation()
 				self.GlowSmall00:setAlpha( 0 )
 				self.clipFinished( GlowSmall00, {} )
 			end,
 			Locked = function ()
 				self:setupElementClipCounter( 12 )
+
 				local GlowLargeFrame2 = function ( GlowLarge, event )
 					if not event.interrupted then
 						GlowLarge:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -575,51 +590,63 @@ CoD.RipperLockReticle.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				RipperLockLineWidgetUR:completeAnimation()
 				self.RipperLockLineWidgetUR:setLeftRight( true, false, 105, 201 )
 				self.RipperLockLineWidgetUR:setTopBottom( false, true, -194, -110 )
 				self.RipperLockLineWidgetUR:setAlpha( 1 )
 				self.clipFinished( RipperLockLineWidgetUR, {} )
+
 				RipperLockLineWidgetUL:completeAnimation()
 				self.RipperLockLineWidgetUL:setLeftRight( false, true, -200, -104 )
 				self.RipperLockLineWidgetUL:setTopBottom( false, true, -194, -110 )
 				self.clipFinished( RipperLockLineWidgetUL, {} )
+
 				RipperLockLineWidgetLR:completeAnimation()
 				self.RipperLockLineWidgetLR:setLeftRight( true, false, 105, 201 )
 				self.RipperLockLineWidgetLR:setTopBottom( true, false, 110, 194 )
 				self.clipFinished( RipperLockLineWidgetLR, {} )
+
 				RipperLockLineWidgetLL:completeAnimation()
 				self.RipperLockLineWidgetLL:setLeftRight( false, true, -200, -104 )
 				self.RipperLockLineWidgetLL:setTopBottom( true, false, 110, 194 )
 				self.clipFinished( RipperLockLineWidgetLL, {} )
+
 				RipperLockArrowWidgetTop:completeAnimation()
 				self.RipperLockArrowWidgetTop:setLeftRight( true, false, 66, 114 )
 				self.RipperLockArrowWidgetTop:setTopBottom( true, false, 14, 53 )
 				self.clipFinished( RipperLockArrowWidgetTop, {} )
+
 				RipperLockArrowWidgetBottom:completeAnimation()
 				self.RipperLockArrowWidgetBottom:setLeftRight( true, false, 66, 114 )
 				self.RipperLockArrowWidgetBottom:setTopBottom( true, false, 129, 168 )
 				self.clipFinished( RipperLockArrowWidgetBottom, {} )
+
 				RipperLockArrowWidgetLeft:completeAnimation()
 				self.RipperLockArrowWidgetLeft:setLeftRight( true, false, 9, 57 )
 				self.RipperLockArrowWidgetLeft:setTopBottom( true, false, 71, 110 )
 				self.clipFinished( RipperLockArrowWidgetLeft, {} )
+
 				RipperLockArrowWidgetRight:completeAnimation()
 				self.RipperLockArrowWidgetRight:setLeftRight( true, false, 125, 173 )
 				self.RipperLockArrowWidgetRight:setTopBottom( true, false, 71, 110 )
 				self.clipFinished( RipperLockArrowWidgetRight, {} )
+
 				GlowSmall:completeAnimation()
 				self.GlowSmall:setRGB( 0.84, 0.01, 0 )
 				self.clipFinished( GlowSmall, {} )
+
 				GlowSmall0:completeAnimation()
 				self.GlowSmall0:setAlpha( 1 )
 				self.clipFinished( GlowSmall0, {} )
+
 				GlowSmall00:completeAnimation()
 				self.GlowSmall00:setAlpha( 1 )
 				self.clipFinished( GlowSmall00, {} )
 			end,
 			Attack = function ()
 				self:setupElementClipCounter( 12 )
+
 				GlowLarge:completeAnimation()
 				self.GlowLarge:setLeftRight( true, false, -18, 198 )
 				self.GlowLarge:setTopBottom( true, false, -18, 198 )
@@ -866,21 +893,25 @@ CoD.RipperLockReticle.new = function ( menu, controller )
 				self.RipperLockArrowWidgetRight:setTopBottom( true, false, 71, 110 )
 				self.RipperLockArrowWidgetRight:setAlpha( 1 )
 				RipperLockArrowWidgetRightFrame2( RipperLockArrowWidgetRight, {} )
+
 				GlowSmall:completeAnimation()
 				self.GlowSmall:setLeftRight( true, false, 50, 131 )
 				self.GlowSmall:setTopBottom( true, false, 51, 132 )
 				self.GlowSmall:setRGB( 1, 0.12, 0 )
 				self.GlowSmall:setAlpha( 0.72 )
 				self.clipFinished( GlowSmall, {} )
+
 				GlowSmall0:completeAnimation()
 				self.GlowSmall0:setAlpha( 0.91 )
 				self.clipFinished( GlowSmall0, {} )
+
 				GlowSmall00:completeAnimation()
 				self.GlowSmall00:setAlpha( 1 )
 				self.clipFinished( GlowSmall00, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 12 )
+
 				local GlowLargeFrame2 = function ( GlowLarge, event )
 					if not event.interrupted then
 						GlowLarge:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -1284,48 +1315,58 @@ CoD.RipperLockReticle.new = function ( menu, controller )
 		Attack = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				RipperLockLineWidgetUR:completeAnimation()
 				self.RipperLockLineWidgetUR:setLeftRight( true, false, 73, 169 )
 				self.RipperLockLineWidgetUR:setTopBottom( false, true, -162, -78 )
 				self.clipFinished( RipperLockLineWidgetUR, {} )
+
 				RipperLockLineWidgetUL:completeAnimation()
 				self.RipperLockLineWidgetUL:setLeftRight( false, true, -167, -71 )
 				self.RipperLockLineWidgetUL:setTopBottom( false, true, -162, -78 )
 				self.clipFinished( RipperLockLineWidgetUL, {} )
+
 				RipperLockLineWidgetLR:completeAnimation()
 				self.RipperLockLineWidgetLR:setLeftRight( true, false, 73, 169 )
 				self.RipperLockLineWidgetLR:setTopBottom( true, false, 80, 164 )
 				self.clipFinished( RipperLockLineWidgetLR, {} )
+
 				RipperLockLineWidgetLL:completeAnimation()
 				self.RipperLockLineWidgetLL:setLeftRight( false, true, -167, -71 )
 				self.RipperLockLineWidgetLL:setTopBottom( true, false, 76, 160 )
 				self.clipFinished( RipperLockLineWidgetLL, {} )
+
 				RipperLockArrowWidgetTop:completeAnimation()
 				self.RipperLockArrowWidgetTop:setLeftRight( true, false, 67, 115 )
 				self.RipperLockArrowWidgetTop:setTopBottom( true, false, 49, 88 )
 				self.RipperLockArrowWidgetTop:setAlpha( 1 )
 				self.clipFinished( RipperLockArrowWidgetTop, {} )
+
 				RipperLockArrowWidgetBottom:completeAnimation()
 				self.RipperLockArrowWidgetBottom:setLeftRight( true, false, 66, 114 )
 				self.RipperLockArrowWidgetBottom:setTopBottom( true, false, 93, 132 )
 				self.RipperLockArrowWidgetBottom:setAlpha( 1 )
 				self.clipFinished( RipperLockArrowWidgetBottom, {} )
+
 				RipperLockArrowWidgetLeft:completeAnimation()
 				self.RipperLockArrowWidgetLeft:setLeftRight( true, false, 43, 91 )
 				self.RipperLockArrowWidgetLeft:setTopBottom( true, false, 70, 109 )
 				self.RipperLockArrowWidgetLeft:setAlpha( 1 )
 				self.clipFinished( RipperLockArrowWidgetLeft, {} )
+
 				RipperLockArrowWidgetRight:completeAnimation()
 				self.RipperLockArrowWidgetRight:setLeftRight( true, false, 90, 138 )
 				self.RipperLockArrowWidgetRight:setTopBottom( true, false, 72, 111 )
 				self.RipperLockArrowWidgetRight:setAlpha( 1 )
 				self.clipFinished( RipperLockArrowWidgetRight, {} )
+
 				GlowSmall0:completeAnimation()
 				self.GlowSmall0:setAlpha( 0 )
 				self.clipFinished( GlowSmall0, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 11 )
+
 				local GlowLargeFrame2 = function ( GlowLarge, event )
 					if not event.interrupted then
 						GlowLarge:beginAnimation( "keyframe", 70, false, false, CoD.TweenType.Linear )
@@ -1526,6 +1567,7 @@ CoD.RipperLockReticle.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -1548,6 +1590,7 @@ CoD.RipperLockReticle.new = function ( menu, controller )
 			modelName = "status"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RipperLockLineWidgetUR:close()
 		element.RipperLockLineWidgetUL:close()

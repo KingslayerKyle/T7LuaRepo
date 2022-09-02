@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.HUD.ScoreInfo.ScoreInfo_RdTriCont" )
 CoD.codcasterRoundsContainer = InheritFrom( LUI.UIElement )
 CoD.codcasterRoundsContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.codcasterRoundsContainer )
 	self.id = "codcasterRoundsContainer"
@@ -78,23 +80,29 @@ CoD.codcasterRoundsContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setAlpha( 0.65 )
 				self.clipFinished( VSpanel, {} )
+
 				HighlightFrame:completeAnimation()
 				self.HighlightFrame:setAlpha( 0 )
 				self.clipFinished( HighlightFrame, {} )
+
 				CodCasterRoundsUnlimited:completeAnimation()
 				self.CodCasterRoundsUnlimited:setAlpha( 0 )
 				self.clipFinished( CodCasterRoundsUnlimited, {} )
+
 				CodCasterRounds:completeAnimation()
 				self.CodCasterRounds:setAlpha( 0 )
 				self.clipFinished( CodCasterRounds, {} )
+
 				Overtime:completeAnimation()
 				self.Overtime:setLeftRight( true, false, 7.25, 90.75 )
 				self.Overtime:setTopBottom( true, false, 11.5, 27.5 )
 				self.Overtime:setAlpha( 0 )
 				self.clipFinished( Overtime, {} )
+
 				TriCont:completeAnimation()
 				self.TriCont:setAlpha( 0 )
 				self.clipFinished( TriCont, {} )
@@ -103,21 +111,27 @@ CoD.codcasterRoundsContainer.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setAlpha( 0 )
 				self.clipFinished( VSpanel, {} )
+
 				HighlightFrame:completeAnimation()
 				self.HighlightFrame:setAlpha( 0 )
 				self.clipFinished( HighlightFrame, {} )
+
 				CodCasterRoundsUnlimited:completeAnimation()
 				self.CodCasterRoundsUnlimited:setAlpha( 0 )
 				self.clipFinished( CodCasterRoundsUnlimited, {} )
+
 				CodCasterRounds:completeAnimation()
 				self.CodCasterRounds:setAlpha( 0 )
 				self.clipFinished( CodCasterRounds, {} )
+
 				Overtime:completeAnimation()
 				self.Overtime:setAlpha( 0 )
 				self.clipFinished( Overtime, {} )
+
 				TriCont:completeAnimation()
 				self.TriCont:setAlpha( 0 )
 				self.clipFinished( TriCont, {} )
@@ -126,20 +140,25 @@ CoD.codcasterRoundsContainer.new = function ( menu, controller )
 		Overtime = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setAlpha( 0.65 )
 				self.clipFinished( VSpanel, {} )
+
 				HighlightFrame:completeAnimation()
 				self.HighlightFrame:setAlpha( 0 )
 				self.clipFinished( HighlightFrame, {} )
+
 				CodCasterRoundsUnlimited:completeAnimation()
 				self.CodCasterRoundsUnlimited:setAlpha( 0 )
 				self.clipFinished( CodCasterRoundsUnlimited, {} )
+
 				CodCasterRounds:completeAnimation()
 				self.CodCasterRounds:setLeftRight( true, false, 7.25, 90.75 )
 				self.CodCasterRounds:setTopBottom( true, false, 10, 34.63 )
 				self.CodCasterRounds:setAlpha( 0 )
 				self.clipFinished( CodCasterRounds, {} )
+
 				Overtime:completeAnimation()
 				self.Overtime:setLeftRight( true, false, 7.25, 90.75 )
 				self.Overtime:setTopBottom( true, false, 11.5, 27.5 )
@@ -150,6 +169,7 @@ CoD.codcasterRoundsContainer.new = function ( menu, controller )
 				self.Overtime:setShaderVector( 2, 1, 0, 0, 0 )
 				self.Overtime:setRFTMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( Overtime, {} )
+
 				TriCont:completeAnimation()
 				self.TriCont:setAlpha( 0 )
 				self.clipFinished( TriCont, {} )
@@ -158,24 +178,30 @@ CoD.codcasterRoundsContainer.new = function ( menu, controller )
 		RoundBasedNoLimit = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setAlpha( 0.65 )
 				self.clipFinished( VSpanel, {} )
+
 				HighlightFrame:completeAnimation()
 				self.HighlightFrame:setAlpha( 0 )
 				self.clipFinished( HighlightFrame, {} )
+
 				CodCasterRoundsUnlimited:completeAnimation()
 				self.CodCasterRoundsUnlimited:setAlpha( 0 )
 				self.CodCasterRoundsUnlimited:setRFTMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( CodCasterRoundsUnlimited, {} )
+
 				CodCasterRounds:completeAnimation()
 				self.CodCasterRounds:setLeftRight( true, false, 7.25, 90.75 )
 				self.CodCasterRounds:setTopBottom( true, false, 10, 34.63 )
 				self.CodCasterRounds:setAlpha( 1 )
 				self.clipFinished( CodCasterRounds, {} )
+
 				Overtime:completeAnimation()
 				self.Overtime:setAlpha( 0 )
 				self.clipFinished( Overtime, {} )
+
 				TriCont:completeAnimation()
 				self.TriCont:setAlpha( 0 )
 				self.clipFinished( TriCont, {} )
@@ -184,29 +210,35 @@ CoD.codcasterRoundsContainer.new = function ( menu, controller )
 		RoundBasedLimitedRounds = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setAlpha( 0.65 )
 				self.clipFinished( VSpanel, {} )
+
 				HighlightFrame:completeAnimation()
 				self.HighlightFrame:setAlpha( 0 )
 				self.clipFinished( HighlightFrame, {} )
+
 				CodCasterRoundsUnlimited:completeAnimation()
 				self.CodCasterRoundsUnlimited:setLeftRight( true, false, 7.25, 90.25 )
 				self.CodCasterRoundsUnlimited:setTopBottom( true, false, 11, 34.63 )
 				self.CodCasterRoundsUnlimited:setAlpha( 0 )
 				self.CodCasterRoundsUnlimited:setRFTMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( CodCasterRoundsUnlimited, {} )
+
 				CodCasterRounds:completeAnimation()
 				self.CodCasterRounds:setLeftRight( true, false, 3, 89.25 )
 				self.CodCasterRounds:setTopBottom( true, false, 10, 34.63 )
 				self.CodCasterRounds:setAlpha( 1 )
 				self.CodCasterRounds:setRFTMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( CodCasterRounds, {} )
+
 				Overtime:completeAnimation()
 				self.Overtime:setLeftRight( true, false, 9.25, 87.25 )
 				self.Overtime:setTopBottom( true, false, 11.5, 24 )
 				self.Overtime:setAlpha( 0 )
 				self.clipFinished( Overtime, {} )
+
 				TriCont:completeAnimation()
 				self.TriCont:setLeftRight( true, false, 7.25, 92.25 )
 				self.TriCont:setTopBottom( true, false, 5, 13 )
@@ -216,6 +248,7 @@ CoD.codcasterRoundsContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.VSpanel:close()
 		element.HighlightFrame:close()

@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_CompleteRibbon" )
 CoD.AAR_Contracts_SpecialContractWidget = InheritFrom( LUI.UIElement )
 CoD.AAR_Contracts_SpecialContractWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AAR_Contracts_SpecialContractWidget )
 	self.id = "AAR_Contracts_SpecialContractWidget"
@@ -155,26 +157,34 @@ CoD.AAR_Contracts_SpecialContractWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setLeftRight( true, true, 0, -2 )
 				self.FEButtonPanel0:setTopBottom( true, false, 2, 32.5 )
 				self.FEButtonPanel0:setAlpha( 0.4 )
 				self.clipFinished( FEButtonPanel0, {} )
+
 				BMContractsAARtitle:completeAnimation()
 				self.BMContractsAARtitle:setLeftRight( true, true, 1, -149.79 )
 				self.BMContractsAARtitle:setTopBottom( true, false, 0, 33 )
 				self.clipFinished( BMContractsAARtitle, {} )
+
 				SpecialContractName:completeAnimation()
 				self.SpecialContractName:setAlpha( 1 )
 				self.clipFinished( SpecialContractName, {} )
+
 				SpecialContractDesc:completeAnimation()
 				self.SpecialContractDesc:setAlpha( 1 )
 				self.clipFinished( SpecialContractDesc, {} )
+
 				CategoryListLine000:completeAnimation()
 				self.CategoryListLine000:setAlpha( 0.25 )
 				self.clipFinished( CategoryListLine000, {} )
+
 				RewardImage:completeAnimation()
+
 				RewardImage.ItemImage:completeAnimation()
+
 				RewardImage.CallingCard.CardIconFrame:completeAnimation()
 				self.RewardImage:setLeftRight( true, false, 514.04, 702.04 )
 				self.RewardImage:setTopBottom( true, false, 49.06, 153.06 )
@@ -182,12 +192,15 @@ CoD.AAR_Contracts_SpecialContractWidget.new = function ( menu, controller )
 				self.RewardImage.ItemImage:setScale( 1 )
 				self.RewardImage.CallingCard.CardIconFrame:setScale( 0.49 )
 				self.clipFinished( RewardImage, {} )
+
 				BMCompleteRibbon:completeAnimation()
 				self.BMCompleteRibbon:setAlpha( 0 )
 				self.clipFinished( BMCompleteRibbon, {} )
+
 				BMCompleteRibbon0:completeAnimation()
 				self.BMCompleteRibbon0:setAlpha( 0 )
 				self.clipFinished( BMCompleteRibbon0, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 0 )
 				self.clipFinished( CompletedIcon, {} )
@@ -196,33 +209,43 @@ CoD.AAR_Contracts_SpecialContractWidget.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setAlpha( 0 )
 				self.clipFinished( FEButtonPanel0, {} )
+
 				BMContractsAARtitle:completeAnimation()
 				self.BMContractsAARtitle:setAlpha( 0 )
 				self.clipFinished( BMContractsAARtitle, {} )
+
 				SpecialContractPercentCompleteWidget:completeAnimation()
 				self.SpecialContractPercentCompleteWidget:setAlpha( 0 )
 				self.clipFinished( SpecialContractPercentCompleteWidget, {} )
+
 				SpecialContractName:completeAnimation()
 				self.SpecialContractName:setAlpha( 0 )
 				self.clipFinished( SpecialContractName, {} )
+
 				SpecialContractDesc:completeAnimation()
 				self.SpecialContractDesc:setAlpha( 0 )
 				self.clipFinished( SpecialContractDesc, {} )
+
 				CategoryListLine000:completeAnimation()
 				self.CategoryListLine000:setAlpha( 0 )
 				self.clipFinished( CategoryListLine000, {} )
+
 				RewardImage:completeAnimation()
 				self.RewardImage:setAlpha( 0 )
 				self.clipFinished( RewardImage, {} )
+
 				BMCompleteRibbon:completeAnimation()
 				self.BMCompleteRibbon:setAlpha( 0 )
 				self.clipFinished( BMCompleteRibbon, {} )
+
 				BMCompleteRibbon0:completeAnimation()
 				self.BMCompleteRibbon0:setAlpha( 0 )
 				self.clipFinished( BMCompleteRibbon0, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 0 )
 				self.clipFinished( CompletedIcon, {} )
@@ -231,38 +254,47 @@ CoD.AAR_Contracts_SpecialContractWidget.new = function ( menu, controller )
 		Short = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setLeftRight( true, false, 0, 383 )
 				self.FEButtonPanel0:setTopBottom( true, false, 0.75, 31.25 )
 				self.FEButtonPanel0:setAlpha( 0.4 )
 				self.clipFinished( FEButtonPanel0, {} )
+
 				BMContractsAARtitle:completeAnimation()
 				self.BMContractsAARtitle:setLeftRight( true, false, 1, 383 )
 				self.BMContractsAARtitle:setTopBottom( true, false, 0, 33 )
 				self.clipFinished( BMContractsAARtitle, {} )
+
 				SpecialContractPercentCompleteWidget:completeAnimation()
 				self.SpecialContractPercentCompleteWidget:setLeftRight( true, false, -12, 112 )
 				self.SpecialContractPercentCompleteWidget:setTopBottom( true, false, 21.54, 145.54 )
 				self.SpecialContractPercentCompleteWidget:setScale( 0.65 )
 				self.clipFinished( SpecialContractPercentCompleteWidget, {} )
+
 				SpecialContractName:completeAnimation()
 				self.SpecialContractName:setLeftRight( true, false, 112, 336 )
 				self.SpecialContractName:setTopBottom( true, false, 57.91, 75.09 )
 				self.SpecialContractName:setAlpha( 1 )
 				self.clipFinished( SpecialContractName, {} )
+
 				SpecialContractDesc:completeAnimation()
 				self.SpecialContractDesc:setLeftRight( true, false, 113.5, 349.5 )
 				self.SpecialContractDesc:setTopBottom( true, false, 75.09, 93.09 )
 				self.SpecialContractDesc:setAlpha( 1 )
 				self.clipFinished( SpecialContractDesc, {} )
+
 				CategoryListLine000:completeAnimation()
 				self.CategoryListLine000:setLeftRight( true, false, 71, 336 )
 				self.CategoryListLine000:setTopBottom( true, false, 130, 134 )
 				self.CategoryListLine000:setAlpha( 0.25 )
 				self.CategoryListLine000:setZRot( 0 )
 				self.clipFinished( CategoryListLine000, {} )
+
 				RewardImage:completeAnimation()
+
 				RewardImage.ItemImage:completeAnimation()
+
 				RewardImage.CallingCard.CardIconFrame:completeAnimation()
 				self.RewardImage:setLeftRight( true, false, 136.9, 270.1 )
 				self.RewardImage:setTopBottom( true, false, 132, 205.17 )
@@ -270,12 +302,15 @@ CoD.AAR_Contracts_SpecialContractWidget.new = function ( menu, controller )
 				self.RewardImage.ItemImage:setScale( 0.71 )
 				self.RewardImage.CallingCard.CardIconFrame:setScale( 0.42 )
 				self.clipFinished( RewardImage, {} )
+
 				BMCompleteRibbon:completeAnimation()
 				self.BMCompleteRibbon:setAlpha( 0 )
 				self.clipFinished( BMCompleteRibbon, {} )
+
 				BMCompleteRibbon0:completeAnimation()
 				self.BMCompleteRibbon0:setAlpha( 0 )
 				self.clipFinished( BMCompleteRibbon0, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 0 )
 				self.clipFinished( CompletedIcon, {} )
@@ -284,20 +319,26 @@ CoD.AAR_Contracts_SpecialContractWidget.new = function ( menu, controller )
 		Completed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setLeftRight( true, true, 0, -2 )
 				self.FEButtonPanel0:setTopBottom( true, false, 2, 32.5 )
 				self.FEButtonPanel0:setAlpha( 0.4 )
 				self.clipFinished( FEButtonPanel0, {} )
+
 				BMContractsAARtitle:completeAnimation()
 				self.BMContractsAARtitle:setLeftRight( true, false, 1, 567.21 )
 				self.BMContractsAARtitle:setTopBottom( true, false, 0, 33 )
 				self.clipFinished( BMContractsAARtitle, {} )
+
 				CategoryListLine000:completeAnimation()
 				self.CategoryListLine000:setAlpha( 0.25 )
 				self.clipFinished( CategoryListLine000, {} )
+
 				RewardImage:completeAnimation()
+
 				RewardImage.ItemImage:completeAnimation()
+
 				RewardImage.CallingCard.CardIconFrame:completeAnimation()
 				self.RewardImage:setLeftRight( true, false, 514.04, 702.04 )
 				self.RewardImage:setTopBottom( true, false, 49.06, 153.06 )
@@ -305,12 +346,15 @@ CoD.AAR_Contracts_SpecialContractWidget.new = function ( menu, controller )
 				self.RewardImage.ItemImage:setScale( 1 )
 				self.RewardImage.CallingCard.CardIconFrame:setScale( 0.39 )
 				self.clipFinished( RewardImage, {} )
+
 				BMCompleteRibbon:completeAnimation()
 				self.BMCompleteRibbon:setAlpha( 1 )
 				self.clipFinished( BMCompleteRibbon, {} )
+
 				BMCompleteRibbon0:completeAnimation()
 				self.BMCompleteRibbon0:setAlpha( 0 )
 				self.clipFinished( BMCompleteRibbon0, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 1 )
 				self.clipFinished( CompletedIcon, {} )
@@ -319,38 +363,47 @@ CoD.AAR_Contracts_SpecialContractWidget.new = function ( menu, controller )
 		CompletedShort = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setLeftRight( true, false, 0, 383 )
 				self.FEButtonPanel0:setTopBottom( true, false, 1, 31.5 )
 				self.FEButtonPanel0:setAlpha( 0.4 )
 				self.clipFinished( FEButtonPanel0, {} )
+
 				BMContractsAARtitle:completeAnimation()
 				self.BMContractsAARtitle:setLeftRight( true, false, 1, 177 )
 				self.BMContractsAARtitle:setTopBottom( true, false, 0, 33 )
 				self.clipFinished( BMContractsAARtitle, {} )
+
 				SpecialContractPercentCompleteWidget:completeAnimation()
 				self.SpecialContractPercentCompleteWidget:setLeftRight( true, false, -12, 112 )
 				self.SpecialContractPercentCompleteWidget:setTopBottom( true, false, 21.54, 145.54 )
 				self.SpecialContractPercentCompleteWidget:setScale( 0.65 )
 				self.clipFinished( SpecialContractPercentCompleteWidget, {} )
+
 				SpecialContractName:completeAnimation()
 				self.SpecialContractName:setLeftRight( true, false, 112, 336 )
 				self.SpecialContractName:setTopBottom( true, false, 57.91, 75.09 )
 				self.SpecialContractName:setAlpha( 1 )
 				self.clipFinished( SpecialContractName, {} )
+
 				SpecialContractDesc:completeAnimation()
 				self.SpecialContractDesc:setLeftRight( true, false, 113.5, 349.5 )
 				self.SpecialContractDesc:setTopBottom( true, false, 75.09, 93.09 )
 				self.SpecialContractDesc:setAlpha( 1 )
 				self.clipFinished( SpecialContractDesc, {} )
+
 				CategoryListLine000:completeAnimation()
 				self.CategoryListLine000:setLeftRight( true, false, 71, 336 )
 				self.CategoryListLine000:setTopBottom( true, false, 130, 134 )
 				self.CategoryListLine000:setAlpha( 0.25 )
 				self.CategoryListLine000:setZRot( 0 )
 				self.clipFinished( CategoryListLine000, {} )
+
 				RewardImage:completeAnimation()
+
 				RewardImage.ItemImage:completeAnimation()
+
 				RewardImage.CallingCard.CardIconFrame:completeAnimation()
 				self.RewardImage:setLeftRight( true, false, 136.9, 270.1 )
 				self.RewardImage:setTopBottom( true, false, 132, 205.17 )
@@ -358,12 +411,15 @@ CoD.AAR_Contracts_SpecialContractWidget.new = function ( menu, controller )
 				self.RewardImage.ItemImage:setScale( 0.71 )
 				self.RewardImage.CallingCard.CardIconFrame:setScale( 0.42 )
 				self.clipFinished( RewardImage, {} )
+
 				BMCompleteRibbon:completeAnimation()
 				self.BMCompleteRibbon:setAlpha( 0 )
 				self.clipFinished( BMCompleteRibbon, {} )
+
 				BMCompleteRibbon0:completeAnimation()
 				self.BMCompleteRibbon0:setAlpha( 1 )
 				self.clipFinished( BMCompleteRibbon0, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setLeftRight( true, false, 340, 389 )
 				self.CompletedIcon:setTopBottom( true, false, 1, 33 )
@@ -371,6 +427,7 @@ CoD.AAR_Contracts_SpecialContractWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel0:close()
 		element.BMContractsAARtitle:close()

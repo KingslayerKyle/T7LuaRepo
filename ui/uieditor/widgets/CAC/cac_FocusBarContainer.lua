@@ -4,9 +4,11 @@
 CoD.cac_FocusBarContainer = InheritFrom( LUI.UIElement )
 CoD.cac_FocusBarContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_FocusBarContainer )
 	self.id = "cac_FocusBarContainer"
@@ -37,6 +39,7 @@ CoD.cac_FocusBarContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local FEFocusBarSolidFrame2 = function ( FEFocusBarSolid, event )
 					local FEFocusBarSolidFrame3 = function ( FEFocusBarSolid, event )
 						if not event.interrupted then
@@ -89,6 +92,7 @@ CoD.cac_FocusBarContainer.new = function ( menu, controller )
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0.69 )
 				Glow2Frame2( Glow2, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

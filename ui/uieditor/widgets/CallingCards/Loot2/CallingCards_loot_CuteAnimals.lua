@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_GoldFrame" )
 CoD.CallingCards_loot_CuteAnimals = InheritFrom( LUI.UIElement )
 CoD.CallingCards_loot_CuteAnimals.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_loot_CuteAnimals )
 	self.id = "CallingCards_loot_CuteAnimals"
@@ -56,6 +58,7 @@ CoD.CallingCards_loot_CuteAnimals.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local Image0Frame2 = function ( Image0, event )
 					local Image0Frame3 = function ( Image0, event )
 						local Image0Frame4 = function ( Image0, event )
@@ -228,13 +231,16 @@ CoD.CallingCards_loot_CuteAnimals.new = function ( menu, controller )
 				self.Image20:setAlpha( 0 )
 				self.Image20:setScale( 1 )
 				Image20Frame2( Image20, {} )
+
 				CallingCardsGoldFrame:completeAnimation()
 				self.CallingCardsGoldFrame:setAlpha( 1 )
 				self.clipFinished( CallingCardsGoldFrame, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardsGoldFrame:close()
 	end )

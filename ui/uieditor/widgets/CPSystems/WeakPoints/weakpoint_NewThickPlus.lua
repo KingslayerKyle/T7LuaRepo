@@ -4,9 +4,11 @@
 CoD.weakpoint_NewThickPlus = InheritFrom( LUI.UIElement )
 CoD.weakpoint_NewThickPlus.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.weakpoint_NewThickPlus )
 	self.id = "weakpoint_NewThickPlus"

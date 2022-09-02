@@ -18,6 +18,7 @@ CoD.AAR_Contracts_timer.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AAR_Contracts_timer )
 	self.id = "AAR_Contracts_timer"
@@ -51,6 +52,7 @@ CoD.AAR_Contracts_timer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Timer:completeAnimation()
 				self.Timer:setAlpha( 1 )
 				self.clipFinished( Timer, {} )
@@ -59,12 +61,14 @@ CoD.AAR_Contracts_timer.new = function ( menu, controller )
 		HideTimer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Timer:completeAnimation()
 				self.Timer:setAlpha( 0 )
 				self.clipFinished( Timer, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HideTimer",

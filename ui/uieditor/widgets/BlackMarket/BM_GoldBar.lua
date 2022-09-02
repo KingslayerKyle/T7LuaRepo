@@ -4,9 +4,11 @@
 CoD.BM_GoldBar = InheritFrom( LUI.UIElement )
 CoD.BM_GoldBar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_GoldBar )
 	self.id = "BM_GoldBar"
@@ -39,6 +41,7 @@ CoD.BM_GoldBar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

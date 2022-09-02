@@ -4,9 +4,11 @@
 CoD.ChyronElement = InheritFrom( LUI.UIElement )
 CoD.ChyronElement.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChyronElement )
 	self.id = "ChyronElement"
@@ -28,6 +30,7 @@ CoD.ChyronElement.new = function ( menu, controller )
 	Text:setTopBottom( true, false, 6, 26 )
 	Text:setText( Engine.Localize( "Transmitter" ) )
 	Text:setTTF( "fonts/RefrigeratorDeluxe-Regular.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( Text, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )
@@ -51,9 +54,11 @@ CoD.ChyronElement.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			GrowText = function ()
 				self:setupElementClipCounter( 2 )
+
 				local TextFrame2 = function ( Text, event )
 					if not event.interrupted then
 						Text:beginAnimation( "keyframe", 200, false, true, CoD.TweenType.Linear )
@@ -80,6 +85,7 @@ CoD.ChyronElement.new = function ( menu, controller )
 			end,
 			Glow = function ()
 				self:setupElementClipCounter( 3 )
+
 				local Image0Frame2 = function ( Image0, event )
 					local Image0Frame3 = function ( Image0, event )
 						if not event.interrupted then
@@ -247,6 +253,7 @@ CoD.ChyronElement.new = function ( menu, controller )
 			end,
 			FadeOut = function ()
 				self:setupElementClipCounter( 1 )
+
 				local TextFrame2 = function ( Text, event )
 					if not event.interrupted then
 						Text:beginAnimation( "keyframe", 219, false, false, CoD.TweenType.Linear )
@@ -265,6 +272,7 @@ CoD.ChyronElement.new = function ( menu, controller )
 			end,
 			FadeInBG = function ()
 				self:setupElementClipCounter( 3 )
+
 				local Image0Frame2 = function ( Image0, event )
 					local Image0Frame3 = function ( Image0, event )
 						local Image0Frame4 = function ( Image0, event )
@@ -302,6 +310,7 @@ CoD.ChyronElement.new = function ( menu, controller )
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				Image0Frame2( Image0, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 0 )
 				self.clipFinished( Text, {} )

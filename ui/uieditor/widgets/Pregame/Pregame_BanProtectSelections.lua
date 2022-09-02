@@ -13,9 +13,11 @@ end
 CoD.Pregame_BanProtectSelections = InheritFrom( LUI.UIElement )
 CoD.Pregame_BanProtectSelections.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_BanProtectSelections )
 	self.id = "Pregame_BanProtectSelections"
@@ -169,6 +171,7 @@ CoD.Pregame_BanProtectSelections.new = function ( menu, controller )
 	local horizontalCounter0 = CoD.horizontalCounter.new( menu, controller )
 	horizontalCounter0:setLeftRight( false, false, -110.4, 89.6 )
 	horizontalCounter0:setTopBottom( true, false, 156.5, 181.5 )
+
 	LUI.OverrideFunction_CallOriginalFirst( horizontalCounter0, "setModel", function ( element, controller )
 		SetAsListHorizontalCounter( self, element, "VoteList" )
 	end )
@@ -182,6 +185,7 @@ CoD.Pregame_BanProtectSelections.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
@@ -193,6 +197,7 @@ CoD.Pregame_BanProtectSelections.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel1:close()
 		element.PregameBanProtectFrame:close()

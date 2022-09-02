@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.ZMInventoryIsland.BucketWidgetWaterLevelWidget" )
 CoD.BucketWidget = InheritFrom( LUI.UIElement )
 CoD.BucketWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BucketWidget )
 	self.id = "BucketWidget"
@@ -367,18 +369,23 @@ CoD.BucketWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				RegularBucket:completeAnimation()
 				self.RegularBucket:setAlpha( 0 )
 				self.clipFinished( RegularBucket, {} )
+
 				GoldBucket:completeAnimation()
 				self.GoldBucket:setAlpha( 0 )
 				self.clipFinished( GoldBucket, {} )
+
 				level1:completeAnimation()
 				self.level1:setAlpha( 0 )
 				self.clipFinished( level1, {} )
+
 				level2:completeAnimation()
 				self.level2:setAlpha( 0 )
 				self.clipFinished( level2, {} )
+
 				level3:completeAnimation()
 				self.level3:setAlpha( 0 )
 				self.clipFinished( level3, {} )
@@ -387,18 +394,23 @@ CoD.BucketWidget.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				RegularBucket:completeAnimation()
 				self.RegularBucket:setAlpha( 1 )
 				self.clipFinished( RegularBucket, {} )
+
 				GoldBucket:completeAnimation()
 				self.GoldBucket:setAlpha( 1 )
 				self.clipFinished( GoldBucket, {} )
+
 				level1:completeAnimation()
 				self.level1:setAlpha( 0.7 )
 				self.clipFinished( level1, {} )
+
 				level2:completeAnimation()
 				self.level2:setAlpha( 0.7 )
 				self.clipFinished( level2, {} )
+
 				level3:completeAnimation()
 				self.level3:setAlpha( 0.7 )
 				self.clipFinished( level3, {} )
@@ -407,24 +419,30 @@ CoD.BucketWidget.new = function ( menu, controller )
 		BGWidget = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				RegularBucket:completeAnimation()
 				self.RegularBucket:setAlpha( 1 )
 				self.clipFinished( RegularBucket, {} )
+
 				GoldBucket:completeAnimation()
 				self.GoldBucket:setAlpha( 1 )
 				self.clipFinished( GoldBucket, {} )
+
 				level1:completeAnimation()
 				self.level1:setAlpha( 0.7 )
 				self.clipFinished( level1, {} )
+
 				level2:completeAnimation()
 				self.level2:setAlpha( 0.7 )
 				self.clipFinished( level2, {} )
+
 				level3:completeAnimation()
 				self.level3:setAlpha( 0.7 )
 				self.clipFinished( level3, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Scoreboard",
@@ -469,6 +487,7 @@ CoD.BucketWidget.new = function ( menu, controller )
 			modelName = "zmInventory.widget_seed_parts"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RegularBucket:close()
 		element.GoldBucket:close()

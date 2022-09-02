@@ -64,9 +64,11 @@ end
 CoD.ArenaResultWidget = InheritFrom( LUI.UIElement )
 CoD.ArenaResultWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ArenaResultWidget )
 	self.id = "ArenaResultWidget"
@@ -421,72 +423,95 @@ CoD.ArenaResultWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 23 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				RankImageBorder:completeAnimation()
 				self.RankImageBorder:setAlpha( 0 )
 				self.clipFinished( RankImageBorder, {} )
+
 				PlayListBG:completeAnimation()
 				self.PlayListBG:setAlpha( 0 )
 				self.clipFinished( PlayListBG, {} )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0 )
 				self.clipFinished( Backing, {} )
+
 				RankFrame:completeAnimation()
 				self.RankFrame:setAlpha( 0 )
 				self.clipFinished( RankFrame, {} )
+
 				PlayListName:completeAnimation()
 				self.PlayListName:setAlpha( 0 )
 				self.clipFinished( PlayListName, {} )
+
 				CurrentStars:completeAnimation()
 				self.CurrentStars:setAlpha( 0 )
 				self.clipFinished( CurrentStars, {} )
+
 				CurrentRankText:completeAnimation()
 				self.CurrentRankText:setAlpha( 0 )
 				self.clipFinished( CurrentRankText, {} )
+
 				highlight1:completeAnimation()
 				self.highlight1:setAlpha( 0 )
 				self.clipFinished( highlight1, {} )
+
 				highlight00:completeAnimation()
 				self.highlight00:setAlpha( 0 )
 				self.clipFinished( highlight00, {} )
+
 				highlight0:completeAnimation()
 				self.highlight0:setAlpha( 0 )
 				self.clipFinished( highlight0, {} )
+
 				highlight:completeAnimation()
 				self.highlight:setAlpha( 0 )
 				self.clipFinished( highlight, {} )
+
 				CurrentRank:completeAnimation()
 				self.CurrentRank:setAlpha( 0 )
 				self.clipFinished( CurrentRank, {} )
+
 				CurrentRankADD:completeAnimation()
 				self.CurrentRankADD:setAlpha( 0 )
 				self.clipFinished( CurrentRankADD, {} )
+
 				PreviousStars:completeAnimation()
 				self.PreviousStars:setAlpha( 0 )
 				self.clipFinished( PreviousStars, {} )
+
 				PreviousRankText:completeAnimation()
 				self.PreviousRankText:setAlpha( 0 )
 				self.clipFinished( PreviousRankText, {} )
+
 				PreviousRankAdd:completeAnimation()
 				self.PreviousRankAdd:setAlpha( 0 )
 				self.clipFinished( PreviousRankAdd, {} )
+
 				CurrentRankR1:completeAnimation()
 				self.CurrentRankR1:setAlpha( 0 )
 				self.clipFinished( CurrentRankR1, {} )
+
 				CurrentRankL1:completeAnimation()
 				self.CurrentRankL1:setAlpha( 0 )
 				self.clipFinished( CurrentRankL1, {} )
+
 				CurrentRankC1:completeAnimation()
 				self.CurrentRankC1:setAlpha( 0 )
 				self.clipFinished( CurrentRankC1, {} )
+
 				CurrentRankglint:completeAnimation()
 				self.CurrentRankglint:setAlpha( 0 )
 				self.clipFinished( CurrentRankglint, {} )
+
 				LoopingstarAnimationTest0:completeAnimation()
 				self.LoopingstarAnimationTest0:setAlpha( 0 )
 				self.clipFinished( LoopingstarAnimationTest0, {} )
+
 				starcounts:completeAnimation()
 				self.starcounts:setAlpha( 0 )
 				self.clipFinished( starcounts, {} )
@@ -495,6 +520,7 @@ CoD.ArenaResultWidget.new = function ( menu, controller )
 		SeasonFinale = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				local RankImageBorderFrame2 = function ( RankImageBorder, event )
 					if not event.interrupted then
 						RankImageBorder:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -570,12 +596,15 @@ CoD.ArenaResultWidget.new = function ( menu, controller )
 				PlayListName:completeAnimation()
 				self.PlayListName:setAlpha( 0 )
 				PlayListNameFrame2( PlayListName, {} )
+
 				CurrentStars:completeAnimation()
 				self.CurrentStars:setAlpha( 0 )
 				self.clipFinished( CurrentStars, {} )
+
 				CurrentRankText:completeAnimation()
 				self.CurrentRankText:setAlpha( 0 )
 				self.clipFinished( CurrentRankText, {} )
+
 				CurrentRank:completeAnimation()
 				self.CurrentRank:setAlpha( 0 )
 				self.clipFinished( CurrentRank, {} )
@@ -624,15 +653,18 @@ CoD.ArenaResultWidget.new = function ( menu, controller )
 				PreviousRankAdd:completeAnimation()
 				self.PreviousRankAdd:setAlpha( 0 )
 				PreviousRankAddFrame2( PreviousRankAdd, {} )
+
 				LoopingstarAnimationTest0:completeAnimation()
 				self.LoopingstarAnimationTest0:setAlpha( 0 )
 				self.clipFinished( LoopingstarAnimationTest0, {} )
+
 				starcounts:completeAnimation()
 				self.starcounts:setAlpha( 0 )
 				self.clipFinished( starcounts, {} )
 			end,
 			BonusStars = function ()
 				self:setupElementClipCounter( 10 )
+
 				local PlayListBGFrame2 = function ( PlayListBG, event )
 					if not event.interrupted then
 						PlayListBG:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -678,12 +710,15 @@ CoD.ArenaResultWidget.new = function ( menu, controller )
 				PlayListName:completeAnimation()
 				self.PlayListName:setAlpha( 1 )
 				PlayListNameFrame2( PlayListName, {} )
+
 				CurrentStars:completeAnimation()
 				self.CurrentStars:setAlpha( 0 )
 				self.clipFinished( CurrentStars, {} )
+
 				CurrentRankText:completeAnimation()
 				self.CurrentRankText:setAlpha( 0 )
 				self.clipFinished( CurrentRankText, {} )
+
 				CurrentRank:completeAnimation()
 				self.CurrentRank:setAlpha( 0 )
 				self.clipFinished( CurrentRank, {} )
@@ -732,6 +767,7 @@ CoD.ArenaResultWidget.new = function ( menu, controller )
 				PreviousRankAdd:completeAnimation()
 				self.PreviousRankAdd:setAlpha( 1 )
 				PreviousRankAddFrame2( PreviousRankAdd, {} )
+
 				LoopingstarAnimationTest0:completeAnimation()
 				self.LoopingstarAnimationTest0:setAlpha( 0 )
 				self.clipFinished( LoopingstarAnimationTest0, {} )
@@ -740,6 +776,7 @@ CoD.ArenaResultWidget.new = function ( menu, controller )
 		BonusStars = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				local RankImageBorderFrame2 = function ( RankImageBorder, event )
 					if not event.interrupted then
 						RankImageBorder:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -830,9 +867,11 @@ CoD.ArenaResultWidget.new = function ( menu, controller )
 				HiddenRankText:completeAnimation()
 				self.HiddenRankText:setAlpha( 0 )
 				HiddenRankTextFrame2( HiddenRankText, {} )
+
 				CurrentStars:completeAnimation()
 				self.CurrentStars:setAlpha( 0 )
 				self.clipFinished( CurrentStars, {} )
+
 				CurrentRankText:completeAnimation()
 				self.CurrentRankText:setAlpha( 0 )
 				self.clipFinished( CurrentRankText, {} )
@@ -884,6 +923,7 @@ CoD.ArenaResultWidget.new = function ( menu, controller )
 			end,
 			SeasonStart = function ()
 				self:setupElementClipCounter( 11 )
+
 				local RankImageBorderFrame2 = function ( RankImageBorder, event )
 					if not event.interrupted then
 						RankImageBorder:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -974,9 +1014,11 @@ CoD.ArenaResultWidget.new = function ( menu, controller )
 				HiddenRankText:completeAnimation()
 				self.HiddenRankText:setAlpha( 0.75 )
 				HiddenRankTextFrame2( HiddenRankText, {} )
+
 				CurrentStars:completeAnimation()
 				self.CurrentStars:setAlpha( 0 )
 				self.clipFinished( CurrentStars, {} )
+
 				CurrentRankText:completeAnimation()
 				self.CurrentRankText:setAlpha( 0 )
 				self.clipFinished( CurrentRankText, {} )
@@ -1030,6 +1072,7 @@ CoD.ArenaResultWidget.new = function ( menu, controller )
 		SeasonStart = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				local RankImageBorderFrame2 = function ( RankImageBorder, event )
 					local RankImageBorderFrame3 = function ( RankImageBorder, event )
 						if not event.interrupted then
@@ -1665,9 +1708,11 @@ CoD.ArenaResultWidget.new = function ( menu, controller )
 				CurrentRankglint:setRFTMaterial( LUI.UIImage.GetCachedMaterial( "sw4_2d_bitchin_glint_reveal" ) )
 				CurrentRankglint:setShaderVector( 0, 0, 0, 0, 0 )
 				CurrentRankglint:registerEventHandler( "transition_complete_keyframe", f55_local16 )
+
 				LoopingstarAnimationTest0:completeAnimation()
 				self.LoopingstarAnimationTest0:setAlpha( 0 )
 				self.clipFinished( LoopingstarAnimationTest0, {} )
+
 				starcounts:completeAnimation()
 				self.starcounts:setAlpha( 0 )
 				self.clipFinished( starcounts, {} )
@@ -1677,6 +1722,7 @@ CoD.ArenaResultWidget.new = function ( menu, controller )
 	CoD.Menu.AddNavigationHandler( menu, self, controller )
 	CurrentStars.id = "CurrentStars"
 	PreviousStars.id = "PreviousStars"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RankImageBorder:close()
 		element.PlayListBG:close()

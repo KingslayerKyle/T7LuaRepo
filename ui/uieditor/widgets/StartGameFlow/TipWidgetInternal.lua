@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleNumBrdr" )
 CoD.TipWidgetInternal = InheritFrom( LUI.UIElement )
 CoD.TipWidgetInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TipWidgetInternal )
 	self.id = "TipWidgetInternal"
@@ -37,6 +39,7 @@ CoD.TipWidgetInternal.new = function ( menu, controller )
 			tip:setText( Engine.Localize( _tip ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( tip, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 2 )
 	end )

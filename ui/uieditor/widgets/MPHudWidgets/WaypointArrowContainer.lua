@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.MPHudWidgets.WaypointArrowWidget" )
 CoD.WaypointArrowContainer = InheritFrom( LUI.UIElement )
 CoD.WaypointArrowContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WaypointArrowContainer )
 	self.id = "WaypointArrowContainer"
@@ -27,6 +29,7 @@ CoD.WaypointArrowContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				WaypointArrowWidget:completeAnimation()
 				self.WaypointArrowWidget:setLeftRight( false, false, -16, 16 )
 				self.WaypointArrowWidget:setTopBottom( false, false, 8, 40 )
@@ -37,6 +40,7 @@ CoD.WaypointArrowContainer.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				WaypointArrowWidget:completeAnimation()
 				self.WaypointArrowWidget:setAlpha( 0 )
 				self.clipFinished( WaypointArrowWidget, {} )
@@ -45,6 +49,7 @@ CoD.WaypointArrowContainer.new = function ( menu, controller )
 		Progress = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				WaypointArrowWidget:completeAnimation()
 				self.WaypointArrowWidget:setLeftRight( false, false, -16, 16 )
 				self.WaypointArrowWidget:setTopBottom( false, false, 15, 47 )
@@ -53,6 +58,7 @@ CoD.WaypointArrowContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.WaypointArrowWidget:close()
 	end )

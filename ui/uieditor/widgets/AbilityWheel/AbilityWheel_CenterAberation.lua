@@ -4,9 +4,11 @@
 CoD.AbilityWheel_CenterAberation = InheritFrom( LUI.UIElement )
 CoD.AbilityWheel_CenterAberation.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AbilityWheel_CenterAberation )
 	self.id = "AbilityWheel_CenterAberation"
@@ -29,19 +31,23 @@ CoD.AbilityWheel_CenterAberation.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		ControlCore = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		MartialCore = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CenterSphere0:completeAnimation()
 				self.CenterSphere0:setRGB( 0, 0, 0 )
 				self.CenterSphere0:setAlpha( 1 )
@@ -51,6 +57,7 @@ CoD.AbilityWheel_CenterAberation.new = function ( menu, controller )
 		ChaosCore = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CenterSphere0:completeAnimation()
 				self.CenterSphere0:setRGB( 0, 0, 0 )
 				self.CenterSphere0:setAlpha( 0.75 )
@@ -60,6 +67,7 @@ CoD.AbilityWheel_CenterAberation.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ControlCore",

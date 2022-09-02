@@ -4,9 +4,11 @@
 CoD.verticalCounterNoNumbers = InheritFrom( LUI.UIElement )
 CoD.verticalCounterNoNumbers.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.verticalCounterNoNumbers )
 	self.id = "verticalCounterNoNumbers"
@@ -35,11 +37,13 @@ CoD.verticalCounterNoNumbers.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				upArrow:completeAnimation()
 				self.upArrow:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.upArrow:setAlpha( 1 )
 				self.upArrow:setZRot( 180 )
 				self.clipFinished( upArrow, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.downArrow:setAlpha( 1 )
@@ -50,11 +54,13 @@ CoD.verticalCounterNoNumbers.new = function ( menu, controller )
 		AtTopAndBottom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				upArrow:completeAnimation()
 				self.upArrow:setRGB( 0.2, 0.29, 0.33 )
 				self.upArrow:setAlpha( 0 )
 				self.upArrow:setZRot( 180 )
 				self.clipFinished( upArrow, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setRGB( 0.2, 0.29, 0.33 )
 				self.downArrow:setAlpha( 0 )
@@ -65,11 +71,13 @@ CoD.verticalCounterNoNumbers.new = function ( menu, controller )
 		AtTop = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				upArrow:completeAnimation()
 				self.upArrow:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.upArrow:setAlpha( 1 )
 				self.upArrow:setZRot( 180 )
 				self.clipFinished( upArrow, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setRGB( 0.2, 0.29, 0.33 )
 				self.downArrow:setAlpha( 1 )
@@ -80,11 +88,13 @@ CoD.verticalCounterNoNumbers.new = function ( menu, controller )
 		AtBottom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				upArrow:completeAnimation()
 				self.upArrow:setRGB( 0.2, 0.29, 0.33 )
 				self.upArrow:setAlpha( 1 )
 				self.upArrow:setZRot( 180 )
 				self.clipFinished( upArrow, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.downArrow:setAlpha( 1 )
@@ -95,10 +105,12 @@ CoD.verticalCounterNoNumbers.new = function ( menu, controller )
 		NoItems = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				upArrow:completeAnimation()
 				self.upArrow:setAlpha( 0 )
 				self.upArrow:setZRot( 180 )
 				self.clipFinished( upArrow, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setAlpha( 0 )
 				self.downArrow:setZRot( 0 )
@@ -106,6 +118,7 @@ CoD.verticalCounterNoNumbers.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "AtTopAndBottom",

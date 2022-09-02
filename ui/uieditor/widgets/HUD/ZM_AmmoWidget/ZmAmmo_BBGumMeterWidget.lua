@@ -4,9 +4,11 @@
 CoD.ZmAmmo_BBGumMeterWidget = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_BBGumMeterWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_BBGumMeterWidget )
 	self.id = "ZmAmmo_BBGumMeterWidget"
@@ -154,36 +156,45 @@ CoD.ZmAmmo_BBGumMeterWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
+
 				BBGumRingBacker:completeAnimation()
 				self.BBGumRingBacker:setAlpha( 0 )
 				self.clipFinished( BBGumRingBacker, {} )
+
 				BBGumRing000:completeAnimation()
 				self.BBGumRing000:setRGB( 1, 0.85, 0 )
 				self.BBGumRing000:setAlpha( 0 )
 				self.clipFinished( BBGumRing000, {} )
+
 				BBGumRing00:completeAnimation()
 				self.BBGumRing00:setRGB( 1, 0.69, 0 )
 				self.BBGumRing00:setAlpha( 0 )
 				self.clipFinished( BBGumRing00, {} )
+
 				BBGumRing0:completeAnimation()
 				self.BBGumRing0:setRGB( 1, 0.78, 0 )
 				self.BBGumRing0:setAlpha( 0 )
 				self.clipFinished( BBGumRing0, {} )
+
 				BBGumRing:completeAnimation()
 				self.BBGumRing:setRGB( 1, 0.96, 0.75 )
 				self.BBGumRing:setAlpha( 0 )
 				self.clipFinished( BBGumRing, {} )
+
 				BBGumRingEdge:completeAnimation()
 				self.BBGumRingEdge:setRGB( 1, 0.83, 0.08 )
 				self.BBGumRingEdge:setAlpha( 0 )
 				self.clipFinished( BBGumRingEdge, {} )
+
 				BBGumTexture:completeAnimation()
 				self.BBGumTexture:setAlpha( 0 )
 				self.BBGumTexture:setScale( 1 )
 				self.clipFinished( BBGumTexture, {} )
+
 				Glow1:completeAnimation()
 				self.Glow1:setAlpha( 0 )
 				self.clipFinished( Glow1, {} )
@@ -192,32 +203,40 @@ CoD.ZmAmmo_BBGumMeterWidget.new = function ( menu, controller )
 		ActiveLow = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
+
 				BBGumRingBacker:completeAnimation()
 				self.BBGumRingBacker:setAlpha( 0.1 )
 				self.clipFinished( BBGumRingBacker, {} )
+
 				BBGumRing000:completeAnimation()
 				self.BBGumRing000:setRGB( 1, 0.07, 0 )
 				self.BBGumRing000:setAlpha( 0.5 )
 				self.clipFinished( BBGumRing000, {} )
+
 				BBGumRing00:completeAnimation()
 				self.BBGumRing00:setRGB( 1, 0.08, 0 )
 				self.BBGumRing00:setAlpha( 0.5 )
 				self.clipFinished( BBGumRing00, {} )
+
 				BBGumRing0:completeAnimation()
 				self.BBGumRing0:setRGB( 1, 0.18, 0 )
 				self.BBGumRing0:setAlpha( 0.5 )
 				self.clipFinished( BBGumRing0, {} )
+
 				BBGumRing:completeAnimation()
 				self.BBGumRing:setRGB( 1, 0.77, 0.75 )
 				self.BBGumRing:setAlpha( 0.7 )
 				self.clipFinished( BBGumRing, {} )
+
 				BBGumRingEdge:completeAnimation()
 				self.BBGumRingEdge:setRGB( 1, 0.21, 0.12 )
 				self.BBGumRingEdge:setAlpha( 1 )
 				self.clipFinished( BBGumRingEdge, {} )
+
 				BBGumTexture:completeAnimation()
 				self.BBGumTexture:setLeftRight( true, false, 8, 44 )
 				self.BBGumTexture:setTopBottom( true, false, 8, 44 )
@@ -229,6 +248,7 @@ CoD.ZmAmmo_BBGumMeterWidget.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local BBGumTextureFrame2 = function ( BBGumTexture, event )
 					local BBGumTextureFrame3 = function ( BBGumTexture, event )
 						local BBGumTextureFrame4 = function ( BBGumTexture, event )
@@ -337,32 +357,40 @@ CoD.ZmAmmo_BBGumMeterWidget.new = function ( menu, controller )
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
+
 				BBGumRingBacker:completeAnimation()
 				self.BBGumRingBacker:setAlpha( 0.1 )
 				self.clipFinished( BBGumRingBacker, {} )
+
 				BBGumRing000:completeAnimation()
 				self.BBGumRing000:setRGB( 1, 0.85, 0 )
 				self.BBGumRing000:setAlpha( 0.5 )
 				self.clipFinished( BBGumRing000, {} )
+
 				BBGumRing00:completeAnimation()
 				self.BBGumRing00:setRGB( 1, 0.69, 0 )
 				self.BBGumRing00:setAlpha( 0.5 )
 				self.clipFinished( BBGumRing00, {} )
+
 				BBGumRing0:completeAnimation()
 				self.BBGumRing0:setRGB( 1, 0.78, 0 )
 				self.BBGumRing0:setAlpha( 0.5 )
 				self.clipFinished( BBGumRing0, {} )
+
 				BBGumRing:completeAnimation()
 				self.BBGumRing:setRGB( 1, 0.96, 0.75 )
 				self.BBGumRing:setAlpha( 0.7 )
 				self.clipFinished( BBGumRing, {} )
+
 				BBGumRingEdge:completeAnimation()
 				self.BBGumRingEdge:setRGB( 1, 0.71, 0.12 )
 				self.BBGumRingEdge:setAlpha( 1 )
 				self.clipFinished( BBGumRingEdge, {} )
+
 				BBGumTexture:completeAnimation()
 				self.BBGumTexture:setLeftRight( true, false, 8, 44 )
 				self.BBGumTexture:setTopBottom( true, false, 8, 44 )
@@ -375,6 +403,7 @@ CoD.ZmAmmo_BBGumMeterWidget.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local BBGumTextureFrame2 = function ( BBGumTexture, event )
 					local BBGumTextureFrame3 = function ( BBGumTexture, event )
 						local BBGumTextureFrame4 = function ( BBGumTexture, event )
@@ -483,32 +512,40 @@ CoD.ZmAmmo_BBGumMeterWidget.new = function ( menu, controller )
 		Inactive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
+
 				BBGumRingBacker:completeAnimation()
 				self.BBGumRingBacker:setAlpha( 0.1 )
 				self.clipFinished( BBGumRingBacker, {} )
+
 				BBGumRing000:completeAnimation()
 				self.BBGumRing000:setRGB( 0.73, 0.73, 0.73 )
 				self.BBGumRing000:setAlpha( 0 )
 				self.clipFinished( BBGumRing000, {} )
+
 				BBGumRing00:completeAnimation()
 				self.BBGumRing00:setRGB( 0.73, 0.73, 0.73 )
 				self.BBGumRing00:setAlpha( 0 )
 				self.clipFinished( BBGumRing00, {} )
+
 				BBGumRing0:completeAnimation()
 				self.BBGumRing0:setRGB( 0.73, 0.73, 0.73 )
 				self.BBGumRing0:setAlpha( 0 )
 				self.clipFinished( BBGumRing0, {} )
+
 				BBGumRing:completeAnimation()
 				self.BBGumRing:setRGB( 0.73, 0.73, 0.73 )
 				self.BBGumRing:setAlpha( 0 )
 				self.clipFinished( BBGumRing, {} )
+
 				BBGumRingEdge:completeAnimation()
 				self.BBGumRingEdge:setRGB( 1, 0.83, 0.08 )
 				self.BBGumRingEdge:setAlpha( 0 )
 				self.clipFinished( BBGumRingEdge, {} )
+
 				BBGumTexture:completeAnimation()
 				self.BBGumTexture:setLeftRight( true, false, 8, 44 )
 				self.BBGumTexture:setTopBottom( true, false, 8, 44 )
@@ -520,6 +557,7 @@ CoD.ZmAmmo_BBGumMeterWidget.new = function ( menu, controller )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 9 )
+
 				local AbilitySwirlFrame2 = function ( AbilitySwirl, event )
 					local AbilitySwirlFrame3 = function ( AbilitySwirl, event )
 						local AbilitySwirlFrame4 = function ( AbilitySwirl, event )
@@ -771,28 +809,35 @@ CoD.ZmAmmo_BBGumMeterWidget.new = function ( menu, controller )
 		InstantActivate = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 7 )
+
 				BBGumRingBacker:completeAnimation()
 				self.BBGumRingBacker:setAlpha( 0.1 )
 				self.clipFinished( BBGumRingBacker, {} )
+
 				BBGumRing000:completeAnimation()
 				self.BBGumRing000:setRGB( 1, 0.85, 0 )
 				self.BBGumRing000:setAlpha( 0.5 )
 				self.clipFinished( BBGumRing000, {} )
+
 				BBGumRing00:completeAnimation()
 				self.BBGumRing00:setRGB( 1, 0.69, 0 )
 				self.BBGumRing00:setAlpha( 0.5 )
 				self.clipFinished( BBGumRing00, {} )
+
 				BBGumRing0:completeAnimation()
 				self.BBGumRing0:setRGB( 1, 0.78, 0 )
 				self.BBGumRing0:setAlpha( 0.5 )
 				self.clipFinished( BBGumRing0, {} )
+
 				BBGumRing:completeAnimation()
 				self.BBGumRing:setRGB( 1, 0.96, 0.75 )
 				self.BBGumRing:setAlpha( 0.7 )
 				self.clipFinished( BBGumRing, {} )
+
 				BBGumRingEdge:completeAnimation()
 				self.BBGumRingEdge:setRGB( 1, 0.71, 0.12 )
 				self.BBGumRingEdge:setAlpha( 1 )
@@ -903,6 +948,7 @@ CoD.ZmAmmo_BBGumMeterWidget.new = function ( menu, controller )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 1 )
+
 				local BBGumTextureFrame2 = function ( BBGumTexture, event )
 					local BBGumTextureFrame3 = function ( BBGumTexture, event )
 						local BBGumTextureFrame4 = function ( BBGumTexture, event )
@@ -1009,6 +1055,7 @@ CoD.ZmAmmo_BBGumMeterWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ActiveLow",
@@ -1068,6 +1115,7 @@ CoD.ZmAmmo_BBGumMeterWidget.new = function ( menu, controller )
 			SetElementState( self, f78_local0, controller, "DefaultState" )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BBGumRing000:close()
 		element.BBGumRing00:close()

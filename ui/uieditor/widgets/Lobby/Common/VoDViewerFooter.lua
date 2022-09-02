@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Footer.fe_LeftContainer_NOTLobby" )
 CoD.VoDViewerFooter = InheritFrom( LUI.UIElement )
 CoD.VoDViewerFooter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VoDViewerFooter )
 	self.id = "VoDViewerFooter"
@@ -47,9 +49,11 @@ CoD.VoDViewerFooter.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.feLeftContainer:close()
 	end )

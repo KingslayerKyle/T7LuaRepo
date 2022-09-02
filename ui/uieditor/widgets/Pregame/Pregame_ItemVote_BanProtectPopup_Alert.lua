@@ -4,9 +4,11 @@
 CoD.Pregame_ItemVote_BanProtectPopup_Alert = InheritFrom( LUI.UIElement )
 CoD.Pregame_ItemVote_BanProtectPopup_Alert.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_ItemVote_BanProtectPopup_Alert )
 	self.id = "Pregame_ItemVote_BanProtectPopup_Alert"

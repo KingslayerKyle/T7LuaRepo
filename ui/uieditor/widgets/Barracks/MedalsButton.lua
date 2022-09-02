@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_Identity_SubTitle" )
 CoD.MedalsButton = InheritFrom( LUI.UIElement )
 CoD.MedalsButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MedalsButton )
 	self.id = "MedalsButton"
@@ -154,42 +156,53 @@ CoD.MedalsButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0.05 )
 				self.clipFinished( BlackBox, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				ButtonTitleBG0:completeAnimation()
 				self.ButtonTitleBG0:setAlpha( 0 )
 				self.clipFinished( ButtonTitleBG0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0 )
 				self.clipFinished( BlackBox, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				ButtonTitleBG0:completeAnimation()
 				self.ButtonTitleBG0:setAlpha( 0 )
 				self.clipFinished( ButtonTitleBG0, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactive:close()
 		element.BoxButtonLrgInactiveDiag:close()

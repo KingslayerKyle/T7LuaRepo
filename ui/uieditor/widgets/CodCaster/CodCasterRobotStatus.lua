@@ -15,9 +15,11 @@ end
 CoD.CodCasterRobotStatus = InheritFrom( LUI.UIElement )
 CoD.CodCasterRobotStatus.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterRobotStatus )
 	self.id = "CodCasterRobotStatus"
@@ -80,15 +82,19 @@ CoD.CodCasterRobotStatus.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ShadowGlow:completeAnimation()
 				self.ShadowGlow:setAlpha( 0 )
 				self.clipFinished( ShadowGlow, {} )
+
 				Status:completeAnimation()
 				self.Status:setAlpha( 0 )
 				self.clipFinished( Status, {} )
+
 				AlliesFlag:completeAnimation()
 				self.AlliesFlag:setAlpha( 0 )
 				self.clipFinished( AlliesFlag, {} )
+
 				AxisFlag:completeAnimation()
 				self.AxisFlag:setAlpha( 0 )
 				self.clipFinished( AxisFlag, {} )
@@ -97,15 +103,19 @@ CoD.CodCasterRobotStatus.new = function ( menu, controller )
 		AxisRobot = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ShadowGlow:completeAnimation()
 				self.ShadowGlow:setAlpha( 0.2 )
 				self.clipFinished( ShadowGlow, {} )
+
 				Status:completeAnimation()
 				self.Status:setAlpha( 1 )
 				self.clipFinished( Status, {} )
+
 				AlliesFlag:completeAnimation()
 				self.AlliesFlag:setAlpha( 0 )
 				self.clipFinished( AlliesFlag, {} )
+
 				AxisFlag:completeAnimation()
 				self.AxisFlag:setAlpha( 1 )
 				self.clipFinished( AxisFlag, {} )
@@ -114,21 +124,26 @@ CoD.CodCasterRobotStatus.new = function ( menu, controller )
 		AlliesRobot = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ShadowGlow:completeAnimation()
 				self.ShadowGlow:setAlpha( 0.2 )
 				self.clipFinished( ShadowGlow, {} )
+
 				Status:completeAnimation()
 				self.Status:setAlpha( 1 )
 				self.clipFinished( Status, {} )
+
 				AlliesFlag:completeAnimation()
 				self.AlliesFlag:setAlpha( 1 )
 				self.clipFinished( AlliesFlag, {} )
+
 				AxisFlag:completeAnimation()
 				self.AxisFlag:setAlpha( 0 )
 				self.clipFinished( AxisFlag, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "AxisRobot",
@@ -159,6 +174,7 @@ CoD.CodCasterRobotStatus.new = function ( menu, controller )
 			modelName = "escortGametype.robotStatusVisible"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AlliesFlag:close()
 		element.AxisFlag:close()

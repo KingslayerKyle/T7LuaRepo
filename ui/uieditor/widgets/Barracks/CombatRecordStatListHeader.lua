@@ -4,9 +4,11 @@
 CoD.CombatRecordStatListHeader = InheritFrom( LUI.UIElement )
 CoD.CombatRecordStatListHeader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CombatRecordStatListHeader )
 	self.id = "CombatRecordStatListHeader"
@@ -47,9 +49,11 @@ CoD.CombatRecordStatListHeader.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				StatComparisonLabel:completeAnimation()
 				self.StatComparisonLabel:setAlpha( 0 )
 				self.clipFinished( StatComparisonLabel, {} )
+
 				StatLabel:completeAnimation()
 				self.StatLabel:setLeftRight( false, true, -70, 0 )
 				self.StatLabel:setTopBottom( true, true, 0, 0 )
@@ -59,9 +63,11 @@ CoD.CombatRecordStatListHeader.new = function ( menu, controller )
 		Comparison = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				StatComparisonLabel:completeAnimation()
 				self.StatComparisonLabel:setAlpha( 1 )
 				self.clipFinished( StatComparisonLabel, {} )
+
 				StatLabel:completeAnimation()
 				self.StatLabel:setLeftRight( false, true, -116, -46 )
 				self.StatLabel:setTopBottom( true, true, 0, 0 )
@@ -69,6 +75,7 @@ CoD.CombatRecordStatListHeader.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Comparison",

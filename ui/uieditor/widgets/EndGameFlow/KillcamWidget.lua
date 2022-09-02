@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.EndGameFlow.KillcamPlayerInfo" )
 CoD.KillcamWidget = InheritFrom( LUI.UIElement )
 CoD.KillcamWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.KillcamWidget )
 	self.id = "KillcamWidget"
@@ -34,9 +36,11 @@ CoD.KillcamWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Header:completeAnimation()
 				self.Header:setAlpha( 0 )
 				self.clipFinished( Header, {} )
+
 				KillcamPlayerInfo:completeAnimation()
 				self.KillcamPlayerInfo:setAlpha( 0 )
 				self.clipFinished( KillcamPlayerInfo, {} )
@@ -45,15 +49,18 @@ CoD.KillcamWidget.new = function ( menu, controller )
 		Killcam = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Header:completeAnimation()
 				self.Header:setAlpha( 1 )
 				self.clipFinished( Header, {} )
+
 				KillcamPlayerInfo:completeAnimation()
 				self.KillcamPlayerInfo:setAlpha( 1 )
 				self.clipFinished( KillcamPlayerInfo, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Killcam",
@@ -110,6 +117,7 @@ CoD.KillcamWidget.new = function ( menu, controller )
 		} )
 	end )
 	Header.id = "Header"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Header:close()
 		element.KillcamPlayerInfo:close()

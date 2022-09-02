@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.SpecialContracts.SpecialContracts_CallingCardContr
 CoD.SpecialContracts_CallingCardContracts_Stickerbook = InheritFrom( LUI.UIElement )
 CoD.SpecialContracts_CallingCardContracts_Stickerbook.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpecialContracts_CallingCardContracts_Stickerbook )
 	self.id = "SpecialContracts_CallingCardContracts_Stickerbook"
@@ -99,6 +101,7 @@ CoD.SpecialContracts_CallingCardContracts_Stickerbook.new = function ( menu, con
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MasterCardWidget:close()
 		element.CallingCardGrid:close()

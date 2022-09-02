@@ -29,9 +29,11 @@ end
 CoD.ServerBrowserHeaderIconColumn = InheritFrom( LUI.UIElement )
 CoD.ServerBrowserHeaderIconColumn.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ServerBrowserHeaderIconColumn )
 	self.id = "ServerBrowserHeaderIconColumn"
@@ -57,15 +59,18 @@ CoD.ServerBrowserHeaderIconColumn.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:completeAnimation()
 				self.background:setRGB( 0.2, 0.2, 0.2 )
 				self.clipFinished( background, {} )
+
 				icon:completeAnimation()
 				self.icon:setRGB( 0.59, 0.59, 0.59 )
 				self.clipFinished( icon, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 1 )
+
 				background:completeAnimation()
 				self.background:setRGB( 1, 0.53, 0 )
 				self.clipFinished( background, {} )
@@ -74,18 +79,22 @@ CoD.ServerBrowserHeaderIconColumn.new = function ( menu, controller )
 		SortAscend = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:completeAnimation()
 				self.background:setRGB( 0.2, 0.2, 0.2 )
 				self.clipFinished( background, {} )
+
 				icon:completeAnimation()
 				self.icon:setRGB( 1, 1, 1 )
 				self.clipFinished( icon, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:completeAnimation()
 				self.background:setRGB( 1, 0.53, 0 )
 				self.clipFinished( background, {} )
+
 				icon:completeAnimation()
 				self.icon:setRGB( 1, 1, 1 )
 				self.clipFinished( icon, {} )
@@ -94,24 +103,29 @@ CoD.ServerBrowserHeaderIconColumn.new = function ( menu, controller )
 		SortDescend = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:completeAnimation()
 				self.background:setRGB( 0.2, 0.2, 0.2 )
 				self.clipFinished( background, {} )
+
 				icon:completeAnimation()
 				self.icon:setRGB( 1, 1, 1 )
 				self.clipFinished( icon, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:completeAnimation()
 				self.background:setRGB( 1, 0.53, 0 )
 				self.clipFinished( background, {} )
+
 				icon:completeAnimation()
 				self.icon:setRGB( 1, 1, 1 )
 				self.clipFinished( icon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "SortAscend",

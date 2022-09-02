@@ -36,9 +36,11 @@ end
 CoD.MOTD_MainImgContainer = InheritFrom( LUI.UIElement )
 CoD.MOTD_MainImgContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MOTD_MainImgContainer )
 	self.id = "MOTD_MainImgContainer"
@@ -171,30 +173,39 @@ CoD.MOTD_MainImgContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				PopupImage:completeAnimation()
 				self.PopupImage:setAlpha( 1 )
 				self.clipFinished( PopupImage, {} )
+
 				TwitchStream0:completeAnimation()
 				self.TwitchStream0:setAlpha( 0 )
 				self.clipFinished( TwitchStream0, {} )
+
 				liveCircle:completeAnimation()
 				self.liveCircle:setAlpha( 0 )
 				self.clipFinished( liveCircle, {} )
+
 				liveLabel:completeAnimation()
 				self.liveLabel:setAlpha( 0 )
 				self.clipFinished( liveLabel, {} )
+
 				twitchBacking:completeAnimation()
 				self.twitchBacking:setAlpha( 0 )
 				self.clipFinished( twitchBacking, {} )
+
 				twitchIcon:completeAnimation()
 				self.twitchIcon:setAlpha( 0 )
 				self.clipFinished( twitchIcon, {} )
+
 				streamerCountIcon:completeAnimation()
 				self.streamerCountIcon:setAlpha( 0 )
 				self.clipFinished( streamerCountIcon, {} )
+
 				streamerCount:completeAnimation()
 				self.streamerCount:setAlpha( 0 )
 				self.clipFinished( streamerCount, {} )
+
 				Action:completeAnimation()
 				self.Action:setAlpha( 0 )
 				self.clipFinished( Action, {} )
@@ -203,36 +214,46 @@ CoD.MOTD_MainImgContainer.new = function ( menu, controller )
 		Twitch = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				PopupImage:completeAnimation()
 				self.PopupImage:setAlpha( 0 )
 				self.clipFinished( PopupImage, {} )
+
 				TwitchStream0:completeAnimation()
 				self.TwitchStream0:setAlpha( 1 )
 				self.clipFinished( TwitchStream0, {} )
+
 				liveCircle:completeAnimation()
 				self.liveCircle:setAlpha( 1 )
 				self.clipFinished( liveCircle, {} )
+
 				liveLabel:completeAnimation()
 				self.liveLabel:setAlpha( 1 )
 				self.clipFinished( liveLabel, {} )
+
 				twitchBacking:completeAnimation()
 				self.twitchBacking:setAlpha( 0.6 )
 				self.clipFinished( twitchBacking, {} )
+
 				twitchIcon:completeAnimation()
 				self.twitchIcon:setAlpha( 1 )
 				self.clipFinished( twitchIcon, {} )
+
 				streamerCountIcon:completeAnimation()
 				self.streamerCountIcon:setAlpha( 1 )
 				self.clipFinished( streamerCountIcon, {} )
+
 				streamerCount:completeAnimation()
 				self.streamerCount:setAlpha( 1 )
 				self.clipFinished( streamerCount, {} )
+
 				Action:completeAnimation()
 				self.Action:setAlpha( 1 )
 				self.clipFinished( Action, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Twitch",
@@ -249,9 +270,11 @@ CoD.MOTD_MainImgContainer.new = function ( menu, controller )
 			modelName = "mtxCommsMOTD.type"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		CallCustomElementFunction_Self( self, "updateTwitchFeed", controller )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.streamerCount:close()
 		element.Action:close()

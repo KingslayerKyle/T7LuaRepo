@@ -4,9 +4,11 @@
 CoD.cac_ElemsSideListCustomClass = InheritFrom( LUI.UIElement )
 CoD.cac_ElemsSideListCustomClass.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.cac_ElemsSideListCustomClass )
 	self.id = "cac_ElemsSideListCustomClass"
@@ -45,9 +47,11 @@ CoD.cac_ElemsSideListCustomClass.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 3 )
+
 				local Pixel200Frame2 = function ( Pixel200, event )
 					local Pixel200Frame3 = function ( Pixel200, event )
 						local Pixel200Frame4 = function ( Pixel200, event )

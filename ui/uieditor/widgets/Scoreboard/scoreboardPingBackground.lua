@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ButtonPanel" )
 CoD.scoreboardPingBackground = InheritFrom( LUI.UIElement )
 CoD.scoreboardPingBackground.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.scoreboardPingBackground )
 	self.id = "scoreboardPingBackground"
@@ -51,23 +53,27 @@ CoD.scoreboardPingBackground.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Top3PlayerScoreBlurBox00:completeAnimation()
 				self.Top3PlayerScoreBlurBox00:setAlpha( 1 )
 				self.clipFinished( Top3PlayerScoreBlurBox00, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		GenesisEndGame = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Top3PlayerScoreBlurBox00:completeAnimation()
 				self.Top3PlayerScoreBlurBox00:setAlpha( 0 )
 				self.clipFinished( Top3PlayerScoreBlurBox00, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "GenesisEndGame",
@@ -91,6 +97,7 @@ CoD.scoreboardPingBackground.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_GAME_ENDED
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Top3PlayerScoreBlurBox00:close()
 		element.VSpanel0:close()

@@ -4,9 +4,11 @@
 CoD.StartMenu_ScoreAndMissionRunTime = InheritFrom( LUI.UIElement )
 CoD.StartMenu_ScoreAndMissionRunTime.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_ScoreAndMissionRunTime )
 	self.id = "StartMenu_ScoreAndMissionRunTime"
@@ -33,14 +35,17 @@ CoD.StartMenu_ScoreAndMissionRunTime.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		CP_PauseMenu = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CP_PauseMenu",
@@ -57,6 +62,7 @@ CoD.StartMenu_ScoreAndMissionRunTime.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.score:close()
 	end )

@@ -4,9 +4,11 @@
 CoD.FeaturedOfflineText = InheritFrom( LUI.UIElement )
 CoD.FeaturedOfflineText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FeaturedOfflineText )
 	self.id = "FeaturedOfflineText"
@@ -28,6 +30,7 @@ CoD.FeaturedOfflineText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				OfflineNotice:completeAnimation()
 				self.OfflineNotice:setAlpha( 0 )
 				self.OfflineNotice:setText( Engine.Localize( "" ) )
@@ -35,11 +38,13 @@ CoD.FeaturedOfflineText.new = function ( menu, controller )
 			end,
 			FeaturedCardsVisible = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		OfflineNormal = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				OfflineNotice:completeAnimation()
 				self.OfflineNotice:setAlpha( 1 )
 				self.OfflineNotice:setText( Engine.Localize( "MENU_FEATURED_OFFLINE" ) )
@@ -49,6 +54,7 @@ CoD.FeaturedOfflineText.new = function ( menu, controller )
 		OfflineError = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				OfflineNotice:completeAnimation()
 				self.OfflineNotice:setAlpha( 1 )
 				self.OfflineNotice:setText( Engine.Localize( "MENU_FEATURED_OFFLINE_ERROR" ) )
@@ -58,6 +64,7 @@ CoD.FeaturedOfflineText.new = function ( menu, controller )
 		OfflineVoluntary = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				OfflineNotice:completeAnimation()
 				self.OfflineNotice:setAlpha( 1 )
 				self.OfflineNotice:setText( Engine.Localize( "MENU_FEATURED_OFFLINE_CARRY_WARNING" ) )
@@ -65,6 +72,7 @@ CoD.FeaturedOfflineText.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "OfflineNormal",

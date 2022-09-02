@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.CAC.cac_lock" )
 CoD.WeaponDesignerItem = InheritFrom( LUI.UIElement )
 CoD.WeaponDesignerItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponDesignerItem )
 	self.id = "WeaponDesignerItem"
@@ -84,30 +86,38 @@ CoD.WeaponDesignerItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				fadedOverlay:completeAnimation()
 				self.fadedOverlay:setAlpha( 0 )
 				self.clipFinished( fadedOverlay, {} )
+
 				TopFocusBar:completeAnimation()
 				self.TopFocusBar:setAlpha( 0 )
 				self.clipFinished( TopFocusBar, {} )
+
 				BottomFocusBar:completeAnimation()
 				self.BottomFocusBar:setAlpha( 0 )
 				self.clipFinished( BottomFocusBar, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				fadedOverlay:completeAnimation()
 				self.fadedOverlay:setAlpha( 0 )
 				self.clipFinished( fadedOverlay, {} )
+
 				TopFocusBar:completeAnimation()
 				self.TopFocusBar:setAlpha( 1 )
 				self.clipFinished( TopFocusBar, {} )
+
 				BottomFocusBar:completeAnimation()
 				self.BottomFocusBar:setAlpha( 1 )
 				self.clipFinished( BottomFocusBar, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
@@ -116,30 +126,38 @@ CoD.WeaponDesignerItem.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				fadedOverlay:completeAnimation()
 				self.fadedOverlay:setAlpha( 0.55 )
 				self.clipFinished( fadedOverlay, {} )
+
 				TopFocusBar:completeAnimation()
 				self.TopFocusBar:setAlpha( 0 )
 				self.clipFinished( TopFocusBar, {} )
+
 				BottomFocusBar:completeAnimation()
 				self.BottomFocusBar:setAlpha( 0 )
 				self.clipFinished( BottomFocusBar, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				fadedOverlay:completeAnimation()
 				self.fadedOverlay:setAlpha( 0.55 )
 				self.clipFinished( fadedOverlay, {} )
+
 				TopFocusBar:completeAnimation()
 				self.TopFocusBar:setAlpha( 1 )
 				self.clipFinished( TopFocusBar, {} )
+
 				BottomFocusBar:completeAnimation()
 				self.BottomFocusBar:setAlpha( 1 )
 				self.clipFinished( BottomFocusBar, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
@@ -148,36 +166,45 @@ CoD.WeaponDesignerItem.new = function ( menu, controller )
 		OnlineOnly = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				fadedOverlay:completeAnimation()
 				self.fadedOverlay:setAlpha( 0.55 )
 				self.clipFinished( fadedOverlay, {} )
+
 				TopFocusBar:completeAnimation()
 				self.TopFocusBar:setAlpha( 0 )
 				self.clipFinished( TopFocusBar, {} )
+
 				BottomFocusBar:completeAnimation()
 				self.BottomFocusBar:setAlpha( 0 )
 				self.clipFinished( BottomFocusBar, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				fadedOverlay:completeAnimation()
 				self.fadedOverlay:setAlpha( 0.55 )
 				self.clipFinished( fadedOverlay, {} )
+
 				TopFocusBar:completeAnimation()
 				self.TopFocusBar:setAlpha( 1 )
 				self.clipFinished( TopFocusBar, {} )
+
 				BottomFocusBar:completeAnimation()
 				self.BottomFocusBar:setAlpha( 1 )
 				self.clipFinished( BottomFocusBar, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG0:close()
 		element.TopFocusBar:close()

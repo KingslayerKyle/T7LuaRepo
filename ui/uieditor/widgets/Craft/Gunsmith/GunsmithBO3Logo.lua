@@ -4,9 +4,11 @@
 CoD.GunsmithBO3Logo = InheritFrom( LUI.UIElement )
 CoD.GunsmithBO3Logo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunsmithBO3Logo )
 	self.id = "GunsmithBO3Logo"
@@ -25,6 +27,7 @@ CoD.GunsmithBO3Logo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				bo3logo:completeAnimation()
 				self.bo3logo:setAlpha( 1 )
 				self.clipFinished( bo3logo, {} )
@@ -33,6 +36,7 @@ CoD.GunsmithBO3Logo.new = function ( menu, controller )
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				bo3logo:completeAnimation()
 				self.bo3logo:setAlpha( 0 )
 				self.clipFinished( bo3logo, {} )

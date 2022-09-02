@@ -4,9 +4,11 @@
 CoD.GunsmithCustomizeGraphics = InheritFrom( LUI.UIElement )
 CoD.GunsmithCustomizeGraphics.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunsmithCustomizeGraphics )
 	self.id = "GunsmithCustomizeGraphics"

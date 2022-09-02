@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.button" )
 CoD.FullscreenPopupTemplate = InheritFrom( LUI.UIElement )
 CoD.FullscreenPopupTemplate.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FullscreenPopupTemplate )
 	self.id = "FullscreenPopupTemplate"
@@ -231,30 +233,39 @@ CoD.FullscreenPopupTemplate.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ButtonList:completeAnimation()
 				self.ButtonList:setAlpha( 1 )
 				self.clipFinished( ButtonList, {} )
+
 				DialogSpinner0:completeAnimation()
 				self.DialogSpinner0:setAlpha( 0 )
 				self.clipFinished( DialogSpinner0, {} )
+
 				BtnDone:completeAnimation()
 				self.BtnDone:setAlpha( 0 )
 				self.clipFinished( BtnDone, {} )
+
 				WorkingTitle:completeAnimation()
 				self.WorkingTitle:setAlpha( 0 )
 				self.clipFinished( WorkingTitle, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				Subtitle:completeAnimation()
 				self.Subtitle:setAlpha( 1 )
 				self.clipFinished( Subtitle, {} )
+
 				DoneTitle:completeAnimation()
 				self.DoneTitle:setAlpha( 0 )
 				self.clipFinished( DoneTitle, {} )
+
 				ErrorTitle:completeAnimation()
 				self.ErrorTitle:setAlpha( 0 )
 				self.clipFinished( ErrorTitle, {} )
+
 				ErrorSubtitle:completeAnimation()
 				self.ErrorSubtitle:setAlpha( 0 )
 				self.clipFinished( ErrorSubtitle, {} )
@@ -263,31 +274,40 @@ CoD.FullscreenPopupTemplate.new = function ( menu, controller )
 		WorkingState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ButtonList:completeAnimation()
 				self.ButtonList:setAlpha( 0 )
 				self.clipFinished( ButtonList, {} )
+
 				DialogSpinner0:completeAnimation()
 				self.DialogSpinner0:setAlpha( 1 )
 				self.clipFinished( DialogSpinner0, {} )
+
 				BtnDone:completeAnimation()
 				self.BtnDone:setAlpha( 0 )
 				self.clipFinished( BtnDone, {} )
+
 				WorkingTitle:completeAnimation()
 				self.WorkingTitle:setAlpha( 1 )
 				self.clipFinished( WorkingTitle, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 0 )
 				self.clipFinished( Title, {} )
+
 				Subtitle:completeAnimation()
 				self.Subtitle:setAlpha( 1 )
 				self.Subtitle:setText( Engine.Localize( "PLATFORM_PLEASEWAIT" ) )
 				self.clipFinished( Subtitle, {} )
+
 				DoneTitle:completeAnimation()
 				self.DoneTitle:setAlpha( 0 )
 				self.clipFinished( DoneTitle, {} )
+
 				ErrorTitle:completeAnimation()
 				self.ErrorTitle:setAlpha( 0 )
 				self.clipFinished( ErrorTitle, {} )
+
 				ErrorSubtitle:completeAnimation()
 				self.ErrorSubtitle:setAlpha( 0 )
 				self.clipFinished( ErrorSubtitle, {} )
@@ -296,31 +316,40 @@ CoD.FullscreenPopupTemplate.new = function ( menu, controller )
 		ErrorState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ButtonList:completeAnimation()
 				self.ButtonList:setAlpha( 0 )
 				self.clipFinished( ButtonList, {} )
+
 				DialogSpinner0:completeAnimation()
 				self.DialogSpinner0:setAlpha( 0 )
 				self.clipFinished( DialogSpinner0, {} )
+
 				BtnDone:completeAnimation()
 				self.BtnDone:setAlpha( 1 )
 				self.clipFinished( BtnDone, {} )
+
 				WorkingTitle:completeAnimation()
 				self.WorkingTitle:setAlpha( 0 )
 				self.clipFinished( WorkingTitle, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 0 )
 				self.clipFinished( Title, {} )
+
 				Subtitle:completeAnimation()
 				self.Subtitle:setAlpha( 0 )
 				self.Subtitle:setText( Engine.Localize( "" ) )
 				self.clipFinished( Subtitle, {} )
+
 				DoneTitle:completeAnimation()
 				self.DoneTitle:setAlpha( 0 )
 				self.clipFinished( DoneTitle, {} )
+
 				ErrorTitle:completeAnimation()
 				self.ErrorTitle:setAlpha( 1 )
 				self.clipFinished( ErrorTitle, {} )
+
 				ErrorSubtitle:completeAnimation()
 				self.ErrorSubtitle:setAlpha( 1 )
 				self.clipFinished( ErrorSubtitle, {} )
@@ -329,30 +358,39 @@ CoD.FullscreenPopupTemplate.new = function ( menu, controller )
 		CustomState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ButtonList:completeAnimation()
 				self.ButtonList:setAlpha( 0 )
 				self.clipFinished( ButtonList, {} )
+
 				DialogSpinner0:completeAnimation()
 				self.DialogSpinner0:setAlpha( 0 )
 				self.clipFinished( DialogSpinner0, {} )
+
 				BtnDone:completeAnimation()
 				self.BtnDone:setAlpha( 0 )
 				self.clipFinished( BtnDone, {} )
+
 				WorkingTitle:completeAnimation()
 				self.WorkingTitle:setAlpha( 0 )
 				self.clipFinished( WorkingTitle, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				Subtitle:completeAnimation()
 				self.Subtitle:setAlpha( 1 )
 				self.clipFinished( Subtitle, {} )
+
 				DoneTitle:completeAnimation()
 				self.DoneTitle:setAlpha( 0 )
 				self.clipFinished( DoneTitle, {} )
+
 				ErrorTitle:completeAnimation()
 				self.ErrorTitle:setAlpha( 0 )
 				self.clipFinished( ErrorTitle, {} )
+
 				ErrorSubtitle:completeAnimation()
 				self.ErrorSubtitle:setAlpha( 0 )
 				self.clipFinished( ErrorSubtitle, {} )
@@ -369,6 +407,7 @@ CoD.FullscreenPopupTemplate.new = function ( menu, controller )
 		CoD.Menu.SetButtonLabel( f15_arg1, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, "" )
 		return false
 	end, false )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsSelfInState( self, "ErrorState" ) then
 			MakeElementNotFocusable( self, "ButtonList", controller )
@@ -389,6 +428,7 @@ CoD.FullscreenPopupTemplate.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.scorestreakVignetteContainer:close()
 		element.ButtonList:close()

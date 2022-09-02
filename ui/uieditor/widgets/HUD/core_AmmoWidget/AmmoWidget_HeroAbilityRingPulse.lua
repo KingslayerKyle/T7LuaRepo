@@ -4,9 +4,11 @@
 CoD.AmmoWidget_HeroAbilityRingPulse = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_HeroAbilityRingPulse.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_HeroAbilityRingPulse )
 	self.id = "AmmoWidget_HeroAbilityRingPulse"
@@ -27,6 +29,7 @@ CoD.AmmoWidget_HeroAbilityRingPulse.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				HeroRingPointsGainedImage:completeAnimation()
 				self.HeroRingPointsGainedImage:setAlpha( 0 )
 				self.clipFinished( HeroRingPointsGainedImage, {} )
@@ -35,6 +38,7 @@ CoD.AmmoWidget_HeroAbilityRingPulse.new = function ( menu, controller )
 		Charge = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				HeroRingPointsGainedImage:completeAnimation()
 				self.HeroRingPointsGainedImage:setAlpha( 0 )
 				self.clipFinished( HeroRingPointsGainedImage, {} )
@@ -43,6 +47,7 @@ CoD.AmmoWidget_HeroAbilityRingPulse.new = function ( menu, controller )
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local HeroRingPointsGainedImageFrame2 = function ( HeroRingPointsGainedImage, event )
 					local HeroRingPointsGainedImageFrame3 = function ( HeroRingPointsGainedImage, event )
 						local HeroRingPointsGainedImageFrame4 = function ( HeroRingPointsGainedImage, event )
@@ -88,12 +93,14 @@ CoD.AmmoWidget_HeroAbilityRingPulse.new = function ( menu, controller )
 				self.HeroRingPointsGainedImage:setTopBottom( true, true, 0, 0 )
 				self.HeroRingPointsGainedImage:setAlpha( 0 )
 				HeroRingPointsGainedImageFrame2( HeroRingPointsGainedImage, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		InUse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				HeroRingPointsGainedImage:completeAnimation()
 				self.HeroRingPointsGainedImage:setAlpha( 0 )
 				self.clipFinished( HeroRingPointsGainedImage, {} )

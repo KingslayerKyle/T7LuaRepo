@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.MPHudWidgets.ThrustMeter.ThrustMeterChevron" )
 CoD.ThrustBootChevron = InheritFrom( LUI.UIElement )
 CoD.ThrustBootChevron.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ThrustBootChevron )
 	self.id = "ThrustBootChevron"

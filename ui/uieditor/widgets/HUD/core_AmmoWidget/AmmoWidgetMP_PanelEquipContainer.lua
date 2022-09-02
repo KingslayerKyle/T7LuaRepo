@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_PanelEquip" )
 CoD.AmmoWidgetMP_PanelEquipContainer = InheritFrom( LUI.UIElement )
 CoD.AmmoWidgetMP_PanelEquipContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidgetMP_PanelEquipContainer )
 	self.id = "AmmoWidgetMP_PanelEquipContainer"
@@ -28,9 +30,11 @@ CoD.AmmoWidgetMP_PanelEquipContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PanelLethal0:close()
 	end )

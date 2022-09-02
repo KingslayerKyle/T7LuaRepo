@@ -4,9 +4,11 @@
 CoD.PartyList_ClanBox = InheritFrom( LUI.UIElement )
 CoD.PartyList_ClanBox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PartyList_ClanBox )
 	self.id = "PartyList_ClanBox"

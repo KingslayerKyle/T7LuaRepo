@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Notifications.PlayerCard.PlayerCard_Callout" )
 CoD.safeframe_playercard = InheritFrom( LUI.UIElement )
 CoD.safeframe_playercard.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.safeframe_playercard )
 	self.id = "safeframe_playercard"
@@ -31,14 +33,17 @@ CoD.safeframe_playercard.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		HideNotifications = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HideNotifications",
@@ -89,6 +94,7 @@ CoD.safeframe_playercard.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_IN_KILLCAM
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PlayerCardCallout:close()
 	end )

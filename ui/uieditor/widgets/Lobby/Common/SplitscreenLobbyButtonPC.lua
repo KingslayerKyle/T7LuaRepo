@@ -10,9 +10,11 @@ end
 CoD.SplitscreenLobbyButtonPC = InheritFrom( LUI.UIElement )
 CoD.SplitscreenLobbyButtonPC.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SplitscreenLobbyButtonPC )
 	self.id = "SplitscreenLobbyButtonPC"
@@ -59,15 +61,19 @@ CoD.SplitscreenLobbyButtonPC.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ButtonBackGround:completeAnimation()
 				self.ButtonBackGround:setAlpha( 0 )
 				self.clipFinished( ButtonBackGround, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setAlpha( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				TextLabel:completeAnimation()
 				self.TextLabel:setAlpha( 0 )
 				self.clipFinished( TextLabel, {} )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 0 )
 				self.clipFinished( Image, {} )
@@ -76,15 +82,19 @@ CoD.SplitscreenLobbyButtonPC.new = function ( menu, controller )
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ButtonBackGround:completeAnimation()
 				self.ButtonBackGround:setAlpha( 0 )
 				self.clipFinished( ButtonBackGround, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setAlpha( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				TextLabel:completeAnimation()
 				self.TextLabel:setAlpha( 0 )
 				self.clipFinished( TextLabel, {} )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 0 )
 				self.clipFinished( Image, {} )
@@ -93,12 +103,15 @@ CoD.SplitscreenLobbyButtonPC.new = function ( menu, controller )
 		MapController = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				ButtonBackGround:completeAnimation()
 				self.ButtonBackGround:setAlpha( 1 )
 				self.clipFinished( ButtonBackGround, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				TextLabel:completeAnimation()
 				self.TextLabel:setRGB( 1, 1, 1 )
 				self.TextLabel:setAlpha( 1 )
@@ -107,12 +120,15 @@ CoD.SplitscreenLobbyButtonPC.new = function ( menu, controller )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 3 )
+
 				ButtonBackGround:completeAnimation()
 				self.ButtonBackGround:setAlpha( 1 )
 				self.clipFinished( ButtonBackGround, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				TextLabel:completeAnimation()
 				self.TextLabel:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.TextLabel:setAlpha( 1 )
@@ -123,17 +139,21 @@ CoD.SplitscreenLobbyButtonPC.new = function ( menu, controller )
 		Available = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ButtonBackGround:completeAnimation()
 				self.ButtonBackGround:setAlpha( 0 )
 				self.clipFinished( ButtonBackGround, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				TextLabel:completeAnimation()
 				self.TextLabel:setRGB( 1, 1, 1 )
 				self.TextLabel:setAlpha( 1 )
 				self.TextLabel:setText( Engine.Localize( "PLATFORM_SPLITSCREEN_ACTIVATE" ) )
 				self.clipFinished( TextLabel, {} )
+
 				Image:completeAnimation()
 				self.Image:setLeftRight( true, true, 60, -82 )
 				self.Image:setTopBottom( true, true, -1, 1 )
@@ -143,17 +163,21 @@ CoD.SplitscreenLobbyButtonPC.new = function ( menu, controller )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 4 )
+
 				ButtonBackGround:completeAnimation()
 				self.ButtonBackGround:setAlpha( 0 )
 				self.clipFinished( ButtonBackGround, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				TextLabel:completeAnimation()
 				self.TextLabel:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.TextLabel:setAlpha( 1 )
 				self.TextLabel:setText( Engine.Localize( "PLATFORM_SPLITSCREEN_ACTIVATE" ) )
 				self.clipFinished( TextLabel, {} )
+
 				Image:completeAnimation()
 				self.Image:setRGB( 1, 0.41, 0 )
 				self.clipFinished( Image, {} )
@@ -162,17 +186,21 @@ CoD.SplitscreenLobbyButtonPC.new = function ( menu, controller )
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ButtonBackGround:completeAnimation()
 				self.ButtonBackGround:setAlpha( 0 )
 				self.clipFinished( ButtonBackGround, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				TextLabel:completeAnimation()
 				self.TextLabel:setRGB( 1, 1, 1 )
 				self.TextLabel:setAlpha( 1 )
 				self.TextLabel:setText( Engine.Localize( "PLATFORM_SPLITSCREEN_DEACTIVATE" ) )
 				self.clipFinished( TextLabel, {} )
+
 				Image:completeAnimation()
 				self.Image:setRGB( 1, 1, 1 )
 				self.Image:setAlpha( 1 )
@@ -180,17 +208,21 @@ CoD.SplitscreenLobbyButtonPC.new = function ( menu, controller )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 4 )
+
 				ButtonBackGround:completeAnimation()
 				self.ButtonBackGround:setAlpha( 0 )
 				self.clipFinished( ButtonBackGround, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				TextLabel:completeAnimation()
 				self.TextLabel:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.TextLabel:setAlpha( 1 )
 				self.TextLabel:setText( Engine.Localize( "PLATFORM_SPLITSCREEN_DEACTIVATE" ) )
 				self.clipFinished( TextLabel, {} )
+
 				Image:completeAnimation()
 				self.Image:setRGB( 1, 0.41, 0 )
 				self.clipFinished( Image, {} )
@@ -199,23 +231,28 @@ CoD.SplitscreenLobbyButtonPC.new = function ( menu, controller )
 		AddController = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ButtonBackGround:completeAnimation()
 				self.ButtonBackGround:setAlpha( 0 )
 				self.clipFinished( ButtonBackGround, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setAlpha( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				TextLabel:completeAnimation()
 				self.TextLabel:setRGB( 1, 1, 1 )
 				self.TextLabel:setAlpha( 1 )
 				self.TextLabel:setText( Engine.Localize( "PLATFORM_FEEDER_SECONDARY_CONTROLLER_PLUGIN" ) )
 				self.clipFinished( TextLabel, {} )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 0 )
 				self.clipFinished( Image, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hide",
@@ -343,6 +380,7 @@ CoD.SplitscreenLobbyButtonPC.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEMemberBlurPanelContainer0:close()
 	end )

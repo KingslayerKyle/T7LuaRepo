@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.GenericPopups.MatchStartWarning_TimerBkgd" )
 CoD.MatchStartWarningContainer = InheritFrom( LUI.UIElement )
 CoD.MatchStartWarningContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MatchStartWarningContainer )
 	self.id = "MatchStartWarningContainer"

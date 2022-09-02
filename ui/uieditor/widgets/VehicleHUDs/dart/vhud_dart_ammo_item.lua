@@ -4,9 +4,11 @@
 CoD.vhud_dart_ammo_item = InheritFrom( LUI.UIElement )
 CoD.vhud_dart_ammo_item.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_dart_ammo_item )
 	self.id = "vhud_dart_ammo_item"
@@ -36,10 +38,12 @@ CoD.vhud_dart_ammo_item.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				NotificationAmmoBox1:completeAnimation()
 				self.NotificationAmmoBox1:setAlpha( 0 )
 				self.NotificationAmmoBox1:setScale( 1 )
 				self.clipFinished( NotificationAmmoBox1, {} )
+
 				agrIconMissileLine1:completeAnimation()
 				self.agrIconMissileLine1:setAlpha( 1 )
 				self.agrIconMissileLine1:setScale( 1 )
@@ -49,10 +53,12 @@ CoD.vhud_dart_ammo_item.new = function ( menu, controller )
 		On = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				NotificationAmmoBox1:completeAnimation()
 				self.NotificationAmmoBox1:setAlpha( 1 )
 				self.NotificationAmmoBox1:setScale( 1.2 )
 				self.clipFinished( NotificationAmmoBox1, {} )
+
 				agrIconMissileLine1:completeAnimation()
 				self.agrIconMissileLine1:setAlpha( 1 )
 				self.agrIconMissileLine1:setScale( 1.2 )

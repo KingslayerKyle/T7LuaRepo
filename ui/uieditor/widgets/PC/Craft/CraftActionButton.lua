@@ -15,6 +15,7 @@ local f0_local0 = function ( f1_arg0, f1_arg1, f1_arg2 )
 			end
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( f1_arg0, "setModel", function ( element, controller )
 		local f3_local0 = CoD.PCUtil.GetModelValues( controller, {
 			"perControllerStatusModel",
@@ -44,9 +45,11 @@ end
 CoD.CraftActionButton = InheritFrom( LUI.UIElement )
 CoD.CraftActionButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CraftActionButton )
 	self.id = "CraftActionButton"
@@ -117,26 +120,32 @@ CoD.CraftActionButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				fullBackground:completeAnimation()
 				self.fullBackground:setAlpha( 0.5 )
 				self.clipFinished( fullBackground, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 3 )
+
 				fullBackground:completeAnimation()
 				self.fullBackground:setAlpha( 0.5 )
 				self.clipFinished( fullBackground, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, -1, 1 )
 				self.FocusBarB:setTopBottom( false, true, -2.75, 2.75 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, -1, 1 )
 				self.FocusBarT:setTopBottom( true, false, -2, 2 )
@@ -145,6 +154,7 @@ CoD.CraftActionButton.new = function ( menu, controller )
 			end,
 			Flash = function ()
 				self:setupElementClipCounter( 1 )
+
 				local flashFrame2 = function ( flash, event )
 					local flashFrame3 = function ( flash, event )
 						if not event.interrupted then
@@ -174,6 +184,7 @@ CoD.CraftActionButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FocusBarB:close()
 		element.FocusBarT:close()

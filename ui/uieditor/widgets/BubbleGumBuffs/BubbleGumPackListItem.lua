@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_HelpItemsLabel" )
 CoD.BubbleGumPackListItem = InheritFrom( LUI.UIElement )
 CoD.BubbleGumPackListItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BubbleGumPackListItem )
 	self.id = "BubbleGumPackListItem"
@@ -71,6 +73,7 @@ CoD.BubbleGumPackListItem.new = function ( menu, controller )
 	btnDisplayText:setLetterSpacing( 1 )
 	btnDisplayText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	btnDisplayText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( btnDisplayText, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )
@@ -135,80 +138,97 @@ CoD.BubbleGumPackListItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 1 )
 				self.FEButtonPanelShaderContainer:setZoom( -10 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 1 )
 				self.FEButtonIdle:setZoom( 0 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 1 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 1 )
 				self.FEButtonPanelShaderContainer:setZoom( 0 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 10 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -20, 20 )
 				self.FEButtonFocus:setAlpha( 1 )
 				self.FEButtonFocus:setZoom( 10 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.45 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( -305 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 1 )
 				self.btnDisplayTextStroke:setZoom( 10 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, -20, -12 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 1 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 1 )
 				self.clipFinished( Glow2, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 8 )
+
 				local FEButtonPanelShaderContainerFrame2 = function ( FEButtonPanelShaderContainer, event )
 					if not event.interrupted then
 						FEButtonPanelShaderContainer:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -352,6 +372,7 @@ CoD.BubbleGumPackListItem.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 8 )
+
 				local FEButtonPanelShaderContainerFrame2 = function ( FEButtonPanelShaderContainer, event )
 					if not event.interrupted then
 						FEButtonPanelShaderContainer:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -495,6 +516,7 @@ CoD.BubbleGumPackListItem.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 9 )
+
 				local FEButtonPanelShaderContainerFrame2 = function ( FEButtonPanelShaderContainer, event )
 					local FEButtonPanelShaderContainerFrame3 = function ( FEButtonPanelShaderContainer, event )
 						if not event.interrupted then
@@ -551,12 +573,14 @@ CoD.BubbleGumPackListItem.new = function ( menu, controller )
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 0 )
 				FEButtonIdleFrame2( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
@@ -587,6 +611,7 @@ CoD.BubbleGumPackListItem.new = function ( menu, controller )
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( 0 )
 				btnDisplayTextFrame2( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
@@ -606,11 +631,13 @@ CoD.BubbleGumPackListItem.new = function ( menu, controller )
 				FEHelpItemsLabel0:completeAnimation()
 				self.FEHelpItemsLabel0:setAlpha( 0 )
 				FEHelpItemsLabel0Frame2( FEHelpItemsLabel0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
@@ -619,43 +646,52 @@ CoD.BubbleGumPackListItem.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.FEButtonPanelShaderContainer:setAlpha( 0.5 )
 				self.FEButtonPanelShaderContainer:setZoom( -10 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0.3 )
 				self.FEButtonIdle:setZoom( 0 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0.1 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 9 )
+
 				local FEButtonPanelShaderContainerFrame2 = function ( FEButtonPanelShaderContainer, event )
 					local FEButtonPanelShaderContainerFrame3 = function ( FEButtonPanelShaderContainer, event )
 						if not event.interrupted then
@@ -712,12 +748,14 @@ CoD.BubbleGumPackListItem.new = function ( menu, controller )
 				self.FEButtonIdle:setAlpha( 0 )
 				self.FEButtonIdle:setZoom( 0 )
 				FEButtonIdleFrame2( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setLeftRight( true, true, -8, 8 )
 				self.FEButtonFocus:setTopBottom( false, false, -7, 8 )
 				self.FEButtonFocus:setAlpha( 0 )
 				self.FEButtonFocus:setZoom( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
@@ -748,6 +786,7 @@ CoD.BubbleGumPackListItem.new = function ( menu, controller )
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( 0 )
 				btnDisplayTextFrame2( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
@@ -767,17 +806,20 @@ CoD.BubbleGumPackListItem.new = function ( menu, controller )
 				FEHelpItemsLabel0:completeAnimation()
 				self.FEHelpItemsLabel0:setAlpha( 0 )
 				FEHelpItemsLabel0Frame2( FEHelpItemsLabel0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setLeftRight( true, false, 3, 11 )
 				self.Arrow:setTopBottom( true, false, 12, 20 )
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -794,6 +836,7 @@ CoD.BubbleGumPackListItem.new = function ( menu, controller )
 			modelName = "disabled"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanelShaderContainer:close()
 		element.FEHelpItemsLabel0:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.GridItemBGBGlow" )
 CoD.LobbyBubbleGumBuff = InheritFrom( LUI.UIElement )
 CoD.LobbyBubbleGumBuff.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyBubbleGumBuff )
 	self.id = "LobbyBubbleGumBuff"
@@ -37,9 +39,11 @@ CoD.LobbyBubbleGumBuff.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				GridItemBGBGlow:completeAnimation()
 				self.GridItemBGBGlow:setAlpha( 1 )
 				self.clipFinished( GridItemBGBGlow, {} )
+
 				BubbleGumBuffImage:completeAnimation()
 				self.BubbleGumBuffImage:setAlpha( 1 )
 				self.clipFinished( BubbleGumBuffImage, {} )
@@ -48,15 +52,18 @@ CoD.LobbyBubbleGumBuff.new = function ( menu, controller )
 		OutOfBubbleGum = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				GridItemBGBGlow:completeAnimation()
 				self.GridItemBGBGlow:setAlpha( 0.25 )
 				self.clipFinished( GridItemBGBGlow, {} )
+
 				BubbleGumBuffImage:completeAnimation()
 				self.BubbleGumBuffImage:setAlpha( 0.5 )
 				self.clipFinished( BubbleGumBuffImage, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "OutOfBubbleGum",
@@ -81,6 +88,7 @@ CoD.LobbyBubbleGumBuff.new = function ( menu, controller )
 			modelName = "remaining"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GridItemBGBGlow:close()
 	end )

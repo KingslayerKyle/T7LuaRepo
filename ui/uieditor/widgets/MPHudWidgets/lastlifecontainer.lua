@@ -4,9 +4,11 @@
 CoD.LastLifeContainer = InheritFrom( LUI.UIElement )
 CoD.LastLifeContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LastLifeContainer )
 	self.id = "LastLifeContainer"
@@ -28,6 +30,7 @@ CoD.LastLifeContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				LastLife:completeAnimation()
 				self.LastLife:setAlpha( 0 )
 				self.clipFinished( LastLife, {} )
@@ -36,6 +39,7 @@ CoD.LastLifeContainer.new = function ( menu, controller )
 		Poup = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local LastLifeFrame2 = function ( LastLife, event )
 					local LastLifeFrame3 = function ( LastLife, event )
 						local LastLifeFrame4 = function ( LastLife, event )
@@ -153,6 +157,7 @@ CoD.LastLifeContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Poup",

@@ -25,9 +25,11 @@ end
 CoD.FileshareSelector = InheritFrom( LUI.UIElement )
 CoD.FileshareSelector.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FileshareSelector )
 	self.id = "FileshareSelector"
@@ -319,9 +321,11 @@ CoD.FileshareSelector.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				upperline:completeAnimation()
 				self.upperline:setAlpha( 0 )
 				self.clipFinished( upperline, {} )
+
 				bottomline:completeAnimation()
 				self.bottomline:setAlpha( 0 )
 				self.clipFinished( bottomline, {} )
@@ -347,6 +351,7 @@ CoD.FileshareSelector.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LeftPanel:close()
 		element.GridItemButtonBackdropContainer2x40:close()

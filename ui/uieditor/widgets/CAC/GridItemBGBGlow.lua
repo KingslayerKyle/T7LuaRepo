@@ -4,9 +4,11 @@
 CoD.GridItemBGBGlow = InheritFrom( LUI.UIElement )
 CoD.GridItemBGBGlow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GridItemBGBGlow )
 	self.id = "GridItemBGBGlow"
@@ -53,15 +55,19 @@ CoD.GridItemBGBGlow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Purple:completeAnimation()
 				self.Purple:setAlpha( 0 )
 				self.clipFinished( Purple, {} )
+
 				Green:completeAnimation()
 				self.Green:setAlpha( 0 )
 				self.clipFinished( Green, {} )
+
 				Blue:completeAnimation()
 				self.Blue:setAlpha( 0 )
 				self.clipFinished( Blue, {} )
+
 				Orange:completeAnimation()
 				self.Orange:setAlpha( 0 )
 				self.clipFinished( Orange, {} )
@@ -70,12 +76,15 @@ CoD.GridItemBGBGlow.new = function ( menu, controller )
 		Orange = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Purple:completeAnimation()
 				self.Purple:setAlpha( 0 )
 				self.clipFinished( Purple, {} )
+
 				Green:completeAnimation()
 				self.Green:setAlpha( 0 )
 				self.clipFinished( Green, {} )
+
 				Blue:completeAnimation()
 				self.Blue:setAlpha( 0 )
 				self.clipFinished( Blue, {} )
@@ -105,15 +114,18 @@ CoD.GridItemBGBGlow.new = function ( menu, controller )
 				Orange:completeAnimation()
 				self.Orange:setAlpha( 0.5 )
 				OrangeFrame2( Orange, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Blue = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Purple:completeAnimation()
 				self.Purple:setAlpha( 0 )
 				self.clipFinished( Purple, {} )
+
 				Green:completeAnimation()
 				self.Green:setAlpha( 0 )
 				self.clipFinished( Green, {} )
@@ -143,15 +155,18 @@ CoD.GridItemBGBGlow.new = function ( menu, controller )
 				Blue:completeAnimation()
 				self.Blue:setAlpha( 0.5 )
 				BlueFrame2( Blue, {} )
+
 				Orange:completeAnimation()
 				self.Orange:setAlpha( 0 )
 				self.clipFinished( Orange, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Green = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Purple:completeAnimation()
 				self.Purple:setAlpha( 0 )
 				self.clipFinished( Purple, {} )
@@ -181,18 +196,22 @@ CoD.GridItemBGBGlow.new = function ( menu, controller )
 				Green:completeAnimation()
 				self.Green:setAlpha( 0.5 )
 				GreenFrame2( Green, {} )
+
 				Blue:completeAnimation()
 				self.Blue:setAlpha( 0 )
 				self.clipFinished( Blue, {} )
+
 				Orange:completeAnimation()
 				self.Orange:setAlpha( 0 )
 				self.clipFinished( Orange, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Purple = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local PurpleFrame2 = function ( Purple, event )
 					local PurpleFrame3 = function ( Purple, event )
 						if not event.interrupted then
@@ -219,19 +238,24 @@ CoD.GridItemBGBGlow.new = function ( menu, controller )
 				Purple:completeAnimation()
 				self.Purple:setAlpha( 0.5 )
 				PurpleFrame2( Purple, {} )
+
 				Green:completeAnimation()
 				self.Green:setAlpha( 0 )
 				self.clipFinished( Green, {} )
+
 				Blue:completeAnimation()
 				self.Blue:setAlpha( 0 )
 				self.clipFinished( Blue, {} )
+
 				Orange:completeAnimation()
 				self.Orange:setAlpha( 0 )
 				self.clipFinished( Orange, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Orange",

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_AmmoWidgetFactory.ZmAmmo_DpadLeftAmmoDigits
 CoD.ZmAmmo_DpadLeftAmmoNumberWidgetFactory = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_DpadLeftAmmoNumberWidgetFactory.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_DpadLeftAmmoNumberWidgetFactory )
 	self.id = "ZmAmmo_DpadLeftAmmoNumberWidgetFactory"
@@ -206,9 +208,11 @@ CoD.ZmAmmo_DpadLeftAmmoNumberWidgetFactory.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TensDigit:completeAnimation()
 				self.TensDigit:setAlpha( 0 )
 				self.clipFinished( TensDigit, {} )
+
 				OnesDigit:completeAnimation()
 				self.OnesDigit:setAlpha( 0 )
 				self.clipFinished( OnesDigit, {} )
@@ -217,15 +221,18 @@ CoD.ZmAmmo_DpadLeftAmmoNumberWidgetFactory.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TensDigit:completeAnimation()
 				self.TensDigit:setAlpha( 1 )
 				self.clipFinished( TensDigit, {} )
+
 				OnesDigit:completeAnimation()
 				self.OnesDigit:setAlpha( 1 )
 				self.clipFinished( OnesDigit, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TensDigit:close()
 		element.OnesDigit:close()

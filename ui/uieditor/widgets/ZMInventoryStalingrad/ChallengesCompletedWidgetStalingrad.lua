@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.CAC.cac_ButtonBoxLrgInactiveStroke" )
 CoD.ChallengesCompletedWidgetStalingrad = InheritFrom( LUI.UIElement )
 CoD.ChallengesCompletedWidgetStalingrad.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChallengesCompletedWidgetStalingrad )
 	self.id = "ChallengesCompletedWidgetStalingrad"
@@ -179,27 +181,35 @@ CoD.ChallengesCompletedWidgetStalingrad.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0 )
 				self.clipFinished( Backing, {} )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setAlpha( 0 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BackPanel:completeAnimation()
 				self.BackPanel:setAlpha( 0 )
 				self.clipFinished( BackPanel, {} )
+
 				ChallengeStateWidget1:completeAnimation()
 				self.ChallengeStateWidget1:setAlpha( 0 )
 				self.clipFinished( ChallengeStateWidget1, {} )
+
 				ChallengeStateWidget2:completeAnimation()
 				self.ChallengeStateWidget2:setAlpha( 0 )
 				self.clipFinished( ChallengeStateWidget2, {} )
+
 				ChallengeStateWidget3:completeAnimation()
 				self.ChallengeStateWidget3:setAlpha( 0 )
 				self.clipFinished( ChallengeStateWidget3, {} )
+
 				HighlightFrame:completeAnimation()
 				self.HighlightFrame:setAlpha( 0 )
 				self.clipFinished( HighlightFrame, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 0 )
 				self.clipFinished( Title, {} )
@@ -208,33 +218,42 @@ CoD.ChallengesCompletedWidgetStalingrad.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0.64 )
 				self.clipFinished( Backing, {} )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setAlpha( 0.8 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				BackPanel:completeAnimation()
 				self.BackPanel:setAlpha( 0.4 )
 				self.clipFinished( BackPanel, {} )
+
 				ChallengeStateWidget1:completeAnimation()
 				self.ChallengeStateWidget1:setAlpha( 1 )
 				self.clipFinished( ChallengeStateWidget1, {} )
+
 				ChallengeStateWidget2:completeAnimation()
 				self.ChallengeStateWidget2:setAlpha( 1 )
 				self.clipFinished( ChallengeStateWidget2, {} )
+
 				ChallengeStateWidget3:completeAnimation()
 				self.ChallengeStateWidget3:setAlpha( 1 )
 				self.clipFinished( ChallengeStateWidget3, {} )
+
 				HighlightFrame:completeAnimation()
 				self.HighlightFrame:setAlpha( 1 )
 				self.clipFinished( HighlightFrame, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanelShaderContainer:close()
 		element.BackPanel:close()

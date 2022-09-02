@@ -4,9 +4,11 @@
 CoD.BorderBakedStroke = InheritFrom( LUI.UIElement )
 CoD.BorderBakedStroke.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BorderBakedStroke )
 	self.id = "BorderBakedStroke"

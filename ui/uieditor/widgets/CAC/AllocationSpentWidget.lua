@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.AllocationBar" )
 CoD.AllocationSpentWidget = InheritFrom( LUI.UIElement )
 CoD.AllocationSpentWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AllocationSpentWidget )
 	self.id = "AllocationSpentWidget"

@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Notifications.RankUp.RankUpNotification_FooterLabe
 CoD.RankUpNotification = InheritFrom( LUI.UIElement )
 CoD.RankUpNotification.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RankUpNotification )
 	self.id = "RankUpNotification"
@@ -183,6 +185,7 @@ CoD.RankUpNotification.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				levelUpSound:completeAnimation()
 				self.levelUpSound:playSound( "rank_up", controller )
 				self.clipFinished( levelUpSound, {} )
@@ -758,6 +761,7 @@ CoD.RankUpNotification.new = function ( menu, controller )
 			end,
 			TimeUp1 = function ()
 				self:setupElementClipCounter( 1 )
+
 				local RankFrame2 = function ( Rank, event )
 					if not event.interrupted then
 						Rank:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -778,6 +782,7 @@ CoD.RankUpNotification.new = function ( menu, controller )
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 12 )
+
 				local f57_local0 = function ( f58_arg0, f58_arg1 )
 					local f58_local0 = function ( f59_arg0, f59_arg1 )
 						local f59_local0 = function ( f60_arg0, f60_arg1 )
@@ -963,15 +968,19 @@ CoD.RankUpNotification.new = function ( menu, controller )
 				RankUpNotificationTitle:beginAnimation( "keyframe", 79, false, false, CoD.TweenType.Linear )
 				RankUpNotificationTitle:setAlpha( 1 )
 				RankUpNotificationTitle:registerEventHandler( "transition_complete_keyframe", f57_local4 )
+
 				RankB:completeAnimation()
 				self.RankB:setAlpha( 0 )
 				self.clipFinished( RankB, {} )
+
 				RankG:completeAnimation()
 				self.RankG:setAlpha( 0 )
 				self.clipFinished( RankG, {} )
+
 				RankR:completeAnimation()
 				self.RankR:setAlpha( 0 )
 				self.clipFinished( RankR, {} )
+
 				highlight:completeAnimation()
 				self.highlight:setAlpha( 0 )
 				self.clipFinished( highlight, {} )
@@ -1089,6 +1098,7 @@ CoD.RankUpNotification.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RankUpNotificationWingContainer:close()
 		element.RankUpNotificationTitle:close()

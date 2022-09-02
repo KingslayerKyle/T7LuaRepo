@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.CAC.RestrictedItemWarning" )
 CoD.equippedScoreStreaksButton = InheritFrom( LUI.UIElement )
 CoD.equippedScoreStreaksButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.equippedScoreStreaksButton )
 	self.id = "equippedScoreStreaksButton"
@@ -117,16 +119,20 @@ CoD.equippedScoreStreaksButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				backing:completeAnimation()
 				self.backing:setAlpha( 0 )
 				self.clipFinished( backing, {} )
+
 				image:completeAnimation()
 				self.image:setAlpha( 1 )
 				self.clipFinished( image, {} )
+
 				cacButtonBoxLrgInactive0:completeAnimation()
 				self.cacButtonBoxLrgInactive0:setAlpha( 1 )
 				self.cacButtonBoxLrgInactive0:setRFTMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
 				self.clipFinished( cacButtonBoxLrgInactive0, {} )
+
 				score:completeAnimation()
 				self.score:setAlpha( 1 )
 				self.clipFinished( score, {} )
@@ -135,15 +141,18 @@ CoD.equippedScoreStreaksButton.new = function ( menu, controller )
 		Unequipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				image:completeAnimation()
 				self.image:setAlpha( 0 )
 				self.clipFinished( image, {} )
+
 				score:completeAnimation()
 				self.score:setAlpha( 0 )
 				self.clipFinished( score, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Unequipped",
@@ -160,6 +169,7 @@ CoD.equippedScoreStreaksButton.new = function ( menu, controller )
 			modelName = "itemIndex"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.arrow:close()
 		element.cacButtonBoxLrgInactive0:close()

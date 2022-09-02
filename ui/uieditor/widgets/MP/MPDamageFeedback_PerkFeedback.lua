@@ -8,9 +8,11 @@ end
 CoD.MPDamageFeedback_PerkFeedback = InheritFrom( LUI.UIElement )
 CoD.MPDamageFeedback_PerkFeedback.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MPDamageFeedback_PerkFeedback )
 	self.id = "MPDamageFeedback_PerkFeedback"
@@ -49,23 +51,28 @@ CoD.MPDamageFeedback_PerkFeedback.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		FlakJacket = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				flak:completeAnimation()
 				self.flak:setAlpha( 1 )
 				self.clipFinished( flak, {} )
+
 				armor:completeAnimation()
 				self.armor:setAlpha( 0 )
 				self.clipFinished( armor, {} )
+
 				tacMask:completeAnimation()
 				self.tacMask:setAlpha( 0 )
 				self.clipFinished( tacMask, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local flakFrame2 = function ( flak, event )
 					if not event.interrupted then
 						flak:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -86,18 +93,22 @@ CoD.MPDamageFeedback_PerkFeedback.new = function ( menu, controller )
 		Armor = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				flak:completeAnimation()
 				self.flak:setAlpha( 0 )
 				self.clipFinished( flak, {} )
+
 				armor:completeAnimation()
 				self.armor:setAlpha( 1 )
 				self.clipFinished( armor, {} )
+
 				tacMask:completeAnimation()
 				self.tacMask:setAlpha( 0 )
 				self.clipFinished( tacMask, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local armorFrame2 = function ( armor, event )
 					if not event.interrupted then
 						armor:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -118,18 +129,22 @@ CoD.MPDamageFeedback_PerkFeedback.new = function ( menu, controller )
 		TacMask = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				flak:completeAnimation()
 				self.flak:setAlpha( 0 )
 				self.clipFinished( flak, {} )
+
 				armor:completeAnimation()
 				self.armor:setAlpha( 0 )
 				self.clipFinished( armor, {} )
+
 				tacMask:completeAnimation()
 				self.tacMask:setAlpha( 1 )
 				self.clipFinished( tacMask, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local tacMaskFrame2 = function ( tacMask, event )
 					if not event.interrupted then
 						tacMask:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -148,6 +163,7 @@ CoD.MPDamageFeedback_PerkFeedback.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "FlakJacket",

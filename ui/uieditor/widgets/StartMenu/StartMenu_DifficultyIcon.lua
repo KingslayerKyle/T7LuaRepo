@@ -4,9 +4,11 @@
 CoD.StartMenu_DifficultyIcon = InheritFrom( LUI.UIElement )
 CoD.StartMenu_DifficultyIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_DifficultyIcon )
 	self.id = "StartMenu_DifficultyIcon"
@@ -30,9 +32,11 @@ CoD.StartMenu_DifficultyIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Image0:close()
 	end )

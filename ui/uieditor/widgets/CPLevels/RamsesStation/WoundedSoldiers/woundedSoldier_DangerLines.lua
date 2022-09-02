@@ -4,9 +4,11 @@
 CoD.woundedSoldier_DangerLines = InheritFrom( LUI.UIElement )
 CoD.woundedSoldier_DangerLines.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.woundedSoldier_DangerLines )
 	self.id = "woundedSoldier_DangerLines"
@@ -43,9 +45,11 @@ CoD.woundedSoldier_DangerLines.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				LinesDanger:completeAnimation()
 				self.LinesDanger:setAlpha( 0 )
 				self.clipFinished( LinesDanger, {} )
+
 				TextDanger:completeAnimation()
 				self.TextDanger:setAlpha( 0 )
 				self.clipFinished( TextDanger, {} )
@@ -54,6 +58,7 @@ CoD.woundedSoldier_DangerLines.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local f3_local0 = function ( f4_arg0, f4_arg1 )
 					local f4_local0 = function ( f5_arg0, f5_arg1 )
 						local f5_local0 = function ( f6_arg0, f6_arg1 )
@@ -220,10 +225,12 @@ CoD.woundedSoldier_DangerLines.new = function ( menu, controller )
 				TextDanger:completeAnimation()
 				self.TextDanger:setAlpha( 0 )
 				TextDangerFrame2( TextDanger, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

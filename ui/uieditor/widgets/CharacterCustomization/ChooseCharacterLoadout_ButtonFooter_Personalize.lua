@@ -9,6 +9,7 @@ local f0_local0 = function ( f1_arg0, f1_arg1, f1_arg2 )
 	f1_arg0:setForceMouseEventDispatch( true )
 	f1_arg0.clickableButton.m_button = Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE
 	f1_arg0.clickableButton.keyshortcut:setText( Engine.Localize( "[^3P^7]" ) )
+
 	LUI.OverrideFunction_CallOriginalFirst( f1_arg0.clickableButton.label, "setText", function ( element, controller )
 		ScaleWidgetToLabel( f1_arg0.clickableButton, element, 5 )
 	end )
@@ -23,9 +24,11 @@ end
 CoD.ChooseCharacterLoadout_ButtonFooter_Personalize = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacterLoadout_ButtonFooter_Personalize.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacterLoadout_ButtonFooter_Personalize )
 	self.id = "ChooseCharacterLoadout_ButtonFooter_Personalize"
@@ -62,6 +65,7 @@ CoD.ChooseCharacterLoadout_ButtonFooter_Personalize.new = function ( menu, contr
 	personalizeLabel:setTopBottom( false, false, -15.25, 4.75 )
 	personalizeLabel:setText( Engine.Localize( "HEROES_PERSONALIZE" ) )
 	personalizeLabel:setTTF( "fonts/RefrigeratorDeluxe-Regular.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( personalizeLabel, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 5 )
 	end )
@@ -140,14 +144,17 @@ CoD.ChooseCharacterLoadout_ButtonFooter_Personalize.new = function ( menu, contr
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				personalizeLabel:completeAnimation()
 				self.personalizeLabel:setRGB( 1, 1, 1 )
 				self.personalizeLabel:setAlpha( 1 )
 				self.clipFinished( personalizeLabel, {} )
+
 				Button1:completeAnimation()
 				self.Button1:setRGB( 1, 1, 1 )
 				self.Button1:setAlpha( 1 )
 				self.clipFinished( Button1, {} )
+
 				clickableButton:completeAnimation()
 				self.clickableButton:setRGB( 1, 1, 1 )
 				self.clickableButton:setAlpha( 0 )
@@ -157,14 +164,17 @@ CoD.ChooseCharacterLoadout_ButtonFooter_Personalize.new = function ( menu, contr
 		NoPersonalization_PC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				personalizeLabel:completeAnimation()
 				self.personalizeLabel:setRGB( 0.49, 0.49, 0.49 )
 				self.personalizeLabel:setAlpha( 0 )
 				self.clipFinished( personalizeLabel, {} )
+
 				Button1:completeAnimation()
 				self.Button1:setRGB( 0.49, 0.49, 0.49 )
 				self.Button1:setAlpha( 0 )
 				self.clipFinished( Button1, {} )
+
 				clickableButton:completeAnimation()
 				self.clickableButton:setRGB( 0.49, 0.49, 0.49 )
 				self.clickableButton:setAlpha( 1 )
@@ -174,14 +184,17 @@ CoD.ChooseCharacterLoadout_ButtonFooter_Personalize.new = function ( menu, contr
 		NoPersonalization = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				personalizeLabel:completeAnimation()
 				self.personalizeLabel:setRGB( 0.28, 0.28, 0.28 )
 				self.personalizeLabel:setAlpha( 1 )
 				self.clipFinished( personalizeLabel, {} )
+
 				Button1:completeAnimation()
 				self.Button1:setRGB( 0.49, 0.49, 0.49 )
 				self.Button1:setAlpha( 1 )
 				self.clipFinished( Button1, {} )
+
 				clickableButton:completeAnimation()
 				self.clickableButton:setRGB( 0.49, 0.49, 0.49 )
 				self.clickableButton:setAlpha( 0 )
@@ -191,14 +204,17 @@ CoD.ChooseCharacterLoadout_ButtonFooter_Personalize.new = function ( menu, contr
 		DefaultState_PC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				personalizeLabel:completeAnimation()
 				self.personalizeLabel:setRGB( 1, 1, 1 )
 				self.personalizeLabel:setAlpha( 0 )
 				self.clipFinished( personalizeLabel, {} )
+
 				Button1:completeAnimation()
 				self.Button1:setRGB( 1, 1, 1 )
 				self.Button1:setAlpha( 0 )
 				self.clipFinished( Button1, {} )
+
 				clickableButton:completeAnimation()
 				self.clickableButton:setRGB( 1, 1, 1 )
 				self.clickableButton:setAlpha( 1 )
@@ -206,6 +222,7 @@ CoD.ChooseCharacterLoadout_ButtonFooter_Personalize.new = function ( menu, contr
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoPersonalization_PC",
@@ -258,6 +275,7 @@ CoD.ChooseCharacterLoadout_ButtonFooter_Personalize.new = function ( menu, contr
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BMContractsSpecialistbtnbgleft:close()
 		element.clickableButton:close()

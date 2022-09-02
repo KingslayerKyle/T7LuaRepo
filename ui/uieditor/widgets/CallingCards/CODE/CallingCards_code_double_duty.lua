@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CallingCards.CODE.CallingCards_code_double_duty_ho
 CoD.CallingCards_code_double_duty = InheritFrom( LUI.UIElement )
 CoD.CallingCards_code_double_duty.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_code_double_duty )
 	self.id = "CallingCards_code_double_duty"
@@ -45,6 +47,7 @@ CoD.CallingCards_code_double_duty.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local f2_local0 = function ( f3_arg0, f3_arg1 )
 					local f3_local0 = function ( f4_arg0, f4_arg1 )
 						local f4_local0 = function ( f5_arg0, f5_arg1 )
@@ -89,10 +92,12 @@ CoD.CallingCards_code_double_duty.new = function ( menu, controller )
 				self.home:setShaderVector( 2, 0, 1, 0, 0 )
 				self.home:setShaderVector( 3, 0, 0, 0, 0 )
 				home:registerEventHandler( "transition_complete_keyframe", f2_local0 )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.war:close()
 		element.home:close()

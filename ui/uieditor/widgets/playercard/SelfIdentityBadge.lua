@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.playercard.CallingCard" )
 CoD.SelfIdentityBadge = InheritFrom( LUI.UIElement )
 CoD.SelfIdentityBadge.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SelfIdentityBadge )
 	self.id = "SelfIdentityBadge"
@@ -70,21 +72,26 @@ CoD.SelfIdentityBadge.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				CallingCardBG:completeAnimation()
 				self.CallingCardBG:setAlpha( 1 )
 				self.clipFinished( CallingCardBG, {} )
+
 				emblemBG:completeAnimation()
 				self.emblemBG:setAlpha( 1 )
 				self.clipFinished( emblemBG, {} )
+
 				CallingCard:completeAnimation()
 				self.CallingCard:setAlpha( 1 )
 				self.clipFinished( CallingCard, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setAlpha( 1 )
 				self.clipFinished( emblem, {} )
 			end,
 			ShowBadge = function ()
 				self:setupElementClipCounter( 5 )
+
 				local CallingCardBGFrame2 = function ( CallingCardBG, event )
 					local CallingCardBGFrame3 = function ( CallingCardBG, event )
 						local CallingCardBGFrame4 = function ( CallingCardBG, event )
@@ -339,6 +346,7 @@ CoD.SelfIdentityBadge.new = function ( menu, controller )
 				self.emblem:setTopBottom( true, false, 0, 60 )
 				self.emblem:setAlpha( 0 )
 				emblemFrame2( emblem, {} )
+
 				Sound:completeAnimation()
 				self.Sound:setPlaySoundDirect( true )
 				self.Sound:playSound( "uin_bm_slideout", controller )
@@ -346,21 +354,26 @@ CoD.SelfIdentityBadge.new = function ( menu, controller )
 			end,
 			Hide = function ()
 				self:setupElementClipCounter( 4 )
+
 				CallingCardBG:completeAnimation()
 				self.CallingCardBG:setAlpha( 0 )
 				self.clipFinished( CallingCardBG, {} )
+
 				emblemBG:completeAnimation()
 				self.emblemBG:setAlpha( 0 )
 				self.clipFinished( emblemBG, {} )
+
 				CallingCard:completeAnimation()
 				self.CallingCard:setAlpha( 0 )
 				self.clipFinished( CallingCard, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setAlpha( 0 )
 				self.clipFinished( emblem, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardBG:close()
 		element.emblemBG:close()

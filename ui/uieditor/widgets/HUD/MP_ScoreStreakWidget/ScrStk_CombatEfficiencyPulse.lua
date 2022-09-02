@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.MP_ScoreStreakWidget.ScrStk_CombatEfficiencySc
 CoD.ScrStk_CombatEfficiencyPulse = InheritFrom( LUI.UIElement )
 CoD.ScrStk_CombatEfficiencyPulse.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScrStk_CombatEfficiencyPulse )
 	self.id = "ScrStk_CombatEfficiencyPulse"
@@ -55,15 +57,18 @@ CoD.ScrStk_CombatEfficiencyPulse.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
 			end,
 			ScoreAdded = function ()
 				self:setupElementClipCounter( 2 )
+
 				local Image0Frame2 = function ( Image0, event )
 					local Image0Frame3 = function ( Image0, event )
 						if not event.interrupted then
@@ -141,6 +146,7 @@ CoD.ScrStk_CombatEfficiencyPulse.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ScrStkCombatEfficiencyScrollFX0:close()
 		element.ScrStkCombatEfficiencyScrollFX00:close()

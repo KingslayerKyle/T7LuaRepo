@@ -4,9 +4,11 @@
 CoD.RankUpNotification_FooterBacking01 = InheritFrom( LUI.UIElement )
 CoD.RankUpNotification_FooterBacking01.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RankUpNotification_FooterBacking01 )
 	self.id = "RankUpNotification_FooterBacking01"

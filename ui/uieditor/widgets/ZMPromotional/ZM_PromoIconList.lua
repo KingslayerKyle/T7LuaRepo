@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMPromotional.ZM_PromoListItem" )
 CoD.ZM_PromoIconList = InheritFrom( LUI.UIElement )
 CoD.ZM_PromoIconList.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZM_PromoIconList )
 	self.id = "ZM_PromoIconList"

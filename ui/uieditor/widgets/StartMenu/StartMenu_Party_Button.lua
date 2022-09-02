@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleNumBrdr" )
 CoD.StartMenu_Party_Button = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Party_Button.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Party_Button )
 	self.id = "StartMenu_Party_Button"
@@ -129,26 +131,32 @@ CoD.StartMenu_Party_Button.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Socialbackground00:completeAnimation()
 				self.Socialbackground00:setAlpha( 1 )
 				self.clipFinished( Socialbackground00, {} )
+
 				Title:completeAnimation()
 				self.Title:setLeftRight( true, false, 60, 283 )
 				self.Title:setTopBottom( true, false, 20.5, 39.5 )
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 1 )
 				self.clipFinished( Icon, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FocusBarTFrame2 = function ( FocusBarT, event )
 					local FocusBarTFrame3 = function ( FocusBarT, event )
 						local FocusBarTFrame4 = function ( FocusBarT, event )
@@ -501,11 +509,13 @@ CoD.StartMenu_Party_Button.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 2 )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, 0, 0 )
 				self.FocusBarT:setTopBottom( true, false, -2, 2 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, 0, 0 )
 				self.FocusBarB:setTopBottom( false, true, -3, 1 )
@@ -514,6 +524,7 @@ CoD.StartMenu_Party_Button.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FocusBarTFrame2 = function ( FocusBarT, event )
 					local FocusBarTFrame3 = function ( FocusBarT, event )
 						local FocusBarTFrame4 = function ( FocusBarT, event )
@@ -892,30 +903,38 @@ CoD.StartMenu_Party_Button.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				Socialbackground00:completeAnimation()
 				self.Socialbackground00:setAlpha( 0 )
 				self.clipFinished( Socialbackground00, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 0 )
 				self.clipFinished( Title, {} )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 0 )
 				self.clipFinished( Icon, {} )
+
 				pixel1:completeAnimation()
 				self.pixel1:setAlpha( 0 )
 				self.clipFinished( pixel1, {} )
+
 				pixel00:completeAnimation()
 				self.pixel00:setAlpha( 0 )
 				self.clipFinished( pixel00, {} )
+
 				pixel10:completeAnimation()
 				self.pixel10:setAlpha( 0 )
 				self.clipFinished( pixel10, {} )
+
 				pixel000:completeAnimation()
 				self.pixel000:setAlpha( 0 )
 				self.clipFinished( pixel000, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Socialbackground00:close()
 		element.FocusBarT:close()

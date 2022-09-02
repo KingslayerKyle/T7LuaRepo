@@ -4,9 +4,11 @@
 CoD.cac_2lines = InheritFrom( LUI.UIElement )
 CoD.cac_2lines.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_2lines )
 	self.id = "cac_2lines"

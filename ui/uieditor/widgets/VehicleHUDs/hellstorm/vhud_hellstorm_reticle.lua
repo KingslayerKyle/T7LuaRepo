@@ -11,9 +11,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.hellstorm.vhud_hellstorm_WeaponModeWid
 CoD.vhud_hellstorm_reticle = InheritFrom( LUI.UIElement )
 CoD.vhud_hellstorm_reticle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_hellstorm_reticle )
 	self.id = "vhud_hellstorm_reticle"
@@ -376,139 +378,172 @@ CoD.vhud_hellstorm_reticle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		LowAltitude = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 32 )
+
 				ArrowTop:completeAnimation()
 				self.ArrowTop:setLeftRight( false, false, -17.25, 16.25 )
 				self.ArrowTop:setTopBottom( false, false, -357.5, -324 )
 				self.clipFinished( ArrowTop, {} )
+
 				ArrowLeft:completeAnimation()
 				self.ArrowLeft:setLeftRight( false, false, -392.5, -359 )
 				self.ArrowLeft:setTopBottom( false, false, -17.25, 16.25 )
 				self.clipFinished( ArrowLeft, {} )
+
 				ArrowRight:completeAnimation()
 				self.ArrowRight:setLeftRight( false, false, 350.5, 384 )
 				self.ArrowRight:setTopBottom( false, false, -17.25, 16.25 )
 				self.clipFinished( ArrowRight, {} )
+
 				ArrowBottom:completeAnimation()
 				self.ArrowBottom:setLeftRight( false, false, -17.25, 16.25 )
 				self.ArrowBottom:setTopBottom( false, false, 324, 357.5 )
 				self.clipFinished( ArrowBottom, {} )
+
 				CenterHash:completeAnimation()
 				self.CenterHash:setLeftRight( false, false, -169, 168 )
 				self.CenterHash:setTopBottom( false, false, -169, 168 )
 				self.CenterHash:setScale( 1 )
 				self.clipFinished( CenterHash, {} )
+
 				CenterReticleLineT:completeAnimation()
 				self.CenterReticleLineT:setLeftRight( false, false, -20.71, 19.71 )
 				self.CenterReticleLineT:setTopBottom( false, false, -220.93, -125.93 )
 				self.clipFinished( CenterReticleLineT, {} )
+
 				CenterReticleLineB:completeAnimation()
 				self.CenterReticleLineB:setLeftRight( false, false, -20.71, 19.71 )
 				self.CenterReticleLineB:setTopBottom( false, false, 125.92, 220.92 )
 				self.clipFinished( CenterReticleLineB, {} )
+
 				CenterReticleLineR:completeAnimation()
 				self.CenterReticleLineR:setLeftRight( false, false, 149.79, 190.21 )
 				self.CenterReticleLineR:setTopBottom( false, false, -48, 47 )
 				self.clipFinished( CenterReticleLineR, {} )
+
 				CenterReticleLineL:completeAnimation()
 				self.CenterReticleLineL:setLeftRight( false, false, -192.21, -151.79 )
 				self.CenterReticleLineL:setTopBottom( false, false, -48, 47 )
 				self.clipFinished( CenterReticleLineL, {} )
+
 				DotTop:completeAnimation()
 				self.DotTop:setLeftRight( false, false, -3, 2 )
 				self.DotTop:setTopBottom( false, false, -274.9, -269.9 )
 				self.clipFinished( DotTop, {} )
+
 				DotRight:completeAnimation()
 				self.DotRight:setLeftRight( false, false, 272.52, 277.52 )
 				self.DotRight:setTopBottom( false, false, -2.5, 2.5 )
 				self.clipFinished( DotRight, {} )
+
 				DotBottom:completeAnimation()
 				self.DotBottom:setLeftRight( false, false, -3, 2 )
 				self.DotBottom:setTopBottom( false, false, 257.7, 262.7 )
 				self.clipFinished( DotBottom, {} )
+
 				DotLeft:completeAnimation()
 				self.DotLeft:setLeftRight( false, false, -270.79, -265.79 )
 				self.DotLeft:setTopBottom( false, false, -2.5, 2.5 )
 				self.clipFinished( DotLeft, {} )
+
 				CenterSolidCircle:completeAnimation()
 				self.CenterSolidCircle:setScale( 0.8 )
 				self.clipFinished( CenterSolidCircle, {} )
+
 				OutsideCurveBrokenR:completeAnimation()
 				self.OutsideCurveBrokenR:setLeftRight( false, false, 240.54, 336.5 )
 				self.OutsideCurveBrokenR:setTopBottom( false, false, -178.42, 173.42 )
 				self.OutsideCurveBrokenR:setZoom( 200 )
 				self.OutsideCurveBrokenR:setScale( 1 )
 				self.clipFinished( OutsideCurveBrokenR, {} )
+
 				OutsideCurveCenterR:completeAnimation()
 				self.OutsideCurveCenterR:setLeftRight( false, false, 481.19, 576.92 )
 				self.OutsideCurveCenterR:setTopBottom( false, false, -102.94, 96.5 )
 				self.OutsideCurveCenterR:setAlpha( 0.4 )
 				self.clipFinished( OutsideCurveCenterR, {} )
+
 				OutsideLineUR:completeAnimation()
 				self.OutsideLineUR:setLeftRight( false, false, 391, 469.99 )
 				self.OutsideLineUR:setTopBottom( false, false, -269.9, -222.5 )
 				self.clipFinished( OutsideLineUR, {} )
+
 				OutsideLineLR:completeAnimation()
 				self.OutsideLineLR:setLeftRight( false, false, 391, 469.99 )
 				self.OutsideLineLR:setTopBottom( false, false, 206, 253.4 )
 				self.clipFinished( OutsideLineLR, {} )
+
 				InnerRing:completeAnimation()
 				self.InnerRing:setScale( 0.9 )
 				self.clipFinished( InnerRing, {} )
+
 				OuterRingBlur:completeAnimation()
 				self.OuterRingBlur:setScale( 0.9 )
 				self.clipFinished( OuterRingBlur, {} )
+
 				OuterRingBlurRGB:completeAnimation()
 				self.OuterRingBlurRGB:setScale( 1.2 )
 				self.clipFinished( OuterRingBlurRGB, {} )
+
 				OutsideCurveBrokenL:completeAnimation()
 				self.OutsideCurveBrokenL:setLeftRight( false, false, -337.5, -241.54 )
 				self.OutsideCurveBrokenL:setTopBottom( false, false, -178.42, 173.42 )
 				self.OutsideCurveBrokenL:setZoom( 200 )
 				self.clipFinished( OutsideCurveBrokenL, {} )
+
 				OutsideCurveCenterL:completeAnimation()
 				self.OutsideCurveCenterL:setLeftRight( false, false, -581.05, -485.32 )
 				self.OutsideCurveCenterL:setTopBottom( false, false, -102.94, 96.5 )
 				self.OutsideCurveCenterL:setAlpha( 0.4 )
 				self.clipFinished( OutsideCurveCenterL, {} )
+
 				OutsideLineUL:completeAnimation()
 				self.OutsideLineUL:setLeftRight( false, false, -488.49, -409.5 )
 				self.OutsideLineUL:setTopBottom( false, false, -283.75, -236.35 )
 				self.clipFinished( OutsideLineUL, {} )
+
 				OutsideLineLL:completeAnimation()
 				self.OutsideLineLL:setLeftRight( false, false, -478.5, -399.5 )
 				self.OutsideLineLL:setTopBottom( false, false, 217.5, 264.9 )
 				self.clipFinished( OutsideLineLL, {} )
+
 				OutsideTicksR:completeAnimation()
 				self.OutsideTicksR:setLeftRight( false, false, 529.06, 688.7 )
 				self.OutsideTicksR:setTopBottom( false, false, -267.4, 267.4 )
 				self.OutsideTicksR:setScale( 1.3 )
 				self.clipFinished( OutsideTicksR, {} )
+
 				OutsideTicksL:completeAnimation()
 				self.OutsideTicksL:setLeftRight( false, false, -692.82, -529.18 )
 				self.OutsideTicksL:setTopBottom( false, false, -269.9, 264.9 )
 				self.OutsideTicksL:setScale( 1.3 )
 				self.clipFinished( OutsideTicksL, {} )
+
 				vhudhellstormCenterReticleWidget0:completeAnimation()
 				self.vhudhellstormCenterReticleWidget0:setLeftRight( false, false, -35.5, 32.5 )
 				self.vhudhellstormCenterReticleWidget0:setTopBottom( false, false, -34.5, 33.5 )
 				self.clipFinished( vhudhellstormCenterReticleWidget0, {} )
+
 				ArrowsBlurBottom:completeAnimation()
 				self.ArrowsBlurBottom:setLeftRight( false, false, -33.5, 35.5 )
 				self.ArrowsBlurBottom:setTopBottom( false, false, 389.6, 406.5 )
 				self.clipFinished( ArrowsBlurBottom, {} )
+
 				ArrowsBlurTop:completeAnimation()
 				self.ArrowsBlurTop:setLeftRight( false, false, -33.5, 35.5 )
 				self.ArrowsBlurTop:setTopBottom( false, false, -391.2, -374.3 )
 				self.clipFinished( ArrowsBlurTop, {} )
+
 				ArrowsBlurTop0:completeAnimation()
 				self.ArrowsBlurTop0:setLeftRight( false, false, 654.2, 723.2 )
 				self.ArrowsBlurTop0:setTopBottom( false, false, -8.45, 8.45 )
 				self.clipFinished( ArrowsBlurTop0, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( false, false, -708.5, -639.5 )
 				self.Image0:setTopBottom( false, false, -8.95, 7.95 )
@@ -516,137 +551,170 @@ CoD.vhud_hellstorm_reticle.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		MediumAltitude = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 32 )
+
 				ArrowTop:completeAnimation()
 				self.ArrowTop:setLeftRight( false, false, -17.25, 16.25 )
 				self.ArrowTop:setTopBottom( false, false, -340, -306.5 )
 				self.clipFinished( ArrowTop, {} )
+
 				ArrowLeft:completeAnimation()
 				self.ArrowLeft:setLeftRight( false, false, -370, -336.5 )
 				self.ArrowLeft:setTopBottom( false, false, -17.25, 16.25 )
 				self.clipFinished( ArrowLeft, {} )
+
 				ArrowRight:completeAnimation()
 				self.ArrowRight:setLeftRight( false, false, 319.75, 353.25 )
 				self.ArrowRight:setTopBottom( false, false, -17.25, 16.25 )
 				self.clipFinished( ArrowRight, {} )
+
 				ArrowBottom:completeAnimation()
 				self.ArrowBottom:setLeftRight( false, false, -17.25, 16.25 )
 				self.ArrowBottom:setTopBottom( false, false, 312.5, 346 )
 				self.clipFinished( ArrowBottom, {} )
+
 				CenterHash:completeAnimation()
 				self.CenterHash:setLeftRight( false, false, -169, 168 )
 				self.CenterHash:setTopBottom( false, false, -169, 168 )
 				self.clipFinished( CenterHash, {} )
+
 				CenterReticleLineT:completeAnimation()
 				self.CenterReticleLineT:setLeftRight( false, false, -20.71, 19.71 )
 				self.CenterReticleLineT:setTopBottom( false, false, -202.12, -107.12 )
 				self.clipFinished( CenterReticleLineT, {} )
+
 				CenterReticleLineB:completeAnimation()
 				self.CenterReticleLineB:setLeftRight( false, false, -20.71, 19.71 )
 				self.CenterReticleLineB:setTopBottom( false, false, 108, 203 )
 				self.clipFinished( CenterReticleLineB, {} )
+
 				CenterReticleLineR:completeAnimation()
 				self.CenterReticleLineR:setLeftRight( false, false, 135.29, 175.71 )
 				self.CenterReticleLineR:setTopBottom( false, false, -48, 47 )
 				self.clipFinished( CenterReticleLineR, {} )
+
 				CenterReticleLineL:completeAnimation()
 				self.CenterReticleLineL:setLeftRight( false, false, -177.71, -137.29 )
 				self.CenterReticleLineL:setTopBottom( false, false, -48, 47 )
 				self.clipFinished( CenterReticleLineL, {} )
+
 				DotTop:completeAnimation()
 				self.DotTop:setLeftRight( false, false, -3, 2 )
 				self.DotTop:setTopBottom( false, false, -237.32, -232.32 )
 				self.clipFinished( DotTop, {} )
+
 				DotRight:completeAnimation()
 				self.DotRight:setLeftRight( false, false, 229.21, 234.21 )
 				self.DotRight:setTopBottom( false, false, -2.5, 2.5 )
 				self.clipFinished( DotRight, {} )
+
 				DotBottom:completeAnimation()
 				self.DotBottom:setLeftRight( false, false, -3, 2 )
 				self.DotBottom:setTopBottom( false, false, 224.7, 229.7 )
 				self.clipFinished( DotBottom, {} )
+
 				DotLeft:completeAnimation()
 				self.DotLeft:setLeftRight( false, false, -234.79, -229.79 )
 				self.DotLeft:setTopBottom( false, false, -2.5, 2.5 )
 				self.clipFinished( DotLeft, {} )
+
 				CenterSolidCircle:completeAnimation()
 				self.CenterSolidCircle:setScale( 0.9 )
 				self.clipFinished( CenterSolidCircle, {} )
+
 				OutsideCurveBrokenR:completeAnimation()
 				self.OutsideCurveBrokenR:setLeftRight( false, false, 203.04, 299 )
 				self.OutsideCurveBrokenR:setTopBottom( false, false, -178.42, 173.42 )
 				self.OutsideCurveBrokenR:setZoom( 40 )
 				self.clipFinished( OutsideCurveBrokenR, {} )
+
 				OutsideCurveCenterR:completeAnimation()
 				self.OutsideCurveCenterR:setLeftRight( false, false, 309.75, 405.48 )
 				self.OutsideCurveCenterR:setTopBottom( false, false, -102.94, 96.5 )
 				self.OutsideCurveCenterR:setAlpha( 0.5 )
 				self.clipFinished( OutsideCurveCenterR, {} )
+
 				OutsideLineUR:completeAnimation()
 				self.OutsideLineUR:setLeftRight( false, false, 297, 375.99 )
 				self.OutsideLineUR:setTopBottom( false, false, -219.93, -172.54 )
 				self.clipFinished( OutsideLineUR, {} )
+
 				OutsideLineLR:completeAnimation()
 				self.OutsideLineLR:setLeftRight( false, false, 297, 375.99 )
 				self.OutsideLineLR:setTopBottom( false, false, 172.3, 219.7 )
 				self.clipFinished( OutsideLineLR, {} )
+
 				InnerRing:completeAnimation()
 				self.InnerRing:setScale( 0.95 )
 				self.clipFinished( InnerRing, {} )
+
 				OuterRingBlur:completeAnimation()
 				self.OuterRingBlur:setScale( 0.95 )
 				self.clipFinished( OuterRingBlur, {} )
+
 				OuterRingBlurRGB:completeAnimation()
 				self.OuterRingBlurRGB:setScale( 1.1 )
 				self.clipFinished( OuterRingBlurRGB, {} )
+
 				OutsideCurveBrokenL:completeAnimation()
 				self.OutsideCurveBrokenL:setLeftRight( false, false, -302, -206.04 )
 				self.OutsideCurveBrokenL:setTopBottom( false, false, -178.42, 173.42 )
 				self.OutsideCurveBrokenL:setZoom( 40 )
 				self.clipFinished( OutsideCurveBrokenL, {} )
+
 				OutsideCurveCenterL:completeAnimation()
 				self.OutsideCurveCenterL:setLeftRight( false, false, -424.86, -329.13 )
 				self.OutsideCurveCenterL:setTopBottom( false, false, -102.94, 96.5 )
 				self.OutsideCurveCenterL:setAlpha( 0.5 )
 				self.clipFinished( OutsideCurveCenterL, {} )
+
 				OutsideLineUL:completeAnimation()
 				self.OutsideLineUL:setLeftRight( false, false, -380.99, -302 )
 				self.OutsideLineUL:setTopBottom( false, false, -225.82, -178.42 )
 				self.clipFinished( OutsideLineUL, {} )
+
 				OutsideLineLL:completeAnimation()
 				self.OutsideLineLL:setLeftRight( false, false, -380.99, -302 )
 				self.OutsideLineLL:setTopBottom( false, false, 174.8, 222.2 )
 				self.clipFinished( OutsideLineLL, {} )
+
 				OutsideTicksR:completeAnimation()
 				self.OutsideTicksR:setLeftRight( false, false, 401.37, 561.01 )
 				self.OutsideTicksR:setTopBottom( false, false, -267.4, 267.4 )
 				self.OutsideTicksR:setScale( 1.1 )
 				self.clipFinished( OutsideTicksR, {} )
+
 				OutsideTicksL:completeAnimation()
 				self.OutsideTicksL:setLeftRight( false, false, -565.14, -405.5 )
 				self.OutsideTicksL:setTopBottom( false, false, -270, 264.8 )
 				self.OutsideTicksL:setScale( 1.1 )
 				self.clipFinished( OutsideTicksL, {} )
+
 				vhudhellstormCenterReticleWidget0:completeAnimation()
 				self.vhudhellstormCenterReticleWidget0:setLeftRight( false, false, -35.5, 32.5 )
 				self.vhudhellstormCenterReticleWidget0:setTopBottom( false, false, -34.5, 33.5 )
 				self.clipFinished( vhudhellstormCenterReticleWidget0, {} )
+
 				ArrowsBlurBottom:completeAnimation()
 				self.ArrowsBlurBottom:setLeftRight( false, false, -33.5, 35.5 )
 				self.ArrowsBlurBottom:setTopBottom( false, false, 295.6, 312.5 )
 				self.clipFinished( ArrowsBlurBottom, {} )
+
 				ArrowsBlurTop:completeAnimation()
 				self.ArrowsBlurTop:setLeftRight( false, false, -33.5, 35.5 )
 				self.ArrowsBlurTop:setTopBottom( false, false, -292.2, -275.3 )
 				self.clipFinished( ArrowsBlurTop, {} )
+
 				ArrowsBlurTop0:completeAnimation()
 				self.ArrowsBlurTop0:setLeftRight( false, false, 412.19, 481.19 )
 				self.ArrowsBlurTop0:setTopBottom( false, false, -8.45, 8.45 )
 				self.clipFinished( ArrowsBlurTop0, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( false, false, -478.5, -409.5 )
 				self.Image0:setTopBottom( false, false, -8.95, 7.95 )
@@ -654,9 +722,11 @@ CoD.vhud_hellstorm_reticle.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LowAltitude = function ()
 				self:setupElementClipCounter( 32 )
+
 				local ArrowTopFrame2 = function ( ArrowTop, event )
 					if not event.interrupted then
 						ArrowTop:beginAnimation( "keyframe", 250, false, false, CoD.TweenType.Linear )
@@ -725,6 +795,7 @@ CoD.vhud_hellstorm_reticle.new = function ( menu, controller )
 				self.ArrowBottom:setLeftRight( false, false, -17.25, 16.25 )
 				self.ArrowBottom:setTopBottom( false, false, 312.5, 346 )
 				ArrowBottomFrame2( ArrowBottom, {} )
+
 				CenterHash:completeAnimation()
 				self.CenterHash:setLeftRight( false, false, -169, 168 )
 				self.CenterHash:setTopBottom( false, false, -169, 168 )
@@ -1109,6 +1180,7 @@ CoD.vhud_hellstorm_reticle.new = function ( menu, controller )
 				self.OutsideTicksL:setTopBottom( false, false, -270, 264.8 )
 				self.OutsideTicksL:setScale( 1.1 )
 				OutsideTicksLFrame2( OutsideTicksL, {} )
+
 				vhudhellstormCenterReticleWidget0:completeAnimation()
 				self.vhudhellstormCenterReticleWidget0:setLeftRight( false, false, -35.5, 32.5 )
 				self.vhudhellstormCenterReticleWidget0:setTopBottom( false, false, -34.5, 33.5 )
@@ -1186,122 +1258,152 @@ CoD.vhud_hellstorm_reticle.new = function ( menu, controller )
 		HighAltitude = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 30 )
+
 				ArrowTop:completeAnimation()
 				self.ArrowTop:setLeftRight( false, false, -17.25, 16.25 )
 				self.ArrowTop:setTopBottom( false, false, -302.5, -269 )
 				self.clipFinished( ArrowTop, {} )
+
 				ArrowLeft:completeAnimation()
 				self.ArrowLeft:setLeftRight( false, false, -318.75, -285.25 )
 				self.ArrowLeft:setTopBottom( false, false, -17.25, 16.25 )
 				self.clipFinished( ArrowLeft, {} )
+
 				ArrowRight:completeAnimation()
 				self.ArrowRight:setLeftRight( false, false, 280.25, 313.75 )
 				self.ArrowRight:setTopBottom( false, false, -17.25, 16.25 )
 				self.clipFinished( ArrowRight, {} )
+
 				ArrowBottom:completeAnimation()
 				self.ArrowBottom:setLeftRight( false, false, -17.25, 16.25 )
 				self.ArrowBottom:setTopBottom( false, false, 275.5, 309 )
 				self.clipFinished( ArrowBottom, {} )
+
 				CenterHash:completeAnimation()
 				self.CenterHash:setLeftRight( false, false, -169, 168 )
 				self.CenterHash:setTopBottom( false, false, -169, 168 )
 				self.clipFinished( CenterHash, {} )
+
 				CenterReticleLineT:completeAnimation()
 				self.CenterReticleLineT:setLeftRight( false, false, -20.71, 19.71 )
 				self.CenterReticleLineT:setTopBottom( false, false, -188.25, -93.25 )
 				self.clipFinished( CenterReticleLineT, {} )
+
 				CenterReticleLineB:completeAnimation()
 				self.CenterReticleLineB:setLeftRight( false, false, -20.71, 19.71 )
 				self.CenterReticleLineB:setTopBottom( false, false, 94.75, 189.75 )
 				self.clipFinished( CenterReticleLineB, {} )
+
 				CenterReticleLineR:completeAnimation()
 				self.CenterReticleLineR:setLeftRight( false, false, 122.29, 162.71 )
 				self.CenterReticleLineR:setTopBottom( false, false, -48, 47 )
 				self.clipFinished( CenterReticleLineR, {} )
+
 				CenterReticleLineL:completeAnimation()
 				self.CenterReticleLineL:setLeftRight( false, false, -163.71, -123.29 )
 				self.CenterReticleLineL:setTopBottom( false, false, -48, 47 )
 				self.clipFinished( CenterReticleLineL, {} )
+
 				DotTop:completeAnimation()
 				self.DotTop:setLeftRight( false, false, -3, 2 )
 				self.DotTop:setTopBottom( false, false, -204, -199 )
 				self.clipFinished( DotTop, {} )
+
 				DotRight:completeAnimation()
 				self.DotRight:setLeftRight( false, false, 198.21, 203.21 )
 				self.DotRight:setTopBottom( false, false, -2.5, 2.5 )
 				self.clipFinished( DotRight, {} )
+
 				DotBottom:completeAnimation()
 				self.DotBottom:setLeftRight( false, false, -3, 2 )
 				self.DotBottom:setTopBottom( false, false, 196, 201 )
 				self.clipFinished( DotBottom, {} )
+
 				DotLeft:completeAnimation()
 				self.DotLeft:setLeftRight( false, false, -203.79, -198.79 )
 				self.DotLeft:setTopBottom( false, false, -2.5, 2.5 )
 				self.clipFinished( DotLeft, {} )
+
 				CenterSolidCircle:completeAnimation()
 				self.CenterSolidCircle:setLeftRight( false, false, -98.5, 97.5 )
 				self.CenterSolidCircle:setTopBottom( false, false, -98.5, 97.5 )
 				self.clipFinished( CenterSolidCircle, {} )
+
 				OutsideCurveBrokenR:completeAnimation()
 				self.OutsideCurveBrokenR:setLeftRight( false, false, 193.04, 289 )
 				self.OutsideCurveBrokenR:setTopBottom( false, false, -178.42, 173.42 )
 				self.clipFinished( OutsideCurveBrokenR, {} )
+
 				OutsideCurveCenterR:completeAnimation()
 				self.OutsideCurveCenterR:setLeftRight( false, false, 190.07, 285.8 )
 				self.OutsideCurveCenterR:setTopBottom( false, false, -102.94, 96.5 )
 				self.clipFinished( OutsideCurveCenterR, {} )
+
 				OutsideLineUR:completeAnimation()
 				self.OutsideLineUR:setLeftRight( false, false, 264.02, 343.01 )
 				self.OutsideLineUR:setTopBottom( false, false, -203.12, -155.73 )
 				self.clipFinished( OutsideLineUR, {} )
+
 				OutsideLineLR:completeAnimation()
 				self.OutsideLineLR:setLeftRight( false, false, 264.02, 343.01 )
 				self.OutsideLineLR:setTopBottom( false, false, 158.3, 205.7 )
 				self.clipFinished( OutsideLineLR, {} )
+
 				InnerRing:completeAnimation()
 				self.InnerRing:setLeftRight( false, false, -217.93, 216.93 )
 				self.InnerRing:setTopBottom( false, false, -219.93, 214.93 )
 				self.clipFinished( InnerRing, {} )
+
 				OuterRingBlur:completeAnimation()
 				self.OuterRingBlur:setLeftRight( false, false, -240.93, 237.93 )
 				self.OuterRingBlur:setTopBottom( false, false, -243.17, 235.7 )
 				self.clipFinished( OuterRingBlur, {} )
+
 				OuterRingBlurRGB:completeAnimation()
 				self.OuterRingBlurRGB:setLeftRight( false, false, -324.5, 323.5 )
 				self.OuterRingBlurRGB:setTopBottom( false, false, -324, 324 )
 				self.clipFinished( OuterRingBlurRGB, {} )
+
 				OutsideCurveBrokenL:completeAnimation()
 				self.OutsideCurveBrokenL:setLeftRight( false, false, -292.91, -196.95 )
 				self.OutsideCurveBrokenL:setTopBottom( false, false, -178.42, 173.42 )
 				self.clipFinished( OutsideCurveBrokenL, {} )
+
 				OutsideCurveCenterL:completeAnimation()
 				self.OutsideCurveCenterL:setLeftRight( false, false, -289.8, -194.07 )
 				self.OutsideCurveCenterL:setTopBottom( false, false, -102.94, 96.5 )
 				self.clipFinished( OutsideCurveCenterL, {} )
+
 				OutsideLineUL:completeAnimation()
 				self.OutsideLineUL:setLeftRight( false, false, -341.5, -262.5 )
 				self.OutsideLineUL:setTopBottom( false, false, -203.12, -155.73 )
 				self.clipFinished( OutsideLineUL, {} )
+
 				OutsideLineLL:completeAnimation()
 				self.OutsideLineLL:setLeftRight( false, false, -341.5, -262.5 )
 				self.OutsideLineLL:setTopBottom( false, false, 158.3, 205.7 )
 				self.clipFinished( OutsideLineLL, {} )
+
 				OutsideTicksR:completeAnimation()
 				self.OutsideTicksR:setLeftRight( false, false, 356.72, 516.36 )
 				self.OutsideTicksR:setTopBottom( false, false, -267.4, 267.4 )
 				self.clipFinished( OutsideTicksR, {} )
+
 				OutsideTicksL:completeAnimation()
 				self.OutsideTicksL:setLeftRight( false, false, -501.14, -341.5 )
 				self.OutsideTicksL:setTopBottom( false, false, -270, 264.8 )
 				self.clipFinished( OutsideTicksL, {} )
+
 				vhudhellstormCenterReticleWidget0:completeAnimation()
 				self.vhudhellstormCenterReticleWidget0:setLeftRight( false, false, -35.5, 32.5 )
 				self.vhudhellstormCenterReticleWidget0:setTopBottom( false, false, -34.5, 33.5 )
 				self.clipFinished( vhudhellstormCenterReticleWidget0, {} )
+
 				ArrowsBlurBottom:completeAnimation()
 				self.ArrowsBlurBottom:setLeftRight( false, false, -33.5, 35.5 )
 				self.ArrowsBlurBottom:setTopBottom( false, false, 247.9, 264.8 )
 				self.clipFinished( ArrowsBlurBottom, {} )
+
 				ArrowsBlurTop:completeAnimation()
 				self.ArrowsBlurTop:setLeftRight( false, false, -33.5, 35.5 )
 				self.ArrowsBlurTop:setTopBottom( false, false, -267.4, -250.5 )
@@ -1309,9 +1411,11 @@ CoD.vhud_hellstorm_reticle.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			MediumAltitude = function ()
 				self:setupElementClipCounter( 32 )
+
 				local ArrowTopFrame2 = function ( ArrowTop, event )
 					if not event.interrupted then
 						ArrowTop:beginAnimation( "keyframe", 250, false, false, CoD.TweenType.Linear )
@@ -1380,6 +1484,7 @@ CoD.vhud_hellstorm_reticle.new = function ( menu, controller )
 				self.ArrowBottom:setLeftRight( false, false, -17.25, 16.25 )
 				self.ArrowBottom:setTopBottom( false, false, 275.5, 309 )
 				ArrowBottomFrame2( ArrowBottom, {} )
+
 				CenterHash:completeAnimation()
 				self.CenterHash:setLeftRight( false, false, -169, 168 )
 				self.CenterHash:setTopBottom( false, false, -169, 168 )
@@ -1782,6 +1887,7 @@ CoD.vhud_hellstorm_reticle.new = function ( menu, controller )
 				self.OutsideTicksL:setTopBottom( false, false, -270, 264.8 )
 				self.OutsideTicksL:setScale( 1 )
 				OutsideTicksLFrame2( OutsideTicksL, {} )
+
 				vhudhellstormCenterReticleWidget0:completeAnimation()
 				self.vhudhellstormCenterReticleWidget0:setLeftRight( false, false, -35.5, 32.5 )
 				self.vhudhellstormCenterReticleWidget0:setTopBottom( false, false, -34.5, 33.5 )
@@ -1857,6 +1963,7 @@ CoD.vhud_hellstorm_reticle.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "LowAltitude",
@@ -1893,6 +2000,7 @@ CoD.vhud_hellstorm_reticle.new = function ( menu, controller )
 			modelName = "altitude"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vhudhellstormCenterReticleWidget0:close()
 		element.vhudhellstormtimebar:close()

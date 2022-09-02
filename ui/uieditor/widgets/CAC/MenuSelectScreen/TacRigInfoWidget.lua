@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.cac_TacticalRigDescription" )
 CoD.TacRigInfoWidget = InheritFrom( LUI.UIElement )
 CoD.TacRigInfoWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TacRigInfoWidget )
 	self.id = "TacRigInfoWidget"
@@ -53,15 +55,18 @@ CoD.TacRigInfoWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				UpdgradeImage:completeAnimation()
 				self.UpdgradeImage:setAlpha( 0.5 )
 				self.clipFinished( UpdgradeImage, {} )
+
 				cacTacticalRigDescription0:completeAnimation()
 				self.cacTacticalRigDescription0:setAlpha( 1 )
 				self.clipFinished( cacTacticalRigDescription0, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PurchaseInstructionWidget:close()
 		element.cacTacticalRigDescription0:close()

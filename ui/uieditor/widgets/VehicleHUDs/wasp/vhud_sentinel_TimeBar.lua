@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.mothership.vhud_ModDNITime" )
 CoD.vhud_sentinel_TimeBar = InheritFrom( LUI.UIElement )
 CoD.vhud_sentinel_TimeBar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_sentinel_TimeBar )
 	self.id = "vhud_sentinel_TimeBar"
@@ -70,18 +72,23 @@ CoD.vhud_sentinel_TimeBar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				vhudModDNITime00:completeAnimation()
 				self.vhudModDNITime00:setAlpha( 0.2 )
 				self.clipFinished( vhudModDNITime00, {} )
+
 				Frame0:completeAnimation()
 				self.Frame0:setAlpha( 0.2 )
 				self.clipFinished( Frame0, {} )
+
 				vhudModDNITime0:completeAnimation()
 				self.vhudModDNITime0:setAlpha( 1 )
 				self.clipFinished( vhudModDNITime0, {} )
+
 				Bar:completeAnimation()
 				self.Bar:setAlpha( 1 )
 				self.clipFinished( Bar, {} )
+
 				Frame:completeAnimation()
 				self.Frame:setAlpha( 1 )
 				self.clipFinished( Frame, {} )
@@ -90,24 +97,30 @@ CoD.vhud_sentinel_TimeBar.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				vhudModDNITime00:completeAnimation()
 				self.vhudModDNITime00:setAlpha( 0 )
 				self.clipFinished( vhudModDNITime00, {} )
+
 				Frame0:completeAnimation()
 				self.Frame0:setAlpha( 0 )
 				self.clipFinished( Frame0, {} )
+
 				vhudModDNITime0:completeAnimation()
 				self.vhudModDNITime0:setAlpha( 0 )
 				self.clipFinished( vhudModDNITime0, {} )
+
 				Bar:completeAnimation()
 				self.Bar:setAlpha( 0 )
 				self.clipFinished( Bar, {} )
+
 				Frame:completeAnimation()
 				self.Frame:setAlpha( 0 )
 				self.clipFinished( Frame, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vhudModDNITime00:close()
 		element.vhudModDNITime0:close()

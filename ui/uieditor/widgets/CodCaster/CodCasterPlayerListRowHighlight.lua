@@ -4,9 +4,11 @@
 CoD.CodCasterPlayerListRowHighlight = InheritFrom( LUI.UIElement )
 CoD.CodCasterPlayerListRowHighlight.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CodCasterPlayerListRowHighlight )
 	self.id = "CodCasterPlayerListRowHighlight"
@@ -57,15 +59,18 @@ CoD.CodCasterPlayerListRowHighlight.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				axisbg:completeAnimation()
 				self.axisbg:setAlpha( 0 )
 				self.clipFinished( axisbg, {} )
+
 				alliesbg:completeAnimation()
 				self.alliesbg:setAlpha( 0 )
 				self.clipFinished( alliesbg, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
+
 				axisbg:completeAnimation()
 				self.axisbg:setAlpha( 1 )
 				self.clipFinished( axisbg, {} )
@@ -74,12 +79,15 @@ CoD.CodCasterPlayerListRowHighlight.new = function ( menu, controller )
 		Allies = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				axisbg:completeAnimation()
 				self.axisbg:setAlpha( 0 )
 				self.clipFinished( axisbg, {} )
+
 				alliesbg:completeAnimation()
 				self.alliesbg:setAlpha( 1 )
 				self.clipFinished( alliesbg, {} )
+
 				freebg:completeAnimation()
 				self.freebg:setAlpha( 0 )
 				self.clipFinished( freebg, {} )
@@ -88,12 +96,15 @@ CoD.CodCasterPlayerListRowHighlight.new = function ( menu, controller )
 		Axis = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				axisbg:completeAnimation()
 				self.axisbg:setAlpha( 1 )
 				self.clipFinished( axisbg, {} )
+
 				alliesbg:completeAnimation()
 				self.alliesbg:setAlpha( 0 )
 				self.clipFinished( alliesbg, {} )
+
 				freebg:completeAnimation()
 				self.freebg:setAlpha( 0 )
 				self.clipFinished( freebg, {} )
@@ -102,18 +113,22 @@ CoD.CodCasterPlayerListRowHighlight.new = function ( menu, controller )
 		Free = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				axisbg:completeAnimation()
 				self.axisbg:setAlpha( 0 )
 				self.clipFinished( axisbg, {} )
+
 				alliesbg:completeAnimation()
 				self.alliesbg:setAlpha( 0 )
 				self.clipFinished( alliesbg, {} )
+
 				freebg:completeAnimation()
 				self.freebg:setAlpha( 1 )
 				self.clipFinished( freebg, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Allies",
@@ -142,6 +157,7 @@ CoD.CodCasterPlayerListRowHighlight.new = function ( menu, controller )
 			modelName = "team"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.axisbg:close()
 		element.alliesbg:close()

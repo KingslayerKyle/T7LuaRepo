@@ -40,9 +40,11 @@ end
 CoD.OptionDropdownItem = InheritFrom( LUI.UIElement )
 CoD.OptionDropdownItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.OptionDropdownItem )
 	self.id = "OptionDropdownItem"
@@ -95,40 +97,48 @@ CoD.OptionDropdownItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				labelText:completeAnimation()
 				self.labelText:setLeftRight( true, false, 6.2, 243 )
 				self.labelText:setTopBottom( true, false, 0, 24 )
 				self.labelText:setRGB( 0.87, 0.37, 0 )
 				self.labelText:setAlpha( 0.75 )
 				self.clipFinished( labelText, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				fullbacking:completeAnimation()
 				self.fullbacking:setRGB( 0, 0, 0 )
 				self.fullbacking:setAlpha( 1 )
 				self.clipFinished( fullbacking, {} )
+
 				labelText:completeAnimation()
 				self.labelText:setLeftRight( true, false, 6.2, 240 )
 				self.labelText:setTopBottom( true, false, 0, 24 )
 				self.labelText:setRGB( 1, 1, 1 )
 				self.labelText:setAlpha( 1 )
 				self.clipFinished( labelText, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FocusBarT:close()
 		element.FocusBarB:close()

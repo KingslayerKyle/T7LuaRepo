@@ -4,9 +4,11 @@
 CoD.GunsmithStatVariantValue = InheritFrom( LUI.UIElement )
 CoD.GunsmithStatVariantValue.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunsmithStatVariantValue )
 	self.id = "GunsmithStatVariantValue"

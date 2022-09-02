@@ -4,9 +4,11 @@
 CoD.AmmoWidget_TotalAmmo = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_TotalAmmo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_TotalAmmo )
 	self.id = "AmmoWidget_TotalAmmo"
@@ -43,16 +45,19 @@ CoD.AmmoWidget_TotalAmmo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TotalAmmoLbl:completeAnimation()
 				self.TotalAmmoLbl:setRGB( 1, 1, 1 )
 				self.TotalAmmoLbl:setAlpha( 0.8 )
 				self.clipFinished( TotalAmmoLbl, {} )
+
 				TotalAmmoFakeLbl:completeAnimation()
 				self.TotalAmmoFakeLbl:setAlpha( 0 )
 				self.clipFinished( TotalAmmoFakeLbl, {} )
 			end,
 			AmmoPickup = function ()
 				self:setupElementClipCounter( 2 )
+
 				local TotalAmmoLblFrame2 = function ( TotalAmmoLbl, event )
 					if not event.interrupted then
 						TotalAmmoLbl:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -74,6 +79,7 @@ CoD.AmmoWidget_TotalAmmo.new = function ( menu, controller )
 				self.TotalAmmoLbl:setRGB( 1, 1, 1 )
 				self.TotalAmmoLbl:setAlpha( 0.8 )
 				TotalAmmoLblFrame2( TotalAmmoLbl, {} )
+
 				TotalAmmoFakeLbl:completeAnimation()
 				self.TotalAmmoFakeLbl:setAlpha( 0 )
 				self.clipFinished( TotalAmmoFakeLbl, {} )
@@ -82,10 +88,12 @@ CoD.AmmoWidget_TotalAmmo.new = function ( menu, controller )
 		NoAmmo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TotalAmmoLbl:completeAnimation()
 				self.TotalAmmoLbl:setRGB( 1, 0, 0 )
 				self.TotalAmmoLbl:setAlpha( 1 )
 				self.clipFinished( TotalAmmoLbl, {} )
+
 				TotalAmmoFakeLbl:completeAnimation()
 				self.TotalAmmoFakeLbl:setAlpha( 0 )
 				self.clipFinished( TotalAmmoFakeLbl, {} )
@@ -96,6 +104,7 @@ CoD.AmmoWidget_TotalAmmo.new = function ( menu, controller )
 		local f7_local0 = self
 		PlayClip( self, "AmmoPickup", controller )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TotalAmmoLbl:close()
 	end )

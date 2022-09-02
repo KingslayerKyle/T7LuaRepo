@@ -4,9 +4,11 @@
 CoD.Social_ShaderContainer = InheritFrom( LUI.UIElement )
 CoD.Social_ShaderContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_ShaderContainer )
 	self.id = "Social_ShaderContainer"

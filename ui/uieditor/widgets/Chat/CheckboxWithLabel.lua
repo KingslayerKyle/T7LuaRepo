@@ -11,9 +11,11 @@ end
 CoD.CheckboxWithLabel = InheritFrom( LUI.UIElement )
 CoD.CheckboxWithLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CheckboxWithLabel )
 	self.id = "CheckboxWithLabel"
@@ -71,30 +73,37 @@ CoD.CheckboxWithLabel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				checkboxNoLabel:completeAnimation()
 				self.checkboxNoLabel:setRGB( 1, 1, 1 )
 				self.clipFinished( checkboxNoLabel, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FEFocusBarTOP:completeAnimation()
 				self.FEFocusBarTOP:setAlpha( 0 )
 				self.clipFinished( FEFocusBarTOP, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 3 )
+
 				checkboxNoLabel:completeAnimation()
 				self.checkboxNoLabel:setRGB( 1, 0.41, 0 )
 				self.clipFinished( checkboxNoLabel, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 1 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FEFocusBarTOP:completeAnimation()
 				self.FEFocusBarTOP:setAlpha( 1 )
 				self.clipFinished( FEFocusBarTOP, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.checkboxNoLabel:close()
 		element.FocusBarB0:close()

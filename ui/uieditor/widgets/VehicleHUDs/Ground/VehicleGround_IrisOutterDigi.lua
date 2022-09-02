@@ -4,9 +4,11 @@
 CoD.VehicleGround_IrisOutterDigi = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_IrisOutterDigi.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.VehicleGround_IrisOutterDigi )
 	self.id = "VehicleGround_IrisOutterDigi"

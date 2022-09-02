@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_HeroAbilityThiefOve
 CoD.AmmoWidgetMPContainer = InheritFrom( LUI.UIElement )
 CoD.AmmoWidgetMPContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidgetMPContainer )
 	self.id = "AmmoWidgetMPContainer"
@@ -433,9 +435,11 @@ CoD.AmmoWidgetMPContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				AmmoWidget:completeAnimation()
 				self.AmmoWidget:setAlpha( 1 )
 				self.clipFinished( AmmoWidget, {} )
+
 				AmmoWidgetMPHeroWeaponAnimation0:completeAnimation()
 				self.AmmoWidgetMPHeroWeaponAnimation0:setAlpha( 1 )
 				self.clipFinished( AmmoWidgetMPHeroWeaponAnimation0, {} )
@@ -444,6 +448,7 @@ CoD.AmmoWidgetMPContainer.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local AmmoWidgetFrame2 = function ( AmmoWidget, event )
 					if not event.interrupted then
 						AmmoWidget:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
@@ -477,6 +482,7 @@ CoD.AmmoWidgetMPContainer.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				local AmmoWidgetFrame2 = function ( AmmoWidget, event )
 					if not event.interrupted then
 						AmmoWidget:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
@@ -512,6 +518,7 @@ CoD.AmmoWidgetMPContainer.new = function ( menu, controller )
 		HideForCodcaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				AmmoWidget:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
 				self.AmmoWidget:setAlpha( 0 )
 				AmmoWidget:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
@@ -521,6 +528,7 @@ CoD.AmmoWidgetMPContainer.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				AmmoWidget:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
 				self.AmmoWidget:setAlpha( 0 )
 				AmmoWidget:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
@@ -532,6 +540,7 @@ CoD.AmmoWidgetMPContainer.new = function ( menu, controller )
 		InvisibleStateCopyForCodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local AmmoWidgetFrame2 = function ( AmmoWidget, event )
 					if not event.interrupted then
 						AmmoWidget:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
@@ -565,6 +574,7 @@ CoD.AmmoWidgetMPContainer.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				local AmmoWidgetFrame2 = function ( AmmoWidget, event )
 					if not event.interrupted then
 						AmmoWidget:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
@@ -598,6 +608,7 @@ CoD.AmmoWidgetMPContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",
@@ -805,6 +816,7 @@ CoD.AmmoWidgetMPContainer.new = function ( menu, controller )
 			modelName = "CodCaster.profileSettingsUpdated"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AmmoWidget:close()
 		element.AmmoWidgetMPHeroWeaponAnimation0:close()

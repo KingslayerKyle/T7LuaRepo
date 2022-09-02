@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BorderBakedSolid" )
 CoD.GroupsSubTitle = InheritFrom( LUI.UIElement )
 CoD.GroupsSubTitle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsSubTitle )
 	self.id = "GroupsSubTitle"
@@ -34,6 +36,7 @@ CoD.GroupsSubTitle.new = function ( menu, controller )
 			weaponNameLabel:setText( Engine.Localize( name ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( weaponNameLabel, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 1 )
 	end )

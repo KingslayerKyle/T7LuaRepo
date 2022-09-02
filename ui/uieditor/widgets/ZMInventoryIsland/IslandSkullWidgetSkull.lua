@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.onOffImage" )
 CoD.IslandSkullWidgetSkull = InheritFrom( LUI.UIElement )
 CoD.IslandSkullWidgetSkull.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.IslandSkullWidgetSkull )
 	self.id = "IslandSkullWidgetSkull"
@@ -73,12 +75,15 @@ CoD.IslandSkullWidgetSkull.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				newBacking:completeAnimation()
 				self.newBacking:setAlpha( 0 )
 				self.clipFinished( newBacking, {} )
+
 				skull:completeAnimation()
 				self.skull:setAlpha( 0 )
 				self.clipFinished( skull, {} )
+
 				skullTypeW:completeAnimation()
 				self.skullTypeW:setAlpha( 0 )
 				self.clipFinished( skullTypeW, {} )
@@ -87,12 +92,15 @@ CoD.IslandSkullWidgetSkull.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				newBacking:completeAnimation()
 				self.newBacking:setAlpha( 0 )
 				self.clipFinished( newBacking, {} )
+
 				skull:completeAnimation()
 				self.skull:setAlpha( 1 )
 				self.clipFinished( skull, {} )
+
 				skullTypeW:completeAnimation()
 				self.skullTypeW:setAlpha( 1 )
 				self.clipFinished( skullTypeW, {} )
@@ -101,6 +109,7 @@ CoD.IslandSkullWidgetSkull.new = function ( menu, controller )
 		NewNotice = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local newBackingFrame2 = function ( newBacking, event )
 					local newBackingFrame3 = function ( newBacking, event )
 						local newBackingFrame4 = function ( newBacking, event )
@@ -138,15 +147,18 @@ CoD.IslandSkullWidgetSkull.new = function ( menu, controller )
 				newBacking:completeAnimation()
 				self.newBacking:setAlpha( 1 )
 				newBackingFrame2( newBacking, {} )
+
 				skull:completeAnimation()
 				self.skull:setAlpha( 1 )
 				self.clipFinished( skull, {} )
+
 				skullTypeW:completeAnimation()
 				self.skullTypeW:setAlpha( 1 )
 				self.clipFinished( skullTypeW, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Scoreboard",
@@ -177,6 +189,7 @@ CoD.IslandSkullWidgetSkull.new = function ( menu, controller )
 			modelName = "zmInventory.widget_skull_parts"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.skullTypeW:close()
 		element.newBacking:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_FX.ZmFx_Spark2Ext" )
 CoD.CallingCard_loot_codxp = InheritFrom( LUI.UIElement )
 CoD.CallingCard_loot_codxp.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCard_loot_codxp )
 	self.id = "CallingCard_loot_codxp"
@@ -201,6 +203,7 @@ CoD.CallingCard_loot_codxp.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				local bg2Frame2 = function ( bg2, event )
 					local bg2Frame3 = function ( bg2, event )
 						local bg2Frame4 = function ( bg2, event )
@@ -1360,10 +1363,12 @@ CoD.CallingCard_loot_codxp.new = function ( menu, controller )
 				lavaFrame:completeAnimation()
 				self.lavaFrame:setAlpha( 0 )
 				lavaFrameFrame2( lavaFrame, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmFxSpark2Ext0:close()
 		element.ZmFxSpark2Ext00:close()

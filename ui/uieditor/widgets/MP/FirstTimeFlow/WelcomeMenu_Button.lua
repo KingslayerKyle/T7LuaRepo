@@ -17,9 +17,11 @@ end
 CoD.WelcomeMenu_Button = InheritFrom( LUI.UIElement )
 CoD.WelcomeMenu_Button.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WelcomeMenu_Button )
 	self.id = "WelcomeMenu_Button"
@@ -59,6 +61,7 @@ CoD.WelcomeMenu_Button.new = function ( menu, controller )
 	TextBox2:setShaderVector( 0, 0, 0, 0, 0 )
 	TextBox2:setShaderVector( 1, 0, 0, 0, 0 )
 	TextBox2:setShaderVector( 2, 1, 0, 0, 0 )
+
 	LUI.OverrideFunction_CallOriginalFirst( TextBox2, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 10 )
 	end )
@@ -135,15 +138,19 @@ CoD.WelcomeMenu_Button.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ButtonIcon0:completeAnimation()
 				self.ButtonIcon0:setAlpha( 1 )
 				self.clipFinished( ButtonIcon0, {} )
+
 				ButtonIcon00:completeAnimation()
 				self.ButtonIcon00:setAlpha( 0.7 )
 				self.clipFinished( ButtonIcon00, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
@@ -152,30 +159,37 @@ CoD.WelcomeMenu_Button.new = function ( menu, controller )
 		KeyboardAndMouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setRGB( 1, 1, 1 )
 				self.clipFinished( FEButtonFocus, {} )
 				Arrow:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
 				Arrow:setAlpha( 1 )
 				Arrow:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				ButtonIcon0:completeAnimation()
 				self.ButtonIcon0:setAlpha( 0 )
 				self.clipFinished( ButtonIcon0, {} )
+
 				ButtonIcon00:completeAnimation()
 				self.ButtonIcon00:setAlpha( 0 )
 				self.clipFinished( ButtonIcon00, {} )
+
 				Glow21:completeAnimation()
 				self.Glow21:setAlpha( 0 )
 				self.clipFinished( Glow21, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 6 )
+
 				local ArrowFrame2 = function ( Arrow, event )
 					if not event.interrupted then
 						Arrow:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -193,20 +207,25 @@ CoD.WelcomeMenu_Button.new = function ( menu, controller )
 				self.Arrow:setLeftRight( true, false, -44.95, -56.81 )
 				self.Arrow:setTopBottom( true, false, 16, 29.32 )
 				ArrowFrame2( Arrow, {} )
+
 				ButtonIcon0:completeAnimation()
 				self.ButtonIcon0:setAlpha( 0 )
 				self.clipFinished( ButtonIcon0, {} )
+
 				ButtonIcon00:completeAnimation()
 				self.ButtonIcon00:setAlpha( 0 )
 				self.clipFinished( ButtonIcon00, {} )
+
 				Glow21:completeAnimation()
 				self.Glow21:setAlpha( 1 )
 				self.clipFinished( Glow21, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, 10.5, -4.5 )
 				self.FocusBarT:setTopBottom( false, false, -12.66, -16.66 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setLeftRight( true, true, 10.5, -4.5 )
 				self.FocusBarB0:setTopBottom( false, false, 17.66, 13.66 )
@@ -215,6 +234,7 @@ CoD.WelcomeMenu_Button.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "KeyboardAndMouse",
@@ -241,6 +261,7 @@ CoD.WelcomeMenu_Button.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ButtonIcon0:close()
 		element.ButtonIcon00:close()

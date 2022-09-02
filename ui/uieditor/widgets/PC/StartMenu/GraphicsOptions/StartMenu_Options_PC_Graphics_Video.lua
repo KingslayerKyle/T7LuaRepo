@@ -26,9 +26,11 @@ end
 CoD.StartMenu_Options_PC_Graphics_Video = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_PC_Graphics_Video.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_PC_Graphics_Video )
 	self.id = "StartMenu_Options_PC_Graphics_Video"
@@ -76,6 +78,7 @@ CoD.StartMenu_Options_PC_Graphics_Video.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.graphicsList:close()
 		element.optionInfo:close()

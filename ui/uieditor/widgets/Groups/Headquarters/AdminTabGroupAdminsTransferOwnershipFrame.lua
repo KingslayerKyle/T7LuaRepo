@@ -16,9 +16,11 @@ end
 CoD.AdminTabGroupAdminsTransferOwnershipFrame = InheritFrom( LUI.UIElement )
 CoD.AdminTabGroupAdminsTransferOwnershipFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AdminTabGroupAdminsTransferOwnershipFrame )
 	self.id = "AdminTabGroupAdminsTransferOwnershipFrame"
@@ -81,10 +83,13 @@ CoD.AdminTabGroupAdminsTransferOwnershipFrame.new = function ( menu, controller 
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				AdminsList:completeAnimation()
 				self.AdminsList:setAlpha( 1 )
 				self.clipFinished( AdminsList, {} )
+
 				GroupsNoConentDetail:completeAnimation()
+
 				GroupsNoConentDetail.HeaderBkgd:completeAnimation()
 				self.GroupsNoConentDetail:setAlpha( 0 )
 				self.GroupsNoConentDetail.HeaderBkgd:setRGB( ColorSet.FactionAxis_CP.r, ColorSet.FactionAxis_CP.g, ColorSet.FactionAxis_CP.b )
@@ -94,14 +99,21 @@ CoD.AdminTabGroupAdminsTransferOwnershipFrame.new = function ( menu, controller 
 		NoContent = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				AdminsList:completeAnimation()
 				self.AdminsList:setAlpha( 0 )
 				self.clipFinished( AdminsList, {} )
+
 				GroupsNoConentDetail:completeAnimation()
+
 				GroupsNoConentDetail.HeaderBkgd:completeAnimation()
+
 				GroupsNoConentDetail.HeaderIcon:completeAnimation()
+
 				GroupsNoConentDetail.Header:completeAnimation()
+
 				GroupsNoConentDetail.Desc:completeAnimation()
+
 				GroupsNoConentDetail.Glow2:completeAnimation()
 				self.GroupsNoConentDetail:setLeftRight( true, false, 0, 268 )
 				self.GroupsNoConentDetail:setTopBottom( true, false, 0, 186 )
@@ -115,6 +127,7 @@ CoD.AdminTabGroupAdminsTransferOwnershipFrame.new = function ( menu, controller 
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoContent",
@@ -131,6 +144,7 @@ CoD.AdminTabGroupAdminsTransferOwnershipFrame.new = function ( menu, controller 
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AdminsList:close()
 		element.GroupsNoConentDetail:close()

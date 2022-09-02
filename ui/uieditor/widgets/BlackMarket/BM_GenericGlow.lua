@@ -4,9 +4,11 @@
 CoD.BM_GenericGlow = InheritFrom( LUI.UIElement )
 CoD.BM_GenericGlow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_GenericGlow )
 	self.id = "BM_GenericGlow"
@@ -25,6 +27,7 @@ CoD.BM_GenericGlow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Bribeglow:completeAnimation()
 				self.Bribeglow:setAlpha( 1 )
 				self.clipFinished( Bribeglow, {} )

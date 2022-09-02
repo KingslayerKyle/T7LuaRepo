@@ -4,9 +4,11 @@
 CoD.BO2Medal = InheritFrom( LUI.UIElement )
 CoD.BO2Medal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BO2Medal )
 	self.id = "BO2Medal"
@@ -60,6 +62,7 @@ CoD.BO2Medal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local ImageFrame2 = function ( Image, event )
 					if not event.interrupted then
 						Image:beginAnimation( "keyframe", 250, false, true, CoD.TweenType.Linear )
@@ -112,6 +115,7 @@ CoD.BO2Medal.new = function ( menu, controller )
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 3 )
+
 				local ImageFrame2 = function ( Image, event )
 					if not event.interrupted then
 						Image:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -162,6 +166,7 @@ CoD.BO2Medal.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Image:close()
 		element.Text:close()

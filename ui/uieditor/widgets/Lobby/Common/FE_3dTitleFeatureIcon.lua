@@ -11,9 +11,11 @@ end
 CoD.FE_3dTitleFeatureIcon = InheritFrom( LUI.UIElement )
 CoD.FE_3dTitleFeatureIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_3dTitleFeatureIcon )
 	self.id = "FE_3dTitleFeatureIcon"
@@ -44,9 +46,11 @@ CoD.FE_3dTitleFeatureIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FeatureIcon:completeAnimation()
 				self.FeatureIcon:setAlpha( 1 )
 				self.clipFinished( FeatureIcon, {} )
+
 				GameModeIcon:completeAnimation()
 				self.GameModeIcon:setAlpha( 0 )
 				self.clipFinished( GameModeIcon, {} )
@@ -55,15 +59,18 @@ CoD.FE_3dTitleFeatureIcon.new = function ( menu, controller )
 		GameModeIcon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FeatureIcon:completeAnimation()
 				self.FeatureIcon:setAlpha( 0 )
 				self.clipFinished( FeatureIcon, {} )
+
 				GameModeIcon:completeAnimation()
 				self.GameModeIcon:setAlpha( 1 )
 				self.clipFinished( GameModeIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "GameModeIcon",
@@ -80,6 +87,7 @@ CoD.FE_3dTitleFeatureIcon.new = function ( menu, controller )
 			modelName = "lobbyRoot.Pregame.state"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GameModeIcon:close()
 	end )

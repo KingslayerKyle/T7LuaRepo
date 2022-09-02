@@ -17,9 +17,11 @@ end
 CoD.PrimaryWeaponAttachmentsWidget = InheritFrom( LUI.UIElement )
 CoD.PrimaryWeaponAttachmentsWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PrimaryWeaponAttachmentsWidget )
 	self.id = "PrimaryWeaponAttachmentsWidget"
@@ -493,6 +495,7 @@ CoD.PrimaryWeaponAttachmentsWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.attachment5:close()
 		element.attachment4:close()

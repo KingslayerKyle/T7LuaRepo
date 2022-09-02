@@ -4,9 +4,11 @@
 CoD.scorestreaks_ElementSide = InheritFrom( LUI.UIElement )
 CoD.scorestreaks_ElementSide.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.scorestreaks_ElementSide )
 	self.id = "scorestreaks_ElementSide"
@@ -152,62 +154,77 @@ CoD.scorestreaks_ElementSide.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				pixelLR0:completeAnimation()
 				self.pixelLR0:setLeftRight( true, false, 0, 36 )
 				self.pixelLR0:setTopBottom( false, false, -257.25, -253.75 )
 				self.clipFinished( pixelLR0, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, false, 0, 36 )
 				self.Image0:setTopBottom( false, false, -132.25, -128.75 )
 				self.clipFinished( Image0, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setLeftRight( true, false, 0, 36 )
 				self.Image1:setTopBottom( false, false, -2.25, 1.25 )
 				self.clipFinished( Image1, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setLeftRight( true, false, 0, 36 )
 				self.Image2:setTopBottom( false, false, 127.75, 131.25 )
 				self.clipFinished( Image2, {} )
+
 				Image3:completeAnimation()
 				self.Image3:setLeftRight( true, false, 0, 36 )
 				self.Image3:setTopBottom( false, false, 253.75, 257.25 )
 				self.clipFinished( Image3, {} )
+
 				pixelc00:completeAnimation()
 				self.pixelc00:setLeftRight( true, false, -14, 2 )
 				self.pixelc00:setTopBottom( true, false, 39, 91 )
 				self.clipFinished( pixelc00, {} )
+
 				Image4:completeAnimation()
 				self.Image4:setLeftRight( true, false, -14, 2 )
 				self.Image4:setTopBottom( true, false, 164, 216 )
 				self.clipFinished( Image4, {} )
+
 				Image5:completeAnimation()
 				self.Image5:setLeftRight( true, false, -14, 2 )
 				self.Image5:setTopBottom( true, false, 295, 347 )
 				self.clipFinished( Image5, {} )
+
 				Image6:completeAnimation()
 				self.Image6:setLeftRight( true, false, -14, 2 )
 				self.Image6:setTopBottom( true, false, 423, 475 )
 				self.clipFinished( Image6, {} )
+
 				LineSide:completeAnimation()
 				self.LineSide:setLeftRight( true, false, 0, 8 )
 				self.LineSide:setTopBottom( true, false, 0, 515 )
 				self.clipFinished( LineSide, {} )
+
 				LineSide0:completeAnimation()
 				self.LineSide0:setLeftRight( true, false, -16, -11 )
 				self.LineSide0:setTopBottom( true, false, 0, 252 )
 				self.clipFinished( LineSide0, {} )
+
 				pixelc000:completeAnimation()
 				self.pixelc000:setLeftRight( true, false, -14, 2 )
 				self.pixelc000:setTopBottom( true, false, 39, 91 )
 				self.clipFinished( pixelc000, {} )
+
 				Image40:completeAnimation()
 				self.Image40:setLeftRight( true, false, -14, 2 )
 				self.Image40:setTopBottom( true, false, 164, 216 )
 				self.clipFinished( Image40, {} )
+
 				Image50:completeAnimation()
 				self.Image50:setLeftRight( true, false, -14, 2 )
 				self.Image50:setTopBottom( true, false, 295, 347 )
 				self.clipFinished( Image50, {} )
+
 				Image60:completeAnimation()
 				self.Image60:setLeftRight( true, false, -14, 2 )
 				self.Image60:setTopBottom( true, false, 423, 475 )
@@ -215,6 +232,7 @@ CoD.scorestreaks_ElementSide.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 15 )
+
 				local pixelLR0Frame2 = function ( pixelLR0, event )
 					local pixelLR0Frame3 = function ( pixelLR0, event )
 						if not event.interrupted then

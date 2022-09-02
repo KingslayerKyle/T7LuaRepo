@@ -4,9 +4,11 @@
 CoD.GroupsFrameNoBG = InheritFrom( LUI.UIElement )
 CoD.GroupsFrameNoBG.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsFrameNoBG )
 	self.id = "GroupsFrameNoBG"
@@ -28,11 +30,13 @@ CoD.GroupsFrameNoBG.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

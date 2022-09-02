@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.CallingCards.FlyingBee.CallingCard_FlyingBee_Wing_
 CoD.CallingCard_FlyingBee_Bee = InheritFrom( LUI.UIElement )
 CoD.CallingCard_FlyingBee_Bee.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCard_FlyingBee_Bee )
 	self.id = "CallingCard_FlyingBee_Bee"
@@ -90,6 +92,7 @@ CoD.CallingCard_FlyingBee_Bee.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local GunFrame2 = function ( Gun, event )
 					local GunFrame3 = function ( Gun, event )
 						local GunFrame4 = function ( Gun, event )
@@ -2522,10 +2525,12 @@ CoD.CallingCard_FlyingBee_Bee.new = function ( menu, controller )
 				ArmUpper:completeAnimation()
 				self.ArmUpper:setZRot( 0 )
 				ArmUpperFrame2( ArmUpper, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BackWing:close()
 		element.RightLegs:close()

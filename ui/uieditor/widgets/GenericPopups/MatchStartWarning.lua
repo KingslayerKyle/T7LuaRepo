@@ -11,9 +11,11 @@ end
 CoD.MatchStartWarning = InheritFrom( LUI.UIElement )
 CoD.MatchStartWarning.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MatchStartWarning )
 	self.id = "MatchStartWarning"
@@ -32,6 +34,7 @@ CoD.MatchStartWarning.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				MatchStartWarningContainer0:completeAnimation()
 				self.MatchStartWarningContainer0:setLeftRight( false, false, -100, 100 )
 				self.MatchStartWarningContainer0:setTopBottom( true, false, -66, -16 )
@@ -40,6 +43,7 @@ CoD.MatchStartWarning.new = function ( menu, controller )
 			end,
 			Visible = function ()
 				self:setupElementClipCounter( 1 )
+
 				local MatchStartWarningContainer0Frame2 = function ( MatchStartWarningContainer0, event )
 					local MatchStartWarningContainer0Frame3 = function ( MatchStartWarningContainer0, event )
 						local MatchStartWarningContainer0Frame4 = function ( MatchStartWarningContainer0, event )
@@ -87,6 +91,7 @@ CoD.MatchStartWarning.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				MatchStartWarningContainer0:completeAnimation()
 				self.MatchStartWarningContainer0:setLeftRight( false, false, -100, 100 )
 				self.MatchStartWarningContainer0:setTopBottom( true, false, 31, 81 )
@@ -95,6 +100,7 @@ CoD.MatchStartWarning.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local MatchStartWarningContainer0Frame2 = function ( MatchStartWarningContainer0, event )
 					local MatchStartWarningContainer0Frame3 = function ( MatchStartWarningContainer0, event )
 						if not event.interrupted then
@@ -128,6 +134,7 @@ CoD.MatchStartWarning.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -167,6 +174,7 @@ CoD.MatchStartWarning.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyMenuOccluded"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MatchStartWarningContainer0:close()
 	end )

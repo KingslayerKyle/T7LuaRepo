@@ -26,9 +26,11 @@ end
 CoD.CombatRecordAccoladeMissionSelector = InheritFrom( LUI.UIElement )
 CoD.CombatRecordAccoladeMissionSelector.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CombatRecordAccoladeMissionSelector )
 	self.id = "CombatRecordAccoladeMissionSelector"
@@ -101,21 +103,26 @@ CoD.CombatRecordAccoladeMissionSelector.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				LBBumperButtonWithKeyMouse:completeAnimation()
 				self.LBBumperButtonWithKeyMouse:setAlpha( 1 )
 				self.clipFinished( LBBumperButtonWithKeyMouse, {} )
+
 				RBBumperButtonWithKeyMouse:completeAnimation()
 				self.RBBumperButtonWithKeyMouse:setAlpha( 1 )
 				self.clipFinished( RBBumperButtonWithKeyMouse, {} )
+
 				missionName:completeAnimation()
 				self.missionName:setAlpha( 1 )
 				self.clipFinished( missionName, {} )
+
 				pipList:completeAnimation()
 				self.pipList:setAlpha( 1 )
 				self.clipFinished( pipList, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LBBumperButtonWithKeyMouse:close()
 		element.RBBumperButtonWithKeyMouse:close()

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.BorderBakedBlur" )
 CoD.GridItemButtonBackdrop = InheritFrom( LUI.UIElement )
 CoD.GridItemButtonBackdrop.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GridItemButtonBackdrop )
 	self.id = "GridItemButtonBackdrop"

@@ -4,9 +4,11 @@
 CoD.FadingSkipPrompt = InheritFrom( LUI.UIElement )
 CoD.FadingSkipPrompt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FadingSkipPrompt )
 	self.id = "FadingSkipPrompt"
@@ -28,12 +30,14 @@ CoD.FadingSkipPrompt.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				pressXtext:completeAnimation()
 				self.pressXtext:setAlpha( 0 )
 				self.clipFinished( pressXtext, {} )
 			end,
 			Show = function ()
 				self:setupElementClipCounter( 1 )
+
 				local pressXtextFrame2 = function ( pressXtext, event )
 					if not event.interrupted then
 						pressXtext:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -52,6 +56,7 @@ CoD.FadingSkipPrompt.new = function ( menu, controller )
 			end,
 			Hide = function ()
 				self:setupElementClipCounter( 1 )
+
 				local pressXtextFrame2 = function ( pressXtext, event )
 					if not event.interrupted then
 						pressXtext:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )

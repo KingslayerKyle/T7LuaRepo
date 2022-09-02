@@ -4,9 +4,11 @@
 CoD.CallingCards_ZM_Samantha = InheritFrom( LUI.UIElement )
 CoD.CallingCards_ZM_Samantha.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_ZM_Samantha )
 	self.id = "CallingCards_ZM_Samantha"
@@ -112,6 +114,7 @@ CoD.CallingCards_ZM_Samantha.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				local bgFrame2 = function ( bg, event )
 					if not event.interrupted then
 						bg:beginAnimation( "keyframe", 7960, false, false, CoD.TweenType.Linear )
@@ -777,6 +780,7 @@ CoD.CallingCards_ZM_Samantha.new = function ( menu, controller )
 				self.houselit:setTopBottom( true, false, 0, 168 )
 				self.houselit:setAlpha( 1 )
 				houselitFrame2( houselit, {} )
+
 				cloud:completeAnimation()
 				self.cloud:setAlpha( 1 )
 				self.cloud:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_tile_scroll" ) )
@@ -1052,6 +1056,7 @@ CoD.CallingCards_ZM_Samantha.new = function ( menu, controller )
 				stars:beginAnimation( "keyframe", 5099, false, false, CoD.TweenType.Linear )
 				stars:setAlpha( 0 )
 				stars:registerEventHandler( "transition_complete_keyframe", f2_local11 )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

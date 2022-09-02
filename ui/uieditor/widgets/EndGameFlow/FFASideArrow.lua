@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.EndGameFlow.FFASideArrowInt" )
 CoD.FFASideArrow = InheritFrom( LUI.UIElement )
 CoD.FFASideArrow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FFASideArrow )
 	self.id = "FFASideArrow"

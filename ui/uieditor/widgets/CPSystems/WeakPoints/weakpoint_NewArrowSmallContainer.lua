@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CPSystems.WeakPoints.weakpoint_NewArrowSmall" )
 CoD.weakpoint_NewArrowSmallContainer = InheritFrom( LUI.UIElement )
 CoD.weakpoint_NewArrowSmallContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.weakpoint_NewArrowSmallContainer )
 	self.id = "weakpoint_NewArrowSmallContainer"

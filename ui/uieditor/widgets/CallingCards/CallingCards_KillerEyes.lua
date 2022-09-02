@@ -4,9 +4,11 @@
 CoD.CallingCards_KillerEyes = InheritFrom( LUI.UIElement )
 CoD.CallingCards_KillerEyes.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_KillerEyes )
 	self.id = "CallingCards_KillerEyes"
@@ -26,6 +28,7 @@ CoD.CallingCards_KillerEyes.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local eyesFrame2 = function ( eyes, event )
 					local eyesFrame3 = function ( eyes, event )
 						local eyesFrame4 = function ( eyes, event )
@@ -118,6 +121,7 @@ CoD.CallingCards_KillerEyes.new = function ( menu, controller )
 				eyes:completeAnimation()
 				self.eyes:setAlpha( 1 )
 				eyesFrame2( eyes, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

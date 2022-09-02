@@ -4,9 +4,11 @@
 CoD.BM_WiresGlow = InheritFrom( LUI.UIElement )
 CoD.BM_WiresGlow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_WiresGlow )
 	self.id = "BM_WiresGlow"
@@ -34,15 +36,18 @@ CoD.BM_WiresGlow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				wires2:completeAnimation()
 				self.wires2:setAlpha( 0 )
 				self.clipFinished( wires2, {} )
+
 				Mask:completeAnimation()
 				self.Mask:setAlpha( 0 )
 				self.clipFinished( Mask, {} )
 			end,
 			circuitanim = function ()
 				self:setupElementClipCounter( 2 )
+
 				local wires2Frame2 = function ( wires2, event )
 					local wires2Frame3 = function ( wires2, event )
 						local wires2Frame4 = function ( wires2, event )

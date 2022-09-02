@@ -4,9 +4,11 @@
 CoD.PrematchCountdown_2xpBadge = InheritFrom( LUI.UIElement )
 CoD.PrematchCountdown_2xpBadge.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PrematchCountdown_2xpBadge )
 	self.id = "PrematchCountdown_2xpBadge"
@@ -39,6 +41,7 @@ CoD.PrematchCountdown_2xpBadge.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Label:completeAnimation()
 				self.Label:setLeftRight( true, false, -36, 164 )
 				self.Label:setTopBottom( true, false, 37, 87 )
@@ -48,6 +51,7 @@ CoD.PrematchCountdown_2xpBadge.new = function ( menu, controller )
 		french = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Label:completeAnimation()
 				self.Label:setLeftRight( true, false, -36, 164 )
 				self.Label:setTopBottom( true, false, 44, 82 )
@@ -55,6 +59,7 @@ CoD.PrematchCountdown_2xpBadge.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "french",

@@ -21,6 +21,7 @@ CoD.Social_PlayersList_ManageParty.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_PlayersList_ManageParty )
 	self.id = "Social_PlayersList_ManageParty"
@@ -124,21 +125,27 @@ CoD.Social_PlayersList_ManageParty.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				onlineList:completeAnimation()
 				self.onlineList:setAlpha( 1 )
 				self.clipFinished( onlineList, {} )
+
 				divider0:completeAnimation()
 				self.divider0:setAlpha( 0 )
 				self.clipFinished( divider0, {} )
+
 				offlineLabel:completeAnimation()
 				self.offlineLabel:setAlpha( 0 )
 				self.clipFinished( offlineLabel, {} )
+
 				offlineList:completeAnimation()
 				self.offlineList:setAlpha( 0 )
 				self.clipFinished( offlineList, {} )
+
 				divider1:completeAnimation()
 				self.divider1:setAlpha( 0 )
 				self.clipFinished( divider1, {} )
+
 				divider2:completeAnimation()
 				self.divider2:setAlpha( 0 )
 				self.clipFinished( divider2, {} )
@@ -155,6 +162,7 @@ CoD.Social_PlayersList_ManageParty.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.onlineList:close()
 		element.offlineList:close()

@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Effects.fxGlitch1_7" )
 CoD.DniWipe_PurgingTextWidget = InheritFrom( LUI.UIElement )
 CoD.DniWipe_PurgingTextWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.DniWipe_PurgingTextWidget )
 	self.id = "DniWipe_PurgingTextWidget"
@@ -42,6 +44,7 @@ CoD.DniWipe_PurgingTextWidget.new = function ( menu, controller )
 	PurgingText:setLetterSpacing( 4 )
 	PurgingText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	PurgingText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( PurgingText, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 0 )
 	end )
@@ -73,6 +76,7 @@ CoD.DniWipe_PurgingTextWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local RedFrameFrame2 = function ( RedFrame, event )
 					local RedFrameFrame3 = function ( RedFrame, event )
 						local RedFrameFrame4 = function ( RedFrame, event )
@@ -783,10 +787,12 @@ CoD.DniWipe_PurgingTextWidget.new = function ( menu, controller )
 				fxGlitch1700:completeAnimation()
 				self.fxGlitch1700:setAlpha( 0 )
 				fxGlitch1700Frame2( fxGlitch1700, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.fxGlitch1900:close()
 		element.fxGlitch1800:close()

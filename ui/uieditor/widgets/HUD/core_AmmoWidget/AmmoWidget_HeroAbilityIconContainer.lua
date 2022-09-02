@@ -17,9 +17,11 @@ end
 CoD.AmmoWidget_HeroAbilityIconContainer = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_HeroAbilityIconContainer )
 	self.id = "AmmoWidget_HeroAbilityIconContainer"
@@ -87,24 +89,30 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Fill:completeAnimation()
 				self.Fill:setAlpha( 0 )
 				self.clipFinished( Fill, {} )
+
 				ForeStroke:completeAnimation()
 				self.ForeStroke:setAlpha( 0 )
 				self.clipFinished( ForeStroke, {} )
+
 				AbilityIconGold:completeAnimation()
 				self.AbilityIconGold:setAlpha( 0 )
 				self.clipFinished( AbilityIconGold, {} )
+
 				AbilityIconSolid:completeAnimation()
 				self.AbilityIconSolid:setAlpha( 0 )
 				self.clipFinished( AbilityIconSolid, {} )
+
 				AbilityIcon:completeAnimation()
 				self.AbilityIcon:setAlpha( 0 )
 				self.clipFinished( AbilityIcon, {} )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FillFrame2 = function ( Fill, event )
 					if not event.interrupted then
 						Fill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -213,6 +221,7 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 			end,
 			Charge = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FillFrame2 = function ( Fill, event )
 					if not event.interrupted then
 						Fill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -265,6 +274,7 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 				self.ForeStroke:setZoom( -5 )
 				self.ForeStroke:setRFTMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				ForeStrokeFrame2( ForeStroke, {} )
+
 				AbilityIconGold:completeAnimation()
 				self.AbilityIconGold:setAlpha( 0 )
 				self.AbilityIconGold:setZoom( 0 )
@@ -304,6 +314,7 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 			end,
 			InUse = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FillFrame2 = function ( Fill, event )
 					if not event.interrupted then
 						Fill:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -410,6 +421,7 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Fill:completeAnimation()
 				self.Fill:setRGB( 1, 0.77, 0 )
 				self.Fill:setAlpha( 0.3 )
@@ -421,23 +433,27 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 				self.Fill:setShaderVector( 3, 0, 0, 0, 0 )
 				self.Fill:setShaderVector( 4, 0, 0, 0, 0 )
 				self.clipFinished( Fill, {} )
+
 				ForeStroke:completeAnimation()
 				self.ForeStroke:setRGB( 1, 1, 1 )
 				self.ForeStroke:setAlpha( 1 )
 				self.ForeStroke:setZoom( -8 )
 				self.ForeStroke:setRFTMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( ForeStroke, {} )
+
 				AbilityIconGold:completeAnimation()
 				self.AbilityIconGold:setRGB( 1, 0.77, 0 )
 				self.AbilityIconGold:setAlpha( 0.3 )
 				self.AbilityIconGold:setZoom( -18 )
 				self.AbilityIconGold:setRFTMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( AbilityIconGold, {} )
+
 				AbilityIconSolid:completeAnimation()
 				self.AbilityIconSolid:setRGB( 0, 0, 0 )
 				self.AbilityIconSolid:setAlpha( 0.1 )
 				self.AbilityIconSolid:setRFTMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( AbilityIconSolid, {} )
+
 				AbilityIcon:completeAnimation()
 				self.AbilityIcon:setAlpha( 1 )
 				self.AbilityIcon:setZoom( 15 )
@@ -445,6 +461,7 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FillFrame2 = function ( Fill, event )
 					if not event.interrupted then
 						Fill:beginAnimation( "keyframe", 300, true, true, CoD.TweenType.Back )
@@ -553,6 +570,7 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 			end,
 			Charge = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FillFrame2 = function ( Fill, event )
 					if not event.interrupted then
 						Fill:beginAnimation( "keyframe", 300, true, true, CoD.TweenType.Back )
@@ -661,6 +679,7 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 			end,
 			InUse = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FillFrame2 = function ( Fill, event )
 					if not event.interrupted then
 						Fill:beginAnimation( "keyframe", 300, true, true, CoD.TweenType.Back )
@@ -771,6 +790,7 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 		Charge = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Fill:completeAnimation()
 				self.Fill:setRGB( 1, 1, 1 )
 				self.Fill:setAlpha( 0 )
@@ -782,19 +802,23 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 				self.Fill:setShaderVector( 3, 0, 0, 0, 0 )
 				self.Fill:setShaderVector( 4, 0, 0, 0, 0 )
 				self.clipFinished( Fill, {} )
+
 				ForeStroke:completeAnimation()
 				self.ForeStroke:setRGB( 1, 1, 1 )
 				self.ForeStroke:setAlpha( 0.5 )
 				self.ForeStroke:setZoom( -5 )
 				self.ForeStroke:setRFTMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( ForeStroke, {} )
+
 				AbilityIconGold:completeAnimation()
 				self.AbilityIconGold:setAlpha( 0 )
 				self.AbilityIconGold:setZoom( 0 )
 				self.clipFinished( AbilityIconGold, {} )
+
 				AbilityIconSolid:completeAnimation()
 				self.AbilityIconSolid:setAlpha( 0.05 )
 				self.clipFinished( AbilityIconSolid, {} )
+
 				AbilityIcon:completeAnimation()
 				self.AbilityIcon:setAlpha( 0.9 )
 				self.AbilityIcon:setZoom( 5 )
@@ -802,6 +826,7 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FillFrame2 = function ( Fill, event )
 					if not event.interrupted then
 						Fill:beginAnimation( "keyframe", 300, true, true, CoD.TweenType.Back )
@@ -854,6 +879,7 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 				self.ForeStroke:setZoom( -5 )
 				self.ForeStroke:setRFTMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				ForeStrokeFrame2( ForeStroke, {} )
+
 				AbilityIconGold:completeAnimation()
 				self.AbilityIconGold:setAlpha( 0 )
 				self.AbilityIconGold:setZoom( 0 )
@@ -893,6 +919,7 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FillFrame2 = function ( Fill, event )
 					if not event.interrupted then
 						Fill:beginAnimation( "keyframe", 300, true, true, CoD.TweenType.Back )
@@ -1001,6 +1028,7 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 			end,
 			InUse = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FillFrame2 = function ( Fill, event )
 					if not event.interrupted then
 						Fill:beginAnimation( "keyframe", 300, true, true, CoD.TweenType.Back )
@@ -1107,6 +1135,7 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 		InUse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Fill:completeAnimation()
 				self.Fill:setRGB( 1, 1, 1 )
 				self.Fill:setAlpha( 0 )
@@ -1118,19 +1147,23 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 				self.Fill:setShaderVector( 3, 0, 0, 0, 0 )
 				self.Fill:setShaderVector( 4, 0, 0, 0, 0 )
 				self.clipFinished( Fill, {} )
+
 				ForeStroke:completeAnimation()
 				self.ForeStroke:setRGB( 1, 1, 1 )
 				self.ForeStroke:setAlpha( 1 )
 				self.ForeStroke:setZoom( 5 )
 				self.ForeStroke:setRFTMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( ForeStroke, {} )
+
 				AbilityIconGold:completeAnimation()
 				self.AbilityIconGold:setAlpha( 0.1 )
 				self.AbilityIconGold:setZoom( -49 )
 				self.clipFinished( AbilityIconGold, {} )
+
 				AbilityIconSolid:completeAnimation()
 				self.AbilityIconSolid:setAlpha( 0.1 )
 				self.clipFinished( AbilityIconSolid, {} )
+
 				AbilityIcon:completeAnimation()
 				self.AbilityIcon:setAlpha( 1 )
 				self.AbilityIcon:setZoom( 10 )
@@ -1138,6 +1171,7 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FillFrame2 = function ( Fill, event )
 					if not event.interrupted then
 						Fill:beginAnimation( "keyframe", 300, true, true, CoD.TweenType.Back )
@@ -1242,6 +1276,7 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FillFrame2 = function ( Fill, event )
 					if not event.interrupted then
 						Fill:beginAnimation( "keyframe", 300, true, true, CoD.TweenType.Back )
@@ -1350,6 +1385,7 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 			end,
 			Charge = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FillFrame2 = function ( Fill, event )
 					if not event.interrupted then
 						Fill:beginAnimation( "keyframe", 300, true, true, CoD.TweenType.Back )
@@ -1454,6 +1490,7 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Ready",
@@ -1531,6 +1568,7 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 			modelName = "currentWeapon.weapon"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Fill:close()
 		element.ForeStroke:close()

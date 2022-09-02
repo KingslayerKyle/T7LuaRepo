@@ -4,9 +4,11 @@
 CoD.BM_Contracts_BJ_ReadyWidget = InheritFrom( LUI.UIElement )
 CoD.BM_Contracts_BJ_ReadyWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Contracts_BJ_ReadyWidget )
 	self.id = "BM_Contracts_BJ_ReadyWidget"
@@ -36,6 +38,7 @@ CoD.BM_Contracts_BJ_ReadyWidget.new = function ( menu, controller )
 	Activated:setShaderVector( 1, 0.03, 0, 0, 0 )
 	Activated:setShaderVector( 2, 1, 0, 0, 0 )
 	Activated:setLetterSpacing( 1 )
+
 	LUI.OverrideFunction_CallOriginalFirst( Activated, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 15 )
 	end )
@@ -46,9 +49,11 @@ CoD.BM_Contracts_BJ_ReadyWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ActivatedBar:completeAnimation()
 				self.ActivatedBar:setAlpha( 1 )
 				self.clipFinished( ActivatedBar, {} )
+
 				Activated:completeAnimation()
 				self.Activated:setAlpha( 1 )
 				self.clipFinished( Activated, {} )
@@ -57,15 +62,18 @@ CoD.BM_Contracts_BJ_ReadyWidget.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ActivatedBar:completeAnimation()
 				self.ActivatedBar:setAlpha( 0 )
 				self.clipFinished( ActivatedBar, {} )
+
 				Activated:completeAnimation()
 				self.Activated:setAlpha( 0 )
 				self.clipFinished( Activated, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.CAC_varientTitlePanel" )
 CoD.ChangeCybercoreLabel = InheritFrom( LUI.UIElement )
 CoD.ChangeCybercoreLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChangeCybercoreLabel )
 	self.id = "ChangeCybercoreLabel"
@@ -28,6 +30,7 @@ CoD.ChangeCybercoreLabel.new = function ( menu, controller )
 	chooseCybercorePrompt:setTopBottom( true, false, 0, 22 )
 	chooseCybercorePrompt:setText( Engine.Localize( "MENU_CHANGE_CYBERCORE" ) )
 	chooseCybercorePrompt:setTTF( "fonts/RefrigeratorDeluxe-Regular.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( chooseCybercorePrompt, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrapped( self, element, 0, 0 )
 	end )
@@ -38,6 +41,7 @@ CoD.ChangeCybercoreLabel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				chooseCybercorePrompt:completeAnimation()
 				self.chooseCybercorePrompt:setText( Engine.Localize( "MENU_CHANGE_CYBERCORE" ) )
 				self.clipFinished( chooseCybercorePrompt, {} )
@@ -46,6 +50,7 @@ CoD.ChangeCybercoreLabel.new = function ( menu, controller )
 		Multicore = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				chooseCybercorePrompt:completeAnimation()
 				self.chooseCybercorePrompt:setText( Engine.Localize( "MENU_CHANGE_CYBERCORE" ) )
 				self.clipFinished( chooseCybercorePrompt, {} )
@@ -54,12 +59,14 @@ CoD.ChangeCybercoreLabel.new = function ( menu, controller )
 		DefaultState_PC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				chooseCybercorePrompt:completeAnimation()
 				self.chooseCybercorePrompt:setText( Engine.Localize( "PLATFORM_CHANGE_CYBERCORE" ) )
 				self.clipFinished( chooseCybercorePrompt, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Multicore",
@@ -92,6 +99,7 @@ CoD.ChangeCybercoreLabel.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CACvarientTitlePanel0:close()
 	end )

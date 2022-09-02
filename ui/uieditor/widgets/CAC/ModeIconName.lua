@@ -4,9 +4,11 @@
 CoD.ModeIconName = InheritFrom( LUI.UIElement )
 CoD.ModeIconName.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ModeIconName )
 	self.id = "ModeIconName"
@@ -62,12 +64,15 @@ CoD.ModeIconName.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				GameModeIcon:completeAnimation()
 				self.GameModeIcon:setAlpha( 0 )
 				self.clipFinished( GameModeIcon, {} )
+
 				GameModeText:completeAnimation()
 				self.GameModeText:setAlpha( 0 )
 				self.clipFinished( GameModeText, {} )
+
 				GameModeDescription:completeAnimation()
 				self.GameModeDescription:setAlpha( 0 )
 				self.clipFinished( GameModeDescription, {} )
@@ -76,18 +81,22 @@ CoD.ModeIconName.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				GameModeIcon:completeAnimation()
 				self.GameModeIcon:setAlpha( 1 )
 				self.clipFinished( GameModeIcon, {} )
+
 				GameModeText:completeAnimation()
 				self.GameModeText:setAlpha( 1 )
 				self.clipFinished( GameModeText, {} )
+
 				GameModeDescription:completeAnimation()
 				self.GameModeDescription:setAlpha( 1 )
 				self.clipFinished( GameModeDescription, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -118,6 +127,7 @@ CoD.ModeIconName.new = function ( menu, controller )
 			modelName = "filterMode"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GameModeIcon:close()
 		element.GameModeText:close()

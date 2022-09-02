@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Footer.fe_LeftContainer_NOTLobby" )
 CoD.ScoreboardWidgetButtonContainer = InheritFrom( LUI.UIElement )
 CoD.ScoreboardWidgetButtonContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreboardWidgetButtonContainer )
 	self.id = "ScoreboardWidgetButtonContainer"
@@ -27,23 +29,27 @@ CoD.ScoreboardWidgetButtonContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ScoreboardButtons:completeAnimation()
 				self.ScoreboardButtons:setAlpha( 1 )
 				self.clipFinished( ScoreboardButtons, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		AAR = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ScoreboardButtons:completeAnimation()
 				self.ScoreboardButtons:setAlpha( 0 )
 				self.clipFinished( ScoreboardButtons, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "AAR",
@@ -53,6 +59,7 @@ CoD.ScoreboardWidgetButtonContainer.new = function ( menu, controller )
 		}
 	} )
 	ScoreboardButtons:setModel( menu.buttonModel, controller )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ScoreboardButtons:close()
 	end )

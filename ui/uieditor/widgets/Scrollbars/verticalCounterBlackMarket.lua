@@ -4,9 +4,11 @@
 CoD.verticalCounterBlackMarket = InheritFrom( LUI.UIElement )
 CoD.verticalCounterBlackMarket.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.verticalCounterBlackMarket )
 	self.id = "verticalCounterBlackMarket"
@@ -86,15 +88,19 @@ CoD.verticalCounterBlackMarket.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				currentItem:completeAnimation()
 				self.currentItem:setAlpha( 1 )
 				self.clipFinished( currentItem, {} )
+
 				dividor:completeAnimation()
 				self.dividor:setAlpha( 1 )
 				self.clipFinished( dividor, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 1 )
 				self.clipFinished( count, {} )
+
 				upArrow:completeAnimation()
 				self.upArrow:setLeftRight( false, false, 42, 58 )
 				self.upArrow:setTopBottom( false, false, -4, 4 )
@@ -102,6 +108,7 @@ CoD.verticalCounterBlackMarket.new = function ( menu, controller )
 				self.upArrow:setAlpha( 1 )
 				self.upArrow:setZRot( 0 )
 				self.clipFinished( upArrow, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setLeftRight( false, false, -58, -42 )
 				self.downArrow:setTopBottom( false, false, -4, 4 )
@@ -109,10 +116,12 @@ CoD.verticalCounterBlackMarket.new = function ( menu, controller )
 				self.downArrow:setAlpha( 1 )
 				self.downArrow:setZRot( 180 )
 				self.clipFinished( downArrow, {} )
+
 				upArrowPulse:completeAnimation()
 				self.upArrowPulse:setAlpha( 0 )
 				self.upArrowPulse:setScale( 1 )
 				self.clipFinished( upArrowPulse, {} )
+
 				downArrowPulse:completeAnimation()
 				self.downArrowPulse:setAlpha( 0 )
 				self.downArrowPulse:setScale( 1 )
@@ -122,15 +131,19 @@ CoD.verticalCounterBlackMarket.new = function ( menu, controller )
 		AtTopAndBottom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				currentItem:completeAnimation()
 				self.currentItem:setAlpha( 0 )
 				self.clipFinished( currentItem, {} )
+
 				dividor:completeAnimation()
 				self.dividor:setAlpha( 0 )
 				self.clipFinished( dividor, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 0 )
 				self.clipFinished( count, {} )
+
 				upArrow:completeAnimation()
 				self.upArrow:setLeftRight( false, false, -58, -42 )
 				self.upArrow:setTopBottom( false, false, -4, 4 )
@@ -138,6 +151,7 @@ CoD.verticalCounterBlackMarket.new = function ( menu, controller )
 				self.upArrow:setAlpha( 0 )
 				self.upArrow:setZRot( 180 )
 				self.clipFinished( upArrow, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setLeftRight( false, false, 42, 58 )
 				self.downArrow:setTopBottom( false, false, -4, 4 )
@@ -145,10 +159,12 @@ CoD.verticalCounterBlackMarket.new = function ( menu, controller )
 				self.downArrow:setAlpha( 0 )
 				self.downArrow:setZRot( 0 )
 				self.clipFinished( downArrow, {} )
+
 				upArrowPulse:completeAnimation()
 				self.upArrowPulse:setAlpha( 0 )
 				self.upArrowPulse:setScale( 1 )
 				self.clipFinished( upArrowPulse, {} )
+
 				downArrowPulse:completeAnimation()
 				self.downArrowPulse:setAlpha( 0 )
 				self.downArrowPulse:setScale( 1 )
@@ -158,15 +174,19 @@ CoD.verticalCounterBlackMarket.new = function ( menu, controller )
 		AtTop = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				currentItem:completeAnimation()
 				self.currentItem:setAlpha( 1 )
 				self.clipFinished( currentItem, {} )
+
 				dividor:completeAnimation()
 				self.dividor:setAlpha( 1 )
 				self.clipFinished( dividor, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 1 )
 				self.clipFinished( count, {} )
+
 				upArrow:completeAnimation()
 				self.upArrow:setLeftRight( false, false, -58, -42 )
 				self.upArrow:setTopBottom( false, false, -4, 4 )
@@ -174,6 +194,7 @@ CoD.verticalCounterBlackMarket.new = function ( menu, controller )
 				self.upArrow:setAlpha( 1 )
 				self.upArrow:setZRot( 180 )
 				self.clipFinished( upArrow, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setLeftRight( false, false, 42, 58 )
 				self.downArrow:setTopBottom( false, false, -4, 4 )
@@ -198,24 +219,30 @@ CoD.verticalCounterBlackMarket.new = function ( menu, controller )
 				self.upArrowPulse:setAlpha( 1 )
 				self.upArrowPulse:setScale( 1 )
 				upArrowPulseFrame2( upArrowPulse, {} )
+
 				downArrowPulse:completeAnimation()
 				self.downArrowPulse:setAlpha( 0 )
 				self.clipFinished( downArrowPulse, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		AtBottom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				currentItem:completeAnimation()
 				self.currentItem:setAlpha( 1 )
 				self.clipFinished( currentItem, {} )
+
 				dividor:completeAnimation()
 				self.dividor:setAlpha( 1 )
 				self.clipFinished( dividor, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 1 )
 				self.clipFinished( count, {} )
+
 				upArrow:completeAnimation()
 				self.upArrow:setLeftRight( false, false, -58, -42 )
 				self.upArrow:setTopBottom( false, false, -4, 4 )
@@ -223,6 +250,7 @@ CoD.verticalCounterBlackMarket.new = function ( menu, controller )
 				self.upArrow:setAlpha( 1 )
 				self.upArrow:setZRot( 180 )
 				self.clipFinished( upArrow, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setLeftRight( false, false, 42, 58 )
 				self.downArrow:setTopBottom( false, false, -4, 4 )
@@ -230,6 +258,7 @@ CoD.verticalCounterBlackMarket.new = function ( menu, controller )
 				self.downArrow:setAlpha( 1 )
 				self.downArrow:setZRot( 0 )
 				self.clipFinished( downArrow, {} )
+
 				upArrowPulse:completeAnimation()
 				self.upArrowPulse:setAlpha( 0 )
 				self.upArrowPulse:setScale( 1 )
@@ -251,37 +280,45 @@ CoD.verticalCounterBlackMarket.new = function ( menu, controller )
 				self.downArrowPulse:setAlpha( 1 )
 				self.downArrowPulse:setScale( 1 )
 				downArrowPulseFrame2( downArrowPulse, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		NoItems = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				currentItem:completeAnimation()
 				self.currentItem:setAlpha( 0 )
 				self.clipFinished( currentItem, {} )
+
 				dividor:completeAnimation()
 				self.dividor:setAlpha( 0 )
 				self.clipFinished( dividor, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 0 )
 				self.clipFinished( count, {} )
+
 				upArrow:completeAnimation()
 				self.upArrow:setLeftRight( false, false, -58, -42 )
 				self.upArrow:setTopBottom( false, false, -4, 4 )
 				self.upArrow:setAlpha( 0 )
 				self.upArrow:setZRot( 180 )
 				self.clipFinished( upArrow, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setLeftRight( false, false, 42, 58 )
 				self.downArrow:setTopBottom( false, false, -4, 4 )
 				self.downArrow:setAlpha( 0 )
 				self.downArrow:setZRot( 0 )
 				self.clipFinished( downArrow, {} )
+
 				upArrowPulse:completeAnimation()
 				self.upArrowPulse:setAlpha( 0 )
 				self.upArrowPulse:setScale( 1 )
 				self.clipFinished( upArrowPulse, {} )
+
 				downArrowPulse:completeAnimation()
 				self.downArrowPulse:setAlpha( 0 )
 				self.downArrowPulse:setScale( 1 )
@@ -289,6 +326,7 @@ CoD.verticalCounterBlackMarket.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "AtTopAndBottom",

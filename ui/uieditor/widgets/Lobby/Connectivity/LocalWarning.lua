@@ -4,9 +4,11 @@
 CoD.LocalWarning = InheritFrom( LUI.UIElement )
 CoD.LocalWarning.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.LocalWarning )
 	self.id = "LocalWarning"
@@ -29,11 +31,13 @@ CoD.LocalWarning.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		PlayingLive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				txtConnWarning:completeAnimation()
 				self.txtConnWarning:setAlpha( 0 )
 				self.clipFinished( txtConnWarning, {} )
@@ -42,6 +46,7 @@ CoD.LocalWarning.new = function ( menu, controller )
 		PlayingLocal = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				txtConnWarning:completeAnimation()
 				self.txtConnWarning:setAlpha( 0.75 )
 				self.txtConnWarning:setText( Engine.Localize( "XBOXLIVE_PLAYING_LOCAL" ) )

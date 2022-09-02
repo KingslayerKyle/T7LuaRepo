@@ -21,6 +21,7 @@ CoD.ChooseCharacter_HelpBubbleWidget.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacter_HelpBubbleWidget )
 	self.id = "ChooseCharacter_HelpBubbleWidget"

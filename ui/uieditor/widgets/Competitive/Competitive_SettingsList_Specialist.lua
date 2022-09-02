@@ -21,6 +21,7 @@ CoD.Competitive_SettingsList_Specialist.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Competitive_SettingsList_Specialist )
 	self.id = "Competitive_SettingsList_Specialist"
@@ -93,6 +94,7 @@ CoD.Competitive_SettingsList_Specialist.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Title:close()
 		element.Options:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.AbilityWheel.AbilityWheel_Pixel" )
 CoD.outofbounds_timerframedots = InheritFrom( LUI.UIElement )
 CoD.outofbounds_timerframedots.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.outofbounds_timerframedots )
 	self.id = "outofbounds_timerframedots"
@@ -52,6 +54,7 @@ CoD.outofbounds_timerframedots.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local AbilityWheelPixel4Frame2 = function ( AbilityWheelPixel4, event )
 					local AbilityWheelPixel4Frame3 = function ( AbilityWheelPixel4, event )
 						if not event.interrupted then
@@ -156,27 +159,32 @@ CoD.outofbounds_timerframedots.new = function ( menu, controller )
 				AbilityWheelPixel7:completeAnimation()
 				self.AbilityWheelPixel7:setAlpha( 0 )
 				AbilityWheelPixel7Frame2( AbilityWheelPixel7, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		IsOutOfBounds = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				AbilityWheelPixel4:completeAnimation()
 				self.AbilityWheelPixel4:setLeftRight( false, false, 50.5, 58.5 )
 				self.AbilityWheelPixel4:setTopBottom( false, false, -108, -100 )
 				self.AbilityWheelPixel4:setAlpha( 0.8 )
 				self.clipFinished( AbilityWheelPixel4, {} )
+
 				AbilityWheelPixel5:completeAnimation()
 				self.AbilityWheelPixel5:setLeftRight( false, false, -53.5, -45.5 )
 				self.AbilityWheelPixel5:setTopBottom( false, false, -108, -100 )
 				self.AbilityWheelPixel5:setAlpha( 0.8 )
 				self.clipFinished( AbilityWheelPixel5, {} )
+
 				AbilityWheelPixel6:completeAnimation()
 				self.AbilityWheelPixel6:setLeftRight( false, false, 50.5, 58.5 )
 				self.AbilityWheelPixel6:setTopBottom( false, false, -71, -63 )
 				self.AbilityWheelPixel6:setAlpha( 0.8 )
 				self.clipFinished( AbilityWheelPixel6, {} )
+
 				AbilityWheelPixel7:completeAnimation()
 				self.AbilityWheelPixel7:setLeftRight( false, false, -53.5, -45.5 )
 				self.AbilityWheelPixel7:setTopBottom( false, false, -71, -63 )
@@ -185,6 +193,7 @@ CoD.outofbounds_timerframedots.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AbilityWheelPixel4:close()
 		element.AbilityWheelPixel5:close()

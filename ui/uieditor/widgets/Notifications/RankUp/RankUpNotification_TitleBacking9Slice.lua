@@ -4,9 +4,11 @@
 CoD.RankUpNotification_TitleBacking9Slice = InheritFrom( LUI.UIElement )
 CoD.RankUpNotification_TitleBacking9Slice.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RankUpNotification_TitleBacking9Slice )
 	self.id = "RankUpNotification_TitleBacking9Slice"
@@ -50,9 +52,11 @@ CoD.RankUpNotification_TitleBacking9Slice.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

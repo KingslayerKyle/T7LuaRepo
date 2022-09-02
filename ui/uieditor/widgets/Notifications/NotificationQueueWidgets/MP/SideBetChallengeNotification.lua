@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Notifications.Global.Notif_Global_Title" )
 CoD.SideBetChallengeNotification = InheritFrom( LUI.UIElement )
 CoD.SideBetChallengeNotification.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SideBetChallengeNotification )
 	self.id = "SideBetChallengeNotification"
@@ -190,6 +192,7 @@ CoD.SideBetChallengeNotification.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				local CenterShadowFrame2 = function ( CenterShadow, event )
 					if not event.interrupted then
 						CenterShadow:beginAnimation( "keyframe", 300, false, true, CoD.TweenType.Linear )
@@ -689,12 +692,14 @@ CoD.SideBetChallengeNotification.new = function ( menu, controller )
 				self.image:setAlpha( 0 )
 				self.image:setScale( 0 )
 				imageFrame2( image, {} )
+
 				levelUpSound:completeAnimation()
 				self.levelUpSound:playSound( "weapon_level_up", controller )
 				self.clipFinished( levelUpSound, {} )
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 13 )
+
 				local CenterShadowFrame2 = function ( CenterShadow, event )
 					local CenterShadowFrame3 = function ( CenterShadow, event )
 						local CenterShadowFrame4 = function ( CenterShadow, event )
@@ -1096,12 +1101,15 @@ CoD.SideBetChallengeNotification.new = function ( menu, controller )
 				NotifGlobalTitle:completeAnimation()
 				self.NotifGlobalTitle:setAlpha( 1 )
 				NotifGlobalTitleFrame2( NotifGlobalTitle, {} )
+
 				highlight:completeAnimation()
 				self.highlight:setAlpha( 0 )
 				self.clipFinished( highlight, {} )
+
 				imageG:completeAnimation()
 				self.imageG:setAlpha( 0 )
 				self.clipFinished( imageG, {} )
+
 				imageR:completeAnimation()
 				self.imageR:setAlpha( 0 )
 				self.clipFinished( imageR, {} )
@@ -1155,6 +1163,7 @@ CoD.SideBetChallengeNotification.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.NotifGlobalTitleLine:close()
 		element.NotifGlobalTitle:close()

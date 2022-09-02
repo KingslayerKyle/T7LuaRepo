@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.MP.MatchSettings.Playlist_SpecialEventIcon" )
 CoD.Playlist_SpecialEventItem = InheritFrom( LUI.UIElement )
 CoD.Playlist_SpecialEventItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Playlist_SpecialEventItem )
 	self.id = "Playlist_SpecialEventItem"

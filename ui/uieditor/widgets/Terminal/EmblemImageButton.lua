@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Terminal.FocusWidget" )
 CoD.EmblemImageButton = InheritFrom( LUI.UIElement )
 CoD.EmblemImageButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemImageButton )
 	self.id = "EmblemImageButton"
@@ -58,12 +60,14 @@ CoD.EmblemImageButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FocusWidget:completeAnimation()
 				self.FocusWidget:setAlpha( 0 )
 				self.clipFinished( FocusWidget, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local GeneralframeFrame2 = function ( Generalframe, event )
 					if not event.interrupted then
 						Generalframe:beginAnimation( "keyframe", 180, false, false, CoD.TweenType.Linear )
@@ -120,14 +124,17 @@ CoD.EmblemImageButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				Generalframe:completeAnimation()
 				self.Generalframe:setLeftRight( true, true, 0, 0 )
 				self.Generalframe:setTopBottom( true, true, 15, 15 )
 				self.clipFinished( Generalframe, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setLeftRight( true, true, 0, 0 )
 				self.emblem:setTopBottom( true, true, 16, 14 )
 				self.clipFinished( emblem, {} )
+
 				FocusWidget:completeAnimation()
 				self.FocusWidget:setLeftRight( true, true, -8, 8 )
 				self.FocusWidget:setTopBottom( true, false, -10, 10 )
@@ -136,6 +143,7 @@ CoD.EmblemImageButton.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local GeneralframeFrame2 = function ( Generalframe, event )
 					if not event.interrupted then
 						Generalframe:beginAnimation( "keyframe", 180, false, false, CoD.TweenType.Linear )
@@ -194,12 +202,15 @@ CoD.EmblemImageButton.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				emblem:completeAnimation()
 				self.emblem:setAlpha( 0 )
 				self.clipFinished( emblem, {} )
+
 				FocusWidget:completeAnimation()
 				self.FocusWidget:setAlpha( 0 )
 				self.clipFinished( FocusWidget, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setLeftRight( true, false, 38, 70 )
 				self.lockedIcon:setTopBottom( true, false, 16, 48 )
@@ -208,6 +219,7 @@ CoD.EmblemImageButton.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local GeneralframeFrame2 = function ( Generalframe, event )
 					if not event.interrupted then
 						Generalframe:beginAnimation( "keyframe", 180, false, false, CoD.TweenType.Linear )
@@ -285,20 +297,24 @@ CoD.EmblemImageButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				Generalframe:completeAnimation()
 				self.Generalframe:setLeftRight( true, true, 0, 0 )
 				self.Generalframe:setTopBottom( true, true, 15, 15 )
 				self.clipFinished( Generalframe, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setLeftRight( true, true, 0, 0 )
 				self.emblem:setTopBottom( true, true, 16, 14 )
 				self.emblem:setAlpha( 0 )
 				self.clipFinished( emblem, {} )
+
 				FocusWidget:completeAnimation()
 				self.FocusWidget:setLeftRight( true, true, -8, 8 )
 				self.FocusWidget:setTopBottom( true, false, -10, 10 )
 				self.FocusWidget:setAlpha( 1 )
 				self.clipFinished( FocusWidget, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setLeftRight( true, false, 38, 70 )
 				self.lockedIcon:setTopBottom( true, false, 31, 63 )
@@ -307,6 +323,7 @@ CoD.EmblemImageButton.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local GeneralframeFrame2 = function ( Generalframe, event )
 					if not event.interrupted then
 						Generalframe:beginAnimation( "keyframe", 180, false, false, CoD.TweenType.Linear )
@@ -384,6 +401,7 @@ CoD.EmblemImageButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Generalframe:close()
 		element.FocusWidget:close()

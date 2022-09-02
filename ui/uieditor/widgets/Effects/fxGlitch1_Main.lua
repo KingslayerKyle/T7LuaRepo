@@ -14,9 +14,11 @@ require( "ui.uieditor.widgets.Effects.fxGlitch1_1" )
 CoD.fxGlitch1_Main = InheritFrom( LUI.UIElement )
 CoD.fxGlitch1_Main.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.fxGlitch1_Main )
 	self.id = "fxGlitch1_Main"
@@ -91,46 +93,55 @@ CoD.fxGlitch1_Main.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				fxGlitch1900:completeAnimation()
 				self.fxGlitch1900:setLeftRight( true, true, 118, -118 )
 				self.fxGlitch1900:setTopBottom( true, true, 82, -150 )
 				self.fxGlitch1900:setAlpha( 0 )
 				self.clipFinished( fxGlitch1900, {} )
+
 				fxGlitch1800:completeAnimation()
 				self.fxGlitch1800:setLeftRight( true, true, 0, 0 )
 				self.fxGlitch1800:setTopBottom( true, true, 100, -100 )
 				self.fxGlitch1800:setAlpha( 0 )
 				self.clipFinished( fxGlitch1800, {} )
+
 				fxGlitch1700:completeAnimation()
 				self.fxGlitch1700:setLeftRight( true, true, 0, 0 )
 				self.fxGlitch1700:setTopBottom( true, true, 82, -110 )
 				self.fxGlitch1700:setAlpha( 0 )
 				self.clipFinished( fxGlitch1700, {} )
+
 				fxGlitch1600:completeAnimation()
 				self.fxGlitch1600:setLeftRight( true, true, 0, 0 )
 				self.fxGlitch1600:setTopBottom( true, true, 54.5, -73 )
 				self.fxGlitch1600:setAlpha( 0 )
 				self.clipFinished( fxGlitch1600, {} )
+
 				fxGlitch1500:completeAnimation()
 				self.fxGlitch1500:setLeftRight( true, true, 139, -157 )
 				self.fxGlitch1500:setTopBottom( true, true, 54.5, -82.5 )
 				self.fxGlitch1500:setAlpha( 0 )
 				self.clipFinished( fxGlitch1500, {} )
+
 				fxGlitch1400:completeAnimation()
 				self.fxGlitch1400:setLeftRight( true, true, 0, 0 )
 				self.fxGlitch1400:setTopBottom( true, true, 54.5, -49.5 )
 				self.fxGlitch1400:setAlpha( 0 )
 				self.clipFinished( fxGlitch1400, {} )
+
 				fxGlitch1300:completeAnimation()
 				self.fxGlitch1300:setLeftRight( true, true, 4, -4 )
 				self.fxGlitch1300:setTopBottom( true, true, 0, 0 )
 				self.fxGlitch1300:setAlpha( 0 )
 				self.clipFinished( fxGlitch1300, {} )
+
 				fxGlitch1200:completeAnimation()
 				self.fxGlitch1200:setLeftRight( true, true, 0, 0 )
 				self.fxGlitch1200:setTopBottom( true, true, 31, -9 )
 				self.fxGlitch1200:setAlpha( 0 )
 				self.clipFinished( fxGlitch1200, {} )
+
 				fxGlitch1100:completeAnimation()
 				self.fxGlitch1100:setLeftRight( true, true, 0, 0 )
 				self.fxGlitch1100:setTopBottom( true, true, 46, -34 )
@@ -139,6 +150,7 @@ CoD.fxGlitch1_Main.new = function ( menu, controller )
 			end,
 			GlitchSmall1 = function ()
 				self:setupElementClipCounter( 9 )
+
 				local fxGlitch1900Frame2 = function ( fxGlitch1900, event )
 					local fxGlitch1900Frame3 = function ( fxGlitch1900, event )
 						local fxGlitch1900Frame4 = function ( fxGlitch1900, event )
@@ -391,26 +403,32 @@ CoD.fxGlitch1_Main.new = function ( menu, controller )
 				self.fxGlitch1700:setTopBottom( true, true, 113, -109 )
 				self.fxGlitch1700:setAlpha( 0 )
 				fxGlitch1700Frame2( fxGlitch1700, {} )
+
 				fxGlitch1600:completeAnimation()
 				self.fxGlitch1600:setLeftRight( true, true, 0, 0 )
 				self.fxGlitch1600:setTopBottom( true, true, 54.5, -73 )
 				self.clipFinished( fxGlitch1600, {} )
+
 				fxGlitch1500:completeAnimation()
 				self.fxGlitch1500:setLeftRight( true, true, 139, -157 )
 				self.fxGlitch1500:setTopBottom( true, true, 54.5, -82.5 )
 				self.clipFinished( fxGlitch1500, {} )
+
 				fxGlitch1400:completeAnimation()
 				self.fxGlitch1400:setLeftRight( true, true, 0, 0 )
 				self.fxGlitch1400:setTopBottom( true, true, 54.5, -49.5 )
 				self.clipFinished( fxGlitch1400, {} )
+
 				fxGlitch1300:completeAnimation()
 				self.fxGlitch1300:setLeftRight( true, true, 4, -4 )
 				self.fxGlitch1300:setTopBottom( true, true, 0, 0 )
 				self.clipFinished( fxGlitch1300, {} )
+
 				fxGlitch1200:completeAnimation()
 				self.fxGlitch1200:setLeftRight( true, true, 0, 0 )
 				self.fxGlitch1200:setTopBottom( true, true, 31, -9 )
 				self.clipFinished( fxGlitch1200, {} )
+
 				fxGlitch1100:completeAnimation()
 				self.fxGlitch1100:setLeftRight( true, true, 0, 0 )
 				self.fxGlitch1100:setTopBottom( true, true, 46, -34 )
@@ -418,6 +436,7 @@ CoD.fxGlitch1_Main.new = function ( menu, controller )
 			end,
 			GlitchSmall2 = function ()
 				self:setupElementClipCounter( 9 )
+
 				local fxGlitch1900Frame2 = function ( fxGlitch1900, event )
 					local fxGlitch1900Frame3 = function ( fxGlitch1900, event )
 						local fxGlitch1900Frame4 = function ( fxGlitch1900, event )
@@ -678,6 +697,7 @@ CoD.fxGlitch1_Main.new = function ( menu, controller )
 				self.fxGlitch1600:setTopBottom( true, true, 54.5, -73 )
 				self.fxGlitch1600:setAlpha( 0 )
 				fxGlitch1600Frame2( fxGlitch1600, {} )
+
 				fxGlitch1500:completeAnimation()
 				self.fxGlitch1500:setLeftRight( true, true, 139, -157 )
 				self.fxGlitch1500:setTopBottom( true, true, 54.5, -82.5 )
@@ -722,14 +742,17 @@ CoD.fxGlitch1_Main.new = function ( menu, controller )
 				self.fxGlitch1400:setTopBottom( true, true, 54.5, -49.5 )
 				self.fxGlitch1400:setAlpha( 0 )
 				fxGlitch1400Frame2( fxGlitch1400, {} )
+
 				fxGlitch1300:completeAnimation()
 				self.fxGlitch1300:setLeftRight( true, true, 4, -4 )
 				self.fxGlitch1300:setTopBottom( true, true, 0, 0 )
 				self.clipFinished( fxGlitch1300, {} )
+
 				fxGlitch1200:completeAnimation()
 				self.fxGlitch1200:setLeftRight( true, true, 0, 0 )
 				self.fxGlitch1200:setTopBottom( true, true, 31, -9 )
 				self.clipFinished( fxGlitch1200, {} )
+
 				fxGlitch1100:completeAnimation()
 				self.fxGlitch1100:setLeftRight( true, true, 0, 0 )
 				self.fxGlitch1100:setTopBottom( true, true, 46, -34 )
@@ -737,6 +760,7 @@ CoD.fxGlitch1_Main.new = function ( menu, controller )
 			end,
 			GlitchSmall3 = function ()
 				self:setupElementClipCounter( 9 )
+
 				local fxGlitch1900Frame2 = function ( fxGlitch1900, event )
 					local fxGlitch1900Frame3 = function ( fxGlitch1900, event )
 						local fxGlitch1900Frame4 = function ( fxGlitch1900, event )
@@ -1010,6 +1034,7 @@ CoD.fxGlitch1_Main.new = function ( menu, controller )
 				self.fxGlitch1700:setTopBottom( true, true, 105, -117 )
 				self.fxGlitch1700:setAlpha( 0 )
 				fxGlitch1700Frame2( fxGlitch1700, {} )
+
 				fxGlitch1600:completeAnimation()
 				self.fxGlitch1600:setLeftRight( true, true, 0, 0 )
 				self.fxGlitch1600:setTopBottom( true, true, 54.5, -73 )
@@ -1068,18 +1093,22 @@ CoD.fxGlitch1_Main.new = function ( menu, controller )
 				self.fxGlitch1500:setTopBottom( true, true, 69.04, -94.46 )
 				self.fxGlitch1500:setAlpha( 0 )
 				fxGlitch1500Frame2( fxGlitch1500, {} )
+
 				fxGlitch1400:completeAnimation()
 				self.fxGlitch1400:setLeftRight( true, true, 0, 0 )
 				self.fxGlitch1400:setTopBottom( true, true, 54.5, -49.5 )
 				self.clipFinished( fxGlitch1400, {} )
+
 				fxGlitch1300:completeAnimation()
 				self.fxGlitch1300:setLeftRight( true, true, 4, -4 )
 				self.fxGlitch1300:setTopBottom( true, true, 0, 0 )
 				self.clipFinished( fxGlitch1300, {} )
+
 				fxGlitch1200:completeAnimation()
 				self.fxGlitch1200:setLeftRight( true, true, 0, 0 )
 				self.fxGlitch1200:setTopBottom( true, true, 31, -9 )
 				self.clipFinished( fxGlitch1200, {} )
+
 				fxGlitch1100:completeAnimation()
 				self.fxGlitch1100:setLeftRight( true, true, 0, 0 )
 				self.fxGlitch1100:setTopBottom( true, true, 46, -34 )
@@ -1087,6 +1116,7 @@ CoD.fxGlitch1_Main.new = function ( menu, controller )
 			end,
 			GlitchLarge1 = function ()
 				self:setupElementClipCounter( 9 )
+
 				local fxGlitch1900Frame2 = function ( fxGlitch1900, event )
 					local fxGlitch1900Frame3 = function ( fxGlitch1900, event )
 						local fxGlitch1900Frame4 = function ( fxGlitch1900, event )
@@ -1311,10 +1341,12 @@ CoD.fxGlitch1_Main.new = function ( menu, controller )
 				self.fxGlitch1700:setTopBottom( true, true, 105, -117 )
 				self.fxGlitch1700:setAlpha( 0 )
 				fxGlitch1700Frame2( fxGlitch1700, {} )
+
 				fxGlitch1600:completeAnimation()
 				self.fxGlitch1600:setLeftRight( true, true, 0, 0 )
 				self.fxGlitch1600:setTopBottom( true, true, 54.5, -73 )
 				self.clipFinished( fxGlitch1600, {} )
+
 				fxGlitch1500:completeAnimation()
 				self.fxGlitch1500:setLeftRight( true, true, 44, -31 )
 				self.fxGlitch1500:setTopBottom( true, true, 69.04, -94.46 )
@@ -1421,6 +1453,7 @@ CoD.fxGlitch1_Main.new = function ( menu, controller )
 				self.fxGlitch1300:setTopBottom( true, true, 0, 0 )
 				self.fxGlitch1300:setAlpha( 0 )
 				fxGlitch1300Frame2( fxGlitch1300, {} )
+
 				fxGlitch1200:completeAnimation()
 				self.fxGlitch1200:setLeftRight( true, true, 0, 0 )
 				self.fxGlitch1200:setTopBottom( true, true, 31, -9 )
@@ -1478,6 +1511,7 @@ CoD.fxGlitch1_Main.new = function ( menu, controller )
 			end,
 			GlitchLarge2 = function ()
 				self:setupElementClipCounter( 9 )
+
 				local fxGlitch1900Frame2 = function ( fxGlitch1900, event )
 					local fxGlitch1900Frame3 = function ( fxGlitch1900, event )
 						local fxGlitch1900Frame4 = function ( fxGlitch1900, event )
@@ -1756,10 +1790,12 @@ CoD.fxGlitch1_Main.new = function ( menu, controller )
 				self.fxGlitch1700:setTopBottom( true, true, 94, -128 )
 				self.fxGlitch1700:setAlpha( 0 )
 				fxGlitch1700Frame2( fxGlitch1700, {} )
+
 				fxGlitch1600:completeAnimation()
 				self.fxGlitch1600:setLeftRight( true, true, 0, 0 )
 				self.fxGlitch1600:setTopBottom( true, true, 54.5, -73 )
 				self.clipFinished( fxGlitch1600, {} )
+
 				fxGlitch1500:completeAnimation()
 				self.fxGlitch1500:setLeftRight( true, true, 44, -31 )
 				self.fxGlitch1500:setTopBottom( true, true, 69.04, -94.46 )
@@ -1804,6 +1840,7 @@ CoD.fxGlitch1_Main.new = function ( menu, controller )
 				self.fxGlitch1400:setTopBottom( true, true, 54.5, -49.5 )
 				self.fxGlitch1400:setAlpha( 0 )
 				fxGlitch1400Frame2( fxGlitch1400, {} )
+
 				fxGlitch1300:completeAnimation()
 				self.fxGlitch1300:setLeftRight( true, true, 4, -4 )
 				self.fxGlitch1300:setTopBottom( true, true, 0, 0 )
@@ -1901,6 +1938,7 @@ CoD.fxGlitch1_Main.new = function ( menu, controller )
 			end,
 			GlitchSmall2Slow = function ()
 				self:setupElementClipCounter( 9 )
+
 				local fxGlitch1900Frame2 = function ( fxGlitch1900, event )
 					local fxGlitch1900Frame3 = function ( fxGlitch1900, event )
 						local fxGlitch1900Frame4 = function ( fxGlitch1900, event )
@@ -2161,6 +2199,7 @@ CoD.fxGlitch1_Main.new = function ( menu, controller )
 				self.fxGlitch1600:setTopBottom( true, true, 54.5, -73 )
 				self.fxGlitch1600:setAlpha( 0 )
 				fxGlitch1600Frame2( fxGlitch1600, {} )
+
 				fxGlitch1500:completeAnimation()
 				self.fxGlitch1500:setLeftRight( true, true, 139, -157 )
 				self.fxGlitch1500:setTopBottom( true, true, 54.5, -82.5 )
@@ -2205,14 +2244,17 @@ CoD.fxGlitch1_Main.new = function ( menu, controller )
 				self.fxGlitch1400:setTopBottom( true, true, 54.5, -49.5 )
 				self.fxGlitch1400:setAlpha( 0 )
 				fxGlitch1400Frame2( fxGlitch1400, {} )
+
 				fxGlitch1300:completeAnimation()
 				self.fxGlitch1300:setLeftRight( true, true, 4, -4 )
 				self.fxGlitch1300:setTopBottom( true, true, 0, 0 )
 				self.clipFinished( fxGlitch1300, {} )
+
 				fxGlitch1200:completeAnimation()
 				self.fxGlitch1200:setLeftRight( true, true, 0, 0 )
 				self.fxGlitch1200:setTopBottom( true, true, 31, -9 )
 				self.clipFinished( fxGlitch1200, {} )
+
 				fxGlitch1100:completeAnimation()
 				self.fxGlitch1100:setLeftRight( true, true, 0, 0 )
 				self.fxGlitch1100:setTopBottom( true, true, 46, -34 )
@@ -2220,6 +2262,7 @@ CoD.fxGlitch1_Main.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.fxGlitch1900:close()
 		element.fxGlitch1800:close()

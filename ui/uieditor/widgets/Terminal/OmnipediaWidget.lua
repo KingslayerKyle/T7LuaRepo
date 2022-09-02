@@ -54,9 +54,11 @@ end
 CoD.OmnipediaWidget = InheritFrom( LUI.UIElement )
 CoD.OmnipediaWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.OmnipediaWidget )
 	self.id = "OmnipediaWidget"
@@ -77,6 +79,7 @@ CoD.OmnipediaWidget.new = function ( menu, controller )
 	BinaryHTML0:setTopBottom( true, false, 40, 538 )
 	BinaryHTML0:setAlpha( 0.15 )
 	BinaryHTML0:setupBinaryHTML( "home.htm" )
+
 	BinaryHTML0:setUseStencil( false )
 	self:addElement( BinaryHTML0 )
 	self.BinaryHTML0 = BinaryHTML0
@@ -282,114 +285,142 @@ CoD.OmnipediaWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 28 )
+
 				BinaryHTML0:completeAnimation()
 				self.BinaryHTML0:setLeftRight( true, false, 21.37, 879 )
 				self.BinaryHTML0:setTopBottom( true, false, 40, 538 )
 				self.clipFinished( BinaryHTML0, {} )
+
 				Frameline0:completeAnimation()
 				self.Frameline0:setLeftRight( true, false, 171.85, 891.37 )
 				self.Frameline0:setTopBottom( true, false, 30.5, 37.5 )
 				self.clipFinished( Frameline0, {} )
+
 				FramelineVertical00:completeAnimation()
 				self.FramelineVertical00:setLeftRight( true, false, 882.7, 889.27 )
 				self.FramelineVertical00:setTopBottom( true, false, 29, 548.75 )
 				self.clipFinished( FramelineVertical00, {} )
+
 				frameTopLeft1:completeAnimation()
 				self.frameTopLeft1:setLeftRight( true, false, 14.29, 215.29 )
 				self.frameTopLeft1:setTopBottom( true, false, 30.5, 37.5 )
 				self.clipFinished( frameTopLeft1, {} )
+
 				Frameline00:completeAnimation()
 				self.Frameline00:setLeftRight( true, false, 208.23, 892.37 )
 				self.Frameline00:setTopBottom( true, false, 546.5, 553.5 )
 				self.clipFinished( Frameline00, {} )
+
 				frameTopLeft10:completeAnimation()
 				self.frameTopLeft10:setLeftRight( true, false, 14.29, 215.29 )
 				self.frameTopLeft10:setTopBottom( true, false, 546.5, 553.5 )
 				self.clipFinished( frameTopLeft10, {} )
+
 				FramelineVertical000:completeAnimation()
 				self.FramelineVertical000:setLeftRight( true, false, 14.29, 20.86 )
 				self.FramelineVertical000:setTopBottom( true, false, 31, 554.61 )
 				self.clipFinished( FramelineVertical000, {} )
+
 				Frameline000:completeAnimation()
 				self.Frameline000:setLeftRight( true, false, 113.5, 816.94 )
 				self.Frameline000:setTopBottom( true, false, 541.75, 548.75 )
 				self.clipFinished( Frameline000, {} )
+
 				dot1:completeAnimation()
 				self.dot1:setLeftRight( true, false, 121, 129 )
 				self.dot1:setTopBottom( true, false, 30.5, 38.5 )
 				self.clipFinished( dot1, {} )
+
 				dot11:completeAnimation()
 				self.dot11:setLeftRight( true, false, 881.37, 889.37 )
 				self.dot11:setTopBottom( true, false, 30.5, 38.5 )
 				self.clipFinished( dot11, {} )
+
 				dot110:completeAnimation()
 				self.dot110:setLeftRight( true, false, 881.37, 888.37 )
 				self.dot110:setTopBottom( true, false, 541.5, 548.5 )
 				self.clipFinished( dot110, {} )
+
 				dot1100:completeAnimation()
 				self.dot1100:setLeftRight( true, false, 109.27, 116.27 )
 				self.dot1100:setTopBottom( true, false, 541.5, 548.5 )
 				self.clipFinished( dot1100, {} )
+
 				doubleline:completeAnimation()
 				self.doubleline:setLeftRight( true, false, 532.37, 889.37 )
 				self.doubleline:setTopBottom( true, false, 546.5, 553.5 )
 				self.clipFinished( doubleline, {} )
+
 				fluff200:completeAnimation()
 				self.fluff200:setLeftRight( true, false, 111.5, 182.5 )
 				self.fluff200:setTopBottom( true, false, 546.65, 552.57 )
 				self.clipFinished( fluff200, {} )
+
 				Frameline01:completeAnimation()
 				self.Frameline01:setLeftRight( true, false, 171.85, 891.37 )
 				self.Frameline01:setTopBottom( true, false, 30.5, 37.5 )
 				self.clipFinished( Frameline01, {} )
+
 				Frameline010:completeAnimation()
 				self.Frameline010:setLeftRight( true, false, 171.85, 891.37 )
 				self.Frameline010:setTopBottom( true, false, 30.5, 37.5 )
 				self.clipFinished( Frameline010, {} )
+
 				Frameline011:completeAnimation()
 				self.Frameline011:setLeftRight( true, false, 171.85, 891.37 )
 				self.Frameline011:setTopBottom( true, false, 30.5, 37.5 )
 				self.clipFinished( Frameline011, {} )
+
 				FramelineVertical001:completeAnimation()
 				self.FramelineVertical001:setLeftRight( true, false, 882.7, 889.27 )
 				self.FramelineVertical001:setTopBottom( true, false, 29, 548.75 )
 				self.clipFinished( FramelineVertical001, {} )
+
 				FramelineVertical002:completeAnimation()
 				self.FramelineVertical002:setLeftRight( true, false, 882.7, 889.27 )
 				self.FramelineVertical002:setTopBottom( true, false, 29, 548.75 )
 				self.clipFinished( FramelineVertical002, {} )
+
 				FramelineVertical003:completeAnimation()
 				self.FramelineVertical003:setLeftRight( true, false, 882.7, 889.27 )
 				self.FramelineVertical003:setTopBottom( true, false, 29, 548.75 )
 				self.clipFinished( FramelineVertical003, {} )
+
 				Frameline0000:completeAnimation()
 				self.Frameline0000:setLeftRight( true, false, 111.5, 891.37 )
 				self.Frameline0000:setTopBottom( true, false, 541.5, 548.5 )
 				self.clipFinished( Frameline0000, {} )
+
 				Frameline0001:completeAnimation()
 				self.Frameline0001:setLeftRight( true, false, 111.5, 891.37 )
 				self.Frameline0001:setTopBottom( true, false, 541.5, 548.5 )
 				self.clipFinished( Frameline0001, {} )
+
 				Frameline0002:completeAnimation()
 				self.Frameline0002:setLeftRight( true, false, 21.37, 891.08 )
 				self.Frameline0002:setTopBottom( true, false, 541.5, 548.5 )
 				self.clipFinished( Frameline0002, {} )
+
 				Frameline001:completeAnimation()
 				self.Frameline001:setLeftRight( true, false, 208.23, 892.37 )
 				self.Frameline001:setTopBottom( true, false, 546.5, 553.5 )
 				self.clipFinished( Frameline001, {} )
+
 				Frameline002:completeAnimation()
 				self.Frameline002:setLeftRight( true, false, 208.23, 892.37 )
 				self.Frameline002:setTopBottom( true, false, 546.5, 553.5 )
 				self.clipFinished( Frameline002, {} )
+
 				FramelineVertical0000:completeAnimation()
 				self.FramelineVertical0000:setLeftRight( true, false, 14.29, 20.86 )
 				self.FramelineVertical0000:setTopBottom( true, false, 31, 554.61 )
 				self.clipFinished( FramelineVertical0000, {} )
+
 				FramelineVertical0001:completeAnimation()
 				self.FramelineVertical0001:setLeftRight( true, false, 14.8, 21.37 )
 				self.FramelineVertical0001:setTopBottom( true, false, 27.9, 551.5 )
 				self.clipFinished( FramelineVertical0001, {} )
+
 				cross:completeAnimation()
 				self.cross:setLeftRight( true, false, 110.27, 116.27 )
 				self.cross:setTopBottom( true, false, 31, 37 )
@@ -397,6 +428,7 @@ CoD.OmnipediaWidget.new = function ( menu, controller )
 			end,
 			BookMark_Nav = function ()
 				self:setupElementClipCounter( 4 )
+
 				local BinaryHTML0Frame2 = function ( BinaryHTML0, event )
 					if not event.interrupted then
 						BinaryHTML0:beginAnimation( "keyframe", 310, false, false, CoD.TweenType.Linear )
@@ -470,6 +502,7 @@ CoD.OmnipediaWidget.new = function ( menu, controller )
 			end,
 			BookMark_Close = function ()
 				self:setupElementClipCounter( 4 )
+
 				local f16_local0 = function ( f17_arg0, f17_arg1 )
 					if not f17_arg1.interrupted then
 						f17_arg0:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -554,47 +587,58 @@ CoD.OmnipediaWidget.new = function ( menu, controller )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Closed_Nav = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BinaryHTML0:completeAnimation()
 				self.BinaryHTML0:setLeftRight( true, false, 47.14, 879 )
 				self.BinaryHTML0:setTopBottom( true, false, 40, 538 )
 				self.clipFinished( BinaryHTML0, {} )
+
 				FramelineVertical000:completeAnimation()
 				self.FramelineVertical000:setLeftRight( true, false, 37.7, 44.27 )
 				self.FramelineVertical000:setTopBottom( true, false, 31.5, 555.11 )
 				self.clipFinished( FramelineVertical000, {} )
+
 				Frameline000:completeAnimation()
 				self.Frameline000:setLeftRight( true, false, 38.27, 816.94 )
 				self.Frameline000:setTopBottom( true, false, 541.75, 548.75 )
 				self.clipFinished( Frameline000, {} )
+
 				dot1100:completeAnimation()
 				self.dot1100:setLeftRight( true, false, 38.37, 45.37 )
 				self.dot1100:setTopBottom( true, false, 541.5, 548.5 )
 				self.clipFinished( dot1100, {} )
+
 				Frameline0000:completeAnimation()
 				self.Frameline0000:setLeftRight( true, false, 41.27, 891.37 )
 				self.Frameline0000:setTopBottom( true, false, 541.5, 548.5 )
 				self.clipFinished( Frameline0000, {} )
+
 				Frameline0001:completeAnimation()
 				self.Frameline0001:setLeftRight( true, false, 41.27, 891.37 )
 				self.Frameline0001:setTopBottom( true, false, 541.5, 548.5 )
 				self.clipFinished( Frameline0001, {} )
+
 				Frameline0002:completeAnimation()
 				self.Frameline0002:setLeftRight( true, false, 40.99, 891.08 )
 				self.Frameline0002:setTopBottom( true, false, 541.5, 548.5 )
 				self.clipFinished( Frameline0002, {} )
+
 				FramelineVertical0000:completeAnimation()
 				self.FramelineVertical0000:setLeftRight( true, false, 37.7, 44.27 )
 				self.FramelineVertical0000:setTopBottom( true, false, 31.5, 555.11 )
 				self.clipFinished( FramelineVertical0000, {} )
+
 				FramelineVertical0001:completeAnimation()
 				self.FramelineVertical0001:setLeftRight( true, false, 38.21, 44.79 )
 				self.FramelineVertical0001:setTopBottom( true, false, 28.4, 552 )
 				self.clipFinished( FramelineVertical0001, {} )
+
 				cross:completeAnimation()
 				self.cross:setLeftRight( true, false, 38.27, 44.27 )
 				self.cross:setTopBottom( true, false, 31, 37 )
@@ -602,126 +646,157 @@ CoD.OmnipediaWidget.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Bookmark_Nav = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Bookmark_Nav = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 29 )
+
 				BinaryHTML0:completeAnimation()
 				self.BinaryHTML0:setLeftRight( true, false, 171.85, 879 )
 				self.BinaryHTML0:setTopBottom( true, false, 40, 538 )
 				self.clipFinished( BinaryHTML0, {} )
+
 				Frameline0:completeAnimation()
 				self.Frameline0:setLeftRight( true, false, 171.85, 891.37 )
 				self.Frameline0:setTopBottom( true, false, 30.5, 37.5 )
 				self.clipFinished( Frameline0, {} )
+
 				FramelineVertical00:completeAnimation()
 				self.FramelineVertical00:setLeftRight( true, false, 882.7, 889.27 )
 				self.FramelineVertical00:setTopBottom( true, false, 29, 548.75 )
 				self.clipFinished( FramelineVertical00, {} )
+
 				frameTopLeft1:completeAnimation()
 				self.frameTopLeft1:setLeftRight( true, false, 14.29, 215.29 )
 				self.frameTopLeft1:setTopBottom( true, false, 30.5, 37.5 )
 				self.clipFinished( frameTopLeft1, {} )
+
 				Frameline00:completeAnimation()
 				self.Frameline00:setLeftRight( true, false, 208.23, 892.37 )
 				self.Frameline00:setTopBottom( true, false, 546.5, 553.5 )
 				self.clipFinished( Frameline00, {} )
+
 				frameTopLeft10:completeAnimation()
 				self.frameTopLeft10:setLeftRight( true, false, 14.29, 215.29 )
 				self.frameTopLeft10:setTopBottom( true, false, 546.5, 553.5 )
 				self.clipFinished( frameTopLeft10, {} )
+
 				FramelineVertical000:completeAnimation()
 				self.FramelineVertical000:setLeftRight( true, false, 162.7, 169.27 )
 				self.FramelineVertical000:setTopBottom( true, false, 31.5, 555.11 )
 				self.clipFinished( FramelineVertical000, {} )
+
 				Frameline000:completeAnimation()
 				self.Frameline000:setLeftRight( true, false, 113.5, 816.94 )
 				self.Frameline000:setTopBottom( true, false, 541.75, 548.75 )
 				self.clipFinished( Frameline000, {} )
+
 				dot1:completeAnimation()
 				self.dot1:setLeftRight( true, false, 173, 181 )
 				self.dot1:setTopBottom( true, false, 30.5, 38.5 )
 				self.clipFinished( dot1, {} )
+
 				dot10:completeAnimation()
 				self.dot10:setLeftRight( true, false, 168, 176 )
 				self.dot10:setTopBottom( true, false, 30.5, 38.5 )
 				self.clipFinished( dot10, {} )
+
 				dot11:completeAnimation()
 				self.dot11:setLeftRight( true, false, 881.37, 889.37 )
 				self.dot11:setTopBottom( true, false, 30.5, 38.5 )
 				self.clipFinished( dot11, {} )
+
 				dot110:completeAnimation()
 				self.dot110:setLeftRight( true, false, 881.37, 888.37 )
 				self.dot110:setTopBottom( true, false, 541.5, 548.5 )
 				self.clipFinished( dot110, {} )
+
 				dot1100:completeAnimation()
 				self.dot1100:setLeftRight( true, false, 109.27, 116.27 )
 				self.dot1100:setTopBottom( true, false, 541.5, 548.5 )
 				self.clipFinished( dot1100, {} )
+
 				doubleline:completeAnimation()
 				self.doubleline:setLeftRight( true, false, 532.37, 889.37 )
 				self.doubleline:setTopBottom( true, false, 546.5, 553.5 )
 				self.clipFinished( doubleline, {} )
+
 				fluff200:completeAnimation()
 				self.fluff200:setLeftRight( true, false, 111.5, 182.5 )
 				self.fluff200:setTopBottom( true, false, 546.65, 552.57 )
 				self.clipFinished( fluff200, {} )
+
 				Frameline01:completeAnimation()
 				self.Frameline01:setLeftRight( true, false, 171.85, 891.37 )
 				self.Frameline01:setTopBottom( true, false, 30.5, 37.5 )
 				self.clipFinished( Frameline01, {} )
+
 				Frameline010:completeAnimation()
 				self.Frameline010:setLeftRight( true, false, 171.85, 891.37 )
 				self.Frameline010:setTopBottom( true, false, 30.5, 37.5 )
 				self.clipFinished( Frameline010, {} )
+
 				Frameline011:completeAnimation()
 				self.Frameline011:setLeftRight( true, false, 171.85, 891.37 )
 				self.Frameline011:setTopBottom( true, false, 30.5, 37.5 )
 				self.clipFinished( Frameline011, {} )
+
 				FramelineVertical001:completeAnimation()
 				self.FramelineVertical001:setLeftRight( true, false, 882.7, 889.27 )
 				self.FramelineVertical001:setTopBottom( true, false, 29, 548.75 )
 				self.clipFinished( FramelineVertical001, {} )
+
 				FramelineVertical002:completeAnimation()
 				self.FramelineVertical002:setLeftRight( true, false, 882.7, 889.27 )
 				self.FramelineVertical002:setTopBottom( true, false, 29, 548.75 )
 				self.clipFinished( FramelineVertical002, {} )
+
 				FramelineVertical003:completeAnimation()
 				self.FramelineVertical003:setLeftRight( true, false, 882.7, 889.27 )
 				self.FramelineVertical003:setTopBottom( true, false, 29, 548.75 )
 				self.clipFinished( FramelineVertical003, {} )
+
 				Frameline0000:completeAnimation()
 				self.Frameline0000:setLeftRight( true, false, 111.5, 891.37 )
 				self.Frameline0000:setTopBottom( true, false, 541.5, 548.5 )
 				self.clipFinished( Frameline0000, {} )
+
 				Frameline0001:completeAnimation()
 				self.Frameline0001:setLeftRight( true, false, 111.5, 891.37 )
 				self.Frameline0001:setTopBottom( true, false, 541.5, 548.5 )
 				self.clipFinished( Frameline0001, {} )
+
 				Frameline0002:completeAnimation()
 				self.Frameline0002:setLeftRight( true, false, 111.5, 891.08 )
 				self.Frameline0002:setTopBottom( true, false, 541.5, 548.5 )
 				self.clipFinished( Frameline0002, {} )
+
 				Frameline001:completeAnimation()
 				self.Frameline001:setLeftRight( true, false, 208.23, 892.37 )
 				self.Frameline001:setTopBottom( true, false, 546.5, 553.5 )
 				self.clipFinished( Frameline001, {} )
+
 				Frameline002:completeAnimation()
 				self.Frameline002:setLeftRight( true, false, 208.23, 892.37 )
 				self.Frameline002:setTopBottom( true, false, 546.5, 553.5 )
 				self.clipFinished( Frameline002, {} )
+
 				FramelineVertical0000:completeAnimation()
 				self.FramelineVertical0000:setLeftRight( true, false, 162.7, 169.27 )
 				self.FramelineVertical0000:setTopBottom( true, false, 31.5, 555.11 )
 				self.clipFinished( FramelineVertical0000, {} )
+
 				FramelineVertical0001:completeAnimation()
 				self.FramelineVertical0001:setLeftRight( true, false, 162.21, 168.79 )
 				self.FramelineVertical0001:setTopBottom( true, false, 28.4, 552 )
 				self.clipFinished( FramelineVertical0001, {} )
+
 				cross:completeAnimation()
 				self.cross:setLeftRight( true, false, 162.27, 168.27 )
 				self.cross:setTopBottom( true, false, 31, 37 )
@@ -729,13 +804,16 @@ CoD.OmnipediaWidget.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Closed_Nav = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
 	BookmarksList.id = "BookmarksList"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Frameline0:close()
 		element.FramelineVertical00:close()

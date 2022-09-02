@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CharacterCustomization.chooseCharacterLoadoutBumpe
 CoD.ChooseCharacterLoadoutCarouselItem_BlackJack_Frame = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacterLoadoutCarouselItem_BlackJack_Frame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacterLoadoutCarouselItem_BlackJack_Frame )
 	self.id = "ChooseCharacterLoadoutCarouselItem_BlackJack_Frame"
@@ -116,9 +118,11 @@ CoD.ChooseCharacterLoadoutCarouselItem_BlackJack_Frame.new = function ( menu, co
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.rightBumper:close()
 		element.FlippedrightBumper:close()

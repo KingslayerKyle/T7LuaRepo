@@ -4,9 +4,11 @@
 CoD.LobbyStreamerBlackFade = InheritFrom( LUI.UIElement )
 CoD.LobbyStreamerBlackFade.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyStreamerBlackFade )
 	self.id = "LobbyStreamerBlackFade"
@@ -26,12 +28,14 @@ CoD.LobbyStreamerBlackFade.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Black:completeAnimation()
 				self.Black:setAlpha( 1 )
 				self.clipFinished( Black, {} )
 			end,
 			Transparent = function ()
 				self:setupElementClipCounter( 1 )
+
 				local BlackFrame2 = function ( Black, event )
 					if not event.interrupted then
 						Black:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -52,6 +56,7 @@ CoD.LobbyStreamerBlackFade.new = function ( menu, controller )
 		Transparent = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Black:completeAnimation()
 				self.Black:setAlpha( 0 )
 				self.clipFinished( Black, {} )

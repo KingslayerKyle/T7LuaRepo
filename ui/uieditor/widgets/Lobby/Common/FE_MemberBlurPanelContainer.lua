@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_MemberBlurPanel" )
 CoD.FE_MemberBlurPanelContainer = InheritFrom( LUI.UIElement )
 CoD.FE_MemberBlurPanelContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_MemberBlurPanelContainer )
 	self.id = "FE_MemberBlurPanelContainer"
@@ -28,6 +30,7 @@ CoD.FE_MemberBlurPanelContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FEMemberBlurPanel0:completeAnimation()
 				self.FEMemberBlurPanel0:setAlpha( 1 )
 				self.clipFinished( FEMemberBlurPanel0, {} )
@@ -36,12 +39,14 @@ CoD.FE_MemberBlurPanelContainer.new = function ( menu, controller )
 		Transparent = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FEMemberBlurPanel0:completeAnimation()
 				self.FEMemberBlurPanel0:setAlpha( 0 )
 				self.clipFinished( FEMemberBlurPanel0, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FEMemberBlurPanel0Frame2 = function ( FEMemberBlurPanel0, event )
 					if not event.interrupted then
 						FEMemberBlurPanel0:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -60,6 +65,7 @@ CoD.FE_MemberBlurPanelContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Transparent",
@@ -76,6 +82,7 @@ CoD.FE_MemberBlurPanelContainer.new = function ( menu, controller )
 			modelName = "hideWorldForStreamer"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEMemberBlurPanel0:close()
 	end )

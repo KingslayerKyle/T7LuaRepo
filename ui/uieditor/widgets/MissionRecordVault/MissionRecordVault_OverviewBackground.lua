@@ -4,9 +4,11 @@
 CoD.MissionRecordVault_OverviewBackground = InheritFrom( LUI.UIElement )
 CoD.MissionRecordVault_OverviewBackground.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MissionRecordVault_OverviewBackground )
 	self.id = "MissionRecordVault_OverviewBackground"
@@ -26,6 +28,7 @@ CoD.MissionRecordVault_OverviewBackground.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				backgroundMid:completeAnimation()
 				self.backgroundMid:setAlpha( 0.5 )
 				self.clipFinished( backgroundMid, {} )
@@ -34,6 +37,7 @@ CoD.MissionRecordVault_OverviewBackground.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				backgroundMid:completeAnimation()
 				self.backgroundMid:setAlpha( 0 )
 				self.clipFinished( backgroundMid, {} )

@@ -4,9 +4,11 @@
 CoD.Target = InheritFrom( LUI.UIElement )
 CoD.Target.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Target )
 	self.id = "Target"
@@ -76,21 +78,27 @@ CoD.Target.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				timerbgshadow:completeAnimation()
 				self.timerbgshadow:setAlpha( 0 )
 				self.clipFinished( timerbgshadow, {} )
+
 				timerbg:completeAnimation()
 				self.timerbg:setAlpha( 0 )
 				self.clipFinished( timerbg, {} )
+
 				iconshadow:completeAnimation()
 				self.iconshadow:setAlpha( 0 )
 				self.clipFinished( iconshadow, {} )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 0 )
 				self.clipFinished( icon, {} )
+
 				TimerShadow:completeAnimation()
 				self.TimerShadow:setAlpha( 0 )
 				self.clipFinished( TimerShadow, {} )
+
 				Timer0:completeAnimation()
 				self.Timer0:setAlpha( 0 )
 				self.clipFinished( Timer0, {} )
@@ -99,27 +107,34 @@ CoD.Target.new = function ( menu, controller )
 		LockedOn = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				timerbgshadow:completeAnimation()
 				self.timerbgshadow:setAlpha( 0.8 )
 				self.clipFinished( timerbgshadow, {} )
+
 				timerbg:completeAnimation()
 				self.timerbg:setAlpha( 1 )
 				self.clipFinished( timerbg, {} )
+
 				iconshadow:completeAnimation()
 				self.iconshadow:setAlpha( 0.8 )
 				self.clipFinished( iconshadow, {} )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 1 )
 				self.clipFinished( icon, {} )
+
 				TimerShadow:completeAnimation()
 				self.TimerShadow:setAlpha( 0.8 )
 				self.clipFinished( TimerShadow, {} )
+
 				Timer0:completeAnimation()
 				self.Timer0:setAlpha( 1 )
 				self.clipFinished( Timer0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "LockedOn",
@@ -136,6 +151,7 @@ CoD.Target.new = function ( menu, controller )
 			modelName = "currentWeapon.lockedOnEnemy"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TimerShadow:close()
 		element.Timer0:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.InfoPaneItemNameLabel = InheritFrom( LUI.UIElement )
 CoD.InfoPaneItemNameLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.InfoPaneItemNameLabel )
 	self.id = "InfoPaneItemNameLabel"
@@ -45,6 +47,7 @@ CoD.InfoPaneItemNameLabel.new = function ( menu, controller )
 	itemName:setLetterSpacing( 0.6 )
 	itemName:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	itemName:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( itemName, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 1 )
 	end )

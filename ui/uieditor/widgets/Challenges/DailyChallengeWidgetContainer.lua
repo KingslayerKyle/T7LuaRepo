@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Challenges.Challenges_ZM_LobbyWidget" )
 CoD.DailyChallengeWidgetContainer = InheritFrom( LUI.UIElement )
 CoD.DailyChallengeWidgetContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DailyChallengeWidgetContainer )
 	self.id = "DailyChallengeWidgetContainer"
@@ -27,15 +29,18 @@ CoD.DailyChallengeWidgetContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 1 )
+
 				DailyChallengeWidget:completeAnimation()
 				self.DailyChallengeWidget:setAlpha( 1 )
 				self.clipFinished( DailyChallengeWidget, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.DailyChallengeWidget:close()
 	end )

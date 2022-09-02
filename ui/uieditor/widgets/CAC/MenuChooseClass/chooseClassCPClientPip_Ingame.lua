@@ -4,9 +4,11 @@
 CoD.chooseClassCPClientPip_Ingame = InheritFrom( LUI.UIElement )
 CoD.chooseClassCPClientPip_Ingame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.chooseClassCPClientPip_Ingame )
 	self.id = "chooseClassCPClientPip_Ingame"
@@ -37,10 +39,12 @@ CoD.chooseClassCPClientPip_Ingame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				pip:completeAnimation()
 				self.pip:setRGB( 0.53, 0.53, 0.53 )
 				self.pip:setAlpha( 0.5 )
 				self.clipFinished( pip, {} )
+
 				pipGlow:completeAnimation()
 				self.pipGlow:setLeftRight( true, false, 2, 6 )
 				self.pipGlow:setTopBottom( true, false, -1, 9 )
@@ -52,10 +56,12 @@ CoD.chooseClassCPClientPip_Ingame.new = function ( menu, controller )
 		Selected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				pip:completeAnimation()
 				self.pip:setRGB( 1, 0.72, 0.36 )
 				self.pip:setAlpha( 0.7 )
 				self.clipFinished( pip, {} )
+
 				pipGlow:completeAnimation()
 				self.pipGlow:setLeftRight( true, false, 2, 6 )
 				self.pipGlow:setTopBottom( true, false, -1, 9 )
@@ -66,6 +72,7 @@ CoD.chooseClassCPClientPip_Ingame.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Selected",

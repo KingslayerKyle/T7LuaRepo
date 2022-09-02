@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.MenuChooseClass.ItemWidgets.WeaponItemModelWid
 CoD.SecondaryWeaponAttachmentsWidget_InGame = InheritFrom( LUI.UIElement )
 CoD.SecondaryWeaponAttachmentsWidget_InGame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SecondaryWeaponAttachmentsWidget_InGame )
 	self.id = "SecondaryWeaponAttachmentsWidget_InGame"

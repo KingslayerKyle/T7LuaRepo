@@ -4,9 +4,11 @@
 CoD.BookmarkItem = InheritFrom( LUI.UIElement )
 CoD.BookmarkItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BookmarkItem )
 	self.id = "BookmarkItem"
@@ -35,18 +37,21 @@ CoD.BookmarkItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Bookmark:completeAnimation()
 				self.Bookmark:setRGB( 1, 1, 1 )
 				self.clipFinished( Bookmark, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
+
 				Bookmark:completeAnimation()
 				self.Bookmark:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.clipFinished( Bookmark, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Bookmark:close()
 	end )

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Terminal.FocusWidget" )
 CoD.CodexApplet = InheritFrom( LUI.UIElement )
 CoD.CodexApplet.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodexApplet )
 	self.id = "CodexApplet"
@@ -61,9 +63,11 @@ CoD.CodexApplet.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local GeneralframeFrame2 = function ( Generalframe, event )
 					if not event.interrupted then
 						Generalframe:beginAnimation( "keyframe", 189, false, false, CoD.TweenType.Linear )
@@ -190,18 +194,22 @@ CoD.CodexApplet.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				Generalframe:completeAnimation()
 				self.Generalframe:setLeftRight( true, true, 0, 0 )
 				self.Generalframe:setTopBottom( true, true, 14.21, 14.21 )
 				self.clipFinished( Generalframe, {} )
+
 				focus:completeAnimation()
 				self.focus:setLeftRight( true, true, 0, 0 )
 				self.focus:setTopBottom( true, true, 14.21, 14.21 )
 				self.clipFinished( focus, {} )
+
 				unfocused:completeAnimation()
 				self.unfocused:setLeftRight( true, true, 0, 0 )
 				self.unfocused:setTopBottom( true, true, 14.21, 14.21 )
 				self.clipFinished( unfocused, {} )
+
 				FocusWidget:completeAnimation()
 				self.FocusWidget:setLeftRight( true, true, -9, 7.71 )
 				self.FocusWidget:setTopBottom( true, false, -10, 10 )
@@ -209,6 +217,7 @@ CoD.CodexApplet.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local GeneralframeFrame2 = function ( Generalframe, event )
 					if not event.interrupted then
 						Generalframe:beginAnimation( "keyframe", 180, false, false, CoD.TweenType.Linear )
@@ -299,12 +308,15 @@ CoD.CodexApplet.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Generalframe:close()
 		element.FocusWidget:close()

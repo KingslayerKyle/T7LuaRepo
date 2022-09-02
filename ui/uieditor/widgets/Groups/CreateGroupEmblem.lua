@@ -4,9 +4,11 @@
 CoD.CreateGroupEmblem = InheritFrom( LUI.UIElement )
 CoD.CreateGroupEmblem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CreateGroupEmblem )
 	self.id = "CreateGroupEmblem"
@@ -38,6 +40,7 @@ CoD.CreateGroupEmblem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DefaultGroupEmblem:completeAnimation()
 				self.DefaultGroupEmblem:setLeftRight( true, false, 0, 500 )
 				self.DefaultGroupEmblem:setTopBottom( true, false, 0, 314 )
@@ -48,6 +51,7 @@ CoD.CreateGroupEmblem.new = function ( menu, controller )
 		DefaultGroupEmblem = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DefaultGroupEmblem:completeAnimation()
 				self.DefaultGroupEmblem:setAlpha( 1 )
 				self.clipFinished( DefaultGroupEmblem, {} )
@@ -56,12 +60,14 @@ CoD.CreateGroupEmblem.new = function ( menu, controller )
 		ShowPlayerEmblem = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DefaultGroupEmblem:completeAnimation()
 				self.DefaultGroupEmblem:setAlpha( 0 )
 				self.clipFinished( DefaultGroupEmblem, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DefaultGroupEmblem",
@@ -76,6 +82,7 @@ CoD.CreateGroupEmblem.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GroupEmblem:close()
 	end )

@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_AbilityIcon" )
 CoD.AmmoWidget_AbilityIconContainer = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_AbilityIconContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_AbilityIconContainer )
 	self.id = "AmmoWidget_AbilityIconContainer"
@@ -82,26 +84,32 @@ CoD.AmmoWidget_AbilityIconContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BackGlow:completeAnimation()
 				self.BackGlow:setAlpha( 0.3 )
 				self.clipFinished( BackGlow, {} )
+
 				AbilityAftStroke:completeAnimation()
 				self.AbilityAftStroke:setAlpha( 1 )
 				self.AbilityAftStroke:setZoom( -15 )
 				self.clipFinished( AbilityAftStroke, {} )
+
 				Fill:completeAnimation()
 				self.Fill:setAlpha( 0.6 )
 				self.Fill:setZoom( 5 )
 				self.clipFinished( Fill, {} )
+
 				ForeStroke:completeAnimation()
 				self.ForeStroke:setAlpha( 1 )
 				self.ForeStroke:setZoom( -8 )
 				self.clipFinished( ForeStroke, {} )
+
 				AbilityIcon:completeAnimation()
 				self.AbilityIcon:setLeftRight( true, false, 5, 42 )
 				self.AbilityIcon:setTopBottom( true, false, 10, 47 )
@@ -111,6 +119,7 @@ CoD.AmmoWidget_AbilityIconContainer.new = function ( menu, controller )
 			end,
 			Charge = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BackGlowFrame2 = function ( BackGlow, event )
 					if not event.interrupted then
 						BackGlow:beginAnimation( "keyframe", 360, false, false, CoD.TweenType.Linear )
@@ -211,6 +220,7 @@ CoD.AmmoWidget_AbilityIconContainer.new = function ( menu, controller )
 			end,
 			InUse = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BackGlowFrame2 = function ( BackGlow, event )
 					if not event.interrupted then
 						BackGlow:beginAnimation( "keyframe", 430, false, false, CoD.TweenType.Linear )
@@ -301,6 +311,7 @@ CoD.AmmoWidget_AbilityIconContainer.new = function ( menu, controller )
 			end,
 			NoGadget = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BackGlowFrame2 = function ( BackGlow, event )
 					if not event.interrupted then
 						BackGlow:beginAnimation( "keyframe", 409, false, false, CoD.TweenType.Linear )
@@ -393,21 +404,26 @@ CoD.AmmoWidget_AbilityIconContainer.new = function ( menu, controller )
 		Charge = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BackGlow:completeAnimation()
 				self.BackGlow:setAlpha( 0 )
 				self.clipFinished( BackGlow, {} )
+
 				AbilityAftStroke:completeAnimation()
 				self.AbilityAftStroke:setAlpha( 1 )
 				self.AbilityAftStroke:setZoom( -15 )
 				self.clipFinished( AbilityAftStroke, {} )
+
 				Fill:completeAnimation()
 				self.Fill:setAlpha( 0.2 )
 				self.Fill:setZoom( -10 )
 				self.clipFinished( Fill, {} )
+
 				ForeStroke:completeAnimation()
 				self.ForeStroke:setAlpha( 1 )
 				self.ForeStroke:setZoom( -5 )
 				self.clipFinished( ForeStroke, {} )
+
 				AbilityIcon:completeAnimation()
 				self.AbilityIcon:setAlpha( 0.5 )
 				self.AbilityIcon:setZoom( 8 )
@@ -415,6 +431,7 @@ CoD.AmmoWidget_AbilityIconContainer.new = function ( menu, controller )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BackGlowFrame2 = function ( BackGlow, event )
 					if not event.interrupted then
 						BackGlow:beginAnimation( "keyframe", 430, false, false, CoD.TweenType.Linear )
@@ -505,6 +522,7 @@ CoD.AmmoWidget_AbilityIconContainer.new = function ( menu, controller )
 			end,
 			InUse = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BackGlowFrame2 = function ( BackGlow, event )
 					if not event.interrupted then
 						BackGlow:beginAnimation( "keyframe", 319, false, false, CoD.TweenType.Linear )
@@ -591,6 +609,7 @@ CoD.AmmoWidget_AbilityIconContainer.new = function ( menu, controller )
 			end,
 			NoGadget = function ()
 				self:setupElementClipCounter( 5 )
+
 				BackGlow:completeAnimation()
 				self.BackGlow:setAlpha( 0 )
 				self.clipFinished( BackGlow, {} )
@@ -667,21 +686,26 @@ CoD.AmmoWidget_AbilityIconContainer.new = function ( menu, controller )
 		InUse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BackGlow:completeAnimation()
 				self.BackGlow:setAlpha( 0.3 )
 				self.clipFinished( BackGlow, {} )
+
 				AbilityAftStroke:completeAnimation()
 				self.AbilityAftStroke:setAlpha( 1 )
 				self.AbilityAftStroke:setZoom( -15 )
 				self.clipFinished( AbilityAftStroke, {} )
+
 				Fill:completeAnimation()
 				self.Fill:setAlpha( 0.4 )
 				self.Fill:setZoom( -8 )
 				self.clipFinished( Fill, {} )
+
 				ForeStroke:completeAnimation()
 				self.ForeStroke:setAlpha( 1 )
 				self.ForeStroke:setZoom( 5 )
 				self.clipFinished( ForeStroke, {} )
+
 				AbilityIcon:completeAnimation()
 				self.AbilityIcon:setAlpha( 0.8 )
 				self.AbilityIcon:setZoom( 8 )
@@ -689,6 +713,7 @@ CoD.AmmoWidget_AbilityIconContainer.new = function ( menu, controller )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BackGlowFrame2 = function ( BackGlow, event )
 					if not event.interrupted then
 						BackGlow:beginAnimation( "keyframe", 460, false, false, CoD.TweenType.Linear )
@@ -779,6 +804,7 @@ CoD.AmmoWidget_AbilityIconContainer.new = function ( menu, controller )
 			end,
 			Charge = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BackGlowFrame2 = function ( BackGlow, event )
 					if not event.interrupted then
 						BackGlow:beginAnimation( "keyframe", 400, false, false, CoD.TweenType.Linear )
@@ -865,6 +891,7 @@ CoD.AmmoWidget_AbilityIconContainer.new = function ( menu, controller )
 			end,
 			NoGadget = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BackGlowFrame2 = function ( BackGlow, event )
 					if not event.interrupted then
 						BackGlow:beginAnimation( "keyframe", 349, false, false, CoD.TweenType.Linear )
@@ -953,21 +980,26 @@ CoD.AmmoWidget_AbilityIconContainer.new = function ( menu, controller )
 		NoGadget = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BackGlow:completeAnimation()
 				self.BackGlow:setAlpha( 0 )
 				self.clipFinished( BackGlow, {} )
+
 				AbilityAftStroke:completeAnimation()
 				self.AbilityAftStroke:setAlpha( 0.5 )
 				self.AbilityAftStroke:setZoom( -15 )
 				self.clipFinished( AbilityAftStroke, {} )
+
 				Fill:completeAnimation()
 				self.Fill:setAlpha( 0 )
 				self.Fill:setZoom( -10 )
 				self.clipFinished( Fill, {} )
+
 				ForeStroke:completeAnimation()
 				self.ForeStroke:setAlpha( 0.5 )
 				self.ForeStroke:setZoom( -5 )
 				self.clipFinished( ForeStroke, {} )
+
 				AbilityIcon:completeAnimation()
 				self.AbilityIcon:setAlpha( 0 )
 				self.AbilityIcon:setZoom( 0 )
@@ -975,6 +1007,7 @@ CoD.AmmoWidget_AbilityIconContainer.new = function ( menu, controller )
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BackGlowFrame2 = function ( BackGlow, event )
 					if not event.interrupted then
 						BackGlow:beginAnimation( "keyframe", 379, false, false, CoD.TweenType.Linear )
@@ -1065,6 +1098,7 @@ CoD.AmmoWidget_AbilityIconContainer.new = function ( menu, controller )
 			end,
 			Charge = function ()
 				self:setupElementClipCounter( 5 )
+
 				BackGlow:completeAnimation()
 				self.BackGlow:setAlpha( 0 )
 				self.clipFinished( BackGlow, {} )
@@ -1139,6 +1173,7 @@ CoD.AmmoWidget_AbilityIconContainer.new = function ( menu, controller )
 			end,
 			InUse = function ()
 				self:setupElementClipCounter( 5 )
+
 				local BackGlowFrame2 = function ( BackGlow, event )
 					if not event.interrupted then
 						BackGlow:beginAnimation( "keyframe", 310, false, false, CoD.TweenType.Linear )
@@ -1225,6 +1260,7 @@ CoD.AmmoWidget_AbilityIconContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Ready",
@@ -1296,6 +1332,7 @@ CoD.AmmoWidget_AbilityIconContainer.new = function ( menu, controller )
 			modelName = "currentWeapon.weapon"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AbilityAftStroke:close()
 		element.Fill:close()

@@ -4,9 +4,11 @@
 CoD.Social_PartyLeaderIconLarge = InheritFrom( LUI.UIElement )
 CoD.Social_PartyLeaderIconLarge.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_PartyLeaderIconLarge )
 	self.id = "Social_PartyLeaderIconLarge"
@@ -28,6 +30,7 @@ CoD.Social_PartyLeaderIconLarge.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Leader:completeAnimation()
 				self.Leader:setAlpha( 0 )
 				self.clipFinished( Leader, {} )
@@ -36,6 +39,7 @@ CoD.Social_PartyLeaderIconLarge.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Leader:completeAnimation()
 				self.Leader:setLeftRight( true, false, -2, 21.25 )
 				self.Leader:setTopBottom( true, false, -3, 59 )

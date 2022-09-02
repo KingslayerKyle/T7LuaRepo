@@ -4,9 +4,11 @@
 CoD.StartMenu_ImageContainer_Credits_SM = InheritFrom( LUI.UIElement )
 CoD.StartMenu_ImageContainer_Credits_SM.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.StartMenu_ImageContainer_Credits_SM )
 	self.id = "StartMenu_ImageContainer_Credits_SM"
@@ -24,6 +26,7 @@ CoD.StartMenu_ImageContainer_Credits_SM.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

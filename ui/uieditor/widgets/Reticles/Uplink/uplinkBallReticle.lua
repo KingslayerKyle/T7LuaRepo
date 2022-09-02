@@ -16,9 +16,11 @@ end
 CoD.uplinkBallReticle = InheritFrom( LUI.UIElement )
 CoD.uplinkBallReticle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.uplinkBallReticle )
 	self.id = "uplinkBallReticle"
@@ -139,6 +141,7 @@ CoD.uplinkBallReticle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				local BlackFrameFrame2 = function ( BlackFrame, event )
 					local BlackFrameFrame3 = function ( BlackFrame, event )
 						if not event.interrupted then
@@ -168,14 +171,18 @@ CoD.uplinkBallReticle.new = function ( menu, controller )
 				self.BlackFrame:setTopBottom( false, false, 174.63, 191.63 )
 				self.BlackFrame:setAlpha( 0.3 )
 				BlackFrameFrame2( BlackFrame, {} )
+
 				BallArmorWidget:completeAnimation()
+
 				BallArmorWidget.armorLabel:completeAnimation()
 				self.BallArmorWidget:setAlpha( 1 )
 				self.BallArmorWidget.armorLabel:setText( Engine.Localize( "MP_HUD_UPLINK_ARMOR" ) )
 				self.clipFinished( BallArmorWidget, {} )
+
 				armorBorder:completeAnimation()
 				self.armorBorder:setAlpha( 0.4 )
 				self.clipFinished( armorBorder, {} )
+
 				armorFill:completeAnimation()
 				self.armorFill:setAlpha( 1 )
 				self.clipFinished( armorFill, {} )
@@ -237,12 +244,15 @@ CoD.uplinkBallReticle.new = function ( menu, controller )
 				self.throwIcon:setTopBottom( false, false, 168, 202.13 )
 				self.throwIcon:setAlpha( 1 )
 				throwIconFrame2( throwIcon, {} )
+
 				uplinkReticle:completeAnimation()
 				self.uplinkReticle:setAlpha( 1 )
 				self.clipFinished( uplinkReticle, {} )
+
 				KeyMouseThrow:completeAnimation()
 				self.KeyMouseThrow:setAlpha( 0 )
 				self.clipFinished( KeyMouseThrow, {} )
+
 				KeyMousePass:completeAnimation()
 				self.KeyMousePass:setAlpha( 0 )
 				self.clipFinished( KeyMousePass, {} )
@@ -309,36 +319,47 @@ CoD.uplinkBallReticle.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				BlackFrame:completeAnimation()
 				self.BlackFrame:setAlpha( 0 )
 				self.clipFinished( BlackFrame, {} )
+
 				BallArmorWidget:completeAnimation()
 				self.BallArmorWidget:setAlpha( 0 )
 				self.clipFinished( BallArmorWidget, {} )
+
 				armorBorder:completeAnimation()
 				self.armorBorder:setAlpha( 0 )
 				self.clipFinished( armorBorder, {} )
+
 				armorFill:completeAnimation()
 				self.armorFill:setAlpha( 0 )
 				self.clipFinished( armorFill, {} )
+
 				passIcon:completeAnimation()
 				self.passIcon:setAlpha( 0 )
 				self.clipFinished( passIcon, {} )
+
 				throwIcon:completeAnimation()
 				self.throwIcon:setAlpha( 0 )
 				self.clipFinished( throwIcon, {} )
+
 				uplinkReticle:completeAnimation()
 				self.uplinkReticle:setAlpha( 0 )
 				self.clipFinished( uplinkReticle, {} )
+
 				KeyMouseThrow:completeAnimation()
 				self.KeyMouseThrow:setAlpha( 0 )
 				self.clipFinished( KeyMouseThrow, {} )
+
 				KeyMousePass:completeAnimation()
 				self.KeyMousePass:setAlpha( 0 )
 				self.clipFinished( KeyMousePass, {} )
+
 				Trow:completeAnimation()
 				self.Trow:setAlpha( 0 )
 				self.clipFinished( Trow, {} )
+
 				Pass:completeAnimation()
 				self.Pass:setAlpha( 0 )
 				self.clipFinished( Pass, {} )
@@ -347,33 +368,43 @@ CoD.uplinkBallReticle.new = function ( menu, controller )
 		HiddenOffhand = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BlackFrame:completeAnimation()
 				self.BlackFrame:setAlpha( 0 )
 				self.clipFinished( BlackFrame, {} )
+
 				armorBorder:completeAnimation()
 				self.armorBorder:setAlpha( 0 )
 				self.clipFinished( armorBorder, {} )
+
 				armorFill:completeAnimation()
 				self.armorFill:setAlpha( 0 )
 				self.clipFinished( armorFill, {} )
+
 				passIcon:completeAnimation()
 				self.passIcon:setAlpha( 0 )
 				self.clipFinished( passIcon, {} )
+
 				throwIcon:completeAnimation()
 				self.throwIcon:setAlpha( 0 )
 				self.clipFinished( throwIcon, {} )
+
 				uplinkReticle:completeAnimation()
 				self.uplinkReticle:setAlpha( 0 )
 				self.clipFinished( uplinkReticle, {} )
+
 				KeyMouseThrow:completeAnimation()
 				self.KeyMouseThrow:setAlpha( 0 )
 				self.clipFinished( KeyMouseThrow, {} )
+
 				KeyMousePass:completeAnimation()
 				self.KeyMousePass:setAlpha( 0 )
 				self.clipFinished( KeyMousePass, {} )
+
 				Trow:completeAnimation()
 				self.Trow:setAlpha( 0 )
 				self.clipFinished( Trow, {} )
+
 				Pass:completeAnimation()
 				self.Pass:setAlpha( 0 )
 				self.clipFinished( Pass, {} )
@@ -382,6 +413,7 @@ CoD.uplinkBallReticle.new = function ( menu, controller )
 		KeyMouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				local BlackFrameFrame2 = function ( BlackFrame, event )
 					local BlackFrameFrame3 = function ( BlackFrame, event )
 						if not event.interrupted then
@@ -411,14 +443,18 @@ CoD.uplinkBallReticle.new = function ( menu, controller )
 				self.BlackFrame:setTopBottom( false, false, 174.63, 191.63 )
 				self.BlackFrame:setAlpha( 0.3 )
 				BlackFrameFrame2( BlackFrame, {} )
+
 				BallArmorWidget:completeAnimation()
+
 				BallArmorWidget.armorLabel:completeAnimation()
 				self.BallArmorWidget:setAlpha( 1 )
 				self.BallArmorWidget.armorLabel:setText( Engine.Localize( "MP_HUD_UPLINK_ARMOR" ) )
 				self.clipFinished( BallArmorWidget, {} )
+
 				passIcon:completeAnimation()
 				self.passIcon:setAlpha( 0 )
 				self.clipFinished( passIcon, {} )
+
 				throwIcon:completeAnimation()
 				self.throwIcon:setAlpha( 0 )
 				self.clipFinished( throwIcon, {} )
@@ -480,15 +516,18 @@ CoD.uplinkBallReticle.new = function ( menu, controller )
 				self.KeyMousePass:setTopBottom( false, false, 172.63, 192.63 )
 				self.KeyMousePass:setAlpha( 1 )
 				KeyMousePassFrame2( KeyMousePass, {} )
+
 				Trow:completeAnimation()
 				self.Trow:setAlpha( 0 )
 				self.clipFinished( Trow, {} )
+
 				Pass:completeAnimation()
 				self.Pass:setAlpha( 0 )
 				self.clipFinished( Pass, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -670,6 +709,7 @@ CoD.uplinkBallReticle.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BallArmorWidget:close()
 		element.armorBorder:close()

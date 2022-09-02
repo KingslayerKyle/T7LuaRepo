@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.AbilityWheel.AbilityWheel_Pixel" )
 CoD.outofbounds_arrowswidget = InheritFrom( LUI.UIElement )
 CoD.outofbounds_arrowswidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.outofbounds_arrowswidget )
 	self.id = "outofbounds_arrowswidget"
@@ -138,6 +140,7 @@ CoD.outofbounds_arrowswidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				local RightLargeArrow0Frame2 = function ( RightLargeArrow0, event )
 					local RightLargeArrow0Frame3 = function ( RightLargeArrow0, event )
 						if not event.interrupted then
@@ -488,15 +491,18 @@ CoD.outofbounds_arrowswidget.new = function ( menu, controller )
 				self.AbilityWheelPixel3000:setTopBottom( false, false, -60.61, -52.61 )
 				self.AbilityWheelPixel3000:setAlpha( 0 )
 				AbilityWheelPixel3000Frame2( AbilityWheelPixel3000, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		IsOutOfBounds = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AbilityWheelPixel0:close()
 		element.AbilityWheelPixel1:close()

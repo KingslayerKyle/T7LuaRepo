@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.siegebot.vhud_siegebot_missile_icon" )
 CoD.vhud_siegebot_missile_count = InheritFrom( LUI.UIElement )
 CoD.vhud_siegebot_missile_count.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.vhud_siegebot_missile_count )
 	self.id = "vhud_siegebot_missile_count"

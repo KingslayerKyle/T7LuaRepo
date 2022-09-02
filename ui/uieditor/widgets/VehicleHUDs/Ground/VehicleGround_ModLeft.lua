@@ -16,9 +16,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Ground.VehicleGround_ModDNI" )
 CoD.VehicleGround_ModLeft = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_ModLeft.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VehicleGround_ModLeft )
 	self.id = "VehicleGround_ModLeft"
@@ -103,6 +105,7 @@ CoD.VehicleGround_ModLeft.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				local VehicleGroundModB40Frame2 = function ( VehicleGroundModB40, event )
 					local VehicleGroundModB40Frame3 = function ( VehicleGroundModB40, event )
 						local VehicleGroundModB40Frame4 = function ( VehicleGroundModB40, event )
@@ -2123,15 +2126,18 @@ CoD.VehicleGround_ModLeft.new = function ( menu, controller )
 				self.VehicleGroundModT10:setTopBottom( true, false, 0, 36 )
 				self.VehicleGroundModT10:setAlpha( 1 )
 				VehicleGroundModT10Frame2( VehicleGroundModT10, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -2148,6 +2154,7 @@ CoD.VehicleGround_ModLeft.new = function ( menu, controller )
 			modelName = "vehicleType"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.VehicleGroundModB40:close()
 		element.VehicleGroundModB30:close()

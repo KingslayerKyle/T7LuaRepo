@@ -4,9 +4,11 @@
 CoD.bleedout_ring3_left = InheritFrom( LUI.UIElement )
 CoD.bleedout_ring3_left.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.bleedout_ring3_left )
 	self.id = "bleedout_ring3_left"

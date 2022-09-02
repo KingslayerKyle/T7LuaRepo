@@ -4,9 +4,11 @@
 CoD.cac_TrainingSimCompleted = InheritFrom( LUI.UIElement )
 CoD.cac_TrainingSimCompleted.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_TrainingSimCompleted )
 	self.id = "cac_TrainingSimCompleted"
@@ -38,23 +40,28 @@ CoD.cac_TrainingSimCompleted.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				completedString:completeAnimation()
 				self.completedString:setAlpha( 0 )
 				self.clipFinished( completedString, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Back = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Completed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				rewardString:completeAnimation()
 				self.rewardString:setAlpha( 0 )
 				self.clipFinished( rewardString, {} )

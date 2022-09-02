@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.AbilityWheel.AbilityWheel_Pixel" )
 CoD.AbilityWheel_ElementsSide = InheritFrom( LUI.UIElement )
 CoD.AbilityWheel_ElementsSide.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AbilityWheel_ElementsSide )
 	self.id = "AbilityWheel_ElementsSide"
@@ -94,36 +96,46 @@ CoD.AbilityWheel_ElementsSide.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				SideLine:completeAnimation()
 				self.SideLine:setAlpha( 0.5 )
 				self.clipFinished( SideLine, {} )
+
 				Diag2:completeAnimation()
 				self.Diag2:setAlpha( 0.2 )
 				self.clipFinished( Diag2, {} )
+
 				Dots:completeAnimation()
 				self.Dots:setAlpha( 1 )
 				self.clipFinished( Dots, {} )
+
 				Semi:completeAnimation()
 				self.Semi:setAlpha( 0.6 )
 				self.clipFinished( Semi, {} )
+
 				AbilityWheelPixel6:completeAnimation()
 				self.AbilityWheelPixel6:setAlpha( 0.8 )
 				self.clipFinished( AbilityWheelPixel6, {} )
+
 				AbilityWheelPixel7:completeAnimation()
 				self.AbilityWheelPixel7:setAlpha( 0.8 )
 				self.clipFinished( AbilityWheelPixel7, {} )
+
 				AbilityWheelPixel8:completeAnimation()
 				self.AbilityWheelPixel8:setAlpha( 0.8 )
 				self.clipFinished( AbilityWheelPixel8, {} )
+
 				AbilityWheelPixel9:completeAnimation()
 				self.AbilityWheelPixel9:setAlpha( 0.8 )
 				self.clipFinished( AbilityWheelPixel9, {} )
+
 				Diag:completeAnimation()
 				self.Diag:setAlpha( 0.2 )
 				self.clipFinished( Diag, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AbilityWheelPixel6:close()
 		element.AbilityWheelPixel7:close()

@@ -4,9 +4,11 @@
 CoD.BMWire2 = InheritFrom( LUI.UIElement )
 CoD.BMWire2.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BMWire2 )
 	self.id = "BMWire2"
@@ -35,15 +37,18 @@ CoD.BMWire2.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				wires2:completeAnimation()
 				self.wires2:setAlpha( 0 )
 				self.clipFinished( wires2, {} )
+
 				Mask0:completeAnimation()
 				self.Mask0:setAlpha( 0 )
 				self.clipFinished( Mask0, {} )
 			end,
 			circuitanim = function ()
 				self:setupElementClipCounter( 2 )
+
 				local wires2Frame2 = function ( wires2, event )
 					local wires2Frame3 = function ( wires2, event )
 						if not event.interrupted then

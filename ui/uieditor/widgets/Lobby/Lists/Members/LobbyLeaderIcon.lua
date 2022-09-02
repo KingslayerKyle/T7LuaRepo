@@ -4,9 +4,11 @@
 CoD.LobbyLeaderIcon = InheritFrom( LUI.UIElement )
 CoD.LobbyLeaderIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyLeaderIcon )
 	self.id = "LobbyLeaderIcon"
@@ -36,6 +38,7 @@ CoD.LobbyLeaderIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Member:completeAnimation()
 				self.Member:setLeftRight( true, false, -1, 23 )
 				self.Member:setTopBottom( true, false, 1, 33 )
@@ -46,11 +49,13 @@ CoD.LobbyLeaderIcon.new = function ( menu, controller )
 		TopOrMiddleZM = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Member:completeAnimation()
 				self.Member:setLeftRight( true, false, -1, 23 )
 				self.Member:setTopBottom( true, false, 1, 98 )
 				self.Member:setAlpha( 1 )
 				self.clipFinished( Member, {} )
+
 				Leader:completeAnimation()
 				self.Leader:setAlpha( 1 )
 				self.clipFinished( Leader, {} )
@@ -59,11 +64,13 @@ CoD.LobbyLeaderIcon.new = function ( menu, controller )
 		TopOrMiddle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Member:completeAnimation()
 				self.Member:setLeftRight( true, false, -1, 23 )
 				self.Member:setTopBottom( true, false, 1, 33 )
 				self.Member:setAlpha( 1 )
 				self.clipFinished( Member, {} )
+
 				Leader:completeAnimation()
 				self.Leader:setAlpha( 1 )
 				self.clipFinished( Leader, {} )
@@ -72,11 +79,13 @@ CoD.LobbyLeaderIcon.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Member:completeAnimation()
 				self.Member:setLeftRight( true, false, -1, 23 )
 				self.Member:setTopBottom( true, false, 1, 33 )
 				self.Member:setAlpha( 0 )
 				self.clipFinished( Member, {} )
+
 				Leader:completeAnimation()
 				self.Leader:setAlpha( 0 )
 				self.clipFinished( Leader, {} )

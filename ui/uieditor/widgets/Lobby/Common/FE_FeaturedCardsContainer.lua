@@ -113,9 +113,11 @@ end
 CoD.FE_FeaturedCardsContainer = InheritFrom( LUI.UIElement )
 CoD.FE_FeaturedCardsContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_FeaturedCardsContainer )
 	self.id = "FE_FeaturedCardsContainer"
@@ -353,67 +355,87 @@ CoD.FE_FeaturedCardsContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setAlpha( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				BlackBack:completeAnimation()
 				self.BlackBack:setRGB( 0, 0, 0 )
 				self.BlackBack:setAlpha( 0 )
 				self.clipFinished( BlackBack, {} )
+
 				CardsList:completeAnimation()
 				self.CardsList:setAlpha( 0 )
 				self.clipFinished( CardsList, {} )
+
 				FeaturedLabel:completeAnimation()
 				self.FeaturedLabel:setAlpha( 0 )
 				self.clipFinished( FeaturedLabel, {} )
+
 				FEFeaturedCardsContainerController:completeAnimation()
 				self.FEFeaturedCardsContainerController:setAlpha( 0 )
 				self.clipFinished( FEFeaturedCardsContainerController, {} )
+
 				pixelLL:completeAnimation()
 				self.pixelLL:setAlpha( 0 )
 				self.clipFinished( pixelLL, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 0 )
 				self.clipFinished( Image1, {} )
+
 				pixelUR:completeAnimation()
 				self.pixelUR:setAlpha( 0 )
 				self.clipFinished( pixelUR, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setAlpha( 0 )
 				self.clipFinished( Image2, {} )
+
 				emblemline0:completeAnimation()
 				self.emblemline0:setAlpha( 0 )
 				self.clipFinished( emblemline0, {} )
+
 				pixelMiddle:completeAnimation()
 				self.pixelMiddle:setAlpha( 0 )
 				self.clipFinished( pixelMiddle, {} )
+
 				FEFeaturedCardsTitleBox0:completeAnimation()
 				self.FEFeaturedCardsTitleBox0:setAlpha( 0 )
 				self.clipFinished( FEFeaturedCardsTitleBox0, {} )
+
 				FEFeaturedFrame0:completeAnimation()
 				self.FEFeaturedFrame0:setAlpha( 0 )
 				self.clipFinished( FEFeaturedFrame0, {} )
+
 				featlineleft:completeAnimation()
 				self.featlineleft:setAlpha( 0 )
 				self.clipFinished( featlineleft, {} )
+
 				Action:completeAnimation()
 				self.Action:setAlpha( 0 )
 				self.clipFinished( Action, {} )
+
 				FeaturedOfflineText0:completeAnimation()
 				self.FeaturedOfflineText0:setAlpha( 0 )
 				self.clipFinished( FeaturedOfflineText0, {} )
+
 				OfflineAction:completeAnimation()
 				self.OfflineAction:setAlpha( 0 )
 				self.clipFinished( OfflineAction, {} )
+
 				PlayGoDownloadProgressBar0:completeAnimation()
 				self.PlayGoDownloadProgressBar0:setAlpha( 0 )
 				self.clipFinished( PlayGoDownloadProgressBar0, {} )
+
 				PlayGoDownloadStatus0:completeAnimation()
 				self.PlayGoDownloadStatus0:setAlpha( 0 )
 				self.clipFinished( PlayGoDownloadStatus0, {} )
 			end,
 			FeaturedCardsVisible = function ()
 				self:setupElementClipCounter( 17 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					local FEMemberBlurPanelContainer0Frame3 = function ( FEMemberBlurPanelContainer0, event )
 						if not event.interrupted then
@@ -491,6 +513,7 @@ CoD.FE_FeaturedCardsContainer.new = function ( menu, controller )
 				CardsList:completeAnimation()
 				self.CardsList:setAlpha( 0 )
 				CardsListFrame2( CardsList, {} )
+
 				FeaturedLabel:completeAnimation()
 				self.FeaturedLabel:setAlpha( 0 )
 				self.clipFinished( FeaturedLabel, {} )
@@ -814,57 +837,74 @@ CoD.FE_FeaturedCardsContainer.new = function ( menu, controller )
 		FeaturedCardsVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				BlackBack:completeAnimation()
 				self.BlackBack:setAlpha( 0.2 )
 				self.clipFinished( BlackBack, {} )
+
 				CardsList:completeAnimation()
 				self.CardsList:setAlpha( 1 )
 				self.clipFinished( CardsList, {} )
+
 				FEFeaturedCardsContainerController:completeAnimation()
 				self.FEFeaturedCardsContainerController:setAlpha( 1 )
 				self.clipFinished( FEFeaturedCardsContainerController, {} )
+
 				pixelLL:completeAnimation()
 				self.pixelLL:setAlpha( 1 )
 				self.clipFinished( pixelLL, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 1 )
 				self.clipFinished( Image1, {} )
+
 				pixelUR:completeAnimation()
 				self.pixelUR:setAlpha( 1 )
 				self.clipFinished( pixelUR, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setAlpha( 1 )
 				self.clipFinished( Image2, {} )
+
 				emblemline0:completeAnimation()
 				self.emblemline0:setAlpha( 0.2 )
 				self.clipFinished( emblemline0, {} )
+
 				pixelMiddle:completeAnimation()
 				self.pixelMiddle:setAlpha( 1 )
 				self.clipFinished( pixelMiddle, {} )
+
 				FEFeaturedCardsTitleBox0:completeAnimation()
 				self.FEFeaturedCardsTitleBox0:setAlpha( 1 )
 				self.clipFinished( FEFeaturedCardsTitleBox0, {} )
+
 				FEFeaturedFrame0:completeAnimation()
 				self.FEFeaturedFrame0:setAlpha( 0.7 )
 				self.clipFinished( FEFeaturedFrame0, {} )
+
 				featlineleft:completeAnimation()
 				self.featlineleft:setAlpha( 1 )
 				self.clipFinished( featlineleft, {} )
+
 				Action:completeAnimation()
 				self.Action:setAlpha( 1 )
 				self.clipFinished( Action, {} )
+
 				FeaturedOfflineText0:completeAnimation()
 				self.FeaturedOfflineText0:setAlpha( 1 )
 				self.clipFinished( FeaturedOfflineText0, {} )
+
 				OfflineAction:completeAnimation()
 				self.OfflineAction:setAlpha( 1 )
 				self.clipFinished( OfflineAction, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 17 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 289, false, false, CoD.TweenType.Linear )
@@ -934,6 +974,7 @@ CoD.FE_FeaturedCardsContainer.new = function ( menu, controller )
 				CardsList:completeAnimation()
 				self.CardsList:setAlpha( 1 )
 				CardsListFrame2( CardsList, {} )
+
 				FeaturedLabel:completeAnimation()
 				self.FeaturedLabel:setAlpha( 0 )
 				self.clipFinished( FeaturedLabel, {} )
@@ -1243,6 +1284,7 @@ CoD.FE_FeaturedCardsContainer.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 17 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					local FEMemberBlurPanelContainer0Frame3 = function ( FEMemberBlurPanelContainer0, event )
 						if not event.interrupted then
@@ -1320,6 +1362,7 @@ CoD.FE_FeaturedCardsContainer.new = function ( menu, controller )
 				CardsList:completeAnimation()
 				self.CardsList:setAlpha( 0 )
 				CardsListFrame2( CardsList, {} )
+
 				FeaturedLabel:completeAnimation()
 				self.FeaturedLabel:setAlpha( 0 )
 				self.clipFinished( FeaturedLabel, {} )
@@ -1653,64 +1696,83 @@ CoD.FE_FeaturedCardsContainer.new = function ( menu, controller )
 		OfflineState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, false, 26, 332 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( true, false, 36, 126 )
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				BlackBack:completeAnimation()
 				self.BlackBack:setLeftRight( true, false, 26, 332 )
 				self.BlackBack:setTopBottom( true, false, 36, 126 )
 				self.BlackBack:setAlpha( 0.2 )
 				self.clipFinished( BlackBack, {} )
+
 				CardsList:completeAnimation()
 				self.CardsList:setAlpha( 0 )
 				self.clipFinished( CardsList, {} )
+
 				FeaturedLabel:completeAnimation()
 				self.FeaturedLabel:setAlpha( 0 )
 				self.clipFinished( FeaturedLabel, {} )
+
 				FEFeaturedCardsContainerController:completeAnimation()
 				self.FEFeaturedCardsContainerController:setAlpha( 0 )
 				self.clipFinished( FEFeaturedCardsContainerController, {} )
+
 				pixelLL:completeAnimation()
 				self.pixelLL:setAlpha( 1 )
 				self.clipFinished( pixelLL, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 1 )
 				self.clipFinished( Image1, {} )
+
 				pixelUR:completeAnimation()
 				self.pixelUR:setAlpha( 1 )
 				self.clipFinished( pixelUR, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setAlpha( 1 )
 				self.clipFinished( Image2, {} )
+
 				emblemline0:completeAnimation()
 				self.emblemline0:setAlpha( 0.25 )
 				self.clipFinished( emblemline0, {} )
+
 				pixelMiddle:completeAnimation()
 				self.pixelMiddle:setAlpha( 1 )
 				self.clipFinished( pixelMiddle, {} )
+
 				FEFeaturedCardsTitleBox0:completeAnimation()
 				self.FEFeaturedCardsTitleBox0:setAlpha( 0 )
 				self.clipFinished( FEFeaturedCardsTitleBox0, {} )
+
 				FEFeaturedFrame0:completeAnimation()
 				self.FEFeaturedFrame0:setAlpha( 0.5 )
 				self.clipFinished( FEFeaturedFrame0, {} )
+
 				featlineleft:completeAnimation()
 				self.featlineleft:setAlpha( 0 )
 				self.clipFinished( featlineleft, {} )
+
 				Action:completeAnimation()
 				self.Action:setAlpha( 0 )
 				self.clipFinished( Action, {} )
+
 				FeaturedOfflineText0:completeAnimation()
 				self.FeaturedOfflineText0:setAlpha( 1 )
 				self.clipFinished( FeaturedOfflineText0, {} )
+
 				OfflineAction:completeAnimation()
 				self.OfflineAction:setAlpha( 1 )
 				self.clipFinished( OfflineAction, {} )
+
 				PlayGoDownloadProgressBar0:completeAnimation()
 				self.PlayGoDownloadProgressBar0:setAlpha( 1 )
 				self.clipFinished( PlayGoDownloadProgressBar0, {} )
+
 				PlayGoDownloadStatus0:completeAnimation()
 				self.PlayGoDownloadStatus0:setAlpha( 1 )
 				self.clipFinished( PlayGoDownloadStatus0, {} )
@@ -1719,70 +1781,90 @@ CoD.FE_FeaturedCardsContainer.new = function ( menu, controller )
 		DownloadingState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, false, 26, 332 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( true, false, 36, 126 )
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				BlackBack:completeAnimation()
 				self.BlackBack:setLeftRight( true, false, 26, 332 )
 				self.BlackBack:setTopBottom( true, false, 36, 126 )
 				self.BlackBack:setAlpha( 0.2 )
 				self.clipFinished( BlackBack, {} )
+
 				CardsList:completeAnimation()
 				self.CardsList:setAlpha( 0 )
 				self.clipFinished( CardsList, {} )
+
 				FeaturedLabel:completeAnimation()
 				self.FeaturedLabel:setAlpha( 0 )
 				self.clipFinished( FeaturedLabel, {} )
+
 				FEFeaturedCardsContainerController:completeAnimation()
 				self.FEFeaturedCardsContainerController:setAlpha( 0 )
 				self.clipFinished( FEFeaturedCardsContainerController, {} )
+
 				pixelLL:completeAnimation()
 				self.pixelLL:setAlpha( 1 )
 				self.clipFinished( pixelLL, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 1 )
 				self.clipFinished( Image1, {} )
+
 				pixelUR:completeAnimation()
 				self.pixelUR:setAlpha( 1 )
 				self.clipFinished( pixelUR, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setAlpha( 1 )
 				self.clipFinished( Image2, {} )
+
 				emblemline0:completeAnimation()
 				self.emblemline0:setAlpha( 0.25 )
 				self.clipFinished( emblemline0, {} )
+
 				pixelMiddle:completeAnimation()
 				self.pixelMiddle:setAlpha( 1 )
 				self.clipFinished( pixelMiddle, {} )
+
 				FEFeaturedCardsTitleBox0:completeAnimation()
 				self.FEFeaturedCardsTitleBox0:setAlpha( 0 )
 				self.clipFinished( FEFeaturedCardsTitleBox0, {} )
+
 				FEFeaturedFrame0:completeAnimation()
 				self.FEFeaturedFrame0:setAlpha( 0.5 )
 				self.clipFinished( FEFeaturedFrame0, {} )
+
 				featlineleft:completeAnimation()
 				self.featlineleft:setAlpha( 0 )
 				self.clipFinished( featlineleft, {} )
+
 				Action:completeAnimation()
 				self.Action:setAlpha( 0 )
 				self.clipFinished( Action, {} )
+
 				FeaturedOfflineText0:completeAnimation()
 				self.FeaturedOfflineText0:setAlpha( 1 )
 				self.clipFinished( FeaturedOfflineText0, {} )
+
 				OfflineAction:completeAnimation()
 				self.OfflineAction:setAlpha( 0 )
 				self.clipFinished( OfflineAction, {} )
+
 				PlayGoDownloadProgressBar0:completeAnimation()
 				self.PlayGoDownloadProgressBar0:setAlpha( 1 )
 				self.clipFinished( PlayGoDownloadProgressBar0, {} )
+
 				PlayGoDownloadStatus0:completeAnimation()
 				self.PlayGoDownloadStatus0:setAlpha( 1 )
 				self.clipFinished( PlayGoDownloadStatus0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "FeaturedCardsVisible",
@@ -1871,6 +1953,7 @@ CoD.FE_FeaturedCardsContainer.new = function ( menu, controller )
 	self:subscribeToGlobalModel( controller, "MarketingRoot", "Updated", function ( model )
 		FeaturedCardsUpdateCRMMessage( self, self, controller, "", menu )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEMemberBlurPanelContainer0:close()
 		element.CardsList:close()

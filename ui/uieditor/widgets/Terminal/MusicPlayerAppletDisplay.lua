@@ -28,6 +28,7 @@ local PostLoadFunc = function ( f2_arg0, f2_arg1 )
 			f2_arg0.Details3Text:setText( modelValue )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( f2_arg0, "close", function ( element )
 		element.Details1Text:close()
 		element.Details2Text:close()
@@ -38,9 +39,11 @@ end
 CoD.MusicPlayerAppletDisplay = InheritFrom( LUI.UIElement )
 CoD.MusicPlayerAppletDisplay.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MusicPlayerAppletDisplay )
 	self.id = "MusicPlayerAppletDisplay"
@@ -108,11 +111,13 @@ CoD.MusicPlayerAppletDisplay.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		play = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local beatsFrame2 = function ( beats, event )
 					if not event.interrupted then
 						beats:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )
@@ -128,9 +133,11 @@ CoD.MusicPlayerAppletDisplay.new = function ( menu, controller )
 				beats:completeAnimation()
 				self.beats:setAlpha( 0 )
 				beatsFrame2( beats, {} )
+
 				stop:completeAnimation()
 				self.stop:setAlpha( 1 )
 				self.clipFinished( stop, {} )
+
 				play:completeAnimation()
 				self.play:setAlpha( 0 )
 				self.clipFinished( play, {} )
@@ -139,6 +146,7 @@ CoD.MusicPlayerAppletDisplay.new = function ( menu, controller )
 		stop = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local beatsFrame2 = function ( beats, event )
 					if not event.interrupted then
 						beats:beginAnimation( "keyframe", 360, false, false, CoD.TweenType.Linear )
@@ -154,15 +162,18 @@ CoD.MusicPlayerAppletDisplay.new = function ( menu, controller )
 				beats:completeAnimation()
 				self.beats:setAlpha( 1 )
 				beatsFrame2( beats, {} )
+
 				stop:completeAnimation()
 				self.stop:setAlpha( 0 )
 				self.clipFinished( stop, {} )
+
 				play:completeAnimation()
 				self.play:setAlpha( 1 )
 				self.clipFinished( play, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "play",

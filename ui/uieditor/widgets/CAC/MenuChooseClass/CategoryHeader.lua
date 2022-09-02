@@ -20,6 +20,7 @@ CoD.CategoryHeader.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CategoryHeader )
 	self.id = "CategoryHeader"
@@ -49,6 +50,7 @@ CoD.CategoryHeader.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				newIcon:completeAnimation()
 				self.newIcon:setAlpha( 0 )
 				self.clipFinished( newIcon, {} )
@@ -57,12 +59,14 @@ CoD.CategoryHeader.new = function ( menu, controller )
 		BreadcrumbVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				newIcon:completeAnimation()
 				self.newIcon:setAlpha( 1 )
 				self.clipFinished( newIcon, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.newIcon:close()
 	end )

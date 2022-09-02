@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Reticles.PulseRifle.PulseRifleReticle_Numbers_Widg
 CoD.PulseRifleReticle_NumbersInt = InheritFrom( LUI.UIElement )
 CoD.PulseRifleReticle_NumbersInt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PulseRifleReticle_NumbersInt )
 	self.id = "PulseRifleReticle_NumbersInt"
@@ -187,12 +189,15 @@ CoD.PulseRifleReticle_NumbersInt.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0.9 )
 				self.clipFinished( BG, {} )
+
 				PulseRifleReticleNumbersWidgetLeft:completeAnimation()
 				self.PulseRifleReticleNumbersWidgetLeft:setAlpha( 0 )
 				self.clipFinished( PulseRifleReticleNumbersWidgetLeft, {} )
+
 				PulseRifleReticleNumbersWidgetRight:completeAnimation()
 				self.PulseRifleReticleNumbersWidgetRight:setAlpha( 1 )
 				self.clipFinished( PulseRifleReticleNumbersWidgetRight, {} )
@@ -201,18 +206,22 @@ CoD.PulseRifleReticle_NumbersInt.new = function ( menu, controller )
 		Double = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0.9 )
 				self.clipFinished( BG, {} )
+
 				PulseRifleReticleNumbersWidgetLeft:completeAnimation()
 				self.PulseRifleReticleNumbersWidgetLeft:setAlpha( 1 )
 				self.clipFinished( PulseRifleReticleNumbersWidgetLeft, {} )
+
 				PulseRifleReticleNumbersWidgetRight:completeAnimation()
 				self.PulseRifleReticleNumbersWidgetRight:setAlpha( 1 )
 				self.clipFinished( PulseRifleReticleNumbersWidgetRight, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Double",
@@ -229,6 +238,7 @@ CoD.PulseRifleReticle_NumbersInt.new = function ( menu, controller )
 			modelName = "ammoInClip"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PulseRifleReticleNumbersWidgetLeft:close()
 		element.PulseRifleReticleNumbersWidgetRight:close()

@@ -4,9 +4,11 @@
 CoD.vhud_siegebot_bootupWidget = InheritFrom( LUI.UIElement )
 CoD.vhud_siegebot_bootupWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_siegebot_bootupWidget )
 	self.id = "vhud_siegebot_bootupWidget"
@@ -226,6 +228,7 @@ CoD.vhud_siegebot_bootupWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 20 )
+
 				local Top1Frame2 = function ( Top1, event )
 					local Top1Frame3 = function ( Top1, event )
 						if not event.interrupted then

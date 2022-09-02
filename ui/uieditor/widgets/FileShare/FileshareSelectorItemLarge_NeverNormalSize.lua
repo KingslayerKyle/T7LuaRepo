@@ -12,9 +12,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FocusBarContainer" )
 CoD.FileshareSelectorItemLarge_NeverNormalSize = InheritFrom( LUI.UIElement )
 CoD.FileshareSelectorItemLarge_NeverNormalSize.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FileshareSelectorItemLarge_NeverNormalSize )
 	self.id = "FileshareSelectorItemLarge_NeverNormalSize"
@@ -297,73 +299,93 @@ CoD.FileshareSelectorItemLarge_NeverNormalSize.new = function ( menu, controller
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 0 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				ErrorImage:completeAnimation()
 				self.ErrorImage:setLeftRight( true, false, 81.88, 163.13 )
 				self.ErrorImage:setTopBottom( true, false, 71.25, 136.5 )
 				self.ErrorImage:setAlpha( 0 )
 				self.clipFinished( ErrorImage, {} )
+
 				ProcessingOverlay:completeAnimation()
 				self.ProcessingOverlay:setAlpha( 0 )
 				self.clipFinished( ProcessingOverlay, {} )
+
 				ProcessingText:completeAnimation()
 				self.ProcessingText:setAlpha( 0 )
 				self.clipFinished( ProcessingText, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, -2, 2 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
@@ -374,77 +396,99 @@ CoD.FileshareSelectorItemLarge_NeverNormalSize.new = function ( menu, controller
 		Processing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				ErrorImage:completeAnimation()
 				self.ErrorImage:setAlpha( 0 )
 				self.clipFinished( ErrorImage, {} )
+
 				ProcessingOverlay:completeAnimation()
 				self.ProcessingOverlay:setAlpha( 0.6 )
 				self.clipFinished( ProcessingOverlay, {} )
+
 				ProcessingText:completeAnimation()
 				self.ProcessingText:setAlpha( 1 )
 				self.clipFinished( ProcessingText, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
@@ -453,18 +497,23 @@ CoD.FileshareSelectorItemLarge_NeverNormalSize.new = function ( menu, controller
 		InvalidShort = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				CategoryImage:completeAnimation()
 				self.CategoryImage:setAlpha( 0 )
 				self.clipFinished( CategoryImage, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				ErrorImage:completeAnimation()
 				self.ErrorImage:setAlpha( 1 )
 				self.clipFinished( ErrorImage, {} )
+
 				ProcessingOverlay:completeAnimation()
 				self.ProcessingOverlay:setAlpha( 0 )
 				self.clipFinished( ProcessingOverlay, {} )
+
 				ProcessingText:completeAnimation()
 				self.ProcessingText:setAlpha( 0 )
 				self.clipFinished( ProcessingText, {} )
@@ -473,77 +522,99 @@ CoD.FileshareSelectorItemLarge_NeverNormalSize.new = function ( menu, controller
 		Short = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				ErrorImage:completeAnimation()
 				self.ErrorImage:setAlpha( 0 )
 				self.clipFinished( ErrorImage, {} )
+
 				ProcessingOverlay:completeAnimation()
 				self.ProcessingOverlay:setAlpha( 0 )
 				self.clipFinished( ProcessingOverlay, {} )
+
 				ProcessingText:completeAnimation()
 				self.ProcessingText:setAlpha( 0 )
 				self.clipFinished( ProcessingText, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 0 )
 				self.clipFinished( Duration, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
@@ -552,83 +623,108 @@ CoD.FileshareSelectorItemLarge_NeverNormalSize.new = function ( menu, controller
 		Film = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 1 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 1 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				ErrorImage:completeAnimation()
 				self.ErrorImage:setAlpha( 0 )
 				self.clipFinished( ErrorImage, {} )
+
 				ProcessingOverlay:completeAnimation()
 				self.ProcessingOverlay:setAlpha( 0 )
 				self.clipFinished( ProcessingOverlay, {} )
+
 				ProcessingText:completeAnimation()
 				self.ProcessingText:setAlpha( 0 )
 				self.clipFinished( ProcessingText, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 1 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 1 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 1 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 1 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 1 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 1 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
@@ -637,93 +733,120 @@ CoD.FileshareSelectorItemLarge_NeverNormalSize.new = function ( menu, controller
 		Clip = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				TimeText:completeAnimation()
 				self.TimeText:setLeftRight( true, false, 23.88, 228.13 )
 				self.TimeText:setTopBottom( false, true, -22.5, -4.5 )
 				self.clipFinished( TimeText, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 1 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 0 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				ErrorImage:completeAnimation()
 				self.ErrorImage:setAlpha( 0 )
 				self.clipFinished( ErrorImage, {} )
+
 				ProcessingOverlay:completeAnimation()
 				self.ProcessingOverlay:setAlpha( 0 )
 				self.clipFinished( ProcessingOverlay, {} )
+
 				ProcessingText:completeAnimation()
 				self.ProcessingText:setAlpha( 0 )
 				self.clipFinished( ProcessingText, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 1 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 1 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 1 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 1 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				GameTypeImage:completeAnimation()
 				self.clipFinished( GameTypeImage, {} )
+
 				Duration:completeAnimation()
 				self.Duration:setAlpha( 1 )
 				self.clipFinished( Duration, {} )
+
 				BookmarkedItem:completeAnimation()
 				self.BookmarkedItem:setAlpha( 1 )
 				self.clipFinished( BookmarkedItem, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Processing",
@@ -770,6 +893,7 @@ CoD.FileshareSelectorItemLarge_NeverNormalSize.new = function ( menu, controller
 			modelName = "isValid"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Image:close()
 		element.BoxButtonLrgIdle:close()

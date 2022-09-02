@@ -4,9 +4,11 @@
 CoD.outofbounds_sidebar = InheritFrom( LUI.UIElement )
 CoD.outofbounds_sidebar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.outofbounds_sidebar )
 	self.id = "outofbounds_sidebar"
@@ -27,6 +29,7 @@ CoD.outofbounds_sidebar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local RightBarFrame2 = function ( RightBar, event )
 					local RightBarFrame3 = function ( RightBar, event )
 						local RightBarFrame4 = function ( RightBar, event )
@@ -108,12 +111,14 @@ CoD.outofbounds_sidebar.new = function ( menu, controller )
 				RightBar:completeAnimation()
 				self.RightBar:setAlpha( 1 )
 				RightBarFrame2( RightBar, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		IsOutOfBounds = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

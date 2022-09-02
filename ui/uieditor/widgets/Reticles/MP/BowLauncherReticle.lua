@@ -10,9 +10,11 @@ end
 CoD.BowLauncherReticle = InheritFrom( LUI.UIElement )
 CoD.BowLauncherReticle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BowLauncherReticle )
 	self.id = "BowLauncherReticle"
@@ -32,6 +34,7 @@ CoD.BowLauncherReticle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				internal:completeAnimation()
 				self.internal:setRGB( 0.93, 0.99, 1 )
 				self.internal:setAlpha( 1 )
@@ -39,6 +42,7 @@ CoD.BowLauncherReticle.new = function ( menu, controller )
 			end,
 			Drawing = function ()
 				self:setupElementClipCounter( 1 )
+
 				internal:completeAnimation()
 				self.internal:setRGB( 1, 0, 0 )
 				self.clipFinished( internal, {} )
@@ -47,6 +51,7 @@ CoD.BowLauncherReticle.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				internal:completeAnimation()
 				self.internal:setAlpha( 0 )
 				self.clipFinished( internal, {} )
@@ -55,6 +60,7 @@ CoD.BowLauncherReticle.new = function ( menu, controller )
 		HiddenUsingOffhand = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				internal:completeAnimation()
 				self.internal:setAlpha( 0 )
 				self.clipFinished( internal, {} )
@@ -63,6 +69,7 @@ CoD.BowLauncherReticle.new = function ( menu, controller )
 		OverEnemy = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				internal:completeAnimation()
 				self.internal:setRGB( 1, 0, 0 )
 				self.internal:setAlpha( 1 )
@@ -70,9 +77,11 @@ CoD.BowLauncherReticle.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -244,6 +253,7 @@ CoD.BowLauncherReticle.new = function ( menu, controller )
 			modelName = "currentWeapon.weaponOverEnemy"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.internal:close()
 	end )

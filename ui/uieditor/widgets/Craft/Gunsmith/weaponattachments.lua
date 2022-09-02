@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.CustomClassListScreen.Panes.CustomClassGeneric
 CoD.WeaponAttachments = InheritFrom( LUI.UIElement )
 CoD.WeaponAttachments.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponAttachments )
 	self.id = "WeaponAttachments"
@@ -316,6 +318,7 @@ CoD.WeaponAttachments.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.OpticsHeader:close()
 		element.AttachmentsHeader:close()

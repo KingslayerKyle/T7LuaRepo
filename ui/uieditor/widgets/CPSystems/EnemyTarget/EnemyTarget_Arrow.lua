@@ -4,9 +4,11 @@
 CoD.EnemyTarget_Arrow = InheritFrom( LUI.UIElement )
 CoD.EnemyTarget_Arrow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EnemyTarget_Arrow )
 	self.id = "EnemyTarget_Arrow"

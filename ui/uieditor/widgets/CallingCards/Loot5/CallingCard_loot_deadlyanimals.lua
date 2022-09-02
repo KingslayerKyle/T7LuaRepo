@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_GoldFrame" )
 CoD.CallingCard_loot_deadlyanimals = InheritFrom( LUI.UIElement )
 CoD.CallingCard_loot_deadlyanimals.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCard_loot_deadlyanimals )
 	self.id = "CallingCard_loot_deadlyanimals"

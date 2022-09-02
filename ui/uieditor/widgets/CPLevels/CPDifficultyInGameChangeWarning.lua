@@ -4,9 +4,11 @@
 CoD.CPDifficultyInGameChangeWarning = InheritFrom( LUI.UIElement )
 CoD.CPDifficultyInGameChangeWarning.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CPDifficultyInGameChangeWarning )
 	self.id = "CPDifficultyInGameChangeWarning"
@@ -36,9 +38,11 @@ CoD.CPDifficultyInGameChangeWarning.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				DifficultyWarning:completeAnimation()
 				self.DifficultyWarning:setAlpha( 1 )
 				self.clipFinished( DifficultyWarning, {} )
+
 				WarningTriangle:completeAnimation()
 				self.WarningTriangle:setAlpha( 1 )
 				self.clipFinished( WarningTriangle, {} )
@@ -47,15 +51,18 @@ CoD.CPDifficultyInGameChangeWarning.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				DifficultyWarning:completeAnimation()
 				self.DifficultyWarning:setAlpha( 0 )
 				self.clipFinished( DifficultyWarning, {} )
+
 				WarningTriangle:completeAnimation()
 				self.WarningTriangle:setAlpha( 0 )
 				self.clipFinished( WarningTriangle, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",

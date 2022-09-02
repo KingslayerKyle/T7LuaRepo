@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_ClipContainerPress"
 CoD.AmmoWidget_ClipContainerNew = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_ClipContainerNew.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_ClipContainerNew )
 	self.id = "AmmoWidget_ClipContainerNew"
@@ -64,16 +66,19 @@ CoD.AmmoWidget_ClipContainerNew.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Clip:completeAnimation()
 				self.Clip:setRGB( 1, 1, 1 )
 				self.Clip:setAlpha( 0.8 )
 				self.clipFinished( Clip, {} )
+
 				ClipContainerPress:completeAnimation()
 				self.ClipContainerPress:setAlpha( 0 )
 				self.clipFinished( ClipContainerPress, {} )
 			end,
 			LowAmmo = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ClipFrame2 = function ( Clip, event )
 					local ClipFrame3 = function ( Clip, event )
 						local ClipFrame4 = function ( Clip, event )
@@ -203,6 +208,7 @@ CoD.AmmoWidget_ClipContainerNew.new = function ( menu, controller )
 		LowAmmo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local ClipFrame2 = function ( Clip, event )
 					local ClipFrame3 = function ( Clip, event )
 						local ClipFrame4 = function ( Clip, event )
@@ -357,24 +363,29 @@ CoD.AmmoWidget_ClipContainerNew.new = function ( menu, controller )
 				self.Clip:setRGB( 1, 0, 0.17 )
 				self.Clip:setAlpha( 1 )
 				ClipFrame2( Clip, {} )
+
 				ClipContainerPress:completeAnimation()
 				self.ClipContainerPress:setAlpha( 0 )
 				self.clipFinished( ClipContainerPress, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		NoAmmo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Clip:completeAnimation()
 				self.Clip:setAlpha( 0.8 )
 				self.clipFinished( Clip, {} )
+
 				ClipContainerPress:completeAnimation()
 				self.ClipContainerPress:setAlpha( 1 )
 				self.clipFinished( ClipContainerPress, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Clip:close()
 		element.ClipContainerPress:close()

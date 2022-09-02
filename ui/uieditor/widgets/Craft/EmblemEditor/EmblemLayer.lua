@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Craft.EmblemEditor.LayerIcon" )
 CoD.EmblemLayer = InheritFrom( LUI.UIElement )
 CoD.EmblemLayer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemLayer )
 	self.id = "EmblemLayer"
@@ -53,16 +55,19 @@ CoD.EmblemLayer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				background:completeAnimation()
 				self.background:setLeftRight( true, true, 15, -15 )
 				self.background:setTopBottom( true, true, 15, -15 )
 				self.clipFinished( background, {} )
+
 				layerIcon:completeAnimation()
 				self.layerIcon:setScale( 1 )
 				self.clipFinished( layerIcon, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.layerIcon:close()
 	end )

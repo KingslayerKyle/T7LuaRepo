@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMBuildables.BuildableBorder_Internal" )
 CoD.BuildableBorder = InheritFrom( LUI.UIElement )
 CoD.BuildableBorder.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.BuildableBorder )
 	self.id = "BuildableBorder"
@@ -27,6 +29,7 @@ CoD.BuildableBorder.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				border:completeAnimation()
 				self.border:setRGB( 1, 1, 1 )
 				self.border:setAlpha( 0.25 )
@@ -34,6 +37,7 @@ CoD.BuildableBorder.new = function ( menu, controller )
 			end,
 			PulseRed = function ()
 				self:setupElementClipCounter( 1 )
+
 				local borderFrame2 = function ( border, event )
 					local borderFrame3 = function ( border, event )
 						local borderFrame4 = function ( border, event )
@@ -166,6 +170,7 @@ CoD.BuildableBorder.new = function ( menu, controller )
 		CurrentItem = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				border:completeAnimation()
 				self.border:setRGB( 1, 0, 0 )
 				self.border:setAlpha( 1 )
@@ -173,6 +178,7 @@ CoD.BuildableBorder.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.border:close()
 	end )

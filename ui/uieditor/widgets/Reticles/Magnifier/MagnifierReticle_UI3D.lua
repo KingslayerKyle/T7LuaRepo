@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Reticles.Magnifier.MagnifierReticle_Internal" )
 CoD.MagnifierReticle_UI3D = InheritFrom( LUI.UIElement )
 CoD.MagnifierReticle_UI3D.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MagnifierReticle_UI3D )
 	self.id = "MagnifierReticle_UI3D"

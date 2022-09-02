@@ -17,9 +17,11 @@ end
 CoD.Cookbook_Main = InheritFrom( LUI.UIElement )
 CoD.Cookbook_Main.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.Cookbook_Main )
 	self.id = "Cookbook_Main"
@@ -50,9 +52,11 @@ CoD.Cookbook_Main.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CookbookFlowAnimTopBg:close()
 		element.CookbookFlowAnimMiddleBg:close()

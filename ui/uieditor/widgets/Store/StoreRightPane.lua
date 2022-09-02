@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.verticalScrollingTextBox" )
 CoD.StoreRightPane = InheritFrom( LUI.UIElement )
 CoD.StoreRightPane.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StoreRightPane )
 	self.id = "StoreRightPane"
@@ -81,6 +83,7 @@ CoD.StoreRightPane.new = function ( menu, controller )
 	self.ArrowSide00 = ArrowSide00
 	
 	frameWidget.id = "frameWidget"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactive:close()
 		element.verticalScrollingTextBox:close()

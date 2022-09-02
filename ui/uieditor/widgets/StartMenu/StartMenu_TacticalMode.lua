@@ -90,9 +90,11 @@ end
 CoD.StartMenu_TacticalMode = InheritFrom( LUI.UIElement )
 CoD.StartMenu_TacticalMode.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_TacticalMode )
 	self.id = "StartMenu_TacticalMode"
@@ -239,6 +241,7 @@ CoD.StartMenu_TacticalMode.new = function ( menu, controller )
 		right = settingFrame
 	}
 	CoD.Menu.AddNavigationHandler( menu, self, controller )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "close", function ( element )
 		UpdateGamerprofile( self, element, controller )
 	end )
@@ -251,6 +254,7 @@ CoD.StartMenu_TacticalMode.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.selectionList:close()
 		element.Title:close()

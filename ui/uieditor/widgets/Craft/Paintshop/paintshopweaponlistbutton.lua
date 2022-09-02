@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.PaintshopWeaponListButton = InheritFrom( LUI.UIElement )
 CoD.PaintshopWeaponListButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PaintshopWeaponListButton )
 	self.id = "PaintshopWeaponListButton"
@@ -67,15 +69,19 @@ CoD.PaintshopWeaponListButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				arrowImage:completeAnimation()
 				self.arrowImage:setAlpha( 0 )
 				self.clipFinished( arrowImage, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setRGB( 1, 1, 1 )
 				self.clipFinished( itemName, {} )
+
 				border:completeAnimation()
 				self.border:setRGB( 0.58, 0.58, 0.6 )
 				self.border:setAlpha( 1 )
@@ -83,15 +89,19 @@ CoD.PaintshopWeaponListButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				arrowImage:completeAnimation()
 				self.arrowImage:setAlpha( 0 )
 				self.clipFinished( arrowImage, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setRGB( 1, 0.41, 0 )
 				self.clipFinished( itemName, {} )
+
 				border:completeAnimation()
 				self.border:setRGB( 1, 0.41, 0 )
 				self.border:setAlpha( 1 )
@@ -101,36 +111,45 @@ CoD.PaintshopWeaponListButton.new = function ( menu, controller )
 		NoListFocus = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				arrowImage:completeAnimation()
 				self.arrowImage:setAlpha( 0 )
 				self.clipFinished( arrowImage, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.5 )
 				self.clipFinished( itemImage, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setRGB( 0.47, 0.47, 0.47 )
 				self.clipFinished( itemName, {} )
+
 				border:completeAnimation()
 				self.border:setAlpha( 0 )
 				self.clipFinished( border, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 4 )
+
 				arrowImage:completeAnimation()
 				self.arrowImage:setAlpha( 1 )
 				self.clipFinished( arrowImage, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.5 )
 				self.clipFinished( itemImage, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setRGB( 1, 1, 1 )
 				self.clipFinished( itemName, {} )
+
 				border:completeAnimation()
 				self.border:setAlpha( 1 )
 				self.clipFinished( border, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.border:close()
 	end )

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.MP_VoipWidget.Voip_Entry" )
 CoD.Voip_Container = InheritFrom( LUI.UIElement )
 CoD.Voip_Container.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Voip_Container )
 	self.id = "Voip_Container"
@@ -81,15 +83,19 @@ CoD.Voip_Container.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				VoipEntry0:completeAnimation()
 				self.VoipEntry0:setAlpha( 0 )
 				self.clipFinished( VoipEntry0, {} )
+
 				VoipEntry1:completeAnimation()
 				self.VoipEntry1:setAlpha( 0 )
 				self.clipFinished( VoipEntry1, {} )
+
 				VoipEntry2:completeAnimation()
 				self.VoipEntry2:setAlpha( 0 )
 				self.clipFinished( VoipEntry2, {} )
+
 				VoipEntry3:completeAnimation()
 				self.VoipEntry3:setAlpha( 0 )
 				self.clipFinished( VoipEntry3, {} )
@@ -98,15 +104,19 @@ CoD.Voip_Container.new = function ( menu, controller )
 		HudStart = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				VoipEntry0:completeAnimation()
 				self.VoipEntry0:setAlpha( 1 )
 				self.clipFinished( VoipEntry0, {} )
+
 				VoipEntry1:completeAnimation()
 				self.VoipEntry1:setAlpha( 1 )
 				self.clipFinished( VoipEntry1, {} )
+
 				VoipEntry2:completeAnimation()
 				self.VoipEntry2:setAlpha( 1 )
 				self.clipFinished( VoipEntry2, {} )
+
 				VoipEntry3:completeAnimation()
 				self.VoipEntry3:setAlpha( 1 )
 				self.clipFinished( VoipEntry3, {} )
@@ -115,21 +125,26 @@ CoD.Voip_Container.new = function ( menu, controller )
 		ShowForCodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				VoipEntry0:completeAnimation()
 				self.VoipEntry0:setAlpha( 1 )
 				self.clipFinished( VoipEntry0, {} )
+
 				VoipEntry1:completeAnimation()
 				self.VoipEntry1:setAlpha( 1 )
 				self.clipFinished( VoipEntry1, {} )
+
 				VoipEntry2:completeAnimation()
 				self.VoipEntry2:setAlpha( 1 )
 				self.clipFinished( VoipEntry2, {} )
+
 				VoipEntry3:completeAnimation()
 				self.VoipEntry3:setAlpha( 1 )
 				self.clipFinished( VoipEntry3, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HudStart",
@@ -160,6 +175,7 @@ CoD.Voip_Container.new = function ( menu, controller )
 			modelName = "CodCaster.profileSettingsUpdated"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.VoipEntry0:close()
 		element.VoipEntry1:close()

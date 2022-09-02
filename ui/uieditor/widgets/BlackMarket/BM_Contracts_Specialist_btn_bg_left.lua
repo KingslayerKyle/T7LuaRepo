@@ -4,9 +4,11 @@
 CoD.BM_Contracts_Specialist_btn_bg_left = InheritFrom( LUI.UIElement )
 CoD.BM_Contracts_Specialist_btn_bg_left.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Contracts_Specialist_btn_bg_left )
 	self.id = "BM_Contracts_Specialist_btn_bg_left"
@@ -32,14 +34,17 @@ CoD.BM_Contracts_Specialist_btn_bg_left.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		NoPersonalization = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoPersonalization",

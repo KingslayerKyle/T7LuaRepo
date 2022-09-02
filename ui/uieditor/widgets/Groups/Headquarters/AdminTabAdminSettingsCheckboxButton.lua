@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FocusBarContainer" )
 CoD.AdminTabAdminSettingsCheckboxButton = InheritFrom( LUI.UIElement )
 CoD.AdminTabAdminSettingsCheckboxButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AdminTabAdminSettingsCheckboxButton )
 	self.id = "AdminTabAdminSettingsCheckboxButton"
@@ -47,6 +49,7 @@ CoD.AdminTabAdminSettingsCheckboxButton.new = function ( menu, controller )
 	btnDisplayText:setLetterSpacing( 1 )
 	btnDisplayText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	btnDisplayText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( btnDisplayText, "setText", function ( element, controller )
 		
 	end )
@@ -62,6 +65,7 @@ CoD.AdminTabAdminSettingsCheckboxButton.new = function ( menu, controller )
 	btnDisplayTextStroke:setLetterSpacing( 1 )
 	btnDisplayTextStroke:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	btnDisplayTextStroke:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( btnDisplayTextStroke, "setText", function ( element, controller )
 		
 	end )
@@ -119,55 +123,68 @@ CoD.AdminTabAdminSettingsCheckboxButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 1 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setLeftRight( true, false, 33, 273 )
 				self.btnDisplayTextStroke:setTopBottom( true, false, 6.5, 25.25 )
 				self.btnDisplayTextStroke:setAlpha( 0.7 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				GroupsCheckboxChecked:completeAnimation()
 				self.GroupsCheckboxChecked:setAlpha( 0 )
 				self.clipFinished( GroupsCheckboxChecked, {} )
+
 				GroupsCheckboxDefault:completeAnimation()
 				self.GroupsCheckboxDefault:setLeftRight( true, false, 11, 25 )
 				self.GroupsCheckboxDefault:setTopBottom( true, false, 9, 23 )
 				self.GroupsCheckboxDefault:setAlpha( 1 )
 				self.clipFinished( GroupsCheckboxDefault, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.25 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 1 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				GroupsCheckboxChecked:completeAnimation()
 				self.GroupsCheckboxChecked:setAlpha( 0 )
 				self.clipFinished( GroupsCheckboxChecked, {} )
+
 				GroupsCheckboxDefault:completeAnimation()
 				self.GroupsCheckboxDefault:setAlpha( 1 )
 				self.clipFinished( GroupsCheckboxDefault, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, 0, -1 )
 				self.FocusBarT:setTopBottom( true, false, 0, 4 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, 0, -1 )
 				self.FocusBarB:setTopBottom( false, true, -4, 0 )
@@ -176,6 +193,7 @@ CoD.AdminTabAdminSettingsCheckboxButton.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local btnDisplayTextFrame2 = function ( btnDisplayText, event )
 					if not event.interrupted then
 						btnDisplayText:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -210,15 +228,18 @@ CoD.AdminTabAdminSettingsCheckboxButton.new = function ( menu, controller )
 				self.btnDisplayTextStroke:setAlpha( 1 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				btnDisplayTextStrokeFrame2( btnDisplayTextStroke, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local btnDisplayTextFrame2 = function ( btnDisplayText, event )
 					if not event.interrupted then
 						btnDisplayText:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -286,10 +307,12 @@ CoD.AdminTabAdminSettingsCheckboxButton.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 2 )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
@@ -299,10 +322,12 @@ CoD.AdminTabAdminSettingsCheckboxButton.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0.1 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
@@ -310,6 +335,7 @@ CoD.AdminTabAdminSettingsCheckboxButton.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 2 )
+
 				local btnDisplayTextFrame2 = function ( btnDisplayText, event )
 					local btnDisplayTextFrame3 = function ( btnDisplayText, event )
 						if not event.interrupted then
@@ -337,6 +363,7 @@ CoD.AdminTabAdminSettingsCheckboxButton.new = function ( menu, controller )
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( 0 )
 				btnDisplayTextFrame2( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
@@ -346,18 +373,22 @@ CoD.AdminTabAdminSettingsCheckboxButton.new = function ( menu, controller )
 		Fake = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 2 )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
@@ -366,10 +397,12 @@ CoD.AdminTabAdminSettingsCheckboxButton.new = function ( menu, controller )
 		DisabledHelpItemsLabel = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0.1 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
@@ -377,6 +410,7 @@ CoD.AdminTabAdminSettingsCheckboxButton.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 2 )
+
 				local btnDisplayTextFrame2 = function ( btnDisplayText, event )
 					local btnDisplayTextFrame3 = function ( btnDisplayText, event )
 						if not event.interrupted then
@@ -404,6 +438,7 @@ CoD.AdminTabAdminSettingsCheckboxButton.new = function ( menu, controller )
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( 0 )
 				btnDisplayTextFrame2( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
@@ -413,73 +448,91 @@ CoD.AdminTabAdminSettingsCheckboxButton.new = function ( menu, controller )
 		Checked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 1 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				GroupsCheckboxChecked:completeAnimation()
 				self.GroupsCheckboxChecked:setAlpha( 1 )
 				self.clipFinished( GroupsCheckboxChecked, {} )
+
 				GroupsCheckboxDefault:completeAnimation()
 				self.GroupsCheckboxDefault:setAlpha( 1 )
 				self.clipFinished( GroupsCheckboxDefault, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( -305 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 1 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				GroupsCheckboxChecked:completeAnimation()
 				self.GroupsCheckboxChecked:setAlpha( 1 )
 				self.clipFinished( GroupsCheckboxChecked, {} )
+
 				GroupsCheckboxDefault:completeAnimation()
 				self.GroupsCheckboxDefault:setAlpha( 0 )
 				self.clipFinished( GroupsCheckboxDefault, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 1 )
 				self.btnDisplayTextStroke:setZoom( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 1 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 1 )
 				self.btnDisplayTextStroke:setZoom( 0 )
@@ -517,10 +570,12 @@ CoD.AdminTabAdminSettingsCheckboxButton.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 2 )
+
 				btnDisplayText:completeAnimation()
 				self.btnDisplayText:setAlpha( 0 )
 				self.btnDisplayText:setZoom( 0 )
 				self.clipFinished( btnDisplayText, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.btnDisplayTextStroke:setZoom( 0 )
@@ -528,6 +583,7 @@ CoD.AdminTabAdminSettingsCheckboxButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -563,6 +619,7 @@ CoD.AdminTabAdminSettingsCheckboxButton.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG00:close()
 		element.GroupsCheckboxChecked:close()

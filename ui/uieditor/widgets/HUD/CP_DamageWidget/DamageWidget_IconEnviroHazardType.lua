@@ -4,9 +4,11 @@
 CoD.DamageWidget_IconEnviroHazardType = InheritFrom( LUI.UIElement )
 CoD.DamageWidget_IconEnviroHazardType.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DamageWidget_IconEnviroHazardType )
 	self.id = "DamageWidget_IconEnviroHazardType"
@@ -58,18 +60,23 @@ CoD.DamageWidget_IconEnviroHazardType.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				ImgIconFilter:completeAnimation()
 				self.ImgIconFilter:setAlpha( 0 )
 				self.clipFinished( ImgIconFilter, {} )
+
 				ImgIconHeat:completeAnimation()
 				self.ImgIconHeat:setAlpha( 0 )
 				self.clipFinished( ImgIconHeat, {} )
+
 				ImgIconO2:completeAnimation()
 				self.ImgIconO2:setAlpha( 0 )
 				self.clipFinished( ImgIconO2, {} )
+
 				ImgIconRadiation:completeAnimation()
 				self.ImgIconRadiation:setAlpha( 0 )
 				self.clipFinished( ImgIconRadiation, {} )
+
 				ImgIconBio:completeAnimation()
 				self.ImgIconBio:setAlpha( 0 )
 				self.clipFinished( ImgIconBio, {} )
@@ -78,18 +85,23 @@ CoD.DamageWidget_IconEnviroHazardType.new = function ( menu, controller )
 		Heat = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				ImgIconFilter:completeAnimation()
 				self.ImgIconFilter:setAlpha( 0 )
 				self.clipFinished( ImgIconFilter, {} )
+
 				ImgIconHeat:completeAnimation()
 				self.ImgIconHeat:setAlpha( 1 )
 				self.clipFinished( ImgIconHeat, {} )
+
 				ImgIconO2:completeAnimation()
 				self.ImgIconO2:setAlpha( 0 )
 				self.clipFinished( ImgIconO2, {} )
+
 				ImgIconRadiation:completeAnimation()
 				self.ImgIconRadiation:setAlpha( 0 )
 				self.clipFinished( ImgIconRadiation, {} )
+
 				ImgIconBio:completeAnimation()
 				self.ImgIconBio:setAlpha( 0 )
 				self.clipFinished( ImgIconBio, {} )
@@ -98,18 +110,23 @@ CoD.DamageWidget_IconEnviroHazardType.new = function ( menu, controller )
 		Filter = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				ImgIconFilter:completeAnimation()
 				self.ImgIconFilter:setAlpha( 1 )
 				self.clipFinished( ImgIconFilter, {} )
+
 				ImgIconHeat:completeAnimation()
 				self.ImgIconHeat:setAlpha( 0 )
 				self.clipFinished( ImgIconHeat, {} )
+
 				ImgIconO2:completeAnimation()
 				self.ImgIconO2:setAlpha( 0 )
 				self.clipFinished( ImgIconO2, {} )
+
 				ImgIconRadiation:completeAnimation()
 				self.ImgIconRadiation:setAlpha( 0 )
 				self.clipFinished( ImgIconRadiation, {} )
+
 				ImgIconBio:completeAnimation()
 				self.ImgIconBio:setAlpha( 0 )
 				self.clipFinished( ImgIconBio, {} )
@@ -118,18 +135,23 @@ CoD.DamageWidget_IconEnviroHazardType.new = function ( menu, controller )
 		O2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				ImgIconFilter:completeAnimation()
 				self.ImgIconFilter:setAlpha( 0 )
 				self.clipFinished( ImgIconFilter, {} )
+
 				ImgIconHeat:completeAnimation()
 				self.ImgIconHeat:setAlpha( 0 )
 				self.clipFinished( ImgIconHeat, {} )
+
 				ImgIconO2:completeAnimation()
 				self.ImgIconO2:setAlpha( 1 )
 				self.clipFinished( ImgIconO2, {} )
+
 				ImgIconRadiation:completeAnimation()
 				self.ImgIconRadiation:setAlpha( 0 )
 				self.clipFinished( ImgIconRadiation, {} )
+
 				ImgIconBio:completeAnimation()
 				self.ImgIconBio:setAlpha( 0 )
 				self.clipFinished( ImgIconBio, {} )
@@ -138,18 +160,23 @@ CoD.DamageWidget_IconEnviroHazardType.new = function ( menu, controller )
 		Radiation = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				ImgIconFilter:completeAnimation()
 				self.ImgIconFilter:setAlpha( 0 )
 				self.clipFinished( ImgIconFilter, {} )
+
 				ImgIconHeat:completeAnimation()
 				self.ImgIconHeat:setAlpha( 0 )
 				self.clipFinished( ImgIconHeat, {} )
+
 				ImgIconO2:completeAnimation()
 				self.ImgIconO2:setAlpha( 0 )
 				self.clipFinished( ImgIconO2, {} )
+
 				ImgIconRadiation:completeAnimation()
 				self.ImgIconRadiation:setAlpha( 1 )
 				self.clipFinished( ImgIconRadiation, {} )
+
 				ImgIconBio:completeAnimation()
 				self.ImgIconBio:setAlpha( 0 )
 				self.clipFinished( ImgIconBio, {} )
@@ -158,18 +185,23 @@ CoD.DamageWidget_IconEnviroHazardType.new = function ( menu, controller )
 		Bio = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				ImgIconFilter:completeAnimation()
 				self.ImgIconFilter:setAlpha( 0 )
 				self.clipFinished( ImgIconFilter, {} )
+
 				ImgIconHeat:completeAnimation()
 				self.ImgIconHeat:setAlpha( 0 )
 				self.clipFinished( ImgIconHeat, {} )
+
 				ImgIconO2:completeAnimation()
 				self.ImgIconO2:setAlpha( 0 )
 				self.clipFinished( ImgIconO2, {} )
+
 				ImgIconRadiation:completeAnimation()
 				self.ImgIconRadiation:setAlpha( 0 )
 				self.clipFinished( ImgIconRadiation, {} )
+
 				ImgIconBio:completeAnimation()
 				self.ImgIconBio:setAlpha( 1 )
 				self.clipFinished( ImgIconBio, {} )

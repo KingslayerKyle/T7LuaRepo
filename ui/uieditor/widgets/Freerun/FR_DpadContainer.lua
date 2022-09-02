@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Freerun.FR_DpadWidget" )
 CoD.FR_DpadContainer = InheritFrom( LUI.UIElement )
 CoD.FR_DpadContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.FR_DpadContainer )
 	self.id = "FR_DpadContainer"
@@ -28,6 +30,7 @@ CoD.FR_DpadContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FRDpadWidget:completeAnimation()
 				self.FRDpadWidget:setLeftRight( true, false, -12.5, 274.5 )
 				self.FRDpadWidget:setTopBottom( true, false, -6.76, 114 )
@@ -35,20 +38,25 @@ CoD.FR_DpadContainer.new = function ( menu, controller )
 			end,
 			Penalty = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			FaultAnim = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			RetryAnim = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			SetCheckpointDelta = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FRDpadWidgetFrame2 = function ( FRDpadWidget, event )
 					if not event.interrupted then
 						FRDpadWidget:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -67,6 +75,7 @@ CoD.FR_DpadContainer.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FRDpadWidgetFrame2 = function ( FRDpadWidget, event )
 					if not event.interrupted then
 						FRDpadWidget:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -85,6 +94,7 @@ CoD.FR_DpadContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FRDpadWidget:close()
 	end )

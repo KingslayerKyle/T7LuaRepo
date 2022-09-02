@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Notifications.Global.Notif_Global_Title" )
 CoD.MPDailyContractNotification = InheritFrom( LUI.UIElement )
 CoD.MPDailyContractNotification.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MPDailyContractNotification )
 	self.id = "MPDailyContractNotification"
@@ -199,6 +201,7 @@ CoD.MPDailyContractNotification.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				local NotificationWeeklyDailyWidgetFrame2 = function ( NotificationWeeklyDailyWidget, event )
 					local NotificationWeeklyDailyWidgetFrame3 = function ( NotificationWeeklyDailyWidget, event )
 						local NotificationWeeklyDailyWidgetFrame4 = function ( NotificationWeeklyDailyWidget, event )
@@ -756,12 +759,14 @@ CoD.MPDailyContractNotification.new = function ( menu, controller )
 				self.image:setAlpha( 0 )
 				self.image:setScale( 0 )
 				imageFrame2( image, {} )
+
 				levelUpSound:completeAnimation()
 				self.levelUpSound:playSound( "weapon_level_up", controller )
 				self.clipFinished( levelUpSound, {} )
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 14 )
+
 				local NotificationWeeklyDailyWidgetFrame2 = function ( NotificationWeeklyDailyWidget, event )
 					local NotificationWeeklyDailyWidgetFrame3 = function ( NotificationWeeklyDailyWidget, event )
 						local NotificationWeeklyDailyWidgetFrame4 = function ( NotificationWeeklyDailyWidget, event )
@@ -1210,12 +1215,15 @@ CoD.MPDailyContractNotification.new = function ( menu, controller )
 				NotifGlobalTitle:completeAnimation()
 				self.NotifGlobalTitle:setAlpha( 1 )
 				NotifGlobalTitleFrame2( NotifGlobalTitle, {} )
+
 				highlight:completeAnimation()
 				self.highlight:setAlpha( 0 )
 				self.clipFinished( highlight, {} )
+
 				imageG:completeAnimation()
 				self.imageG:setAlpha( 0 )
 				self.clipFinished( imageG, {} )
+
 				imageR:completeAnimation()
 				self.imageR:setAlpha( 0 )
 				self.clipFinished( imageR, {} )
@@ -1269,6 +1277,7 @@ CoD.MPDailyContractNotification.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.NotificationWeeklyDailyWidget:close()
 		element.NotifGlobalTitleLine:close()

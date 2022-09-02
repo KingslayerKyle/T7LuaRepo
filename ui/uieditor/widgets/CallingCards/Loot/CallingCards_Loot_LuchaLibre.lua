@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_GoldFrame" )
 CoD.CallingCards_Loot_LuchaLibre = InheritFrom( LUI.UIElement )
 CoD.CallingCards_Loot_LuchaLibre.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_Loot_LuchaLibre )
 	self.id = "CallingCards_Loot_LuchaLibre"
@@ -61,6 +63,7 @@ CoD.CallingCards_Loot_LuchaLibre.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local BG2Frame2 = function ( BG2, event )
 					local BG2Frame3 = function ( BG2, event )
 						local BG2Frame4 = function ( BG2, event )
@@ -344,10 +347,12 @@ CoD.CallingCards_Loot_LuchaLibre.new = function ( menu, controller )
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 1 )
 				GlowFrame2( Glow, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardsGoldFrame:close()
 	end )

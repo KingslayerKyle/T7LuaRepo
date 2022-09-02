@@ -4,9 +4,11 @@
 CoD.VehicleGround_ModB2Pixel = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_ModB2Pixel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.VehicleGround_ModB2Pixel )
 	self.id = "VehicleGround_ModB2Pixel"
@@ -26,6 +28,7 @@ CoD.VehicleGround_ModB2Pixel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local Image80Frame2 = function ( Image80, event )
 					local Image80Frame3 = function ( Image80, event )
 						local Image80Frame4 = function ( Image80, event )
@@ -62,6 +65,7 @@ CoD.VehicleGround_ModB2Pixel.new = function ( menu, controller )
 				Image80:completeAnimation()
 				self.Image80:setAlpha( 1 )
 				Image80Frame2( Image80, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

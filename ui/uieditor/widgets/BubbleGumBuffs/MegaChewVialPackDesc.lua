@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.ZM_Notif.ZmNotif1_CursorHint" )
 CoD.MegaChewVialPackDesc = InheritFrom( LUI.UIElement )
 CoD.MegaChewVialPackDesc.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MegaChewVialPackDesc )
 	self.id = "MegaChewVialPackDesc"
@@ -99,21 +101,27 @@ CoD.MegaChewVialPackDesc.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BubbleGumBuffTitle0:completeAnimation()
 				self.BubbleGumBuffTitle0:setAlpha( 0 )
 				self.clipFinished( BubbleGumBuffTitle0, {} )
+
 				ZmNotif1CursorHint0:completeAnimation()
 				self.ZmNotif1CursorHint0:setAlpha( 0 )
 				self.clipFinished( ZmNotif1CursorHint0, {} )
+
 				UltraRareMegaDesc:completeAnimation()
 				self.UltraRareMegaDesc:setAlpha( 0 )
 				self.clipFinished( UltraRareMegaDesc, {} )
+
 				ZmNotif1CursorHint00:completeAnimation()
 				self.ZmNotif1CursorHint00:setAlpha( 0 )
 				self.clipFinished( ZmNotif1CursorHint00, {} )
+
 				MegaBundleTimer:completeAnimation()
 				self.MegaBundleTimer:setAlpha( 0 )
 				self.clipFinished( MegaBundleTimer, {} )
+
 				UltraRareMegaTimer:completeAnimation()
 				self.UltraRareMegaTimer:setAlpha( 0 )
 				self.clipFinished( UltraRareMegaTimer, {} )
@@ -122,23 +130,30 @@ CoD.MegaChewVialPackDesc.new = function ( menu, controller )
 		VisibleUltraRareMegaTimer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BubbleGumBuffTitle0:completeAnimation()
+
 				BubbleGumBuffTitle0.EquippedBuffsLabel:completeAnimation()
 				self.BubbleGumBuffTitle0:setAlpha( 1 )
 				self.BubbleGumBuffTitle0.EquippedBuffsLabel:setText( LocalizeToUpperString( "ZMUI_URM_PURCHASE_TITLE" ) )
 				self.clipFinished( BubbleGumBuffTitle0, {} )
+
 				ZmNotif1CursorHint0:completeAnimation()
 				self.ZmNotif1CursorHint0:setAlpha( 0 )
 				self.clipFinished( ZmNotif1CursorHint0, {} )
+
 				UltraRareMegaDesc:completeAnimation()
 				self.UltraRareMegaDesc:setAlpha( 1 )
 				self.clipFinished( UltraRareMegaDesc, {} )
+
 				ZmNotif1CursorHint00:completeAnimation()
 				self.ZmNotif1CursorHint00:setAlpha( 0 )
 				self.clipFinished( ZmNotif1CursorHint00, {} )
+
 				MegaBundleTimer:completeAnimation()
 				self.MegaBundleTimer:setAlpha( 0 )
 				self.clipFinished( MegaBundleTimer, {} )
+
 				UltraRareMegaTimer:completeAnimation()
 				self.UltraRareMegaTimer:setAlpha( 1 )
 				self.clipFinished( UltraRareMegaTimer, {} )
@@ -147,23 +162,30 @@ CoD.MegaChewVialPackDesc.new = function ( menu, controller )
 		VisibleUltraRareMega = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BubbleGumBuffTitle0:completeAnimation()
+
 				BubbleGumBuffTitle0.EquippedBuffsLabel:completeAnimation()
 				self.BubbleGumBuffTitle0:setAlpha( 1 )
 				self.BubbleGumBuffTitle0.EquippedBuffsLabel:setText( LocalizeToUpperString( "ZMUI_URM_PURCHASE_TITLE" ) )
 				self.clipFinished( BubbleGumBuffTitle0, {} )
+
 				ZmNotif1CursorHint0:completeAnimation()
 				self.ZmNotif1CursorHint0:setAlpha( 0 )
 				self.clipFinished( ZmNotif1CursorHint0, {} )
+
 				UltraRareMegaDesc:completeAnimation()
 				self.UltraRareMegaDesc:setAlpha( 1 )
 				self.clipFinished( UltraRareMegaDesc, {} )
+
 				ZmNotif1CursorHint00:completeAnimation()
 				self.ZmNotif1CursorHint00:setAlpha( 0 )
 				self.clipFinished( ZmNotif1CursorHint00, {} )
+
 				MegaBundleTimer:completeAnimation()
 				self.MegaBundleTimer:setAlpha( 0 )
 				self.clipFinished( MegaBundleTimer, {} )
+
 				UltraRareMegaTimer:completeAnimation()
 				self.UltraRareMegaTimer:setAlpha( 0 )
 				self.clipFinished( UltraRareMegaTimer, {} )
@@ -172,23 +194,30 @@ CoD.MegaChewVialPackDesc.new = function ( menu, controller )
 		VisibleSaleActive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BubbleGumBuffTitle0:completeAnimation()
+
 				BubbleGumBuffTitle0.EquippedBuffsLabel:completeAnimation()
 				self.BubbleGumBuffTitle0:setAlpha( 1 )
 				self.BubbleGumBuffTitle0.EquippedBuffsLabel:setText( LocalizeToUpperString( "ZMUI_VIAL_PACK_CAPS" ) )
 				self.clipFinished( BubbleGumBuffTitle0, {} )
+
 				ZmNotif1CursorHint0:completeAnimation()
 				self.ZmNotif1CursorHint0:setAlpha( 1 )
 				self.clipFinished( ZmNotif1CursorHint0, {} )
+
 				UltraRareMegaDesc:completeAnimation()
 				self.UltraRareMegaDesc:setAlpha( 0 )
 				self.clipFinished( UltraRareMegaDesc, {} )
+
 				ZmNotif1CursorHint00:completeAnimation()
 				self.ZmNotif1CursorHint00:setAlpha( 1 )
 				self.clipFinished( ZmNotif1CursorHint00, {} )
+
 				MegaBundleTimer:completeAnimation()
 				self.MegaBundleTimer:setAlpha( 0 )
 				self.clipFinished( MegaBundleTimer, {} )
+
 				UltraRareMegaTimer:completeAnimation()
 				self.UltraRareMegaTimer:setAlpha( 0 )
 				self.clipFinished( UltraRareMegaTimer, {} )
@@ -197,23 +226,30 @@ CoD.MegaChewVialPackDesc.new = function ( menu, controller )
 		VisibleMegaBundle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BubbleGumBuffTitle0:completeAnimation()
+
 				BubbleGumBuffTitle0.EquippedBuffsLabel:completeAnimation()
 				self.BubbleGumBuffTitle0:setAlpha( 1 )
 				self.BubbleGumBuffTitle0.EquippedBuffsLabel:setText( LocalizeToUpperString( "ZMUI_VIAL_PACK_CAPS" ) )
 				self.clipFinished( BubbleGumBuffTitle0, {} )
+
 				ZmNotif1CursorHint0:completeAnimation()
 				self.ZmNotif1CursorHint0:setAlpha( 1 )
 				self.clipFinished( ZmNotif1CursorHint0, {} )
+
 				UltraRareMegaDesc:completeAnimation()
 				self.UltraRareMegaDesc:setAlpha( 0 )
 				self.clipFinished( UltraRareMegaDesc, {} )
+
 				ZmNotif1CursorHint00:completeAnimation()
 				self.ZmNotif1CursorHint00:setAlpha( 0 )
 				self.clipFinished( ZmNotif1CursorHint00, {} )
+
 				MegaBundleTimer:completeAnimation()
 				self.MegaBundleTimer:setAlpha( 1 )
 				self.clipFinished( MegaBundleTimer, {} )
+
 				UltraRareMegaTimer:completeAnimation()
 				self.UltraRareMegaTimer:setAlpha( 0 )
 				self.clipFinished( UltraRareMegaTimer, {} )
@@ -222,29 +258,37 @@ CoD.MegaChewVialPackDesc.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BubbleGumBuffTitle0:completeAnimation()
+
 				BubbleGumBuffTitle0.EquippedBuffsLabel:completeAnimation()
 				self.BubbleGumBuffTitle0:setAlpha( 1 )
 				self.BubbleGumBuffTitle0.EquippedBuffsLabel:setText( LocalizeToUpperString( "ZMUI_VIAL_PACK_CAPS" ) )
 				self.clipFinished( BubbleGumBuffTitle0, {} )
+
 				ZmNotif1CursorHint0:completeAnimation()
 				self.ZmNotif1CursorHint0:setAlpha( 1 )
 				self.clipFinished( ZmNotif1CursorHint0, {} )
+
 				UltraRareMegaDesc:completeAnimation()
 				self.UltraRareMegaDesc:setAlpha( 0 )
 				self.clipFinished( UltraRareMegaDesc, {} )
+
 				ZmNotif1CursorHint00:completeAnimation()
 				self.ZmNotif1CursorHint00:setAlpha( 0 )
 				self.clipFinished( ZmNotif1CursorHint00, {} )
+
 				MegaBundleTimer:completeAnimation()
 				self.MegaBundleTimer:setAlpha( 0 )
 				self.clipFinished( MegaBundleTimer, {} )
+
 				UltraRareMegaTimer:completeAnimation()
 				self.UltraRareMegaTimer:setAlpha( 0 )
 				self.clipFinished( UltraRareMegaTimer, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "VisibleUltraRareMegaTimer",
@@ -285,6 +329,7 @@ CoD.MegaChewVialPackDesc.new = function ( menu, controller )
 			modelName = "autoevents.cycled"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BubbleGumBuffTitle0:close()
 		element.ZmNotif1CursorHint0:close()

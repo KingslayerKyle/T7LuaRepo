@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_ClipContainerPress"
 CoD.AmmoWidgetMP_ClipContainerNew = InheritFrom( LUI.UIElement )
 CoD.AmmoWidgetMP_ClipContainerNew.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidgetMP_ClipContainerNew )
 	self.id = "AmmoWidgetMP_ClipContainerNew"
@@ -53,16 +55,19 @@ CoD.AmmoWidgetMP_ClipContainerNew.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Clip:completeAnimation()
 				self.Clip:setRGB( 0.74, 0.74, 0.74 )
 				self.Clip:setAlpha( 1 )
 				self.clipFinished( Clip, {} )
+
 				ClipContainerPress:completeAnimation()
 				self.ClipContainerPress:setAlpha( 0 )
 				self.clipFinished( ClipContainerPress, {} )
 			end,
 			LowAmmo = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ClipFrame2 = function ( Clip, event )
 					local ClipFrame3 = function ( Clip, event )
 						local ClipFrame4 = function ( Clip, event )
@@ -157,6 +162,7 @@ CoD.AmmoWidgetMP_ClipContainerNew.new = function ( menu, controller )
 			end,
 			Hero = function ()
 				self:setupElementClipCounter( 2 )
+
 				local ClipFrame2 = function ( Clip, event )
 					if not event.interrupted then
 						Clip:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Bounce )
@@ -174,12 +180,14 @@ CoD.AmmoWidgetMP_ClipContainerNew.new = function ( menu, controller )
 				self.Clip:setRGB( 0.74, 0.74, 0.74 )
 				self.Clip:setAlpha( 1 )
 				ClipFrame2( Clip, {} )
+
 				ClipContainerPress:completeAnimation()
 				self.ClipContainerPress:setAlpha( 0 )
 				self.clipFinished( ClipContainerPress, {} )
 			end,
 			NoAmmo = function ()
 				self:setupElementClipCounter( 2 )
+
 				local ClipFrame2 = function ( Clip, event )
 					local ClipFrame3 = function ( Clip, event )
 						local ClipFrame4 = function ( Clip, event )
@@ -291,16 +299,19 @@ CoD.AmmoWidgetMP_ClipContainerNew.new = function ( menu, controller )
 		Hero = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Clip:completeAnimation()
 				self.Clip:setRGB( 0.59, 0.64, 0.74 )
 				self.Clip:setAlpha( 0 )
 				self.clipFinished( Clip, {} )
+
 				ClipContainerPress:completeAnimation()
 				self.ClipContainerPress:setAlpha( 0 )
 				self.clipFinished( ClipContainerPress, {} )
 			end,
 			LowAmmo = function ()
 				self:setupElementClipCounter( 2 )
+
 				local ClipFrame2 = function ( Clip, event )
 					if not event.interrupted then
 						Clip:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -318,12 +329,14 @@ CoD.AmmoWidgetMP_ClipContainerNew.new = function ( menu, controller )
 				self.Clip:setRGB( 0.59, 0.64, 0.74 )
 				self.Clip:setAlpha( 0 )
 				ClipFrame2( Clip, {} )
+
 				ClipContainerPress:completeAnimation()
 				self.ClipContainerPress:setAlpha( 0 )
 				self.clipFinished( ClipContainerPress, {} )
 			end,
 			NoAmmo = function ()
 				self:setupElementClipCounter( 2 )
+
 				local ClipFrame2 = function ( Clip, event )
 					if not event.interrupted then
 						Clip:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -359,6 +372,7 @@ CoD.AmmoWidgetMP_ClipContainerNew.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				local ClipFrame2 = function ( Clip, event )
 					if not event.interrupted then
 						Clip:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -376,6 +390,7 @@ CoD.AmmoWidgetMP_ClipContainerNew.new = function ( menu, controller )
 				self.Clip:setRGB( 0.59, 0.64, 0.74 )
 				self.Clip:setAlpha( 0 )
 				ClipFrame2( Clip, {} )
+
 				ClipContainerPress:completeAnimation()
 				self.ClipContainerPress:setAlpha( 0 )
 				self.clipFinished( ClipContainerPress, {} )
@@ -384,6 +399,7 @@ CoD.AmmoWidgetMP_ClipContainerNew.new = function ( menu, controller )
 		LowAmmo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local ClipFrame2 = function ( Clip, event )
 					local ClipFrame3 = function ( Clip, event )
 						local ClipFrame4 = function ( Clip, event )
@@ -422,13 +438,16 @@ CoD.AmmoWidgetMP_ClipContainerNew.new = function ( menu, controller )
 				self.Clip:setRGB( 0.94, 0.07, 0.09 )
 				self.Clip:setAlpha( 1 )
 				ClipFrame2( Clip, {} )
+
 				ClipContainerPress:completeAnimation()
 				self.ClipContainerPress:setAlpha( 0 )
 				self.clipFinished( ClipContainerPress, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			Hero = function ()
 				self:setupElementClipCounter( 2 )
+
 				local ClipFrame2 = function ( Clip, event )
 					if not event.interrupted then
 						Clip:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Bounce )
@@ -446,12 +465,14 @@ CoD.AmmoWidgetMP_ClipContainerNew.new = function ( menu, controller )
 				self.Clip:setRGB( 0.94, 0.07, 0.09 )
 				self.Clip:setAlpha( 1 )
 				ClipFrame2( Clip, {} )
+
 				ClipContainerPress:completeAnimation()
 				self.ClipContainerPress:setAlpha( 0 )
 				self.clipFinished( ClipContainerPress, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				local ClipFrame2 = function ( Clip, event )
 					local ClipFrame3 = function ( Clip, event )
 						local ClipFrame4 = function ( Clip, event )
@@ -573,6 +594,7 @@ CoD.AmmoWidgetMP_ClipContainerNew.new = function ( menu, controller )
 		NoAmmo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local ClipFrame2 = function ( Clip, event )
 					local ClipFrame3 = function ( Clip, event )
 						if not event.interrupted then
@@ -601,13 +623,16 @@ CoD.AmmoWidgetMP_ClipContainerNew.new = function ( menu, controller )
 				self.Clip:setRGB( 0.94, 0.07, 0.09 )
 				self.Clip:setAlpha( 1 )
 				ClipFrame2( Clip, {} )
+
 				ClipContainerPress:completeAnimation()
 				self.ClipContainerPress:setAlpha( 1 )
 				self.clipFinished( ClipContainerPress, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			Hero = function ()
 				self:setupElementClipCounter( 2 )
+
 				local ClipFrame2 = function ( Clip, event )
 					if not event.interrupted then
 						Clip:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Bounce )
@@ -643,6 +668,7 @@ CoD.AmmoWidgetMP_ClipContainerNew.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				local ClipFrame2 = function ( Clip, event )
 					local ClipFrame3 = function ( Clip, event )
 						local ClipFrame4 = function ( Clip, event )
@@ -744,12 +770,14 @@ CoD.AmmoWidgetMP_ClipContainerNew.new = function ( menu, controller )
 				self.Clip:setRGB( 0.94, 0.07, 0.09 )
 				self.Clip:setAlpha( 1 )
 				ClipFrame2( Clip, {} )
+
 				ClipContainerPress:completeAnimation()
 				self.ClipContainerPress:setAlpha( 1 )
 				self.clipFinished( ClipContainerPress, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Clip:close()
 		element.ClipContainerPress:close()

@@ -231,6 +231,7 @@ local f0_local12 = function ( f11_arg0, f11_arg1 )
 		f11_arg0:setupWaypointContainer( f11_local1, 0, 0, f11_arg0.zOffset )
 		if f11_arg0.pinging == true then
 			f11_arg0:clearEntityMidpoint( false )
+
 			f11_arg0:completeAnimation()
 			f11_arg0:setAlpha( 1 )
 		end
@@ -245,6 +246,7 @@ local f0_local12 = function ( f11_arg0, f11_arg1 )
 			f11_arg0.pinging = true
 		elseif f11_arg0.pinging == true then
 			f11_arg0:clearEntityMidpoint( false )
+
 			f11_arg0:completeAnimation()
 			f11_arg0:setAlpha( 1 )
 		end
@@ -330,9 +332,11 @@ end
 CoD.Waypoint = InheritFrom( LUI.UIElement )
 CoD.Waypoint.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Waypoint )
 	self.id = "Waypoint"
@@ -391,21 +395,25 @@ CoD.Waypoint.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		NoIcon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				WaypointText:completeAnimation()
 				self.WaypointText:setLeftRight( false, false, -40, 40 )
 				self.WaypointText:setTopBottom( false, false, -9, 12 )
 				self.clipFinished( WaypointText, {} )
+
 				WaypointCenter:completeAnimation()
 				self.WaypointCenter:setAlpha( 0 )
 				self.clipFinished( WaypointCenter, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.WaypointArrowContainer:close()
 		element.WaypointDistanceIndicatorContainer:close()

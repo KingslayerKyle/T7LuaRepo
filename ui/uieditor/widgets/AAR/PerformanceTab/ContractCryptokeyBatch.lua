@@ -4,9 +4,11 @@
 CoD.ContractCryptokeyBatch = InheritFrom( LUI.UIElement )
 CoD.ContractCryptokeyBatch.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ContractCryptokeyBatch )
 	self.id = "ContractCryptokeyBatch"
@@ -78,12 +80,15 @@ CoD.ContractCryptokeyBatch.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				DailyContractBatchKeys:completeAnimation()
 				self.DailyContractBatchKeys:setAlpha( 1 )
 				self.clipFinished( DailyContractBatchKeys, {} )
+
 				WeeklyContractBatchKeys:completeAnimation()
 				self.WeeklyContractBatchKeys:setAlpha( 0 )
 				self.clipFinished( WeeklyContractBatchKeys, {} )
+
 				ContractRewardText:completeAnimation()
 				self.ContractRewardText:setText( Engine.Localize( "CONTRACT_REWARD" ) )
 				self.clipFinished( ContractRewardText, {} )
@@ -92,12 +97,15 @@ CoD.ContractCryptokeyBatch.new = function ( menu, controller )
 		DailyContract = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				DailyContractBatchKeys:completeAnimation()
 				self.DailyContractBatchKeys:setAlpha( 1 )
 				self.clipFinished( DailyContractBatchKeys, {} )
+
 				WeeklyContractBatchKeys:completeAnimation()
 				self.WeeklyContractBatchKeys:setAlpha( 0 )
 				self.clipFinished( WeeklyContractBatchKeys, {} )
+
 				ContractRewardText:completeAnimation()
 				self.ContractRewardText:setText( Engine.Localize( "CONTRACT_DAILY_REWARD_CAPS" ) )
 				self.clipFinished( ContractRewardText, {} )
@@ -106,18 +114,22 @@ CoD.ContractCryptokeyBatch.new = function ( menu, controller )
 		WeeklyContract = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				DailyContractBatchKeys:completeAnimation()
 				self.DailyContractBatchKeys:setAlpha( 0 )
 				self.clipFinished( DailyContractBatchKeys, {} )
+
 				WeeklyContractBatchKeys:completeAnimation()
 				self.WeeklyContractBatchKeys:setAlpha( 1 )
 				self.clipFinished( WeeklyContractBatchKeys, {} )
+
 				ContractRewardText:completeAnimation()
 				self.ContractRewardText:setText( Engine.Localize( "CONTRACT_WEEKLY_REWARD_CAPS" ) )
 				self.clipFinished( ContractRewardText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DailyContract",

@@ -4,9 +4,11 @@
 CoD.codcaster_ScoreLogoWidget = InheritFrom( LUI.UIElement )
 CoD.codcaster_ScoreLogoWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.codcaster_ScoreLogoWidget )
 	self.id = "codcaster_ScoreLogoWidget"
@@ -129,34 +131,44 @@ CoD.codcaster_ScoreLogoWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				GlowWhiteOver:completeAnimation()
 				self.GlowWhiteOver:setAlpha( 0 )
 				self.clipFinished( GlowWhiteOver, {} )
+
 				teamcolor:completeAnimation()
 				self.teamcolor:setAlpha( 1 )
 				self.clipFinished( teamcolor, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setAlpha( 0 )
 				self.clipFinished( emblem, {} )
+
 				logo:completeAnimation()
 				self.logo:setAlpha( 1 )
 				self.logo:setScale( 1 )
 				self.clipFinished( logo, {} )
+
 				testElementFull:completeAnimation()
 				self.testElementFull:setAlpha( 0 )
 				self.clipFinished( testElementFull, {} )
+
 				testElement:completeAnimation()
 				self.testElement:setAlpha( 0 )
 				self.clipFinished( testElement, {} )
+
 				testElement0Full:completeAnimation()
 				self.testElement0Full:setAlpha( 0 )
 				self.clipFinished( testElement0Full, {} )
+
 				testElement0:completeAnimation()
 				self.testElement0:setAlpha( 0 )
 				self.clipFinished( testElement0, {} )
+
 				FlashElement:completeAnimation()
 				self.FlashElement:setAlpha( 0 )
 				self.clipFinished( FlashElement, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setAlpha( 0 )
 				self.Arrow:setScale( 1 )
@@ -166,34 +178,44 @@ CoD.codcaster_ScoreLogoWidget.new = function ( menu, controller )
 		NonTeamBased = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				GlowWhiteOver:completeAnimation()
 				self.GlowWhiteOver:setAlpha( 0 )
 				self.clipFinished( GlowWhiteOver, {} )
+
 				teamcolor:completeAnimation()
 				self.teamcolor:setRGB( 1, 1, 1 )
 				self.teamcolor:setAlpha( 1 )
 				self.clipFinished( teamcolor, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setAlpha( 1 )
 				self.clipFinished( emblem, {} )
+
 				logo:completeAnimation()
 				self.logo:setAlpha( 0 )
 				self.clipFinished( logo, {} )
+
 				testElementFull:completeAnimation()
 				self.testElementFull:setAlpha( 0 )
 				self.clipFinished( testElementFull, {} )
+
 				testElement:completeAnimation()
 				self.testElement:setAlpha( 0 )
 				self.clipFinished( testElement, {} )
+
 				testElement0Full:completeAnimation()
 				self.testElement0Full:setAlpha( 0 )
 				self.clipFinished( testElement0Full, {} )
+
 				testElement0:completeAnimation()
 				self.testElement0:setAlpha( 0 )
 				self.clipFinished( testElement0, {} )
+
 				FlashElement:completeAnimation()
 				self.FlashElement:setAlpha( 0 )
 				self.clipFinished( FlashElement, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
@@ -202,6 +224,7 @@ CoD.codcaster_ScoreLogoWidget.new = function ( menu, controller )
 		SpectatingThisTeam = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				local GlowWhiteOverFrame2 = function ( GlowWhiteOver, event )
 					local GlowWhiteOverFrame3 = function ( GlowWhiteOver, event )
 						if not event.interrupted then
@@ -228,9 +251,11 @@ CoD.codcaster_ScoreLogoWidget.new = function ( menu, controller )
 				GlowWhiteOver:completeAnimation()
 				self.GlowWhiteOver:setAlpha( 0 )
 				GlowWhiteOverFrame2( GlowWhiteOver, {} )
+
 				teamcolor:completeAnimation()
 				self.teamcolor:setAlpha( 1 )
 				self.clipFinished( teamcolor, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setAlpha( 0 )
 				self.clipFinished( emblem, {} )
@@ -357,6 +382,7 @@ CoD.codcaster_ScoreLogoWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NonTeamBased",

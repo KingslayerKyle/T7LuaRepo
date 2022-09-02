@@ -4,9 +4,11 @@
 CoD.TModeSetting_BalancedTacticalMode = InheritFrom( LUI.UIElement )
 CoD.TModeSetting_BalancedTacticalMode.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TModeSetting_BalancedTacticalMode )
 	self.id = "TModeSetting_BalancedTacticalMode"

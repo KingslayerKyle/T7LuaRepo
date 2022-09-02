@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.CharacterCustomization.ChooseCharacterLoadout_Card
 CoD.ChooseCharacterLoadout_CardBack_LockedTransmission = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacterLoadout_CardBack_LockedTransmission.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacterLoadout_CardBack_LockedTransmission )
 	self.id = "ChooseCharacterLoadout_CardBack_LockedTransmission"
@@ -447,6 +449,7 @@ CoD.ChooseCharacterLoadout_CardBack_LockedTransmission.new = function ( menu, co
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local faceFrame2 = function ( face, event )
 					if not event.interrupted then
 						face:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Bounce )
@@ -525,6 +528,7 @@ CoD.ChooseCharacterLoadout_CardBack_LockedTransmission.new = function ( menu, co
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Border10:close()
 		element.completeAssignmentText:close()

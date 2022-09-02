@@ -19,9 +19,11 @@ end
 CoD.XpBarContainer = InheritFrom( LUI.UIElement )
 CoD.XpBarContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.XpBarContainer )
 	self.id = "XpBarContainer"
@@ -261,44 +263,56 @@ CoD.XpBarContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				RankIconAndNumberWidgetPrevious:completeAnimation()
 				self.RankIconAndNumberWidgetPrevious:setAlpha( 1 )
 				self.clipFinished( RankIconAndNumberWidgetPrevious, {} )
+
 				XPEarnedDisplay:completeAnimation()
 				self.XPEarnedDisplay:setLeftRight( true, false, 54.5, 535.91 )
 				self.XPEarnedDisplay:setTopBottom( true, false, 5, 31 )
 				self.clipFinished( XPEarnedDisplay, {} )
+
 				ProgressDescription:completeAnimation()
+
 				ProgressDescription.FEButtonPanel0:completeAnimation()
 				self.ProgressDescription:setLeftRight( true, false, -67, 208.41 )
 				self.ProgressDescription:setTopBottom( true, false, -13, 13 )
 				self.ProgressDescription.FEButtonPanel0:setAlpha( 0.2 )
 				self.clipFinished( ProgressDescription, {} )
+
 				NextLevelDisplay:completeAnimation()
 				self.NextLevelDisplay:setLeftRight( false, true, -255, -57 )
 				self.NextLevelDisplay:setTopBottom( true, false, 5, 31 )
 				self.clipFinished( NextLevelDisplay, {} )
+
 				BackGlow:completeAnimation()
 				self.BackGlow:setAlpha( 0 )
 				self.clipFinished( BackGlow, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setAlpha( 0 )
 				self.clipFinished( Glow0, {} )
+
 				Glow1:completeAnimation()
 				self.Glow1:setAlpha( 0 )
 				self.clipFinished( Glow1, {} )
+
 				MeterGlow:completeAnimation()
 				self.MeterGlow:setAlpha( 0 )
 				self.clipFinished( MeterGlow, {} )
+
 				RankIconAndNumberBig:completeAnimation()
 				self.RankIconAndNumberBig:setAlpha( 0 )
 				self.clipFinished( RankIconAndNumberBig, {} )
+
 				starterPackXPNotice:completeAnimation()
 				self.starterPackXPNotice:setAlpha( 1 )
 				self.clipFinished( starterPackXPNotice, {} )
 			end,
 			Update = function ()
 				self:setupElementClipCounter( 18 )
+
 				local f17_local0 = function ( f18_arg0, f18_arg1 )
 					local f18_local0 = function ( f19_arg0, f19_arg1 )
 						if not f19_arg1.interrupted then
@@ -1597,12 +1611,14 @@ CoD.XpBarContainer.new = function ( menu, controller )
 				promotionMusic:beginAnimation( "keyframe", 839, false, false, CoD.TweenType.Linear )
 				promotionMusic:playSound( "0", controller )
 				promotionMusic:registerEventHandler( "transition_complete_keyframe", f17_local15 )
+
 				starterPackXPNotice:completeAnimation()
 				self.starterPackXPNotice:setAlpha( 0 )
 				self.clipFinished( starterPackXPNotice, {} )
 			end,
 			FlashNextLevel = function ()
 				self:setupElementClipCounter( 11 )
+
 				local f128_local0 = function ( f129_arg0, f129_arg1 )
 					if not f129_arg1.interrupted then
 						f129_arg0:beginAnimation( "keyframe", 160, false, false, CoD.TweenType.Linear )
@@ -1768,15 +1784,18 @@ CoD.XpBarContainer.new = function ( menu, controller )
 				MeterGlow:completeAnimation()
 				self.MeterGlow:setAlpha( 0 )
 				MeterGlowFrame2( MeterGlow, {} )
+
 				starterPackXPNotice:completeAnimation()
 				self.starterPackXPNotice:setAlpha( 0 )
 				self.clipFinished( starterPackXPNotice, {} )
 			end,
 			FlashLastLevel = function ()
 				self:setupElementClipCounter( 11 )
+
 				XpBarFrame:completeAnimation()
 				self.XpBarFrame:setAlpha( 0 )
 				self.clipFinished( XpBarFrame, {} )
+
 				XpBar:completeAnimation()
 				self.XpBar:setAlpha( 0 )
 				self.clipFinished( XpBar, {} )
@@ -1810,15 +1829,19 @@ CoD.XpBarContainer.new = function ( menu, controller )
 				XPEarnedDisplay:beginAnimation( "keyframe", 9, false, false, CoD.TweenType.Linear )
 				XPEarnedDisplay:setAlpha( 0 )
 				XPEarnedDisplay:registerEventHandler( "transition_complete_keyframe", f140_local1 )
+
 				NextLevelDisplay:completeAnimation()
 				self.NextLevelDisplay:setAlpha( 0 )
 				self.clipFinished( NextLevelDisplay, {} )
+
 				BackGlow:completeAnimation()
 				self.BackGlow:setAlpha( 0 )
 				self.clipFinished( BackGlow, {} )
+
 				RankIconAndNumberWidgetNextTop:completeAnimation()
 				self.RankIconAndNumberWidgetNextTop:setAlpha( 0 )
 				self.clipFinished( RankIconAndNumberWidgetNextTop, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setLeftRight( false, false, -686.38, -386.38 )
 				self.Glow0:setTopBottom( false, true, -29.79, -4.79 )
@@ -1853,9 +1876,11 @@ CoD.XpBarContainer.new = function ( menu, controller )
 				self.Glow1:setTopBottom( false, true, -65, 11 )
 				self.Glow1:setAlpha( 0.84 )
 				Glow1Frame2( Glow1, {} )
+
 				MeterGlow:completeAnimation()
 				self.MeterGlow:setAlpha( 0 )
 				self.clipFinished( MeterGlow, {} )
+
 				starterPackXPNotice:completeAnimation()
 				self.starterPackXPNotice:setAlpha( 0 )
 				self.clipFinished( starterPackXPNotice, {} )
@@ -1864,45 +1889,57 @@ CoD.XpBarContainer.new = function ( menu, controller )
 		Arabic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				RankIconAndNumberWidgetPrevious:completeAnimation()
 				self.RankIconAndNumberWidgetPrevious:setAlpha( 1 )
 				self.clipFinished( RankIconAndNumberWidgetPrevious, {} )
+
 				XPEarnedDisplay:completeAnimation()
 				self.XPEarnedDisplay:setLeftRight( true, false, -67, 216.41 )
 				self.XPEarnedDisplay:setTopBottom( true, false, 8, 34 )
 				self.clipFinished( XPEarnedDisplay, {} )
+
 				ProgressDescription:completeAnimation()
+
 				ProgressDescription.FEButtonPanel0:completeAnimation()
 				self.ProgressDescription:setLeftRight( true, false, -67, 216.41 )
 				self.ProgressDescription:setTopBottom( true, false, -13, 13 )
 				self.ProgressDescription:setAlpha( 1 )
 				self.ProgressDescription.FEButtonPanel0:setAlpha( 0.2 )
 				self.clipFinished( ProgressDescription, {} )
+
 				NextLevelDisplay:completeAnimation()
 				self.NextLevelDisplay:setLeftRight( false, true, -344, -42 )
 				self.NextLevelDisplay:setTopBottom( true, false, 5, 31 )
 				self.clipFinished( NextLevelDisplay, {} )
+
 				BackGlow:completeAnimation()
 				self.BackGlow:setAlpha( 0 )
 				self.clipFinished( BackGlow, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setAlpha( 0 )
 				self.clipFinished( Glow0, {} )
+
 				Glow1:completeAnimation()
 				self.Glow1:setAlpha( 0 )
 				self.clipFinished( Glow1, {} )
+
 				MeterGlow:completeAnimation()
 				self.MeterGlow:setAlpha( 0 )
 				self.clipFinished( MeterGlow, {} )
+
 				RankIconAndNumberBig:completeAnimation()
 				self.RankIconAndNumberBig:setAlpha( 0 )
 				self.clipFinished( RankIconAndNumberBig, {} )
+
 				starterPackXPNotice:completeAnimation()
 				self.starterPackXPNotice:setAlpha( 1 )
 				self.clipFinished( starterPackXPNotice, {} )
 			end,
 			Update = function ()
 				self:setupElementClipCounter( 18 )
+
 				local f146_local0 = function ( f147_arg0, f147_arg1 )
 					local f147_local0 = function ( f148_arg0, f148_arg1 )
 						if not f148_arg1.interrupted then
@@ -3201,12 +3238,14 @@ CoD.XpBarContainer.new = function ( menu, controller )
 				promotionMusic:beginAnimation( "keyframe", 839, false, false, CoD.TweenType.Linear )
 				promotionMusic:playSound( "0", controller )
 				promotionMusic:registerEventHandler( "transition_complete_keyframe", f146_local15 )
+
 				starterPackXPNotice:completeAnimation()
 				self.starterPackXPNotice:setAlpha( 0 )
 				self.clipFinished( starterPackXPNotice, {} )
 			end,
 			FlashNextLevel = function ()
 				self:setupElementClipCounter( 10 )
+
 				local f257_local0 = function ( f258_arg0, f258_arg1 )
 					if not f258_arg1.interrupted then
 						f258_arg0:beginAnimation( "keyframe", 160, false, false, CoD.TweenType.Linear )
@@ -3375,9 +3414,11 @@ CoD.XpBarContainer.new = function ( menu, controller )
 			end,
 			FlashLastLevel = function ()
 				self:setupElementClipCounter( 10 )
+
 				XpBarFrame:completeAnimation()
 				self.XpBarFrame:setAlpha( 0 )
 				self.clipFinished( XpBarFrame, {} )
+
 				XpBar:completeAnimation()
 				self.XpBar:setAlpha( 0 )
 				self.clipFinished( XpBar, {} )
@@ -3411,15 +3452,19 @@ CoD.XpBarContainer.new = function ( menu, controller )
 				XPEarnedDisplay:beginAnimation( "keyframe", 9, false, false, CoD.TweenType.Linear )
 				XPEarnedDisplay:setAlpha( 0 )
 				XPEarnedDisplay:registerEventHandler( "transition_complete_keyframe", f269_local1 )
+
 				NextLevelDisplay:completeAnimation()
 				self.NextLevelDisplay:setAlpha( 0 )
 				self.clipFinished( NextLevelDisplay, {} )
+
 				BackGlow:completeAnimation()
 				self.BackGlow:setAlpha( 0 )
 				self.clipFinished( BackGlow, {} )
+
 				RankIconAndNumberWidgetNextTop:completeAnimation()
 				self.RankIconAndNumberWidgetNextTop:setAlpha( 0 )
 				self.clipFinished( RankIconAndNumberWidgetNextTop, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setLeftRight( false, false, -686.38, -386.38 )
 				self.Glow0:setTopBottom( false, true, -29.79, -4.79 )
@@ -3454,12 +3499,14 @@ CoD.XpBarContainer.new = function ( menu, controller )
 				self.Glow1:setTopBottom( false, true, -65, 11 )
 				self.Glow1:setAlpha( 0.84 )
 				Glow1Frame2( Glow1, {} )
+
 				MeterGlow:completeAnimation()
 				self.MeterGlow:setAlpha( 0 )
 				self.clipFinished( MeterGlow, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Arabic",
@@ -3468,6 +3515,7 @@ CoD.XpBarContainer.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.XpBarFrame:close()
 		element.XpBar:close()

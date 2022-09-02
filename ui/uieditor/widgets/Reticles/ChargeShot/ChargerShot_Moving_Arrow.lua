@@ -4,9 +4,11 @@
 CoD.ChargerShot_Moving_Arrow = InheritFrom( LUI.UIElement )
 CoD.ChargerShot_Moving_Arrow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChargerShot_Moving_Arrow )
 	self.id = "ChargerShot_Moving_Arrow"

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CharacterCustomization.list1ButtonNewStyle" )
 CoD.FindGroupsTabSearchPlayerFrame = InheritFrom( LUI.UIElement )
 CoD.FindGroupsTabSearchPlayerFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FindGroupsTabSearchPlayerFrame )
 	self.id = "FindGroupsTabSearchPlayerFrame"
@@ -113,6 +115,7 @@ CoD.FindGroupsTabSearchPlayerFrame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GroupsNameEntry:close()
 		element.SearchButton:close()

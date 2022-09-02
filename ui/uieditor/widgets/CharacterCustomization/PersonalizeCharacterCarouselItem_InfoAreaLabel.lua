@@ -4,9 +4,11 @@
 CoD.PersonalizeCharacterCarouselItem_InfoAreaLabel = InheritFrom( LUI.UIElement )
 CoD.PersonalizeCharacterCarouselItem_InfoAreaLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PersonalizeCharacterCarouselItem_InfoAreaLabel )
 	self.id = "PersonalizeCharacterCarouselItem_InfoAreaLabel"
@@ -32,6 +34,7 @@ CoD.PersonalizeCharacterCarouselItem_InfoAreaLabel.new = function ( menu, contro
 			name:setText( Engine.Localize( categoryName ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( name, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 2 )
 	end )

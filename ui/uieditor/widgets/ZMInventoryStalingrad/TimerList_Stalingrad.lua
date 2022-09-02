@@ -21,9 +21,11 @@ CoD.Zombie.Timers = {
 CoD.TimerList_Stalingrad = InheritFrom( LUI.UIElement )
 CoD.TimerList_Stalingrad.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TimerList_Stalingrad )
 	self.id = "TimerList_Stalingrad"
@@ -45,6 +47,7 @@ CoD.TimerList_Stalingrad.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				TimerGrid:completeAnimation()
 				self.TimerGrid:setAlpha( 0 )
 				self.clipFinished( TimerGrid, {} )
@@ -53,12 +56,14 @@ CoD.TimerList_Stalingrad.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				TimerGrid:completeAnimation()
 				self.TimerGrid:setAlpha( 1 )
 				self.clipFinished( TimerGrid, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -75,6 +80,7 @@ CoD.TimerList_Stalingrad.new = function ( menu, controller )
 			modelName = "forceScoreboard"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TimerGrid:close()
 	end )

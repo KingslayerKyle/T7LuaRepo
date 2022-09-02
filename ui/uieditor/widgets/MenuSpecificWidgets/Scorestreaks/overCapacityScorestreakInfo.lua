@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.cac_ButtonBoxLrgInactiveStroke" )
 CoD.overCapacityScorestreakInfo = InheritFrom( LUI.UIElement )
 CoD.overCapacityScorestreakInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.overCapacityScorestreakInfo )
 	self.id = "overCapacityScorestreakInfo"
@@ -66,9 +68,11 @@ CoD.overCapacityScorestreakInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				descText:completeAnimation()
 				self.descText:setAlpha( 1 )
 				self.clipFinished( descText, {} )
+
 				nameLabel:completeAnimation()
 				self.nameLabel:setAlpha( 1 )
 				self.clipFinished( nameLabel, {} )
@@ -77,15 +81,18 @@ CoD.overCapacityScorestreakInfo.new = function ( menu, controller )
 		NameOnly = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				descText:completeAnimation()
 				self.descText:setAlpha( 0 )
 				self.clipFinished( descText, {} )
+
 				nameLabel:completeAnimation()
 				self.nameLabel:setAlpha( 1 )
 				self.clipFinished( nameLabel, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TitleGlow1:close()
 		element.cacButtonBoxLrgInactiveStroke:close()

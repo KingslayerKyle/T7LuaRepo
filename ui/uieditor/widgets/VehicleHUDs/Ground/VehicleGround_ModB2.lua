@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Ground.VehicleGround_ModB2Pixel" )
 CoD.VehicleGround_ModB2 = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_ModB2.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.VehicleGround_ModB2 )
 	self.id = "VehicleGround_ModB2"
@@ -35,6 +37,7 @@ CoD.VehicleGround_ModB2.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ReplaceFrame2 = function ( Replace, event )
 					local ReplaceFrame3 = function ( Replace, event )
 						local ReplaceFrame4 = function ( Replace, event )
@@ -106,10 +109,12 @@ CoD.VehicleGround_ModB2.new = function ( menu, controller )
 				self.Replace:setTopBottom( true, false, -12, 28 )
 				self.Replace:setAlpha( 1 )
 				ReplaceFrame2( Replace, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Replace:close()
 	end )

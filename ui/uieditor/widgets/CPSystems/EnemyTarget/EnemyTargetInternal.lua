@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.CPSystems.EnemyTarget.EnemyTarget_Hacking" )
 CoD.EnemyTargetInternal = InheritFrom( LUI.UIElement )
 CoD.EnemyTargetInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EnemyTargetInternal )
 	self.id = "EnemyTargetInternal"
@@ -189,110 +191,133 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				LockBlur:completeAnimation()
 				self.LockBlur:setLeftRight( false, false, -100, 100 )
 				self.LockBlur:setTopBottom( false, false, -100, 100 )
 				self.LockBlur:setAlpha( 0 )
 				self.clipFinished( LockBlur, {} )
+
 				LockGlow:completeAnimation()
 				self.LockGlow:setAlpha( 0 )
 				self.clipFinished( LockGlow, {} )
+
 				LockLineRedLR:completeAnimation()
 				self.LockLineRedLR:setLeftRight( false, false, 10, 46 )
 				self.LockLineRedLR:setTopBottom( false, false, 26, 62 )
 				self.LockLineRedLR:setAlpha( 0 )
 				self.clipFinished( LockLineRedLR, {} )
+
 				LockLineRedLL:completeAnimation()
 				self.LockLineRedLL:setLeftRight( false, false, -44, -8 )
 				self.LockLineRedLL:setTopBottom( false, false, 26, 62 )
 				self.LockLineRedLL:setAlpha( 0 )
 				self.clipFinished( LockLineRedLL, {} )
+
 				LockLineRedUR:completeAnimation()
 				self.LockLineRedUR:setLeftRight( false, false, 10, 46 )
 				self.LockLineRedUR:setTopBottom( false, false, -63, -27 )
 				self.LockLineRedUR:setAlpha( 0 )
 				self.clipFinished( LockLineRedUR, {} )
+
 				LockLineRedUL:completeAnimation()
 				self.LockLineRedUL:setLeftRight( false, false, -46, -10 )
 				self.LockLineRedUL:setTopBottom( false, false, -63, -27 )
 				self.LockLineRedUL:setAlpha( 0 )
 				self.clipFinished( LockLineRedUL, {} )
+
 				LockTarget:completeAnimation()
 				self.LockTarget:setLeftRight( false, false, -50, 50 )
 				self.LockTarget:setTopBottom( false, false, -92, 92 )
 				self.LockTarget:setAlpha( 0 )
 				self.clipFinished( LockTarget, {} )
+
 				Target:completeAnimation()
 				self.Target:setAlpha( 0 )
 				self.Target:setZRot( 0 )
 				self.clipFinished( Target, {} )
+
 				TargetArrowL:completeAnimation()
 				self.TargetArrowL:setLeftRight( false, false, -16, 16 )
 				self.TargetArrowL:setTopBottom( false, false, 10, 42 )
 				self.TargetArrowL:setAlpha( 0 )
 				self.TargetArrowL:setZRot( 0 )
 				self.clipFinished( TargetArrowL, {} )
+
 				TargetArrowU:completeAnimation()
 				self.TargetArrowU:setLeftRight( false, false, -16, 16 )
 				self.TargetArrowU:setTopBottom( false, false, -43, -11 )
 				self.TargetArrowU:setAlpha( 0 )
 				self.clipFinished( TargetArrowU, {} )
+
 				TargetLineR:completeAnimation()
 				self.TargetLineR:setLeftRight( false, false, 101, 125 )
 				self.TargetLineR:setTopBottom( false, false, -4, 4 )
 				self.TargetLineR:setAlpha( 0 )
 				self.TargetLineR:setZRot( 0 )
 				self.clipFinished( TargetLineR, {} )
+
 				TargetLineL:completeAnimation()
 				self.TargetLineL:setLeftRight( false, false, -128, -104 )
 				self.TargetLineL:setTopBottom( false, false, -4, 4 )
 				self.TargetLineL:setAlpha( 0 )
 				self.TargetLineL:setZRot( 0 )
 				self.clipFinished( TargetLineL, {} )
+
 				EnemyTargetArrowAnim0:completeAnimation()
 				self.EnemyTargetArrowAnim0:setAlpha( 0 )
 				self.clipFinished( EnemyTargetArrowAnim0, {} )
+
 				EnemyTargetArrowAnim1:completeAnimation()
 				self.EnemyTargetArrowAnim1:setAlpha( 0 )
 				self.clipFinished( EnemyTargetArrowAnim1, {} )
+
 				InvalidTarget:completeAnimation()
 				self.InvalidTarget:setAlpha( 0 )
 				self.InvalidTarget:setScale( 1 )
 				self.clipFinished( InvalidTarget, {} )
+
 				hacking:completeAnimation()
 				self.hacking:setAlpha( 0 )
 				self.clipFinished( hacking, {} )
 			end,
 			Target = function ()
 				self:setupElementClipCounter( 16 )
+
 				LockBlur:completeAnimation()
 				self.LockBlur:setLeftRight( false, false, -100, 100 )
 				self.LockBlur:setTopBottom( false, false, -100, 100 )
 				self.LockBlur:setAlpha( 0 )
 				self.clipFinished( LockBlur, {} )
+
 				LockGlow:completeAnimation()
 				self.LockGlow:setAlpha( 0 )
 				self.clipFinished( LockGlow, {} )
+
 				LockLineRedLR:completeAnimation()
 				self.LockLineRedLR:setLeftRight( false, false, 10, 46 )
 				self.LockLineRedLR:setTopBottom( false, false, 26, 62 )
 				self.LockLineRedLR:setAlpha( 0 )
 				self.clipFinished( LockLineRedLR, {} )
+
 				LockLineRedLL:completeAnimation()
 				self.LockLineRedLL:setLeftRight( false, false, -44, -8 )
 				self.LockLineRedLL:setTopBottom( false, false, 26, 62 )
 				self.LockLineRedLL:setAlpha( 0 )
 				self.clipFinished( LockLineRedLL, {} )
+
 				LockLineRedUR:completeAnimation()
 				self.LockLineRedUR:setLeftRight( false, false, 10, 46 )
 				self.LockLineRedUR:setTopBottom( false, false, -63, -27 )
 				self.LockLineRedUR:setAlpha( 0 )
 				self.clipFinished( LockLineRedUR, {} )
+
 				LockLineRedUL:completeAnimation()
 				self.LockLineRedUL:setLeftRight( false, false, -46, -10 )
 				self.LockLineRedUL:setTopBottom( false, false, -63, -27 )
 				self.LockLineRedUL:setAlpha( 0 )
 				self.clipFinished( LockLineRedUL, {} )
+
 				LockTarget:completeAnimation()
 				self.LockTarget:setLeftRight( false, false, -50, 50 )
 				self.LockTarget:setTopBottom( false, false, -92, 92 )
@@ -487,22 +512,27 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 				self.TargetLineL:setAlpha( 0 )
 				self.TargetLineL:setZRot( 0 )
 				TargetLineLFrame2( TargetLineL, {} )
+
 				EnemyTargetArrowAnim0:completeAnimation()
 				self.EnemyTargetArrowAnim0:setAlpha( 0 )
 				self.clipFinished( EnemyTargetArrowAnim0, {} )
+
 				EnemyTargetArrowAnim1:completeAnimation()
 				self.EnemyTargetArrowAnim1:setAlpha( 0 )
 				self.clipFinished( EnemyTargetArrowAnim1, {} )
+
 				InvalidTarget:completeAnimation()
 				self.InvalidTarget:setAlpha( 0 )
 				self.InvalidTarget:setScale( 1 )
 				self.clipFinished( InvalidTarget, {} )
+
 				hacking:completeAnimation()
 				self.hacking:setAlpha( 0 )
 				self.clipFinished( hacking, {} )
 			end,
 			Hacking = function ()
 				self:setupElementClipCounter( 16 )
+
 				local LockBlurFrame2 = function ( LockBlur, event )
 					if not event.interrupted then
 						LockBlur:beginAnimation( "keyframe", 150, false, true, CoD.TweenType.Linear )
@@ -1037,6 +1067,7 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 				self.EnemyTargetArrowAnim1:setTopBottom( false, false, -25, 25 )
 				self.EnemyTargetArrowAnim1:setAlpha( 0 )
 				EnemyTargetArrowAnim1Frame2( EnemyTargetArrowAnim1, {} )
+
 				InvalidTarget:completeAnimation()
 				self.InvalidTarget:setAlpha( 0 )
 				self.InvalidTarget:setScale( 1 )
@@ -1059,6 +1090,7 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 			end,
 			Lock = function ()
 				self:setupElementClipCounter( 16 )
+
 				local LockBlurFrame2 = function ( LockBlur, event )
 					if not event.interrupted then
 						LockBlur:beginAnimation( "keyframe", 150, false, true, CoD.TweenType.Linear )
@@ -1593,79 +1625,95 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 				self.EnemyTargetArrowAnim1:setTopBottom( false, false, -25, 25 )
 				self.EnemyTargetArrowAnim1:setAlpha( 0 )
 				EnemyTargetArrowAnim1Frame2( EnemyTargetArrowAnim1, {} )
+
 				InvalidTarget:completeAnimation()
 				self.InvalidTarget:setAlpha( 0 )
 				self.InvalidTarget:setScale( 1 )
 				self.clipFinished( InvalidTarget, {} )
+
 				hacking:completeAnimation()
 				self.hacking:setAlpha( 0 )
 				self.clipFinished( hacking, {} )
 			end,
 			Invalid = function ()
 				self:setupElementClipCounter( 16 )
+
 				LockBlur:completeAnimation()
 				self.LockBlur:setLeftRight( false, false, -100, 100 )
 				self.LockBlur:setTopBottom( false, false, -100, 100 )
 				self.LockBlur:setAlpha( 0 )
 				self.clipFinished( LockBlur, {} )
+
 				LockGlow:completeAnimation()
 				self.LockGlow:setAlpha( 0 )
 				self.clipFinished( LockGlow, {} )
+
 				LockLineRedLR:completeAnimation()
 				self.LockLineRedLR:setLeftRight( false, false, 10, 46 )
 				self.LockLineRedLR:setTopBottom( false, false, 26, 62 )
 				self.LockLineRedLR:setAlpha( 0 )
 				self.clipFinished( LockLineRedLR, {} )
+
 				LockLineRedLL:completeAnimation()
 				self.LockLineRedLL:setLeftRight( false, false, -44, -8 )
 				self.LockLineRedLL:setTopBottom( false, false, 26, 62 )
 				self.LockLineRedLL:setAlpha( 0 )
 				self.clipFinished( LockLineRedLL, {} )
+
 				LockLineRedUR:completeAnimation()
 				self.LockLineRedUR:setLeftRight( false, false, 10, 46 )
 				self.LockLineRedUR:setTopBottom( false, false, -63, -27 )
 				self.LockLineRedUR:setAlpha( 0 )
 				self.clipFinished( LockLineRedUR, {} )
+
 				LockLineRedUL:completeAnimation()
 				self.LockLineRedUL:setLeftRight( false, false, -46, -10 )
 				self.LockLineRedUL:setTopBottom( false, false, -63, -27 )
 				self.LockLineRedUL:setAlpha( 0 )
 				self.clipFinished( LockLineRedUL, {} )
+
 				LockTarget:completeAnimation()
 				self.LockTarget:setLeftRight( false, false, -50, 50 )
 				self.LockTarget:setTopBottom( false, false, -92, 92 )
 				self.LockTarget:setAlpha( 0 )
 				self.clipFinished( LockTarget, {} )
+
 				Target:completeAnimation()
 				self.Target:setAlpha( 0 )
 				self.Target:setZRot( 0 )
 				self.clipFinished( Target, {} )
+
 				TargetArrowL:completeAnimation()
 				self.TargetArrowL:setLeftRight( false, false, -16, 16 )
 				self.TargetArrowL:setTopBottom( false, false, 10, 42 )
 				self.TargetArrowL:setAlpha( 0 )
 				self.TargetArrowL:setZRot( 0 )
 				self.clipFinished( TargetArrowL, {} )
+
 				TargetArrowU:completeAnimation()
 				self.TargetArrowU:setLeftRight( false, false, -16, 16 )
 				self.TargetArrowU:setTopBottom( false, false, -43, -11 )
 				self.TargetArrowU:setAlpha( 0 )
 				self.clipFinished( TargetArrowU, {} )
+
 				TargetLineR:completeAnimation()
 				self.TargetLineR:setLeftRight( false, false, 101, 125 )
 				self.TargetLineR:setTopBottom( false, false, -4, 4 )
 				self.TargetLineR:setAlpha( 0 )
 				self.TargetLineR:setZRot( 0 )
 				self.clipFinished( TargetLineR, {} )
+
 				TargetLineL:completeAnimation()
 				self.TargetLineL:setLeftRight( false, false, -128, -104 )
 				self.TargetLineL:setTopBottom( false, false, -4, 4 )
 				self.TargetLineL:setAlpha( 0 )
 				self.TargetLineL:setZRot( 0 )
 				self.clipFinished( TargetLineL, {} )
+
 				EnemyTargetArrowAnim0:completeAnimation()
 				self.EnemyTargetArrowAnim0:setAlpha( 0 )
 				self.clipFinished( EnemyTargetArrowAnim0, {} )
+
 				EnemyTargetArrowAnim1:completeAnimation()
 				self.EnemyTargetArrowAnim1:setAlpha( 0 )
 				self.clipFinished( EnemyTargetArrowAnim1, {} )
@@ -1711,6 +1759,7 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 				self.InvalidTarget:setZRot( 0 )
 				self.InvalidTarget:setScale( 1.5 )
 				InvalidTargetFrame2( InvalidTarget, {} )
+
 				hacking:completeAnimation()
 				self.hacking:setAlpha( 0 )
 				self.clipFinished( hacking, {} )
@@ -1719,77 +1768,94 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 		Hacking = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				LockBlur:completeAnimation()
 				self.LockBlur:setAlpha( 1 )
 				self.clipFinished( LockBlur, {} )
+
 				LockGlow:completeAnimation()
 				self.LockGlow:setAlpha( 1 )
 				self.clipFinished( LockGlow, {} )
+
 				LockLineRedLR:completeAnimation()
 				self.LockLineRedLR:setLeftRight( false, false, 32, 68 )
 				self.LockLineRedLR:setTopBottom( false, false, 53, 89 )
 				self.LockLineRedLR:setAlpha( 1 )
 				self.clipFinished( LockLineRedLR, {} )
+
 				LockLineRedLL:completeAnimation()
 				self.LockLineRedLL:setLeftRight( false, false, -67, -31 )
 				self.LockLineRedLL:setTopBottom( false, false, 53, 89 )
 				self.LockLineRedLL:setAlpha( 1 )
 				self.clipFinished( LockLineRedLL, {} )
+
 				LockLineRedUR:completeAnimation()
 				self.LockLineRedUR:setLeftRight( false, false, 32, 68 )
 				self.LockLineRedUR:setTopBottom( false, false, -85, -49 )
 				self.LockLineRedUR:setAlpha( 1 )
 				self.clipFinished( LockLineRedUR, {} )
+
 				LockLineRedUL:completeAnimation()
 				self.LockLineRedUL:setLeftRight( false, false, -67, -31 )
 				self.LockLineRedUL:setTopBottom( false, false, -85, -49 )
 				self.LockLineRedUL:setAlpha( 1 )
 				self.clipFinished( LockLineRedUL, {} )
+
 				LockTarget:completeAnimation()
 				self.LockTarget:setAlpha( 1 )
 				self.clipFinished( LockTarget, {} )
+
 				Target:completeAnimation()
 				self.Target:setAlpha( 1 )
 				self.Target:setZRot( -90 )
 				self.clipFinished( Target, {} )
+
 				TargetArrowL:completeAnimation()
 				self.TargetArrowL:setLeftRight( false, false, -16, 16 )
 				self.TargetArrowL:setTopBottom( false, false, 92, 124 )
 				self.TargetArrowL:setAlpha( 0 )
 				self.TargetArrowL:setZRot( 0 )
 				self.clipFinished( TargetArrowL, {} )
+
 				TargetArrowU:completeAnimation()
 				self.TargetArrowU:setLeftRight( false, false, -16, 16 )
 				self.TargetArrowU:setTopBottom( false, false, -124, -92 )
 				self.TargetArrowU:setAlpha( 0 )
 				self.clipFinished( TargetArrowU, {} )
+
 				TargetLineR:completeAnimation()
 				self.TargetLineR:setLeftRight( false, false, -12, 12 )
 				self.TargetLineR:setTopBottom( false, false, 33, 41 )
 				self.TargetLineR:setAlpha( 1 )
 				self.TargetLineR:setZRot( -90 )
 				self.clipFinished( TargetLineR, {} )
+
 				TargetLineL:completeAnimation()
 				self.TargetLineL:setLeftRight( false, false, -12, 12 )
 				self.TargetLineL:setTopBottom( false, false, -40, -32 )
 				self.TargetLineL:setAlpha( 1 )
 				self.TargetLineL:setZRot( 90 )
 				self.clipFinished( TargetLineL, {} )
+
 				EnemyTargetArrowAnim0:completeAnimation()
 				self.EnemyTargetArrowAnim0:setAlpha( 1 )
 				self.clipFinished( EnemyTargetArrowAnim0, {} )
+
 				EnemyTargetArrowAnim1:completeAnimation()
 				self.EnemyTargetArrowAnim1:setAlpha( 1 )
 				self.clipFinished( EnemyTargetArrowAnim1, {} )
+
 				InvalidTarget:completeAnimation()
 				self.InvalidTarget:setAlpha( 0 )
 				self.clipFinished( InvalidTarget, {} )
+
 				hacking:completeAnimation()
 				self.hacking:setAlpha( 1 )
 				self.clipFinished( hacking, {} )
 			end,
 			Target = function ()
 				self:setupElementClipCounter( 16 )
+
 				local LockBlurFrame2 = function ( LockBlur, event )
 					if not event.interrupted then
 						LockBlur:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -2306,15 +2372,18 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 				EnemyTargetArrowAnim1:completeAnimation()
 				self.EnemyTargetArrowAnim1:setAlpha( 1 )
 				EnemyTargetArrowAnim1Frame2( EnemyTargetArrowAnim1, {} )
+
 				InvalidTarget:completeAnimation()
 				self.InvalidTarget:setAlpha( 0 )
 				self.clipFinished( InvalidTarget, {} )
+
 				hacking:completeAnimation()
 				self.hacking:setAlpha( 0 )
 				self.clipFinished( hacking, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 16 )
+
 				local LockBlurFrame2 = function ( LockBlur, event )
 					if not event.interrupted then
 						LockBlur:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -2927,15 +2996,18 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 				EnemyTargetArrowAnim1:completeAnimation()
 				self.EnemyTargetArrowAnim1:setAlpha( 1 )
 				EnemyTargetArrowAnim1Frame2( EnemyTargetArrowAnim1, {} )
+
 				InvalidTarget:completeAnimation()
 				self.InvalidTarget:setAlpha( 0 )
 				self.clipFinished( InvalidTarget, {} )
+
 				hacking:completeAnimation()
 				self.hacking:setAlpha( 0 )
 				self.clipFinished( hacking, {} )
 			end,
 			Invalid = function ()
 				self:setupElementClipCounter( 16 )
+
 				local LockBlurFrame2 = function ( LockBlur, event )
 					if not event.interrupted then
 						LockBlur:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -3588,6 +3660,7 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 				self.InvalidTarget:setAlpha( 0 )
 				self.InvalidTarget:setScale( 1.5 )
 				InvalidTargetFrame2( InvalidTarget, {} )
+
 				hacking:completeAnimation()
 				self.hacking:setAlpha( 0 )
 				self.clipFinished( hacking, {} )
@@ -3596,84 +3669,101 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 		Target = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				LockBlur:completeAnimation()
 				self.LockBlur:setLeftRight( false, false, -100, 100 )
 				self.LockBlur:setTopBottom( false, false, -100, 100 )
 				self.LockBlur:setAlpha( 0 )
 				self.clipFinished( LockBlur, {} )
+
 				LockGlow:completeAnimation()
 				self.LockGlow:setLeftRight( false, false, -128, 128 )
 				self.LockGlow:setTopBottom( false, false, -172, 172 )
 				self.LockGlow:setAlpha( 0 )
 				self.clipFinished( LockGlow, {} )
+
 				LockLineRedLR:completeAnimation()
 				self.LockLineRedLR:setLeftRight( false, false, 10, 46 )
 				self.LockLineRedLR:setTopBottom( false, false, 26, 62 )
 				self.LockLineRedLR:setAlpha( 0 )
 				self.clipFinished( LockLineRedLR, {} )
+
 				LockLineRedLL:completeAnimation()
 				self.LockLineRedLL:setLeftRight( false, false, -44, -8 )
 				self.LockLineRedLL:setTopBottom( false, false, 26, 62 )
 				self.LockLineRedLL:setAlpha( 0 )
 				self.clipFinished( LockLineRedLL, {} )
+
 				LockLineRedUR:completeAnimation()
 				self.LockLineRedUR:setLeftRight( false, false, 10, 46 )
 				self.LockLineRedUR:setTopBottom( false, false, -63, -27 )
 				self.LockLineRedUR:setAlpha( 0 )
 				self.clipFinished( LockLineRedUR, {} )
+
 				LockLineRedUL:completeAnimation()
 				self.LockLineRedUL:setLeftRight( false, false, -46, -10 )
 				self.LockLineRedUL:setTopBottom( false, false, -63, -27 )
 				self.LockLineRedUL:setAlpha( 0 )
 				self.clipFinished( LockLineRedUL, {} )
+
 				LockTarget:completeAnimation()
 				self.LockTarget:setLeftRight( false, false, -50, 50 )
 				self.LockTarget:setTopBottom( false, false, -92, 92 )
 				self.LockTarget:setAlpha( 0 )
 				self.clipFinished( LockTarget, {} )
+
 				Target:completeAnimation()
 				self.Target:setAlpha( 1 )
 				self.Target:setZRot( 0 )
 				self.clipFinished( Target, {} )
+
 				TargetArrowL:completeAnimation()
 				self.TargetArrowL:setLeftRight( false, false, -16, 16 )
 				self.TargetArrowL:setTopBottom( false, false, 61, 93 )
 				self.TargetArrowL:setAlpha( 1 )
 				self.TargetArrowL:setZRot( 0 )
 				self.clipFinished( TargetArrowL, {} )
+
 				TargetArrowU:completeAnimation()
 				self.TargetArrowU:setLeftRight( false, false, -16, 16 )
 				self.TargetArrowU:setTopBottom( false, false, -97, -65 )
 				self.TargetArrowU:setAlpha( 1 )
 				self.clipFinished( TargetArrowU, {} )
+
 				TargetLineR:completeAnimation()
 				self.TargetLineR:setLeftRight( false, false, 61, 85 )
 				self.TargetLineR:setTopBottom( false, false, -4, 4 )
 				self.TargetLineR:setAlpha( 1 )
 				self.TargetLineR:setZRot( 0 )
 				self.clipFinished( TargetLineR, {} )
+
 				TargetLineL:completeAnimation()
 				self.TargetLineL:setLeftRight( false, false, -83, -59 )
 				self.TargetLineL:setTopBottom( false, false, -4, 4 )
 				self.TargetLineL:setAlpha( 1 )
 				self.TargetLineL:setZRot( 0 )
 				self.clipFinished( TargetLineL, {} )
+
 				EnemyTargetArrowAnim0:completeAnimation()
 				self.EnemyTargetArrowAnim0:setAlpha( 0 )
 				self.clipFinished( EnemyTargetArrowAnim0, {} )
+
 				EnemyTargetArrowAnim1:completeAnimation()
 				self.EnemyTargetArrowAnim1:setAlpha( 0 )
 				self.clipFinished( EnemyTargetArrowAnim1, {} )
+
 				InvalidTarget:completeAnimation()
 				self.InvalidTarget:setAlpha( 0 )
 				self.InvalidTarget:setScale( 1.5 )
 				self.clipFinished( InvalidTarget, {} )
+
 				hacking:completeAnimation()
 				self.hacking:setAlpha( 0 )
 				self.clipFinished( hacking, {} )
 			end,
 			Hacking = function ()
 				self:setupElementClipCounter( 16 )
+
 				local LockBlurFrame2 = function ( LockBlur, event )
 					if not event.interrupted then
 						LockBlur:beginAnimation( "keyframe", 200, false, true, CoD.TweenType.Back )
@@ -4164,16 +4254,19 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 				self.EnemyTargetArrowAnim1:setTopBottom( false, false, -25, 25 )
 				self.EnemyTargetArrowAnim1:setAlpha( 0 )
 				EnemyTargetArrowAnim1Frame2( EnemyTargetArrowAnim1, {} )
+
 				InvalidTarget:completeAnimation()
 				self.InvalidTarget:setAlpha( 0 )
 				self.InvalidTarget:setScale( 1.5 )
 				self.clipFinished( InvalidTarget, {} )
+
 				hacking:completeAnimation()
 				self.hacking:setAlpha( 0 )
 				self.clipFinished( hacking, {} )
 			end,
 			Lock = function ()
 				self:setupElementClipCounter( 16 )
+
 				local LockBlurFrame2 = function ( LockBlur, event )
 					if not event.interrupted then
 						LockBlur:beginAnimation( "keyframe", 200, false, true, CoD.TweenType.Back )
@@ -4664,46 +4757,55 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 				self.EnemyTargetArrowAnim1:setTopBottom( false, false, -25, 25 )
 				self.EnemyTargetArrowAnim1:setAlpha( 0 )
 				EnemyTargetArrowAnim1Frame2( EnemyTargetArrowAnim1, {} )
+
 				InvalidTarget:completeAnimation()
 				self.InvalidTarget:setAlpha( 0 )
 				self.InvalidTarget:setScale( 1.5 )
 				self.clipFinished( InvalidTarget, {} )
+
 				hacking:completeAnimation()
 				self.hacking:setAlpha( 0 )
 				self.clipFinished( hacking, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 16 )
+
 				LockBlur:completeAnimation()
 				self.LockBlur:setLeftRight( false, false, -100, 100 )
 				self.LockBlur:setTopBottom( false, false, -100, 100 )
 				self.LockBlur:setAlpha( 0 )
 				self.clipFinished( LockBlur, {} )
+
 				LockGlow:completeAnimation()
 				self.LockGlow:setLeftRight( false, false, -128, 128 )
 				self.LockGlow:setTopBottom( false, false, -172, 172 )
 				self.LockGlow:setAlpha( 0 )
 				self.clipFinished( LockGlow, {} )
+
 				LockLineRedLR:completeAnimation()
 				self.LockLineRedLR:setLeftRight( false, false, 10, 46 )
 				self.LockLineRedLR:setTopBottom( false, false, 26, 62 )
 				self.LockLineRedLR:setAlpha( 0 )
 				self.clipFinished( LockLineRedLR, {} )
+
 				LockLineRedLL:completeAnimation()
 				self.LockLineRedLL:setLeftRight( false, false, -44, -8 )
 				self.LockLineRedLL:setTopBottom( false, false, 26, 62 )
 				self.LockLineRedLL:setAlpha( 0 )
 				self.clipFinished( LockLineRedLL, {} )
+
 				LockLineRedUR:completeAnimation()
 				self.LockLineRedUR:setLeftRight( false, false, 10, 46 )
 				self.LockLineRedUR:setTopBottom( false, false, -63, -27 )
 				self.LockLineRedUR:setAlpha( 0 )
 				self.clipFinished( LockLineRedUR, {} )
+
 				LockLineRedUL:completeAnimation()
 				self.LockLineRedUL:setLeftRight( false, false, -46, -10 )
 				self.LockLineRedUL:setTopBottom( false, false, -63, -27 )
 				self.LockLineRedUL:setAlpha( 0 )
 				self.clipFinished( LockLineRedUL, {} )
+
 				LockTarget:completeAnimation()
 				self.LockTarget:setLeftRight( false, false, -50, 50 )
 				self.LockTarget:setTopBottom( false, false, -92, 92 )
@@ -4904,52 +5006,63 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 				self.TargetLineL:setAlpha( 1 )
 				self.TargetLineL:setZRot( 0 )
 				TargetLineLFrame2( TargetLineL, {} )
+
 				EnemyTargetArrowAnim0:completeAnimation()
 				self.EnemyTargetArrowAnim0:setAlpha( 0 )
 				self.clipFinished( EnemyTargetArrowAnim0, {} )
+
 				EnemyTargetArrowAnim1:completeAnimation()
 				self.EnemyTargetArrowAnim1:setAlpha( 0 )
 				self.clipFinished( EnemyTargetArrowAnim1, {} )
+
 				InvalidTarget:completeAnimation()
 				self.InvalidTarget:setAlpha( 0 )
 				self.InvalidTarget:setScale( 1.5 )
 				self.clipFinished( InvalidTarget, {} )
+
 				hacking:completeAnimation()
 				self.hacking:setAlpha( 0 )
 				self.clipFinished( hacking, {} )
 			end,
 			Invalid = function ()
 				self:setupElementClipCounter( 16 )
+
 				LockBlur:completeAnimation()
 				self.LockBlur:setLeftRight( false, false, -100, 100 )
 				self.LockBlur:setTopBottom( false, false, -100, 100 )
 				self.LockBlur:setAlpha( 0 )
 				self.clipFinished( LockBlur, {} )
+
 				LockGlow:completeAnimation()
 				self.LockGlow:setLeftRight( false, false, -128, 128 )
 				self.LockGlow:setTopBottom( false, false, -172, 172 )
 				self.LockGlow:setAlpha( 0 )
 				self.clipFinished( LockGlow, {} )
+
 				LockLineRedLR:completeAnimation()
 				self.LockLineRedLR:setLeftRight( false, false, 10, 46 )
 				self.LockLineRedLR:setTopBottom( false, false, 26, 62 )
 				self.LockLineRedLR:setAlpha( 0 )
 				self.clipFinished( LockLineRedLR, {} )
+
 				LockLineRedLL:completeAnimation()
 				self.LockLineRedLL:setLeftRight( false, false, -44, -8 )
 				self.LockLineRedLL:setTopBottom( false, false, 26, 62 )
 				self.LockLineRedLL:setAlpha( 0 )
 				self.clipFinished( LockLineRedLL, {} )
+
 				LockLineRedUR:completeAnimation()
 				self.LockLineRedUR:setLeftRight( false, false, 10, 46 )
 				self.LockLineRedUR:setTopBottom( false, false, -63, -27 )
 				self.LockLineRedUR:setAlpha( 0 )
 				self.clipFinished( LockLineRedUR, {} )
+
 				LockLineRedUL:completeAnimation()
 				self.LockLineRedUL:setLeftRight( false, false, -46, -10 )
 				self.LockLineRedUL:setTopBottom( false, false, -63, -27 )
 				self.LockLineRedUL:setAlpha( 0 )
 				self.clipFinished( LockLineRedUL, {} )
+
 				LockTarget:completeAnimation()
 				self.LockTarget:setLeftRight( false, false, -50, 50 )
 				self.LockTarget:setTopBottom( false, false, -92, 92 )
@@ -5150,9 +5263,11 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 				self.TargetLineL:setAlpha( 1 )
 				self.TargetLineL:setZRot( 0 )
 				TargetLineLFrame2( TargetLineL, {} )
+
 				EnemyTargetArrowAnim0:completeAnimation()
 				self.EnemyTargetArrowAnim0:setAlpha( 0 )
 				self.clipFinished( EnemyTargetArrowAnim0, {} )
+
 				EnemyTargetArrowAnim1:completeAnimation()
 				self.EnemyTargetArrowAnim1:setAlpha( 0 )
 				self.clipFinished( EnemyTargetArrowAnim1, {} )
@@ -5196,6 +5311,7 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 				self.InvalidTarget:setAlpha( 0 )
 				self.InvalidTarget:setScale( 1.5 )
 				InvalidTargetFrame2( InvalidTarget, {} )
+
 				hacking:completeAnimation()
 				self.hacking:setAlpha( 0 )
 				self.clipFinished( hacking, {} )
@@ -5204,77 +5320,94 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 		Lock = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				LockBlur:completeAnimation()
 				self.LockBlur:setAlpha( 1 )
 				self.clipFinished( LockBlur, {} )
+
 				LockGlow:completeAnimation()
 				self.LockGlow:setAlpha( 1 )
 				self.clipFinished( LockGlow, {} )
+
 				LockLineRedLR:completeAnimation()
 				self.LockLineRedLR:setLeftRight( false, false, 32, 68 )
 				self.LockLineRedLR:setTopBottom( false, false, 53, 89 )
 				self.LockLineRedLR:setAlpha( 1 )
 				self.clipFinished( LockLineRedLR, {} )
+
 				LockLineRedLL:completeAnimation()
 				self.LockLineRedLL:setLeftRight( false, false, -67, -31 )
 				self.LockLineRedLL:setTopBottom( false, false, 53, 89 )
 				self.LockLineRedLL:setAlpha( 1 )
 				self.clipFinished( LockLineRedLL, {} )
+
 				LockLineRedUR:completeAnimation()
 				self.LockLineRedUR:setLeftRight( false, false, 32, 68 )
 				self.LockLineRedUR:setTopBottom( false, false, -85, -49 )
 				self.LockLineRedUR:setAlpha( 1 )
 				self.clipFinished( LockLineRedUR, {} )
+
 				LockLineRedUL:completeAnimation()
 				self.LockLineRedUL:setLeftRight( false, false, -67, -31 )
 				self.LockLineRedUL:setTopBottom( false, false, -85, -49 )
 				self.LockLineRedUL:setAlpha( 1 )
 				self.clipFinished( LockLineRedUL, {} )
+
 				LockTarget:completeAnimation()
 				self.LockTarget:setAlpha( 1 )
 				self.clipFinished( LockTarget, {} )
+
 				Target:completeAnimation()
 				self.Target:setAlpha( 1 )
 				self.Target:setZRot( -90 )
 				self.clipFinished( Target, {} )
+
 				TargetArrowL:completeAnimation()
 				self.TargetArrowL:setLeftRight( false, false, -16, 16 )
 				self.TargetArrowL:setTopBottom( false, false, 92, 124 )
 				self.TargetArrowL:setAlpha( 0 )
 				self.TargetArrowL:setZRot( 0 )
 				self.clipFinished( TargetArrowL, {} )
+
 				TargetArrowU:completeAnimation()
 				self.TargetArrowU:setLeftRight( false, false, -16, 16 )
 				self.TargetArrowU:setTopBottom( false, false, -124, -92 )
 				self.TargetArrowU:setAlpha( 0 )
 				self.clipFinished( TargetArrowU, {} )
+
 				TargetLineR:completeAnimation()
 				self.TargetLineR:setLeftRight( false, false, -12, 12 )
 				self.TargetLineR:setTopBottom( false, false, 33, 41 )
 				self.TargetLineR:setAlpha( 1 )
 				self.TargetLineR:setZRot( -90 )
 				self.clipFinished( TargetLineR, {} )
+
 				TargetLineL:completeAnimation()
 				self.TargetLineL:setLeftRight( false, false, -12, 12 )
 				self.TargetLineL:setTopBottom( false, false, -40, -32 )
 				self.TargetLineL:setAlpha( 1 )
 				self.TargetLineL:setZRot( 90 )
 				self.clipFinished( TargetLineL, {} )
+
 				EnemyTargetArrowAnim0:completeAnimation()
 				self.EnemyTargetArrowAnim0:setAlpha( 1 )
 				self.clipFinished( EnemyTargetArrowAnim0, {} )
+
 				EnemyTargetArrowAnim1:completeAnimation()
 				self.EnemyTargetArrowAnim1:setAlpha( 1 )
 				self.clipFinished( EnemyTargetArrowAnim1, {} )
+
 				InvalidTarget:completeAnimation()
 				self.InvalidTarget:setAlpha( 0 )
 				self.clipFinished( InvalidTarget, {} )
+
 				hacking:completeAnimation()
 				self.hacking:setAlpha( 0 )
 				self.clipFinished( hacking, {} )
 			end,
 			Target = function ()
 				self:setupElementClipCounter( 16 )
+
 				local LockBlurFrame2 = function ( LockBlur, event )
 					if not event.interrupted then
 						LockBlur:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -5791,15 +5924,18 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 				EnemyTargetArrowAnim1:completeAnimation()
 				self.EnemyTargetArrowAnim1:setAlpha( 1 )
 				EnemyTargetArrowAnim1Frame2( EnemyTargetArrowAnim1, {} )
+
 				InvalidTarget:completeAnimation()
 				self.InvalidTarget:setAlpha( 0 )
 				self.clipFinished( InvalidTarget, {} )
+
 				hacking:completeAnimation()
 				self.hacking:setAlpha( 0 )
 				self.clipFinished( hacking, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 16 )
+
 				local LockBlurFrame2 = function ( LockBlur, event )
 					if not event.interrupted then
 						LockBlur:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -6412,15 +6548,18 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 				EnemyTargetArrowAnim1:completeAnimation()
 				self.EnemyTargetArrowAnim1:setAlpha( 1 )
 				EnemyTargetArrowAnim1Frame2( EnemyTargetArrowAnim1, {} )
+
 				InvalidTarget:completeAnimation()
 				self.InvalidTarget:setAlpha( 0 )
 				self.clipFinished( InvalidTarget, {} )
+
 				hacking:completeAnimation()
 				self.hacking:setAlpha( 0 )
 				self.clipFinished( hacking, {} )
 			end,
 			Invalid = function ()
 				self:setupElementClipCounter( 16 )
+
 				local LockBlurFrame2 = function ( LockBlur, event )
 					if not event.interrupted then
 						LockBlur:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -7073,6 +7212,7 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 				self.InvalidTarget:setAlpha( 0 )
 				self.InvalidTarget:setScale( 1.5 )
 				InvalidTargetFrame2( InvalidTarget, {} )
+
 				hacking:completeAnimation()
 				self.hacking:setAlpha( 0 )
 				self.clipFinished( hacking, {} )
@@ -7081,84 +7221,101 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 		Invalid = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				LockBlur:completeAnimation()
 				self.LockBlur:setLeftRight( false, false, -100, 100 )
 				self.LockBlur:setTopBottom( false, false, -100, 100 )
 				self.LockBlur:setAlpha( 0 )
 				self.clipFinished( LockBlur, {} )
+
 				LockGlow:completeAnimation()
 				self.LockGlow:setLeftRight( false, false, -128, 128 )
 				self.LockGlow:setTopBottom( false, false, -172, 172 )
 				self.LockGlow:setAlpha( 0 )
 				self.clipFinished( LockGlow, {} )
+
 				LockLineRedLR:completeAnimation()
 				self.LockLineRedLR:setLeftRight( false, false, 10, 46 )
 				self.LockLineRedLR:setTopBottom( false, false, 26, 62 )
 				self.LockLineRedLR:setAlpha( 0 )
 				self.clipFinished( LockLineRedLR, {} )
+
 				LockLineRedLL:completeAnimation()
 				self.LockLineRedLL:setLeftRight( false, false, -44, -8 )
 				self.LockLineRedLL:setTopBottom( false, false, 26, 62 )
 				self.LockLineRedLL:setAlpha( 0 )
 				self.clipFinished( LockLineRedLL, {} )
+
 				LockLineRedUR:completeAnimation()
 				self.LockLineRedUR:setLeftRight( false, false, 10, 46 )
 				self.LockLineRedUR:setTopBottom( false, false, -63, -27 )
 				self.LockLineRedUR:setAlpha( 0 )
 				self.clipFinished( LockLineRedUR, {} )
+
 				LockLineRedUL:completeAnimation()
 				self.LockLineRedUL:setLeftRight( false, false, -46, -10 )
 				self.LockLineRedUL:setTopBottom( false, false, -63, -27 )
 				self.LockLineRedUL:setAlpha( 0 )
 				self.clipFinished( LockLineRedUL, {} )
+
 				LockTarget:completeAnimation()
 				self.LockTarget:setLeftRight( false, false, -50, 50 )
 				self.LockTarget:setTopBottom( false, false, -92, 92 )
 				self.LockTarget:setAlpha( 0 )
 				self.clipFinished( LockTarget, {} )
+
 				Target:completeAnimation()
 				self.Target:setAlpha( 0 )
 				self.Target:setZRot( 0 )
 				self.clipFinished( Target, {} )
+
 				TargetArrowL:completeAnimation()
 				self.TargetArrowL:setLeftRight( false, false, -16, 16 )
 				self.TargetArrowL:setTopBottom( false, false, 61, 93 )
 				self.TargetArrowL:setAlpha( 0 )
 				self.TargetArrowL:setZRot( 0 )
 				self.clipFinished( TargetArrowL, {} )
+
 				TargetArrowU:completeAnimation()
 				self.TargetArrowU:setLeftRight( false, false, -16, 16 )
 				self.TargetArrowU:setTopBottom( false, false, -97, -65 )
 				self.TargetArrowU:setAlpha( 0 )
 				self.clipFinished( TargetArrowU, {} )
+
 				TargetLineR:completeAnimation()
 				self.TargetLineR:setLeftRight( false, false, 61, 85 )
 				self.TargetLineR:setTopBottom( false, false, -4, 4 )
 				self.TargetLineR:setAlpha( 0 )
 				self.TargetLineR:setZRot( 0 )
 				self.clipFinished( TargetLineR, {} )
+
 				TargetLineL:completeAnimation()
 				self.TargetLineL:setLeftRight( false, false, -83, -59 )
 				self.TargetLineL:setTopBottom( false, false, -4, 4 )
 				self.TargetLineL:setAlpha( 0 )
 				self.TargetLineL:setZRot( 0 )
 				self.clipFinished( TargetLineL, {} )
+
 				EnemyTargetArrowAnim0:completeAnimation()
 				self.EnemyTargetArrowAnim0:setAlpha( 0 )
 				self.clipFinished( EnemyTargetArrowAnim0, {} )
+
 				EnemyTargetArrowAnim1:completeAnimation()
 				self.EnemyTargetArrowAnim1:setAlpha( 0 )
 				self.clipFinished( EnemyTargetArrowAnim1, {} )
+
 				InvalidTarget:completeAnimation()
 				self.InvalidTarget:setAlpha( 1 )
 				self.InvalidTarget:setScale( 1 )
 				self.clipFinished( InvalidTarget, {} )
+
 				hacking:completeAnimation()
 				self.hacking:setAlpha( 0 )
 				self.clipFinished( hacking, {} )
 			end,
 			Hacking = function ()
 				self:setupElementClipCounter( 16 )
+
 				local LockBlurFrame2 = function ( LockBlur, event )
 					if not event.interrupted then
 						LockBlur:beginAnimation( "keyframe", 200, false, true, CoD.TweenType.Back )
@@ -7665,12 +7822,14 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 				self.InvalidTarget:setAlpha( 1 )
 				self.InvalidTarget:setScale( 1 )
 				InvalidTargetFrame2( InvalidTarget, {} )
+
 				hacking:completeAnimation()
 				self.hacking:setAlpha( 0 )
 				self.clipFinished( hacking, {} )
 			end,
 			Lock = function ()
 				self:setupElementClipCounter( 16 )
+
 				local LockBlurFrame2 = function ( LockBlur, event )
 					if not event.interrupted then
 						LockBlur:beginAnimation( "keyframe", 200, false, true, CoD.TweenType.Back )
@@ -8177,72 +8336,87 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 				self.InvalidTarget:setAlpha( 1 )
 				self.InvalidTarget:setScale( 1 )
 				InvalidTargetFrame2( InvalidTarget, {} )
+
 				hacking:completeAnimation()
 				self.hacking:setAlpha( 0 )
 				self.clipFinished( hacking, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 16 )
+
 				LockBlur:completeAnimation()
 				self.LockBlur:setLeftRight( false, false, -100, 100 )
 				self.LockBlur:setTopBottom( false, false, -100, 100 )
 				self.LockBlur:setAlpha( 0 )
 				self.clipFinished( LockBlur, {} )
+
 				LockGlow:completeAnimation()
 				self.LockGlow:setLeftRight( false, false, -128, 128 )
 				self.LockGlow:setTopBottom( false, false, -172, 172 )
 				self.LockGlow:setAlpha( 0 )
 				self.clipFinished( LockGlow, {} )
+
 				LockLineRedLR:completeAnimation()
 				self.LockLineRedLR:setLeftRight( false, false, 10, 46 )
 				self.LockLineRedLR:setTopBottom( false, false, 26, 62 )
 				self.LockLineRedLR:setAlpha( 0 )
 				self.clipFinished( LockLineRedLR, {} )
+
 				LockLineRedLL:completeAnimation()
 				self.LockLineRedLL:setLeftRight( false, false, -44, -8 )
 				self.LockLineRedLL:setTopBottom( false, false, 26, 62 )
 				self.LockLineRedLL:setAlpha( 0 )
 				self.clipFinished( LockLineRedLL, {} )
+
 				LockLineRedUR:completeAnimation()
 				self.LockLineRedUR:setLeftRight( false, false, 10, 46 )
 				self.LockLineRedUR:setTopBottom( false, false, -63, -27 )
 				self.LockLineRedUR:setAlpha( 0 )
 				self.clipFinished( LockLineRedUR, {} )
+
 				LockLineRedUL:completeAnimation()
 				self.LockLineRedUL:setLeftRight( false, false, -46, -10 )
 				self.LockLineRedUL:setTopBottom( false, false, -63, -27 )
 				self.LockLineRedUL:setAlpha( 0 )
 				self.clipFinished( LockLineRedUL, {} )
+
 				LockTarget:completeAnimation()
 				self.LockTarget:setLeftRight( false, false, -50, 50 )
 				self.LockTarget:setTopBottom( false, false, -92, 92 )
 				self.LockTarget:setAlpha( 0 )
 				self.clipFinished( LockTarget, {} )
+
 				Target:completeAnimation()
 				self.Target:setAlpha( 0 )
 				self.Target:setZRot( 0 )
 				self.clipFinished( Target, {} )
+
 				TargetArrowL:completeAnimation()
 				self.TargetArrowL:setAlpha( 0 )
 				self.clipFinished( TargetArrowL, {} )
+
 				TargetArrowU:completeAnimation()
 				self.TargetArrowU:setAlpha( 0 )
 				self.clipFinished( TargetArrowU, {} )
+
 				TargetLineR:completeAnimation()
 				self.TargetLineR:setLeftRight( false, false, 61, 85 )
 				self.TargetLineR:setTopBottom( false, false, -4, 4 )
 				self.TargetLineR:setAlpha( 0 )
 				self.TargetLineR:setZRot( 0 )
 				self.clipFinished( TargetLineR, {} )
+
 				TargetLineL:completeAnimation()
 				self.TargetLineL:setLeftRight( false, false, -83, -59 )
 				self.TargetLineL:setTopBottom( false, false, -4, 4 )
 				self.TargetLineL:setAlpha( 0 )
 				self.TargetLineL:setZRot( 0 )
 				self.clipFinished( TargetLineL, {} )
+
 				EnemyTargetArrowAnim0:completeAnimation()
 				self.EnemyTargetArrowAnim0:setAlpha( 0 )
 				self.clipFinished( EnemyTargetArrowAnim0, {} )
+
 				EnemyTargetArrowAnim1:completeAnimation()
 				self.EnemyTargetArrowAnim1:setAlpha( 0 )
 				self.clipFinished( EnemyTargetArrowAnim1, {} )
@@ -8263,12 +8437,14 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 				self.InvalidTarget:setAlpha( 1 )
 				self.InvalidTarget:setScale( 1 )
 				InvalidTargetFrame2( InvalidTarget, {} )
+
 				hacking:completeAnimation()
 				self.hacking:setAlpha( 0 )
 				self.clipFinished( hacking, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hacking",
@@ -8311,6 +8487,7 @@ CoD.EnemyTargetInternal.new = function ( menu, controller )
 			modelName = "targetState"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Target:close()
 		element.EnemyTargetArrowAnim0:close()

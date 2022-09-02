@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Notifications.Perks.PerkInfo" )
 CoD.Notification_Perks = InheritFrom( LUI.UIElement )
 CoD.Notification_Perks.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Notification_Perks )
 	self.id = "Notification_Perks"
@@ -183,16 +185,19 @@ CoD.Notification_Perks.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				PerkInfo2:completeAnimation()
 				self.PerkInfo2:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo2:setTopBottom( true, false, 120, 170 )
 				self.PerkInfo2:setAlpha( 0 )
 				self.clipFinished( PerkInfo2, {} )
+
 				PerkInfo1:completeAnimation()
 				self.PerkInfo1:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo1:setTopBottom( true, false, 60, 110 )
 				self.PerkInfo1:setAlpha( 0 )
 				self.clipFinished( PerkInfo1, {} )
+
 				PerkInfo0:completeAnimation()
 				self.PerkInfo0:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo0:setTopBottom( true, false, 0, 50 )
@@ -203,16 +208,19 @@ CoD.Notification_Perks.new = function ( menu, controller )
 		Perk0 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				PerkInfo2:completeAnimation()
 				self.PerkInfo2:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo2:setTopBottom( true, false, 170, 220 )
 				self.PerkInfo2:setAlpha( 0 )
 				self.clipFinished( PerkInfo2, {} )
+
 				PerkInfo1:completeAnimation()
 				self.PerkInfo1:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo1:setTopBottom( true, false, -50, 0 )
 				self.PerkInfo1:setAlpha( 0 )
 				self.clipFinished( PerkInfo1, {} )
+
 				PerkInfo0:completeAnimation()
 				self.PerkInfo0:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo0:setTopBottom( true, false, 62, 124 )
@@ -223,16 +231,19 @@ CoD.Notification_Perks.new = function ( menu, controller )
 		Perk0_Perk1_Perk2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				PerkInfo2:completeAnimation()
 				self.PerkInfo2:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo2:setTopBottom( true, false, 124, 186 )
 				self.PerkInfo2:setAlpha( 1 )
 				self.clipFinished( PerkInfo2, {} )
+
 				PerkInfo1:completeAnimation()
 				self.PerkInfo1:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo1:setTopBottom( true, false, 62, 124 )
 				self.PerkInfo1:setAlpha( 1 )
 				self.clipFinished( PerkInfo1, {} )
+
 				PerkInfo0:completeAnimation()
 				self.PerkInfo0:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo0:setTopBottom( true, false, 0, 62 )
@@ -243,16 +254,19 @@ CoD.Notification_Perks.new = function ( menu, controller )
 		Perk0_Perk1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				PerkInfo2:completeAnimation()
 				self.PerkInfo2:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo2:setTopBottom( true, false, 170, 220 )
 				self.PerkInfo2:setAlpha( 0 )
 				self.clipFinished( PerkInfo2, {} )
+
 				PerkInfo1:completeAnimation()
 				self.PerkInfo1:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo1:setTopBottom( true, false, 93, 155 )
 				self.PerkInfo1:setAlpha( 1 )
 				self.clipFinished( PerkInfo1, {} )
+
 				PerkInfo0:completeAnimation()
 				self.PerkInfo0:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo0:setTopBottom( true, false, 31, 93 )
@@ -263,16 +277,19 @@ CoD.Notification_Perks.new = function ( menu, controller )
 		Perk0_Perk2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				PerkInfo2:completeAnimation()
 				self.PerkInfo2:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo2:setTopBottom( true, false, 93, 155 )
 				self.PerkInfo2:setAlpha( 1 )
 				self.clipFinished( PerkInfo2, {} )
+
 				PerkInfo1:completeAnimation()
 				self.PerkInfo1:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo1:setTopBottom( true, false, 260, 310 )
 				self.PerkInfo1:setAlpha( 0 )
 				self.clipFinished( PerkInfo1, {} )
+
 				PerkInfo0:completeAnimation()
 				self.PerkInfo0:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo0:setTopBottom( true, false, 31, 93 )
@@ -283,16 +300,19 @@ CoD.Notification_Perks.new = function ( menu, controller )
 		Perk1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				PerkInfo2:completeAnimation()
 				self.PerkInfo2:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo2:setTopBottom( true, false, 170, 220 )
 				self.PerkInfo2:setAlpha( 0 )
 				self.clipFinished( PerkInfo2, {} )
+
 				PerkInfo1:completeAnimation()
 				self.PerkInfo1:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo1:setTopBottom( true, false, 62, 124 )
 				self.PerkInfo1:setAlpha( 1 )
 				self.clipFinished( PerkInfo1, {} )
+
 				PerkInfo0:completeAnimation()
 				self.PerkInfo0:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo0:setTopBottom( true, false, -50, 0 )
@@ -303,16 +323,19 @@ CoD.Notification_Perks.new = function ( menu, controller )
 		Perk1_Perk2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				PerkInfo2:completeAnimation()
 				self.PerkInfo2:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo2:setTopBottom( true, false, 93, 155 )
 				self.PerkInfo2:setAlpha( 1 )
 				self.clipFinished( PerkInfo2, {} )
+
 				PerkInfo1:completeAnimation()
 				self.PerkInfo1:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo1:setTopBottom( true, false, 31, 93 )
 				self.PerkInfo1:setAlpha( 1 )
 				self.clipFinished( PerkInfo1, {} )
+
 				PerkInfo0:completeAnimation()
 				self.PerkInfo0:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo0:setTopBottom( true, false, -50, 0 )
@@ -323,16 +346,19 @@ CoD.Notification_Perks.new = function ( menu, controller )
 		Perk2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				PerkInfo2:completeAnimation()
 				self.PerkInfo2:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo2:setTopBottom( true, false, 62, 124 )
 				self.PerkInfo2:setAlpha( 1 )
 				self.clipFinished( PerkInfo2, {} )
+
 				PerkInfo1:completeAnimation()
 				self.PerkInfo1:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo1:setTopBottom( true, false, 170, 220 )
 				self.PerkInfo1:setAlpha( 0 )
 				self.clipFinished( PerkInfo1, {} )
+
 				PerkInfo0:completeAnimation()
 				self.PerkInfo0:setLeftRight( false, true, -500, 0 )
 				self.PerkInfo0:setTopBottom( true, false, -50, 0 )
@@ -341,6 +367,7 @@ CoD.Notification_Perks.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PerkInfo2:close()
 		element.PerkInfo1:close()

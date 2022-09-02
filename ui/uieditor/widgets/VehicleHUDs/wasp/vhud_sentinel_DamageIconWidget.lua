@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.genericVHUDdamageArea" )
 CoD.vhud_sentinel_DamageIconWidget = InheritFrom( LUI.UIElement )
 CoD.vhud_sentinel_DamageIconWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_sentinel_DamageIconWidget )
 	self.id = "vhud_sentinel_DamageIconWidget"
@@ -77,18 +79,23 @@ CoD.vhud_sentinel_DamageIconWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				DamageIconLine0:completeAnimation()
 				self.DamageIconLine0:setAlpha( 0.3 )
 				self.clipFinished( DamageIconLine0, {} )
+
 				DamageIconRed:completeAnimation()
 				self.DamageIconRed:setAlpha( 1 )
 				self.clipFinished( DamageIconRed, {} )
+
 				DamageIconLine:completeAnimation()
 				self.DamageIconLine:setAlpha( 1 )
 				self.clipFinished( DamageIconLine, {} )
+
 				DamageIconDots:completeAnimation()
 				self.DamageIconDots:setAlpha( 1 )
 				self.clipFinished( DamageIconDots, {} )
+
 				genericVHUDdamageArea0:completeAnimation()
 				self.genericVHUDdamageArea0:setAlpha( 0 )
 				self.clipFinished( genericVHUDdamageArea0, {} )
@@ -97,24 +104,30 @@ CoD.vhud_sentinel_DamageIconWidget.new = function ( menu, controller )
 		RAPS = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				DamageIconLine0:completeAnimation()
 				self.DamageIconLine0:setAlpha( 0 )
 				self.clipFinished( DamageIconLine0, {} )
+
 				DamageIconRed:completeAnimation()
 				self.DamageIconRed:setAlpha( 0 )
 				self.clipFinished( DamageIconRed, {} )
+
 				DamageIconLine:completeAnimation()
 				self.DamageIconLine:setAlpha( 0 )
 				self.clipFinished( DamageIconLine, {} )
+
 				DamageIconDots:completeAnimation()
 				self.DamageIconDots:setAlpha( 0 )
 				self.clipFinished( DamageIconDots, {} )
+
 				genericVHUDdamageArea0:completeAnimation()
 				self.genericVHUDdamageArea0:setAlpha( 1 )
 				self.clipFinished( genericVHUDdamageArea0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "RAPS",
@@ -131,6 +144,7 @@ CoD.vhud_sentinel_DamageIconWidget.new = function ( menu, controller )
 			modelName = "vehicle.vehicleType"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.genericVHUDdamageArea0:close()
 		element.DamageIconRed:close()

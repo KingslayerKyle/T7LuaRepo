@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_Identity_SubTitle" )
 CoD.Leaderboard_GameModeButton = InheritFrom( LUI.UIElement )
 CoD.Leaderboard_GameModeButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Leaderboard_GameModeButton )
 	self.id = "Leaderboard_GameModeButton"
@@ -89,47 +91,60 @@ CoD.Leaderboard_GameModeButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				CategoryIcon:completeAnimation()
 				self.CategoryIcon:setLeftRight( false, false, -48, 48 )
 				self.CategoryIcon:setTopBottom( false, false, -59, 37 )
 				self.clipFinished( CategoryIcon, {} )
+
 				BlackBox0:completeAnimation()
 				self.BlackBox0:setAlpha( 0.05 )
 				self.clipFinished( BlackBox0, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0 )
 				self.clipFinished( BlackBox, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				StartMenuIdentitySubTitle0:completeAnimation()
 				self.StartMenuIdentitySubTitle0:setAlpha( 1 )
 				self.clipFinished( StartMenuIdentitySubTitle0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				CategoryIcon:completeAnimation()
 				self.CategoryIcon:setLeftRight( false, false, -48, 48 )
 				self.CategoryIcon:setTopBottom( false, false, -59, 37 )
 				self.clipFinished( CategoryIcon, {} )
+
 				BlackBox0:completeAnimation()
 				self.BlackBox0:setAlpha( 0 )
 				self.clipFinished( BlackBox0, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0 )
 				self.clipFinished( BlackBox, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
@@ -138,47 +153,60 @@ CoD.Leaderboard_GameModeButton.new = function ( menu, controller )
 		Freerun = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				CategoryIcon:completeAnimation()
 				self.CategoryIcon:setLeftRight( false, false, -108.5, 108.5 )
 				self.CategoryIcon:setTopBottom( false, false, -71, 71 )
 				self.clipFinished( CategoryIcon, {} )
+
 				BlackBox0:completeAnimation()
 				self.BlackBox0:setAlpha( 0.05 )
 				self.clipFinished( BlackBox0, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0 )
 				self.clipFinished( BlackBox, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				StartMenuIdentitySubTitle0:completeAnimation()
 				self.StartMenuIdentitySubTitle0:setAlpha( 1 )
 				self.clipFinished( StartMenuIdentitySubTitle0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				CategoryIcon:completeAnimation()
 				self.CategoryIcon:setLeftRight( false, false, -108.5, 108.5 )
 				self.CategoryIcon:setTopBottom( false, false, -71, 71 )
 				self.clipFinished( CategoryIcon, {} )
+
 				BlackBox0:completeAnimation()
 				self.BlackBox0:setAlpha( 0 )
 				self.clipFinished( BlackBox0, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0 )
 				self.clipFinished( BlackBox, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
@@ -187,53 +215,67 @@ CoD.Leaderboard_GameModeButton.new = function ( menu, controller )
 		ZMMaps = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				CategoryIcon:completeAnimation()
 				self.CategoryIcon:setLeftRight( false, false, -108.5, 108.5 )
 				self.CategoryIcon:setTopBottom( false, false, -71, 71 )
 				self.clipFinished( CategoryIcon, {} )
+
 				BlackBox0:completeAnimation()
 				self.BlackBox0:setAlpha( 0.05 )
 				self.clipFinished( BlackBox0, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0 )
 				self.clipFinished( BlackBox, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				StartMenuIdentitySubTitle0:completeAnimation()
 				self.StartMenuIdentitySubTitle0:setAlpha( 1 )
 				self.clipFinished( StartMenuIdentitySubTitle0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				CategoryIcon:completeAnimation()
 				self.CategoryIcon:setLeftRight( false, false, -108.5, 108.5 )
 				self.CategoryIcon:setTopBottom( false, false, -71, 71 )
 				self.clipFinished( CategoryIcon, {} )
+
 				BlackBox0:completeAnimation()
 				self.BlackBox0:setAlpha( 0 )
 				self.clipFinished( BlackBox0, {} )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0 )
 				self.clipFinished( BlackBox, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Freerun",
@@ -248,6 +290,7 @@ CoD.Leaderboard_GameModeButton.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactive:close()
 		element.FocusBarT:close()

@@ -4,9 +4,11 @@
 CoD.CallingCards_CodChamps_Knockout = InheritFrom( LUI.UIElement )
 CoD.CallingCards_CodChamps_Knockout.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_CodChamps_Knockout )
 	self.id = "CallingCards_CodChamps_Knockout"
@@ -89,6 +91,7 @@ CoD.CallingCards_CodChamps_Knockout.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				local bg2Frame2 = function ( bg2, event )
 					local bg2Frame3 = function ( bg2, event )
 						local bg2Frame4 = function ( bg2, event )
@@ -671,6 +674,7 @@ CoD.CallingCards_CodChamps_Knockout.new = function ( menu, controller )
 				blood200:completeAnimation()
 				self.blood200:setAlpha( 0 )
 				blood200Frame2( blood200, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

@@ -4,9 +4,11 @@
 CoD.CallingCard_Clover_Rainbow = InheritFrom( LUI.UIElement )
 CoD.CallingCard_Clover_Rainbow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCard_Clover_Rainbow )
 	self.id = "CallingCard_Clover_Rainbow"
@@ -35,6 +37,7 @@ CoD.CallingCard_Clover_Rainbow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				TileRainbow:completeAnimation()
 				self.TileRainbow:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_tile_scroll_normal" ) )
 				self.TileRainbow:setShaderVector( 0, 1.3, 1, 0, 0 )

@@ -4,9 +4,11 @@
 CoD.ScoreInfo_MeterLine = InheritFrom( LUI.UIElement )
 CoD.ScoreInfo_MeterLine.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreInfo_MeterLine )
 	self.id = "ScoreInfo_MeterLine"
@@ -27,6 +29,7 @@ CoD.ScoreInfo_MeterLine.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Line:completeAnimation()
 				self.Line:setAlpha( 0 )
 				self.clipFinished( Line, {} )
@@ -35,6 +38,7 @@ CoD.ScoreInfo_MeterLine.new = function ( menu, controller )
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local LineFrame2 = function ( Line, event )
 					local LineFrame3 = function ( Line, event )
 						local LineFrame4 = function ( Line, event )
@@ -149,6 +153,7 @@ CoD.ScoreInfo_MeterLine.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Active",

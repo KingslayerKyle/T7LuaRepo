@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.AAR.ChallengesTab.ChallengeWidget" )
 CoD.ChallengesTabWidget = InheritFrom( LUI.UIElement )
 CoD.ChallengesTabWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChallengesTabWidget )
 	self.id = "ChallengesTabWidget"

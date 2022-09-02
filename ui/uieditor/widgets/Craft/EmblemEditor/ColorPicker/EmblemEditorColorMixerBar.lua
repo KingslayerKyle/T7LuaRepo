@@ -30,9 +30,11 @@ end
 CoD.EmblemEditorColorMixerBar = InheritFrom( LUI.UIElement )
 CoD.EmblemEditorColorMixerBar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemEditorColorMixerBar )
 	self.id = "EmblemEditorColorMixerBar"
@@ -84,20 +86,25 @@ CoD.EmblemEditorColorMixerBar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				barBg:completeAnimation()
 				self.barBg:setRGB( 1, 1, 1 )
 				self.barBg:setAlpha( 0.1 )
 				self.clipFinished( barBg, {} )
+
 				bar:completeAnimation()
 				self.bar:setAlpha( 1 )
 				self.clipFinished( bar, {} )
+
 				pointer:completeAnimation()
 				self.pointer:setAlpha( 1 )
 				self.clipFinished( pointer, {} )
+
 				rightArrow:completeAnimation()
 				self.rightArrow:setRGB( 1, 1, 1 )
 				self.rightArrow:setAlpha( 0 )
 				self.clipFinished( rightArrow, {} )
+
 				leftArrow:completeAnimation()
 				self.leftArrow:setRGB( 1, 1, 1 )
 				self.leftArrow:setAlpha( 0 )
@@ -105,28 +112,34 @@ CoD.EmblemEditorColorMixerBar.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				barBg:completeAnimation()
 				self.barBg:setLeftRight( true, true, 0, 0 )
 				self.barBg:setTopBottom( true, true, -2, 2 )
 				self.barBg:setRGB( 1, 0.41, 0 )
 				self.barBg:setAlpha( 1 )
 				self.clipFinished( barBg, {} )
+
 				bar:completeAnimation()
 				self.bar:setAlpha( 1 )
 				self.clipFinished( bar, {} )
+
 				pointer:completeAnimation()
 				self.pointer:setRGB( 1, 0.41, 0 )
 				self.pointer:setAlpha( 1 )
 				self.clipFinished( pointer, {} )
+
 				rightArrow:completeAnimation()
 				self.rightArrow:setRGB( 1, 0.41, 0 )
 				self.clipFinished( rightArrow, {} )
+
 				leftArrow:completeAnimation()
 				self.leftArrow:setRGB( 1, 0.41, 0 )
 				self.clipFinished( leftArrow, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.pointer:close()
 	end )

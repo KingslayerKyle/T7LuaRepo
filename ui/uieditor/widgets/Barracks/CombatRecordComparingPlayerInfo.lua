@@ -4,9 +4,11 @@
 CoD.CombatRecordComparingPlayerInfo = InheritFrom( LUI.UIElement )
 CoD.CombatRecordComparingPlayerInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CombatRecordComparingPlayerInfo )
 	self.id = "CombatRecordComparingPlayerInfo"
@@ -56,12 +58,15 @@ CoD.CombatRecordComparingPlayerInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				emblem:completeAnimation()
 				self.emblem:setAlpha( 0 )
 				self.clipFinished( emblem, {} )
+
 				ComparingLabel:completeAnimation()
 				self.ComparingLabel:setAlpha( 0 )
 				self.clipFinished( ComparingLabel, {} )
+
 				ComparingGamertag:completeAnimation()
 				self.ComparingGamertag:setAlpha( 0 )
 				self.clipFinished( ComparingGamertag, {} )
@@ -70,18 +75,22 @@ CoD.CombatRecordComparingPlayerInfo.new = function ( menu, controller )
 		Comparing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				emblem:completeAnimation()
 				self.emblem:setAlpha( 1 )
 				self.clipFinished( emblem, {} )
+
 				ComparingLabel:completeAnimation()
 				self.ComparingLabel:setAlpha( 1 )
 				self.clipFinished( ComparingLabel, {} )
+
 				ComparingGamertag:completeAnimation()
 				self.ComparingGamertag:setAlpha( 1 )
 				self.clipFinished( ComparingGamertag, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Comparing",
@@ -114,6 +123,7 @@ CoD.CombatRecordComparingPlayerInfo.new = function ( menu, controller )
 			modelName = "OtherPlayerStats.Success"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.emblem:close()
 		element.ComparingGamertag:close()

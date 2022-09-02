@@ -20,9 +20,11 @@ end
 CoD.PaintshopChoosePaintSide = InheritFrom( LUI.UIElement )
 CoD.PaintshopChoosePaintSide.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PaintshopChoosePaintSide )
 	self.id = "PaintshopChoosePaintSide"
@@ -106,15 +108,19 @@ CoD.PaintshopChoosePaintSide.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				rightStick:completeAnimation()
 				self.rightStick:setAlpha( 0 )
 				self.clipFinished( rightStick, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setAlpha( 0 )
 				self.clipFinished( downArrow, {} )
+
 				upArrow:completeAnimation()
 				self.upArrow:setAlpha( 0 )
 				self.clipFinished( upArrow, {} )
@@ -123,21 +129,27 @@ CoD.PaintshopChoosePaintSide.new = function ( menu, controller )
 		BrowseModeControlsState_PC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				rightStick:completeAnimation()
 				self.rightStick:setAlpha( 0 )
 				self.clipFinished( rightStick, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setAlpha( 0 )
 				self.clipFinished( downArrow, {} )
+
 				upArrow:completeAnimation()
 				self.upArrow:setAlpha( 0 )
 				self.clipFinished( upArrow, {} )
+
 				leftButton:completeAnimation()
 				self.leftButton:setAlpha( 1 )
 				self.clipFinished( leftButton, {} )
+
 				rightButton:completeAnimation()
 				self.rightButton:setAlpha( 1 )
 				self.clipFinished( rightButton, {} )
@@ -146,16 +158,19 @@ CoD.PaintshopChoosePaintSide.new = function ( menu, controller )
 		BrowseModeControlsState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				rightStick:completeAnimation()
 				self.rightStick:setLeftRight( true, false, 1, 26 )
 				self.rightStick:setTopBottom( true, true, 0, -4 )
 				self.rightStick:setAlpha( 1 )
 				self.clipFinished( rightStick, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, false, 28.88, 30.88 )
 				self.Image0:setTopBottom( true, false, 0, 25 )
 				self.Image0:setAlpha( 0.47 )
 				self.clipFinished( Image0, {} )
+
 				downArrow:completeAnimation()
 				self.downArrow:setLeftRight( false, false, 65, 81 )
 				self.downArrow:setTopBottom( false, false, -5, 3 )
@@ -163,21 +178,25 @@ CoD.PaintshopChoosePaintSide.new = function ( menu, controller )
 				self.downArrow:setAlpha( 1 )
 				self.downArrow:setScale( 0.8 )
 				self.clipFinished( downArrow, {} )
+
 				upArrow:completeAnimation()
 				self.upArrow:setLeftRight( false, false, -51.13, -35.13 )
 				self.upArrow:setTopBottom( false, false, -5, 3 )
 				self.upArrow:setAlpha( 1 )
 				self.upArrow:setScale( 0.8 )
 				self.clipFinished( upArrow, {} )
+
 				leftButton:completeAnimation()
 				self.leftButton:setAlpha( 0 )
 				self.clipFinished( leftButton, {} )
+
 				rightButton:completeAnimation()
 				self.rightButton:setAlpha( 0 )
 				self.clipFinished( rightButton, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PaintshopChooseSide:close()
 		element.rightStick:close()

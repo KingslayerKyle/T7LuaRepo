@@ -53,6 +53,7 @@ local PostLoadFunc = function ( self, controller, menu )
 	end )
 	if CoD.isPC then
 		self:setForceMouseEventDispatch( true )
+
 		LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 			if IsSelfInState( self, "AnonymousPlayer" ) then
 				self.LobbyMemberMP45:setAlpha( 0 )
@@ -69,9 +70,11 @@ end
 CoD.LobbyMember = InheritFrom( LUI.UIElement )
 CoD.LobbyMember.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyMember )
 	self.id = "LobbyMember"
@@ -519,86 +522,105 @@ CoD.LobbyMember.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 26 )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( true, false, 0, 490 )
 				self.sizeElement:setTopBottom( true, false, 0, 27 )
 				self.sizeElement:setAlpha( 0 )
 				self.clipFinished( sizeElement, {} )
+
 				LobbyMemberBubbleGumBuffs:completeAnimation()
 				self.LobbyMemberBubbleGumBuffs:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBubbleGumBuffs:setTopBottom( true, false, 27, 91 )
 				self.LobbyMemberBubbleGumBuffs:setAlpha( 0 )
 				self.clipFinished( LobbyMemberBubbleGumBuffs, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.PartyMemberIconNew:setLeftRight( true, false, 412, 422 )
 				self.PartyMemberIconNew:setTopBottom( true, false, 0, 25 )
 				self.PartyMemberIconNew:setAlpha( 1 )
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				LobbyLeaderIcon:completeAnimation()
 				self.LobbyLeaderIcon:setAlpha( 1 )
 				self.clipFinished( LobbyLeaderIcon, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, true, 60, -82 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( false, false, -14, 13.5 )
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.FEMemberBlurPanelContainer0:setZoom( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -14, 13.5 )
 				self.VSpanel:setAlpha( 0.5 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -0.5, 27 )
 				self.LobbyMemberBacking:setAlpha( 0 )
 				self.LobbyMemberBacking:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setAlpha( 1 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setRGB( 1, 1, 1 )
 				self.rank:setAlpha( 1 )
 				self.rank:setZoom( 0 )
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
+
 				clanTag:completeAnimation()
 				self.clanTag:setRGB( 0.87, 0.9, 0.9 )
 				self.clanTag:setAlpha( 0 )
 				self.clanTag:setZoom( 0 )
 				self.clipFinished( clanTag, {} )
+
 				PrimaryGroup:completeAnimation()
 				self.PrimaryGroup:setAlpha( 0 )
 				self.clipFinished( PrimaryGroup, {} )
+
 				addControllerText:completeAnimation()
 				self.addControllerText:setAlpha( 0 )
 				self.clipFinished( addControllerText, {} )
+
 				MorePlaying:completeAnimation()
 				self.MorePlaying:setAlpha( 0 )
 				self.clipFinished( MorePlaying, {} )
+
 				playerCountText:completeAnimation()
 				self.playerCountText:setAlpha( 0 )
 				self.clipFinished( playerCountText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 26, 29 )
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				IconControllerContainer:completeAnimation()
 				self.IconControllerContainer:setAlpha( 1 )
 				self.clipFinished( IconControllerContainer, {} )
+
 				IconJoinable:completeAnimation()
 				self.IconJoinable:setAlpha( 0 )
 				self.clipFinished( IconJoinable, {} )
+
 				gamertag:completeAnimation()
 				self.gamertag:setLeftRight( true, false, 115, 386 )
 				self.gamertag:setTopBottom( true, false, 1, 26 )
@@ -606,77 +628,96 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.gamertag:setAlpha( 1 )
 				self.gamertag:setZoom( 0 )
 				self.clipFinished( gamertag, {} )
+
 				TeamSwitcher:completeAnimation()
 				self.TeamSwitcher:setAlpha( 1 )
 				self.clipFinished( TeamSwitcher, {} )
+
 				LobbyLeaderIcon0:completeAnimation()
 				self.LobbyLeaderIcon0:setAlpha( 0 )
 				self.clipFinished( LobbyLeaderIcon0, {} )
+
 				LobbyMemberScore:completeAnimation()
 				self.LobbyMemberScore:setAlpha( 1 )
 				self.clipFinished( LobbyMemberScore, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
+
 				LobbyMemberReady:completeAnimation()
 				self.LobbyMemberReady:setAlpha( 0 )
 				self.clipFinished( LobbyMemberReady, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 11 )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, false, 60, 408 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( true, false, -4.5, 31.5 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -18, 18 )
 				self.VSpanel:setAlpha( 1 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -5, 32 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -7.75, 32.75 )
 				self.LobbyMemberTeamColor:setAlpha( 1 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setAlpha( 1 )
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
+
 				PrimaryGroup:completeAnimation()
 				self.PrimaryGroup:setAlpha( 0 )
 				self.clipFinished( PrimaryGroup, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 29, 33 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -6, -2 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 11 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -751,6 +792,7 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				LobbyMemberTeamColorFrame2( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
@@ -792,21 +834,26 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.FocusBarT:setTopBottom( true, false, 12, 16 )
 				self.FocusBarT:setAlpha( 0 )
 				FocusBarTFrame2( FocusBarT, {} )
+
 				gamertag:completeAnimation()
 				self.gamertag:setAlpha( 1 )
 				self.clipFinished( gamertag, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 11 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -934,21 +981,26 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.FocusBarT:setTopBottom( true, false, -6, -2 )
 				self.FocusBarT:setAlpha( 1 )
 				FocusBarTFrame2( FocusBarT, {} )
+
 				gamertag:completeAnimation()
 				self.gamertag:setAlpha( 1 )
 				self.clipFinished( gamertag, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 9 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -1077,12 +1129,15 @@ CoD.LobbyMember.new = function ( menu, controller )
 				LobbyLeaderIcon0:completeAnimation()
 				self.LobbyLeaderIcon0:setAlpha( 0 )
 				LobbyLeaderIcon0Frame2( LobbyLeaderIcon0, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
@@ -1091,86 +1146,105 @@ CoD.LobbyMember.new = function ( menu, controller )
 		IsSelfZombies = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 26 )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( true, false, 0, 490 )
 				self.sizeElement:setTopBottom( true, false, 0, 91 )
 				self.sizeElement:setAlpha( 0 )
 				self.clipFinished( sizeElement, {} )
+
 				LobbyMemberBubbleGumBuffs:completeAnimation()
 				self.LobbyMemberBubbleGumBuffs:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBubbleGumBuffs:setTopBottom( true, false, 27, 91 )
 				self.LobbyMemberBubbleGumBuffs:setAlpha( 1 )
 				self.clipFinished( LobbyMemberBubbleGumBuffs, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.PartyMemberIconNew:setLeftRight( true, false, 412, 422 )
 				self.PartyMemberIconNew:setTopBottom( true, false, 0, 91 )
 				self.PartyMemberIconNew:setAlpha( 1 )
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				LobbyLeaderIcon:completeAnimation()
 				self.LobbyLeaderIcon:setAlpha( 1 )
 				self.clipFinished( LobbyLeaderIcon, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, false, 60, 408 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( true, false, -0.5, 27 )
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.FEMemberBlurPanelContainer0:setZoom( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -14, 13.5 )
 				self.VSpanel:setAlpha( 0 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -0.5, 27 )
 				self.LobbyMemberBacking:setAlpha( 0 )
 				self.LobbyMemberBacking:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setAlpha( 1 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setRGB( 1, 1, 1 )
 				self.rank:setAlpha( 1 )
 				self.rank:setZoom( 0 )
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
+
 				clanTag:completeAnimation()
 				self.clanTag:setRGB( 0.96, 1, 0.33 )
 				self.clanTag:setAlpha( 0 )
 				self.clanTag:setZoom( 0 )
 				self.clipFinished( clanTag, {} )
+
 				PrimaryGroup:completeAnimation()
 				self.PrimaryGroup:setAlpha( 0 )
 				self.clipFinished( PrimaryGroup, {} )
+
 				addControllerText:completeAnimation()
 				self.addControllerText:setAlpha( 0 )
 				self.clipFinished( addControllerText, {} )
+
 				MorePlaying:completeAnimation()
 				self.MorePlaying:setAlpha( 0 )
 				self.clipFinished( MorePlaying, {} )
+
 				playerCountText:completeAnimation()
 				self.playerCountText:setAlpha( 0 )
 				self.clipFinished( playerCountText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 26, 29 )
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				IconControllerContainer:completeAnimation()
 				self.IconControllerContainer:setAlpha( 1 )
 				self.clipFinished( IconControllerContainer, {} )
+
 				IconJoinable:completeAnimation()
 				self.IconJoinable:setAlpha( 0 )
 				self.clipFinished( IconJoinable, {} )
+
 				gamertag:completeAnimation()
 				self.gamertag:setLeftRight( true, false, 115, 386 )
 				self.gamertag:setTopBottom( true, false, 1, 26 )
@@ -1178,67 +1252,84 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.gamertag:setAlpha( 1 )
 				self.gamertag:setZoom( 0 )
 				self.clipFinished( gamertag, {} )
+
 				TeamSwitcher:completeAnimation()
 				self.TeamSwitcher:setAlpha( 1 )
 				self.clipFinished( TeamSwitcher, {} )
+
 				LobbyLeaderIcon0:completeAnimation()
 				self.LobbyLeaderIcon0:setAlpha( 0 )
 				self.clipFinished( LobbyLeaderIcon0, {} )
+
 				LobbyMemberScore:completeAnimation()
 				self.LobbyMemberScore:setAlpha( 1 )
 				self.clipFinished( LobbyMemberScore, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
+
 				LobbyMemberReady:completeAnimation()
 				self.LobbyMemberReady:setAlpha( 1 )
 				self.clipFinished( LobbyMemberReady, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 9 )
+
 				LobbyMemberBubbleGumBuffs:completeAnimation()
 				self.LobbyMemberBubbleGumBuffs:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBubbleGumBuffs:setTopBottom( true, false, 27, 91 )
 				self.LobbyMemberBubbleGumBuffs:setAlpha( 1 )
 				self.clipFinished( LobbyMemberBubbleGumBuffs, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.PartyMemberIconNew:setLeftRight( true, false, 412, 422 )
 				self.PartyMemberIconNew:setTopBottom( true, false, 0, 91 )
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setAlpha( 0 )
 				self.clipFinished( VSpanel, {} )
+
 				PrimaryGroup:completeAnimation()
 				self.PrimaryGroup:setAlpha( 0 )
 				self.clipFinished( PrimaryGroup, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 89, 93 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				local LobbyMemberBubbleGumBuffsFrame2 = function ( LobbyMemberBubbleGumBuffs, event )
 					if not event.interrupted then
 						LobbyMemberBubbleGumBuffs:beginAnimation( "keyframe", 50, true, false, CoD.TweenType.Linear )
@@ -1258,10 +1349,12 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.LobbyMemberBubbleGumBuffs:setTopBottom( true, false, 27, 91 )
 				self.LobbyMemberBubbleGumBuffs:setAlpha( 1 )
 				LobbyMemberBubbleGumBuffsFrame2( LobbyMemberBubbleGumBuffs, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.PartyMemberIconNew:setLeftRight( true, false, 412, 422 )
 				self.PartyMemberIconNew:setTopBottom( true, false, 0, 91 )
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setAlpha( 0 )
 				self.clipFinished( VSpanel, {} )
@@ -1337,18 +1430,22 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.FocusBarT:setTopBottom( true, false, 48, 52 )
 				self.FocusBarT:setAlpha( 0 )
 				FocusBarTFrame2( FocusBarT, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				local LobbyMemberBubbleGumBuffsFrame2 = function ( LobbyMemberBubbleGumBuffs, event )
 					if not event.interrupted then
 						LobbyMemberBubbleGumBuffs:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -1368,10 +1465,12 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.LobbyMemberBubbleGumBuffs:setTopBottom( true, false, 27, 91 )
 				self.LobbyMemberBubbleGumBuffs:setAlpha( 1 )
 				LobbyMemberBubbleGumBuffsFrame2( LobbyMemberBubbleGumBuffs, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.PartyMemberIconNew:setLeftRight( true, false, 412, 422 )
 				self.PartyMemberIconNew:setTopBottom( true, false, 0, 91 )
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setAlpha( 0 )
 				self.clipFinished( VSpanel, {} )
@@ -1447,18 +1546,22 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.FocusBarT:setAlpha( 1 )
 				FocusBarTFrame2( FocusBarT, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 10 )
+
 				local PartyMemberIconNewFrame2 = function ( PartyMemberIconNew, event )
 					if not event.interrupted then
 						PartyMemberIconNew:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -1598,12 +1701,15 @@ CoD.LobbyMember.new = function ( menu, controller )
 				LobbyLeaderIcon0:completeAnimation()
 				self.LobbyLeaderIcon0:setAlpha( 0 )
 				LobbyLeaderIcon0Frame2( LobbyLeaderIcon0, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
@@ -1612,86 +1718,105 @@ CoD.LobbyMember.new = function ( menu, controller )
 		IsPartyMemberZombies = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 26 )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( true, false, 0, 490 )
 				self.sizeElement:setTopBottom( true, false, 0, 91 )
 				self.sizeElement:setAlpha( 0 )
 				self.clipFinished( sizeElement, {} )
+
 				LobbyMemberBubbleGumBuffs:completeAnimation()
 				self.LobbyMemberBubbleGumBuffs:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBubbleGumBuffs:setTopBottom( true, false, 27, 91 )
 				self.LobbyMemberBubbleGumBuffs:setAlpha( 1 )
 				self.clipFinished( LobbyMemberBubbleGumBuffs, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.PartyMemberIconNew:setLeftRight( true, false, 412, 422 )
 				self.PartyMemberIconNew:setTopBottom( true, false, 0, 91 )
 				self.PartyMemberIconNew:setAlpha( 1 )
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				LobbyLeaderIcon:completeAnimation()
 				self.LobbyLeaderIcon:setAlpha( 1 )
 				self.clipFinished( LobbyLeaderIcon, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, false, 60, 408 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( true, false, -0.5, 27 )
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.FEMemberBlurPanelContainer0:setZoom( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -14, 13.5 )
 				self.VSpanel:setAlpha( 0 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -0.5, 27 )
 				self.LobbyMemberBacking:setAlpha( 0 )
 				self.LobbyMemberBacking:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setAlpha( 1 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setRGB( 1, 1, 1 )
 				self.rank:setAlpha( 1 )
 				self.rank:setZoom( 0 )
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
+
 				clanTag:completeAnimation()
 				self.clanTag:setRGB( 0.96, 1, 0.33 )
 				self.clanTag:setAlpha( 0 )
 				self.clanTag:setZoom( 0 )
 				self.clipFinished( clanTag, {} )
+
 				PrimaryGroup:completeAnimation()
 				self.PrimaryGroup:setAlpha( 0 )
 				self.clipFinished( PrimaryGroup, {} )
+
 				addControllerText:completeAnimation()
 				self.addControllerText:setAlpha( 0 )
 				self.clipFinished( addControllerText, {} )
+
 				MorePlaying:completeAnimation()
 				self.MorePlaying:setAlpha( 0 )
 				self.clipFinished( MorePlaying, {} )
+
 				playerCountText:completeAnimation()
 				self.playerCountText:setAlpha( 0 )
 				self.clipFinished( playerCountText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 26, 29 )
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				IconControllerContainer:completeAnimation()
 				self.IconControllerContainer:setAlpha( 1 )
 				self.clipFinished( IconControllerContainer, {} )
+
 				IconJoinable:completeAnimation()
 				self.IconJoinable:setAlpha( 0 )
 				self.clipFinished( IconJoinable, {} )
+
 				gamertag:completeAnimation()
 				self.gamertag:setLeftRight( true, false, 115, 386 )
 				self.gamertag:setTopBottom( true, false, 1, 26 )
@@ -1699,76 +1824,96 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.gamertag:setAlpha( 1 )
 				self.gamertag:setZoom( 0 )
 				self.clipFinished( gamertag, {} )
+
 				TeamSwitcher:completeAnimation()
 				self.TeamSwitcher:setAlpha( 1 )
 				self.clipFinished( TeamSwitcher, {} )
+
 				LobbyLeaderIcon0:completeAnimation()
 				self.LobbyLeaderIcon0:setAlpha( 0 )
 				self.clipFinished( LobbyLeaderIcon0, {} )
+
 				LobbyMemberScore:completeAnimation()
 				self.LobbyMemberScore:setAlpha( 1 )
 				self.clipFinished( LobbyMemberScore, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
+
 				LobbyMemberReady:completeAnimation()
 				self.LobbyMemberReady:setAlpha( 1 )
 				self.clipFinished( LobbyMemberReady, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 10 )
+
 				LobbyMemberBubbleGumBuffs:completeAnimation()
 				self.LobbyMemberBubbleGumBuffs:setAlpha( 1 )
 				self.clipFinished( LobbyMemberBubbleGumBuffs, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.PartyMemberIconNew:setLeftRight( true, false, 412, 422 )
 				self.PartyMemberIconNew:setTopBottom( true, false, 0, 91 )
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setAlpha( 0 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -0.5, 29 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				PrimaryGroup:completeAnimation()
 				self.PrimaryGroup:setAlpha( 0 )
 				self.clipFinished( PrimaryGroup, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 86, 90 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 9 )
+
 				LobbyMemberBubbleGumBuffs:completeAnimation()
 				self.LobbyMemberBubbleGumBuffs:setAlpha( 1 )
 				self.clipFinished( LobbyMemberBubbleGumBuffs, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.PartyMemberIconNew:setLeftRight( true, false, 412, 422 )
 				self.PartyMemberIconNew:setTopBottom( true, false, 0, 91 )
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setAlpha( 0 )
 				self.clipFinished( VSpanel, {} )
@@ -1844,22 +1989,27 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.FocusBarT:setTopBottom( true, false, 12, 16 )
 				self.FocusBarT:setAlpha( 0 )
 				FocusBarTFrame2( FocusBarT, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 9 )
+
 				LobbyMemberBubbleGumBuffs:completeAnimation()
 				self.LobbyMemberBubbleGumBuffs:setAlpha( 1 )
 				self.clipFinished( LobbyMemberBubbleGumBuffs, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.PartyMemberIconNew:setLeftRight( true, false, 412, 422 )
 				self.PartyMemberIconNew:setTopBottom( true, false, 0, 91 )
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setAlpha( 0 )
 				self.clipFinished( VSpanel, {} )
@@ -1935,15 +2085,18 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.FocusBarT:setAlpha( 1 )
 				FocusBarTFrame2( FocusBarT, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 8 )
+
 				local PartyMemberIconNewFrame2 = function ( PartyMemberIconNew, event )
 					if not event.interrupted then
 						PartyMemberIconNew:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -2068,9 +2221,11 @@ CoD.LobbyMember.new = function ( menu, controller )
 				LobbyLeaderIcon0:completeAnimation()
 				self.LobbyLeaderIcon0:setAlpha( 0 )
 				LobbyLeaderIcon0Frame2( LobbyLeaderIcon0, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
@@ -2079,86 +2234,105 @@ CoD.LobbyMember.new = function ( menu, controller )
 		IsDOA = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 26 )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( true, false, 0, 490 )
 				self.sizeElement:setTopBottom( true, false, 0, 27 )
 				self.sizeElement:setAlpha( 0 )
 				self.clipFinished( sizeElement, {} )
+
 				LobbyMemberBubbleGumBuffs:completeAnimation()
 				self.LobbyMemberBubbleGumBuffs:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBubbleGumBuffs:setTopBottom( true, false, 27, 91 )
 				self.LobbyMemberBubbleGumBuffs:setAlpha( 0 )
 				self.clipFinished( LobbyMemberBubbleGumBuffs, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.PartyMemberIconNew:setLeftRight( true, false, 412, 422 )
 				self.PartyMemberIconNew:setTopBottom( true, false, 0, 25 )
 				self.PartyMemberIconNew:setAlpha( 1 )
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				LobbyLeaderIcon:completeAnimation()
 				self.LobbyLeaderIcon:setAlpha( 1 )
 				self.clipFinished( LobbyLeaderIcon, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, false, 60, 408 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( true, false, -0.5, 27 )
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.FEMemberBlurPanelContainer0:setZoom( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -14, 13.5 )
 				self.VSpanel:setAlpha( 0.5 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -0.5, 27 )
 				self.LobbyMemberBacking:setAlpha( 0 )
 				self.LobbyMemberBacking:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setAlpha( 1 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setRGB( 1, 1, 1 )
 				self.rank:setAlpha( 1 )
 				self.rank:setZoom( 0 )
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
+
 				clanTag:completeAnimation()
 				self.clanTag:setRGB( 0.96, 1, 0.33 )
 				self.clanTag:setAlpha( 0 )
 				self.clanTag:setZoom( 0 )
 				self.clipFinished( clanTag, {} )
+
 				PrimaryGroup:completeAnimation()
 				self.PrimaryGroup:setAlpha( 0 )
 				self.clipFinished( PrimaryGroup, {} )
+
 				addControllerText:completeAnimation()
 				self.addControllerText:setAlpha( 0 )
 				self.clipFinished( addControllerText, {} )
+
 				MorePlaying:completeAnimation()
 				self.MorePlaying:setAlpha( 0 )
 				self.clipFinished( MorePlaying, {} )
+
 				playerCountText:completeAnimation()
 				self.playerCountText:setAlpha( 0 )
 				self.clipFinished( playerCountText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 26, 29 )
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				IconControllerContainer:completeAnimation()
 				self.IconControllerContainer:setAlpha( 1 )
 				self.clipFinished( IconControllerContainer, {} )
+
 				IconJoinable:completeAnimation()
 				self.IconJoinable:setAlpha( 0 )
 				self.clipFinished( IconJoinable, {} )
+
 				gamertag:completeAnimation()
 				self.gamertag:setLeftRight( true, false, 115, 386 )
 				self.gamertag:setTopBottom( true, false, 1, 26 )
@@ -2166,71 +2340,89 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.gamertag:setAlpha( 1 )
 				self.gamertag:setZoom( 0 )
 				self.clipFinished( gamertag, {} )
+
 				TeamSwitcher:completeAnimation()
 				self.TeamSwitcher:setAlpha( 1 )
 				self.clipFinished( TeamSwitcher, {} )
+
 				LobbyLeaderIcon0:completeAnimation()
 				self.LobbyLeaderIcon0:setAlpha( 0 )
 				self.clipFinished( LobbyLeaderIcon0, {} )
+
 				LobbyMemberScore:completeAnimation()
 				self.LobbyMemberScore:setAlpha( 1 )
 				self.clipFinished( LobbyMemberScore, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
+
 				LobbyMemberReady:completeAnimation()
 				self.LobbyMemberReady:setAlpha( 1 )
 				self.clipFinished( LobbyMemberReady, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 10 )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, true, 60, -82 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( false, false, -18, 18 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -18, 18 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -5, 32 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -7, 33 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 29, 33 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -6, -2 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -2307,6 +2499,7 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				LobbyMemberTeamColorFrame2( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
@@ -2348,18 +2541,22 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.FocusBarT:setTopBottom( true, false, 12, 16 )
 				self.FocusBarT:setAlpha( 0 )
 				FocusBarTFrame2( FocusBarT, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -2489,18 +2686,22 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.FocusBarT:setTopBottom( true, false, -6, -2 )
 				self.FocusBarT:setAlpha( 1 )
 				FocusBarTFrame2( FocusBarT, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 8 )
+
 				local LobbyLeaderIconFrame2 = function ( LobbyLeaderIcon, event )
 					if not event.interrupted then
 						LobbyLeaderIcon:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -2606,12 +2807,15 @@ CoD.LobbyMember.new = function ( menu, controller )
 				LobbyLeaderIcon0:completeAnimation()
 				self.LobbyLeaderIcon0:setAlpha( 0 )
 				LobbyLeaderIcon0Frame2( LobbyLeaderIcon0, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
@@ -2620,86 +2824,105 @@ CoD.LobbyMember.new = function ( menu, controller )
 		IsPartyMemberDOA = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 26 )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( true, false, 0, 490 )
 				self.sizeElement:setTopBottom( true, false, 0, 27 )
 				self.sizeElement:setAlpha( 0 )
 				self.clipFinished( sizeElement, {} )
+
 				LobbyMemberBubbleGumBuffs:completeAnimation()
 				self.LobbyMemberBubbleGumBuffs:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBubbleGumBuffs:setTopBottom( true, false, 27, 91 )
 				self.LobbyMemberBubbleGumBuffs:setAlpha( 0 )
 				self.clipFinished( LobbyMemberBubbleGumBuffs, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.PartyMemberIconNew:setLeftRight( true, false, 412, 422 )
 				self.PartyMemberIconNew:setTopBottom( true, false, 0, 25 )
 				self.PartyMemberIconNew:setAlpha( 1 )
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				LobbyLeaderIcon:completeAnimation()
 				self.LobbyLeaderIcon:setAlpha( 1 )
 				self.clipFinished( LobbyLeaderIcon, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, true, 60, -82 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( false, false, -14, 13.5 )
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.FEMemberBlurPanelContainer0:setZoom( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -14, 13.5 )
 				self.VSpanel:setAlpha( 0.5 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -0.5, 27 )
 				self.LobbyMemberBacking:setAlpha( 0 )
 				self.LobbyMemberBacking:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setAlpha( 1 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setRGB( 1, 1, 1 )
 				self.rank:setAlpha( 1 )
 				self.rank:setZoom( 0 )
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
+
 				clanTag:completeAnimation()
 				self.clanTag:setRGB( 0.96, 1, 0.33 )
 				self.clanTag:setAlpha( 0 )
 				self.clanTag:setZoom( 0 )
 				self.clipFinished( clanTag, {} )
+
 				PrimaryGroup:completeAnimation()
 				self.PrimaryGroup:setAlpha( 0 )
 				self.clipFinished( PrimaryGroup, {} )
+
 				addControllerText:completeAnimation()
 				self.addControllerText:setAlpha( 0 )
 				self.clipFinished( addControllerText, {} )
+
 				MorePlaying:completeAnimation()
 				self.MorePlaying:setAlpha( 0 )
 				self.clipFinished( MorePlaying, {} )
+
 				playerCountText:completeAnimation()
 				self.playerCountText:setAlpha( 0 )
 				self.clipFinished( playerCountText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 26, 29 )
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				IconControllerContainer:completeAnimation()
 				self.IconControllerContainer:setAlpha( 1 )
 				self.clipFinished( IconControllerContainer, {} )
+
 				IconJoinable:completeAnimation()
 				self.IconJoinable:setAlpha( 0 )
 				self.clipFinished( IconJoinable, {} )
+
 				gamertag:completeAnimation()
 				self.gamertag:setLeftRight( true, false, 115, 386 )
 				self.gamertag:setTopBottom( true, false, 1, 26 )
@@ -2707,71 +2930,89 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.gamertag:setAlpha( 1 )
 				self.gamertag:setZoom( 0 )
 				self.clipFinished( gamertag, {} )
+
 				TeamSwitcher:completeAnimation()
 				self.TeamSwitcher:setAlpha( 1 )
 				self.clipFinished( TeamSwitcher, {} )
+
 				LobbyLeaderIcon0:completeAnimation()
 				self.LobbyLeaderIcon0:setAlpha( 0 )
 				self.clipFinished( LobbyLeaderIcon0, {} )
+
 				LobbyMemberScore:completeAnimation()
 				self.LobbyMemberScore:setAlpha( 1 )
 				self.clipFinished( LobbyMemberScore, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
+
 				LobbyMemberReady:completeAnimation()
 				self.LobbyMemberReady:setAlpha( 1 )
 				self.clipFinished( LobbyMemberReady, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 10 )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, true, 60, -82 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( false, false, -18, 18 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -18, 18 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -5, 32 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -7, 33 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 29, 33 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -6, -2 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -2848,6 +3089,7 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				LobbyMemberTeamColorFrame2( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
@@ -2889,18 +3131,22 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.FocusBarT:setTopBottom( true, false, 12, 16 )
 				self.FocusBarT:setAlpha( 0 )
 				FocusBarTFrame2( FocusBarT, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -3030,18 +3276,22 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.FocusBarT:setTopBottom( true, false, -6, -2 )
 				self.FocusBarT:setAlpha( 1 )
 				FocusBarTFrame2( FocusBarT, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 8 )
+
 				local LobbyLeaderIconFrame2 = function ( LobbyLeaderIcon, event )
 					if not event.interrupted then
 						LobbyLeaderIcon:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -3147,12 +3397,15 @@ CoD.LobbyMember.new = function ( menu, controller )
 				LobbyLeaderIcon0:completeAnimation()
 				self.LobbyLeaderIcon0:setAlpha( 0 )
 				LobbyLeaderIcon0Frame2( LobbyLeaderIcon0, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
@@ -3161,86 +3414,105 @@ CoD.LobbyMember.new = function ( menu, controller )
 		IsSelf = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 26 )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( true, false, 0, 490 )
 				self.sizeElement:setTopBottom( true, false, 0, 27 )
 				self.sizeElement:setAlpha( 0 )
 				self.clipFinished( sizeElement, {} )
+
 				LobbyMemberBubbleGumBuffs:completeAnimation()
 				self.LobbyMemberBubbleGumBuffs:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBubbleGumBuffs:setTopBottom( true, false, 27, 91 )
 				self.LobbyMemberBubbleGumBuffs:setAlpha( 0 )
 				self.clipFinished( LobbyMemberBubbleGumBuffs, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.PartyMemberIconNew:setLeftRight( true, false, 412, 422 )
 				self.PartyMemberIconNew:setTopBottom( true, false, 0, 25 )
 				self.PartyMemberIconNew:setAlpha( 1 )
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				LobbyLeaderIcon:completeAnimation()
 				self.LobbyLeaderIcon:setAlpha( 1 )
 				self.clipFinished( LobbyLeaderIcon, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, false, 60, 408 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( true, false, -0.5, 27 )
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.FEMemberBlurPanelContainer0:setZoom( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -14, 13.5 )
 				self.VSpanel:setAlpha( 0.5 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -0.5, 27 )
 				self.LobbyMemberBacking:setAlpha( 0 )
 				self.LobbyMemberBacking:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setAlpha( 1 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setRGB( 1, 1, 1 )
 				self.rank:setAlpha( 1 )
 				self.rank:setZoom( 0 )
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
+
 				clanTag:completeAnimation()
 				self.clanTag:setRGB( 0.96, 1, 0.33 )
 				self.clanTag:setAlpha( 0 )
 				self.clanTag:setZoom( 0 )
 				self.clipFinished( clanTag, {} )
+
 				PrimaryGroup:completeAnimation()
 				self.PrimaryGroup:setAlpha( 0 )
 				self.clipFinished( PrimaryGroup, {} )
+
 				addControllerText:completeAnimation()
 				self.addControllerText:setAlpha( 0 )
 				self.clipFinished( addControllerText, {} )
+
 				MorePlaying:completeAnimation()
 				self.MorePlaying:setAlpha( 0 )
 				self.clipFinished( MorePlaying, {} )
+
 				playerCountText:completeAnimation()
 				self.playerCountText:setAlpha( 0 )
 				self.clipFinished( playerCountText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 26, 29 )
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				IconControllerContainer:completeAnimation()
 				self.IconControllerContainer:setAlpha( 1 )
 				self.clipFinished( IconControllerContainer, {} )
+
 				IconJoinable:completeAnimation()
 				self.IconJoinable:setAlpha( 0 )
 				self.clipFinished( IconJoinable, {} )
+
 				gamertag:completeAnimation()
 				self.gamertag:setLeftRight( true, false, 115, 386 )
 				self.gamertag:setTopBottom( true, false, 1, 26 )
@@ -3248,71 +3520,89 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.gamertag:setAlpha( 1 )
 				self.gamertag:setZoom( 0 )
 				self.clipFinished( gamertag, {} )
+
 				TeamSwitcher:completeAnimation()
 				self.TeamSwitcher:setAlpha( 1 )
 				self.clipFinished( TeamSwitcher, {} )
+
 				LobbyLeaderIcon0:completeAnimation()
 				self.LobbyLeaderIcon0:setAlpha( 0 )
 				self.clipFinished( LobbyLeaderIcon0, {} )
+
 				LobbyMemberScore:completeAnimation()
 				self.LobbyMemberScore:setAlpha( 1 )
 				self.clipFinished( LobbyMemberScore, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
+
 				LobbyMemberReady:completeAnimation()
 				self.LobbyMemberReady:setAlpha( 0 )
 				self.clipFinished( LobbyMemberReady, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 10 )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, true, 60, -82 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( false, false, -18, 18 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -18, 18 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -5, 32 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -7, 33 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 29, 33 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -6, -2 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -3389,6 +3679,7 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				LobbyMemberTeamColorFrame2( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
@@ -3430,18 +3721,22 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.FocusBarT:setTopBottom( true, false, 12, 16 )
 				self.FocusBarT:setAlpha( 0 )
 				FocusBarTFrame2( FocusBarT, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -3571,18 +3866,22 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.FocusBarT:setTopBottom( true, false, -6, -2 )
 				self.FocusBarT:setAlpha( 1 )
 				FocusBarTFrame2( FocusBarT, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 8 )
+
 				local LobbyLeaderIconFrame2 = function ( LobbyLeaderIcon, event )
 					if not event.interrupted then
 						LobbyLeaderIcon:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -3688,12 +3987,15 @@ CoD.LobbyMember.new = function ( menu, controller )
 				LobbyLeaderIcon0:completeAnimation()
 				self.LobbyLeaderIcon0:setAlpha( 0 )
 				LobbyLeaderIcon0Frame2( LobbyLeaderIcon0, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
@@ -3702,86 +4004,105 @@ CoD.LobbyMember.new = function ( menu, controller )
 		IsPartyMember = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 26 )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( true, false, 0, 490 )
 				self.sizeElement:setTopBottom( true, false, 0, 27 )
 				self.sizeElement:setAlpha( 0 )
 				self.clipFinished( sizeElement, {} )
+
 				LobbyMemberBubbleGumBuffs:completeAnimation()
 				self.LobbyMemberBubbleGumBuffs:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBubbleGumBuffs:setTopBottom( true, false, 27, 91 )
 				self.LobbyMemberBubbleGumBuffs:setAlpha( 0 )
 				self.clipFinished( LobbyMemberBubbleGumBuffs, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.PartyMemberIconNew:setLeftRight( true, false, 412, 422 )
 				self.PartyMemberIconNew:setTopBottom( true, false, 0, 25 )
 				self.PartyMemberIconNew:setAlpha( 1 )
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				LobbyLeaderIcon:completeAnimation()
 				self.LobbyLeaderIcon:setAlpha( 1 )
 				self.clipFinished( LobbyLeaderIcon, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, false, 60, 408 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( true, false, -0.5, 27 )
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.FEMemberBlurPanelContainer0:setZoom( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -14, 13.5 )
 				self.VSpanel:setAlpha( 0.5 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -0.5, 27 )
 				self.LobbyMemberBacking:setAlpha( 0 )
 				self.LobbyMemberBacking:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setAlpha( 1 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setRGB( 1, 1, 1 )
 				self.rank:setAlpha( 1 )
 				self.rank:setZoom( 0 )
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
+
 				clanTag:completeAnimation()
 				self.clanTag:setRGB( 0.96, 1, 0.33 )
 				self.clanTag:setAlpha( 0 )
 				self.clanTag:setZoom( 0 )
 				self.clipFinished( clanTag, {} )
+
 				PrimaryGroup:completeAnimation()
 				self.PrimaryGroup:setAlpha( 0 )
 				self.clipFinished( PrimaryGroup, {} )
+
 				addControllerText:completeAnimation()
 				self.addControllerText:setAlpha( 0 )
 				self.clipFinished( addControllerText, {} )
+
 				MorePlaying:completeAnimation()
 				self.MorePlaying:setAlpha( 0 )
 				self.clipFinished( MorePlaying, {} )
+
 				playerCountText:completeAnimation()
 				self.playerCountText:setAlpha( 0 )
 				self.clipFinished( playerCountText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 26, 29 )
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				IconControllerContainer:completeAnimation()
 				self.IconControllerContainer:setAlpha( 1 )
 				self.clipFinished( IconControllerContainer, {} )
+
 				IconJoinable:completeAnimation()
 				self.IconJoinable:setAlpha( 0 )
 				self.clipFinished( IconJoinable, {} )
+
 				gamertag:completeAnimation()
 				self.gamertag:setLeftRight( true, false, 115, 386 )
 				self.gamertag:setTopBottom( true, false, 1, 26 )
@@ -3789,71 +4110,89 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.gamertag:setAlpha( 1 )
 				self.gamertag:setZoom( 0 )
 				self.clipFinished( gamertag, {} )
+
 				TeamSwitcher:completeAnimation()
 				self.TeamSwitcher:setAlpha( 1 )
 				self.clipFinished( TeamSwitcher, {} )
+
 				LobbyLeaderIcon0:completeAnimation()
 				self.LobbyLeaderIcon0:setAlpha( 0 )
 				self.clipFinished( LobbyLeaderIcon0, {} )
+
 				LobbyMemberScore:completeAnimation()
 				self.LobbyMemberScore:setAlpha( 1 )
 				self.clipFinished( LobbyMemberScore, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
+
 				LobbyMemberReady:completeAnimation()
 				self.LobbyMemberReady:setAlpha( 0 )
 				self.clipFinished( LobbyMemberReady, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 10 )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, false, 60, 408 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( true, false, -4, 31 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -21, 19 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -7.25, 33.25 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -7.5, 33 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 29, 33 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -6, -2 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -3926,6 +4265,7 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				LobbyMemberTeamColorFrame2( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
@@ -3967,18 +4307,22 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.FocusBarT:setTopBottom( true, false, 12, 16 )
 				self.FocusBarT:setAlpha( 0 )
 				FocusBarTFrame2( FocusBarT, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -4104,18 +4448,22 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.FocusBarT:setTopBottom( true, false, -6, -2 )
 				self.FocusBarT:setAlpha( 1 )
 				FocusBarTFrame2( FocusBarT, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 8 )
+
 				local LobbyLeaderIconFrame2 = function ( LobbyLeaderIcon, event )
 					local LobbyLeaderIconFrame3 = function ( LobbyLeaderIcon, event )
 						if not event.interrupted then
@@ -4221,12 +4569,15 @@ CoD.LobbyMember.new = function ( menu, controller )
 				LobbyLeaderIcon0:completeAnimation()
 				self.LobbyLeaderIcon0:setAlpha( 0 )
 				LobbyLeaderIcon0Frame2( LobbyLeaderIcon0, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
@@ -4235,86 +4586,105 @@ CoD.LobbyMember.new = function ( menu, controller )
 		IsInGroup = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 26 )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( true, false, 0, 490 )
 				self.sizeElement:setTopBottom( true, false, 0, 27 )
 				self.sizeElement:setAlpha( 0 )
 				self.clipFinished( sizeElement, {} )
+
 				LobbyMemberBubbleGumBuffs:completeAnimation()
 				self.LobbyMemberBubbleGumBuffs:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBubbleGumBuffs:setTopBottom( true, false, 27, 91 )
 				self.LobbyMemberBubbleGumBuffs:setAlpha( 0 )
 				self.clipFinished( LobbyMemberBubbleGumBuffs, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.PartyMemberIconNew:setLeftRight( true, false, 412, 422 )
 				self.PartyMemberIconNew:setTopBottom( true, false, 0, 25 )
 				self.PartyMemberIconNew:setAlpha( 1 )
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				LobbyLeaderIcon:completeAnimation()
 				self.LobbyLeaderIcon:setAlpha( 1 )
 				self.clipFinished( LobbyLeaderIcon, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, false, 60, 408 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( true, false, -0.5, 27 )
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.FEMemberBlurPanelContainer0:setZoom( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -14, 13.5 )
 				self.VSpanel:setAlpha( 0.5 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -0.5, 27 )
 				self.LobbyMemberBacking:setAlpha( 0 )
 				self.LobbyMemberBacking:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setAlpha( 1 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setRGB( 1, 1, 1 )
 				self.rank:setAlpha( 1 )
 				self.rank:setZoom( 0 )
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
+
 				clanTag:completeAnimation()
 				self.clanTag:setRGB( 0.96, 1, 0.33 )
 				self.clanTag:setAlpha( 0 )
 				self.clanTag:setZoom( 0 )
 				self.clipFinished( clanTag, {} )
+
 				PrimaryGroup:completeAnimation()
 				self.PrimaryGroup:setAlpha( 0 )
 				self.clipFinished( PrimaryGroup, {} )
+
 				addControllerText:completeAnimation()
 				self.addControllerText:setAlpha( 0 )
 				self.clipFinished( addControllerText, {} )
+
 				MorePlaying:completeAnimation()
 				self.MorePlaying:setAlpha( 0 )
 				self.clipFinished( MorePlaying, {} )
+
 				playerCountText:completeAnimation()
 				self.playerCountText:setAlpha( 0 )
 				self.clipFinished( playerCountText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 26, 29 )
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				IconControllerContainer:completeAnimation()
 				self.IconControllerContainer:setAlpha( 1 )
 				self.clipFinished( IconControllerContainer, {} )
+
 				IconJoinable:completeAnimation()
 				self.IconJoinable:setAlpha( 0 )
 				self.clipFinished( IconJoinable, {} )
+
 				gamertag:completeAnimation()
 				self.gamertag:setLeftRight( true, false, 115, 386 )
 				self.gamertag:setTopBottom( true, false, 1, 26 )
@@ -4322,78 +4692,98 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.gamertag:setAlpha( 1 )
 				self.gamertag:setZoom( 0 )
 				self.clipFinished( gamertag, {} )
+
 				TeamSwitcher:completeAnimation()
 				self.TeamSwitcher:setAlpha( 1 )
 				self.clipFinished( TeamSwitcher, {} )
+
 				LobbyLeaderIcon0:completeAnimation()
 				self.LobbyLeaderIcon0:setAlpha( 0 )
 				self.clipFinished( LobbyLeaderIcon0, {} )
+
 				LobbyMemberScore:completeAnimation()
 				self.LobbyMemberScore:setAlpha( 1 )
 				self.clipFinished( LobbyMemberScore, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
+
 				LobbyMemberReady:completeAnimation()
 				self.LobbyMemberReady:setAlpha( 0 )
 				self.clipFinished( LobbyMemberReady, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 12 )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, true, 60, -82 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( false, false, -21.5, 21.5 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -21, 21 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -8, 35 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -8, 35 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
+
 				PrimaryGroup:completeAnimation()
 				self.PrimaryGroup:setAlpha( 1 )
 				self.clipFinished( PrimaryGroup, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 33, 36 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -9, -5 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				gamertag:completeAnimation()
 				self.gamertag:setLeftRight( true, false, 115, 386 )
 				self.gamertag:setTopBottom( true, false, -5, 20 )
 				self.clipFinished( gamertag, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 12 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -4466,6 +4856,7 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				LobbyMemberTeamColorFrame2( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
@@ -4539,18 +4930,22 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.gamertag:setLeftRight( true, false, 115, 386 )
 				self.gamertag:setTopBottom( true, false, 1, 26 )
 				gamertagFrame2( gamertag, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 12 )
+
 				local FEMemberBlurPanelContainer0Frame2 = function ( FEMemberBlurPanelContainer0, event )
 					if not event.interrupted then
 						FEMemberBlurPanelContainer0:beginAnimation( "keyframe", 50, false, false, CoD.TweenType.Linear )
@@ -4708,18 +5103,22 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.gamertag:setLeftRight( true, false, 115, 386 )
 				self.gamertag:setTopBottom( true, false, -6, 19 )
 				gamertagFrame2( gamertag, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 8 )
+
 				local LobbyLeaderIconFrame2 = function ( LobbyLeaderIcon, event )
 					local LobbyLeaderIconFrame3 = function ( LobbyLeaderIcon, event )
 						if not event.interrupted then
@@ -4825,12 +5224,15 @@ CoD.LobbyMember.new = function ( menu, controller )
 				LobbyLeaderIcon0:completeAnimation()
 				self.LobbyLeaderIcon0:setAlpha( 0 )
 				LobbyLeaderIcon0Frame2( LobbyLeaderIcon0, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
@@ -4839,86 +5241,105 @@ CoD.LobbyMember.new = function ( menu, controller )
 		SearchingForPlayer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 26 )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( true, false, 0, 490 )
 				self.sizeElement:setTopBottom( true, false, 0, 27 )
 				self.sizeElement:setAlpha( 0 )
 				self.clipFinished( sizeElement, {} )
+
 				LobbyMemberBubbleGumBuffs:completeAnimation()
 				self.LobbyMemberBubbleGumBuffs:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBubbleGumBuffs:setTopBottom( true, false, 27, 91 )
 				self.LobbyMemberBubbleGumBuffs:setAlpha( 0 )
 				self.clipFinished( LobbyMemberBubbleGumBuffs, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.PartyMemberIconNew:setLeftRight( true, false, 412, 422 )
 				self.PartyMemberIconNew:setTopBottom( true, false, 0, 25 )
 				self.PartyMemberIconNew:setAlpha( 0 )
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				LobbyLeaderIcon:completeAnimation()
 				self.LobbyLeaderIcon:setAlpha( 0 )
 				self.clipFinished( LobbyLeaderIcon, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, true, 60, -82 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( false, false, -14, 13.5 )
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.FEMemberBlurPanelContainer0:setZoom( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -14, 13.8 )
 				self.VSpanel:setAlpha( 0 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -0.5, 27 )
 				self.LobbyMemberBacking:setAlpha( 0 )
 				self.LobbyMemberBacking:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setAlpha( 1 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setRGB( 1, 1, 1 )
 				self.rank:setAlpha( 0 )
 				self.rank:setZoom( 0 )
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
+
 				clanTag:completeAnimation()
 				self.clanTag:setRGB( 0.87, 0.9, 0.9 )
 				self.clanTag:setAlpha( 0 )
 				self.clanTag:setZoom( 0 )
 				self.clipFinished( clanTag, {} )
+
 				PrimaryGroup:completeAnimation()
 				self.PrimaryGroup:setAlpha( 0 )
 				self.clipFinished( PrimaryGroup, {} )
+
 				addControllerText:completeAnimation()
 				self.addControllerText:setAlpha( 0 )
 				self.clipFinished( addControllerText, {} )
+
 				MorePlaying:completeAnimation()
 				self.MorePlaying:setAlpha( 0 )
 				self.clipFinished( MorePlaying, {} )
+
 				playerCountText:completeAnimation()
 				self.playerCountText:setAlpha( 0 )
 				self.clipFinished( playerCountText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 26, 29 )
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				IconControllerContainer:completeAnimation()
 				self.IconControllerContainer:setAlpha( 0 )
 				self.clipFinished( IconControllerContainer, {} )
+
 				IconJoinable:completeAnimation()
 				self.IconJoinable:setAlpha( 0 )
 				self.clipFinished( IconJoinable, {} )
+
 				gamertag:completeAnimation()
 				self.gamertag:setLeftRight( true, false, 115, 386 )
 				self.gamertag:setTopBottom( true, false, 1, 26 )
@@ -4926,24 +5347,31 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.gamertag:setAlpha( 0 )
 				self.gamertag:setZoom( 0 )
 				self.clipFinished( gamertag, {} )
+
 				TeamSwitcher:completeAnimation()
 				self.TeamSwitcher:setAlpha( 0 )
 				self.clipFinished( TeamSwitcher, {} )
+
 				LobbyLeaderIcon0:completeAnimation()
 				self.LobbyLeaderIcon0:setAlpha( 0 )
 				self.clipFinished( LobbyLeaderIcon0, {} )
+
 				LobbyMemberScore:completeAnimation()
 				self.LobbyMemberScore:setAlpha( 0 )
 				self.clipFinished( LobbyMemberScore, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 1 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
+
 				LobbyMemberReady:completeAnimation()
 				self.LobbyMemberReady:setAlpha( 0 )
 				self.clipFinished( LobbyMemberReady, {} )
@@ -4952,86 +5380,105 @@ CoD.LobbyMember.new = function ( menu, controller )
 		SearchingForPlayer_Flipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 26 )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( true, false, 0, 490 )
 				self.sizeElement:setTopBottom( true, false, 0, 27 )
 				self.sizeElement:setAlpha( 0 )
 				self.clipFinished( sizeElement, {} )
+
 				LobbyMemberBubbleGumBuffs:completeAnimation()
 				self.LobbyMemberBubbleGumBuffs:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBubbleGumBuffs:setTopBottom( true, false, 27, 91 )
 				self.LobbyMemberBubbleGumBuffs:setAlpha( 0 )
 				self.clipFinished( LobbyMemberBubbleGumBuffs, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.PartyMemberIconNew:setLeftRight( true, false, 412, 422 )
 				self.PartyMemberIconNew:setTopBottom( true, false, 0, 25 )
 				self.PartyMemberIconNew:setAlpha( 0 )
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				LobbyLeaderIcon:completeAnimation()
 				self.LobbyLeaderIcon:setAlpha( 0 )
 				self.clipFinished( LobbyLeaderIcon, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, false, 60, 408 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( true, false, -0.5, 27 )
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.FEMemberBlurPanelContainer0:setZoom( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -14, 13.8 )
 				self.VSpanel:setAlpha( 0 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -0.5, 27 )
 				self.LobbyMemberBacking:setAlpha( 0 )
 				self.LobbyMemberBacking:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setAlpha( 1 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setRGB( 1, 1, 1 )
 				self.rank:setAlpha( 0 )
 				self.rank:setZoom( 0 )
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
+
 				clanTag:completeAnimation()
 				self.clanTag:setRGB( 0.87, 0.9, 0.9 )
 				self.clanTag:setAlpha( 0 )
 				self.clanTag:setZoom( 0 )
 				self.clipFinished( clanTag, {} )
+
 				PrimaryGroup:completeAnimation()
 				self.PrimaryGroup:setAlpha( 0 )
 				self.clipFinished( PrimaryGroup, {} )
+
 				addControllerText:completeAnimation()
 				self.addControllerText:setAlpha( 0 )
 				self.clipFinished( addControllerText, {} )
+
 				MorePlaying:completeAnimation()
 				self.MorePlaying:setAlpha( 0 )
 				self.clipFinished( MorePlaying, {} )
+
 				playerCountText:completeAnimation()
 				self.playerCountText:setAlpha( 0 )
 				self.clipFinished( playerCountText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 26, 29 )
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				IconControllerContainer:completeAnimation()
 				self.IconControllerContainer:setAlpha( 0 )
 				self.clipFinished( IconControllerContainer, {} )
+
 				IconJoinable:completeAnimation()
 				self.IconJoinable:setAlpha( 0 )
 				self.clipFinished( IconJoinable, {} )
+
 				gamertag:completeAnimation()
 				self.gamertag:setLeftRight( true, false, 115, 386 )
 				self.gamertag:setTopBottom( true, false, 1, 26 )
@@ -5039,24 +5486,31 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.gamertag:setAlpha( 0 )
 				self.gamertag:setZoom( 0 )
 				self.clipFinished( gamertag, {} )
+
 				TeamSwitcher:completeAnimation()
 				self.TeamSwitcher:setAlpha( 0 )
 				self.clipFinished( TeamSwitcher, {} )
+
 				LobbyLeaderIcon0:completeAnimation()
 				self.LobbyLeaderIcon0:setAlpha( 0 )
 				self.clipFinished( LobbyLeaderIcon0, {} )
+
 				LobbyMemberScore:completeAnimation()
 				self.LobbyMemberScore:setAlpha( 0 )
 				self.clipFinished( LobbyMemberScore, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 1 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 0 )
 				self.clipFinished( AnonymousPlayer, {} )
+
 				LobbyMemberReady:completeAnimation()
 				self.LobbyMemberReady:setAlpha( 0 )
 				self.clipFinished( LobbyMemberReady, {} )
@@ -5065,86 +5519,105 @@ CoD.LobbyMember.new = function ( menu, controller )
 		AnonymousPlayer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 26 )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( true, false, 0, 490 )
 				self.sizeElement:setTopBottom( true, false, 0, 27 )
 				self.sizeElement:setAlpha( 0 )
 				self.clipFinished( sizeElement, {} )
+
 				LobbyMemberBubbleGumBuffs:completeAnimation()
 				self.LobbyMemberBubbleGumBuffs:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBubbleGumBuffs:setTopBottom( true, false, 27, 91 )
 				self.LobbyMemberBubbleGumBuffs:setAlpha( 0 )
 				self.clipFinished( LobbyMemberBubbleGumBuffs, {} )
+
 				PartyMemberIconNew:completeAnimation()
 				self.PartyMemberIconNew:setLeftRight( true, false, 412, 422 )
 				self.PartyMemberIconNew:setTopBottom( true, false, 0, 25 )
 				self.PartyMemberIconNew:setAlpha( 0 )
 				self.clipFinished( PartyMemberIconNew, {} )
+
 				LobbyLeaderIcon:completeAnimation()
 				self.LobbyLeaderIcon:setAlpha( 0 )
 				self.clipFinished( LobbyLeaderIcon, {} )
+
 				FEMemberBlurPanelContainer0:completeAnimation()
 				self.FEMemberBlurPanelContainer0:setLeftRight( true, true, 60, -82 )
 				self.FEMemberBlurPanelContainer0:setTopBottom( false, false, -14, 13.5 )
 				self.FEMemberBlurPanelContainer0:setAlpha( 1 )
 				self.FEMemberBlurPanelContainer0:setZoom( 0 )
 				self.clipFinished( FEMemberBlurPanelContainer0, {} )
+
 				VSpanel:completeAnimation()
 				self.VSpanel:setLeftRight( true, true, 60, -82 )
 				self.VSpanel:setTopBottom( false, false, -14, 13.8 )
 				self.VSpanel:setAlpha( 0 )
 				self.clipFinished( VSpanel, {} )
+
 				LobbyMemberBacking:completeAnimation()
 				self.LobbyMemberBacking:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberBacking:setTopBottom( true, false, -0.5, 27 )
 				self.LobbyMemberBacking:setAlpha( 0 )
 				self.LobbyMemberBacking:setZoom( 0 )
 				self.clipFinished( LobbyMemberBacking, {} )
+
 				LobbyMemberTeamColor:completeAnimation()
 				self.LobbyMemberTeamColor:setLeftRight( true, false, 60, 408 )
 				self.LobbyMemberTeamColor:setTopBottom( true, false, -0.5, 27.5 )
 				self.LobbyMemberTeamColor:setAlpha( 1 )
 				self.LobbyMemberTeamColor:setZoom( 0 )
 				self.clipFinished( LobbyMemberTeamColor, {} )
+
 				rank:completeAnimation()
 				self.rank:setRGB( 1, 1, 1 )
 				self.rank:setAlpha( 0 )
 				self.rank:setZoom( 0 )
 				self.rank:setScale( 1 )
 				self.clipFinished( rank, {} )
+
 				clanTag:completeAnimation()
 				self.clanTag:setRGB( 0.87, 0.9, 0.9 )
 				self.clanTag:setAlpha( 0 )
 				self.clanTag:setZoom( 0 )
 				self.clipFinished( clanTag, {} )
+
 				PrimaryGroup:completeAnimation()
 				self.PrimaryGroup:setAlpha( 0 )
 				self.clipFinished( PrimaryGroup, {} )
+
 				addControllerText:completeAnimation()
 				self.addControllerText:setAlpha( 0 )
 				self.clipFinished( addControllerText, {} )
+
 				MorePlaying:completeAnimation()
 				self.MorePlaying:setAlpha( 0 )
 				self.clipFinished( MorePlaying, {} )
+
 				playerCountText:completeAnimation()
 				self.playerCountText:setAlpha( 0 )
 				self.clipFinished( playerCountText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, false, 58, 410 )
 				self.FocusBarB:setTopBottom( true, false, 26, 29 )
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, false, 58, 410 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				IconControllerContainer:completeAnimation()
 				self.IconControllerContainer:setAlpha( 0 )
 				self.clipFinished( IconControllerContainer, {} )
+
 				IconJoinable:completeAnimation()
 				self.IconJoinable:setAlpha( 0 )
 				self.clipFinished( IconJoinable, {} )
+
 				gamertag:completeAnimation()
 				self.gamertag:setLeftRight( true, false, 115, 386 )
 				self.gamertag:setTopBottom( true, false, 1, 26 )
@@ -5152,30 +5625,38 @@ CoD.LobbyMember.new = function ( menu, controller )
 				self.gamertag:setAlpha( 0 )
 				self.gamertag:setZoom( 0 )
 				self.clipFinished( gamertag, {} )
+
 				TeamSwitcher:completeAnimation()
 				self.TeamSwitcher:setAlpha( 0 )
 				self.clipFinished( TeamSwitcher, {} )
+
 				LobbyLeaderIcon0:completeAnimation()
 				self.LobbyLeaderIcon0:setAlpha( 0 )
 				self.clipFinished( LobbyLeaderIcon0, {} )
+
 				LobbyMemberScore:completeAnimation()
 				self.LobbyMemberScore:setAlpha( 0 )
 				self.clipFinished( LobbyMemberScore, {} )
+
 				SearchingForPlayer:completeAnimation()
 				self.SearchingForPlayer:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayer, {} )
+
 				SearchingForPlayerFlipped:completeAnimation()
 				self.SearchingForPlayerFlipped:setAlpha( 0 )
 				self.clipFinished( SearchingForPlayerFlipped, {} )
+
 				AnonymousPlayer:completeAnimation()
 				self.AnonymousPlayer:setAlpha( 1 )
 				self.clipFinished( AnonymousPlayer, {} )
+
 				LobbyMemberReady:completeAnimation()
 				self.LobbyMemberReady:setAlpha( 0 )
 				self.clipFinished( LobbyMemberReady, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "IsSelfZombies",
@@ -5353,6 +5834,7 @@ CoD.LobbyMember.new = function ( menu, controller )
 			modelName = "lobbyRoot.mapVote"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsSelfInState( self, "AnonymousPlayer" ) then
 			RestrictVoiceChatForClient( self, element, controller )
@@ -5368,6 +5850,7 @@ CoD.LobbyMember.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LobbyMemberBubbleGumBuffs:close()
 		element.PartyMemberIconNew:close()

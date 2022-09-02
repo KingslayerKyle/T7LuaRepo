@@ -4,9 +4,11 @@
 CoD.Cookbook_Indicator_Circle = InheritFrom( LUI.UIElement )
 CoD.Cookbook_Indicator_Circle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Cookbook_Indicator_Circle )
 	self.id = "Cookbook_Indicator_Circle"
@@ -25,6 +27,7 @@ CoD.Cookbook_Indicator_Circle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				IndicatorCircle:completeAnimation()
 				self.IndicatorCircle:setAlpha( 0 )
 				self.clipFinished( IndicatorCircle, {} )
@@ -33,6 +36,7 @@ CoD.Cookbook_Indicator_Circle.new = function ( menu, controller )
 		Red = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				IndicatorCircle:completeAnimation()
 				self.IndicatorCircle:setRGB( 1, 0.04, 0 )
 				self.clipFinished( IndicatorCircle, {} )
@@ -41,6 +45,7 @@ CoD.Cookbook_Indicator_Circle.new = function ( menu, controller )
 		Green = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				IndicatorCircle:completeAnimation()
 				self.IndicatorCircle:setRGB( 0.16, 0.92, 0.15 )
 				self.clipFinished( IndicatorCircle, {} )

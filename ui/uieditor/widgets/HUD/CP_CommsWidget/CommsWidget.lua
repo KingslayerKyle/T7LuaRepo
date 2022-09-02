@@ -13,9 +13,11 @@ require( "ui.uieditor.widgets.HUD.CP_CommsWidget.CommsWidget_CharacterSpeech" )
 CoD.CommsWidget = InheritFrom( LUI.UIElement )
 CoD.CommsWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CommsWidget )
 	self.id = "CommsWidget"
@@ -196,49 +198,63 @@ CoD.CommsWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				CommsWidgetPanel0:completeAnimation()
 				self.CommsWidgetPanel0:setAlpha( 0 )
 				self.clipFinished( CommsWidgetPanel0, {} )
+
 				BackGlow:completeAnimation()
 				self.BackGlow:setAlpha( 0 )
 				self.clipFinished( BackGlow, {} )
+
 				CharacterBack:completeAnimation()
 				self.CharacterBack:setAlpha( 0 )
 				self.clipFinished( CharacterBack, {} )
+
 				CharacterImages:completeAnimation()
 				self.CharacterImages:setAlpha( 0 )
 				self.clipFinished( CharacterImages, {} )
+
 				RingContainer:completeAnimation()
 				self.RingContainer:setAlpha( 0 )
 				self.clipFinished( RingContainer, {} )
+
 				WaveFormFore:completeAnimation()
 				self.WaveFormFore:setAlpha( 0 )
 				self.WaveFormFore:setZoom( 20 )
 				self.clipFinished( WaveFormFore, {} )
+
 				Dot1:completeAnimation()
 				self.Dot1:setAlpha( 0 )
 				self.clipFinished( Dot1, {} )
+
 				Dot2:completeAnimation()
 				self.Dot2:setAlpha( 0 )
 				self.clipFinished( Dot2, {} )
+
 				Dot3:completeAnimation()
 				self.Dot3:setAlpha( 0 )
 				self.clipFinished( Dot3, {} )
+
 				Dot4:completeAnimation()
 				self.Dot4:setAlpha( 0 )
 				self.clipFinished( Dot4, {} )
+
 				ImgArrow:completeAnimation()
 				self.ImgArrow:setAlpha( 0 )
 				self.clipFinished( ImgArrow, {} )
+
 				CharacterText0:completeAnimation()
 				self.CharacterText0:setAlpha( 0 )
 				self.clipFinished( CharacterText0, {} )
+
 				CharacterSpeech:completeAnimation()
 				self.CharacterSpeech:setAlpha( 0 )
 				self.clipFinished( CharacterSpeech, {} )
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 13 )
+
 				local CommsWidgetPanel0Frame2 = function ( CommsWidgetPanel0, event )
 					local CommsWidgetPanel0Frame3 = function ( CommsWidgetPanel0, event )
 						if not event.interrupted then
@@ -989,50 +1005,64 @@ CoD.CommsWidget.new = function ( menu, controller )
 		HudStart = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				CommsWidgetPanel0:completeAnimation()
 				self.CommsWidgetPanel0:setAlpha( 1 )
 				self.clipFinished( CommsWidgetPanel0, {} )
+
 				BackGlow:completeAnimation()
 				self.BackGlow:setAlpha( 0.4 )
 				self.clipFinished( BackGlow, {} )
+
 				CharacterBack:completeAnimation()
 				self.CharacterBack:setAlpha( 1 )
 				self.clipFinished( CharacterBack, {} )
+
 				CharacterImages:completeAnimation()
 				self.CharacterImages:setAlpha( 1 )
 				self.clipFinished( CharacterImages, {} )
+
 				RingContainer:completeAnimation()
 				self.RingContainer:setAlpha( 1 )
 				self.RingContainer:setZRot( 347 )
 				self.clipFinished( RingContainer, {} )
+
 				WaveFormFore:completeAnimation()
 				self.WaveFormFore:setAlpha( 1 )
 				self.WaveFormFore:setZoom( 20 )
 				self.clipFinished( WaveFormFore, {} )
+
 				Dot1:completeAnimation()
 				self.Dot1:setAlpha( 0.6 )
 				self.clipFinished( Dot1, {} )
+
 				Dot2:completeAnimation()
 				self.Dot2:setAlpha( 0.6 )
 				self.clipFinished( Dot2, {} )
+
 				Dot3:completeAnimation()
 				self.Dot3:setAlpha( 0.6 )
 				self.clipFinished( Dot3, {} )
+
 				Dot4:completeAnimation()
 				self.Dot4:setAlpha( 0.6 )
 				self.clipFinished( Dot4, {} )
+
 				ImgArrow:completeAnimation()
 				self.ImgArrow:setAlpha( 1 )
 				self.clipFinished( ImgArrow, {} )
+
 				CharacterText0:completeAnimation()
 				self.CharacterText0:setAlpha( 1 )
 				self.clipFinished( CharacterText0, {} )
+
 				CharacterSpeech:completeAnimation()
 				self.CharacterSpeech:setAlpha( 1 )
 				self.clipFinished( CharacterSpeech, {} )
 			end,
 			HudStop = function ()
 				self:setupElementClipCounter( 13 )
+
 				local CommsWidgetPanel0Frame2 = function ( CommsWidgetPanel0, event )
 					local CommsWidgetPanel0Frame3 = function ( CommsWidgetPanel0, event )
 						local CommsWidgetPanel0Frame4 = function ( CommsWidgetPanel0, event )
@@ -1628,6 +1658,7 @@ CoD.CommsWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CommsWidgetPanel0:close()
 		element.CharacterBack:close()

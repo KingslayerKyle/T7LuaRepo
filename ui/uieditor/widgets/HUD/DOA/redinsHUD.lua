@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.DOA.redinsPlayerLine" )
 CoD.redinsHUD = InheritFrom( LUI.UIElement )
 CoD.redinsHUD.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.redinsHUD )
 	self.id = "redinsHUD"
@@ -234,69 +236,85 @@ CoD.redinsHUD.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				Bg:completeAnimation()
 				self.Bg:setLeftRight( true, false, 83.78, 368 )
 				self.Bg:setTopBottom( true, false, 0, 50.1 )
 				self.Bg:setRGB( 0, 0, 0 )
 				self.Bg:setAlpha( 0.35 )
 				self.clipFinished( Bg, {} )
+
 				Image5:completeAnimation()
 				self.Image5:setLeftRight( true, false, 83.78, 368 )
 				self.Image5:setTopBottom( true, false, 31, 50.1 )
 				self.Image5:setRGB( 0, 0, 0 )
 				self.Image5:setAlpha( 0.45 )
 				self.clipFinished( Image5, {} )
+
 				Image3:completeAnimation()
 				self.Image3:setLeftRight( true, false, 268.78, 269.78 )
 				self.Image3:setTopBottom( true, false, 1, 29.36 )
 				self.Image3:setRGB( 0, 0, 0 )
 				self.Image3:setAlpha( 0.35 )
 				self.clipFinished( Image3, {} )
+
 				redinsPlayerLine0:completeAnimation()
 				self.redinsPlayerLine0:setAlpha( 1 )
 				self.clipFinished( redinsPlayerLine0, {} )
+
 				redinsPlayerLine1:completeAnimation()
 				self.redinsPlayerLine1:setAlpha( 1 )
 				self.clipFinished( redinsPlayerLine1, {} )
+
 				redinsPlayerLine2:completeAnimation()
 				self.redinsPlayerLine2:setAlpha( 1 )
 				self.clipFinished( redinsPlayerLine2, {} )
+
 				redinsPlayerLine3:completeAnimation()
 				self.redinsPlayerLine3:setAlpha( 1 )
 				self.clipFinished( redinsPlayerLine3, {} )
+
 				timeleft:completeAnimation()
 				self.timeleft:setAlpha( 1 )
 				self.clipFinished( timeleft, {} )
+
 				seconds:completeAnimation()
 				self.seconds:setAlpha( 1 )
 				self.clipFinished( seconds, {} )
+
 				secondsbonus:completeAnimation()
 				self.secondsbonus:setAlpha( 1 )
 				self.clipFinished( secondsbonus, {} )
+
 				boost:completeAnimation()
 				self.boost:setLeftRight( true, false, 292.71, 316.84 )
 				self.boost:setTopBottom( true, false, 30, 50.94 )
 				self.boost:setAlpha( 1 )
 				self.clipFinished( boost, {} )
+
 				zomHead:completeAnimation()
 				self.zomHead:setLeftRight( true, false, 316.84, 340.92 )
 				self.zomHead:setTopBottom( true, false, 30, 50.94 )
 				self.zomHead:setAlpha( 1 )
 				self.clipFinished( zomHead, {} )
+
 				laps:completeAnimation()
 				self.laps:setLeftRight( true, false, 266.78, 292.71 )
 				self.laps:setTopBottom( true, false, 30, 50.94 )
 				self.laps:setAlpha( 1 )
 				self.clipFinished( laps, {} )
+
 				Gem:completeAnimation()
 				self.Gem:setLeftRight( true, false, 340.92, 364.92 )
 				self.Gem:setTopBottom( true, false, 30, 50.94 )
 				self.Gem:setAlpha( 1 )
 				self.clipFinished( Gem, {} )
+
 				title:completeAnimation()
 				self.title:setRGB( 1, 0.67, 0 )
 				self.title:setAlpha( 1 )
 				self.clipFinished( title, {} )
+
 				driver:completeAnimation()
 				self.driver:setRGB( 1, 1, 1 )
 				self.driver:setAlpha( 1 )
@@ -306,57 +324,74 @@ CoD.redinsHUD.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				Bg:completeAnimation()
 				self.Bg:setAlpha( 0 )
 				self.clipFinished( Bg, {} )
+
 				Image5:completeAnimation()
 				self.Image5:setAlpha( 0 )
 				self.clipFinished( Image5, {} )
+
 				Image3:completeAnimation()
 				self.Image3:setAlpha( 0 )
 				self.clipFinished( Image3, {} )
+
 				redinsPlayerLine0:completeAnimation()
 				self.redinsPlayerLine0:setAlpha( 0 )
 				self.clipFinished( redinsPlayerLine0, {} )
+
 				redinsPlayerLine1:completeAnimation()
 				self.redinsPlayerLine1:setAlpha( 0 )
 				self.clipFinished( redinsPlayerLine1, {} )
+
 				redinsPlayerLine2:completeAnimation()
 				self.redinsPlayerLine2:setAlpha( 0 )
 				self.clipFinished( redinsPlayerLine2, {} )
+
 				redinsPlayerLine3:completeAnimation()
 				self.redinsPlayerLine3:setAlpha( 0 )
 				self.clipFinished( redinsPlayerLine3, {} )
+
 				timeleft:completeAnimation()
 				self.timeleft:setAlpha( 0 )
 				self.clipFinished( timeleft, {} )
+
 				seconds:completeAnimation()
 				self.seconds:setAlpha( 0 )
 				self.clipFinished( seconds, {} )
+
 				secondsbonus:completeAnimation()
 				self.secondsbonus:setAlpha( 0 )
 				self.clipFinished( secondsbonus, {} )
+
 				boost:completeAnimation()
 				self.boost:setAlpha( 0 )
 				self.clipFinished( boost, {} )
+
 				zomHead:completeAnimation()
 				self.zomHead:setAlpha( 0 )
 				self.clipFinished( zomHead, {} )
+
 				laps:completeAnimation()
 				self.laps:setAlpha( 0 )
 				self.clipFinished( laps, {} )
+
 				Gem:completeAnimation()
 				self.Gem:setAlpha( 0 )
 				self.clipFinished( Gem, {} )
+
 				title:completeAnimation()
 				self.title:setAlpha( 0 )
 				self.clipFinished( title, {} )
+
 				driver:completeAnimation()
 				self.driver:setAlpha( 0 )
 				self.clipFinished( driver, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.redinsPlayerLine0:close()
 		element.redinsPlayerLine1:close()

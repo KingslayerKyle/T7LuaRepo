@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.CAC_varientTitlePanel" )
 CoD.BM_DailyBundle_Countdown = InheritFrom( LUI.UIElement )
 CoD.BM_DailyBundle_Countdown.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_DailyBundle_Countdown )
 	self.id = "BM_DailyBundle_Countdown"
@@ -38,9 +40,11 @@ CoD.BM_DailyBundle_Countdown.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				countdownBacking:completeAnimation()
 				self.countdownBacking:setAlpha( 0 )
 				self.clipFinished( countdownBacking, {} )
+
 				countdown:completeAnimation()
 				self.countdown:setAlpha( 0 )
 				self.clipFinished( countdown, {} )
@@ -49,15 +53,18 @@ CoD.BM_DailyBundle_Countdown.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				countdownBacking:completeAnimation()
 				self.countdownBacking:setAlpha( 0.25 )
 				self.clipFinished( countdownBacking, {} )
+
 				countdown:completeAnimation()
 				self.countdown:setAlpha( 1 )
 				self.clipFinished( countdown, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.countdownBacking:close()
 	end )

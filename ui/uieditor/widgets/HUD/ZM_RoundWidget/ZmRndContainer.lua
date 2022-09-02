@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_RoundWidget.ZmRnd" )
 CoD.ZmRndContainer = InheritFrom( LUI.UIElement )
 CoD.ZmRndContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmRndContainer )
 	self.id = "ZmRndContainer"
@@ -30,12 +32,14 @@ CoD.ZmRndContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ZmRnd:completeAnimation()
 				self.ZmRnd:setAlpha( 1 )
 				self.clipFinished( ZmRnd, {} )
 			end,
 			Invisible = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ZmRndFrame2 = function ( ZmRnd, event )
 					if not event.interrupted then
 						ZmRnd:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -56,12 +60,14 @@ CoD.ZmRndContainer.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ZmRnd:completeAnimation()
 				self.ZmRnd:setAlpha( 0 )
 				self.clipFinished( ZmRnd, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ZmRndFrame2 = function ( ZmRnd, event )
 					if not event.interrupted then
 						ZmRnd:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -80,6 +86,7 @@ CoD.ZmRndContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",
@@ -228,6 +235,7 @@ CoD.ZmRndContainer.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_EMP_ACTIVE
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmRnd:close()
 	end )

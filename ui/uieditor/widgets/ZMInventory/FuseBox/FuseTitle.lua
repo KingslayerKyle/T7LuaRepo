@@ -4,9 +4,11 @@
 CoD.FuseTitle = InheritFrom( LUI.UIElement )
 CoD.FuseTitle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FuseTitle )
 	self.id = "FuseTitle"
@@ -36,9 +38,11 @@ CoD.FuseTitle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				LabelBaseSmall:completeAnimation()
 				self.LabelBaseSmall:setAlpha( 0 )
 				self.clipFinished( LabelBaseSmall, {} )
+
 				Fuses:completeAnimation()
 				self.Fuses:setAlpha( 0 )
 				self.clipFinished( Fuses, {} )
@@ -47,15 +51,18 @@ CoD.FuseTitle.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				LabelBaseSmall:completeAnimation()
 				self.LabelBaseSmall:setAlpha( 1 )
 				self.clipFinished( LabelBaseSmall, {} )
+
 				Fuses:completeAnimation()
 				self.Fuses:setAlpha( 1 )
 				self.clipFinished( Fuses, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.ZMInventoryIsland.BucketWidget" )
 CoD.BucketAndSeedWidget = InheritFrom( LUI.UIElement )
 CoD.BucketAndSeedWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BucketAndSeedWidget )
 	self.id = "BucketAndSeedWidget"
@@ -43,12 +45,15 @@ CoD.BucketAndSeedWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				SeedWidget:completeAnimation()
 				self.SeedWidget:setAlpha( 0 )
 				self.clipFinished( SeedWidget, {} )
+
 				BucketWidget0:completeAnimation()
 				self.BucketWidget0:setAlpha( 0 )
 				self.clipFinished( BucketWidget0, {} )
@@ -57,12 +62,15 @@ CoD.BucketAndSeedWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				SeedWidget:completeAnimation()
 				self.SeedWidget:setAlpha( 1 )
 				self.clipFinished( SeedWidget, {} )
+
 				BucketWidget0:completeAnimation()
 				self.BucketWidget0:setAlpha( 1 )
 				self.clipFinished( BucketWidget0, {} )
@@ -71,6 +79,7 @@ CoD.BucketAndSeedWidget.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local bgFrame2 = function ( bg, event )
 					local bgFrame3 = function ( bg, event )
 						local bgFrame4 = function ( bg, event )
@@ -107,15 +116,18 @@ CoD.BucketAndSeedWidget.new = function ( menu, controller )
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				bgFrame2( bg, {} )
+
 				SeedWidget:completeAnimation()
 				self.SeedWidget:setAlpha( 1 )
 				self.clipFinished( SeedWidget, {} )
+
 				BucketWidget0:completeAnimation()
 				self.BucketWidget0:setAlpha( 1 )
 				self.clipFinished( BucketWidget0, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SeedWidget:close()
 		element.BucketWidget0:close()

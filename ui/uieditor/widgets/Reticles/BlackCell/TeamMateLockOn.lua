@@ -4,9 +4,11 @@
 CoD.TeamMateLockOn = InheritFrom( LUI.UIElement )
 CoD.TeamMateLockOn.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TeamMateLockOn )
 	self.id = "TeamMateLockOn"
@@ -87,27 +89,34 @@ CoD.TeamMateLockOn.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setAlpha( 0 )
 				self.clipFinished( PanelGlow, {} )
+
 				teamLockOn:completeAnimation()
 				self.teamLockOn:setAlpha( 0 )
 				self.clipFinished( teamLockOn, {} )
+
 				teamLockOn0:completeAnimation()
 				self.teamLockOn0:setAlpha( 0 )
 				self.clipFinished( teamLockOn0, {} )
+
 				TeammateLockonShadow:completeAnimation()
 				self.TeammateLockonShadow:setAlpha( 0 )
 				self.clipFinished( TeammateLockonShadow, {} )
+
 				TeammateLockon:completeAnimation()
 				self.TeammateLockon:setAlpha( 0 )
 				self.clipFinished( TeammateLockon, {} )
+
 				TeammateHacking:completeAnimation()
 				self.TeammateHacking:setAlpha( 0 )
 				self.clipFinished( TeammateHacking, {} )
 			end,
 			Locking = function ()
 				self:setupElementClipCounter( 6 )
+
 				local PanelGlowFrame2 = function ( PanelGlow, event )
 					if not event.interrupted then
 						PanelGlow:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -183,12 +192,14 @@ CoD.TeamMateLockOn.new = function ( menu, controller )
 				TeammateLockon:completeAnimation()
 				self.TeammateLockon:setAlpha( 0 )
 				TeammateLockonFrame2( TeammateLockon, {} )
+
 				TeammateHacking:completeAnimation()
 				self.TeammateHacking:setAlpha( 0 )
 				self.clipFinished( TeammateHacking, {} )
 			end,
 			Hacking = function ()
 				self:setupElementClipCounter( 7 )
+
 				local PanelGlowFrame2 = function ( PanelGlow, event )
 					if not event.interrupted then
 						PanelGlow:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -234,9 +245,11 @@ CoD.TeamMateLockOn.new = function ( menu, controller )
 				teamLockOn0:completeAnimation()
 				self.teamLockOn0:setAlpha( 0 )
 				teamLockOn0Frame2( teamLockOn0, {} )
+
 				TeammateLockonShadow:completeAnimation()
 				self.TeammateLockonShadow:setAlpha( 0 )
 				self.clipFinished( TeammateLockonShadow, {} )
+
 				TeammateLockon:completeAnimation()
 				self.TeammateLockon:setAlpha( 0 )
 				self.clipFinished( TeammateLockon, {} )
@@ -275,24 +288,31 @@ CoD.TeamMateLockOn.new = function ( menu, controller )
 		Hacking = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setAlpha( 0.49 )
 				self.clipFinished( PanelGlow, {} )
+
 				teamLockOn:completeAnimation()
 				self.teamLockOn:setAlpha( 1 )
 				self.clipFinished( teamLockOn, {} )
+
 				teamLockOn0:completeAnimation()
 				self.teamLockOn0:setAlpha( 1 )
 				self.clipFinished( teamLockOn0, {} )
+
 				TeammateLockonShadow:completeAnimation()
 				self.TeammateLockonShadow:setAlpha( 0 )
 				self.clipFinished( TeammateLockonShadow, {} )
+
 				TeammateLockon:completeAnimation()
 				self.TeammateLockon:setAlpha( 0 )
 				self.clipFinished( TeammateLockon, {} )
+
 				TeammateHackingShadow:completeAnimation()
 				self.TeammateHackingShadow:setAlpha( 0.8 )
 				self.clipFinished( TeammateHackingShadow, {} )
+
 				TeammateHacking:completeAnimation()
 				self.TeammateHacking:setAlpha( 1 )
 				self.clipFinished( TeammateHacking, {} )
@@ -301,27 +321,34 @@ CoD.TeamMateLockOn.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				PanelGlow:completeAnimation()
 				self.PanelGlow:setAlpha( 0.49 )
 				self.clipFinished( PanelGlow, {} )
+
 				teamLockOn:completeAnimation()
 				self.teamLockOn:setAlpha( 1 )
 				self.clipFinished( teamLockOn, {} )
+
 				teamLockOn0:completeAnimation()
 				self.teamLockOn0:setAlpha( 1 )
 				self.clipFinished( teamLockOn0, {} )
+
 				TeammateLockonShadow:completeAnimation()
 				self.TeammateLockonShadow:setAlpha( 0.8 )
 				self.clipFinished( TeammateLockonShadow, {} )
+
 				TeammateLockon:completeAnimation()
 				self.TeammateLockon:setAlpha( 1 )
 				self.clipFinished( TeammateLockon, {} )
+
 				TeammateHacking:completeAnimation()
 				self.TeammateHacking:setAlpha( 0 )
 				self.clipFinished( TeammateHacking, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hacking",

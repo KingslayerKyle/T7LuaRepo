@@ -4,9 +4,11 @@
 CoD.DLC_Free_TitleAndText = InheritFrom( LUI.UIElement )
 CoD.DLC_Free_TitleAndText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DLC_Free_TitleAndText )
 	self.id = "DLC_Free_TitleAndText"
@@ -43,6 +45,7 @@ CoD.DLC_Free_TitleAndText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Title:completeAnimation()
 				self.Title:setLeftRight( true, true, 0, 0 )
 				self.Title:setTopBottom( true, false, 0, 20 )

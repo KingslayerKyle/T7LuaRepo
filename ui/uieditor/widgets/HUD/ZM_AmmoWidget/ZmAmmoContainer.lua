@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_AmmoWidget.ZmAmmo" )
 CoD.ZmAmmoContainer = InheritFrom( LUI.UIElement )
 CoD.ZmAmmoContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmoContainer )
 	self.id = "ZmAmmoContainer"
@@ -171,12 +173,14 @@ CoD.ZmAmmoContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ZmAmmo:completeAnimation()
 				self.ZmAmmo:setAlpha( 1 )
 				self.clipFinished( ZmAmmo, {} )
 			end,
 			Invisible = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ZmAmmoFrame2 = function ( ZmAmmo, event )
 					if not event.interrupted then
 						ZmAmmo:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -197,12 +201,14 @@ CoD.ZmAmmoContainer.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ZmAmmo:completeAnimation()
 				self.ZmAmmo:setAlpha( 0 )
 				self.clipFinished( ZmAmmo, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ZmAmmoFrame2 = function ( ZmAmmo, event )
 					if not event.interrupted then
 						ZmAmmo:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -221,6 +227,7 @@ CoD.ZmAmmoContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",
@@ -401,6 +408,7 @@ CoD.ZmAmmoContainer.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_EMP_ACTIVE
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmAmmo:close()
 	end )

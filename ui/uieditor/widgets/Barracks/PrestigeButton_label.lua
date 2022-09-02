@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_PanelNoBlur" )
 CoD.PrestigeButton_label = InheritFrom( LUI.UIElement )
 CoD.PrestigeButton_label.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PrestigeButton_label )
 	self.id = "PrestigeButton_label"
@@ -43,6 +45,7 @@ CoD.PrestigeButton_label.new = function ( menu, controller )
 		end
 		return f3_local0
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( name, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 3 )
 	end )
@@ -53,9 +56,11 @@ CoD.PrestigeButton_label.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 		element.name:close()

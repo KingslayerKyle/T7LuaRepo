@@ -4,9 +4,11 @@
 CoD.ThrustMeterChevronThin = InheritFrom( LUI.UIElement )
 CoD.ThrustMeterChevronThin.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ThrustMeterChevronThin )
 	self.id = "ThrustMeterChevronThin"

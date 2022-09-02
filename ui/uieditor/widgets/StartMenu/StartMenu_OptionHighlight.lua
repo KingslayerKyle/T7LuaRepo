@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_WhiteGlow" )
 CoD.StartMenu_OptionHighlight = InheritFrom( LUI.UIElement )
 CoD.StartMenu_OptionHighlight.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_OptionHighlight )
 	self.id = "StartMenu_OptionHighlight"
@@ -33,6 +35,7 @@ CoD.StartMenu_OptionHighlight.new = function ( menu, controller )
 	DescTitle:setShaderVector( 1, 0, 0, 0, 0 )
 	DescTitle:setShaderVector( 2, 1, 0, 0, 0 )
 	DescTitle:setLetterSpacing( 1 )
+
 	LUI.OverrideFunction_CallOriginalFirst( DescTitle, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 2 )
 	end )

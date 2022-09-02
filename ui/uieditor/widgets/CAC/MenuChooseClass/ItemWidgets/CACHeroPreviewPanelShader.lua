@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.MenuChooseClass.ItemWidgets.CACHeroPreviewPane
 CoD.CACHeroPreviewPanelShader = InheritFrom( LUI.UIElement )
 CoD.CACHeroPreviewPanelShader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CACHeroPreviewPanelShader )
 	self.id = "CACHeroPreviewPanelShader"

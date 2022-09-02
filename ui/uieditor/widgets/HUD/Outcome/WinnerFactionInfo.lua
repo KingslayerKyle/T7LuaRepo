@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.EndGameFlow.OutcomeFactionIcon" )
 CoD.WinnerFactionInfo = InheritFrom( LUI.UIElement )
 CoD.WinnerFactionInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WinnerFactionInfo )
 	self.id = "WinnerFactionInfo"
@@ -44,6 +46,7 @@ CoD.WinnerFactionInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local WeaponNameWidget0Frame2 = function ( WeaponNameWidget0, event )
 					local WeaponNameWidget0Frame3 = function ( WeaponNameWidget0, event )
 						if not event.interrupted then
@@ -94,6 +97,7 @@ CoD.WinnerFactionInfo.new = function ( menu, controller )
 				KillcamWidgetTitleStatus0:completeAnimation()
 				self.KillcamWidgetTitleStatus0:setAlpha( 0 )
 				KillcamWidgetTitleStatus0Frame2( KillcamWidgetTitleStatus0, {} )
+
 				OutcomeFactionIcon:completeAnimation()
 				self.OutcomeFactionIcon:setAlpha( 1 )
 				self.clipFinished( OutcomeFactionIcon, {} )
@@ -102,18 +106,22 @@ CoD.WinnerFactionInfo.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				WeaponNameWidget0:completeAnimation()
 				self.WeaponNameWidget0:setAlpha( 0 )
 				self.clipFinished( WeaponNameWidget0, {} )
+
 				KillcamWidgetTitleStatus0:completeAnimation()
 				self.KillcamWidgetTitleStatus0:setAlpha( 0 )
 				self.clipFinished( KillcamWidgetTitleStatus0, {} )
+
 				OutcomeFactionIcon:completeAnimation()
 				self.OutcomeFactionIcon:setAlpha( 0 )
 				self.clipFinished( OutcomeFactionIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",
@@ -130,6 +138,7 @@ CoD.WinnerFactionInfo.new = function ( menu, controller )
 			modelName = "gameScore.draw"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.WeaponNameWidget0:close()
 		element.KillcamWidgetTitleStatus0:close()

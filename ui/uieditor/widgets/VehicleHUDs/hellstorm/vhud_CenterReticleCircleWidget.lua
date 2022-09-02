@@ -4,9 +4,11 @@
 CoD.vhud_CenterReticleCircleWidget = InheritFrom( LUI.UIElement )
 CoD.vhud_CenterReticleCircleWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.vhud_CenterReticleCircleWidget )
 	self.id = "vhud_CenterReticleCircleWidget"
@@ -27,6 +29,7 @@ CoD.vhud_CenterReticleCircleWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local CenterReticleFrame2 = function ( CenterReticle, event )
 					local CenterReticleFrame3 = function ( CenterReticle, event )
 						local CenterReticleFrame4 = function ( CenterReticle, event )
@@ -119,12 +122,14 @@ CoD.vhud_CenterReticleCircleWidget.new = function ( menu, controller )
 				CenterReticle:completeAnimation()
 				self.CenterReticle:setAlpha( 1 )
 				CenterReticleFrame2( CenterReticle, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		LowAltitude = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CenterReticle:completeAnimation()
 				self.CenterReticle:setLeftRight( false, false, -35.5, 32.5 )
 				self.CenterReticle:setTopBottom( false, false, -34.5, 33.5 )
@@ -132,45 +137,57 @@ CoD.vhud_CenterReticleCircleWidget.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LowAltitude_Slow = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LowAltitude_Boost = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		LowAltitude_Slow = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LowAltitude = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LowAltitude_Boost = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		LowAltitude_Boost = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LowAltitude = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LowAltitude_Slow = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		MediumAltitude = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CenterReticle:completeAnimation()
 				self.CenterReticle:setLeftRight( false, false, -35.5, 32.5 )
 				self.CenterReticle:setTopBottom( false, false, -34.5, 33.5 )
@@ -178,9 +195,11 @@ CoD.vhud_CenterReticleCircleWidget.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LowAltitude = function ()
 				self:setupElementClipCounter( 1 )
+
 				CenterReticle:completeAnimation()
 				self.CenterReticle:setLeftRight( false, false, -35.5, 32.5 )
 				self.CenterReticle:setTopBottom( false, false, -34.5, 33.5 )
@@ -188,48 +207,61 @@ CoD.vhud_CenterReticleCircleWidget.new = function ( menu, controller )
 			end,
 			MediumAltitude_Boost = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			MediumAltitude_Slow = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		MediumAltitude_Slow = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LowAltitude_Slow = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			MediumAltitude = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			MediumAltitude_Boost = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		MediumAltitude_Boost = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LowAltitude_Boost = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			MediumAltitude = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			MediumAltitude_Slow = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		HighAltitude = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CenterReticle:completeAnimation()
 				self.CenterReticle:setLeftRight( false, false, -35.5, 32.5 )
 				self.CenterReticle:setTopBottom( false, false, -34.5, 33.5 )
@@ -237,9 +269,11 @@ CoD.vhud_CenterReticleCircleWidget.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			MediumAltitude = function ()
 				self:setupElementClipCounter( 1 )
+
 				CenterReticle:completeAnimation()
 				self.CenterReticle:setLeftRight( false, false, -35.5, 32.5 )
 				self.CenterReticle:setTopBottom( false, false, -34.5, 33.5 )
@@ -247,43 +281,55 @@ CoD.vhud_CenterReticleCircleWidget.new = function ( menu, controller )
 			end,
 			HighAltitude_Boost = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			HighAltitude_Slow = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		HighAltitude_Slow = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			MediumAltitude_Slow = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			HighAltitude = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			HighAltitude_Boost = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		HighAltitude_Boost = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			MediumAltitude_Boost = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			HighAltitude = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			HighAltitude_Slow = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

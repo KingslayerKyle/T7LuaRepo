@@ -4,9 +4,11 @@
 CoD.MissionRecordVault_LineGraphics = InheritFrom( LUI.UIElement )
 CoD.MissionRecordVault_LineGraphics.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MissionRecordVault_LineGraphics )
 	self.id = "MissionRecordVault_LineGraphics"

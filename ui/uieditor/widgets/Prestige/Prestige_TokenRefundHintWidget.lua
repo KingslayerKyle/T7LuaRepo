@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.MenuChooseClass.ItemWidgets.HintTextArrow" )
 CoD.Prestige_TokenRefundHintWidget = InheritFrom( LUI.UIElement )
 CoD.Prestige_TokenRefundHintWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Prestige_TokenRefundHintWidget )
 	self.id = "Prestige_TokenRefundHintWidget"
@@ -43,6 +45,7 @@ CoD.Prestige_TokenRefundHintWidget.new = function ( menu, controller )
 	textCenterAlign:setLetterSpacing( 0.5 )
 	textCenterAlign:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	textCenterAlign:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( textCenterAlign, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 8 )
 	end )
@@ -67,11 +70,13 @@ CoD.Prestige_TokenRefundHintWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Below = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setLeftRight( false, false, 5, -5 )
 				self.hintArrow:setTopBottom( true, false, -15, -5 )
@@ -82,6 +87,7 @@ CoD.Prestige_TokenRefundHintWidget.new = function ( menu, controller )
 		Right = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setLeftRight( true, false, -5, -15 )
 				self.hintArrow:setTopBottom( false, false, -5, 5 )
@@ -92,6 +98,7 @@ CoD.Prestige_TokenRefundHintWidget.new = function ( menu, controller )
 		Left = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setLeftRight( false, true, 15, 5 )
 				self.hintArrow:setTopBottom( false, false, -5, 5 )
@@ -102,6 +109,7 @@ CoD.Prestige_TokenRefundHintWidget.new = function ( menu, controller )
 		Above = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				hintArrow:completeAnimation()
 				self.hintArrow:setLeftRight( false, false, 5, -5 )
 				self.hintArrow:setTopBottom( false, true, 5, 15 )
@@ -110,6 +118,7 @@ CoD.Prestige_TokenRefundHintWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.hintArrow:close()
 	end )

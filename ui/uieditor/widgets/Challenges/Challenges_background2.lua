@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.CAC.cac_ButtonBoxLrgIdle" )
 CoD.Challenges_background2 = InheritFrom( LUI.UIElement )
 CoD.Challenges_background2.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_background2 )
 	self.id = "Challenges_background2"

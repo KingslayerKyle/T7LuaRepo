@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CPSystems.SpikeLauncher.SpikeLauncherLineTop" )
 CoD.SpikeLauncherLine = InheritFrom( LUI.UIElement )
 CoD.SpikeLauncherLine.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.SpikeLauncherLine )
 	self.id = "SpikeLauncherLine"
@@ -59,15 +61,19 @@ CoD.SpikeLauncherLine.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				TopLine:completeAnimation()
 				self.TopLine:setAlpha( 1 )
 				self.clipFinished( TopLine, {} )
+
 				MiddleLine:completeAnimation()
 				self.MiddleLine:setAlpha( 1 )
 				self.clipFinished( MiddleLine, {} )
+
 				BaseLine:completeAnimation()
 				self.BaseLine:setAlpha( 1 )
 				self.clipFinished( BaseLine, {} )
+
 				SpikeLauncherLineTop0:completeAnimation()
 				self.SpikeLauncherLineTop0:setAlpha( 0 )
 				self.clipFinished( SpikeLauncherLineTop0, {} )
@@ -118,24 +124,30 @@ CoD.SpikeLauncherLine.new = function ( menu, controller )
 		NoLine = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				TopLine:completeAnimation()
 				self.TopLine:setAlpha( 0 )
 				self.clipFinished( TopLine, {} )
+
 				MiddleLine:completeAnimation()
 				self.MiddleLine:setAlpha( 0 )
 				self.clipFinished( MiddleLine, {} )
+
 				BaseLine:completeAnimation()
 				self.BaseLine:setAlpha( 0 )
 				self.clipFinished( BaseLine, {} )
+
 				SpikeLauncherLineTop0:completeAnimation()
 				self.SpikeLauncherLineTop0:setAlpha( 1 )
 				self.clipFinished( SpikeLauncherLineTop0, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SpikeLauncherLineTop0:close()
 	end )

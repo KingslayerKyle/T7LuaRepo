@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.CAC.cac_ButtonBoxLrgInactiveStroke" )
 CoD.BubbleGumPack = InheritFrom( LUI.UIElement )
 CoD.BubbleGumPack.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BubbleGumPack )
 	self.id = "BubbleGumPack"
@@ -174,50 +176,64 @@ CoD.BubbleGumPack.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0.5, 0.5, 0.5 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setAlpha( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				BubbleGumPackNameTextBox:completeAnimation()
 				self.BubbleGumPackNameTextBox:setAlpha( 0 )
 				self.clipFinished( BubbleGumPackNameTextBox, {} )
+
 				BubbleGumPackLabel:completeAnimation()
 				self.BubbleGumPackLabel:setAlpha( 1 )
 				self.clipFinished( BubbleGumPackLabel, {} )
+
 				BubbleGumPackLabelStroke:completeAnimation()
 				self.BubbleGumPackLabelStroke:setAlpha( 0 )
 				self.clipFinished( BubbleGumPackLabelStroke, {} )
+
 				BubbleGumBuffs:completeAnimation()
 				self.BubbleGumBuffs:setAlpha( 0.75 )
 				self.clipFinished( BubbleGumBuffs, {} )
+
 				HighlightFrame:completeAnimation()
 				self.HighlightFrame:setRGB( 1, 1, 1 )
 				self.HighlightFrame:setAlpha( 1 )
 				self.clipFinished( HighlightFrame, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				HighlightFrame1:completeAnimation()
 				self.HighlightFrame1:setRGB( 1, 0.33, 0 )
 				self.HighlightFrame1:setAlpha( 0 )
 				self.clipFinished( HighlightFrame1, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 9 )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setAlpha( 1 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				BubbleGumPackLabel:completeAnimation()
 				self.BubbleGumPackLabel:setAlpha( 0 )
 				self.clipFinished( BubbleGumPackLabel, {} )
+
 				BubbleGumPackLabelStroke:completeAnimation()
 				self.BubbleGumPackLabelStroke:setAlpha( 1 )
 				self.BubbleGumPackLabelStroke:setMaterial( LUI.UIImage.GetCachedMaterial( "sw4_2d_uie_font_cached_glow" ) )
@@ -226,24 +242,30 @@ CoD.BubbleGumPack.new = function ( menu, controller )
 				self.BubbleGumPackLabelStroke:setShaderVector( 2, 1, 0, 0, 0 )
 				self.BubbleGumPackLabelStroke:setRFTMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( BubbleGumPackLabelStroke, {} )
+
 				BubbleGumBuffs:completeAnimation()
 				self.BubbleGumBuffs:setAlpha( 1 )
 				self.clipFinished( BubbleGumBuffs, {} )
+
 				HighlightFrame:completeAnimation()
 				self.HighlightFrame:setRGB( 1, 0.33, 0 )
 				self.HighlightFrame:setAlpha( 1 )
 				self.HighlightFrame:setRFTMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
 				self.clipFinished( HighlightFrame, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.45 )
 				self.clipFinished( Glow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 1 )
 				self.clipFinished( Glow2, {} )
+
 				HighlightFrame1:completeAnimation()
 				self.HighlightFrame1:setRGB( 1, 0.33, 0 )
 				self.HighlightFrame1:setAlpha( 1 )
 				self.clipFinished( HighlightFrame1, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setAlpha( 1 )
 				self.clipFinished( Arrow, {} )
@@ -252,57 +274,72 @@ CoD.BubbleGumPack.new = function ( menu, controller )
 		InGame = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				FEButtonPanelShaderContainer:completeAnimation()
 				self.FEButtonPanelShaderContainer:setRGB( 0, 0, 0 )
 				self.FEButtonPanelShaderContainer:setAlpha( 0.8 )
 				self.clipFinished( FEButtonPanelShaderContainer, {} )
+
 				FEButtonIdle:completeAnimation()
 				self.FEButtonIdle:setAlpha( 0 )
 				self.clipFinished( FEButtonIdle, {} )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setAlpha( 0 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				BubbleGumPackNameTextBox:completeAnimation()
 				self.BubbleGumPackNameTextBox:setLeftRight( true, false, 0, 368 )
 				self.BubbleGumPackNameTextBox:setTopBottom( true, false, 8, 28 )
 				self.BubbleGumPackNameTextBox:setAlpha( 1 )
 				self.BubbleGumPackNameTextBox:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 				self.clipFinished( BubbleGumPackNameTextBox, {} )
+
 				BubbleGumPackLabel:completeAnimation()
 				self.BubbleGumPackLabel:setAlpha( 0 )
 				self.clipFinished( BubbleGumPackLabel, {} )
+
 				BubbleGumPackLabelStroke:completeAnimation()
 				self.BubbleGumPackLabelStroke:setAlpha( 0 )
 				self.clipFinished( BubbleGumPackLabelStroke, {} )
+
 				BubbleGumBuffs:completeAnimation()
 				self.BubbleGumBuffs:setAlpha( 1 )
 				self.clipFinished( BubbleGumBuffs, {} )
+
 				HighlightFrame:completeAnimation()
 				self.HighlightFrame:setRGB( 1, 1, 1 )
 				self.HighlightFrame:setAlpha( 1 )
 				self.clipFinished( HighlightFrame, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				HighlightFrame1:completeAnimation()
 				self.HighlightFrame1:setRGB( 1, 0.33, 0 )
 				self.HighlightFrame1:setAlpha( 0 )
 				self.clipFinished( HighlightFrame1, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setAlpha( 0 )
 				self.clipFinished( Arrow, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 9 )
+
 				FEButtonFocus:completeAnimation()
 				self.FEButtonFocus:setAlpha( 1 )
 				self.clipFinished( FEButtonFocus, {} )
+
 				BubbleGumPackLabel:completeAnimation()
 				self.BubbleGumPackLabel:setAlpha( 0 )
 				self.clipFinished( BubbleGumPackLabel, {} )
+
 				BubbleGumPackLabelStroke:completeAnimation()
 				self.BubbleGumPackLabelStroke:setAlpha( 1 )
 				self.BubbleGumPackLabelStroke:setMaterial( LUI.UIImage.GetCachedMaterial( "sw4_2d_uie_font_cached_glow" ) )
@@ -311,24 +348,30 @@ CoD.BubbleGumPack.new = function ( menu, controller )
 				self.BubbleGumPackLabelStroke:setShaderVector( 2, 1, 0, 0, 0 )
 				self.BubbleGumPackLabelStroke:setRFTMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( BubbleGumPackLabelStroke, {} )
+
 				BubbleGumBuffs:completeAnimation()
 				self.BubbleGumBuffs:setAlpha( 1 )
 				self.clipFinished( BubbleGumBuffs, {} )
+
 				HighlightFrame:completeAnimation()
 				self.HighlightFrame:setRGB( 1, 0.33, 0 )
 				self.HighlightFrame:setAlpha( 1 )
 				self.HighlightFrame:setRFTMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
 				self.clipFinished( HighlightFrame, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.45 )
 				self.clipFinished( Glow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 1 )
 				self.clipFinished( Glow2, {} )
+
 				HighlightFrame1:completeAnimation()
 				self.HighlightFrame1:setRGB( 1, 0.33, 0 )
 				self.HighlightFrame1:setAlpha( 1 )
 				self.clipFinished( HighlightFrame1, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setAlpha( 1 )
 				self.clipFinished( Arrow, {} )
@@ -343,6 +386,7 @@ CoD.BubbleGumPack.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanelShaderContainer:close()
 		element.BackPanel:close()

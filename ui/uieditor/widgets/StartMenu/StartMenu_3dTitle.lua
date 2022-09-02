@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_3dTitleLabel" )
 CoD.StartMenu_3dTitle = InheritFrom( LUI.UIElement )
 CoD.StartMenu_3dTitle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_3dTitle )
 	self.id = "StartMenu_3dTitle"

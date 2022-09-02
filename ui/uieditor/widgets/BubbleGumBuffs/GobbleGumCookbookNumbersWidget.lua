@@ -4,9 +4,11 @@
 CoD.GobbleGumCookbookNumbersWidget = InheritFrom( LUI.UIElement )
 CoD.GobbleGumCookbookNumbersWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GobbleGumCookbookNumbersWidget )
 	self.id = "GobbleGumCookbookNumbersWidget"
@@ -97,33 +99,43 @@ CoD.GobbleGumCookbookNumbersWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Digit9:completeAnimation()
 				self.Digit9:setAlpha( 0 )
 				self.clipFinished( Digit9, {} )
+
 				Digit8:completeAnimation()
 				self.Digit8:setAlpha( 0 )
 				self.clipFinished( Digit8, {} )
+
 				Digit7:completeAnimation()
 				self.Digit7:setAlpha( 0 )
 				self.clipFinished( Digit7, {} )
+
 				Digit6:completeAnimation()
 				self.Digit6:setAlpha( 0 )
 				self.clipFinished( Digit6, {} )
+
 				Digit5:completeAnimation()
 				self.Digit5:setAlpha( 0 )
 				self.clipFinished( Digit5, {} )
+
 				Digit4:completeAnimation()
 				self.Digit4:setAlpha( 0 )
 				self.clipFinished( Digit4, {} )
+
 				Digit3:completeAnimation()
 				self.Digit3:setAlpha( 0 )
 				self.clipFinished( Digit3, {} )
+
 				Digit2:completeAnimation()
 				self.Digit2:setAlpha( 0 )
 				self.clipFinished( Digit2, {} )
+
 				Digit1:completeAnimation()
 				self.Digit1:setAlpha( 0 )
 				self.clipFinished( Digit1, {} )
+
 				Digit0:completeAnimation()
 				self.Digit0:setAlpha( 1 )
 				self.clipFinished( Digit0, {} )
@@ -132,33 +144,43 @@ CoD.GobbleGumCookbookNumbersWidget.new = function ( menu, controller )
 		One = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Digit9:completeAnimation()
 				self.Digit9:setAlpha( 0 )
 				self.clipFinished( Digit9, {} )
+
 				Digit8:completeAnimation()
 				self.Digit8:setAlpha( 0 )
 				self.clipFinished( Digit8, {} )
+
 				Digit7:completeAnimation()
 				self.Digit7:setAlpha( 0 )
 				self.clipFinished( Digit7, {} )
+
 				Digit6:completeAnimation()
 				self.Digit6:setAlpha( 0 )
 				self.clipFinished( Digit6, {} )
+
 				Digit5:completeAnimation()
 				self.Digit5:setAlpha( 0 )
 				self.clipFinished( Digit5, {} )
+
 				Digit4:completeAnimation()
 				self.Digit4:setAlpha( 0 )
 				self.clipFinished( Digit4, {} )
+
 				Digit3:completeAnimation()
 				self.Digit3:setAlpha( 0 )
 				self.clipFinished( Digit3, {} )
+
 				Digit2:completeAnimation()
 				self.Digit2:setAlpha( 0 )
 				self.clipFinished( Digit2, {} )
+
 				Digit1:completeAnimation()
 				self.Digit1:setAlpha( 1 )
 				self.clipFinished( Digit1, {} )
+
 				Digit0:completeAnimation()
 				self.Digit0:setAlpha( 0 )
 				self.clipFinished( Digit0, {} )
@@ -167,33 +189,43 @@ CoD.GobbleGumCookbookNumbersWidget.new = function ( menu, controller )
 		Two = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Digit9:completeAnimation()
 				self.Digit9:setAlpha( 0 )
 				self.clipFinished( Digit9, {} )
+
 				Digit8:completeAnimation()
 				self.Digit8:setAlpha( 0 )
 				self.clipFinished( Digit8, {} )
+
 				Digit7:completeAnimation()
 				self.Digit7:setAlpha( 0 )
 				self.clipFinished( Digit7, {} )
+
 				Digit6:completeAnimation()
 				self.Digit6:setAlpha( 0 )
 				self.clipFinished( Digit6, {} )
+
 				Digit5:completeAnimation()
 				self.Digit5:setAlpha( 0 )
 				self.clipFinished( Digit5, {} )
+
 				Digit4:completeAnimation()
 				self.Digit4:setAlpha( 0 )
 				self.clipFinished( Digit4, {} )
+
 				Digit3:completeAnimation()
 				self.Digit3:setAlpha( 0 )
 				self.clipFinished( Digit3, {} )
+
 				Digit2:completeAnimation()
 				self.Digit2:setAlpha( 1 )
 				self.clipFinished( Digit2, {} )
+
 				Digit1:completeAnimation()
 				self.Digit1:setAlpha( 0 )
 				self.clipFinished( Digit1, {} )
+
 				Digit0:completeAnimation()
 				self.Digit0:setAlpha( 0 )
 				self.clipFinished( Digit0, {} )
@@ -202,33 +234,43 @@ CoD.GobbleGumCookbookNumbersWidget.new = function ( menu, controller )
 		Three = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Digit9:completeAnimation()
 				self.Digit9:setAlpha( 0 )
 				self.clipFinished( Digit9, {} )
+
 				Digit8:completeAnimation()
 				self.Digit8:setAlpha( 0 )
 				self.clipFinished( Digit8, {} )
+
 				Digit7:completeAnimation()
 				self.Digit7:setAlpha( 0 )
 				self.clipFinished( Digit7, {} )
+
 				Digit6:completeAnimation()
 				self.Digit6:setAlpha( 0 )
 				self.clipFinished( Digit6, {} )
+
 				Digit5:completeAnimation()
 				self.Digit5:setAlpha( 0 )
 				self.clipFinished( Digit5, {} )
+
 				Digit4:completeAnimation()
 				self.Digit4:setAlpha( 0 )
 				self.clipFinished( Digit4, {} )
+
 				Digit3:completeAnimation()
 				self.Digit3:setAlpha( 1 )
 				self.clipFinished( Digit3, {} )
+
 				Digit2:completeAnimation()
 				self.Digit2:setAlpha( 0 )
 				self.clipFinished( Digit2, {} )
+
 				Digit1:completeAnimation()
 				self.Digit1:setAlpha( 0 )
 				self.clipFinished( Digit1, {} )
+
 				Digit0:completeAnimation()
 				self.Digit0:setAlpha( 0 )
 				self.clipFinished( Digit0, {} )
@@ -237,33 +279,43 @@ CoD.GobbleGumCookbookNumbersWidget.new = function ( menu, controller )
 		Four = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Digit9:completeAnimation()
 				self.Digit9:setAlpha( 0 )
 				self.clipFinished( Digit9, {} )
+
 				Digit8:completeAnimation()
 				self.Digit8:setAlpha( 0 )
 				self.clipFinished( Digit8, {} )
+
 				Digit7:completeAnimation()
 				self.Digit7:setAlpha( 0 )
 				self.clipFinished( Digit7, {} )
+
 				Digit6:completeAnimation()
 				self.Digit6:setAlpha( 0 )
 				self.clipFinished( Digit6, {} )
+
 				Digit5:completeAnimation()
 				self.Digit5:setAlpha( 0 )
 				self.clipFinished( Digit5, {} )
+
 				Digit4:completeAnimation()
 				self.Digit4:setAlpha( 1 )
 				self.clipFinished( Digit4, {} )
+
 				Digit3:completeAnimation()
 				self.Digit3:setAlpha( 0 )
 				self.clipFinished( Digit3, {} )
+
 				Digit2:completeAnimation()
 				self.Digit2:setAlpha( 0 )
 				self.clipFinished( Digit2, {} )
+
 				Digit1:completeAnimation()
 				self.Digit1:setAlpha( 0 )
 				self.clipFinished( Digit1, {} )
+
 				Digit0:completeAnimation()
 				self.Digit0:setAlpha( 0 )
 				self.clipFinished( Digit0, {} )
@@ -272,33 +324,43 @@ CoD.GobbleGumCookbookNumbersWidget.new = function ( menu, controller )
 		Five = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Digit9:completeAnimation()
 				self.Digit9:setAlpha( 0 )
 				self.clipFinished( Digit9, {} )
+
 				Digit8:completeAnimation()
 				self.Digit8:setAlpha( 0 )
 				self.clipFinished( Digit8, {} )
+
 				Digit7:completeAnimation()
 				self.Digit7:setAlpha( 0 )
 				self.clipFinished( Digit7, {} )
+
 				Digit6:completeAnimation()
 				self.Digit6:setAlpha( 0 )
 				self.clipFinished( Digit6, {} )
+
 				Digit5:completeAnimation()
 				self.Digit5:setAlpha( 1 )
 				self.clipFinished( Digit5, {} )
+
 				Digit4:completeAnimation()
 				self.Digit4:setAlpha( 0 )
 				self.clipFinished( Digit4, {} )
+
 				Digit3:completeAnimation()
 				self.Digit3:setAlpha( 0 )
 				self.clipFinished( Digit3, {} )
+
 				Digit2:completeAnimation()
 				self.Digit2:setAlpha( 0 )
 				self.clipFinished( Digit2, {} )
+
 				Digit1:completeAnimation()
 				self.Digit1:setAlpha( 0 )
 				self.clipFinished( Digit1, {} )
+
 				Digit0:completeAnimation()
 				self.Digit0:setAlpha( 0 )
 				self.clipFinished( Digit0, {} )
@@ -307,33 +369,43 @@ CoD.GobbleGumCookbookNumbersWidget.new = function ( menu, controller )
 		Six = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Digit9:completeAnimation()
 				self.Digit9:setAlpha( 0 )
 				self.clipFinished( Digit9, {} )
+
 				Digit8:completeAnimation()
 				self.Digit8:setAlpha( 0 )
 				self.clipFinished( Digit8, {} )
+
 				Digit7:completeAnimation()
 				self.Digit7:setAlpha( 0 )
 				self.clipFinished( Digit7, {} )
+
 				Digit6:completeAnimation()
 				self.Digit6:setAlpha( 1 )
 				self.clipFinished( Digit6, {} )
+
 				Digit5:completeAnimation()
 				self.Digit5:setAlpha( 0 )
 				self.clipFinished( Digit5, {} )
+
 				Digit4:completeAnimation()
 				self.Digit4:setAlpha( 0 )
 				self.clipFinished( Digit4, {} )
+
 				Digit3:completeAnimation()
 				self.Digit3:setAlpha( 0 )
 				self.clipFinished( Digit3, {} )
+
 				Digit2:completeAnimation()
 				self.Digit2:setAlpha( 0 )
 				self.clipFinished( Digit2, {} )
+
 				Digit1:completeAnimation()
 				self.Digit1:setAlpha( 0 )
 				self.clipFinished( Digit1, {} )
+
 				Digit0:completeAnimation()
 				self.Digit0:setAlpha( 0 )
 				self.clipFinished( Digit0, {} )
@@ -342,33 +414,43 @@ CoD.GobbleGumCookbookNumbersWidget.new = function ( menu, controller )
 		Seven = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Digit9:completeAnimation()
 				self.Digit9:setAlpha( 0 )
 				self.clipFinished( Digit9, {} )
+
 				Digit8:completeAnimation()
 				self.Digit8:setAlpha( 0 )
 				self.clipFinished( Digit8, {} )
+
 				Digit7:completeAnimation()
 				self.Digit7:setAlpha( 1 )
 				self.clipFinished( Digit7, {} )
+
 				Digit6:completeAnimation()
 				self.Digit6:setAlpha( 0 )
 				self.clipFinished( Digit6, {} )
+
 				Digit5:completeAnimation()
 				self.Digit5:setAlpha( 0 )
 				self.clipFinished( Digit5, {} )
+
 				Digit4:completeAnimation()
 				self.Digit4:setAlpha( 0 )
 				self.clipFinished( Digit4, {} )
+
 				Digit3:completeAnimation()
 				self.Digit3:setAlpha( 0 )
 				self.clipFinished( Digit3, {} )
+
 				Digit2:completeAnimation()
 				self.Digit2:setAlpha( 0 )
 				self.clipFinished( Digit2, {} )
+
 				Digit1:completeAnimation()
 				self.Digit1:setAlpha( 0 )
 				self.clipFinished( Digit1, {} )
+
 				Digit0:completeAnimation()
 				self.Digit0:setAlpha( 0 )
 				self.clipFinished( Digit0, {} )
@@ -377,33 +459,43 @@ CoD.GobbleGumCookbookNumbersWidget.new = function ( menu, controller )
 		Eight = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Digit9:completeAnimation()
 				self.Digit9:setAlpha( 0 )
 				self.clipFinished( Digit9, {} )
+
 				Digit8:completeAnimation()
 				self.Digit8:setAlpha( 1 )
 				self.clipFinished( Digit8, {} )
+
 				Digit7:completeAnimation()
 				self.Digit7:setAlpha( 0 )
 				self.clipFinished( Digit7, {} )
+
 				Digit6:completeAnimation()
 				self.Digit6:setAlpha( 0 )
 				self.clipFinished( Digit6, {} )
+
 				Digit5:completeAnimation()
 				self.Digit5:setAlpha( 0 )
 				self.clipFinished( Digit5, {} )
+
 				Digit4:completeAnimation()
 				self.Digit4:setAlpha( 0 )
 				self.clipFinished( Digit4, {} )
+
 				Digit3:completeAnimation()
 				self.Digit3:setAlpha( 0 )
 				self.clipFinished( Digit3, {} )
+
 				Digit2:completeAnimation()
 				self.Digit2:setAlpha( 0 )
 				self.clipFinished( Digit2, {} )
+
 				Digit1:completeAnimation()
 				self.Digit1:setAlpha( 0 )
 				self.clipFinished( Digit1, {} )
+
 				Digit0:completeAnimation()
 				self.Digit0:setAlpha( 0 )
 				self.clipFinished( Digit0, {} )
@@ -412,33 +504,43 @@ CoD.GobbleGumCookbookNumbersWidget.new = function ( menu, controller )
 		Nine = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Digit9:completeAnimation()
 				self.Digit9:setAlpha( 1 )
 				self.clipFinished( Digit9, {} )
+
 				Digit8:completeAnimation()
 				self.Digit8:setAlpha( 0 )
 				self.clipFinished( Digit8, {} )
+
 				Digit7:completeAnimation()
 				self.Digit7:setAlpha( 0 )
 				self.clipFinished( Digit7, {} )
+
 				Digit6:completeAnimation()
 				self.Digit6:setAlpha( 0 )
 				self.clipFinished( Digit6, {} )
+
 				Digit5:completeAnimation()
 				self.Digit5:setAlpha( 0 )
 				self.clipFinished( Digit5, {} )
+
 				Digit4:completeAnimation()
 				self.Digit4:setAlpha( 0 )
 				self.clipFinished( Digit4, {} )
+
 				Digit3:completeAnimation()
 				self.Digit3:setAlpha( 0 )
 				self.clipFinished( Digit3, {} )
+
 				Digit2:completeAnimation()
 				self.Digit2:setAlpha( 0 )
 				self.clipFinished( Digit2, {} )
+
 				Digit1:completeAnimation()
 				self.Digit1:setAlpha( 0 )
 				self.clipFinished( Digit1, {} )
+
 				Digit0:completeAnimation()
 				self.Digit0:setAlpha( 0 )
 				self.clipFinished( Digit0, {} )

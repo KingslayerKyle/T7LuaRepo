@@ -4,9 +4,11 @@
 CoD.MPScr_PlusPoints = InheritFrom( LUI.UIElement )
 CoD.MPScr_PlusPoints.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MPScr_PlusPoints )
 	self.id = "MPScr_PlusPoints"
@@ -54,6 +56,7 @@ CoD.MPScr_PlusPoints.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local Label2Frame2 = function ( Label2, event )
 					local Label2Frame3 = function ( Label2, event )
 						local Label2Frame4 = function ( Label2, event )

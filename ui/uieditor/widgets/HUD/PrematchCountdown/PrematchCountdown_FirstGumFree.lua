@@ -4,9 +4,11 @@
 CoD.PrematchCountdown_FirstGumFree = InheritFrom( LUI.UIElement )
 CoD.PrematchCountdown_FirstGumFree.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PrematchCountdown_FirstGumFree )
 	self.id = "PrematchCountdown_FirstGumFree"
@@ -25,14 +27,17 @@ CoD.PrematchCountdown_FirstGumFree.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		french = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "french",

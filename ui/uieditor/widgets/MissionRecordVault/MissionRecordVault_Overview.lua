@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.MissionRecordVault.MissionRecordVault_FrameBG" )
 CoD.MissionRecordVault_Overview = InheritFrom( LUI.UIElement )
 CoD.MissionRecordVault_Overview.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MissionRecordVault_Overview )
 	self.id = "MissionRecordVault_Overview"

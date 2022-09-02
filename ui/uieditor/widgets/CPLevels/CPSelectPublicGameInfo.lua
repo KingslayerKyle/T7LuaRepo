@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.CPLevels.CPMissionTitle" )
 CoD.CPSelectPublicGameInfo = InheritFrom( LUI.UIElement )
 CoD.CPSelectPublicGameInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CPSelectPublicGameInfo )
 	self.id = "CPSelectPublicGameInfo"
@@ -95,14 +97,17 @@ CoD.CPSelectPublicGameInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		AnyMission = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				InfoText:completeAnimation()
 				self.InfoText:setAlpha( 0.5 )
 				self.clipFinished( InfoText, {} )
+
 				CPMissionTitle:completeAnimation()
 				self.CPMissionTitle:setAlpha( 1 )
 				self.clipFinished( CPMissionTitle, {} )
@@ -111,13 +116,17 @@ CoD.CPSelectPublicGameInfo.new = function ( menu, controller )
 		CurrentMission = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				CPMissionInfo:completeAnimation()
+
 				CPMissionInfo.CPMissionTitle:completeAnimation()
 				self.CPMissionInfo.CPMissionTitle:setAlpha( 1 )
 				self.clipFinished( CPMissionInfo, {} )
+
 				InfoText:completeAnimation()
 				self.InfoText:setAlpha( 0 )
 				self.clipFinished( InfoText, {} )
+
 				CPMissionTitle:completeAnimation()
 				self.CPMissionTitle:setAlpha( 0 )
 				self.clipFinished( CPMissionTitle, {} )
@@ -126,15 +135,18 @@ CoD.CPSelectPublicGameInfo.new = function ( menu, controller )
 		SpecificMission = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				InfoText:completeAnimation()
 				self.InfoText:setAlpha( 0.5 )
 				self.clipFinished( InfoText, {} )
+
 				CPMissionTitle:completeAnimation()
 				self.CPMissionTitle:setAlpha( 1 )
 				self.clipFinished( CPMissionTitle, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "AnyMission",
@@ -163,6 +175,7 @@ CoD.CPSelectPublicGameInfo.new = function ( menu, controller )
 			modelName = "type"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CPMissionInfo:close()
 		element.CPFrameBox:close()

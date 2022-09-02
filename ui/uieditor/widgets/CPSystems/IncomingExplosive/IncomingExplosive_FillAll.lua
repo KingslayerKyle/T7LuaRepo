@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CPSystems.IncomingExplosive.IncomingExplosive_Fill
 CoD.IncomingExplosive_FillAll = InheritFrom( LUI.UIElement )
 CoD.IncomingExplosive_FillAll.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.IncomingExplosive_FillAll )
 	self.id = "IncomingExplosive_FillAll"
@@ -76,32 +78,40 @@ CoD.IncomingExplosive_FillAll.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Fill1a:completeAnimation()
 				self.Fill1a:setAlpha( 0 )
 				self.clipFinished( Fill1a, {} )
+
 				Fill1b:completeAnimation()
 				self.Fill1b:setAlpha( 0 )
 				self.clipFinished( Fill1b, {} )
+
 				Fill2a:completeAnimation()
 				self.Fill2a:setAlpha( 0 )
 				self.clipFinished( Fill2a, {} )
+
 				Fill2b:completeAnimation()
 				self.Fill2b:setAlpha( 0 )
 				self.clipFinished( Fill2b, {} )
+
 				Fill3a:completeAnimation()
 				self.Fill3a:setAlpha( 0 )
 				self.clipFinished( Fill3a, {} )
+
 				Fill3b:completeAnimation()
 				self.Fill3b:setAlpha( 0 )
 				self.clipFinished( Fill3b, {} )
 			end,
 			Visible = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Count3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				local Fill1aFrame2 = function ( Fill1a, event )
 					local Fill1aFrame3 = function ( Fill1a, event )
 						local Fill1aFrame4 = function ( Fill1a, event )
@@ -226,15 +236,19 @@ CoD.IncomingExplosive_FillAll.new = function ( menu, controller )
 				Fill1b:completeAnimation()
 				self.Fill1b:setAlpha( 0 )
 				Fill1bFrame2( Fill1b, {} )
+
 				Fill2a:completeAnimation()
 				self.Fill2a:setAlpha( 0 )
 				self.clipFinished( Fill2a, {} )
+
 				Fill2b:completeAnimation()
 				self.Fill2b:setAlpha( 0 )
 				self.clipFinished( Fill2b, {} )
+
 				Fill3a:completeAnimation()
 				self.Fill3a:setAlpha( 0 )
 				self.clipFinished( Fill3a, {} )
+
 				Fill3b:completeAnimation()
 				self.Fill3b:setAlpha( 0 )
 				self.clipFinished( Fill3b, {} )
@@ -243,9 +257,11 @@ CoD.IncomingExplosive_FillAll.new = function ( menu, controller )
 		Count2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Fill1a:completeAnimation()
 				self.Fill1a:setAlpha( 1 )
 				self.clipFinished( Fill1a, {} )
+
 				Fill1b:completeAnimation()
 				self.Fill1b:setAlpha( 1 )
 				self.clipFinished( Fill1b, {} )
@@ -373,24 +389,30 @@ CoD.IncomingExplosive_FillAll.new = function ( menu, controller )
 				Fill2b:completeAnimation()
 				self.Fill2b:setAlpha( 0 )
 				Fill2bFrame2( Fill2b, {} )
+
 				Fill3a:completeAnimation()
 				self.Fill3a:setAlpha( 0 )
 				self.clipFinished( Fill3a, {} )
+
 				Fill3b:completeAnimation()
 				self.Fill3b:setAlpha( 0 )
 				self.clipFinished( Fill3b, {} )
 			end,
 			Count1 = function ()
 				self:setupElementClipCounter( 6 )
+
 				Fill1a:completeAnimation()
 				self.Fill1a:setAlpha( 1 )
 				self.clipFinished( Fill1a, {} )
+
 				Fill1b:completeAnimation()
 				self.Fill1b:setAlpha( 1 )
 				self.clipFinished( Fill1b, {} )
+
 				Fill2a:completeAnimation()
 				self.Fill2a:setAlpha( 1 )
 				self.clipFinished( Fill2a, {} )
+
 				Fill2b:completeAnimation()
 				self.Fill2b:setAlpha( 1 )
 				self.clipFinished( Fill2b, {} )
@@ -523,6 +545,7 @@ CoD.IncomingExplosive_FillAll.new = function ( menu, controller )
 		Count1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				local Fill1aFrame2 = function ( Fill1a, event )
 					local Fill1aFrame3 = function ( Fill1a, event )
 						local Fill1aFrame4 = function ( Fill1a, event )
@@ -1047,12 +1070,14 @@ CoD.IncomingExplosive_FillAll.new = function ( menu, controller )
 				Fill3b:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
 				Fill3b:setAlpha( 1 )
 				Fill3b:registerEventHandler( "transition_complete_keyframe", f40_local5 )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Count0 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				local Fill1aFrame2 = function ( Fill1a, event )
 					local Fill1aFrame3 = function ( Fill1a, event )
 						local Fill1aFrame4 = function ( Fill1a, event )
@@ -2167,27 +2192,34 @@ CoD.IncomingExplosive_FillAll.new = function ( menu, controller )
 		NotGrenade = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Fill1a:completeAnimation()
 				self.Fill1a:setAlpha( 0 )
 				self.clipFinished( Fill1a, {} )
+
 				Fill1b:completeAnimation()
 				self.Fill1b:setAlpha( 0 )
 				self.clipFinished( Fill1b, {} )
+
 				Fill2a:completeAnimation()
 				self.Fill2a:setAlpha( 0 )
 				self.clipFinished( Fill2a, {} )
+
 				Fill2b:completeAnimation()
 				self.Fill2b:setAlpha( 0 )
 				self.clipFinished( Fill2b, {} )
+
 				Fill3a:completeAnimation()
 				self.Fill3a:setAlpha( 0 )
 				self.clipFinished( Fill3a, {} )
+
 				Fill3b:completeAnimation()
 				self.Fill3b:setAlpha( 0 )
 				self.clipFinished( Fill3b, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Count3",
@@ -2228,6 +2260,7 @@ CoD.IncomingExplosive_FillAll.new = function ( menu, controller )
 			modelName = "timeLeftPerc"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Fill1a:close()
 		element.Fill1b:close()

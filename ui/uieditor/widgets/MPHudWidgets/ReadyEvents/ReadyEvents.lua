@@ -74,6 +74,7 @@ local PostLoadFunc = function ( f1_arg0, f1_arg1 )
 	f1_arg0.notificationStartTime = -1
 	f1_arg0.currentNotification = nil
 	f1_arg0.nextNotification = nil
+
 	LUI.OverrideFunction_CallOriginalSecond( f1_arg0, "playClip", function ( element )
 		element.notificationStartTime = Engine.milliseconds()
 	end )
@@ -106,9 +107,11 @@ end
 CoD.ReadyEvents = InheritFrom( LUI.UIElement )
 CoD.ReadyEvents.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ReadyEvents )
 	self.id = "ReadyEvents"
@@ -154,15 +157,18 @@ CoD.ReadyEvents.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Description:completeAnimation()
 				self.Description:setAlpha( 0 )
 				self.clipFinished( Description, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 0 )
 				self.clipFinished( Title, {} )
 			end,
 			ShowNotification = function ()
 				self:setupElementClipCounter( 2 )
+
 				local DescriptionFrame2 = function ( Description, event )
 					local DescriptionFrame3 = function ( Description, event )
 						local DescriptionFrame4 = function ( Description, event )
@@ -238,6 +244,7 @@ CoD.ReadyEvents.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Title:close()
 	end )

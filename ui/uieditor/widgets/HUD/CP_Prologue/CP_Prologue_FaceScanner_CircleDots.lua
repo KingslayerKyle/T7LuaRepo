@@ -4,9 +4,11 @@
 CoD.CP_Prologue_FaceScanner_CircleDots = InheritFrom( LUI.UIElement )
 CoD.CP_Prologue_FaceScanner_CircleDots.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CP_Prologue_FaceScanner_CircleDots )
 	self.id = "CP_Prologue_FaceScanner_CircleDots"
@@ -34,6 +36,7 @@ CoD.CP_Prologue_FaceScanner_CircleDots.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local CenterCircleDotsFrame2 = function ( CenterCircleDots, event )
 					local CenterCircleDotsFrame3 = function ( CenterCircleDots, event )
 						local CenterCircleDotsFrame4 = function ( CenterCircleDots, event )
@@ -130,27 +133,32 @@ CoD.CP_Prologue_FaceScanner_CircleDots.new = function ( menu, controller )
 				CenterCircleDots0:completeAnimation()
 				self.CenterCircleDots0:setAlpha( 0 )
 				CenterCircleDots0Frame2( CenterCircleDots0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Scanning = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		PossibleMatch = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Found = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Failed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

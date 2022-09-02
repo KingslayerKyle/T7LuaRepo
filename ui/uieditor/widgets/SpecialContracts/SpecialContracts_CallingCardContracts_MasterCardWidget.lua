@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_Contracts_PercentCompleteWidget" )
 CoD.SpecialContracts_CallingCardContracts_MasterCardWidget = InheritFrom( LUI.UIElement )
 CoD.SpecialContracts_CallingCardContracts_MasterCardWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpecialContracts_CallingCardContracts_MasterCardWidget )
 	self.id = "SpecialContracts_CallingCardContracts_MasterCardWidget"
@@ -145,15 +147,19 @@ CoD.SpecialContracts_CallingCardContracts_MasterCardWidget.new = function ( menu
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				MasterCallingCardIcon:completeAnimation()
 				self.MasterCallingCardIcon:setAlpha( 1 )
 				self.clipFinished( MasterCallingCardIcon, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 0 )
 				self.clipFinished( Lock, {} )
+
 				SpecialContractDesc:completeAnimation()
 				self.SpecialContractDesc:setText( Engine.Localize( "CONTRACT_MASTERY_CARD_COMPLETE" ) )
 				self.clipFinished( SpecialContractDesc, {} )
@@ -162,21 +168,26 @@ CoD.SpecialContracts_CallingCardContracts_MasterCardWidget.new = function ( menu
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				MasterCallingCardIcon:completeAnimation()
 				self.MasterCallingCardIcon:setAlpha( 0.3 )
 				self.clipFinished( MasterCallingCardIcon, {} )
+
 				black:completeAnimation()
 				self.black:setAlpha( 1 )
 				self.clipFinished( black, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 1 )
 				self.clipFinished( Lock, {} )
+
 				SpecialContractDesc:completeAnimation()
 				self.SpecialContractDesc:setText( Engine.Localize( "CONTRACT_MASTERY_CARD_DESC" ) )
 				self.clipFinished( SpecialContractDesc, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -193,6 +204,7 @@ CoD.SpecialContracts_CallingCardContracts_MasterCardWidget.new = function ( menu
 			modelName = "isLocked"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MasterCallingCardIcon:close()
 		element.SpecialContractPercentCompleteWidget:close()

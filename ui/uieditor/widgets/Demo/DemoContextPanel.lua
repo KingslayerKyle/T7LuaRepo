@@ -44,9 +44,11 @@ end
 CoD.DemoContextPanel = InheritFrom( LUI.UIElement )
 CoD.DemoContextPanel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DemoContextPanel )
 	self.id = "DemoContextPanel"
@@ -188,12 +190,15 @@ CoD.DemoContextPanel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				DemoControlsSpectatingBar:completeAnimation()
 				self.DemoControlsSpectatingBar:setAlpha( 1 )
 				self.clipFinished( DemoControlsSpectatingBar, {} )
+
 				ModeName:completeAnimation()
 				self.ModeName:setAlpha( 1 )
 				self.clipFinished( ModeName, {} )
+
 				CancelPreviewBtn:completeAnimation()
 				self.CancelPreviewBtn:setAlpha( 0 )
 				self.clipFinished( CancelPreviewBtn, {} )
@@ -202,13 +207,16 @@ CoD.DemoContextPanel.new = function ( menu, controller )
 		ClipPreview = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				DemoControlsSpectatingBar:completeAnimation()
 				self.DemoControlsSpectatingBar:setAlpha( 0 )
 				self.clipFinished( DemoControlsSpectatingBar, {} )
+
 				ModeName:completeAnimation()
 				self.ModeName:setAlpha( 1 )
 				self.ModeName:setText( Engine.Localize( "MENU_DEMO_MODE_PREVIEWING_SEGMENT" ) )
 				self.clipFinished( ModeName, {} )
+
 				CancelPreviewBtn:completeAnimation()
 				self.CancelPreviewBtn:setAlpha( 1 )
 				self.clipFinished( CancelPreviewBtn, {} )
@@ -217,14 +225,18 @@ CoD.DemoContextPanel.new = function ( menu, controller )
 		CreatingHighlightReel = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				DemoControlsSpectatingBar:completeAnimation()
 				self.DemoControlsSpectatingBar:setAlpha( 0 )
 				self.clipFinished( DemoControlsSpectatingBar, {} )
+
 				ModeName:completeAnimation()
 				self.ModeName:setAlpha( 1 )
 				self.ModeName:setText( Engine.Localize( "MPUI_CREATING_HIGHLIGHT_REEL" ) )
 				self.clipFinished( ModeName, {} )
+
 				CancelPreviewBtn:completeAnimation()
+
 				CancelPreviewBtn.label:completeAnimation()
 				self.CancelPreviewBtn:setAlpha( 1 )
 				self.CancelPreviewBtn.label:setText( Engine.Localize( "MPUI_CANCEL" ) )
@@ -232,6 +244,7 @@ CoD.DemoContextPanel.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ClipPreview",
@@ -262,6 +275,7 @@ CoD.DemoContextPanel.new = function ( menu, controller )
 			modelName = "demo.isCreatingHighlightReel"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LeftPanel:close()
 		element.Top3PlayerScoreBlurBox0:close()

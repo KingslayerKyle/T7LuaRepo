@@ -43,6 +43,7 @@ CoD.DemoControlsSpectatingBar.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DemoControlsSpectatingBar )
 	self.id = "DemoControlsSpectatingBar"
@@ -106,9 +107,11 @@ CoD.DemoControlsSpectatingBar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				leftBumper:completeAnimation()
 				self.leftBumper:setAlpha( 0 )
 				self.clipFinished( leftBumper, {} )
+
 				rightBumper:completeAnimation()
 				self.rightBumper:setAlpha( 0 )
 				self.clipFinished( rightBumper, {} )
@@ -117,15 +120,18 @@ CoD.DemoControlsSpectatingBar.new = function ( menu, controller )
 		WithButtonPrompts = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				leftBumper:completeAnimation()
 				self.leftBumper:setAlpha( 1 )
 				self.clipFinished( leftBumper, {} )
+
 				rightBumper:completeAnimation()
 				self.rightBumper:setAlpha( 1 )
 				self.clipFinished( rightBumper, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "WithButtonPrompts",
@@ -148,6 +154,7 @@ CoD.DemoControlsSpectatingBar.new = function ( menu, controller )
 			modelName = "demo.cameraMode"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.leftBumper:close()
 		element.rightBumper:close()

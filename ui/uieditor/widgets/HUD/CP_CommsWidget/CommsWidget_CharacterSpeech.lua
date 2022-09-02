@@ -4,9 +4,11 @@
 CoD.CommsWidget_CharacterSpeech = InheritFrom( LUI.UIElement )
 CoD.CommsWidget_CharacterSpeech.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CommsWidget_CharacterSpeech )
 	self.id = "CommsWidget_CharacterSpeech"

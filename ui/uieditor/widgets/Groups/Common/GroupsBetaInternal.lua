@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Groups.Common.GroupsBetaBacking" )
 CoD.GroupsBetaInternal = InheritFrom( LUI.UIElement )
 CoD.GroupsBetaInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsBetaInternal )
 	self.id = "GroupsBetaInternal"
@@ -30,6 +32,7 @@ CoD.GroupsBetaInternal.new = function ( menu, controller )
 	Label:setTTF( "fonts/FoundryGridnik-Bold.ttf" )
 	Label:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 	Label:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( Label, "setText", function ( element, controller )
 		ScaleWidgetToLabelRightAligned( self, element, 0 )
 	end )

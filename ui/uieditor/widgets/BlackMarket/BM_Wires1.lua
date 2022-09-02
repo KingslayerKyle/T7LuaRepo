@@ -4,9 +4,11 @@
 CoD.BM_Wires1 = InheritFrom( LUI.UIElement )
 CoD.BM_Wires1.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Wires1 )
 	self.id = "BM_Wires1"
@@ -35,15 +37,18 @@ CoD.BM_Wires1.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				wires:completeAnimation()
 				self.wires:setAlpha( 0 )
 				self.clipFinished( wires, {} )
+
 				Mask0:completeAnimation()
 				self.Mask0:setAlpha( 0 )
 				self.clipFinished( Mask0, {} )
 			end,
 			circuitanim = function ()
 				self:setupElementClipCounter( 2 )
+
 				local wiresFrame2 = function ( wires, event )
 					local wiresFrame3 = function ( wires, event )
 						if not event.interrupted then

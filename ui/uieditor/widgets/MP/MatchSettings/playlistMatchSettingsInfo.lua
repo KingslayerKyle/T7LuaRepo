@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.MP.MatchSettings.Playlist_SpecialEventWidget" )
 CoD.playlistMatchSettingsInfo = InheritFrom( LUI.UIElement )
 CoD.playlistMatchSettingsInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.playlistMatchSettingsInfo )
 	self.id = "playlistMatchSettingsInfo"
@@ -126,9 +128,11 @@ CoD.playlistMatchSettingsInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.gameModeInfo:close()
 		element.PlaylistSpecialEventWidget:close()

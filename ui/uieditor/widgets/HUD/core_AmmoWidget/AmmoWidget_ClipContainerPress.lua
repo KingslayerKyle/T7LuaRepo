@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.CP_DamageWidget.DamageWidget_Pixel" )
 CoD.AmmoWidget_ClipContainerPress = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_ClipContainerPress.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_ClipContainerPress )
 	self.id = "AmmoWidget_ClipContainerPress"
@@ -51,14 +53,17 @@ CoD.AmmoWidget_ClipContainerPress.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Clip:completeAnimation()
 				self.Clip:setLeftRight( false, false, -52.5, 55.5 )
 				self.Clip:setTopBottom( false, true, -43.5, 8.5 )
 				self.Clip:setAlpha( 0 )
 				self.clipFinished( Clip, {} )
+
 				Pixel0:completeAnimation()
 				self.Pixel0:setAlpha( 0 )
 				self.clipFinished( Pixel0, {} )
+
 				Pixel1:completeAnimation()
 				self.Pixel1:setAlpha( 0 )
 				self.clipFinished( Pixel1, {} )
@@ -67,6 +72,7 @@ CoD.AmmoWidget_ClipContainerPress.new = function ( menu, controller )
 		NoAmmoPress = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local ClipFrame2 = function ( Clip, event )
 					local ClipFrame3 = function ( Clip, event )
 						local ClipFrame4 = function ( Clip, event )
@@ -395,6 +401,7 @@ CoD.AmmoWidget_ClipContainerPress.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Pixel0:close()
 		element.Pixel1:close()

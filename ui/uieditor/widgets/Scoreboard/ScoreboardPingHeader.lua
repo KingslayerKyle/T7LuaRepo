@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.HelperWidgets.TextWithBg" )
 CoD.ScoreboardPingHeader = InheritFrom( LUI.UIElement )
 CoD.ScoreboardPingHeader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreboardPingHeader )
 	self.id = "ScoreboardPingHeader"
@@ -53,6 +55,7 @@ CoD.ScoreboardPingHeader.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Top3PlayerScoreBlurBox00:completeAnimation()
 				self.Top3PlayerScoreBlurBox00:setAlpha( 1 )
 				self.clipFinished( Top3PlayerScoreBlurBox00, {} )
@@ -61,12 +64,14 @@ CoD.ScoreboardPingHeader.new = function ( menu, controller )
 		GenesisEndGame = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Top3PlayerScoreBlurBox00:completeAnimation()
 				self.Top3PlayerScoreBlurBox00:setAlpha( 0 )
 				self.clipFinished( Top3PlayerScoreBlurBox00, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "GenesisEndGame",
@@ -90,6 +95,7 @@ CoD.ScoreboardPingHeader.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_GAME_ENDED
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Top3PlayerScoreBlurBox00:close()
 		element.VSpanel0:close()

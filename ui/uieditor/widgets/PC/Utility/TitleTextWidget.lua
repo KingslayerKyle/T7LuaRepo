@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.TitleTextWidget = InheritFrom( LUI.UIElement )
 CoD.TitleTextWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TitleTextWidget )
 	self.id = "TitleTextWidget"
@@ -34,6 +36,7 @@ CoD.TitleTextWidget.new = function ( menu, controller )
 	itemName:setShaderVector( 1, 0.02, 0, 0, 0 )
 	itemName:setShaderVector( 2, 1, 0, 0, 0 )
 	itemName:setLetterSpacing( 0.6 )
+
 	LUI.OverrideFunction_CallOriginalFirst( itemName, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 5 )
 	end )

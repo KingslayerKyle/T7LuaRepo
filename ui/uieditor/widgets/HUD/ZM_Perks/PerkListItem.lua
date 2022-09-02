@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_FX.ZmFx_Spark2Ext" )
 CoD.PerkListItem = InheritFrom( LUI.UIElement )
 CoD.PerkListItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PerkListItem )
 	self.id = "PerkListItem"
@@ -82,21 +84,27 @@ CoD.PerkListItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ZmFxSpark2Ext000:completeAnimation()
 				self.ZmFxSpark2Ext000:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext000, {} )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver, {} )
+
 				GlowOrangeOver0:completeAnimation()
 				self.GlowOrangeOver0:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver0, {} )
+
 				PerkImage:completeAnimation()
 				self.PerkImage:setAlpha( 0 )
 				self.clipFinished( PerkImage, {} )
+
 				ZmFxSpark2Ext00:completeAnimation()
 				self.ZmFxSpark2Ext00:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext00, {} )
+
 				GlowOrangeOver1:completeAnimation()
 				self.GlowOrangeOver1:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver1, {} )
@@ -105,27 +113,34 @@ CoD.PerkListItem.new = function ( menu, controller )
 		Enabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ZmFxSpark2Ext000:completeAnimation()
 				self.ZmFxSpark2Ext000:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext000, {} )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver, {} )
+
 				GlowOrangeOver0:completeAnimation()
 				self.GlowOrangeOver0:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver0, {} )
+
 				PerkImage:completeAnimation()
 				self.PerkImage:setAlpha( 1 )
 				self.clipFinished( PerkImage, {} )
+
 				ZmFxSpark2Ext00:completeAnimation()
 				self.ZmFxSpark2Ext00:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark2Ext00, {} )
+
 				GlowOrangeOver1:completeAnimation()
 				self.GlowOrangeOver1:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver1, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 6 )
+
 				local ZmFxSpark2Ext000Frame2 = function ( ZmFxSpark2Ext000, event )
 					local ZmFxSpark2Ext000Frame3 = function ( ZmFxSpark2Ext000, event )
 						if not event.interrupted then
@@ -364,6 +379,7 @@ CoD.PerkListItem.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Enabled",
@@ -380,11 +396,13 @@ CoD.PerkListItem.new = function ( menu, controller )
 			modelName = "status"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsSelfModelValueTrue( element, controller, "newPerk" ) then
 			PlayClip( self, "Intro", controller )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmFxSpark2Ext000:close()
 		element.ZmFxSpark2Ext00:close()

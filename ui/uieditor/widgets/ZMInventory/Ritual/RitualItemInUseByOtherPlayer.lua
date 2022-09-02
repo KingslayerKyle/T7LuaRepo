@@ -4,9 +4,11 @@
 CoD.RitualItemInUseByOtherPlayer = InheritFrom( LUI.UIElement )
 CoD.RitualItemInUseByOtherPlayer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RitualItemInUseByOtherPlayer )
 	self.id = "RitualItemInUseByOtherPlayer"
@@ -30,30 +32,36 @@ CoD.RitualItemInUseByOtherPlayer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Found = function ()
 				self:setupElementClipCounter( 0 )
+
 				self.nextClip = "Found"
 			end
 		},
 		Found = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Worm = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Completed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Activated = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

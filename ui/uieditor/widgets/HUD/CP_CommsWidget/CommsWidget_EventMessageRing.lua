@@ -4,9 +4,11 @@
 CoD.CommsWidget_EventMessageRing = InheritFrom( LUI.UIElement )
 CoD.CommsWidget_EventMessageRing.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CommsWidget_EventMessageRing )
 	self.id = "CommsWidget_EventMessageRing"

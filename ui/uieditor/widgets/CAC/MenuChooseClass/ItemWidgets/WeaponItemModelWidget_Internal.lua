@@ -14,9 +14,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FocusBarContainer" )
 CoD.WeaponItemModelWidget_Internal = InheritFrom( LUI.UIElement )
 CoD.WeaponItemModelWidget_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponItemModelWidget_Internal )
 	self.id = "WeaponItemModelWidget_Internal"
@@ -145,57 +147,74 @@ CoD.WeaponItemModelWidget_Internal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 0 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.5 )
 				self.clipFinished( itemImage, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setRGB( 1, 1, 1 )
 				self.clipFinished( Image0, {} )
+
 				personalizePrompt:completeAnimation()
 				self.personalizePrompt:setAlpha( 0 )
 				self.clipFinished( personalizePrompt, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				personalizePrompt:completeAnimation()
 				self.personalizePrompt:setAlpha( 0 )
 				self.clipFinished( personalizePrompt, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
@@ -204,42 +223,54 @@ CoD.WeaponItemModelWidget_Internal.new = function ( menu, controller )
 		Equipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0.9 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 1 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.8 )
 				self.clipFinished( itemImage, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setRGB( 1, 0, 0 )
 				self.clipFinished( Image0, {} )
+
 				personalizePrompt:completeAnimation()
 				self.personalizePrompt:setAlpha( 0 )
 				self.clipFinished( personalizePrompt, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0.9 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 1 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setRGB( 1, 0, 0 )
 				self.clipFinished( Image0, {} )
+
 				personalizePrompt:completeAnimation()
 				self.personalizePrompt:setAlpha( 0 )
 				self.clipFinished( personalizePrompt, {} )
@@ -248,42 +279,54 @@ CoD.WeaponItemModelWidget_Internal.new = function ( menu, controller )
 		WeaponEquipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0.9 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 1 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.8 )
 				self.clipFinished( itemImage, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setRGB( 1, 0, 0 )
 				self.clipFinished( Image0, {} )
+
 				personalizePrompt:completeAnimation()
 				self.personalizePrompt:setAlpha( 0 )
 				self.clipFinished( personalizePrompt, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0.9 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 1 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setRGB( 1, 0, 0 )
 				self.clipFinished( Image0, {} )
+
 				personalizePrompt:completeAnimation()
 				self.personalizePrompt:setAlpha( 1 )
 				self.clipFinished( personalizePrompt, {} )
@@ -292,42 +335,54 @@ CoD.WeaponItemModelWidget_Internal.new = function ( menu, controller )
 		Available = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0.9 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 1 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setRGB( 0, 1, 0 )
 				self.clipFinished( Image0, {} )
+
 				personalizePrompt:completeAnimation()
 				self.personalizePrompt:setAlpha( 0 )
 				self.clipFinished( personalizePrompt, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0.9 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 1 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setAlpha( 1 )
 				self.clipFinished( plusIcon, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setRGB( 0, 1, 0 )
 				self.clipFinished( Image0, {} )
+
 				personalizePrompt:completeAnimation()
 				self.personalizePrompt:setAlpha( 0 )
 				self.clipFinished( personalizePrompt, {} )
@@ -336,42 +391,54 @@ CoD.WeaponItemModelWidget_Internal.new = function ( menu, controller )
 		NotEquippable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0.9 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 1 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setRGB( 0, 0, 1 )
 				self.clipFinished( Image0, {} )
+
 				personalizePrompt:completeAnimation()
 				self.personalizePrompt:setAlpha( 0 )
 				self.clipFinished( personalizePrompt, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0.9 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 1 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 1 )
 				self.clipFinished( Image0, {} )
+
 				personalizePrompt:completeAnimation()
 				self.personalizePrompt:setAlpha( 0 )
 				self.clipFinished( personalizePrompt, {} )
@@ -380,42 +447,54 @@ CoD.WeaponItemModelWidget_Internal.new = function ( menu, controller )
 		NotAvailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0.9 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 1 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.5 )
 				self.clipFinished( itemImage, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setRGB( 1, 1, 0 )
 				self.clipFinished( Image0, {} )
+
 				personalizePrompt:completeAnimation()
 				self.personalizePrompt:setAlpha( 0 )
 				self.clipFinished( personalizePrompt, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0.9 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 1 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.5 )
 				self.clipFinished( itemImage, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setRGB( 1, 1, 0 )
 				self.clipFinished( Image0, {} )
+
 				personalizePrompt:completeAnimation()
 				self.personalizePrompt:setAlpha( 0 )
 				self.clipFinished( personalizePrompt, {} )
@@ -424,27 +503,34 @@ CoD.WeaponItemModelWidget_Internal.new = function ( menu, controller )
 		NotVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 0 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
+
 				plusIcon:completeAnimation()
 				self.plusIcon:setAlpha( 0 )
 				self.clipFinished( plusIcon, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setRGB( 1, 0.5, 0 )
 				self.clipFinished( Image0, {} )
+
 				personalizePrompt:completeAnimation()
 				self.personalizePrompt:setAlpha( 0 )
 				self.clipFinished( personalizePrompt, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Equipped",
@@ -483,6 +569,7 @@ CoD.WeaponItemModelWidget_Internal.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BorderBakedMask0:close()
 		element.BorderBakedSolid0:close()

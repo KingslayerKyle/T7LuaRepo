@@ -4,9 +4,11 @@
 CoD.CallingCards_zmhd_master = InheritFrom( LUI.UIElement )
 CoD.CallingCards_zmhd_master.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_zmhd_master )
 	self.id = "CallingCards_zmhd_master"

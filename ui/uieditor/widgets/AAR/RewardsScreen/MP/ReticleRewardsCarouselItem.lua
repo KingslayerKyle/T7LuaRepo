@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleNumBrdr" )
 CoD.ReticleRewardsCarouselItem = InheritFrom( LUI.UIElement )
 CoD.ReticleRewardsCarouselItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ReticleRewardsCarouselItem )
 	self.id = "ReticleRewardsCarouselItem"
@@ -73,11 +75,17 @@ CoD.ReticleRewardsCarouselItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ReticleRewardsCarouselItemInternal:completeAnimation()
+
 				ReticleRewardsCarouselItemInternal.FEButtonPanel0:completeAnimation()
+
 				ReticleRewardsCarouselItemInternal.IndividualRewardItem1.Border:completeAnimation()
+
 				ReticleRewardsCarouselItemInternal.IndividualRewardItem2.Border:completeAnimation()
+
 				ReticleRewardsCarouselItemInternal.IndividualRewardItem3.Border:completeAnimation()
+
 				ReticleRewardsCarouselItemInternal.IndividualRewardItem4.Border:completeAnimation()
 				self.ReticleRewardsCarouselItemInternal:setScale( 1 )
 				self.ReticleRewardsCarouselItemInternal.FEButtonPanel0:setAlpha( 0.5 )
@@ -86,29 +94,40 @@ CoD.ReticleRewardsCarouselItem.new = function ( menu, controller )
 				self.ReticleRewardsCarouselItemInternal.IndividualRewardItem3.Border:setRGB( 0.37, 0.37, 0.37 )
 				self.ReticleRewardsCarouselItemInternal.IndividualRewardItem4.Border:setRGB( 0.37, 0.37, 0.37 )
 				self.clipFinished( ReticleRewardsCarouselItemInternal, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setAlpha( 0 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				FocusBarB00:completeAnimation()
 				self.FocusBarB00:setAlpha( 0 )
 				self.clipFinished( FocusBarB00, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				ReticleRewardsCarouselItemInternal:completeAnimation()
+
 				ReticleRewardsCarouselItemInternal.FEButtonPanel0:completeAnimation()
+
 				ReticleRewardsCarouselItemInternal.IndividualRewardItem1.Border:completeAnimation()
+
 				ReticleRewardsCarouselItemInternal.IndividualRewardItem2.Border:completeAnimation()
+
 				ReticleRewardsCarouselItemInternal.IndividualRewardItem3.Border:completeAnimation()
+
 				ReticleRewardsCarouselItemInternal.IndividualRewardItem4.Border:completeAnimation()
 				self.ReticleRewardsCarouselItemInternal:setScale( 1.1 )
 				self.ReticleRewardsCarouselItemInternal.FEButtonPanel0:setAlpha( 0.75 )
@@ -117,28 +136,34 @@ CoD.ReticleRewardsCarouselItem.new = function ( menu, controller )
 				self.ReticleRewardsCarouselItemInternal.IndividualRewardItem3.Border:setRGB( 0.67, 0.67, 0.67 )
 				self.ReticleRewardsCarouselItemInternal.IndividualRewardItem4.Border:setRGB( 0.67, 0.67, 0.67 )
 				self.clipFinished( ReticleRewardsCarouselItemInternal, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, -15, 15 )
 				self.FocusBarB:setTopBottom( false, true, 19, 23 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, -15, 15 )
 				self.FocusBarT:setTopBottom( true, false, -23, -19 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setAlpha( 0 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				FocusBarB00:completeAnimation()
 				self.FocusBarB00:setAlpha( 0 )
 				self.clipFinished( FocusBarB00, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local ReticleRewardsCarouselItemInternalFrame2 = function ( ReticleRewardsCarouselItemInternal, event )
 					local ReticleRewardsCarouselItemInternalFrame3 = function ( ReticleRewardsCarouselItemInternal, event )
 						if not event.interrupted then
@@ -183,10 +208,15 @@ CoD.ReticleRewardsCarouselItem.new = function ( menu, controller )
 				end
 				
 				ReticleRewardsCarouselItemInternal:completeAnimation()
+
 				ReticleRewardsCarouselItemInternal.FEButtonPanel0:completeAnimation()
+
 				ReticleRewardsCarouselItemInternal.IndividualRewardItem1.Border:completeAnimation()
+
 				ReticleRewardsCarouselItemInternal.IndividualRewardItem2.Border:completeAnimation()
+
 				ReticleRewardsCarouselItemInternal.IndividualRewardItem3.Border:completeAnimation()
+
 				ReticleRewardsCarouselItemInternal.IndividualRewardItem4.Border:completeAnimation()
 				self.ReticleRewardsCarouselItemInternal:setScale( 1 )
 				self.ReticleRewardsCarouselItemInternal.FEButtonPanel0:setAlpha( 0.5 )
@@ -195,34 +225,42 @@ CoD.ReticleRewardsCarouselItem.new = function ( menu, controller )
 				self.ReticleRewardsCarouselItemInternal.IndividualRewardItem3.Border:setRGB( 0.37, 0.37, 0.37 )
 				self.ReticleRewardsCarouselItemInternal.IndividualRewardItem4.Border:setRGB( 0.37, 0.37, 0.37 )
 				ReticleRewardsCarouselItemInternalFrame2( ReticleRewardsCarouselItemInternal, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setAlpha( 0 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				FocusBarB00:completeAnimation()
 				self.FocusBarB00:setAlpha( 0 )
 				self.clipFinished( FocusBarB00, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 5 )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setLeftRight( false, false, -138, 138 )
 				self.FETitleNumBrdr0:setTopBottom( false, false, -220, 220 )
 				self.FETitleNumBrdr0:setAlpha( 1 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				FocusBarB00:completeAnimation()
 				self.FocusBarB00:setLeftRight( false, false, -142, 142 )
 				self.FocusBarB00:setTopBottom( false, false, -216, -222 )
 				self.FocusBarB00:setAlpha( 1 )
 				self.clipFinished( FocusBarB00, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setLeftRight( false, false, -142, 142 )
 				self.FocusBarB0:setTopBottom( false, false, 221, 217 )
@@ -231,6 +269,7 @@ CoD.ReticleRewardsCarouselItem.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ReticleRewardsCarouselItemInternal:close()
 		element.FocusBarB:close()

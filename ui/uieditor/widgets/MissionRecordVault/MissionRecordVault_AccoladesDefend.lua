@@ -16,9 +16,11 @@ end
 CoD.MissionRecordVault_AccoladesDefend = InheritFrom( LUI.UIElement )
 CoD.MissionRecordVault_AccoladesDefend.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MissionRecordVault_AccoladesDefend )
 	self.id = "MissionRecordVault_AccoladesDefend"
@@ -55,6 +57,7 @@ CoD.MissionRecordVault_AccoladesDefend.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				image:completeAnimation()
 				self.image:setRGB( 1, 0.96, 0 )
 				self.clipFinished( image, {} )
@@ -63,21 +66,26 @@ CoD.MissionRecordVault_AccoladesDefend.new = function ( menu, controller )
 		Incomplete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				image:completeAnimation()
 				self.image:setRGB( 1, 1, 1 )
 				self.clipFinished( image, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Incomplete",
@@ -94,6 +102,7 @@ CoD.MissionRecordVault_AccoladesDefend.new = function ( menu, controller )
 			modelName = "completed"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.centerText:close()
 	end )

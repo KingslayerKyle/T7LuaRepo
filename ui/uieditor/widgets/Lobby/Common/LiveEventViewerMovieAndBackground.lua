@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_frame_noBG" )
 CoD.LiveEventViewerMovieAndBackground = InheritFrom( LUI.UIElement )
 CoD.LiveEventViewerMovieAndBackground.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LiveEventViewerMovieAndBackground )
 	self.id = "LiveEventViewerMovieAndBackground"
@@ -80,23 +82,28 @@ CoD.LiveEventViewerMovieAndBackground.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				scorestreakVignetteContainer:completeAnimation()
 				self.scorestreakVignetteContainer:setAlpha( 0.5 )
 				self.clipFinished( scorestreakVignetteContainer, {} )
+
 				OpaqueBackground:completeAnimation()
 				self.OpaqueBackground:setLeftRight( true, true, 0, 0 )
 				self.OpaqueBackground:setTopBottom( true, true, 0, 0 )
 				self.clipFinished( OpaqueBackground, {} )
+
 				TwitchStream0:completeAnimation()
 				self.TwitchStream0:setLeftRight( true, true, 0, 0 )
 				self.TwitchStream0:setTopBottom( true, true, 0, 0 )
 				self.clipFinished( TwitchStream0, {} )
+
 				StartMenuframenoBG00:completeAnimation()
 				self.StartMenuframenoBG00:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG00, {} )
 			end,
 			Windowed = function ()
 				self:setupElementClipCounter( 4 )
+
 				local scorestreakVignetteContainerFrame2 = function ( scorestreakVignetteContainer, event )
 					if not event.interrupted then
 						scorestreakVignetteContainer:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -180,24 +187,29 @@ CoD.LiveEventViewerMovieAndBackground.new = function ( menu, controller )
 		Windowed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				FEButtonPanel00:completeAnimation()
 				self.FEButtonPanel00:setLeftRight( true, true, -128, 128 )
 				self.FEButtonPanel00:setTopBottom( true, true, -22, 20 )
 				self.clipFinished( FEButtonPanel00, {} )
+
 				scorestreakVignetteContainer:completeAnimation()
 				self.scorestreakVignetteContainer:setLeftRight( true, true, -128, 128 )
 				self.scorestreakVignetteContainer:setTopBottom( true, true, -71, 71 )
 				self.scorestreakVignetteContainer:setAlpha( 1 )
 				self.clipFinished( scorestreakVignetteContainer, {} )
+
 				OpaqueBackground:completeAnimation()
 				self.OpaqueBackground:setLeftRight( true, true, 213.33, -213.33 )
 				self.OpaqueBackground:setTopBottom( true, true, 120, -120 )
 				self.clipFinished( OpaqueBackground, {} )
+
 				TwitchStream0:completeAnimation()
 				self.TwitchStream0:setLeftRight( true, true, 172.33, -172.33 )
 				self.TwitchStream0:setTopBottom( true, true, 97, -97 )
 				self.TwitchStream0:setScale( 1 )
 				self.clipFinished( TwitchStream0, {} )
+
 				StartMenuframenoBG00:completeAnimation()
 				self.StartMenuframenoBG00:setLeftRight( true, true, 172.33, -172.33 )
 				self.StartMenuframenoBG00:setTopBottom( true, true, 97, -97 )
@@ -207,6 +219,7 @@ CoD.LiveEventViewerMovieAndBackground.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 4 )
+
 				local SpinnerFrame2 = function ( Spinner, event )
 					if not event.interrupted then
 						Spinner:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -284,6 +297,7 @@ CoD.LiveEventViewerMovieAndBackground.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel00:close()
 		element.scorestreakVignetteContainer:close()

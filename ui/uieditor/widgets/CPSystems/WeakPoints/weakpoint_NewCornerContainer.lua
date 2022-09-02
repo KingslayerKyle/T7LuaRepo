@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CPSystems.WeakPoints.weakpoint_NewCorner" )
 CoD.weakpoint_NewCornerContainer = InheritFrom( LUI.UIElement )
 CoD.weakpoint_NewCornerContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.weakpoint_NewCornerContainer )
 	self.id = "weakpoint_NewCornerContainer"

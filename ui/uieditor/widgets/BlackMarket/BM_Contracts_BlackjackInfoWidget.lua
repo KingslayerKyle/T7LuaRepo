@@ -7,6 +7,7 @@ require( "ui.uieditor.widgets.BlackMarket.BM_Contracts_CC_Widget" )
 require( "ui.uieditor.widgets.BlackMarket.BM_Contracts_BJ_ReadyWidget" )
 
 local PostLoadFunc = function ( f1_arg0, f1_arg1 )
+
 	LUI.OverrideFunction_CallOriginalFirst( f1_arg0, "setState", function ( element, controller )
 		DataSources.SideBetCurrentChallenge.getModel( f1_arg1 )
 	end )
@@ -15,9 +16,11 @@ end
 CoD.BM_Contracts_BlackjackInfoWidget = InheritFrom( LUI.UIElement )
 CoD.BM_Contracts_BlackjackInfoWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Contracts_BlackjackInfoWidget )
 	self.id = "BM_Contracts_BlackjackInfoWidget"
@@ -218,66 +221,86 @@ CoD.BM_Contracts_BlackjackInfoWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				BlackjackIconOff:completeAnimation()
 				self.BlackjackIconOff:setAlpha( 1 )
 				self.clipFinished( BlackjackIconOff, {} )
+
 				BlackjackIconOn:completeAnimation()
 				self.BlackjackIconOn:setAlpha( 0 )
 				self.clipFinished( BlackjackIconOn, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				Background0:completeAnimation()
 				self.Background0:setAlpha( 1 )
 				self.clipFinished( Background0, {} )
+
 				Divider0:completeAnimation()
 				self.Divider0:setAlpha( 0 )
 				self.clipFinished( Divider0, {} )
+
 				SideBetTitle:completeAnimation()
 				self.SideBetTitle:setAlpha( 0 )
 				self.clipFinished( SideBetTitle, {} )
+
 				BMContractsBJActivatedWidget:completeAnimation()
 				self.BMContractsBJActivatedWidget:setAlpha( 0 )
 				self.clipFinished( BMContractsBJActivatedWidget, {} )
+
 				BMContractsCCWidget:completeAnimation()
 				self.BMContractsCCWidget:setAlpha( 0 )
 				self.clipFinished( BMContractsCCWidget, {} )
+
 				NineSliceShaderImage:completeAnimation()
 				self.NineSliceShaderImage:setAlpha( 0 )
 				self.clipFinished( NineSliceShaderImage, {} )
+
 				upperglow:completeAnimation()
 				self.upperglow:setAlpha( 0 )
 				self.clipFinished( upperglow, {} )
+
 				lowerglow:completeAnimation()
 				self.lowerglow:setAlpha( 0 )
 				self.clipFinished( lowerglow, {} )
+
 				BMContractsBJReadyWidget:completeAnimation()
 				self.BMContractsBJReadyWidget:setAlpha( 1 )
 				self.clipFinished( BMContractsBJReadyWidget, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 12 )
+
 				BlackjackIconOff:completeAnimation()
 				self.BlackjackIconOff:setAlpha( 1 )
 				self.clipFinished( BlackjackIconOff, {} )
+
 				BlackjackIconOn:completeAnimation()
 				self.BlackjackIconOn:setAlpha( 0 )
 				self.clipFinished( BlackjackIconOn, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				Background0:completeAnimation()
 				self.Background0:setAlpha( 1 )
 				self.clipFinished( Background0, {} )
+
 				Divider0:completeAnimation()
 				self.Divider0:setAlpha( 0 )
 				self.clipFinished( Divider0, {} )
+
 				SideBetTitle:completeAnimation()
 				self.SideBetTitle:setAlpha( 0 )
 				self.clipFinished( SideBetTitle, {} )
+
 				BMContractsBJActivatedWidget:completeAnimation()
 				self.BMContractsBJActivatedWidget:setAlpha( 0 )
 				self.clipFinished( BMContractsBJActivatedWidget, {} )
+
 				BMContractsCCWidget:completeAnimation()
 				self.BMContractsCCWidget:setAlpha( 0 )
 				self.clipFinished( BMContractsCCWidget, {} )
@@ -359,93 +382,121 @@ CoD.BM_Contracts_BlackjackInfoWidget.new = function ( menu, controller )
 				lowerglow:completeAnimation()
 				self.lowerglow:setAlpha( 1 )
 				lowerglowFrame2( lowerglow, {} )
+
 				BMContractsBJReadyWidget:completeAnimation()
 				self.BMContractsBJReadyWidget:setAlpha( 1 )
 				self.clipFinished( BMContractsBJReadyWidget, {} )
+
 				self.nextClip = "Focus"
 			end
 		},
 		Activated = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				BlackjackIconOff:completeAnimation()
 				self.BlackjackIconOff:setAlpha( 0 )
 				self.clipFinished( BlackjackIconOff, {} )
+
 				BlackjackIconOn:completeAnimation()
 				self.BlackjackIconOn:setAlpha( 1 )
 				self.clipFinished( BlackjackIconOn, {} )
+
 				header:completeAnimation()
 				self.header:setAlpha( 1 )
 				self.clipFinished( header, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				Background0:completeAnimation()
 				self.Background0:setAlpha( 1 )
 				self.clipFinished( Background0, {} )
+
 				Divider0:completeAnimation()
 				self.Divider0:setAlpha( 1 )
 				self.clipFinished( Divider0, {} )
+
 				BlackjackContractsDescription:completeAnimation()
 				self.BlackjackContractsDescription:setAlpha( 1 )
 				self.clipFinished( BlackjackContractsDescription, {} )
+
 				SideBetTitle:completeAnimation()
 				self.SideBetTitle:setAlpha( 1 )
 				self.clipFinished( SideBetTitle, {} )
+
 				BMContractsContractAmountWidget:completeAnimation()
 				self.BMContractsContractAmountWidget:setAlpha( 1 )
 				self.clipFinished( BMContractsContractAmountWidget, {} )
+
 				BMContractsBJActivatedWidget:completeAnimation()
 				self.BMContractsBJActivatedWidget:setAlpha( 1 )
 				self.clipFinished( BMContractsBJActivatedWidget, {} )
+
 				BMContractsCCWidget:completeAnimation()
 				self.BMContractsCCWidget:setAlpha( 1 )
 				self.clipFinished( BMContractsCCWidget, {} )
+
 				NineSliceShaderImage:completeAnimation()
 				self.NineSliceShaderImage:setAlpha( 0 )
 				self.clipFinished( NineSliceShaderImage, {} )
+
 				upperglow:completeAnimation()
 				self.upperglow:setAlpha( 0 )
 				self.clipFinished( upperglow, {} )
+
 				lowerglow:completeAnimation()
 				self.lowerglow:setAlpha( 0 )
 				self.clipFinished( lowerglow, {} )
+
 				BMContractsBJReadyWidget:completeAnimation()
 				self.BMContractsBJReadyWidget:setAlpha( 0 )
 				self.clipFinished( BMContractsBJReadyWidget, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 15 )
+
 				BlackjackIconOff:completeAnimation()
 				self.BlackjackIconOff:setAlpha( 0 )
 				self.clipFinished( BlackjackIconOff, {} )
+
 				BlackjackIconOn:completeAnimation()
 				self.BlackjackIconOn:setAlpha( 1 )
 				self.clipFinished( BlackjackIconOn, {} )
+
 				header:completeAnimation()
 				self.header:setAlpha( 1 )
 				self.clipFinished( header, {} )
+
 				BackgroundCompleted:completeAnimation()
 				self.BackgroundCompleted:setAlpha( 0 )
 				self.clipFinished( BackgroundCompleted, {} )
+
 				Background0:completeAnimation()
 				self.Background0:setAlpha( 1 )
 				self.clipFinished( Background0, {} )
+
 				Divider0:completeAnimation()
 				self.Divider0:setAlpha( 1 )
 				self.clipFinished( Divider0, {} )
+
 				BlackjackContractsDescription:completeAnimation()
 				self.BlackjackContractsDescription:setAlpha( 1 )
 				self.clipFinished( BlackjackContractsDescription, {} )
+
 				SideBetTitle:completeAnimation()
 				self.SideBetTitle:setAlpha( 1 )
 				self.clipFinished( SideBetTitle, {} )
+
 				BMContractsContractAmountWidget:completeAnimation()
 				self.BMContractsContractAmountWidget:setAlpha( 1 )
 				self.clipFinished( BMContractsContractAmountWidget, {} )
+
 				BMContractsBJActivatedWidget:completeAnimation()
 				self.BMContractsBJActivatedWidget:setAlpha( 1 )
 				self.clipFinished( BMContractsBJActivatedWidget, {} )
+
 				BMContractsCCWidget:completeAnimation()
 				self.BMContractsCCWidget:setAlpha( 1 )
 				self.clipFinished( BMContractsCCWidget, {} )
@@ -527,13 +578,16 @@ CoD.BM_Contracts_BlackjackInfoWidget.new = function ( menu, controller )
 				lowerglow:completeAnimation()
 				self.lowerglow:setAlpha( 1 )
 				lowerglowFrame2( lowerglow, {} )
+
 				BMContractsBJReadyWidget:completeAnimation()
 				self.BMContractsBJReadyWidget:setAlpha( 0 )
 				self.clipFinished( BMContractsBJReadyWidget, {} )
+
 				self.nextClip = "Focus"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Activated",
@@ -542,6 +596,7 @@ CoD.BM_Contracts_BlackjackInfoWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BMContractsContractAmountWidget:close()
 		element.BMContractsBJActivatedWidget:close()

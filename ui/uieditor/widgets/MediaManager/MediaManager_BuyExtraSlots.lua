@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.MediaManager_BuyExtraSlots = InheritFrom( LUI.UIElement )
 CoD.MediaManager_BuyExtraSlots.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MediaManager_BuyExtraSlots )
 	self.id = "MediaManager_BuyExtraSlots"
@@ -60,15 +62,19 @@ CoD.MediaManager_BuyExtraSlots.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				HeaderBG:completeAnimation()
 				self.HeaderBG:setAlpha( 0 )
 				self.clipFinished( HeaderBG, {} )
+
 				HeaderLabel:completeAnimation()
 				self.HeaderLabel:setAlpha( 0 )
 				self.clipFinished( HeaderLabel, {} )
+
 				BuyMoreDesc:completeAnimation()
 				self.BuyMoreDesc:setAlpha( 0 )
 				self.clipFinished( BuyMoreDesc, {} )
@@ -77,21 +83,26 @@ CoD.MediaManager_BuyExtraSlots.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 1 )
 				self.clipFinished( BG, {} )
+
 				HeaderBG:completeAnimation()
 				self.HeaderBG:setAlpha( 1 )
 				self.clipFinished( HeaderBG, {} )
+
 				HeaderLabel:completeAnimation()
 				self.HeaderLabel:setAlpha( 1 )
 				self.clipFinished( HeaderLabel, {} )
+
 				BuyMoreDesc:completeAnimation()
 				self.BuyMoreDesc:setAlpha( 0.8 )
 				self.clipFinished( BuyMoreDesc, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -108,6 +119,7 @@ CoD.MediaManager_BuyExtraSlots.new = function ( menu, controller )
 			modelName = "MediaManager.isBuyMoreSlot"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.HeaderBG:close()
 	end )

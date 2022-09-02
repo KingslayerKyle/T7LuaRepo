@@ -4,9 +4,11 @@
 CoD.CallingCard_loot_alexandria_bolts = InheritFrom( LUI.UIElement )
 CoD.CallingCard_loot_alexandria_bolts.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCard_loot_alexandria_bolts )
 	self.id = "CallingCard_loot_alexandria_bolts"
@@ -40,6 +42,7 @@ CoD.CallingCard_loot_alexandria_bolts.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local bolt1Frame2 = function ( bolt1, event )
 					local bolt1Frame3 = function ( bolt1, event )
 						local bolt1Frame4 = function ( bolt1, event )
@@ -354,6 +357,7 @@ CoD.CallingCard_loot_alexandria_bolts.new = function ( menu, controller )
 				bolt3:completeAnimation()
 				self.bolt3:setAlpha( 0 )
 				bolt3Frame2( bolt3, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

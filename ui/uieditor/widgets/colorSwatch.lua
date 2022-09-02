@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.colorSwatch = InheritFrom( LUI.UIElement )
 CoD.colorSwatch.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.colorSwatch )
 	self.id = "colorSwatch"

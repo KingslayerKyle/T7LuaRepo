@@ -4,9 +4,11 @@
 CoD.StarterPackWatermark = InheritFrom( LUI.UIElement )
 CoD.StarterPackWatermark.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StarterPackWatermark )
 	self.id = "StarterPackWatermark"
@@ -33,6 +35,7 @@ CoD.StarterPackWatermark.new = function ( menu, controller )
 		end
 		return f2_local0
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( StarterPackWatermark, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )
@@ -43,6 +46,7 @@ CoD.StarterPackWatermark.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				StarterPackWatermark:completeAnimation()
 				self.StarterPackWatermark:setAlpha( 1 )
 				self.clipFinished( StarterPackWatermark, {} )
@@ -51,12 +55,14 @@ CoD.StarterPackWatermark.new = function ( menu, controller )
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				StarterPackWatermark:completeAnimation()
 				self.StarterPackWatermark:setAlpha( 0 )
 				self.clipFinished( StarterPackWatermark, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hide",

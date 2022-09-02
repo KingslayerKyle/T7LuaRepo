@@ -4,9 +4,11 @@
 CoD.MapWidget_PanelVignetteGlow = InheritFrom( LUI.UIElement )
 CoD.MapWidget_PanelVignetteGlow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MapWidget_PanelVignetteGlow )
 	self.id = "MapWidget_PanelVignetteGlow"

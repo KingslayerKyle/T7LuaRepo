@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.dart.vhud_dart_Timebar" )
 CoD.vhud_turret_reticle = InheritFrom( LUI.UIElement )
 CoD.vhud_turret_reticle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_turret_reticle )
 	self.id = "vhud_turret_reticle"
@@ -250,9 +252,11 @@ CoD.vhud_turret_reticle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 19 )
+
 				local agrCenterPointFrame2 = function ( agrCenterPoint, event )
 					if not event.interrupted then
 						agrCenterPoint:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -799,6 +803,7 @@ CoD.vhud_turret_reticle.new = function ( menu, controller )
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 17 )
+
 				ReticleLower:completeAnimation()
 				self.ReticleLower:setAlpha( 1 )
 				self.clipFinished( ReticleLower, {} )
@@ -1097,77 +1102,95 @@ CoD.vhud_turret_reticle.new = function ( menu, controller )
 		Zoom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 18 )
+
 				agrCenterPoint:completeAnimation()
 				self.agrCenterPoint:setLeftRight( false, false, -9, 7 )
 				self.agrCenterPoint:setTopBottom( false, false, -8, 8 )
 				self.clipFinished( agrCenterPoint, {} )
+
 				ReticleLower:completeAnimation()
 				self.ReticleLower:setAlpha( 1 )
 				self.clipFinished( ReticleLower, {} )
+
 				OutsideHashLineR5:completeAnimation()
 				self.OutsideHashLineR5:setLeftRight( false, false, 169.8, 275.3 )
 				self.OutsideHashLineR5:setTopBottom( false, false, -8, 8.23 )
 				self.clipFinished( OutsideHashLineR5, {} )
+
 				Image8:completeAnimation()
 				self.Image8:setLeftRight( false, false, -270.5, -165 )
 				self.Image8:setTopBottom( false, false, -8.23, 8 )
 				self.clipFinished( Image8, {} )
+
 				Image9:completeAnimation()
 				self.Image9:setLeftRight( false, false, -52.75, 52.75 )
 				self.Image9:setTopBottom( false, false, -174.6, -158.37 )
 				self.Image9:setAlpha( 1 )
 				self.clipFinished( Image9, {} )
+
 				Image10:completeAnimation()
 				self.Image10:setAlpha( 0 )
 				self.clipFinished( Image10, {} )
+
 				Image11:completeAnimation()
 				self.Image11:setAlpha( 0 )
 				self.clipFinished( Image11, {} )
+
 				vhudturretreticlecenter:completeAnimation()
 				self.vhudturretreticlecenter:setScale( 0.7 )
 				self.clipFinished( vhudturretreticlecenter, {} )
+
 				vhudagrReticleOutsideDotsUR:completeAnimation()
 				self.vhudagrReticleOutsideDotsUR:setLeftRight( false, false, -32.5, 30.5 )
 				self.vhudagrReticleOutsideDotsUR:setTopBottom( false, false, -53.88, -22.08 )
 				self.vhudagrReticleOutsideDotsUR:setAlpha( 0.4 )
 				self.clipFinished( vhudagrReticleOutsideDotsUR, {} )
+
 				vhudagrReticleOutsideDotsUR0:completeAnimation()
 				self.vhudagrReticleOutsideDotsUR0:setLeftRight( false, false, -5.5, 57.5 )
 				self.vhudagrReticleOutsideDotsUR0:setTopBottom( false, false, 11.2, 43 )
 				self.vhudagrReticleOutsideDotsUR0:setAlpha( 0.4 )
 				self.clipFinished( vhudagrReticleOutsideDotsUR0, {} )
+
 				vhudagrReticleOutsideDotsUR1:completeAnimation()
 				self.vhudagrReticleOutsideDotsUR1:setLeftRight( false, false, -59, 5 )
 				self.vhudagrReticleOutsideDotsUR1:setTopBottom( false, false, 11.2, 43 )
 				self.vhudagrReticleOutsideDotsUR1:setAlpha( 0.4 )
 				self.clipFinished( vhudagrReticleOutsideDotsUR1, {} )
+
 				UpperLineRight:completeAnimation()
 				self.UpperLineRight:setAlpha( 0 )
 				self.clipFinished( UpperLineRight, {} )
+
 				UpperLineLeft:completeAnimation()
 				self.UpperLineLeft:setAlpha( 0 )
 				self.clipFinished( UpperLineLeft, {} )
+
 				FadeLeft:completeAnimation()
 				self.FadeLeft:setLeftRight( false, false, -217.75, 16 )
 				self.FadeLeft:setTopBottom( false, false, -174.6, 162.1 )
 				self.FadeLeft:setAlpha( 0.5 )
 				self.FadeLeft:setScale( 0.8 )
 				self.clipFinished( FadeLeft, {} )
+
 				FadeRight:completeAnimation()
 				self.FadeRight:setLeftRight( false, false, -17, 216.75 )
 				self.FadeRight:setTopBottom( false, false, -174.6, 162.1 )
 				self.FadeRight:setScale( 0.8 )
 				self.clipFinished( FadeRight, {} )
+
 				FadeLeftBLUR:completeAnimation()
 				self.FadeLeftBLUR:setLeftRight( false, false, -339, -105.25 )
 				self.FadeLeftBLUR:setTopBottom( false, false, -174.6, 162.1 )
 				self.FadeLeftBLUR:setScale( 1.5 )
 				self.clipFinished( FadeLeftBLUR, {} )
+
 				FadeRightBLUR:completeAnimation()
 				self.FadeRightBLUR:setLeftRight( false, false, 129.43, 363.18 )
 				self.FadeRightBLUR:setTopBottom( false, false, -174.6, 162.1 )
 				self.FadeRightBLUR:setScale( 1.5 )
 				self.clipFinished( FadeRightBLUR, {} )
+
 				vhudturretreticlearrows:completeAnimation()
 				self.vhudturretreticlearrows:setLeftRight( false, false, -32.5, 31.5 )
 				self.vhudturretreticlearrows:setTopBottom( false, false, 137.2, 206.2 )
@@ -1175,6 +1198,7 @@ CoD.vhud_turret_reticle.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 17 )
+
 				ReticleLower:completeAnimation()
 				self.ReticleLower:setAlpha( 1 )
 				self.clipFinished( ReticleLower, {} )
@@ -1473,6 +1497,7 @@ CoD.vhud_turret_reticle.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vhudturretreticlecenter:close()
 		element.vhudagrReticleOutsideDotsUR:close()

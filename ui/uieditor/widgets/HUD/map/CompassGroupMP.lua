@@ -26,9 +26,11 @@ end
 CoD.CompassGroupMP = InheritFrom( LUI.UIElement )
 CoD.CompassGroupMP.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CompassGroupMP )
 	self.id = "CompassGroupMP"
@@ -215,85 +217,107 @@ CoD.CompassGroupMP.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				PanelMap:completeAnimation()
 				self.PanelMap:setAlpha( 0 )
 				self.clipFinished( PanelMap, {} )
+
 				GlowBack0:completeAnimation()
 				self.GlowBack0:setAlpha( 0 )
 				self.clipFinished( GlowBack0, {} )
+
 				GlowBack:completeAnimation()
 				self.GlowBack:setAlpha( 0 )
 				self.clipFinished( GlowBack, {} )
+
 				BarTop:completeAnimation()
 				self.BarTop:setLeftRight( true, false, 16, 268 )
 				self.BarTop:setTopBottom( true, false, 97, 99.67 )
 				self.BarTop:setAlpha( 0 )
 				self.clipFinished( BarTop, {} )
+
 				BarBase:completeAnimation()
 				self.BarBase:setLeftRight( true, false, 16, 268 )
 				self.BarBase:setTopBottom( true, false, 97, 99.67 )
 				self.BarBase:setAlpha( 0 )
 				self.clipFinished( BarBase, {} )
+
 				BaseElement:completeAnimation()
 				self.BaseElement:setLeftRight( true, false, 131.34, 152.67 )
 				self.BaseElement:setTopBottom( true, false, 103, 115.33 )
 				self.BaseElement:setAlpha( 0 )
 				self.clipFinished( BaseElement, {} )
+
 				Dot1:completeAnimation()
 				self.Dot1:setLeftRight( true, false, 140, 144 )
 				self.Dot1:setTopBottom( true, false, 96, 100 )
 				self.Dot1:setAlpha( 0 )
 				self.clipFinished( Dot1, {} )
+
 				Dot2:completeAnimation()
 				self.Dot2:setLeftRight( true, false, 140, 144 )
 				self.Dot2:setTopBottom( true, false, 96, 100 )
 				self.Dot2:setAlpha( 0 )
 				self.clipFinished( Dot2, {} )
+
 				Dot3:completeAnimation()
 				self.Dot3:setLeftRight( true, false, 140, 144 )
 				self.Dot3:setTopBottom( true, false, 97, 101 )
 				self.Dot3:setAlpha( 0 )
 				self.clipFinished( Dot3, {} )
+
 				Dot4:completeAnimation()
 				self.Dot4:setLeftRight( true, false, 140, 144 )
 				self.Dot4:setTopBottom( true, false, 97, 101 )
 				self.Dot4:setAlpha( 0 )
 				self.clipFinished( Dot4, {} )
+
 				BackCircleOutter:completeAnimation()
 				self.BackCircleOutter:setAlpha( 0 )
 				self.clipFinished( BackCircleOutter, {} )
+
 				ArrowFull:completeAnimation()
 				self.ArrowFull:setAlpha( 0 )
 				self.clipFinished( ArrowFull, {} )
+
 				CompassMinimap:completeAnimation()
+
 				CompassMinimap.CompassMinimapMap:completeAnimation()
 				self.CompassMinimap:setZoom( 20 )
 				self.CompassMinimap.CompassMinimapMap:setAlpha( 0 )
 				self.clipFinished( CompassMinimap, {} )
+
 				CompassItems0:completeAnimation()
 				self.CompassItems0:setAlpha( 0 )
 				self.clipFinished( CompassItems0, {} )
+
 				CompassItems:completeAnimation()
 				self.CompassItems:setAlpha( 0 )
 				self.CompassItems:setZoom( 20 )
 				self.clipFinished( CompassItems, {} )
+
 				CompassOverlay:completeAnimation()
 				self.CompassOverlay:setAlpha( 0 )
 				self.CompassOverlay:setZoom( 20 )
 				self.clipFinished( CompassOverlay, {} )
+
 				HorizontalCompass:completeAnimation()
+
 				HorizontalCompass.HorizontalCompass:completeAnimation()
 				self.HorizontalCompass.HorizontalCompass:setAlpha( 0 )
 				self.clipFinished( HorizontalCompass, {} )
+
 				NotificationSixthSense:completeAnimation()
 				self.NotificationSixthSense:setAlpha( 0 )
 				self.clipFinished( NotificationSixthSense, {} )
+
 				smokeGrenadeEffect:completeAnimation()
 				self.smokeGrenadeEffect:setAlpha( 0 )
 				self.clipFinished( smokeGrenadeEffect, {} )
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 19 )
+
 				local PanelMapFrame2 = function ( PanelMap, event )
 					local PanelMapFrame3 = function ( PanelMap, event )
 						if not event.interrupted then
@@ -1092,6 +1116,7 @@ CoD.CompassGroupMP.new = function ( menu, controller )
 				end
 				
 				CompassMinimap:completeAnimation()
+
 				CompassMinimap.CompassMinimapMap:completeAnimation()
 				self.CompassMinimap:setZoom( 20 )
 				self.CompassMinimap.CompassMinimapMap:setAlpha( 0 )
@@ -1335,6 +1360,7 @@ CoD.CompassGroupMP.new = function ( menu, controller )
 				end
 				
 				HorizontalCompass:completeAnimation()
+
 				HorizontalCompass.HorizontalCompass:completeAnimation()
 				self.HorizontalCompass.HorizontalCompass:setAlpha( 0 )
 				HorizontalCompassFrame2( HorizontalCompass, {} )
@@ -1393,87 +1419,109 @@ CoD.CompassGroupMP.new = function ( menu, controller )
 		HudStart = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				PanelMap:completeAnimation()
 				self.PanelMap:setAlpha( 1 )
 				self.clipFinished( PanelMap, {} )
+
 				GlowBack0:completeAnimation()
 				self.GlowBack0:setAlpha( 0.4 )
 				self.clipFinished( GlowBack0, {} )
+
 				GlowBack:completeAnimation()
 				self.GlowBack:setAlpha( 0.6 )
 				self.clipFinished( GlowBack, {} )
+
 				BarTop:completeAnimation()
 				self.BarTop:setLeftRight( true, false, 16, 268 )
 				self.BarTop:setTopBottom( true, false, 19, 27 )
 				self.BarTop:setAlpha( 0.4 )
 				self.clipFinished( BarTop, {} )
+
 				BarBase:completeAnimation()
 				self.BarBase:setLeftRight( true, false, 16, 268 )
 				self.BarBase:setTopBottom( true, false, 158, 166 )
 				self.BarBase:setAlpha( 0.4 )
 				self.clipFinished( BarBase, {} )
+
 				BaseElement:completeAnimation()
 				self.BaseElement:setLeftRight( true, false, 131.34, 152.67 )
 				self.BaseElement:setTopBottom( true, false, 180, 192.33 )
 				self.BaseElement:setAlpha( 0.7 )
 				self.clipFinished( BaseElement, {} )
+
 				Dot1:completeAnimation()
 				self.Dot1:setLeftRight( true, false, 7, 11 )
 				self.Dot1:setTopBottom( true, false, 19, 23 )
 				self.Dot1:setAlpha( 0 )
 				self.clipFinished( Dot1, {} )
+
 				Dot2:completeAnimation()
 				self.Dot2:setLeftRight( true, false, 272, 276 )
 				self.Dot2:setTopBottom( true, false, 19, 23 )
 				self.Dot2:setAlpha( 0 )
 				self.clipFinished( Dot2, {} )
+
 				Dot3:completeAnimation()
 				self.Dot3:setLeftRight( true, false, 7, 11 )
 				self.Dot3:setTopBottom( true, false, 160, 164 )
 				self.Dot3:setAlpha( 0 )
 				self.clipFinished( Dot3, {} )
+
 				Dot4:completeAnimation()
 				self.Dot4:setLeftRight( true, false, 272, 276 )
 				self.Dot4:setTopBottom( true, false, 160, 164 )
 				self.Dot4:setRGB( 1, 1, 1 )
 				self.Dot4:setAlpha( 0 )
 				self.clipFinished( Dot4, {} )
+
 				BackCircleOutter:completeAnimation()
 				self.BackCircleOutter:setAlpha( 0 )
 				self.clipFinished( BackCircleOutter, {} )
+
 				ArrowFull:completeAnimation()
 				self.ArrowFull:setAlpha( 0 )
 				self.clipFinished( ArrowFull, {} )
+
 				CompassMinimap:completeAnimation()
+
 				CompassMinimap.CompassMinimapMap:completeAnimation()
 				self.CompassMinimap:setAlpha( 1 )
 				self.CompassMinimap:setZoom( 0 )
 				self.CompassMinimap.CompassMinimapMap:setAlpha( 1 )
 				self.clipFinished( CompassMinimap, {} )
+
 				CompassItems0:completeAnimation()
 				self.CompassItems0:setAlpha( 0.6 )
 				self.clipFinished( CompassItems0, {} )
+
 				CompassItems:completeAnimation()
 				self.CompassItems:setAlpha( 0.75 )
 				self.CompassItems:setZoom( 0 )
 				self.clipFinished( CompassItems, {} )
+
 				CompassOverlay:completeAnimation()
 				self.CompassOverlay:setAlpha( 1 )
 				self.CompassOverlay:setZoom( 0 )
 				self.clipFinished( CompassOverlay, {} )
+
 				HorizontalCompass:completeAnimation()
+
 				HorizontalCompass.HorizontalCompass:completeAnimation()
 				self.HorizontalCompass.HorizontalCompass:setAlpha( 0.7 )
 				self.clipFinished( HorizontalCompass, {} )
+
 				NotificationSixthSense:completeAnimation()
 				self.NotificationSixthSense:setAlpha( 1 )
 				self.clipFinished( NotificationSixthSense, {} )
+
 				smokeGrenadeEffect:completeAnimation()
 				self.smokeGrenadeEffect:setAlpha( 1 )
 				self.clipFinished( smokeGrenadeEffect, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 18 )
+
 				local PanelMapFrame2 = function ( PanelMap, event )
 					if not event.interrupted then
 						PanelMap:beginAnimation( "keyframe", 449, false, false, CoD.TweenType.Linear )
@@ -1901,6 +1949,7 @@ CoD.CompassGroupMP.new = function ( menu, controller )
 				end
 				
 				CompassMinimap:completeAnimation()
+
 				CompassMinimap.CompassMinimapMap:completeAnimation()
 				self.CompassMinimap.CompassMinimapMap:setAlpha( 1 )
 				CompassMinimapFrame2( CompassMinimap, {} )
@@ -1963,6 +2012,7 @@ CoD.CompassGroupMP.new = function ( menu, controller )
 				end
 				
 				HorizontalCompass:completeAnimation()
+
 				HorizontalCompass.HorizontalCompass:completeAnimation()
 				self.HorizontalCompass.HorizontalCompass:setAlpha( 0.7 )
 				HorizontalCompassFrame2( HorizontalCompass, {} )
@@ -2001,9 +2051,11 @@ CoD.CompassGroupMP.new = function ( menu, controller )
 		HudPause = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PanelMap:close()
 		element.BarTop:close()

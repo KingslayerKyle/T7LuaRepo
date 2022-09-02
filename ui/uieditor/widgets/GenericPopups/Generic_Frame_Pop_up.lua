@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Craft.EmblemEditor.EmblemEditorFrame" )
 CoD.Generic_Frame_Pop_up = InheritFrom( LUI.UIElement )
 CoD.Generic_Frame_Pop_up.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Generic_Frame_Pop_up )
 	self.id = "Generic_Frame_Pop_up"
@@ -32,6 +34,7 @@ CoD.Generic_Frame_Pop_up.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.EmblemEditorFrame0:close()
 	end )

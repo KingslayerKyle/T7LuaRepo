@@ -42,9 +42,11 @@ end
 CoD.HackWaypointContainer = InheritFrom( LUI.UIElement )
 CoD.HackWaypointContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.HackWaypointContainer )
 	self.id = "HackWaypointContainer"
@@ -63,6 +65,7 @@ CoD.HackWaypointContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Waypoint:completeAnimation()
 				self.Waypoint:setAlpha( 1 )
 				self.clipFinished( Waypoint, {} )
@@ -71,12 +74,14 @@ CoD.HackWaypointContainer.new = function ( menu, controller )
 		Done = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Waypoint:completeAnimation()
 				self.Waypoint:setAlpha( 0 )
 				self.clipFinished( Waypoint, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Waypoint:close()
 	end )

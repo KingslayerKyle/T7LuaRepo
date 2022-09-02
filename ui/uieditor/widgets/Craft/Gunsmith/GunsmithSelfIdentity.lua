@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.playercard.SelfIdentityBadge" )
 CoD.GunsmithSelfIdentity = InheritFrom( LUI.UIElement )
 CoD.GunsmithSelfIdentity.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunsmithSelfIdentity )
 	self.id = "GunsmithSelfIdentity"
@@ -33,6 +35,7 @@ CoD.GunsmithSelfIdentity.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				SelfIdentityBadge:completeAnimation()
 				self.SelfIdentityBadge:setAlpha( 1 )
 				self.clipFinished( SelfIdentityBadge, {} )
@@ -41,12 +44,14 @@ CoD.GunsmithSelfIdentity.new = function ( menu, controller )
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				SelfIdentityBadge:completeAnimation()
 				self.SelfIdentityBadge:setAlpha( 0 )
 				self.clipFinished( SelfIdentityBadge, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SelfIdentityBadge:close()
 	end )

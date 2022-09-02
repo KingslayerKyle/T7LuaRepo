@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.MenuSelectScreen.WeaponVariantIcon" )
 CoD.GunsmithAttachmentListContainer = InheritFrom( LUI.UIElement )
 CoD.GunsmithAttachmentListContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunsmithAttachmentListContainer )
 	self.id = "GunsmithAttachmentListContainer"
@@ -32,6 +34,7 @@ CoD.GunsmithAttachmentListContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				attachmentList:completeAnimation()
 				self.attachmentList:setAlpha( 1 )
 				self.clipFinished( attachmentList, {} )
@@ -40,6 +43,7 @@ CoD.GunsmithAttachmentListContainer.new = function ( menu, controller )
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				attachmentList:completeAnimation()
 				self.attachmentList:setAlpha( 0 )
 				self.clipFinished( attachmentList, {} )
@@ -54,6 +58,7 @@ CoD.GunsmithAttachmentListContainer.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.attachmentList:close()
 	end )

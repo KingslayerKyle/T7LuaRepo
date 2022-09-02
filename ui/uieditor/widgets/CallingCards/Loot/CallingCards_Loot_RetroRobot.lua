@@ -4,9 +4,11 @@
 CoD.CallingCards_Loot_RetroRobot = InheritFrom( LUI.UIElement )
 CoD.CallingCards_Loot_RetroRobot.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_Loot_RetroRobot )
 	self.id = "CallingCards_Loot_RetroRobot"
@@ -32,6 +34,7 @@ CoD.CallingCards_Loot_RetroRobot.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local Image1Frame2 = function ( Image1, event )
 					local Image1Frame3 = function ( Image1, event )
 						local Image1Frame4 = function ( Image1, event )
@@ -261,6 +264,7 @@ CoD.CallingCards_Loot_RetroRobot.new = function ( menu, controller )
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 0 )
 				Image1Frame2( Image1, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

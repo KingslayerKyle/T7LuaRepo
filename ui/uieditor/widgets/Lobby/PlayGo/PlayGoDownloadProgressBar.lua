@@ -29,9 +29,11 @@ end
 CoD.PlayGoDownloadProgressBar = InheritFrom( LUI.UIElement )
 CoD.PlayGoDownloadProgressBar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PlayGoDownloadProgressBar )
 	self.id = "PlayGoDownloadProgressBar"
@@ -69,9 +71,11 @@ CoD.PlayGoDownloadProgressBar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				progress:completeAnimation()
 				self.progress:setAlpha( 0 )
 				self.clipFinished( progress, {} )
@@ -80,15 +84,18 @@ CoD.PlayGoDownloadProgressBar.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0.2 )
 				self.clipFinished( BG, {} )
+
 				progress:completeAnimation()
 				self.progress:setAlpha( 1 )
 				self.clipFinished( progress, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -105,6 +112,7 @@ CoD.PlayGoDownloadProgressBar.new = function ( menu, controller )
 			modelName = "PlayGoDownloadProgress.progress"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.progress:close()
 	end )

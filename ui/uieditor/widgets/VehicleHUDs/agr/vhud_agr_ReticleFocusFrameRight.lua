@@ -4,9 +4,11 @@
 CoD.vhud_agr_ReticleFocusFrameRight = InheritFrom( LUI.UIElement )
 CoD.vhud_agr_ReticleFocusFrameRight.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.vhud_agr_ReticleFocusFrameRight )
 	self.id = "vhud_agr_ReticleFocusFrameRight"

@@ -4,9 +4,11 @@
 CoD.Notif_Global_TitleBackingLine = InheritFrom( LUI.UIElement )
 CoD.Notif_Global_TitleBackingLine.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Notif_Global_TitleBackingLine )
 	self.id = "Notif_Global_TitleBackingLine"

@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Craft.EmblemEditor.EmblemEditorFrame" )
 CoD.EmblemIconClipboard = InheritFrom( LUI.UIElement )
 CoD.EmblemIconClipboard.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemIconClipboard )
 	self.id = "EmblemIconClipboard"
@@ -113,31 +115,40 @@ CoD.EmblemIconClipboard.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				Paste:completeAnimation()
 				self.Paste:setAlpha( 0 )
 				self.clipFinished( Paste, {} )
+
 				clipboardTitle:completeAnimation()
 				self.clipboardTitle:setAlpha( 0 )
 				self.clipFinished( clipboardTitle, {} )
+
 				bgBorder:completeAnimation()
 				self.bgBorder:setAlpha( 0 )
 				self.clipFinished( bgBorder, {} )
+
 				bgMask:completeAnimation()
 				self.bgMask:setAlpha( 0 )
 				self.clipFinished( bgMask, {} )
+
 				BackingGradient:completeAnimation()
 				self.BackingGradient:setAlpha( 0 )
 				self.clipFinished( BackingGradient, {} )
+
 				copyIcon:completeAnimation()
 				self.copyIcon:setAlpha( 0 )
 				self.clipFinished( copyIcon, {} )
+
 				PaintshopLine10:completeAnimation()
 				self.PaintshopLine10:setRGB( 1, 1, 1 )
 				self.PaintshopLine10:setAlpha( 0 )
 				self.clipFinished( PaintshopLine10, {} )
+
 				allGroupsUsedText:completeAnimation()
 				self.allGroupsUsedText:setAlpha( 0 )
 				self.clipFinished( allGroupsUsedText, {} )
@@ -146,30 +157,39 @@ CoD.EmblemIconClipboard.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				Paste:completeAnimation()
 				self.Paste:setAlpha( 0 )
 				self.clipFinished( Paste, {} )
+
 				clipboardTitle:completeAnimation()
 				self.clipboardTitle:setAlpha( 0 )
 				self.clipFinished( clipboardTitle, {} )
+
 				bgBorder:completeAnimation()
 				self.bgBorder:setAlpha( 0 )
 				self.clipFinished( bgBorder, {} )
+
 				bgMask:completeAnimation()
 				self.bgMask:setAlpha( 0 )
 				self.clipFinished( bgMask, {} )
+
 				BackingGradient:completeAnimation()
 				self.BackingGradient:setAlpha( 0 )
 				self.clipFinished( BackingGradient, {} )
+
 				copyIcon:completeAnimation()
 				self.copyIcon:setAlpha( 0 )
 				self.clipFinished( copyIcon, {} )
+
 				PaintshopLine10:completeAnimation()
 				self.PaintshopLine10:setAlpha( 0 )
 				self.clipFinished( PaintshopLine10, {} )
+
 				allGroupsUsedText:completeAnimation()
 				self.allGroupsUsedText:setAlpha( 0 )
 				self.clipFinished( allGroupsUsedText, {} )
@@ -178,34 +198,43 @@ CoD.EmblemIconClipboard.new = function ( menu, controller )
 		PasteState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0.75 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				Paste:completeAnimation()
 				self.Paste:setAlpha( 1 )
 				self.clipFinished( Paste, {} )
+
 				clipboardTitle:completeAnimation()
 				self.clipboardTitle:setLeftRight( true, false, 10, 160 )
 				self.clipboardTitle:setTopBottom( true, false, 11, 27 )
 				self.clipboardTitle:setAlpha( 1 )
 				self.clipFinished( clipboardTitle, {} )
+
 				bgBorder:completeAnimation()
 				self.bgBorder:setAlpha( 0 )
 				self.clipFinished( bgBorder, {} )
+
 				bgMask:completeAnimation()
 				self.bgMask:setAlpha( 0 )
 				self.clipFinished( bgMask, {} )
+
 				BackingGradient:completeAnimation()
 				self.BackingGradient:setLeftRight( true, true, 30, -30 )
 				self.BackingGradient:setTopBottom( true, true, 29, -31 )
 				self.BackingGradient:setAlpha( 0 )
 				self.clipFinished( BackingGradient, {} )
+
 				copyIcon:completeAnimation()
 				self.copyIcon:setAlpha( 1 )
 				self.clipFinished( copyIcon, {} )
+
 				PaintshopLine10:completeAnimation()
 				self.PaintshopLine10:setAlpha( 1 )
 				self.clipFinished( PaintshopLine10, {} )
+
 				allGroupsUsedText:completeAnimation()
 				self.allGroupsUsedText:setAlpha( 0 )
 				self.clipFinished( allGroupsUsedText, {} )
@@ -214,40 +243,50 @@ CoD.EmblemIconClipboard.new = function ( menu, controller )
 		AllGroupsUsed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0.75 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				Paste:completeAnimation()
 				self.Paste:setAlpha( 0 )
 				self.clipFinished( Paste, {} )
+
 				clipboardTitle:completeAnimation()
 				self.clipboardTitle:setLeftRight( true, false, 10, 160 )
 				self.clipboardTitle:setTopBottom( true, false, 11, 27 )
 				self.clipboardTitle:setAlpha( 1 )
 				self.clipFinished( clipboardTitle, {} )
+
 				bgBorder:completeAnimation()
 				self.bgBorder:setAlpha( 0 )
 				self.clipFinished( bgBorder, {} )
+
 				bgMask:completeAnimation()
 				self.bgMask:setAlpha( 0 )
 				self.clipFinished( bgMask, {} )
+
 				BackingGradient:completeAnimation()
 				self.BackingGradient:setLeftRight( true, true, 30, -30 )
 				self.BackingGradient:setTopBottom( true, true, 29, -31 )
 				self.BackingGradient:setAlpha( 0 )
 				self.clipFinished( BackingGradient, {} )
+
 				copyIcon:completeAnimation()
 				self.copyIcon:setAlpha( 1 )
 				self.clipFinished( copyIcon, {} )
+
 				PaintshopLine10:completeAnimation()
 				self.PaintshopLine10:setAlpha( 1 )
 				self.clipFinished( PaintshopLine10, {} )
+
 				allGroupsUsedText:completeAnimation()
 				self.allGroupsUsedText:setAlpha( 1 )
 				self.clipFinished( allGroupsUsedText, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BorderBakedMask0:close()
 		element.Paste:close()

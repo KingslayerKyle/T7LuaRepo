@@ -4,9 +4,11 @@
 CoD.AmmoWidget_StatusPanelLeftWidget = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_StatusPanelLeftWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_StatusPanelLeftWidget )
 	self.id = "AmmoWidget_StatusPanelLeftWidget"
@@ -27,22 +29,27 @@ CoD.AmmoWidget_StatusPanelLeftWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Activated = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",

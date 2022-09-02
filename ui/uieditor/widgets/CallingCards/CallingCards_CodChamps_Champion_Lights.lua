@@ -4,9 +4,11 @@
 CoD.CallingCards_CodChamps_Champion_Lights = InheritFrom( LUI.UIElement )
 CoD.CallingCards_CodChamps_Champion_Lights.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_CodChamps_Champion_Lights )
 	self.id = "CallingCards_CodChamps_Champion_Lights"
@@ -39,6 +41,7 @@ CoD.CallingCards_CodChamps_Champion_Lights.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local Light1Frame2 = function ( Light1, event )
 					local Light1Frame3 = function ( Light1, event )
 						local Light1Frame4 = function ( Light1, event )
@@ -243,6 +246,7 @@ CoD.CallingCards_CodChamps_Champion_Lights.new = function ( menu, controller )
 				Light3:completeAnimation()
 				self.Light3:setAlpha( 0 )
 				Light3Frame2( Light3, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

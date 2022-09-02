@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.Heroes.ChooseCharacterLoadout_CardBack_FrontOfCard
 CoD.ChooseCharacterLoadoutCarouselItem_Back = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacterLoadoutCarouselItem_Back.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.ChooseCharacterLoadoutCarouselItem_Back )
 	self.id = "ChooseCharacterLoadoutCarouselItem_Back"
@@ -190,6 +192,7 @@ CoD.ChooseCharacterLoadoutCarouselItem_Back.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				local callsignLabelFrame2 = function ( callsignLabel, event )
 					local callsignLabelFrame3 = function ( callsignLabel, event )
 						local callsignLabelFrame4 = function ( callsignLabel, event )
@@ -378,6 +381,7 @@ CoD.ChooseCharacterLoadoutCarouselItem_Back.new = function ( menu, controller )
 				frame:completeAnimation()
 				self.frame:setAlpha( 0 )
 				frameFrame2( frame, {} )
+
 				ChooseCharacterLoadoutCardBackFrontOfCardFooter:completeAnimation()
 				self.ChooseCharacterLoadoutCardBackFrontOfCardFooter:setLeftRight( false, true, -87, -13 )
 				self.ChooseCharacterLoadoutCardBackFrontOfCardFooter:setTopBottom( false, true, -40.25, -6.75 )
@@ -434,6 +438,7 @@ CoD.ChooseCharacterLoadoutCarouselItem_Back.new = function ( menu, controller )
 		Blackjack = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				local callsignLabelFrame2 = function ( callsignLabel, event )
 					local callsignLabelFrame3 = function ( callsignLabel, event )
 						local callsignLabelFrame4 = function ( callsignLabel, event )
@@ -622,6 +627,7 @@ CoD.ChooseCharacterLoadoutCarouselItem_Back.new = function ( menu, controller )
 				frame:completeAnimation()
 				self.frame:setAlpha( 0 )
 				frameFrame2( frame, {} )
+
 				ChooseCharacterLoadoutCardBackFrontOfCardFooter:completeAnimation()
 				self.ChooseCharacterLoadoutCardBackFrontOfCardFooter:setLeftRight( false, true, -87, -13 )
 				self.ChooseCharacterLoadoutCardBackFrontOfCardFooter:setTopBottom( false, true, -53.25, -19.75 )
@@ -678,9 +684,11 @@ CoD.ChooseCharacterLoadoutCarouselItem_Back.new = function ( menu, controller )
 		DisabledFocus = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Blackjack",
@@ -721,6 +729,7 @@ CoD.ChooseCharacterLoadoutCarouselItem_Back.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Border0:close()
 		element.WeaponNameWidget0:close()

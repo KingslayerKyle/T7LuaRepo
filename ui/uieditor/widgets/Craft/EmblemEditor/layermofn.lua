@@ -4,9 +4,11 @@
 CoD.layermofn = InheritFrom( LUI.UIElement )
 CoD.layermofn.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.layermofn )
 	self.id = "layermofn"
@@ -36,9 +38,11 @@ CoD.layermofn.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				numberbkg:completeAnimation()
 				self.numberbkg:setAlpha( 0.7 )
 				self.clipFinished( numberbkg, {} )
+
 				layerMOfN:completeAnimation()
 				self.layerMOfN:setAlpha( 1 )
 				self.clipFinished( layerMOfN, {} )
@@ -47,9 +51,11 @@ CoD.layermofn.new = function ( menu, controller )
 		EmptyLayer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				numberbkg:completeAnimation()
 				self.numberbkg:setAlpha( 0 )
 				self.clipFinished( numberbkg, {} )
+
 				layerMOfN:completeAnimation()
 				self.layerMOfN:setAlpha( 0 )
 				self.clipFinished( layerMOfN, {} )

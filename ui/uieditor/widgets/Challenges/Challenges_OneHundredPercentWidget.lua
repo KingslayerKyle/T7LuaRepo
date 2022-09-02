@@ -12,9 +12,11 @@ require( "ui.uieditor.widgets.Challenges.Challenges_Title" )
 CoD.Challenges_OneHundredPercentWidget = InheritFrom( LUI.UIElement )
 CoD.Challenges_OneHundredPercentWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_OneHundredPercentWidget )
 	self.id = "Challenges_OneHundredPercentWidget"
@@ -129,6 +131,7 @@ CoD.Challenges_OneHundredPercentWidget.new = function ( menu, controller )
 		end
 		return f3_local0
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( weaponNameLabel, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 2 )
 		SetStateFromText( self, element, "DefaultState", "NoText" )
@@ -147,24 +150,31 @@ CoD.Challenges_OneHundredPercentWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				MasterCallingCardIcon:completeAnimation()
 				self.MasterCallingCardIcon:setAlpha( 1 )
 				self.clipFinished( MasterCallingCardIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				featlineleft000:completeAnimation()
 				self.featlineleft000:setAlpha( 0 )
 				self.clipFinished( featlineleft000, {} )
+
 				featlineleft0000:completeAnimation()
 				self.featlineleft0000:setAlpha( 0 )
 				self.clipFinished( featlineleft0000, {} )
@@ -173,30 +183,38 @@ CoD.Challenges_OneHundredPercentWidget.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				MasterCallingCardIcon:completeAnimation()
 				self.MasterCallingCardIcon:setAlpha( 0 )
 				self.clipFinished( MasterCallingCardIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0.2 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0.4 )
 				self.clipFinished( TitleBg, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 1 )
 				self.clipFinished( LockedIcon, {} )
+
 				featlineleft000:completeAnimation()
 				self.featlineleft000:setAlpha( 1 )
 				self.clipFinished( featlineleft000, {} )
+
 				featlineleft0000:completeAnimation()
 				self.featlineleft0000:setAlpha( 1 )
 				self.clipFinished( featlineleft0000, {} )
+
 				ChallengesTitle:completeAnimation()
 				self.ChallengesTitle:setAlpha( 1 )
 				self.clipFinished( ChallengesTitle, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -213,6 +231,7 @@ CoD.Challenges_OneHundredPercentWidget.new = function ( menu, controller )
 			modelName = "isLocked"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG0:close()
 		element.BoxButtonLrgInactive:close()

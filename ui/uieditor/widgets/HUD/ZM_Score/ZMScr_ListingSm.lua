@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.onOffImage" )
 CoD.ZMScr_ListingSm = InheritFrom( LUI.UIElement )
 CoD.ZMScr_ListingSm.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZMScr_ListingSm )
 	self.id = "ZMScr_ListingSm"
@@ -43,6 +45,7 @@ CoD.ZMScr_ListingSm.new = function ( menu, controller )
 			Label3:setText( Engine.Localize( playerScore ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( Label3, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )
@@ -142,21 +145,27 @@ CoD.ZMScr_ListingSm.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
+
 				Label3:completeAnimation()
 				self.Label3:setAlpha( 0 )
 				self.clipFinished( Label3, {} )
+
 				portraitIcon:completeAnimation()
 				self.portraitIcon:setAlpha( 0 )
 				self.clipFinished( portraitIcon, {} )
+
 				wearableIcon:completeAnimation()
 				self.wearableIcon:setAlpha( 0 )
 				self.clipFinished( wearableIcon, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, false, 0, 20 )
 				self.Image0:setTopBottom( false, true, -20, 0 )
@@ -165,6 +174,7 @@ CoD.ZMScr_ListingSm.new = function ( menu, controller )
 			end,
 			Visible = function ()
 				self:setupElementClipCounter( 6 )
+
 				local PanelFrame2 = function ( Panel, event )
 					if not event.interrupted then
 						Panel:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -258,6 +268,7 @@ CoD.ZMScr_ListingSm.new = function ( menu, controller )
 			end,
 			VisibleTomb = function ()
 				self:setupElementClipCounter( 6 )
+
 				local PanelFrame2 = function ( Panel, event )
 					if not event.interrupted then
 						Panel:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -357,21 +368,27 @@ CoD.ZMScr_ListingSm.new = function ( menu, controller )
 		VisibleTomb = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 1 )
 				self.clipFinished( Panel, {} )
+
 				Label3:completeAnimation()
 				self.Label3:setAlpha( 1 )
 				self.clipFinished( Label3, {} )
+
 				portraitIcon:completeAnimation()
 				self.portraitIcon:setAlpha( 1 )
 				self.clipFinished( portraitIcon, {} )
+
 				wearableIcon:completeAnimation()
 				self.wearableIcon:setAlpha( 1 )
 				self.clipFinished( wearableIcon, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.2 )
 				self.clipFinished( Glow, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, false, -13.72, 6.28 )
 				self.Image0:setTopBottom( false, true, -27.03, -7.03 )
@@ -380,6 +397,7 @@ CoD.ZMScr_ListingSm.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 6 )
+
 				local PanelFrame2 = function ( Panel, event )
 					if not event.interrupted then
 						Panel:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -479,27 +497,34 @@ CoD.ZMScr_ListingSm.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 1 )
 				self.clipFinished( Panel, {} )
+
 				Label3:completeAnimation()
 				self.Label3:setAlpha( 1 )
 				self.clipFinished( Label3, {} )
+
 				portraitIcon:completeAnimation()
 				self.portraitIcon:setAlpha( 1 )
 				self.clipFinished( portraitIcon, {} )
+
 				wearableIcon:completeAnimation()
 				self.wearableIcon:setAlpha( 1 )
 				self.clipFinished( wearableIcon, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.2 )
 				self.clipFinished( Glow, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 1 )
 				self.clipFinished( Image0, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 6 )
+
 				local PanelFrame2 = function ( Panel, event )
 					if not event.interrupted then
 						Panel:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -593,6 +618,7 @@ CoD.ZMScr_ListingSm.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "VisibleTomb",
@@ -621,6 +647,7 @@ CoD.ZMScr_ListingSm.new = function ( menu, controller )
 			modelName = "playerScoreShown"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 		element.portraitIcon:close()

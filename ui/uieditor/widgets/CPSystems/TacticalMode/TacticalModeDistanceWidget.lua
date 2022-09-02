@@ -4,9 +4,11 @@
 CoD.TacticalModeDistanceWidget = InheritFrom( LUI.UIElement )
 CoD.TacticalModeDistanceWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TacticalModeDistanceWidget )
 	self.id = "TacticalModeDistanceWidget"

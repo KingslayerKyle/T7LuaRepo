@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Scrollbars.verticalCounter" )
 CoD.heroSelectOptionList = InheritFrom( LUI.UIElement )
 CoD.heroSelectOptionList.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.heroSelectOptionList )
 	self.id = "heroSelectOptionList"
@@ -122,6 +124,7 @@ CoD.heroSelectOptionList.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.optionsList:close()
 		element.verticalCounter0:close()

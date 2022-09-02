@@ -4,9 +4,11 @@
 CoD.CallingCards_Scifi_Fog = InheritFrom( LUI.UIElement )
 CoD.CallingCards_Scifi_Fog.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_Scifi_Fog )
 	self.id = "CallingCards_Scifi_Fog"
@@ -26,6 +28,7 @@ CoD.CallingCards_Scifi_Fog.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FogFrame2 = function ( Fog, event )
 					local FogFrame3 = function ( Fog, event )
 						if not event.interrupted then
@@ -57,6 +60,7 @@ CoD.CallingCards_Scifi_Fog.new = function ( menu, controller )
 				self.Fog:setTopBottom( true, false, 0, 199 )
 				self.Fog:setAlpha( 0 )
 				FogFrame2( Fog, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

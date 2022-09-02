@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventoryTomb.ElementalStaffContainer" )
 CoD.ElementalStaffsWidget = InheritFrom( LUI.UIElement )
 CoD.ElementalStaffsWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ElementalStaffsWidget )
 	self.id = "ElementalStaffsWidget"
@@ -286,18 +288,23 @@ CoD.ElementalStaffsWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				WaterStaffContainer:completeAnimation()
 				self.WaterStaffContainer:setAlpha( 0 )
 				self.clipFinished( WaterStaffContainer, {} )
+
 				LightningStaffContainer:completeAnimation()
 				self.LightningStaffContainer:setAlpha( 0 )
 				self.clipFinished( LightningStaffContainer, {} )
+
 				AirStaffContainer:completeAnimation()
 				self.AirStaffContainer:setAlpha( 0 )
 				self.clipFinished( AirStaffContainer, {} )
+
 				FireStaffContainer:completeAnimation()
 				self.FireStaffContainer:setAlpha( 0 )
 				self.clipFinished( FireStaffContainer, {} )
@@ -306,6 +313,7 @@ CoD.ElementalStaffsWidget.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local bgFrame2 = function ( bg, event )
 					local bgFrame3 = function ( bg, event )
 						local bgFrame4 = function ( bg, event )
@@ -346,28 +354,36 @@ CoD.ElementalStaffsWidget.new = function ( menu, controller )
 				self.bg:setTopBottom( false, false, -125.73, 126.73 )
 				self.bg:setAlpha( 0 )
 				bgFrame2( bg, {} )
+
 				WaterStaffContainer:completeAnimation()
+
 				WaterStaffContainer.ElementalStaffItem:completeAnimation()
 				self.WaterStaffContainer:setLeftRight( true, false, 298, 398 )
 				self.WaterStaffContainer:setTopBottom( true, false, -2, 130 )
 				self.WaterStaffContainer:setAlpha( 1 )
 				self.WaterStaffContainer.ElementalStaffItem:setScale( 0.75 )
 				self.clipFinished( WaterStaffContainer, {} )
+
 				LightningStaffContainer:completeAnimation()
+
 				LightningStaffContainer.ElementalStaffItem:completeAnimation()
 				self.LightningStaffContainer:setLeftRight( true, false, 219, 319 )
 				self.LightningStaffContainer:setTopBottom( true, false, -2, 130 )
 				self.LightningStaffContainer:setAlpha( 1 )
 				self.LightningStaffContainer.ElementalStaffItem:setScale( 0.75 )
 				self.clipFinished( LightningStaffContainer, {} )
+
 				AirStaffContainer:completeAnimation()
+
 				AirStaffContainer.ElementalStaffItem:completeAnimation()
 				self.AirStaffContainer:setLeftRight( true, false, 137, 237 )
 				self.AirStaffContainer:setTopBottom( true, false, -2, 130 )
 				self.AirStaffContainer:setAlpha( 1 )
 				self.AirStaffContainer.ElementalStaffItem:setScale( 0.75 )
 				self.clipFinished( AirStaffContainer, {} )
+
 				FireStaffContainer:completeAnimation()
+
 				FireStaffContainer.ElementalStaffItem:completeAnimation()
 				self.FireStaffContainer:setLeftRight( true, false, 55, 155 )
 				self.FireStaffContainer:setTopBottom( true, false, -2, 130 )
@@ -379,31 +395,40 @@ CoD.ElementalStaffsWidget.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				WaterStaffContainer:completeAnimation()
+
 				WaterStaffContainer.ElementalStaffItem:completeAnimation()
 				self.WaterStaffContainer:setLeftRight( true, false, 320, 420 )
 				self.WaterStaffContainer:setTopBottom( true, false, 0, 132 )
 				self.WaterStaffContainer:setAlpha( 1 )
 				self.WaterStaffContainer.ElementalStaffItem:setScale( 1 )
 				self.clipFinished( WaterStaffContainer, {} )
+
 				LightningStaffContainer:completeAnimation()
+
 				LightningStaffContainer.ElementalStaffItem:completeAnimation()
 				self.LightningStaffContainer:setLeftRight( true, false, 212, 312 )
 				self.LightningStaffContainer:setTopBottom( true, false, 0, 132 )
 				self.LightningStaffContainer:setAlpha( 1 )
 				self.LightningStaffContainer.ElementalStaffItem:setScale( 1 )
 				self.clipFinished( LightningStaffContainer, {} )
+
 				AirStaffContainer:completeAnimation()
+
 				AirStaffContainer.ElementalStaffItem:completeAnimation()
 				self.AirStaffContainer:setLeftRight( true, false, 106, 206 )
 				self.AirStaffContainer:setTopBottom( true, false, 0, 132 )
 				self.AirStaffContainer:setAlpha( 1 )
 				self.AirStaffContainer.ElementalStaffItem:setScale( 1 )
 				self.clipFinished( AirStaffContainer, {} )
+
 				FireStaffContainer:completeAnimation()
+
 				FireStaffContainer.ElementalStaffItem:completeAnimation()
 				self.FireStaffContainer:setLeftRight( true, false, 0, 100 )
 				self.FireStaffContainer:setTopBottom( true, false, 0, 132 )
@@ -413,6 +438,7 @@ CoD.ElementalStaffsWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BgVisible",
@@ -467,6 +493,7 @@ CoD.ElementalStaffsWidget.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.WaterStaffContainer:close()
 		element.LightningStaffContainer:close()

@@ -18,6 +18,7 @@ CoD.AmmoWidget_TextAttachmentInfoFire.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_TextAttachmentInfoFire )
 	self.id = "AmmoWidget_TextAttachmentInfoFire"

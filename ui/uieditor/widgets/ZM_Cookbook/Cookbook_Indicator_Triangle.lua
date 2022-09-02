@@ -4,9 +4,11 @@
 CoD.Cookbook_Indicator_Triangle = InheritFrom( LUI.UIElement )
 CoD.Cookbook_Indicator_Triangle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Cookbook_Indicator_Triangle )
 	self.id = "Cookbook_Indicator_Triangle"
@@ -25,6 +27,7 @@ CoD.Cookbook_Indicator_Triangle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				IndicatorTriangle:completeAnimation()
 				self.IndicatorTriangle:setAlpha( 0 )
 				self.clipFinished( IndicatorTriangle, {} )
@@ -33,6 +36,7 @@ CoD.Cookbook_Indicator_Triangle.new = function ( menu, controller )
 		Red = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				IndicatorTriangle:completeAnimation()
 				self.IndicatorTriangle:setRGB( 1, 0.04, 0 )
 				self.clipFinished( IndicatorTriangle, {} )
@@ -41,12 +45,14 @@ CoD.Cookbook_Indicator_Triangle.new = function ( menu, controller )
 		Green = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				IndicatorTriangle:completeAnimation()
 				self.IndicatorTriangle:setRGB( 0.16, 0.92, 0.15 )
 				self.clipFinished( IndicatorTriangle, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Red",

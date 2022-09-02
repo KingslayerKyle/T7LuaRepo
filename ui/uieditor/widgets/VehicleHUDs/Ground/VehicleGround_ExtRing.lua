@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Ground.VehicleGround_ExtRingArrow" )
 CoD.VehicleGround_ExtRing = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_ExtRing.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VehicleGround_ExtRing )
 	self.id = "VehicleGround_ExtRing"
@@ -37,6 +39,7 @@ CoD.VehicleGround_ExtRing.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local ringFrame2 = function ( ring, event )
 					local ringFrame3 = function ( ring, event )
 						local ringFrame4 = function ( ring, event )
@@ -237,10 +240,12 @@ CoD.VehicleGround_ExtRing.new = function ( menu, controller )
 				self.VehicleGroundExtRingArrow0:setAlpha( 1 )
 				self.VehicleGroundExtRingArrow0:setZoom( 0 )
 				VehicleGroundExtRingArrow0Frame2( VehicleGroundExtRingArrow0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.VehicleGroundExtRingArrow0:close()
 	end )

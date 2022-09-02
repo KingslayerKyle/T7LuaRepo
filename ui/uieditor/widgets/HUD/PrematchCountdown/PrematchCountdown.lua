@@ -135,6 +135,7 @@ local PostLoadFunc = function ( f3_arg0, f3_arg1 )
 	if f3_local2 < f3_local1 then
 		f3_local3 = f3_local1 - f3_local2
 	end
+
 	LUI.OverrideFunction_CallOriginalSecond( f3_arg0, "close", function ( element )
 		local f13_local0 = element:getParent()
 		f13_local0.PrematchCountdown = nil
@@ -144,9 +145,11 @@ end
 CoD.PrematchCountdown = InheritFrom( LUI.UIElement )
 CoD.PrematchCountdown.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PrematchCountdown )
 	self.id = "PrematchCountdown"
@@ -366,19 +369,23 @@ CoD.PrematchCountdown.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				PrematchCountdownNumbers:completeAnimation()
 				self.PrematchCountdownNumbers:setAlpha( 1 )
 				self.clipFinished( PrematchCountdownNumbers, {} )
+
 				Glitch:completeAnimation()
 				self.Glitch:setLeftRight( true, false, 408, 880 )
 				self.Glitch:setTopBottom( true, false, 218, 474 )
 				self.clipFinished( Glitch, {} )
+
 				PrematchCountdown2xpBadge:completeAnimation()
 				self.PrematchCountdown2xpBadge:setAlpha( 0 )
 				self.clipFinished( PrematchCountdown2xpBadge, {} )
 			end,
 			Start = function ()
 				self:setupElementClipCounter( 8 )
+
 				GlowPanel:completeAnimation()
 				self.GlowPanel:setAlpha( 0 )
 				self.clipFinished( GlowPanel, {} )
@@ -758,20 +765,24 @@ CoD.PrematchCountdown.new = function ( menu, controller )
 				FactionName:completeAnimation()
 				self.FactionName:setAlpha( 0 )
 				FactionNameFrame2( FactionName, {} )
+
 				Glitch:completeAnimation()
 				self.Glitch:setLeftRight( true, false, 408, 880 )
 				self.Glitch:setTopBottom( true, false, 218, 474 )
 				self.clipFinished( Glitch, {} )
+
 				Sound:completeAnimation()
 				self.Sound:setPlaySoundDirect( false )
 				self.Sound:playSound( "faction_in", controller )
 				self.clipFinished( Sound, {} )
+
 				PrematchCountdown2xpBadge:completeAnimation()
 				self.PrematchCountdown2xpBadge:setAlpha( 0 )
 				self.clipFinished( PrematchCountdown2xpBadge, {} )
 			end,
 			Stop = function ()
 				self:setupElementClipCounter( 8 )
+
 				GlowPanel:completeAnimation()
 				self.GlowPanel:setAlpha( 0 )
 				self.clipFinished( GlowPanel, {} )
@@ -1020,29 +1031,36 @@ CoD.PrematchCountdown.new = function ( menu, controller )
 				FactionName:completeAnimation()
 				self.FactionName:setAlpha( 1 )
 				FactionNameFrame2( FactionName, {} )
+
 				Glitch:completeAnimation()
 				self.Glitch:setLeftRight( true, false, 408, 880 )
 				self.Glitch:setTopBottom( true, false, 218, 474 )
 				self.clipFinished( Glitch, {} )
+
 				Sound:completeAnimation()
 				self.Sound:setPlaySoundDirect( false )
 				self.Sound:playSound( "faction_out", controller )
 				self.clipFinished( Sound, {} )
+
 				PrematchCountdown2xpBadge:completeAnimation()
 				self.PrematchCountdown2xpBadge:setAlpha( 0 )
 				self.clipFinished( PrematchCountdown2xpBadge, {} )
 			end,
 			ShowObjectiveHint = function ()
 				self:setupElementClipCounter( 9 )
+
 				GlowPanel:completeAnimation()
 				self.GlowPanel:setAlpha( 0 )
 				self.clipFinished( GlowPanel, {} )
+
 				PrematchCountdownNumbers:completeAnimation()
 				self.PrematchCountdownNumbers:setAlpha( 0 )
 				self.clipFinished( PrematchCountdownNumbers, {} )
+
 				FactionIcon0:completeAnimation()
 				self.FactionIcon0:setAlpha( 0 )
 				self.clipFinished( FactionIcon0, {} )
+
 				FactionIcon:completeAnimation()
 				self.FactionIcon:setAlpha( 0 )
 				self.clipFinished( FactionIcon, {} )
@@ -1462,6 +1480,7 @@ CoD.PrematchCountdown.new = function ( menu, controller )
 				GameTypeHintText:completeAnimation()
 				self.GameTypeHintText:setAlpha( 0 )
 				GameTypeHintTextFrame2( GameTypeHintText, {} )
+
 				Glitch:completeAnimation()
 				self.Glitch:setLeftRight( true, false, 405.75, 889.75 )
 				self.Glitch:setTopBottom( true, false, 36, 318 )
@@ -1503,12 +1522,14 @@ CoD.PrematchCountdown.new = function ( menu, controller )
 				Sound:completeAnimation()
 				self.Sound:playSound( "obj_in", controller )
 				SoundFrame2( Sound, {} )
+
 				PrematchCountdown2xpBadge:completeAnimation()
 				self.PrematchCountdown2xpBadge:setAlpha( 0 )
 				self.clipFinished( PrematchCountdown2xpBadge, {} )
 			end,
 			ShowDoubleXPIcon = function ()
 				self:setupElementClipCounter( 7 )
+
 				GlowPanel:completeAnimation()
 				self.GlowPanel:setAlpha( 0 )
 				self.clipFinished( GlowPanel, {} )
@@ -1978,10 +1999,12 @@ CoD.PrematchCountdown.new = function ( menu, controller )
 				end
 				
 				DoubleXPText:completeAnimation()
+
 				DoubleXPText.MatchText:completeAnimation()
 				self.DoubleXPText:setAlpha( 0 )
 				self.DoubleXPText.MatchText:setText( Engine.Localize( "MENU_DOUBLE_XP" ) )
 				DoubleXPTextFrame2( DoubleXPText, {} )
+
 				Glitch:completeAnimation()
 				self.Glitch:setLeftRight( true, false, 405.75, 889.75 )
 				self.Glitch:setTopBottom( true, false, 36, 318 )
@@ -2132,6 +2155,7 @@ CoD.PrematchCountdown.new = function ( menu, controller )
 			end,
 			ShowDoubleLootIcon = function ()
 				self:setupElementClipCounter( 8 )
+
 				GlowPanel:completeAnimation()
 				self.GlowPanel:setAlpha( 0 )
 				self.clipFinished( GlowPanel, {} )
@@ -2607,10 +2631,12 @@ CoD.PrematchCountdown.new = function ( menu, controller )
 				end
 				
 				DoubleXPText:completeAnimation()
+
 				DoubleXPText.MatchText:completeAnimation()
 				self.DoubleXPText:setAlpha( 0 )
 				self.DoubleXPText.MatchText:setText( Engine.Localize( "MENU_DOUBLELOOT" ) )
 				DoubleXPTextFrame2( DoubleXPText, {} )
+
 				Glitch:completeAnimation()
 				self.Glitch:setLeftRight( true, false, 405.75, 889.75 )
 				self.Glitch:setTopBottom( true, false, 36, 318 )
@@ -2652,6 +2678,7 @@ CoD.PrematchCountdown.new = function ( menu, controller )
 				Sound:completeAnimation()
 				self.Sound:playSound( "xp_in", controller )
 				SoundFrame2( Sound, {} )
+
 				PrematchCountdown2xpBadge:completeAnimation()
 				self.PrematchCountdown2xpBadge:setAlpha( 0 )
 				self.clipFinished( PrematchCountdown2xpBadge, {} )
@@ -2760,6 +2787,7 @@ CoD.PrematchCountdown.new = function ( menu, controller )
 			end,
 			ShowOnlyFactionInfo = function ()
 				self:setupElementClipCounter( 7 )
+
 				GlowPanel:completeAnimation()
 				self.GlowPanel:setAlpha( 0 )
 				self.clipFinished( GlowPanel, {} )
@@ -3187,6 +3215,7 @@ CoD.PrematchCountdown.new = function ( menu, controller )
 				FactionName:completeAnimation()
 				self.FactionName:setAlpha( 0 )
 				FactionNameFrame2( FactionName, {} )
+
 				Glitch:completeAnimation()
 				self.Glitch:setLeftRight( true, false, 405.75, 889.75 )
 				self.Glitch:setTopBottom( true, false, 36, 318 )
@@ -3228,12 +3257,14 @@ CoD.PrematchCountdown.new = function ( menu, controller )
 				Sound:completeAnimation()
 				self.Sound:playSound( "0", controller )
 				SoundFrame2( Sound, {} )
+
 				PrematchCountdown2xpBadge:completeAnimation()
 				self.PrematchCountdown2xpBadge:setAlpha( 0 )
 				self.clipFinished( PrematchCountdown2xpBadge, {} )
 			end,
 			ShowDoubleWeaponXPIcon = function ()
 				self:setupElementClipCounter( 7 )
+
 				GlowPanel:completeAnimation()
 				self.GlowPanel:setAlpha( 0 )
 				self.clipFinished( GlowPanel, {} )
@@ -3705,12 +3736,14 @@ CoD.PrematchCountdown.new = function ( menu, controller )
 				end
 				
 				DoubleXPText:completeAnimation()
+
 				DoubleXPText.MatchText:completeAnimation()
 				self.DoubleXPText:setLeftRight( false, false, -142, 142 )
 				self.DoubleXPText:setTopBottom( true, false, 186.29, 218.5 )
 				self.DoubleXPText:setAlpha( 0 )
 				self.DoubleXPText.MatchText:setText( Engine.Localize( "MENU_DOUBLE_WEAPON_XP" ) )
 				DoubleXPTextFrame2( DoubleXPText, {} )
+
 				Glitch:completeAnimation()
 				self.Glitch:setLeftRight( true, false, 405.75, 889.75 )
 				self.Glitch:setTopBottom( true, false, 36, 318 )
@@ -3861,6 +3894,7 @@ CoD.PrematchCountdown.new = function ( menu, controller )
 			end,
 			ShowDoubleXPandWeaponXP = function ()
 				self:setupElementClipCounter( 11 )
+
 				GlowPanel:completeAnimation()
 				self.GlowPanel:setAlpha( 0 )
 				self.clipFinished( GlowPanel, {} )
@@ -4332,12 +4366,14 @@ CoD.PrematchCountdown.new = function ( menu, controller )
 				end
 				
 				DoubleXPText:completeAnimation()
+
 				DoubleXPText.MatchText:completeAnimation()
 				self.DoubleXPText:setLeftRight( false, false, -292, -8 )
 				self.DoubleXPText:setTopBottom( true, false, 186.29, 218.5 )
 				self.DoubleXPText:setAlpha( 0 )
 				self.DoubleXPText.MatchText:setText( Engine.Localize( "MENU_DOUBLE_XP" ) )
 				DoubleXPTextFrame2( DoubleXPText, {} )
+
 				Glitch:completeAnimation()
 				self.Glitch:setLeftRight( true, false, 405.75, 889.75 )
 				self.Glitch:setTopBottom( true, false, 36, 318 )
@@ -5049,6 +5085,7 @@ CoD.PrematchCountdown.new = function ( menu, controller )
 			end,
 			ShowOnlyCodcasterFactionInfo = function ()
 				self:setupElementClipCounter( 7 )
+
 				GlowPanel:completeAnimation()
 				self.GlowPanel:setAlpha( 0 )
 				self.clipFinished( GlowPanel, {} )
@@ -5466,6 +5503,7 @@ CoD.PrematchCountdown.new = function ( menu, controller )
 				FactionName:completeAnimation()
 				self.FactionName:setAlpha( 0 )
 				FactionNameFrame2( FactionName, {} )
+
 				Glitch:completeAnimation()
 				self.Glitch:setLeftRight( true, false, 405.75, 889.75 )
 				self.Glitch:setTopBottom( true, false, 36, 318 )
@@ -5507,12 +5545,14 @@ CoD.PrematchCountdown.new = function ( menu, controller )
 				Sound:completeAnimation()
 				self.Sound:playSound( "0", controller )
 				SoundFrame2( Sound, {} )
+
 				PrematchCountdown2xpBadge:completeAnimation()
 				self.PrematchCountdown2xpBadge:setAlpha( 0 )
 				self.clipFinished( PrematchCountdown2xpBadge, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GlowPanel:close()
 		element.PrematchCountdownNumbers:close()

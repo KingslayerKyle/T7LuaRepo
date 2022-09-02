@@ -4,9 +4,11 @@
 CoD.FE_3dTitleHardcoreKicker = InheritFrom( LUI.UIElement )
 CoD.FE_3dTitleHardcoreKicker.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_3dTitleHardcoreKicker )
 	self.id = "FE_3dTitleHardcoreKicker"
@@ -31,6 +33,7 @@ CoD.FE_3dTitleHardcoreKicker.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Kickertxt2:completeAnimation()
 				self.Kickertxt2:setAlpha( 0 )
 				self.clipFinished( Kickertxt2, {} )
@@ -39,12 +42,14 @@ CoD.FE_3dTitleHardcoreKicker.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Kickertxt2:completeAnimation()
 				self.Kickertxt2:setAlpha( 1 )
 				self.clipFinished( Kickertxt2, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -69,6 +74,7 @@ CoD.FE_3dTitleHardcoreKicker.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Kickertxt2:close()
 	end )

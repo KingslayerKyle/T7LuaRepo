@@ -4,9 +4,11 @@
 CoD.vhud_ModDNITime = InheritFrom( LUI.UIElement )
 CoD.vhud_ModDNITime.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ModDNITime )
 	self.id = "vhud_ModDNITime"
@@ -70,6 +72,7 @@ CoD.vhud_ModDNITime.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local ModDNIFrame2 = function ( ModDNI, event )
 					local ModDNIFrame3 = function ( ModDNI, event )
 						if not event.interrupted then
@@ -243,6 +246,7 @@ CoD.vhud_ModDNITime.new = function ( menu, controller )
 				self.ModDNIBracketT:setRGB( 1, 1, 1 )
 				self.ModDNIBracketT:setZRot( 0 )
 				ModDNIBracketTFrame2( ModDNIBracketT, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 0 )
 				self.clipFinished( TextBox0, {} )
@@ -287,15 +291,18 @@ CoD.vhud_ModDNITime.new = function ( menu, controller )
 				self.ModDNI0:setYRot( 0 )
 				self.ModDNI0:setZRot( 0 )
 				ModDNI0Frame2( ModDNI0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",

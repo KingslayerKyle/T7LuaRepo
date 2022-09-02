@@ -4,9 +4,11 @@
 CoD.CommsWidget_Arrow = InheritFrom( LUI.UIElement )
 CoD.CommsWidget_Arrow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CommsWidget_Arrow )
 	self.id = "CommsWidget_Arrow"
@@ -26,6 +28,7 @@ CoD.CommsWidget_Arrow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local f2_local0 = function ( f3_arg0, f3_arg1 )
 					local f3_local0 = function ( f4_arg0, f4_arg1 )
 						if not f4_arg1.interrupted then
@@ -52,19 +55,23 @@ CoD.CommsWidget_Arrow.new = function ( menu, controller )
 				ImgArrow0:beginAnimation( "keyframe", 170, false, false, CoD.TweenType.Linear )
 				self.ImgArrow0:setAlpha( 1 )
 				ImgArrow0:registerEventHandler( "transition_complete_keyframe", f2_local0 )
+
 				self.nextClip = "DefaultClip"
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 0 )
+
 				self.nextClip = "HudStart"
 			end
 		},
 		Fake = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			HudStop = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

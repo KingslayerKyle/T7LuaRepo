@@ -4,9 +4,11 @@
 CoD.SystemOverlay_WeaponPrestigeStar = InheritFrom( LUI.UIElement )
 CoD.SystemOverlay_WeaponPrestigeStar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SystemOverlay_WeaponPrestigeStar )
 	self.id = "SystemOverlay_WeaponPrestigeStar"
@@ -26,6 +28,7 @@ CoD.SystemOverlay_WeaponPrestigeStar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image0:completeAnimation()
 				self.Image0:setRGB( 0.97, 0.93, 0.07 )
 				self.clipFinished( Image0, {} )
@@ -34,12 +37,14 @@ CoD.SystemOverlay_WeaponPrestigeStar.new = function ( menu, controller )
 		DoubleWeaponXP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image0:completeAnimation()
 				self.Image0:setRGB( 0.59, 0.36, 0.89 )
 				self.clipFinished( Image0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DoubleWeaponXP",

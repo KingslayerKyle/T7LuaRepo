@@ -17,9 +17,11 @@ require( "ui.uieditor.widgets.CPSystems.TacticalMode.GridItemUpgradeIconTactical
 CoD.GridItemTacticalRig = InheritFrom( LUI.UIElement )
 CoD.GridItemTacticalRig.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GridItemTacticalRig )
 	self.id = "GridItemTacticalRig"
@@ -418,18 +420,23 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 18 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImageSolid:completeAnimation()
 				self.itemImageSolid:setAlpha( 0 )
 				self.clipFinished( itemImageSolid, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.8 )
 				self.itemImage:setScale( 1 )
@@ -449,45 +456,57 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 0 )
 				tokenUnlockFrame2( tokenUnlock, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 0 )
 				self.clipFinished( alertIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
 				tokenUnlockable:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
 				tokenUnlockable:setAlpha( 0 )
 				tokenUnlockable:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				UpgradableIconLock:completeAnimation()
 				self.UpgradableIconLock:setAlpha( 0 )
 				self.clipFinished( UpgradableIconLock, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 9 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 90, false, false, CoD.TweenType.Linear )
@@ -876,30 +895,38 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 0 )
 				self.clipFinished( tokenUnlock, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 8 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
@@ -930,6 +957,7 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				itemImageFrame2( itemImage, {} )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 0 )
 				self.clipFinished( tokenUnlock, {} )
@@ -1311,61 +1339,80 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 		ItemBanned = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImageSolid:completeAnimation()
 				self.itemImageSolid:setAlpha( 0 )
 				self.clipFinished( itemImageSolid, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.4 )
 				self.itemImage:setScale( 1 )
 				self.clipFinished( itemImage, {} )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 0 )
 				self.clipFinished( tokenUnlock, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 0.6 )
 				self.clipFinished( LabelButton, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 0 )
 				self.clipFinished( alertIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				itemImageLine:completeAnimation()
 				self.itemImageLine:setAlpha( 0.5 )
 				self.clipFinished( itemImageLine, {} )
+
 				tokenUnlockable:completeAnimation()
 				self.tokenUnlockable:setAlpha( 1 )
 				self.clipFinished( tokenUnlockable, {} )
+
 				UpgradableIconLock:completeAnimation()
 				self.UpgradableIconLock:setAlpha( 0.25 )
 				self.UpgradableIconLock:setScale( 0.8 )
@@ -1373,6 +1420,7 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				tokenUnlock:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
 				tokenUnlock:setAlpha( 0 )
 				tokenUnlock:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
@@ -1723,27 +1771,33 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 1 )
 				glitch2Frame2( glitch2, {} )
+
 				tokenUnlockable:completeAnimation()
 				self.tokenUnlockable:setAlpha( 1 )
 				self.clipFinished( tokenUnlockable, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 0 )
 				self.clipFinished( tokenUnlock, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				tokenUnlockable:completeAnimation()
 				self.tokenUnlockable:setAlpha( 1 )
 				self.clipFinished( tokenUnlockable, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				tokenUnlock:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
 				tokenUnlock:setAlpha( 0 )
 				tokenUnlock:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
@@ -2120,6 +2174,7 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				glitch2Frame2( glitch2, {} )
+
 				tokenUnlockable:completeAnimation()
 				self.tokenUnlockable:setAlpha( 1 )
 				self.clipFinished( tokenUnlockable, {} )
@@ -2128,69 +2183,89 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 		Equipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImageSolid:completeAnimation()
 				self.itemImageSolid:setAlpha( 0 )
 				self.clipFinished( itemImageSolid, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.8 )
 				self.itemImage:setScale( 1 )
 				self.clipFinished( itemImage, {} )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 1 )
 				self.clipFinished( tokenUnlock, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setLeftRight( false, true, -83, -69 )
 				self.equippedIcon:setTopBottom( true, false, 2, 16 )
 				self.equippedIcon:setAlpha( 1 )
 				self.clipFinished( equippedIcon, {} )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 0 )
 				self.clipFinished( alertIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				itemImageLine:completeAnimation()
 				self.itemImageLine:setAlpha( 1 )
 				self.clipFinished( itemImageLine, {} )
+
 				equippedIconFully:completeAnimation()
 				self.equippedIconFully:setAlpha( 0 )
 				self.clipFinished( equippedIconFully, {} )
+
 				UpgradableIconLock:completeAnimation()
 				self.UpgradableIconLock:setAlpha( 0 )
 				self.clipFinished( UpgradableIconLock, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 8 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 119, false, false, CoD.TweenType.Linear )
@@ -2221,6 +2296,7 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.8 )
 				itemImageFrame2( itemImage, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 1 )
 				self.clipFinished( equippedIcon, {} )
@@ -2574,27 +2650,34 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 1 )
 				self.clipFinished( equippedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 8 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
@@ -2625,6 +2708,7 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				itemImageFrame2( itemImage, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 1 )
 				self.clipFinished( equippedIcon, {} )
@@ -3006,67 +3090,86 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 		New = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImageSolid:completeAnimation()
 				self.itemImageSolid:setAlpha( 0 )
 				self.clipFinished( itemImageSolid, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.3 )
 				self.itemImage:setScale( 1 )
 				self.clipFinished( itemImage, {} )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 0 )
 				self.clipFinished( tokenUnlock, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 0 )
 				self.clipFinished( alertIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 1 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				itemImageLine:completeAnimation()
 				self.itemImageLine:setAlpha( 1 )
 				self.clipFinished( itemImageLine, {} )
 				tokenUnlockable:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
 				tokenUnlockable:setAlpha( 1 )
 				tokenUnlockable:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				UpgradableIconLock:completeAnimation()
 				self.UpgradableIconLock:setAlpha( 0 )
 				self.clipFinished( UpgradableIconLock, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 0 )
 				self.clipFinished( tokenUnlock, {} )
@@ -3423,12 +3526,15 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 0 )
 				self.clipFinished( tokenUnlock, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
@@ -3438,6 +3544,7 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 0 )
 				self.clipFinished( tokenUnlock, {} )
@@ -3822,57 +3929,75 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 18 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImageSolid:completeAnimation()
 				self.itemImageSolid:setAlpha( 0 )
 				self.clipFinished( itemImageSolid, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0 )
 				self.clipFinished( itemImage, {} )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 0 )
 				self.clipFinished( tokenUnlock, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 0.6 )
 				self.clipFinished( LabelButton, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 0 )
 				self.clipFinished( alertIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0.8 )
 				self.clipFinished( lockedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				itemImageLine:completeAnimation()
 				self.itemImageLine:setAlpha( 0.5 )
 				self.clipFinished( itemImageLine, {} )
+
 				UpgradableIconLock:completeAnimation()
 				self.UpgradableIconLock:setLeftRight( true, true, 215, 0 )
 				self.UpgradableIconLock:setTopBottom( true, true, -0.25, -0.25 )
@@ -3882,6 +4007,7 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				tokenUnlock:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
 				tokenUnlock:setAlpha( 0 )
 				tokenUnlock:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
@@ -4235,18 +4361,22 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				tokenUnlock:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
 				tokenUnlock:setAlpha( 0 )
 				tokenUnlock:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				tokenUnlock:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
 				tokenUnlock:setAlpha( 0 )
 				tokenUnlock:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
@@ -4628,61 +4758,80 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 		NotAvailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImageSolid:completeAnimation()
 				self.itemImageSolid:setAlpha( 0 )
 				self.clipFinished( itemImageSolid, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.4 )
 				self.itemImage:setScale( 1 )
 				self.clipFinished( itemImage, {} )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 0 )
 				self.clipFinished( tokenUnlock, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 0.6 )
 				self.clipFinished( LabelButton, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 0 )
 				self.clipFinished( alertIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				itemImageLine:completeAnimation()
 				self.itemImageLine:setAlpha( 0.5 )
 				self.clipFinished( itemImageLine, {} )
+
 				tokenUnlockable:completeAnimation()
 				self.tokenUnlockable:setAlpha( 1 )
 				self.clipFinished( tokenUnlockable, {} )
+
 				UpgradableIconLock:completeAnimation()
 				self.UpgradableIconLock:setAlpha( 0.25 )
 				self.UpgradableIconLock:setScale( 0.8 )
@@ -4690,6 +4839,7 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				tokenUnlock:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
 				tokenUnlock:setAlpha( 0 )
 				tokenUnlock:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
@@ -5040,27 +5190,33 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 1 )
 				glitch2Frame2( glitch2, {} )
+
 				tokenUnlockable:completeAnimation()
 				self.tokenUnlockable:setAlpha( 1 )
 				self.clipFinished( tokenUnlockable, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 0 )
 				self.clipFinished( tokenUnlock, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				tokenUnlockable:completeAnimation()
 				self.tokenUnlockable:setAlpha( 1 )
 				self.clipFinished( tokenUnlockable, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				tokenUnlock:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
 				tokenUnlock:setAlpha( 0 )
 				tokenUnlock:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
@@ -5437,6 +5593,7 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				glitch2Frame2( glitch2, {} )
+
 				tokenUnlockable:completeAnimation()
 				self.tokenUnlockable:setAlpha( 1 )
 				self.clipFinished( tokenUnlockable, {} )
@@ -5445,55 +5602,72 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 		MutuallyExclusive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImageSolid:completeAnimation()
 				self.itemImageSolid:setAlpha( 0 )
 				self.clipFinished( itemImageSolid, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.8 )
 				self.itemImage:setScale( 1 )
 				self.clipFinished( itemImage, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 0 )
 				self.clipFinished( alertIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				itemImageLine:completeAnimation()
 				self.itemImageLine:setAlpha( 1 )
 				self.clipFinished( itemImageLine, {} )
+
 				UpgradableIconLock:completeAnimation()
 				self.UpgradableIconLock:setAlpha( 0 )
 				self.UpgradableIconLock:setScale( 0.8 )
@@ -5501,6 +5675,7 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -5881,21 +6056,26 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -6304,61 +6484,79 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 		NoConsumablesRemaining = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImageSolid:completeAnimation()
 				self.itemImageSolid:setAlpha( 0 )
 				self.clipFinished( itemImageSolid, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.4 )
 				self.itemImage:setScale( 1 )
 				self.clipFinished( itemImage, {} )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 1 )
 				self.clipFinished( tokenUnlock, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 0.6 )
 				self.clipFinished( LabelButton, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 0 )
 				self.clipFinished( alertIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				itemImageLine:completeAnimation()
 				self.itemImageLine:setAlpha( 0.5 )
 				self.clipFinished( itemImageLine, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FocusBarTFrame2 = function ( FocusBarT, event )
 					local FocusBarTFrame3 = function ( FocusBarT, event )
 						local FocusBarTFrame4 = function ( FocusBarT, event )
@@ -6709,18 +6907,22 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 1 )
 				self.clipFinished( tokenUnlock, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local FocusBarTFrame2 = function ( FocusBarT, event )
 					local FocusBarTFrame3 = function ( FocusBarT, event )
 						local FocusBarTFrame4 = function ( FocusBarT, event )
@@ -7099,71 +7301,91 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 		EquippedFullyUpgraded = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				itemImageSolid:completeAnimation()
 				self.itemImageSolid:setAlpha( 0 )
 				self.clipFinished( itemImageSolid, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.8 )
 				self.itemImage:setScale( 1 )
 				self.clipFinished( itemImage, {} )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 0 )
 				self.clipFinished( tokenUnlock, {} )
+
 				LabelButton:completeAnimation()
 				self.LabelButton:setAlpha( 1 )
 				self.clipFinished( LabelButton, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setLeftRight( false, true, -83, -69 )
 				self.equippedIcon:setTopBottom( true, false, 2, 16 )
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				alertIcon:completeAnimation()
 				self.alertIcon:setAlpha( 0 )
 				self.clipFinished( alertIcon, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				itemImageLine:completeAnimation()
 				self.itemImageLine:setAlpha( 1 )
 				self.clipFinished( itemImageLine, {} )
+
 				equippedIconFully:completeAnimation()
 				self.equippedIconFully:setLeftRight( false, true, -16, -2 )
 				self.equippedIconFully:setTopBottom( true, false, 2, 16 )
 				self.equippedIconFully:setAlpha( 1 )
 				self.clipFinished( equippedIconFully, {} )
+
 				UpgradableIconLock:completeAnimation()
 				self.UpgradableIconLock:setAlpha( 0 )
 				self.clipFinished( UpgradableIconLock, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 9 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 119, false, false, CoD.TweenType.Linear )
@@ -7194,6 +7416,7 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 0.8 )
 				itemImageFrame2( itemImage, {} )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 0 )
 				self.clipFinished( tokenUnlock, {} )
@@ -7544,36 +7767,45 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 1 )
 				glitch2Frame2( glitch2, {} )
+
 				equippedIconFully:completeAnimation()
 				self.equippedIconFully:setAlpha( 1 )
 				self.clipFinished( equippedIconFully, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				self.clipFinished( itemImage, {} )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 0 )
 				self.clipFinished( tokenUnlock, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				equippedIconFully:completeAnimation()
 				self.equippedIconFully:setAlpha( 1 )
 				self.clipFinished( equippedIconFully, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 9 )
+
 				local BoxButtonLrgInactiveFrame2 = function ( BoxButtonLrgInactive, event )
 					if not event.interrupted then
 						BoxButtonLrgInactive:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
@@ -7604,6 +7836,7 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 				itemImage:completeAnimation()
 				self.itemImage:setAlpha( 1 )
 				itemImageFrame2( itemImage, {} )
+
 				tokenUnlock:completeAnimation()
 				self.tokenUnlock:setAlpha( 0 )
 				self.clipFinished( tokenUnlock, {} )
@@ -7980,12 +8213,14 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				glitch2Frame2( glitch2, {} )
+
 				equippedIconFully:completeAnimation()
 				self.equippedIconFully:setAlpha( 1 )
 				self.clipFinished( equippedIconFully, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ItemBanned",
@@ -8052,6 +8287,7 @@ CoD.GridItemTacticalRig.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveDiag:close()
 		element.BoxButtonLrgInactive:close()

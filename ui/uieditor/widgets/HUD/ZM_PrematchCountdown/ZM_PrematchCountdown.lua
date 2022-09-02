@@ -14,9 +14,11 @@ require( "ui.uieditor.widgets.HUD.PrematchCountdown.PrematchCountdown_FirstGumFr
 CoD.ZM_PrematchCountdown = InheritFrom( LUI.UIElement )
 CoD.ZM_PrematchCountdown.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZM_PrematchCountdown )
 	self.id = "ZM_PrematchCountdown"
@@ -157,9 +159,11 @@ CoD.ZM_PrematchCountdown.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			ShowDoubleXPIcon = function ()
 				self:setupElementClipCounter( 7 )
+
 				GlowPanel:completeAnimation()
 				self.GlowPanel:setAlpha( 0 )
 				self.clipFinished( GlowPanel, {} )
@@ -629,10 +633,12 @@ CoD.ZM_PrematchCountdown.new = function ( menu, controller )
 				end
 				
 				DoubleXPText:completeAnimation()
+
 				DoubleXPText.MatchText:completeAnimation()
 				self.DoubleXPText:setAlpha( 0 )
 				self.DoubleXPText.MatchText:setText( Engine.Localize( "MENU_DOUBLE_XP" ) )
 				DoubleXPTextFrame2( DoubleXPText, {} )
+
 				Glitch:completeAnimation()
 				self.Glitch:setLeftRight( true, false, 405.75, 889.75 )
 				self.Glitch:setTopBottom( true, false, 36, 318 )
@@ -783,6 +789,7 @@ CoD.ZM_PrematchCountdown.new = function ( menu, controller )
 			end,
 			ShowDoubleLootIcon = function ()
 				self:setupElementClipCounter( 8 )
+
 				GlowPanel:completeAnimation()
 				self.GlowPanel:setAlpha( 0 )
 				self.clipFinished( GlowPanel, {} )
@@ -1258,10 +1265,12 @@ CoD.ZM_PrematchCountdown.new = function ( menu, controller )
 				end
 				
 				DoubleXPText:completeAnimation()
+
 				DoubleXPText.MatchText:completeAnimation()
 				self.DoubleXPText:setAlpha( 0 )
 				self.DoubleXPText.MatchText:setText( Engine.Localize( "MENU_DOUBLELOOT" ) )
 				DoubleXPTextFrame2( DoubleXPText, {} )
+
 				Glitch:completeAnimation()
 				self.Glitch:setLeftRight( true, false, 405.75, 889.75 )
 				self.Glitch:setTopBottom( true, false, 36, 318 )
@@ -1303,6 +1312,7 @@ CoD.ZM_PrematchCountdown.new = function ( menu, controller )
 				Sound:completeAnimation()
 				self.Sound:playSound( "xp_in", controller )
 				SoundFrame2( Sound, {} )
+
 				PrematchCountdown2xpBadge:completeAnimation()
 				self.PrematchCountdown2xpBadge:setAlpha( 0 )
 				self.clipFinished( PrematchCountdown2xpBadge, {} )
@@ -1411,6 +1421,7 @@ CoD.ZM_PrematchCountdown.new = function ( menu, controller )
 			end,
 			ShowDoubleWeaponXPIcon = function ()
 				self:setupElementClipCounter( 7 )
+
 				GlowPanel:completeAnimation()
 				self.GlowPanel:setAlpha( 0 )
 				self.clipFinished( GlowPanel, {} )
@@ -1882,12 +1893,14 @@ CoD.ZM_PrematchCountdown.new = function ( menu, controller )
 				end
 				
 				DoubleXPText:completeAnimation()
+
 				DoubleXPText.MatchText:completeAnimation()
 				self.DoubleXPText:setLeftRight( false, false, -142, 142 )
 				self.DoubleXPText:setTopBottom( true, false, 186.29, 218.5 )
 				self.DoubleXPText:setAlpha( 0 )
 				self.DoubleXPText.MatchText:setText( Engine.Localize( "MENU_DOUBLE_WEAPON_XP" ) )
 				DoubleXPTextFrame2( DoubleXPText, {} )
+
 				Glitch:completeAnimation()
 				self.Glitch:setLeftRight( true, false, 405.75, 889.75 )
 				self.Glitch:setTopBottom( true, false, 36, 318 )
@@ -2038,6 +2051,7 @@ CoD.ZM_PrematchCountdown.new = function ( menu, controller )
 			end,
 			ShowDoubleXPandWeaponXP = function ()
 				self:setupElementClipCounter( 11 )
+
 				GlowPanel:completeAnimation()
 				self.GlowPanel:setAlpha( 0 )
 				self.clipFinished( GlowPanel, {} )
@@ -2509,12 +2523,14 @@ CoD.ZM_PrematchCountdown.new = function ( menu, controller )
 				end
 				
 				DoubleXPText:completeAnimation()
+
 				DoubleXPText.MatchText:completeAnimation()
 				self.DoubleXPText:setLeftRight( false, false, -292, -8 )
 				self.DoubleXPText:setTopBottom( true, false, 186.29, 218.5 )
 				self.DoubleXPText:setAlpha( 0 )
 				self.DoubleXPText.MatchText:setText( Engine.Localize( "MENU_DOUBLE_XP" ) )
 				DoubleXPTextFrame2( DoubleXPText, {} )
+
 				Glitch:completeAnimation()
 				self.Glitch:setLeftRight( true, false, 405.75, 889.75 )
 				self.Glitch:setTopBottom( true, false, 36, 318 )
@@ -3226,6 +3242,7 @@ CoD.ZM_PrematchCountdown.new = function ( menu, controller )
 			end,
 			ShowFirstGumFree = function ()
 				self:setupElementClipCounter( 6 )
+
 				GlowPanel:completeAnimation()
 				self.GlowPanel:setAlpha( 0 )
 				self.clipFinished( GlowPanel, {} )
@@ -3697,6 +3714,7 @@ CoD.ZM_PrematchCountdown.new = function ( menu, controller )
 				end
 				
 				DoubleXPText:completeAnimation()
+
 				DoubleXPText.MatchText:completeAnimation()
 				self.DoubleXPText:setLeftRight( false, false, -142, 142 )
 				self.DoubleXPText:setTopBottom( true, false, 186.29, 218.5 )
@@ -3861,6 +3879,7 @@ CoD.ZM_PrematchCountdown.new = function ( menu, controller )
 			PlayClip( self, "ShowFirstGumFree", controller )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GlowPanel:close()
 		element.PrematchCountdownNumbers:close()

@@ -15,9 +15,11 @@ end
 CoD.Console = InheritFrom( LUI.UIElement )
 CoD.Console.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Console )
 	self.id = "Console"
@@ -92,24 +94,31 @@ CoD.Console.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				ConsoleEntry0:completeAnimation()
 				self.ConsoleEntry0:setAlpha( 1 )
 				self.clipFinished( ConsoleEntry0, {} )
+
 				ConsoleEntry1:completeAnimation()
 				self.ConsoleEntry1:setAlpha( 1 )
 				self.clipFinished( ConsoleEntry1, {} )
+
 				ConsoleEntry2:completeAnimation()
 				self.ConsoleEntry2:setAlpha( 1 )
 				self.clipFinished( ConsoleEntry2, {} )
+
 				ConsoleEntry3:completeAnimation()
 				self.ConsoleEntry3:setAlpha( 1 )
 				self.clipFinished( ConsoleEntry3, {} )
+
 				ConsoleEntry4:completeAnimation()
 				self.ConsoleEntry4:setAlpha( 1 )
 				self.clipFinished( ConsoleEntry4, {} )
+
 				ConsoleEntry5:completeAnimation()
 				self.ConsoleEntry5:setAlpha( 1 )
 				self.clipFinished( ConsoleEntry5, {} )
+
 				ConsoleEntry6:completeAnimation()
 				self.ConsoleEntry6:setAlpha( 1 )
 				self.clipFinished( ConsoleEntry6, {} )
@@ -118,30 +127,38 @@ CoD.Console.new = function ( menu, controller )
 		HideForCodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				ConsoleEntry0:completeAnimation()
 				self.ConsoleEntry0:setAlpha( 0 )
 				self.clipFinished( ConsoleEntry0, {} )
+
 				ConsoleEntry1:completeAnimation()
 				self.ConsoleEntry1:setAlpha( 0 )
 				self.clipFinished( ConsoleEntry1, {} )
+
 				ConsoleEntry2:completeAnimation()
 				self.ConsoleEntry2:setAlpha( 0 )
 				self.clipFinished( ConsoleEntry2, {} )
+
 				ConsoleEntry3:completeAnimation()
 				self.ConsoleEntry3:setAlpha( 0 )
 				self.clipFinished( ConsoleEntry3, {} )
+
 				ConsoleEntry4:completeAnimation()
 				self.ConsoleEntry4:setAlpha( 0 )
 				self.clipFinished( ConsoleEntry4, {} )
+
 				ConsoleEntry5:completeAnimation()
 				self.ConsoleEntry5:setAlpha( 0 )
 				self.clipFinished( ConsoleEntry5, {} )
+
 				ConsoleEntry6:completeAnimation()
 				self.ConsoleEntry6:setAlpha( 0 )
 				self.clipFinished( ConsoleEntry6, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HideForCodCaster",
@@ -166,6 +183,7 @@ CoD.Console.new = function ( menu, controller )
 			modelName = "CodCaster.profileSettingsUpdated"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ConsoleEntry0:close()
 		element.ConsoleEntry1:close()

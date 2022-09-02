@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.AbilityWheel.AbilityWheel_Icon" )
 CoD.AbilityWheel_AbilityContextual = InheritFrom( LUI.UIElement )
 CoD.AbilityWheel_AbilityContextual.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AbilityWheel_AbilityContextual )
 	self.id = "AbilityWheel_AbilityContextual"
@@ -97,18 +99,23 @@ CoD.AbilityWheel_AbilityContextual.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Frame:completeAnimation()
 				self.Frame:setAlpha( 0 )
 				self.clipFinished( Frame, {} )
+
 				Pixel:completeAnimation()
 				self.Pixel:setAlpha( 0 )
 				self.clipFinished( Pixel, {} )
+
 				Description0:completeAnimation()
 				self.Description0:setAlpha( RandomAddPercent( -30, 0.9 ) )
 				self.clipFinished( Description0, {} )
+
 				Title0:completeAnimation()
 				self.Title0:setAlpha( RandomAddPercent( -30, 0.9 ) )
 				self.clipFinished( Title0, {} )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( RandomAddPercent( -30, 1 ) )
 				self.clipFinished( Image, {} )
@@ -117,24 +124,30 @@ CoD.AbilityWheel_AbilityContextual.new = function ( menu, controller )
 		Inactive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Frame:completeAnimation()
 				self.Frame:setAlpha( 0 )
 				self.clipFinished( Frame, {} )
+
 				Pixel:completeAnimation()
 				self.Pixel:setAlpha( 0 )
 				self.clipFinished( Pixel, {} )
+
 				Description0:completeAnimation()
 				self.Description0:setAlpha( RandomAddPercent( -30, 0 ) )
 				self.clipFinished( Description0, {} )
+
 				Title0:completeAnimation()
 				self.Title0:setAlpha( RandomAddPercent( -30, 0 ) )
 				self.clipFinished( Title0, {} )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( RandomAddPercent( -30, 0 ) )
 				self.clipFinished( Image, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Pixel:close()
 		element.Image:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.ChannelFilterColorButton = InheritFrom( LUI.UIElement )
 CoD.ChannelFilterColorButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChannelFilterColorButton )
 	self.id = "ChannelFilterColorButton"
@@ -40,12 +42,14 @@ CoD.ChannelFilterColorButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				focusBorder:completeAnimation()
 				self.focusBorder:setAlpha( 0 )
 				self.clipFinished( focusBorder, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.focusBorder:close()
 		element.color:close()

@@ -5,6 +5,7 @@ require( "ui.uieditor.widgets.Border" )
 
 local PostLoadFunc = function ( f1_arg0, f1_arg1 )
 	if CoD.isPC then
+
 		LUI.OverrideFunction_CallOriginalFirst( f1_arg0.keybind, "setText", function ( element, controller )
 			if element:getTextWidth() > 0 then
 				ScaleWidgetToLabelCentered( f1_arg0, element, 8 )
@@ -19,9 +20,11 @@ end
 CoD.KeyPrompt = InheritFrom( LUI.UIElement )
 CoD.KeyPrompt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.KeyPrompt )
 	self.id = "KeyPrompt"
@@ -50,9 +53,11 @@ CoD.KeyPrompt.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				keybind:completeAnimation()
 				self.keybind:setAlpha( 1 )
 				self.clipFinished( keybind, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 1 )
 				self.clipFinished( Border, {} )
@@ -61,15 +66,18 @@ CoD.KeyPrompt.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				keybind:completeAnimation()
 				self.keybind:setAlpha( 0 )
 				self.clipFinished( keybind, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 0 )
 				self.clipFinished( Border, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Border:close()
 	end )

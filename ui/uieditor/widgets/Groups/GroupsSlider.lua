@@ -17,9 +17,11 @@ end
 CoD.GroupsSlider = InheritFrom( LUI.UIElement )
 CoD.GroupsSlider.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsSlider )
 	self.id = "GroupsSlider"
@@ -98,30 +100,38 @@ CoD.GroupsSlider.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				left:completeAnimation()
 				self.left:setAlpha( 1 )
 				self.clipFinished( left, {} )
+
 				right:completeAnimation()
 				self.right:setAlpha( 1 )
 				self.clipFinished( right, {} )
+
 				TextBox:completeAnimation()
 				self.TextBox:setRGB( 1, 1, 1 )
 				self.clipFinished( TextBox, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				TextBox:completeAnimation()
 				self.TextBox:setRGB( 1, 0.59, 0 )
 				self.clipFinished( TextBox, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
@@ -130,15 +140,18 @@ CoD.GroupsSlider.new = function ( menu, controller )
 		ArrowsHidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				left:completeAnimation()
 				self.left:setAlpha( 0 )
 				self.clipFinished( left, {} )
+
 				right:completeAnimation()
 				self.right:setAlpha( 0 )
 				self.clipFinished( right, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsElementInState( element, "DefaultState" ) then
 			SetElementStateByElementName( self, "left", controller, "DefaultState" )
@@ -148,6 +161,7 @@ CoD.GroupsSlider.new = function ( menu, controller )
 			SetElementStateByElementName( self, "right", controller, "Hidden" )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.left:close()
 		element.right:close()

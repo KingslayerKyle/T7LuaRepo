@@ -23,9 +23,11 @@ end
 CoD.BM_HorizontalCounter = InheritFrom( LUI.UIElement )
 CoD.BM_HorizontalCounter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_HorizontalCounter )
 	self.id = "BM_HorizontalCounter"
@@ -115,24 +117,31 @@ CoD.BM_HorizontalCounter.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				currentItem:completeAnimation()
 				self.currentItem:setAlpha( 1 )
 				self.clipFinished( currentItem, {} )
+
 				dividor:completeAnimation()
 				self.dividor:setAlpha( 1 )
 				self.clipFinished( dividor, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 1 )
 				self.clipFinished( count, {} )
+
 				RightOff:completeAnimation()
 				self.RightOff:setAlpha( 0 )
 				self.clipFinished( RightOff, {} )
+
 				RightOn:completeAnimation()
 				self.RightOn:setAlpha( 1 )
 				self.clipFinished( RightOn, {} )
+
 				LeftOff:completeAnimation()
 				self.LeftOff:setAlpha( 0 )
 				self.clipFinished( LeftOff, {} )
+
 				LeftOn:completeAnimation()
 				self.LeftOn:setAlpha( 1 )
 				self.clipFinished( LeftOn, {} )
@@ -141,24 +150,31 @@ CoD.BM_HorizontalCounter.new = function ( menu, controller )
 		AtLeftAndRight = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				currentItem:completeAnimation()
 				self.currentItem:setAlpha( 1 )
 				self.clipFinished( currentItem, {} )
+
 				dividor:completeAnimation()
 				self.dividor:setAlpha( 1 )
 				self.clipFinished( dividor, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 1 )
 				self.clipFinished( count, {} )
+
 				RightOff:completeAnimation()
 				self.RightOff:setAlpha( 0.5 )
 				self.clipFinished( RightOff, {} )
+
 				RightOn:completeAnimation()
 				self.RightOn:setAlpha( 0 )
 				self.clipFinished( RightOn, {} )
+
 				LeftOff:completeAnimation()
 				self.LeftOff:setAlpha( 0.5 )
 				self.clipFinished( LeftOff, {} )
+
 				LeftOn:completeAnimation()
 				self.LeftOn:setAlpha( 0 )
 				self.clipFinished( LeftOn, {} )
@@ -167,24 +183,31 @@ CoD.BM_HorizontalCounter.new = function ( menu, controller )
 		AtLeft = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				currentItem:completeAnimation()
 				self.currentItem:setAlpha( 1 )
 				self.clipFinished( currentItem, {} )
+
 				dividor:completeAnimation()
 				self.dividor:setAlpha( 1 )
 				self.clipFinished( dividor, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 1 )
 				self.clipFinished( count, {} )
+
 				RightOff:completeAnimation()
 				self.RightOff:setAlpha( 0 )
 				self.clipFinished( RightOff, {} )
+
 				RightOn:completeAnimation()
 				self.RightOn:setAlpha( 1 )
 				self.clipFinished( RightOn, {} )
+
 				LeftOff:completeAnimation()
 				self.LeftOff:setAlpha( 0.25 )
 				self.clipFinished( LeftOff, {} )
+
 				LeftOn:completeAnimation()
 				self.LeftOn:setAlpha( 0 )
 				self.clipFinished( LeftOn, {} )
@@ -193,24 +216,31 @@ CoD.BM_HorizontalCounter.new = function ( menu, controller )
 		AtRight = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				currentItem:completeAnimation()
 				self.currentItem:setAlpha( 1 )
 				self.clipFinished( currentItem, {} )
+
 				dividor:completeAnimation()
 				self.dividor:setAlpha( 1 )
 				self.clipFinished( dividor, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 1 )
 				self.clipFinished( count, {} )
+
 				RightOff:completeAnimation()
 				self.RightOff:setAlpha( 0.25 )
 				self.clipFinished( RightOff, {} )
+
 				RightOn:completeAnimation()
 				self.RightOn:setAlpha( 0 )
 				self.clipFinished( RightOn, {} )
+
 				LeftOff:completeAnimation()
 				self.LeftOff:setAlpha( 0 )
 				self.clipFinished( LeftOff, {} )
+
 				LeftOn:completeAnimation()
 				self.LeftOn:setAlpha( 1 )
 				self.clipFinished( LeftOn, {} )
@@ -219,27 +249,34 @@ CoD.BM_HorizontalCounter.new = function ( menu, controller )
 		NoItems = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				currentItem:completeAnimation()
 				self.currentItem:setAlpha( 0 )
 				self.clipFinished( currentItem, {} )
+
 				dividor:completeAnimation()
 				self.dividor:setAlpha( 0 )
 				self.clipFinished( dividor, {} )
+
 				count:completeAnimation()
 				self.count:setAlpha( 0 )
 				self.clipFinished( count, {} )
+
 				RightOff:completeAnimation()
 				self.RightOff:setAlpha( 0 )
 				self.clipFinished( RightOff, {} )
+
 				LeftOff:completeAnimation()
 				self.LeftOff:setAlpha( 0 )
 				self.clipFinished( LeftOff, {} )
+
 				LeftOn:completeAnimation()
 				self.LeftOn:setAlpha( 0 )
 				self.clipFinished( LeftOn, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "AtLeftAndRight",

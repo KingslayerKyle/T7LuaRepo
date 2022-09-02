@@ -4,9 +4,11 @@
 CoD.VerticalListSpacer = InheritFrom( LUI.UIElement )
 CoD.VerticalListSpacer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VerticalListSpacer )
 	self.id = "VerticalListSpacer"

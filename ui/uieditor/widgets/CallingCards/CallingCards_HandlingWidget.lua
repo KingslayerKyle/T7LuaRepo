@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_HandlingEyes" )
 CoD.CallingCards_HandlingWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_HandlingWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_HandlingWidget )
 	self.id = "CallingCards_HandlingWidget"

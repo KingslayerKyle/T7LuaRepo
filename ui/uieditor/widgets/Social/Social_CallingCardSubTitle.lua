@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ListSubHeaderPanel" )
 CoD.Social_CallingCardSubTitle = InheritFrom( LUI.UIElement )
 CoD.Social_CallingCardSubTitle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_CallingCardSubTitle )
 	self.id = "Social_CallingCardSubTitle"
@@ -29,6 +31,7 @@ CoD.Social_CallingCardSubTitle.new = function ( menu, controller )
 	Label0:setText( "" )
 	Label0:setTTF( "fonts/RefrigeratorDeluxe-Regular.ttf" )
 	Label0:setLetterSpacing( 0.5 )
+
 	LUI.OverrideFunction_CallOriginalFirst( Label0, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 2 )
 	end )

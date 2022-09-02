@@ -15,9 +15,11 @@ end
 CoD.BallOverlay = InheritFrom( LUI.UIElement )
 CoD.BallOverlay.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BallOverlay )
 	self.id = "BallOverlay"
@@ -81,9 +83,11 @@ CoD.BallOverlay.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BallStatus0:completeAnimation()
 				self.BallStatus0:setAlpha( 0 )
 				self.clipFinished( BallStatus0, {} )
+
 				BallStatusForCodcaster:completeAnimation()
 				self.BallStatusForCodcaster:setAlpha( 0 )
 				self.clipFinished( BallStatusForCodcaster, {} )
@@ -92,9 +96,11 @@ CoD.BallOverlay.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BallStatus0:completeAnimation()
 				self.BallStatus0:setAlpha( 1 )
 				self.clipFinished( BallStatus0, {} )
+
 				BallStatusForCodcaster:completeAnimation()
 				self.BallStatusForCodcaster:setAlpha( 0 )
 				self.clipFinished( BallStatusForCodcaster, {} )
@@ -103,9 +109,11 @@ CoD.BallOverlay.new = function ( menu, controller )
 		VisibleForCodCasterLargeMap = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BallStatus0:completeAnimation()
 				self.BallStatus0:setAlpha( 0 )
 				self.clipFinished( BallStatus0, {} )
+
 				BallStatusForCodcaster:completeAnimation()
 				self.BallStatusForCodcaster:setLeftRight( true, false, 23, 343 )
 				self.BallStatusForCodcaster:setTopBottom( true, false, 222, 254 )
@@ -116,9 +124,11 @@ CoD.BallOverlay.new = function ( menu, controller )
 		VisibleForCodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BallStatus0:completeAnimation()
 				self.BallStatus0:setAlpha( 0 )
 				self.clipFinished( BallStatus0, {} )
+
 				BallStatusForCodcaster:completeAnimation()
 				self.BallStatusForCodcaster:setLeftRight( true, false, 23, 343 )
 				self.BallStatusForCodcaster:setTopBottom( true, false, 193, 225 )
@@ -127,6 +137,7 @@ CoD.BallOverlay.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -284,6 +295,7 @@ CoD.BallOverlay.new = function ( menu, controller )
 			modelName = "CodCaster.profileSettingsUpdated"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BallStatus0:close()
 		element.BallStatusForCodcaster:close()

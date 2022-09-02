@@ -25,9 +25,11 @@ end
 CoD.ChooseCharacter_LoadoutListItem_MouseHoverIcon = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacter_LoadoutListItem_MouseHoverIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacter_LoadoutListItem_MouseHoverIcon )
 	self.id = "ChooseCharacter_LoadoutListItem_MouseHoverIcon"
@@ -65,24 +67,30 @@ CoD.ChooseCharacter_LoadoutListItem_MouseHoverIcon.new = function ( menu, contro
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				MouseHoverIcon:completeAnimation()
 				self.MouseHoverIcon:setAlpha( 0 )
 				self.clipFinished( MouseHoverIcon, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 3 )
+
 				MouseHoverIcon:completeAnimation()
 				self.MouseHoverIcon:setAlpha( 0 )
 				self.clipFinished( MouseHoverIcon, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 1 )
 				self.clipFinished( FocusBarB0, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
@@ -91,18 +99,21 @@ CoD.ChooseCharacter_LoadoutListItem_MouseHoverIcon.new = function ( menu, contro
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				MouseHoverIcon:completeAnimation()
 				self.MouseHoverIcon:setAlpha( 0 )
 				self.clipFinished( MouseHoverIcon, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 1 )
+
 				MouseHoverIcon:completeAnimation()
 				self.MouseHoverIcon:setAlpha( 0 )
 				self.clipFinished( MouseHoverIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -118,6 +129,7 @@ CoD.ChooseCharacter_LoadoutListItem_MouseHoverIcon.new = function ( menu, contro
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FocusBarB0:close()
 		element.FocusBarT:close()

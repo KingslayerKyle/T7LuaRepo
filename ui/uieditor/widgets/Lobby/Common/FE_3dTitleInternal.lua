@@ -15,9 +15,11 @@ end
 CoD.FE_3dTitleInternal = InheritFrom( LUI.UIElement )
 CoD.FE_3dTitleInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_3dTitleInternal )
 	self.id = "FE_3dTitleInternal"
@@ -33,6 +35,7 @@ CoD.FE_3dTitleInternal.new = function ( menu, controller )
 	Label0:setText( Engine.Localize( "MENU_MULTIPLAYER_CAPS" ) )
 	Label0:setTTF( "fonts/FoundryGridnik-Bold.ttf" )
 	Label0:setLetterSpacing( -2.2 )
+
 	LUI.OverrideFunction_CallOriginalFirst( Label0, "setText", function ( element, controller )
 		if IsGlobalModelValueNonEmptyString( element, controller, "lobbyRoot.lobbyTitle" ) and not IsCurrentLanguageArabic() and not IsSelfInState( self, "Playlist" ) then
 			ScaleParentWidgetToLabel( self, element, 10 )
@@ -56,6 +59,7 @@ CoD.FE_3dTitleInternal.new = function ( menu, controller )
 			playlistName0:setText( PrependArenaToPlaylist( name ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( playlistName0, "setText", function ( element, controller )
 		if IsSelfInState( self, "Playlist" ) and not IsCurrentLanguageArabic() then
 			ScaleParentWidgetToLabel( self, element, 10 )
@@ -137,34 +141,43 @@ CoD.FE_3dTitleInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				Label0:completeAnimation()
 				self.Label0:setLeftRight( true, false, 9.2, 742.82 )
 				self.Label0:setTopBottom( true, false, -1.5, 53.5 )
 				self.Label0:setAlpha( 1 )
 				self.clipFinished( Label0, {} )
+
 				playlistName0:completeAnimation()
 				self.playlistName0:setLeftRight( true, false, -0.62, 741.82 )
 				self.playlistName0:setTopBottom( true, false, 0, 51 )
 				self.playlistName0:setAlpha( 0 )
 				self.clipFinished( playlistName0, {} )
+
 				bo3logo:completeAnimation()
 				self.bo3logo:setAlpha( 0 )
 				self.clipFinished( bo3logo, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				StartMenuframenoBG00:completeAnimation()
 				self.StartMenuframenoBG00:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG00, {} )
+
 				HeaderKicker:completeAnimation()
 				self.HeaderKicker:setAlpha( 0.03 )
 				self.clipFinished( HeaderKicker, {} )
+
 				FeatureIcon:completeAnimation()
 				self.FeatureIcon:setAlpha( 0 )
 				self.clipFinished( FeatureIcon, {} )
+
 				HeaderKickerGroupHQ:completeAnimation()
 				self.HeaderKickerGroupHQ:setAlpha( 0 )
 				self.clipFinished( HeaderKickerGroupHQ, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 0 )
 				self.clipFinished( GroupEmblemWidget, {} )
@@ -173,32 +186,41 @@ CoD.FE_3dTitleInternal.new = function ( menu, controller )
 		LogoVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				Label0:completeAnimation()
 				self.Label0:setAlpha( 0 )
 				self.clipFinished( Label0, {} )
+
 				playlistName0:completeAnimation()
 				self.playlistName0:setAlpha( 0 )
 				self.clipFinished( playlistName0, {} )
+
 				bo3logo:completeAnimation()
 				self.bo3logo:setAlpha( 1 )
 				self.clipFinished( bo3logo, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setLeftRight( true, false, 16.07, 61.35 )
 				self.StartMenuframenoBG0:setTopBottom( true, false, 3.25, 47.75 )
 				self.StartMenuframenoBG0:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				StartMenuframenoBG00:completeAnimation()
 				self.StartMenuframenoBG00:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG00, {} )
+
 				HeaderKicker:completeAnimation()
 				self.HeaderKicker:setAlpha( 0 )
 				self.clipFinished( HeaderKicker, {} )
+
 				FeatureIcon:completeAnimation()
 				self.FeatureIcon:setAlpha( 0 )
 				self.clipFinished( FeatureIcon, {} )
+
 				HeaderKickerGroupHQ:completeAnimation()
 				self.HeaderKickerGroupHQ:setAlpha( 0 )
 				self.clipFinished( HeaderKickerGroupHQ, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 0 )
 				self.clipFinished( GroupEmblemWidget, {} )
@@ -207,35 +229,44 @@ CoD.FE_3dTitleInternal.new = function ( menu, controller )
 		Playlist = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				Label0:completeAnimation()
 				self.Label0:setLeftRight( true, false, 7.2, 741.82 )
 				self.Label0:setTopBottom( true, false, 7, 47 )
 				self.Label0:setAlpha( 0 )
 				self.Label0:setXRot( 0 )
 				self.clipFinished( Label0, {} )
+
 				playlistName0:completeAnimation()
 				self.playlistName0:setAlpha( 1 )
 				self.clipFinished( playlistName0, {} )
+
 				bo3logo:completeAnimation()
 				self.bo3logo:setAlpha( 0 )
 				self.clipFinished( bo3logo, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setLeftRight( true, false, 16.07, 61.35 )
 				self.StartMenuframenoBG0:setTopBottom( true, false, 3.25, 47.75 )
 				self.StartMenuframenoBG0:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				StartMenuframenoBG00:completeAnimation()
 				self.StartMenuframenoBG00:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG00, {} )
+
 				HeaderKicker:completeAnimation()
 				self.HeaderKicker:setAlpha( 0 )
 				self.clipFinished( HeaderKicker, {} )
+
 				FeatureIcon:completeAnimation()
 				self.FeatureIcon:setAlpha( 0 )
 				self.clipFinished( FeatureIcon, {} )
+
 				HeaderKickerGroupHQ:completeAnimation()
 				self.HeaderKickerGroupHQ:setAlpha( 0 )
 				self.clipFinished( HeaderKickerGroupHQ, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 0 )
 				self.clipFinished( GroupEmblemWidget, {} )
@@ -244,35 +275,44 @@ CoD.FE_3dTitleInternal.new = function ( menu, controller )
 		ArenaPlaylist = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				Label0:completeAnimation()
 				self.Label0:setLeftRight( true, false, 63, 797.62 )
 				self.Label0:setTopBottom( true, false, 17, 57 )
 				self.Label0:setAlpha( 1 )
 				self.Label0:setXRot( 0 )
 				self.clipFinished( Label0, {} )
+
 				playlistName0:completeAnimation()
 				self.playlistName0:setAlpha( 0 )
 				self.clipFinished( playlistName0, {} )
+
 				bo3logo:completeAnimation()
 				self.bo3logo:setAlpha( 0 )
 				self.clipFinished( bo3logo, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setLeftRight( true, false, 16.07, 61.35 )
 				self.StartMenuframenoBG0:setTopBottom( true, false, 3.25, 47.75 )
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				StartMenuframenoBG00:completeAnimation()
 				self.StartMenuframenoBG00:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG00, {} )
+
 				HeaderKicker:completeAnimation()
 				self.HeaderKicker:setAlpha( 1 )
 				self.clipFinished( HeaderKicker, {} )
+
 				FeatureIcon:completeAnimation()
 				self.FeatureIcon:setAlpha( 1 )
 				self.clipFinished( FeatureIcon, {} )
+
 				HeaderKickerGroupHQ:completeAnimation()
 				self.HeaderKickerGroupHQ:setAlpha( 0 )
 				self.clipFinished( HeaderKickerGroupHQ, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 0 )
 				self.clipFinished( GroupEmblemWidget, {} )
@@ -281,34 +321,43 @@ CoD.FE_3dTitleInternal.new = function ( menu, controller )
 		GroupHQ_Header = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				Label0:completeAnimation()
 				self.Label0:setLeftRight( true, false, 88.33, 822.95 )
 				self.Label0:setTopBottom( true, false, 17, 57 )
 				self.Label0:setAlpha( 1 )
 				self.clipFinished( Label0, {} )
+
 				playlistName0:completeAnimation()
 				self.playlistName0:setAlpha( 0 )
 				self.clipFinished( playlistName0, {} )
+
 				bo3logo:completeAnimation()
 				self.bo3logo:setAlpha( 0 )
 				self.clipFinished( bo3logo, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setLeftRight( true, false, 16.07, 61.35 )
 				self.StartMenuframenoBG0:setTopBottom( true, false, 3.25, 47.75 )
 				self.StartMenuframenoBG0:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				StartMenuframenoBG00:completeAnimation()
 				self.StartMenuframenoBG00:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG00, {} )
+
 				HeaderKicker:completeAnimation()
 				self.HeaderKicker:setAlpha( 0 )
 				self.clipFinished( HeaderKicker, {} )
+
 				FeatureIcon:completeAnimation()
 				self.FeatureIcon:setAlpha( 0 )
 				self.clipFinished( FeatureIcon, {} )
+
 				HeaderKickerGroupHQ:completeAnimation()
 				self.HeaderKickerGroupHQ:setAlpha( 1 )
 				self.clipFinished( HeaderKickerGroupHQ, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setLeftRight( true, false, 15, 84.84 )
 				self.GroupEmblemWidget:setTopBottom( true, false, 4.25, 47.75 )
@@ -319,34 +368,43 @@ CoD.FE_3dTitleInternal.new = function ( menu, controller )
 		Updated_Header = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				Label0:completeAnimation()
 				self.Label0:setLeftRight( true, false, 63.33, 797.95 )
 				self.Label0:setTopBottom( true, false, 17, 57 )
 				self.Label0:setAlpha( 1 )
 				self.clipFinished( Label0, {} )
+
 				playlistName0:completeAnimation()
 				self.playlistName0:setAlpha( 0 )
 				self.clipFinished( playlistName0, {} )
+
 				bo3logo:completeAnimation()
 				self.bo3logo:setAlpha( 0 )
 				self.clipFinished( bo3logo, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setLeftRight( true, false, 16.07, 61.35 )
 				self.StartMenuframenoBG0:setTopBottom( true, false, 3.25, 47.75 )
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				StartMenuframenoBG00:completeAnimation()
 				self.StartMenuframenoBG00:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG00, {} )
+
 				HeaderKicker:completeAnimation()
 				self.HeaderKicker:setAlpha( 1 )
 				self.clipFinished( HeaderKicker, {} )
+
 				FeatureIcon:completeAnimation()
 				self.FeatureIcon:setAlpha( 1 )
 				self.clipFinished( FeatureIcon, {} )
+
 				HeaderKickerGroupHQ:completeAnimation()
 				self.HeaderKickerGroupHQ:setAlpha( 0 )
 				self.clipFinished( HeaderKickerGroupHQ, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 0 )
 				self.clipFinished( GroupEmblemWidget, {} )
@@ -355,40 +413,50 @@ CoD.FE_3dTitleInternal.new = function ( menu, controller )
 		Updated_HeaderNoKicker = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				Label0:completeAnimation()
 				self.Label0:setLeftRight( true, false, 63.33, 797.95 )
 				self.Label0:setTopBottom( true, false, 7, 47 )
 				self.Label0:setAlpha( 1 )
 				self.clipFinished( Label0, {} )
+
 				playlistName0:completeAnimation()
 				self.playlistName0:setAlpha( 0 )
 				self.clipFinished( playlistName0, {} )
+
 				bo3logo:completeAnimation()
 				self.bo3logo:setAlpha( 0 )
 				self.clipFinished( bo3logo, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setLeftRight( true, false, 16.07, 61.35 )
 				self.StartMenuframenoBG0:setTopBottom( true, false, 3.25, 47.75 )
 				self.StartMenuframenoBG0:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				StartMenuframenoBG00:completeAnimation()
 				self.StartMenuframenoBG00:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG00, {} )
+
 				HeaderKicker:completeAnimation()
 				self.HeaderKicker:setAlpha( 0 )
 				self.clipFinished( HeaderKicker, {} )
+
 				FeatureIcon:completeAnimation()
 				self.FeatureIcon:setAlpha( 1 )
 				self.clipFinished( FeatureIcon, {} )
+
 				HeaderKickerGroupHQ:completeAnimation()
 				self.HeaderKickerGroupHQ:setAlpha( 0 )
 				self.clipFinished( HeaderKickerGroupHQ, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 0 )
 				self.clipFinished( GroupEmblemWidget, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "LogoVisible",
@@ -467,6 +535,7 @@ CoD.FE_3dTitleInternal.new = function ( menu, controller )
 	else
 		self:registerEventHandler( "menu_loaded", LUI.UIElement.updateState )
 	end
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsSelfInState( self, "Playlist" ) and not IsCurrentLanguageArabic() then
 			ScaleParentWidgetToElementLabel( self, "playlistName0", 10 )
@@ -476,6 +545,7 @@ CoD.FE_3dTitleInternal.new = function ( menu, controller )
 			RestoreParentToOriginalWidth( self )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG0:close()
 		element.StartMenuframenoBG00:close()

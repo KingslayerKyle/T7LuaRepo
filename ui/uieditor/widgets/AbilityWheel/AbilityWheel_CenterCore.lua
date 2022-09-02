@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.AbilityWheel.AbilityWheel_CenterAberation" )
 CoD.AbilityWheel_CenterCore = InheritFrom( LUI.UIElement )
 CoD.AbilityWheel_CenterCore.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AbilityWheel_CenterCore )
 	self.id = "AbilityWheel_CenterCore"
@@ -58,9 +60,11 @@ CoD.AbilityWheel_CenterCore.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 1 )
+
 				local PanelGlow0Frame2 = function ( PanelGlow0, event )
 					local PanelGlow0Frame3 = function ( PanelGlow0, event )
 						if not event.interrupted then
@@ -92,18 +96,22 @@ CoD.AbilityWheel_CenterCore.new = function ( menu, controller )
 		ControlCore = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				PanelGlow0:completeAnimation()
 				self.PanelGlow0:setRGB( 0.16, 0.45, 0.55 )
 				self.PanelGlow0:setAlpha( 1 )
 				self.clipFinished( PanelGlow0, {} )
+
 				PanelGlow00:completeAnimation()
 				self.PanelGlow00:setRGB( 0.15, 0.25, 0.72 )
 				self.PanelGlow00:setAlpha( 0 )
 				self.clipFinished( PanelGlow00, {} )
+
 				AbilityWheelCenterAberation0:completeAnimation()
 				self.AbilityWheelCenterAberation0:setAlpha( 0 )
 				self.AbilityWheelCenterAberation0:setScale( 0.8 )
 				self.clipFinished( AbilityWheelCenterAberation0, {} )
+
 				CenterSphere0:completeAnimation()
 				self.CenterSphere0:setLeftRight( false, false, -154.17, 154.62 )
 				self.CenterSphere0:setTopBottom( false, false, -160, 160 )
@@ -117,18 +125,22 @@ CoD.AbilityWheel_CenterCore.new = function ( menu, controller )
 		MartialCore = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				PanelGlow0:completeAnimation()
 				self.PanelGlow0:setRGB( 0.31, 0.71, 0.19 )
 				self.PanelGlow0:setAlpha( 1 )
 				self.clipFinished( PanelGlow0, {} )
+
 				PanelGlow00:completeAnimation()
 				self.PanelGlow00:setRGB( 0.02, 0.44, 0.07 )
 				self.PanelGlow00:setAlpha( 0 )
 				self.clipFinished( PanelGlow00, {} )
+
 				AbilityWheelCenterAberation0:completeAnimation()
 				self.AbilityWheelCenterAberation0:setAlpha( 0 )
 				self.AbilityWheelCenterAberation0:setScale( 1 )
 				self.clipFinished( AbilityWheelCenterAberation0, {} )
+
 				CenterSphere0:completeAnimation()
 				self.CenterSphere0:setRGB( 0, 0, 0 )
 				self.CenterSphere0:setAlpha( 0.5 )
@@ -138,20 +150,24 @@ CoD.AbilityWheel_CenterCore.new = function ( menu, controller )
 		ChaosCore = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				PanelGlow0:completeAnimation()
 				self.PanelGlow0:setRGB( 0.97, 0.36, 0.07 )
 				self.PanelGlow0:setAlpha( 1 )
 				self.clipFinished( PanelGlow0, {} )
+
 				PanelGlow00:completeAnimation()
 				self.PanelGlow00:setRGB( 0.96, 0.44, 0.02 )
 				self.PanelGlow00:setAlpha( 0 )
 				self.clipFinished( PanelGlow00, {} )
+
 				AbilityWheelCenterAberation0:completeAnimation()
 				self.AbilityWheelCenterAberation0:setLeftRight( false, false, -153.67, 154.12 )
 				self.AbilityWheelCenterAberation0:setTopBottom( false, false, -160, 160 )
 				self.AbilityWheelCenterAberation0:setAlpha( 0 )
 				self.AbilityWheelCenterAberation0:setScale( 0.8 )
 				self.clipFinished( AbilityWheelCenterAberation0, {} )
+
 				CenterSphere0:completeAnimation()
 				self.CenterSphere0:setLeftRight( false, false, -154.39, 154.39 )
 				self.CenterSphere0:setTopBottom( false, false, -160, 160 )
@@ -160,6 +176,7 @@ CoD.AbilityWheel_CenterCore.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ControlCore",
@@ -188,6 +205,7 @@ CoD.AbilityWheel_CenterCore.new = function ( menu, controller )
 			modelName = "hudItems.cybercomRequestedType"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AbilityWheelCenterAberation0:close()
 	end )

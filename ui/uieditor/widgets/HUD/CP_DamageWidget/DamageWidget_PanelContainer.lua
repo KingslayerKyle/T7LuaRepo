@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.CP_DamageWidget.DamageWidget_PanelOct" )
 CoD.DamageWidget_PanelContainer = InheritFrom( LUI.UIElement )
 CoD.DamageWidget_PanelContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DamageWidget_PanelContainer )
 	self.id = "DamageWidget_PanelContainer"
@@ -44,11 +46,13 @@ CoD.DamageWidget_PanelContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelEnviroHazardMeter:completeAnimation()
 				self.PanelEnviroHazardMeter:setLeftRight( true, false, 11.42, 79.25 )
 				self.PanelEnviroHazardMeter:setTopBottom( true, false, 31.33, 65 )
 				self.PanelEnviroHazardMeter:setAlpha( 0 )
 				self.clipFinished( PanelEnviroHazardMeter, {} )
+
 				PanelEnviroHazardIcon:completeAnimation()
 				self.PanelEnviroHazardIcon:setLeftRight( true, false, 31.34, 64.67 )
 				self.PanelEnviroHazardIcon:setTopBottom( true, false, 31.33, 65 )
@@ -57,6 +61,7 @@ CoD.DamageWidget_PanelContainer.new = function ( menu, controller )
 			end,
 			Hess1 = function ()
 				self:setupElementClipCounter( 2 )
+
 				local f3_local0 = function ( f4_arg0, f4_arg1 )
 					local f4_local0 = function ( f5_arg0, f5_arg1 )
 						local f5_local0 = function ( f6_arg0, f6_arg1 )
@@ -238,6 +243,7 @@ CoD.DamageWidget_PanelContainer.new = function ( menu, controller )
 			end,
 			Hess2 = function ()
 				self:setupElementClipCounter( 2 )
+
 				local f18_local0 = function ( f19_arg0, f19_arg1 )
 					local f19_local0 = function ( f20_arg0, f20_arg1 )
 						local f20_local0 = function ( f21_arg0, f21_arg1 )
@@ -421,11 +427,13 @@ CoD.DamageWidget_PanelContainer.new = function ( menu, controller )
 		Hess1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelEnviroHazardMeter:completeAnimation()
 				self.PanelEnviroHazardMeter:setLeftRight( true, false, 119.67, 187.5 )
 				self.PanelEnviroHazardMeter:setTopBottom( true, false, 31.33, 65 )
 				self.PanelEnviroHazardMeter:setAlpha( 1 )
 				self.clipFinished( PanelEnviroHazardMeter, {} )
+
 				PanelEnviroHazardIcon:completeAnimation()
 				self.PanelEnviroHazardIcon:setLeftRight( true, false, 88.34, 121.67 )
 				self.PanelEnviroHazardIcon:setTopBottom( true, false, 31.34, 65.01 )
@@ -434,6 +442,7 @@ CoD.DamageWidget_PanelContainer.new = function ( menu, controller )
 			end,
 			Hess2 = function ()
 				self:setupElementClipCounter( 2 )
+
 				local PanelEnviroHazardMeterFrame2 = function ( PanelEnviroHazardMeter, event )
 					if not event.interrupted then
 						PanelEnviroHazardMeter:beginAnimation( "keyframe", 250, true, true, CoD.TweenType.Back )
@@ -471,6 +480,7 @@ CoD.DamageWidget_PanelContainer.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				local f37_local0 = function ( f38_arg0, f38_arg1 )
 					local f38_local0 = function ( f39_arg0, f39_arg1 )
 						if not f39_arg1.interrupted then
@@ -536,11 +546,13 @@ CoD.DamageWidget_PanelContainer.new = function ( menu, controller )
 		Hess2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelEnviroHazardMeter:completeAnimation()
 				self.PanelEnviroHazardMeter:setLeftRight( true, false, 119.67, 187.5 )
 				self.PanelEnviroHazardMeter:setTopBottom( true, false, 17.34, 79.01 )
 				self.PanelEnviroHazardMeter:setAlpha( 1 )
 				self.clipFinished( PanelEnviroHazardMeter, {} )
+
 				PanelEnviroHazardIcon:completeAnimation()
 				self.PanelEnviroHazardIcon:setLeftRight( true, false, 88.34, 121.67 )
 				self.PanelEnviroHazardIcon:setTopBottom( true, false, 17.34, 79.01 )
@@ -549,6 +561,7 @@ CoD.DamageWidget_PanelContainer.new = function ( menu, controller )
 			end,
 			Hess1 = function ()
 				self:setupElementClipCounter( 2 )
+
 				local f43_local0 = function ( f44_arg0, f44_arg1 )
 					if not f44_arg1.interrupted then
 						f44_arg0:beginAnimation( "keyframe", 250, true, true, CoD.TweenType.Back )
@@ -590,6 +603,7 @@ CoD.DamageWidget_PanelContainer.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				local f46_local0 = function ( f47_arg0, f47_arg1 )
 					local f47_local0 = function ( f48_arg0, f48_arg1 )
 						if not f48_arg1.interrupted then
@@ -653,6 +667,7 @@ CoD.DamageWidget_PanelContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PanelEnviroHazardMeter:close()
 		element.PanelEnviroHazardIcon:close()

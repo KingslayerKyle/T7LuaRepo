@@ -4,9 +4,11 @@
 CoD.CallingCards_loot_BO1retro = InheritFrom( LUI.UIElement )
 CoD.CallingCards_loot_BO1retro.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_loot_BO1retro )
 	self.id = "CallingCards_loot_BO1retro"
@@ -126,6 +128,7 @@ CoD.CallingCards_loot_BO1retro.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				local Glow00Frame2 = function ( Glow00, event )
 					local Glow00Frame3 = function ( Glow00, event )
 						local Glow00Frame4 = function ( Glow00, event )
@@ -988,6 +991,7 @@ CoD.CallingCards_loot_BO1retro.new = function ( menu, controller )
 				Glow000:completeAnimation()
 				self.Glow000:setAlpha( 0 )
 				Glow000Frame2( Glow000, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

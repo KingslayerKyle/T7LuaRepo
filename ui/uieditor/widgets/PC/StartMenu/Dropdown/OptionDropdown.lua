@@ -181,9 +181,11 @@ end
 CoD.OptionDropdown = InheritFrom( LUI.UIElement )
 CoD.OptionDropdown.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.OptionDropdown )
 	self.id = "OptionDropdown"
@@ -303,55 +305,70 @@ CoD.OptionDropdown.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				listBackground:completeAnimation()
 				self.listBackground:setAlpha( 0 )
 				self.clipFinished( listBackground, {} )
+
 				labelText:completeAnimation()
 				self.labelText:setRGB( 1, 1, 1 )
 				self.clipFinished( labelText, {} )
+
 				currentValueText:completeAnimation()
 				self.currentValueText:setRGB( 1, 1, 1 )
 				self.currentValueText:setAlpha( 0.5 )
 				self.clipFinished( currentValueText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, 0, 0 )
 				self.FocusBarT:setTopBottom( true, false, 0, 4 )
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				DropDownList:completeAnimation()
 				self.DropDownList:setAlpha( 0 )
 				self.clipFinished( DropDownList, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setRGB( 1, 1, 1 )
 				self.Arrow:setZRot( 90 )
 				self.clipFinished( Arrow, {} )
+
 				frameOutline:completeAnimation()
 				self.frameOutline:setAlpha( 0 )
 				self.clipFinished( frameOutline, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 7 )
+
 				listBackground:completeAnimation()
 				self.listBackground:setAlpha( 0 )
 				self.clipFinished( listBackground, {} )
+
 				currentValueText:completeAnimation()
 				self.currentValueText:setAlpha( 1 )
 				self.clipFinished( currentValueText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				DropDownList:completeAnimation()
 				self.DropDownList:setAlpha( 0 )
 				self.clipFinished( DropDownList, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setZRot( 90 )
 				self.clipFinished( Arrow, {} )
+
 				frameOutline:completeAnimation()
 				self.frameOutline:setAlpha( 1 )
 				self.clipFinished( frameOutline, {} )
@@ -360,12 +377,15 @@ CoD.OptionDropdown.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				labelText:completeAnimation()
 				self.labelText:setRGB( 0.2, 0.2, 0.2 )
 				self.clipFinished( labelText, {} )
+
 				currentValueText:completeAnimation()
 				self.currentValueText:setRGB( 0.2, 0.2, 0.2 )
 				self.clipFinished( currentValueText, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setRGB( 0.2, 0.2, 0.2 )
 				self.clipFinished( Arrow, {} )
@@ -374,24 +394,31 @@ CoD.OptionDropdown.new = function ( menu, controller )
 		InUse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				listBackground:completeAnimation()
 				self.listBackground:setAlpha( 1 )
 				self.clipFinished( listBackground, {} )
+
 				labelText:completeAnimation()
 				self.labelText:setRGB( 1, 1, 1 )
 				self.clipFinished( labelText, {} )
+
 				currentValueText:completeAnimation()
 				self.currentValueText:setRGB( 1, 1, 1 )
 				self.clipFinished( currentValueText, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				DropDownList:completeAnimation()
 				self.DropDownList:setAlpha( 1 )
 				self.clipFinished( DropDownList, {} )
+
 				Arrow:completeAnimation()
 				self.Arrow:setRGB( 1, 1, 1 )
 				self.Arrow:setZRot( 270 )
@@ -399,6 +426,7 @@ CoD.OptionDropdown.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -421,6 +449,7 @@ CoD.OptionDropdown.new = function ( menu, controller )
 			modelName = "disabled"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsInDefaultState( element ) then
 			MakeElementNotFocusable( self, "DropDownList", controller )
@@ -434,6 +463,7 @@ CoD.OptionDropdown.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG00:close()
 		element.FocusBarB:close()

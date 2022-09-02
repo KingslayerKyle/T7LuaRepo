@@ -4,9 +4,11 @@
 CoD.ItemTypeCost = InheritFrom( LUI.UIElement )
 CoD.ItemTypeCost.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ItemTypeCost )
 	self.id = "ItemTypeCost"

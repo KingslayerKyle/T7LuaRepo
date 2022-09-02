@@ -4,9 +4,11 @@
 CoD.ScoreboardRowDeathIconWidget = InheritFrom( LUI.UIElement )
 CoD.ScoreboardRowDeathIconWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreboardRowDeathIconWidget )
 	self.id = "ScoreboardRowDeathIconWidget"
@@ -26,6 +28,7 @@ CoD.ScoreboardRowDeathIconWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ImDeadIcon:completeAnimation()
 				self.ImDeadIcon:setAlpha( 0 )
 				self.clipFinished( ImDeadIcon, {} )
@@ -34,6 +37,7 @@ CoD.ScoreboardRowDeathIconWidget.new = function ( menu, controller )
 		Dead = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ImDeadIcon:completeAnimation()
 				self.ImDeadIcon:setAlpha( 1 )
 				self.clipFinished( ImDeadIcon, {} )

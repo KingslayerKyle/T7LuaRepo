@@ -11,9 +11,11 @@ end
 CoD.BM_Promo = InheritFrom( LUI.UIElement )
 CoD.BM_Promo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Promo )
 	self.id = "BM_Promo"
@@ -167,48 +169,63 @@ CoD.BM_Promo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0 )
 				self.clipFinished( Backing, {} )
+
 				BMPromoFrame:completeAnimation()
 				self.BMPromoFrame:setAlpha( 0 )
 				self.clipFinished( BMPromoFrame, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				CODpointIcon:completeAnimation()
 				self.CODpointIcon:setAlpha( 0 )
 				self.clipFinished( CODpointIcon, {} )
+
 				CODpointIconglint:completeAnimation()
 				self.CODpointIconglint:setAlpha( 0 )
 				self.clipFinished( CODpointIconglint, {} )
+
 				BribeBlackMarket:completeAnimation()
 				self.BribeBlackMarket:setAlpha( 0 )
 				self.clipFinished( BribeBlackMarket, {} )
+
 				BribeBlackMarketGlint:completeAnimation()
 				self.BribeBlackMarketGlint:setAlpha( 0 )
 				self.clipFinished( BribeBlackMarketGlint, {} )
+
 				BundleBlackMarket:completeAnimation()
 				self.BundleBlackMarket:setAlpha( 0 )
 				self.clipFinished( BundleBlackMarket, {} )
+
 				BundleBlackMarketGlint:completeAnimation()
 				self.BundleBlackMarketGlint:setAlpha( 0 )
 				self.clipFinished( BundleBlackMarketGlint, {} )
+
 				Cryptokeys:completeAnimation()
 				self.Cryptokeys:setAlpha( 0 )
 				self.clipFinished( Cryptokeys, {} )
+
 				CodeBundleIcon:completeAnimation()
 				self.CodeBundleIcon:setAlpha( 0 )
 				self.clipFinished( CodeBundleIcon, {} )
+
 				LimitedItemIcon:completeAnimation()
 				self.LimitedItemIcon:setAlpha( 0 )
 				self.clipFinished( LimitedItemIcon, {} )
+
 				Divider:completeAnimation()
 				self.Divider:setAlpha( 0 )
 				self.clipFinished( Divider, {} )
+
 				Light:completeAnimation()
 				self.Light:setAlpha( 0 )
 				self.clipFinished( Light, {} )
+
 				BMPromoTitleAndCountdown:completeAnimation()
 				self.BMPromoTitleAndCountdown:setAlpha( 0 )
 				self.clipFinished( BMPromoTitleAndCountdown, {} )
@@ -217,14 +234,18 @@ CoD.BM_Promo.new = function ( menu, controller )
 		CodPoints = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0.5 )
 				self.clipFinished( Backing, {} )
+
 				BMPromoFrame:completeAnimation()
+
 				BMPromoFrame.Desc:completeAnimation()
 				self.BMPromoFrame:setAlpha( 1 )
 				self.BMPromoFrame.Desc:setText( Engine.Localize( GetLimitedTimePromoDescIfActive( controller, "MENU_50_PERCENT_OFF" ) ) )
 				self.clipFinished( BMPromoFrame, {} )
+
 				CODpointIcon:completeAnimation()
 				self.CODpointIcon:setAlpha( 1 )
 				self.clipFinished( CODpointIcon, {} )
@@ -282,54 +303,70 @@ CoD.BM_Promo.new = function ( menu, controller )
 				self.CODpointIconglint:setMaterial( LUI.UIImage.GetCachedMaterial( "sw4_2d_bitchin_glint_reveal" ) )
 				self.CODpointIconglint:setShaderVector( 0, 0, 0, 0, 0 )
 				CODpointIconglintFrame2( CODpointIconglint, {} )
+
 				BribeBlackMarket:completeAnimation()
 				self.BribeBlackMarket:setAlpha( 0 )
 				self.clipFinished( BribeBlackMarket, {} )
+
 				BribeBlackMarketGlint:completeAnimation()
 				self.BribeBlackMarketGlint:setAlpha( 0 )
 				self.clipFinished( BribeBlackMarketGlint, {} )
+
 				BundleBlackMarket:completeAnimation()
 				self.BundleBlackMarket:setAlpha( 0 )
 				self.clipFinished( BundleBlackMarket, {} )
+
 				BundleBlackMarketGlint:completeAnimation()
 				self.BundleBlackMarketGlint:setAlpha( 0 )
 				self.clipFinished( BundleBlackMarketGlint, {} )
+
 				CodeBundleIcon:completeAnimation()
 				self.CodeBundleIcon:setAlpha( 0 )
 				self.clipFinished( CodeBundleIcon, {} )
+
 				LimitedItemIcon:completeAnimation()
 				self.LimitedItemIcon:setAlpha( 0 )
 				self.clipFinished( LimitedItemIcon, {} )
+
 				Divider:completeAnimation()
 				self.Divider:setAlpha( 1 )
 				self.clipFinished( Divider, {} )
+
 				Light:completeAnimation()
 				self.Light:setAlpha( 1 )
 				self.clipFinished( Light, {} )
+
 				BMPromoTitleAndCountdown:completeAnimation()
 				self.BMPromoTitleAndCountdown:setAlpha( 1 )
 				self.clipFinished( BMPromoTitleAndCountdown, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		BlackMarket = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0.5 )
 				self.clipFinished( Backing, {} )
+
 				BMPromoFrame:completeAnimation()
 				self.BMPromoFrame:setAlpha( 1 )
 				self.clipFinished( BMPromoFrame, {} )
+
 				CODpointIcon:completeAnimation()
 				self.CODpointIcon:setAlpha( 0 )
 				self.clipFinished( CODpointIcon, {} )
+
 				BribeBlackMarket:completeAnimation()
 				self.BribeBlackMarket:setAlpha( 0 )
 				self.clipFinished( BribeBlackMarket, {} )
+
 				BribeBlackMarketGlint:completeAnimation()
 				self.BribeBlackMarketGlint:setAlpha( 0 )
 				self.clipFinished( BribeBlackMarketGlint, {} )
+
 				BundleBlackMarket:completeAnimation()
 				self.BundleBlackMarket:setAlpha( 1 )
 				self.clipFinished( BundleBlackMarket, {} )
@@ -384,66 +421,86 @@ CoD.BM_Promo.new = function ( menu, controller )
 				self.BundleBlackMarketGlint:setMaterial( LUI.UIImage.GetCachedMaterial( "sw4_2d_bitchin_glint_reveal" ) )
 				self.BundleBlackMarketGlint:setShaderVector( 0, 0.01, 0, 0, 0 )
 				BundleBlackMarketGlintFrame2( BundleBlackMarketGlint, {} )
+
 				Cryptokeys:completeAnimation()
 				self.Cryptokeys:setAlpha( 0 )
 				self.clipFinished( Cryptokeys, {} )
+
 				CodeBundleIcon:completeAnimation()
 				self.CodeBundleIcon:setAlpha( 0 )
 				self.clipFinished( CodeBundleIcon, {} )
+
 				LimitedItemIcon:completeAnimation()
 				self.LimitedItemIcon:setAlpha( 0 )
 				self.clipFinished( LimitedItemIcon, {} )
+
 				Divider:completeAnimation()
 				self.Divider:setAlpha( 1 )
 				self.clipFinished( Divider, {} )
+
 				Light:completeAnimation()
 				self.Light:setAlpha( 1 )
 				self.clipFinished( Light, {} )
+
 				BMPromoTitleAndCountdown:completeAnimation()
 				self.BMPromoTitleAndCountdown:setAlpha( 1 )
 				self.clipFinished( BMPromoTitleAndCountdown, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Cryptokeys = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0.5 )
 				self.clipFinished( Backing, {} )
+
 				BMPromoFrame:completeAnimation()
 				self.BMPromoFrame:setAlpha( 1 )
 				self.clipFinished( BMPromoFrame, {} )
+
 				CODpointIcon:completeAnimation()
 				self.CODpointIcon:setAlpha( 0 )
 				self.clipFinished( CODpointIcon, {} )
+
 				BribeBlackMarket:completeAnimation()
 				self.BribeBlackMarket:setAlpha( 0 )
 				self.clipFinished( BribeBlackMarket, {} )
+
 				BribeBlackMarketGlint:completeAnimation()
 				self.BribeBlackMarketGlint:setAlpha( 0 )
 				self.clipFinished( BribeBlackMarketGlint, {} )
+
 				BundleBlackMarket:completeAnimation()
 				self.BundleBlackMarket:setAlpha( 0 )
 				self.clipFinished( BundleBlackMarket, {} )
+
 				BundleBlackMarketGlint:completeAnimation()
 				self.BundleBlackMarketGlint:setAlpha( 0 )
 				self.clipFinished( BundleBlackMarketGlint, {} )
+
 				Cryptokeys:completeAnimation()
 				self.Cryptokeys:setAlpha( 1 )
 				self.clipFinished( Cryptokeys, {} )
+
 				CodeBundleIcon:completeAnimation()
 				self.CodeBundleIcon:setAlpha( 0 )
 				self.clipFinished( CodeBundleIcon, {} )
+
 				LimitedItemIcon:completeAnimation()
 				self.LimitedItemIcon:setAlpha( 0 )
 				self.clipFinished( LimitedItemIcon, {} )
+
 				Divider:completeAnimation()
 				self.Divider:setAlpha( 1 )
 				self.clipFinished( Divider, {} )
+
 				Light:completeAnimation()
 				self.Light:setAlpha( 1 )
 				self.clipFinished( Light, {} )
+
 				BMPromoTitleAndCountdown:completeAnimation()
 				self.BMPromoTitleAndCountdown:setAlpha( 1 )
 				self.clipFinished( BMPromoTitleAndCountdown, {} )
@@ -452,18 +509,23 @@ CoD.BM_Promo.new = function ( menu, controller )
 		Bribe = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0.5 )
 				self.clipFinished( Backing, {} )
+
 				BMPromoFrame:completeAnimation()
 				self.BMPromoFrame:setAlpha( 1 )
 				self.clipFinished( BMPromoFrame, {} )
+
 				CODpointIcon:completeAnimation()
 				self.CODpointIcon:setAlpha( 0 )
 				self.clipFinished( CODpointIcon, {} )
+
 				CODpointIconglint:completeAnimation()
 				self.CODpointIconglint:setAlpha( 0 )
 				self.clipFinished( CODpointIconglint, {} )
+
 				BribeBlackMarket:completeAnimation()
 				self.BribeBlackMarket:setAlpha( 1 )
 				self.clipFinished( BribeBlackMarket, {} )
@@ -519,50 +581,65 @@ CoD.BM_Promo.new = function ( menu, controller )
 				self.BribeBlackMarketGlint:setMaterial( LUI.UIImage.GetCachedMaterial( "sw4_2d_bitchin_glint_reveal" ) )
 				self.BribeBlackMarketGlint:setShaderVector( 0, 0, 0, 0, 0 )
 				BribeBlackMarketGlintFrame2( BribeBlackMarketGlint, {} )
+
 				Cryptokeys:completeAnimation()
 				self.Cryptokeys:setAlpha( 0 )
 				self.clipFinished( Cryptokeys, {} )
+
 				CodeBundleIcon:completeAnimation()
 				self.CodeBundleIcon:setAlpha( 0 )
 				self.clipFinished( CodeBundleIcon, {} )
+
 				LimitedItemIcon:completeAnimation()
 				self.LimitedItemIcon:setAlpha( 0 )
 				self.clipFinished( LimitedItemIcon, {} )
+
 				Divider:completeAnimation()
 				self.Divider:setAlpha( 1 )
 				self.clipFinished( Divider, {} )
+
 				Light:completeAnimation()
 				self.Light:setAlpha( 1 )
 				self.clipFinished( Light, {} )
+
 				BMPromoTitleAndCountdown:completeAnimation()
 				self.BMPromoTitleAndCountdown:setAlpha( 1 )
 				self.clipFinished( BMPromoTitleAndCountdown, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Bundle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0.5 )
 				self.clipFinished( Backing, {} )
+
 				BMPromoFrame:completeAnimation()
+
 				BMPromoFrame.Desc:completeAnimation()
 				self.BMPromoFrame:setAlpha( 1 )
 				self.BMPromoFrame.Desc:setText( Engine.Localize( GetLimitedTimePromoDescIfActive( controller, "MPUI_BM_NO_DUPES_DESC" ) ) )
 				self.clipFinished( BMPromoFrame, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 1 )
 				self.clipFinished( Image0, {} )
+
 				CODpointIcon:completeAnimation()
 				self.CODpointIcon:setAlpha( 0 )
 				self.clipFinished( CODpointIcon, {} )
+
 				BribeBlackMarket:completeAnimation()
 				self.BribeBlackMarket:setAlpha( 0 )
 				self.clipFinished( BribeBlackMarket, {} )
+
 				BribeBlackMarketGlint:completeAnimation()
 				self.BribeBlackMarketGlint:setAlpha( 0 )
 				self.clipFinished( BribeBlackMarketGlint, {} )
+
 				BundleBlackMarket:completeAnimation()
 				self.BundleBlackMarket:setAlpha( 1 )
 				self.clipFinished( BundleBlackMarket, {} )
@@ -619,52 +696,68 @@ CoD.BM_Promo.new = function ( menu, controller )
 				self.BundleBlackMarketGlint:setMaterial( LUI.UIImage.GetCachedMaterial( "sw4_2d_bitchin_glint_reveal" ) )
 				self.BundleBlackMarketGlint:setShaderVector( 0, 0.01, 0, 0, 0 )
 				BundleBlackMarketGlintFrame2( BundleBlackMarketGlint, {} )
+
 				Cryptokeys:completeAnimation()
 				self.Cryptokeys:setAlpha( 0 )
 				self.clipFinished( Cryptokeys, {} )
+
 				CodeBundleIcon:completeAnimation()
 				self.CodeBundleIcon:setAlpha( 0 )
 				self.clipFinished( CodeBundleIcon, {} )
+
 				LimitedItemIcon:completeAnimation()
 				self.LimitedItemIcon:setAlpha( 0 )
 				self.clipFinished( LimitedItemIcon, {} )
+
 				Divider:completeAnimation()
 				self.Divider:setAlpha( 1 )
 				self.clipFinished( Divider, {} )
+
 				Light:completeAnimation()
 				self.Light:setAlpha( 1 )
 				self.clipFinished( Light, {} )
+
 				BMPromoTitleAndCountdown:completeAnimation()
 				self.BMPromoTitleAndCountdown:setAlpha( 1 )
 				self.clipFinished( BMPromoTitleAndCountdown, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		NoDupesPromo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0.5 )
 				self.clipFinished( Backing, {} )
+
 				BMPromoFrame:completeAnimation()
+
 				BMPromoFrame.Desc:completeAnimation()
+
 				BMPromoFrame.DescArabic:completeAnimation()
 				self.BMPromoFrame:setAlpha( 1 )
 				self.BMPromoFrame.Desc:setText( Engine.Localize( GetLimitedTimePromoDescIfActive( controller, "MPUI_BM_NO_DUPES_PROMO_DESC" ) ) )
 				self.BMPromoFrame.DescArabic:setText( Engine.Localize( GetLimitedTimePromoDescIfActive( controller, "MPUI_BM_NO_DUPES_PROMO_DESC" ) ) )
 				self.clipFinished( BMPromoFrame, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 1 )
 				self.clipFinished( Image0, {} )
+
 				CODpointIcon:completeAnimation()
 				self.CODpointIcon:setAlpha( 0 )
 				self.clipFinished( CODpointIcon, {} )
+
 				BribeBlackMarket:completeAnimation()
 				self.BribeBlackMarket:setAlpha( 0 )
 				self.clipFinished( BribeBlackMarket, {} )
+
 				BribeBlackMarketGlint:completeAnimation()
 				self.BribeBlackMarketGlint:setAlpha( 0 )
 				self.clipFinished( BribeBlackMarketGlint, {} )
+
 				BundleBlackMarket:completeAnimation()
 				self.BundleBlackMarket:setAlpha( 1 )
 				self.clipFinished( BundleBlackMarket, {} )
@@ -721,75 +814,99 @@ CoD.BM_Promo.new = function ( menu, controller )
 				self.BundleBlackMarketGlint:setMaterial( LUI.UIImage.GetCachedMaterial( "sw4_2d_bitchin_glint_reveal" ) )
 				self.BundleBlackMarketGlint:setShaderVector( 0, 0.01, 0, 0, 0 )
 				BundleBlackMarketGlintFrame2( BundleBlackMarketGlint, {} )
+
 				Cryptokeys:completeAnimation()
 				self.Cryptokeys:setAlpha( 0 )
 				self.clipFinished( Cryptokeys, {} )
+
 				CodeBundleIcon:completeAnimation()
 				self.CodeBundleIcon:setAlpha( 0 )
 				self.clipFinished( CodeBundleIcon, {} )
+
 				LimitedItemIcon:completeAnimation()
 				self.LimitedItemIcon:setAlpha( 0 )
 				self.clipFinished( LimitedItemIcon, {} )
+
 				Divider:completeAnimation()
 				self.Divider:setAlpha( 1 )
 				self.clipFinished( Divider, {} )
+
 				Light:completeAnimation()
 				self.Light:setAlpha( 1 )
 				self.clipFinished( Light, {} )
+
 				BMPromoTitleAndCountdown:completeAnimation()
 				self.BMPromoTitleAndCountdown:setAlpha( 1 )
 				self.clipFinished( BMPromoTitleAndCountdown, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		LimitedItemPromo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0.5 )
 				self.clipFinished( Backing, {} )
+
 				BMPromoFrame:completeAnimation()
+
 				BMPromoFrame.Desc:completeAnimation()
+
 				BMPromoFrame.DescArabic:completeAnimation()
 				self.BMPromoFrame:setAlpha( 1 )
 				self.BMPromoFrame.Desc:setText( Engine.Localize( GetLimitedTimePromoDescIfActive( controller, "MPUI_BM_NO_DUPES_DESC" ) ) )
 				self.BMPromoFrame.DescArabic:setText( Engine.Localize( GetLimitedTimePromoDescIfActive( controller, "MPUI_BM_NO_DUPES_DESC" ) ) )
 				self.clipFinished( BMPromoFrame, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 1 )
 				self.clipFinished( Image0, {} )
+
 				CODpointIcon:completeAnimation()
 				self.CODpointIcon:setAlpha( 0 )
 				self.clipFinished( CODpointIcon, {} )
+
 				BribeBlackMarket:completeAnimation()
 				self.BribeBlackMarket:setAlpha( 0 )
 				self.clipFinished( BribeBlackMarket, {} )
+
 				BribeBlackMarketGlint:completeAnimation()
 				self.BribeBlackMarketGlint:setAlpha( 0 )
 				self.clipFinished( BribeBlackMarketGlint, {} )
+
 				BundleBlackMarket:completeAnimation()
 				self.BundleBlackMarket:setAlpha( 0 )
 				self.clipFinished( BundleBlackMarket, {} )
+
 				BundleBlackMarketGlint:completeAnimation()
 				self.BundleBlackMarketGlint:setAlpha( 0 )
 				self.clipFinished( BundleBlackMarketGlint, {} )
+
 				Cryptokeys:completeAnimation()
 				self.Cryptokeys:setAlpha( 0 )
 				self.clipFinished( Cryptokeys, {} )
+
 				CodeBundleIcon:completeAnimation()
 				self.CodeBundleIcon:setAlpha( 0 )
 				self.clipFinished( CodeBundleIcon, {} )
+
 				LimitedItemIcon:completeAnimation()
 				self.LimitedItemIcon:setAlpha( 1 )
 				self.LimitedItemIcon:setImage( RegisterImage( GetDvarString( "loot_limitedTimeItemPromo_promoIcon", "uie_t7_blackmarket_promo_cryptokeys" ) ) )
 				self.clipFinished( LimitedItemIcon, {} )
+
 				Divider:completeAnimation()
 				self.Divider:setAlpha( 1 )
 				self.clipFinished( Divider, {} )
+
 				Light:completeAnimation()
 				self.Light:setAlpha( 1 )
 				self.clipFinished( Light, {} )
+
 				BMPromoTitleAndCountdown:completeAnimation()
+
 				BMPromoTitleAndCountdown.BMPromoTitle.Title:completeAnimation()
 				self.BMPromoTitleAndCountdown:setAlpha( 1 )
 				self.BMPromoTitleAndCountdown.BMPromoTitle.Title:setText( LocalizeToUpperString( GetLimitedTimePromoTitleIfActive( controller, "MPUI_BM_NO_DUPES" ) ) )
@@ -799,51 +916,68 @@ CoD.BM_Promo.new = function ( menu, controller )
 		CodeBundle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0.5 )
 				self.clipFinished( Backing, {} )
+
 				BMPromoFrame:completeAnimation()
+
 				BMPromoFrame.Desc:completeAnimation()
+
 				BMPromoFrame.DescArabic:completeAnimation()
 				self.BMPromoFrame:setAlpha( 1 )
 				self.BMPromoFrame.Desc:setText( Engine.Localize( GetLimitedTimePromoDescIfActive( controller, "MPUI_BM_CODE_BUNDLE_PROMO_DESC" ) ) )
 				self.BMPromoFrame.DescArabic:setText( Engine.Localize( GetLimitedTimePromoDescIfActive( controller, "MPUI_BM_CODE_BUNDLE_PROMO_DESC" ) ) )
 				self.clipFinished( BMPromoFrame, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 1 )
 				self.clipFinished( Image0, {} )
+
 				CODpointIcon:completeAnimation()
 				self.CODpointIcon:setAlpha( 0 )
 				self.clipFinished( CODpointIcon, {} )
+
 				BribeBlackMarket:completeAnimation()
 				self.BribeBlackMarket:setAlpha( 0 )
 				self.clipFinished( BribeBlackMarket, {} )
+
 				BribeBlackMarketGlint:completeAnimation()
 				self.BribeBlackMarketGlint:setAlpha( 0 )
 				self.clipFinished( BribeBlackMarketGlint, {} )
+
 				BundleBlackMarket:completeAnimation()
 				self.BundleBlackMarket:setAlpha( 0 )
 				self.clipFinished( BundleBlackMarket, {} )
+
 				BundleBlackMarketGlint:completeAnimation()
 				self.BundleBlackMarketGlint:setAlpha( 0 )
 				self.clipFinished( BundleBlackMarketGlint, {} )
+
 				Cryptokeys:completeAnimation()
 				self.Cryptokeys:setAlpha( 0 )
 				self.clipFinished( Cryptokeys, {} )
+
 				CodeBundleIcon:completeAnimation()
 				self.CodeBundleIcon:setAlpha( 1 )
 				self.clipFinished( CodeBundleIcon, {} )
+
 				LimitedItemIcon:completeAnimation()
 				self.LimitedItemIcon:setAlpha( 0 )
 				self.LimitedItemIcon:setImage( RegisterImage( GetDvarString( "loot_limitedTimeItemPromo_promoIcon", "uie_t7_blackmarket_promo_cryptokeys" ) ) )
 				self.clipFinished( LimitedItemIcon, {} )
+
 				Divider:completeAnimation()
 				self.Divider:setAlpha( 1 )
 				self.clipFinished( Divider, {} )
+
 				Light:completeAnimation()
 				self.Light:setAlpha( 1 )
 				self.clipFinished( Light, {} )
+
 				BMPromoTitleAndCountdown:completeAnimation()
+
 				BMPromoTitleAndCountdown.BMPromoTitle.Title:completeAnimation()
 				self.BMPromoTitleAndCountdown:setAlpha( 1 )
 				self.BMPromoTitleAndCountdown.BMPromoTitle.Title:setText( LocalizeToUpperString( GetLimitedTimePromoTitleIfActive( controller, "MPUI_BM_CODE_BUNDLE_PROMO" ) ) )
@@ -851,6 +985,7 @@ CoD.BM_Promo.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CodPoints",
@@ -917,9 +1052,11 @@ CoD.BM_Promo.new = function ( menu, controller )
 			modelName = "CryptoKeyProgress.codeBundleRareBundles"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		UpdateElementState( self, "BMPromoTitleAndCountdown", controller )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BMPromoFrame:close()
 		element.BMPromoTitleAndCountdown:close()

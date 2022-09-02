@@ -4,9 +4,11 @@
 CoD.CallingCards_BlackMarket_SideBetExplaination = InheritFrom( LUI.UIElement )
 CoD.CallingCards_BlackMarket_SideBetExplaination.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_BlackMarket_SideBetExplaination )
 	self.id = "CallingCards_BlackMarket_SideBetExplaination"
@@ -44,12 +46,15 @@ CoD.CallingCards_BlackMarket_SideBetExplaination.new = function ( menu, controll
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				sideBetTitle:completeAnimation()
 				self.sideBetTitle:setAlpha( 0 )
 				self.clipFinished( sideBetTitle, {} )
+
 				sideBetDesc:completeAnimation()
 				self.sideBetDesc:setAlpha( 0 )
 				self.clipFinished( sideBetDesc, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
@@ -58,15 +63,18 @@ CoD.CallingCards_BlackMarket_SideBetExplaination.new = function ( menu, controll
 		ViewingSideBetSet = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				sideBetTitle:completeAnimation()
 				self.sideBetTitle:setAlpha( 1 )
 				self.clipFinished( sideBetTitle, {} )
+
 				sideBetDesc:completeAnimation()
 				self.sideBetDesc:setAlpha( 1 )
 				self.clipFinished( sideBetDesc, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ViewingSideBetSet",

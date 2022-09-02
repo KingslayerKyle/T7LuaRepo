@@ -12,9 +12,11 @@ require( "ui.uieditor.widgets.CAC.MenuSelectScreen.WeaponNameWidget" )
 CoD.Challenges_MasterCallingCardWidget = InheritFrom( LUI.UIElement )
 CoD.Challenges_MasterCallingCardWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_MasterCallingCardWidget )
 	self.id = "Challenges_MasterCallingCardWidget"
@@ -144,24 +146,31 @@ CoD.Challenges_MasterCallingCardWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				MasterCallingCardIcon:completeAnimation()
 				self.MasterCallingCardIcon:setAlpha( 1 )
 				self.clipFinished( MasterCallingCardIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				featlineleft000:completeAnimation()
 				self.featlineleft000:setAlpha( 0 )
 				self.clipFinished( featlineleft000, {} )
+
 				featlineleft0000:completeAnimation()
 				self.featlineleft0000:setAlpha( 0 )
 				self.clipFinished( featlineleft0000, {} )
@@ -170,27 +179,34 @@ CoD.Challenges_MasterCallingCardWidget.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				MasterCallingCardIcon:completeAnimation()
 				self.MasterCallingCardIcon:setAlpha( 0 )
 				self.clipFinished( MasterCallingCardIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0.2 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0.4 )
 				self.clipFinished( TitleBg, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 1 )
 				self.clipFinished( LockedIcon, {} )
+
 				featlineleft000:completeAnimation()
 				self.featlineleft000:setAlpha( 1 )
 				self.clipFinished( featlineleft000, {} )
+
 				featlineleft0000:completeAnimation()
 				self.featlineleft0000:setAlpha( 1 )
 				self.clipFinished( featlineleft0000, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -207,6 +223,7 @@ CoD.Challenges_MasterCallingCardWidget.new = function ( menu, controller )
 			modelName = "isLocked"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG0:close()
 		element.BoxButtonLrgInactive:close()

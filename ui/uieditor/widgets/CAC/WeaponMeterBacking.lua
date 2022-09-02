@@ -4,9 +4,11 @@
 CoD.WeaponMeterBacking = InheritFrom( LUI.UIElement )
 CoD.WeaponMeterBacking.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponMeterBacking )
 	self.id = "WeaponMeterBacking"
@@ -33,43 +35,52 @@ CoD.WeaponMeterBacking.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Meterbacking:completeAnimation()
 				self.Meterbacking:setAlpha( 0.25 )
 				self.clipFinished( Meterbacking, {} )
+
 				middleBar:completeAnimation()
 				self.middleBar:setAlpha( 0 )
 				self.clipFinished( middleBar, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		DisplayLevel = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Meterbacking:completeAnimation()
 				self.Meterbacking:setAlpha( 0.25 )
 				self.clipFinished( Meterbacking, {} )
+
 				middleBar:completeAnimation()
 				self.middleBar:setAlpha( 0 )
 				self.clipFinished( middleBar, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		MaxLevel = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Meterbacking:completeAnimation()
 				self.Meterbacking:setAlpha( 0 )
 				self.clipFinished( Meterbacking, {} )
+
 				middleBar:completeAnimation()
 				self.middleBar:setAlpha( 0 )
 				self.clipFinished( middleBar, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DisplayLevel",

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ScoreInfo.ScoreInfo_PanelScale" )
 CoD.ScoreInfo_EnemyScorePanel = InheritFrom( LUI.UIElement )
 CoD.ScoreInfo_EnemyScorePanel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreInfo_EnemyScorePanel )
 	self.id = "ScoreInfo_EnemyScorePanel"
@@ -43,10 +45,12 @@ CoD.ScoreInfo_EnemyScorePanel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelScale2:completeAnimation()
 				self.PanelScale2:setLeftRight( false, false, 18, 78 )
 				self.PanelScale2:setTopBottom( false, false, 177, 208 )
 				self.clipFinished( PanelScale2, {} )
+
 				PanelScale1:completeAnimation()
 				self.PanelScale1:setLeftRight( false, false, -74, 20 )
 				self.PanelScale1:setTopBottom( false, false, 177, 208 )
@@ -56,9 +60,11 @@ CoD.ScoreInfo_EnemyScorePanel.new = function ( menu, controller )
 		Infect = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelScale2:completeAnimation()
 				self.PanelScale2:setAlpha( 0 )
 				self.clipFinished( PanelScale2, {} )
+
 				PanelScale1:completeAnimation()
 				self.PanelScale1:setAlpha( 0 )
 				self.clipFinished( PanelScale1, {} )
@@ -67,10 +73,12 @@ CoD.ScoreInfo_EnemyScorePanel.new = function ( menu, controller )
 		Count3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelScale2:completeAnimation()
 				self.PanelScale2:setLeftRight( false, false, 0, 96 )
 				self.PanelScale2:setTopBottom( false, false, -18, 2 )
 				self.clipFinished( PanelScale2, {} )
+
 				PanelScale1:completeAnimation()
 				self.PanelScale1:setLeftRight( false, false, -98, 0 )
 				self.PanelScale1:setTopBottom( false, false, -18, 13 )
@@ -80,10 +88,12 @@ CoD.ScoreInfo_EnemyScorePanel.new = function ( menu, controller )
 		Count4 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelScale2:completeAnimation()
 				self.PanelScale2:setLeftRight( false, false, 0, 96 )
 				self.PanelScale2:setTopBottom( false, false, -18, 2 )
 				self.clipFinished( PanelScale2, {} )
+
 				PanelScale1:completeAnimation()
 				self.PanelScale1:setLeftRight( false, false, -98, 0 )
 				self.PanelScale1:setTopBottom( false, false, -18, 13 )
@@ -93,10 +103,12 @@ CoD.ScoreInfo_EnemyScorePanel.new = function ( menu, controller )
 		Count5 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelScale2:completeAnimation()
 				self.PanelScale2:setLeftRight( false, false, 0, 96 )
 				self.PanelScale2:setTopBottom( false, false, -18, 2 )
 				self.clipFinished( PanelScale2, {} )
+
 				PanelScale1:completeAnimation()
 				self.PanelScale1:setLeftRight( false, false, -98, 0 )
 				self.PanelScale1:setTopBottom( false, false, -18, 13 )
@@ -106,10 +118,12 @@ CoD.ScoreInfo_EnemyScorePanel.new = function ( menu, controller )
 		Count6 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelScale2:completeAnimation()
 				self.PanelScale2:setLeftRight( false, false, 12, 108 )
 				self.PanelScale2:setTopBottom( false, false, -18, 2 )
 				self.clipFinished( PanelScale2, {} )
+
 				PanelScale1:completeAnimation()
 				self.PanelScale1:setLeftRight( false, false, -98, 12 )
 				self.PanelScale1:setTopBottom( false, false, -18, 13 )
@@ -119,10 +133,12 @@ CoD.ScoreInfo_EnemyScorePanel.new = function ( menu, controller )
 		Count7 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PanelScale2:completeAnimation()
 				self.PanelScale2:setLeftRight( false, false, 25, 123 )
 				self.PanelScale2:setTopBottom( false, false, -18, 2 )
 				self.clipFinished( PanelScale2, {} )
+
 				PanelScale1:completeAnimation()
 				self.PanelScale1:setLeftRight( false, false, -98, 25 )
 				self.PanelScale1:setTopBottom( false, false, -18, 13 )
@@ -130,6 +146,7 @@ CoD.ScoreInfo_EnemyScorePanel.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Infect",
@@ -176,6 +193,7 @@ CoD.ScoreInfo_EnemyScorePanel.new = function ( menu, controller )
 			modelName = "gameScore.enemyScore"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PanelScale2:close()
 		element.PanelScale1:close()

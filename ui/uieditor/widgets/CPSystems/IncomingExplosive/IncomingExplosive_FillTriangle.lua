@@ -4,9 +4,11 @@
 CoD.IncomingExplosive_FillTriangle = InheritFrom( LUI.UIElement )
 CoD.IncomingExplosive_FillTriangle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.IncomingExplosive_FillTriangle )
 	self.id = "IncomingExplosive_FillTriangle"
@@ -36,6 +38,7 @@ CoD.IncomingExplosive_FillTriangle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local Image0Frame2 = function ( Image0, event )
 					if not event.interrupted then
 						Image0:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -51,10 +54,12 @@ CoD.IncomingExplosive_FillTriangle.new = function ( menu, controller )
 				Image0:completeAnimation()
 				self.Image0:setAlpha( RandomAddPercent( -30, 1 ) )
 				Image0Frame2( Image0, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			Visible = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

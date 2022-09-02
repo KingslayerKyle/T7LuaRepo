@@ -22,9 +22,11 @@ end
 CoD.PerformanceTabWidgetCP = InheritFrom( LUI.UIElement )
 CoD.PerformanceTabWidgetCP.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PerformanceTabWidgetCP )
 	self.id = "PerformanceTabWidgetCP"
@@ -320,21 +322,27 @@ CoD.PerformanceTabWidgetCP.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Assists:completeAnimation()
 				self.Assists:setAlpha( 1 )
 				self.clipFinished( Assists, {} )
+
 				Incaps:completeAnimation()
 				self.Incaps:setAlpha( 1 )
 				self.clipFinished( Incaps, {} )
+
 				Revives:completeAnimation()
 				self.Revives:setAlpha( 1 )
 				self.clipFinished( Revives, {} )
+
 				BestAssists:completeAnimation()
 				self.BestAssists:setAlpha( 1 )
 				self.clipFinished( BestAssists, {} )
+
 				BestIncaps:completeAnimation()
 				self.BestIncaps:setAlpha( 1 )
 				self.clipFinished( BestIncaps, {} )
+
 				BestRevives:completeAnimation()
 				self.BestRevives:setAlpha( 1 )
 				self.clipFinished( BestRevives, {} )
@@ -343,43 +351,53 @@ CoD.PerformanceTabWidgetCP.new = function ( menu, controller )
 		Solo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Panel20:completeAnimation()
 				self.Panel20:setLeftRight( false, false, -197.69, 197.69 )
 				self.Panel20:setTopBottom( false, false, -265.13, 190.46 )
 				self.clipFinished( Panel20, {} )
+
 				CategoryListLine0:completeAnimation()
 				self.CategoryListLine0:setLeftRight( true, false, 393.31, 755.31 )
 				self.CategoryListLine0:setTopBottom( true, false, 261.87, 269.87 )
 				self.clipFinished( CategoryListLine0, {} )
+
 				Kills:completeAnimation()
 				self.Kills:setLeftRight( true, false, 455.16, 700.54 )
 				self.Kills:setTopBottom( true, false, 96.87, 225.22 )
 				self.clipFinished( Kills, {} )
+
 				Assists:completeAnimation()
 				self.Assists:setAlpha( 0 )
 				self.clipFinished( Assists, {} )
+
 				Incaps:completeAnimation()
 				self.Incaps:setLeftRight( true, false, 455.16, 700.54 )
 				self.Incaps:setTopBottom( true, false, 301.56, 428.87 )
 				self.clipFinished( Incaps, {} )
+
 				Revives:completeAnimation()
 				self.Revives:setLeftRight( true, false, 426.31, 563.08 )
 				self.Revives:setTopBottom( true, false, 261.56, 388.87 )
 				self.Revives:setAlpha( 0 )
 				self.clipFinished( Revives, {} )
+
 				BestKills:completeAnimation()
 				self.BestKills:setLeftRight( true, false, 449.62, 500.62 )
 				self.BestKills:setTopBottom( true, false, 126.2, 176.2 )
 				self.clipFinished( BestKills, {} )
+
 				BestAssists:completeAnimation()
 				self.BestAssists:setLeftRight( true, false, 584.12, 635.12 )
 				self.BestAssists:setTopBottom( true, false, 125.8, 176.37 )
 				self.BestAssists:setAlpha( 0 )
 				self.clipFinished( BestAssists, {} )
+
 				BestIncaps:completeAnimation()
 				self.BestIncaps:setLeftRight( true, false, 449.62, 500.62 )
 				self.BestIncaps:setTopBottom( true, false, 330.22, 380.22 )
 				self.clipFinished( BestIncaps, {} )
+
 				BestRevives:completeAnimation()
 				self.BestRevives:setLeftRight( true, false, 420.31, 471.31 )
 				self.BestRevives:setTopBottom( true, false, 293.06, 343.06 )
@@ -388,6 +406,7 @@ CoD.PerformanceTabWidgetCP.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Solo",
@@ -396,6 +415,7 @@ CoD.PerformanceTabWidgetCP.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel10:close()
 		element.Panel20:close()

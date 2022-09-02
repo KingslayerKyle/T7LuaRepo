@@ -13,9 +13,11 @@ end
 CoD.TabletLocationSelector_HintText = InheritFrom( LUI.UIElement )
 CoD.TabletLocationSelector_HintText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TabletLocationSelector_HintText )
 	self.id = "TabletLocationSelector_HintText"
@@ -44,6 +46,7 @@ CoD.TabletLocationSelector_HintText.new = function ( menu, controller )
 			CursorHintText:setText( Engine.Localize( tabletLocationSelectorText ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( CursorHintText, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 5 )
 	end )
@@ -54,10 +57,12 @@ CoD.TabletLocationSelector_HintText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setLeftRight( true, true, 0, 0 )
 				self.FEButtonPanel0:setTopBottom( true, true, 0, 0 )
 				self.clipFinished( FEButtonPanel0, {} )
+
 				CursorHintText:completeAnimation()
 				self.CursorHintText:setLeftRight( false, false, -360, 360 )
 				self.CursorHintText:setTopBottom( true, false, 2, 22 )
@@ -67,10 +72,12 @@ CoD.TabletLocationSelector_HintText.new = function ( menu, controller )
 		Splitscreen = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setLeftRight( true, true, 0, 0 )
 				self.FEButtonPanel0:setTopBottom( true, true, -5, 5 )
 				self.clipFinished( FEButtonPanel0, {} )
+
 				CursorHintText:completeAnimation()
 				self.CursorHintText:setLeftRight( false, false, -360, 360 )
 				self.CursorHintText:setTopBottom( true, false, -3, 27 )
@@ -78,6 +85,7 @@ CoD.TabletLocationSelector_HintText.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Splitscreen",
@@ -86,6 +94,7 @@ CoD.TabletLocationSelector_HintText.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel0:close()
 		element.CursorHintText:close()

@@ -4,9 +4,11 @@
 CoD.bleedOutBlur1 = InheritFrom( LUI.UIElement )
 CoD.bleedOutBlur1.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.bleedOutBlur1 )
 	self.id = "bleedOutBlur1"

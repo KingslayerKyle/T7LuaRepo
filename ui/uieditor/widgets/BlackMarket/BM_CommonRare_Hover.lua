@@ -4,9 +4,11 @@
 CoD.BM_CommonRare_Hover = InheritFrom( LUI.UIElement )
 CoD.BM_CommonRare_Hover.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_CommonRare_Hover )
 	self.id = "BM_CommonRare_Hover"
@@ -26,6 +28,7 @@ CoD.BM_CommonRare_Hover.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

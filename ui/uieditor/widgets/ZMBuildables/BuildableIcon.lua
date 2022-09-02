@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.ZMBuildables.BuildableBorder" )
 CoD.BuildableIcon = InheritFrom( LUI.UIElement )
 CoD.BuildableIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.BuildableIcon )
 	self.id = "BuildableIcon"
@@ -64,14 +66,17 @@ CoD.BuildableIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		ItemPickUp = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				iconImage:completeAnimation()
 				self.iconImage:setAlpha( 0.6 )
 				self.clipFinished( iconImage, {} )
+
 				crossoutImage:completeAnimation()
 				self.crossoutImage:setAlpha( 0 )
 				self.clipFinished( crossoutImage, {} )
@@ -80,9 +85,11 @@ CoD.BuildableIcon.new = function ( menu, controller )
 		ItemUsed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				iconImage:completeAnimation()
 				self.iconImage:setAlpha( 0.25 )
 				self.clipFinished( iconImage, {} )
+
 				crossoutImage:completeAnimation()
 				self.crossoutImage:setAlpha( 0.5 )
 				self.clipFinished( crossoutImage, {} )
@@ -91,15 +98,18 @@ CoD.BuildableIcon.new = function ( menu, controller )
 		ItemDrop = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				iconImage:completeAnimation()
 				self.iconImage:setAlpha( 0.25 )
 				self.clipFinished( iconImage, {} )
+
 				crossoutImage:completeAnimation()
 				self.crossoutImage:setAlpha( 0 )
 				self.clipFinished( crossoutImage, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.IconBg:close()
 		element.border:close()

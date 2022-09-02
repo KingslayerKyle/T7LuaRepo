@@ -18,6 +18,7 @@ CoD.SearchingForPlayer.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SearchingForPlayer )
 	self.id = "SearchingForPlayer"
@@ -77,6 +78,7 @@ CoD.SearchingForPlayer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local Dot0Frame2 = function ( Dot0, event )
 					if not event.interrupted then
 						Dot0:beginAnimation( "keyframe", 2000, false, false, CoD.TweenType.Linear )
@@ -308,6 +310,7 @@ CoD.SearchingForPlayer.new = function ( menu, controller )
 				Dot4:completeAnimation()
 				self.Dot4:setAlpha( 0 )
 				Dot4Frame2( Dot4, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

@@ -4,9 +4,11 @@
 CoD.button_internal = InheritFrom( LUI.UIElement )
 CoD.button_internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.button_internal )
 	self.id = "button_internal"
@@ -26,6 +28,7 @@ CoD.button_internal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Text0:completeAnimation()
 				self.Text0:setRGB( 1, 0.99, 0.86 )
 				self.Text0:setAlpha( 1 )
@@ -35,6 +38,7 @@ CoD.button_internal.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Text0:completeAnimation()
 				self.Text0:setAlpha( 0 )
 				self.clipFinished( Text0, {} )

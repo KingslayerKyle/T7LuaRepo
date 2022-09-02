@@ -17,9 +17,11 @@ end
 CoD.ChooseCharacterLoadoutCarouselItem_Internal = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacterLoadoutCarouselItem_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.ChooseCharacterLoadoutCarouselItem_Internal )
 	self.id = "ChooseCharacterLoadoutCarouselItem_Internal"
@@ -200,8 +202,11 @@ CoD.ChooseCharacterLoadoutCarouselItem_Internal.new = function ( menu, controlle
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ChooseCharacterLoadoutButtonFooter:completeAnimation()
+
 				ChooseCharacterLoadoutButtonFooter.ChooseCharacterLoadoutButtonFooterBackOfCard0.backOfCardLabel:completeAnimation()
+
 				ChooseCharacterLoadoutButtonFooter.ChooseCharacterLoadoutButtonFooterPersonalize0.personalizeLabel:completeAnimation()
 				self.ChooseCharacterLoadoutButtonFooter.ChooseCharacterLoadoutButtonFooterBackOfCard0.backOfCardLabel:setText( Engine.Localize( "MENU_BACK_OF_CARD" ) )
 				self.ChooseCharacterLoadoutButtonFooter.ChooseCharacterLoadoutButtonFooterPersonalize0.personalizeLabel:setText( Engine.Localize( "HEROES_PERSONALIZE" ) )
@@ -211,9 +216,11 @@ CoD.ChooseCharacterLoadoutCarouselItem_Internal.new = function ( menu, controlle
 		DisabledFocus = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DisabledFocus",
@@ -238,6 +245,7 @@ CoD.ChooseCharacterLoadoutCarouselItem_Internal.new = function ( menu, controlle
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SmallFrameWithBG0:close()
 		element.border:close()

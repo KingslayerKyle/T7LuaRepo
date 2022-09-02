@@ -4,9 +4,11 @@
 CoD.CP_Prologue_FaceScannerFoundBox = InheritFrom( LUI.UIElement )
 CoD.CP_Prologue_FaceScannerFoundBox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CP_Prologue_FaceScannerFoundBox )
 	self.id = "CP_Prologue_FaceScannerFoundBox"
@@ -27,6 +29,7 @@ CoD.CP_Prologue_FaceScannerFoundBox.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FoundBoxFrame2 = function ( FoundBox, event )
 					local FoundBoxFrame3 = function ( FoundBox, event )
 						if not event.interrupted then
@@ -53,17 +56,20 @@ CoD.CP_Prologue_FaceScannerFoundBox.new = function ( menu, controller )
 				FoundBox:completeAnimation()
 				self.FoundBox:setAlpha( 0.15 )
 				FoundBoxFrame2( FoundBox, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Scanning = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Found = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FoundBox:completeAnimation()
 				self.FoundBox:setAlpha( 0.15 )
 				self.clipFinished( FoundBox, {} )
@@ -72,6 +78,7 @@ CoD.CP_Prologue_FaceScannerFoundBox.new = function ( menu, controller )
 		Failed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

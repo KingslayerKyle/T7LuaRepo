@@ -48,9 +48,11 @@ end
 CoD.TOS = InheritFrom( LUI.UIElement )
 CoD.TOS.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.TOS )
 	self.id = "TOS"
@@ -198,33 +200,43 @@ CoD.TOS.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				TimeLimit:completeAnimation()
 				self.TimeLimit:setAlpha( 0 )
 				self.clipFinished( TimeLimit, {} )
+
 				RightIcon:completeAnimation()
 				self.RightIcon:setAlpha( 0 )
 				self.clipFinished( RightIcon, {} )
+
 				LeftIcon:completeAnimation()
 				self.LeftIcon:setAlpha( 0 )
 				self.clipFinished( LeftIcon, {} )
+
 				RewardIconBackground:completeAnimation()
 				self.RewardIconBackground:setAlpha( 0 )
 				self.clipFinished( RewardIconBackground, {} )
+
 				RightProgressBarBackground:completeAnimation()
 				self.RightProgressBarBackground:setAlpha( 0 )
 				self.clipFinished( RightProgressBarBackground, {} )
+
 				LeftProgressBarBackground:completeAnimation()
 				self.LeftProgressBarBackground:setAlpha( 0 )
 				self.clipFinished( LeftProgressBarBackground, {} )
+
 				LeftProgressBarCir:completeAnimation()
 				self.LeftProgressBarCir:setAlpha( 0 )
 				self.clipFinished( LeftProgressBarCir, {} )
+
 				RightProgressBarCir:completeAnimation()
 				self.RightProgressBarCir:setAlpha( 0 )
 				self.clipFinished( RightProgressBarCir, {} )
+
 				TeamOpsDescription:completeAnimation()
 				self.TeamOpsDescription:setAlpha( 0 )
 				self.clipFinished( TeamOpsDescription, {} )
+
 				RewardIcon:completeAnimation()
 				self.RewardIcon:setAlpha( 0 )
 				self.clipFinished( RewardIcon, {} )
@@ -233,39 +245,50 @@ CoD.TOS.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				TimeLimit:completeAnimation()
 				self.TimeLimit:setAlpha( 1 )
 				self.clipFinished( TimeLimit, {} )
+
 				RightIcon:completeAnimation()
 				self.RightIcon:setAlpha( 1 )
 				self.clipFinished( RightIcon, {} )
+
 				LeftIcon:completeAnimation()
 				self.LeftIcon:setAlpha( 1 )
 				self.clipFinished( LeftIcon, {} )
+
 				RewardIconBackground:completeAnimation()
 				self.RewardIconBackground:setAlpha( 0.7 )
 				self.clipFinished( RewardIconBackground, {} )
+
 				RightProgressBarBackground:completeAnimation()
 				self.RightProgressBarBackground:setAlpha( 1 )
 				self.clipFinished( RightProgressBarBackground, {} )
+
 				LeftProgressBarBackground:completeAnimation()
 				self.LeftProgressBarBackground:setAlpha( 1 )
 				self.clipFinished( LeftProgressBarBackground, {} )
+
 				LeftProgressBarCir:completeAnimation()
 				self.LeftProgressBarCir:setAlpha( 1 )
 				self.clipFinished( LeftProgressBarCir, {} )
+
 				RightProgressBarCir:completeAnimation()
 				self.RightProgressBarCir:setAlpha( 1 )
 				self.clipFinished( RightProgressBarCir, {} )
+
 				TeamOpsDescription:completeAnimation()
 				self.TeamOpsDescription:setAlpha( 1 )
 				self.clipFinished( TeamOpsDescription, {} )
+
 				RewardIcon:completeAnimation()
 				self.RewardIcon:setAlpha( 1 )
 				self.clipFinished( RewardIcon, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TimeLimit:close()
 		element.RightIcon:close()

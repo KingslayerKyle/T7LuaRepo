@@ -21,9 +21,11 @@ end
 CoD.ChooseTaunts_TauntOptionInfo = InheritFrom( LUI.UIElement )
 CoD.ChooseTaunts_TauntOptionInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseTaunts_TauntOptionInfo )
 	self.id = "ChooseTaunts_TauntOptionInfo"
@@ -130,13 +132,16 @@ CoD.ChooseTaunts_TauntOptionInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				itemDescription:completeAnimation()
 				self.itemDescription:setAlpha( 0 )
 				self.clipFinished( itemDescription, {} )
+
 				buttonprompt0:completeAnimation()
 				self.buttonprompt0:setRGB( 1, 1, 1 )
 				self.buttonprompt0:setAlpha( 1 )
 				self.clipFinished( buttonprompt0, {} )
+
 				f3_local4:completeAnimation()
 				self.clickButton:setAlpha( 0 )
 				self.clipFinished( f3_local4, {} )
@@ -145,12 +150,15 @@ CoD.ChooseTaunts_TauntOptionInfo.new = function ( menu, controller )
 		BMClassified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				itemDescription:completeAnimation()
 				self.itemDescription:setAlpha( 1 )
 				self.clipFinished( itemDescription, {} )
+
 				buttonprompt0:completeAnimation()
 				self.buttonprompt0:setAlpha( 0 )
 				self.clipFinished( buttonprompt0, {} )
+
 				f3_local4:completeAnimation()
 				self.clickButton:setAlpha( 0 )
 				self.clipFinished( f3_local4, {} )
@@ -159,13 +167,16 @@ CoD.ChooseTaunts_TauntOptionInfo.new = function ( menu, controller )
 		NoPreviewPC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				itemDescription:completeAnimation()
 				self.itemDescription:setAlpha( 0 )
 				self.clipFinished( itemDescription, {} )
+
 				buttonprompt0:completeAnimation()
 				self.buttonprompt0:setRGB( ColorSet.Disabled.r, ColorSet.Disabled.g, ColorSet.Disabled.b )
 				self.buttonprompt0:setAlpha( 0 )
 				self.clipFinished( buttonprompt0, {} )
+
 				f3_local4:completeAnimation()
 				self.clickButton:setRGB( 0.59, 0.59, 0.59 )
 				self.clickButton:setAlpha( 1 )
@@ -175,13 +186,16 @@ CoD.ChooseTaunts_TauntOptionInfo.new = function ( menu, controller )
 		NoPreview = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				itemDescription:completeAnimation()
 				self.itemDescription:setAlpha( 0 )
 				self.clipFinished( itemDescription, {} )
+
 				buttonprompt0:completeAnimation()
 				self.buttonprompt0:setRGB( ColorSet.Disabled.r, ColorSet.Disabled.g, ColorSet.Disabled.b )
 				self.buttonprompt0:setAlpha( 1 )
 				self.clipFinished( buttonprompt0, {} )
+
 				f3_local4:completeAnimation()
 				self.clickButton:setAlpha( 0 )
 				self.clipFinished( f3_local4, {} )
@@ -190,13 +204,16 @@ CoD.ChooseTaunts_TauntOptionInfo.new = function ( menu, controller )
 		KBMouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				itemDescription:completeAnimation()
 				self.itemDescription:setAlpha( 0 )
 				self.clipFinished( itemDescription, {} )
+
 				buttonprompt0:completeAnimation()
 				self.buttonprompt0:setRGB( 1, 1, 1 )
 				self.buttonprompt0:setAlpha( 0 )
 				self.clipFinished( buttonprompt0, {} )
+
 				f3_local4:completeAnimation()
 				self.clickButton:setRGB( 1, 1, 1 )
 				self.clickButton:setAlpha( 1 )
@@ -204,6 +221,7 @@ CoD.ChooseTaunts_TauntOptionInfo.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BMClassified",
@@ -270,6 +288,7 @@ CoD.ChooseTaunts_TauntOptionInfo.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.itemName:close()
 		element.itemDescription:close()

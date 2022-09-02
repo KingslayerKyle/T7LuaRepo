@@ -29,9 +29,11 @@ end
 CoD.AmmoWidget_HeroAbilityThiefOverlay = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_HeroAbilityThiefOverlay.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_HeroAbilityThiefOverlay )
 	self.id = "AmmoWidget_HeroAbilityThiefOverlay"
@@ -180,45 +182,59 @@ CoD.AmmoWidget_HeroAbilityThiefOverlay.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				RingBLURShadow:completeAnimation()
 				self.RingBLURShadow:setAlpha( 0 )
 				self.clipFinished( RingBLURShadow, {} )
+
 				MaskGlow0:completeAnimation()
 				self.MaskGlow0:setAlpha( 0 )
 				self.clipFinished( MaskGlow0, {} )
+
 				MaskGlow:completeAnimation()
 				self.MaskGlow:setAlpha( 0 )
 				self.clipFinished( MaskGlow, {} )
+
 				EdgeGlow:completeAnimation()
 				self.EdgeGlow:setAlpha( 0 )
 				self.clipFinished( EdgeGlow, {} )
+
 				EdgeGlow0:completeAnimation()
 				self.EdgeGlow0:setAlpha( 0 )
 				self.clipFinished( EdgeGlow0, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0 )
 				self.clipFinished( BlackShadow, {} )
+
 				AmmoWidgetThiefCoinWidgetxml:completeAnimation()
 				self.AmmoWidgetThiefCoinWidgetxml:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetThiefCoinWidgetxml, {} )
+
 				Texture1:completeAnimation()
 				self.Texture1:setAlpha( 0 )
 				self.clipFinished( Texture1, {} )
+
 				Texture2:completeAnimation()
 				self.Texture2:setAlpha( 0 )
 				self.clipFinished( Texture2, {} )
+
 				GlowBig:completeAnimation()
 				self.GlowBig:setAlpha( 0 )
 				self.clipFinished( GlowBig, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				AmmoWidgetHeroAbilityThiefRingAnimation:completeAnimation()
 				self.AmmoWidgetHeroAbilityThiefRingAnimation:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetHeroAbilityThiefRingAnimation, {} )
@@ -227,6 +243,7 @@ CoD.AmmoWidget_HeroAbilityThiefOverlay.new = function ( menu, controller )
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				local RingBLURShadowFrame2 = function ( RingBLURShadow, event )
 					local RingBLURShadowFrame3 = function ( RingBLURShadow, event )
 						if not event.interrupted then
@@ -663,8 +680,11 @@ CoD.AmmoWidget_HeroAbilityThiefOverlay.new = function ( menu, controller )
 				end
 				
 				AmmoWidgetThiefCoinWidgetxml:completeAnimation()
+
 				AmmoWidgetThiefCoinWidgetxml.RingBG:completeAnimation()
+
 				AmmoWidgetThiefCoinWidgetxml.NewWeaponIcon:completeAnimation()
+
 				AmmoWidgetThiefCoinWidgetxml.CurrentWeaponIcon:completeAnimation()
 				self.AmmoWidgetThiefCoinWidgetxml:setLeftRight( true, false, 301.86, 404.86 )
 				self.AmmoWidgetThiefCoinWidgetxml:setTopBottom( true, false, 20.15, 123.15 )
@@ -1025,6 +1045,7 @@ CoD.AmmoWidget_HeroAbilityThiefOverlay.new = function ( menu, controller )
 			end,
 			Finished = function ()
 				self:setupElementClipCounter( 14 )
+
 				local RingBLURShadowFrame2 = function ( RingBLURShadow, event )
 					local RingBLURShadowFrame3 = function ( RingBLURShadow, event )
 						if not event.interrupted then
@@ -1251,8 +1272,11 @@ CoD.AmmoWidget_HeroAbilityThiefOverlay.new = function ( menu, controller )
 				end
 				
 				AmmoWidgetThiefCoinWidgetxml:completeAnimation()
+
 				AmmoWidgetThiefCoinWidgetxml.RingBG:completeAnimation()
+
 				AmmoWidgetThiefCoinWidgetxml.NewWeaponIcon:completeAnimation()
+
 				AmmoWidgetThiefCoinWidgetxml.CurrentWeaponIcon:completeAnimation()
 				self.AmmoWidgetThiefCoinWidgetxml:setAlpha( 0.26 )
 				self.AmmoWidgetThiefCoinWidgetxml:setYRot( 360 )
@@ -1397,6 +1421,7 @@ CoD.AmmoWidget_HeroAbilityThiefOverlay.new = function ( menu, controller )
 				self.GlowBig:setAlpha( 0.98 )
 				self.GlowBig:setScale( 1 )
 				GlowBigFrame2( GlowBig, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
@@ -1478,6 +1503,7 @@ CoD.AmmoWidget_HeroAbilityThiefOverlay.new = function ( menu, controller )
 				self.Glow:setAlpha( 0 )
 				self.Glow:setScale( 0.8 )
 				GlowFrame2( Glow, {} )
+
 				AmmoWidgetHeroAbilityThiefRingAnimation:completeAnimation()
 				self.AmmoWidgetHeroAbilityThiefRingAnimation:setAlpha( 1 )
 				self.clipFinished( AmmoWidgetHeroAbilityThiefRingAnimation, {} )
@@ -1486,48 +1512,62 @@ CoD.AmmoWidget_HeroAbilityThiefOverlay.new = function ( menu, controller )
 		Finished = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				RingBLURShadow:completeAnimation()
 				self.RingBLURShadow:setAlpha( 0 )
 				self.clipFinished( RingBLURShadow, {} )
+
 				MaskGlow0:completeAnimation()
 				self.MaskGlow0:setAlpha( 0 )
 				self.clipFinished( MaskGlow0, {} )
+
 				MaskGlow:completeAnimation()
 				self.MaskGlow:setAlpha( 0 )
 				self.clipFinished( MaskGlow, {} )
+
 				EdgeGlow:completeAnimation()
 				self.EdgeGlow:setAlpha( 0 )
 				self.clipFinished( EdgeGlow, {} )
+
 				EdgeGlow0:completeAnimation()
 				self.EdgeGlow0:setAlpha( 0 )
 				self.clipFinished( EdgeGlow0, {} )
+
 				BlackShadow:completeAnimation()
 				self.BlackShadow:setAlpha( 0 )
 				self.clipFinished( BlackShadow, {} )
+
 				AmmoWidgetThiefCoinWidgetxml:completeAnimation()
 				self.AmmoWidgetThiefCoinWidgetxml:setAlpha( 0 )
 				self.clipFinished( AmmoWidgetThiefCoinWidgetxml, {} )
+
 				Texture1:completeAnimation()
 				self.Texture1:setAlpha( 0 )
 				self.clipFinished( Texture1, {} )
+
 				Texture2:completeAnimation()
 				self.Texture2:setAlpha( 0 )
 				self.clipFinished( Texture2, {} )
+
 				GlowBig:completeAnimation()
 				self.GlowBig:setAlpha( 0 )
 				self.clipFinished( GlowBig, {} )
+
 				AbilitySwirl:completeAnimation()
 				self.AbilitySwirl:setAlpha( 0 )
 				self.clipFinished( AbilitySwirl, {} )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Ready",
@@ -1550,6 +1590,7 @@ CoD.AmmoWidget_HeroAbilityThiefOverlay.new = function ( menu, controller )
 			modelName = "playerAbilities.playerGadget3.thiefStatus"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AmmoWidgetThiefCoinWidgetxml:close()
 		element.Glow:close()

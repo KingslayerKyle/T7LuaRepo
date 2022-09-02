@@ -4,9 +4,11 @@
 CoD.weakpoint_NewHex = InheritFrom( LUI.UIElement )
 CoD.weakpoint_NewHex.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.weakpoint_NewHex )
 	self.id = "weakpoint_NewHex"
@@ -36,6 +38,7 @@ CoD.weakpoint_NewHex.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local NewHexFrame2 = function ( NewHex, event )
 					if not event.interrupted then
 						NewHex:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -51,90 +54,116 @@ CoD.weakpoint_NewHex.new = function ( menu, controller )
 				NewHex:completeAnimation()
 				self.NewHex:setAlpha( RandomAddPercent( -100, 1 ) )
 				NewHexFrame2( NewHex, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Medium = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Far = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Obscured = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Close = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Medium = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Far = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Obscured = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Medium = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Far = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Obscured = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Far = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Medium = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Obscured = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Obscured = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Medium = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Far = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Close",

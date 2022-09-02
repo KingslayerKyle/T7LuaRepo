@@ -46,9 +46,11 @@ end
 CoD.ButtonPrompt3d = InheritFrom( LUI.UIElement )
 CoD.ButtonPrompt3d.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ButtonPrompt3d )
 	self.id = "ButtonPrompt3d"
@@ -112,15 +114,19 @@ CoD.ButtonPrompt3d.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				requirementLabel:completeAnimation()
 				self.requirementLabel:setAlpha( 1 )
 				self.clipFinished( requirementLabel, {} )
+
 				nameLabel:completeAnimation()
 				self.nameLabel:setAlpha( 1 )
 				self.clipFinished( nameLabel, {} )
+
 				iconImage:completeAnimation()
 				self.iconImage:setAlpha( 1 )
 				self.clipFinished( iconImage, {} )
+
 				progressMeter:completeAnimation()
 				self.progressMeter:setAlpha( 1 )
 				self.clipFinished( progressMeter, {} )
@@ -129,15 +135,19 @@ CoD.ButtonPrompt3d.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				requirementLabel:completeAnimation()
 				self.requirementLabel:setAlpha( 0 )
 				self.clipFinished( requirementLabel, {} )
+
 				nameLabel:completeAnimation()
 				self.nameLabel:setAlpha( 0 )
 				self.clipFinished( nameLabel, {} )
+
 				iconImage:completeAnimation()
 				self.iconImage:setAlpha( 0 )
 				self.clipFinished( iconImage, {} )
+
 				progressMeter:completeAnimation()
 				self.progressMeter:setAlpha( 0 )
 				self.clipFinished( progressMeter, {} )
@@ -146,21 +156,26 @@ CoD.ButtonPrompt3d.new = function ( menu, controller )
 		HideRequirementLabel = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				requirementLabel:completeAnimation()
 				self.requirementLabel:setAlpha( 0 )
 				self.clipFinished( requirementLabel, {} )
+
 				nameLabel:completeAnimation()
 				self.nameLabel:setAlpha( 1 )
 				self.clipFinished( nameLabel, {} )
+
 				iconImage:completeAnimation()
 				self.iconImage:setAlpha( 1 )
 				self.clipFinished( iconImage, {} )
+
 				progressMeter:completeAnimation()
 				self.progressMeter:setAlpha( 1 )
 				self.clipFinished( progressMeter, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -199,6 +214,7 @@ CoD.ButtonPrompt3d.new = function ( menu, controller )
 			modelName = "interactivePrompt.activeObjectiveID"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.requirementLabel:close()
 		element.nameLabel:close()

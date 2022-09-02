@@ -53,9 +53,11 @@ DataSources.ZMSidequestIconList = {
 CoD.SidequestIconContainer = InheritFrom( LUI.UIElement )
 CoD.SidequestIconContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SidequestIconContainer )
 	self.id = "SidequestIconContainer"
@@ -85,12 +87,14 @@ CoD.SidequestIconContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				SidequestIconList:completeAnimation()
 				self.SidequestIconList:setAlpha( 1 )
 				self.clipFinished( SidequestIconList, {} )
 			end,
 			Hidden = function ()
 				self:setupElementClipCounter( 1 )
+
 				local SidequestIconListFrame2 = function ( SidequestIconList, event )
 					if not event.interrupted then
 						SidequestIconList:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -111,12 +115,14 @@ CoD.SidequestIconContainer.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				SidequestIconList:completeAnimation()
 				self.SidequestIconList:setAlpha( 0 )
 				self.clipFinished( SidequestIconList, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local SidequestIconListFrame2 = function ( SidequestIconList, event )
 					if not event.interrupted then
 						SidequestIconList:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -135,6 +141,7 @@ CoD.SidequestIconContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SidequestIconList:close()
 	end )

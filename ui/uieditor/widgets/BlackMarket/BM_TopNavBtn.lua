@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BlackMarket.FE_BlackMarketSpecialBreadcrumb" )
 CoD.BM_TopNavBtn = InheritFrom( LUI.UIElement )
 CoD.BM_TopNavBtn.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_TopNavBtn )
 	self.id = "BM_TopNavBtn"
@@ -44,6 +46,7 @@ CoD.BM_TopNavBtn.new = function ( menu, controller )
 	btnDisplayTextStroke0:setLetterSpacing( -0.6 )
 	btnDisplayTextStroke0:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	btnDisplayTextStroke0:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( btnDisplayTextStroke0, "setText", function ( element, controller )
 		TrimLabelIfLanguageReversed( self, element )
 	end )
@@ -59,6 +62,7 @@ CoD.BM_TopNavBtn.new = function ( menu, controller )
 	btnDisplayTextStroke:setLetterSpacing( -0.6 )
 	btnDisplayTextStroke:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	btnDisplayTextStroke:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( btnDisplayTextStroke, "setText", function ( element, controller )
 		TrimLabelIfLanguageReversed( self, element )
 	end )
@@ -89,21 +93,26 @@ CoD.BM_TopNavBtn.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				off:completeAnimation()
 				self.off:setAlpha( 1 )
 				self.clipFinished( off, {} )
+
 				on:completeAnimation()
 				self.on:setAlpha( 0 )
 				self.clipFinished( on, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setRGB( 0.6, 1, 0.95 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				FEBlackMarketSpecialBreadcrumb:completeAnimation()
 				self.FEBlackMarketSpecialBreadcrumb:setAlpha( 0 )
 				self.clipFinished( FEBlackMarketSpecialBreadcrumb, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local offFrame2 = function ( off, event )
 					local offFrame3 = function ( off, event )
 						if not event.interrupted then
@@ -211,30 +220,37 @@ CoD.BM_TopNavBtn.new = function ( menu, controller )
 				self.btnDisplayTextStroke:setAlpha( 1 )
 				self.btnDisplayTextStroke:setZoom( 10 )
 				btnDisplayTextStrokeFrame2( btnDisplayTextStroke, {} )
+
 				FEBlackMarketSpecialBreadcrumb:completeAnimation()
 				self.FEBlackMarketSpecialBreadcrumb:setAlpha( 0 )
 				self.clipFinished( FEBlackMarketSpecialBreadcrumb, {} )
+
 				self.nextClip = "Focus"
 			end
 		},
 		HaveNewBlackMarketPromo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				off:completeAnimation()
 				self.off:setAlpha( 1 )
 				self.clipFinished( off, {} )
+
 				on:completeAnimation()
 				self.on:setAlpha( 0 )
 				self.clipFinished( on, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setRGB( 0.6, 1, 0.95 )
 				self.clipFinished( btnDisplayTextStroke, {} )
+
 				FEBlackMarketSpecialBreadcrumb:completeAnimation()
 				self.FEBlackMarketSpecialBreadcrumb:setAlpha( 1 )
 				self.clipFinished( FEBlackMarketSpecialBreadcrumb, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local offFrame2 = function ( off, event )
 					local offFrame3 = function ( off, event )
 						if not event.interrupted then
@@ -342,13 +358,16 @@ CoD.BM_TopNavBtn.new = function ( menu, controller )
 				self.btnDisplayTextStroke:setAlpha( 1 )
 				self.btnDisplayTextStroke:setZoom( 10 )
 				btnDisplayTextStrokeFrame2( btnDisplayTextStroke, {} )
+
 				FEBlackMarketSpecialBreadcrumb:completeAnimation()
 				self.FEBlackMarketSpecialBreadcrumb:setAlpha( 1 )
 				self.clipFinished( FEBlackMarketSpecialBreadcrumb, {} )
+
 				self.nextClip = "Focus"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HaveNewBlackMarketPromo",
@@ -365,6 +384,7 @@ CoD.BM_TopNavBtn.new = function ( menu, controller )
 			modelName = "showBreadcrumb"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEBlackMarketSpecialBreadcrumb:close()
 		element.btnDisplayTextStroke0:close()

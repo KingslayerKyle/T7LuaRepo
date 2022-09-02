@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_CleanCarryCount" )
 CoD.AmmoWidgetMP_HeldItem = InheritFrom( LUI.UIElement )
 CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidgetMP_HeldItem )
 	self.id = "AmmoWidgetMP_HeldItem"
@@ -464,12 +466,14 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Glow00:completeAnimation()
 				self.Glow00:setLeftRight( true, false, -5.88, 94.94 )
 				self.Glow00:setTopBottom( true, false, -45, 123 )
 				self.Glow00:setRGB( 0.07, 0.27, 0.31 )
 				self.Glow00:setAlpha( 0 )
 				self.clipFinished( Glow00, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setLeftRight( true, false, -8.5, 100.5 )
 				self.Glow:setTopBottom( true, false, -16.25, 96.75 )
@@ -477,30 +481,36 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 				self.Glow:setAlpha( 0 )
 				self.Glow:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
 				self.clipFinished( Glow, {} )
+
 				AllyFlag:completeAnimation()
 				self.AllyFlag:setLeftRight( true, false, 23, 69 )
 				self.AllyFlag:setTopBottom( true, false, 0, 80 )
 				self.AllyFlag:setAlpha( 0 )
 				self.clipFinished( AllyFlag, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setLeftRight( true, false, -5.88, 94.94 )
 				self.Glow0:setTopBottom( true, false, -45, 123 )
 				self.Glow0:setRGB( 0.07, 0.27, 0.31 )
 				self.Glow0:setAlpha( 0 )
 				self.clipFinished( Glow0, {} )
+
 				AxisFlag:completeAnimation()
 				self.AxisFlag:setLeftRight( true, false, 23, 69 )
 				self.AxisFlag:setTopBottom( true, false, 0, 80 )
 				self.AxisFlag:setAlpha( 0 )
 				self.clipFinished( AxisFlag, {} )
+
 				AmmoWidgetSDBomb:completeAnimation()
 				self.AmmoWidgetSDBomb:setLeftRight( true, false, 10, 80 )
 				self.AmmoWidgetSDBomb:setTopBottom( true, false, 25, 95 )
 				self.clipFinished( AmmoWidgetSDBomb, {} )
+
 				AmmoWidgetBall:completeAnimation()
 				self.AmmoWidgetBall:setLeftRight( true, false, 10, 80 )
 				self.AmmoWidgetBall:setTopBottom( true, false, 25, 95 )
 				self.clipFinished( AmmoWidgetBall, {} )
+
 				CleanCarryCount:completeAnimation()
 				self.CleanCarryCount:setLeftRight( true, false, -5, 71 )
 				self.CleanCarryCount:setTopBottom( true, false, 11.63, 108.38 )
@@ -508,6 +518,7 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 			end,
 			ShowAllyFlag = function ()
 				self:setupElementClipCounter( 3 )
+
 				local GlowFrame2 = function ( Glow, event )
 					local GlowFrame3 = function ( Glow, event )
 						local GlowFrame4 = function ( Glow, event )
@@ -649,6 +660,7 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 			end,
 			ShowAxisFlag = function ()
 				self:setupElementClipCounter( 3 )
+
 				local GlowFrame2 = function ( Glow, event )
 					local GlowFrame3 = function ( Glow, event )
 						local GlowFrame4 = function ( Glow, event )
@@ -791,6 +803,7 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 		ShowAllyFlagDual = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				local Glow00Frame2 = function ( Glow00, event )
 					local Glow00Frame3 = function ( Glow00, event )
 						local Glow00Frame4 = function ( Glow00, event )
@@ -868,6 +881,7 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 				self.Glow:setAlpha( 0 )
 				self.Glow:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
 				GlowFrame2( Glow, {} )
+
 				AllyFlag:completeAnimation()
 				self.AllyFlag:setLeftRight( true, false, -71.94, -25.94 )
 				self.AllyFlag:setTopBottom( true, false, 0, 80 )
@@ -905,27 +919,33 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 				self.Glow0:setRGB( 0.07, 0.27, 0.31 )
 				self.Glow0:setAlpha( 0 )
 				Glow0Frame2( Glow0, {} )
+
 				AxisFlag:completeAnimation()
 				self.AxisFlag:setLeftRight( true, false, 23, 69 )
 				self.AxisFlag:setTopBottom( true, false, 0, 80 )
 				self.AxisFlag:setAlpha( 0 )
 				self.clipFinished( AxisFlag, {} )
+
 				AmmoWidgetSDBomb:completeAnimation()
 				self.AmmoWidgetSDBomb:setLeftRight( true, false, 10, 80 )
 				self.AmmoWidgetSDBomb:setTopBottom( true, false, 25, 95 )
 				self.clipFinished( AmmoWidgetSDBomb, {} )
+
 				AmmoWidgetBall:completeAnimation()
 				self.AmmoWidgetBall:setLeftRight( true, false, 10, 80 )
 				self.AmmoWidgetBall:setTopBottom( true, false, 25, 95 )
 				self.clipFinished( AmmoWidgetBall, {} )
+
 				CleanCarryCount:completeAnimation()
 				self.CleanCarryCount:setLeftRight( true, false, -5, 71 )
 				self.CleanCarryCount:setTopBottom( true, false, 11.63, 108.38 )
 				self.clipFinished( CleanCarryCount, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			Hide = function ()
 				self:setupElementClipCounter( 4 )
+
 				Glow00:completeAnimation()
 				self.Glow00:setLeftRight( true, false, -100.82, 0 )
 				self.Glow00:setTopBottom( true, false, -45, 123 )
@@ -1016,6 +1036,7 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 				self.AllyFlag:setTopBottom( true, false, 0, 80 )
 				self.AllyFlag:setAlpha( 1 )
 				AllyFlagFrame2( AllyFlag, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setLeftRight( true, false, -100.82, 0 )
 				self.Glow0:setTopBottom( true, false, -45, 123 )
@@ -1025,6 +1046,7 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 		ShowAxisFlagDual = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				local Glow00Frame2 = function ( Glow00, event )
 					local Glow00Frame3 = function ( Glow00, event )
 						if not event.interrupted then
@@ -1103,6 +1125,7 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 				self.Glow:setAlpha( 0 )
 				self.Glow:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
 				GlowFrame2( Glow, {} )
+
 				AllyFlag:completeAnimation()
 				self.AllyFlag:setLeftRight( true, false, 23, 69 )
 				self.AllyFlag:setTopBottom( true, false, 0, 80 )
@@ -1140,27 +1163,33 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 				self.Glow0:setRGB( 0.54, 0.12, 0.16 )
 				self.Glow0:setAlpha( 0 )
 				Glow0Frame2( Glow0, {} )
+
 				AxisFlag:completeAnimation()
 				self.AxisFlag:setLeftRight( true, false, -71.94, -25.94 )
 				self.AxisFlag:setTopBottom( true, false, 0, 80 )
 				self.AxisFlag:setAlpha( 1 )
 				self.clipFinished( AxisFlag, {} )
+
 				AmmoWidgetSDBomb:completeAnimation()
 				self.AmmoWidgetSDBomb:setLeftRight( true, false, 10, 80 )
 				self.AmmoWidgetSDBomb:setTopBottom( true, false, 25, 95 )
 				self.clipFinished( AmmoWidgetSDBomb, {} )
+
 				AmmoWidgetBall:completeAnimation()
 				self.AmmoWidgetBall:setLeftRight( true, false, 10, 80 )
 				self.AmmoWidgetBall:setTopBottom( true, false, 25, 95 )
 				self.clipFinished( AmmoWidgetBall, {} )
+
 				CleanCarryCount:completeAnimation()
 				self.CleanCarryCount:setLeftRight( true, false, -5, 71 )
 				self.CleanCarryCount:setTopBottom( true, false, 11.63, 108.38 )
 				self.clipFinished( CleanCarryCount, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			Hide = function ()
 				self:setupElementClipCounter( 4 )
+
 				Glow00:completeAnimation()
 				self.Glow00:setLeftRight( true, false, -100.82, 0 )
 				self.Glow00:setTopBottom( true, false, -45, 123 )
@@ -1229,6 +1258,7 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 				self.Glow:setRGB( 1, 1, 1 )
 				self.Glow:setAlpha( 0 )
 				GlowFrame2( Glow, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setLeftRight( true, false, -100.82, 0 )
 				self.Glow0:setTopBottom( true, false, -45, 123 )
@@ -1257,6 +1287,7 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 		ShowAllyFlag = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				local Glow00Frame2 = function ( Glow00, event )
 					local Glow00Frame3 = function ( Glow00, event )
 						local Glow00Frame4 = function ( Glow00, event )
@@ -1397,27 +1428,33 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 				self.Glow0:setRGB( 0.07, 0.27, 0.31 )
 				self.Glow0:setAlpha( 0 )
 				Glow0Frame2( Glow0, {} )
+
 				AxisFlag:completeAnimation()
 				self.AxisFlag:setLeftRight( true, false, 23, 69 )
 				self.AxisFlag:setTopBottom( true, false, 0, 80 )
 				self.AxisFlag:setAlpha( 0 )
 				self.clipFinished( AxisFlag, {} )
+
 				AmmoWidgetSDBomb:completeAnimation()
 				self.AmmoWidgetSDBomb:setLeftRight( true, false, 10, 80 )
 				self.AmmoWidgetSDBomb:setTopBottom( true, false, 25, 95 )
 				self.clipFinished( AmmoWidgetSDBomb, {} )
+
 				AmmoWidgetBall:completeAnimation()
 				self.AmmoWidgetBall:setLeftRight( true, false, 10, 80 )
 				self.AmmoWidgetBall:setTopBottom( true, false, 25, 95 )
 				self.clipFinished( AmmoWidgetBall, {} )
+
 				CleanCarryCount:completeAnimation()
 				self.CleanCarryCount:setLeftRight( true, false, -5, 71 )
 				self.CleanCarryCount:setTopBottom( true, false, 11.63, 108.38 )
 				self.clipFinished( CleanCarryCount, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			Hide = function ()
 				self:setupElementClipCounter( 2 )
+
 				local GlowFrame2 = function ( Glow, event )
 					local GlowFrame3 = function ( Glow, event )
 						local GlowFrame4 = function ( Glow, event )
@@ -1511,6 +1548,7 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 		ShowAxisFlag = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				local Glow00Frame2 = function ( Glow00, event )
 					local Glow00Frame3 = function ( Glow00, event )
 						if not event.interrupted then
@@ -1592,6 +1630,7 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 				self.Glow:setAlpha( 0 )
 				self.Glow:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
 				GlowFrame2( Glow, {} )
+
 				AllyFlag:completeAnimation()
 				self.AllyFlag:setLeftRight( true, false, 23, 69 )
 				self.AllyFlag:setTopBottom( true, false, 0, 80 )
@@ -1662,22 +1701,27 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 				self.AxisFlag:setTopBottom( true, false, 0, 80 )
 				self.AxisFlag:setAlpha( 1 )
 				AxisFlagFrame2( AxisFlag, {} )
+
 				AmmoWidgetSDBomb:completeAnimation()
 				self.AmmoWidgetSDBomb:setLeftRight( true, false, 10, 80 )
 				self.AmmoWidgetSDBomb:setTopBottom( true, false, 25, 95 )
 				self.clipFinished( AmmoWidgetSDBomb, {} )
+
 				AmmoWidgetBall:completeAnimation()
 				self.AmmoWidgetBall:setLeftRight( true, false, 10, 80 )
 				self.AmmoWidgetBall:setTopBottom( true, false, 25, 95 )
 				self.clipFinished( AmmoWidgetBall, {} )
+
 				CleanCarryCount:completeAnimation()
 				self.CleanCarryCount:setLeftRight( true, false, -5, 71 )
 				self.CleanCarryCount:setTopBottom( true, false, 11.63, 108.38 )
 				self.clipFinished( CleanCarryCount, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			Hide = function ()
 				self:setupElementClipCounter( 2 )
+
 				local GlowFrame2 = function ( Glow, event )
 					local GlowFrame3 = function ( Glow, event )
 						local GlowFrame4 = function ( Glow, event )
@@ -1772,12 +1816,14 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 		WeaponDual = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Glow00:completeAnimation()
 				self.Glow00:setLeftRight( true, false, -5.88, 94.94 )
 				self.Glow00:setTopBottom( true, false, -45, 123 )
 				self.Glow00:setRGB( 0.07, 0.27, 0.31 )
 				self.Glow00:setAlpha( 0 )
 				self.clipFinished( Glow00, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setLeftRight( true, false, -8.5, 100.5 )
 				self.Glow:setTopBottom( true, false, -16.25, 96.75 )
@@ -1785,30 +1831,36 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 				self.Glow:setAlpha( 0 )
 				self.Glow:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
 				self.clipFinished( Glow, {} )
+
 				AllyFlag:completeAnimation()
 				self.AllyFlag:setLeftRight( true, false, 23, 69 )
 				self.AllyFlag:setTopBottom( true, false, 0, 80 )
 				self.AllyFlag:setAlpha( 0 )
 				self.clipFinished( AllyFlag, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setLeftRight( true, false, -5.88, 94.94 )
 				self.Glow0:setTopBottom( true, false, -45, 123 )
 				self.Glow0:setRGB( 0.07, 0.27, 0.31 )
 				self.Glow0:setAlpha( 0 )
 				self.clipFinished( Glow0, {} )
+
 				AxisFlag:completeAnimation()
 				self.AxisFlag:setLeftRight( true, false, 23, 69 )
 				self.AxisFlag:setTopBottom( true, false, 0, 80 )
 				self.AxisFlag:setAlpha( 0 )
 				self.clipFinished( AxisFlag, {} )
+
 				AmmoWidgetSDBomb:completeAnimation()
 				self.AmmoWidgetSDBomb:setLeftRight( true, false, -71, -1 )
 				self.AmmoWidgetSDBomb:setTopBottom( true, false, 26.5, 96.5 )
 				self.clipFinished( AmmoWidgetSDBomb, {} )
+
 				AmmoWidgetBall:completeAnimation()
 				self.AmmoWidgetBall:setLeftRight( true, false, -71, -1 )
 				self.AmmoWidgetBall:setTopBottom( true, false, 26.5, 96.5 )
 				self.clipFinished( AmmoWidgetBall, {} )
+
 				CleanCarryCount:completeAnimation()
 				self.CleanCarryCount:setLeftRight( true, false, -72, 4 )
 				self.CleanCarryCount:setTopBottom( true, false, 13.13, 109.88 )
@@ -1818,12 +1870,14 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Glow00:completeAnimation()
 				self.Glow00:setLeftRight( true, false, -5.88, 94.94 )
 				self.Glow00:setTopBottom( true, false, -45, 123 )
 				self.Glow00:setRGB( 0.07, 0.27, 0.31 )
 				self.Glow00:setAlpha( 0 )
 				self.clipFinished( Glow00, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setLeftRight( true, false, -8.5, 100.5 )
 				self.Glow:setTopBottom( true, false, -16.25, 96.75 )
@@ -1831,30 +1885,36 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 				self.Glow:setAlpha( 0 )
 				self.Glow:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
 				self.clipFinished( Glow, {} )
+
 				AllyFlag:completeAnimation()
 				self.AllyFlag:setLeftRight( true, false, 23, 69 )
 				self.AllyFlag:setTopBottom( true, false, 0, 80 )
 				self.AllyFlag:setAlpha( 0 )
 				self.clipFinished( AllyFlag, {} )
+
 				Glow0:completeAnimation()
 				self.Glow0:setLeftRight( true, false, -5.88, 94.94 )
 				self.Glow0:setTopBottom( true, false, -45, 123 )
 				self.Glow0:setRGB( 0.07, 0.27, 0.31 )
 				self.Glow0:setAlpha( 0 )
 				self.clipFinished( Glow0, {} )
+
 				AxisFlag:completeAnimation()
 				self.AxisFlag:setLeftRight( true, false, 23, 69 )
 				self.AxisFlag:setTopBottom( true, false, 0, 80 )
 				self.AxisFlag:setAlpha( 0 )
 				self.clipFinished( AxisFlag, {} )
+
 				AmmoWidgetSDBomb:completeAnimation()
 				self.AmmoWidgetSDBomb:setLeftRight( true, false, 10, 80 )
 				self.AmmoWidgetSDBomb:setTopBottom( true, false, 25, 95 )
 				self.clipFinished( AmmoWidgetSDBomb, {} )
+
 				AmmoWidgetBall:completeAnimation()
 				self.AmmoWidgetBall:setLeftRight( true, false, 10, 80 )
 				self.AmmoWidgetBall:setTopBottom( true, false, 25, 95 )
 				self.clipFinished( AmmoWidgetBall, {} )
+
 				CleanCarryCount:completeAnimation()
 				self.CleanCarryCount:setLeftRight( true, false, -5, 71 )
 				self.CleanCarryCount:setTopBottom( true, false, 11.63, 108.38 )
@@ -1862,6 +1922,7 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 			end,
 			ShowAllyFlag = function ()
 				self:setupElementClipCounter( 2 )
+
 				local GlowFrame2 = function ( Glow, event )
 					local GlowFrame3 = function ( Glow, event )
 						local GlowFrame4 = function ( Glow, event )
@@ -1954,6 +2015,7 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 			end,
 			ShowAxisFlag = function ()
 				self:setupElementClipCounter( 2 )
+
 				local GlowFrame2 = function ( Glow, event )
 					local GlowFrame3 = function ( Glow, event )
 						local GlowFrame4 = function ( Glow, event )
@@ -2042,6 +2104,7 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ShowAllyFlagDual",
@@ -2142,6 +2205,7 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 			modelName = "currentWeapon.weapon"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AllyFlag:close()
 		element.AxisFlag:close()

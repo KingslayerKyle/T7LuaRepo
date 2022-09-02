@@ -20,9 +20,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.genericVHUDInfoArea" )
 CoD.dpsVehicleReticle = InheritFrom( LUI.UIElement )
 CoD.dpsVehicleReticle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.dpsVehicleReticle )
 	self.id = "dpsVehicleReticle"
@@ -344,9 +346,11 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 24 )
+
 				local f13_local0 = function ( f14_arg0, f14_arg1 )
 					if not f14_arg1.interrupted then
 						f14_arg0:beginAnimation( "keyframe", 1200, false, true, CoD.TweenType.Back )
@@ -1362,6 +1366,7 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 24 )
+
 				local CenterInnerRingFrame2 = function ( CenterInnerRing, event )
 					if not event.interrupted then
 						CenterInnerRing:beginAnimation( "keyframe", 250, false, true, CoD.TweenType.Linear )
@@ -1742,6 +1747,7 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 				end
 				
 				Reticle:completeAnimation()
+
 				Reticle.ReticleMain.Reticle0:completeAnimation()
 				self.Reticle:setAlpha( 1 )
 				self.Reticle:setZoom( 0 )
@@ -1876,6 +1882,7 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 				end
 				
 				dpsReticleZoom:completeAnimation()
+
 				dpsReticleZoom.zoom:completeAnimation()
 				self.dpsReticleZoom:setLeftRight( false, false, -61, 67 )
 				self.dpsReticleZoom:setTopBottom( false, false, 207, 246 )
@@ -2002,6 +2009,7 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 				end
 				
 				ReticleZoom:completeAnimation()
+
 				ReticleZoom.ReticleZoom:completeAnimation()
 				self.ReticleZoom.ReticleZoom:setAlpha( 0 )
 				ReticleZoomFrame2( ReticleZoom, {} )
@@ -2010,6 +2018,7 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 		Zoom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 24 )
+
 				CenterInnerRing:completeAnimation()
 				self.CenterInnerRing:setLeftRight( false, false, -204, 204 )
 				self.CenterInnerRing:setTopBottom( false, false, -205, 203 )
@@ -2018,6 +2027,7 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 				self.CenterInnerRing:setZRot( -150 )
 				self.CenterInnerRing:setZoom( 100 )
 				self.clipFinished( CenterInnerRing, {} )
+
 				CenterInnerRingOutter:completeAnimation()
 				self.CenterInnerRingOutter:setLeftRight( false, false, -304, 304 )
 				self.CenterInnerRingOutter:setTopBottom( false, false, -304, 304 )
@@ -2026,6 +2036,7 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 				self.CenterInnerRingOutter:setZRot( 100 )
 				self.CenterInnerRingOutter:setZoom( 200 )
 				self.clipFinished( CenterInnerRingOutter, {} )
+
 				CenterInnerRingDuplicated:completeAnimation()
 				self.CenterInnerRingDuplicated:setLeftRight( false, false, -200, 200 )
 				self.CenterInnerRingDuplicated:setTopBottom( false, false, -200, 200 )
@@ -2034,6 +2045,7 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 				self.CenterInnerRingDuplicated:setZRot( 0 )
 				self.CenterInnerRingDuplicated:setZoom( 200 )
 				self.clipFinished( CenterInnerRingDuplicated, {} )
+
 				HashRing:completeAnimation()
 				self.HashRing:setLeftRight( false, false, 358, 620 )
 				self.HashRing:setTopBottom( false, false, -166, 122 )
@@ -2041,6 +2053,7 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 				self.HashRing:setAlpha( 0.6 )
 				self.HashRing:setZoom( -50 )
 				self.clipFinished( HashRing, {} )
+
 				ModLeft:completeAnimation()
 				self.ModLeft:setLeftRight( true, false, 36, 680 )
 				self.ModLeft:setTopBottom( true, false, 41, 117 )
@@ -2048,6 +2061,7 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 				self.ModLeft:setAlpha( 0.6 )
 				self.ModLeft:setZoom( -80 )
 				self.clipFinished( ModLeft, {} )
+
 				ModLeftFore:completeAnimation()
 				self.ModLeftFore:setLeftRight( true, false, 165, 809 )
 				self.ModLeftFore:setTopBottom( true, false, 102, 178 )
@@ -2055,6 +2069,7 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 				self.ModLeftFore:setAlpha( 0.05 )
 				self.ModLeftFore:setZoom( 400 )
 				self.clipFinished( ModLeftFore, {} )
+
 				ModRight:completeAnimation()
 				self.ModRight:setLeftRight( false, true, -680, -36 )
 				self.ModRight:setTopBottom( true, false, 41, 117 )
@@ -2062,6 +2077,7 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 				self.ModRight:setAlpha( 0.6 )
 				self.ModRight:setZoom( -80 )
 				self.clipFinished( ModRight, {} )
+
 				ModRightFore:completeAnimation()
 				self.ModRightFore:setLeftRight( false, true, -809, -165 )
 				self.ModRightFore:setTopBottom( true, false, 102, 178 )
@@ -2069,6 +2085,7 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 				self.ModRightFore:setAlpha( 0.05 )
 				self.ModRightFore:setZoom( 400 )
 				self.clipFinished( ModRightFore, {} )
+
 				HashRingFore:completeAnimation()
 				self.HashRingFore:setLeftRight( true, false, 934.5, 1065.5 )
 				self.HashRingFore:setTopBottom( true, false, 198, 486 )
@@ -2076,24 +2093,29 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 				self.HashRingFore:setAlpha( 0.1 )
 				self.HashRingFore:setZoom( 700 )
 				self.clipFinished( HashRingFore, {} )
+
 				ExtRing:completeAnimation()
 				self.ExtRing:setLeftRight( true, false, 53, 244 )
 				self.ExtRing:setTopBottom( true, false, 152, 544 )
 				self.ExtRing:setAlpha( 0.8 )
 				self.ExtRing:setZoom( -50 )
 				self.clipFinished( ExtRing, {} )
+
 				ExtRingFore:completeAnimation()
 				self.ExtRingFore:setLeftRight( true, false, 100, 291 )
 				self.ExtRingFore:setTopBottom( true, false, 152, 544 )
 				self.ExtRingFore:setAlpha( 0.2 )
 				self.ExtRingFore:setZoom( 450 )
 				self.clipFinished( ExtRingFore, {} )
+
 				Reticle:completeAnimation()
+
 				Reticle.ReticleMain.Reticle0:completeAnimation()
 				self.Reticle:setAlpha( 1 )
 				self.Reticle:setZoom( -30 )
 				self.Reticle.ReticleMain.Reticle0:setAlpha( 0 )
 				self.clipFinished( Reticle, {} )
+
 				ReticleLower:completeAnimation()
 				self.ReticleLower:setLeftRight( false, false, -8, 8 )
 				self.ReticleLower:setTopBottom( false, false, 110, 214 )
@@ -2101,6 +2123,7 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 				self.ReticleLower:setAlpha( 1 )
 				self.ReticleLower:setZoom( 0 )
 				self.clipFinished( ReticleLower, {} )
+
 				ReticleLowerArrow:completeAnimation()
 				self.ReticleLowerArrow:setLeftRight( false, false, -19, -3 )
 				self.ReticleLowerArrow:setTopBottom( false, false, 108.55, 124.55 )
@@ -2108,6 +2131,7 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 				self.ReticleLowerArrow:setAlpha( 1 )
 				self.ReticleLowerArrow:setZoom( 0 )
 				self.clipFinished( ReticleLowerArrow, {} )
+
 				ReticleLowerArrow2:completeAnimation()
 				self.ReticleLowerArrow2:setLeftRight( false, false, 3, 19 )
 				self.ReticleLowerArrow2:setTopBottom( false, false, 108.55, 124.55 )
@@ -2115,19 +2139,23 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 				self.ReticleLowerArrow2:setAlpha( 1 )
 				self.ReticleLowerArrow2:setZoom( 0 )
 				self.clipFinished( ReticleLowerArrow2, {} )
+
 				ReticleArrowsBlurred:completeAnimation()
 				self.ReticleArrowsBlurred:setLeftRight( false, false, -30, 39 )
 				self.ReticleArrowsBlurred:setTopBottom( false, false, 110.1, 127 )
 				self.ReticleArrowsBlurred:setAlpha( 1 )
 				self.ReticleArrowsBlurred:setZoom( 54 )
 				self.clipFinished( ReticleArrowsBlurred, {} )
+
 				LowerArrowVert:completeAnimation()
 				self.LowerArrowVert:setLeftRight( false, false, -7, 9 )
 				self.LowerArrowVert:setTopBottom( false, false, 208, 232 )
 				self.LowerArrowVert:setAlpha( 1 )
 				self.LowerArrowVert:setZoom( 0 )
 				self.clipFinished( LowerArrowVert, {} )
+
 				dpsReticleZoom:completeAnimation()
+
 				dpsReticleZoom.zoom:completeAnimation()
 				self.dpsReticleZoom:setLeftRight( false, false, -61, 67 )
 				self.dpsReticleZoom:setTopBottom( false, false, 247, 286 )
@@ -2135,43 +2163,51 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 				self.dpsReticleZoom:setZoom( 0 )
 				self.dpsReticleZoom.zoom:setText( Engine.Localize( "120x" ) )
 				self.clipFinished( dpsReticleZoom, {} )
+
 				ReticleTop:completeAnimation()
 				self.ReticleTop:setLeftRight( true, false, 614, 666 )
 				self.ReticleTop:setTopBottom( true, false, 21, 63 )
 				self.ReticleTop:setAlpha( 1 )
 				self.ReticleTop:setZoom( 0 )
 				self.clipFinished( ReticleTop, {} )
+
 				RingElement0:completeAnimation()
 				self.RingElement0:setLeftRight( false, false, -318, -261 )
 				self.RingElement0:setTopBottom( false, false, -237, -168 )
 				self.RingElement0:setAlpha( 0.3 )
 				self.RingElement0:setZoom( 0 )
 				self.clipFinished( RingElement0, {} )
+
 				RingElement1:completeAnimation()
 				self.RingElement1:setLeftRight( false, false, 261, 318 )
 				self.RingElement1:setTopBottom( false, false, -237, -168 )
 				self.RingElement1:setAlpha( 0.3 )
 				self.RingElement1:setZoom( 0 )
 				self.clipFinished( RingElement1, {} )
+
 				RingElementFore2:completeAnimation()
 				self.RingElementFore2:setLeftRight( false, false, -293, -236 )
 				self.RingElementFore2:setTopBottom( false, false, -217, -148 )
 				self.RingElementFore2:setAlpha( 0.1 )
 				self.RingElementFore2:setZoom( 300 )
 				self.clipFinished( RingElementFore2, {} )
+
 				RingElementFore:completeAnimation()
 				self.RingElementFore:setLeftRight( false, false, 236, 293 )
 				self.RingElementFore:setTopBottom( false, false, -217, -148 )
 				self.RingElementFore:setAlpha( 0.1 )
 				self.RingElementFore:setZoom( 300 )
 				self.clipFinished( RingElementFore, {} )
+
 				ReticleZoom:completeAnimation()
+
 				ReticleZoom.ReticleZoom:completeAnimation()
 				self.ReticleZoom.ReticleZoom:setAlpha( 0.5 )
 				self.clipFinished( ReticleZoom, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 24 )
+
 				local CenterInnerRingFrame2 = function ( CenterInnerRing, event )
 					if not event.interrupted then
 						CenterInnerRing:beginAnimation( "keyframe", 400, true, true, CoD.TweenType.Linear )
@@ -2443,6 +2479,7 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 				end
 				
 				Reticle:completeAnimation()
+
 				Reticle.ReticleMain.Reticle0:completeAnimation()
 				self.Reticle:setAlpha( 1 )
 				self.Reticle:setZoom( -30 )
@@ -2577,6 +2614,7 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 				end
 				
 				dpsReticleZoom:completeAnimation()
+
 				dpsReticleZoom.zoom:completeAnimation()
 				self.dpsReticleZoom:setLeftRight( false, false, -61, 67 )
 				self.dpsReticleZoom:setTopBottom( false, false, 247, 286 )
@@ -2703,12 +2741,14 @@ CoD.dpsVehicleReticle.new = function ( menu, controller )
 				end
 				
 				ReticleZoom:completeAnimation()
+
 				ReticleZoom.ReticleZoom:completeAnimation()
 				self.ReticleZoom.ReticleZoom:setAlpha( 0.5 )
 				ReticleZoomFrame2( ReticleZoom, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CenterInnerRing:close()
 		element.CenterInnerRingOutter:close()

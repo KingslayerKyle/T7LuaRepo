@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.Craft.Paintshop.PaintshopChooseSide" )
 CoD.PaintshopControlsFull = InheritFrom( LUI.UIElement )
 CoD.PaintshopControlsFull.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PaintshopControlsFull )
 	self.id = "PaintshopControlsFull"
@@ -238,53 +240,69 @@ CoD.PaintshopControlsFull.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0.5 )
 				self.clipFinished( Image0, {} )
+
 				cacButtonBoxLrgInactiveStroke0:completeAnimation()
 				self.cacButtonBoxLrgInactiveStroke0:setAlpha( 1 )
 				self.clipFinished( cacButtonBoxLrgInactiveStroke0, {} )
+
 				ColorPicker:completeAnimation()
 				self.ColorPicker:setAlpha( 1 )
 				self.clipFinished( ColorPicker, {} )
+
 				rsOpacity:completeAnimation()
 				self.rsOpacity:setAlpha( 1 )
 				self.clipFinished( rsOpacity, {} )
+
 				lsOpacity:completeAnimation()
 				self.lsOpacity:setAlpha( 1 )
 				self.clipFinished( lsOpacity, {} )
+
 				opacityText:completeAnimation()
 				self.opacityText:setAlpha( 1 )
 				self.clipFinished( opacityText, {} )
+
 				LayerOrder:completeAnimation()
 				self.LayerOrder:setAlpha( 1 )
 				self.clipFinished( LayerOrder, {} )
+
 				ToggleOutline:completeAnimation()
 				self.ToggleOutline:setAlpha( 1 )
 				self.clipFinished( ToggleOutline, {} )
+
 				Flip:completeAnimation()
 				self.Flip:setAlpha( 1 )
 				self.clipFinished( Flip, {} )
+
 				rotateText:completeAnimation()
 				self.rotateText:setLeftRight( true, false, 62, 247 )
 				self.rotateText:setTopBottom( true, false, 93, 109 )
 				self.rotateText:setAlpha( 1 )
 				self.clipFinished( rotateText, {} )
+
 				rightTriggerButton:completeAnimation()
 				self.rightTriggerButton:setAlpha( 1 )
 				self.clipFinished( rightTriggerButton, {} )
+
 				leftTriggerButton:completeAnimation()
 				self.leftTriggerButton:setAlpha( 1 )
 				self.clipFinished( leftTriggerButton, {} )
+
 				FreeScale:completeAnimation()
 				self.FreeScale:setAlpha( 1 )
 				self.clipFinished( FreeScale, {} )
+
 				Move:completeAnimation()
 				self.Move:setAlpha( 1 )
 				self.clipFinished( Move, {} )
+
 				PaintshopChooseSide0:completeAnimation()
 				self.PaintshopChooseSide0:setAlpha( 1 )
 				self.clipFinished( PaintshopChooseSide0, {} )
+
 				cacButtonBoxLrgInactiveStroke00:completeAnimation()
 				self.cacButtonBoxLrgInactiveStroke00:setAlpha( 1 )
 				self.clipFinished( cacButtonBoxLrgInactiveStroke00, {} )
@@ -293,61 +311,80 @@ CoD.PaintshopControlsFull.new = function ( menu, controller )
 		BrowseModeControlsState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				cacButtonBoxLrgInactiveStroke0:completeAnimation()
 				self.cacButtonBoxLrgInactiveStroke0:setAlpha( 0 )
 				self.clipFinished( cacButtonBoxLrgInactiveStroke0, {} )
+
 				ColorPicker:completeAnimation()
 				self.ColorPicker:setAlpha( 0 )
 				self.clipFinished( ColorPicker, {} )
+
 				rsOpacity:completeAnimation()
 				self.rsOpacity:setAlpha( 0 )
 				self.clipFinished( rsOpacity, {} )
+
 				lsOpacity:completeAnimation()
 				self.lsOpacity:setAlpha( 0 )
 				self.clipFinished( lsOpacity, {} )
+
 				opacityText:completeAnimation()
 				self.opacityText:setAlpha( 0 )
 				self.clipFinished( opacityText, {} )
+
 				LayerOrder:completeAnimation()
 				self.LayerOrder:setAlpha( 0 )
 				self.clipFinished( LayerOrder, {} )
+
 				ToggleOutline:completeAnimation()
 				self.ToggleOutline:setAlpha( 0 )
 				self.clipFinished( ToggleOutline, {} )
+
 				Flip:completeAnimation()
 				self.Flip:setAlpha( 0 )
 				self.clipFinished( Flip, {} )
+
 				rotateText:completeAnimation()
 				self.rotateText:setAlpha( 0 )
 				self.clipFinished( rotateText, {} )
+
 				rightTriggerButton:completeAnimation()
 				self.rightTriggerButton:setAlpha( 0 )
 				self.clipFinished( rightTriggerButton, {} )
+
 				leftTriggerButton:completeAnimation()
 				self.leftTriggerButton:setAlpha( 0 )
 				self.leftTriggerButton:setXRot( 0 )
 				self.clipFinished( leftTriggerButton, {} )
+
 				FixedScale:completeAnimation()
 				self.FixedScale:setAlpha( 0 )
 				self.clipFinished( FixedScale, {} )
+
 				FreeScale:completeAnimation()
 				self.FreeScale:setAlpha( 0 )
 				self.clipFinished( FreeScale, {} )
+
 				Move:completeAnimation()
 				self.Move:setAlpha( 0 )
 				self.clipFinished( Move, {} )
+
 				materialPicker:completeAnimation()
 				self.materialPicker:setAlpha( 0 )
 				self.clipFinished( materialPicker, {} )
+
 				overrides:completeAnimation()
 				self.overrides:setAlpha( 0 )
 				self.clipFinished( overrides, {} )
+
 				PaintshopChooseSide0:completeAnimation()
 				self.PaintshopChooseSide0:setAlpha( 0 )
 				self.clipFinished( PaintshopChooseSide0, {} )
+
 				cacButtonBoxLrgInactiveStroke00:completeAnimation()
 				self.cacButtonBoxLrgInactiveStroke00:setAlpha( 0 )
 				self.clipFinished( cacButtonBoxLrgInactiveStroke00, {} )
@@ -356,64 +393,83 @@ CoD.PaintshopControlsFull.new = function ( menu, controller )
 		FixedScale = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0.5 )
 				self.clipFinished( Image0, {} )
+
 				cacButtonBoxLrgInactiveStroke0:completeAnimation()
 				self.cacButtonBoxLrgInactiveStroke0:setAlpha( 1 )
 				self.clipFinished( cacButtonBoxLrgInactiveStroke0, {} )
+
 				ColorPicker:completeAnimation()
 				self.ColorPicker:setAlpha( 1 )
 				self.clipFinished( ColorPicker, {} )
+
 				rsOpacity:completeAnimation()
 				self.rsOpacity:setAlpha( 1 )
 				self.clipFinished( rsOpacity, {} )
+
 				lsOpacity:completeAnimation()
 				self.lsOpacity:setAlpha( 1 )
 				self.clipFinished( lsOpacity, {} )
+
 				opacityText:completeAnimation()
 				self.opacityText:setAlpha( 1 )
 				self.clipFinished( opacityText, {} )
+
 				LayerOrder:completeAnimation()
 				self.LayerOrder:setAlpha( 1 )
 				self.clipFinished( LayerOrder, {} )
+
 				ToggleOutline:completeAnimation()
 				self.ToggleOutline:setAlpha( 1 )
 				self.clipFinished( ToggleOutline, {} )
+
 				Flip:completeAnimation()
 				self.Flip:setAlpha( 1 )
 				self.clipFinished( Flip, {} )
+
 				rotateText:completeAnimation()
 				self.rotateText:setAlpha( 1 )
 				self.clipFinished( rotateText, {} )
+
 				rightTriggerButton:completeAnimation()
 				self.rightTriggerButton:setAlpha( 1 )
 				self.clipFinished( rightTriggerButton, {} )
+
 				leftTriggerButton:completeAnimation()
 				self.leftTriggerButton:setAlpha( 1 )
 				self.clipFinished( leftTriggerButton, {} )
+
 				FixedScale:completeAnimation()
 				self.FixedScale:setAlpha( 1 )
 				self.clipFinished( FixedScale, {} )
+
 				FreeScale:completeAnimation()
 				self.FreeScale:setAlpha( 0 )
 				self.clipFinished( FreeScale, {} )
+
 				Move:completeAnimation()
 				self.Move:setAlpha( 1 )
 				self.clipFinished( Move, {} )
+
 				materialPicker:completeAnimation()
 				self.materialPicker:setLeftRight( true, false, 14, 228 )
 				self.materialPicker:setTopBottom( true, false, 299, 323 )
 				self.materialPicker:setAlpha( 1 )
 				self.clipFinished( materialPicker, {} )
+
 				overrides:completeAnimation()
 				self.overrides:setLeftRight( true, true, 0, -0.45 )
 				self.overrides:setTopBottom( true, false, 261, 289 )
 				self.overrides:setAlpha( 1 )
 				self.clipFinished( overrides, {} )
+
 				PaintshopChooseSide0:completeAnimation()
 				self.PaintshopChooseSide0:setAlpha( 1 )
 				self.clipFinished( PaintshopChooseSide0, {} )
+
 				cacButtonBoxLrgInactiveStroke00:completeAnimation()
 				self.cacButtonBoxLrgInactiveStroke00:setLeftRight( true, true, -2.22, 1.78 )
 				self.cacButtonBoxLrgInactiveStroke00:setTopBottom( true, true, 290, -14 )
@@ -424,70 +480,90 @@ CoD.PaintshopControlsFull.new = function ( menu, controller )
 		FreeScale = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0.5 )
 				self.clipFinished( Image0, {} )
+
 				cacButtonBoxLrgInactiveStroke0:completeAnimation()
 				self.cacButtonBoxLrgInactiveStroke0:setAlpha( 1 )
 				self.clipFinished( cacButtonBoxLrgInactiveStroke0, {} )
+
 				ColorPicker:completeAnimation()
 				self.ColorPicker:setAlpha( 1 )
 				self.clipFinished( ColorPicker, {} )
+
 				rsOpacity:completeAnimation()
 				self.rsOpacity:setAlpha( 1 )
 				self.clipFinished( rsOpacity, {} )
+
 				lsOpacity:completeAnimation()
 				self.lsOpacity:setAlpha( 1 )
 				self.clipFinished( lsOpacity, {} )
+
 				opacityText:completeAnimation()
 				self.opacityText:setAlpha( 1 )
 				self.clipFinished( opacityText, {} )
+
 				LayerOrder:completeAnimation()
 				self.LayerOrder:setAlpha( 1 )
 				self.clipFinished( LayerOrder, {} )
+
 				ToggleOutline:completeAnimation()
 				self.ToggleOutline:setAlpha( 1 )
 				self.clipFinished( ToggleOutline, {} )
+
 				Flip:completeAnimation()
 				self.Flip:setAlpha( 1 )
 				self.clipFinished( Flip, {} )
+
 				rotateText:completeAnimation()
 				self.rotateText:setAlpha( 1 )
 				self.clipFinished( rotateText, {} )
+
 				rightTriggerButton:completeAnimation()
 				self.rightTriggerButton:setLeftRight( true, false, 26, 49 )
 				self.rightTriggerButton:setTopBottom( true, false, 87, 118 )
 				self.rightTriggerButton:setAlpha( 1 )
 				self.clipFinished( rightTriggerButton, {} )
+
 				leftTriggerButton:completeAnimation()
 				self.leftTriggerButton:setLeftRight( true, false, 2, 26 )
 				self.leftTriggerButton:setTopBottom( true, false, 87, 118 )
 				self.leftTriggerButton:setAlpha( 1 )
 				self.clipFinished( leftTriggerButton, {} )
+
 				FixedScale:completeAnimation()
 				self.FixedScale:setAlpha( 0 )
 				self.clipFinished( FixedScale, {} )
+
 				FreeScale:completeAnimation()
 				self.FreeScale:setAlpha( 1 )
 				self.clipFinished( FreeScale, {} )
+
 				Move:completeAnimation()
 				self.Move:setAlpha( 1 )
 				self.clipFinished( Move, {} )
+
 				materialPicker:completeAnimation()
 				self.materialPicker:setAlpha( 1 )
 				self.clipFinished( materialPicker, {} )
+
 				overrides:completeAnimation()
 				self.overrides:setAlpha( 1 )
 				self.clipFinished( overrides, {} )
+
 				PaintshopChooseSide0:completeAnimation()
 				self.PaintshopChooseSide0:setAlpha( 1 )
 				self.clipFinished( PaintshopChooseSide0, {} )
+
 				cacButtonBoxLrgInactiveStroke00:completeAnimation()
 				self.cacButtonBoxLrgInactiveStroke00:setAlpha( 1 )
 				self.clipFinished( cacButtonBoxLrgInactiveStroke00, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.cacButtonBoxLrgInactiveStroke0:close()
 		element.ColorPicker:close()

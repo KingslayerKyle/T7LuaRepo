@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CPSystems.SpikeLauncher.SpikeCounter.SpikeLuancher
 CoD.SpikeLauncherSpikeCounter = InheritFrom( LUI.UIElement )
 CoD.SpikeLauncherSpikeCounter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpikeLauncherSpikeCounter )
 	self.id = "SpikeLauncherSpikeCounter"
@@ -32,6 +34,7 @@ CoD.SpikeLauncherSpikeCounter.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				internal:completeAnimation()
 				self.internal:setAlpha( 1 )
 				self.clipFinished( internal, {} )
@@ -40,12 +43,14 @@ CoD.SpikeLauncherSpikeCounter.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				internal:completeAnimation()
 				self.internal:setAlpha( 0 )
 				self.clipFinished( internal, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.internal:close()
 	end )

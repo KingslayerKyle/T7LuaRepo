@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_Party_Search" )
 CoD.StartMenu_Party = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Party.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Party )
 	self.id = "StartMenu_Party"
@@ -147,6 +149,7 @@ CoD.StartMenu_Party.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LeaveParty:close()
 		element.PromotePlayer:close()

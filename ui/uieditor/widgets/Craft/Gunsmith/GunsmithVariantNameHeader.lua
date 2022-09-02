@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.MenuChooseClass.ItemWidgets.InfoPaneItemName" 
 CoD.GunsmithVariantNameHeader = InheritFrom( LUI.UIElement )
 CoD.GunsmithVariantNameHeader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunsmithVariantNameHeader )
 	self.id = "GunsmithVariantNameHeader"
@@ -72,6 +74,7 @@ CoD.GunsmithVariantNameHeader.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				InfoPaneItemName:completeAnimation()
 				self.InfoPaneItemName:setAlpha( 1 )
 				self.clipFinished( InfoPaneItemName, {} )
@@ -80,12 +83,14 @@ CoD.GunsmithVariantNameHeader.new = function ( menu, controller )
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				InfoPaneItemName:completeAnimation()
 				self.InfoPaneItemName:setAlpha( 0 )
 				self.clipFinished( InfoPaneItemName, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.InfoPaneItemName:close()
 	end )

@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FocusBarContainer" )
 CoD.SegmentButton = InheritFrom( LUI.UIElement )
 CoD.SegmentButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SegmentButton )
 	self.id = "SegmentButton"
@@ -130,50 +132,63 @@ CoD.SegmentButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				bg:completeAnimation()
 				self.bg:setRGB( ColorSet.WaypointNeutral.r, ColorSet.WaypointNeutral.g, ColorSet.WaypointNeutral.b )
 				self.bg:setAlpha( 0.4 )
 				self.clipFinished( bg, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setRGB( 1, 1, 1 )
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				ImageViewer:completeAnimation()
 				self.ImageViewer:setAlpha( 1 )
 				self.clipFinished( ImageViewer, {} )
+
 				durationText:completeAnimation()
 				self.durationText:setAlpha( 1 )
 				self.clipFinished( durationText, {} )
+
 				segmentName:completeAnimation()
 				self.segmentName:setAlpha( 1 )
 				self.clipFinished( segmentName, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				BoxButtonLrgInactive0:completeAnimation()
 				self.BoxButtonLrgInactive0:setAlpha( 0.7 )
 				self.clipFinished( BoxButtonLrgInactive0, {} )
+
 				bg:completeAnimation()
 				self.bg:setRGB( ColorSet.WaypointNeutral.r, ColorSet.WaypointNeutral.g, ColorSet.WaypointNeutral.b )
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setRGB( 1, 1, 1 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, 0, 0 )
 				self.FocusBarT:setTopBottom( true, false, -1, 3 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, 0, 0 )
 				self.FocusBarB:setTopBottom( false, true, -3, 1 )
@@ -184,26 +199,33 @@ CoD.SegmentButton.new = function ( menu, controller )
 		EmptyState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( ColorSet.WaypointNeutral.r, ColorSet.WaypointNeutral.g, ColorSet.WaypointNeutral.b )
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setRGB( 1, 1, 1 )
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				ImageViewer:completeAnimation()
 				self.ImageViewer:setAlpha( 0 )
 				self.clipFinished( ImageViewer, {} )
+
 				durationText:completeAnimation()
 				self.durationText:setAlpha( 0 )
 				self.clipFinished( durationText, {} )
+
 				segmentName:completeAnimation()
 				self.segmentName:setAlpha( 0 )
 				self.clipFinished( segmentName, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
@@ -212,48 +234,60 @@ CoD.SegmentButton.new = function ( menu, controller )
 		SelectedState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.bg:setAlpha( 0.4 )
 				self.clipFinished( bg, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setRGB( 1, 1, 1 )
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				ImageViewer:completeAnimation()
 				self.ImageViewer:setAlpha( 1 )
 				self.clipFinished( ImageViewer, {} )
+
 				durationText:completeAnimation()
 				self.durationText:setAlpha( 1 )
 				self.clipFinished( durationText, {} )
+
 				segmentName:completeAnimation()
 				self.segmentName:setAlpha( 1 )
 				self.clipFinished( segmentName, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.bg:setAlpha( 0.4 )
 				self.clipFinished( bg, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setRGB( 1, 1, 1 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "EmptyState",
@@ -276,6 +310,7 @@ CoD.SegmentButton.new = function ( menu, controller )
 			modelName = "disabled"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactive0:close()
 		element.BoxButtonLrgInactiveDiag:close()

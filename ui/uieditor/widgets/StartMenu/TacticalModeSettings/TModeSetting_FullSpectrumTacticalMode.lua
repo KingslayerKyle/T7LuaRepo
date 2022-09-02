@@ -4,9 +4,11 @@
 CoD.TModeSetting_FullSpectrumTacticalMode = InheritFrom( LUI.UIElement )
 CoD.TModeSetting_FullSpectrumTacticalMode.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TModeSetting_FullSpectrumTacticalMode )
 	self.id = "TModeSetting_FullSpectrumTacticalMode"

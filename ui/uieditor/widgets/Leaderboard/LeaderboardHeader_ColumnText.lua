@@ -4,9 +4,11 @@
 CoD.LeaderboardHeader_ColumnText = InheritFrom( LUI.UIElement )
 CoD.LeaderboardHeader_ColumnText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LeaderboardHeader_ColumnText )
 	self.id = "LeaderboardHeader_ColumnText"
@@ -22,6 +24,7 @@ CoD.LeaderboardHeader_ColumnText.new = function ( menu, controller )
 	ColumnText:setTTF( "fonts/RefrigeratorDeluxe-Regular.ttf" )
 	ColumnText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	ColumnText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( ColumnText, "setText", function ( element, controller )
 		if IsTextWrapping( self, element ) then
 			SetState( self, "ColumnTextWrapped" )
@@ -36,11 +39,13 @@ CoD.LeaderboardHeader_ColumnText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		ColumnTextWrapped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ColumnText:completeAnimation()
 				self.ColumnText:setLeftRight( true, false, 0, 93.5 )
 				self.ColumnText:setTopBottom( true, false, -10, 6 )
@@ -48,6 +53,7 @@ CoD.LeaderboardHeader_ColumnText.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ColumnTextWrapped",

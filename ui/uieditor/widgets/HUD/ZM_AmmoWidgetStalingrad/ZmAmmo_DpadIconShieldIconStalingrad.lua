@@ -4,9 +4,11 @@
 CoD.ZmAmmo_DpadIconShieldIconStalingrad = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_DpadIconShieldIconStalingrad.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_DpadIconShieldIconStalingrad )
 	self.id = "ZmAmmo_DpadIconShieldIconStalingrad"
@@ -44,17 +46,21 @@ CoD.ZmAmmo_DpadIconShieldIconStalingrad.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		AlmostFull = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Fill:completeAnimation()
 				self.Fill:setRGB( 0.47, 1, 1 )
 				self.clipFinished( Fill, {} )
+
 				Outline:completeAnimation()
 				self.Outline:setRGB( 0.81, 0.99, 1 )
 				self.clipFinished( Outline, {} )
@@ -63,9 +69,11 @@ CoD.ZmAmmo_DpadIconShieldIconStalingrad.new = function ( menu, controller )
 		Middle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Fill:completeAnimation()
 				self.Fill:setRGB( 1, 1, 0.73 )
 				self.clipFinished( Fill, {} )
+
 				Outline:completeAnimation()
 				self.Outline:setRGB( 1, 0.84, 0.17 )
 				self.clipFinished( Outline, {} )
@@ -74,9 +82,11 @@ CoD.ZmAmmo_DpadIconShieldIconStalingrad.new = function ( menu, controller )
 		Low = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Fill:completeAnimation()
 				self.Fill:setRGB( 1, 0.49, 0.24 )
 				self.clipFinished( Fill, {} )
+
 				Outline:completeAnimation()
 				self.Outline:setRGB( 0.52, 0.23, 0 )
 				self.clipFinished( Outline, {} )
@@ -85,12 +95,14 @@ CoD.ZmAmmo_DpadIconShieldIconStalingrad.new = function ( menu, controller )
 		NoHealth = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Outline:completeAnimation()
 				self.Outline:setRGB( 0.2, 0.2, 0.2 )
 				self.clipFinished( Outline, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "AlmostFull",
@@ -125,6 +137,7 @@ CoD.ZmAmmo_DpadIconShieldIconStalingrad.new = function ( menu, controller )
 			modelName = "zmInventory.shield_health"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Fill:close()
 	end )

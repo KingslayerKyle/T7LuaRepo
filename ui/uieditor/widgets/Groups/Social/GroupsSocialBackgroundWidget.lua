@@ -4,9 +4,11 @@
 CoD.GroupsSocialBackgroundWidget = InheritFrom( LUI.UIElement )
 CoD.GroupsSocialBackgroundWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsSocialBackgroundWidget )
 	self.id = "GroupsSocialBackgroundWidget"
@@ -25,11 +27,13 @@ CoD.GroupsSocialBackgroundWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BackgroundGlobe:completeAnimation()
 				self.BackgroundGlobe:setAlpha( 0.5 )
 				self.clipFinished( BackgroundGlobe, {} )
@@ -38,6 +42,7 @@ CoD.GroupsSocialBackgroundWidget.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BackgroundGlobe:completeAnimation()
 				self.BackgroundGlobe:setAlpha( 0 )
 				self.clipFinished( BackgroundGlobe, {} )

@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Craft.Gunsmith.GunsmithInputButton" )
 CoD.systemOverlay_Layout_SaveEmblem = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_Layout_SaveEmblem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_Layout_SaveEmblem )
 	self.id = "systemOverlay_Layout_SaveEmblem"
@@ -193,6 +195,7 @@ CoD.systemOverlay_Layout_SaveEmblem.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.text:close()
 		element.options:close()

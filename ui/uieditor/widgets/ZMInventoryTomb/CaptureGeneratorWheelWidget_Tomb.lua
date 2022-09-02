@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.onOffImage" )
 CoD.CaptureGeneratorWheelWidget_Tomb = InheritFrom( LUI.UIElement )
 CoD.CaptureGeneratorWheelWidget_Tomb.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CaptureGeneratorWheelWidget_Tomb )
 	self.id = "CaptureGeneratorWheelWidget_Tomb"
@@ -297,36 +299,46 @@ CoD.CaptureGeneratorWheelWidget_Tomb.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				generator6Indicator:completeAnimation()
 				self.generator6Indicator:setAlpha( 0 )
 				self.clipFinished( generator6Indicator, {} )
+
 				generator5Indicator:completeAnimation()
 				self.generator5Indicator:setAlpha( 0 )
 				self.clipFinished( generator5Indicator, {} )
+
 				generator4Indicator:completeAnimation()
 				self.generator4Indicator:setAlpha( 0 )
 				self.clipFinished( generator4Indicator, {} )
+
 				generator3Indicator:completeAnimation()
 				self.generator3Indicator:setAlpha( 0 )
 				self.clipFinished( generator3Indicator, {} )
+
 				generator2Indicator:completeAnimation()
 				self.generator2Indicator:setAlpha( 0 )
 				self.clipFinished( generator2Indicator, {} )
+
 				generator1Indicator:completeAnimation()
 				self.generator1Indicator:setAlpha( 0 )
 				self.clipFinished( generator1Indicator, {} )
+
 				dial:completeAnimation()
 				self.dial:setAlpha( 0 )
 				self.clipFinished( dial, {} )
+
 				eyesOnOff:completeAnimation()
 				self.eyesOnOff:setAlpha( 0 )
 				self.clipFinished( eyesOnOff, {} )
 			end,
 			Visible = function ()
 				self:setupElementClipCounter( 9 )
+
 				local bgFrame2 = function ( bg, event )
 					if not event.interrupted then
 						bg:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -467,36 +479,46 @@ CoD.CaptureGeneratorWheelWidget_Tomb.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
+
 				generator6Indicator:completeAnimation()
 				self.generator6Indicator:setAlpha( 1 )
 				self.clipFinished( generator6Indicator, {} )
+
 				generator5Indicator:completeAnimation()
 				self.generator5Indicator:setAlpha( 1 )
 				self.clipFinished( generator5Indicator, {} )
+
 				generator4Indicator:completeAnimation()
 				self.generator4Indicator:setAlpha( 1 )
 				self.clipFinished( generator4Indicator, {} )
+
 				generator3Indicator:completeAnimation()
 				self.generator3Indicator:setAlpha( 1 )
 				self.clipFinished( generator3Indicator, {} )
+
 				generator2Indicator:completeAnimation()
 				self.generator2Indicator:setAlpha( 1 )
 				self.clipFinished( generator2Indicator, {} )
+
 				generator1Indicator:completeAnimation()
 				self.generator1Indicator:setAlpha( 1 )
 				self.clipFinished( generator1Indicator, {} )
+
 				dial:completeAnimation()
 				self.dial:setAlpha( 1 )
 				self.clipFinished( dial, {} )
+
 				eyesOnOff:completeAnimation()
 				self.eyesOnOff:setAlpha( 1 )
 				self.clipFinished( eyesOnOff, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 9 )
+
 				local bgFrame2 = function ( bg, event )
 					if not event.interrupted then
 						bg:beginAnimation( "keyframe", 319, false, false, CoD.TweenType.Linear )
@@ -635,6 +657,7 @@ CoD.CaptureGeneratorWheelWidget_Tomb.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -651,6 +674,7 @@ CoD.CaptureGeneratorWheelWidget_Tomb.new = function ( menu, controller )
 			modelName = "zmInventory.capture_generator_wheel_widget"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.generator6Indicator:close()
 		element.generator5Indicator:close()

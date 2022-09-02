@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleNumBrdr" )
 CoD.FirstTimeBrightnessListWidget = InheritFrom( LUI.UIElement )
 CoD.FirstTimeBrightnessListWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FirstTimeBrightnessListWidget )
 	self.id = "FirstTimeBrightnessListWidget"
@@ -58,30 +60,38 @@ CoD.FirstTimeBrightnessListWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Pip:completeAnimation()
 				self.Pip:setAlpha( 0.7 )
 				self.clipFinished( Pip, {} )
+
 				PipTop:completeAnimation()
 				self.PipTop:setAlpha( 0 )
 				self.clipFinished( PipTop, {} )
+
 				PipBottom:completeAnimation()
 				self.PipBottom:setAlpha( 0 )
 				self.clipFinished( PipBottom, {} )
+
 				PipBlack:completeAnimation()
 				self.PipBlack:setAlpha( 0 )
 				self.clipFinished( PipBlack, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				Pip:completeAnimation()
 				self.Pip:setAlpha( 0.7 )
 				self.clipFinished( Pip, {} )
+
 				PipTop:completeAnimation()
 				self.PipTop:setAlpha( 1 )
 				self.clipFinished( PipTop, {} )
+
 				PipBottom:completeAnimation()
 				self.PipBottom:setAlpha( 1 )
 				self.clipFinished( PipBottom, {} )
+
 				PipBlack:completeAnimation()
 				self.PipBlack:setAlpha( 0 )
 				self.clipFinished( PipBlack, {} )
@@ -90,39 +100,49 @@ CoD.FirstTimeBrightnessListWidget.new = function ( menu, controller )
 		Empty = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Pip:completeAnimation()
 				self.Pip:setAlpha( 0 )
 				self.clipFinished( Pip, {} )
+
 				PipTop:completeAnimation()
 				self.PipTop:setAlpha( 0 )
 				self.clipFinished( PipTop, {} )
+
 				PipBottom:completeAnimation()
 				self.PipBottom:setAlpha( 0 )
 				self.clipFinished( PipBottom, {} )
+
 				PipBlack:completeAnimation()
 				self.PipBlack:setAlpha( 1 )
 				self.clipFinished( PipBlack, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setAlpha( 1 )
 				self.clipFinished( FETitleNumBrdr0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				Pip:completeAnimation()
 				self.Pip:setAlpha( 0.7 )
 				self.clipFinished( Pip, {} )
+
 				PipTop:completeAnimation()
 				self.PipTop:setAlpha( 1 )
 				self.clipFinished( PipTop, {} )
+
 				PipBottom:completeAnimation()
 				self.PipBottom:setAlpha( 1 )
 				self.clipFinished( PipBottom, {} )
+
 				PipBlack:completeAnimation()
 				self.PipBlack:setAlpha( 0 )
 				self.clipFinished( PipBlack, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Empty",
@@ -131,6 +151,7 @@ CoD.FirstTimeBrightnessListWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FETitleNumBrdr0:close()
 	end )

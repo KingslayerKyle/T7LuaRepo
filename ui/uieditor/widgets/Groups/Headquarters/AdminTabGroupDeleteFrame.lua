@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Groups.GroupsNoConentDetail" )
 CoD.AdminTabGroupDeleteFrame = InheritFrom( LUI.UIElement )
 CoD.AdminTabGroupDeleteFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AdminTabGroupDeleteFrame )
 	self.id = "AdminTabGroupDeleteFrame"
@@ -69,11 +71,17 @@ CoD.AdminTabGroupDeleteFrame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				GroupsNoConentDetail:completeAnimation()
+
 				GroupsNoConentDetail.HeaderBkgd:completeAnimation()
+
 				GroupsNoConentDetail.HeaderIcon:completeAnimation()
+
 				GroupsNoConentDetail.Header:completeAnimation()
+
 				GroupsNoConentDetail.Desc:completeAnimation()
+
 				GroupsNoConentDetail.Glow2:completeAnimation()
 				self.GroupsNoConentDetail.HeaderBkgd:setRGB( 0.87, 0.3, 0.19 )
 				self.GroupsNoConentDetail.HeaderIcon:setImage( RegisterImage( "uie_t7_icon_menu_simple_customgames" ) )
@@ -92,6 +100,7 @@ CoD.AdminTabGroupDeleteFrame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.DeleteButton:close()
 		element.GroupsNoConentDetail:close()

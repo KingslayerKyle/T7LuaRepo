@@ -4,9 +4,11 @@
 CoD.Prestige_ButtonInfopane = InheritFrom( LUI.UIElement )
 CoD.Prestige_ButtonInfopane.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Prestige_ButtonInfopane )
 	self.id = "Prestige_ButtonInfopane"
@@ -55,15 +57,19 @@ CoD.Prestige_ButtonInfopane.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BodyBG:completeAnimation()
 				self.BodyBG:setAlpha( 0 )
 				self.clipFinished( BodyBG, {} )
+
 				Body:completeAnimation()
 				self.Body:setAlpha( 0 )
 				self.clipFinished( Body, {} )
+
 				TitleBG:completeAnimation()
 				self.TitleBG:setAlpha( 0 )
 				self.clipFinished( TitleBG, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 0 )
 				self.clipFinished( Title, {} )
@@ -72,15 +78,19 @@ CoD.Prestige_ButtonInfopane.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				BodyBG:completeAnimation()
 				self.BodyBG:setAlpha( 0.2 )
 				self.clipFinished( BodyBG, {} )
+
 				Body:completeAnimation()
 				self.Body:setAlpha( 1 )
 				self.clipFinished( Body, {} )
+
 				TitleBG:completeAnimation()
 				self.TitleBG:setAlpha( 0.4 )
 				self.clipFinished( TitleBG, {} )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )

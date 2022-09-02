@@ -20,9 +20,11 @@ end
 CoD.CombatRecordSummaryPanel = InheritFrom( LUI.UIElement )
 CoD.CombatRecordSummaryPanel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CombatRecordSummaryPanel )
 	self.id = "CombatRecordSummaryPanel"
@@ -508,6 +510,7 @@ CoD.CombatRecordSummaryPanel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local EmblemFrame2 = function ( Emblem, event )
 					if not event.interrupted then
 						Emblem:beginAnimation( "keyframe", 39, false, false, CoD.TweenType.Linear )
@@ -570,6 +573,7 @@ CoD.CombatRecordSummaryPanel.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CombatRecordLineDivider:close()
 		element.CombatRecordLineDivider0:close()

@@ -4,9 +4,11 @@
 CoD.GobbleGumCookbookDistillsBalance = InheritFrom( LUI.UIElement )
 CoD.GobbleGumCookbookDistillsBalance.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GobbleGumCookbookDistillsBalance )
 	self.id = "GobbleGumCookbookDistillsBalance"
@@ -39,9 +41,11 @@ CoD.GobbleGumCookbookDistillsBalance.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 0 )
 				self.clipFinished( Icon, {} )
+
 				balance:completeAnimation()
 				self.balance:setAlpha( 0 )
 				self.clipFinished( balance, {} )
@@ -50,9 +54,11 @@ CoD.GobbleGumCookbookDistillsBalance.new = function ( menu, controller )
 		VisiblePopup = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 1 )
 				self.clipFinished( Icon, {} )
+
 				balance:completeAnimation()
 				self.balance:setRGB( 1, 1, 1 )
 				self.balance:setAlpha( 1 )
@@ -62,15 +68,18 @@ CoD.GobbleGumCookbookDistillsBalance.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 1 )
 				self.clipFinished( Icon, {} )
+
 				balance:completeAnimation()
 				self.balance:setAlpha( 1 )
 				self.clipFinished( balance, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "VisiblePopup",
@@ -93,6 +102,7 @@ CoD.GobbleGumCookbookDistillsBalance.new = function ( menu, controller )
 			modelName = "CryptoKeyProgress.keyCount"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.balance:close()
 	end )

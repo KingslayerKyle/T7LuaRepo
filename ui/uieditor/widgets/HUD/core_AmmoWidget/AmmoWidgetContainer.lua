@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget" )
 CoD.AmmoWidgetContainer = InheritFrom( LUI.UIElement )
 CoD.AmmoWidgetContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidgetContainer )
 	self.id = "AmmoWidgetContainer"
@@ -190,12 +192,14 @@ CoD.AmmoWidgetContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				AmmoWidget:completeAnimation()
 				self.AmmoWidget:setAlpha( 1 )
 				self.clipFinished( AmmoWidget, {} )
 			end,
 			WheelHide = function ()
 				self:setupElementClipCounter( 1 )
+
 				local AmmoWidgetFrame2 = function ( AmmoWidget, event )
 					if not event.interrupted then
 						AmmoWidget:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -216,12 +220,14 @@ CoD.AmmoWidgetContainer.new = function ( menu, controller )
 		WheelHide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				AmmoWidget:completeAnimation()
 				self.AmmoWidget:setAlpha( 0.2 )
 				self.clipFinished( AmmoWidget, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local AmmoWidgetFrame2 = function ( AmmoWidget, event )
 					if not event.interrupted then
 						AmmoWidget:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Linear )
@@ -240,6 +246,7 @@ CoD.AmmoWidgetContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AmmoWidget:close()
 	end )

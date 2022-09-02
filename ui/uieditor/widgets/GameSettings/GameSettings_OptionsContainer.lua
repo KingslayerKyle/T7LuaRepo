@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.GameSettings.GameSettings_Options" )
 CoD.GameSettings_OptionsContainer = InheritFrom( LUI.UIElement )
 CoD.GameSettings_OptionsContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GameSettings_OptionsContainer )
 	self.id = "GameSettings_OptionsContainer"
@@ -40,6 +42,7 @@ CoD.GameSettings_OptionsContainer.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GameSettingsOptions0:close()
 	end )

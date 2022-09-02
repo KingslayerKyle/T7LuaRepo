@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.SystemOverlays.systemOverlay_Layout_CreateVariantN
 CoD.systemOverlay_CreateVariantNameFrame = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_CreateVariantNameFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_CreateVariantNameFrame )
 	self.id = "systemOverlay_CreateVariantNameFrame"
@@ -36,6 +38,7 @@ CoD.systemOverlay_CreateVariantNameFrame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.foreground:close()
 	end )

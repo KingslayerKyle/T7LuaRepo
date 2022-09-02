@@ -4,9 +4,11 @@
 CoD.BM_Contracts_Character_NotActivated_Widget = InheritFrom( LUI.UIElement )
 CoD.BM_Contracts_Character_NotActivated_Widget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Contracts_Character_NotActivated_Widget )
 	self.id = "BM_Contracts_Character_NotActivated_Widget"
@@ -75,21 +77,27 @@ CoD.BM_Contracts_Character_NotActivated_Widget.new = function ( menu, controller
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				NotActivatedIcons:completeAnimation()
 				self.NotActivatedIcons:setAlpha( 0 )
 				self.clipFinished( NotActivatedIcons, {} )
+
 				NoContracts:completeAnimation()
 				self.NoContracts:setAlpha( 0 )
 				self.clipFinished( NoContracts, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0 )
 				self.clipFinished( text, {} )
+
 				hover:completeAnimation()
 				self.hover:setAlpha( 0 )
 				self.clipFinished( hover, {} )
+
 				text0:completeAnimation()
 				self.text0:setAlpha( 0 )
 				self.clipFinished( text0, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 0 )
 				self.clipFinished( TextBox0, {} )
@@ -98,6 +106,7 @@ CoD.BM_Contracts_Character_NotActivated_Widget.new = function ( menu, controller
 		NotActive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local NotActivatedIconsFrame2 = function ( NotActivatedIcons, event )
 					local NotActivatedIconsFrame3 = function ( NotActivatedIcons, event )
 						local NotActivatedIconsFrame4 = function ( NotActivatedIcons, event )
@@ -300,11 +309,13 @@ CoD.BM_Contracts_Character_NotActivated_Widget.new = function ( menu, controller
 				NotActivatedIcons:completeAnimation()
 				self.NotActivatedIcons:setAlpha( 1 )
 				NotActivatedIconsFrame2( NotActivatedIcons, {} )
+
 				NoContracts:completeAnimation()
 				self.NoContracts:setLeftRight( true, false, 0, 208 )
 				self.NoContracts:setTopBottom( true, false, -11, 117 )
 				self.NoContracts:setAlpha( 0 )
 				self.clipFinished( NoContracts, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0 )
 				self.text:setText( Engine.Localize( "MPUI_BM_ACTIVATE_BLACKJACK" ) )
@@ -724,10 +735,12 @@ CoD.BM_Contracts_Character_NotActivated_Widget.new = function ( menu, controller
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 1 )
 				TextBox0Frame2( TextBox0, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 3 )
+
 				local NotActivatedIconsFrame2 = function ( NotActivatedIcons, event )
 					if not event.interrupted then
 						NotActivatedIcons:beginAnimation( "keyframe", 189, false, false, CoD.TweenType.Linear )
@@ -792,12 +805,15 @@ CoD.BM_Contracts_Character_NotActivated_Widget.new = function ( menu, controller
 		NoContracts = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				NotActivatedIcons:completeAnimation()
 				self.NotActivatedIcons:setAlpha( 0 )
 				self.clipFinished( NotActivatedIcons, {} )
+
 				NoContracts:completeAnimation()
 				self.NoContracts:setAlpha( 1 )
 				self.clipFinished( NoContracts, {} )
+
 				text:completeAnimation()
 				self.text:setLeftRight( true, false, 0, 208 )
 				self.text:setTopBottom( true, false, 129.5, 149.5 )
@@ -805,18 +821,21 @@ CoD.BM_Contracts_Character_NotActivated_Widget.new = function ( menu, controller
 				self.text:setText( Engine.Localize( "MPUI_BM_ACTIVATE_CONTRACTS" ) )
 				self.text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 				self.clipFinished( text, {} )
+
 				hover:completeAnimation()
 				self.hover:setAlpha( 0 )
 				self.clipFinished( hover, {} )
 				text0:beginAnimation( "keyframe", 12060, false, false, CoD.TweenType.Linear )
 				text0:setAlpha( 0 )
 				text0:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 0 )
 				self.clipFinished( TextBox0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NotActive",

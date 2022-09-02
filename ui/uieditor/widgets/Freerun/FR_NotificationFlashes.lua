@@ -4,9 +4,11 @@
 CoD.FR_NotificationFlashes = InheritFrom( LUI.UIElement )
 CoD.FR_NotificationFlashes.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.FR_NotificationFlashes )
 	self.id = "FR_NotificationFlashes"
@@ -58,9 +60,11 @@ CoD.FR_NotificationFlashes.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 2 )
+
 				local NotificationCheckpointFrame2 = function ( NotificationCheckpoint, event )
 					local NotificationCheckpointFrame3 = function ( NotificationCheckpoint, event )
 						local NotificationCheckpointFrame4 = function ( NotificationCheckpoint, event )
@@ -134,6 +138,7 @@ CoD.FR_NotificationFlashes.new = function ( menu, controller )
 			end,
 			Outro = function ()
 				self:setupElementClipCounter( 2 )
+
 				local NotificationCheckpointFrame2 = function ( NotificationCheckpoint, event )
 					local NotificationCheckpointFrame3 = function ( NotificationCheckpoint, event )
 						if not event.interrupted then
@@ -184,9 +189,11 @@ CoD.FR_NotificationFlashes.new = function ( menu, controller )
 		Checkpoint = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 4 )
+
 				local NotificationCheckpointFrame2 = function ( NotificationCheckpoint, event )
 					local NotificationCheckpointFrame3 = function ( NotificationCheckpoint, event )
 						local NotificationCheckpointFrame4 = function ( NotificationCheckpoint, event )
@@ -242,6 +249,7 @@ CoD.FR_NotificationFlashes.new = function ( menu, controller )
 				self.NotificationCheckpoint:setTopBottom( true, true, 47.5, -47.5 )
 				self.NotificationCheckpoint:setAlpha( 0 )
 				NotificationCheckpointFrame2( NotificationCheckpoint, {} )
+
 				NotificationRestart:completeAnimation()
 				self.NotificationRestart:setAlpha( 0 )
 				self.clipFinished( NotificationRestart, {} )
@@ -260,12 +268,14 @@ CoD.FR_NotificationFlashes.new = function ( menu, controller )
 				CheckpointText:completeAnimation()
 				self.CheckpointText:setAlpha( 0 )
 				CheckpointTextFrame2( CheckpointText, {} )
+
 				RestartText:completeAnimation()
 				self.RestartText:setAlpha( 0 )
 				self.clipFinished( RestartText, {} )
 			end,
 			Outro = function ()
 				self:setupElementClipCounter( 2 )
+
 				local NotificationCheckpointFrame2 = function ( NotificationCheckpoint, event )
 					local NotificationCheckpointFrame3 = function ( NotificationCheckpoint, event )
 						if not event.interrupted then
@@ -316,9 +326,11 @@ CoD.FR_NotificationFlashes.new = function ( menu, controller )
 		Retry = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 4 )
+
 				NotificationCheckpoint:completeAnimation()
 				self.NotificationCheckpoint:setAlpha( 0 )
 				self.clipFinished( NotificationCheckpoint, {} )
@@ -377,6 +389,7 @@ CoD.FR_NotificationFlashes.new = function ( menu, controller )
 				self.NotificationRestart:setTopBottom( true, true, 47.5, -47.5 )
 				self.NotificationRestart:setAlpha( 0 )
 				NotificationRestartFrame2( NotificationRestart, {} )
+
 				CheckpointText:completeAnimation()
 				self.CheckpointText:setAlpha( 0 )
 				self.clipFinished( CheckpointText, {} )
@@ -398,6 +411,7 @@ CoD.FR_NotificationFlashes.new = function ( menu, controller )
 			end,
 			Outro = function ()
 				self:setupElementClipCounter( 4 )
+
 				NotificationCheckpoint:completeAnimation()
 				self.NotificationCheckpoint:setAlpha( 0 )
 				self.clipFinished( NotificationCheckpoint, {} )
@@ -431,6 +445,7 @@ CoD.FR_NotificationFlashes.new = function ( menu, controller )
 				self.NotificationRestart:setTopBottom( true, true, 0, 0 )
 				self.NotificationRestart:setAlpha( 1 )
 				NotificationRestartFrame2( NotificationRestart, {} )
+
 				CheckpointText:completeAnimation()
 				self.CheckpointText:setAlpha( 0 )
 				self.clipFinished( CheckpointText, {} )
@@ -454,21 +469,26 @@ CoD.FR_NotificationFlashes.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				NotificationCheckpoint:completeAnimation()
 				self.NotificationCheckpoint:setAlpha( 0 )
 				self.clipFinished( NotificationCheckpoint, {} )
+
 				NotificationRestart:completeAnimation()
 				self.NotificationRestart:setAlpha( 0 )
 				self.clipFinished( NotificationRestart, {} )
+
 				CheckpointText:completeAnimation()
 				self.CheckpointText:setAlpha( 0 )
 				self.clipFinished( CheckpointText, {} )
+
 				RestartText:completeAnimation()
 				self.RestartText:setAlpha( 0 )
 				self.clipFinished( RestartText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Checkpoint",

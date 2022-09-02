@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.ChooseCharacterLoadout_CardBack_ContactListEntry = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacterLoadout_CardBack_ContactListEntry.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacterLoadout_CardBack_ContactListEntry )
 	self.id = "ChooseCharacterLoadout_CardBack_ContactListEntry"

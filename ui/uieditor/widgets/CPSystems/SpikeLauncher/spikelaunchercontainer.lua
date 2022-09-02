@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CPSystems.SpikeLauncher.SpikeLauncher" )
 CoD.SpikeLauncherContainer = InheritFrom( LUI.UIElement )
 CoD.SpikeLauncherContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpikeLauncherContainer )
 	self.id = "SpikeLauncherContainer"
@@ -32,6 +34,7 @@ CoD.SpikeLauncherContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				SpikeLauncher:completeAnimation()
 				self.SpikeLauncher:setAlpha( 0 )
 				self.clipFinished( SpikeLauncher, {} )
@@ -40,6 +43,7 @@ CoD.SpikeLauncherContainer.new = function ( menu, controller )
 		On = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local SpikeLauncherFrame2 = function ( SpikeLauncher, event )
 					local SpikeLauncherFrame3 = function ( SpikeLauncher, event )
 						local SpikeLauncherFrame4 = function ( SpikeLauncher, event )
@@ -190,6 +194,7 @@ CoD.SpikeLauncherContainer.new = function ( menu, controller )
 				end
 				
 				SpikeLauncher:completeAnimation()
+
 				SpikeLauncher.SpikeLauncherLine:completeAnimation()
 				self.SpikeLauncher:setAlpha( 0 )
 				self.SpikeLauncher:setZoom( -75 )
@@ -200,6 +205,7 @@ CoD.SpikeLauncherContainer.new = function ( menu, controller )
 		Off = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local SpikeLauncherFrame2 = function ( SpikeLauncher, event )
 					local SpikeLauncherFrame3 = function ( SpikeLauncher, event )
 						local SpikeLauncherFrame4 = function ( SpikeLauncher, event )
@@ -397,6 +403,7 @@ CoD.SpikeLauncherContainer.new = function ( menu, controller )
 				end
 				
 				SpikeLauncher:completeAnimation()
+
 				SpikeLauncher.SpikeLauncherLine:completeAnimation()
 				self.SpikeLauncher:setAlpha( 1 )
 				self.SpikeLauncher:setZoom( 0 )
@@ -405,6 +412,7 @@ CoD.SpikeLauncherContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SpikeLauncher:close()
 	end )

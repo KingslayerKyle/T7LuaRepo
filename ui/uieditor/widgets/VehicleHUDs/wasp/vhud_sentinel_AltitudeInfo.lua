@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.wasp.vhud_sentinel_NotificationBox" )
 CoD.vhud_sentinel_AltitudeInfo = InheritFrom( LUI.UIElement )
 CoD.vhud_sentinel_AltitudeInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_sentinel_AltitudeInfo )
 	self.id = "vhud_sentinel_AltitudeInfo"
@@ -52,32 +54,39 @@ CoD.vhud_sentinel_AltitudeInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ALTnumbers:completeAnimation()
 				self.ALTnumbers:setAlpha( 1 )
 				self.clipFinished( ALTnumbers, {} )
+
 				ALTBox:completeAnimation()
 				self.ALTBox:setAlpha( 1 )
 				self.clipFinished( ALTBox, {} )
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ALTnumbers:completeAnimation()
 				self.ALTnumbers:setAlpha( 0 )
 				self.clipFinished( ALTnumbers, {} )
+
 				ALTBox:completeAnimation()
 				self.ALTBox:setAlpha( 0 )
 				self.clipFinished( ALTBox, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ALTBox:close()
 		element.ALTnumbers:close()

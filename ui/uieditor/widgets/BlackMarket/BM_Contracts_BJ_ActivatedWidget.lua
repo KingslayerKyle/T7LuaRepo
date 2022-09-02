@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_Contracts_BJ_Text_Widget" )
 CoD.BM_Contracts_BJ_ActivatedWidget = InheritFrom( LUI.UIElement )
 CoD.BM_Contracts_BJ_ActivatedWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Contracts_BJ_ActivatedWidget )
 	self.id = "BM_Contracts_BJ_ActivatedWidget"
@@ -40,14 +42,17 @@ CoD.BM_Contracts_BJ_ActivatedWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Activated = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Activated",
@@ -56,6 +61,7 @@ CoD.BM_Contracts_BJ_ActivatedWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BMContractsBJTextWidget:close()
 	end )

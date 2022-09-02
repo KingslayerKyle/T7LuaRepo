@@ -4,9 +4,11 @@
 CoD.ZmPanel_AmmoInt = InheritFrom( LUI.UIElement )
 CoD.ZmPanel_AmmoInt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmPanel_AmmoInt )
 	self.id = "ZmPanel_AmmoInt"

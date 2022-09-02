@@ -4,9 +4,11 @@
 CoD.CallingCards_SciFi_Headlights = InheritFrom( LUI.UIElement )
 CoD.CallingCards_SciFi_Headlights.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_SciFi_Headlights )
 	self.id = "CallingCards_SciFi_Headlights"
@@ -25,6 +27,7 @@ CoD.CallingCards_SciFi_Headlights.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local HeadlightsFrame2 = function ( Headlights, event )
 					local HeadlightsFrame3 = function ( Headlights, event )
 						local HeadlightsFrame4 = function ( Headlights, event )
@@ -84,6 +87,7 @@ CoD.CallingCards_SciFi_Headlights.new = function ( menu, controller )
 				Headlights:completeAnimation()
 				self.Headlights:setAlpha( 0.6 )
 				HeadlightsFrame2( Headlights, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

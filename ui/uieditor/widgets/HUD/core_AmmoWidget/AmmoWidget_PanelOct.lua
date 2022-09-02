@@ -4,9 +4,11 @@
 CoD.AmmoWidget_PanelOct = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_PanelOct.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_PanelOct )
 	self.id = "AmmoWidget_PanelOct"

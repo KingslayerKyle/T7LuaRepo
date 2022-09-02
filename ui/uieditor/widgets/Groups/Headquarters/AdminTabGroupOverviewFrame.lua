@@ -13,9 +13,11 @@ end
 CoD.AdminTabGroupOverviewFrame = InheritFrom( LUI.UIElement )
 CoD.AdminTabGroupOverviewFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AdminTabGroupOverviewFrame )
 	self.id = "AdminTabGroupOverviewFrame"
@@ -246,28 +248,37 @@ CoD.AdminTabGroupOverviewFrame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				GroupEmblem:completeAnimation()
 				self.GroupEmblem:setAlpha( 1 )
 				self.clipFinished( GroupEmblem, {} )
+
 				EmblemButton:completeAnimation()
 				self.EmblemButton:setAlpha( 1 )
 				self.clipFinished( EmblemButton, {} )
+
 				GroupsSubTitle0:completeAnimation()
 				self.GroupsSubTitle0:setAlpha( 1 )
 				self.clipFinished( GroupsSubTitle0, {} )
+
 				GroupsSubTitle00:completeAnimation()
 				self.GroupsSubTitle00:setAlpha( 1 )
 				self.clipFinished( GroupsSubTitle00, {} )
+
 				GroupsSubTitle000:completeAnimation()
 				self.GroupsSubTitle000:setAlpha( 1 )
 				self.clipFinished( GroupsSubTitle000, {} )
+
 				GroupsInputButtonScroll:completeAnimation()
 				self.GroupsInputButtonScroll:setAlpha( 1 )
 				self.clipFinished( GroupsInputButtonScroll, {} )
+
 				GroupsInputButtonScroll0:completeAnimation()
 				self.GroupsInputButtonScroll0:setAlpha( 1 )
 				self.clipFinished( GroupsInputButtonScroll0, {} )
+
 				GroupsNoConentDetail:completeAnimation()
+
 				GroupsNoConentDetail.HeaderBkgd:completeAnimation()
 				self.GroupsNoConentDetail:setAlpha( 0 )
 				self.GroupsNoConentDetail.HeaderBkgd:setRGB( ColorSet.FactionAxis_CP.r, ColorSet.FactionAxis_CP.g, ColorSet.FactionAxis_CP.b )
@@ -277,32 +288,45 @@ CoD.AdminTabGroupOverviewFrame.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				GroupEmblem:completeAnimation()
 				self.GroupEmblem:setAlpha( 0 )
 				self.clipFinished( GroupEmblem, {} )
+
 				EmblemButton:completeAnimation()
 				self.EmblemButton:setAlpha( 0 )
 				self.clipFinished( EmblemButton, {} )
+
 				GroupsSubTitle0:completeAnimation()
 				self.GroupsSubTitle0:setAlpha( 0 )
 				self.clipFinished( GroupsSubTitle0, {} )
+
 				GroupsSubTitle00:completeAnimation()
 				self.GroupsSubTitle00:setAlpha( 0 )
 				self.clipFinished( GroupsSubTitle00, {} )
+
 				GroupsSubTitle000:completeAnimation()
 				self.GroupsSubTitle000:setAlpha( 0 )
 				self.clipFinished( GroupsSubTitle000, {} )
+
 				GroupsInputButtonScroll:completeAnimation()
 				self.GroupsInputButtonScroll:setAlpha( 0 )
 				self.clipFinished( GroupsInputButtonScroll, {} )
+
 				GroupsInputButtonScroll0:completeAnimation()
 				self.GroupsInputButtonScroll0:setAlpha( 0 )
 				self.clipFinished( GroupsInputButtonScroll0, {} )
+
 				GroupsNoConentDetail:completeAnimation()
+
 				GroupsNoConentDetail.HeaderBkgd:completeAnimation()
+
 				GroupsNoConentDetail.HeaderIcon:completeAnimation()
+
 				GroupsNoConentDetail.Header:completeAnimation()
+
 				GroupsNoConentDetail.Desc:completeAnimation()
+
 				GroupsNoConentDetail.Glow2:completeAnimation()
 				self.GroupsNoConentDetail:setAlpha( 1 )
 				self.GroupsNoConentDetail.HeaderBkgd:setRGB( 0.87, 0.3, 0.19 )
@@ -314,6 +338,7 @@ CoD.AdminTabGroupOverviewFrame.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -341,6 +366,7 @@ CoD.AdminTabGroupOverviewFrame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.EmblemButton:close()
 		element.GroupsSubTitle0:close()

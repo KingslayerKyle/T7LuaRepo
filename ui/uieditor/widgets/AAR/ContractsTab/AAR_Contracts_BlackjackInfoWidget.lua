@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_Contracts_AAR_title" )
 CoD.AAR_Contracts_BlackjackInfoWidget = InheritFrom( LUI.UIElement )
 CoD.AAR_Contracts_BlackjackInfoWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.AAR_Contracts_BlackjackInfoWidget )
 	self.id = "AAR_Contracts_BlackjackInfoWidget"
@@ -153,35 +155,43 @@ CoD.AAR_Contracts_BlackjackInfoWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BlackjackIconOff:completeAnimation()
 				self.BlackjackIconOff:setLeftRight( false, true, -426, 0.84 )
 				self.BlackjackIconOff:setTopBottom( false, true, -494.76, 7.41 )
 				self.BlackjackIconOff:setAlpha( 0.6 )
 				self.clipFinished( BlackjackIconOff, {} )
+
 				BlackjackIconOn:completeAnimation()
 				self.BlackjackIconOn:setAlpha( 0 )
 				self.clipFinished( BlackjackIconOn, {} )
+
 				BlackjackContractsDescription:completeAnimation()
 				self.BlackjackContractsDescription:setLeftRight( true, false, 13, 273.75 )
 				self.BlackjackContractsDescription:setTopBottom( true, false, 184.5, 202.5 )
 				self.clipFinished( BlackjackContractsDescription, {} )
+
 				SideBetTitle:completeAnimation()
 				self.SideBetTitle:setAlpha( 0 )
 				self.clipFinished( SideBetTitle, {} )
+
 				CategoryListLine000:completeAnimation()
 				self.CategoryListLine000:setLeftRight( true, false, 12, 226 )
 				self.CategoryListLine000:setTopBottom( true, false, 234, 238 )
 				self.CategoryListLine000:setAlpha( 0.25 )
 				self.clipFinished( CategoryListLine000, {} )
+
 				BMContractsCCAARWidget:completeAnimation()
 				self.BMContractsCCAARWidget:setAlpha( 0 )
 				self.clipFinished( BMContractsCCAARWidget, {} )
+
 				BlackjackContractsDescription0:completeAnimation()
 				self.BlackjackContractsDescription0:setLeftRight( true, false, 13, 273.75 )
 				self.BlackjackContractsDescription0:setTopBottom( true, false, 256, 274 )
 				self.BlackjackContractsDescription0:setAlpha( 1 )
 				self.BlackjackContractsDescription0:setText( Engine.Localize( "MPUI_BM_CONTRACT_BLACKJACK_CONTRACTS_DESC_2" ) )
 				self.clipFinished( BlackjackContractsDescription0, {} )
+
 				BMContractsBJActivatedWidget:completeAnimation()
 				self.BMContractsBJActivatedWidget:setAlpha( 0 )
 				self.clipFinished( BMContractsBJActivatedWidget, {} )
@@ -190,29 +200,36 @@ CoD.AAR_Contracts_BlackjackInfoWidget.new = function ( menu, controller )
 		Activated = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BlackjackIconOff:completeAnimation()
 				self.BlackjackIconOff:setAlpha( 0 )
 				self.clipFinished( BlackjackIconOff, {} )
+
 				BlackjackIconOn:completeAnimation()
 				self.BlackjackIconOn:setAlpha( 0.6 )
 				self.clipFinished( BlackjackIconOn, {} )
+
 				SideBetTitle:completeAnimation()
 				self.SideBetTitle:setAlpha( 1 )
 				self.clipFinished( SideBetTitle, {} )
+
 				CategoryListLine000:completeAnimation()
 				self.CategoryListLine000:setLeftRight( true, false, 21, 235 )
 				self.CategoryListLine000:setTopBottom( true, false, 273, 277 )
 				self.CategoryListLine000:setAlpha( 0.15 )
 				self.clipFinished( CategoryListLine000, {} )
+
 				BMContractsCCAARWidget:completeAnimation()
 				self.BMContractsCCAARWidget:setScale( 1 )
 				self.clipFinished( BMContractsCCAARWidget, {} )
+
 				BlackjackContractsDescription0:completeAnimation()
 				self.BlackjackContractsDescription0:setAlpha( 0 )
 				self.clipFinished( BlackjackContractsDescription0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Activated",
@@ -221,6 +238,7 @@ CoD.AAR_Contracts_BlackjackInfoWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel0:close()
 		element.BMContractsCCAARWidget:close()

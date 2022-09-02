@@ -26,9 +26,11 @@ end
 CoD.VehicleGround_HelpContainer = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_HelpContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VehicleGround_HelpContainer )
 	self.id = "VehicleGround_HelpContainer"

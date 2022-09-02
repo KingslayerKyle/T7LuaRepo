@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventory.RocketShieldBluePrint.RocketShieldPiec
 CoD.RunesOfCreationWidget_Genesis = InheritFrom( LUI.UIElement )
 CoD.RunesOfCreationWidget_Genesis.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RunesOfCreationWidget_Genesis )
 	self.id = "RunesOfCreationWidget_Genesis"
@@ -209,18 +211,22 @@ CoD.RunesOfCreationWidget_Genesis.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				RocketShieldPieceWidget1:completeAnimation()
 				self.RocketShieldPieceWidget1:setAlpha( 0 )
 				self.RocketShieldPieceWidget1:setScale( 0.9 )
 				self.clipFinished( RocketShieldPieceWidget1, {} )
+
 				RocketShieldPieceWidget2:completeAnimation()
 				self.RocketShieldPieceWidget2:setAlpha( 0 )
 				self.RocketShieldPieceWidget2:setScale( 1 )
 				self.clipFinished( RocketShieldPieceWidget2, {} )
+
 				RocketShieldPieceWidget3:completeAnimation()
 				self.RocketShieldPieceWidget3:setAlpha( 0 )
 				self.RocketShieldPieceWidget3:setScale( 1 )
 				self.clipFinished( RocketShieldPieceWidget3, {} )
+
 				RocketShieldPieceWidget0:completeAnimation()
 				self.RocketShieldPieceWidget0:setAlpha( 0 )
 				self.clipFinished( RocketShieldPieceWidget0, {} )
@@ -229,24 +235,28 @@ CoD.RunesOfCreationWidget_Genesis.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				RocketShieldPieceWidget1:completeAnimation()
 				self.RocketShieldPieceWidget1:setLeftRight( true, false, 103.56, 192.08 )
 				self.RocketShieldPieceWidget1:setTopBottom( true, false, 20.24, 108.76 )
 				self.RocketShieldPieceWidget1:setAlpha( 1 )
 				self.RocketShieldPieceWidget1:setScale( 1.1 )
 				self.clipFinished( RocketShieldPieceWidget1, {} )
+
 				RocketShieldPieceWidget2:completeAnimation()
 				self.RocketShieldPieceWidget2:setLeftRight( true, false, 207.78, 296.3 )
 				self.RocketShieldPieceWidget2:setTopBottom( true, false, 17.74, 106.26 )
 				self.RocketShieldPieceWidget2:setAlpha( 1 )
 				self.RocketShieldPieceWidget2:setScale( 1.1 )
 				self.clipFinished( RocketShieldPieceWidget2, {} )
+
 				RocketShieldPieceWidget3:completeAnimation()
 				self.RocketShieldPieceWidget3:setLeftRight( true, false, 3.27, 91.79 )
 				self.RocketShieldPieceWidget3:setTopBottom( true, false, 20.24, 108.76 )
 				self.RocketShieldPieceWidget3:setAlpha( 1 )
 				self.RocketShieldPieceWidget3:setScale( 1.1 )
 				self.clipFinished( RocketShieldPieceWidget3, {} )
+
 				RocketShieldPieceWidget0:completeAnimation()
 				self.RocketShieldPieceWidget0:setLeftRight( true, false, 309.3, 397.82 )
 				self.RocketShieldPieceWidget0:setTopBottom( true, false, 17.74, 106.26 )
@@ -256,6 +266,7 @@ CoD.RunesOfCreationWidget_Genesis.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Scoreboard",
@@ -272,6 +283,7 @@ CoD.RunesOfCreationWidget_Genesis.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RocketShieldPieceWidget1:close()
 		element.RocketShieldPieceWidget2:close()

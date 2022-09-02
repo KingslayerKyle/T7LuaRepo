@@ -4,9 +4,11 @@
 CoD.vhud_ms_LockBox = InheritFrom( LUI.UIElement )
 CoD.vhud_ms_LockBox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ms_LockBox )
 	self.id = "vhud_ms_LockBox"
@@ -38,9 +40,11 @@ CoD.vhud_ms_LockBox.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				msLockOn:completeAnimation()
 				self.msLockOn:setAlpha( 0 )
 				self.clipFinished( msLockOn, {} )
@@ -49,9 +53,11 @@ CoD.vhud_ms_LockBox.new = function ( menu, controller )
 		On = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.2 )
 				self.clipFinished( Glow, {} )
+
 				msLockOn:completeAnimation()
 				self.msLockOn:setAlpha( 0.7 )
 				self.clipFinished( msLockOn, {} )
@@ -60,9 +66,11 @@ CoD.vhud_ms_LockBox.new = function ( menu, controller )
 		HasLock = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				msLockOn:completeAnimation()
 				self.msLockOn:setAlpha( 0.7 )
 				self.clipFinished( msLockOn, {} )

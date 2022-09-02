@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Debug.LobbyProcessQueueDebug" )
 CoD.LobbyDebugOverlay = InheritFrom( LUI.UIElement )
 CoD.LobbyDebugOverlay.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyDebugOverlay )
 	self.id = "LobbyDebugOverlay"
@@ -25,6 +27,7 @@ CoD.LobbyDebugOverlay.new = function ( menu, controller )
 	self.LobbyProcessQueueDebug = LobbyProcessQueueDebug
 	
 	LobbyProcessQueueDebug.id = "LobbyProcessQueueDebug"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LobbyProcessQueueDebug:close()
 	end )

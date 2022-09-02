@@ -4,9 +4,11 @@
 CoD.CallingCard_loot_kaboom = InheritFrom( LUI.UIElement )
 CoD.CallingCard_loot_kaboom.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCard_loot_kaboom )
 	self.id = "CallingCard_loot_kaboom"
@@ -90,6 +92,7 @@ CoD.CallingCard_loot_kaboom.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				local bombFrame2 = function ( bomb, event )
 					local bombFrame3 = function ( bomb, event )
 						local bombFrame4 = function ( bomb, event )
@@ -1382,6 +1385,7 @@ CoD.CallingCard_loot_kaboom.new = function ( menu, controller )
 				Boom3:completeAnimation()
 				self.Boom3:setAlpha( 0 )
 				Boom3Frame2( Boom3, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

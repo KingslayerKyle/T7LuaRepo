@@ -77,6 +77,7 @@ CoD.LobbyMemberList.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyMemberList )
 	self.id = "LobbyMemberList"
@@ -418,34 +419,43 @@ CoD.LobbyMemberList.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				FEListSubHeader1:completeAnimation()
 				self.FEListSubHeader1:setAlpha( 1 )
 				self.clipFinished( FEListSubHeader1, {} )
+
 				lobbyList:completeAnimation()
 				self.lobbyList:setAlpha( 1 )
 				self.clipFinished( lobbyList, {} )
+
 				FEListAdditonal0:completeAnimation()
 				self.FEListAdditonal0:setAlpha( 1 )
 				self.FEListAdditonal0:setZoom( 0 )
 				self.clipFinished( FEListAdditonal0, {} )
+
 				FEListHeaderFull0:completeAnimation()
 				self.FEListHeaderFull0:setAlpha( 0 )
 				self.clipFinished( FEListHeaderFull0, {} )
+
 				FEListSubHeader0:completeAnimation()
 				self.FEListSubHeader0:setAlpha( 0 )
 				self.clipFinished( FEListSubHeader0, {} )
+
 				friendsAndGroups:completeAnimation()
 				self.friendsAndGroups:setAlpha( 0 )
 				self.clipFinished( friendsAndGroups, {} )
 			end,
 			ShowQuickJoin = function ()
 				self:setupElementClipCounter( 6 )
+
 				FEListSubHeader1:completeAnimation()
 				self.FEListSubHeader1:setAlpha( 1 )
 				self.clipFinished( FEListSubHeader1, {} )
+
 				lobbyList:completeAnimation()
 				self.lobbyList:setAlpha( 1 )
 				self.clipFinished( lobbyList, {} )
+
 				FEListAdditonal0:completeAnimation()
 				self.FEListAdditonal0:setAlpha( 1 )
 				self.FEListAdditonal0:setZoom( 0 )
@@ -518,6 +528,7 @@ CoD.LobbyMemberList.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 6 )
+
 				local FEListSubHeader1Frame2 = function ( FEListSubHeader1, event )
 					local FEListSubHeader1Frame3 = function ( FEListSubHeader1, event )
 						if not event.interrupted then
@@ -615,18 +626,22 @@ CoD.LobbyMemberList.new = function ( menu, controller )
 				self.FEListAdditonal0:setAlpha( 0 )
 				self.FEListAdditonal0:setZoom( 0 )
 				FEListAdditonal0Frame2( FEListAdditonal0, {} )
+
 				FEListHeaderFull0:completeAnimation()
 				self.FEListHeaderFull0:setAlpha( 0 )
 				self.clipFinished( FEListHeaderFull0, {} )
+
 				FEListSubHeader0:completeAnimation()
 				self.FEListSubHeader0:setAlpha( 0 )
 				self.clipFinished( FEListSubHeader0, {} )
+
 				friendsAndGroups:completeAnimation()
 				self.friendsAndGroups:setAlpha( 0 )
 				self.clipFinished( friendsAndGroups, {} )
 			end,
 			Update = function ()
 				self:setupElementClipCounter( 6 )
+
 				local FEListSubHeader1Frame2 = function ( FEListSubHeader1, event )
 					local FEListSubHeader1Frame3 = function ( FEListSubHeader1, event )
 						local FEListSubHeader1Frame4 = function ( FEListSubHeader1, event )
@@ -726,12 +741,15 @@ CoD.LobbyMemberList.new = function ( menu, controller )
 				self.FEListAdditonal0:setAlpha( 1 )
 				self.FEListAdditonal0:setZoom( 0 )
 				FEListAdditonal0Frame2( FEListAdditonal0, {} )
+
 				FEListHeaderFull0:completeAnimation()
 				self.FEListHeaderFull0:setAlpha( 0 )
 				self.clipFinished( FEListHeaderFull0, {} )
+
 				FEListSubHeader0:completeAnimation()
 				self.FEListSubHeader0:setAlpha( 0 )
 				self.clipFinished( FEListSubHeader0, {} )
+
 				friendsAndGroups:completeAnimation()
 				self.friendsAndGroups:setAlpha( 0 )
 				self.clipFinished( friendsAndGroups, {} )
@@ -740,27 +758,34 @@ CoD.LobbyMemberList.new = function ( menu, controller )
 		ShowQuickJoin = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				FEListSubHeader1:completeAnimation()
 				self.FEListSubHeader1:setAlpha( 1 )
 				self.clipFinished( FEListSubHeader1, {} )
+
 				lobbyList:completeAnimation()
 				self.lobbyList:setAlpha( 1 )
 				self.clipFinished( lobbyList, {} )
+
 				FEListAdditonal0:completeAnimation()
 				self.FEListAdditonal0:setAlpha( 1 )
 				self.clipFinished( FEListAdditonal0, {} )
+
 				FEListHeaderFull0:completeAnimation()
 				self.FEListHeaderFull0:setAlpha( 1 )
 				self.clipFinished( FEListHeaderFull0, {} )
+
 				FEListSubHeader0:completeAnimation()
 				self.FEListSubHeader0:setAlpha( 1 )
 				self.clipFinished( FEListSubHeader0, {} )
+
 				friendsAndGroups:completeAnimation()
 				self.friendsAndGroups:setAlpha( 1 )
 				self.clipFinished( friendsAndGroups, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 6 )
+
 				local FEListSubHeader1Frame2 = function ( FEListSubHeader1, event )
 					local FEListSubHeader1Frame3 = function ( FEListSubHeader1, event )
 						if not event.interrupted then
@@ -974,12 +999,15 @@ CoD.LobbyMemberList.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 6 )
+
 				FEListSubHeader1:completeAnimation()
 				self.FEListSubHeader1:setAlpha( 1 )
 				self.clipFinished( FEListSubHeader1, {} )
+
 				lobbyList:completeAnimation()
 				self.lobbyList:setAlpha( 1 )
 				self.clipFinished( lobbyList, {} )
+
 				FEListAdditonal0:completeAnimation()
 				self.FEListAdditonal0:setAlpha( 1 )
 				self.FEListAdditonal0:setZoom( 0 )
@@ -1052,6 +1080,7 @@ CoD.LobbyMemberList.new = function ( menu, controller )
 			end,
 			Update = function ()
 				self:setupElementClipCounter( 6 )
+
 				local FEListSubHeader1Frame2 = function ( FEListSubHeader1, event )
 					local FEListSubHeader1Frame3 = function ( FEListSubHeader1, event )
 						if not event.interrupted then
@@ -1261,6 +1290,7 @@ CoD.LobbyMemberList.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ShowQuickJoin",
@@ -1302,6 +1332,7 @@ CoD.LobbyMemberList.new = function ( menu, controller )
 		} )
 	end )
 	CoD.Menu.AddNavigationHandler( menu, self, controller )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		UpdateQuickJoinFocus( self, element )
 	end )
@@ -1314,6 +1345,7 @@ CoD.LobbyMemberList.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEListSubHeader1:close()
 		element.lobbyList:close()

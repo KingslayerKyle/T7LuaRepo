@@ -37,6 +37,7 @@ CoD.FE_FeaturedCardsContainerController.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_FeaturedCardsContainerController )
 	self.id = "FE_FeaturedCardsContainerController"
@@ -92,12 +93,15 @@ CoD.FE_FeaturedCardsContainerController.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				RightBumperImage:completeAnimation()
 				self.RightBumperImage:setAlpha( 0 )
 				self.clipFinished( RightBumperImage, {} )
+
 				IndicatorsGrid:completeAnimation()
 				self.IndicatorsGrid:setAlpha( 0 )
 				self.clipFinished( IndicatorsGrid, {} )
+
 				LeftBumperImage:completeAnimation()
 				self.LeftBumperImage:setAlpha( 0 )
 				self.clipFinished( LeftBumperImage, {} )
@@ -106,18 +110,22 @@ CoD.FE_FeaturedCardsContainerController.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				RightBumperImage:completeAnimation()
 				self.RightBumperImage:setAlpha( 1 )
 				self.clipFinished( RightBumperImage, {} )
+
 				IndicatorsGrid:completeAnimation()
 				self.IndicatorsGrid:setAlpha( 1 )
 				self.clipFinished( IndicatorsGrid, {} )
+
 				LeftBumperImage:completeAnimation()
 				self.LeftBumperImage:setAlpha( 1 )
 				self.clipFinished( LeftBumperImage, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -150,6 +158,7 @@ CoD.FE_FeaturedCardsContainerController.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RightBumperImage:close()
 		element.IndicatorsGrid:close()

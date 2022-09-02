@@ -4,9 +4,11 @@
 CoD.BM_Contracts_DailyContractsTitle = InheritFrom( LUI.UIElement )
 CoD.BM_Contracts_DailyContractsTitle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Contracts_DailyContractsTitle )
 	self.id = "BM_Contracts_DailyContractsTitle"

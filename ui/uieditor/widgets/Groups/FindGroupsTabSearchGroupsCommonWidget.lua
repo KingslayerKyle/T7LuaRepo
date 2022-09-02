@@ -21,9 +21,11 @@ end
 CoD.FindGroupsTabSearchGroupsCommonWidget = InheritFrom( LUI.UIElement )
 CoD.FindGroupsTabSearchGroupsCommonWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FindGroupsTabSearchGroupsCommonWidget )
 	self.id = "FindGroupsTabSearchGroupsCommonWidget"
@@ -230,15 +232,19 @@ CoD.FindGroupsTabSearchGroupsCommonWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				GroupsGrid:completeAnimation()
 				self.GroupsGrid:setAlpha( 1 )
 				self.clipFinished( GroupsGrid, {} )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 0 )
 				self.clipFinished( Spinner, {} )
+
 				NoResults:completeAnimation()
 				self.NoResults:setAlpha( 0 )
 				self.clipFinished( NoResults, {} )
+
 				GroupsSummaryForSearch:completeAnimation()
 				self.GroupsSummaryForSearch:setAlpha( 1 )
 				self.clipFinished( GroupsSummaryForSearch, {} )
@@ -247,15 +253,19 @@ CoD.FindGroupsTabSearchGroupsCommonWidget.new = function ( menu, controller )
 		Loading = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				GroupsGrid:completeAnimation()
 				self.GroupsGrid:setAlpha( 0 )
 				self.clipFinished( GroupsGrid, {} )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 1 )
 				self.clipFinished( Spinner, {} )
+
 				NoResults:completeAnimation()
 				self.NoResults:setAlpha( 0 )
 				self.clipFinished( NoResults, {} )
+
 				GroupsSummaryForSearch:completeAnimation()
 				self.GroupsSummaryForSearch:setAlpha( 0 )
 				self.clipFinished( GroupsSummaryForSearch, {} )
@@ -264,21 +274,26 @@ CoD.FindGroupsTabSearchGroupsCommonWidget.new = function ( menu, controller )
 		NoResults = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				GroupsGrid:completeAnimation()
 				self.GroupsGrid:setAlpha( 0 )
 				self.clipFinished( GroupsGrid, {} )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 0 )
 				self.clipFinished( Spinner, {} )
+
 				NoResults:completeAnimation()
 				self.NoResults:setAlpha( 1 )
 				self.clipFinished( NoResults, {} )
+
 				GroupsSummaryForSearch:completeAnimation()
 				self.GroupsSummaryForSearch:setAlpha( 0 )
 				self.clipFinished( GroupsSummaryForSearch, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Loading",
@@ -341,6 +356,7 @@ CoD.FindGroupsTabSearchGroupsCommonWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GroupsGrid:close()
 		element.GroupsSummaryForSearch:close()

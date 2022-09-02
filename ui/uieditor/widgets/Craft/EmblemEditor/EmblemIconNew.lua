@@ -13,9 +13,11 @@ require( "ui.uieditor.widgets.CAC.cac_LabelNew" )
 CoD.EmblemIconNew = InheritFrom( LUI.UIElement )
 CoD.EmblemIconNew.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemIconNew )
 	self.id = "EmblemIconNew"
@@ -130,55 +132,69 @@ CoD.EmblemIconNew.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0 )
 				self.BorderBakedMask0:setZoom( 0 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 0.5 )
 				self.BorderBakedSolid0:setZoom( 0 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 0 )
 				self.clipFinished( bgImage, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				BorderBaked0:completeAnimation()
 				self.BorderBaked0:setAlpha( 0 )
 				self.BorderBaked0:setZoom( 0 )
 				self.clipFinished( BorderBaked0, {} )
+
 				drawPaintshop:completeAnimation()
 				self.drawPaintshop:setAlpha( 0.8 )
 				self.drawPaintshop:setZoom( 0 )
 				self.clipFinished( drawPaintshop, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0.7 )
 				self.BorderBakedMask0:setZoom( 0 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 0 )
 				self.BorderBakedSolid0:setZoom( 0 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				BorderBaked0:completeAnimation()
 				self.BorderBaked0:setAlpha( 0.7 )
 				self.BorderBaked0:setZoom( 0 )
 				self.clipFinished( BorderBaked0, {} )
+
 				drawPaintshop:completeAnimation()
 				self.drawPaintshop:setAlpha( 1 )
 				self.drawPaintshop:setZoom( 0 )
@@ -268,21 +284,26 @@ CoD.EmblemIconNew.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				BorderBakedBlur0:completeAnimation()
 				self.BorderBakedBlur0:setZoom( 0 )
 				self.clipFinished( BorderBakedBlur0, {} )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0.7 )
 				self.BorderBakedMask0:setZoom( 0 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 0 )
 				self.BorderBakedSolid0:setZoom( 0 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				BorderBaked0:completeAnimation()
 				self.BorderBaked0:setAlpha( 0.7 )
 				self.BorderBaked0:setZoom( 0 )
 				self.clipFinished( BorderBaked0, {} )
+
 				drawPaintshop:completeAnimation()
 				self.drawPaintshop:setAlpha( 1 )
 				self.drawPaintshop:setZoom( 0 )
@@ -388,10 +409,12 @@ CoD.EmblemIconNew.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0 )
 				self.BorderBakedMask0:setZoom( 0 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 0.5 )
 				self.BorderBakedSolid0:setZoom( 0 )
@@ -444,12 +467,14 @@ CoD.EmblemIconNew.new = function ( menu, controller )
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				BoxButtonLrgInactiveFrame2( BoxButtonLrgInactive, {} )
+
 				BorderBaked0:completeAnimation()
 				self.BorderBaked0:setLeftRight( true, true, 0, 1 )
 				self.BorderBaked0:setTopBottom( true, true, 0, 0 )
 				self.BorderBaked0:setAlpha( 0 )
 				self.BorderBaked0:setZoom( 0 )
 				self.clipFinished( BorderBaked0, {} )
+
 				drawPaintshop:completeAnimation()
 				self.drawPaintshop:setAlpha( 0.8 )
 				self.drawPaintshop:setZoom( 0 )
@@ -595,58 +620,72 @@ CoD.EmblemIconNew.new = function ( menu, controller )
 		BMClassified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0 )
 				self.BorderBakedMask0:setZoom( 0 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 0.5 )
 				self.BorderBakedSolid0:setZoom( 0 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setLeftRight( true, true, 0, 0 )
 				self.BoxButtonLrgInactive:setTopBottom( true, true, 0, 0 )
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setLeftRight( true, true, 2, -2 )
 				self.bgImage:setTopBottom( true, true, 2, -2 )
 				self.bgImage:setAlpha( 1 )
 				self.clipFinished( bgImage, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setLeftRight( true, false, 0, 96 )
 				self.BMGoldBarMed:setTopBottom( true, false, 38.75, 54.75 )
 				self.BMGoldBarMed:setAlpha( 1 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 1 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				BorderBaked0:completeAnimation()
 				self.BorderBaked0:setAlpha( 0 )
 				self.BorderBaked0:setZoom( 0 )
 				self.clipFinished( BorderBaked0, {} )
+
 				drawPaintshop:completeAnimation()
 				self.drawPaintshop:setAlpha( 0 )
 				self.drawPaintshop:setZoom( 0 )
 				self.clipFinished( drawPaintshop, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 0 )
 				self.clipFinished( IconNew, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0.7 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 0 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 1 )
 				self.clipFinished( bgImage, {} )
@@ -665,41 +704,52 @@ CoD.EmblemIconNew.new = function ( menu, controller )
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 1 )
 				BMGoldBarMedFrame2( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 1 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				BorderBaked0:completeAnimation()
 				self.BorderBaked0:setAlpha( 0.7 )
 				self.clipFinished( BorderBaked0, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 9 )
+
 				BorderBakedBlur0:completeAnimation()
 				self.BorderBakedBlur0:setZoom( 0 )
 				self.clipFinished( BorderBakedBlur0, {} )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0.7 )
 				self.BorderBakedMask0:setZoom( 0 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 0 )
 				self.BorderBakedSolid0:setZoom( 0 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 1 )
 				self.clipFinished( bgImage, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 1 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 1 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				BorderBaked0:completeAnimation()
 				self.BorderBaked0:setAlpha( 0.7 )
 				self.BorderBaked0:setZoom( 0 )
@@ -805,10 +855,12 @@ CoD.EmblemIconNew.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 9 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0 )
 				self.BorderBakedMask0:setZoom( 0 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 0.5 )
 				self.BorderBakedSolid0:setZoom( 0 )
@@ -861,6 +913,7 @@ CoD.EmblemIconNew.new = function ( menu, controller )
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				BoxButtonLrgInactiveFrame2( BoxButtonLrgInactive, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 1 )
 				self.clipFinished( bgImage, {} )
@@ -879,9 +932,11 @@ CoD.EmblemIconNew.new = function ( menu, controller )
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0.65 )
 				BMGoldBarMedFrame2( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 1 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				BorderBaked0:completeAnimation()
 				self.BorderBaked0:setLeftRight( true, true, 0, 1 )
 				self.BorderBaked0:setTopBottom( true, true, 0, 0 )
@@ -1029,55 +1084,69 @@ CoD.EmblemIconNew.new = function ( menu, controller )
 		New = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0 )
 				self.BorderBakedMask0:setZoom( 0 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 0.5 )
 				self.BorderBakedSolid0:setZoom( 0 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setAlpha( 0 )
 				self.clipFinished( bgImage, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				BorderBaked0:completeAnimation()
 				self.BorderBaked0:setAlpha( 0 )
 				self.BorderBaked0:setZoom( 0 )
 				self.clipFinished( BorderBaked0, {} )
+
 				drawPaintshop:completeAnimation()
 				self.drawPaintshop:setAlpha( 0.8 )
 				self.drawPaintshop:setZoom( 0 )
 				self.clipFinished( drawPaintshop, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				IconNew:completeAnimation()
 				self.IconNew:setAlpha( 1 )
 				self.clipFinished( IconNew, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0.7 )
 				self.BorderBakedMask0:setZoom( 0 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 0 )
 				self.BorderBakedSolid0:setZoom( 0 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				BorderBaked0:completeAnimation()
 				self.BorderBaked0:setAlpha( 0.7 )
 				self.BorderBaked0:setZoom( 0 )
 				self.clipFinished( BorderBaked0, {} )
+
 				drawPaintshop:completeAnimation()
 				self.drawPaintshop:setAlpha( 1 )
 				self.drawPaintshop:setZoom( 0 )
@@ -1167,21 +1236,26 @@ CoD.EmblemIconNew.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				BorderBakedBlur0:completeAnimation()
 				self.BorderBakedBlur0:setZoom( 0 )
 				self.clipFinished( BorderBakedBlur0, {} )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0.7 )
 				self.BorderBakedMask0:setZoom( 0 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 0 )
 				self.BorderBakedSolid0:setZoom( 0 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				BorderBaked0:completeAnimation()
 				self.BorderBaked0:setAlpha( 0.7 )
 				self.BorderBaked0:setZoom( 0 )
 				self.clipFinished( BorderBaked0, {} )
+
 				drawPaintshop:completeAnimation()
 				self.drawPaintshop:setAlpha( 1 )
 				self.drawPaintshop:setZoom( 0 )
@@ -1287,10 +1361,12 @@ CoD.EmblemIconNew.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setAlpha( 0 )
 				self.BorderBakedMask0:setZoom( 0 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 0.5 )
 				self.BorderBakedSolid0:setZoom( 0 )
@@ -1343,12 +1419,14 @@ CoD.EmblemIconNew.new = function ( menu, controller )
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				BoxButtonLrgInactiveFrame2( BoxButtonLrgInactive, {} )
+
 				BorderBaked0:completeAnimation()
 				self.BorderBaked0:setLeftRight( true, true, 0, 1 )
 				self.BorderBaked0:setTopBottom( true, true, 0, 0 )
 				self.BorderBaked0:setAlpha( 0 )
 				self.BorderBaked0:setZoom( 0 )
 				self.clipFinished( BorderBaked0, {} )
+
 				drawPaintshop:completeAnimation()
 				self.drawPaintshop:setAlpha( 0.8 )
 				self.drawPaintshop:setZoom( 0 )
@@ -1492,6 +1570,7 @@ CoD.EmblemIconNew.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BMClassified",
@@ -1522,6 +1601,7 @@ CoD.EmblemIconNew.new = function ( menu, controller )
 			modelName = "iconID"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BorderBakedBlur0:close()
 		element.BorderBakedMask0:close()

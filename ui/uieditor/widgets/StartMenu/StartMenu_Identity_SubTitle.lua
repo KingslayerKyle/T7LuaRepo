@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.NewBreadcrumb" )
 CoD.StartMenu_Identity_SubTitle = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Identity_SubTitle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Identity_SubTitle )
 	self.id = "StartMenu_Identity_SubTitle"
@@ -34,6 +36,7 @@ CoD.StartMenu_Identity_SubTitle.new = function ( menu, controller )
 	SubTitle:setLetterSpacing( 0.5 )
 	SubTitle:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	SubTitle:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( SubTitle, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 2 )
 	end )
@@ -51,10 +54,12 @@ CoD.StartMenu_Identity_SubTitle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setLeftRight( true, true, 0, 0 )
 				self.FEButtonPanel0:setTopBottom( true, true, 2, -1.95 )
 				self.clipFinished( FEButtonPanel0, {} )
+
 				newIcon:completeAnimation()
 				self.newIcon:setAlpha( 0 )
 				self.clipFinished( newIcon, {} )
@@ -63,16 +68,19 @@ CoD.StartMenu_Identity_SubTitle.new = function ( menu, controller )
 		HasNew = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				FEButtonPanel0:completeAnimation()
 				self.FEButtonPanel0:setLeftRight( true, true, 0, 14 )
 				self.FEButtonPanel0:setTopBottom( true, true, 2, -1.95 )
 				self.clipFinished( FEButtonPanel0, {} )
+
 				newIcon:completeAnimation()
 				self.newIcon:setAlpha( 1 )
 				self.clipFinished( newIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HasNew",
@@ -81,6 +89,7 @@ CoD.StartMenu_Identity_SubTitle.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel0:close()
 		element.newIcon:close()

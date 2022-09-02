@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_Identity_Subtitle_BG" )
 CoD.MapVoteLabelLower = InheritFrom( LUI.UIElement )
 CoD.MapVoteLabelLower.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MapVoteLabelLower )
 	self.id = "MapVoteLabelLower"
@@ -46,6 +48,7 @@ CoD.MapVoteLabelLower.new = function ( menu, controller )
 	SubTitle:setTopBottom( true, false, -1, 19 )
 	SubTitle:setText( Engine.Localize( "" ) )
 	SubTitle:setTTF( "fonts/RefrigeratorDeluxe-Regular.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( SubTitle, "setText", function ( element, controller )
 		ScaleWidgetToLabelLeftJustify( self, element, 2 )
 	end )
@@ -56,6 +59,7 @@ CoD.MapVoteLabelLower.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				SubTitle:completeAnimation()
 				self.SubTitle:setAlpha( 1 )
 				self.clipFinished( SubTitle, {} )
@@ -64,12 +68,14 @@ CoD.MapVoteLabelLower.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				SubTitle:completeAnimation()
 				self.SubTitle:setAlpha( 0 )
 				self.clipFinished( SubTitle, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -86,6 +92,7 @@ CoD.MapVoteLabelLower.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuIdentitySubtitleBG00:close()
 	end )

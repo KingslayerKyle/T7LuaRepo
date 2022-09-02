@@ -4,9 +4,11 @@
 CoD.CallingCards_ArenaMasterVetWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_ArenaMasterVetWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_ArenaMasterVetWidget )
 	self.id = "CallingCards_ArenaMasterVetWidget"
@@ -93,6 +95,7 @@ CoD.CallingCards_ArenaMasterVetWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				local Flare1Frame2 = function ( Flare1, event )
 					local Flare1Frame3 = function ( Flare1, event )
 						local Flare1Frame4 = function ( Flare1, event )
@@ -298,6 +301,7 @@ CoD.CallingCards_ArenaMasterVetWidget.new = function ( menu, controller )
 				Flare2:completeAnimation()
 				self.Flare2:setAlpha( 0.2 )
 				Flare2Frame2( Flare2, {} )
+
 				ember0:completeAnimation()
 				self.ember0:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_tile_scroll" ) )
 				self.ember0:setShaderVector( 0, 1, 1, 0, 0 )
@@ -518,6 +522,7 @@ CoD.CallingCards_ArenaMasterVetWidget.new = function ( menu, controller )
 				self.GlowOrangeOver0:setTopBottom( true, false, 84.62, 101.32 )
 				self.GlowOrangeOver0:setAlpha( 0 )
 				GlowOrangeOver0Frame2( GlowOrangeOver0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

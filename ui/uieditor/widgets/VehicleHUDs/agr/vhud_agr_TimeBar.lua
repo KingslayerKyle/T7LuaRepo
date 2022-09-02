@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.mothership.vhud_ModDNITime" )
 CoD.vhud_agr_TimeBar = InheritFrom( LUI.UIElement )
 CoD.vhud_agr_TimeBar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_agr_TimeBar )
 	self.id = "vhud_agr_TimeBar"

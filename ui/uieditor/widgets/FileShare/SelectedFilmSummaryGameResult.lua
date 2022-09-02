@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BorderThin" )
 CoD.SelectedFilmSummaryGameResult = InheritFrom( LUI.UIElement )
 CoD.SelectedFilmSummaryGameResult.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SelectedFilmSummaryGameResult )
 	self.id = "SelectedFilmSummaryGameResult"

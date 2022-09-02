@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.Arena_BetaWidget = InheritFrom( LUI.UIElement )
 CoD.Arena_BetaWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Arena_BetaWidget )
 	self.id = "Arena_BetaWidget"
@@ -50,6 +52,7 @@ CoD.Arena_BetaWidget.new = function ( menu, controller )
 	Desc:setTTF( "fonts/default.ttf" )
 	Desc:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	Desc:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( Desc, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 2 )
 	end )
@@ -71,18 +74,23 @@ CoD.Arena_BetaWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				White:completeAnimation()
 				self.White:setAlpha( 0 )
 				self.clipFinished( White, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 0 )
 				self.clipFinished( Border, {} )
+
 				Desc:completeAnimation()
 				self.Desc:setAlpha( 0 )
 				self.clipFinished( Desc, {} )
+
 				BETA:completeAnimation()
 				self.BETA:setAlpha( 0 )
 				self.clipFinished( BETA, {} )
@@ -91,6 +99,7 @@ CoD.Arena_BetaWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				White:completeAnimation()
 				self.White:setAlpha( 1 )
 				self.clipFinished( White, {} )
@@ -120,18 +129,22 @@ CoD.Arena_BetaWidget.new = function ( menu, controller )
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.1 )
 				GlowFrame2( Glow, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 0.43 )
 				self.clipFinished( Border, {} )
+
 				Desc:completeAnimation()
 				self.Desc:setAlpha( 1 )
 				self.clipFinished( Desc, {} )
+
 				BETA:completeAnimation()
 				self.BETA:setAlpha( 1 )
 				self.clipFinished( BETA, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -140,6 +153,7 @@ CoD.Arena_BetaWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.White:close()
 	end )

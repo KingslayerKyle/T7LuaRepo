@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Buttons.vhud_generic_button_layout" )
 CoD.dpsHUD_Internal = InheritFrom( LUI.UIElement )
 CoD.dpsHUD_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.dpsHUD_Internal )
 	self.id = "dpsHUD_Internal"
@@ -156,20 +158,25 @@ CoD.dpsHUD_Internal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				VignetteContainer:completeAnimation()
 				self.VignetteContainer:setAlpha( 1 )
 				self.clipFinished( VignetteContainer, {} )
+
 				VehicleGroundIris:completeAnimation()
 				self.VehicleGroundIris:setRGB( 1, 1, 1 )
 				self.VehicleGroundIris:setAlpha( 1 )
 				self.clipFinished( VehicleGroundIris, {} )
+
 				dpsVehicleReticle:completeAnimation()
 				self.dpsVehicleReticle:setRGB( 1, 1, 1 )
 				self.dpsVehicleReticle:setAlpha( 1 )
 				self.clipFinished( dpsVehicleReticle, {} )
+
 				outOfRangeTitle:completeAnimation()
 				self.outOfRangeTitle:setAlpha( 0 )
 				self.clipFinished( outOfRangeTitle, {} )
+
 				outOfRangeLabel:completeAnimation()
 				self.outOfRangeLabel:setAlpha( 0 )
 				self.clipFinished( outOfRangeLabel, {} )
@@ -178,6 +185,7 @@ CoD.dpsHUD_Internal.new = function ( menu, controller )
 		LeavingOperationalZone = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local VignetteContainerFrame2 = function ( VignetteContainer, event )
 					local VignetteContainerFrame3 = function ( VignetteContainer, event )
 						local VignetteContainerFrame4 = function ( VignetteContainer, event )
@@ -1202,10 +1210,12 @@ CoD.dpsHUD_Internal.new = function ( menu, controller )
 				outOfRangeLabel:completeAnimation()
 				self.outOfRangeLabel:setAlpha( 1 )
 				outOfRangeLabelFrame2( outOfRangeLabel, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "LeavingOperationalZone",
@@ -1222,6 +1232,7 @@ CoD.dpsHUD_Internal.new = function ( menu, controller )
 			modelName = "outOfRange"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.VignetteContainer:close()
 		element.VehicleGroundIris:close()

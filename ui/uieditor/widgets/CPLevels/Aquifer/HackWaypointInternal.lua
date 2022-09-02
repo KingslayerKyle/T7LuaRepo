@@ -4,9 +4,11 @@
 CoD.HackWaypointInternal = InheritFrom( LUI.UIElement )
 CoD.HackWaypointInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.HackWaypointInternal )
 	self.id = "HackWaypointInternal"

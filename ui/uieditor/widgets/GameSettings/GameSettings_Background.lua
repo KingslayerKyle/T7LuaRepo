@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_Menu_LeftGraphics" )
 CoD.GameSettings_Background = InheritFrom( LUI.UIElement )
 CoD.GameSettings_Background.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GameSettings_Background )
 	self.id = "GameSettings_Background"

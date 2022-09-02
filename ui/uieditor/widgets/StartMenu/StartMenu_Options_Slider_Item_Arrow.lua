@@ -11,9 +11,11 @@ end
 CoD.StartMenu_Options_Slider_Item_Arrow = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_Slider_Item_Arrow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_Slider_Item_Arrow )
 	self.id = "StartMenu_Options_Slider_Item_Arrow"
@@ -33,6 +35,7 @@ CoD.StartMenu_Options_Slider_Item_Arrow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				arrow:completeAnimation()
 				self.arrow:setRGB( 1, 1, 1 )
 				self.arrow:setAlpha( 1 )
@@ -40,6 +43,7 @@ CoD.StartMenu_Options_Slider_Item_Arrow.new = function ( menu, controller )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 1 )
+
 				arrow:completeAnimation()
 				self.arrow:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.arrow:setAlpha( 1 )
@@ -49,6 +53,7 @@ CoD.StartMenu_Options_Slider_Item_Arrow.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				arrow:completeAnimation()
 				self.arrow:setRGB( 1, 1, 1 )
 				self.arrow:setAlpha( 0 )

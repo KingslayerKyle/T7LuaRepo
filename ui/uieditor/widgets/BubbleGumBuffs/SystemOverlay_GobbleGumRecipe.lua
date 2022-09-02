@@ -14,6 +14,7 @@ local PostLoadFunc = function ( self, controller, menu )
 		DelayGoBack( menu, controller )
 	end, false )
 	self.optionsVertical:makeNotFocusable()
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if controller == "VerticalButtons" then
 			CoD.SwapFocusableElements( controller, self.optionsHorizontal, self.optionsVertical )
@@ -27,9 +28,11 @@ end
 CoD.SystemOverlay_GobbleGumRecipe = InheritFrom( LUI.UIElement )
 CoD.SystemOverlay_GobbleGumRecipe.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SystemOverlay_GobbleGumRecipe )
 	self.id = "SystemOverlay_GobbleGumRecipe"
@@ -322,24 +325,31 @@ CoD.SystemOverlay_GobbleGumRecipe.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
+
 				largeImage:completeAnimation()
 				self.largeImage:setAlpha( 0 )
 				self.clipFinished( largeImage, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0.85 )
 				self.clipFinished( text, {} )
+
 				title:completeAnimation()
 				self.title:setAlpha( 1 )
 				self.clipFinished( title, {} )
+
 				optionsHorizontal:completeAnimation()
 				self.optionsHorizontal:setAlpha( 1 )
 				self.clipFinished( optionsHorizontal, {} )
+
 				CookingAnimation:completeAnimation()
 				self.CookingAnimation:setAlpha( 0 )
 				self.clipFinished( CookingAnimation, {} )
+
 				BuyingDistillAnimation:completeAnimation()
 				self.BuyingDistillAnimation:setAlpha( 0 )
 				self.clipFinished( BuyingDistillAnimation, {} )
@@ -348,24 +358,31 @@ CoD.SystemOverlay_GobbleGumRecipe.new = function ( menu, controller )
 		BuyingDistill = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				largeImage:completeAnimation()
 				self.largeImage:setAlpha( 0 )
 				self.clipFinished( largeImage, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0 )
 				self.clipFinished( text, {} )
+
 				title:completeAnimation()
 				self.title:setAlpha( 0 )
 				self.clipFinished( title, {} )
+
 				optionsVertical:completeAnimation()
 				self.optionsVertical:setAlpha( 0 )
 				self.clipFinished( optionsVertical, {} )
+
 				optionsHorizontal:completeAnimation()
 				self.optionsHorizontal:setAlpha( 0 )
 				self.clipFinished( optionsHorizontal, {} )
+
 				CookingAnimation:completeAnimation()
 				self.CookingAnimation:setAlpha( 0 )
 				self.clipFinished( CookingAnimation, {} )
+
 				BuyingDistillAnimation:completeAnimation()
 				self.BuyingDistillAnimation:setAlpha( 1 )
 				self.clipFinished( BuyingDistillAnimation, {} )
@@ -374,26 +391,32 @@ CoD.SystemOverlay_GobbleGumRecipe.new = function ( menu, controller )
 		VerticalButtons = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				largeImage:completeAnimation()
 				self.largeImage:setAlpha( 1 )
 				self.clipFinished( largeImage, {} )
+
 				text:completeAnimation()
 				self.text:setLeftRight( true, false, 421, 1128 )
 				self.text:setTopBottom( true, false, 45, 65 )
 				self.clipFinished( text, {} )
+
 				title:completeAnimation()
 				self.title:setLeftRight( true, false, 421, 621 )
 				self.title:setTopBottom( true, false, 11, 41 )
 				self.clipFinished( title, {} )
+
 				optionsVertical:completeAnimation()
 				self.optionsVertical:setAlpha( 1 )
 				self.clipFinished( optionsVertical, {} )
+
 				optionsHorizontal:completeAnimation()
 				self.optionsHorizontal:setAlpha( 0 )
 				self.clipFinished( optionsHorizontal, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BuyingDistill",
@@ -426,6 +449,7 @@ CoD.SystemOverlay_GobbleGumRecipe.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.text:close()
 		element.optionsVertical:close()

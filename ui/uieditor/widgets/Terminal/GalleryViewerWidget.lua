@@ -27,9 +27,11 @@ end
 CoD.GalleryViewerWidget = InheritFrom( LUI.UIElement )
 CoD.GalleryViewerWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GalleryViewerWidget )
 	self.id = "GalleryViewerWidget"
@@ -317,12 +319,14 @@ CoD.GalleryViewerWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				mouseCursor:completeAnimation()
 				self.mouseCursor:setAlpha( 0 )
 				self.clipFinished( mouseCursor, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 1 )
+
 				mouseCursor:completeAnimation()
 				self.mouseCursor:setAlpha( 1 )
 				self.clipFinished( mouseCursor, {} )
@@ -337,6 +341,7 @@ CoD.GalleryViewerWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Frameline0:close()
 		element.FramelineVertical00:close()

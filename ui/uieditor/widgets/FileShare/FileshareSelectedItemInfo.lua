@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.FileShare.FileshareStat" )
 CoD.FileshareSelectedItemInfo = InheritFrom( LUI.UIElement )
 CoD.FileshareSelectedItemInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FileshareSelectedItemInfo )
 	self.id = "FileshareSelectedItemInfo"
@@ -114,6 +116,7 @@ CoD.FileshareSelectedItemInfo.new = function ( menu, controller )
 			StatDownloads.TextBox0:setText( Engine.Localize( fileDownloadsCount ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FileshareSelectedItemAuthor0:close()
 		element.FileshareSelectedItemPublishedTime0:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.cyberCoreTiles = InheritFrom( LUI.UIElement )
 CoD.cyberCoreTiles.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cyberCoreTiles )
 	self.id = "cyberCoreTiles"
@@ -42,6 +44,7 @@ CoD.cyberCoreTiles.new = function ( menu, controller )
 	cybercoreSubHeader:setShaderVector( 0, 0.06, 0, 0, 0 )
 	cybercoreSubHeader:setShaderVector( 1, 0.02, 0, 0, 0 )
 	cybercoreSubHeader:setShaderVector( 2, 1, 0, 0, 0 )
+
 	LUI.OverrideFunction_CallOriginalFirst( cybercoreSubHeader, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )
@@ -52,14 +55,17 @@ CoD.cyberCoreTiles.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Multicore = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Multicore",
@@ -68,6 +74,7 @@ CoD.cyberCoreTiles.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TitleGlow1:close()
 	end )

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.requirementLabel = InheritFrom( LUI.UIElement )
 CoD.requirementLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.requirementLabel )
 	self.id = "requirementLabel"
@@ -35,6 +37,7 @@ CoD.requirementLabel.new = function ( menu, controller )
 			requirementLabel2:setText( Engine.Localize( activeActionEntityText ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( requirementLabel2, "setText", function ( element, controller )
 		ScaleWidgetToLabelLeftJustify( self, element, -10 )
 	end )
@@ -53,6 +56,7 @@ CoD.requirementLabel.new = function ( menu, controller )
 			requirementLabel:setText( Engine.Localize( activeActionEntityText ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( requirementLabel, "setText", function ( element, controller )
 		ScaleWidgetToLabelLeftJustify( self, element, -10 )
 	end )
@@ -72,6 +76,7 @@ CoD.requirementLabel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				requirementLabel2:completeAnimation()
 				self.requirementLabel2:setAlpha( 0 )
 				self.clipFinished( requirementLabel2, {} )
@@ -80,12 +85,14 @@ CoD.requirementLabel.new = function ( menu, controller )
 		InUse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				requirementLabel2:completeAnimation()
 				self.requirementLabel2:setAlpha( 0.92 )
 				self.clipFinished( requirementLabel2, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "InUse",
@@ -102,6 +109,7 @@ CoD.requirementLabel.new = function ( menu, controller )
 			modelName = "progress"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TitleGlow1:close()
 		element.requirementLabel2:close()

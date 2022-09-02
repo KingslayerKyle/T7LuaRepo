@@ -4,9 +4,11 @@
 CoD.cursorhint_image = InheritFrom( LUI.UIElement )
 CoD.cursorhint_image.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cursorhint_image )
 	self.id = "cursorhint_image"
@@ -56,12 +58,15 @@ CoD.cursorhint_image.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				c1x1:completeAnimation()
 				self.c1x1:setAlpha( 0 )
 				self.clipFinished( c1x1, {} )
+
 				x1x4:completeAnimation()
 				self.x1x4:setAlpha( 0 )
 				self.clipFinished( x1x4, {} )
+
 				c1x2:completeAnimation()
 				self.c1x2:setAlpha( 0 )
 				self.clipFinished( c1x2, {} )
@@ -70,12 +75,15 @@ CoD.cursorhint_image.new = function ( menu, controller )
 		Active_1x1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				c1x1:completeAnimation()
 				self.c1x1:setAlpha( 1 )
 				self.clipFinished( c1x1, {} )
+
 				x1x4:completeAnimation()
 				self.x1x4:setAlpha( 0 )
 				self.clipFinished( x1x4, {} )
+
 				c1x2:completeAnimation()
 				self.c1x2:setAlpha( 0 )
 				self.clipFinished( c1x2, {} )
@@ -84,12 +92,15 @@ CoD.cursorhint_image.new = function ( menu, controller )
 		Active_2x1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				c1x1:completeAnimation()
 				self.c1x1:setAlpha( 0 )
 				self.clipFinished( c1x1, {} )
+
 				x1x4:completeAnimation()
 				self.x1x4:setAlpha( 0 )
 				self.clipFinished( x1x4, {} )
+
 				c1x2:completeAnimation()
 				self.c1x2:setAlpha( 1 )
 				self.clipFinished( c1x2, {} )
@@ -98,12 +109,15 @@ CoD.cursorhint_image.new = function ( menu, controller )
 		Active_4x1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				c1x1:completeAnimation()
 				self.c1x1:setAlpha( 0 )
 				self.clipFinished( c1x1, {} )
+
 				x1x4:completeAnimation()
 				self.x1x4:setAlpha( 1 )
 				self.clipFinished( x1x4, {} )
+
 				c1x2:completeAnimation()
 				self.c1x2:setAlpha( 0 )
 				self.clipFinished( c1x2, {} )
@@ -112,9 +126,11 @@ CoD.cursorhint_image.new = function ( menu, controller )
 		Out = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.c1x1:close()
 		element.x1x4:close()

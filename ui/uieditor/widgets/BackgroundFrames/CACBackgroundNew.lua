@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.CAC.cac_3dTitleIntermediary" )
 CoD.CACBackgroundNew = InheritFrom( LUI.UIElement )
 CoD.CACBackgroundNew.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CACBackgroundNew )
 	self.id = "CACBackgroundNew"
@@ -71,6 +73,7 @@ CoD.CACBackgroundNew.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				heroPreview:completeAnimation()
 				self.heroPreview:setAlpha( 0 )
 				self.clipFinished( heroPreview, {} )
@@ -79,6 +82,7 @@ CoD.CACBackgroundNew.new = function ( menu, controller )
 		DisplayHero = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				heroPreview:completeAnimation()
 				self.heroPreview:setAlpha( 1 )
 				self.clipFinished( heroPreview, {} )
@@ -87,6 +91,7 @@ CoD.CACBackgroundNew.new = function ( menu, controller )
 		NameAndWeapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				heroPreview:completeAnimation()
 				self.heroPreview:setLeftRight( false, false, -700, 800 )
 				self.heroPreview:setTopBottom( false, true, -138, 0 )
@@ -95,6 +100,7 @@ CoD.CACBackgroundNew.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DisplayHero",
@@ -117,9 +123,11 @@ CoD.CACBackgroundNew.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyNav"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		SetElementStateByElementName( self, "cac3dTitleIntermediary0", controller, "Update" )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.heroPreview:close()
 		element.PermanentUnlockTokensWidget:close()

@@ -4,9 +4,11 @@
 CoD.PrematchCountdown_IconGlowPanel = InheritFrom( LUI.UIElement )
 CoD.PrematchCountdown_IconGlowPanel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PrematchCountdown_IconGlowPanel )
 	self.id = "PrematchCountdown_IconGlowPanel"
@@ -27,6 +29,7 @@ CoD.PrematchCountdown_IconGlowPanel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

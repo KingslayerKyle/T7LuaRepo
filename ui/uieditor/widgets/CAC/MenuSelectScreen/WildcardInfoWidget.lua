@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.WildcardInfoWidget = InheritFrom( LUI.UIElement )
 CoD.WildcardInfoWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WildcardInfoWidget )
 	self.id = "WildcardInfoWidget"
@@ -83,18 +85,23 @@ CoD.WildcardInfoWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				tokenRefundBorder:completeAnimation()
 				self.tokenRefundBorder:setAlpha( 0 )
 				self.clipFinished( tokenRefundBorder, {} )
+
 				tokenRefundText:completeAnimation()
 				self.tokenRefundText:setAlpha( 0 )
 				self.clipFinished( tokenRefundText, {} )
+
 				cacButtonBoxLrgInactiveStroke:completeAnimation()
 				self.cacButtonBoxLrgInactiveStroke:setAlpha( 1 )
 				self.clipFinished( cacButtonBoxLrgInactiveStroke, {} )
+
 				descText:completeAnimation()
 				self.descText:setAlpha( 1 )
 				self.clipFinished( descText, {} )
+
 				nameLabel:completeAnimation()
 				self.nameLabel:setAlpha( 1 )
 				self.clipFinished( nameLabel, {} )
@@ -103,18 +110,23 @@ CoD.WildcardInfoWidget.new = function ( menu, controller )
 		NameOnly = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				tokenRefundBorder:completeAnimation()
 				self.tokenRefundBorder:setAlpha( 0 )
 				self.clipFinished( tokenRefundBorder, {} )
+
 				tokenRefundText:completeAnimation()
 				self.tokenRefundText:setAlpha( 0 )
 				self.clipFinished( tokenRefundText, {} )
+
 				cacButtonBoxLrgInactiveStroke:completeAnimation()
 				self.cacButtonBoxLrgInactiveStroke:setAlpha( 0 )
 				self.clipFinished( cacButtonBoxLrgInactiveStroke, {} )
+
 				descText:completeAnimation()
 				self.descText:setAlpha( 0 )
 				self.clipFinished( descText, {} )
+
 				nameLabel:completeAnimation()
 				self.nameLabel:setAlpha( 1 )
 				self.clipFinished( nameLabel, {} )
@@ -123,24 +135,30 @@ CoD.WildcardInfoWidget.new = function ( menu, controller )
 		PermanentUnlockRefund = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				tokenRefundBorder:completeAnimation()
 				self.tokenRefundBorder:setAlpha( 1 )
 				self.clipFinished( tokenRefundBorder, {} )
+
 				tokenRefundText:completeAnimation()
 				self.tokenRefundText:setAlpha( 1 )
 				self.clipFinished( tokenRefundText, {} )
+
 				cacButtonBoxLrgInactiveStroke:completeAnimation()
 				self.cacButtonBoxLrgInactiveStroke:setAlpha( 1 )
 				self.clipFinished( cacButtonBoxLrgInactiveStroke, {} )
+
 				descText:completeAnimation()
 				self.descText:setAlpha( 1 )
 				self.clipFinished( descText, {} )
+
 				nameLabel:completeAnimation()
 				self.nameLabel:setAlpha( 1 )
 				self.clipFinished( nameLabel, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.tokenRefundBorder:close()
 		element.cacButtonBoxLrgInactiveStroke:close()

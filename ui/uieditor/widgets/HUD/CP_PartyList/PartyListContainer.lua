@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CPSystems.Rigs.Notification_Rigs" )
 CoD.PartyListContainer = InheritFrom( LUI.UIElement )
 CoD.PartyListContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PartyListContainer )
 	self.id = "PartyListContainer"
@@ -99,17 +101,26 @@ CoD.PartyListContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PartyList:completeAnimation()
+
 				PartyList.playerScores:completeAnimation()
 				self.PartyList.playerScores:setAlpha( 0 )
 				self.PartyList.playerScores:setZoom( -30 )
 				self.clipFinished( PartyList, {} )
+
 				Rigs:completeAnimation()
+
 				Rigs.RigInfo2.rigImage:completeAnimation()
+
 				Rigs.RigInfo2.rigName:completeAnimation()
+
 				Rigs.RigInfo1.rigImage:completeAnimation()
+
 				Rigs.RigInfo1.rigName:completeAnimation()
+
 				Rigs.RigInfo0.rigImage:completeAnimation()
+
 				Rigs.RigInfo0.rigName:completeAnimation()
 				self.Rigs.RigInfo2.rigImage:setAlpha( 0 )
 				self.Rigs.RigInfo2.rigName:setAlpha( 0 )
@@ -121,6 +132,7 @@ CoD.PartyListContainer.new = function ( menu, controller )
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 1 )
+
 				local PartyListFrame2 = function ( PartyList, event )
 					local PartyListFrame3 = function ( PartyList, event )
 						local PartyListFrame4 = function ( PartyList, event )
@@ -275,6 +287,7 @@ CoD.PartyListContainer.new = function ( menu, controller )
 				end
 				
 				PartyList:completeAnimation()
+
 				PartyList.playerScores:completeAnimation()
 				self.PartyList.playerScores:setAlpha( 0 )
 				self.PartyList.playerScores:setZoom( -30 )
@@ -282,6 +295,7 @@ CoD.PartyListContainer.new = function ( menu, controller )
 			end,
 			HudStartRigs = function ()
 				self:setupElementClipCounter( 2 )
+
 				local PartyListFrame2 = function ( PartyList, event )
 					local PartyListFrame3 = function ( PartyList, event )
 						local PartyListFrame4 = function ( PartyList, event )
@@ -509,6 +523,7 @@ CoD.PartyListContainer.new = function ( menu, controller )
 				end
 				
 				PartyList:completeAnimation()
+
 				PartyList.playerScores:completeAnimation()
 				self.PartyList.playerScores:setAlpha( 0 )
 				self.PartyList.playerScores:setZoom( 5 )
@@ -1223,17 +1238,26 @@ CoD.PartyListContainer.new = function ( menu, controller )
 		HudStart = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PartyList:completeAnimation()
+
 				PartyList.playerScores:completeAnimation()
 				self.PartyList.playerScores:setAlpha( 1 )
 				self.PartyList.playerScores:setZoom( 0 )
 				self.clipFinished( PartyList, {} )
+
 				Rigs:completeAnimation()
+
 				Rigs.RigInfo2.rigImage:completeAnimation()
+
 				Rigs.RigInfo2.rigName:completeAnimation()
+
 				Rigs.RigInfo1.rigImage:completeAnimation()
+
 				Rigs.RigInfo1.rigName:completeAnimation()
+
 				Rigs.RigInfo0.rigImage:completeAnimation()
+
 				Rigs.RigInfo0.rigName:completeAnimation()
 				self.Rigs.RigInfo2.rigImage:setAlpha( 0 )
 				self.Rigs.RigInfo2.rigName:setAlpha( 0 )
@@ -1245,6 +1269,7 @@ CoD.PartyListContainer.new = function ( menu, controller )
 			end,
 			HudStop = function ()
 				self:setupElementClipCounter( 1 )
+
 				local PartyListFrame2 = function ( PartyList, event )
 					local PartyListFrame3 = function ( PartyList, event )
 						local PartyListFrame4 = function ( PartyList, event )
@@ -1449,6 +1474,7 @@ CoD.PartyListContainer.new = function ( menu, controller )
 				end
 				
 				PartyList:completeAnimation()
+
 				PartyList.playerScores:completeAnimation()
 				self.PartyList.playerScores:setAlpha( 1 )
 				self.PartyList.playerScores:setZoom( 0 )
@@ -1458,17 +1484,26 @@ CoD.PartyListContainer.new = function ( menu, controller )
 		HudStop = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PartyList:completeAnimation()
+
 				PartyList.playerScores:completeAnimation()
 				self.PartyList.playerScores:setAlpha( 0 )
 				self.PartyList.playerScores:setZoom( -30 )
 				self.clipFinished( PartyList, {} )
+
 				Rigs:completeAnimation()
+
 				Rigs.RigInfo2.rigImage:completeAnimation()
+
 				Rigs.RigInfo2.rigName:completeAnimation()
+
 				Rigs.RigInfo1.rigImage:completeAnimation()
+
 				Rigs.RigInfo1.rigName:completeAnimation()
+
 				Rigs.RigInfo0.rigImage:completeAnimation()
+
 				Rigs.RigInfo0.rigName:completeAnimation()
 				self.Rigs.RigInfo2.rigImage:setAlpha( 0 )
 				self.Rigs.RigInfo2.rigName:setAlpha( 0 )
@@ -1480,6 +1515,7 @@ CoD.PartyListContainer.new = function ( menu, controller )
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 1 )
+
 				local PartyListFrame2 = function ( PartyList, event )
 					local PartyListFrame3 = function ( PartyList, event )
 						local PartyListFrame4 = function ( PartyList, event )
@@ -1634,6 +1670,7 @@ CoD.PartyListContainer.new = function ( menu, controller )
 				end
 				
 				PartyList:completeAnimation()
+
 				PartyList.playerScores:completeAnimation()
 				self.PartyList.playerScores:setAlpha( 0 )
 				self.PartyList.playerScores:setZoom( -30 )
@@ -1641,6 +1678,7 @@ CoD.PartyListContainer.new = function ( menu, controller )
 			end,
 			HudStartRigs = function ()
 				self:setupElementClipCounter( 2 )
+
 				local PartyListFrame2 = function ( PartyList, event )
 					local PartyListFrame3 = function ( PartyList, event )
 						local PartyListFrame4 = function ( PartyList, event )
@@ -1868,6 +1906,7 @@ CoD.PartyListContainer.new = function ( menu, controller )
 				end
 				
 				PartyList:completeAnimation()
+
 				PartyList.playerScores:completeAnimation()
 				self.PartyList.playerScores:setAlpha( 0 )
 				self.PartyList.playerScores:setZoom( 5 )
@@ -2582,17 +2621,26 @@ CoD.PartyListContainer.new = function ( menu, controller )
 		HudStartRigs = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PartyList:completeAnimation()
+
 				PartyList.playerScores:completeAnimation()
 				self.PartyList.playerScores:setAlpha( 1 )
 				self.PartyList.playerScores:setZoom( 0 )
 				self.clipFinished( PartyList, {} )
+
 				Rigs:completeAnimation()
+
 				Rigs.RigInfo2.rigImage:completeAnimation()
+
 				Rigs.RigInfo2.rigName:completeAnimation()
+
 				Rigs.RigInfo1.rigImage:completeAnimation()
+
 				Rigs.RigInfo1.rigName:completeAnimation()
+
 				Rigs.RigInfo0.rigImage:completeAnimation()
+
 				Rigs.RigInfo0.rigName:completeAnimation()
 				self.Rigs.RigInfo2.rigImage:setAlpha( 0 )
 				self.Rigs.RigInfo2.rigName:setAlpha( 0 )
@@ -2604,6 +2652,7 @@ CoD.PartyListContainer.new = function ( menu, controller )
 			end,
 			HudStop = function ()
 				self:setupElementClipCounter( 1 )
+
 				local PartyListFrame2 = function ( PartyList, event )
 					local PartyListFrame3 = function ( PartyList, event )
 						local PartyListFrame4 = function ( PartyList, event )
@@ -2808,6 +2857,7 @@ CoD.PartyListContainer.new = function ( menu, controller )
 				end
 				
 				PartyList:completeAnimation()
+
 				PartyList.playerScores:completeAnimation()
 				self.PartyList.playerScores:setAlpha( 1 )
 				self.PartyList.playerScores:setZoom( 0 )
@@ -2815,6 +2865,7 @@ CoD.PartyListContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PartyList:close()
 		element.Rigs:close()

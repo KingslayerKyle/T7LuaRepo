@@ -4,9 +4,11 @@
 CoD.AmmoWidget_Fist = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_Fist.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_Fist )
 	self.id = "AmmoWidget_Fist"
@@ -25,12 +27,15 @@ CoD.AmmoWidget_Fist.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			AmmoUpdate = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			HeroWeapon = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

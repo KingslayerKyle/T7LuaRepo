@@ -14,9 +14,11 @@ end
 CoD.FE_ListHelp = InheritFrom( LUI.UIElement )
 CoD.FE_ListHelp.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_ListHelp )
 	self.id = "FE_ListHelp"
@@ -41,6 +43,7 @@ CoD.FE_ListHelp.new = function ( menu, controller )
 	Text:setLetterSpacing( 0.5 )
 	Text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	Text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( Text, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, -15 )
 	end )
@@ -58,12 +61,15 @@ CoD.FE_ListHelp.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0 )
 				self.clipFinished( Background, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 0 )
 				self.clipFinished( Text, {} )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 0 )
 				self.clipFinished( Image, {} )
@@ -72,18 +78,22 @@ CoD.FE_ListHelp.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0.75 )
 				self.clipFinished( Background, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 1 )
 				self.clipFinished( Text, {} )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 1 )
 				self.clipFinished( Image, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -116,6 +126,7 @@ CoD.FE_ListHelp.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyButtonUpdate"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Background:close()
 	end )

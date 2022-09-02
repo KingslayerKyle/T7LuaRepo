@@ -13,9 +13,11 @@ require( "ui.uieditor.widgets.buttonprompt" )
 CoD.GroupsSummaryForSearch = InheritFrom( LUI.UIElement )
 CoD.GroupsSummaryForSearch.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsSummaryForSearch )
 	self.id = "GroupsSummaryForSearch"
@@ -218,45 +220,59 @@ CoD.GroupsSummaryForSearch.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0 )
 				self.clipFinished( Backing, {} )
+
 				GroupMemberSummary:completeAnimation()
 				self.GroupMemberSummary:setAlpha( 1 )
 				self.clipFinished( GroupMemberSummary, {} )
+
 				Line1:completeAnimation()
 				self.Line1:setAlpha( 1 )
 				self.clipFinished( Line1, {} )
+
 				Line2:completeAnimation()
 				self.Line2:setAlpha( 1 )
 				self.clipFinished( Line2, {} )
+
 				cacItemTitleGlow0:completeAnimation()
 				self.cacItemTitleGlow0:setAlpha( 1 )
 				self.clipFinished( cacItemTitleGlow0, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.14 )
 				self.clipFinished( Glow, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 1 )
 				self.clipFinished( GroupEmblemWidget, {} )
+
 				StartMenuframenoBG00:completeAnimation()
 				self.StartMenuframenoBG00:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG00, {} )
+
 				GroupName:completeAnimation()
 				self.GroupName:setAlpha( 1 )
 				self.clipFinished( GroupName, {} )
+
 				DesciptionBacking:completeAnimation()
 				self.DesciptionBacking:setAlpha( 1 )
 				self.clipFinished( DesciptionBacking, {} )
+
 				Description:completeAnimation()
 				self.Description:setAlpha( 1 )
 				self.clipFinished( Description, {} )
+
 				GroupPrimaryWidget:completeAnimation()
 				self.GroupPrimaryWidget:setAlpha( 1 )
 				self.clipFinished( GroupPrimaryWidget, {} )
+
 				GroupsSummaryStatusWithJoinApproval:completeAnimation()
 				self.GroupsSummaryStatusWithJoinApproval:setAlpha( 1 )
 				self.clipFinished( GroupsSummaryStatusWithJoinApproval, {} )
+
 				buttonprompt:completeAnimation()
 				self.buttonprompt:setLeftRight( true, false, 91.5, 239.5 )
 				self.buttonprompt:setTopBottom( true, false, 470, 501 )
@@ -267,45 +283,59 @@ CoD.GroupsSummaryForSearch.new = function ( menu, controller )
 		NoGroupSelected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				Backing:completeAnimation()
 				self.Backing:setAlpha( 0 )
 				self.clipFinished( Backing, {} )
+
 				GroupMemberSummary:completeAnimation()
 				self.GroupMemberSummary:setAlpha( 0 )
 				self.clipFinished( GroupMemberSummary, {} )
+
 				Line1:completeAnimation()
 				self.Line1:setAlpha( 0 )
 				self.clipFinished( Line1, {} )
+
 				Line2:completeAnimation()
 				self.Line2:setAlpha( 0 )
 				self.clipFinished( Line2, {} )
+
 				cacItemTitleGlow0:completeAnimation()
 				self.cacItemTitleGlow0:setAlpha( 0 )
 				self.clipFinished( cacItemTitleGlow0, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 0 )
 				self.clipFinished( GroupEmblemWidget, {} )
+
 				StartMenuframenoBG00:completeAnimation()
 				self.StartMenuframenoBG00:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG00, {} )
+
 				GroupName:completeAnimation()
 				self.GroupName:setAlpha( 0 )
 				self.clipFinished( GroupName, {} )
+
 				DesciptionBacking:completeAnimation()
 				self.DesciptionBacking:setAlpha( 0 )
 				self.clipFinished( DesciptionBacking, {} )
+
 				Description:completeAnimation()
 				self.Description:setAlpha( 0 )
 				self.clipFinished( Description, {} )
+
 				GroupPrimaryWidget:completeAnimation()
 				self.GroupPrimaryWidget:setAlpha( 0 )
 				self.clipFinished( GroupPrimaryWidget, {} )
+
 				GroupsSummaryStatusWithJoinApproval:completeAnimation()
 				self.GroupsSummaryStatusWithJoinApproval:setAlpha( 0 )
 				self.clipFinished( GroupsSummaryStatusWithJoinApproval, {} )
+
 				buttonprompt:completeAnimation()
 				self.buttonprompt:setAlpha( 0 )
 				self.clipFinished( buttonprompt, {} )
@@ -314,44 +344,57 @@ CoD.GroupsSummaryForSearch.new = function ( menu, controller )
 		FriendsGroups = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				GroupMemberSummary:completeAnimation()
 				self.GroupMemberSummary:setAlpha( 1 )
 				self.clipFinished( GroupMemberSummary, {} )
+
 				Line1:completeAnimation()
 				self.Line1:setAlpha( 1 )
 				self.clipFinished( Line1, {} )
+
 				Line2:completeAnimation()
 				self.Line2:setAlpha( 1 )
 				self.clipFinished( Line2, {} )
+
 				cacItemTitleGlow0:completeAnimation()
 				self.cacItemTitleGlow0:setAlpha( 1 )
 				self.clipFinished( cacItemTitleGlow0, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0.14 )
 				self.clipFinished( Glow, {} )
+
 				GroupEmblemWidget:completeAnimation()
 				self.GroupEmblemWidget:setAlpha( 1 )
 				self.clipFinished( GroupEmblemWidget, {} )
+
 				StartMenuframenoBG00:completeAnimation()
 				self.StartMenuframenoBG00:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG00, {} )
+
 				GroupName:completeAnimation()
 				self.GroupName:setAlpha( 1 )
 				self.clipFinished( GroupName, {} )
+
 				DesciptionBacking:completeAnimation()
 				self.DesciptionBacking:setAlpha( 1 )
 				self.clipFinished( DesciptionBacking, {} )
+
 				Description:completeAnimation()
 				self.Description:setAlpha( 1 )
 				self.clipFinished( Description, {} )
+
 				GroupPrimaryWidget:completeAnimation()
 				self.GroupPrimaryWidget:setLeftRight( true, false, 9, 250 )
 				self.GroupPrimaryWidget:setTopBottom( true, false, 428, 470 )
 				self.GroupPrimaryWidget:setAlpha( 1 )
 				self.clipFinished( GroupPrimaryWidget, {} )
+
 				GroupsSummaryStatusWithJoinApproval:completeAnimation()
 				self.GroupsSummaryStatusWithJoinApproval:setAlpha( 1 )
 				self.clipFinished( GroupsSummaryStatusWithJoinApproval, {} )
+
 				buttonprompt:completeAnimation()
 				self.buttonprompt:setLeftRight( true, false, 88.5, 242.5 )
 				self.buttonprompt:setTopBottom( true, false, 460, 491 )
@@ -360,6 +403,7 @@ CoD.GroupsSummaryForSearch.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoGroupSelected",
@@ -390,6 +434,7 @@ CoD.GroupsSummaryForSearch.new = function ( menu, controller )
 			modelName = "groups.skipViewFriendsInGroup"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GroupMemberSummary:close()
 		element.cacItemTitleGlow0:close()

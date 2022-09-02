@@ -4,9 +4,11 @@
 CoD.CallingCards_cwl_default_sonyLogo = InheritFrom( LUI.UIElement )
 CoD.CallingCards_cwl_default_sonyLogo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_cwl_default_sonyLogo )
 	self.id = "CallingCards_cwl_default_sonyLogo"
@@ -26,18 +28,22 @@ CoD.CallingCards_cwl_default_sonyLogo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				sonyLogo:completeAnimation()
 				self.sonyLogo:setAlpha( 0 )
 				self.clipFinished( sonyLogo, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				sonyLogo:completeAnimation()
 				self.sonyLogo:setAlpha( 1 )
 				self.clipFinished( sonyLogo, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

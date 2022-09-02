@@ -4,9 +4,11 @@
 CoD.ScoreInfo_PanelCircleInternal = InheritFrom( LUI.UIElement )
 CoD.ScoreInfo_PanelCircleInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreInfo_PanelCircleInternal )
 	self.id = "ScoreInfo_PanelCircleInternal"

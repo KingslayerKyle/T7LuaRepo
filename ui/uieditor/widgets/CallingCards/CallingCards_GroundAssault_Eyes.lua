@@ -4,9 +4,11 @@
 CoD.CallingCards_GroundAssault_Eyes = InheritFrom( LUI.UIElement )
 CoD.CallingCards_GroundAssault_Eyes.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_GroundAssault_Eyes )
 	self.id = "CallingCards_GroundAssault_Eyes"
@@ -38,6 +40,7 @@ CoD.CallingCards_GroundAssault_Eyes.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local Image1Frame2 = function ( Image1, event )
 					local Image1Frame3 = function ( Image1, event )
 						local Image1Frame4 = function ( Image1, event )
@@ -156,6 +159,7 @@ CoD.CallingCards_GroundAssault_Eyes.new = function ( menu, controller )
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0.15 )
 				Image0Frame2( Image0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

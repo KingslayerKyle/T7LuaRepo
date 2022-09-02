@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BorderThin" )
 CoD.StartMenu_OnlineOnly = InheritFrom( LUI.UIElement )
 CoD.StartMenu_OnlineOnly.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_OnlineOnly )
 	self.id = "StartMenu_OnlineOnly"
@@ -39,6 +41,7 @@ CoD.StartMenu_OnlineOnly.new = function ( menu, controller )
 	TextBox0:setText( LocalizeToUpperString( "MENU_ONLINE_ONLY" ) )
 	TextBox0:setTTF( "fonts/RefrigeratorDeluxe-Regular.ttf" )
 	TextBox0:setLetterSpacing( 2 )
+
 	LUI.OverrideFunction_CallOriginalFirst( TextBox0, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 5 )
 	end )
@@ -49,12 +52,15 @@ CoD.StartMenu_OnlineOnly.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BorderThin0:close()
 	end )

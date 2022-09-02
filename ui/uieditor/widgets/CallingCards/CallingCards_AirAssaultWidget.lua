@@ -4,9 +4,11 @@
 CoD.CallingCards_AirAssaultWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_AirAssaultWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_AirAssaultWidget )
 	self.id = "CallingCards_AirAssaultWidget"
@@ -55,6 +57,7 @@ CoD.CallingCards_AirAssaultWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local GlowOrangeOverFrame2 = function ( GlowOrangeOver, event )
 					local GlowOrangeOverFrame3 = function ( GlowOrangeOver, event )
 						local GlowOrangeOverFrame4 = function ( GlowOrangeOver, event )
@@ -136,6 +139,7 @@ CoD.CallingCards_AirAssaultWidget.new = function ( menu, controller )
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				GlowOrangeOverFrame2( GlowOrangeOver, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

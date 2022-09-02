@@ -4,9 +4,11 @@
 CoD.GunsmithVariantAttachmentHeader = InheritFrom( LUI.UIElement )
 CoD.GunsmithVariantAttachmentHeader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunsmithVariantAttachmentHeader )
 	self.id = "GunsmithVariantAttachmentHeader"
@@ -29,6 +31,7 @@ CoD.GunsmithVariantAttachmentHeader.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				text:completeAnimation()
 				self.text:setRGB( 1, 1, 1 )
 				self.text:setAlpha( 1 )
@@ -38,6 +41,7 @@ CoD.GunsmithVariantAttachmentHeader.new = function ( menu, controller )
 		Focus = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				text:completeAnimation()
 				self.text:setRGB( 1, 1, 1 )
 				self.clipFinished( text, {} )
@@ -46,6 +50,7 @@ CoD.GunsmithVariantAttachmentHeader.new = function ( menu, controller )
 		NotFocus = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				text:completeAnimation()
 				self.text:setRGB( 0.51, 0.49, 0.49 )
 				self.clipFinished( text, {} )

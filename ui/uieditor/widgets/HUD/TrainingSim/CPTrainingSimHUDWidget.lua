@@ -58,6 +58,7 @@ local PostLoadFunc = function ( self, controller, menu )
 			self.CPTrainingSimRounds.currentRound:setText( Engine.Localize( modelValue ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Score:close()
 	end )
@@ -66,9 +67,11 @@ end
 CoD.CPTrainingSimHUDWidget = InheritFrom( LUI.UIElement )
 CoD.CPTrainingSimHUDWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CPTrainingSimHUDWidget )
 	self.id = "CPTrainingSimHUDWidget"
@@ -155,6 +158,7 @@ CoD.CPTrainingSimHUDWidget.new = function ( menu, controller )
 	Score:setShaderVector( 4, 0, 0, 0, 0 )
 	Score:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	Score:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( Score, "setText", function ( element, controller )
 		TrimLabelIfLanguageReversed( self, element )
 	end )

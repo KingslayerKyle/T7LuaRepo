@@ -32,9 +32,11 @@ end
 CoD.StartMenu_Options_GamepadLayoutOption = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_GamepadLayoutOption.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_GamepadLayoutOption )
 	self.id = "StartMenu_Options_GamepadLayoutOption"
@@ -118,47 +120,60 @@ CoD.StartMenu_Options_GamepadLayoutOption.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				fullBorder:completeAnimation()
 				self.fullBorder:setAlpha( 0 )
 				self.clipFinished( fullBorder, {} )
+
 				actionText:completeAnimation()
 				self.actionText:setAlpha( 1 )
 				self.clipFinished( actionText, {} )
+
 				valueBacking:completeAnimation()
 				self.valueBacking:setRGB( 0.39, 0.39, 0.39 )
 				self.clipFinished( valueBacking, {} )
+
 				valueText:completeAnimation()
 				self.valueText:setAlpha( 0.5 )
 				self.clipFinished( valueText, {} )
+
 				StartMenuframenoBG00:completeAnimation()
 				self.StartMenuframenoBG00:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG00, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				fullBorder:completeAnimation()
 				self.fullBorder:setAlpha( 1 )
 				self.clipFinished( fullBorder, {} )
+
 				actionText:completeAnimation()
 				self.actionText:setAlpha( 1 )
 				self.clipFinished( actionText, {} )
+
 				valueBacking:completeAnimation()
 				self.valueBacking:setRGB( 0.87, 0.37, 0 )
 				self.clipFinished( valueBacking, {} )
+
 				valueText:completeAnimation()
 				self.valueText:setAlpha( 1 )
 				self.clipFinished( valueText, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, 0, 0 )
 				self.FocusBarT:setTopBottom( true, false, 0, 4 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, 0, 0 )
 				self.FocusBarB:setTopBottom( false, true, -5.5, 0 )
@@ -169,15 +184,18 @@ CoD.StartMenu_Options_GamepadLayoutOption.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				actionText:completeAnimation()
 				self.actionText:setRGB( 0.2, 0.2, 0.2 )
 				self.clipFinished( actionText, {} )
+
 				valueText:completeAnimation()
 				self.valueText:setRGB( 0.2, 0.2, 0.2 )
 				self.clipFinished( valueText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -194,6 +212,7 @@ CoD.StartMenu_Options_GamepadLayoutOption.new = function ( menu, controller )
 			modelName = "disabled"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.fullBorder:close()
 		element.StartMenuframenoBG00:close()

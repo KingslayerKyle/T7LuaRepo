@@ -19,9 +19,11 @@ end
 CoD.PrimaryWeaponWidget = InheritFrom( LUI.UIElement )
 CoD.PrimaryWeaponWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PrimaryWeaponWidget )
 	self.id = "PrimaryWeaponWidget"
@@ -112,6 +114,7 @@ CoD.PrimaryWeaponWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				weaponLevel:completeAnimation()
 				self.weaponLevel:setLeftRight( true, false, 94, 126 )
 				self.weaponLevel:setTopBottom( false, true, -130, -97 )
@@ -121,6 +124,7 @@ CoD.PrimaryWeaponWidget.new = function ( menu, controller )
 		DefaultState_PC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				weaponLevel:completeAnimation()
 				self.weaponLevel:setLeftRight( true, false, 48.5, 80.5 )
 				self.weaponLevel:setTopBottom( false, true, -130, -97 )
@@ -128,6 +132,7 @@ CoD.PrimaryWeaponWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DefaultState_PC",
@@ -162,6 +167,7 @@ CoD.PrimaryWeaponWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.WeaponItemModel:close()
 		element.weaponLevel:close()

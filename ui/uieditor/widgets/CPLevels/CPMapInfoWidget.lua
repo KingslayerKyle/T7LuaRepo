@@ -4,9 +4,11 @@
 CoD.CPMapInfoWidget = InheritFrom( LUI.UIElement )
 CoD.CPMapInfoWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CPMapInfoWidget )
 	self.id = "CPMapInfoWidget"

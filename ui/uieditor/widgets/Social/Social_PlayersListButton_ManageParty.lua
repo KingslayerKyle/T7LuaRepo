@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Social.Social_PlayersListButton_Presence" )
 CoD.Social_PlayersListButton_ManageParty = InheritFrom( LUI.UIElement )
 CoD.Social_PlayersListButton_ManageParty.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_PlayersListButton_ManageParty )
 	self.id = "Social_PlayersListButton_ManageParty"
@@ -185,30 +187,38 @@ CoD.Social_PlayersListButton_ManageParty.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				Socialbackground000:completeAnimation()
 				self.Socialbackground000:setAlpha( 0 )
 				self.clipFinished( Socialbackground000, {} )
+
 				ManagePartyOperation:completeAnimation()
 				self.ManagePartyOperation:setAlpha( 0 )
 				self.clipFinished( ManagePartyOperation, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBorder:completeAnimation()
 				self.FocusBorder:setAlpha( 0 )
 				self.clipFinished( FocusBorder, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				local Socialbackground000Frame2 = function ( Socialbackground000, event )
 					if not event.interrupted then
 						Socialbackground000:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -224,6 +234,7 @@ CoD.Social_PlayersListButton_ManageParty.new = function ( menu, controller )
 				Socialbackground000:completeAnimation()
 				self.Socialbackground000:setAlpha( 0 )
 				Socialbackground000Frame2( Socialbackground000, {} )
+
 				ManagePartyOperation:completeAnimation()
 				self.ManagePartyOperation:setAlpha( 0.5 )
 				self.clipFinished( ManagePartyOperation, {} )
@@ -577,21 +588,26 @@ CoD.Social_PlayersListButton_ManageParty.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				Socialbackground000:completeAnimation()
 				self.Socialbackground000:setAlpha( 1 )
 				self.clipFinished( Socialbackground000, {} )
+
 				ManagePartyOperation:completeAnimation()
 				self.ManagePartyOperation:setAlpha( 1 )
 				self.clipFinished( ManagePartyOperation, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				local Socialbackground000Frame2 = function ( Socialbackground000, event )
 					if not event.interrupted then
 						Socialbackground000:beginAnimation( "keyframe", 90, false, false, CoD.TweenType.Linear )
@@ -607,6 +623,7 @@ CoD.Social_PlayersListButton_ManageParty.new = function ( menu, controller )
 				Socialbackground000:completeAnimation()
 				self.Socialbackground000:setAlpha( 1 )
 				Socialbackground000Frame2( Socialbackground000, {} )
+
 				ManagePartyOperation:completeAnimation()
 				self.ManagePartyOperation:setAlpha( 0.5 )
 				self.clipFinished( ManagePartyOperation, {} )
@@ -986,6 +1003,7 @@ CoD.Social_PlayersListButton_ManageParty.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Socialbackground0000:close()
 		element.Socialbackground00:close()

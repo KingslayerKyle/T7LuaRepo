@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMPromotional.ZM_Promo_DoubleVialWidgetListItem" )
 CoD.ZM_PromoListItem = InheritFrom( LUI.UIElement )
 CoD.ZM_PromoListItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZM_PromoListItem )
 	self.id = "ZM_PromoListItem"
@@ -62,18 +64,23 @@ CoD.ZM_PromoListItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				FirstOneFree:completeAnimation()
 				self.FirstOneFree:setAlpha( 0 )
 				self.clipFinished( FirstOneFree, {} )
+
 				ZMPromoDoubleVialWidget:completeAnimation()
 				self.ZMPromoDoubleVialWidget:setAlpha( 0 )
 				self.clipFinished( ZMPromoDoubleVialWidget, {} )
+
 				DoubleWeaponXP:completeAnimation()
 				self.DoubleWeaponXP:setAlpha( 0 )
 				self.clipFinished( DoubleWeaponXP, {} )
+
 				DoubleXP:completeAnimation()
 				self.DoubleXP:setAlpha( 0 )
 				self.clipFinished( DoubleXP, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 0 )
 				self.clipFinished( Text, {} )
@@ -82,18 +89,23 @@ CoD.ZM_PromoListItem.new = function ( menu, controller )
 		DoubleXP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				FirstOneFree:completeAnimation()
 				self.FirstOneFree:setAlpha( 0 )
 				self.clipFinished( FirstOneFree, {} )
+
 				ZMPromoDoubleVialWidget:completeAnimation()
 				self.ZMPromoDoubleVialWidget:setAlpha( 0 )
 				self.clipFinished( ZMPromoDoubleVialWidget, {} )
+
 				DoubleWeaponXP:completeAnimation()
 				self.DoubleWeaponXP:setAlpha( 0 )
 				self.clipFinished( DoubleWeaponXP, {} )
+
 				DoubleXP:completeAnimation()
 				self.DoubleXP:setAlpha( 1 )
 				self.clipFinished( DoubleXP, {} )
+
 				Text:completeAnimation()
 				self.Text:setRGB( 1, 1, 1 )
 				self.Text:setAlpha( 1 )
@@ -103,18 +115,23 @@ CoD.ZM_PromoListItem.new = function ( menu, controller )
 		DoubleWeaponXP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				FirstOneFree:completeAnimation()
 				self.FirstOneFree:setAlpha( 0 )
 				self.clipFinished( FirstOneFree, {} )
+
 				ZMPromoDoubleVialWidget:completeAnimation()
 				self.ZMPromoDoubleVialWidget:setAlpha( 0 )
 				self.clipFinished( ZMPromoDoubleVialWidget, {} )
+
 				DoubleWeaponXP:completeAnimation()
 				self.DoubleWeaponXP:setAlpha( 1 )
 				self.clipFinished( DoubleWeaponXP, {} )
+
 				DoubleXP:completeAnimation()
 				self.DoubleXP:setAlpha( 0 )
 				self.clipFinished( DoubleXP, {} )
+
 				Text:completeAnimation()
 				self.Text:setRGB( 1, 0.87, 0.25 )
 				self.Text:setAlpha( 1 )
@@ -124,18 +141,23 @@ CoD.ZM_PromoListItem.new = function ( menu, controller )
 		DoubleVial = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				FirstOneFree:completeAnimation()
 				self.FirstOneFree:setAlpha( 0 )
 				self.clipFinished( FirstOneFree, {} )
+
 				ZMPromoDoubleVialWidget:completeAnimation()
 				self.ZMPromoDoubleVialWidget:setAlpha( 1 )
 				self.clipFinished( ZMPromoDoubleVialWidget, {} )
+
 				DoubleWeaponXP:completeAnimation()
 				self.DoubleWeaponXP:setAlpha( 0 )
 				self.clipFinished( DoubleWeaponXP, {} )
+
 				DoubleXP:completeAnimation()
 				self.DoubleXP:setAlpha( 0 )
 				self.clipFinished( DoubleXP, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 0 )
 				self.clipFinished( Text, {} )
@@ -144,24 +166,30 @@ CoD.ZM_PromoListItem.new = function ( menu, controller )
 		FirstOneFree = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				FirstOneFree:completeAnimation()
 				self.FirstOneFree:setAlpha( 1 )
 				self.clipFinished( FirstOneFree, {} )
+
 				ZMPromoDoubleVialWidget:completeAnimation()
 				self.ZMPromoDoubleVialWidget:setAlpha( 0 )
 				self.clipFinished( ZMPromoDoubleVialWidget, {} )
+
 				DoubleWeaponXP:completeAnimation()
 				self.DoubleWeaponXP:setAlpha( 0 )
 				self.clipFinished( DoubleWeaponXP, {} )
+
 				DoubleXP:completeAnimation()
 				self.DoubleXP:setAlpha( 0 )
 				self.clipFinished( DoubleXP, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 0 )
 				self.clipFinished( Text, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DoubleXP",
@@ -196,6 +224,7 @@ CoD.ZM_PromoListItem.new = function ( menu, controller )
 			modelName = "type"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZMPromoDoubleVialWidget:close()
 	end )

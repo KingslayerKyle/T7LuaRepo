@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.Loot9.CallingCards_loot_hotrod_hand" 
 CoD.CallingCards_loot_hotrod = InheritFrom( LUI.UIElement )
 CoD.CallingCards_loot_hotrod.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_loot_hotrod )
 	self.id = "CallingCards_loot_hotrod"
@@ -165,6 +167,7 @@ CoD.CallingCards_loot_hotrod.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
@@ -547,6 +550,7 @@ CoD.CallingCards_loot_hotrod.new = function ( menu, controller )
 				self.smoke3:setAlpha( 0 )
 				self.smoke3:setZRot( 42 )
 				smoke3Frame2( smoke3, {} )
+
 				fireTile:completeAnimation()
 				self.fireTile:setLeftRight( true, false, 123, 530.33 )
 				self.fireTile:setTopBottom( true, false, 14, 86.74 )
@@ -554,6 +558,7 @@ CoD.CallingCards_loot_hotrod.new = function ( menu, controller )
 				self.fireTile:setShaderVector( 0, 1, 1, 0, 0 )
 				self.fireTile:setShaderVector( 1, 0.3, 0, 0, 0 )
 				self.clipFinished( fireTile, {} )
+
 				fireFlipbook:completeAnimation()
 				self.fireFlipbook:setAlpha( 1 )
 				self.clipFinished( fireFlipbook, {} )
@@ -2590,10 +2595,12 @@ CoD.CallingCards_loot_hotrod.new = function ( menu, controller )
 				self.carfrontsheen:setMaterial( LUI.UIImage.GetCachedMaterial( "sw4_2d_bitchin_glint_reveal" ) )
 				self.carfrontsheen:setShaderVector( 0, 0, 0, 0, 0 )
 				carfrontsheenFrame2( carfrontsheen, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.devilhand:close()
 	end )

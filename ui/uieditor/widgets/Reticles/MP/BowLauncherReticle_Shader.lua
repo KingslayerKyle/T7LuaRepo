@@ -8,9 +8,11 @@ end
 CoD.BowLauncherReticle_Shader = InheritFrom( LUI.UIElement )
 CoD.BowLauncherReticle_Shader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BowLauncherReticle_Shader )
 	self.id = "BowLauncherReticle_Shader"

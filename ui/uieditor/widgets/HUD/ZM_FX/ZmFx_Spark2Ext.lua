@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_FX.ZmFx_Spark1Img" )
 CoD.ZmFx_Spark2Ext = InheritFrom( LUI.UIElement )
 CoD.ZmFx_Spark2Ext.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmFx_Spark2Ext )
 	self.id = "ZmFx_Spark2Ext"

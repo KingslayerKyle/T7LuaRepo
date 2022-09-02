@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Freerun.FR_TopScoreWidget" )
 CoD.FR_TopScoreContainer = InheritFrom( LUI.UIElement )
 CoD.FR_TopScoreContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.FR_TopScoreContainer )
 	self.id = "FR_TopScoreContainer"
@@ -30,17 +32,20 @@ CoD.FR_TopScoreContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FRTopScoreWidget:completeAnimation()
 				self.FRTopScoreWidget:setAlpha( 1 )
 				self.clipFinished( FRTopScoreWidget, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FRTopScoreWidgetFrame2 = function ( FRTopScoreWidget, event )
 					if not event.interrupted then
 						FRTopScoreWidget:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -59,6 +64,7 @@ CoD.FR_TopScoreContainer.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FRTopScoreWidgetFrame2 = function ( FRTopScoreWidget, event )
 					if not event.interrupted then
 						FRTopScoreWidget:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -77,6 +83,7 @@ CoD.FR_TopScoreContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FRTopScoreWidget:close()
 	end )

@@ -13,9 +13,11 @@ require( "ui.uieditor.widgets.AAR.RewardsScreen.MP.BlackmarketRewards54i" )
 CoD.IncentiveRewardsCarouselItemInternal = InheritFrom( LUI.UIElement )
 CoD.IncentiveRewardsCarouselItemInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.IncentiveRewardsCarouselItemInternal )
 	self.id = "IncentiveRewardsCarouselItemInternal"
@@ -281,25 +283,34 @@ CoD.IncentiveRewardsCarouselItemInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				IndividualRewardItem1:completeAnimation()
+
 				IndividualRewardItem1.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem1.NotificationRewardBorder:setRGB( 0, 0, 0 )
 				self.clipFinished( IndividualRewardItem1, {} )
+
 				IndividualRewardItem2:completeAnimation()
+
 				IndividualRewardItem2.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem2.NotificationRewardBorder:setRGB( 0, 0, 0 )
 				self.clipFinished( IndividualRewardItem2, {} )
+
 				IndividualRewardItem3:completeAnimation()
+
 				IndividualRewardItem3.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem3.NotificationRewardBorder:setRGB( 0, 0, 0 )
 				self.clipFinished( IndividualRewardItem3, {} )
+
 				IndividualRewardItem4:completeAnimation()
+
 				IndividualRewardItem4.NotificationRewardBorder:completeAnimation()
 				self.IndividualRewardItem4.NotificationRewardBorder:setRGB( 0, 0, 0 )
 				self.clipFinished( IndividualRewardItem4, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BorderBakedSolid0:close()
 		element.cacButtonBoxLrgInactiveStroke0:close()

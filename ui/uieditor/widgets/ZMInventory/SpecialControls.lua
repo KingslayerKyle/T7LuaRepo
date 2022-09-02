@@ -4,9 +4,11 @@
 CoD.SpecialControls = InheritFrom( LUI.UIElement )
 CoD.SpecialControls.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpecialControls )
 	self.id = "SpecialControls"
@@ -28,6 +30,7 @@ CoD.SpecialControls.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ControlHints:completeAnimation()
 				self.ControlHints:setAlpha( 0 )
 				self.clipFinished( ControlHints, {} )
@@ -36,12 +39,14 @@ CoD.SpecialControls.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ControlHints:completeAnimation()
 				self.ControlHints:setAlpha( 1 )
 				self.clipFinished( ControlHints, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

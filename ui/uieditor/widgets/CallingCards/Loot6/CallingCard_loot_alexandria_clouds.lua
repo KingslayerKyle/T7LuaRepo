@@ -4,9 +4,11 @@
 CoD.CallingCard_loot_alexandria_clouds = InheritFrom( LUI.UIElement )
 CoD.CallingCard_loot_alexandria_clouds.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCard_loot_alexandria_clouds )
 	self.id = "CallingCard_loot_alexandria_clouds"
@@ -33,6 +35,7 @@ CoD.CallingCard_loot_alexandria_clouds.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local cloud1Frame2 = function ( cloud1, event )
 					local cloud1Frame3 = function ( cloud1, event )
 						local cloud1Frame4 = function ( cloud1, event )
@@ -120,6 +123,7 @@ CoD.CallingCard_loot_alexandria_clouds.new = function ( menu, controller )
 				cloud2:setTopBottom( true, false, 0, 48 )
 				cloud2:setAlpha( 0 )
 				cloud2:registerEventHandler( "transition_complete_keyframe", f2_local1 )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

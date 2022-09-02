@@ -25,9 +25,11 @@ end
 CoD.CodCasterHeaderTeamBased = InheritFrom( LUI.UIElement )
 CoD.CodCasterHeaderTeamBased.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterHeaderTeamBased )
 	self.id = "CodCasterHeaderTeamBased"
@@ -331,15 +333,18 @@ CoD.CodCasterHeaderTeamBased.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				codcasterScoreLogoWidgetDarkOps:completeAnimation()
 				self.codcasterScoreLogoWidgetDarkOps:setScale( 1 )
 				self.clipFinished( codcasterScoreLogoWidgetDarkOps, {} )
+
 				codcasterRoundsContainer:completeAnimation()
 				self.codcasterRoundsContainer:setAlpha( 1 )
 				self.clipFinished( codcasterRoundsContainer, {} )
 			end,
 			SpectatingTeamAxis = function ()
 				self:setupElementClipCounter( 3 )
+
 				local codcasterScoreLogoWidgetDarkOpsFrame2 = function ( codcasterScoreLogoWidgetDarkOps, event )
 					local codcasterScoreLogoWidgetDarkOpsFrame3 = function ( codcasterScoreLogoWidgetDarkOps, event )
 						if not event.interrupted then
@@ -426,6 +431,7 @@ CoD.CodCasterHeaderTeamBased.new = function ( menu, controller )
 			end,
 			SpectatingTeamAllies = function ()
 				self:setupElementClipCounter( 3 )
+
 				local codcasterScoreLogoWidgetBlackOpsFrame2 = function ( codcasterScoreLogoWidgetBlackOps, event )
 					local codcasterScoreLogoWidgetBlackOpsFrame3 = function ( codcasterScoreLogoWidgetBlackOps, event )
 						if not event.interrupted then
@@ -514,18 +520,22 @@ CoD.CodCasterHeaderTeamBased.new = function ( menu, controller )
 		TenThousandPLus = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				teamScoreDarkOps:completeAnimation()
 				self.teamScoreDarkOps:setScale( 0.7 )
 				self.clipFinished( teamScoreDarkOps, {} )
+
 				teamScoreBlackOps:completeAnimation()
 				self.teamScoreBlackOps:setScale( 0.7 )
 				self.clipFinished( teamScoreBlackOps, {} )
+
 				codcasterRoundsContainer:completeAnimation()
 				self.codcasterRoundsContainer:setAlpha( 1 )
 				self.clipFinished( codcasterRoundsContainer, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CodCasterTimer:close()
 		element.CodCasterHeaderGameModeWidget:close()

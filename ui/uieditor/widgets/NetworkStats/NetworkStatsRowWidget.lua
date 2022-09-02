@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ButtonPanel" )
 CoD.NetworkStatsRowWidget = InheritFrom( LUI.UIElement )
 CoD.NetworkStatsRowWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.NetworkStatsRowWidget )
 	self.id = "NetworkStatsRowWidget"

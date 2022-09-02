@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.ZMInventory.ElementalArrows.ElementalArrowItem" )
 CoD.CastleElementalArrowNotificationWidgets = InheritFrom( LUI.UIElement )
 CoD.CastleElementalArrowNotificationWidgets.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CastleElementalArrowNotificationWidgets )
 	self.id = "CastleElementalArrowNotificationWidgets"
@@ -304,21 +306,27 @@ CoD.CastleElementalArrowNotificationWidgets.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				RitualItem1:completeAnimation()
 				self.RitualItem1:setAlpha( 0 )
 				self.clipFinished( RitualItem1, {} )
+
 				RitualItem2:completeAnimation()
 				self.RitualItem2:setAlpha( 0 )
 				self.clipFinished( RitualItem2, {} )
+
 				RitualItem3:completeAnimation()
 				self.RitualItem3:setAlpha( 0 )
 				self.clipFinished( RitualItem3, {} )
+
 				RitualItem4:completeAnimation()
 				self.RitualItem4:setAlpha( 0 )
 				self.clipFinished( RitualItem4, {} )
@@ -327,21 +335,27 @@ CoD.CastleElementalArrowNotificationWidgets.new = function ( menu, controller )
 		Show1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 1 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				RitualItem1:completeAnimation()
 				self.RitualItem1:setAlpha( 1 )
 				self.clipFinished( RitualItem1, {} )
+
 				RitualItem2:completeAnimation()
 				self.RitualItem2:setAlpha( 0 )
 				self.clipFinished( RitualItem2, {} )
+
 				RitualItem3:completeAnimation()
 				self.RitualItem3:setAlpha( 0 )
 				self.clipFinished( RitualItem3, {} )
+
 				RitualItem4:completeAnimation()
 				self.RitualItem4:setAlpha( 0 )
 				self.clipFinished( RitualItem4, {} )
@@ -350,21 +364,27 @@ CoD.CastleElementalArrowNotificationWidgets.new = function ( menu, controller )
 		Show2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 1 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				RitualItem1:completeAnimation()
 				self.RitualItem1:setAlpha( 0 )
 				self.clipFinished( RitualItem1, {} )
+
 				RitualItem2:completeAnimation()
 				self.RitualItem2:setAlpha( 1 )
 				self.clipFinished( RitualItem2, {} )
+
 				RitualItem3:completeAnimation()
 				self.RitualItem3:setAlpha( 0 )
 				self.clipFinished( RitualItem3, {} )
+
 				RitualItem4:completeAnimation()
 				self.RitualItem4:setAlpha( 0 )
 				self.clipFinished( RitualItem4, {} )
@@ -373,21 +393,27 @@ CoD.CastleElementalArrowNotificationWidgets.new = function ( menu, controller )
 		Show3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 1 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				RitualItem1:completeAnimation()
 				self.RitualItem1:setAlpha( 0 )
 				self.clipFinished( RitualItem1, {} )
+
 				RitualItem2:completeAnimation()
 				self.RitualItem2:setAlpha( 0 )
 				self.clipFinished( RitualItem2, {} )
+
 				RitualItem3:completeAnimation()
 				self.RitualItem3:setAlpha( 1 )
 				self.clipFinished( RitualItem3, {} )
+
 				RitualItem4:completeAnimation()
 				self.RitualItem4:setAlpha( 0 )
 				self.clipFinished( RitualItem4, {} )
@@ -396,27 +422,34 @@ CoD.CastleElementalArrowNotificationWidgets.new = function ( menu, controller )
 		Show4 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 1 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				RitualItem1:completeAnimation()
 				self.RitualItem1:setAlpha( 0 )
 				self.clipFinished( RitualItem1, {} )
+
 				RitualItem2:completeAnimation()
 				self.RitualItem2:setAlpha( 0 )
 				self.clipFinished( RitualItem2, {} )
+
 				RitualItem3:completeAnimation()
 				self.RitualItem3:setAlpha( 0 )
 				self.clipFinished( RitualItem3, {} )
+
 				RitualItem4:completeAnimation()
 				self.RitualItem4:setAlpha( 1 )
 				self.clipFinished( RitualItem4, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Show1",
@@ -507,6 +540,7 @@ CoD.CastleElementalArrowNotificationWidgets.new = function ( menu, controller )
 			modelName = "zmInventory.widget_weap_quest_demon"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmFxSpark20:close()
 		element.RitualItem1:close()

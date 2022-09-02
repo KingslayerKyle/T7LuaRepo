@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.MP.MatchSettings.matchSettingsTitle" )
 CoD.Arena_MatchSettingInfo = InheritFrom( LUI.UIElement )
 CoD.Arena_MatchSettingInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Arena_MatchSettingInfo )
 	self.id = "Arena_MatchSettingInfo"

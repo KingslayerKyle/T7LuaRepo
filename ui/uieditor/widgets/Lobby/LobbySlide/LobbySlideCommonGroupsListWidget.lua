@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.LobbySlide.LobbySlideCommonGroupsListWidgetG
 CoD.LobbySlideCommonGroupsListWidget = InheritFrom( LUI.UIElement )
 CoD.LobbySlideCommonGroupsListWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbySlideCommonGroupsListWidget )
 	self.id = "LobbySlideCommonGroupsListWidget"
@@ -50,32 +52,39 @@ CoD.LobbySlideCommonGroupsListWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				LobbySlideCommonGroupsListWidgetGroupName:completeAnimation()
 				self.LobbySlideCommonGroupsListWidgetGroupName:setRGB( 1, 1, 1 )
 				self.clipFinished( LobbySlideCommonGroupsListWidgetGroupName, {} )
+
 				PrimaryTag:completeAnimation()
 				self.PrimaryTag:setAlpha( 0 )
 				self.clipFinished( PrimaryTag, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		PrimaryGroup = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				LobbySlideCommonGroupsListWidgetGroupName:completeAnimation()
 				self.LobbySlideCommonGroupsListWidgetGroupName:setRGB( 1, 0.41, 0 )
 				self.clipFinished( LobbySlideCommonGroupsListWidgetGroupName, {} )
+
 				PrimaryTag:completeAnimation()
 				self.PrimaryTag:setAlpha( 1 )
 				self.clipFinished( PrimaryTag, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "PrimaryGroup",
@@ -92,6 +101,7 @@ CoD.LobbySlideCommonGroupsListWidget.new = function ( menu, controller )
 			modelName = "primaryGroup"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LobbySlideCommonGroupsListWidgetGroupName:close()
 	end )

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.SystemOverlays.systemOverlay_Layout_SavePaintjob" 
 CoD.systemOverlay_SavePaintjobFrame = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_SavePaintjobFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_SavePaintjobFrame )
 	self.id = "systemOverlay_SavePaintjobFrame"
@@ -36,6 +38,7 @@ CoD.systemOverlay_SavePaintjobFrame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.foreground:close()
 	end )

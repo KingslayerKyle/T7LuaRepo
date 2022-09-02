@@ -188,9 +188,11 @@ end
 CoD.SDWaypointContainer = InheritFrom( LUI.UIElement )
 CoD.SDWaypointContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SDWaypointContainer )
 	self.id = "SDWaypointContainer"

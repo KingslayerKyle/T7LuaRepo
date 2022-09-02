@@ -4,6 +4,7 @@
 require( "ui.uieditor.widgets.FooterButtonPrompt" )
 
 local PostLoadFunc = function ( self, controller, menu )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		self:processEvent( {
 			name = "resize_prompt"
@@ -28,6 +29,7 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DemoPlaybackControlsButtons )
 	self.id = "DemoPlaybackControlsButtons"
@@ -721,51 +723,61 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		PlaybackMode = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ChooseMode:completeAnimation()
 				self.ChooseMode:setLeftRight( true, false, 235, 367.25 )
 				self.ChooseMode:setTopBottom( true, false, 0, 32 )
 				self.ChooseMode:setAlpha( 0 )
 				self.clipFinished( ChooseMode, {} )
+
 				TogglePlayPause:completeAnimation()
 				self.TogglePlayPause:setLeftRight( true, false, 367.25, 488.25 )
 				self.TogglePlayPause:setTopBottom( true, false, 0, 32 )
 				self.TogglePlayPause:setAlpha( 0 )
 				self.clipFinished( TogglePlayPause, {} )
+
 				ChangeCamera:completeAnimation()
 				self.ChangeCamera:setLeftRight( true, false, 508.25, 644.25 )
 				self.ChangeCamera:setTopBottom( true, false, 0, 32 )
 				self.ChangeCamera:setAlpha( 0 )
 				self.clipFinished( ChangeCamera, {} )
+
 				SkipBack:completeAnimation()
 				self.SkipBack:setLeftRight( true, false, 229, 351 )
 				self.SkipBack:setTopBottom( true, false, 0, 32 )
 				self.SkipBack:setAlpha( 1 )
 				self.clipFinished( SkipBack, {} )
+
 				FastForward:completeAnimation()
 				self.FastForward:setLeftRight( true, false, 766.25, 896.75 )
 				self.FastForward:setTopBottom( true, false, 0, 32 )
 				self.FastForward:setAlpha( 0 )
 				self.clipFinished( FastForward, {} )
+
 				ToggleControls:completeAnimation()
 				self.ToggleControls:setLeftRight( true, false, 357.75, 497.75 )
 				self.ToggleControls:setTopBottom( true, false, 0, 32 )
 				self.ToggleControls:setAlpha( 1 )
 				self.clipFinished( ToggleControls, {} )
+
 				KeyFrameAction:completeAnimation()
 				self.KeyFrameAction:setLeftRight( true, false, 1039.75, 1164.75 )
 				self.KeyFrameAction:setTopBottom( true, false, 0, 32 )
 				self.KeyFrameAction:setAlpha( 0 )
 				self.clipFinished( KeyFrameAction, {} )
+
 				LB:completeAnimation()
 				self.LB:setLeftRight( true, false, 1027.25, 1070.25 )
 				self.LB:setTopBottom( true, false, 0, 32 )
 				self.LB:setAlpha( 0 )
 				self.clipFinished( LB, {} )
+
 				RBHint:completeAnimation()
 				self.RBHint:setLeftRight( true, false, 1059.25, 1102.25 )
 				self.RBHint:setTopBottom( true, false, 0, 32 )
@@ -776,48 +788,58 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 		BasicMode = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ChooseMode:completeAnimation()
 				self.ChooseMode:setLeftRight( true, false, 235, 367.25 )
 				self.ChooseMode:setTopBottom( true, false, 0, 32 )
 				self.ChooseMode:setAlpha( 1 )
 				self.clipFinished( ChooseMode, {} )
+
 				TogglePlayPause:completeAnimation()
+
 				TogglePlayPause.label:completeAnimation()
 				self.TogglePlayPause:setLeftRight( true, false, 367.25, 488.25 )
 				self.TogglePlayPause:setTopBottom( true, false, 0, 32 )
 				self.TogglePlayPause:setAlpha( 1 )
 				self.TogglePlayPause.label:setText( Engine.Localize( "MENU_DEMO_CONTROLS_PLAY_PAUSE" ) )
 				self.clipFinished( TogglePlayPause, {} )
+
 				ChangeCamera:completeAnimation()
 				self.ChangeCamera:setLeftRight( true, false, 508.25, 644.25 )
 				self.ChangeCamera:setTopBottom( true, false, 0, 32 )
 				self.ChangeCamera:setAlpha( 1 )
 				self.clipFinished( ChangeCamera, {} )
+
 				SkipBack:completeAnimation()
 				self.SkipBack:setLeftRight( true, false, 644.25, 766.25 )
 				self.SkipBack:setTopBottom( true, false, 0, 32 )
 				self.SkipBack:setAlpha( 1 )
 				self.clipFinished( SkipBack, {} )
+
 				FastForward:completeAnimation()
 				self.FastForward:setLeftRight( true, false, 766.25, 896.75 )
 				self.FastForward:setTopBottom( true, false, 0, 32 )
 				self.FastForward:setAlpha( 1 )
 				self.clipFinished( FastForward, {} )
+
 				ToggleControls:completeAnimation()
 				self.ToggleControls:setLeftRight( true, false, 896.75, 1036.75 )
 				self.ToggleControls:setTopBottom( true, false, 0, 32 )
 				self.ToggleControls:setAlpha( 1 )
 				self.clipFinished( ToggleControls, {} )
+
 				KeyFrameAction:completeAnimation()
 				self.KeyFrameAction:setLeftRight( true, false, 1039.75, 1164.75 )
 				self.KeyFrameAction:setTopBottom( true, false, 0, 32 )
 				self.KeyFrameAction:setAlpha( 0 )
 				self.clipFinished( KeyFrameAction, {} )
+
 				LB:completeAnimation()
 				self.LB:setLeftRight( true, false, 1027.25, 1070.25 )
 				self.LB:setTopBottom( true, false, 0, 32 )
 				self.LB:setAlpha( 0 )
 				self.clipFinished( LB, {} )
+
 				RBHint:completeAnimation()
 				self.RBHint:setLeftRight( true, false, 1059.25, 1102.25 )
 				self.RBHint:setTopBottom( true, false, 0, 32 )
@@ -828,46 +850,55 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 		BasicModeFreeCamera = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ChooseMode:completeAnimation()
 				self.ChooseMode:setLeftRight( true, false, 235, 367.25 )
 				self.ChooseMode:setTopBottom( true, false, 0, 32 )
 				self.ChooseMode:setAlpha( 1 )
 				self.clipFinished( ChooseMode, {} )
+
 				TogglePlayPause:completeAnimation()
 				self.TogglePlayPause:setLeftRight( true, false, 367.25, 488.25 )
 				self.TogglePlayPause:setTopBottom( true, false, 0, 32 )
 				self.TogglePlayPause:setAlpha( 1 )
 				self.clipFinished( TogglePlayPause, {} )
+
 				ChangeCamera:completeAnimation()
 				self.ChangeCamera:setLeftRight( true, false, 508.25, 644.25 )
 				self.ChangeCamera:setTopBottom( true, false, 0, 32 )
 				self.ChangeCamera:setAlpha( 1 )
 				self.clipFinished( ChangeCamera, {} )
+
 				SkipBack:completeAnimation()
 				self.SkipBack:setLeftRight( true, false, 644.25, 766.25 )
 				self.SkipBack:setTopBottom( true, false, 0, 32 )
 				self.SkipBack:setAlpha( 1 )
 				self.clipFinished( SkipBack, {} )
+
 				FastForward:completeAnimation()
 				self.FastForward:setLeftRight( true, false, 766.25, 896.75 )
 				self.FastForward:setTopBottom( true, false, 0, 32 )
 				self.FastForward:setAlpha( 1 )
 				self.clipFinished( FastForward, {} )
+
 				ToggleControls:completeAnimation()
 				self.ToggleControls:setLeftRight( true, false, 896.75, 1036.75 )
 				self.ToggleControls:setTopBottom( true, false, 0, 32 )
 				self.ToggleControls:setAlpha( 1 )
 				self.clipFinished( ToggleControls, {} )
+
 				KeyFrameAction:completeAnimation()
 				self.KeyFrameAction:setLeftRight( true, false, 1039.75, 1164.75 )
 				self.KeyFrameAction:setTopBottom( true, false, 0, 32 )
 				self.KeyFrameAction:setAlpha( 0 )
 				self.clipFinished( KeyFrameAction, {} )
+
 				LB:completeAnimation()
 				self.LB:setLeftRight( true, false, 1027.25, 1070.25 )
 				self.LB:setTopBottom( true, false, 0, 32 )
 				self.LB:setAlpha( 1 )
 				self.clipFinished( LB, {} )
+
 				RBHint:completeAnimation()
 				self.RBHint:setLeftRight( true, false, 1059.25, 1102.25 )
 				self.RBHint:setTopBottom( true, false, 0, 32 )
@@ -878,39 +909,48 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 		DirectorMode = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ChooseMode:completeAnimation()
 				self.ChooseMode:setLeftRight( true, false, 235, 367.25 )
 				self.ChooseMode:setTopBottom( true, false, 0, 32 )
 				self.ChooseMode:setAlpha( 1 )
 				self.clipFinished( ChooseMode, {} )
+
 				TogglePlayPause:completeAnimation()
+
 				TogglePlayPause.label:completeAnimation()
 				self.TogglePlayPause:setLeftRight( true, false, 367.25, 488.25 )
 				self.TogglePlayPause:setTopBottom( true, false, 0, 32 )
 				self.TogglePlayPause:setAlpha( 1 )
 				self.TogglePlayPause.label:setText( Engine.Localize( "MENU_DEMO_CONTROLS_PLAY_PAUSE" ) )
 				self.clipFinished( TogglePlayPause, {} )
+
 				ChangeCamera:completeAnimation()
 				self.ChangeCamera:setLeftRight( true, false, 508.25, 644.25 )
 				self.ChangeCamera:setTopBottom( true, false, 0, 32 )
 				self.ChangeCamera:setAlpha( 0 )
 				self.clipFinished( ChangeCamera, {} )
+
 				SkipBack:completeAnimation()
 				self.SkipBack:setLeftRight( true, false, 510.25, 632.25 )
 				self.SkipBack:setTopBottom( true, false, 0, 32 )
 				self.SkipBack:setAlpha( 1 )
 				self.clipFinished( SkipBack, {} )
+
 				FastForward:completeAnimation()
 				self.FastForward:setLeftRight( true, false, 632.25, 762.75 )
 				self.FastForward:setTopBottom( true, false, 0, 32 )
 				self.FastForward:setAlpha( 1 )
 				self.clipFinished( FastForward, {} )
+
 				ToggleControls:completeAnimation()
 				self.ToggleControls:setLeftRight( true, false, 762.75, 902.75 )
 				self.ToggleControls:setTopBottom( true, false, 0, 32 )
 				self.ToggleControls:setAlpha( 1 )
 				self.clipFinished( ToggleControls, {} )
+
 				KeyFrameAction:completeAnimation()
+
 				KeyFrameAction.label:completeAnimation()
 				self.KeyFrameAction:setLeftRight( true, false, 900.25, 1025.25 )
 				self.KeyFrameAction:setTopBottom( true, false, 0, 32 )
@@ -918,11 +958,13 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 				self.KeyFrameAction:setAlpha( 1 )
 				self.KeyFrameAction.label:setText( Engine.Localize( "DEMO_ADD_KEYFRAME" ) )
 				self.clipFinished( KeyFrameAction, {} )
+
 				LB:completeAnimation()
 				self.LB:setLeftRight( true, false, 1027.25, 1070.25 )
 				self.LB:setTopBottom( true, false, 0, 32 )
 				self.LB:setAlpha( 1 )
 				self.clipFinished( LB, {} )
+
 				RBHint:completeAnimation()
 				self.RBHint:setLeftRight( true, false, 1059.25, 1102.25 )
 				self.RBHint:setTopBottom( true, false, 0, 32 )
@@ -933,39 +975,48 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 		DirectorModeStartAutoDolly = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ChooseMode:completeAnimation()
 				self.ChooseMode:setLeftRight( true, false, 235, 367.25 )
 				self.ChooseMode:setTopBottom( true, false, 0, 32 )
 				self.ChooseMode:setAlpha( 1 )
 				self.clipFinished( ChooseMode, {} )
+
 				TogglePlayPause:completeAnimation()
+
 				TogglePlayPause.label:completeAnimation()
 				self.TogglePlayPause:setLeftRight( true, false, 367.25, 488.25 )
 				self.TogglePlayPause:setTopBottom( true, false, 0, 32 )
 				self.TogglePlayPause:setAlpha( 1 )
 				self.TogglePlayPause.label:setText( Engine.Localize( "MENU_DEMO_CONTROLS_PLAY_PAUSE" ) )
 				self.clipFinished( TogglePlayPause, {} )
+
 				ChangeCamera:completeAnimation()
 				self.ChangeCamera:setLeftRight( true, false, 508.25, 644.25 )
 				self.ChangeCamera:setTopBottom( true, false, 0, 32 )
 				self.ChangeCamera:setAlpha( 0 )
 				self.clipFinished( ChangeCamera, {} )
+
 				SkipBack:completeAnimation()
 				self.SkipBack:setLeftRight( true, false, 510.25, 632.25 )
 				self.SkipBack:setTopBottom( true, false, 0, 32 )
 				self.SkipBack:setAlpha( 1 )
 				self.clipFinished( SkipBack, {} )
+
 				FastForward:completeAnimation()
 				self.FastForward:setLeftRight( true, false, 632.25, 762.75 )
 				self.FastForward:setTopBottom( true, false, 0, 32 )
 				self.FastForward:setAlpha( 1 )
 				self.clipFinished( FastForward, {} )
+
 				ToggleControls:completeAnimation()
 				self.ToggleControls:setLeftRight( true, false, 762.75, 902.75 )
 				self.ToggleControls:setTopBottom( true, false, 0, 32 )
 				self.ToggleControls:setAlpha( 1 )
 				self.clipFinished( ToggleControls, {} )
+
 				KeyFrameAction:completeAnimation()
+
 				KeyFrameAction.label:completeAnimation()
 				self.KeyFrameAction:setLeftRight( true, false, 900.25, 1025.25 )
 				self.KeyFrameAction:setTopBottom( true, false, 0, 32 )
@@ -973,11 +1024,13 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 				self.KeyFrameAction:setAlpha( 1 )
 				self.KeyFrameAction.label:setText( Engine.Localize( "DEMO_START_AUTO_DOLLY" ) )
 				self.clipFinished( KeyFrameAction, {} )
+
 				LB:completeAnimation()
 				self.LB:setLeftRight( true, false, 1027.25, 1070.25 )
 				self.LB:setTopBottom( true, false, 0, 32 )
 				self.LB:setAlpha( 1 )
 				self.clipFinished( LB, {} )
+
 				RBHint:completeAnimation()
 				self.RBHint:setLeftRight( true, false, 1059.25, 1102.25 )
 				self.RBHint:setTopBottom( true, false, 0, 32 )
@@ -988,39 +1041,48 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 		DirectorModeStopAutoDolly = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ChooseMode:completeAnimation()
 				self.ChooseMode:setLeftRight( true, false, 235, 367.25 )
 				self.ChooseMode:setTopBottom( true, false, 0, 32 )
 				self.ChooseMode:setAlpha( 1 )
 				self.clipFinished( ChooseMode, {} )
+
 				TogglePlayPause:completeAnimation()
+
 				TogglePlayPause.label:completeAnimation()
 				self.TogglePlayPause:setLeftRight( true, false, 367.25, 488.25 )
 				self.TogglePlayPause:setTopBottom( true, false, 0, 32 )
 				self.TogglePlayPause:setAlpha( 1 )
 				self.TogglePlayPause.label:setText( Engine.Localize( "MENU_DEMO_CONTROLS_PLAY_PAUSE" ) )
 				self.clipFinished( TogglePlayPause, {} )
+
 				ChangeCamera:completeAnimation()
 				self.ChangeCamera:setLeftRight( true, false, 508.25, 644.25 )
 				self.ChangeCamera:setTopBottom( true, false, 0, 32 )
 				self.ChangeCamera:setAlpha( 0 )
 				self.clipFinished( ChangeCamera, {} )
+
 				SkipBack:completeAnimation()
 				self.SkipBack:setLeftRight( true, false, 510.25, 632.25 )
 				self.SkipBack:setTopBottom( true, false, 0, 32 )
 				self.SkipBack:setAlpha( 1 )
 				self.clipFinished( SkipBack, {} )
+
 				FastForward:completeAnimation()
 				self.FastForward:setLeftRight( true, false, 632.25, 762.75 )
 				self.FastForward:setTopBottom( true, false, 0, 32 )
 				self.FastForward:setAlpha( 1 )
 				self.clipFinished( FastForward, {} )
+
 				ToggleControls:completeAnimation()
 				self.ToggleControls:setLeftRight( true, false, 762.75, 902.75 )
 				self.ToggleControls:setTopBottom( true, false, 0, 32 )
 				self.ToggleControls:setAlpha( 1 )
 				self.clipFinished( ToggleControls, {} )
+
 				KeyFrameAction:completeAnimation()
+
 				KeyFrameAction.label:completeAnimation()
 				self.KeyFrameAction:setLeftRight( true, false, 900.25, 1025.25 )
 				self.KeyFrameAction:setTopBottom( true, false, 0, 32 )
@@ -1028,11 +1090,13 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 				self.KeyFrameAction:setAlpha( 1 )
 				self.KeyFrameAction.label:setText( Engine.Localize( "DEMO_STOP_AUTO_DOLLY" ) )
 				self.clipFinished( KeyFrameAction, {} )
+
 				LB:completeAnimation()
 				self.LB:setLeftRight( true, false, 1027.25, 1070.25 )
 				self.LB:setTopBottom( true, false, 0, 32 )
 				self.LB:setAlpha( 1 )
 				self.clipFinished( LB, {} )
+
 				RBHint:completeAnimation()
 				self.RBHint:setLeftRight( true, false, 1059.25, 1102.25 )
 				self.RBHint:setTopBottom( true, false, 0, 32 )
@@ -1043,39 +1107,48 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 		DirectorModeEditKeyFrame = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ChooseMode:completeAnimation()
 				self.ChooseMode:setLeftRight( true, false, 235, 367.25 )
 				self.ChooseMode:setTopBottom( true, false, 0, 32 )
 				self.ChooseMode:setAlpha( 1 )
 				self.clipFinished( ChooseMode, {} )
+
 				TogglePlayPause:completeAnimation()
+
 				TogglePlayPause.label:completeAnimation()
 				self.TogglePlayPause:setLeftRight( true, false, 367.25, 488.25 )
 				self.TogglePlayPause:setTopBottom( true, false, 0, 32 )
 				self.TogglePlayPause:setAlpha( 1 )
 				self.TogglePlayPause.label:setText( Engine.Localize( "MENU_DEMO_CONTROLS_PLAY_PAUSE" ) )
 				self.clipFinished( TogglePlayPause, {} )
+
 				ChangeCamera:completeAnimation()
 				self.ChangeCamera:setLeftRight( true, false, 508.25, 644.25 )
 				self.ChangeCamera:setTopBottom( true, false, 0, 32 )
 				self.ChangeCamera:setAlpha( 0 )
 				self.clipFinished( ChangeCamera, {} )
+
 				SkipBack:completeAnimation()
 				self.SkipBack:setLeftRight( true, false, 510.25, 632.25 )
 				self.SkipBack:setTopBottom( true, false, 0, 32 )
 				self.SkipBack:setAlpha( 1 )
 				self.clipFinished( SkipBack, {} )
+
 				FastForward:completeAnimation()
 				self.FastForward:setLeftRight( true, false, 632.25, 762.75 )
 				self.FastForward:setTopBottom( true, false, 0, 32 )
 				self.FastForward:setAlpha( 1 )
 				self.clipFinished( FastForward, {} )
+
 				ToggleControls:completeAnimation()
 				self.ToggleControls:setLeftRight( true, false, 762.75, 902.75 )
 				self.ToggleControls:setTopBottom( true, false, 0, 32 )
 				self.ToggleControls:setAlpha( 1 )
 				self.clipFinished( ToggleControls, {} )
+
 				KeyFrameAction:completeAnimation()
+
 				KeyFrameAction.label:completeAnimation()
 				self.KeyFrameAction:setLeftRight( true, false, 900.25, 1025.25 )
 				self.KeyFrameAction:setTopBottom( true, false, 0, 32 )
@@ -1083,11 +1156,13 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 				self.KeyFrameAction:setAlpha( 1 )
 				self.KeyFrameAction.label:setText( Engine.Localize( "DEMO_EDIT_KEYFRAME" ) )
 				self.clipFinished( KeyFrameAction, {} )
+
 				LB:completeAnimation()
 				self.LB:setLeftRight( true, false, 1027.25, 1070.25 )
 				self.LB:setTopBottom( true, false, 0, 32 )
 				self.LB:setAlpha( 1 )
 				self.clipFinished( LB, {} )
+
 				RBHint:completeAnimation()
 				self.RBHint:setLeftRight( true, false, 1059.25, 1102.25 )
 				self.RBHint:setTopBottom( true, false, 0, 32 )
@@ -1098,37 +1173,45 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 		DirectorModeEditingKeyFrame = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ChooseMode:completeAnimation()
 				self.ChooseMode:setLeftRight( true, false, 235, 367.25 )
 				self.ChooseMode:setTopBottom( true, false, 0, 32 )
 				self.ChooseMode:setAlpha( 0 )
 				self.clipFinished( ChooseMode, {} )
+
 				TogglePlayPause:completeAnimation()
 				self.TogglePlayPause:setLeftRight( true, false, 367.25, 488.25 )
 				self.TogglePlayPause:setTopBottom( true, false, 0, 32 )
 				self.TogglePlayPause:setAlpha( 0 )
 				self.clipFinished( TogglePlayPause, {} )
+
 				ChangeCamera:completeAnimation()
 				self.ChangeCamera:setLeftRight( true, false, 508.25, 644.25 )
 				self.ChangeCamera:setTopBottom( true, false, 0, 32 )
 				self.ChangeCamera:setAlpha( 0 )
 				self.clipFinished( ChangeCamera, {} )
+
 				SkipBack:completeAnimation()
 				self.SkipBack:setLeftRight( true, false, 644.25, 766.25 )
 				self.SkipBack:setTopBottom( true, false, 0, 32 )
 				self.SkipBack:setAlpha( 0 )
 				self.clipFinished( SkipBack, {} )
+
 				FastForward:completeAnimation()
 				self.FastForward:setLeftRight( true, false, 766.25, 896.75 )
 				self.FastForward:setTopBottom( true, false, 0, 32 )
 				self.FastForward:setAlpha( 0 )
 				self.clipFinished( FastForward, {} )
+
 				ToggleControls:completeAnimation()
 				self.ToggleControls:setLeftRight( true, false, 229, 369 )
 				self.ToggleControls:setTopBottom( true, false, 0, 32 )
 				self.ToggleControls:setAlpha( 1 )
 				self.clipFinished( ToggleControls, {} )
+
 				KeyFrameAction:completeAnimation()
+
 				KeyFrameAction.label:completeAnimation()
 				self.KeyFrameAction:setLeftRight( true, false, 367.25, 492.25 )
 				self.KeyFrameAction:setTopBottom( true, false, 0, 32 )
@@ -1136,11 +1219,13 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 				self.KeyFrameAction:setAlpha( 1 )
 				self.KeyFrameAction.label:setText( Engine.Localize( "DEMO_EXIT_EDIT_KEYFRAME" ) )
 				self.clipFinished( KeyFrameAction, {} )
+
 				LB:completeAnimation()
 				self.LB:setLeftRight( true, false, 1027.25, 1070.25 )
 				self.LB:setTopBottom( true, false, 0, 32 )
 				self.LB:setAlpha( 0 )
 				self.clipFinished( LB, {} )
+
 				RBHint:completeAnimation()
 				self.RBHint:setLeftRight( true, false, 1059.25, 1102.25 )
 				self.RBHint:setTopBottom( true, false, 0, 32 )
@@ -1151,39 +1236,48 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 		DirectorModeMoveKeyFrame = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ChooseMode:completeAnimation()
 				self.ChooseMode:setLeftRight( true, false, 235, 367.25 )
 				self.ChooseMode:setTopBottom( true, false, 0, 32 )
 				self.ChooseMode:setAlpha( 0 )
 				self.clipFinished( ChooseMode, {} )
+
 				TogglePlayPause:completeAnimation()
+
 				TogglePlayPause.label:completeAnimation()
 				self.TogglePlayPause:setLeftRight( true, false, 229, 350 )
 				self.TogglePlayPause:setTopBottom( true, false, 0, 32 )
 				self.TogglePlayPause:setAlpha( 1 )
 				self.TogglePlayPause.label:setText( Engine.Localize( "MENU_CANCEL" ) )
 				self.clipFinished( TogglePlayPause, {} )
+
 				ChangeCamera:completeAnimation()
 				self.ChangeCamera:setLeftRight( true, false, 508.25, 644.25 )
 				self.ChangeCamera:setTopBottom( true, false, 0, 32 )
 				self.ChangeCamera:setAlpha( 0 )
 				self.clipFinished( ChangeCamera, {} )
+
 				SkipBack:completeAnimation()
 				self.SkipBack:setLeftRight( true, false, 644.25, 766.25 )
 				self.SkipBack:setTopBottom( true, false, 0, 32 )
 				self.SkipBack:setAlpha( 0 )
 				self.clipFinished( SkipBack, {} )
+
 				FastForward:completeAnimation()
 				self.FastForward:setLeftRight( true, false, 766.25, 896.75 )
 				self.FastForward:setTopBottom( true, false, 0, 32 )
 				self.FastForward:setAlpha( 0 )
 				self.clipFinished( FastForward, {} )
+
 				ToggleControls:completeAnimation()
 				self.ToggleControls:setLeftRight( true, false, 333.75, 473.75 )
 				self.ToggleControls:setTopBottom( true, false, 0, 32 )
 				self.ToggleControls:setAlpha( 1 )
 				self.clipFinished( ToggleControls, {} )
+
 				KeyFrameAction:completeAnimation()
+
 				KeyFrameAction.label:completeAnimation()
 				self.KeyFrameAction:setLeftRight( true, false, 486.75, 611.75 )
 				self.KeyFrameAction:setTopBottom( true, false, 0, 32 )
@@ -1191,11 +1285,13 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 				self.KeyFrameAction:setAlpha( 1 )
 				self.KeyFrameAction.label:setText( Engine.Localize( "DEMO_PLACE_KEYFRAME" ) )
 				self.clipFinished( KeyFrameAction, {} )
+
 				LB:completeAnimation()
 				self.LB:setLeftRight( true, false, 630.25, 673.25 )
 				self.LB:setTopBottom( true, false, 0, 32 )
 				self.LB:setAlpha( 1 )
 				self.clipFinished( LB, {} )
+
 				RBHint:completeAnimation()
 				self.RBHint:setLeftRight( true, false, 662.25, 705.25 )
 				self.RBHint:setTopBottom( true, false, 0, 32 )
@@ -1206,39 +1302,48 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 		ObjectLinkMode = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ChooseMode:completeAnimation()
 				self.ChooseMode:setLeftRight( true, false, 235, 367.25 )
 				self.ChooseMode:setTopBottom( true, false, 0, 32 )
 				self.ChooseMode:setAlpha( 1 )
 				self.clipFinished( ChooseMode, {} )
+
 				TogglePlayPause:completeAnimation()
+
 				TogglePlayPause.label:completeAnimation()
 				self.TogglePlayPause:setLeftRight( true, false, 367.25, 488.25 )
 				self.TogglePlayPause:setTopBottom( true, false, 0, 32 )
 				self.TogglePlayPause:setAlpha( 1 )
 				self.TogglePlayPause.label:setText( Engine.Localize( "MENU_DEMO_CONTROLS_PLAY_PAUSE" ) )
 				self.clipFinished( TogglePlayPause, {} )
+
 				ChangeCamera:completeAnimation()
 				self.ChangeCamera:setLeftRight( true, false, 508.25, 644.25 )
 				self.ChangeCamera:setTopBottom( true, false, 0, 32 )
 				self.ChangeCamera:setAlpha( 0 )
 				self.clipFinished( ChangeCamera, {} )
+
 				SkipBack:completeAnimation()
 				self.SkipBack:setLeftRight( true, false, 510.25, 632.25 )
 				self.SkipBack:setTopBottom( true, false, 0, 32 )
 				self.SkipBack:setAlpha( 1 )
 				self.clipFinished( SkipBack, {} )
+
 				FastForward:completeAnimation()
 				self.FastForward:setLeftRight( true, false, 632.25, 762.75 )
 				self.FastForward:setTopBottom( true, false, 0, 32 )
 				self.FastForward:setAlpha( 1 )
 				self.clipFinished( FastForward, {} )
+
 				ToggleControls:completeAnimation()
 				self.ToggleControls:setLeftRight( true, false, 762.75, 902.75 )
 				self.ToggleControls:setTopBottom( true, false, 0, 32 )
 				self.ToggleControls:setAlpha( 1 )
 				self.clipFinished( ToggleControls, {} )
+
 				KeyFrameAction:completeAnimation()
+
 				KeyFrameAction.label:completeAnimation()
 				self.KeyFrameAction:setLeftRight( true, false, 900.25, 1025.25 )
 				self.KeyFrameAction:setTopBottom( true, false, 0, 32 )
@@ -1246,11 +1351,13 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 				self.KeyFrameAction:setAlpha( 1 )
 				self.KeyFrameAction.label:setText( Engine.Localize( "DEMO_LINK_TO_OBJECT" ) )
 				self.clipFinished( KeyFrameAction, {} )
+
 				LB:completeAnimation()
 				self.LB:setLeftRight( true, false, 1027.25, 1070.25 )
 				self.LB:setTopBottom( true, false, 0, 32 )
 				self.LB:setAlpha( 1 )
 				self.clipFinished( LB, {} )
+
 				RBHint:completeAnimation()
 				self.RBHint:setLeftRight( true, false, 1059.25, 1102.25 )
 				self.RBHint:setTopBottom( true, false, 0, 32 )
@@ -1261,39 +1368,48 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 		ObjectLinkModeLinkToObject = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ChooseMode:completeAnimation()
 				self.ChooseMode:setLeftRight( true, false, 235, 367.25 )
 				self.ChooseMode:setTopBottom( true, false, 0, 32 )
 				self.ChooseMode:setAlpha( 1 )
 				self.clipFinished( ChooseMode, {} )
+
 				TogglePlayPause:completeAnimation()
+
 				TogglePlayPause.label:completeAnimation()
 				self.TogglePlayPause:setLeftRight( true, false, 367.25, 488.25 )
 				self.TogglePlayPause:setTopBottom( true, false, 0, 32 )
 				self.TogglePlayPause:setAlpha( 1 )
 				self.TogglePlayPause.label:setText( Engine.Localize( "MENU_DEMO_CONTROLS_PLAY_PAUSE" ) )
 				self.clipFinished( TogglePlayPause, {} )
+
 				ChangeCamera:completeAnimation()
 				self.ChangeCamera:setLeftRight( true, false, 508.25, 644.25 )
 				self.ChangeCamera:setTopBottom( true, false, 0, 32 )
 				self.ChangeCamera:setAlpha( 0 )
 				self.clipFinished( ChangeCamera, {} )
+
 				SkipBack:completeAnimation()
 				self.SkipBack:setLeftRight( true, false, 510.25, 632.25 )
 				self.SkipBack:setTopBottom( true, false, 0, 32 )
 				self.SkipBack:setAlpha( 1 )
 				self.clipFinished( SkipBack, {} )
+
 				FastForward:completeAnimation()
 				self.FastForward:setLeftRight( true, false, 632.25, 762.75 )
 				self.FastForward:setTopBottom( true, false, 0, 32 )
 				self.FastForward:setAlpha( 1 )
 				self.clipFinished( FastForward, {} )
+
 				ToggleControls:completeAnimation()
 				self.ToggleControls:setLeftRight( true, false, 762.75, 902.75 )
 				self.ToggleControls:setTopBottom( true, false, 0, 32 )
 				self.ToggleControls:setAlpha( 1 )
 				self.clipFinished( ToggleControls, {} )
+
 				KeyFrameAction:completeAnimation()
+
 				KeyFrameAction.label:completeAnimation()
 				self.KeyFrameAction:setLeftRight( true, false, 900.25, 1025.25 )
 				self.KeyFrameAction:setTopBottom( true, false, 0, 32 )
@@ -1301,11 +1417,13 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 				self.KeyFrameAction:setAlpha( 1 )
 				self.KeyFrameAction.label:setText( Engine.Localize( "DEMO_LINK_TO_OBJECT" ) )
 				self.clipFinished( KeyFrameAction, {} )
+
 				LB:completeAnimation()
 				self.LB:setLeftRight( true, false, 1027.25, 1070.25 )
 				self.LB:setTopBottom( true, false, 0, 32 )
 				self.LB:setAlpha( 1 )
 				self.clipFinished( LB, {} )
+
 				RBHint:completeAnimation()
 				self.RBHint:setLeftRight( true, false, 1059.25, 1102.25 )
 				self.RBHint:setTopBottom( true, false, 0, 32 )
@@ -1316,39 +1434,48 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 		ObjectLinkModeUnlinkObject = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ChooseMode:completeAnimation()
 				self.ChooseMode:setLeftRight( true, false, 235, 367.25 )
 				self.ChooseMode:setTopBottom( true, false, 0, 32 )
 				self.ChooseMode:setAlpha( 1 )
 				self.clipFinished( ChooseMode, {} )
+
 				TogglePlayPause:completeAnimation()
+
 				TogglePlayPause.label:completeAnimation()
 				self.TogglePlayPause:setLeftRight( true, false, 367.25, 488.25 )
 				self.TogglePlayPause:setTopBottom( true, false, 0, 32 )
 				self.TogglePlayPause:setAlpha( 1 )
 				self.TogglePlayPause.label:setText( Engine.Localize( "MENU_DEMO_CONTROLS_PLAY_PAUSE" ) )
 				self.clipFinished( TogglePlayPause, {} )
+
 				ChangeCamera:completeAnimation()
 				self.ChangeCamera:setLeftRight( true, false, 508.25, 644.25 )
 				self.ChangeCamera:setTopBottom( true, false, 0, 32 )
 				self.ChangeCamera:setAlpha( 0 )
 				self.clipFinished( ChangeCamera, {} )
+
 				SkipBack:completeAnimation()
 				self.SkipBack:setLeftRight( true, false, 510.25, 632.25 )
 				self.SkipBack:setTopBottom( true, false, 0, 32 )
 				self.SkipBack:setAlpha( 1 )
 				self.clipFinished( SkipBack, {} )
+
 				FastForward:completeAnimation()
 				self.FastForward:setLeftRight( true, false, 632.25, 762.75 )
 				self.FastForward:setTopBottom( true, false, 0, 32 )
 				self.FastForward:setAlpha( 1 )
 				self.clipFinished( FastForward, {} )
+
 				ToggleControls:completeAnimation()
 				self.ToggleControls:setLeftRight( true, false, 762.75, 902.75 )
 				self.ToggleControls:setTopBottom( true, false, 0, 32 )
 				self.ToggleControls:setAlpha( 1 )
 				self.clipFinished( ToggleControls, {} )
+
 				KeyFrameAction:completeAnimation()
+
 				KeyFrameAction.label:completeAnimation()
 				self.KeyFrameAction:setLeftRight( true, false, 900.25, 1025.25 )
 				self.KeyFrameAction:setTopBottom( true, false, 0, 32 )
@@ -1356,11 +1483,13 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 				self.KeyFrameAction:setAlpha( 1 )
 				self.KeyFrameAction.label:setText( Engine.Localize( "DEMO_UNLINK_OBJECT" ) )
 				self.clipFinished( KeyFrameAction, {} )
+
 				LB:completeAnimation()
 				self.LB:setLeftRight( true, false, 1027.25, 1070.25 )
 				self.LB:setTopBottom( true, false, 0, 32 )
 				self.LB:setAlpha( 0 )
 				self.clipFinished( LB, {} )
+
 				RBHint:completeAnimation()
 				self.RBHint:setLeftRight( true, false, 1059.25, 1102.25 )
 				self.RBHint:setTopBottom( true, false, 0, 32 )
@@ -1371,39 +1500,48 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 		LighterMode = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ChooseMode:completeAnimation()
 				self.ChooseMode:setLeftRight( true, false, 235, 367.25 )
 				self.ChooseMode:setTopBottom( true, false, 0, 32 )
 				self.ChooseMode:setAlpha( 1 )
 				self.clipFinished( ChooseMode, {} )
+
 				TogglePlayPause:completeAnimation()
+
 				TogglePlayPause.label:completeAnimation()
 				self.TogglePlayPause:setLeftRight( true, false, 367.25, 488.25 )
 				self.TogglePlayPause:setTopBottom( true, false, 0, 32 )
 				self.TogglePlayPause:setAlpha( 1 )
 				self.TogglePlayPause.label:setText( Engine.Localize( "MENU_DEMO_CONTROLS_PLAY_PAUSE" ) )
 				self.clipFinished( TogglePlayPause, {} )
+
 				ChangeCamera:completeAnimation()
 				self.ChangeCamera:setLeftRight( true, false, 508.25, 644.25 )
 				self.ChangeCamera:setTopBottom( true, false, 0, 32 )
 				self.ChangeCamera:setAlpha( 0 )
 				self.clipFinished( ChangeCamera, {} )
+
 				SkipBack:completeAnimation()
 				self.SkipBack:setLeftRight( true, false, 510.25, 632.25 )
 				self.SkipBack:setTopBottom( true, false, 0, 32 )
 				self.SkipBack:setAlpha( 1 )
 				self.clipFinished( SkipBack, {} )
+
 				FastForward:completeAnimation()
 				self.FastForward:setLeftRight( true, false, 632.25, 762.75 )
 				self.FastForward:setTopBottom( true, false, 0, 32 )
 				self.FastForward:setAlpha( 1 )
 				self.clipFinished( FastForward, {} )
+
 				ToggleControls:completeAnimation()
 				self.ToggleControls:setLeftRight( true, false, 762.75, 902.75 )
 				self.ToggleControls:setTopBottom( true, false, 0, 32 )
 				self.ToggleControls:setAlpha( 1 )
 				self.clipFinished( ToggleControls, {} )
+
 				KeyFrameAction:completeAnimation()
+
 				KeyFrameAction.label:completeAnimation()
 				self.KeyFrameAction:setLeftRight( true, false, 900.25, 1025.25 )
 				self.KeyFrameAction:setTopBottom( true, false, 0, 32 )
@@ -1411,11 +1549,13 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 				self.KeyFrameAction:setAlpha( 1 )
 				self.KeyFrameAction.label:setText( Engine.Localize( "DEMO_ADD_LIGHT" ) )
 				self.clipFinished( KeyFrameAction, {} )
+
 				LB:completeAnimation()
 				self.LB:setLeftRight( true, false, 1027.25, 1070.25 )
 				self.LB:setTopBottom( true, false, 0, 32 )
 				self.LB:setAlpha( 1 )
 				self.clipFinished( LB, {} )
+
 				RBHint:completeAnimation()
 				self.RBHint:setLeftRight( true, false, 1059.25, 1102.25 )
 				self.RBHint:setTopBottom( true, false, 0, 32 )
@@ -1426,39 +1566,48 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 		LighterModeEditLight = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ChooseMode:completeAnimation()
 				self.ChooseMode:setLeftRight( true, false, 235, 367.25 )
 				self.ChooseMode:setTopBottom( true, false, 0, 32 )
 				self.ChooseMode:setAlpha( 1 )
 				self.clipFinished( ChooseMode, {} )
+
 				TogglePlayPause:completeAnimation()
+
 				TogglePlayPause.label:completeAnimation()
 				self.TogglePlayPause:setLeftRight( true, false, 367.25, 488.25 )
 				self.TogglePlayPause:setTopBottom( true, false, 0, 32 )
 				self.TogglePlayPause:setAlpha( 1 )
 				self.TogglePlayPause.label:setText( Engine.Localize( "MENU_DEMO_CONTROLS_PLAY_PAUSE" ) )
 				self.clipFinished( TogglePlayPause, {} )
+
 				ChangeCamera:completeAnimation()
 				self.ChangeCamera:setLeftRight( true, false, 508.25, 644.25 )
 				self.ChangeCamera:setTopBottom( true, false, 0, 32 )
 				self.ChangeCamera:setAlpha( 0 )
 				self.clipFinished( ChangeCamera, {} )
+
 				SkipBack:completeAnimation()
 				self.SkipBack:setLeftRight( true, false, 510.25, 632.25 )
 				self.SkipBack:setTopBottom( true, false, 0, 32 )
 				self.SkipBack:setAlpha( 1 )
 				self.clipFinished( SkipBack, {} )
+
 				FastForward:completeAnimation()
 				self.FastForward:setLeftRight( true, false, 632.25, 762.75 )
 				self.FastForward:setTopBottom( true, false, 0, 32 )
 				self.FastForward:setAlpha( 1 )
 				self.clipFinished( FastForward, {} )
+
 				ToggleControls:completeAnimation()
 				self.ToggleControls:setLeftRight( true, false, 762.75, 902.75 )
 				self.ToggleControls:setTopBottom( true, false, 0, 32 )
 				self.ToggleControls:setAlpha( 1 )
 				self.clipFinished( ToggleControls, {} )
+
 				KeyFrameAction:completeAnimation()
+
 				KeyFrameAction.label:completeAnimation()
 				self.KeyFrameAction:setLeftRight( true, false, 900.25, 1025.25 )
 				self.KeyFrameAction:setTopBottom( true, false, 0, 32 )
@@ -1466,11 +1615,13 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 				self.KeyFrameAction:setAlpha( 1 )
 				self.KeyFrameAction.label:setText( Engine.Localize( "DEMO_EDIT_LIGHT" ) )
 				self.clipFinished( KeyFrameAction, {} )
+
 				LB:completeAnimation()
 				self.LB:setLeftRight( true, false, 1027.25, 1070.25 )
 				self.LB:setTopBottom( true, false, 0, 32 )
 				self.LB:setAlpha( 1 )
 				self.clipFinished( LB, {} )
+
 				RBHint:completeAnimation()
 				self.RBHint:setLeftRight( true, false, 1059.25, 1102.25 )
 				self.RBHint:setTopBottom( true, false, 0, 32 )
@@ -1481,37 +1632,45 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 		LighterModeEditingLight = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ChooseMode:completeAnimation()
 				self.ChooseMode:setLeftRight( true, false, 235, 367.25 )
 				self.ChooseMode:setTopBottom( true, false, 0, 32 )
 				self.ChooseMode:setAlpha( 0 )
 				self.clipFinished( ChooseMode, {} )
+
 				TogglePlayPause:completeAnimation()
 				self.TogglePlayPause:setLeftRight( true, false, 367.25, 488.25 )
 				self.TogglePlayPause:setTopBottom( true, false, 0, 32 )
 				self.TogglePlayPause:setAlpha( 0 )
 				self.clipFinished( TogglePlayPause, {} )
+
 				ChangeCamera:completeAnimation()
 				self.ChangeCamera:setLeftRight( true, false, 508.25, 644.25 )
 				self.ChangeCamera:setTopBottom( true, false, 0, 32 )
 				self.ChangeCamera:setAlpha( 0 )
 				self.clipFinished( ChangeCamera, {} )
+
 				SkipBack:completeAnimation()
 				self.SkipBack:setLeftRight( true, false, 510.25, 632.25 )
 				self.SkipBack:setTopBottom( true, false, 0, 32 )
 				self.SkipBack:setAlpha( 0 )
 				self.clipFinished( SkipBack, {} )
+
 				FastForward:completeAnimation()
 				self.FastForward:setLeftRight( true, false, 766.25, 896.75 )
 				self.FastForward:setTopBottom( true, false, 0, 32 )
 				self.FastForward:setAlpha( 0 )
 				self.clipFinished( FastForward, {} )
+
 				ToggleControls:completeAnimation()
 				self.ToggleControls:setLeftRight( true, false, 229, 369 )
 				self.ToggleControls:setTopBottom( true, false, 0, 32 )
 				self.ToggleControls:setAlpha( 1 )
 				self.clipFinished( ToggleControls, {} )
+
 				KeyFrameAction:completeAnimation()
+
 				KeyFrameAction.label:completeAnimation()
 				self.KeyFrameAction:setLeftRight( true, false, 367.25, 492.25 )
 				self.KeyFrameAction:setTopBottom( true, false, 0, 32 )
@@ -1519,11 +1678,13 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 				self.KeyFrameAction:setAlpha( 1 )
 				self.KeyFrameAction.label:setText( Engine.Localize( "DEMO_EXIT_EDIT_LIGHT" ) )
 				self.clipFinished( KeyFrameAction, {} )
+
 				LB:completeAnimation()
 				self.LB:setLeftRight( true, false, 1027.25, 1070.25 )
 				self.LB:setTopBottom( true, false, 0, 32 )
 				self.LB:setAlpha( 0 )
 				self.clipFinished( LB, {} )
+
 				RBHint:completeAnimation()
 				self.RBHint:setLeftRight( true, false, 1059.25, 1102.25 )
 				self.RBHint:setTopBottom( true, false, 0, 32 )
@@ -1534,39 +1695,48 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 		LighterModeMoveLight = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ChooseMode:completeAnimation()
 				self.ChooseMode:setLeftRight( true, false, 235, 367.25 )
 				self.ChooseMode:setTopBottom( true, false, 0, 32 )
 				self.ChooseMode:setAlpha( 0 )
 				self.clipFinished( ChooseMode, {} )
+
 				TogglePlayPause:completeAnimation()
+
 				TogglePlayPause.label:completeAnimation()
 				self.TogglePlayPause:setLeftRight( true, false, 229, 350 )
 				self.TogglePlayPause:setTopBottom( true, false, 0, 32 )
 				self.TogglePlayPause:setAlpha( 1 )
 				self.TogglePlayPause.label:setText( Engine.Localize( "MENU_CANCEL" ) )
 				self.clipFinished( TogglePlayPause, {} )
+
 				ChangeCamera:completeAnimation()
 				self.ChangeCamera:setLeftRight( true, false, 508.25, 644.25 )
 				self.ChangeCamera:setTopBottom( true, false, 0, 32 )
 				self.ChangeCamera:setAlpha( 0 )
 				self.clipFinished( ChangeCamera, {} )
+
 				SkipBack:completeAnimation()
 				self.SkipBack:setLeftRight( true, false, 644.25, 766.25 )
 				self.SkipBack:setTopBottom( true, false, 0, 32 )
 				self.SkipBack:setAlpha( 0 )
 				self.clipFinished( SkipBack, {} )
+
 				FastForward:completeAnimation()
 				self.FastForward:setLeftRight( true, false, 766.25, 896.75 )
 				self.FastForward:setTopBottom( true, false, 0, 32 )
 				self.FastForward:setAlpha( 0 )
 				self.clipFinished( FastForward, {} )
+
 				ToggleControls:completeAnimation()
 				self.ToggleControls:setLeftRight( true, false, 333.75, 473.75 )
 				self.ToggleControls:setTopBottom( true, false, 0, 32 )
 				self.ToggleControls:setAlpha( 1 )
 				self.clipFinished( ToggleControls, {} )
+
 				KeyFrameAction:completeAnimation()
+
 				KeyFrameAction.label:completeAnimation()
 				self.KeyFrameAction:setLeftRight( true, false, 486.75, 611.75 )
 				self.KeyFrameAction:setTopBottom( true, false, 0, 32 )
@@ -1574,11 +1744,13 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 				self.KeyFrameAction:setAlpha( 1 )
 				self.KeyFrameAction.label:setText( Engine.Localize( "DEMO_PLACE_LIGHT" ) )
 				self.clipFinished( KeyFrameAction, {} )
+
 				LB:completeAnimation()
 				self.LB:setLeftRight( true, false, 630.25, 673.25 )
 				self.LB:setTopBottom( true, false, 0, 32 )
 				self.LB:setAlpha( 1 )
 				self.clipFinished( LB, {} )
+
 				RBHint:completeAnimation()
 				self.RBHint:setLeftRight( true, false, 662.25, 705.25 )
 				self.RBHint:setTopBottom( true, false, 0, 32 )
@@ -1589,39 +1761,48 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 		LighterModeLightColorPicker = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ChooseMode:completeAnimation()
 				self.ChooseMode:setLeftRight( true, false, 235, 367.25 )
 				self.ChooseMode:setTopBottom( true, false, 0, 32 )
 				self.ChooseMode:setAlpha( 0 )
 				self.clipFinished( ChooseMode, {} )
+
 				TogglePlayPause:completeAnimation()
+
 				TogglePlayPause.label:completeAnimation()
 				self.TogglePlayPause:setLeftRight( true, false, 229, 350 )
 				self.TogglePlayPause:setTopBottom( true, false, 0, 32 )
 				self.TogglePlayPause:setAlpha( 1 )
 				self.TogglePlayPause.label:setText( Engine.Localize( "MENU_CANCEL" ) )
 				self.clipFinished( TogglePlayPause, {} )
+
 				ChangeCamera:completeAnimation()
 				self.ChangeCamera:setLeftRight( true, false, 508.25, 644.25 )
 				self.ChangeCamera:setTopBottom( true, false, 0, 32 )
 				self.ChangeCamera:setAlpha( 0 )
 				self.clipFinished( ChangeCamera, {} )
+
 				SkipBack:completeAnimation()
 				self.SkipBack:setLeftRight( true, false, 644.25, 766.25 )
 				self.SkipBack:setTopBottom( true, false, 0, 32 )
 				self.SkipBack:setAlpha( 0 )
 				self.clipFinished( SkipBack, {} )
+
 				FastForward:completeAnimation()
 				self.FastForward:setLeftRight( true, false, 766.25, 896.75 )
 				self.FastForward:setTopBottom( true, false, 0, 32 )
 				self.FastForward:setAlpha( 0 )
 				self.clipFinished( FastForward, {} )
+
 				ToggleControls:completeAnimation()
 				self.ToggleControls:setLeftRight( true, false, 333.75, 473.75 )
 				self.ToggleControls:setTopBottom( true, false, 0, 32 )
 				self.ToggleControls:setAlpha( 1 )
 				self.clipFinished( ToggleControls, {} )
+
 				KeyFrameAction:completeAnimation()
+
 				KeyFrameAction.label:completeAnimation()
 				self.KeyFrameAction:setLeftRight( true, false, 486.75, 611.75 )
 				self.KeyFrameAction:setTopBottom( true, false, 0, 32 )
@@ -1629,11 +1810,13 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 				self.KeyFrameAction:setAlpha( 0 )
 				self.KeyFrameAction.label:setText( Engine.Localize( "DEMO_PLACE_LIGHT" ) )
 				self.clipFinished( KeyFrameAction, {} )
+
 				LB:completeAnimation()
 				self.LB:setLeftRight( true, false, 630.25, 673.25 )
 				self.LB:setTopBottom( true, false, 0, 32 )
 				self.LB:setAlpha( 0 )
 				self.clipFinished( LB, {} )
+
 				RBHint:completeAnimation()
 				self.RBHint:setLeftRight( true, false, 662.25, 705.25 )
 				self.RBHint:setTopBottom( true, false, 0, 32 )
@@ -1644,48 +1827,58 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 		HighlightReelMode = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ChooseMode:completeAnimation()
 				self.ChooseMode:setLeftRight( true, false, 235, 367.25 )
 				self.ChooseMode:setTopBottom( true, false, 0, 32 )
 				self.ChooseMode:setAlpha( 1 )
 				self.clipFinished( ChooseMode, {} )
+
 				TogglePlayPause:completeAnimation()
+
 				TogglePlayPause.label:completeAnimation()
 				self.TogglePlayPause:setLeftRight( true, false, 367.25, 488.25 )
 				self.TogglePlayPause:setTopBottom( true, false, 0, 32 )
 				self.TogglePlayPause:setAlpha( 1 )
 				self.TogglePlayPause.label:setText( Engine.Localize( "MENU_DEMO_CONTROLS_PLAY_PAUSE" ) )
 				self.clipFinished( TogglePlayPause, {} )
+
 				ChangeCamera:completeAnimation()
 				self.ChangeCamera:setLeftRight( true, false, 508.25, 644.25 )
 				self.ChangeCamera:setTopBottom( true, false, 0, 32 )
 				self.ChangeCamera:setAlpha( 1 )
 				self.clipFinished( ChangeCamera, {} )
+
 				SkipBack:completeAnimation()
 				self.SkipBack:setLeftRight( true, false, 644.25, 766.25 )
 				self.SkipBack:setTopBottom( true, false, 0, 32 )
 				self.SkipBack:setAlpha( 1 )
 				self.clipFinished( SkipBack, {} )
+
 				FastForward:completeAnimation()
 				self.FastForward:setLeftRight( true, false, 766.25, 896.75 )
 				self.FastForward:setTopBottom( true, false, 0, 32 )
 				self.FastForward:setAlpha( 1 )
 				self.clipFinished( FastForward, {} )
+
 				ToggleControls:completeAnimation()
 				self.ToggleControls:setLeftRight( true, false, 896.75, 1036.75 )
 				self.ToggleControls:setTopBottom( true, false, 0, 32 )
 				self.ToggleControls:setAlpha( 1 )
 				self.clipFinished( ToggleControls, {} )
+
 				KeyFrameAction:completeAnimation()
 				self.KeyFrameAction:setLeftRight( true, false, 1039.75, 1164.75 )
 				self.KeyFrameAction:setTopBottom( true, false, 0, 32 )
 				self.KeyFrameAction:setAlpha( 0 )
 				self.clipFinished( KeyFrameAction, {} )
+
 				LB:completeAnimation()
 				self.LB:setLeftRight( true, false, 1027.25, 1070.25 )
 				self.LB:setTopBottom( true, false, 0, 32 )
 				self.LB:setAlpha( 0 )
 				self.clipFinished( LB, {} )
+
 				RBHint:completeAnimation()
 				self.RBHint:setLeftRight( true, false, 1059.25, 1102.25 )
 				self.RBHint:setTopBottom( true, false, 0, 32 )
@@ -1696,48 +1889,58 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 		HighlightReelModeFreeCamera = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ChooseMode:completeAnimation()
 				self.ChooseMode:setLeftRight( true, false, 235, 367.25 )
 				self.ChooseMode:setTopBottom( true, false, 0, 32 )
 				self.ChooseMode:setAlpha( 1 )
 				self.clipFinished( ChooseMode, {} )
+
 				TogglePlayPause:completeAnimation()
+
 				TogglePlayPause.label:completeAnimation()
 				self.TogglePlayPause:setLeftRight( true, false, 367.25, 488.25 )
 				self.TogglePlayPause:setTopBottom( true, false, 0, 32 )
 				self.TogglePlayPause:setAlpha( 1 )
 				self.TogglePlayPause.label:setText( Engine.Localize( "MENU_DEMO_CONTROLS_PLAY_PAUSE" ) )
 				self.clipFinished( TogglePlayPause, {} )
+
 				ChangeCamera:completeAnimation()
 				self.ChangeCamera:setLeftRight( true, false, 508.25, 644.25 )
 				self.ChangeCamera:setTopBottom( true, false, 0, 32 )
 				self.ChangeCamera:setAlpha( 1 )
 				self.clipFinished( ChangeCamera, {} )
+
 				SkipBack:completeAnimation()
 				self.SkipBack:setLeftRight( true, false, 644.25, 766.25 )
 				self.SkipBack:setTopBottom( true, false, 0, 32 )
 				self.SkipBack:setAlpha( 1 )
 				self.clipFinished( SkipBack, {} )
+
 				FastForward:completeAnimation()
 				self.FastForward:setLeftRight( true, false, 766.25, 896.75 )
 				self.FastForward:setTopBottom( true, false, 0, 32 )
 				self.FastForward:setAlpha( 1 )
 				self.clipFinished( FastForward, {} )
+
 				ToggleControls:completeAnimation()
 				self.ToggleControls:setLeftRight( true, false, 896.75, 1036.75 )
 				self.ToggleControls:setTopBottom( true, false, 0, 32 )
 				self.ToggleControls:setAlpha( 1 )
 				self.clipFinished( ToggleControls, {} )
+
 				KeyFrameAction:completeAnimation()
 				self.KeyFrameAction:setLeftRight( true, false, 1039.75, 1164.75 )
 				self.KeyFrameAction:setTopBottom( true, false, 0, 32 )
 				self.KeyFrameAction:setAlpha( 0 )
 				self.clipFinished( KeyFrameAction, {} )
+
 				LB:completeAnimation()
 				self.LB:setLeftRight( true, false, 1027.25, 1070.25 )
 				self.LB:setTopBottom( true, false, 0, 32 )
 				self.LB:setAlpha( 1 )
 				self.clipFinished( LB, {} )
+
 				RBHint:completeAnimation()
 				self.RBHint:setLeftRight( true, false, 1059.25, 1102.25 )
 				self.RBHint:setTopBottom( true, false, 0, 32 )
@@ -1748,46 +1951,55 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 		NetworkProfiling = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				ChooseMode:completeAnimation()
 				self.ChooseMode:setLeftRight( true, false, 235, 367.25 )
 				self.ChooseMode:setTopBottom( true, false, 0, 32 )
 				self.ChooseMode:setAlpha( 0 )
 				self.clipFinished( ChooseMode, {} )
+
 				TogglePlayPause:completeAnimation()
 				self.TogglePlayPause:setLeftRight( true, false, 367.25, 488.25 )
 				self.TogglePlayPause:setTopBottom( true, false, 0, 32 )
 				self.TogglePlayPause:setAlpha( 0 )
 				self.clipFinished( TogglePlayPause, {} )
+
 				ChangeCamera:completeAnimation()
 				self.ChangeCamera:setLeftRight( true, false, 508.25, 644.25 )
 				self.ChangeCamera:setTopBottom( true, false, 0, 32 )
 				self.ChangeCamera:setAlpha( 0 )
 				self.clipFinished( ChangeCamera, {} )
+
 				SkipBack:completeAnimation()
 				self.SkipBack:setLeftRight( true, false, 229, 351 )
 				self.SkipBack:setTopBottom( true, false, 0, 32 )
 				self.SkipBack:setAlpha( 1 )
 				self.clipFinished( SkipBack, {} )
+
 				FastForward:completeAnimation()
 				self.FastForward:setLeftRight( true, false, 766.25, 896.75 )
 				self.FastForward:setTopBottom( true, false, 0, 32 )
 				self.FastForward:setAlpha( 0 )
 				self.clipFinished( FastForward, {} )
+
 				ToggleControls:completeAnimation()
 				self.ToggleControls:setLeftRight( true, false, 357.75, 497.75 )
 				self.ToggleControls:setTopBottom( true, false, 0, 32 )
 				self.ToggleControls:setAlpha( 0 )
 				self.clipFinished( ToggleControls, {} )
+
 				KeyFrameAction:completeAnimation()
 				self.KeyFrameAction:setLeftRight( true, false, 1039.75, 1164.75 )
 				self.KeyFrameAction:setTopBottom( true, false, 0, 32 )
 				self.KeyFrameAction:setAlpha( 0 )
 				self.clipFinished( KeyFrameAction, {} )
+
 				LB:completeAnimation()
 				self.LB:setLeftRight( true, false, 1027.25, 1070.25 )
 				self.LB:setTopBottom( true, false, 0, 32 )
 				self.LB:setAlpha( 0 )
 				self.clipFinished( LB, {} )
+
 				RBHint:completeAnimation()
 				self.RBHint:setLeftRight( true, false, 1059.25, 1102.25 )
 				self.RBHint:setTopBottom( true, false, 0, 32 )
@@ -1796,6 +2008,7 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "PlaybackMode",
@@ -2093,6 +2306,7 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 			modelName = "demo.showLightmanColorPicker"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Select:close()
 		element.Controls:close()

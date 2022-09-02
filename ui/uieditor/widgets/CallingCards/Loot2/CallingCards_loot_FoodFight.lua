@@ -4,9 +4,11 @@
 CoD.CallingCards_loot_FoodFight = InheritFrom( LUI.UIElement )
 CoD.CallingCards_loot_FoodFight.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_loot_FoodFight )
 	self.id = "CallingCards_loot_FoodFight"
@@ -49,6 +51,7 @@ CoD.CallingCards_loot_FoodFight.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local Image2Frame2 = function ( Image2, event )
 					local Image2Frame3 = function ( Image2, event )
 						local Image2Frame4 = function ( Image2, event )
@@ -170,6 +173,7 @@ CoD.CallingCards_loot_FoodFight.new = function ( menu, controller )
 				self.Image20:setTopBottom( true, false, 72, 104 )
 				self.Image20:setAlpha( 1 )
 				Image20Frame2( Image20, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

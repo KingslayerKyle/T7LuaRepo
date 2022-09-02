@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.HUD.core_AmmoWidget.AmmoWidget_ArrowFull" )
 CoD.MapWidget = InheritFrom( LUI.UIElement )
 CoD.MapWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MapWidget )
 	self.id = "MapWidget"
@@ -150,55 +152,66 @@ CoD.MapWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				UIGlow:completeAnimation()
 				self.UIGlow:setLeftRight( true, false, -8, 275 )
 				self.UIGlow:setTopBottom( true, false, 6, 178.33 )
 				self.UIGlow:setAlpha( 0 )
 				self.clipFinished( UIGlow, {} )
+
 				BarTop:completeAnimation()
 				self.BarTop:setLeftRight( true, false, 16, 268 )
 				self.BarTop:setTopBottom( true, false, 97, 99.67 )
 				self.BarTop:setAlpha( 0 )
 				self.clipFinished( BarTop, {} )
+
 				BarBase:completeAnimation()
 				self.BarBase:setLeftRight( true, false, 16, 268 )
 				self.BarBase:setTopBottom( true, false, 97, 99.67 )
 				self.BarBase:setAlpha( 0 )
 				self.clipFinished( BarBase, {} )
+
 				BaseElement:completeAnimation()
 				self.BaseElement:setLeftRight( true, false, 131.34, 152.67 )
 				self.BaseElement:setTopBottom( true, false, 103, 115.33 )
 				self.BaseElement:setAlpha( 0 )
 				self.clipFinished( BaseElement, {} )
+
 				Dot1:completeAnimation()
 				self.Dot1:setLeftRight( true, false, 140, 144 )
 				self.Dot1:setTopBottom( true, false, 96, 100 )
 				self.Dot1:setAlpha( 0 )
 				self.clipFinished( Dot1, {} )
+
 				Dot2:completeAnimation()
 				self.Dot2:setLeftRight( true, false, 140, 144 )
 				self.Dot2:setTopBottom( true, false, 96, 100 )
 				self.Dot2:setAlpha( 0 )
 				self.clipFinished( Dot2, {} )
+
 				Dot3:completeAnimation()
 				self.Dot3:setLeftRight( true, false, 140, 144 )
 				self.Dot3:setTopBottom( true, false, 97, 101 )
 				self.Dot3:setAlpha( 0 )
 				self.clipFinished( Dot3, {} )
+
 				Dot4:completeAnimation()
 				self.Dot4:setLeftRight( true, false, 140, 144 )
 				self.Dot4:setTopBottom( true, false, 97, 101 )
 				self.Dot4:setAlpha( 0 )
 				self.clipFinished( Dot4, {} )
+
 				BackCircleOutter:completeAnimation()
 				self.BackCircleOutter:setAlpha( 0 )
 				self.clipFinished( BackCircleOutter, {} )
+
 				ArrowFull:completeAnimation()
 				self.ArrowFull:setAlpha( 0 )
 				self.clipFinished( ArrowFull, {} )
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 10 )
+
 				local UIGlowFrame2 = function ( UIGlow, event )
 					local UIGlowFrame3 = function ( UIGlow, event )
 						if not event.interrupted then
@@ -905,10 +918,12 @@ CoD.MapWidget.new = function ( menu, controller )
 				ArrowFull:setAlpha( 0 )
 				ArrowFull:setZRot( 0 )
 				ArrowFull:registerEventHandler( "transition_complete_keyframe", f3_local9 )
+
 				self.nextClip = "HudStart"
 			end,
 			HudStop = function ()
 				self:setupElementClipCounter( 9 )
+
 				local UIGlowFrame2 = function ( UIGlow, event )
 					if not event.interrupted then
 						UIGlow:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -1291,53 +1306,64 @@ CoD.MapWidget.new = function ( menu, controller )
 		HudStart = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				UIGlow:completeAnimation()
 				self.UIGlow:setLeftRight( true, false, -8, 275 )
 				self.UIGlow:setTopBottom( true, false, 6, 178.33 )
 				self.UIGlow:setAlpha( 0.6 )
 				self.clipFinished( UIGlow, {} )
+
 				BarTop:completeAnimation()
 				self.BarTop:setLeftRight( true, false, 16, 268 )
 				self.BarTop:setTopBottom( true, false, 20, 22.67 )
 				self.BarTop:setAlpha( 0.7 )
 				self.clipFinished( BarTop, {} )
+
 				BarBase:completeAnimation()
 				self.BarBase:setLeftRight( true, false, 16, 268 )
 				self.BarBase:setTopBottom( true, false, 160, 162.67 )
 				self.BarBase:setAlpha( 0.4 )
 				self.clipFinished( BarBase, {} )
+
 				BaseElement:completeAnimation()
 				self.BaseElement:setLeftRight( true, false, 131.34, 152.67 )
 				self.BaseElement:setTopBottom( true, false, 166, 178.33 )
 				self.BaseElement:setAlpha( 0.7 )
 				self.clipFinished( BaseElement, {} )
+
 				Dot1:completeAnimation()
 				self.Dot1:setLeftRight( true, false, 7, 11 )
 				self.Dot1:setTopBottom( true, false, 19, 23 )
 				self.Dot1:setAlpha( 0.6 )
 				self.clipFinished( Dot1, {} )
+
 				Dot2:completeAnimation()
 				self.Dot2:setLeftRight( true, false, 272, 276 )
 				self.Dot2:setTopBottom( true, false, 19, 23 )
 				self.Dot2:setAlpha( 0.6 )
 				self.clipFinished( Dot2, {} )
+
 				Dot3:completeAnimation()
 				self.Dot3:setLeftRight( true, false, 7, 11 )
 				self.Dot3:setTopBottom( true, false, 160, 164 )
 				self.Dot3:setAlpha( 0.6 )
 				self.clipFinished( Dot3, {} )
+
 				Dot4:completeAnimation()
 				self.Dot4:setLeftRight( true, false, 272, 276 )
 				self.Dot4:setTopBottom( true, false, 160, 164 )
 				self.Dot4:setRGB( 1, 1, 1 )
 				self.Dot4:setAlpha( 0.6 )
 				self.clipFinished( Dot4, {} )
+
 				BackCircleOutter:completeAnimation()
 				self.BackCircleOutter:setAlpha( 0 )
 				self.clipFinished( BackCircleOutter, {} )
+
 				ArrowFull:completeAnimation()
 				self.ArrowFull:setAlpha( 0 )
 				self.clipFinished( ArrowFull, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, false, 17.9, 265.01 )
 				self.Image0:setTopBottom( true, false, 21, 160 )
@@ -1346,6 +1372,7 @@ CoD.MapWidget.new = function ( menu, controller )
 			end,
 			HudStop = function ()
 				self:setupElementClipCounter( 9 )
+
 				local UIGlowFrame2 = function ( UIGlow, event )
 					if not event.interrupted then
 						UIGlow:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -1728,56 +1755,67 @@ CoD.MapWidget.new = function ( menu, controller )
 		HudStop = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				UIGlow:completeAnimation()
 				self.UIGlow:setLeftRight( true, false, -8, 275 )
 				self.UIGlow:setTopBottom( true, false, 6, 178.33 )
 				self.UIGlow:setAlpha( 0 )
 				self.clipFinished( UIGlow, {} )
+
 				BarTop:completeAnimation()
 				self.BarTop:setLeftRight( true, false, 16, 268 )
 				self.BarTop:setTopBottom( true, false, 97, 99.67 )
 				self.BarTop:setAlpha( 0 )
 				self.clipFinished( BarTop, {} )
+
 				BarBase:completeAnimation()
 				self.BarBase:setLeftRight( true, false, 16, 268 )
 				self.BarBase:setTopBottom( true, false, 97, 99.67 )
 				self.BarBase:setAlpha( 0 )
 				self.clipFinished( BarBase, {} )
+
 				BaseElement:completeAnimation()
 				self.BaseElement:setLeftRight( true, false, 131.34, 152.67 )
 				self.BaseElement:setTopBottom( true, false, 103, 115.33 )
 				self.BaseElement:setAlpha( 0 )
 				self.BaseElement:setZRot( 180 )
 				self.clipFinished( BaseElement, {} )
+
 				Dot1:completeAnimation()
 				self.Dot1:setLeftRight( true, false, 140, 144 )
 				self.Dot1:setTopBottom( true, false, 96, 100 )
 				self.Dot1:setAlpha( 0 )
 				self.clipFinished( Dot1, {} )
+
 				Dot2:completeAnimation()
 				self.Dot2:setLeftRight( true, false, 140, 144 )
 				self.Dot2:setTopBottom( true, false, 96, 100 )
 				self.Dot2:setAlpha( 0 )
 				self.clipFinished( Dot2, {} )
+
 				Dot3:completeAnimation()
 				self.Dot3:setLeftRight( true, false, 140, 144 )
 				self.Dot3:setTopBottom( true, false, 97, 101 )
 				self.Dot3:setAlpha( 0 )
 				self.clipFinished( Dot3, {} )
+
 				Dot4:completeAnimation()
 				self.Dot4:setLeftRight( true, false, 140, 144 )
 				self.Dot4:setTopBottom( true, false, 97, 101 )
 				self.Dot4:setAlpha( 0 )
 				self.clipFinished( Dot4, {} )
+
 				BackCircleOutter:completeAnimation()
 				self.BackCircleOutter:setAlpha( 0 )
 				self.clipFinished( BackCircleOutter, {} )
+
 				ArrowFull:completeAnimation()
 				self.ArrowFull:setAlpha( 0 )
 				self.clipFinished( ArrowFull, {} )
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 10 )
+
 				local UIGlowFrame2 = function ( UIGlow, event )
 					local UIGlowFrame3 = function ( UIGlow, event )
 						if not event.interrupted then
@@ -2487,6 +2525,7 @@ CoD.MapWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BarTop:close()
 		element.BarBase:close()

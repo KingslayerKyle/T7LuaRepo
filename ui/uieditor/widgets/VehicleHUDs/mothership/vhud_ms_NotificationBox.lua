@@ -4,9 +4,11 @@
 CoD.vhud_ms_NotificationBox = InheritFrom( LUI.UIElement )
 CoD.vhud_ms_NotificationBox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ms_NotificationBox )
 	self.id = "vhud_ms_NotificationBox"
@@ -50,6 +52,7 @@ CoD.vhud_ms_NotificationBox.new = function ( menu, controller )
 	ALTtext:setShaderVector( 4, 0, 0, 0, 0 )
 	ALTtext:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	ALTtext:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( ALTtext, "setText", function ( element, controller )
 		ScaleWidgetToLabelCenteredWithMinimum( self, element, 20, 81 )
 	end )

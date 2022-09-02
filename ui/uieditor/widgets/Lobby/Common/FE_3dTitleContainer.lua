@@ -24,9 +24,11 @@ end
 CoD.FE_3dTitleContainer = InheritFrom( LUI.UIElement )
 CoD.FE_3dTitleContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_3dTitleContainer )
 	self.id = "FE_3dTitleContainer"
@@ -216,100 +218,121 @@ CoD.FE_3dTitleContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 20 )
+
 				circles:completeAnimation()
 				self.circles:setAlpha( 1 )
 				self.clipFinished( circles, {} )
+
 				diaglrg:completeAnimation()
 				self.diaglrg:setLeftRight( true, false, 38, 190 )
 				self.diaglrg:setTopBottom( true, false, 54.67, 62.67 )
 				self.diaglrg:setAlpha( 1 )
 				self.clipFinished( diaglrg, {} )
+
 				diagsm:completeAnimation()
 				self.diagsm:setLeftRight( true, false, 161, 197 )
 				self.diagsm:setTopBottom( true, false, 14.67, 22.67 )
 				self.diagsm:setAlpha( 1 )
 				self.clipFinished( diagsm, {} )
+
 				pixela:completeAnimation()
 				self.pixela:setLeftRight( true, false, 32, 44 )
 				self.pixela:setTopBottom( true, false, 29, 81 )
 				self.pixela:setAlpha( 1 )
 				self.clipFinished( pixela, {} )
+
 				pixelb:completeAnimation()
 				self.pixelb:setLeftRight( true, false, 68, 100 )
 				self.pixelb:setTopBottom( true, false, 29, 81 )
 				self.pixelb:setAlpha( 1 )
 				self.clipFinished( pixelb, {} )
+
 				pixelc:completeAnimation()
 				self.pixelc:setLeftRight( true, false, 42, 58 )
 				self.pixelc:setTopBottom( true, false, 29, 81 )
 				self.pixelc:setAlpha( 1 )
 				self.clipFinished( pixelc, {} )
+
 				pixeld:completeAnimation()
 				self.pixeld:setLeftRight( true, false, 94, 134 )
 				self.pixeld:setTopBottom( true, false, 28.5, 80.5 )
 				self.pixeld:setAlpha( 1 )
 				self.clipFinished( pixeld, {} )
+
 				centersquare:completeAnimation()
 				self.centersquare:setAlpha( 1 )
 				self.clipFinished( centersquare, {} )
+
 				ElemBackB:completeAnimation()
 				self.ElemBackB:setAlpha( 1 )
 				self.clipFinished( ElemBackB, {} )
+
 				ElemBackA0:completeAnimation()
 				self.ElemBackA0:setLeftRight( true, false, 110, 146 )
 				self.ElemBackA0:setTopBottom( true, false, -4.32, 115.68 )
 				self.ElemBackA0:setAlpha( 1 )
 				self.clipFinished( ElemBackA0, {} )
+
 				ElemForeB0:completeAnimation()
 				self.ElemForeB0:setLeftRight( true, false, 106, 114 )
 				self.ElemForeB0:setTopBottom( true, false, 22.5, 86.5 )
 				self.ElemForeB0:setAlpha( 1 )
 				self.clipFinished( ElemForeB0, {} )
+
 				ElemMid0:completeAnimation()
 				self.ElemMid0:setLeftRight( true, false, 24, 144 )
 				self.ElemMid0:setTopBottom( true, false, 22.5, 86.5 )
 				self.ElemMid0:setAlpha( 1 )
 				self.clipFinished( ElemMid0, {} )
+
 				ElemForeA0:completeAnimation()
 				self.ElemForeA0:setLeftRight( true, false, 110, 138 )
 				self.ElemForeA0:setTopBottom( true, false, 22.67, 86.67 )
 				self.ElemForeA0:setAlpha( 1 )
 				self.clipFinished( ElemForeA0, {} )
+
 				ElemForeC0:completeAnimation()
 				self.ElemForeC0:setLeftRight( true, false, 102, 118 )
 				self.ElemForeC0:setTopBottom( true, false, 21.83, 87.17 )
 				self.ElemForeC0:setAlpha( 1 )
 				self.clipFinished( ElemForeC0, {} )
+
 				ElemForeD0:completeAnimation()
 				self.ElemForeD0:setLeftRight( true, false, 76, 104 )
 				self.ElemForeD0:setTopBottom( true, false, 22.5, 86.5 )
 				self.ElemForeD0:setAlpha( 1 )
 				self.clipFinished( ElemForeD0, {} )
+
 				ElemBaseA0:completeAnimation()
 				self.ElemBaseA0:setLeftRight( true, false, 66, 122 )
 				self.ElemBaseA0:setTopBottom( true, false, 86.67, 102.67 )
 				self.ElemBaseA0:setAlpha( 1 )
 				self.clipFinished( ElemBaseA0, {} )
+
 				ElemTopC0:completeAnimation()
 				self.ElemTopC0:setLeftRight( true, false, 122, 146 )
 				self.ElemTopC0:setTopBottom( true, false, 15, 19 )
 				self.ElemTopC0:setAlpha( 1 )
 				self.clipFinished( ElemTopC0, {} )
+
 				ElemTopB0:completeAnimation()
 				self.ElemTopB0:setLeftRight( true, false, 116, 172 )
 				self.ElemTopB0:setTopBottom( true, false, 15, 19 )
 				self.ElemTopB0:setAlpha( 1 )
 				self.clipFinished( ElemTopB0, {} )
+
 				ElemTopA0:completeAnimation()
 				self.ElemTopA0:setLeftRight( true, false, 60, 116 )
 				self.ElemTopA0:setTopBottom( true, false, 15, 19 )
 				self.ElemTopA0:setAlpha( 1 )
 				self.clipFinished( ElemTopA0, {} )
+
 				MenuTitle:completeAnimation()
 				self.clipFinished( MenuTitle, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 20 )
+
 				local circlesFrame2 = function ( circles, event )
 					local circlesFrame3 = function ( circles, event )
 						if not event.interrupted then
@@ -1573,14 +1596,17 @@ CoD.FE_3dTitleContainer.new = function ( menu, controller )
 			end,
 			Update = function ()
 				self:setupElementClipCounter( 20 )
+
 				circles:completeAnimation()
 				self.circles:setAlpha( 1 )
 				self.clipFinished( circles, {} )
+
 				diaglrg:completeAnimation()
 				self.diaglrg:setLeftRight( true, false, 38, 190 )
 				self.diaglrg:setTopBottom( true, false, 54.67, 62.67 )
 				self.diaglrg:setAlpha( 1 )
 				self.clipFinished( diaglrg, {} )
+
 				diagsm:completeAnimation()
 				self.diagsm:setLeftRight( true, false, 161, 197 )
 				self.diagsm:setTopBottom( true, false, 14.67, 22.67 )
@@ -1706,6 +1732,7 @@ CoD.FE_3dTitleContainer.new = function ( menu, controller )
 				self.pixeld:setTopBottom( true, false, 28.5, 80.5 )
 				self.pixeld:setAlpha( 1 )
 				pixeldFrame2( pixeld, {} )
+
 				centersquare:completeAnimation()
 				self.centersquare:setAlpha( 1 )
 				self.clipFinished( centersquare, {} )
@@ -2411,96 +2438,116 @@ CoD.FE_3dTitleContainer.new = function ( menu, controller )
 				end
 				
 				MenuTitle:completeAnimation()
+
 				MenuTitle.TextBox1:completeAnimation()
 				self.MenuTitle.TextBox1:setAlpha( 0 )
 				MenuTitleFrame2( MenuTitle, {} )
 			end,
 			TextChange = function ()
 				self:setupElementClipCounter( 20 )
+
 				circles:completeAnimation()
 				self.circles:setAlpha( 1 )
 				self.clipFinished( circles, {} )
+
 				diaglrg:completeAnimation()
 				self.diaglrg:setLeftRight( true, false, 38, 190 )
 				self.diaglrg:setTopBottom( true, false, 54.67, 62.67 )
 				self.diaglrg:setAlpha( 1 )
 				self.clipFinished( diaglrg, {} )
+
 				diagsm:completeAnimation()
 				self.diagsm:setLeftRight( true, false, 161, 197 )
 				self.diagsm:setTopBottom( true, false, 14.67, 22.67 )
 				self.diagsm:setAlpha( 1 )
 				self.clipFinished( diagsm, {} )
+
 				pixela:completeAnimation()
 				self.pixela:setLeftRight( true, false, 32, 44 )
 				self.pixela:setTopBottom( true, false, 29, 81 )
 				self.pixela:setAlpha( 1 )
 				self.clipFinished( pixela, {} )
+
 				pixelb:completeAnimation()
 				self.pixelb:setLeftRight( true, false, 68, 100 )
 				self.pixelb:setTopBottom( true, false, 29, 81 )
 				self.pixelb:setAlpha( 1 )
 				self.clipFinished( pixelb, {} )
+
 				pixelc:completeAnimation()
 				self.pixelc:setLeftRight( true, false, 42, 58 )
 				self.pixelc:setTopBottom( true, false, 29, 81 )
 				self.pixelc:setAlpha( 1 )
 				self.clipFinished( pixelc, {} )
+
 				pixeld:completeAnimation()
 				self.pixeld:setLeftRight( true, false, 94, 134 )
 				self.pixeld:setTopBottom( true, false, 28.5, 80.5 )
 				self.pixeld:setAlpha( 1 )
 				self.clipFinished( pixeld, {} )
+
 				centersquare:completeAnimation()
 				self.centersquare:setAlpha( 1 )
 				self.clipFinished( centersquare, {} )
+
 				ElemBackB:completeAnimation()
 				self.ElemBackB:setAlpha( 1 )
 				self.clipFinished( ElemBackB, {} )
+
 				ElemBackA0:completeAnimation()
 				self.ElemBackA0:setLeftRight( true, false, 110, 146 )
 				self.ElemBackA0:setTopBottom( true, false, -4.32, 115.68 )
 				self.ElemBackA0:setAlpha( 1 )
 				self.clipFinished( ElemBackA0, {} )
+
 				ElemForeB0:completeAnimation()
 				self.ElemForeB0:setLeftRight( true, false, 106, 114 )
 				self.ElemForeB0:setTopBottom( true, false, 22.5, 86.5 )
 				self.ElemForeB0:setAlpha( 1 )
 				self.clipFinished( ElemForeB0, {} )
+
 				ElemMid0:completeAnimation()
 				self.ElemMid0:setLeftRight( true, false, 24, 144 )
 				self.ElemMid0:setTopBottom( true, false, 22.5, 86.5 )
 				self.ElemMid0:setAlpha( 1 )
 				self.clipFinished( ElemMid0, {} )
+
 				ElemForeA0:completeAnimation()
 				self.ElemForeA0:setLeftRight( true, false, 110, 138 )
 				self.ElemForeA0:setTopBottom( true, false, 22.67, 86.67 )
 				self.ElemForeA0:setAlpha( 1 )
 				self.clipFinished( ElemForeA0, {} )
+
 				ElemForeC0:completeAnimation()
 				self.ElemForeC0:setLeftRight( true, false, 102, 118 )
 				self.ElemForeC0:setTopBottom( true, false, 21.83, 87.17 )
 				self.ElemForeC0:setAlpha( 1 )
 				self.clipFinished( ElemForeC0, {} )
+
 				ElemForeD0:completeAnimation()
 				self.ElemForeD0:setLeftRight( true, false, 76, 104 )
 				self.ElemForeD0:setTopBottom( true, false, 22.5, 86.5 )
 				self.ElemForeD0:setAlpha( 1 )
 				self.clipFinished( ElemForeD0, {} )
+
 				ElemBaseA0:completeAnimation()
 				self.ElemBaseA0:setLeftRight( true, false, 66, 122 )
 				self.ElemBaseA0:setTopBottom( true, false, 86.67, 102.67 )
 				self.ElemBaseA0:setAlpha( 1 )
 				self.clipFinished( ElemBaseA0, {} )
+
 				ElemTopC0:completeAnimation()
 				self.ElemTopC0:setLeftRight( true, false, 122, 146 )
 				self.ElemTopC0:setTopBottom( true, false, 15, 19 )
 				self.ElemTopC0:setAlpha( 1 )
 				self.clipFinished( ElemTopC0, {} )
+
 				ElemTopB0:completeAnimation()
 				self.ElemTopB0:setLeftRight( true, false, 116, 172 )
 				self.ElemTopB0:setTopBottom( true, false, 15, 19 )
 				self.ElemTopB0:setAlpha( 1 )
 				self.clipFinished( ElemTopB0, {} )
+
 				ElemTopA0:completeAnimation()
 				self.ElemTopA0:setLeftRight( true, false, 60, 116 )
 				self.ElemTopA0:setTopBottom( true, false, 15, 19 )
@@ -2556,12 +2603,14 @@ CoD.FE_3dTitleContainer.new = function ( menu, controller )
 				end
 				
 				MenuTitle:completeAnimation()
+
 				MenuTitle.TextBox1:completeAnimation()
 				self.MenuTitle.TextBox1:setAlpha( 1 )
 				MenuTitleFrame2( MenuTitle, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ElemBackB:close()
 		element.ElemBackA0:close()

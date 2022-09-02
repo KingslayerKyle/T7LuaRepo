@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.button" )
 CoD.ConfirmationDialog = InheritFrom( LUI.UIElement )
 CoD.ConfirmationDialog.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.ConfirmationDialog )
 	self.id = "ConfirmationDialog"
@@ -121,6 +123,7 @@ CoD.ConfirmationDialog.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Resume:close()
 		element.Restart:close()

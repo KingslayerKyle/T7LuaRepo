@@ -70,9 +70,11 @@ end
 CoD.GenericWaypointContainer = InheritFrom( LUI.UIElement )
 CoD.GenericWaypointContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GenericWaypointContainer )
 	self.id = "GenericWaypointContainer"
@@ -91,6 +93,7 @@ CoD.GenericWaypointContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Waypoint:completeAnimation()
 				self.Waypoint:setAlpha( 1 )
 				self.clipFinished( Waypoint, {} )
@@ -99,6 +102,7 @@ CoD.GenericWaypointContainer.new = function ( menu, controller )
 		Done = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local WaypointFrame2 = function ( Waypoint, event )
 					if not event.interrupted then
 						Waypoint:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )
@@ -117,6 +121,7 @@ CoD.GenericWaypointContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Waypoint:close()
 	end )

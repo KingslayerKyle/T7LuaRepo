@@ -11,9 +11,11 @@ require( "ui.uieditor.widgets.CAC.cac_ButtonBoxLrgInactiveDiags" )
 CoD.Challenges_CallingCardProfiler_ArenaVet = InheritFrom( LUI.UIElement )
 CoD.Challenges_CallingCardProfiler_ArenaVet.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_CallingCardProfiler_ArenaVet )
 	self.id = "Challenges_CallingCardProfiler_ArenaVet"
@@ -198,36 +200,47 @@ CoD.Challenges_CallingCardProfiler_ArenaVet.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 11 )
+
 				SelectedCardIcon:completeAnimation()
 				self.SelectedCardIcon:setAlpha( 1 )
 				self.clipFinished( SelectedCardIcon, {} )
+
 				ProgressBar:completeAnimation()
 				self.ProgressBar:setAlpha( 0 )
 				self.clipFinished( ProgressBar, {} )
+
 				ProgressBarBorder:completeAnimation()
 				self.ProgressBarBorder:setAlpha( 0 )
 				self.clipFinished( ProgressBarBorder, {} )
+
 				ProgressFraction:completeAnimation()
 				self.ProgressFraction:setAlpha( 0 )
 				self.clipFinished( ProgressFraction, {} )
+
 				featlineleft:completeAnimation()
 				self.featlineleft:setAlpha( 0 )
 				self.clipFinished( featlineleft, {} )
+
 				featlineleft1:completeAnimation()
 				self.featlineleft1:setAlpha( 0 )
 				self.clipFinished( featlineleft1, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				featlineleft0:completeAnimation()
 				self.featlineleft0:setAlpha( 0 )
 				self.clipFinished( featlineleft0, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				featlineleft000:completeAnimation()
 				self.featlineleft000:setAlpha( 0 )
 				self.clipFinished( featlineleft000, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
@@ -236,34 +249,44 @@ CoD.Challenges_CallingCardProfiler_ArenaVet.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				SelectedCardIcon:completeAnimation()
 				self.SelectedCardIcon:setAlpha( 1 )
 				self.clipFinished( SelectedCardIcon, {} )
+
 				ProgressBar:completeAnimation()
 				self.ProgressBar:setAlpha( 1 )
 				self.clipFinished( ProgressBar, {} )
+
 				ProgressBarBorder:completeAnimation()
 				self.ProgressBarBorder:setAlpha( 1 )
 				self.clipFinished( ProgressBarBorder, {} )
+
 				ProgressFraction:completeAnimation()
 				self.ProgressFraction:setAlpha( 1 )
 				self.clipFinished( ProgressFraction, {} )
+
 				featlineleft:completeAnimation()
 				self.featlineleft:setAlpha( 1 )
 				self.clipFinished( featlineleft, {} )
+
 				featlineleft1:completeAnimation()
 				self.featlineleft1:setAlpha( 1 )
 				self.clipFinished( featlineleft1, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0.4 )
 				self.clipFinished( TitleBg, {} )
+
 				featlineleft0:completeAnimation()
 				self.featlineleft0:setLeftRight( true, false, 175, 179 )
 				self.featlineleft0:setTopBottom( true, false, -117, 242 )
 				self.clipFinished( featlineleft0, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 1 )
 				self.clipFinished( LockedIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
@@ -272,40 +295,51 @@ CoD.Challenges_CallingCardProfiler_ArenaVet.new = function ( menu, controller )
 		Unavailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				SelectedCardIcon:completeAnimation()
 				self.SelectedCardIcon:setAlpha( 1 )
 				self.clipFinished( SelectedCardIcon, {} )
+
 				ProgressBar:completeAnimation()
 				self.ProgressBar:setAlpha( 0 )
 				self.clipFinished( ProgressBar, {} )
+
 				ProgressBarBorder:completeAnimation()
 				self.ProgressBarBorder:setAlpha( 0 )
 				self.clipFinished( ProgressBarBorder, {} )
+
 				ProgressFraction:completeAnimation()
 				self.ProgressFraction:setAlpha( 0 )
 				self.clipFinished( ProgressFraction, {} )
+
 				featlineleft:completeAnimation()
 				self.featlineleft:setAlpha( 0 )
 				self.clipFinished( featlineleft, {} )
+
 				featlineleft1:completeAnimation()
 				self.featlineleft1:setAlpha( 0 )
 				self.clipFinished( featlineleft1, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0.4 )
 				self.clipFinished( TitleBg, {} )
+
 				featlineleft0:completeAnimation()
 				self.featlineleft0:setLeftRight( true, false, 175, 179 )
 				self.featlineleft0:setTopBottom( true, false, -117, 242 )
 				self.clipFinished( featlineleft0, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 1 )
 				self.clipFinished( LockedIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0.5 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -336,6 +370,7 @@ CoD.Challenges_CallingCardProfiler_ArenaVet.new = function ( menu, controller )
 			modelName = "hideProgress"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG0:close()
 		element.BoxButtonLrgInactive:close()

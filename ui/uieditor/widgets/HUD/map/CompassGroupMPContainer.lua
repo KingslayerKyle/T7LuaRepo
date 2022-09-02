@@ -24,9 +24,11 @@ end
 CoD.CompassGroupMPContainer = InheritFrom( LUI.UIElement )
 CoD.CompassGroupMPContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CompassGroupMPContainer )
 	self.id = "CompassGroupMPContainer"
@@ -192,9 +194,11 @@ CoD.CompassGroupMPContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				CompassGroup:completeAnimation()
 				self.CompassGroup:setAlpha( 1 )
 				self.clipFinished( CompassGroup, {} )
+
 				empMinimap:completeAnimation()
 				self.empMinimap:setAlpha( 0 )
 				self.clipFinished( empMinimap, {} )
@@ -203,6 +207,7 @@ CoD.CompassGroupMPContainer.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local CompassGroupFrame2 = function ( CompassGroup, event )
 					if not event.interrupted then
 						CompassGroup:beginAnimation( "keyframe", 159, false, false, CoD.TweenType.Linear )
@@ -218,12 +223,14 @@ CoD.CompassGroupMPContainer.new = function ( menu, controller )
 				CompassGroup:completeAnimation()
 				self.CompassGroup:setAlpha( 1 )
 				CompassGroupFrame2( CompassGroup, {} )
+
 				empMinimap:completeAnimation()
 				self.empMinimap:setAlpha( 0 )
 				self.clipFinished( empMinimap, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local CompassGroupFrame2 = function ( CompassGroup, event )
 					if not event.interrupted then
 						CompassGroup:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
@@ -244,6 +251,7 @@ CoD.CompassGroupMPContainer.new = function ( menu, controller )
 		CodCasterInvisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local CompassGroupFrame2 = function ( CompassGroup, event )
 					if not event.interrupted then
 						CompassGroup:beginAnimation( "keyframe", 159, false, false, CoD.TweenType.Linear )
@@ -259,12 +267,14 @@ CoD.CompassGroupMPContainer.new = function ( menu, controller )
 				CompassGroup:completeAnimation()
 				self.CompassGroup:setAlpha( 1 )
 				CompassGroupFrame2( CompassGroup, {} )
+
 				empMinimap:completeAnimation()
 				self.empMinimap:setAlpha( 0 )
 				self.clipFinished( empMinimap, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local CompassGroupFrame2 = function ( CompassGroup, event )
 					if not event.interrupted then
 						CompassGroup:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
@@ -285,6 +295,7 @@ CoD.CompassGroupMPContainer.new = function ( menu, controller )
 		CodCasterInvisibleCopy = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local CompassGroupFrame2 = function ( CompassGroup, event )
 					if not event.interrupted then
 						CompassGroup:beginAnimation( "keyframe", 159, false, false, CoD.TweenType.Linear )
@@ -300,12 +311,14 @@ CoD.CompassGroupMPContainer.new = function ( menu, controller )
 				CompassGroup:completeAnimation()
 				self.CompassGroup:setAlpha( 1 )
 				CompassGroupFrame2( CompassGroup, {} )
+
 				empMinimap:completeAnimation()
 				self.empMinimap:setAlpha( 0 )
 				self.clipFinished( empMinimap, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local CompassGroupFrame2 = function ( CompassGroup, event )
 					if not event.interrupted then
 						CompassGroup:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
@@ -326,6 +339,7 @@ CoD.CompassGroupMPContainer.new = function ( menu, controller )
 		InvisibleStateCopyForCodcaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local CompassGroupFrame2 = function ( CompassGroup, event )
 					if not event.interrupted then
 						CompassGroup:beginAnimation( "keyframe", 159, false, false, CoD.TweenType.Linear )
@@ -341,12 +355,14 @@ CoD.CompassGroupMPContainer.new = function ( menu, controller )
 				CompassGroup:completeAnimation()
 				self.CompassGroup:setAlpha( 1 )
 				CompassGroupFrame2( CompassGroup, {} )
+
 				empMinimap:completeAnimation()
 				self.empMinimap:setAlpha( 0 )
 				self.clipFinished( empMinimap, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local CompassGroupFrame2 = function ( CompassGroup, event )
 					if not event.interrupted then
 						CompassGroup:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
@@ -367,6 +383,7 @@ CoD.CompassGroupMPContainer.new = function ( menu, controller )
 		EMP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local CompassGroupFrame2 = function ( CompassGroup, event )
 					if not event.interrupted then
 						CompassGroup:beginAnimation( "keyframe", 159, false, false, CoD.TweenType.Linear )
@@ -382,12 +399,14 @@ CoD.CompassGroupMPContainer.new = function ( menu, controller )
 				CompassGroup:completeAnimation()
 				self.CompassGroup:setAlpha( 1 )
 				CompassGroupFrame2( CompassGroup, {} )
+
 				empMinimap:completeAnimation()
 				self.empMinimap:setAlpha( 1 )
 				self.clipFinished( empMinimap, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local CompassGroupFrame2 = function ( CompassGroup, event )
 					if not event.interrupted then
 						CompassGroup:beginAnimation( "keyframe", 140, false, false, CoD.TweenType.Linear )
@@ -406,6 +425,7 @@ CoD.CompassGroupMPContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",
@@ -633,6 +653,7 @@ CoD.CompassGroupMPContainer.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_EMP_ACTIVE
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CompassGroup:close()
 	end )

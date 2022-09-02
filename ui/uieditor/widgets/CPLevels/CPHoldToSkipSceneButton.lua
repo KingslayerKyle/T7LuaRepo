@@ -27,9 +27,11 @@ end
 CoD.CPHoldToSkipSceneButton = InheritFrom( LUI.UIElement )
 CoD.CPHoldToSkipSceneButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CPHoldToSkipSceneButton )
 	self.id = "CPHoldToSkipSceneButton"
@@ -78,9 +80,11 @@ CoD.CPHoldToSkipSceneButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Button:completeAnimation()
 				self.Button:setAlpha( 1 )
 				self.clipFinished( Button, {} )
+
 				Mouse:completeAnimation()
 				self.Mouse:setAlpha( 0 )
 				self.clipFinished( Mouse, {} )
@@ -89,15 +93,18 @@ CoD.CPHoldToSkipSceneButton.new = function ( menu, controller )
 		KBMouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Button:completeAnimation()
 				self.Button:setAlpha( 0 )
 				self.clipFinished( Button, {} )
+
 				Mouse:completeAnimation()
 				self.Mouse:setAlpha( 1 )
 				self.clipFinished( Mouse, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "KBMouse",
@@ -124,6 +131,7 @@ CoD.CPHoldToSkipSceneButton.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Button:close()
 		element.Mouse:close()

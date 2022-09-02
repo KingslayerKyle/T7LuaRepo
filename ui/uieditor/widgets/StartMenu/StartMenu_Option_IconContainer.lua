@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_frame_noBG" )
 CoD.StartMenu_Option_IconContainer = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Option_IconContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Option_IconContainer )
 	self.id = "StartMenu_Option_IconContainer"

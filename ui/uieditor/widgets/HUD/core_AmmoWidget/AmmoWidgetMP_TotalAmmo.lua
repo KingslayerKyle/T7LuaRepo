@@ -4,9 +4,11 @@
 CoD.AmmoWidgetMP_TotalAmmo = InheritFrom( LUI.UIElement )
 CoD.AmmoWidgetMP_TotalAmmo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidgetMP_TotalAmmo )
 	self.id = "AmmoWidgetMP_TotalAmmo"
@@ -45,12 +47,14 @@ CoD.AmmoWidgetMP_TotalAmmo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TotalAmmoLbl:completeAnimation()
 				self.TotalAmmoLbl:setLeftRight( false, false, -23, 23 )
 				self.TotalAmmoLbl:setTopBottom( false, true, -30, 1 )
 				self.TotalAmmoLbl:setRGB( 0.6, 0.6, 0.6 )
 				self.TotalAmmoLbl:setAlpha( 1 )
 				self.clipFinished( TotalAmmoLbl, {} )
+
 				TotalAmmoFakeLbl:completeAnimation()
 				self.TotalAmmoFakeLbl:setRGB( 0.7, 0.7, 0.7 )
 				self.TotalAmmoFakeLbl:setAlpha( 0 )
@@ -58,6 +62,7 @@ CoD.AmmoWidgetMP_TotalAmmo.new = function ( menu, controller )
 			end,
 			HeroWeapon = function ()
 				self:setupElementClipCounter( 2 )
+
 				local TotalAmmoLblFrame2 = function ( TotalAmmoLbl, event )
 					if not event.interrupted then
 						TotalAmmoLbl:beginAnimation( "keyframe", 230, false, false, CoD.TweenType.Bounce )
@@ -99,6 +104,7 @@ CoD.AmmoWidgetMP_TotalAmmo.new = function ( menu, controller )
 			end,
 			AmmoPickup = function ()
 				self:setupElementClipCounter( 1 )
+
 				local TotalAmmoLblFrame2 = function ( TotalAmmoLbl, event )
 					if not event.interrupted then
 						TotalAmmoLbl:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -125,12 +131,14 @@ CoD.AmmoWidgetMP_TotalAmmo.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TotalAmmoLbl:completeAnimation()
 				self.TotalAmmoLbl:setLeftRight( false, false, -23, 23 )
 				self.TotalAmmoLbl:setTopBottom( false, true, -30, 1 )
 				self.TotalAmmoLbl:setRGB( 0.6, 0.6, 0.6 )
 				self.TotalAmmoLbl:setAlpha( 0 )
 				self.clipFinished( TotalAmmoLbl, {} )
+
 				TotalAmmoFakeLbl:completeAnimation()
 				self.TotalAmmoFakeLbl:setRGB( 0.7, 0.7, 0.7 )
 				self.TotalAmmoFakeLbl:setAlpha( 0 )
@@ -138,6 +146,7 @@ CoD.AmmoWidgetMP_TotalAmmo.new = function ( menu, controller )
 			end,
 			HeroWeapon = function ()
 				self:setupElementClipCounter( 2 )
+
 				local TotalAmmoLblFrame2 = function ( TotalAmmoLbl, event )
 					if not event.interrupted then
 						TotalAmmoLbl:beginAnimation( "keyframe", 230, false, false, CoD.TweenType.Bounce )
@@ -179,6 +188,7 @@ CoD.AmmoWidgetMP_TotalAmmo.new = function ( menu, controller )
 			end,
 			AmmoPickup = function ()
 				self:setupElementClipCounter( 1 )
+
 				local TotalAmmoLblFrame2 = function ( TotalAmmoLbl, event )
 					if not event.interrupted then
 						TotalAmmoLbl:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -205,12 +215,14 @@ CoD.AmmoWidgetMP_TotalAmmo.new = function ( menu, controller )
 		HeroWeapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TotalAmmoLbl:completeAnimation()
 				self.TotalAmmoLbl:setLeftRight( false, false, -23, 23 )
 				self.TotalAmmoLbl:setTopBottom( false, true, -30, 1 )
 				self.TotalAmmoLbl:setRGB( 0.67, 0.75, 0.8 )
 				self.TotalAmmoLbl:setAlpha( 0 )
 				self.clipFinished( TotalAmmoLbl, {} )
+
 				TotalAmmoFakeLbl:completeAnimation()
 				self.TotalAmmoFakeLbl:setRGB( 0.67, 0.75, 0.8 )
 				self.TotalAmmoFakeLbl:setAlpha( 0 )
@@ -220,12 +232,14 @@ CoD.AmmoWidgetMP_TotalAmmo.new = function ( menu, controller )
 		WeaponNoReserve = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TotalAmmoLbl:completeAnimation()
 				self.TotalAmmoLbl:setLeftRight( false, false, -23, 23 )
 				self.TotalAmmoLbl:setTopBottom( false, true, -30, 1 )
 				self.TotalAmmoLbl:setRGB( 0.67, 0.75, 0.8 )
 				self.TotalAmmoLbl:setAlpha( 0 )
 				self.clipFinished( TotalAmmoLbl, {} )
+
 				TotalAmmoFakeLbl:completeAnimation()
 				self.TotalAmmoFakeLbl:setRGB( 0.67, 0.75, 0.8 )
 				self.TotalAmmoFakeLbl:setAlpha( 0 )
@@ -235,6 +249,7 @@ CoD.AmmoWidgetMP_TotalAmmo.new = function ( menu, controller )
 		NoAmmo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local TotalAmmoLblFrame2 = function ( TotalAmmoLbl, event )
 					local TotalAmmoLblFrame3 = function ( TotalAmmoLbl, event )
 						if not event.interrupted then
@@ -267,13 +282,16 @@ CoD.AmmoWidgetMP_TotalAmmo.new = function ( menu, controller )
 				self.TotalAmmoLbl:setRGB( 1, 0, 0 )
 				self.TotalAmmoLbl:setAlpha( 1 )
 				TotalAmmoLblFrame2( TotalAmmoLbl, {} )
+
 				TotalAmmoFakeLbl:completeAnimation()
 				self.TotalAmmoFakeLbl:setAlpha( 0 )
 				self.clipFinished( TotalAmmoFakeLbl, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			HeroWeapon = function ()
 				self:setupElementClipCounter( 2 )
+
 				local TotalAmmoLblFrame2 = function ( TotalAmmoLbl, event )
 					if not event.interrupted then
 						TotalAmmoLbl:beginAnimation( "keyframe", 540, false, false, CoD.TweenType.Bounce )
@@ -317,6 +335,7 @@ CoD.AmmoWidgetMP_TotalAmmo.new = function ( menu, controller )
 		local f23_local0 = self
 		PlayClip( self, "AmmoPickup", controller )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TotalAmmoLbl:close()
 	end )

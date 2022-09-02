@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Reticles.MP.TempestReticle_UI3D_Internal" )
 CoD.TempestReticle_UI3D = InheritFrom( LUI.UIElement )
 CoD.TempestReticle_UI3D.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TempestReticle_UI3D )
 	self.id = "TempestReticle_UI3D"

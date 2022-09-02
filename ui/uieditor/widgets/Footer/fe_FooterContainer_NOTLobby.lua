@@ -20,9 +20,11 @@ end
 CoD.fe_FooterContainer_NOTLobby = InheritFrom( LUI.UIElement )
 CoD.fe_FooterContainer_NOTLobby.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.fe_FooterContainer_NOTLobby )
 	self.id = "fe_FooterContainer_NOTLobby"
@@ -93,9 +95,11 @@ CoD.fe_FooterContainer_NOTLobby.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				feRightContainerWithoutRightBoxes0:completeAnimation()
 				self.feRightContainerWithoutRightBoxes0:setAlpha( 1 )
 				self.clipFinished( feRightContainerWithoutRightBoxes0, {} )
+
 				feRightContainerWithHeroesHead:completeAnimation()
 				self.feRightContainerWithHeroesHead:setAlpha( 0 )
 				self.clipFinished( feRightContainerWithHeroesHead, {} )
@@ -104,9 +108,11 @@ CoD.fe_FooterContainer_NOTLobby.new = function ( menu, controller )
 		WithHeroesHead = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				feRightContainerWithoutRightBoxes0:completeAnimation()
 				self.feRightContainerWithoutRightBoxes0:setAlpha( 0 )
 				self.clipFinished( feRightContainerWithoutRightBoxes0, {} )
+
 				feRightContainerWithHeroesHead:completeAnimation()
 				self.feRightContainerWithHeroesHead:setLeftRight( false, true, -694, 176 )
 				self.feRightContainerWithHeroesHead:setTopBottom( false, true, -39, -7 )
@@ -115,6 +121,7 @@ CoD.fe_FooterContainer_NOTLobby.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "WithHeroesHead",
@@ -123,6 +130,7 @@ CoD.fe_FooterContainer_NOTLobby.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.feNAT:close()
 		element.feLeftContainer:close()

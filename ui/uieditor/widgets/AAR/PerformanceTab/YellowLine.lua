@@ -4,9 +4,11 @@
 CoD.YellowLine = InheritFrom( LUI.UIElement )
 CoD.YellowLine.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.YellowLine )
 	self.id = "YellowLine"
@@ -26,6 +28,7 @@ CoD.YellowLine.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

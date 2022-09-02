@@ -4,9 +4,11 @@
 CoD.HorizontalCompassBlackCell = InheritFrom( LUI.UIElement )
 CoD.HorizontalCompassBlackCell.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.HorizontalCompassBlackCell )
 	self.id = "HorizontalCompassBlackCell"

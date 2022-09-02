@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.mothership.vhud_ms_NotificationSeating
 CoD.vhud_ms_Seating = InheritFrom( LUI.UIElement )
 CoD.vhud_ms_Seating.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_ms_Seating )
 	self.id = "vhud_ms_Seating"

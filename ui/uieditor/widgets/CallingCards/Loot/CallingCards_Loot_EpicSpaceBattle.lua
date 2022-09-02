@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_GoldFrame" )
 CoD.CallingCards_Loot_EpicSpaceBattle = InheritFrom( LUI.UIElement )
 CoD.CallingCards_Loot_EpicSpaceBattle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_Loot_EpicSpaceBattle )
 	self.id = "CallingCards_Loot_EpicSpaceBattle"
@@ -96,6 +98,7 @@ CoD.CallingCards_Loot_EpicSpaceBattle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				local Image10Frame2 = function ( Image10, event )
 					local Image10Frame3 = function ( Image10, event )
 						local Image10Frame4 = function ( Image10, event )
@@ -235,6 +238,7 @@ CoD.CallingCards_Loot_EpicSpaceBattle.new = function ( menu, controller )
 				self.ship:setLeftRight( true, false, 295, 415 )
 				self.ship:setTopBottom( true, false, 33, 117 )
 				shipFrame2( ship, {} )
+
 				explode:completeAnimation()
 				self.explode:setLeftRight( true, false, 376, 496 )
 				self.explode:setTopBottom( true, false, 39, 123 )
@@ -288,13 +292,16 @@ CoD.CallingCards_Loot_EpicSpaceBattle.new = function ( menu, controller )
 				self.explode0:setLeftRight( true, false, 0, 120 )
 				self.explode0:setTopBottom( true, false, 0, 84 )
 				explode0Frame2( explode0, {} )
+
 				CallingCardsGoldFrame:completeAnimation()
 				self.CallingCardsGoldFrame:setAlpha( 1 )
 				self.clipFinished( CallingCardsGoldFrame, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardsGoldFrame:close()
 	end )

@@ -16,9 +16,11 @@ end
 CoD.ChooseClass_ClassSetTabInternal = InheritFrom( LUI.UIElement )
 CoD.ChooseClass_ClassSetTabInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseClass_ClassSetTabInternal )
 	self.id = "ChooseClass_ClassSetTabInternal"

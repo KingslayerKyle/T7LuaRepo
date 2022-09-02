@@ -4,9 +4,11 @@
 CoD.AbilityWheel_DescriptionBottom = InheritFrom( LUI.UIElement )
 CoD.AbilityWheel_DescriptionBottom.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AbilityWheel_DescriptionBottom )
 	self.id = "AbilityWheel_DescriptionBottom"

@@ -4,9 +4,11 @@
 CoD.weakpoint_NewRedArrow = InheritFrom( LUI.UIElement )
 CoD.weakpoint_NewRedArrow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.weakpoint_NewRedArrow )
 	self.id = "weakpoint_NewRedArrow"
@@ -36,6 +38,7 @@ CoD.weakpoint_NewRedArrow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local Image0Frame2 = function ( Image0, event )
 					if not event.interrupted then
 						Image0:beginAnimation( "keyframe", 310, false, false, CoD.TweenType.Linear )

@@ -4,9 +4,11 @@
 CoD.CodCasterPlayerListHeaderObjectiveColumn = InheritFrom( LUI.UIElement )
 CoD.CodCasterPlayerListHeaderObjectiveColumn.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterPlayerListHeaderObjectiveColumn )
 	self.id = "CodCasterPlayerListHeaderObjectiveColumn"
@@ -65,39 +67,50 @@ CoD.CodCasterPlayerListHeaderObjectiveColumn.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				FlagCTF:completeAnimation()
 				self.FlagCTF:setAlpha( 0 )
 				self.clipFinished( FlagCTF, {} )
+
 				Bomb:completeAnimation()
 				self.Bomb:setAlpha( 0 )
 				self.clipFinished( Bomb, {} )
+
 				Hardpoint:completeAnimation()
 				self.Hardpoint:setAlpha( 0 )
 				self.clipFinished( Hardpoint, {} )
+
 				Ball:completeAnimation()
 				self.Ball:setAlpha( 0 )
 				self.clipFinished( Ball, {} )
+
 				FlagDom:completeAnimation()
 				self.FlagDom:setAlpha( 0 )
 				self.clipFinished( FlagDom, {} )
+
 				Default:completeAnimation()
 				self.Default:setAlpha( 1 )
 				self.clipFinished( Default, {} )
 			end,
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				FlagCTF:completeAnimation()
 				self.FlagCTF:setAlpha( 0 )
 				self.clipFinished( FlagCTF, {} )
+
 				Bomb:completeAnimation()
 				self.Bomb:setAlpha( 0 )
 				self.clipFinished( Bomb, {} )
+
 				Hardpoint:completeAnimation()
 				self.Hardpoint:setAlpha( 0 )
 				self.clipFinished( Hardpoint, {} )
+
 				Ball:completeAnimation()
 				self.Ball:setAlpha( 0 )
 				self.clipFinished( Ball, {} )
+
 				Default:completeAnimation()
 				self.Default:setAlpha( 1 )
 				self.clipFinished( Default, {} )
@@ -106,21 +119,27 @@ CoD.CodCasterPlayerListHeaderObjectiveColumn.new = function ( menu, controller )
 		CTF = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				FlagCTF:completeAnimation()
 				self.FlagCTF:setAlpha( 1 )
 				self.clipFinished( FlagCTF, {} )
+
 				Bomb:completeAnimation()
 				self.Bomb:setAlpha( 0 )
 				self.clipFinished( Bomb, {} )
+
 				Hardpoint:completeAnimation()
 				self.Hardpoint:setAlpha( 0 )
 				self.clipFinished( Hardpoint, {} )
+
 				Ball:completeAnimation()
 				self.Ball:setAlpha( 0 )
 				self.clipFinished( Ball, {} )
+
 				FlagDom:completeAnimation()
 				self.FlagDom:setAlpha( 0 )
 				self.clipFinished( FlagDom, {} )
+
 				Default:completeAnimation()
 				self.Default:setRGB( 1, 1, 1 )
 				self.Default:setAlpha( 0 )
@@ -130,21 +149,27 @@ CoD.CodCasterPlayerListHeaderObjectiveColumn.new = function ( menu, controller )
 		SDorSRorDem = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				FlagCTF:completeAnimation()
 				self.FlagCTF:setAlpha( 0 )
 				self.clipFinished( FlagCTF, {} )
+
 				Bomb:completeAnimation()
 				self.Bomb:setAlpha( 1 )
 				self.clipFinished( Bomb, {} )
+
 				Hardpoint:completeAnimation()
 				self.Hardpoint:setAlpha( 0 )
 				self.clipFinished( Hardpoint, {} )
+
 				Ball:completeAnimation()
 				self.Ball:setAlpha( 0 )
 				self.clipFinished( Ball, {} )
+
 				FlagDom:completeAnimation()
 				self.FlagDom:setAlpha( 0 )
 				self.clipFinished( FlagDom, {} )
+
 				Default:completeAnimation()
 				self.Default:setAlpha( 0 )
 				self.clipFinished( Default, {} )
@@ -153,21 +178,27 @@ CoD.CodCasterPlayerListHeaderObjectiveColumn.new = function ( menu, controller )
 		Dom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				FlagCTF:completeAnimation()
 				self.FlagCTF:setAlpha( 0 )
 				self.clipFinished( FlagCTF, {} )
+
 				Bomb:completeAnimation()
 				self.Bomb:setAlpha( 0 )
 				self.clipFinished( Bomb, {} )
+
 				Hardpoint:completeAnimation()
 				self.Hardpoint:setAlpha( 0 )
 				self.clipFinished( Hardpoint, {} )
+
 				Ball:completeAnimation()
 				self.Ball:setAlpha( 0 )
 				self.clipFinished( Ball, {} )
+
 				FlagDom:completeAnimation()
 				self.FlagDom:setAlpha( 1 )
 				self.clipFinished( FlagDom, {} )
+
 				Default:completeAnimation()
 				self.Default:setAlpha( 0 )
 				self.clipFinished( Default, {} )
@@ -176,21 +207,27 @@ CoD.CodCasterPlayerListHeaderObjectiveColumn.new = function ( menu, controller )
 		Hardpoint = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				FlagCTF:completeAnimation()
 				self.FlagCTF:setAlpha( 0 )
 				self.clipFinished( FlagCTF, {} )
+
 				Bomb:completeAnimation()
 				self.Bomb:setAlpha( 0 )
 				self.clipFinished( Bomb, {} )
+
 				Hardpoint:completeAnimation()
 				self.Hardpoint:setAlpha( 1 )
 				self.clipFinished( Hardpoint, {} )
+
 				Ball:completeAnimation()
 				self.Ball:setAlpha( 0 )
 				self.clipFinished( Ball, {} )
+
 				FlagDom:completeAnimation()
 				self.FlagDom:setAlpha( 0 )
 				self.clipFinished( FlagDom, {} )
+
 				Default:completeAnimation()
 				self.Default:setAlpha( 0 )
 				self.clipFinished( Default, {} )
@@ -199,21 +236,27 @@ CoD.CodCasterPlayerListHeaderObjectiveColumn.new = function ( menu, controller )
 		Uplink = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				FlagCTF:completeAnimation()
 				self.FlagCTF:setAlpha( 0 )
 				self.clipFinished( FlagCTF, {} )
+
 				Bomb:completeAnimation()
 				self.Bomb:setAlpha( 0 )
 				self.clipFinished( Bomb, {} )
+
 				Hardpoint:completeAnimation()
 				self.Hardpoint:setAlpha( 0 )
 				self.clipFinished( Hardpoint, {} )
+
 				Ball:completeAnimation()
 				self.Ball:setAlpha( 1 )
 				self.clipFinished( Ball, {} )
+
 				FlagDom:completeAnimation()
 				self.FlagDom:setAlpha( 0 )
 				self.clipFinished( FlagDom, {} )
+
 				Default:completeAnimation()
 				self.Default:setAlpha( 0 )
 				self.clipFinished( Default, {} )
@@ -222,21 +265,27 @@ CoD.CodCasterPlayerListHeaderObjectiveColumn.new = function ( menu, controller )
 		Safeguard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				FlagCTF:completeAnimation()
 				self.FlagCTF:setAlpha( 0 )
 				self.clipFinished( FlagCTF, {} )
+
 				Bomb:completeAnimation()
 				self.Bomb:setAlpha( 0 )
 				self.clipFinished( Bomb, {} )
+
 				Hardpoint:completeAnimation()
 				self.Hardpoint:setAlpha( 0 )
 				self.clipFinished( Hardpoint, {} )
+
 				Ball:completeAnimation()
 				self.Ball:setAlpha( 0 )
 				self.clipFinished( Ball, {} )
+
 				FlagDom:completeAnimation()
 				self.FlagDom:setAlpha( 1 )
 				self.clipFinished( FlagDom, {} )
+
 				Default:completeAnimation()
 				self.Default:setAlpha( 0 )
 				self.clipFinished( Default, {} )
@@ -245,39 +294,50 @@ CoD.CodCasterPlayerListHeaderObjectiveColumn.new = function ( menu, controller )
 		GunGame = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				FlagCTF:completeAnimation()
 				self.FlagCTF:setAlpha( 0 )
 				self.clipFinished( FlagCTF, {} )
+
 				Bomb:completeAnimation()
 				self.Bomb:setAlpha( 0 )
 				self.clipFinished( Bomb, {} )
+
 				Hardpoint:completeAnimation()
 				self.Hardpoint:setAlpha( 0 )
 				self.clipFinished( Hardpoint, {} )
+
 				Ball:completeAnimation()
 				self.Ball:setAlpha( 0 )
 				self.clipFinished( Ball, {} )
+
 				FlagDom:completeAnimation()
 				self.FlagDom:setAlpha( 0 )
 				self.clipFinished( FlagDom, {} )
+
 				Default:completeAnimation()
 				self.Default:setAlpha( 1 )
 				self.clipFinished( Default, {} )
 			end,
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				FlagCTF:completeAnimation()
 				self.FlagCTF:setAlpha( 0 )
 				self.clipFinished( FlagCTF, {} )
+
 				Bomb:completeAnimation()
 				self.Bomb:setAlpha( 0 )
 				self.clipFinished( Bomb, {} )
+
 				Hardpoint:completeAnimation()
 				self.Hardpoint:setAlpha( 0 )
 				self.clipFinished( Hardpoint, {} )
+
 				Ball:completeAnimation()
 				self.Ball:setAlpha( 0 )
 				self.clipFinished( Ball, {} )
+
 				Default:completeAnimation()
 				self.Default:setAlpha( 1 )
 				self.clipFinished( Default, {} )
@@ -286,45 +346,57 @@ CoD.CodCasterPlayerListHeaderObjectiveColumn.new = function ( menu, controller )
 		FFA = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				FlagCTF:completeAnimation()
 				self.FlagCTF:setAlpha( 0 )
 				self.clipFinished( FlagCTF, {} )
+
 				Bomb:completeAnimation()
 				self.Bomb:setAlpha( 0 )
 				self.clipFinished( Bomb, {} )
+
 				Hardpoint:completeAnimation()
 				self.Hardpoint:setAlpha( 0 )
 				self.clipFinished( Hardpoint, {} )
+
 				Ball:completeAnimation()
 				self.Ball:setAlpha( 0 )
 				self.clipFinished( Ball, {} )
+
 				FlagDom:completeAnimation()
 				self.FlagDom:setAlpha( 0 )
 				self.clipFinished( FlagDom, {} )
+
 				Default:completeAnimation()
 				self.Default:setAlpha( 1 )
 				self.clipFinished( Default, {} )
 			end,
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				FlagCTF:completeAnimation()
 				self.FlagCTF:setAlpha( 0 )
 				self.clipFinished( FlagCTF, {} )
+
 				Bomb:completeAnimation()
 				self.Bomb:setAlpha( 0 )
 				self.clipFinished( Bomb, {} )
+
 				Hardpoint:completeAnimation()
 				self.Hardpoint:setAlpha( 0 )
 				self.clipFinished( Hardpoint, {} )
+
 				Ball:completeAnimation()
 				self.Ball:setAlpha( 0 )
 				self.clipFinished( Ball, {} )
+
 				Default:completeAnimation()
 				self.Default:setAlpha( 1 )
 				self.clipFinished( Default, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CTF",

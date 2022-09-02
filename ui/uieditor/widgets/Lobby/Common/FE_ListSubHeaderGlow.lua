@@ -4,9 +4,11 @@
 CoD.FE_ListSubHeaderGlow = InheritFrom( LUI.UIElement )
 CoD.FE_ListSubHeaderGlow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_ListSubHeaderGlow )
 	self.id = "FE_ListSubHeaderGlow"

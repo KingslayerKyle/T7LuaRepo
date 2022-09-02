@@ -18,6 +18,7 @@ CoD.woundedSoldier_TextTitle.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.woundedSoldier_TextTitle )
 	self.id = "woundedSoldier_TextTitle"

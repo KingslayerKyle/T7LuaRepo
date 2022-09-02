@@ -18,6 +18,7 @@ CoD.LiveEventViewerStatusWidget.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LiveEventViewerStatusWidget )
 	self.id = "LiveEventViewerStatusWidget"
@@ -48,24 +49,29 @@ CoD.LiveEventViewerStatusWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				liveLabel:completeAnimation()
 				self.liveLabel:setAlpha( 0 )
 				self.clipFinished( liveLabel, {} )
+
 				liveCircle:completeAnimation()
 				self.liveCircle:setAlpha( 0 )
 				self.clipFinished( liveCircle, {} )
 			end,
 			ShowPrompts = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Live = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				liveLabel:completeAnimation()
 				self.liveLabel:setAlpha( 1 )
 				self.liveLabel:setText( Engine.Localize( "MENU_LIVE_CAPS" ) )
 				self.clipFinished( liveLabel, {} )
+
 				liveCircle:completeAnimation()
 				self.liveCircle:setRGB( 1, 0, 0 )
 				self.liveCircle:setAlpha( 1 )
@@ -75,10 +81,12 @@ CoD.LiveEventViewerStatusWidget.new = function ( menu, controller )
 		Replay = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				liveLabel:completeAnimation()
 				self.liveLabel:setAlpha( 1 )
 				self.liveLabel:setText( Engine.Localize( "MENU_REPLAY_CAPS" ) )
 				self.clipFinished( liveLabel, {} )
+
 				liveCircle:completeAnimation()
 				self.liveCircle:setRGB( 0.02, 1, 0 )
 				self.liveCircle:setAlpha( 1 )
@@ -86,6 +94,7 @@ CoD.LiveEventViewerStatusWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Live",

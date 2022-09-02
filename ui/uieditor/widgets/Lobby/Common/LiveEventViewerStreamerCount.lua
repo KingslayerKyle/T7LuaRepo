@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ArabicAlignTextBox" )
 CoD.LiveEventViewerStreamerCount = InheritFrom( LUI.UIElement )
 CoD.LiveEventViewerStreamerCount.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LiveEventViewerStreamerCount )
 	self.id = "LiveEventViewerStreamerCount"
@@ -42,9 +44,11 @@ CoD.LiveEventViewerStreamerCount.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				streamerCountIcon:completeAnimation()
 				self.streamerCountIcon:setAlpha( 1 )
 				self.clipFinished( streamerCountIcon, {} )
+
 				streamerCount:completeAnimation()
 				self.streamerCount:setAlpha( 1 )
 				self.clipFinished( streamerCount, {} )
@@ -53,15 +57,18 @@ CoD.LiveEventViewerStreamerCount.new = function ( menu, controller )
 		NoViewers = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				streamerCountIcon:completeAnimation()
 				self.streamerCountIcon:setAlpha( 0 )
 				self.clipFinished( streamerCountIcon, {} )
+
 				streamerCount:completeAnimation()
 				self.streamerCount:setAlpha( 0 )
 				self.clipFinished( streamerCount, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoViewers",
@@ -78,6 +85,7 @@ CoD.LiveEventViewerStreamerCount.new = function ( menu, controller )
 			modelName = "liveEventViewer.viewers"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.streamerCount:close()
 	end )

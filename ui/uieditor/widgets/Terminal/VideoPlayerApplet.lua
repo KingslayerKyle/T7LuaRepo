@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Terminal.FocusWidget" )
 CoD.VideoPlayerApplet = InheritFrom( LUI.UIElement )
 CoD.VideoPlayerApplet.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VideoPlayerApplet )
 	self.id = "VideoPlayerApplet"
@@ -74,9 +76,11 @@ CoD.VideoPlayerApplet.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local GeneralframeFrame2 = function ( Generalframe, event )
 					if not event.interrupted then
 						Generalframe:beginAnimation( "keyframe", 180, false, false, CoD.TweenType.Linear )
@@ -186,27 +190,33 @@ CoD.VideoPlayerApplet.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 6 )
+
 				Generalframe:completeAnimation()
 				self.Generalframe:setLeftRight( true, true, 0, 0 )
 				self.Generalframe:setTopBottom( true, true, 15, 15 )
 				self.clipFinished( Generalframe, {} )
+
 				focus:completeAnimation()
 				self.focus:setLeftRight( true, true, 0, 0 )
 				self.focus:setTopBottom( true, true, 15, 15 )
 				self.clipFinished( focus, {} )
+
 				playerimage:completeAnimation()
 				self.playerimage:setLeftRight( true, true, -1.5, 1.5 )
 				self.playerimage:setTopBottom( true, true, 9.55, 19.45 )
 				self.playerimage:setAlpha( 0.65 )
 				self.clipFinished( playerimage, {} )
+
 				player:completeAnimation()
 				self.player:setLeftRight( true, false, 55.89, 153.39 )
 				self.player:setTopBottom( true, false, 37, 63 )
 				self.clipFinished( player, {} )
+
 				CallingCardLines00:completeAnimation()
 				self.CallingCardLines00:setLeftRight( false, false, -107.42, 107.5 )
 				self.CallingCardLines00:setTopBottom( false, false, 53, 65.05 )
 				self.clipFinished( CallingCardLines00, {} )
+
 				FocusWidget:completeAnimation()
 				self.FocusWidget:setLeftRight( true, true, -9, 7.71 )
 				self.FocusWidget:setTopBottom( true, false, -10, 10 )
@@ -215,6 +225,7 @@ CoD.VideoPlayerApplet.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local GeneralframeFrame2 = function ( Generalframe, event )
 					if not event.interrupted then
 						Generalframe:beginAnimation( "keyframe", 180, false, false, CoD.TweenType.Linear )
@@ -326,12 +337,15 @@ CoD.VideoPlayerApplet.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Generalframe:close()
 		element.FocusWidget:close()

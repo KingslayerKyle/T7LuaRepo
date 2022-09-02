@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.cac_TrainingSimCompleted" )
 CoD.cac_TrainingSimRating = InheritFrom( LUI.UIElement )
 CoD.cac_TrainingSimRating.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_TrainingSimRating )
 	self.id = "cac_TrainingSimRating"
@@ -165,51 +167,63 @@ CoD.cac_TrainingSimRating.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				RatingImage:completeAnimation()
 				self.RatingImage:setRGB( 0.08, 0.08, 0.08 )
 				self.RatingImage:setAlpha( 1 )
 				self.clipFinished( RatingImage, {} )
+
 				yellowStar:completeAnimation()
 				self.yellowStar:setAlpha( 0 )
 				self.clipFinished( yellowStar, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Back = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Campaign = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Show = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				RatingXP:completeAnimation()
 				self.RatingXP:setRGB( 0.95, 0.89, 0.03 )
 				self.clipFinished( RatingXP, {} )
+
 				RatingUnlockTokens:completeAnimation()
 				self.RatingUnlockTokens:setRGB( 0.95, 0.89, 0.03 )
 				self.clipFinished( RatingUnlockTokens, {} )
+
 				cacTrainingSimCompleted:completeAnimation()
 				self.cacTrainingSimCompleted:setRGB( 0.95, 0.89, 0.03 )
 				self.clipFinished( cacTrainingSimCompleted, {} )
+
 				RatingImage:completeAnimation()
 				self.RatingImage:setRGB( 1, 1, 1 )
 				self.RatingImage:setAlpha( 1 )
 				self.clipFinished( RatingImage, {} )
+
 				yellowStar:completeAnimation()
 				self.yellowStar:setAlpha( 1 )
 				self.clipFinished( yellowStar, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.cacButtonBoxLrgInactiveStroke0:close()
 		element.cacTrainingSimCompleted:close()

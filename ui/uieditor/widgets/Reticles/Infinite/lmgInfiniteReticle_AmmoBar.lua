@@ -4,9 +4,11 @@
 CoD.lmgInfiniteReticle_AmmoBar = InheritFrom( LUI.UIElement )
 CoD.lmgInfiniteReticle_AmmoBar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.lmgInfiniteReticle_AmmoBar )
 	self.id = "lmgInfiniteReticle_AmmoBar"
@@ -40,6 +42,7 @@ CoD.lmgInfiniteReticle_AmmoBar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

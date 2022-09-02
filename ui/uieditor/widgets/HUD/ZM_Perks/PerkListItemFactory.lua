@@ -4,9 +4,11 @@
 CoD.PerkListItemFactory = InheritFrom( LUI.UIElement )
 CoD.PerkListItemFactory.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PerkListItemFactory )
 	self.id = "PerkListItemFactory"
@@ -73,18 +75,23 @@ CoD.PerkListItemFactory.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				GlowOblueOver:completeAnimation()
 				self.GlowOblueOver:setAlpha( 0 )
 				self.clipFinished( GlowOblueOver, {} )
+
 				GlowBlueOver0:completeAnimation()
 				self.GlowBlueOver0:setAlpha( 0 )
 				self.clipFinished( GlowBlueOver0, {} )
+
 				PerkImage:completeAnimation()
 				self.PerkImage:setAlpha( 0 )
 				self.clipFinished( PerkImage, {} )
+
 				GlowOrangeOver1:completeAnimation()
 				self.GlowOrangeOver1:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver1, {} )
+
 				Lightning:completeAnimation()
 				self.Lightning:setAlpha( 0 )
 				self.clipFinished( Lightning, {} )
@@ -93,24 +100,30 @@ CoD.PerkListItemFactory.new = function ( menu, controller )
 		Enabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				GlowOblueOver:completeAnimation()
 				self.GlowOblueOver:setAlpha( 0 )
 				self.clipFinished( GlowOblueOver, {} )
+
 				GlowBlueOver0:completeAnimation()
 				self.GlowBlueOver0:setAlpha( 0 )
 				self.clipFinished( GlowBlueOver0, {} )
+
 				PerkImage:completeAnimation()
 				self.PerkImage:setAlpha( 1 )
 				self.clipFinished( PerkImage, {} )
+
 				GlowOrangeOver1:completeAnimation()
 				self.GlowOrangeOver1:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver1, {} )
+
 				Lightning:completeAnimation()
 				self.Lightning:setAlpha( 0 )
 				self.clipFinished( Lightning, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 5 )
+
 				local GlowOblueOverFrame2 = function ( GlowOblueOver, event )
 					local GlowOblueOverFrame3 = function ( GlowOblueOver, event )
 						local GlowOblueOverFrame4 = function ( GlowOblueOver, event )
@@ -285,9 +298,11 @@ CoD.PerkListItemFactory.new = function ( menu, controller )
 		Paused = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				GlowOblueOver:completeAnimation()
 				self.GlowOblueOver:setAlpha( 0 )
 				self.clipFinished( GlowOblueOver, {} )
+
 				GlowBlueOver0:completeAnimation()
 				self.GlowBlueOver0:setAlpha( 0 )
 				self.clipFinished( GlowBlueOver0, {} )
@@ -306,15 +321,18 @@ CoD.PerkListItemFactory.new = function ( menu, controller )
 				PerkImage:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
 				PerkImage:setAlpha( 0 )
 				PerkImage:registerEventHandler( "transition_complete_keyframe", f19_local0 )
+
 				GlowOrangeOver1:completeAnimation()
 				self.GlowOrangeOver1:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver1, {} )
+
 				Lightning:completeAnimation()
 				self.Lightning:setAlpha( 0 )
 				self.clipFinished( Lightning, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Enabled",
@@ -337,12 +355,14 @@ CoD.PerkListItemFactory.new = function ( menu, controller )
 			modelName = "status"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsSelfModelValueTrue( element, controller, "newPerk" ) then
 			PlayClip( self, "Intro", controller )
 			SetSelfModelValue( self, element, controller, "newPerk", false )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PerkImage:close()
 	end )

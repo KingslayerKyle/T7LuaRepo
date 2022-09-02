@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Theater.Theater_TopFramePanelCont" )
 CoD.Theater_TopFramePanel = InheritFrom( LUI.UIElement )
 CoD.Theater_TopFramePanel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Theater_TopFramePanel )
 	self.id = "Theater_TopFramePanel"

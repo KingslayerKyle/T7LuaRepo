@@ -11,9 +11,11 @@ require( "ui.uieditor.widgets.HUD.CP_DamageWidget.DamageWidget_Dot" )
 CoD.PrematchCountdown_Numbers = InheritFrom( LUI.UIElement )
 CoD.PrematchCountdown_Numbers.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PrematchCountdown_Numbers )
 	self.id = "PrematchCountdown_Numbers"
@@ -112,47 +114,57 @@ CoD.PrematchCountdown_Numbers.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				GlowPanel:completeAnimation()
 				self.GlowPanel:setAlpha( 1 )
 				self.clipFinished( GlowPanel, {} )
+
 				LineBottom:completeAnimation()
 				self.LineBottom:setLeftRight( false, false, -16, 16 )
 				self.LineBottom:setTopBottom( false, false, 58.14, 61.14 )
 				self.LineBottom:setAlpha( 1 )
 				self.clipFinished( LineBottom, {} )
+
 				PanelAmmo:completeAnimation()
 				self.PanelAmmo:setLeftRight( false, false, -70, 70 )
 				self.PanelAmmo:setTopBottom( false, false, -30, 35 )
 				self.PanelAmmo:setAlpha( 0 )
 				self.clipFinished( PanelAmmo, {} )
+
 				Numbers:completeAnimation()
 				self.Numbers:setLeftRight( false, false, -60, 60 )
 				self.Numbers:setTopBottom( false, false, -30, 40 )
 				self.Numbers:setAlpha( 1 )
 				self.clipFinished( Numbers, {} )
+
 				MatchText:completeAnimation()
 				self.MatchText:setAlpha( 1 )
 				self.clipFinished( MatchText, {} )
+
 				Dot61:completeAnimation()
 				self.Dot61:setLeftRight( true, false, 572, 576 )
 				self.Dot61:setTopBottom( true, false, 79, 83 )
 				self.Dot61:setAlpha( 1 )
 				self.clipFinished( Dot61, {} )
+
 				Dot600:completeAnimation()
 				self.Dot600:setLeftRight( true, false, 705, 709 )
 				self.Dot600:setTopBottom( true, false, 79, 83 )
 				self.Dot600:setAlpha( 1 )
 				self.clipFinished( Dot600, {} )
+
 				Dot62:completeAnimation()
 				self.Dot62:setLeftRight( true, false, 572, 576 )
 				self.Dot62:setTopBottom( true, false, -58, -54 )
 				self.Dot62:setAlpha( 1 )
 				self.clipFinished( Dot62, {} )
+
 				Dot601:completeAnimation()
 				self.Dot601:setLeftRight( true, false, 705, 709 )
 				self.Dot601:setTopBottom( true, false, -58, -54 )
 				self.Dot601:setAlpha( 1 )
 				self.clipFinished( Dot601, {} )
+
 				LineTop:completeAnimation()
 				self.LineTop:setLeftRight( false, false, -16, 16 )
 				self.LineTop:setTopBottom( false, false, -109.86, -106.86 )
@@ -161,6 +173,7 @@ CoD.PrematchCountdown_Numbers.new = function ( menu, controller )
 			end,
 			Start = function ()
 				self:setupElementClipCounter( 11 )
+
 				local GlowPanelFrame2 = function ( GlowPanel, event )
 					if not event.interrupted then
 						GlowPanel:beginAnimation( "keyframe", 879, false, false, CoD.TweenType.Linear )
@@ -1052,6 +1065,7 @@ CoD.PrematchCountdown_Numbers.new = function ( menu, controller )
 			end,
 			Stop = function ()
 				self:setupElementClipCounter( 11 )
+
 				local GlowPanelFrame2 = function ( GlowPanel, event )
 					if not event.interrupted then
 						GlowPanel:beginAnimation( "keyframe", 560, false, false, CoD.TweenType.Linear )
@@ -2086,6 +2100,7 @@ CoD.PrematchCountdown_Numbers.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GlowPanel:close()
 		element.LineBottom:close()

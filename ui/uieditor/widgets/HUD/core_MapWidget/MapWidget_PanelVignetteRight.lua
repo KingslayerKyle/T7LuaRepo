@@ -4,9 +4,11 @@
 CoD.MapWidget_PanelVignetteRight = InheritFrom( LUI.UIElement )
 CoD.MapWidget_PanelVignetteRight.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MapWidget_PanelVignetteRight )
 	self.id = "MapWidget_PanelVignetteRight"
@@ -27,12 +29,14 @@ CoD.MapWidget_PanelVignetteRight.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ImgPanelCPMap:completeAnimation()
 				self.ImgPanelCPMap:setRGB( 0, 0, 0 )
 				self.clipFinished( ImgPanelCPMap, {} )
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ImgPanelCPMapFrame2 = function ( ImgPanelCPMap, event )
 					if not event.interrupted then
 						ImgPanelCPMap:beginAnimation( "keyframe", 1750, false, false, CoD.TweenType.Linear )
@@ -53,12 +57,14 @@ CoD.MapWidget_PanelVignetteRight.new = function ( menu, controller )
 		HudStart = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ImgPanelCPMap:completeAnimation()
 				self.ImgPanelCPMap:setRGB( 0.82, 0.82, 0.82 )
 				self.clipFinished( ImgPanelCPMap, {} )
 			end,
 			HudStop = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ImgPanelCPMapFrame2 = function ( ImgPanelCPMap, event )
 					if not event.interrupted then
 						ImgPanelCPMap:beginAnimation( "keyframe", 1779, false, false, CoD.TweenType.Linear )
@@ -79,12 +85,14 @@ CoD.MapWidget_PanelVignetteRight.new = function ( menu, controller )
 		HudStop = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ImgPanelCPMap:completeAnimation()
 				self.ImgPanelCPMap:setRGB( 0, 0, 0 )
 				self.clipFinished( ImgPanelCPMap, {} )
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ImgPanelCPMapFrame2 = function ( ImgPanelCPMap, event )
 					if not event.interrupted then
 						ImgPanelCPMap:beginAnimation( "keyframe", 1509, false, false, CoD.TweenType.Linear )

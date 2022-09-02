@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.verticalScrollbarNew = InheritFrom( LUI.UIElement )
 CoD.verticalScrollbarNew.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.verticalScrollbarNew )
 	self.id = "verticalScrollbarNew"
@@ -51,15 +53,19 @@ CoD.verticalScrollbarNew.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				topArrow:completeAnimation()
 				self.topArrow:setAlpha( 1 )
 				self.clipFinished( topArrow, {} )
+
 				bottomArrow:completeAnimation()
 				self.bottomArrow:setAlpha( 1 )
 				self.clipFinished( bottomArrow, {} )
+
 				sliderBorder:completeAnimation()
 				self.sliderBorder:setAlpha( 0.4 )
 				self.clipFinished( sliderBorder, {} )
+
 				slider:completeAnimation()
 				self.slider:setAlpha( 0.8 )
 				self.clipFinished( slider, {} )
@@ -68,15 +74,19 @@ CoD.verticalScrollbarNew.new = function ( menu, controller )
 		AtTop = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				topArrow:completeAnimation()
 				self.topArrow:setAlpha( 0 )
 				self.clipFinished( topArrow, {} )
+
 				bottomArrow:completeAnimation()
 				self.bottomArrow:setAlpha( 1 )
 				self.clipFinished( bottomArrow, {} )
+
 				sliderBorder:completeAnimation()
 				self.sliderBorder:setAlpha( 0.4 )
 				self.clipFinished( sliderBorder, {} )
+
 				slider:completeAnimation()
 				self.slider:setAlpha( 0.8 )
 				self.clipFinished( slider, {} )
@@ -85,15 +95,19 @@ CoD.verticalScrollbarNew.new = function ( menu, controller )
 		AtTopAndBottom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				topArrow:completeAnimation()
 				self.topArrow:setAlpha( 0 )
 				self.clipFinished( topArrow, {} )
+
 				bottomArrow:completeAnimation()
 				self.bottomArrow:setAlpha( 0 )
 				self.clipFinished( bottomArrow, {} )
+
 				sliderBorder:completeAnimation()
 				self.sliderBorder:setAlpha( 0 )
 				self.clipFinished( sliderBorder, {} )
+
 				slider:completeAnimation()
 				self.slider:setAlpha( 0 )
 				self.clipFinished( slider, {} )
@@ -102,21 +116,26 @@ CoD.verticalScrollbarNew.new = function ( menu, controller )
 		AtBottom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				topArrow:completeAnimation()
 				self.topArrow:setAlpha( 1 )
 				self.clipFinished( topArrow, {} )
+
 				bottomArrow:completeAnimation()
 				self.bottomArrow:setAlpha( 0 )
 				self.clipFinished( bottomArrow, {} )
+
 				sliderBorder:completeAnimation()
 				self.sliderBorder:setAlpha( 0.4 )
 				self.clipFinished( sliderBorder, {} )
+
 				slider:completeAnimation()
 				self.slider:setAlpha( 0.8 )
 				self.clipFinished( slider, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.sliderBorder:close()
 	end )

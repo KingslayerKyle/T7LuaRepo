@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.CombatRecordRightTitleWithBackground = InheritFrom( LUI.UIElement )
 CoD.CombatRecordRightTitleWithBackground.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CombatRecordRightTitleWithBackground )
 	self.id = "CombatRecordRightTitleWithBackground"
@@ -35,6 +37,7 @@ CoD.CombatRecordRightTitleWithBackground.new = function ( menu, controller )
 	Label:setShaderVector( 2, 1, 0, 0, 0 )
 	Label:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	Label:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( Label, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 7 )
 	end )
@@ -45,9 +48,11 @@ CoD.CombatRecordRightTitleWithBackground.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TitleGlow1:close()
 	end )

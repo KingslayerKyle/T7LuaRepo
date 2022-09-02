@@ -18,6 +18,7 @@ CoD.CodCasterRounds.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterRounds )
 	self.id = "CodCasterRounds"

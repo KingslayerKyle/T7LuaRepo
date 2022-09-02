@@ -4,9 +4,11 @@
 CoD.PersonalizePrompt = InheritFrom( LUI.UIElement )
 CoD.PersonalizePrompt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PersonalizePrompt )
 	self.id = "PersonalizePrompt"
@@ -42,9 +44,11 @@ CoD.PersonalizePrompt.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0.7 )
 				self.clipFinished( Panel, {} )
+
 				promptText:completeAnimation()
 				self.promptText:setAlpha( 1 )
 				self.clipFinished( promptText, {} )
@@ -53,15 +57,18 @@ CoD.PersonalizePrompt.new = function ( menu, controller )
 		NotVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
+
 				promptText:completeAnimation()
 				self.promptText:setAlpha( 0 )
 				self.clipFinished( promptText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NotVisible",

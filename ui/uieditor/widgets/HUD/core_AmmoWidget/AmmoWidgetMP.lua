@@ -23,9 +23,11 @@ end
 CoD.AmmoWidgetMP = InheritFrom( LUI.UIElement )
 CoD.AmmoWidgetMP.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidgetMP )
 	self.id = "AmmoWidgetMP"
@@ -364,11 +366,17 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				PanelContainer:completeAnimation()
+
 				PanelContainer.PanelTactical:completeAnimation()
+
 				PanelContainer.PanelLethal:completeAnimation()
+
 				PanelContainer.PanelOctagon:completeAnimation()
+
 				PanelContainer.PanelAmmo:completeAnimation()
+
 				PanelContainer.PanelFlagEnemy:completeAnimation()
 				self.PanelContainer.PanelTactical:setAlpha( 0 )
 				self.PanelContainer.PanelLethal:setAlpha( 0 )
@@ -376,36 +384,48 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.PanelContainer.PanelAmmo:setAlpha( 0 )
 				self.PanelContainer.PanelFlagEnemy:setAlpha( 0 )
 				self.clipFinished( PanelContainer, {} )
+
 				BackCircleOutter:completeAnimation()
 				self.BackCircleOutter:setAlpha( 0 )
 				self.BackCircleOutter:setZoom( 30 )
 				self.clipFinished( BackCircleOutter, {} )
+
 				BackCircle:completeAnimation()
 				self.BackCircle:setAlpha( 0 )
 				self.BackCircle:setZoom( 40 )
 				self.clipFinished( BackCircle, {} )
+
 				GlowTactical:completeAnimation()
 				self.GlowTactical:setAlpha( 0 )
 				self.clipFinished( GlowTactical, {} )
+
 				GlowLethal:completeAnimation()
 				self.GlowLethal:setAlpha( 0 )
 				self.clipFinished( GlowLethal, {} )
+
 				InventoryBox1:completeAnimation()
 				self.InventoryBox1:setAlpha( 0 )
 				self.InventoryBox1:setZoom( 30 )
 				self.clipFinished( InventoryBox1, {} )
+
 				InventoryBox2:completeAnimation()
 				self.InventoryBox2:setAlpha( 0 )
 				self.InventoryBox2:setZoom( 30 )
 				self.clipFinished( InventoryBox2, {} )
+
 				EquipmentInfo:completeAnimation()
 				self.EquipmentInfo:setAlpha( 0 )
 				self.EquipmentInfo:setZoom( 0 )
 				self.clipFinished( EquipmentInfo, {} )
+
 				ClipElements:completeAnimation()
+
 				ClipElements.BackLine1:completeAnimation()
+
 				ClipElements.BackLine2:completeAnimation()
+
 				ClipElements.ImgSemiCircle:completeAnimation()
+
 				ClipElements.ImgSeperator:completeAnimation()
 				self.ClipElements.BackLine1:setAlpha( 0 )
 				self.ClipElements.BackLine2:setAlpha( 0 )
@@ -414,12 +434,19 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.ClipElements.ImgSeperator:setAlpha( 0 )
 				self.ClipElements.ImgSeperator:setZoom( 15 )
 				self.clipFinished( ClipElements, {} )
+
 				Clip:completeAnimation()
+
 				Clip.Clip:completeAnimation()
+
 				Clip.Knife:completeAnimation()
+
 				Clip.TotalAmmo:completeAnimation()
+
 				Clip.ClipMeter:completeAnimation()
+
 				Clip.AmmoColorBar:completeAnimation()
+
 				Clip.ClipHero:completeAnimation()
 				self.Clip.Clip:setAlpha( 0 )
 				self.Clip.Knife:setAlpha( 0 )
@@ -428,13 +455,19 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.Clip.AmmoColorBar:setAlpha( 0 )
 				self.Clip.ClipHero:setAlpha( 0 )
 				self.clipFinished( Clip, {} )
+
 				FireRate:completeAnimation()
 				self.FireRate:setAlpha( 0 )
 				self.clipFinished( FireRate, {} )
+
 				AbilityContainer:completeAnimation()
+
 				AbilityContainer.AbilityRingBackDuplicate:completeAnimation()
+
 				AbilityContainer.AbilityRingBackDeplete:completeAnimation()
+
 				AbilityContainer.AbilityRingBack:completeAnimation()
+
 				AbilityContainer.AbilityIconContainer:completeAnimation()
 				self.AbilityContainer:setAlpha( 0 )
 				self.AbilityContainer.AbilityRingBackDuplicate:setZoom( 0 )
@@ -442,9 +475,13 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.AbilityContainer.AbilityRingBack:setZoom( 30 )
 				self.AbilityContainer.AbilityIconContainer:setZoom( 40 )
 				self.clipFinished( AbilityContainer, {} )
+
 				ClipDummy:completeAnimation()
+
 				ClipDummy.Knife:completeAnimation()
+
 				ClipDummy.TotalAmmo:completeAnimation()
+
 				ClipDummy.TotalAmmo.TotalAmmoLbl:completeAnimation()
 				self.ClipDummy.Knife:setAlpha( 0 )
 				self.ClipDummy.TotalAmmo:setRGB( 1, 1, 1 )
@@ -452,12 +489,14 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.ClipDummy.TotalAmmo:setZoom( 30 )
 				self.ClipDummy.TotalAmmo.TotalAmmoLbl:setText( Engine.Localize( "000" ) )
 				self.clipFinished( ClipDummy, {} )
+
 				EnemyFlagHeld:completeAnimation()
 				self.EnemyFlagHeld:setAlpha( 0 )
 				self.clipFinished( EnemyFlagHeld, {} )
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 14 )
+
 				local PanelContainerFrame2 = function ( PanelContainer, event )
 					local PanelContainerFrame3 = function ( PanelContainer, event )
 						local PanelContainerFrame4 = function ( PanelContainer, event )
@@ -786,10 +825,15 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				end
 				
 				PanelContainer:completeAnimation()
+
 				PanelContainer.PanelTactical:completeAnimation()
+
 				PanelContainer.PanelLethal:completeAnimation()
+
 				PanelContainer.PanelOctagon:completeAnimation()
+
 				PanelContainer.PanelAmmo:completeAnimation()
+
 				PanelContainer.PanelFlagEnemy:completeAnimation()
 				self.PanelContainer.PanelTactical:setAlpha( 0 )
 				self.PanelContainer.PanelLethal:setAlpha( 0 )
@@ -1772,8 +1816,11 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				end
 				
 				ClipElements:completeAnimation()
+
 				ClipElements.BackLine1:completeAnimation()
+
 				ClipElements.ImgSemiCircle:completeAnimation()
+
 				ClipElements.ImgSeperator:completeAnimation()
 				self.ClipElements.BackLine1:setAlpha( 0 )
 				self.ClipElements.ImgSemiCircle:setAlpha( 0 )
@@ -2083,11 +2130,17 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				end
 				
 				Clip:completeAnimation()
+
 				Clip.Clip:completeAnimation()
+
 				Clip.Knife:completeAnimation()
+
 				Clip.TotalAmmo:completeAnimation()
+
 				Clip.ClipMeter:completeAnimation()
+
 				Clip.AmmoColorBar:completeAnimation()
+
 				Clip.ClipHero:completeAnimation()
 				self.Clip.Clip:setAlpha( 0 )
 				self.Clip.Knife:setAlpha( 0 )
@@ -2374,9 +2427,13 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				end
 				
 				AbilityContainer:completeAnimation()
+
 				AbilityContainer.AbilityRingBackDuplicate:completeAnimation()
+
 				AbilityContainer.AbilityRingBackDeplete:completeAnimation()
+
 				AbilityContainer.AbilityRingBack:completeAnimation()
+
 				AbilityContainer.AbilityIconContainer:completeAnimation()
 				self.AbilityContainer:setAlpha( 0 )
 				self.AbilityContainer.AbilityRingBackDuplicate:setZoom( 0 )
@@ -2967,8 +3024,11 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				end
 				
 				ClipDummy:completeAnimation()
+
 				ClipDummy.Knife:completeAnimation()
+
 				ClipDummy.TotalAmmo:completeAnimation()
+
 				ClipDummy.TotalAmmo.TotalAmmoLbl:completeAnimation()
 				self.ClipDummy.Knife:setAlpha( 0 )
 				self.ClipDummy.TotalAmmo:setRGB( 1, 1, 1 )
@@ -3004,6 +3064,7 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 			end,
 			HudStartGun = function ()
 				self:setupElementClipCounter( 16 )
+
 				local PanelContainerFrame2 = function ( PanelContainer, event )
 					local PanelContainerFrame3 = function ( PanelContainer, event )
 						local PanelContainerFrame4 = function ( PanelContainer, event )
@@ -3266,10 +3327,15 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				end
 				
 				PanelContainer:completeAnimation()
+
 				PanelContainer.PanelTactical:completeAnimation()
+
 				PanelContainer.PanelLethal:completeAnimation()
+
 				PanelContainer.PanelOctagon:completeAnimation()
+
 				PanelContainer.PanelAmmo:completeAnimation()
+
 				PanelContainer.PanelFlagEnemy:completeAnimation()
 				self.PanelContainer:setLeftRight( false, true, -152, 98 )
 				self.PanelContainer:setTopBottom( false, false, -47, 58.67 )
@@ -3408,6 +3474,7 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.BackCircleOutter:setAlpha( 0 )
 				self.BackCircleOutter:setZoom( 30 )
 				BackCircleOutterFrame2( BackCircleOutter, {} )
+
 				BackCircle:completeAnimation()
 				self.BackCircle:setLeftRight( true, false, 335.84, 430.84 )
 				self.BackCircle:setTopBottom( true, false, 12.66, 118.66 )
@@ -4170,8 +4237,11 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				end
 				
 				ClipElements:completeAnimation()
+
 				ClipElements.BackLine1:completeAnimation()
+
 				ClipElements.ImgSemiCircle:completeAnimation()
+
 				ClipElements.ImgSeperator:completeAnimation()
 				self.ClipElements:setLeftRight( true, false, 270.18, 430.18 )
 				self.ClipElements:setTopBottom( true, false, 43.5, 100.5 )
@@ -4447,11 +4517,17 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				end
 				
 				Clip:completeAnimation()
+
 				Clip.Clip:completeAnimation()
+
 				Clip.Knife:completeAnimation()
+
 				Clip.TotalAmmo:completeAnimation()
+
 				Clip.ClipMeter:completeAnimation()
+
 				Clip.AmmoColorBar:completeAnimation()
+
 				Clip.ClipHero:completeAnimation()
 				self.Clip:setLeftRight( true, false, 285.68, 420.68 )
 				self.Clip:setTopBottom( true, false, 41.5, 98.5 )
@@ -4662,9 +4738,13 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				end
 				
 				AbilityContainer:completeAnimation()
+
 				AbilityContainer.AbilityRingBackDuplicate:completeAnimation()
+
 				AbilityContainer.AbilityRingBackDeplete:completeAnimation()
+
 				AbilityContainer.AbilityRingBack:completeAnimation()
+
 				AbilityContainer.AbilityIconContainer:completeAnimation()
 				self.AbilityContainer:setLeftRight( true, false, 323.34, 443.34 )
 				self.AbilityContainer:setTopBottom( true, false, 12, 132 )
@@ -5092,8 +5172,11 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				end
 				
 				ClipDummy:completeAnimation()
+
 				ClipDummy.Knife:completeAnimation()
+
 				ClipDummy.TotalAmmo:completeAnimation()
+
 				ClipDummy.TotalAmmo.TotalAmmoLbl:completeAnimation()
 				self.ClipDummy:setLeftRight( true, false, 285.68, 420.68 )
 				self.ClipDummy:setTopBottom( true, false, 41.5, 98.5 )
@@ -5103,10 +5186,12 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.ClipDummy.TotalAmmo:setZoom( 30 )
 				self.ClipDummy.TotalAmmo.TotalAmmoLbl:setText( Engine.Localize( "000" ) )
 				ClipDummyFrame2( ClipDummy, {} )
+
 				TacticalEmpty:completeAnimation()
 				self.TacticalEmpty:setLeftRight( true, false, 308.42, 334.42 )
 				self.TacticalEmpty:setTopBottom( true, false, 19.67, 45.67 )
 				self.clipFinished( TacticalEmpty, {} )
+
 				LethalEmpty:completeAnimation()
 				self.LethalEmpty:setLeftRight( true, false, 353.09, 379.09 )
 				self.LethalEmpty:setTopBottom( true, false, 19.67, 45.67 )
@@ -5143,6 +5228,7 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 			end,
 			HudStartClassic = function ()
 				self:setupElementClipCounter( 16 )
+
 				local PanelContainerFrame2 = function ( PanelContainer, event )
 					local PanelContainerFrame3 = function ( PanelContainer, event )
 						local PanelContainerFrame4 = function ( PanelContainer, event )
@@ -5405,10 +5491,15 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				end
 				
 				PanelContainer:completeAnimation()
+
 				PanelContainer.PanelTactical:completeAnimation()
+
 				PanelContainer.PanelLethal:completeAnimation()
+
 				PanelContainer.PanelOctagon:completeAnimation()
+
 				PanelContainer.PanelAmmo:completeAnimation()
+
 				PanelContainer.PanelFlagEnemy:completeAnimation()
 				self.PanelContainer:setLeftRight( false, true, -152, 98 )
 				self.PanelContainer:setTopBottom( false, false, -47, 58.67 )
@@ -5547,6 +5638,7 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.BackCircleOutter:setAlpha( 0 )
 				self.BackCircleOutter:setZoom( 30 )
 				BackCircleOutterFrame2( BackCircleOutter, {} )
+
 				BackCircle:completeAnimation()
 				self.BackCircle:setLeftRight( true, false, 335.84, 430.84 )
 				self.BackCircle:setTopBottom( true, false, 12.66, 118.66 )
@@ -6309,8 +6401,11 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				end
 				
 				ClipElements:completeAnimation()
+
 				ClipElements.BackLine1:completeAnimation()
+
 				ClipElements.ImgSemiCircle:completeAnimation()
+
 				ClipElements.ImgSeperator:completeAnimation()
 				self.ClipElements:setLeftRight( true, false, 270.18, 430.18 )
 				self.ClipElements:setTopBottom( true, false, 43.5, 100.5 )
@@ -6586,11 +6681,17 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				end
 				
 				Clip:completeAnimation()
+
 				Clip.Clip:completeAnimation()
+
 				Clip.Knife:completeAnimation()
+
 				Clip.TotalAmmo:completeAnimation()
+
 				Clip.ClipMeter:completeAnimation()
+
 				Clip.AmmoColorBar:completeAnimation()
+
 				Clip.ClipHero:completeAnimation()
 				self.Clip:setLeftRight( true, false, 256.68, 391.68 )
 				self.Clip:setTopBottom( true, false, 41.5, 98.5 )
@@ -7328,8 +7429,11 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				end
 				
 				ClipDummy:completeAnimation()
+
 				ClipDummy.Knife:completeAnimation()
+
 				ClipDummy.TotalAmmo:completeAnimation()
+
 				ClipDummy.TotalAmmo.TotalAmmoLbl:completeAnimation()
 				self.ClipDummy:setLeftRight( true, false, 256.68, 391.68 )
 				self.ClipDummy:setTopBottom( true, false, 41.5, 98.5 )
@@ -7339,10 +7443,12 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.ClipDummy.TotalAmmo:setZoom( 30 )
 				self.ClipDummy.TotalAmmo.TotalAmmoLbl:setText( Engine.Localize( "000" ) )
 				ClipDummyFrame2( ClipDummy, {} )
+
 				TacticalEmpty:completeAnimation()
 				self.TacticalEmpty:setLeftRight( true, false, 308.42, 334.42 )
 				self.TacticalEmpty:setTopBottom( true, false, 19.67, 45.67 )
 				self.clipFinished( TacticalEmpty, {} )
+
 				LethalEmpty:completeAnimation()
 				self.LethalEmpty:setLeftRight( true, false, 353.09, 379.09 )
 				self.LethalEmpty:setTopBottom( true, false, 19.67, 45.67 )
@@ -7381,11 +7487,17 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 		HudStartGun = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				PanelContainer:completeAnimation()
+
 				PanelContainer.PanelTactical:completeAnimation()
+
 				PanelContainer.PanelLethal:completeAnimation()
+
 				PanelContainer.PanelOctagon:completeAnimation()
+
 				PanelContainer.PanelAmmo:completeAnimation()
+
 				PanelContainer.PanelFlagEnemy:completeAnimation()
 				self.PanelContainer:setLeftRight( false, true, -152, 98 )
 				self.PanelContainer:setTopBottom( false, false, -47, 58.67 )
@@ -7395,48 +7507,59 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.PanelContainer.PanelAmmo:setAlpha( 1 )
 				self.PanelContainer.PanelFlagEnemy:setAlpha( 1 )
 				self.clipFinished( PanelContainer, {} )
+
 				BackCircleOutter:completeAnimation()
 				self.BackCircleOutter:setLeftRight( true, false, 447.73, 554.73 )
 				self.BackCircleOutter:setTopBottom( true, false, 20, 124 )
 				self.BackCircleOutter:setAlpha( 0 )
 				self.BackCircleOutter:setZoom( -8 )
 				self.clipFinished( BackCircleOutter, {} )
+
 				BackCircle:completeAnimation()
 				self.BackCircle:setLeftRight( true, false, 335.84, 430.84 )
 				self.BackCircle:setTopBottom( true, false, 12.66, 118.66 )
 				self.BackCircle:setAlpha( 0 )
 				self.clipFinished( BackCircle, {} )
+
 				GlowTactical:completeAnimation()
 				self.GlowTactical:setLeftRight( true, false, 297.34, 345.49 )
 				self.GlowTactical:setTopBottom( true, false, 8.59, 56.74 )
 				self.GlowTactical:setAlpha( 1 )
 				self.clipFinished( GlowTactical, {} )
+
 				GlowLethal:completeAnimation()
 				self.GlowLethal:setLeftRight( true, false, 340.34, 388.49 )
 				self.GlowLethal:setTopBottom( true, false, 8.59, 56.74 )
 				self.GlowLethal:setAlpha( 1 )
 				self.clipFinished( GlowLethal, {} )
+
 				InventoryBox1:completeAnimation()
 				self.InventoryBox1:setLeftRight( true, false, 300.75, 342.42 )
 				self.InventoryBox1:setTopBottom( true, false, 15, 50.33 )
 				self.InventoryBox1:setAlpha( 0.5 )
 				self.InventoryBox1:setZoom( 1 )
 				self.clipFinished( InventoryBox1, {} )
+
 				InventoryBox2:completeAnimation()
 				self.InventoryBox2:setLeftRight( true, false, 344.75, 387.42 )
 				self.InventoryBox2:setTopBottom( true, false, 15, 50.33 )
 				self.InventoryBox2:setAlpha( 0.5 )
 				self.InventoryBox2:setZoom( 1 )
 				self.clipFinished( InventoryBox2, {} )
+
 				EquipmentInfo:completeAnimation()
 				self.EquipmentInfo:setLeftRight( true, false, 302, 392 )
 				self.EquipmentInfo:setTopBottom( true, false, 13, 55 )
 				self.EquipmentInfo:setAlpha( 1 )
 				self.EquipmentInfo:setZoom( 0 )
 				self.clipFinished( EquipmentInfo, {} )
+
 				ClipElements:completeAnimation()
+
 				ClipElements.BackLine1:completeAnimation()
+
 				ClipElements.ImgSemiCircle:completeAnimation()
+
 				ClipElements.ImgSeperator:completeAnimation()
 				self.ClipElements:setLeftRight( true, false, 270.18, 430.18 )
 				self.ClipElements:setTopBottom( true, false, 43.5, 100.5 )
@@ -7446,12 +7569,19 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.ClipElements.ImgSeperator:setAlpha( 0.8 )
 				self.ClipElements.ImgSeperator:setZoom( 0 )
 				self.clipFinished( ClipElements, {} )
+
 				Clip:completeAnimation()
+
 				Clip.Clip:completeAnimation()
+
 				Clip.Knife:completeAnimation()
+
 				Clip.TotalAmmo:completeAnimation()
+
 				Clip.ClipMeter:completeAnimation()
+
 				Clip.AmmoColorBar:completeAnimation()
+
 				Clip.ClipHero:completeAnimation()
 				self.Clip:setLeftRight( true, false, 285.68, 420.68 )
 				self.Clip:setTopBottom( true, false, 41.5, 98.5 )
@@ -7462,15 +7592,21 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.Clip.AmmoColorBar:setAlpha( 1 )
 				self.Clip.ClipHero:setAlpha( 0 )
 				self.clipFinished( Clip, {} )
+
 				FireRate:completeAnimation()
 				self.FireRate:setLeftRight( true, false, 67, 383 )
 				self.FireRate:setTopBottom( true, false, 99.67, 117.67 )
 				self.FireRate:setAlpha( 1 )
 				self.clipFinished( FireRate, {} )
+
 				AbilityContainer:completeAnimation()
+
 				AbilityContainer.AbilityRingBackDuplicate:completeAnimation()
+
 				AbilityContainer.AbilityRingBackDeplete:completeAnimation()
+
 				AbilityContainer.AbilityRingBack:completeAnimation()
+
 				AbilityContainer.AbilityIconContainer:completeAnimation()
 				self.AbilityContainer:setLeftRight( true, false, 323.34, 443.34 )
 				self.AbilityContainer:setTopBottom( true, false, 12, 132 )
@@ -7480,9 +7616,13 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.AbilityContainer.AbilityRingBack:setZoom( 0 )
 				self.AbilityContainer.AbilityIconContainer:setZoom( 0 )
 				self.clipFinished( AbilityContainer, {} )
+
 				ClipDummy:completeAnimation()
+
 				ClipDummy.Knife:completeAnimation()
+
 				ClipDummy.TotalAmmo:completeAnimation()
+
 				ClipDummy.TotalAmmo.TotalAmmoLbl:completeAnimation()
 				self.ClipDummy:setLeftRight( true, false, 285.68, 420.68 )
 				self.ClipDummy:setTopBottom( true, false, 41.5, 98.5 )
@@ -7492,14 +7632,17 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.ClipDummy.TotalAmmo:setZoom( 0 )
 				self.ClipDummy.TotalAmmo.TotalAmmoLbl:setText( Engine.Localize( "000" ) )
 				self.clipFinished( ClipDummy, {} )
+
 				TacticalEmpty:completeAnimation()
 				self.TacticalEmpty:setLeftRight( true, false, 308.42, 334.42 )
 				self.TacticalEmpty:setTopBottom( true, false, 19.67, 45.67 )
 				self.clipFinished( TacticalEmpty, {} )
+
 				LethalEmpty:completeAnimation()
 				self.LethalEmpty:setLeftRight( true, false, 353.09, 379.09 )
 				self.LethalEmpty:setTopBottom( true, false, 19.67, 45.67 )
 				self.clipFinished( LethalEmpty, {} )
+
 				EnemyFlagHeld:completeAnimation()
 				self.EnemyFlagHeld:setLeftRight( true, false, 180, 258 )
 				self.EnemyFlagHeld:setTopBottom( true, false, 15, 108.67 )
@@ -7510,11 +7653,17 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 		HudStartClassic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				PanelContainer:completeAnimation()
+
 				PanelContainer.PanelTactical:completeAnimation()
+
 				PanelContainer.PanelLethal:completeAnimation()
+
 				PanelContainer.PanelOctagon:completeAnimation()
+
 				PanelContainer.PanelAmmo:completeAnimation()
+
 				PanelContainer.PanelFlagEnemy:completeAnimation()
 				self.PanelContainer:setLeftRight( false, true, -152, 98 )
 				self.PanelContainer:setTopBottom( false, false, -47, 58.67 )
@@ -7524,48 +7673,59 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.PanelContainer.PanelAmmo:setAlpha( 1 )
 				self.PanelContainer.PanelFlagEnemy:setAlpha( 1 )
 				self.clipFinished( PanelContainer, {} )
+
 				BackCircleOutter:completeAnimation()
 				self.BackCircleOutter:setLeftRight( true, false, 447.73, 554.73 )
 				self.BackCircleOutter:setTopBottom( true, false, 20, 124 )
 				self.BackCircleOutter:setAlpha( 0 )
 				self.BackCircleOutter:setZoom( -8 )
 				self.clipFinished( BackCircleOutter, {} )
+
 				BackCircle:completeAnimation()
 				self.BackCircle:setLeftRight( true, false, 335.84, 430.84 )
 				self.BackCircle:setTopBottom( true, false, 12.66, 118.66 )
 				self.BackCircle:setAlpha( 0 )
 				self.clipFinished( BackCircle, {} )
+
 				GlowTactical:completeAnimation()
 				self.GlowTactical:setLeftRight( true, false, 297.34, 345.49 )
 				self.GlowTactical:setTopBottom( true, false, 8.59, 56.74 )
 				self.GlowTactical:setAlpha( 1 )
 				self.clipFinished( GlowTactical, {} )
+
 				GlowLethal:completeAnimation()
 				self.GlowLethal:setLeftRight( true, false, 340.34, 388.49 )
 				self.GlowLethal:setTopBottom( true, false, 8.59, 56.74 )
 				self.GlowLethal:setAlpha( 1 )
 				self.clipFinished( GlowLethal, {} )
+
 				InventoryBox1:completeAnimation()
 				self.InventoryBox1:setLeftRight( true, false, 300.75, 342.42 )
 				self.InventoryBox1:setTopBottom( true, false, 15, 50.33 )
 				self.InventoryBox1:setAlpha( 0.5 )
 				self.InventoryBox1:setZoom( 1 )
 				self.clipFinished( InventoryBox1, {} )
+
 				InventoryBox2:completeAnimation()
 				self.InventoryBox2:setLeftRight( true, false, 344.75, 387.42 )
 				self.InventoryBox2:setTopBottom( true, false, 15, 50.33 )
 				self.InventoryBox2:setAlpha( 0.5 )
 				self.InventoryBox2:setZoom( 1 )
 				self.clipFinished( InventoryBox2, {} )
+
 				EquipmentInfo:completeAnimation()
 				self.EquipmentInfo:setLeftRight( true, false, 302, 392 )
 				self.EquipmentInfo:setTopBottom( true, false, 13, 55 )
 				self.EquipmentInfo:setAlpha( 1 )
 				self.EquipmentInfo:setZoom( 0 )
 				self.clipFinished( EquipmentInfo, {} )
+
 				ClipElements:completeAnimation()
+
 				ClipElements.BackLine1:completeAnimation()
+
 				ClipElements.ImgSemiCircle:completeAnimation()
+
 				ClipElements.ImgSeperator:completeAnimation()
 				self.ClipElements:setLeftRight( true, false, 241.18, 401.18 )
 				self.ClipElements:setTopBottom( true, false, 43.5, 100.5 )
@@ -7575,12 +7735,19 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.ClipElements.ImgSeperator:setAlpha( 0.8 )
 				self.ClipElements.ImgSeperator:setZoom( 0 )
 				self.clipFinished( ClipElements, {} )
+
 				Clip:completeAnimation()
+
 				Clip.Clip:completeAnimation()
+
 				Clip.Knife:completeAnimation()
+
 				Clip.TotalAmmo:completeAnimation()
+
 				Clip.ClipMeter:completeAnimation()
+
 				Clip.AmmoColorBar:completeAnimation()
+
 				Clip.ClipHero:completeAnimation()
 				self.Clip:setLeftRight( true, false, 256.68, 391.68 )
 				self.Clip:setTopBottom( true, false, 41.5, 98.5 )
@@ -7591,15 +7758,21 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.Clip.AmmoColorBar:setAlpha( 1 )
 				self.Clip.ClipHero:setAlpha( 1 )
 				self.clipFinished( Clip, {} )
+
 				FireRate:completeAnimation()
 				self.FireRate:setLeftRight( true, false, 67, 383 )
 				self.FireRate:setTopBottom( true, false, 99.67, 117.67 )
 				self.FireRate:setAlpha( 1 )
 				self.clipFinished( FireRate, {} )
+
 				AbilityContainer:completeAnimation()
+
 				AbilityContainer.AbilityRingBackDuplicate:completeAnimation()
+
 				AbilityContainer.AbilityRingBackDeplete:completeAnimation()
+
 				AbilityContainer.AbilityRingBack:completeAnimation()
+
 				AbilityContainer.AbilityIconContainer:completeAnimation()
 				self.AbilityContainer:setLeftRight( true, false, 323.34, 443.34 )
 				self.AbilityContainer:setTopBottom( true, false, 12, 132 )
@@ -7609,9 +7782,13 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.AbilityContainer.AbilityRingBack:setZoom( 0 )
 				self.AbilityContainer.AbilityIconContainer:setZoom( 0 )
 				self.clipFinished( AbilityContainer, {} )
+
 				ClipDummy:completeAnimation()
+
 				ClipDummy.Knife:completeAnimation()
+
 				ClipDummy.TotalAmmo:completeAnimation()
+
 				ClipDummy.TotalAmmo.TotalAmmoLbl:completeAnimation()
 				self.ClipDummy:setLeftRight( true, false, 256.68, 391.68 )
 				self.ClipDummy:setTopBottom( true, false, 41.5, 98.5 )
@@ -7621,14 +7798,17 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.ClipDummy.TotalAmmo:setZoom( 0 )
 				self.ClipDummy.TotalAmmo.TotalAmmoLbl:setText( Engine.Localize( "000" ) )
 				self.clipFinished( ClipDummy, {} )
+
 				TacticalEmpty:completeAnimation()
 				self.TacticalEmpty:setLeftRight( true, false, 308.42, 334.42 )
 				self.TacticalEmpty:setTopBottom( true, false, 19.67, 45.67 )
 				self.clipFinished( TacticalEmpty, {} )
+
 				LethalEmpty:completeAnimation()
 				self.LethalEmpty:setLeftRight( true, false, 353.09, 379.09 )
 				self.LethalEmpty:setTopBottom( true, false, 19.67, 45.67 )
 				self.clipFinished( LethalEmpty, {} )
+
 				EnemyFlagHeld:completeAnimation()
 				self.EnemyFlagHeld:setLeftRight( true, false, 180, 258 )
 				self.EnemyFlagHeld:setTopBottom( true, false, 15, 108.67 )
@@ -7639,11 +7819,17 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 		HudStart = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				PanelContainer:completeAnimation()
+
 				PanelContainer.PanelTactical:completeAnimation()
+
 				PanelContainer.PanelLethal:completeAnimation()
+
 				PanelContainer.PanelOctagon:completeAnimation()
+
 				PanelContainer.PanelAmmo:completeAnimation()
+
 				PanelContainer.PanelFlagEnemy:completeAnimation()
 				self.PanelContainer.PanelTactical:setAlpha( 1 )
 				self.PanelContainer.PanelLethal:setAlpha( 1 )
@@ -7651,35 +7837,46 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.PanelContainer.PanelAmmo:setAlpha( 1 )
 				self.PanelContainer.PanelFlagEnemy:setAlpha( 1 )
 				self.clipFinished( PanelContainer, {} )
+
 				BackCircleOutter:completeAnimation()
 				self.BackCircleOutter:setAlpha( 0.35 )
 				self.BackCircleOutter:setZoom( -8 )
 				self.clipFinished( BackCircleOutter, {} )
+
 				BackCircle:completeAnimation()
 				self.BackCircle:setAlpha( 0.2 )
 				self.BackCircle:setZoom( -5 )
 				self.clipFinished( BackCircle, {} )
+
 				GlowTactical:completeAnimation()
 				self.GlowTactical:setAlpha( 1 )
 				self.clipFinished( GlowTactical, {} )
+
 				GlowLethal:completeAnimation()
 				self.GlowLethal:setAlpha( 1 )
 				self.clipFinished( GlowLethal, {} )
+
 				InventoryBox1:completeAnimation()
 				self.InventoryBox1:setAlpha( 0.5 )
 				self.InventoryBox1:setZoom( 1 )
 				self.clipFinished( InventoryBox1, {} )
+
 				InventoryBox2:completeAnimation()
 				self.InventoryBox2:setAlpha( 0.5 )
 				self.InventoryBox2:setZoom( 1 )
 				self.clipFinished( InventoryBox2, {} )
+
 				EquipmentInfo:completeAnimation()
 				self.EquipmentInfo:setAlpha( 1 )
 				self.EquipmentInfo:setZoom( 0 )
 				self.clipFinished( EquipmentInfo, {} )
+
 				ClipElements:completeAnimation()
+
 				ClipElements.BackLine1:completeAnimation()
+
 				ClipElements.ImgSemiCircle:completeAnimation()
+
 				ClipElements.ImgSeperator:completeAnimation()
 				self.ClipElements.BackLine1:setAlpha( 1 )
 				self.ClipElements.ImgSemiCircle:setAlpha( 0.6 )
@@ -7687,12 +7884,19 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.ClipElements.ImgSeperator:setAlpha( 0.8 )
 				self.ClipElements.ImgSeperator:setZoom( 0 )
 				self.clipFinished( ClipElements, {} )
+
 				Clip:completeAnimation()
+
 				Clip.Clip:completeAnimation()
+
 				Clip.Knife:completeAnimation()
+
 				Clip.TotalAmmo:completeAnimation()
+
 				Clip.ClipMeter:completeAnimation()
+
 				Clip.AmmoColorBar:completeAnimation()
+
 				Clip.ClipHero:completeAnimation()
 				self.Clip.Clip:setAlpha( 1 )
 				self.Clip.Knife:setAlpha( 0.8 )
@@ -7701,13 +7905,19 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.Clip.AmmoColorBar:setAlpha( 1 )
 				self.Clip.ClipHero:setAlpha( 1 )
 				self.clipFinished( Clip, {} )
+
 				FireRate:completeAnimation()
 				self.FireRate:setAlpha( 1 )
 				self.clipFinished( FireRate, {} )
+
 				AbilityContainer:completeAnimation()
+
 				AbilityContainer.AbilityRingBackDuplicate:completeAnimation()
+
 				AbilityContainer.AbilityRingBackDeplete:completeAnimation()
+
 				AbilityContainer.AbilityRingBack:completeAnimation()
+
 				AbilityContainer.AbilityIconContainer:completeAnimation()
 				self.AbilityContainer:setAlpha( 1 )
 				self.AbilityContainer.AbilityRingBackDuplicate:setZoom( 0 )
@@ -7715,9 +7925,13 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.AbilityContainer.AbilityRingBack:setZoom( 0 )
 				self.AbilityContainer.AbilityIconContainer:setZoom( 0 )
 				self.clipFinished( AbilityContainer, {} )
+
 				ClipDummy:completeAnimation()
+
 				ClipDummy.Knife:completeAnimation()
+
 				ClipDummy.TotalAmmo:completeAnimation()
+
 				ClipDummy.TotalAmmo.TotalAmmoLbl:completeAnimation()
 				self.ClipDummy.Knife:setAlpha( 0.8 )
 				self.ClipDummy.TotalAmmo:setRGB( 1, 1, 1 )
@@ -7725,12 +7939,14 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.ClipDummy.TotalAmmo:setZoom( 0 )
 				self.ClipDummy.TotalAmmo.TotalAmmoLbl:setText( Engine.Localize( "000" ) )
 				self.clipFinished( ClipDummy, {} )
+
 				EnemyFlagHeld:completeAnimation()
 				self.EnemyFlagHeld:setAlpha( 1 )
 				self.clipFinished( EnemyFlagHeld, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 14 )
+
 				local PanelContainerFrame2 = function ( PanelContainer, event )
 					local PanelContainerFrame3 = function ( PanelContainer, event )
 						local PanelContainerFrame4 = function ( PanelContainer, event )
@@ -7871,10 +8087,15 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				end
 				
 				PanelContainer:completeAnimation()
+
 				PanelContainer.PanelTactical:completeAnimation()
+
 				PanelContainer.PanelLethal:completeAnimation()
+
 				PanelContainer.PanelOctagon:completeAnimation()
+
 				PanelContainer.PanelAmmo:completeAnimation()
+
 				PanelContainer.PanelFlagEnemy:completeAnimation()
 				self.PanelContainer.PanelTactical:setAlpha( 1 )
 				self.PanelContainer.PanelLethal:setAlpha( 1 )
@@ -8079,8 +8300,11 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				end
 				
 				ClipElements:completeAnimation()
+
 				ClipElements.BackLine1:completeAnimation()
+
 				ClipElements.ImgSemiCircle:completeAnimation()
+
 				ClipElements.ImgSeperator:completeAnimation()
 				self.ClipElements.BackLine1:setAlpha( 1 )
 				self.ClipElements.ImgSemiCircle:setAlpha( 0.6 )
@@ -8146,11 +8370,17 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				end
 				
 				Clip:completeAnimation()
+
 				Clip.Clip:completeAnimation()
+
 				Clip.Knife:completeAnimation()
+
 				Clip.TotalAmmo:completeAnimation()
+
 				Clip.ClipMeter:completeAnimation()
+
 				Clip.AmmoColorBar:completeAnimation()
+
 				Clip.ClipHero:completeAnimation()
 				self.Clip.Clip:setAlpha( 0.7 )
 				self.Clip.Knife:setAlpha( 0.8 )
@@ -8205,9 +8435,13 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				end
 				
 				AbilityContainer:completeAnimation()
+
 				AbilityContainer.AbilityRingBackDuplicate:completeAnimation()
+
 				AbilityContainer.AbilityRingBackDeplete:completeAnimation()
+
 				AbilityContainer.AbilityRingBack:completeAnimation()
+
 				AbilityContainer.AbilityIconContainer:completeAnimation()
 				self.AbilityContainer:setAlpha( 1 )
 				self.AbilityContainer.AbilityRingBackDuplicate:setZoom( 0 )
@@ -8215,9 +8449,13 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 				self.AbilityContainer.AbilityRingBack:setZoom( 0 )
 				self.AbilityContainer.AbilityIconContainer:setZoom( 0 )
 				AbilityContainerFrame2( AbilityContainer, {} )
+
 				ClipDummy:completeAnimation()
+
 				ClipDummy.Knife:completeAnimation()
+
 				ClipDummy.TotalAmmo:completeAnimation()
+
 				ClipDummy.TotalAmmo.TotalAmmoLbl:completeAnimation()
 				self.ClipDummy.Knife:setAlpha( 0 )
 				self.ClipDummy.TotalAmmo:setRGB( 1, 1, 1 )
@@ -8245,9 +8483,11 @@ CoD.AmmoWidgetMP.new = function ( menu, controller )
 		HudPause = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PanelContainer:close()
 		element.BackCircleOutter:close()

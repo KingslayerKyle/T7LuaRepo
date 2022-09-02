@@ -4,9 +4,11 @@
 CoD.PreviewImageWidget = InheritFrom( LUI.UIElement )
 CoD.PreviewImageWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PreviewImageWidget )
 	self.id = "PreviewImageWidget"
@@ -27,6 +29,7 @@ CoD.PreviewImageWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				image:completeAnimation()
 				self.image:setAlpha( 1 )
 				self.clipFinished( image, {} )
@@ -35,6 +38,7 @@ CoD.PreviewImageWidget.new = function ( menu, controller )
 		Square = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				image:completeAnimation()
 				self.image:setLeftRight( false, false, -145, 145 )
 				self.image:setTopBottom( false, false, -145, 145 )

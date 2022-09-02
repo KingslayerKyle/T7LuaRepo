@@ -4,9 +4,11 @@
 CoD.ShockCharge = InheritFrom( LUI.UIElement )
 CoD.ShockCharge.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ShockCharge )
 	self.id = "ShockCharge"
@@ -73,15 +75,19 @@ CoD.ShockCharge.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				shockImageBottom:completeAnimation()
 				self.shockImageBottom:setAlpha( 0 )
 				self.clipFinished( shockImageBottom, {} )
+
 				shockImageRight:completeAnimation()
 				self.shockImageRight:setAlpha( 0 )
 				self.clipFinished( shockImageRight, {} )
+
 				shockImageLeft:completeAnimation()
 				self.shockImageLeft:setAlpha( 0 )
 				self.clipFinished( shockImageLeft, {} )
+
 				shockImageTop:completeAnimation()
 				self.shockImageTop:setAlpha( 0 )
 				self.clipFinished( shockImageTop, {} )
@@ -90,6 +96,7 @@ CoD.ShockCharge.new = function ( menu, controller )
 		ShockTop = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local shockImageTopFrame2 = function ( shockImageTop, event )
 					local shockImageTopFrame3 = function ( shockImageTop, event )
 						if not event.interrupted then
@@ -116,12 +123,14 @@ CoD.ShockCharge.new = function ( menu, controller )
 				shockImageTop:completeAnimation()
 				self.shockImageTop:setAlpha( 0 )
 				shockImageTopFrame2( shockImageTop, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		ShockLeft = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local shockImageLeftFrame2 = function ( shockImageLeft, event )
 					local shockImageLeftFrame3 = function ( shockImageLeft, event )
 						if not event.interrupted then
@@ -148,12 +157,14 @@ CoD.ShockCharge.new = function ( menu, controller )
 				shockImageLeft:completeAnimation()
 				self.shockImageLeft:setAlpha( 0 )
 				shockImageLeftFrame2( shockImageLeft, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		ShockRight = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local shockImageRightFrame2 = function ( shockImageRight, event )
 					local shockImageRightFrame3 = function ( shockImageRight, event )
 						if not event.interrupted then
@@ -180,12 +191,14 @@ CoD.ShockCharge.new = function ( menu, controller )
 				shockImageRight:completeAnimation()
 				self.shockImageRight:setAlpha( 0 )
 				shockImageRightFrame2( shockImageRight, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		ShockBottom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local shockImageBottomFrame2 = function ( shockImageBottom, event )
 					local shockImageBottomFrame3 = function ( shockImageBottom, event )
 						if not event.interrupted then
@@ -212,10 +225,12 @@ CoD.ShockCharge.new = function ( menu, controller )
 				shockImageBottom:completeAnimation()
 				self.shockImageBottom:setAlpha( 0 )
 				shockImageBottomFrame2( shockImageBottom, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.shockImageBottom:close()
 		element.shockImageRight:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.CAC_varientTitlePanel" )
 CoD.cac_PrimaryWeaponDescription = InheritFrom( LUI.UIElement )
 CoD.cac_PrimaryWeaponDescription.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_PrimaryWeaponDescription )
 	self.id = "cac_PrimaryWeaponDescription"
@@ -31,6 +33,7 @@ CoD.cac_PrimaryWeaponDescription.new = function ( menu, controller )
 	weaponDescTextBox:setTTF( "fonts/RefrigeratorDeluxe-Regular.ttf" )
 	weaponDescTextBox:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	weaponDescTextBox:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( weaponDescTextBox, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrapped( self, element, 1, 1 )
 	end )
@@ -41,9 +44,11 @@ CoD.cac_PrimaryWeaponDescription.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				CACvarientTitlePanel0:completeAnimation()
 				self.CACvarientTitlePanel0:setAlpha( 0.25 )
 				self.clipFinished( CACvarientTitlePanel0, {} )
+
 				weaponDescTextBox:completeAnimation()
 				self.weaponDescTextBox:setAlpha( 1 )
 				self.clipFinished( weaponDescTextBox, {} )
@@ -52,15 +57,18 @@ CoD.cac_PrimaryWeaponDescription.new = function ( menu, controller )
 		NotVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				CACvarientTitlePanel0:completeAnimation()
 				self.CACvarientTitlePanel0:setAlpha( 0 )
 				self.clipFinished( CACvarientTitlePanel0, {} )
+
 				weaponDescTextBox:completeAnimation()
 				self.weaponDescTextBox:setAlpha( 0 )
 				self.clipFinished( weaponDescTextBox, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CACvarientTitlePanel0:close()
 	end )

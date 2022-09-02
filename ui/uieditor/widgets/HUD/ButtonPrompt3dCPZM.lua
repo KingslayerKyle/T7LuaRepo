@@ -54,9 +54,11 @@ end
 CoD.ButtonPrompt3dCPZM = InheritFrom( LUI.UIElement )
 CoD.ButtonPrompt3dCPZM.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ButtonPrompt3dCPZM )
 	self.id = "ButtonPrompt3dCPZM"
@@ -124,6 +126,7 @@ CoD.ButtonPrompt3dCPZM.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				local requirementLabelFrame2 = function ( requirementLabel, event )
 					local requirementLabelFrame3 = function ( requirementLabel, event )
 						if not event.interrupted then
@@ -149,26 +152,32 @@ CoD.ButtonPrompt3dCPZM.new = function ( menu, controller )
 				requirementLabel:completeAnimation()
 				self.requirementLabel:setAlpha( 0 )
 				requirementLabelFrame2( requirementLabel, {} )
+
 				nameLabel:completeAnimation()
 				self.nameLabel:setAlpha( 1 )
 				self.clipFinished( nameLabel, {} )
+
 				ButtonPrompt3dcpzmUseButtonIcon:completeAnimation()
 				self.ButtonPrompt3dcpzmUseButtonIcon:setLeftRight( true, false, 4.5, 43.5 )
 				self.ButtonPrompt3dcpzmUseButtonIcon:setTopBottom( true, false, 12.5, 51.5 )
 				self.ButtonPrompt3dcpzmUseButtonIcon:setAlpha( 1 )
 				self.clipFinished( ButtonPrompt3dcpzmUseButtonIcon, {} )
+
 				iconImage:completeAnimation()
 				self.iconImage:setAlpha( 0 )
 				self.clipFinished( iconImage, {} )
+
 				directionalArrow:completeAnimation()
 				self.directionalArrow:setAlpha( 0 )
 				self.clipFinished( directionalArrow, {} )
+
 				WaypointText:completeAnimation()
 				self.WaypointText:setAlpha( 0 )
 				self.clipFinished( WaypointText, {} )
 			end,
 			HideRequirementLabel = function ()
 				self:setupElementClipCounter( 3 )
+
 				requirementLabel:completeAnimation()
 				self.requirementLabel:setAlpha( 0 )
 				self.clipFinished( requirementLabel, {} )
@@ -211,23 +220,29 @@ CoD.ButtonPrompt3dCPZM.new = function ( menu, controller )
 		Clamped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				requirementLabel:completeAnimation()
 				self.requirementLabel:setAlpha( 0 )
 				self.clipFinished( requirementLabel, {} )
+
 				nameLabel:completeAnimation()
 				self.nameLabel:setAlpha( 0 )
 				self.clipFinished( nameLabel, {} )
+
 				ButtonPrompt3dcpzmUseButtonIcon:completeAnimation()
 				self.ButtonPrompt3dcpzmUseButtonIcon:setAlpha( 0 )
 				self.clipFinished( ButtonPrompt3dcpzmUseButtonIcon, {} )
+
 				iconImage:completeAnimation()
 				self.iconImage:setAlpha( 1 )
 				self.clipFinished( iconImage, {} )
+
 				directionalArrow:completeAnimation()
 				self.directionalArrow:setLeftRight( true, false, 4.5, 45.5 )
 				self.directionalArrow:setTopBottom( true, false, 4.5, 43.5 )
 				self.directionalArrow:setAlpha( 1 )
 				self.clipFinished( directionalArrow, {} )
+
 				WaypointText:completeAnimation()
 				self.WaypointText:setAlpha( 0 )
 				self.clipFinished( WaypointText, {} )
@@ -236,12 +251,15 @@ CoD.ButtonPrompt3dCPZM.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				requirementLabel:completeAnimation()
 				self.requirementLabel:setAlpha( 0 )
 				self.clipFinished( requirementLabel, {} )
+
 				nameLabel:completeAnimation()
 				self.nameLabel:setAlpha( 0 )
 				self.clipFinished( nameLabel, {} )
+
 				ButtonPrompt3dcpzmUseButtonIcon:completeAnimation()
 				self.ButtonPrompt3dcpzmUseButtonIcon:setLeftRight( true, false, 4.5, 43.5 )
 				self.ButtonPrompt3dcpzmUseButtonIcon:setTopBottom( true, false, 12.5, 51.5 )
@@ -262,15 +280,18 @@ CoD.ButtonPrompt3dCPZM.new = function ( menu, controller )
 				iconImage:completeAnimation()
 				self.iconImage:setAlpha( 1 )
 				iconImageFrame2( iconImage, {} )
+
 				directionalArrow:completeAnimation()
 				self.directionalArrow:setAlpha( 0 )
 				self.clipFinished( directionalArrow, {} )
+
 				WaypointText:completeAnimation()
 				self.WaypointText:setAlpha( 1 )
 				self.clipFinished( WaypointText, {} )
 			end,
 			HideRequirementLabel = function ()
 				self:setupElementClipCounter( 3 )
+
 				local nameLabelFrame2 = function ( nameLabel, event )
 					if not event.interrupted then
 						nameLabel:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -286,6 +307,7 @@ CoD.ButtonPrompt3dCPZM.new = function ( menu, controller )
 				nameLabel:completeAnimation()
 				self.nameLabel:setAlpha( 0 )
 				nameLabelFrame2( nameLabel, {} )
+
 				ButtonPrompt3dcpzmUseButtonIcon:completeAnimation()
 				self.ButtonPrompt3dcpzmUseButtonIcon:setLeftRight( true, false, 4.5, 43.5 )
 				self.ButtonPrompt3dcpzmUseButtonIcon:setTopBottom( true, false, 12.5, 51.5 )
@@ -311,27 +333,34 @@ CoD.ButtonPrompt3dCPZM.new = function ( menu, controller )
 		HideRequirementLabel = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				requirementLabel:completeAnimation()
 				self.requirementLabel:setAlpha( 0 )
 				self.clipFinished( requirementLabel, {} )
+
 				nameLabel:completeAnimation()
 				self.nameLabel:setAlpha( 1 )
 				self.clipFinished( nameLabel, {} )
+
 				ButtonPrompt3dcpzmUseButtonIcon:completeAnimation()
 				self.ButtonPrompt3dcpzmUseButtonIcon:setAlpha( 0 )
 				self.clipFinished( ButtonPrompt3dcpzmUseButtonIcon, {} )
+
 				iconImage:completeAnimation()
 				self.iconImage:setAlpha( 1 )
 				self.clipFinished( iconImage, {} )
+
 				directionalArrow:completeAnimation()
 				self.directionalArrow:setAlpha( 0 )
 				self.clipFinished( directionalArrow, {} )
+
 				WaypointText:completeAnimation()
 				self.WaypointText:setAlpha( 0 )
 				self.clipFinished( WaypointText, {} )
 			end,
 			Hidden = function ()
 				self:setupElementClipCounter( 3 )
+
 				local nameLabelFrame2 = function ( nameLabel, event )
 					if not event.interrupted then
 						nameLabel:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -347,15 +376,18 @@ CoD.ButtonPrompt3dCPZM.new = function ( menu, controller )
 				nameLabel:completeAnimation()
 				self.nameLabel:setAlpha( 1 )
 				nameLabelFrame2( nameLabel, {} )
+
 				ButtonPrompt3dcpzmUseButtonIcon:completeAnimation()
 				self.ButtonPrompt3dcpzmUseButtonIcon:setAlpha( 0 )
 				self.clipFinished( ButtonPrompt3dcpzmUseButtonIcon, {} )
+
 				directionalArrow:completeAnimation()
 				self.directionalArrow:setAlpha( 0 )
 				self.clipFinished( directionalArrow, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Clamped",
@@ -400,6 +432,7 @@ CoD.ButtonPrompt3dCPZM.new = function ( menu, controller )
 			modelName = "interactivePrompt.activeObjectiveID"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsElementInState( element, "DefaultState" ) then
 			SetElementStateByElementName( self, "nameLabel", controller, "Small" )
@@ -407,6 +440,7 @@ CoD.ButtonPrompt3dCPZM.new = function ( menu, controller )
 			SetElementStateByElementName( self, "nameLabel", controller, "DefaultState" )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.requirementLabel:close()
 		element.nameLabel:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_FrameWidget" )
 CoD.LobbySlideGamerCardInternalWidget = InheritFrom( LUI.UIElement )
 CoD.LobbySlideGamerCardInternalWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbySlideGamerCardInternalWidget )
 	self.id = "LobbySlideGamerCardInternalWidget"
@@ -31,26 +33,31 @@ CoD.LobbySlideGamerCardInternalWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 1 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
 			end,
 			SlideLeft = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			SlideRight = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CallingCardsFrameWidget:completeAnimation()
 				self.CallingCardsFrameWidget:setAlpha( 0 )
 				self.clipFinished( CallingCardsFrameWidget, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardsFrameWidget:close()
 	end )

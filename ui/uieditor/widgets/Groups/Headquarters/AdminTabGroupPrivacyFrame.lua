@@ -80,9 +80,11 @@ end
 CoD.AdminTabGroupPrivacyFrame = InheritFrom( LUI.UIElement )
 CoD.AdminTabGroupPrivacyFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AdminTabGroupPrivacyFrame )
 	self.id = "AdminTabGroupPrivacyFrame"
@@ -198,10 +200,13 @@ CoD.AdminTabGroupPrivacyFrame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ButtonList:completeAnimation()
 				self.ButtonList:setAlpha( 1 )
 				self.clipFinished( ButtonList, {} )
+
 				GroupsNoConentDetail:completeAnimation()
+
 				GroupsNoConentDetail.HeaderBkgd:completeAnimation()
 				self.GroupsNoConentDetail:setAlpha( 0 )
 				self.GroupsNoConentDetail.HeaderBkgd:setRGB( ColorSet.FactionAxis_CP.r, ColorSet.FactionAxis_CP.g, ColorSet.FactionAxis_CP.b )
@@ -211,14 +216,21 @@ CoD.AdminTabGroupPrivacyFrame.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ButtonList:completeAnimation()
 				self.ButtonList:setAlpha( 0 )
 				self.clipFinished( ButtonList, {} )
+
 				GroupsNoConentDetail:completeAnimation()
+
 				GroupsNoConentDetail.HeaderBkgd:completeAnimation()
+
 				GroupsNoConentDetail.HeaderIcon:completeAnimation()
+
 				GroupsNoConentDetail.Header:completeAnimation()
+
 				GroupsNoConentDetail.Desc:completeAnimation()
+
 				GroupsNoConentDetail.Glow2:completeAnimation()
 				self.GroupsNoConentDetail:setAlpha( 1 )
 				self.GroupsNoConentDetail.HeaderBkgd:setRGB( 0.87, 0.3, 0.19 )
@@ -230,6 +242,7 @@ CoD.AdminTabGroupPrivacyFrame.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -254,6 +267,7 @@ CoD.AdminTabGroupPrivacyFrame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ButtonList:close()
 		element.GroupsNoConentDetail:close()

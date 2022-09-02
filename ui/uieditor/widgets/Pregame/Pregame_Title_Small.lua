@@ -4,9 +4,11 @@
 CoD.Pregame_Title_Small = InheritFrom( LUI.UIElement )
 CoD.Pregame_Title_Small.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_Title_Small )
 	self.id = "Pregame_Title_Small"

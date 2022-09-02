@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Lists.Members.IconController" )
 CoD.IconControllerContainer = InheritFrom( LUI.UIElement )
 CoD.IconControllerContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.IconControllerContainer )
 	self.id = "IconControllerContainer"
@@ -51,14 +53,17 @@ CoD.IconControllerContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				IconController:completeAnimation()
 				self.IconController:setLeftRight( true, false, 24, 57 )
 				self.IconController:setTopBottom( true, false, 0, 32 )
 				self.IconController:setAlpha( 0 )
 				self.clipFinished( IconController, {} )
+
 				VoipBacking:completeAnimation()
 				self.VoipBacking:setAlpha( 0 )
 				self.clipFinished( VoipBacking, {} )
+
 				VOIPImage:completeAnimation()
 				self.VOIPImage:setAlpha( 1 )
 				self.clipFinished( VOIPImage, {} )
@@ -67,20 +72,24 @@ CoD.IconControllerContainer.new = function ( menu, controller )
 		VoipActive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				IconController:completeAnimation()
 				self.IconController:setLeftRight( true, false, 0, 33 )
 				self.IconController:setTopBottom( true, false, 0, 32 )
 				self.IconController:setAlpha( 0 )
 				self.clipFinished( IconController, {} )
+
 				VoipBacking:completeAnimation()
 				self.VoipBacking:setAlpha( 1 )
 				self.clipFinished( VoipBacking, {} )
+
 				VOIPImage:completeAnimation()
 				self.VOIPImage:setAlpha( 1 )
 				self.clipFinished( VOIPImage, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.IconController:close()
 		element.VOIPImage:close()

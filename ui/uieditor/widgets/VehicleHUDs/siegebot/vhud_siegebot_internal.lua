@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.siegebot.vhud_siegebot_bootupWidget" )
 CoD.vhud_siegebot_internal = InheritFrom( LUI.UIElement )
 CoD.vhud_siegebot_internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_siegebot_internal )
 	self.id = "vhud_siegebot_internal"
@@ -86,6 +88,7 @@ CoD.vhud_siegebot_internal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local vhudsiegebotreticleFrame2 = function ( vhudsiegebotreticle, event )
 					local vhudsiegebotreticleFrame3 = function ( vhudsiegebotreticle, event )
 						local vhudsiegebotreticleFrame4 = function ( vhudsiegebotreticle, event )
@@ -145,21 +148,26 @@ CoD.vhud_siegebot_internal.new = function ( menu, controller )
 				vhudsiegebotreticle:completeAnimation()
 				self.vhudsiegebotreticle:setAlpha( 0 )
 				vhudsiegebotreticleFrame2( vhudsiegebotreticle, {} )
+
 				vhudsiegebotbootupWidget:completeAnimation()
 				self.vhudsiegebotbootupWidget:setAlpha( 1 )
 				self.clipFinished( vhudsiegebotbootupWidget, {} )
+
 				vhudsiegebotbootupWidget0:completeAnimation()
 				self.vhudsiegebotbootupWidget0:setAlpha( 1 )
 				self.clipFinished( vhudsiegebotbootupWidget0, {} )
+
 				vhudsiegebotbootupWidget1:completeAnimation()
 				self.vhudsiegebotbootupWidget1:setAlpha( 1 )
 				self.clipFinished( vhudsiegebotbootupWidget1, {} )
+
 				vhudsiegebotbootupWidget2:completeAnimation()
 				self.vhudsiegebotbootupWidget2:setAlpha( 1 )
 				self.clipFinished( vhudsiegebotbootupWidget2, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vhudsiegebotreticle:close()
 		element.vhudsiegebotbootupWidget:close()

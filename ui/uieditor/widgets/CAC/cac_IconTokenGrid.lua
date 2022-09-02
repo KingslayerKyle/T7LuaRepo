@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_IconTokenStatic" )
 CoD.cac_IconTokenGrid = InheritFrom( LUI.UIElement )
 CoD.cac_IconTokenGrid.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_IconTokenGrid )
 	self.id = "cac_IconTokenGrid"
@@ -27,6 +29,7 @@ CoD.cac_IconTokenGrid.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				cacIconTokenStatic0:completeAnimation()
 				self.cacIconTokenStatic0:setAlpha( 0 )
 				self.clipFinished( cacIconTokenStatic0, {} )
@@ -35,12 +38,14 @@ CoD.cac_IconTokenGrid.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				cacIconTokenStatic0:completeAnimation()
 				self.cacIconTokenStatic0:setAlpha( 1 )
 				self.clipFinished( cacIconTokenStatic0, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.cacIconTokenStatic0:close()
 	end )

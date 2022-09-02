@@ -4,9 +4,11 @@
 CoD.island = InheritFrom( LUI.UIElement )
 CoD.island.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.island )
 	self.id = "island"
@@ -32,6 +34,7 @@ CoD.island.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				islandlit:completeAnimation()
 				self.islandlit:setAlpha( 0 )
 				self.clipFinished( islandlit, {} )
@@ -40,6 +43,7 @@ CoD.island.new = function ( menu, controller )
 		highlighted = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				islandlit:completeAnimation()
 				self.islandlit:setAlpha( 1 )
 				self.clipFinished( islandlit, {} )

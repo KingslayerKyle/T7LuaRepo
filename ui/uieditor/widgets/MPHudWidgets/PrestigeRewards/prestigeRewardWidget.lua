@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.MPHudWidgets.PrestigeRewards.prestigeRewardWidget_
 CoD.prestigeRewardWidget = InheritFrom( LUI.UIElement )
 CoD.prestigeRewardWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.prestigeRewardWidget )
 	self.id = "prestigeRewardWidget"

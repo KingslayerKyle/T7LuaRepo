@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Lobby.Lists.Members.LobbyMemberBackingFooter" )
 CoD.collectibleItem = InheritFrom( LUI.UIElement )
 CoD.collectibleItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.collectibleItem )
 	self.id = "collectibleItem"
@@ -62,16 +64,20 @@ CoD.collectibleItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BorderBakedStroke0:completeAnimation()
 				self.BorderBakedStroke0:setAlpha( 1 )
 				self.clipFinished( BorderBakedStroke0, {} )
+
 				BorderBaked0:completeAnimation()
 				self.BorderBaked0:setAlpha( 1 )
 				self.BorderBaked0:setZoom( 0 )
 				self.clipFinished( BorderBaked0, {} )
+
 				border:completeAnimation()
 				self.border:setRGB( 1, 1, 1 )
 				self.clipFinished( border, {} )
+
 				FocusHeader:completeAnimation()
 				self.FocusHeader:setLeftRight( false, false, -24, 21.34 )
 				self.FocusHeader:setTopBottom( true, false, 0, 5.34 )
@@ -79,6 +85,7 @@ CoD.collectibleItem.new = function ( menu, controller )
 				self.FocusHeader:setAlpha( 1 )
 				self.FocusHeader:setZoom( 0 )
 				self.clipFinished( FocusHeader, {} )
+
 				LobbyMemberBackingFooter0:completeAnimation()
 				self.LobbyMemberBackingFooter0:setAlpha( 0 )
 				self.LobbyMemberBackingFooter0:setZoom( 0 )
@@ -86,21 +93,26 @@ CoD.collectibleItem.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				BorderBakedStroke0:completeAnimation()
 				self.BorderBakedStroke0:setAlpha( 0 )
 				self.clipFinished( BorderBakedStroke0, {} )
+
 				BorderBaked0:completeAnimation()
 				self.BorderBaked0:setZoom( 100 )
 				self.clipFinished( BorderBaked0, {} )
+
 				border:completeAnimation()
 				self.border:setRGB( 1, 0.41, 0 )
 				self.clipFinished( border, {} )
+
 				FocusHeader:completeAnimation()
 				self.FocusHeader:setLeftRight( false, false, -24, 21.34 )
 				self.FocusHeader:setTopBottom( true, false, -17, -11.66 )
 				self.FocusHeader:setRGB( 0.93, 0.45, 0.05 )
 				self.FocusHeader:setZoom( 100 )
 				self.clipFinished( FocusHeader, {} )
+
 				LobbyMemberBackingFooter0:completeAnimation()
 				self.LobbyMemberBackingFooter0:setAlpha( 1 )
 				self.LobbyMemberBackingFooter0:setZoom( 100 )
@@ -108,6 +120,7 @@ CoD.collectibleItem.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local BorderBakedStroke0Frame2 = function ( BorderBakedStroke0, event )
 					if not event.interrupted then
 						BorderBakedStroke0:beginAnimation( "keyframe", 150, false, true, CoD.TweenType.Back )
@@ -183,6 +196,7 @@ CoD.collectibleItem.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local BorderBakedStroke0Frame2 = function ( BorderBakedStroke0, event )
 					if not event.interrupted then
 						BorderBakedStroke0:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -258,16 +272,20 @@ CoD.collectibleItem.new = function ( menu, controller )
 		NoCollectible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BorderBakedStroke0:completeAnimation()
 				self.BorderBakedStroke0:setAlpha( 1 )
 				self.clipFinished( BorderBakedStroke0, {} )
+
 				BorderBaked0:completeAnimation()
 				self.BorderBaked0:setAlpha( 1 )
 				self.BorderBaked0:setZoom( 0 )
 				self.clipFinished( BorderBaked0, {} )
+
 				border:completeAnimation()
 				self.border:setRGB( 1, 1, 1 )
 				self.clipFinished( border, {} )
+
 				FocusHeader:completeAnimation()
 				self.FocusHeader:setLeftRight( false, false, -24, 21.34 )
 				self.FocusHeader:setTopBottom( true, false, 0, 5.34 )
@@ -275,6 +293,7 @@ CoD.collectibleItem.new = function ( menu, controller )
 				self.FocusHeader:setAlpha( 1 )
 				self.FocusHeader:setZoom( 0 )
 				self.clipFinished( FocusHeader, {} )
+
 				LobbyMemberBackingFooter0:completeAnimation()
 				self.LobbyMemberBackingFooter0:setAlpha( 0 )
 				self.LobbyMemberBackingFooter0:setZoom( 0 )
@@ -282,21 +301,26 @@ CoD.collectibleItem.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				BorderBakedStroke0:completeAnimation()
 				self.BorderBakedStroke0:setAlpha( 0 )
 				self.clipFinished( BorderBakedStroke0, {} )
+
 				BorderBaked0:completeAnimation()
 				self.BorderBaked0:setZoom( 100 )
 				self.clipFinished( BorderBaked0, {} )
+
 				border:completeAnimation()
 				self.border:setRGB( 1, 0.41, 0 )
 				self.clipFinished( border, {} )
+
 				FocusHeader:completeAnimation()
 				self.FocusHeader:setLeftRight( false, false, -24, 21.34 )
 				self.FocusHeader:setTopBottom( true, false, -17, -11.66 )
 				self.FocusHeader:setRGB( 0.93, 0.45, 0.05 )
 				self.FocusHeader:setZoom( 100 )
 				self.clipFinished( FocusHeader, {} )
+
 				LobbyMemberBackingFooter0:completeAnimation()
 				self.LobbyMemberBackingFooter0:setAlpha( 1 )
 				self.LobbyMemberBackingFooter0:setZoom( 100 )
@@ -304,6 +328,7 @@ CoD.collectibleItem.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local BorderBakedStroke0Frame2 = function ( BorderBakedStroke0, event )
 					if not event.interrupted then
 						BorderBakedStroke0:beginAnimation( "keyframe", 150, false, true, CoD.TweenType.Back )
@@ -379,6 +404,7 @@ CoD.collectibleItem.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local BorderBakedStroke0Frame2 = function ( BorderBakedStroke0, event )
 					if not event.interrupted then
 						BorderBakedStroke0:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
@@ -452,6 +478,7 @@ CoD.collectibleItem.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoCollectible",
@@ -468,6 +495,7 @@ CoD.collectibleItem.new = function ( menu, controller )
 			modelName = "isSet"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BorderBakedStroke0:close()
 		element.BorderBaked0:close()

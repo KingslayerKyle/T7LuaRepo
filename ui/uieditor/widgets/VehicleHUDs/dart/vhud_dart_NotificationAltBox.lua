@@ -4,9 +4,11 @@
 CoD.vhud_dart_NotificationAltBox = InheritFrom( LUI.UIElement )
 CoD.vhud_dart_NotificationAltBox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_dart_NotificationAltBox )
 	self.id = "vhud_dart_NotificationAltBox"
@@ -50,6 +52,7 @@ CoD.vhud_dart_NotificationAltBox.new = function ( menu, controller )
 	text:setShaderVector( 4, 0, 0, 0, 0 )
 	text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( text, "setText", function ( element, controller )
 		ScaleWidgetToLabelCenteredWithMinimum( self, element, 20, 81 )
 	end )

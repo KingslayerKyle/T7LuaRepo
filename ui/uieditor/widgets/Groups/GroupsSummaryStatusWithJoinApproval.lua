@@ -18,6 +18,7 @@ CoD.GroupsSummaryStatusWithJoinApproval.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsSummaryStatusWithJoinApproval )
 	self.id = "GroupsSummaryStatusWithJoinApproval"
@@ -58,9 +59,11 @@ CoD.GroupsSummaryStatusWithJoinApproval.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				GroupPrivacy:completeAnimation()
 				self.GroupPrivacy:setAlpha( 1 )
 				self.clipFinished( GroupPrivacy, {} )
+
 				JoinApprovalInfo:completeAnimation()
 				self.JoinApprovalInfo:setAlpha( 1 )
 				self.clipFinished( JoinApprovalInfo, {} )
@@ -69,15 +72,18 @@ CoD.GroupsSummaryStatusWithJoinApproval.new = function ( menu, controller )
 		NoGroupSelected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				GroupPrivacy:completeAnimation()
 				self.GroupPrivacy:setAlpha( 0 )
 				self.clipFinished( GroupPrivacy, {} )
+
 				JoinApprovalInfo:completeAnimation()
 				self.JoinApprovalInfo:setAlpha( 0 )
 				self.clipFinished( JoinApprovalInfo, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoGroupSelected",
@@ -94,6 +100,7 @@ CoD.GroupsSummaryStatusWithJoinApproval.new = function ( menu, controller )
 			modelName = "groupId"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GroupPrivacy:close()
 		element.JoinApprovalInfo:close()

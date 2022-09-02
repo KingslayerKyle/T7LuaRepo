@@ -26,6 +26,7 @@ CoD.Social_JoinBtn.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_JoinBtn )
 	self.id = "Social_JoinBtn"
@@ -73,16 +74,19 @@ CoD.Social_JoinBtn.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				joinLabel:completeAnimation()
 				self.joinLabel:setRGB( 1, 1, 1 )
 				self.joinLabel:setAlpha( 1 )
 				self.clipFinished( joinLabel, {} )
+
 				JoinButtonPrompt:completeAnimation()
 				self.JoinButtonPrompt:setAlpha( 1 )
 				self.clipFinished( JoinButtonPrompt, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 1 )
+
 				joinLabel:completeAnimation()
 				self.joinLabel:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.clipFinished( joinLabel, {} )
@@ -91,15 +95,18 @@ CoD.Social_JoinBtn.new = function ( menu, controller )
 		NotJoinable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				joinLabel:completeAnimation()
 				self.joinLabel:setAlpha( 0 )
 				self.clipFinished( joinLabel, {} )
+
 				JoinButtonPrompt:completeAnimation()
 				self.JoinButtonPrompt:setAlpha( 0 )
 				self.clipFinished( JoinButtonPrompt, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NotJoinable",
@@ -124,6 +131,7 @@ CoD.Social_JoinBtn.new = function ( menu, controller )
 			modelName = "lobbyRoot.lobbyLockedIn"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.JoinButtonPrompt:close()
 	end )

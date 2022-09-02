@@ -4,9 +4,11 @@
 CoD.Toast_ItemTitleGlow = InheritFrom( LUI.UIElement )
 CoD.Toast_ItemTitleGlow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Toast_ItemTitleGlow )
 	self.id = "Toast_ItemTitleGlow"

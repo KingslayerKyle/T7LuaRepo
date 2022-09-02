@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.HUD.MP_ScoreStreakWidget.ScrStk_MeterInternal" )
 CoD.ScrStk_Meter = InheritFrom( LUI.UIElement )
 CoD.ScrStk_Meter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScrStk_Meter )
 	self.id = "ScrStk_Meter"
@@ -103,29 +105,39 @@ CoD.ScrStk_Meter.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				ScrStkNumberMove0:completeAnimation()
+
 				ScrStkNumberMove0.TextBox:completeAnimation()
 				self.ScrStkNumberMove0.TextBox:setRGB( 1, 1, 1 )
 				self.clipFinished( ScrStkNumberMove0, {} )
+
 				Meter:completeAnimation()
+
 				Meter.Back:completeAnimation()
+
 				Meter.Fill:completeAnimation()
 				self.Meter:setAlpha( 1 )
 				self.Meter.Back:setRGB( 0.51, 0.55, 0.64 )
 				self.Meter.Fill:setRGB( 0.51, 0.55, 0.64 )
 				self.clipFinished( Meter, {} )
+
 				Image00:completeAnimation()
 				self.Image00:setAlpha( 0 )
 				self.clipFinished( Image00, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				Glow:completeAnimation()
 				self.Glow:setAlpha( 0 )
 				self.clipFinished( Glow, {} )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				Glow20:completeAnimation()
 				self.Glow20:setAlpha( 0 )
 				self.clipFinished( Glow20, {} )
@@ -134,7 +146,9 @@ CoD.ScrStk_Meter.new = function ( menu, controller )
 		ReadyCombat = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				ScrStkNumberMove0:completeAnimation()
+
 				ScrStkNumberMove0.TextBox:completeAnimation()
 				self.ScrStkNumberMove0.TextBox:setRGB( 0.58, 0.89, 1 )
 				self.clipFinished( ScrStkNumberMove0, {} )
@@ -207,7 +221,9 @@ CoD.ScrStk_Meter.new = function ( menu, controller )
 				end
 				
 				Meter:completeAnimation()
+
 				Meter.Back:completeAnimation()
+
 				Meter.Fill:completeAnimation()
 				self.Meter:setAlpha( 1 )
 				self.Meter.Back:setRGB( 0.85, 0.69, 0 )
@@ -670,6 +686,7 @@ CoD.ScrStk_Meter.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				local MeterFrame2 = function ( Meter, event )
 					if not event.interrupted then
 						Meter:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -687,7 +704,9 @@ CoD.ScrStk_Meter.new = function ( menu, controller )
 				end
 				
 				Meter:completeAnimation()
+
 				Meter.Back:completeAnimation()
+
 				Meter.Fill:completeAnimation()
 				self.Meter:setRGB( 1, 1, 1 )
 				self.Meter.Back:setRGB( 0.85, 0.69, 0 )
@@ -713,7 +732,9 @@ CoD.ScrStk_Meter.new = function ( menu, controller )
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				ScrStkNumberMove0:completeAnimation()
+
 				ScrStkNumberMove0.TextBox:completeAnimation()
 				self.ScrStkNumberMove0.TextBox:setRGB( 1, 1, 1 )
 				self.clipFinished( ScrStkNumberMove0, {} )
@@ -786,7 +807,9 @@ CoD.ScrStk_Meter.new = function ( menu, controller )
 				end
 				
 				Meter:completeAnimation()
+
 				Meter.Back:completeAnimation()
+
 				Meter.Fill:completeAnimation()
 				self.Meter:setAlpha( 1 )
 				self.Meter.Back:setRGB( 0.85, 0.69, 0 )
@@ -1001,12 +1024,14 @@ CoD.ScrStk_Meter.new = function ( menu, controller )
 				self.Glow2:setRGB( 1, 0.82, 0 )
 				self.Glow2:setAlpha( 0 )
 				Glow2Frame2( Glow2, {} )
+
 				Glow20:completeAnimation()
 				self.Glow20:setAlpha( 0 )
 				self.clipFinished( Glow20, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				local MeterFrame2 = function ( Meter, event )
 					if not event.interrupted then
 						Meter:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -1023,7 +1048,9 @@ CoD.ScrStk_Meter.new = function ( menu, controller )
 				end
 				
 				Meter:completeAnimation()
+
 				Meter.Back:completeAnimation()
+
 				Meter.Fill:completeAnimation()
 				self.Meter.Back:setRGB( 0.85, 0.69, 0 )
 				self.Meter.Fill:setRGB( 0.85, 0.69, 0 )
@@ -1046,6 +1073,7 @@ CoD.ScrStk_Meter.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ReadyCombat",
@@ -1076,6 +1104,7 @@ CoD.ScrStk_Meter.new = function ( menu, controller )
 			modelName = "playerAbilities.playerGadget3.isInUse"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ScrStkMeterPanel0:close()
 		element.ScrStkNumberMove0:close()

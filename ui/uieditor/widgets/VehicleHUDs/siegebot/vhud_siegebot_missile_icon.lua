@@ -4,9 +4,11 @@
 CoD.vhud_siegebot_missile_icon = InheritFrom( LUI.UIElement )
 CoD.vhud_siegebot_missile_icon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.vhud_siegebot_missile_icon )
 	self.id = "vhud_siegebot_missile_icon"
@@ -49,13 +51,16 @@ CoD.vhud_siegebot_missile_icon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				agrIconMissileLine1:completeAnimation()
 				self.agrIconMissileLine1:setScale( 1 )
 				self.clipFinished( agrIconMissileLine1, {} )
+
 				agrIconMissile1:completeAnimation()
 				self.agrIconMissile1:setAlpha( 0 )
 				self.agrIconMissile1:setScale( 1 )
 				self.clipFinished( agrIconMissile1, {} )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0 )
 				self.clipFinished( GlowOrangeOver, {} )
@@ -64,6 +69,7 @@ CoD.vhud_siegebot_missile_icon.new = function ( menu, controller )
 		Armed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local agrIconMissileLine1Frame2 = function ( agrIconMissileLine1, event )
 					local agrIconMissileLine1Frame3 = function ( agrIconMissileLine1, event )
 						if not event.interrupted then

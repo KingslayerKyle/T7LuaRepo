@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.CAC.cac_LargePrestigeStars" )
 CoD.cac_WpnLvl = InheritFrom( LUI.UIElement )
 CoD.cac_WpnLvl.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_WpnLvl )
 	self.id = "cac_WpnLvl"
@@ -172,57 +174,74 @@ CoD.cac_WpnLvl.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				WeaponMeterBacking:completeAnimation()
 				self.WeaponMeterBacking:setAlpha( 0 )
 				self.clipFinished( WeaponMeterBacking, {} )
+
 				levelBoxBg:completeAnimation()
 				self.levelBoxBg:setAlpha( 0 )
 				self.clipFinished( levelBoxBg, {} )
+
 				levelLabel:completeAnimation()
 				self.levelLabel:setAlpha( 0 )
 				self.clipFinished( levelLabel, {} )
+
 				levelTextBg:completeAnimation()
 				self.levelTextBg:setAlpha( 0 )
 				self.clipFinished( levelTextBg, {} )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				bg0:completeAnimation()
 				self.bg0:setAlpha( 0 )
 				self.clipFinished( bg0, {} )
+
 				currentLevelBacking:completeAnimation()
 				self.currentLevelBacking:setAlpha( 0 )
 				self.clipFinished( currentLevelBacking, {} )
+
 				currentLevel:completeAnimation()
 				self.currentLevel:setAlpha( 0 )
 				self.clipFinished( currentLevel, {} )
+
 				topRightDots:completeAnimation()
 				self.topRightDots:setAlpha( 0 )
 				self.clipFinished( topRightDots, {} )
+
 				bottomRightDots:completeAnimation()
 				self.bottomRightDots:setAlpha( 0 )
 				self.clipFinished( bottomRightDots, {} )
+
 				rightBox:completeAnimation()
 				self.rightBox:setAlpha( 0 )
 				self.clipFinished( rightBox, {} )
+
 				cacWpnLvlMeter0:completeAnimation()
 				self.cacWpnLvlMeter0:setAlpha( 0 )
 				self.clipFinished( cacWpnLvlMeter0, {} )
+
 				weaponLevel:completeAnimation()
 				self.weaponLevel:setAlpha( 0 )
 				self.clipFinished( weaponLevel, {} )
+
 				levelTextBg0:completeAnimation()
 				self.levelTextBg0:setAlpha( 0 )
 				self.clipFinished( levelTextBg0, {} )
+
 				nextLevel:completeAnimation()
 				self.nextLevel:setAlpha( 0 )
 				self.clipFinished( nextLevel, {} )
+
 				cacLargePrestigeStars0:completeAnimation()
 				self.cacLargePrestigeStars0:setAlpha( 0 )
 				self.clipFinished( cacLargePrestigeStars0, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 10 )
+
 				local levelBoxBgFrame2 = function ( levelBoxBg, event )
 					local levelBoxBgFrame3 = function ( levelBoxBg, event )
 						if not event.interrupted then
@@ -458,53 +477,69 @@ CoD.cac_WpnLvl.new = function ( menu, controller )
 		DisplayLevel = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				WeaponMeterBacking:completeAnimation()
 				self.WeaponMeterBacking:setAlpha( 1 )
 				self.clipFinished( WeaponMeterBacking, {} )
+
 				levelBoxBg:completeAnimation()
 				self.levelBoxBg:setAlpha( 1 )
 				self.clipFinished( levelBoxBg, {} )
+
 				levelLabel:completeAnimation()
 				self.levelLabel:setAlpha( 1 )
 				self.clipFinished( levelLabel, {} )
+
 				levelTextBg:completeAnimation()
 				self.levelTextBg:setAlpha( 0 )
 				self.clipFinished( levelTextBg, {} )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0.25 )
 				self.clipFinished( bg, {} )
+
 				bg0:completeAnimation()
 				self.bg0:setAlpha( 0.25 )
 				self.clipFinished( bg0, {} )
+
 				currentLevelBacking:completeAnimation()
 				self.currentLevelBacking:setAlpha( 1 )
 				self.clipFinished( currentLevelBacking, {} )
+
 				currentLevel:completeAnimation()
 				self.currentLevel:setLeftRight( true, false, 127.5, 188.5 )
 				self.currentLevel:setTopBottom( true, false, 10, 30 )
 				self.currentLevel:setAlpha( 1 )
 				self.clipFinished( currentLevel, {} )
+
 				topRightDots:completeAnimation()
 				self.topRightDots:setAlpha( 0.5 )
 				self.clipFinished( topRightDots, {} )
+
 				bottomRightDots:completeAnimation()
 				self.bottomRightDots:setAlpha( 0.5 )
 				self.clipFinished( bottomRightDots, {} )
+
 				rightBox:completeAnimation()
 				self.rightBox:setAlpha( 1 )
 				self.clipFinished( rightBox, {} )
+
 				cacWpnLvlMeter0:completeAnimation()
 				self.cacWpnLvlMeter0:setAlpha( 1 )
 				self.clipFinished( cacWpnLvlMeter0, {} )
+
 				weaponLevel:completeAnimation()
 				self.weaponLevel:setAlpha( 0 )
 				self.clipFinished( weaponLevel, {} )
+
 				levelTextBg0:completeAnimation()
 				self.levelTextBg0:setAlpha( 0 )
 				self.clipFinished( levelTextBg0, {} )
+
 				nextLevel:completeAnimation()
 				self.nextLevel:setAlpha( 1 )
 				self.clipFinished( nextLevel, {} )
+
 				cacLargePrestigeStars0:completeAnimation()
 				self.cacLargePrestigeStars0:setLeftRight( true, false, 373, 389 )
 				self.cacLargePrestigeStars0:setTopBottom( true, false, 4, 36 )
@@ -513,6 +548,7 @@ CoD.cac_WpnLvl.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 10 )
+
 				local levelBoxBgFrame2 = function ( levelBoxBg, event )
 					local levelBoxBgFrame3 = function ( levelBoxBg, event )
 						if not event.interrupted then
@@ -748,44 +784,57 @@ CoD.cac_WpnLvl.new = function ( menu, controller )
 		MaxLevel = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 16 )
+
 				WeaponMeterBacking:completeAnimation()
 				self.WeaponMeterBacking:setAlpha( 0 )
 				self.clipFinished( WeaponMeterBacking, {} )
+
 				levelBoxBg:completeAnimation()
 				self.levelBoxBg:setAlpha( 1 )
 				self.clipFinished( levelBoxBg, {} )
+
 				levelLabel:completeAnimation()
 				self.levelLabel:setAlpha( 1 )
 				self.clipFinished( levelLabel, {} )
+
 				levelTextBg:completeAnimation()
 				self.levelTextBg:setLeftRight( true, false, 142, 174 )
 				self.levelTextBg:setTopBottom( true, false, 4, 36 )
 				self.levelTextBg:setAlpha( 1 )
 				self.clipFinished( levelTextBg, {} )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				bg0:completeAnimation()
 				self.bg0:setAlpha( 0 )
 				self.clipFinished( bg0, {} )
+
 				currentLevelBacking:completeAnimation()
 				self.currentLevelBacking:setAlpha( 0 )
 				self.clipFinished( currentLevelBacking, {} )
+
 				currentLevel:completeAnimation()
 				self.currentLevel:setAlpha( 0 )
 				self.clipFinished( currentLevel, {} )
+
 				topRightDots:completeAnimation()
 				self.topRightDots:setAlpha( 0 )
 				self.clipFinished( topRightDots, {} )
+
 				bottomRightDots:completeAnimation()
 				self.bottomRightDots:setAlpha( 0 )
 				self.clipFinished( bottomRightDots, {} )
+
 				rightBox:completeAnimation()
 				self.rightBox:setAlpha( 0 )
 				self.clipFinished( rightBox, {} )
+
 				cacWpnLvlMeter0:completeAnimation()
 				self.cacWpnLvlMeter0:setAlpha( 0 )
 				self.clipFinished( cacWpnLvlMeter0, {} )
+
 				weaponLevel:completeAnimation()
 				self.weaponLevel:setLeftRight( false, false, -67.5, -31.5 )
 				self.weaponLevel:setTopBottom( false, true, -30, -10 )
@@ -796,12 +845,15 @@ CoD.cac_WpnLvl.new = function ( menu, controller )
 				self.weaponLevel:setShaderVector( 2, 1, 0, 0, 0 )
 				self.weaponLevel:setRFTMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( weaponLevel, {} )
+
 				levelTextBg0:completeAnimation()
 				self.levelTextBg0:setAlpha( 0 )
 				self.clipFinished( levelTextBg0, {} )
+
 				nextLevel:completeAnimation()
 				self.nextLevel:setAlpha( 0 )
 				self.clipFinished( nextLevel, {} )
+
 				cacLargePrestigeStars0:completeAnimation()
 				self.cacLargePrestigeStars0:setLeftRight( true, false, 173, 189 )
 				self.cacLargePrestigeStars0:setTopBottom( true, false, 4, 36 )
@@ -810,6 +862,7 @@ CoD.cac_WpnLvl.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DisplayLevel",
@@ -846,6 +899,7 @@ CoD.cac_WpnLvl.new = function ( menu, controller )
 			modelName = "itemIndex"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.WeaponMeterBacking:close()
 		element.levelBoxBg:close()

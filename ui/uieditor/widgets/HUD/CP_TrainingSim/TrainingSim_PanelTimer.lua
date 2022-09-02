@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ScoreInfo.ScoreInfo_PanelTimerInternal" )
 CoD.TrainingSim_PanelTimer = InheritFrom( LUI.UIElement )
 CoD.TrainingSim_PanelTimer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TrainingSim_PanelTimer )
 	self.id = "TrainingSim_PanelTimer"
@@ -29,6 +31,7 @@ CoD.TrainingSim_PanelTimer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ScoreInfoPanelTimerInternal0:completeAnimation()
 				self.ScoreInfoPanelTimerInternal0:setLeftRight( true, false, 0, 64 )
 				self.ScoreInfoPanelTimerInternal0:setTopBottom( true, false, 486, 526 )
@@ -37,6 +40,7 @@ CoD.TrainingSim_PanelTimer.new = function ( menu, controller )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ScoreInfoPanelTimerInternal0Frame2 = function ( ScoreInfoPanelTimerInternal0, event )
 					if not event.interrupted then
 						ScoreInfoPanelTimerInternal0:beginAnimation( "keyframe", 500, false, true, CoD.TweenType.Linear )
@@ -59,6 +63,7 @@ CoD.TrainingSim_PanelTimer.new = function ( menu, controller )
 			end,
 			TimeLow = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ScoreInfoPanelTimerInternal0Frame2 = function ( ScoreInfoPanelTimerInternal0, event )
 					if not event.interrupted then
 						ScoreInfoPanelTimerInternal0:beginAnimation( "keyframe", 500, false, true, CoD.TweenType.Linear )
@@ -83,6 +88,7 @@ CoD.TrainingSim_PanelTimer.new = function ( menu, controller )
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ScoreInfoPanelTimerInternal0:completeAnimation()
 				self.ScoreInfoPanelTimerInternal0:setLeftRight( true, false, 0, 64 )
 				self.ScoreInfoPanelTimerInternal0:setTopBottom( true, false, 0, 40 )
@@ -91,6 +97,7 @@ CoD.TrainingSim_PanelTimer.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ScoreInfoPanelTimerInternal0Frame2 = function ( ScoreInfoPanelTimerInternal0, event )
 					if not event.interrupted then
 						ScoreInfoPanelTimerInternal0:beginAnimation( "keyframe", 200, false, true, CoD.TweenType.Linear )
@@ -115,6 +122,7 @@ CoD.TrainingSim_PanelTimer.new = function ( menu, controller )
 		TimeLow = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ScoreInfoPanelTimerInternal0Frame2 = function ( ScoreInfoPanelTimerInternal0, event )
 					local ScoreInfoPanelTimerInternal0Frame3 = function ( ScoreInfoPanelTimerInternal0, event )
 						local ScoreInfoPanelTimerInternal0Frame4 = function ( ScoreInfoPanelTimerInternal0, event )
@@ -155,10 +163,12 @@ CoD.TrainingSim_PanelTimer.new = function ( menu, controller )
 				self.ScoreInfoPanelTimerInternal0:setTopBottom( true, false, 0, 40 )
 				self.ScoreInfoPanelTimerInternal0:setRGB( 0.55, 0.58, 0.6 )
 				ScoreInfoPanelTimerInternal0Frame2( ScoreInfoPanelTimerInternal0, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ScoreInfoPanelTimerInternal0Frame2 = function ( ScoreInfoPanelTimerInternal0, event )
 					if not event.interrupted then
 						ScoreInfoPanelTimerInternal0:beginAnimation( "keyframe", 200, false, true, CoD.TweenType.Linear )
@@ -181,6 +191,7 @@ CoD.TrainingSim_PanelTimer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ScoreInfoPanelTimerInternal0:close()
 	end )

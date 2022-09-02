@@ -4,9 +4,11 @@
 CoD.ArmDeviceWidgetInternal = InheritFrom( LUI.UIElement )
 CoD.ArmDeviceWidgetInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ArmDeviceWidgetInternal )
 	self.id = "ArmDeviceWidgetInternal"
@@ -56,21 +58,26 @@ CoD.ArmDeviceWidgetInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				TestImage:completeAnimation()
 				self.TestImage:setAlpha( 0 )
 				self.clipFinished( TestImage, {} )
+
 				HolographOverlay:completeAnimation()
 				self.HolographOverlay:setAlpha( 0 )
 				self.clipFinished( HolographOverlay, {} )
+
 				HolographOverlay0:completeAnimation()
 				self.HolographOverlay0:setAlpha( 0 )
 				self.clipFinished( HolographOverlay0, {} )
+
 				HolographOverlay00:completeAnimation()
 				self.HolographOverlay00:setAlpha( 0 )
 				self.clipFinished( HolographOverlay00, {} )
 			end,
 			Activate = function ()
 				self:setupElementClipCounter( 3 )
+
 				local HolographOverlayFrame2 = function ( HolographOverlay, event )
 					local HolographOverlayFrame3 = function ( HolographOverlay, event )
 						local HolographOverlayFrame4 = function ( HolographOverlay, event )
@@ -270,6 +277,7 @@ CoD.ArmDeviceWidgetInternal.new = function ( menu, controller )
 			end,
 			Deactivate = function ()
 				self:setupElementClipCounter( 3 )
+
 				local HolographOverlayFrame2 = function ( HolographOverlay, event )
 					local HolographOverlayFrame3 = function ( HolographOverlay, event )
 						if not event.interrupted then

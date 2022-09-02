@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.GridItemButtonBackdrop" )
 CoD.GridItemButtonBackdropContainer3x4 = InheritFrom( LUI.UIElement )
 CoD.GridItemButtonBackdropContainer3x4.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GridItemButtonBackdropContainer3x4 )
 	self.id = "GridItemButtonBackdropContainer3x4"

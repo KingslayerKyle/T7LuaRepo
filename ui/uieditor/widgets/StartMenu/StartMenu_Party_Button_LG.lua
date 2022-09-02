@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.StartMenu_Party_Button_LG = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Party_Button_LG.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Party_Button_LG )
 	self.id = "StartMenu_Party_Button_LG"
@@ -49,18 +51,21 @@ CoD.StartMenu_Party_Button_LG.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Border0:completeAnimation()
 				self.Border0:setRGB( 1, 1, 1 )
 				self.clipFinished( Border0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
+
 				Border0:completeAnimation()
 				self.Border0:setRGB( 1, 0.66, 0 )
 				self.clipFinished( Border0, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Border0:close()
 	end )

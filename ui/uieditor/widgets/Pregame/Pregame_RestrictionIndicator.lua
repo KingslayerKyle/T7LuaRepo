@@ -4,9 +4,11 @@
 CoD.Pregame_RestrictionIndicator = InheritFrom( LUI.UIElement )
 CoD.Pregame_RestrictionIndicator.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Pregame_RestrictionIndicator )
 	self.id = "Pregame_RestrictionIndicator"
@@ -42,12 +44,15 @@ CoD.Pregame_RestrictionIndicator.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Restricted:completeAnimation()
 				self.Restricted:setAlpha( 0 )
 				self.clipFinished( Restricted, {} )
+
 				BanOnly:completeAnimation()
 				self.BanOnly:setAlpha( 0 )
 				self.clipFinished( BanOnly, {} )
+
 				Protected:completeAnimation()
 				self.Protected:setAlpha( 0 )
 				self.clipFinished( Protected, {} )
@@ -56,12 +61,15 @@ CoD.Pregame_RestrictionIndicator.new = function ( menu, controller )
 		Restricted = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Restricted:completeAnimation()
 				self.Restricted:setAlpha( 0.6 )
 				self.clipFinished( Restricted, {} )
+
 				BanOnly:completeAnimation()
 				self.BanOnly:setAlpha( 0 )
 				self.clipFinished( BanOnly, {} )
+
 				Protected:completeAnimation()
 				self.Protected:setAlpha( 0 )
 				self.clipFinished( Protected, {} )
@@ -70,12 +78,15 @@ CoD.Pregame_RestrictionIndicator.new = function ( menu, controller )
 		BanOnly = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Restricted:completeAnimation()
 				self.Restricted:setAlpha( 0 )
 				self.clipFinished( Restricted, {} )
+
 				BanOnly:completeAnimation()
 				self.BanOnly:setAlpha( 0 )
 				self.clipFinished( BanOnly, {} )
+
 				Protected:completeAnimation()
 				self.Protected:setAlpha( 0 )
 				self.clipFinished( Protected, {} )
@@ -84,19 +95,23 @@ CoD.Pregame_RestrictionIndicator.new = function ( menu, controller )
 		Protected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Restricted:completeAnimation()
 				self.Restricted:setRGB( 1, 0, 0 )
 				self.Restricted:setAlpha( 0 )
 				self.clipFinished( Restricted, {} )
+
 				BanOnly:completeAnimation()
 				self.BanOnly:setAlpha( 0 )
 				self.clipFinished( BanOnly, {} )
+
 				Protected:completeAnimation()
 				self.Protected:setAlpha( 0.4 )
 				self.clipFinished( Protected, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Restricted",

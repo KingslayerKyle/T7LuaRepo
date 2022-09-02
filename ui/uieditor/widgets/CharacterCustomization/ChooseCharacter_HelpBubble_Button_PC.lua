@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.ChooseCharacter_HelpBubble_Button_PC = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacter_HelpBubble_Button_PC.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacter_HelpBubble_Button_PC )
 	self.id = "ChooseCharacter_HelpBubble_Button_PC"
@@ -79,6 +81,7 @@ CoD.ChooseCharacter_HelpBubble_Button_PC.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setText( Engine.Localize( "MENU_TO_BROWSE_CLICK" ) )
 				self.clipFinished( TextBox0, {} )
@@ -87,12 +90,14 @@ CoD.ChooseCharacter_HelpBubble_Button_PC.new = function ( menu, controller )
 		ChangedCharacter = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setText( Engine.Localize( "MENU_CLICK_WEAPON_ABILITY" ) )
 				self.clipFinished( TextBox0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ChangedCharacter",
@@ -109,9 +114,11 @@ CoD.ChooseCharacter_HelpBubble_Button_PC.new = function ( menu, controller )
 			modelName = "firstTimeFlowState"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrapped( self, element, 10, 10 )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TriangleBorder:close()
 	end )

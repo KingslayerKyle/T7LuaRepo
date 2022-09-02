@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TalkerWidgetBase" )
 CoD.FE_TalkersWidget = InheritFrom( LUI.UIElement )
 CoD.FE_TalkersWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_TalkersWidget )
 	self.id = "FE_TalkersWidget"
@@ -32,6 +34,7 @@ CoD.FE_TalkersWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Talkers:completeAnimation()
 				self.Talkers:setAlpha( 0 )
 				self.clipFinished( Talkers, {} )
@@ -40,12 +43,14 @@ CoD.FE_TalkersWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Talkers:completeAnimation()
 				self.Talkers:setAlpha( 1 )
 				self.clipFinished( Talkers, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -63,6 +68,7 @@ CoD.FE_TalkersWidget.new = function ( menu, controller )
 		} )
 	end )
 	Talkers.id = "Talkers"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Talkers:close()
 	end )

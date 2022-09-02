@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Heroes.chooseGenderButton_Internal" )
 CoD.chooseGenderButton = InheritFrom( LUI.UIElement )
 CoD.chooseGenderButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.chooseGenderButton )
 	self.id = "chooseGenderButton"
@@ -175,63 +177,80 @@ CoD.chooseGenderButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 12 )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, -2, 2 )
 				self.FocusBarB:setTopBottom( false, true, 0, 4 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setLeftRight( true, true, -12, 7 )
 				self.glitch:setTopBottom( true, false, -8.75, 4.75 )
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setLeftRight( true, true, -8.5, 8.5 )
 				self.glitch2:setTopBottom( false, true, -6, 9 )
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				focusGlow:completeAnimation()
 				self.focusGlow:setAlpha( 0 )
 				self.clipFinished( focusGlow, {} )
+
 				OrangeLines:completeAnimation()
 				self.OrangeLines:setAlpha( 0 )
 				self.clipFinished( OrangeLines, {} )
+
 				OrangeSmallLines:completeAnimation()
 				self.OrangeSmallLines:setAlpha( 0 )
 				self.clipFinished( OrangeSmallLines, {} )
+
 				pixel0:completeAnimation()
 				self.pixel0:setLeftRight( false, true, -5, 3.5 )
 				self.pixel0:setTopBottom( false, true, -5.5, 3 )
 				self.clipFinished( pixel0, {} )
+
 				pixel00:completeAnimation()
 				self.pixel00:setLeftRight( true, false, -2.25, 6.25 )
 				self.pixel00:setTopBottom( false, true, -4.5, 4 )
 				self.clipFinished( pixel00, {} )
+
 				noGenderText:completeAnimation()
 				self.noGenderText:setAlpha( 0 )
 				self.clipFinished( noGenderText, {} )
+
 				GenderImage:completeAnimation()
+
 				GenderImage.inFocus:completeAnimation()
 				self.GenderImage:setAlpha( 0.5 )
 				self.GenderImage.inFocus:setAlpha( 0 )
 				self.clipFinished( GenderImage, {} )
+
 				arrows00:completeAnimation()
 				self.arrows00:setAlpha( 0 )
 				self.clipFinished( arrows00, {} )
+
 				focusGlow0:completeAnimation()
 				self.focusGlow0:setAlpha( 0 )
 				self.clipFinished( focusGlow0, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
@@ -301,6 +320,7 @@ CoD.chooseGenderButton.new = function ( menu, controller )
 				end
 				
 				GenderImage:completeAnimation()
+
 				GenderImage.inFocus:completeAnimation()
 				self.GenderImage:setAlpha( 0.5 )
 				self.GenderImage.inFocus:setAlpha( 0 )
@@ -338,49 +358,61 @@ CoD.chooseGenderButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 11 )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, 0, 0 )
 				self.FocusBarT:setTopBottom( true, false, -4, 0 )
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, 0, 0 )
 				self.FocusBarB:setTopBottom( false, true, 0, 4 )
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setLeftRight( true, true, -12, 7 )
 				self.glitch:setTopBottom( true, false, -8.75, 4.5 )
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setLeftRight( true, true, -8.5, 8.5 )
 				self.glitch2:setTopBottom( false, true, -3, 12 )
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				focusGlow:completeAnimation()
 				self.focusGlow:setLeftRight( true, true, 0, 0 )
 				self.focusGlow:setTopBottom( true, true, 0, 0 )
 				self.focusGlow:setAlpha( 1 )
 				self.clipFinished( focusGlow, {} )
+
 				OrangeLines:completeAnimation()
 				self.OrangeLines:setAlpha( 1 )
 				self.clipFinished( OrangeLines, {} )
+
 				OrangeSmallLines:completeAnimation()
 				self.OrangeSmallLines:setAlpha( 1 )
 				self.clipFinished( OrangeSmallLines, {} )
+
 				pixel0:completeAnimation()
 				self.pixel0:setLeftRight( false, true, -6, 2.5 )
 				self.pixel0:setTopBottom( false, true, -4.5, 4 )
 				self.clipFinished( pixel0, {} )
+
 				pixel00:completeAnimation()
 				self.pixel00:setLeftRight( true, false, -2.25, 6.25 )
 				self.pixel00:setTopBottom( false, true, -4.5, 4 )
 				self.clipFinished( pixel00, {} )
+
 				noGenderText:completeAnimation()
 				self.noGenderText:setAlpha( 0 )
 				self.clipFinished( noGenderText, {} )
+
 				GenderImage:completeAnimation()
+
 				GenderImage.inFocus:completeAnimation()
 				self.GenderImage:setAlpha( 1 )
 				self.GenderImage.inFocus:setAlpha( 1 )
@@ -388,6 +420,7 @@ CoD.chooseGenderButton.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 10 )
+
 				FocusBarT:beginAnimation( "keyframe", 79, false, false, CoD.TweenType.Linear )
 				FocusBarT:setAlpha( 0 )
 				FocusBarT:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
@@ -466,6 +499,7 @@ CoD.chooseGenderButton.new = function ( menu, controller )
 				end
 				
 				GenderImage:completeAnimation()
+
 				GenderImage.inFocus:completeAnimation()
 				self.GenderImage:setAlpha( 1 )
 				self.GenderImage.inFocus:setAlpha( 1 )
@@ -505,69 +539,86 @@ CoD.chooseGenderButton.new = function ( menu, controller )
 		NoGender_NoFocus = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( false, false, -106, 100 )
 				self.FocusBarT:setTopBottom( true, false, 188, 192 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( false, false, -106, 99.25 )
 				self.FocusBarB:setTopBottom( true, false, 242, 246 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setLeftRight( false, false, -116, 105 )
 				self.glitch:setTopBottom( true, false, 183.25, 196.75 )
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setLeftRight( false, false, -112.5, 105.75 )
 				self.glitch2:setTopBottom( true, false, 236, 251 )
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				focusGlow:completeAnimation()
 				self.focusGlow:setAlpha( 0 )
 				self.clipFinished( focusGlow, {} )
+
 				OrangeLines:completeAnimation()
 				self.OrangeLines:setAlpha( 0 )
 				self.clipFinished( OrangeLines, {} )
+
 				OrangeSmallLines:completeAnimation()
 				self.OrangeSmallLines:setAlpha( 0 )
 				self.clipFinished( OrangeSmallLines, {} )
+
 				pixel:completeAnimation()
 				self.pixel:setLeftRight( false, false, 95, 103.5 )
 				self.pixel:setTopBottom( true, false, 186, 194.5 )
 				self.clipFinished( pixel, {} )
+
 				pixel0:completeAnimation()
 				self.pixel0:setLeftRight( false, false, 95, 103.5 )
 				self.pixel0:setTopBottom( true, false, 239.5, 248 )
 				self.clipFinished( pixel0, {} )
+
 				pixel1:completeAnimation()
 				self.pixel1:setLeftRight( false, false, -110.25, -101.75 )
 				self.pixel1:setTopBottom( true, false, 186, 194.5 )
 				self.clipFinished( pixel1, {} )
+
 				pixel00:completeAnimation()
 				self.pixel00:setLeftRight( false, false, -111.25, -102.75 )
 				self.pixel00:setTopBottom( true, false, 239.5, 248 )
 				self.clipFinished( pixel00, {} )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( false, false, -106, 100 )
 				self.sizeElement:setTopBottom( true, false, 190, 244 )
 				self.sizeElement:setAlpha( 0 )
 				self.clipFinished( sizeElement, {} )
+
 				noGenderText:completeAnimation()
 				self.noGenderText:setLeftRight( false, false, -104, 96 )
 				self.noGenderText:setTopBottom( true, false, 204, 229 )
 				self.noGenderText:setRGB( 1, 1, 1 )
 				self.noGenderText:setAlpha( 0.5 )
 				self.clipFinished( noGenderText, {} )
+
 				GenderImage:completeAnimation()
 				self.GenderImage:setAlpha( 0 )
 				self.clipFinished( GenderImage, {} )
+
 				arrows0:completeAnimation()
 				self.arrows0:setAlpha( 0.5 )
 				self.clipFinished( arrows0, {} )
+
 				arrows00:completeAnimation()
 				self.arrows00:setAlpha( 0.5 )
 				self.clipFinished( arrows00, {} )
+
 				focusGlow0:completeAnimation()
 				self.focusGlow0:setLeftRight( true, true, 144, -154.25 )
 				self.focusGlow0:setTopBottom( true, true, 0, 0 )
@@ -578,69 +629,86 @@ CoD.chooseGenderButton.new = function ( menu, controller )
 		NoGender = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, 154, -160 )
 				self.FocusBarT:setTopBottom( true, false, 188, 192 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, 154, -160.75 )
 				self.FocusBarB:setTopBottom( false, true, -394, -390 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setLeftRight( true, true, 144, -155 )
 				self.glitch:setTopBottom( true, false, 183.25, 196.75 )
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setLeftRight( true, true, 147.5, -154.25 )
 				self.glitch2:setTopBottom( false, true, -400, -385 )
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				focusGlow:completeAnimation()
 				self.focusGlow:setAlpha( 0 )
 				self.clipFinished( focusGlow, {} )
+
 				OrangeLines:completeAnimation()
 				self.OrangeLines:setAlpha( 0 )
 				self.clipFinished( OrangeLines, {} )
+
 				OrangeSmallLines:completeAnimation()
 				self.OrangeSmallLines:setAlpha( 0 )
 				self.clipFinished( OrangeSmallLines, {} )
+
 				pixel:completeAnimation()
 				self.pixel:setLeftRight( false, false, 95, 103.5 )
 				self.pixel:setTopBottom( true, false, 186, 194.5 )
 				self.clipFinished( pixel, {} )
+
 				pixel0:completeAnimation()
 				self.pixel0:setLeftRight( false, true, -165, -156.5 )
 				self.pixel0:setTopBottom( false, true, -396.5, -388 )
 				self.clipFinished( pixel0, {} )
+
 				pixel1:completeAnimation()
 				self.pixel1:setLeftRight( false, false, -110.25, -101.75 )
 				self.pixel1:setTopBottom( true, false, 186, 194.5 )
 				self.clipFinished( pixel1, {} )
+
 				pixel00:completeAnimation()
 				self.pixel00:setLeftRight( true, false, 148.75, 157.25 )
 				self.pixel00:setTopBottom( false, true, -396.5, -388 )
 				self.clipFinished( pixel00, {} )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( false, false, -106, 100 )
 				self.sizeElement:setTopBottom( true, false, 190, 244 )
 				self.sizeElement:setAlpha( 0 )
 				self.clipFinished( sizeElement, {} )
+
 				noGenderText:completeAnimation()
 				self.noGenderText:setLeftRight( false, false, -104, 96 )
 				self.noGenderText:setTopBottom( true, false, 204, 229 )
 				self.noGenderText:setRGB( 1, 1, 1 )
 				self.noGenderText:setAlpha( 0.5 )
 				self.clipFinished( noGenderText, {} )
+
 				GenderImage:completeAnimation()
 				self.GenderImage:setAlpha( 0 )
 				self.clipFinished( GenderImage, {} )
+
 				arrows0:completeAnimation()
 				self.arrows0:setAlpha( 0.5 )
 				self.clipFinished( arrows0, {} )
+
 				arrows00:completeAnimation()
 				self.arrows00:setAlpha( 0.5 )
 				self.clipFinished( arrows00, {} )
+
 				focusGlow0:completeAnimation()
 				self.focusGlow0:setLeftRight( true, true, 144, -154.25 )
 				self.focusGlow0:setTopBottom( true, true, 0, 0 )
@@ -649,6 +717,7 @@ CoD.chooseGenderButton.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 16 )
+
 				local FocusBarTFrame2 = function ( FocusBarT, event )
 					local FocusBarTFrame3 = function ( FocusBarT, event )
 						local FocusBarTFrame4 = function ( FocusBarT, event )
@@ -945,31 +1014,39 @@ CoD.chooseGenderButton.new = function ( menu, controller )
 				self.glitch2:setTopBottom( true, false, 236, 251 )
 				self.glitch2:setAlpha( 1 )
 				glitch2Frame2( glitch2, {} )
+
 				focusGlow:completeAnimation()
 				self.focusGlow:setAlpha( 0 )
 				self.clipFinished( focusGlow, {} )
+
 				OrangeLines:completeAnimation()
 				self.OrangeLines:setAlpha( 0 )
 				self.clipFinished( OrangeLines, {} )
+
 				OrangeSmallLines:completeAnimation()
 				self.OrangeSmallLines:setAlpha( 0 )
 				self.clipFinished( OrangeSmallLines, {} )
+
 				pixel:completeAnimation()
 				self.pixel:setLeftRight( false, false, 95, 103.5 )
 				self.pixel:setTopBottom( true, false, 186, 194.5 )
 				self.clipFinished( pixel, {} )
+
 				pixel0:completeAnimation()
 				self.pixel0:setLeftRight( false, true, -38, -29.5 )
 				self.pixel0:setTopBottom( false, true, -160.5, -152 )
 				self.clipFinished( pixel0, {} )
+
 				pixel1:completeAnimation()
 				self.pixel1:setLeftRight( false, false, -110.25, -101.75 )
 				self.pixel1:setTopBottom( true, false, 186, 194.5 )
 				self.clipFinished( pixel1, {} )
+
 				pixel00:completeAnimation()
 				self.pixel00:setLeftRight( true, false, 22.75, 31.25 )
 				self.pixel00:setTopBottom( false, true, -160.5, -152 )
 				self.clipFinished( pixel00, {} )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( false, false, -106, 100 )
 				self.sizeElement:setTopBottom( true, false, 190, 244 )
@@ -996,6 +1073,7 @@ CoD.chooseGenderButton.new = function ( menu, controller )
 				self.noGenderText:setRGB( 1, 1, 1 )
 				self.noGenderText:setAlpha( 0.5 )
 				noGenderTextFrame2( noGenderText, {} )
+
 				GenderImage:completeAnimation()
 				self.GenderImage:setAlpha( 0 )
 				self.clipFinished( GenderImage, {} )
@@ -1032,77 +1110,95 @@ CoD.chooseGenderButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 17 )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( false, false, -110, 103 )
 				self.FocusBarT:setTopBottom( true, false, 188, 192 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( false, false, -110, 103 )
 				self.FocusBarB:setTopBottom( true, false, 242, 246 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setLeftRight( false, false, -116, 105 )
 				self.glitch:setTopBottom( true, false, 183, 197 )
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setLeftRight( false, false, -112.5, 105.75 )
 				self.glitch2:setTopBottom( true, false, 236, 251 )
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
+
 				focusGlow:completeAnimation()
 				self.focusGlow:setAlpha( 0 )
 				self.clipFinished( focusGlow, {} )
+
 				OrangeLines:completeAnimation()
 				self.OrangeLines:setAlpha( 0 )
 				self.clipFinished( OrangeLines, {} )
+
 				OrangeSmallLines:completeAnimation()
 				self.OrangeSmallLines:setAlpha( 0 )
 				self.clipFinished( OrangeSmallLines, {} )
+
 				pixel:completeAnimation()
 				self.pixel:setLeftRight( false, false, 95, 105 )
 				self.pixel:setTopBottom( true, false, 186, 194.5 )
 				self.clipFinished( pixel, {} )
+
 				pixel0:completeAnimation()
 				self.pixel0:setLeftRight( false, false, 95, 103.5 )
 				self.pixel0:setTopBottom( true, false, 239.5, 248 )
 				self.clipFinished( pixel0, {} )
+
 				pixel1:completeAnimation()
 				self.pixel1:setLeftRight( false, false, -110.25, -101.75 )
 				self.pixel1:setTopBottom( true, false, 186, 194.5 )
 				self.clipFinished( pixel1, {} )
+
 				pixel00:completeAnimation()
 				self.pixel00:setLeftRight( false, false, -111.25, -102.75 )
 				self.pixel00:setTopBottom( true, false, 239.5, 248 )
 				self.clipFinished( pixel00, {} )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( false, false, -106, 100 )
 				self.sizeElement:setTopBottom( true, false, 190, 244 )
 				self.sizeElement:setAlpha( 0 )
 				self.clipFinished( sizeElement, {} )
+
 				noGenderText:completeAnimation()
 				self.noGenderText:setLeftRight( false, false, -104, 96 )
 				self.noGenderText:setTopBottom( true, false, 204, 229 )
 				self.noGenderText:setRGB( 1, 1, 1 )
 				self.noGenderText:setAlpha( 0.8 )
 				self.clipFinished( noGenderText, {} )
+
 				GenderImage:completeAnimation()
 				self.GenderImage:setAlpha( 0 )
 				self.clipFinished( GenderImage, {} )
+
 				arrows0:completeAnimation()
 				self.arrows0:setAlpha( 1 )
 				self.clipFinished( arrows0, {} )
+
 				arrows00:completeAnimation()
 				self.arrows00:setAlpha( 1 )
 				self.clipFinished( arrows00, {} )
+
 				focusGlow0:completeAnimation()
 				self.focusGlow0:setAlpha( 0 )
 				self.clipFinished( focusGlow0, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 13 )
+
 				local FocusBarTFrame2 = function ( FocusBarT, event )
 					local FocusBarTFrame3 = function ( FocusBarT, event )
 						local FocusBarTFrame4 = function ( FocusBarT, event )
@@ -1359,22 +1455,27 @@ CoD.chooseGenderButton.new = function ( menu, controller )
 				self.glitch2:setTopBottom( false, true, -164, -149 )
 				self.glitch2:setAlpha( 0 )
 				glitch2Frame2( glitch2, {} )
+
 				pixel:completeAnimation()
 				self.pixel:setLeftRight( false, false, 95, 103.5 )
 				self.pixel:setTopBottom( true, false, 186, 194.5 )
 				self.clipFinished( pixel, {} )
+
 				pixel0:completeAnimation()
 				self.pixel0:setLeftRight( false, true, -38, -29.5 )
 				self.pixel0:setTopBottom( false, true, -160.5, -152 )
 				self.clipFinished( pixel0, {} )
+
 				pixel1:completeAnimation()
 				self.pixel1:setLeftRight( false, false, -110.25, -101.75 )
 				self.pixel1:setTopBottom( true, false, 186, 194.5 )
 				self.clipFinished( pixel1, {} )
+
 				pixel00:completeAnimation()
 				self.pixel00:setLeftRight( true, false, 21.75, 30.25 )
 				self.pixel00:setTopBottom( false, true, -160.5, -152 )
 				self.clipFinished( pixel00, {} )
+
 				sizeElement:completeAnimation()
 				self.sizeElement:setLeftRight( false, false, -106, 100 )
 				self.sizeElement:setTopBottom( true, false, 190, 244 )
@@ -1401,6 +1502,7 @@ CoD.chooseGenderButton.new = function ( menu, controller )
 				self.noGenderText:setRGB( 1, 1, 1 )
 				self.noGenderText:setAlpha( 0.75 )
 				noGenderTextFrame2( noGenderText, {} )
+
 				GenderImage:completeAnimation()
 				self.GenderImage:setAlpha( 0 )
 				self.clipFinished( GenderImage, {} )
@@ -1437,6 +1539,7 @@ CoD.chooseGenderButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoGender_NoFocus",
@@ -1451,6 +1554,7 @@ CoD.chooseGenderButton.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FocusBarT:close()
 		element.FocusBarB:close()

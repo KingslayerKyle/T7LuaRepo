@@ -4,9 +4,11 @@
 CoD.Social_MemberGamerTag = InheritFrom( LUI.UIElement )
 CoD.Social_MemberGamerTag.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_MemberGamerTag )
 	self.id = "Social_MemberGamerTag"
@@ -28,9 +30,11 @@ CoD.Social_MemberGamerTag.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			TeamSwitch = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

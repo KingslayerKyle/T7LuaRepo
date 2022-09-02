@@ -4,9 +4,11 @@
 CoD.GroupFractionLabel = InheritFrom( LUI.UIElement )
 CoD.GroupFractionLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupFractionLabel )
 	self.id = "GroupFractionLabel"
@@ -28,6 +30,7 @@ CoD.GroupFractionLabel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				groupsUsedValue:completeAnimation()
 				self.groupsUsedValue:setRGB( 1, 1, 1 )
 				self.groupsUsedValue:setAlpha( 1 )
@@ -37,6 +40,7 @@ CoD.GroupFractionLabel.new = function ( menu, controller )
 		GroupsFull = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				groupsUsedValue:completeAnimation()
 				self.groupsUsedValue:setRGB( 1, 0, 0 )
 				self.clipFinished( groupsUsedValue, {} )

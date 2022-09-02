@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Ground.VehicleGround_HashRingLargeInte
 CoD.VehicleGround_HashRingLarge = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_HashRingLarge.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VehicleGround_HashRingLarge )
 	self.id = "VehicleGround_HashRingLarge"
@@ -108,6 +110,7 @@ CoD.VehicleGround_HashRingLarge.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local VehicleGroundHashRingLargeInternal0Frame2 = function ( VehicleGroundHashRingLargeInternal0, event )
 					local VehicleGroundHashRingLargeInternal0Frame3 = function ( VehicleGroundHashRingLargeInternal0, event )
 						local VehicleGroundHashRingLargeInternal0Frame4 = function ( VehicleGroundHashRingLargeInternal0, event )
@@ -281,10 +284,12 @@ CoD.VehicleGround_HashRingLarge.new = function ( menu, controller )
 				VehicleGroundHashRingLargeInternal0:completeAnimation()
 				self.VehicleGroundHashRingLargeInternal0:setZRot( 0 )
 				VehicleGroundHashRingLargeInternal0Frame2( VehicleGroundHashRingLargeInternal0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.VehicleGroundHashRingLargeInternal0:close()
 	end )

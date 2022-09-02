@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_GoldFrame" )
 CoD.CallingCards_loot_GirlPower = InheritFrom( LUI.UIElement )
 CoD.CallingCards_loot_GirlPower.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_loot_GirlPower )
 	self.id = "CallingCards_loot_GirlPower"
@@ -83,6 +85,7 @@ CoD.CallingCards_loot_GirlPower.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 1 )
 				self.clipFinished( Image0, {} )
@@ -334,13 +337,16 @@ CoD.CallingCards_loot_GirlPower.new = function ( menu, controller )
 				Image3000:completeAnimation()
 				self.Image3000:setAlpha( 0 )
 				Image3000Frame2( Image3000, {} )
+
 				CallingCardsGoldFrame:completeAnimation()
 				self.CallingCardsGoldFrame:setAlpha( 1 )
 				self.clipFinished( CallingCardsGoldFrame, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardsGoldFrame:close()
 	end )

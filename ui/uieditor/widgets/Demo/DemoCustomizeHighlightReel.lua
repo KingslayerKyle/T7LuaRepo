@@ -12,9 +12,11 @@ end
 CoD.DemoCustomizeHighlightReel = InheritFrom( LUI.UIElement )
 CoD.DemoCustomizeHighlightReel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DemoCustomizeHighlightReel )
 	self.id = "DemoCustomizeHighlightReel"
@@ -157,6 +159,7 @@ CoD.DemoCustomizeHighlightReel.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.text:close()
 		element.numAvailableHighlights:close()

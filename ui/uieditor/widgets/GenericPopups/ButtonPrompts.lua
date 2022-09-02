@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.buttonprompt_small" )
 CoD.ButtonPrompts = InheritFrom( LUI.UIElement )
 CoD.ButtonPrompts.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.ButtonPrompts )
 	self.id = "ButtonPrompts"

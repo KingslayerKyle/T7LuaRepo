@@ -11,9 +11,11 @@ require( "ui.uieditor.widgets.horizontalScrollingTextBox_18pt" )
 CoD.Challenges_NearCompletionWidget = InheritFrom( LUI.UIElement )
 CoD.Challenges_NearCompletionWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_NearCompletionWidget )
 	self.id = "Challenges_NearCompletionWidget"
@@ -134,6 +136,7 @@ CoD.Challenges_NearCompletionWidget.new = function ( menu, controller )
 			ChallengeDescription.textBox:setText( Engine.Localize( description ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactive:close()
 		element.BoxButtonLrgInactive0:close()

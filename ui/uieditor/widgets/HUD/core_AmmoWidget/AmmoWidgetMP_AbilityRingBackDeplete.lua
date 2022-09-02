@@ -4,9 +4,11 @@
 CoD.AmmoWidgetMP_AbilityRingBackDeplete = InheritFrom( LUI.UIElement )
 CoD.AmmoWidgetMP_AbilityRingBackDeplete.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidgetMP_AbilityRingBackDeplete )
 	self.id = "AmmoWidgetMP_AbilityRingBackDeplete"

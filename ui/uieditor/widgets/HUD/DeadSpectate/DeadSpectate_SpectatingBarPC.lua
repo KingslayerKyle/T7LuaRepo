@@ -4,9 +4,11 @@
 CoD.DeadSpectate_SpectatingBarPC = InheritFrom( LUI.UIElement )
 CoD.DeadSpectate_SpectatingBarPC.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DeadSpectate_SpectatingBarPC )
 	self.id = "DeadSpectate_SpectatingBarPC"
@@ -68,15 +70,19 @@ CoD.DeadSpectate_SpectatingBarPC.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				spectatingLabel0:completeAnimation()
 				self.spectatingLabel0:setAlpha( 0 )
 				self.clipFinished( spectatingLabel0, {} )
+
 				spectatingLabel00:completeAnimation()
 				self.spectatingLabel00:setAlpha( 0 )
 				self.clipFinished( spectatingLabel00, {} )
+
 				leftButton:completeAnimation()
 				self.leftButton:setAlpha( 0 )
 				self.clipFinished( leftButton, {} )
+
 				rightButton:completeAnimation()
 				self.rightButton:setAlpha( 0 )
 				self.clipFinished( rightButton, {} )
@@ -85,21 +91,26 @@ CoD.DeadSpectate_SpectatingBarPC.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				spectatingLabel0:completeAnimation()
 				self.spectatingLabel0:setAlpha( 0.65 )
 				self.clipFinished( spectatingLabel0, {} )
+
 				spectatingLabel00:completeAnimation()
 				self.spectatingLabel00:setAlpha( 1 )
 				self.clipFinished( spectatingLabel00, {} )
+
 				leftButton:completeAnimation()
 				self.leftButton:setAlpha( 1 )
 				self.clipFinished( leftButton, {} )
+
 				rightButton:completeAnimation()
 				self.rightButton:setAlpha( 1 )
 				self.clipFinished( rightButton, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -180,6 +191,7 @@ CoD.DeadSpectate_SpectatingBarPC.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.leftButton:close()
 		element.rightButton:close()

@@ -12,9 +12,11 @@ end
 CoD.LocalMediaSlotsAvailable = InheritFrom( LUI.UIElement )
 CoD.LocalMediaSlotsAvailable.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LocalMediaSlotsAvailable )
 	self.id = "LocalMediaSlotsAvailable"
@@ -114,9 +116,11 @@ CoD.LocalMediaSlotsAvailable.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				WaitingBG:completeAnimation()
 				self.WaitingBG:setAlpha( 0 )
 				self.clipFinished( WaitingBG, {} )
+
 				LblWaiting:completeAnimation()
 				self.LblWaiting:setAlpha( 0 )
 				self.clipFinished( LblWaiting, {} )
@@ -125,15 +129,18 @@ CoD.LocalMediaSlotsAvailable.new = function ( menu, controller )
 		Waiting = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				WaitingBG:completeAnimation()
 				self.WaitingBG:setAlpha( 1 )
 				self.clipFinished( WaitingBG, {} )
+
 				LblWaiting:completeAnimation()
 				self.LblWaiting:setAlpha( 1 )
 				self.clipFinished( LblWaiting, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Waiting",
@@ -150,6 +157,7 @@ CoD.LocalMediaSlotsAvailable.new = function ( menu, controller )
 			modelName = "fileshareRoot.ready"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CountLowBG:close()
 		element.CountBG:close()

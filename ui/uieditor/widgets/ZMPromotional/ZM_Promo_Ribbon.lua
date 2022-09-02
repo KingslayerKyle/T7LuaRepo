@@ -4,9 +4,11 @@
 CoD.ZM_Promo_Ribbon = InheritFrom( LUI.UIElement )
 CoD.ZM_Promo_Ribbon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZM_Promo_Ribbon )
 	self.id = "ZM_Promo_Ribbon"
@@ -59,6 +61,7 @@ CoD.ZM_Promo_Ribbon.new = function ( menu, controller )
 		end
 		return f2_local0
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( Text, "setText", function ( element, controller )
 		ScaleWidgetToLabelRightAligned( self, element, 15 )
 	end )
@@ -69,15 +72,19 @@ CoD.ZM_Promo_Ribbon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				PromoRibbon:completeAnimation()
 				self.PromoRibbon:setAlpha( 0 )
 				self.clipFinished( PromoRibbon, {} )
+
 				PromoRibbon0:completeAnimation()
 				self.PromoRibbon0:setAlpha( 0 )
 				self.clipFinished( PromoRibbon0, {} )
+
 				PromoRibbon00:completeAnimation()
 				self.PromoRibbon00:setAlpha( 0 )
 				self.clipFinished( PromoRibbon00, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 0 )
 				self.clipFinished( Text, {} )
@@ -86,15 +93,19 @@ CoD.ZM_Promo_Ribbon.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				PromoRibbon:completeAnimation()
 				self.PromoRibbon:setAlpha( 1 )
 				self.clipFinished( PromoRibbon, {} )
+
 				PromoRibbon0:completeAnimation()
 				self.PromoRibbon0:setAlpha( 1 )
 				self.clipFinished( PromoRibbon0, {} )
+
 				PromoRibbon00:completeAnimation()
 				self.PromoRibbon00:setAlpha( 1 )
 				self.clipFinished( PromoRibbon00, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 1 )
 				self.clipFinished( Text, {} )

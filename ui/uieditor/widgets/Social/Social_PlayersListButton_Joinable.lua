@@ -4,9 +4,11 @@
 CoD.Social_PlayersListButton_Joinable = InheritFrom( LUI.UIElement )
 CoD.Social_PlayersListButton_Joinable.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_PlayersListButton_Joinable )
 	self.id = "Social_PlayersListButton_Joinable"
@@ -27,29 +29,35 @@ CoD.Social_PlayersListButton_Joinable.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				joinableIcon:completeAnimation()
 				self.joinableIcon:setAlpha( 0 )
 				self.clipFinished( joinableIcon, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focusx = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Joinable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				joinableIcon:completeAnimation()
 				self.joinableIcon:setAlpha( 1 )
 				self.clipFinished( joinableIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Joinable",

@@ -42,9 +42,11 @@ end
 CoD.Challenges_FrameWidget_Scorestreaks = InheritFrom( LUI.UIElement )
 CoD.Challenges_FrameWidget_Scorestreaks.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_FrameWidget_Scorestreaks )
 	self.id = "Challenges_FrameWidget_Scorestreaks"
@@ -468,6 +470,7 @@ CoD.Challenges_FrameWidget_Scorestreaks.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.operationsTitle:close()
 		element.AirAssaultButton:close()

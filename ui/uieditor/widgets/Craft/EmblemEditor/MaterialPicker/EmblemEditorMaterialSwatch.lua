@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TabBar" )
 CoD.EmblemEditorMaterialSwatch = InheritFrom( LUI.UIElement )
 CoD.EmblemEditorMaterialSwatch.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.EmblemEditorMaterialSwatch )
 	self.id = "EmblemEditorMaterialSwatch"
@@ -166,6 +168,7 @@ CoD.EmblemEditorMaterialSwatch.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ColorPickerBkgd0:completeAnimation()
 				self.ColorPickerBkgd0:setAlpha( 0.9 )
 				self.clipFinished( ColorPickerBkgd0, {} )
@@ -182,6 +185,7 @@ CoD.EmblemEditorMaterialSwatch.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.lastSavedColor:close()
 		element.materialSwatch:close()

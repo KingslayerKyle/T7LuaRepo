@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.KeyPrompt" )
 CoD.CodCasterKeyboardButtonPromptInfo = InheritFrom( LUI.UIElement )
 CoD.CodCasterKeyboardButtonPromptInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterKeyboardButtonPromptInfo )
 	self.id = "CodCasterKeyboardButtonPromptInfo"
@@ -21,6 +23,7 @@ CoD.CodCasterKeyboardButtonPromptInfo.new = function ( menu, controller )
 	Text:setTopBottom( true, false, 7, 25 )
 	Text:setText( Engine.Localize( "MPUI_MENU" ) )
 	Text:setTTF( "fonts/default.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( Text, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, -40 )
 	end )
@@ -38,9 +41,11 @@ CoD.CodCasterKeyboardButtonPromptInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.keyPrompt:close()
 	end )

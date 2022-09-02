@@ -4,9 +4,11 @@
 CoD.KillcamWidgetNumbers = InheritFrom( LUI.UIElement )
 CoD.KillcamWidgetNumbers.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.KillcamWidgetNumbers )
 	self.id = "KillcamWidgetNumbers"
@@ -29,9 +31,11 @@ CoD.KillcamWidgetNumbers.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Start = function ()
 				self:setupElementClipCounter( 1 )
+
 				local NumbersFrame2 = function ( Numbers, event )
 					if not event.interrupted then
 						Numbers:beginAnimation( "keyframe", 259, false, false, CoD.TweenType.Linear )
@@ -52,6 +56,7 @@ CoD.KillcamWidgetNumbers.new = function ( menu, controller )
 		WinTime = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Numbers:completeAnimation()
 				self.Numbers:setRGB( 0.05, 1, 0 )
 				self.Numbers:setAlpha( 0.7 )
@@ -61,6 +66,7 @@ CoD.KillcamWidgetNumbers.new = function ( menu, controller )
 		LossTime = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Numbers:completeAnimation()
 				self.Numbers:setRGB( 1, 0.01, 0 )
 				self.Numbers:setAlpha( 0.7 )

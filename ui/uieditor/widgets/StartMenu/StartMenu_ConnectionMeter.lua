@@ -14,9 +14,11 @@ end
 CoD.StartMenu_ConnectionMeter = InheritFrom( LUI.UIElement )
 CoD.StartMenu_ConnectionMeter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.StartMenu_ConnectionMeter )
 	self.id = "StartMenu_ConnectionMeter"

@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.CAC.GridItemConsumableLabel" )
 CoD.LobbyMemberBubbleGumBuffs = InheritFrom( LUI.UIElement )
 CoD.LobbyMemberBubbleGumBuffs.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyMemberBubbleGumBuffs )
 	self.id = "LobbyMemberBubbleGumBuffs"
@@ -282,18 +284,23 @@ CoD.LobbyMemberBubbleGumBuffs.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				ConsumableLabel1:completeAnimation()
 				self.ConsumableLabel1:setAlpha( 0 )
 				self.clipFinished( ConsumableLabel1, {} )
+
 				ConsumableLabel2:completeAnimation()
 				self.ConsumableLabel2:setAlpha( 0 )
 				self.clipFinished( ConsumableLabel2, {} )
+
 				ConsumableLabel3:completeAnimation()
 				self.ConsumableLabel3:setAlpha( 0 )
 				self.clipFinished( ConsumableLabel3, {} )
+
 				ConsumableLabel4:completeAnimation()
 				self.ConsumableLabel4:setAlpha( 0 )
 				self.clipFinished( ConsumableLabel4, {} )
+
 				ConsumableLabel5:completeAnimation()
 				self.ConsumableLabel5:setAlpha( 0 )
 				self.clipFinished( ConsumableLabel5, {} )
@@ -302,24 +309,30 @@ CoD.LobbyMemberBubbleGumBuffs.new = function ( menu, controller )
 		IsSelf = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				ConsumableLabel1:completeAnimation()
 				self.ConsumableLabel1:setAlpha( 1 )
 				self.clipFinished( ConsumableLabel1, {} )
+
 				ConsumableLabel2:completeAnimation()
 				self.ConsumableLabel2:setAlpha( 1 )
 				self.clipFinished( ConsumableLabel2, {} )
+
 				ConsumableLabel3:completeAnimation()
 				self.ConsumableLabel3:setAlpha( 1 )
 				self.clipFinished( ConsumableLabel3, {} )
+
 				ConsumableLabel4:completeAnimation()
 				self.ConsumableLabel4:setAlpha( 1 )
 				self.clipFinished( ConsumableLabel4, {} )
+
 				ConsumableLabel5:completeAnimation()
 				self.ConsumableLabel5:setAlpha( 1 )
 				self.clipFinished( ConsumableLabel5, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "IsSelf",
@@ -328,6 +341,7 @@ CoD.LobbyMemberBubbleGumBuffs.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanelShaderContainer0:close()
 		element.BubbleGumBuff1:close()

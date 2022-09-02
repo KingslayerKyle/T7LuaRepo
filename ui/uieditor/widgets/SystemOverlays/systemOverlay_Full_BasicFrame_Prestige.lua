@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.GenericPopups.SystemOverlay_WeaponPrestigeStar" )
 CoD.systemOverlay_Full_BasicFrame_Prestige = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_Full_BasicFrame_Prestige.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_Full_BasicFrame_Prestige )
 	self.id = "systemOverlay_Full_BasicFrame_Prestige"
@@ -81,6 +83,7 @@ CoD.systemOverlay_Full_BasicFrame_Prestige.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.foreground:close()
 		element.supportInfo:close()

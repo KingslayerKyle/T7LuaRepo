@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.VTOL.vtolCenterMissilesLocked" )
 CoD.vtolCenterMissiles = InheritFrom( LUI.UIElement )
 CoD.vtolCenterMissiles.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vtolCenterMissiles )
 	self.id = "vtolCenterMissiles"
@@ -104,13 +106,16 @@ CoD.vtolCenterMissiles.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				missilesCenter:completeAnimation()
 				self.missilesCenter:setRGB( 1, 1, 1 )
 				self.missilesCenter:setAlpha( 1 )
 				self.clipFinished( missilesCenter, {} )
+
 				lockArrow:completeAnimation()
 				self.lockArrow:setAlpha( 0 )
 				self.clipFinished( lockArrow, {} )
+
 				locked:completeAnimation()
 				self.locked:setAlpha( 0 )
 				self.clipFinished( locked, {} )
@@ -119,13 +124,16 @@ CoD.vtolCenterMissiles.new = function ( menu, controller )
 		NoLock = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				missilesCenter:completeAnimation()
 				self.missilesCenter:setRGB( 1, 1, 1 )
 				self.missilesCenter:setAlpha( 1 )
 				self.clipFinished( missilesCenter, {} )
+
 				lockArrow:completeAnimation()
 				self.lockArrow:setAlpha( 0 )
 				self.clipFinished( lockArrow, {} )
+
 				locked:completeAnimation()
 				self.locked:setAlpha( 0 )
 				self.clipFinished( locked, {} )
@@ -134,26 +142,32 @@ CoD.vtolCenterMissiles.new = function ( menu, controller )
 		Locking = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				missilesCenter:completeAnimation()
 				self.missilesCenter:setRGB( 1, 1, 1 )
 				self.missilesCenter:setAlpha( 1 )
 				self.clipFinished( missilesCenter, {} )
+
 				lockArrow:completeAnimation()
 				self.lockArrow:setAlpha( 1 )
 				self.clipFinished( lockArrow, {} )
+
 				locked:completeAnimation()
 				self.locked:setAlpha( 0 )
 				self.clipFinished( locked, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				missilesCenter:completeAnimation()
 				self.missilesCenter:setRGB( 1, 1, 1 )
 				self.missilesCenter:setAlpha( 1 )
 				self.clipFinished( missilesCenter, {} )
+
 				lockArrow:completeAnimation()
 				self.lockArrow:setAlpha( 1 )
 				self.clipFinished( lockArrow, {} )
@@ -243,6 +257,7 @@ CoD.vtolCenterMissiles.new = function ( menu, controller )
 		aimHint = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local missilesCenterFrame2 = function ( missilesCenter, event )
 					local missilesCenterFrame3 = function ( missilesCenter, event )
 						if not event.interrupted then
@@ -271,16 +286,20 @@ CoD.vtolCenterMissiles.new = function ( menu, controller )
 				self.missilesCenter:setRGB( 1, 0, 0 )
 				self.missilesCenter:setAlpha( 1 )
 				missilesCenterFrame2( missilesCenter, {} )
+
 				lockArrow:completeAnimation()
 				self.lockArrow:setAlpha( 0 )
 				self.clipFinished( lockArrow, {} )
+
 				locked:completeAnimation()
 				self.locked:setAlpha( 0 )
 				self.clipFinished( locked, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoLock",
@@ -330,6 +349,7 @@ CoD.vtolCenterMissiles.new = function ( menu, controller )
 			modelName = "showAimHint"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.locked:close()
 		element.lockOn:close()

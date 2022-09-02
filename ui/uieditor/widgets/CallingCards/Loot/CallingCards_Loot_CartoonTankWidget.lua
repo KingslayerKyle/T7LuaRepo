@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_GoldFrame" )
 CoD.CallingCards_Loot_CartoonTankWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_Loot_CartoonTankWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_Loot_CartoonTankWidget )
 	self.id = "CallingCards_Loot_CartoonTankWidget"
@@ -48,6 +50,7 @@ CoD.CallingCards_Loot_CartoonTankWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Frame3:completeAnimation()
 				self.Frame3:setAlpha( 1 )
 				self.clipFinished( Frame3, {} )
@@ -123,10 +126,12 @@ CoD.CallingCards_Loot_CartoonTankWidget.new = function ( menu, controller )
 				Frame1:completeAnimation()
 				self.Frame1:setAlpha( 1 )
 				Frame1Frame2( Frame1, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardsGoldFrame:close()
 	end )

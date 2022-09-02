@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Lists.Members.LobbyLeaderIcon" )
 CoD.LocalServerPlayerListRow = InheritFrom( LUI.UIElement )
 CoD.LocalServerPlayerListRow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.LocalServerPlayerListRow )
 	self.id = "LocalServerPlayerListRow"
@@ -52,6 +54,7 @@ CoD.LocalServerPlayerListRow.new = function ( menu, controller )
 			LobbyLeaderIcon:setAlpha( isLeader )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.LobbyLeaderIcon:close()
 		element.Gamertag:close()

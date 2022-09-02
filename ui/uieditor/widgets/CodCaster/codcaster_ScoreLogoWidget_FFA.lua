@@ -4,9 +4,11 @@
 CoD.codcaster_ScoreLogoWidget_FFA = InheritFrom( LUI.UIElement )
 CoD.codcaster_ScoreLogoWidget_FFA.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.codcaster_ScoreLogoWidget_FFA )
 	self.id = "codcaster_ScoreLogoWidget_FFA"
@@ -79,12 +81,15 @@ CoD.codcaster_ScoreLogoWidget_FFA.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				teamcolor:completeAnimation()
 				self.teamcolor:setAlpha( 1 )
 				self.clipFinished( teamcolor, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setAlpha( 0 )
 				self.clipFinished( emblem, {} )
+
 				logo:completeAnimation()
 				self.logo:setAlpha( 1 )
 				self.clipFinished( logo, {} )
@@ -93,19 +98,23 @@ CoD.codcaster_ScoreLogoWidget_FFA.new = function ( menu, controller )
 		NonTeamBased = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				teamcolor:completeAnimation()
 				self.teamcolor:setRGB( 1, 1, 1 )
 				self.teamcolor:setAlpha( 1 )
 				self.clipFinished( teamcolor, {} )
+
 				emblem:completeAnimation()
 				self.emblem:setAlpha( 1 )
 				self.clipFinished( emblem, {} )
+
 				logo:completeAnimation()
 				self.logo:setAlpha( 0 )
 				self.clipFinished( logo, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NonTeamBased",

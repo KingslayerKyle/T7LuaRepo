@@ -4,9 +4,11 @@
 CoD.Promo_ThermometerAndRewards_Complete = InheritFrom( LUI.UIElement )
 CoD.Promo_ThermometerAndRewards_Complete.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Promo_ThermometerAndRewards_Complete )
 	self.id = "Promo_ThermometerAndRewards_Complete"
@@ -303,6 +305,7 @@ CoD.Promo_ThermometerAndRewards_Complete.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 22 )
+
 				LargeGlow:completeAnimation()
 				self.LargeGlow:setAlpha( 0 )
 				self.LargeGlow:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_wipe_delta" ) )
@@ -311,72 +314,94 @@ CoD.Promo_ThermometerAndRewards_Complete.new = function ( menu, controller )
 				self.LargeGlow:setShaderVector( 2, 0, 0, 0, 0 )
 				self.LargeGlow:setShaderVector( 3, 0, 0.29, 0, 0 )
 				self.clipFinished( LargeGlow, {} )
+
 				LargeGlow0:completeAnimation()
 				self.LargeGlow0:setAlpha( 0 )
 				self.clipFinished( LargeGlow0, {} )
+
 				LargeGlow00:completeAnimation()
 				self.LargeGlow00:setAlpha( 0 )
 				self.clipFinished( LargeGlow00, {} )
+
 				ThermometerGlow:completeAnimation()
 				self.ThermometerGlow:setAlpha( 0 )
 				self.clipFinished( ThermometerGlow, {} )
+
 				CoreComplete:completeAnimation()
 				self.CoreComplete:setAlpha( 0 )
 				self.clipFinished( CoreComplete, {} )
+
 				Bolt1a:completeAnimation()
 				self.Bolt1a:setAlpha( 0 )
 				self.clipFinished( Bolt1a, {} )
+
 				Bolt1b:completeAnimation()
 				self.Bolt1b:setAlpha( 0 )
 				self.clipFinished( Bolt1b, {} )
+
 				Bolt1c:completeAnimation()
 				self.Bolt1c:setAlpha( 0 )
 				self.clipFinished( Bolt1c, {} )
+
 				Bolt2a:completeAnimation()
 				self.Bolt2a:setAlpha( 0 )
 				self.clipFinished( Bolt2a, {} )
+
 				Bolt2b:completeAnimation()
 				self.Bolt2b:setAlpha( 0 )
 				self.clipFinished( Bolt2b, {} )
+
 				Bolt2c:completeAnimation()
 				self.Bolt2c:setAlpha( 0 )
 				self.clipFinished( Bolt2c, {} )
+
 				Bolt2d:completeAnimation()
 				self.Bolt2d:setAlpha( 0 )
 				self.clipFinished( Bolt2d, {} )
+
 				Bolt3a:completeAnimation()
 				self.Bolt3a:setAlpha( 0 )
 				self.clipFinished( Bolt3a, {} )
+
 				Bolt3b:completeAnimation()
 				self.Bolt3b:setAlpha( 0 )
 				self.clipFinished( Bolt3b, {} )
+
 				Bolt3c:completeAnimation()
 				self.Bolt3c:setAlpha( 0 )
 				self.clipFinished( Bolt3c, {} )
+
 				Bolt3d:completeAnimation()
 				self.Bolt3d:setAlpha( 0 )
 				self.clipFinished( Bolt3d, {} )
+
 				Bolt4a:completeAnimation()
 				self.Bolt4a:setAlpha( 0 )
 				self.clipFinished( Bolt4a, {} )
+
 				Bolt4b:completeAnimation()
 				self.Bolt4b:setAlpha( 0 )
 				self.clipFinished( Bolt4b, {} )
+
 				Bolt4c:completeAnimation()
 				self.Bolt4c:setAlpha( 0 )
 				self.clipFinished( Bolt4c, {} )
+
 				Bolt4d:completeAnimation()
 				self.Bolt4d:setAlpha( 0 )
 				self.clipFinished( Bolt4d, {} )
+
 				whiteFlash0:completeAnimation()
 				self.whiteFlash0:setAlpha( 0 )
 				self.clipFinished( whiteFlash0, {} )
+
 				biglightFlare:completeAnimation()
 				self.biglightFlare:setAlpha( 0 )
 				self.clipFinished( biglightFlare, {} )
 			end,
 			Completed = function ()
 				self:setupElementClipCounter( 22 )
+
 				local LargeGlowFrame2 = function ( LargeGlow, event )
 					local LargeGlowFrame3 = function ( LargeGlow, event )
 						local LargeGlowFrame4 = function ( LargeGlow, event )
@@ -1624,6 +1649,7 @@ CoD.Promo_ThermometerAndRewards_Complete.new = function ( menu, controller )
 		Completed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 32 )
+
 				local LargeGlowFrame2 = function ( LargeGlow, event )
 					local LargeGlowFrame3 = function ( LargeGlow, event )
 						local LargeGlowFrame4 = function ( LargeGlow, event )
@@ -1892,9 +1918,11 @@ CoD.Promo_ThermometerAndRewards_Complete.new = function ( menu, controller )
 				CoreComplete:completeAnimation()
 				self.CoreComplete:setAlpha( 0 )
 				CoreCompleteFrame2( CoreComplete, {} )
+
 				Bolt1a:completeAnimation()
 				self.Bolt1a:setAlpha( 0 )
 				self.clipFinished( Bolt1a, {} )
+
 				Bolt1b:completeAnimation()
 				self.Bolt1b:setAlpha( 0 )
 				self.clipFinished( Bolt1b, {} )
@@ -1970,9 +1998,11 @@ CoD.Promo_ThermometerAndRewards_Complete.new = function ( menu, controller )
 				Bolt2a:completeAnimation()
 				self.Bolt2a:setAlpha( 0 )
 				Bolt2aFrame2( Bolt2a, {} )
+
 				Bolt2b:completeAnimation()
 				self.Bolt2b:setAlpha( 0 )
 				self.clipFinished( Bolt2b, {} )
+
 				Bolt2c:completeAnimation()
 				self.Bolt2c:setAlpha( 0 )
 				self.clipFinished( Bolt2c, {} )
@@ -2012,9 +2042,11 @@ CoD.Promo_ThermometerAndRewards_Complete.new = function ( menu, controller )
 				Bolt2d:completeAnimation()
 				self.Bolt2d:setAlpha( 0 )
 				Bolt2dFrame2( Bolt2d, {} )
+
 				Bolt3a:completeAnimation()
 				self.Bolt3a:setAlpha( 0 )
 				self.clipFinished( Bolt3a, {} )
+
 				Bolt3b:completeAnimation()
 				self.Bolt3b:setAlpha( 0 )
 				self.clipFinished( Bolt3b, {} )
@@ -2086,12 +2118,15 @@ CoD.Promo_ThermometerAndRewards_Complete.new = function ( menu, controller )
 				Bolt3c:completeAnimation()
 				self.Bolt3c:setAlpha( 0 )
 				Bolt3cFrame2( Bolt3c, {} )
+
 				Bolt3d:completeAnimation()
 				self.Bolt3d:setAlpha( 0 )
 				self.clipFinished( Bolt3d, {} )
+
 				Bolt4a:completeAnimation()
 				self.Bolt4a:setAlpha( 0 )
 				self.clipFinished( Bolt4a, {} )
+
 				Bolt4b:completeAnimation()
 				self.Bolt4b:setAlpha( 0 )
 				self.clipFinished( Bolt4b, {} )
@@ -2131,9 +2166,11 @@ CoD.Promo_ThermometerAndRewards_Complete.new = function ( menu, controller )
 				Bolt4c:completeAnimation()
 				self.Bolt4c:setAlpha( 0 )
 				Bolt4cFrame2( Bolt4c, {} )
+
 				Bolt4d:completeAnimation()
 				self.Bolt4d:setAlpha( 0 )
 				self.clipFinished( Bolt4d, {} )
+
 				whiteFlash0:completeAnimation()
 				self.whiteFlash0:setLeftRight( true, false, 0, 234.63 )
 				self.whiteFlash0:setTopBottom( true, false, 477.28, 604.03 )
@@ -2512,10 +2549,12 @@ CoD.Promo_ThermometerAndRewards_Complete.new = function ( menu, controller )
 				self.GlowPulse:setAlpha( 0 )
 				self.GlowPulse:setScale( 1 )
 				GlowPulseFrame2( GlowPulse, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Completed",

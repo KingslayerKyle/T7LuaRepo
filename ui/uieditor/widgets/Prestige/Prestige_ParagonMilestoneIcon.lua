@@ -4,9 +4,11 @@
 CoD.Prestige_ParagonMilestoneIcon = InheritFrom( LUI.UIElement )
 CoD.Prestige_ParagonMilestoneIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Prestige_ParagonMilestoneIcon )
 	self.id = "Prestige_ParagonMilestoneIcon"

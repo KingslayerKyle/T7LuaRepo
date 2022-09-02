@@ -4,9 +4,11 @@
 CoD.CybercoreSelectionMulticoreWidget = InheritFrom( LUI.UIElement )
 CoD.CybercoreSelectionMulticoreWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CybercoreSelectionMulticoreWidget )
 	self.id = "CybercoreSelectionMulticoreWidget"
@@ -62,20 +64,24 @@ CoD.CybercoreSelectionMulticoreWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		MulticoreActivated = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				requirementText:completeAnimation()
 				self.requirementText:setAlpha( 0 )
 				self.clipFinished( requirementText, {} )
+
 				instructionsText:completeAnimation()
 				self.instructionsText:setAlpha( 1 )
 				self.clipFinished( instructionsText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "MulticoreActivated",
@@ -84,6 +90,7 @@ CoD.CybercoreSelectionMulticoreWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.requirementText:close()
 	end )

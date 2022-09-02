@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.ChooseCharacterLoadout_TabBar = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacterLoadout_TabBar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseCharacterLoadout_TabBar )
 	self.id = "ChooseCharacterLoadout_TabBar"
@@ -27,9 +29,11 @@ CoD.ChooseCharacterLoadout_TabBar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.cacItemTitleGlow0:close()
 	end )

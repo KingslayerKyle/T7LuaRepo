@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleNumBrdr" )
 CoD.LoadingScreen_DoubleXPLabel = InheritFrom( LUI.UIElement )
 CoD.LoadingScreen_DoubleXPLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LoadingScreen_DoubleXPLabel )
 	self.id = "LoadingScreen_DoubleXPLabel"
@@ -40,6 +42,7 @@ CoD.LoadingScreen_DoubleXPLabel.new = function ( menu, controller )
 		end
 		return f2_local0
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( XPLabel, "setText", function ( element, controller )
 		ScaleWidgetToLabelRightAligned( self, element, 10 )
 	end )
@@ -50,12 +53,15 @@ CoD.LoadingScreen_DoubleXPLabel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartLoading = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FETitleNumBrdr0:close()
 	end )

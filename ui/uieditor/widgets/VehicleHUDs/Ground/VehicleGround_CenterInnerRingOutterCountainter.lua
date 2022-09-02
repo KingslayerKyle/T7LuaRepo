@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.Ground.VehicleGround_CenterInnerRingOu
 CoD.VehicleGround_CenterInnerRingOutterCountainter = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_CenterInnerRingOutterCountainter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VehicleGround_CenterInnerRingOutterCountainter )
 	self.id = "VehicleGround_CenterInnerRingOutterCountainter"
@@ -36,6 +38,7 @@ CoD.VehicleGround_CenterInnerRingOutterCountainter.new = function ( menu, contro
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local InnerRingInFrame2 = function ( InnerRingIn, event )
 					local InnerRingInFrame3 = function ( InnerRingIn, event )
 						local InnerRingInFrame4 = function ( InnerRingIn, event )
@@ -278,15 +281,18 @@ CoD.VehicleGround_CenterInnerRingOutterCountainter.new = function ( menu, contro
 				self.InnerRingOutter:setZRot( 0 )
 				self.InnerRingOutter:setZoom( 0 )
 				InnerRingOutterFrame2( InnerRingOutter, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -303,6 +309,7 @@ CoD.VehicleGround_CenterInnerRingOutterCountainter.new = function ( menu, contro
 			modelName = "vehicleType"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.InnerRingIn:close()
 		element.InnerRingOutter:close()

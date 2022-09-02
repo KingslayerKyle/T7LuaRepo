@@ -4,9 +4,11 @@
 CoD.MegaChewMachine = InheritFrom( LUI.UIElement )
 CoD.MegaChewMachine.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MegaChewMachine )
 	self.id = "MegaChewMachine"
@@ -26,12 +28,14 @@ CoD.MegaChewMachine.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image0:completeAnimation()
 				self.Image0:setRGB( 1, 1, 1 )
 				self.clipFinished( Image0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image0:completeAnimation()
 				self.Image0:setRGB( 1, 0, 0 )
 				self.clipFinished( Image0, {} )

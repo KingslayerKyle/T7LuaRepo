@@ -4,9 +4,11 @@
 CoD.PartyList_ScoreRankIcon = InheritFrom( LUI.UIElement )
 CoD.PartyList_ScoreRankIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PartyList_ScoreRankIcon )
 	self.id = "PartyList_ScoreRankIcon"
@@ -52,16 +54,20 @@ CoD.PartyList_ScoreRankIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				countdownBacking:completeAnimation()
 				self.countdownBacking:setRGB( 0, 0, 0 )
 				self.countdownBacking:setAlpha( 0 )
 				self.clipFinished( countdownBacking, {} )
+
 				deadImage:completeAnimation()
 				self.deadImage:setAlpha( 0 )
 				self.clipFinished( deadImage, {} )
+
 				countdownTimer:completeAnimation()
 				self.countdownTimer:setAlpha( 0 )
 				self.clipFinished( countdownTimer, {} )
+
 				rankImage:completeAnimation()
 				self.rankImage:setAlpha( 1 )
 				self.clipFinished( rankImage, {} )
@@ -70,15 +76,19 @@ CoD.PartyList_ScoreRankIcon.new = function ( menu, controller )
 		PlayerDead = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				countdownBacking:completeAnimation()
 				self.countdownBacking:setAlpha( 0 )
 				self.clipFinished( countdownBacking, {} )
+
 				deadImage:completeAnimation()
 				self.deadImage:setAlpha( 1 )
 				self.clipFinished( deadImage, {} )
+
 				countdownTimer:completeAnimation()
 				self.countdownTimer:setAlpha( 0 )
 				self.clipFinished( countdownTimer, {} )
+
 				rankImage:completeAnimation()
 				self.rankImage:setAlpha( 0 )
 				self.clipFinished( rankImage, {} )
@@ -87,16 +97,20 @@ CoD.PartyList_ScoreRankIcon.new = function ( menu, controller )
 		PlayerHasObjective = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				countdownBacking:completeAnimation()
 				self.countdownBacking:setRGB( 0.99, 0.81, 0.19 )
 				self.countdownBacking:setAlpha( 0.79 )
 				self.clipFinished( countdownBacking, {} )
+
 				deadImage:completeAnimation()
 				self.deadImage:setAlpha( 0 )
 				self.clipFinished( deadImage, {} )
+
 				countdownTimer:completeAnimation()
 				self.countdownTimer:setAlpha( 0 )
 				self.clipFinished( countdownTimer, {} )
+
 				rankImage:completeAnimation()
 				self.rankImage:setAlpha( 1 )
 				self.clipFinished( rankImage, {} )

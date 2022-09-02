@@ -4,9 +4,11 @@
 CoD.LobbyMemberPartyMemberIconNew = InheritFrom( LUI.UIElement )
 CoD.LobbyMemberPartyMemberIconNew.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyMemberPartyMemberIconNew )
 	self.id = "LobbyMemberPartyMemberIconNew"
@@ -29,6 +31,7 @@ CoD.LobbyMemberPartyMemberIconNew.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Icon:completeAnimation()
 				self.Icon:setAlpha( 0 )
 				self.clipFinished( Icon, {} )
@@ -37,6 +40,7 @@ CoD.LobbyMemberPartyMemberIconNew.new = function ( menu, controller )
 		PartyMemberTopOrMiddle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Icon:completeAnimation()
 				self.Icon:setLeftRight( true, false, -3, 13 )
 				self.Icon:setTopBottom( true, true, -3.5, 10 )
@@ -48,6 +52,7 @@ CoD.LobbyMemberPartyMemberIconNew.new = function ( menu, controller )
 		PartyMember = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Icon:completeAnimation()
 				self.Icon:setLeftRight( true, false, -3, 13 )
 				self.Icon:setTopBottom( true, true, -3, 4 )
@@ -59,6 +64,7 @@ CoD.LobbyMemberPartyMemberIconNew.new = function ( menu, controller )
 		OtherPartyMemberTopOrMiddle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Icon:completeAnimation()
 				self.Icon:setLeftRight( true, false, -3, 13 )
 				self.Icon:setTopBottom( true, true, -3.5, 10 )
@@ -70,6 +76,7 @@ CoD.LobbyMemberPartyMemberIconNew.new = function ( menu, controller )
 		OtherPartyMember = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Icon:completeAnimation()
 				self.Icon:setLeftRight( true, false, -3, 13 )
 				self.Icon:setTopBottom( true, true, -3, 4 )

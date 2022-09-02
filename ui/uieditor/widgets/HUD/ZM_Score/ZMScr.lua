@@ -139,9 +139,11 @@ end
 CoD.ZMScr = InheritFrom( LUI.UIElement )
 CoD.ZMScr.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZMScr )
 	self.id = "ZMScr"
@@ -241,21 +243,26 @@ CoD.ZMScr.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ListingUser:completeAnimation()
 				self.ListingUser:setAlpha( 0 )
 				self.clipFinished( ListingUser, {} )
+
 				Listing2:completeAnimation()
 				self.Listing2:setAlpha( 0 )
 				self.clipFinished( Listing2, {} )
+
 				Listing3:completeAnimation()
 				self.Listing3:setAlpha( 0 )
 				self.clipFinished( Listing3, {} )
+
 				Listing4:completeAnimation()
 				self.Listing4:setAlpha( 0 )
 				self.clipFinished( Listing4, {} )
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 4 )
+
 				local ListingUserFrame2 = function ( ListingUser, event )
 					if not event.interrupted then
 						ListingUser:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -351,21 +358,26 @@ CoD.ZMScr.new = function ( menu, controller )
 		HudStart = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ListingUser:completeAnimation()
 				self.ListingUser:setAlpha( 1 )
 				self.clipFinished( ListingUser, {} )
+
 				Listing2:completeAnimation()
 				self.Listing2:setAlpha( 1 )
 				self.clipFinished( Listing2, {} )
+
 				Listing3:completeAnimation()
 				self.Listing3:setAlpha( 1 )
 				self.clipFinished( Listing3, {} )
+
 				Listing4:completeAnimation()
 				self.Listing4:setAlpha( 1 )
 				self.clipFinished( Listing4, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 4 )
+
 				local ListingUserFrame2 = function ( ListingUser, event )
 					if not event.interrupted then
 						ListingUser:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -467,6 +479,7 @@ CoD.ZMScr.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ListingUser:close()
 		element.Listing2:close()

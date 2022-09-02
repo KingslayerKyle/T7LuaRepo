@@ -4,9 +4,11 @@
 CoD.CommsWidget_IconMessage = InheritFrom( LUI.UIElement )
 CoD.CommsWidget_IconMessage.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CommsWidget_IconMessage )
 	self.id = "CommsWidget_IconMessage"

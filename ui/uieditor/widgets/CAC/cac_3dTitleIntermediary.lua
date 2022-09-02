@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Effects.fxGlitch1_Main" )
 CoD.cac_3dTitleIntermediary = InheritFrom( LUI.UIElement )
 CoD.cac_3dTitleIntermediary.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_3dTitleIntermediary )
 	self.id = "cac_3dTitleIntermediary"
@@ -58,6 +60,7 @@ CoD.cac_3dTitleIntermediary.new = function ( menu, controller )
 			}, controller )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FE3dTitleContainer0:close()
 		element.fxGlitch1Main0:close()

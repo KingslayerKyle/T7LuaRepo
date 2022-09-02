@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Notifications.WeaponLevelUp.WeaponLevelUpNotificat
 CoD.ChallengesNotification = InheritFrom( LUI.UIElement )
 CoD.ChallengesNotification.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChallengesNotification )
 	self.id = "ChallengesNotification"
@@ -29,6 +31,7 @@ CoD.ChallengesNotification.new = function ( menu, controller )
 	Text:setTTF( "fonts/FoundryGridnik-Bold.ttf" )
 	Text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	Text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( Text, "setText", function ( element, controller )
 		ScaleWidgetToLabelCenteredWrapped( self, element, 40, 40 )
 	end )
@@ -69,6 +72,7 @@ CoD.ChallengesNotification.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local imageFrame2 = function ( image, event )
 					if not event.interrupted then
 						image:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -102,6 +106,7 @@ CoD.ChallengesNotification.new = function ( menu, controller )
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 2 )
+
 				local imageFrame2 = function ( image, event )
 					if not event.interrupted then
 						image:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -135,6 +140,7 @@ CoD.ChallengesNotification.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.WeaponLevelUpNotificationFooterLabel01:close()
 		element.image:close()

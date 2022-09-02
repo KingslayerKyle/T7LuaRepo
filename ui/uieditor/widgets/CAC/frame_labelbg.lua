@@ -4,9 +4,11 @@
 CoD.frame_labelbg = InheritFrom( LUI.UIElement )
 CoD.frame_labelbg.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.frame_labelbg )
 	self.id = "frame_labelbg"

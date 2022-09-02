@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.FileShare.FileshareCustomGamesLocalGameTypeImage" 
 CoD.MyShowcase_PublishedCustomGameInfo = InheritFrom( LUI.UIElement )
 CoD.MyShowcase_PublishedCustomGameInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MyShowcase_PublishedCustomGameInfo )
 	self.id = "MyShowcase_PublishedCustomGameInfo"
@@ -119,18 +121,23 @@ CoD.MyShowcase_PublishedCustomGameInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				FileshareSelectedItemInfo:completeAnimation()
 				self.FileshareSelectedItemInfo:setAlpha( 0 )
 				self.clipFinished( FileshareSelectedItemInfo, {} )
+
 				FileName:completeAnimation()
 				self.FileName:setAlpha( 0 )
 				self.clipFinished( FileName, {} )
+
 				GameTypeName:completeAnimation()
 				self.GameTypeName:setAlpha( 0 )
 				self.clipFinished( GameTypeName, {} )
+
 				CustomGameDesc:completeAnimation()
 				self.CustomGameDesc:setAlpha( 0 )
 				self.clipFinished( CustomGameDesc, {} )
+
 				FileshareGameTypeImage:completeAnimation()
 				self.FileshareGameTypeImage:setAlpha( 0 )
 				self.clipFinished( FileshareGameTypeImage, {} )
@@ -139,24 +146,30 @@ CoD.MyShowcase_PublishedCustomGameInfo.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				FileshareSelectedItemInfo:completeAnimation()
 				self.FileshareSelectedItemInfo:setAlpha( 1 )
 				self.clipFinished( FileshareSelectedItemInfo, {} )
+
 				FileName:completeAnimation()
 				self.FileName:setAlpha( 1 )
 				self.clipFinished( FileName, {} )
+
 				GameTypeName:completeAnimation()
 				self.GameTypeName:setAlpha( 1 )
 				self.clipFinished( GameTypeName, {} )
+
 				CustomGameDesc:completeAnimation()
 				self.CustomGameDesc:setAlpha( 1 )
 				self.clipFinished( CustomGameDesc, {} )
+
 				FileshareGameTypeImage:completeAnimation()
 				self.FileshareGameTypeImage:setAlpha( 1 )
 				self.clipFinished( FileshareGameTypeImage, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FileshareSelectedItemInfo:close()
 		element.FileName:close()

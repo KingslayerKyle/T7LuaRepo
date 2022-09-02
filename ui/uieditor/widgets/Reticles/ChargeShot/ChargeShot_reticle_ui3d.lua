@@ -15,9 +15,11 @@ require( "ui.uieditor.widgets.Reticles.ChargeShot.ChargerShot_Brackets" )
 CoD.ChargeShot_reticle_ui3d = InheritFrom( LUI.UIElement )
 CoD.ChargeShot_reticle_ui3d.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChargeShot_reticle_ui3d )
 	self.id = "ChargeShot_reticle_ui3d"
@@ -180,9 +182,11 @@ CoD.ChargeShot_reticle_ui3d.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Fire = function ()
 				self:setupElementClipCounter( 18 )
+
 				local ChargeShotSmallCenter0Frame2 = function ( ChargeShotSmallCenter0, event )
 					local ChargeShotSmallCenter0Frame3 = function ( ChargeShotSmallCenter0, event )
 						local ChargeShotSmallCenter0Frame4 = function ( ChargeShotSmallCenter0, event )
@@ -423,9 +427,11 @@ CoD.ChargeShot_reticle_ui3d.new = function ( menu, controller )
 				self.ChargeShotCenterReticle:setRGB( 0.29, 0.69, 0.95 )
 				self.ChargeShotCenterReticle:setAlpha( 1 )
 				ChargeShotCenterReticleFrame2( ChargeShotCenterReticle, {} )
+
 				ChargerShottopArrow1:completeAnimation()
 				self.ChargerShottopArrow1:setAlpha( 1 )
 				self.clipFinished( ChargerShottopArrow1, {} )
+
 				ChargerShottopArrow2:completeAnimation()
 				self.ChargerShottopArrow2:setAlpha( 1 )
 				self.clipFinished( ChargerShottopArrow2, {} )
@@ -553,9 +559,11 @@ CoD.ChargeShot_reticle_ui3d.new = function ( menu, controller )
 				self.ChargerShotMovingArrow2:setTopBottom( false, false, -25.52, 30.52 )
 				self.ChargerShotMovingArrow2:setAlpha( 1 )
 				ChargerShotMovingArrow2Frame2( ChargerShotMovingArrow2, {} )
+
 				ChargerShotReticleSide1:completeAnimation()
 				self.ChargerShotReticleSide1:setAlpha( 1 )
 				self.clipFinished( ChargerShotReticleSide1, {} )
+
 				ChargerShotReticleSide2:completeAnimation()
 				self.ChargerShotReticleSide2:setAlpha( 1 )
 				self.clipFinished( ChargerShotReticleSide2, {} )
@@ -960,12 +968,15 @@ CoD.ChargeShot_reticle_ui3d.new = function ( menu, controller )
 			end,
 			Cancel = function ()
 				self:setupElementClipCounter( 14 )
+
 				ChargeShotSmallCenter0:completeAnimation()
 				self.ChargeShotSmallCenter0:setRGB( 0.29, 0.69, 0.95 )
 				self.clipFinished( ChargeShotSmallCenter0, {} )
+
 				ChargeShotSmallCenter1:completeAnimation()
 				self.ChargeShotSmallCenter1:setRGB( 0.29, 0.69, 0.95 )
 				self.clipFinished( ChargeShotSmallCenter1, {} )
+
 				ChargeShotCenterReticle:completeAnimation()
 				self.ChargeShotCenterReticle:setRGB( 0.29, 0.69, 0.95 )
 				self.ChargeShotCenterReticle:setAlpha( 1 )
@@ -1370,13 +1381,16 @@ CoD.ChargeShot_reticle_ui3d.new = function ( menu, controller )
 				self.ChargerShot4cornerBracket0:setAlpha( 1 )
 				self.ChargerShot4cornerBracket0:setScale( 0.8 )
 				ChargerShot4cornerBracket0Frame2( ChargerShot4cornerBracket0, {} )
+
 				ChargeShotCenterReticle0:completeAnimation()
 				self.ChargeShotCenterReticle0:setAlpha( 0 )
 				self.clipFinished( ChargeShotCenterReticle0, {} )
+
 				ChargeShotSmallCenter10:completeAnimation()
 				self.ChargeShotSmallCenter10:setRGB( 1, 1, 1 )
 				self.ChargeShotSmallCenter10:setAlpha( 0 )
 				self.clipFinished( ChargeShotSmallCenter10, {} )
+
 				ChargeShotSmallCenter00:completeAnimation()
 				self.ChargeShotSmallCenter00:setRGB( 1, 1, 1 )
 				self.ChargeShotSmallCenter00:setAlpha( 0 )
@@ -1392,6 +1406,7 @@ CoD.ChargeShot_reticle_ui3d.new = function ( menu, controller )
 			PlayClip( self, "Cancel", controller )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ChargeShotSmallCenter0:close()
 		element.ChargeShotSmallCenter1:close()

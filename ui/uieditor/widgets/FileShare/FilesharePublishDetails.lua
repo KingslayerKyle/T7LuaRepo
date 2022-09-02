@@ -11,9 +11,11 @@ end
 CoD.FilesharePublishDetails = InheritFrom( LUI.UIElement )
 CoD.FilesharePublishDetails.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FilesharePublishDetails )
 	self.id = "FilesharePublishDetails"
@@ -103,35 +105,44 @@ CoD.FilesharePublishDetails.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				BG:completeAnimation()
 				self.BG:setLeftRight( true, false, 0, 268 )
 				self.BG:setTopBottom( true, false, 0, 474 )
 				self.BG:setAlpha( 0.8 )
 				self.clipFinished( BG, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 1 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				PublishImageBacking:completeAnimation()
 				self.PublishImageBacking:setRGB( 1, 1, 1 )
 				self.PublishImageBacking:setAlpha( 0.1 )
 				self.clipFinished( PublishImageBacking, {} )
+
 				PublishImage:completeAnimation()
 				self.PublishImage:setRGB( 0, 0, 0 )
 				self.PublishImage:setAlpha( 0.5 )
 				self.clipFinished( PublishImage, {} )
+
 				PublishBG:completeAnimation()
 				self.PublishBG:setAlpha( 0.6 )
 				self.clipFinished( PublishBG, {} )
+
 				PublishSmallIcon:completeAnimation()
 				self.PublishSmallIcon:setAlpha( 1 )
 				self.clipFinished( PublishSmallIcon, {} )
+
 				PublishLabel:completeAnimation()
 				self.PublishLabel:setAlpha( 1 )
 				self.clipFinished( PublishLabel, {} )
+
 				PublishInstruction:completeAnimation()
 				self.PublishInstruction:setRGB( 0.55, 0.55, 0.55 )
 				self.PublishInstruction:setAlpha( 1 )
 				self.clipFinished( PublishInstruction, {} )
+
 				FileshareSlotsAvailable0:completeAnimation()
 				self.FileshareSlotsAvailable0:setAlpha( 1 )
 				self.clipFinished( FileshareSlotsAvailable0, {} )
@@ -140,36 +151,46 @@ CoD.FilesharePublishDetails.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setAlpha( 0 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				PublishImageBacking:completeAnimation()
 				self.PublishImageBacking:setAlpha( 0 )
 				self.clipFinished( PublishImageBacking, {} )
+
 				PublishImage:completeAnimation()
 				self.PublishImage:setAlpha( 0 )
 				self.clipFinished( PublishImage, {} )
+
 				PublishBG:completeAnimation()
 				self.PublishBG:setAlpha( 0 )
 				self.clipFinished( PublishBG, {} )
+
 				PublishSmallIcon:completeAnimation()
 				self.PublishSmallIcon:setAlpha( 0 )
 				self.clipFinished( PublishSmallIcon, {} )
+
 				PublishLabel:completeAnimation()
 				self.PublishLabel:setAlpha( 0 )
 				self.clipFinished( PublishLabel, {} )
+
 				PublishInstruction:completeAnimation()
 				self.PublishInstruction:setAlpha( 0 )
 				self.clipFinished( PublishInstruction, {} )
+
 				FileshareSlotsAvailable0:completeAnimation()
 				self.FileshareSlotsAvailable0:setAlpha( 0 )
 				self.clipFinished( FileshareSlotsAvailable0, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BorderBakedSolid0:close()
 		element.FileshareSlotsAvailable0:close()

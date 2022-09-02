@@ -4,9 +4,11 @@
 CoD.ButtonIcon = InheritFrom( LUI.UIElement )
 CoD.ButtonIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ButtonIcon )
 	self.id = "ButtonIcon"
@@ -30,6 +32,7 @@ CoD.ButtonIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				buttonImage:completeAnimation()
 				self.buttonImage:setAlpha( 0 )
 				self.clipFinished( buttonImage, {} )
@@ -38,12 +41,14 @@ CoD.ButtonIcon.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				buttonImage:completeAnimation()
 				self.buttonImage:setAlpha( 1 )
 				self.clipFinished( buttonImage, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.buttonImage:close()
 	end )

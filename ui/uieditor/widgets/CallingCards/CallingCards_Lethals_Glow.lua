@@ -4,9 +4,11 @@
 CoD.CallingCards_Lethals_Glow = InheritFrom( LUI.UIElement )
 CoD.CallingCards_Lethals_Glow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_Lethals_Glow )
 	self.id = "CallingCards_Lethals_Glow"
@@ -28,6 +30,7 @@ CoD.CallingCards_Lethals_Glow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local GlowOrangeOverFrame2 = function ( GlowOrangeOver, event )
 					local GlowOrangeOverFrame3 = function ( GlowOrangeOver, event )
 						if not event.interrupted then
@@ -54,6 +57,7 @@ CoD.CallingCards_Lethals_Glow.new = function ( menu, controller )
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 1 )
 				GlowOrangeOverFrame2( GlowOrangeOver, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

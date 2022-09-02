@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_MemberBlurPanelContainer" )
 CoD.Competitive_SettingsSummaryItem = InheritFrom( LUI.UIElement )
 CoD.Competitive_SettingsSummaryItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Competitive_SettingsSummaryItem )
 	self.id = "Competitive_SettingsSummaryItem"
@@ -63,15 +65,19 @@ CoD.Competitive_SettingsSummaryItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			FadeIn = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			HideForGameStart = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEMemberBlurPanelContainer0:close()
 	end )

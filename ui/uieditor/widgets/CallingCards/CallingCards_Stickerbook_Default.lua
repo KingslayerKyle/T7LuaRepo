@@ -78,9 +78,11 @@ end, true )
 CoD.CallingCards_Stickerbook_Default = InheritFrom( LUI.UIElement )
 CoD.CallingCards_Stickerbook_Default.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_Stickerbook_Default )
 	self.id = "CallingCards_Stickerbook_Default"
@@ -275,6 +277,7 @@ CoD.CallingCards_Stickerbook_Default.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardGrid:close()
 		element.CallingCardProfiler:close()

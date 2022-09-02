@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.GenericPopups.Generic_Frame_Pop_up" )
 CoD.DescriptionBacking_CAC = InheritFrom( LUI.UIElement )
 CoD.DescriptionBacking_CAC.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DescriptionBacking_CAC )
 	self.id = "DescriptionBacking_CAC"
@@ -50,6 +52,7 @@ CoD.DescriptionBacking_CAC.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GenericFramePopup0:close()
 	end )

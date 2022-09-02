@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Reticles.Infinite.lmgInfiniteReticle_light" )
 CoD.lmgInfiniteReticle_UI3D_Internal = InheritFrom( LUI.UIElement )
 CoD.lmgInfiniteReticle_UI3D_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.lmgInfiniteReticle_UI3D_Internal )
 	self.id = "lmgInfiniteReticle_UI3D_Internal"
@@ -144,45 +146,59 @@ CoD.lmgInfiniteReticle_UI3D_Internal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				Bg0:completeAnimation()
 				self.Bg0:setAlpha( 0.38 )
 				self.clipFinished( Bg0, {} )
+
 				Bg:completeAnimation()
 				self.Bg:setAlpha( 1 )
 				self.clipFinished( Bg, {} )
+
 				AmmoBarTop:completeAnimation()
 				self.AmmoBarTop:setAlpha( 1 )
 				self.clipFinished( AmmoBarTop, {} )
+
 				AmmoBarBottom:completeAnimation()
 				self.AmmoBarBottom:setAlpha( 1 )
 				self.clipFinished( AmmoBarBottom, {} )
+
 				Status:completeAnimation()
 				self.Status:setRGB( 1, 1, 1 )
 				self.clipFinished( Status, {} )
+
 				lmgInfiniteReticleExtras:completeAnimation()
 				self.lmgInfiniteReticleExtras:setRGB( 1, 1, 1 )
 				self.clipFinished( lmgInfiniteReticleExtras, {} )
+
 				lightRight:completeAnimation()
 				self.lightRight:setRGB( 1, 1, 1 )
 				self.clipFinished( lightRight, {} )
+
 				lightsLeft:completeAnimation()
 				self.lightsLeft:setRGB( 1, 1, 1 )
 				self.clipFinished( lightsLeft, {} )
+
 				lmgInfiniteReticlelightLeft:completeAnimation()
 				self.lmgInfiniteReticlelightLeft:setRGB( 1, 1, 1 )
 				self.clipFinished( lmgInfiniteReticlelightLeft, {} )
+
 				lmgInfiniteReticlelightRight:completeAnimation()
 				self.lmgInfiniteReticlelightRight:setRGB( 1, 1, 1 )
 				self.clipFinished( lmgInfiniteReticlelightRight, {} )
+
 				Bg10:completeAnimation()
 				self.Bg10:setRGB( 1, 1, 1 )
 				self.clipFinished( Bg10, {} )
+
 				Bg100:completeAnimation()
 				self.Bg100:setAlpha( 1 )
 				self.clipFinished( Bg100, {} )
+
 				lightsLeft0:completeAnimation()
 				self.lightsLeft0:setAlpha( 0 )
 				self.clipFinished( lightsLeft0, {} )
+
 				lightRight0:completeAnimation()
 				self.lightRight0:setAlpha( 0 )
 				self.clipFinished( lightRight0, {} )
@@ -191,64 +207,83 @@ CoD.lmgInfiniteReticle_UI3D_Internal.new = function ( menu, controller )
 		LowAmmoPrinting = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				Bg0:completeAnimation()
 				self.Bg0:setRGB( 1, 1, 1 )
 				self.Bg0:setAlpha( 0.25 )
 				self.clipFinished( Bg0, {} )
+
 				Bg:completeAnimation()
 				self.Bg:setRGB( 1, 1, 1 )
 				self.Bg:setAlpha( 1 )
 				self.clipFinished( Bg, {} )
+
 				AmmoBarTop:completeAnimation()
+
 				AmmoBarTop.ammoFull:completeAnimation()
 				self.AmmoBarTop:setRGB( 1, 1, 1 )
 				self.AmmoBarTop:setAlpha( 1 )
 				self.AmmoBarTop.ammoFull:setRGB( 1, 0, 0 )
 				self.clipFinished( AmmoBarTop, {} )
+
 				AmmoBarBottom:completeAnimation()
+
 				AmmoBarBottom.ammoFull:completeAnimation()
 				self.AmmoBarBottom:setRGB( 1, 1, 1 )
 				self.AmmoBarBottom:setAlpha( 1 )
 				self.AmmoBarBottom.ammoFull:setRGB( 1, 0, 0 )
 				self.clipFinished( AmmoBarBottom, {} )
+
 				Status:completeAnimation()
+
 				Status.FrameTop:completeAnimation()
+
 				Status.FrameBottom:completeAnimation()
+
 				Status.Status:completeAnimation()
 				self.Status:setRGB( 1, 1, 1 )
 				self.Status.FrameTop:setRGB( 1, 1, 1 )
 				self.Status.FrameBottom:setRGB( 1, 1, 1 )
 				self.Status.Status:setText( Engine.Localize( "MPUI_LMG_PRINTING_CAPS" ) )
 				self.clipFinished( Status, {} )
+
 				lmgInfiniteReticleExtras:completeAnimation()
 				self.lmgInfiniteReticleExtras:setRGB( 1, 1, 1 )
 				self.clipFinished( lmgInfiniteReticleExtras, {} )
+
 				lightRight:completeAnimation()
 				self.lightRight:setRGB( 1, 1, 1 )
 				self.clipFinished( lightRight, {} )
+
 				lightsLeft:completeAnimation()
 				self.lightsLeft:setRGB( 1, 1, 1 )
 				self.lightsLeft:setAlpha( 1 )
 				self.clipFinished( lightsLeft, {} )
+
 				lmgInfiniteReticlelightLeft:completeAnimation()
 				self.lmgInfiniteReticlelightLeft:setRGB( 1, 1, 1 )
 				self.lmgInfiniteReticlelightLeft:setAlpha( 1 )
 				self.clipFinished( lmgInfiniteReticlelightLeft, {} )
+
 				lmgInfiniteReticlelightRight:completeAnimation()
 				self.lmgInfiniteReticlelightRight:setRGB( 1, 1, 1 )
 				self.lmgInfiniteReticlelightRight:setAlpha( 1 )
 				self.clipFinished( lmgInfiniteReticlelightRight, {} )
+
 				Bg10:completeAnimation()
 				self.Bg10:setRGB( 1, 1, 1 )
 				self.Bg10:setAlpha( 1 )
 				self.clipFinished( Bg10, {} )
+
 				Bg100:completeAnimation()
 				self.Bg100:setRGB( 1, 1, 1 )
 				self.Bg100:setAlpha( 1 )
 				self.clipFinished( Bg100, {} )
+
 				lightsLeft0:completeAnimation()
 				self.lightsLeft0:setAlpha( 0 )
 				self.clipFinished( lightsLeft0, {} )
+
 				lightRight0:completeAnimation()
 				self.lightRight0:setAlpha( 0 )
 				self.clipFinished( lightRight0, {} )
@@ -257,76 +292,99 @@ CoD.lmgInfiniteReticle_UI3D_Internal.new = function ( menu, controller )
 		Printing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				Bg0:completeAnimation()
 				self.Bg0:setRGB( 1, 1, 1 )
 				self.Bg0:setAlpha( 0.25 )
 				self.clipFinished( Bg0, {} )
+
 				Bg:completeAnimation()
 				self.Bg:setRGB( 1, 1, 1 )
 				self.Bg:setAlpha( 1 )
 				self.clipFinished( Bg, {} )
+
 				AmmoBarTop:completeAnimation()
+
 				AmmoBarTop.ammoFull:completeAnimation()
 				self.AmmoBarTop:setRGB( 1, 1, 1 )
 				self.AmmoBarTop:setAlpha( 1 )
 				self.AmmoBarTop.ammoFull:setRGB( 0.33, 0.95, 0.81 )
 				self.clipFinished( AmmoBarTop, {} )
+
 				AmmoBarBottom:completeAnimation()
+
 				AmmoBarBottom.ammoFull:completeAnimation()
 				self.AmmoBarBottom:setRGB( 1, 1, 1 )
 				self.AmmoBarBottom:setAlpha( 1 )
 				self.AmmoBarBottom.ammoFull:setRGB( 0.33, 0.95, 0.81 )
 				self.clipFinished( AmmoBarBottom, {} )
+
 				Status:completeAnimation()
+
 				Status.FrameTop:completeAnimation()
+
 				Status.FrameBottom:completeAnimation()
+
 				Status.Status:completeAnimation()
 				self.Status:setRGB( 1, 1, 1 )
 				self.Status.FrameTop:setRGB( 1, 1, 1 )
 				self.Status.FrameBottom:setRGB( 1, 1, 1 )
 				self.Status.Status:setText( Engine.Localize( "MPUI_LMG_PRINTING_CAPS" ) )
 				self.clipFinished( Status, {} )
+
 				lmgInfiniteReticleExtras:completeAnimation()
 				self.lmgInfiniteReticleExtras:setRGB( 1, 1, 1 )
 				self.clipFinished( lmgInfiniteReticleExtras, {} )
+
 				lightRight:completeAnimation()
 				self.lightRight:setRGB( 1, 1, 1 )
 				self.lightRight:setAlpha( 0.65 )
 				self.clipFinished( lightRight, {} )
+
 				lightsLeft:completeAnimation()
 				self.lightsLeft:setRGB( 1, 1, 1 )
 				self.lightsLeft:setAlpha( 0.65 )
 				self.clipFinished( lightsLeft, {} )
+
 				lmgInfiniteReticlelightLeft:completeAnimation()
 				self.lmgInfiniteReticlelightLeft:setRGB( 1, 1, 1 )
 				self.lmgInfiniteReticlelightLeft:setAlpha( 1 )
 				self.clipFinished( lmgInfiniteReticlelightLeft, {} )
+
 				lmgInfiniteReticlelightRight:completeAnimation()
 				self.lmgInfiniteReticlelightRight:setRGB( 1, 1, 1 )
 				self.lmgInfiniteReticlelightRight:setAlpha( 1 )
 				self.clipFinished( lmgInfiniteReticlelightRight, {} )
+
 				Bg10:completeAnimation()
 				self.Bg10:setRGB( 1, 1, 1 )
 				self.Bg10:setAlpha( 1 )
 				self.clipFinished( Bg10, {} )
+
 				Bg100:completeAnimation()
 				self.Bg100:setRGB( 1, 1, 1 )
 				self.clipFinished( Bg100, {} )
+
 				lightsLeft0:completeAnimation()
 				self.lightsLeft0:setAlpha( 0.1 )
 				self.clipFinished( lightsLeft0, {} )
+
 				lightRight0:completeAnimation()
 				self.lightRight0:setAlpha( 0.1 )
 				self.clipFinished( lightRight0, {} )
 			end,
 			MagazineFull = function ()
 				self:setupElementClipCounter( 6 )
+
 				AmmoBarTop:completeAnimation()
+
 				AmmoBarTop.ammoFull:completeAnimation()
 				self.AmmoBarTop:setAlpha( 1 )
 				self.AmmoBarTop.ammoFull:setRGB( 0.33, 0.95, 0.81 )
 				self.clipFinished( AmmoBarTop, {} )
+
 				AmmoBarBottom:completeAnimation()
+
 				AmmoBarBottom.ammoFull:completeAnimation()
 				self.AmmoBarBottom:setRGB( 1, 1, 1 )
 				self.AmmoBarBottom.ammoFull:setRGB( 0.33, 0.95, 0.81 )
@@ -396,64 +454,83 @@ CoD.lmgInfiniteReticle_UI3D_Internal.new = function ( menu, controller )
 		EmptyMagazine = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				Bg0:completeAnimation()
 				self.Bg0:setRGB( 1, 0, 0 )
 				self.Bg0:setAlpha( 1 )
 				self.Bg0:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( Bg0, {} )
+
 				Bg:completeAnimation()
 				self.Bg:setRGB( 1, 0, 0 )
 				self.Bg:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
 				self.clipFinished( Bg, {} )
+
 				AmmoBarTop:completeAnimation()
+
 				AmmoBarTop.ammoFull:completeAnimation()
 				self.AmmoBarTop:setRGB( 1, 1, 1 )
 				self.AmmoBarTop:setAlpha( 1 )
 				self.AmmoBarTop.ammoFull:setRGB( 1, 0, 0 )
 				self.clipFinished( AmmoBarTop, {} )
+
 				AmmoBarBottom:completeAnimation()
+
 				AmmoBarBottom.ammoFull:completeAnimation()
 				self.AmmoBarBottom:setRGB( 1, 1, 1 )
 				self.AmmoBarBottom:setAlpha( 1 )
 				self.AmmoBarBottom.ammoFull:setRGB( 1, 0, 0 )
 				self.clipFinished( AmmoBarBottom, {} )
+
 				Status:completeAnimation()
+
 				Status.FrameTop:completeAnimation()
+
 				Status.FrameBottom:completeAnimation()
+
 				Status.Status:completeAnimation()
 				self.Status:setRGB( 1, 0, 0 )
 				self.Status.FrameTop:setRGB( 1, 0, 0 )
 				self.Status.FrameBottom:setRGB( 1, 0, 0 )
 				self.Status.Status:setText( Engine.Localize( "MPUI_LMG_MAGAZINE_EMPTY_CAPS" ) )
 				self.clipFinished( Status, {} )
+
 				lmgInfiniteReticleExtras:completeAnimation()
 				self.lmgInfiniteReticleExtras:setRGB( 1, 0, 0 )
 				self.lmgInfiniteReticleExtras:setAlpha( 1 )
 				self.clipFinished( lmgInfiniteReticleExtras, {} )
+
 				lightRight:completeAnimation()
 				self.lightRight:setRGB( 1, 0, 0 )
 				self.lightRight:setAlpha( 1 )
 				self.clipFinished( lightRight, {} )
+
 				lightsLeft:completeAnimation()
 				self.lightsLeft:setRGB( 1, 0, 0 )
 				self.lightsLeft:setAlpha( 1 )
 				self.clipFinished( lightsLeft, {} )
+
 				lmgInfiniteReticlelightLeft:completeAnimation()
 				self.lmgInfiniteReticlelightLeft:setAlpha( 0 )
 				self.clipFinished( lmgInfiniteReticlelightLeft, {} )
+
 				lmgInfiniteReticlelightRight:completeAnimation()
 				self.lmgInfiniteReticlelightRight:setAlpha( 0 )
 				self.clipFinished( lmgInfiniteReticlelightRight, {} )
+
 				Bg10:completeAnimation()
 				self.Bg10:setRGB( 1, 0, 0 )
 				self.clipFinished( Bg10, {} )
+
 				Bg100:completeAnimation()
 				self.Bg100:setRGB( 1, 0, 0 )
 				self.clipFinished( Bg100, {} )
+
 				lightsLeft0:completeAnimation()
 				self.lightsLeft0:setRGB( 1, 0, 0 )
 				self.lightsLeft0:setAlpha( 1 )
 				self.clipFinished( lightsLeft0, {} )
+
 				lightRight0:completeAnimation()
 				self.lightRight0:setRGB( 1, 0, 0 )
 				self.lightRight0:setAlpha( 1 )
@@ -463,64 +540,83 @@ CoD.lmgInfiniteReticle_UI3D_Internal.new = function ( menu, controller )
 		Last25 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 14 )
+
 				Bg0:completeAnimation()
 				self.Bg0:setRGB( 1, 1, 1 )
 				self.Bg0:setAlpha( 0.25 )
 				self.clipFinished( Bg0, {} )
+
 				Bg:completeAnimation()
 				self.Bg:setRGB( 1, 1, 1 )
 				self.Bg:setAlpha( 1 )
 				self.clipFinished( Bg, {} )
+
 				AmmoBarTop:completeAnimation()
+
 				AmmoBarTop.ammoFull:completeAnimation()
 				self.AmmoBarTop:setRGB( 1, 1, 1 )
 				self.AmmoBarTop:setAlpha( 1 )
 				self.AmmoBarTop.ammoFull:setRGB( 1, 0, 0 )
 				self.clipFinished( AmmoBarTop, {} )
+
 				AmmoBarBottom:completeAnimation()
+
 				AmmoBarBottom.ammoFull:completeAnimation()
 				self.AmmoBarBottom:setRGB( 1, 1, 1 )
 				self.AmmoBarBottom:setAlpha( 1 )
 				self.AmmoBarBottom.ammoFull:setRGB( 1, 0, 0 )
 				self.clipFinished( AmmoBarBottom, {} )
+
 				Status:completeAnimation()
+
 				Status.FrameTop:completeAnimation()
+
 				Status.FrameBottom:completeAnimation()
+
 				Status.Status:completeAnimation()
 				self.Status:setRGB( 1, 1, 1 )
 				self.Status.FrameTop:setRGB( 1, 1, 1 )
 				self.Status.FrameBottom:setRGB( 1, 1, 1 )
 				self.Status.Status:setText( Engine.Localize( "MPUI_LMG_FIRING_CAPS" ) )
 				self.clipFinished( Status, {} )
+
 				lmgInfiniteReticleExtras:completeAnimation()
 				self.lmgInfiniteReticleExtras:setRGB( 1, 1, 1 )
 				self.clipFinished( lmgInfiniteReticleExtras, {} )
+
 				lightRight:completeAnimation()
 				self.lightRight:setRGB( 1, 1, 1 )
 				self.clipFinished( lightRight, {} )
+
 				lightsLeft:completeAnimation()
 				self.lightsLeft:setRGB( 1, 1, 1 )
 				self.lightsLeft:setAlpha( 1 )
 				self.clipFinished( lightsLeft, {} )
+
 				lmgInfiniteReticlelightLeft:completeAnimation()
 				self.lmgInfiniteReticlelightLeft:setRGB( 1, 1, 1 )
 				self.lmgInfiniteReticlelightLeft:setAlpha( 1 )
 				self.clipFinished( lmgInfiniteReticlelightLeft, {} )
+
 				lmgInfiniteReticlelightRight:completeAnimation()
 				self.lmgInfiniteReticlelightRight:setRGB( 1, 1, 1 )
 				self.lmgInfiniteReticlelightRight:setAlpha( 1 )
 				self.clipFinished( lmgInfiniteReticlelightRight, {} )
+
 				Bg10:completeAnimation()
 				self.Bg10:setRGB( 1, 1, 1 )
 				self.Bg10:setAlpha( 1 )
 				self.clipFinished( Bg10, {} )
+
 				Bg100:completeAnimation()
 				self.Bg100:setRGB( 1, 1, 1 )
 				self.Bg100:setAlpha( 1 )
 				self.clipFinished( Bg100, {} )
+
 				lightsLeft0:completeAnimation()
 				self.lightsLeft0:setAlpha( 0 )
 				self.clipFinished( lightsLeft0, {} )
+
 				lightRight0:completeAnimation()
 				self.lightRight0:setAlpha( 0 )
 				self.clipFinished( lightRight0, {} )
@@ -529,34 +625,46 @@ CoD.lmgInfiniteReticle_UI3D_Internal.new = function ( menu, controller )
 		WeaponFiring = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				AmmoBarTop:completeAnimation()
+
 				AmmoBarTop.ammoFull:completeAnimation()
 				self.AmmoBarTop.ammoFull:setRGB( 0.33, 0.95, 0.81 )
 				self.clipFinished( AmmoBarTop, {} )
+
 				AmmoBarBottom:completeAnimation()
+
 				AmmoBarBottom.ammoFull:completeAnimation()
 				self.AmmoBarBottom:setRGB( 1, 1, 1 )
 				self.AmmoBarBottom.ammoFull:setRGB( 0.33, 0.95, 0.81 )
 				self.clipFinished( AmmoBarBottom, {} )
+
 				Status:completeAnimation()
+
 				Status.Status:completeAnimation()
 				self.Status.Status:setText( Engine.Localize( "MPUI_LMG_FIRING_CAPS" ) )
 				self.clipFinished( Status, {} )
+
 				lightRight:completeAnimation()
 				self.lightRight:setAlpha( 1 )
 				self.clipFinished( lightRight, {} )
+
 				lightsLeft:completeAnimation()
 				self.lightsLeft:setAlpha( 1 )
 				self.clipFinished( lightsLeft, {} )
+
 				lmgInfiniteReticlelightLeft:completeAnimation()
 				self.lmgInfiniteReticlelightLeft:setAlpha( 0 )
 				self.clipFinished( lmgInfiniteReticlelightLeft, {} )
+
 				lmgInfiniteReticlelightRight:completeAnimation()
 				self.lmgInfiniteReticlelightRight:setAlpha( 0 )
 				self.clipFinished( lmgInfiniteReticlelightRight, {} )
+
 				lightsLeft0:completeAnimation()
 				self.lightsLeft0:setAlpha( 0.15 )
 				self.clipFinished( lightsLeft0, {} )
+
 				lightRight0:completeAnimation()
 				self.lightRight0:setAlpha( 0.15 )
 				self.clipFinished( lightRight0, {} )
@@ -565,42 +673,55 @@ CoD.lmgInfiniteReticle_UI3D_Internal.new = function ( menu, controller )
 		MagazineFull = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				AmmoBarTop:completeAnimation()
+
 				AmmoBarTop.ammoFull:completeAnimation()
 				self.AmmoBarTop:setRGB( 1, 1, 1 )
 				self.AmmoBarTop.ammoFull:setRGB( 0.33, 0.95, 0.81 )
 				self.clipFinished( AmmoBarTop, {} )
+
 				AmmoBarBottom:completeAnimation()
+
 				AmmoBarBottom.ammoFull:completeAnimation()
 				self.AmmoBarBottom:setRGB( 1, 1, 1 )
 				self.AmmoBarBottom.ammoFull:setRGB( 0.33, 0.95, 0.81 )
 				self.clipFinished( AmmoBarBottom, {} )
+
 				Status:completeAnimation()
+
 				Status.Status:completeAnimation()
 				self.Status:setRGB( 1, 1, 1 )
 				self.Status.Status:setText( Engine.Localize( "MPUI_LMG_MAGAZINE_FULL_CAPS" ) )
 				self.clipFinished( Status, {} )
+
 				lightRight:completeAnimation()
 				self.lightRight:setAlpha( 1 )
 				self.clipFinished( lightRight, {} )
+
 				lightsLeft:completeAnimation()
 				self.lightsLeft:setAlpha( 1 )
 				self.clipFinished( lightsLeft, {} )
+
 				lmgInfiniteReticlelightLeft:completeAnimation()
 				self.lmgInfiniteReticlelightLeft:setAlpha( 0 )
 				self.clipFinished( lmgInfiniteReticlelightLeft, {} )
+
 				lmgInfiniteReticlelightRight:completeAnimation()
 				self.lmgInfiniteReticlelightRight:setAlpha( 0 )
 				self.clipFinished( lmgInfiniteReticlelightRight, {} )
+
 				lightsLeft0:completeAnimation()
 				self.lightsLeft0:setAlpha( 0.15 )
 				self.clipFinished( lightsLeft0, {} )
+
 				lightRight0:completeAnimation()
 				self.lightRight0:setAlpha( 0.15 )
 				self.clipFinished( lightRight0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "LowAmmoPrinting",
@@ -663,6 +784,7 @@ CoD.lmgInfiniteReticle_UI3D_Internal.new = function ( menu, controller )
 			modelName = "lmgInfiniteState"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.AmmoBarTop:close()
 		element.AmmoBarBottom:close()

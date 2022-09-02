@@ -4,9 +4,11 @@
 CoD.ScoreboardHeaderTitleWidget = InheritFrom( LUI.UIElement )
 CoD.ScoreboardHeaderTitleWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreboardHeaderTitleWidget )
 	self.id = "ScoreboardHeaderTitleWidget"
@@ -29,6 +31,7 @@ CoD.ScoreboardHeaderTitleWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				gametype:completeAnimation()
 				self.gametype:setText( Engine.Localize( "MENU_SCOREBOARD_HEADER" ) )
 				self.clipFinished( gametype, {} )
@@ -37,12 +40,14 @@ CoD.ScoreboardHeaderTitleWidget.new = function ( menu, controller )
 		Special = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				gametype:completeAnimation()
 				self.gametype:setText( Engine.Localize( "MENU_SCOREBOARD_HEADER_SPECIAL" ) )
 				self.clipFinished( gametype, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Special",

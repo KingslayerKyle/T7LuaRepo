@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.Social.Social_InfoPane" )
 CoD.Social_Friends = InheritFrom( LUI.UIElement )
 CoD.Social_Friends.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Social_Friends )
 	self.id = "Social_Friends"
@@ -151,15 +153,19 @@ CoD.Social_Friends.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				SocialNoFriends:completeAnimation()
 				self.SocialNoFriends:setAlpha( 0 )
 				self.clipFinished( SocialNoFriends, {} )
+
 				onlineList:completeAnimation()
 				self.onlineList:setAlpha( 1 )
 				self.clipFinished( onlineList, {} )
+
 				playerInfo:completeAnimation()
 				self.playerInfo:setAlpha( 1 )
 				self.clipFinished( playerInfo, {} )
+
 				noFriends:completeAnimation()
 				self.noFriends:setAlpha( 0 )
 				self.clipFinished( noFriends, {} )
@@ -168,24 +174,30 @@ CoD.Social_Friends.new = function ( menu, controller )
 		NoFriends = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				BlackTint:completeAnimation()
 				self.BlackTint:setAlpha( 0.3 )
 				self.clipFinished( BlackTint, {} )
+
 				SocialNoFriends:completeAnimation()
 				self.SocialNoFriends:setAlpha( 1 )
 				self.clipFinished( SocialNoFriends, {} )
+
 				onlineList:completeAnimation()
 				self.onlineList:setAlpha( 0 )
 				self.clipFinished( onlineList, {} )
+
 				playerInfo:completeAnimation()
 				self.playerInfo:setAlpha( 0 )
 				self.clipFinished( playerInfo, {} )
+
 				noFriends:completeAnimation()
 				self.noFriends:setAlpha( 1 )
 				self.clipFinished( noFriends, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoFriends",
@@ -204,6 +216,7 @@ CoD.Social_Friends.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SocialNoFriends:close()
 		element.onlineList:close()

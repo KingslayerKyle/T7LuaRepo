@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_ReturnFire_Stars" )
 CoD.CallingCards_ReturnFireWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_ReturnFireWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_ReturnFireWidget )
 	self.id = "CallingCards_ReturnFireWidget"
@@ -51,6 +53,7 @@ CoD.CallingCards_ReturnFireWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local catFrame2 = function ( cat, event )
 					local catFrame3 = function ( cat, event )
 						local catFrame4 = function ( cat, event )
@@ -90,13 +93,16 @@ CoD.CallingCards_ReturnFireWidget.new = function ( menu, controller )
 				self.cat:setLeftRight( true, false, 284, 480 )
 				self.cat:setTopBottom( true, false, 8, 106 )
 				catFrame2( cat, {} )
+
 				CallingCardsReturnFireStars:completeAnimation()
 				self.CallingCardsReturnFireStars:setAlpha( 1 )
 				self.clipFinished( CallingCardsReturnFireStars, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardsReturnFireStars:close()
 	end )

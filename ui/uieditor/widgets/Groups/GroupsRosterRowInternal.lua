@@ -12,9 +12,11 @@ require( "ui.uieditor.widgets.Social.Social_PartyMemberIconLarge" )
 CoD.GroupsRosterRowInternal = InheritFrom( LUI.UIElement )
 CoD.GroupsRosterRowInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GroupsRosterRowInternal )
 	self.id = "GroupsRosterRowInternal"

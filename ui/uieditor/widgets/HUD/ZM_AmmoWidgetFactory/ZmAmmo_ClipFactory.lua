@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.ZM_FX.ZmFx_Spark2" )
 CoD.ZmAmmo_ClipFactory = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_ClipFactory.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_ClipFactory )
 	self.id = "ZmAmmo_ClipFactory"
@@ -103,48 +105,60 @@ CoD.ZmAmmo_ClipFactory.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ClipGlowTop:completeAnimation()
 				self.ClipGlowTop:setLeftRight( true, false, 25.8, 108 )
 				self.ClipGlowTop:setTopBottom( true, false, -18.38, 64.38 )
 				self.ClipGlowTop:setRGB( 0, 0.42, 0.58 )
 				self.ClipGlowTop:setAlpha( 0.75 )
 				self.clipFinished( ClipGlowTop, {} )
+
 				ClipGlow:completeAnimation()
 				self.ClipGlow:setLeftRight( true, false, 44.01, 87.79 )
 				self.ClipGlow:setTopBottom( true, false, 1, 45.25 )
 				self.ClipGlow:setRGB( 0.19, 0.99, 0.97 )
 				self.ClipGlow:setAlpha( 0.1 )
 				self.clipFinished( ClipGlow, {} )
+
 				Clip:completeAnimation()
 				self.Clip:setRGB( 1, 0.99, 0.93 )
 				self.clipFinished( Clip, {} )
+
 				ClipContainerPress00:completeAnimation()
 				self.ClipContainerPress00:setAlpha( 0 )
 				self.clipFinished( ClipContainerPress00, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				Lightning:completeAnimation()
 				self.Lightning:setAlpha( 0 )
 				self.clipFinished( Lightning, {} )
 			end,
 			NoAmmo = function ()
 				self:setupElementClipCounter( 6 )
+
 				ClipGlowTop:completeAnimation()
 				self.ClipGlowTop:setRGB( 1, 0.33, 0.36 )
 				self.clipFinished( ClipGlowTop, {} )
+
 				ClipGlow:completeAnimation()
 				self.ClipGlow:setRGB( 0.48, 0.06, 0.05 )
 				self.clipFinished( ClipGlow, {} )
+
 				Clip:completeAnimation()
 				self.Clip:setRGB( 1, 0.49, 0.49 )
 				self.clipFinished( Clip, {} )
+
 				ClipContainerPress00:completeAnimation()
 				self.ClipContainerPress00:setAlpha( 1 )
 				self.clipFinished( ClipContainerPress00, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				Lightning:completeAnimation()
 				self.Lightning:setAlpha( 0 )
 				self.clipFinished( Lightning, {} )
@@ -153,21 +167,27 @@ CoD.ZmAmmo_ClipFactory.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ClipGlowTop:completeAnimation()
 				self.ClipGlowTop:setAlpha( 0 )
 				self.clipFinished( ClipGlowTop, {} )
+
 				ClipGlow:completeAnimation()
 				self.ClipGlow:setAlpha( 0 )
 				self.clipFinished( ClipGlow, {} )
+
 				Clip:completeAnimation()
 				self.Clip:setRGB( 0, 0, 0 )
 				self.clipFinished( Clip, {} )
+
 				ClipContainerPress00:completeAnimation()
 				self.ClipContainerPress00:setAlpha( 0 )
 				self.clipFinished( ClipContainerPress00, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				Lightning:completeAnimation()
 				self.Lightning:setAlpha( 0 )
 				self.clipFinished( Lightning, {} )
@@ -176,9 +196,11 @@ CoD.ZmAmmo_ClipFactory.new = function ( menu, controller )
 		LowAmmo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ClipGlowTop:completeAnimation()
 				self.ClipGlowTop:setRGB( 1, 0.33, 0.36 )
 				self.clipFinished( ClipGlowTop, {} )
+
 				ClipGlow:completeAnimation()
 				self.ClipGlow:setRGB( 0.48, 0.06, 0.05 )
 				self.clipFinished( ClipGlow, {} )
@@ -229,18 +251,22 @@ CoD.ZmAmmo_ClipFactory.new = function ( menu, controller )
 				Clip:completeAnimation()
 				self.Clip:setRGB( 1, 0.99, 0.93 )
 				ClipFrame2( Clip, {} )
+
 				ClipContainerPress00:completeAnimation()
 				self.ClipContainerPress00:setAlpha( 0 )
 				self.clipFinished( ClipContainerPress00, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				Lightning:completeAnimation()
 				self.Lightning:setAlpha( 0 )
 				self.clipFinished( Lightning, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 6 )
+
 				local ClipGlowTopFrame2 = function ( ClipGlowTop, event )
 					if not event.interrupted then
 						ClipGlowTop:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -400,27 +426,34 @@ CoD.ZmAmmo_ClipFactory.new = function ( menu, controller )
 		NoAmmo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				ClipGlowTop:completeAnimation()
 				self.ClipGlowTop:setRGB( 1, 0.33, 0.36 )
 				self.clipFinished( ClipGlowTop, {} )
+
 				ClipGlow:completeAnimation()
 				self.ClipGlow:setRGB( 0.48, 0.06, 0.05 )
 				self.clipFinished( ClipGlow, {} )
+
 				Clip:completeAnimation()
 				self.Clip:setRGB( 1, 0.49, 0.49 )
 				self.clipFinished( Clip, {} )
+
 				ClipContainerPress00:completeAnimation()
 				self.ClipContainerPress00:setAlpha( 1 )
 				self.clipFinished( ClipContainerPress00, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				Lightning:completeAnimation()
 				self.Lightning:setAlpha( 0 )
 				self.clipFinished( Lightning, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 6 )
+
 				local ClipGlowTopFrame2 = function ( ClipGlowTop, event )
 					if not event.interrupted then
 						ClipGlowTop:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -599,6 +632,7 @@ CoD.ZmAmmo_ClipFactory.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",
@@ -619,6 +653,7 @@ CoD.ZmAmmo_ClipFactory.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ClipContainerPress00:close()
 		element.ZmFxSpark20:close()

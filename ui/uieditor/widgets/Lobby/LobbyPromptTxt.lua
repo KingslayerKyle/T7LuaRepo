@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.CAC_varientTitlePanel" )
 CoD.LobbyPromptTxt = InheritFrom( LUI.UIElement )
 CoD.LobbyPromptTxt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyPromptTxt )
 	self.id = "LobbyPromptTxt"
@@ -35,6 +37,7 @@ CoD.LobbyPromptTxt.new = function ( menu, controller )
 			txtDescription:setText( Engine.Localize( lobbyPromptDescription ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( txtDescription, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrappedLeftAlign( self, element, 0, 0 )
 	end )
@@ -45,14 +48,17 @@ CoD.LobbyPromptTxt.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		KBMouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "KBMouse",
@@ -79,6 +85,7 @@ CoD.LobbyPromptTxt.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CACvarientTitlePanel0:close()
 		element.txtDescription:close()

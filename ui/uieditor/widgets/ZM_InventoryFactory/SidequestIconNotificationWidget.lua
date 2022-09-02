@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.ZM_Inventory.SidequestIcon" )
 CoD.SidequestIconNotificationWidget = InheritFrom( LUI.UIElement )
 CoD.SidequestIconNotificationWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SidequestIconNotificationWidget )
 	self.id = "SidequestIconNotificationWidget"
@@ -43,6 +45,7 @@ CoD.SidequestIconNotificationWidget.new = function ( menu, controller )
 	SidequestIcon:linkToElementModel( self, nil, false, function ( model )
 		SidequestIcon:setModel( model, controller )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( SidequestIcon, "setModel", function ( element, controller )
 		SetState( self, "BgVisible" )
 	end )
@@ -53,15 +56,18 @@ CoD.SidequestIconNotificationWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				bg0:completeAnimation()
 				self.bg0:setAlpha( 0 )
 				self.clipFinished( bg0, {} )
+
 				SidequestIcon:completeAnimation()
 				self.SidequestIcon:setAlpha( 0 )
 				self.clipFinished( SidequestIcon, {} )
 			end,
 			BgVisible = function ()
 				self:setupElementClipCounter( 3 )
+
 				local bg0Frame2 = function ( bg0, event )
 					local bg0Frame3 = function ( bg0, event )
 						local bg0Frame4 = function ( bg0, event )
@@ -175,9 +181,11 @@ CoD.SidequestIconNotificationWidget.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				bg0:completeAnimation()
 				self.bg0:setAlpha( 0 )
 				self.clipFinished( bg0, {} )
+
 				SidequestIcon:completeAnimation()
 				self.SidequestIcon:setAlpha( 1 )
 				self.clipFinished( SidequestIcon, {} )
@@ -189,6 +197,7 @@ CoD.SidequestIconNotificationWidget.new = function ( menu, controller )
 			PlayClip( self, "BgVisible", controller )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmFxSpark20:close()
 		element.SidequestIcon:close()

@@ -4,9 +4,11 @@
 CoD.MegaChewFactoryVat = InheritFrom( LUI.UIElement )
 CoD.MegaChewFactoryVat.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MegaChewFactoryVat )
 	self.id = "MegaChewFactoryVat"

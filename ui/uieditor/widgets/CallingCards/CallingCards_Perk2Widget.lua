@@ -4,9 +4,11 @@
 CoD.CallingCards_Perk2Widget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_Perk2Widget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_Perk2Widget )
 	self.id = "CallingCards_Perk2Widget"
@@ -92,6 +94,7 @@ CoD.CallingCards_Perk2Widget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				local GlowOrangeOverFrame2 = function ( GlowOrangeOver, event )
 					local GlowOrangeOverFrame3 = function ( GlowOrangeOver, event )
 						local GlowOrangeOverFrame4 = function ( GlowOrangeOver, event )
@@ -509,6 +512,7 @@ CoD.CallingCards_Perk2Widget.new = function ( menu, controller )
 				octoleft:completeAnimation()
 				self.octoleft:setZRot( 0 )
 				octoleftFrame2( octoleft, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

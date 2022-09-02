@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.BackgroundFrames.BackgroundPattern02" )
 CoD.InfoPaneItemVariantName = InheritFrom( LUI.UIElement )
 CoD.InfoPaneItemVariantName.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.InfoPaneItemVariantName )
 	self.id = "InfoPaneItemVariantName"
@@ -57,6 +59,7 @@ CoD.InfoPaneItemVariantName.new = function ( menu, controller )
 	itemName:setText( Engine.Localize( "WEAPON_AR_STANDARD" ) )
 	itemName:setTTF( "fonts/RefrigeratorDeluxe-Regular.ttf" )
 	itemName:setLetterSpacing( 0.6 )
+
 	LUI.OverrideFunction_CallOriginalFirst( itemName, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )

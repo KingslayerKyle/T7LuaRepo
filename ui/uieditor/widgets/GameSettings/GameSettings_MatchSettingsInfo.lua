@@ -17,9 +17,11 @@ end
 CoD.GameSettings_MatchSettingsInfo = InheritFrom( LUI.UIElement )
 CoD.GameSettings_MatchSettingsInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GameSettings_MatchSettingsInfo )
 	self.id = "GameSettings_MatchSettingsInfo"

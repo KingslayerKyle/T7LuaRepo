@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.SystemOverlays.systemOverlay_alertStatusBar" )
 CoD.systemOverlay_Full_Arena_Layout = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_Full_Arena_Layout.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_Full_Arena_Layout )
 	self.id = "systemOverlay_Full_Arena_Layout"
@@ -104,6 +106,7 @@ CoD.systemOverlay_Full_Arena_Layout.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				local darkbgFrame2 = function ( darkbg, event )
 					local darkbgFrame3 = function ( darkbg, event )
 						if not event.interrupted then
@@ -407,6 +410,7 @@ CoD.systemOverlay_Full_Arena_Layout.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.scorestreakVignetteContainer:close()
 		element.buttons:close()

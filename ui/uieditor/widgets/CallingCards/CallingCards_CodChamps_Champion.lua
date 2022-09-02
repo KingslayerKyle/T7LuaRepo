@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_CodChamps_Champion_Light
 CoD.CallingCards_CodChamps_Champion = InheritFrom( LUI.UIElement )
 CoD.CallingCards_CodChamps_Champion.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_CodChamps_Champion )
 	self.id = "CallingCards_CodChamps_Champion"
@@ -102,6 +104,7 @@ CoD.CallingCards_CodChamps_Champion.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				bg0:completeAnimation()
 				self.bg0:setLeftRight( true, false, 0, 492 )
 				self.bg0:setTopBottom( true, false, -16, 152 )
@@ -172,6 +175,7 @@ CoD.CallingCards_CodChamps_Champion.new = function ( menu, controller )
 				self.bg:setZRot( 0 )
 				self.bg:setScale( 1 )
 				bgFrame2( bg, {} )
+
 				CallingCardsCodChampsChampionLights:completeAnimation()
 				self.CallingCardsCodChampsChampionLights:setAlpha( 1 )
 				self.clipFinished( CallingCardsCodChampsChampionLights, {} )
@@ -698,10 +702,12 @@ CoD.CallingCards_CodChamps_Champion.new = function ( menu, controller )
 				biglight:completeAnimation()
 				self.biglight:setAlpha( 0 )
 				biglightFrame2( biglight, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardsCodChampsChampionLights:close()
 	end )

@@ -4,9 +4,11 @@
 CoD.MissionFailed_FailreasonText = InheritFrom( LUI.UIElement )
 CoD.MissionFailed_FailreasonText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MissionFailed_FailreasonText )
 	self.id = "MissionFailed_FailreasonText"
@@ -30,6 +32,7 @@ CoD.MissionFailed_FailreasonText.new = function ( menu, controller )
 	FailReason:setLetterSpacing( 1 )
 	FailReason:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	FailReason:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_MIDDLE )
+
 	LUI.OverrideFunction_CallOriginalFirst( FailReason, "setText", function ( element, controller )
 		ScaleWidgetToLabelCenteredWrapped( self, element, 0, 0 )
 	end )
@@ -42,6 +45,7 @@ CoD.MissionFailed_FailreasonText.new = function ( menu, controller )
 			FailReason:setText( Engine.Localize( MissionFailReason ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FailReason:close()
 	end )

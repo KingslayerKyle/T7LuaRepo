@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.TrainingSim.CPTrainingSim_TimeBonusBox" )
 CoD.TrainingSim_RoundCompleteWidget = InheritFrom( LUI.UIElement )
 CoD.TrainingSim_RoundCompleteWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TrainingSim_RoundCompleteWidget )
 	self.id = "TrainingSim_RoundCompleteWidget"
@@ -128,6 +130,7 @@ CoD.TrainingSim_RoundCompleteWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				local f3_local0 = function ( f4_arg0, f4_arg1 )
 					local f4_local0 = function ( f5_arg0, f5_arg1 )
 						local f5_local0 = function ( f6_arg0, f6_arg1 )
@@ -539,6 +542,7 @@ CoD.TrainingSim_RoundCompleteWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CPTrainingSimTimeBonusBox:close()
 		element.txtTimeBonusData:close()

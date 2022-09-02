@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.cac_TrainingSimNameLabel = InheritFrom( LUI.UIElement )
 CoD.cac_TrainingSimNameLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_TrainingSimNameLabel )
 	self.id = "cac_TrainingSimNameLabel"

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.ZM_FX.ZmFx_Spark2" )
 CoD.ZmAmmo_Clip = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_Clip.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_Clip )
 	self.id = "ZmAmmo_Clip"
@@ -139,48 +141,62 @@ CoD.ZmAmmo_Clip.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				ClipBack:completeAnimation()
 				self.ClipBack:setRGB( 1, 0.41, 0 )
 				self.clipFinished( ClipBack, {} )
+
 				ClipElem:completeAnimation()
 				self.ClipElem:setRGB( 1, 0.54, 0 )
 				self.clipFinished( ClipElem, {} )
+
 				ClipGlow:completeAnimation()
 				self.ClipGlow:setRGB( 0.79, 0.48, 0.25 )
 				self.clipFinished( ClipGlow, {} )
+
 				ClipGlowTop:completeAnimation()
 				self.ClipGlowTop:setRGB( 1, 0.97, 0.33 )
 				self.clipFinished( ClipGlowTop, {} )
+
 				Clip:completeAnimation()
 				self.Clip:setRGB( 1, 0.99, 0.93 )
 				self.clipFinished( Clip, {} )
+
 				ClipContainerPress00:completeAnimation()
 				self.ClipContainerPress00:setAlpha( 0 )
 				self.clipFinished( ClipContainerPress00, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				ZmFxFlsh:completeAnimation()
 				self.ZmFxFlsh:setAlpha( 0 )
 				self.clipFinished( ZmFxFlsh, {} )
 			end,
 			NoAmmo = function ()
 				self:setupElementClipCounter( 7 )
+
 				ClipElem:completeAnimation()
 				self.ClipElem:setRGB( 1, 0.15, 0 )
 				self.clipFinished( ClipElem, {} )
+
 				ClipGlow:completeAnimation()
 				self.ClipGlow:setRGB( 0.48, 0.06, 0.05 )
 				self.clipFinished( ClipGlow, {} )
+
 				ClipGlowTop:completeAnimation()
 				self.ClipGlowTop:setRGB( 1, 0.33, 0.36 )
 				self.clipFinished( ClipGlowTop, {} )
+
 				Clip:completeAnimation()
 				self.Clip:setRGB( 1, 0.49, 0.49 )
 				self.clipFinished( Clip, {} )
+
 				ClipContainerPress00:completeAnimation()
 				self.ClipContainerPress00:setAlpha( 1 )
 				self.clipFinished( ClipContainerPress00, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
@@ -217,12 +233,15 @@ CoD.ZmAmmo_Clip.new = function ( menu, controller )
 		LowAmmo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				ClipElem:completeAnimation()
 				self.ClipElem:setRGB( 1, 0.15, 0 )
 				self.clipFinished( ClipElem, {} )
+
 				ClipGlow:completeAnimation()
 				self.ClipGlow:setRGB( 0.48, 0.06, 0.05 )
 				self.clipFinished( ClipGlow, {} )
+
 				ClipGlowTop:completeAnimation()
 				self.ClipGlowTop:setRGB( 1, 0.33, 0.36 )
 				self.clipFinished( ClipGlowTop, {} )
@@ -273,9 +292,11 @@ CoD.ZmAmmo_Clip.new = function ( menu, controller )
 				Clip:completeAnimation()
 				self.Clip:setRGB( 1, 0.99, 0.93 )
 				ClipFrame2( Clip, {} )
+
 				ClipContainerPress00:completeAnimation()
 				self.ClipContainerPress00:setAlpha( 0 )
 				self.clipFinished( ClipContainerPress00, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
@@ -307,10 +328,12 @@ CoD.ZmAmmo_Clip.new = function ( menu, controller )
 				self.ZmFxFlsh:setRGB( 1, 0, 0 )
 				self.ZmFxFlsh:setAlpha( 0 )
 				ZmFxFlshFrame2( ZmFxFlsh, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 8 )
+
 				ClipBack:completeAnimation()
 				self.ClipBack:setRGB( 1, 0.41, 0 )
 				self.clipFinished( ClipBack, {} )
@@ -477,24 +500,31 @@ CoD.ZmAmmo_Clip.new = function ( menu, controller )
 		NoAmmo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				ClipElem:completeAnimation()
 				self.ClipElem:setRGB( 1, 0.15, 0 )
 				self.clipFinished( ClipElem, {} )
+
 				ClipGlow:completeAnimation()
 				self.ClipGlow:setRGB( 0.48, 0.06, 0.05 )
 				self.clipFinished( ClipGlow, {} )
+
 				ClipGlowTop:completeAnimation()
 				self.ClipGlowTop:setRGB( 1, 0.33, 0.36 )
 				self.clipFinished( ClipGlowTop, {} )
+
 				Clip:completeAnimation()
 				self.Clip:setRGB( 1, 0.49, 0.49 )
 				self.clipFinished( Clip, {} )
+
 				ClipContainerPress00:completeAnimation()
 				self.ClipContainerPress00:setAlpha( 1 )
 				self.clipFinished( ClipContainerPress00, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				ZmFxFlsh:completeAnimation()
 				self.ZmFxFlsh:setRGB( 1, 1, 1 )
 				self.ZmFxFlsh:setAlpha( 0 )
@@ -502,6 +532,7 @@ CoD.ZmAmmo_Clip.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 8 )
+
 				ClipBack:completeAnimation()
 				self.ClipBack:setRGB( 1, 0.41, 0 )
 				self.clipFinished( ClipBack, {} )
@@ -677,6 +708,7 @@ CoD.ZmAmmo_Clip.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ClipContainerPress00:close()
 		element.ZmFxSpark20:close()

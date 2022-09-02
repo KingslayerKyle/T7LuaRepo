@@ -4,9 +4,11 @@
 CoD.Competitive_CharacterDraft_CharacterSelection = InheritFrom( LUI.UIElement )
 CoD.Competitive_CharacterDraft_CharacterSelection.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Competitive_CharacterDraft_CharacterSelection )
 	self.id = "Competitive_CharacterDraft_CharacterSelection"
@@ -28,6 +30,7 @@ CoD.Competitive_CharacterDraft_CharacterSelection.new = function ( menu, control
 			HeroLobbyClientExtraCamRender:setupCharacterExtraCamRenderForLobbyClient( xuid )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.HeroLobbyClientExtraCamRender:close()
 	end )

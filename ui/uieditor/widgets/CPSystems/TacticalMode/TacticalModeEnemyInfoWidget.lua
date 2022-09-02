@@ -4,9 +4,11 @@
 CoD.TacticalModeEnemyInfoWidget = InheritFrom( LUI.UIElement )
 CoD.TacticalModeEnemyInfoWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TacticalModeEnemyInfoWidget )
 	self.id = "TacticalModeEnemyInfoWidget"

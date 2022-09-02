@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_BribeOffertime" )
 CoD.BM_BundleOffertime = InheritFrom( LUI.UIElement )
 CoD.BM_BundleOffertime.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_BundleOffertime )
 	self.id = "BM_BundleOffertime"
@@ -331,27 +333,35 @@ CoD.BM_BundleOffertime.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BMBribeOfferTime:completeAnimation()
 				self.BMBribeOfferTime:setAlpha( 0 )
 				self.clipFinished( BMBribeOfferTime, {} )
+
 				Label00:completeAnimation()
 				self.Label00:setAlpha( 0 )
 				self.clipFinished( Label00, {} )
+
 				BMBribeOffertime0:completeAnimation()
 				self.BMBribeOffertime0:setAlpha( 0 )
 				self.clipFinished( BMBribeOffertime0, {} )
+
 				BMTrifectaOffertime:completeAnimation()
 				self.BMTrifectaOffertime:setAlpha( 0 )
 				self.clipFinished( BMTrifectaOffertime, {} )
+
 				BMRareDiscountOfferTime:completeAnimation()
 				self.BMRareDiscountOfferTime:setAlpha( 0 )
 				self.clipFinished( BMRareDiscountOfferTime, {} )
+
 				BMHundredBundleOfferTime:completeAnimation()
 				self.BMHundredBundleOfferTime:setAlpha( 0 )
 				self.clipFinished( BMHundredBundleOfferTime, {} )
+
 				BMNoDupesBundleOfferTime:completeAnimation()
 				self.BMNoDupesBundleOfferTime:setAlpha( 0 )
 				self.clipFinished( BMNoDupesBundleOfferTime, {} )
+
 				BMGrandSlamOfferTime:completeAnimation()
 				self.BMGrandSlamOfferTime:setAlpha( 0 )
 				self.clipFinished( BMGrandSlamOfferTime, {} )
@@ -360,27 +370,35 @@ CoD.BM_BundleOffertime.new = function ( menu, controller )
 		Bundle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BMBribeOfferTime:completeAnimation()
 				self.BMBribeOfferTime:setAlpha( 1 )
 				self.clipFinished( BMBribeOfferTime, {} )
+
 				Label00:completeAnimation()
 				self.Label00:setAlpha( 0 )
 				self.clipFinished( Label00, {} )
+
 				BMBribeOffertime0:completeAnimation()
 				self.BMBribeOffertime0:setAlpha( 0 )
 				self.clipFinished( BMBribeOffertime0, {} )
+
 				BMTrifectaOffertime:completeAnimation()
 				self.BMTrifectaOffertime:setAlpha( 0 )
 				self.clipFinished( BMTrifectaOffertime, {} )
+
 				BMRareDiscountOfferTime:completeAnimation()
 				self.BMRareDiscountOfferTime:setAlpha( 0 )
 				self.clipFinished( BMRareDiscountOfferTime, {} )
+
 				BMHundredBundleOfferTime:completeAnimation()
 				self.BMHundredBundleOfferTime:setAlpha( 0 )
 				self.clipFinished( BMHundredBundleOfferTime, {} )
+
 				BMNoDupesBundleOfferTime:completeAnimation()
 				self.BMNoDupesBundleOfferTime:setAlpha( 0 )
 				self.clipFinished( BMNoDupesBundleOfferTime, {} )
+
 				BMGrandSlamOfferTime:completeAnimation()
 				self.BMGrandSlamOfferTime:setAlpha( 0 )
 				self.clipFinished( BMGrandSlamOfferTime, {} )
@@ -389,27 +407,35 @@ CoD.BM_BundleOffertime.new = function ( menu, controller )
 		HundredBundle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BMBribeOfferTime:completeAnimation()
 				self.BMBribeOfferTime:setAlpha( 0 )
 				self.clipFinished( BMBribeOfferTime, {} )
+
 				Label00:completeAnimation()
 				self.Label00:setAlpha( 0 )
 				self.clipFinished( Label00, {} )
+
 				BMBribeOffertime0:completeAnimation()
 				self.BMBribeOffertime0:setAlpha( 0 )
 				self.clipFinished( BMBribeOffertime0, {} )
+
 				BMTrifectaOffertime:completeAnimation()
 				self.BMTrifectaOffertime:setAlpha( 0 )
 				self.clipFinished( BMTrifectaOffertime, {} )
+
 				BMRareDiscountOfferTime:completeAnimation()
 				self.BMRareDiscountOfferTime:setAlpha( 0 )
 				self.clipFinished( BMRareDiscountOfferTime, {} )
+
 				BMHundredBundleOfferTime:completeAnimation()
 				self.BMHundredBundleOfferTime:setAlpha( 1 )
 				self.clipFinished( BMHundredBundleOfferTime, {} )
+
 				BMNoDupesBundleOfferTime:completeAnimation()
 				self.BMNoDupesBundleOfferTime:setAlpha( 0 )
 				self.clipFinished( BMNoDupesBundleOfferTime, {} )
+
 				BMGrandSlamOfferTime:completeAnimation()
 				self.BMGrandSlamOfferTime:setAlpha( 0 )
 				self.clipFinished( BMGrandSlamOfferTime, {} )
@@ -418,29 +444,37 @@ CoD.BM_BundleOffertime.new = function ( menu, controller )
 		Bribe = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BMBribeOfferTime:completeAnimation()
 				self.BMBribeOfferTime:setAlpha( 0 )
 				self.clipFinished( BMBribeOfferTime, {} )
+
 				Label00:completeAnimation()
 				self.Label00:setLeftRight( false, false, -176, 176 )
 				self.Label00:setTopBottom( true, false, -14, 16 )
 				self.Label00:setAlpha( 1 )
 				self.clipFinished( Label00, {} )
+
 				BMBribeOffertime0:completeAnimation()
 				self.BMBribeOffertime0:setAlpha( 1 )
 				self.clipFinished( BMBribeOffertime0, {} )
+
 				BMTrifectaOffertime:completeAnimation()
 				self.BMTrifectaOffertime:setAlpha( 0 )
 				self.clipFinished( BMTrifectaOffertime, {} )
+
 				BMRareDiscountOfferTime:completeAnimation()
 				self.BMRareDiscountOfferTime:setAlpha( 0 )
 				self.clipFinished( BMRareDiscountOfferTime, {} )
+
 				BMHundredBundleOfferTime:completeAnimation()
 				self.BMHundredBundleOfferTime:setAlpha( 0 )
 				self.clipFinished( BMHundredBundleOfferTime, {} )
+
 				BMNoDupesBundleOfferTime:completeAnimation()
 				self.BMNoDupesBundleOfferTime:setAlpha( 0 )
 				self.clipFinished( BMNoDupesBundleOfferTime, {} )
+
 				BMGrandSlamOfferTime:completeAnimation()
 				self.BMGrandSlamOfferTime:setAlpha( 0 )
 				self.clipFinished( BMGrandSlamOfferTime, {} )
@@ -449,29 +483,37 @@ CoD.BM_BundleOffertime.new = function ( menu, controller )
 		RareDiscount = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BMBribeOfferTime:completeAnimation()
 				self.BMBribeOfferTime:setAlpha( 0 )
 				self.clipFinished( BMBribeOfferTime, {} )
+
 				Label00:completeAnimation()
 				self.Label00:setLeftRight( false, false, -176, 176 )
 				self.Label00:setTopBottom( true, false, -14, 16 )
 				self.Label00:setAlpha( 0 )
 				self.clipFinished( Label00, {} )
+
 				BMBribeOffertime0:completeAnimation()
 				self.BMBribeOffertime0:setAlpha( 0 )
 				self.clipFinished( BMBribeOffertime0, {} )
+
 				BMTrifectaOffertime:completeAnimation()
 				self.BMTrifectaOffertime:setAlpha( 0 )
 				self.clipFinished( BMTrifectaOffertime, {} )
+
 				BMRareDiscountOfferTime:completeAnimation()
 				self.BMRareDiscountOfferTime:setAlpha( 1 )
 				self.clipFinished( BMRareDiscountOfferTime, {} )
+
 				BMHundredBundleOfferTime:completeAnimation()
 				self.BMHundredBundleOfferTime:setAlpha( 0 )
 				self.clipFinished( BMHundredBundleOfferTime, {} )
+
 				BMNoDupesBundleOfferTime:completeAnimation()
 				self.BMNoDupesBundleOfferTime:setAlpha( 0 )
 				self.clipFinished( BMNoDupesBundleOfferTime, {} )
+
 				BMGrandSlamOfferTime:completeAnimation()
 				self.BMGrandSlamOfferTime:setAlpha( 0 )
 				self.clipFinished( BMGrandSlamOfferTime, {} )
@@ -480,29 +522,37 @@ CoD.BM_BundleOffertime.new = function ( menu, controller )
 		Trifecta = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BMBribeOfferTime:completeAnimation()
 				self.BMBribeOfferTime:setAlpha( 0 )
 				self.clipFinished( BMBribeOfferTime, {} )
+
 				Label00:completeAnimation()
 				self.Label00:setLeftRight( false, false, -176, 176 )
 				self.Label00:setTopBottom( true, false, -14, 16 )
 				self.Label00:setAlpha( 0 )
 				self.clipFinished( Label00, {} )
+
 				BMBribeOffertime0:completeAnimation()
 				self.BMBribeOffertime0:setAlpha( 0 )
 				self.clipFinished( BMBribeOffertime0, {} )
+
 				BMTrifectaOffertime:completeAnimation()
 				self.BMTrifectaOffertime:setAlpha( 1 )
 				self.clipFinished( BMTrifectaOffertime, {} )
+
 				BMRareDiscountOfferTime:completeAnimation()
 				self.BMRareDiscountOfferTime:setAlpha( 0 )
 				self.clipFinished( BMRareDiscountOfferTime, {} )
+
 				BMHundredBundleOfferTime:completeAnimation()
 				self.BMHundredBundleOfferTime:setAlpha( 0 )
 				self.clipFinished( BMHundredBundleOfferTime, {} )
+
 				BMNoDupesBundleOfferTime:completeAnimation()
 				self.BMNoDupesBundleOfferTime:setAlpha( 0 )
 				self.clipFinished( BMNoDupesBundleOfferTime, {} )
+
 				BMGrandSlamOfferTime:completeAnimation()
 				self.BMGrandSlamOfferTime:setAlpha( 0 )
 				self.clipFinished( BMGrandSlamOfferTime, {} )
@@ -511,29 +561,37 @@ CoD.BM_BundleOffertime.new = function ( menu, controller )
 		NoDupesBundle = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BMBribeOfferTime:completeAnimation()
 				self.BMBribeOfferTime:setAlpha( 0 )
 				self.clipFinished( BMBribeOfferTime, {} )
+
 				Label00:completeAnimation()
 				self.Label00:setLeftRight( false, false, -176, 176 )
 				self.Label00:setTopBottom( true, false, -14, 16 )
 				self.Label00:setAlpha( 0 )
 				self.clipFinished( Label00, {} )
+
 				BMBribeOffertime0:completeAnimation()
 				self.BMBribeOffertime0:setAlpha( 0 )
 				self.clipFinished( BMBribeOffertime0, {} )
+
 				BMTrifectaOffertime:completeAnimation()
 				self.BMTrifectaOffertime:setAlpha( 0 )
 				self.clipFinished( BMTrifectaOffertime, {} )
+
 				BMRareDiscountOfferTime:completeAnimation()
 				self.BMRareDiscountOfferTime:setAlpha( 0 )
 				self.clipFinished( BMRareDiscountOfferTime, {} )
+
 				BMHundredBundleOfferTime:completeAnimation()
 				self.BMHundredBundleOfferTime:setAlpha( 0 )
 				self.clipFinished( BMHundredBundleOfferTime, {} )
+
 				BMNoDupesBundleOfferTime:completeAnimation()
 				self.BMNoDupesBundleOfferTime:setAlpha( 1 )
 				self.clipFinished( BMNoDupesBundleOfferTime, {} )
+
 				BMGrandSlamOfferTime:completeAnimation()
 				self.BMGrandSlamOfferTime:setAlpha( 0 )
 				self.clipFinished( BMGrandSlamOfferTime, {} )
@@ -542,29 +600,37 @@ CoD.BM_BundleOffertime.new = function ( menu, controller )
 		GrandSlam = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BMBribeOfferTime:completeAnimation()
 				self.BMBribeOfferTime:setAlpha( 0 )
 				self.clipFinished( BMBribeOfferTime, {} )
+
 				Label00:completeAnimation()
 				self.Label00:setLeftRight( false, false, -176, 176 )
 				self.Label00:setTopBottom( true, false, -14, 16 )
 				self.Label00:setAlpha( 0 )
 				self.clipFinished( Label00, {} )
+
 				BMBribeOffertime0:completeAnimation()
 				self.BMBribeOffertime0:setAlpha( 0 )
 				self.clipFinished( BMBribeOffertime0, {} )
+
 				BMTrifectaOffertime:completeAnimation()
 				self.BMTrifectaOffertime:setAlpha( 0 )
 				self.clipFinished( BMTrifectaOffertime, {} )
+
 				BMRareDiscountOfferTime:completeAnimation()
 				self.BMRareDiscountOfferTime:setAlpha( 0 )
 				self.clipFinished( BMRareDiscountOfferTime, {} )
+
 				BMHundredBundleOfferTime:completeAnimation()
 				self.BMHundredBundleOfferTime:setAlpha( 0 )
 				self.clipFinished( BMHundredBundleOfferTime, {} )
+
 				BMNoDupesBundleOfferTime:completeAnimation()
 				self.BMNoDupesBundleOfferTime:setAlpha( 0 )
 				self.clipFinished( BMNoDupesBundleOfferTime, {} )
+
 				BMGrandSlamOfferTime:completeAnimation()
 				self.BMGrandSlamOfferTime:setAlpha( 1 )
 				self.clipFinished( BMGrandSlamOfferTime, {} )
@@ -573,36 +639,46 @@ CoD.BM_BundleOffertime.new = function ( menu, controller )
 		RareBundle10for5 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				BMBribeOfferTime:completeAnimation()
 				self.BMBribeOfferTime:setAlpha( 0 )
 				self.clipFinished( BMBribeOfferTime, {} )
+
 				Label00:completeAnimation()
 				self.Label00:setAlpha( 0 )
 				self.clipFinished( Label00, {} )
+
 				BMBribeOffertime0:completeAnimation()
 				self.BMBribeOffertime0:setAlpha( 0 )
 				self.clipFinished( BMBribeOffertime0, {} )
+
 				BMTrifectaOffertime:completeAnimation()
 				self.BMTrifectaOffertime:setAlpha( 0 )
 				self.clipFinished( BMTrifectaOffertime, {} )
+
 				BMRareDiscountOfferTime:completeAnimation()
 				self.BMRareDiscountOfferTime:setAlpha( 0 )
 				self.clipFinished( BMRareDiscountOfferTime, {} )
+
 				BMHundredBundleOfferTime:completeAnimation()
 				self.BMHundredBundleOfferTime:setAlpha( 0 )
 				self.clipFinished( BMHundredBundleOfferTime, {} )
+
 				BMNoDupesBundleOfferTime:completeAnimation()
 				self.BMNoDupesBundleOfferTime:setAlpha( 0 )
 				self.clipFinished( BMNoDupesBundleOfferTime, {} )
+
 				BMGrandSlamOfferTime:completeAnimation()
 				self.BMGrandSlamOfferTime:setAlpha( 0 )
 				self.clipFinished( BMGrandSlamOfferTime, {} )
+
 				BMRareBundle10for5OfferTime:completeAnimation()
 				self.BMRareBundle10for5OfferTime:setAlpha( 1 )
 				self.clipFinished( BMRareBundle10for5OfferTime, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Bundle",
@@ -661,6 +737,7 @@ CoD.BM_BundleOffertime.new = function ( menu, controller )
 			modelName = "supplyDropType"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BMBribeOfferTime:close()
 		element.BMBribeOffertime0:close()

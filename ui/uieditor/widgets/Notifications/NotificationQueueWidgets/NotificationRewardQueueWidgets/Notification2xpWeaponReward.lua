@@ -4,9 +4,11 @@
 CoD.Notification2xpWeaponReward = InheritFrom( LUI.UIElement )
 CoD.Notification2xpWeaponReward.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Notification2xpWeaponReward )
 	self.id = "Notification2xpWeaponReward"
@@ -35,6 +37,7 @@ CoD.Notification2xpWeaponReward.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				XPLabel:completeAnimation()
 				self.XPLabel:setLeftRight( true, false, -76, 124 )
 				self.XPLabel:setTopBottom( true, false, 15, 33 )
@@ -42,14 +45,17 @@ CoD.Notification2xpWeaponReward.new = function ( menu, controller )
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Combined = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		french = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				XPLabel:completeAnimation()
 				self.XPLabel:setLeftRight( true, false, -76, 124 )
 				self.XPLabel:setTopBottom( true, false, 17, 31 )
@@ -59,6 +65,7 @@ CoD.Notification2xpWeaponReward.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "french",

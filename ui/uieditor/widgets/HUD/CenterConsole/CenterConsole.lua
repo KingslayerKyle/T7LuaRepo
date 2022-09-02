@@ -10,9 +10,11 @@ end
 CoD.CenterConsole = InheritFrom( LUI.UIElement )
 CoD.CenterConsole.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CenterConsole )
 	self.id = "CenterConsole"

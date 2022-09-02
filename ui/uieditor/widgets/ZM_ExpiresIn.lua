@@ -4,9 +4,11 @@
 CoD.ZM_ExpiresIn = InheritFrom( LUI.UIElement )
 CoD.ZM_ExpiresIn.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZM_ExpiresIn )
 	self.id = "ZM_ExpiresIn"
@@ -65,6 +67,7 @@ CoD.ZM_ExpiresIn.new = function ( menu, controller )
 	Text:setRGB( 0, 0, 0 )
 	Text:setText( Engine.Localize( "Expires in : 17:12:13" ) )
 	Text:setTTF( "fonts/FoundryGridnik-Medium.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( Text, "setText", function ( element, controller )
 		ScaleWidgetToLabelRightAligned( self, element, 0 )
 	end )
@@ -75,24 +78,31 @@ CoD.ZM_ExpiresIn.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				DLCLabelYellowRight:completeAnimation()
 				self.DLCLabelYellowRight:setAlpha( 1 )
 				self.clipFinished( DLCLabelYellowRight, {} )
+
 				DLCLabelYellowCenter:completeAnimation()
 				self.DLCLabelYellowCenter:setAlpha( 1 )
 				self.clipFinished( DLCLabelYellowCenter, {} )
+
 				DLCLabelYellowLeft:completeAnimation()
 				self.DLCLabelYellowLeft:setAlpha( 1 )
 				self.clipFinished( DLCLabelYellowLeft, {} )
+
 				DLCLabelGreyRight:completeAnimation()
 				self.DLCLabelGreyRight:setAlpha( 0 )
 				self.clipFinished( DLCLabelGreyRight, {} )
+
 				DLCLabelGreyCenter:completeAnimation()
 				self.DLCLabelGreyCenter:setAlpha( 0 )
 				self.clipFinished( DLCLabelGreyCenter, {} )
+
 				DLCLabelGreyLeft:completeAnimation()
 				self.DLCLabelGreyLeft:setAlpha( 0 )
 				self.clipFinished( DLCLabelGreyLeft, {} )
+
 				Text:completeAnimation()
 				self.Text:setAlpha( 1 )
 				self.clipFinished( Text, {} )

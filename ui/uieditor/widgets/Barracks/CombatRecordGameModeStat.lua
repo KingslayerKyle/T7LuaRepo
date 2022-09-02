@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_frame_noBG" )
 CoD.CombatRecordGameModeStat = InheritFrom( LUI.UIElement )
 CoD.CombatRecordGameModeStat.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CombatRecordGameModeStat )
 	self.id = "CombatRecordGameModeStat"
@@ -74,6 +76,7 @@ CoD.CombatRecordGameModeStat.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				StatComparisonValue:completeAnimation()
 				self.StatComparisonValue:setAlpha( 0 )
 				self.clipFinished( StatComparisonValue, {} )
@@ -82,12 +85,14 @@ CoD.CombatRecordGameModeStat.new = function ( menu, controller )
 		Comparison = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				StatComparisonValue:completeAnimation()
 				self.StatComparisonValue:setAlpha( 1 )
 				self.clipFinished( StatComparisonValue, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Comparison",
@@ -120,6 +125,7 @@ CoD.CombatRecordGameModeStat.new = function ( menu, controller )
 			modelName = "OtherPlayerStats.Success"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG0:close()
 		element.StartMenuframenoBG00:close()

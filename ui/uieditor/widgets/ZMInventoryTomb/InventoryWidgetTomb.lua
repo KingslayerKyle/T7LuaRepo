@@ -12,9 +12,11 @@ require( "ui.uieditor.widgets.ZMInventoryTomb.ChallengesCompletedWidgetTomb" )
 CoD.InventoryWidgetTomb = InheritFrom( LUI.UIElement )
 CoD.InventoryWidgetTomb.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.InventoryWidgetTomb )
 	self.id = "InventoryWidgetTomb"
@@ -231,42 +233,55 @@ CoD.InventoryWidgetTomb.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				BubbleGumPackInGame:completeAnimation()
 				self.BubbleGumPackInGame:setAlpha( 0 )
 				self.clipFinished( BubbleGumPackInGame, {} )
+
 				ElementalStaffsWidget:completeAnimation()
 				self.ElementalStaffsWidget:setAlpha( 0 )
 				self.clipFinished( ElementalStaffsWidget, {} )
+
 				RocketShieldWidgetTomb:completeAnimation()
 				self.RocketShieldWidgetTomb:setAlpha( 0 )
 				self.clipFinished( RocketShieldWidgetTomb, {} )
+
 				MaxisDroneBlueprintWidgetTomb:completeAnimation()
 				self.MaxisDroneBlueprintWidgetTomb:setAlpha( 0 )
 				self.clipFinished( MaxisDroneBlueprintWidgetTomb, {} )
+
 				CaptureGeneratorWheelWidgetTomb:completeAnimation()
 				self.CaptureGeneratorWheelWidgetTomb:setAlpha( 0 )
 				self.clipFinished( CaptureGeneratorWheelWidgetTomb, {} )
+
 				MusicalPartsWidgetTomb:completeAnimation()
 				self.MusicalPartsWidgetTomb:setAlpha( 0 )
 				self.clipFinished( MusicalPartsWidgetTomb, {} )
+
 				MusicalPartsText:completeAnimation()
 				self.MusicalPartsText:setAlpha( 0 )
 				self.clipFinished( MusicalPartsText, {} )
+
 				StaffPartsText:completeAnimation()
 				self.StaffPartsText:setAlpha( 0 )
 				self.clipFinished( StaffPartsText, {} )
+
 				MaxisDroneText:completeAnimation()
 				self.MaxisDroneText:setAlpha( 0 )
 				self.clipFinished( MaxisDroneText, {} )
+
 				ZombieShieldText:completeAnimation()
 				self.ZombieShieldText:setAlpha( 0 )
 				self.clipFinished( ZombieShieldText, {} )
+
 				CapturesText:completeAnimation()
 				self.CapturesText:setAlpha( 0 )
 				self.clipFinished( CapturesText, {} )
+
 				ChallengesCompletedWidgetTomb:completeAnimation()
 				self.ChallengesCompletedWidgetTomb:setAlpha( 0 )
 				self.clipFinished( ChallengesCompletedWidgetTomb, {} )
@@ -275,48 +290,62 @@ CoD.InventoryWidgetTomb.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 13 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 1 )
 				self.clipFinished( bg, {} )
+
 				BubbleGumPackInGame:completeAnimation()
 				self.BubbleGumPackInGame:setAlpha( 1 )
 				self.clipFinished( BubbleGumPackInGame, {} )
+
 				ElementalStaffsWidget:completeAnimation()
 				self.ElementalStaffsWidget:setAlpha( 1 )
 				self.clipFinished( ElementalStaffsWidget, {} )
+
 				RocketShieldWidgetTomb:completeAnimation()
 				self.RocketShieldWidgetTomb:setAlpha( 1 )
 				self.clipFinished( RocketShieldWidgetTomb, {} )
+
 				MaxisDroneBlueprintWidgetTomb:completeAnimation()
 				self.MaxisDroneBlueprintWidgetTomb:setAlpha( 1 )
 				self.clipFinished( MaxisDroneBlueprintWidgetTomb, {} )
+
 				CaptureGeneratorWheelWidgetTomb:completeAnimation()
 				self.CaptureGeneratorWheelWidgetTomb:setAlpha( 1 )
 				self.clipFinished( CaptureGeneratorWheelWidgetTomb, {} )
+
 				MusicalPartsWidgetTomb:completeAnimation()
 				self.MusicalPartsWidgetTomb:setAlpha( 1 )
 				self.clipFinished( MusicalPartsWidgetTomb, {} )
+
 				MusicalPartsText:completeAnimation()
 				self.MusicalPartsText:setAlpha( 1 )
 				self.clipFinished( MusicalPartsText, {} )
+
 				StaffPartsText:completeAnimation()
 				self.StaffPartsText:setAlpha( 1 )
 				self.clipFinished( StaffPartsText, {} )
+
 				MaxisDroneText:completeAnimation()
 				self.MaxisDroneText:setAlpha( 1 )
 				self.clipFinished( MaxisDroneText, {} )
+
 				ZombieShieldText:completeAnimation()
 				self.ZombieShieldText:setAlpha( 1 )
 				self.clipFinished( ZombieShieldText, {} )
+
 				CapturesText:completeAnimation()
 				self.CapturesText:setAlpha( 1 )
 				self.clipFinished( CapturesText, {} )
+
 				ChallengesCompletedWidgetTomb:completeAnimation()
 				self.ChallengesCompletedWidgetTomb:setAlpha( 1 )
 				self.clipFinished( ChallengesCompletedWidgetTomb, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -333,6 +362,7 @@ CoD.InventoryWidgetTomb.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BubbleGumPackInGame:close()
 		element.ElementalStaffsWidget:close()

@@ -13,9 +13,11 @@ require( "ui.uieditor.widgets.CAC.MenuSelectScreen.WeaponNameWidget" )
 CoD.Challenges_CallingCardProfiler_NearCompletion = InheritFrom( LUI.UIElement )
 CoD.Challenges_CallingCardProfiler_NearCompletion.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_CallingCardProfiler_NearCompletion )
 	self.id = "Challenges_CallingCardProfiler_NearCompletion"
@@ -247,54 +249,71 @@ CoD.Challenges_CallingCardProfiler_NearCompletion.new = function ( menu, control
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
+
 				TierText:completeAnimation()
 				self.TierText:setAlpha( 0 )
 				self.clipFinished( TierText, {} )
+
 				ProgressBar:completeAnimation()
 				self.ProgressBar:setAlpha( 0 )
 				self.clipFinished( ProgressBar, {} )
+
 				ProgressBarBorder:completeAnimation()
 				self.ProgressBarBorder:setAlpha( 0 )
 				self.clipFinished( ProgressBarBorder, {} )
+
 				ProgressFraction:completeAnimation()
 				self.ProgressFraction:setAlpha( 0 )
 				self.clipFinished( ProgressFraction, {} )
+
 				TierStatus:completeAnimation()
 				self.TierStatus:setAlpha( 0 )
 				self.clipFinished( TierStatus, {} )
+
 				TierList:completeAnimation()
 				self.TierList:setAlpha( 0 )
 				self.clipFinished( TierList, {} )
+
 				XPIcon:completeAnimation()
 				self.XPIcon:setAlpha( 0 )
 				self.clipFinished( XPIcon, {} )
+
 				XPText:completeAnimation()
 				self.XPText:setAlpha( 0 )
 				self.clipFinished( XPText, {} )
+
 				BoxButtonLrgInactiveDiag0:completeAnimation()
 				self.BoxButtonLrgInactiveDiag0:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag0, {} )
+
 				Image100:completeAnimation()
 				self.Image100:setAlpha( 0 )
 				self.clipFinished( Image100, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				Image6:completeAnimation()
 				self.Image6:setAlpha( 0 )
 				self.clipFinished( Image6, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 0 )
 				self.clipFinished( Image1, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setAlpha( 0 )
 				self.clipFinished( Image2, {} )
+
 				Image3:completeAnimation()
 				self.Image3:setAlpha( 0 )
 				self.clipFinished( Image3, {} )
@@ -303,62 +322,79 @@ CoD.Challenges_CallingCardProfiler_NearCompletion.new = function ( menu, control
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0.4 )
 				self.clipFinished( TitleBg, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setLeftRight( true, false, 141, 173 )
 				self.lockedIcon:setTopBottom( true, false, 30.4, 62.4 )
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
+
 				TierText:completeAnimation()
 				self.TierText:setLeftRight( true, false, 165, 256 )
 				self.TierText:setTopBottom( true, false, 36.5, 60.5 )
 				self.TierText:setAlpha( 1 )
 				self.clipFinished( TierText, {} )
+
 				ProgressBar:completeAnimation()
 				self.ProgressBar:setAlpha( 1 )
 				self.clipFinished( ProgressBar, {} )
+
 				ProgressBarBorder:completeAnimation()
 				self.ProgressBarBorder:setAlpha( 1 )
 				self.clipFinished( ProgressBarBorder, {} )
+
 				ProgressFraction:completeAnimation()
 				self.ProgressFraction:setAlpha( 1 )
 				self.clipFinished( ProgressFraction, {} )
+
 				TierStatus:completeAnimation()
 				self.TierStatus:setAlpha( 1 )
 				self.clipFinished( TierStatus, {} )
+
 				TierList:completeAnimation()
 				self.TierList:setAlpha( 1 )
 				self.clipFinished( TierList, {} )
+
 				XPIcon:completeAnimation()
 				self.XPIcon:setAlpha( 0 )
 				self.clipFinished( XPIcon, {} )
+
 				XPText:completeAnimation()
 				self.XPText:setAlpha( 0 )
 				self.clipFinished( XPText, {} )
+
 				BoxButtonLrgInactiveDiag0:completeAnimation()
 				self.BoxButtonLrgInactiveDiag0:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactiveDiag0, {} )
+
 				Image100:completeAnimation()
 				self.Image100:setAlpha( 0.5 )
 				self.clipFinished( Image100, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, true, 3, -2 )
 				self.Image0:setTopBottom( false, false, 112, 114 )
 				self.Image0:setAlpha( 0.5 )
 				self.clipFinished( Image0, {} )
+
 				Image6:completeAnimation()
 				self.Image6:setAlpha( 0.66 )
 				self.clipFinished( Image6, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setLeftRight( false, true, -36.5, 0 )
 				self.Image1:setTopBottom( false, false, 109, 117 )
 				self.Image1:setAlpha( 0.66 )
 				self.clipFinished( Image1, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setAlpha( 0.66 )
 				self.clipFinished( Image2, {} )
+
 				Image3:completeAnimation()
 				self.Image3:setLeftRight( true, false, 1.75, 38.25 )
 				self.Image3:setTopBottom( false, false, 109, 117 )
@@ -369,60 +405,77 @@ CoD.Challenges_CallingCardProfiler_NearCompletion.new = function ( menu, control
 		LockedOneTier = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 17 )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0.4 )
 				self.clipFinished( TitleBg, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setLeftRight( true, false, 168, 200 )
 				self.lockedIcon:setTopBottom( true, false, 30, 62 )
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
+
 				TierText:completeAnimation()
 				self.TierText:setAlpha( 0 )
 				self.clipFinished( TierText, {} )
+
 				ProgressBar:completeAnimation()
 				self.ProgressBar:setAlpha( 1 )
 				self.clipFinished( ProgressBar, {} )
+
 				ProgressBarBorder:completeAnimation()
 				self.ProgressBarBorder:setAlpha( 1 )
 				self.clipFinished( ProgressBarBorder, {} )
+
 				ProgressFraction:completeAnimation()
 				self.ProgressFraction:setAlpha( 1 )
 				self.clipFinished( ProgressFraction, {} )
+
 				TierStatus:completeAnimation()
 				self.TierStatus:setAlpha( 0 )
 				self.clipFinished( TierStatus, {} )
+
 				TierList:completeAnimation()
 				self.TierList:setAlpha( 0 )
 				self.clipFinished( TierList, {} )
+
 				XPIcon:completeAnimation()
 				self.XPIcon:setAlpha( 1 )
 				self.clipFinished( XPIcon, {} )
+
 				XPText:completeAnimation()
 				self.XPText:setAlpha( 1 )
 				self.clipFinished( XPText, {} )
+
 				BoxButtonLrgInactiveDiag0:completeAnimation()
 				self.BoxButtonLrgInactiveDiag0:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgInactiveDiag0, {} )
+
 				Image100:completeAnimation()
 				self.Image100:setAlpha( 0.5 )
 				self.clipFinished( Image100, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, true, 3, -2 )
 				self.Image0:setTopBottom( false, false, 155, 157 )
 				self.Image0:setAlpha( 0.5 )
 				self.clipFinished( Image0, {} )
+
 				Image6:completeAnimation()
 				self.Image6:setAlpha( 0.66 )
 				self.clipFinished( Image6, {} )
+
 				Image1:completeAnimation()
 				self.Image1:setLeftRight( false, true, -36.5, 0 )
 				self.Image1:setTopBottom( false, false, 152, 160 )
 				self.Image1:setAlpha( 0.66 )
 				self.clipFinished( Image1, {} )
+
 				Image2:completeAnimation()
 				self.Image2:setAlpha( 0.66 )
 				self.clipFinished( Image2, {} )
+
 				Image3:completeAnimation()
 				self.Image3:setLeftRight( true, false, 1.75, 38.25 )
 				self.Image3:setTopBottom( false, false, 152, 160 )
@@ -431,6 +484,7 @@ CoD.Challenges_CallingCardProfiler_NearCompletion.new = function ( menu, control
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -461,6 +515,7 @@ CoD.Challenges_CallingCardProfiler_NearCompletion.new = function ( menu, control
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactiveDiag:close()
 		element.BoxButtonLrgInactive:close()

@@ -4,9 +4,11 @@
 CoD.CombatRecordCallingCardDescription = InheritFrom( LUI.UIElement )
 CoD.CombatRecordCallingCardDescription.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CombatRecordCallingCardDescription )
 	self.id = "CombatRecordCallingCardDescription"
@@ -40,6 +42,7 @@ CoD.CombatRecordCallingCardDescription.new = function ( menu, controller )
 	textCenterAlign:setLetterSpacing( 0.5 )
 	textCenterAlign:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	textCenterAlign:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( textCenterAlign, "setText", function ( element, controller )
 		ScaleWidgetToLabelCenteredWrapped( self, element, 8, 8 )
 	end )
@@ -50,12 +53,15 @@ CoD.CombatRecordCallingCardDescription.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				black:completeAnimation()
 				self.black:setAlpha( 1 )
 				self.clipFinished( black, {} )
+
 				cachitBG0:completeAnimation()
 				self.cachitBG0:setAlpha( 1 )
 				self.clipFinished( cachitBG0, {} )
+
 				textCenterAlign:completeAnimation()
 				self.textCenterAlign:setAlpha( 1 )
 				self.clipFinished( textCenterAlign, {} )
@@ -64,12 +70,15 @@ CoD.CombatRecordCallingCardDescription.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				black:completeAnimation()
 				self.black:setAlpha( 0 )
 				self.clipFinished( black, {} )
+
 				cachitBG0:completeAnimation()
 				self.cachitBG0:setAlpha( 0 )
 				self.clipFinished( cachitBG0, {} )
+
 				textCenterAlign:completeAnimation()
 				self.textCenterAlign:setAlpha( 0 )
 				self.clipFinished( textCenterAlign, {} )

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Scrollbars.verticalScrollbar" )
 CoD.Friends_InboxTab = InheritFrom( LUI.UIElement )
 CoD.Friends_InboxTab.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Friends_InboxTab )
 	self.id = "Friends_InboxTab"
@@ -72,6 +74,7 @@ CoD.Friends_InboxTab.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.listMessages:close()
 	end )

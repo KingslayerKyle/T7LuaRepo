@@ -16,9 +16,11 @@ end
 CoD.OverClipContainer = InheritFrom( LUI.UIElement )
 CoD.OverClipContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.OverClipContainer )
 	self.id = "OverClipContainer"
@@ -40,18 +42,21 @@ CoD.OverClipContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 1 )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 1 )
 				self.clipFinished( Glow2, {} )
 			end,
 			GainOver = function ()
 				self:setupElementClipCounter( 1 )
+
 				local Glow2Frame2 = function ( Glow2, event )
 					if not event.interrupted then
 						Glow2:beginAnimation( "keyframe", 250, false, false, CoD.TweenType.Linear )
@@ -70,6 +75,7 @@ CoD.OverClipContainer.new = function ( menu, controller )
 			end,
 			LoseOver = function ()
 				self:setupElementClipCounter( 1 )
+
 				local Glow2Frame2 = function ( Glow2, event )
 					if not event.interrupted then
 						Glow2:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -90,12 +96,14 @@ CoD.OverClipContainer.new = function ( menu, controller )
 		HIdden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HIdden",

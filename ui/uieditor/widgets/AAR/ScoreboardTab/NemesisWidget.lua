@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.AAR.ScoreboardTab.NemesisScoreWidget" )
 CoD.NemesisWidget = InheritFrom( LUI.UIElement )
 CoD.NemesisWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.NemesisWidget )
 	self.id = "NemesisWidget"
@@ -91,17 +93,20 @@ CoD.NemesisWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		DefaultStateArabic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 				self.clipFinished( TextBox0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DefaultStateArabic",
@@ -110,6 +115,7 @@ CoD.NemesisWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEListHeaderGlow0:close()
 		element.KilledBy:close()

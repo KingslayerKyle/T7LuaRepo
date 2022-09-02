@@ -4,9 +4,11 @@
 CoD.LobbyProcessQueueDebugItemText = InheritFrom( LUI.UIElement )
 CoD.LobbyProcessQueueDebugItemText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbyProcessQueueDebugItemText )
 	self.id = "LobbyProcessQueueDebugItemText"
@@ -28,11 +30,13 @@ CoD.LobbyProcessQueueDebugItemText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Pending = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Name:completeAnimation()
 				self.Name:setRGB( 1, 1, 1 )
 				self.clipFinished( Name, {} )
@@ -41,6 +45,7 @@ CoD.LobbyProcessQueueDebugItemText.new = function ( menu, controller )
 		Running = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Name:completeAnimation()
 				self.Name:setRGB( 0, 1, 0.04 )
 				self.clipFinished( Name, {} )
@@ -49,6 +54,7 @@ CoD.LobbyProcessQueueDebugItemText.new = function ( menu, controller )
 		Success = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Name:completeAnimation()
 				self.Name:setRGB( 1, 1, 1 )
 				self.clipFinished( Name, {} )
@@ -57,6 +63,7 @@ CoD.LobbyProcessQueueDebugItemText.new = function ( menu, controller )
 		Failure = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Name:completeAnimation()
 				self.Name:setRGB( 1, 0.96, 0 )
 				self.clipFinished( Name, {} )
@@ -65,6 +72,7 @@ CoD.LobbyProcessQueueDebugItemText.new = function ( menu, controller )
 		Error = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Name:completeAnimation()
 				self.Name:setRGB( 1, 0.01, 0 )
 				self.clipFinished( Name, {} )
@@ -73,12 +81,14 @@ CoD.LobbyProcessQueueDebugItemText.new = function ( menu, controller )
 		Throttled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Name:completeAnimation()
 				self.Name:setRGB( 0, 0.82, 1 )
 				self.clipFinished( Name, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Pending",

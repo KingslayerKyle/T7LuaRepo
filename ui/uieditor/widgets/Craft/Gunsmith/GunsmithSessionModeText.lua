@@ -4,9 +4,11 @@
 CoD.GunsmithSessionModeText = InheritFrom( LUI.UIElement )
 CoD.GunsmithSessionModeText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunsmithSessionModeText )
 	self.id = "GunsmithSessionModeText"
@@ -19,6 +21,7 @@ CoD.GunsmithSessionModeText.new = function ( menu, controller )
 	modeText:setTopBottom( true, false, 0, 25 )
 	modeText:setText( Engine.Localize( "MENU_MULTIPLAYER_CAPS" ) )
 	modeText:setTTF( "fonts/default.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( modeText, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )
@@ -29,6 +32,7 @@ CoD.GunsmithSessionModeText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

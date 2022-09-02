@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.GunsmithAttachmentItemButton = InheritFrom( LUI.UIElement )
 CoD.GunsmithAttachmentItemButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunsmithAttachmentItemButton )
 	self.id = "GunsmithAttachmentItemButton"
@@ -104,27 +106,32 @@ CoD.GunsmithAttachmentItemButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setLeftRight( true, true, 0, 0 )
 				self.BorderBakedMask0:setTopBottom( true, true, 0, 0 )
 				self.BorderBakedMask0:setAlpha( 0.5 )
 				self.BorderBakedMask0:setZoom( 0 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setLeftRight( true, true, 0, 0 )
 				self.BorderBakedSolid0:setTopBottom( true, true, 0, 0 )
 				self.BorderBakedSolid0:setAlpha( 0.6 )
 				self.BorderBakedSolid0:setZoom( 0 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				border:completeAnimation()
 				self.border:setLeftRight( true, true, 0, 0 )
 				self.border:setTopBottom( true, true, 0, 3.31 )
 				self.border:setRGB( 0.58, 0.58, 0.6 )
 				self.border:setZoom( 0 )
 				self.clipFinished( border, {} )
+
 				FocusFooter:completeAnimation()
 				self.FocusFooter:setAlpha( 0 )
 				self.clipFinished( FocusFooter, {} )
+
 				FocusHeader:completeAnimation()
 				self.FocusHeader:setLeftRight( true, true, 31.33, -31.33 )
 				self.FocusHeader:setTopBottom( true, false, -1, 4.34 )
@@ -132,17 +139,20 @@ CoD.GunsmithAttachmentItemButton.new = function ( menu, controller )
 				self.FocusHeader:setAlpha( 1 )
 				self.FocusHeader:setZoom( 0 )
 				self.clipFinished( FocusHeader, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setLeftRight( true, true, 16.5, -16.5 )
 				self.itemImage:setTopBottom( true, true, 8, -25 )
 				self.itemImage:setAlpha( 0.8 )
 				self.itemImage:setZoom( 0 )
 				self.clipFinished( itemImage, {} )
+
 				itemLabel:completeAnimation()
 				self.itemLabel:setLeftRight( true, true, 0, 0 )
 				self.itemLabel:setTopBottom( false, true, -19, -6 )
 				self.itemLabel:setZoom( 0 )
 				self.clipFinished( itemLabel, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setRGB( 0.56, 0.68, 0.27 )
 				self.equippedIcon:setAlpha( 0 )
@@ -150,46 +160,54 @@ CoD.GunsmithAttachmentItemButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setLeftRight( true, true, -0.5, 0.5 )
 				self.BorderBakedMask0:setTopBottom( true, true, -0.5, 0.5 )
 				self.BorderBakedMask0:setAlpha( 0.9 )
 				self.BorderBakedMask0:setZoom( 50 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setLeftRight( true, true, -0.5, 0.5 )
 				self.BorderBakedSolid0:setTopBottom( true, true, -0.5, 0.5 )
 				self.BorderBakedSolid0:setAlpha( 1 )
 				self.BorderBakedSolid0:setZoom( 50 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				border:completeAnimation()
 				self.border:setRGB( 1, 0.41, 0 )
 				self.border:setAlpha( 0 )
 				self.border:setZoom( 10 )
 				self.clipFinished( border, {} )
+
 				FocusFooter:completeAnimation()
 				self.FocusFooter:setLeftRight( true, true, -4, 4 )
 				self.FocusFooter:setTopBottom( false, true, -1, 5 )
 				self.FocusFooter:setAlpha( 1 )
 				self.FocusFooter:setZoom( 50 )
 				self.clipFinished( FocusFooter, {} )
+
 				FocusHeader:completeAnimation()
 				self.FocusHeader:setLeftRight( true, true, 31.33, -31.33 )
 				self.FocusHeader:setTopBottom( true, false, -8.34, -3 )
 				self.FocusHeader:setRGB( 0.91, 0.39, 0.05 )
 				self.FocusHeader:setZoom( 50 )
 				self.clipFinished( FocusHeader, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setLeftRight( true, true, 16.79, -16.79 )
 				self.itemImage:setTopBottom( true, true, 7.71, -24.71 )
 				self.itemImage:setAlpha( 1 )
 				self.itemImage:setZoom( 50 )
 				self.clipFinished( itemImage, {} )
+
 				itemLabel:completeAnimation()
 				self.itemLabel:setLeftRight( true, true, -4, 4 )
 				self.itemLabel:setTopBottom( false, true, -19.46, -5.54 )
 				self.itemLabel:setZoom( 50 )
 				self.clipFinished( itemLabel, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setRGB( 0.56, 0.68, 0.27 )
 				self.equippedIcon:setAlpha( 0 )
@@ -197,6 +215,7 @@ CoD.GunsmithAttachmentItemButton.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				local BorderBakedMask0Frame2 = function ( BorderBakedMask0, event )
 					if not event.interrupted then
 						BorderBakedMask0:beginAnimation( "keyframe", 150, false, true, CoD.TweenType.Back )
@@ -317,6 +336,7 @@ CoD.GunsmithAttachmentItemButton.new = function ( menu, controller )
 				self.itemLabel:setTopBottom( false, true, -19, -6 )
 				self.itemLabel:setZoom( 0 )
 				itemLabelFrame2( itemLabel, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setRGB( 0.56, 0.68, 0.27 )
 				self.equippedIcon:setAlpha( 0 )
@@ -324,6 +344,7 @@ CoD.GunsmithAttachmentItemButton.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				local BorderBakedMask0Frame2 = function ( BorderBakedMask0, event )
 					if not event.interrupted then
 						BorderBakedMask0:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -444,6 +465,7 @@ CoD.GunsmithAttachmentItemButton.new = function ( menu, controller )
 				self.itemLabel:setTopBottom( false, true, -19.46, -5.54 )
 				self.itemLabel:setZoom( 50 )
 				itemLabelFrame2( itemLabel, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setRGB( 0.56, 0.68, 0.27 )
 				self.equippedIcon:setAlpha( 0 )
@@ -453,27 +475,32 @@ CoD.GunsmithAttachmentItemButton.new = function ( menu, controller )
 		Equipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setLeftRight( true, true, 0, 0 )
 				self.BorderBakedMask0:setTopBottom( true, true, 0, 0 )
 				self.BorderBakedMask0:setAlpha( 0.5 )
 				self.BorderBakedMask0:setZoom( 0 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setLeftRight( true, true, 0, 0 )
 				self.BorderBakedSolid0:setTopBottom( true, true, 0, 0 )
 				self.BorderBakedSolid0:setAlpha( 0.6 )
 				self.BorderBakedSolid0:setZoom( 0 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				border:completeAnimation()
 				self.border:setLeftRight( true, true, 0, 0 )
 				self.border:setTopBottom( true, true, 0, 3.31 )
 				self.border:setRGB( 0.58, 0.58, 0.6 )
 				self.border:setZoom( 0 )
 				self.clipFinished( border, {} )
+
 				FocusFooter:completeAnimation()
 				self.FocusFooter:setAlpha( 0 )
 				self.clipFinished( FocusFooter, {} )
+
 				FocusHeader:completeAnimation()
 				self.FocusHeader:setLeftRight( true, true, 31.33, -31.33 )
 				self.FocusHeader:setTopBottom( true, false, -1, 4.34 )
@@ -481,17 +508,20 @@ CoD.GunsmithAttachmentItemButton.new = function ( menu, controller )
 				self.FocusHeader:setAlpha( 1 )
 				self.FocusHeader:setZoom( 0 )
 				self.clipFinished( FocusHeader, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setLeftRight( true, true, 16.5, -16.5 )
 				self.itemImage:setTopBottom( true, true, 8, -25 )
 				self.itemImage:setAlpha( 0.8 )
 				self.itemImage:setZoom( 0 )
 				self.clipFinished( itemImage, {} )
+
 				itemLabel:completeAnimation()
 				self.itemLabel:setLeftRight( true, true, 0, 0 )
 				self.itemLabel:setTopBottom( false, true, -19, -6 )
 				self.itemLabel:setZoom( 0 )
 				self.clipFinished( itemLabel, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setRGB( 0.56, 0.68, 0.27 )
 				self.equippedIcon:setAlpha( 1 )
@@ -499,46 +529,54 @@ CoD.GunsmithAttachmentItemButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 8 )
+
 				BorderBakedMask0:completeAnimation()
 				self.BorderBakedMask0:setLeftRight( true, true, -0.5, 0.5 )
 				self.BorderBakedMask0:setTopBottom( true, true, -0.5, 0.5 )
 				self.BorderBakedMask0:setAlpha( 0.9 )
 				self.BorderBakedMask0:setZoom( 50 )
 				self.clipFinished( BorderBakedMask0, {} )
+
 				BorderBakedSolid0:completeAnimation()
 				self.BorderBakedSolid0:setLeftRight( true, true, -0.5, 0.5 )
 				self.BorderBakedSolid0:setTopBottom( true, true, -0.5, 0.5 )
 				self.BorderBakedSolid0:setAlpha( 1 )
 				self.BorderBakedSolid0:setZoom( 50 )
 				self.clipFinished( BorderBakedSolid0, {} )
+
 				border:completeAnimation()
 				self.border:setRGB( 1, 0.41, 0 )
 				self.border:setAlpha( 0 )
 				self.border:setZoom( 10 )
 				self.clipFinished( border, {} )
+
 				FocusFooter:completeAnimation()
 				self.FocusFooter:setLeftRight( true, true, -4, 4 )
 				self.FocusFooter:setTopBottom( false, true, -1, 5 )
 				self.FocusFooter:setAlpha( 1 )
 				self.FocusFooter:setZoom( 50 )
 				self.clipFinished( FocusFooter, {} )
+
 				FocusHeader:completeAnimation()
 				self.FocusHeader:setLeftRight( true, true, 31.33, -31.33 )
 				self.FocusHeader:setTopBottom( true, false, -8.34, -3 )
 				self.FocusHeader:setRGB( 0.91, 0.39, 0.05 )
 				self.FocusHeader:setZoom( 50 )
 				self.clipFinished( FocusHeader, {} )
+
 				itemImage:completeAnimation()
 				self.itemImage:setLeftRight( true, true, 16.79, -16.79 )
 				self.itemImage:setTopBottom( true, true, 7.71, -24.71 )
 				self.itemImage:setAlpha( 1 )
 				self.itemImage:setZoom( 50 )
 				self.clipFinished( itemImage, {} )
+
 				itemLabel:completeAnimation()
 				self.itemLabel:setLeftRight( true, true, -4, 4 )
 				self.itemLabel:setTopBottom( false, true, -19.46, -5.54 )
 				self.itemLabel:setZoom( 50 )
 				self.clipFinished( itemLabel, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setRGB( 0.56, 0.68, 0.27 )
 				self.equippedIcon:setAlpha( 1 )
@@ -546,6 +584,7 @@ CoD.GunsmithAttachmentItemButton.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				local BorderBakedMask0Frame2 = function ( BorderBakedMask0, event )
 					if not event.interrupted then
 						BorderBakedMask0:beginAnimation( "keyframe", 150, false, true, CoD.TweenType.Back )
@@ -666,6 +705,7 @@ CoD.GunsmithAttachmentItemButton.new = function ( menu, controller )
 				self.itemLabel:setTopBottom( false, true, -19, -6 )
 				self.itemLabel:setZoom( 0 )
 				itemLabelFrame2( itemLabel, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setRGB( 0.56, 0.68, 0.27 )
 				self.equippedIcon:setAlpha( 1 )
@@ -673,6 +713,7 @@ CoD.GunsmithAttachmentItemButton.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 7 )
+
 				local BorderBakedMask0Frame2 = function ( BorderBakedMask0, event )
 					if not event.interrupted then
 						BorderBakedMask0:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -793,6 +834,7 @@ CoD.GunsmithAttachmentItemButton.new = function ( menu, controller )
 				self.itemLabel:setTopBottom( false, true, -19.46, -5.54 )
 				self.itemLabel:setZoom( 50 )
 				itemLabelFrame2( itemLabel, {} )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setRGB( 0.56, 0.68, 0.27 )
 				self.equippedIcon:setAlpha( 1 )
@@ -800,6 +842,7 @@ CoD.GunsmithAttachmentItemButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BorderBakedMask0:close()
 		element.BorderBakedSolid0:close()

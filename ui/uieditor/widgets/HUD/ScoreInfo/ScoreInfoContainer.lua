@@ -23,9 +23,11 @@ end
 CoD.ScoreInfoContainer = InheritFrom( LUI.UIElement )
 CoD.ScoreInfoContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreInfoContainer )
 	self.id = "ScoreInfoContainer"
@@ -189,6 +191,7 @@ CoD.ScoreInfoContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ScoreInfo:completeAnimation()
 				self.ScoreInfo:setAlpha( 1 )
 				self.clipFinished( ScoreInfo, {} )
@@ -197,6 +200,7 @@ CoD.ScoreInfoContainer.new = function ( menu, controller )
 		HudPause = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ScoreInfoFrame2 = function ( ScoreInfo, event )
 					if not event.interrupted then
 						ScoreInfo:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -215,6 +219,7 @@ CoD.ScoreInfoContainer.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ScoreInfoFrame2 = function ( ScoreInfo, event )
 					if not event.interrupted then
 						ScoreInfo:beginAnimation( "keyframe", 150, false, false, CoD.TweenType.Linear )
@@ -235,12 +240,14 @@ CoD.ScoreInfoContainer.new = function ( menu, controller )
 		HideForCodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ScoreInfo:completeAnimation()
 				self.ScoreInfo:setAlpha( 0 )
 				self.clipFinished( ScoreInfo, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HudPause",
@@ -415,6 +422,7 @@ CoD.ScoreInfoContainer.new = function ( menu, controller )
 			modelName = "CodCaster.profileSettingsUpdated"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ScoreInfo:close()
 	end )

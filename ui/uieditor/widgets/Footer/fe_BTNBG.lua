@@ -4,9 +4,11 @@
 CoD.fe_BTNBG = InheritFrom( LUI.UIElement )
 CoD.fe_BTNBG.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.fe_BTNBG )
 	self.id = "fe_BTNBG"
@@ -45,12 +47,15 @@ CoD.fe_BTNBG.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				left:completeAnimation()
 				self.left:setAlpha( 1 )
 				self.clipFinished( left, {} )
+
 				Right:completeAnimation()
 				self.Right:setAlpha( 1 )
 				self.clipFinished( Right, {} )
+
 				line:completeAnimation()
 				self.line:setAlpha( 1 )
 				self.clipFinished( line, {} )
@@ -59,14 +64,17 @@ CoD.fe_BTNBG.new = function ( menu, controller )
 		Transparent = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				left:completeAnimation()
 				self.left:setRGB( 0, 0, 0 )
 				self.left:setAlpha( 1 )
 				self.clipFinished( left, {} )
+
 				Right:completeAnimation()
 				self.Right:setRGB( 0, 0, 0 )
 				self.Right:setAlpha( 1 )
 				self.clipFinished( Right, {} )
+
 				line:completeAnimation()
 				self.line:setRGB( 0, 0, 0 )
 				self.line:setAlpha( 1 )
@@ -74,6 +82,7 @@ CoD.fe_BTNBG.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 3 )
+
 				local leftFrame2 = function ( left, event )
 					if not event.interrupted then
 						left:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Linear )
@@ -128,6 +137,7 @@ CoD.fe_BTNBG.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Transparent",

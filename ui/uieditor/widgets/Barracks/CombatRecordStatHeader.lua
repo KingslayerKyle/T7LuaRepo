@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BorderThin" )
 CoD.CombatRecordStatHeader = InheritFrom( LUI.UIElement )
 CoD.CombatRecordStatHeader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CombatRecordStatHeader )
 	self.id = "CombatRecordStatHeader"
@@ -75,9 +77,11 @@ CoD.CombatRecordStatHeader.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ComparedStatValue:completeAnimation()
 				self.ComparedStatValue:setAlpha( 0 )
 				self.clipFinished( ComparedStatValue, {} )
+
 				BorderThin00:completeAnimation()
 				self.BorderThin00:setAlpha( 0 )
 				self.clipFinished( BorderThin00, {} )
@@ -86,15 +90,18 @@ CoD.CombatRecordStatHeader.new = function ( menu, controller )
 		Comparing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				ComparedStatValue:completeAnimation()
 				self.ComparedStatValue:setAlpha( 1 )
 				self.clipFinished( ComparedStatValue, {} )
+
 				BorderThin00:completeAnimation()
 				self.BorderThin00:setAlpha( 1 )
 				self.clipFinished( BorderThin00, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Comparing",
@@ -127,6 +134,7 @@ CoD.CombatRecordStatHeader.new = function ( menu, controller )
 			modelName = "OtherPlayerStats.Success"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BorderThin0:close()
 		element.BorderThin00:close()

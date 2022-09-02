@@ -20,9 +20,11 @@ end
 CoD.GobbleGumCookbookListItem = InheritFrom( LUI.UIElement )
 CoD.GobbleGumCookbookListItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GobbleGumCookbookListItem )
 	self.id = "GobbleGumCookbookListItem"
@@ -145,12 +147,14 @@ CoD.GobbleGumCookbookListItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CookbookArrowWidget0:completeAnimation()
 				self.CookbookArrowWidget0:setAlpha( 0 )
 				self.clipFinished( CookbookArrowWidget0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
+
 				CookbookArrowWidget0:completeAnimation()
 				self.CookbookArrowWidget0:setAlpha( 1 )
 				self.clipFinished( CookbookArrowWidget0, {} )
@@ -165,6 +169,7 @@ CoD.GobbleGumCookbookListItem.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GobbleGumCookBookIcon:close()
 		element.cacButtonBoxLrgInactiveStroke0:close()

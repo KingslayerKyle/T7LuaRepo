@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventory.FuseBox.FuseWidget" )
 CoD.FuseBoxWidget = InheritFrom( LUI.UIElement )
 CoD.FuseBoxWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FuseBoxWidget )
 	self.id = "FuseBoxWidget"
@@ -188,15 +190,19 @@ CoD.FuseBoxWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				FuseBoxBg:completeAnimation()
 				self.FuseBoxBg:setAlpha( 0 )
 				self.clipFinished( FuseBoxBg, {} )
+
 				FuseWidget1:completeAnimation()
 				self.FuseWidget1:setAlpha( 0 )
 				self.clipFinished( FuseWidget1, {} )
+
 				FuseWidget2:completeAnimation()
 				self.FuseWidget2:setAlpha( 0 )
 				self.clipFinished( FuseWidget2, {} )
+
 				FuseWidget3:completeAnimation()
 				self.FuseWidget3:setAlpha( 0 )
 				self.clipFinished( FuseWidget3, {} )
@@ -205,6 +211,7 @@ CoD.FuseBoxWidget.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local FuseBoxBgFrame2 = function ( FuseBoxBg, event )
 					local FuseBoxBgFrame3 = function ( FuseBoxBg, event )
 						local FuseBoxBgFrame4 = function ( FuseBoxBg, event )
@@ -241,12 +248,15 @@ CoD.FuseBoxWidget.new = function ( menu, controller )
 				FuseBoxBg:completeAnimation()
 				self.FuseBoxBg:setAlpha( 0 )
 				FuseBoxBgFrame2( FuseBoxBg, {} )
+
 				FuseWidget1:completeAnimation()
 				self.FuseWidget1:setAlpha( 1 )
 				self.clipFinished( FuseWidget1, {} )
+
 				FuseWidget2:completeAnimation()
 				self.FuseWidget2:setAlpha( 1 )
 				self.clipFinished( FuseWidget2, {} )
+
 				FuseWidget3:completeAnimation()
 				self.FuseWidget3:setAlpha( 1 )
 				self.clipFinished( FuseWidget3, {} )
@@ -255,21 +265,26 @@ CoD.FuseBoxWidget.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				FuseBoxBg:completeAnimation()
 				self.FuseBoxBg:setAlpha( 0 )
 				self.clipFinished( FuseBoxBg, {} )
+
 				FuseWidget1:completeAnimation()
 				self.FuseWidget1:setAlpha( 1 )
 				self.clipFinished( FuseWidget1, {} )
+
 				FuseWidget2:completeAnimation()
 				self.FuseWidget2:setAlpha( 1 )
 				self.clipFinished( FuseWidget2, {} )
+
 				FuseWidget3:completeAnimation()
 				self.FuseWidget3:setAlpha( 1 )
 				self.clipFinished( FuseWidget3, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BgVisible",
@@ -300,6 +315,7 @@ CoD.FuseBoxWidget.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FuseWidget1:close()
 		element.FuseWidget2:close()

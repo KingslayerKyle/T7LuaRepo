@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.SpecialContracts.SpecialContracts_Timer" )
 CoD.SpecialContracts_SelectionButton = InheritFrom( LUI.UIElement )
 CoD.SpecialContracts_SelectionButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpecialContracts_SelectionButton )
 	self.id = "SpecialContracts_SelectionButton"
@@ -184,21 +186,26 @@ CoD.SpecialContracts_SelectionButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				NineSliceShaderImage:completeAnimation()
 				self.NineSliceShaderImage:setAlpha( 0 )
 				self.clipFinished( NineSliceShaderImage, {} )
+
 				SpecialContractsStateIndicator:completeAnimation()
 				self.SpecialContractsStateIndicator:setAlpha( 1 )
 				self.clipFinished( SpecialContractsStateIndicator, {} )
+
 				Complted:completeAnimation()
 				self.Complted:setAlpha( 0 )
 				self.clipFinished( Complted, {} )
+
 				ActiveArrow:completeAnimation()
 				self.ActiveArrow:setAlpha( 0 )
 				self.clipFinished( ActiveArrow, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local NineSliceShaderImageFrame2 = function ( NineSliceShaderImage, event )
 					if not event.interrupted then
 						NineSliceShaderImage:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -247,6 +254,7 @@ CoD.SpecialContracts_SelectionButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local NineSliceShaderImageFrame2 = function ( NineSliceShaderImage, event )
 					local NineSliceShaderImageFrame3 = function ( NineSliceShaderImage, event )
 						if not event.interrupted then
@@ -328,6 +336,7 @@ CoD.SpecialContracts_SelectionButton.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local NineSliceShaderImageFrame2 = function ( NineSliceShaderImage, event )
 					if not event.interrupted then
 						NineSliceShaderImage:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -378,24 +387,30 @@ CoD.SpecialContracts_SelectionButton.new = function ( menu, controller )
 		AllComplete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				NineSliceShaderImage:completeAnimation()
 				self.NineSliceShaderImage:setAlpha( 0 )
 				self.clipFinished( NineSliceShaderImage, {} )
+
 				SpecialContractsStateIndicator:completeAnimation()
 				self.SpecialContractsStateIndicator:setAlpha( 0 )
 				self.clipFinished( SpecialContractsStateIndicator, {} )
+
 				Complted:completeAnimation()
 				self.Complted:setAlpha( 1 )
 				self.clipFinished( Complted, {} )
+
 				ActiveArrow:completeAnimation()
 				self.ActiveArrow:setAlpha( 0 )
 				self.clipFinished( ActiveArrow, {} )
+
 				Timer:completeAnimation()
 				self.Timer:setAlpha( 0 )
 				self.clipFinished( Timer, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local NineSliceShaderImageFrame2 = function ( NineSliceShaderImage, event )
 					if not event.interrupted then
 						NineSliceShaderImage:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -444,6 +459,7 @@ CoD.SpecialContracts_SelectionButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local NineSliceShaderImageFrame2 = function ( NineSliceShaderImage, event )
 					local NineSliceShaderImageFrame3 = function ( NineSliceShaderImage, event )
 						if not event.interrupted then
@@ -525,6 +541,7 @@ CoD.SpecialContracts_SelectionButton.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local NineSliceShaderImageFrame2 = function ( NineSliceShaderImage, event )
 					if not event.interrupted then
 						NineSliceShaderImage:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -575,24 +592,30 @@ CoD.SpecialContracts_SelectionButton.new = function ( menu, controller )
 		Complete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				NineSliceShaderImage:completeAnimation()
 				self.NineSliceShaderImage:setAlpha( 0 )
 				self.clipFinished( NineSliceShaderImage, {} )
+
 				SpecialContractsStateIndicator:completeAnimation()
 				self.SpecialContractsStateIndicator:setAlpha( 0 )
 				self.clipFinished( SpecialContractsStateIndicator, {} )
+
 				Complted:completeAnimation()
 				self.Complted:setAlpha( 1 )
 				self.clipFinished( Complted, {} )
+
 				ActiveArrow:completeAnimation()
 				self.ActiveArrow:setAlpha( 0 )
 				self.clipFinished( ActiveArrow, {} )
+
 				Timer:completeAnimation()
 				self.Timer:setAlpha( 0 )
 				self.clipFinished( Timer, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local NineSliceShaderImageFrame2 = function ( NineSliceShaderImage, event )
 					if not event.interrupted then
 						NineSliceShaderImage:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -641,6 +664,7 @@ CoD.SpecialContracts_SelectionButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local NineSliceShaderImageFrame2 = function ( NineSliceShaderImage, event )
 					local NineSliceShaderImageFrame3 = function ( NineSliceShaderImage, event )
 						if not event.interrupted then
@@ -722,6 +746,7 @@ CoD.SpecialContracts_SelectionButton.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local NineSliceShaderImageFrame2 = function ( NineSliceShaderImage, event )
 					if not event.interrupted then
 						NineSliceShaderImage:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -772,21 +797,26 @@ CoD.SpecialContracts_SelectionButton.new = function ( menu, controller )
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				NineSliceShaderImage:completeAnimation()
 				self.NineSliceShaderImage:setAlpha( 0 )
 				self.clipFinished( NineSliceShaderImage, {} )
+
 				SpecialContractsStateIndicator:completeAnimation()
 				self.SpecialContractsStateIndicator:setAlpha( 0 )
 				self.clipFinished( SpecialContractsStateIndicator, {} )
+
 				Complted:completeAnimation()
 				self.Complted:setAlpha( 0 )
 				self.clipFinished( Complted, {} )
+
 				ActiveArrow:completeAnimation()
 				self.ActiveArrow:setAlpha( 1 )
 				self.clipFinished( ActiveArrow, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local NineSliceShaderImageFrame2 = function ( NineSliceShaderImage, event )
 					if not event.interrupted then
 						NineSliceShaderImage:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -835,6 +865,7 @@ CoD.SpecialContracts_SelectionButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local NineSliceShaderImageFrame2 = function ( NineSliceShaderImage, event )
 					local NineSliceShaderImageFrame3 = function ( NineSliceShaderImage, event )
 						if not event.interrupted then
@@ -916,6 +947,7 @@ CoD.SpecialContracts_SelectionButton.new = function ( menu, controller )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local NineSliceShaderImageFrame2 = function ( NineSliceShaderImage, event )
 					if not event.interrupted then
 						NineSliceShaderImage:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -964,6 +996,7 @@ CoD.SpecialContracts_SelectionButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "AllComplete",
@@ -992,6 +1025,7 @@ CoD.SpecialContracts_SelectionButton.new = function ( menu, controller )
 			modelName = "isComplete"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RewardImage:close()
 		element.SpecialContractsStateIndicator:close()

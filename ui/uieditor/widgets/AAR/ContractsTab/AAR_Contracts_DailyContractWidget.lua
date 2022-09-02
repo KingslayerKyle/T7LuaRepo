@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.AAR.ContractsTab.AAR_Contracts_DoubleCryptokeys" )
 CoD.AAR_Contracts_DailyContractWidget = InheritFrom( LUI.UIElement )
 CoD.AAR_Contracts_DailyContractWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AAR_Contracts_DailyContractWidget )
 	self.id = "AAR_Contracts_DailyContractWidget"
@@ -95,12 +97,15 @@ CoD.AAR_Contracts_DailyContractWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				CategoryListLine000:completeAnimation()
 				self.CategoryListLine000:setAlpha( 0.15 )
 				self.clipFinished( CategoryListLine000, {} )
+
 				AARContractsDoubleCryptokeys:completeAnimation()
 				self.AARContractsDoubleCryptokeys:setAlpha( 1 )
 				self.clipFinished( AARContractsDoubleCryptokeys, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 0 )
 				self.clipFinished( CompletedIcon, {} )
@@ -109,9 +114,11 @@ CoD.AAR_Contracts_DailyContractWidget.new = function ( menu, controller )
 		InvalidContract = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				CategoryListLine000:completeAnimation()
 				self.CategoryListLine000:setAlpha( 0 )
 				self.clipFinished( CategoryListLine000, {} )
+
 				AARContractsDoubleCryptokeys:completeAnimation()
 				self.AARContractsDoubleCryptokeys:setAlpha( 0 )
 				self.clipFinished( AARContractsDoubleCryptokeys, {} )
@@ -120,18 +127,22 @@ CoD.AAR_Contracts_DailyContractWidget.new = function ( menu, controller )
 		Completed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				CategoryListLine000:completeAnimation()
 				self.CategoryListLine000:setAlpha( 0 )
 				self.clipFinished( CategoryListLine000, {} )
+
 				AARContractsDoubleCryptokeys:completeAnimation()
 				self.AARContractsDoubleCryptokeys:setAlpha( 0 )
 				self.clipFinished( AARContractsDoubleCryptokeys, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 1 )
 				self.clipFinished( CompletedIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "InvalidContract",
@@ -155,6 +166,7 @@ CoD.AAR_Contracts_DailyContractWidget.new = function ( menu, controller )
 		} )
 	end )
 	ContractProgress.id = "ContractProgress"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel0:close()
 		element.BMContractsAARtitle:close()

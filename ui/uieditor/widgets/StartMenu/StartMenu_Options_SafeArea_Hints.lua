@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.buttonprompt" )
 CoD.StartMenu_Options_SafeArea_Hints = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_SafeArea_Hints.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_SafeArea_Hints )
 	self.id = "StartMenu_Options_SafeArea_Hints"
@@ -127,33 +129,43 @@ CoD.StartMenu_Options_SafeArea_Hints.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				InstructionText:completeAnimation()
 				self.InstructionText:setAlpha( 0 )
 				self.clipFinished( InstructionText, {} )
+
 				HorizontalAdjustment:completeAnimation()
 				self.HorizontalAdjustment:setAlpha( 0 )
 				self.clipFinished( HorizontalAdjustment, {} )
+
 				VerticalAdjustment:completeAnimation()
 				self.VerticalAdjustment:setAlpha( 0 )
 				self.clipFinished( VerticalAdjustment, {} )
+
 				SafeAreaAdjustment:completeAnimation()
 				self.SafeAreaAdjustment:setAlpha( 0 )
 				self.clipFinished( SafeAreaAdjustment, {} )
+
 				ConfirmButtonPrompt:completeAnimation()
 				self.ConfirmButtonPrompt:setAlpha( 0 )
 				self.clipFinished( ConfirmButtonPrompt, {} )
+
 				GotItButtonPrompt:completeAnimation()
 				self.GotItButtonPrompt:setAlpha( 1 )
 				self.clipFinished( GotItButtonPrompt, {} )
+
 				DisplayAreaAdjustment:completeAnimation()
 				self.DisplayAreaAdjustment:setAlpha( 1 )
 				self.clipFinished( DisplayAreaAdjustment, {} )
+
 				BestResults:completeAnimation()
 				self.BestResults:setAlpha( 1 )
 				self.clipFinished( BestResults, {} )
+
 				SettingPS4:completeAnimation()
 				self.SettingPS4:setAlpha( 1 )
 				self.clipFinished( SettingPS4, {} )
+
 				AdjustInSoundAndScreen:completeAnimation()
 				self.AdjustInSoundAndScreen:setAlpha( 1 )
 				self.clipFinished( AdjustInSoundAndScreen, {} )
@@ -162,39 +174,50 @@ CoD.StartMenu_Options_SafeArea_Hints.new = function ( menu, controller )
 		Durango = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				InstructionText:completeAnimation()
 				self.InstructionText:setAlpha( 1 )
 				self.clipFinished( InstructionText, {} )
+
 				HorizontalAdjustment:completeAnimation()
 				self.HorizontalAdjustment:setAlpha( 1 )
 				self.clipFinished( HorizontalAdjustment, {} )
+
 				VerticalAdjustment:completeAnimation()
 				self.VerticalAdjustment:setAlpha( 1 )
 				self.clipFinished( VerticalAdjustment, {} )
+
 				SafeAreaAdjustment:completeAnimation()
 				self.SafeAreaAdjustment:setAlpha( 1 )
 				self.clipFinished( SafeAreaAdjustment, {} )
+
 				ConfirmButtonPrompt:completeAnimation()
 				self.ConfirmButtonPrompt:setAlpha( 1 )
 				self.clipFinished( ConfirmButtonPrompt, {} )
+
 				GotItButtonPrompt:completeAnimation()
 				self.GotItButtonPrompt:setAlpha( 0 )
 				self.clipFinished( GotItButtonPrompt, {} )
+
 				DisplayAreaAdjustment:completeAnimation()
 				self.DisplayAreaAdjustment:setAlpha( 0 )
 				self.clipFinished( DisplayAreaAdjustment, {} )
+
 				BestResults:completeAnimation()
 				self.BestResults:setAlpha( 0 )
 				self.clipFinished( BestResults, {} )
+
 				SettingPS4:completeAnimation()
 				self.SettingPS4:setAlpha( 0 )
 				self.clipFinished( SettingPS4, {} )
+
 				AdjustInSoundAndScreen:completeAnimation()
 				self.AdjustInSoundAndScreen:setAlpha( 0 )
 				self.clipFinished( AdjustInSoundAndScreen, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Durango",
@@ -203,6 +226,7 @@ CoD.StartMenu_Options_SafeArea_Hints.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ConfirmButtonPrompt:close()
 		element.GotItButtonPrompt:close()

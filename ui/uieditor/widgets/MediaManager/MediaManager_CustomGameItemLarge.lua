@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.StartMenu.StartMenu_frame_noBG" )
 CoD.MediaManager_CustomGameItemLarge = InheritFrom( LUI.UIElement )
 CoD.MediaManager_CustomGameItemLarge.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MediaManager_CustomGameItemLarge )
 	self.id = "MediaManager_CustomGameItemLarge"
@@ -90,24 +92,31 @@ CoD.MediaManager_CustomGameItemLarge.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0.4 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				GameTypeImage:completeAnimation()
 				self.GameTypeImage:setAlpha( 1 )
 				self.clipFinished( GameTypeImage, {} )
+
 				NameBg:completeAnimation()
 				self.NameBg:setAlpha( 0.8 )
 				self.clipFinished( NameBg, {} )
+
 				Name:completeAnimation()
 				self.Name:setAlpha( 1 )
 				self.clipFinished( Name, {} )
+
 				GameTypeName:completeAnimation()
 				self.GameTypeName:setAlpha( 1 )
 				self.clipFinished( GameTypeName, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 0.85 )
 				self.clipFinished( StartMenuframenoBG0, {} )
@@ -116,30 +125,38 @@ CoD.MediaManager_CustomGameItemLarge.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				BG:completeAnimation()
 				self.BG:setAlpha( 0 )
 				self.clipFinished( BG, {} )
+
 				BoxButtonLrgIdle:completeAnimation()
 				self.BoxButtonLrgIdle:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgIdle, {} )
+
 				GameTypeImage:completeAnimation()
 				self.GameTypeImage:setAlpha( 0 )
 				self.clipFinished( GameTypeImage, {} )
+
 				NameBg:completeAnimation()
 				self.NameBg:setAlpha( 0 )
 				self.clipFinished( NameBg, {} )
+
 				Name:completeAnimation()
 				self.Name:setAlpha( 0 )
 				self.clipFinished( Name, {} )
+
 				GameTypeName:completeAnimation()
 				self.GameTypeName:setAlpha( 0 )
 				self.clipFinished( GameTypeName, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 0 )
 				self.clipFinished( StartMenuframenoBG0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -156,6 +173,7 @@ CoD.MediaManager_CustomGameItemLarge.new = function ( menu, controller )
 			modelName = "MediaManager.slotsUsed"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgIdle:close()
 		element.StartMenuframenoBG0:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.FractureTimer.FractureTimer" )
 CoD.FractureOverlay = InheritFrom( LUI.UIElement )
 CoD.FractureOverlay.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FractureOverlay )
 	self.id = "FractureOverlay"
@@ -42,6 +44,7 @@ CoD.FractureOverlay.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DepositStatus:completeAnimation()
 				self.DepositStatus:setLeftRight( true, false, 37, 344 )
 				self.DepositStatus:setTopBottom( true, false, 192, 224 )
@@ -52,6 +55,7 @@ CoD.FractureOverlay.new = function ( menu, controller )
 		HideForCodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DepositStatus:completeAnimation()
 				self.DepositStatus:setAlpha( 0 )
 				self.clipFinished( DepositStatus, {} )
@@ -60,6 +64,7 @@ CoD.FractureOverlay.new = function ( menu, controller )
 		CodCasterLargeMinimap = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DepositStatus:completeAnimation()
 				self.DepositStatus:setLeftRight( true, false, 37, 344 )
 				self.DepositStatus:setTopBottom( true, false, 245, 277 )
@@ -70,6 +75,7 @@ CoD.FractureOverlay.new = function ( menu, controller )
 		CodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DepositStatus:completeAnimation()
 				self.DepositStatus:setLeftRight( true, false, 37, 344 )
 				self.DepositStatus:setTopBottom( true, false, 192, 224 )
@@ -78,6 +84,7 @@ CoD.FractureOverlay.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HideForCodCaster",
@@ -114,6 +121,7 @@ CoD.FractureOverlay.new = function ( menu, controller )
 			modelName = "CodCaster.profileSettingsUpdated"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.DepositStatus:close()
 	end )

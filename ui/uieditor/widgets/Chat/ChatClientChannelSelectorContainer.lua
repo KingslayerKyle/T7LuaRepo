@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Chat.ChatClientChannelSelectorMenu" )
 CoD.ChatClientChannelSelectorContainer = InheritFrom( LUI.UIElement )
 CoD.ChatClientChannelSelectorContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChatClientChannelSelectorContainer )
 	self.id = "ChatClientChannelSelectorContainer"
@@ -30,6 +32,7 @@ CoD.ChatClientChannelSelectorContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ChatClientChannelSelectorMenu:completeAnimation()
 				self.ChatClientChannelSelectorMenu:setLeftRight( true, false, 0, 110 )
 				self.ChatClientChannelSelectorMenu:setTopBottom( true, false, 1, 76 )
@@ -40,12 +43,14 @@ CoD.ChatClientChannelSelectorContainer.new = function ( menu, controller )
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ChatClientChannelSelectorMenu:completeAnimation()
 				self.ChatClientChannelSelectorMenu:setAlpha( 0 )
 				self.clipFinished( ChatClientChannelSelectorMenu, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ChatClientChannelSelectorMenu:close()
 	end )

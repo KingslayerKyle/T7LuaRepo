@@ -4,9 +4,11 @@
 CoD.CallingCards_SciFi_Steam = InheritFrom( LUI.UIElement )
 CoD.CallingCards_SciFi_Steam.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_SciFi_Steam )
 	self.id = "CallingCards_SciFi_Steam"
@@ -33,6 +35,7 @@ CoD.CallingCards_SciFi_Steam.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local SteamFrame2 = function ( Steam, event )
 					local SteamFrame3 = function ( Steam, event )
 						local SteamFrame4 = function ( Steam, event )
@@ -135,6 +138,7 @@ CoD.CallingCards_SciFi_Steam.new = function ( menu, controller )
 				self.Steam0:setAlpha( 0 )
 				self.Steam0:setScale( 0.9 )
 				Steam0Frame2( Steam0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

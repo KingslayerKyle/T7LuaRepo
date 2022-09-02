@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.cac_CybercoreMainTile = InheritFrom( LUI.UIElement )
 CoD.cac_CybercoreMainTile.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_CybercoreMainTile )
 	self.id = "cac_CybercoreMainTile"
@@ -40,6 +42,7 @@ CoD.cac_CybercoreMainTile.new = function ( menu, controller )
 			name:setText( Engine.Localize( _name ) )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( name, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )
@@ -50,12 +53,14 @@ CoD.cac_CybercoreMainTile.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				name:completeAnimation()
 				self.name:setAlpha( 1 )
 				self.clipFinished( name, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.cacItemTitleGlow0:close()
 		element.name:close()

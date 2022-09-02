@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_Bribe_Expires" )
 CoD.BM_BundleFrame = InheritFrom( LUI.UIElement )
 CoD.BM_BundleFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_BundleFrame )
 	self.id = "BM_BundleFrame"
@@ -75,21 +77,27 @@ CoD.BM_BundleFrame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BundleFrame:completeAnimation()
 				self.BundleFrame:setAlpha( 1 )
 				self.clipFinished( BundleFrame, {} )
+
 				BundleBigBoxFrame:completeAnimation()
 				self.BundleBigBoxFrame:setAlpha( 0 )
 				self.clipFinished( BundleBigBoxFrame, {} )
+
 				Wires:completeAnimation()
 				self.Wires:setAlpha( 0 )
 				self.clipFinished( Wires, {} )
+
 				BMBribetitle:completeAnimation()
 				self.BMBribetitle:setAlpha( 1 )
 				self.clipFinished( BMBribetitle, {} )
+
 				ExpiresWidget:completeAnimation()
 				self.ExpiresWidget:setAlpha( 1 )
 				self.clipFinished( ExpiresWidget, {} )
+
 				BribeChip:completeAnimation()
 				self.BribeChip:setAlpha( 0 )
 				self.clipFinished( BribeChip, {} )
@@ -98,27 +106,34 @@ CoD.BM_BundleFrame.new = function ( menu, controller )
 		GoldFrame = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				BundleFrame:completeAnimation()
 				self.BundleFrame:setAlpha( 0 )
 				self.clipFinished( BundleFrame, {} )
+
 				BundleBigBoxFrame:completeAnimation()
 				self.BundleBigBoxFrame:setAlpha( 1 )
 				self.clipFinished( BundleBigBoxFrame, {} )
+
 				Wires:completeAnimation()
 				self.Wires:setAlpha( 0 )
 				self.clipFinished( Wires, {} )
+
 				BMBribetitle:completeAnimation()
 				self.BMBribetitle:setAlpha( 1 )
 				self.clipFinished( BMBribetitle, {} )
+
 				ExpiresWidget:completeAnimation()
 				self.ExpiresWidget:setAlpha( 1 )
 				self.clipFinished( ExpiresWidget, {} )
+
 				BribeChip:completeAnimation()
 				self.BribeChip:setAlpha( 0 )
 				self.clipFinished( BribeChip, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BMBribetitle:close()
 		element.ExpiresWidget:close()

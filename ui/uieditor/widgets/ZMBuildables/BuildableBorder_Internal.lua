@@ -4,9 +4,11 @@
 CoD.BuildableBorder_Internal = InheritFrom( LUI.UIElement )
 CoD.BuildableBorder_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.BuildableBorder_Internal )
 	self.id = "BuildableBorder_Internal"

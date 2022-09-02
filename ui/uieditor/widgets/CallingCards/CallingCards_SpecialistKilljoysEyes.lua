@@ -4,9 +4,11 @@
 CoD.CallingCards_SpecialistKilljoysEyes = InheritFrom( LUI.UIElement )
 CoD.CallingCards_SpecialistKilljoysEyes.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_SpecialistKilljoysEyes )
 	self.id = "CallingCards_SpecialistKilljoysEyes"
@@ -25,6 +27,7 @@ CoD.CallingCards_SpecialistKilljoysEyes.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local maneyesFrame2 = function ( maneyes, event )
 					local maneyesFrame3 = function ( maneyes, event )
 						local maneyesFrame4 = function ( maneyes, event )
@@ -183,6 +186,7 @@ CoD.CallingCards_SpecialistKilljoysEyes.new = function ( menu, controller )
 				maneyes:completeAnimation()
 				self.maneyes:setAlpha( 1 )
 				maneyesFrame2( maneyes, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

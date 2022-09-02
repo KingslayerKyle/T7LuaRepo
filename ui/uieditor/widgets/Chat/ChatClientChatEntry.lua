@@ -36,9 +36,11 @@ end
 CoD.ChatClientChatEntry = InheritFrom( LUI.UIElement )
 CoD.ChatClientChatEntry.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChatClientChatEntry )
 	self.id = "ChatClientChatEntry"
@@ -69,6 +71,7 @@ CoD.ChatClientChatEntry.new = function ( menu, controller )
 	entryNameText:setTTF( "fonts/default.ttf" )
 	entryNameText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	entryNameText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( entryNameText, "setText", function ( element, controller )
 		
 	end )
@@ -141,9 +144,11 @@ CoD.ChatClientChatEntry.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0.7 )
 				self.clipFinished( Background, {} )
+
 				Border:completeAnimation()
 				self.Border:setAlpha( 0 )
 				self.clipFinished( Border, {} )
@@ -152,12 +157,14 @@ CoD.ChatClientChatEntry.new = function ( menu, controller )
 		InGame = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0.4 )
 				self.clipFinished( Background, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "InGame",
@@ -166,6 +173,7 @@ CoD.ChatClientChatEntry.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Border:close()
 		element.entryBodyText:close()

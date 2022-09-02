@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CodCaster.CodCasterPlayerListHeaderObjectiveColumn
 CoD.CodCasterPlayerListHeaderWidget = InheritFrom( LUI.UIElement )
 CoD.CodCasterPlayerListHeaderWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterPlayerListHeaderWidget )
 	self.id = "CodCasterPlayerListHeaderWidget"
@@ -113,9 +115,11 @@ CoD.CodCasterPlayerListHeaderWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TeamName:completeAnimation()
 				self.TeamName:setAlpha( 1 )
 				self.clipFinished( TeamName, {} )
+
 				TeamColor:completeAnimation()
 				self.TeamColor:setAlpha( 1 )
 				self.clipFinished( TeamColor, {} )
@@ -124,15 +128,18 @@ CoD.CodCasterPlayerListHeaderWidget.new = function ( menu, controller )
 		NonTeamBased = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				TeamName:completeAnimation()
 				self.TeamName:setAlpha( 0 )
 				self.clipFinished( TeamName, {} )
+
 				TeamColor:completeAnimation()
 				self.TeamColor:setAlpha( 0 )
 				self.clipFinished( TeamColor, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NonTeamBased",
@@ -141,6 +148,7 @@ CoD.CodCasterPlayerListHeaderWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TEMPScoreColumn2Header:close()
 		element.TEMPScoreColumn3Header:close()

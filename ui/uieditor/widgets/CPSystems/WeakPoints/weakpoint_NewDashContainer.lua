@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CPSystems.WeakPoints.weakpoint_NewDash" )
 CoD.weakpoint_NewDashContainer = InheritFrom( LUI.UIElement )
 CoD.weakpoint_NewDashContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.weakpoint_NewDashContainer )
 	self.id = "weakpoint_NewDashContainer"

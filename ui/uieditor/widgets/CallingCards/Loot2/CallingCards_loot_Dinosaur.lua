@@ -4,9 +4,11 @@
 CoD.CallingCards_loot_Dinosaur = InheritFrom( LUI.UIElement )
 CoD.CallingCards_loot_Dinosaur.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_loot_Dinosaur )
 	self.id = "CallingCards_loot_Dinosaur"
@@ -63,6 +65,7 @@ CoD.CallingCards_loot_Dinosaur.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local Glow00Frame2 = function ( Glow00, event )
 					local Glow00Frame3 = function ( Glow00, event )
 						local Glow00Frame4 = function ( Glow00, event )
@@ -328,6 +331,7 @@ CoD.CallingCards_loot_Dinosaur.new = function ( menu, controller )
 				self.glow2:setAlpha( 0 )
 				self.glow2:setScale( 1 )
 				glow2Frame2( glow2, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

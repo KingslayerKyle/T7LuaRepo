@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_LockBig" )
 CoD.scorestreakPreview = InheritFrom( LUI.UIElement )
 CoD.scorestreakPreview.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.scorestreakPreview )
 	self.id = "scorestreakPreview"
@@ -43,16 +45,19 @@ CoD.scorestreakPreview.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				highlightedImage:completeAnimation()
 				self.highlightedImage:setRGB( 1, 1, 1 )
 				self.highlightedImage:setAlpha( 1 )
 				self.clipFinished( highlightedImage, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 0 )
 				self.clipFinished( lockedIcon, {} )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 1 )
+
 				local f5_local0 = function ( f6_arg0, f6_arg1 )
 					if not f6_arg1.interrupted then
 						f6_arg0:beginAnimation( "keyframe", 219, false, false, CoD.TweenType.Bounce )
@@ -73,10 +78,12 @@ CoD.scorestreakPreview.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				highlightedImage:completeAnimation()
 				self.highlightedImage:setRGB( 1, 1, 1 )
 				self.highlightedImage:setAlpha( 0 )
 				self.clipFinished( highlightedImage, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
@@ -85,16 +92,19 @@ CoD.scorestreakPreview.new = function ( menu, controller )
 		NotAvailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				highlightedImage:completeAnimation()
 				self.highlightedImage:setRGB( 0.26, 0.89, 1 )
 				self.highlightedImage:setAlpha( 0.4 )
 				self.clipFinished( highlightedImage, {} )
+
 				lockedIcon:completeAnimation()
 				self.lockedIcon:setAlpha( 1 )
 				self.clipFinished( lockedIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -117,6 +127,7 @@ CoD.scorestreakPreview.new = function ( menu, controller )
 			modelName = "itemIndex"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.lockedIcon:close()
 		element.highlightedImage:close()

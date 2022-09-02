@@ -4,9 +4,11 @@
 CoD.AmmoWidget_CleanCarryCountContainer = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_CleanCarryCountContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_CleanCarryCountContainer )
 	self.id = "AmmoWidget_CleanCarryCountContainer"
@@ -32,17 +34,20 @@ CoD.AmmoWidget_CleanCarryCountContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Hide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CarriedTagCount:completeAnimation()
 				self.CarriedTagCount:setAlpha( 0 )
 				self.clipFinished( CarriedTagCount, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hide",
@@ -51,6 +56,7 @@ CoD.AmmoWidget_CleanCarryCountContainer.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CarriedTagCount:close()
 	end )

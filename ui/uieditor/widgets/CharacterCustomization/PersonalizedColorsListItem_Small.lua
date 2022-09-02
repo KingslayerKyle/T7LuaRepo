@@ -4,9 +4,11 @@
 CoD.PersonalizedColorsListItem_Small = InheritFrom( LUI.UIElement )
 CoD.PersonalizedColorsListItem_Small.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PersonalizedColorsListItem_Small )
 	self.id = "PersonalizedColorsListItem_Small"

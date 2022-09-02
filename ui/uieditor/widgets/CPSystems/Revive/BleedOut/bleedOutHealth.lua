@@ -15,9 +15,11 @@ require( "ui.uieditor.widgets.CPSystems.Revive.BleedOut.bleedout_mainring" )
 CoD.bleedOutHealth = InheritFrom( LUI.UIElement )
 CoD.bleedOutHealth.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.bleedOutHealth )
 	self.id = "bleedOutHealth"
@@ -153,58 +155,73 @@ CoD.bleedOutHealth.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				bleedOutBlurContainer0:completeAnimation()
 				self.bleedOutBlurContainer0:setAlpha( 0 )
 				self.clipFinished( bleedOutBlurContainer0, {} )
+
 				bleedoutcross0:completeAnimation()
 				self.bleedoutcross0:setAlpha( 0 )
 				self.clipFinished( bleedoutcross0, {} )
+
 				bleedoutring10:completeAnimation()
 				self.bleedoutring10:setLeftRight( false, false, -183, 184 )
 				self.bleedoutring10:setTopBottom( false, false, -184, 184 )
 				self.bleedoutring10:setAlpha( 0 )
 				self.clipFinished( bleedoutring10, {} )
+
 				bleedoutring20:completeAnimation()
 				self.bleedoutring20:setAlpha( 0 )
 				self.clipFinished( bleedoutring20, {} )
+
 				bleedoutring3top0:completeAnimation()
 				self.bleedoutring3top0:setAlpha( 0 )
 				self.clipFinished( bleedoutring3top0, {} )
+
 				bleedoutring3bottom0:completeAnimation()
 				self.bleedoutring3bottom0:setAlpha( 0 )
 				self.clipFinished( bleedoutring3bottom0, {} )
+
 				bleedoutring3right0:completeAnimation()
 				self.bleedoutring3right0:setAlpha( 0 )
 				self.clipFinished( bleedoutring3right0, {} )
+
 				bleedoutring3left0:completeAnimation()
 				self.bleedoutring3left0:setAlpha( 0 )
 				self.clipFinished( bleedoutring3left0, {} )
+
 				bleedoutdot0:completeAnimation()
 				self.bleedoutdot0:setLeftRight( true, false, -67, -43 )
 				self.bleedoutdot0:setTopBottom( true, false, -67.75, -43.75 )
 				self.bleedoutdot0:setAlpha( 0 )
 				self.clipFinished( bleedoutdot0, {} )
+
 				bleedoutdot1:completeAnimation()
 				self.bleedoutdot1:setLeftRight( false, true, 45, 69 )
 				self.bleedoutdot1:setTopBottom( true, false, -67.75, -43.75 )
 				self.bleedoutdot1:setAlpha( 0 )
 				self.clipFinished( bleedoutdot1, {} )
+
 				bleedoutdot2:completeAnimation()
 				self.bleedoutdot2:setLeftRight( true, false, -67, -43 )
 				self.bleedoutdot2:setTopBottom( false, true, 44.25, 68.25 )
 				self.bleedoutdot2:setAlpha( 0 )
 				self.clipFinished( bleedoutdot2, {} )
+
 				bleedoutdot3:completeAnimation()
 				self.bleedoutdot3:setLeftRight( false, true, 45, 69 )
 				self.bleedoutdot3:setTopBottom( false, true, 44.25, 68.25 )
 				self.bleedoutdot3:setAlpha( 0 )
 				self.clipFinished( bleedoutdot3, {} )
+
 				bleedingOutRing:completeAnimation()
 				self.bleedingOutRing:setAlpha( 0 )
 				self.clipFinished( bleedingOutRing, {} )
+
 				revivingRing:completeAnimation()
 				self.revivingRing:setAlpha( 0 )
 				self.clipFinished( revivingRing, {} )
+
 				bleedoutmainring1:completeAnimation()
 				self.bleedoutmainring1:setRGB( 1, 1, 1 )
 				self.bleedoutmainring1:setAlpha( 0 )
@@ -212,6 +229,7 @@ CoD.bleedOutHealth.new = function ( menu, controller )
 			end,
 			BleedingOut = function ()
 				self:setupElementClipCounter( 15 )
+
 				local bleedOutBlurContainer0Frame2 = function ( bleedOutBlurContainer0, event )
 					local bleedOutBlurContainer0Frame3 = function ( bleedOutBlurContainer0, event )
 						local bleedOutBlurContainer0Frame4 = function ( bleedOutBlurContainer0, event )
@@ -892,6 +910,7 @@ CoD.bleedOutHealth.new = function ( menu, controller )
 				self.bleedingOutRing:setRGB( 1, 0.82, 0 )
 				self.bleedingOutRing:setAlpha( 0 )
 				bleedingOutRingFrame2( bleedingOutRing, {} )
+
 				revivingRing:completeAnimation()
 				self.revivingRing:setAlpha( 0 )
 				self.clipFinished( revivingRing, {} )
@@ -986,6 +1005,7 @@ CoD.bleedOutHealth.new = function ( menu, controller )
 		Reviving = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				bleedOutBlurContainer0:completeAnimation()
 				self.bleedOutBlurContainer0:setAlpha( 1 )
 				self.clipFinished( bleedOutBlurContainer0, {} )
@@ -1811,13 +1831,16 @@ CoD.bleedOutHealth.new = function ( menu, controller )
 				self.bleedoutdot3:setTopBottom( false, true, -12, 12 )
 				self.bleedoutdot3:setAlpha( 1 )
 				bleedoutdot3Frame2( bleedoutdot3, {} )
+
 				bleedingOutRing:completeAnimation()
 				self.bleedingOutRing:setAlpha( 0 )
 				self.clipFinished( bleedingOutRing, {} )
+
 				revivingRing:completeAnimation()
 				self.revivingRing:setRGB( 1, 1, 1 )
 				self.revivingRing:setAlpha( 0.6 )
 				self.clipFinished( revivingRing, {} )
+
 				bleedoutmainring1:completeAnimation()
 				self.bleedoutmainring1:setRGB( 1, 1, 1 )
 				self.bleedoutmainring1:setAlpha( 1 )
@@ -1827,71 +1850,86 @@ CoD.bleedOutHealth.new = function ( menu, controller )
 		BleedingOut_Low = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				bleedOutBlurContainer0:completeAnimation()
 				self.bleedOutBlurContainer0:setAlpha( 1 )
 				self.clipFinished( bleedOutBlurContainer0, {} )
+
 				bleedoutcross0:completeAnimation()
 				self.bleedoutcross0:setAlpha( 1 )
 				self.bleedoutcross0:setZoom( 0 )
 				self.clipFinished( bleedoutcross0, {} )
+
 				bleedoutring10:completeAnimation()
 				self.bleedoutring10:setLeftRight( false, false, -183, 184 )
 				self.bleedoutring10:setTopBottom( false, false, -184, 184 )
 				self.bleedoutring10:setAlpha( 1 )
 				self.bleedoutring10:setYRot( 0 )
 				self.clipFinished( bleedoutring10, {} )
+
 				bleedoutring20:completeAnimation()
 				self.bleedoutring20:setRGB( 1, 0, 0.01 )
 				self.bleedoutring20:setAlpha( 1 )
 				self.bleedoutring20:setZoom( 0 )
 				self.clipFinished( bleedoutring20, {} )
+
 				bleedoutring3top0:completeAnimation()
 				self.bleedoutring3top0:setLeftRight( true, true, 30.5, -23.5 )
 				self.bleedoutring3top0:setTopBottom( true, false, -79.75, -43.75 )
 				self.bleedoutring3top0:setAlpha( 0 )
 				self.clipFinished( bleedoutring3top0, {} )
+
 				bleedoutring3bottom0:completeAnimation()
 				self.bleedoutring3bottom0:setLeftRight( true, true, 28, -21 )
 				self.bleedoutring3bottom0:setTopBottom( false, true, 44.25, 80.25 )
 				self.bleedoutring3bottom0:setAlpha( 0 )
 				self.clipFinished( bleedoutring3bottom0, {} )
+
 				bleedoutring3right0:completeAnimation()
 				self.bleedoutring3right0:setLeftRight( true, false, -79, -43 )
 				self.bleedoutring3right0:setTopBottom( true, true, 21.25, -27.25 )
 				self.bleedoutring3right0:setAlpha( 0 )
 				self.clipFinished( bleedoutring3right0, {} )
+
 				bleedoutring3left0:completeAnimation()
 				self.bleedoutring3left0:setLeftRight( false, true, 54, 90 )
 				self.bleedoutring3left0:setTopBottom( true, true, 16.25, -22.25 )
 				self.bleedoutring3left0:setAlpha( 0 )
 				self.clipFinished( bleedoutring3left0, {} )
+
 				bleedoutdot0:completeAnimation()
 				self.bleedoutdot0:setLeftRight( true, false, -12, 12 )
 				self.bleedoutdot0:setTopBottom( true, false, -12, 12 )
 				self.bleedoutdot0:setAlpha( 1 )
 				self.clipFinished( bleedoutdot0, {} )
+
 				bleedoutdot1:completeAnimation()
 				self.bleedoutdot1:setLeftRight( false, true, -12, 12 )
 				self.bleedoutdot1:setTopBottom( true, false, -12, 12 )
 				self.bleedoutdot1:setAlpha( 1 )
 				self.clipFinished( bleedoutdot1, {} )
+
 				bleedoutdot2:completeAnimation()
 				self.bleedoutdot2:setLeftRight( true, false, -12, 12 )
 				self.bleedoutdot2:setTopBottom( false, true, -12, 12 )
 				self.bleedoutdot2:setAlpha( 1 )
 				self.clipFinished( bleedoutdot2, {} )
+
 				bleedoutdot3:completeAnimation()
 				self.bleedoutdot3:setLeftRight( false, true, -12, 12 )
 				self.bleedoutdot3:setTopBottom( false, true, -12, 12 )
 				self.bleedoutdot3:setAlpha( 1 )
 				self.clipFinished( bleedoutdot3, {} )
+
 				bleedingOutRing:completeAnimation()
 				self.bleedingOutRing:setRGB( 1, 0, 0.01 )
 				self.bleedingOutRing:setAlpha( 1 )
 				self.clipFinished( bleedingOutRing, {} )
+
 				revivingRing:completeAnimation()
 				self.revivingRing:setAlpha( 0 )
 				self.clipFinished( revivingRing, {} )
+
 				bleedoutmainring1:completeAnimation()
 				self.bleedoutmainring1:setAlpha( 1 )
 				self.bleedoutmainring1:setZoom( 0 )
@@ -1899,6 +1937,7 @@ CoD.bleedOutHealth.new = function ( menu, controller )
 			end,
 			Reviving = function ()
 				self:setupElementClipCounter( 15 )
+
 				bleedOutBlurContainer0:completeAnimation()
 				self.bleedOutBlurContainer0:setAlpha( 1 )
 				self.clipFinished( bleedOutBlurContainer0, {} )
@@ -2722,14 +2761,17 @@ CoD.bleedOutHealth.new = function ( menu, controller )
 				self.bleedoutdot3:setTopBottom( false, true, -12, 12 )
 				self.bleedoutdot3:setAlpha( 1 )
 				bleedoutdot3Frame2( bleedoutdot3, {} )
+
 				bleedingOutRing:completeAnimation()
 				self.bleedingOutRing:setRGB( 1, 1, 1 )
 				self.bleedingOutRing:setAlpha( 0 )
 				self.clipFinished( bleedingOutRing, {} )
+
 				revivingRing:completeAnimation()
 				self.revivingRing:setRGB( 1, 1, 1 )
 				self.revivingRing:setAlpha( 0.6 )
 				self.clipFinished( revivingRing, {} )
+
 				bleedoutmainring1:completeAnimation()
 				self.bleedoutmainring1:setAlpha( 1 )
 				self.clipFinished( bleedoutmainring1, {} )
@@ -2738,10 +2780,12 @@ CoD.bleedOutHealth.new = function ( menu, controller )
 		BleedingOut = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				bleedOutBlurContainer0:completeAnimation()
 				self.bleedOutBlurContainer0:setAlpha( 1 )
 				self.bleedOutBlurContainer0:setZoom( 0 )
 				self.clipFinished( bleedOutBlurContainer0, {} )
+
 				bleedoutcross0:completeAnimation()
 				self.bleedoutcross0:setRGB( 0.92, 0.99, 0.99 )
 				self.bleedoutcross0:setAlpha( 1 )
@@ -3103,53 +3147,64 @@ CoD.bleedOutHealth.new = function ( menu, controller )
 				self.bleedoutring20:setZRot( 180 )
 				self.bleedoutring20:setZoom( 0 )
 				bleedoutring20Frame2( bleedoutring20, {} )
+
 				bleedoutring3top0:completeAnimation()
 				self.bleedoutring3top0:setLeftRight( true, true, 30.5, -23.5 )
 				self.bleedoutring3top0:setTopBottom( true, false, -30, 6 )
 				self.bleedoutring3top0:setAlpha( 1 )
 				self.clipFinished( bleedoutring3top0, {} )
+
 				bleedoutring3bottom0:completeAnimation()
 				self.bleedoutring3bottom0:setLeftRight( true, true, 28, -21 )
 				self.bleedoutring3bottom0:setTopBottom( false, true, -6, 30 )
 				self.bleedoutring3bottom0:setAlpha( 1 )
 				self.clipFinished( bleedoutring3bottom0, {} )
+
 				bleedoutring3right0:completeAnimation()
 				self.bleedoutring3right0:setLeftRight( true, false, -28, 8 )
 				self.bleedoutring3right0:setTopBottom( true, true, 21.25, -27.25 )
 				self.bleedoutring3right0:setAlpha( 1 )
 				self.clipFinished( bleedoutring3right0, {} )
+
 				bleedoutring3left0:completeAnimation()
 				self.bleedoutring3left0:setLeftRight( false, true, -6, 30 )
 				self.bleedoutring3left0:setTopBottom( true, true, 16.25, -22.25 )
 				self.bleedoutring3left0:setAlpha( 1 )
 				self.clipFinished( bleedoutring3left0, {} )
+
 				bleedoutdot0:completeAnimation()
 				self.bleedoutdot0:setLeftRight( true, false, -12, 12 )
 				self.bleedoutdot0:setTopBottom( true, false, -12, 12 )
 				self.bleedoutdot0:setAlpha( 1 )
 				self.clipFinished( bleedoutdot0, {} )
+
 				bleedoutdot1:completeAnimation()
 				self.bleedoutdot1:setLeftRight( false, true, -12, 12 )
 				self.bleedoutdot1:setTopBottom( true, false, -12, 12 )
 				self.bleedoutdot1:setAlpha( 1 )
 				self.clipFinished( bleedoutdot1, {} )
+
 				bleedoutdot2:completeAnimation()
 				self.bleedoutdot2:setLeftRight( true, false, -12, 12 )
 				self.bleedoutdot2:setTopBottom( false, true, -12, 12 )
 				self.bleedoutdot2:setAlpha( 1 )
 				self.clipFinished( bleedoutdot2, {} )
+
 				bleedoutdot3:completeAnimation()
 				self.bleedoutdot3:setLeftRight( false, true, -12, 12 )
 				self.bleedoutdot3:setTopBottom( false, true, -9.75, 14.25 )
 				self.bleedoutdot3:setAlpha( 1 )
 				self.clipFinished( bleedoutdot3, {} )
+
 				bleedingOutRing:completeAnimation()
 				self.bleedingOutRing:setRGB( 1, 0.82, 0 )
 				self.bleedingOutRing:setAlpha( 0.6 )
 				self.clipFinished( bleedingOutRing, {} )
+
 				revivingRing:completeAnimation()
 				self.revivingRing:setAlpha( 0 )
 				self.clipFinished( revivingRing, {} )
+
 				bleedoutmainring1:completeAnimation()
 				self.bleedoutmainring1:setAlpha( 1 )
 				self.bleedoutmainring1:setXRot( 0 )
@@ -3158,6 +3213,7 @@ CoD.bleedOutHealth.new = function ( menu, controller )
 			end,
 			BleedingOut_Low = function ()
 				self:setupElementClipCounter( 15 )
+
 				bleedOutBlurContainer0:completeAnimation()
 				self.bleedOutBlurContainer0:setAlpha( 1 )
 				self.clipFinished( bleedOutBlurContainer0, {} )
@@ -3749,21 +3805,25 @@ CoD.bleedOutHealth.new = function ( menu, controller )
 				self.bleedoutring3left0:setTopBottom( true, true, 16.25, -22.25 )
 				self.bleedoutring3left0:setAlpha( 1 )
 				bleedoutring3left0Frame2( bleedoutring3left0, {} )
+
 				bleedoutdot0:completeAnimation()
 				self.bleedoutdot0:setLeftRight( true, false, -12, 12 )
 				self.bleedoutdot0:setTopBottom( true, false, -12, 12 )
 				self.bleedoutdot0:setAlpha( 1 )
 				self.clipFinished( bleedoutdot0, {} )
+
 				bleedoutdot1:completeAnimation()
 				self.bleedoutdot1:setLeftRight( false, true, -12, 12 )
 				self.bleedoutdot1:setTopBottom( true, false, -12, 12 )
 				self.bleedoutdot1:setAlpha( 1 )
 				self.clipFinished( bleedoutdot1, {} )
+
 				bleedoutdot2:completeAnimation()
 				self.bleedoutdot2:setLeftRight( true, false, -12, 12 )
 				self.bleedoutdot2:setTopBottom( false, true, -12, 12 )
 				self.bleedoutdot2:setAlpha( 1 )
 				self.clipFinished( bleedoutdot2, {} )
+
 				bleedoutdot3:completeAnimation()
 				self.bleedoutdot3:setLeftRight( false, true, -12, 12 )
 				self.bleedoutdot3:setTopBottom( false, true, -12, 12 )
@@ -3897,9 +3957,11 @@ CoD.bleedOutHealth.new = function ( menu, controller )
 				self.bleedingOutRing:setRGB( 1, 0.82, 0 )
 				self.bleedingOutRing:setAlpha( 0.6 )
 				bleedingOutRingFrame2( bleedingOutRing, {} )
+
 				revivingRing:completeAnimation()
 				self.revivingRing:setAlpha( 0 )
 				self.clipFinished( revivingRing, {} )
+
 				bleedoutmainring1:completeAnimation()
 				self.bleedoutmainring1:setRGB( 1, 1, 1 )
 				self.bleedoutmainring1:setAlpha( 1 )
@@ -3907,6 +3969,7 @@ CoD.bleedOutHealth.new = function ( menu, controller )
 			end,
 			Reviving = function ()
 				self:setupElementClipCounter( 15 )
+
 				bleedOutBlurContainer0:completeAnimation()
 				self.bleedOutBlurContainer0:setAlpha( 1 )
 				self.clipFinished( bleedOutBlurContainer0, {} )
@@ -4742,18 +4805,22 @@ CoD.bleedOutHealth.new = function ( menu, controller )
 				self.bleedoutdot3:setTopBottom( false, true, -12, 12 )
 				self.bleedoutdot3:setAlpha( 1 )
 				bleedoutdot3Frame2( bleedoutdot3, {} )
+
 				bleedingOutRing:completeAnimation()
 				self.bleedingOutRing:setAlpha( 0 )
 				self.clipFinished( bleedingOutRing, {} )
+
 				revivingRing:completeAnimation()
 				self.revivingRing:setAlpha( 0.6 )
 				self.clipFinished( revivingRing, {} )
+
 				bleedoutmainring1:completeAnimation()
 				self.bleedoutmainring1:setAlpha( 1 )
 				self.clipFinished( bleedoutmainring1, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Reviving",
@@ -4790,6 +4857,7 @@ CoD.bleedOutHealth.new = function ( menu, controller )
 			modelName = "bleedOutPercent"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.bleedOutBlurContainer0:close()
 		element.bleedoutcross0:close()

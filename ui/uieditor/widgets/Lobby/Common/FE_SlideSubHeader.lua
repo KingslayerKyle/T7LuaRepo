@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_LabelSubHeadingD" )
 CoD.FE_SlideSubHeader = InheritFrom( LUI.UIElement )
 CoD.FE_SlideSubHeader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_SlideSubHeader )
 	self.id = "FE_SlideSubHeader"
@@ -35,6 +37,7 @@ CoD.FE_SlideSubHeader.new = function ( menu, controller )
 	FELabelSubHeadingD0.Label0:setRGB( 0.58, 0.64, 0.65 )
 	FELabelSubHeadingD0.Label0:setText( "" )
 	FELabelSubHeadingD0.Label0:setTTF( "fonts/escom.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( FELabelSubHeadingD0, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 3 )
 	end )

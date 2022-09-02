@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.SystemOverlays.systemOverlay_Layout_SaveEmblem" )
 CoD.systemOverlay_SaveEmblemFrame = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_SaveEmblemFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_SaveEmblemFrame )
 	self.id = "systemOverlay_SaveEmblemFrame"
@@ -55,6 +57,7 @@ CoD.systemOverlay_SaveEmblemFrame.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.foreground:close()
 		element.emblem:close()

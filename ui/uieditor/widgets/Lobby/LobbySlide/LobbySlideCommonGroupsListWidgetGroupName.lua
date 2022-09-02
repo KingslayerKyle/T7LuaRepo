@@ -18,6 +18,7 @@ CoD.LobbySlideCommonGroupsListWidgetGroupName.new = function ( menu, controller 
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbySlideCommonGroupsListWidgetGroupName )
 	self.id = "LobbySlideCommonGroupsListWidgetGroupName"
@@ -51,19 +52,23 @@ CoD.LobbySlideCommonGroupsListWidgetGroupName.new = function ( menu, controller 
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Name:completeAnimation()
 				self.Name:setRGB( 1, 1, 1 )
 				self.Name:setAlpha( 1 )
 				self.clipFinished( Name, {} )
+
 				PrimaryGroupBadge:completeAnimation()
 				self.PrimaryGroupBadge:setAlpha( 0 )
 				self.clipFinished( PrimaryGroupBadge, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 2 )
+
 				Name:completeAnimation()
 				self.Name:setAlpha( 1 )
 				self.clipFinished( Name, {} )
+
 				PrimaryGroupBadge:completeAnimation()
 				self.PrimaryGroupBadge:setAlpha( 0 )
 				self.clipFinished( PrimaryGroupBadge, {} )
@@ -72,25 +77,30 @@ CoD.LobbySlideCommonGroupsListWidgetGroupName.new = function ( menu, controller 
 		PrimaryGroup = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Name:completeAnimation()
 				self.Name:setRGB( 1, 0.83, 0.5 )
 				self.Name:setAlpha( 1 )
 				self.clipFinished( Name, {} )
+
 				PrimaryGroupBadge:completeAnimation()
 				self.PrimaryGroupBadge:setAlpha( 1 )
 				self.clipFinished( PrimaryGroupBadge, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 2 )
+
 				Name:completeAnimation()
 				self.Name:setAlpha( 1 )
 				self.clipFinished( Name, {} )
+
 				PrimaryGroupBadge:completeAnimation()
 				self.PrimaryGroupBadge:setAlpha( 1 )
 				self.clipFinished( PrimaryGroupBadge, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "PrimaryGroup",
@@ -107,6 +117,7 @@ CoD.LobbySlideCommonGroupsListWidgetGroupName.new = function ( menu, controller 
 			modelName = "primaryGroup"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Name:close()
 	end )

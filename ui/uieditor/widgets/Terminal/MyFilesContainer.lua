@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Terminal.Generalframe" )
 CoD.MyFilesContainer = InheritFrom( LUI.UIElement )
 CoD.MyFilesContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MyFilesContainer )
 	self.id = "MyFilesContainer"

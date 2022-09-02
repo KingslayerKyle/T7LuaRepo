@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.genericVHUDdamageArea" )
 CoD.dpsHUD_DamageIconWidget = InheritFrom( LUI.UIElement )
 CoD.dpsHUD_DamageIconWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.dpsHUD_DamageIconWidget )
 	self.id = "dpsHUD_DamageIconWidget"
@@ -85,20 +87,24 @@ CoD.dpsHUD_DamageIconWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				mlrs:completeAnimation()
 				self.mlrs:setAlpha( 0 )
 				self.clipFinished( mlrs, {} )
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		MLRS = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				mlrs:completeAnimation()
 				self.mlrs:setAlpha( 1 )
 				self.clipFinished( mlrs, {} )
@@ -107,9 +113,11 @@ CoD.dpsHUD_DamageIconWidget.new = function ( menu, controller )
 		Quadtank = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				mlrs:completeAnimation()
 				self.mlrs:setAlpha( 0 )
 				self.clipFinished( mlrs, {} )
+
 				quadtank:completeAnimation()
 				self.quadtank:setAlpha( 1 )
 				self.clipFinished( quadtank, {} )
@@ -118,9 +126,11 @@ CoD.dpsHUD_DamageIconWidget.new = function ( menu, controller )
 		Siegebot = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				mlrs:completeAnimation()
 				self.mlrs:setAlpha( 0 )
 				self.clipFinished( mlrs, {} )
+
 				siegebot:completeAnimation()
 				self.siegebot:setAlpha( 1 )
 				self.clipFinished( siegebot, {} )
@@ -129,9 +139,11 @@ CoD.dpsHUD_DamageIconWidget.new = function ( menu, controller )
 		AMWS = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				mlrs:completeAnimation()
 				self.mlrs:setAlpha( 0 )
 				self.clipFinished( mlrs, {} )
+
 				amws:completeAnimation()
 				self.amws:setAlpha( 1 )
 				self.clipFinished( amws, {} )
@@ -140,15 +152,18 @@ CoD.dpsHUD_DamageIconWidget.new = function ( menu, controller )
 		Turret = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				mlrs:completeAnimation()
 				self.mlrs:setAlpha( 0 )
 				self.clipFinished( mlrs, {} )
+
 				turret:completeAnimation()
 				self.turret:setAlpha( 1 )
 				self.clipFinished( turret, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "MLRS",
@@ -189,6 +204,7 @@ CoD.dpsHUD_DamageIconWidget.new = function ( menu, controller )
 			modelName = "vehicle.vehicleType"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.mlrs:close()
 		element.quadtank:close()

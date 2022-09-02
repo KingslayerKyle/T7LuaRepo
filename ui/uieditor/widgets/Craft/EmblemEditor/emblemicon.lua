@@ -4,9 +4,11 @@
 CoD.EmblemIcon = InheritFrom( LUI.UIElement )
 CoD.EmblemIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemIcon )
 	self.id = "EmblemIcon"
@@ -47,26 +49,31 @@ CoD.EmblemIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				border:completeAnimation()
 				self.border:setRGB( 1, 1, 1 )
 				self.border:setAlpha( 0.1 )
 				self.clipFinished( border, {} )
+
 				drawIcon:completeAnimation()
 				self.drawIcon:setAlpha( 1 )
 				self.clipFinished( drawIcon, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 2 )
+
 				border:completeAnimation()
 				self.border:setRGB( 1, 0.41, 0 )
 				self.border:setAlpha( 1 )
 				self.clipFinished( border, {} )
+
 				drawIcon:completeAnimation()
 				self.drawIcon:setAlpha( 1 )
 				self.clipFinished( drawIcon, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.drawIcon:close()
 	end )

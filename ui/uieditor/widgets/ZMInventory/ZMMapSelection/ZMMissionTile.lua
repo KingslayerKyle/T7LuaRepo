@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.ZMMissionTile = InheritFrom( LUI.UIElement )
 CoD.ZMMissionTile.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.ZMMissionTile )
 	self.id = "ZMMissionTile"
@@ -44,6 +46,7 @@ CoD.ZMMissionTile.new = function ( menu, controller )
 	MapName:setShaderVector( 2, 1, 0, 0, 0 )
 	MapName:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	MapName:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( MapName, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )
@@ -53,6 +56,7 @@ CoD.ZMMissionTile.new = function ( menu, controller )
 	LUI.OverrideFunction_CallOriginalFirst( self, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TitleGlow1:close()
 	end )

@@ -4,9 +4,11 @@
 CoD.DoubleLoot = InheritFrom( LUI.UIElement )
 CoD.DoubleLoot.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DoubleLoot )
 	self.id = "DoubleLoot"
@@ -25,6 +27,7 @@ CoD.DoubleLoot.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				cryptokeyBack:completeAnimation()
 				self.cryptokeyBack:setAlpha( 0 )
 				self.clipFinished( cryptokeyBack, {} )
@@ -33,12 +36,14 @@ CoD.DoubleLoot.new = function ( menu, controller )
 		DoubleLoot = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				cryptokeyBack:completeAnimation()
 				self.cryptokeyBack:setAlpha( 1 )
 				self.clipFinished( cryptokeyBack, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DoubleLoot",

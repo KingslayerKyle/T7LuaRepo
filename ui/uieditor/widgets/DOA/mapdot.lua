@@ -4,9 +4,11 @@
 CoD.mapdot = InheritFrom( LUI.UIElement )
 CoD.mapdot.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.mapdot )
 	self.id = "mapdot"
@@ -25,11 +27,13 @@ CoD.mapdot.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				mapdot:completeAnimation()
 				self.mapdot:setAlpha( 0 )
 				self.clipFinished( mapdot, {} )

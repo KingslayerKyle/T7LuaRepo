@@ -4,9 +4,11 @@
 CoD.TacticalModeGlow = InheritFrom( LUI.UIElement )
 CoD.TacticalModeGlow.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TacticalModeGlow )
 	self.id = "TacticalModeGlow"
@@ -27,6 +29,7 @@ CoD.TacticalModeGlow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local Image0Frame2 = function ( Image0, event )
 					if not event.interrupted then
 						Image0:beginAnimation( "keyframe", 39, false, false, CoD.TweenType.Linear )
@@ -42,12 +45,14 @@ CoD.TacticalModeGlow.new = function ( menu, controller )
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				Image0Frame2( Image0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Null = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

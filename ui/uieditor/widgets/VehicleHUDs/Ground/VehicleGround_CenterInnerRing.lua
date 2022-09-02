@@ -4,9 +4,11 @@
 CoD.VehicleGround_CenterInnerRing = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_CenterInnerRing.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VehicleGround_CenterInnerRing )
 	self.id = "VehicleGround_CenterInnerRing"
@@ -26,6 +28,7 @@ CoD.VehicleGround_CenterInnerRing.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local CenterInnerRingFrame2 = function ( CenterInnerRing, event )
 					local CenterInnerRingFrame3 = function ( CenterInnerRing, event )
 						local CenterInnerRingFrame4 = function ( CenterInnerRing, event )
@@ -156,12 +159,14 @@ CoD.VehicleGround_CenterInnerRing.new = function ( menu, controller )
 				self.CenterInnerRing:setRGB( 1, 1, 1 )
 				self.CenterInnerRing:setZRot( 0 )
 				CenterInnerRingFrame2( CenterInnerRing, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

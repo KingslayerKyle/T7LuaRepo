@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZM_Cookbook.Cookbook_FlowAnim" )
 CoD.Cookbook_FlowAnim_Top_Bg = InheritFrom( LUI.UIElement )
 CoD.Cookbook_FlowAnim_Top_Bg.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Cookbook_FlowAnim_Top_Bg )
 	self.id = "Cookbook_FlowAnim_Top_Bg"
@@ -52,10 +54,13 @@ CoD.Cookbook_FlowAnim_Top_Bg.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Fill:completeAnimation()
 				self.Fill:setAlpha( 0 )
 				self.clipFinished( Fill, {} )
+
 				CookbookFlowAnim:completeAnimation()
+
 				CookbookFlowAnim.FlowTop:completeAnimation()
 				self.CookbookFlowAnim.FlowTop:setAlpha( 0 )
 				self.clipFinished( CookbookFlowAnim, {} )
@@ -64,16 +69,20 @@ CoD.Cookbook_FlowAnim_Top_Bg.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Fill:completeAnimation()
 				self.Fill:setAlpha( 0 )
 				self.clipFinished( Fill, {} )
+
 				CookbookFlowAnim:completeAnimation()
+
 				CookbookFlowAnim.FlowTop:completeAnimation()
 				self.CookbookFlowAnim.FlowTop:setAlpha( 0 )
 				self.clipFinished( CookbookFlowAnim, {} )
 			end,
 			Animate = function ()
 				self:setupElementClipCounter( 2 )
+
 				local FillFrame2 = function ( Fill, event )
 					local FillFrame3 = function ( Fill, event )
 						local FillFrame4 = function ( Fill, event )
@@ -167,12 +176,14 @@ CoD.Cookbook_FlowAnim_Top_Bg.new = function ( menu, controller )
 				end
 				
 				CookbookFlowAnim:completeAnimation()
+
 				CookbookFlowAnim.FlowTop:completeAnimation()
 				self.CookbookFlowAnim.FlowTop:setAlpha( 0 )
 				CookbookFlowAnimFrame2( CookbookFlowAnim, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -189,6 +200,7 @@ CoD.Cookbook_FlowAnim_Top_Bg.new = function ( menu, controller )
 			modelName = "itemIndex"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CookbookFlowAnim:close()
 		element.Fill:close()

@@ -4,9 +4,11 @@
 CoD.CallingCards_Loot_UrbanLegend = InheritFrom( LUI.UIElement )
 CoD.CallingCards_Loot_UrbanLegend.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_Loot_UrbanLegend )
 	self.id = "CallingCards_Loot_UrbanLegend"
@@ -77,6 +79,7 @@ CoD.CallingCards_Loot_UrbanLegend.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				local dudeFrame2 = function ( dude, event )
 					local dudeFrame3 = function ( dude, event )
 						if not event.interrupted then
@@ -969,6 +972,7 @@ CoD.CallingCards_Loot_UrbanLegend.new = function ( menu, controller )
 				self.beast:setTopBottom( true, false, 0, 120 )
 				self.beast:setScale( 1 )
 				beastFrame2( beast, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

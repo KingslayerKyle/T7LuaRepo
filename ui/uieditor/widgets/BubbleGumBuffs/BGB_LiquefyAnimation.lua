@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_FX.ZmFx_Spark2" )
 CoD.BGB_LiquefyAnimation = InheritFrom( LUI.UIElement )
 CoD.BGB_LiquefyAnimation.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BGB_LiquefyAnimation )
 	self.id = "BGB_LiquefyAnimation"
@@ -66,24 +68,30 @@ CoD.BGB_LiquefyAnimation.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				splash2:completeAnimation()
 				self.splash2:setAlpha( 0 )
 				self.clipFinished( splash2, {} )
+
 				ZmFxSpark20:completeAnimation()
 				self.ZmFxSpark20:setAlpha( 0 )
 				self.clipFinished( ZmFxSpark20, {} )
+
 				Icon1:completeAnimation()
 				self.Icon1:setAlpha( 0 )
 				self.clipFinished( Icon1, {} )
+
 				Icon2:completeAnimation()
 				self.Icon2:setAlpha( 0 )
 				self.clipFinished( Icon2, {} )
+
 				Icon3:completeAnimation()
 				self.Icon3:setAlpha( 0 )
 				self.clipFinished( Icon3, {} )
 			end,
 			StartLiquefying = function ()
 				self:setupElementClipCounter( 6 )
+
 				local splash2Frame2 = function ( splash2, event )
 					local splash2Frame3 = function ( splash2, event )
 						local splash2Frame4 = function ( splash2, event )
@@ -307,14 +315,17 @@ CoD.BGB_LiquefyAnimation.new = function ( menu, controller )
 				self.Icon3:setAlpha( 0 )
 				self.Icon3:setScale( 1 )
 				Icon3Frame2( Icon3, {} )
+
 				Audio:completeAnimation()
 				self.Audio:setPlaySoundDirect( true )
 				self.Audio:playSound( "uin_cookbook_distill", controller )
 				self.clipFinished( Audio, {} )
+
 				self.nextClip = "StartLiquefying"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmFxSpark20:close()
 	end )

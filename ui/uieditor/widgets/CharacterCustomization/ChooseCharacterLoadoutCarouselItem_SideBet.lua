@@ -20,9 +20,11 @@ end
 CoD.ChooseCharacterLoadoutCarouselItem_SideBet = InheritFrom( LUI.UIElement )
 CoD.ChooseCharacterLoadoutCarouselItem_SideBet.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.ChooseCharacterLoadoutCarouselItem_SideBet )
 	self.id = "ChooseCharacterLoadoutCarouselItem_SideBet"
@@ -145,6 +147,7 @@ CoD.ChooseCharacterLoadoutCarouselItem_SideBet.new = function ( menu, controller
 			modelName = "heroSelectionTutorial"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ChooseCharacterLoadoutCardBackFrontOfCardFooter:close()
 		element.BMcontractschoosespecialistCC:close()

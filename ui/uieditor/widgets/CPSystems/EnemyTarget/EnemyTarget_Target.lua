@@ -4,9 +4,11 @@
 CoD.EnemyTarget_Target = InheritFrom( LUI.UIElement )
 CoD.EnemyTarget_Target.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EnemyTarget_Target )
 	self.id = "EnemyTarget_Target"
@@ -36,6 +38,7 @@ CoD.EnemyTarget_Target.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local Target0Frame2 = function ( Target0, event )
 					if not event.interrupted then
 						Target0:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -51,6 +54,7 @@ CoD.EnemyTarget_Target.new = function ( menu, controller )
 				Target0:completeAnimation()
 				self.Target0:setAlpha( RandomAddPercent( -40, 1 ) )
 				Target0Frame2( Target0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

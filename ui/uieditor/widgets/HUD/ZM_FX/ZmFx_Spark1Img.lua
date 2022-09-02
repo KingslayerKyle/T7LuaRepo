@@ -4,9 +4,11 @@
 CoD.ZmFx_Spark1Img = InheritFrom( LUI.UIElement )
 CoD.ZmFx_Spark1Img.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmFx_Spark1Img )
 	self.id = "ZmFx_Spark1Img"

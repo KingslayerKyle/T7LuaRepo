@@ -4,9 +4,11 @@
 CoD.ZmAmmo_Sword = InheritFrom( LUI.UIElement )
 CoD.ZmAmmo_Sword.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmAmmo_Sword )
 	self.id = "ZmAmmo_Sword"

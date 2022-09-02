@@ -15,9 +15,11 @@ require( "ui.uieditor.widgets.CPSystems.SpikeLauncher.SpikeCounter.SpikeLuancher
 CoD.SpikeLuancherSpikeCounter_Internal = InheritFrom( LUI.UIElement )
 CoD.SpikeLuancherSpikeCounter_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpikeLuancherSpikeCounter_Internal )
 	self.id = "SpikeLuancherSpikeCounter_Internal"
@@ -525,6 +527,7 @@ CoD.SpikeLuancherSpikeCounter_Internal.new = function ( menu, controller )
 			modelName = "spikesReady"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.MeterFill0:close()
 		element.MeterFill1:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_2lines" )
 CoD.popup_warninglabel = InheritFrom( LUI.UIElement )
 CoD.popup_warninglabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.popup_warninglabel )
 	self.id = "popup_warninglabel"
@@ -33,6 +35,7 @@ CoD.popup_warninglabel.new = function ( menu, controller )
 	menudescription:setRGB( 0.97, 0.32, 0.05 )
 	menudescription:setText( Engine.Localize( "MENU_TOO_MANY_ITEMS_DESC_CAPS" ) )
 	menudescription:setTTF( "fonts/escom.ttf" )
+
 	LUI.OverrideFunction_CallOriginalFirst( menudescription, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 10 )
 	end )

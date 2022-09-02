@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_GoldFrame" )
 CoD.CallingCard_loot_bling = InheritFrom( LUI.UIElement )
 CoD.CallingCard_loot_bling.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCard_loot_bling )
 	self.id = "CallingCard_loot_bling"
@@ -187,6 +189,7 @@ CoD.CallingCard_loot_bling.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 15 )
+
 				CallingCardlootblingbg:completeAnimation()
 				self.CallingCardlootblingbg:setAlpha( 1 )
 				self.clipFinished( CallingCardlootblingbg, {} )
@@ -1045,10 +1048,12 @@ CoD.CallingCard_loot_bling.new = function ( menu, controller )
 				GlowWhiteOver2:completeAnimation()
 				self.GlowWhiteOver2:setAlpha( 0 )
 				GlowWhiteOver2Frame2( GlowWhiteOver2, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardlootblingbg:close()
 		element.CallingCardsGoldFrame:close()

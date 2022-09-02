@@ -4,9 +4,11 @@
 CoD.RewardsListWidget = InheritFrom( LUI.UIElement )
 CoD.RewardsListWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RewardsListWidget )
 	self.id = "RewardsListWidget"
@@ -39,10 +41,12 @@ CoD.RewardsListWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				backgroundImage:completeAnimation()
 				self.backgroundImage:setRGB( 0.16, 0.16, 0.16 )
 				self.backgroundImage:setAlpha( 1 )
 				self.clipFinished( backgroundImage, {} )
+
 				iconImage:completeAnimation()
 				self.iconImage:setLeftRight( true, true, 5, -5 )
 				self.iconImage:setTopBottom( true, true, 5, -5 )
@@ -51,6 +55,7 @@ CoD.RewardsListWidget.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 2 )
+
 				local backgroundImageFrame2 = function ( backgroundImage, event )
 					if not event.interrupted then
 						backgroundImage:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -90,6 +95,7 @@ CoD.RewardsListWidget.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 2 )
+
 				local backgroundImageFrame2 = function ( backgroundImage, event )
 					local backgroundImageFrame3 = function ( backgroundImage, event )
 						if not event.interrupted then
@@ -118,15 +124,18 @@ CoD.RewardsListWidget.new = function ( menu, controller )
 				self.backgroundImage:setRGB( 1, 0.64, 0 )
 				self.backgroundImage:setAlpha( 1 )
 				backgroundImageFrame2( backgroundImage, {} )
+
 				iconImage:completeAnimation()
 				self.iconImage:setLeftRight( true, true, 5, -5 )
 				self.iconImage:setTopBottom( true, true, 5, -5 )
 				self.iconImage:setAlpha( 1 )
 				self.clipFinished( iconImage, {} )
+
 				self.nextClip = "Focus"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.iconImage:close()
 	end )

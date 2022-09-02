@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_3dTitleHardcoreKicker" )
 CoD.FE_3dTitle = InheritFrom( LUI.UIElement )
 CoD.FE_3dTitle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_3dTitle )
 	self.id = "FE_3dTitle"
@@ -70,15 +72,19 @@ CoD.FE_3dTitle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				FETitleLineL:completeAnimation()
 				self.FETitleLineL:setRGB( 1, 1, 1 )
 				self.clipFinished( FETitleLineL, {} )
+
 				FETitleLineU:completeAnimation()
 				self.FETitleLineU:setRGB( 1, 1, 1 )
 				self.clipFinished( FETitleLineU, {} )
+
 				MPMainSubHeadingContainer0:completeAnimation()
 				self.MPMainSubHeadingContainer0:setRGB( 1, 1, 1 )
 				self.clipFinished( MPMainSubHeadingContainer0, {} )
+
 				TextBox1:completeAnimation()
 				self.TextBox1:setRGB( 1, 1, 1 )
 				self.TextBox1:setAlpha( 0.95 )
@@ -86,6 +92,7 @@ CoD.FE_3dTitle.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 4 )
+
 				local FETitleLineLFrame2 = function ( FETitleLineL, event )
 					local FETitleLineLFrame3 = function ( FETitleLineL, event )
 						if not event.interrupted then
@@ -191,6 +198,7 @@ CoD.FE_3dTitle.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FETitleLineL:close()
 		element.FETitleLineU:close()

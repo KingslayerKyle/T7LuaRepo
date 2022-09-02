@@ -9,9 +9,11 @@ end
 CoD.KillcamWidgetVignetteTop = InheritFrom( LUI.UIElement )
 CoD.KillcamWidgetVignetteTop.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.KillcamWidgetVignetteTop )
 	self.id = "KillcamWidgetVignetteTop"
@@ -38,6 +40,7 @@ CoD.KillcamWidgetVignetteTop.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

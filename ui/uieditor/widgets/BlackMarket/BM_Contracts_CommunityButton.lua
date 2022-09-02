@@ -30,9 +30,11 @@ end
 CoD.BM_Contracts_CommunityButton = InheritFrom( LUI.UIElement )
 CoD.BM_Contracts_CommunityButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Contracts_CommunityButton )
 	self.id = "BM_Contracts_CommunityButton"
@@ -208,20 +210,24 @@ CoD.BM_Contracts_CommunityButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				header:completeAnimation()
 				self.header:setAlpha( 1 )
 				self.clipFinished( header, {} )
+
 				NineSliceShaderImage:completeAnimation()
 				self.NineSliceShaderImage:setLeftRight( true, true, -4, 4 )
 				self.NineSliceShaderImage:setTopBottom( true, true, -4.54, 4 )
 				self.NineSliceShaderImage:setAlpha( 0 )
 				self.clipFinished( NineSliceShaderImage, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 0 )
 				self.clipFinished( CompletedIcon, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local NineSliceShaderImageFrame2 = function ( NineSliceShaderImage, event )
 					if not event.interrupted then
 						NineSliceShaderImage:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -270,6 +276,7 @@ CoD.BM_Contracts_CommunityButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local NineSliceShaderImageFrame2 = function ( NineSliceShaderImage, event )
 					local NineSliceShaderImageFrame3 = function ( NineSliceShaderImage, event )
 						if not event.interrupted then
@@ -348,10 +355,12 @@ CoD.BM_Contracts_CommunityButton.new = function ( menu, controller )
 				lowerglow:completeAnimation()
 				self.lowerglow:setAlpha( 1 )
 				lowerglowFrame2( lowerglow, {} )
+
 				self.nextClip = "Focus"
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local NineSliceShaderImageFrame2 = function ( NineSliceShaderImage, event )
 					if not event.interrupted then
 						NineSliceShaderImage:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -402,22 +411,27 @@ CoD.BM_Contracts_CommunityButton.new = function ( menu, controller )
 		Complete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				header:completeAnimation()
 				self.header:setAlpha( 0.5 )
 				self.clipFinished( header, {} )
+
 				BMContractstimer:completeAnimation()
 				self.BMContractstimer:setLeftRight( true, false, 21, 301.13 )
 				self.BMContractstimer:setTopBottom( true, false, 12.24, 31.28 )
 				self.clipFinished( BMContractstimer, {} )
+
 				lowerglow:completeAnimation()
 				self.lowerglow:setAlpha( 0 )
 				self.clipFinished( lowerglow, {} )
+
 				CompletedIcon:completeAnimation()
 				self.CompletedIcon:setAlpha( 1 )
 				self.clipFinished( CompletedIcon, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local NineSliceShaderImageFrame2 = function ( NineSliceShaderImage, event )
 					if not event.interrupted then
 						NineSliceShaderImage:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -466,6 +480,7 @@ CoD.BM_Contracts_CommunityButton.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local NineSliceShaderImageFrame2 = function ( NineSliceShaderImage, event )
 					local NineSliceShaderImageFrame3 = function ( NineSliceShaderImage, event )
 						if not event.interrupted then
@@ -544,10 +559,12 @@ CoD.BM_Contracts_CommunityButton.new = function ( menu, controller )
 				lowerglow:completeAnimation()
 				self.lowerglow:setAlpha( 1 )
 				lowerglowFrame2( lowerglow, {} )
+
 				self.nextClip = "Focus"
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 3 )
+
 				local NineSliceShaderImageFrame2 = function ( NineSliceShaderImage, event )
 					if not event.interrupted then
 						NineSliceShaderImage:beginAnimation( "keyframe", 209, false, false, CoD.TweenType.Linear )
@@ -596,6 +613,7 @@ CoD.BM_Contracts_CommunityButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Complete",
@@ -612,6 +630,7 @@ CoD.BM_Contracts_CommunityButton.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PercentCompleteWidget:close()
 		element.BMContractstimer:close()

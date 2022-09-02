@@ -4,9 +4,11 @@
 CoD.FE_LabelSubHeadingB = InheritFrom( LUI.UIElement )
 CoD.FE_LabelSubHeadingB.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_LabelSubHeadingB )
 	self.id = "FE_LabelSubHeadingB"

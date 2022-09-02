@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.BorderThin" )
 CoD.MissionRecordVault_Difficulty = InheritFrom( LUI.UIElement )
 CoD.MissionRecordVault_Difficulty.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MissionRecordVault_Difficulty )
 	self.id = "MissionRecordVault_Difficulty"
@@ -50,6 +52,7 @@ CoD.MissionRecordVault_Difficulty.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 0 )
 				self.clipFinished( TextBox0, {} )
@@ -58,9 +61,11 @@ CoD.MissionRecordVault_Difficulty.new = function ( menu, controller )
 		MissionIncomplete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				DifficultyImage:completeAnimation()
 				self.DifficultyImage:setAlpha( 0 )
 				self.clipFinished( DifficultyImage, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 1 )
 				self.TextBox0:setText( Engine.Localize( LocalizeToUpperString( "CPUI_NOT_APPLICABLE" ) ) )
@@ -69,6 +74,7 @@ CoD.MissionRecordVault_Difficulty.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "MissionIncomplete",
@@ -85,6 +91,7 @@ CoD.MissionRecordVault_Difficulty.new = function ( menu, controller )
 			modelName = "MissionRecordVaultMapInfo.HIGHEST_DIFFICULTY"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BorderThinKills00:close()
 		element.DifficultyImage:close()

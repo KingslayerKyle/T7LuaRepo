@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.MenuChooseClass.ItemWidgets.InfoPaneItemNameWi
 CoD.InfoPaneItemName = InheritFrom( LUI.UIElement )
 CoD.InfoPaneItemName.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.InfoPaneItemName )
 	self.id = "InfoPaneItemName"
@@ -59,15 +61,19 @@ CoD.InfoPaneItemName.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				emptyOrUnavailableLabels:completeAnimation()
 				self.emptyOrUnavailableLabels:setAlpha( 0 )
 				self.clipFinished( emptyOrUnavailableLabels, {} )
+
 				weaponNameWithVariant:completeAnimation()
 				self.weaponNameWithVariant:setAlpha( 0 )
 				self.clipFinished( weaponNameWithVariant, {} )
+
 				Guide:completeAnimation()
 				self.Guide:setAlpha( 0 )
 				self.clipFinished( Guide, {} )
@@ -76,12 +82,15 @@ CoD.InfoPaneItemName.new = function ( menu, controller )
 		Equipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				emptyOrUnavailableLabels:completeAnimation()
 				self.emptyOrUnavailableLabels:setAlpha( 0 )
 				self.clipFinished( emptyOrUnavailableLabels, {} )
+
 				weaponNameWithVariant:completeAnimation()
 				self.weaponNameWithVariant:setAlpha( 1 )
 				self.clipFinished( weaponNameWithVariant, {} )
@@ -90,14 +99,18 @@ CoD.InfoPaneItemName.new = function ( menu, controller )
 		Available = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0.14 )
 				self.clipFinished( Glow2, {} )
+
 				emptyOrUnavailableLabels:completeAnimation()
+
 				emptyOrUnavailableLabels.itemName:completeAnimation()
 				self.emptyOrUnavailableLabels:setAlpha( 1 )
 				self.emptyOrUnavailableLabels.itemName:setText( Engine.Localize( "MENU_EMPTY_CAPS" ) )
 				self.clipFinished( emptyOrUnavailableLabels, {} )
+
 				weaponNameWithVariant:completeAnimation()
 				self.weaponNameWithVariant:setAlpha( 0 )
 				self.clipFinished( weaponNameWithVariant, {} )
@@ -106,14 +119,18 @@ CoD.InfoPaneItemName.new = function ( menu, controller )
 		NeedsWildcard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0.1 )
 				self.clipFinished( Glow2, {} )
+
 				emptyOrUnavailableLabels:completeAnimation()
+
 				emptyOrUnavailableLabels.itemName:completeAnimation()
 				self.emptyOrUnavailableLabels:setAlpha( 0.5 )
 				self.emptyOrUnavailableLabels.itemName:setText( Engine.Localize( "MENU_EMPTY_CAPS" ) )
 				self.clipFinished( emptyOrUnavailableLabels, {} )
+
 				weaponNameWithVariant:completeAnimation()
 				self.weaponNameWithVariant:setAlpha( 0 )
 				self.clipFinished( weaponNameWithVariant, {} )
@@ -122,14 +139,18 @@ CoD.InfoPaneItemName.new = function ( menu, controller )
 		NotEquippable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0.1 )
 				self.clipFinished( Glow2, {} )
+
 				emptyOrUnavailableLabels:completeAnimation()
+
 				emptyOrUnavailableLabels.itemName:completeAnimation()
 				self.emptyOrUnavailableLabels:setAlpha( 0.5 )
 				self.emptyOrUnavailableLabels.itemName:setText( Engine.Localize( "MENU_NOT_AVAILABLE_CAPS" ) )
 				self.clipFinished( emptyOrUnavailableLabels, {} )
+
 				weaponNameWithVariant:completeAnimation()
 				self.weaponNameWithVariant:setAlpha( 0 )
 				self.clipFinished( weaponNameWithVariant, {} )
@@ -138,16 +159,20 @@ CoD.InfoPaneItemName.new = function ( menu, controller )
 		NotAvailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Glow2:completeAnimation()
 				self.Glow2:setLeftRight( true, false, -52.93, 252.07 )
 				self.Glow2:setTopBottom( false, false, -30, 43 )
 				self.Glow2:setAlpha( 0.1 )
 				self.clipFinished( Glow2, {} )
+
 				emptyOrUnavailableLabels:completeAnimation()
+
 				emptyOrUnavailableLabels.itemName:completeAnimation()
 				self.emptyOrUnavailableLabels:setAlpha( 0.5 )
 				self.emptyOrUnavailableLabels.itemName:setText( Engine.Localize( "MENU_NOT_AVAILABLE_CAPS" ) )
 				self.clipFinished( emptyOrUnavailableLabels, {} )
+
 				weaponNameWithVariant:completeAnimation()
 				self.weaponNameWithVariant:setAlpha( 0 )
 				self.clipFinished( weaponNameWithVariant, {} )
@@ -156,21 +181,26 @@ CoD.InfoPaneItemName.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Glow2:completeAnimation()
 				self.Glow2:setAlpha( 0 )
 				self.clipFinished( Glow2, {} )
+
 				emptyOrUnavailableLabels:completeAnimation()
 				self.emptyOrUnavailableLabels:setAlpha( 0 )
 				self.clipFinished( emptyOrUnavailableLabels, {} )
+
 				weaponNameWithVariant:completeAnimation()
 				self.weaponNameWithVariant:setAlpha( 0 )
 				self.clipFinished( weaponNameWithVariant, {} )
+
 				Guide:completeAnimation()
 				self.Guide:setAlpha( 0 )
 				self.clipFinished( Guide, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Equipped",
@@ -221,6 +251,7 @@ CoD.InfoPaneItemName.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.emptyOrUnavailableLabels:close()
 		element.weaponNameWithVariant:close()

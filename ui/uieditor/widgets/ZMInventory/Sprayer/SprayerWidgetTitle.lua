@@ -4,9 +4,11 @@
 CoD.SprayerWidgetTitle = InheritFrom( LUI.UIElement )
 CoD.SprayerWidgetTitle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SprayerWidgetTitle )
 	self.id = "SprayerWidgetTitle"
@@ -36,9 +38,11 @@ CoD.SprayerWidgetTitle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				LabelBaseLargeItems:completeAnimation()
 				self.LabelBaseLargeItems:setAlpha( 0 )
 				self.clipFinished( LabelBaseLargeItems, {} )
+
 				SpecialItems:completeAnimation()
 				self.SpecialItems:setAlpha( 0 )
 				self.clipFinished( SpecialItems, {} )
@@ -47,15 +51,18 @@ CoD.SprayerWidgetTitle.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				LabelBaseLargeItems:completeAnimation()
 				self.LabelBaseLargeItems:setAlpha( 1 )
 				self.clipFinished( LabelBaseLargeItems, {} )
+
 				SpecialItems:completeAnimation()
 				self.SpecialItems:setAlpha( 1 )
 				self.clipFinished( SpecialItems, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

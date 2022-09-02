@@ -4,9 +4,11 @@
 CoD.StartLabel = InheritFrom( LUI.UIElement )
 CoD.StartLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.StartLabel )
 	self.id = "StartLabel"
@@ -32,6 +34,7 @@ CoD.StartLabel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local lblPressToPlayFrame2 = function ( lblPressToPlay, event )
 					local lblPressToPlayFrame3 = function ( lblPressToPlay, event )
 						local lblPressToPlayFrame4 = function ( lblPressToPlay, event )
@@ -79,10 +82,12 @@ CoD.StartLabel.new = function ( menu, controller )
 				lblPressToPlay:completeAnimation()
 				self.lblPressToPlay:setAlpha( 0.45 )
 				lblPressToPlayFrame2( lblPressToPlay, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
+
 				local lblPressToPlayFrame2 = function ( lblPressToPlay, event )
 					local lblPressToPlayFrame3 = function ( lblPressToPlay, event )
 						local lblPressToPlayFrame4 = function ( lblPressToPlay, event )
@@ -130,6 +135,7 @@ CoD.StartLabel.new = function ( menu, controller )
 				lblPressToPlay:completeAnimation()
 				self.lblPressToPlay:setAlpha( 0.45 )
 				lblPressToPlayFrame2( lblPressToPlay, {} )
+
 				self.nextClip = "Focus"
 			end
 		}

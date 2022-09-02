@@ -4,9 +4,11 @@
 CoD.DamageWidget_PanelOct = InheritFrom( LUI.UIElement )
 CoD.DamageWidget_PanelOct.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DamageWidget_PanelOct )
 	self.id = "DamageWidget_PanelOct"

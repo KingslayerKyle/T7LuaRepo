@@ -4,9 +4,11 @@
 CoD.systemOverlay_Connect_Lines2 = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_Connect_Lines2.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_Connect_Lines2 )
 	self.id = "systemOverlay_Connect_Lines2"
@@ -33,6 +35,7 @@ CoD.systemOverlay_Connect_Lines2.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Image0:completeAnimation()
 				self.Image0:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( Image0, {} )
@@ -55,6 +58,7 @@ CoD.systemOverlay_Connect_Lines2.new = function ( menu, controller )
 				self.mask:setTopBottom( true, false, -196.5, 403.5 )
 				self.mask:setScale( 1.35 )
 				maskFrame2( mask, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

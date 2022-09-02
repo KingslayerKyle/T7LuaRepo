@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.CAC.MenuSelectScreen.WeaponNameWidget" )
 CoD.PersonalizeCharacterCarouselItem_InfoPanel = InheritFrom( LUI.UIElement )
 CoD.PersonalizeCharacterCarouselItem_InfoPanel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.PersonalizeCharacterCarouselItem_InfoPanel )
 	self.id = "PersonalizeCharacterCarouselItem_InfoPanel"
@@ -151,18 +153,23 @@ CoD.PersonalizeCharacterCarouselItem_InfoPanel.new = function ( menu, controller
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				selectedHead:completeAnimation()
 				self.selectedHead:setAlpha( 1 )
 				self.clipFinished( selectedHead, {} )
+
 				selectedBody:completeAnimation()
 				self.selectedBody:setAlpha( 1 )
 				self.clipFinished( selectedBody, {} )
+
 				CallsignWidget:completeAnimation()
 				self.CallsignWidget:setAlpha( 1 )
 				self.clipFinished( CallsignWidget, {} )
+
 				LeftBoxLine:completeAnimation()
 				self.LeftBoxLine:setAlpha( 0.8 )
 				self.clipFinished( LeftBoxLine, {} )
+
 				LeftBoxLine2:completeAnimation()
 				self.LeftBoxLine2:setAlpha( 0.8 )
 				self.clipFinished( LeftBoxLine2, {} )
@@ -171,21 +178,26 @@ CoD.PersonalizeCharacterCarouselItem_InfoPanel.new = function ( menu, controller
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				selectedHead:completeAnimation()
 				self.selectedHead:setAlpha( 0 )
 				self.clipFinished( selectedHead, {} )
+
 				selectedBody:completeAnimation()
 				self.selectedBody:setAlpha( 0 )
 				self.clipFinished( selectedBody, {} )
+
 				LeftBoxLine:completeAnimation()
 				self.LeftBoxLine:setAlpha( 0 )
 				self.clipFinished( LeftBoxLine, {} )
+
 				LeftBoxLine2:completeAnimation()
 				self.LeftBoxLine2:setAlpha( 0 )
 				self.clipFinished( LeftBoxLine2, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -202,6 +214,7 @@ CoD.PersonalizeCharacterCarouselItem_InfoPanel.new = function ( menu, controller
 			modelName = "disabled"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FETitleNumBrdr1:close()
 		element.selectedHead:close()

@@ -14,9 +14,11 @@ end
 CoD.Challenges_FrameWidget_NearCompletion = InheritFrom( LUI.UIElement )
 CoD.Challenges_FrameWidget_NearCompletion.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_FrameWidget_NearCompletion )
 	self.id = "Challenges_FrameWidget_NearCompletion"
@@ -105,6 +107,7 @@ CoD.Challenges_FrameWidget_NearCompletion.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardProfiler:close()
 		element.NearCompletionList:close()

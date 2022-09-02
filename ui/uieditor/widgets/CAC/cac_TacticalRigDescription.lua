@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CAC.cac_ItemTitleGlow" )
 CoD.cac_TacticalRigDescription = InheritFrom( LUI.UIElement )
 CoD.cac_TacticalRigDescription.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_TacticalRigDescription )
 	self.id = "cac_TacticalRigDescription"
@@ -34,6 +36,7 @@ CoD.cac_TacticalRigDescription.new = function ( menu, controller )
 	UpgradeName0:setShaderVector( 1, 0.02, 0, 0, 0 )
 	UpgradeName0:setShaderVector( 2, 1, 0, 0, 0 )
 	UpgradeName0:setLetterSpacing( 1 )
+
 	LUI.OverrideFunction_CallOriginalFirst( UpgradeName0, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 0 )
 	end )
@@ -44,12 +47,14 @@ CoD.cac_TacticalRigDescription.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				UpgradeName0:completeAnimation()
 				self.UpgradeName0:setAlpha( 1 )
 				self.clipFinished( UpgradeName0, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TitleGlow1:close()
 	end )

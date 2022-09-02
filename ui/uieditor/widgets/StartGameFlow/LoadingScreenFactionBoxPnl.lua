@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.StartGameFlow.LoadingScreenFactionBoxPnlIntl" )
 CoD.LoadingScreenFactionBoxPnl = InheritFrom( LUI.UIElement )
 CoD.LoadingScreenFactionBoxPnl.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LoadingScreenFactionBoxPnl )
 	self.id = "LoadingScreenFactionBoxPnl"

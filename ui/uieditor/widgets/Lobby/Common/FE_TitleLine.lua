@@ -4,9 +4,11 @@
 CoD.FE_TitleLine = InheritFrom( LUI.UIElement )
 CoD.FE_TitleLine.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_TitleLine )
 	self.id = "FE_TitleLine"

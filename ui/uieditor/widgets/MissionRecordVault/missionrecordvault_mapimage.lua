@@ -4,9 +4,11 @@
 CoD.MissionRecordVault_MapImage = InheritFrom( LUI.UIElement )
 CoD.MissionRecordVault_MapImage.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MissionRecordVault_MapImage )
 	self.id = "MissionRecordVault_MapImage"

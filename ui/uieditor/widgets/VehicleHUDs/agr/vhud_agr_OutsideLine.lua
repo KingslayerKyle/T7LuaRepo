@@ -4,9 +4,11 @@
 CoD.vhud_agr_OutsideLine = InheritFrom( LUI.UIElement )
 CoD.vhud_agr_OutsideLine.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.vhud_agr_OutsideLine )
 	self.id = "vhud_agr_OutsideLine"

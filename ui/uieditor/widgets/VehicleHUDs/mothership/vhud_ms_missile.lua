@@ -4,9 +4,11 @@
 CoD.vhud_ms_missile = InheritFrom( LUI.UIElement )
 CoD.vhud_ms_missile.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.vhud_ms_missile )
 	self.id = "vhud_ms_missile"
@@ -37,12 +39,14 @@ CoD.vhud_ms_missile.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				agrIconMissile1:completeAnimation()
 				self.agrIconMissile1:setAlpha( 0 )
 				self.clipFinished( agrIconMissile1, {} )
 			end,
 			Armed = function ()
 				self:setupElementClipCounter( 1 )
+
 				local agrIconMissile1Frame2 = function ( agrIconMissile1, event )
 					local agrIconMissile1Frame3 = function ( agrIconMissile1, event )
 						local agrIconMissile1Frame4 = function ( agrIconMissile1, event )
@@ -85,6 +89,7 @@ CoD.vhud_ms_missile.new = function ( menu, controller )
 		Armed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				agrIconMissile1:completeAnimation()
 				self.agrIconMissile1:setAlpha( 1 )
 				self.clipFinished( agrIconMissile1, {} )

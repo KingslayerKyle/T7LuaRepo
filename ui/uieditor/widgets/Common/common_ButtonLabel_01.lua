@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CAC.NewBreadcrumb" )
 CoD.common_ButtonLabel_01 = InheritFrom( LUI.UIElement )
 CoD.common_ButtonLabel_01.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.common_ButtonLabel_01 )
 	self.id = "common_ButtonLabel_01"
@@ -47,6 +49,7 @@ CoD.common_ButtonLabel_01.new = function ( menu, controller )
 		end
 		return f3_local0
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( itemName, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrappedUp( self, element, 0, 0 )
 	end )
@@ -64,16 +67,19 @@ CoD.common_ButtonLabel_01.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Panel:completeAnimation()
 				self.Panel:setLeftRight( true, true, 0, 0 )
 				self.Panel:setTopBottom( true, true, 0, 0 )
 				self.Panel:setAlpha( 0.4 )
 				self.clipFinished( Panel, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setLeftRight( true, true, 7, 0 )
 				self.itemName:setTopBottom( false, true, -19.5, -0.5 )
 				self.itemName:setAlpha( 1 )
 				self.clipFinished( itemName, {} )
+
 				newIcon:completeAnimation()
 				self.newIcon:setAlpha( 0 )
 				self.clipFinished( newIcon, {} )
@@ -82,14 +88,17 @@ CoD.common_ButtonLabel_01.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Panel:completeAnimation()
 				self.Panel:setLeftRight( true, true, 0, 0 )
 				self.Panel:setTopBottom( true, true, 0, 0 )
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setAlpha( 0 )
 				self.clipFinished( itemName, {} )
+
 				newIcon:completeAnimation()
 				self.newIcon:setAlpha( 0 )
 				self.clipFinished( newIcon, {} )
@@ -98,22 +107,26 @@ CoD.common_ButtonLabel_01.new = function ( menu, controller )
 		HasNew = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Panel:completeAnimation()
 				self.Panel:setLeftRight( true, true, 0, 15 )
 				self.Panel:setTopBottom( true, true, 0, 0 )
 				self.Panel:setAlpha( 0.4 )
 				self.clipFinished( Panel, {} )
+
 				itemName:completeAnimation()
 				self.itemName:setLeftRight( true, true, 7, -4 )
 				self.itemName:setTopBottom( false, true, -19.5, -0.5 )
 				self.itemName:setAlpha( 1 )
 				self.clipFinished( itemName, {} )
+
 				newIcon:completeAnimation()
 				self.newIcon:setAlpha( 1 )
 				self.clipFinished( newIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -128,6 +141,7 @@ CoD.common_ButtonLabel_01.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 		element.newIcon:close()

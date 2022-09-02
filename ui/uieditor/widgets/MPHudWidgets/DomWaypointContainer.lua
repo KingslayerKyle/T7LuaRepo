@@ -108,9 +108,11 @@ end
 CoD.DomWaypointContainer = InheritFrom( LUI.UIElement )
 CoD.DomWaypointContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DomWaypointContainer )
 	self.id = "DomWaypointContainer"

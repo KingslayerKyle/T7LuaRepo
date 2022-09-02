@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventoryIsland.GasMaskPieceWidget" )
 CoD.GasMaskBlueprintWidget_Island = InheritFrom( LUI.UIElement )
 CoD.GasMaskBlueprintWidget_Island.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GasMaskBlueprintWidget_Island )
 	self.id = "GasMaskBlueprintWidget_Island"
@@ -243,15 +245,19 @@ CoD.GasMaskBlueprintWidget_Island.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				GasMaskPieceWidget1:completeAnimation()
 				self.GasMaskPieceWidget1:setAlpha( 0 )
 				self.clipFinished( GasMaskPieceWidget1, {} )
+
 				GasMaskPieceWidget0:completeAnimation()
 				self.GasMaskPieceWidget0:setAlpha( 0 )
 				self.clipFinished( GasMaskPieceWidget0, {} )
+
 				GasMaskPieceWidget2:completeAnimation()
 				self.GasMaskPieceWidget2:setAlpha( 0 )
 				self.clipFinished( GasMaskPieceWidget2, {} )
@@ -260,6 +266,7 @@ CoD.GasMaskBlueprintWidget_Island.new = function ( menu, controller )
 		BgVisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local bgFrame2 = function ( bg, event )
 					local bgFrame3 = function ( bg, event )
 						local bgFrame4 = function ( bg, event )
@@ -296,12 +303,15 @@ CoD.GasMaskBlueprintWidget_Island.new = function ( menu, controller )
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				bgFrame2( bg, {} )
+
 				GasMaskPieceWidget1:completeAnimation()
 				self.GasMaskPieceWidget1:setAlpha( 1 )
 				self.clipFinished( GasMaskPieceWidget1, {} )
+
 				GasMaskPieceWidget0:completeAnimation()
 				self.GasMaskPieceWidget0:setAlpha( 1 )
 				self.clipFinished( GasMaskPieceWidget0, {} )
+
 				GasMaskPieceWidget2:completeAnimation()
 				self.GasMaskPieceWidget2:setAlpha( 1 )
 				self.clipFinished( GasMaskPieceWidget2, {} )
@@ -310,21 +320,26 @@ CoD.GasMaskBlueprintWidget_Island.new = function ( menu, controller )
 		Scoreboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				GasMaskPieceWidget1:completeAnimation()
 				self.GasMaskPieceWidget1:setAlpha( 1 )
 				self.clipFinished( GasMaskPieceWidget1, {} )
+
 				GasMaskPieceWidget0:completeAnimation()
 				self.GasMaskPieceWidget0:setAlpha( 1 )
 				self.clipFinished( GasMaskPieceWidget0, {} )
+
 				GasMaskPieceWidget2:completeAnimation()
 				self.GasMaskPieceWidget2:setAlpha( 1 )
 				self.clipFinished( GasMaskPieceWidget2, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BgVisible",
@@ -355,6 +370,7 @@ CoD.GasMaskBlueprintWidget_Island.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GasMaskPieceWidget1:close()
 		element.GasMaskPieceWidget0:close()

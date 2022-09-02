@@ -4,9 +4,11 @@
 CoD.VehicleGround_HashIcon = InheritFrom( LUI.UIElement )
 CoD.VehicleGround_HashIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.VehicleGround_HashIcon )
 	self.id = "VehicleGround_HashIcon"
@@ -26,6 +28,7 @@ CoD.VehicleGround_HashIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local HashIconFrame2 = function ( HashIcon, event )
 					local HashIconFrame3 = function ( HashIcon, event )
 						local HashIconFrame4 = function ( HashIcon, event )
@@ -188,6 +191,7 @@ CoD.VehicleGround_HashIcon.new = function ( menu, controller )
 				HashIcon:completeAnimation()
 				self.HashIcon:setRGB( 1, 1, 1 )
 				HashIconFrame2( HashIcon, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

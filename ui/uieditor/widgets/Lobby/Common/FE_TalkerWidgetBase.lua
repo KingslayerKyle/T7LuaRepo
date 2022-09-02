@@ -4,9 +4,11 @@
 CoD.FE_TalkerWidgetBase = InheritFrom( LUI.UIElement )
 CoD.FE_TalkerWidgetBase.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_TalkerWidgetBase )
 	self.id = "FE_TalkerWidgetBase"
@@ -27,6 +29,7 @@ CoD.FE_TalkerWidgetBase.new = function ( menu, controller )
 			WpnName:setText( name )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( WpnName, "setText", function ( element, controller )
 		ScaleWidgetToLabelLeftJustify( self, element, 20 )
 	end )
@@ -44,9 +47,11 @@ CoD.FE_TalkerWidgetBase.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				WpnName:completeAnimation()
 				self.WpnName:setAlpha( 1 )
 				self.clipFinished( WpnName, {} )
+
 				talker:completeAnimation()
 				self.talker:setAlpha( 0 )
 				self.clipFinished( talker, {} )
@@ -55,15 +60,18 @@ CoD.FE_TalkerWidgetBase.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				WpnName:completeAnimation()
 				self.WpnName:setAlpha( 1 )
 				self.clipFinished( WpnName, {} )
+
 				talker:completeAnimation()
 				self.talker:setAlpha( 1 )
 				self.clipFinished( talker, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -80,6 +88,7 @@ CoD.FE_TalkerWidgetBase.new = function ( menu, controller )
 			modelName = "name"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.WpnName:close()
 	end )

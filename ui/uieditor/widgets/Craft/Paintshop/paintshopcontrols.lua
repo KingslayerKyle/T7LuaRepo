@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Craft.Paintshop.PaintshopChooseSide" )
 CoD.PaintshopControls = InheritFrom( LUI.UIElement )
 CoD.PaintshopControls.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PaintshopControls )
 	self.id = "PaintshopControls"
@@ -136,33 +138,43 @@ CoD.PaintshopControls.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				cacButtonBoxLrgInactiveStroke0:completeAnimation()
 				self.cacButtonBoxLrgInactiveStroke0:setAlpha( 0 )
 				self.clipFinished( cacButtonBoxLrgInactiveStroke0, {} )
+
 				Copy:completeAnimation()
 				self.Copy:setAlpha( 0 )
 				self.clipFinished( Copy, {} )
+
 				Cut:completeAnimation()
 				self.Cut:setAlpha( 0 )
 				self.clipFinished( Cut, {} )
+
 				Change:completeAnimation()
 				self.Change:setAlpha( 0 )
 				self.clipFinished( Change, {} )
+
 				Insert:completeAnimation()
 				self.Insert:setAlpha( 0 )
 				self.clipFinished( Insert, {} )
+
 				linkLayers:completeAnimation()
 				self.linkLayers:setAlpha( 0 )
 				self.clipFinished( linkLayers, {} )
+
 				groupLayers:completeAnimation()
 				self.groupLayers:setAlpha( 0 )
 				self.clipFinished( groupLayers, {} )
+
 				saveDecal:completeAnimation()
 				self.saveDecal:setAlpha( 0 )
 				self.clipFinished( saveDecal, {} )
+
 				PaintshopChooseSide0:completeAnimation()
 				self.PaintshopChooseSide0:setAlpha( 0 )
 				self.clipFinished( PaintshopChooseSide0, {} )
@@ -171,45 +183,57 @@ CoD.PaintshopControls.new = function ( menu, controller )
 		BrowseModeLinkedLayer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0.5 )
 				self.clipFinished( Image0, {} )
+
 				cacButtonBoxLrgInactiveStroke0:completeAnimation()
 				self.cacButtonBoxLrgInactiveStroke0:setAlpha( 1 )
 				self.clipFinished( cacButtonBoxLrgInactiveStroke0, {} )
+
 				Copy:completeAnimation()
 				self.Copy:setAlpha( 1 )
 				self.clipFinished( Copy, {} )
+
 				Cut:completeAnimation()
 				self.Cut:setAlpha( 1 )
 				self.clipFinished( Cut, {} )
+
 				Change:completeAnimation()
 				self.Change:setLeftRight( true, false, 16, 249 )
 				self.Change:setTopBottom( true, false, 88.95, 119.95 )
 				self.Change:setAlpha( 1 )
 				self.clipFinished( Change, {} )
+
 				Insert:completeAnimation()
 				self.Insert:setLeftRight( true, false, 16, 249 )
 				self.Insert:setTopBottom( true, false, 115.95, 146.95 )
 				self.Insert:setAlpha( 1 )
 				self.clipFinished( Insert, {} )
+
 				linkLayers:completeAnimation()
+
 				linkLayers.label:completeAnimation()
 				self.linkLayers:setLeftRight( true, false, 16, 249 )
 				self.linkLayers:setTopBottom( true, false, 142.95, 173.95 )
 				self.linkLayers:setAlpha( 1 )
 				self.linkLayers.label:setText( Engine.Localize( "MENU_EMBLEM_UNLINK_LAYERS" ) )
 				self.clipFinished( linkLayers, {} )
+
 				groupLayers:completeAnimation()
+
 				groupLayers.label:completeAnimation()
 				self.groupLayers:setLeftRight( true, false, 16, 249 )
 				self.groupLayers:setTopBottom( true, false, 168.95, 199.95 )
 				self.groupLayers:setAlpha( 1 )
 				self.groupLayers.label:setText( Engine.Localize( "MENU_EMBLEMS_GROUP" ) )
 				self.clipFinished( groupLayers, {} )
+
 				saveDecal:completeAnimation()
 				self.saveDecal:setAlpha( 0 )
 				self.clipFinished( saveDecal, {} )
+
 				PaintshopChooseSide0:completeAnimation()
 				self.PaintshopChooseSide0:setAlpha( 1 )
 				self.clipFinished( PaintshopChooseSide0, {} )
@@ -218,43 +242,54 @@ CoD.PaintshopControls.new = function ( menu, controller )
 		BrowseModeGroupedLayer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0.5 )
 				self.clipFinished( Image0, {} )
+
 				cacButtonBoxLrgInactiveStroke0:completeAnimation()
 				self.cacButtonBoxLrgInactiveStroke0:setAlpha( 1 )
 				self.clipFinished( cacButtonBoxLrgInactiveStroke0, {} )
+
 				Copy:completeAnimation()
 				self.Copy:setAlpha( 1 )
 				self.clipFinished( Copy, {} )
+
 				Cut:completeAnimation()
 				self.Cut:setAlpha( 1 )
 				self.clipFinished( Cut, {} )
+
 				Change:completeAnimation()
 				self.Change:setAlpha( 0 )
 				self.clipFinished( Change, {} )
+
 				Insert:completeAnimation()
 				self.Insert:setLeftRight( true, false, 16, 249 )
 				self.Insert:setTopBottom( true, false, 88.95, 119.95 )
 				self.Insert:setAlpha( 1 )
 				self.clipFinished( Insert, {} )
+
 				linkLayers:completeAnimation()
 				self.linkLayers:setLeftRight( true, false, 16, 249 )
 				self.linkLayers:setTopBottom( true, false, 142.95, 173.95 )
 				self.linkLayers:setAlpha( 0 )
 				self.clipFinished( linkLayers, {} )
+
 				groupLayers:completeAnimation()
+
 				groupLayers.label:completeAnimation()
 				self.groupLayers:setLeftRight( true, false, 16, 249 )
 				self.groupLayers:setTopBottom( true, false, 114.5, 145.5 )
 				self.groupLayers:setAlpha( 1 )
 				self.groupLayers.label:setText( Engine.Localize( "MENU_EMBLEMS_UNGROUP" ) )
 				self.clipFinished( groupLayers, {} )
+
 				saveDecal:completeAnimation()
 				self.saveDecal:setLeftRight( true, false, 16, 249 )
 				self.saveDecal:setTopBottom( true, false, 168, 199 )
 				self.saveDecal:setAlpha( 0 )
 				self.clipFinished( saveDecal, {} )
+
 				PaintshopChooseSide0:completeAnimation()
 				self.PaintshopChooseSide0:setAlpha( 1 )
 				self.clipFinished( PaintshopChooseSide0, {} )
@@ -263,36 +298,44 @@ CoD.PaintshopControls.new = function ( menu, controller )
 		BrowseModeOneLayerLinked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				Copy:completeAnimation()
 				self.Copy:setLeftRight( true, false, 16, 249 )
 				self.Copy:setTopBottom( true, false, 36, 67 )
 				self.Copy:setAlpha( 1 )
 				self.clipFinished( Copy, {} )
+
 				Cut:completeAnimation()
 				self.Cut:setLeftRight( true, false, 16, 249 )
 				self.Cut:setTopBottom( true, false, 62, 93 )
 				self.Cut:setAlpha( 1 )
 				self.clipFinished( Cut, {} )
+
 				Change:completeAnimation()
 				self.Change:setLeftRight( true, false, 16, 249 )
 				self.Change:setTopBottom( true, false, 88.95, 119.95 )
 				self.Change:setAlpha( 1 )
 				self.clipFinished( Change, {} )
+
 				Insert:completeAnimation()
 				self.Insert:setLeftRight( true, false, 16, 249 )
 				self.Insert:setTopBottom( true, false, 115.95, 146.95 )
 				self.Insert:setAlpha( 1 )
 				self.clipFinished( Insert, {} )
+
 				linkLayers:completeAnimation()
+
 				linkLayers.label:completeAnimation()
 				self.linkLayers:setLeftRight( true, false, 16, 249 )
 				self.linkLayers:setTopBottom( true, false, 142.95, 173.95 )
 				self.linkLayers:setAlpha( 1 )
 				self.linkLayers.label:setText( Engine.Localize( "MENU_EMBLEM_UNLINK_LAYERS" ) )
 				self.clipFinished( linkLayers, {} )
+
 				groupLayers:completeAnimation()
 				self.groupLayers:setAlpha( 0 )
 				self.clipFinished( groupLayers, {} )
+
 				saveDecal:completeAnimation()
 				self.saveDecal:setAlpha( 0 )
 				self.clipFinished( saveDecal, {} )
@@ -301,47 +344,59 @@ CoD.PaintshopControls.new = function ( menu, controller )
 		BrowseMode = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0.5 )
 				self.clipFinished( Image0, {} )
+
 				cacButtonBoxLrgInactiveStroke0:completeAnimation()
 				self.cacButtonBoxLrgInactiveStroke0:setAlpha( 1 )
 				self.clipFinished( cacButtonBoxLrgInactiveStroke0, {} )
+
 				Copy:completeAnimation()
 				self.Copy:setAlpha( 1 )
 				self.clipFinished( Copy, {} )
+
 				Cut:completeAnimation()
 				self.Cut:setAlpha( 1 )
 				self.clipFinished( Cut, {} )
+
 				Change:completeAnimation()
 				self.Change:setLeftRight( true, false, 16, 249 )
 				self.Change:setTopBottom( true, false, 88.95, 119.95 )
 				self.Change:setAlpha( 1 )
 				self.clipFinished( Change, {} )
+
 				Insert:completeAnimation()
 				self.Insert:setLeftRight( true, false, 16, 249 )
 				self.Insert:setTopBottom( true, false, 115.95, 146.95 )
 				self.Insert:setAlpha( 1 )
 				self.clipFinished( Insert, {} )
+
 				linkLayers:completeAnimation()
+
 				linkLayers.label:completeAnimation()
 				self.linkLayers:setLeftRight( true, false, 16, 249 )
 				self.linkLayers:setTopBottom( true, false, 142.95, 173.95 )
 				self.linkLayers:setAlpha( 1 )
 				self.linkLayers.label:setText( Engine.Localize( "MENU_EMBLEM_LINK_LAYERS" ) )
 				self.clipFinished( linkLayers, {} )
+
 				groupLayers:completeAnimation()
 				self.groupLayers:setAlpha( 0 )
 				self.clipFinished( groupLayers, {} )
+
 				saveDecal:completeAnimation()
 				self.saveDecal:setAlpha( 0 )
 				self.clipFinished( saveDecal, {} )
+
 				PaintshopChooseSide0:completeAnimation()
 				self.PaintshopChooseSide0:setAlpha( 1 )
 				self.clipFinished( PaintshopChooseSide0, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.cacButtonBoxLrgInactiveStroke0:close()
 		element.Copy:close()

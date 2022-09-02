@@ -4,9 +4,11 @@
 CoD.WaypointArrowWidget = InheritFrom( LUI.UIElement )
 CoD.WaypointArrowWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WaypointArrowWidget )
 	self.id = "WaypointArrowWidget"
@@ -34,9 +36,11 @@ CoD.WaypointArrowWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				outlineArrow:completeAnimation()
 				self.outlineArrow:setAlpha( 0 )
 				self.clipFinished( outlineArrow, {} )
+
 				solidArrow:completeAnimation()
 				self.solidArrow:setAlpha( 1 )
 				self.clipFinished( solidArrow, {} )
@@ -45,9 +49,11 @@ CoD.WaypointArrowWidget.new = function ( menu, controller )
 		SolidArrowState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				outlineArrow:completeAnimation()
 				self.outlineArrow:setAlpha( 0 )
 				self.clipFinished( outlineArrow, {} )
+
 				solidArrow:completeAnimation()
 				self.solidArrow:setAlpha( 1 )
 				self.clipFinished( solidArrow, {} )

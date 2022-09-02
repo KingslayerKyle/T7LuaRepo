@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_SpecialistKilljoysEyes" 
 CoD.CallingCards_SpecialistKilljoysWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_SpecialistKilljoysWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_SpecialistKilljoysWidget )
 	self.id = "CallingCards_SpecialistKilljoysWidget"
@@ -69,15 +71,18 @@ CoD.CallingCards_SpecialistKilljoysWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				CallingCardsSpecialistKilljoysEmber:completeAnimation()
 				self.CallingCardsSpecialistKilljoysEmber:setAlpha( 1 )
 				self.clipFinished( CallingCardsSpecialistKilljoysEmber, {} )
+
 				CallingCardsSpecialistKilljoysEyes:completeAnimation()
 				self.CallingCardsSpecialistKilljoysEyes:setAlpha( 1 )
 				self.clipFinished( CallingCardsSpecialistKilljoysEyes, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardsSpecialistKilljoysEmber:close()
 		element.CallingCardsSpecialistKilljoysEyes:close()

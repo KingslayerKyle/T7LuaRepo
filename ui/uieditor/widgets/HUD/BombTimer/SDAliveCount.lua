@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ScoreInfo.ScoreInfo_PanelScale" )
 CoD.SDAliveCount = InheritFrom( LUI.UIElement )
 CoD.SDAliveCount.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SDAliveCount )
 	self.id = "SDAliveCount"
@@ -81,21 +83,27 @@ CoD.SDAliveCount.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
+
 				PlayerImage:completeAnimation()
 				self.PlayerImage:setAlpha( 0 )
 				self.clipFinished( PlayerImage, {} )
+
 				AliveCountBackground:completeAnimation()
 				self.AliveCountBackground:setAlpha( 0 )
 				self.clipFinished( AliveCountBackground, {} )
+
 				AliveCount:completeAnimation()
 				self.AliveCount:setAlpha( 0 )
 				self.clipFinished( AliveCount, {} )
+
 				AliveTextBackground:completeAnimation()
 				self.AliveTextBackground:setAlpha( 0 )
 				self.clipFinished( AliveTextBackground, {} )
+
 				AliveString:completeAnimation()
 				self.AliveString:setAlpha( 0 )
 				self.clipFinished( AliveString, {} )
@@ -104,21 +112,27 @@ CoD.SDAliveCount.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 1 )
 				self.clipFinished( Panel, {} )
+
 				PlayerImage:completeAnimation()
 				self.PlayerImage:setAlpha( 1 )
 				self.clipFinished( PlayerImage, {} )
+
 				AliveCountBackground:completeAnimation()
 				self.AliveCountBackground:setAlpha( 0.7 )
 				self.clipFinished( AliveCountBackground, {} )
+
 				AliveCount:completeAnimation()
 				self.AliveCount:setAlpha( 1 )
 				self.clipFinished( AliveCount, {} )
+
 				AliveTextBackground:completeAnimation()
 				self.AliveTextBackground:setAlpha( 0 )
 				self.clipFinished( AliveTextBackground, {} )
+
 				AliveString:completeAnimation()
 				self.AliveString:setAlpha( 1 )
 				self.clipFinished( AliveString, {} )
@@ -127,27 +141,34 @@ CoD.SDAliveCount.new = function ( menu, controller )
 		VisibleForCodcaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 1 )
 				self.clipFinished( Panel, {} )
+
 				PlayerImage:completeAnimation()
 				self.PlayerImage:setAlpha( 1 )
 				self.clipFinished( PlayerImage, {} )
+
 				AliveCountBackground:completeAnimation()
 				self.AliveCountBackground:setAlpha( 0.7 )
 				self.clipFinished( AliveCountBackground, {} )
+
 				AliveCount:completeAnimation()
 				self.AliveCount:setAlpha( 1 )
 				self.clipFinished( AliveCount, {} )
+
 				AliveTextBackground:completeAnimation()
 				self.AliveTextBackground:setAlpha( 0 )
 				self.clipFinished( AliveTextBackground, {} )
+
 				AliveString:completeAnimation()
 				self.AliveString:setAlpha( 1 )
 				self.clipFinished( AliveString, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -323,6 +344,7 @@ CoD.SDAliveCount.new = function ( menu, controller )
 			modelName = "CodCaster.profileSettingsUpdated"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 	end )

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CPSystems.Loadout.LoadoutCoreTiles" )
 CoD.CybercoreListItemWidget = InheritFrom( LUI.UIElement )
 CoD.CybercoreListItemWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CybercoreListItemWidget )
 	self.id = "CybercoreListItemWidget"
@@ -80,24 +82,30 @@ CoD.CybercoreListItemWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				FEFocusBarContainerT:completeAnimation()
 				self.FEFocusBarContainerT:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerT, {} )
+
 				FEFocusBarContainerB:completeAnimation()
 				self.FEFocusBarContainerB:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 0 )
 				self.clipFinished( equippedIcon, {} )
+
 				FEFocusBarContainerT:completeAnimation()
 				self.FEFocusBarContainerT:setAlpha( 1 )
 				self.clipFinished( FEFocusBarContainerT, {} )
+
 				FEFocusBarContainerB:completeAnimation()
 				self.FEFocusBarContainerB:setAlpha( 1 )
 				self.clipFinished( FEFocusBarContainerB, {} )
@@ -106,30 +114,37 @@ CoD.CybercoreListItemWidget.new = function ( menu, controller )
 		Equipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 1 )
 				self.clipFinished( equippedIcon, {} )
+
 				FEFocusBarContainerT:completeAnimation()
 				self.FEFocusBarContainerT:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerT, {} )
+
 				FEFocusBarContainerB:completeAnimation()
 				self.FEFocusBarContainerB:setAlpha( 0 )
 				self.clipFinished( FEFocusBarContainerB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				equippedIcon:completeAnimation()
 				self.equippedIcon:setAlpha( 1 )
 				self.clipFinished( equippedIcon, {} )
+
 				FEFocusBarContainerT:completeAnimation()
 				self.FEFocusBarContainerT:setAlpha( 1 )
 				self.clipFinished( FEFocusBarContainerT, {} )
+
 				FEFocusBarContainerB:completeAnimation()
 				self.FEFocusBarContainerB:setAlpha( 1 )
 				self.clipFinished( FEFocusBarContainerB, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Equipped",
@@ -146,6 +161,7 @@ CoD.CybercoreListItemWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEFocusBarContainerT:close()
 		element.FEFocusBarContainerB:close()

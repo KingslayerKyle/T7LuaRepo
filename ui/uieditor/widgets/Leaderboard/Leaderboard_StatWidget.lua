@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ListHeaderGlow" )
 CoD.Leaderboard_StatWidget = InheritFrom( LUI.UIElement )
 CoD.Leaderboard_StatWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Leaderboard_StatWidget )
 	self.id = "Leaderboard_StatWidget"
@@ -53,6 +55,7 @@ CoD.Leaderboard_StatWidget.new = function ( menu, controller )
 	btnDisplayTextStroke:setLetterSpacing( 1 )
 	btnDisplayTextStroke:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	btnDisplayTextStroke:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( btnDisplayTextStroke, "setText", function ( element, controller )
 		if not IsSelfInState( self, "Hidden" ) and IsTextWrapping( self, element ) then
 			SetState( self, "TitleWrapping" )
@@ -67,15 +70,19 @@ CoD.Leaderboard_StatWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ImageBorder0:completeAnimation()
 				self.ImageBorder0:setAlpha( 1 )
 				self.clipFinished( ImageBorder0, {} )
+
 				StatText:completeAnimation()
 				self.StatText:setAlpha( 1 )
 				self.clipFinished( StatText, {} )
+
 				FEListHeaderGlow0:completeAnimation()
 				self.FEListHeaderGlow0:setAlpha( 1 )
 				self.clipFinished( FEListHeaderGlow0, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setLeftRight( true, false, 5, 95 )
 				self.btnDisplayTextStroke:setTopBottom( true, false, 11.5, 25.5 )
@@ -86,6 +93,7 @@ CoD.Leaderboard_StatWidget.new = function ( menu, controller )
 		TitleWrapping = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setLeftRight( true, false, 5, 95 )
 				self.btnDisplayTextStroke:setTopBottom( true, false, 4.5, 18.5 )
@@ -95,21 +103,26 @@ CoD.Leaderboard_StatWidget.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				ImageBorder0:completeAnimation()
 				self.ImageBorder0:setAlpha( 0 )
 				self.clipFinished( ImageBorder0, {} )
+
 				StatText:completeAnimation()
 				self.StatText:setAlpha( 0 )
 				self.clipFinished( StatText, {} )
+
 				FEListHeaderGlow0:completeAnimation()
 				self.FEListHeaderGlow0:setAlpha( 0 )
 				self.clipFinished( FEListHeaderGlow0, {} )
+
 				btnDisplayTextStroke:completeAnimation()
 				self.btnDisplayTextStroke:setAlpha( 0 )
 				self.clipFinished( btnDisplayTextStroke, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "TitleWrapping",
@@ -124,6 +137,7 @@ CoD.Leaderboard_StatWidget.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ImageBorder0:close()
 		element.FEListHeaderGlow0:close()

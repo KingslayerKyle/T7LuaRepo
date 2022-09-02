@@ -38,9 +38,11 @@ end
 CoD.CallingCards_FrameWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_FrameWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_FrameWidget )
 	self.id = "CallingCards_FrameWidget"
@@ -60,6 +62,7 @@ CoD.CallingCards_FrameWidget.new = function ( menu, controller )
 	self.CardIconFrame = CardIconFrame
 	
 	CardIconFrame.id = "CardIconFrame"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CardIconFrame:close()
 	end )

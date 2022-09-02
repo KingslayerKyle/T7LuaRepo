@@ -4,9 +4,11 @@
 CoD.cac_WeapStatsBarEmpty = InheritFrom( LUI.UIElement )
 CoD.cac_WeapStatsBarEmpty.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.cac_WeapStatsBarEmpty )
 	self.id = "cac_WeapStatsBarEmpty"
@@ -43,10 +45,12 @@ CoD.cac_WeapStatsBarEmpty.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				EmptySlot10:completeAnimation()
 				self.EmptySlot10:setRGB( 0.18, 0.18, 0.18 )
 				self.EmptySlot10:setAlpha( 0.5 )
 				self.clipFinished( EmptySlot10, {} )
+
 				EmptySlot100:completeAnimation()
 				self.EmptySlot100:setRGB( 0.18, 0.18, 0.18 )
 				self.EmptySlot100:setAlpha( 0.5 )

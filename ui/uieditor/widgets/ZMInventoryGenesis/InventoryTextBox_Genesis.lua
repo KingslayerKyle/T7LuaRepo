@@ -4,9 +4,11 @@
 CoD.InventoryTextBox_Genesis = InheritFrom( LUI.UIElement )
 CoD.InventoryTextBox_Genesis.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.InventoryTextBox_Genesis )
 	self.id = "InventoryTextBox_Genesis"
@@ -22,6 +24,7 @@ CoD.InventoryTextBox_Genesis.new = function ( menu, controller )
 	TextKeeper:setTTF( "fonts/FoundryGridnik-Medium.ttf" )
 	TextKeeper:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	TextKeeper:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( TextKeeper, "setText", function ( element, controller )
 		ScaleWidgetToLabelCentered( self, element, 0 )
 	end )
@@ -32,6 +35,7 @@ CoD.InventoryTextBox_Genesis.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				TextKeeper:completeAnimation()
 				self.TextKeeper:setAlpha( 0 )
 				self.clipFinished( TextKeeper, {} )
@@ -40,12 +44,14 @@ CoD.InventoryTextBox_Genesis.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				TextKeeper:completeAnimation()
 				self.TextKeeper:setAlpha( 1 )
 				self.clipFinished( TextKeeper, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

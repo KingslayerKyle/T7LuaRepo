@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Notifications.WeaponLevelUp.WeaponLevelUpNotificat
 CoD.WeaponLevelUpNotification_Bottom = InheritFrom( LUI.UIElement )
 CoD.WeaponLevelUpNotification_Bottom.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.WeaponLevelUpNotification_Bottom )
 	self.id = "WeaponLevelUpNotification_Bottom"
@@ -42,12 +44,14 @@ CoD.WeaponLevelUpNotification_Bottom.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BottomMain:completeAnimation()
 				self.BottomMain:setLeftRight( false, false, -204, 204 )
 				self.BottomMain:setTopBottom( true, false, 7, 127 )
 				self.BottomMain:setAlpha( 1 )
 				self.BottomMain:setScale( 1 )
 				self.clipFinished( BottomMain, {} )
+
 				WeaponLevelUpNotificationTitle:completeAnimation()
 				self.WeaponLevelUpNotificationTitle:setLeftRight( false, false, -204, 204 )
 				self.WeaponLevelUpNotificationTitle:setTopBottom( true, false, 127, 167 )
@@ -57,9 +61,11 @@ CoD.WeaponLevelUpNotification_Bottom.new = function ( menu, controller )
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.WeaponLevelUpNotificationTitle:close()
 	end )

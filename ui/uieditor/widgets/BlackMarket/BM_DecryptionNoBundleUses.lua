@@ -4,9 +4,11 @@
 CoD.BM_DecryptionNoBundleUses = InheritFrom( LUI.UIElement )
 CoD.BM_DecryptionNoBundleUses.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_DecryptionNoBundleUses )
 	self.id = "BM_DecryptionNoBundleUses"
@@ -31,6 +33,7 @@ CoD.BM_DecryptionNoBundleUses.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				tradeAgainText:completeAnimation()
 				self.tradeAgainText:setAlpha( 0 )
 				self.tradeAgainText:setText( Engine.Localize( "MPUI_BM_NO_BUNDLE_USES_REMAINING" ) )
@@ -38,11 +41,13 @@ CoD.BM_DecryptionNoBundleUses.new = function ( menu, controller )
 			end,
 			Rolling = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				tradeAgainText:completeAnimation()
 				self.tradeAgainText:setAlpha( 1 )
 				self.tradeAgainText:setScale( 1.1 )
@@ -51,11 +56,13 @@ CoD.BM_DecryptionNoBundleUses.new = function ( menu, controller )
 			end,
 			Rolling = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		VisibleIncentiveRare = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				tradeAgainText:completeAnimation()
 				self.tradeAgainText:setAlpha( 1 )
 				self.tradeAgainText:setScale( 1.1 )
@@ -64,11 +71,13 @@ CoD.BM_DecryptionNoBundleUses.new = function ( menu, controller )
 			end,
 			Rolling = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		VisibleIncentiveWeapon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				tradeAgainText:completeAnimation()
 				self.tradeAgainText:setAlpha( 1 )
 				self.tradeAgainText:setScale( 1.1 )
@@ -77,11 +86,13 @@ CoD.BM_DecryptionNoBundleUses.new = function ( menu, controller )
 			end,
 			Rolling = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		VisibleGenericReward = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				tradeAgainText:completeAnimation()
 				self.tradeAgainText:setAlpha( 1 )
 				self.tradeAgainText:setScale( 1.1 )
@@ -90,11 +101,13 @@ CoD.BM_DecryptionNoBundleUses.new = function ( menu, controller )
 			end,
 			Rolling = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		VisibleBribeExpired = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				tradeAgainText:completeAnimation()
 				self.tradeAgainText:setAlpha( 1 )
 				self.tradeAgainText:setText( Engine.Localize( "MPUI_EXPIRED" ) )
@@ -104,6 +117,7 @@ CoD.BM_DecryptionNoBundleUses.new = function ( menu, controller )
 		VisibleNoDupesExpired = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				tradeAgainText:completeAnimation()
 				self.tradeAgainText:setAlpha( 1 )
 				self.tradeAgainText:setText( Engine.Localize( "MPUI_EXPIRED" ) )
@@ -113,6 +127,7 @@ CoD.BM_DecryptionNoBundleUses.new = function ( menu, controller )
 		VisibleGrandSlamReward = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				tradeAgainText:completeAnimation()
 				self.tradeAgainText:setAlpha( 1 )
 				self.tradeAgainText:setScale( 1.1 )
@@ -121,9 +136,11 @@ CoD.BM_DecryptionNoBundleUses.new = function ( menu, controller )
 			end,
 			Rolling = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

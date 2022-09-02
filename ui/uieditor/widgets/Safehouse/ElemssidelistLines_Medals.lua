@@ -4,9 +4,11 @@
 CoD.ElemssidelistLines_Medals = InheritFrom( LUI.UIElement )
 CoD.ElemssidelistLines_Medals.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ElemssidelistLines_Medals )
 	self.id = "ElemssidelistLines_Medals"

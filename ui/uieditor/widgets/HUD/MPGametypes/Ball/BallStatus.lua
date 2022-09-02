@@ -14,9 +14,11 @@ end
 CoD.BallStatus = InheritFrom( LUI.UIElement )
 CoD.BallStatus.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BallStatus )
 	self.id = "BallStatus"
@@ -87,12 +89,15 @@ CoD.BallStatus.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				FriendlyFlag:completeAnimation()
 				self.FriendlyFlag:setAlpha( 0 )
 				self.clipFinished( FriendlyFlag, {} )
+
 				EnemyFlag:completeAnimation()
 				self.EnemyFlag:setAlpha( 0 )
 				self.clipFinished( EnemyFlag, {} )
+
 				NeutralFlag:completeAnimation()
 				self.NeutralFlag:setAlpha( 1 )
 				self.clipFinished( NeutralFlag, {} )
@@ -101,12 +106,15 @@ CoD.BallStatus.new = function ( menu, controller )
 		EnemyHeld = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				FriendlyFlag:completeAnimation()
 				self.FriendlyFlag:setAlpha( 0 )
 				self.clipFinished( FriendlyFlag, {} )
+
 				EnemyFlag:completeAnimation()
 				self.EnemyFlag:setAlpha( 1 )
 				self.clipFinished( EnemyFlag, {} )
+
 				NeutralFlag:completeAnimation()
 				self.NeutralFlag:setAlpha( 0 )
 				self.clipFinished( NeutralFlag, {} )
@@ -115,12 +123,15 @@ CoD.BallStatus.new = function ( menu, controller )
 		FriendlyHeld = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				FriendlyFlag:completeAnimation()
 				self.FriendlyFlag:setAlpha( 1 )
 				self.clipFinished( FriendlyFlag, {} )
+
 				EnemyFlag:completeAnimation()
 				self.EnemyFlag:setAlpha( 0 )
 				self.clipFinished( EnemyFlag, {} )
+
 				NeutralFlag:completeAnimation()
 				self.NeutralFlag:setAlpha( 0 )
 				self.clipFinished( NeutralFlag, {} )
@@ -129,18 +140,22 @@ CoD.BallStatus.new = function ( menu, controller )
 		Neutral = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				FriendlyFlag:completeAnimation()
 				self.FriendlyFlag:setAlpha( 0 )
 				self.clipFinished( FriendlyFlag, {} )
+
 				EnemyFlag:completeAnimation()
 				self.EnemyFlag:setAlpha( 0 )
 				self.clipFinished( EnemyFlag, {} )
+
 				NeutralFlag:completeAnimation()
 				self.NeutralFlag:setAlpha( 1 )
 				self.clipFinished( NeutralFlag, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "EnemyHeld",
@@ -177,6 +192,7 @@ CoD.BallStatus.new = function ( menu, controller )
 			modelName = "ballGametype.ballHeldByFriendly"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 		element.FriendlyFlag:close()

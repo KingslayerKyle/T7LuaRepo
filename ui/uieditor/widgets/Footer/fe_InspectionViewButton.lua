@@ -68,9 +68,11 @@ end
 CoD.fe_InspectionViewButton = InheritFrom( LUI.UIElement )
 CoD.fe_InspectionViewButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.fe_InspectionViewButton )
 	self.id = "fe_InspectionViewButton"
@@ -91,6 +93,7 @@ CoD.fe_InspectionViewButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				arrowButton:completeAnimation()
 				self.arrowButton:setAlpha( 0 )
 				self.clipFinished( arrowButton, {} )
@@ -99,6 +102,7 @@ CoD.fe_InspectionViewButton.new = function ( menu, controller )
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				arrowButton:completeAnimation()
 				self.arrowButton:setRGB( 1, 1, 1 )
 				self.arrowButton:setAlpha( 1 )
@@ -107,6 +111,7 @@ CoD.fe_InspectionViewButton.new = function ( menu, controller )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 1 )
+
 				arrowButton:completeAnimation()
 				self.arrowButton:setRGB( 1, 0.45, 0 )
 				self.arrowButton:setAlpha( 1 )
@@ -117,6 +122,7 @@ CoD.fe_InspectionViewButton.new = function ( menu, controller )
 		Inactive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				arrowButton:completeAnimation()
 				self.arrowButton:setRGB( 1, 1, 1 )
 				self.arrowButton:setAlpha( 1 )
@@ -125,6 +131,7 @@ CoD.fe_InspectionViewButton.new = function ( menu, controller )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 1 )
+
 				arrowButton:completeAnimation()
 				self.arrowButton:setRGB( 1, 0.45, 0 )
 				self.arrowButton:setAlpha( 1 )
@@ -133,6 +140,7 @@ CoD.fe_InspectionViewButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Active",

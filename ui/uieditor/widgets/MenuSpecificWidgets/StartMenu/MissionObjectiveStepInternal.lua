@@ -14,9 +14,11 @@ end
 CoD.MissionObjectiveStepInternal = InheritFrom( LUI.UIElement )
 CoD.MissionObjectiveStepInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MissionObjectiveStepInternal )
 	self.id = "MissionObjectiveStepInternal"
@@ -55,13 +57,16 @@ CoD.MissionObjectiveStepInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				checkbox:completeAnimation()
 				self.checkbox:setAlpha( 1 )
 				self.clipFinished( checkbox, {} )
+
 				checkMark:completeAnimation()
 				self.checkMark:setRGB( 0.35, 0.35, 0.36 )
 				self.checkMark:setAlpha( 0 )
 				self.clipFinished( checkMark, {} )
+
 				stepText:completeAnimation()
 				self.stepText:setLeftRight( true, false, 23, 243 )
 				self.stepText:setTopBottom( true, false, 0, 25 )
@@ -72,13 +77,16 @@ CoD.MissionObjectiveStepInternal.new = function ( menu, controller )
 		Complete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				checkbox:completeAnimation()
 				self.checkbox:setAlpha( 1 )
 				self.clipFinished( checkbox, {} )
+
 				checkMark:completeAnimation()
 				self.checkMark:setRGB( 0.41, 0.74, 0.27 )
 				self.checkMark:setAlpha( 1 )
 				self.clipFinished( checkMark, {} )
+
 				stepText:completeAnimation()
 				self.stepText:setLeftRight( true, false, 23, 243 )
 				self.stepText:setTopBottom( true, false, 0, 25 )
@@ -89,15 +97,18 @@ CoD.MissionObjectiveStepInternal.new = function ( menu, controller )
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				checkbox:completeAnimation()
 				self.checkbox:setLeftRight( true, false, 0, 20 )
 				self.checkbox:setTopBottom( true, false, 3, 23 )
 				self.checkbox:setAlpha( 1 )
 				self.clipFinished( checkbox, {} )
+
 				checkMark:completeAnimation()
 				self.checkMark:setRGB( 0.24, 0.24, 0.24 )
 				self.checkMark:setAlpha( 0 )
 				self.clipFinished( checkMark, {} )
+
 				stepText:completeAnimation()
 				self.stepText:setRGB( 0.35, 0.35, 0.36 )
 				self.clipFinished( stepText, {} )
@@ -106,13 +117,16 @@ CoD.MissionObjectiveStepInternal.new = function ( menu, controller )
 		Failed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				checkbox:completeAnimation()
 				self.checkbox:setAlpha( 1 )
 				self.clipFinished( checkbox, {} )
+
 				checkMark:completeAnimation()
 				self.checkMark:setRGB( 1, 0.07, 0.07 )
 				self.checkMark:setAlpha( 1 )
 				self.clipFinished( checkMark, {} )
+
 				stepText:completeAnimation()
 				self.stepText:setLeftRight( true, false, 23, 243 )
 				self.stepText:setTopBottom( true, false, 0, 25 )
@@ -123,12 +137,15 @@ CoD.MissionObjectiveStepInternal.new = function ( menu, controller )
 		Description = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				checkbox:completeAnimation()
 				self.checkbox:setAlpha( 0 )
 				self.clipFinished( checkbox, {} )
+
 				checkMark:completeAnimation()
 				self.checkMark:setAlpha( 0 )
 				self.clipFinished( checkMark, {} )
+
 				stepText:completeAnimation()
 				self.stepText:setLeftRight( true, false, 0, 243 )
 				self.stepText:setTopBottom( true, false, 0, 25 )
@@ -137,6 +154,7 @@ CoD.MissionObjectiveStepInternal.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.checkbox:close()
 	end )

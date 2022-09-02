@@ -4,9 +4,11 @@
 CoD.weakpoint_Diagonals = InheritFrom( LUI.UIElement )
 CoD.weakpoint_Diagonals.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.weakpoint_Diagonals )
 	self.id = "weakpoint_Diagonals"
@@ -58,6 +60,7 @@ CoD.weakpoint_Diagonals.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				local URFrame2 = function ( UR, event )
 					local URFrame3 = function ( UR, event )
 						local URFrame4 = function ( UR, event )
@@ -408,6 +411,7 @@ CoD.weakpoint_Diagonals.new = function ( menu, controller )
 				self.LL:setRGB( 1, 0, 0 )
 				self.LL:setZoom( -50 )
 				LLFrame2( LL, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

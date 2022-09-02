@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Tablet.TabletLocationSelector_HintText" )
 CoD.TabletLocationSelector_Internal = InheritFrom( LUI.UIElement )
 CoD.TabletLocationSelector_Internal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.TabletLocationSelector_Internal )
 	self.id = "TabletLocationSelector_Internal"

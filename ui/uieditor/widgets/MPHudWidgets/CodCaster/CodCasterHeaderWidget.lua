@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CodCaster.CodCasterHeaderNonTeamBased" )
 CoD.CodCasterHeaderWidget = InheritFrom( LUI.UIElement )
 CoD.CodCasterHeaderWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCasterHeaderWidget )
 	self.id = "CodCasterHeaderWidget"
@@ -34,9 +36,11 @@ CoD.CodCasterHeaderWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				CodCasterHeaderTeamBased:completeAnimation()
 				self.CodCasterHeaderTeamBased:setAlpha( 0 )
 				self.clipFinished( CodCasterHeaderTeamBased, {} )
+
 				CodCasterHeaderNonTeamBased:completeAnimation()
 				self.CodCasterHeaderNonTeamBased:setAlpha( 0 )
 				self.clipFinished( CodCasterHeaderNonTeamBased, {} )
@@ -45,9 +49,11 @@ CoD.CodCasterHeaderWidget.new = function ( menu, controller )
 		VisibleTeamBased = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				CodCasterHeaderTeamBased:completeAnimation()
 				self.CodCasterHeaderTeamBased:setAlpha( 1 )
 				self.clipFinished( CodCasterHeaderTeamBased, {} )
+
 				CodCasterHeaderNonTeamBased:completeAnimation()
 				self.CodCasterHeaderNonTeamBased:setAlpha( 0 )
 				self.clipFinished( CodCasterHeaderNonTeamBased, {} )
@@ -56,15 +62,18 @@ CoD.CodCasterHeaderWidget.new = function ( menu, controller )
 		VisibleNonTeamBased = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				CodCasterHeaderTeamBased:completeAnimation()
 				self.CodCasterHeaderTeamBased:setAlpha( 0 )
 				self.clipFinished( CodCasterHeaderTeamBased, {} )
+
 				CodCasterHeaderNonTeamBased:completeAnimation()
 				self.CodCasterHeaderNonTeamBased:setAlpha( 1 )
 				self.clipFinished( CodCasterHeaderNonTeamBased, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "VisibleTeamBased",
@@ -114,6 +123,7 @@ CoD.CodCasterHeaderWidget.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CodCasterHeaderTeamBased:close()
 		element.CodCasterHeaderNonTeamBased:close()

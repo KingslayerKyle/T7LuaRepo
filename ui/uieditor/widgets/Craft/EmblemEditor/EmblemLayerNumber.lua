@@ -4,9 +4,11 @@
 CoD.EmblemLayerNumber = InheritFrom( LUI.UIElement )
 CoD.EmblemLayerNumber.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemLayerNumber )
 	self.id = "EmblemLayerNumber"
@@ -46,11 +48,13 @@ CoD.EmblemLayerNumber.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				layerNumber:completeAnimation()
 				self.layerNumber:setLeftRight( true, false, 0, 29 )
 				self.layerNumber:setTopBottom( true, true, 0, 0 )
 				self.layerNumber:setAlpha( 1 )
 				self.clipFinished( layerNumber, {} )
+
 				groupIcon:completeAnimation()
 				self.groupIcon:setLeftRight( true, false, 0, 20 )
 				self.groupIcon:setTopBottom( false, false, -10, 10 )
@@ -61,14 +65,17 @@ CoD.EmblemLayerNumber.new = function ( menu, controller )
 		GroupLayerNum = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				topbar:completeAnimation()
 				self.topbar:setAlpha( 0 )
 				self.clipFinished( topbar, {} )
+
 				layerNumber:completeAnimation()
 				self.layerNumber:setLeftRight( true, false, 20, 50 )
 				self.layerNumber:setTopBottom( true, true, 0, 0 )
 				self.layerNumber:setAlpha( 1 )
 				self.clipFinished( layerNumber, {} )
+
 				groupIcon:completeAnimation()
 				self.groupIcon:setLeftRight( true, false, 0, 20 )
 				self.groupIcon:setTopBottom( false, false, -10, 10 )
@@ -77,6 +84,7 @@ CoD.EmblemLayerNumber.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.layerNumber:close()
 	end )

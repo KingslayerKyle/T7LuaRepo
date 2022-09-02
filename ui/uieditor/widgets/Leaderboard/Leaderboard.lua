@@ -53,9 +53,11 @@ end
 CoD.Leaderboard = InheritFrom( LUI.UIElement )
 CoD.Leaderboard.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Leaderboard )
 	self.id = "Leaderboard"
@@ -344,21 +346,27 @@ CoD.Leaderboard.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				FileshareNoContentGraphic:completeAnimation()
 				self.FileshareNoContentGraphic:setAlpha( 0 )
 				self.clipFinished( FileshareNoContentGraphic, {} )
+
 				LeaderboardRows:completeAnimation()
 				self.LeaderboardRows:setAlpha( 1 )
 				self.clipFinished( LeaderboardRows, {} )
+
 				LeaderboardHeader:completeAnimation()
 				self.LeaderboardHeader:setAlpha( 1 )
 				self.clipFinished( LeaderboardHeader, {} )
+
 				LoadingText:completeAnimation()
 				self.LoadingText:setAlpha( 0 )
 				self.clipFinished( LoadingText, {} )
+
 				LeaderboardEmptyText:completeAnimation()
 				self.LeaderboardEmptyText:setAlpha( 0 )
 				self.clipFinished( LeaderboardEmptyText, {} )
+
 				VerticalCounter:completeAnimation()
 				self.VerticalCounter:setAlpha( 1 )
 				self.clipFinished( VerticalCounter, {} )
@@ -367,21 +375,27 @@ CoD.Leaderboard.new = function ( menu, controller )
 		UpdatingLeaderboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				FileshareNoContentGraphic:completeAnimation()
 				self.FileshareNoContentGraphic:setAlpha( 0 )
 				self.clipFinished( FileshareNoContentGraphic, {} )
+
 				LeaderboardRows:completeAnimation()
 				self.LeaderboardRows:setAlpha( 0 )
 				self.clipFinished( LeaderboardRows, {} )
+
 				LeaderboardHeader:completeAnimation()
 				self.LeaderboardHeader:setAlpha( 1 )
 				self.clipFinished( LeaderboardHeader, {} )
+
 				LoadingText:completeAnimation()
 				self.LoadingText:setAlpha( 1 )
 				self.clipFinished( LoadingText, {} )
+
 				LeaderboardEmptyText:completeAnimation()
 				self.LeaderboardEmptyText:setAlpha( 0 )
 				self.clipFinished( LeaderboardEmptyText, {} )
+
 				VerticalCounter:completeAnimation()
 				self.VerticalCounter:setAlpha( 0 )
 				self.clipFinished( VerticalCounter, {} )
@@ -390,32 +404,39 @@ CoD.Leaderboard.new = function ( menu, controller )
 		EmptyLeaderboard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				FileshareNoContentGraphic:completeAnimation()
 				self.FileshareNoContentGraphic:setLeftRight( true, true, 1, 5 )
 				self.FileshareNoContentGraphic:setTopBottom( true, true, 39.87, -24 )
 				self.FileshareNoContentGraphic:setAlpha( 1 )
 				self.clipFinished( FileshareNoContentGraphic, {} )
+
 				LeaderboardRows:completeAnimation()
 				self.LeaderboardRows:setAlpha( 0 )
 				self.clipFinished( LeaderboardRows, {} )
+
 				LeaderboardHeader:completeAnimation()
 				self.LeaderboardHeader:setAlpha( 1 )
 				self.clipFinished( LeaderboardHeader, {} )
+
 				LoadingText:completeAnimation()
 				self.LoadingText:setAlpha( 0 )
 				self.clipFinished( LoadingText, {} )
+
 				LeaderboardEmptyText:completeAnimation()
 				self.LeaderboardEmptyText:setLeftRight( true, false, 172.5, 613.5 )
 				self.LeaderboardEmptyText:setTopBottom( true, false, 225, 245 )
 				self.LeaderboardEmptyText:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.LeaderboardEmptyText:setAlpha( 1 )
 				self.clipFinished( LeaderboardEmptyText, {} )
+
 				VerticalCounter:completeAnimation()
 				self.VerticalCounter:setAlpha( 0 )
 				self.clipFinished( VerticalCounter, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "UpdatingLeaderboard",
@@ -446,6 +467,7 @@ CoD.Leaderboard.new = function ( menu, controller )
 			modelName = "leaderboard.totalResults"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if IsInDefaultState( element ) then
 			UpdateElementDataSource( self, "LeaderboardRows" )
@@ -463,6 +485,7 @@ CoD.Leaderboard.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FileshareNoContentGraphic:close()
 		element.LeaderboardRows:close()

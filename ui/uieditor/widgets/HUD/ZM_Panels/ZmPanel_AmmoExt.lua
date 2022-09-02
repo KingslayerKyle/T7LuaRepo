@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_Panels.ZmPanel_AmmoInt" )
 CoD.ZmPanel_AmmoExt = InheritFrom( LUI.UIElement )
 CoD.ZmPanel_AmmoExt.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZmPanel_AmmoExt )
 	self.id = "ZmPanel_AmmoExt"
@@ -28,9 +30,11 @@ CoD.ZmPanel_AmmoExt.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZmPanelAmmoInt0:close()
 	end )

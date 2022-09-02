@@ -148,6 +148,7 @@ local PostLoadFunc = function ( self, controller, menu )
 		end
 	end )
 	self:addElement( self.thermometerAnimTimer )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "close", function ( element )
 		if element.thermometerAnimTimer then
 			element.thermometerAnimTimer:close()
@@ -159,9 +160,11 @@ end
 CoD.Promo_ZMHD_ThermometerAndRewards = InheritFrom( LUI.UIElement )
 CoD.Promo_ZMHD_ThermometerAndRewards.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Promo_ZMHD_ThermometerAndRewards )
 	self.id = "Promo_ZMHD_ThermometerAndRewards"
@@ -556,9 +559,11 @@ CoD.Promo_ZMHD_ThermometerAndRewards.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				PromoThermometerAndRewardsIdol:completeAnimation()
 				self.PromoThermometerAndRewardsIdol:setAlpha( 1 )
 				self.clipFinished( PromoThermometerAndRewardsIdol, {} )
+
 				ProcessingWidget:completeAnimation()
 				self.ProcessingWidget:setAlpha( 0 )
 				self.clipFinished( ProcessingWidget, {} )
@@ -567,6 +572,7 @@ CoD.Promo_ZMHD_ThermometerAndRewards.new = function ( menu, controller )
 		Purchasing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ProcessingWidget:completeAnimation()
 				self.ProcessingWidget:setAlpha( 1 )
 				self.clipFinished( ProcessingWidget, {} )
@@ -575,6 +581,7 @@ CoD.Promo_ZMHD_ThermometerAndRewards.new = function ( menu, controller )
 		Animating = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ProcessingWidget:completeAnimation()
 				self.ProcessingWidget:setAlpha( 0 )
 				self.clipFinished( ProcessingWidget, {} )
@@ -593,6 +600,7 @@ CoD.Promo_ZMHD_ThermometerAndRewards.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PromoThermometerAndRewardsIdol:close()
 		element.RewardWidget0Off:close()

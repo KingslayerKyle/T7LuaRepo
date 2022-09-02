@@ -4,9 +4,11 @@
 CoD.FE_HelpItemsLabel = InheritFrom( LUI.UIElement )
 CoD.FE_HelpItemsLabel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_HelpItemsLabel )
 	self.id = "FE_HelpItemsLabel"
@@ -34,9 +36,11 @@ CoD.FE_HelpItemsLabel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				newImage:completeAnimation()
 				self.newImage:setAlpha( 0 )
 				self.clipFinished( newImage, {} )
+
 				PlaylistBreadcrumb:completeAnimation()
 				self.PlaylistBreadcrumb:setAlpha( 0 )
 				self.clipFinished( PlaylistBreadcrumb, {} )
@@ -45,26 +49,32 @@ CoD.FE_HelpItemsLabel.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				newImage:completeAnimation()
 				self.newImage:setAlpha( 1 )
 				self.clipFinished( newImage, {} )
+
 				PlaylistBreadcrumb:completeAnimation()
 				self.PlaylistBreadcrumb:setAlpha( 0 )
 				self.clipFinished( PlaylistBreadcrumb, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Playlist = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				newImage:completeAnimation()
 				self.newImage:setAlpha( 0 )
 				self.clipFinished( newImage, {} )
@@ -98,10 +108,12 @@ CoD.FE_HelpItemsLabel.new = function ( menu, controller )
 				self.PlaylistBreadcrumb:setMaterial( LUI.UIImage.GetCachedMaterial( "sw4_2d_bitchin_glint" ) )
 				self.PlaylistBreadcrumb:setShaderVector( 0, 0, 0, 0, 0 )
 				PlaylistBreadcrumbFrame2( PlaylistBreadcrumb, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

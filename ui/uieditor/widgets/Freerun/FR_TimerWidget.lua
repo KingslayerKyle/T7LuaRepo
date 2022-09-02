@@ -52,9 +52,11 @@ end
 CoD.FR_TimerWidget = InheritFrom( LUI.UIElement )
 CoD.FR_TimerWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FR_TimerWidget )
 	self.id = "FR_TimerWidget"
@@ -153,9 +155,11 @@ CoD.FR_TimerWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Penalty = function ()
 				self:setupElementClipCounter( 2 )
+
 				local TimerTextBoxFrame2 = function ( TimerTextBox, event )
 					local TimerTextBoxFrame3 = function ( TimerTextBox, event )
 						local TimerTextBoxFrame4 = function ( TimerTextBox, event )
@@ -233,21 +237,27 @@ CoD.FR_TimerWidget.new = function ( menu, controller )
 			end,
 			FaultAnim = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			RetryAnim = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			SetCheckpointDelta = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Less = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			More = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			PenaltyStart = function ()
 				self:setupElementClipCounter( 3 )
+
 				local TimerTextBoxFrame2 = function ( TimerTextBox, event )
 					if not event.interrupted then
 						TimerTextBox:beginAnimation( "keyframe", 250, false, false, CoD.TweenType.Bounce )
@@ -296,6 +306,7 @@ CoD.FR_TimerWidget.new = function ( menu, controller )
 			end,
 			PenaltyDuration = function ()
 				self:setupElementClipCounter( 3 )
+
 				local TimerTextBoxFrame2 = function ( TimerTextBox, event )
 					if not event.interrupted then
 						TimerTextBox:beginAnimation( "keyframe", 1500, false, false, CoD.TweenType.Linear )
@@ -344,6 +355,7 @@ CoD.FR_TimerWidget.new = function ( menu, controller )
 			end,
 			PenaltyEnd = function ()
 				self:setupElementClipCounter( 3 )
+
 				local TimerTextBoxFrame2 = function ( TimerTextBox, event )
 					if not event.interrupted then
 						TimerTextBox:beginAnimation( "keyframe", 250, false, false, CoD.TweenType.Bounce )
@@ -392,9 +404,11 @@ CoD.FR_TimerWidget.new = function ( menu, controller )
 			end,
 			NotRunning = function ()
 				self:setupElementClipCounter( 2 )
+
 				PenaltyBox:completeAnimation()
 				self.PenaltyBox:setAlpha( 0 )
 				self.clipFinished( PenaltyBox, {} )
+
 				PenaltyText:completeAnimation()
 				self.PenaltyText:setAlpha( 0 )
 				self.clipFinished( PenaltyText, {} )
@@ -403,6 +417,7 @@ CoD.FR_TimerWidget.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
@@ -420,6 +435,7 @@ CoD.FR_TimerWidget.new = function ( menu, controller )
 			PlayClip( self, "NotRunning", controller )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.timerframeblur:close()
 		element.OutcometitlePnlLineRight:close()

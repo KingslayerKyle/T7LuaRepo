@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.MPGametypes.MP_HardcoreScorestreakWidget" )
 CoD.MP_HardcoreInventoryWidget = InheritFrom( LUI.UIElement )
 CoD.MP_HardcoreInventoryWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MP_HardcoreInventoryWidget )
 	self.id = "MP_HardcoreInventoryWidget"
@@ -233,29 +235,35 @@ CoD.MP_HardcoreInventoryWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				HardcoreInventory:completeAnimation()
 				self.HardcoreInventory:setAlpha( 1 )
 				self.clipFinished( HardcoreInventory, {} )
+
 				HardcoreScorestreakWidget:completeAnimation()
 				self.HardcoreScorestreakWidget:setAlpha( 1 )
 				self.clipFinished( HardcoreScorestreakWidget, {} )
 			end,
 			SpeedBoost = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		NotHardcore = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				HardcoreInventory:completeAnimation()
 				self.HardcoreInventory:setAlpha( 0 )
 				self.clipFinished( HardcoreInventory, {} )
+
 				HardcoreScorestreakWidget:completeAnimation()
 				self.HardcoreScorestreakWidget:setAlpha( 0 )
 				self.clipFinished( HardcoreScorestreakWidget, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NotHardcore",
@@ -272,6 +280,7 @@ CoD.MP_HardcoreInventoryWidget.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_HUD_HARDCORE
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.HardcoreInventory:close()
 		element.HardcoreScorestreakWidget:close()

@@ -19,9 +19,11 @@ end
 CoD.demo_options_slider = InheritFrom( LUI.UIElement )
 CoD.demo_options_slider.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.demo_options_slider )
 	self.id = "demo_options_slider"
@@ -157,21 +159,26 @@ CoD.demo_options_slider.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local FocusBarTFrame2 = function ( FocusBarT, event )
 					local FocusBarTFrame3 = function ( FocusBarT, event )
 						local FocusBarTFrame4 = function ( FocusBarT, event )
@@ -443,21 +450,26 @@ CoD.demo_options_slider.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				glitch:completeAnimation()
 				self.glitch:setAlpha( 0 )
 				self.clipFinished( glitch, {} )
+
 				glitch2:completeAnimation()
 				self.glitch2:setAlpha( 0 )
 				self.clipFinished( glitch2, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 4 )
+
 				local FocusBarTFrame2 = function ( FocusBarT, event )
 					local FocusBarTFrame3 = function ( FocusBarT, event )
 						local FocusBarTFrame4 = function ( FocusBarT, event )
@@ -757,12 +769,15 @@ CoD.demo_options_slider.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				StartMenuframenoBG1:completeAnimation()
 				self.StartMenuframenoBG1:setAlpha( 0.6 )
 				self.clipFinished( StartMenuframenoBG1, {} )
+
 				StartMenuframenoBG0:completeAnimation()
 				self.StartMenuframenoBG0:setAlpha( 0.6 )
 				self.clipFinished( StartMenuframenoBG0, {} )
+
 				Title:completeAnimation()
 				self.Title:setRGB( 0.42, 0.42, 0.42 )
 				self.clipFinished( Title, {} )
@@ -771,17 +786,20 @@ CoD.demo_options_slider.new = function ( menu, controller )
 		Selected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		ButtonOnly = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Title:completeAnimation()
 				self.Title:setRGB( 1, 1, 1 )
 				self.clipFinished( Title, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local TitleFrame2 = function ( Title, event )
 					if not event.interrupted then
 						Title:beginAnimation( "keyframe", 109, false, false, CoD.TweenType.Linear )
@@ -1070,18 +1088,22 @@ CoD.demo_options_slider.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local TitleFrame2 = function ( Title, event )
 					if not event.interrupted then
 						Title:beginAnimation( "keyframe", 159, false, false, CoD.TweenType.Linear )
@@ -1396,12 +1418,14 @@ CoD.demo_options_slider.new = function ( menu, controller )
 		ButtonOnlyDisabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Title:completeAnimation()
 				self.Title:setRGB( 0.42, 0.42, 0.42 )
 				self.clipFinished( Title, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local TitleFrame2 = function ( Title, event )
 					if not event.interrupted then
 						Title:beginAnimation( "keyframe", 109, false, false, CoD.TweenType.Linear )
@@ -1690,18 +1714,22 @@ CoD.demo_options_slider.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 3 )
+
 				Title:completeAnimation()
 				self.Title:setAlpha( 1 )
 				self.clipFinished( Title, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 5 )
+
 				local TitleFrame2 = function ( Title, event )
 					if not event.interrupted then
 						Title:beginAnimation( "keyframe", 159, false, false, CoD.TweenType.Linear )
@@ -2014,6 +2042,7 @@ CoD.demo_options_slider.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",
@@ -2064,6 +2093,7 @@ CoD.demo_options_slider.new = function ( menu, controller )
 			modelName = "selected"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if not IsElementInState( element, "Selected" ) then
 			SetProperty( self, "hideArrows", true )
@@ -2081,6 +2111,7 @@ CoD.demo_options_slider.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.StartMenuframenoBG1:close()
 		element.StartMenuframenoBG0:close()

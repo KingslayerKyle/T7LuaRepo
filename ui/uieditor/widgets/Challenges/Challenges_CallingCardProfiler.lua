@@ -48,9 +48,11 @@ end, true )
 CoD.Challenges_CallingCardProfiler = InheritFrom( LUI.UIElement )
 CoD.Challenges_CallingCardProfiler.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Challenges_CallingCardProfiler )
 	self.id = "Challenges_CallingCardProfiler"
@@ -331,66 +333,87 @@ CoD.Challenges_CallingCardProfiler.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 21 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				SelectedCardIcon:completeAnimation()
 				self.SelectedCardIcon:setAlpha( 1 )
 				self.clipFinished( SelectedCardIcon, {} )
+
 				SubTitle:completeAnimation()
 				self.SubTitle:setAlpha( 0 )
 				self.clipFinished( SubTitle, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				ProgressBar:completeAnimation()
 				self.ProgressBar:setAlpha( 0 )
 				self.clipFinished( ProgressBar, {} )
+
 				ProgressBarBorder:completeAnimation()
 				self.ProgressBarBorder:setAlpha( 0 )
 				self.clipFinished( ProgressBarBorder, {} )
+
 				ProgressFraction:completeAnimation()
 				self.ProgressFraction:setAlpha( 0 )
 				self.clipFinished( ProgressFraction, {} )
+
 				TierList:completeAnimation()
 				self.TierList:setAlpha( 0 )
 				self.clipFinished( TierList, {} )
+
 				XPIndicator:completeAnimation()
 				self.XPIndicator:setAlpha( 0 )
 				self.clipFinished( XPIndicator, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				featlineleft:completeAnimation()
 				self.featlineleft:setAlpha( 0 )
 				self.clipFinished( featlineleft, {} )
+
 				featlineleft1:completeAnimation()
 				self.featlineleft1:setAlpha( 0 )
 				self.clipFinished( featlineleft1, {} )
+
 				TierText:completeAnimation()
 				self.TierText:setAlpha( 0 )
 				self.clipFinished( TierText, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				featlineleft0:completeAnimation()
 				self.featlineleft0:setAlpha( 0 )
 				self.clipFinished( featlineleft0, {} )
+
 				featlineleft000:completeAnimation()
 				self.featlineleft000:setAlpha( 0 )
 				self.clipFinished( featlineleft000, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
@@ -399,66 +422,85 @@ CoD.Challenges_CallingCardProfiler.new = function ( menu, controller )
 		BMClassfied = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setLeftRight( true, true, 3, -2 )
 				self.bgImage:setTopBottom( true, false, 3, 89 )
 				self.bgImage:setAlpha( 1 )
 				self.clipFinished( bgImage, {} )
+
 				SelectedCardIcon:completeAnimation()
 				self.SelectedCardIcon:setAlpha( 0 )
 				self.clipFinished( SelectedCardIcon, {} )
+
 				SubTitle:completeAnimation()
 				self.SubTitle:setAlpha( 0 )
 				self.clipFinished( SubTitle, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setLeftRight( true, false, 16, 334 )
 				self.BMGoldBarMed:setTopBottom( true, false, 32.18, 62.08 )
 				self.BMGoldBarMed:setAlpha( 1 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setLeftRight( false, false, -28.25, 36.25 )
 				self.blackMarketBrandIcon:setTopBottom( true, false, 13.75, 78.25 )
 				self.blackMarketBrandIcon:setAlpha( 1 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				ProgressBar:completeAnimation()
 				self.ProgressBar:setAlpha( 0 )
 				self.clipFinished( ProgressBar, {} )
+
 				ProgressBarBorder:completeAnimation()
 				self.ProgressBarBorder:setAlpha( 0 )
 				self.clipFinished( ProgressBarBorder, {} )
+
 				ProgressFraction:completeAnimation()
 				self.ProgressFraction:setAlpha( 0 )
 				self.clipFinished( ProgressFraction, {} )
+
 				TierList:completeAnimation()
 				self.TierList:setAlpha( 0 )
 				self.clipFinished( TierList, {} )
+
 				XPIndicator:completeAnimation()
 				self.XPIndicator:setAlpha( 0 )
 				self.clipFinished( XPIndicator, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				featlineleft:completeAnimation()
 				self.featlineleft:setAlpha( 0 )
 				self.clipFinished( featlineleft, {} )
+
 				featlineleft1:completeAnimation()
 				self.featlineleft1:setAlpha( 0 )
 				self.clipFinished( featlineleft1, {} )
+
 				TierText:completeAnimation()
 				self.TierText:setAlpha( 0 )
 				self.clipFinished( TierText, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				featlineleft0:completeAnimation()
 				self.featlineleft0:setAlpha( 0 )
 				self.clipFinished( featlineleft0, {} )
+
 				featlineleft000:completeAnimation()
 				self.featlineleft000:setAlpha( 0 )
 				self.clipFinished( featlineleft000, {} )
@@ -467,79 +509,101 @@ CoD.Challenges_CallingCardProfiler.new = function ( menu, controller )
 		ContractClassified = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 22 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				bgImage:completeAnimation()
 				self.bgImage:setLeftRight( true, true, 3, -2 )
 				self.bgImage:setTopBottom( true, false, 3, 89 )
 				self.bgImage:setAlpha( 1 )
 				self.clipFinished( bgImage, {} )
+
 				SelectedCardIcon:completeAnimation()
 				self.SelectedCardIcon:setAlpha( 0 )
 				self.clipFinished( SelectedCardIcon, {} )
+
 				SubTitle:completeAnimation()
 				self.SubTitle:setAlpha( 0 )
 				self.clipFinished( SubTitle, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setLeftRight( true, false, 16, 334 )
 				self.BMGoldBarMed:setTopBottom( true, false, 32.18, 62.08 )
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setLeftRight( false, false, -28.25, 36.25 )
 				self.blackMarketBrandIcon:setTopBottom( true, false, 13.75, 78.25 )
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 0 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				ProgressBar:completeAnimation()
 				self.ProgressBar:setAlpha( 0 )
 				self.clipFinished( ProgressBar, {} )
+
 				ProgressBarBorder:completeAnimation()
 				self.ProgressBarBorder:setAlpha( 0 )
 				self.clipFinished( ProgressBarBorder, {} )
+
 				ProgressFraction:completeAnimation()
 				self.ProgressFraction:setAlpha( 0 )
 				self.clipFinished( ProgressFraction, {} )
+
 				TierList:completeAnimation()
 				self.TierList:setAlpha( 0 )
 				self.clipFinished( TierList, {} )
+
 				XPIndicator:completeAnimation()
 				self.XPIndicator:setAlpha( 0 )
 				self.clipFinished( XPIndicator, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0 )
 				self.clipFinished( TitleBg, {} )
+
 				featlineleft:completeAnimation()
 				self.featlineleft:setAlpha( 0 )
 				self.clipFinished( featlineleft, {} )
+
 				featlineleft1:completeAnimation()
 				self.featlineleft1:setAlpha( 0 )
 				self.clipFinished( featlineleft1, {} )
+
 				TierText:completeAnimation()
 				self.TierText:setAlpha( 0 )
 				self.clipFinished( TierText, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setAlpha( 0 )
 				self.clipFinished( LockedIcon, {} )
+
 				featlineleft0:completeAnimation()
 				self.featlineleft0:setAlpha( 0 )
 				self.clipFinished( featlineleft0, {} )
+
 				featlineleft000:completeAnimation()
 				self.featlineleft000:setAlpha( 0 )
 				self.clipFinished( featlineleft000, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setLeftRight( true, false, 179.8, 341.8 )
 				self.BMContractsLockBars:setTopBottom( true, false, 28, 63 )
 				self.BMContractsLockBars:setAlpha( 1 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setLeftRight( true, false, 10.8, 163.8 )
 				self.BMContractsLockBars0:setTopBottom( true, false, 28, 63 )
 				self.BMContractsLockBars0:setAlpha( 1 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setLeftRight( true, false, 129.5, 216.95 )
 				self.bmContractBrandIcon:setTopBottom( true, false, 4, 91.45 )
@@ -550,71 +614,91 @@ CoD.Challenges_CallingCardProfiler.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 20 )
+
 				BoxButtonLrgInactive:completeAnimation()
 				self.BoxButtonLrgInactive:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactive, {} )
+
 				SelectedCardIcon:completeAnimation()
 				self.SelectedCardIcon:setAlpha( 0.7 )
 				self.clipFinished( SelectedCardIcon, {} )
+
 				SubTitle:completeAnimation()
 				self.SubTitle:setLeftRight( true, false, 16, 134 )
 				self.SubTitle:setTopBottom( true, false, 324.5, 350.5 )
 				self.SubTitle:setAlpha( 1 )
 				self.clipFinished( SubTitle, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				BoxButtonLrgInactiveDiag:completeAnimation()
 				self.BoxButtonLrgInactiveDiag:setAlpha( 1 )
 				self.clipFinished( BoxButtonLrgInactiveDiag, {} )
+
 				ProgressBar:completeAnimation()
 				self.ProgressBar:setAlpha( 1 )
 				self.clipFinished( ProgressBar, {} )
+
 				ProgressBarBorder:completeAnimation()
 				self.ProgressBarBorder:setAlpha( 1 )
 				self.clipFinished( ProgressBarBorder, {} )
+
 				ProgressFraction:completeAnimation()
 				self.ProgressFraction:setLeftRight( true, false, 20.5, 80.5 )
 				self.ProgressFraction:setTopBottom( true, false, 276.5, 296.5 )
 				self.ProgressFraction:setAlpha( 1 )
 				self.clipFinished( ProgressFraction, {} )
+
 				TierList:completeAnimation()
 				self.TierList:setAlpha( 1 )
 				self.clipFinished( TierList, {} )
+
 				XPIndicator:completeAnimation()
 				self.XPIndicator:setAlpha( 0 )
 				self.clipFinished( XPIndicator, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0.4 )
 				self.clipFinished( TitleBg, {} )
+
 				featlineleft:completeAnimation()
 				self.featlineleft:setAlpha( 1 )
 				self.clipFinished( featlineleft, {} )
+
 				featlineleft1:completeAnimation()
 				self.featlineleft1:setAlpha( 1 )
 				self.clipFinished( featlineleft1, {} )
+
 				TierText:completeAnimation()
 				self.TierText:setLeftRight( true, false, 151, 300 )
 				self.TierText:setTopBottom( true, false, 38, 60 )
 				self.TierText:setAlpha( 1 )
 				self.clipFinished( TierText, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setLeftRight( true, false, 117, 149 )
 				self.LockedIcon:setTopBottom( true, false, 31.95, 63.95 )
 				self.LockedIcon:setAlpha( 1 )
 				self.clipFinished( LockedIcon, {} )
+
 				featlineleft0:completeAnimation()
 				self.featlineleft0:setAlpha( 1 )
 				self.clipFinished( featlineleft0, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
@@ -623,66 +707,85 @@ CoD.Challenges_CallingCardProfiler.new = function ( menu, controller )
 		LockedOneTier = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				SelectedCardIcon:completeAnimation()
 				self.SelectedCardIcon:setAlpha( 0.7 )
 				self.clipFinished( SelectedCardIcon, {} )
+
 				SubTitle:completeAnimation()
 				self.SubTitle:setLeftRight( true, false, 16, 134 )
 				self.SubTitle:setTopBottom( true, false, 225.5, 251.5 )
 				self.SubTitle:setAlpha( 0 )
 				self.clipFinished( SubTitle, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				ProgressBar:completeAnimation()
 				self.ProgressBar:setAlpha( 1 )
 				self.clipFinished( ProgressBar, {} )
+
 				ProgressBarBorder:completeAnimation()
 				self.ProgressBarBorder:setAlpha( 1 )
 				self.clipFinished( ProgressBarBorder, {} )
+
 				ProgressFraction:completeAnimation()
 				self.ProgressFraction:setLeftRight( true, false, 20.5, 80.5 )
 				self.ProgressFraction:setTopBottom( true, false, 276.5, 296.5 )
 				self.ProgressFraction:setAlpha( 1 )
 				self.clipFinished( ProgressFraction, {} )
+
 				TierList:completeAnimation()
 				self.TierList:setAlpha( 0 )
 				self.clipFinished( TierList, {} )
+
 				XPIndicator:completeAnimation()
 				self.XPIndicator:setAlpha( 1 )
 				self.clipFinished( XPIndicator, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0.4 )
 				self.clipFinished( TitleBg, {} )
+
 				featlineleft:completeAnimation()
 				self.featlineleft:setAlpha( 1 )
 				self.clipFinished( featlineleft, {} )
+
 				featlineleft1:completeAnimation()
 				self.featlineleft1:setAlpha( 1 )
 				self.clipFinished( featlineleft1, {} )
+
 				TierText:completeAnimation()
 				self.TierText:setAlpha( 0 )
 				self.clipFinished( TierText, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setLeftRight( true, false, 153, 185 )
 				self.LockedIcon:setTopBottom( true, false, 32.5, 64.5 )
 				self.LockedIcon:setAlpha( 1 )
 				self.clipFinished( LockedIcon, {} )
+
 				featlineleft0:completeAnimation()
 				self.featlineleft0:setAlpha( 1 )
 				self.clipFinished( featlineleft0, {} )
+
 				featlineleft000:completeAnimation()
 				self.featlineleft000:setAlpha( 1 )
 				self.clipFinished( featlineleft000, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
@@ -691,72 +794,92 @@ CoD.Challenges_CallingCardProfiler.new = function ( menu, controller )
 		LockedHideProgress = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 19 )
+
 				SelectedCardIcon:completeAnimation()
 				self.SelectedCardIcon:setAlpha( 0.7 )
 				self.clipFinished( SelectedCardIcon, {} )
+
 				SubTitle:completeAnimation()
 				self.SubTitle:setLeftRight( true, false, 16, 134 )
 				self.SubTitle:setTopBottom( true, false, 225.5, 251.5 )
 				self.SubTitle:setAlpha( 0 )
 				self.clipFinished( SubTitle, {} )
+
 				BMGoldBarMed:completeAnimation()
 				self.BMGoldBarMed:setAlpha( 0 )
 				self.clipFinished( BMGoldBarMed, {} )
+
 				blackMarketBrandIcon:completeAnimation()
 				self.blackMarketBrandIcon:setAlpha( 0 )
 				self.clipFinished( blackMarketBrandIcon, {} )
+
 				ProgressBar:completeAnimation()
 				self.ProgressBar:setAlpha( 0 )
 				self.clipFinished( ProgressBar, {} )
+
 				ProgressBarBorder:completeAnimation()
 				self.ProgressBarBorder:setAlpha( 0 )
 				self.clipFinished( ProgressBarBorder, {} )
+
 				ProgressFraction:completeAnimation()
 				self.ProgressFraction:setLeftRight( true, false, 20.5, 80.5 )
 				self.ProgressFraction:setTopBottom( true, false, 276.5, 296.5 )
 				self.ProgressFraction:setAlpha( 0 )
 				self.clipFinished( ProgressFraction, {} )
+
 				TierList:completeAnimation()
 				self.TierList:setAlpha( 0 )
 				self.clipFinished( TierList, {} )
+
 				XPIndicator:completeAnimation()
 				self.XPIndicator:setAlpha( 0 )
 				self.clipFinished( XPIndicator, {} )
+
 				TitleBg:completeAnimation()
 				self.TitleBg:setAlpha( 0.4 )
 				self.clipFinished( TitleBg, {} )
+
 				featlineleft:completeAnimation()
 				self.featlineleft:setAlpha( 0 )
 				self.clipFinished( featlineleft, {} )
+
 				featlineleft1:completeAnimation()
 				self.featlineleft1:setAlpha( 0 )
 				self.clipFinished( featlineleft1, {} )
+
 				TierText:completeAnimation()
 				self.TierText:setAlpha( 0 )
 				self.clipFinished( TierText, {} )
+
 				LockedIcon:completeAnimation()
 				self.LockedIcon:setLeftRight( true, false, 153, 185 )
 				self.LockedIcon:setTopBottom( true, false, 32.5, 64.5 )
 				self.LockedIcon:setAlpha( 1 )
 				self.clipFinished( LockedIcon, {} )
+
 				featlineleft0:completeAnimation()
 				self.featlineleft0:setAlpha( 1 )
 				self.clipFinished( featlineleft0, {} )
+
 				featlineleft000:completeAnimation()
 				self.featlineleft000:setAlpha( 1 )
 				self.clipFinished( featlineleft000, {} )
+
 				BMContractsLockBars:completeAnimation()
 				self.BMContractsLockBars:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars, {} )
+
 				BMContractsLockBars0:completeAnimation()
 				self.BMContractsLockBars0:setAlpha( 0 )
 				self.clipFinished( BMContractsLockBars0, {} )
+
 				bmContractBrandIcon:completeAnimation()
 				self.bmContractBrandIcon:setAlpha( 0 )
 				self.clipFinished( bmContractBrandIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "BMClassfied",
@@ -847,6 +970,7 @@ CoD.Challenges_CallingCardProfiler.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BoxButtonLrgInactive:close()
 		element.StartMenuframenoBG0:close()

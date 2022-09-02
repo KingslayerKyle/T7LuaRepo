@@ -4,9 +4,11 @@
 CoD.StartMenu_Options_SliderBar_Bar = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_SliderBar_Bar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_SliderBar_Bar )
 	self.id = "StartMenu_Options_SliderBar_Bar"
@@ -24,6 +26,7 @@ CoD.StartMenu_Options_SliderBar_Bar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Bar:completeAnimation()
 				self.Bar:setRGB( 1, 1, 1 )
 				self.Bar:setAlpha( 1 )

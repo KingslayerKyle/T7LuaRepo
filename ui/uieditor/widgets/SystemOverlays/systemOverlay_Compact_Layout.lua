@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Footer.fe_LeftContainer_NOTLobby" )
 CoD.systemOverlay_Compact_Layout = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_Compact_Layout.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_Compact_Layout )
 	self.id = "systemOverlay_Compact_Layout"
@@ -98,6 +100,7 @@ CoD.systemOverlay_Compact_Layout.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				background:completeAnimation()
 				self.background:setLeftRight( true, true, 0, 0 )
 				self.background:setTopBottom( true, true, 0, 0 )
@@ -306,6 +309,7 @@ CoD.systemOverlay_Compact_Layout.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.alertStatusBar:close()
 		element.buttons:close()

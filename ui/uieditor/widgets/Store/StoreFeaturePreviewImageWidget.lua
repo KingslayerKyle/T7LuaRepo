@@ -4,9 +4,11 @@
 CoD.StoreFeaturePreviewImageWidget = InheritFrom( LUI.UIElement )
 CoD.StoreFeaturePreviewImageWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StoreFeaturePreviewImageWidget )
 	self.id = "StoreFeaturePreviewImageWidget"

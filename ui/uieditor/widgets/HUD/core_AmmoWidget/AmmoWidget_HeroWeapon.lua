@@ -4,9 +4,11 @@
 CoD.AmmoWidget_HeroWeapon = InheritFrom( LUI.UIElement )
 CoD.AmmoWidget_HeroWeapon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.AmmoWidget_HeroWeapon )
 	self.id = "AmmoWidget_HeroWeapon"
@@ -43,23 +45,28 @@ CoD.AmmoWidget_HeroWeapon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Unavailable:completeAnimation()
 				self.Unavailable:setAlpha( 1 )
 				self.clipFinished( Unavailable, {} )
+
 				Available:completeAnimation()
 				self.Available:setAlpha( 0 )
 				self.clipFinished( Available, {} )
 			end,
 			WheelHide = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Unavailable:completeAnimation()
 				self.Unavailable:setAlpha( 0 )
 				self.clipFinished( Unavailable, {} )
+
 				Available:completeAnimation()
 				self.Available:setAlpha( 1 )
 				self.clipFinished( Available, {} )
@@ -68,9 +75,11 @@ CoD.AmmoWidget_HeroWeapon.new = function ( menu, controller )
 		Charge = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Unavailable:completeAnimation()
 				self.Unavailable:setAlpha( 1 )
 				self.clipFinished( Unavailable, {} )
+
 				Available:completeAnimation()
 				self.Available:setAlpha( 0 )
 				self.clipFinished( Available, {} )
@@ -79,15 +88,18 @@ CoD.AmmoWidget_HeroWeapon.new = function ( menu, controller )
 		InUse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Unavailable:completeAnimation()
 				self.Unavailable:setAlpha( 0 )
 				self.clipFinished( Unavailable, {} )
+
 				Available:completeAnimation()
 				self.Available:setAlpha( 1 )
 				self.clipFinished( Available, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Unavailable:close()
 		element.Available:close()

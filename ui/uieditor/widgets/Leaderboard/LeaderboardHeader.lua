@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Leaderboard.LeaderboardHeader_ColumnText" )
 CoD.LeaderboardHeader = InheritFrom( LUI.UIElement )
 CoD.LeaderboardHeader.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LeaderboardHeader )
 	self.id = "LeaderboardHeader"
@@ -129,6 +131,7 @@ CoD.LeaderboardHeader.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Rank:completeAnimation()
 				self.Rank:setAlpha( 1 )
 				self.clipFinished( Rank, {} )
@@ -137,6 +140,7 @@ CoD.LeaderboardHeader.new = function ( menu, controller )
 		Freerun = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Rank:completeAnimation()
 				self.Rank:setAlpha( 0 )
 				self.clipFinished( Rank, {} )
@@ -145,13 +149,16 @@ CoD.LeaderboardHeader.new = function ( menu, controller )
 		DefaultStateArabic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Position:completeAnimation()
 				self.Position:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 				self.clipFinished( Position, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setAlpha( 1 )
 				self.Rank:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 				self.clipFinished( Rank, {} )
+
 				Name:completeAnimation()
 				self.Name:setLeftRight( true, false, 138, 308 )
 				self.Name:setTopBottom( true, false, 2.5, 22.5 )
@@ -162,12 +169,15 @@ CoD.LeaderboardHeader.new = function ( menu, controller )
 		FreerunArabic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Position:completeAnimation()
 				self.Position:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 				self.clipFinished( Position, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setAlpha( 0 )
 				self.clipFinished( Rank, {} )
+
 				Name:completeAnimation()
 				self.Name:setLeftRight( true, false, 95, 308 )
 				self.Name:setTopBottom( true, false, 3.5, 23.5 )
@@ -178,9 +188,11 @@ CoD.LeaderboardHeader.new = function ( menu, controller )
 		DOA = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Rank:completeAnimation()
 				self.Rank:setAlpha( 0 )
 				self.clipFinished( Rank, {} )
+
 				Name:completeAnimation()
 				self.Name:setLeftRight( true, false, 95, 308 )
 				self.Name:setTopBottom( true, false, 2.5, 22.5 )
@@ -190,12 +202,15 @@ CoD.LeaderboardHeader.new = function ( menu, controller )
 		DOAArabic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Position:completeAnimation()
 				self.Position:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 				self.clipFinished( Position, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setAlpha( 0 )
 				self.clipFinished( Rank, {} )
+
 				Name:completeAnimation()
 				self.Name:setLeftRight( true, false, 95, 308 )
 				self.Name:setTopBottom( true, false, 2.5, 22.5 )
@@ -206,9 +221,11 @@ CoD.LeaderboardHeader.new = function ( menu, controller )
 		Rankless = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Rank:completeAnimation()
 				self.Rank:setAlpha( 0 )
 				self.clipFinished( Rank, {} )
+
 				Name:completeAnimation()
 				self.Name:setLeftRight( true, false, 95, 308 )
 				self.Name:setTopBottom( true, false, 2.5, 22.5 )
@@ -218,12 +235,15 @@ CoD.LeaderboardHeader.new = function ( menu, controller )
 		RanklessArabic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Position:completeAnimation()
 				self.Position:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 				self.clipFinished( Position, {} )
+
 				Rank:completeAnimation()
 				self.Rank:setAlpha( 0 )
 				self.clipFinished( Rank, {} )
+
 				Name:completeAnimation()
 				self.Name:setLeftRight( true, false, 95, 308 )
 				self.Name:setTopBottom( true, false, 2.5, 22.5 )
@@ -232,6 +252,7 @@ CoD.LeaderboardHeader.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Freerun",
@@ -276,6 +297,7 @@ CoD.LeaderboardHeader.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Column0:close()
 		element.Column1:close()

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.HUD.Flag.PlayerFlag" )
 CoD.RobotStatus = InheritFrom( LUI.UIElement )
 CoD.RobotStatus.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.RobotStatus )
 	self.id = "RobotStatus"
@@ -88,18 +90,23 @@ CoD.RobotStatus.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 0 )
 				self.clipFinished( Panel, {} )
+
 				ShadowGlow:completeAnimation()
 				self.ShadowGlow:setAlpha( 0 )
 				self.clipFinished( ShadowGlow, {} )
+
 				RobotStatus:completeAnimation()
 				self.RobotStatus:setAlpha( 0 )
 				self.clipFinished( RobotStatus, {} )
+
 				EnemyTeamIcon:completeAnimation()
 				self.EnemyTeamIcon:setAlpha( 0 )
 				self.clipFinished( EnemyTeamIcon, {} )
+
 				FriendlyTeamIcon:completeAnimation()
 				self.FriendlyTeamIcon:setAlpha( 0 )
 				self.clipFinished( FriendlyTeamIcon, {} )
@@ -108,18 +115,23 @@ CoD.RobotStatus.new = function ( menu, controller )
 		EnemyRobot = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 1 )
 				self.clipFinished( Panel, {} )
+
 				ShadowGlow:completeAnimation()
 				self.ShadowGlow:setAlpha( 0.2 )
 				self.clipFinished( ShadowGlow, {} )
+
 				RobotStatus:completeAnimation()
 				self.RobotStatus:setAlpha( 1 )
 				self.clipFinished( RobotStatus, {} )
+
 				EnemyTeamIcon:completeAnimation()
 				self.EnemyTeamIcon:setAlpha( 1 )
 				self.clipFinished( EnemyTeamIcon, {} )
+
 				FriendlyTeamIcon:completeAnimation()
 				self.FriendlyTeamIcon:setAlpha( 0 )
 				self.clipFinished( FriendlyTeamIcon, {} )
@@ -128,26 +140,32 @@ CoD.RobotStatus.new = function ( menu, controller )
 		FriendlyRobot = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				Panel:completeAnimation()
 				self.Panel:setAlpha( 1 )
 				self.clipFinished( Panel, {} )
+
 				ShadowGlow:completeAnimation()
 				self.ShadowGlow:setAlpha( 0.2 )
 				self.clipFinished( ShadowGlow, {} )
+
 				RobotStatus:completeAnimation()
 				self.RobotStatus:setLeftRight( true, false, 32, 247 )
 				self.RobotStatus:setTopBottom( false, false, -8, 8 )
 				self.RobotStatus:setAlpha( 1 )
 				self.clipFinished( RobotStatus, {} )
+
 				EnemyTeamIcon:completeAnimation()
 				self.EnemyTeamIcon:setAlpha( 0 )
 				self.clipFinished( EnemyTeamIcon, {} )
+
 				FriendlyTeamIcon:completeAnimation()
 				self.FriendlyTeamIcon:setAlpha( 1 )
 				self.clipFinished( FriendlyTeamIcon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "EnemyRobot",
@@ -178,6 +196,7 @@ CoD.RobotStatus.new = function ( menu, controller )
 			modelName = "escortGametype.robotStatusVisible"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 		element.EnemyTeamIcon:close()

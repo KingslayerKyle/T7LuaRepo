@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.buttonprompt" )
 CoD.EmblemBrowseControlsBar = InheritFrom( LUI.UIElement )
 CoD.EmblemBrowseControlsBar.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EmblemBrowseControlsBar )
 	self.id = "EmblemBrowseControlsBar"
@@ -58,14 +60,23 @@ CoD.EmblemBrowseControlsBar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				rightButtonBar:completeAnimation()
+
 				rightButtonBar.change:completeAnimation()
+
 				rightButtonBar.change.label:completeAnimation()
+
 				rightButtonBar.cut:completeAnimation()
+
 				rightButtonBar.cut.label:completeAnimation()
+
 				rightButtonBar.copy:completeAnimation()
+
 				rightButtonBar.copy.label:completeAnimation()
+
 				rightButtonBar.new:completeAnimation()
+
 				rightButtonBar.new.label:completeAnimation()
 				self.rightButtonBar:setAlpha( 1 )
 				self.rightButtonBar.change:setAlpha( 0 )
@@ -77,9 +88,11 @@ CoD.EmblemBrowseControlsBar.new = function ( menu, controller )
 				self.rightButtonBar.new:setAlpha( 0 )
 				self.rightButtonBar.new.label:setText( Engine.Localize( "MENU_NEW" ) )
 				self.clipFinished( rightButtonBar, {} )
+
 				link:completeAnimation()
 				self.link:setAlpha( 0 )
 				self.clipFinished( link, {} )
+
 				group:completeAnimation()
 				self.group:setAlpha( 0 )
 				self.clipFinished( group, {} )
@@ -88,14 +101,23 @@ CoD.EmblemBrowseControlsBar.new = function ( menu, controller )
 		BrowseModeLinkedLayer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				rightButtonBar:completeAnimation()
+
 				rightButtonBar.change:completeAnimation()
+
 				rightButtonBar.change.label:completeAnimation()
+
 				rightButtonBar.cut:completeAnimation()
+
 				rightButtonBar.cut.label:completeAnimation()
+
 				rightButtonBar.copy:completeAnimation()
+
 				rightButtonBar.copy.label:completeAnimation()
+
 				rightButtonBar.new:completeAnimation()
+
 				rightButtonBar.new.label:completeAnimation()
 				self.rightButtonBar.change:setAlpha( 1 )
 				self.rightButtonBar.change.label:setText( Engine.Localize( "MENU_EMBLEM_CHANGE_DECAL" ) )
@@ -106,14 +128,18 @@ CoD.EmblemBrowseControlsBar.new = function ( menu, controller )
 				self.rightButtonBar.new:setAlpha( 1 )
 				self.rightButtonBar.new.label:setText( Engine.Localize( "MENU_NEW" ) )
 				self.clipFinished( rightButtonBar, {} )
+
 				link:completeAnimation()
+
 				link.label:completeAnimation()
 				self.link:setLeftRight( false, false, -70, 0 )
 				self.link:setTopBottom( false, true, -34, -3 )
 				self.link:setAlpha( 1 )
 				self.link.label:setText( Engine.Localize( "MENU_EMBLEM_UNLINK_LAYERS" ) )
 				self.clipFinished( link, {} )
+
 				group:completeAnimation()
+
 				group.label:completeAnimation()
 				self.group:setLeftRight( false, false, 0, 90 )
 				self.group:setTopBottom( false, true, -34, -3 )
@@ -125,14 +151,23 @@ CoD.EmblemBrowseControlsBar.new = function ( menu, controller )
 		BrowseModeGroupedLayer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				rightButtonBar:completeAnimation()
+
 				rightButtonBar.change:completeAnimation()
+
 				rightButtonBar.change.label:completeAnimation()
+
 				rightButtonBar.cut:completeAnimation()
+
 				rightButtonBar.cut.label:completeAnimation()
+
 				rightButtonBar.copy:completeAnimation()
+
 				rightButtonBar.copy.label:completeAnimation()
+
 				rightButtonBar.new:completeAnimation()
+
 				rightButtonBar.new.label:completeAnimation()
 				self.rightButtonBar.change:setAlpha( 0.27 )
 				self.rightButtonBar.change.label:setText( Engine.Localize( "MENU_EMBLEM_CHANGE_DECAL" ) )
@@ -143,14 +178,18 @@ CoD.EmblemBrowseControlsBar.new = function ( menu, controller )
 				self.rightButtonBar.new:setAlpha( 1 )
 				self.rightButtonBar.new.label:setText( Engine.Localize( "MENU_NEW" ) )
 				self.clipFinished( rightButtonBar, {} )
+
 				link:completeAnimation()
+
 				link.label:completeAnimation()
 				self.link:setLeftRight( false, false, -70, 0 )
 				self.link:setTopBottom( false, true, -34, -3 )
 				self.link:setAlpha( 0 )
 				self.link.label:setText( Engine.Localize( "MENU_SAVE" ) )
 				self.clipFinished( link, {} )
+
 				group:completeAnimation()
+
 				group.label:completeAnimation()
 				self.group:setLeftRight( false, false, -70, 20 )
 				self.group:setTopBottom( false, true, -34, -3 )
@@ -162,14 +201,23 @@ CoD.EmblemBrowseControlsBar.new = function ( menu, controller )
 		BrowseModeOneLayerLinked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				rightButtonBar:completeAnimation()
+
 				rightButtonBar.change:completeAnimation()
+
 				rightButtonBar.change.label:completeAnimation()
+
 				rightButtonBar.cut:completeAnimation()
+
 				rightButtonBar.cut.label:completeAnimation()
+
 				rightButtonBar.copy:completeAnimation()
+
 				rightButtonBar.copy.label:completeAnimation()
+
 				rightButtonBar.new:completeAnimation()
+
 				rightButtonBar.new.label:completeAnimation()
 				self.rightButtonBar.change:setAlpha( 1 )
 				self.rightButtonBar.change.label:setText( Engine.Localize( "MENU_EMBLEM_CHANGE_DECAL" ) )
@@ -180,14 +228,18 @@ CoD.EmblemBrowseControlsBar.new = function ( menu, controller )
 				self.rightButtonBar.new:setAlpha( 1 )
 				self.rightButtonBar.new.label:setText( Engine.Localize( "MENU_NEW" ) )
 				self.clipFinished( rightButtonBar, {} )
+
 				link:completeAnimation()
+
 				link.label:completeAnimation()
 				self.link:setLeftRight( false, false, -70, 0 )
 				self.link:setTopBottom( false, true, -34, -3 )
 				self.link:setAlpha( 1 )
 				self.link.label:setText( Engine.Localize( "MENU_EMBLEM_UNLINK_LAYERS" ) )
 				self.clipFinished( link, {} )
+
 				group:completeAnimation()
+
 				group.label:completeAnimation()
 				self.group:setAlpha( 0 )
 				self.group.label:setText( Engine.Localize( "MENU_EMBLEMS_GROUP" ) )
@@ -197,14 +249,23 @@ CoD.EmblemBrowseControlsBar.new = function ( menu, controller )
 		BrowseMode = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				rightButtonBar:completeAnimation()
+
 				rightButtonBar.change:completeAnimation()
+
 				rightButtonBar.change.label:completeAnimation()
+
 				rightButtonBar.cut:completeAnimation()
+
 				rightButtonBar.cut.label:completeAnimation()
+
 				rightButtonBar.copy:completeAnimation()
+
 				rightButtonBar.copy.label:completeAnimation()
+
 				rightButtonBar.new:completeAnimation()
+
 				rightButtonBar.new.label:completeAnimation()
 				self.rightButtonBar.change:setAlpha( 1 )
 				self.rightButtonBar.change.label:setText( Engine.Localize( "MENU_EMBLEM_CHANGE_DECAL" ) )
@@ -215,14 +276,18 @@ CoD.EmblemBrowseControlsBar.new = function ( menu, controller )
 				self.rightButtonBar.new:setAlpha( 1 )
 				self.rightButtonBar.new.label:setText( Engine.Localize( "MENU_NEW" ) )
 				self.clipFinished( rightButtonBar, {} )
+
 				link:completeAnimation()
+
 				link.label:completeAnimation()
 				self.link:setLeftRight( false, false, -70, 0 )
 				self.link:setTopBottom( false, true, -34, -3 )
 				self.link:setAlpha( 1 )
 				self.link.label:setText( Engine.Localize( "MENU_EMBLEM_LINK_LAYERS" ) )
 				self.clipFinished( link, {} )
+
 				group:completeAnimation()
+
 				group.label:completeAnimation()
 				self.group:setAlpha( 0 )
 				self.group.label:setText( Engine.Localize( "MENU_EMBLEMS_GROUP" ) )
@@ -232,14 +297,23 @@ CoD.EmblemBrowseControlsBar.new = function ( menu, controller )
 		GroupsDisabledMode = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				rightButtonBar:completeAnimation()
+
 				rightButtonBar.change:completeAnimation()
+
 				rightButtonBar.change.label:completeAnimation()
+
 				rightButtonBar.cut:completeAnimation()
+
 				rightButtonBar.cut.label:completeAnimation()
+
 				rightButtonBar.copy:completeAnimation()
+
 				rightButtonBar.copy.label:completeAnimation()
+
 				rightButtonBar.new:completeAnimation()
+
 				rightButtonBar.new.label:completeAnimation()
 				self.rightButtonBar.change:setAlpha( 1 )
 				self.rightButtonBar.change.label:setText( Engine.Localize( "MENU_EMBLEM_CHANGE_DECAL" ) )
@@ -250,12 +324,16 @@ CoD.EmblemBrowseControlsBar.new = function ( menu, controller )
 				self.rightButtonBar.new:setAlpha( 1 )
 				self.rightButtonBar.new.label:setText( Engine.Localize( "MENU_NEW" ) )
 				self.clipFinished( rightButtonBar, {} )
+
 				link:completeAnimation()
+
 				link.label:completeAnimation()
 				self.link:setAlpha( 0 )
 				self.link.label:setText( Engine.Localize( "MENU_EMBLEM_LINK_LAYERS" ) )
 				self.clipFinished( link, {} )
+
 				group:completeAnimation()
+
 				group.label:completeAnimation()
 				self.group:setAlpha( 0 )
 				self.group.label:setText( Engine.Localize( "MENU_EMBLEMS_GROUP" ) )
@@ -263,6 +341,7 @@ CoD.EmblemBrowseControlsBar.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.rightButtonBar:close()
 		element.link:close()

@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CallingCards.CallingCards_KillerEyes" )
 CoD.CallingCards_KillerWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_KillerWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_KillerWidget )
 	self.id = "CallingCards_KillerWidget"
@@ -69,12 +71,14 @@ CoD.CallingCards_KillerWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				CallingCardsKillerCloudFront:completeAnimation()
 				self.CallingCardsKillerCloudFront:setAlpha( 0.95 )
 				self.clipFinished( CallingCardsKillerCloudFront, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CallingCardsKillerCloudFront:close()
 		element.CallingCardsKillerEyes:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Promo.Promo_RewardImage" )
 CoD.Promo_UnlockableRewardLargeLock = InheritFrom( LUI.UIElement )
 CoD.Promo_UnlockableRewardLargeLock.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Promo_UnlockableRewardLargeLock )
 	self.id = "Promo_UnlockableRewardLargeLock"
@@ -298,175 +300,231 @@ CoD.Promo_UnlockableRewardLargeLock.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 28 )
+
 				Frame:completeAnimation()
 				self.Frame:setAlpha( 1 )
 				self.clipFinished( Frame, {} )
+
 				PromoRewardImage:completeAnimation()
+
 				PromoRewardImage.Image:completeAnimation()
 				self.PromoRewardImage:setAlpha( 0.4 )
 				self.clipFinished( PromoRewardImage, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 1 )
 				self.clipFinished( Lock, {} )
+
 				NearCompleteLineGlow:completeAnimation()
 				self.NearCompleteLineGlow:setAlpha( 0 )
 				self.clipFinished( NearCompleteLineGlow, {} )
+
 				NearCompleteLineGlow3:completeAnimation()
 				self.NearCompleteLineGlow3:setAlpha( 0 )
 				self.clipFinished( NearCompleteLineGlow3, {} )
+
 				NearCompleteLineGlow2:completeAnimation()
 				self.NearCompleteLineGlow2:setAlpha( 0 )
 				self.clipFinished( NearCompleteLineGlow2, {} )
+
 				CompleteGlowBack:completeAnimation()
 				self.CompleteGlowBack:setAlpha( 0 )
 				self.clipFinished( CompleteGlowBack, {} )
+
 				CompleteGlowBack2:completeAnimation()
 				self.CompleteGlowBack2:setAlpha( 0 )
 				self.clipFinished( CompleteGlowBack2, {} )
+
 				CompleteLineGlow0:completeAnimation()
 				self.CompleteLineGlow0:setAlpha( 0 )
 				self.clipFinished( CompleteLineGlow0, {} )
+
 				CompleteLineGlow1:completeAnimation()
 				self.CompleteLineGlow1:setAlpha( 0 )
 				self.clipFinished( CompleteLineGlow1, {} )
+
 				CompleteLineGlow2:completeAnimation()
 				self.CompleteLineGlow2:setAlpha( 0 )
 				self.clipFinished( CompleteLineGlow2, {} )
+
 				CompleteLineCenter:completeAnimation()
 				self.CompleteLineCenter:setAlpha( 0 )
 				self.clipFinished( CompleteLineCenter, {} )
+
 				CompleteGlowCenter:completeAnimation()
 				self.CompleteGlowCenter:setAlpha( 0 )
 				self.clipFinished( CompleteGlowCenter, {} )
+
 				CompleteFrameBarTop:completeAnimation()
 				self.CompleteFrameBarTop:setAlpha( 0 )
 				self.clipFinished( CompleteFrameBarTop, {} )
+
 				CompleteFrameBarBottom:completeAnimation()
 				self.CompleteFrameBarBottom:setAlpha( 0 )
 				self.clipFinished( CompleteFrameBarBottom, {} )
+
 				GlowBarBlurBottom:completeAnimation()
 				self.GlowBarBlurBottom:setAlpha( 0 )
 				self.clipFinished( GlowBarBlurBottom, {} )
+
 				GlowBarBlurTop:completeAnimation()
 				self.GlowBarBlurTop:setAlpha( 0 )
 				self.clipFinished( GlowBarBlurTop, {} )
+
 				CompleteGlowSide:completeAnimation()
 				self.CompleteGlowSide:setAlpha( 0 )
 				self.clipFinished( CompleteGlowSide, {} )
+
 				CompleteGlowBack0:completeAnimation()
 				self.CompleteGlowBack0:setAlpha( 0 )
 				self.clipFinished( CompleteGlowBack0, {} )
+
 				CompletedPulse1:completeAnimation()
 				self.CompletedPulse1:setAlpha( 0 )
 				self.clipFinished( CompletedPulse1, {} )
+
 				GlowFrame:completeAnimation()
 				self.GlowFrame:setAlpha( 0 )
 				self.clipFinished( GlowFrame, {} )
+
 				GlowFrame0:completeAnimation()
 				self.GlowFrame0:setAlpha( 0 )
 				self.clipFinished( GlowFrame0, {} )
+
 				Tick2:completeAnimation()
 				self.Tick2:setAlpha( 0 )
 				self.clipFinished( Tick2, {} )
+
 				FlipbookAdd20:completeAnimation()
 				self.FlipbookAdd20:setAlpha( 0 )
 				self.clipFinished( FlipbookAdd20, {} )
+
 				FlipbookAdd:completeAnimation()
 				self.FlipbookAdd:setAlpha( 0 )
 				self.clipFinished( FlipbookAdd, {} )
+
 				FlipbookAdd2:completeAnimation()
 				self.FlipbookAdd2:setAlpha( 0 )
 				self.clipFinished( FlipbookAdd2, {} )
+
 				GlowFrame00:completeAnimation()
 				self.GlowFrame00:setAlpha( 0 )
 				self.clipFinished( GlowFrame00, {} )
+
 				Tick20:completeAnimation()
 				self.Tick20:setAlpha( 0 )
 				self.clipFinished( Tick20, {} )
 			end,
 			Complete = function ()
 				self:setupElementClipCounter( 27 )
+
 				Frame:completeAnimation()
 				self.Frame:setAlpha( 1 )
 				self.clipFinished( Frame, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 0 )
 				self.clipFinished( Lock, {} )
+
 				NearCompleteLineGlow:completeAnimation()
 				self.NearCompleteLineGlow:setAlpha( 1 )
 				self.clipFinished( NearCompleteLineGlow, {} )
+
 				NearCompleteLineGlow3:completeAnimation()
 				self.NearCompleteLineGlow3:setAlpha( 1 )
 				self.clipFinished( NearCompleteLineGlow3, {} )
+
 				NearCompleteLineGlow2:completeAnimation()
 				self.NearCompleteLineGlow2:setAlpha( 1 )
 				self.clipFinished( NearCompleteLineGlow2, {} )
+
 				CompleteGlowBack:completeAnimation()
 				self.CompleteGlowBack:setAlpha( 1 )
 				self.clipFinished( CompleteGlowBack, {} )
+
 				CompleteGlowBack2:completeAnimation()
 				self.CompleteGlowBack2:setAlpha( 0.25 )
 				self.clipFinished( CompleteGlowBack2, {} )
+
 				CompleteLineGlow0:completeAnimation()
 				self.CompleteLineGlow0:setAlpha( 1 )
 				self.clipFinished( CompleteLineGlow0, {} )
+
 				CompleteLineGlow1:completeAnimation()
 				self.CompleteLineGlow1:setAlpha( 1 )
 				self.clipFinished( CompleteLineGlow1, {} )
+
 				CompleteLineGlow2:completeAnimation()
 				self.CompleteLineGlow2:setAlpha( 1 )
 				self.clipFinished( CompleteLineGlow2, {} )
+
 				CompleteLineCenter:completeAnimation()
 				self.CompleteLineCenter:setAlpha( 1 )
 				self.clipFinished( CompleteLineCenter, {} )
+
 				CompleteGlowCenter:completeAnimation()
 				self.CompleteGlowCenter:setAlpha( 1 )
 				self.clipFinished( CompleteGlowCenter, {} )
+
 				CompleteFrameBarTop:completeAnimation()
 				self.CompleteFrameBarTop:setAlpha( 1 )
 				self.clipFinished( CompleteFrameBarTop, {} )
+
 				CompleteFrameBarBottom:completeAnimation()
 				self.CompleteFrameBarBottom:setAlpha( 1 )
 				self.clipFinished( CompleteFrameBarBottom, {} )
+
 				GlowBarBlurBottom:completeAnimation()
 				self.GlowBarBlurBottom:setAlpha( 0 )
 				self.clipFinished( GlowBarBlurBottom, {} )
+
 				GlowBarBlurTop:completeAnimation()
 				self.GlowBarBlurTop:setAlpha( 0 )
 				self.clipFinished( GlowBarBlurTop, {} )
+
 				CompleteGlowSide:completeAnimation()
 				self.CompleteGlowSide:setAlpha( 1 )
 				self.clipFinished( CompleteGlowSide, {} )
+
 				CompleteGlowBack0:completeAnimation()
 				self.CompleteGlowBack0:setAlpha( 1 )
 				self.clipFinished( CompleteGlowBack0, {} )
+
 				CompletedPulse1:completeAnimation()
 				self.CompletedPulse1:setAlpha( 0 )
 				self.clipFinished( CompletedPulse1, {} )
+
 				GlowFrame:completeAnimation()
 				self.GlowFrame:setAlpha( 0 )
 				self.clipFinished( GlowFrame, {} )
+
 				GlowFrame0:completeAnimation()
 				self.GlowFrame0:setAlpha( 0 )
 				self.clipFinished( GlowFrame0, {} )
+
 				Tick2:completeAnimation()
 				self.Tick2:setAlpha( 0.5 )
 				self.clipFinished( Tick2, {} )
+
 				FlipbookAdd20:completeAnimation()
 				self.FlipbookAdd20:setAlpha( 0.5 )
 				self.clipFinished( FlipbookAdd20, {} )
+
 				FlipbookAdd:completeAnimation()
 				self.FlipbookAdd:setAlpha( 0.9 )
 				self.clipFinished( FlipbookAdd, {} )
+
 				FlipbookAdd2:completeAnimation()
 				self.FlipbookAdd2:setAlpha( 0.5 )
 				self.FlipbookAdd2:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_flipbook" ) )
 				self.FlipbookAdd2:setShaderVector( 0, 5, 0, 0, 0 )
 				self.FlipbookAdd2:setShaderVector( 1, 15.5, 0, 0, 0 )
 				self.clipFinished( FlipbookAdd2, {} )
+
 				GlowFrame00:completeAnimation()
 				self.GlowFrame00:setAlpha( 0 )
 				self.clipFinished( GlowFrame00, {} )
+
 				Tick20:completeAnimation()
 				self.Tick20:setAlpha( 0.5 )
 				self.clipFinished( Tick20, {} )
@@ -475,103 +533,135 @@ CoD.Promo_UnlockableRewardLargeLock.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 29 )
+
 				Frame:completeAnimation()
 				self.Frame:setAlpha( 1 )
 				self.clipFinished( Frame, {} )
+
 				PromoRewardImage:completeAnimation()
 				self.PromoRewardImage:setAlpha( 0.4 )
 				self.clipFinished( PromoRewardImage, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 1 )
 				self.clipFinished( Lock, {} )
+
 				NearCompleteLineGlow:completeAnimation()
 				self.NearCompleteLineGlow:setAlpha( 0 )
 				self.clipFinished( NearCompleteLineGlow, {} )
+
 				NearCompleteLineGlow3:completeAnimation()
 				self.NearCompleteLineGlow3:setAlpha( 0 )
 				self.clipFinished( NearCompleteLineGlow3, {} )
+
 				NearCompleteLineGlow2:completeAnimation()
 				self.NearCompleteLineGlow2:setAlpha( 0 )
 				self.clipFinished( NearCompleteLineGlow2, {} )
+
 				CompleteGlowBack:completeAnimation()
 				self.CompleteGlowBack:setAlpha( 0 )
 				self.clipFinished( CompleteGlowBack, {} )
+
 				CompleteGlowBack2:completeAnimation()
 				self.CompleteGlowBack2:setAlpha( 0 )
 				self.clipFinished( CompleteGlowBack2, {} )
+
 				CompleteLineGlow0:completeAnimation()
 				self.CompleteLineGlow0:setAlpha( 0 )
 				self.clipFinished( CompleteLineGlow0, {} )
+
 				CompleteLineGlow1:completeAnimation()
 				self.CompleteLineGlow1:setAlpha( 0 )
 				self.clipFinished( CompleteLineGlow1, {} )
+
 				CompleteLineGlow2:completeAnimation()
 				self.CompleteLineGlow2:setAlpha( 0 )
 				self.clipFinished( CompleteLineGlow2, {} )
+
 				CompleteLineCenter:completeAnimation()
 				self.CompleteLineCenter:setAlpha( 0 )
 				self.clipFinished( CompleteLineCenter, {} )
+
 				CompleteGlowCenter:completeAnimation()
 				self.CompleteGlowCenter:setAlpha( 0 )
 				self.clipFinished( CompleteGlowCenter, {} )
+
 				CompleteFrameBarTop:completeAnimation()
 				self.CompleteFrameBarTop:setAlpha( 0 )
 				self.clipFinished( CompleteFrameBarTop, {} )
+
 				CompleteFrameBarBottom:completeAnimation()
 				self.CompleteFrameBarBottom:setAlpha( 0 )
 				self.clipFinished( CompleteFrameBarBottom, {} )
+
 				GlowBarBlurBottom:completeAnimation()
 				self.GlowBarBlurBottom:setAlpha( 0 )
 				self.clipFinished( GlowBarBlurBottom, {} )
+
 				GlowBarBlurTop:completeAnimation()
 				self.GlowBarBlurTop:setAlpha( 0 )
 				self.clipFinished( GlowBarBlurTop, {} )
+
 				CompleteGlowSide:completeAnimation()
 				self.CompleteGlowSide:setAlpha( 0 )
 				self.clipFinished( CompleteGlowSide, {} )
+
 				CompleteGlowBack0:completeAnimation()
 				self.CompleteGlowBack0:setAlpha( 0 )
 				self.clipFinished( CompleteGlowBack0, {} )
+
 				CompletedPulse1:completeAnimation()
 				self.CompletedPulse1:setAlpha( 0 )
 				self.clipFinished( CompletedPulse1, {} )
+
 				GlowFrame:completeAnimation()
 				self.GlowFrame:setAlpha( 0 )
 				self.clipFinished( GlowFrame, {} )
+
 				GlowFrame0:completeAnimation()
 				self.GlowFrame0:setAlpha( 0 )
 				self.clipFinished( GlowFrame0, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 0 )
 				self.clipFinished( TextBox0, {} )
+
 				Tick2:completeAnimation()
 				self.Tick2:setAlpha( 0 )
 				self.clipFinished( Tick2, {} )
+
 				FlipbookAdd20:completeAnimation()
 				self.FlipbookAdd20:setAlpha( 0 )
 				self.clipFinished( FlipbookAdd20, {} )
+
 				FlipbookAdd:completeAnimation()
 				self.FlipbookAdd:setAlpha( 0 )
 				self.clipFinished( FlipbookAdd, {} )
+
 				FlipbookAdd2:completeAnimation()
 				self.FlipbookAdd2:setAlpha( 0 )
 				self.clipFinished( FlipbookAdd2, {} )
+
 				GlowFrame00:completeAnimation()
 				self.GlowFrame00:setAlpha( 0 )
 				self.clipFinished( GlowFrame00, {} )
+
 				Tick20:completeAnimation()
 				self.Tick20:setAlpha( 0 )
 				self.clipFinished( Tick20, {} )
 			end,
 			NearComplete = function ()
 				self:setupElementClipCounter( 28 )
+
 				Frame:completeAnimation()
 				self.Frame:setRGB( 1, 1, 1 )
 				self.Frame:setAlpha( 1 )
 				self.clipFinished( Frame, {} )
+
 				PromoRewardImage:completeAnimation()
 				self.PromoRewardImage:setAlpha( 0.4 )
 				self.clipFinished( PromoRewardImage, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 1 )
 				self.clipFinished( Lock, {} )
@@ -590,6 +680,7 @@ CoD.Promo_UnlockableRewardLargeLock.new = function ( menu, controller )
 				NearCompleteLineGlow:completeAnimation()
 				self.NearCompleteLineGlow:setAlpha( 0 )
 				NearCompleteLineGlowFrame2( NearCompleteLineGlow, {} )
+
 				NearCompleteLineGlow3:completeAnimation()
 				self.NearCompleteLineGlow3:setAlpha( 0 )
 				self.clipFinished( NearCompleteLineGlow3, {} )
@@ -608,69 +699,91 @@ CoD.Promo_UnlockableRewardLargeLock.new = function ( menu, controller )
 				NearCompleteLineGlow2:completeAnimation()
 				self.NearCompleteLineGlow2:setAlpha( 0 )
 				NearCompleteLineGlow2Frame2( NearCompleteLineGlow2, {} )
+
 				CompleteGlowBack:completeAnimation()
 				self.CompleteGlowBack:setAlpha( 0 )
 				self.clipFinished( CompleteGlowBack, {} )
+
 				CompleteGlowBack2:completeAnimation()
 				self.CompleteGlowBack2:setAlpha( 0 )
 				self.clipFinished( CompleteGlowBack2, {} )
+
 				CompleteLineGlow0:completeAnimation()
 				self.CompleteLineGlow0:setAlpha( 0 )
 				self.clipFinished( CompleteLineGlow0, {} )
+
 				CompleteLineGlow1:completeAnimation()
 				self.CompleteLineGlow1:setAlpha( 0 )
 				self.clipFinished( CompleteLineGlow1, {} )
+
 				CompleteLineGlow2:completeAnimation()
 				self.CompleteLineGlow2:setAlpha( 0 )
 				self.clipFinished( CompleteLineGlow2, {} )
+
 				CompleteLineCenter:completeAnimation()
 				self.CompleteLineCenter:setAlpha( 0 )
 				self.clipFinished( CompleteLineCenter, {} )
+
 				CompleteGlowCenter:completeAnimation()
 				self.CompleteGlowCenter:setAlpha( 0 )
 				self.clipFinished( CompleteGlowCenter, {} )
+
 				CompleteFrameBarTop:completeAnimation()
 				self.CompleteFrameBarTop:setAlpha( 0 )
 				self.clipFinished( CompleteFrameBarTop, {} )
+
 				CompleteFrameBarBottom:completeAnimation()
 				self.CompleteFrameBarBottom:setAlpha( 0 )
 				self.clipFinished( CompleteFrameBarBottom, {} )
+
 				GlowBarBlurBottom:completeAnimation()
 				self.GlowBarBlurBottom:setAlpha( 0 )
 				self.clipFinished( GlowBarBlurBottom, {} )
+
 				GlowBarBlurTop:completeAnimation()
 				self.GlowBarBlurTop:setAlpha( 0 )
 				self.clipFinished( GlowBarBlurTop, {} )
+
 				CompleteGlowSide:completeAnimation()
 				self.CompleteGlowSide:setAlpha( 0 )
 				self.clipFinished( CompleteGlowSide, {} )
+
 				CompleteGlowBack0:completeAnimation()
 				self.CompleteGlowBack0:setAlpha( 0 )
 				self.clipFinished( CompleteGlowBack0, {} )
+
 				CompletedPulse1:completeAnimation()
 				self.CompletedPulse1:setAlpha( 0 )
 				self.clipFinished( CompletedPulse1, {} )
+
 				GlowFrame:completeAnimation()
 				self.GlowFrame:setAlpha( 0 )
 				self.clipFinished( GlowFrame, {} )
+
 				GlowFrame0:completeAnimation()
 				self.GlowFrame0:setAlpha( 0 )
 				self.clipFinished( GlowFrame0, {} )
+
 				Tick2:completeAnimation()
 				self.Tick2:setAlpha( 0 )
 				self.clipFinished( Tick2, {} )
+
 				FlipbookAdd20:completeAnimation()
 				self.FlipbookAdd20:setAlpha( 0 )
 				self.clipFinished( FlipbookAdd20, {} )
+
 				FlipbookAdd:completeAnimation()
 				self.FlipbookAdd:setAlpha( 0 )
 				self.clipFinished( FlipbookAdd, {} )
+
 				FlipbookAdd2:completeAnimation()
 				self.FlipbookAdd2:setAlpha( 0 )
 				self.clipFinished( FlipbookAdd2, {} )
+
 				GlowFrame00:completeAnimation()
 				self.GlowFrame00:setAlpha( 0 )
 				self.clipFinished( GlowFrame00, {} )
+
 				Tick20:completeAnimation()
 				self.Tick20:setAlpha( 0 )
 				self.clipFinished( Tick20, {} )
@@ -679,97 +792,127 @@ CoD.Promo_UnlockableRewardLargeLock.new = function ( menu, controller )
 		NearComplete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 29 )
+
 				Frame:completeAnimation()
 				self.Frame:setRGB( 1, 1, 1 )
 				self.Frame:setAlpha( 1 )
 				self.clipFinished( Frame, {} )
+
 				PromoRewardImage:completeAnimation()
 				self.PromoRewardImage:setAlpha( 0.4 )
 				self.clipFinished( PromoRewardImage, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 1 )
 				self.clipFinished( Lock, {} )
+
 				NearCompleteLineGlow:completeAnimation()
 				self.NearCompleteLineGlow:setAlpha( 1 )
 				self.clipFinished( NearCompleteLineGlow, {} )
+
 				NearCompleteLineGlow3:completeAnimation()
 				self.NearCompleteLineGlow3:setAlpha( 0 )
 				self.clipFinished( NearCompleteLineGlow3, {} )
+
 				NearCompleteLineGlow2:completeAnimation()
 				self.NearCompleteLineGlow2:setAlpha( 1 )
 				self.clipFinished( NearCompleteLineGlow2, {} )
+
 				CompleteGlowBack:completeAnimation()
 				self.CompleteGlowBack:setAlpha( 0 )
 				self.clipFinished( CompleteGlowBack, {} )
+
 				CompleteGlowBack2:completeAnimation()
 				self.CompleteGlowBack2:setAlpha( 0 )
 				self.clipFinished( CompleteGlowBack2, {} )
+
 				CompleteLineGlow0:completeAnimation()
 				self.CompleteLineGlow0:setAlpha( 0 )
 				self.clipFinished( CompleteLineGlow0, {} )
+
 				CompleteLineGlow1:completeAnimation()
 				self.CompleteLineGlow1:setAlpha( 0 )
 				self.clipFinished( CompleteLineGlow1, {} )
+
 				CompleteLineGlow2:completeAnimation()
 				self.CompleteLineGlow2:setAlpha( 0 )
 				self.clipFinished( CompleteLineGlow2, {} )
+
 				CompleteLineCenter:completeAnimation()
 				self.CompleteLineCenter:setAlpha( 0 )
 				self.clipFinished( CompleteLineCenter, {} )
+
 				CompleteGlowCenter:completeAnimation()
 				self.CompleteGlowCenter:setAlpha( 0 )
 				self.clipFinished( CompleteGlowCenter, {} )
+
 				CompleteFrameBarTop:completeAnimation()
 				self.CompleteFrameBarTop:setAlpha( 0 )
 				self.clipFinished( CompleteFrameBarTop, {} )
+
 				CompleteFrameBarBottom:completeAnimation()
 				self.CompleteFrameBarBottom:setAlpha( 0 )
 				self.clipFinished( CompleteFrameBarBottom, {} )
+
 				GlowBarBlurBottom:completeAnimation()
 				self.GlowBarBlurBottom:setAlpha( 0 )
 				self.clipFinished( GlowBarBlurBottom, {} )
+
 				GlowBarBlurTop:completeAnimation()
 				self.GlowBarBlurTop:setAlpha( 0 )
 				self.clipFinished( GlowBarBlurTop, {} )
+
 				CompleteGlowSide:completeAnimation()
 				self.CompleteGlowSide:setAlpha( 0 )
 				self.clipFinished( CompleteGlowSide, {} )
+
 				CompleteGlowBack0:completeAnimation()
 				self.CompleteGlowBack0:setAlpha( 0 )
 				self.clipFinished( CompleteGlowBack0, {} )
+
 				CompletedPulse1:completeAnimation()
 				self.CompletedPulse1:setAlpha( 0 )
 				self.clipFinished( CompletedPulse1, {} )
+
 				GlowFrame:completeAnimation()
 				self.GlowFrame:setAlpha( 0 )
 				self.clipFinished( GlowFrame, {} )
+
 				GlowFrame0:completeAnimation()
 				self.GlowFrame0:setAlpha( 0 )
 				self.clipFinished( GlowFrame0, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 0 )
 				self.clipFinished( TextBox0, {} )
+
 				Tick2:completeAnimation()
 				self.Tick2:setAlpha( 0 )
 				self.clipFinished( Tick2, {} )
+
 				FlipbookAdd20:completeAnimation()
 				self.FlipbookAdd20:setAlpha( 0 )
 				self.clipFinished( FlipbookAdd20, {} )
+
 				FlipbookAdd:completeAnimation()
 				self.FlipbookAdd:setAlpha( 0 )
 				self.clipFinished( FlipbookAdd, {} )
+
 				FlipbookAdd2:completeAnimation()
 				self.FlipbookAdd2:setAlpha( 0 )
 				self.clipFinished( FlipbookAdd2, {} )
+
 				GlowFrame00:completeAnimation()
 				self.GlowFrame00:setAlpha( 0 )
 				self.clipFinished( GlowFrame00, {} )
+
 				Tick20:completeAnimation()
 				self.Tick20:setAlpha( 0 )
 				self.clipFinished( Tick20, {} )
 			end,
 			Complete = function ()
 				self:setupElementClipCounter( 28 )
+
 				Frame:completeAnimation()
 				self.Frame:setRGB( 1, 1, 1 )
 				self.Frame:setAlpha( 1 )
@@ -824,6 +967,7 @@ CoD.Promo_UnlockableRewardLargeLock.new = function ( menu, controller )
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 1 )
 				LockFrame2( Lock, {} )
+
 				NearCompleteLineGlow:completeAnimation()
 				self.NearCompleteLineGlow:setAlpha( 1 )
 				self.clipFinished( NearCompleteLineGlow, {} )
@@ -842,6 +986,7 @@ CoD.Promo_UnlockableRewardLargeLock.new = function ( menu, controller )
 				NearCompleteLineGlow3:completeAnimation()
 				self.NearCompleteLineGlow3:setAlpha( 0 )
 				NearCompleteLineGlow3Frame2( NearCompleteLineGlow3, {} )
+
 				NearCompleteLineGlow2:completeAnimation()
 				self.NearCompleteLineGlow2:setAlpha( 1 )
 				self.clipFinished( NearCompleteLineGlow2, {} )
@@ -1108,9 +1253,11 @@ CoD.Promo_UnlockableRewardLargeLock.new = function ( menu, controller )
 				CompleteFrameBarBottom:completeAnimation()
 				self.CompleteFrameBarBottom:setAlpha( 0 )
 				CompleteFrameBarBottomFrame2( CompleteFrameBarBottom, {} )
+
 				GlowBarBlurBottom:completeAnimation()
 				self.GlowBarBlurBottom:setAlpha( 0 )
 				self.clipFinished( GlowBarBlurBottom, {} )
+
 				GlowBarBlurTop:completeAnimation()
 				self.GlowBarBlurTop:setAlpha( 0 )
 				self.clipFinished( GlowBarBlurTop, {} )
@@ -1521,12 +1668,15 @@ CoD.Promo_UnlockableRewardLargeLock.new = function ( menu, controller )
 		Complete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 28 )
+
 				Frame:completeAnimation()
 				self.Frame:setAlpha( 1 )
 				self.clipFinished( Frame, {} )
+
 				Lock:completeAnimation()
 				self.Lock:setAlpha( 0 )
 				self.clipFinished( Lock, {} )
+
 				NearCompleteLineGlow:completeAnimation()
 				self.NearCompleteLineGlow:setAlpha( 1 )
 				self.clipFinished( NearCompleteLineGlow, {} )
@@ -1778,6 +1928,7 @@ CoD.Promo_UnlockableRewardLargeLock.new = function ( menu, controller )
 				NearCompleteLineGlow2:completeAnimation()
 				self.NearCompleteLineGlow2:setAlpha( 1 )
 				NearCompleteLineGlow2Frame2( NearCompleteLineGlow2, {} )
+
 				CompleteGlowBack:completeAnimation()
 				self.CompleteGlowBack:setAlpha( 1 )
 				self.clipFinished( CompleteGlowBack, {} )
@@ -1818,6 +1969,7 @@ CoD.Promo_UnlockableRewardLargeLock.new = function ( menu, controller )
 				CompleteGlowBack2:completeAnimation()
 				self.CompleteGlowBack2:setAlpha( 0.25 )
 				CompleteGlowBack2Frame2( CompleteGlowBack2, {} )
+
 				CompleteLineGlow0:completeAnimation()
 				self.CompleteLineGlow0:setAlpha( 1 )
 				self.clipFinished( CompleteLineGlow0, {} )
@@ -2113,15 +2265,19 @@ CoD.Promo_UnlockableRewardLargeLock.new = function ( menu, controller )
 				CompleteLineGlow2:completeAnimation()
 				self.CompleteLineGlow2:setAlpha( 1 )
 				CompleteLineGlow2Frame2( CompleteLineGlow2, {} )
+
 				CompleteLineCenter:completeAnimation()
 				self.CompleteLineCenter:setAlpha( 1 )
 				self.clipFinished( CompleteLineCenter, {} )
+
 				CompleteGlowCenter:completeAnimation()
 				self.CompleteGlowCenter:setAlpha( 1 )
 				self.clipFinished( CompleteGlowCenter, {} )
+
 				CompleteFrameBarTop:completeAnimation()
 				self.CompleteFrameBarTop:setAlpha( 1 )
 				self.clipFinished( CompleteFrameBarTop, {} )
+
 				CompleteFrameBarBottom:completeAnimation()
 				self.CompleteFrameBarBottom:setAlpha( 1 )
 				self.clipFinished( CompleteFrameBarBottom, {} )
@@ -2394,27 +2550,35 @@ CoD.Promo_UnlockableRewardLargeLock.new = function ( menu, controller )
 				CompleteGlowBack0:completeAnimation()
 				self.CompleteGlowBack0:setAlpha( 1 )
 				CompleteGlowBack0Frame2( CompleteGlowBack0, {} )
+
 				CompletedPulse1:completeAnimation()
 				self.CompletedPulse1:setAlpha( 0 )
 				self.clipFinished( CompletedPulse1, {} )
+
 				GlowFrame:completeAnimation()
 				self.GlowFrame:setAlpha( 0 )
 				self.clipFinished( GlowFrame, {} )
+
 				GlowFrame0:completeAnimation()
 				self.GlowFrame0:setAlpha( 0 )
 				self.clipFinished( GlowFrame0, {} )
+
 				TextBox0:completeAnimation()
 				self.TextBox0:setAlpha( 0.7 )
 				self.clipFinished( TextBox0, {} )
+
 				Tick2:completeAnimation()
 				self.Tick2:setAlpha( 0.5 )
 				self.clipFinished( Tick2, {} )
+
 				FlipbookAdd20:completeAnimation()
 				self.FlipbookAdd20:setAlpha( 0.5 )
 				self.clipFinished( FlipbookAdd20, {} )
+
 				FlipbookAdd:completeAnimation()
 				self.FlipbookAdd:setAlpha( 0.9 )
 				self.clipFinished( FlipbookAdd, {} )
+
 				FlipbookAdd2:completeAnimation()
 				self.FlipbookAdd2:setAlpha( 0.5 )
 				self.FlipbookAdd2:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_flipbook" ) )
@@ -2457,13 +2621,16 @@ CoD.Promo_UnlockableRewardLargeLock.new = function ( menu, controller )
 				GlowFrame00:completeAnimation()
 				self.GlowFrame00:setAlpha( 0 )
 				GlowFrame00Frame2( GlowFrame00, {} )
+
 				Tick20:completeAnimation()
 				self.Tick20:setAlpha( 0.5 )
 				self.clipFinished( Tick20, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -2484,6 +2651,7 @@ CoD.Promo_UnlockableRewardLargeLock.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PromoRewardImage:close()
 	end )

@@ -4,9 +4,11 @@
 CoD.CallingCards_GoldFrame = InheritFrom( LUI.UIElement )
 CoD.CallingCards_GoldFrame.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCards_GoldFrame )
 	self.id = "CallingCards_GoldFrame"
@@ -100,6 +102,7 @@ CoD.CallingCards_GoldFrame.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				frame:completeAnimation()
 				self.frame:setAlpha( 1 )
 				self.clipFinished( frame, {} )
@@ -356,6 +359,7 @@ CoD.CallingCards_GoldFrame.new = function ( menu, controller )
 				self.GlowSmallCorner5:setAlpha( 0 )
 				self.GlowSmallCorner5:setScale( 0.5 )
 				GlowSmallCorner5Frame2( GlowSmallCorner5, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

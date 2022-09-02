@@ -3,6 +3,7 @@
 
 local PostLoadFunc = function ( f1_arg0, f1_arg1 )
 	f1_arg0:setHandleMouse( true )
+
 	LUI.OverrideFunction_CallOriginalSecond( f1_arg0, "playClip", function ( element, f2_arg1 )
 		if f2_arg1 == "Over" then
 			element:playSound( "gain_focus" )
@@ -13,9 +14,11 @@ end
 CoD.CycleOverButton = InheritFrom( LUI.UIElement )
 CoD.CycleOverButton.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CycleOverButton )
 	self.id = "CycleOverButton"
@@ -46,9 +49,11 @@ CoD.CycleOverButton.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				arrowL:beginAnimation( "keyframe", 239, false, false, CoD.TweenType.Linear )
 				arrowL:setRGB( 1, 1, 1 )
 				arrowL:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+
 				HexLeft:completeAnimation()
 				self.HexLeft:setAlpha( 0 )
 				self.clipFinished( HexLeft, {} )
@@ -57,11 +62,13 @@ CoD.CycleOverButton.new = function ( menu, controller )
 		KMouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				arrowL:completeAnimation()
 				self.arrowL:setLeftRight( false, false, -13, 13 )
 				self.arrowL:setTopBottom( false, false, -13, 13 )
 				self.arrowL:setRGB( 1, 1, 1 )
 				self.clipFinished( arrowL, {} )
+
 				HexLeft:completeAnimation()
 				self.HexLeft:setLeftRight( false, false, -13, 13 )
 				self.HexLeft:setTopBottom( false, false, -13, 13 )
@@ -71,11 +78,13 @@ CoD.CycleOverButton.new = function ( menu, controller )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 2 )
+
 				arrowL:completeAnimation()
 				self.arrowL:setLeftRight( false, false, -20, 20 )
 				self.arrowL:setTopBottom( false, false, -20, 20 )
 				self.arrowL:setRGB( ColorSet.Orange.r, ColorSet.Orange.g, ColorSet.Orange.b )
 				self.clipFinished( arrowL, {} )
+
 				HexLeft:completeAnimation()
 				self.HexLeft:setLeftRight( false, false, -20, 20 )
 				self.HexLeft:setTopBottom( false, false, -20, 20 )
@@ -85,6 +94,7 @@ CoD.CycleOverButton.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "KMouse",

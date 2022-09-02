@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleNumBrdr" )
 CoD.SpecialistEpicRewardsCarouselItem = InheritFrom( LUI.UIElement )
 CoD.SpecialistEpicRewardsCarouselItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpecialistEpicRewardsCarouselItem )
 	self.id = "SpecialistEpicRewardsCarouselItem"
@@ -74,11 +76,17 @@ CoD.SpecialistEpicRewardsCarouselItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				SpecialistRewardsCarouselItemInternal:completeAnimation()
+
 				SpecialistRewardsCarouselItemInternal.FEButtonPanel0:completeAnimation()
+
 				SpecialistRewardsCarouselItemInternal.IndividualRewardItem1.Border:completeAnimation()
+
 				SpecialistRewardsCarouselItemInternal.IndividualRewardItem2.Border:completeAnimation()
+
 				SpecialistRewardsCarouselItemInternal.IndividualRewardItem3.Border:completeAnimation()
+
 				SpecialistRewardsCarouselItemInternal.IndividualRewardItem4.Border:completeAnimation()
 				self.SpecialistRewardsCarouselItemInternal:setScale( 1 )
 				self.SpecialistRewardsCarouselItemInternal.FEButtonPanel0:setAlpha( 0.5 )
@@ -87,24 +95,30 @@ CoD.SpecialistEpicRewardsCarouselItem.new = function ( menu, controller )
 				self.SpecialistRewardsCarouselItemInternal.IndividualRewardItem3.Border:setRGB( 0.37, 0.37, 0.37 )
 				self.SpecialistRewardsCarouselItemInternal.IndividualRewardItem4.Border:setRGB( 0.37, 0.37, 0.37 )
 				self.clipFinished( SpecialistRewardsCarouselItemInternal, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setAlpha( 0 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				FocusBarB00:completeAnimation()
 				self.FocusBarB00:setAlpha( 0 )
 				self.clipFinished( FocusBarB00, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
+
 				local SpecialistRewardsCarouselItemInternalFrame2 = function ( SpecialistRewardsCarouselItemInternal, event )
 					local SpecialistRewardsCarouselItemInternalFrame3 = function ( SpecialistRewardsCarouselItemInternal, event )
 						if not event.interrupted then
@@ -149,10 +163,15 @@ CoD.SpecialistEpicRewardsCarouselItem.new = function ( menu, controller )
 				end
 				
 				SpecialistRewardsCarouselItemInternal:completeAnimation()
+
 				SpecialistRewardsCarouselItemInternal.FEButtonPanel0:completeAnimation()
+
 				SpecialistRewardsCarouselItemInternal.IndividualRewardItem1.Border:completeAnimation()
+
 				SpecialistRewardsCarouselItemInternal.IndividualRewardItem2.Border:completeAnimation()
+
 				SpecialistRewardsCarouselItemInternal.IndividualRewardItem3.Border:completeAnimation()
+
 				SpecialistRewardsCarouselItemInternal.IndividualRewardItem4.Border:completeAnimation()
 				self.SpecialistRewardsCarouselItemInternal:setScale( 1 )
 				self.SpecialistRewardsCarouselItemInternal.FEButtonPanel0:setAlpha( 0.5 )
@@ -161,40 +180,50 @@ CoD.SpecialistEpicRewardsCarouselItem.new = function ( menu, controller )
 				self.SpecialistRewardsCarouselItemInternal.IndividualRewardItem3.Border:setRGB( 0.37, 0.37, 0.37 )
 				self.SpecialistRewardsCarouselItemInternal.IndividualRewardItem4.Border:setRGB( 0.37, 0.37, 0.37 )
 				SpecialistRewardsCarouselItemInternalFrame2( SpecialistRewardsCarouselItemInternal, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setAlpha( 0 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				FocusBarB00:completeAnimation()
 				self.FocusBarB00:setAlpha( 0 )
 				self.clipFinished( FocusBarB00, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 5 )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setLeftRight( false, false, -138, 138 )
 				self.FETitleNumBrdr0:setTopBottom( false, false, -220, 220 )
 				self.FETitleNumBrdr0:setAlpha( 1 )
 				self.clipFinished( FETitleNumBrdr0, {} )
+
 				FocusBarB00:completeAnimation()
 				self.FocusBarB00:setLeftRight( false, false, -142, 142 )
 				self.FocusBarB00:setTopBottom( false, false, -216, -222 )
 				self.FocusBarB00:setAlpha( 1 )
 				self.clipFinished( FocusBarB00, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setLeftRight( false, false, -142, 142 )
 				self.FocusBarB0:setTopBottom( false, false, 221, 217 )
@@ -203,28 +232,34 @@ CoD.SpecialistEpicRewardsCarouselItem.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
+
 				SpecialistRewardsCarouselItemInternal:completeAnimation()
 				self.SpecialistRewardsCarouselItemInternal:setScale( 1.1 )
 				self.clipFinished( SpecialistRewardsCarouselItemInternal, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setLeftRight( true, true, -15, 15 )
 				self.FocusBarB:setTopBottom( false, true, 19, 23 )
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setLeftRight( true, true, -15, 15 )
 				self.FocusBarT:setTopBottom( true, false, -23, -19 )
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB00:completeAnimation()
 				self.FocusBarB00:setAlpha( 0 )
 				self.clipFinished( FocusBarB00, {} )
+
 				FocusBarB0:completeAnimation()
 				self.FocusBarB0:setAlpha( 0 )
 				self.clipFinished( FocusBarB0, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SpecialistRewardsCarouselItemInternal:close()
 		element.FocusBarB:close()

@@ -4,9 +4,11 @@
 CoD.CP_Prologue_FaceScannerCircleDash = InheritFrom( LUI.UIElement )
 CoD.CP_Prologue_FaceScannerCircleDash.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CP_Prologue_FaceScannerCircleDash )
 	self.id = "CP_Prologue_FaceScannerCircleDash"
@@ -36,6 +38,7 @@ CoD.CP_Prologue_FaceScannerCircleDash.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local CenterCircleRGBFrame2 = function ( CenterCircleRGB, event )
 					if not event.interrupted then
 						CenterCircleRGB:beginAnimation( "keyframe", 2000, false, false, CoD.TweenType.Linear )
@@ -66,27 +69,32 @@ CoD.CP_Prologue_FaceScannerCircleDash.new = function ( menu, controller )
 				CenterCircleRGB0:completeAnimation()
 				self.CenterCircleRGB0:setZRot( 0 )
 				CenterCircleRGB0Frame2( CenterCircleRGB0, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Scanning = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		PossibleMatch = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Found = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Failed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

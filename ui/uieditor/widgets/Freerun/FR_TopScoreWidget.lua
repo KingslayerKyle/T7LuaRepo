@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Notifications.PlayerCard.PlayerCard" )
 CoD.FR_TopScoreWidget = InheritFrom( LUI.UIElement )
 CoD.FR_TopScoreWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.FR_TopScoreWidget )
 	self.id = "FR_TopScoreWidget"
@@ -280,9 +282,11 @@ CoD.FR_TopScoreWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 12 )
+
 				local TopScoreBoxFrame2 = function ( TopScoreBox, event )
 					if not event.interrupted then
 						TopScoreBox:beginAnimation( "keyframe", 200, false, false, CoD.TweenType.Linear )
@@ -538,6 +542,7 @@ CoD.FR_TopScoreWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FRTopScoreBoxTimeBlur:close()
 		element.FRTopScoreBoxTimeBlur0:close()

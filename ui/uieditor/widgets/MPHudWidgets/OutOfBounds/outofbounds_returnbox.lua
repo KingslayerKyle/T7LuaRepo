@@ -4,9 +4,11 @@
 CoD.outofbounds_returnbox = InheritFrom( LUI.UIElement )
 CoD.outofbounds_returnbox.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.outofbounds_returnbox )
 	self.id = "outofbounds_returnbox"
@@ -42,23 +44,28 @@ CoD.outofbounds_returnbox.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setAlpha( 0.8 )
 				self.clipFinished( BlackBox, {} )
+
 				ReturnText:completeAnimation()
 				self.ReturnText:setAlpha( 0.9 )
 				self.clipFinished( ReturnText, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		IsOutOfBounds = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BlackBox:completeAnimation()
 				self.BlackBox:setLeftRight( false, false, -217.5, 217.5 )
 				self.BlackBox:setTopBottom( false, false, 21, 53 )
 				self.BlackBox:setAlpha( 0.7 )
 				self.clipFinished( BlackBox, {} )
+
 				ReturnText:completeAnimation()
 				self.ReturnText:setLeftRight( false, false, -217.5, 217.5 )
 				self.ReturnText:setTopBottom( false, false, 23, 53 )

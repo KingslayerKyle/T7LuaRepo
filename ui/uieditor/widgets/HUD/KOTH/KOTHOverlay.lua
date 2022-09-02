@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.KOTH.HardpointTimer" )
 CoD.KOTHOverlay = InheritFrom( LUI.UIElement )
 CoD.KOTHOverlay.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.KOTHOverlay )
 	self.id = "KOTHOverlay"
@@ -42,6 +44,7 @@ CoD.KOTHOverlay.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				HardpointStatus:completeAnimation()
 				self.HardpointStatus:setLeftRight( true, false, 37, 344 )
 				self.HardpointStatus:setTopBottom( true, false, 192, 224 )
@@ -52,6 +55,7 @@ CoD.KOTHOverlay.new = function ( menu, controller )
 		HideForCodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				HardpointStatus:completeAnimation()
 				self.HardpointStatus:setAlpha( 0 )
 				self.clipFinished( HardpointStatus, {} )
@@ -60,6 +64,7 @@ CoD.KOTHOverlay.new = function ( menu, controller )
 		CodCasterLargeMinimap = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				HardpointStatus:completeAnimation()
 				self.HardpointStatus:setLeftRight( true, false, 37, 344 )
 				self.HardpointStatus:setTopBottom( true, false, 245, 277 )
@@ -70,6 +75,7 @@ CoD.KOTHOverlay.new = function ( menu, controller )
 		CodCaster = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				HardpointStatus:completeAnimation()
 				self.HardpointStatus:setLeftRight( true, false, 37, 344 )
 				self.HardpointStatus:setTopBottom( true, false, 192, 224 )
@@ -78,6 +84,7 @@ CoD.KOTHOverlay.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "HideForCodCaster",
@@ -114,6 +121,7 @@ CoD.KOTHOverlay.new = function ( menu, controller )
 			modelName = "CodCaster.profileSettingsUpdated"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.HardpointStatus:close()
 	end )

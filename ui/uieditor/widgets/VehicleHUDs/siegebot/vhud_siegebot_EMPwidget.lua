@@ -4,9 +4,11 @@
 CoD.vhud_siegebot_EMPwidget = InheritFrom( LUI.UIElement )
 CoD.vhud_siegebot_EMPwidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vhud_siegebot_EMPwidget )
 	self.id = "vhud_siegebot_EMPwidget"
@@ -29,6 +31,7 @@ CoD.vhud_siegebot_EMPwidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
@@ -37,12 +40,14 @@ CoD.vhud_siegebot_EMPwidget.new = function ( menu, controller )
 		EMP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 1 )
 				self.clipFinished( Image0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "EMP",

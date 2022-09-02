@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.BlackMarket.LootDecryptionImage" )
 CoD.LootDecryptionFakeImageCycle = InheritFrom( LUI.UIElement )
 CoD.LootDecryptionFakeImageCycle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LootDecryptionFakeImageCycle )
 	self.id = "LootDecryptionFakeImageCycle"
@@ -145,6 +147,7 @@ CoD.LootDecryptionFakeImageCycle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 10 )
+
 				local RarityColor5Frame2 = function ( RarityColor5, event )
 					local RarityColor5Frame3 = function ( RarityColor5, event )
 						local RarityColor5Frame4 = function ( RarityColor5, event )
@@ -463,13 +466,16 @@ CoD.LootDecryptionFakeImageCycle.new = function ( menu, controller )
 				FakeImage4:completeAnimation()
 				self.FakeImage4:setAlpha( 1 )
 				FakeImage4Frame2( FakeImage4, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			Looping = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RarityColor5:close()
 		element.RarityColor1:close()

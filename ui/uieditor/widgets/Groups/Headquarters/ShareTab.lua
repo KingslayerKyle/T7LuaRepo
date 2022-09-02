@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Groups.GroupsSummaryTBD" )
 CoD.ShareTab = InheritFrom( LUI.UIElement )
 CoD.ShareTab.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.ShareTab )
 	self.id = "ShareTab"

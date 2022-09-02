@@ -27,6 +27,7 @@ CoD.ModalDialogItems.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.ModalDialogItems )
 	self.id = "ModalDialogItems"
@@ -119,6 +120,7 @@ CoD.ModalDialogItems.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.optionsList:close()
 		element.ButtonPrompts:close()

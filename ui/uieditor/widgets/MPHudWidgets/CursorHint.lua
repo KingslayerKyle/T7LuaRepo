@@ -21,6 +21,7 @@ CoD.CursorHint.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CursorHint )
 	self.id = "CursorHint"
@@ -98,13 +99,16 @@ CoD.CursorHint.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				cursorhinttext0:completeAnimation()
 				self.cursorhinttext0:setAlpha( 0 )
 				self.clipFinished( cursorhinttext0, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, false, 370.17, 384.5 )
 				self.Image0:setTopBottom( true, false, -46.37, 81.63 )
 				self.clipFinished( Image0, {} )
+
 				cursorhintimage0:completeAnimation()
 				self.cursorhintimage0:setLeftRight( false, false, 120.17, 228.17 )
 				self.cursorhintimage0:setTopBottom( true, false, -17.5, 36.5 )
@@ -115,6 +119,7 @@ CoD.CursorHint.new = function ( menu, controller )
 		Active_1x1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local cursorhinttext0Frame2 = function ( cursorhinttext0, event )
 					if not event.interrupted then
 						cursorhinttext0:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -130,6 +135,7 @@ CoD.CursorHint.new = function ( menu, controller )
 				cursorhinttext0:completeAnimation()
 				self.cursorhinttext0:setAlpha( 0.44 )
 				cursorhinttext0Frame2( cursorhinttext0, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, false, 370.17, 384.5 )
 				self.Image0:setTopBottom( true, false, -46.37, 81.63 )
@@ -156,6 +162,7 @@ CoD.CursorHint.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				local cursorhinttext0Frame2 = function ( cursorhinttext0, event )
 					if not event.interrupted then
 						cursorhinttext0:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Bounce )
@@ -191,6 +198,7 @@ CoD.CursorHint.new = function ( menu, controller )
 		Active_2x1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local cursorhinttext0Frame2 = function ( cursorhinttext0, event )
 					if not event.interrupted then
 						cursorhinttext0:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -206,6 +214,7 @@ CoD.CursorHint.new = function ( menu, controller )
 				cursorhinttext0:completeAnimation()
 				self.cursorhinttext0:setAlpha( 0.41 )
 				cursorhinttext0Frame2( cursorhinttext0, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, false, 370.17, 384.5 )
 				self.Image0:setTopBottom( true, false, -46.37, 81.63 )
@@ -232,6 +241,7 @@ CoD.CursorHint.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				local cursorhinttext0Frame2 = function ( cursorhinttext0, event )
 					if not event.interrupted then
 						cursorhinttext0:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Bounce )
@@ -267,6 +277,7 @@ CoD.CursorHint.new = function ( menu, controller )
 		Active_4x1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local cursorhinttext0Frame2 = function ( cursorhinttext0, event )
 					if not event.interrupted then
 						cursorhinttext0:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -282,6 +293,7 @@ CoD.CursorHint.new = function ( menu, controller )
 				cursorhinttext0:completeAnimation()
 				self.cursorhinttext0:setAlpha( 0.45 )
 				cursorhinttext0Frame2( cursorhinttext0, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, false, 370.17, 384.5 )
 				self.Image0:setTopBottom( true, false, -46.37, 81.63 )
@@ -308,6 +320,7 @@ CoD.CursorHint.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 2 )
+
 				local cursorhinttext0Frame2 = function ( cursorhinttext0, event )
 					if not event.interrupted then
 						cursorhinttext0:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Bounce )
@@ -343,6 +356,7 @@ CoD.CursorHint.new = function ( menu, controller )
 		Active_NoImage = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local cursorhinttext0Frame2 = function ( cursorhinttext0, event )
 					if not event.interrupted then
 						cursorhinttext0:beginAnimation( "keyframe", 300, false, false, CoD.TweenType.Bounce )
@@ -358,10 +372,12 @@ CoD.CursorHint.new = function ( menu, controller )
 				cursorhinttext0:completeAnimation()
 				self.cursorhinttext0:setAlpha( 0.45 )
 				cursorhinttext0Frame2( cursorhinttext0, {} )
+
 				Image0:completeAnimation()
 				self.Image0:setLeftRight( true, false, 370.17, 370.17 )
 				self.Image0:setTopBottom( true, false, -46.37, 81.63 )
 				self.clipFinished( Image0, {} )
+
 				cursorhintimage0:completeAnimation()
 				self.cursorhintimage0:setLeftRight( false, false, 120.17, 120.17 )
 				self.cursorhintimage0:setTopBottom( true, false, -17.5, 36.5 )
@@ -371,6 +387,7 @@ CoD.CursorHint.new = function ( menu, controller )
 		Out = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local cursorhinttext0Frame2 = function ( cursorhinttext0, event )
 					if not event.interrupted then
 						cursorhinttext0:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Bounce )
@@ -404,6 +421,7 @@ CoD.CursorHint.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.cursorhinttext0:close()
 		element.cursorhintimage0:close()

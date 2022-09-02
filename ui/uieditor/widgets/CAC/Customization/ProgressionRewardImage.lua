@@ -4,9 +4,11 @@
 CoD.ProgressionRewardImage = InheritFrom( LUI.UIElement )
 CoD.ProgressionRewardImage.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ProgressionRewardImage )
 	self.id = "ProgressionRewardImage"
@@ -24,6 +26,7 @@ CoD.ProgressionRewardImage.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

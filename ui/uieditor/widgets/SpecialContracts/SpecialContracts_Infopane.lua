@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.SpecialContracts.SpecialContracts_StateIndicator" 
 CoD.SpecialContracts_Infopane = InheritFrom( LUI.UIElement )
 CoD.SpecialContracts_Infopane.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpecialContracts_Infopane )
 	self.id = "SpecialContracts_Infopane"
@@ -259,6 +261,7 @@ CoD.SpecialContracts_Infopane.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				SpecialContractsStateIndicator:completeAnimation()
 				self.SpecialContractsStateIndicator:setAlpha( 1 )
 				self.clipFinished( SpecialContractsStateIndicator, {} )
@@ -267,6 +270,7 @@ CoD.SpecialContracts_Infopane.new = function ( menu, controller )
 		Complete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				SpecialContractsStateIndicator:completeAnimation()
 				self.SpecialContractsStateIndicator:setAlpha( 0 )
 				self.clipFinished( SpecialContractsStateIndicator, {} )
@@ -275,6 +279,7 @@ CoD.SpecialContracts_Infopane.new = function ( menu, controller )
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				SpecialContractsStateIndicator:completeAnimation()
 				self.SpecialContractsStateIndicator:setAlpha( 0 )
 				self.clipFinished( SpecialContractsStateIndicator, {} )
@@ -283,12 +288,14 @@ CoD.SpecialContracts_Infopane.new = function ( menu, controller )
 		Cost = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				SpecialContractsStateIndicator:completeAnimation()
 				self.SpecialContractsStateIndicator:setAlpha( 1 )
 				self.clipFinished( SpecialContractsStateIndicator, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Complete",
@@ -325,6 +332,7 @@ CoD.SpecialContracts_Infopane.new = function ( menu, controller )
 			modelName = "cost"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RewardImage:close()
 		element.BMContractstimer:close()

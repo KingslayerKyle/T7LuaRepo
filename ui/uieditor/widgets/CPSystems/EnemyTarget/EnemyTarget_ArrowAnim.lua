@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CPSystems.EnemyTarget.EnemyTarget_Arrow" )
 CoD.EnemyTarget_ArrowAnim = InheritFrom( LUI.UIElement )
 CoD.EnemyTarget_ArrowAnim.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EnemyTarget_ArrowAnim )
 	self.id = "EnemyTarget_ArrowAnim"
@@ -33,6 +35,7 @@ CoD.EnemyTarget_ArrowAnim.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local weakpointNewRedArrow0Frame2 = function ( weakpointNewRedArrow0, event )
 					local weakpointNewRedArrow0Frame3 = function ( weakpointNewRedArrow0, event )
 						local weakpointNewRedArrow0Frame4 = function ( weakpointNewRedArrow0, event )
@@ -141,15 +144,18 @@ CoD.EnemyTarget_ArrowAnim.new = function ( menu, controller )
 				self.weakpointNewRedArrow1:setTopBottom( true, false, 14, 50 )
 				self.weakpointNewRedArrow1:setAlpha( 0.5 )
 				weakpointNewRedArrow1Frame2( weakpointNewRedArrow1, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		},
 		Null = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.weakpointNewRedArrow0:close()
 		element.weakpointNewRedArrow1:close()

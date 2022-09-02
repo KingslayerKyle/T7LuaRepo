@@ -31,6 +31,7 @@ CoD.fe_RightContainerWithoutRightBoxes.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.fe_RightContainerWithoutRightBoxes )
 	self.id = "fe_RightContainerWithoutRightBoxes"
@@ -165,6 +166,7 @@ CoD.fe_RightContainerWithoutRightBoxes.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				RJoystickbtn:completeAnimation()
 				self.RJoystickbtn:setLeftRight( false, true, -450.5, -361.5 )
 				self.RJoystickbtn:setTopBottom( false, true, -32, 0 )
@@ -172,6 +174,7 @@ CoD.fe_RightContainerWithoutRightBoxes.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FooterButtonDoublePrompts:close()
 		element.Padbtn:close()

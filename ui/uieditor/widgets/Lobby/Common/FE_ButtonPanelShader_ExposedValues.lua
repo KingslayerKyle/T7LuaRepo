@@ -4,9 +4,11 @@
 CoD.FE_ButtonPanelShader_ExposedValues = InheritFrom( LUI.UIElement )
 CoD.FE_ButtonPanelShader_ExposedValues.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_ButtonPanelShader_ExposedValues )
 	self.id = "FE_ButtonPanelShader_ExposedValues"

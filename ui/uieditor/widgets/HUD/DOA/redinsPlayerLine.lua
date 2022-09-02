@@ -4,9 +4,11 @@
 CoD.redinsPlayerLine = InheritFrom( LUI.UIElement )
 CoD.redinsPlayerLine.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.redinsPlayerLine )
 	self.id = "redinsPlayerLine"
@@ -123,28 +125,36 @@ CoD.redinsPlayerLine.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Image1:completeAnimation()
 				self.Image1:setRGB( 0, 0, 0 )
 				self.Image1:setAlpha( 0.25 )
 				self.clipFinished( Image1, {} )
+
 				Image10:completeAnimation()
 				self.Image10:setAlpha( 0.2 )
 				self.clipFinished( Image10, {} )
+
 				Image4:completeAnimation()
 				self.Image4:setAlpha( 0.2 )
 				self.clipFinished( Image4, {} )
+
 				namebox0:completeAnimation()
 				self.namebox0:setAlpha( 1 )
 				self.clipFinished( namebox0, {} )
+
 				lapsbox0:completeAnimation()
 				self.lapsbox0:setAlpha( 0.9 )
 				self.clipFinished( lapsbox0, {} )
+
 				nitrobox0:completeAnimation()
 				self.nitrobox0:setAlpha( 0.9 )
 				self.clipFinished( nitrobox0, {} )
+
 				zombiesbox0:completeAnimation()
 				self.zombiesbox0:setAlpha( 0.9 )
 				self.clipFinished( zombiesbox0, {} )
+
 				gembox0:completeAnimation()
 				self.gembox0:setAlpha( 0.9 )
 				self.clipFinished( gembox0, {} )
@@ -153,33 +163,42 @@ CoD.redinsPlayerLine.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 8 )
+
 				Image1:completeAnimation()
 				self.Image1:setAlpha( 0 )
 				self.clipFinished( Image1, {} )
+
 				Image10:completeAnimation()
 				self.Image10:setAlpha( 0 )
 				self.clipFinished( Image10, {} )
+
 				Image4:completeAnimation()
 				self.Image4:setAlpha( 0 )
 				self.clipFinished( Image4, {} )
+
 				namebox0:completeAnimation()
 				self.namebox0:setAlpha( 0 )
 				self.clipFinished( namebox0, {} )
+
 				lapsbox0:completeAnimation()
 				self.lapsbox0:setAlpha( 0 )
 				self.clipFinished( lapsbox0, {} )
+
 				nitrobox0:completeAnimation()
 				self.nitrobox0:setAlpha( 0 )
 				self.clipFinished( nitrobox0, {} )
+
 				zombiesbox0:completeAnimation()
 				self.zombiesbox0:setAlpha( 0 )
 				self.clipFinished( zombiesbox0, {} )
+
 				gembox0:completeAnimation()
 				self.gembox0:setAlpha( 0 )
 				self.clipFinished( gembox0, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",
@@ -196,6 +215,7 @@ CoD.redinsPlayerLine.new = function ( menu, controller )
 			modelName = "generic_txt"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.namebox0:close()
 		element.lapsbox0:close()

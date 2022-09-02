@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ButtonPanelShader_ExposedValues" )
 CoD.FE_ButtonPanelShaderContainer_ExposedValues = InheritFrom( LUI.UIElement )
 CoD.FE_ButtonPanelShaderContainer_ExposedValues.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_ButtonPanelShaderContainer_ExposedValues )
 	self.id = "FE_ButtonPanelShaderContainer_ExposedValues"
@@ -31,6 +33,7 @@ CoD.FE_ButtonPanelShaderContainer_ExposedValues.new = function ( menu, controlle
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FEButtonPanel:completeAnimation()
 				self.FEButtonPanel:setAlpha( 1 )
 				self.clipFinished( FEButtonPanel, {} )
@@ -39,12 +42,14 @@ CoD.FE_ButtonPanelShaderContainer_ExposedValues.new = function ( menu, controlle
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				FEButtonPanel:completeAnimation()
 				self.FEButtonPanel:setAlpha( 0 )
 				self.clipFinished( FEButtonPanel, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEButtonPanel:close()
 	end )

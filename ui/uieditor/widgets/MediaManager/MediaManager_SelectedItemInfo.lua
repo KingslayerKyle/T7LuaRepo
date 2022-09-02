@@ -14,9 +14,11 @@ end
 CoD.MediaManager_SelectedItemInfo = InheritFrom( LUI.UIElement )
 CoD.MediaManager_SelectedItemInfo.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.MediaManager_SelectedItemInfo )
 	self.id = "MediaManager_SelectedItemInfo"
@@ -60,12 +62,15 @@ CoD.MediaManager_SelectedItemInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0 )
 				self.clipFinished( bg, {} )
+
 				FileshareSelectedItemPublishedTime:completeAnimation()
 				self.FileshareSelectedItemPublishedTime:setAlpha( 0 )
 				self.clipFinished( FileshareSelectedItemPublishedTime, {} )
+
 				FileshareSelectedItemAuthor:completeAnimation()
 				self.FileshareSelectedItemAuthor:setAlpha( 0 )
 				self.clipFinished( FileshareSelectedItemAuthor, {} )
@@ -74,18 +79,22 @@ CoD.MediaManager_SelectedItemInfo.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				bg:completeAnimation()
 				self.bg:setAlpha( 0.8 )
 				self.clipFinished( bg, {} )
+
 				FileshareSelectedItemPublishedTime:completeAnimation()
 				self.FileshareSelectedItemPublishedTime:setAlpha( 1 )
 				self.clipFinished( FileshareSelectedItemPublishedTime, {} )
+
 				FileshareSelectedItemAuthor:completeAnimation()
 				self.FileshareSelectedItemAuthor:setAlpha( 1 )
 				self.clipFinished( FileshareSelectedItemAuthor, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -102,6 +111,7 @@ CoD.MediaManager_SelectedItemInfo.new = function ( menu, controller )
 			modelName = "MediaManager.isBuyMoreSlot"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FileshareSelectedItemPublishedTime:close()
 		element.FileshareSelectedItemAuthor:close()

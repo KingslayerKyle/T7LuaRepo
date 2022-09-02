@@ -4,9 +4,11 @@
 CoD.CPTrainingSimRounds = InheritFrom( LUI.UIElement )
 CoD.CPTrainingSimRounds.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CPTrainingSimRounds )
 	self.id = "CPTrainingSimRounds"

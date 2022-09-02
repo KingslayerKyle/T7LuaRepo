@@ -102,9 +102,11 @@ end
 CoD.HackWaypoint = InheritFrom( LUI.UIElement )
 CoD.HackWaypoint.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.HackWaypoint )
 	self.id = "HackWaypoint"
@@ -122,6 +124,7 @@ CoD.HackWaypoint.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				internal:completeAnimation()
 				self.internal:setLeftRight( false, false, -46, 46 )
 				self.internal:setTopBottom( false, false, -46, 46 )
@@ -131,6 +134,7 @@ CoD.HackWaypoint.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.internal:close()
 	end )

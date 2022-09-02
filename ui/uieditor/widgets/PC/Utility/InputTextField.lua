@@ -55,9 +55,11 @@ end
 CoD.InputTextField = InheritFrom( LUI.UIElement )
 CoD.InputTextField.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.InputTextField )
 	self.id = "InputTextField"

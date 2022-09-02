@@ -4,9 +4,11 @@
 CoD.ScoreInfo_TimerNumber = InheritFrom( LUI.UIElement )
 CoD.ScoreInfo_TimerNumber.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreInfo_TimerNumber )
 	self.id = "ScoreInfo_TimerNumber"

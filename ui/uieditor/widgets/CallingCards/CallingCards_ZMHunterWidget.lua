@@ -4,9 +4,11 @@
 CoD.CallingCards_ZMHunterWidget = InheritFrom( LUI.UIElement )
 CoD.CallingCards_ZMHunterWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.CallingCards_ZMHunterWidget )
 	self.id = "CallingCards_ZMHunterWidget"
@@ -57,6 +59,7 @@ CoD.CallingCards_ZMHunterWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				local bgLightFrame2 = function ( bgLight, event )
 					local bgLightFrame3 = function ( bgLight, event )
 						local bgLightFrame4 = function ( bgLight, event )
@@ -429,6 +432,7 @@ CoD.CallingCards_ZMHunterWidget.new = function ( menu, controller )
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setAlpha( 0.75 )
 				GlowOrangeOverFrame2( GlowOrangeOver, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

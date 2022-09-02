@@ -23,9 +23,11 @@ end
 CoD.GroupsFeaturedListLarge = InheritFrom( LUI.UIElement )
 CoD.GroupsFeaturedListLarge.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.GroupsFeaturedListLarge )
 	self.id = "GroupsFeaturedListLarge"
@@ -143,6 +145,7 @@ CoD.GroupsFeaturedListLarge.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FileshareNoContentGraphic:close()
 		element.contentList:close()

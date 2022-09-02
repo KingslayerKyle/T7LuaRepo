@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_PanelNoBlur" )
 CoD.PlayerCard_Label = InheritFrom( LUI.UIElement )
 CoD.PlayerCard_Label.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PlayerCard_Label )
 	self.id = "PlayerCard_Label"
@@ -37,6 +39,7 @@ CoD.PlayerCard_Label.new = function ( menu, controller )
 			itemName:setText( name )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalFirst( itemName, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 1 )
 	end )
@@ -47,6 +50,7 @@ CoD.PlayerCard_Label.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				itemName:completeAnimation()
 				self.itemName:setRGB( 1, 1, 1 )
 				self.clipFinished( itemName, {} )
@@ -55,12 +59,14 @@ CoD.PlayerCard_Label.new = function ( menu, controller )
 		PlayerYellow = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				itemName:completeAnimation()
 				self.itemName:setRGB( ColorSet.PlayerYellow.r, ColorSet.PlayerYellow.g, ColorSet.PlayerYellow.b )
 				self.clipFinished( itemName, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Panel:close()
 		element.itemName:close()

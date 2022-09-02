@@ -21,6 +21,7 @@ CoD.FileshareCategorySelectoryListWidget.new = function ( menu, controller )
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FileshareCategorySelectoryListWidget )
 	self.id = "FileshareCategorySelectoryListWidget"
@@ -152,6 +153,7 @@ CoD.FileshareCategorySelectoryListWidget.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.itemList:close()
 		element.TheaterHintText:close()

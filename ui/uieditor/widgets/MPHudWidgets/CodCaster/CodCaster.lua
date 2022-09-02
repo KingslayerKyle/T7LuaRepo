@@ -66,9 +66,11 @@ end
 CoD.CodCaster = InheritFrom( LUI.UIElement )
 CoD.CodCaster.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CodCaster )
 	self.id = "CodCaster"
@@ -238,23 +240,29 @@ CoD.CodCaster.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				CodCasterSpectate:completeAnimation()
 				self.CodCasterSpectate:setAlpha( 1 )
 				self.clipFinished( CodCasterSpectate, {} )
+
 				CodCasterButtonBar:completeAnimation()
 				self.CodCasterButtonBar:setAlpha( 1 )
 				self.clipFinished( CodCasterButtonBar, {} )
+
 				CodCasterHeaderWidget:completeAnimation()
 				self.CodCasterHeaderWidget:setAlpha( 1 )
 				self.clipFinished( CodCasterHeaderWidget, {} )
+
 				CodCasterPlayerList:completeAnimation()
 				self.CodCasterPlayerList:setAlpha( 1 )
 				self.clipFinished( CodCasterPlayerList, {} )
+
 				OverheadMap:completeAnimation()
 				self.OverheadMap:setLeftRight( false, false, -640, 640 )
 				self.OverheadMap:setTopBottom( false, false, -360, 360 )
 				self.OverheadMap:setAlpha( 1 )
 				self.clipFinished( OverheadMap, {} )
+
 				CodCasterMiniMap:completeAnimation()
 				self.CodCasterMiniMap:setAlpha( 1 )
 				self.clipFinished( CodCasterMiniMap, {} )
@@ -263,23 +271,29 @@ CoD.CodCaster.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				CodCasterSpectate:completeAnimation()
 				self.CodCasterSpectate:setAlpha( 0 )
 				self.clipFinished( CodCasterSpectate, {} )
+
 				CodCasterButtonBar:completeAnimation()
 				self.CodCasterButtonBar:setAlpha( 0 )
 				self.clipFinished( CodCasterButtonBar, {} )
+
 				CodCasterHeaderWidget:completeAnimation()
 				self.CodCasterHeaderWidget:setAlpha( 0 )
 				self.clipFinished( CodCasterHeaderWidget, {} )
+
 				CodCasterPlayerList:completeAnimation()
 				self.CodCasterPlayerList:setAlpha( 0 )
 				self.clipFinished( CodCasterPlayerList, {} )
+
 				OverheadMap:completeAnimation()
 				self.OverheadMap:setLeftRight( false, false, -640, 640 )
 				self.OverheadMap:setTopBottom( false, false, -360, 360 )
 				self.OverheadMap:setAlpha( 0 )
 				self.clipFinished( OverheadMap, {} )
+
 				CodCasterMiniMap:completeAnimation()
 				self.CodCasterMiniMap:setAlpha( 0 )
 				self.clipFinished( CodCasterMiniMap, {} )
@@ -288,29 +302,36 @@ CoD.CodCaster.new = function ( menu, controller )
 		HiddenCopy = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				CodCasterSpectate:completeAnimation()
 				self.CodCasterSpectate:setAlpha( 0 )
 				self.clipFinished( CodCasterSpectate, {} )
+
 				CodCasterButtonBar:completeAnimation()
 				self.CodCasterButtonBar:setAlpha( 0 )
 				self.clipFinished( CodCasterButtonBar, {} )
+
 				CodCasterHeaderWidget:completeAnimation()
 				self.CodCasterHeaderWidget:setAlpha( 0 )
 				self.clipFinished( CodCasterHeaderWidget, {} )
+
 				CodCasterPlayerList:completeAnimation()
 				self.CodCasterPlayerList:setAlpha( 0 )
 				self.clipFinished( CodCasterPlayerList, {} )
+
 				OverheadMap:completeAnimation()
 				self.OverheadMap:setLeftRight( false, false, -640, 640 )
 				self.OverheadMap:setTopBottom( false, false, -360, 360 )
 				self.OverheadMap:setAlpha( 0 )
 				self.clipFinished( OverheadMap, {} )
+
 				CodCasterMiniMap:completeAnimation()
 				self.CodCasterMiniMap:setAlpha( 0 )
 				self.clipFinished( CodCasterMiniMap, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -1066,6 +1087,7 @@ CoD.CodCaster.new = function ( menu, controller )
 	end, false, true )
 	CodCasterButtonBar:setModel( menu.buttonModel, controller )
 	CodCasterPlayerList.id = "CodCasterPlayerList"
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.CodCasterSpectate:close()
 		element.CodCasterButtonBar:close()

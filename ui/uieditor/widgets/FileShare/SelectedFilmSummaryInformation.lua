@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.FileShare.SelectedFilmSummaryScoreColumn" )
 CoD.SelectedFilmSummaryInformation = InheritFrom( LUI.UIElement )
 CoD.SelectedFilmSummaryInformation.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SelectedFilmSummaryInformation )
 	self.id = "SelectedFilmSummaryInformation"
@@ -125,21 +127,27 @@ CoD.SelectedFilmSummaryInformation.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				GameResultBackground:completeAnimation()
 				self.GameResultBackground:setAlpha( 1 )
 				self.clipFinished( GameResultBackground, {} )
+
 				SelectedFilmSummaryGameResult:completeAnimation()
 				self.SelectedFilmSummaryGameResult:setAlpha( 1 )
 				self.clipFinished( SelectedFilmSummaryGameResult, {} )
+
 				ScoreColumn1:completeAnimation()
 				self.ScoreColumn1:setAlpha( 1 )
 				self.clipFinished( ScoreColumn1, {} )
+
 				ScoreColumn2:completeAnimation()
 				self.ScoreColumn2:setAlpha( 1 )
 				self.clipFinished( ScoreColumn2, {} )
+
 				ScoreColumn3:completeAnimation()
 				self.ScoreColumn3:setAlpha( 1 )
 				self.clipFinished( ScoreColumn3, {} )
+
 				ScoreColumn4:completeAnimation()
 				self.ScoreColumn4:setAlpha( 1 )
 				self.clipFinished( ScoreColumn4, {} )
@@ -148,27 +156,34 @@ CoD.SelectedFilmSummaryInformation.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 6 )
+
 				GameResultBackground:completeAnimation()
 				self.GameResultBackground:setAlpha( 0 )
 				self.clipFinished( GameResultBackground, {} )
+
 				SelectedFilmSummaryGameResult:completeAnimation()
 				self.SelectedFilmSummaryGameResult:setAlpha( 0 )
 				self.clipFinished( SelectedFilmSummaryGameResult, {} )
+
 				ScoreColumn1:completeAnimation()
 				self.ScoreColumn1:setAlpha( 0 )
 				self.clipFinished( ScoreColumn1, {} )
+
 				ScoreColumn2:completeAnimation()
 				self.ScoreColumn2:setAlpha( 0 )
 				self.clipFinished( ScoreColumn2, {} )
+
 				ScoreColumn3:completeAnimation()
 				self.ScoreColumn3:setAlpha( 0 )
 				self.clipFinished( ScoreColumn3, {} )
+
 				ScoreColumn4:completeAnimation()
 				self.ScoreColumn4:setAlpha( 0 )
 				self.clipFinished( ScoreColumn4, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Hidden",
@@ -185,6 +200,7 @@ CoD.SelectedFilmSummaryInformation.new = function ( menu, controller )
 			modelName = "isValid"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.SelectedFilmSummaryGameResult:close()
 		element.ScoreColumn1:close()

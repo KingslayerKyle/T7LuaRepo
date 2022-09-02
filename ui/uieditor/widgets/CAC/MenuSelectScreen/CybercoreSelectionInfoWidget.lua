@@ -11,9 +11,11 @@ require( "ui.uieditor.widgets.Safehouse.LoadoutsAbilityWheel" )
 CoD.CybercoreSelectionInfoWidget = InheritFrom( LUI.UIElement )
 CoD.CybercoreSelectionInfoWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CybercoreSelectionInfoWidget )
 	self.id = "CybercoreSelectionInfoWidget"

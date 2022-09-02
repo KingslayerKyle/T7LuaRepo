@@ -135,6 +135,7 @@ local PostLoadFunc = function ( self, controller, menu )
 		end
 	end )
 	self:addElement( self.thermometerAnimTimer )
+
 	LUI.OverrideFunction_CallOriginalFirst( self, "close", function ( element )
 		if element.thermometerAnimTimer then
 			element.thermometerAnimTimer:close()
@@ -146,9 +147,11 @@ end
 CoD.Promo_ThermometerAndRewards = InheritFrom( LUI.UIElement )
 CoD.Promo_ThermometerAndRewards.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Promo_ThermometerAndRewards )
 	self.id = "Promo_ThermometerAndRewards"
@@ -336,12 +339,14 @@ CoD.Promo_ThermometerAndRewards.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				PromoThermometerAndRewardsIdol:completeAnimation()
 				self.PromoThermometerAndRewardsIdol:setAlpha( 1 )
 				self.clipFinished( PromoThermometerAndRewardsIdol, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PromoThermometerAndRewardsIdol:close()
 		element.RewardWidget0:close()

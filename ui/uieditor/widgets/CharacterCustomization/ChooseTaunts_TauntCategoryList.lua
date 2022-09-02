@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.CharacterCustomization.ChooseTaunts_CategoryListBu
 CoD.ChooseTaunts_TauntCategoryList = InheritFrom( LUI.UIElement )
 CoD.ChooseTaunts_TauntCategoryList.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChooseTaunts_TauntCategoryList )
 	self.id = "ChooseTaunts_TauntCategoryList"
@@ -216,6 +218,7 @@ CoD.ChooseTaunts_TauntCategoryList.new = function ( menu, controller )
 			return LUI.UIElement.gainFocus( element, event )
 		end
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.tauntList:close()
 		element.gestureList:close()

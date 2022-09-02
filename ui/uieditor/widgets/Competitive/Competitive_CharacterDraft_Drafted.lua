@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Pregame.Pregame_DraftedContainer" )
 CoD.Competitive_CharacterDraft_Drafted = InheritFrom( LUI.UIElement )
 CoD.Competitive_CharacterDraft_Drafted.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.Competitive_CharacterDraft_Drafted )
 	self.id = "Competitive_CharacterDraft_Drafted"
@@ -45,16 +47,19 @@ CoD.Competitive_CharacterDraft_Drafted.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Warning0:completeAnimation()
 				self.Warning0:setLeftRight( false, false, -20, 20 )
 				self.Warning0:setTopBottom( false, false, -33, 0 )
 				self.Warning0:setAlpha( 0 )
 				self.clipFinished( Warning0, {} )
+
 				Warning:completeAnimation()
 				self.Warning:setLeftRight( false, false, -20, 20 )
 				self.Warning:setTopBottom( false, false, -33, 0 )
 				self.Warning:setAlpha( 0 )
 				self.clipFinished( Warning, {} )
+
 				PregameDraftedContainer:completeAnimation()
 				self.PregameDraftedContainer:setLeftRight( false, false, -41.75, 41.75 )
 				self.PregameDraftedContainer:setTopBottom( false, false, 0, 26 )
@@ -65,16 +70,19 @@ CoD.Competitive_CharacterDraft_Drafted.new = function ( menu, controller )
 		Drafted = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Warning0:completeAnimation()
 				self.Warning0:setLeftRight( false, false, -20, 20 )
 				self.Warning0:setTopBottom( false, false, -41, -8 )
 				self.Warning0:setAlpha( 0 )
 				self.clipFinished( Warning0, {} )
+
 				Warning:completeAnimation()
 				self.Warning:setLeftRight( false, false, -20, 20 )
 				self.Warning:setTopBottom( false, false, -41, -8 )
 				self.Warning:setAlpha( 0 )
 				self.clipFinished( Warning, {} )
+
 				PregameDraftedContainer:completeAnimation()
 				self.PregameDraftedContainer:setLeftRight( false, false, -41.75, 41.75 )
 				self.PregameDraftedContainer:setTopBottom( false, false, -12, 12 )
@@ -85,17 +93,21 @@ CoD.Competitive_CharacterDraft_Drafted.new = function ( menu, controller )
 		Banned = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				Warning0:completeAnimation()
 				self.Warning0:setLeftRight( false, false, -20, 20 )
 				self.Warning0:setTopBottom( false, false, -35, -2 )
 				self.Warning0:setAlpha( 1 )
 				self.clipFinished( Warning0, {} )
+
 				Warning:completeAnimation()
 				self.Warning:setLeftRight( false, false, -20, 20 )
 				self.Warning:setTopBottom( false, false, -35, -2 )
 				self.Warning:setAlpha( 1 )
 				self.clipFinished( Warning, {} )
+
 				PregameDraftedContainer:completeAnimation()
+
 				PregameDraftedContainer.Text:completeAnimation()
 				self.PregameDraftedContainer:setLeftRight( false, false, -34.75, 34.75 )
 				self.PregameDraftedContainer:setTopBottom( false, false, -2, 22 )
@@ -105,6 +117,7 @@ CoD.Competitive_CharacterDraft_Drafted.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Drafted",
@@ -135,6 +148,7 @@ CoD.Competitive_CharacterDraft_Drafted.new = function ( menu, controller )
 			modelName = "lobbyRoot.Pregame.Update"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.PregameDraftedContainer:close()
 	end )

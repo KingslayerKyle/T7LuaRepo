@@ -4,9 +4,11 @@
 CoD.FE_TabIdle = InheritFrom( LUI.UIElement )
 CoD.FE_TabIdle.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.FE_TabIdle )
 	self.id = "FE_TabIdle"
@@ -28,15 +30,19 @@ CoD.FE_TabIdle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			GainActive = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			LoseActive = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}

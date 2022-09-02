@@ -35,9 +35,11 @@ end
 CoD.StartMenu_Options_Button = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_Button.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_Button )
 	self.id = "StartMenu_Options_Button"
@@ -105,39 +107,49 @@ CoD.StartMenu_Options_Button.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				fullBorder:completeAnimation()
 				self.fullBorder:setAlpha( 0 )
 				self.clipFinished( fullBorder, {} )
+
 				actionText:completeAnimation()
 				self.actionText:setAlpha( 1 )
 				self.clipFinished( actionText, {} )
+
 				StartMenuframenoBG00:completeAnimation()
 				self.StartMenuframenoBG00:setAlpha( 1 )
 				self.clipFinished( StartMenuframenoBG00, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 0 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 0 )
 				self.clipFinished( FocusBarB, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 4 )
+
 				fullBorder:completeAnimation()
 				self.fullBorder:setAlpha( 1 )
 				self.clipFinished( fullBorder, {} )
+
 				actionText:completeAnimation()
 				self.actionText:setAlpha( 1 )
 				self.clipFinished( actionText, {} )
+
 				FocusBarT:completeAnimation()
 				self.FocusBarT:setAlpha( 1 )
 				self.clipFinished( FocusBarT, {} )
+
 				FocusBarB:completeAnimation()
 				self.FocusBarB:setAlpha( 1 )
 				self.clipFinished( FocusBarB, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.fullBorder:close()
 		element.StartMenuframenoBG00:close()

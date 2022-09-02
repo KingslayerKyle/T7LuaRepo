@@ -4,9 +4,11 @@
 CoD.teleporter = InheritFrom( LUI.UIElement )
 CoD.teleporter.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.teleporter )
 	self.id = "teleporter"
@@ -48,6 +50,7 @@ CoD.teleporter.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local f2_local0 = function ( f3_arg0, f3_arg1 )
 					if not f3_arg1.interrupted then
 						f3_arg0:beginAnimation( "keyframe", 1000, false, false, CoD.TweenType.Linear )
@@ -83,9 +86,11 @@ CoD.teleporter.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				textshadow:completeAnimation()
 				self.textshadow:setAlpha( 0 )
 				self.clipFinished( textshadow, {} )
+
 				text:completeAnimation()
 				self.text:setAlpha( 0 )
 				self.clipFinished( text, {} )

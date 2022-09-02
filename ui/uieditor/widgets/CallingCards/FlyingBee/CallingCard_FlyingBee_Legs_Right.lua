@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.CallingCards.FlyingBee.CallingCard_FlyingBee_Leg_H
 CoD.CallingCard_FlyingBee_Legs_Right = InheritFrom( LUI.UIElement )
 CoD.CallingCard_FlyingBee_Legs_Right.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CallingCard_FlyingBee_Legs_Right )
 	self.id = "CallingCard_FlyingBee_Legs_Right"
@@ -35,6 +37,7 @@ CoD.CallingCard_FlyingBee_Legs_Right.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				local MidFrame2 = function ( Mid, event )
 					local MidFrame3 = function ( Mid, event )
 						if not event.interrupted then
@@ -87,10 +90,12 @@ CoD.CallingCard_FlyingBee_Legs_Right.new = function ( menu, controller )
 				Hind:completeAnimation()
 				self.Hind:setZRot( 0 )
 				HindFrame2( Hind, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Mid:close()
 		element.Hind:close()

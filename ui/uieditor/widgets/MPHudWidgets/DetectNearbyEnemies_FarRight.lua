@@ -4,9 +4,11 @@
 CoD.DetectNearbyEnemies_FarRight = InheritFrom( LUI.UIElement )
 CoD.DetectNearbyEnemies_FarRight.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.DetectNearbyEnemies_FarRight )
 	self.id = "DetectNearbyEnemies_FarRight"
@@ -28,12 +30,14 @@ CoD.DetectNearbyEnemies_FarRight.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DetectNearbyEnemiesFarRight:completeAnimation()
 				self.DetectNearbyEnemiesFarRight:setAlpha( 0 )
 				self.clipFinished( DetectNearbyEnemiesFarRight, {} )
 			end,
 			EnemyDetected = function ()
 				self:setupElementClipCounter( 1 )
+
 				local DetectNearbyEnemiesFarRightFrame2 = function ( DetectNearbyEnemiesFarRight, event )
 					local DetectNearbyEnemiesFarRightFrame3 = function ( DetectNearbyEnemiesFarRight, event )
 						if not event.interrupted then
@@ -65,12 +69,14 @@ CoD.DetectNearbyEnemies_FarRight.new = function ( menu, controller )
 		EnemyDetected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				DetectNearbyEnemiesFarRight:completeAnimation()
 				self.DetectNearbyEnemiesFarRight:setAlpha( 1 )
 				self.clipFinished( DetectNearbyEnemiesFarRight, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 1 )
+
 				local DetectNearbyEnemiesFarRightFrame2 = function ( DetectNearbyEnemiesFarRight, event )
 					if not event.interrupted then
 						DetectNearbyEnemiesFarRight:beginAnimation( "keyframe", 500, false, false, CoD.TweenType.Bounce )
@@ -89,6 +95,7 @@ CoD.DetectNearbyEnemies_FarRight.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "EnemyDetected",

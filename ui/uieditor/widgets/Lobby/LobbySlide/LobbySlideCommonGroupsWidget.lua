@@ -45,9 +45,11 @@ end
 CoD.LobbySlideCommonGroupsWidget = InheritFrom( LUI.UIElement )
 CoD.LobbySlideCommonGroupsWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LobbySlideCommonGroupsWidget )
 	self.id = "LobbySlideCommonGroupsWidget"
@@ -118,24 +120,31 @@ CoD.LobbySlideCommonGroupsWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				FEListHeaderGlow0:completeAnimation()
 				self.FEListHeaderGlow0:setAlpha( 0 )
 				self.clipFinished( FEListHeaderGlow0, {} )
+
 				pixelU:completeAnimation()
 				self.pixelU:setAlpha( 0 )
 				self.clipFinished( pixelU, {} )
+
 				pixelU0:completeAnimation()
 				self.pixelU0:setAlpha( 0 )
 				self.clipFinished( pixelU0, {} )
+
 				FETitleLineSingle0:completeAnimation()
 				self.FETitleLineSingle0:setAlpha( 0 )
 				self.clipFinished( FETitleLineSingle0, {} )
+
 				CommonGroupsText:completeAnimation()
 				self.CommonGroupsText:setAlpha( 0 )
 				self.clipFinished( CommonGroupsText, {} )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 0 )
 				self.clipFinished( Spinner, {} )
+
 				CommonGroupsList:completeAnimation()
 				self.CommonGroupsList:setAlpha( 0 )
 				self.clipFinished( CommonGroupsList, {} )
@@ -144,24 +153,31 @@ CoD.LobbySlideCommonGroupsWidget.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				FEListHeaderGlow0:completeAnimation()
 				self.FEListHeaderGlow0:setAlpha( 0.14 )
 				self.clipFinished( FEListHeaderGlow0, {} )
+
 				pixelU:completeAnimation()
 				self.pixelU:setAlpha( 1 )
 				self.clipFinished( pixelU, {} )
+
 				pixelU0:completeAnimation()
 				self.pixelU0:setAlpha( 1 )
 				self.clipFinished( pixelU0, {} )
+
 				FETitleLineSingle0:completeAnimation()
 				self.FETitleLineSingle0:setAlpha( 1 )
 				self.clipFinished( FETitleLineSingle0, {} )
+
 				CommonGroupsText:completeAnimation()
 				self.CommonGroupsText:setAlpha( 1 )
 				self.clipFinished( CommonGroupsText, {} )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 0 )
 				self.clipFinished( Spinner, {} )
+
 				CommonGroupsList:completeAnimation()
 				self.CommonGroupsList:setAlpha( 1 )
 				self.clipFinished( CommonGroupsList, {} )
@@ -170,30 +186,38 @@ CoD.LobbySlideCommonGroupsWidget.new = function ( menu, controller )
 		Loading = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 7 )
+
 				FEListHeaderGlow0:completeAnimation()
 				self.FEListHeaderGlow0:setAlpha( 0 )
 				self.clipFinished( FEListHeaderGlow0, {} )
+
 				pixelU:completeAnimation()
 				self.pixelU:setAlpha( 0 )
 				self.clipFinished( pixelU, {} )
+
 				pixelU0:completeAnimation()
 				self.pixelU0:setAlpha( 0 )
 				self.clipFinished( pixelU0, {} )
+
 				FETitleLineSingle0:completeAnimation()
 				self.FETitleLineSingle0:setAlpha( 0 )
 				self.clipFinished( FETitleLineSingle0, {} )
+
 				CommonGroupsText:completeAnimation()
 				self.CommonGroupsText:setAlpha( 0 )
 				self.clipFinished( CommonGroupsText, {} )
+
 				Spinner:completeAnimation()
 				self.Spinner:setAlpha( 1 )
 				self.clipFinished( Spinner, {} )
+
 				CommonGroupsList:completeAnimation()
 				self.CommonGroupsList:setAlpha( 0 )
 				self.clipFinished( CommonGroupsList, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -253,6 +277,7 @@ CoD.LobbySlideCommonGroupsWidget.new = function ( menu, controller )
 			modelName = "quickJoinListMember"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FEListHeaderGlow0:close()
 		element.FETitleLineSingle0:close()

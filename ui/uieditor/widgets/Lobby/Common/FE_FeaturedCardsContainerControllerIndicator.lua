@@ -4,9 +4,11 @@
 CoD.FE_FeaturedCardsContainerControllerIndicator = InheritFrom( LUI.UIElement )
 CoD.FE_FeaturedCardsContainerControllerIndicator.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.FE_FeaturedCardsContainerControllerIndicator )
 	self.id = "FE_FeaturedCardsContainerControllerIndicator"
@@ -37,10 +39,12 @@ CoD.FE_FeaturedCardsContainerControllerIndicator.new = function ( menu, controll
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				dot:completeAnimation()
 				self.dot:setRGB( 0.53, 0.53, 0.53 )
 				self.dot:setAlpha( 0.5 )
 				self.clipFinished( dot, {} )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setLeftRight( true, false, 2, 6 )
 				self.GlowOrangeOver:setTopBottom( true, false, -0.98, 8.98 )
@@ -52,6 +56,7 @@ CoD.FE_FeaturedCardsContainerControllerIndicator.new = function ( menu, controll
 		Selected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				dot:completeAnimation()
 				self.dot:setLeftRight( true, false, 1, 7 )
 				self.dot:setTopBottom( true, false, 3, 5 )
@@ -59,6 +64,7 @@ CoD.FE_FeaturedCardsContainerControllerIndicator.new = function ( menu, controll
 				self.dot:setAlpha( 0.7 )
 				self.dot:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_feather_blend" ) )
 				self.clipFinished( dot, {} )
+
 				GlowOrangeOver:completeAnimation()
 				self.GlowOrangeOver:setLeftRight( true, false, 2, 6 )
 				self.GlowOrangeOver:setTopBottom( true, false, -0.98, 8.98 )
@@ -70,6 +76,7 @@ CoD.FE_FeaturedCardsContainerControllerIndicator.new = function ( menu, controll
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Selected",

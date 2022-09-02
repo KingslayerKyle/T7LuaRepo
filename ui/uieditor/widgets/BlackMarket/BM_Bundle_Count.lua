@@ -4,9 +4,11 @@
 CoD.BM_Bundle_Count = InheritFrom( LUI.UIElement )
 CoD.BM_Bundle_Count.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_Bundle_Count )
 	self.id = "BM_Bundle_Count"
@@ -36,6 +38,7 @@ CoD.BM_Bundle_Count.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
@@ -44,6 +47,7 @@ CoD.BM_Bundle_Count.new = function ( menu, controller )
 		VisibleNotActive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setAlpha( 0.8 )
 				self.clipFinished( BundleCount, {} )
@@ -52,6 +56,7 @@ CoD.BM_Bundle_Count.new = function ( menu, controller )
 		VisibleActive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setAlpha( 0.8 )
 				self.clipFinished( BundleCount, {} )
@@ -60,12 +65,14 @@ CoD.BM_Bundle_Count.new = function ( menu, controller )
 		Off = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				BundleCount:completeAnimation()
 				self.BundleCount:setAlpha( 0 )
 				self.clipFinished( BundleCount, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BundleCount:close()
 	end )

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.PrematchCountdown.PrematchCountdown_IconGlowPa
 CoD.LoadingScreenFactionIcon = InheritFrom( LUI.UIElement )
 CoD.LoadingScreenFactionIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LoadingScreenFactionIcon )
 	self.id = "LoadingScreenFactionIcon"

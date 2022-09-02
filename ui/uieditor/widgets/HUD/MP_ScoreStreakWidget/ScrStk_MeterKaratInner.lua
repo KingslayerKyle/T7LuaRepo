@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.MP_ScoreStreakWidget.ScrStk_CombatEfficiencySc
 CoD.ScrStk_MeterKaratInner = InheritFrom( LUI.UIElement )
 CoD.ScrStk_MeterKaratInner.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScrStk_MeterKaratInner )
 	self.id = "ScrStk_MeterKaratInner"
@@ -36,20 +38,25 @@ CoD.ScrStk_MeterKaratInner.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			CombatEfficiency = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		CombatEfficiency = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "CombatEfficiency",
@@ -66,6 +73,7 @@ CoD.ScrStk_MeterKaratInner.new = function ( menu, controller )
 			modelName = "playerAbilities.playerGadget3.isInUse"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ScrStkCombatEfficiencyScrollFX000:close()
 		element.ScrStkCombatEfficiencyScrollFX0000:close()

@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.ZMInventoryIsland.SeedPieceWidget" )
 CoD.SeedWidget = InheritFrom( LUI.UIElement )
 CoD.SeedWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SeedWidget )
 	self.id = "SeedWidget"
@@ -295,12 +297,15 @@ CoD.SeedWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				TopSeed:completeAnimation()
 				self.TopSeed:setAlpha( 0 )
 				self.clipFinished( TopSeed, {} )
+
 				MiddleSeed:completeAnimation()
 				self.MiddleSeed:setAlpha( 0 )
 				self.clipFinished( MiddleSeed, {} )
+
 				BottomSeed:completeAnimation()
 				self.BottomSeed:setAlpha( 0 )
 				self.clipFinished( BottomSeed, {} )
@@ -309,12 +314,15 @@ CoD.SeedWidget.new = function ( menu, controller )
 		Seed3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				TopSeed:completeAnimation()
 				self.TopSeed:setAlpha( 1 )
 				self.clipFinished( TopSeed, {} )
+
 				MiddleSeed:completeAnimation()
 				self.MiddleSeed:setAlpha( 1 )
 				self.clipFinished( MiddleSeed, {} )
+
 				BottomSeed:completeAnimation()
 				self.BottomSeed:setAlpha( 1 )
 				self.clipFinished( BottomSeed, {} )
@@ -323,12 +331,15 @@ CoD.SeedWidget.new = function ( menu, controller )
 		Seed2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				TopSeed:completeAnimation()
 				self.TopSeed:setAlpha( 0 )
 				self.clipFinished( TopSeed, {} )
+
 				MiddleSeed:completeAnimation()
 				self.MiddleSeed:setAlpha( 1 )
 				self.clipFinished( MiddleSeed, {} )
+
 				BottomSeed:completeAnimation()
 				self.BottomSeed:setAlpha( 1 )
 				self.clipFinished( BottomSeed, {} )
@@ -337,18 +348,22 @@ CoD.SeedWidget.new = function ( menu, controller )
 		Seed1 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				TopSeed:completeAnimation()
 				self.TopSeed:setAlpha( 0 )
 				self.clipFinished( TopSeed, {} )
+
 				MiddleSeed:completeAnimation()
 				self.MiddleSeed:setAlpha( 0 )
 				self.clipFinished( MiddleSeed, {} )
+
 				BottomSeed:completeAnimation()
 				self.BottomSeed:setAlpha( 1 )
 				self.clipFinished( BottomSeed, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Seed3",
@@ -393,6 +408,7 @@ CoD.SeedWidget.new = function ( menu, controller )
 			modelName = "zmInventory.bucket_seed_03"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TopSeed:close()
 		element.MiddleSeed:close()

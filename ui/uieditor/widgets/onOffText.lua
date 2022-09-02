@@ -4,9 +4,11 @@
 CoD.onOffText = InheritFrom( LUI.UIElement )
 CoD.onOffText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.onOffText )
 	self.id = "onOffText"
@@ -28,34 +30,40 @@ CoD.onOffText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				lbText:completeAnimation()
 				self.lbText:setAlpha( 1 )
 				self.clipFinished( lbText, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				lbText:completeAnimation()
 				self.lbText:setAlpha( 0 )
 				self.clipFinished( lbText, {} )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		HiddenPC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				lbText:completeAnimation()
 				self.lbText:setAlpha( 0 )
 				self.clipFinished( lbText, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Invisible",

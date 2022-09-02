@@ -4,9 +4,11 @@
 CoD.StartMenu_Background = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Background.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Background )
 	self.id = "StartMenu_Background"
@@ -27,6 +29,7 @@ CoD.StartMenu_Background.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 1 )
 				self.clipFinished( Background, {} )
@@ -35,6 +38,7 @@ CoD.StartMenu_Background.new = function ( menu, controller )
 		InGame = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Background:completeAnimation()
 				self.Background:setAlpha( 0.2 )
 				self.clipFinished( Background, {} )

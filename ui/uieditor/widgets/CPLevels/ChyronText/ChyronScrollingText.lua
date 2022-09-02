@@ -15,6 +15,7 @@ local PostLoadFunc = function ( f1_arg0, f1_arg1 )
 		DefaultState = {
 			DefaultClip = function ()
 				f1_arg0:setupElementClipCounter( 1 )
+
 				local f2_local0 = function ( f3_arg0, f3_arg1 )
 					if not f3_arg1.interrupted then
 						f3_arg0:beginAnimation( "keyframe", f1_local4, false, false, CoD.TweenType.Linear )
@@ -41,9 +42,11 @@ end
 CoD.ChyronScrollingText = InheritFrom( LUI.UIElement )
 CoD.ChyronScrollingText.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ChyronScrollingText )
 	self.id = "ChyronScrollingText"
@@ -70,6 +73,7 @@ CoD.ChyronScrollingText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ChyronFrame2 = function ( Chyron, event )
 					if not event.interrupted then
 						Chyron:beginAnimation( "keyframe", 3000, false, false, CoD.TweenType.Linear )
@@ -95,6 +99,7 @@ CoD.ChyronScrollingText.new = function ( menu, controller )
 				self.Chyron:setShaderVector( 3, 1, 1, 0, 0 )
 				self.Chyron:setShaderVector( 4, 1, 1, 0, 0 )
 				ChyronFrame2( Chyron, {} )
+
 				self.nextClip = "DefaultClip"
 			end
 		}

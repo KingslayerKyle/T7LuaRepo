@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.PC.Utility.XCamMouseControl" )
 CoD.WeaponPreviewPane = InheritFrom( LUI.UIElement )
 CoD.WeaponPreviewPane.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.WeaponPreviewPane )
 	self.id = "WeaponPreviewPane"
@@ -71,6 +73,7 @@ CoD.WeaponPreviewPane.new = function ( menu, controller )
 		self:addElement( f1_local5 )
 	end
 	self.XCamMouseControl = f1_local5
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.currentlyEquippedText:close()
 		element.categoryName:close()

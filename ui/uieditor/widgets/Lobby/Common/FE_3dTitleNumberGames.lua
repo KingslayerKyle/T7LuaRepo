@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_TitleNumBrdr" )
 CoD.FE_3dTitleNumberGames = InheritFrom( LUI.UIElement )
 CoD.FE_3dTitleNumberGames.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.FE_3dTitleNumberGames )
 	self.id = "FE_3dTitleNumberGames"
@@ -35,6 +37,7 @@ CoD.FE_3dTitleNumberGames.new = function ( menu, controller )
 	Label1:setShaderVector( 3, 0, 0, 0, 0 )
 	Label1:setShaderVector( 4, 0, 0, 0, 0 )
 	Label1:setLetterSpacing( 1 )
+
 	LUI.OverrideFunction_CallOriginalFirst( Label1, "setText", function ( element, controller )
 		ScaleWidgetToLabel( self, element, 2 )
 	end )

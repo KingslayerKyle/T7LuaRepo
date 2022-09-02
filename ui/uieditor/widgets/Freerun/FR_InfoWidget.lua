@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.Freerun.FR_RetriesNumbersBox" )
 CoD.FR_InfoWidget = InheritFrom( LUI.UIElement )
 CoD.FR_InfoWidget.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.FR_InfoWidget )
 	self.id = "FR_InfoWidget"
@@ -182,9 +184,11 @@ CoD.FR_InfoWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			FaultAnim = function ()
 				self:setupElementClipCounter( 1 )
+
 				local FaultsTextBoxFrame2 = function ( FaultsTextBox, event )
 					local FaultsTextBoxFrame3 = function ( FaultsTextBox, event )
 						if not event.interrupted then
@@ -214,6 +218,7 @@ CoD.FR_InfoWidget.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.freerunInfoBoxBlur:close()
 		element.FRBestTimeHud:close()

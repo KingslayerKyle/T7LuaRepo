@@ -4,9 +4,11 @@
 CoD.CryptokeyItemHintTextInternal_Left = InheritFrom( LUI.UIElement )
 CoD.CryptokeyItemHintTextInternal_Left.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.CryptokeyItemHintTextInternal_Left )
 	self.id = "CryptokeyItemHintTextInternal_Left"
@@ -31,6 +33,7 @@ CoD.CryptokeyItemHintTextInternal_Left.new = function ( menu, controller )
 	textCenterAlign:setTTF( "fonts/RefrigeratorDeluxe-Regular.ttf" )
 	textCenterAlign:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 	textCenterAlign:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+
 	LUI.OverrideFunction_CallOriginalFirst( textCenterAlign, "setText", function ( element, controller )
 		ScaleWidgetToLabelWrappedWithMinimum( self, element, 5, 5, 423 )
 	end )
@@ -41,9 +44,11 @@ CoD.CryptokeyItemHintTextInternal_Left.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				cachitBG0:completeAnimation()
 				self.cachitBG0:setAlpha( 1 )
 				self.clipFinished( cachitBG0, {} )
+
 				textCenterAlign:completeAnimation()
 				self.textCenterAlign:setAlpha( 1 )
 				self.clipFinished( textCenterAlign, {} )
@@ -52,15 +57,18 @@ CoD.CryptokeyItemHintTextInternal_Left.new = function ( menu, controller )
 		NoHintText = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				cachitBG0:completeAnimation()
 				self.cachitBG0:setAlpha( 0 )
 				self.clipFinished( cachitBG0, {} )
+
 				textCenterAlign:completeAnimation()
 				self.textCenterAlign:setAlpha( 0 )
 				self.clipFinished( textCenterAlign, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NoHintText",

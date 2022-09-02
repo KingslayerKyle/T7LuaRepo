@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Border" )
 CoD.RaidsPurchaseItemInternal = InheritFrom( LUI.UIElement )
 CoD.RaidsPurchaseItemInternal.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.RaidsPurchaseItemInternal )
 	self.id = "RaidsPurchaseItemInternal"
@@ -55,9 +57,11 @@ CoD.RaidsPurchaseItemInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 1 )
 				self.clipFinished( Image, {} )
+
 				Cost:completeAnimation()
 				self.Cost:setRGB( 1, 1, 1 )
 				self.clipFinished( Cost, {} )
@@ -66,15 +70,18 @@ CoD.RaidsPurchaseItemInternal.new = function ( menu, controller )
 		Unavailable = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 0.5 )
 				self.clipFinished( Image, {} )
+
 				Cost:completeAnimation()
 				self.Cost:setRGB( 0.4, 0.4, 0.4 )
 				self.clipFinished( Cost, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Highlight:close()
 	end )

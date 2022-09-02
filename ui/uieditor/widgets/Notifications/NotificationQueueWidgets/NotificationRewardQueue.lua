@@ -99,6 +99,7 @@ f0_local8 = function ( f10_arg0 )
 	f10_local2:setModel( f10_local1 )
 	f10_local2:setState( "DefaultState" )
 	local self = LUI.UIElement.new()
+
 	self:setLeftRight( false, true, -f10_local3 / 2, -f10_local3 / 2 )
 	self:setTopBottom( true, false, 0, 0 )
 	self:setAlpha( 0 )
@@ -143,9 +144,11 @@ end
 CoD.NotificationRewardQueue = InheritFrom( LUI.UIElement )
 CoD.NotificationRewardQueue.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.NotificationRewardQueue )
 	self.id = "NotificationRewardQueue"

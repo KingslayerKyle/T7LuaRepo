@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.GameSettings.GameSettings_Optionstextbox" )
 CoD.GameSettings_Description = InheritFrom( LUI.UIElement )
 CoD.GameSettings_Description.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GameSettings_Description )
 	self.id = "GameSettings_Description"
@@ -55,6 +57,7 @@ CoD.GameSettings_Description.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Background:completeAnimation()
 				self.Background:setLeftRight( true, false, 0, 489 )
 				self.Background:setTopBottom( true, false, 0, 135 )
@@ -64,6 +67,7 @@ CoD.GameSettings_Description.new = function ( menu, controller )
 		ExtraVeryLongText = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Background:completeAnimation()
 				self.Background:setLeftRight( true, false, 0, 489 )
 				self.Background:setTopBottom( true, false, 0, 400 )
@@ -73,6 +77,7 @@ CoD.GameSettings_Description.new = function ( menu, controller )
 		VeryLongText = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Background:completeAnimation()
 				self.Background:setLeftRight( true, false, 0, 489 )
 				self.Background:setTopBottom( true, false, 0, 300 )
@@ -82,6 +87,7 @@ CoD.GameSettings_Description.new = function ( menu, controller )
 		LongText = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Background:completeAnimation()
 				self.Background:setLeftRight( true, false, 0, 489 )
 				self.Background:setTopBottom( true, false, 0, 215 )
@@ -89,6 +95,7 @@ CoD.GameSettings_Description.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "ExtraVeryLongText",
@@ -109,6 +116,7 @@ CoD.GameSettings_Description.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.TitleBox:close()
 		element.GameSettingsOptionstextbox:close()

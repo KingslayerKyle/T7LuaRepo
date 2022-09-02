@@ -4,9 +4,11 @@
 CoD.FileshareSpinner = InheritFrom( LUI.UIElement )
 CoD.FileshareSpinner.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.FileshareSpinner )
 	self.id = "FileshareSpinner"
@@ -29,6 +31,7 @@ CoD.FileshareSpinner.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				SpinnerFlipbook:completeAnimation()
 				self.SpinnerFlipbook:setAlpha( 0 )
 				self.clipFinished( SpinnerFlipbook, {} )
@@ -37,12 +40,14 @@ CoD.FileshareSpinner.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				SpinnerFlipbook:completeAnimation()
 				self.SpinnerFlipbook:setAlpha( 1 )
 				self.clipFinished( SpinnerFlipbook, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",

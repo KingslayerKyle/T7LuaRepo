@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Craft.Gunsmith.GunsmithStatsBranding" )
 CoD.GunsmithStatsVariantName = InheritFrom( LUI.UIElement )
 CoD.GunsmithStatsVariantName.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunsmithStatsVariantName )
 	self.id = "GunsmithStatsVariantName"

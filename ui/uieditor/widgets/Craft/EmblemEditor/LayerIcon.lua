@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.Craft.EmblemEditor.EmblemLayerNumber" )
 CoD.LayerIcon = InheritFrom( LUI.UIElement )
 CoD.LayerIcon.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.LayerIcon )
 	self.id = "LayerIcon"
@@ -109,20 +111,24 @@ CoD.LayerIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				layerIcon:completeAnimation()
 				self.layerIcon:setLeftRight( true, true, 0, 0 )
 				self.layerIcon:setTopBottom( true, true, 0, 0 )
 				self.layerIcon:setAlpha( 1 )
 				self.layerIcon:setScale( 0.8 )
 				self.clipFinished( layerIcon, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setAlpha( 0 )
 				self.clipFinished( emptyLayerIcon, {} )
+
 				linkIcon:completeAnimation()
 				self.linkIcon:setLeftRight( false, true, -16, 4 )
 				self.linkIcon:setTopBottom( true, false, -2, 18 )
 				self.linkIcon:setAlpha( 1 )
 				self.clipFinished( linkIcon, {} )
+
 				emblemLayerNumber:completeAnimation()
 				self.emblemLayerNumber:setLeftRight( true, false, 0, 50 )
 				self.emblemLayerNumber:setTopBottom( true, false, -2, 18 )
@@ -133,24 +139,29 @@ CoD.LayerIcon.new = function ( menu, controller )
 		EmptyLayer = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				layerIcon:completeAnimation()
 				self.layerIcon:setAlpha( 0 )
 				self.clipFinished( layerIcon, {} )
+
 				emptyLayerIcon:completeAnimation()
 				self.emptyLayerIcon:setLeftRight( false, false, -12, 12 )
 				self.emptyLayerIcon:setTopBottom( false, false, -12, 12 )
 				self.emptyLayerIcon:setRGB( 1, 1, 1 )
 				self.emptyLayerIcon:setAlpha( 1 )
 				self.clipFinished( emptyLayerIcon, {} )
+
 				linkIcon:completeAnimation()
 				self.linkIcon:setAlpha( 0 )
 				self.clipFinished( linkIcon, {} )
+
 				emblemLayerNumber:completeAnimation()
 				self.emblemLayerNumber:setAlpha( 0 )
 				self.clipFinished( emblemLayerNumber, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.linkIcon:close()
 		element.emblemLayerNumber:close()

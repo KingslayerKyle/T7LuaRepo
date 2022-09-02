@@ -9,9 +9,11 @@ require( "ui.uieditor.widgets.BlackMarket.BM_WiresGlow" )
 CoD.BM_DecryptionBonusKeys = InheritFrom( LUI.UIElement )
 CoD.BM_DecryptionBonusKeys.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BM_DecryptionBonusKeys )
 	self.id = "BM_DecryptionBonusKeys"
@@ -143,9 +145,11 @@ CoD.BM_DecryptionBonusKeys.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Bonus = function ()
 				self:setupElementClipCounter( 9 )
+
 				local SupportFrame2 = function ( Support, event )
 					local SupportFrame3 = function ( Support, event )
 						local SupportFrame4 = function ( Support, event )
@@ -601,6 +605,7 @@ CoD.BM_DecryptionBonusKeys.new = function ( menu, controller )
 			end,
 			backup = function ()
 				self:setupElementClipCounter( 6 )
+
 				local slowFrame2 = function ( slow, event )
 					local slowFrame3 = function ( slow, event )
 						local slowFrame4 = function ( slow, event )
@@ -830,6 +835,7 @@ CoD.BM_DecryptionBonusKeys.new = function ( menu, controller )
 			end,
 			backup = function ()
 				self:setupElementClipCounter( 4 )
+
 				local cryptokeyFrontFrame2 = function ( cryptokeyFront, event )
 					local cryptokeyFrontFrame3 = function ( cryptokeyFront, event )
 						local cryptokeyFrontFrame4 = function ( cryptokeyFront, event )
@@ -1172,12 +1178,14 @@ CoD.BM_DecryptionBonusKeys.new = function ( menu, controller )
 				CoinFlip:setPlaySoundDirect( true )
 				CoinFlip:playSound( "0", controller )
 				CoinFlip:registerEventHandler( "transition_complete_keyframe", f59_local3 )
+
 				self.nextClip = "backup"
 			end
 		},
 		Bonus = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 5 )
+
 				local SupportFrame2 = function ( Support, event )
 					if not event.interrupted then
 						Support:beginAnimation( "keyframe", 150, true, true, CoD.TweenType.Bounce )
@@ -1193,14 +1201,17 @@ CoD.BM_DecryptionBonusKeys.new = function ( menu, controller )
 				Support:completeAnimation()
 				self.Support:setAlpha( 0.95 )
 				SupportFrame2( Support, {} )
+
 				cryptokeyFront:completeAnimation()
 				self.cryptokeyFront:setAlpha( 0 )
 				self.cryptokeyFront:setYRot( 0 )
 				self.clipFinished( cryptokeyFront, {} )
+
 				cryptokeyBack:completeAnimation()
 				self.cryptokeyBack:setAlpha( 1 )
 				self.cryptokeyBack:setYRot( 0 )
 				self.clipFinished( cryptokeyBack, {} )
+
 				cryptokeyCount:completeAnimation()
 				self.cryptokeyCount:setAlpha( 1 )
 				self.clipFinished( cryptokeyCount, {} )
@@ -1219,10 +1230,12 @@ CoD.BM_DecryptionBonusKeys.new = function ( menu, controller )
 				Bonus:completeAnimation()
 				self.Bonus:setAlpha( 0.95 )
 				BonusFrame2( Bonus, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			backup = function ()
 				self:setupElementClipCounter( 4 )
+
 				local cryptokeyFrontFrame2 = function ( cryptokeyFront, event )
 					local cryptokeyFrontFrame3 = function ( cryptokeyFront, event )
 						local cryptokeyFrontFrame4 = function ( cryptokeyFront, event )
@@ -1568,6 +1581,7 @@ CoD.BM_DecryptionBonusKeys.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.BMWiresAllStatic:close()
 		element.BMWires1:close()

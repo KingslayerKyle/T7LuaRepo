@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.verticalScrollingTextBox" )
 CoD.StartMenu_Options_Network_DescriptionPanels = InheritFrom( LUI.UIElement )
 CoD.StartMenu_Options_Network_DescriptionPanels.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.StartMenu_Options_Network_DescriptionPanels )
 	self.id = "StartMenu_Options_Network_DescriptionPanels"
@@ -64,9 +66,11 @@ CoD.StartMenu_Options_Network_DescriptionPanels.new = function ( menu, controlle
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.NetworkBox4:close()
 		element.NetworkPanel:close()

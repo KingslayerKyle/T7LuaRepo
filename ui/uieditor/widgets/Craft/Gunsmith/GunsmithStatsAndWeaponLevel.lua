@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.Craft.Gunsmith.GunsmithWarningWidget" )
 CoD.GunsmithStatsAndWeaponLevel = InheritFrom( LUI.UIElement )
 CoD.GunsmithStatsAndWeaponLevel.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.GunsmithStatsAndWeaponLevel )
 	self.id = "GunsmithStatsAndWeaponLevel"
@@ -83,14 +85,17 @@ CoD.GunsmithStatsAndWeaponLevel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				stats:completeAnimation()
 				self.stats:setAlpha( 1 )
 				self.clipFinished( stats, {} )
+
 				weaponProgression:completeAnimation()
 				self.weaponProgression:setLeftRight( true, false, 153, 566 )
 				self.weaponProgression:setTopBottom( true, false, 76, 116 )
 				self.weaponProgression:setAlpha( 1 )
 				self.clipFinished( weaponProgression, {} )
+
 				warningMsg:completeAnimation()
 				self.warningMsg:setAlpha( 1 )
 				self.clipFinished( warningMsg, {} )
@@ -99,12 +104,15 @@ CoD.GunsmithStatsAndWeaponLevel.new = function ( menu, controller )
 		StatsAndWeaponLevelHide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				stats:completeAnimation()
 				self.stats:setAlpha( 0 )
 				self.clipFinished( stats, {} )
+
 				weaponProgression:completeAnimation()
 				self.weaponProgression:setAlpha( 0 )
 				self.clipFinished( weaponProgression, {} )
+
 				warningMsg:completeAnimation()
 				self.warningMsg:setLeftRight( true, false, 190, 566 )
 				self.warningMsg:setTopBottom( true, false, 116, 140 )
@@ -115,9 +123,11 @@ CoD.GunsmithStatsAndWeaponLevel.new = function ( menu, controller )
 		StatsHide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				stats:completeAnimation()
 				self.stats:setAlpha( 0 )
 				self.clipFinished( stats, {} )
+
 				weaponProgression:completeAnimation()
 				self.weaponProgression:setLeftRight( true, false, 151, 566 )
 				self.weaponProgression:setTopBottom( true, false, 0, 40 )
@@ -125,6 +135,7 @@ CoD.GunsmithStatsAndWeaponLevel.new = function ( menu, controller )
 				self.weaponProgression:setXRot( 0 )
 				self.weaponProgression:setYRot( 0 )
 				self.clipFinished( weaponProgression, {} )
+
 				warningMsg:completeAnimation()
 				self.warningMsg:setLeftRight( true, false, 190, 566 )
 				self.warningMsg:setTopBottom( true, false, 119, 143 )
@@ -135,12 +146,15 @@ CoD.GunsmithStatsAndWeaponLevel.new = function ( menu, controller )
 		WeaponLevelHide = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				stats:completeAnimation()
 				self.stats:setAlpha( 1 )
 				self.clipFinished( stats, {} )
+
 				weaponProgression:completeAnimation()
 				self.weaponProgression:setAlpha( 0 )
 				self.clipFinished( weaponProgression, {} )
+
 				warningMsg:completeAnimation()
 				self.warningMsg:setLeftRight( true, false, 226, 562 )
 				self.warningMsg:setTopBottom( true, false, 80, 104 )
@@ -153,6 +167,7 @@ CoD.GunsmithStatsAndWeaponLevel.new = function ( menu, controller )
 		local f13_local0 = self
 		UpdateElementState( self, "weaponProgression", controller )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.stats:close()
 		element.weaponProgression:close()

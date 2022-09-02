@@ -8,9 +8,11 @@ require( "ui.uieditor.widgets.HUD.ScoreInfo.ScoreInfo_TimerNumber" )
 CoD.ScoreInfo_Timer = InheritFrom( LUI.UIElement )
 CoD.ScoreInfo_Timer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ScoreInfo_Timer )
 	self.id = "ScoreInfo_Timer"
@@ -64,20 +66,25 @@ CoD.ScoreInfo_Timer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Semi:completeAnimation()
 				self.Semi:setLeftRight( false, false, -10.5, 10.5 )
 				self.Semi:setTopBottom( false, false, -55.84, 17.67 )
 				self.Semi:setAlpha( 0.6 )
 				self.clipFinished( Semi, {} )
+
 				Line1:completeAnimation()
 				self.Line1:setLeftRight( false, false, -66.5, 2.5 )
 				self.Line1:setTopBottom( false, false, 17.67, 20.34 )
 				self.clipFinished( Line1, {} )
+
 				Line2:completeAnimation()
 				self.Line2:setLeftRight( false, false, -2.5, 66.5 )
 				self.Line2:setTopBottom( false, false, 17.67, 20.34 )
 				self.clipFinished( Line2, {} )
+
 				GameTimer:completeAnimation()
+
 				GameTimer.GameTimer00:completeAnimation()
 				self.GameTimer:setAlpha( 0 )
 				self.GameTimer.GameTimer00:setRGB( 1, 1, 1 )
@@ -85,6 +92,7 @@ CoD.ScoreInfo_Timer.new = function ( menu, controller )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 4 )
+
 				local SemiFrame2 = function ( Semi, event )
 					if not event.interrupted then
 						Semi:beginAnimation( "keyframe", 500, false, true, CoD.TweenType.Back )
@@ -256,6 +264,7 @@ CoD.ScoreInfo_Timer.new = function ( menu, controller )
 				end
 				
 				GameTimer:completeAnimation()
+
 				GameTimer.GameTimer00:completeAnimation()
 				self.GameTimer:setAlpha( 0 )
 				self.GameTimer.GameTimer00:setRGB( 1, 1, 1 )
@@ -263,6 +272,7 @@ CoD.ScoreInfo_Timer.new = function ( menu, controller )
 			end,
 			TimeLow = function ()
 				self:setupElementClipCounter( 4 )
+
 				local SemiFrame2 = function ( Semi, event )
 					if not event.interrupted then
 						Semi:beginAnimation( "keyframe", 500, false, true, CoD.TweenType.Back )
@@ -451,18 +461,22 @@ CoD.ScoreInfo_Timer.new = function ( menu, controller )
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Semi:completeAnimation()
 				self.Semi:setLeftRight( false, false, -10.5, 10.5 )
 				self.Semi:setTopBottom( false, false, -82, -8.5 )
 				self.clipFinished( Semi, {} )
+
 				Line1:completeAnimation()
 				self.Line1:setLeftRight( false, false, -78.5, 14.5 )
 				self.Line1:setTopBottom( false, false, 5.67, 8.33 )
 				self.clipFinished( Line1, {} )
+
 				Line2:completeAnimation()
 				self.Line2:setLeftRight( false, false, -14.5, 78.5 )
 				self.Line2:setTopBottom( false, false, 5.67, 8.33 )
 				self.clipFinished( Line2, {} )
+
 				GameTimer:completeAnimation()
 				self.GameTimer:setRGB( 1, 1, 1 )
 				self.GameTimer:setAlpha( 1 )
@@ -476,6 +490,7 @@ CoD.ScoreInfo_Timer.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 4 )
+
 				local SemiFrame2 = function ( Semi, event )
 					local SemiFrame3 = function ( Semi, event )
 						if not event.interrupted then
@@ -652,14 +667,17 @@ CoD.ScoreInfo_Timer.new = function ( menu, controller )
 		TimeLow = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				Semi:completeAnimation()
 				self.Semi:setLeftRight( false, false, -10.5, 10.5 )
 				self.Semi:setTopBottom( false, false, -82, -8.5 )
 				self.clipFinished( Semi, {} )
+
 				Line1:completeAnimation()
 				self.Line1:setLeftRight( false, false, -78.5, 14.5 )
 				self.Line1:setTopBottom( false, false, 5.67, 8.33 )
 				self.clipFinished( Line1, {} )
+
 				Line2:completeAnimation()
 				self.Line2:setLeftRight( false, false, -14.5, 78.5 )
 				self.Line2:setTopBottom( false, false, 5.67, 8.33 )
@@ -715,10 +733,12 @@ CoD.ScoreInfo_Timer.new = function ( menu, controller )
 				self.GameTimer:setShaderVector( 3, 0, 0, 0, 0 )
 				self.GameTimer:setShaderVector( 4, 0, 0, 0, 0 )
 				GameTimerFrame2( GameTimer, {} )
+
 				self.nextClip = "DefaultClip"
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 4 )
+
 				local SemiFrame2 = function ( Semi, event )
 					local SemiFrame3 = function ( Semi, event )
 						if not event.interrupted then
@@ -932,6 +952,7 @@ CoD.ScoreInfo_Timer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.Semi:close()
 		element.Line1:close()

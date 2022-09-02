@@ -10,9 +10,11 @@ end
 CoD.BumperButtonWithKeyMouse = InheritFrom( LUI.UIElement )
 CoD.BumperButtonWithKeyMouse.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BumperButtonWithKeyMouse )
 	self.id = "BumperButtonWithKeyMouse"
@@ -53,12 +55,15 @@ CoD.BumperButtonWithKeyMouse.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				KeyMouseImage:completeAnimation()
 				self.KeyMouseImage:setAlpha( 0 )
 				self.clipFinished( KeyMouseImage, {} )
+
 				ControllerImage:completeAnimation()
 				self.ControllerImage:setAlpha( 1 )
 				self.clipFinished( ControllerImage, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setAlpha( 0 )
 				self.clipFinished( FETitleNumBrdr0, {} )
@@ -67,14 +72,17 @@ CoD.BumperButtonWithKeyMouse.new = function ( menu, controller )
 		KeyMouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				KeyMouseImage:completeAnimation()
 				self.KeyMouseImage:setRGB( 1, 1, 1 )
 				self.KeyMouseImage:setAlpha( 1 )
 				self.KeyMouseImage:setScale( 0.5 )
 				self.clipFinished( KeyMouseImage, {} )
+
 				ControllerImage:completeAnimation()
 				self.ControllerImage:setAlpha( 0 )
 				self.clipFinished( ControllerImage, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setLeftRight( true, true, 10.35, -10.35 )
 				self.FETitleNumBrdr0:setTopBottom( true, true, 1.5, -1.5 )
@@ -84,13 +92,16 @@ CoD.BumperButtonWithKeyMouse.new = function ( menu, controller )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 3 )
+
 				KeyMouseImage:completeAnimation()
 				self.KeyMouseImage:setRGB( 1, 0.41, 0 )
 				self.KeyMouseImage:setScale( 0.5 )
 				self.clipFinished( KeyMouseImage, {} )
+
 				ControllerImage:completeAnimation()
 				self.ControllerImage:setAlpha( 0 )
 				self.clipFinished( ControllerImage, {} )
+
 				FETitleNumBrdr0:completeAnimation()
 				self.FETitleNumBrdr0:setLeftRight( true, true, 10.35, -10.35 )
 				self.FETitleNumBrdr0:setTopBottom( true, true, 1.5, -1.5 )
@@ -100,6 +111,7 @@ CoD.BumperButtonWithKeyMouse.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "KeyMouse",
@@ -126,6 +138,7 @@ CoD.BumperButtonWithKeyMouse.new = function ( menu, controller )
 			modelName = "LastInput"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FETitleNumBrdr0:close()
 		element.ControllerImage:close()

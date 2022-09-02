@@ -4,9 +4,11 @@
 CoD.ButtonGenericWithMouseFunc = InheritFrom( LUI.UIElement )
 CoD.ButtonGenericWithMouseFunc.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ButtonGenericWithMouseFunc )
 	self.id = "ButtonGenericWithMouseFunc"
@@ -26,6 +28,7 @@ CoD.ButtonGenericWithMouseFunc.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ButtonIcon:completeAnimation()
 				self.ButtonIcon:setRGB( 1, 1, 1 )
 				self.ButtonIcon:setAlpha( 1 )
@@ -33,6 +36,7 @@ CoD.ButtonGenericWithMouseFunc.new = function ( menu, controller )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 1 )
+
 				ButtonIcon:completeAnimation()
 				self.ButtonIcon:setRGB( 1, 0.41, 0 )
 				self.ButtonIcon:setAlpha( 1 )
@@ -42,6 +46,7 @@ CoD.ButtonGenericWithMouseFunc.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				ButtonIcon:completeAnimation()
 				self.ButtonIcon:setRGB( 1, 1, 1 )
 				self.ButtonIcon:setAlpha( 0.75 )
@@ -49,6 +54,7 @@ CoD.ButtonGenericWithMouseFunc.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Disabled",

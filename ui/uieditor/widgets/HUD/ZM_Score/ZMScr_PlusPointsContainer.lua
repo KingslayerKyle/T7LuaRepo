@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.ZM_Score.ZMScr_PlusPoints" )
 CoD.ZMScr_PlusPointsContainer = InheritFrom( LUI.UIElement )
 CoD.ZMScr_PlusPointsContainer.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.ZMScr_PlusPointsContainer )
 	self.id = "ZMScr_PlusPointsContainer"
@@ -29,9 +31,11 @@ CoD.ZMScr_PlusPointsContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Anim1 = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ZMScrPlusPointsFrame2 = function ( ZMScrPlusPoints, event )
 					if not event.interrupted then
 						ZMScrPlusPoints:beginAnimation( "keyframe", 750, false, false, CoD.TweenType.Linear )
@@ -52,6 +56,7 @@ CoD.ZMScr_PlusPointsContainer.new = function ( menu, controller )
 			end,
 			Anim2 = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ZMScrPlusPointsFrame2 = function ( ZMScrPlusPoints, event )
 					if not event.interrupted then
 						ZMScrPlusPoints:beginAnimation( "keyframe", 750, false, false, CoD.TweenType.Linear )
@@ -72,6 +77,7 @@ CoD.ZMScr_PlusPointsContainer.new = function ( menu, controller )
 			end,
 			Anim3 = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ZMScrPlusPointsFrame2 = function ( ZMScrPlusPoints, event )
 					if not event.interrupted then
 						ZMScrPlusPoints:beginAnimation( "keyframe", 750, false, false, CoD.TweenType.Linear )
@@ -92,6 +98,7 @@ CoD.ZMScr_PlusPointsContainer.new = function ( menu, controller )
 			end,
 			Anim4 = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ZMScrPlusPointsFrame2 = function ( ZMScrPlusPoints, event )
 					if not event.interrupted then
 						ZMScrPlusPoints:beginAnimation( "keyframe", 750, false, false, CoD.TweenType.Linear )
@@ -112,6 +119,7 @@ CoD.ZMScr_PlusPointsContainer.new = function ( menu, controller )
 			end,
 			Anim5 = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ZMScrPlusPointsFrame2 = function ( ZMScrPlusPoints, event )
 					if not event.interrupted then
 						ZMScrPlusPoints:beginAnimation( "keyframe", 750, false, false, CoD.TweenType.Linear )
@@ -132,6 +140,7 @@ CoD.ZMScr_PlusPointsContainer.new = function ( menu, controller )
 			end,
 			Anim6 = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ZMScrPlusPointsFrame2 = function ( ZMScrPlusPoints, event )
 					if not event.interrupted then
 						ZMScrPlusPoints:beginAnimation( "keyframe", 750, false, false, CoD.TweenType.Linear )
@@ -152,6 +161,7 @@ CoD.ZMScr_PlusPointsContainer.new = function ( menu, controller )
 			end,
 			Anim7 = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ZMScrPlusPointsFrame2 = function ( ZMScrPlusPoints, event )
 					if not event.interrupted then
 						ZMScrPlusPoints:beginAnimation( "keyframe", 750, false, false, CoD.TweenType.Linear )
@@ -172,6 +182,7 @@ CoD.ZMScr_PlusPointsContainer.new = function ( menu, controller )
 			end,
 			Anim8 = function ()
 				self:setupElementClipCounter( 1 )
+
 				local ZMScrPlusPointsFrame2 = function ( ZMScrPlusPoints, event )
 					if not event.interrupted then
 						ZMScrPlusPoints:beginAnimation( "keyframe", 750, false, false, CoD.TweenType.Linear )
@@ -192,6 +203,7 @@ CoD.ZMScr_PlusPointsContainer.new = function ( menu, controller )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.ZMScrPlusPoints:close()
 	end )

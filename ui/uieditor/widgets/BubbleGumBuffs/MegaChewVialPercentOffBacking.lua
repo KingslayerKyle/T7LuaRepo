@@ -4,9 +4,11 @@
 CoD.MegaChewVialPercentOffBacking = InheritFrom( LUI.UIElement )
 CoD.MegaChewVialPercentOffBacking.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.MegaChewVialPercentOffBacking )
 	self.id = "MegaChewVialPercentOffBacking"
@@ -25,11 +27,13 @@ CoD.MegaChewVialPercentOffBacking.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Common = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( ColorSet.BlackMarketCommon.r, ColorSet.BlackMarketCommon.g, ColorSet.BlackMarketCommon.b )
 				self.clipFinished( bg, {} )
@@ -38,6 +42,7 @@ CoD.MegaChewVialPercentOffBacking.new = function ( menu, controller )
 		Rare = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( 0, 0.6, 0.9 )
 				self.clipFinished( bg, {} )
@@ -46,6 +51,7 @@ CoD.MegaChewVialPercentOffBacking.new = function ( menu, controller )
 		Legendary = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( ColorSet.BlackMarketLegendary.r, ColorSet.BlackMarketLegendary.g, ColorSet.BlackMarketLegendary.b )
 				self.clipFinished( bg, {} )
@@ -54,12 +60,14 @@ CoD.MegaChewVialPercentOffBacking.new = function ( menu, controller )
 		Epic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				bg:completeAnimation()
 				self.bg:setRGB( 1, 0.67, 0 )
 				self.clipFinished( bg, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Common",

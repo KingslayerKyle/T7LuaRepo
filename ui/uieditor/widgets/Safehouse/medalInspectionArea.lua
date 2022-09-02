@@ -4,9 +4,11 @@
 CoD.medalInspectionArea = InheritFrom( LUI.UIElement )
 CoD.medalInspectionArea.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.medalInspectionArea )
 	self.id = "medalInspectionArea"
@@ -116,6 +118,7 @@ CoD.medalInspectionArea.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 1 )
 				self.clipFinished( icon, {} )
@@ -124,12 +127,14 @@ CoD.medalInspectionArea.new = function ( menu, controller )
 		NotUnlocked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				icon:completeAnimation()
 				self.icon:setAlpha( 0 )
 				self.clipFinished( icon, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "NotUnlocked",
@@ -146,6 +151,7 @@ CoD.medalInspectionArea.new = function ( menu, controller )
 			modelName = "unlocked"
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.icon:close()
 		element.xpBonus:close()

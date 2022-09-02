@@ -12,9 +12,11 @@ end
 CoD.RaidsPurchaseItem = InheritFrom( LUI.UIElement )
 CoD.RaidsPurchaseItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.RaidsPurchaseItem )
 	self.id = "RaidsPurchaseItem"
@@ -55,13 +57,16 @@ CoD.RaidsPurchaseItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				RaidsPurchaseItemInternal0:completeAnimation()
+
 				RaidsPurchaseItemInternal0.Highlight:completeAnimation()
 				self.RaidsPurchaseItemInternal0.Highlight:setAlpha( 0 )
 				self.clipFinished( RaidsPurchaseItemInternal0, {} )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
+
 				local RaidsPurchaseItemInternal0Frame2 = function ( RaidsPurchaseItemInternal0, event )
 					local RaidsPurchaseItemInternal0Frame3 = function ( RaidsPurchaseItemInternal0, event )
 						if not event.interrupted then
@@ -88,13 +93,16 @@ CoD.RaidsPurchaseItem.new = function ( menu, controller )
 				end
 				
 				RaidsPurchaseItemInternal0:completeAnimation()
+
 				RaidsPurchaseItemInternal0.Highlight:completeAnimation()
 				self.RaidsPurchaseItemInternal0.Highlight:setAlpha( 0.26 )
 				RaidsPurchaseItemInternal0Frame2( RaidsPurchaseItemInternal0, {} )
+
 				self.nextClip = "Focus"
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RaidsPurchaseItemInternal0:close()
 	end )

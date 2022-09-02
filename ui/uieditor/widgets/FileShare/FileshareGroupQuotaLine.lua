@@ -4,9 +4,11 @@
 CoD.FileshareGroupQuotaLine = InheritFrom( LUI.UIElement )
 CoD.FileshareGroupQuotaLine.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.FileshareGroupQuotaLine )
 	self.id = "FileshareGroupQuotaLine"
@@ -164,8 +166,10 @@ CoD.FileshareGroupQuotaLine.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				BarFraction:completeAnimation()
 				self.clipFinished( BarFraction, {} )
+
 				Dimmer:completeAnimation()
 				self.Dimmer:setAlpha( 0 )
 				self.clipFinished( Dimmer, {} )
@@ -174,12 +178,15 @@ CoD.FileshareGroupQuotaLine.new = function ( menu, controller )
 		DimArabic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 3 )
+
 				TxtUsed:completeAnimation()
 				self.TxtUsed:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 				self.clipFinished( TxtUsed, {} )
+
 				TxtTotal:completeAnimation()
 				self.TxtTotal:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 				self.clipFinished( TxtTotal, {} )
+
 				Dimmer:completeAnimation()
 				self.Dimmer:setAlpha( 0.8 )
 				self.clipFinished( Dimmer, {} )
@@ -188,6 +195,7 @@ CoD.FileshareGroupQuotaLine.new = function ( menu, controller )
 		Dim = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Dimmer:completeAnimation()
 				self.Dimmer:setAlpha( 0.8 )
 				self.clipFinished( Dimmer, {} )
@@ -196,20 +204,25 @@ CoD.FileshareGroupQuotaLine.new = function ( menu, controller )
 		DefaultStateArabic = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 4 )
+
 				TxtUsed:completeAnimation()
 				self.TxtUsed:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
 				self.clipFinished( TxtUsed, {} )
+
 				TxtTotal:completeAnimation()
 				self.TxtTotal:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
 				self.clipFinished( TxtTotal, {} )
+
 				BarFraction:completeAnimation()
 				self.clipFinished( BarFraction, {} )
+
 				Dimmer:completeAnimation()
 				self.Dimmer:setAlpha( 0 )
 				self.clipFinished( Dimmer, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "DimArabic",
@@ -230,6 +243,7 @@ CoD.FileshareGroupQuotaLine.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.GroupName:close()
 		element.GroupImage:close()

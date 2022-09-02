@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Freerun.FR_TopScore_Box_TimeBlurInternal" )
 CoD.FR_TopScore_Box_TimeBlur = InheritFrom( LUI.UIElement )
 CoD.FR_TopScore_Box_TimeBlur.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.FR_TopScore_Box_TimeBlur )
 	self.id = "FR_TopScore_Box_TimeBlur"
@@ -29,21 +31,27 @@ CoD.FR_TopScore_Box_TimeBlur.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Penalty = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			FaultAnim = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			RetryAnim = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			SetCheckpointDelta = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.FRTopScoreBoxTimeBlurInternal:close()
 	end )

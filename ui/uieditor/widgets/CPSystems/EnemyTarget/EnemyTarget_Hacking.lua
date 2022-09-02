@@ -4,9 +4,11 @@
 CoD.EnemyTarget_Hacking = InheritFrom( LUI.UIElement )
 CoD.EnemyTarget_Hacking.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.EnemyTarget_Hacking )
 	self.id = "EnemyTarget_Hacking"
@@ -53,9 +55,11 @@ CoD.EnemyTarget_Hacking.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.hackingRing:close()
 	end )

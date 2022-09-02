@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.VehicleHUDs.wasp.vhud_sentinel_NotificationBox" )
 CoD.genericVHUDInfoArea = InheritFrom( LUI.UIElement )
 CoD.genericVHUDInfoArea.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.genericVHUDInfoArea )
 	self.id = "genericVHUDInfoArea"
@@ -43,29 +45,36 @@ CoD.genericVHUDInfoArea.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 0 )
+
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				value:completeAnimation()
 				self.value:setAlpha( 0 )
 				self.clipFinished( value, {} )
+
 				vhudsentinelNotificationBox:completeAnimation()
 				self.vhudsentinelNotificationBox:setAlpha( 0 )
 				self.clipFinished( vhudsentinelNotificationBox, {} )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
+
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.vhudsentinelNotificationBox:close()
 	end )

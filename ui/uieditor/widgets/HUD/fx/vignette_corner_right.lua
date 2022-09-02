@@ -4,9 +4,11 @@
 CoD.vignette_corner_right = InheritFrom( LUI.UIElement )
 CoD.vignette_corner_right.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.vignette_corner_right )
 	self.id = "vignette_corner_right"

@@ -4,9 +4,11 @@
 CoD.SpikeLuancherSpikeCounter_MeterFill2 = InheritFrom( LUI.UIElement )
 CoD.SpikeLuancherSpikeCounter_MeterFill2.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.SpikeLuancherSpikeCounter_MeterFill2 )
 	self.id = "SpikeLuancherSpikeCounter_MeterFill2"
@@ -26,6 +28,7 @@ CoD.SpikeLuancherSpikeCounter_MeterFill2.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
@@ -34,6 +37,7 @@ CoD.SpikeLuancherSpikeCounter_MeterFill2.new = function ( menu, controller )
 		Blasting = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
@@ -42,6 +46,7 @@ CoD.SpikeLuancherSpikeCounter_MeterFill2.new = function ( menu, controller )
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				local Image0Frame2 = function ( Image0, event )
 					local Image0Frame3 = function ( Image0, event )
 						local Image0Frame4 = function ( Image0, event )

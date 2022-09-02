@@ -22,9 +22,11 @@ end
 CoD.PersonalizeCharacterCarouselItem = InheritFrom( LUI.UIElement )
 CoD.PersonalizeCharacterCarouselItem.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.PersonalizeCharacterCarouselItem )
 	self.id = "PersonalizeCharacterCarouselItem"
@@ -53,17 +55,29 @@ CoD.PersonalizeCharacterCarouselItem.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				item:completeAnimation()
+
 				item.background:completeAnimation()
+
 				item.apeRender:completeAnimation()
+
 				item.ExtraCamLiveFeed:completeAnimation()
+
 				item.Silhouette:completeAnimation()
+
 				item.CenteredSilhouette:completeAnimation()
+
 				item.heroNumber:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.FocusBarT:completeAnimation()
+
 				item.FocusBarB:completeAnimation()
+
 				item.FETitleNumBrdr00:completeAnimation()
+
 				item.infoPanel:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 30, -30 )
@@ -82,17 +96,29 @@ CoD.PersonalizeCharacterCarouselItem.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
+
 				item:completeAnimation()
+
 				item.background:completeAnimation()
+
 				item.apeRender:completeAnimation()
+
 				item.ExtraCamLiveFeed:completeAnimation()
+
 				item.Silhouette:completeAnimation()
+
 				item.CenteredSilhouette:completeAnimation()
+
 				item.heroNumber:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.FocusBarT:completeAnimation()
+
 				item.FocusBarB:completeAnimation()
+
 				item.FETitleNumBrdr00:completeAnimation()
+
 				item.infoPanel:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 0, 0 )
@@ -113,14 +139,23 @@ CoD.PersonalizeCharacterCarouselItem.new = function ( menu, controller )
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				item:completeAnimation()
+
 				item.background:completeAnimation()
+
 				item.apeRender:completeAnimation()
+
 				item.ExtraCamLiveFeed:completeAnimation()
+
 				item.Silhouette:completeAnimation()
+
 				item.CenteredSilhouette:completeAnimation()
+
 				item.heroNumber:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.infoPanel:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 30, -30 )
@@ -136,14 +171,23 @@ CoD.PersonalizeCharacterCarouselItem.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
+
 				item:completeAnimation()
+
 				item.background:completeAnimation()
+
 				item.apeRender:completeAnimation()
+
 				item.ExtraCamLiveFeed:completeAnimation()
+
 				item.Silhouette:completeAnimation()
+
 				item.CenteredSilhouette:completeAnimation()
+
 				item.heroNumber:completeAnimation()
+
 				item.lockImage:completeAnimation()
+
 				item.infoPanel:completeAnimation()
 				self.item:setLeftRight( true, true, 0, 0 )
 				self.item:setTopBottom( true, true, 0, 0 )
@@ -159,6 +203,7 @@ CoD.PersonalizeCharacterCarouselItem.new = function ( menu, controller )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Locked",
@@ -167,6 +212,7 @@ CoD.PersonalizeCharacterCarouselItem.new = function ( menu, controller )
 			end
 		}
 	} )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.item:close()
 	end )

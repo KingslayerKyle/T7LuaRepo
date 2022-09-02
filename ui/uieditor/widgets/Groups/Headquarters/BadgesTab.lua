@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.Groups.GroupsSummaryTBD" )
 CoD.BadgesTab = InheritFrom( LUI.UIElement )
 CoD.BadgesTab.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.BadgesTab )
 	self.id = "BadgesTab"

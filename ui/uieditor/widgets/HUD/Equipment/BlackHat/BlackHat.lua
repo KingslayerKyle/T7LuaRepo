@@ -6,9 +6,11 @@ require( "ui.uieditor.widgets.HUD.Equipment.BlackHat.BlackHat_Internal" )
 CoD.BlackHat = InheritFrom( LUI.UIElement )
 CoD.BlackHat.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.BlackHat )
 	self.id = "BlackHat"

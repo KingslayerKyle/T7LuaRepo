@@ -10,9 +10,11 @@ require( "ui.uieditor.widgets.BubbleGumBuffs.BubbleGumPackInGame" )
 CoD.InventoryWidgetFactory = InheritFrom( LUI.UIElement )
 CoD.InventoryWidgetFactory.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.InventoryWidgetFactory )
 	self.id = "InventoryWidgetFactory"
@@ -162,32 +164,41 @@ CoD.InventoryWidgetFactory.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 0 )
 				self.clipFinished( Image0, {} )
+
 				RocketShield:completeAnimation()
 				self.RocketShield:setLeftRight( true, false, 163.37, 477.37 )
 				self.RocketShield:setTopBottom( true, false, 591, 720 )
 				self.RocketShield:setAlpha( 0 )
 				self.clipFinished( RocketShield, {} )
+
 				FuseBoxWidget:completeAnimation()
 				self.FuseBoxWidget:setAlpha( 0 )
 				self.clipFinished( FuseBoxWidget, {} )
+
 				TramFuse:completeAnimation()
 				self.TramFuse:setAlpha( 0 )
 				self.clipFinished( TramFuse, {} )
+
 				RocketSHield:completeAnimation()
 				self.RocketSHield:setAlpha( 0 )
 				self.clipFinished( RocketSHield, {} )
+
 				Ragnarok:completeAnimation()
 				self.Ragnarok:setAlpha( 0 )
 				self.clipFinished( Ragnarok, {} )
+
 				WrathOfTheAncients:completeAnimation()
 				self.WrathOfTheAncients:setAlpha( 0 )
 				self.clipFinished( WrathOfTheAncients, {} )
+
 				RagnarokBlueprintWidgetCastle:completeAnimation()
 				self.RagnarokBlueprintWidgetCastle:setAlpha( 0 )
 				self.clipFinished( RagnarokBlueprintWidgetCastle, {} )
+
 				ElementalArrowsWidget:completeAnimation()
 				self.ElementalArrowsWidget:setAlpha( 0 )
 				self.clipFinished( ElementalArrowsWidget, {} )
@@ -196,36 +207,46 @@ CoD.InventoryWidgetFactory.new = function ( menu, controller )
 		Visible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 9 )
+
 				Image0:completeAnimation()
 				self.Image0:setAlpha( 1 )
 				self.clipFinished( Image0, {} )
+
 				RocketShield:completeAnimation()
 				self.RocketShield:setAlpha( 1 )
 				self.clipFinished( RocketShield, {} )
+
 				FuseBoxWidget:completeAnimation()
 				self.FuseBoxWidget:setAlpha( 1 )
 				self.clipFinished( FuseBoxWidget, {} )
+
 				TramFuse:completeAnimation()
 				self.TramFuse:setAlpha( 1 )
 				self.clipFinished( TramFuse, {} )
+
 				RocketSHield:completeAnimation()
 				self.RocketSHield:setAlpha( 1 )
 				self.clipFinished( RocketSHield, {} )
+
 				Ragnarok:completeAnimation()
 				self.Ragnarok:setAlpha( 1 )
 				self.clipFinished( Ragnarok, {} )
+
 				WrathOfTheAncients:completeAnimation()
 				self.WrathOfTheAncients:setAlpha( 1 )
 				self.clipFinished( WrathOfTheAncients, {} )
+
 				RagnarokBlueprintWidgetCastle:completeAnimation()
 				self.RagnarokBlueprintWidgetCastle:setAlpha( 1 )
 				self.clipFinished( RagnarokBlueprintWidgetCastle, {} )
+
 				ElementalArrowsWidget:completeAnimation()
 				self.ElementalArrowsWidget:setAlpha( 1 )
 				self.clipFinished( ElementalArrowsWidget, {} )
 			end
 		}
 	}
+
 	self:mergeStateConditions( {
 		{
 			stateName = "Visible",
@@ -242,6 +263,7 @@ CoD.InventoryWidgetFactory.new = function ( menu, controller )
 			modelName = "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN
 		} )
 	end )
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.RocketShield:close()
 		element.FuseBoxWidget:close()

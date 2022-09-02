@@ -4,9 +4,11 @@
 CoD.TextWithDisableState = InheritFrom( LUI.UIElement )
 CoD.TextWithDisableState.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( true )
 	self:setClass( CoD.TextWithDisableState )
 	self.id = "TextWithDisableState"
@@ -28,12 +30,14 @@ CoD.TextWithDisableState.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 1 )
+
 				Description:beginAnimation( "keyframe", 9, false, false, CoD.TweenType.Linear )
 				self.Description:setRGB( 1, 1, 1 )
 				Description:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
 			end,
 			Disabled = function ()
 				self:setupElementClipCounter( 1 )
+
 				local DescriptionFrame2 = function ( Description, event )
 					local DescriptionFrame3 = function ( Description, event )
 						if not event.interrupted then
@@ -60,6 +64,7 @@ CoD.TextWithDisableState.new = function ( menu, controller )
 				Description:completeAnimation()
 				self.Description:setRGB( 1, 0, 0 )
 				DescriptionFrame2( Description, {} )
+
 				self.nextClip = "Disabled"
 			end
 		}

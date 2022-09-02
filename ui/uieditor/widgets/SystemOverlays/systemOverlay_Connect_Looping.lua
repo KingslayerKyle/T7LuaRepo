@@ -7,9 +7,11 @@ require( "ui.uieditor.widgets.SystemOverlays.systemOverlay_Connect_Lines2" )
 CoD.systemOverlay_Connect_Looping = InheritFrom( LUI.UIElement )
 CoD.systemOverlay_Connect_Looping.new = function ( menu, controller )
 	local self = LUI.UIElement.new()
+
 	if PreLoadFunc then
 		PreLoadFunc( self, controller )
 	end
+
 	self:setUseStencil( false )
 	self:setClass( CoD.systemOverlay_Connect_Looping )
 	self.id = "systemOverlay_Connect_Looping"
@@ -43,16 +45,19 @@ CoD.systemOverlay_Connect_Looping.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
+
 				Image:completeAnimation()
 				self.Image:setAlpha( 0 )
 				self.Image:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
 				self.clipFinished( Image, {} )
+
 				systemOverlayConnectLines:completeAnimation()
 				self.systemOverlayConnectLines:setRFTMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
 				self.clipFinished( systemOverlayConnectLines, {} )
 			end
 		}
 	}
+
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
 		element.systemOverlayConnectLines:close()
 		element.systemOverlayConnectLines2:close()
