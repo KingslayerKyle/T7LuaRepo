@@ -163,4 +163,3 @@ CoD.CPMapPerformanceRecord_Classified.new = function ( menu, controller )
 	
 	return self
 end
-

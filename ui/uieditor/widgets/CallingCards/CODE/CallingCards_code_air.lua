@@ -178,4 +178,3 @@ CoD.CallingCards_code_air.new = function ( menu, controller )
 	
 	return self
 end
-

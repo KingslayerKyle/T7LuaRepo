@@ -86,4 +86,3 @@ CoD.outofbounds_returnbox.new = function ( menu, controller )
 	
 	return self
 end
-

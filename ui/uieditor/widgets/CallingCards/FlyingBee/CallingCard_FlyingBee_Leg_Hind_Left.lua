@@ -27,7 +27,6 @@ CoD.CallingCard_FlyingBee_Leg_Hind_Left.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 				self.nextClip = "DefaultClip"
 			end
 		}
@@ -39,4 +38,3 @@ CoD.CallingCard_FlyingBee_Leg_Hind_Left.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -61,4 +61,3 @@ CoD.ChannelFilterColorButton.new = function ( menu, controller )
 	
 	return self
 end
-

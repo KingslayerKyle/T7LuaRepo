@@ -83,4 +83,3 @@ CoD.BM_Bundle_Count.new = function ( menu, controller )
 	
 	return self
 end
-

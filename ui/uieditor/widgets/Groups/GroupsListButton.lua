@@ -1893,4 +1893,3 @@ CoD.GroupsListButton.new = function ( menu, controller )
 	
 	return self
 end
-

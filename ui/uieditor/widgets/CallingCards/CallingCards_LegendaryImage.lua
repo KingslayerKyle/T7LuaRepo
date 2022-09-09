@@ -43,4 +43,3 @@ CoD.CallingCards_LegendaryImage.new = function ( menu, controller )
 	
 	return self
 end
-

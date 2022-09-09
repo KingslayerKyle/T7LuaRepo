@@ -225,4 +225,3 @@ CoD.StartMenu_Options_Slider_Control_Item.new = function ( menu, controller )
 	
 	return self
 end
-

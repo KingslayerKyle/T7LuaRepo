@@ -74,43 +74,36 @@ CoD.GP_FrameBackgroundt.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Content = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		LootBonusDecal = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		LootBonusCallingCard = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		RecentGameBookmarked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Fileshare = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		InvitePopup = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -126,4 +119,3 @@ CoD.GP_FrameBackgroundt.new = function ( menu, controller )
 	
 	return self
 end
-

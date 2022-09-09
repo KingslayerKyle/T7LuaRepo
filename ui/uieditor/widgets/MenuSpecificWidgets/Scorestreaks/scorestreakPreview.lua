@@ -139,4 +139,3 @@ CoD.scorestreakPreview.new = function ( menu, controller )
 	
 	return self
 end
-

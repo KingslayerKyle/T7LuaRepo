@@ -571,4 +571,3 @@ CoD.ZmAmmo_DpadIconPistolFactory.new = function ( menu, controller )
 	
 	return self
 end
-

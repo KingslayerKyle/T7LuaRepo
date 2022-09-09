@@ -146,4 +146,3 @@ CoD.CodCasterPlayerListHeaderWidgetContainer.new = function ( menu, controller )
 	
 	return self
 end
-

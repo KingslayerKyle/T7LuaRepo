@@ -100,4 +100,3 @@ CoD.MissionRecordVault_lines.new = function ( menu, controller )
 	
 	return self
 end
-

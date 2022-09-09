@@ -194,4 +194,3 @@ CoD.CybercoreLoadoutWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -81,4 +81,3 @@ CoD.SpecialContracts_StateIndicator.new = function ( menu, controller )
 	
 	return self
 end
-

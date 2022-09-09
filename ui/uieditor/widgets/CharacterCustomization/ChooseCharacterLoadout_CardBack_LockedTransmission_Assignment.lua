@@ -298,4 +298,3 @@ CoD.ChooseCharacterLoadout_CardBack_LockedTransmission_Assignment.new = function
 	
 	return self
 end
-

@@ -97,4 +97,3 @@ CoD.FR_Difficulty.new = function ( menu, controller )
 	
 	return self
 end
-

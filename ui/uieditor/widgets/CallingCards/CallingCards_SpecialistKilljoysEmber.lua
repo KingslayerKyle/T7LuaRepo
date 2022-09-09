@@ -147,4 +147,3 @@ CoD.CallingCards_SpecialistKilljoysEmber.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -74,4 +74,3 @@ CoD.VehicleGround_CenterInnerRingIn.new = function ( menu, controller )
 	
 	return self
 end
-

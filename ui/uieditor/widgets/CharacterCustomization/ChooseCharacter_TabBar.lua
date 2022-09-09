@@ -241,4 +241,3 @@ CoD.ChooseCharacter_TabBar.new = function ( menu, controller )
 	
 	return self
 end
-

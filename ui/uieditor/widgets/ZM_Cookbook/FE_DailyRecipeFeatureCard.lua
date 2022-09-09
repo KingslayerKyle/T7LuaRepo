@@ -116,7 +116,6 @@ CoD.FE_DailyRecipeFeatureCard.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 2 )
@@ -146,4 +145,3 @@ CoD.FE_DailyRecipeFeatureCard.new = function ( menu, controller )
 	
 	return self
 end
-

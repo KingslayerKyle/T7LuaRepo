@@ -146,4 +146,3 @@ CoD.MissionRecordVault_PerformanceCollectible.new = function ( menu, controller 
 	
 	return self
 end
-

@@ -396,7 +396,6 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		IsSelf = {
@@ -1744,4 +1743,3 @@ CoD.LobbyMemberQuickJoin.new = function ( menu, controller )
 	
 	return self
 end
-

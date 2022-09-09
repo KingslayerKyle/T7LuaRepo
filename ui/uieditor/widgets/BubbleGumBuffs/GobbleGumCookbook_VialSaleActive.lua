@@ -183,4 +183,3 @@ CoD.GobbleGumCookbook_VialSaleActive.new = function ( menu, controller )
 	
 	return self
 end
-

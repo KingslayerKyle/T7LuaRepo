@@ -107,4 +107,3 @@ CoD.DeadSpectate_SpectatingModeButtonPrompt.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -162,4 +162,3 @@ CoD.systemOverlay_ArenaNewSeason.new = function ( menu, controller )
 	
 	return self
 end
-

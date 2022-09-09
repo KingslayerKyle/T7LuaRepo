@@ -112,4 +112,3 @@ CoD.ElemssidelistLines_Medals.new = function ( menu, controller )
 	
 	return self
 end
-

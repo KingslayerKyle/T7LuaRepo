@@ -412,4 +412,3 @@ CoD.AmmoWidget_Ball.new = function ( menu, controller )
 	
 	return self
 end
-

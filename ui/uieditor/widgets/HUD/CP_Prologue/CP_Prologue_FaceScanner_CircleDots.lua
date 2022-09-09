@@ -140,25 +140,21 @@ CoD.CP_Prologue_FaceScanner_CircleDots.new = function ( menu, controller )
 		Scanning = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		PossibleMatch = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Found = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Failed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -169,4 +165,3 @@ CoD.CP_Prologue_FaceScanner_CircleDots.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -42,4 +42,3 @@ CoD.Social_PartyMemberIcon.new = function ( menu, controller )
 	
 	return self
 end
-

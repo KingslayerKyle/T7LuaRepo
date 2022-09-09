@@ -156,4 +156,3 @@ CoD.vhud_sentinel_DamageIconWidget.new = function ( menu, controller )
 	
 	return self
 end
-

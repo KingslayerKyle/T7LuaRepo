@@ -1852,4 +1852,3 @@ CoD.overworld_map.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -226,4 +226,3 @@ CoD.EmblemSlotsFull.new = function ( menu, controller )
 	
 	return self
 end
-

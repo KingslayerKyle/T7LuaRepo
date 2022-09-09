@@ -171,4 +171,3 @@ CoD.CodCasterPlayerFlagStatus.new = function ( menu, controller )
 	
 	return self
 end
-

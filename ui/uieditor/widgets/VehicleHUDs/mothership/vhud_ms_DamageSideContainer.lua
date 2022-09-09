@@ -81,4 +81,3 @@ CoD.vhud_ms_DamageSideContainer.new = function ( menu, controller )
 	
 	return self
 end
-

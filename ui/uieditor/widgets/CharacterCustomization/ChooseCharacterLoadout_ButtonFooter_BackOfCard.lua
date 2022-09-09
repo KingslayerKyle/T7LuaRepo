@@ -215,4 +215,3 @@ CoD.ChooseCharacterLoadout_ButtonFooter_BackOfCard.new = function ( menu, contro
 	
 	return self
 end
-

@@ -113,4 +113,3 @@ CoD.GobbleGumCookbookDistillsBalance.new = function ( menu, controller )
 	
 	return self
 end
-

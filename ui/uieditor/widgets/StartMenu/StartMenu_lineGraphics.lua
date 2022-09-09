@@ -148,4 +148,3 @@ CoD.StartMenu_lineGraphics.new = function ( menu, controller )
 	
 	return self
 end
-

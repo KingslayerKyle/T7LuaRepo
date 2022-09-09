@@ -98,7 +98,6 @@ CoD.vhud_dart_NotificationAmmoBoxWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -115,4 +114,3 @@ CoD.vhud_dart_NotificationAmmoBoxWidget.new = function ( menu, controller )
 	
 	return self
 end
-

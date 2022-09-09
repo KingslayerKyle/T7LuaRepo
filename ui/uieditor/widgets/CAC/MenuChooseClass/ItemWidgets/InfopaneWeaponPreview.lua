@@ -167,4 +167,3 @@ CoD.InfopaneWeaponPreview.new = function ( menu, controller )
 	
 	return self
 end
-

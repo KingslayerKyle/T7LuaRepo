@@ -406,4 +406,3 @@ CoD.ScrStk_MeterInternal.new = function ( menu, controller )
 	
 	return self
 end
-

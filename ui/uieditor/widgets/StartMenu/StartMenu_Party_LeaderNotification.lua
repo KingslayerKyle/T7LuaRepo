@@ -39,4 +39,3 @@ CoD.StartMenu_Party_LeaderNotification.new = function ( menu, controller )
 	
 	return self
 end
-

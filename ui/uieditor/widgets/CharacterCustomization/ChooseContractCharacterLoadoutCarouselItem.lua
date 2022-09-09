@@ -1776,4 +1776,3 @@ CoD.ChooseContractCharacterLoadoutCarouselItem.new = function ( menu, controller
 	
 	return self
 end
-

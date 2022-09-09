@@ -110,4 +110,3 @@ CoD.Prestige_MasterTierWidget.new = function ( menu, controller )
 	
 	return self
 end
-

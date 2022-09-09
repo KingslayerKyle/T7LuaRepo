@@ -71,7 +71,6 @@ CoD.systemOverlay_PrestigeFanfare.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		DefaultStateZM = {
@@ -122,4 +121,3 @@ CoD.systemOverlay_PrestigeFanfare.new = function ( menu, controller )
 	
 	return self
 end
-

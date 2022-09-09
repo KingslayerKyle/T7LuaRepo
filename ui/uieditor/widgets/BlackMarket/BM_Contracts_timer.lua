@@ -85,4 +85,3 @@ CoD.BM_Contracts_timer.new = function ( menu, controller )
 	
 	return self
 end
-

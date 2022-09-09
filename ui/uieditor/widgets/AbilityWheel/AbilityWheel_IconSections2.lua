@@ -128,7 +128,6 @@ CoD.AbilityWheel_IconSections2.new = function ( menu, controller )
 		Unused = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -139,4 +138,3 @@ CoD.AbilityWheel_IconSections2.new = function ( menu, controller )
 	
 	return self
 end
-

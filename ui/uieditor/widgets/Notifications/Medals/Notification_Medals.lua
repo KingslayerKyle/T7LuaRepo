@@ -76,7 +76,6 @@ CoD.Notification_Medals.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			medal_received = function ()
 				self:setupElementClipCounter( 3 )
@@ -236,4 +235,3 @@ CoD.Notification_Medals.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -113,4 +113,3 @@ CoD.BM_Bribe_WireLights.new = function ( menu, controller )
 	
 	return self
 end
-

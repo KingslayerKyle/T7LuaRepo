@@ -66,4 +66,3 @@ CoD.EnemyTarget_Target.new = function ( menu, controller )
 	
 	return self
 end
-

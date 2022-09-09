@@ -377,4 +377,3 @@ CoD.score_lower.new = function ( menu, controller )
 	
 	return self
 end
-

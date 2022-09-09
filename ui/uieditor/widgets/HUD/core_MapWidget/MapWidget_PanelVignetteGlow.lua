@@ -41,4 +41,3 @@ CoD.MapWidget_PanelVignetteGlow.new = function ( menu, controller )
 	
 	return self
 end
-

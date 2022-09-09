@@ -39,4 +39,3 @@ CoD.AbilityWheel_Pixel.new = function ( menu, controller )
 	
 	return self
 end
-

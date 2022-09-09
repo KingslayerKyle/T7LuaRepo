@@ -118,4 +118,3 @@ CoD.DetectNearbyEnemies_FarBack.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -305,4 +305,3 @@ CoD.Leaderboard_GameModeButton.new = function ( menu, controller )
 	
 	return self
 end
-

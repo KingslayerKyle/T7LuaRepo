@@ -44,4 +44,3 @@ CoD.systemOverlay_Layout_ForegroundMultilineText.new = function ( menu, controll
 	
 	return self
 end
-

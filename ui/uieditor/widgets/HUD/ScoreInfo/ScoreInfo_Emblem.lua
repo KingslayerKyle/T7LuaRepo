@@ -67,4 +67,3 @@ CoD.ScoreInfo_Emblem.new = function ( menu, controller )
 	
 	return self
 end
-

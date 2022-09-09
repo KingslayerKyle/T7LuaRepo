@@ -46,4 +46,3 @@ CoD.HorizontalCompassBlackCell.new = function ( menu, controller )
 	
 	return self
 end
-

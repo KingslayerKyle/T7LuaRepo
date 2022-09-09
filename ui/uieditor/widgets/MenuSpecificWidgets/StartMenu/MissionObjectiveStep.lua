@@ -72,4 +72,3 @@ CoD.MissionObjectiveStep.new = function ( menu, controller )
 	
 	return self
 end
-

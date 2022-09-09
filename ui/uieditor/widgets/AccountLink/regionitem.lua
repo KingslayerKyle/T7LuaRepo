@@ -140,4 +140,3 @@ CoD.RegionItem.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -60,7 +60,6 @@ CoD.scoreboardPingBackground.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		GenesisEndGame = {
@@ -110,4 +109,3 @@ CoD.scoreboardPingBackground.new = function ( menu, controller )
 	
 	return self
 end
-

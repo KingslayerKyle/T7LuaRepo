@@ -414,4 +414,3 @@ CoD.MapVoteItem.new = function ( menu, controller )
 	
 	return self
 end
-

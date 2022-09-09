@@ -53,4 +53,3 @@ CoD.LobbyMemberBackingMask.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -65,15 +65,12 @@ CoD.MissionRecordVault_AccoladesAirVehicleDestroy.new = function ( menu, control
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -105,4 +102,3 @@ CoD.MissionRecordVault_AccoladesAirVehicleDestroy.new = function ( menu, control
 	
 	return self
 end
-

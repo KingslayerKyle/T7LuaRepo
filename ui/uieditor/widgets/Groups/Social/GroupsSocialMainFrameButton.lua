@@ -1488,4 +1488,3 @@ CoD.GroupsSocialMainFrameButton.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -146,4 +146,3 @@ CoD.CombatRecordStatHeader.new = function ( menu, controller )
 	
 	return self
 end
-

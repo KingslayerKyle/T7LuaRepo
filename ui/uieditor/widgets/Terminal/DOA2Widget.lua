@@ -116,4 +116,3 @@ CoD.DOA2Widget.new = function ( menu, controller )
 	
 	return self
 end
-

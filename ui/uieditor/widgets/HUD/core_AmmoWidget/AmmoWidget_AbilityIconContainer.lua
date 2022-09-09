@@ -84,7 +84,6 @@ CoD.AmmoWidget_AbilityIconContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Ready = {
@@ -1346,4 +1345,3 @@ CoD.AmmoWidget_AbilityIconContainer.new = function ( menu, controller )
 	
 	return self
 end
-

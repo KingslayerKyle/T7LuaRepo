@@ -78,4 +78,3 @@ CoD.BM_SmallSelected_Hover.new = function ( menu, controller )
 	
 	return self
 end
-

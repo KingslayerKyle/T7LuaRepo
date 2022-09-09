@@ -83,4 +83,3 @@ CoD.AAR_Contracts_Pip.new = function ( menu, controller )
 	
 	return self
 end
-

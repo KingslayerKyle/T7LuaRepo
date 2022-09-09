@@ -351,4 +351,3 @@ CoD.StartMenu_GameOptions_DOA.new = function ( menu, controller )
 	
 	return self
 end
-

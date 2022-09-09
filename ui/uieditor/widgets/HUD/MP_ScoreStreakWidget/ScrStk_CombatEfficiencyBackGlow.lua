@@ -91,4 +91,3 @@ CoD.ScrStk_CombatEfficiencyBackGlow.new = function ( menu, controller )
 	
 	return self
 end
-

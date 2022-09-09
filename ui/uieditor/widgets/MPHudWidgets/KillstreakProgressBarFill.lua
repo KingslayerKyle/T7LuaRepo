@@ -30,4 +30,3 @@ CoD.KillstreakProgressBarFill.new = function ( menu, controller )
 	
 	return self
 end
-

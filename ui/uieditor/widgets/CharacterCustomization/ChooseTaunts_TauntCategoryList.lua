@@ -230,4 +230,3 @@ CoD.ChooseTaunts_TauntCategoryList.new = function ( menu, controller )
 	
 	return self
 end
-

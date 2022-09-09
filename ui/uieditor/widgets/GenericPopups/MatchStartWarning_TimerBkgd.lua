@@ -35,4 +35,3 @@ CoD.MatchStartWarning_TimerBkgd.new = function ( menu, controller )
 	
 	return self
 end
-

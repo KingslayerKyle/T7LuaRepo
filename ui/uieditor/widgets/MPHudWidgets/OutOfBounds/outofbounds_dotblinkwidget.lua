@@ -107,7 +107,6 @@ CoD.outofbounds_dotblinkwidget.new = function ( menu, controller )
 		IsOutOfBounds = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -122,4 +121,3 @@ CoD.outofbounds_dotblinkwidget.new = function ( menu, controller )
 	
 	return self
 end
-

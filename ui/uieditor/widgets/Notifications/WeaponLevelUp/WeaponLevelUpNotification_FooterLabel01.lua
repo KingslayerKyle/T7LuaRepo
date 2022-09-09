@@ -55,11 +55,9 @@ CoD.WeaponLevelUpNotification_FooterLabel01.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -75,4 +73,3 @@ CoD.WeaponLevelUpNotification_FooterLabel01.new = function ( menu, controller )
 	
 	return self
 end
-

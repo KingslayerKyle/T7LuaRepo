@@ -73,4 +73,3 @@ CoD.uplinkReticle.new = function ( menu, controller )
 	
 	return self
 end
-

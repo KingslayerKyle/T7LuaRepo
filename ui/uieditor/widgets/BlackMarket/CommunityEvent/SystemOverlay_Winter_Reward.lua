@@ -7,7 +7,6 @@ require( "ui.uieditor.widgets.SystemOverlays.systemOverlay_FadeMask" )
 require( "ui.uieditor.widgets.SystemOverlays.systemOverlay_Layout_GenericForeground" )
 
 local PostLoadFunc = function ( self, controller, menu )
-	
 end
 
 CoD.SystemOverlay_Winter_Reward = InheritFrom( LUI.UIElement )
@@ -132,4 +131,3 @@ CoD.SystemOverlay_Winter_Reward.new = function ( menu, controller )
 	
 	return self
 end
-

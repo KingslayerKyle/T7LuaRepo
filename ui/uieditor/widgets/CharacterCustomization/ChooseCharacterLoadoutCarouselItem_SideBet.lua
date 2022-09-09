@@ -159,4 +159,3 @@ CoD.ChooseCharacterLoadoutCarouselItem_SideBet.new = function ( menu, controller
 	
 	return self
 end
-

@@ -419,4 +419,3 @@ CoD.Challenges_Category_Button.new = function ( menu, controller )
 	
 	return self
 end
-

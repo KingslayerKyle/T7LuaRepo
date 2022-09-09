@@ -103,7 +103,6 @@ CoD.FriendsListRow_Internal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
@@ -139,7 +138,6 @@ CoD.FriendsListRow_Internal.new = function ( menu, controller )
 			end,
 			hideJoinableIcon = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 1 )
@@ -171,11 +169,9 @@ CoD.FriendsListRow_Internal.new = function ( menu, controller )
 		hideJoinableIcon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			hide = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -195,4 +191,3 @@ CoD.FriendsListRow_Internal.new = function ( menu, controller )
 	
 	return self
 end
-

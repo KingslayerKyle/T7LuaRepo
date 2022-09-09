@@ -56,4 +56,3 @@ CoD.AbilityWheel_IconHex.new = function ( menu, controller )
 	
 	return self
 end
-

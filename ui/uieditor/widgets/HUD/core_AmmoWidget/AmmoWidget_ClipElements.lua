@@ -449,4 +449,3 @@ CoD.AmmoWidget_ClipElements.new = function ( menu, controller )
 	
 	return self
 end
-

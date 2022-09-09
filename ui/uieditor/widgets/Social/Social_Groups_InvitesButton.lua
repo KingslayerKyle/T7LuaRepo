@@ -1761,4 +1761,3 @@ CoD.Social_Groups_InvitesButton.new = function ( menu, controller )
 	
 	return self
 end
-

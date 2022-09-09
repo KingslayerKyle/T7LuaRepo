@@ -258,4 +258,3 @@ CoD.FE_ListAdditonal.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -45,4 +45,3 @@ CoD.StoreSpinner.new = function ( menu, controller )
 	
 	return self
 end
-

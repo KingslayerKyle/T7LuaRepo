@@ -95,4 +95,3 @@ CoD.ZmAmmo_PropSparks.new = function ( menu, controller )
 	
 	return self
 end
-

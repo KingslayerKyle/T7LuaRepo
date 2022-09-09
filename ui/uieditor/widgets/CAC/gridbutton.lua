@@ -36,4 +36,3 @@ CoD.GridButton.new = function ( menu, controller )
 	
 	return self
 end
-

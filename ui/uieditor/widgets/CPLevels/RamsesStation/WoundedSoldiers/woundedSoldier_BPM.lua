@@ -55,4 +55,3 @@ CoD.woundedSoldier_BPM.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -119,4 +119,3 @@ CoD.GroupEmblemWidget.new = function ( menu, controller )
 	
 	return self
 end
-

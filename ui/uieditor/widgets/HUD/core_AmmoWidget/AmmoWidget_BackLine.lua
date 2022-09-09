@@ -32,4 +32,3 @@ CoD.AmmoWidget_BackLine.new = function ( menu, controller )
 	
 	return self
 end
-

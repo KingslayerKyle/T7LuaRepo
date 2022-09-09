@@ -52,4 +52,3 @@ CoD.Friends_GroupsTab.new = function ( menu, controller )
 	
 	return self
 end
-

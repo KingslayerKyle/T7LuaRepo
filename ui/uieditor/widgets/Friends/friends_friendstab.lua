@@ -94,4 +94,3 @@ CoD.Friends_FriendsTab.new = function ( menu, controller )
 	
 	return self
 end
-

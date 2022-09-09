@@ -185,4 +185,3 @@ CoD.BubbleGumBuffInGame.new = function ( menu, controller )
 	
 	return self
 end
-

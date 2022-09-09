@@ -78,4 +78,3 @@ CoD.EmblemLayer.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -32,4 +32,3 @@ CoD.FE_TitleNumBrdr.new = function ( menu, controller )
 	
 	return self
 end
-

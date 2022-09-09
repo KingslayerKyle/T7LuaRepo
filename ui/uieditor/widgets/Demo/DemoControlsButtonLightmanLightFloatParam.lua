@@ -293,4 +293,3 @@ CoD.DemoControlsButtonLightmanLightFloatParam.new = function ( menu, controller 
 	
 	return self
 end
-

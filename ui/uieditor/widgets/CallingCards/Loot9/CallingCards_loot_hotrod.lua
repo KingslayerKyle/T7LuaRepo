@@ -2611,4 +2611,3 @@ CoD.CallingCards_loot_hotrod.new = function ( menu, controller )
 	
 	return self
 end
-

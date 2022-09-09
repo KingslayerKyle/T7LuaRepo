@@ -269,4 +269,3 @@ CoD.ServerBrowserRowInternal.new = function ( menu, controller )
 	
 	return self
 end
-

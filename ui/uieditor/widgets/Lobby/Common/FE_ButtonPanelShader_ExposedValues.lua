@@ -44,4 +44,3 @@ CoD.FE_ButtonPanelShader_ExposedValues.new = function ( menu, controller )
 	
 	return self
 end
-

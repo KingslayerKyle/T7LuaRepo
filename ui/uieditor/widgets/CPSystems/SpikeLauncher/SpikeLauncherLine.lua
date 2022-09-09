@@ -158,4 +158,3 @@ CoD.SpikeLauncherLine.new = function ( menu, controller )
 	
 	return self
 end
-

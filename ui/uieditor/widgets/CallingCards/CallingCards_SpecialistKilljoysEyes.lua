@@ -198,4 +198,3 @@ CoD.CallingCards_SpecialistKilljoysEyes.new = function ( menu, controller )
 	
 	return self
 end
-

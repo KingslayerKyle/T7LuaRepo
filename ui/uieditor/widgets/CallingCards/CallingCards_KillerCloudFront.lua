@@ -135,4 +135,3 @@ CoD.CallingCards_KillerCloudFront.new = function ( menu, controller )
 	
 	return self
 end
-

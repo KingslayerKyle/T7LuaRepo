@@ -338,4 +338,3 @@ CoD.CallingCards_cwl_nv.new = function ( menu, controller )
 	
 	return self
 end
-

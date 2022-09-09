@@ -32,4 +32,3 @@ CoD.FE_ListSubHeaderPanel.new = function ( menu, controller )
 	
 	return self
 end
-

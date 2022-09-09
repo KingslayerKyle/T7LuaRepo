@@ -263,4 +263,3 @@ CoD.InfoPaneItemName.new = function ( menu, controller )
 	
 	return self
 end
-

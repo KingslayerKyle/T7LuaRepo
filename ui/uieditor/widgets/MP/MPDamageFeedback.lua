@@ -4,7 +4,6 @@
 require( "ui.uieditor.widgets.MP.MPDamageFeedback_PerkFeedback" )
 
 local PostLoadFunc = function ( self, controller, menu )
-
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if controller == "DefaultState" then
 			if element.moveToDefaultTimer then
@@ -739,4 +738,3 @@ CoD.MPDamageFeedback.new = function ( menu, controller )
 	
 	return self
 end
-

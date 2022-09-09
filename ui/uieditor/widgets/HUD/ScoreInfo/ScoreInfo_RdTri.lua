@@ -58,4 +58,3 @@ CoD.ScoreInfo_RdTri.new = function ( menu, controller )
 	
 	return self
 end
-

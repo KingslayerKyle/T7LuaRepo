@@ -56,4 +56,3 @@ CoD.FindGroupsTabFriendsGroupsFrame.new = function ( menu, controller )
 	
 	return self
 end
-

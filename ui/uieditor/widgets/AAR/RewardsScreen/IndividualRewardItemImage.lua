@@ -145,4 +145,3 @@ CoD.IndividualRewardItemImage.new = function ( menu, controller )
 	
 	return self
 end
-

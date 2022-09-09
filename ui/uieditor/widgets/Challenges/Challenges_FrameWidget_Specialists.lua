@@ -417,4 +417,3 @@ CoD.Challenges_FrameWidget_Specialists.new = function ( menu, controller )
 	
 	return self
 end
-

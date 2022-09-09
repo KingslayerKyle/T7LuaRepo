@@ -377,4 +377,3 @@ CoD.ScoreInfo_RdTriCont.new = function ( menu, controller )
 	
 	return self
 end
-

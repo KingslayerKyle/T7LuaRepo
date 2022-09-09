@@ -753,4 +753,3 @@ CoD.CallingCards_loot_DeepSea.new = function ( menu, controller )
 	
 	return self
 end
-

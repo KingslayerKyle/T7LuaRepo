@@ -812,4 +812,3 @@ CoD.Challenges_FrameWidget_Prestige.new = function ( menu, controller )
 	
 	return self
 end
-

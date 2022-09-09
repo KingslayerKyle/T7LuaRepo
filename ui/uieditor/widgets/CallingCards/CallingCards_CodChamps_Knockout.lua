@@ -686,4 +686,3 @@ CoD.CallingCards_CodChamps_Knockout.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -92,35 +92,29 @@ CoD.lmgInfiniteReticle_Extras.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Printing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		WeaponFiring = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Printing = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		MagazineFull = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		EmptyMagazine = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 				self.nextClip = "DefaultClip"
 			end
 		}
@@ -167,4 +161,3 @@ CoD.lmgInfiniteReticle_Extras.new = function ( menu, controller )
 	
 	return self
 end
-

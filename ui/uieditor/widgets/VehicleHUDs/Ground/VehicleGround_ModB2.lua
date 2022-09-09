@@ -125,4 +125,3 @@ CoD.VehicleGround_ModB2.new = function ( menu, controller )
 	
 	return self
 end
-

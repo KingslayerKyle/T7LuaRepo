@@ -37,7 +37,6 @@ CoD.vhud_ms_NotificationSeatingTop.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Invisible = {
@@ -61,4 +60,3 @@ CoD.vhud_ms_NotificationSeatingTop.new = function ( menu, controller )
 	
 	return self
 end
-

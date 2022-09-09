@@ -87,4 +87,3 @@ CoD.WidgetModsLoad.new = function ( menu, controller )
 	
 	return self
 end
-

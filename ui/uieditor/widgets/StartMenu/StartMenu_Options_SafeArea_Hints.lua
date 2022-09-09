@@ -238,4 +238,3 @@ CoD.StartMenu_Options_SafeArea_Hints.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -143,4 +143,3 @@ CoD.WinLossRatioWidget.new = function ( menu, controller )
 	
 	return self
 end
-

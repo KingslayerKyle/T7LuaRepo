@@ -302,4 +302,3 @@ CoD.ChooseTaunt_TauntOptionButton.new = function ( menu, controller )
 	
 	return self
 end
-

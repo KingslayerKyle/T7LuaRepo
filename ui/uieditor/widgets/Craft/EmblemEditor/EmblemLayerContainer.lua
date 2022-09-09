@@ -11,7 +11,6 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_FocusBarContainer" )
 require( "ui.uieditor.widgets.Lobby.Common.FE_TitleNumBrdr" )
 
 local f0_local0 = function ( f1_arg0, f1_arg1 )
-
 	LUI.OverrideFunction_CallOriginalFirst( f1_arg0, "setState", function ( element, controller )
 		if controller == "EditMode_Selected" then
 			f1_arg0.m_skipMouseFocus = true
@@ -560,4 +559,3 @@ CoD.EmblemLayerContainer.new = function ( menu, controller )
 	
 	return self
 end
-

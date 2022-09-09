@@ -86,4 +86,3 @@ CoD.AmmoWidget_HeroAbilityThiefOverlayWidget.new = function ( menu, controller )
 	
 	return self
 end
-

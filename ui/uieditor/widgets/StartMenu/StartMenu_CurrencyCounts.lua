@@ -432,4 +432,3 @@ CoD.StartMenu_CurrencyCounts.new = function ( menu, controller )
 	
 	return self
 end
-

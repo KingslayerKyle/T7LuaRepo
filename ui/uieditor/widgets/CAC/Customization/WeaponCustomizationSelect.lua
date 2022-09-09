@@ -486,4 +486,3 @@ CoD.WeaponCustomizationSelect.new = function ( menu, controller )
 	
 	return self
 end
-

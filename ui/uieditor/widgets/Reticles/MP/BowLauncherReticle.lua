@@ -77,7 +77,6 @@ CoD.BowLauncherReticle.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -264,4 +263,3 @@ CoD.BowLauncherReticle.new = function ( menu, controller )
 	
 	return self
 end
-

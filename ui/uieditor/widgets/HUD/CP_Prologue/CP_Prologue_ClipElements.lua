@@ -301,4 +301,3 @@ CoD.CP_Prologue_ClipElements.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -30,13 +30,11 @@ CoD.BackgroundPattern01.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		SlotsFull = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -47,4 +45,3 @@ CoD.BackgroundPattern01.new = function ( menu, controller )
 	
 	return self
 end
-

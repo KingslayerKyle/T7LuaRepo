@@ -219,4 +219,3 @@ CoD.tauntArrowWidget.new = function ( menu, controller )
 	
 	return self
 end
-

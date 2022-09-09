@@ -159,4 +159,3 @@ CoD.GroupsSummaryTBD.new = function ( menu, controller )
 	
 	return self
 end
-

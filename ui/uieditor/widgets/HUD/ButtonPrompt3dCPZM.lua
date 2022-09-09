@@ -15,7 +15,6 @@ local PreLoadFunc = function ( self, controller )
 end
 
 local f0_local1 = function ( f2_arg0 )
-	
 end
 
 local f0_local2 = function ( f3_arg0, f3_arg1 )
@@ -455,4 +454,3 @@ CoD.ButtonPrompt3dCPZM.new = function ( menu, controller )
 	
 	return self
 end
-

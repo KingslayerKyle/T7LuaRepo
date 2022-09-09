@@ -75,4 +75,3 @@ CoD.InventoryTextBox_Genesis.new = function ( menu, controller )
 	
 	return self
 end
-

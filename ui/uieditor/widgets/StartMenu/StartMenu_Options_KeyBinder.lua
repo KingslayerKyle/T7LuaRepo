@@ -348,4 +348,3 @@ CoD.StartMenu_Options_KeyBinder.new = function ( menu, controller )
 	
 	return self
 end
-

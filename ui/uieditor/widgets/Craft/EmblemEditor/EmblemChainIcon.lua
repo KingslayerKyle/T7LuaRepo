@@ -67,4 +67,3 @@ CoD.EmblemChainIcon.new = function ( menu, controller )
 	
 	return self
 end
-

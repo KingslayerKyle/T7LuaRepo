@@ -33,4 +33,3 @@ CoD.FE_ListSubHeaderPanelShader.new = function ( menu, controller )
 	
 	return self
 end
-

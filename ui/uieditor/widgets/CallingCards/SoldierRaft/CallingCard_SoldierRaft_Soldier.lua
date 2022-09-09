@@ -728,4 +728,3 @@ CoD.CallingCard_SoldierRaft_Soldier.new = function ( menu, controller )
 	
 	return self
 end
-

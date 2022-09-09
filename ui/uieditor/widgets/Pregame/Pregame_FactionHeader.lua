@@ -854,4 +854,3 @@ CoD.Pregame_FactionHeader.new = function ( menu, controller )
 	
 	return self
 end
-

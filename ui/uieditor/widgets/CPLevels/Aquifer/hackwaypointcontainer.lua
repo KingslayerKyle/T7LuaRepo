@@ -92,4 +92,3 @@ CoD.HackWaypointContainer.new = function ( menu, controller )
 	
 	return self
 end
-

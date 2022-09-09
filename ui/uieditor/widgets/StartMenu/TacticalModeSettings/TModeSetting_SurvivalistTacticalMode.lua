@@ -83,4 +83,3 @@ CoD.TModeSetting_SurvivalistTacticalMode.new = function ( menu, controller )
 	
 	return self
 end
-

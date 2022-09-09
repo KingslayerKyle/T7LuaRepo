@@ -36,4 +36,3 @@ CoD.Theater_TopFramePanel.new = function ( menu, controller )
 	
 	return self
 end
-

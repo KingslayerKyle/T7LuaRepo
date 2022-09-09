@@ -202,4 +202,3 @@ CoD.DeadSpectate_SpectatingBarPC.new = function ( menu, controller )
 	
 	return self
 end
-

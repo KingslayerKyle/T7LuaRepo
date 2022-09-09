@@ -59,7 +59,6 @@ CoD.IncomingExplosive_FillTriangle.new = function ( menu, controller )
 			end,
 			Visible = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -70,4 +69,3 @@ CoD.IncomingExplosive_FillTriangle.new = function ( menu, controller )
 	
 	return self
 end
-

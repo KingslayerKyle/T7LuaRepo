@@ -69,4 +69,3 @@ CoD.scorestreaksArrow.new = function ( menu, controller )
 	
 	return self
 end
-

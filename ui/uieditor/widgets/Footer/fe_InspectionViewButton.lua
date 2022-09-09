@@ -179,4 +179,3 @@ CoD.fe_InspectionViewButton.new = function ( menu, controller )
 	
 	return self
 end
-

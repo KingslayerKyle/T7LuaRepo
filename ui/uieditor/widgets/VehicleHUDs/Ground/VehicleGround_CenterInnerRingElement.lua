@@ -140,4 +140,3 @@ CoD.VehicleGround_CenterInnerRingElement.new = function ( menu, controller )
 	
 	return self
 end
-

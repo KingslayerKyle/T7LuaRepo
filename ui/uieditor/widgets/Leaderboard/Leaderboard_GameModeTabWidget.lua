@@ -116,4 +116,3 @@ CoD.Leaderboard_GameModeTabWidget.new = function ( menu, controller )
 	
 	return self
 end
-

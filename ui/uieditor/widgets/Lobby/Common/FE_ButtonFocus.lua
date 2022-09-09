@@ -32,4 +32,3 @@ CoD.FE_ButtonFocus.new = function ( menu, controller )
 	
 	return self
 end
-

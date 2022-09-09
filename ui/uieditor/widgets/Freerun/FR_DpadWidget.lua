@@ -1008,4 +1008,3 @@ CoD.FR_DpadWidget.new = function ( menu, controller )
 	
 	return self
 end
-

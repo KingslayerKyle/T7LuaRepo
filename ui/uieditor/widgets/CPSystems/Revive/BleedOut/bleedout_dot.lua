@@ -90,4 +90,3 @@ CoD.bleedout_dot.new = function ( menu, controller )
 	
 	return self
 end
-

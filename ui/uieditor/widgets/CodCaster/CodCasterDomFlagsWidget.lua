@@ -166,19 +166,16 @@ CoD.CodCasterDomFlagsWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		CTF = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		SDorSRorDem = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -210,4 +207,3 @@ CoD.CodCasterDomFlagsWidget.new = function ( menu, controller )
 	
 	return self
 end
-

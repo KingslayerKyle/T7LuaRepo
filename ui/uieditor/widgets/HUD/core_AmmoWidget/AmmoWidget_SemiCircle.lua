@@ -88,4 +88,3 @@ CoD.AmmoWidget_SemiCircle.new = function ( menu, controller )
 	
 	return self
 end
-

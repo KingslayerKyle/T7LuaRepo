@@ -51,4 +51,3 @@ CoD.GameTypeAndMapNameWidgetTitle.new = function ( menu, controller )
 	
 	return self
 end
-

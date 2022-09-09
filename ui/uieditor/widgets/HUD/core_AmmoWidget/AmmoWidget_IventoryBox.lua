@@ -68,4 +68,3 @@ CoD.AmmoWidget_IventoryBox.new = function ( menu, controller )
 	
 	return self
 end
-

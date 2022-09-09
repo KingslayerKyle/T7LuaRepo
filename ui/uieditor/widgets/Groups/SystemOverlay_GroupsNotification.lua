@@ -148,4 +148,3 @@ CoD.SystemOverlay_GroupsNotification.new = function ( menu, controller )
 	
 	return self
 end
-

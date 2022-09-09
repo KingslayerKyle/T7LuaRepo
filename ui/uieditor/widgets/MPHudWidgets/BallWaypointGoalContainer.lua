@@ -105,4 +105,3 @@ CoD.BallWaypointGoalContainer.new = function ( menu, controller )
 	
 	return self
 end
-

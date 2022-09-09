@@ -68,7 +68,6 @@ CoD.MusicPlayerApplet.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 6 )
@@ -335,4 +334,3 @@ CoD.MusicPlayerApplet.new = function ( menu, controller )
 	
 	return self
 end
-

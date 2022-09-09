@@ -916,4 +916,3 @@ CoD.StartMenu_list1buttonGameOptions.new = function ( menu, controller )
 	
 	return self
 end
-

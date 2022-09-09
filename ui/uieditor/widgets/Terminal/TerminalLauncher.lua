@@ -44,7 +44,6 @@ end
 local PostLoadFunc = function ( self, controller, menu )
 	self.FilesApplet.cheatstate = 0
 	self.DoNavigationForGamePadButton = function ( f8_arg0, f8_arg1 )
-		
 	end
 	
 	self.DigitalClock:setText( Engine.SystemTime() )
@@ -702,4 +701,3 @@ CoD.TerminalLauncher.new = function ( menu, controller )
 	
 	return self
 end
-

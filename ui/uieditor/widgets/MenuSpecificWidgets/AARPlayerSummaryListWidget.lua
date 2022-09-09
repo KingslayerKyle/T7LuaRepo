@@ -5,7 +5,6 @@ require( "ui.uieditor.widgets.Border" )
 require( "ui.uieditor.widgets.MenuSpecificWidgets.AARMedalsListWidget" )
 
 local PostLoadFunc = function ( f1_arg0 )
-	
 end
 
 CoD.AARPlayerSummaryListWidget = InheritFrom( LUI.UIElement )
@@ -205,4 +204,3 @@ CoD.AARPlayerSummaryListWidget.new = function ( menu, controller )
 	
 	return self
 end
-

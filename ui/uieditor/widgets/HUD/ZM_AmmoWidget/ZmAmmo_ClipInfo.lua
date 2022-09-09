@@ -1611,4 +1611,3 @@ CoD.ZmAmmo_ClipInfo.new = function ( menu, controller )
 	
 	return self
 end
-

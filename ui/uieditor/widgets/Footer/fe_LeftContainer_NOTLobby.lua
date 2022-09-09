@@ -213,4 +213,3 @@ CoD.fe_LeftContainer_NOTLobby.new = function ( menu, controller )
 	
 	return self
 end
-

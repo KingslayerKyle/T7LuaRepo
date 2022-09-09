@@ -69,11 +69,9 @@ CoD.FractureTimer.new = function ( menu, controller )
 			end,
 			hud_start = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			hud_stop = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Deposit = {
@@ -94,11 +92,9 @@ CoD.FractureTimer.new = function ( menu, controller )
 			end,
 			hud_start = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			hud_stop = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		DepositForCodCaster = {
@@ -119,11 +115,9 @@ CoD.FractureTimer.new = function ( menu, controller )
 			end,
 			hud_start = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			hud_stop = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -329,4 +323,3 @@ CoD.FractureTimer.new = function ( menu, controller )
 	
 	return self
 end
-

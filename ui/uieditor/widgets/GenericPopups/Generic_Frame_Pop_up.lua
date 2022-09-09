@@ -45,4 +45,3 @@ CoD.Generic_Frame_Pop_up.new = function ( menu, controller )
 	
 	return self
 end
-

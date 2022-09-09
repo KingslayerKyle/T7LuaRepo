@@ -41,4 +41,3 @@ CoD.Competitive_CharacterDraft_CharacterSelection.new = function ( menu, control
 	
 	return self
 end
-

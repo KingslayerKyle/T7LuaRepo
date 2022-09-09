@@ -66,4 +66,3 @@ CoD.weakpoint_NewDash.new = function ( menu, controller )
 	
 	return self
 end
-

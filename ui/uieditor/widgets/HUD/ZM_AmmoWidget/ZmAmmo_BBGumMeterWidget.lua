@@ -809,7 +809,6 @@ CoD.ZmAmmo_BBGumMeterWidget.new = function ( menu, controller )
 		InstantActivate = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 7 )
@@ -1131,4 +1130,3 @@ CoD.ZmAmmo_BBGumMeterWidget.new = function ( menu, controller )
 	
 	return self
 end
-

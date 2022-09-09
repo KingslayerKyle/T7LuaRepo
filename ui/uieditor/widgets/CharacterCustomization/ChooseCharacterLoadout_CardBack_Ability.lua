@@ -784,4 +784,3 @@ CoD.ChooseCharacterLoadout_CardBack_Ability.new = function ( menu, controller )
 	
 	return self
 end
-

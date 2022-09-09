@@ -50,4 +50,3 @@ CoD.vhud_ms_DamageIconSide.new = function ( menu, controller )
 	
 	return self
 end
-

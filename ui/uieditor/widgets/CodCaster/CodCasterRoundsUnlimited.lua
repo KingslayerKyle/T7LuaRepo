@@ -74,4 +74,3 @@ CoD.CodCasterRoundsUnlimited.new = function ( menu, controller )
 	
 	return self
 end
-

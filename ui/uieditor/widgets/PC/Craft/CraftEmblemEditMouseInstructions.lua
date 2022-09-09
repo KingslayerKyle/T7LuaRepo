@@ -174,4 +174,3 @@ CoD.CraftEmblemEditMouseInstructions.new = function ( menu, controller )
 	
 	return self
 end
-

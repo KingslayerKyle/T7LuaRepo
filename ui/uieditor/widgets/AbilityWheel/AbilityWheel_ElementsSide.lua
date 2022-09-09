@@ -149,4 +149,3 @@ CoD.AbilityWheel_ElementsSide.new = function ( menu, controller )
 	
 	return self
 end
-

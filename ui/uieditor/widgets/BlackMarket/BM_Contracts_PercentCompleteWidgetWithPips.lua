@@ -540,4 +540,3 @@ CoD.BM_Contracts_PercentCompleteWidgetWithPips.new = function ( menu, controller
 	
 	return self
 end
-

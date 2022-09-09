@@ -43,4 +43,3 @@ CoD.BM_Contracts_specialiste_single_btn_bg.new = function ( menu, controller )
 	
 	return self
 end
-

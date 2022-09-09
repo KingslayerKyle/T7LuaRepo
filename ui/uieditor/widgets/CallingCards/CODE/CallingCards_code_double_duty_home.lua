@@ -200,4 +200,3 @@ CoD.CallingCards_code_double_duty_home.new = function ( menu, controller )
 	
 	return self
 end
-

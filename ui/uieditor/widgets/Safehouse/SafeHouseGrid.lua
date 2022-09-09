@@ -1833,4 +1833,3 @@ CoD.SafeHouseGrid.new = function ( menu, controller )
 	
 	return self
 end
-

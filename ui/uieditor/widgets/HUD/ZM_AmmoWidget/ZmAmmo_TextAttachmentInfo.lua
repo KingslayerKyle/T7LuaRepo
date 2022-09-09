@@ -128,4 +128,3 @@ CoD.ZmAmmo_TextAttachmentInfo.new = function ( menu, controller )
 	
 	return self
 end
-

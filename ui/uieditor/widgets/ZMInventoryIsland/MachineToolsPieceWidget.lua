@@ -371,4 +371,3 @@ CoD.MachineToolsPieceWidget.new = function ( menu, controller )
 	
 	return self
 end
-

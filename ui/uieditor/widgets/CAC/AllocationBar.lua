@@ -235,4 +235,3 @@ CoD.AllocationBar.new = function ( menu, controller )
 	
 	return self
 end
-

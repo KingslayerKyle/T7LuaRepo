@@ -63,4 +63,3 @@ CoD.BM_Debug_LootItemStats.new = function ( menu, controller )
 	
 	return self
 end
-

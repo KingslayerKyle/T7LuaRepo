@@ -60,4 +60,3 @@ CoD.outofbounds_VignetteContainer.new = function ( menu, controller )
 	
 	return self
 end
-

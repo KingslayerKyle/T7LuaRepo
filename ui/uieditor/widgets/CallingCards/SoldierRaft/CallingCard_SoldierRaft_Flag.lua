@@ -188,4 +188,3 @@ CoD.CallingCard_SoldierRaft_Flag.new = function ( menu, controller )
 	
 	return self
 end
-

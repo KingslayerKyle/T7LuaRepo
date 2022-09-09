@@ -62,7 +62,6 @@ CoD.StartMenu_Collectables.new = function ( menu, controller )
 		CP_PauseMenu = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		hidden = {
@@ -117,4 +116,3 @@ CoD.StartMenu_Collectables.new = function ( menu, controller )
 	
 	return self
 end
-

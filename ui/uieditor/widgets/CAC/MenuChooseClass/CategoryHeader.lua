@@ -77,4 +77,3 @@ CoD.CategoryHeader.new = function ( menu, controller )
 	
 	return self
 end
-

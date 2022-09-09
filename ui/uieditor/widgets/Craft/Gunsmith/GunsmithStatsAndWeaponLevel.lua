@@ -180,4 +180,3 @@ CoD.GunsmithStatsAndWeaponLevel.new = function ( menu, controller )
 	
 	return self
 end
-

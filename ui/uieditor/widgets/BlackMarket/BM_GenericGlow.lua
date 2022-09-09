@@ -41,4 +41,3 @@ CoD.BM_GenericGlow.new = function ( menu, controller )
 	
 	return self
 end
-

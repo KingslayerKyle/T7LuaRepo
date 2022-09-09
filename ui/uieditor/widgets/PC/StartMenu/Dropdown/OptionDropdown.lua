@@ -479,4 +479,3 @@ CoD.OptionDropdown.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -336,4 +336,3 @@ CoD.WeaponAttachments.new = function ( menu, controller )
 	
 	return self
 end
-

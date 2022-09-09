@@ -72,4 +72,3 @@ CoD.FFA_TextLabels.new = function ( menu, controller )
 	
 	return self
 end
-

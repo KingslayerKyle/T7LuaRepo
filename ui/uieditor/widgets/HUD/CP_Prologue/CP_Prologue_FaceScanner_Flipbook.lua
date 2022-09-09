@@ -44,4 +44,3 @@ CoD.CP_Prologue_FaceScanner_Flipbook.new = function ( menu, controller )
 	
 	return self
 end
-

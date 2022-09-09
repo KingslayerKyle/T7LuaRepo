@@ -37,4 +37,3 @@ CoD.ArmDeviceWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -368,4 +368,3 @@ CoD.SPMGraphWidget.new = function ( menu, controller )
 	
 	return self
 end
-

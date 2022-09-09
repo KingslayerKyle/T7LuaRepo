@@ -2051,7 +2051,6 @@ CoD.CompassGroupMP.new = function ( menu, controller )
 		HudPause = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -2083,4 +2082,3 @@ CoD.CompassGroupMP.new = function ( menu, controller )
 	
 	return self
 end
-

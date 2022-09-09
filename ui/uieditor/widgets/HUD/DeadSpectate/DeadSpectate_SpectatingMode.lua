@@ -147,4 +147,3 @@ CoD.DeadSpectate_SpectatingMode.new = function ( menu, controller )
 	
 	return self
 end
-

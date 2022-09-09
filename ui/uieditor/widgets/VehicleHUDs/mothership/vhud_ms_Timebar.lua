@@ -83,4 +83,3 @@ CoD.vhud_ms_Timebar.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -9479,4 +9479,3 @@ CoD.GridItemButtonNew.new = function ( menu, controller )
 	
 	return self
 end
-

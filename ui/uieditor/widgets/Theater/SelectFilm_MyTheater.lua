@@ -65,4 +65,3 @@ CoD.SelectFilm_MyTheater.new = function ( menu, controller )
 	
 	return self
 end
-

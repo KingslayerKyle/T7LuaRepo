@@ -521,4 +521,3 @@ CoD.CallingCards_loot_Space.new = function ( menu, controller )
 	
 	return self
 end
-

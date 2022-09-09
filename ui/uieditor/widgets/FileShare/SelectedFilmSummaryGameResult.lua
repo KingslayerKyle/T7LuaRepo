@@ -134,4 +134,3 @@ CoD.SelectedFilmSummaryGameResult.new = function ( menu, controller )
 	
 	return self
 end
-

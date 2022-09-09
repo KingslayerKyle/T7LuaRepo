@@ -191,4 +191,3 @@ CoD.AbilityWheel_AbilityContextual2.new = function ( menu, controller )
 	
 	return self
 end
-

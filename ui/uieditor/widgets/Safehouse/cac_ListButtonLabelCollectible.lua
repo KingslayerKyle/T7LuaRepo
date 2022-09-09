@@ -94,4 +94,3 @@ CoD.cac_ListButtonLabelCollectible.new = function ( menu, controller )
 	
 	return self
 end
-

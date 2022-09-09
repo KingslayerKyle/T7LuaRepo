@@ -1361,4 +1361,3 @@ CoD.LobbyMemberList.new = function ( menu, controller )
 	
 	return self
 end
-

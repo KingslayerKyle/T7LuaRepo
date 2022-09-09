@@ -384,4 +384,3 @@ CoD.CallingCards_loot_bboy.new = function ( menu, controller )
 	
 	return self
 end
-

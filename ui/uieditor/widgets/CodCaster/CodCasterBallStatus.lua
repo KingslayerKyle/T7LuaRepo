@@ -89,7 +89,6 @@ CoD.CodCasterBallStatus.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		AxisHeld = {
@@ -195,4 +194,3 @@ CoD.CodCasterBallStatus.new = function ( menu, controller )
 	
 	return self
 end
-

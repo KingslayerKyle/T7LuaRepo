@@ -36,4 +36,3 @@ CoD.ZmFx_Spark1.new = function ( menu, controller )
 	
 	return self
 end
-

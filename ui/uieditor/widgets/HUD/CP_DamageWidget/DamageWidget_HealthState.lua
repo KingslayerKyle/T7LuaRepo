@@ -704,4 +704,3 @@ CoD.DamageWidget_HealthState.new = function ( menu, controller )
 	
 	return self
 end
-

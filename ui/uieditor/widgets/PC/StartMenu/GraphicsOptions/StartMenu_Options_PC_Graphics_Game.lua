@@ -104,4 +104,3 @@ CoD.StartMenu_Options_PC_Graphics_Game.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -67,4 +67,3 @@ CoD.vhud_agr_NotificationBox.new = function ( menu, controller )
 	
 	return self
 end
-

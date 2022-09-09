@@ -60,7 +60,6 @@ CoD.LiveEventViewerStatusWidget.new = function ( menu, controller )
 			end,
 			ShowPrompts = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Live = {
@@ -124,4 +123,3 @@ CoD.LiveEventViewerStatusWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -121,17 +121,14 @@ CoD.FriendsListRow.new = function ( menu, controller )
 			end,
 			hideJoinableIcon = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		hideJoinableIcon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			hide = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -154,4 +151,3 @@ CoD.FriendsListRow.new = function ( menu, controller )
 	
 	return self
 end
-

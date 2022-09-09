@@ -29,4 +29,3 @@ CoD.ChargeShot_CenterReticle.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -49,4 +49,3 @@ CoD.systemOverlay_SavePaintjobFrame.new = function ( menu, controller )
 	
 	return self
 end
-

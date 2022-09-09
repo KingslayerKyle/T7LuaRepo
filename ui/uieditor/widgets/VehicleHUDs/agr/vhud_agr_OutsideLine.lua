@@ -41,4 +41,3 @@ CoD.vhud_agr_OutsideLine.new = function ( menu, controller )
 	
 	return self
 end
-

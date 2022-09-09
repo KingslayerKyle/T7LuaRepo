@@ -210,4 +210,3 @@ CoD.CallingCards_GamemodesWidget.new = function ( menu, controller )
 	
 	return self
 end
-

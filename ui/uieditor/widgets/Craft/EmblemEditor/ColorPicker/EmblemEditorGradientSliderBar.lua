@@ -182,4 +182,3 @@ CoD.EmblemEditorGradientSliderBar.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -1304,4 +1304,3 @@ CoD.MPWeeklyContractNotification.new = function ( menu, controller )
 	
 	return self
 end
-

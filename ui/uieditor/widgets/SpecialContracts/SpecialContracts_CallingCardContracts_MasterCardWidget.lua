@@ -216,4 +216,3 @@ CoD.SpecialContracts_CallingCardContracts_MasterCardWidget.new = function ( menu
 	
 	return self
 end
-

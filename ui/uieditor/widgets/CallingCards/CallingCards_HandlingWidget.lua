@@ -76,4 +76,3 @@ CoD.CallingCards_HandlingWidget.new = function ( menu, controller )
 	
 	return self
 end
-

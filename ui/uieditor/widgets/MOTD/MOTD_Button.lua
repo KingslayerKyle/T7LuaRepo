@@ -566,7 +566,6 @@ CoD.MOTD_Button.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -584,4 +583,3 @@ CoD.MOTD_Button.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -100,4 +100,3 @@ CoD.StartMenu_ConnectionMeterContainer.new = function ( menu, controller )
 	
 	return self
 end
-

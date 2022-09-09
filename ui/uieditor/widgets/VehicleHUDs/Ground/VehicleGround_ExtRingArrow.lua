@@ -78,4 +78,3 @@ CoD.VehicleGround_ExtRingArrow.new = function ( menu, controller )
 	
 	return self
 end
-

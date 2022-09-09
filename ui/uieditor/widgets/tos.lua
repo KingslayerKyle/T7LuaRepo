@@ -305,4 +305,3 @@ CoD.TOS.new = function ( menu, controller )
 	
 	return self
 end
-

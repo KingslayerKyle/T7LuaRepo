@@ -229,4 +229,3 @@ CoD.Social_Friends.new = function ( menu, controller )
 	
 	return self
 end
-

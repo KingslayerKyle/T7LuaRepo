@@ -182,4 +182,3 @@ CoD.AAR_Contracts_DoubleCryptokeys.new = function ( menu, controller )
 	
 	return self
 end
-

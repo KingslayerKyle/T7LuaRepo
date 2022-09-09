@@ -381,4 +381,3 @@ CoD.CallingCards_Loot_TwistedCircus.new = function ( menu, controller )
 	
 	return self
 end
-

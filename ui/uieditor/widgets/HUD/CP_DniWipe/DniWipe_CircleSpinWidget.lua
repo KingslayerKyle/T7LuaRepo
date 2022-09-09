@@ -101,4 +101,3 @@ CoD.DniWipe_CircleSpinWidget.new = function ( menu, controller )
 	
 	return self
 end
-

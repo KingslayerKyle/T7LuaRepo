@@ -644,4 +644,3 @@ CoD.CallingCards_loot_WAWretro.new = function ( menu, controller )
 	
 	return self
 end
-

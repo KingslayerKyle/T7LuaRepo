@@ -86,4 +86,3 @@ CoD.Friends_RecentPlayersTab.new = function ( menu, controller )
 	
 	return self
 end
-

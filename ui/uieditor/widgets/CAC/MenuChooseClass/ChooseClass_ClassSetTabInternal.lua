@@ -54,4 +54,3 @@ CoD.ChooseClass_ClassSetTabInternal.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -40,4 +40,3 @@ CoD.FE_ImageA.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -31,4 +31,3 @@ CoD.ScoreInfo_PanelCircleInternal.new = function ( menu, controller )
 	
 	return self
 end
-

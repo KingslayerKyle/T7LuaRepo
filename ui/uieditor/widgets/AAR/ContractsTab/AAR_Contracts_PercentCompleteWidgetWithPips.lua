@@ -618,4 +618,3 @@ CoD.AAR_Contracts_PercentCompleteWidgetWithPips.new = function ( menu, controlle
 	
 	return self
 end
-

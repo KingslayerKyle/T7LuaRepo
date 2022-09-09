@@ -826,4 +826,3 @@ CoD.ChooseCharacterLoadout_CardBack_Weapon.new = function ( menu, controller )
 	
 	return self
 end
-

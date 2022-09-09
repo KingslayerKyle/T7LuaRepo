@@ -78,4 +78,3 @@ CoD.TacRigInfoWidget.new = function ( menu, controller )
 	
 	return self
 end
-

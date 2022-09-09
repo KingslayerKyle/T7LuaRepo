@@ -37,4 +37,3 @@ CoD.AARMedalsListWidget.new = function ( menu, controller )
 	
 	return self
 end
-

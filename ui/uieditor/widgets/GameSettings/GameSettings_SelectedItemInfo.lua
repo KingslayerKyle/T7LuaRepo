@@ -51,4 +51,3 @@ CoD.GameSettings_SelectedItemInfo.new = function ( menu, controller )
 	
 	return self
 end
-

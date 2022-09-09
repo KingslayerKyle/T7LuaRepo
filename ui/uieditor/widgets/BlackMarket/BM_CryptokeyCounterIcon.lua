@@ -194,4 +194,3 @@ CoD.BM_CryptokeyCounterIcon.new = function ( menu, controller )
 	
 	return self
 end
-

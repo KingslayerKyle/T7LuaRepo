@@ -111,4 +111,3 @@ CoD.BlackMarketSafeAreaContainer.new = function ( menu, controller )
 	
 	return self
 end
-

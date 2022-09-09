@@ -330,4 +330,3 @@ CoD.StartMenu_Media.new = function ( menu, controller )
 	
 	return self
 end
-

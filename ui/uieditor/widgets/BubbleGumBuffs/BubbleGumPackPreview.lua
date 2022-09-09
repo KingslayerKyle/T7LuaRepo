@@ -86,4 +86,3 @@ CoD.BubbleGumPackPreview.new = function ( menu, controller )
 	
 	return self
 end
-

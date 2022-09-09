@@ -534,4 +534,3 @@ CoD.CallingCards_ArenaMasterVetWidget.new = function ( menu, controller )
 	
 	return self
 end
-

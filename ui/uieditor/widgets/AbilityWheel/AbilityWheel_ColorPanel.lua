@@ -46,7 +46,6 @@ CoD.AbilityWheel_ColorPanel.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		ControlCore = {
@@ -68,7 +67,6 @@ CoD.AbilityWheel_ColorPanel.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		MartialCore = {
@@ -89,7 +87,6 @@ CoD.AbilityWheel_ColorPanel.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		ChaosCore = {
@@ -110,7 +107,6 @@ CoD.AbilityWheel_ColorPanel.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		DefaultState = {
@@ -157,4 +153,3 @@ CoD.AbilityWheel_ColorPanel.new = function ( menu, controller )
 	
 	return self
 end
-

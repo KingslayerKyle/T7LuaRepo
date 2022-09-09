@@ -46,4 +46,3 @@ CoD.BorderBakedSolid.new = function ( menu, controller )
 	
 	return self
 end
-

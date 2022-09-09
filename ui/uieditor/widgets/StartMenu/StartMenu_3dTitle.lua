@@ -51,4 +51,3 @@ CoD.StartMenu_3dTitle.new = function ( menu, controller )
 	
 	return self
 end
-

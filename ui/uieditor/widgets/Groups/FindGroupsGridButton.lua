@@ -1968,4 +1968,3 @@ CoD.FindGroupsGridButton.new = function ( menu, controller )
 	
 	return self
 end
-

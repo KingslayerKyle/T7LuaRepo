@@ -310,4 +310,3 @@ CoD.BM_HorizontalCounter.new = function ( menu, controller )
 	
 	return self
 end
-

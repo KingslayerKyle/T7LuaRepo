@@ -28,7 +28,6 @@ CoD.ConsoleIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			FadeIn = function ()
 				self:setupElementClipCounter( 1 )
@@ -162,4 +161,3 @@ CoD.ConsoleIcon.new = function ( menu, controller )
 	
 	return self
 end
-

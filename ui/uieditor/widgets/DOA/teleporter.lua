@@ -104,4 +104,3 @@ CoD.teleporter.new = function ( menu, controller )
 	
 	return self
 end
-

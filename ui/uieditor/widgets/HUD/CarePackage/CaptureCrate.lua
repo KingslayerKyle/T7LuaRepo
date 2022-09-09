@@ -223,4 +223,3 @@ CoD.CaptureCrate.new = function ( menu, controller )
 	
 	return self
 end
-

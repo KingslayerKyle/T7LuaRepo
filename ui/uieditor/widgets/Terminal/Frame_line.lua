@@ -53,4 +53,3 @@ CoD.Frame_line.new = function ( menu, controller )
 	
 	return self
 end
-

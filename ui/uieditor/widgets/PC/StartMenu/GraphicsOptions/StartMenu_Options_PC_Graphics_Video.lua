@@ -90,4 +90,3 @@ CoD.StartMenu_Options_PC_Graphics_Video.new = function ( menu, controller )
 	
 	return self
 end
-

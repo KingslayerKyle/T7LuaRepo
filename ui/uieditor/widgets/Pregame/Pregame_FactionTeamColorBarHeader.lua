@@ -116,4 +116,3 @@ CoD.Pregame_FactionTeamColorBarHeader.new = function ( menu, controller )
 	
 	return self
 end
-

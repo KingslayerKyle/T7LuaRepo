@@ -68,4 +68,3 @@ CoD.featureOverlay_Layout.new = function ( menu, controller )
 	
 	return self
 end
-

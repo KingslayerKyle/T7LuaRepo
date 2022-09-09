@@ -288,4 +288,3 @@ CoD.ChooseCharacterLoadout_ButtonFooter_Personalize.new = function ( menu, contr
 	
 	return self
 end
-

@@ -3534,4 +3534,3 @@ CoD.XpBarContainer.new = function ( menu, controller )
 	
 	return self
 end
-

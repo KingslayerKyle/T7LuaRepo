@@ -650,4 +650,3 @@ CoD.GasMaskStatus.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -905,4 +905,3 @@ CoD.ZmAmmo_Total.new = function ( menu, controller )
 	
 	return self
 end
-

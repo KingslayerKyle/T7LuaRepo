@@ -158,4 +158,3 @@ CoD.BM_Bribe_title.new = function ( menu, controller )
 	
 	return self
 end
-

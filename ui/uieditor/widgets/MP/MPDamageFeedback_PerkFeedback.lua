@@ -51,7 +51,6 @@ CoD.MPDamageFeedback_PerkFeedback.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		FlakJacket = {
@@ -199,4 +198,3 @@ CoD.MPDamageFeedback_PerkFeedback.new = function ( menu, controller )
 	
 	return self
 end
-

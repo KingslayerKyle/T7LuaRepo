@@ -338,4 +338,3 @@ CoD.StartMenu_Options_Network_StatusOverview.new = function ( menu, controller )
 	
 	return self
 end
-

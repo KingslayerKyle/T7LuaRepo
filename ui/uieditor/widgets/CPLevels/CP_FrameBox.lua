@@ -35,4 +35,3 @@ CoD.CP_FrameBox.new = function ( menu, controller )
 	
 	return self
 end
-

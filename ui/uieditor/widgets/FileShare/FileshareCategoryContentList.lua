@@ -243,4 +243,3 @@ CoD.FileshareCategoryContentList.new = function ( menu, controller )
 	
 	return self
 end
-

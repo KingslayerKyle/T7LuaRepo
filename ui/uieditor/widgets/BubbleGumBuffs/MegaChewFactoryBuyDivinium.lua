@@ -232,4 +232,3 @@ CoD.MegaChewFactoryBuyDivinium.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -195,4 +195,3 @@ CoD.DniWipe_CenterAngledLines.new = function ( menu, controller )
 	
 	return self
 end
-

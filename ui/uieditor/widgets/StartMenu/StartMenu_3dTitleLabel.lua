@@ -75,4 +75,3 @@ CoD.StartMenu_3dTitleLabel.new = function ( menu, controller )
 	
 	return self
 end
-

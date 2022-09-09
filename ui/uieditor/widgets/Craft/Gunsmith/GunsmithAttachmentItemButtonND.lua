@@ -3004,4 +3004,3 @@ CoD.GunsmithAttachmentItemButtonND.new = function ( menu, controller )
 	
 	return self
 end
-

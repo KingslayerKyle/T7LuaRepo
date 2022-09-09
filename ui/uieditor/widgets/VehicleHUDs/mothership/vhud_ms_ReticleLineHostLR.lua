@@ -61,4 +61,3 @@ CoD.vhud_ms_ReticleLineHostLR.new = function ( menu, controller )
 	
 	return self
 end
-

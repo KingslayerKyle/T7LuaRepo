@@ -69,4 +69,3 @@ CoD.systemOverlay_SaveEmblemFrame.new = function ( menu, controller )
 	
 	return self
 end
-

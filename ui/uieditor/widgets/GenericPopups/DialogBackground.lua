@@ -45,4 +45,3 @@ CoD.DialogBackground.new = function ( menu, controller )
 	
 	return self
 end
-

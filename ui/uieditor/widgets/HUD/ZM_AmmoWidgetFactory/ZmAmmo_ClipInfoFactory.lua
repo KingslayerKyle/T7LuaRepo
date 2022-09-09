@@ -797,4 +797,3 @@ CoD.ZmAmmo_ClipInfoFactory.new = function ( menu, controller )
 	
 	return self
 end
-

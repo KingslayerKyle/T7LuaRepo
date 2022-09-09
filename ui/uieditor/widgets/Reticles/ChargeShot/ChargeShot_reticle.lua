@@ -40,4 +40,3 @@ CoD.ChargeShot_reticle.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -708,7 +708,6 @@ CoD.T7Hud_MP_SafeAreaContainer.new = function ( menu, controller )
 		SpeedBoost = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 4 )
@@ -1022,4 +1021,3 @@ CoD.T7Hud_MP_SafeAreaContainer.new = function ( menu, controller )
 	
 	return self
 end
-

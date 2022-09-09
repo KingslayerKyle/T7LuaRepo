@@ -914,4 +914,3 @@ CoD.cac_WpnLvl.new = function ( menu, controller )
 	
 	return self
 end
-

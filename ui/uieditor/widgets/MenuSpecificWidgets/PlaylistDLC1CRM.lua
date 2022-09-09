@@ -515,4 +515,3 @@ CoD.PlaylistDLC1CRM.new = function ( menu, controller )
 	
 	return self
 end
-

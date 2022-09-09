@@ -95,4 +95,3 @@ CoD.StartMenu_ProfileSnapshot_Preview.new = function ( menu, controller )
 	
 	return self
 end
-

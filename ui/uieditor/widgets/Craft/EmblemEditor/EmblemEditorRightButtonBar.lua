@@ -94,4 +94,3 @@ CoD.EmblemEditorRightButtonBar.new = function ( menu, controller )
 	
 	return self
 end
-

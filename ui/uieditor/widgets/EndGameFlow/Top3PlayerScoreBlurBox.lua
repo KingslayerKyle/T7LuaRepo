@@ -31,4 +31,3 @@ CoD.Top3PlayerScoreBlurBox.new = function ( menu, controller )
 	
 	return self
 end
-

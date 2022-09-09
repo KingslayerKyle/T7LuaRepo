@@ -32,4 +32,3 @@ CoD.cac_CharBox.new = function ( menu, controller )
 	
 	return self
 end
-

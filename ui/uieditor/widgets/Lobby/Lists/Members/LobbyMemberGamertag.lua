@@ -55,15 +55,12 @@ CoD.LobbyMemberGamertag.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		IsLackingDLC = {
@@ -78,15 +75,12 @@ CoD.LobbyMemberGamertag.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		IsPartyMember = {
@@ -101,15 +95,12 @@ CoD.LobbyMemberGamertag.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -161,4 +152,3 @@ CoD.LobbyMemberGamertag.new = function ( menu, controller )
 	
 	return self
 end
-

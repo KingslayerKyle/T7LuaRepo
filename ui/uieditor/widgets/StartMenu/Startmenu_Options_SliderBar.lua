@@ -334,4 +334,3 @@ CoD.StartMenu_Options_SliderBar.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -226,4 +226,3 @@ CoD.EmblemEditorMaterialInfo.new = function ( menu, controller )
 	
 	return self
 end
-

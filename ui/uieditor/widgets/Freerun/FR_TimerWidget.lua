@@ -155,7 +155,6 @@ CoD.FR_TimerWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Penalty = function ()
 				self:setupElementClipCounter( 2 )
@@ -237,23 +236,18 @@ CoD.FR_TimerWidget.new = function ( menu, controller )
 			end,
 			FaultAnim = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			RetryAnim = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			SetCheckpointDelta = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Less = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			More = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			PenaltyStart = function ()
 				self:setupElementClipCounter( 3 )
@@ -417,7 +411,6 @@ CoD.FR_TimerWidget.new = function ( menu, controller )
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -450,4 +443,3 @@ CoD.FR_TimerWidget.new = function ( menu, controller )
 	
 	return self
 end
-

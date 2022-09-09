@@ -147,4 +147,3 @@ CoD.Pregame_RestrictionIndicator.new = function ( menu, controller )
 	
 	return self
 end
-

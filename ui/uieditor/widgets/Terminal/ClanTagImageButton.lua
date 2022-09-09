@@ -197,11 +197,9 @@ CoD.ClanTagImageButton.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -218,4 +216,3 @@ CoD.ClanTagImageButton.new = function ( menu, controller )
 	
 	return self
 end
-

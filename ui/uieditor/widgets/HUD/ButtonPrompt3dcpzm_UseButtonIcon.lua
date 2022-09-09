@@ -179,4 +179,3 @@ CoD.ButtonPrompt3dcpzm_UseButtonIcon.new = function ( menu, controller )
 	
 	return self
 end
-

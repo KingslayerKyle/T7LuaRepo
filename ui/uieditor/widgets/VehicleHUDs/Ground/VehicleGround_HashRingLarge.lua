@@ -300,4 +300,3 @@ CoD.VehicleGround_HashRingLarge.new = function ( menu, controller )
 	
 	return self
 end
-

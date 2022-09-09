@@ -539,4 +539,3 @@ CoD.Notification_SixthSense.new = function ( menu, controller )
 	
 	return self
 end
-

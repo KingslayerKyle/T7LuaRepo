@@ -357,4 +357,3 @@ CoD.Pregame_TimerOverlay.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -27,13 +27,11 @@ CoD.PrematchCountdown_FirstGumFree.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		french = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -53,4 +51,3 @@ CoD.PrematchCountdown_FirstGumFree.new = function ( menu, controller )
 	
 	return self
 end
-

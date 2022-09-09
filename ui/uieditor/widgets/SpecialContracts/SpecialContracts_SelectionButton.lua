@@ -1040,4 +1040,3 @@ CoD.SpecialContracts_SelectionButton.new = function ( menu, controller )
 	
 	return self
 end
-

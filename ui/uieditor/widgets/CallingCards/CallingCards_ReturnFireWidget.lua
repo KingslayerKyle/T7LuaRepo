@@ -113,4 +113,3 @@ CoD.CallingCards_ReturnFireWidget.new = function ( menu, controller )
 	
 	return self
 end
-

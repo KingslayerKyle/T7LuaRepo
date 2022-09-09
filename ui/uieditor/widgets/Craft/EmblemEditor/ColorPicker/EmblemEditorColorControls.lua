@@ -288,4 +288,3 @@ CoD.EmblemEditorColorControls.new = function ( menu, controller )
 	
 	return self
 end
-

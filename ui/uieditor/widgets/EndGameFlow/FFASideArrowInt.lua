@@ -31,4 +31,3 @@ CoD.FFASideArrowInt.new = function ( menu, controller )
 	
 	return self
 end
-

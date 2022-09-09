@@ -227,4 +227,3 @@ CoD.Prestige_PrestigeIconButton.new = function ( menu, controller )
 	
 	return self
 end
-

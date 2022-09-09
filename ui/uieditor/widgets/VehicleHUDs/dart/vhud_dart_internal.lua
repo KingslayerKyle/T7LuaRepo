@@ -97,4 +97,3 @@ CoD.vhud_dart_internal.new = function ( menu, controller )
 	
 	return self
 end
-

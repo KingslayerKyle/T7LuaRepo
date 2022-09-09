@@ -32,36 +32,30 @@ CoD.RitualItemInUseByOtherPlayer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Found = function ()
 				self:setupElementClipCounter( 0 )
-
 				self.nextClip = "Found"
 			end
 		},
 		Found = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Worm = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Completed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Activated = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -72,4 +66,3 @@ CoD.RitualItemInUseByOtherPlayer.new = function ( menu, controller )
 	
 	return self
 end
-

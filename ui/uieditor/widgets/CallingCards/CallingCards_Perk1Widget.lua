@@ -192,4 +192,3 @@ CoD.CallingCards_Perk1Widget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -47,4 +47,3 @@ CoD.ZmFx_Spark2Ext.new = function ( menu, controller )
 	
 	return self
 end
-

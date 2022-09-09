@@ -81,4 +81,3 @@ CoD.WildcardItemButtonImage.new = function ( menu, controller )
 	
 	return self
 end
-

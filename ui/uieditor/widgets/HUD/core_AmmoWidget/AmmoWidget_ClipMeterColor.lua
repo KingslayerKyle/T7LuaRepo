@@ -125,4 +125,3 @@ CoD.AmmoWidget_ClipMeterColor.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -72,4 +72,3 @@ CoD.CallingCards_Scifi_Fog.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -5264,4 +5264,3 @@ CoD.BM_DecryptionCrate.new = function ( menu, controller )
 	
 	return self
 end
-

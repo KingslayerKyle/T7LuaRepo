@@ -107,4 +107,3 @@ CoD.CallingCard_FlyingBee_Legs_Right.new = function ( menu, controller )
 	
 	return self
 end
-

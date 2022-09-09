@@ -67,4 +67,3 @@ CoD.ZM_Promo_50percentoff.new = function ( menu, controller )
 	
 	return self
 end
-

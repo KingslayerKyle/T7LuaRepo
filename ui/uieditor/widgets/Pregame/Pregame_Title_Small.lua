@@ -66,4 +66,3 @@ CoD.Pregame_Title_Small.new = function ( menu, controller )
 	
 	return self
 end
-

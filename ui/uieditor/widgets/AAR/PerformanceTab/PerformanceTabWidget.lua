@@ -952,4 +952,3 @@ CoD.PerformanceTabWidget.new = function ( menu, controller )
 	
 	return self
 end
-

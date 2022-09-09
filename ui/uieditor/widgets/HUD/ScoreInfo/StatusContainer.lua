@@ -148,4 +148,3 @@ CoD.StatusContainer.new = function ( menu, controller )
 	
 	return self
 end
-

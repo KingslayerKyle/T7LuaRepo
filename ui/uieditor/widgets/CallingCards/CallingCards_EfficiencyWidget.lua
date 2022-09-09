@@ -369,4 +369,3 @@ CoD.CallingCards_EfficiencyWidget.new = function ( menu, controller )
 	
 	return self
 end
-

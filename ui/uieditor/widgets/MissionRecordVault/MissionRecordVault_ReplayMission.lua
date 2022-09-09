@@ -168,4 +168,3 @@ CoD.MissionRecordVault_ReplayMission.new = function ( menu, controller )
 	
 	return self
 end
-

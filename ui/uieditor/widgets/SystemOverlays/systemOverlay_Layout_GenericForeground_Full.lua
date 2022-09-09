@@ -76,4 +76,3 @@ CoD.systemOverlay_Layout_GenericForeground_Full.new = function ( menu, controlle
 	
 	return self
 end
-

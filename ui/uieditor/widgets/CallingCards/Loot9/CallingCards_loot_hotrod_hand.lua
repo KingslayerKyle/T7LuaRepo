@@ -202,4 +202,3 @@ CoD.CallingCards_loot_hotrod_hand.new = function ( menu, controller )
 	
 	return self
 end
-

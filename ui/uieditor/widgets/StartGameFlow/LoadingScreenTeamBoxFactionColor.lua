@@ -63,4 +63,3 @@ CoD.LoadingScreenTeamBoxFactionColor.new = function ( menu, controller )
 	
 	return self
 end
-

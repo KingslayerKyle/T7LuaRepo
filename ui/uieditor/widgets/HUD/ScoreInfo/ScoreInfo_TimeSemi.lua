@@ -30,4 +30,3 @@ CoD.ScoreInfo_TimeSemi.new = function ( menu, controller )
 	
 	return self
 end
-

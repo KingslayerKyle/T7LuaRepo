@@ -117,4 +117,3 @@ CoD.ServerBrowserRow.new = function ( menu, controller )
 	
 	return self
 end
-

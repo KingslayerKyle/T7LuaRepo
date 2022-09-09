@@ -108,4 +108,3 @@ CoD.ScoreboardPingHeader.new = function ( menu, controller )
 	
 	return self
 end
-

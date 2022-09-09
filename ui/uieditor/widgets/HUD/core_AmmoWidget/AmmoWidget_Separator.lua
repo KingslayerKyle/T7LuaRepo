@@ -86,4 +86,3 @@ CoD.AmmoWidget_Separator.new = function ( menu, controller )
 	
 	return self
 end
-

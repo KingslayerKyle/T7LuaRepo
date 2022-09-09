@@ -91,4 +91,3 @@ CoD.StartMenu_Options_PC_Voice_Text.new = function ( menu, controller )
 	
 	return self
 end
-

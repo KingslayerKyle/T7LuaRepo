@@ -145,4 +145,3 @@ CoD.fe_FooterContainer_NOTLobby.new = function ( menu, controller )
 	
 	return self
 end
-

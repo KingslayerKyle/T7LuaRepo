@@ -135,7 +135,6 @@ CoD.PerkInfo.new = function ( menu, controller )
 			end,
 			Show = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		DoublePerk = {
@@ -216,4 +215,3 @@ CoD.PerkInfo.new = function ( menu, controller )
 	
 	return self
 end
-

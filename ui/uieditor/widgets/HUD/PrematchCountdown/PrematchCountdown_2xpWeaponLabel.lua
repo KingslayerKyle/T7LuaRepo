@@ -61,4 +61,3 @@ CoD.PrematchCountdown_2xpWeaponLabel.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -231,4 +231,3 @@ CoD.SpikeLuancherSpikeCounter_TitleReady.new = function ( menu, controller )
 	
 	return self
 end
-

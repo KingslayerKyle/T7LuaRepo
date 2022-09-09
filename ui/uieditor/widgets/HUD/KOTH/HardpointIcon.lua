@@ -83,15 +83,12 @@ CoD.HardpointIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			hud_start = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			hud_stop = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Neutral = {
@@ -120,11 +117,9 @@ CoD.HardpointIcon.new = function ( menu, controller )
 			end,
 			hud_start = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			hud_stop = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		FriendlyControlled = {
@@ -281,4 +276,3 @@ CoD.HardpointIcon.new = function ( menu, controller )
 	
 	return self
 end
-

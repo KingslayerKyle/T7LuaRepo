@@ -2403,4 +2403,3 @@ CoD.NextKeyProgress.new = function ( menu, controller )
 	
 	return self
 end
-

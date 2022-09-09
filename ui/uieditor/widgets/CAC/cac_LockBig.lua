@@ -368,4 +368,3 @@ CoD.cac_LockBig.new = function ( menu, controller )
 	
 	return self
 end
-

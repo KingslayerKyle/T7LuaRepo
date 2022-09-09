@@ -1209,4 +1209,3 @@ CoD.CallingCards_Specialist8bit_Reaper.new = function ( menu, controller )
 	
 	return self
 end
-

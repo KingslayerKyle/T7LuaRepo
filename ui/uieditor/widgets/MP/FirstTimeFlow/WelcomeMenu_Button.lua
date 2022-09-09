@@ -274,4 +274,3 @@ CoD.WelcomeMenu_Button.new = function ( menu, controller )
 	
 	return self
 end
-

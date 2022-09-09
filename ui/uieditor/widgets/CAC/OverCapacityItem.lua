@@ -486,4 +486,3 @@ CoD.OverCapacityItem.new = function ( menu, controller )
 	
 	return self
 end
-

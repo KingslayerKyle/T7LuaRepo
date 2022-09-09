@@ -82,4 +82,3 @@ CoD.Cookbook_Indicator_Triangle.new = function ( menu, controller )
 	
 	return self
 end
-

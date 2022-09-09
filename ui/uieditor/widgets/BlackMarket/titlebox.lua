@@ -64,4 +64,3 @@ CoD.Titlebox.new = function ( menu, controller )
 	
 	return self
 end
-

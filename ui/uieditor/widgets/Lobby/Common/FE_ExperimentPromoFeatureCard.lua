@@ -82,4 +82,3 @@ CoD.FE_ExperimentPromoFeatureCard.new = function ( menu, controller )
 	
 	return self
 end
-

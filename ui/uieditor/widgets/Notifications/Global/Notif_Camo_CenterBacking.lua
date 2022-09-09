@@ -48,11 +48,9 @@ CoD.Notif_Camo_CenterBacking.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -63,4 +61,3 @@ CoD.Notif_Camo_CenterBacking.new = function ( menu, controller )
 	
 	return self
 end
-

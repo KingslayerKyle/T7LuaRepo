@@ -403,4 +403,3 @@ CoD.CombatRecordButtonZM.new = function ( menu, controller )
 	
 	return self
 end
-

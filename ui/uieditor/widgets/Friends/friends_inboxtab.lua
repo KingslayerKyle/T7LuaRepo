@@ -85,4 +85,3 @@ CoD.Friends_InboxTab.new = function ( menu, controller )
 	
 	return self
 end
-

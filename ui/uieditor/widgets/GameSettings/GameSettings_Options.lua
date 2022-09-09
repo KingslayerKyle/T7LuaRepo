@@ -136,4 +136,3 @@ CoD.GameSettings_Options.new = function ( menu, controller )
 	
 	return self
 end
-

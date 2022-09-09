@@ -142,4 +142,3 @@ CoD.Social_JoinBtn.new = function ( menu, controller )
 	
 	return self
 end
-

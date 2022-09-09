@@ -102,4 +102,3 @@ CoD.NetworkStatsRowWidgetContainer.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -36,15 +36,12 @@ CoD.Social_PlayersListButton_Joinable.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Focusx = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Joinable = {
@@ -89,4 +86,3 @@ CoD.Social_PlayersListButton_Joinable.new = function ( menu, controller )
 	
 	return self
 end
-

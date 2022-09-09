@@ -138,4 +138,3 @@ CoD.systemOverlay_Compact_BasicFrame.new = function ( menu, controller )
 	
 	return self
 end
-

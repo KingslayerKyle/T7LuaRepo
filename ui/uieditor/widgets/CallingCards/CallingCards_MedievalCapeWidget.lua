@@ -251,4 +251,3 @@ CoD.CallingCards_MedievalCapeWidget.new = function ( menu, controller )
 	
 	return self
 end
-

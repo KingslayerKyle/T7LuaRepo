@@ -159,4 +159,3 @@ CoD.AmmoWidget_UIGlowWidget.new = function ( menu, controller )
 	
 	return self
 end
-

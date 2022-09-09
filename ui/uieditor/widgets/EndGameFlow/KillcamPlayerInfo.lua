@@ -1067,4 +1067,3 @@ CoD.KillcamPlayerInfo.new = function ( menu, controller )
 	
 	return self
 end
-

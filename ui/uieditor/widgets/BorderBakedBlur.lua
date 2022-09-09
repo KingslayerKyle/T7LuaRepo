@@ -32,4 +32,3 @@ CoD.BorderBakedBlur.new = function ( menu, controller )
 	
 	return self
 end
-

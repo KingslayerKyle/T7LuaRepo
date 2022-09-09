@@ -113,7 +113,6 @@ CoD.List1ButtonSmall_PH.new = function ( menu, controller )
 			end,
 			GainFocusOLD = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 5 )
@@ -145,25 +144,20 @@ CoD.List1ButtonSmall_PH.new = function ( menu, controller )
 			end,
 			LoseFocusOLD = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -199,4 +193,3 @@ CoD.List1ButtonSmall_PH.new = function ( menu, controller )
 	
 	return self
 end
-

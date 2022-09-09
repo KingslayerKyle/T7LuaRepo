@@ -91,4 +91,3 @@ CoD.BM_BribeOffertime.new = function ( menu, controller )
 	
 	return self
 end
-

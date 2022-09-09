@@ -54,4 +54,3 @@ CoD.CybercoreBranchHeaderWidget.new = function ( menu, controller )
 	
 	return self
 end
-

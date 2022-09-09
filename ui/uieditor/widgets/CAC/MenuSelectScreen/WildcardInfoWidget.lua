@@ -173,4 +173,3 @@ CoD.WildcardInfoWidget.new = function ( menu, controller )
 	
 	return self
 end
-

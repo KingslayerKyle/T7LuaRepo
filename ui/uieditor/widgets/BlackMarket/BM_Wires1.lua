@@ -113,4 +113,3 @@ CoD.BM_Wires1.new = function ( menu, controller )
 	
 	return self
 end
-

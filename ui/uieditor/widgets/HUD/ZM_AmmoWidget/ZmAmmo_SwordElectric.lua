@@ -64,4 +64,3 @@ CoD.ZmAmmo_SwordElectric.new = function ( menu, controller )
 	
 	return self
 end
-

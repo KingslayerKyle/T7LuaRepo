@@ -107,4 +107,3 @@ CoD.CallingCard_Clover_4.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -29,4 +29,3 @@ CoD.ChargerShot_Active_Center.new = function ( menu, controller )
 	
 	return self
 end
-

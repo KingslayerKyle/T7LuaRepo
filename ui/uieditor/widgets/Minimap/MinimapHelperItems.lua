@@ -69,4 +69,3 @@ CoD.MinimapHelperItems.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -68,4 +68,3 @@ CoD.popup_warninglabel.new = function ( menu, controller )
 	
 	return self
 end
-

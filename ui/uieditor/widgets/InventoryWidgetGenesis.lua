@@ -386,4 +386,3 @@ CoD.InventoryWidgetGenesis.new = function ( menu, controller )
 	
 	return self
 end
-

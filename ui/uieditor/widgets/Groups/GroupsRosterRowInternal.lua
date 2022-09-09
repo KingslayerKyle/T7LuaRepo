@@ -219,4 +219,3 @@ CoD.GroupsRosterRowInternal.new = function ( menu, controller )
 	
 	return self
 end
-

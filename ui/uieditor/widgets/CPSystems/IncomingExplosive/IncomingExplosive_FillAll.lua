@@ -105,7 +105,6 @@ CoD.IncomingExplosive_FillAll.new = function ( menu, controller )
 			end,
 			Visible = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Count3 = {
@@ -2276,4 +2275,3 @@ CoD.IncomingExplosive_FillAll.new = function ( menu, controller )
 	
 	return self
 end
-

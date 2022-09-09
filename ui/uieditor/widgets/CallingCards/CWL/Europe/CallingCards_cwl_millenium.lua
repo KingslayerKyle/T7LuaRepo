@@ -337,4 +337,3 @@ CoD.CallingCards_cwl_millenium.new = function ( menu, controller )
 	
 	return self
 end
-

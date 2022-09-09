@@ -404,4 +404,3 @@ CoD.DemoControlsButtonDollyCameraTimeScale.new = function ( menu, controller )
 	
 	return self
 end
-

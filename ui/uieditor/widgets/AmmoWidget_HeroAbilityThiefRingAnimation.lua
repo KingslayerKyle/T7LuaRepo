@@ -1377,4 +1377,3 @@ CoD.AmmoWidget_HeroAbilityThiefRingAnimation.new = function ( menu, controller )
 	
 	return self
 end
-

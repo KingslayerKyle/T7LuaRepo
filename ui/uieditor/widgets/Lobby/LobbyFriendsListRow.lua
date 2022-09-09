@@ -68,7 +68,6 @@ CoD.LobbyFriendsListRow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 1 )
@@ -138,7 +137,6 @@ CoD.LobbyFriendsListRow.new = function ( menu, controller )
 		hideJoinableIcon = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			hide = function ()
 				self:setupElementClipCounter( 1 )
@@ -161,4 +159,3 @@ CoD.LobbyFriendsListRow.new = function ( menu, controller )
 	
 	return self
 end
-

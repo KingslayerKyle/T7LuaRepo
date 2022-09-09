@@ -7,7 +7,6 @@ require( "ui.uieditor.widgets.CAC.cac_CustomClassDecscription" )
 require( "ui.uieditor.widgets.PC.Utility.XCamMouseControl" )
 
 local PostLoadFunc = function ( self, controller, menu )
-
 	LUI.OverrideFunction_CallOriginalFirst( self, "setModel", function ()
 		self:processEvent( {
 			name = "update_state",
@@ -380,4 +379,3 @@ CoD.InfopanePreviewWidget.new = function ( menu, controller )
 	
 	return self
 end
-

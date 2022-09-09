@@ -137,4 +137,3 @@ CoD.TModeSetting_BalancedTacticalMode.new = function ( menu, controller )
 	
 	return self
 end
-

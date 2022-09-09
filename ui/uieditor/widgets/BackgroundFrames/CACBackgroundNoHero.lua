@@ -65,25 +65,21 @@ CoD.CACBackgroundNoHero.new = function ( menu, controller )
 		Update = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Intro = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Update2 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Update3 = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -115,4 +111,3 @@ CoD.CACBackgroundNoHero.new = function ( menu, controller )
 	
 	return self
 end
-

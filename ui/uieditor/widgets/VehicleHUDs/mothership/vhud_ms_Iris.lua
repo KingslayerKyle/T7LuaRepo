@@ -78,7 +78,6 @@ CoD.vhud_ms_Iris.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 6 )
@@ -467,4 +466,3 @@ CoD.vhud_ms_Iris.new = function ( menu, controller )
 	
 	return self
 end
-

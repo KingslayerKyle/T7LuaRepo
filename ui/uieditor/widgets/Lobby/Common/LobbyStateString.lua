@@ -95,4 +95,3 @@ CoD.LobbyStateString.new = function ( menu, controller )
 	
 	return self
 end
-

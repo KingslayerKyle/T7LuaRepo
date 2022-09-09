@@ -156,4 +156,3 @@ CoD.LobbyDoubleXPWidgetContainer.new = function ( menu, controller )
 	
 	return self
 end
-

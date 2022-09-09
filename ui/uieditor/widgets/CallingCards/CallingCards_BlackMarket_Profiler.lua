@@ -481,4 +481,3 @@ CoD.CallingCards_BlackMarket_Profiler.new = function ( menu, controller )
 	
 	return self
 end
-

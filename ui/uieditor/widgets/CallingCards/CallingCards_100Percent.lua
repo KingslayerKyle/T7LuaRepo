@@ -1836,4 +1836,3 @@ CoD.CallingCards_100Percent.new = function ( menu, controller )
 	
 	return self
 end
-

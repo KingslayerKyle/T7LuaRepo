@@ -134,4 +134,3 @@ CoD.ModalDialogItems.new = function ( menu, controller )
 	
 	return self
 end
-

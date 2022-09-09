@@ -41,19 +41,15 @@ CoD.FR_InfoContainer.new = function ( menu, controller )
 			end,
 			Penalty = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			FaultAnim = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			RetryAnim = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			SetCheckpointDelta = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Invisible = {
@@ -78,7 +74,6 @@ CoD.FR_InfoContainer.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -93,4 +88,3 @@ CoD.FR_InfoContainer.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -103,4 +103,3 @@ CoD.PartyList_ClanContainer.new = function ( menu, controller )
 	
 	return self
 end
-

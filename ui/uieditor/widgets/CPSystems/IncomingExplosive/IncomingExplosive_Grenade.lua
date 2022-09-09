@@ -48,4 +48,3 @@ CoD.IncomingExplosive_Grenade.new = function ( menu, controller )
 	
 	return self
 end
-

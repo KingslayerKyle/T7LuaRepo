@@ -108,4 +108,3 @@ CoD.AmmoWidget_AbilityFill.new = function ( menu, controller )
 	
 	return self
 end
-

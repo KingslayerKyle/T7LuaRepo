@@ -380,4 +380,3 @@ CoD.StartMenu_Challenges_Button.new = function ( menu, controller )
 	
 	return self
 end
-

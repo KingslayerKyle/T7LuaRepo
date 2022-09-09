@@ -117,4 +117,3 @@ CoD.TacticalEquipmentWidget.new = function ( menu, controller )
 	
 	return self
 end
-

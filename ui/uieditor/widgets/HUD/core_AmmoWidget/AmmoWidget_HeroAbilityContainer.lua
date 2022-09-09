@@ -4219,4 +4219,3 @@ CoD.AmmoWidget_HeroAbilityContainer.new = function ( menu, controller )
 	
 	return self
 end
-

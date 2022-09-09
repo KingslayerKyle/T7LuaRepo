@@ -36,7 +36,6 @@ CoD.vhud_sentinel_CenterReticle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 2 )
@@ -221,4 +220,3 @@ CoD.vhud_sentinel_CenterReticle.new = function ( menu, controller )
 	
 	return self
 end
-

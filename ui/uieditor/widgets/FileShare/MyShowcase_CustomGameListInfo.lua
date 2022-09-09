@@ -143,4 +143,3 @@ CoD.MyShowcase_CustomGameListInfo.new = function ( menu, controller )
 	
 	return self
 end
-

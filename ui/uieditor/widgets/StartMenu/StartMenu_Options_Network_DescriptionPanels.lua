@@ -66,7 +66,6 @@ CoD.StartMenu_Options_Network_DescriptionPanels.new = function ( menu, controlle
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -84,4 +83,3 @@ CoD.StartMenu_Options_Network_DescriptionPanels.new = function ( menu, controlle
 	
 	return self
 end
-

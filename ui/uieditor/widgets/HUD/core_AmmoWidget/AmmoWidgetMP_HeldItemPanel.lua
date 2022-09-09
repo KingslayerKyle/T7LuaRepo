@@ -155,4 +155,3 @@ CoD.AmmoWidgetMP_HeldItemPanel.new = function ( menu, controller )
 	
 	return self
 end
-

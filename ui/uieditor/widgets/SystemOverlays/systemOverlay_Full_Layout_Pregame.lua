@@ -395,4 +395,3 @@ CoD.systemOverlay_Full_Layout_Pregame.new = function ( menu, controller )
 	
 	return self
 end
-

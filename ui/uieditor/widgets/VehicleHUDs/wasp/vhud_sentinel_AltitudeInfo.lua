@@ -65,11 +65,9 @@ CoD.vhud_sentinel_AltitudeInfo.new = function ( menu, controller )
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Hidden = {
@@ -98,4 +96,3 @@ CoD.vhud_sentinel_AltitudeInfo.new = function ( menu, controller )
 	
 	return self
 end
-

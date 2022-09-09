@@ -118,4 +118,3 @@ CoD.DetectNearbyEnemies_FarLeft.new = function ( menu, controller )
 	
 	return self
 end
-

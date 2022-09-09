@@ -2100,4 +2100,3 @@ CoD.CombatRecordMedalButton.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -29,4 +29,3 @@ CoD.Challenges_NearCompletion_CroppedImage.new = function ( menu, controller )
 	
 	return self
 end
-

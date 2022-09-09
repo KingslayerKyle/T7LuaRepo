@@ -202,4 +202,3 @@ CoD.IslandSkullWidgetSkull.new = function ( menu, controller )
 	
 	return self
 end
-

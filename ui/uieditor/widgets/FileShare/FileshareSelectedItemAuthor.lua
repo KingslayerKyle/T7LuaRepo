@@ -51,4 +51,3 @@ CoD.FileshareSelectedItemAuthor.new = function ( menu, controller )
 	
 	return self
 end
-

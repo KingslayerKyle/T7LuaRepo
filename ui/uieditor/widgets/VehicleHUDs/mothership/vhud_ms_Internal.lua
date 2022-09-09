@@ -145,4 +145,3 @@ CoD.vhud_ms_Internal.new = function ( menu, controller )
 	
 	return self
 end
-

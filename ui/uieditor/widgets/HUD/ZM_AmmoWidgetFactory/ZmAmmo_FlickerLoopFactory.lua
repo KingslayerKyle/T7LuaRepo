@@ -95,4 +95,3 @@ CoD.ZmAmmo_FlickerLoopFactory.new = function ( menu, controller )
 	
 	return self
 end
-

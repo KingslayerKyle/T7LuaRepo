@@ -55,4 +55,3 @@ CoD.CallingCards_code_sea_subprop.new = function ( menu, controller )
 	
 	return self
 end
-

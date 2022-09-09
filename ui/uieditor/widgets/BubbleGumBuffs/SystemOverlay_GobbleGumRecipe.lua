@@ -468,4 +468,3 @@ CoD.SystemOverlay_GobbleGumRecipe.new = function ( menu, controller )
 	
 	return self
 end
-

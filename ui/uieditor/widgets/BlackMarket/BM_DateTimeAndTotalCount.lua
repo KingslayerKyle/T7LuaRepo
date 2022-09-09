@@ -98,4 +98,3 @@ CoD.BM_DateTimeAndTotalCount.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -29,4 +29,3 @@ CoD.AllyFlag.new = function ( menu, controller )
 	
 	return self
 end
-

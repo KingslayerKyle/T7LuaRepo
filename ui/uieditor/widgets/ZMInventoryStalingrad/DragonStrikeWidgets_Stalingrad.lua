@@ -169,4 +169,3 @@ CoD.DragonStrikeWidgets_Stalingrad.new = function ( menu, controller )
 	
 	return self
 end
-

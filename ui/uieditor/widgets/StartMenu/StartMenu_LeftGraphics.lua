@@ -30,4 +30,3 @@ CoD.StartMenu_LeftGraphics.new = function ( menu, controller )
 	
 	return self
 end
-

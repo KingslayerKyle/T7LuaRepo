@@ -48,13 +48,11 @@ CoD.FE_Guide.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		SelectingPlaylist = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -65,4 +63,3 @@ CoD.FE_Guide.new = function ( menu, controller )
 	
 	return self
 end
-

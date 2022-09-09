@@ -153,4 +153,3 @@ CoD.Pregame_BanProtectIndicator.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -40,11 +40,9 @@ CoD.LobbySlideGamerCardInternalWidget.new = function ( menu, controller )
 			end,
 			SlideLeft = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			SlideRight = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Invisible = {
@@ -68,4 +66,3 @@ CoD.LobbySlideGamerCardInternalWidget.new = function ( menu, controller )
 	
 	return self
 end
-

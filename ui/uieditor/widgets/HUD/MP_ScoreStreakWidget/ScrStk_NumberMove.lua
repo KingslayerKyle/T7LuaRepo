@@ -244,4 +244,3 @@ CoD.ScrStk_NumberMove.new = function ( menu, controller )
 	
 	return self
 end
-

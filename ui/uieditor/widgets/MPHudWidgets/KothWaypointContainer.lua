@@ -148,4 +148,3 @@ CoD.KothWaypointContainer.new = function ( menu, controller )
 	
 	return self
 end
-

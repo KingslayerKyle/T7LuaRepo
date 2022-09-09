@@ -89,4 +89,3 @@ CoD.BM_Contracts_BJ_ReadyWidget.new = function ( menu, controller )
 	
 	return self
 end
-

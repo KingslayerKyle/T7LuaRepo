@@ -384,4 +384,3 @@ CoD.CallingCards_CartoonZombies_Sparks.new = function ( menu, controller )
 	
 	return self
 end
-

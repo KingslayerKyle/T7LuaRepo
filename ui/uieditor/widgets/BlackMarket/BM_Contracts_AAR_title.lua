@@ -97,4 +97,3 @@ CoD.BM_Contracts_AAR_title.new = function ( menu, controller )
 	
 	return self
 end
-

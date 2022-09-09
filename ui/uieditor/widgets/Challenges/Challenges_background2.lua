@@ -71,4 +71,3 @@ CoD.Challenges_background2.new = function ( menu, controller )
 	
 	return self
 end
-

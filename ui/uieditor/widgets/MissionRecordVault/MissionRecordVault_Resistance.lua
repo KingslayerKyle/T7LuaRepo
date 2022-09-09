@@ -194,4 +194,3 @@ CoD.MissionRecordVault_Resistance.new = function ( menu, controller )
 	
 	return self
 end
-

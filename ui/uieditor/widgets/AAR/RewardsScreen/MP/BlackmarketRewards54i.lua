@@ -66,4 +66,3 @@ CoD.BlackmarketRewards54i.new = function ( menu, controller )
 	
 	return self
 end
-

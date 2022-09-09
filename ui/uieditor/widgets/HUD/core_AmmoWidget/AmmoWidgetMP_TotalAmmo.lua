@@ -346,4 +346,3 @@ CoD.AmmoWidgetMP_TotalAmmo.new = function ( menu, controller )
 	
 	return self
 end
-

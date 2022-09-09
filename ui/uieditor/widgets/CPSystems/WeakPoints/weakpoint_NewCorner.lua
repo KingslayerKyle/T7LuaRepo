@@ -66,4 +66,3 @@ CoD.weakpoint_NewCorner.new = function ( menu, controller )
 	
 	return self
 end
-

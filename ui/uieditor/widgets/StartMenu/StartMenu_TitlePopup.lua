@@ -76,4 +76,3 @@ CoD.StartMenu_TitlePopup.new = function ( menu, controller )
 	
 	return self
 end
-

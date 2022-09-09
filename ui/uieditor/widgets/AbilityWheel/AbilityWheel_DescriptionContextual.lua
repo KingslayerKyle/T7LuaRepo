@@ -36,4 +36,3 @@ CoD.AbilityWheel_DescriptionContextual.new = function ( menu, controller )
 	
 	return self
 end
-

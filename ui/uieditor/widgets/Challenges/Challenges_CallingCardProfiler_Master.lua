@@ -278,4 +278,3 @@ CoD.Challenges_CallingCardProfiler_Master.new = function ( menu, controller )
 	
 	return self
 end
-

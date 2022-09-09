@@ -1480,4 +1480,3 @@ CoD.GroupSelectListItemRow.new = function ( menu, controller )
 	
 	return self
 end
-

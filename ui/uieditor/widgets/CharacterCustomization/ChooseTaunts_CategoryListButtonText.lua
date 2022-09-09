@@ -75,4 +75,3 @@ CoD.ChooseTaunts_CategoryListButtonText.new = function ( menu, controller )
 	
 	return self
 end
-

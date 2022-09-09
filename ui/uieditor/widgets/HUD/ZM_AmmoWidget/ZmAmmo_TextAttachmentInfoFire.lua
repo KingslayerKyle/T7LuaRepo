@@ -54,4 +54,3 @@ CoD.ZmAmmo_TextAttachmentInfoFire.new = function ( menu, controller )
 	
 	return self
 end
-

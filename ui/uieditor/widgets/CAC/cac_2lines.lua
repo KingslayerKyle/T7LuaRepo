@@ -48,4 +48,3 @@ CoD.cac_2lines.new = function ( menu, controller )
 	
 	return self
 end
-

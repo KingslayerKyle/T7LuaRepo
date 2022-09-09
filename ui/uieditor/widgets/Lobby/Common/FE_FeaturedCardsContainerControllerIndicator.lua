@@ -108,4 +108,3 @@ CoD.FE_FeaturedCardsContainerControllerIndicator.new = function ( menu, controll
 	
 	return self
 end
-

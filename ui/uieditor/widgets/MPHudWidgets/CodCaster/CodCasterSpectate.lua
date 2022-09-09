@@ -980,4 +980,3 @@ CoD.CodCasterSpectate.new = function ( menu, controller )
 	
 	return self
 end
-

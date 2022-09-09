@@ -342,4 +342,3 @@ CoD.CallingCards_cwl_epsilon.new = function ( menu, controller )
 	
 	return self
 end
-

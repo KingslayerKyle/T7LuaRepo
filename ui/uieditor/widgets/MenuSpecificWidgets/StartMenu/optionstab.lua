@@ -5,7 +5,6 @@ require( "ui.uieditor.widgets.MenuSpecificWidgets.StartMenu.SelectionListButton"
 require( "ui.uieditor.widgets.Border" )
 
 local PostLoadFunc = function ( f1_arg0, f1_arg1 )
-	
 end
 
 CoD.OptionsTab = InheritFrom( LUI.UIElement )
@@ -100,4 +99,3 @@ CoD.OptionsTab.new = function ( menu, controller )
 	
 	return self
 end
-

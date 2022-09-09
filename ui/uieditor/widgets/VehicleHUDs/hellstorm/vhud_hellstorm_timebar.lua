@@ -81,4 +81,3 @@ CoD.vhud_hellstorm_timebar.new = function ( menu, controller )
 	
 	return self
 end
-

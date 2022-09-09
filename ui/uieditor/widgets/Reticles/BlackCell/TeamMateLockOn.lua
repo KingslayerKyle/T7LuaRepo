@@ -394,4 +394,3 @@ CoD.TeamMateLockOn.new = function ( menu, controller )
 	
 	return self
 end
-

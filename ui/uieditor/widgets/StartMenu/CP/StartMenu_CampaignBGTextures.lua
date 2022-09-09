@@ -159,4 +159,3 @@ CoD.StartMenu_CampaignBGTextures.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -49,4 +49,3 @@ CoD.vhud_siegebot_NotificationLine.new = function ( menu, controller )
 	
 	return self
 end
-

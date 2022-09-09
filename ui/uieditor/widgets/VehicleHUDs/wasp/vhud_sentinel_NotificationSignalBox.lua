@@ -355,4 +355,3 @@ CoD.vhud_sentinel_NotificationSignalBox.new = function ( menu, controller )
 	
 	return self
 end
-

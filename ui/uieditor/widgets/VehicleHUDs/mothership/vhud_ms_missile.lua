@@ -103,4 +103,3 @@ CoD.vhud_ms_missile.new = function ( menu, controller )
 	
 	return self
 end
-

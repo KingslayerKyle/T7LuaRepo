@@ -245,4 +245,3 @@ CoD.MediaManager_PaintshopListItem.new = function ( menu, controller )
 	
 	return self
 end
-

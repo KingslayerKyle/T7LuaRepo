@@ -729,4 +729,3 @@ CoD.Promo_ThermometerAndRewards_Idol.new = function ( menu, controller )
 	
 	return self
 end
-

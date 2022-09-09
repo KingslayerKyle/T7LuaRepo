@@ -159,4 +159,3 @@ CoD.Competitive_CharacterDraft_Drafted.new = function ( menu, controller )
 	
 	return self
 end
-

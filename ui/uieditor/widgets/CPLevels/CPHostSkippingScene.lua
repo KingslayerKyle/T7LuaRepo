@@ -30,4 +30,3 @@ CoD.CPHostSkippingScene.new = function ( menu, controller )
 	
 	return self
 end
-

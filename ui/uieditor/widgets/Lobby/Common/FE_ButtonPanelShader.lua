@@ -33,4 +33,3 @@ CoD.FE_ButtonPanelShader.new = function ( menu, controller )
 	
 	return self
 end
-

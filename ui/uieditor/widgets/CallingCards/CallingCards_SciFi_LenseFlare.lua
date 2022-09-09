@@ -210,4 +210,3 @@ CoD.CallingCards_SciFi_LenseFlare.new = function ( menu, controller )
 	
 	return self
 end
-

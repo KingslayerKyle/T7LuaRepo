@@ -37,7 +37,6 @@ CoD.ChooseShowcaseWeapon_LockedVariantText.new = function ( menu, controller )
 			end,
 			ShowVariants = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		ShowText = {
@@ -50,7 +49,6 @@ CoD.ChooseShowcaseWeapon_LockedVariantText.new = function ( menu, controller )
 			end,
 			ShowVariants = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -61,4 +59,3 @@ CoD.ChooseShowcaseWeapon_LockedVariantText.new = function ( menu, controller )
 	
 	return self
 end
-

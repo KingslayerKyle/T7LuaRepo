@@ -53,4 +53,3 @@ CoD.BM_GunMeter.new = function ( menu, controller )
 	
 	return self
 end
-

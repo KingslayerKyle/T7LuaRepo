@@ -166,4 +166,3 @@ CoD.EMP_ScoreInfo.new = function ( menu, controller )
 	
 	return self
 end
-

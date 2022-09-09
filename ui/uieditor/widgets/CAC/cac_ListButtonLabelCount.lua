@@ -71,4 +71,3 @@ CoD.cac_ListButtonLabelCount.new = function ( menu, controller )
 	
 	return self
 end
-

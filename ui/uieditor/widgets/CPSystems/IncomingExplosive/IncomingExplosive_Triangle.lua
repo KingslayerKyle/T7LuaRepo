@@ -48,4 +48,3 @@ CoD.IncomingExplosive_Triangle.new = function ( menu, controller )
 	
 	return self
 end
-

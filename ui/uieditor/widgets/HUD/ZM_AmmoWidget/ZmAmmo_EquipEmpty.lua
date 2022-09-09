@@ -223,4 +223,3 @@ CoD.ZmAmmo_EquipEmpty.new = function ( menu, controller )
 	
 	return self
 end
-

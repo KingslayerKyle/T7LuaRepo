@@ -172,4 +172,3 @@ CoD.CodCasterBombTimerWidget.new = function ( menu, controller )
 	
 	return self
 end
-

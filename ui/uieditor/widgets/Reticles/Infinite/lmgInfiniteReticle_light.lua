@@ -172,4 +172,3 @@ CoD.lmgInfiniteReticle_light.new = function ( menu, controller )
 	
 	return self
 end
-

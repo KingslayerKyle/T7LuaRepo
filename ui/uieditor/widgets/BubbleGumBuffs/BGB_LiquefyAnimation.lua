@@ -336,4 +336,3 @@ CoD.BGB_LiquefyAnimation.new = function ( menu, controller )
 	
 	return self
 end
-

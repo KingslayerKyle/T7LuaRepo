@@ -53,4 +53,3 @@ CoD.PersonalizeCharacter_CPProgressionMessage.new = function ( menu, controller 
 	
 	return self
 end
-

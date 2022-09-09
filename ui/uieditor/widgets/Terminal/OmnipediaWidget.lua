@@ -587,7 +587,6 @@ CoD.OmnipediaWidget.new = function ( menu, controller )
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Closed_Nav = {
@@ -646,11 +645,9 @@ CoD.OmnipediaWidget.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Bookmark_Nav = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Bookmark_Nav = {
@@ -804,11 +801,9 @@ CoD.OmnipediaWidget.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Closed_Nav = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -842,4 +837,3 @@ CoD.OmnipediaWidget.new = function ( menu, controller )
 	
 	return self
 end
-

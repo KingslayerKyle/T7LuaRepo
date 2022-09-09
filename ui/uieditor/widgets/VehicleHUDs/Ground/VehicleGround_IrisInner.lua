@@ -94,4 +94,3 @@ CoD.VehicleGround_IrisInner.new = function ( menu, controller )
 	
 	return self
 end
-

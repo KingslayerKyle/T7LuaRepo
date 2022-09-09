@@ -118,4 +118,3 @@ CoD.DetectNearbyEnemies_CloseRight.new = function ( menu, controller )
 	
 	return self
 end
-

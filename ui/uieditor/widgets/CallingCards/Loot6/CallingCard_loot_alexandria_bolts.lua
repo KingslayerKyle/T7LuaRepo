@@ -369,4 +369,3 @@ CoD.CallingCard_loot_alexandria_bolts.new = function ( menu, controller )
 	
 	return self
 end
-

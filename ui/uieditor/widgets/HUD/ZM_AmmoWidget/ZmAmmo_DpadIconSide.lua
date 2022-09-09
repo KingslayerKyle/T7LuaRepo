@@ -268,7 +268,6 @@ CoD.ZmAmmo_DpadIconSide.new = function ( menu, controller )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Ready = {
@@ -630,4 +629,3 @@ CoD.ZmAmmo_DpadIconSide.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -38,4 +38,3 @@ CoD.MissionRecordVault_MapImage.new = function ( menu, controller )
 	
 	return self
 end
-

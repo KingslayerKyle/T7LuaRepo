@@ -51,4 +51,3 @@ CoD.BowLauncherReticle_L1.new = function ( menu, controller )
 	
 	return self
 end
-

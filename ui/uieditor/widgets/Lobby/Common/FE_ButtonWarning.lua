@@ -69,4 +69,3 @@ CoD.FE_ButtonWarning.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -471,7 +471,6 @@ CoD.LootDecryptionFakeImageCycle.new = function ( menu, controller )
 			end,
 			Looping = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -495,4 +494,3 @@ CoD.LootDecryptionFakeImageCycle.new = function ( menu, controller )
 	
 	return self
 end
-

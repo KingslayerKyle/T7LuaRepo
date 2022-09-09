@@ -84,4 +84,3 @@ CoD.vhud_ms_LockBox.new = function ( menu, controller )
 	
 	return self
 end
-

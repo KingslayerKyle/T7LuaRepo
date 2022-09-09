@@ -76,4 +76,3 @@ CoD.vhud_dart_Iris.new = function ( menu, controller )
 	
 	return self
 end
-

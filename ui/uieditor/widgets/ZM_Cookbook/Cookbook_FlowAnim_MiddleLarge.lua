@@ -39,7 +39,6 @@ CoD.Cookbook_FlowAnim_MiddleLarge.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -50,4 +49,3 @@ CoD.Cookbook_FlowAnim_MiddleLarge.new = function ( menu, controller )
 	
 	return self
 end
-

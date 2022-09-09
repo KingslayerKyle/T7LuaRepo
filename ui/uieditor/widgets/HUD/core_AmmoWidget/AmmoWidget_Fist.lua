@@ -27,15 +27,12 @@ CoD.AmmoWidget_Fist.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			AmmoUpdate = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			HeroWeapon = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -46,4 +43,3 @@ CoD.AmmoWidget_Fist.new = function ( menu, controller )
 	
 	return self
 end
-

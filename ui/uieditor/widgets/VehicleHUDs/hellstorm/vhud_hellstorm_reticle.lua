@@ -378,7 +378,6 @@ CoD.vhud_hellstorm_reticle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		LowAltitude = {
@@ -551,7 +550,6 @@ CoD.vhud_hellstorm_reticle.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		MediumAltitude = {
@@ -722,7 +720,6 @@ CoD.vhud_hellstorm_reticle.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			LowAltitude = function ()
 				self:setupElementClipCounter( 32 )
@@ -1411,7 +1408,6 @@ CoD.vhud_hellstorm_reticle.new = function ( menu, controller )
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			MediumAltitude = function ()
 				self:setupElementClipCounter( 32 )
@@ -2016,4 +2012,3 @@ CoD.vhud_hellstorm_reticle.new = function ( menu, controller )
 	
 	return self
 end
-

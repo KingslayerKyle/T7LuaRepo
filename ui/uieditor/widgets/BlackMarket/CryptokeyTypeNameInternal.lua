@@ -227,4 +227,3 @@ CoD.CryptokeyTypeNameInternal.new = function ( menu, controller )
 	
 	return self
 end
-

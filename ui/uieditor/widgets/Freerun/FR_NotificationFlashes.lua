@@ -60,7 +60,6 @@ CoD.FR_NotificationFlashes.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 2 )
@@ -189,7 +188,6 @@ CoD.FR_NotificationFlashes.new = function ( menu, controller )
 		Checkpoint = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 4 )
@@ -326,7 +324,6 @@ CoD.FR_NotificationFlashes.new = function ( menu, controller )
 		Retry = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 4 )
@@ -516,4 +513,3 @@ CoD.FR_NotificationFlashes.new = function ( menu, controller )
 	
 	return self
 end
-

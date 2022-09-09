@@ -800,4 +800,3 @@ CoD.lmgInfiniteReticle_UI3D_Internal.new = function ( menu, controller )
 	
 	return self
 end
-

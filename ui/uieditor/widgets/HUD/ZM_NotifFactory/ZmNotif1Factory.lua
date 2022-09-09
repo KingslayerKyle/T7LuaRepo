@@ -94,4 +94,3 @@ CoD.ZmNotif1Factory.new = function ( menu, controller )
 	
 	return self
 end
-

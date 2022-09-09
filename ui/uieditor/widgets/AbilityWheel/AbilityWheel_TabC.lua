@@ -110,4 +110,3 @@ CoD.AbilityWheel_TabC.new = function ( menu, controller )
 	
 	return self
 end
-

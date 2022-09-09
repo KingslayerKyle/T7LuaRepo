@@ -84,4 +84,3 @@ CoD.VehicleGround_VignetteContainer.new = function ( menu, controller )
 	
 	return self
 end
-

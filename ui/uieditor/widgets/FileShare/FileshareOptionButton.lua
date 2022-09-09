@@ -1728,4 +1728,3 @@ CoD.FileshareOptionButton.new = function ( menu, controller )
 	
 	return self
 end
-

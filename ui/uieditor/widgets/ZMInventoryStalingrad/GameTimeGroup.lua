@@ -208,7 +208,6 @@ CoD.GameTimeGroup.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Visible = {
@@ -287,4 +286,3 @@ CoD.GameTimeGroup.new = function ( menu, controller )
 	
 	return self
 end
-

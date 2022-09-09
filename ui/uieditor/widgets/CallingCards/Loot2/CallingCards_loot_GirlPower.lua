@@ -357,4 +357,3 @@ CoD.CallingCards_loot_GirlPower.new = function ( menu, controller )
 	
 	return self
 end
-

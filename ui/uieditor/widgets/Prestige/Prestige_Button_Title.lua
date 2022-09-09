@@ -47,21 +47,17 @@ CoD.Prestige_Button_Title.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Locked = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -76,4 +72,3 @@ CoD.Prestige_Button_Title.new = function ( menu, controller )
 	
 	return self
 end
-

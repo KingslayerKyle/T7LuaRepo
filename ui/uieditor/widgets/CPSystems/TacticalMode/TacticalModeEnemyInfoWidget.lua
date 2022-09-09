@@ -54,4 +54,3 @@ CoD.TacticalModeEnemyInfoWidget.new = function ( menu, controller )
 	
 	return self
 end
-

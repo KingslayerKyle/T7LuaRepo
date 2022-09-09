@@ -144,4 +144,3 @@ CoD.Leaderboard_PlayerProfileInfoWidget.new = function ( menu, controller )
 	
 	return self
 end
-

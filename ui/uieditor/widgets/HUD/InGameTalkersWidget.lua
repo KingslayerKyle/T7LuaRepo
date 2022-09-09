@@ -102,4 +102,3 @@ CoD.InGameTalkersWidget.new = function ( menu, controller )
 	
 	return self
 end
-

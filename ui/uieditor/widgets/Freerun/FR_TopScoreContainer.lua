@@ -39,7 +39,6 @@ CoD.FR_TopScoreContainer.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Invisible = {
@@ -94,4 +93,3 @@ CoD.FR_TopScoreContainer.new = function ( menu, controller )
 	
 	return self
 end
-

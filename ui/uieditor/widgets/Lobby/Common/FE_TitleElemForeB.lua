@@ -79,4 +79,3 @@ CoD.FE_TitleElemForeB.new = function ( menu, controller )
 	
 	return self
 end
-

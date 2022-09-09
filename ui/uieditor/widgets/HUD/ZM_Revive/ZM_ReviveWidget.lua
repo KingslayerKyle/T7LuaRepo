@@ -1201,4 +1201,3 @@ CoD.ZM_ReviveWidget.new = function ( menu, controller )
 	
 	return self
 end
-

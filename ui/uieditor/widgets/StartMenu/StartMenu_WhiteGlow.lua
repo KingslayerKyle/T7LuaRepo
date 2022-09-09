@@ -22,4 +22,3 @@ CoD.StartMenu_WhiteGlow.new = function ( menu, controller )
 	
 	return self
 end
-

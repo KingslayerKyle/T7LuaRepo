@@ -31,4 +31,3 @@ CoD.ZmPanel_RndInt.new = function ( menu, controller )
 	
 	return self
 end
-

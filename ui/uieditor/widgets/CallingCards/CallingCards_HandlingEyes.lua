@@ -282,4 +282,3 @@ CoD.CallingCards_HandlingEyes.new = function ( menu, controller )
 	
 	return self
 end
-

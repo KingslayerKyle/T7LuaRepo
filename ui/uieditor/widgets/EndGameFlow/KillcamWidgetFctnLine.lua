@@ -43,4 +43,3 @@ CoD.KillcamWidgetFctnLine.new = function ( menu, controller )
 	
 	return self
 end
-

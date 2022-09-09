@@ -447,4 +447,3 @@ CoD.VehicleGround_ReticleNumbers.new = function ( menu, controller )
 	
 	return self
 end
-

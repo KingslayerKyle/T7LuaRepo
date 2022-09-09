@@ -109,4 +109,3 @@ CoD.vhud_ms_Seating.new = function ( menu, controller )
 	
 	return self
 end
-

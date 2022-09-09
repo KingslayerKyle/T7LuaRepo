@@ -284,4 +284,3 @@ CoD.FullscreeenPupupSteamForm.new = function ( menu, controller )
 	
 	return self
 end
-

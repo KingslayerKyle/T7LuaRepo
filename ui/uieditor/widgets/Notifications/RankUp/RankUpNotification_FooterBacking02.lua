@@ -44,11 +44,9 @@ CoD.RankUpNotification_FooterBacking02.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -59,4 +57,3 @@ CoD.RankUpNotification_FooterBacking02.new = function ( menu, controller )
 	
 	return self
 end
-

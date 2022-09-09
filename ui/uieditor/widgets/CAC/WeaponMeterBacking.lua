@@ -46,7 +46,6 @@ CoD.WeaponMeterBacking.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		DisplayLevel = {
@@ -63,7 +62,6 @@ CoD.WeaponMeterBacking.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		MaxLevel = {
@@ -124,4 +122,3 @@ CoD.WeaponMeterBacking.new = function ( menu, controller )
 	
 	return self
 end
-

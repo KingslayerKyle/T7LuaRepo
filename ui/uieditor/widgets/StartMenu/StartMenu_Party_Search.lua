@@ -100,4 +100,3 @@ CoD.StartMenu_Party_Search.new = function ( menu, controller )
 	
 	return self
 end
-

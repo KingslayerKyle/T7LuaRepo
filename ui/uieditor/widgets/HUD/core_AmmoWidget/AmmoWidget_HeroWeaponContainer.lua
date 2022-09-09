@@ -170,7 +170,6 @@ CoD.AmmoWidget_HeroWeaponContainer.new = function ( menu, controller )
 			end,
 			WheelHide = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Visible = {
@@ -199,4 +198,3 @@ CoD.AmmoWidget_HeroWeaponContainer.new = function ( menu, controller )
 	
 	return self
 end
-

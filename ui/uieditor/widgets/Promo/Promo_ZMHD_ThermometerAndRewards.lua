@@ -627,4 +627,3 @@ CoD.Promo_ZMHD_ThermometerAndRewards.new = function ( menu, controller )
 	
 	return self
 end
-

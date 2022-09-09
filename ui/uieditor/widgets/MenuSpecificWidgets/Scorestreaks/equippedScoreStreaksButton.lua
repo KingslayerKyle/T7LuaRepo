@@ -184,4 +184,3 @@ CoD.equippedScoreStreaksButton.new = function ( menu, controller )
 	
 	return self
 end
-

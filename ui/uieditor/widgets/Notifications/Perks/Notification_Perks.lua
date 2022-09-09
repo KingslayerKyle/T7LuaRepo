@@ -380,4 +380,3 @@ CoD.Notification_Perks.new = function ( menu, controller )
 	
 	return self
 end
-

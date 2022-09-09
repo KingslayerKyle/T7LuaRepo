@@ -1923,4 +1923,3 @@ CoD.AmmoWidget_HeroAbilityRing.new = function ( menu, controller )
 	
 	return self
 end
-

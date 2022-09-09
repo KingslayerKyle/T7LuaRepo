@@ -30,13 +30,11 @@ CoD.StartMenu_frame_noBG.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -47,4 +45,3 @@ CoD.StartMenu_frame_noBG.new = function ( menu, controller )
 	
 	return self
 end
-

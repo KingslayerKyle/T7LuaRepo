@@ -108,4 +108,3 @@ CoD.KillcamRespawnPrompt.new = function ( menu, controller )
 	
 	return self
 end
-

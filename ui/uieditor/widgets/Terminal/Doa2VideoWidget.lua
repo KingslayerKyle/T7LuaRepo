@@ -298,4 +298,3 @@ CoD.Doa2VideoWidget.new = function ( menu, controller )
 	
 	return self
 end
-

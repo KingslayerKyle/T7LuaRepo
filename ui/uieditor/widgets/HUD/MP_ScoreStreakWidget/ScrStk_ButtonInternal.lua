@@ -45,4 +45,3 @@ CoD.ScrStk_ButtonInternal.new = function ( menu, controller )
 	
 	return self
 end
-

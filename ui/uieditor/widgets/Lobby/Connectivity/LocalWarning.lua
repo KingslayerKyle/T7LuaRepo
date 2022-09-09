@@ -31,7 +31,6 @@ CoD.LocalWarning.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		PlayingLive = {
@@ -61,4 +60,3 @@ CoD.LocalWarning.new = function ( menu, controller )
 	
 	return self
 end
-

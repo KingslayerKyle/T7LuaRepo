@@ -205,4 +205,3 @@ CoD.ScoreInfo_EnemyScorePanel.new = function ( menu, controller )
 	
 	return self
 end
-

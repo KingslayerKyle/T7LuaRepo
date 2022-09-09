@@ -210,4 +210,3 @@ CoD.AmmoWidget_EVModeIndicator.new = function ( menu, controller )
 	
 	return self
 end
-

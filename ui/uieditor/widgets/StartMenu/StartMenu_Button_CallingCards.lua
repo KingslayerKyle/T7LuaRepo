@@ -250,4 +250,3 @@ CoD.StartMenu_Button_CallingCards.new = function ( menu, controller )
 	
 	return self
 end
-

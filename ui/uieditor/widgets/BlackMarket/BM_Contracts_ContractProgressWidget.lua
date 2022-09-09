@@ -104,4 +104,3 @@ CoD.BM_Contracts_ContractProgressWidget.new = function ( menu, controller )
 	
 	return self
 end
-

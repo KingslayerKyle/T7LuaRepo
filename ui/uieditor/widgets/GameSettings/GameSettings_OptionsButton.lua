@@ -463,4 +463,3 @@ CoD.GameSettings_OptionsButton.new = function ( menu, controller )
 	
 	return self
 end
-

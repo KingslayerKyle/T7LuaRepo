@@ -103,4 +103,3 @@ CoD.MissionRecordVault_Overview.new = function ( menu, controller )
 	
 	return self
 end
-

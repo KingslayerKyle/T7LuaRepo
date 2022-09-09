@@ -818,4 +818,3 @@ CoD.CallingCards_ZM_Heroes.new = function ( menu, controller )
 	
 	return self
 end
-

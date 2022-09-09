@@ -163,4 +163,3 @@ CoD.ChooseClass_ClassSetTabWidget.new = function ( menu, controller )
 	
 	return self
 end
-

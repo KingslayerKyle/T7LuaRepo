@@ -1583,4 +1583,3 @@ CoD.AmmoWidget_HeroAbilityIconContainer.new = function ( menu, controller )
 	
 	return self
 end
-

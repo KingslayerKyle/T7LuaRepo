@@ -211,4 +211,3 @@ CoD.GameSettings_GameModeRules.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -31,4 +31,3 @@ CoD.VehicleGround_ReticleZoom.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -78,4 +78,3 @@ CoD.ChooseCharacter_CardClickButton.new = function ( menu, controller )
 	
 	return self
 end
-

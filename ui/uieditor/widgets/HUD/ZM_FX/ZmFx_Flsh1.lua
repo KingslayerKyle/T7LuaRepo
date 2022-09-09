@@ -39,4 +39,3 @@ CoD.ZmFx_Flsh1.new = function ( menu, controller )
 	
 	return self
 end
-

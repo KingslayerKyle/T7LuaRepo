@@ -28,4 +28,3 @@ CoD.Social_ShaderContainer.new = function ( menu, controller )
 	
 	return self
 end
-

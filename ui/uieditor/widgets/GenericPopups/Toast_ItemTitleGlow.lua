@@ -94,4 +94,3 @@ CoD.Toast_ItemTitleGlow.new = function ( menu, controller )
 	
 	return self
 end
-

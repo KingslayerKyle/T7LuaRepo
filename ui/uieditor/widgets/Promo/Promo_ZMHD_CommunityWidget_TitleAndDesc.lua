@@ -73,4 +73,3 @@ CoD.Promo_ZMHD_CommunityWidget_TitleAndDesc.new = function ( menu, controller )
 	
 	return self
 end
-

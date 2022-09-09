@@ -164,4 +164,3 @@ CoD.CryptokeyHintTextWidget.new = function ( menu, controller )
 	
 	return self
 end
-

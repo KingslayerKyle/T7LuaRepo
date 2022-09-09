@@ -31,4 +31,3 @@ CoD.FindGroupsTabCreateGroupsFrame.new = function ( menu, controller )
 	
 	return self
 end
-

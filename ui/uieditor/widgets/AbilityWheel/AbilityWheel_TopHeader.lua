@@ -148,4 +148,3 @@ CoD.AbilityWheel_TopHeader.new = function ( menu, controller )
 	
 	return self
 end
-

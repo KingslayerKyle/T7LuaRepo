@@ -36,4 +36,3 @@ CoD.verticalScrollingTextBox18.new = function ( menu, controller )
 	
 	return self
 end
-

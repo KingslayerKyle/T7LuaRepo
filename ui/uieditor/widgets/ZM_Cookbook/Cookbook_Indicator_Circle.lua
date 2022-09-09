@@ -59,4 +59,3 @@ CoD.Cookbook_Indicator_Circle.new = function ( menu, controller )
 	
 	return self
 end
-

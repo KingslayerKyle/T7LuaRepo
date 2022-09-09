@@ -30,4 +30,3 @@ CoD.ZM_ReviveClampedArrow.new = function ( menu, controller )
 	
 	return self
 end
-

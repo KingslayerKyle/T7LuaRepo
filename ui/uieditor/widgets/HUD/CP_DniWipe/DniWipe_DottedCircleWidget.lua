@@ -678,4 +678,3 @@ CoD.DniWipe_DottedCircleWidget.new = function ( menu, controller )
 	
 	return self
 end
-

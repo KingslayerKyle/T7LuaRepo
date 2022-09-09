@@ -144,4 +144,3 @@ CoD.Challenges_PercentCompleteWidget_SM.new = function ( menu, controller )
 	
 	return self
 end
-

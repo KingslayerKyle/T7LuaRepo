@@ -749,4 +749,3 @@ CoD.MinimapHelper.new = function ( menu, controller )
 	
 	return self
 end
-

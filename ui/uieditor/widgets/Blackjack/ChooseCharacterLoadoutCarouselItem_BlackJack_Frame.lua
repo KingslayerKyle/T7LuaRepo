@@ -118,7 +118,6 @@ CoD.ChooseCharacterLoadoutCarouselItem_BlackJack_Frame.new = function ( menu, co
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -134,4 +133,3 @@ CoD.ChooseCharacterLoadoutCarouselItem_BlackJack_Frame.new = function ( menu, co
 	
 	return self
 end
-

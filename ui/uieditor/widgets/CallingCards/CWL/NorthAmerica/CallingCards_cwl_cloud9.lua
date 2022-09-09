@@ -338,4 +338,3 @@ CoD.CallingCards_cwl_cloud9.new = function ( menu, controller )
 	
 	return self
 end
-

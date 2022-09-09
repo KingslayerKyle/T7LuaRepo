@@ -137,4 +137,3 @@ CoD.DomWaypointContainer.new = function ( menu, controller )
 	
 	return self
 end
-

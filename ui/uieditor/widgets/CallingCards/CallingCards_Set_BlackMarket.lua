@@ -164,4 +164,3 @@ CoD.CallingCards_Set_BlackMarket.new = function ( menu, controller )
 	
 	return self
 end
-

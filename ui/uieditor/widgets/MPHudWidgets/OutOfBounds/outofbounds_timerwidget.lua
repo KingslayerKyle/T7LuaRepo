@@ -116,7 +116,6 @@ CoD.outofbounds_timerwidget.new = function ( menu, controller )
 		IsOutOfBounds = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -132,4 +131,3 @@ CoD.outofbounds_timerwidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -65,4 +65,3 @@ CoD.vhud_dart_NotificationAltBox.new = function ( menu, controller )
 	
 	return self
 end
-

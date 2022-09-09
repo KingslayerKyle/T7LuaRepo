@@ -115,4 +115,3 @@ CoD.StartMenu_CollectableItem.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -53,7 +53,6 @@ CoD.PersonalizeSpecTitle.new = function ( menu, controller )
 		ShowCurrentlyEquippedInfo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -68,4 +67,3 @@ CoD.PersonalizeSpecTitle.new = function ( menu, controller )
 	
 	return self
 end
-

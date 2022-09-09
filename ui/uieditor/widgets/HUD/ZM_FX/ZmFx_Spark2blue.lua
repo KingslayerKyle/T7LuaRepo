@@ -51,7 +51,6 @@ CoD.ZmFx_Spark2blue.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -62,4 +61,3 @@ CoD.ZmFx_Spark2blue.new = function ( menu, controller )
 	
 	return self
 end
-

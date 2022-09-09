@@ -40,4 +40,3 @@ CoD.GunsmithStatBaseWeaponValue.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -35,4 +35,3 @@ CoD.fe_footerRighSlideIn.new = function ( menu, controller )
 	
 	return self
 end
-

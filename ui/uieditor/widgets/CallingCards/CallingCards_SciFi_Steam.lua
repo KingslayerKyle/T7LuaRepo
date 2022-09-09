@@ -150,4 +150,3 @@ CoD.CallingCards_SciFi_Steam.new = function ( menu, controller )
 	
 	return self
 end
-

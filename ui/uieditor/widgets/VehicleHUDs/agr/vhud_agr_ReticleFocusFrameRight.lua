@@ -41,4 +41,3 @@ CoD.vhud_agr_ReticleFocusFrameRight.new = function ( menu, controller )
 	
 	return self
 end
-

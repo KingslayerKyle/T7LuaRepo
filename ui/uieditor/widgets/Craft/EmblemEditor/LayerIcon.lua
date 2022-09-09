@@ -174,4 +174,3 @@ CoD.LayerIcon.new = function ( menu, controller )
 	
 	return self
 end
-

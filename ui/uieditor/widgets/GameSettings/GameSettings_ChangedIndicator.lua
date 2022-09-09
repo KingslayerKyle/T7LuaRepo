@@ -122,4 +122,3 @@ CoD.GameSettings_ChangedIndicator.new = function ( menu, controller )
 	
 	return self
 end
-

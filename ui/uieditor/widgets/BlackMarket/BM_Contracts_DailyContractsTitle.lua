@@ -43,4 +43,3 @@ CoD.BM_Contracts_DailyContractsTitle.new = function ( menu, controller )
 	
 	return self
 end
-

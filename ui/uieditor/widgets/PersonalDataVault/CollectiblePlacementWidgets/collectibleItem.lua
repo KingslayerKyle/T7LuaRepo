@@ -509,4 +509,3 @@ CoD.collectibleItem.new = function ( menu, controller )
 	
 	return self
 end
-

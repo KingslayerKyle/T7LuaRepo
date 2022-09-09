@@ -100,4 +100,3 @@ CoD.FE_TitleElemForeA.new = function ( menu, controller )
 	
 	return self
 end
-

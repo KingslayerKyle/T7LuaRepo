@@ -149,4 +149,3 @@ CoD.CallingCards_loot_Manga.new = function ( menu, controller )
 	
 	return self
 end
-

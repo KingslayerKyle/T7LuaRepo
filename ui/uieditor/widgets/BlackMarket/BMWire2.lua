@@ -124,4 +124,3 @@ CoD.BMWire2.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -1127,4 +1127,3 @@ CoD.FileshareSelectorItemLarge.new = function ( menu, controller )
 	
 	return self
 end
-

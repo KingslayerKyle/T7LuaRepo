@@ -93,4 +93,3 @@ CoD.LobbyMemberPartyMemberIconNew.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -467,4 +467,3 @@ CoD.ZmAmmo_DpadAmmoNumbers.new = function ( menu, controller )
 	
 	return self
 end
-

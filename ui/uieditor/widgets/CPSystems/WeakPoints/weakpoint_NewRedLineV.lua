@@ -67,4 +67,3 @@ CoD.weakpoint_NewRedLineV.new = function ( menu, controller )
 	
 	return self
 end
-

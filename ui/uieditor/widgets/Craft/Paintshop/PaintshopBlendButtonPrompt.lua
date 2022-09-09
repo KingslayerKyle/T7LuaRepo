@@ -100,4 +100,3 @@ CoD.PaintshopBlendButtonPrompt.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -59,11 +59,9 @@ local f0_local3 = function ( f4_arg0, f4_arg1 )
 end
 
 local f0_local4 = function ( f5_arg0, f5_arg1, f5_arg2, f5_arg3, f5_arg4 )
-	
 end
 
 local f0_local5 = function ( f6_arg0, f6_arg1, f6_arg2 )
-	
 end
 
 local f0_local6 = function ( f7_arg0, f7_arg1 )
@@ -78,11 +76,9 @@ local f0_local6 = function ( f7_arg0, f7_arg1 )
 end
 
 local f0_local7 = function ( f8_arg0, f8_arg1 )
-	
 end
 
 local f0_local8 = function ( f9_arg0 )
-	
 end
 
 local PostLoadFunc = function ( f10_arg0, f10_arg1 )
@@ -145,4 +141,3 @@ CoD.HackWaypoint.new = function ( menu, controller )
 	
 	return self
 end
-

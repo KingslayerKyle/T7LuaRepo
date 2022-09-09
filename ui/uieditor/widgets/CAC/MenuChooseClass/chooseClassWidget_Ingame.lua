@@ -472,4 +472,3 @@ CoD.chooseClassWidget_Ingame.new = function ( menu, controller )
 	
 	return self
 end
-

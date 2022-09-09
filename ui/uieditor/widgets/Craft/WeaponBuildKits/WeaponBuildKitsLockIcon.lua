@@ -51,7 +51,6 @@ CoD.WeaponBuildKitsLockIcon.new = function ( menu, controller )
 			end,
 			ShowVariants = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Locked = {
@@ -75,4 +74,3 @@ CoD.WeaponBuildKitsLockIcon.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -81,4 +81,3 @@ CoD.BM_Promo_TitleAndCountdown.new = function ( menu, controller )
 	
 	return self
 end
-

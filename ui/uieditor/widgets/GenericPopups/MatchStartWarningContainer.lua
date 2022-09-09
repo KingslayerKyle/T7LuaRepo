@@ -101,4 +101,3 @@ CoD.MatchStartWarningContainer.new = function ( menu, controller )
 	
 	return self
 end
-

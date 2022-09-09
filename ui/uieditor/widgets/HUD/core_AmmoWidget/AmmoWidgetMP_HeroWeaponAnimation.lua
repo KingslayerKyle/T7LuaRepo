@@ -284,7 +284,6 @@ CoD.AmmoWidgetMP_HeroWeaponAnimation.new = function ( menu, controller )
 		HudPause = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -299,4 +298,3 @@ CoD.AmmoWidgetMP_HeroWeaponAnimation.new = function ( menu, controller )
 	
 	return self
 end
-

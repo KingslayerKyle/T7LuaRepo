@@ -83,4 +83,3 @@ CoD.GameSettings_titlesecbox.new = function ( menu, controller )
 	
 	return self
 end
-

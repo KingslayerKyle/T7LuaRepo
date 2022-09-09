@@ -219,4 +219,3 @@ CoD.BM_Pixel06FX.new = function ( menu, controller )
 	
 	return self
 end
-

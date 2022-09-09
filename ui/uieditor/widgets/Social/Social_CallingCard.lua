@@ -68,4 +68,3 @@ CoD.Social_CallingCard.new = function ( menu, controller )
 	
 	return self
 end
-

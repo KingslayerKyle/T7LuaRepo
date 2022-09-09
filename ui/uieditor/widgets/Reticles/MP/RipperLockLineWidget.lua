@@ -41,4 +41,3 @@ CoD.RipperLockLineWidget.new = function ( menu, controller )
 	
 	return self
 end
-

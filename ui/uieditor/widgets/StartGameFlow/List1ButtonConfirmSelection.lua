@@ -969,4 +969,3 @@ CoD.List1ButtonConfirmSelection.new = function ( menu, controller )
 	
 	return self
 end
-

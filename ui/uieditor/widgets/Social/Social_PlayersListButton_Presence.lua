@@ -118,4 +118,3 @@ CoD.Social_PlayersListButton_Presence.new = function ( menu, controller )
 	
 	return self
 end
-

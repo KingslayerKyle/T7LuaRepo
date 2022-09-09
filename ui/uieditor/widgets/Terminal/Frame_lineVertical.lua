@@ -53,4 +53,3 @@ CoD.Frame_lineVertical.new = function ( menu, controller )
 	
 	return self
 end
-

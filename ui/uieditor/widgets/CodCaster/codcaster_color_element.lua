@@ -320,4 +320,3 @@ CoD.codcaster_color_element.new = function ( menu, controller )
 	
 	return self
 end
-

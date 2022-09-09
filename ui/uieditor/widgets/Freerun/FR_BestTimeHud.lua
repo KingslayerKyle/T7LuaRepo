@@ -111,7 +111,6 @@ CoD.FR_BestTimeHud.new = function ( menu, controller )
 			end,
 			FaultAnim = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Inactive = {
@@ -167,4 +166,3 @@ CoD.FR_BestTimeHud.new = function ( menu, controller )
 	
 	return self
 end
-

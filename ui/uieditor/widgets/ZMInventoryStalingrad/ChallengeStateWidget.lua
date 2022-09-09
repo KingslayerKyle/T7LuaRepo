@@ -177,4 +177,3 @@ CoD.ChallengeStateWidget.new = function ( menu, controller )
 	
 	return self
 end
-

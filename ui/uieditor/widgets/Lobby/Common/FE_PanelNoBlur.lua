@@ -32,4 +32,3 @@ CoD.FE_PanelNoBlur.new = function ( menu, controller )
 	
 	return self
 end
-

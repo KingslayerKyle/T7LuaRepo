@@ -98,4 +98,3 @@ CoD.StartMenu_Options_PC_GamepadControls.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -780,4 +780,3 @@ CoD.NotificationQueue.new = function ( menu, controller )
 	
 	return self
 end
-

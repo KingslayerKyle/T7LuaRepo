@@ -330,4 +330,3 @@ CoD.DragonCollarControllerWidgets_stalingrad.new = function ( menu, controller )
 	
 	return self
 end
-

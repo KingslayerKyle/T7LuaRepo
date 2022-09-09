@@ -193,7 +193,6 @@ CoD.PrivateClientList.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		ShowQuickJoin = {
@@ -249,4 +248,3 @@ CoD.PrivateClientList.new = function ( menu, controller )
 	
 	return self
 end
-

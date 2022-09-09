@@ -151,4 +151,3 @@ CoD.LobbyMemberTeamColorBackground_OnChange.new = function ( menu, controller )
 	
 	return self
 end
-

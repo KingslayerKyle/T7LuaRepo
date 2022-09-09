@@ -321,4 +321,3 @@ CoD.FE_SelectionList.new = function ( menu, controller )
 	
 	return self
 end
-

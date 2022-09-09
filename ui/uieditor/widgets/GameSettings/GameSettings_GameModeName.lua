@@ -49,4 +49,3 @@ CoD.GameSettings_GameModeName.new = function ( menu, controller )
 	
 	return self
 end
-

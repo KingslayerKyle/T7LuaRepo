@@ -321,4 +321,3 @@ CoD.ChooseCharacterLoadoutCarouselItem_BackListItem.new = function ( menu, contr
 	
 	return self
 end
-

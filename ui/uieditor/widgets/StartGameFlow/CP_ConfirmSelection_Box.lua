@@ -87,4 +87,3 @@ CoD.CP_ConfirmSelection_Box.new = function ( menu, controller )
 	
 	return self
 end
-

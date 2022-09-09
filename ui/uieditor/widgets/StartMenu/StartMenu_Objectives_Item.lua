@@ -215,4 +215,3 @@ CoD.StartMenu_Objectives_Item.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -55,4 +55,3 @@ CoD.VehicleGround_IrisOutterDigi.new = function ( menu, controller )
 	
 	return self
 end
-

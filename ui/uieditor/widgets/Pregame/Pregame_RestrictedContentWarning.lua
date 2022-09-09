@@ -548,4 +548,3 @@ CoD.Pregame_RestrictedContentWarning.new = function ( menu, controller )
 	
 	return self
 end
-

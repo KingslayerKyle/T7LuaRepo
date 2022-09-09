@@ -147,4 +147,3 @@ CoD.StartLabel.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -187,4 +187,3 @@ CoD.Playlist_SpecialEventWidget.new = function ( menu, controller )
 	
 	return self
 end
-

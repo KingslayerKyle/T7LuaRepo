@@ -1100,4 +1100,3 @@ CoD.MapWidgetContainer.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -39,4 +39,3 @@ CoD.rocketLauncherReticle.new = function ( menu, controller )
 	
 	return self
 end
-

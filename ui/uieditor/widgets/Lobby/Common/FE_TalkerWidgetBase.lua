@@ -99,4 +99,3 @@ CoD.FE_TalkerWidgetBase.new = function ( menu, controller )
 	
 	return self
 end
-

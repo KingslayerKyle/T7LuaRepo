@@ -171,4 +171,3 @@ CoD.CallingCards_GroundAssault_Eyes.new = function ( menu, controller )
 	
 	return self
 end
-

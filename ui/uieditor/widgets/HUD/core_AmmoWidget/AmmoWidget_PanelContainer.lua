@@ -106,7 +106,6 @@ CoD.AmmoWidget_PanelContainer.new = function ( menu, controller )
 			end,
 			Knife = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Weapon3Digits = {
@@ -144,4 +143,3 @@ CoD.AmmoWidget_PanelContainer.new = function ( menu, controller )
 	
 	return self
 end
-

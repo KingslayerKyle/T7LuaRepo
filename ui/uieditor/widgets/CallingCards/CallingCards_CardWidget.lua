@@ -1029,4 +1029,3 @@ CoD.CallingCards_CardWidget.new = function ( menu, controller )
 	
 	return self
 end
-

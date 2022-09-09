@@ -787,4 +787,3 @@ CoD.BM_BurningDuplicatesAnimation.new = function ( menu, controller )
 	
 	return self
 end
-

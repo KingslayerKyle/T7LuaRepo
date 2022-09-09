@@ -48,7 +48,6 @@ CoD.AbilityWheel_CenterHex.new = function ( menu, controller )
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -59,4 +58,3 @@ CoD.AbilityWheel_CenterHex.new = function ( menu, controller )
 	
 	return self
 end
-

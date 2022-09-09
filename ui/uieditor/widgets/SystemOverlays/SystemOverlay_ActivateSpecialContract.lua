@@ -272,4 +272,3 @@ CoD.SystemOverlay_ActivateSpecialContract.new = function ( menu, controller )
 	
 	return self
 end
-

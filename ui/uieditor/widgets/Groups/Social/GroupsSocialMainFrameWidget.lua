@@ -399,4 +399,3 @@ CoD.GroupsSocialMainFrameWidget.new = function ( menu, controller )
 	
 	return self
 end
-

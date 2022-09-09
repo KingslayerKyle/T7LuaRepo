@@ -54,7 +54,6 @@ CoD.vhud_ms_HashRotateRight.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 1 )
@@ -77,7 +76,6 @@ CoD.vhud_ms_HashRotateRight.new = function ( menu, controller )
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -94,4 +92,3 @@ CoD.vhud_ms_HashRotateRight.new = function ( menu, controller )
 	
 	return self
 end
-

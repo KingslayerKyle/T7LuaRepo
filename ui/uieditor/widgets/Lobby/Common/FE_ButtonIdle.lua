@@ -32,4 +32,3 @@ CoD.FE_ButtonIdle.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -919,4 +919,3 @@ CoD.Social_PlayersListButton_Offline.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -96,23 +96,19 @@ CoD.bleedOutBlurContainer.new = function ( menu, controller )
 		BleedingOut = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			BleedingOut_Low = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		BleedingOut_Low = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Reviving = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -172,4 +168,3 @@ CoD.bleedOutBlurContainer.new = function ( menu, controller )
 	
 	return self
 end
-

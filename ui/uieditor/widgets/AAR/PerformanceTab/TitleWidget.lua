@@ -70,4 +70,3 @@ CoD.TitleWidget.new = function ( menu, controller )
 	
 	return self
 end
-

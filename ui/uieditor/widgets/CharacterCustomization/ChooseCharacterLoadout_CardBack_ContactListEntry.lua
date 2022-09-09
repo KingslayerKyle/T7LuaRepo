@@ -65,4 +65,3 @@ CoD.ChooseCharacterLoadout_CardBack_ContactListEntry.new = function ( menu, cont
 	
 	return self
 end
-

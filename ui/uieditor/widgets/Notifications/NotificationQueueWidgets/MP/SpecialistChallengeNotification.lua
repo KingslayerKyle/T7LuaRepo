@@ -1122,4 +1122,3 @@ CoD.SpecialistChallengeNotification.new = function ( menu, controller )
 	
 	return self
 end
-

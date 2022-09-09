@@ -526,4 +526,3 @@ CoD.ChallengeProgressionInfo.new = function ( menu, controller )
 	
 	return self
 end
-

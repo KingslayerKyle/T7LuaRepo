@@ -198,4 +198,3 @@ CoD.SpecialContracts_RewardImage.new = function ( menu, controller )
 	
 	return self
 end
-

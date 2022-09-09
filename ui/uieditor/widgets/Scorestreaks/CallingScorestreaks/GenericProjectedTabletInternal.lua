@@ -1002,4 +1002,3 @@ CoD.GenericProjectedTabletInternal.new = function ( menu, controller )
 	
 	return self
 end
-

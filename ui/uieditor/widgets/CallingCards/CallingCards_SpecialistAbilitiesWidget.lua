@@ -32,4 +32,3 @@ CoD.CallingCards_SpecialistAbilitiesWidget.new = function ( menu, controller )
 	
 	return self
 end
-

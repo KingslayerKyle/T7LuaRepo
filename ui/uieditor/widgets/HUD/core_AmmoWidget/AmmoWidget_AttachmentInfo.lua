@@ -1244,4 +1244,3 @@ CoD.AmmoWidget_AttachmentInfo.new = function ( menu, controller )
 	
 	return self
 end
-

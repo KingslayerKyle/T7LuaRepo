@@ -374,4 +374,3 @@ CoD.CallingCards_loot_BO2_flash.new = function ( menu, controller )
 	
 	return self
 end
-

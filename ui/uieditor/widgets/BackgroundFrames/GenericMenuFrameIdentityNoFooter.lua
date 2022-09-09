@@ -81,4 +81,3 @@ CoD.GenericMenuFrameIdentityNoFooter.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -526,4 +526,3 @@ CoD.ChooseContractCharacterLoadoutCarouselItem_InfoArea.new = function ( menu, c
 	
 	return self
 end
-

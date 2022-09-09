@@ -205,4 +205,3 @@ CoD.ScoreInfo_UserScorePanel.new = function ( menu, controller )
 	
 	return self
 end
-

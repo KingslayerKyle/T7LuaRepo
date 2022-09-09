@@ -99,7 +99,6 @@ CoD.PulseRifleReticle_Numbers_Widget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		One = {
@@ -560,4 +559,3 @@ CoD.PulseRifleReticle_Numbers_Widget.new = function ( menu, controller )
 	
 	return self
 end
-

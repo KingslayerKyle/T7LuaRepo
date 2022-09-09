@@ -86,7 +86,6 @@ CoD.vhud_sentinel_horizon_elements.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 7 )
@@ -645,4 +644,3 @@ CoD.vhud_sentinel_horizon_elements.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -246,7 +246,6 @@ CoD.MP_HardcoreInventoryWidget.new = function ( menu, controller )
 			end,
 			SpeedBoost = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		NotHardcore = {
@@ -292,4 +291,3 @@ CoD.MP_HardcoreInventoryWidget.new = function ( menu, controller )
 	
 	return self
 end
-

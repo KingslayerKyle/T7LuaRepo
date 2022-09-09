@@ -246,4 +246,3 @@ CoD.Challenges_Summary_NearCompletionButton.new = function ( menu, controller )
 	
 	return self
 end
-

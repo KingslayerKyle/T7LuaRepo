@@ -939,4 +939,3 @@ CoD.vhud_siegebot_bootupWidget.new = function ( menu, controller )
 	
 	return self
 end
-

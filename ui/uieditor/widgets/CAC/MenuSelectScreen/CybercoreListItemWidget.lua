@@ -175,4 +175,3 @@ CoD.CybercoreListItemWidget.new = function ( menu, controller )
 	
 	return self
 end
-

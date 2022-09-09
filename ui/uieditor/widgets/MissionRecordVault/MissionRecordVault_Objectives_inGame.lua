@@ -171,4 +171,3 @@ CoD.MissionRecordVault_Objectives_inGame.new = function ( menu, controller )
 	
 	return self
 end
-

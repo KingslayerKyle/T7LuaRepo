@@ -38,4 +38,3 @@ CoD.BM_Contracts_SideBetCallingCard.new = function ( menu, controller )
 	
 	return self
 end
-

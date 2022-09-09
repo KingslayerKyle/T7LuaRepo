@@ -164,4 +164,3 @@ CoD.fe_RightContainerWithHeroesHead.new = function ( menu, controller )
 	
 	return self
 end
-

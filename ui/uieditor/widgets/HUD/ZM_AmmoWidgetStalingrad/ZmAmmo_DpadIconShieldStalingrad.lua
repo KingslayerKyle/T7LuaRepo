@@ -263,7 +263,6 @@ CoD.ZmAmmo_DpadIconShieldStalingrad.new = function ( menu, controller )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Ready = {
@@ -581,4 +580,3 @@ CoD.ZmAmmo_DpadIconShieldStalingrad.new = function ( menu, controller )
 	
 	return self
 end
-

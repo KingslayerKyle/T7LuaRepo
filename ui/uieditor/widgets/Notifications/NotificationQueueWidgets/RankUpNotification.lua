@@ -1117,4 +1117,3 @@ CoD.RankUpNotification.new = function ( menu, controller )
 	
 	return self
 end
-

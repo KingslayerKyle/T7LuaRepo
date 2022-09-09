@@ -551,4 +551,3 @@ CoD.StartMenu_Button_LG.new = function ( menu, controller )
 	
 	return self
 end
-

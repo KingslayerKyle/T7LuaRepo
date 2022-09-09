@@ -46,7 +46,6 @@ CoD.SafeHouse_ListButtonLabel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -61,4 +60,3 @@ CoD.SafeHouse_ListButtonLabel.new = function ( menu, controller )
 	
 	return self
 end
-

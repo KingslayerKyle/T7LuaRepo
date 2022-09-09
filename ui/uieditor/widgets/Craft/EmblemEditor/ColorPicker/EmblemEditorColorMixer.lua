@@ -332,4 +332,3 @@ CoD.EmblemEditorColorMixer.new = function ( menu, controller )
 	
 	return self
 end
-

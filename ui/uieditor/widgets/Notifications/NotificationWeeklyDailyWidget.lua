@@ -64,4 +64,3 @@ CoD.NotificationWeeklyDailyWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -43,4 +43,3 @@ CoD.RankUpNotification_FooterBacking01.new = function ( menu, controller )
 	
 	return self
 end
-

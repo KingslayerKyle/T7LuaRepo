@@ -127,4 +127,3 @@ CoD.FindGroupsTabSearchPlayerFrame.new = function ( menu, controller )
 	
 	return self
 end
-

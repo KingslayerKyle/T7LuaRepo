@@ -1171,4 +1171,3 @@ CoD.paintshopTabWidget_SM.new = function ( menu, controller )
 	
 	return self
 end
-

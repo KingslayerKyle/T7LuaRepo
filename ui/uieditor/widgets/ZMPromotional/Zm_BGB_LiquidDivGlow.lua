@@ -79,4 +79,3 @@ CoD.Zm_BGB_LiquidDivGlow.new = function ( menu, controller )
 	
 	return self
 end
-

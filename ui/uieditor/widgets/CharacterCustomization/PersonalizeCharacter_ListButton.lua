@@ -2665,4 +2665,3 @@ CoD.PersonalizeCharacter_ListButton.new = function ( menu, controller )
 	
 	return self
 end
-

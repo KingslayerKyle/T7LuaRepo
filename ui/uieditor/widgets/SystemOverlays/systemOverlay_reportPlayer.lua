@@ -187,4 +187,3 @@ CoD.systemOverlay_reportPlayer.new = function ( menu, controller )
 	
 	return self
 end
-

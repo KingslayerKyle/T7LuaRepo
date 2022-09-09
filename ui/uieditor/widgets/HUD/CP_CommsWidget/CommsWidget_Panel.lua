@@ -29,21 +29,17 @@ CoD.CommsWidget_Panel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			OffsiteCommsActive = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		OffsiteCommsActive = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -58,4 +54,3 @@ CoD.CommsWidget_Panel.new = function ( menu, controller )
 	
 	return self
 end
-

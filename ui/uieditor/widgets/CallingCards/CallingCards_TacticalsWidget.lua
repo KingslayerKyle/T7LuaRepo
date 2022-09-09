@@ -32,4 +32,3 @@ CoD.CallingCards_TacticalsWidget.new = function ( menu, controller )
 	
 	return self
 end
-

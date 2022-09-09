@@ -476,4 +476,3 @@ CoD.MissionRecordVault_ReplayMissionMapInfo.new = function ( menu, controller )
 	
 	return self
 end
-

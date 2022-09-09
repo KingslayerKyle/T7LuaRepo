@@ -65,4 +65,3 @@ CoD.cac_TacticalRigDescription.new = function ( menu, controller )
 	
 	return self
 end
-

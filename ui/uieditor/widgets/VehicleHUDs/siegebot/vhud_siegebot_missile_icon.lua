@@ -233,4 +233,3 @@ CoD.vhud_siegebot_missile_icon.new = function ( menu, controller )
 	
 	return self
 end
-

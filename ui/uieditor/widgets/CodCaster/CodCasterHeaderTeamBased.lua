@@ -555,4 +555,3 @@ CoD.CodCasterHeaderTeamBased.new = function ( menu, controller )
 	
 	return self
 end
-

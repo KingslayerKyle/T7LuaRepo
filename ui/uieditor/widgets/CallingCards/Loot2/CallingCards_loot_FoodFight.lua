@@ -185,4 +185,3 @@ CoD.CallingCards_loot_FoodFight.new = function ( menu, controller )
 	
 	return self
 end
-

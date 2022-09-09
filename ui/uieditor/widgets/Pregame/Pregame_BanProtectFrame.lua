@@ -52,4 +52,3 @@ CoD.Pregame_BanProtectFrame.new = function ( menu, controller )
 	
 	return self
 end
-

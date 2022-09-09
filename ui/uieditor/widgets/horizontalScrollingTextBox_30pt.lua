@@ -36,4 +36,3 @@ CoD.horizontalScrollingTextBox_30pt.new = function ( menu, controller )
 	
 	return self
 end
-

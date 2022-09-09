@@ -50,4 +50,3 @@ CoD.CodCasterLoadoutItemBackgroundAngle.new = function ( menu, controller )
 	
 	return self
 end
-

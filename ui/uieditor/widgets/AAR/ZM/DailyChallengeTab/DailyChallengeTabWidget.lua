@@ -48,4 +48,3 @@ CoD.DailyChallengeTabWidget.new = function ( menu, controller )
 	
 	return self
 end
-

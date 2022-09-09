@@ -95,4 +95,3 @@ CoD.cac_restriction_warning.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -37,4 +37,3 @@ CoD.Rejack.new = function ( menu, controller )
 	
 	return self
 end
-

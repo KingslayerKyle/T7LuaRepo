@@ -699,4 +699,3 @@ CoD.ZmAmmo_TotalFactory.new = function ( menu, controller )
 	
 	return self
 end
-

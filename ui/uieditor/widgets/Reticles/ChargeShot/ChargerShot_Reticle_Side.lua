@@ -30,4 +30,3 @@ CoD.ChargerShot_Reticle_Side.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -66,4 +66,3 @@ CoD.Notif_Global_Title.new = function ( menu, controller )
 	
 	return self
 end
-

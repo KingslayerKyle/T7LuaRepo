@@ -217,4 +217,3 @@ CoD.MOTD_Footer.new = function ( menu, controller )
 	
 	return self
 end
-

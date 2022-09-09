@@ -30,4 +30,3 @@ CoD.MapWidget_BarTop.new = function ( menu, controller )
 	
 	return self
 end
-

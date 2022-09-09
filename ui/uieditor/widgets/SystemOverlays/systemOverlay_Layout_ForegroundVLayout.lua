@@ -125,4 +125,3 @@ CoD.systemOverlay_Layout_ForegroundVLayout.new = function ( menu, controller )
 	
 	return self
 end
-

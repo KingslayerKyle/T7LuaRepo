@@ -146,4 +146,3 @@ CoD.StartMenuButtonItem.new = function ( menu, controller )
 	
 	return self
 end
-

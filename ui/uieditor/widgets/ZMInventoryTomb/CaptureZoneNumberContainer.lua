@@ -107,4 +107,3 @@ CoD.CaptureZoneNumberContainer.new = function ( menu, controller )
 	
 	return self
 end
-

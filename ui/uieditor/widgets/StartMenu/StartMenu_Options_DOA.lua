@@ -343,4 +343,3 @@ CoD.StartMenu_Options_DOA.new = function ( menu, controller )
 	
 	return self
 end
-

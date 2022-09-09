@@ -9,7 +9,6 @@ require( "ui.uieditor.widgets.Competitive.Competitive_SettingsSummary" )
 require( "ui.uieditor.widgets.Lobby.LobbyDoubleXPWidgetContainer" )
 
 local PostLoadFunc = function ( self, controller, menu )
-
 	LUI.OverrideFunction_CallOriginalFirst( self.MenuTitleContainer.MenuTitle.TextBox1.Label0, "setText", function ()
 		self.MenuTitleContainer:playClip( "Update" )
 		self.selectionList:playClip( "Update" )
@@ -696,19 +695,16 @@ CoD.LeftContainer.new = function ( menu, controller )
 		mpLobbyOnline = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		mpLobbyOnlineGame = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		mpLobbyOnlineCustom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		ListUpCopy = {
@@ -889,4 +885,3 @@ CoD.LeftContainer.new = function ( menu, controller )
 	
 	return self
 end
-

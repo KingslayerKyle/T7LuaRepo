@@ -161,4 +161,3 @@ CoD.fe_BTNBG.new = function ( menu, controller )
 	
 	return self
 end
-

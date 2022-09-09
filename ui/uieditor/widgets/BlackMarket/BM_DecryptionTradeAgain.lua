@@ -155,4 +155,3 @@ CoD.BM_DecryptionTradeAgain.new = function ( menu, controller )
 	
 	return self
 end
-

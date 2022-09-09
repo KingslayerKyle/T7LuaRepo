@@ -73,4 +73,3 @@ CoD.SystemOverlay_MapPackFrame.new = function ( menu, controller )
 	
 	return self
 end
-

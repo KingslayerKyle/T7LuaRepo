@@ -34,7 +34,6 @@ CoD.ChooseCharacter_HelpBubble_ButtonBackground.new = function ( menu, controlle
 			end,
 			Over = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -45,4 +44,3 @@ CoD.ChooseCharacter_HelpBubble_ButtonBackground.new = function ( menu, controlle
 	
 	return self
 end
-

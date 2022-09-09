@@ -199,4 +199,3 @@ CoD.ZM_Revive.new = function ( menu, controller )
 	
 	return self
 end
-

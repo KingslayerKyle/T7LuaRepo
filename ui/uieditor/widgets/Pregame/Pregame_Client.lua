@@ -337,13 +337,11 @@ CoD.Pregame_Client.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		ItemRestriction = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			CharacterDraft = function ()
 				self:setupElementClipCounter( 18 )
@@ -2530,4 +2528,3 @@ CoD.Pregame_Client.new = function ( menu, controller )
 	
 	return self
 end
-

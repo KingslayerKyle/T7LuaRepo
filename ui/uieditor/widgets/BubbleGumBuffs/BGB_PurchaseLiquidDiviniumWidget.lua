@@ -921,4 +921,3 @@ CoD.BGB_PurchaseLiquidDiviniumWidget.new = function ( menu, controller )
 	
 	return self
 end
-

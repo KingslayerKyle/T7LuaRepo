@@ -29,4 +29,3 @@ CoD.CAC_varientTitlePanel.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -56,11 +56,9 @@ CoD.LoadingScreen_DoubleXPWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			StartLoading = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		TripleDouble = {
@@ -201,4 +199,3 @@ CoD.LoadingScreen_DoubleXPWidget.new = function ( menu, controller )
 	
 	return self
 end
-

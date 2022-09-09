@@ -30,4 +30,3 @@ CoD.ChargerShot_top_Arrow.new = function ( menu, controller )
 	
 	return self
 end
-

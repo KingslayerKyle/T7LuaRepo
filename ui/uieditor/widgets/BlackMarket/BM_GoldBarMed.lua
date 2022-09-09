@@ -41,7 +41,6 @@ CoD.BM_GoldBarMed.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -52,4 +51,3 @@ CoD.BM_GoldBarMed.new = function ( menu, controller )
 	
 	return self
 end
-

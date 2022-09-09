@@ -434,4 +434,3 @@ CoD.GobbleGumCookbook_FreeDistillsListItem.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -146,4 +146,3 @@ CoD.MapWidget_PanelVignetteLeft.new = function ( menu, controller )
 	
 	return self
 end
-

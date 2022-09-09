@@ -113,4 +113,3 @@ CoD.BM_LineLightFX2.new = function ( menu, controller )
 	
 	return self
 end
-

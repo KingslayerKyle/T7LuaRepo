@@ -972,4 +972,3 @@ CoD.BlackMarketTradeAgainListItem.new = function ( menu, controller )
 	
 	return self
 end
-

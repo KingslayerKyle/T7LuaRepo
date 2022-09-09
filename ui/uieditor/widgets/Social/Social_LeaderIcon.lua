@@ -31,4 +31,3 @@ CoD.Social_LeaderIcon.new = function ( menu, controller )
 	
 	return self
 end
-

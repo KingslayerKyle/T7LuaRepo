@@ -53,13 +53,11 @@ CoD.nameLabel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Small = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -74,4 +72,3 @@ CoD.nameLabel.new = function ( menu, controller )
 	
 	return self
 end
-

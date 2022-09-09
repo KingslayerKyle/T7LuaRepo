@@ -30,7 +30,6 @@ CoD.AnimationLoading2.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 				self.nextClip = "DefaultClip"
 			end,
 			Logo = function ()
@@ -42,7 +41,6 @@ CoD.AnimationLoading2.new = function ( menu, controller )
 			end,
 			Reverse = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -53,4 +51,3 @@ CoD.AnimationLoading2.new = function ( menu, controller )
 	
 	return self
 end
-

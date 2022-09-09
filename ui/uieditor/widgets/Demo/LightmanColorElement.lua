@@ -203,4 +203,3 @@ CoD.LightmanColorElement.new = function ( menu, controller )
 	
 	return self
 end
-

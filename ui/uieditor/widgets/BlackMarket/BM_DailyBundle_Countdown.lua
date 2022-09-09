@@ -75,4 +75,3 @@ CoD.BM_DailyBundle_Countdown.new = function ( menu, controller )
 	
 	return self
 end
-

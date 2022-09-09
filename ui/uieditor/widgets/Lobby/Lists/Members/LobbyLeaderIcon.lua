@@ -99,4 +99,3 @@ CoD.LobbyLeaderIcon.new = function ( menu, controller )
 	
 	return self
 end
-

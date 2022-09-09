@@ -317,4 +317,3 @@ CoD.AmmoWidget_ClipInfoDummy.new = function ( menu, controller )
 	
 	return self
 end
-

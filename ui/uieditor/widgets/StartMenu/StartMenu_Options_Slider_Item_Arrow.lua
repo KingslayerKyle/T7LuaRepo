@@ -68,4 +68,3 @@ CoD.StartMenu_Options_Slider_Item_Arrow.new = function ( menu, controller )
 	
 	return self
 end
-

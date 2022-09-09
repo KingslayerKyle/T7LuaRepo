@@ -127,4 +127,3 @@ CoD.ZMTombCaptureZoneWaypointContainer.new = function ( menu, controller )
 	
 	return self
 end
-

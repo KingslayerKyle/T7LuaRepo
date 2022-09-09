@@ -192,4 +192,3 @@ CoD.chooseClassCPClient_Ingame.new = function ( menu, controller )
 	
 	return self
 end
-

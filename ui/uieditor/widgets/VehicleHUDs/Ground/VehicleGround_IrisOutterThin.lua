@@ -39,4 +39,3 @@ CoD.VehicleGround_IrisOutterThin.new = function ( menu, controller )
 	
 	return self
 end
-

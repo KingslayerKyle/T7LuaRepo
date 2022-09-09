@@ -250,4 +250,3 @@ CoD.PulseRifleReticle_NumbersInt.new = function ( menu, controller )
 	
 	return self
 end
-

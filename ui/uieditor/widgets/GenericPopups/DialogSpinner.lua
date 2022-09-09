@@ -44,4 +44,3 @@ CoD.DialogSpinner.new = function ( menu, controller )
 	
 	return self
 end
-

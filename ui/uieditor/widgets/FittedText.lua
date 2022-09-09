@@ -4,7 +4,6 @@
 require( "ui.uieditor.widgets.Lobby.Common.FE_PanelNoBlur" )
 
 local PostLoadFunc = function ( f1_arg0, f1_arg1 )
-
 	LUI.OverrideFunction_CallOriginalFirst( f1_arg0.text, "setText", function ( element )
 		f1_arg0:setWidth( f1_arg0.text:getTextWidth() + 6 )
 	end )
@@ -55,4 +54,3 @@ CoD.FittedText.new = function ( menu, controller )
 	
 	return self
 end
-

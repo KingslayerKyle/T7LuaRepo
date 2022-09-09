@@ -60,4 +60,3 @@ CoD.FE_ButtonPanelShaderContainer_ExposedValues.new = function ( menu, controlle
 	
 	return self
 end
-

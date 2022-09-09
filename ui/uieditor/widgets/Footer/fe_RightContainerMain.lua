@@ -90,4 +90,3 @@ CoD.fe_RightContainerMain.new = function ( menu, controller )
 	
 	return self
 end
-

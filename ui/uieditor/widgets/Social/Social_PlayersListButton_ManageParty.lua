@@ -1023,4 +1023,3 @@ CoD.Social_PlayersListButton_ManageParty.new = function ( menu, controller )
 	
 	return self
 end
-

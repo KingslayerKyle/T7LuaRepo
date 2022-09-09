@@ -31,7 +31,6 @@ CoD.KillcamWidgetNumbers.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Start = function ()
 				self:setupElementClipCounter( 1 )
@@ -81,4 +80,3 @@ CoD.KillcamWidgetNumbers.new = function ( menu, controller )
 	
 	return self
 end
-

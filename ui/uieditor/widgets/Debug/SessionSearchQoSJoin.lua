@@ -153,39 +153,31 @@ CoD.SessionSearchQoSJoin.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			FadeIn = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Left = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			FadeIn = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Right = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Right = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			FadeIn = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Left = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -223,4 +215,3 @@ CoD.SessionSearchQoSJoin.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -48,4 +48,3 @@ CoD.Social_CallingCardTitle.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -334,4 +334,3 @@ CoD.RocketShieldBlueprintWidget.new = function ( menu, controller )
 	
 	return self
 end
-

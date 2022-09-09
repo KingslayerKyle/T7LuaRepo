@@ -120,4 +120,3 @@ CoD.ChannelSelectorButton.new = function ( menu, controller )
 	
 	return self
 end
-

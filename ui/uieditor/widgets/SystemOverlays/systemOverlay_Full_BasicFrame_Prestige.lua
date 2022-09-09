@@ -98,4 +98,3 @@ CoD.systemOverlay_Full_BasicFrame_Prestige.new = function ( menu, controller )
 	
 	return self
 end
-

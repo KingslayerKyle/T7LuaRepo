@@ -39,4 +39,3 @@ CoD.GunsmithStatVariantValue.new = function ( menu, controller )
 	
 	return self
 end
-

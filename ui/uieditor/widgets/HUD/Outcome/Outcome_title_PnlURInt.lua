@@ -29,25 +29,21 @@ CoD.Outcome_title_PnlURInt.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		VictoryGreen = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		DefeatRed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		OvertimeOrange = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -58,4 +54,3 @@ CoD.Outcome_title_PnlURInt.new = function ( menu, controller )
 	
 	return self
 end
-

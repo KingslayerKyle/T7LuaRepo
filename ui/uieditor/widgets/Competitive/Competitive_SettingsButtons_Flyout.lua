@@ -409,4 +409,3 @@ CoD.Competitive_SettingsButtons_Flyout.new = function ( menu, controller )
 	
 	return self
 end
-

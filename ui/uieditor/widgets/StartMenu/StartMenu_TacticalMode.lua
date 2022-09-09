@@ -268,4 +268,3 @@ CoD.StartMenu_TacticalMode.new = function ( menu, controller )
 	
 	return self
 end
-

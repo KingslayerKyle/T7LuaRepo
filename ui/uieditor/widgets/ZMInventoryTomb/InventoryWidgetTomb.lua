@@ -379,4 +379,3 @@ CoD.InventoryWidgetTomb.new = function ( menu, controller )
 	
 	return self
 end
-

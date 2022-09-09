@@ -178,4 +178,3 @@ CoD.VehicleGround_HashTextInternal.new = function ( menu, controller )
 	
 	return self
 end
-

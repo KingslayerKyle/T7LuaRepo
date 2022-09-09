@@ -70,4 +70,3 @@ CoD.LobbyStreamerBlackFade.new = function ( menu, controller )
 	
 	return self
 end
-

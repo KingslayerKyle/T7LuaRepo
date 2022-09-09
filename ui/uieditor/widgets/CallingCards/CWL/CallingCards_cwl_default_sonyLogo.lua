@@ -55,4 +55,3 @@ CoD.CallingCards_cwl_default_sonyLogo.new = function ( menu, controller )
 	
 	return self
 end
-

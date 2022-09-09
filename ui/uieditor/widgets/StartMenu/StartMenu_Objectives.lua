@@ -110,4 +110,3 @@ CoD.StartMenu_Objectives.new = function ( menu, controller )
 	
 	return self
 end
-

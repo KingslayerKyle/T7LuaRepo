@@ -95,4 +95,3 @@ CoD.FileshareSidePopupTemplate.new = function ( menu, controller )
 	
 	return self
 end
-

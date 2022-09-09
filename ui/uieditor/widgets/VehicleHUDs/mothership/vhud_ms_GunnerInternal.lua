@@ -141,4 +141,3 @@ CoD.vhud_ms_GunnerInternal.new = function ( menu, controller )
 	
 	return self
 end
-

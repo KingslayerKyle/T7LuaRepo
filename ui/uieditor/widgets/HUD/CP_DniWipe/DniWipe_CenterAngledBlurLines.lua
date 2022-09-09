@@ -187,4 +187,3 @@ CoD.DniWipe_CenterAngledBlurLines.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -109,4 +109,3 @@ CoD.MissionRecordVault_AccoladesFind.new = function ( menu, controller )
 	
 	return self
 end
-

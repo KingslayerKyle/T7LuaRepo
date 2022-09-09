@@ -254,4 +254,3 @@ CoD.AAR_Contracts_BlackjackInfoWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -219,4 +219,3 @@ CoD.Pregame_MainTimer.new = function ( menu, controller )
 	
 	return self
 end
-

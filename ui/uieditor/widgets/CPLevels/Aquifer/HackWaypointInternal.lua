@@ -37,4 +37,3 @@ CoD.HackWaypointInternal.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -73,4 +73,3 @@ CoD.overworld_frame.new = function ( menu, controller )
 	
 	return self
 end
-

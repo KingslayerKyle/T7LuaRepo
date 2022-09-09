@@ -87,4 +87,3 @@ CoD.Cookbook_Distills_Required.new = function ( menu, controller )
 	
 	return self
 end
-

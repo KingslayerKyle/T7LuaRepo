@@ -684,4 +684,3 @@ CoD.chooseClassWidget.new = function ( menu, controller )
 	
 	return self
 end
-

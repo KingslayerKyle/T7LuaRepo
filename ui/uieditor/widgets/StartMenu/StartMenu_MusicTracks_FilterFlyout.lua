@@ -94,4 +94,3 @@ CoD.StartMenu_MusicTracks_FilterFlyout.new = function ( menu, controller )
 	
 	return self
 end
-

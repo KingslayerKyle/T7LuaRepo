@@ -192,4 +192,3 @@ CoD.MediaManager_PaintshopItemLarge.new = function ( menu, controller )
 	
 	return self
 end
-

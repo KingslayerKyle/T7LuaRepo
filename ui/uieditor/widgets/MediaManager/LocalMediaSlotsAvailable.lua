@@ -171,4 +171,3 @@ CoD.LocalMediaSlotsAvailable.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -55,4 +55,3 @@ CoD.FE_SlideSubHeader.new = function ( menu, controller )
 	
 	return self
 end
-

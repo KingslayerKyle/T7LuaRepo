@@ -169,4 +169,3 @@ CoD.ScoreInfo_MeterLine.new = function ( menu, controller )
 	
 	return self
 end
-

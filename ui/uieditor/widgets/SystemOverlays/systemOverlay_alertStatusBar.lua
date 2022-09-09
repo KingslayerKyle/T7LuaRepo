@@ -82,4 +82,3 @@ CoD.systemOverlay_alertStatusBar.new = function ( menu, controller )
 	
 	return self
 end
-

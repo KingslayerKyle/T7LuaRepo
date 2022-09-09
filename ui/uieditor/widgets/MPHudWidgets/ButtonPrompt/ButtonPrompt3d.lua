@@ -227,4 +227,3 @@ CoD.ButtonPrompt3d.new = function ( menu, controller )
 	
 	return self
 end
-

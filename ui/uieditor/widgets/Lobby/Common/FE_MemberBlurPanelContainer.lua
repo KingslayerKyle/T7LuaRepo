@@ -93,4 +93,3 @@ CoD.FE_MemberBlurPanelContainer.new = function ( menu, controller )
 	
 	return self
 end
-

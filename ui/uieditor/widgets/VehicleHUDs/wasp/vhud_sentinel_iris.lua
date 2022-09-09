@@ -308,4 +308,3 @@ CoD.vhud_sentinel_iris.new = function ( menu, controller )
 	
 	return self
 end
-

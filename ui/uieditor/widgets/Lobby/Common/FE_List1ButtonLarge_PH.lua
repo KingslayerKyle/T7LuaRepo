@@ -4608,4 +4608,3 @@ CoD.FE_List1ButtonLarge_PH.new = function ( menu, controller )
 	
 	return self
 end
-

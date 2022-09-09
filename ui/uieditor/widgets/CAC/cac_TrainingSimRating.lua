@@ -179,21 +179,17 @@ CoD.cac_TrainingSimRating.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Back = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Campaign = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Show = {
@@ -240,4 +236,3 @@ CoD.cac_TrainingSimRating.new = function ( menu, controller )
 	
 	return self
 end
-

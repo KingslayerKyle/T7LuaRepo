@@ -152,4 +152,3 @@ CoD.SidequestIconContainer.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -62,4 +62,3 @@ CoD.GunsmithSelfIdentity.new = function ( menu, controller )
 	
 	return self
 end
-

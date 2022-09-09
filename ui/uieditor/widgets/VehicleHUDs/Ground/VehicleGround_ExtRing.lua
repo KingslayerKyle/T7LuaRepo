@@ -256,4 +256,3 @@ CoD.VehicleGround_ExtRing.new = function ( menu, controller )
 	
 	return self
 end
-

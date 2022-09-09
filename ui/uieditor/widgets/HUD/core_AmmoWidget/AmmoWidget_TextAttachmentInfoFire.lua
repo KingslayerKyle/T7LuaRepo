@@ -69,4 +69,3 @@ CoD.AmmoWidget_TextAttachmentInfoFire.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -88,4 +88,3 @@ CoD.KeyPrompt.new = function ( menu, controller )
 	
 	return self
 end
-

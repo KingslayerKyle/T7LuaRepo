@@ -106,4 +106,3 @@ CoD.DOA_ControlKBMouse.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -181,4 +181,3 @@ CoD.GunsmithSlotsFull.new = function ( menu, controller )
 	
 	return self
 end
-

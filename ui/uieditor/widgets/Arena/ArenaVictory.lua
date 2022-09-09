@@ -255,4 +255,3 @@ CoD.ArenaVictory.new = function ( menu, controller )
 	
 	return self
 end
-

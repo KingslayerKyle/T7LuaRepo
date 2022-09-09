@@ -215,4 +215,3 @@ CoD.Prestige_Button.new = function ( menu, controller )
 	
 	return self
 end
-

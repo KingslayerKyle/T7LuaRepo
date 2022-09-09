@@ -1088,4 +1088,3 @@ CoD.CodCasterTabWidget.new = function ( menu, controller )
 	
 	return self
 end
-

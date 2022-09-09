@@ -154,4 +154,3 @@ CoD.CodCasterLoadoutItem.new = function ( menu, controller )
 	
 	return self
 end
-

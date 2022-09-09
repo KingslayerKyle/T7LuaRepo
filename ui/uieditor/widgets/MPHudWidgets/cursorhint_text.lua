@@ -74,4 +74,3 @@ CoD.cursorhint_text.new = function ( menu, controller )
 	
 	return self
 end
-

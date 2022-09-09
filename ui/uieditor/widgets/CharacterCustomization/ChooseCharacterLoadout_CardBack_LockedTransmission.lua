@@ -545,4 +545,3 @@ CoD.ChooseCharacterLoadout_CardBack_LockedTransmission.new = function ( menu, co
 	
 	return self
 end
-

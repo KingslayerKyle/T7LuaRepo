@@ -135,4 +135,3 @@ CoD.CallingCards_BlackMarket_Set_CountWidget.new = function ( menu, controller )
 	
 	return self
 end
-

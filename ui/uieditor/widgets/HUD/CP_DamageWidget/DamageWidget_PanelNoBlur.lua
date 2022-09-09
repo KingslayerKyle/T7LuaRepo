@@ -85,4 +85,3 @@ CoD.DamageWidget_PanelNoBlur.new = function ( menu, controller )
 	
 	return self
 end
-

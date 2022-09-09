@@ -90,4 +90,3 @@ CoD.AmmoWidgetMP_EquipGlow.new = function ( menu, controller )
 	
 	return self
 end
-

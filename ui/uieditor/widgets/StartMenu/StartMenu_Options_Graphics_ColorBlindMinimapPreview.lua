@@ -317,4 +317,3 @@ CoD.StartMenu_Options_Graphics_ColorBlindMinimapPreview.new = function ( menu, c
 	
 	return self
 end
-

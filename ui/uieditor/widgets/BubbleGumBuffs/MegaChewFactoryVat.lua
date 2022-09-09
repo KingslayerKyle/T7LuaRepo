@@ -33,4 +33,3 @@ CoD.MegaChewFactoryVat.new = function ( menu, controller )
 	
 	return self
 end
-

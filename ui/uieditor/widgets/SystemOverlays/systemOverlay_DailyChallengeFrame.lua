@@ -121,4 +121,3 @@ CoD.systemOverlay_DailyChallengeFrame.new = function ( menu, controller )
 	
 	return self
 end
-

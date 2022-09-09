@@ -140,4 +140,3 @@ CoD.MP_HardcoreScorestreakWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -37,4 +37,3 @@ CoD.DamageWidget_Dot.new = function ( menu, controller )
 	
 	return self
 end
-

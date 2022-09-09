@@ -988,4 +988,3 @@ CoD.CombatRecordCP_Contents.new = function ( menu, controller )
 	
 	return self
 end
-

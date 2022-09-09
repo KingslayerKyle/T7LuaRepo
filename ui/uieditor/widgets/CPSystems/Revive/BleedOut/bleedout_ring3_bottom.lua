@@ -91,4 +91,3 @@ CoD.bleedout_ring3_bottom.new = function ( menu, controller )
 	
 	return self
 end
-

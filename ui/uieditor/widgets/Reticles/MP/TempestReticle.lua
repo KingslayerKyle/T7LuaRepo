@@ -57,7 +57,6 @@ CoD.TempestReticle.new = function ( menu, controller )
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Hidden = {
@@ -272,4 +271,3 @@ CoD.TempestReticle.new = function ( menu, controller )
 	
 	return self
 end
-

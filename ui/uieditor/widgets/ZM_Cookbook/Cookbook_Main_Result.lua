@@ -278,4 +278,3 @@ CoD.Cookbook_Main_Result.new = function ( menu, controller )
 	
 	return self
 end
-

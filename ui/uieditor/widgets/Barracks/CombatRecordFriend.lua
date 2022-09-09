@@ -336,4 +336,3 @@ CoD.CombatRecordFriend.new = function ( menu, controller )
 	
 	return self
 end
-

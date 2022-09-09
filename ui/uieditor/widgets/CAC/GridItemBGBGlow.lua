@@ -297,4 +297,3 @@ CoD.GridItemBGBGlow.new = function ( menu, controller )
 	
 	return self
 end
-

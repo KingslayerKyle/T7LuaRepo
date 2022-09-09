@@ -104,4 +104,3 @@ CoD.Prestige_ButtonInfopane.new = function ( menu, controller )
 	
 	return self
 end
-

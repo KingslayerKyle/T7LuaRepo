@@ -50,4 +50,3 @@ CoD.cac_lock.new = function ( menu, controller )
 	
 	return self
 end
-

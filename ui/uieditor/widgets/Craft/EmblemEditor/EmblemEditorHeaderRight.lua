@@ -71,4 +71,3 @@ CoD.EmblemEditorHeaderRight.new = function ( menu, controller )
 	
 	return self
 end
-

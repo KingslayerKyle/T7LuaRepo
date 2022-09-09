@@ -226,4 +226,3 @@ CoD.outofbounds_warningboxwidget.new = function ( menu, controller )
 	
 	return self
 end
-

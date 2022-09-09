@@ -138,4 +138,3 @@ CoD.ChooseCharacterLoadout_ButtonFooter.new = function ( menu, controller )
 	
 	return self
 end
-

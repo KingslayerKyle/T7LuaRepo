@@ -76,4 +76,3 @@ CoD.bleedout_mainring.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -111,4 +111,3 @@ CoD.GridItemButtonBackdropContainer3x4.new = function ( menu, controller )
 	
 	return self
 end
-

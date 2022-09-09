@@ -29,4 +29,3 @@ CoD.MP_Background.new = function ( menu, controller )
 	
 	return self
 end
-

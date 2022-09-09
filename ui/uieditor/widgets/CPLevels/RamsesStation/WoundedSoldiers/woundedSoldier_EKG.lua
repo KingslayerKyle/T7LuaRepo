@@ -141,4 +141,3 @@ CoD.woundedSoldier_EKG.new = function ( menu, controller )
 	
 	return self
 end
-

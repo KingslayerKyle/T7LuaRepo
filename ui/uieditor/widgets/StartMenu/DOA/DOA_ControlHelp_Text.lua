@@ -166,4 +166,3 @@ CoD.DOA_ControlHelp_Text.new = function ( menu, controller )
 	
 	return self
 end
-

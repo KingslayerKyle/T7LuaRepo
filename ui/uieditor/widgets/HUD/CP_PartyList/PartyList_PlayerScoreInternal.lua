@@ -181,4 +181,3 @@ CoD.PartyList_PlayerScoreInternal.new = function ( menu, controller )
 	
 	return self
 end
-

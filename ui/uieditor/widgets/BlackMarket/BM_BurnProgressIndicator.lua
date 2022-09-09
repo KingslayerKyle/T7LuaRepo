@@ -64,4 +64,3 @@ CoD.BM_BurnProgressIndicator.new = function ( menu, controller )
 	
 	return self
 end
-

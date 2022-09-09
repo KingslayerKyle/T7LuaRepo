@@ -247,4 +247,3 @@ CoD.DeadSpectate_SpectatingBar.new = function ( menu, controller )
 	
 	return self
 end
-

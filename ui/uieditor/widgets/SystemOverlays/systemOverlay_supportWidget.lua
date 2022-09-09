@@ -93,4 +93,3 @@ CoD.systemOverlay_supportWidget.new = function ( menu, controller )
 	
 	return self
 end
-

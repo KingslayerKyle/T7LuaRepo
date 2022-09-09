@@ -129,4 +129,3 @@ CoD.AmmoWidget_AbilityAftStroke.new = function ( menu, controller )
 	
 	return self
 end
-

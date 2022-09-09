@@ -136,4 +136,3 @@ CoD.OverClipContainer.new = function ( menu, controller )
 	
 	return self
 end
-

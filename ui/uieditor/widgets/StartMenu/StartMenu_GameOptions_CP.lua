@@ -379,4 +379,3 @@ CoD.StartMenu_GameOptions_CP.new = function ( menu, controller )
 	
 	return self
 end
-

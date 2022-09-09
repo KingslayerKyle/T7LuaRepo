@@ -59,4 +59,3 @@ CoD.NewBreadcrumb.new = function ( menu, controller )
 	
 	return self
 end
-

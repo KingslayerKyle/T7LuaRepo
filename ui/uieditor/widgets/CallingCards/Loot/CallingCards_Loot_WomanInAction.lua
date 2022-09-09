@@ -589,4 +589,3 @@ CoD.CallingCards_Loot_WomanInAction.new = function ( menu, controller )
 	
 	return self
 end
-

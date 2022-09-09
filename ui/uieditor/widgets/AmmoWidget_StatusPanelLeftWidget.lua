@@ -29,23 +29,19 @@ CoD.AmmoWidget_StatusPanelLeftWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Activated = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -79,4 +75,3 @@ CoD.AmmoWidget_StatusPanelLeftWidget.new = function ( menu, controller )
 	
 	return self
 end
-

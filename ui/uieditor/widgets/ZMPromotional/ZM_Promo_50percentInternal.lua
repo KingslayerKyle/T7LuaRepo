@@ -71,19 +71,16 @@ CoD.ZM_Promo_50percentInternal.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		HorizontalList = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Purchasing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -109,4 +106,3 @@ CoD.ZM_Promo_50percentInternal.new = function ( menu, controller )
 	
 	return self
 end
-

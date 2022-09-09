@@ -554,4 +554,3 @@ CoD.StoreCategoryButton.new = function ( menu, controller )
 	
 	return self
 end
-

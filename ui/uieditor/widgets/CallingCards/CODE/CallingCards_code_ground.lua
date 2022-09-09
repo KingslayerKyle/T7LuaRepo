@@ -361,4 +361,3 @@ CoD.CallingCards_code_ground.new = function ( menu, controller )
 	
 	return self
 end
-

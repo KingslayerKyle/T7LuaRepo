@@ -281,4 +281,3 @@ CoD.ProximityAlarm.new = function ( menu, controller )
 	
 	return self
 end
-

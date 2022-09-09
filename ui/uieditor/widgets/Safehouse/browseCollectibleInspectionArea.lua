@@ -229,4 +229,3 @@ CoD.browseCollectibleInspectionArea.new = function ( menu, controller )
 	
 	return self
 end
-

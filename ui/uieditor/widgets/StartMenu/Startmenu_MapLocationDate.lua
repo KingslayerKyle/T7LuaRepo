@@ -88,7 +88,6 @@ CoD.Startmenu_MapLocationDate.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		cpzm = {
@@ -122,4 +121,3 @@ CoD.Startmenu_MapLocationDate.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -171,4 +171,3 @@ CoD.CodCasterLoadoutItemHintText.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -2120,4 +2120,3 @@ CoD.PrematchCountdown_Numbers.new = function ( menu, controller )
 	
 	return self
 end
-

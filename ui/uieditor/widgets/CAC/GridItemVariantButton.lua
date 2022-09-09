@@ -1932,4 +1932,3 @@ CoD.GridItemVariantButton.new = function ( menu, controller )
 	
 	return self
 end
-

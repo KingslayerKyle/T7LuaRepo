@@ -261,7 +261,6 @@ CoD.ZmAmmo_DpadIconBottomFactory.new = function ( menu, controller )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Ready = {
@@ -274,7 +273,6 @@ CoD.ZmAmmo_DpadIconBottomFactory.new = function ( menu, controller )
 			end,
 			Activate = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		New = {
@@ -576,4 +574,3 @@ CoD.ZmAmmo_DpadIconBottomFactory.new = function ( menu, controller )
 	
 	return self
 end
-

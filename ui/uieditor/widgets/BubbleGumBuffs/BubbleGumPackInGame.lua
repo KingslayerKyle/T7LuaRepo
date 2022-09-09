@@ -84,4 +84,3 @@ CoD.BubbleGumPackInGame.new = function ( menu, controller )
 	
 	return self
 end
-

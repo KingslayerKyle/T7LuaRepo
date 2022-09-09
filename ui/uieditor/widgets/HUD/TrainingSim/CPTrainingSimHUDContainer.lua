@@ -35,7 +35,6 @@ CoD.CPTrainingSimHUDContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		HudPause = {
@@ -71,4 +70,3 @@ CoD.CPTrainingSimHUDContainer.new = function ( menu, controller )
 	
 	return self
 end
-

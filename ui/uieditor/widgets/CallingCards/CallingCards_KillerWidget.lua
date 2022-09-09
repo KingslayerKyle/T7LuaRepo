@@ -90,4 +90,3 @@ CoD.CallingCards_KillerWidget.new = function ( menu, controller )
 	
 	return self
 end
-

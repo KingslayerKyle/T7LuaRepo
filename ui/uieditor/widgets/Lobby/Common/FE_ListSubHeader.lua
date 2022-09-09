@@ -133,4 +133,3 @@ CoD.FE_ListSubHeader.new = function ( menu, controller )
 	
 	return self
 end
-

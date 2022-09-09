@@ -213,4 +213,3 @@ CoD.vhud_hellstorm_WeaponModeWidget.new = function ( menu, controller )
 	
 	return self
 end
-

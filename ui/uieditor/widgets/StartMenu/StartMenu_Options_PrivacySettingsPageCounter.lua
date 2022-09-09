@@ -121,4 +121,3 @@ CoD.StartMenu_Options_PrivacySettingsPageCounter.new = function ( menu, controll
 	
 	return self
 end
-

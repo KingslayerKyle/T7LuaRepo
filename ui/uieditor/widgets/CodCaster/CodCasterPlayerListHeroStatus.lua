@@ -395,4 +395,3 @@ CoD.CodCasterPlayerListHeroStatus.new = function ( menu, controller )
 	
 	return self
 end
-

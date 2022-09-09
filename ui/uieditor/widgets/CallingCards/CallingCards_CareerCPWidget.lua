@@ -134,4 +134,3 @@ CoD.CallingCards_CareerCPWidget.new = function ( menu, controller )
 	
 	return self
 end
-

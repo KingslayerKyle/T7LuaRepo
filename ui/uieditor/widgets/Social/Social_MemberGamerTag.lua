@@ -30,11 +30,9 @@ CoD.Social_MemberGamerTag.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			TeamSwitch = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -45,4 +43,3 @@ CoD.Social_MemberGamerTag.new = function ( menu, controller )
 	
 	return self
 end
-

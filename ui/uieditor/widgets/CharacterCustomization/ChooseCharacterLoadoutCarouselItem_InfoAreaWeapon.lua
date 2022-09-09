@@ -40,7 +40,6 @@ CoD.ChooseCharacterLoadoutCarouselItem_InfoAreaWeapon.new = function ( menu, con
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -51,4 +50,3 @@ CoD.ChooseCharacterLoadoutCarouselItem_InfoAreaWeapon.new = function ( menu, con
 	
 	return self
 end
-

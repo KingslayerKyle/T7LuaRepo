@@ -32,11 +32,9 @@ CoD.LootDecryptionImageRarityColor.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Looping = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -51,4 +49,3 @@ CoD.LootDecryptionImageRarityColor.new = function ( menu, controller )
 	
 	return self
 end
-

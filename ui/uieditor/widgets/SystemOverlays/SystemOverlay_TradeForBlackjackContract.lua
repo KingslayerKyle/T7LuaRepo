@@ -250,4 +250,3 @@ CoD.SystemOverlay_TradeForBlackjackContract.new = function ( menu, controller )
 	
 	return self
 end
-

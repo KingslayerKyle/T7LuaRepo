@@ -53,4 +53,3 @@ CoD.LobbyMemberBacking.new = function ( menu, controller )
 	
 	return self
 end
-

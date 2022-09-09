@@ -1406,4 +1406,3 @@ CoD.CallingCard_loot_skateboard.new = function ( menu, controller )
 	
 	return self
 end
-

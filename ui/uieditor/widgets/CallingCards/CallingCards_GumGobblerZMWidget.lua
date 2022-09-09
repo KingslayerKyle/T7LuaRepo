@@ -271,4 +271,3 @@ CoD.CallingCards_GumGobblerZMWidget.new = function ( menu, controller )
 	
 	return self
 end
-

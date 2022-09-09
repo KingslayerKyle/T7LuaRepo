@@ -29,4 +29,3 @@ CoD.AmmoWidget_ArrowFull.new = function ( menu, controller )
 	
 	return self
 end
-

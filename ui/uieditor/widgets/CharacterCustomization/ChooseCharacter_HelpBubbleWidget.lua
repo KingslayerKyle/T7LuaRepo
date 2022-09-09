@@ -54,4 +54,3 @@ CoD.ChooseCharacter_HelpBubbleWidget.new = function ( menu, controller )
 	
 	return self
 end
-

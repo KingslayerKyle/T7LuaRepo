@@ -116,4 +116,3 @@ CoD.cac_ListButtonLabel_Right.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -132,4 +132,3 @@ CoD.DOA_ControlHelp_Lines.new = function ( menu, controller )
 	
 	return self
 end
-

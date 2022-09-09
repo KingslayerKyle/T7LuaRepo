@@ -1009,4 +1009,3 @@ CoD.ZmAmmo_AttachmentInfo.new = function ( menu, controller )
 	
 	return self
 end
-

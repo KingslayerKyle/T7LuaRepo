@@ -104,4 +104,3 @@ CoD.choosepath.new = function ( menu, controller )
 	
 	return self
 end
-

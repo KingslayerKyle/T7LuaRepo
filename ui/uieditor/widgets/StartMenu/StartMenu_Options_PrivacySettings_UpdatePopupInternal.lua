@@ -365,4 +365,3 @@ CoD.StartMenu_Options_PrivacySettings_UpdatePopupInternal.new = function ( menu,
 	
 	return self
 end
-

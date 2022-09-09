@@ -53,4 +53,3 @@ CoD.StartMenu_Options_Network_PingListItem.new = function ( menu, controller )
 	
 	return self
 end
-

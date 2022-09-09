@@ -66,4 +66,3 @@ CoD.LocalServerPlayerListRow.new = function ( menu, controller )
 	
 	return self
 end
-

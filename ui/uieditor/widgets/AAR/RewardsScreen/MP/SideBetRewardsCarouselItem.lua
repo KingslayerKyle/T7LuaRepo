@@ -225,4 +225,3 @@ CoD.SideBetRewardsCarouselItem.new = function ( menu, controller )
 	
 	return self
 end
-

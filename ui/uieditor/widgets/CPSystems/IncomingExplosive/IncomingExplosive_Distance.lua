@@ -697,4 +697,3 @@ CoD.IncomingExplosive_Distance.new = function ( menu, controller )
 	
 	return self
 end
-

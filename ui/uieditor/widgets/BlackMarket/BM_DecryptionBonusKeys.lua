@@ -145,7 +145,6 @@ CoD.BM_DecryptionBonusKeys.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Bonus = function ()
 				self:setupElementClipCounter( 9 )
@@ -1596,4 +1595,3 @@ CoD.BM_DecryptionBonusKeys.new = function ( menu, controller )
 	
 	return self
 end
-

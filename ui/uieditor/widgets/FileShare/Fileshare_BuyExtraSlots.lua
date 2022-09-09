@@ -70,4 +70,3 @@ CoD.Fileshare_BuyExtraSlots.new = function ( menu, controller )
 	
 	return self
 end
-

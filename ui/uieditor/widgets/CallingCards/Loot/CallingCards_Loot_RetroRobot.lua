@@ -276,4 +276,3 @@ CoD.CallingCards_Loot_RetroRobot.new = function ( menu, controller )
 	
 	return self
 end
-

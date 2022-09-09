@@ -29,4 +29,3 @@ CoD.DamageWidget_BackCircleInner.new = function ( menu, controller )
 	
 	return self
 end
-

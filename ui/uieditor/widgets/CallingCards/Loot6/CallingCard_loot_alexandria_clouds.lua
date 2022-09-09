@@ -135,4 +135,3 @@ CoD.CallingCard_loot_alexandria_clouds.new = function ( menu, controller )
 	
 	return self
 end
-

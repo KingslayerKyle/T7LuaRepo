@@ -196,4 +196,3 @@ CoD.FileshareScreenshotSelectorItemLarge.new = function ( menu, controller )
 	
 	return self
 end
-

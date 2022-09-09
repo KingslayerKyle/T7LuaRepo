@@ -108,4 +108,3 @@ CoD.GroupsSocialInvitesFrameWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -745,4 +745,3 @@ CoD.CodCasterHeaderGameModeWidget.new = function ( menu, controller )
 	
 	return self
 end
-

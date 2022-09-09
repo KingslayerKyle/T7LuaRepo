@@ -99,7 +99,6 @@ CoD.ChargerShot_4corner_line.new = function ( menu, controller )
 			end,
 			Cancel = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -117,4 +116,3 @@ CoD.ChargerShot_4corner_line.new = function ( menu, controller )
 	
 	return self
 end
-

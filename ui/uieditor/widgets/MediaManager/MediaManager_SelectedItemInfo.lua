@@ -123,4 +123,3 @@ CoD.MediaManager_SelectedItemInfo.new = function ( menu, controller )
 	
 	return self
 end
-

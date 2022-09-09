@@ -366,4 +366,3 @@ CoD.SystemOverlay_PurchaseInventoryItem.new = function ( menu, controller )
 	
 	return self
 end
-

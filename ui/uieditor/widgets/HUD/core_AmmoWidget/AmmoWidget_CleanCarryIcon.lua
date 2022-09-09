@@ -77,4 +77,3 @@ CoD.AmmoWidget_CleanCarryIcon.new = function ( menu, controller )
 	
 	return self
 end
-

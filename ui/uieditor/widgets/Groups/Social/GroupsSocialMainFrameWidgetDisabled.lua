@@ -82,4 +82,3 @@ CoD.GroupsSocialMainFrameWidgetDisabled.new = function ( menu, controller )
 	
 	return self
 end
-

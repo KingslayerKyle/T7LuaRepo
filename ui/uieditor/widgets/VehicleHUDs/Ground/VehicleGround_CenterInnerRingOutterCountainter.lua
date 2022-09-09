@@ -288,7 +288,6 @@ CoD.VehicleGround_CenterInnerRingOutterCountainter.new = function ( menu, contro
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -321,4 +320,3 @@ CoD.VehicleGround_CenterInnerRingOutterCountainter.new = function ( menu, contro
 	
 	return self
 end
-

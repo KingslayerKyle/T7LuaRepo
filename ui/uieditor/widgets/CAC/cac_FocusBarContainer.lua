@@ -104,4 +104,3 @@ CoD.cac_FocusBarContainer.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -104,4 +104,3 @@ CoD.SpecialContracts_Timer.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -121,4 +121,3 @@ CoD.cac_ElemsSideListBoxes.new = function ( menu, controller )
 	
 	return self
 end
-

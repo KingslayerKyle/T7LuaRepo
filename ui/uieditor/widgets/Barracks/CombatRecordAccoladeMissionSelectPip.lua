@@ -104,4 +104,3 @@ CoD.CombatRecordAccoladeMissionSelectPip.new = function ( menu, controller )
 	
 	return self
 end
-

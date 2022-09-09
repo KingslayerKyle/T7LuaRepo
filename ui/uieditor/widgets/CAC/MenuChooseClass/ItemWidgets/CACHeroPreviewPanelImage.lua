@@ -31,4 +31,3 @@ CoD.CACHeroPreviewPanelImage.new = function ( menu, controller )
 	
 	return self
 end
-

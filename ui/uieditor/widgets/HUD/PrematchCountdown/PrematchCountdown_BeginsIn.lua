@@ -61,4 +61,3 @@ CoD.PrematchCountdown_BeginsIn.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -101,4 +101,3 @@ CoD.MissionRecordVault_AccoladesKills.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -42,4 +42,3 @@ CoD.weakpoint_NewArrowSmallContainer.new = function ( menu, controller )
 	
 	return self
 end
-

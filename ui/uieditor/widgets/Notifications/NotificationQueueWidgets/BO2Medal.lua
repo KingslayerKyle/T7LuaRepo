@@ -179,4 +179,3 @@ CoD.BO2Medal.new = function ( menu, controller )
 	
 	return self
 end
-

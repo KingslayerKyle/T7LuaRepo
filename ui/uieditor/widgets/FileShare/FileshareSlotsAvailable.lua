@@ -192,4 +192,3 @@ CoD.FileshareSlotsAvailable.new = function ( menu, controller )
 	
 	return self
 end
-

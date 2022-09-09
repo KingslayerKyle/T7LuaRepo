@@ -76,4 +76,3 @@ CoD.VehicleGround_HashRingContainer.new = function ( menu, controller )
 	
 	return self
 end
-

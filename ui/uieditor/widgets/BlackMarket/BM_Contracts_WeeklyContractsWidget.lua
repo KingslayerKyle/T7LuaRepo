@@ -851,4 +851,3 @@ CoD.BM_Contracts_WeeklyContractsWidget.new = function ( menu, controller )
 	
 	return self
 end
-

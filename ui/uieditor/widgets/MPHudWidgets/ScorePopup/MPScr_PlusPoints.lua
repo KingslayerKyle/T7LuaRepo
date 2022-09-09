@@ -197,4 +197,3 @@ CoD.MPScr_PlusPoints.new = function ( menu, controller )
 	
 	return self
 end
-

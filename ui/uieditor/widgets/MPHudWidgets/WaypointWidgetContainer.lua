@@ -186,4 +186,3 @@ CoD.WaypointWidgetContainer.new = function ( menu, controller )
 	end
 	return self
 end
-

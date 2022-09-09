@@ -41,4 +41,3 @@ CoD.Social_Rank_PrestigeText.new = function ( menu, controller )
 	
 	return self
 end
-

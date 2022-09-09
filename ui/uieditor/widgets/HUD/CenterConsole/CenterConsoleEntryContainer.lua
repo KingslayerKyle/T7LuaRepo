@@ -41,4 +41,3 @@ CoD.CenterConsoleEntryContainer.new = function ( menu, controller )
 	
 	return self
 end
-

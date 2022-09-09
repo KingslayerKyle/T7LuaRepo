@@ -287,4 +287,3 @@ CoD.MOTD_MainImgContainer.new = function ( menu, controller )
 	
 	return self
 end
-

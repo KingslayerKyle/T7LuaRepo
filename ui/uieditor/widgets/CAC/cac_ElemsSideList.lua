@@ -56,4 +56,3 @@ CoD.cac_ElemsSideList.new = function ( menu, controller )
 	
 	return self
 end
-

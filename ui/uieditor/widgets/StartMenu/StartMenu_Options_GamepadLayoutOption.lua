@@ -227,4 +227,3 @@ CoD.StartMenu_Options_GamepadLayoutOption.new = function ( menu, controller )
 	
 	return self
 end
-

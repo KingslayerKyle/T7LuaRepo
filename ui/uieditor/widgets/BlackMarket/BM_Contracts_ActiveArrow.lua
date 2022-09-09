@@ -55,25 +55,21 @@ CoD.BM_Contracts_ActiveArrow.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Complete = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Cost = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -121,4 +117,3 @@ CoD.BM_Contracts_ActiveArrow.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -38,7 +38,6 @@ CoD.common_PanelBox01.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -49,4 +48,3 @@ CoD.common_PanelBox01.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -173,4 +173,3 @@ CoD.vhud_ms_StatusWidgetGunnerRight.new = function ( menu, controller )
 	
 	return self
 end
-

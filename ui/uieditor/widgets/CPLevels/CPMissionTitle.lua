@@ -59,4 +59,3 @@ CoD.CPMissionTitle.new = function ( menu, controller )
 	
 	return self
 end
-

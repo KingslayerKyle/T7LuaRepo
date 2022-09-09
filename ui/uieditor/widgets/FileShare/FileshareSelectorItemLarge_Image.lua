@@ -251,4 +251,3 @@ CoD.FileshareSelectorItemLarge_Image.new = function ( menu, controller )
 	
 	return self
 end
-

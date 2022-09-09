@@ -54,4 +54,3 @@ CoD.CommsWidget_EventMessageRing.new = function ( menu, controller )
 	
 	return self
 end
-

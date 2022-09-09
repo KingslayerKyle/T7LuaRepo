@@ -474,4 +474,3 @@ CoD.StartMenu_Button_Hero.new = function ( menu, controller )
 	
 	return self
 end
-

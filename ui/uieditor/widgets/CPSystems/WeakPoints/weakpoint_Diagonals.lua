@@ -423,4 +423,3 @@ CoD.weakpoint_Diagonals.new = function ( menu, controller )
 	
 	return self
 end
-

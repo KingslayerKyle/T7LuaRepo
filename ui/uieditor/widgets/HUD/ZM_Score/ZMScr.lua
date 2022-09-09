@@ -497,4 +497,3 @@ CoD.ZMScr.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -151,7 +151,6 @@ CoD.ZM_ReviveBleedoutRedEyeGlow.new = function ( menu, controller )
 			end,
 			BleedingOut = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -162,4 +161,3 @@ CoD.ZM_ReviveBleedoutRedEyeGlow.new = function ( menu, controller )
 	
 	return self
 end
-

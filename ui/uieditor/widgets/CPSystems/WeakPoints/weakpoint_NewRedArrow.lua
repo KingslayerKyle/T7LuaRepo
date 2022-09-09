@@ -64,4 +64,3 @@ CoD.weakpoint_NewRedArrow.new = function ( menu, controller )
 	
 	return self
 end
-

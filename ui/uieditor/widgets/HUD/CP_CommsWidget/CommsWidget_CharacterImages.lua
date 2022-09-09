@@ -144,4 +144,3 @@ CoD.CommsWidget_CharacterImages.new = function ( menu, controller )
 	
 	return self
 end
-

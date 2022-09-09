@@ -207,4 +207,3 @@ CoD.Challenges_DarkOps_Button.new = function ( menu, controller )
 	
 	return self
 end
-

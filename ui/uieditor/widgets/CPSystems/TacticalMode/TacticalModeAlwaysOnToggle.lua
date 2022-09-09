@@ -270,4 +270,3 @@ CoD.TacticalModeAlwaysOnToggle.new = function ( menu, controller )
 	
 	return self
 end
-

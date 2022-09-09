@@ -75,7 +75,6 @@ CoD.DamageWidget_Repair.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Invisible = {
@@ -158,4 +157,3 @@ CoD.DamageWidget_Repair.new = function ( menu, controller )
 	
 	return self
 end
-

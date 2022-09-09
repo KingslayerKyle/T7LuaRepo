@@ -26,7 +26,6 @@ CoD.StartMenu_ImageContainer_Credits_SM.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -37,4 +36,3 @@ CoD.StartMenu_ImageContainer_Credits_SM.new = function ( menu, controller )
 	
 	return self
 end
-

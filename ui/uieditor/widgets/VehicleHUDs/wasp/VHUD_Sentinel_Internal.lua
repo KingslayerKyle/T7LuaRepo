@@ -536,4 +536,3 @@ CoD.VHUD_Sentinel_Internal.new = function ( menu, controller )
 	
 	return self
 end
-

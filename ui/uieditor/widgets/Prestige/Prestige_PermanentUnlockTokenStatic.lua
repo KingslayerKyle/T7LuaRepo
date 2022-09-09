@@ -129,4 +129,3 @@ CoD.Prestige_PermanentUnlockTokenStatic.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -1153,4 +1153,3 @@ CoD.CallingCard_loot_7deadlysins.new = function ( menu, controller )
 	
 	return self
 end
-

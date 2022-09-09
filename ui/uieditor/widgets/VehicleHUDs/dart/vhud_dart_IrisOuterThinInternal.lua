@@ -190,4 +190,3 @@ CoD.vhud_dart_IrisOuterThinInternal.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -180,4 +180,3 @@ CoD.WeaponAttributesBar.new = function ( menu, controller )
 	
 	return self
 end
-

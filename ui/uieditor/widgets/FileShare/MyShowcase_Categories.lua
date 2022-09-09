@@ -261,4 +261,3 @@ CoD.MyShowcase_Categories.new = function ( menu, controller )
 	
 	return self
 end
-

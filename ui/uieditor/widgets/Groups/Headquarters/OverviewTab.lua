@@ -67,4 +67,3 @@ CoD.OverviewTab.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -348,4 +348,3 @@ CoD.StartMenu_CODpoints.new = function ( menu, controller )
 	
 	return self
 end
-

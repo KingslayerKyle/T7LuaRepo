@@ -118,4 +118,3 @@ CoD.Prestige_PermanentUnlockTokensWidget.new = function ( menu, controller )
 	
 	return self
 end
-

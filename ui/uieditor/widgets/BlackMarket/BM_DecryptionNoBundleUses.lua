@@ -41,7 +41,6 @@ CoD.BM_DecryptionNoBundleUses.new = function ( menu, controller )
 			end,
 			Rolling = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Visible = {
@@ -56,7 +55,6 @@ CoD.BM_DecryptionNoBundleUses.new = function ( menu, controller )
 			end,
 			Rolling = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		VisibleIncentiveRare = {
@@ -71,7 +69,6 @@ CoD.BM_DecryptionNoBundleUses.new = function ( menu, controller )
 			end,
 			Rolling = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		VisibleIncentiveWeapon = {
@@ -86,7 +83,6 @@ CoD.BM_DecryptionNoBundleUses.new = function ( menu, controller )
 			end,
 			Rolling = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		VisibleGenericReward = {
@@ -101,7 +97,6 @@ CoD.BM_DecryptionNoBundleUses.new = function ( menu, controller )
 			end,
 			Rolling = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		VisibleBribeExpired = {
@@ -136,7 +131,6 @@ CoD.BM_DecryptionNoBundleUses.new = function ( menu, controller )
 			end,
 			Rolling = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -271,4 +265,3 @@ CoD.BM_DecryptionNoBundleUses.new = function ( menu, controller )
 	
 	return self
 end
-

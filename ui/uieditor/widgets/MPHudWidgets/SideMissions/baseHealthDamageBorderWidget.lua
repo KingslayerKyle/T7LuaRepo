@@ -81,4 +81,3 @@ CoD.baseHealthDamageBorderWidget.new = function ( menu, controller )
 	
 	return self
 end
-

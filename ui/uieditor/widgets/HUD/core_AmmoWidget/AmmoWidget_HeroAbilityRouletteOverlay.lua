@@ -3160,4 +3160,3 @@ CoD.AmmoWidget_HeroAbilityRouletteOverlay.new = function ( menu, controller )
 	
 	return self
 end
-

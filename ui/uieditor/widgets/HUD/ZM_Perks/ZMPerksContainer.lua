@@ -302,4 +302,3 @@ CoD.ZMPerksContainer.new = function ( menu, controller )
 	
 	return self
 end
-

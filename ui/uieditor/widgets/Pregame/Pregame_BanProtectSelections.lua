@@ -7,7 +7,6 @@ require( "ui.uieditor.widgets.Pregame.Pregame_VoteItem" )
 require( "ui.uieditor.widgets.Scrollbars.horizontalCounter" )
 
 local PostLoadFunc = function ( self, controller, menu )
-	
 end
 
 CoD.Pregame_BanProtectSelections = InheritFrom( LUI.UIElement )
@@ -185,7 +184,6 @@ CoD.Pregame_BanProtectSelections.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -221,4 +219,3 @@ CoD.Pregame_BanProtectSelections.new = function ( menu, controller )
 	
 	return self
 end
-

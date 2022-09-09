@@ -251,4 +251,3 @@ CoD.CallingCards_loot_CuteAnimals.new = function ( menu, controller )
 	
 	return self
 end
-

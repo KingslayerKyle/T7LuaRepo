@@ -116,4 +116,3 @@ CoD.ZM_ExpiresIn.new = function ( menu, controller )
 	
 	return self
 end
-

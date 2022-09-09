@@ -100,4 +100,3 @@ CoD.AmmoWidgetMP_ClipContainerHero.new = function ( menu, controller )
 	
 	return self
 end
-

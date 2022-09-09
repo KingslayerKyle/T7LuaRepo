@@ -159,7 +159,6 @@ CoD.ZM_PrematchCountdown.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			ShowDoubleXPIcon = function ()
 				self:setupElementClipCounter( 7 )
@@ -3898,4 +3897,3 @@ CoD.ZM_PrematchCountdown.new = function ( menu, controller )
 	
 	return self
 end
-

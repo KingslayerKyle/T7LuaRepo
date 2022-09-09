@@ -130,4 +130,3 @@ CoD.baseHealthWidget.new = function ( menu, controller )
 	
 	return self
 end
-

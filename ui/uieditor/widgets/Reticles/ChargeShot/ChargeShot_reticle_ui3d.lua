@@ -182,7 +182,6 @@ CoD.ChargeShot_reticle_ui3d.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Fire = function ()
 				self:setupElementClipCounter( 18 )
@@ -1436,4 +1435,3 @@ CoD.ChargeShot_reticle_ui3d.new = function ( menu, controller )
 	
 	return self
 end
-

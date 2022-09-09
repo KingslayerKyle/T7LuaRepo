@@ -213,4 +213,3 @@ CoD.AdminTabGroupAdminsFrame.new = function ( menu, controller )
 	
 	return self
 end
-

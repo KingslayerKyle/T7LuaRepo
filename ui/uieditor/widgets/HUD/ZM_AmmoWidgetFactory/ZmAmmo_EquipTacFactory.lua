@@ -335,4 +335,3 @@ CoD.ZmAmmo_EquipTacFactory.new = function ( menu, controller )
 	
 	return self
 end
-

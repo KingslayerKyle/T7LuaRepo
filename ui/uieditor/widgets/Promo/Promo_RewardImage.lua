@@ -72,4 +72,3 @@ CoD.Promo_RewardImage.new = function ( menu, controller )
 	
 	return self
 end
-

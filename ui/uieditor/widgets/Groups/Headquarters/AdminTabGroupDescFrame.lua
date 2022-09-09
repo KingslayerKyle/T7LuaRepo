@@ -94,4 +94,3 @@ CoD.AdminTabGroupDescFrame.new = function ( menu, controller )
 	
 	return self
 end
-

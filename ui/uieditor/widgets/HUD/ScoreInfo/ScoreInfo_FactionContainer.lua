@@ -264,4 +264,3 @@ CoD.ScoreInfo_FactionContainer.new = function ( menu, controller )
 	
 	return self
 end
-

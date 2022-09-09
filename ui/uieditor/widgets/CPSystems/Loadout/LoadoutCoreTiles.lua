@@ -48,21 +48,17 @@ CoD.LoadoutCoreTiles.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Equipped = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -87,4 +83,3 @@ CoD.LoadoutCoreTiles.new = function ( menu, controller )
 	
 	return self
 end
-

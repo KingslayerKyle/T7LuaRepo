@@ -158,4 +158,3 @@ CoD.ScrStk_CombatEfficiencyPulse.new = function ( menu, controller )
 	
 	return self
 end
-

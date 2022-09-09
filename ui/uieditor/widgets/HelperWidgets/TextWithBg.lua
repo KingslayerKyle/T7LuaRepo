@@ -39,4 +39,3 @@ CoD.TextWithBg.new = function ( menu, controller )
 	
 	return self
 end
-

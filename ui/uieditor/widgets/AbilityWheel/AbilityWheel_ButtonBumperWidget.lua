@@ -213,4 +213,3 @@ CoD.AbilityWheel_ButtonBumperWidget.new = function ( menu, controller )
 	
 	return self
 end
-

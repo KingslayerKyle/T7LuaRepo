@@ -691,4 +691,3 @@ CoD.CaptureGeneratorWheelWidget_Tomb.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -66,4 +66,3 @@ CoD.Challenges_XPIndicator.new = function ( menu, controller )
 	
 	return self
 end
-

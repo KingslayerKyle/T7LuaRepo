@@ -234,4 +234,3 @@ CoD.vhud_agr_missile.new = function ( menu, controller )
 	
 	return self
 end
-

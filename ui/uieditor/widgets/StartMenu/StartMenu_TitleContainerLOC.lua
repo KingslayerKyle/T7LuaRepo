@@ -1294,4 +1294,3 @@ CoD.StartMenu_TitleContainerLOC.new = function ( menu, controller )
 	
 	return self
 end
-

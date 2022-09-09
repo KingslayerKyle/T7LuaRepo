@@ -142,4 +142,3 @@ CoD.CallingCards_Loot_CartoonTankWidget.new = function ( menu, controller )
 	
 	return self
 end
-

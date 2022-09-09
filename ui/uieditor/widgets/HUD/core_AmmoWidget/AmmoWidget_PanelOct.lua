@@ -31,4 +31,3 @@ CoD.AmmoWidget_PanelOct.new = function ( menu, controller )
 	
 	return self
 end
-

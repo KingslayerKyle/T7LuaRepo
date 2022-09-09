@@ -179,4 +179,3 @@ CoD.DemoPlaybackControls.new = function ( menu, controller )
 	
 	return self
 end
-

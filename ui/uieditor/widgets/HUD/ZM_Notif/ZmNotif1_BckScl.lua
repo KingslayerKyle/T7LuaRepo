@@ -48,4 +48,3 @@ CoD.ZmNotif1_BckScl.new = function ( menu, controller )
 	
 	return self
 end
-

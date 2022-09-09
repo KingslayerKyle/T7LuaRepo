@@ -45,4 +45,3 @@ CoD.FE_LabelSubHeadingA.new = function ( menu, controller )
 	
 	return self
 end
-

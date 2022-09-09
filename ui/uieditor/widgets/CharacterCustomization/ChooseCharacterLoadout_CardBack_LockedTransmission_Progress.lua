@@ -141,4 +141,3 @@ CoD.ChooseCharacterLoadout_CardBack_LockedTransmission_Progress.new = function (
 	
 	return self
 end
-

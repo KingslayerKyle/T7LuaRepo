@@ -176,4 +176,3 @@ CoD.FE_Menu_LeftGraphics.new = function ( menu, controller )
 	
 	return self
 end
-

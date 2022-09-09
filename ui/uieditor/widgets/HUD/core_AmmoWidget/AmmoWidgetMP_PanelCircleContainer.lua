@@ -30,7 +30,6 @@ CoD.AmmoWidgetMP_PanelCircleContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -45,4 +44,3 @@ CoD.AmmoWidgetMP_PanelCircleContainer.new = function ( menu, controller )
 	
 	return self
 end
-

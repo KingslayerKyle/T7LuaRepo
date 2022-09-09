@@ -37,25 +37,21 @@ CoD.AmmoWidget_AbilityForeStroke.new = function ( menu, controller )
 		Ready = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Charge = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		InUse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Stowed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -135,4 +131,3 @@ CoD.AmmoWidget_AbilityForeStroke.new = function ( menu, controller )
 	
 	return self
 end
-

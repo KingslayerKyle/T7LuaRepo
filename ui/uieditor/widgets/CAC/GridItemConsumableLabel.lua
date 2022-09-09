@@ -135,4 +135,3 @@ CoD.GridItemConsumableLabel.new = function ( menu, controller )
 	
 	return self
 end
-

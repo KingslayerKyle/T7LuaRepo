@@ -102,4 +102,3 @@ CoD.TModeSetting_AgileTacticalMode.new = function ( menu, controller )
 	
 	return self
 end
-

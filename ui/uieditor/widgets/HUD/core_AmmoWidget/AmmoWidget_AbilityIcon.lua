@@ -154,4 +154,3 @@ CoD.AmmoWidget_AbilityIcon.new = function ( menu, controller )
 	
 	return self
 end
-

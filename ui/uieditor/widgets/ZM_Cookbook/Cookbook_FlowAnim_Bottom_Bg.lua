@@ -214,4 +214,3 @@ CoD.Cookbook_FlowAnim_Bottom_Bg.new = function ( menu, controller )
 	
 	return self
 end
-

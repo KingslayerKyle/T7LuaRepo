@@ -90,4 +90,3 @@ CoD.FE_TitleElemMid.new = function ( menu, controller )
 	
 	return self
 end
-

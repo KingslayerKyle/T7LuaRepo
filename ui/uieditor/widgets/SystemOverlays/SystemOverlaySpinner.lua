@@ -197,4 +197,3 @@ CoD.SystemOverlaySpinner.new = function ( menu, controller )
 	
 	return self
 end
-

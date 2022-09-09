@@ -41,4 +41,3 @@ CoD.StartMenu_Options_SliderBar_Bar.new = function ( menu, controller )
 	
 	return self
 end
-

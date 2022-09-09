@@ -41,4 +41,3 @@ CoD.Theater_HintText.new = function ( menu, controller )
 	
 	return self
 end
-

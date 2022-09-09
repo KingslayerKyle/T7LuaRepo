@@ -64,4 +64,3 @@ CoD.Prestige_TitleBox.new = function ( menu, controller )
 	
 	return self
 end
-

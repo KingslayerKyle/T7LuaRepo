@@ -86,4 +86,3 @@ CoD.SprayerWidgetTitle.new = function ( menu, controller )
 	
 	return self
 end
-

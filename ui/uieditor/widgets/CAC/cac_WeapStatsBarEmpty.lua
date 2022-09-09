@@ -65,4 +65,3 @@ CoD.cac_WeapStatsBarEmpty.new = function ( menu, controller )
 	
 	return self
 end
-

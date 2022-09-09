@@ -1304,4 +1304,3 @@ CoD.PaintshopWeaponListButtonNew.new = function ( menu, controller )
 	
 	return self
 end
-

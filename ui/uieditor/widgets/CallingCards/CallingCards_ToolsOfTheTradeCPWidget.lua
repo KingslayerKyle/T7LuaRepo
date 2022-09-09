@@ -472,4 +472,3 @@ CoD.CallingCards_ToolsOfTheTradeCPWidget.new = function ( menu, controller )
 	
 	return self
 end
-

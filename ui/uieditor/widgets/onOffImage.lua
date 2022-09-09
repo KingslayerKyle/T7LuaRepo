@@ -49,4 +49,3 @@ CoD.onOffImage.new = function ( menu, controller )
 	
 	return self
 end
-

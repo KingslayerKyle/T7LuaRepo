@@ -73,4 +73,3 @@ CoD.CallingCard_FlyingBee_Wing_Front_Anim.new = function ( menu, controller )
 	
 	return self
 end
-

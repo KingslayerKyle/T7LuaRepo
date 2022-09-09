@@ -311,4 +311,3 @@ CoD.VoDViewerMovieAndBackground.new = function ( menu, controller )
 	
 	return self
 end
-

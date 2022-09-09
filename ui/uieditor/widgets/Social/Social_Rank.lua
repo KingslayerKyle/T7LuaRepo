@@ -103,4 +103,3 @@ CoD.Social_Rank.new = function ( menu, controller )
 	
 	return self
 end
-

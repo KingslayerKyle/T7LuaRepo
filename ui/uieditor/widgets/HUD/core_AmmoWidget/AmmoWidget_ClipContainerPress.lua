@@ -413,4 +413,3 @@ CoD.AmmoWidget_ClipContainerPress.new = function ( menu, controller )
 	
 	return self
 end
-

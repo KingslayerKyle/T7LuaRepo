@@ -404,4 +404,3 @@ CoD.codcaster_ScoreLogoWidget.new = function ( menu, controller )
 	
 	return self
 end
-

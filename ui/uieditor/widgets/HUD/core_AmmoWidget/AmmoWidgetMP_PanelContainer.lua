@@ -288,4 +288,3 @@ CoD.AmmoWidgetMP_PanelContainer.new = function ( menu, controller )
 	
 	return self
 end
-

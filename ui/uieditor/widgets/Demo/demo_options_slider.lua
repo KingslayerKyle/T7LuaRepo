@@ -786,7 +786,6 @@ CoD.demo_options_slider.new = function ( menu, controller )
 		Selected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		ButtonOnly = {
@@ -2127,4 +2126,3 @@ CoD.demo_options_slider.new = function ( menu, controller )
 	
 	return self
 end
-

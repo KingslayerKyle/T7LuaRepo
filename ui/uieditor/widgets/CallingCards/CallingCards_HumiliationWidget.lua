@@ -201,4 +201,3 @@ CoD.CallingCards_HumiliationWidget.new = function ( menu, controller )
 	
 	return self
 end
-

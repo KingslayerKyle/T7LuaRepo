@@ -73,4 +73,3 @@ CoD.MissionRecordVault_Heading.new = function ( menu, controller )
 	
 	return self
 end
-

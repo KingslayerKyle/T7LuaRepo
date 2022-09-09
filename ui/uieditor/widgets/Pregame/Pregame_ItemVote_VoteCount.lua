@@ -127,4 +127,3 @@ CoD.Pregame_ItemVote_VoteCount.new = function ( menu, controller )
 	
 	return self
 end
-

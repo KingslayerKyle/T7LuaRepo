@@ -156,4 +156,3 @@ CoD.BM_BribeLabel_Specialist.new = function ( menu, controller )
 	
 	return self
 end
-

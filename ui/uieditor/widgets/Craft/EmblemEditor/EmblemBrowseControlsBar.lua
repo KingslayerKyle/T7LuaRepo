@@ -354,4 +354,3 @@ CoD.EmblemBrowseControlsBar.new = function ( menu, controller )
 	
 	return self
 end
-

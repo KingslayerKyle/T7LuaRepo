@@ -718,4 +718,3 @@ CoD.SprayerWidget.new = function ( menu, controller )
 	
 	return self
 end
-

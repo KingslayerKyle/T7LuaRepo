@@ -339,4 +339,3 @@ CoD.ZmAmmo_EquipContainer.new = function ( menu, controller )
 	
 	return self
 end
-

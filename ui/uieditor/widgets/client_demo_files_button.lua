@@ -108,4 +108,3 @@ CoD.client_demo_files_button.new = function ( menu, controller )
 	
 	return self
 end
-

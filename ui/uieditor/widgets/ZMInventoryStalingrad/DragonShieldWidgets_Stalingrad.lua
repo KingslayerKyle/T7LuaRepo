@@ -327,4 +327,3 @@ CoD.DragonShieldWidgets_Stalingrad.new = function ( menu, controller )
 	
 	return self
 end
-

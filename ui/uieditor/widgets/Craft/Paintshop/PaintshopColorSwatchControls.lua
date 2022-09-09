@@ -306,4 +306,3 @@ CoD.PaintshopColorSwatchControls.new = function ( menu, controller )
 	
 	return self
 end
-

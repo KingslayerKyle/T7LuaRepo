@@ -181,4 +181,3 @@ CoD.StartMenu_GameOptions_ZM.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -46,4 +46,3 @@ CoD.vhud_sentinel_NotificationLine.new = function ( menu, controller )
 	
 	return self
 end
-

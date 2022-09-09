@@ -125,4 +125,3 @@ CoD.Cookbook_Recipe_Fill.new = function ( menu, controller )
 	
 	return self
 end
-

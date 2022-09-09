@@ -29,13 +29,11 @@ CoD.PaintjobSlotsBack.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		SlotsFull = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -50,4 +48,3 @@ CoD.PaintjobSlotsBack.new = function ( menu, controller )
 	
 	return self
 end
-

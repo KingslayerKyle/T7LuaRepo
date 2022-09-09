@@ -49,4 +49,3 @@ CoD.FEMenuLargeGraphics.new = function ( menu, controller )
 	
 	return self
 end
-

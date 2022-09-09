@@ -207,4 +207,3 @@ CoD.outofbounds_timerframedots.new = function ( menu, controller )
 	
 	return self
 end
-

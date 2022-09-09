@@ -248,4 +248,3 @@ CoD.CallingCards_Humiliation_Skull.new = function ( menu, controller )
 	
 	return self
 end
-

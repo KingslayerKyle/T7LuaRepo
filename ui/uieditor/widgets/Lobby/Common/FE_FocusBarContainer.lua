@@ -93,4 +93,3 @@ CoD.FE_FocusBarContainer.new = function ( menu, controller )
 	
 	return self
 end
-

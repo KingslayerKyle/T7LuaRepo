@@ -96,7 +96,6 @@ CoD.Competitive_Settings_SelectedItemInfo.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		SquareImage = {
@@ -155,4 +154,3 @@ CoD.Competitive_Settings_SelectedItemInfo.new = function ( menu, controller )
 	
 	return self
 end
-

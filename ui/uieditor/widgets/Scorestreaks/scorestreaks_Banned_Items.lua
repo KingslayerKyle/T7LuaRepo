@@ -95,4 +95,3 @@ CoD.scorestreaks_Banned_Items.new = function ( menu, controller )
 	
 	return self
 end
-

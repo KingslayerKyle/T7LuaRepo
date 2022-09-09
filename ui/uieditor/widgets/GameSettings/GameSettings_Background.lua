@@ -70,4 +70,3 @@ CoD.GameSettings_Background.new = function ( menu, controller )
 	
 	return self
 end
-

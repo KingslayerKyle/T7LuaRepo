@@ -34,13 +34,11 @@ CoD.BM_Contracts_Specialist_btn_bg_left.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		NoPersonalization = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -68,4 +66,3 @@ CoD.BM_Contracts_Specialist_btn_bg_left.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -640,4 +640,3 @@ CoD.StartMenu_Barracks_Button_ZM.new = function ( menu, controller )
 	
 	return self
 end
-

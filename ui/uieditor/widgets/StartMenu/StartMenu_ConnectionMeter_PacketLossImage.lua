@@ -146,4 +146,3 @@ CoD.StartMenu_ConnectionMeter_PacketLossImage.new = function ( menu, controller 
 	
 	return self
 end
-

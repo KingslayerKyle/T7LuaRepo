@@ -953,4 +953,3 @@ CoD.list1ButtonNewStyle.new = function ( menu, controller )
 	
 	return self
 end
-

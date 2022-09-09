@@ -78,4 +78,3 @@ CoD.PlayerCard_Label.new = function ( menu, controller )
 	
 	return self
 end
-

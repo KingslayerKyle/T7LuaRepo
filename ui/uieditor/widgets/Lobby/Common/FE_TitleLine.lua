@@ -108,4 +108,3 @@ CoD.FE_TitleLine.new = function ( menu, controller )
 	
 	return self
 end
-

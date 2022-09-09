@@ -1138,4 +1138,3 @@ CoD.GroupsFeaturedItemSmall.new = function ( menu, controller )
 	
 	return self
 end
-

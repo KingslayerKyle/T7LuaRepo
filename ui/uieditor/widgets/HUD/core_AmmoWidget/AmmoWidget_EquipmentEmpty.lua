@@ -224,4 +224,3 @@ CoD.AmmoWidget_EquipmentEmpty.new = function ( menu, controller )
 	
 	return self
 end
-

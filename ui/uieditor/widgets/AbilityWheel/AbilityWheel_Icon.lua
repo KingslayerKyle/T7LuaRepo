@@ -66,4 +66,3 @@ CoD.AbilityWheel_Icon.new = function ( menu, controller )
 	
 	return self
 end
-

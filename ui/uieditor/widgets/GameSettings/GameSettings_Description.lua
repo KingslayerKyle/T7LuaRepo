@@ -128,4 +128,3 @@ CoD.GameSettings_Description.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -387,4 +387,3 @@ CoD.Slider_Small.new = function ( menu, controller )
 	
 	return self
 end
-

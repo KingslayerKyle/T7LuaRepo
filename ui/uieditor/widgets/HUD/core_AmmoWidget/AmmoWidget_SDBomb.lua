@@ -359,4 +359,3 @@ CoD.AmmoWidget_SDBomb.new = function ( menu, controller )
 	
 	return self
 end
-

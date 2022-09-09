@@ -48,4 +48,3 @@ CoD.MissionRecordVault_FrameBG.new = function ( menu, controller )
 	
 	return self
 end
-

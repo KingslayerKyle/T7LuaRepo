@@ -282,7 +282,6 @@ CoD.FR_TopScoreWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 12 )
@@ -562,4 +561,3 @@ CoD.FR_TopScoreWidget.new = function ( menu, controller )
 	
 	return self
 end
-

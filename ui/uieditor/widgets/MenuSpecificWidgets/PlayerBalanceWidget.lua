@@ -76,4 +76,3 @@ CoD.PlayerBalanceWidget.new = function ( menu, controller )
 	
 	return self
 end
-

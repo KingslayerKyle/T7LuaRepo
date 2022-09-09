@@ -116,4 +116,3 @@ CoD.MediaManager_EmblemItemLarge.new = function ( menu, controller )
 	
 	return self
 end
-

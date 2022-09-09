@@ -156,4 +156,3 @@ CoD.CallingCard_loot_bling_bg.new = function ( menu, controller )
 	
 	return self
 end
-

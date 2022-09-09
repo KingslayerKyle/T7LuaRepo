@@ -29,4 +29,3 @@ CoD.AmmoWidget_BackCircleOutter.new = function ( menu, controller )
 	
 	return self
 end
-

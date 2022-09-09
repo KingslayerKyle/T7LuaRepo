@@ -77,4 +77,3 @@ CoD.VehicleGround_ModB2Pixel.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -79,4 +79,3 @@ CoD.FE_TalkersWidget.new = function ( menu, controller )
 	
 	return self
 end
-

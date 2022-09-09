@@ -321,4 +321,3 @@ CoD.DniWipe_OuterIrisBlink.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -416,4 +416,3 @@ CoD.ZmAmmo_DpadMeterPistolFactory.new = function ( menu, controller )
 	
 	return self
 end
-

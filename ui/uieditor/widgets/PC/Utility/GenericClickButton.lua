@@ -239,4 +239,3 @@ CoD.GenericClickButton.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -404,4 +404,3 @@ CoD.RocketShieldBlueprintWidget_Castle.new = function ( menu, controller )
 	
 	return self
 end
-

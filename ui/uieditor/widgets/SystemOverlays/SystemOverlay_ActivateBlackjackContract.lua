@@ -156,4 +156,3 @@ CoD.SystemOverlay_ActivateBlackjackContract.new = function ( menu, controller )
 	
 	return self
 end
-

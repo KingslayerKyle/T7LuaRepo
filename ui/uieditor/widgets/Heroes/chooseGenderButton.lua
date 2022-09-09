@@ -1567,4 +1567,3 @@ CoD.chooseGenderButton.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -170,4 +170,3 @@ CoD.Voip_Entry.new = function ( menu, controller )
 	
 	return self
 end
-

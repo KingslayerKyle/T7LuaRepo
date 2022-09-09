@@ -103,4 +103,3 @@ CoD.Challenges_MP_Stickerbook_ArenaBest.new = function ( menu, controller )
 	
 	return self
 end
-

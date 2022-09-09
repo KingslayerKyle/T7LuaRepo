@@ -144,4 +144,3 @@ CoD.MapVoteOfficial.new = function ( menu, controller )
 	
 	return self
 end
-

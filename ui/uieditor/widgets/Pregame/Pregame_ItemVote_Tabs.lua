@@ -53,4 +53,3 @@ CoD.Pregame_ItemVote_Tabs.new = function ( menu, controller )
 	
 	return self
 end
-

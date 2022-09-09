@@ -84,4 +84,3 @@ CoD.GroupsFriendsList.new = function ( menu, controller )
 	
 	return self
 end
-

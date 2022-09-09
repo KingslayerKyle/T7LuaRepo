@@ -275,4 +275,3 @@ CoD.SpecialistCompletionEpicRewardsCarouselItem.new = function ( menu, controlle
 	
 	return self
 end
-

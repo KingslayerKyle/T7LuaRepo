@@ -263,4 +263,3 @@ CoD.CombatRecordCallingCard.new = function ( menu, controller )
 	
 	return self
 end
-

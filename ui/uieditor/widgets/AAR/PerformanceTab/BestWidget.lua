@@ -41,4 +41,3 @@ CoD.BestWidget.new = function ( menu, controller )
 	
 	return self
 end
-

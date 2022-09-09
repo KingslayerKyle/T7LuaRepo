@@ -162,4 +162,3 @@ CoD.fe_FooterContainerMain.new = function ( menu, controller )
 	
 	return self
 end
-

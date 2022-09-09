@@ -697,4 +697,3 @@ CoD.AmmoWidgetMP_EquipmentTacticalItem.new = function ( menu, controller )
 	
 	return self
 end
-

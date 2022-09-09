@@ -64,4 +64,3 @@ CoD.TrialComplete_TitleBox.new = function ( menu, controller )
 	
 	return self
 end
-

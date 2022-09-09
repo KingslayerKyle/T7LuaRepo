@@ -40,4 +40,3 @@ CoD.CP_Prologue_AmmoWidget_PanelClip.new = function ( menu, controller )
 	
 	return self
 end
-

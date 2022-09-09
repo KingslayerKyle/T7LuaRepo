@@ -82,4 +82,3 @@ CoD.FadingSkipPrompt.new = function ( menu, controller )
 	
 	return self
 end
-

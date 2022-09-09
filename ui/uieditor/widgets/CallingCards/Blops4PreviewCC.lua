@@ -650,4 +650,3 @@ CoD.Blops4PreviewCC.new = function ( menu, controller )
 	
 	return self
 end
-

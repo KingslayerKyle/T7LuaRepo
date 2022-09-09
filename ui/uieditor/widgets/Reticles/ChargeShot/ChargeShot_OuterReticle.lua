@@ -29,4 +29,3 @@ CoD.ChargeShot_OuterReticle.new = function ( menu, controller )
 	
 	return self
 end
-

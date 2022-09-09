@@ -30,4 +30,3 @@ CoD.MapWidget_Element.new = function ( menu, controller )
 	
 	return self
 end
-

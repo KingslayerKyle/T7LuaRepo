@@ -172,4 +172,3 @@ CoD.systemOverlay_reportGroup.new = function ( menu, controller )
 	
 	return self
 end
-

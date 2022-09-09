@@ -53,4 +53,3 @@ CoD.CommsWidget_CharacterText.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -114,4 +114,3 @@ CoD.SpecialContracts_CallingCardContracts_Stickerbook.new = function ( menu, con
 	
 	return self
 end
-

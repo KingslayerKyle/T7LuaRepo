@@ -72,4 +72,3 @@ CoD.cac_3dTitleIntermediary.new = function ( menu, controller )
 	
 	return self
 end
-

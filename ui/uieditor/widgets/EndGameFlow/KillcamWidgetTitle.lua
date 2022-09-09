@@ -7,7 +7,6 @@ require( "ui.uieditor.widgets.Lobby.Common.FE_ButtonPanel" )
 require( "ui.uieditor.widgets.HUD.Outcome.Outcome_title_PnlLine" )
 
 local PostLoadFunc = function ( self, controller, menu )
-
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		local f2_local0 = nil
 		local f2_local1 = {}
@@ -634,4 +633,3 @@ CoD.KillcamWidgetTitle.new = function ( menu, controller )
 	
 	return self
 end
-

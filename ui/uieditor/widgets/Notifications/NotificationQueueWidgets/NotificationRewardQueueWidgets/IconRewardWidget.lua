@@ -117,4 +117,3 @@ CoD.IconRewardWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -58,4 +58,3 @@ CoD.AbilityWheel_VignetteInternal.new = function ( menu, controller )
 	
 	return self
 end
-

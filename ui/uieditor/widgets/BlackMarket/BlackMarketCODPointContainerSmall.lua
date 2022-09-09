@@ -212,4 +212,3 @@ CoD.BlackMarketCODPointContainerSmall.new = function ( menu, controller )
 	
 	return self
 end
-

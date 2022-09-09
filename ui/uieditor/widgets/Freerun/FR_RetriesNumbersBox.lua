@@ -40,11 +40,9 @@ CoD.FR_RetriesNumbersBox.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			FaultAnim = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -55,4 +53,3 @@ CoD.FR_RetriesNumbersBox.new = function ( menu, controller )
 	
 	return self
 end
-

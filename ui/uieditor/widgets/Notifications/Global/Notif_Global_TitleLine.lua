@@ -57,4 +57,3 @@ CoD.Notif_Global_TitleLine.new = function ( menu, controller )
 	
 	return self
 end
-

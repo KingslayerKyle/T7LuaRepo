@@ -138,4 +138,3 @@ CoD.CombatRecordStatRing.new = function ( menu, controller )
 	
 	return self
 end
-

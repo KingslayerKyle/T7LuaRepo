@@ -108,4 +108,3 @@ CoD.BM_LimitedItemRibbon.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -139,4 +139,3 @@ CoD.vhud_siegebot_missile_count.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -2,7 +2,6 @@
 -- This hash is used for caching, delete to decompile the file again
 
 local PostLoadFunc = function ( self, controller, menu )
-	
 end
 
 CoD.ButtonPrompt3dBind = InheritFrom( LUI.UIElement )
@@ -93,4 +92,3 @@ CoD.ButtonPrompt3dBind.new = function ( menu, controller )
 	
 	return self
 end
-

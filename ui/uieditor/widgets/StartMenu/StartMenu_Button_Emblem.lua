@@ -270,4 +270,3 @@ CoD.StartMenu_Button_Emblem.new = function ( menu, controller )
 	
 	return self
 end
-

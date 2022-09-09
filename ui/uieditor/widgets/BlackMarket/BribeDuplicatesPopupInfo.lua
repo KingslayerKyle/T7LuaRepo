@@ -433,4 +433,3 @@ CoD.BribeDuplicatesPopupInfo.new = function ( menu, controller )
 	
 	return self
 end
-

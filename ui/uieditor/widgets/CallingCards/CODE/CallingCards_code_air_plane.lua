@@ -39,4 +39,3 @@ CoD.CallingCards_code_air_plane.new = function ( menu, controller )
 	
 	return self
 end
-

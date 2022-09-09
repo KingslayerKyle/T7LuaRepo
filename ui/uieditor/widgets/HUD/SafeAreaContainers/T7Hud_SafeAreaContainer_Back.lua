@@ -107,4 +107,3 @@ CoD.T7Hud_SafeAreaContainer_Back.new = function ( menu, controller )
 	
 	return self
 end
-

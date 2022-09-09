@@ -50,4 +50,3 @@ CoD.FE_ListHeaderSmall.new = function ( menu, controller )
 	
 	return self
 end
-

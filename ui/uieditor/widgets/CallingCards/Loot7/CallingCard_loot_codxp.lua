@@ -1380,4 +1380,3 @@ CoD.CallingCard_loot_codxp.new = function ( menu, controller )
 	
 	return self
 end
-

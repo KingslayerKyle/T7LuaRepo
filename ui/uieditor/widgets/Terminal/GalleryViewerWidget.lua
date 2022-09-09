@@ -372,4 +372,3 @@ CoD.GalleryViewerWidget.new = function ( menu, controller )
 	
 	return self
 end
-

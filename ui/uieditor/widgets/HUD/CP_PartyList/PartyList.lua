@@ -33,7 +33,6 @@ CoD.PartyList.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		PlayerCount_4 = {
@@ -89,4 +88,3 @@ CoD.PartyList.new = function ( menu, controller )
 	
 	return self
 end
-

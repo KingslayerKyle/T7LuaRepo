@@ -108,4 +108,3 @@ CoD.AdminTab.new = function ( menu, controller )
 	
 	return self
 end
-

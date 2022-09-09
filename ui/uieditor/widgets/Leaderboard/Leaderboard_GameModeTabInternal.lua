@@ -78,4 +78,3 @@ CoD.Leaderboard_GameModeTabInternal.new = function ( menu, controller )
 	
 	return self
 end
-

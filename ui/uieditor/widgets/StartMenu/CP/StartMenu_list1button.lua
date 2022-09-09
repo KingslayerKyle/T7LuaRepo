@@ -1359,4 +1359,3 @@ CoD.StartMenu_list1button.new = function ( menu, controller )
 	
 	return self
 end
-

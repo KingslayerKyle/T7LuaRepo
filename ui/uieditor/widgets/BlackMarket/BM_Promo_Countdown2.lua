@@ -54,7 +54,6 @@ CoD.BM_Promo_Countdown2.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		visible = {
@@ -74,4 +73,3 @@ CoD.BM_Promo_Countdown2.new = function ( menu, controller )
 	
 	return self
 end
-

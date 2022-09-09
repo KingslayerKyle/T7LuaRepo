@@ -253,11 +253,9 @@ CoD.Competitive_SettingsSummary.new = function ( menu, controller )
 			end,
 			FadeIn = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			HideForGameStart = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		VoteAndDraftActive = {
@@ -632,4 +630,3 @@ CoD.Competitive_SettingsSummary.new = function ( menu, controller )
 	
 	return self
 end
-

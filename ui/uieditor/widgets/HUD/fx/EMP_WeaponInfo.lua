@@ -71,4 +71,3 @@ CoD.EMP_WeaponInfo.new = function ( menu, controller )
 	
 	return self
 end
-

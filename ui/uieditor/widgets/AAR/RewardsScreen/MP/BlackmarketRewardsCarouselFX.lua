@@ -74,4 +74,3 @@ CoD.BlackmarketRewardsCarouselFX.new = function ( menu, controller )
 	
 	return self
 end
-

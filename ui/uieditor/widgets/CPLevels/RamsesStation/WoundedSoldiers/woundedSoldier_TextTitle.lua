@@ -70,4 +70,3 @@ CoD.woundedSoldier_TextTitle.new = function ( menu, controller )
 	
 	return self
 end
-

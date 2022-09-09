@@ -130,4 +130,3 @@ CoD.StartMenu_MusicTracks_Checkbox.new = function ( menu, controller )
 	
 	return self
 end
-

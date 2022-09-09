@@ -263,4 +263,3 @@ CoD.ZmAmmo_ClipPress.new = function ( menu, controller )
 	
 	return self
 end
-

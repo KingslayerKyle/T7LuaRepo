@@ -411,7 +411,6 @@ CoD.vhud_ms_Reticle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 42 )
@@ -4522,4 +4521,3 @@ CoD.vhud_ms_Reticle.new = function ( menu, controller )
 	
 	return self
 end
-

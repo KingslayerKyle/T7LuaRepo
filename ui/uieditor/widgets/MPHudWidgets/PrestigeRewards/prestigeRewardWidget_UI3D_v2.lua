@@ -109,4 +109,3 @@ CoD.prestigeRewardWidget_UI3D_v2.new = function ( menu, controller )
 	
 	return self
 end
-

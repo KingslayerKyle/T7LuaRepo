@@ -338,4 +338,3 @@ CoD.ScoreInfo_EnemyScoreContainer.new = function ( menu, controller )
 	
 	return self
 end
-

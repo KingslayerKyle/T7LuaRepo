@@ -96,4 +96,3 @@ CoD.Theater_TextLable.new = function ( menu, controller )
 	
 	return self
 end
-

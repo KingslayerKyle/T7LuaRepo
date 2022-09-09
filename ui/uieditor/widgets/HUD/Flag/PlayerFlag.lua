@@ -29,4 +29,3 @@ CoD.PlayerFlag.new = function ( menu, controller )
 	
 	return self
 end
-

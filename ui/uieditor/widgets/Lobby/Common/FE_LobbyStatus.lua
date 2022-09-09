@@ -189,11 +189,9 @@ CoD.FE_LobbyStatus.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Update = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		customGames = {
@@ -239,4 +237,3 @@ CoD.FE_LobbyStatus.new = function ( menu, controller )
 	
 	return self
 end
-

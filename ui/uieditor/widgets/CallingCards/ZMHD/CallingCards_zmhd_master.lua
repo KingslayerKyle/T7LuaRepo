@@ -109,4 +109,3 @@ CoD.CallingCards_zmhd_master.new = function ( menu, controller )
 	
 	return self
 end
-

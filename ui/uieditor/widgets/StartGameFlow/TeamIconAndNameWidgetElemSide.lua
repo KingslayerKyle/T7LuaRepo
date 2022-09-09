@@ -40,4 +40,3 @@ CoD.TeamIconAndNameWidgetElemSide.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -200,4 +200,3 @@ CoD.Leaderboard_VerticalCounter.new = function ( menu, controller )
 	
 	return self
 end
-

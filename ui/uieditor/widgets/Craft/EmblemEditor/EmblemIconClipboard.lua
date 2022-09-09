@@ -300,4 +300,3 @@ CoD.EmblemIconClipboard.new = function ( menu, controller )
 	
 	return self
 end
-

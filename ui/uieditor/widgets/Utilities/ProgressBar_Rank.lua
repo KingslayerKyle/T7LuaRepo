@@ -485,4 +485,3 @@ CoD.ProgressBar_Rank.new = function ( menu, controller )
 	
 	return self
 end
-

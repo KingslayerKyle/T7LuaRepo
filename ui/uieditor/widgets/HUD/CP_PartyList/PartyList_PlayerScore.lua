@@ -166,4 +166,3 @@ CoD.PartyList_PlayerScore.new = function ( menu, controller )
 	
 	return self
 end
-

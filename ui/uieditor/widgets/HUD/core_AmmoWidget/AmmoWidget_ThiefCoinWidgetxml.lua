@@ -63,4 +63,3 @@ CoD.AmmoWidget_ThiefCoinWidgetxml.new = function ( menu, controller )
 	
 	return self
 end
-

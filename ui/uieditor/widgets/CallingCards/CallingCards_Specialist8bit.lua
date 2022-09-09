@@ -368,4 +368,3 @@ CoD.CallingCards_Specialist8bit.new = function ( menu, controller )
 	
 	return self
 end
-

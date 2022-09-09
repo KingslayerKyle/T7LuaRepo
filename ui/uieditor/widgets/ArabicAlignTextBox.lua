@@ -2,7 +2,6 @@
 -- This hash is used for caching, delete to decompile the file again
 
 local PostLoadFunc = function ( f1_arg0 )
-	
 end
 
 CoD.ArabicAlignTextBox = InheritFrom( LUI.UIElement )
@@ -42,7 +41,6 @@ CoD.ArabicAlignTextBox.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -53,4 +51,3 @@ CoD.ArabicAlignTextBox.new = function ( menu, controller )
 	
 	return self
 end
-

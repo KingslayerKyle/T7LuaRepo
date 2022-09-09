@@ -663,4 +663,3 @@ CoD.ZMScr_ListingSm.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -703,4 +703,3 @@ CoD.List1ButtonLarge_Dialog.new = function ( menu, controller )
 	
 	return self
 end
-

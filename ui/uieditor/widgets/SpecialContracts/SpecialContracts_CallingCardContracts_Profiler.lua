@@ -392,4 +392,3 @@ CoD.SpecialContracts_CallingCardContracts_Profiler.new = function ( menu, contro
 	
 	return self
 end
-

@@ -73,7 +73,6 @@ CoD.BM_LineLightFX.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			LineFX_01 = function ()
 				self:setupElementClipCounter( 5 )
@@ -236,4 +235,3 @@ CoD.BM_LineLightFX.new = function ( menu, controller )
 	
 	return self
 end
-

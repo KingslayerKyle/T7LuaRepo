@@ -91,4 +91,3 @@ CoD.rocketLauncherReticle_UI3D.new = function ( menu, controller )
 	
 	return self
 end
-

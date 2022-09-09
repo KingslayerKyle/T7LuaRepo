@@ -45,11 +45,9 @@ CoD.Notification2xpWeaponReward.new = function ( menu, controller )
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Combined = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		french = {
@@ -81,4 +79,3 @@ CoD.Notification2xpWeaponReward.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -10,7 +10,6 @@ require( "ui.uieditor.widgets.CPLevels.RamsesStation.WoundedSoldiers.woundedSold
 
 local PostLoadFunc = function ( self, controller, menu )
 	self.SetWaypointState = function ()
-		
 	end
 	
 end
@@ -6671,4 +6670,3 @@ CoD.woundedSoldierWidget.new = function ( menu, controller )
 	
 	return self
 end
-

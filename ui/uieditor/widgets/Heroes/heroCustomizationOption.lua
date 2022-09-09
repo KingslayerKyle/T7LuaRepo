@@ -6064,4 +6064,3 @@ CoD.heroCustomizationOption.new = function ( menu, controller )
 	
 	return self
 end
-

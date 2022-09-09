@@ -141,4 +141,3 @@ CoD.Pregame_Title.new = function ( menu, controller )
 	
 	return self
 end
-

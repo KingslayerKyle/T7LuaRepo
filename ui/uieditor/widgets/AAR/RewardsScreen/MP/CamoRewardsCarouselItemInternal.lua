@@ -226,4 +226,3 @@ CoD.CamoRewardsCarouselItemInternal.new = function ( menu, controller )
 	
 	return self
 end
-

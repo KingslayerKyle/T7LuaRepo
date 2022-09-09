@@ -58,4 +58,3 @@ CoD.ZM_Promo_DoubleVialWidgetListItem.new = function ( menu, controller )
 	
 	return self
 end
-

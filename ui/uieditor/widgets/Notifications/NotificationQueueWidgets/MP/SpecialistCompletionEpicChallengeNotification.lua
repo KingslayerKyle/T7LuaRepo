@@ -1473,4 +1473,3 @@ CoD.SpecialistCompletionEpicChallengeNotification.new = function ( menu, control
 	
 	return self
 end
-

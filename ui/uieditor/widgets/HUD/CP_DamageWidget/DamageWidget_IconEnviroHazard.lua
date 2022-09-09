@@ -314,4 +314,3 @@ CoD.DamageWidget_IconEnviroHazard.new = function ( menu, controller )
 	
 	return self
 end
-

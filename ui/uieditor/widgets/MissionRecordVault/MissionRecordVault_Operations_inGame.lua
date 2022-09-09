@@ -280,4 +280,3 @@ CoD.MissionRecordVault_Operations_inGame.new = function ( menu, controller )
 	
 	return self
 end
-

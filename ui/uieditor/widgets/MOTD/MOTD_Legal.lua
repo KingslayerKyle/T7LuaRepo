@@ -43,4 +43,3 @@ CoD.MOTD_Legal.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -90,7 +90,6 @@ CoD.FR_BestTime.new = function ( menu, controller )
 			end,
 			FaultAnim = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Visible = {
@@ -147,4 +146,3 @@ CoD.FR_BestTime.new = function ( menu, controller )
 	
 	return self
 end
-

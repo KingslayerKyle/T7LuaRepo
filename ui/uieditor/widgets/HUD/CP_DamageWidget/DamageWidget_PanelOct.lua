@@ -31,4 +31,3 @@ CoD.DamageWidget_PanelOct.new = function ( menu, controller )
 	
 	return self
 end
-

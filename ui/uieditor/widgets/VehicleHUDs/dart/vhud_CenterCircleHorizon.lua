@@ -39,4 +39,3 @@ CoD.vhud_CenterCircleHorizon.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -99,4 +99,3 @@ CoD.ChooseCharacter_HelpBubble_ButtonContainer.new = function ( menu, controller
 	
 	return self
 end
-

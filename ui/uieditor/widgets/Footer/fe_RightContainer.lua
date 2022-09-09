@@ -252,4 +252,3 @@ CoD.fe_RightContainer.new = function ( menu, controller )
 	
 	return self
 end
-

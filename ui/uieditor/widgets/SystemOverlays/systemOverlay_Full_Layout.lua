@@ -424,4 +424,3 @@ CoD.systemOverlay_Full_Layout.new = function ( menu, controller )
 	
 	return self
 end
-

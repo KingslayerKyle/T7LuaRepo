@@ -45,11 +45,9 @@ CoD.Playlist_SpecialEventIcon.new = function ( menu, controller )
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Combined = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -60,4 +58,3 @@ CoD.Playlist_SpecialEventIcon.new = function ( menu, controller )
 	
 	return self
 end
-

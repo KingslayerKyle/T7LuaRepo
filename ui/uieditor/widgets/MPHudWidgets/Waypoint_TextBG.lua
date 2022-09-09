@@ -104,4 +104,3 @@ CoD.Waypoint_TextBG.new = function ( menu, controller )
 	
 	return self
 end
-

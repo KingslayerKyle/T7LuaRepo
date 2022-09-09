@@ -141,4 +141,3 @@ CoD.Notification_Rigs.new = function ( menu, controller )
 	
 	return self
 end
-

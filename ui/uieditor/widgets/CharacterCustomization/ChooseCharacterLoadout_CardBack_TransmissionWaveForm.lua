@@ -230,4 +230,3 @@ CoD.ChooseCharacterLoadout_CardBack_TransmissionWaveForm.new = function ( menu, 
 	
 	return self
 end
-

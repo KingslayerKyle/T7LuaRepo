@@ -115,4 +115,3 @@ CoD.ScriptDebugMenuListWidget.new = function ( menu, controller )
 	
 	return self
 end
-

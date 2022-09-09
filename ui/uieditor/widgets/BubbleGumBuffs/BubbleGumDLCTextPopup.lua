@@ -53,13 +53,11 @@ CoD.BubbleGumDLCTextPopup.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Below = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -70,4 +68,3 @@ CoD.BubbleGumDLCTextPopup.new = function ( menu, controller )
 	
 	return self
 end
-

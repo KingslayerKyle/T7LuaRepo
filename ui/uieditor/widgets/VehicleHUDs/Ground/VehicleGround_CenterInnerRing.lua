@@ -166,7 +166,6 @@ CoD.VehicleGround_CenterInnerRing.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -177,4 +176,3 @@ CoD.VehicleGround_CenterInnerRing.new = function ( menu, controller )
 	
 	return self
 end
-

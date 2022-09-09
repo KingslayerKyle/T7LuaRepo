@@ -5539,4 +5539,3 @@ CoD.WeaponBuildKitsWeaponList.new = function ( menu, controller )
 	
 	return self
 end
-

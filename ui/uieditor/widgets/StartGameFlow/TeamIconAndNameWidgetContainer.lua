@@ -49,7 +49,6 @@ CoD.TeamIconAndNameWidgetContainer.new = function ( menu, controller )
 			end,
 			StreakEdit = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		CodCaster = {
@@ -95,4 +94,3 @@ CoD.TeamIconAndNameWidgetContainer.new = function ( menu, controller )
 	
 	return self
 end
-

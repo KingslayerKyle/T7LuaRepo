@@ -110,4 +110,3 @@ CoD.WaveformBlackHat.new = function ( menu, controller )
 	
 	return self
 end
-

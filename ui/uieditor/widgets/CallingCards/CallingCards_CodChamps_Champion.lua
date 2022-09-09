@@ -718,4 +718,3 @@ CoD.CallingCards_CodChamps_Champion.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -568,4 +568,3 @@ CoD.CallingCard_loot_alexandria.new = function ( menu, controller )
 	
 	return self
 end
-

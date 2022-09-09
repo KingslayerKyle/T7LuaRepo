@@ -71,4 +71,3 @@ CoD.cac_BlackFadeIn.new = function ( menu, controller )
 	
 	return self
 end
-

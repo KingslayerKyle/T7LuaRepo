@@ -28,23 +28,19 @@ CoD.SafeHouse_ButtonPanel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Transparent = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Safehouse = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -78,4 +74,3 @@ CoD.SafeHouse_ButtonPanel.new = function ( menu, controller )
 	
 	return self
 end
-

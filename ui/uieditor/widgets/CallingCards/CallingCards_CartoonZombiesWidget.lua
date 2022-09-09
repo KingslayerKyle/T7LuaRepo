@@ -438,4 +438,3 @@ CoD.CallingCards_CartoonZombiesWidget.new = function ( menu, controller )
 	
 	return self
 end
-

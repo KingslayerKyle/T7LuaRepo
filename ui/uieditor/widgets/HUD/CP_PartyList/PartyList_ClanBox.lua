@@ -78,4 +78,3 @@ CoD.PartyList_ClanBox.new = function ( menu, controller )
 	
 	return self
 end
-

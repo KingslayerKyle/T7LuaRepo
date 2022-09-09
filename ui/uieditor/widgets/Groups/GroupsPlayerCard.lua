@@ -365,4 +365,3 @@ CoD.GroupsPlayerCard.new = function ( menu, controller )
 	
 	return self
 end
-

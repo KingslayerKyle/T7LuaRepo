@@ -28,7 +28,6 @@ CoD.Outcome_title_PnlLineInt.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		VictoryGreen = {
@@ -69,4 +68,3 @@ CoD.Outcome_title_PnlLineInt.new = function ( menu, controller )
 	
 	return self
 end
-

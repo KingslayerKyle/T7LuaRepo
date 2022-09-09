@@ -53,4 +53,3 @@ CoD.CallingCard_Clover_Rainbow.new = function ( menu, controller )
 	
 	return self
 end
-

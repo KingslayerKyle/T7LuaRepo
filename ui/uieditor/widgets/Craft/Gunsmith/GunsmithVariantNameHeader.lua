@@ -101,4 +101,3 @@ CoD.GunsmithVariantNameHeader.new = function ( menu, controller )
 	
 	return self
 end
-

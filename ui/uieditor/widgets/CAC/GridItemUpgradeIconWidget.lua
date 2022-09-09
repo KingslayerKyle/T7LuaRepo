@@ -80,4 +80,3 @@ CoD.GridItemUpgradeIconWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -155,4 +155,3 @@ CoD.Challenges_NearCompletionWidget.new = function ( menu, controller )
 	
 	return self
 end
-

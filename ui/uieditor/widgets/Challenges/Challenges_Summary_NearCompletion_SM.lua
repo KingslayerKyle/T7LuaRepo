@@ -137,4 +137,3 @@ CoD.Challenges_Summary_NearCompletion_SM.new = function ( menu, controller )
 	
 	return self
 end
-

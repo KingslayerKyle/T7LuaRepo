@@ -133,4 +133,3 @@ CoD.DniWipe_TopLineBlink.new = function ( menu, controller )
 	
 	return self
 end
-

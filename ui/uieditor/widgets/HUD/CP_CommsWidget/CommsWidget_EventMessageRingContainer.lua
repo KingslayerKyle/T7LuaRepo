@@ -255,7 +255,6 @@ CoD.CommsWidget_EventMessageRingContainer.new = function ( menu, controller )
 		Fake = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -271,4 +270,3 @@ CoD.CommsWidget_EventMessageRingContainer.new = function ( menu, controller )
 	
 	return self
 end
-

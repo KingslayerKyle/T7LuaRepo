@@ -98,4 +98,3 @@ CoD.FE_3dTitleFeatureIcon.new = function ( menu, controller )
 	
 	return self
 end
-

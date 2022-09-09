@@ -1068,4 +1068,3 @@ CoD.CallingCards_ZM_Samantha.new = function ( menu, controller )
 	
 	return self
 end
-

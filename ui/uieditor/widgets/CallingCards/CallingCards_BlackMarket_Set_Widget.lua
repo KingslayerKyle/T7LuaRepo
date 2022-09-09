@@ -481,4 +481,3 @@ CoD.CallingCards_BlackMarket_Set_Widget.new = function ( menu, controller )
 	
 	return self
 end
-

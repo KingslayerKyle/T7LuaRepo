@@ -567,4 +567,3 @@ CoD.ChooseCharacter_HelpBubble_Button_LBRB.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -58,4 +58,3 @@ CoD.onOffArabicAlignTextBox.new = function ( menu, controller )
 	
 	return self
 end
-

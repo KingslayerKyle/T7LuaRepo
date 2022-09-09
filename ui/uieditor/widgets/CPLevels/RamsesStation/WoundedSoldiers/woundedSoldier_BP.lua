@@ -78,4 +78,3 @@ CoD.woundedSoldier_BP.new = function ( menu, controller )
 	
 	return self
 end
-

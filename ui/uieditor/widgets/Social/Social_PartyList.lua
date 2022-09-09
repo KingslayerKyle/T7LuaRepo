@@ -109,4 +109,3 @@ CoD.Social_PartyList.new = function ( menu, controller )
 	
 	return self
 end
-

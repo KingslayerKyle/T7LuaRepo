@@ -203,4 +203,3 @@ CoD.VehicleGround_HashIcon.new = function ( menu, controller )
 	
 	return self
 end
-

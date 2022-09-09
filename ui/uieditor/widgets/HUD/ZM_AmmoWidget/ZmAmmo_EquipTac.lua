@@ -335,4 +335,3 @@ CoD.ZmAmmo_EquipTac.new = function ( menu, controller )
 	
 	return self
 end
-

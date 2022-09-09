@@ -204,4 +204,3 @@ CoD.SystemOverlay_MissingCurrencyRedemption.new = function ( menu, controller )
 	
 	return self
 end
-

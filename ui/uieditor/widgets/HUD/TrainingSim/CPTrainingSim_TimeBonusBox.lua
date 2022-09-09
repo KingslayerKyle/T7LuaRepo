@@ -39,7 +39,6 @@ CoD.CPTrainingSim_TimeBonusBox.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			round_complete = function ()
 				self:setupElementClipCounter( 1 )
@@ -83,7 +82,6 @@ CoD.CPTrainingSim_TimeBonusBox.new = function ( menu, controller )
 			end,
 			immersion_complete = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -94,4 +92,3 @@ CoD.CPTrainingSim_TimeBonusBox.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -82,4 +82,3 @@ CoD.FE_FeaturedCardsTitleBox.new = function ( menu, controller )
 	
 	return self
 end
-

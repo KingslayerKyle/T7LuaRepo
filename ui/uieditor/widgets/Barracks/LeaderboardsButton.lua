@@ -251,4 +251,3 @@ CoD.LeaderboardsButton.new = function ( menu, controller )
 	
 	return self
 end
-

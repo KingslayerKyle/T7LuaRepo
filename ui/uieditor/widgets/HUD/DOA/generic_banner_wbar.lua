@@ -122,4 +122,3 @@ CoD.generic_banner_wbar.new = function ( menu, controller )
 	
 	return self
 end
-

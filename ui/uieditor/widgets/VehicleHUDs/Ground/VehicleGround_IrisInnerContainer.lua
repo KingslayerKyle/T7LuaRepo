@@ -226,7 +226,6 @@ CoD.VehicleGround_IrisInnerContainer.new = function ( menu, controller )
 		LeavingOperationalZone = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -258,4 +257,3 @@ CoD.VehicleGround_IrisInnerContainer.new = function ( menu, controller )
 	
 	return self
 end
-

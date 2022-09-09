@@ -84,4 +84,3 @@ CoD.EmblemIcon.new = function ( menu, controller )
 	
 	return self
 end
-

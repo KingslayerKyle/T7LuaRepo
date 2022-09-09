@@ -44,4 +44,3 @@ CoD.AbilityWheel_DescriptionBottom.new = function ( menu, controller )
 	
 	return self
 end
-

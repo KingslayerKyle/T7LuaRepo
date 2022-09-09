@@ -71,4 +71,3 @@ CoD.PersonalizeCharacter_SelectedItemField.new = function ( menu, controller )
 	
 	return self
 end
-

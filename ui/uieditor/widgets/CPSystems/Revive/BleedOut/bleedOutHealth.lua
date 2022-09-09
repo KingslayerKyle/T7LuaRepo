@@ -4882,4 +4882,3 @@ CoD.bleedOutHealth.new = function ( menu, controller )
 	
 	return self
 end
-

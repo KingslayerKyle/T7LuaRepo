@@ -534,4 +534,3 @@ CoD.LobbySlideSocialInfoWidget.new = function ( menu, controller )
 	
 	return self
 end
-

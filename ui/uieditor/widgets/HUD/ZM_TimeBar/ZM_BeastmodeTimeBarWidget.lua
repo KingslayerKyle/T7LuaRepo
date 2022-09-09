@@ -121,4 +121,3 @@ CoD.ZM_BeastmodeTimeBarWidget.new = function ( menu, controller )
 	
 	return self
 end
-

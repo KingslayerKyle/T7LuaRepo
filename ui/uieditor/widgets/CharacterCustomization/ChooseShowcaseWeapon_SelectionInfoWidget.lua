@@ -352,4 +352,3 @@ CoD.ChooseShowcaseWeapon_SelectionInfoWidget.new = function ( menu, controller )
 	
 	return self
 end
-

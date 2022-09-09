@@ -29,21 +29,17 @@ CoD.vhud_button_HexBlurWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Active = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -71,4 +67,3 @@ CoD.vhud_button_HexBlurWidget.new = function ( menu, controller )
 	
 	return self
 end
-

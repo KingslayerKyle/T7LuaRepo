@@ -336,4 +336,3 @@ CoD.CallingCards_cwl_opticgaming.new = function ( menu, controller )
 	
 	return self
 end
-

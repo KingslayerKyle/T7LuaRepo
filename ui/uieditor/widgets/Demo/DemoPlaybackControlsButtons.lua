@@ -4,7 +4,6 @@
 require( "ui.uieditor.widgets.FooterButtonPrompt" )
 
 local PostLoadFunc = function ( self, controller, menu )
-
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		self:processEvent( {
 			name = "resize_prompt"
@@ -723,7 +722,6 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		PlaybackMode = {
@@ -2327,4 +2325,3 @@ CoD.DemoPlaybackControlsButtons.new = function ( menu, controller )
 	
 	return self
 end
-

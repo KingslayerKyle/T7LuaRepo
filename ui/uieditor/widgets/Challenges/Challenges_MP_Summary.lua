@@ -190,4 +190,3 @@ CoD.Challenges_MP_Summary.new = function ( menu, controller )
 	
 	return self
 end
-

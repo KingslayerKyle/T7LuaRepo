@@ -69,4 +69,3 @@ CoD.layermofn.new = function ( menu, controller )
 	
 	return self
 end
-

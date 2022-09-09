@@ -46,4 +46,3 @@ CoD.Pregame_ItemVote_BanProtectPopup_Alert.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -30,4 +30,3 @@ CoD.vignette_corner_right.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -85,4 +85,3 @@ CoD.Stuck.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -137,4 +137,3 @@ CoD.FR_Checkpoint.new = function ( menu, controller )
 	
 	return self
 end
-

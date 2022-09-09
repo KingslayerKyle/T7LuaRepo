@@ -64,4 +64,3 @@ CoD.PerksWidget_InGame.new = function ( menu, controller )
 	
 	return self
 end
-

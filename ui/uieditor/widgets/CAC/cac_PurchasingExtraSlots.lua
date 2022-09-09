@@ -159,4 +159,3 @@ CoD.cac_PurchasingExtraSlots.new = function ( menu, controller )
 	
 	return self
 end
-

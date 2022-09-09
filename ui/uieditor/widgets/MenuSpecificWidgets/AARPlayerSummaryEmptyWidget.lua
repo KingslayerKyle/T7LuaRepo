@@ -103,4 +103,3 @@ CoD.AARPlayerSummaryEmptyWidget.new = function ( menu, controller )
 	
 	return self
 end
-

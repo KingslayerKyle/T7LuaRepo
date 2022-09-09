@@ -74,4 +74,3 @@ CoD.systemOverlay_GroupsInvite.new = function ( menu, controller )
 	
 	return self
 end
-

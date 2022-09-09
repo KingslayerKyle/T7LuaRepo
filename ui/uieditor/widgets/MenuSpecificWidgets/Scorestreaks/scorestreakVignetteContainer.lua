@@ -60,4 +60,3 @@ CoD.scorestreakVignetteContainer.new = function ( menu, controller )
 	
 	return self
 end
-

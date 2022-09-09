@@ -197,4 +197,3 @@ CoD.IconController.new = function ( menu, controller )
 	
 	return self
 end
-

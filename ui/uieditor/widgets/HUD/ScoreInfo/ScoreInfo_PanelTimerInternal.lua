@@ -31,4 +31,3 @@ CoD.ScoreInfo_PanelTimerInternal.new = function ( menu, controller )
 	
 	return self
 end
-

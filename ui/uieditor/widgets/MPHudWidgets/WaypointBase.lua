@@ -235,4 +235,3 @@ CoD.WaypointBase.new = function ( menu, controller )
 	end
 	return self
 end
-

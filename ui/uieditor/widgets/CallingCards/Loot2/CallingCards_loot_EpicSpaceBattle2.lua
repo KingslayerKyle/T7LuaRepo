@@ -295,4 +295,3 @@ CoD.CallingCards_loot_EpicSpaceBattle2.new = function ( menu, controller )
 	
 	return self
 end
-

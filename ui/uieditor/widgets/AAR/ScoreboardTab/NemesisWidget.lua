@@ -93,7 +93,6 @@ CoD.NemesisWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		DefaultStateArabic = {
@@ -128,4 +127,3 @@ CoD.NemesisWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -46,4 +46,3 @@ CoD.uie_Border.new = function ( menu, controller )
 	
 	return self
 end
-

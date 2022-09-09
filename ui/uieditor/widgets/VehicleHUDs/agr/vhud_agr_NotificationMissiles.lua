@@ -136,4 +136,3 @@ CoD.vhud_agr_NotificationMissiles.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -269,4 +269,3 @@ CoD.SearchingForPlayer_Flipped.new = function ( menu, controller )
 	
 	return self
 end
-

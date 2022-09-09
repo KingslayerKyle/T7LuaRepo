@@ -1462,4 +1462,3 @@ CoD.CamoChallengeNotification.new = function ( menu, controller )
 	
 	return self
 end
-

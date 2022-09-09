@@ -46,11 +46,9 @@ CoD.ZmAmmo_DpadIconShieldIconStalingrad.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Ready = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		AlmostFull = {
@@ -148,4 +146,3 @@ CoD.ZmAmmo_DpadIconShieldIconStalingrad.new = function ( menu, controller )
 	
 	return self
 end
-

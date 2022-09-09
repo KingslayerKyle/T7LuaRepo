@@ -155,4 +155,3 @@ CoD.FE_3dTitleNumber.new = function ( menu, controller )
 	
 	return self
 end
-

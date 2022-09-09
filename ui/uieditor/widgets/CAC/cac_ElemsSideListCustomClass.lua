@@ -47,7 +47,6 @@ CoD.cac_ElemsSideListCustomClass.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 3 )
@@ -154,4 +153,3 @@ CoD.cac_ElemsSideListCustomClass.new = function ( menu, controller )
 	
 	return self
 end
-

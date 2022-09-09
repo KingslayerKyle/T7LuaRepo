@@ -244,4 +244,3 @@ CoD.ZmAmmo_DpadLeftAmmoNumberWidgetFactory.new = function ( menu, controller )
 	
 	return self
 end
-

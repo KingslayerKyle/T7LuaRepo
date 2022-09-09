@@ -90,4 +90,3 @@ CoD.GameSettings_CompetitiveAdvancedSettings.new = function ( menu, controller )
 	
 	return self
 end
-

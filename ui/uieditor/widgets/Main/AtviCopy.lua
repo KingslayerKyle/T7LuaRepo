@@ -31,12 +31,10 @@ CoD.AtviCopy.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 				self.nextClip = "DefaultClip"
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 				self.nextClip = "Focus"
 			end
 		}
@@ -48,4 +46,3 @@ CoD.AtviCopy.new = function ( menu, controller )
 	
 	return self
 end
-

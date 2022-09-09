@@ -71,4 +71,3 @@ CoD.RankUpNotificationTile.new = function ( menu, controller )
 	
 	return self
 end
-

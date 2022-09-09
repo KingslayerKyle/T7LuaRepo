@@ -35,13 +35,11 @@ CoD.StartMenu_ScoreAndMissionRunTime.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		CP_PauseMenu = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -73,4 +71,3 @@ CoD.StartMenu_ScoreAndMissionRunTime.new = function ( menu, controller )
 	
 	return self
 end
-

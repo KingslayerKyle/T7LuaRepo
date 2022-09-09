@@ -32,4 +32,3 @@ CoD.BorderBakedMask.new = function ( menu, controller )
 	
 	return self
 end
-

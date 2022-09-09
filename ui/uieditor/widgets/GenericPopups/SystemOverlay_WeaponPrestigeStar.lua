@@ -60,4 +60,3 @@ CoD.SystemOverlay_WeaponPrestigeStar.new = function ( menu, controller )
 	
 	return self
 end
-

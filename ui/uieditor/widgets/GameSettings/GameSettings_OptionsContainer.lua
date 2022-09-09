@@ -53,4 +53,3 @@ CoD.GameSettings_OptionsContainer.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -191,4 +191,3 @@ CoD.CPTrainingSimProgressWidget.new = function ( menu, controller )
 	
 	return self
 end
-

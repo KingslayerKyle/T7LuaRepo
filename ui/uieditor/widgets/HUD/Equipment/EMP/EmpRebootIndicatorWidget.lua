@@ -84,4 +84,3 @@ CoD.EmpRebootIndicatorWidget.new = function ( menu, controller )
 	
 	return self
 end
-

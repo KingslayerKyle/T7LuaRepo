@@ -805,4 +805,3 @@ CoD.DniWipe_PurgingTextWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -120,4 +120,3 @@ CoD.TModeSetting_OverwatchTacticalMode.new = function ( menu, controller )
 	
 	return self
 end
-

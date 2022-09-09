@@ -251,4 +251,3 @@ CoD.NotificationPerksContainer.new = function ( menu, controller )
 	
 	return self
 end
-

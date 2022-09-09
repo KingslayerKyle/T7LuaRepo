@@ -59,4 +59,3 @@ CoD.DoubleLoot.new = function ( menu, controller )
 	
 	return self
 end
-

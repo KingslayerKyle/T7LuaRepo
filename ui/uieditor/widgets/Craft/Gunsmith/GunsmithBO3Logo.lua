@@ -50,4 +50,3 @@ CoD.GunsmithBO3Logo.new = function ( menu, controller )
 	
 	return self
 end
-

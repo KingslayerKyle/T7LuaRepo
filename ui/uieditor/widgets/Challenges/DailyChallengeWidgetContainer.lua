@@ -29,7 +29,6 @@ CoD.DailyChallengeWidgetContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 1 )
@@ -51,4 +50,3 @@ CoD.DailyChallengeWidgetContainer.new = function ( menu, controller )
 	
 	return self
 end
-

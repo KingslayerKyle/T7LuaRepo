@@ -90,4 +90,3 @@ CoD.AmmoWidget_AmmoMeterColor.new = function ( menu, controller )
 	
 	return self
 end
-

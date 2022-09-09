@@ -49,4 +49,3 @@ CoD.AmmoWidget_PanelClip.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -66,4 +66,3 @@ CoD.weakpoint_NewPlus.new = function ( menu, controller )
 	
 	return self
 end
-

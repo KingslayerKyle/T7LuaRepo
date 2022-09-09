@@ -79,4 +79,3 @@ CoD.cac_PrimaryWeaponDescription.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -561,4 +561,3 @@ CoD.FE_3dTitleInternal.new = function ( menu, controller )
 	
 	return self
 end
-

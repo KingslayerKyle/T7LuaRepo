@@ -721,4 +721,3 @@ CoD.ZmAmmo_Clip.new = function ( menu, controller )
 	
 	return self
 end
-

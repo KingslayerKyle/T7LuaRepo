@@ -35,15 +35,12 @@ CoD.ScrStk_UpDownArrow.new = function ( menu, controller )
 			end,
 			Charging = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			ReadyMiddle = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Inactive = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Shown = {
@@ -63,4 +60,3 @@ CoD.ScrStk_UpDownArrow.new = function ( menu, controller )
 	
 	return self
 end
-

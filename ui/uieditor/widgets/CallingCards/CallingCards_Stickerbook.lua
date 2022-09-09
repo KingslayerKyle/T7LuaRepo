@@ -113,4 +113,3 @@ CoD.CallingCards_Stickerbook.new = function ( menu, controller )
 	
 	return self
 end
-

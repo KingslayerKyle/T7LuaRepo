@@ -40,4 +40,3 @@ CoD.ScoreInfo_TimerNumber.new = function ( menu, controller )
 	
 	return self
 end
-

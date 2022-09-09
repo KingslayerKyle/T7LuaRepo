@@ -374,4 +374,3 @@ CoD.GameSettings_CompetitiveSettings.new = function ( menu, controller )
 	
 	return self
 end
-

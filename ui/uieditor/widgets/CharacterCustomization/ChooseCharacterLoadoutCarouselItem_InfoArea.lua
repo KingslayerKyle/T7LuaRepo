@@ -497,4 +497,3 @@ CoD.ChooseCharacterLoadoutCarouselItem_InfoArea.new = function ( menu, controlle
 	
 	return self
 end
-

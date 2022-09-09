@@ -193,4 +193,3 @@ CoD.EntryModsLoad.new = function ( menu, controller )
 	
 	return self
 end
-

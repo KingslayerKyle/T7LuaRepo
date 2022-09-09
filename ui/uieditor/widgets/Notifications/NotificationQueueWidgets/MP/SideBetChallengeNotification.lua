@@ -1179,4 +1179,3 @@ CoD.SideBetChallengeNotification.new = function ( menu, controller )
 	
 	return self
 end
-

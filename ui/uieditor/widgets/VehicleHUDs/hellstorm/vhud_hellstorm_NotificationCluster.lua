@@ -68,4 +68,3 @@ CoD.vhud_hellstorm_NotificationCluster.new = function ( menu, controller )
 	
 	return self
 end
-

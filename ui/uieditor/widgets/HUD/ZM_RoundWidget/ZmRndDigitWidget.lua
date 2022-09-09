@@ -358,7 +358,6 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		One = {
@@ -3919,4 +3918,3 @@ CoD.ZmRndDigitWidget.new = function ( menu, controller )
 	
 	return self
 end
-

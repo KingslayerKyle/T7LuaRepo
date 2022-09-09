@@ -442,4 +442,3 @@ CoD.fe_FooterButtonPromptWithContainerMain.new = function ( menu, controller )
 	
 	return self
 end
-

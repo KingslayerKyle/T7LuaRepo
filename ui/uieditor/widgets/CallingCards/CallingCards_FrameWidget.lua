@@ -73,4 +73,3 @@ CoD.CallingCards_FrameWidget.new = function ( menu, controller )
 	
 	return self
 end
-

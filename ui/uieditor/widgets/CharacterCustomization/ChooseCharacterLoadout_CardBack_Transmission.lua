@@ -760,4 +760,3 @@ CoD.ChooseCharacterLoadout_CardBack_Transmission.new = function ( menu, controll
 	
 	return self
 end
-

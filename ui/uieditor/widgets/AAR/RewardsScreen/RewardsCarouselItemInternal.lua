@@ -480,4 +480,3 @@ CoD.RewardsCarouselItemInternal.new = function ( menu, controller )
 	
 	return self
 end
-

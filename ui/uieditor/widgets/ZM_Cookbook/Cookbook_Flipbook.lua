@@ -44,4 +44,3 @@ CoD.Cookbook_Flipbook.new = function ( menu, controller )
 	
 	return self
 end
-

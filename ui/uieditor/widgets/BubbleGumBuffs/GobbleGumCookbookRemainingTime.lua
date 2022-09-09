@@ -36,26 +36,21 @@ CoD.GobbleGumCookbookRemainingTime.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Cooking = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			StartCooking = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Cooking = function ()
 				self:setupElementClipCounter( 0 )
-
 				self.nextClip = "Cooking"
 			end,
 			EndCooking = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -70,4 +65,3 @@ CoD.GobbleGumCookbookRemainingTime.new = function ( menu, controller )
 	
 	return self
 end
-

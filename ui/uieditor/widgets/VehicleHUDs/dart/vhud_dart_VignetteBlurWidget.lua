@@ -31,4 +31,3 @@ CoD.vhud_dart_VignetteBlurWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -241,4 +241,3 @@ CoD.Challenges_MasterCallingCardWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -139,4 +139,3 @@ CoD.ChooseClass_ClassSetTabPip.new = function ( menu, controller )
 	
 	return self
 end
-

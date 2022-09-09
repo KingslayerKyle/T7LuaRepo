@@ -122,4 +122,3 @@ CoD.BM_SaleActive.new = function ( menu, controller )
 	
 	return self
 end
-

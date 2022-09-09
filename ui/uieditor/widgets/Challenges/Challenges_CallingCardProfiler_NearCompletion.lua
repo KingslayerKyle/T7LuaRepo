@@ -534,4 +534,3 @@ CoD.Challenges_CallingCardProfiler_NearCompletion.new = function ( menu, control
 	
 	return self
 end
-

@@ -327,4 +327,3 @@ CoD.Promo_ThermometerAndRewards_EdgeMarker.new = function ( menu, controller )
 	
 	return self
 end
-

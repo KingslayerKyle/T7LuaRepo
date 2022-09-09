@@ -174,4 +174,3 @@ CoD.Social_PlayersList_ManageParty.new = function ( menu, controller )
 	
 	return self
 end
-

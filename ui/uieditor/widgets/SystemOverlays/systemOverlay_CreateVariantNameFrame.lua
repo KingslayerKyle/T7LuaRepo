@@ -49,4 +49,3 @@ CoD.systemOverlay_CreateVariantNameFrame.new = function ( menu, controller )
 	
 	return self
 end
-

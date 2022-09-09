@@ -106,4 +106,3 @@ CoD.loadingCountdownTimerWidget.new = function ( menu, controller )
 	
 	return self
 end
-

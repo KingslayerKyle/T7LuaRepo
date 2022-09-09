@@ -130,4 +130,3 @@ CoD.MyFilesWidget.new = function ( menu, controller )
 	
 	return self
 end
-

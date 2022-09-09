@@ -209,4 +209,3 @@ CoD.cac_LargePrestigeStars.new = function ( menu, controller )
 	
 	return self
 end
-

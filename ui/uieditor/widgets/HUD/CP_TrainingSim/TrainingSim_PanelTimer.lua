@@ -202,4 +202,3 @@ CoD.TrainingSim_PanelTimer.new = function ( menu, controller )
 	
 	return self
 end
-

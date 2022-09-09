@@ -28,7 +28,6 @@ CoD.fullscreen.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Visible = {
@@ -48,4 +47,3 @@ CoD.fullscreen.new = function ( menu, controller )
 	
 	return self
 end
-

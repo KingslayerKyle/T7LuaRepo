@@ -95,4 +95,3 @@ CoD.StartMenu_Options_Controls_GenericControllerItem.new = function ( menu, cont
 	
 	return self
 end
-

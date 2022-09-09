@@ -291,4 +291,3 @@ CoD.DemoContextPanel.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -39,7 +39,6 @@ local PostLoadFunc = function ( self, controller, menu )
 	end
 	
 	local f1_local2 = function ( f4_arg0, f4_arg1 )
-		
 	end
 	
 	self.ChatClientChannelSelectorContainer:setHandleMouse( true )
@@ -194,4 +193,3 @@ CoD.ChatClientInput.new = function ( menu, controller )
 	
 	return self
 end
-

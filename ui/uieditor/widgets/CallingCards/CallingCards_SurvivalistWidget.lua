@@ -456,4 +456,3 @@ CoD.CallingCards_SurvivalistWidget.new = function ( menu, controller )
 	
 	return self
 end
-

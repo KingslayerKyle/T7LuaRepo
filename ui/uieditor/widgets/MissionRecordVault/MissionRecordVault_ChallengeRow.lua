@@ -1939,4 +1939,3 @@ CoD.MissionRecordVault_ChallengeRow.new = function ( menu, controller )
 	
 	return self
 end
-

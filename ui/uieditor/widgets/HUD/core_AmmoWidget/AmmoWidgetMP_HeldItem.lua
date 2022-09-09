@@ -2220,4 +2220,3 @@ CoD.AmmoWidgetMP_HeldItem.new = function ( menu, controller )
 	
 	return self
 end
-

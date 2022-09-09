@@ -67,4 +67,3 @@ CoD.WaypointArrowWidget.new = function ( menu, controller )
 	
 	return self
 end
-

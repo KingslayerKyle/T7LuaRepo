@@ -879,4 +879,3 @@ CoD.BM_Contracts_Character_NotActivated_Widget.new = function ( menu, controller
 	
 	return self
 end
-

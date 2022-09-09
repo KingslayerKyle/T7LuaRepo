@@ -191,4 +191,3 @@ CoD.CallingCards_Specialist8bit_eyes.new = function ( menu, controller )
 	
 	return self
 end
-

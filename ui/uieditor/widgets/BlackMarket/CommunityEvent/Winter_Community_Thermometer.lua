@@ -586,4 +586,3 @@ CoD.Winter_Community_Thermometer.new = function ( menu, controller )
 	
 	return self
 end
-

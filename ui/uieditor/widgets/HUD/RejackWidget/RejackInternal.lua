@@ -635,4 +635,3 @@ CoD.RejackInternal.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -106,4 +106,3 @@ CoD.Competitive_SettingsList_Specialist.new = function ( menu, controller )
 	
 	return self
 end
-

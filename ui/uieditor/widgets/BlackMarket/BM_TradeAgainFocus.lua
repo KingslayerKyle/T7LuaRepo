@@ -84,4 +84,3 @@ CoD.BM_TradeAgainFocus.new = function ( menu, controller )
 	
 	return self
 end
-

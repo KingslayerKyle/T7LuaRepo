@@ -108,4 +108,3 @@ CoD.BM_CompleteRibbon.new = function ( menu, controller )
 	
 	return self
 end
-

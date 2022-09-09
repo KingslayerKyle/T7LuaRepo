@@ -123,4 +123,3 @@ CoD.BM_SaleActive_Hori.new = function ( menu, controller )
 	
 	return self
 end
-

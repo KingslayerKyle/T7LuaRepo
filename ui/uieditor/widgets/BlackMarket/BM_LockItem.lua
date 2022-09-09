@@ -119,4 +119,3 @@ CoD.BM_LockItem.new = function ( menu, controller )
 	
 	return self
 end
-

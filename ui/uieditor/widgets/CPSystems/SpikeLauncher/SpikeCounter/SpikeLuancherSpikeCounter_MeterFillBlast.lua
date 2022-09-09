@@ -157,4 +157,3 @@ CoD.SpikeLuancherSpikeCounter_MeterFillBlast.new = function ( menu, controller )
 	
 	return self
 end
-

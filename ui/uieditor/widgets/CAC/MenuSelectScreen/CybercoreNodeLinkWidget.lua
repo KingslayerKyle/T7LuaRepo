@@ -264,4 +264,3 @@ CoD.CybercoreNodeLinkWidget.new = function ( menu, controller )
 	
 	return self
 end
-

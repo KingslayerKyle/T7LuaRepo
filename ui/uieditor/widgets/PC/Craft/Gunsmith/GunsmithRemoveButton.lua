@@ -330,4 +330,3 @@ CoD.GunsmithRemoveButton.new = function ( menu, controller )
 	
 	return self
 end
-

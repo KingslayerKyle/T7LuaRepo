@@ -80,4 +80,3 @@ CoD.PodControlPieceWidget.new = function ( menu, controller )
 	
 	return self
 end
-

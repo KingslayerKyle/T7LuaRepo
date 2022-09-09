@@ -85,7 +85,6 @@ CoD.WeaponNameWidget.new = function ( menu, controller )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		NoText = {
@@ -127,4 +126,3 @@ CoD.WeaponNameWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -4415,4 +4415,3 @@ CoD.AbilityButtonNew.new = function ( menu, controller )
 	
 	return self
 end
-

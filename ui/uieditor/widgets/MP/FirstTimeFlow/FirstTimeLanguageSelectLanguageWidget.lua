@@ -144,4 +144,3 @@ CoD.FirstTimeLanguageSelectLanguageWidget.new = function ( menu, controller )
 	
 	return self
 end
-

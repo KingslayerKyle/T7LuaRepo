@@ -47,4 +47,3 @@ CoD.VehicleGround_ModT6.new = function ( menu, controller )
 	
 	return self
 end
-

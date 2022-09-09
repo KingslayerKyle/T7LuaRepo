@@ -767,4 +767,3 @@ CoD.SummoningKeyItem.new = function ( menu, controller )
 	
 	return self
 end
-

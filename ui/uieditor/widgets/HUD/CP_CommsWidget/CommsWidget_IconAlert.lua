@@ -29,4 +29,3 @@ CoD.CommsWidget_IconAlert.new = function ( menu, controller )
 	
 	return self
 end
-

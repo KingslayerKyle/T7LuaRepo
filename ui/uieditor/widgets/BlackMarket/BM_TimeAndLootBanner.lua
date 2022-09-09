@@ -206,4 +206,3 @@ CoD.BM_TimeAndLootBanner.new = function ( menu, controller )
 	
 	return self
 end
-

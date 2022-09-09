@@ -377,4 +377,3 @@ CoD.StartMenu_Options_CheckBoxOption.new = function ( menu, controller )
 	
 	return self
 end
-

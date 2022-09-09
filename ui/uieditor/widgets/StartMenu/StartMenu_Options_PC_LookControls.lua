@@ -103,4 +103,3 @@ CoD.StartMenu_Options_PC_LookControls.new = function ( menu, controller )
 	
 	return self
 end
-

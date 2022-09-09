@@ -92,4 +92,3 @@ CoD.CallingCards_loot_BO2_light.new = function ( menu, controller )
 	
 	return self
 end
-

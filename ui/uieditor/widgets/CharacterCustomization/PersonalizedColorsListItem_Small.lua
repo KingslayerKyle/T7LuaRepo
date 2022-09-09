@@ -46,4 +46,3 @@ CoD.PersonalizedColorsListItem_Small.new = function ( menu, controller )
 	
 	return self
 end
-

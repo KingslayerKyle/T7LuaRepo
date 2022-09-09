@@ -67,4 +67,3 @@ CoD.DLC_Free_weekend.new = function ( menu, controller )
 	
 	return self
 end
-

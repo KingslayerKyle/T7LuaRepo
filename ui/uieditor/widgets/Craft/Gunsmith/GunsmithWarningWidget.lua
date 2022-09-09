@@ -83,4 +83,3 @@ CoD.GunsmithWarningWidget.new = function ( menu, controller )
 	
 	return self
 end
-

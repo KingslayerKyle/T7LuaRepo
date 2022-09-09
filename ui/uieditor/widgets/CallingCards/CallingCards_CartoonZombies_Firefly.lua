@@ -131,4 +131,3 @@ CoD.CallingCards_CartoonZombies_Firefly.new = function ( menu, controller )
 	
 	return self
 end
-

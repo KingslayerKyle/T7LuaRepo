@@ -182,4 +182,3 @@ CoD.vhud_siegebot_internal.new = function ( menu, controller )
 	
 	return self
 end
-

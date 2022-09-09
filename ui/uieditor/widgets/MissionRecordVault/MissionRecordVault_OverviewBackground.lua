@@ -51,4 +51,3 @@ CoD.MissionRecordVault_OverviewBackground.new = function ( menu, controller )
 	
 	return self
 end
-

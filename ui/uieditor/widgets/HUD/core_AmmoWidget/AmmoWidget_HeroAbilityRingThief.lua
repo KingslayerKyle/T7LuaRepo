@@ -600,4 +600,3 @@ CoD.AmmoWidget_HeroAbilityRingThief.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -505,4 +505,3 @@ CoD.StartMenu_Identity.new = function ( menu, controller )
 	
 	return self
 end
-

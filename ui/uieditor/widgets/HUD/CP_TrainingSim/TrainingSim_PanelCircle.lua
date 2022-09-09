@@ -48,4 +48,3 @@ CoD.TrainingSim_PanelCircle.new = function ( menu, controller )
 	
 	return self
 end
-

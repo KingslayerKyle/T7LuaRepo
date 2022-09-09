@@ -41,4 +41,3 @@ CoD.BM_BundleGlow.new = function ( menu, controller )
 	
 	return self
 end
-

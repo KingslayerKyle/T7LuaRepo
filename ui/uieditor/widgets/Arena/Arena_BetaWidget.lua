@@ -164,4 +164,3 @@ CoD.Arena_BetaWidget.new = function ( menu, controller )
 	
 	return self
 end
-

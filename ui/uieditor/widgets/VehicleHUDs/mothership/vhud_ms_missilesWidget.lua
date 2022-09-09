@@ -210,4 +210,3 @@ CoD.vhud_ms_missilesWidget.new = function ( menu, controller )
 	
 	return self
 end
-

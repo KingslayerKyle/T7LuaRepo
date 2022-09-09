@@ -38,4 +38,3 @@ CoD.PersonalizedColorsList.new = function ( menu, controller )
 	
 	return self
 end
-

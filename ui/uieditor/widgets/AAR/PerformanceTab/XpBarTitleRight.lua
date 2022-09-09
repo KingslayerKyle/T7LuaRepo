@@ -44,7 +44,6 @@ CoD.XpBarTitleRight.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Disabled = {
@@ -57,7 +56,6 @@ CoD.XpBarTitleRight.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -72,4 +70,3 @@ CoD.XpBarTitleRight.new = function ( menu, controller )
 	
 	return self
 end
-

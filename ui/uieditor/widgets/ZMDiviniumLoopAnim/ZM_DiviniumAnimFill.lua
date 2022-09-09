@@ -808,4 +808,3 @@ CoD.ZM_DiviniumAnimFill.new = function ( menu, controller )
 	
 	return self
 end
-

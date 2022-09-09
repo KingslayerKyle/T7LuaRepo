@@ -152,4 +152,3 @@ CoD.Top3PlayersScreenScoreWidget1.new = function ( menu, controller )
 	
 	return self
 end
-

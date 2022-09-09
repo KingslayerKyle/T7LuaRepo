@@ -177,4 +177,3 @@ CoD.GunsmithStatElement.new = function ( menu, controller )
 	
 	return self
 end
-

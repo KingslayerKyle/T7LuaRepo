@@ -132,4 +132,3 @@ CoD.FE_LiveEventFeatureCard.new = function ( menu, controller )
 	
 	return self
 end
-

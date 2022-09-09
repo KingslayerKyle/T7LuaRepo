@@ -325,4 +325,3 @@ CoD.AmmoWidgetMP_LowAmmoGlow.new = function ( menu, controller )
 	
 	return self
 end
-

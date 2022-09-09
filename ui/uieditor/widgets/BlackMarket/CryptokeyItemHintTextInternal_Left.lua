@@ -92,4 +92,3 @@ CoD.CryptokeyItemHintTextInternal_Left.new = function ( menu, controller )
 	
 	return self
 end
-

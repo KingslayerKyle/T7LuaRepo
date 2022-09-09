@@ -754,4 +754,3 @@ CoD.VehicleGround_HelpButtonContainer.new = function ( menu, controller )
 	
 	return self
 end
-

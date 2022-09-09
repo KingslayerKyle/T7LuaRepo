@@ -154,4 +154,3 @@ CoD.SystemOverlay_ContractRewardNotification.new = function ( menu, controller )
 	
 	return self
 end
-

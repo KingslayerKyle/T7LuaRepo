@@ -258,4 +258,3 @@ CoD.CallingCards_CodChamps_Champion_Lights.new = function ( menu, controller )
 	
 	return self
 end
-

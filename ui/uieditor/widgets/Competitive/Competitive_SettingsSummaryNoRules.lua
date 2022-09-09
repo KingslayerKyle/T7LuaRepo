@@ -66,15 +66,12 @@ CoD.Competitive_SettingsSummaryNoRules.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			FadeIn = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			HideForGameStart = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -89,4 +86,3 @@ CoD.Competitive_SettingsSummaryNoRules.new = function ( menu, controller )
 	
 	return self
 end
-

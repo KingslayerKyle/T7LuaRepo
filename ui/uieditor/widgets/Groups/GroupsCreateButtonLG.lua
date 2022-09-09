@@ -145,4 +145,3 @@ CoD.GroupsCreateButtonLG.new = function ( menu, controller )
 	
 	return self
 end
-

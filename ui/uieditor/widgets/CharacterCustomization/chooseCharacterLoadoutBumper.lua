@@ -36,7 +36,6 @@ CoD.chooseCharacterLoadoutBumper.new = function ( menu, controller )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Invisible = {
@@ -49,7 +48,6 @@ CoD.chooseCharacterLoadoutBumper.new = function ( menu, controller )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -64,4 +62,3 @@ CoD.chooseCharacterLoadoutBumper.new = function ( menu, controller )
 	
 	return self
 end
-

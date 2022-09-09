@@ -109,4 +109,3 @@ CoD.CallingCards_code_double_duty.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -67,7 +67,6 @@ CoD.Competitive_LobbyWidget_Title.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -83,4 +82,3 @@ CoD.Competitive_LobbyWidget_Title.new = function ( menu, controller )
 	
 	return self
 end
-

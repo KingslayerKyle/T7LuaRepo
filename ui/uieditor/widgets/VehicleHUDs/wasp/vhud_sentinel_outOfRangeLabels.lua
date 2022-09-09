@@ -590,4 +590,3 @@ CoD.vhud_sentinel_outOfRangeLabels.new = function ( menu, controller )
 	
 	return self
 end
-

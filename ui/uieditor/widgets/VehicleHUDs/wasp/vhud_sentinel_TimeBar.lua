@@ -133,4 +133,3 @@ CoD.vhud_sentinel_TimeBar.new = function ( menu, controller )
 	
 	return self
 end
-

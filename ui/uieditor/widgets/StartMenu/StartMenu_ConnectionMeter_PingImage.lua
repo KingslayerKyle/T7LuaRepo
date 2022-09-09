@@ -481,4 +481,3 @@ CoD.StartMenu_ConnectionMeter_PingImage.new = function ( menu, controller )
 	
 	return self
 end
-

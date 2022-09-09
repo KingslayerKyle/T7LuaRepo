@@ -2994,4 +2994,3 @@ CoD.WeaponBuildKitsAttachmentButton.new = function ( menu, controller )
 	
 	return self
 end
-

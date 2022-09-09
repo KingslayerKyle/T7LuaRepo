@@ -150,4 +150,3 @@ CoD.AAR_Contracts_PercentCompleteWidget.new = function ( menu, controller )
 	
 	return self
 end
-

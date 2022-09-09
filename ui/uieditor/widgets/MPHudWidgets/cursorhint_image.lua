@@ -126,7 +126,6 @@ CoD.cursorhint_image.new = function ( menu, controller )
 		Out = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -143,4 +142,3 @@ CoD.cursorhint_image.new = function ( menu, controller )
 	
 	return self
 end
-

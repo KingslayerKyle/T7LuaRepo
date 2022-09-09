@@ -82,7 +82,6 @@ CoD.MegaChewFactory_SaleActive.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		SaleOnInsufficientFunds = {
@@ -181,4 +180,3 @@ CoD.MegaChewFactory_SaleActive.new = function ( menu, controller )
 	
 	return self
 end
-

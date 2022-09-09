@@ -447,4 +447,3 @@ CoD.CallingCards_ReturnFire_Stars.new = function ( menu, controller )
 	
 	return self
 end
-

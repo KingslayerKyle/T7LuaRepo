@@ -108,4 +108,3 @@ CoD.MissionRecordVault_AccoladesTime.new = function ( menu, controller )
 	
 	return self
 end
-

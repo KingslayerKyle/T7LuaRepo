@@ -205,4 +205,3 @@ CoD.ZMLobbyEEWidgetSmall.new = function ( menu, controller )
 	
 	return self
 end
-

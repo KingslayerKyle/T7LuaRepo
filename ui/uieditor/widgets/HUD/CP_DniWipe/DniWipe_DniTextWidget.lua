@@ -195,4 +195,3 @@ CoD.DniWipe_DniTextWidget.new = function ( menu, controller )
 	
 	return self
 end
-

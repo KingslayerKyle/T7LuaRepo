@@ -919,4 +919,3 @@ CoD.List1ButtonLarge_Left_ND.new = function ( menu, controller )
 	
 	return self
 end
-

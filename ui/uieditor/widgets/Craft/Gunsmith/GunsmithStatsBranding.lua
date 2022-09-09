@@ -98,4 +98,3 @@ CoD.GunsmithStatsBranding.new = function ( menu, controller )
 	
 	return self
 end
-

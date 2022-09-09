@@ -215,4 +215,3 @@ CoD.SystemOverlay_MissingCoDPointsRedemption.new = function ( menu, controller )
 	
 	return self
 end
-

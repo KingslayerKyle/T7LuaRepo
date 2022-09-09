@@ -66,7 +66,6 @@ CoD.BuildableIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		ItemPickUp = {
@@ -122,4 +121,3 @@ CoD.BuildableIcon.new = function ( menu, controller )
 	
 	return self
 end
-

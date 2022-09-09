@@ -258,4 +258,3 @@ CoD.Social_InfoPane_Presence.new = function ( menu, controller )
 	
 	return self
 end
-

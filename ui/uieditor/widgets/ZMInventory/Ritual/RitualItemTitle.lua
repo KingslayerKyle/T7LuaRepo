@@ -86,4 +86,3 @@ CoD.RitualItemTitle.new = function ( menu, controller )
 	
 	return self
 end
-

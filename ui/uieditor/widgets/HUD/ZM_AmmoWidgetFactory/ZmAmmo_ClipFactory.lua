@@ -665,4 +665,3 @@ CoD.ZmAmmo_ClipFactory.new = function ( menu, controller )
 	
 	return self
 end
-

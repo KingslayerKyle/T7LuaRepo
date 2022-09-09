@@ -2633,4 +2633,3 @@ CoD.FE_3dTitleContainer.new = function ( menu, controller )
 	
 	return self
 end
-

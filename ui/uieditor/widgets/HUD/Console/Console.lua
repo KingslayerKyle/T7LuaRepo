@@ -200,4 +200,3 @@ CoD.Console.new = function ( menu, controller )
 	
 	return self
 end
-

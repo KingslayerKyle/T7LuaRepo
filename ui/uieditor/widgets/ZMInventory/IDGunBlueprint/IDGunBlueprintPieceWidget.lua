@@ -363,4 +363,3 @@ CoD.IDGunBlueprintPieceWidget.new = function ( menu, controller )
 	
 	return self
 end
-

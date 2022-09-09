@@ -5743,4 +5743,3 @@ CoD.scorestreakButton.new = function ( menu, controller )
 	
 	return self
 end
-

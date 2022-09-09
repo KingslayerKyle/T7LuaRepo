@@ -2544,4 +2544,3 @@ CoD.CallingCard_FlyingBee_Bee.new = function ( menu, controller )
 	
 	return self
 end
-

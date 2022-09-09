@@ -294,4 +294,3 @@ CoD.Challenges_MP_Summary_ProgressWidget.new = function ( menu, controller )
 	
 	return self
 end
-

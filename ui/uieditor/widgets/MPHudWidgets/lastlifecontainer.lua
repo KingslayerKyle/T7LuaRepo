@@ -181,4 +181,3 @@ CoD.LastLifeContainer.new = function ( menu, controller )
 	
 	return self
 end
-

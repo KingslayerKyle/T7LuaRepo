@@ -2544,4 +2544,3 @@ CoD.MapWidget.new = function ( menu, controller )
 	
 	return self
 end
-

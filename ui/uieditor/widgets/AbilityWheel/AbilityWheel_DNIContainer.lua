@@ -86,4 +86,3 @@ CoD.AbilityWheel_DNIContainer.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -123,7 +123,6 @@ CoD.baseHealthDamageBarWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		LowHealthState = {
@@ -136,7 +135,6 @@ CoD.baseHealthDamageBarWidget.new = function ( menu, controller )
 			end,
 			damageTaken = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -151,4 +149,3 @@ CoD.baseHealthDamageBarWidget.new = function ( menu, controller )
 	
 	return self
 end
-

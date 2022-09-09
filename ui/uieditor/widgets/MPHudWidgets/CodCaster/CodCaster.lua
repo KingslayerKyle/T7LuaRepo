@@ -1103,4 +1103,3 @@ CoD.CodCaster.new = function ( menu, controller )
 	
 	return self
 end
-

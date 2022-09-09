@@ -92,4 +92,3 @@ CoD.PrivateHostList.new = function ( menu, controller )
 	
 	return self
 end
-

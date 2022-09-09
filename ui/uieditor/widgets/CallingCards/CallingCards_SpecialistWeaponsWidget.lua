@@ -270,4 +270,3 @@ CoD.CallingCards_SpecialistWeaponsWidget.new = function ( menu, controller )
 	
 	return self
 end
-

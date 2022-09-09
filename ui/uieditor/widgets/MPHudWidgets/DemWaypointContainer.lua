@@ -119,4 +119,3 @@ CoD.DemWaypointContainer.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -31,4 +31,3 @@ CoD.AmmoWidget_PanelEquip.new = function ( menu, controller )
 	
 	return self
 end
-

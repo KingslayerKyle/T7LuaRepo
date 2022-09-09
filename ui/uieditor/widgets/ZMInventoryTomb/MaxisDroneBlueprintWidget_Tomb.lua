@@ -326,4 +326,3 @@ CoD.MaxisDroneBlueprintWidget_Tomb.new = function ( menu, controller )
 	
 	return self
 end
-

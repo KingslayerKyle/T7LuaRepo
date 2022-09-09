@@ -587,7 +587,6 @@ CoD.BGB_PurchasingVials.new = function ( menu, controller )
 		Vials = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			StartPurchasing = function ()
 				self:setupElementClipCounter( 3 )
@@ -769,4 +768,3 @@ CoD.BGB_PurchasingVials.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -101,4 +101,3 @@ CoD.Social_InfoPane_Presence_NotInTitle.new = function ( menu, controller )
 	
 	return self
 end
-

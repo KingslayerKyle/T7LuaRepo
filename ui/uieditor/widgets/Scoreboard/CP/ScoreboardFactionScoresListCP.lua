@@ -61,4 +61,3 @@ CoD.ScoreboardFactionScoresListCP.new = function ( menu, controller )
 	
 	return self
 end
-

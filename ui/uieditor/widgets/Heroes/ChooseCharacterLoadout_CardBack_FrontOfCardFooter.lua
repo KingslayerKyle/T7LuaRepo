@@ -184,4 +184,3 @@ CoD.ChooseCharacterLoadout_CardBack_FrontOfCardFooter.new = function ( menu, con
 	
 	return self
 end
-

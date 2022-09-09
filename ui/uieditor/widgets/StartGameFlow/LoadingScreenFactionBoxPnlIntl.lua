@@ -30,4 +30,3 @@ CoD.LoadingScreenFactionBoxPnlIntl.new = function ( menu, controller )
 	
 	return self
 end
-

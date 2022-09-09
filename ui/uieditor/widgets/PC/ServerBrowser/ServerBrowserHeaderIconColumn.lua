@@ -155,4 +155,3 @@ CoD.ServerBrowserHeaderIconColumn.new = function ( menu, controller )
 	
 	return self
 end
-

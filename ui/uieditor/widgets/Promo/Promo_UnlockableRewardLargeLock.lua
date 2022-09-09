@@ -2662,4 +2662,3 @@ CoD.Promo_UnlockableRewardLargeLock.new = function ( menu, controller )
 	
 	return self
 end
-

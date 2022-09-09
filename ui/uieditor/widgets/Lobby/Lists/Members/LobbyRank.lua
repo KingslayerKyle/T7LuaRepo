@@ -254,4 +254,3 @@ CoD.LobbyRank.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -390,4 +390,3 @@ CoD.Challenges_CallingCardProfiler_ArenaVet.new = function ( menu, controller )
 	
 	return self
 end
-

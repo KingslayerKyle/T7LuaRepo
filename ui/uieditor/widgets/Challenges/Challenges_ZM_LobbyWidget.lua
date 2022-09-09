@@ -217,4 +217,3 @@ CoD.Challenges_ZM_LobbyWidget.new = function ( menu, controller )
 	
 	return self
 end
-

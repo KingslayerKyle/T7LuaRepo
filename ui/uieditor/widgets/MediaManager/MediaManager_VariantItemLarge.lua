@@ -195,4 +195,3 @@ CoD.MediaManager_VariantItemLarge.new = function ( menu, controller )
 	
 	return self
 end
-

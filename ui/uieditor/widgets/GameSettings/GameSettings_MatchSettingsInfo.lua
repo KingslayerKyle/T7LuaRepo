@@ -87,4 +87,3 @@ CoD.GameSettings_MatchSettingsInfo.new = function ( menu, controller )
 	
 	return self
 end
-

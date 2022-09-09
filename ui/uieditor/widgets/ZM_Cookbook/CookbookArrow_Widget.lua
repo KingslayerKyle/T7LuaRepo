@@ -490,4 +490,3 @@ CoD.CookbookArrow_Widget.new = function ( menu, controller )
 	
 	return self
 end
-

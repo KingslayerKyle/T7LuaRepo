@@ -323,4 +323,3 @@ CoD.CallingCards_code_double_duty_war.new = function ( menu, controller )
 	
 	return self
 end
-

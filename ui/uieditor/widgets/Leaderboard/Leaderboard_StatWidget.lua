@@ -149,4 +149,3 @@ CoD.Leaderboard_StatWidget.new = function ( menu, controller )
 	
 	return self
 end
-

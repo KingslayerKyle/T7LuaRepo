@@ -63,16 +63,13 @@ CoD.ChargerShot_Brackets.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Fire = function ()
 				self:setupElementClipCounter( 0 )
-
 				self.nextClip = "Fire"
 			end,
 			Cancel = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -83,4 +80,3 @@ CoD.ChargerShot_Brackets.new = function ( menu, controller )
 	
 	return self
 end
-

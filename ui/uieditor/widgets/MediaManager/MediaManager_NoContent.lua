@@ -53,4 +53,3 @@ CoD.MediaManager_NoContent.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -36,4 +36,3 @@ CoD.ZmPanel_RndExt.new = function ( menu, controller )
 	
 	return self
 end
-

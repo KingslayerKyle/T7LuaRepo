@@ -90,4 +90,3 @@ CoD.StartMenu_Options_PC_Sound_Sound.new = function ( menu, controller )
 	
 	return self
 end
-

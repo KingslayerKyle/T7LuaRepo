@@ -75,4 +75,3 @@ CoD.PrematchCountdown_2xpWeaponBadge.new = function ( menu, controller )
 	
 	return self
 end
-

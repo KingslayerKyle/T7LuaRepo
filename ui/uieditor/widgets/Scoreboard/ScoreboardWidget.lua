@@ -57,7 +57,6 @@ local f0_local1 = function ( f2_arg0 )
 end
 
 local PostLoadFunc = function ( self, controller, menu )
-
 	LUI.OverrideFunction_CallOriginalFirst( self.ScoreboardFactionScoresList.Team1, "updateLayout", function ( element )
 		f0_local0( self, controller )
 	end )
@@ -690,4 +689,3 @@ CoD.ScoreboardWidget.new = function ( menu, controller )
 	
 	return self
 end
-

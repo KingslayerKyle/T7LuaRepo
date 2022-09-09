@@ -31,7 +31,6 @@ CoD.ZMScr_PlusPointsContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Anim1 = function ()
 				self:setupElementClipCounter( 1 )
@@ -214,4 +213,3 @@ CoD.ZMScr_PlusPointsContainer.new = function ( menu, controller )
 	
 	return self
 end
-

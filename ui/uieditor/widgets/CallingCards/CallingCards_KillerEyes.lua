@@ -133,4 +133,3 @@ CoD.CallingCards_KillerEyes.new = function ( menu, controller )
 	
 	return self
 end
-

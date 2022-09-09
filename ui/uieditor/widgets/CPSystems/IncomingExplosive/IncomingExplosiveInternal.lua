@@ -894,4 +894,3 @@ CoD.IncomingExplosiveInternal.new = function ( menu, controller )
 	
 	return self
 end
-

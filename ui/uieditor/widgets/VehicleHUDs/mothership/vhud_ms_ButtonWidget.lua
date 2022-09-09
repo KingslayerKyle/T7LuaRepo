@@ -223,4 +223,3 @@ CoD.vhud_ms_ButtonWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -135,4 +135,3 @@ CoD.EmblemEditorColorSwatchContainer.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -322,4 +322,3 @@ CoD.SearchingForPlayer.new = function ( menu, controller )
 	
 	return self
 end
-

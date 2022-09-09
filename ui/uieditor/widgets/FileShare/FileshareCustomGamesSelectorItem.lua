@@ -158,4 +158,3 @@ CoD.FileshareCustomGamesSelectorItem.new = function ( menu, controller )
 	
 	return self
 end
-

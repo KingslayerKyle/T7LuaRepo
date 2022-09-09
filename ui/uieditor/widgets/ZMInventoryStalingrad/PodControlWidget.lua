@@ -163,4 +163,3 @@ CoD.PodControlWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -136,4 +136,3 @@ CoD.PaintjobSelector.new = function ( menu, controller )
 	
 	return self
 end
-

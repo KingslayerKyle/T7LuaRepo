@@ -152,4 +152,3 @@ CoD.vhud_dart_reticle_roll.new = function ( menu, controller )
 	
 	return self
 end
-

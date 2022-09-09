@@ -115,4 +115,3 @@ CoD.KillcamWidgetTeamNameR.new = function ( menu, controller )
 	
 	return self
 end
-

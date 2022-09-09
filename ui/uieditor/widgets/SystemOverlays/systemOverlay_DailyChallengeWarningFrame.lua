@@ -49,4 +49,3 @@ CoD.systemOverlay_DailyChallengeWarningFrame.new = function ( menu, controller )
 	
 	return self
 end
-

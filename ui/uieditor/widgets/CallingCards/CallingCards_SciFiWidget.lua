@@ -157,4 +157,3 @@ CoD.CallingCards_SciFiWidget.new = function ( menu, controller )
 	
 	return self
 end
-

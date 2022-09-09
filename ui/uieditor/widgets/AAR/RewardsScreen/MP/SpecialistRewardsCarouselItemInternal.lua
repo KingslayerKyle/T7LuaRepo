@@ -252,4 +252,3 @@ CoD.SpecialistRewardsCarouselItemInternal.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -157,4 +157,3 @@ CoD.systemOverlay_Layout_ClassOptions.new = function ( menu, controller )
 	
 	return self
 end
-

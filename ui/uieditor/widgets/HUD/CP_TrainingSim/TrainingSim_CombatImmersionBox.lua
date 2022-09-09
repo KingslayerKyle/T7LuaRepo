@@ -39,15 +39,12 @@ CoD.TrainingSim_CombatImmersionBox.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			round_complete = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			immersion_complete = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -58,4 +55,3 @@ CoD.TrainingSim_CombatImmersionBox.new = function ( menu, controller )
 	
 	return self
 end
-

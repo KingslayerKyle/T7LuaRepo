@@ -39,4 +39,3 @@ CoD.CallingCards_code_sea_diver.new = function ( menu, controller )
 	
 	return self
 end
-

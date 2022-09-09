@@ -90,4 +90,3 @@ CoD.buttonprompt_small.new = function ( menu, controller )
 	
 	return self
 end
-

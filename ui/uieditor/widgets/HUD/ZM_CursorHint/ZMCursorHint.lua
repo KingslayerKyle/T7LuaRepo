@@ -414,4 +414,3 @@ CoD.ZMCursorHint.new = function ( menu, controller )
 	
 	return self
 end
-

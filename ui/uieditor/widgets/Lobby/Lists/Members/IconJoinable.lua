@@ -85,4 +85,3 @@ CoD.IconJoinable.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -31,4 +31,3 @@ CoD.ZmPanel_AmmoInt.new = function ( menu, controller )
 	
 	return self
 end
-

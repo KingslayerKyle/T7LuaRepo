@@ -164,4 +164,3 @@ CoD.StartMenu_Options_Button.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -261,4 +261,3 @@ CoD.LobbyMemberTeamSwitcher.new = function ( menu, controller )
 	
 	return self
 end
-

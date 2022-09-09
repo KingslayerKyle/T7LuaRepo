@@ -333,7 +333,6 @@ CoD.CP_Prologue_FaceScannerWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Scanning = {
@@ -1102,4 +1101,3 @@ CoD.CP_Prologue_FaceScannerWidget.new = function ( menu, controller )
 	
 	return self
 end
-

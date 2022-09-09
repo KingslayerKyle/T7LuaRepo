@@ -105,4 +105,3 @@ CoD.SpikeLuancherSpikeCounter_Meter2.new = function ( menu, controller )
 	
 	return self
 end
-

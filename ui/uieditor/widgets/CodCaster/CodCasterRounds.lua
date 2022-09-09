@@ -92,4 +92,3 @@ CoD.CodCasterRounds.new = function ( menu, controller )
 	
 	return self
 end
-

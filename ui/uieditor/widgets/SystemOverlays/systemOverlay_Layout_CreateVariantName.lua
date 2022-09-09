@@ -204,4 +204,3 @@ CoD.systemOverlay_Layout_CreateVariantName.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -590,4 +590,3 @@ CoD.StartMenu_Barracks_Button_CP.new = function ( menu, controller )
 	
 	return self
 end
-

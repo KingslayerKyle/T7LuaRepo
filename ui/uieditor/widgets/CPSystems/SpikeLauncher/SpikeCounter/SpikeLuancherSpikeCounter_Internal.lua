@@ -549,4 +549,3 @@ CoD.SpikeLuancherSpikeCounter_Internal.new = function ( menu, controller )
 	
 	return self
 end
-

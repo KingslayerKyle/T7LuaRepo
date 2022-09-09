@@ -371,4 +371,3 @@ CoD.CallingCards_GoldFrame.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -400,4 +400,3 @@ CoD.Competitive_CharacterDraft_StateIcon.new = function ( menu, controller )
 	
 	return self
 end
-

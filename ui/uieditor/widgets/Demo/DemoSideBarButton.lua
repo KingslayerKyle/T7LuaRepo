@@ -425,4 +425,3 @@ CoD.DemoSideBarButton.new = function ( menu, controller )
 	
 	return self
 end
-

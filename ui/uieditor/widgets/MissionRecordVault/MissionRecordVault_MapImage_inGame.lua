@@ -122,4 +122,3 @@ CoD.MissionRecordVault_MapImage_inGame.new = function ( menu, controller )
 	
 	return self
 end
-

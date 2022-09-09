@@ -77,4 +77,3 @@ CoD.BM_Bribe_Selected_Hover.new = function ( menu, controller )
 	
 	return self
 end
-

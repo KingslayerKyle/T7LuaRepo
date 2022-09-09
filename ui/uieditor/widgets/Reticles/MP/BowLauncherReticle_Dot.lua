@@ -69,4 +69,3 @@ CoD.BowLauncherReticle_Dot.new = function ( menu, controller )
 	
 	return self
 end
-

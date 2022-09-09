@@ -316,4 +316,3 @@ CoD.MPChallengeRewardsCarouselItemInternal.new = function ( menu, controller )
 	
 	return self
 end
-

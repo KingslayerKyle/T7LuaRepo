@@ -179,4 +179,3 @@ CoD.ServerBrowserHeaderNamedColumn.new = function ( menu, controller )
 	
 	return self
 end
-

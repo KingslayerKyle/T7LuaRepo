@@ -745,4 +745,3 @@ CoD.ChooseCharacterLoadout_CardBack_Bio.new = function ( menu, controller )
 	
 	return self
 end
-

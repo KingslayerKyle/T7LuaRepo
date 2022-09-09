@@ -82,4 +82,3 @@ CoD.CustomizationListButtonImage.new = function ( menu, controller )
 	
 	return self
 end
-

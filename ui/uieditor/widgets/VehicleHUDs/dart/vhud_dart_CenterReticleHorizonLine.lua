@@ -40,4 +40,3 @@ CoD.vhud_dart_CenterReticleHorizonLine.new = function ( menu, controller )
 	
 	return self
 end
-

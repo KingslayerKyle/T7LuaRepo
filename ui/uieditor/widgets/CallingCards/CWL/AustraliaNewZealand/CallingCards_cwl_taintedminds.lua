@@ -340,4 +340,3 @@ CoD.CallingCards_cwl_taintedminds.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -103,4 +103,3 @@ CoD.PersonalizeCharacter_PersonalizeList.new = function ( menu, controller )
 	
 	return self
 end
-

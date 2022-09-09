@@ -30,7 +30,6 @@ CoD.LivesLeftContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Hide = {
@@ -59,4 +58,3 @@ CoD.LivesLeftContainer.new = function ( menu, controller )
 	
 	return self
 end
-

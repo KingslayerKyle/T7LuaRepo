@@ -2929,4 +2929,3 @@ CoD.StoreFeaturedCenterButton.new = function ( menu, controller )
 	
 	return self
 end
-

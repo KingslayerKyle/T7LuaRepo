@@ -207,4 +207,3 @@ CoD.BM_Contracts_ContractAmountWidget.new = function ( menu, controller )
 	
 	return self
 end
-

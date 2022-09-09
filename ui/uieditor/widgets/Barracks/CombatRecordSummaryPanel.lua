@@ -598,4 +598,3 @@ CoD.CombatRecordSummaryPanel.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -151,4 +151,3 @@ CoD.ContractCryptokeyBatch.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -502,4 +502,3 @@ CoD.BucketWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -1237,4 +1237,3 @@ CoD.List1ButtonLarge_Groups.new = function ( menu, controller )
 	
 	return self
 end
-

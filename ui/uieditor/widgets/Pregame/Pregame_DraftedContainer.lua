@@ -59,4 +59,3 @@ CoD.Pregame_DraftedContainer.new = function ( menu, controller )
 	
 	return self
 end
-

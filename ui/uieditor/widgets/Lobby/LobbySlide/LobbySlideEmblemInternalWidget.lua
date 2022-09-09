@@ -26,21 +26,17 @@ CoD.LobbySlideEmblemInternalWidget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			SlideLeft = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			SlideRight = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Invisible = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -51,4 +47,3 @@ CoD.LobbySlideEmblemInternalWidget.new = function ( menu, controller )
 	
 	return self
 end
-

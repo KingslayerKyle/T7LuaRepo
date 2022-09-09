@@ -60,15 +60,12 @@ CoD.FE_HelpItemsLabel.new = function ( menu, controller )
 			end,
 			GainFocus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			LoseFocus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Playlist = {
@@ -143,4 +140,3 @@ CoD.FE_HelpItemsLabel.new = function ( menu, controller )
 	
 	return self
 end
-

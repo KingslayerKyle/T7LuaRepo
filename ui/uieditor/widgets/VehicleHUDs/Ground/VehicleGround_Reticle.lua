@@ -58,4 +58,3 @@ CoD.VehicleGround_Reticle.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -167,4 +167,3 @@ CoD.GobbleGumRecipeListItem.new = function ( menu, controller )
 	
 	return self
 end
-

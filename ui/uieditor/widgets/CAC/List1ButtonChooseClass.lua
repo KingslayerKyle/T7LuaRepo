@@ -1749,4 +1749,3 @@ CoD.List1ButtonChooseClass.new = function ( menu, controller )
 	
 	return self
 end
-

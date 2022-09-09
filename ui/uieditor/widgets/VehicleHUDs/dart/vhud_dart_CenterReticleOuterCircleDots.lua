@@ -97,7 +97,6 @@ CoD.vhud_dart_CenterReticleOuterCircleDots.new = function ( menu, controller )
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -108,4 +107,3 @@ CoD.vhud_dart_CenterReticleOuterCircleDots.new = function ( menu, controller )
 	
 	return self
 end
-

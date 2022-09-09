@@ -41,4 +41,3 @@ CoD.CombatRecord_LineDivider.new = function ( menu, controller )
 	
 	return self
 end
-

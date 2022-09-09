@@ -187,4 +187,3 @@ CoD.fe_RightContainerWithoutRightBoxes.new = function ( menu, controller )
 	
 	return self
 end
-

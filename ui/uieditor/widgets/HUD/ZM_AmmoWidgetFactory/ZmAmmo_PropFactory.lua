@@ -1027,4 +1027,3 @@ CoD.ZmAmmo_PropFactory.new = function ( menu, controller )
 	
 	return self
 end
-

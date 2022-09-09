@@ -63,4 +63,3 @@ CoD.BubbleGumFootnote.new = function ( menu, controller )
 	
 	return self
 end
-

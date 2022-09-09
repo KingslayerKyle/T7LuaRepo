@@ -80,15 +80,12 @@ CoD.MatchBonusWidget.new = function ( menu, controller )
 			end,
 			Show_Two_Team = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			End_Transition = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			ShowFFAOutcome = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Shown = {
@@ -413,4 +410,3 @@ CoD.MatchBonusWidget.new = function ( menu, controller )
 	
 	return self
 end
-

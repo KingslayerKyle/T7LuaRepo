@@ -231,4 +231,3 @@ CoD.PersonalizeCharacterCarouselItem_InfoPanel.new = function ( menu, controller
 	
 	return self
 end
-

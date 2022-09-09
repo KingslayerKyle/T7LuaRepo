@@ -496,4 +496,3 @@ CoD.Promo_PlusOneText.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -36,4 +36,3 @@ CoD.FE_ListSubHeaderPanelShaderContainer.new = function ( menu, controller )
 	
 	return self
 end
-

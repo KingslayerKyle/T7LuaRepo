@@ -122,4 +122,3 @@ CoD.SystemOverlay_LoginReward.new = function ( menu, controller )
 	
 	return self
 end
-

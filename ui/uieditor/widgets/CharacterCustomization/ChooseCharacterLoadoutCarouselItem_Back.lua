@@ -684,7 +684,6 @@ CoD.ChooseCharacterLoadoutCarouselItem_Back.new = function ( menu, controller )
 		DisabledFocus = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -745,4 +744,3 @@ CoD.ChooseCharacterLoadoutCarouselItem_Back.new = function ( menu, controller )
 	
 	return self
 end
-

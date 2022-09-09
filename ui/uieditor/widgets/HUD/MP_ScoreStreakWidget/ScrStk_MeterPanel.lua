@@ -219,4 +219,3 @@ CoD.ScrStk_MeterPanel.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -48,4 +48,3 @@ CoD.vhud_dart_CenterTriLine.new = function ( menu, controller )
 	
 	return self
 end
-

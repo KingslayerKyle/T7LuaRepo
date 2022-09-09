@@ -106,4 +106,3 @@ CoD.TabletLocationSelector_HintText.new = function ( menu, controller )
 	
 	return self
 end
-

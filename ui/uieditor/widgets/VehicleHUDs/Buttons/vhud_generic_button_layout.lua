@@ -389,4 +389,3 @@ CoD.vhud_generic_button_layout.new = function ( menu, controller )
 	
 	return self
 end
-

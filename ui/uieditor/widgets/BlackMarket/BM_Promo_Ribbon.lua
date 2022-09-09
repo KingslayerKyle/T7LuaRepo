@@ -108,4 +108,3 @@ CoD.BM_Promo_Ribbon.new = function ( menu, controller )
 	
 	return self
 end
-

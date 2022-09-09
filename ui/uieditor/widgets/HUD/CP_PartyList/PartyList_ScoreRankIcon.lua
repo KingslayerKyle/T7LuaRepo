@@ -124,4 +124,3 @@ CoD.PartyList_ScoreRankIcon.new = function ( menu, controller )
 	
 	return self
 end
-

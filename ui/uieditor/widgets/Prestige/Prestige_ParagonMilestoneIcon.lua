@@ -30,4 +30,3 @@ CoD.Prestige_ParagonMilestoneIcon.new = function ( menu, controller )
 	
 	return self
 end
-

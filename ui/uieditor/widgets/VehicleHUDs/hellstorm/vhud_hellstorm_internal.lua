@@ -77,4 +77,3 @@ CoD.vhud_hellstorm_internal.new = function ( menu, controller )
 	
 	return self
 end
-

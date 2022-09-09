@@ -841,4 +841,3 @@ CoD.AmmoWidget_CleanCarryCount.new = function ( menu, controller )
 	
 	return self
 end
-

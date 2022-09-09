@@ -110,7 +110,6 @@ CoD.AmmoWidget_TacModeIndicator.new = function ( menu, controller )
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Hidden = {
@@ -205,4 +204,3 @@ CoD.AmmoWidget_TacModeIndicator.new = function ( menu, controller )
 	
 	return self
 end
-

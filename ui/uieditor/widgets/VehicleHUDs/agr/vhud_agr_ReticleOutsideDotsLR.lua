@@ -43,4 +43,3 @@ CoD.vhud_agr_ReticleOutsideDotsLR.new = function ( menu, controller )
 	
 	return self
 end
-

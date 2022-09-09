@@ -168,4 +168,3 @@ CoD.FR_Checkpoint_Delta.new = function ( menu, controller )
 	
 	return self
 end
-

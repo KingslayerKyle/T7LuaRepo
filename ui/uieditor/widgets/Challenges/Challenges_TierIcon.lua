@@ -247,4 +247,3 @@ CoD.Challenges_TierIcon.new = function ( menu, controller )
 	
 	return self
 end
-

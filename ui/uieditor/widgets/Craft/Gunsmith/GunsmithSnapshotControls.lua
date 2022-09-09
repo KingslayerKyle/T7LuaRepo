@@ -211,4 +211,3 @@ CoD.GunsmithSnapshotControls.new = function ( menu, controller )
 	
 	return self
 end
-

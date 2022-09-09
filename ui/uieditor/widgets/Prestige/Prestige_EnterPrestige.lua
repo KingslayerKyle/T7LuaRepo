@@ -421,4 +421,3 @@ CoD.Prestige_EnterPrestige.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -105,4 +105,3 @@ CoD.EscortWaypointGoalContainer.new = function ( menu, controller )
 	
 	return self
 end
-

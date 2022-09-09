@@ -125,4 +125,3 @@ CoD.SelectMenuWidgetNew.new = function ( menu, controller )
 	
 	return self
 end
-

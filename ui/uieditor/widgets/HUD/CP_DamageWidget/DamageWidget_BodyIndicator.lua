@@ -154,4 +154,3 @@ CoD.DamageWidget_BodyIndicator.new = function ( menu, controller )
 	
 	return self
 end
-

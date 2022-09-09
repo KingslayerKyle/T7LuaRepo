@@ -3641,7 +3641,6 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 		Selected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -3752,4 +3751,3 @@ CoD.codcaster_options_slider.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -88,4 +88,3 @@ CoD.FE_VialBreadcrumb.new = function ( menu, controller )
 	
 	return self
 end
-

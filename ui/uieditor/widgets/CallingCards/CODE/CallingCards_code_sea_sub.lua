@@ -60,4 +60,3 @@ CoD.CallingCards_code_sea_sub.new = function ( menu, controller )
 	
 	return self
 end
-

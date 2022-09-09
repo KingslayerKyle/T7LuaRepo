@@ -69,4 +69,3 @@ CoD.systemOverlay_Connect_Looping.new = function ( menu, controller )
 	
 	return self
 end
-

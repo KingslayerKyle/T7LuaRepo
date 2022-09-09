@@ -1191,4 +1191,3 @@ CoD.vhud_dart_reticle.new = function ( menu, controller )
 	
 	return self
 end
-

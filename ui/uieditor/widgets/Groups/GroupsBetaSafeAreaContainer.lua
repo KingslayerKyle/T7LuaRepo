@@ -56,4 +56,3 @@ CoD.GroupsBetaSafeAreaContainer.new = function ( menu, controller )
 	
 	return self
 end
-

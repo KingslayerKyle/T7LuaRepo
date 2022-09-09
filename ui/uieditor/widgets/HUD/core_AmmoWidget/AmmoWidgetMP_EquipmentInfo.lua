@@ -135,4 +135,3 @@ CoD.AmmoWidgetMP_EquipmentInfo.new = function ( menu, controller )
 	
 	return self
 end
-

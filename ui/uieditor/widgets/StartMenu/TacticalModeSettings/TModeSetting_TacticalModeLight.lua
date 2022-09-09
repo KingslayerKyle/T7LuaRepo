@@ -84,4 +84,3 @@ CoD.TModeSetting_TacticalModeLight.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -120,4 +120,3 @@ CoD.GunsmithCustomizeGraphics.new = function ( menu, controller )
 	
 	return self
 end
-

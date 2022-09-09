@@ -1070,4 +1070,3 @@ CoD.BM_Promo.new = function ( menu, controller )
 	
 	return self
 end
-

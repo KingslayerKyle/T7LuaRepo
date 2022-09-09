@@ -36,4 +36,3 @@ CoD.Playlist_SpecialEventItem.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -39,7 +39,6 @@ CoD.LeaderboardHeader_ColumnText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		ColumnTextWrapped = {
@@ -69,4 +68,3 @@ CoD.LeaderboardHeader_ColumnText.new = function ( menu, controller )
 	
 	return self
 end
-

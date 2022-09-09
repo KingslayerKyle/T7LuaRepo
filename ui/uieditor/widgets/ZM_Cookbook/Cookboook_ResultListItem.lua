@@ -220,4 +220,3 @@ CoD.Cookboook_ResultListItem.new = function ( menu, controller )
 	
 	return self
 end
-

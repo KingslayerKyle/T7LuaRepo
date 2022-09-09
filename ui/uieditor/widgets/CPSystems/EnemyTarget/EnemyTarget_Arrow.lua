@@ -39,4 +39,3 @@ CoD.EnemyTarget_Arrow.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -29,4 +29,3 @@ CoD.ChargeShot_ActiveLine.new = function ( menu, controller )
 	
 	return self
 end
-

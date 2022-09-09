@@ -103,4 +103,3 @@ CoD.ChooseCharacterLoadout_CardBack_TransmissionContactsList.new = function ( me
 	
 	return self
 end
-

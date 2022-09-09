@@ -136,4 +136,3 @@ CoD.MissionObjectiveGroupInternal.new = function ( menu, controller )
 	
 	return self
 end
-

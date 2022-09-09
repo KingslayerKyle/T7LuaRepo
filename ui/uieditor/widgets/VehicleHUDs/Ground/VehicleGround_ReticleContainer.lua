@@ -648,4 +648,3 @@ CoD.VehicleGround_ReticleContainer.new = function ( menu, controller )
 	
 	return self
 end
-

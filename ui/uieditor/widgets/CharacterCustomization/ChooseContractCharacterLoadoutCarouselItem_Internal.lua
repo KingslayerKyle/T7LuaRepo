@@ -223,4 +223,3 @@ CoD.ChooseContractCharacterLoadoutCarouselItem_Internal.new = function ( menu, c
 	
 	return self
 end
-

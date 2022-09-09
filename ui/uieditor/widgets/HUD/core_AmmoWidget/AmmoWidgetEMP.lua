@@ -70,4 +70,3 @@ CoD.AmmoWidgetEMP.new = function ( menu, controller )
 	
 	return self
 end
-

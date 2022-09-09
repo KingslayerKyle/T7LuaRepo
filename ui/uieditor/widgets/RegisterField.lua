@@ -137,4 +137,3 @@ CoD.RegisterField.new = function ( menu, controller )
 	
 	return self
 end
-

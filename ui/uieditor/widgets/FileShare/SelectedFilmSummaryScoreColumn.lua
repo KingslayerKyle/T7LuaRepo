@@ -65,13 +65,11 @@ CoD.SelectedFilmSummaryScoreColumn.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -103,4 +101,3 @@ CoD.SelectedFilmSummaryScoreColumn.new = function ( menu, controller )
 	
 	return self
 end
-

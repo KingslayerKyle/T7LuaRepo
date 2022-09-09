@@ -36,7 +36,6 @@ CoD.ScoreboardWidgetButtonContainer.new = function ( menu, controller )
 			end,
 			Intro = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		AAR = {
@@ -70,4 +69,3 @@ CoD.ScoreboardWidgetButtonContainer.new = function ( menu, controller )
 	
 	return self
 end
-

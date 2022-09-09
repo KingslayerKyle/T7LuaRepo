@@ -291,4 +291,3 @@ CoD.Leaderboard_RankAndStatsWidget.new = function ( menu, controller )
 	
 	return self
 end
-

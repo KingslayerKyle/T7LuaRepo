@@ -55,17 +55,14 @@ CoD.CommsWidget_CharacterBack.new = function ( menu, controller )
 		HudStart = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		HudStop = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			HudStart = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -76,4 +73,3 @@ CoD.CommsWidget_CharacterBack.new = function ( menu, controller )
 	
 	return self
 end
-

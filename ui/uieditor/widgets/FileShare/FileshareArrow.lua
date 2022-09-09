@@ -125,4 +125,3 @@ CoD.FileshareArrow.new = function ( menu, controller )
 	
 	return self
 end
-

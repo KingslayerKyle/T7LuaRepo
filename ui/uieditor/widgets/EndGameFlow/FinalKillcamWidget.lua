@@ -770,4 +770,3 @@ CoD.FinalKillcamWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -493,4 +493,3 @@ CoD.Challenges_CP_Summary.new = function ( menu, controller )
 	
 	return self
 end
-

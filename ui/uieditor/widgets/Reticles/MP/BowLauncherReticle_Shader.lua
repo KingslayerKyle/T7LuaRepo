@@ -38,4 +38,3 @@ CoD.BowLauncherReticle_Shader.new = function ( menu, controller )
 	
 	return self
 end
-

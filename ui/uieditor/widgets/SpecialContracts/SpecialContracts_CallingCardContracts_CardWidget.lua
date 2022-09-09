@@ -691,4 +691,3 @@ CoD.SpecialContracts_CallingCardContracts_CardWidget.new = function ( menu, cont
 	
 	return self
 end
-

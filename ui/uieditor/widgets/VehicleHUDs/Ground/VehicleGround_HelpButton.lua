@@ -32,4 +32,3 @@ CoD.VehicleGround_HelpButton.new = function ( menu, controller )
 	
 	return self
 end
-

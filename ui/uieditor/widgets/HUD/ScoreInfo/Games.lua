@@ -80,4 +80,3 @@ CoD.Games.new = function ( menu, controller )
 	
 	return self
 end
-

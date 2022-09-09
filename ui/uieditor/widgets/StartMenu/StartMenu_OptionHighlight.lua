@@ -52,4 +52,3 @@ CoD.StartMenu_OptionHighlight.new = function ( menu, controller )
 	
 	return self
 end
-

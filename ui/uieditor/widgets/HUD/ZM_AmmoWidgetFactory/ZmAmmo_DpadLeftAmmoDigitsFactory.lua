@@ -666,4 +666,3 @@ CoD.ZmAmmo_DpadLeftAmmoDigitsFactory.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -572,4 +572,3 @@ CoD.CommsHeader.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -307,4 +307,3 @@ CoD.BallOverlay.new = function ( menu, controller )
 	
 	return self
 end
-

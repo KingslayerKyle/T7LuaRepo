@@ -2,7 +2,6 @@
 -- This hash is used for caching, delete to decompile the file again
 
 local PostLoadFunc = function ( f1_arg0, f1_arg1 )
-	
 end
 
 CoD.basicTabWidget = InheritFrom( LUI.UIElement )
@@ -117,4 +116,3 @@ CoD.basicTabWidget.new = function ( menu, controller )
 	
 	return self
 end
-

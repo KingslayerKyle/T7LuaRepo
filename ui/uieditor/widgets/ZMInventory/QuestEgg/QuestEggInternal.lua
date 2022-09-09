@@ -399,4 +399,3 @@ CoD.QuestEggInternal.new = function ( menu, controller )
 	
 	return self
 end
-

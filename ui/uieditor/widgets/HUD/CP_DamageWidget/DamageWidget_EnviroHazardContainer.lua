@@ -3439,4 +3439,3 @@ CoD.DamageWidget_EnviroHazardContainer.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -186,4 +186,3 @@ CoD.ChooseContracterCharacterLoadoutCarouselItem_ContractInfoArea.new = function
 	
 	return self
 end
-

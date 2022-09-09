@@ -238,4 +238,3 @@ CoD.Challenges_FrameWidget_Arena.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -88,4 +88,3 @@ CoD.CtfWaypointBaseContainer.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -68,4 +68,3 @@ CoD.SpikeLauncherMetersBase.new = function ( menu, controller )
 	
 	return self
 end
-

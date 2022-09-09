@@ -82,4 +82,3 @@ CoD.ChatClientChannelSelectorButton.new = function ( menu, controller )
 	
 	return self
 end
-

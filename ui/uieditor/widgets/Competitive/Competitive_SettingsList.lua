@@ -132,4 +132,3 @@ CoD.Competitive_SettingsList.new = function ( menu, controller )
 	
 	return self
 end
-

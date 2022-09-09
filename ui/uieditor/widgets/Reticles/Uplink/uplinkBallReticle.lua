@@ -724,4 +724,3 @@ CoD.uplinkBallReticle.new = function ( menu, controller )
 	
 	return self
 end
-

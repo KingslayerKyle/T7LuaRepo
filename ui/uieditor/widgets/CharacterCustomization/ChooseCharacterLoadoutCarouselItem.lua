@@ -809,4 +809,3 @@ CoD.ChooseCharacterLoadoutCarouselItem.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -129,4 +129,3 @@ CoD.ChooseCharacter_HelpBubble_Button_PC.new = function ( menu, controller )
 	
 	return self
 end
-

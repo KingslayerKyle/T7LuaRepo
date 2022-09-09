@@ -233,4 +233,3 @@ CoD.Primary_Profile_Snapshot.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -311,4 +311,3 @@ CoD.LiveEventViewerMovieAndBackground.new = function ( menu, controller )
 	
 	return self
 end
-

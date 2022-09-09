@@ -1397,4 +1397,3 @@ CoD.CallingCard_loot_kaboom.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -59,4 +59,3 @@ CoD.AbilityWheel_Bracket.new = function ( menu, controller )
 	
 	return self
 end
-

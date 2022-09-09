@@ -76,4 +76,3 @@ CoD.TextWithDisableState.new = function ( menu, controller )
 	
 	return self
 end
-

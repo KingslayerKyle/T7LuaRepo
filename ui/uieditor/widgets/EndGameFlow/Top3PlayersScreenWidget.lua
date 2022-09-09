@@ -400,4 +400,3 @@ CoD.Top3PlayersScreenWidget.new = function ( menu, controller )
 	
 	return self
 end
-

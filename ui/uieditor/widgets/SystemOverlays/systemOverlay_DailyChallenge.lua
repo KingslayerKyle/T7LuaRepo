@@ -284,4 +284,3 @@ CoD.systemOverlay_DailyChallenge.new = function ( menu, controller )
 	
 	return self
 end
-

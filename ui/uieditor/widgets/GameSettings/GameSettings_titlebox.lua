@@ -74,4 +74,3 @@ CoD.GameSettings_titlebox.new = function ( menu, controller )
 	
 	return self
 end
-

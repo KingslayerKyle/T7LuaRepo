@@ -112,4 +112,3 @@ CoD.ScoreInfo_Meter.new = function ( menu, controller )
 	
 	return self
 end
-

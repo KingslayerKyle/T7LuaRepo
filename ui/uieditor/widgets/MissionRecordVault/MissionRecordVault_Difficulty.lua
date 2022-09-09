@@ -103,4 +103,3 @@ CoD.MissionRecordVault_Difficulty.new = function ( menu, controller )
 	
 	return self
 end
-

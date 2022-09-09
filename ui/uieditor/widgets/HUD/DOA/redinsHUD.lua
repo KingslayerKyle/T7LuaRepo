@@ -407,4 +407,3 @@ CoD.redinsHUD.new = function ( menu, controller )
 	
 	return self
 end
-

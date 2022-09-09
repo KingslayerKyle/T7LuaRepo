@@ -184,4 +184,3 @@ CoD.LobbyMemberMP45.new = function ( menu, controller )
 	
 	return self
 end
-

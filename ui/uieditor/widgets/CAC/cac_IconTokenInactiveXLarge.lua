@@ -102,4 +102,3 @@ CoD.cac_IconTokenInactiveXLarge.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -64,4 +64,3 @@ CoD.vhud_hcxd_Timebar.new = function ( menu, controller )
 	
 	return self
 end
-

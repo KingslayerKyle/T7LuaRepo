@@ -116,7 +116,6 @@ CoD.DLCLabel.new = function ( menu, controller )
 		HasDLC = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Invisible = {
@@ -231,4 +230,3 @@ CoD.DLCLabel.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -786,7 +786,6 @@ CoD.codcaster_options_slider_small.new = function ( menu, controller )
 		Selected = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		ButtonOnly = {
@@ -2127,4 +2126,3 @@ CoD.codcaster_options_slider_small.new = function ( menu, controller )
 	
 	return self
 end
-

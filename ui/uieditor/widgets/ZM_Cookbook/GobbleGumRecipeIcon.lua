@@ -102,4 +102,3 @@ CoD.GobbleGumRecipeIcon.new = function ( menu, controller )
 	
 	return self
 end
-

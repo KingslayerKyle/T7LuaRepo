@@ -234,4 +234,3 @@ CoD.BlackmarketRewardsCarouselItem.new = function ( menu, controller )
 	
 	return self
 end
-

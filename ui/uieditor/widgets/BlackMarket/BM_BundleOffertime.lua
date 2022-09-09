@@ -755,4 +755,3 @@ CoD.BM_BundleOffertime.new = function ( menu, controller )
 	
 	return self
 end
-

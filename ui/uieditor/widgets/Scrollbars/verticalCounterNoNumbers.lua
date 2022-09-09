@@ -152,4 +152,3 @@ CoD.verticalCounterNoNumbers.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -338,4 +338,3 @@ CoD.CallingCards_cwl_mindfreak.new = function ( menu, controller )
 	
 	return self
 end
-

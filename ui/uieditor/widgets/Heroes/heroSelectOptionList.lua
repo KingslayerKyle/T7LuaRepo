@@ -136,4 +136,3 @@ CoD.heroSelectOptionList.new = function ( menu, controller )
 	
 	return self
 end
-

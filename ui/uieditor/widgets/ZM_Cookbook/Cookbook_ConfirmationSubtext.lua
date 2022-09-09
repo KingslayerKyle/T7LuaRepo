@@ -89,4 +89,3 @@ CoD.Cookbook_ConfirmationSubtext.new = function ( menu, controller )
 	
 	return self
 end
-

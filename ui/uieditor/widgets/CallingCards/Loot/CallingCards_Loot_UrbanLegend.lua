@@ -984,4 +984,3 @@ CoD.CallingCards_Loot_UrbanLegend.new = function ( menu, controller )
 	
 	return self
 end
-

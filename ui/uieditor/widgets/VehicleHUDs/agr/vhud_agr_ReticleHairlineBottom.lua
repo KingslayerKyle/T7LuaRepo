@@ -54,4 +54,3 @@ CoD.vhud_agr_ReticleHairlineBottom.new = function ( menu, controller )
 	
 	return self
 end
-

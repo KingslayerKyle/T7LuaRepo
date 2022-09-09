@@ -130,4 +130,3 @@ CoD.codcaster_ScoreLogoWidget_FFA.new = function ( menu, controller )
 	
 	return self
 end
-

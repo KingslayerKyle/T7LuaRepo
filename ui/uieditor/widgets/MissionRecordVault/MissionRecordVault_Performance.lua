@@ -385,4 +385,3 @@ CoD.MissionRecordVault_Performance.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -218,4 +218,3 @@ CoD.TacticalModeAlwaysOnToggle_Slider.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -30,4 +30,3 @@ CoD.GameSettings_textboxBG.new = function ( menu, controller )
 	
 	return self
 end
-

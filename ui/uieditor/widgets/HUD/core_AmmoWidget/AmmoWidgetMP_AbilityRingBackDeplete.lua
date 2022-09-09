@@ -46,4 +46,3 @@ CoD.AmmoWidgetMP_AbilityRingBackDeplete.new = function ( menu, controller )
 	
 	return self
 end
-

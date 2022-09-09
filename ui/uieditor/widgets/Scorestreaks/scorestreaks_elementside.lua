@@ -737,4 +737,3 @@ CoD.scorestreaks_ElementSide.new = function ( menu, controller )
 	
 	return self
 end
-

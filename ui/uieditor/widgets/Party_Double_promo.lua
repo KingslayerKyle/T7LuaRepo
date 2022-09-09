@@ -67,4 +67,3 @@ CoD.Party_Double_promo.new = function ( menu, controller )
 	
 	return self
 end
-

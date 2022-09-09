@@ -31,23 +31,18 @@ CoD.FR_TopScore_Box_TimeBlur.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Penalty = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			FaultAnim = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			RetryAnim = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			SetCheckpointDelta = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -62,4 +57,3 @@ CoD.FR_TopScore_Box_TimeBlur.new = function ( menu, controller )
 	
 	return self
 end
-

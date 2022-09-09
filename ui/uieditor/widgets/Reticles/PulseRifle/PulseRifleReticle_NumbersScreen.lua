@@ -100,4 +100,3 @@ CoD.PulseRifleReticle_NumbersScreen.new = function ( menu, controller )
 	
 	return self
 end
-

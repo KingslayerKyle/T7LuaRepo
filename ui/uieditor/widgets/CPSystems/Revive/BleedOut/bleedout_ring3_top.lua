@@ -89,4 +89,3 @@ CoD.bleedout_ring3_top.new = function ( menu, controller )
 	
 	return self
 end
-

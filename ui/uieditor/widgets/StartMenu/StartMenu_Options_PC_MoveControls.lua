@@ -92,4 +92,3 @@ CoD.StartMenu_Options_PC_MoveControls.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -220,4 +220,3 @@ CoD.MarketplaceButton.new = function ( menu, controller )
 	
 	return self
 end
-

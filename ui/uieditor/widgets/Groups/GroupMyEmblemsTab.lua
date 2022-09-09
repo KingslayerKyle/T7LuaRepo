@@ -129,4 +129,3 @@ CoD.GroupMyEmblemsTab.new = function ( menu, controller )
 	
 	return self
 end
-

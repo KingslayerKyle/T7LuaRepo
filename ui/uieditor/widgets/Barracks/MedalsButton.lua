@@ -222,4 +222,3 @@ CoD.MedalsButton.new = function ( menu, controller )
 	
 	return self
 end
-

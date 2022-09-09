@@ -66,4 +66,3 @@ CoD.AbilityWheel_Multiply.new = function ( menu, controller )
 	
 	return self
 end
-

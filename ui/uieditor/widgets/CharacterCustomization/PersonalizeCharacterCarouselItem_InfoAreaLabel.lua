@@ -51,4 +51,3 @@ CoD.PersonalizeCharacterCarouselItem_InfoAreaLabel.new = function ( menu, contro
 	
 	return self
 end
-

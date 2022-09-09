@@ -74,4 +74,3 @@ CoD.VehicleGround_CenterInnerRingOutter.new = function ( menu, controller )
 	
 	return self
 end
-

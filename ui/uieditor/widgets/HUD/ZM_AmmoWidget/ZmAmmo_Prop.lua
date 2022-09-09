@@ -509,4 +509,3 @@ CoD.ZmAmmo_Prop.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -104,4 +104,3 @@ CoD.PersonalizeCharacter_ColorOptionList.new = function ( menu, controller )
 	
 	return self
 end
-

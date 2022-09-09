@@ -146,4 +146,3 @@ CoD.verticalScrollbarNew.new = function ( menu, controller )
 	
 	return self
 end
-

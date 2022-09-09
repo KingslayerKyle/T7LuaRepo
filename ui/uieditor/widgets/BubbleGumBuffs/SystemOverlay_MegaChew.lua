@@ -16,7 +16,6 @@ local PreLoadFunc = function ( self, controller )
 end
 
 local PostLoadFunc = function ( self, controller, menu )
-
 	LUI.OverrideFunction_CallOriginalFirst( self, "setState", function ( element, controller )
 		if controller == "HorizontalList" then
 			CoD.SwapFocusableElements( controller, self.optionsVertical, self.optionsHorizontal )
@@ -451,7 +450,6 @@ CoD.SystemOverlay_MegaChew.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		HorizontalList = {
@@ -524,4 +522,3 @@ CoD.SystemOverlay_MegaChew.new = function ( menu, controller )
 	
 	return self
 end
-

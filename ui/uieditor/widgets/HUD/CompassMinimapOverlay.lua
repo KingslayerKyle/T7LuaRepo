@@ -29,4 +29,3 @@ CoD.CompassMinimapOverlay.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -132,4 +132,3 @@ CoD.GenderList.new = function ( menu, controller )
 	
 	return self
 end
-

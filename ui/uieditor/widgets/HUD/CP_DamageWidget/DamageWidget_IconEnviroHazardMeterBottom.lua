@@ -167,4 +167,3 @@ CoD.DamageWidget_IconEnviroHazardMeterBottom.new = function ( menu, controller )
 	
 	return self
 end
-

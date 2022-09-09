@@ -30,4 +30,3 @@ CoD.CommsWidget_CharacterSpeech.new = function ( menu, controller )
 	
 	return self
 end
-

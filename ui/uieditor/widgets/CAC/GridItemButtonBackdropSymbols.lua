@@ -214,4 +214,3 @@ CoD.GridItemButtonBackdropSymbols.new = function ( menu, controller )
 	
 	return self
 end
-

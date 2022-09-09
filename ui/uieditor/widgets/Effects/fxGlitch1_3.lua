@@ -39,4 +39,3 @@ CoD.fxGlitch1_3.new = function ( menu, controller )
 	
 	return self
 end
-

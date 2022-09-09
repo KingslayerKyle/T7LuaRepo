@@ -71,4 +71,3 @@ CoD.vhud_siegebot_EMPwidget.new = function ( menu, controller )
 	
 	return self
 end
-

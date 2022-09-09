@@ -120,4 +120,3 @@ CoD.BM_Contracts_PercentCompleteWidget.new = function ( menu, controller )
 	
 	return self
 end
-

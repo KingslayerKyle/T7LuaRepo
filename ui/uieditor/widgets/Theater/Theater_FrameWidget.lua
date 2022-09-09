@@ -44,4 +44,3 @@ CoD.Theater_FrameWidget.new = function ( menu, controller )
 	
 	return self
 end
-

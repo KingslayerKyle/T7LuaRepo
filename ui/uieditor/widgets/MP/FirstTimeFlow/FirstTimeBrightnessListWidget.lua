@@ -162,4 +162,3 @@ CoD.FirstTimeBrightnessListWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -38,21 +38,17 @@ CoD.ScrStk_MeterKaratInner.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			CombatEfficiency = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		CombatEfficiency = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -85,4 +81,3 @@ CoD.ScrStk_MeterKaratInner.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -124,4 +124,3 @@ CoD.doa_bubble_internal.new = function ( menu, controller )
 	
 	return self
 end
-

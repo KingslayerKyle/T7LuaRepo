@@ -30,19 +30,15 @@ CoD.FE_TabIdle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			GainActive = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			LoseActive = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -53,4 +49,3 @@ CoD.FE_TabIdle.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -141,4 +141,3 @@ CoD.ChooseCharacter_LoadoutListItem_MouseHoverIcon.new = function ( menu, contro
 	
 	return self
 end
-

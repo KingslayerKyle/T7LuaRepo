@@ -249,4 +249,3 @@ CoD.Pregame_Client_Small.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -99,4 +99,3 @@ CoD.DuplicateCounter.new = function ( menu, controller )
 	
 	return self
 end
-

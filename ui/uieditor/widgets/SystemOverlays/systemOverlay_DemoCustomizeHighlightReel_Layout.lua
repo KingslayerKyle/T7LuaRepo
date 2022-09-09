@@ -424,4 +424,3 @@ CoD.systemOverlay_DemoCustomizeHighlightReel_Layout.new = function ( menu, contr
 	
 	return self
 end
-

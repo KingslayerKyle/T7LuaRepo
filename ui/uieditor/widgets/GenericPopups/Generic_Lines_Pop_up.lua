@@ -74,19 +74,16 @@ CoD.Generic_Lines_Pop_up.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Waiting = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Processing = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -97,4 +94,3 @@ CoD.Generic_Lines_Pop_up.new = function ( menu, controller )
 	
 	return self
 end
-

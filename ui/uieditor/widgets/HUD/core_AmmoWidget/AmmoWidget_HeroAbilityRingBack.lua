@@ -64,4 +64,3 @@ CoD.AmmoWidget_HeroAbilityRingBack.new = function ( menu, controller )
 	
 	return self
 end
-

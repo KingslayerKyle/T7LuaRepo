@@ -228,4 +228,3 @@ CoD.CallingCard_loot_blacklightposters.new = function ( menu, controller )
 	
 	return self
 end
-

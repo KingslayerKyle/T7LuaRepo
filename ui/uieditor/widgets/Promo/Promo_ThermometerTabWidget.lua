@@ -4,7 +4,6 @@
 require( "ui.uieditor.widgets.Promo.Promo_ThermometerAndRewards" )
 
 local PostLoadFunc = function ( self, controller, menu )
-	
 end
 
 CoD.Promo_ThermometerTabWidget = InheritFrom( LUI.UIElement )
@@ -98,4 +97,3 @@ CoD.Promo_ThermometerTabWidget.new = function ( menu, controller )
 	
 	return self
 end
-

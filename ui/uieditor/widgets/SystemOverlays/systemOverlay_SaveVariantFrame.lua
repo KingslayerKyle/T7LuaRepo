@@ -117,4 +117,3 @@ CoD.systemOverlay_SaveVariantFrame.new = function ( menu, controller )
 	
 	return self
 end
-

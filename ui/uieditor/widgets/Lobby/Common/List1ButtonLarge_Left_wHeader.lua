@@ -1204,4 +1204,3 @@ CoD.List1ButtonLarge_Left_wHeader.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -326,7 +326,6 @@ CoD.vhud_agr_reticle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 34 )
@@ -2906,4 +2905,3 @@ CoD.vhud_agr_reticle.new = function ( menu, controller )
 	
 	return self
 end
-

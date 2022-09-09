@@ -77,4 +77,3 @@ CoD.PlayGoDownloadStatus.new = function ( menu, controller )
 	
 	return self
 end
-

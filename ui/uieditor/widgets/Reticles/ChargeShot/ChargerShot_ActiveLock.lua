@@ -30,4 +30,3 @@ CoD.ChargerShot_ActiveLock.new = function ( menu, controller )
 	
 	return self
 end
-

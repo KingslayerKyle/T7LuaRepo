@@ -90,4 +90,3 @@ CoD.CallingCards_BlackMarket_SideBetExplaination.new = function ( menu, controll
 	
 	return self
 end
-

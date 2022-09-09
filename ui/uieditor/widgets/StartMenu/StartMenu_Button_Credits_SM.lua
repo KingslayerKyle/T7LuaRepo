@@ -749,4 +749,3 @@ CoD.StartMenu_Button_Credits_SM.new = function ( menu, controller )
 	
 	return self
 end
-

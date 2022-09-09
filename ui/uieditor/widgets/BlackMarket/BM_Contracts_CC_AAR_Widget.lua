@@ -326,4 +326,3 @@ CoD.BM_Contracts_CC_AAR_Widget.new = function ( menu, controller )
 	
 	return self
 end
-

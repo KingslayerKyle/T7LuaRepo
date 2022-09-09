@@ -85,4 +85,3 @@ CoD.FE_3dTitleHardcoreKicker.new = function ( menu, controller )
 	
 	return self
 end
-

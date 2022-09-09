@@ -157,4 +157,3 @@ CoD.BM_Circuits02FX.new = function ( menu, controller )
 	
 	return self
 end
-

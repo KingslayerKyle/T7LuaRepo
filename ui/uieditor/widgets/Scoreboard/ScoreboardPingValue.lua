@@ -43,7 +43,6 @@ CoD.ScoreboardPingValue.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -58,4 +57,3 @@ CoD.ScoreboardPingValue.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -67,4 +67,3 @@ CoD.StartMenu_Barracks_Stat.new = function ( menu, controller )
 	
 	return self
 end
-

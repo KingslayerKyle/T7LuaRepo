@@ -261,4 +261,3 @@ CoD.Challenges_CallingCardProfiler_DarkOps.new = function ( menu, controller )
 	
 	return self
 end
-

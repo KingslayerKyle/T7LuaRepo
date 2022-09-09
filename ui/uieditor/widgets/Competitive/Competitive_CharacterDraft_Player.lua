@@ -244,7 +244,6 @@ CoD.Competitive_CharacterDraft_Player.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		ItemRestriction = {
@@ -385,4 +384,3 @@ CoD.Competitive_CharacterDraft_Player.new = function ( menu, controller )
 	
 	return self
 end
-

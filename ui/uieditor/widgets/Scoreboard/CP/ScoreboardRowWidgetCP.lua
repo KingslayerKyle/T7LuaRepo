@@ -696,4 +696,3 @@ CoD.ScoreboardRowWidgetCP.new = function ( menu, controller )
 	
 	return self
 end
-

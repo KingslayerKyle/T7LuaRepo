@@ -70,4 +70,3 @@ CoD.systemOverlay_Connect_Lines2.new = function ( menu, controller )
 	
 	return self
 end
-

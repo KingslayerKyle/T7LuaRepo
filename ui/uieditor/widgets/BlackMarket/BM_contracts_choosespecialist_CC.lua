@@ -205,4 +205,3 @@ CoD.BM_contracts_choosespecialist_CC.new = function ( menu, controller )
 	
 	return self
 end
-

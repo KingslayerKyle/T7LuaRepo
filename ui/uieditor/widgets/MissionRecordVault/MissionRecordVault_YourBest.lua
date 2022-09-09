@@ -57,7 +57,6 @@ CoD.MissionRecordVault_YourBest.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		NoAccolades = {
@@ -126,4 +125,3 @@ CoD.MissionRecordVault_YourBest.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -554,4 +554,3 @@ CoD.TrainingSim_RoundCompleteWidget.new = function ( menu, controller )
 	
 	return self
 end
-

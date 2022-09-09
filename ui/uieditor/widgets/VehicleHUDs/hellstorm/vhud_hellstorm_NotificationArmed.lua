@@ -68,4 +68,3 @@ CoD.vhud_hellstorm_NotificationArmed.new = function ( menu, controller )
 	
 	return self
 end
-

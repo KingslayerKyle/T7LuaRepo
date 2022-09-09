@@ -356,4 +356,3 @@ CoD.systemOverlay_Layout_ArenaNewSeasonText.new = function ( menu, controller )
 	
 	return self
 end
-

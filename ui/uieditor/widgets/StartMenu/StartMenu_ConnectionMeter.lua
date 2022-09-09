@@ -154,4 +154,3 @@ CoD.StartMenu_ConnectionMeter.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -48,4 +48,3 @@ CoD.ChallengesTabWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -742,4 +742,3 @@ CoD.CallingCard_loot_wizard.new = function ( menu, controller )
 	
 	return self
 end
-

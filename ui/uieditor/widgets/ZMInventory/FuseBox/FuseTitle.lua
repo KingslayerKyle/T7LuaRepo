@@ -86,4 +86,3 @@ CoD.FuseTitle.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -463,4 +463,3 @@ CoD.FR_NewBestTime.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -32,7 +32,6 @@ CoD.FR_TimerContainer.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Invisible = {
@@ -87,4 +86,3 @@ CoD.FR_TimerContainer.new = function ( menu, controller )
 	
 	return self
 end
-

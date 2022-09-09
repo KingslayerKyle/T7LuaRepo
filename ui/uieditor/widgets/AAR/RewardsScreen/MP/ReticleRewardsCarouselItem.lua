@@ -285,4 +285,3 @@ CoD.ReticleRewardsCarouselItem.new = function ( menu, controller )
 	
 	return self
 end
-

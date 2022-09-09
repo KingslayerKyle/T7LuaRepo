@@ -231,4 +231,3 @@ CoD.CPTrainingSimHUDWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -77,4 +77,3 @@ CoD.CallingCards_code_ground_sun.new = function ( menu, controller )
 	
 	return self
 end
-

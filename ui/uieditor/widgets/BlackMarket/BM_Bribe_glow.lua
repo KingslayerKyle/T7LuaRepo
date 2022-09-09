@@ -41,4 +41,3 @@ CoD.BM_Bribe_glow.new = function ( menu, controller )
 	
 	return self
 end
-

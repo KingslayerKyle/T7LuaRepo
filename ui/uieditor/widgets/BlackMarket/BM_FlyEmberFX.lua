@@ -263,4 +263,3 @@ CoD.BM_FlyEmberFX.new = function ( menu, controller )
 	
 	return self
 end
-

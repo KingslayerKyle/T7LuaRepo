@@ -35,4 +35,3 @@ CoD.EmblemEditorColorMixerPointer.new = function ( menu, controller )
 	
 	return self
 end
-

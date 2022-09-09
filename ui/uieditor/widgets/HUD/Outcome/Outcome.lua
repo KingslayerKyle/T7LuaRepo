@@ -2307,4 +2307,3 @@ CoD.Outcome.new = function ( menu, controller )
 	
 	return self
 end
-

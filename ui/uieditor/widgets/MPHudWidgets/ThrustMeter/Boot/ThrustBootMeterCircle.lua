@@ -62,4 +62,3 @@ CoD.ThrustBootMeterCircle.new = function ( menu, controller )
 	
 	return self
 end
-

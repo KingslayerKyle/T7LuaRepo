@@ -38,4 +38,3 @@ CoD.StoreVideoProductButtonImageWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -31,7 +31,6 @@ CoD.AAR_PT_Numbers.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Start = function ()
 				self:setupElementClipCounter( 1 )
@@ -61,4 +60,3 @@ CoD.AAR_PT_Numbers.new = function ( menu, controller )
 	
 	return self
 end
-

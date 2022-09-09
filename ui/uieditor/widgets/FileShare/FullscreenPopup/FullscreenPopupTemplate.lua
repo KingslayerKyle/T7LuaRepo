@@ -442,4 +442,3 @@ CoD.FullscreenPopupTemplate.new = function ( menu, controller )
 	
 	return self
 end
-

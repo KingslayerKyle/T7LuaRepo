@@ -238,4 +238,3 @@ CoD.Social_RecentPlayers.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -438,4 +438,3 @@ CoD.Store_NonFeaturedFrame.new = function ( menu, controller )
 	
 	return self
 end
-

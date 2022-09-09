@@ -52,4 +52,3 @@ CoD.vhud_agr_NotificationLine.new = function ( menu, controller )
 	
 	return self
 end
-

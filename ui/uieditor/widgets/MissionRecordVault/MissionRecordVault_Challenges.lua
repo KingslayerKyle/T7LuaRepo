@@ -139,4 +139,3 @@ CoD.MissionRecordVault_Challenges.new = function ( menu, controller )
 	
 	return self
 end
-

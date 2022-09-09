@@ -7,7 +7,6 @@ require( "ui.uieditor.widgets.BlackMarket.BM_Contracts_CC_Widget" )
 require( "ui.uieditor.widgets.BlackMarket.BM_Contracts_BJ_ReadyWidget" )
 
 local PostLoadFunc = function ( f1_arg0, f1_arg1 )
-
 	LUI.OverrideFunction_CallOriginalFirst( f1_arg0, "setState", function ( element, controller )
 		DataSources.SideBetCurrentChallenge.getModel( f1_arg1 )
 	end )
@@ -611,4 +610,3 @@ CoD.BM_Contracts_BlackjackInfoWidget.new = function ( menu, controller )
 	
 	return self
 end
-

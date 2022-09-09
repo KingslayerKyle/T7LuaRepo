@@ -29,7 +29,6 @@ CoD.PrematchCountdown_IconGlowPanel.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -40,4 +39,3 @@ CoD.PrematchCountdown_IconGlowPanel.new = function ( menu, controller )
 	
 	return self
 end
-

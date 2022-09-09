@@ -188,4 +188,3 @@ CoD.MediaManager_CustomGameItemLarge.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -54,4 +54,3 @@ CoD.FE_3dTitleNumberGames.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -1187,4 +1187,3 @@ CoD.GroupsFeaturedItemLarge.new = function ( menu, controller )
 	
 	return self
 end
-

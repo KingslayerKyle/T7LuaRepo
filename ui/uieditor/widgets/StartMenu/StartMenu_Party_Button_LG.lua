@@ -76,4 +76,3 @@ CoD.StartMenu_Party_Button_LG.new = function ( menu, controller )
 	
 	return self
 end
-

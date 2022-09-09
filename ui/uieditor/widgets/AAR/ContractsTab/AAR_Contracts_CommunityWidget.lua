@@ -236,4 +236,3 @@ CoD.AAR_Contracts_CommunityWidget.new = function ( menu, controller )
 	
 	return self
 end
-

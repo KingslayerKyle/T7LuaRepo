@@ -735,4 +735,3 @@ CoD.AmmoWidget_EquipmentLethalItem.new = function ( menu, controller )
 	
 	return self
 end
-

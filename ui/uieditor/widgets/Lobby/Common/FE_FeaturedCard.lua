@@ -108,4 +108,3 @@ CoD.FE_FeaturedCard.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -146,4 +146,3 @@ CoD.Social_PlayersList.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -245,4 +245,3 @@ CoD.MediaManager_TheaterListItem.new = function ( menu, controller )
 	
 	return self
 end
-

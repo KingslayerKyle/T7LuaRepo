@@ -5544,4 +5544,3 @@ CoD.WeaponBuildKitsAttachmentItemButtonND.new = function ( menu, controller )
 	
 	return self
 end
-

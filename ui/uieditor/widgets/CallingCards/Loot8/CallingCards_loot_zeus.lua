@@ -1280,4 +1280,3 @@ CoD.CallingCards_loot_zeus.new = function ( menu, controller )
 	
 	return self
 end
-

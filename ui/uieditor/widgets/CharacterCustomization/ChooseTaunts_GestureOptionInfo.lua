@@ -189,4 +189,3 @@ CoD.ChooseTaunts_GestureOptionInfo.new = function ( menu, controller )
 	
 	return self
 end
-

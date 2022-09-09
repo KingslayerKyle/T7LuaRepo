@@ -83,4 +83,3 @@ CoD.Challenges_MP_Stickerbook.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -2282,7 +2282,6 @@ CoD.ScoreInfo.new = function ( menu, controller )
 		HudPause = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -2320,4 +2319,3 @@ CoD.ScoreInfo.new = function ( menu, controller )
 	
 	return self
 end
-

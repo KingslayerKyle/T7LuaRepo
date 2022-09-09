@@ -22,4 +22,3 @@ CoD.MyShowcase_Showcase.new = function ( menu, controller )
 	
 	return self
 end
-

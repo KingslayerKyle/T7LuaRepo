@@ -237,4 +237,3 @@ CoD.cac_IconTokenStatic.new = function ( menu, controller )
 	
 	return self
 end
-

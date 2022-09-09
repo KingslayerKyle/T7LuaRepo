@@ -397,4 +397,3 @@ CoD.BM_TopNavBtn.new = function ( menu, controller )
 	
 	return self
 end
-

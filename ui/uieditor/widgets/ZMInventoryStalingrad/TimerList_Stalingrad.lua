@@ -91,4 +91,3 @@ CoD.TimerList_Stalingrad.new = function ( menu, controller )
 	
 	return self
 end
-

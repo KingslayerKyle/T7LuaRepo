@@ -924,4 +924,3 @@ CoD.ChooseCharacter_LoadoutListItem.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -407,4 +407,3 @@ CoD.Challenges_NearCompletionWidget_Long.new = function ( menu, controller )
 	
 	return self
 end
-

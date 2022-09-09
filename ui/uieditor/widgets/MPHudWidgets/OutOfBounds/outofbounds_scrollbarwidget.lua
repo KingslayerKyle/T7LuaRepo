@@ -98,7 +98,6 @@ CoD.outofbounds_scrollbarwidget.new = function ( menu, controller )
 		IsOutOfBounds = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -109,4 +108,3 @@ CoD.outofbounds_scrollbarwidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -128,4 +128,3 @@ CoD.LobbySlideCommonGroupsListWidgetGroupName.new = function ( menu, controller 
 	
 	return self
 end
-

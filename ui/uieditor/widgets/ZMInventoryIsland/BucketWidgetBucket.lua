@@ -396,4 +396,3 @@ CoD.BucketWidgetBucket.new = function ( menu, controller )
 	
 	return self
 end
-

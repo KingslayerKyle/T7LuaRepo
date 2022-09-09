@@ -29,7 +29,6 @@ CoD.ChooseCharacterLoadout_TabBar.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -44,4 +43,3 @@ CoD.ChooseCharacterLoadout_TabBar.new = function ( menu, controller )
 	
 	return self
 end
-

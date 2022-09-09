@@ -66,4 +66,3 @@ CoD.DamageWidget_BackCircleOutter.new = function ( menu, controller )
 	
 	return self
 end
-

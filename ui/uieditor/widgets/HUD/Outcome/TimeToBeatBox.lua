@@ -105,4 +105,3 @@ CoD.TimeToBeatBox.new = function ( menu, controller )
 	
 	return self
 end
-

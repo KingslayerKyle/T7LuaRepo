@@ -258,4 +258,3 @@ CoD.Pregame_ItemVote_PlayerIndicator.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -95,4 +95,3 @@ CoD.EmblemLayerNumber.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -59,4 +59,3 @@ CoD.ButtonIcon.new = function ( menu, controller )
 	
 	return self
 end
-

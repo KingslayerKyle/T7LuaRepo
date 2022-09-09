@@ -215,4 +215,3 @@ CoD.bleedOutWidget.new = function ( menu, controller )
 	
 	return self
 end
-

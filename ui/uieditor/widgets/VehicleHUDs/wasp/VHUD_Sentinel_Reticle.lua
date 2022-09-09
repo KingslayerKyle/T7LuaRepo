@@ -519,7 +519,6 @@ CoD.VHUD_Sentinel_Reticle.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 29 )
@@ -2617,4 +2616,3 @@ CoD.VHUD_Sentinel_Reticle.new = function ( menu, controller )
 	
 	return self
 end
-

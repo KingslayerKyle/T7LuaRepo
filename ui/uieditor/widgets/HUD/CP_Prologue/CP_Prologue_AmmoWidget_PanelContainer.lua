@@ -87,13 +87,11 @@ CoD.CP_Prologue_AmmoWidget_PanelContainer.new = function ( menu, controller )
 			end,
 			Knife = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Weapon3Digits = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -111,4 +109,3 @@ CoD.CP_Prologue_AmmoWidget_PanelContainer.new = function ( menu, controller )
 	
 	return self
 end
-

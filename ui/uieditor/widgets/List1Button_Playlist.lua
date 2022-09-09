@@ -1554,4 +1554,3 @@ CoD.List1Button_Playlist.new = function ( menu, controller )
 	
 	return self
 end
-

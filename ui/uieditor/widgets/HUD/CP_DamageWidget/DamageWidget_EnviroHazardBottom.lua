@@ -139,4 +139,3 @@ CoD.DamageWidget_EnviroHazardBottom.new = function ( menu, controller )
 	
 	return self
 end
-

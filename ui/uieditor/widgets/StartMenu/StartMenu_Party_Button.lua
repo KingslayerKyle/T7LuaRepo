@@ -949,4 +949,3 @@ CoD.StartMenu_Party_Button.new = function ( menu, controller )
 	
 	return self
 end
-

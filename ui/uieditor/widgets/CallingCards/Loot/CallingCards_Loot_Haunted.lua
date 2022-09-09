@@ -435,4 +435,3 @@ CoD.CallingCards_Loot_Haunted.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -189,4 +189,3 @@ CoD.GroupsBackground.new = function ( menu, controller )
 	
 	return self
 end
-

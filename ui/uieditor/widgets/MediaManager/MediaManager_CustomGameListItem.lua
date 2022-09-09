@@ -245,4 +245,3 @@ CoD.MediaManager_CustomGameListItem.new = function ( menu, controller )
 	
 	return self
 end
-

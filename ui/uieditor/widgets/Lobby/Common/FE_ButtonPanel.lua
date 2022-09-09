@@ -32,4 +32,3 @@ CoD.FE_ButtonPanel.new = function ( menu, controller )
 	
 	return self
 end
-

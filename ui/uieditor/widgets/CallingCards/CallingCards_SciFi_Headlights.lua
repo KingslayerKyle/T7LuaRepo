@@ -99,4 +99,3 @@ CoD.CallingCards_SciFi_Headlights.new = function ( menu, controller )
 	
 	return self
 end
-

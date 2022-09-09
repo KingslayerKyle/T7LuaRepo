@@ -86,4 +86,3 @@ CoD.Challenges_ZM_Stickerbook_DarkOps.new = function ( menu, controller )
 	
 	return self
 end
-

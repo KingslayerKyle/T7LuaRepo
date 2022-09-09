@@ -41,4 +41,3 @@ CoD.ThrustMeterDotsBoot.new = function ( menu, controller )
 	
 	return self
 end
-

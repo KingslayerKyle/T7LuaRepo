@@ -509,4 +509,3 @@ CoD.ZmAmmo_DpadIconSword.new = function ( menu, controller )
 	
 	return self
 end
-

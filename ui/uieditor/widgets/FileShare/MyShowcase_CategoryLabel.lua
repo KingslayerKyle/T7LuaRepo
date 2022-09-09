@@ -74,4 +74,3 @@ CoD.MyShowcase_CategoryLabel.new = function ( menu, controller )
 	
 	return self
 end
-

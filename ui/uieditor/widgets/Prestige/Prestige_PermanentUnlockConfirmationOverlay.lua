@@ -64,7 +64,6 @@ CoD.Prestige_PermanentUnlockConfirmationOverlay.new = function ( menu, controlle
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		DefaultStateBGB = {
@@ -109,4 +108,3 @@ CoD.Prestige_PermanentUnlockConfirmationOverlay.new = function ( menu, controlle
 	
 	return self
 end
-

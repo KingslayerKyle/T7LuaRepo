@@ -100,4 +100,3 @@ CoD.CallingCards_LethalsWidget.new = function ( menu, controller )
 	
 	return self
 end
-

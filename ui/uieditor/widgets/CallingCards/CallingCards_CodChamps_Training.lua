@@ -1025,4 +1025,3 @@ CoD.CallingCards_CodChamps_Training.new = function ( menu, controller )
 	
 	return self
 end
-

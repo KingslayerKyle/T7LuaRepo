@@ -137,4 +137,3 @@ CoD.LethalEquipmentWidget.new = function ( menu, controller )
 	
 	return self
 end
-

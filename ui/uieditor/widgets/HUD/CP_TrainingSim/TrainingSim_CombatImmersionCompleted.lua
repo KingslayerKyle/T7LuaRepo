@@ -495,4 +495,3 @@ CoD.TrainingSim_CombatImmersionCompleted.new = function ( menu, controller )
 	
 	return self
 end
-

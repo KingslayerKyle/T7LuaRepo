@@ -373,4 +373,3 @@ CoD.PerkListItemFactory.new = function ( menu, controller )
 	
 	return self
 end
-

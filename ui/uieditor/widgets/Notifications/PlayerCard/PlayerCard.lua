@@ -321,7 +321,6 @@ CoD.PlayerCard.new = function ( menu, controller )
 			end,
 			Side = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Emblem = {
@@ -537,4 +536,3 @@ CoD.PlayerCard.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -180,4 +180,3 @@ CoD.FE_BlackMarketSpecialBreadcrumb.new = function ( menu, controller )
 	
 	return self
 end
-

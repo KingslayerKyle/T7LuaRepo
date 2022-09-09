@@ -56,4 +56,3 @@ CoD.BM_Bread_linker.new = function ( menu, controller )
 	
 	return self
 end
-

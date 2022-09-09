@@ -104,4 +104,3 @@ CoD.GameSettings_GlobalSettings.new = function ( menu, controller )
 	
 	return self
 end
-

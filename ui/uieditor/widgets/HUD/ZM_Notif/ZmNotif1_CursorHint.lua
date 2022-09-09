@@ -51,4 +51,3 @@ CoD.ZmNotif1_CursorHint.new = function ( menu, controller )
 	
 	return self
 end
-

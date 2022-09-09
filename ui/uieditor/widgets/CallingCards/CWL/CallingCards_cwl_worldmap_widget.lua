@@ -40,4 +40,3 @@ CoD.CallingCards_cwl_worldmap_widget.new = function ( menu, controller )
 	
 	return self
 end
-

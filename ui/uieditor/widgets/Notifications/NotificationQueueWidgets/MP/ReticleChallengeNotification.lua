@@ -1350,4 +1350,3 @@ CoD.ReticleChallengeNotification.new = function ( menu, controller )
 	
 	return self
 end
-

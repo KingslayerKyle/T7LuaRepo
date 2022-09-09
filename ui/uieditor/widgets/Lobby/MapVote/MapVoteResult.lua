@@ -227,4 +227,3 @@ CoD.MapVoteResult.new = function ( menu, controller )
 	
 	return self
 end
-

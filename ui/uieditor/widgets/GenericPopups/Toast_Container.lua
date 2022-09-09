@@ -857,4 +857,3 @@ CoD.Toast_Container.new = function ( menu, controller )
 	
 	return self
 end
-

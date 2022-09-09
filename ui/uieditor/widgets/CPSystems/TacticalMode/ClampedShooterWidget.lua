@@ -201,4 +201,3 @@ CoD.ClampedShooterWidget.new = function ( menu, controller )
 	
 	return self
 end
-

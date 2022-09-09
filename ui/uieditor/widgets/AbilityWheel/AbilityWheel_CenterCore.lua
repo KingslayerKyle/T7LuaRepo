@@ -60,7 +60,6 @@ CoD.AbilityWheel_CenterCore.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 1 )
@@ -216,4 +215,3 @@ CoD.AbilityWheel_CenterCore.new = function ( menu, controller )
 	
 	return self
 end
-

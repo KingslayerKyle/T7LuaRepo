@@ -50,21 +50,17 @@ CoD.Notification_Medals_Label.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			TimeUp = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Combined = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -89,4 +85,3 @@ CoD.Notification_Medals_Label.new = function ( menu, controller )
 	
 	return self
 end
-

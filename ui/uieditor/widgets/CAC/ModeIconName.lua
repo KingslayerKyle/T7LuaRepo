@@ -140,4 +140,3 @@ CoD.ModeIconName.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -59,107 +59,83 @@ CoD.weakpoint_NewHex.new = function ( menu, controller )
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Medium = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Far = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Obscured = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Close = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Medium = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Far = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Obscured = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Medium = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Far = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Obscured = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Far = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Medium = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Obscured = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Obscured = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Medium = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Far = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -205,4 +181,3 @@ CoD.weakpoint_NewHex.new = function ( menu, controller )
 	
 	return self
 end
-

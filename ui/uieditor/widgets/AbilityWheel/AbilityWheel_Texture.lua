@@ -115,4 +115,3 @@ CoD.AbilityWheel_Texture.new = function ( menu, controller )
 	
 	return self
 end
-

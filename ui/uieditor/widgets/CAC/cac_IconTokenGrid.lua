@@ -56,4 +56,3 @@ CoD.cac_IconTokenGrid.new = function ( menu, controller )
 	
 	return self
 end
-

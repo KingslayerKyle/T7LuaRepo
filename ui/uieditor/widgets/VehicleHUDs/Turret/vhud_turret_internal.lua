@@ -101,4 +101,3 @@ CoD.vhud_turret_internal.new = function ( menu, controller )
 	
 	return self
 end
-

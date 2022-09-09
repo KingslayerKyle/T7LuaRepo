@@ -336,4 +336,3 @@ CoD.Social_Party_PC.new = function ( menu, controller )
 	
 	return self
 end
-

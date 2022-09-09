@@ -63,4 +63,3 @@ CoD.MOTD_TitleAndBodyText.new = function ( menu, controller )
 	
 	return self
 end
-

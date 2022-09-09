@@ -171,4 +171,3 @@ CoD.FE_FeaturedCardsContainerController.new = function ( menu, controller )
 	
 	return self
 end
-

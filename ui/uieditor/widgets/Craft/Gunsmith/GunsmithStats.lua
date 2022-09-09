@@ -71,4 +71,3 @@ CoD.GunsmithStats.new = function ( menu, controller )
 	
 	return self
 end
-

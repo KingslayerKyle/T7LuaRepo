@@ -498,7 +498,6 @@ CoD.outofbounds_arrowswidget.new = function ( menu, controller )
 		IsOutOfBounds = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -522,4 +521,3 @@ CoD.outofbounds_arrowswidget.new = function ( menu, controller )
 	
 	return self
 end
-

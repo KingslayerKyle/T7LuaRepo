@@ -554,4 +554,3 @@ CoD.Challenges_ZM_Summary.new = function ( menu, controller )
 	
 	return self
 end
-

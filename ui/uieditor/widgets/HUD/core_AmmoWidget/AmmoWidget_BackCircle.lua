@@ -46,4 +46,3 @@ CoD.AmmoWidget_BackCircle.new = function ( menu, controller )
 	
 	return self
 end
-

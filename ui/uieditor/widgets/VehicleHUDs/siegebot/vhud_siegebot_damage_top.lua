@@ -117,11 +117,9 @@ CoD.vhud_siegebot_damage_top.new = function ( menu, controller )
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		damage_high = {
@@ -250,7 +248,6 @@ CoD.vhud_siegebot_damage_top.new = function ( menu, controller )
 		EMP = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -304,4 +301,3 @@ CoD.vhud_siegebot_damage_top.new = function ( menu, controller )
 	
 	return self
 end
-

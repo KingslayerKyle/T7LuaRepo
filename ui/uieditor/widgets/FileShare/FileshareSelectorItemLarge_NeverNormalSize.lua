@@ -914,4 +914,3 @@ CoD.FileshareSelectorItemLarge_NeverNormalSize.new = function ( menu, controller
 	
 	return self
 end
-

@@ -263,4 +263,3 @@ CoD.verticalCounter.new = function ( menu, controller )
 	
 	return self
 end
-

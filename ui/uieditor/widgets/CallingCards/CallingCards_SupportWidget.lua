@@ -674,4 +674,3 @@ CoD.CallingCards_SupportWidget.new = function ( menu, controller )
 	
 	return self
 end
-

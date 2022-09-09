@@ -86,4 +86,3 @@ CoD.bleedout_cross.new = function ( menu, controller )
 	
 	return self
 end
-

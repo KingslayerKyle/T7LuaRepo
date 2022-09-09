@@ -31,17 +31,14 @@ CoD.AbilityWheel_CenterAberation.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Close = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		ControlCore = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		MartialCore = {
@@ -103,4 +100,3 @@ CoD.AbilityWheel_CenterAberation.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -48,7 +48,6 @@ CoD.BM_BribeLabel_Backing.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Visible = function ()
 				self:setupElementClipCounter( 4 )
@@ -123,4 +122,3 @@ CoD.BM_BribeLabel_Backing.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -357,4 +357,3 @@ CoD.DragonEggPieceWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -307,4 +307,3 @@ CoD.InventoryWidgetIsland.new = function ( menu, controller )
 	
 	return self
 end
-

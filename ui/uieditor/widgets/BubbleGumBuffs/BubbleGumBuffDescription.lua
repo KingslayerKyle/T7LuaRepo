@@ -107,4 +107,3 @@ CoD.BubbleGumBuffDescription.new = function ( menu, controller )
 	
 	return self
 end
-

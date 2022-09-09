@@ -122,4 +122,3 @@ CoD.JoinButtonPrompt.new = function ( menu, controller )
 	
 	return self
 end
-

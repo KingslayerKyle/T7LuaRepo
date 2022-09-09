@@ -80,4 +80,3 @@ CoD.cac_CharElements.new = function ( menu, controller )
 	
 	return self
 end
-

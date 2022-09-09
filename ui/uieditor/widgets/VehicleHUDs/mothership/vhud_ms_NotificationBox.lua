@@ -65,4 +65,3 @@ CoD.vhud_ms_NotificationBox.new = function ( menu, controller )
 	
 	return self
 end
-

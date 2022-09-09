@@ -135,4 +135,3 @@ CoD.CombatRecordAccoladeMissionSelector.new = function ( menu, controller )
 	
 	return self
 end
-

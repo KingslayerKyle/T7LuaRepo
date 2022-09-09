@@ -63,7 +63,6 @@ CoD.CP_Prologue_FaceScannerFoundBox.new = function ( menu, controller )
 		Scanning = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Found = {
@@ -78,7 +77,6 @@ CoD.CP_Prologue_FaceScannerFoundBox.new = function ( menu, controller )
 		Failed = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -89,4 +87,3 @@ CoD.CP_Prologue_FaceScannerFoundBox.new = function ( menu, controller )
 	
 	return self
 end
-

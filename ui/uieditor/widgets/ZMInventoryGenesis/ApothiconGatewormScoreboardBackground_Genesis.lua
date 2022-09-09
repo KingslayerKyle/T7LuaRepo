@@ -116,4 +116,3 @@ CoD.ApothiconGatewormScoreboardBackground_Genesis.new = function ( menu, control
 	
 	return self
 end
-

@@ -1006,4 +1006,3 @@ CoD.CustomizationListButton_NB.new = function ( menu, controller )
 	
 	return self
 end
-

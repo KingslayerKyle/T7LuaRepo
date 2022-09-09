@@ -67,4 +67,3 @@ CoD.Prematch_WaitingForPlayers.new = function ( menu, controller )
 	
 	return self
 end
-

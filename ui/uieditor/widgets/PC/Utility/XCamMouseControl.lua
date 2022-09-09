@@ -72,4 +72,3 @@ CoD.XCamMouseControl.new = function ( menu, controller )
 	
 	return self
 end
-

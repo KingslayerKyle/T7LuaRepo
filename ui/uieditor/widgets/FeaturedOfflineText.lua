@@ -38,7 +38,6 @@ CoD.FeaturedOfflineText.new = function ( menu, controller )
 			end,
 			FeaturedCardsVisible = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		OfflineNormal = {
@@ -116,4 +115,3 @@ CoD.FeaturedOfflineText.new = function ( menu, controller )
 	
 	return self
 end
-

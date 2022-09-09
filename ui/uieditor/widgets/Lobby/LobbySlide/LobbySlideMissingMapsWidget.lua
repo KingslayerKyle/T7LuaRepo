@@ -210,4 +210,3 @@ CoD.LobbySlideMissingMapsWidget.new = function ( menu, controller )
 	
 	return self
 end
-

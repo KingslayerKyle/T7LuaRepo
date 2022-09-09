@@ -106,4 +106,3 @@ CoD.PaintshopButtonPrompt.new = function ( menu, controller )
 	
 	return self
 end
-

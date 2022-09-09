@@ -542,4 +542,3 @@ CoD.CallingCards_cwl_default.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -30,4 +30,3 @@ CoD.CommsWidget_IconMessage.new = function ( menu, controller )
 	
 	return self
 end
-

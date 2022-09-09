@@ -85,4 +85,3 @@ CoD.vhud_agr_TimeBar.new = function ( menu, controller )
 	
 	return self
 end
-

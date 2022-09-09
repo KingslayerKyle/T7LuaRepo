@@ -421,4 +421,3 @@ CoD.SeedWidget.new = function ( menu, controller )
 	
 	return self
 end
-

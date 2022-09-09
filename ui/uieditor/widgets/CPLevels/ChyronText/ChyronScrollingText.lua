@@ -111,4 +111,3 @@ CoD.ChyronScrollingText.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -384,4 +384,3 @@ CoD.MachineToolsBlueprintWidget_Island.new = function ( menu, controller )
 	
 	return self
 end
-

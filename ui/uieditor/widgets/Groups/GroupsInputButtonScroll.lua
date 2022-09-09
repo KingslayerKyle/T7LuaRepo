@@ -106,7 +106,6 @@ CoD.GroupsInputButtonScroll.new = function ( menu, controller )
 		Disabled = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -124,4 +123,3 @@ CoD.GroupsInputButtonScroll.new = function ( menu, controller )
 	
 	return self
 end
-

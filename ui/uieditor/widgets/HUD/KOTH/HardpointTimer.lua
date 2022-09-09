@@ -103,11 +103,9 @@ CoD.HardpointTimer.new = function ( menu, controller )
 			end,
 			hud_start = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			hud_stop = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Hardpoint = {
@@ -132,11 +130,9 @@ CoD.HardpointTimer.new = function ( menu, controller )
 			end,
 			hud_start = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			hud_stop = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		HardpointForCodCaster = {
@@ -161,11 +157,9 @@ CoD.HardpointTimer.new = function ( menu, controller )
 			end,
 			hud_start = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			hud_stop = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -372,4 +366,3 @@ CoD.HardpointTimer.new = function ( menu, controller )
 	
 	return self
 end
-

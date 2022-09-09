@@ -69,4 +69,3 @@ CoD.CallingCards_Lethals_Glow.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -282,4 +282,3 @@ CoD.MediaManager_VariantListItem.new = function ( menu, controller )
 	
 	return self
 end
-

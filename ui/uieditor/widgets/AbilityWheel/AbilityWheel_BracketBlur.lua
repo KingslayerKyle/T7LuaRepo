@@ -190,4 +190,3 @@ CoD.AbilityWheel_BracketBlur.new = function ( menu, controller )
 	
 	return self
 end
-

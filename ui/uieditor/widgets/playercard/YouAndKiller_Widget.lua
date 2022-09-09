@@ -38,19 +38,16 @@ CoD.YouAndKiller_Widget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Killcam = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		NemesisKillcam = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -92,4 +89,3 @@ CoD.YouAndKiller_Widget.new = function ( menu, controller )
 	
 	return self
 end
-

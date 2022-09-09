@@ -2055,4 +2055,3 @@ CoD.cac_3dTitleContainerNoLoc.new = function ( menu, controller )
 	
 	return self
 end
-

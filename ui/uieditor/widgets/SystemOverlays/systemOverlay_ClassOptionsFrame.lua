@@ -73,4 +73,3 @@ CoD.systemOverlay_ClassOptionsFrame.new = function ( menu, controller )
 	
 	return self
 end
-

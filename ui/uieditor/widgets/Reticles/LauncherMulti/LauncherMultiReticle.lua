@@ -35,4 +35,3 @@ CoD.LauncherMultiReticle.new = function ( menu, controller )
 	
 	return self
 end
-

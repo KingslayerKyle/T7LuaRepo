@@ -27,7 +27,6 @@ CoD.ChyronFlashLine.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Flash1 = function ()
 				self:setupElementClipCounter( 1 )
@@ -158,4 +157,3 @@ CoD.ChyronFlashLine.new = function ( menu, controller )
 	
 	return self
 end
-

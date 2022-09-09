@@ -109,4 +109,3 @@ CoD.Arena_MatchSettingInfo.new = function ( menu, controller )
 	
 	return self
 end
-

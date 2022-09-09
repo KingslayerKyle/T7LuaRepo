@@ -257,4 +257,3 @@ CoD.CallingCards_SciFi_ufolights.new = function ( menu, controller )
 	
 	return self
 end
-

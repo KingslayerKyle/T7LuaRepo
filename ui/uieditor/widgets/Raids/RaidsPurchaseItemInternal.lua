@@ -92,4 +92,3 @@ CoD.RaidsPurchaseItemInternal.new = function ( menu, controller )
 	
 	return self
 end
-

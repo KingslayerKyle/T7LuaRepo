@@ -303,4 +303,3 @@ CoD.DailyContractRewardsCarouselItemInternal.new = function ( menu, controller )
 	
 	return self
 end
-

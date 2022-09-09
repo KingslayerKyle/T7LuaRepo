@@ -67,4 +67,3 @@ CoD.cac_TrainingSimNameLabel.new = function ( menu, controller )
 	
 	return self
 end
-

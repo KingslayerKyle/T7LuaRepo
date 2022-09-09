@@ -289,4 +289,3 @@ CoD.CallingCards_Stickerbook_Default.new = function ( menu, controller )
 	
 	return self
 end
-

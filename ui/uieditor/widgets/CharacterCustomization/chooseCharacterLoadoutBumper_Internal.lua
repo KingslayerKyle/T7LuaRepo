@@ -33,7 +33,6 @@ CoD.chooseCharacterLoadoutBumper_Internal.new = function ( menu, controller )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		HiddenPC = {
@@ -79,4 +78,3 @@ CoD.chooseCharacterLoadoutBumper_Internal.new = function ( menu, controller )
 	
 	return self
 end
-

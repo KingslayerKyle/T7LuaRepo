@@ -42,4 +42,3 @@ CoD.BadgesTab.new = function ( menu, controller )
 	
 	return self
 end
-

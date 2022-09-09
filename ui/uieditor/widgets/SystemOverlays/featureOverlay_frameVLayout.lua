@@ -72,4 +72,3 @@ CoD.featureOverlay_frameVLayout.new = function ( menu, controller )
 	
 	return self
 end
-

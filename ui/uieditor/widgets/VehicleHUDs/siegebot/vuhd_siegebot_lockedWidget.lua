@@ -117,4 +117,3 @@ CoD.vuhd_siegebot_lockedWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -62,4 +62,3 @@ CoD.FE_TabBar.new = function ( menu, controller )
 	
 	return self
 end
-

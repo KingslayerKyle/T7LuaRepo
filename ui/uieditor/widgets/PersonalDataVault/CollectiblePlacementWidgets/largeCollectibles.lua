@@ -98,4 +98,3 @@ CoD.largeCollectibles.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -141,4 +141,3 @@ CoD.demo_options_slider_control_item.new = function ( menu, controller )
 	
 	return self
 end
-

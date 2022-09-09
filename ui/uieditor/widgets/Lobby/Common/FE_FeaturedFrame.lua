@@ -32,4 +32,3 @@ CoD.FE_FeaturedFrame.new = function ( menu, controller )
 	
 	return self
 end
-

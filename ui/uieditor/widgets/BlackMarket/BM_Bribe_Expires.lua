@@ -89,4 +89,3 @@ CoD.BM_Bribe_Expires.new = function ( menu, controller )
 	
 	return self
 end
-

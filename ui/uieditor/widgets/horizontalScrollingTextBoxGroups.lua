@@ -46,4 +46,3 @@ CoD.horizontalScrollingTextBoxGroups.new = function ( menu, controller )
 	
 	return self
 end
-

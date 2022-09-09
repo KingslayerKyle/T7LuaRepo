@@ -71,4 +71,3 @@ CoD.Winter_Community_Panel.new = function ( menu, controller )
 	
 	return self
 end
-

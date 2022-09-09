@@ -65,4 +65,3 @@ CoD.Social_RanksFrame.new = function ( menu, controller )
 	
 	return self
 end
-

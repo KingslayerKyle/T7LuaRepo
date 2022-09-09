@@ -99,4 +99,3 @@ CoD.InGamePlayerListRow.new = function ( menu, controller )
 	
 	return self
 end
-

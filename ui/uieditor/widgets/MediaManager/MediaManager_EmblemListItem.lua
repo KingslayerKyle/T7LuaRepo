@@ -249,4 +249,3 @@ CoD.MediaManager_EmblemListItem.new = function ( menu, controller )
 	
 	return self
 end
-

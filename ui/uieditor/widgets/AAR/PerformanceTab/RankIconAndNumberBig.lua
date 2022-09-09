@@ -44,7 +44,6 @@ CoD.RankIconAndNumberBig.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			GrowBig = function ()
 				self:setupElementClipCounter( 2 )
@@ -111,4 +110,3 @@ CoD.RankIconAndNumberBig.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -154,4 +154,3 @@ CoD.common_ButtonLabel_01.new = function ( menu, controller )
 	
 	return self
 end
-

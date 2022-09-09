@@ -95,4 +95,3 @@ CoD.LobbySlideEmblemWidget.new = function ( menu, controller )
 	
 	return self
 end
-

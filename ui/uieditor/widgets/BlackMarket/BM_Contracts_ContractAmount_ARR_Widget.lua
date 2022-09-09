@@ -89,7 +89,6 @@ CoD.BM_Contracts_ContractAmount_ARR_Widget.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Max = {
@@ -139,4 +138,3 @@ CoD.BM_Contracts_ContractAmount_ARR_Widget.new = function ( menu, controller )
 	
 	return self
 end
-

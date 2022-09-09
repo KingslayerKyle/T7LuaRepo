@@ -101,4 +101,3 @@ CoD.StartMenu_Identity_SubTitle.new = function ( menu, controller )
 	
 	return self
 end
-

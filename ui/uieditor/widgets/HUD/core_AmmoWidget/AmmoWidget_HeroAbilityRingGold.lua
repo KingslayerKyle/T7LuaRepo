@@ -38,4 +38,3 @@ CoD.AmmoWidget_HeroAbilityRingGold.new = function ( menu, controller )
 	
 	return self
 end
-

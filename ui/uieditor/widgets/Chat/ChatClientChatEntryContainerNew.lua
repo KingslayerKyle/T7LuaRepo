@@ -12,7 +12,6 @@ local f0_local0 = function ()
 end
 
 local f0_local1 = function ( f2_arg0 )
-
 	f2_arg0:completeAnimation()
 	f2_arg0:playClip( "FadeOut" )
 end
@@ -68,7 +67,6 @@ CoD.ChatClientChatEntryContainerNew.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			FadeOut = function ()
 				self:setupElementClipCounter( 1 )
@@ -102,4 +100,3 @@ CoD.ChatClientChatEntryContainerNew.new = function ( menu, controller )
 	
 	return self
 end
-

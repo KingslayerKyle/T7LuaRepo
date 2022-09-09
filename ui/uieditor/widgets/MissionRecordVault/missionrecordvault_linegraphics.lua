@@ -58,4 +58,3 @@ CoD.MissionRecordVault_LineGraphics.new = function ( menu, controller )
 	
 	return self
 end
-

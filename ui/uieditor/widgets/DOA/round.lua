@@ -106,4 +106,3 @@ CoD.round.new = function ( menu, controller )
 	
 	return self
 end
-

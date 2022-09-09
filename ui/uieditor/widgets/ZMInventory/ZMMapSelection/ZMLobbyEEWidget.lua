@@ -792,4 +792,3 @@ CoD.ZMLobbyEEWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -336,4 +336,3 @@ CoD.SystemOverlay_ExtraSlots.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -346,4 +346,3 @@ CoD.CallingCards_BootcampWidget.new = function ( menu, controller )
 	
 	return self
 end
-

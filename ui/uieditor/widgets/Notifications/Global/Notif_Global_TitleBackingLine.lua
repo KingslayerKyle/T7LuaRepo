@@ -39,4 +39,3 @@ CoD.Notif_Global_TitleBackingLine.new = function ( menu, controller )
 	
 	return self
 end
-

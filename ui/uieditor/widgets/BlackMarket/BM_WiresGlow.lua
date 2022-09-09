@@ -124,4 +124,3 @@ CoD.BM_WiresGlow.new = function ( menu, controller )
 	
 	return self
 end
-

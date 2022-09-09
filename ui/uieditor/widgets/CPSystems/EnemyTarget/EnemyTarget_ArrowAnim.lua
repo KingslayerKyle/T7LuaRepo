@@ -151,7 +151,6 @@ CoD.EnemyTarget_ArrowAnim.new = function ( menu, controller )
 		Null = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -167,4 +166,3 @@ CoD.EnemyTarget_ArrowAnim.new = function ( menu, controller )
 	
 	return self
 end
-

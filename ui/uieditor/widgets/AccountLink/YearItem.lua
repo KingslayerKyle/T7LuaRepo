@@ -140,4 +140,3 @@ CoD.YearItem.new = function ( menu, controller )
 	
 	return self
 end
-

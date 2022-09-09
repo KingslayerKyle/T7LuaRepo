@@ -94,4 +94,3 @@ CoD.CallingCards_SpecialistKilljoysWidget.new = function ( menu, controller )
 	
 	return self
 end
-

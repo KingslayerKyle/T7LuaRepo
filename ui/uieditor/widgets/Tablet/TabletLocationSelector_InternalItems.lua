@@ -35,4 +35,3 @@ CoD.TabletLocationSelector_InternalItems.new = function ( menu, controller )
 	
 	return self
 end
-

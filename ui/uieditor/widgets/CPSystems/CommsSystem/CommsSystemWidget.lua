@@ -726,4 +726,3 @@ CoD.CommsSystemWidget.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -232,4 +232,3 @@ CoD.ArenaStar.new = function ( menu, controller )
 	
 	return self
 end
-

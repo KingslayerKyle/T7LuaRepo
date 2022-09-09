@@ -33,7 +33,6 @@ CoD.AbilityWheel_DescriptionText.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Inactive = function ()
 				self:setupElementClipCounter( 1 )
@@ -187,4 +186,3 @@ CoD.AbilityWheel_DescriptionText.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -210,4 +210,3 @@ CoD.systemOverlay_Layout_SaveEmblem.new = function ( menu, controller )
 	
 	return self
 end
-

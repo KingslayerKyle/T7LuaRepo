@@ -306,7 +306,6 @@ CoD.AbilityWheel_DNI.new = function ( menu, controller )
 		Hidden = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -334,4 +333,3 @@ CoD.AbilityWheel_DNI.new = function ( menu, controller )
 	
 	return self
 end
-

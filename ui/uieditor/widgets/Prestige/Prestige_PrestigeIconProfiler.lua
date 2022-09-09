@@ -199,4 +199,3 @@ CoD.Prestige_PrestigeIconProfiler.new = function ( menu, controller )
 	
 	return self
 end
-

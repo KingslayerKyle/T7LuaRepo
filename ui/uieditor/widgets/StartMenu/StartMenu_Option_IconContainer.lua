@@ -43,4 +43,3 @@ CoD.StartMenu_Option_IconContainer.new = function ( menu, controller )
 	
 	return self
 end
-

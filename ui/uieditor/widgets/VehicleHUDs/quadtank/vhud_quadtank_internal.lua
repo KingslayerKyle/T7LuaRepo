@@ -117,4 +117,3 @@ CoD.vhud_quadtank_internal.new = function ( menu, controller )
 	
 	return self
 end
-

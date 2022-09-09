@@ -110,4 +110,3 @@ CoD.fe_NAT.new = function ( menu, controller )
 	
 	return self
 end
-

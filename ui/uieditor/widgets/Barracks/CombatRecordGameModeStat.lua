@@ -137,4 +137,3 @@ CoD.CombatRecordGameModeStat.new = function ( menu, controller )
 	
 	return self
 end
-

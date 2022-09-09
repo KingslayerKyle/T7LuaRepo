@@ -364,4 +364,3 @@ CoD.Promo_ThermometerAndRewards.new = function ( menu, controller )
 	
 	return self
 end
-

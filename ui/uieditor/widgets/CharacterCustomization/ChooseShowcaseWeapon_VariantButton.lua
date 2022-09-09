@@ -1846,4 +1846,3 @@ CoD.ChooseShowcaseWeapon_VariantButton.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -124,4 +124,3 @@ CoD.GunsmithFullPopupBackground.new = function ( menu, controller )
 	
 	return self
 end
-

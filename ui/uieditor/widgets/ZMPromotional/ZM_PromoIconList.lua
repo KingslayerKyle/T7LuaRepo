@@ -38,4 +38,3 @@ CoD.ZM_PromoIconList.new = function ( menu, controller )
 	
 	return self
 end
-

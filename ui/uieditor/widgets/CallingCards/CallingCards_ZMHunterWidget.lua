@@ -444,4 +444,3 @@ CoD.CallingCards_ZMHunterWidget.new = function ( menu, controller )
 	
 	return self
 end
-

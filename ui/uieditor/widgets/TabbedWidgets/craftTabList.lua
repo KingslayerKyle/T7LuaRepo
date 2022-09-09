@@ -92,4 +92,3 @@ CoD.craftTabList.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -907,4 +907,3 @@ CoD.LeaderboardTab.new = function ( menu, controller )
 	
 	return self
 end
-

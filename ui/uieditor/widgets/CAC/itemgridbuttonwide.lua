@@ -183,4 +183,3 @@ CoD.ItemGridButtonWide.new = function ( menu, controller )
 	
 	return self
 end
-

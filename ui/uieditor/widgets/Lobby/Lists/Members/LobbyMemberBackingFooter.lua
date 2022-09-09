@@ -47,4 +47,3 @@ CoD.LobbyMemberBackingFooter.new = function ( menu, controller )
 	
 	return self
 end
-

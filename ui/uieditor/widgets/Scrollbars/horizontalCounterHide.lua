@@ -231,4 +231,3 @@ CoD.horizontalCounterHide.new = function ( menu, controller )
 	
 	return self
 end
-

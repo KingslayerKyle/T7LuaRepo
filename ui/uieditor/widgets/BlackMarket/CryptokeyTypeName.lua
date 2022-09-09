@@ -82,4 +82,3 @@ CoD.CryptokeyTypeName.new = function ( menu, controller )
 	
 	return self
 end
-

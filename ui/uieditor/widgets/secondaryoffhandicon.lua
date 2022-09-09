@@ -33,25 +33,21 @@ CoD.SecondaryOffhandIcon.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		InvisibleGrenadeCountThree = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		InvisibleGrenadeCountOne = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		InvisibleGrenadeCountTwo = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Invisible = {
@@ -75,4 +71,3 @@ CoD.SecondaryOffhandIcon.new = function ( menu, controller )
 	
 	return self
 end
-

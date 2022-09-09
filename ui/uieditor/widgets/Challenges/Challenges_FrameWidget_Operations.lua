@@ -713,4 +713,3 @@ CoD.Challenges_FrameWidget_Operations.new = function ( menu, controller )
 	
 	return self
 end
-

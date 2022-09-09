@@ -196,4 +196,3 @@ CoD.ChatClientInputTextBox.new = function ( menu, controller )
 	
 	return self
 end
-

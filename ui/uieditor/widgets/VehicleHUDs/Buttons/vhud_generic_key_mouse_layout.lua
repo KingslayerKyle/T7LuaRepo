@@ -124,4 +124,3 @@ CoD.vhud_generic_key_mouse_layout.new = function ( menu, controller )
 	
 	return self
 end
-

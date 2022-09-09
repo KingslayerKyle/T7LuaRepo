@@ -114,4 +114,3 @@ CoD.AmmoWidget_HeroAbilityRingPulse.new = function ( menu, controller )
 	
 	return self
 end
-

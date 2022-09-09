@@ -727,4 +727,3 @@ CoD.Demo.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -487,4 +487,3 @@ CoD.Challenges_FrameWidget_Scorestreaks.new = function ( menu, controller )
 	
 	return self
 end
-

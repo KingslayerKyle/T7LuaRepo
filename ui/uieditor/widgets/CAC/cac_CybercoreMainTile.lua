@@ -72,4 +72,3 @@ CoD.cac_CybercoreMainTile.new = function ( menu, controller )
 	
 	return self
 end
-

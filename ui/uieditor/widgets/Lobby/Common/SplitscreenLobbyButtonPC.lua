@@ -390,4 +390,3 @@ CoD.SplitscreenLobbyButtonPC.new = function ( menu, controller )
 	
 	return self
 end
-

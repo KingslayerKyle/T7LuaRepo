@@ -150,4 +150,3 @@ CoD.cac_ListButtonLabel.new = function ( menu, controller )
 	
 	return self
 end
-

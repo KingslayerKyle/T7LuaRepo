@@ -279,4 +279,3 @@ CoD.AdminTabGroupPrivacyFrame.new = function ( menu, controller )
 	
 	return self
 end
-

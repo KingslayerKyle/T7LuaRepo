@@ -925,4 +925,3 @@ CoD.chooseFaceOption.new = function ( menu, controller )
 	
 	return self
 end
-

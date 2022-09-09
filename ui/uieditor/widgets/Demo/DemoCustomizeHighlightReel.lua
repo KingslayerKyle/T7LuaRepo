@@ -175,4 +175,3 @@ CoD.DemoCustomizeHighlightReel.new = function ( menu, controller )
 	
 	return self
 end
-

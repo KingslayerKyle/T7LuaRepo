@@ -69,4 +69,3 @@ CoD.BuildableIconBg.new = function ( menu, controller )
 	
 	return self
 end
-

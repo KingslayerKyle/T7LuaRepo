@@ -695,4 +695,3 @@ CoD.FindGroupsCategoryButton.new = function ( menu, controller )
 	
 	return self
 end
-

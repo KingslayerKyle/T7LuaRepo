@@ -611,4 +611,3 @@ CoD.CallingCards_BlackMarketMasterCardWidget.new = function ( menu, controller )
 	
 	return self
 end
-

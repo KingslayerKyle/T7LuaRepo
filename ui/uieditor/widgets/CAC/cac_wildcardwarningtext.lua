@@ -48,4 +48,3 @@ CoD.cac_wildcardwarningtext.new = function ( menu, controller )
 	
 	return self
 end
-

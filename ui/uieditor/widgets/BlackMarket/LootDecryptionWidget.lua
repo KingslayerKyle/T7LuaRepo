@@ -1783,7 +1783,6 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			RevealedCommon = function ()
 				self:setupElementClipCounter( 15 )
@@ -9083,4 +9082,3 @@ CoD.LootDecryptionWidget.new = function ( menu, controller )
 	
 	return self
 end
-

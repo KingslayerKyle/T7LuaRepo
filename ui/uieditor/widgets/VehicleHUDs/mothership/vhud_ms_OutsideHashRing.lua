@@ -32,25 +32,20 @@ CoD.vhud_ms_OutsideHashRing.new = function ( menu, controller )
 		DefaultState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			Zoom = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Zoom = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end,
 			DefaultState = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -65,4 +60,3 @@ CoD.vhud_ms_OutsideHashRing.new = function ( menu, controller )
 	
 	return self
 end
-

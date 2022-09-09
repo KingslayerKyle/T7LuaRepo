@@ -63,4 +63,3 @@ CoD.ScoreboardHeaderTitleWidget.new = function ( menu, controller )
 	
 	return self
 end
-

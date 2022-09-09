@@ -179,4 +179,3 @@ CoD.LANServerBrowserDetails.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -69,4 +69,3 @@ CoD.WaypointArrowContainer.new = function ( menu, controller )
 	
 	return self
 end
-

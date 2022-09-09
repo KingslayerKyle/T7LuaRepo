@@ -2829,4 +2829,3 @@ CoD.CPMissionSelect_ListProgressionButton.new = function ( menu, controller )
 	
 	return self
 end
-

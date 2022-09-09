@@ -45,7 +45,6 @@ CoD.heroCustomizationOption_EquippedIcon.new = function ( menu, controller )
 			end,
 			Focus = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -65,4 +64,3 @@ CoD.heroCustomizationOption_EquippedIcon.new = function ( menu, controller )
 	
 	return self
 end
-

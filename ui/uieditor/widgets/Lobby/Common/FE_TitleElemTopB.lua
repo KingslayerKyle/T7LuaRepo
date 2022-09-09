@@ -79,4 +79,3 @@ CoD.FE_TitleElemTopB.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -42,4 +42,3 @@ CoD.vhud_siegebot_missile_label.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -59,4 +59,3 @@ CoD.CPTrainingSimRankIcon.new = function ( menu, controller )
 	
 	return self
 end
-

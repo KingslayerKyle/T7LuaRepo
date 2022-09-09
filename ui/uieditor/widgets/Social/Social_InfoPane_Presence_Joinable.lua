@@ -217,4 +217,3 @@ CoD.Social_InfoPane_Presence_Joinable.new = function ( menu, controller )
 	
 	return self
 end
-

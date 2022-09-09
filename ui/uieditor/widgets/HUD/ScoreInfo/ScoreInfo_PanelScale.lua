@@ -57,4 +57,3 @@ CoD.ScoreInfo_PanelScale.new = function ( menu, controller )
 	
 	return self
 end
-

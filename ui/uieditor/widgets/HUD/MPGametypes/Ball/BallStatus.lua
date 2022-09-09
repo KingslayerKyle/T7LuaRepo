@@ -206,4 +206,3 @@ CoD.BallStatus.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -1003,4 +1003,3 @@ CoD.CallingCards_loot_BO1retro.new = function ( menu, controller )
 	
 	return self
 end
-

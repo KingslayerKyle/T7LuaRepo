@@ -56,4 +56,3 @@ CoD.WeaponAttributes.new = function ( menu, controller )
 	
 	return self
 end
-

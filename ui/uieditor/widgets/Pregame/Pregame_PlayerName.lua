@@ -151,4 +151,3 @@ CoD.Pregame_PlayerName.new = function ( menu, controller )
 	
 	return self
 end
-

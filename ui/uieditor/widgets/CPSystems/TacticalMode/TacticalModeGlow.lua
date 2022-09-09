@@ -52,7 +52,6 @@ CoD.TacticalModeGlow.new = function ( menu, controller )
 		Null = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -63,4 +62,3 @@ CoD.TacticalModeGlow.new = function ( menu, controller )
 	
 	return self
 end
-

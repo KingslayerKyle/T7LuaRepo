@@ -213,7 +213,6 @@ CoD.FooterButtonPromptWithPCKey.new = function ( menu, controller )
 		InitialState = {
 			DefaultClip = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -313,4 +312,3 @@ CoD.FooterButtonPromptWithPCKey.new = function ( menu, controller )
 	
 	return self
 end
-

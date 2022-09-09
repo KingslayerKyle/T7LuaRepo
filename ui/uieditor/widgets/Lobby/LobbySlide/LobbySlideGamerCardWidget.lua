@@ -118,4 +118,3 @@ CoD.LobbySlideGamerCardWidget.new = function ( menu, controller )
 	
 	return self
 end
-

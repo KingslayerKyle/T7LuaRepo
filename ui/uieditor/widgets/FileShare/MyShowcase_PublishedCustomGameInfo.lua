@@ -184,4 +184,3 @@ CoD.MyShowcase_PublishedCustomGameInfo.new = function ( menu, controller )
 	
 	return self
 end
-

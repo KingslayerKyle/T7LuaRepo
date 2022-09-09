@@ -9877,4 +9877,3 @@ CoD.weakpointIndicator.new = function ( menu, controller )
 	
 	return self
 end
-

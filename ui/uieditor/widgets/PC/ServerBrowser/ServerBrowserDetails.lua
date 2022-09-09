@@ -516,4 +516,3 @@ CoD.ServerBrowserDetails.new = function ( menu, controller )
 	
 	return self
 end
-

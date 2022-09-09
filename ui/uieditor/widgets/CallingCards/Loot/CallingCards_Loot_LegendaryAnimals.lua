@@ -650,4 +650,3 @@ CoD.CallingCards_Loot_LegendaryAnimals.new = function ( menu, controller )
 	
 	return self
 end
-

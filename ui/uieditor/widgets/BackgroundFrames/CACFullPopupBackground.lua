@@ -169,4 +169,3 @@ CoD.CACFullPopupBackground.new = function ( menu, controller )
 	
 	return self
 end
-

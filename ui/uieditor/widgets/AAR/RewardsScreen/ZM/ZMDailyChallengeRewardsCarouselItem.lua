@@ -220,4 +220,3 @@ CoD.ZMDailyChallengeRewardsCarouselItem.new = function ( menu, controller )
 	
 	return self
 end
-

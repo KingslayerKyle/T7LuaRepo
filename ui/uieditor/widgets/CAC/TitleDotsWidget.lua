@@ -95,4 +95,3 @@ CoD.TitleDotsWidget.new = function ( menu, controller )
 	
 	return self
 end
-

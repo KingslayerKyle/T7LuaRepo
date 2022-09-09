@@ -88,7 +88,6 @@ CoD.vhud_ms_NotificationOptic.new = function ( menu, controller )
 			end,
 			StartUp = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Active = {
@@ -114,4 +113,3 @@ CoD.vhud_ms_NotificationOptic.new = function ( menu, controller )
 	
 	return self
 end
-

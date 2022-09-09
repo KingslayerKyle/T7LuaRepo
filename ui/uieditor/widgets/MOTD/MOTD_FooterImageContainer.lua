@@ -29,4 +29,3 @@ CoD.MOTD_FooterImageContainer.new = function ( menu, controller )
 	
 	return self
 end
-

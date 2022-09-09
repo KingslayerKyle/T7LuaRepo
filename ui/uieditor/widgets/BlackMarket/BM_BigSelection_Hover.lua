@@ -73,4 +73,3 @@ CoD.BM_BigSelection_Hover.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -359,4 +359,3 @@ CoD.CallingCards_Loot_GrandPrixWidget.new = function ( menu, controller )
 	
 	return self
 end
-

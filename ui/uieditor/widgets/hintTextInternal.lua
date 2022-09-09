@@ -77,4 +77,3 @@ CoD.hintTextInternal.new = function ( menu, controller )
 	
 	return self
 end
-

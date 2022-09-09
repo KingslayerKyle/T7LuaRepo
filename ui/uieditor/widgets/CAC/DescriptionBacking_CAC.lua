@@ -63,4 +63,3 @@ CoD.DescriptionBacking_CAC.new = function ( menu, controller )
 	
 	return self
 end
-

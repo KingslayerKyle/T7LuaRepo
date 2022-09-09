@@ -336,4 +336,3 @@ CoD.CallingCards_cwl_excellence.new = function ( menu, controller )
 	
 	return self
 end
-

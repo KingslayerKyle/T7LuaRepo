@@ -68,4 +68,3 @@ CoD.Promo_ZMHD_CommunityWidget.new = function ( menu, controller )
 	
 	return self
 end
-

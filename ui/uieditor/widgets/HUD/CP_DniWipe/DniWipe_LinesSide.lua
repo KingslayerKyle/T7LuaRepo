@@ -170,4 +170,3 @@ CoD.DniWipe_LinesSide.new = function ( menu, controller )
 	
 	return self
 end
-

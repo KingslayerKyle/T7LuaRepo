@@ -31,4 +31,3 @@ CoD.ClampedShooterWidgetArrow.new = function ( menu, controller )
 	
 	return self
 end
-

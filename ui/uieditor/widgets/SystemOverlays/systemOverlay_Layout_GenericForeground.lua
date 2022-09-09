@@ -144,4 +144,3 @@ CoD.systemOverlay_Layout_GenericForeground.new = function ( menu, controller )
 	
 	return self
 end
-

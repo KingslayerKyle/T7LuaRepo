@@ -62,4 +62,3 @@ CoD.Social_InfoPane_Friendship.new = function ( menu, controller )
 	
 	return self
 end
-

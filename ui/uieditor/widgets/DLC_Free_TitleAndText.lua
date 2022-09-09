@@ -60,4 +60,3 @@ CoD.DLC_Free_TitleAndText.new = function ( menu, controller )
 	
 	return self
 end
-

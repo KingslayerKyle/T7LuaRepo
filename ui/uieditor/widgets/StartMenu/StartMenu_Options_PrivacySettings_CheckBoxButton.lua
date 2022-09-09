@@ -227,4 +227,3 @@ CoD.StartMenu_Options_PrivacySettings_CheckBoxButton.new = function ( menu, cont
 	
 	return self
 end
-

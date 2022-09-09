@@ -7363,4 +7363,3 @@ CoD.CustomizationItem_ND.new = function ( menu, controller )
 	
 	return self
 end
-

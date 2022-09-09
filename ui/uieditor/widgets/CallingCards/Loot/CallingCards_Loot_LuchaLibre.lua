@@ -363,4 +363,3 @@ CoD.CallingCards_Loot_LuchaLibre.new = function ( menu, controller )
 	
 	return self
 end
-

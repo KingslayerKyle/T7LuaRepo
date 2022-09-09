@@ -56,7 +56,6 @@ CoD.AmmoWidget_HeroWeapon.new = function ( menu, controller )
 			end,
 			WheelHide = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		Ready = {
@@ -111,4 +110,3 @@ CoD.AmmoWidget_HeroWeapon.new = function ( menu, controller )
 	
 	return self
 end
-

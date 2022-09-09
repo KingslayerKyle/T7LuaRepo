@@ -343,4 +343,3 @@ CoD.CallingCards_loot_Dinosaur.new = function ( menu, controller )
 	
 	return self
 end
-

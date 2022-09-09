@@ -60,4 +60,3 @@ CoD.SlotsRemaining.new = function ( menu, controller )
 	
 	return self
 end
-

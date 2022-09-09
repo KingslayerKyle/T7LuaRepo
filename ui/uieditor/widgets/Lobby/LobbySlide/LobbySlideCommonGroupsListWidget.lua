@@ -63,7 +63,6 @@ CoD.LobbySlideCommonGroupsListWidget.new = function ( menu, controller )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		},
 		PrimaryGroup = {
@@ -80,7 +79,6 @@ CoD.LobbySlideCommonGroupsListWidget.new = function ( menu, controller )
 			end,
 			Active = function ()
 				self:setupElementClipCounter( 0 )
-
 			end
 		}
 	}
@@ -112,4 +110,3 @@ CoD.LobbySlideCommonGroupsListWidget.new = function ( menu, controller )
 	
 	return self
 end
-

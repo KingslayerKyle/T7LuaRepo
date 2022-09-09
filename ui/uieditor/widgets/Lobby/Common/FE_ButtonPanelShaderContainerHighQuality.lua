@@ -130,4 +130,3 @@ CoD.FE_ButtonPanelShaderContainerHighQuality.new = function ( menu, controller )
 	
 	return self
 end
-

@@ -38,4 +38,3 @@ CoD.StoreFeaturePreviewImageWidget.new = function ( menu, controller )
 	
 	return self
 end
-

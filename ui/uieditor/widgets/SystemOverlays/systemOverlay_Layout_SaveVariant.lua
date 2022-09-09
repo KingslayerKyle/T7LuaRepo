@@ -159,4 +159,3 @@ CoD.systemOverlay_Layout_SaveVariant.new = function ( menu, controller )
 	
 	return self
 end
-
