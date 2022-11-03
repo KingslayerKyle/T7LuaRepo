@@ -513,9 +513,16 @@ LUI.createMenu.T7Hud_zm_factory = function ( controller )
 	CoD.Menu.AddNavigationHandler( self, self, controller )
 
 	self:registerEventHandler( "menu_loaded", function ( element, event )
+		local retVal = nil
+
 		SizeToSafeArea( element, controller )
 		SetProperty( self, "menuLoaded", true )
-		element:dispatchEventToChildren( event )
+
+		if not retVal then
+			retVal = element:dispatchEventToChildren( event )
+		end
+
+		return retVal
 	end )
 
 	self.Score.id = "Score"
