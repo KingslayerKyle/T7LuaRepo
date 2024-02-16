@@ -1,0 +1,53 @@
+// FONTS
+ttf,fonts/dinnextltpro-regular.ttf
+ttf,fonts/dinnextslabpro-regular.ttf
+ttf,fonts/harbour_regular.ttf
+
+// SCRIPTS
+scriptparsetree,scripts/zm/_zm_s2_hud.gsc
+scriptparsetree,scripts/zm/_zm_s2_hud.csc
+
+// FREE FIRE ABILITY
+weapon,hero_mad_minute_zm
+scriptparsetree,scripts/zm/_zm_weap_mad_minute.gsc
+
+// LUA
+rawfile,ui/uieditor/menus/hud/S2Hud_zm_factory.lua
+rawfile,ui/uieditor/widgets/HUD/S2AmmoWidget/S2AmmoContainer.lua
+rawfile,ui/uieditor/widgets/HUD/S2AmmoWidget/S2AmmoEquipment.lua
+rawfile,ui/uieditor/widgets/HUD/S2AmmoWidget/S2AmmoInfo.lua
+rawfile,ui/uieditor/widgets/HUD/S2PerksWidget/S2PerksContainer.lua
+rawfile,ui/uieditor/widgets/HUD/S2PerksWidget/S2PerksListItem.lua
+rawfile,ui/uieditor/widgets/HUD/S2RoundWidget/S2Round.lua
+rawfile,ui/uieditor/widgets/HUD/S2ScoreWidget/S2ClientScore.lua
+rawfile,ui/uieditor/widgets/HUD/S2ScoreWidget/S2PlusPoints.lua
+rawfile,ui/uieditor/widgets/HUD/S2ScoreWidget/S2PlusPointsContainer.lua
+rawfile,ui/uieditor/widgets/HUD/S2ScoreWidget/S2ScoreContainer.lua
+rawfile,ui/uieditor/widgets/HUD/S2ScoreWidget/S2SelfScore.lua
+
+// IMAGES
+image,hud_blitz_bullet
+image,hud_blitz_dead
+image,hud_blitz_frame
+image,hud_blitz_guns
+image,hud_blitz_health
+image,hud_blitz_reload
+image,hud_blitz_revive
+image,hud_blitz_shock
+image,hud_blitz_spider
+image,hud_blitz_sprint
+image,hud_player_dempsey_circle
+image,hud_player_nikolai_circle
+image,hud_player_richtofen_circle
+image,hud_player_takeo_circle
+image,hud_shield_empty
+image,hud_shield_fill
+image,hud_player_dempsey_old_circle
+image,hud_player_floyd_circle
+image,hud_player_jack_circle
+image,hud_player_jessica_circle
+image,hud_player_nero_circle
+image,hud_player_nikolai_old_circle
+image,hud_player_richtofen_old_circle
+image,hud_player_takeo_old_circle
+image,zm_ability_mad_minute

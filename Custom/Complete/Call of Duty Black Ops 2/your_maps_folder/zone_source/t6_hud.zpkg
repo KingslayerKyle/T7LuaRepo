@@ -1,0 +1,48 @@
+// FONTS
+ttf,fonts/bigFont.ttf
+
+// SCRIPTS
+scriptparsetree,scripts/zm/_zm_t6_hud.gsc
+scriptparsetree,scripts/zm/_zm_t6_hud.csc
+
+// LUA
+rawfile,ui/uieditor/menus/hud/T6Hud_zm_factory.lua
+rawfile,ui/uieditor/menus/StartMenu/T6StartMenu_GameOptions_ZM.lua
+rawfile,ui/uieditor/menus/StartMenu/T6StartMenu_Main.lua
+rawfile,ui/uieditor/menus/StartMenu/T6StartMenu_Options.lua
+rawfile,ui/uieditor/widgets/HUD/KingslayerPowerupsWidget/KingslayerPowerupsContainer.lua
+rawfile,ui/uieditor/widgets/HUD/KingslayerPowerupsWidget/KingslayerPowerupsListItem.lua
+rawfile,ui/uieditor/widgets/HUD/T6AmmoWidget/T6AmmoContainer.lua
+rawfile,ui/uieditor/widgets/HUD/T6AmmoWidget/T6AmmoEquipment.lua
+rawfile,ui/uieditor/widgets/HUD/T6AmmoWidget/T6AmmoEquipmentListItem.lua
+rawfile,ui/uieditor/widgets/HUD/T6AmmoWidget/T6AmmoInfo.lua
+rawfile,ui/uieditor/widgets/HUD/T6PerksWidget/T6PerksContainer.lua
+rawfile,ui/uieditor/widgets/HUD/T6RoundWidget/T6Round.lua
+rawfile,ui/uieditor/widgets/HUD/T6RoundWidget/T6RoundContainer.lua
+rawfile,ui/uieditor/widgets/HUD/T6ScoreWidget/T6ClientScore.lua
+rawfile,ui/uieditor/widgets/HUD/T6ScoreWidget/T6PlusPoints.lua
+rawfile,ui/uieditor/widgets/HUD/T6ScoreWidget/T6PlusPointsContainer.lua
+rawfile,ui/uieditor/widgets/HUD/T6ScoreWidget/T6ScoreContainer.lua
+rawfile,ui/uieditor/widgets/HUD/T6ScoreboardWidget/T6Scoreboard.lua
+rawfile,ui/uieditor/widgets/HUD/T6ScoreboardWidget/T6ScoreboardListItem.lua
+rawfile,ui/uieditor/widgets/Lobby/Common/T6ButtonListItem.lua
+
+// IMAGES
+image,grenadeicon
+image,hud_cymbal_monkey
+image,menu_vis_bracket_small_zm
+image,t6_specialty_2x_zombies
+image,t6_specialty_ads_zombies
+image,t6_specialty_deathmachine_zombies
+image,t6_specialty_doubletap_zombies
+image,t6_specialty_electric_cherry_zombies
+image,t6_specialty_fastreload_zombies
+image,t6_specialty_firesale_zombies
+image,t6_specialty_instakill_zombies
+image,t6_specialty_juggernaut_zombies
+image,t6_specialty_marathon_zombies
+image,t6_specialty_mulekick_zombies
+image,t6_specialty_quickrevive_zombies
+image,t6_specialty_widows_wine_zombies
+image,t6_specialty_zomblood_zombies
+image,team_icon_transit

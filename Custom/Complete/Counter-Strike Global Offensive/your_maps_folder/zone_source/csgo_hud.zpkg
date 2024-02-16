@@ -1,0 +1,46 @@
+// FONTS
+ttf,fonts/stratum2bold.ttf
+
+// SCRIPTS
+scriptparsetree,scripts/zm/_zm_csgo_hud.gsc
+scriptparsetree,scripts/zm/_zm_csgo_hud.csc
+
+// LUA
+rawfile,ui/uieditor/menus/hud/CSGOHud_zm_factory.lua
+rawfile,ui/uieditor/widgets/HUD/KingslayerPowerupsWidget/KingslayerPowerupsContainer.lua
+rawfile,ui/uieditor/widgets/HUD/KingslayerPowerupsWidget/KingslayerPowerupsListItem.lua
+rawfile,ui/uieditor/widgets/HUD/CSGOAmmoWidget/CSGOAmmoContainer.lua
+rawfile,ui/uieditor/widgets/HUD/CSGOAmmoWidget/CSGOAmmoCounter.lua
+rawfile,ui/uieditor/widgets/HUD/CSGOAmmoWidget/CSGOAmmoEquipment.lua
+rawfile,ui/uieditor/widgets/HUD/CSGOAmmoWidget/CSGOAmmoInfo.lua
+rawfile,ui/uieditor/widgets/HUD/CSGOAmmoWidget/CSGOAmmoWeaponImages.lua
+rawfile,ui/uieditor/widgets/HUD/CSGOPerksWidget/CSGOPerksContainer.lua
+rawfile,ui/uieditor/widgets/HUD/CSGORoundWidget/CSGORound.lua
+rawfile,ui/uieditor/widgets/HUD/CSGOScoreWidget/CSGOClientScore.lua
+rawfile,ui/uieditor/widgets/HUD/CSGOScoreWidget/CSGOPlusPoints.lua
+rawfile,ui/uieditor/widgets/HUD/CSGOScoreWidget/CSGOPlusPointsContainer.lua
+rawfile,ui/uieditor/widgets/HUD/CSGOScoreWidget/CSGOScoreContainer.lua
+rawfile,ui/uieditor/widgets/HUD/CSGOScoreWidget/CSGOSelfScore.lua
+
+// IMAGES
+image,csgo_bullet
+image,csgo_bullet_mask
+image,csgo_health
+image,csgo_perk_ads
+image,csgo_perk_doubletap
+image,csgo_perk_electric_cherry
+image,csgo_perk_fastreload
+image,csgo_perk_juggernaut
+image,csgo_perk_marathon
+image,csgo_perk_quickrevive
+image,csgo_perk_three_guns
+image,csgo_perk_widows_wine
+image,csgo_player_frame
+image,csgo_player_none
+image,csgo_powerup_deathmachine
+image,csgo_powerup_doublepoints
+image,csgo_powerup_firesale
+image,csgo_powerup_instakill
+image,csgo_raygun
+image,csgo_shield
+image,t7_hud_mp_inventory_cymbal_monkey
