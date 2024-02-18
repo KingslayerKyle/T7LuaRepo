@@ -71,37 +71,39 @@ CoD.T8AmmoEquipment.new = function ( menu, controller )
 	self.LethalPromptText:setTTF( "fonts/ttmussels_demibold.ttf" )
 	self.LethalPromptText:setScale( 0.8 )
 	self.LethalPromptText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
-	self:addElement( self.LethalPromptText )
+	self.LethalPromptText:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "LastInput" ), function ( model )
+		local last_input = Engine.GetModelValue( model )
 
-	self.LethalPromptTimer = LUI.UITimer.newElementTimer( 0, false, function ( timerEvent )
-		if Engine.LastInput_Gamepad() then
-			self.LethalPromptText:setScale( 0.5 )
+		if last_input then
+			if last_input > 0 then
+				self.LethalPromptText:setScale( 0.8 )
 
-			self.LethalPromptText:setText( Engine.Localize( "[{+frag}]" ) )
-		else
-			self.LethalPromptText:setScale( 0.8 )
+				self.LethalPromptText:setText( Engine.Localize( "[{+frag}]" ) )
 
-			self.LethalPromptText:setText( Engine.Localize( "[{+frag}]" ) )
-
-			if string.match( Engine.GetKeyBindingLocalizedString( controller, "+frag" ), "UNBOUND" ) then
-				self.LethalPromptText:setText( Engine.Localize( "" ) )
-			end
-				
-			if string.match( Engine.GetKeyBindingLocalizedString( controller, "+frag" ), "%s" ) then
-				if string.len( Engine.GetKeyBindingLocalizedString( controller, "+frag" ):match("^(.-)%s") ) > 1 then
-					if string.len( Engine.GetKeyBindingLocalizedString( controller, "+frag" ):reverse():match("^(.-)%s") ) > 1 then
-						-- At this point we'll just set it to nothing
-						self.LethalPromptText:setText( Engine.Localize( "" ) )
-					else
-						self.LethalPromptText:setText( Engine.Localize( Engine.GetKeyBindingLocalizedString( controller, "+frag" ):reverse():match("^(.-)%s") ) )
-					end
-				else
-					self.LethalPromptText:setText( Engine.Localize( Engine.GetKeyBindingLocalizedString( controller, "+frag" ):match("^(.-)%s") ) )
+				if string.match( Engine.GetKeyBindingLocalizedString( controller, "+frag" ), "UNBOUND" ) then
+					self.LethalPromptText:setText( Engine.Localize( "" ) )
 				end
+					
+				if string.match( Engine.GetKeyBindingLocalizedString( controller, "+frag" ), "%s" ) then
+					if string.len( Engine.GetKeyBindingLocalizedString( controller, "+frag" ):match("^(.-)%s") ) > 1 then
+						if string.len( Engine.GetKeyBindingLocalizedString( controller, "+frag" ):reverse():match("^(.-)%s") ) > 1 then
+							-- At this point we'll just set it to nothing
+							self.LethalPromptText:setText( Engine.Localize( "" ) )
+						else
+							self.LethalPromptText:setText( Engine.Localize( Engine.GetKeyBindingLocalizedString( controller, "+frag" ):reverse():match("^(.-)%s") ) )
+						end
+					else
+						self.LethalPromptText:setText( Engine.Localize( Engine.GetKeyBindingLocalizedString( controller, "+frag" ):match("^(.-)%s") ) )
+					end
+				end
+			else
+				self.LethalPromptText:setScale( 0.5 )
+
+				self.LethalPromptText:setText( Engine.Localize( "[{+frag}]" ) )
 			end
 		end
 	end )
-	self:addElement( self.LethalPromptTimer )
+	self:addElement( self.LethalPromptText )
 
 	self.LethalCountBG = LUI.UIImage.new()
 	self.LethalCountBG:setLeftRight( false, true, -279.5, -259 )
@@ -180,37 +182,39 @@ CoD.T8AmmoEquipment.new = function ( menu, controller )
 	self.TacticalPromptText:setTTF( "fonts/ttmussels_demibold.ttf" )
 	self.TacticalPromptText:setScale( 0.8 )
 	self.TacticalPromptText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
-	self:addElement( self.TacticalPromptText )
+	self.TacticalPromptText:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "LastInput" ), function ( model )
+		local last_input = Engine.GetModelValue( model )
 
-	self.TacticalPromptTimer = LUI.UITimer.newElementTimer( 0, false, function ( timerEvent )
-		if Engine.LastInput_Gamepad() then
-			self.TacticalPromptText:setScale( 0.5 )
+		if last_input then
+			if last_input > 0 then
+				self.TacticalPromptText:setScale( 0.8 )
 
-			self.TacticalPromptText:setText( Engine.Localize( "[{+smoke}]" ) )
-		else
-			self.TacticalPromptText:setScale( 0.8 )
+				self.TacticalPromptText:setText( Engine.Localize( "[{+smoke}]" ) )
 
-			self.TacticalPromptText:setText( Engine.Localize( "[{+smoke}]" ) )
-
-			if string.match( Engine.GetKeyBindingLocalizedString( controller, "+smoke" ), "UNBOUND" ) then
-				self.TacticalPromptText:setText( Engine.Localize( "" ) )
-			end
-				
-			if string.match( Engine.GetKeyBindingLocalizedString( controller, "+smoke" ), "%s" ) then
-				if string.len( Engine.GetKeyBindingLocalizedString( controller, "+smoke" ):match("^(.-)%s") ) > 1 then
-					if string.len( Engine.GetKeyBindingLocalizedString( controller, "+smoke" ):reverse():match("^(.-)%s") ) > 1 then
-						-- At this point we'll just set it to nothing
-						self.TacticalPromptText:setText( Engine.Localize( "" ) )
-					else
-						self.TacticalPromptText:setText( Engine.Localize( Engine.GetKeyBindingLocalizedString( controller, "+smoke" ):reverse():match("^(.-)%s") ) )
-					end
-				else
-					self.TacticalPromptText:setText( Engine.Localize( Engine.GetKeyBindingLocalizedString( controller, "+smoke" ):match("^(.-)%s") ) )
+				if string.match( Engine.GetKeyBindingLocalizedString( controller, "+smoke" ), "UNBOUND" ) then
+					self.TacticalPromptText:setText( Engine.Localize( "" ) )
 				end
+					
+				if string.match( Engine.GetKeyBindingLocalizedString( controller, "+smoke" ), "%s" ) then
+					if string.len( Engine.GetKeyBindingLocalizedString( controller, "+smoke" ):match("^(.-)%s") ) > 1 then
+						if string.len( Engine.GetKeyBindingLocalizedString( controller, "+smoke" ):reverse():match("^(.-)%s") ) > 1 then
+							-- At this point we'll just set it to nothing
+							self.TacticalPromptText:setText( Engine.Localize( "" ) )
+						else
+							self.TacticalPromptText:setText( Engine.Localize( Engine.GetKeyBindingLocalizedString( controller, "+smoke" ):reverse():match("^(.-)%s") ) )
+						end
+					else
+						self.TacticalPromptText:setText( Engine.Localize( Engine.GetKeyBindingLocalizedString( controller, "+smoke" ):match("^(.-)%s") ) )
+					end
+				end
+			else
+				self.TacticalPromptText:setScale( 0.5 )
+
+				self.TacticalPromptText:setText( Engine.Localize( "[{+smoke}]" ) )
 			end
 		end
 	end )
-	self:addElement( self.TacticalPromptTimer )
+	self:addElement( self.TacticalPromptText )
 
 	self.TacticalCountBG = LUI.UIImage.new()
 	self.TacticalCountBG:setLeftRight( false, true, -332.5, -312 )
@@ -278,37 +282,39 @@ CoD.T8AmmoEquipment.new = function ( menu, controller )
 	self.SpecialPromptText:setTTF( "fonts/ttmussels_demibold.ttf" )
 	self.SpecialPromptText:setScale( 0.8 )
 	self.SpecialPromptText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
-	self:addElement( self.SpecialPromptText )
+	self.SpecialPromptText:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "LastInput" ), function ( model )
+		local last_input = Engine.GetModelValue( model )
 
-	self.SpecialPromptTimer = LUI.UITimer.newElementTimer( 0, false, function ( timerEvent )
-		if Engine.LastInput_Gamepad() then
-			self.SpecialPromptText:setScale( 0.5 )
+		if last_input then
+			if last_input > 0 then
+				self.SpecialPromptText:setScale( 0.8 )
 
-			self.SpecialPromptText:setText( Engine.Localize( "[{+smoke}] + [{+frag}]" ) )
-		else
-			self.SpecialPromptText:setScale( 0.8 )
+				self.SpecialPromptText:setText( Engine.Localize( "[{+weaphero}]" ) )
 
-			self.SpecialPromptText:setText( Engine.Localize( "[{+weaphero}]" ) )
-
-			if string.match( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ), "UNBOUND" ) then
-				self.SpecialPromptText:setText( Engine.Localize( "" ) )
-			end
-				
-			if string.match( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ), "%s" ) then
-				if string.len( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ):match("^(.-)%s") ) > 1 then
-					if string.len( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ):reverse():match("^(.-)%s") ) > 1 then
-						-- At this point we'll just set it to nothing
-						self.SpecialPromptText:setText( Engine.Localize( "" ) )
-					else
-						self.SpecialPromptText:setText( Engine.Localize( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ):reverse():match("^(.-)%s") ) )
-					end
-				else
-					self.SpecialPromptText:setText( Engine.Localize( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ):match("^(.-)%s") ) )
+				if string.match( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ), "UNBOUND" ) then
+					self.SpecialPromptText:setText( Engine.Localize( "" ) )
 				end
+					
+				if string.match( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ), "%s" ) then
+					if string.len( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ):match("^(.-)%s") ) > 1 then
+						if string.len( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ):reverse():match("^(.-)%s") ) > 1 then
+							-- At this point we'll just set it to nothing
+							self.SpecialPromptText:setText( Engine.Localize( "" ) )
+						else
+							self.SpecialPromptText:setText( Engine.Localize( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ):reverse():match("^(.-)%s") ) )
+						end
+					else
+						self.SpecialPromptText:setText( Engine.Localize( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ):match("^(.-)%s") ) )
+					end
+				end
+			else
+				self.SpecialPromptText:setScale( 0.5 )
+
+				self.SpecialPromptText:setText( Engine.Localize( "[{+smoke}] + [{+frag}]" ) )
 			end
 		end
 	end )
-	self:addElement( self.SpecialPromptTimer )
+	self:addElement( self.SpecialPromptText )
 
 	self.SpecialMeterBG = LUI.UIImage.new()
 	self.SpecialMeterBG:setLeftRight( false, true, -416, -354.5 )
@@ -427,7 +433,6 @@ CoD.T8AmmoEquipment.new = function ( menu, controller )
 		element.LethalPromptLED:close()
 		element.LethalPromptFrame:close()
 		element.LethalPromptText:close()
-		element.LethalPromptTimer:close()
 		element.LethalCountBG:close()
 		element.LethalCountText:close()
 		element.TacticalBG:close()
@@ -436,7 +441,6 @@ CoD.T8AmmoEquipment.new = function ( menu, controller )
 		element.TacticalPromptLED:close()
 		element.TacticalPromptFrame:close()
 		element.TacticalPromptText:close()
-		element.TacticalPromptTimer:close()
 		element.TacticalCountBG:close()
 		element.TacticalCountText:close()
 		element.SpecialBG:close()
@@ -445,7 +449,6 @@ CoD.T8AmmoEquipment.new = function ( menu, controller )
 		element.SpecialPromptLED:close()
 		element.SpecialPromptFrame:close()
 		element.SpecialPromptText:close()
-		element.SpecialPromptTimer:close()
 		element.SpecialMeterBG:close()
 		element.SpecialMeter:close()
 		element.SpecialCountBG:close()

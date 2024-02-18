@@ -203,43 +203,45 @@ CoD.S2AmmoEquipment.new = function ( menu, controller )
 	self.SpecialPromptText:setRGB( 0.65, 0.63, 0.57 )
 	self.SpecialPromptText:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
 	self.SpecialPromptText:setScale( 0.8 )
-	self:addElement( self.SpecialPromptText )
+	self.SpecialPromptText:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "LastInput" ), function ( model )
+		local last_input = Engine.GetModelValue( model )
 
-	self.SpecialPromptTimer = LUI.UITimer.newElementTimer( 0, false, function ( timerEvent )
-		if Engine.LastInput_Gamepad() then
-			self.SpecialPromptText:setScale( 0.5 )
+		if last_input then
+			if last_input > 0 then
+				self.SpecialPromptText:setScale( 0.8 )
 
-			self.SpecialPromptText:setText( Engine.Localize( "[{+smoke}] + [{+frag}]" ) )
-			self.SpecialPromptTextShadow:setText( Engine.Localize( "" ) )
-		else
-			self.SpecialPromptText:setScale( 0.8 )
+				self.SpecialPromptText:setText( Engine.Localize( "[{+weaphero}]" ) )
+				self.SpecialPromptTextShadow:setText( Engine.Localize( "[{+weaphero}]" ) )
 
-			self.SpecialPromptText:setText( Engine.Localize( "[{+weaphero}]" ) )
-			self.SpecialPromptTextShadow:setText( Engine.Localize( "[{+weaphero}]" ) )
-
-			if string.match( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ), "UNBOUND" ) then
-				self.SpecialPromptText:setText( Engine.Localize( "" ) )
-				self.SpecialPromptTextShadow:setText( Engine.Localize( "" ) )
-			end
-				
-			if string.match( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ), "%s" ) then
-				if string.len( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ):match("^(.-)%s") ) > 1 then
-					if string.len( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ):reverse():match("^(.-)%s") ) > 1 then
-						-- At this point we'll just set it to nothing
-						self.SpecialPromptText:setText( Engine.Localize( "" ) )
-						self.SpecialPromptTextShadow:setText( Engine.Localize( "" ) )
-					else
-						self.SpecialPromptText:setText( Engine.Localize( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ):reverse():match("^(.-)%s") ) )
-						self.SpecialPromptTextShadow:setText( Engine.Localize( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ):reverse():match("^(.-)%s") ) )
-					end
-				else
-					self.SpecialPromptText:setText( Engine.Localize( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ):match("^(.-)%s") ) )
-					self.SpecialPromptTextShadow:setText( Engine.Localize( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ):match("^(.-)%s") ) )
+				if string.match( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ), "UNBOUND" ) then
+					self.SpecialPromptText:setText( Engine.Localize( "" ) )
+					self.SpecialPromptTextShadow:setText( Engine.Localize( "" ) )
 				end
+					
+				if string.match( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ), "%s" ) then
+					if string.len( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ):match("^(.-)%s") ) > 1 then
+						if string.len( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ):reverse():match("^(.-)%s") ) > 1 then
+							-- At this point we'll just set it to nothing
+							self.SpecialPromptText:setText( Engine.Localize( "" ) )
+							self.SpecialPromptTextShadow:setText( Engine.Localize( "" ) )
+						else
+							self.SpecialPromptText:setText( Engine.Localize( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ):reverse():match("^(.-)%s") ) )
+							self.SpecialPromptTextShadow:setText( Engine.Localize( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ):reverse():match("^(.-)%s") ) )
+						end
+					else
+						self.SpecialPromptText:setText( Engine.Localize( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ):match("^(.-)%s") ) )
+						self.SpecialPromptTextShadow:setText( Engine.Localize( Engine.GetKeyBindingLocalizedString( controller, "+weaphero" ):match("^(.-)%s") ) )
+					end
+				end
+			else
+				self.SpecialPromptText:setScale( 0.5 )
+
+				self.SpecialPromptText:setText( Engine.Localize( "[{+smoke}] + [{+frag}]" ) )
+				self.SpecialPromptTextShadow:setText( Engine.Localize( "" ) )
 			end
 		end
 	end )
-	self:addElement( self.SpecialPromptTimer )
+	self:addElement( self.SpecialPromptText )
 
 	self.SpecialMeterBGGlow = LUI.UIImage.new()
 	self.SpecialMeterBGGlow:setLeftRight( false, true, -114, -16.5 )
@@ -359,7 +361,6 @@ CoD.S2AmmoEquipment.new = function ( menu, controller )
 		element.SpecialImage:close()
 		element.SpecialPromptTextShadow:close()
 		element.SpecialPromptText:close()
-		element.SpecialPromptTimer:close()
 		element.SpecialMeterBGGlow:close()
 		element.SpecialMeterBG:close()
 		element.SpecialMeter:close()
