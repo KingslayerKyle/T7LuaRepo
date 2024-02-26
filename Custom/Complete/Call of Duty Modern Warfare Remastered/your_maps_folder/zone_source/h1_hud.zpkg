@@ -1,0 +1,66 @@
+// FONTS
+ttf,fonts/defaultbold.otf
+
+// SCRIPTS
+scriptparsetree,scripts/zm/_zm_h1_hud.gsc
+scriptparsetree,scripts/zm/_zm_h1_hud.csc
+
+// LUA
+rawfile,ui/uieditor/menus/hud/H1Hud_zm_factory.lua
+rawfile,ui/uieditor/menus/StartMenu/H1StartMenu_GameOptions_ZM.lua
+rawfile,ui/uieditor/menus/StartMenu/H1StartMenu_Main.lua
+rawfile,ui/uieditor/menus/StartMenu/H1StartMenu_Options.lua
+rawfile,ui/uieditor/widgets/HUD/H1AmmoWidget/H1AmmoBG.lua
+rawfile,ui/uieditor/widgets/HUD/H1AmmoWidget/H1AmmoContainer.lua
+rawfile,ui/uieditor/widgets/HUD/H1AmmoWidget/H1AmmoEquipment.lua
+rawfile,ui/uieditor/widgets/HUD/H1AmmoWidget/H1AmmoInfo.lua
+rawfile,ui/uieditor/widgets/HUD/H1NotificationWidget/H1Notification.lua
+rawfile,ui/uieditor/widgets/HUD/H1PerksWidget/H1PerksContainer.lua
+rawfile,ui/uieditor/widgets/HUD/H1PerksWidget/H1PerksListItem.lua
+rawfile,ui/uieditor/widgets/HUD/H1RoundWidget/H1Round.lua
+rawfile,ui/uieditor/widgets/HUD/H1ScoreWidget/H1ClientScore.lua
+rawfile,ui/uieditor/widgets/HUD/H1ScoreWidget/H1PlusPoints.lua
+rawfile,ui/uieditor/widgets/HUD/H1ScoreWidget/H1PlusPointsContainer.lua
+rawfile,ui/uieditor/widgets/HUD/H1ScoreWidget/H1ScoreBG.lua
+rawfile,ui/uieditor/widgets/HUD/H1ScoreWidget/H1ScoreContainer.lua
+rawfile,ui/uieditor/widgets/HUD/H1ScoreWidget/H1SelfScore.lua
+rawfile,ui/uieditor/widgets/HUD/H1ScoreboardWidget/H1Scoreboard.lua
+rawfile,ui/uieditor/widgets/HUD/H1ScoreboardWidget/H1ScoreboardListItem.lua
+rawfile,ui/uieditor/widgets/HUD/KingslayerPowerupsWidget/KingslayerPowerupsContainer.lua
+rawfile,ui/uieditor/widgets/HUD/KingslayerPowerupsWidget/KingslayerPowerupsListItem.lua
+rawfile,ui/uieditor/widgets/Lobby/Common/H1ButtonListItem.lua
+
+// MATERIALS
+material,uie_h1_bullet_bar
+
+// IMAGES
+image,h1_baseicons_grenades_frg
+image,h1_baseicons_grenades_monkey
+image,h1_baseicons_grenades_widows_semtex
+image,h1_baseicons_specialweapon
+image,h1_basewidgets_box_blurmask
+image,h1_basewidgets_box_border
+image,h1_btn_focused
+image,h1_btn_unfocused
+image,h1_perk_ads
+image,h1_perk_doubletap
+image,h1_perk_electric_cherry
+image,h1_perk_fastreload
+image,h1_perk_juggernaut
+image,h1_perk_marathon
+image,h1_perk_quickrevive
+image,h1_perk_three_guns
+image,h1_perk_widows_wine
+image,h1_powerup_deathmachine
+image,h1_powerup_doublepoints
+image,h1_powerup_firesale
+image,h1_powerup_instakill
+image,h1_powerup_maxammo
+image,h1_weaponwidget_ammopip_largea
+image,h1_weaponwidget_ammopip_medium
+image,h1_weaponwidget_ammopip_rpg7
+image,h1_weaponwidget_ammopip_shell
+image,h1_weaponwidget_ammopip_smalla
+image,h1_weaponwidget_ammopip_smallb
+image,h1_weaponwidget_firearms_blurmask
+image,h1_weaponwidget_firearms_border

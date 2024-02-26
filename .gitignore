@@ -5,4 +5,7 @@
 *.otf
 *.zip
 *.rar
+*.h
+*.hlsl
+*.techsetdef
 *Readme.txt
