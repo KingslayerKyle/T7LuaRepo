@@ -18,7 +18,7 @@ rawfile,ui/uieditor/widgets/HUD/KingslayerPowerupsWidget/KingslayerPowerupsListI
 ```
 
 3) Open your T7Hud_zm_factory.lua file. If you don't have this you can find it here:
-- [T7Hud_zm_factory.lua](https://github.com/KingslayerKyle/t7-lua/blob/main/ui/uieditor/menus/hud/T7Hud_zm_factory.lua)
+- [T7Hud_zm_factory.lua](https://github.com/KingslayerKyle/T7LuaRepo/blob/main/Ship/ui/uieditor/menus/hud/T7Hud_zm_factory.lua)
 
 4) Underneath your requires paste the following:
 
