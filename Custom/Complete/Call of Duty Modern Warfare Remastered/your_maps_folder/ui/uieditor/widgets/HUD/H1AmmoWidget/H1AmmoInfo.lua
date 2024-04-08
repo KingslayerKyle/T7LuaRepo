@@ -94,7 +94,6 @@ local SetAmmoPips = function ( controller, AmmoPips, WeaponName )
     local clipMaxAmmoDW = Engine.GetModelValue( Engine.GetModel( controllerModel, "currentWeapon.clipMaxAmmoDW" ) )
     local ammoStock = Engine.GetModelValue( Engine.GetModel( controllerModel, "currentWeapon.ammoStock" ) )
     local weaponClass = Engine.GetModelValue( Engine.GetModel( controllerModel, "currentWeapon.weaponClass" ) )
-    local viewmodelWeaponName = Engine.GetModelValue( Engine.GetModel( controllerModel, "currentWeapon.viewmodelWeaponName" ) )
 
 	local pipImage = "blacktransparent"
 	local bulletWidth = 0
@@ -141,13 +140,12 @@ local SetAmmoPips = function ( controller, AmmoPips, WeaponName )
 		AmmoPips:setImage( RegisterImage( pipImage ) )
 		AmmoPips:setShaderVector( 0, clipTotal, clipMaxTotal, rowLength, 0.5 )
 
-		WeaponName:setLeftRight( true, true, 0, GetWeaponNameRightAnchor( stockLength ) )
-
-		if viewmodelWeaponName:find( "melee_" ) then
+		if weaponClass == "melee" then
 			bulletHeight = 24 / 3
 			rows = 1
 		end
 
+		WeaponName:setLeftRight( true, true, 0, GetWeaponNameRightAnchor( stockLength ) )
 		WeaponName:setTopBottom( false, true, -50 - bulletHeight * rows, -18 - bulletHeight * rows )
 	end
 end
@@ -159,8 +157,7 @@ local PostLoadFunc = function ( self, controller, menu )
 		"clipMaxAmmo",
 		"clipMaxAmmoDW",
 		"ammoStock",
-		"weaponClass",
-		"viewmodelWeaponName"
+		"weaponClass"
 	}
 
 	for index = 1, #ammoModels do
