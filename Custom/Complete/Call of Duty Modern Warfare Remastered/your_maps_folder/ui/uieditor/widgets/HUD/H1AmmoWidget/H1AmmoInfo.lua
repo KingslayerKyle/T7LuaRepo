@@ -94,6 +94,7 @@ local SetAmmoPips = function ( controller, AmmoPips, WeaponName )
     local clipMaxAmmoDW = Engine.GetModelValue( Engine.GetModel( controllerModel, "currentWeapon.clipMaxAmmoDW" ) )
     local ammoStock = Engine.GetModelValue( Engine.GetModel( controllerModel, "currentWeapon.ammoStock" ) )
     local weaponClass = Engine.GetModelValue( Engine.GetModel( controllerModel, "currentWeapon.weaponClass" ) )
+    local viewmodelWeaponName = Engine.GetModelValue( Engine.GetModel( controllerModel, "currentWeapon.viewmodelWeaponName" ) )
 
 	local pipImage = "blacktransparent"
 	local bulletWidth = 0
@@ -141,6 +142,12 @@ local SetAmmoPips = function ( controller, AmmoPips, WeaponName )
 		AmmoPips:setShaderVector( 0, clipTotal, clipMaxTotal, rowLength, 0.5 )
 
 		WeaponName:setLeftRight( true, true, 0, GetWeaponNameRightAnchor( stockLength ) )
+
+		if viewmodelWeaponName:find( "melee_" ) then
+			bulletHeight = 24 / 3
+			rows = 1
+		end
+
 		WeaponName:setTopBottom( false, true, -50 - bulletHeight * rows, -18 - bulletHeight * rows )
 	end
 end
@@ -152,7 +159,8 @@ local PostLoadFunc = function ( self, controller, menu )
 		"clipMaxAmmo",
 		"clipMaxAmmoDW",
 		"ammoStock",
-		"weaponClass"
+		"weaponClass",
+		"viewmodelWeaponName"
 	}
 
 	for index = 1, #ammoModels do
@@ -224,11 +232,7 @@ CoD.H1AmmoInfo.new = function ( menu, controller )
 	self.clipsPerState = {
 		DefaultState = {
 			DefaultClip = function ()
-				self:setupElementClipCounter( 3 )
-
-				self.WeaponName:completeAnimation()
-				self.WeaponName:setAlpha( 1 )
-				self.clipFinished( self.WeaponName, {} )
+				self:setupElementClipCounter( 2 )
 
 				self.AmmoPips:completeAnimation()
 				self.AmmoPips:setAlpha( 1 )
@@ -241,11 +245,7 @@ CoD.H1AmmoInfo.new = function ( menu, controller )
 		},
 		Hidden = {
 			DefaultClip = function ()
-				self:setupElementClipCounter( 3 )
-
-				self.WeaponName:completeAnimation()
-				self.WeaponName:setAlpha( 0 )
-				self.clipFinished( self.WeaponName, {} )
+				self:setupElementClipCounter( 2 )
 
 				self.AmmoPips:completeAnimation()
 				self.AmmoPips:setAlpha( 0 )
