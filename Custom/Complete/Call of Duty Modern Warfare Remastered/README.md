@@ -1,6 +1,13 @@
 # Modern Warfare Remastered HUD
 This is a Modern Warfare Remastered UI mod for use with Call of Duty: Black Ops III - Mod Tools
 
+## Prerequisites
+1) Download the latest release from the following repo:
+
+https://github.com/LG-RZ/BlackOps3Shaders/releases
+
+2) Extract the contents of the ZIP file to your BO3 root.
+
 ## Installation
 1) Drop the `_custom` & `bin` folders into bo3 root, If prompted overwrite the existing file(s).
 
