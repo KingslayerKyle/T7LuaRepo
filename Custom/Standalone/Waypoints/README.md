@@ -4,11 +4,11 @@
 - Objective image/text can be edited on the objective asset in ape
 
 ## Screenshot
-![Example1](Screenshots/preview_01.png)
+![Example1](screenshots/preview_01.png)
 
-![Example2](Screenshots/preview_02.png)
+![Example2](screenshots/preview_02.png)
 
-![Example3](Screenshots/preview_03.png)
+![Example3](screenshots/preview_03.png)
 
 ## UI Installation
 1) Drag & drop `ui` into your maps folder
