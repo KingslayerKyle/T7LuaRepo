@@ -9,3 +9,6 @@
 *.hlsl
 *.techsetdef
 *Readme.txt
+!Custom/Standalone/Waypoints/screenshots/preview_01.png
+!Custom/Standalone/Waypoints/screenshots/preview_02.png
+!Custom/Standalone/Waypoints/screenshots/preview_03.png
