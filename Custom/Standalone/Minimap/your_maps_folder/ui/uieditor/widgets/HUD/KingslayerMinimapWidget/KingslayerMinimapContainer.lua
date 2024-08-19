@@ -18,7 +18,7 @@ CoD.KingslayerMinimapContainer.new = function ( menu, controller )
 
 	self.CompassMinimapBG = LUI.UIImage.new()
 	self.CompassMinimapBG:setLeftRight( true, false, 0, 225 )
-	self.CompassMinimapBG:setTopBottom( true, false, 0, 225 )
+	self.CompassMinimapBG:setTopBottom( true, false, 50, 275 )
 	self.CompassMinimapBG:setImage( RegisterImage( "minimap_circle_bg" ) )
 	self.CompassMinimapBG:setRGB( 0, 0, 0 )
 	self.CompassMinimapBG:setScale( 0.95 )
