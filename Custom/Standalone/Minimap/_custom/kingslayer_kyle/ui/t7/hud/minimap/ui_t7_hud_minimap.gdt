@@ -2,7 +2,7 @@
 	"minimap_circle_bg" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "texture_assets\\hud_T7\\minimap\\minimap_circle_bg.png"
+		"baseImage" "_custom\\kingslayer_kyle\\ui\\t7\\hud\\minimap\\ui_t7_hud_minimap_circle_bg.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
@@ -47,7 +47,7 @@
 	"minimap_circle_mask" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
-		"baseImage" "texture_assets\\hud_T7\\minimap\\minimap_circle_mask.png"
+		"baseImage" "_custom\\kingslayer_kyle\\ui\\t7\\hud\\minimap\\ui_t7_hud_minimap_circle_mask.png"
 		"clampU" "0"
 		"clampV" "0"
 		"colorSRGB" "0"
