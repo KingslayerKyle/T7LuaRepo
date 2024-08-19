@@ -2,7 +2,7 @@
 - Allows you to add a minimap to your zombies map
 
 ## Requirements
-- [Waypoint widget](https://github.com/KingslayerKyle/T7LuaRepo/tree/main/Custom/Standalone/Waypoints) (This needs to be added to your map first)
+- [Waypoints widget](https://github.com/KingslayerKyle/T7LuaRepo/tree/main/Custom/Standalone/Waypoints) (This needs to be added to your map first)
 
 ## Screenshot
 ![Example1](screenshots/preview_01.png)
