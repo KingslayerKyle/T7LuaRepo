@@ -41,6 +41,8 @@ self:addElement( self.KingslayerWaypointsContainer )
 
 ## Adding objectives
 
+- If you're installing the minimap widget you can ignore this section
+
 1) Zone
 ```
 objective,objective_example
