@@ -43,6 +43,7 @@ self:addElement( self.KingslayerMinimapContainer )
 ```
 scriptparsetree,scripts/zm/_zm_minimap.gsc
 objective,zm_enemy_waypoint
+material,compass_map_mp_combine
 image,minimap_circle_bg
 image,minimap_circle_mask
 ```
@@ -71,7 +72,14 @@ image,minimap_circle_mask
 4) Change the value of `SetDvar( "compassmaxrange", "1000" );`
 
 ## Creating a custom image for your minimap
-- Check `docs_modtools/Mini_Map_Setup.pdf` for tips on how to create a custom image for your minimap
+
+1) Check `docs_modtools/Mini_Map_Setup.pdf` for tips on how to create a custom image for your minimap
+
+2) Replace `material,compass_map_mp_combine` in your zone with the custom minimap material you created
+
+3) Find and open `scripts/zm/_zm_minimap.gsc`
+
+4) Change `compass::setupMiniMap( "compass_map_mp_combine" );` to the custom minimap material you created
 
 ## Credits
 Kingslayer Kyle\

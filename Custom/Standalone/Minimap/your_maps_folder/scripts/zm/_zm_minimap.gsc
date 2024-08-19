@@ -28,7 +28,7 @@ function __main__()
 {
 	SetDvar( "compassmaxrange", "1000" );
     
-    compass::setupMiniMap("compass_map_mp_combine");
+    compass::setupMiniMap( "compass_map_mp_combine" );
 
     array::thread_all( level.zombie_spawners, &spawner::add_spawn_function, &add_zombie_minimap_waypoint );
 }
