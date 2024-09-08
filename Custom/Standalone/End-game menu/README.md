@@ -7,7 +7,7 @@
 ## Installation
 1) Place the contents of `your_maps_folder` into your map's folder
 
-2) Add the following to your maps zone file:
+2) Add the following to your map's zone file:
 ```
 // End-game menu
 scriptparsetree,scripts/zm/_zm_intermission_menu.gsc
