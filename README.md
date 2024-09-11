@@ -1,4 +1,4 @@
-# t7-lua
+# T7LuaRepo
 At the moment this just serves as a personal repository for access to decompiled lua files
 
 ## Rebuilt files
