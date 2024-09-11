@@ -38,9 +38,15 @@ function intermission_menu_handler()
 {
     level waittill( "end_game" );
 
+    if( IS_TRUE( level.host_ended_game ) )
+    {
+        level.disable_intermission = undefined;
+        return;
+    }
+
 	level thread zm_audio::sndMusicSystem_PlayState( "game_over" );
 	
-    array::thread_all( level.players, &clientfield::set, "zmbLastStand", 0 );
+    array::run_all( level.players, &clientfield::set, "zmbLastStand", 0 );
     
     level clientfield::set( "game_end_time", int( ( GetTime() - level.n_gameplay_start_time + 500 ) / 1000 ) );
 
