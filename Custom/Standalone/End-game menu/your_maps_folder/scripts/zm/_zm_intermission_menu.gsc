@@ -36,11 +36,17 @@ function on_player_connect()
 
 function intermission_menu_handler()
 {
+    self endon( "disconnect" );
+
     level waittill( "end_game" );
 
     if( IS_TRUE( level.host_ended_game ) )
     {
         level.disable_intermission = undefined;
+    }
+
+    if( !isdefined( level.disable_intermission ) )
+    {
         return;
     }
 
