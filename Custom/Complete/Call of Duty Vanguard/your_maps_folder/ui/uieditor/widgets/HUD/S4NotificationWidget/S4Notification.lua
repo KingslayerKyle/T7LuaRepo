@@ -138,7 +138,7 @@ CoD.S4Notification.new = function ( menu, controller )
 
 				self.text:completeAnimation()
 				self.text:setAlpha( 0 )
-				self.clipFinished( self.image, {} )
+				self.clipFinished( self.text, {} )
 			end,
 			Powerup = function ()
 				self:setupElementClipCounter( 3 )
