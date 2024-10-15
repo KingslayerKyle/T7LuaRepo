@@ -89,22 +89,55 @@ CoD.T8AmmoContainer.new = function ( menu, controller )
 	self.BGBBG = LUI.UIImage.new()
 	self.BGBBG:setLeftRight( false, true, -154.5, -74.5 )
 	self.BGBBG:setTopBottom( false, true, -187.25, -121.25 )
-	self.BGBBG:setImage( RegisterImage( "t8_hud_bgb_bg" ) )
+	self.BGBBG:setImage( RegisterImage( "blacktransparent" ) )
 	self.BGBBG:setScale( 0.8 )
 	self.BGBBG:setYRot( 180 )
+	self.BGBBG:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "bgb_display" ), function ( model )
+		local bgb_display = Engine.GetModelValue( model )
+
+		if bgb_display then
+			if bgb_display > 0 then
+				self.BGBBG:setImage( RegisterImage( "t8_hud_bgb_bg" ) )
+			else
+				self.BGBBG:setImage( RegisterImage( "blacktransparent" ) )
+			end
+		end
+	end )
 	self:addElement( self.BGBBG )
 
 	self.BGBFrame = LUI.UIImage.new()
 	self.BGBFrame:setLeftRight( false, true, -146.5, -39 )
 	self.BGBFrame:setTopBottom( false, true, -183, -125.5 )
-	self.BGBFrame:setImage( RegisterImage( "t8_hud_bgb_frame" ) )
+	self.BGBFrame:setImage( RegisterImage( "blacktransparent" ) )
+	self.BGBFrame:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "bgb_display" ), function ( model )
+		local bgb_display = Engine.GetModelValue( model )
+
+		if bgb_display then
+			if bgb_display > 0 then
+				self.BGBFrame:setImage( RegisterImage( "t8_hud_bgb_frame" ) )
+			else
+				self.BGBFrame:setImage( RegisterImage( "blacktransparent" ) )
+			end
+		end
+	end )
 	self:addElement( self.BGBFrame )
 	
 	self.BGBMeterBG = LUI.UIImage.new()
 	self.BGBMeterBG:setLeftRight( false, true, -92.5, -39.5 )
 	self.BGBMeterBG:setTopBottom( false, true, -180, -128 )
-	self.BGBMeterBG:setImage( RegisterImage( "t8_hud_bgb_meter_bg" ) )
+	self.BGBMeterBG:setImage( RegisterImage( "blacktransparent" ) )
 	self.BGBMeterBG:setYRot( 180 )
+	self.BGBMeterBG:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "bgb_display" ), function ( model )
+		local bgb_display = Engine.GetModelValue( model )
+
+		if bgb_display then
+			if bgb_display > 0 then
+				self.BGBMeterBG:setImage( RegisterImage( "t8_hud_bgb_meter_bg" ) )
+			else
+				self.BGBMeterBG:setImage( RegisterImage( "blacktransparent" ) )
+			end
+		end
+	end )
 	self:addElement( self.BGBMeterBG )
 
 	self.BGBWidget = CoD.ZmAmmo_BBGumMeterWidget.new( menu, controller )
@@ -115,9 +148,20 @@ CoD.T8AmmoContainer.new = function ( menu, controller )
 	self.BGBPrompt = LUI.UIText.new()
 	self.BGBPrompt:setLeftRight( true, true, 0, -101 )
 	self.BGBPrompt:setTopBottom( false, true, -163.5, -142.5 )
-	self.BGBPrompt:setText( Engine.Localize( "[{+actionslot 1}]" ) )
+	self.BGBPrompt:setText( Engine.Localize( "" ) )
 	self.BGBPrompt:setTTF("fonts/ttmussels_demibold.ttf")
 	self.BGBPrompt:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
+	self.BGBPrompt:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "bgb_display" ), function ( model )
+		local bgb_display = Engine.GetModelValue( model )
+
+		if bgb_display then
+			if bgb_display > 0 then
+				self.BGBPrompt:setText( Engine.Localize( "[{+actionslot 1}]" ) )
+			else
+				self.BGBPrompt:setText( Engine.Localize( "" ) )
+			end
+		end
+	end )
 	self:addElement( self.BGBPrompt )
 
 	self.AmmoEquipment = CoD.T8AmmoEquipment.new( menu, controller )

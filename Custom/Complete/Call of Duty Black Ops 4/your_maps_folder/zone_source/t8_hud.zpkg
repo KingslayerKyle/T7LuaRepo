@@ -1,6 +1,7 @@
 // FONTS
 ttf,fonts/0arame_mono_stencil.ttf
 ttf,fonts/dinnext_regular.ttf
+ttf,fonts/notosans_bold.ttf
 ttf,fonts/skorzhen.ttf
 ttf,fonts/ttmussels_demibold.ttf
 
@@ -16,7 +17,11 @@ rawfile,ui/uieditor/widgets/HUD/T8AmmoWidget/T8AmmoContainer.lua
 rawfile,ui/uieditor/widgets/HUD/T8AmmoWidget/T8AmmoEquipment.lua
 rawfile,ui/uieditor/widgets/HUD/T8AmmoWidget/T8AmmoInfo.lua
 rawfile,ui/uieditor/widgets/HUD/T8AmmoWidget/T8AmmoWeaponImages.lua
+rawfile,ui/uieditor/widgets/HUD/T8NotificationWidget/T8Notification.lua
+rawfile,ui/uieditor/widgets/HUD/T8NotificationWidget/T8NotificationSpinner.lua
 rawfile,ui/uieditor/widgets/HUD/T8PerksWidget/T8PerksContainer.lua
+rawfile,ui/uieditor/widgets/HUD/T8ScoreboardWidget/T8Scoreboard.lua
+rawfile,ui/uieditor/widgets/HUD/T8ScoreboardWidget/T8ScoreboardListItem.lua
 rawfile,ui/uieditor/widgets/HUD/T8ScoreWidget/T8ClientScore.lua
 rawfile,ui/uieditor/widgets/HUD/T8ScoreWidget/T8ScoreContainer.lua
 rawfile,ui/uieditor/widgets/HUD/T8ScoreWidget/T8SelfScore.lua
@@ -28,8 +33,8 @@ image,t8_hud_abilityled
 image,t8_hud_ammowidget_bg
 image,t8_hud_ammowidget_bg_glow
 image,t8_hud_bgb_bg
-image,t8_hud_bgb_meter_bg
 image,t8_hud_bgb_frame
+image,t8_hud_bgb_meter_bg
 image,t8_hud_healthbar
 image,t8_hud_hero_weapon_bg
 image,t8_hud_hero_weapon_progress
@@ -38,10 +43,6 @@ image,t8_hud_perks_frame
 image,t8_hud_playercard_sm_bg
 image,t8_hud_shieldmeter
 image,t8_hud_shieldmeterbg
-image,ui_icon_hud_zb_power_up_deathmachine
-image,ui_icon_hud_zb_power_up_double_points
-image,ui_icon_hud_zb_power_up_firesale
-image,ui_icon_hud_zb_power_up_insta_kill
 image,ui_icon_hero_portrait_draft_dempsey
 image,ui_icon_hero_portrait_draft_floyd
 image,ui_icon_hero_portrait_draft_jack
@@ -50,6 +51,13 @@ image,ui_icon_hero_portrait_draft_nero
 image,ui_icon_hero_portrait_draft_nikolai
 image,ui_icon_hero_portrait_draft_richtofen
 image,ui_icon_hero_portrait_draft_takeo
+image,ui_icon_hud_zb_bonfiresale
+image,ui_icon_hud_zb_bonfiresale_vending_packapunch
+image,ui_icon_hud_zb_escape_blood_power_up
+image,ui_icon_hud_zb_power_up_deathmachine
+image,ui_icon_hud_zb_power_up_double_points
+image,ui_icon_hud_zb_power_up_firesale
+image,ui_icon_hud_zb_power_up_insta_kill
 image,ui_icon_inventory_cymbal_monkey
 image,ui_icon_perks_zm_deadshot_lg
 image,ui_icon_perks_zm_doubletap_lg
@@ -68,3 +76,20 @@ image,ui_icon_weapons_zm_raygun
 image,ui_icon_weapons_zm_raygun_mk2
 image,ui_icon_weapons_zm_rocket_shield_health
 image,ui_icon_zm_calling_tasks_specialweapon
+image,uie_ui_hud_zm_aar_common_bar
+image,uie_ui_menu_mp_scoreboard_list_score_bg
+image,uie_ui_menu_mp_scoreboard_list_score_bot
+image,uie_zm_hud_inventory_backing_mid
+image,uie_zm_hud_inventory_backing_tip
+image,uie_zm_hud_inventory_backing_tip_solid
+image,uie_zm_hud_scoreboard_frame_end
+image,uie_zm_hud_scoreboard_frame_tip
+image,ximage_1c0c1d922919e7e
+image,ximage_21fed2761db51bb
+image,ximage_21fee2761db536e
+image,ximage_43b58592b187aca
+image,ximage_84cf831d4add5c3
+image,ximage_8e02f7e27c64c3c
+image,ximage_8e0327e27c65155
+image,ximage_f0098a976c6efd9
+image,ximage_fb84ace6b89d894
