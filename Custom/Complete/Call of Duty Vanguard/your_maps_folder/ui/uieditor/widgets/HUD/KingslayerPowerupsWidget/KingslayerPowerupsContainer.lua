@@ -19,7 +19,7 @@ CoD.PowerUps.ClientFieldNames = {
 	}
 }
 
-CoD.PowerUps.Update = function ( element, event )
+CoD.PowerUps.Update = function ( self, event )
 	local powerupStateModel = Engine.GetModel( Engine.GetModelForController( event.controller ), event.name .. ".state" )
 
 	if powerupStateModel ~= nil then
