@@ -5,13 +5,19 @@ local PostLoadFunc = function ( self, controller )
 		self.Team1:updateDataSource( false, true )
 	end )
 
-	self.Team1:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN ), function ( model )
-		self.Team1:updateDataSource()
+	self:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN ), function ( model )
+		self.m_inputDisabled = not Engine.GetModelValue( model )
 	end )
 
-	self.Team1:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "forceScoreboard" ), function ( model )
-		self.Team1:updateDataSource()
-	end )
+	-- Keep character images up-to-date until the game ends
+	for clientIndex = 0, Dvar.com_maxclients:get() - 1 do
+		self.Team1:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "PlayerList." .. clientIndex .. ".zombiePlayerIcon" ), function ( model )
+			-- If we update the images after this is set to 1, the wrong images will be set.
+			if Engine.GetModelValue( Engine.GetModel( Engine.GetModelForController( controller ), "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_GAME_ENDED ) ) ~= 1 then
+				self.Team1:updateDataSource()
+			end
+		end )
+	end
 
 	self.Team1:subscribeToModel( Engine.GetModel( Engine.GetGlobalModel(), "scoreboard.team1.count" ), function ( model )
 		local count = Engine.GetModelValue( model )
@@ -19,10 +25,6 @@ local PostLoadFunc = function ( self, controller )
 		if count then
 			self.Team1:setVerticalCount( count )
 		end
-	end )
-
-	self:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "UIVisibilityBit." .. Enum.UIVisibilityBit.BIT_SCOREBOARD_OPEN ), function ( model )
-		self.m_inputDisabled = not Engine.GetModelValue( model )
 	end )
 
 	if CoD.UsermapName then
