@@ -7,17 +7,90 @@
 
 require( "ui.uieditor.widgets.HUD.S2PerksWidget.S2PerksListItem" )
 
--- A table that contains the clientfield names and images of the perks
-local perksTable = {
-	additional_primary_weapon = "hud_blitz_guns",
-	dead_shot = "hud_blitz_dead",
-	doubletap2 = "hud_blitz_bullet",
-	juggernaut = "hud_blitz_health",
-	marathon = "hud_blitz_sprint",
-	quick_revive = "hud_blitz_revive",
-	sleight_of_hand = "hud_blitz_reload",
-	widows_wine = "hud_blitz_spider",
-	electric_cherry = "hud_blitz_shock"
+-- A table that contains information about each of the perks
+-- 1) Name of the perk
+-- 2) How much it costs
+-- 3) Description (What it does)
+-- 4) Image name of the perk (Needs to be included in your maps zone: image,image_name_in_ape)
+-- 5) Specialty name (Usually in the .gsh file for the perk)
+-- 6) Clientfield name (Usually in the .gsh file for the perk, DO NOT INCLUDE "hudItems.perks.", only what comes after it)
+-- NOTE: The last entry in the table should NOT have a comma ","
+-- NOTE: The name, cost, description & specialty are specific to the Buyable Perk Machine
+-- NOTE: If you are not using the Buyable Perk Machine you can remove everything except image & clientFieldName (You don't have to, it doesn't matter)
+-- BLACK: ^0, RED: ^1, GREEN: ^2, YELLOW: ^3, BLUE: ^4, CYAN: ^5, MAGENTA: ^6, WHITE: ^7, MYTEAM: ^8, ENEMYTEAM: ^9
+CoD.ZMPerks = {
+	{
+		name = "^2MULE KICK",
+		cost = 4000,
+		description = "Gain an additional primary weapon slot",
+		image = "hud_blitz_guns",
+		specialty = "specialty_additionalprimaryweapon",
+		clientFieldName = "additional_primary_weapon"
+	},
+	{
+		name = "^8DEAD SHOT",
+		cost = 1500,
+		description = "Auto-target the head on ADS",
+		image = "hud_blitz_dead",
+		specialty = "specialty_deadshot",
+		clientFieldName = "dead_shot"
+	},
+	{
+		name = "^3DOUBLE TAP",
+		cost = 2000,
+		description = "Increase bullet damage",
+		image = "hud_blitz_bullet",
+		specialty = "specialty_doubletap2",
+		clientFieldName = "doubletap2"
+	},
+	{
+		name = "^9JUGGERNOG",
+		cost = 2500,
+		description = "Increase health",
+		image = "hud_blitz_health",
+		specialty = "specialty_armorvest",
+		clientFieldName = "juggernaut"
+	},
+	{
+		name = "^3STAMINUP",
+		cost = 2000,
+		description = "Increase sprint speed",
+		image = "hud_blitz_sprint",
+		specialty = "specialty_staminup",
+		clientFieldName = "marathon"
+	},
+	{
+		name = "^5QUICK REVIVE",
+		cost = 1500,
+		description = "Revive yourself (solo) / Revive others faster (co-op)",
+		image = "hud_blitz_revive",
+		specialty = "specialty_quickrevive",
+		clientFieldName = "quick_revive"
+	},
+	{
+		name = "^2SPEED COLA",
+		cost = 3000,
+		description = "Reload faster",
+		image = "hud_blitz_reload",
+		specialty = "specialty_fastreload",
+		clientFieldName = "sleight_of_hand"
+	},
+	{
+		name = "^9WIDOWS WINE",
+		cost = 4000,
+		description = "Zombies are slowed when they attack you",
+		image = "hud_blitz_spider",
+		specialty = "specialty_widowswine",
+		clientFieldName = "widows_wine"
+	},
+	{
+		name = "^5ELECTRIC CHERRY",
+		cost = 2000,
+		description = "Electrical discharge on reload",
+		image = "hud_blitz_shock",
+		specialty = "specialty_electriccherry",
+		clientFieldName = "electric_cherry"
+	}
 }
 
 -- Summary: Used in the HandlePerksList function to get the perk index on the current iteration from element.perksList
@@ -67,22 +140,22 @@ local HandlePerksList = function ( element, controller )
 	local perksParentModel = Engine.GetModel( Engine.GetModelForController( controller ), "hudItems.perks" )
 
 	-- Loop through each of the perks in perksTable
-	for key, value in pairs( perksTable ) do
+	for index = 1, #CoD.ZMPerks do
 		-- The model value for the individual perk, which indicates it's status, 0 == off, 1 == on, 2 == paused
-		local perkStatus = Engine.GetModelValue( Engine.GetModel( perksParentModel, key ) )
+		local perkStatus = Engine.GetModelValue( Engine.GetModel( perksParentModel, CoD.ZMPerks[index].clientFieldName ) )
 
 		-- Let's check the model value is not nil, and then check if it's an active perk (value is more than 1)
 		if perkStatus ~= nil and perkStatus > 0 then
 			-- If it's not in element.perksList, let's add it
-			if not GetPerkIndex( element.perksList, key ) then
+			if not GetPerkIndex( element.perksList, CoD.ZMPerks[index].clientFieldName ) then
 				table.insert( element.perksList, {
 					models = {
-						image = value,
+						image = CoD.ZMPerks[index].image,
 						status = perkStatus,
 						newPerk = false
 					},
 					properties = {
-						key = key
+						key = CoD.ZMPerks[index].clientFieldName
 					}
 				} )
 
@@ -91,7 +164,7 @@ local HandlePerksList = function ( element, controller )
 			end
 
 			-- Let's make sure the status that's stored on the table is equal to the current model value
-			local perkIndexToCheck = CheckPerkIndexForUpdate( element.perksList, key, perkStatus )
+			local perkIndexToCheck = CheckPerkIndexForUpdate( element.perksList, CoD.ZMPerks[index].clientFieldName, perkStatus )
 
 			-- If it isn't, let's update it
 			if perkIndexToCheck > 0 then
@@ -103,7 +176,7 @@ local HandlePerksList = function ( element, controller )
 		-- Otherwise, let's remove it if it's in element.perksList
 		else
 			-- Get the perk index to remove
-			local perkIndexToCheck = GetPerkIndex( element.perksList, key )
+			local perkIndexToCheck = GetPerkIndex( element.perksList, CoD.ZMPerks[index].clientFieldName )
 
 			-- If we get a hit, remove it
 			if perkIndexToCheck then
@@ -163,8 +236,8 @@ local PreLoadFunc = function ( self, controller )
 	local perksParentModel = Engine.CreateModel( Engine.GetModelForController( controller ), "hudItems.perks" )
 
 	-- Creates and subscribes to each of the sub-models of the perks
-	for key, value in pairs( perksTable ) do
-		self:subscribeToModel( Engine.CreateModel( perksParentModel, key ), function ( model )
+	for index = 1, #CoD.ZMPerks do
+		self:subscribeToModel( Engine.CreateModel( perksParentModel, CoD.ZMPerks[index].clientFieldName ), function ( model )
 			-- If HandlePerksList returns true, let's update the datasource
 			if HandlePerksList( self.PerkList, controller ) then
 				self.PerkList:updateDataSource()
