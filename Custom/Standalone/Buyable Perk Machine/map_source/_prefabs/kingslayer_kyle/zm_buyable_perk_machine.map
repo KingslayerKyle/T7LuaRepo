@@ -1,0 +1,51 @@
+iwmap 4
+// entity 0
+{
+guid "{3C849323-91A3-11EF-A8E1-6C5D3A0AF892}"
+"classname" "worldspawn"
+"lightingquality" "1024"
+"samplescale" "1"
+"skyboxmodel" "skybox_default_day"
+"ssi" "default_day"
+"wsi" "default_day"
+}
+// entity 1
+// entity 2
+// entity 3
+// entity 4
+// entity 5
+// entity 6
+// entity 7
+// entity 8
+// entity 9
+// entity 10
+// entity 11
+// entity 12
+// entity 13
+// entity 14
+// entity 15
+// entity 16
+// entity 17
+// entity 18
+// entity 19
+// entity 20
+// entity 21
+// entity 22
+// entity 23
+// entity 24
+// entity 25
+// entity 26
+// entity 27
+// entity 28
+// entity 29
+// entity 30
+// entity 31
+// entity 32
+// entity 33
+{
+guid "{C971501E-8ECE-11EF-A8DC-6C5D3A0AF892}"
+"classname" "script_struct"
+"model" "p7_machine_vending_food"
+"origin" "0 0 0"
+"targetname" "zm_buyable_perk_machine"
+}

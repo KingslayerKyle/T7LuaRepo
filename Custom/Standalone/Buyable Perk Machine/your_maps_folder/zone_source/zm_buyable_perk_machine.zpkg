@@ -1,0 +1,8 @@
+// SCRIPTS
+scriptparsetree,scripts/zm/_zm_buyable_perk_machine.gsc
+scriptparsetree,scripts/zm/_zm_buyable_perk_machine.csc
+
+// LUA
+rawfile,ui/uieditor/menus/BuyablePerk/BuyablePerk_Main.lua
+rawfile,ui/uieditor/widgets/BuyablePerk/BuyablePerkButton1ListItem.lua
+rawfile,ui/uieditor/widgets/BuyablePerk/BuyablePerkButton2ListItem.lua
