@@ -1,196 +1,220 @@
--- e725a592e769491148cf1b05a766af30
--- This hash is used for caching, delete to decompile the file again
-
 require( "ui.uieditor.widgets.MPHudWidgets.WaypointArrowContainer" )
 require( "ui.uieditor.widgets.MPHudWidgets.WaypointDistanceIndicatorContainer" )
 require( "ui.uieditor.widgets.MPHudWidgets.Waypoint_TextBG" )
 require( "ui.uieditor.widgets.MPHudWidgets.WaypointCenter" )
 
-local f0_local0 = 0.8
-local f0_local1 = 0.3
-local f0_local2 = function ( f1_arg0, f1_arg1 )
-	if f1_arg1.objId then
-		f1_arg0:setLeftRight( false, false, 0, 0 )
-		f1_arg0:setTopBottom( false, false, 0, 0 )
-		f1_arg0.objId = f1_arg1.objId
-		local f1_local0 = f1_arg0.objective.id
-		f1_arg0.waypoint_label_default = f1_arg0.objective.waypoint_text
-		if f1_arg0.waypoint_label_default == nil then
-			f1_arg0.waypoint_label_default = ""
+local SetupWaypoint = function ( self, event )
+	if event.objId then
+		self:setLeftRight( false, false, 0, 0 )
+		self:setTopBottom( false, false, 0, 0 )
+
+		self.objId = event.objId
+
+		self.waypoint_label_default = self.objective.waypoint_text
+
+		if self.waypoint_label_default == nil then
+			self.waypoint_label_default = ""
 		end
-		local f1_local1 = f1_arg0.objective
-		local f1_local2
-		if f1_local1.waypoint_fade_when_targeted ~= "enable" and f1_local1.waypoint_fade_when_targeted ~= true then
-			f1_local2 = false
+
+		if self.objective.waypoint_fade_when_targeted ~= "enable" and self.objective.waypoint_fade_when_targeted ~= true then
+			self.waypoint_fade_when_targeted = false
 		else
-			f1_local2 = true
+			self.waypoint_fade_when_targeted = true
 		end
-		f1_arg0.waypoint_fade_when_targeted = f1_local2
-		if f1_local1.waypoint_clamp ~= "enable" and f1_local1.waypoint_clamp ~= true then
-			f1_local2 = false
+
+		if self.objective.waypoint_clamp ~= "enable" and self.objective.waypoint_clamp ~= true then
+			self.waypoint_container_clamp = false
 		else
-			f1_local2 = true
+			self.waypoint_container_clamp = true
 		end
-		f1_arg0.waypoint_container_clamp = f1_local2
-		if f1_local1.show_distance ~= "enable" and f1_local1.show_distance ~= true then
-			f1_local2 = false
+
+		if self.objective.show_distance ~= "enable" and self.objective.show_distance ~= true then
+			self.show_distance = false
 		else
-			f1_local2 = true
+			self.show_distance = true
 		end
-		f1_arg0.show_distance = f1_local2
-		if f1_local1.hide_arrow ~= "enable" and f1_local1.hide_arrow ~= true then
-			f1_local2 = false
+
+		if self.objective.hide_arrow ~= "enable" and self.objective.hide_arrow ~= true then
+			self.hide_arrow = false
 		else
-			f1_local2 = true
+			self.hide_arrow = true
 		end
-		f1_arg0.hide_arrow = f1_local2
-		f1_arg0.waypoint_image_default = nil
-		if f1_arg0.objective.waypoint_image ~= nil then
-			f1_arg0.waypoint_image_default = f1_arg0.objective.waypoint_image
+
+		self.waypoint_image_default = nil
+
+		if self.objective.waypoint_image ~= nil then
+			self.waypoint_image_default = self.objective.waypoint_image
 		end
-		f1_arg0:setupWaypointContainer( f1_arg0.objId )
-		if f1_arg0.waypoint_container_clamp then
-			f1_arg0:setEntityContainerClamp( true )
+
+		self:setupWaypointContainer( self.objId )
+
+		if self.waypoint_container_clamp then
+			self:setEntityContainerClamp( true )
 		end
-		if f1_arg0.waypoint_fade_when_targeted then
-			f1_arg0:setEntityContainerFadeWhenTargeted( true )
+
+		if self.waypoint_fade_when_targeted then
+			self:setEntityContainerFadeWhenTargeted( true )
 		end
-		if f1_local1.waypoint_fade_when_in_combat then
-			f1_arg0:setEntityContainerFadeWhenInCombat( true )
+
+		if self.objective.waypoint_fade_when_in_combat then
+			self:setEntityContainerFadeWhenInCombat( true )
 		end
-		if not f1_arg0.isClamped then
-			f1_arg0.WaypointDistanceIndicatorContainer:setAlpha( 1 )
+
+		if not self.isClamped then
+			self.WaypointDistanceIndicatorContainer:setAlpha( 1 )
 		end
-		f1_local2 = Engine.GetObjectiveEntity( f1_arg1.controller, f1_arg1.objId )
-		f1_arg0.WaypointDistanceIndicatorContainer.DistanceIndicator:setupDistanceIndicator( f1_local2 or f1_arg1.objId, f1_local2 == nil, f1_arg0.show_distance )
-		if CoD.isCampaign and f1_local1.waypoint_show_distance_when_far then
-			f1_arg0.WaypointText.text:setupDistanceIndicator( f1_local2 or f1_arg1.objId, f1_local2 == nil, f1_arg0.show_distance )
+
+		local objectiveEntity = Engine.GetObjectiveEntity( event.controller, event.objId )
+
+		self.WaypointDistanceIndicatorContainer.DistanceIndicator:setupDistanceIndicator( objectiveEntity or event.objId, objectiveEntity == nil, self.show_distance )
+
+		if CoD.isCampaign and self.objective.waypoint_show_distance_when_far then
+			self.WaypointText.text:setupDistanceIndicator( objectiveEntity or event.objId, objectiveEntity == nil, self.show_distance )
 		end
-		f1_arg0.snapToCenterWhenContested = true
-		f1_arg0.snapToCenterForObjectiveTeam = true
-		f1_arg0.snapToCenterForOtherTeams = true
-		f1_arg0.updateState = true
-		f1_arg0.zOffset = 0
-		if f1_arg0.objective.waypoint_z_offset ~= nil then
-			f1_arg0.zOffset = f1_arg0.objective.waypoint_z_offset
+
+		self.snapToCenterWhenContested = true
+		self.snapToCenterForObjectiveTeam = true
+		self.snapToCenterForOtherTeams = true
+		self.updateState = true
+		self.zOffset = 0
+
+		if self.objective.waypoint_z_offset ~= nil then
+			self.zOffset = self.objective.waypoint_z_offset
 		end
-		f1_arg0.pulse = false
-		if f1_arg0.objective.pulse_waypoint ~= nil then
-			f1_arg0.pulse = f1_arg0.objective.pulse_waypoint == "enable"
+
+		self.pulse = false
+
+		if self.objective.pulse_waypoint ~= nil then
+			self.pulse = self.objective.pulse_waypoint == "enable"
 		end
 	end
 end
 
-local f0_local3 = function ( f2_arg0, f2_arg1 )
-	if Engine.GetTeamID( f2_arg1, Engine.GetPredictedClientNum( f2_arg1 ) ) ~= Engine.GetObjectiveTeam( f2_arg1, f2_arg0.objId ) then
+local GetIsOwnedByMyTeam = function ( self, controller )
+	if Engine.GetTeamID( controller, Engine.GetPredictedClientNum( controller ) ) ~= Engine.GetObjectiveTeam( controller, self.objId ) then
 		return false
 	else
 		return true
 	end
 end
 
-local f0_local4 = function ( f3_arg0, f3_arg1 )
-	return Engine.GetObjectiveTeam( f3_arg1, f3_arg0.objId )
+local GetTeam = function ( self, controller )
+	return Engine.GetObjectiveTeam( controller, self.objId )
 end
 
-local f0_local5 = function ( f4_arg0, f4_arg1, f4_arg2, f4_arg3 )
-	if Engine.IsPlayerInVehicle( f4_arg1 ) == true then
+local GetPlayerUsing = function ( self, controller, isPlayerTeamUsing, isAnyOtherTeamUsing )
+	if Engine.IsPlayerInVehicle( controller ) == true then
 		return false
-	elseif Engine.IsPlayerRemoteControlling( f4_arg1 ) == true then
+
+	elseif Engine.IsPlayerRemoteControlling( controller ) == true then
 		return false
-	elseif Engine.IsPlayerWeaponViewOnlyLinked( f4_arg1 ) == true then
+
+	elseif Engine.IsPlayerWeaponViewOnlyLinked( controller ) == true then
 		return false
 	end
-	local f4_local0 = Engine.GetPredictedClientNum( f4_arg1 )
-	local f4_local1 = f4_arg3 and f4_arg2 and f4_arg0.snapToCenterWhenContested
-	if f4_arg0:isOwnedByMyTeam( f4_arg1 ) then
-		if not f4_arg0.snapToCenterForObjectiveTeam and not f4_local1 then
+
+	local myClientNum = Engine.GetPredictedClientNum( controller )
+
+	local beingUsed = isAnyOtherTeamUsing and isPlayerTeamUsing and self.snapToCenterWhenContested
+
+	if self:isOwnedByMyTeam( controller ) then
+		if not self.snapToCenterForObjectiveTeam and not beingUsed then
 			return false
 		end
-	elseif not f4_arg0.snapToCenterForOtherTeams and not f4_local1 then
+	elseif not self.snapToCenterForOtherTeams and not beingUsed then
 		return false
 	end
-	return Engine.ObjectiveIsPlayerUsing( f4_arg1, f4_arg0.objId, f4_local0 )
+
+	return Engine.ObjectiveIsPlayerUsing( controller, self.objId, myClientNum )
 end
 
-local f0_local6 = function ( f5_arg0, f5_arg1 )
-	f5_arg0.isClamped = true
-	f5_arg0.WaypointArrowContainer:setupEdgePointer( 90 )
-	f5_arg0.WaypointArrowContainer.WaypointArrowWidget:setState( "DefaultState" )
-	f5_arg0.WaypointText:setAlpha( f5_arg0.snapped and 1 or 0 )
-	f5_arg0.WaypointDistanceIndicatorContainer:setAlpha( 0 )
+local SetClamped = function ( self, event )
+	self.isClamped = true
+	self.WaypointArrowContainer:setupEdgePointer( 90 )
+	self.WaypointArrowContainer.WaypointArrowWidget:setState( "DefaultState" )
+	self.WaypointText:setAlpha( self.snapped and 1 or 0 )
+	self.WaypointDistanceIndicatorContainer:setAlpha( 0 )
 end
 
-local f0_local7 = function ( f6_arg0, f6_arg1 )
-	f6_arg0.isClamped = false
-	f6_arg0.WaypointArrowContainer:setupUIElement()
-	f6_arg0.WaypointArrowContainer:setZRot( 0 )
-	f6_arg0.WaypointArrowContainer.WaypointArrowWidget:setState( "DefaultState" )
-	f6_arg0.WaypointText:setAlpha( 1 )
-	f6_arg0.WaypointDistanceIndicatorContainer:setAlpha( 1 )
+local SetUnclamped = function ( self, event )
+	self.isClamped = false
+	self.WaypointArrowContainer:setupUIElement()
+	self.WaypointArrowContainer:setZRot( 0 )
+	self.WaypointArrowContainer.WaypointArrowWidget:setState( "DefaultState" )
+	self.WaypointText:setAlpha( 1 )
+	self.WaypointDistanceIndicatorContainer:setAlpha( 1 )
 end
 
-local f0_local8 = function ( f7_arg0, f7_arg1, f7_arg2, f7_arg3, f7_arg4 )
-	if f7_arg3 then
-		if f7_arg4 then
-			Engine.SetObjectiveIcon( f7_arg1, f7_arg2, f7_arg0.mapIconType, f7_arg3, f7_arg4.r, f7_arg4.g, f7_arg4.b )
-			Engine.SetObjectiveIcon( f7_arg1, f7_arg2, CoD.GametypeBase.shoutcasterMapIconType, f7_arg3, f7_arg4.r, f7_arg4.g, f7_arg4.b )
+local SetCompassObjectiveIcon = function ( self, controller, index, mapMaterialName, color )
+	if mapMaterialName then
+		if color then
+			Engine.SetObjectiveIcon( controller, index, self.mapIconType, mapMaterialName, color.r, color.g, color.b )
+			Engine.SetObjectiveIcon( controller, index, CoD.GametypeBase.shoutcasterMapIconType, mapMaterialName, color.r, color.g, color.b )
 		else
-			Engine.SetObjectiveIcon( f7_arg1, f7_arg2, f7_arg0.mapIconType, f7_arg3 )
-			Engine.SetObjectiveIcon( f7_arg1, f7_arg2, CoD.GametypeBase.shoutcasterMapIconType, f7_arg3 )
+			Engine.SetObjectiveIcon( controller, index, self.mapIconType, mapMaterialName )
+			Engine.SetObjectiveIcon( controller, index, CoD.GametypeBase.shoutcasterMapIconType, mapMaterialName )
 		end
-		Engine.SetObjectiveIconPulse( f7_arg1, f7_arg2, f7_arg0.mapIconType, f7_arg0.pulse )
+
+		Engine.SetObjectiveIconPulse( controller, index, self.mapIconType, self.pulse )
 	else
-		Engine.ClearObjectiveIcon( f7_arg1, f7_arg2, f7_arg0.mapIconType )
-		Engine.ClearObjectiveIcon( f7_arg1, f7_arg2, CoD.GametypeBase.shoutcasterMapIconType )
-		Engine.SetObjectiveIconPulse( f7_arg1, f7_arg2, f7_arg0.mapIconType, false )
+		Engine.ClearObjectiveIcon( controller, index, self.mapIconType )
+		Engine.ClearObjectiveIcon( controller, index, CoD.GametypeBase.shoutcasterMapIconType )
+		Engine.SetObjectiveIconPulse( controller, index, self.mapIconType, false )
 	end
 end
 
-local f0_local9 = function ( f8_arg0, f8_arg1, f8_arg2 )
-	Engine.ClearObjectiveIcon( f8_arg1, f8_arg2, f8_arg0.mapIconType )
-	Engine.ClearObjectiveIcon( f8_arg1, f8_arg2, CoD.GametypeBase.shoutcasterMapIconType )
+local ClearCompassObjectiveIcon = function ( self, controller, index )
+	Engine.ClearObjectiveIcon( controller, index, self.mapIconType )
+	Engine.ClearObjectiveIcon( controller, index, CoD.GametypeBase.shoutcasterMapIconType )
 end
 
-local f0_local10 = function ( f9_arg0, f9_arg1, f9_arg2, f9_arg3 )
-	local f9_local0 = Engine.GetObjectiveProgress( f9_arg1, f9_arg0.objId )
-	local f9_local1 = f0_local5( f9_arg0, f9_arg1, f9_arg2, f9_arg3 )
-	local f9_local2 = f9_arg3 and f9_arg2 and not f9_arg0.never_contested
-	local f9_local3 = Engine.ObjectiveGetTeamUsingCount( f9_arg1, f9_arg0.objId )
-	if not f9_local1 and f9_local0 > 0 then
-		f9_arg0.ProgressMeterFrame:setAlpha( 0 )
-		f9_arg0.progressMeter:setRGB( 1, 1, 1 )
-		f9_arg0.progressMeter:setShaderVector( 0, -0.05, 0, 0, 0 )
-		if f9_arg0.updateState then
-			if f9_local3 == 1 and f9_arg0.pulse == true then
-				f9_arg0.WaypointCenter:setState( "Pulsing" )
+local UpdateObjectiveProgress = function ( self, controller, isPlayerTeamUsing, isAnyOtherTeamUsing )
+	local progress = Engine.GetObjectiveProgress( controller, self.objId )
+
+	local playerUsing = GetPlayerUsing( self, controller, isPlayerTeamUsing, isAnyOtherTeamUsing )
+
+	local beingUsed = isAnyOtherTeamUsing and isPlayerTeamUsing and not self.never_contested
+
+	local count = Engine.ObjectiveGetTeamUsingCount( controller, self.objId )
+
+	if not playerUsing and progress > 0 then
+		self.ProgressMeterFrame:setAlpha( 0 )
+		self.progressMeter:setRGB( 1, 1, 1 )
+		self.progressMeter:setShaderVector( 0, -0.05, 0, 0, 0 )
+
+		if self.updateState then
+			if count == 1 and self.pulse == true then
+				self.WaypointCenter:setState( "Pulsing" )
 			else
-				f9_arg0.WaypointCenter:setState( "DefaultState" )
+				self.WaypointCenter:setState( "DefaultState" )
 			end
 		end
 	else
-		if f9_arg0.updateState then
-			f9_arg0.WaypointCenter:setState( "DefaultState" )
+		if self.updateState then
+			self.WaypointCenter:setState( "DefaultState" )
 		end
-		if f9_local2 == true and f9_local1 then
-			f9_arg0.ProgressMeterFrame:setAlpha( 1 )
-			f9_arg0.progressMeter:setRGB( 1, 0.4, 0 )
-			f9_arg0.progressMeter:setShaderVector( 0, 1, 0, 0, 0 )
+
+		if beingUsed == true and playerUsing then
+			self.ProgressMeterFrame:setAlpha( 1 )
+			self.progressMeter:setRGB( 1, 0.4, 0 )
+			self.progressMeter:setShaderVector( 0, 1, 0, 0, 0 )
 		else
-			if f9_local0 <= 0 then
-				f9_local0 = -0.05
-				f9_arg0.ProgressMeterFrame:setAlpha( 0 )
+			if progress <= 0 then
+				progress = -0.05
+				self.ProgressMeterFrame:setAlpha( 0 )
 			else
-				f9_arg0.ProgressMeterFrame:setAlpha( 1 )
+				self.ProgressMeterFrame:setAlpha( 1 )
 			end
-			f9_arg0.progressMeter:setRGB( 1, 1, 1 )
-			f9_arg0.progressMeter:setShaderVector( 0, f9_local0, 0, 0, 0 )
+			
+			self.progressMeter:setRGB( 1, 1, 1 )
+			self.progressMeter:setShaderVector( 0, progress, 0, 0, 0 )
 		end
 	end
 end
 
-local f0_local11 = function ( f10_arg0, f10_arg1, f10_arg2, f10_arg3 )
-	local f10_local0 = f0_local5( f10_arg0, f10_arg1.controller, f10_arg2, f10_arg3 )
+local UpdatePlayerUsing = function ( self, event, isPlayerTeamUsing, isAnyOtherTeamUsing )
+	local playerUsing = GetPlayerUsing( self, event.controller, isPlayerTeamUsing, isAnyOtherTeamUsing )
+
 	CoD.ObjectiveWaypoint.largeIconWidth = 64
 	CoD.ObjectiveWaypoint.largeIconHeight = 64
 	CoD.ObjectiveWaypoint.progressWidth = CoD.ObjectiveWaypoint.largeIconWidth + 4
@@ -198,135 +222,124 @@ local f0_local11 = function ( f10_arg0, f10_arg1, f10_arg2, f10_arg3 )
 	CoD.ObjectiveWaypoint.progressHeightNudge = 0
 	CoD.ObjectiveWaypoint.snapToHeight = 112
 	CoD.ObjectiveWaypoint.snapToTime = 250
-	if f10_arg0.playerUsing == f10_local0 then
-		return 
-	elseif f10_local0 == true then
-		if f10_arg0.playerUsing ~= nil then
-			f10_arg0:beginAnimation( "snap_in", 250, true, true )
+
+	if self.playerUsing == playerUsing then
+		return
+
+	elseif playerUsing == true then
+		if self.playerUsing ~= nil then
+			self:beginAnimation( "snap_in", 250, true, true )
 		end
-		f10_arg0.snapped = true
-		f10_arg0.WaypointText:setAlpha( 1 )
-		f10_arg0:setEntityContainerStopUpdating( true )
-		f10_arg0:setLeftRight( false, false, -32, 32 )
-		f10_arg0:setTopBottom( false, false, -176, -112 )
-		f10_arg0.WaypointArrowContainer:setAlpha( 0 )
+
+		self.snapped = true
+		self.WaypointText:setAlpha( 1 )
+		self:setEntityContainerStopUpdating( true )
+		self:setLeftRight( false, false, -32, 32 )
+		self:setTopBottom( false, false, -176, -112 )
+		self.WaypointArrowContainer:setAlpha( 0 )
 	else
-		if f10_arg0.playerUsing ~= nil then
-			f10_arg0:beginAnimation( "snap_out", 250, true, true )
+		if self.playerUsing ~= nil then
+			self:beginAnimation( "snap_out", 250, true, true )
 		end
-		f10_arg0.snapped = false
-		f10_arg0:setEntityContainerStopUpdating( false )
-		f10_arg0:setLeftRight( false, false, -28, 28 )
-		f10_arg0:setTopBottom( false, true, -56, 0 )
-		f10_arg0.WaypointArrowContainer:setAlpha( 1 )
+
+		self.snapped = false
+		self:setEntityContainerStopUpdating( false )
+		self:setLeftRight( false, false, -28, 28 )
+		self:setTopBottom( false, true, -56, 0 )
+		self.WaypointArrowContainer:setAlpha( 1 )
 	end
-	f10_arg0.playerUsing = f10_local0
+
+	self.playerUsing = playerUsing
 end
 
-local f0_local12 = function ( f11_arg0, f11_arg1 )
-	local f11_local0 = f11_arg1.controller
-	local f11_local1 = f11_arg0.objId
-	local f11_local2 = f11_arg0.ping
-	if Engine.GetObjectiveEntity( f11_local0, f11_local1 ) and not f11_local2 then
-		f11_arg0:setupWaypointContainer( f11_local1, 0, 0, f11_arg0.zOffset )
-		if f11_arg0.pinging == true then
-			f11_arg0:clearEntityMidpoint( false )
+local UpdateObjective = function ( self, event )
+	if Engine.GetObjectiveEntity( event.controller, self.objId ) and not self.ping then
+		self:setupWaypointContainer( self.objId, 0, 0, self.zOffset )
 
-			f11_arg0:completeAnimation()
-			f11_arg0:setAlpha( 1 )
+		if self.pinging == true then
+			self:clearEntityMidpoint( false )
+			self:completeAnimation()
+			self:setAlpha( 1 )
 		end
 	else
-		local f11_local3, f11_local4, f11_local5 = Engine.GetObjectivePosition( f11_local0, f11_local1 )
-		f11_arg0:setupWaypointContainer( f11_local1, f11_local3, f11_local4, f11_local5 + f11_arg0.zOffset )
-		if f11_local2 then
-			f11_arg0:clearEntityMidpoint( true )
-			f11_arg0:setAlpha( f0_local0 )
-			f11_arg0:beginAnimation( "ping", Engine.GetGametypeSetting( "objectivePingTime" ) * 1000 )
-			f11_arg0:setAlpha( f0_local1 )
-			f11_arg0.pinging = true
-		elseif f11_arg0.pinging == true then
-			f11_arg0:clearEntityMidpoint( false )
+		local posX, posY, posZ = Engine.GetObjectivePosition( event.controller, self.objId )
 
-			f11_arg0:completeAnimation()
-			f11_arg0:setAlpha( 1 )
+		self:setupWaypointContainer( self.objId, posX, posY, posZ + self.zOffset )
+
+		if self.ping then
+			self:clearEntityMidpoint( true )
+			self:setAlpha( 0.8 )
+			self:beginAnimation( "ping", Engine.GetGametypeSetting( "objectivePingTime" ) * 1000 )
+			self:setAlpha( 0.3 )
+			self.pinging = true
+
+		elseif self.pinging == true then
+			self:clearEntityMidpoint( false )
+			self:completeAnimation()
+			self:setAlpha( 1 )
 		end
 	end
-	local f11_local3
-	if not f11_arg0.objective.scale3d or f11_arg0.objective.scale3d == 0 then
-		f11_local3 = false
-	else
-		f11_local3 = true
+
+	self:setEntityContainerScale( self.objective.scale3d and self.objective.scale3d ~= 0 or false )
+
+	if self.objective.show3dDirectionArrow and self.objective.show3dDirectionArrow ~= 0 then
+		self.WaypointArrowContainer:setup3dPointer( self.objId )
 	end
-	f11_arg0:setEntityContainerScale( f11_local3 )
-	if f11_arg0.objective.show3dDirectionArrow and f11_arg0.objective.show3dDirectionArrow ~= 0 then
-		f11_arg0.WaypointArrowContainer:setup3dPointer( f11_local1 )
-	end
-	local f11_local5 = Engine.GetTeamID( f11_local0, Engine.GetPredictedClientNum( f11_local0 ) )
-	local f11_local6 = Engine.ObjectiveIsTeamUsing( f11_local0, f11_local1, f11_local5 )
-	local f11_local7 = Engine.ObjectiveIsAnyOtherTeamUsing( f11_local0, f11_local1, f11_local5 )
-	f11_arg0:updatePlayerUsing( f11_arg1, f11_local6, f11_local7 )
-	f11_arg0:updateProgress( f11_local0, f11_local6, f11_local7 )
+
+	local playerTeam = Engine.GetTeamID( event.controller, Engine.GetPredictedClientNum( event.controller ) )
+	local isPlayerTeamUsing = Engine.ObjectiveIsTeamUsing( event.controller, self.objId, playerTeam )
+	local isAnyOtherTeamUsing = Engine.ObjectiveIsAnyOtherTeamUsing( event.controller, self.objId, playerTeam )
+
+	self:updatePlayerUsing( event, isPlayerTeamUsing, isAnyOtherTeamUsing )
+	self:updateProgress( event.controller, isPlayerTeamUsing, isAnyOtherTeamUsing )
 end
 
-local f0_local13 = function ( f12_arg0, f12_arg1 )
-	f12_arg0.ping = f12_arg1
+local SetPing = function ( self, ping )
+	self.ping = ping
 end
 
-local f0_local14 = function ( f13_arg0, f13_arg1 )
-	if f13_arg0.animationState == f13_arg1 then
-		return 
-	elseif f13_arg1 == "waypoint_line_of_sight" then
-		f13_arg0:setAlpha( 1 )
-		f13_arg0.WaypointArrowContainer.WaypointArrowWidget:setState( "SolidArrowState" )
-		local f13_local0 = f13_arg0.WaypointText
-		local f13_local1 = f13_local0
-		f13_local0 = f13_local0.setAlpha
-		local f13_local2
-		if f13_arg0.snapped or not f13_arg0.isClamped then
-			f13_local2 = 1
-			if not f13_local2 then
-			
-			else
-				f13_local0( f13_local1, f13_local2 )
-			end
+local SetWaypointState = function ( self, animationState )
+	if self.animationState == animationState then
+		return
+
+	elseif animationState == "waypoint_line_of_sight" then
+		self:setAlpha( 1 )
+
+		self.WaypointArrowContainer.WaypointArrowWidget:setState( "SolidArrowState" )
+
+		if self.snapped or not self.isClamped then
+			self.WaypointText.setAlpha( self.WaypointText, 1 )
 		end
-		f13_local2 = 0
-	elseif f13_arg1 == "waypoint_out_of_line_of_sight" then
-		f13_arg0:setAlpha( 1 )
-		f13_arg0.WaypointArrowContainer.WaypointArrowWidget:setState( "DefaultState" )
-		local f13_local0 = f13_arg0.WaypointText
-		local f13_local1 = f13_local0
-		f13_local0 = f13_local0.setAlpha
-		local f13_local2
-		if f13_arg0.snapped or not f13_arg0.isClamped then
-			f13_local2 = 1
-			if not f13_local2 then
-			
-			else
-				f13_local0( f13_local1, f13_local2 )
-			end
+
+	elseif animationState == "waypoint_out_of_line_of_sight" then
+		self:setAlpha( 1 )
+
+		self.WaypointArrowContainer.WaypointArrowWidget:setState( "DefaultState" )
+
+		if self.snapped or not self.isClamped then
+			self.WaypointText.setAlpha( self.WaypointText, 1 )
 		end
-		f13_local2 = 0
-	elseif f13_arg1 == "waypoint_distance_culled" then
-		f13_arg0:setAlpha( 0 )
+
+	elseif animationState == "waypoint_distance_culled" then
+		self:setAlpha( 0 )
 	end
 end
 
-local PostLoadFunc = function ( f14_arg0, f14_arg1 )
-	f14_arg0.setupWaypoint = f0_local2
-	f14_arg0.setPing = f0_local13
-	f14_arg0.update = f0_local12
-	f14_arg0.updateProgress = f0_local10
-	f14_arg0.updatePlayerUsing = f0_local11
-	f14_arg0.isOwnedByMyTeam = f0_local3
-	f14_arg0.getTeam = f0_local4
-	f14_arg0.SetWaypointState = f0_local14
-	f14_arg0.setCompassObjectiveIcon = f0_local8
-	f14_arg0.clearCompassObjectiveIcon = f0_local9
-	f14_arg0:registerEventHandler( "entity_container_clamped", f0_local6 )
-	f14_arg0:registerEventHandler( "entity_container_unclamped", f0_local7 )
-	f14_arg0.mapIconType = CoD.GametypeBase.mapIconType
-	f14_arg0.neutralTeamID = 8
+local PostLoadFunc = function ( self, controller )
+	self.setupWaypoint = SetupWaypoint
+	self.setPing = SetPing
+	self.update = UpdateObjective
+	self.updateProgress = UpdateObjectiveProgress
+	self.updatePlayerUsing = UpdatePlayerUsing
+	self.isOwnedByMyTeam = GetIsOwnedByMyTeam
+	self.getTeam = GetTeam
+	self.SetWaypointState = SetWaypointState
+	self.setCompassObjectiveIcon = SetCompassObjectiveIcon
+	self.clearCompassObjectiveIcon = ClearCompassObjectiveIcon
+	self:registerEventHandler( "entity_container_clamped", SetClamped )
+	self:registerEventHandler( "entity_container_unclamped", SetUnclamped )
+	self.mapIconType = CoD.GametypeBase.mapIconType
+	self.neutralTeamID = 8
 end
 
 CoD.Waypoint = InheritFrom( LUI.UIElement )
@@ -345,51 +358,45 @@ CoD.Waypoint.new = function ( menu, controller )
 	self:setTopBottom( true, false, 0, 120 )
 	self.anyChildUsesUpdateState = true
 	
-	local ProgressMeterFrame = LUI.UIImage.new()
-	ProgressMeterFrame:setLeftRight( false, false, -35, 36.5 )
-	ProgressMeterFrame:setTopBottom( false, false, -35, 34.5 )
-	ProgressMeterFrame:setImage( RegisterImage( "uie_t7_hud_waypoints_new_framefill" ) )
-	self:addElement( ProgressMeterFrame )
-	self.ProgressMeterFrame = ProgressMeterFrame
+	self.ProgressMeterFrame = LUI.UIImage.new()
+	self.ProgressMeterFrame:setLeftRight( false, false, -35, 36.5 )
+	self.ProgressMeterFrame:setTopBottom( false, false, -35, 34.5 )
+	self.ProgressMeterFrame:setImage( RegisterImage( "uie_t7_hud_waypoints_new_framefill" ) )
+	self:addElement( self.ProgressMeterFrame )
 	
-	local WaypointArrowContainer = CoD.WaypointArrowContainer.new( menu, controller )
-	WaypointArrowContainer:setLeftRight( false, false, -14, 14 )
-	WaypointArrowContainer:setTopBottom( false, false, -17, 14 )
-	WaypointArrowContainer:setAlpha( 0.95 )
-	self:addElement( WaypointArrowContainer )
-	self.WaypointArrowContainer = WaypointArrowContainer
+	self.WaypointArrowContainer = CoD.WaypointArrowContainer.new( menu, controller )
+	self.WaypointArrowContainer:setLeftRight( false, false, -14, 14 )
+	self.WaypointArrowContainer:setTopBottom( false, false, -17, 14 )
+	self.WaypointArrowContainer:setAlpha( 0.95 )
+	self:addElement( self.WaypointArrowContainer )
 	
-	local progressMeter = LUI.UIImage.new()
-	progressMeter:setLeftRight( false, false, -23, 24 )
-	progressMeter:setTopBottom( false, false, -24, 23 )
-	progressMeter:setAlpha( 0.9 )
-	progressMeter:setImage( RegisterImage( "uie_t7_hud_interact_meter_diamond" ) )
-	progressMeter:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_clock_normal" ) )
-	progressMeter:setShaderVector( 0, 1.03, 0, 0, 0 )
-	progressMeter:setShaderVector( 1, 0.5, 0, 0, 0 )
-	progressMeter:setShaderVector( 2, 0.5, 0, 0, 0 )
-	progressMeter:setShaderVector( 3, 0, 0, 0, 0 )
-	self:addElement( progressMeter )
-	self.progressMeter = progressMeter
+	self.progressMeter = LUI.UIImage.new()
+	self.progressMeter:setLeftRight( false, false, -23, 24 )
+	self.progressMeter:setTopBottom( false, false, -24, 23 )
+	self.progressMeter:setAlpha( 0.9 )
+	self.progressMeter:setImage( RegisterImage( "uie_t7_hud_interact_meter_diamond" ) )
+	self.progressMeter:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_clock_normal" ) )
+	self.progressMeter:setShaderVector( 0, 1.03, 0, 0, 0 )
+	self.progressMeter:setShaderVector( 1, 0.5, 0, 0, 0 )
+	self.progressMeter:setShaderVector( 2, 0.5, 0, 0, 0 )
+	self.progressMeter:setShaderVector( 3, 0, 0, 0, 0 )
+	self:addElement( self.progressMeter )
 	
-	local WaypointDistanceIndicatorContainer = CoD.WaypointDistanceIndicatorContainer.new( menu, controller )
-	WaypointDistanceIndicatorContainer:setLeftRight( true, true, 0, 0 )
-	WaypointDistanceIndicatorContainer:setTopBottom( false, false, -62, -45 )
-	self:addElement( WaypointDistanceIndicatorContainer )
-	self.WaypointDistanceIndicatorContainer = WaypointDistanceIndicatorContainer
+	self.WaypointDistanceIndicatorContainer = CoD.WaypointDistanceIndicatorContainer.new( menu, controller )
+	self.WaypointDistanceIndicatorContainer:setLeftRight( true, true, 0, 0 )
+	self.WaypointDistanceIndicatorContainer:setTopBottom( false, false, -62, -45 )
+	self:addElement( self.WaypointDistanceIndicatorContainer )
 	
-	local WaypointText = CoD.Waypoint_TextBG.new( menu, controller )
-	WaypointText:setLeftRight( false, false, -40, 40 )
-	WaypointText:setTopBottom( false, false, -45, -24 )
-	self:addElement( WaypointText )
-	self.WaypointText = WaypointText
+	self.WaypointText = CoD.Waypoint_TextBG.new( menu, controller )
+	self.WaypointText:setLeftRight( false, false, -40, 40 )
+	self.WaypointText:setTopBottom( false, false, -45, -24 )
+	self:addElement( self.WaypointText )
 	
-	local WaypointCenter = CoD.WaypointCenter.new( menu, controller )
-	WaypointCenter:setLeftRight( false, false, -16.5, 17.5 )
-	WaypointCenter:setTopBottom( false, false, -17.5, 16.5 )
-	WaypointCenter:setAlpha( 0.95 )
-	self:addElement( WaypointCenter )
-	self.WaypointCenter = WaypointCenter
+	self.WaypointCenter = CoD.WaypointCenter.new( menu, controller )
+	self.WaypointCenter:setLeftRight( false, false, -16.5, 17.5 )
+	self.WaypointCenter:setTopBottom( false, false, -17.5, 16.5 )
+	self.WaypointCenter:setAlpha( 0.95 )
+	self:addElement( self.WaypointCenter )
 	
 	self.clipsPerState = {
 		DefaultState = {
@@ -401,20 +408,22 @@ CoD.Waypoint.new = function ( menu, controller )
 			DefaultClip = function ()
 				self:setupElementClipCounter( 2 )
 
-				WaypointText:completeAnimation()
+				self.WaypointText:completeAnimation()
 				self.WaypointText:setLeftRight( false, false, -40, 40 )
 				self.WaypointText:setTopBottom( false, false, -9, 12 )
-				self.clipFinished( WaypointText, {} )
+				self.clipFinished( self.WaypointText, {} )
 
-				WaypointCenter:completeAnimation()
+				self.WaypointCenter:completeAnimation()
 				self.WaypointCenter:setAlpha( 0 )
-				self.clipFinished( WaypointCenter, {} )
+				self.clipFinished( self.WaypointCenter, {} )
 			end
 		}
 	}
 
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
+		element.ProgressMeterFrame:close()
 		element.WaypointArrowContainer:close()
+		element.progressMeter:close()
 		element.WaypointDistanceIndicatorContainer:close()
 		element.WaypointText:close()
 		element.WaypointCenter:close()

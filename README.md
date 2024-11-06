@@ -6,6 +6,8 @@ If I rebuild any of the files I'll update them and keep them in a list here for 
 
 - [ui/uieditor/menus/hud/T7Hud_zm_factory.lua](https://github.com/KingslayerKyle/t7-lua/blob/main/Ship/ui/uieditor/menus/hud/T7Hud_zm_factory.lua)
 - [ui/uieditor/widgets/HUD/ZM_Perks/ZMPerksContainerFactory.lua](https://github.com/KingslayerKyle/t7-lua/blob/main/Ship/ui/uieditor/widgets/HUD/ZM_Perks/ZMPerksContainerFactory.lua)
+- [ui/uieditor/widgets/HUD/Waypoint/GenericWaypointContainer.lua](https://github.com/KingslayerKyle/t7-lua/blob/main/Ship/ui/uieditor/widgets/HUD/Waypoint/GenericWaypointContainer.lua)
+- [ui/uieditor/widgets/MPHudWidgets/Waypoint.lua](https://github.com/KingslayerKyle/t7-lua/blob/main/Ship/ui/uieditor/widgets/MPHudWidgets/Waypoint.lua)
 
 # Credits
 JariK - CoDLuaDecompiler / Exporting\
