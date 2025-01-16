@@ -210,7 +210,7 @@ function ui_powerup_monitor()
 
 function zombie_damage_override_callback( death, inflictor, attacker, damage, flags, mod, weapon, vpoint, vdir, sHitLoc, psOffsetTime, boneIndex, surfaceType )
 {
-	if( IS_EQUAL( self.archetype, "zombie" ) )
+	if( IS_EQUAL( self.archetype, "zombie" ) && self.team == level.zombie_team)
 	{
 		if( death )
 		{
