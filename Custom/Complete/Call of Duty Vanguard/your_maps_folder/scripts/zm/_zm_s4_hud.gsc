@@ -210,12 +210,17 @@ function ui_powerup_monitor()
 
 function zombie_damage_override_callback( death, inflictor, attacker, damage, flags, mod, weapon, vpoint, vdir, sHitLoc, psOffsetTime, boneIndex, surfaceType )
 {
-	if( IS_EQUAL( self.archetype, "zombie" ) && self.team == level.zombie_team)
+	if( IS_EQUAL( self.archetype, "zombie" ) && IS_EQUAL( self.team, level.zombie_team ) )
 	{
 		if( death )
 		{
-			score = zm_score::get_zombie_death_player_points();
+			score = attacker get_zombie_death_player_points( mod, sHitLoc, weapon );
 			text = &"ZOMBIE ELIMINATION";
+
+			if( IS_EQUAL( mod, "MOD_MELEE" ) )
+			{
+				text = &"ZOMBIE MELEE KILL";
+			}
 
 			if( isdefined( sHitLoc ) )
 			{
@@ -223,39 +228,72 @@ function zombie_damage_override_callback( death, inflictor, attacker, damage, fl
 				{
 					case "head":
 					case "helmet":
-						score += level.zombie_vars["zombie_score_bonus_head"];
-						text = &"ZOMBIE CRITICAL KILL";
-						break; 
-			
-					case "neck":
-						score += level.zombie_vars["zombie_score_bonus_neck"];
-						break; 
-				
-					case "torso_upper":
-					case "torso_lower":
-						score += level.zombie_vars["zombie_score_bonus_torso"];
-						break; 
-					
+						text = &"ZOMBIE CRITICAL KILL"; 
+						break;
+
 					default:
 						break;
 				}
 			}
 
-			if( mod == "MOD_MELEE" )
-			{
-				score += level.zombie_vars["zombie_score_bonus_melee"];
-				text = &"ZOMBIE MELEE KILL";
-			}
-			else if( mod == "MOD_BURNED" )
-			{
-				score += level.zombie_vars["zombie_score_bonus_burn"];
-			}
-
 			if( isdefined( attacker ) && IsPlayer( attacker ) )
-				attacker LUINotifyEvent( &"score_event", 2, text, score * level.zombie_vars[attacker.team]["zombie_point_scalar"] );
+			{
+				attacker LUINotifyEvent( &"score_event", 2, text, score );
+			}
 		}
 	}
 	
 	// Don't affect damage dealt
 	return false;
+}
+
+function get_zombie_death_player_points( mod, sHitLoc, weapon )
+{
+	player_points = zm_score::get_zombie_death_player_points();
+	bonus_points = get_zombie_death_bonus_player_points( mod, sHitLoc, weapon );
+	points = player_points + bonus_points;
+
+	return points * level.zombie_vars[self.team]["zombie_point_scalar"];
+}
+
+function get_zombie_death_bonus_player_points( mod, sHitLoc, weapon )
+{
+	score = 0;
+
+	if( isdefined( sHitLoc ) )
+    {
+		switch( sHitLoc )
+		{
+			case "head":
+			case "helmet":
+				score = level.zombie_vars["zombie_score_bonus_head"]; 
+				break; 
+		
+			case "neck":
+				score = level.zombie_vars["zombie_score_bonus_neck"]; 
+				break; 
+		
+			case "torso_upper":
+			case "torso_lower":
+				score = level.zombie_vars["zombie_score_bonus_torso"]; 
+				break; 
+			
+			default:
+				break;
+		}
+    }
+
+	if( isdefined( mod ) )
+	{
+		if( IS_EQUAL( mod, "MOD_MELEE" ) )
+		{
+			score = level.zombie_vars["zombie_score_bonus_melee"];
+		}
+		else if( IS_EQUAL( mod, "MOD_BURNED" ) )
+		{
+			score = level.zombie_vars["zombie_score_bonus_burn"];
+		}
+	}
+
+	return score; 
 }
