@@ -214,86 +214,73 @@ function zombie_damage_override_callback( death, inflictor, attacker, damage, fl
 	{
 		if( death )
 		{
-			score = attacker get_zombie_death_player_points( mod, sHitLoc, weapon );
-			text = &"ZOMBIE ELIMINATION";
+			player_points = zm_score::get_zombie_death_player_points();
+			kill_bonus = get_points_kill_bonus( mod, sHitLoc, weapon, player_points );
+			points = kill_bonus[0];
+			text = kill_bonus[1];
 
-			if( IS_EQUAL( mod, "MOD_MELEE" ) )
+			if( level.zombie_vars[self.team]["zombie_powerup_insta_kill_on"] == 1 && mod == "MOD_UNKNOWN" )
 			{
-				text = &"ZOMBIE MELEE KILL";
+				points *= 2;
 			}
 
-			if( isdefined( sHitLoc ) )
-			{
-				switch( sHitLoc )
-				{
-					case "head":
-					case "helmet":
-						text = &"ZOMBIE CRITICAL KILL"; 
-						break;
+			player_points += points;
 
-					default:
-						break;
-				}
-			}
-
-			if( isdefined( attacker ) && IsPlayer( attacker ) )
+			if( isdefined( attacker ) && isplayer( attacker ) )
 			{
-				attacker LUINotifyEvent( &"score_event", 2, text, score );
+				attacker LUINotifyEvent( &"score_event", 2, text, player_points );
 			}
 		}
 	}
 	
-	// Don't affect damage dealt
 	return false;
 }
 
-function get_zombie_death_player_points( mod, sHitLoc, weapon )
+function get_points_kill_bonus( mod, hit_location, weapon, player_points = undefined )
 {
-	player_points = zm_score::get_zombie_death_player_points();
-	bonus_points = get_zombie_death_bonus_player_points( mod, sHitLoc, weapon );
-	points = player_points + bonus_points;
+	ret_val = [];
 
-	return points * level.zombie_vars[self.team]["zombie_point_scalar"];
-}
+	if( mod == "MOD_MELEE" )
+	{
+		ret_val[0] = level.zombie_vars["zombie_score_bonus_melee"];
+		ret_val[1] = &"ZOMBIE MELEE KILL";
+		return ret_val;
+	}
 
-function get_zombie_death_bonus_player_points( mod, sHitLoc, weapon )
-{
-	score = 0;
+	if( mod == "MOD_BURNED" )
+	{
+		ret_val[0] = level.zombie_vars["zombie_score_bonus_burn"];
+		ret_val[1] = &"ZOMBIE BURNED KILL";
+		return ret_val;
+	}
 
-	if( isdefined( sHitLoc ) )
+	if ( isdefined( hit_location ) )
     {
-		switch( sHitLoc )
+		switch ( hit_location )
 		{
 			case "head":
 			case "helmet":
-				score = level.zombie_vars["zombie_score_bonus_head"]; 
-				break; 
+				ret_val[0] = level.zombie_vars["zombie_score_bonus_head"];
+				ret_val[1] = &"ZOMBIE CRITICAL KILL";
+				break;
 		
 			case "neck":
-				score = level.zombie_vars["zombie_score_bonus_neck"]; 
-				break; 
+				ret_val[0] = level.zombie_vars["zombie_score_bonus_neck"];
+				ret_val[1] = &"ZOMBIE ELIMINATION";
+				break;
 		
 			case "torso_upper":
 			case "torso_lower":
-				score = level.zombie_vars["zombie_score_bonus_torso"]; 
-				break; 
+				ret_val[0] = level.zombie_vars["zombie_score_bonus_torso"];
+				ret_val[1] = &"ZOMBIE ELIMINATION";
+				break;
 			
 			default:
+				ret_val[0] = 0;
+				ret_val[1] = &"ZOMBIE ELIMINATION";
 				break;
 		}
     }
 
-	if( isdefined( mod ) )
-	{
-		if( IS_EQUAL( mod, "MOD_MELEE" ) )
-		{
-			score = level.zombie_vars["zombie_score_bonus_melee"];
-		}
-		else if( IS_EQUAL( mod, "MOD_BURNED" ) )
-		{
-			score = level.zombie_vars["zombie_score_bonus_burn"];
-		}
-	}
-
-	return score; 
+	return ret_val; 
 }
