@@ -214,19 +214,16 @@ CoD.T8ScoreContainer.new = function ( menu, controller )
 	self.ZMScrPlusPoints1 = CoD.ZMScr_PlusPointsContainer.new( menu, controller )
 	self.ZMScrPlusPoints1:setLeftRight( true, false, 150, 0 )
 	self.ZMScrPlusPoints1:setTopBottom( false, true, -195, 0 )
-	self.ZMScrPlusPoints1:setScale( 0.75 )
 	self:addElement( self.ZMScrPlusPoints1 )
 	
 	self.ZMScrPlusPoints2 = CoD.ZMScr_PlusPointsContainer.new( menu, controller )
 	self.ZMScrPlusPoints2:setLeftRight( true, false, 150, 0 )
 	self.ZMScrPlusPoints2:setTopBottom( false, true, -255, 0 )
-	self.ZMScrPlusPoints2:setScale( 0.75 )
 	self:addElement( self.ZMScrPlusPoints2 )
 	
 	self.ZMScrPlusPoints3 = CoD.ZMScr_PlusPointsContainer.new( menu, controller )
 	self.ZMScrPlusPoints3:setLeftRight( true, false, 150, 0 )
 	self.ZMScrPlusPoints3:setTopBottom( false, true, -318, 0 )
-	self.ZMScrPlusPoints3:setScale( 0.75 )
 	self:addElement( self.ZMScrPlusPoints3 )
 
 	self.clipsPerState = {

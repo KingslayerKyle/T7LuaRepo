@@ -92,13 +92,6 @@ LUI.createMenu.T7Hud_zm_factory = function ( controller )
 	self.KingslayerPowerupsContainer:setLeftRight( true, true, 0, 0 )
 	self.KingslayerPowerupsContainer:setTopBottom( true, true, 0, 0 )
 	self:addElement( self.KingslayerPowerupsContainer )
-	
-	self.DummyFont4 = LUI.UIText.new()
-	self.DummyFont4:setLeftRight( true, false, -1280, -1000 )
-	self.DummyFont4:setTopBottom( true, false, -720, -700 )
-	self.DummyFont4:setTTF( "fonts/ttmussels_demibold.ttf" )
-	self.DummyFont4:setText( "DummyFont" )
-	self:addElement( self.DummyFont4 )
 
 	self.ZMPerksContainerFactory = CoD.T8PerksContainer.new( self, controller )
 	self.ZMPerksContainerFactory:setLeftRight( true, true, 0, 0 )
