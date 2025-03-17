@@ -225,19 +225,16 @@ CoD.H1ScoreContainer.new = function ( menu, controller )
 	self.ZMScrPlusPoints1 = CoD.H1PlusPointsContainer.new( menu, controller )
 	self.ZMScrPlusPoints1:setLeftRight( true, false, 0, 0 )
 	self.ZMScrPlusPoints1:setTopBottom( true, false, 0, 0 )
-	self.ZMScrPlusPoints1:setScale( 0 )
 	self:addElement( self.ZMScrPlusPoints1 )
 	
 	self.ZMScrPlusPoints2 = CoD.H1PlusPointsContainer.new( menu, controller )
 	self.ZMScrPlusPoints2:setLeftRight( true, false, 0, 0 )
 	self.ZMScrPlusPoints2:setTopBottom( true, false, 0, 0 )
-	self.ZMScrPlusPoints2:setScale( 0 )
 	self:addElement( self.ZMScrPlusPoints2 )
 	
 	self.ZMScrPlusPoints3 = CoD.H1PlusPointsContainer.new( menu, controller )
 	self.ZMScrPlusPoints3:setLeftRight( true, false, 0, 0 )
 	self.ZMScrPlusPoints3:setTopBottom( true, false, 0, 0 )
-	self.ZMScrPlusPoints3:setScale( 0 )
 	self:addElement( self.ZMScrPlusPoints3 )
 
 	self.clipsPerState = {
