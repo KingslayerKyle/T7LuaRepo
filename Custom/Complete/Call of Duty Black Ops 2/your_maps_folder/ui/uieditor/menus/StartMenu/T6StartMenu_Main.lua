@@ -1,6 +1,6 @@
 require( "ui.uieditor.menus.StartMenu.T6StartMenu_GameOptions_ZM" )
-require( "ui.uieditor.menus.StartMenu.T6StartMenu_Options" )
 require( "ui.uieditor.widgets.Lobby.Common.FE_TabBar" )
+require( "ui.uieditor.widgets.TabbedWidgets.basicTabList" )
 
 local PostLoadFunc = function ( self, controller )
 	self:registerEventHandler( "menu_opened", function ()

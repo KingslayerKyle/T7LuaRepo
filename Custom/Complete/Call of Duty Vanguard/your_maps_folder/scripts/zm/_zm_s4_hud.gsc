@@ -212,24 +212,22 @@ function zombie_damage_override_callback( death, inflictor, attacker, damage, fl
 {
 	if( IS_EQUAL( self.archetype, "zombie" ) && IS_EQUAL( self.team, level.zombie_team ) )
 	{
-		if( death )
+		if( death && isdefined( attacker ) && isplayer( attacker ) )
 		{
 			player_points = zm_score::get_zombie_death_player_points();
 			kill_bonus = get_points_kill_bonus( mod, sHitLoc, weapon, player_points );
 			points = kill_bonus[0];
 			text = kill_bonus[1];
 
-			if( level.zombie_vars[self.team]["zombie_powerup_insta_kill_on"] == 1 && mod == "MOD_UNKNOWN" )
+			if( level.zombie_vars[attacker.team]["zombie_powerup_insta_kill_on"] == 1 && mod == "MOD_UNKNOWN" )
 			{
 				points *= 2;
 			}
 
 			player_points += points;
+			player_points *= level.zombie_vars[attacker.team]["zombie_point_scalar"];
 
-			if( isdefined( attacker ) && isplayer( attacker ) )
-			{
-				attacker LUINotifyEvent( &"score_event", 2, text, player_points );
-			}
+			attacker luinotifyevent( &"score_event", 2, text, player_points );
 		}
 	}
 	
@@ -238,7 +236,7 @@ function zombie_damage_override_callback( death, inflictor, attacker, damage, fl
 
 function get_points_kill_bonus( mod, hit_location, weapon, player_points = undefined )
 {
-	ret_val = [];
+	ret_val = array( 0, &"ZOMBIE ELIMINATION" );
 
 	if( mod == "MOD_MELEE" )
 	{
@@ -276,8 +274,6 @@ function get_points_kill_bonus( mod, hit_location, weapon, player_points = undef
 				break;
 			
 			default:
-				ret_val[0] = 0;
-				ret_val[1] = &"ZOMBIE ELIMINATION";
 				break;
 		}
     }

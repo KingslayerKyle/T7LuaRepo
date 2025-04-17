@@ -1,3 +1,4 @@
+require( "ui.uieditor.menus.StartMenu.IW7StartMenu_Options" )
 require( "ui.uieditor.widgets.Lobby.Common.IW7ButtonListItem" )
 
 DataSources.StartMenuGameOptions = ListHelper_SetupDataSource( "StartMenuGameOptions", function ( controller )
