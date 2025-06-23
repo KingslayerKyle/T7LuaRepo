@@ -21,7 +21,7 @@ DataSources.T6AmmoEquipmentLethals = DataSourceHelpers.ListSetup( "T6AmmoEquipme
 		end
 
 		if next( lethals ) ~= nil then
-			lethals[1]["models"].alpha = 1
+			lethals[1].models.alpha = 1
 		end
 	end
 
@@ -49,7 +49,7 @@ DataSources.T6AmmoEquipmentTacticals = DataSourceHelpers.ListSetup( "T6AmmoEquip
 		end
 
 		if next( tacticals ) ~= nil then
-			tacticals[1]["models"].alpha = 1
+			tacticals[1].models.alpha = 1
 		end
 	end
 
