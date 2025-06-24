@@ -1,6 +1,10 @@
 # Modern Warfare Remastered HUD
 This is a Modern Warfare Remastered UI mod for use with Call of Duty: Black Ops III - Mod Tools
 
+# Donations
+If you appreciate the time and effort that went into this project, consider showing your support with a donation:\
+[https://paypal.me/kingslayerkyle](https://paypal.me/kingslayerkyle)
+
 ## Prerequisites
 1) Download the latest release from the following repo:
 
