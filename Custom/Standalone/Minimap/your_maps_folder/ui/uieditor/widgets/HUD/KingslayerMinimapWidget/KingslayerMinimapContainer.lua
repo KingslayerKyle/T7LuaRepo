@@ -16,12 +16,38 @@ CoD.KingslayerMinimapContainer.new = function ( menu, controller )
 	self:setTopBottom( true, false, 0, 720 )
 	self.anyChildUsesUpdateState = true
 
+	self.CompassMinimapStroke1 = LUI.UIImage.new()
+	self.CompassMinimapStroke1:setLeftRight( true, false, 18, 196 )
+	self.CompassMinimapStroke1:setTopBottom( true, false, 23, 201 )
+	self.CompassMinimapStroke1:setImage( RegisterImage( "ui_t7_hud_minimap_circle_bg" ) )
+	self.CompassMinimapStroke1:setRGB( 0, 0, 0 )
+	self.CompassMinimapStroke1:setScale( 1 )
+	self.CompassMinimapStroke1:setAlpha( 0.25 )
+	self:addElement( self.CompassMinimapStroke1 )
+
+	self.CompassMinimapStroke2 = LUI.UIImage.new()
+	self.CompassMinimapStroke2:setLeftRight( true, false, 18, 196 )
+	self.CompassMinimapStroke2:setTopBottom( true, false, 23, 201 )
+	self.CompassMinimapStroke2:setImage( RegisterImage( "ui_t7_hud_minimap_circle_bg" ) )
+	self.CompassMinimapStroke2:setRGB( 1, 1, 1 )
+	self.CompassMinimapStroke2:setScale( 0.96 )
+	self.CompassMinimapStroke2:setAlpha( 0.5 )
+	self:addElement( self.CompassMinimapStroke2 )
+
+	self.CompassMinimapStroke3 = LUI.UIImage.new()
+	self.CompassMinimapStroke3:setLeftRight( true, false, 18, 196 )
+	self.CompassMinimapStroke3:setTopBottom( true, false, 23, 201 )
+	self.CompassMinimapStroke3:setImage( RegisterImage( "ui_t7_hud_minimap_circle_bg" ) )
+	self.CompassMinimapStroke3:setRGB( 0.1, 0.1, 0.1 )
+	self.CompassMinimapStroke3:setScale( 0.95 )
+	self:addElement( self.CompassMinimapStroke3 )
+
 	self.CompassMinimapBG = LUI.UIImage.new()
-	self.CompassMinimapBG:setLeftRight( true, false, 0, 225 )
-	self.CompassMinimapBG:setTopBottom( true, false, 50, 275 )
-	self.CompassMinimapBG:setImage( RegisterImage( "minimap_circle_bg" ) )
+	self.CompassMinimapBG:setLeftRight( true, false, 18, 196 )
+	self.CompassMinimapBG:setTopBottom( true, false, 23, 201 )
+	self.CompassMinimapBG:setImage( RegisterImage( "ui_t7_hud_minimap_circle_bg" ) )
 	self.CompassMinimapBG:setRGB( 0, 0, 0 )
-	self.CompassMinimapBG:setScale( 0.95 )
+	self.CompassMinimapBG:setScale( 0.91 )
 	self:addElement( self.CompassMinimapBG )
 
 	self.KingslayerMinimap = CoD.KingslayerMinimap.new( menu, controller )
@@ -33,7 +59,19 @@ CoD.KingslayerMinimapContainer.new = function ( menu, controller )
 	self.clipsPerState = {
 		DefaultState = {
 			DefaultClip = function ()
-				self:setupElementClipCounter( 2 )
+				self:setupElementClipCounter( 5 )
+
+				self.CompassMinimapStroke1:completeAnimation()
+				self.CompassMinimapStroke1:setAlpha( 0.25 )
+				self.clipFinished( self.CompassMinimapStroke1, {} )
+
+				self.CompassMinimapStroke2:completeAnimation()
+				self.CompassMinimapStroke2:setAlpha( 0.5 )
+				self.clipFinished( self.CompassMinimapStroke2, {} )
+
+				self.CompassMinimapStroke3:completeAnimation()
+				self.CompassMinimapStroke3:setAlpha( 1 )
+				self.clipFinished( self.CompassMinimapStroke3, {} )
 
 				self.CompassMinimapBG:completeAnimation()
 				self.CompassMinimapBG:setAlpha( 1 )
@@ -46,7 +84,19 @@ CoD.KingslayerMinimapContainer.new = function ( menu, controller )
 		},
 		Hidden = {
 			DefaultClip = function ()
-				self:setupElementClipCounter( 2 )
+				self:setupElementClipCounter( 5 )
+
+				self.CompassMinimapStroke1:completeAnimation()
+				self.CompassMinimapStroke1:setAlpha( 0 )
+				self.clipFinished( self.CompassMinimapStroke1, {} )
+
+				self.CompassMinimapStroke2:completeAnimation()
+				self.CompassMinimapStroke2:setAlpha( 0 )
+				self.clipFinished( self.CompassMinimapStroke2, {} )
+
+				self.CompassMinimapStroke3:completeAnimation()
+				self.CompassMinimapStroke3:setAlpha( 0 )
+				self.clipFinished( self.CompassMinimapStroke3, {} )
 
 				self.CompassMinimapBG:completeAnimation()
 				self.CompassMinimapBG:setAlpha( 0 )
@@ -198,6 +248,9 @@ CoD.KingslayerMinimapContainer.new = function ( menu, controller )
 	end )
 
 	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
+		element.CompassMinimapStroke1:close()
+		element.CompassMinimapStroke2:close()
+		element.CompassMinimapStroke3:close()
 		element.CompassMinimapBG:close()
 		element.KingslayerMinimap:close()
 	end )

@@ -44,8 +44,8 @@ self:addElement( self.KingslayerMinimapContainer )
 scriptparsetree,scripts/zm/_zm_minimap.gsc
 objective,zm_enemy_waypoint
 material,compass_map_mp_combine
-image,minimap_circle_bg
-image,minimap_circle_mask
+image,ui_t7_hud_minimap_circle_bg
+image,ui_t7_hud_minimap_circle_mask
 ```
 
 2) Add to your gsc

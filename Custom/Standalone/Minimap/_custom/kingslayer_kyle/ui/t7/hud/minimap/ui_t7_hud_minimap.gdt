@@ -1,5 +1,5 @@
 {
-	"minimap_circle_bg" ( "image.gdf" )
+	"ui_t7_hud_minimap_circle_bg" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
 		"baseImage" "_custom\\kingslayer_kyle\\ui\\t7\\hud\\minimap\\ui_t7_hud_minimap_circle_bg.png"
@@ -44,7 +44,7 @@
 		"textureAtlasRowCount" "1"
 		"type" "image"
 	}
-	"minimap_circle_mask" ( "image.gdf" )
+	"ui_t7_hud_minimap_circle_mask" ( "image.gdf" )
 	{
 		"arabicUnsafe" "0"
 		"baseImage" "_custom\\kingslayer_kyle\\ui\\t7\\hud\\minimap\\ui_t7_hud_minimap_circle_mask.png"
