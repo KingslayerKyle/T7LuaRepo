@@ -1,0 +1,322 @@
+require( "ui.uieditor.widgets.Groups.FindGroupsGridButton" )
+require( "ui.uieditor.widgets.Scrollbars.verticalCounterNoNumbers" )
+require( "ui.uieditor.widgets.Groups.GroupsSummaryForSearch" )
+
+local PostLoadFunc = function ( f1_arg0, f1_arg1 )
+	f1_arg0.GroupsGrid:registerEventHandler( "lose_list_focus", function ( element, event )
+		local f2_local0 = nil
+		f1_arg0.GroupsSummaryForSearch.buttonprompt:setState( "Hidden" )
+		return f2_local0
+	end )
+	f1_arg0.GroupsGrid:registerEventHandler( "gain_list_focus", function ( element, event )
+		local f3_local0 = nil
+		f1_arg0.GroupsSummaryForSearch.buttonprompt:setState( "DefaultState" )
+		return f3_local0
+	end )
+end
+
+CoD.FindGroupsTabSearchGroupsCommonWidget = InheritFrom( LUI.UIElement )
+CoD.FindGroupsTabSearchGroupsCommonWidget.new = function ( menu, controller )
+	local self = LUI.UIElement.new()
+	if PreLoadFunc then
+		PreLoadFunc( self, controller )
+	end
+	self:setUseStencil( false )
+	self:setClass( CoD.FindGroupsTabSearchGroupsCommonWidget )
+	self.id = "FindGroupsTabSearchGroupsCommonWidget"
+	self.soundSet = "default"
+	self:setLeftRight( true, false, 0, 708 )
+	self:setTopBottom( true, false, 0, 473 )
+	self:makeFocusable()
+	self.onlyChildrenFocusable = true
+	self.anyChildUsesUpdateState = true
+	
+	local GroupsGrid = LUI.UIList.new( menu, controller, 5, 0, function ( f5_arg0 )
+		return Engine.GetModelValue( Engine.GetModel( f5_arg0, "friendsSearchType" ) ) == "friends"
+	end, false, false, 0, 0, false, false )
+	GroupsGrid:makeFocusable()
+	GroupsGrid:setLeftRight( true, false, 0, 348 )
+	GroupsGrid:setTopBottom( true, false, 0, 415 )
+	GroupsGrid:setWidgetType( CoD.FindGroupsGridButton )
+	GroupsGrid:setVerticalCount( 6 )
+	GroupsGrid:setSpacing( 5 )
+	GroupsGrid:setVerticalCounter( CoD.verticalCounterNoNumbers )
+	GroupsGrid:setDataSource( "FindGroupsButtonList" )
+	GroupsGrid:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "groups.searchGroupsInProgress" ), function ( model )
+		local f6_local0 = GroupsGrid
+		local f6_local1 = {
+			controller = controller,
+			name = "model_validation",
+			modelValue = Engine.GetModelValue( model ),
+			modelName = "groups.searchGroupsInProgress"
+		}
+		CoD.Menu.UpdateButtonShownState( f6_local0, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+		CoD.Menu.UpdateButtonShownState( f6_local0, menu, controller, Enum.LUIButton.LUI_KEY_START )
+		CoD.Menu.UpdateButtonShownState( f6_local0, menu, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE )
+	end )
+	GroupsGrid:linkToElementModel( GroupsGrid, "groupId", true, function ( model )
+		local f7_local0 = GroupsGrid
+		local f7_local1 = {
+			controller = controller,
+			name = "model_validation",
+			modelValue = Engine.GetModelValue( model ),
+			modelName = "groupId"
+		}
+		CoD.Menu.UpdateButtonShownState( f7_local0, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+		CoD.Menu.UpdateButtonShownState( f7_local0, menu, controller, Enum.LUIButton.LUI_KEY_START )
+		CoD.Menu.UpdateButtonShownState( f7_local0, menu, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE )
+	end )
+	GroupsGrid:linkToElementModel( GroupsGrid, "name", true, function ( model )
+		local f8_local0 = GroupsGrid
+		local f8_local1 = {
+			controller = controller,
+			name = "model_validation",
+			modelValue = Engine.GetModelValue( model ),
+			modelName = "name"
+		}
+		CoD.Menu.UpdateButtonShownState( f8_local0, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+		CoD.Menu.UpdateButtonShownState( f8_local0, menu, controller, Enum.LUIButton.LUI_KEY_START )
+		CoD.Menu.UpdateButtonShownState( f8_local0, menu, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE )
+	end )
+	GroupsGrid:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "groups.skipViewFriendsInGroup" ), function ( model )
+		local f9_local0 = GroupsGrid
+		local f9_local1 = {
+			controller = controller,
+			name = "model_validation",
+			modelValue = Engine.GetModelValue( model ),
+			modelName = "groups.skipViewFriendsInGroup"
+		}
+		CoD.Menu.UpdateButtonShownState( f9_local0, menu, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE )
+	end )
+	GroupsGrid:registerEventHandler( "list_item_gain_focus", function ( element, event )
+		local f10_local0 = nil
+		FetchHighlightedGroupJoinApprovalType( self, element, controller, Enum.GroupBufferType.GROUP_BUFFER_TYPE_SEARCH )
+		return f10_local0
+	end )
+	GroupsGrid:registerEventHandler( "gain_focus", function ( element, event )
+		local f11_local0 = nil
+		if element.gainFocus then
+			f11_local0 = element:gainFocus( event )
+		elseif element.super.gainFocus then
+			f11_local0 = element.super:gainFocus( event )
+		end
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_START )
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE )
+		return f11_local0
+	end )
+	GroupsGrid:registerEventHandler( "lose_focus", function ( element, event )
+		local f12_local0 = nil
+		if element.loseFocus then
+			f12_local0 = element:loseFocus( event )
+		elseif element.super.loseFocus then
+			f12_local0 = element.super:loseFocus( event )
+		end
+		return f12_local0
+	end )
+	menu:AddButtonCallbackFunction( GroupsGrid, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( element, menu, controller, model )
+		if not SearchGroupResultsLoading( element, controller ) and ListHasElements( element ) and not IsSelfModelValueEqualTo( element, controller, "groupId", Engine.StringToXUIDDecimal( "0" ) ) and IsSelfModelValueNonEmptyString( element, controller, "name" ) then
+			SetSelectedGroup( self, element, controller )
+			ProcessListAction( self, element, controller )
+			return true
+		else
+			
+		end
+	end, function ( element, menu, controller )
+		if not SearchGroupResultsLoading( element, controller ) and ListHasElements( element ) and not IsSelfModelValueEqualTo( element, controller, "groupId", Engine.StringToXUIDDecimal( "0" ) ) and IsSelfModelValueNonEmptyString( element, controller, "name" ) then
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
+			return true
+		else
+			return false
+		end
+	end, false )
+	menu:AddButtonCallbackFunction( GroupsGrid, controller, Enum.LUIButton.LUI_KEY_START, "O", function ( element, menu, controller, model )
+		if not SearchGroupResultsLoading( element, controller ) and ListHasElements( element ) and not IsSelfModelValueEqualTo( element, controller, "groupId", Engine.StringToXUIDDecimal( "0" ) ) and IsSelfModelValueNonEmptyString( element, controller, "name" ) then
+			SetSelectedGroup( self, element, controller )
+			OpenGroupOptionsPopup( self, element, controller )
+			return true
+		else
+			
+		end
+	end, function ( element, menu, controller )
+		if not SearchGroupResultsLoading( element, controller ) and ListHasElements( element ) and not IsSelfModelValueEqualTo( element, controller, "groupId", Engine.StringToXUIDDecimal( "0" ) ) and IsSelfModelValueNonEmptyString( element, controller, "name" ) then
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_START, "MENU_OPTIONS" )
+			return true
+		else
+			return false
+		end
+	end, false )
+	menu:AddButtonCallbackFunction( GroupsGrid, controller, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE, "F", function ( element, menu, controller, model )
+		if not SearchGroupResultsLoading( element, controller ) and ListHasElements( element ) and not IsSelfModelValueEqualTo( element, controller, "groupId", Engine.StringToXUIDDecimal( "0" ) ) and IsSelfModelValueNonEmptyString( element, controller, "name" ) and not IsModelValueTrue( controller, "groups.skipViewFriendsInGroup" ) then
+			SetSelectedGroup( self, element, controller )
+			OpenGroupFriendsPopup( self, element, controller )
+			return true
+		else
+			
+		end
+	end, function ( element, menu, controller )
+		if not SearchGroupResultsLoading( element, controller ) and ListHasElements( element ) and not IsSelfModelValueEqualTo( element, controller, "groupId", Engine.StringToXUIDDecimal( "0" ) ) and IsSelfModelValueNonEmptyString( element, controller, "name" ) and not IsModelValueTrue( controller, "groups.skipViewFriendsInGroup" ) then
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBY_PSTRIANGLE, "" )
+			return false
+		else
+			return false
+		end
+	end, false )
+	self:addElement( GroupsGrid )
+	self.GroupsGrid = GroupsGrid
+	
+	local Spinner = LUI.UIImage.new()
+	Spinner:setLeftRight( true, false, 285, 413 )
+	Spinner:setTopBottom( true, false, 167.63, 295.63 )
+	Spinner:setAlpha( 0 )
+	Spinner:setupSpinner()
+	self:addElement( Spinner )
+	self.Spinner = Spinner
+	
+	local NoResults = LUI.UIText.new()
+	NoResults:setLeftRight( true, false, 0, 708 )
+	NoResults:setTopBottom( true, false, 191.5, 231.5 )
+	NoResults:setAlpha( 0 )
+	NoResults:setText( Engine.Localize( "GROUPS_SEARCH_NO_RESULTS" ) )
+	NoResults:setTTF( "fonts/default.ttf" )
+	NoResults:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
+	NoResults:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+	self:addElement( NoResults )
+	self.NoResults = NoResults
+	
+	local GroupsSummaryForSearch = CoD.GroupsSummaryForSearch.new( menu, controller )
+	GroupsSummaryForSearch:setLeftRight( true, false, 361, 708 )
+	GroupsSummaryForSearch:setTopBottom( true, false, -7, 466.25 )
+	self:addElement( GroupsSummaryForSearch )
+	self.GroupsSummaryForSearch = GroupsSummaryForSearch
+	
+	GroupsSummaryForSearch:linkToElementModel( GroupsGrid, nil, false, function ( model )
+		GroupsSummaryForSearch:setModel( model, controller )
+	end )
+	self.clipsPerState = {
+		DefaultState = {
+			DefaultClip = function ()
+				self:setupElementClipCounter( 4 )
+				GroupsGrid:completeAnimation()
+				self.GroupsGrid:setAlpha( 1 )
+				self.clipFinished( GroupsGrid, {} )
+				Spinner:completeAnimation()
+				self.Spinner:setAlpha( 0 )
+				self.clipFinished( Spinner, {} )
+				NoResults:completeAnimation()
+				self.NoResults:setAlpha( 0 )
+				self.clipFinished( NoResults, {} )
+				GroupsSummaryForSearch:completeAnimation()
+				self.GroupsSummaryForSearch:setAlpha( 1 )
+				self.clipFinished( GroupsSummaryForSearch, {} )
+			end
+		},
+		Loading = {
+			DefaultClip = function ()
+				self:setupElementClipCounter( 4 )
+				GroupsGrid:completeAnimation()
+				self.GroupsGrid:setAlpha( 0 )
+				self.clipFinished( GroupsGrid, {} )
+				Spinner:completeAnimation()
+				self.Spinner:setAlpha( 1 )
+				self.clipFinished( Spinner, {} )
+				NoResults:completeAnimation()
+				self.NoResults:setAlpha( 0 )
+				self.clipFinished( NoResults, {} )
+				GroupsSummaryForSearch:completeAnimation()
+				self.GroupsSummaryForSearch:setAlpha( 0 )
+				self.clipFinished( GroupsSummaryForSearch, {} )
+			end
+		},
+		NoResults = {
+			DefaultClip = function ()
+				self:setupElementClipCounter( 4 )
+				GroupsGrid:completeAnimation()
+				self.GroupsGrid:setAlpha( 0 )
+				self.clipFinished( GroupsGrid, {} )
+				Spinner:completeAnimation()
+				self.Spinner:setAlpha( 0 )
+				self.clipFinished( Spinner, {} )
+				NoResults:completeAnimation()
+				self.NoResults:setAlpha( 1 )
+				self.clipFinished( NoResults, {} )
+				GroupsSummaryForSearch:completeAnimation()
+				self.GroupsSummaryForSearch:setAlpha( 0 )
+				self.clipFinished( GroupsSummaryForSearch, {} )
+			end
+		}
+	}
+	self:mergeStateConditions( {
+		{
+			stateName = "Loading",
+			condition = function ( menu, element, event )
+				return IsModelValueTrue( controller, "groups.searchGroupsWaitingToStart" )
+			end
+		},
+		{
+			stateName = "NoResults",
+			condition = function ( menu, element, event )
+				local f24_local0 = IsModelValueEqualTo( controller, "groups.searchGroupsResultsCount", 0 )
+				if f24_local0 then
+					if not IsModelValueTrue( controller, "groups.searchGroupsWaitingToStart" ) then
+						f24_local0 = not IsModelValueTrue( controller, "groups.searchGroupsInProgress" )
+					else
+						f24_local0 = false
+					end
+				end
+				return f24_local0
+			end
+		}
+	} )
+	self:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "groups.searchGroupsWaitingToStart" ), function ( model )
+		menu:updateElementState( self, {
+			name = "model_validation",
+			menu = menu,
+			modelValue = Engine.GetModelValue( model ),
+			modelName = "groups.searchGroupsWaitingToStart"
+		} )
+	end )
+	self:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "groups.searchGroupsResultsCount" ), function ( model )
+		menu:updateElementState( self, {
+			name = "model_validation",
+			menu = menu,
+			modelValue = Engine.GetModelValue( model ),
+			modelName = "groups.searchGroupsResultsCount"
+		} )
+	end )
+	self:subscribeToModel( Engine.GetModel( Engine.GetModelForController( controller ), "groups.searchGroupsInProgress" ), function ( model )
+		menu:updateElementState( self, {
+			name = "model_validation",
+			menu = menu,
+			modelValue = Engine.GetModelValue( model ),
+			modelName = "groups.searchGroupsInProgress"
+		} )
+	end )
+	self:subscribeToGlobalModel( controller, "PerController", "groups.searchGroupsInProgress", function ( model )
+		local f28_local0 = self
+		if IsModelValueTrue( controller, "groups.searchGroupsInProgress" ) then
+			DisableNavigation( self, "GroupsGrid" )
+		else
+			EnableNavigation( self, "GroupsGrid" )
+		end
+	end )
+	GroupsGrid.id = "GroupsGrid"
+	self:registerEventHandler( "gain_focus", function ( self, event )
+		if self.m_focusable and self.GroupsGrid:processEvent( event ) then
+			return true
+		else
+			return LUI.UIElement.gainFocus( self, event )
+		end
+	end )
+	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
+		element.GroupsGrid:close()
+		element.GroupsSummaryForSearch:close()
+	end )
+	
+	if PostLoadFunc then
+		PostLoadFunc( self, controller, menu )
+	end
+	
+	return self
+end
+

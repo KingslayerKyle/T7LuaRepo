@@ -1,0 +1,352 @@
+require( "ui.uieditor.widgets.Border" )
+
+CoD.PerkItemWidgetItem_Internal = InheritFrom( LUI.UIElement )
+CoD.PerkItemWidgetItem_Internal.new = function ( menu, controller )
+	local self = LUI.UIElement.new()
+	if PreLoadFunc then
+		PreLoadFunc( self, controller )
+	end
+	self:setUseStencil( true )
+	self:setClass( CoD.PerkItemWidgetItem_Internal )
+	self.id = "PerkItemWidgetItem_Internal"
+	self.soundSet = "default"
+	self:setLeftRight( true, false, 0, 128 )
+	self:setTopBottom( true, false, 0, 91 )
+	self:makeFocusable()
+	self:setHandleMouse( true )
+	
+	local background = LUI.UIImage.new()
+	background:setLeftRight( true, true, 0, 0 )
+	background:setTopBottom( true, true, 0, 0 )
+	background:setRGB( 0.34, 0.37, 0.46 )
+	background:setAlpha( 0.3 )
+	background:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
+	self:addElement( background )
+	self.background = background
+	
+	local notAvailableImage = LUI.UIImage.new()
+	notAvailableImage:setLeftRight( true, true, -41, 41 )
+	notAvailableImage:setTopBottom( true, true, -4.5, 4.5 )
+	notAvailableImage:setRGB( 1, 1, 1 )
+	notAvailableImage:setAlpha( 0 )
+	notAvailableImage:setImage( RegisterImage( "uie_t7_menu_mp_cac_panelna_200x99" ) )
+	notAvailableImage:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
+	self:addElement( notAvailableImage )
+	self.notAvailableImage = notAvailableImage
+	
+	local perkLabel = LUI.UITightText.new()
+	perkLabel:setLeftRight( true, false, 3, 44 )
+	perkLabel:setTopBottom( false, true, -23, -3 )
+	perkLabel:setRGB( 0.9, 0.9, 0.9 )
+	perkLabel:setAlpha( 0 )
+	perkLabel:setTTF( "fonts/default.ttf" )
+	perkLabel:linkToElementModel( self, "name", true, function ( model )
+		local modelValue = Engine.GetModelValue( model )
+		if modelValue then
+			perkLabel:setText( Engine.Localize( modelValue ) )
+		end
+	end )
+	self:addElement( perkLabel )
+	self.perkLabel = perkLabel
+	
+	local needsLabel = LUI.UITightText.new()
+	needsLabel:setLeftRight( true, false, 4, 114 )
+	needsLabel:setTopBottom( false, true, -22, -2 )
+	needsLabel:setRGB( 0.9, 0.9, 0.9 )
+	needsLabel:setAlpha( 0 )
+	needsLabel:setText( Engine.Localize( "MENU_NEEDS_WILDCARD" ) )
+	needsLabel:setTTF( "fonts/default.ttf" )
+	self:addElement( needsLabel )
+	self.needsLabel = needsLabel
+	
+	local perkImage = LUI.UIImage.new()
+	perkImage:setLeftRight( false, false, -28, 28 )
+	perkImage:setTopBottom( true, false, 8, 64 )
+	perkImage:setRGB( 1, 1, 1 )
+	perkImage:setAlpha( 0 )
+	perkImage:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
+	perkImage:linkToElementModel( self, "image", true, function ( model )
+		local modelValue = Engine.GetModelValue( model )
+		if modelValue then
+			perkImage:setImage( RegisterImage( modelValue ) )
+		end
+	end )
+	self:addElement( perkImage )
+	self.perkImage = perkImage
+	
+	local plus = LUI.UIImage.new()
+	plus:setLeftRight( false, false, -16, 16 )
+	plus:setTopBottom( false, false, -16, 16 )
+	plus:setRGB( 0.4, 0.44, 0.52 )
+	plus:setAlpha( 0 )
+	plus:setImage( RegisterImage( "uie_kd_chart_plus" ) )
+	plus:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
+	self:addElement( plus )
+	self.plus = plus
+	
+	local border = CoD.Border.new( menu, controller )
+	border:setLeftRight( true, true, 0, 0 )
+	border:setTopBottom( true, true, 0, 0 )
+	border:setRGB( 1, 1, 1 )
+	border:setAlpha( 0 )
+	self:addElement( border )
+	self.border = border
+	
+	self.clipsPerState = {
+		DefaultState = {
+			DefaultClip = function ()
+				self:setupElementClipCounter( 7 )
+				background:completeAnimation()
+				self.background:setRGB( 0.34, 0.37, 0.46 )
+				self.background:setAlpha( 0.3 )
+				self.clipFinished( background, {} )
+				notAvailableImage:completeAnimation()
+				self.notAvailableImage:setAlpha( 0 )
+				self.clipFinished( notAvailableImage, {} )
+				perkLabel:completeAnimation()
+				self.perkLabel:setRGB( 0.9, 0.9, 0.9 )
+				self.perkLabel:setAlpha( 1 )
+				self.clipFinished( perkLabel, {} )
+				needsLabel:completeAnimation()
+				self.needsLabel:setRGB( 0.9, 0.9, 0.9 )
+				self.needsLabel:setAlpha( 0 )
+				self.clipFinished( needsLabel, {} )
+				perkImage:completeAnimation()
+				self.perkImage:setRGB( 1, 1, 1 )
+				self.perkImage:setAlpha( 1 )
+				self.clipFinished( perkImage, {} )
+				plus:completeAnimation()
+				self.plus:setRGB( 0.4, 0.44, 0.52 )
+				self.plus:setAlpha( 0 )
+				self.clipFinished( plus, {} )
+				border:completeAnimation()
+				self.border:setRGB( 1, 1, 1 )
+				self.border:setAlpha( 0 )
+				self.clipFinished( border, {} )
+			end,
+			Focus = function ()
+				self:setupElementClipCounter( 7 )
+				background:completeAnimation()
+				self.background:setRGB( 0.34, 0.37, 0.46 )
+				self.background:setAlpha( 0.3 )
+				self.clipFinished( background, {} )
+				notAvailableImage:completeAnimation()
+				self.notAvailableImage:setAlpha( 0 )
+				self.clipFinished( notAvailableImage, {} )
+				perkLabel:completeAnimation()
+				self.perkLabel:setRGB( 0.9, 0.9, 0.9 )
+				self.perkLabel:setAlpha( 1 )
+				self.clipFinished( perkLabel, {} )
+				needsLabel:completeAnimation()
+				self.needsLabel:setRGB( 0.9, 0.9, 0.9 )
+				self.needsLabel:setAlpha( 0 )
+				self.clipFinished( needsLabel, {} )
+				perkImage:completeAnimation()
+				self.perkImage:setRGB( 1, 1, 1 )
+				self.perkImage:setAlpha( 1 )
+				self.clipFinished( perkImage, {} )
+				plus:completeAnimation()
+				self.plus:setRGB( 0.4, 0.44, 0.52 )
+				self.plus:setAlpha( 0 )
+				self.clipFinished( plus, {} )
+				border:completeAnimation()
+				self.border:setRGB( 1, 0.41, 0 )
+				self.border:setAlpha( 1 )
+				self.clipFinished( border, {} )
+			end,
+			LoseFocus = function ()
+				self:setupElementClipCounter( 1 )
+				local borderFrame2 = function ( border, event )
+					if not event.interrupted then
+						border:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
+					end
+					border:setAlpha( 0 )
+					if event.interrupted then
+						self.clipFinished( border, event )
+					else
+						border:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+					end
+				end
+				
+				border:completeAnimation()
+				self.border:setAlpha( 1 )
+				borderFrame2( border, {} )
+			end
+		},
+		Unavailable = {
+			DefaultClip = function ()
+				self:setupElementClipCounter( 7 )
+				background:completeAnimation()
+				self.background:setRGB( 0.34, 0.37, 0.46 )
+				self.background:setAlpha( 0 )
+				self.clipFinished( background, {} )
+				notAvailableImage:completeAnimation()
+				self.notAvailableImage:setAlpha( 0.2 )
+				self.clipFinished( notAvailableImage, {} )
+				perkLabel:completeAnimation()
+				self.perkLabel:setRGB( 0.9, 0.9, 0.9 )
+				self.perkLabel:setAlpha( 0 )
+				self.clipFinished( perkLabel, {} )
+				needsLabel:completeAnimation()
+				self.needsLabel:setRGB( 0.9, 0.9, 0.9 )
+				self.needsLabel:setAlpha( 0 )
+				self.clipFinished( needsLabel, {} )
+				perkImage:completeAnimation()
+				self.perkImage:setRGB( 1, 1, 1 )
+				self.perkImage:setAlpha( 0 )
+				self.clipFinished( perkImage, {} )
+				plus:completeAnimation()
+				self.plus:setRGB( 0.4, 0.44, 0.52 )
+				self.plus:setAlpha( 0 )
+				self.plus:setZRot( 0 )
+				self.clipFinished( plus, {} )
+				border:completeAnimation()
+				self.border:setRGB( 1, 1, 1 )
+				self.border:setAlpha( 0 )
+				self.clipFinished( border, {} )
+			end,
+			Focus = function ()
+				self:setupElementClipCounter( 7 )
+				background:completeAnimation()
+				self.background:setRGB( 0.34, 0.37, 0.46 )
+				self.background:setAlpha( 0 )
+				self.clipFinished( background, {} )
+				notAvailableImage:completeAnimation()
+				self.notAvailableImage:setAlpha( 0.2 )
+				self.clipFinished( notAvailableImage, {} )
+				perkLabel:completeAnimation()
+				self.perkLabel:setRGB( 0.23, 0.25, 0.3 )
+				self.perkLabel:setAlpha( 0 )
+				self.clipFinished( perkLabel, {} )
+				needsLabel:completeAnimation()
+				self.needsLabel:setLeftRight( true, false, 4, 114 )
+				self.needsLabel:setTopBottom( false, true, -22, -2 )
+				self.needsLabel:setRGB( 0.34, 0.37, 0.46 )
+				self.needsLabel:setAlpha( 1 )
+				self.clipFinished( needsLabel, {} )
+				perkImage:completeAnimation()
+				self.perkImage:setRGB( 1, 1, 1 )
+				self.perkImage:setAlpha( 0 )
+				self.clipFinished( perkImage, {} )
+				plus:completeAnimation()
+				self.plus:setRGB( 0.4, 0.44, 0.52 )
+				self.plus:setAlpha( 0 )
+				self.clipFinished( plus, {} )
+				border:completeAnimation()
+				self.border:setRGB( 0.57, 0.58, 0.59 )
+				self.border:setAlpha( 1 )
+				self.clipFinished( border, {} )
+			end,
+			LoseFocus = function ()
+				self:setupElementClipCounter( 1 )
+				local borderFrame2 = function ( border, event )
+					if not event.interrupted then
+						border:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
+					end
+					border:setAlpha( 0 )
+					if event.interrupted then
+						self.clipFinished( border, event )
+					else
+						border:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+					end
+				end
+				
+				border:completeAnimation()
+				self.border:setAlpha( 1 )
+				borderFrame2( border, {} )
+			end
+		},
+		Unequipped = {
+			DefaultClip = function ()
+				self:setupElementClipCounter( 7 )
+				background:completeAnimation()
+				self.background:setRGB( 0.34, 0.37, 0.46 )
+				self.background:setAlpha( 0.3 )
+				self.clipFinished( background, {} )
+				notAvailableImage:completeAnimation()
+				self.notAvailableImage:setAlpha( 0 )
+				self.clipFinished( notAvailableImage, {} )
+				perkLabel:completeAnimation()
+				self.perkLabel:setRGB( 0.23, 0.25, 0.3 )
+				self.perkLabel:setAlpha( 0 )
+				self.clipFinished( perkLabel, {} )
+				needsLabel:completeAnimation()
+				self.needsLabel:setRGB( 0.9, 0.9, 0.9 )
+				self.needsLabel:setAlpha( 0 )
+				self.clipFinished( needsLabel, {} )
+				perkImage:completeAnimation()
+				self.perkImage:setRGB( 1, 1, 1 )
+				self.perkImage:setAlpha( 0 )
+				self.clipFinished( perkImage, {} )
+				plus:completeAnimation()
+				self.plus:setRGB( 0.4, 0.44, 0.52 )
+				self.plus:setAlpha( 0.3 )
+				self.clipFinished( plus, {} )
+				border:completeAnimation()
+				self.border:setRGB( 1, 0.41, 0 )
+				self.border:setAlpha( 0 )
+				self.clipFinished( border, {} )
+			end,
+			Focus = function ()
+				self:setupElementClipCounter( 7 )
+				background:completeAnimation()
+				self.background:setRGB( 0.34, 0.37, 0.46 )
+				self.background:setAlpha( 0.3 )
+				self.clipFinished( background, {} )
+				notAvailableImage:completeAnimation()
+				self.notAvailableImage:setAlpha( 0 )
+				self.clipFinished( notAvailableImage, {} )
+				perkLabel:completeAnimation()
+				self.perkLabel:setRGB( 0.23, 0.25, 0.3 )
+				self.perkLabel:setAlpha( 0 )
+				self.clipFinished( perkLabel, {} )
+				needsLabel:completeAnimation()
+				self.needsLabel:setRGB( 0.9, 0.9, 0.9 )
+				self.needsLabel:setAlpha( 0 )
+				self.clipFinished( needsLabel, {} )
+				perkImage:completeAnimation()
+				self.perkImage:setRGB( 1, 1, 1 )
+				self.perkImage:setAlpha( 0 )
+				self.clipFinished( perkImage, {} )
+				plus:completeAnimation()
+				self.plus:setRGB( 0.4, 0.44, 0.52 )
+				self.plus:setAlpha( 0.3 )
+				self.clipFinished( plus, {} )
+				border:completeAnimation()
+				self.border:setRGB( 1, 0.41, 0 )
+				self.border:setAlpha( 1 )
+				self.clipFinished( border, {} )
+			end,
+			LoseFocus = function ()
+				self:setupElementClipCounter( 1 )
+				local borderFrame2 = function ( border, event )
+					if not event.interrupted then
+						border:beginAnimation( "keyframe", 100, false, false, CoD.TweenType.Linear )
+					end
+					border:setAlpha( 0 )
+					if event.interrupted then
+						self.clipFinished( border, event )
+					else
+						border:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+					end
+				end
+				
+				border:completeAnimation()
+				self.border:setAlpha( 1 )
+				borderFrame2( border, {} )
+			end
+		}
+	}
+	self.close = function ( self )
+		self.border:close()
+		self.perkLabel:close()
+		self.perkImage:close()
+		CoD.PerkItemWidgetItem_Internal.super.close( self )
+	end
+	
+	if PostLoadFunc then
+		PostLoadFunc( self, controller, menu )
+	end
+	return self
+end
+

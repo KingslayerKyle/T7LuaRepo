@@ -1,0 +1,197 @@
+require( "ui.uieditor.widgets.BackgroundFrames.GenericMenuFrame" )
+require( "ui.uieditor.widgets.BubbleGumBuffs.BubbleGumPack" )
+require( "ui.uieditor.menus.ZM.BubblegumPacks" )
+require( "ui.uieditor.widgets.Lobby.Common.List1ButtonLarge_PH" )
+require( "ui.uieditor.menus.ZM.BubblegumPackEdit" )
+require( "ui.uieditor.widgets.BubbleGumBuffs.BubbleGumFootnote" )
+require( "ui.uieditor.widgets.Lobby.Lists.Members.LobbyMember" )
+
+local PostLoadFunc = function ( f1_arg0, f1_arg1 )
+	f1_arg0.disableBlur = true
+	if f1_arg0.LobbyList then
+		f1_arg0.LobbyList:makeNotFocusable()
+	end
+end
+
+LUI.createMenu.BubblegumBuffs = function ( controller )
+	local self = CoD.Menu.NewForUIEditor( "BubblegumBuffs" )
+	if PreLoadFunc then
+		PreLoadFunc( self, controller )
+	end
+	self.soundSet = "default"
+	self:setOwner( controller )
+	self:setLeftRight( true, true, 0, 0 )
+	self:setTopBottom( true, true, 0, 0 )
+	self:playSound( "menu_open" )
+	self.buttonModel = Engine.CreateModel( Engine.GetModelForController( controller ), "BubblegumBuffs.buttonPrompts" )
+	self.anyChildUsesUpdateState = true
+	
+	local GenericMenuFrame0 = CoD.GenericMenuFrame.new( self, controller )
+	GenericMenuFrame0:setLeftRight( true, true, 0, 0 )
+	GenericMenuFrame0:setTopBottom( true, true, 0, 0 )
+	GenericMenuFrame0.titleLabel:setText( Engine.Localize( "MENU_BUBBLEGUM_BUFFS_CAPS" ) )
+	GenericMenuFrame0.cac3dTitleIntermediary0.FE3dTitleContainer0.MenuTitle.TextBox1.Label0:setText( Engine.Localize( "MENU_BUBBLEGUM_BUFFS_CAPS" ) )
+	GenericMenuFrame0.cac3dTitleIntermediary0.FE3dTitleContainer0.MenuTitle.TextBox1.FeatureIcon:setImage( RegisterImage( "uie_t7_mp_icon_header_bubblebuffs" ) )
+	self:addElement( GenericMenuFrame0 )
+	self.GenericMenuFrame0 = GenericMenuFrame0
+	
+	local EquippedBuffsLabel = LUI.UITightText.new()
+	EquippedBuffsLabel:setLeftRight( true, false, 64, 264 )
+	EquippedBuffsLabel:setTopBottom( true, false, 120, 145 )
+	EquippedBuffsLabel:setText( Engine.Localize( "MENU_EQUIPPED_BUBBLEGUM_PACK_CAPS" ) )
+	EquippedBuffsLabel:setTTF( "fonts/default.ttf" )
+	self:addElement( EquippedBuffsLabel )
+	self.EquippedBuffsLabel = EquippedBuffsLabel
+	
+	local EquippedBubbleGumPack = CoD.BubbleGumPack.new( self, controller )
+	EquippedBubbleGumPack:setLeftRight( true, false, 64, 432 )
+	EquippedBubbleGumPack:setTopBottom( true, false, 152, 301 )
+	EquippedBubbleGumPack:registerEventHandler( "gain_focus", function ( element, event )
+		local f3_local0 = nil
+		if element.gainFocus then
+			f3_local0 = element:gainFocus( event )
+		elseif element.super.gainFocus then
+			f3_local0 = element.super:gainFocus( event )
+		end
+		CoD.Menu.UpdateButtonShownState( element, self, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+		return f3_local0
+	end )
+	EquippedBubbleGumPack:registerEventHandler( "lose_focus", function ( element, event )
+		local f4_local0 = nil
+		if element.loseFocus then
+			f4_local0 = element:loseFocus( event )
+		elseif element.super.loseFocus then
+			f4_local0 = element.super:loseFocus( event )
+		end
+		return f4_local0
+	end )
+	self:AddButtonCallbackFunction( EquippedBubbleGumPack, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( element, menu, controller, model )
+		NavigateToMenu( self, "BubblegumPacks", true, controller )
+		return true
+	end, function ( element, menu, controller )
+		CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
+		return true
+	end, false )
+	self:addElement( EquippedBubbleGumPack )
+	self.EquippedBubbleGumPack = EquippedBubbleGumPack
+	
+	local List1ButtonLargePH0 = CoD.List1ButtonLarge_PH.new( self, controller )
+	List1ButtonLargePH0:setLeftRight( true, false, 64, 344 )
+	List1ButtonLargePH0:setTopBottom( true, false, 308, 340 )
+	List1ButtonLargePH0.btnDisplayText:setText( Engine.Localize( "MENU_EDIT_BUBBLEGUM_PACK" ) )
+	List1ButtonLargePH0.btnDisplayTextStroke:setText( Engine.Localize( "MENU_EDIT_BUBBLEGUM_PACK" ) )
+	List1ButtonLargePH0:registerEventHandler( "gain_focus", function ( element, event )
+		local f7_local0 = nil
+		if element.gainFocus then
+			f7_local0 = element:gainFocus( event )
+		elseif element.super.gainFocus then
+			f7_local0 = element.super:gainFocus( event )
+		end
+		CoD.Menu.UpdateButtonShownState( element, self, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+		return f7_local0
+	end )
+	List1ButtonLargePH0:registerEventHandler( "lose_focus", function ( element, event )
+		local f8_local0 = nil
+		if element.loseFocus then
+			f8_local0 = element:loseFocus( event )
+		elseif element.super.loseFocus then
+			f8_local0 = element.super:loseFocus( event )
+		end
+		return f8_local0
+	end )
+	self:AddButtonCallbackFunction( List1ButtonLargePH0, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( element, menu, controller, model )
+		NavigateToMenu( self, "BubblegumPackEdit", true, controller )
+		return true
+	end, function ( element, menu, controller )
+		CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
+		return true
+	end, false )
+	self:addElement( List1ButtonLargePH0 )
+	self.List1ButtonLargePH0 = List1ButtonLargePH0
+	
+	local BubbleGumFootnote = CoD.BubbleGumFootnote.new( self, controller )
+	BubbleGumFootnote:setLeftRight( true, false, 578, 1216 )
+	BubbleGumFootnote:setTopBottom( true, false, 552, 658 )
+	BubbleGumFootnote.FootnoteTextBox:setText( Engine.Localize( "MENU_EQUIPPED_BGB_FOOTNOTE" ) )
+	self:addElement( BubbleGumFootnote )
+	self.BubbleGumFootnote = BubbleGumFootnote
+	
+	local LobbyList = LUI.UIList.new( self, controller, 2, 0, nil, false, false, 0, 0, false, true )
+	LobbyList:makeFocusable()
+	LobbyList:setLeftRight( false, true, -554, -64 )
+	LobbyList:setTopBottom( true, false, 120, 234 )
+	LobbyList:setDataSource( "LobbyList" )
+	LobbyList:setWidgetType( CoD.LobbyMember )
+	LobbyList:setVerticalCount( 4 )
+	self:addElement( LobbyList )
+	self.LobbyList = LobbyList
+	
+	EquippedBubbleGumPack.navigation = {
+		right = LobbyList,
+		down = List1ButtonLargePH0
+	}
+	List1ButtonLargePH0.navigation = {
+		up = EquippedBubbleGumPack
+	}
+	LobbyList.navigation = {
+		left = EquippedBubbleGumPack
+	}
+	CoD.Menu.AddNavigationHandler( self, self, controller )
+	self:registerEventHandler( "menu_loaded", function ( self, event )
+		local f11_local0 = nil
+		SendClientScriptMenuChangeNotify( controller, self, true )
+		ShowHeaderKickerAndIcon( self )
+		SetElementStateByElementName( self, "GenericMenuFrame0", controller, "Update" )
+		PlayClipOnElement( self, {
+			elementName = "GenericMenuFrame0",
+			clipName = "Intro"
+		}, controller )
+		PlayClip( self, "Intro", controller )
+		if not f11_local0 then
+			f11_local0 = self:dispatchEventToChildren( event )
+		end
+		return f11_local0
+	end )
+	self:AddButtonCallbackFunction( self, controller, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, nil, function ( element, menu, controller, model )
+		SendClientScriptMenuChangeNotify( controller, menu, false )
+		SaveLoadout( self, controller )
+		GoBack( self, controller )
+		ClearMenuSavedState( menu )
+		return true
+	end, function ( element, menu, controller )
+		CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBB_PSCIRCLE, "MP_BACK" )
+		return true
+	end, false )
+	GenericMenuFrame0:setModel( self.buttonModel, controller )
+	EquippedBubbleGumPack.id = "EquippedBubbleGumPack"
+	List1ButtonLargePH0.id = "List1ButtonLargePH0"
+	LobbyList.id = "LobbyList"
+	self:processEvent( {
+		name = "menu_loaded",
+		controller = controller
+	} )
+	self:processEvent( {
+		name = "update_state",
+		menu = self
+	} )
+	if not self:restoreState() then
+		self.EquippedBubbleGumPack:processEvent( {
+			name = "gain_focus",
+			controller = controller
+		} )
+	end
+	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
+		element.GenericMenuFrame0:close()
+		element.EquippedBubbleGumPack:close()
+		element.List1ButtonLargePH0:close()
+		element.BubbleGumFootnote:close()
+		element.LobbyList:close()
+		Engine.UnsubscribeAndFreeModel( Engine.GetModel( Engine.GetModelForController( controller ), "BubblegumBuffs.buttonPrompts" ) )
+	end )
+	if PostLoadFunc then
+		PostLoadFunc( self, controller )
+	end
+	
+	return self
+end
+

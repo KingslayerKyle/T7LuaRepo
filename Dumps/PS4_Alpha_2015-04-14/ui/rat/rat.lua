@@ -1,0 +1,293 @@
+if EnableGlobals ~= nil then
+	EnableGlobals()
+end
+Rat = {}
+if nil ~= DisableGlobals then
+	DisableGlobals()
+end
+require( "ui.rat.printelements" )
+Rat.RatTaskResult = {}
+Rat.RatTaskResult.Error = 0
+Rat.RatTaskResult.Pending = 1
+Rat.RatTaskResult.Success = 2
+Rat.SerializeToPython = function ( var )
+	local result = ""
+	if type( var ) == "table" then
+		result = "{"
+		for k, v in pairs( var ) do
+			result = result .. string.format( "'%s':%s,", k, Rat.SerializeToPython( v ) )
+		end
+		result = result .. "}"
+	elseif type( var ) == "boolean" then
+		if var == true then
+			result = "True"
+		else
+			result = "False"
+		end
+	elseif type( var ) == "string" then
+		result = string.format( "'%s'", var )
+	elseif type( var ) == "number" then
+		result = tostring( var )
+	elseif type( var ) == "nil" then
+		result = "None"
+	else
+		result = string.format( "'Unknown lua type %s'", type( var ) )
+	end
+	return result
+end
+
+local RatMenuInfo_SetMenuName = function ( self, name )
+	self.result.menu = name
+end
+
+local Inspect_BuildBaseMenuItem = function ( element )
+	local item = {
+		id = element.id,
+		children = {}
+	}
+	if element.navigation ~= nil then
+		local navPass = {}
+		for index, target in pairs( element.navigation ) do
+			local targetType = type( target )
+			if type( target ) ~= "function" then
+				navPass[index] = target.id
+			end
+		end
+		if next( navPass ) ~= nil then
+			item.nav = navPass
+		end
+		if element:isFocusable() then
+			item.canfocus = true
+		end
+		if element.m_inputDisabled then
+			item.inputdisabled = true
+		end
+	end
+	if element:isInFocus() then
+		item.focus = true
+	end
+	return item
+end
+
+local Inspect_BuildGridLayoutMenuItem = function ( element )
+	item = Inspect_BuildBaseMenuItem( element )
+	return item
+end
+
+local RatMenuInfo_New = function ()
+	local builder = {
+		result = {}
+	}
+	builder.result.items = {}
+	builder.result.menu = "Unknown"
+	builder.setMenuName = RatMenuInfo_SetMenuName
+	return builder
+end
+
+local GetActiveMenu = function ( root )
+	local child = root:getLastChild()
+	while child ~= nil do
+		local nextChild = child:getPreviousSibling()
+		if nextChild ~= nil and nextChild.menuName ~= nil then
+			return nextChild
+		end
+		child = nextChild
+	end
+end
+
+local BuildNavTargetListR = function ( element, list )
+	if element.navigation ~= nil then
+		for k, v in pairs( element.navigation ) do
+			if type( v ) ~= "function" then
+				list[v] = v
+			end
+		end
+	end
+	local child = element:getFirstChild()
+	while child ~= nil do
+		BuildNavTargetListR( child, list )
+		child = child:getNextSibling()
+	end
+end
+
+local IsNavigableGrid = function ( element )
+	if element.isGridLayout then
+		return element.isUIList
+	else
+		
+	end
+end
+
+local IsInterestingElement = function ( element, navList )
+	if navList[element] ~= nil then
+		return true
+	elseif element.navigation ~= nil and #element.navigation > 0 then
+		return true
+	elseif IsNavigableGrid( element ) then
+		return true
+	elseif element:isFocusable() then
+		return true
+	else
+		return false
+	end
+end
+
+local ParseMenuElementR = function ( element, container, navList )
+	if IsInterestingElement( element, navList ) then
+		if element.m_inputDisabled then
+			return 
+		end
+		local menuItem = Inspect_BuildBaseMenuItem( element )
+		container[#container + 1] = menuItem
+		if IsNavigableGrid( element ) then
+			local widgetIter = element.itemStencil:getFirstChild()
+			menuItem.type = "grid"
+			while widgetIter ~= nil do
+				local tempChildList = {}
+				ParseMenuElementR( widgetIter, tempChildList, navList )
+				if #tempChildList >= 1 then
+					tempChildList[1].row = widgetIter.gridInfoTable.gridRowIndex
+					tempChildList[1].col = widgetIter.gridInfoTable.gridColIndex
+					tempChildList[1].rspan = widgetIter.gridInfoTable.gridRowSpan
+					tempChildList[1].cspan = widgetIter.gridInfoTable.gridColSpan
+					menuItem.children[#menuItem.children + 1] = tempChildList[1]
+				end
+				widgetIter = widgetIter:getNextSibling()
+			end
+		else
+			local child = element:getFirstChild()
+			while child ~= nil do
+				ParseMenuElementR( child, menuItem.children, navList )
+				child = child:getNextSibling()
+			end
+		end
+		if #menuItem.children == 0 then
+			menuItem.children = nil
+		end
+	else
+		local child = element:getFirstChild()
+		while child ~= nil do
+			ParseMenuElementR( child, container, navList )
+			child = child:getNextSibling()
+		end
+	end
+end
+
+Rat.HandleGetRatMenuInfo = function ( menu, event )
+	local builder = RatMenuInfo_New()
+	if menu.menuName == "Lobby" then
+		local lobbyModel = LobbyData.GetLobbyNavModel()
+		local lobbyID = 0
+		if lobbyModel then
+			lobbyID = LobbyData.GetLobbyNav()
+		end
+		local target = LobbyData:UITargetFromId( lobbyID )
+		builder:setMenuName( target.name )
+	else
+		builder:setMenuName( menu.menuName )
+	end
+	local navList = {}
+	BuildNavTargetListR( menu, navList )
+	ParseMenuElementR( menu, builder.result.items, navList )
+	event.result = builder.result
+end
+
+Rat.RatGetMenuInfo = function ( self, event )
+	local menuInfoEvent = {
+		name = "rat_get_menu_info_internal",
+		immediate = true,
+		result = ""
+	}
+	self:processEvent( menuInfoEvent )
+	Engine.RatTransactionCompleted( event.trackingId, menuInfoEvent.result )
+end
+
+Rat.ProcessStringEvent = function ( self, event )
+	local sendEvent = {}
+	for k, v in string.gmatch( event.eventText, "([%w_]+) ?= ?([%w_]+),? ?" ) do
+		sendEvent[k] = tonumber( v )
+	end
+	for k, v in string.gmatch( event.eventText, "([%w_]+) ?= ?'([%w_]+)',? ?" ) do
+		sendEvent[k] = v
+	end
+	sendEvent.trackingId = event.trackingId
+	sendEvent.immediate = true
+	self:processEvent( sendEvent )
+end
+
+Rat.ExecuteLuiEvent = function ( self, event )
+	local execFunction = loadstring( event.toExecute )
+	local result = execFunction()
+	Engine.RatTransactionCompleted( event.trackingId, result )
+end
+
+Rat.InitLui = function ()
+	for index, root in pairs( LUI.roots ) do
+		root:registerEventHandler( "rat_get_menu_info", Rat.RatGetMenuInfo )
+		root:registerEventHandler( "rat_process_string_event", Rat.ProcessStringEvent )
+		root:registerEventHandler( "rat_execute_lui", Rat.ExecuteLuiEvent )
+	end
+end
+
+Rat.Evaluate = function ( data )
+	local execFunction = loadstring( data.expression )
+	local result = execFunction()
+	Engine.RatTransactionCompleted( data.trackingId, result )
+end
+
+local Rat_RootFixUp = function ( root )
+	if root == nil then
+		return LUI.roots.UIRootFull
+	elseif type( root ) == "string" then
+		return LUI.roots[root]
+	else
+		return root
+	end
+end
+
+Rat.FindCallbackInFocus = function ( element )
+	return element:isInFocus()
+end
+
+Rat.FindElementR = function ( element, callback )
+	if callback( element ) then
+		return element
+	end
+	local child = element:getFirstChild()
+	while child ~= nil do
+		local result = Rat.FindElementR( child, callback )
+		if result ~= nil then
+			return result
+		end
+		child = child:getNextSibling()
+	end
+end
+
+Rat.FindElement = function ( callback, root )
+	return Rat.FindElementR( Rat_RootFixUp( root ), callback )
+end
+
+Rat.FindElementByKey = function ( key, value, root )
+	local callback = function ( element )
+		return element[key] == value
+	end
+	
+	return Rat.FindElement( callback, root )
+end
+
+Rat.FindElementById = function ( id, root )
+	return Rat.FindElementByKey( "id", id, root )
+end
+
+Rat.StealFocusById = function ( id, root )
+	local focused = Rat.FindElement( Rat.FindCallbackInFocus, root )
+	if focused ~= nil then
+		focused:processEvent( LUI.UIButton.LoseFocusEvent )
+	end
+	local target = Rat.FindElementById( id, root )
+	target:processEvent( LUI.UIButton.GainFocusEvent )
+end
+
+if nil ~= LUI then
+	Rat.InitLui()
+end

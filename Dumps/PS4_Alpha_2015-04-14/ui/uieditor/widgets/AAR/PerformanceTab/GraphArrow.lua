@@ -1,0 +1,48 @@
+CoD.GraphArrow = InheritFrom( LUI.UIElement )
+CoD.GraphArrow.new = function ( menu, controller )
+	local self = LUI.UIElement.new()
+	if PreLoadFunc then
+		PreLoadFunc( self, controller )
+	end
+	self:setUseStencil( false )
+	self:setClass( CoD.GraphArrow )
+	self.id = "GraphArrow"
+	self.soundSet = "HUD"
+	self:setLeftRight( true, false, 0, 129 )
+	self:setTopBottom( true, false, 0, 33 )
+	
+	local Image0 = LUI.UIImage.new()
+	Image0:setLeftRight( true, false, 30.15, 108.5 )
+	Image0:setTopBottom( true, false, 0, 31.76 )
+	Image0:setImage( RegisterImage( "uie_t7_mp_hud_engame_rightarrowpanel" ) )
+	Image0:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_normal" ) )
+	self:addElement( Image0 )
+	self.Image0 = Image0
+	
+	local Text = LUI.UIText.new()
+	Text:setLeftRight( false, false, -64.5, 64.5 )
+	Text:setTopBottom( false, false, -11.18, 16.32 )
+	Text:setRGB( 0, 0, 0 )
+	Text:setTTF( "fonts/Entovo.ttf" )
+	Text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
+	Text:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+	Text:subscribeToGlobalModel( controller, "AARSPMGraph", "avgSPM", function ( model )
+		local modelValue = Engine.GetModelValue( model )
+		if modelValue then
+			Text:setText( Engine.Localize( modelValue ) )
+		end
+	end )
+	self:addElement( Text )
+	self.Text = Text
+	
+	self.close = function ( self )
+		self.Text:close()
+		CoD.GraphArrow.super.close( self )
+	end
+	
+	if PostLoadFunc then
+		PostLoadFunc( self, controller, menu )
+	end
+	return self
+end
+

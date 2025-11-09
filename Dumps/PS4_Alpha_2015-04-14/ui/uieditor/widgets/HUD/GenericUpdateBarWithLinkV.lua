@@ -1,0 +1,31 @@
+CoD.GenericUpdateBarWithLinkV = InheritFrom( LUI.UIElement )
+CoD.GenericUpdateBarWithLinkV.new = function ( menu, controller )
+	local self = LUI.UIElement.new()
+	if PreLoadFunc then
+		PreLoadFunc( self, controller )
+	end
+	self:setUseStencil( false )
+	self:setClass( CoD.GenericUpdateBarWithLinkV )
+	self.id = "GenericUpdateBarWithLinkV"
+	self.soundSet = "HUD"
+	self:setLeftRight( true, false, 0, 400 )
+	self:setTopBottom( true, false, 0, 100 )
+	
+	local barImage = LUI.UIImage.new()
+	barImage:setLeftRight( true, true, 0, 0 )
+	barImage:setTopBottom( true, true, 0, 0 )
+	barImage:setRGB( 1, 1, 1 )
+	barImage:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_wipe" ) )
+	barImage:setShaderVector( 0, 1, 0, 0, 0 )
+	barImage:setShaderVector( 1, 0, 0, 0, 0 )
+	barImage:setShaderVector( 2, 1, 0, 0, 0 )
+	barImage:setShaderVector( 3, 0, 0, 0, 0 )
+	self:addElement( barImage )
+	self.barImage = barImage
+	
+	if PostLoadFunc then
+		PostLoadFunc( self, controller, menu )
+	end
+	return self
+end
+

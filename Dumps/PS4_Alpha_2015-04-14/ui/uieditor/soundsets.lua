@@ -1,0 +1,195 @@
+SoundSet = {
+	none = nil,
+	default = {
+		action = "cac_grid_equip_item",
+		gain_focus = "cac_grid_nav",
+		list_action = "uin_select",
+		menu_go_back = "uin_cmn_backout",
+		menu_open = "cac_grid_equip_item",
+		list_up = "cac_slide_nav",
+		list_down = "cac_slide_nav",
+		list_left = "cac_slide_nav",
+		list_right = "cac_slide_nav",
+		partyease_slide_left = "uin_party_ease_slide",
+		partyease_slide_right = "uin_party_ease_slide_back",
+		toggle = "uin_paint_image_flip_toggle"
+	},
+	FrontendMain = {
+		action = "uin_enter_mode_menu"
+	},
+	ModeSelection = {
+		list_action = "uin_select",
+		list_up = "uin_up",
+		list_down = "uin_down",
+		menu_go_back = "uin_back"
+	},
+	CampaignMain = {
+		list_action = "uin_select",
+		list_up = "uin_up",
+		list_down = "uin_down",
+		menu_go_back = "uin_back_mode_select"
+	},
+	MultiplayerMain = {
+		list_action = "uin_select",
+		list_up = "uin_up",
+		list_down = "uin_down",
+		list_left = "cac_slide_nav",
+		list_right = "cac_slide_nav",
+		menu_go_back = "uin_back_mode_select",
+		team_switch = "uin_paint_image_flip_toggle",
+		menu_open = "cac_grid_equip_item",
+		gain_focus = "cac_grid_nav"
+	},
+	ZombiesMain = {
+		list_action = "uin_select",
+		list_up = "uin_up",
+		list_down = "uin_down",
+		menu_go_back = "uin_back_mode_select"
+	},
+	FriendsMenu = {
+		menu_open = "uin_open_friends",
+		list_action = "uin_select",
+		list_up = "uin_up",
+		list_down = "uin_down",
+		tab_changed = "uin_friends_left_right",
+		menu_go_back = "uin_back_mode_select"
+	},
+	HUD = {
+		hud_boot = "mpl_bootup_sequence",
+		medal_earned = "mpl_medal_earned"
+	},
+	RaidsPurchases = {
+		menu_open = "uin_resource_menu_open",
+		cancel_purchase = "uin_resource_menu_close",
+		cant_afford = "uin_cant_afford",
+		purchase = "uin_purchase"
+	},
+	CAC = {
+		menu_open_from_lobby = "cac_enter",
+		menu_open_from_edit = "cac_reenter",
+		menu_go_back = "cac_main_exit_cac",
+		list_up = "cac_main_nav",
+		list_down = "cac_main_nav",
+		list_action = "cac_main_edit_loadout",
+		menu_sub = "cac_open_wpn_cust_sub"
+	},
+	CAC_EditLoadout = {
+		cac_enter_wpn_cust = "cac_open_wpn_cust",
+		cac_enter_wpn_cust_sub = "cac_open_wpn_cust_sub",
+		menu_go_back = "cac_wpn_cust_exit",
+		list_up = "cac_wpn_cust_nav",
+		list_down = "cac_wpn_cust_nav",
+		list_left = "cac_wpn_cust_nav",
+		list_right = "cac_wpn_cust_nav",
+		navigate = "cac_loadout_nav",
+		unequip_item = "cac_equipment_remove",
+		equip_item = "cac_equipment_add_equipment",
+		equip_mod = "cac_equipment_add_mod"
+	},
+	CAC_SubMenu = {
+		menu_no_selection = "cac_cmn_backout",
+		list_up = "cac_slide_nav",
+		list_down = "cac_slide_nav",
+		list_left = "cac_slide_nav",
+		list_right = "cac_slide_nav",
+		toggle_switch = "cac_grid_equip_item"
+	},
+	Paintshop = {
+		list_action = "uin_paint_select",
+		tab_changed = "uin_paint_weapon_scroll",
+		list_up = "uin_paint_decal_nav",
+		list_down = "uin_paint_decal_nav",
+		list_left = "uin_paint_decal_nav",
+		list_right = "uin_paint_decal_nav",
+		list_back = "uin_cmn_backout",
+		menu_go_back = "uin_back",
+		save_box = "cac_grid_nav"
+	},
+	CustomizationEditor = {
+		list_action = "uin_paint_layer_select",
+		list_left = "uin_paint_layer_scroll",
+		list_right = "uin_paint_layer_scroll",
+		switch_camera = "uin_paint_camera",
+		color_picker = "uin_paint_color_picker",
+		flip_image = "uin_paint_image_flip_toggle",
+		toggle_outline = "uin_paint_image_outline_toggle",
+		scale = "uin_paint_image_manipulate",
+		rotate = "uin_paint_image_manipulate",
+		opacity = "uin_paint_image_manipulate",
+		options = "uin_paint_options",
+		menu_go_back = "uin_cmn_backout",
+		save_box = "cac_grid_nav",
+		gain_focus = "cac_grid_nav"
+	},
+	ChooseDecal = {
+		list_up = "uin_paint_decal_nav",
+		list_down = "uin_paint_decal_nav",
+		list_left = "uin_paint_decal_nav",
+		list_right = "uin_paint_decal_nav",
+		list_action = "uin_paint_decal_select",
+		tab_changed = "uin_paint_decal_cat_nav",
+		menu_go_back = "uin_back",
+		menu_enter = "cac_open_wpn_cust_sub",
+		item_select = "cac_equipment_add_equipment",
+		gain_focus = "cac_grid_nav"
+	},
+	SelectColor = {
+		menu_open = "uin_paint_color_picker",
+		menu_go_back = "uin_back",
+		action = "uin_paint_color_select",
+		toggle_color_picker = "uin_paint_color_mixer"
+	},
+	SelectColor_ColorSwatchPicker = {
+		list_up = "uin_paint_grid_nav",
+		list_down = "uin_paint_grid_nav",
+		list_left = "uin_paint_grid_nav",
+		list_right = "uin_paint_grid_nav",
+		gain_focus = "uin_paint_grid_nav"
+	},
+	SelectColor_ColorMixer = {
+		list_up = "uin_paint_grid_nav",
+		list_down = "uin_paint_grid_nav",
+		list_left = "uin_paint_image_manipulate",
+		list_right = "uin_paint_image_manipulate",
+		list_action = nil,
+		manipulate_slider = "uin_paint_image_manipulate"
+	},
+	CAC_PrimaryWeapon = LUI.ShallowCopy( SoundSet.CAC_SubMenu )
+}
+SoundSet.CAC_PrimaryWeapon.equip_item = "cac_slide_equip_item_weapon"
+SoundSet.CAC_PrimaryWeapon.list_up = "cac_slide_nav_up"
+SoundSet.CAC_PrimaryWeapon.list_down = "cac_slide_nav_down"
+SoundSet.CAC_PrimaryWeapon.list_left = "cac_slide_nav_lr"
+SoundSet.CAC_PrimaryWeapon.list_right = "cac_slide_nav_lr"
+SoundSet.CAC_SecondaryWeapon = LUI.ShallowCopy( SoundSet.CAC_SubMenu )
+SoundSet.CAC_SecondaryWeapon.equip_item = "cac_slide_equip_item_weapon"
+SoundSet.CAC_SecondaryWeapon.list_up = "cac_slide_nav_up"
+SoundSet.CAC_SecondaryWeapon.list_down = "cac_slide_nav_down"
+SoundSet.CAC_SecondaryWeapon.list_left = "cac_slide_nav_lr"
+SoundSet.CAC_SecondaryWeapon.list_right = "cac_slide_nav_lr"
+SoundSet.CAC_PrimaryAttachment = LUI.ShallowCopy( SoundSet.CAC_SubMenu )
+SoundSet.CAC_PrimaryAttachment.equip_item = "cac_equipment_add_equipment"
+SoundSet.CAC_SecondaryAttachment = LUI.ShallowCopy( SoundSet.CAC_SubMenu )
+SoundSet.CAC_SecondaryAttachment.equip_item = "cac_equipment_add_equipment"
+SoundSet.CAC_LethalGrenade = LUI.ShallowCopy( SoundSet.CAC_SubMenu )
+SoundSet.CAC_LethalGrenade.equip_item = "cac_equipment_add_lethal"
+SoundSet.CAC_TacticalGrenade = LUI.ShallowCopy( SoundSet.CAC_SubMenu )
+SoundSet.CAC_TacticalGrenade.equip_item = "cac_equipment_add_tactical"
+SoundSet.CAC_Perk = LUI.ShallowCopy( SoundSet.CAC_SubMenu )
+SoundSet.CAC_Perk.equip_item = "cac_perk_select"
+SoundSet.CAC_Wildcard = LUI.ShallowCopy( SoundSet.CAC_SubMenu )
+SoundSet.CAC_Wildcard.equip_item = "cac_grid_equip_item_wildcard"
+SoundSet.CAC_Overcapacity = LUI.ShallowCopy( SoundSet.CAC_SubMenu )
+SoundSet.CAC_Overcapacity.menu_open = "cac_overload_enter"
+SoundSet.CAC_Overcapacity.menu_no_selection = "cac_overload_exit"
+SoundSet.CAC_Overcapacity.list_action = "cac_overload_select"
+SoundSet.AbilityWheel = {
+	menu_open = "uin_cybercore_menu_open",
+	menu_start_close = "uin_cybercore_menu_close",
+	gain_focus = "uin_cybercore_menu_select",
+	left_bumper = "uin_cybercore_menu_bumpers",
+	right_bumper = "uin_cybercore_menu_bumpers"
+}
+SoundSet.BootMenu = {
+	menu_open = "uin_hud_bootup_display"
+}
