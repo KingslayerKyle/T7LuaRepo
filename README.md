@@ -19,10 +19,10 @@ This repository also contains a curated collection of my custom HUDs, UI widgets
 
 ### List of rebuilt files
 
-- [ui/uieditor/menus/hud/T7Hud_zm_factory.lua](https://github.com/KingslayerKyle/t7-lua/blob/main/Rebuilt/T7Hud_zm_factory.lua)
-- [ui/uieditor/widgets/HUD/ZM_Perks/ZMPerksContainerFactory.lua](https://github.com/KingslayerKyle/t7-lua/blob/main/Rebuilt/ZMPerksContainerFactory.lua)
-- [ui/uieditor/widgets/HUD/Waypoint/GenericWaypointContainer.lua](https://github.com/KingslayerKyle/t7-lua/blob/main/Rebuilt/GenericWaypointContainer.lua)
-- [ui/uieditor/widgets/MPHudWidgets/Waypoint.lua](https://github.com/KingslayerKyle/t7-lua/blob/main/Rebuilt/Waypoint.lua)
+- [ui/uieditor/menus/hud/T7Hud_zm_factory.lua](https://github.com/KingslayerKyle/T7LuaRepo/blob/main/Rebuilt/T7Hud_zm_factory.lua)
+- [ui/uieditor/widgets/HUD/ZM_Perks/ZMPerksContainerFactory.lua](https://github.com/KingslayerKyle/T7LuaRepo/blob/main/Rebuilt/ZMPerksContainerFactory.lua)
+- [ui/uieditor/widgets/HUD/Waypoint/GenericWaypointContainer.lua](https://github.com/KingslayerKyle/T7LuaRepo/blob/main/Rebuilt/GenericWaypointContainer.lua)
+- [ui/uieditor/widgets/MPHudWidgets/Waypoint.lua](https://github.com/KingslayerKyle/T7LuaRepo/blob/main/Rebuilt/Waypoint.lua)
 
 ### Contributing to Rebuilt Files
 
