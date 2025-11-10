@@ -1,0 +1,329 @@
+require( "ui.uieditor.widgets.CAC.Customization.CustomizationItem_ND" )
+require( "ui.uieditor.widgets.Scrollbars.verticalCounter" )
+require( "ui.uieditor.widgets.CAC.MenuChooseClass.ItemWidgets.InfoPaneItemNameLabel" )
+require( "ui.uieditor.widgets.CAC.BlackMarketItemDescription" )
+require( "ui.uieditor.widgets.CAC.cac_PrimaryWeaponDescription" )
+require( "ui.uieditor.widgets.CAC.Customization.ChallengeProgressionInfo" )
+require( "ui.uieditor.widgets.BlackMarket.CryptokeyTypeName" )
+
+CoD.WeaponCustomizationSelect = InheritFrom( LUI.UIElement )
+CoD.WeaponCustomizationSelect.new = function ( menu, controller )
+	local self = LUI.UIElement.new()
+	if PreLoadFunc then
+		PreLoadFunc( self, controller )
+	end
+	self:setUseStencil( false )
+	self:setClass( CoD.WeaponCustomizationSelect )
+	self.id = "WeaponCustomizationSelect"
+	self.soundSet = "CAC_EditLoadout"
+	self:setLeftRight( true, false, 0, 901 )
+	self:setTopBottom( true, false, 0, 505 )
+	self:makeFocusable()
+	self.onlyChildrenFocusable = true
+	self.anyChildUsesUpdateState = true
+	
+	local selectionList = LUI.UIList.new( menu, controller, 8, 0, nil, true, false, 0, 0, false, false )
+	selectionList:makeFocusable()
+	selectionList:setLeftRight( true, false, 9, 349 )
+	selectionList:setTopBottom( true, false, 11, 467 )
+	selectionList:setDataSource( "WeaponOptions" )
+	selectionList:setWidgetType( CoD.CustomizationItem_ND )
+	selectionList:setHorizontalCount( 3 )
+	selectionList:setVerticalCount( 4 )
+	selectionList:setSpacing( 8 )
+	selectionList:setVerticalCounter( CoD.verticalCounter )
+	selectionList:linkToElementModel( selectionList, "itemIndex", true, function ( model )
+		local f2_local0 = selectionList
+		local f2_local1 = {
+			controller = controller,
+			name = "model_validation",
+			modelValue = Engine.GetModelValue( model ),
+			modelName = "itemIndex"
+		}
+		CoD.Menu.UpdateButtonShownState( f2_local0, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+	end )
+	selectionList:linkToElementModel( selectionList, "isBMClassified", true, function ( model )
+		local f3_local0 = selectionList
+		local f3_local1 = {
+			controller = controller,
+			name = "model_validation",
+			modelValue = Engine.GetModelValue( model ),
+			modelName = "isBMClassified"
+		}
+		CoD.Menu.UpdateButtonShownState( f3_local0, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+	end )
+	selectionList:registerEventHandler( "list_item_gain_focus", function ( element, event )
+		local f4_local0 = nil
+		if IsItemWeaponOptionNew( element, controller ) then
+			SetWeaponOptionAsOld( menu, element, controller )
+			UpdateSelfElementState( menu, element, controller )
+			WC_WeaponOptionGainFocus( self, element, controller )
+		else
+			WC_WeaponOptionGainFocus( self, element, controller )
+		end
+		return f4_local0
+	end )
+	selectionList:registerEventHandler( "gain_focus", function ( element, event )
+		local f5_local0 = nil
+		if element.gainFocus then
+			f5_local0 = element:gainFocus( event )
+		elseif element.super.gainFocus then
+			f5_local0 = element.super:gainFocus( event )
+		end
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+		return f5_local0
+	end )
+	selectionList:registerEventHandler( "lose_focus", function ( element, event )
+		local f6_local0 = nil
+		if element.loseFocus then
+			f6_local0 = element:loseFocus( event )
+		elseif element.super.loseFocus then
+			f6_local0 = element.super:loseFocus( event )
+		end
+		return f6_local0
+	end )
+	menu:AddButtonCallbackFunction( selectionList, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( element, menu, controller, model )
+		if not IsItemWeaponOptionLocked( menu, element, controller ) and not IsSelfModelValueTrue( element, controller, "isBMClassified" ) then
+			WC_SelectingCustomization( self, element, controller )
+			SetWeaponOptionClassItem( self, element, controller )
+			PlaySoundAlias( "cac_equipment_add_equipment" )
+			return true
+		else
+			
+		end
+	end, function ( element, menu, controller )
+		CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
+		if not IsItemWeaponOptionLocked( menu, element, controller ) and not IsSelfModelValueTrue( element, controller, "isBMClassified" ) then
+			return true
+		else
+			return false
+		end
+	end, false )
+	selectionList:mergeStateConditions( {
+		{
+			stateName = "Equipped",
+			condition = function ( menu, element, event )
+				return IsItemWeaponOptionEquipped( element, controller )
+			end
+		},
+		{
+			stateName = "New",
+			condition = function ( menu, element, event )
+				return IsItemWeaponOptionNew( element, controller )
+			end
+		},
+		{
+			stateName = "Locked",
+			condition = function ( menu, element, event )
+				return IsItemWeaponOptionLocked( menu, element, controller )
+			end
+		}
+	} )
+	selectionList:linkToElementModel( selectionList, "isBMClassified", true, function ( model )
+		menu:updateElementState( selectionList, {
+			name = "model_validation",
+			menu = menu,
+			modelValue = Engine.GetModelValue( model ),
+			modelName = "isBMClassified"
+		} )
+	end )
+	selectionList:linkToElementModel( selectionList, "itemIndex", true, function ( model )
+		menu:updateElementState( selectionList, {
+			name = "model_validation",
+			menu = menu,
+			modelValue = Engine.GetModelValue( model ),
+			modelName = "itemIndex"
+		} )
+	end )
+	self:addElement( selectionList )
+	self.selectionList = selectionList
+	
+	local categoryName = CoD.InfoPaneItemNameLabel.new( menu, controller )
+	categoryName:setLeftRight( true, false, 371, 771 )
+	categoryName:setTopBottom( true, false, 11, 45 )
+	self:addElement( categoryName )
+	self.categoryName = categoryName
+	
+	local itemDescription = CoD.BlackMarketItemDescription.new( menu, controller )
+	itemDescription:setLeftRight( true, false, 371, 755 )
+	itemDescription:setTopBottom( true, false, 49, 71 )
+	itemDescription.weaponDescTextBox:setText( Engine.Localize( LocalizeIntoString( "MPUI_BLACKMARKET_ITEM_CLASSIFIED_DESC", "MENU_CAMO" ) ) )
+	itemDescription:mergeStateConditions( {
+		{
+			stateName = "NotVisible",
+			condition = function ( menu, element, event )
+				return not IsSelfModelValueTrue( element, controller, "isBMClassified" )
+			end
+		}
+	} )
+	itemDescription:linkToElementModel( itemDescription, "isBMClassified", true, function ( model )
+		menu:updateElementState( itemDescription, {
+			name = "model_validation",
+			menu = menu,
+			modelValue = Engine.GetModelValue( model ),
+			modelName = "isBMClassified"
+		} )
+	end )
+	self:addElement( itemDescription )
+	self.itemDescription = itemDescription
+	
+	local prestigeDescription = CoD.cac_PrimaryWeaponDescription.new( menu, controller )
+	prestigeDescription:setLeftRight( true, false, 371, 755 )
+	prestigeDescription:setTopBottom( true, false, 49, 71 )
+	prestigeDescription:mergeStateConditions( {
+		{
+			stateName = "NotVisible",
+			condition = function ( menu, element, event )
+				return not IsWeaponPrestigeItem( element, controller )
+			end
+		}
+	} )
+	prestigeDescription:linkToElementModel( prestigeDescription, "itemIndex", true, function ( model )
+		menu:updateElementState( prestigeDescription, {
+			name = "model_validation",
+			menu = menu,
+			modelValue = Engine.GetModelValue( model ),
+			modelName = "itemIndex"
+		} )
+	end )
+	self:addElement( prestigeDescription )
+	self.prestigeDescription = prestigeDescription
+	
+	local progressionInfo = CoD.ChallengeProgressionInfo.new( menu, controller )
+	progressionInfo:setLeftRight( true, false, 360, 780 )
+	progressionInfo:setTopBottom( false, true, -146, -34 )
+	progressionInfo:mergeStateConditions( {
+		{
+			stateName = "NotVisible",
+			condition = function ( menu, element, event )
+				return ShouldHideItemWeaponOption( element, controller )
+			end
+		},
+		{
+			stateName = "Completed",
+			condition = function ( menu, element, event )
+				return not IsItemWeaponOptionLocked( menu, element, controller )
+			end
+		},
+		{
+			stateName = "NotAvailable",
+			condition = function ( menu, element, event )
+				return not IsSelfModelValueNonEmptyString( element, controller, "unlockProgressAndTarget" )
+			end
+		}
+	} )
+	progressionInfo:linkToElementModel( progressionInfo, "itemIndex", true, function ( model )
+		menu:updateElementState( progressionInfo, {
+			name = "model_validation",
+			menu = menu,
+			modelValue = Engine.GetModelValue( model ),
+			modelName = "itemIndex"
+		} )
+	end )
+	progressionInfo:linkToElementModel( progressionInfo, "unlockProgressAndTarget", true, function ( model )
+		menu:updateElementState( progressionInfo, {
+			name = "model_validation",
+			menu = menu,
+			modelValue = Engine.GetModelValue( model ),
+			modelName = "unlockProgressAndTarget"
+		} )
+	end )
+	self:addElement( progressionInfo )
+	self.progressionInfo = progressionInfo
+	
+	local rarityType = CoD.CryptokeyTypeName.new( menu, controller )
+	rarityType:setLeftRight( true, false, 371, 455 )
+	rarityType:setTopBottom( false, true, -60, -38 )
+	rarityType:mergeStateConditions( {
+		{
+			stateName = "Visible",
+			condition = function ( menu, element, event )
+				local f23_local0
+				if not IsSelfModelValueTrue( element, controller, "isBMClassified" ) then
+					f23_local0 = IsSelfModelValueNonEmptyString( element, controller, "rarity" )
+				else
+					f23_local0 = false
+				end
+				return f23_local0
+			end
+		}
+	} )
+	rarityType:linkToElementModel( rarityType, "isBMClassified", true, function ( model )
+		menu:updateElementState( rarityType, {
+			name = "model_validation",
+			menu = menu,
+			modelValue = Engine.GetModelValue( model ),
+			modelName = "isBMClassified"
+		} )
+	end )
+	rarityType:linkToElementModel( rarityType, "rarity", true, function ( model )
+		menu:updateElementState( rarityType, {
+			name = "model_validation",
+			menu = menu,
+			modelValue = Engine.GetModelValue( model ),
+			modelName = "rarity"
+		} )
+	end )
+	self:addElement( rarityType )
+	self.rarityType = rarityType
+	
+	categoryName:linkToElementModel( selectionList, "name", true, function ( model )
+		local name = Engine.GetModelValue( model )
+		if name then
+			categoryName.itemName:setText( Engine.Localize( name ) )
+		end
+	end )
+	itemDescription:linkToElementModel( selectionList, nil, false, function ( model )
+		itemDescription:setModel( model, controller )
+	end )
+	prestigeDescription:linkToElementModel( selectionList, nil, false, function ( model )
+		prestigeDescription:setModel( model, controller )
+	end )
+	prestigeDescription:linkToElementModel( selectionList, "description", true, function ( model )
+		local description = Engine.GetModelValue( model )
+		if description then
+			prestigeDescription.weaponDescTextBox:setText( Engine.Localize( description ) )
+		end
+	end )
+	progressionInfo:linkToElementModel( selectionList, nil, false, function ( model )
+		progressionInfo:setModel( model, controller )
+	end )
+	progressionInfo:linkToElementModel( selectionList, "weaponOptionType", true, function ( model )
+		local weaponOptionType = Engine.GetModelValue( model )
+		if weaponOptionType then
+			progressionInfo.requirementTitle:setText( Engine.Localize( GetWeaponOptionProgressTitle( controller, weaponOptionType ) ) )
+		end
+	end )
+	progressionInfo:linkToElementModel( selectionList, "weaponOptionType", true, function ( model )
+		local weaponOptionType = Engine.GetModelValue( model )
+		if weaponOptionType then
+			progressionInfo.completedTitle:setText( Engine.Localize( GetWeaponOptionCompleteTitle( controller, weaponOptionType ) ) )
+		end
+	end )
+	rarityType:linkToElementModel( selectionList, "rarityType", false, function ( model )
+		rarityType:setModel( model, controller )
+	end )
+	selectionList.id = "selectionList"
+	self:registerEventHandler( "gain_focus", function ( self, event )
+		if self.m_focusable and self.selectionList:processEvent( event ) then
+			return true
+		else
+			return LUI.UIElement.gainFocus( self, event )
+		end
+	end )
+	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
+		element.selectionList:close()
+		element.categoryName:close()
+		element.itemDescription:close()
+		element.prestigeDescription:close()
+		element.progressionInfo:close()
+		element.rarityType:close()
+	end )
+	
+	if PostLoadFunc then
+		PostLoadFunc( self, controller, menu )
+	end
+	
+	return self
+end
+

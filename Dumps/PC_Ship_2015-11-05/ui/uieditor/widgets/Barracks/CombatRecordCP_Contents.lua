@@ -1,0 +1,991 @@
+require( "ui.uieditor.widgets.StartMenu.StartMenu_frame_noBG" )
+require( "ui.uieditor.widgets.Barracks.CombatRecordItemButton" )
+require( "ui.uieditor.menus.Barracks.CombatRecordMP.CombatRecordWeapons" )
+require( "ui.uieditor.menus.Barracks.CombatRecordMP.CombatRecordEquipment" )
+require( "ui.uieditor.menus.Barracks.CombatRecordCP.CombatRecordCybercore" )
+require( "ui.uieditor.widgets.Barracks.CombatRecord_LineDivider" )
+require( "ui.uieditor.widgets.Barracks.CombatRecordSummaryStatBig" )
+require( "ui.uieditor.menus.Barracks.CombatRecordCP.CombatRecordCPMaps" )
+require( "ui.uieditor.menus.Barracks.CombatRecordCP.CombatRecordAccolades" )
+require( "ui.uieditor.menus.Barracks.CombatRecordCP.CombatRecordCollectibles" )
+
+CoD.CombatRecordCP_Contents = InheritFrom( LUI.UIElement )
+CoD.CombatRecordCP_Contents.new = function ( menu, controller )
+	local self = LUI.UIElement.new()
+	if PreLoadFunc then
+		PreLoadFunc( self, controller )
+	end
+	self:setUseStencil( false )
+	self:setClass( CoD.CombatRecordCP_Contents )
+	self.id = "CombatRecordCP_Contents"
+	self.soundSet = "default"
+	self:setLeftRight( true, false, 0, 1125 )
+	self:setTopBottom( true, false, 0, 545 )
+	self:makeFocusable()
+	self.onlyChildrenFocusable = true
+	self.anyChildUsesUpdateState = true
+	
+	local SummaryTitle = LUI.UITightText.new()
+	SummaryTitle:setLeftRight( true, false, 0, 200 )
+	SummaryTitle:setTopBottom( true, false, 0, 25 )
+	SummaryTitle:setText( Engine.Localize( "MENU_GLOBAL_CAREER_SNAPSHOT_CAPS" ) )
+	SummaryTitle:setTTF( "fonts/default.ttf" )
+	self:addElement( SummaryTitle )
+	self.SummaryTitle = SummaryTitle
+	
+	local TimePlayedText = LUI.UITightText.new()
+	TimePlayedText:setLeftRight( false, true, -146.5, 0 )
+	TimePlayedText:setTopBottom( true, false, 5, 25 )
+	TimePlayedText:setTTF( "fonts/default.ttf" )
+	TimePlayedText:subscribeToGlobalModel( controller, "StorageGlobal", "stats_cp", function ( model )
+		local statsCp = Engine.GetModelValue( model )
+		if statsCp then
+			TimePlayedText:setText( Engine.Localize( SecondsAsTimePlayedString( StorageLookup( controller, "playerstatslist.time_played_total.statvalue", statsCp ) ) ) )
+		end
+	end )
+	self:addElement( TimePlayedText )
+	self.TimePlayedText = TimePlayedText
+	
+	local Emblem = LUI.UIImage.new()
+	Emblem:setLeftRight( false, false, -546, -420 )
+	Emblem:setTopBottom( true, false, 42, 168 )
+	Emblem:subscribeToGlobalModel( controller, "StorageGlobal", "stats_cp", function ( model )
+		local statsCp = Engine.GetModelValue( model )
+		if statsCp then
+			Emblem:setImage( RegisterImage( GetRankIconLarge( GetRankIcon( controller, "playerstatslist.rank.statvalue", "playerstatslist.plevel.statvalue", "cp", statsCp ) ) ) )
+		end
+	end )
+	self:addElement( Emblem )
+	self.Emblem = Emblem
+	
+	local StartMenuframenoBG00 = CoD.StartMenu_frame_noBG.new( menu, controller )
+	StartMenuframenoBG00:setLeftRight( false, false, -407, -199 )
+	StartMenuframenoBG00:setTopBottom( false, false, -198, -137 )
+	self:addElement( StartMenuframenoBG00 )
+	self.StartMenuframenoBG00 = StartMenuframenoBG00
+	
+	local RankNameBackground = LUI.UIImage.new()
+	RankNameBackground:setLeftRight( false, false, -404.25, -201.5 )
+	RankNameBackground:setTopBottom( true, false, 77, 105 )
+	RankNameBackground:setAlpha( 0.6 )
+	self:addElement( RankNameBackground )
+	self.RankNameBackground = RankNameBackground
+	
+	local RankBackground = LUI.UIImage.new()
+	RankBackground:setLeftRight( false, false, -404.25, -201.5 )
+	RankBackground:setTopBottom( true, false, 105, 133 )
+	RankBackground:setRGB( 0, 0, 0 )
+	RankBackground:setAlpha( 0.8 )
+	self:addElement( RankBackground )
+	self.RankBackground = RankBackground
+	
+	local RankName = LUI.UIText.new()
+	RankName:setLeftRight( false, false, -404.25, -201.5 )
+	RankName:setTopBottom( true, false, 81, 101 )
+	RankName:setRGB( 0, 0, 0 )
+	RankName:setTTF( "fonts/escom.ttf" )
+	RankName:setLetterSpacing( 1 )
+	RankName:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
+	RankName:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+	RankName:subscribeToGlobalModel( controller, "StorageGlobal", "stats_cp", function ( model )
+		local statsCp = Engine.GetModelValue( model )
+		if statsCp then
+			RankName:setText( Engine.Localize( RankTitleFromStorage( controller, "cp", statsCp ) ) )
+		end
+	end )
+	self:addElement( RankName )
+	self.RankName = RankName
+	
+	local Rank = LUI.UIText.new()
+	Rank:setLeftRight( false, false, -404.25, -201.5 )
+	Rank:setTopBottom( true, false, 107, 129 )
+	Rank:setTTF( "fonts/escom.ttf" )
+	Rank:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
+	Rank:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+	Rank:subscribeToGlobalModel( controller, "StorageGlobal", "stats_cp", function ( model )
+		local statsCp = Engine.GetModelValue( model )
+		if statsCp then
+			Rank:setText( Engine.Localize( RankToLevelString( "cp", StorageLookup( controller, "playerstatslist.rank.statvalue", statsCp ) ) ) )
+		end
+	end )
+	self:addElement( Rank )
+	self.Rank = Rank
+	
+	local WeaponsButton = CoD.CombatRecordItemButton.new( menu, controller )
+	WeaponsButton:setLeftRight( true, false, 0, 370 )
+	WeaponsButton:setTopBottom( true, false, 209.5, 373.5 )
+	WeaponsButton.ItemImage:setAlpha( 0 )
+	WeaponsButton.GameModeImage2:setAlpha( 0 )
+	WeaponsButton.ButtonTitle:setText( Engine.Localize( "MENU_WEAPONS" ) )
+	WeaponsButton:subscribeToGlobalModel( controller, "CombatRecordDeadliestWeapon", "itemIndex", function ( model )
+		local itemIndex = Engine.GetModelValue( model )
+		if itemIndex then
+			WeaponsButton.WeaponImage:setImage( RegisterImage( AppendIfMatch( "menu_mp_lobby_none_selected", "_rec", AppendIfNotMatch( "menu_mp_lobby_none_selected", "_pu", GetWeaponImageByIndexAndMode( "mp", itemIndex ) ) ) ) )
+		end
+	end )
+	WeaponsButton:subscribeToGlobalModel( controller, "CombatRecordDeadliestWeapon", "itemName", function ( model )
+		local itemName = Engine.GetModelValue( model )
+		if itemName then
+			WeaponsButton.ButtonTitle0:setText( Engine.Localize( LocalizeIntoString( "MENU_CR_DEADLIEST", itemName ) ) )
+		end
+	end )
+	WeaponsButton:registerEventHandler( "gain_focus", function ( element, event )
+		local f8_local0 = nil
+		if element.gainFocus then
+			f8_local0 = element:gainFocus( event )
+		elseif element.super.gainFocus then
+			f8_local0 = element.super:gainFocus( event )
+		end
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+		return f8_local0
+	end )
+	WeaponsButton:registerEventHandler( "lose_focus", function ( element, event )
+		local f9_local0 = nil
+		if element.loseFocus then
+			f9_local0 = element:loseFocus( event )
+		elseif element.super.loseFocus then
+			f9_local0 = element.super:loseFocus( event )
+		end
+		return f9_local0
+	end )
+	menu:AddButtonCallbackFunction( WeaponsButton, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( element, menu, controller, model )
+		if InSafehouse() then
+			OpenOverlay( self, "CombatRecordWeapons", controller, "", "" )
+			UnpauseGame( menu, controller )
+			return true
+		else
+			NavigateToMenu( self, "CombatRecordWeapons", true, controller )
+			return true
+		end
+	end, function ( element, menu, controller )
+		if InSafehouse() then
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "" )
+			return false
+		else
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
+			return true
+		end
+	end, false )
+	self:addElement( WeaponsButton )
+	self.WeaponsButton = WeaponsButton
+	
+	local EquipmentButton = CoD.CombatRecordItemButton.new( menu, controller )
+	EquipmentButton:setLeftRight( true, false, 377, 747 )
+	EquipmentButton:setTopBottom( true, false, 209.5, 373.5 )
+	EquipmentButton.WeaponImage:setAlpha( 0 )
+	EquipmentButton.GameModeImage2:setAlpha( 0 )
+	EquipmentButton.ButtonTitle:setText( Engine.Localize( "MENU_EQUIPMENT" ) )
+	EquipmentButton:subscribeToGlobalModel( controller, "CombatRecordDeadliestEquipment", "itemIndex", function ( model )
+		local itemIndex = Engine.GetModelValue( model )
+		if itemIndex then
+			EquipmentButton.ItemImage:setImage( RegisterImage( AppendIfMatch( "menu_mp_lobby_none_selected", "_new", GetItemImageByIndexAndMode( "mp", itemIndex ) ) ) )
+		end
+	end )
+	EquipmentButton:subscribeToGlobalModel( controller, "CombatRecordDeadliestEquipment", "itemName", function ( model )
+		local itemName = Engine.GetModelValue( model )
+		if itemName then
+			EquipmentButton.ButtonTitle0:setText( Engine.Localize( LocalizeIntoString( "MENU_CR_MOST_USED", itemName ) ) )
+		end
+	end )
+	EquipmentButton:registerEventHandler( "gain_focus", function ( element, event )
+		local f14_local0 = nil
+		if element.gainFocus then
+			f14_local0 = element:gainFocus( event )
+		elseif element.super.gainFocus then
+			f14_local0 = element.super:gainFocus( event )
+		end
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+		return f14_local0
+	end )
+	EquipmentButton:registerEventHandler( "lose_focus", function ( element, event )
+		local f15_local0 = nil
+		if element.loseFocus then
+			f15_local0 = element:loseFocus( event )
+		elseif element.super.loseFocus then
+			f15_local0 = element.super:loseFocus( event )
+		end
+		return f15_local0
+	end )
+	menu:AddButtonCallbackFunction( EquipmentButton, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( element, menu, controller, model )
+		if InSafehouse() then
+			OpenOverlay( self, "CombatRecordEquipment", controller, "", "" )
+			UnpauseGame( menu, controller )
+			return true
+		else
+			NavigateToMenu( self, "CombatRecordEquipment", true, controller )
+			return true
+		end
+	end, function ( element, menu, controller )
+		if InSafehouse() then
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "" )
+			return false
+		else
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
+			return true
+		end
+	end, false )
+	self:addElement( EquipmentButton )
+	self.EquipmentButton = EquipmentButton
+	
+	local CybercoreButton = CoD.CombatRecordItemButton.new( menu, controller )
+	CybercoreButton:setLeftRight( true, false, 754, 1124 )
+	CybercoreButton:setTopBottom( true, false, 209.5, 373.5 )
+	CybercoreButton.WeaponImage:setAlpha( 0 )
+	CybercoreButton.GameModeImage2:setAlpha( 0 )
+	CybercoreButton.ButtonTitle:setText( Engine.Localize( "MENU_CYBERNETIC_COMBAT" ) )
+	CybercoreButton:subscribeToGlobalModel( controller, "CombatRecordDeadliestCybercore", "itemIndex", function ( model )
+		local itemIndex = Engine.GetModelValue( model )
+		if itemIndex then
+			CybercoreButton.ItemImage:setImage( RegisterImage( GetCybercoreImageByIndexAndMode( "cp", itemIndex ) ) )
+		end
+	end )
+	CybercoreButton:subscribeToGlobalModel( controller, "CombatRecordDeadliestCybercore", "itemName", function ( model )
+		local itemName = Engine.GetModelValue( model )
+		if itemName then
+			CybercoreButton.ButtonTitle0:setText( Engine.Localize( LocalizeIntoString( "MENU_CR_MOST_USED", itemName ) ) )
+		end
+	end )
+	CybercoreButton:registerEventHandler( "gain_focus", function ( element, event )
+		local f20_local0 = nil
+		if element.gainFocus then
+			f20_local0 = element:gainFocus( event )
+		elseif element.super.gainFocus then
+			f20_local0 = element.super:gainFocus( event )
+		end
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+		return f20_local0
+	end )
+	CybercoreButton:registerEventHandler( "lose_focus", function ( element, event )
+		local f21_local0 = nil
+		if element.loseFocus then
+			f21_local0 = element:loseFocus( event )
+		elseif element.super.loseFocus then
+			f21_local0 = element.super:loseFocus( event )
+		end
+		return f21_local0
+	end )
+	menu:AddButtonCallbackFunction( CybercoreButton, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( element, menu, controller, model )
+		if InSafehouse() then
+			OpenOverlay( self, "CombatRecordCybercore", controller, "", "" )
+			UnpauseGame( menu, controller )
+			return true
+		else
+			NavigateToMenu( self, "CombatRecordCybercore", true, controller )
+			return true
+		end
+	end, function ( element, menu, controller )
+		if InSafehouse() then
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "" )
+			return false
+		else
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
+			return true
+		end
+	end, false )
+	self:addElement( CybercoreButton )
+	self.CybercoreButton = CybercoreButton
+	
+	local Line10 = LUI.UIImage.new()
+	Line10:setLeftRight( true, true, 1, -1098.5 )
+	Line10:setTopBottom( true, false, 25, 33 )
+	Line10:setAlpha( 0.66 )
+	Line10:setImage( RegisterImage( "uie_t7_menu_cac_tabline" ) )
+	Line10:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
+	self:addElement( Line10 )
+	self.Line10 = Line10
+	
+	local Image3 = LUI.UIImage.new()
+	Image3:setLeftRight( true, true, 1, -1098.5 )
+	Image3:setTopBottom( true, false, 179, 187 )
+	Image3:setAlpha( 0.66 )
+	Image3:setImage( RegisterImage( "uie_t7_menu_cac_tabline" ) )
+	Image3:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
+	self:addElement( Image3 )
+	self.Image3 = Image3
+	
+	local Image4 = LUI.UIImage.new()
+	Image4:setLeftRight( true, true, 1099.5, 0 )
+	Image4:setTopBottom( true, false, 25, 33 )
+	Image4:setAlpha( 0.66 )
+	Image4:setImage( RegisterImage( "uie_t7_menu_cac_tabline" ) )
+	Image4:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
+	self:addElement( Image4 )
+	self.Image4 = Image4
+	
+	local Image5 = LUI.UIImage.new()
+	Image5:setLeftRight( true, true, 1099.5, 0 )
+	Image5:setTopBottom( true, false, 179, 187 )
+	Image5:setAlpha( 0.66 )
+	Image5:setImage( RegisterImage( "uie_t7_menu_cac_tabline" ) )
+	Image5:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
+	self:addElement( Image5 )
+	self.Image5 = Image5
+	
+	local CombatRecordLineDivider = CoD.CombatRecord_LineDivider.new( menu, controller )
+	CombatRecordLineDivider:setLeftRight( true, false, 362.5, 387.5 )
+	CombatRecordLineDivider:setTopBottom( true, false, 25, 38 )
+	self:addElement( CombatRecordLineDivider )
+	self.CombatRecordLineDivider = CombatRecordLineDivider
+	
+	local CombatRecordLineDivider2 = CoD.CombatRecord_LineDivider.new( menu, controller )
+	CombatRecordLineDivider2:setLeftRight( true, false, 361, 386 )
+	CombatRecordLineDivider2:setTopBottom( true, false, 174, 187 )
+	CombatRecordLineDivider2:setZRot( 180 )
+	self:addElement( CombatRecordLineDivider2 )
+	self.CombatRecordLineDivider2 = CombatRecordLineDivider2
+	
+	local Image6 = LUI.UIImage.new()
+	Image6:setLeftRight( true, true, 1, 0 )
+	Image6:setTopBottom( true, false, 180.5, 185.5 )
+	Image6:setAlpha( 0.15 )
+	Image6:setImage( RegisterImage( "uie_t7_menu_cac_tabline" ) )
+	Image6:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
+	self:addElement( Image6 )
+	self.Image6 = Image6
+	
+	local CombatRecordSummaryStatBig0 = CoD.CombatRecordSummaryStatBig.new( menu, controller )
+	CombatRecordSummaryStatBig0:setLeftRight( true, false, 377.63, 568.63 )
+	CombatRecordSummaryStatBig0:setTopBottom( true, false, 77, 138 )
+	CombatRecordSummaryStatBig0.StatLabel:setText( Engine.Localize( "MENU_KILLS_CAPS" ) )
+	CombatRecordSummaryStatBig0.StatValue:setText( Engine.Localize( CombatRecordGetStat( controller, "playerstatslist.kills", "888" ) ) )
+	self:addElement( CombatRecordSummaryStatBig0 )
+	self.CombatRecordSummaryStatBig0 = CombatRecordSummaryStatBig0
+	
+	local CombatRecordSummaryStatBig00 = CoD.CombatRecordSummaryStatBig.new( menu, controller )
+	CombatRecordSummaryStatBig00:setLeftRight( true, false, 756.96, 947.96 )
+	CombatRecordSummaryStatBig00:setTopBottom( true, false, 77, 138 )
+	CombatRecordSummaryStatBig00.StatLabel:setText( Engine.Localize( "MENU_TOTAL_SCORE_CAPS" ) )
+	CombatRecordSummaryStatBig00.StatValue:setText( Engine.Localize( CombatRecordGetStat( controller, "playerstatslist.score", "888" ) ) )
+	self:addElement( CombatRecordSummaryStatBig00 )
+	self.CombatRecordSummaryStatBig00 = CombatRecordSummaryStatBig00
+	
+	local CombatRecordSummaryStatBig000 = CoD.CombatRecordSummaryStatBig.new( menu, controller )
+	CombatRecordSummaryStatBig000:setLeftRight( true, false, 555, 746 )
+	CombatRecordSummaryStatBig000:setTopBottom( true, false, 77, 138 )
+	CombatRecordSummaryStatBig000.StatLabel:setText( Engine.Localize( "MENU_ACCURACY_CAPS" ) )
+	CombatRecordSummaryStatBig000:subscribeToGlobalModel( controller, "CombatRecordTotalWeaponAccuracy", "percent", function ( model )
+		local percent = Engine.GetModelValue( model )
+		if percent then
+			CombatRecordSummaryStatBig000.StatValue:setText( Engine.Localize( percent ) )
+		end
+	end )
+	self:addElement( CombatRecordSummaryStatBig000 )
+	self.CombatRecordSummaryStatBig000 = CombatRecordSummaryStatBig000
+	
+	local CombatRecordSummaryStatBig0000 = CoD.CombatRecordSummaryStatBig.new( menu, controller )
+	CombatRecordSummaryStatBig0000:setLeftRight( true, false, 931.5, 1122.5 )
+	CombatRecordSummaryStatBig0000:setTopBottom( true, false, 77, 138 )
+	CombatRecordSummaryStatBig0000.StatLabel:setText( Engine.Localize( "MENU_PERCENT_COMPLETE_CAPS" ) )
+	CombatRecordSummaryStatBig0000:subscribeToGlobalModel( controller, "CombatRecordCPPercentComplete", "percent", function ( model )
+		local percent = Engine.GetModelValue( model )
+		if percent then
+			CombatRecordSummaryStatBig0000.StatValue:setText( Engine.Localize( percent ) )
+		end
+	end )
+	self:addElement( CombatRecordSummaryStatBig0000 )
+	self.CombatRecordSummaryStatBig0000 = CombatRecordSummaryStatBig0000
+	
+	local MissionButton = CoD.CombatRecordItemButton.new( menu, controller )
+	MissionButton:setLeftRight( true, false, 0, 370 )
+	MissionButton:setTopBottom( true, false, 380.5, 544.5 )
+	MissionButton.WeaponImage:setAlpha( 0 )
+	MissionButton.ItemImage:setImage( RegisterImage( "uie_score" ) )
+	MissionButton.GameModeImage2:setAlpha( 0 )
+	MissionButton.ButtonTitle:setText( Engine.Localize( "MENU_MISSIONS" ) )
+	MissionButton:subscribeToGlobalModel( controller, "CombatRecordBestScoreMap", "mapName", function ( model )
+		local mapName = Engine.GetModelValue( model )
+		if mapName then
+			MissionButton.ButtonTitle0:setText( Engine.Localize( LocalizeIntoString( "MENU_CR_HIGHEST_SCORE", MapNameToLocalizedMapName( mapName ) ) ) )
+		end
+	end )
+	MissionButton:registerEventHandler( "gain_focus", function ( element, event )
+		local f27_local0 = nil
+		if element.gainFocus then
+			f27_local0 = element:gainFocus( event )
+		elseif element.super.gainFocus then
+			f27_local0 = element.super:gainFocus( event )
+		end
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+		return f27_local0
+	end )
+	MissionButton:registerEventHandler( "lose_focus", function ( element, event )
+		local f28_local0 = nil
+		if element.loseFocus then
+			f28_local0 = element:loseFocus( event )
+		elseif element.super.loseFocus then
+			f28_local0 = element.super:loseFocus( event )
+		end
+		return f28_local0
+	end )
+	menu:AddButtonCallbackFunction( MissionButton, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( element, menu, controller, model )
+		if InSafehouse() then
+			OpenOverlay( self, "CombatRecordCPMaps", controller, "", "" )
+			return true
+		else
+			NavigateToMenu( self, "CombatRecordCPMaps", true, controller )
+			return true
+		end
+	end, function ( element, menu, controller )
+		CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
+		return true
+	end, false )
+	self:addElement( MissionButton )
+	self.MissionButton = MissionButton
+	
+	local AccoladesButton = CoD.CombatRecordItemButton.new( menu, controller )
+	AccoladesButton:setLeftRight( true, false, 377, 747 )
+	AccoladesButton:setTopBottom( true, false, 380.5, 544.5 )
+	AccoladesButton.WeaponImage:setAlpha( 0 )
+	AccoladesButton.ItemImage:setImage( RegisterImage( "uie_indestructible" ) )
+	AccoladesButton.GameModeImage2:setAlpha( 0 )
+	AccoladesButton.ButtonTitle:setText( Engine.Localize( "MENU_ACCOLADES" ) )
+	AccoladesButton:subscribeToGlobalModel( controller, "CombatRecordTotalAccoladesCompleted", "accoladesCompleted", function ( model )
+		local accoladesCompleted = Engine.GetModelValue( model )
+		if accoladesCompleted then
+			AccoladesButton.ButtonTitle0:setText( Engine.Localize( LocalizeIntoString( "MENU_CR_EARNED", accoladesCompleted ) ) )
+		end
+	end )
+	AccoladesButton:registerEventHandler( "gain_focus", function ( element, event )
+		local f32_local0 = nil
+		if element.gainFocus then
+			f32_local0 = element:gainFocus( event )
+		elseif element.super.gainFocus then
+			f32_local0 = element.super:gainFocus( event )
+		end
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+		return f32_local0
+	end )
+	AccoladesButton:registerEventHandler( "lose_focus", function ( element, event )
+		local f33_local0 = nil
+		if element.loseFocus then
+			f33_local0 = element:loseFocus( event )
+		elseif element.super.loseFocus then
+			f33_local0 = element.super:loseFocus( event )
+		end
+		return f33_local0
+	end )
+	menu:AddButtonCallbackFunction( AccoladesButton, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( element, menu, controller, model )
+		if InSafehouse() then
+			OpenOverlay( self, "CombatRecordAccolades", controller, "", "" )
+			return true
+		else
+			NavigateToMenu( self, "CombatRecordAccolades", true, controller )
+			return true
+		end
+	end, function ( element, menu, controller )
+		if InSafehouse() then
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "" )
+			return false
+		else
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
+			return true
+		end
+	end, false )
+	self:addElement( AccoladesButton )
+	self.AccoladesButton = AccoladesButton
+	
+	local CollectibleButton = CoD.CombatRecordItemButton.new( menu, controller )
+	CollectibleButton:setLeftRight( true, false, 754, 1124 )
+	CollectibleButton:setTopBottom( true, false, 380.5, 544.5 )
+	CollectibleButton.WeaponImage:setAlpha( 0 )
+	CollectibleButton.ItemImage:setImage( RegisterImage( "uie_collectibles" ) )
+	CollectibleButton.GameModeImage2:setAlpha( 0 )
+	CollectibleButton.ButtonTitle:setText( Engine.Localize( "CPUI_COLLECTIBLES" ) )
+	CollectibleButton:subscribeToGlobalModel( controller, "CombatRecordTotalCollectiblesFound", "collectiblesFound", function ( model )
+		local collectiblesFound = Engine.GetModelValue( model )
+		if collectiblesFound then
+			CollectibleButton.ButtonTitle0:setText( Engine.Localize( LocalizeIntoString( "MENU_CR_FOUND", collectiblesFound ) ) )
+		end
+	end )
+	CollectibleButton:registerEventHandler( "gain_focus", function ( element, event )
+		local f37_local0 = nil
+		if element.gainFocus then
+			f37_local0 = element:gainFocus( event )
+		elseif element.super.gainFocus then
+			f37_local0 = element.super:gainFocus( event )
+		end
+		CoD.Menu.UpdateButtonShownState( element, menu, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS )
+		return f37_local0
+	end )
+	CollectibleButton:registerEventHandler( "lose_focus", function ( element, event )
+		local f38_local0 = nil
+		if element.loseFocus then
+			f38_local0 = element:loseFocus( event )
+		elseif element.super.loseFocus then
+			f38_local0 = element.super:loseFocus( event )
+		end
+		return f38_local0
+	end )
+	menu:AddButtonCallbackFunction( CollectibleButton, controller, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "ENTER", function ( element, menu, controller, model )
+		if InSafehouse() then
+			OpenOverlay( self, "CombatRecordCollectibles", controller, "", "" )
+			UnpauseGame( menu, controller )
+			return true
+		else
+			NavigateToMenu( self, "CombatRecordCollectibles", true, controller )
+			return true
+		end
+	end, function ( element, menu, controller )
+		if InSafehouse() then
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "" )
+			return false
+		else
+			CoD.Menu.SetButtonLabel( menu, Enum.LUIButton.LUI_KEY_XBA_PSCROSS, "MENU_SELECT" )
+			return true
+		end
+	end, false )
+	self:addElement( CollectibleButton )
+	self.CollectibleButton = CollectibleButton
+	
+	local CombatRecordLineDivider0 = CoD.CombatRecord_LineDivider.new( menu, controller )
+	CombatRecordLineDivider0:setLeftRight( true, false, 738.5, 763.5 )
+	CombatRecordLineDivider0:setTopBottom( true, false, 25, 38 )
+	self:addElement( CombatRecordLineDivider0 )
+	self.CombatRecordLineDivider0 = CombatRecordLineDivider0
+	
+	local CombatRecordLineDivider1 = CoD.CombatRecord_LineDivider.new( menu, controller )
+	CombatRecordLineDivider1:setLeftRight( true, false, 738, 763 )
+	CombatRecordLineDivider1:setTopBottom( true, false, 174, 187 )
+	CombatRecordLineDivider1:setZRot( 180 )
+	self:addElement( CombatRecordLineDivider1 )
+	self.CombatRecordLineDivider1 = CombatRecordLineDivider1
+	
+	local Image60 = LUI.UIImage.new()
+	Image60:setLeftRight( true, true, 1, 0 )
+	Image60:setTopBottom( true, false, 26, 31 )
+	Image60:setAlpha( 0.15 )
+	Image60:setImage( RegisterImage( "uie_t7_menu_cac_tabline" ) )
+	Image60:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
+	self:addElement( Image60 )
+	self.Image60 = Image60
+	
+	local Vline2 = LUI.UIImage.new()
+	Vline2:setLeftRight( true, false, 553.17, 555.17 )
+	Vline2:setTopBottom( true, false, 33, 179 )
+	Vline2:setAlpha( 0.35 )
+	Vline2:setImage( RegisterImage( "uie_t7_menu_frontend_featuredemblemline" ) )
+	Vline2:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
+	self:addElement( Vline2 )
+	self.Vline2 = Vline2
+	
+	local Vline20 = LUI.UIImage.new()
+	Vline20:setLeftRight( true, false, 927.17, 929.17 )
+	Vline20:setTopBottom( true, false, 33, 179 )
+	Vline20:setAlpha( 0.35 )
+	Vline20:setImage( RegisterImage( "uie_t7_menu_frontend_featuredemblemline" ) )
+	Vline20:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
+	self:addElement( Vline20 )
+	self.Vline20 = Vline20
+	
+	local Image0 = LUI.UIImage.new()
+	Image0:setLeftRight( true, false, 373.5, 375.5 )
+	Image0:setTopBottom( true, false, 30, 183 )
+	Image0:setAlpha( 0.35 )
+	Image0:setImage( RegisterImage( "uie_t7_menu_frontend_featuredemblemline" ) )
+	Image0:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
+	self:addElement( Image0 )
+	self.Image0 = Image0
+	
+	local Image1 = LUI.UIImage.new()
+	Image1:setLeftRight( true, false, 749.5, 751.5 )
+	Image1:setTopBottom( true, false, 28, 186 )
+	Image1:setAlpha( 0.35 )
+	Image1:setImage( RegisterImage( "uie_t7_menu_frontend_featuredemblemline" ) )
+	Image1:setMaterial( LUI.UIImage.GetCachedMaterial( "ui_add" ) )
+	self:addElement( Image1 )
+	self.Image1 = Image1
+	
+	WeaponsButton.navigation = {
+		right = EquipmentButton,
+		down = MissionButton
+	}
+	EquipmentButton.navigation = {
+		left = WeaponsButton,
+		right = CybercoreButton,
+		down = AccoladesButton
+	}
+	CybercoreButton.navigation = {
+		left = EquipmentButton,
+		down = CollectibleButton
+	}
+	MissionButton.navigation = {
+		up = WeaponsButton,
+		right = AccoladesButton
+	}
+	AccoladesButton.navigation = {
+		left = MissionButton,
+		up = EquipmentButton,
+		right = CollectibleButton
+	}
+	CollectibleButton.navigation = {
+		left = AccoladesButton,
+		up = CybercoreButton
+	}
+	self.clipsPerState = {
+		DefaultState = {
+			DefaultClip = function ()
+				self:setupElementClipCounter( 11 )
+				local EmblemFrame2 = function ( Emblem, event )
+					if not event.interrupted then
+						Emblem:beginAnimation( "keyframe", 39, false, false, CoD.TweenType.Linear )
+					end
+					Emblem:setAlpha( 1 )
+					if event.interrupted then
+						self.clipFinished( Emblem, event )
+					else
+						Emblem:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+					end
+				end
+				
+				Emblem:completeAnimation()
+				self.Emblem:setAlpha( 0 )
+				EmblemFrame2( Emblem, {} )
+				local f41_local1 = function ( f43_arg0, f43_arg1 )
+					if not f43_arg1.interrupted then
+						f43_arg0:beginAnimation( "keyframe", 19, false, false, CoD.TweenType.Linear )
+					end
+					f43_arg0:setAlpha( 0.6 )
+					if f43_arg1.interrupted then
+						self.clipFinished( f43_arg0, f43_arg1 )
+					else
+						f43_arg0:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+					end
+				end
+				
+				RankNameBackground:beginAnimation( "keyframe", 39, false, false, CoD.TweenType.Linear )
+				RankNameBackground:setAlpha( 0 )
+				RankNameBackground:registerEventHandler( "transition_complete_keyframe", f41_local1 )
+				local f41_local2 = function ( f44_arg0, f44_arg1 )
+					if not f44_arg1.interrupted then
+						f44_arg0:beginAnimation( "keyframe", 20, false, false, CoD.TweenType.Linear )
+					end
+					f44_arg0:setAlpha( 1 )
+					if f44_arg1.interrupted then
+						self.clipFinished( f44_arg0, f44_arg1 )
+					else
+						f44_arg0:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+					end
+				end
+				
+				RankBackground:beginAnimation( "keyframe", 29, false, false, CoD.TweenType.Linear )
+				RankBackground:setAlpha( 0 )
+				RankBackground:registerEventHandler( "transition_complete_keyframe", f41_local2 )
+				local f41_local3 = function ( f45_arg0, f45_arg1 )
+					if not f45_arg1.interrupted then
+						f45_arg0:beginAnimation( "keyframe", 19, false, false, CoD.TweenType.Linear )
+					end
+					f45_arg0:setAlpha( 1 )
+					if f45_arg1.interrupted then
+						self.clipFinished( f45_arg0, f45_arg1 )
+					else
+						f45_arg0:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+					end
+				end
+				
+				RankName:beginAnimation( "keyframe", 39, false, false, CoD.TweenType.Linear )
+				RankName:setAlpha( 0 )
+				RankName:registerEventHandler( "transition_complete_keyframe", f41_local3 )
+				local f41_local4 = function ( f46_arg0, f46_arg1 )
+					if not f46_arg1.interrupted then
+						f46_arg0:beginAnimation( "keyframe", 29, false, false, CoD.TweenType.Bounce )
+					end
+					f46_arg0:setAlpha( 1 )
+					if f46_arg1.interrupted then
+						self.clipFinished( f46_arg0, f46_arg1 )
+					else
+						f46_arg0:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+					end
+				end
+				
+				Rank:beginAnimation( "keyframe", 29, false, false, CoD.TweenType.Linear )
+				Rank:setAlpha( 0 )
+				Rank:registerEventHandler( "transition_complete_keyframe", f41_local4 )
+				local WeaponsButtonFrame2 = function ( WeaponsButton, event )
+					local WeaponsButtonFrame3 = function ( WeaponsButton, event )
+						local WeaponsButtonFrame4 = function ( WeaponsButton, event )
+							if not event.interrupted then
+								WeaponsButton:beginAnimation( "keyframe", 10, false, false, CoD.TweenType.Linear )
+							end
+							WeaponsButton:setAlpha( 1 )
+							if event.interrupted then
+								self.clipFinished( WeaponsButton, event )
+							else
+								WeaponsButton:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+							end
+						end
+						
+						if event.interrupted then
+							WeaponsButtonFrame4( WeaponsButton, event )
+							return 
+						else
+							WeaponsButton:beginAnimation( "keyframe", 9, false, false, CoD.TweenType.Linear )
+							WeaponsButton:setAlpha( 0.54 )
+							WeaponsButton:registerEventHandler( "transition_complete_keyframe", WeaponsButtonFrame4 )
+						end
+					end
+					
+					if event.interrupted then
+						WeaponsButtonFrame3( WeaponsButton, event )
+						return 
+					else
+						WeaponsButton:beginAnimation( "keyframe", 29, false, false, CoD.TweenType.Bounce )
+						WeaponsButton:setAlpha( 1 )
+						WeaponsButton:registerEventHandler( "transition_complete_keyframe", WeaponsButtonFrame3 )
+					end
+				end
+				
+				WeaponsButton:completeAnimation()
+				self.WeaponsButton:setAlpha( 0 )
+				WeaponsButtonFrame2( WeaponsButton, {} )
+				local EquipmentButtonFrame2 = function ( EquipmentButton, event )
+					local EquipmentButtonFrame3 = function ( EquipmentButton, event )
+						local EquipmentButtonFrame4 = function ( EquipmentButton, event )
+							local EquipmentButtonFrame5 = function ( EquipmentButton, event )
+								if not event.interrupted then
+									EquipmentButton:beginAnimation( "keyframe", 9, false, false, CoD.TweenType.Linear )
+								end
+								EquipmentButton:setAlpha( 1 )
+								if event.interrupted then
+									self.clipFinished( EquipmentButton, event )
+								else
+									EquipmentButton:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+								end
+							end
+							
+							if event.interrupted then
+								EquipmentButtonFrame5( EquipmentButton, event )
+								return 
+							else
+								EquipmentButton:beginAnimation( "keyframe", 10, false, false, CoD.TweenType.Linear )
+								EquipmentButton:setAlpha( 0.52 )
+								EquipmentButton:registerEventHandler( "transition_complete_keyframe", EquipmentButtonFrame5 )
+							end
+						end
+						
+						if event.interrupted then
+							EquipmentButtonFrame4( EquipmentButton, event )
+							return 
+						else
+							EquipmentButton:beginAnimation( "keyframe", 29, false, false, CoD.TweenType.Bounce )
+							EquipmentButton:setAlpha( 1 )
+							EquipmentButton:registerEventHandler( "transition_complete_keyframe", EquipmentButtonFrame4 )
+						end
+					end
+					
+					if event.interrupted then
+						EquipmentButtonFrame3( EquipmentButton, event )
+						return 
+					else
+						EquipmentButton:beginAnimation( "keyframe", 29, false, false, CoD.TweenType.Linear )
+						EquipmentButton:registerEventHandler( "transition_complete_keyframe", EquipmentButtonFrame3 )
+					end
+				end
+				
+				EquipmentButton:completeAnimation()
+				self.EquipmentButton:setAlpha( 0 )
+				EquipmentButtonFrame2( EquipmentButton, {} )
+				local CybercoreButtonFrame2 = function ( CybercoreButton, event )
+					local CybercoreButtonFrame3 = function ( CybercoreButton, event )
+						local CybercoreButtonFrame4 = function ( CybercoreButton, event )
+							local CybercoreButtonFrame5 = function ( CybercoreButton, event )
+								if not event.interrupted then
+									CybercoreButton:beginAnimation( "keyframe", 9, false, false, CoD.TweenType.Linear )
+								end
+								CybercoreButton:setAlpha( 1 )
+								if event.interrupted then
+									self.clipFinished( CybercoreButton, event )
+								else
+									CybercoreButton:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+								end
+							end
+							
+							if event.interrupted then
+								CybercoreButtonFrame5( CybercoreButton, event )
+								return 
+							else
+								CybercoreButton:beginAnimation( "keyframe", 9, false, false, CoD.TweenType.Linear )
+								CybercoreButton:setAlpha( 0.54 )
+								CybercoreButton:registerEventHandler( "transition_complete_keyframe", CybercoreButtonFrame5 )
+							end
+						end
+						
+						if event.interrupted then
+							CybercoreButtonFrame4( CybercoreButton, event )
+							return 
+						else
+							CybercoreButton:beginAnimation( "keyframe", 30, false, false, CoD.TweenType.Linear )
+							CybercoreButton:registerEventHandler( "transition_complete_keyframe", CybercoreButtonFrame4 )
+						end
+					end
+					
+					if event.interrupted then
+						CybercoreButtonFrame3( CybercoreButton, event )
+						return 
+					else
+						CybercoreButton:beginAnimation( "keyframe", 59, false, false, CoD.TweenType.Linear )
+						CybercoreButton:setAlpha( 1 )
+						CybercoreButton:registerEventHandler( "transition_complete_keyframe", CybercoreButtonFrame3 )
+					end
+				end
+				
+				CybercoreButton:completeAnimation()
+				self.CybercoreButton:setAlpha( 0 )
+				CybercoreButtonFrame2( CybercoreButton, {} )
+				local MissionButtonFrame2 = function ( MissionButton, event )
+					local MissionButtonFrame3 = function ( MissionButton, event )
+						if not event.interrupted then
+							MissionButton:beginAnimation( "keyframe", 9, false, false, CoD.TweenType.Linear )
+						end
+						MissionButton:setAlpha( 1 )
+						if event.interrupted then
+							self.clipFinished( MissionButton, event )
+						else
+							MissionButton:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+						end
+					end
+					
+					if event.interrupted then
+						MissionButtonFrame3( MissionButton, event )
+						return 
+					else
+						MissionButton:beginAnimation( "keyframe", 29, false, false, CoD.TweenType.Linear )
+						MissionButton:registerEventHandler( "transition_complete_keyframe", MissionButtonFrame3 )
+					end
+				end
+				
+				MissionButton:completeAnimation()
+				self.MissionButton:setAlpha( 0 )
+				MissionButtonFrame2( MissionButton, {} )
+				local AccoladesButtonFrame2 = function ( AccoladesButton, event )
+					local AccoladesButtonFrame3 = function ( AccoladesButton, event )
+						if not event.interrupted then
+							AccoladesButton:beginAnimation( "keyframe", 9, false, false, CoD.TweenType.Linear )
+						end
+						AccoladesButton:setAlpha( 1 )
+						if event.interrupted then
+							self.clipFinished( AccoladesButton, event )
+						else
+							AccoladesButton:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+						end
+					end
+					
+					if event.interrupted then
+						AccoladesButtonFrame3( AccoladesButton, event )
+						return 
+					else
+						AccoladesButton:beginAnimation( "keyframe", 9, false, false, CoD.TweenType.Linear )
+						AccoladesButton:registerEventHandler( "transition_complete_keyframe", AccoladesButtonFrame3 )
+					end
+				end
+				
+				AccoladesButton:completeAnimation()
+				self.AccoladesButton:setAlpha( 0 )
+				AccoladesButtonFrame2( AccoladesButton, {} )
+				local CollectibleButtonFrame2 = function ( CollectibleButton, event )
+					local CollectibleButtonFrame3 = function ( CollectibleButton, event )
+						if not event.interrupted then
+							CollectibleButton:beginAnimation( "keyframe", 9, false, false, CoD.TweenType.Linear )
+						end
+						CollectibleButton:setAlpha( 1 )
+						if event.interrupted then
+							self.clipFinished( CollectibleButton, event )
+						else
+							CollectibleButton:registerEventHandler( "transition_complete_keyframe", self.clipFinished )
+						end
+					end
+					
+					if event.interrupted then
+						CollectibleButtonFrame3( CollectibleButton, event )
+						return 
+					else
+						CollectibleButton:beginAnimation( "keyframe", 19, false, false, CoD.TweenType.Linear )
+						CollectibleButton:registerEventHandler( "transition_complete_keyframe", CollectibleButtonFrame3 )
+					end
+				end
+				
+				CollectibleButton:completeAnimation()
+				self.CollectibleButton:setAlpha( 0 )
+				CollectibleButtonFrame2( CollectibleButton, {} )
+			end
+		},
+		Safehouse = {
+			DefaultClip = function ()
+				self:setupElementClipCounter( 6 )
+				WeaponsButton:completeAnimation()
+				self.WeaponsButton:setLeftRight( true, false, 0, 370 )
+				self.WeaponsButton:setTopBottom( true, false, 191, 355 )
+				self.clipFinished( WeaponsButton, {} )
+				EquipmentButton:completeAnimation()
+				self.EquipmentButton:setLeftRight( true, false, 377, 747 )
+				self.EquipmentButton:setTopBottom( true, false, 191, 355 )
+				self.clipFinished( EquipmentButton, {} )
+				CybercoreButton:completeAnimation()
+				self.CybercoreButton:setLeftRight( true, false, 754, 1124 )
+				self.CybercoreButton:setTopBottom( true, false, 191, 355 )
+				self.clipFinished( CybercoreButton, {} )
+				MissionButton:completeAnimation()
+				self.MissionButton:setLeftRight( true, false, 0, 370 )
+				self.MissionButton:setTopBottom( true, false, 362, 526 )
+				self.clipFinished( MissionButton, {} )
+				AccoladesButton:completeAnimation()
+				self.AccoladesButton:setLeftRight( true, false, 377, 747 )
+				self.AccoladesButton:setTopBottom( true, false, 362, 526 )
+				self.clipFinished( AccoladesButton, {} )
+				CollectibleButton:completeAnimation()
+				self.CollectibleButton:setLeftRight( true, false, 754, 1124 )
+				self.CollectibleButton:setTopBottom( true, false, 362, 526 )
+				self.clipFinished( CollectibleButton, {} )
+			end
+		}
+	}
+	self:mergeStateConditions( {
+		{
+			stateName = "Safehouse",
+			condition = function ( menu, element, event )
+				return InSafehouse()
+			end
+		}
+	} )
+	CoD.Menu.AddNavigationHandler( menu, self, controller )
+	WeaponsButton.id = "WeaponsButton"
+	EquipmentButton.id = "EquipmentButton"
+	CybercoreButton.id = "CybercoreButton"
+	MissionButton.id = "MissionButton"
+	AccoladesButton.id = "AccoladesButton"
+	CollectibleButton.id = "CollectibleButton"
+	self:registerEventHandler( "gain_focus", function ( self, event )
+		if self.m_focusable and self.WeaponsButton:processEvent( event ) then
+			return true
+		else
+			return LUI.UIElement.gainFocus( self, event )
+		end
+	end )
+	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( element )
+		element.StartMenuframenoBG00:close()
+		element.WeaponsButton:close()
+		element.EquipmentButton:close()
+		element.CybercoreButton:close()
+		element.CombatRecordLineDivider:close()
+		element.CombatRecordLineDivider2:close()
+		element.CombatRecordSummaryStatBig0:close()
+		element.CombatRecordSummaryStatBig00:close()
+		element.CombatRecordSummaryStatBig000:close()
+		element.CombatRecordSummaryStatBig0000:close()
+		element.MissionButton:close()
+		element.AccoladesButton:close()
+		element.CollectibleButton:close()
+		element.CombatRecordLineDivider0:close()
+		element.CombatRecordLineDivider1:close()
+		element.TimePlayedText:close()
+		element.Emblem:close()
+		element.RankName:close()
+		element.Rank:close()
+	end )
+	
+	if PostLoadFunc then
+		PostLoadFunc( self, controller, menu )
+	end
+	
+	return self
+end
+
