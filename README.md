@@ -29,15 +29,16 @@ This repository also contains a curated collection of my custom HUDs, UI widgets
 
 If you’d like to contribute, feel free to submit a pull request. All contributions will be credited.  
 
-#### Guidelines for Contributions
+### Guidelines for Contributions
 
 You are welcome to make improvements, **but do not alter the core functionality** of the files. Contributions should focus on cleaning up the decompilation and restoring the files as closely as possible to the original source code.
 
 Acceptable changes include:
 
-- Fixing errors introduced by the decompiler (e.g., in conditions or loops).  
-- Renaming variables to meaningful names, preferably using the original developer-style variable names.  
-- For reference, the **PS4 Alpha & Beta** sections of this repository contain examples of early files with well-preserved variable names to guide your work.
+- Correcting issues introduced by the decompiler (commonly found in conditions, loops, or logic flow).
+- Maintaining the same style and formatting as the decompiler output - including indentation, spacing, and argument layout. This ensures all rebuilt files remain consistent and in line with the existing ones.
+- Renaming variables to meaningful names, preferably using the original developer-style variable names.
+- For reference, the **PS4 Alpha, Beta, Playtest** sections of this repository contain examples of files with well-preserved variable names to guide your work.
 
 #### UI Element References
 
