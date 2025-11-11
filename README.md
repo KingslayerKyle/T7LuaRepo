@@ -2,6 +2,7 @@
 
 This repository contains multiple Lua dumps from different versions of the game.  
 
+- **Current PC version of the game** - [Click here](https://github.com/KingslayerKyle/T7LuaRepo/tree/main/Dumps/PC_Ship_2025-05-31)
 - **Complete Lua dumps** - Both PC & PS4 ship versions.
 - **PS4 Alpha & Beta** – Early game builds where function and variable names are relatively well-preserved. These provide useful references for understanding original naming conventions.
 
