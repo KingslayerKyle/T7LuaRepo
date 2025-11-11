@@ -1,0 +1,68 @@
+CoD.GridItemUpgradeIconWidget = InheritFrom( LUI.UIElement )
+CoD.GridItemUpgradeIconWidget.new = function ( menu, controller )
+	local self = LUI.UIElement.new()
+	if PreLoadFunc then
+		PreLoadFunc( self, controller )
+	end
+	self:setUseStencil( false )
+	self:setClass( CoD.GridItemUpgradeIconWidget )
+	self.id = "GridItemUpgradeIconWidget"
+	self.soundSet = "default"
+	self:setLeftRight( 0, 0, 0, 27 )
+	self:setTopBottom( 0, 0, 0, 27 )
+	
+	local UpgradedIcon = LUI.UIImage.new()
+	UpgradedIcon:setLeftRight( 0, 1, 0, 0 )
+	UpgradedIcon:setTopBottom( 0, 1, 0, 0 )
+	UpgradedIcon:setAlpha( 0 )
+	UpgradedIcon:setImage( RegisterImage( "uie_t7_cac_cp_upgrade_icon" ) )
+	self:addElement( UpgradedIcon )
+	self.UpgradedIcon = UpgradedIcon
+	
+	local UpgradableIcon = LUI.UIImage.new()
+	UpgradableIcon:setLeftRight( 0, 1, 0, 0 )
+	UpgradableIcon:setTopBottom( 0, 1, 0, 0 )
+	UpgradableIcon:setAlpha( 0 )
+	UpgradableIcon:setImage( RegisterImage( "uie_t7_cac_cp_upgrade0_icon" ) )
+	self:addElement( UpgradableIcon )
+	self.UpgradableIcon = UpgradableIcon
+	
+	self.resetProperties = function ()
+		UpgradableIcon:completeAnimation()
+		UpgradedIcon:completeAnimation()
+		UpgradableIcon:setAlpha( 0 )
+		UpgradedIcon:setAlpha( 0 )
+	end
+	
+	self.clipsPerState = {
+		DefaultState = {
+			DefaultClip = function ()
+				self.resetProperties()
+				self:setupElementClipCounter( 0 )
+			end
+		},
+		Upgradable = {
+			DefaultClip = function ()
+				self.resetProperties()
+				self:setupElementClipCounter( 1 )
+				UpgradableIcon:completeAnimation()
+				self.UpgradableIcon:setAlpha( 1 )
+				self.clipFinished( UpgradableIcon, {} )
+			end
+		},
+		Upgraded = {
+			DefaultClip = function ()
+				self.resetProperties()
+				self:setupElementClipCounter( 1 )
+				UpgradedIcon:completeAnimation()
+				self.UpgradedIcon:setAlpha( 1 )
+				self.clipFinished( UpgradedIcon, {} )
+			end
+		}
+	}
+	if PostLoadFunc then
+		PostLoadFunc( self, controller, menu )
+	end
+	return self
+end
+

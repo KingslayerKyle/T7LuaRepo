@@ -1,0 +1,57 @@
+require( "ui.uieditor.widgets.FileShare.FullscreenPopup.FullscreenPopupTemplate" )
+
+local PreLoadFunc = function ( self, controller )
+	self:setModel( CoD.perController[controller].selectedpaintjobModel )
+end
+
+LUI.createMenu.PaintjobClearConfirmation = function ( controller )
+	local self = CoD.Menu.NewForUIEditor( "PaintjobClearConfirmation" )
+	if PreLoadFunc then
+		PreLoadFunc( self, controller )
+	end
+	self.soundSet = "default"
+	self:setOwner( controller )
+	self:setLeftRight( 0, 1, 0, 0 )
+	self:setTopBottom( 0, 1, 0, 0 )
+	self:playSound( "menu_open", controller )
+	self.buttonModel = Engine.CreateModel( Engine.GetModelForController( controller ), "PaintjobClearConfirmation.buttonPrompts" )
+	self.anyChildUsesUpdateState = true
+	
+	local FullscreenPopupTemplate0 = CoD.FullscreenPopupTemplate.new( self, controller )
+	FullscreenPopupTemplate0:setLeftRight( 0, 0, 0, 1920 )
+	FullscreenPopupTemplate0:setTopBottom( 0, 0, 0, 1080 )
+	FullscreenPopupTemplate0.RedLine:setRGB( 1, 0, 0 )
+	FullscreenPopupTemplate0.ButtonList:setDataSource( "PaintjobOptionsClearButtonList" )
+	FullscreenPopupTemplate0.WorkingTitle:setText( Engine.Localize( "MENU_NEW" ) )
+	FullscreenPopupTemplate0.Title:setText( Engine.Localize( "MENU_PAINTJOB_DELETE_CONFIRMATION" ) )
+	FullscreenPopupTemplate0.Subtitle:setText( Engine.Localize( "MENU_CANNOT_UNDO" ) )
+	FullscreenPopupTemplate0.DoneTitle:setText( Engine.Localize( "MENU_NEW" ) )
+	FullscreenPopupTemplate0.ErrorSubtitle:setText( Engine.Localize( "MENU_NEW" ) )
+	self:addElement( FullscreenPopupTemplate0 )
+	self.FullscreenPopupTemplate0 = FullscreenPopupTemplate0
+	
+	FullscreenPopupTemplate0.id = "FullscreenPopupTemplate0"
+	self:processEvent( {
+		name = "menu_loaded",
+		controller = controller
+	} )
+	self:processEvent( {
+		name = "update_state",
+		menu = self
+	} )
+	if not self:restoreState() then
+		self.FullscreenPopupTemplate0:processEvent( {
+			name = "gain_focus",
+			controller = controller
+		} )
+	end
+	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( self )
+		self.FullscreenPopupTemplate0:close()
+		Engine.UnsubscribeAndFreeModel( Engine.GetModel( Engine.GetModelForController( controller ), "PaintjobClearConfirmation.buttonPrompts" ) )
+	end )
+	if PostLoadFunc then
+		PostLoadFunc( self, controller )
+	end
+	return self
+end
+

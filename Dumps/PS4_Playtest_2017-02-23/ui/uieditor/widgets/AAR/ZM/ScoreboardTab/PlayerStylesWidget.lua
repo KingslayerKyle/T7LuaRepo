@@ -1,0 +1,46 @@
+CoD.PlayerStylesWidget = InheritFrom( LUI.UIElement )
+CoD.PlayerStylesWidget.new = function ( menu, controller )
+	local self = LUI.UIElement.new()
+	if PreLoadFunc then
+		PreLoadFunc( self, controller )
+	end
+	self:setUseStencil( false )
+	self:setClass( CoD.PlayerStylesWidget )
+	self.id = "PlayerStylesWidget"
+	self.soundSet = "default"
+	self:setLeftRight( 0, 0, 0, 300 )
+	self:setTopBottom( 0, 0, 0, 154 )
+	
+	local Image0 = LUI.UIImage.new()
+	Image0:setLeftRight( 0, 0, 0, 302 )
+	Image0:setTopBottom( 0, 0, 0, 152 )
+	Image0:setRGB( 0.56, 0.56, 0.56 )
+	self:addElement( Image0 )
+	self.Image0 = Image0
+	
+	local TextBox0 = LUI.UIText.new()
+	TextBox0:setLeftRight( 0, 0, 0, 302 )
+	TextBox0:setTopBottom( 0, 0, 0, 63 )
+	TextBox0:setText( Engine.Localize( "GeneralZOD" ) )
+	TextBox0:setTTF( "fonts/default.ttf" )
+	TextBox0:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
+	TextBox0:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+	self:addElement( TextBox0 )
+	self.TextBox0 = TextBox0
+	
+	local TextBox1 = LUI.UIText.new()
+	TextBox1:setLeftRight( 0, 0, 0, 302 )
+	TextBox1:setTopBottom( 0, 0, 88, 152 )
+	TextBox1:setText( Engine.Localize( "Gum Baller" ) )
+	TextBox1:setTTF( "fonts/default.ttf" )
+	TextBox1:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_CENTER )
+	TextBox1:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+	self:addElement( TextBox1 )
+	self.TextBox1 = TextBox1
+	
+	if PostLoadFunc then
+		PostLoadFunc( self, controller, menu )
+	end
+	return self
+end
+

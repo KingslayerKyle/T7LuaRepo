@@ -1,0 +1,29 @@
+CoD.cac_ButtonBoxLrgInactiveDiags = InheritFrom( LUI.UIElement )
+CoD.cac_ButtonBoxLrgInactiveDiags.new = function ( menu, controller )
+	local self = LUI.UIElement.new()
+	if PreLoadFunc then
+		PreLoadFunc( self, controller )
+	end
+	self:setUseStencil( false )
+	self:setClass( CoD.cac_ButtonBoxLrgInactiveDiags )
+	self.id = "cac_ButtonBoxLrgInactiveDiags"
+	self.soundSet = "default"
+	self:setLeftRight( 0, 0, 0, 168 )
+	self:setTopBottom( 0, 0, 0, 168 )
+	
+	local Image = LUI.UIImage.new()
+	Image:setLeftRight( 0, 1, -3, 3 )
+	Image:setTopBottom( 0, 1, -2, 2 )
+	Image:setImage( RegisterImage( "uie_t7_menu_cac_buttonboxlrginactivediagfull" ) )
+	Image:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_nineslice_add" ) )
+	Image:setShaderVector( 0, 0, 0, 0, 0 )
+	Image:setupNineSliceShader( 36, 36 )
+	self:addElement( Image )
+	self.Image = Image
+	
+	if PostLoadFunc then
+		PostLoadFunc( self, controller, menu )
+	end
+	return self
+end
+

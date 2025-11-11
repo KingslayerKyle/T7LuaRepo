@@ -1,0 +1,88 @@
+require( "ui.uieditor.widgets.Craft.Gunsmith.GunsmithStatsBranding" )
+
+CoD.GunsmithStatsVariantName = InheritFrom( LUI.UIElement )
+CoD.GunsmithStatsVariantName.new = function ( menu, controller )
+	local self = LUI.UIElement.new()
+	if PreLoadFunc then
+		PreLoadFunc( self, controller )
+	end
+	self:setUseStencil( false )
+	self:setClass( CoD.GunsmithStatsVariantName )
+	self.id = "GunsmithStatsVariantName"
+	self.soundSet = "default"
+	self:setLeftRight( 0, 0, 0, 220 )
+	self:setTopBottom( 0, 0, 0, 114 )
+	self.anyChildUsesUpdateState = true
+	
+	local variantNameBg = LUI.UIImage.new()
+	variantNameBg:setLeftRight( 0, 1, 0, 0 )
+	variantNameBg:setTopBottom( 0, 1, 0, 0 )
+	variantNameBg:setRGB( 0, 0, 0 )
+	variantNameBg:setAlpha( 0.6 )
+	self:addElement( variantNameBg )
+	self.variantNameBg = variantNameBg
+	
+	local variantName = LUI.UIText.new()
+	variantName:setLeftRight( 1, 1, -396, 0 )
+	variantName:setTopBottom( 0, 0, 48, 84 )
+	variantName:setTTF( "fonts/default.ttf" )
+	variantName:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
+	variantName:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+	variantName:linkToElementModel( self, "variantName", true, function ( model )
+		local modelValue = Engine.GetModelValue( model )
+		if modelValue then
+			variantName:setText( Engine.Localize( modelValue ) )
+		end
+	end )
+	self:addElement( variantName )
+	self.variantName = variantName
+	
+	local weaponName = LUI.UIText.new()
+	weaponName:setLeftRight( 1, 1, -220, 0 )
+	weaponName:setTopBottom( 0, 0, 86, 111 )
+	weaponName:setRGB( ColorSet.GroupName.r, ColorSet.GroupName.g, ColorSet.GroupName.b )
+	weaponName:setTTF( "fonts/default.ttf" )
+	weaponName:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_RIGHT )
+	weaponName:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+	weaponName:linkToElementModel( self, "weaponIndex", true, function ( model )
+		local modelValue = Engine.GetModelValue( model )
+		if modelValue then
+			weaponName:setText( Engine.Localize( GetItemNameFromIndex( modelValue ) ) )
+		end
+	end )
+	self:addElement( weaponName )
+	self.weaponName = weaponName
+	
+	local statsBranding = CoD.GunsmithStatsBranding.new( menu, controller )
+	statsBranding:mergeStateConditions( {
+		{
+			stateName = "Campaign",
+			condition = function ( menu, element, event )
+				return IsGlobalModelValueEqualToEnum( element, controller, "GunsmithSnapshot.SessionMode", Enum.eModes.MODE_CAMPAIGN )
+			end
+		}
+	} )
+	statsBranding:subscribeToModel( Engine.GetModel( Engine.GetGlobalModel(), "GunsmithSnapshot.SessionMode" ), function ( model )
+		menu:updateElementState( statsBranding, {
+			name = "model_validation",
+			menu = menu,
+			modelValue = Engine.GetModelValue( model ),
+			modelName = "GunsmithSnapshot.SessionMode"
+		} )
+	end )
+	statsBranding:setLeftRight( 1, 1, -220, 0 )
+	statsBranding:setTopBottom( 0, 0, 0, 48 )
+	self:addElement( statsBranding )
+	self.statsBranding = statsBranding
+	
+	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( self )
+		self.statsBranding:close()
+		self.variantName:close()
+		self.weaponName:close()
+	end )
+	if PostLoadFunc then
+		PostLoadFunc( self, controller, menu )
+	end
+	return self
+end
+

@@ -1,0 +1,90 @@
+require( "ui.uieditor.widgets.FileShare.SidePopup.FileshareSidePopupLayout" )
+
+local PreLoadFunc = function ( self, controller )
+	self.animateInFromOffset = 380
+end
+
+CoD.FileshareSidePopupTemplate = InheritFrom( LUI.UIElement )
+CoD.FileshareSidePopupTemplate.new = function ( menu, controller )
+	local self = LUI.UIElement.new()
+	if PreLoadFunc then
+		PreLoadFunc( self, controller )
+	end
+	self:setUseStencil( false )
+	self:setClass( CoD.FileshareSidePopupTemplate )
+	self.id = "FileshareSidePopupTemplate"
+	self.soundSet = "default"
+	self:setLeftRight( 0, 0, 0, 570 )
+	self:setTopBottom( 0, 0, 0, 1080 )
+	self:makeFocusable()
+	self.onlyChildrenFocusable = true
+	self.anyChildUsesUpdateState = true
+	
+	local leftBackground = LUI.UIImage.new()
+	leftBackground:setLeftRight( 1, 1, -532, 0 )
+	leftBackground:setTopBottom( 0, 1, 0, 0 )
+	leftBackground:setRGB( 0.04, 0.04, 0.04 )
+	leftBackground:setAlpha( 0.98 )
+	self:addElement( leftBackground )
+	self.leftBackground = leftBackground
+	
+	local tileTexture = LUI.UIImage.new()
+	tileTexture:setLeftRight( 1, 1, -532, 0 )
+	tileTexture:setTopBottom( 0, 1, 0, 0 )
+	tileTexture:setAlpha( 0.5 )
+	tileTexture:setImage( RegisterImage( "uie_t7_tile_texture" ) )
+	tileTexture:setMaterial( LUI.UIImage.GetCachedMaterial( "uie_tile_scroll" ) )
+	tileTexture:setShaderVector( 0, 30, 55, 0, 0 )
+	tileTexture:setShaderVector( 1, 0, 0, 0, 0 )
+	self:addElement( tileTexture )
+	self.tileTexture = tileTexture
+	
+	local Border00 = LUI.UIImage.new()
+	Border00:setLeftRight( 1, 1, -533, -531 )
+	Border00:setTopBottom( 0, 0, 0, 1080 )
+	Border00:setAlpha( 0.42 )
+	self:addElement( Border00 )
+	self.Border00 = Border00
+	
+	local Border0 = LUI.UIImage.new()
+	Border0:setLeftRight( 1, 1, -533, -531 )
+	Border0:setTopBottom( 0, 0, 0, 1080 )
+	Border0:setAlpha( 0.42 )
+	self:addElement( Border0 )
+	self.Border0 = Border0
+	
+	local Title = LUI.UIText.new()
+	Title:setLeftRight( 0, 0, 82, 512 )
+	Title:setTopBottom( 0, 0, 144, 183 )
+	Title:setRGB( 1, 0.39, 0 )
+	Title:setText( Engine.Localize( "MENU_ARE_YOU_SURE" ) )
+	Title:setTTF( "fonts/escom.ttf" )
+	Title:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_LEFT )
+	Title:setAlignment( Enum.LUIAlignment.LUI_ALIGNMENT_TOP )
+	self:addElement( Title )
+	self.Title = Title
+	
+	local layout = CoD.FileshareSidePopupLayout.new( menu, controller )
+	layout:setLeftRight( 0, 0, 76.5, 493.5 )
+	layout:setTopBottom( 0, 0, 200, 1016 )
+	layout.hintText.ItemHintText:setText( Engine.Localize( "MENU_NEW" ) )
+	self:addElement( layout )
+	self.layout = layout
+	
+	layout.id = "layout"
+	self:registerEventHandler( "gain_focus", function ( self, event )
+		if self.m_focusable and self.layout:processEvent( event ) then
+			return true
+		else
+			return LUI.UIElement.gainFocus( self, event )
+		end
+	end )
+	LUI.OverrideFunction_CallOriginalSecond( self, "close", function ( self )
+		self.layout:close()
+	end )
+	if PostLoadFunc then
+		PostLoadFunc( self, controller, menu )
+	end
+	return self
+end
+
