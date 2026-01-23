@@ -61,7 +61,7 @@ CoD.GameSettingsUtility.GetMaxBotsCount = function ()
 	if Engine.GetLobbyLocalClientCount( Enum.LobbyType.LOBBY_TYPE_PRIVATE ) > 1 then
 		return CoD.GameSettingsUtility.MaxSplitscreenBots
 	else
-		return LuaEnums.MAX_CLIENTS - 1
+		return LuaEnums.MAX_CLIENTS
 	end
 end
 
@@ -475,7 +475,9 @@ CoD.OptionsUtility.CreateOptionDataSource = function ( f32_arg0, f32_arg1, f32_a
 end
 
 CoD.OptionsUtility.CustomItemSelectedFunction = function ( f34_arg0, f34_arg1, f34_arg2, f34_arg3, f34_arg4 )
-	Engine.SetProfileVar( f34_arg2, f34_arg3, f34_arg1.value )
+	if f34_arg3 then
+		Engine.SetProfileVar( f34_arg2, f34_arg3, f34_arg1.value )
+	end
 	f34_arg1.valueChangedCallback( f34_arg1.value )
 end
 

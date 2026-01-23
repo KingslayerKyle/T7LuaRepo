@@ -6,7 +6,12 @@ CoD.MapUtility.GetBestTimeForFreerunMap = function ( f1_arg0, f1_arg1 )
 		return ""
 	end
 	local f1_local0 = 0
-	local f1_local1 = Engine.GetPlayerStats( f1_arg0 )
+	local f1_local1 = nil
+	if IsLive() then
+		f1_local1 = Engine.StorageGetBuffer( f1_arg0, Enum.StorageFileType.STORAGE_FR_STATS_ONLINE )
+	else
+		f1_local1 = Engine.StorageGetBuffer( f1_arg0, Enum.StorageFileType.STORAGE_FR_STATS_OFFLINE )
+	end
 	if f1_arg1 and f1_local1 then
 		local f1_local2 = CoD.mapsTable[f1_arg1]
 		if f1_local2 then

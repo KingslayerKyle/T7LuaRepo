@@ -1,5 +1,5 @@
 CoD.AmmoWidgetUtility = {}
-CoD.AmmoWidgetUtility.InitTacticalEmptyPulse = function ( f1_arg0, f1_arg1, f1_arg2, f1_arg3 )
+CoD.AmmoWidgetUtility.InitTacticalEmptyPulse = function ( f1_arg0, f1_arg1, f1_arg2, f1_arg3, f1_arg4 )
 	local f1_local0 = Engine.GetModelForController( f1_arg2 )
 	f1_arg1.previousPulseValue = 0
 	f1_arg1:subscribeToModel( Engine.GetModel( f1_local0, "hudItems.pulseNoTactical" ), function ( model )
@@ -13,7 +13,7 @@ CoD.AmmoWidgetUtility.InitTacticalEmptyPulse = function ( f1_arg0, f1_arg1, f1_a
 			elseif Engine.GetModelValue( Engine.GetModel( f1_local0, "currentSecondaryOffhand.secondaryOffhand" ) ) == nil then
 				return 
 			else
-				local f2_local1 = f1_arg3.new( menu, f1_arg2 )
+				local f2_local1 = f1_arg3.new( f1_arg4, f1_arg2 )
 				f2_local1:setLeftRight( f1_arg1:getLocalLeftRight() )
 				f2_local1:setTopBottom( f1_arg1:getLocalTopBottom() )
 				f2_local1:subscribeToGlobalModel( f1_arg2, "CurrentSecondaryOffhand", "secondaryOffhand", function ( model )
@@ -33,7 +33,7 @@ CoD.AmmoWidgetUtility.InitTacticalEmptyPulse = function ( f1_arg0, f1_arg1, f1_a
 	end )
 end
 
-CoD.AmmoWidgetUtility.InitLethalEmptyPulse = function ( f5_arg0, f5_arg1, f5_arg2, f5_arg3 )
+CoD.AmmoWidgetUtility.InitLethalEmptyPulse = function ( f5_arg0, f5_arg1, f5_arg2, f5_arg3, f5_arg4 )
 	local f5_local0 = Engine.GetModelForController( f5_arg2 )
 	f5_arg1.previousPulseValue = 0
 	f5_arg1:subscribeToModel( Engine.GetModel( f5_local0, "hudItems.pulseNoLethal" ), function ( model )
@@ -47,7 +47,7 @@ CoD.AmmoWidgetUtility.InitLethalEmptyPulse = function ( f5_arg0, f5_arg1, f5_arg
 			elseif Engine.GetModelValue( Engine.GetModel( f5_local0, "currentPrimaryOffhand.primaryOffhand" ) ) == nil then
 				return 
 			else
-				local f6_local1 = f5_arg3.new( menu, f5_arg2 )
+				local f6_local1 = f5_arg3.new( f5_arg4, f5_arg2 )
 				f6_local1:setLeftRight( f5_arg1:getLocalLeftRight() )
 				f6_local1:setTopBottom( f5_arg1:getLocalTopBottom() )
 				f6_local1:subscribeToGlobalModel( f5_arg2, "CurrentPrimaryOffhand", "primaryOffhand", function ( model )

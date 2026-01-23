@@ -122,7 +122,7 @@ CoD.LobbyMenus.ModeSelect = function ( f12_arg0, f12_arg1, f12_arg2 )
 				f0_local7( f12_arg0, f12_arg1, CoD.LobbyButtons.PLAY_LOCAL )
 				f0_local8( f12_arg1 )
 			else
-				Lobby_SetMaxLocalPlayers( 1 )
+				Lobby_SetMaxLocalPlayers( 2 )
 				f0_local6( f12_arg0, f12_arg1, CoD.LobbyButtons.CP_ONLINE )
 				f0_local6( f12_arg0, f12_arg1, CoD.LobbyButtons.MP_ONLINE )
 				f0_local6( f12_arg0, f12_arg1, CoD.LobbyButtons.ZM_ONLINE )
@@ -149,15 +149,19 @@ CoD.LobbyMenus.ModeSelect = function ( f12_arg0, f12_arg1, f12_arg2 )
 		else
 			Lobby_SetMaxLocalPlayers( 4 )
 			f0_local6( f12_arg0, f12_arg1, CoD.LobbyButtons.CP_LAN )
-			f0_local6( f12_arg0, f12_arg1, CoD.LobbyButtons.MP_LAN )
-			f0_local6( f12_arg0, f12_arg1, CoD.LobbyButtons.ZM_LAN )
+			if not Dvar.ui_disable_lan:get() then
+				f0_local6( f12_arg0, f12_arg1, CoD.LobbyButtons.MP_LAN )
+				f0_local6( f12_arg0, f12_arg1, CoD.LobbyButtons.ZM_LAN )
+			end
 			f0_local6( f12_arg0, f12_arg1, CoD.LobbyButtons.FR_LAN )
 			if Engine.IsCampaignModeUnlocked( Enum.CampaignMode.CAMPAIGNMODE_ZOMBIES ) == true then
 				f0_local6( f12_arg0, f12_arg1, CoD.LobbyButtons.CPZM_LAN )
 			end
 			f0_local8( f12_arg1 )
-			f0_local7( f12_arg0, f12_arg1, CoD.LobbyButtons.FIND_LAN_GAME )
-			f0_local8( f12_arg1 )
+			if not Dvar.ui_disable_lan:get() then
+				f0_local7( f12_arg0, f12_arg1, CoD.LobbyButtons.FIND_LAN_GAME )
+				f0_local8( f12_arg1 )
+			end
 			f0_local7( f12_arg0, f12_arg1, CoD.LobbyButtons.PLAY_ONLINE )
 		end
 	end
@@ -171,7 +175,7 @@ CoD.LobbyMenus.CPZMButtonsOnline = function ( f13_arg0, f13_arg1, f13_arg2 )
 		f0_local7( f13_arg0, f13_arg1, CoD.LobbyButtons.QUIT )
 		return 
 	elseif f13_arg2 == 1 then
-		if HighestMapReachedGreaterThan( f13_arg0, 0 ) or Engine.IsCPInProgress() then
+		if Engine.IsCPInProgress() then
 			f0_local6( f13_arg0, f13_arg1, CoD.LobbyButtons.CP_RESUME_GAME )
 		else
 			f0_local6( f13_arg0, f13_arg1, CoD.LobbyButtons.CP_START_GAME )
@@ -193,7 +197,7 @@ CoD.LobbyMenus.CPZMButtonsLAN = function ( f15_arg0, f15_arg1, f15_arg2 )
 		f0_local7( f15_arg0, f15_arg1, CoD.LobbyButtons.QUIT )
 		return 
 	elseif f15_arg2 == 1 then
-		if HighestMapReachedGreaterThan( f15_arg0, 0 ) or Engine.IsCPInProgress() then
+		if Engine.IsCPInProgress() then
 			f0_local6( f15_arg0, f15_arg1, CoD.LobbyButtons.CP_RESUME_GAME )
 		else
 			f0_local6( f15_arg0, f15_arg1, CoD.LobbyButtons.CP_START_GAME )
@@ -220,7 +224,7 @@ CoD.LobbyMenus.CPButtonsOnline = function ( f17_arg0, f17_arg1, f17_arg2 )
 		f0_local7( f17_arg0, f17_arg1, CoD.LobbyButtons.QUIT )
 		return 
 	elseif f17_arg2 == 1 then
-		if HighestMapReachedGreaterThan( f17_arg0, 0 ) or Engine.IsCPInProgress() then
+		if Engine.IsCPInProgress() then
 			f0_local6( f17_arg0, f17_arg1, CoD.LobbyButtons.CP_RESUME_GAME )
 		else
 			f0_local6( f17_arg0, f17_arg1, CoD.LobbyButtons.CP_START_GAME )
@@ -258,7 +262,7 @@ CoD.LobbyMenus.CPButtonsLAN = function ( f20_arg0, f20_arg1, f20_arg2 )
 		f0_local7( f20_arg0, f20_arg1, CoD.LobbyButtons.QUIT )
 		return 
 	elseif f20_arg2 == 1 then
-		if HighestMapReachedGreaterThan( f20_arg0, 0 ) or Engine.IsCPInProgress() then
+		if Engine.IsCPInProgress() then
 			f0_local6( f20_arg0, f20_arg1, CoD.LobbyButtons.CP_RESUME_GAME_LAN )
 		else
 			f0_local6( f20_arg0, f20_arg1, CoD.LobbyButtons.CP_LAN_START_GAME )
@@ -269,6 +273,8 @@ CoD.LobbyMenus.CPButtonsLAN = function ( f20_arg0, f20_arg1, f20_arg2 )
 		end
 		f0_local6( f20_arg0, f20_arg1, CoD.LobbyButtons.CP_SELECT_MISSION )
 		f0_local6( f20_arg0, f20_arg1, CoD.LobbyButtons.CP_CHOOSE_DIFFICULTY )
+	else
+		f0_local7( f20_arg0, f20_arg1, CoD.LobbyButtons.CP_MISSION_OVERVIEW )
 	end
 end
 
@@ -287,9 +293,7 @@ end
 CoD.LobbyMenus.MPButtonsMain = function ( f22_arg0, f22_arg1, f22_arg2 )
 	if f22_arg2 == 1 then
 		f0_local6( f22_arg0, f22_arg1, CoD.LobbyButtons.MP_PUBLIC_MATCH )
-		if CompetitiveEnabled() then
-			f0_local6( f22_arg0, f22_arg1, CoD.LobbyButtons.MP_ARENA )
-		end
+		f0_local6( f22_arg0, f22_arg1, CoD.LobbyButtons.MP_ARENA )
 		f0_local6( f22_arg0, f22_arg1, CoD.LobbyButtons.MP_CUSTOM_GAMES )
 		f0_local6( f22_arg0, f22_arg1, CoD.LobbyButtons.FR_ONLINE )
 		f0_local6( f22_arg0, f22_arg1, CoD.LobbyButtons.THEATER_MP )
@@ -299,9 +303,6 @@ CoD.LobbyMenus.MPButtonsMain = function ( f22_arg0, f22_arg1, f22_arg2 )
 		f0_local6( f22_arg0, f22_arg1, CoD.LobbyButtons.STEAM_STORE )
 	else
 		f0_local6( f22_arg0, f22_arg1, CoD.LobbyButtons.STORE )
-	end
-	if not DisableBlackMarket() then
-		f0_local7( f22_arg0, f22_arg1, CoD.LobbyButtons.BLACK_MARKET )
 	end
 end
 
@@ -349,7 +350,6 @@ CoD.LobbyMenus.MPButtonsPublicGame = function ( f25_arg0, f25_arg1, f25_arg2 )
 	if Engine.DvarBool( nil, "inventory_test_button_visible" ) then
 		f0_local6( f25_arg0, f25_arg1, CoD.LobbyButtons.MP_INVENTORY_TEST )
 	end
-	f0_local7( f25_arg0, f25_arg1, CoD.LobbyButtons.MP_LOBBY_LEADERBOARD )
 end
 
 CoD.LobbyMenus.MPButtonsCustomGame = function ( f26_arg0, f26_arg1, f26_arg2 )
@@ -430,7 +430,6 @@ CoD.LobbyMenus.ZMButtonsPublicGame = function ( f31_arg0, f31_arg1 )
 	else
 		f0_local6( f31_arg0, f31_arg1, CoD.LobbyButtons.ZM_BUBBLEGUM_BUFFS )
 		f0_local6( f31_arg0, f31_arg1, CoD.LobbyButtons.ZM_BUILD_KITS )
-		f0_local6( f31_arg0, f31_arg1, CoD.LobbyButtons.ZM_LOBBY_LEADERBOARD )
 	end
 end
 
@@ -441,6 +440,8 @@ CoD.LobbyMenus.ZMButtonsCustomGame = function ( f32_arg0, f32_arg1, f32_arg2 )
 	elseif f32_arg2 == 1 then
 		f0_local6( f32_arg0, f32_arg1, CoD.LobbyButtons.ZM_START_CUSTOM_GAME )
 		f0_local6( f32_arg0, f32_arg1, CoD.LobbyButtons.ZM_CHANGE_MAP )
+		f0_local8( f32_arg1 )
+		f0_local6( f32_arg0, f32_arg1, CoD.LobbyButtons.ZM_CHANGE_RANKED_SETTTINGS )
 		f0_local8( f32_arg1 )
 	end
 	f0_local6( f32_arg0, f32_arg1, CoD.LobbyButtons.ZM_BUBBLEGUM_BUFFS )
@@ -463,6 +464,8 @@ end
 CoD.LobbyMenus.FRButtonsOnlineGame = function ( f34_arg0, f34_arg1, f34_arg2 )
 	f0_local6( f34_arg0, f34_arg1, CoD.LobbyButtons.FR_START_RUN_ONLINE )
 	f0_local6( f34_arg0, f34_arg1, CoD.LobbyButtons.FR_CHANGE_MAP )
+	f0_local8( f34_arg1 )
+	f0_local6( f34_arg0, f34_arg1, CoD.LobbyButtons.FR_LEADERBOARD )
 end
 
 CoD.LobbyMenus.FRButtonsLANGame = function ( f35_arg0, f35_arg1, f35_arg2 )
@@ -474,10 +477,6 @@ CoD.LobbyMenus.ButtonsTheaterGame = function ( f36_arg0, f36_arg1, f36_arg2 )
 	if f36_arg2 == 1 then
 		f0_local7( f36_arg0, f36_arg1, CoD.LobbyButtons.TH_START_FILM )
 		f0_local7( f36_arg0, f36_arg1, CoD.LobbyButtons.TH_SELECT_FILM )
-		f0_local7( f36_arg0, f36_arg1, CoD.LobbyButtons.TH_CREATE_HIGHLIGHT )
-		f0_local7( f36_arg0, f36_arg1, CoD.LobbyButtons.TH_SHOUTCAST )
-		f0_local7( f36_arg0, f36_arg1, CoD.LobbyButtons.TH_RENDER )
-		f0_local7( f36_arg0, f36_arg1, CoD.LobbyButtons.TH_OPTIONS )
 	end
 end
 

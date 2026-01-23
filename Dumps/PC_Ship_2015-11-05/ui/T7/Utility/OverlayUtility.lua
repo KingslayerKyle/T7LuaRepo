@@ -2,8 +2,16 @@ require( "lua.Shared.LuaEnums" )
 
 CoD.OverlayUtility = {}
 CoD.OverlayUtility.OpenMethods = LuaEnums.createEnum( "Popup", "Overlay" )
-CoD.OverlayUtility.OverlayTypes = LuaEnums.createEnum( "GenericMessage", "Connection", "Settings", "Unlock", "Save", "Quit", "Alert", "Error" )
+CoD.OverlayUtility.OverlayTypes = LuaEnums.createEnum( "GenericMessage", "Connection", "Settings", "Unlock", "Save", "Quit", "Alert", "Error", "Info", "Notice" )
 CoD.OverlayUtility.GenericPopupSizes = LuaEnums.createEnum( "Small", "Large" )
+CoD.OverlayUtility.LOCAL_FILES_FETCH_WAIT_TIME = 20000
+CoD.OverlayUtility.CONNECTINGDW_MAX_WAIT_TIME = 30000
+if Engine.GetCurrentPlatform() == "orbis" then
+	CoD.OverlayUtility.CONNECTINGDW_MAX_WAIT_TIME = 40000
+end
+if Engine.GetCurrentPlatform() == "durango" then
+	CoD.OverlayUtility.CONNECTINGDW_MAX_WAIT_TIME = 60000
+end
 local f0_local0 = function ( f1_arg0, f1_arg1 )
 	if type( f1_arg0 ) == "function" then
 		return f1_arg0( unpack( f1_arg1 ) )
@@ -21,13 +29,33 @@ CoD.OverlayUtility.OverlayModelFields = {
 	"listDatasource",
 	"frameWidget",
 	"state",
-	"cryptokeyType"
+	"cryptoKeyType.rarity",
+	"cost",
+	"totalDuplicates",
+	"commonDuplicates",
+	"rareDuplicates",
+	"legendaryDuplicates",
+	"epicDuplicates",
+	"variantName",
+	"weaponName",
+	"inputText",
+	"backgroundId",
+	"xuid",
+	"gamertag",
+	"clantag",
+	"emblemBacking"
 }
 CoD.OverlayUtility.GoBackPropertyName = "backButtonFn"
+CoD.OverlayUtility.ContinuePropertyName = "continueButtonFn"
 CoD.OverlayUtility.ProcessActionPropertyName = "actionButtonFn"
+CoD.OverlayUtility.ProcessActionKeyboardComplete = "keyboardCompleteFn"
+CoD.OverlayUtility.ProcessConfirmVariantName = "confirmVariantNameFn"
 CoD.OverlayUtility.OverlayPropertyFields = {
 	CoD.OverlayUtility.GoBackPropertyName,
-	CoD.OverlayUtility.ProcessActionPropertyName
+	CoD.OverlayUtility.ContinuePropertyName,
+	CoD.OverlayUtility.ProcessActionPropertyName,
+	CoD.OverlayUtility.ProcessActionKeyboardComplete,
+	CoD.OverlayUtility.ProcessConfirmVariantName
 }
 CoD.OverlayUtility.DefaultModelFields = {
 	image = function ( f2_arg0, f2_arg1 )
@@ -44,6 +72,10 @@ CoD.OverlayUtility.DefaultModelFields = {
 			return "t7_icon_save_overlays_bkg"
 		elseif f2_local0 == CoD.OverlayUtility.OverlayTypes.Settings then
 			return "t7_icon_options_overlays_bkg"
+		elseif f2_local0 == CoD.OverlayUtility.OverlayTypes.Info or f2_local0 == CoD.OverlayUtility.OverlayTypes.GenericMessage then
+			return "t7_icon_info_overlays_bkg"
+		elseif f2_local0 == CoD.OverlayUtility.OverlayTypes.Notice then
+			return "t7_icon_notice_overlays_bkg"
 		else
 			return "blacktransparent"
 		end
@@ -123,6 +155,8 @@ CoD.OverlayUtility.Overlays = {
 				return Engine.Localize( "ZOMBIE_LEAVE_GAME_RANKED" )
 			elseif Engine.GameModeIsMode( CoD.GAMEMODE_LEAGUE_MATCH ) == true then
 				return Engine.Localize( "MENU_LEAVE_GAME_LEAGUES" )
+			elseif Engine.GameModeIsMode( Enum.eGameModes.MODE_GAME_FREERUN ) then
+				return ""
 			else
 				return Engine.Localize( "MENU_LEAVE_GAME_RANKED" )
 			end
@@ -253,7 +287,14 @@ CoD.OverlayUtility.Overlays = {
 								} )
 								Engine.SetDvar( "cl_paused", 0 )
 								Engine.SendMenuResponse( f27_arg2, "popup_leavegame", "endround" )
-								Engine.Exec( f27_arg2, "disconnect" )
+								local f27_local0 = Engine.IsLobbyHost( Enum.LobbyType.LOBBY_TYPE_GAME )
+								if IsGameTypeDOA() then
+									if not f27_local0 then
+										Engine.Exec( f27_arg2, "disconnect" )
+									end
+								else
+									Engine.Exec( f27_arg2, "disconnect" )
+								end
 							end
 							
 						}
@@ -467,7 +508,11 @@ CoD.OverlayUtility.Overlays = {
 				elseif f45_local2 == Enum.MessageDialogType.MESSAGE_DIALOG_TYPE_ERROR then
 					f45_local1 = Engine.Localize( "MENU_ERROR" )
 				elseif f45_local2 == Enum.MessageDialogType.MESSAGE_DIALOG_TYPE_NOTICE then
-					f45_local1 = Engine.Localize( "MENU_NOTICE" )
+					if CoD.OverlayUtility.Overlays.MessageDialogBox.getStringRef( f45_arg0 ) == "PLATFORM_PROFILE_CHANGE_MESSAGE" then
+						f45_local1 = Engine.Localize( "PLATFORM_PROFILE_CHANGE_CAPS" )
+					else
+						f45_local1 = Engine.Localize( "MENU_NOTICE" )
+					end
 				end
 			end
 			return Engine.ToUpper( f45_local1 )
@@ -475,42 +520,87 @@ CoD.OverlayUtility.Overlays = {
 		description = function ( f46_arg0 )
 			return Engine.Localize( CoD.OverlayUtility.Overlays.MessageDialogBox.getStringRef( f46_arg0 ) )
 		end,
-		categoryType = function ( f47_arg0 )
-			local modelValue = Engine.GetModelValue( Engine.GetModel( DataSources.MessageDialog.getModel( f47_arg0 ), "messageType" ) )
-			local f47_local1 = CoD.OverlayUtility.OverlayTypes.GenericMessage
-			if modelValue == Enum.MessageDialogType.MESSAGE_DIALOG_TYPE_WARNING then
-				f47_local1 = CoD.OverlayUtility.OverlayTypes.Alert
-			elseif modelValue == Enum.MessageDialogType.MESSAGE_DIALOG_TYPE_ERROR then
-				f47_local1 = CoD.OverlayUtility.OverlayTypes.Error
+		image = function ( f47_arg0 )
+			local f47_local0 = CoD.SafeGetModelValue( DataSources.MessageDialog.getModel( f47_arg0 ), "messageImage" )
+			if f47_local0 ~= nil and f47_local0 ~= "" then
+				return f47_local0
+			else
+				return nil
 			end
-			return f47_local1
 		end,
-		listDatasource = function ( f48_arg0 )
-			local f48_local0 = "MessageDialogBoxList" .. Engine.GetModelValue( Engine.GetModel( DataSources.MessageDialog.getModel( f48_arg0 ), "messagePending" ) )
-			DataSources[f48_local0] = DataSourceHelpers.ListSetup( f48_local0, function ( f49_arg0 )
-				return {
-					{
-						models = {
-							displayText = "OK"
+		categoryType = function ( f48_arg0 )
+			local modelValue = Engine.GetModelValue( Engine.GetModel( DataSources.MessageDialog.getModel( f48_arg0 ), "messageType" ) )
+			local f48_local1 = CoD.OverlayUtility.OverlayTypes.GenericMessage
+			if modelValue == Enum.MessageDialogType.MESSAGE_DIALOG_TYPE_WARNING then
+				f48_local1 = CoD.OverlayUtility.OverlayTypes.Alert
+			elseif modelValue == Enum.MessageDialogType.MESSAGE_DIALOG_TYPE_ERROR then
+				f48_local1 = CoD.OverlayUtility.OverlayTypes.Error
+			elseif modelValue == Enum.MessageDialogType.MESSAGE_DIALOG_TYPE_INFO then
+				f48_local1 = CoD.OverlayUtility.OverlayTypes.Info
+			elseif modelValue == Enum.MessageDialogType.MESSAGE_DIALOG_TYPE_NOTICE then
+				f48_local1 = CoD.OverlayUtility.OverlayTypes.Notice
+			end
+			return f48_local1
+		end,
+		listDatasource = function ( f49_arg0 )
+			local f49_local0 = "MessageDialogBoxList" .. Engine.GetModelValue( Engine.GetModel( DataSources.MessageDialog.getModel( f49_arg0 ), "messagePending" ) )
+			DataSources[f49_local0] = DataSourceHelpers.ListSetup( f49_local0, function ( f50_arg0 )
+				if CoD.OverlayUtility.Overlays.MessageDialogBox.getStringRef( f50_arg0 ) == "PLATFORM_PROFILE_CHANGE_MESSAGE" then
+					return {
+						{
+							models = {
+								displayText = Engine.Localize( "PLATFORM_CONTINUE_AS_USERNAME", Engine.GetGamertagWhoStolePrimaryController() )
+							},
+							properties = {
+								action = function ( f51_arg0, f51_arg1, f51_arg2, f51_arg3, f51_arg4 )
+									LuaUtils.UI_ClearErrorMessageDialog()
+									LuaUtils.UI_SetSignedInGamertagModel( Engine.GetGamertagWhoStolePrimaryController() )
+									GoBack( f51_arg4, f51_arg2 )
+									Engine.Durango_ContinueAs()
+									Engine.ComError( Enum.errorCode.ERROR_SOFTRESTART_KEEPDW, "" )
+								end
+								
+							}
 						},
-						properties = {
-							action = function ( f50_arg0, f50_arg1, f50_arg2, f50_arg3, f50_arg4 )
-								LuaUtils.UI_ClearErrorMessageDialog()
-								GoBack( f50_arg4, f50_arg2 )
-							end
-							
+						{
+							models = {
+								displayText = Engine.Localize( "PLATFORM_SWITCH_USER" )
+							},
+							properties = {
+								action = function ( f52_arg0, f52_arg1, f52_arg2, f52_arg3, f52_arg4 )
+									Engine.ShowAccountPicker( f52_arg2 )
+									LuaUtils.UI_ClearErrorMessageDialog()
+									GoBack( f52_arg4, f52_arg2 )
+								end
+								
+							}
 						}
 					}
-				}
+				else
+					return {
+						{
+							models = {
+								displayText = Engine.Localize( "MENU_OK" )
+							},
+							properties = {
+								action = function ( f53_arg0, f53_arg1, f53_arg2, f53_arg3, f53_arg4 )
+									LuaUtils.UI_ClearErrorMessageDialog()
+									GoBack( f53_arg4, f53_arg2 )
+								end
+								
+							}
+						}
+					}
+				end
 			end, true, nil )
-			return f48_local0
+			return f49_local0
 		end,
-		[CoD.OverlayUtility.GoBackPropertyName] = function ( f51_arg0 )
-			local f51_local0 = CoD.OverlayUtility.Overlays.MessageDialogBox.getStringRef( f51_arg0 )
-			if CoD.OverlayUtility.Overlays.MessageDialogBox.getStringRef( f51_arg0 ) ~= "PLATFORM_SAVEDATA_CORRUPT" then
-				return function ( f52_arg0, f52_arg1, f52_arg2, f52_arg3 )
+		[CoD.OverlayUtility.GoBackPropertyName] = function ( f54_arg0 )
+			local f54_local0 = CoD.OverlayUtility.Overlays.MessageDialogBox.getStringRef( f54_arg0 )
+			if f54_local0 ~= "PLATFORM_PROFILE_CHANGE_MESSAGE" and f54_local0 ~= "PLATFORM_SAVEDATA_CORRUPT" then
+				return function ( f55_arg0, f55_arg1, f55_arg2, f55_arg3 )
 					LuaUtils.UI_ClearErrorMessageDialog()
-					GoBack( f52_arg3, f52_arg2 )
+					GoBack( f55_arg3, f55_arg2 )
 				end
 				
 			else
@@ -528,52 +618,52 @@ CoD.OverlayUtility.Overlays = {
 		end,
 		categoryType = CoD.OverlayUtility.OverlayTypes.Save,
 		listDatasource = function ()
-			DataSources.DemoSaveClipPopup_List = DataSourceHelpers.ListSetup( "DemoSaveClipPopup_List", function ( f56_arg0 )
-				local f56_local0 = {}
-				table.insert( f56_local0, {
+			DataSources.DemoSaveClipPopup_List = DataSourceHelpers.ListSetup( "DemoSaveClipPopup_List", function ( f59_arg0 )
+				local f59_local0 = {}
+				table.insert( f59_local0, {
 					models = {
 						displayText = Engine.Localize( "MENU_AUTONAME_SEGMENT" )
 					},
 					properties = {
-						action = function ( f57_arg0, f57_arg1, f57_arg2, f57_arg3, f57_arg4 )
-							Engine.Exec( f57_arg2, "demo_savesegment 0" )
-							GoBack( f57_arg4, f57_arg2 )
-						end
-					}
-				} )
-				table.insert( f56_local0, {
-					models = {
-						displayText = Engine.Localize( "MENU_NAME_SEGMENT" )
-					},
-					properties = {
-						action = function ( f58_arg0, f58_arg1, f58_arg2, f58_arg3, f58_arg4 )
-							Engine.Exec( f58_arg2, "demo_keyboard segmentName" )
-						end
-					}
-				} )
-				table.insert( f56_local0, {
-					models = {
-						displayText = Engine.Localize( "MENU_PREVIEW_SEGMENT" )
-					},
-					properties = {
-						action = function ( f59_arg0, f59_arg1, f59_arg2, f59_arg3, f59_arg4 )
-							Engine.Exec( f59_arg2, "demo_previewsegment" )
-							GoBack( f59_arg4, f59_arg2 )
-						end
-					}
-				} )
-				table.insert( f56_local0, {
-					models = {
-						displayText = Engine.Localize( "MENU_DISCARD_SEGMENT" )
-					},
-					properties = {
 						action = function ( f60_arg0, f60_arg1, f60_arg2, f60_arg3, f60_arg4 )
-							Engine.Exec( f60_arg2, "demo_savesegment 1" )
+							Engine.Exec( f60_arg2, "demo_savesegment 0" )
 							GoBack( f60_arg4, f60_arg2 )
 						end
 					}
 				} )
-				return f56_local0
+				table.insert( f59_local0, {
+					models = {
+						displayText = Engine.Localize( "MENU_NAME_SEGMENT" )
+					},
+					properties = {
+						action = function ( f61_arg0, f61_arg1, f61_arg2, f61_arg3, f61_arg4 )
+							Engine.Exec( f61_arg2, "demo_keyboard segmentName" )
+						end
+					}
+				} )
+				table.insert( f59_local0, {
+					models = {
+						displayText = Engine.Localize( "MENU_PREVIEW_SEGMENT" )
+					},
+					properties = {
+						action = function ( f62_arg0, f62_arg1, f62_arg2, f62_arg3, f62_arg4 )
+							Engine.Exec( f62_arg2, "demo_previewsegment" )
+							GoBack( f62_arg4, f62_arg2 )
+						end
+					}
+				} )
+				table.insert( f59_local0, {
+					models = {
+						displayText = Engine.Localize( "MENU_DISCARD_SEGMENT" )
+					},
+					properties = {
+						action = function ( f63_arg0, f63_arg1, f63_arg2, f63_arg3, f63_arg4 )
+							Engine.Exec( f63_arg2, "demo_savesegment 1" )
+							GoBack( f63_arg4, f63_arg2 )
+						end
+					}
+				} )
+				return f59_local0
 			end, true, nil )
 			return "DemoSaveClipPopup_List"
 		end,
@@ -589,54 +679,214 @@ CoD.OverlayUtility.Overlays = {
 		end,
 		categoryType = CoD.OverlayUtility.OverlayTypes.Alert,
 		listDatasource = function ()
-			DataSources.DemoDeleteAllDollyCameraMarkers_List = DataSourceHelpers.ListSetup( "DemoDeleteAllDollyCameraMarkers_List", function ( f64_arg0 )
-				local f64_local0 = {}
-				table.insert( f64_local0, {
+			DataSources.DemoDeleteAllDollyCameraMarkers_List = DataSourceHelpers.ListSetup( "DemoDeleteAllDollyCameraMarkers_List", function ( f67_arg0 )
+				local f67_local0 = {}
+				table.insert( f67_local0, {
 					models = {
 						displayText = Engine.Localize( "DEMO_DELETE_ALL" )
 					},
 					properties = {
-						action = function ( f65_arg0, f65_arg1, f65_arg2, f65_arg3, f65_arg4 )
-							CoD.DemoUtility.RemoveDollyCamMarker( f65_arg2, -1 )
-							CoD.DemoUtility.SetEditingMode( f65_arg2, false )
-							GoBack( f65_arg4, f65_arg2 )
+						action = function ( f68_arg0, f68_arg1, f68_arg2, f68_arg3, f68_arg4 )
+							CoD.DemoUtility.RemoveDollyCamMarker( f68_arg2, -1 )
+							CoD.DemoUtility.SetEditingDollyCameraMarker( f68_arg2, false )
+							GoBack( f68_arg4, f68_arg2 )
 						end
 					}
 				} )
-				table.insert( f64_local0, {
+				table.insert( f67_local0, {
 					models = {
 						displayText = Engine.Localize( "MENU_CANCEL" )
 					},
 					properties = {
-						action = function ( f66_arg0, f66_arg1, f66_arg2, f66_arg3, f66_arg4 )
-							GoBack( f66_arg4, f66_arg2 )
+						action = function ( f69_arg0, f69_arg1, f69_arg2, f69_arg3, f69_arg4 )
+							GoBack( f69_arg4, f69_arg2 )
 						end
 					}
 				} )
-				return f64_local0
+				return f67_local0
 			end, true, nil )
 			return "DemoDeleteAllDollyCameraMarkers_List"
+		end,
+		[CoD.OverlayUtility.GoBackPropertyName] = nil
+	},
+	DemoDeleteAllLightmanMarkers = {
+		menuName = "SystemOverlay_Compact",
+		title = function ()
+			return Engine.ToUpper( Engine.Localize( "DEMO_DELETE_ALL_LIGHTS" ) )
+		end,
+		description = function ()
+			return Engine.Localize( "DEMO_DELETE_ALL_LIGHTS_HINT" )
+		end,
+		categoryType = CoD.OverlayUtility.OverlayTypes.Alert,
+		listDatasource = function ()
+			DataSources.DemoDeleteAllLightmanMarkers_List = DataSourceHelpers.ListSetup( "DemoDeleteAllLightmanMarkers_List", function ( f73_arg0 )
+				local f73_local0 = {}
+				table.insert( f73_local0, {
+					models = {
+						displayText = Engine.Localize( "DEMO_DELETE_ALL" )
+					},
+					properties = {
+						action = function ( f74_arg0, f74_arg1, f74_arg2, f74_arg3, f74_arg4 )
+							CoD.DemoUtility.RemoveLightmanMarker( f74_arg2, -1 )
+							CoD.DemoUtility.SetEditingLightmanMarker( f74_arg2, false )
+							GoBack( f74_arg4, f74_arg2 )
+						end
+					}
+				} )
+				table.insert( f73_local0, {
+					models = {
+						displayText = Engine.Localize( "MENU_CANCEL" )
+					},
+					properties = {
+						action = function ( f75_arg0, f75_arg1, f75_arg2, f75_arg3, f75_arg4 )
+							GoBack( f75_arg4, f75_arg2 )
+						end
+					}
+				} )
+				return f73_local0
+			end, true, nil )
+			return "DemoDeleteAllLightmanMarkers_List"
+		end,
+		[CoD.OverlayUtility.GoBackPropertyName] = nil
+	},
+	DemoDeleteSegment = {
+		menuName = "SystemOverlay_Compact",
+		title = function ()
+			return Engine.ToUpper( Engine.Localize( "MENU_DELETE_SEGMENT" ) )
+		end,
+		description = function ()
+			return Engine.Localize( "MENU_DELETE_SEGMENT_CONFIRMATION" )
+		end,
+		categoryType = CoD.OverlayUtility.OverlayTypes.Alert,
+		listDatasource = function ()
+			DataSources.DemoDeleteSegment_List = DataSourceHelpers.ListSetup( "DemoDeleteSegment_List", function ( f79_arg0 )
+				local f79_local0 = {}
+				table.insert( f79_local0, {
+					models = {
+						displayText = Engine.Localize( "MENU_YES" )
+					},
+					properties = {
+						action = function ( f80_arg0, f80_arg1, f80_arg2, f80_arg3, f80_arg4 )
+							Engine.ExecNow( f80_arg2, "demo_deletesegment " .. Engine.GetModelValue( Engine.GetModel( CoD.Timeline_GetHighlightedSegmentModel(), "segmentNumber" ) ) - 1 )
+							TimelineEditorRefresh()
+							GoBack( f80_arg4, f80_arg2 )
+						end
+					}
+				} )
+				table.insert( f79_local0, {
+					models = {
+						displayText = Engine.Localize( "MENU_CANCEL" )
+					},
+					properties = {
+						action = function ( f81_arg0, f81_arg1, f81_arg2, f81_arg3, f81_arg4 )
+							GoBack( f81_arg4, f81_arg2 )
+						end
+					}
+				} )
+				return f79_local0
+			end, true, nil )
+			return "DemoDeleteSegment_List"
+		end,
+		[CoD.OverlayUtility.GoBackPropertyName] = nil
+	},
+	DemoDeleteAllSegments = {
+		menuName = "SystemOverlay_Compact",
+		title = function ()
+			return Engine.ToUpper( Engine.Localize( "MENU_DELETE_ALL_SEGMENTS" ) )
+		end,
+		description = function ()
+			return Engine.Localize( "MENU_DELETE_ALL_SEGMENTS_CONFIRMATION" )
+		end,
+		categoryType = CoD.OverlayUtility.OverlayTypes.Alert,
+		listDatasource = function ()
+			DataSources.DemoDeleteAllSegments_List = DataSourceHelpers.ListSetup( "DemoDeleteAllSegments_List", function ( f85_arg0 )
+				local f85_local0 = {}
+				table.insert( f85_local0, {
+					models = {
+						displayText = Engine.Localize( "MENU_YES" )
+					},
+					properties = {
+						action = function ( f86_arg0, f86_arg1, f86_arg2, f86_arg3, f86_arg4 )
+							Engine.ExecNow( f86_arg2, "demo_deleteclip" )
+							TimelineEditorRefresh()
+							GoBack( f86_arg4, f86_arg2 )
+						end
+					}
+				} )
+				table.insert( f85_local0, {
+					models = {
+						displayText = Engine.Localize( "MENU_CANCEL" )
+					},
+					properties = {
+						action = function ( f87_arg0, f87_arg1, f87_arg2, f87_arg3, f87_arg4 )
+							GoBack( f87_arg4, f87_arg2 )
+						end
+					}
+				} )
+				return f85_local0
+			end, true, nil )
+			return "DemoDeleteAllSegments_List"
+		end,
+		[CoD.OverlayUtility.GoBackPropertyName] = nil
+	},
+	DemoMergeAllSegments = {
+		menuName = "SystemOverlay_Compact",
+		title = function ()
+			return Engine.ToUpper( Engine.Localize( "MENU_MERGE_ALL_SEGMENTS" ) )
+		end,
+		description = function ()
+			return Engine.Localize( "MENU_MERGE_ALL_SEGMENTS_CONFIRMATION" )
+		end,
+		categoryType = CoD.OverlayUtility.OverlayTypes.Alert,
+		listDatasource = function ()
+			DataSources.DemoMergeAllSegments_List = DataSourceHelpers.ListSetup( "DemoMergeAllSegments_List", function ( f91_arg0 )
+				local f91_local0 = {}
+				table.insert( f91_local0, {
+					models = {
+						displayText = Engine.Localize( "MENU_YES" )
+					},
+					properties = {
+						action = function ( f92_arg0, f92_arg1, f92_arg2, f92_arg3, f92_arg4 )
+							Engine.ExecNow( f92_arg2, "demo_mergesegments" )
+							TimelineEditorRefresh()
+							GoBack( f92_arg4, f92_arg2 )
+						end
+					}
+				} )
+				table.insert( f91_local0, {
+					models = {
+						displayText = Engine.Localize( "MENU_CANCEL" )
+					},
+					properties = {
+						action = function ( f93_arg0, f93_arg1, f93_arg2, f93_arg3, f93_arg4 )
+							GoBack( f93_arg4, f93_arg2 )
+						end
+					}
+				} )
+				return f91_local0
+			end, true, nil )
+			return "DemoMergeAllSegments_List"
 		end,
 		[CoD.OverlayUtility.GoBackPropertyName] = nil
 	},
 	EndDemoPopup = {
 		menuName = "SystemOverlay_Compact",
 		title = function ()
-			local f67_local0 = nil
-			local f67_local1 = Engine.IsDemoClipPlaying()
-			local f67_local2 = Engine.GameHost()
-			if not f67_local1 then
-				if f67_local2 then
-					f67_local0 = Engine.Localize( "MPUI_LEAVE_FILM" )
+			local f94_local0 = nil
+			local f94_local1 = Engine.IsDemoClipPlaying()
+			local f94_local2 = Engine.GameHost()
+			if not f94_local1 then
+				if f94_local2 then
+					f94_local0 = Engine.Localize( "MPUI_LEAVE_FILM" )
 				else
-					f67_local0 = Engine.Localize( "MPUI_END_FILM" )
+					f94_local0 = Engine.Localize( "MPUI_END_FILM" )
 				end
-			elseif f67_local2 then
-				f67_local0 = Engine.Localize( "MPUI_LEAVE_CLIP" )
+			elseif f94_local2 then
+				f94_local0 = Engine.Localize( "MPUI_LEAVE_CLIP" )
 			else
-				f67_local0 = Engine.Localize( "MPUI_END_CLIP" )
+				f94_local0 = Engine.Localize( "MPUI_END_CLIP" )
 			end
-			return Engine.ToUpper( f67_local0 )
+			return Engine.ToUpper( f94_local0 )
 		end,
 		description = function ()
 			if Engine.IsClipModified() then
@@ -647,76 +897,77 @@ CoD.OverlayUtility.Overlays = {
 		end,
 		categoryType = CoD.OverlayUtility.OverlayTypes.Quit,
 		listDatasource = function ()
-			DataSources.EndDemoPopup_List = DataSourceHelpers.ListSetup( "EndDemoPopup_List", function ( f70_arg0 )
-				local f70_local0 = {}
-				local f70_local1 = Engine.IsClipModified()
-				local f70_local2 = function ()
+			DataSources.EndDemoPopup_List = DataSourceHelpers.ListSetup( "EndDemoPopup_List", function ( f97_arg0 )
+				local f97_local0 = {}
+				local f97_local1 = Engine.IsClipModified()
+				local f97_local2 = function ()
 					if not Engine.IsLobbyHost( Enum.LobbyType.LOBBY_TYPE_GAME ) then
 						Engine.GameModeResetModes()
 						Engine.SessionModeResetModes()
-						Engine.Exec( f70_arg0, "disconnect" )
+						Engine.Exec( f97_arg0, "disconnect" )
 					else
-						Engine.Exec( f70_arg0, "xpartystopdemo" )
+						Engine.Exec( f97_arg0, "xpartystopdemo" )
 					end
 				end
 				
-				if not f70_local1 then
-					table.insert( f70_local0, {
+				if not f97_local1 then
+					table.insert( f97_local0, {
 						models = {
 							displayText = Engine.Localize( "MENU_YES" )
 						},
 						properties = {
-							action = function ( f72_arg0, f72_arg1, f72_arg2, f72_arg3, f72_arg4 )
-								GoBack( f72_arg4, f72_arg2 )
-								f70_local2( f72_arg2 )
+							action = function ( f99_arg0, f99_arg1, f99_arg2, f99_arg3, f99_arg4 )
+								GoBack( f99_arg4, f99_arg2 )
+								f97_local2( f99_arg2 )
 							end
 						}
 					} )
-					table.insert( f70_local0, {
+					table.insert( f97_local0, {
 						models = {
 							displayText = Engine.Localize( "MENU_NO" )
 						},
 						properties = {
-							action = function ( f73_arg0, f73_arg1, f73_arg2, f73_arg3, f73_arg4 )
-								GoBack( f73_arg4, f73_arg2 )
-							end
+							action = function ( f100_arg0, f100_arg1, f100_arg2, f100_arg3, f100_arg4 )
+								GoBack( f100_arg4, f100_arg2 )
+							end,
+							selectIndex = true
 						}
 					} )
 				else
-					table.insert( f70_local0, {
+					table.insert( f97_local0, {
 						models = {
 							displayText = Engine.Localize( "MENU_SAVE_CLIP" )
 						},
 						properties = {
-							action = function ( f74_arg0, f74_arg1, f74_arg2, f74_arg3, f74_arg4 )
-								GoBack( f74_arg4, f74_arg2 )
+							action = function ( f101_arg0, f101_arg1, f101_arg2, f101_arg3, f101_arg4 )
+								GoBack( f101_arg4, f101_arg2 )
 							end,
 							disabled = true
 						}
 					} )
-					table.insert( f70_local0, {
+					table.insert( f97_local0, {
 						models = {
 							displayText = Engine.Localize( "MENU_END_FILM_WITHOUT_SAVING" )
 						},
 						properties = {
-							action = function ( f75_arg0, f75_arg1, f75_arg2, f75_arg3, f75_arg4 )
-								GoBack( f75_arg4, f75_arg2 )
-								f70_local2( f75_arg2 )
+							action = function ( f102_arg0, f102_arg1, f102_arg2, f102_arg3, f102_arg4 )
+								GoBack( f102_arg4, f102_arg2 )
+								f97_local2( f102_arg2 )
 							end
 						}
 					} )
-					table.insert( f70_local0, {
+					table.insert( f97_local0, {
 						models = {
 							displayText = Engine.Localize( "MENU_CANCEL" )
 						},
 						properties = {
-							action = function ( f76_arg0, f76_arg1, f76_arg2, f76_arg3, f76_arg4 )
-								GoBack( f76_arg4, f76_arg2 )
+							action = function ( f103_arg0, f103_arg1, f103_arg2, f103_arg3, f103_arg4 )
+								GoBack( f103_arg4, f103_arg2 )
 							end
 						}
 					} )
 				end
-				return f70_local0
+				return f97_local0
 			end, true, nil )
 			return "EndDemoPopup_List"
 		end,
@@ -731,21 +982,24 @@ CoD.OverlayUtility.Overlays = {
 	},
 	UpdateNeeded = {
 		menuName = "SystemOverlay_Compact",
+		postCreateStep = function ( f104_arg0, f104_arg1 )
+			f104_arg0.anyControllerAllowed = true
+		end,
 		title = "MENU_NOTICE",
 		description = "MENU_UPDATE_NEEDED",
 		categoryType = CoD.OverlayUtility.OverlayTypes.Connection,
 		[CoD.OverlayUtility.GoBackPropertyName] = CoD.OverlayUtility.DefaultGoBack,
-		listDatasource = function ( f77_arg0 )
-			DataSources.UpdateNeededPopupList = DataSourceHelpers.ListSetup( "UpdateNeededPopupList", function ( f78_arg0 )
+		listDatasource = function ( f105_arg0 )
+			DataSources.UpdateNeededPopupList = DataSourceHelpers.ListSetup( "UpdateNeededPopupList", function ( f106_arg0 )
 				return {
 					{
 						models = {
 							displayText = Engine.Localize( "MENU_OK" )
 						},
 						properties = {
-							action = function ( f79_arg0, f79_arg1, f79_arg2, f79_arg3, f79_arg4 )
+							action = function ( f107_arg0, f107_arg1, f107_arg2, f107_arg3, f107_arg4 )
 								CoD.LobbyBase.FailedDWConnection = true
-								GoBack( f79_arg4, f79_arg2 )
+								GoBack( f107_arg4, f107_arg2 )
 							end
 							
 						}
@@ -757,20 +1011,21 @@ CoD.OverlayUtility.Overlays = {
 	},
 	LoadingProfile = {
 		menuName = "SystemOverlay_Compact",
-		postCreateStep = function ( f80_arg0, f80_arg1 )
-			local f80_local0 = 0
-			if f80_arg0.layout and f80_arg0.layout.frameWidget and f80_arg0.layout.frameWidget.framedWidget then
-				f80_arg0.layout.frameWidget.framedWidget:playClip( "LoadingLoop" )
+		postCreateStep = function ( f108_arg0, f108_arg1 )
+			f108_arg0.unusedControllerAllowed = true
+			local f108_local0 = 0
+			if f108_arg0.layout and f108_arg0.layout.frameWidget and f108_arg0.layout.frameWidget.framedWidget then
+				f108_arg0.layout.frameWidget.framedWidget:playClip( "LoadingLoop" )
 			end
-			f80_arg0:addElement( LUI.UITimer.newElementTimer( 400, false, function ( f81_arg0 )
-				if Engine.AreLocalFilesReady( f80_arg1 ) == true then
-					GoBack( f80_arg0, f80_arg1 )
+			f108_arg0:addElement( LUI.UITimer.newElementTimer( 400, false, function ( f109_arg0 )
+				if Engine.AreLocalFilesReady( f108_arg1 ) == true then
+					GoBack( f108_arg0, f108_arg1 )
 					return 
-				elseif f80_local0 > CoD.Popup.LOCAL_FILES_FETCH_WAIT_TIME then
-					GoBack( f80_arg0, f80_arg1 )
+				elseif f108_local0 > CoD.OverlayUtility.LOCAL_FILES_FETCH_WAIT_TIME then
+					GoBack( f108_arg0, f108_arg1 )
 					return 
 				else
-					f80_local0 = f80_local0 + f81_arg0.timeElapsed
+					f108_local0 = f108_local0 + f109_arg0.timeElapsed
 				end
 			end ) )
 		end,
@@ -781,36 +1036,56 @@ CoD.OverlayUtility.Overlays = {
 	},
 	ConnectingToDemonware = {
 		menuName = "SystemOverlay_Compact",
-		postCreateStep = function ( f82_arg0, f82_arg1 )
-			local f82_local0 = 0
-			if f82_arg0.layout and f82_arg0.layout.frameWidget and f82_arg0.layout.frameWidget.framedWidget then
-				f82_arg0.layout.frameWidget.framedWidget:playClip( "LoadingLoop" )
+		postCreateStep = function ( f110_arg0, f110_arg1 )
+			f110_arg0.unusedControllerAllowed = true
+			local f110_local0 = 0
+			if f110_arg0.layout and f110_arg0.layout.frameWidget and f110_arg0.layout.frameWidget.framedWidget then
+				f110_arg0.layout.frameWidget.framedWidget:playClip( "LoadingLoop" )
 			end
-			f82_arg0:addElement( LUI.UITimer.newElementTimer( 400, false, function ( f83_arg0 )
-				if Engine.IsDemonwareFetchingDone( f82_arg1 ) then
-					GoBack( f82_arg0, f82_arg1 )
+			Engine.SetModelValue( Engine.GetModel( Engine.GetGlobalModel(), "lobbyRoot.beginPlay" ), Enum.LobbyNetworkMode.LOBBY_NETWORKMODE_INVALID )
+			f110_arg0:addElement( LUI.UITimer.newElementTimer( 400, false, function ( f111_arg0 )
+				if Engine.IsDemonwareFetchingDone( f110_arg1 ) then
+					CoD.LobbyBase.FailedDWConnection = false
+					local f111_local0 = LobbyData.GetLobbyNav()
+					if f111_local0 == LobbyData.UITargets.UI_MODESELECT.id then
+						Engine.LobbyVM_CallFunc( "NetworkModeChanged", {
+							controller = f110_arg1,
+							networkMode = Enum.LobbyNetworkMode.LOBBY_NETWORKMODE_LIVE
+						} )
+					elseif f111_local0 == LobbyData.UITargets.UI_MAIN.id then
+						Engine.SetLobbyNetworkMode( Enum.LobbyNetworkMode.LOBBY_NETWORKMODE_LIVE )
+					end
+					GoBack( f110_arg0, f110_arg1 )
+					if f111_local0 == LobbyData.UITargets.UI_MAIN.id and Dvar.lobby_beginPlay:exists() then
+						Dvar.lobby_beginPlay:set( Enum.LobbyNetworkMode.LOBBY_NETWORKMODE_LIVE )
+					end
 					return 
 				end
-				local f83_local0 = true
-				if CoD.isPS3 then
-					f83_local0 = Engine.CheckNetConnection()
-				end
-				if f82_local0 > CoD.Popup.CONNECTINGDW_MAX_WAIT_TIME or f83_local0 == false then
-					local f83_local1 = GoBack( f82_arg0, f82_arg1 )
-					local f83_local2 = ""
-					if f83_local0 == false then
-						f83_local2 = "XBOXLIVE_NETCONNECTION"
+				local f111_local0 = Engine.CheckNetConnection()
+				if Engine.IsLPCBusy() then
+					local f111_local1 = Engine.GetLPCCompletionPercentage()
+					if f111_local1 == 0 or f111_local1 == 100 then
+						CoD.OverlayUtility.Overlays[f110_arg0.menuName].description = Engine.Localize( "MENU_CHECKING_FILES" )
 					else
-						local f83_local3, f83_local4 = Engine.GetSystemInfo( f82_arg1, CoD.SYSINFO_CONNECTIVITY_INFO )
-						f83_local2 = Engine.Localize( "PLATFORM_DEMONWARE_DISCONNECT" ) .. "\n\n" .. Engine.Localize( "MENU_ERROR_CODE", f83_local3 )
+						CoD.OverlayUtility.Overlays[f110_arg0.menuName].description = Engine.Localize( "MENU_DOWNLOAD_IN_PROGRESS" ) .. "\n" .. f111_local1 .. "%"
+					end
+					f110_arg0:refreshData( nil )
+				elseif f110_local0 > CoD.OverlayUtility.CONNECTINGDW_MAX_WAIT_TIME or f111_local0 == false then
+					local f111_local1 = GoBack( f110_arg0, f110_arg1 )
+					local f111_local2 = ""
+					if f111_local0 == false then
+						f111_local2 = "XBOXLIVE_NETCONNECTION"
+					else
+						local f111_local3, f111_local4 = Engine.GetSystemInfo( f110_arg1, CoD.SYSINFO_CONNECTIVITY_INFO )
+						f111_local2 = Engine.Localize( "PLATFORM_DEMONWARE_DISCONNECT" ) .. "\n\n" .. Engine.Localize( "MENU_ERROR_CODE", f111_local3 )
 						if Engine.IsShipBuild() == false then
-							f83_local2 = f83_local2 .. "\n\n\tDEBUG INFO:\n" .. f83_local4
+							f111_local2 = f111_local2 .. "\n\n\tDEBUG INFO:\n" .. f111_local4
 						end
 					end
-					LuaUtils.UI_ShowErrorMessageDialog( f82_arg1, f83_local2, "MENU_NOTICE_CAPS" )
 					CoD.LobbyBase.FailedDWConnection = true
+					LuaUtils.UI_ShowErrorMessageDialog( f110_arg1, f111_local2, "MENU_NOTICE_CAPS" )
 				end
-				f82_local0 = f82_local0 + f83_arg0.timeElapsed
+				f110_local0 = f110_local0 + f111_arg0.timeElapsed
 			end ) )
 		end,
 		title = "MENU_CONNECTING_DW",
@@ -820,54 +1095,54 @@ CoD.OverlayUtility.Overlays = {
 	},
 	LobbyPlayNetworkModePopup = {
 		menuName = CoD.OverlayUtility.AutoSizeMenuFromDescription( "LobbyPlayNetworkModePopup" ),
-		title = function ( f84_arg0 )
-			local f84_local0 = ""
-			if f84_arg0 == Enum.LobbyNetworkMode.LOBBY_NETWORKMODE_LIVE then
-				f84_local0 = "PLATFORM_XBOX_LIVE_CAPS"
-			elseif f84_arg0 == Enum.LobbyNetworkMode.LOBBY_NETWORKMODE_LAN then
-				f84_local0 = "MENU_PLAY_LOCAL_CAPS"
+		title = function ( f112_arg0 )
+			local f112_local0 = ""
+			if f112_arg0 == Enum.LobbyNetworkMode.LOBBY_NETWORKMODE_LIVE then
+				f112_local0 = "PLATFORM_XBOX_LIVE_CAPS"
+			elseif f112_arg0 == Enum.LobbyNetworkMode.LOBBY_NETWORKMODE_LAN then
+				f112_local0 = "MENU_PLAY_LOCAL_CAPS"
 			end
-			return Engine.Localize( f84_local0 )
+			return Engine.Localize( f112_local0 )
 		end,
-		description = function ( f85_arg0 )
-			local f85_local0 = ""
-			if f85_arg0 == Enum.LobbyNetworkMode.LOBBY_NETWORKMODE_LIVE then
+		description = function ( f113_arg0 )
+			local f113_local0 = ""
+			if f113_arg0 == Enum.LobbyNetworkMode.LOBBY_NETWORKMODE_LIVE then
 				if Engine.GetLobbyClientCount( Enum.LobbyType.LOBBY_TYPE_PRIVATE ) > 1 then
-					f85_local0 = "XBOXLIVE_PLAY_ONLINE_AND_DISBAND_DESC"
+					f113_local0 = "XBOXLIVE_PLAY_ONLINE_AND_DISBAND_DESC"
 				else
-					f85_local0 = "XBOXLIVE_PLAY_ONLINE_DESC"
+					f113_local0 = "XBOXLIVE_PLAY_ONLINE_DESC"
 				end
-			elseif f85_arg0 == Enum.LobbyNetworkMode.LOBBY_NETWORKMODE_LAN then
+			elseif f113_arg0 == Enum.LobbyNetworkMode.LOBBY_NETWORKMODE_LAN then
 				if Engine.GetLobbyClientCount( Enum.LobbyType.LOBBY_TYPE_PRIVATE ) > 1 then
-					f85_local0 = "XBOXLIVE_DISBAND_AND_PLAY_LOCAL_DESC"
+					f113_local0 = "XBOXLIVE_DISBAND_AND_PLAY_LOCAL_DESC"
 				else
-					f85_local0 = "XBOXLIVE_PLAY_LOCAL_DESC"
+					f113_local0 = "XBOXLIVE_PLAY_LOCAL_DESC"
 				end
 			end
-			return Engine.Localize( f85_local0 )
+			return Engine.Localize( f113_local0 )
 		end,
 		categoryType = CoD.OverlayUtility.OverlayTypes.Connection,
 		[CoD.OverlayUtility.GoBackPropertyName] = CoD.OverlayUtility.DefaultGoBack,
-		listDatasource = function ( f86_arg0 )
-			DataSources.LobbyPlayNetworkModePopupButtons = DataSourceHelpers.ListSetup( "LobbyPlayNetworkModePopupButtons", function ( f87_arg0 )
-				local f87_local0 = ""
-				if f86_arg0 == Enum.LobbyNetworkMode.LOBBY_NETWORKMODE_LIVE then
-					f87_local0 = "XBOXLIVE_PLAY_ONLINE"
-				elseif f86_arg0 == Enum.LobbyNetworkMode.LOBBY_NETWORKMODE_LAN then
-					f87_local0 = "MENU_PLAY_LOCAL"
+		listDatasource = function ( f114_arg0 )
+			DataSources.LobbyPlayNetworkModePopupButtons = DataSourceHelpers.ListSetup( "LobbyPlayNetworkModePopupButtons", function ( f115_arg0 )
+				local f115_local0 = ""
+				if f114_arg0 == Enum.LobbyNetworkMode.LOBBY_NETWORKMODE_LIVE then
+					f115_local0 = "XBOXLIVE_PLAY_ONLINE"
+				elseif f114_arg0 == Enum.LobbyNetworkMode.LOBBY_NETWORKMODE_LAN then
+					f115_local0 = "MENU_PLAY_LOCAL"
 				end
 				return {
 					{
 						models = {
-							displayText = Engine.Localize( f87_local0 )
+							displayText = Engine.Localize( f115_local0 )
 						},
 						properties = {
-							action = function ( f88_arg0, f88_arg1, f88_arg2, f88_arg3, f88_arg4 )
-								LobbyToggleNetwork( f88_arg0, f88_arg1, f88_arg2, f88_arg3 )
-								GoBack( f88_arg4, f88_arg2 )
+							action = function ( f116_arg0, f116_arg1, f116_arg2, f116_arg3, f116_arg4 )
+								LobbyToggleNetwork( f116_arg0, f116_arg1, f116_arg2, f116_arg3 )
+								GoBack( f116_arg4, f116_arg2 )
 							end
 							,
-							actionParam = f86_arg0
+							actionParam = f114_arg0
 						}
 					},
 					{
@@ -875,8 +1150,8 @@ CoD.OverlayUtility.Overlays = {
 							displayText = Engine.Localize( "MENU_CANCEL" )
 						},
 						properties = {
-							action = function ( f89_arg0, f89_arg1, f89_arg2, f89_arg3, f89_arg4 )
-								GoBack( f89_arg4, f89_arg2 )
+							action = function ( f117_arg0, f117_arg1, f117_arg2, f117_arg3, f117_arg4 )
+								GoBack( f117_arg4, f117_arg2 )
 							end
 							
 						}
@@ -893,16 +1168,17 @@ CoD.OverlayUtility.Overlays = {
 		image = "",
 		categoryType = CoD.OverlayUtility.OverlayTypes.GenericMessage,
 		listDatasource = function ()
-			DataSources.FreerunEndGameButtons = DataSourceHelpers.ListSetup( "FreerunEndGameButtons", function ( f91_arg0 )
+			DataSources.FreerunEndGameButtons = DataSourceHelpers.ListSetup( "FreerunEndGameButtons", function ( f119_arg0 )
 				return {
 					{
 						models = {
 							displayText = "MENU_FR_RESTART_COURSE"
 						},
 						properties = {
-							action = function ( f92_arg0, f92_arg1, f92_arg2, f92_arg3, f92_arg4 )
-								GoBack( f92_arg0, f92_arg2 )
-								Engine.SendMenuResponse( f92_arg2, "freerun_endgame_popup", "fr_restart" )
+							action = function ( f120_arg0, f120_arg1, f120_arg2, f120_arg3, f120_arg4 )
+								GoBack( f120_arg0, f120_arg2 )
+								Engine.LockInput( f120_arg2, false )
+								Engine.SendMenuResponse( f120_arg2, "freerun_endgame_popup", "fr_restart" )
 							end
 							
 						}
@@ -912,9 +1188,9 @@ CoD.OverlayUtility.Overlays = {
 							displayText = "MENU_QUIT_GAME_CAPS"
 						},
 						properties = {
-							action = function ( f93_arg0, f93_arg1, f93_arg2, f93_arg3, f93_arg4 )
-								GoBack( f93_arg0, f93_arg2 )
-								CoD.QuitGame( f93_arg2 )
+							action = function ( f121_arg0, f121_arg1, f121_arg2, f121_arg3, f121_arg4 )
+								GoBack( f121_arg0, f121_arg2 )
+								CoD.QuitGame( f121_arg2 )
 							end
 							
 						}
@@ -926,16 +1202,16 @@ CoD.OverlayUtility.Overlays = {
 	},
 	RestrictedAttachmentMenu = {
 		menuName = "FeatureOverlay",
-		title = function ( f94_arg0, f94_arg1 )
+		title = function ( f122_arg0, f122_arg1 )
 			return "MENU_ATTACHMENT_RESTRICTION_OPTIONS"
 		end,
-		description = function ( f95_arg0, f95_arg1 )
+		description = function ( f123_arg0, f123_arg1 )
 			return ""
 		end,
-		image = function ( f96_arg0, f96_arg1 )
-			local f96_local0 = f96_arg1:getModel()
-			if f96_local0 then
-				return Engine.GetModelValue( Engine.GetModel( f96_local0, "image" ) )
+		image = function ( f124_arg0, f124_arg1 )
+			local f124_local0 = f124_arg1:getModel()
+			if f124_local0 then
+				return Engine.GetModelValue( Engine.GetModel( f124_local0, "image" ) )
 			else
 				return ""
 			end
@@ -944,37 +1220,37 @@ CoD.OverlayUtility.Overlays = {
 		openMethod = CoD.OverlayUtility.OpenMethods.Overlay,
 		frameWidget = "CoD.GameSettings_AttachmentOptionsPopup",
 		[CoD.OverlayUtility.GoBackPropertyName] = function ()
-			return function ( f98_arg0, f98_arg1, f98_arg2, f98_arg3 )
+			return function ( f126_arg0, f126_arg1, f126_arg2, f126_arg3 )
 				Engine.ForceNotifyModelSubscriptions( Engine.CreateModel( Engine.GetGlobalModel(), "GametypeSettings.Update" ) )
-				GoBack( f98_arg0, f98_arg2 )
+				GoBack( f126_arg0, f126_arg2 )
 			end
 			
 		end,
-		listDatasource = function ( f99_arg0, f99_arg1 )
+		listDatasource = function ( f127_arg0, f127_arg1 )
 			DataSources.CompetitiveSettingsAttachment = DataSourceHelpers.ListSetup( "CompetitiveSettingsAttachment", function ()
-				local f100_local0 = f99_arg1:getModel()
-				local f100_local1 = Engine.GetModelValue( Engine.GetModel( f100_local0, "attachmentIndex" ) )
-				local f100_local2 = Engine.GetModelValue( Engine.GetModel( f100_local0, "title" ) )
-				local f100_local3 = Engine.GetModelValue( Engine.GetModel( f100_local0, "description" ) )
-				local f100_local4 = Engine.GetModelValue( Engine.GetModel( f100_local0, "image" ) )
-				local f100_local5 = {}
-				table.insert( f100_local5, CoD.OptionsUtility.CreateItemRestrictionSettings( f99_arg0, f100_local2, "", "Attachment_" .. f100_local2, CoD.GameSettingsUtility.GetGroupRestrictionOptions(), f100_local4, CoD.OptionsUtility.GametypeSettingsSetAttachmentRestrictionState, {
-					attachmentIndex = f100_local1
-				}, function ( f101_arg0 )
-					if Engine.AttachmentRestrictionStateChangedForAnyWeapon( f101_arg0.attachmentIndex ) == true then
+				local f128_local0 = f127_arg1:getModel()
+				local f128_local1 = Engine.GetModelValue( Engine.GetModel( f128_local0, "attachmentIndex" ) )
+				local f128_local2 = Engine.GetModelValue( Engine.GetModel( f128_local0, "title" ) )
+				local f128_local3 = Engine.GetModelValue( Engine.GetModel( f128_local0, "description" ) )
+				local f128_local4 = Engine.GetModelValue( Engine.GetModel( f128_local0, "image" ) )
+				local f128_local5 = {}
+				table.insert( f128_local5, CoD.OptionsUtility.CreateItemRestrictionSettings( f127_arg0, f128_local2, "", "Attachment_" .. f128_local2, CoD.GameSettingsUtility.GetGroupRestrictionOptions(), f128_local4, CoD.OptionsUtility.GametypeSettingsSetAttachmentRestrictionState, {
+					attachmentIndex = f128_local1
+				}, function ( f129_arg0 )
+					if Engine.AttachmentRestrictionStateChangedForAnyWeapon( f129_arg0.attachmentIndex ) == true then
 						return -1
 					else
 						return Enum.ItemRestrictionState.ITEM_RESTRICTION_STATE_NONE
 					end
 				end ) )
-				return f100_local5
-			end, nil, nil, function ( f102_arg0, f102_arg1, f102_arg2 )
-				local f102_local0 = Engine.CreateModel( Engine.CreateModel( Engine.GetGlobalModel(), "GametypeSettings" ), "Update" )
-				if f102_arg1.updateSubscription then
-					f102_arg1:removeSubscription( f102_arg1.updateSubscription )
+				return f128_local5
+			end, nil, nil, function ( f130_arg0, f130_arg1, f130_arg2 )
+				local f130_local0 = Engine.CreateModel( Engine.CreateModel( Engine.GetGlobalModel(), "GametypeSettings" ), "Update" )
+				if f130_arg1.updateSubscription then
+					f130_arg1:removeSubscription( f130_arg1.updateSubscription )
 				end
-				f102_arg1.updateSubscription = f102_arg1:subscribeToModel( f102_local0, function ()
-					f102_arg1:updateDataSource( false )
+				f130_arg1.updateSubscription = f130_arg1:subscribeToModel( f130_local0, function ()
+					f130_arg1:updateDataSource( false )
 				end, false )
 			end )
 			return "CompetitiveSettingsAttachment"
@@ -985,38 +1261,400 @@ CoD.OverlayUtility.Overlays = {
 		title = Engine.Localize( "MENU_LOGIN_QUEUE_DEFAULT" ),
 		description = "",
 		categoryType = CoD.OverlayUtility.OverlayTypes.Connection,
-		postCreateStep = function ( f104_arg0, f104_arg1 )
-			local f104_local0 = 0
-			if f104_arg0.layout and f104_arg0.layout.frameWidget and f104_arg0.layout.frameWidget.framedWidget then
-				f104_arg0.layout.frameWidget.framedWidget:playClip( "LoadingLoop" )
+		listDatasource = function ()
+			DataSources.LoginQueue_List = DataSourceHelpers.ListSetup( "LoginQueue_List", function ( f133_arg0 )
+				return {
+					{
+						models = {
+							displayText = Engine.Localize( "MENU_PLAY_LOCAL" )
+						},
+						properties = {
+							action = function ( f134_arg0, f134_arg1, f134_arg2, f134_arg3, f134_arg4 )
+								Engine.LeaveQueue( f134_arg2 )
+								CoD.LobbyBase.FailedDWConnection = true
+								GoBack( f134_arg4, f134_arg2 )
+							end
+							
+						}
+					}
+				}
+			end, true, nil )
+			return "LoginQueue_List"
+		end,
+		postCreateStep = function ( f135_arg0, f135_arg1 )
+			local f135_local0 = 0
+			if f135_arg0.layout and f135_arg0.layout.frameWidget and f135_arg0.layout.frameWidget.framedWidget then
+				f135_arg0.layout.frameWidget.framedWidget:playClip( "LoadingLoop" )
 			end
-			f104_arg0:addElement( LUI.UITimer.newElementTimer( 400, false, function ( f105_arg0 )
-				local f105_local0 = Engine.GetPlayerQueueInfo( f104_arg1 )
-				if Engine.IsPlayerQueued( f104_arg1 ) then
-					if f105_local0 ~= nil then
-						local f105_local1 = f105_local0.position
-						local f105_local2 = f105_local0.eta
-						if f105_local1 > 0 and f105_local2 > 0 then
-							local f105_local3 = math.floor( f105_local2 / 60 )
-							local f105_local4 = f105_local2 % 60
-							local f105_local5 = math.floor( f105_local3 / 60 )
-							local f105_local6 = f105_local3 % 60
-							local f105_local7 = math.floor( f104_local0 / 1000 / 60 )
-							CoD.OverlayUtility.Overlays[f104_arg0.menuName].description = Engine.Localize( "MENU_LOGIN_QUEUE", f105_local1, f105_local5, f105_local6, f105_local4, math.floor( f105_local7 / 60 ), f105_local7 % 60, math.floor( f104_local0 / 1000 ) % 60 )
-							f104_arg0:refreshData( nil )
+			f135_arg0:addElement( LUI.UITimer.newElementTimer( 400, false, function ( f136_arg0 )
+				local f136_local0 = Engine.GetPlayerQueueInfo( f135_arg1 )
+				if Engine.IsPlayerQueued( f135_arg1 ) then
+					if f136_local0 ~= nil then
+						local f136_local1 = f136_local0.position
+						local f136_local2 = f136_local0.eta
+						if f136_local1 > 0 and f136_local2 > 0 then
+							local f136_local3 = math.floor( f136_local2 / 60 )
+							local f136_local4 = f136_local2 % 60
+							local f136_local5 = math.floor( f136_local3 / 60 )
+							local f136_local6 = f136_local3 % 60
+							local f136_local7 = math.floor( f135_local0 / 1000 / 60 )
+							CoD.OverlayUtility.Overlays[f135_arg0.menuName].description = Engine.Localize( "MENU_LOGIN_QUEUE", f136_local1, f136_local5, f136_local6, f136_local4, math.floor( f136_local7 / 60 ), f136_local7 % 60, math.floor( f135_local0 / 1000 ) % 60 )
+							f135_arg0:refreshData( nil )
 						end
 					end
-				elseif f105_local0 == nil or not f105_local0.success then
-					local f105_local1 = "PLATFORM_DEMONWARE_DISCONNECT"
-					local f105_local2 = GoBack( f104_arg0, f104_arg1 )
-					LuaUtils.UI_ShowErrorMessageDialog( f104_arg1, f105_local1, "MENU_NOTICE_CAPS" )
+				elseif f136_local0 == nil or not f136_local0.success then
+					local f136_local1 = "PLATFORM_DEMONWARE_DISCONNECT"
+					local f136_local2 = GoBack( f135_arg0, f135_arg1 )
+					LuaUtils.UI_ShowErrorMessageDialog( f135_arg1, f136_local1, "MENU_NOTICE_CAPS" )
 					CoD.LobbyBase.FailedDWConnection = true
-					Engine.LeaveQueue( f104_arg1 )
+					Engine.LeaveQueue( f135_arg1 )
 				else
-					CoD.OverlayUtility.CreateOverlay( f104_arg1, GoBack( f104_arg0, f104_arg1 ), "ConnectingToDemonware" )
+					CoD.OverlayUtility.CreateOverlay( f135_arg1, GoBack( f135_arg0, f135_arg1 ), "ConnectingToDemonware" )
 				end
-				f104_local0 = f104_local0 + f105_arg0.timeElapsed
+				f135_local0 = f135_local0 + f136_arg0.timeElapsed
 			end ) )
+		end
+	},
+	PaintjobClearConfirmationOverlay = {
+		menuName = "SystemOverlay_Compact",
+		title = "MENU_PAINTJOB_DELETE_CONFIRMATION",
+		description = "MENU_CANNOT_UNDO",
+		categoryType = CoD.OverlayUtility.OverlayTypes.GenericMessage,
+		listDatasource = function ()
+			DataSources.PaintjobClearConfirmation_List = DataSourceHelpers.ListSetup( "PaintjobClearConfirmation_List", function ( f138_arg0 )
+				return {
+					{
+						models = {
+							displayText = Engine.Localize( "MENU_YES" )
+						},
+						properties = {
+							action = function ( f139_arg0, f139_arg1, f139_arg2, f139_arg3, f139_arg4 )
+								PaintjobSelector_ClearPaintjob( f139_arg4, f139_arg1, f139_arg2 )
+							end
+							
+						}
+					},
+					{
+						models = {
+							displayText = Engine.Localize( "MENU_NO" )
+						},
+						properties = {
+							action = function ( f140_arg0, f140_arg1, f140_arg2, f140_arg3, f140_arg4 )
+								GoBack( f140_arg4, f140_arg2 )
+							end
+							,
+							selectIndex = true
+						}
+					}
+				}
+			end, true, nil )
+			return "PaintjobClearConfirmation_List"
+		end,
+		[CoD.OverlayUtility.GoBackPropertyName] = CoD.OverlayUtility.DefaultGoBack
+	},
+	GunsmithClearConfirmationOverlay = {
+		menuName = "SystemOverlay_Compact",
+		title = "MENU_GUNSMITH_DELETE_CONFIRMATION",
+		description = "MENU_CANNOT_UNDO",
+		categoryType = CoD.OverlayUtility.OverlayTypes.GenericMessage,
+		listDatasource = function ()
+			DataSources.GunsmithClearConfirmation_List = DataSourceHelpers.ListSetup( "GunsmithClearConfirmation_List", function ( f142_arg0 )
+				return {
+					{
+						models = {
+							displayText = Engine.Localize( "MENU_YES" )
+						},
+						properties = {
+							action = function ( f143_arg0, f143_arg1, f143_arg2, f143_arg3, f143_arg4 )
+								Gunsmith_ClearVariant( f143_arg4, f143_arg1, f143_arg2 )
+							end
+							
+						}
+					},
+					{
+						models = {
+							displayText = Engine.Localize( "MENU_NO" )
+						},
+						properties = {
+							action = function ( f144_arg0, f144_arg1, f144_arg2, f144_arg3, f144_arg4 )
+								GoBack( f144_arg4, f144_arg2 )
+							end
+							,
+							selectIndex = true
+						}
+					}
+				}
+			end, true, nil )
+			return "GunsmithClearConfirmation_List"
+		end,
+		[CoD.OverlayUtility.GoBackPropertyName] = CoD.OverlayUtility.DefaultGoBack
+	},
+	EmblemClearConfirmationOverlay = {
+		menuName = "SystemOverlay_Compact",
+		title = "MENU_EMBLEM_DELETE_CONFIRMATION",
+		description = "MENU_CANNOT_UNDO",
+		categoryType = CoD.OverlayUtility.OverlayTypes.GenericMessage,
+		listDatasource = function ()
+			DataSources.EmblemClearConfirmation_List = DataSourceHelpers.ListSetup( "EmblemClearConfirmation_List", function ( f146_arg0 )
+				return {
+					{
+						models = {
+							displayText = Engine.Localize( "MENU_YES" )
+						},
+						properties = {
+							action = function ( f147_arg0, f147_arg1, f147_arg2, f147_arg3, f147_arg4 )
+								EmblemSelect_ClearEmblem( f147_arg4, f147_arg1, f147_arg2 )
+							end
+							
+						}
+					},
+					{
+						models = {
+							displayText = Engine.Localize( "MENU_NO" )
+						},
+						properties = {
+							action = function ( f148_arg0, f148_arg1, f148_arg2, f148_arg3, f148_arg4 )
+								GoBack( f148_arg4, f148_arg2 )
+							end
+							,
+							selectIndex = true
+						}
+					}
+				}
+			end, true, nil )
+			return "EmblemClearConfirmation_List"
+		end,
+		[CoD.OverlayUtility.GoBackPropertyName] = CoD.OverlayUtility.DefaultGoBack
+	},
+	GunsmithSaveVariant = {
+		menuName = "SystemOverlay_Full",
+		frameWidget = "CoD.systemOverlay_SaveVariantFrame",
+		title = Engine.Localize( "MENU_GUNSMITH_SAVE_CHANGES_TITLE" ),
+		description = function ( f149_arg0, f149_arg1 )
+			return Engine.Localize( LocalizeWeaponNameIntoString( "MENU_GUNSMITH_SAVE_CHANGES_SUBTITLE", f149_arg0, CoD.GetCustomization( f149_arg0, "weapon_index" ) ) )
+		end,
+		image = function ( f150_arg0, f150_arg1 )
+			local f150_local0 = f150_arg1:getModel()
+			if f150_local0 then
+				local f150_local1 = Engine.GetModel( f150_local0, "variantIndex" )
+				if f150_local1 then
+					return Engine.GetModelValue( f150_local1 )
+				end
+			end
+			return ""
+		end,
+		variantName = function ( f151_arg0, f151_arg1 )
+			local f151_local0 = f151_arg1:getModel()
+			if f151_local0 then
+				local f151_local1 = Engine.GetModel( f151_local0, "variantName" )
+				if f151_local1 then
+					return Engine.GetModelValue( f151_local1 )
+				end
+			end
+			return ""
+		end,
+		weaponName = function ( f152_arg0, f152_arg1 )
+			local f152_local0 = f152_arg1:getModel()
+			if f152_local0 then
+				local f152_local1 = Engine.GetModel( f152_local0, "weaponIndex" )
+				if f152_local1 then
+					local f152_local2 = Engine.GetModelValue( f152_local1 )
+					if Engine.GetItemName( f152_local2 ) then
+						return Engine.ToUpper( Engine.Localize( Engine.GetItemName( f152_local2 ) ) )
+					end
+				end
+			end
+			return ""
+		end,
+		categoryType = CoD.OverlayUtility.OverlayTypes.Save,
+		listDatasource = function ( f153_arg0, f153_arg1 )
+			DataSources.GunsmithSaveVariant_List = DataSourceHelpers.ListSetup( "GunsmithSaveVariant_List", function ( f154_arg0 )
+				return {
+					{
+						models = {
+							displayText = LocalizeToUpperString( "MENU_SAVE" )
+						},
+						properties = {
+							action = function ( f155_arg0, f155_arg1, f155_arg2, f155_arg3, f155_arg4 )
+								if Gunsmith_IsCurrentVariantChanged( f155_arg2 ) then
+									Gunsmith_ClearSelectedGunsmithVariantStats( f155_arg2 )
+									Gunsmith_ClearCACWithUpdatedVariant( f155_arg4, f155_arg2 )
+								end
+								Gunsmith_SaveChangesButtonAction( f155_arg4, f155_arg1, "save", f155_arg2 )
+								ForceNotifyModel( f155_arg2, "Gunsmith.UpdateDataSource" )
+							end
+							
+						}
+					},
+					{
+						models = {
+							displayText = LocalizeToUpperString( "MENU_DISCARD" )
+						},
+						properties = {
+							action = function ( f156_arg0, f156_arg1, f156_arg2, f156_arg3, f156_arg4 )
+								Gunsmith_SaveChangesButtonAction( f156_arg0, f156_arg1, "discard", f156_arg2 )
+							end
+							
+						}
+					}
+				}
+			end, true, nil )
+			return "GunsmithSaveVariant_List"
+		end,
+		[CoD.OverlayUtility.GoBackPropertyName] = CoD.OverlayUtility.DefaultGoBack
+	},
+	EmblemSave = {
+		menuName = "SystemOverlay_Full",
+		frameWidget = "CoD.systemOverlay_SaveEmblemFrame",
+		title = Engine.Localize( "MENU_SAVE_EMBLEM" ),
+		description = Engine.Localize( "MENU_SAVE_EMBLEM_DESC" ),
+		categoryType = CoD.OverlayUtility.OverlayTypes.Save,
+		postCreateStep = function ( f157_arg0, f157_arg1 )
+			PaintjobEditor_RemoveGrid( f157_arg1 )
+		end,
+		inputText = function ( f158_arg0 )
+			if f158_arg0 then
+				return Engine.GetModelValue( Engine.GetModel( f158_arg0, "emblemTextEntry" ) )
+			else
+				
+			end
+		end,
+		listDatasource = function ( f159_arg0 )
+			DataSources.EmblemSave_List = DataSourceHelpers.ListSetup( "EmblemSave_List", function ( f160_arg0 )
+				local f160_local0 = nil
+				if IsPreBuiltEmblemTab( f160_arg0 ) then
+					f160_local0 = LocalizeToUpperString( "MENU_EMBLEM_SAVE_AS_NEW" )
+				else
+					f160_local0 = LocalizeToUpperString( "MENU_EMBLEM_SAVE_CHANGES" )
+				end
+				return {
+					{
+						models = {
+							displayText = f160_local0
+						},
+						properties = {
+							action = function ( f161_arg0, f161_arg1, f161_arg2, f161_arg3, f161_arg4 )
+								EmblemEditor_SaveEmblem( f161_arg4, f161_arg1, f161_arg2, f159_arg0 )
+								ForceNotifyModel( f161_arg2, "Emblem.UpdateDataSource" )
+							end
+							
+						}
+					},
+					{
+						models = {
+							displayText = LocalizeToUpperString( "MENU_EMBLEMS_DISCARD" )
+						},
+						properties = {
+							action = function ( f162_arg0, f162_arg1, f162_arg2, f162_arg3, f162_arg4 )
+								EmblemEditor_DiscardChanges( f162_arg4, f162_arg1, f162_arg2, f159_arg0 )
+							end
+							
+						}
+					}
+				}
+			end, true, nil )
+			return "EmblemSave_List"
+		end,
+		[CoD.OverlayUtility.GoBackPropertyName] = function ( f163_arg0 )
+			return function ( f164_arg0, f164_arg1, f164_arg2, f164_arg3 )
+				GoBack( f164_arg3, f164_arg2 )
+				PaintjobEditor_RestoreGridState( f164_arg2 )
+			end
+			
+		end,
+		[CoD.OverlayUtility.ProcessActionKeyboardComplete] = function ( f165_arg0 )
+			return function ( f166_arg0, f166_arg1, f166_arg2, f166_arg3 )
+				ShowKeyboard( f166_arg0, f166_arg1, f166_arg2, "KEYBOARD_TYPE_EMBLEMS" )
+			end
+			
+		end
+	},
+	PaintjobSave = {
+		menuName = "SystemOverlay_Full",
+		frameWidget = "CoD.systemOverlay_SavePaintjobFrame",
+		title = Engine.Localize( "MENU_SAVE_PAINTJOB" ),
+		description = Engine.Localize( "MENU_SAVE_PAINTJOB_DESC" ),
+		categoryType = CoD.OverlayUtility.OverlayTypes.Save,
+		inputText = function ( f167_arg0 )
+			if f167_arg0 then
+				return Engine.GetModelValue( Engine.GetModel( f167_arg0, "paintjobTextEntry" ) )
+			else
+				
+			end
+		end,
+		listDatasource = function ( f168_arg0 )
+			DataSources.PaintjobSave_List = DataSourceHelpers.ListSetup( "PaintjobSave_List", function ( f169_arg0 )
+				return {
+					{
+						models = {
+							displayText = LocalizeToUpperString( "MENU_EMBLEM_SAVE_CHANGES" )
+						},
+						properties = {
+							action = function ( f170_arg0, f170_arg1, f170_arg2, f170_arg3, f170_arg4 )
+								PaintjobEditor_SavePaintjob( f170_arg0, f170_arg1, f170_arg2, f168_arg0 )
+								ForceNotifyModel( f170_arg2, "Paintshop.UpdateDataSource" )
+							end
+							
+						}
+					},
+					{
+						models = {
+							displayText = LocalizeToUpperString( "MENU_EMBLEMS_DISCARD" )
+						},
+						properties = {
+							action = function ( f171_arg0, f171_arg1, f171_arg2, f171_arg3, f171_arg4 )
+								PaintjobEditor_DiscardChanges( f171_arg4, f171_arg1, f171_arg2, f168_arg0 )
+							end
+							
+						}
+					}
+				}
+			end, true, nil )
+			return "PaintjobSave_List"
+		end,
+		[CoD.OverlayUtility.GoBackPropertyName] = CoD.OverlayUtility.DefaultGoBack,
+		[CoD.OverlayUtility.ProcessActionKeyboardComplete] = function ( f172_arg0 )
+			return function ( f173_arg0, f173_arg1, f173_arg2, f173_arg3 )
+				ShowKeyboard( f173_arg0, f173_arg1, f173_arg2, "KEYBOARD_TYPE_PAINTJOB" )
+			end
+			
+		end
+	},
+	GunsmithCreateVariantNameOverlay = {
+		menuName = "SystemOverlay_Full",
+		frameWidget = "CoD.systemOverlay_CreateVariantNameFrame",
+		categoryType = CoD.OverlayUtility.OverlayTypes.Save,
+		title = function ( f174_arg0, f174_arg1 )
+			return Engine.Localize( LocalizeWeaponNameIntoString( "MENU_GUNSMITH_CREATE_VARIANT_NAME_TITLE", f174_arg0, CoD.GetCustomization( f174_arg0, "weapon_index" ) ) )
+		end,
+		description = "",
+		inputText = function ( f175_arg0, f175_arg1 )
+			local f175_local0 = f175_arg1:getModel()
+			if f175_local0 then
+				return Engine.GetModelValue( Engine.GetModel( f175_local0, "variantTextEntry" ) )
+			else
+				
+			end
+		end,
+		[CoD.OverlayUtility.GoBackPropertyName] = function ( f176_arg0, f176_arg1 )
+			return function ( f177_arg0, f177_arg1, f177_arg2, f177_arg3 )
+				Gunsmith_CreateVariantNameBack( f176_arg1, f177_arg1, f177_arg2 )
+				GoBack( f177_arg3, f177_arg2 )
+				ClearMenuSavedState( f177_arg3 )
+			end
+			
+		end,
+		[CoD.OverlayUtility.ProcessActionKeyboardComplete] = function ()
+			return function ( f179_arg0, f179_arg1, f179_arg2, f179_arg3 )
+				ShowKeyboard( f179_arg0, f179_arg1, f179_arg2, "KEYBOARD_TYPE_GUNSMITH" )
+			end
+			
+		end,
+		[CoD.OverlayUtility.ProcessConfirmVariantName] = function ( f180_arg0, f180_arg1 )
+			return function ( f181_arg0, f181_arg1, f181_arg2, f181_arg3 )
+				Gunsmith_ConfirmVariantName( f180_arg1, f181_arg1, f181_arg2, f181_arg3 )
+			end
+			
 		end
 	},
 	CraftNoChangesNotification = {
@@ -1025,15 +1663,15 @@ CoD.OverlayUtility.Overlays = {
 		description = "MENU_EMBLEM_NO_CHANGES_DESC",
 		categoryType = CoD.OverlayUtility.OverlayTypes.GenericMessage,
 		listDatasource = function ()
-			DataSources.CraftNoChangesNotification = DataSourceHelpers.ListSetup( "CraftNoChangesNotification", function ( f107_arg0 )
+			DataSources.CraftNoChangesNotification = DataSourceHelpers.ListSetup( "CraftNoChangesNotification", function ( f183_arg0 )
 				return {
 					{
 						models = {
 							displayText = "MENU_OK_CAPS"
 						},
 						properties = {
-							action = function ( f108_arg0, f108_arg1, f108_arg2, f108_arg3, f108_arg4 )
-								EmblemEditor_NoChangesAction( f108_arg0, f108_arg1, f108_arg2, f108_arg4 )
+							action = function ( f184_arg0, f184_arg1, f184_arg2, f184_arg3, f184_arg4 )
+								EmblemEditor_NoChangesAction( f184_arg0, f184_arg1, f184_arg2, f184_arg4 )
 							end
 							
 						}
@@ -1043,20 +1681,44 @@ CoD.OverlayUtility.Overlays = {
 			return "CraftNoChangesNotification"
 		end
 	},
+	CampaignOfflineToOnlineWarning = {
+		menuName = "SystemOverlay_Compact",
+		title = "MENU_WARNING_CAMPAIGN_OFFLINE_TO_ONLINE",
+		description = "MENU_WARNING_CAMPAIGN_OFFLINE_TO_ONLINE2",
+		categoryType = CoD.OverlayUtility.OverlayTypes.Connection,
+		listDatasource = function ()
+			DataSources.CampaignOfflineToOnlineWarning = DataSourceHelpers.ListSetup( "CampaignOfflineToOnlineWarning", function ( f186_arg0 )
+				return {
+					{
+						models = {
+							displayText = "MENU_OK_CAPS"
+						},
+						properties = {
+							action = function ( f187_arg0, f187_arg1, f187_arg2, f187_arg3, f187_arg4 )
+								GoBack( f187_arg4, f187_arg2 )
+							end
+							
+						}
+					}
+				}
+			end, true, nil )
+			return "CampaignOfflineToOnlineWarning"
+		end
+	},
 	PublisherFilesChangedPopup = {
 		menuName = "SystemOverlay_Compact",
 		title = "MENU_REFETCH_WAD_CONFIRMATION_TITLE",
 		description = "MENU_REFETCH_WAD_CONFIRMATION_MESSAGE",
 		categoryType = CoD.OverlayUtility.OverlayTypes.Connection,
 		listDatasource = function ()
-			DataSources.PublisherFilesChangedButtons = DataSourceHelpers.ListSetup( "PublisherFilesChangedButtons", function ( f110_arg0 )
+			DataSources.PublisherFilesChangedButtons = DataSourceHelpers.ListSetup( "PublisherFilesChangedButtons", function ( f189_arg0 )
 				return {
 					{
 						models = {
 							displayText = "MENU_CONFIRM_CAPS"
 						},
 						properties = {
-							action = function ( f111_arg0, f111_arg1, f111_arg2, f111_arg3, f111_arg4 )
+							action = function ( f190_arg0, f190_arg1, f190_arg2, f190_arg3, f190_arg4 )
 								Engine.SetModelValue( Engine.GetModel( Engine.GetGlobalModel(), "pubstorageFilesChanged" ), false )
 								Engine.ComError( Enum.errorCode.ERROR_SOFTRESTART_KEEPDW, "" )
 							end
@@ -1074,15 +1736,15 @@ CoD.OverlayUtility.Overlays = {
 		description = "",
 		categoryType = CoD.OverlayUtility.OverlayTypes.Settings,
 		listDatasource = function ()
-			DataSources.ResetPCControls_List = DataSourceHelpers.ListSetup( "ResetPCControls_List", function ( f113_arg0 )
+			DataSources.ResetPCControls_List = DataSourceHelpers.ListSetup( "ResetPCControls_List", function ( f192_arg0 )
 				return {
 					{
 						models = {
 							displayText = Engine.Localize( "MENU_NO" )
 						},
 						properties = {
-							action = function ( f114_arg0, f114_arg1, f114_arg2, f114_arg3, f114_arg4 )
-								GoBack( f114_arg4, f114_arg2 )
+							action = function ( f193_arg0, f193_arg1, f193_arg2, f193_arg3, f193_arg4 )
+								GoBack( f193_arg4, f193_arg2 )
 							end
 							
 						}
@@ -1092,9 +1754,9 @@ CoD.OverlayUtility.Overlays = {
 							displayText = Engine.Localize( "MENU_YES" )
 						},
 						properties = {
-							action = function ( f115_arg0, f115_arg1, f115_arg2, f115_arg3, f115_arg4 )
-								ResetPCControlsToDefault( f115_arg4, f115_arg1, f115_arg2 )
-								GoBack( f115_arg4, f115_arg2 )
+							action = function ( f194_arg0, f194_arg1, f194_arg2, f194_arg3, f194_arg4 )
+								ResetPCControlsToDefault( f194_arg4, f194_arg1, f194_arg2 )
+								GoBack( f194_arg4, f194_arg2 )
 							end
 							
 						}
@@ -1111,16 +1773,16 @@ CoD.OverlayUtility.Overlays = {
 		description = "",
 		categoryType = CoD.OverlayUtility.OverlayTypes.Settings,
 		listDatasource = function ()
-			DataSources.ApplyPCGraphics_List = DataSourceHelpers.ListSetup( "ApplyPCGraphics_List", function ( f117_arg0 )
+			DataSources.ApplyPCGraphics_List = DataSourceHelpers.ListSetup( "ApplyPCGraphics_List", function ( f196_arg0 )
 				return {
 					{
 						models = {
 							displayText = Engine.Localize( "MENU_NO" )
 						},
 						properties = {
-							action = function ( f118_arg0, f118_arg1, f118_arg2, f118_arg3, f118_arg4 )
-								CoD.PCUtil.FreeOptionsDirtyModel( f118_arg2 )
-								GoBack( f118_arg4, f118_arg2 )
+							action = function ( f197_arg0, f197_arg1, f197_arg2, f197_arg3, f197_arg4 )
+								CoD.PCUtil.FreeOptionsDirtyModel( f197_arg2 )
+								GoBack( f197_arg4, f197_arg2 )
 							end
 							
 						}
@@ -1130,11 +1792,11 @@ CoD.OverlayUtility.Overlays = {
 							displayText = Engine.Localize( "MENU_YES" )
 						},
 						properties = {
-							action = function ( f119_arg0, f119_arg1, f119_arg2, f119_arg3, f119_arg4 )
-								ApplyPCGraphicsOptions( f119_arg4, f119_arg1, f119_arg2 )
-								UpdateGamerprofile( f119_arg4, f119_arg1, f119_arg2 )
-								CoD.PCUtil.FreeOptionsDirtyModel( f119_arg2 )
-								GoBack( f119_arg4, f119_arg2 )
+							action = function ( f198_arg0, f198_arg1, f198_arg2, f198_arg3, f198_arg4 )
+								ApplyPCGraphicsOptions( f198_arg4, f198_arg1, f198_arg2 )
+								UpdateGamerprofile( f198_arg4, f198_arg1, f198_arg2 )
+								CoD.PCUtil.FreeOptionsDirtyModel( f198_arg2 )
+								GoBack( f198_arg4, f198_arg2 )
 							end
 							
 						}
@@ -1151,16 +1813,16 @@ CoD.OverlayUtility.Overlays = {
 		description = Engine.Localize( "MENU_REGISTRATION_SUCCESS" ),
 		categoryType = CoD.OverlayUtility.OverlayTypes.Unlock,
 		listDatasource = function ()
-			DataSources.RegistrationSuccess_List = DataSourceHelpers.ListSetup( "RegistrationSuccess_List", function ( f121_arg0 )
+			DataSources.RegistrationSuccess_List = DataSourceHelpers.ListSetup( "RegistrationSuccess_List", function ( f200_arg0 )
 				return {
 					{
 						models = {
 							displayText = Engine.Localize( "MENU_OK" )
 						},
 						properties = {
-							action = function ( f122_arg0, f122_arg1, f122_arg2, f122_arg3, f122_arg4 )
-								LUI.CoDMetrics.AccountCreated( f122_arg0, f122_arg2, "1", "menu" )
-								FinishRegistrationFlow( f122_arg0, f122_arg2, f122_arg4 )
+							action = function ( f201_arg0, f201_arg1, f201_arg2, f201_arg3, f201_arg4 )
+								LUI.CoDMetrics.AccountCreated( f201_arg0, f201_arg2, "1", "menu" )
+								FinishRegistrationFlow( f201_arg0, f201_arg2, f201_arg4 )
 							end
 							
 						}
@@ -1170,9 +1832,9 @@ CoD.OverlayUtility.Overlays = {
 			return "RegistrationSuccess_List"
 		end,
 		[CoD.OverlayUtility.GoBackPropertyName] = function ()
-			return function ( f124_arg0, f124_arg1, f124_arg2, f124_arg3 )
-				LUI.CoDMetrics.AccountCreated( f124_arg0, f124_arg2, "1", "menu" )
-				FinishRegistrationFlow( f124_arg0, f124_arg2, f124_arg3 )
+			return function ( f203_arg0, f203_arg1, f203_arg2, f203_arg3 )
+				LUI.CoDMetrics.AccountCreated( f203_arg0, f203_arg2, "1", "menu" )
+				FinishRegistrationFlow( f203_arg0, f203_arg2, f203_arg3 )
 			end
 			
 		end
@@ -1183,16 +1845,16 @@ CoD.OverlayUtility.Overlays = {
 		description = Engine.Localize( "MENU_REGISTRATION_OPTIN_SUCCESS" ),
 		categoryType = CoD.OverlayUtility.OverlayTypes.Unlock,
 		listDatasource = function ()
-			DataSources.OptInSuccess_List = DataSourceHelpers.ListSetup( "OptInSuccess_List", function ( f126_arg0 )
+			DataSources.OptInSuccess_List = DataSourceHelpers.ListSetup( "OptInSuccess_List", function ( f205_arg0 )
 				return {
 					{
 						models = {
 							displayText = Engine.Localize( "MENU_OK" )
 						},
 						properties = {
-							action = function ( f127_arg0, f127_arg1, f127_arg2, f127_arg3, f127_arg4 )
-								LUI.CoDMetrics.AccountCreated( f127_arg0, f127_arg2, "1", "menu" )
-								FinishRegistrationFlow( f127_arg0, f127_arg2, f127_arg4 )
+							action = function ( f206_arg0, f206_arg1, f206_arg2, f206_arg3, f206_arg4 )
+								LUI.CoDMetrics.AccountCreated( f206_arg0, f206_arg2, "1", "menu" )
+								FinishRegistrationFlow( f206_arg0, f206_arg2, f206_arg4 )
 							end
 							
 						}
@@ -1202,9 +1864,9 @@ CoD.OverlayUtility.Overlays = {
 			return "OptInSuccess_List"
 		end,
 		[CoD.OverlayUtility.GoBackPropertyName] = function ()
-			return function ( f129_arg0, f129_arg1, f129_arg2, f129_arg3 )
-				LUI.CoDMetrics.AccountCreated( f129_arg0, f129_arg2, "1", "menu" )
-				FinishRegistrationFlow( f129_arg0, f129_arg2, f129_arg3 )
+			return function ( f208_arg0, f208_arg1, f208_arg2, f208_arg3 )
+				LUI.CoDMetrics.AccountCreated( f208_arg0, f208_arg2, "1", "menu" )
+				FinishRegistrationFlow( f208_arg0, f208_arg2, f208_arg3 )
 			end
 			
 		end
@@ -1215,16 +1877,16 @@ CoD.OverlayUtility.Overlays = {
 		description = "",
 		categoryType = CoD.OverlayUtility.OverlayTypes.Settings,
 		listDatasource = function ()
-			DataSources.ConfirmPCGraphicsChange_List = DataSourceHelpers.ListSetup( "ConfirmPCGraphicsChange_List", function ( f131_arg0 )
+			DataSources.ConfirmPCGraphicsChange_List = DataSourceHelpers.ListSetup( "ConfirmPCGraphicsChange_List", function ( f210_arg0 )
 				return {
 					{
 						models = {
 							displayText = Engine.Localize( "MENU_NO" )
 						},
 						properties = {
-							action = function ( f132_arg0, f132_arg1, f132_arg2, f132_arg3, f132_arg4 )
-								CoD.PCUtil.FreeOptionsDirtyModel( f132_arg2 )
-								GoBackMultiple( f132_arg4, f132_arg2, 2 )
+							action = function ( f211_arg0, f211_arg1, f211_arg2, f211_arg3, f211_arg4 )
+								CoD.PCUtil.FreeOptionsDirtyModel( f211_arg2 )
+								GoBackMultiple( f211_arg4, f211_arg2, 2 )
 							end
 							
 						}
@@ -1234,11 +1896,11 @@ CoD.OverlayUtility.Overlays = {
 							displayText = Engine.Localize( "MENU_YES" )
 						},
 						properties = {
-							action = function ( f133_arg0, f133_arg1, f133_arg2, f133_arg3, f133_arg4 )
-								ApplyPCGraphicsOptions( f133_arg4, f133_arg1, f133_arg2 )
-								UpdateGamerprofile( f133_arg4, f133_arg1, f133_arg2 )
-								CoD.PCUtil.FreeOptionsDirtyModel( f133_arg2 )
-								GoBack( f133_arg4, f133_arg2 )
+							action = function ( f212_arg0, f212_arg1, f212_arg2, f212_arg3, f212_arg4 )
+								ApplyPCGraphicsOptions( f212_arg4, f212_arg1, f212_arg2 )
+								UpdateGamerprofile( f212_arg4, f212_arg1, f212_arg2 )
+								CoD.PCUtil.FreeOptionsDirtyModel( f212_arg2 )
+								GoBack( f212_arg4, f212_arg2 )
 							end
 							
 						}
@@ -1255,15 +1917,15 @@ CoD.OverlayUtility.Overlays = {
 		description = "",
 		categoryType = CoD.OverlayUtility.OverlayTypes.Settings,
 		listDatasource = function ()
-			DataSources.ResetPCGraphics_List = DataSourceHelpers.ListSetup( "ResetPCGraphics_List", function ( f135_arg0 )
+			DataSources.ResetPCGraphics_List = DataSourceHelpers.ListSetup( "ResetPCGraphics_List", function ( f214_arg0 )
 				return {
 					{
 						models = {
 							displayText = Engine.Localize( "MENU_NO" )
 						},
 						properties = {
-							action = function ( f136_arg0, f136_arg1, f136_arg2, f136_arg3, f136_arg4 )
-								GoBack( f136_arg4, f136_arg2 )
+							action = function ( f215_arg0, f215_arg1, f215_arg2, f215_arg3, f215_arg4 )
+								GoBack( f215_arg4, f215_arg2 )
 							end
 							
 						}
@@ -1273,11 +1935,11 @@ CoD.OverlayUtility.Overlays = {
 							displayText = Engine.Localize( "MENU_YES" )
 						},
 						properties = {
-							action = function ( f137_arg0, f137_arg1, f137_arg2, f137_arg3, f137_arg4 )
-								ResetPCGraphicsOptions( f137_arg4, f137_arg1, f137_arg2 )
-								UpdateGamerprofile( f137_arg4, f137_arg1, f137_arg2 )
-								CoD.PCUtil.FreeOptionsDirtyModel( f137_arg2 )
-								GoBack( f137_arg4, f137_arg2 )
+							action = function ( f216_arg0, f216_arg1, f216_arg2, f216_arg3, f216_arg4 )
+								ResetPCGraphicsOptions( f216_arg4, f216_arg1, f216_arg2 )
+								UpdateGamerprofile( f216_arg4, f216_arg1, f216_arg2 )
+								CoD.PCUtil.FreeOptionsDirtyModel( f216_arg2 )
+								GoBack( f216_arg4, f216_arg2 )
 							end
 							
 						}
@@ -1289,56 +1951,56 @@ CoD.OverlayUtility.Overlays = {
 		[CoD.OverlayUtility.GoBackPropertyName] = CoD.OverlayUtility.DefaultGoBack
 	},
 	GenericPopup = {
-		menuName = function ( f138_arg0, f138_arg1, f138_arg2, f138_arg3, f138_arg4, f138_arg5, f138_arg6 )
-			if f138_arg0 == CoD.OverlayUtility.GenericPopupSizes.Small then
+		menuName = function ( f217_arg0, f217_arg1, f217_arg2, f217_arg3, f217_arg4, f217_arg5, f217_arg6 )
+			if f217_arg0 == CoD.OverlayUtility.GenericPopupSizes.Small then
 				return "SystemOverlay_Compact"
-			elseif f138_arg0 == CoD.OverlayUtility.GenericPopupSizes.Large then
+			elseif f217_arg0 == CoD.OverlayUtility.GenericPopupSizes.Large then
 				return "SystemOverlay_Full"
 			else
 				
 			end
 		end,
-		title = function ( f139_arg0, f139_arg1, f139_arg2, f139_arg3, f139_arg4, f139_arg5, f139_arg6 )
-			return Engine.Localize( f139_arg1 )
+		title = function ( f218_arg0, f218_arg1, f218_arg2, f218_arg3, f218_arg4, f218_arg5, f218_arg6 )
+			return Engine.Localize( f218_arg1 )
 		end,
-		description = function ( f140_arg0, f140_arg1, f140_arg2, f140_arg3, f140_arg4, f140_arg5, f140_arg6 )
-			return Engine.Localize( f140_arg2 )
+		description = function ( f219_arg0, f219_arg1, f219_arg2, f219_arg3, f219_arg4, f219_arg5, f219_arg6 )
+			return Engine.Localize( f219_arg2 )
 		end,
-		image = function ( f141_arg0, f141_arg1, f141_arg2, f141_arg3, f141_arg4, f141_arg5, f141_arg6 )
-			if f141_arg3 and f141_arg3 ~= "" then
-				return f141_arg3
+		image = function ( f220_arg0, f220_arg1, f220_arg2, f220_arg3, f220_arg4, f220_arg5, f220_arg6 )
+			if f220_arg3 and f220_arg3 ~= "" then
+				return f220_arg3
 			else
 				
 			end
 		end,
 		categoryType = CoD.OverlayUtility.OverlayTypes.GenericMessage,
-		listDatasource = function ( f142_arg0, f142_arg1, f142_arg2, f142_arg3, f142_arg4, f142_arg5, f142_arg6 )
-			if f142_arg4 then
-				local f142_local0 = "GenericPopup_" .. f142_arg1
-				DataSources[f142_local0] = DataSourceHelpers.ListSetup( f142_local0 .. "_List", function ( f143_arg0 )
-					local f143_local0 = f142_arg5
-					if not f143_local0 or type( f143_local0 ) ~= "function" then
-						f143_local0 = CoD.OverlayUtility.DefaultButtonAction
+		listDatasource = function ( f221_arg0, f221_arg1, f221_arg2, f221_arg3, f221_arg4, f221_arg5, f221_arg6 )
+			if f221_arg4 then
+				local f221_local0 = "GenericPopup_" .. f221_arg1
+				DataSources[f221_local0] = DataSourceHelpers.ListSetup( f221_local0 .. "_List", function ( f222_arg0 )
+					local f222_local0 = f221_arg5
+					if not f222_local0 or type( f222_local0 ) ~= "function" then
+						f222_local0 = CoD.OverlayUtility.DefaultButtonAction
 					end
 					return {
 						{
 							models = {
-								displayText = Engine.Localize( f142_arg4 )
+								displayText = Engine.Localize( f221_arg4 )
 							},
 							properties = {
-								action = f143_local0
+								action = f222_local0
 							}
 						}
 					}
 				end, true, nil )
-				return f142_local0
+				return f221_local0
 			else
 				
 			end
 		end,
-		[CoD.OverlayUtility.GoBackPropertyName] = function ( f144_arg0, f144_arg1, f144_arg2, f144_arg3, f144_arg4, f144_arg5, f144_arg6 )
-			if f144_arg6 and type( f144_arg6 ) == "function" then
-				return f144_arg6
+		[CoD.OverlayUtility.GoBackPropertyName] = function ( f223_arg0, f223_arg1, f223_arg2, f223_arg3, f223_arg4, f223_arg5, f223_arg6 )
+			if f223_arg6 and type( f223_arg6 ) == "function" then
+				return f223_arg6
 			else
 				return CoD.OverlayUtility.DefaultGoBack()
 			end
@@ -1346,157 +2008,163 @@ CoD.OverlayUtility.Overlays = {
 	},
 	GenericModalDialog = {
 		menuName = CoD.OverlayUtility.AutoSizeMenuFromDescription( "GenericModalDialog" ),
-		title = function ( f145_arg0, f145_arg1, f145_arg2, f145_arg3, f145_arg4 )
-			return Engine.Localize( f145_arg0 )
+		title = function ( f224_arg0, f224_arg1, f224_arg2, f224_arg3, f224_arg4 )
+			return Engine.Localize( f224_arg0 )
 		end,
-		description = function ( f146_arg0, f146_arg1, f146_arg2, f146_arg3, f146_arg4 )
-			return Engine.Localize( f146_arg1 )
+		description = function ( f225_arg0, f225_arg1, f225_arg2, f225_arg3, f225_arg4 )
+			return Engine.Localize( f225_arg1 )
 		end,
-		image = function ( f147_arg0, f147_arg1, f147_arg2, f147_arg3, f147_arg4 )
-			if f147_arg2 and f147_arg2 ~= "" then
-				return f147_arg2
+		image = function ( f226_arg0, f226_arg1, f226_arg2, f226_arg3, f226_arg4 )
+			if f226_arg2 and f226_arg2 ~= "" then
+				return f226_arg2
 			else
 				
 			end
 		end,
 		categoryType = CoD.OverlayUtility.OverlayTypes.GenericMessage,
-		listDatasource = function ( f148_arg0, f148_arg1, f148_arg2, f148_arg3, f148_arg4 )
-			local f148_local0 = "GenericModalDialog" .. f148_arg0
-			DataSources[f148_local0] = DataSourceHelpers.ListSetup( f148_local0 .. "_List", function ( f149_arg0 )
-				local f149_local0 = {}
-				for f149_local4, f149_local5 in ipairs( f148_arg3 ) do
-					table.insert( f149_local0, {
+		listDatasource = function ( f227_arg0, f227_arg1, f227_arg2, f227_arg3, f227_arg4 )
+			local f227_local0 = "GenericModalDialog" .. f227_arg0
+			DataSources[f227_local0] = DataSourceHelpers.ListSetup( f227_local0 .. "_List", function ( f228_arg0 )
+				local f228_local0 = {}
+				for f228_local4, f228_local5 in ipairs( f227_arg3 ) do
+					table.insert( f228_local0, {
 						models = {
-							displayText = Engine.Localize( f149_local5 )
+							displayText = Engine.Localize( f228_local5 )
 						},
 						properties = {
-							action = function ( f150_arg0, f150_arg1, f150_arg2, f150_arg3, f150_arg4 )
-								if not f148_arg4 or f148_arg4( f149_local4 - 1 ) then
-									GoBack( f150_arg4, f150_arg2 )
+							action = function ( f229_arg0, f229_arg1, f229_arg2, f229_arg3, f229_arg4 )
+								if not f227_arg4 or f227_arg4( f228_local4 - 1 ) then
+									GoBack( f229_arg4, f229_arg2 )
 								end
 							end
 						}
 					} )
 				end
-				return f149_local0
+				return f228_local0
 			end, true, nil )
-			return f148_local0
+			return f227_local0
 		end,
-		[CoD.OverlayUtility.GoBackPropertyName] = function ( f151_arg0, f151_arg1, f151_arg2, f151_arg3, f151_arg4 )
-			return function ( f152_arg0, f152_arg1, f152_arg2, f152_arg3 )
-				if f151_arg4 then
-					f151_arg4()
+		[CoD.OverlayUtility.GoBackPropertyName] = function ( f230_arg0, f230_arg1, f230_arg2, f230_arg3, f230_arg4 )
+			return function ( f231_arg0, f231_arg1, f231_arg2, f231_arg3 )
+				if f230_arg4 then
+					f230_arg4()
 				end
-				GoBack( f152_arg3, f152_arg2 )
+				GoBack( f231_arg3, f231_arg2 )
 			end
 			
 		end
 	},
 	LobbyLeavePopup = {
 		menuName = CoD.OverlayUtility.AutoSizeMenuFromDescription( "LobbyLeavePopup" ),
-		title = function ( f153_arg0 )
-			local f153_local0 = ""
-			if f153_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_PARTY then
-				f153_local0 = "MENU_LEAVE_LOBBY_LEAVE_PARTY_TITLE"
-			elseif f153_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_AND_DISBAND_PARTY then
-				f153_local0 = "MENU_LEAVE_LOBBY_DISBAND_FROM_PARTY_TITLE"
-			elseif f153_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_LOBBY then
-				f153_local0 = "MENU_LEAVE_LOBBY_LEAVE_LOBBY_TITLE"
-			elseif f153_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_LOBBY_AND_PARTY then
-				f153_local0 = "MENU_LEAVE_LOBBY_LEAVE_PARTY_TITLE"
-			elseif f153_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.BRING_PARTY_LEAVE_ALONE then
-				f153_local0 = "MENU_LEAVE_LOBBY_LEAVE_LOBBY_TITLE"
-			elseif f153_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.MANAGE_PARTY_LEAVE then
-				f153_local0 = "MENU_LEAVE_LOBBY_MANAGE_PARTY_LEAVE_TITLE"
+		title = function ( f232_arg0 )
+			local f232_local0 = ""
+			if f232_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_PARTY then
+				f232_local0 = "MENU_LEAVE_LOBBY_LEAVE_PARTY_TITLE"
+			elseif f232_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_AND_DISBAND_PARTY then
+				f232_local0 = "MENU_LEAVE_LOBBY_DISBAND_FROM_PARTY_TITLE"
+			elseif f232_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_LOBBY then
+				f232_local0 = "MENU_LEAVE_LOBBY_LEAVE_LOBBY_TITLE"
+			elseif f232_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_LOBBY_AND_PARTY then
+				f232_local0 = "MENU_LEAVE_LOBBY_LEAVE_PARTY_TITLE"
+			elseif f232_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.BRING_PARTY_LEAVE_ALONE then
+				f232_local0 = "MENU_LEAVE_LOBBY_LEAVE_LOBBY_TITLE"
+			elseif f232_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.MANAGE_PARTY_LEAVE then
+				f232_local0 = "MENU_LEAVE_LOBBY_MANAGE_PARTY_LEAVE_TITLE"
 			end
-			return Engine.Localize( f153_local0 )
+			return Engine.Localize( f232_local0 )
 		end,
-		description = function ( f154_arg0 )
-			local f154_local0 = ""
-			if f154_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_PARTY then
-				f154_local0 = "MENU_LEAVE_LOBBY_LEAVE_PARTY_HINT"
-			elseif f154_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_AND_DISBAND_PARTY then
-				f154_local0 = "MENU_LEAVE_LOBBY_DISBAND_FROM_PARTY_HINT"
-			elseif f154_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_LOBBY_AND_PARTY then
-				f154_local0 = "MENU_LEAVE_LOBBY_LEAVE_PARTY_HINT"
-			elseif f154_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.MANAGE_PARTY_LEAVE then
-				f154_local0 = "MENU_LEAVE_LOBBY_MANAGE_PARTY_LEAVE_HINT"
+		description = function ( f233_arg0 )
+			local f233_local0 = ""
+			if f233_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_PARTY then
+				f233_local0 = "MENU_LEAVE_LOBBY_LEAVE_PARTY_HINT"
+			elseif f233_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_AND_DISBAND_PARTY then
+				f233_local0 = "MENU_LEAVE_LOBBY_DISBAND_FROM_PARTY_HINT"
+			elseif f233_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_LOBBY_AND_PARTY then
+				f233_local0 = "MENU_LEAVE_LOBBY_LEAVE_PARTY_HINT"
+			elseif f233_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.MANAGE_PARTY_LEAVE then
+				f233_local0 = "MENU_LEAVE_LOBBY_MANAGE_PARTY_LEAVE_HINT"
 			end
-			return Engine.Localize( f154_local0 )
+			return Engine.Localize( f233_local0 )
 		end,
 		categoryType = CoD.OverlayUtility.OverlayTypes.Quit,
-		listDatasource = function ( f155_arg0 )
-			DataSources.LeaveLobbyPopupButtons = DataSourceHelpers.ListSetup( "LeaveLobbyPopupButtons", function ( f156_arg0 )
-				local f156_local0 = {
-					controller = f156_arg0
+		listDatasource = function ( f234_arg0 )
+			DataSources.LeaveLobbyPopupButtons = DataSourceHelpers.ListSetup( "LeaveLobbyPopupButtons", function ( f235_arg0 )
+				local f235_local0 = {
+					controller = f235_arg0
 				}
-				local f156_local1 = function ( f157_arg0, f157_arg1, f157_arg2, f157_arg3, f157_arg4 )
-					local f157_local0 = GoBack( f157_arg4, f157_arg2 )
-					if f157_arg3 == nil then
+				local f235_local1 = function ( f236_arg0, f236_arg1, f236_arg2, f236_arg3, f236_arg4 )
+					local f236_local0 = GoBack( f236_arg4, f236_arg2 )
+					DisableAllMenuInput( f236_local0, nil )
+					if f236_arg3 == nil then
 						return 
-					else
-						f157_local0.ClientList:processEvent( {
+					elseif f236_local0.ClientList ~= nil then
+						f236_local0.ClientList:processEvent( {
 							name = "lose_focus",
-							controller = f157_arg2
+							controller = f236_arg2
 						} )
-						f156_local0.withParty = f157_arg3
-						Engine.LobbyVM_CallFunc( "GoBack", f156_local0 )
 					end
+					f235_local0.withParty = f236_arg3
+					Engine.LobbyVM_CallFunc( "GoBack", f235_local0 )
 				end
 				
-				local f156_local2 = function ( f158_arg0, f158_arg1, f158_arg2, f158_arg3, f158_arg4 )
-					GoBack( f158_arg4, f158_arg2 )
-					Engine.LobbyVM_CallFunc( "ManagePartyLeave", f156_local0 )
+				local f235_local2 = function ( f237_arg0, f237_arg1, f237_arg2, f237_arg3, f237_arg4 )
+					GoBack( f237_arg4, f237_arg2 )
+					Engine.LobbyVM_CallFunc( "ManagePartyLeave", f235_local0 )
 				end
 				
-				local f156_local3 = function ( f159_arg0, f159_arg1, f159_arg2, f159_arg3, f159_arg4 )
-					table.insert( f159_arg0, {
-						optionDisplay = f159_arg2,
-						action = f159_arg3,
-						param = f159_arg4,
-						customId = f159_arg1,
+				local f235_local3 = function ( f238_arg0, f238_arg1, f238_arg2, f238_arg3, f238_arg4 )
+					table.insert( f238_arg0, {
+						optionDisplay = f238_arg2,
+						action = f238_arg3,
+						param = f238_arg4,
+						customId = f238_arg1,
 						isLargeButton = true,
 						isLastButtonInGroup = false,
 						disabled = false
 					} )
 				end
 				
-				local f156_local4 = {}
-				if f155_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_PARTY then
-					f156_local3( f156_local4, "btnWithout", "MENU_LEAVE_LOBBY_LEAVE_PARTY", f156_local1, LuaEnums.LEAVE_WITH_PARTY.WITHOUT )
-				elseif f155_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_AND_DISBAND_PARTY then
-					f156_local3( f156_local4, "btnWithout", "MENU_LEAVE_LOBBY_LEAVE_AND_DISBAND_PARTY", f156_local1, LuaEnums.LEAVE_WITH_PARTY.WITHOUT )
-				elseif f155_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_LOBBY then
-					f156_local3( f156_local4, "btnWithout", "MENU_LEAVE_LOBBY_LEAVE_LOBBY", f156_local1, LuaEnums.LEAVE_WITH_PARTY.WITHOUT )
-				elseif f155_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_LOBBY_AND_PARTY then
-					f156_local3( f156_local4, "btnWithout", "MENU_LEAVE_LOBBY_LEAVE_LOBBY_AND_PARTY", f156_local1, LuaEnums.LEAVE_WITH_PARTY.WITHOUT )
-				elseif f155_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.BRING_PARTY_LEAVE_ALONE then
-					f156_local3( f156_local4, "btnWithout", "MENU_LEAVE_LOBBY_LEAVE_ALONE", f156_local1, LuaEnums.LEAVE_WITH_PARTY.WITHOUT )
-					f156_local3( f156_local4, "btnWith", "MENU_LEAVE_LOBBY_BRING_PARTY", f156_local1, LuaEnums.LEAVE_WITH_PARTY.WITH )
-				elseif f155_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.MANAGE_PARTY_LEAVE then
-					f156_local3( f156_local4, "btnWithout", "MENU_CONFIRM_CAPS", f156_local2, nil )
+				local f235_local4 = {}
+				if f234_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_PARTY then
+					f235_local3( f235_local4, "btnWithout", "MENU_LEAVE_LOBBY_LEAVE_PARTY", f235_local1, LuaEnums.LEAVE_WITH_PARTY.WITHOUT )
+				elseif f234_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_AND_DISBAND_PARTY then
+					f235_local3( f235_local4, "btnWithout", "MENU_LEAVE_LOBBY_LEAVE_AND_DISBAND_PARTY", f235_local1, LuaEnums.LEAVE_WITH_PARTY.WITHOUT )
+				elseif f234_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_LOBBY then
+					f235_local3( f235_local4, "btnWithout", "MENU_LEAVE_LOBBY_LEAVE_LOBBY", f235_local1, LuaEnums.LEAVE_WITH_PARTY.WITHOUT )
+				elseif f234_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.LEAVE_LOBBY_AND_PARTY then
+					f235_local3( f235_local4, "btnWithout", "MENU_LEAVE_LOBBY_LEAVE_LOBBY_AND_PARTY", f235_local1, LuaEnums.LEAVE_WITH_PARTY.WITHOUT )
+				elseif f234_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.BRING_PARTY_LEAVE_ALONE then
+					f235_local3( f235_local4, "btnWithout", "MENU_LEAVE_LOBBY_LEAVE_ALONE", f235_local1, LuaEnums.LEAVE_WITH_PARTY.WITHOUT )
+					f235_local3( f235_local4, "btnWith", "MENU_LEAVE_LOBBY_BRING_PARTY", f235_local1, LuaEnums.LEAVE_WITH_PARTY.WITH )
+				elseif f234_arg0 == LuaEnums.LEAVE_LOBBY_POPUP.MANAGE_PARTY_LEAVE then
+					f235_local3( f235_local4, "btnWithout", "MENU_CONFIRM_CAPS", f235_local2, nil )
 				end
-				f156_local3( f156_local4, "btnCancel", "MENU_LEAVE_LOBBY_CANCEL", f156_local1, nil )
-				local f156_local5 = {}
-				for f156_local9, f156_local10 in ipairs( f156_local4 ) do
-					table.insert( f156_local5, {
+				f235_local3( f235_local4, "btnCancel", "MENU_LEAVE_LOBBY_CANCEL", f235_local1, nil )
+				local f235_local5 = {}
+				for f235_local9, f235_local10 in ipairs( f235_local4 ) do
+					table.insert( f235_local5, {
 						models = {
-							displayText = Engine.Localize( f156_local10.optionDisplay ),
-							customId = f156_local10.customId
+							displayText = Engine.Localize( f235_local10.optionDisplay ),
+							customId = f235_local10.customId
 						},
 						properties = {
-							disabled = f156_local10.disabled,
-							action = f156_local10.action,
-							actionParam = f156_local10.param,
-							isLastButtonInGroup = f156_local10.isLastButtonInGroup
+							disabled = f235_local10.disabled,
+							action = f235_local10.action,
+							actionParam = f235_local10.param,
+							isLastButtonInGroup = f235_local10.isLastButtonInGroup
 						}
 					} )
 				end
-				return f156_local5
+				return f235_local5
 			end )
 			return "LeaveLobbyPopupButtons"
 		end,
-		[CoD.OverlayUtility.GoBackPropertyName] = CoD.OverlayUtility.DefaultGoBack
+		[CoD.OverlayUtility.GoBackPropertyName] = function ()
+			return function ( f240_arg0, f240_arg1, f240_arg2, f240_arg3 )
+				DisableAllMenuInput( GoBack( f240_arg3, f240_arg2 ), nil )
+			end
+			
+		end
 	},
 	LobbyLocalClientWarning = {
 		menuName = CoD.OverlayUtility.AutoSizeMenuFromDescription( "LobbyLocalClientWarning" ),
@@ -1504,8 +2172,7 @@ CoD.OverlayUtility.Overlays = {
 		description = "MENU_NO_SPLITSCREEN_ALLOWED_DESC",
 		image = "",
 		categoryType = CoD.OverlayUtility.OverlayTypes.Alert,
-		[CoD.OverlayUtility.GoBackPropertyName] = CoD.OverlayUtility.DefaultGoBack,
-		listDatasource = function ( f160_arg0 )
+		listDatasource = function ( f241_arg0 )
 			DataSources.LobbyLocalClientWarningButtons = DataSourceHelpers.ListSetup( "LobbyLocalClientWarningButtons", function ()
 				return {
 					{
@@ -1513,21 +2180,18 @@ CoD.OverlayUtility.Overlays = {
 							displayText = "MENU_CONTINUE_AND_DISBAND"
 						},
 						properties = {
-							action = function ( f162_arg0, f162_arg1, f162_arg2, f162_arg3, f162_arg4 )
-								GoBack( f162_arg4, f162_arg2 )
-								f160_arg0.disbandParty = true
-								if f160_arg0.navToMenu ~= nil then
-									Lobby_SetMaxLocalPlayers( f160_arg0.maxLocalClients )
-									Engine.LobbyVM_CallFunc( "GoForward", f160_arg0 )
-								else
-									for f162_local0 = 1, Engine.GetMaxControllerCount() - 1, 1 do
-										LobbyRemoveLocalClientFromLobby( f162_arg0, f162_local0 )
-									end
-									if f160_arg0.popupName ~= nil and f160_arg0.openFromMenu ~= nil then
-										OpenPopup( f160_arg0.openFromMenu, f160_arg0.popupName, 0 )
-									elseif f160_arg0.actionFunc ~= nil then
-										f160_arg0:actionFunc()
-									end
+							action = function ( f243_arg0, f243_arg1, f243_arg2, f243_arg3, f243_arg4 )
+								GoBack( f243_arg4, f243_arg2 )
+								f241_arg0.disbandParty = true
+								for f243_local0 = 1, Engine.GetMaxControllerCount() - 1, 1 do
+									LobbyRemoveLocalClientFromLobby( f243_arg0, f243_local0 )
+								end
+								if f241_arg0.navToMenu ~= nil then
+									Engine.LobbyVM_CallFunc( "GoForward", f241_arg0 )
+								elseif f241_arg0.popupName ~= nil and f241_arg0.openFromMenu ~= nil then
+									OpenPopup( f241_arg0.openFromMenu, f241_arg0.popupName, 0 )
+								elseif f241_arg0.actionFunc ~= nil then
+									f241_arg0:actionFunc()
 								end
 							end
 							
@@ -1538,11 +2202,11 @@ CoD.OverlayUtility.Overlays = {
 							displayText = "MENU_CANCEL"
 						},
 						properties = {
-							action = function ( f163_arg0, f163_arg1, f163_arg2, f163_arg3, f163_arg4 )
-								if f163_arg4.occludedMenu and f163_arg4.occludedMenu.openOverlayAfterSpinner then
-									f163_arg4.occludedMenu.openOverlayAfterSpinner = nil
+							action = function ( f244_arg0, f244_arg1, f244_arg2, f244_arg3, f244_arg4 )
+								if f244_arg4.occludedMenu and f244_arg4.occludedMenu.openOverlayAfterSpinner then
+									f244_arg4.occludedMenu.openOverlayAfterSpinner = nil
 								end
-								GoBack( f163_arg4, f163_arg2 )
+								GoBack( f244_arg4, f244_arg2 )
 							end
 							
 						}
@@ -1566,122 +2230,170 @@ CoD.OverlayUtility.Overlays = {
 			return Engine.Localize( "CPUI_MAX_RANK_MESSAGE", CoD.OverlayUtility.Overlays.CPMaxLevelNotification.maxRankName() )
 		end,
 		categoryType = CoD.OverlayUtility.OverlayTypes.Unlock
+	},
+	AnticheatMessage = {
+		menuName = "SystemOverlay_Full",
+		title = Engine.Localize( "MENU_ERROR" ),
+		description = function ( f248_arg0, f248_arg1, f248_arg2 )
+			return Engine.Localize( f248_arg0, f248_arg1 )
+		end,
+		listDatasource = function ( f249_arg0, f249_arg1, f249_arg2 )
+			DataSources.AnticheatMessageButtons = DataSourceHelpers.ListSetup( "AnticheatMessageButtons", function ( f250_arg0 )
+				local f250_local0 = f249_arg1
+				local f250_local1 = f249_arg2
+				local f250_local2 = {}
+				if f250_local0 ~= "" then
+					table.insert( f250_local2, {
+						models = {
+							displayText = Engine.Localize( "MENU_INFO" )
+						},
+						properties = {
+							action = OpenAnticheatPolicyInBrowser
+						}
+					} )
+				end
+				table.insert( f250_local2, {
+					models = {
+						displayText = Engine.Localize( "MENU_OK" )
+					},
+					properties = {
+						action = f250_local1
+					}
+				} )
+				return f250_local2
+			end, true, nil )
+			return "AnticheatMessageButtons"
+		end,
+		categoryType = CoD.OverlayUtility.OverlayTypes.Error,
+		[CoD.OverlayUtility.GoBackPropertyName] = CoD.OverlayUtility.DefaultGoBack
 	}
 }
-CoD.OverlayUtility.AddSystemOverlay = function ( f167_arg0, f167_arg1 )
-	CoD.OverlayUtility.Overlays[f167_arg0] = f167_arg1
+CoD.OverlayUtility.AddSystemOverlay = function ( f251_arg0, f251_arg1 )
+	CoD.OverlayUtility.Overlays[f251_arg0] = f251_arg1
 end
 
-local f0_local1 = function ( f168_arg0, f168_arg1 )
+local f0_local1 = function ( f252_arg0, f252_arg1 )
 	return function ()
-		ClearMenuSavedState( f168_arg0 )
-		if f168_arg0.overlayModelName then
-			local f169_local0 = Engine.GetModel( Engine.GetModelForController( f168_arg1 ), f168_arg0.overlayModelName )
-			if f169_local0 then
-				Engine.UnsubscribeAndFreeModel( f169_local0 )
+		ClearMenuSavedState( f252_arg0 )
+		if f252_arg0.overlayModelName then
+			local f253_local0 = Engine.GetModel( Engine.GetModelForController( f252_arg1 ), f252_arg0.overlayModelName )
+			if f253_local0 then
+				Engine.UnsubscribeAndFreeModel( f253_local0 )
 			end
 		end
 	end
 	
 end
 
-local f0_local2 = function ( f170_arg0, f170_arg1, f170_arg2 )
-	for f170_local4, f170_local5 in ipairs( CoD.OverlayUtility.OverlayModelFields ) do
-		local f170_local3 = nil
-		local f170_local6 = Engine.CreateModel( f170_arg0, f170_local5 )
-		f170_local3 = f0_local0( f170_arg1[f170_local5], f170_arg2 )
-		if not f170_local3 and CoD.OverlayUtility.DefaultModelFields[f170_local5] then
-			f170_local3 = f0_local0( CoD.OverlayUtility.DefaultModelFields[f170_local5], {
-				f170_arg1,
-				f170_arg2
+local f0_local2 = function ( f254_arg0, f254_arg1, f254_arg2 )
+	for f254_local4, f254_local5 in ipairs( CoD.OverlayUtility.OverlayModelFields ) do
+		local f254_local3 = nil
+		local f254_local6 = Engine.CreateModel( f254_arg0, f254_local5 )
+		f254_local3 = f0_local0( f254_arg1[f254_local5], f254_arg2 )
+		if not f254_local3 and CoD.OverlayUtility.DefaultModelFields[f254_local5] then
+			f254_local3 = f0_local0( CoD.OverlayUtility.DefaultModelFields[f254_local5], {
+				f254_arg1,
+				f254_arg2
 			} )
 		end
-		if f170_local3 ~= nil then
-			Engine.SetModelValue( f170_local6, f170_local3 )
+		if f254_local3 ~= nil then
+			Engine.SetModelValue( f254_local6, f254_local3 )
 		end
 	end
 end
 
-local f0_local3 = function ( f171_arg0, f171_arg1, f171_arg2 )
-	for f171_local4, f171_local5 in ipairs( CoD.OverlayUtility.OverlayPropertyFields ) do
-		local f171_local3 = nil
-		f171_local3 = f0_local0( f171_arg1[f171_local5], f171_arg2 )
-		if not f171_local3 and CoD.OverlayUtility.DefaultPropertyFields[f171_local5] then
-			f171_local3 = f0_local0( CoD.OverlayUtility.DefaultPropertyFields[f171_local5], {
-				f171_arg1,
-				f171_arg2
+local f0_local3 = function ( f255_arg0, f255_arg1, f255_arg2 )
+	for f255_local4, f255_local5 in ipairs( CoD.OverlayUtility.OverlayPropertyFields ) do
+		local f255_local3 = nil
+		f255_local3 = f0_local0( f255_arg1[f255_local5], f255_arg2 )
+		if not f255_local3 and CoD.OverlayUtility.DefaultPropertyFields[f255_local5] then
+			f255_local3 = f0_local0( CoD.OverlayUtility.DefaultPropertyFields[f255_local5], {
+				f255_arg1,
+				f255_arg2
 			} )
 		end
-		f171_arg0[f171_local5] = f171_local3
+		f255_arg0[f255_local5] = f255_local3
 	end
 end
 
-local f0_local4 = function ( f172_arg0, f172_arg1 )
+local f0_local4 = function ( f256_arg0, f256_arg1 )
 	return function ()
-		f0_local2( f172_arg0:getModel(), CoD.OverlayUtility.Overlays[f172_arg0.menuName], f172_arg1 )
-		f0_local3( f172_arg0, CoD.OverlayUtility.Overlays[f172_arg0.menuName], f172_arg1 )
+		f0_local2( f256_arg0:getModel(), CoD.OverlayUtility.Overlays[f256_arg0.menuName], f256_arg1 )
+		f0_local3( f256_arg0, CoD.OverlayUtility.Overlays[f256_arg0.menuName], f256_arg1 )
 	end
 	
 end
 
-CoD.OverlayUtility.CreateOverlay = function ( f174_arg0, f174_arg1, f174_arg2, ... )
-	local f174_local0 = nil
-	local f174_local1 = {
+CoD.OverlayUtility.CreateOverlay = function ( f258_arg0, f258_arg1, f258_arg2, ... )
+	local f258_local0 = nil
+	local f258_local1 = {
 		n = select( "#", ... ),
 		...
 	}
-	local f174_local2 = function ( f175_arg0, f175_arg1 )
-		for f175_local4, f175_local5 in ipairs( CoD.OverlayUtility.OverlayModelFields ) do
-			local f175_local3 = nil
-			local f175_local6 = Engine.CreateModel( f175_arg0, f175_local5 )
-			if type( f175_arg1[f175_local5] ) == "function" then
-				f175_local3 = f175_arg1[f175_local5]( unpack( f174_local1 ) )
+	local f258_local2 = function ( f259_arg0, f259_arg1 )
+		for f259_local4, f259_local5 in ipairs( CoD.OverlayUtility.OverlayModelFields ) do
+			local f259_local3 = nil
+			local f259_local6 = Engine.CreateModel( f259_arg0, f259_local5 )
+			if type( f259_arg1[f259_local5] ) == "function" then
+				f259_local3 = f259_arg1[f259_local5]( unpack( f258_local1 ) )
 			else
-				f175_local3 = f175_arg1[f175_local5]
+				f259_local3 = f259_arg1[f259_local5]
 			end
-			if not f175_local3 and CoD.OverlayUtility.DefaultModelFields[f175_local5] then
-				f175_local3 = f0_local0( CoD.OverlayUtility.DefaultModelFields[f175_local5], {
-					f175_arg1,
-					f174_local1
+			if not f259_local3 and CoD.OverlayUtility.DefaultModelFields[f259_local5] then
+				f259_local3 = f0_local0( CoD.OverlayUtility.DefaultModelFields[f259_local5], {
+					f259_arg1,
+					f258_local1
 				} )
 			end
-			if f175_local3 ~= nil then
-				Engine.SetModelValue( f175_local6, f175_local3 )
+			if f259_local3 ~= nil then
+				Engine.SetModelValue( f259_local6, f259_local3 )
 			end
 		end
 	end
 	
-	if CoD.OverlayUtility.Overlays[f174_arg2] then
-		local f174_local3 = CoD.OverlayUtility.Overlays[f174_arg2]
-		local f174_local4 = f0_local0( f174_local3.menuName, f174_local1 )
-		if f174_local4 then
+	if CoD.OverlayUtility.Overlays[f258_arg2] then
+		local f258_local3 = CoD.OverlayUtility.Overlays[f258_arg2]
+		local f258_local4 = f0_local0( f258_local3.menuName, f258_local1 )
+		if f258_local4 then
 			if CoD.Menu.ModelToUse then
-				f0_local2( CoD.Menu.ModelToUse, f174_local3, f174_local1 )
+				f0_local2( CoD.Menu.ModelToUse, f258_local3, f258_local1 )
 			end
-			CoD.Menu.OverwriteMenuName = f174_arg2
-			if not f174_local3.openMethod or f174_local3.openMethod == CoD.OverlayUtility.OpenMethods.Popup then
-				f174_local0 = OpenPopup( f174_arg1, f174_local4, f174_arg0 )
-			elseif f174_local3.openMethod == CoD.OverlayUtility.OpenMethods.Overlay then
-				f174_local0 = OpenOverlay( f174_arg1, f174_local4, f174_arg0 )
+			CoD.Menu.OverwriteMenuName = f258_arg2
+			if not f258_local3.openMethod or f258_local3.openMethod == CoD.OverlayUtility.OpenMethods.Popup then
+				f258_local0 = OpenPopup( f258_arg1, f258_local4, f258_arg0 )
+			elseif f258_local3.openMethod == CoD.OverlayUtility.OpenMethods.Overlay then
+				f258_local0 = OpenOverlay( f258_arg1, f258_local4, f258_arg0 )
 			end
 			CoD.Menu.OverwriteMenuName = nil
-			if f174_local0 then
-				f174_local0.refreshData = f0_local4( f174_local0, f174_local1 )
-				f0_local3( f174_local0, f174_local3, f174_local1 )
-				if not f174_local0:getModel() then
-					f174_local0.overlayModelName = "Overlay." .. f174_arg2
-					local f174_local5 = Engine.CreateModel( Engine.GetModelForController( f174_arg0 ), f174_local0.overlayModelName )
-					f0_local2( f174_local5, f174_local3, f174_local1 )
-					f174_local0:setModel( f174_local5 )
+			if f258_local0 then
+				f258_local0.refreshData = f0_local4( f258_local0, f258_local1 )
+				f0_local3( f258_local0, f258_local3, f258_local1 )
+				if not f258_local0:getModel() then
+					f258_local0.overlayModelName = "Overlay." .. f258_arg2
+					local f258_local5 = Engine.CreateModel( Engine.GetModelForController( f258_arg0 ), f258_local0.overlayModelName )
+					f0_local2( f258_local5, f258_local3, f258_local1 )
+					f258_local0:setModel( f258_local5 )
 				end
-				LUI.OverrideFunction_CallOriginalFirst( f174_local0, "close", f0_local1( f174_local0, f174_arg0 ) )
-				if f174_local3.postCreateStep then
-					f174_local3.postCreateStep( f174_local0, f174_arg0 )
+				LUI.OverrideFunction_CallOriginalFirst( f258_local0, "close", f0_local1( f258_local0, f258_arg0 ) )
+				if f258_local3.postCreateStep then
+					f258_local3.postCreateStep( f258_local0, f258_arg0 )
 				end
-				f174_local0:UpdateAllButtonPrompts( f174_arg0 )
+				f258_local0:UpdateAllButtonPrompts( f258_arg0 )
 			end
 		end
 	end
-	return f174_local0
+	return f258_local0
+end
+
+CoD.OverlayUtility.ShowToast = function ( f260_arg0, f260_arg1, f260_arg2, f260_arg3, f260_arg4, f260_arg5, f260_arg6 )
+	local f260_local0 = Engine.CreateModel( Engine.GetModelForController( Engine.GetPrimaryController() ), "FrontendToast" )
+	Engine.SetModelValue( Engine.GetModel( f260_local0, "state" ), f260_arg0 or "DefaultState" )
+	Engine.SetModelValue( Engine.GetModel( f260_local0, "kicker" ), f260_arg1 or "" )
+	Engine.SetModelValue( Engine.GetModel( f260_local0, "description" ), f260_arg2 or "" )
+	Engine.SetModelValue( Engine.GetModel( f260_local0, "contentIcon" ), f260_arg3 or "blacktransparent" )
+	Engine.SetModelValue( Engine.GetModel( f260_local0, "functionIcon" ), f260_arg4 or "blacktransparent" )
+	Engine.SetModelValue( Engine.GetModel( f260_local0, "backgroundId" ), f260_arg6 )
+	Engine.SetModelValue( Engine.GetModel( f260_local0, "emblemDecal" ), f260_arg5 or 0 )
+	Engine.SetModelValue( Engine.GetModel( f260_local0, "notify" ), true )
 end
 

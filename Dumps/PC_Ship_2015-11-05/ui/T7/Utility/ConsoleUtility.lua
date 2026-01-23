@@ -14,11 +14,14 @@ local f0_local0 = function ( f1_arg0 )
 	if f1_arg0.maxElementIndex < f1_local0 then
 		f1_arg0.lines[f1_local3].element:forceHideConsoleEntry()
 	end
-	if CoD.IsShoutcaster( f1_arg0.controller ) and not CoD.ShoutcasterProfileVarBool( f1_arg0.controller, "shoutcaster_killfeed" ) then
-		
-	else
-		f1_arg0.lines[f1_local3].element:showConsoleEntry( f1_local3 )
-		f1_arg0.lines[f1_local3].active = true
+	local f1_local4 = f1_arg0.controller
+	if not Engine.IsVisibilityBitSet( f1_local4, Enum.UIVisibilityBit.BIT_DEMO_CAMERA_MODE_MOVIECAM ) then
+		if CoD.IsShoutcaster( f1_local4 ) and not CoD.ShoutcasterProfileVarBool( f1_local4, "shoutcaster_killfeed" ) then
+			
+		else
+			f1_arg0.lines[f1_local3].element:showConsoleEntry( f1_local3 )
+			f1_arg0.lines[f1_local3].active = true
+		end
 	end
 	Engine.SetModelValue( f1_local2, (f1_local3 + 1) % (f1_arg0.maxElementIndex + 1) )
 	return true

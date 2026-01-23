@@ -266,22 +266,22 @@ local f0_local7 = function ( f17_arg0, f17_arg1, f17_arg2 )
 		f0_local5( f17_arg2, f17_local4, "RANK" )
 	elseif f17_arg1 and f17_arg1.currentRankXP then
 		local f17_local5 = CoD.AARUtilityCP.GetRankForRankXP( f17_arg0, f17_arg1.currentRankXP:get() )
-		local f17_local7 = f17_arg1.PlayerStatsList.RANK.statValue:get() - f17_local5
-		if f17_local7 > 0 then
-			local f17_local8 = 8
-			local f17_local9 = 12
-			for f17_local10 = 1, f17_local7, 1 do
-				local f17_local13 = {
-					icon = "t7_icon_rank_cp_level_" .. string.format( "%02d", f17_local5 + f17_local10 + 1 ) .. "_lrg",
-					title = Engine.GetRankName( f17_local5 + f17_local10 ),
-					description = Engine.Localize( "MENU_LEVEL" ) .. " " .. f17_local5 + f17_local10 + 1,
-					rank = f17_local5 + f17_local10
+		local f17_local8 = CoD.AARUtilityCP.GetRankForRankXP( f17_arg0, f17_arg1.PlayerStatsList.RANKXP.statValue:get() ) - f17_local5
+		if f17_local8 > 0 then
+			local f17_local9 = 8
+			local f17_local10 = 12
+			for f17_local11 = 1, f17_local8, 1 do
+				local f17_local14 = {
+					icon = "t7_icon_rank_cp_level_" .. string.format( "%02d", f17_local5 + f17_local11 + 1 ) .. "_lrg",
+					title = CoD.GetRankName( f17_local5 + f17_local11, 0 ),
+					description = Engine.Localize( "MENU_LEVEL" ) .. " " .. f17_local5 + f17_local11 + 1,
+					rank = f17_local5 + f17_local11
 				}
-				for f17_local14 = f17_local8, f17_local9, 1 do
-					f0_local6( f17_arg0, f17_local13, f17_local14 )
+				for f17_local15 = f17_local9, f17_local10, 1 do
+					f0_local6( f17_arg0, f17_local14, f17_local15 )
 				end
-				f0_local6( f17_arg0, f17_local13, f17_local3 )
-				f0_local5( f17_arg2, f17_local13, "RANK" )
+				f0_local6( f17_arg0, f17_local14, f17_local3 )
+				f0_local5( f17_arg2, f17_local14, "RANK" )
 			end
 		end
 	end
@@ -345,7 +345,7 @@ local f0_local9 = function ( f19_arg0, f19_arg1, f19_arg2 )
 								local f19_local15 = {
 									icon = Engine.TableLookup( f19_arg0, CoD.statsTable, 0, f19_local0, 6 ),
 									title = f19_local4,
-									description = Engine.Localize( "MENU_LEVEL" ) .. " " .. f19_local6 + tonumber( f19_local14 ) + 2
+									description = Engine.Localize( "MENU_LEVEL" ) .. " " .. tonumber( f19_local14 ) + 2
 								}
 								f0_local8( f19_arg0, f19_local15, f19_local0, f19_local12, f19_local13 )
 								f0_local5( f19_arg2, f19_local15, "WEAPON" )
@@ -361,23 +361,23 @@ local f0_local9 = function ( f19_arg0, f19_arg1, f19_arg2 )
 						end
 					end
 				end
-				local f19_local9 = Engine.TableFindRows( "gamedata/stats/cp/statsmilestones3.csv", 3, Engine.TableLookup( f19_arg0, CoD.statsTable, 0, f19_local0, 2 ) )
+				local f19_local9 = Engine.TableFindRows( CoD.getStatsMilestoneTable( 3, Enum.eModes.MODE_CAMPAIGN ), 3, Engine.TableLookup( f19_arg0, CoD.statsTable, 0, f19_local0, 2 ) )
 				if f19_local9 ~= nil then
 					for f19_local10 = 1, #f19_local9, 1 do
 						if f19_arg1.ItemStats[f19_local0].challengeCompleted[f19_local10 - 1]:get() == 1 then
-							local f19_local15 = Engine.TableLookupGetColumnValueForRow( "gamedata/stats/cp/statsmilestones3.csv", f19_local9[f19_local10], 9 )
+							local f19_local15 = Engine.TableLookupGetColumnValueForRow( CoD.getStatsMilestoneTable( 3, Enum.eModes.MODE_CAMPAIGN ), f19_local9[f19_local10], 9 )
 							local f19_local16 = {
-								icon = Engine.TableLookup( controller, CoD.attachmentTable, 4, f19_local15, 6 ),
-								title = Engine.TableLookup( controller, CoD.attachmentTable, 4, f19_local15, 3 ),
+								icon = Engine.TableLookup( f19_arg0, CoD.attachmentTable, 4, f19_local15, 6 ),
+								title = Engine.TableLookup( f19_arg0, CoD.attachmentTable, 4, f19_local15, 3 ),
 								description = Engine.TableLookup( f19_arg0, CoD.statsTable, 0, f19_local0, 3 ),
 								Rewards = {}
 							}
 							f0_local3( f19_local16.Rewards, {
-								name = Engine.Localize( LocalizeIntoString( "CPUI_XP_BONUS", tonumber( Engine.TableLookupGetColumnValueForRow( "gamedata/stats/cp/statsmilestones3.csv", f19_local9[f19_local10], 6 ) ) ) ),
+								name = Engine.Localize( LocalizeIntoString( "CPUI_XP_BONUS", tonumber( Engine.TableLookupGetColumnValueForRow( CoD.getStatsMilestoneTable( 3, Enum.eModes.MODE_CAMPAIGN ), f19_local9[f19_local10], 6 ) ) ) ),
 								icon = "t7_hud_mp_notifications_xp_blue",
 								description = ""
 							} )
-							f0_local5( f19_arg2, f19_local16, "CHALLENGE" )
+							f0_local5( f19_arg2, f19_local16, "WEAPON_CHALLENGE" )
 							f19_arg1.ItemStats[f19_local0].challengeCompleted[f19_local10 - 1]:set( 0 )
 						end
 					end
@@ -581,13 +581,13 @@ local f0_local17 = function ( f27_arg0, f27_arg1, f27_arg2 )
 			} )
 		end
 		local f27_local12 = {}
-		local f27_local8 = tonumber( Engine.TableLookup( f27_arg0, "gamedata/stats/cp/statsmilestones2.csv", 1, "bodystyle", 3, CoD.AARUtilityCP.GetLastMapName(), 2 ) ) + 1
+		local f27_local8 = tonumber( Engine.TableLookup( f27_arg0, CoD.getStatsMilestoneTable( 2, Enum.eModes.MODE_CAMPAIGN ), 1, "bodystyle", 3, CoD.AARUtilityCP.GetLastMapName(), 2 ) ) + 1
 		CoD.CCUtility.customizationMode = Enum.eModes.MODE_CAMPAIGN
 		CoD.CCUtility.Heroes.HeroIndexForEdits = Engine.GetEquippedHero( f27_arg0, CoD.CCUtility.customizationMode )
 		CoD.CCUtility.Heroes.heroCustomizationTable = Engine.GetHeroCustomizationTable( CoD.CCUtility.customizationMode, CoD.CCUtility.Heroes.HeroIndexForEdits )
 		local f27_local9 = CoD.CCUtility.Heroes.heroCustomizationTable.bodies[f27_local8]
 		f27_local12.name = "CPUI_OUTFIT"
-		f27_local12.icon = f27_local9.icon
+		f27_local12.icon = f27_local9.icon .. "_nstrm"
 		f27_local12.description = f27_local9.name
 		f0_local3( f27_local6.Rewards, f27_local12 )
 		f0_local5( f27_arg2, f27_local6, "MISSION" )
@@ -601,7 +601,7 @@ local f0_local18 = function ( f28_arg0, f28_arg1, f28_arg2 )
 		return 
 	end
 	f28_local0 = Engine.GetAssetList( "rating_list" )
-	for f28_local2 = 0, 2, 1 do
+	for f28_local2 = 0, 3, 1 do
 		if f28_arg1.PlayerStatsByMap.cp_sh_cairo.completedDifficulties[f28_local2]:get() ~= f28_arg1.PlayerStatsByMap.cp_sh_cairo.previousCompletedDifficulties[f28_local2]:get() then
 			local f28_local4 = f28_local0[f28_local2 + 1]
 			local f28_local5 = {
@@ -635,21 +635,21 @@ local f0_local19 = function ( f29_arg0, f29_arg1 )
 end
 
 local f0_local20 = function ( f30_arg0, f30_arg1, f30_arg2 )
-	local f30_local0 = Engine.TableFindRows( "gamedata/stats/cp/statsmilestones3.csv", 3, "attachment" )
+	local f30_local0 = Engine.TableFindRows( CoD.getStatsMilestoneTable( 3, Enum.eModes.MODE_CAMPAIGN ), 3, "attachment" )
 	local f30_local1 = {}
 	for f30_local2 = 1, #f30_local0, 1 do
-		local f30_local5 = Engine.TableLookupGetColumnValueForRow( "gamedata/stats/cp/statsmilestones3.csv", f30_local0[f30_local2], 13 )
+		local f30_local5 = Engine.TableLookupGetColumnValueForRow( CoD.getStatsMilestoneTable( 3, Enum.eModes.MODE_CAMPAIGN ), f30_local0[f30_local2], 13 )
 		if not f0_local19( f30_local1, f30_local5 ) then
 			table.insert( f30_local1, f30_local5 )
 		end
 	end
 	for f30_local2 = 1, #f30_local1, 1 do
 		local f30_local5 = f30_local1[f30_local2]
-		local f30_local6 = Engine.TableFindRows( "gamedata/stats/cp/statsmilestones3.csv", 13, f30_local5 )
+		local f30_local6 = Engine.TableFindRows( CoD.getStatsMilestoneTable( 3, Enum.eModes.MODE_CAMPAIGN ), 13, f30_local5 )
 		if f30_local6 ~= nil then
 			for f30_local7 = 1, #f30_local6, 1 do
 				if f30_arg1.Attachments[f30_local5].challengeCompleted[f30_local7 - 1]:get() == 1 then
-					local f30_local10 = Engine.TableLookupGetColumnValueForRow( "gamedata/stats/cp/statsmilestones3.csv", f30_local6[f30_local7], 9 )
+					local f30_local10 = Engine.TableLookupGetColumnValueForRow( CoD.getStatsMilestoneTable( 3, Enum.eModes.MODE_CAMPAIGN ), f30_local6[f30_local7], 9 )
 					local f30_local11 = {
 						icon = f30_local5 .. "_" .. f30_local7,
 						title = "mpui_reticle_" .. f30_local5 .. "_" .. f30_local7,
@@ -657,11 +657,11 @@ local f0_local20 = function ( f30_arg0, f30_arg1, f30_arg2 )
 						Rewards = {}
 					}
 					f0_local3( f30_local11.Rewards, {
-						name = Engine.Localize( LocalizeIntoString( "CPUI_XP_BONUS", tonumber( Engine.TableLookupGetColumnValueForRow( "gamedata/stats/cp/statsmilestones3.csv", f30_local6[f30_local7], 6 ) ) ) ),
+						name = Engine.Localize( LocalizeIntoString( "CPUI_XP_BONUS", tonumber( Engine.TableLookupGetColumnValueForRow( CoD.getStatsMilestoneTable( 3, Enum.eModes.MODE_CAMPAIGN ), f30_local6[f30_local7], 6 ) ) ) ),
 						icon = "t7_hud_mp_notifications_xp_blue",
 						description = ""
 					} )
-					f0_local5( f30_arg2, f30_local11, "CHALLENGE" )
+					f0_local5( f30_arg2, f30_local11, "WEAPON_CHALLENGE" )
 					f30_arg1.Attachments[f30_local5].challengeCompleted[f30_local7 - 1]:set( 0 )
 				end
 			end
@@ -690,56 +690,145 @@ local f0_local21 = function ( f31_arg0, f31_arg1, f31_arg2 )
 	end
 end
 
-CoD.AARUtilityCP.GetRewardItemCount = function ( f32_arg0 )
-	return Engine.GetModelValue( Engine.GetModel( Engine.GetModelForController( f32_arg0.controller ), "aarRewards.aarRewardsCount" ) )
+local f0_local22 = function ( f32_arg0, f32_arg1, f32_arg2, f32_arg3 )
+	local f32_local0 = {}
+	if not f32_arg3 then
+		f32_local0.name = Engine.Localize( LocalizeIntoString( "CPUI_XP_BONUS", f32_arg2 ) )
+		f32_local0.icon = "t7_hud_mp_notifications_xp_blue"
+		f32_local0.description = ""
+	else
+		f32_local0.name = Engine.Localize( LocalizeIntoString( "CP_CHALLENGES_TIER_X", f32_arg3 + 1 ) )
+		f32_local0.icon = "t7_hud_mp_notifications_xp_blue"
+		f32_local0.description = Engine.Localize( LocalizeIntoString( "CPUI_XP_BONUS", f32_arg2 ) )
+	end
+	f0_local3( f32_arg1.Rewards, f32_local0 )
+	return f32_arg1
 end
 
-CoD.AARUtilityCP.CreateModelsForRewards = function ( f33_arg0 )
-	if CoD.perController[f33_arg0].fromMaxLevelMessage == true then
-		return 
-	end
-	local f33_local0 = CoD.AARUtilityCP.UseTestData()
-	local f33_local1 = Engine.GetModelForController( f33_arg0 )
-	local f33_local2 = Engine.GetModel( f33_local1, "aarRewards" )
-	if f33_local2 ~= nil then
-		Engine.UnsubscribeAndFreeModel( f33_local2 )
-	end
-	f33_local2 = Engine.CreateModel( f33_local1, "aarRewards" )
-	if Engine.GetModel( f33_local1, "aarRewardsCount" ) ~= nil then
-		Engine.UnsubscribeAndFreeModel( f33_local2 )
-	end
-	local f33_local3 = Engine.CreateModel( f33_local2, "aarRewardsCount" )
-	local f33_local4 = {
-		count = 0
+local f0_local23 = function ( f33_arg0, f33_arg1, f33_arg2, f33_arg3 )
+	local f33_local0 = CoD.getStatsMilestoneTable( 3, Enum.eModes.MODE_CAMPAIGN )
+	local f33_local1 = {
+		title = LocalizeIntoString( Engine.TableGetColumnValueForRow( f33_local0, f33_arg2, 5 ), "", "", "" ),
+		icon = Engine.TableLookup( f33_arg0, "gamedata/emblems/backgrounds.csv", 4, Engine.TableGetColumnValueForRow( f33_local0, f33_arg2, 12 ), 3 ) .. "_nstrm"
 	}
-	local f33_local5 = CoD.GetPlayerStats( f33_arg0 )
-	f0_local18( f33_arg0, f33_local5, f33_local4 )
-	f0_local17( f33_arg0, f33_local5, f33_local4 )
-	f0_local7( f33_arg0, f33_local5, f33_local4 )
-	f0_local21( f33_arg0, f33_local5, f33_local4 )
-	f0_local9( f33_arg0, f33_local5, f33_local4 )
-	f0_local15( f33_arg0, f33_local5, f33_local4 )
-	UploadStats( f33_arg0 )
-	for f33_local6 = 1, f33_local4.count, 1 do
-		local f33_local9 = f33_local4[f33_local6]
-		local f33_local10 = Engine.CreateModel( f33_local2, f33_local6 .. "" )
-		Engine.SetModelValue( Engine.CreateModel( f33_local10, "rewardCarouselItemImage" ), f33_local9.reward.icon )
-		Engine.SetModelValue( Engine.CreateModel( f33_local10, "rewardCarouselItemTitle" ), f33_local9.reward.title )
-		Engine.SetModelValue( Engine.CreateModel( f33_local10, "rewardCarouselItemSubtitle" ), f33_local9.reward.description )
-		for f33_local11 = 1, 4, 1 do
-			Engine.SetModelValue( Engine.CreateModel( f33_local10, "reward" .. f33_local11 .. "InfoVisible" ), 0 )
-		end
-		if f33_local9.reward.Rewards ~= nil and f33_local9.reward.Rewards.count ~= nil then
-			for f33_local11 = 1, f33_local9.reward.Rewards.count, 1 do
-				local f33_local14 = Engine.CreateModel( f33_local10, "reward" .. f33_local11 .. "Info" )
-				local f33_local15 = f33_local9.reward.Rewards[f33_local11]
-				Engine.SetModelValue( Engine.CreateModel( f33_local14, "rewardName" ), f33_local15.name )
-				Engine.SetModelValue( Engine.CreateModel( f33_local14, "rewardImage" ), f33_local15.icon )
-				Engine.SetModelValue( Engine.CreateModel( f33_local14, "rewardDesc" ), f33_local15.description )
-				Engine.SetModelValue( Engine.CreateModel( f33_local10, "reward" .. f33_local11 .. "InfoVisible" ), 1 )
+	if f33_arg3 then
+		f33_local1.description = "CP_CHALLENGES_CHALLENGE_TIER_COMPLETED"
+	else
+		f33_local1.description = "MPUI_AAR_AWARDS_STATS_MILESTONE"
+	end
+	f33_local1.Rewards = {}
+	return f33_local1
+end
+
+local f0_local24 = function ( f34_arg0 )
+	CoD.AARUtilityCP.challengeTable = {}
+	local f34_local0 = CoD.getStatsMilestoneTable( 3, Enum.eModes.MODE_CAMPAIGN )
+	for f34_local11, f34_local12 in ipairs( {
+		"missions",
+		"tott",
+		"career"
+	} ) do
+		for f34_local8, f34_local9 in ipairs( Engine.GetChallengeInfoForImages( f34_arg0, f34_local12, Enum.eModes.MODE_CAMPAIGN ) ) do
+			if f34_local9 ~= nil then
+				local f34_local4 = Engine.TableLookupGetColumnValueForRow( f34_local0, f34_local9.challengeRow, 1 )
+				if f34_local4 and f34_local4 ~= "0" then
+					f34_local4 = tonumber( f34_local4 )
+					f34_local9.tiers = {}
+					for f34_local5 = f34_local9.challengeRow - f34_local4, f34_local9.challengeRow, 1 do
+						table.insert( f34_local9.tiers, {
+							tierID = tonumber( Engine.TableLookupGetColumnValueForRow( f34_local0, f34_local5, 1 ) ),
+							tierRowNum = f34_local5,
+							tierTargetValue = tonumber( Engine.TableLookupGetColumnValueForRow( f34_local0, f34_local5, 2 ) ),
+							tierXPEarned = tonumber( Engine.TableLookupGetColumnValueForRow( f34_local0, f34_local5, 6 ) )
+						} )
+					end
+				end
+				table.insert( CoD.AARUtilityCP.challengeTable, f34_local9 )
 			end
 		end
 	end
-	Engine.SetModelValue( f33_local3, f33_local4.count )
+	return CoD.AARUtilityCP.challengeTable
+end
+
+local f0_local25 = function ( f35_arg0, f35_arg1, f35_arg2 )
+	local f35_local0 = CoD.getStatsMilestoneTable( 3, Enum.eModes.MODE_CAMPAIGN )
+	f0_local24( f35_arg0 )
+	for f35_local11, f35_local12 in ipairs( CoD.AARUtilityCP.challengeTable ) do
+		if not f35_local12.tiers then
+			if not f35_local12.isLocked and not Engine.GetChallengeHasBeenSeen( f35_arg0, f35_local12.challengeRow ) then
+				Engine.SetChallengeHasBeenSeen( f35_arg0, f35_local12.challengeRow )
+				f0_local5( f35_arg2, f0_local22( f35_arg0, f0_local23( f35_arg0, f35_arg1, f35_local12.challengeRow ), tonumber( Engine.TableLookupGetColumnValueForRow( f35_local0, f35_local12.challengeRow, 6 ) ) ), "CHALLENGE" )
+			end
+		end
+		local f35_local4 = f0_local23( f35_arg0, f35_arg1, f35_local12.challengeRow, f35_local12.isLocked )
+		local f35_local5 = false
+		for f35_local9, f35_local10 in ipairs( f35_local12.tiers ) do
+			if f35_local10.tierTargetValue <= f35_local12.currChallengeStatValue and not Engine.GetChallengeHasBeenSeen( f35_arg0, f35_local10.tierRowNum ) then
+				Engine.SetChallengeHasBeenSeen( f35_arg0, f35_local10.tierRowNum )
+				f35_local4 = f0_local22( f35_arg0, f35_local4, f35_local10.tierXPEarned, f35_local10.tierID )
+				f35_local5 = true
+			end
+		end
+		if f35_local5 then
+			f0_local5( f35_arg2, f35_local4, "CHALLENGE" )
+		end
+	end
+end
+
+CoD.AARUtilityCP.GetRewardItemCount = function ( f36_arg0 )
+	return Engine.GetModelValue( Engine.GetModel( Engine.GetModelForController( f36_arg0.controller ), "aarRewards.aarRewardsCount" ) )
+end
+
+CoD.AARUtilityCP.CreateModelsForRewards = function ( f37_arg0 )
+	if CoD.perController[f37_arg0].fromMaxLevelMessage == true then
+		return 
+	end
+	local f37_local0 = CoD.AARUtilityCP.UseTestData()
+	local f37_local1 = Engine.GetModelForController( f37_arg0 )
+	local f37_local2 = Engine.GetModel( f37_local1, "aarRewards" )
+	if f37_local2 ~= nil then
+		Engine.UnsubscribeAndFreeModel( f37_local2 )
+	end
+	f37_local2 = Engine.CreateModel( f37_local1, "aarRewards" )
+	if Engine.GetModel( f37_local1, "aarRewardsCount" ) ~= nil then
+		Engine.UnsubscribeAndFreeModel( f37_local2 )
+	end
+	local f37_local3 = Engine.CreateModel( f37_local2, "aarRewardsCount" )
+	local f37_local4 = {
+		count = 0
+	}
+	local f37_local5 = CoD.GetPlayerStats( f37_arg0 )
+	f0_local18( f37_arg0, f37_local5, f37_local4 )
+	f0_local17( f37_arg0, f37_local5, f37_local4 )
+	f0_local7( f37_arg0, f37_local5, f37_local4 )
+	f0_local21( f37_arg0, f37_local5, f37_local4 )
+	f0_local25( f37_arg0, f37_local5, f37_local4 )
+	f0_local9( f37_arg0, f37_local5, f37_local4 )
+	f0_local15( f37_arg0, f37_local5, f37_local4 )
+	UploadStats( f37_arg0 )
+	for f37_local6 = 1, f37_local4.count, 1 do
+		local f37_local9 = f37_local4[f37_local6]
+		local f37_local10 = Engine.CreateModel( f37_local2, f37_local6 .. "" )
+		Engine.SetModelValue( Engine.CreateModel( f37_local10, "rewardCarouselItemImage" ), f37_local9.reward.icon )
+		Engine.SetModelValue( Engine.CreateModel( f37_local10, "rewardCarouselItemTitle" ), f37_local9.reward.title )
+		Engine.SetModelValue( Engine.CreateModel( f37_local10, "rewardCarouselItemSubtitle" ), f37_local9.reward.description )
+		if f37_local9.type == "CHALLENGE" then
+			Engine.SetModelValue( Engine.CreateModel( f37_local10, "rewardCarouselItemType" ), "challengeCompleted" )
+		end
+		for f37_local11 = 1, 4, 1 do
+			Engine.SetModelValue( Engine.CreateModel( f37_local10, "reward" .. f37_local11 .. "InfoVisible" ), 0 )
+		end
+		if f37_local9.reward.Rewards ~= nil and f37_local9.reward.Rewards.count ~= nil then
+			for f37_local11 = 1, f37_local9.reward.Rewards.count, 1 do
+				local f37_local14 = Engine.CreateModel( f37_local10, "reward" .. f37_local11 .. "Info" )
+				local f37_local15 = f37_local9.reward.Rewards[f37_local11]
+				Engine.SetModelValue( Engine.CreateModel( f37_local14, "rewardName" ), f37_local15.name )
+				Engine.SetModelValue( Engine.CreateModel( f37_local14, "rewardImage" ), f37_local15.icon )
+				Engine.SetModelValue( Engine.CreateModel( f37_local14, "rewardDesc" ), f37_local15.description )
+				Engine.SetModelValue( Engine.CreateModel( f37_local10, "reward" .. f37_local11 .. "InfoVisible" ), 1 )
+			end
+		end
+	end
+	Engine.SetModelValue( f37_local3, f37_local4.count )
 end
 

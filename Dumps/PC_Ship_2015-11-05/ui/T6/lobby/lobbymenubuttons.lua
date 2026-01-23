@@ -36,7 +36,11 @@ local f0_local5 = function ()
 end
 
 local f0_local6 = function ()
-	return Engine.IsCpStillDownloading()
+	local f7_local0 = Engine.IsCpStillDownloading()
+	if not f7_local0 then
+		f7_local0 = f0_local4()
+	end
+	return f7_local0
 end
 
 local f0_local7 = function ()
@@ -186,14 +190,14 @@ CoD.LobbyButtons.THEATER_MP = {
 	action = NavigateToLobby_SelectionList,
 	param = "MPLobbyOnlineTheater",
 	customId = "btnTheater",
-	disabledFunc = AlwaysTrue
+	disabledFunc = f0_local7
 }
 CoD.LobbyButtons.THEATER_ZM = {
 	stringRef = "MENU_THEATER_CAPS",
 	action = NavigateToLobby_SelectionList,
 	param = "ZMLobbyOnlineTheater",
 	customId = "btnTheater",
-	disabledFunc = AlwaysTrue
+	disabledFunc = f0_local7
 }
 CoD.LobbyButtons.GROUPS = {
 	stringRef = "GROUPS_CAPS",
@@ -341,6 +345,7 @@ CoD.LobbyButtons.MP_CAC = {
 CoD.LobbyButtons.MP_SPECIALISTS = {
 	stringRef = "MPUI_HEROES_CAPS",
 	action = OpenChooseCharacterLoadout,
+	param = LuaEnums.CHOOSE_CHARACTER_OPENED_FROM.LOBBY,
 	customId = "btnSpecialists",
 	newBreadcrumbFunc = IsCACAnySpecialistsNew
 }
@@ -365,7 +370,10 @@ CoD.LobbyButtons.MP_INVENTORY_TEST = {
 CoD.LobbyButtons.MP_LOBBY_LEADERBOARD = {
 	stringRef = "MENU_CUSTOM_LOBBY_LEADERBOARDS_CAPS",
 	action = LobbyNoAction,
-	customId = "btnLobbyLeaderboard"
+	customId = "btnLobbyLeaderboard",
+	disabledFunc = function ()
+		return IsBooleanDvarSet( "tu1_build" )
+	end
 }
 CoD.LobbyButtons.MP_CUSTOM_START_GAME = {
 	stringRef = "MENU_START_GAME_CAPS",
@@ -392,11 +400,29 @@ CoD.LobbyButtons.MP_ARENA_SELECT_ARENA = {
 	customId = "btnSelectArena",
 	disabledFunc = f0_local2
 }
+CoD.LobbyButtons.MP_ARENA_LEADERBOARD = {
+	stringRef = "MENU_LEADERBOARDS_CAPS",
+	action = OpenArenaMasterLeaderboards,
+	actionParam = 0,
+	customId = "btnLeaderboards",
+	disabledFunc = function ()
+		return IsBooleanDvarSet( "tu1_build" )
+	end
+}
 CoD.LobbyButtons.FR_ONLINE = {
 	stringRef = "MENU_FREERUN_CAPS",
 	action = NavigateToLobby_SelectionList,
 	param = "FRLobbyOnlineGame",
 	customId = "btnFROnline"
+}
+CoD.LobbyButtons.FR_LEADERBOARD = {
+	stringRef = "MENU_LEADERBOARDS_CAPS",
+	action = OpenFreerunLeaderboards,
+	actionParam = 0,
+	customId = "btnLeaderboards",
+	disabledFunc = function ()
+		return IsBooleanDvarSet( "tu1_build" )
+	end
 }
 CoD.LobbyButtons.ZM_SOLO_GAME = {
 	stringRef = "MENU_SOLO_GAME_CAPS",
@@ -418,7 +444,8 @@ CoD.LobbyButtons.ZM_CUSTOM_GAMES = {
 CoD.LobbyButtons.ZM_BUBBLEGUM_BUFFS = {
 	stringRef = "MENU_BUBBLEGUM_BUFFS_CAPS",
 	action = OpenBubbleGumPacksMenu,
-	customId = "btnBubblegumBuffs"
+	customId = "btnBubblegumBuffs",
+	newBreadcrumbFunc = IsCACAnyBubblegumNew
 }
 CoD.LobbyButtons.ZM_MEGACHEW_FACTORY = {
 	stringRef = "MENU_MEGACHEW_FACTORY_CAPS",
@@ -428,12 +455,16 @@ CoD.LobbyButtons.ZM_MEGACHEW_FACTORY = {
 CoD.LobbyButtons.ZM_BUILD_KITS = {
 	stringRef = "MENU_WEAPON_BUILD_KITS_CAPS",
 	action = OpenWeaponBuildKits,
-	customId = "btnWeaponBuildKits"
+	customId = "btnWeaponBuildKits",
+	newBreadcrumbFunc = Gunsmith_AnyNewWeaponsOrAttachments
 }
 CoD.LobbyButtons.ZM_LOBBY_LEADERBOARD = {
 	stringRef = "MENU_LOBBY_LEADERBOARD_CAPS",
 	action = LobbyNoAction,
-	customId = "btnLobbyLeaderboard"
+	customId = "btnLobbyLeaderboard",
+	disabledFunc = function ()
+		return IsBooleanDvarSet( "tu1_build" )
+	end
 }
 CoD.LobbyButtons.ZM_START_CUSTOM_GAME = {
 	stringRef = "MENU_START_GAME_CAPS",
@@ -452,6 +483,11 @@ CoD.LobbyButtons.ZM_CHANGE_MAP = {
 	action = OpenChangeMapZM,
 	customId = "btnChangeMap",
 	disabledFunc = MapVoteTimerActive
+}
+CoD.LobbyButtons.ZM_CHANGE_RANKED_SETTTINGS = {
+	stringRef = "MENU_CHANGE_RANKED_SETTINGS_CAPS",
+	action = OpenChangeRankedSettingsPopup,
+	customId = "btnChangeRankedSettings"
 }
 CoD.LobbyButtons.FR_START_RUN_ONLINE = {
 	stringRef = "MENU_START_RUN_CAPS",
@@ -472,16 +508,17 @@ CoD.LobbyButtons.FR_CHANGE_MAP = {
 	disabledFunc = MapVoteTimerActive
 }
 CoD.LobbyButtons.TH_START_FILM = {
-	stringRef = "MPUI_START_FILM_CAPS",
+	stringRef = "MENU_START_CAPS",
 	action = LobbyTheaterStartFilm,
 	customId = "btnStartFilm",
 	disabledFunc = IsStartFilmButtonDisabled
 }
 CoD.LobbyButtons.TH_SELECT_FILM = {
-	stringRef = "MENU_FILESHARE_SELECT_FILM_CAPS",
+	stringRef = "MENU_SELECT_CAPS",
 	action = OpenTheaterSelectFilm,
 	customId = "btnSelectFilm",
-	disabledFunc = MapVoteTimerActive
+	disabledFunc = MapVoteTimerActive,
+	selectedFunc = IsFilmNotSelected
 }
 CoD.LobbyButtons.TH_CREATE_HIGHLIGHT = {
 	stringRef = "MPUI_CREATE_HIGHLIGHT_CAPS",

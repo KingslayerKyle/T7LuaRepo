@@ -12,7 +12,7 @@ function RecordPostMatchSurveyResult( f1_arg0, f1_arg1 )
 	local f1_local2 = CoD.GetPlayerStats( f1_arg0 )
 	f1_local0.matchId = f1_local2.AfterActionReportStats.demoFileId:get()
 	f1_local0.buttons = f1_local1.order[1] .. f1_local1.order[2] .. f1_local1.order[3]
-	LuaUtils.LogQoS( "postmatch_survey", f1_local0 )
+	LuaUtils.LogClientTrack( "postmatch_survey", f1_local0 )
 end
 
 function shuffle( f2_arg0 )

@@ -51,5 +51,6 @@ CoD.Presence.LobbyJoinableStrings[Enum.LobbyJoinable.LOBBY_JOINABLE_NO_PARTY_PRI
 CoD.Presence.LobbyJoinableStrings[Enum.LobbyJoinable.LOBBY_JOINABLE_NO_PARTY_PRIVACY_CLOSED] = "PRESENCE_NOT_JOINABLE_PARTY_PRIVACY_IS_CLOSED"
 CoD.Presence.LobbyJoinableStrings[Enum.LobbyJoinable.LOBBY_JOINABLE_NO_PARTY_FULL] = "PRESENCE_NOT_JOINABLE_PARTY_IS_FULL"
 CoD.Presence.LobbyJoinableStrings[Enum.LobbyJoinable.LOBBY_JOINABLE_NO_GAME_FULL] = "PRESENCE_NOT_JOINABLE_GAME_IS_FULL"
+CoD.Presence.LobbyJoinableStrings[Enum.LobbyJoinable.LOBBY_JOINABLE_NO_PLAYING_LOCAL] = "PRESENCE_NOT_JOINABLE_GAME_IS_OFFLINE"
 CoD.Presence.LobbyJoinableStrings[8] = "PRESENCE_NOT_JOINABLE_GAME_IS_PAUSED"
 CoD.Presence.LobbyJoinableStrings[9] = "PRESENCE_NOT_JOINABLE"
