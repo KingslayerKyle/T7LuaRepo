@@ -300,7 +300,7 @@ CoD.T4AmmoWarning.new = function ( menu, controller )
 					return false
 				end
 
-				return ammoStock <= (ammoStockMax / 4)
+				return ammoStock <= (ammoStockMax / 6)
 			end
 		},
 		{
