@@ -1,0 +1,11 @@
+_custom
+aitype
+archetypes
+model_export
+source_data
+temp_assets
+texture_assets
+xanim_export
+art_assets
+usermaps
+mods
